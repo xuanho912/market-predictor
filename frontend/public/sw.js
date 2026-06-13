@@ -1,5 +1,17 @@
+const CACHE_NAME = "market-predictor-v2";
+
 self.addEventListener("install", (event) => {
-  event.waitUntil(caches.open("market-predictor-v1").then((cache) => cache.addAll(["/", "/manifest.json"])));
+  self.skipWaiting();
+  event.waitUntil(caches.open(CACHE_NAME));
+});
+
+self.addEventListener("activate", (event) => {
+  event.waitUntil(
+    caches
+      .keys()
+      .then((keys) => Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))))
+      .then(() => self.clients.claim())
+  );
 });
 
 self.addEventListener("fetch", (event) => {
