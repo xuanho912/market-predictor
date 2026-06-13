@@ -48,6 +48,8 @@ The GitHub Pages site is a Chinese Market Prediction Dashboard. It shows:
 - Current state, live signal, bounce probability, downside risk, and trend reversal probability.
 - 3d / 5d / 10d / 20d / 60d horizon predictions.
 - Past price plus simulated future paths.
+- Price labels inside the prediction chart, including current price.
+- Explicit path weights: base, bounce, bearish, and historical analog.
 - Base, bounce, bearish, and historical analog scenarios.
 - Historical analog dates and invalidation conditions.
 

@@ -221,6 +221,17 @@ export type MarketEdgeStatus = {
   summary: string;
 };
 
+export type PathWeightModel = {
+  base_path_weight: number;
+  bounce_path_weight: number;
+  bearish_path_weight: number;
+  analog_path_weight: number;
+  low_confidence_simulation: boolean;
+  simulation_confidence_level: "low" | "medium" | "high";
+  weight_factors: Record<string, number>;
+  weight_source_notes: string[];
+};
+
 export type HorizonPredictionV2 = {
   expected_direction: string;
   expected_return: number;
@@ -257,6 +268,12 @@ export type MarketSymbolOverview = {
   predictors?: Record<string, PredictorOutput>;
   market_edge_status?: MarketEdgeStatus;
   market_intelligence_version?: string;
+  path_weight_model?: PathWeightModel;
+  base_path_weight?: number;
+  bounce_path_weight?: number;
+  bearish_path_weight?: number;
+  analog_path_weight?: number;
+  low_confidence_simulation?: boolean;
 };
 
 export type SimulatedSymbolPaths = {
@@ -279,6 +296,12 @@ export type SimulatedSymbolPaths = {
   predictors?: Record<string, PredictorOutput>;
   market_edge_status?: MarketEdgeStatus;
   market_intelligence_version?: string;
+  path_weight_model?: PathWeightModel;
+  base_path_weight?: number;
+  bounce_path_weight?: number;
+  bearish_path_weight?: number;
+  analog_path_weight?: number;
+  low_confidence_simulation?: boolean;
   scenario_weights?: Record<string, number>;
   path_confidence?: "low" | "medium" | "high";
   path_source_notes?: string[];

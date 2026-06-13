@@ -110,6 +110,15 @@ def build_market_intelligence_v3(
             overview_symbol=overview_symbol,
             predictors=predictors,
         )
+        path_weight_model = build_path_weight_model(
+            overview_symbol=overview_symbol,
+            signal_agreement=signal_agreement,
+            analog_support=analog_support,
+            features=features,
+            data_quality=data_quality,
+            predictors=predictors,
+            confidence=confidence,
+        )
         horizon_predictions = enhance_horizon_predictions(
             simulated_symbol.get("prediction_horizons", {}),
             predictors,
@@ -127,9 +136,23 @@ def build_market_intelligence_v3(
             "model_confidence": confidence,
             "prediction_horizons": horizon_predictions,
             "current_integrated_judgment": judgment,
+            "path_weight_model": path_weight_model,
+            "base_path_weight": path_weight_model["base_path_weight"],
+            "bounce_path_weight": path_weight_model["bounce_path_weight"],
+            "bearish_path_weight": path_weight_model["bearish_path_weight"],
+            "analog_path_weight": path_weight_model["analog_path_weight"],
+            "low_confidence_simulation": path_weight_model["low_confidence_simulation"],
         }
         overview_symbol.update(patch)
         simulated_symbol.update(patch)
+        simulated_symbol["scenario_weights"] = {
+            "base_scenario": path_weight_model["base_path_weight"],
+            "bounce_scenario": path_weight_model["bounce_path_weight"],
+            "bearish_scenario": path_weight_model["bearish_path_weight"],
+            "historical_analog_average": path_weight_model["analog_path_weight"],
+        }
+        simulated_symbol["path_confidence"] = path_weight_model["simulation_confidence_level"]
+        _update_scenario_card_weights_v3(simulated_symbol, path_weight_model)
         model_confidence_by_symbol[symbol] = confidence
         predictor_outputs_by_symbol[symbol] = predictors
         signal_agreement_by_symbol[symbol] = signal_agreement
@@ -633,6 +656,106 @@ def enhance_horizon_predictions(
         row["analog_best_path"] = support.get("best_case")
         enhanced[key] = row
     return enhanced
+
+
+def build_path_weight_model(
+    *,
+    overview_symbol: dict[str, Any],
+    signal_agreement: dict[str, Any],
+    analog_support: dict[str, Any],
+    features: dict[str, Any],
+    data_quality: dict[str, Any],
+    predictors: dict[str, Any],
+    confidence: dict[str, Any],
+) -> dict[str, Any]:
+    volatility = features.get("volatility_options", {})
+    credit = features.get("credit", {})
+    breadth = features.get("breadth", {})
+    bounce_probability = float(overview_symbol.get("bounce_probability") or 0.0)
+    failed_bounce_risk = float(predictors.get("downside_continuation_predictor", {}).get("probability") or overview_symbol.get("downside_continuation_probability") or 0.0)
+    signal_agreement_score = float(signal_agreement.get("signal_agreement_score") or 0.0) / 100.0
+    historical_support_score = _historical_support_score(analog_support)
+    credit_stability = _float_or_none(credit.get("credit_stabilization_score")) or 0.0
+    vix_change_5d = _float_or_none(volatility.get("vix_change_5d")) or 0.0
+    vix_change_20d = _float_or_none(volatility.get("vix_change_20d")) or 0.0
+    volatility_reversal = 1.0 if vix_change_5d < 0 and vix_change_20d <= 0 else 0.55 if vix_change_5d < 0 else 0.15
+    breadth_support = _float_or_none(breadth.get("breadth_improvement_score")) or 0.0
+    data_completeness = float(data_quality.get("summary", {}).get("data_completeness_score") or 0.0) / 100.0
+    confidence_score = float(confidence.get("confidence_score") or 0.0) / 100.0
+
+    raw = {
+        "base_path_weight": 0.24 + (1.0 - abs(signal_agreement_score - 0.50) * 2.0) * 0.10 + (1.0 - max(bounce_probability, failed_bounce_risk)) * 0.08,
+        "bounce_path_weight": 0.12
+        + bounce_probability * 0.30
+        + signal_agreement_score * 0.12
+        + historical_support_score * 0.12
+        + credit_stability * 0.09
+        + volatility_reversal * 0.08
+        + breadth_support * 0.08,
+        "bearish_path_weight": 0.12
+        + failed_bounce_risk * 0.32
+        + (1.0 - signal_agreement_score) * 0.12
+        + (1.0 - historical_support_score) * 0.09
+        + (1.0 - credit_stability) * 0.08
+        + (1.0 - volatility_reversal) * 0.07
+        + max(0.0, 0.75 - data_completeness) * 0.10,
+        "analog_path_weight": 0.18 + historical_support_score * 0.18 + data_completeness * 0.10 + signal_agreement_score * 0.08,
+    }
+    total = sum(max(value, 0.001) for value in raw.values())
+    weights = {key: round(max(value, 0.001) / total, 4) for key, value in raw.items()}
+    low_confidence = data_completeness < 0.70
+    confidence_level = "low" if low_confidence or confidence_score < 0.55 else "high" if confidence_score >= 0.75 and signal_agreement_score >= 0.75 else "medium"
+    weights.update(
+        {
+            "low_confidence_simulation": low_confidence,
+            "simulation_confidence_level": confidence_level,
+            "weight_factors": {
+                "bounce_probability": round(bounce_probability, 4),
+                "failed_bounce_risk": round(failed_bounce_risk, 4),
+                "signal_agreement": round(signal_agreement_score, 4),
+                "historical_analog_support": round(historical_support_score, 4),
+                "credit_stability": round(credit_stability, 4),
+                "volatility_reversal": round(volatility_reversal, 4),
+                "breadth_support": round(breadth_support, 4),
+                "data_completeness": round(data_completeness, 4),
+            },
+            "weight_source_notes": [
+                "base_path_weight rises when signals are mixed and neither bounce nor failed-bounce risk dominates.",
+                "bounce_path_weight rises with bounce probability, signal agreement, supportive analogs, credit stability, volatility reversal and breadth support.",
+                "bearish_path_weight rises with failed-bounce risk, weak agreement, weak analog support, credit instability, rising volatility and lower data completeness.",
+                "analog_path_weight rises when historical analog sample support and data completeness are stronger.",
+            ],
+        }
+    )
+    return weights
+
+
+def _update_scenario_card_weights_v3(simulated_symbol: dict[str, Any], path_weight_model: dict[str, Any]) -> None:
+    mapping = {
+        "Base case": "base_path_weight",
+        "Bounce case": "bounce_path_weight",
+        "Bearish case": "bearish_path_weight",
+        "Historical analog case": "analog_path_weight",
+    }
+    for card in simulated_symbol.get("scenario_cards", []):
+        key = mapping.get(card.get("name"))
+        if key:
+            card["probability_weight"] = path_weight_model[key]
+
+
+def _historical_support_score(analog_support: dict[str, Any]) -> float:
+    values = [analog_support.get("short_term_support"), analog_support.get("medium_term_support")]
+    score = 0.0
+    for value in values:
+        if value == "supportive":
+            score += 1.0
+        elif value == "neutral":
+            score += 0.55
+        elif value == "low_sample":
+            score += 0.35
+        else:
+            score += 0.15
+    return _clip(score / max(len(values), 1), 0.0, 1.0)
 
 
 def build_v3_judgment(

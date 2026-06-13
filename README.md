@@ -295,9 +295,12 @@ V3 adds a higher-quality signal layer without changing Alpha v1:
 - `signal_agreement_score` with supporting and conflicting signals,
 - four predictor outputs: bounce, downside continuation, trend reversal, risk expansion,
 - `market_edge_status`: `NO_EDGE`, `WEAK_EDGE`, `MODERATE_EDGE`, `STRONG_EDGE`,
+- explicit simulated path weights: `base_path_weight`, `bounce_path_weight`, `bearish_path_weight`, `analog_path_weight`,
 - high-confidence signal report focused on top-confidence buckets instead of full-sample accuracy.
 
 Proxy categories are clearly labeled. Breadth uses sector ETFs and RSP/SPY, not constituent-level breadth. Flow uses volume and rotation proxies, not real fund-flow data. Macro currently uses a deterministic event-calendar fallback, not a live economic calendar feed.
+
+Simulated path weights are driven by bounce probability, failed-bounce risk, signal agreement, historical analog support, credit stability, volatility reversal, breadth support, and data completeness. If data completeness falls below the threshold, the path is marked `low_confidence_simulation`.
 
 ## Historical Analog Engine
 

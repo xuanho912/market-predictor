@@ -2699,7 +2699,7 @@
         "status": "available"
       }
     },
-    "generated_at": "2026-06-13T16:26:27.801415+00:00",
+    "generated_at": "2026-06-13T16:34:59.400732+00:00",
     "notes": [
       "Breadth and flow are ETF/sector proxies, not constituent-level feeds.",
       "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -3170,7 +3170,7 @@
     "version": "market_intelligence_engine_v3_data_quality"
   },
   "feature_snapshot_v2": {
-    "generated_at": "2026-06-13T16:24:45.868891+00:00",
+    "generated_at": "2026-06-13T16:33:28.564929+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -3408,7 +3408,7 @@
     "version": "market_intelligence_engine_v2_features"
   },
   "feature_snapshot_v3": {
-    "generated_at": "2026-06-13T16:26:27.800355+00:00",
+    "generated_at": "2026-06-13T16:34:59.399621+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -4423,7 +4423,7 @@
       }
     },
     "conclusion": "confidence_not_yet_validated",
-    "generated_at": "2026-06-13T16:26:27.803473+00:00",
+    "generated_at": "2026-06-13T16:34:59.403147+00:00",
     "high_confidence_better_than_low_confidence": false,
     "high_vs_low_comparison_by_horizon": {
       "10d": false,
@@ -4501,7 +4501,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-06-13T16:24:45.868281+00:00",
+      "generated_at": "2026-06-13T16:33:28.564242+00:00",
       "notes": [
         "price/volatility/credit/rates/liquidity currently use public market proxies.",
         "options breadth macro flow are not treated as available unless real feeds are connected.",
@@ -4637,7 +4637,7 @@
       }
     },
     "feature_snapshot_v2": {
-      "generated_at": "2026-06-13T16:24:45.868891+00:00",
+      "generated_at": "2026-06-13T16:33:28.564929+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -4874,7 +4874,7 @@
       },
       "version": "market_intelligence_engine_v2_features"
     },
-    "generated_at": "2026-06-13T16:24:45.869190+00:00",
+    "generated_at": "2026-06-13T16:33:28.565303+00:00",
     "model_confidence_by_symbol": {
       "DIA": {
         "components": {
@@ -5048,7 +5048,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-06-13T16:26:27.801415+00:00",
+      "generated_at": "2026-06-13T16:34:59.400732+00:00",
       "notes": [
         "Breadth and flow are ETF/sector proxies, not constituent-level feeds.",
         "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -5577,7 +5577,7 @@
       }
     },
     "feature_snapshot_v3": {
-      "generated_at": "2026-06-13T16:26:27.800355+00:00",
+      "generated_at": "2026-06-13T16:34:59.399621+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -5922,7 +5922,7 @@
       },
       "version": "market_intelligence_engine_v3_features"
     },
-    "generated_at": "2026-06-13T16:26:27.803494+00:00",
+    "generated_at": "2026-06-13T16:34:59.403165+00:00",
     "high_confidence_signal_report": {
       "by_bucket": {
         "low_confidence_reference": {
@@ -6536,7 +6536,7 @@
         }
       },
       "conclusion": "confidence_not_yet_validated",
-      "generated_at": "2026-06-13T16:26:27.803473+00:00",
+      "generated_at": "2026-06-13T16:34:59.403147+00:00",
       "high_confidence_better_than_low_confidence": false,
       "high_vs_low_comparison_by_horizon": {
         "10d": false,
@@ -7524,7 +7524,11 @@
     "strongest_symbol": "SPY",
     "symbols": {
       "DIA": {
+        "analog_path_weight": 0.2108,
         "as_of": "2026-06-12",
+        "base_path_weight": 0.201,
+        "bearish_path_weight": 0.2053,
+        "bounce_path_weight": 0.3829,
         "bounce_probability": 0.57070947,
         "current_integrated_judgment": "DIA 当前可用预测优势：MODERATE_EDGE。反抽预测器 61%，下跌延续预测器 32%，风险扩散预测器 24%。5d 判断：偏上行/反抽；20d 判断：偏上行/反抽。信号一致性 73 分，模型可信度 68 分。如果是 NO_EDGE 或 WEAK_EDGE，应以观察为主，不应强行下结论。",
         "current_price": 513.05999756,
@@ -7732,6 +7736,7 @@
           "worst_path_risk": "high"
         },
         "live_signal": true,
+        "low_confidence_simulation": false,
         "market_edge_status": {
           "conditions": {
             "confidence_score_ge_60": true,
@@ -7878,6 +7883,30 @@
           ]
         },
         "name": "Dow Jones",
+        "path_weight_model": {
+          "analog_path_weight": 0.2108,
+          "base_path_weight": 0.201,
+          "bearish_path_weight": 0.2053,
+          "bounce_path_weight": 0.3829,
+          "low_confidence_simulation": false,
+          "simulation_confidence_level": "medium",
+          "weight_factors": {
+            "bounce_probability": 0.5707,
+            "breadth_support": 0.7732,
+            "credit_stability": 0.9668,
+            "data_completeness": 0.79,
+            "failed_bounce_risk": 0.3249,
+            "historical_analog_support": 0.15,
+            "signal_agreement": 0.73,
+            "volatility_reversal": 1.0
+          },
+          "weight_source_notes": [
+            "base_path_weight rises when signals are mixed and neither bounce nor failed-bounce risk dominates.",
+            "bounce_path_weight rises with bounce probability, signal agreement, supportive analogs, credit stability, volatility reversal and breadth support.",
+            "bearish_path_weight rises with failed-bounce risk, weak agreement, weak analog support, credit instability, rising volatility and lower data completeness.",
+            "analog_path_weight rises when historical analog sample support and data completeness are stronger."
+          ]
+        },
         "prediction_horizons": {
           "10d": {
             "analog_avg_return": 0.00022419942671077496,
@@ -8106,7 +8135,11 @@
         "trend_reversal_probability": 0.31497261963287615
       },
       "IWM": {
+        "analog_path_weight": 0.2577,
         "as_of": "2026-06-12",
+        "base_path_weight": 0.1948,
+        "bearish_path_weight": 0.1636,
+        "bounce_path_weight": 0.3838,
         "bounce_probability": 0.40434541,
         "current_integrated_judgment": "IWM 当前可用预测优势：STRONG_EDGE。反抽预测器 69%，下跌延续预测器 28%，风险扩散预测器 24%。5d 判断：偏上行/反抽；20d 判断：偏下行/反抽失败风险。信号一致性 82 分，模型可信度 72 分。如果是 NO_EDGE 或 WEAK_EDGE，应以观察为主，不应强行下结论。",
         "current_price": 292.95001221,
@@ -8314,6 +8347,7 @@
           "worst_path_risk": "high"
         },
         "live_signal": true,
+        "low_confidence_simulation": false,
         "market_edge_status": {
           "conditions": {
             "confidence_score_ge_60": true,
@@ -8475,6 +8509,30 @@
           ]
         },
         "name": "Russell 2000",
+        "path_weight_model": {
+          "analog_path_weight": 0.2577,
+          "base_path_weight": 0.1948,
+          "bearish_path_weight": 0.1636,
+          "bounce_path_weight": 0.3838,
+          "low_confidence_simulation": false,
+          "simulation_confidence_level": "medium",
+          "weight_factors": {
+            "bounce_probability": 0.4043,
+            "breadth_support": 0.7732,
+            "credit_stability": 0.9668,
+            "data_completeness": 0.79,
+            "failed_bounce_risk": 0.2788,
+            "historical_analog_support": 0.575,
+            "signal_agreement": 0.82,
+            "volatility_reversal": 1.0
+          },
+          "weight_source_notes": [
+            "base_path_weight rises when signals are mixed and neither bounce nor failed-bounce risk dominates.",
+            "bounce_path_weight rises with bounce probability, signal agreement, supportive analogs, credit stability, volatility reversal and breadth support.",
+            "bearish_path_weight rises with failed-bounce risk, weak agreement, weak analog support, credit instability, rising volatility and lower data completeness.",
+            "analog_path_weight rises when historical analog sample support and data completeness are stronger."
+          ]
+        },
         "prediction_horizons": {
           "10d": {
             "analog_avg_return": 0.005455264443160068,
@@ -8708,7 +8766,11 @@
         "trend_reversal_probability": 0.28456949892335187
       },
       "QQQ": {
+        "analog_path_weight": 0.2081,
         "as_of": "2026-06-12",
+        "base_path_weight": 0.223,
+        "bearish_path_weight": 0.2238,
+        "bounce_path_weight": 0.3451,
         "bounce_probability": 0.38471703,
         "current_integrated_judgment": "QQQ 当前可用预测优势：WEAK_EDGE。反抽预测器 52%，下跌延续预测器 38%，风险扩散预测器 24%。5d 判断：偏上行/反抽；20d 判断：偏下行/反抽失败风险。信号一致性 64 分，模型可信度 66 分。如果是 NO_EDGE 或 WEAK_EDGE，应以观察为主，不应强行下结论。",
         "current_price": 721.34002686,
@@ -8916,6 +8978,7 @@
           "worst_path_risk": "high"
         },
         "live_signal": true,
+        "low_confidence_simulation": false,
         "market_edge_status": {
           "conditions": {
             "confidence_score_ge_60": true,
@@ -9072,6 +9135,30 @@
           ]
         },
         "name": "Nasdaq 100",
+        "path_weight_model": {
+          "analog_path_weight": 0.2081,
+          "base_path_weight": 0.223,
+          "bearish_path_weight": 0.2238,
+          "bounce_path_weight": 0.3451,
+          "low_confidence_simulation": false,
+          "simulation_confidence_level": "medium",
+          "weight_factors": {
+            "bounce_probability": 0.3847,
+            "breadth_support": 0.7732,
+            "credit_stability": 0.9668,
+            "data_completeness": 0.79,
+            "failed_bounce_risk": 0.3755,
+            "historical_analog_support": 0.15,
+            "signal_agreement": 0.64,
+            "volatility_reversal": 1.0
+          },
+          "weight_source_notes": [
+            "base_path_weight rises when signals are mixed and neither bounce nor failed-bounce risk dominates.",
+            "bounce_path_weight rises with bounce probability, signal agreement, supportive analogs, credit stability, volatility reversal and breadth support.",
+            "bearish_path_weight rises with failed-bounce risk, weak agreement, weak analog support, credit instability, rising volatility and lower data completeness.",
+            "analog_path_weight rises when historical analog sample support and data completeness are stronger."
+          ]
+        },
         "prediction_horizons": {
           "10d": {
             "analog_avg_return": -0.00041192032711198645,
@@ -9305,7 +9392,11 @@
         "trend_reversal_probability": 0.2629852193517149
       },
       "SPY": {
+        "analog_path_weight": 0.2551,
         "as_of": "2026-06-12",
+        "base_path_weight": 0.1762,
+        "bearish_path_weight": 0.1554,
+        "bounce_path_weight": 0.4133,
         "bounce_probability": 0.59293002,
         "current_integrated_judgment": "SPY 当前可用预测优势：STRONG_EDGE。反抽预测器 64%，下跌延续预测器 27%，风险扩散预测器 24%。5d 判断：偏下行/反抽失败风险；20d 判断：偏上行/反抽。信号一致性 87 分，模型可信度 76 分。如果是 NO_EDGE 或 WEAK_EDGE，应以观察为主，不应强行下结论。",
         "current_price": 741.75,
@@ -9513,6 +9604,7 @@
           "worst_path_risk": "high"
         },
         "live_signal": true,
+        "low_confidence_simulation": false,
         "market_edge_status": {
           "conditions": {
             "confidence_score_ge_60": true,
@@ -9665,6 +9757,30 @@
           ]
         },
         "name": "S&P 500",
+        "path_weight_model": {
+          "analog_path_weight": 0.2551,
+          "base_path_weight": 0.1762,
+          "bearish_path_weight": 0.1554,
+          "bounce_path_weight": 0.4133,
+          "low_confidence_simulation": false,
+          "simulation_confidence_level": "high",
+          "weight_factors": {
+            "bounce_probability": 0.5929,
+            "breadth_support": 0.7732,
+            "credit_stability": 0.9668,
+            "data_completeness": 0.79,
+            "failed_bounce_risk": 0.2714,
+            "historical_analog_support": 0.575,
+            "signal_agreement": 0.87,
+            "volatility_reversal": 1.0
+          },
+          "weight_source_notes": [
+            "base_path_weight rises when signals are mixed and neither bounce nor failed-bounce risk dominates.",
+            "bounce_path_weight rises with bounce probability, signal agreement, supportive analogs, credit stability, volatility reversal and breadth support.",
+            "bearish_path_weight rises with failed-bounce risk, weak agreement, weak analog support, credit instability, rising volatility and lower data completeness.",
+            "analog_path_weight rises when historical analog sample support and data completeness are stronger."
+          ]
+        },
         "prediction_horizons": {
           "10d": {
             "analog_avg_return": -0.000849558579427473,
@@ -9915,6 +10031,10 @@
     "disclaimer": "Simulated future paths are probabilistic scenarios based on current signals and historical analogs, not guaranteed forecasts.",
     "symbols": {
       "DIA": {
+        "analog_path_weight": 0.2108,
+        "base_path_weight": 0.201,
+        "bearish_path_weight": 0.2053,
+        "bounce_path_weight": 0.3829,
         "bounce_probability": 0.57070947,
         "current_integrated_judgment": "DIA 当前可用预测优势：MODERATE_EDGE。反抽预测器 61%，下跌延续预测器 32%，风险扩散预测器 24%。5d 判断：偏上行/反抽；20d 判断：偏上行/反抽。信号一致性 73 分，模型可信度 68 分。如果是 NO_EDGE 或 WEAK_EDGE，应以观察为主，不应强行下结论。",
         "current_price": 513.05999756,
@@ -10110,6 +10230,7 @@
           }
         },
         "live_signal": true,
+        "low_confidence_simulation": false,
         "market_edge_status": {
           "conditions": {
             "confidence_score_ge_60": true,
@@ -10256,13 +10377,37 @@
           ]
         },
         "name": "Dow Jones",
-        "path_confidence": "low",
+        "path_confidence": "medium",
         "path_source_notes": [
           "历史相似路径：取当前最相似样本后续 3d/5d/10d/20d/60d 的真实表现。",
           "反抽情景：使用相似样本中 20d 表现较好的四分位路径。",
           "偏空情景：使用相似样本中 20d 表现较差的四分位路径。",
           "基准情景：使用相似样本平均路径；所有路径都是概率情景，不是确定预测。"
         ],
+        "path_weight_model": {
+          "analog_path_weight": 0.2108,
+          "base_path_weight": 0.201,
+          "bearish_path_weight": 0.2053,
+          "bounce_path_weight": 0.3829,
+          "low_confidence_simulation": false,
+          "simulation_confidence_level": "medium",
+          "weight_factors": {
+            "bounce_probability": 0.5707,
+            "breadth_support": 0.7732,
+            "credit_stability": 0.9668,
+            "data_completeness": 0.79,
+            "failed_bounce_risk": 0.3249,
+            "historical_analog_support": 0.15,
+            "signal_agreement": 0.73,
+            "volatility_reversal": 1.0
+          },
+          "weight_source_notes": [
+            "base_path_weight rises when signals are mixed and neither bounce nor failed-bounce risk dominates.",
+            "bounce_path_weight rises with bounce probability, signal agreement, supportive analogs, credit stability, volatility reversal and breadth support.",
+            "bearish_path_weight rises with failed-bounce risk, weak agreement, weak analog support, credit instability, rising volatility and lower data completeness.",
+            "analog_path_weight rises when historical analog sample support and data completeness are stronger."
+          ]
+        },
         "paths": {
           "analog_average_path": [
             null,
@@ -11667,37 +11812,37 @@
           {
             "name": "Base case",
             "name_cn": "基准情景",
-            "probability_weight": 0.2057,
+            "probability_weight": 0.201,
             "return_20d": 0.003845170212865895,
             "summary_cn": "按最相似历史样本的平均路径推演。"
           },
           {
             "name": "Bounce case",
             "name_cn": "反弹情景",
-            "probability_weight": 0.3069,
+            "probability_weight": 0.3829,
             "return_20d": 0.04702682462932421,
             "summary_cn": "如果 Alpha v1 信号继续有效，路径更接近历史上较好的反抽样本。"
           },
           {
             "name": "Bearish case",
             "name_cn": "失败反弹情景",
-            "probability_weight": 0.3135,
+            "probability_weight": 0.2053,
             "return_20d": -0.04670557099247843,
             "summary_cn": "如果波动和信用代理恶化，路径更接近历史上较差的一组样本。"
           },
           {
             "name": "Historical analog case",
             "name_cn": "历史相似情景",
-            "probability_weight": 0.174,
+            "probability_weight": 0.2108,
             "return_20d": 0.003845170212865895,
             "summary_cn": "只看最相似历史样本后的实际表现，不做确定性预测。"
           }
         ],
         "scenario_weights": {
-          "base_scenario": 0.2057,
-          "bearish_scenario": 0.3135,
-          "bounce_scenario": 0.3069,
-          "historical_analog_average": 0.174
+          "base_scenario": 0.201,
+          "bearish_scenario": 0.2053,
+          "bounce_scenario": 0.3829,
+          "historical_analog_average": 0.2108
         },
         "signal_agreement": {
           "agreement_level": "strong",
@@ -11752,6 +11897,10 @@
         "trend_reversal_probability": 0.31497261963287615
       },
       "IWM": {
+        "analog_path_weight": 0.2577,
+        "base_path_weight": 0.1948,
+        "bearish_path_weight": 0.1636,
+        "bounce_path_weight": 0.3838,
         "bounce_probability": 0.40434541,
         "current_integrated_judgment": "IWM 当前可用预测优势：STRONG_EDGE。反抽预测器 69%，下跌延续预测器 28%，风险扩散预测器 24%。5d 判断：偏上行/反抽；20d 判断：偏下行/反抽失败风险。信号一致性 82 分，模型可信度 72 分。如果是 NO_EDGE 或 WEAK_EDGE，应以观察为主，不应强行下结论。",
         "current_price": 292.95001221,
@@ -11947,6 +12096,7 @@
           }
         },
         "live_signal": true,
+        "low_confidence_simulation": false,
         "market_edge_status": {
           "conditions": {
             "confidence_score_ge_60": true,
@@ -12108,13 +12258,37 @@
           ]
         },
         "name": "Russell 2000",
-        "path_confidence": "low",
+        "path_confidence": "medium",
         "path_source_notes": [
           "历史相似路径：取当前最相似样本后续 3d/5d/10d/20d/60d 的真实表现。",
           "反抽情景：使用相似样本中 20d 表现较好的四分位路径。",
           "偏空情景：使用相似样本中 20d 表现较差的四分位路径。",
           "基准情景：使用相似样本平均路径；所有路径都是概率情景，不是确定预测。"
         ],
+        "path_weight_model": {
+          "analog_path_weight": 0.2577,
+          "base_path_weight": 0.1948,
+          "bearish_path_weight": 0.1636,
+          "bounce_path_weight": 0.3838,
+          "low_confidence_simulation": false,
+          "simulation_confidence_level": "medium",
+          "weight_factors": {
+            "bounce_probability": 0.4043,
+            "breadth_support": 0.7732,
+            "credit_stability": 0.9668,
+            "data_completeness": 0.79,
+            "failed_bounce_risk": 0.2788,
+            "historical_analog_support": 0.575,
+            "signal_agreement": 0.82,
+            "volatility_reversal": 1.0
+          },
+          "weight_source_notes": [
+            "base_path_weight rises when signals are mixed and neither bounce nor failed-bounce risk dominates.",
+            "bounce_path_weight rises with bounce probability, signal agreement, supportive analogs, credit stability, volatility reversal and breadth support.",
+            "bearish_path_weight rises with failed-bounce risk, weak agreement, weak analog support, credit instability, rising volatility and lower data completeness.",
+            "analog_path_weight rises when historical analog sample support and data completeness are stronger."
+          ]
+        },
         "paths": {
           "analog_average_path": [
             null,
@@ -13519,37 +13693,37 @@
           {
             "name": "Base case",
             "name_cn": "基准情景",
-            "probability_weight": 0.2233,
+            "probability_weight": 0.1948,
             "return_20d": -0.004647763319492282,
             "summary_cn": "按最相似历史样本的平均路径推演。"
           },
           {
             "name": "Bounce case",
             "name_cn": "反弹情景",
-            "probability_weight": 0.2782,
+            "probability_weight": 0.3838,
             "return_20d": 0.03472324137495168,
             "summary_cn": "如果 Alpha v1 信号继续有效，路径更接近历史上较好的反抽样本。"
           },
           {
             "name": "Bearish case",
             "name_cn": "失败反弹情景",
-            "probability_weight": 0.3048,
+            "probability_weight": 0.1636,
             "return_20d": -0.04463476111909799,
             "summary_cn": "如果波动和信用代理恶化，路径更接近历史上较差的一组样本。"
           },
           {
             "name": "Historical analog case",
             "name_cn": "历史相似情景",
-            "probability_weight": 0.1936,
+            "probability_weight": 0.2577,
             "return_20d": -0.004647763319492282,
             "summary_cn": "只看最相似历史样本后的实际表现，不做确定性预测。"
           }
         ],
         "scenario_weights": {
-          "base_scenario": 0.2233,
-          "bearish_scenario": 0.3048,
-          "bounce_scenario": 0.2782,
-          "historical_analog_average": 0.1936
+          "base_scenario": 0.1948,
+          "bearish_scenario": 0.1636,
+          "bounce_scenario": 0.3838,
+          "historical_analog_average": 0.2577
         },
         "signal_agreement": {
           "agreement_level": "strong",
@@ -13609,6 +13783,10 @@
         "trend_reversal_probability": 0.28456949892335187
       },
       "QQQ": {
+        "analog_path_weight": 0.2081,
+        "base_path_weight": 0.223,
+        "bearish_path_weight": 0.2238,
+        "bounce_path_weight": 0.3451,
         "bounce_probability": 0.38471703,
         "current_integrated_judgment": "QQQ 当前可用预测优势：WEAK_EDGE。反抽预测器 52%，下跌延续预测器 38%，风险扩散预测器 24%。5d 判断：偏上行/反抽；20d 判断：偏下行/反抽失败风险。信号一致性 64 分，模型可信度 66 分。如果是 NO_EDGE 或 WEAK_EDGE，应以观察为主，不应强行下结论。",
         "current_price": 721.34002686,
@@ -13804,6 +13982,7 @@
           }
         },
         "live_signal": true,
+        "low_confidence_simulation": false,
         "market_edge_status": {
           "conditions": {
             "confidence_score_ge_60": true,
@@ -13960,13 +14139,37 @@
           ]
         },
         "name": "Nasdaq 100",
-        "path_confidence": "low",
+        "path_confidence": "medium",
         "path_source_notes": [
           "历史相似路径：取当前最相似样本后续 3d/5d/10d/20d/60d 的真实表现。",
           "反抽情景：使用相似样本中 20d 表现较好的四分位路径。",
           "偏空情景：使用相似样本中 20d 表现较差的四分位路径。",
           "基准情景：使用相似样本平均路径；所有路径都是概率情景，不是确定预测。"
         ],
+        "path_weight_model": {
+          "analog_path_weight": 0.2081,
+          "base_path_weight": 0.223,
+          "bearish_path_weight": 0.2238,
+          "bounce_path_weight": 0.3451,
+          "low_confidence_simulation": false,
+          "simulation_confidence_level": "medium",
+          "weight_factors": {
+            "bounce_probability": 0.3847,
+            "breadth_support": 0.7732,
+            "credit_stability": 0.9668,
+            "data_completeness": 0.79,
+            "failed_bounce_risk": 0.3755,
+            "historical_analog_support": 0.15,
+            "signal_agreement": 0.64,
+            "volatility_reversal": 1.0
+          },
+          "weight_source_notes": [
+            "base_path_weight rises when signals are mixed and neither bounce nor failed-bounce risk dominates.",
+            "bounce_path_weight rises with bounce probability, signal agreement, supportive analogs, credit stability, volatility reversal and breadth support.",
+            "bearish_path_weight rises with failed-bounce risk, weak agreement, weak analog support, credit instability, rising volatility and lower data completeness.",
+            "analog_path_weight rises when historical analog sample support and data completeness are stronger."
+          ]
+        },
         "paths": {
           "analog_average_path": [
             null,
@@ -15372,37 +15575,37 @@
           {
             "name": "Base case",
             "name_cn": "基准情景",
-            "probability_weight": 0.2249,
+            "probability_weight": 0.223,
             "return_20d": -0.0097021099671255,
             "summary_cn": "按最相似历史样本的平均路径推演。"
           },
           {
             "name": "Bounce case",
             "name_cn": "反弹情景",
-            "probability_weight": 0.2685,
+            "probability_weight": 0.3451,
             "return_20d": 0.035730326553365985,
             "summary_cn": "如果 Alpha v1 信号继续有效，路径更接近历史上较好的反抽样本。"
           },
           {
             "name": "Bearish case",
             "name_cn": "失败反弹情景",
-            "probability_weight": 0.3146,
+            "probability_weight": 0.2238,
             "return_20d": -0.07025770583472808,
             "summary_cn": "如果波动和信用代理恶化，路径更接近历史上较差的一组样本。"
           },
           {
             "name": "Historical analog case",
             "name_cn": "历史相似情景",
-            "probability_weight": 0.192,
+            "probability_weight": 0.2081,
             "return_20d": -0.0097021099671255,
             "summary_cn": "只看最相似历史样本后的实际表现，不做确定性预测。"
           }
         ],
         "scenario_weights": {
-          "base_scenario": 0.2249,
-          "bearish_scenario": 0.3146,
-          "bounce_scenario": 0.2685,
-          "historical_analog_average": 0.192
+          "base_scenario": 0.223,
+          "bearish_scenario": 0.2238,
+          "bounce_scenario": 0.3451,
+          "historical_analog_average": 0.2081
         },
         "signal_agreement": {
           "agreement_level": "mixed",
@@ -15462,6 +15665,10 @@
         "trend_reversal_probability": 0.2629852193517149
       },
       "SPY": {
+        "analog_path_weight": 0.2551,
+        "base_path_weight": 0.1762,
+        "bearish_path_weight": 0.1554,
+        "bounce_path_weight": 0.4133,
         "bounce_probability": 0.59293002,
         "current_integrated_judgment": "SPY 当前可用预测优势：STRONG_EDGE。反抽预测器 64%，下跌延续预测器 27%，风险扩散预测器 24%。5d 判断：偏下行/反抽失败风险；20d 判断：偏上行/反抽。信号一致性 87 分，模型可信度 76 分。如果是 NO_EDGE 或 WEAK_EDGE，应以观察为主，不应强行下结论。",
         "current_price": 741.75,
@@ -15657,6 +15864,7 @@
           }
         },
         "live_signal": true,
+        "low_confidence_simulation": false,
         "market_edge_status": {
           "conditions": {
             "confidence_score_ge_60": true,
@@ -15809,13 +16017,37 @@
           ]
         },
         "name": "S&P 500",
-        "path_confidence": "low",
+        "path_confidence": "high",
         "path_source_notes": [
           "历史相似路径：取当前最相似样本后续 3d/5d/10d/20d/60d 的真实表现。",
           "反抽情景：使用相似样本中 20d 表现较好的四分位路径。",
           "偏空情景：使用相似样本中 20d 表现较差的四分位路径。",
           "基准情景：使用相似样本平均路径；所有路径都是概率情景，不是确定预测。"
         ],
+        "path_weight_model": {
+          "analog_path_weight": 0.2551,
+          "base_path_weight": 0.1762,
+          "bearish_path_weight": 0.1554,
+          "bounce_path_weight": 0.4133,
+          "low_confidence_simulation": false,
+          "simulation_confidence_level": "high",
+          "weight_factors": {
+            "bounce_probability": 0.5929,
+            "breadth_support": 0.7732,
+            "credit_stability": 0.9668,
+            "data_completeness": 0.79,
+            "failed_bounce_risk": 0.2714,
+            "historical_analog_support": 0.575,
+            "signal_agreement": 0.87,
+            "volatility_reversal": 1.0
+          },
+          "weight_source_notes": [
+            "base_path_weight rises when signals are mixed and neither bounce nor failed-bounce risk dominates.",
+            "bounce_path_weight rises with bounce probability, signal agreement, supportive analogs, credit stability, volatility reversal and breadth support.",
+            "bearish_path_weight rises with failed-bounce risk, weak agreement, weak analog support, credit instability, rising volatility and lower data completeness.",
+            "analog_path_weight rises when historical analog sample support and data completeness are stronger."
+          ]
+        },
         "paths": {
           "analog_average_path": [
             null,
@@ -17220,37 +17452,37 @@
           {
             "name": "Base case",
             "name_cn": "基准情景",
-            "probability_weight": 0.2098,
+            "probability_weight": 0.1762,
             "return_20d": 0.02000877398698462,
             "summary_cn": "按最相似历史样本的平均路径推演。"
           },
           {
             "name": "Bounce case",
             "name_cn": "反弹情景",
-            "probability_weight": 0.3948,
+            "probability_weight": 0.4133,
             "return_20d": 0.04904937115556929,
             "summary_cn": "如果 Alpha v1 信号继续有效，路径更接近历史上较好的反抽样本。"
           },
           {
             "name": "Bearish case",
             "name_cn": "失败反弹情景",
-            "probability_weight": 0.213,
+            "probability_weight": 0.1554,
             "return_20d": -0.02281417461895483,
             "summary_cn": "如果波动和信用代理恶化，路径更接近历史上较差的一组样本。"
           },
           {
             "name": "Historical analog case",
             "name_cn": "历史相似情景",
-            "probability_weight": 0.1824,
+            "probability_weight": 0.2551,
             "return_20d": 0.02000877398698462,
             "summary_cn": "只看最相似历史样本后的实际表现，不做确定性预测。"
           }
         ],
         "scenario_weights": {
-          "base_scenario": 0.2098,
-          "bearish_scenario": 0.213,
-          "bounce_scenario": 0.3948,
-          "historical_analog_average": 0.1824
+          "base_scenario": 0.1762,
+          "bearish_scenario": 0.1554,
+          "bounce_scenario": 0.4133,
+          "historical_analog_average": 0.2551
         },
         "signal_agreement": {
           "agreement_level": "strong",

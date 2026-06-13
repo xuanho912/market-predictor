@@ -39,6 +39,24 @@ const categoryText: Record<string, string> = {
   market_structure: "市场结构",
 };
 
+const predictorText: Record<string, string> = {
+  bounce_predictor: "反抽",
+  downside_continuation_predictor: "继续下跌",
+  trend_reversal_predictor: "修复/反转",
+  risk_expansion_predictor: "风险扩散",
+};
+
+const factorText: Record<string, string> = {
+  bounce_probability: "反抽概率",
+  failed_bounce_risk: "失败反抽风险",
+  signal_agreement: "信号一致性",
+  historical_analog_support: "历史相似支持",
+  credit_stability: "信用稳定",
+  volatility_reversal: "波动率回落",
+  breadth_support: "宽度支持",
+  data_completeness: "数据完整度",
+};
+
 function pct(value: number | null | undefined, digits = 0) {
   if (value == null || Number.isNaN(value)) return "暂无";
   return `${(value * 100).toFixed(digits)}%`;
@@ -145,6 +163,10 @@ function PredictionChart({ data }: { data: SimulatedSymbolPaths }) {
   const minY = Math.min(...allValues) * 0.985;
   const maxY = Math.max(...allValues) * 1.015;
   const splitX = xForIndex(paths.split_index, paths.dates.length, width, pad);
+  const yForPrice = (value: number) => height - pad - ((value - minY) / Math.max(maxY - minY, 1)) * (height - pad * 2);
+  const historicalValues = paths.historical_price.filter((value): value is number => value != null);
+  const currentPrice = data.current_price ?? historicalValues[historicalValues.length - 1] ?? null;
+  const priceTicks = [maxY, (maxY + minY) / 2, minY];
   const horizonIndexes = [3, 5, 10, 20, 60].map((days) => ({
     days,
     index: Math.min(paths.split_index + days, paths.dates.length - 1),
@@ -162,9 +184,19 @@ function PredictionChart({ data }: { data: SimulatedSymbolPaths }) {
       <div className="mt-3 overflow-x-auto">
         <svg viewBox={`0 0 ${width} ${height}`} className="h-80 min-w-[720px] w-full">
           <rect x="0" y="0" width={width} height={height} rx="8" fill="#ffffff" />
-          {[0.2, 0.4, 0.6, 0.8].map((ratio) => (
-            <line key={ratio} x1={pad} x2={width - pad} y1={pad + (height - pad * 2) * ratio} y2={pad + (height - pad * 2) * ratio} stroke="#e5ece9" />
+          {priceTicks.map((tick) => (
+            <g key={tick}>
+              <line x1={pad} x2={width - pad} y1={yForPrice(tick)} y2={yForPrice(tick)} stroke="#e5ece9" />
+              <text x={8} y={yForPrice(tick) + 4} fontSize="11" fill="#62706b">{price(tick)}</text>
+            </g>
           ))}
+          {currentPrice != null ? (
+            <g>
+              <line x1={pad} x2={width - pad} y1={yForPrice(currentPrice)} y2={yForPrice(currentPrice)} stroke="#0f9f7a" strokeDasharray="2 4" />
+              <rect x={width - 94} y={yForPrice(currentPrice) - 13} width="86" height="22" rx="5" fill="#0f9f7a" />
+              <text x={width - 51} y={yForPrice(currentPrice) + 3} textAnchor="middle" fontSize="11" fill="#ffffff">现价 {price(currentPrice)}</text>
+            </g>
+          ) : null}
           <line x1={splitX} x2={splitX} y1={pad} y2={height - pad} stroke="#14211f" strokeDasharray="4 4" />
           {horizonIndexes.map(({ days, index }) => {
             const x = xForIndex(index, paths.dates.length, width, pad);
@@ -202,13 +234,15 @@ function PredictionChart({ data }: { data: SimulatedSymbolPaths }) {
 }
 
 function ScenarioWeights({ data }: { data: SimulatedSymbolPaths }) {
-  const weights = data.scenario_weights ?? {};
+  const pathModel = data.path_weight_model;
+  const scenarioWeights = data.scenario_weights ?? {};
   const items = [
-    ["基准", weights.base_scenario],
-    ["反抽", weights.bounce_scenario],
-    ["偏空", weights.bearish_scenario],
-    ["历史均值", weights.historical_analog_average],
+    ["基准", data.base_path_weight ?? pathModel?.base_path_weight ?? scenarioWeights.base_scenario],
+    ["反抽", data.bounce_path_weight ?? pathModel?.bounce_path_weight ?? scenarioWeights.bounce_scenario],
+    ["偏空", data.bearish_path_weight ?? pathModel?.bearish_path_weight ?? scenarioWeights.bearish_scenario],
+    ["历史均值", data.analog_path_weight ?? pathModel?.analog_path_weight ?? scenarioWeights.historical_analog_average],
   ] as const;
+  const factors = pathModel?.weight_factors ?? {};
   return (
     <div className="mt-3 rounded-md bg-white p-3">
       <div className="flex flex-wrap items-center gap-3 text-xs">
@@ -217,9 +251,36 @@ function ScenarioWeights({ data }: { data: SimulatedSymbolPaths }) {
           <span key={label} className="text-muted">{label}: <b className="text-ink">{pct(value, 0)}</b></span>
         ))}
         <span className="text-muted">路径可信度: <b className="text-ink">{confidenceCn(data.path_confidence)}</b></span>
+        {data.low_confidence_simulation ? <span className="font-medium text-rose">低可信模拟</span> : null}
       </div>
+      {Object.keys(factors).length ? (
+        <div className="mt-3 grid gap-2 text-xs sm:grid-cols-4">
+          {Object.entries(factors).map(([key, value]) => (
+            <span key={key} className="rounded bg-panel px-2 py-1 text-muted">{factorText[key] ?? key}: <b className="text-ink">{pct(value, 0)}</b></span>
+          ))}
+        </div>
+      ) : null}
     </div>
   );
+}
+
+function edgeRank(value: string | undefined) {
+  if (value === "STRONG_EDGE") return 4;
+  if (value === "MODERATE_EDGE") return 3;
+  if (value === "WEAK_EDGE") return 2;
+  return 1;
+}
+
+function strongestPredictor(data: SimulatedSymbolPaths | undefined) {
+  const entries = Object.entries(data?.predictors ?? {});
+  if (!entries.length) return null;
+  return entries.sort(([, left], [, right]) => right.probability - left.probability)[0];
+}
+
+function strongestPredictorText(data: SimulatedSymbolPaths | undefined) {
+  const winner = strongestPredictor(data);
+  if (!winner) return "暂无";
+  return `${predictorText[winner[0]] ?? winner[0]} ${pct(winner[1].probability)}`;
 }
 
 function MarketCard({
@@ -353,6 +414,48 @@ function CurrentSummary({ data }: { data: SimulatedSymbolPaths }) {
         <Metric label="当前状态" value={stateCn(data.market_state)} />
         <Metric label="最强情景" value={strongestScenario(data)} />
         <Metric label="5d / 20d / 60d 历史支持" value={`${supportCn(support?.by_horizon?.["5d"]?.support)} / ${supportCn(support?.by_horizon?.["20d"]?.support)} / ${supportCn(support?.by_horizon?.["60d"]?.support)}`} />
+      </div>
+    </section>
+  );
+}
+
+function FirstScreenDecisionPanel({
+  selected,
+  strongest,
+}: {
+  selected: SimulatedSymbolPaths;
+  strongest?: SimulatedSymbolPaths;
+}) {
+  const supporting = selected.signal_agreement?.supporting_signals ?? [];
+  const conflicts = selected.signal_agreement?.conflicting_signals ?? [];
+  return (
+    <section className="mt-5 rounded-lg border border-line bg-white p-4">
+      <div className="grid gap-4 lg:grid-cols-[1.15fr_0.85fr]">
+        <div>
+          <p className="text-xs uppercase text-muted">Today&apos;s Prediction Edge</p>
+          <h2 className="mt-1 text-xl font-semibold">今天是否有可用预测优势：{edgeCn(selected.market_edge_status?.market_edge_status)}</h2>
+          <p className="mt-2 text-sm leading-6 text-muted">{selected.market_edge_status?.summary ?? "当前优势状态未知。"}</p>
+          <div className="mt-4 grid gap-3 text-sm sm:grid-cols-4">
+            <Metric label="最强预测方向" value={strongestPredictorText(selected)} />
+            <Metric label="当前状态" value={stateCn(selected.market_state)} />
+            <Metric label="最强指数信号" value={strongest ? `${strongest.symbol} / ${edgeCn(strongest.market_edge_status?.market_edge_status)}` : "暂无"} />
+            <Metric label="预测可信度" value={`${selected.model_confidence?.confidence_score ?? "暂无"}/100`} />
+          </div>
+        </div>
+        <div className="grid gap-3 text-xs sm:grid-cols-3 lg:grid-cols-1">
+          <div className="rounded-md bg-panel p-3">
+            <p className="font-medium text-ink">支持信号</p>
+            <p className="mt-1 text-muted">{supporting.slice(0, 4).map((item) => item.name).join(" / ") || "暂无明显支持"}</p>
+          </div>
+          <div className="rounded-md bg-panel p-3">
+            <p className="font-medium text-ink">冲突信号</p>
+            <p className="mt-1 text-muted">{conflicts.slice(0, 4).map((item) => item.name).join(" / ") || "暂无明显冲突"}</p>
+          </div>
+          <div className="rounded-md bg-panel p-3">
+            <p className="font-medium text-ink">失效条件</p>
+            <p className="mt-1 text-muted">{selected.risk_invalidation_conditions.slice(0, 3).join(" / ")}</p>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -576,7 +679,13 @@ export function MarketDashboard({ dashboard }: { dashboard: PredictionDashboard 
   const strongest = useMemo(() => {
     return availableSymbols
       .map((symbol) => dashboard.simulated_paths.symbols[symbol])
-      .sort((left, right) => right.bounce_probability - left.bounce_probability)[0];
+      .sort((left, right) => {
+        const edgeDelta = edgeRank(right.market_edge_status?.market_edge_status) - edgeRank(left.market_edge_status?.market_edge_status);
+        if (edgeDelta !== 0) return edgeDelta;
+        const agreementDelta = (right.signal_agreement?.signal_agreement_score ?? 0) - (left.signal_agreement?.signal_agreement_score ?? 0);
+        if (agreementDelta !== 0) return agreementDelta;
+        return right.bounce_probability - left.bounce_probability;
+      })[0];
   }, [availableSymbols, dashboard.simulated_paths.symbols]);
 
   if (!selected) {
@@ -629,6 +738,7 @@ export function MarketDashboard({ dashboard }: { dashboard: PredictionDashboard 
         </div>
       </section>
 
+      <FirstScreenDecisionPanel selected={selected} strongest={strongest} />
       <DataQualityPanel report={dashboard.data_quality_report ?? dashboard.market_intelligence_v2?.data_quality_report} />
 
       <div className="mt-5 grid gap-5 lg:grid-cols-[1.4fr_0.9fr]">
