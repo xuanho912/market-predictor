@@ -174,7 +174,10 @@ const staticDataBaseUrl =
   "https://raw.githubusercontent.com/xuanho912/market-predictor/main/frontend/public";
 
 export async function getLatestPrediction(symbol = "SPY"): Promise<PredictionSnapshot> {
-  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000";
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+  if (!baseUrl) {
+    return { ...fallbackPrediction, symbol };
+  }
   try {
     const response = await fetch(`${baseUrl}/api/prediction/latest?symbol=${symbol}`, {
       next: { revalidate: 60 },
@@ -226,6 +229,10 @@ export async function getAlphaV1Analogs(symbol = "SPY"): Promise<HistoricalAnalo
 
 async function getStaticAlphaV1Status(): Promise<AlphaV1Status> {
   try {
+    const localPayload = await readLocalStaticJson<{ alpha_status?: AlphaV1Status }>("alpha-v1-status.json");
+    if (localPayload?.alpha_status) {
+      return localPayload.alpha_status;
+    }
     const response = await fetch(`${staticDataBaseUrl}/alpha-v1-status.json`, {
       next: { revalidate: 300 },
     });
@@ -241,6 +248,10 @@ async function getStaticAlphaV1Status(): Promise<AlphaV1Status> {
 
 async function getStaticAlphaV1Analogs(symbol = "SPY"): Promise<HistoricalAnalogReport> {
   try {
+    const localPayload = await readLocalStaticJson<{ analogs?: Record<string, HistoricalAnalogReport> }>("alpha-v1-analogs.json");
+    if (localPayload?.analogs?.[symbol]) {
+      return localPayload.analogs[symbol];
+    }
     const response = await fetch(`${staticDataBaseUrl}/alpha-v1-analogs.json`, {
       next: { revalidate: 300 },
     });
@@ -251,5 +262,20 @@ async function getStaticAlphaV1Analogs(symbol = "SPY"): Promise<HistoricalAnalog
     return payload.analogs?.[symbol] ?? { ...fallbackHistoricalAnalogReport, symbol };
   } catch {
     return { ...fallbackHistoricalAnalogReport, symbol };
+  }
+}
+
+async function readLocalStaticJson<T>(filename: string): Promise<T | null> {
+  if (typeof window !== "undefined") {
+    return null;
+  }
+  try {
+    const fs = await import("node:fs/promises");
+    const path = await import("node:path");
+    const filePath = path.join(process.cwd(), "public", filename);
+    const text = await fs.readFile(filePath, "utf-8");
+    return JSON.parse(text) as T;
+  } catch {
+    return null;
   }
 }

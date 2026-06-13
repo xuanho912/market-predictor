@@ -16,27 +16,22 @@ Recommended no-card setup:
 
 1. Enable GitHub Actions in the repo.
 2. Run workflow `Forward Alpha v1 Observation` once.
-3. Deploy the `frontend` directory to Vercel Free.
-4. Do not set a backend URL unless you successfully deploy a free backend.
+3. Enable GitHub Pages with Source set to `GitHub Actions`.
+4. Open the GitHub Pages URL.
 
-The frontend can read the latest committed static snapshots:
-
-```text
-frontend/public/alpha-v1-status.json
-frontend/public/alpha-v1-analogs.json
-```
-
-Optional backend:
-
-1. Try Render Free Web Service manually.
-2. If Render asks for payment information, skip it.
-3. If Render deploys successfully, set Vercel env:
+URL after deployment:
 
 ```text
-NEXT_PUBLIC_API_BASE_URL=https://<YOUR_RENDER_BACKEND_URL>
+https://xuanho912.github.io/market-predictor/
 ```
 
-4. Redeploy Vercel.
+GitHub Pages setting:
+
+```text
+https://github.com/xuanho912/market-predictor/settings/pages
+```
+
+Set `Build and deployment -> Source -> GitHub Actions`.
 
 Details are in `docs/cloud_deployment.md`.
 

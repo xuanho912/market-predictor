@@ -1,6 +1,6 @@
-# Free Cloud Deployment
+# Free Cloud Deployment With GitHub Pages
 
-Goal: avoid payment information, avoid charges, and still keep Alpha v1 in daily `forward_only` observation.
+Goal: no Vercel, no Render, no payment information, and still keep Alpha v1 in daily `forward_only` observation.
 
 Alpha v1 stays frozen:
 
@@ -13,55 +13,77 @@ Alpha v1 stays frozen:
 
 ## Recommended Free Architecture
 
-Use:
+Use only GitHub:
 
-- Vercel Free for the mobile PWA frontend.
-- GitHub Actions scheduled workflow for daily forward tracker.
-- Git commits to persist `outputs/` and frontend static JSON snapshots.
-- Optional Render Free Web Service only if you want live API endpoints.
+- GitHub Actions runs the daily Alpha v1 forward tracker.
+- GitHub Actions exports static JSON snapshots.
+- GitHub Actions builds the Next.js frontend as a static export.
+- GitHub Pages hosts the mobile page.
 
-This avoids Render paid instances, persistent disks, Render cron jobs, background workers, databases, and any paid always-on service.
+The public URL will be:
 
-## Why Not Render Blueprint With Disk
+```text
+https://xuanho912.github.io/market-predictor/
+```
 
-The previous Blueprint used:
+GitHub Pages is available for public repositories on GitHub Free. For private repositories, Pages availability depends on the account plan.
 
-- `plan: starter`
-- a persistent disk mounted at `/var/data`
+## Required GitHub Setting
 
-Those are not free-first settings. The current `render.yaml` has been changed to:
+Open:
 
-- `plan: free`
-- no persistent disk
-- no database
-- no Render cron job
-- no background worker
-- temporary `/tmp/market-predictor/...` paths only
+```text
+https://github.com/xuanho912/market-predictor/settings/pages
+```
 
-Render Free Web Services are optional and should not be relied on for persistence. Free instances can spin down when idle, and local filesystem writes can be lost after sleep, restart, or redeploy.
+Set:
 
-## Daily Tracker On GitHub Actions
+```text
+Build and deployment -> Source -> GitHub Actions
+```
 
-The workflow is:
+Save if GitHub shows a save button.
+
+## Daily Tracker And Page Deployment
+
+Workflow:
 
 ```text
 .github/workflows/forward-alpha-v1.yml
 ```
 
-It runs:
+It does all of this in one run:
+
+1. Installs backend dependencies.
+2. Runs:
 
 ```bash
-python -m backend.app.services.validation.forward_alpha_tracker
+python -m app.services.validation.forward_alpha_tracker
+```
+
+3. Exports:
+
+```bash
 python scripts/export_static_alpha_v1.py
 ```
 
-Then it commits changed files:
+4. Commits updated observation files:
 
-- `outputs/forward_alpha_v1_daily_checks.csv`
-- `outputs/forward_alpha_v1_signals.csv`
-- `outputs/forward_alpha_v1_report.md`
-- `frontend/public/alpha-v1-status.json`
-- `frontend/public/alpha-v1-analogs.json`
+```text
+outputs/forward_alpha_v1_daily_checks.csv
+outputs/forward_alpha_v1_signals.csv
+outputs/forward_alpha_v1_report.md
+frontend/public/alpha-v1-status.json
+frontend/public/alpha-v1-analogs.json
+```
+
+5. Builds the frontend with:
+
+```bash
+GITHUB_PAGES=true npm run build
+```
+
+6. Deploys `frontend/out` to GitHub Pages.
 
 Schedule:
 
@@ -71,129 +93,60 @@ cron: "37 22 * * 1-5"
 
 This is UTC and intentionally not at minute `0`, reducing the chance of high-load schedule delays.
 
-## Enable GitHub Actions
+## Manual Run
 
-1. Open `https://github.com/xuanho912/market-predictor/actions`.
-2. If GitHub asks, enable workflows for the repository.
-3. Open `Forward Alpha v1 Observation`.
-4. Click `Run workflow` once to verify.
-5. Confirm the workflow commits updated `outputs/` and `frontend/public/*.json`.
-
-No GitHub secrets are required. The workflow uses the repository `GITHUB_TOKEN` with `contents: write`.
-
-## Deploy Frontend On Vercel Free
-
-1. Open Vercel.
-2. Import GitHub repo `xuanho912/market-predictor`.
-3. Set Root Directory:
+Open:
 
 ```text
-frontend
+https://github.com/xuanho912/market-predictor/actions
 ```
 
-4. Deploy as Next.js.
-5. Do not set `NEXT_PUBLIC_API_BASE_URL` if you are not deploying a backend.
+Then:
 
-With no backend URL, the frontend falls back to:
+1. Select `Forward Alpha v1 Observation`.
+2. Click `Run workflow`.
+3. Wait for success.
+4. Open:
 
 ```text
-https://raw.githubusercontent.com/xuanho912/market-predictor/main/frontend/public/alpha-v1-status.json
-https://raw.githubusercontent.com/xuanho912/market-predictor/main/frontend/public/alpha-v1-analogs.json
+https://xuanho912.github.io/market-predictor/
 ```
 
-Optional environment variable:
+GitHub Pages can take a few minutes to publish after the first deployment.
+
+## What The Page Shows
+
+The GitHub Pages page shows:
+
+- Alpha v1 status.
+- live signal.
+- SPY / QQQ / IWM / DIA bounce probability.
+- distance to threshold.
+- Historical Analogs.
+- latest committed forward-only observation snapshot.
+
+No backend is required for this free path.
+
+## What Free GitHub Pages Loses
+
+Compared with a paid always-on backend:
+
+- no real-time API server,
+- no live backend computation when you refresh the page,
+- the page shows the latest GitHub Actions snapshot,
+- scheduled workflow runs can be delayed by GitHub platform load,
+- private repo GitHub Pages may require a paid GitHub plan.
+
+For this project stage, that is acceptable because Alpha v1 is still only a `RESEARCH ALPHA CANDIDATE`.
+
+## Optional Backend Later
+
+If you later want live API calls, deploy a backend separately and set:
 
 ```text
-NEXT_PUBLIC_STATIC_DATA_BASE_URL=https://raw.githubusercontent.com/xuanho912/market-predictor/main/frontend/public
+NEXT_PUBLIC_API_BASE_URL=https://<BACKEND_URL>
 ```
 
-## Optional Render Free Backend
-
-Only use this if Render allows you to create a Free Web Service without payment information.
-
-Manual service setup:
-
-1. Render Dashboard -> New -> Web Service.
-2. Connect `https://github.com/xuanho912/market-predictor`.
-3. Root Directory:
-
-```text
-backend
-```
-
-4. Runtime:
-
-```text
-Python
-```
-
-5. Build Command:
-
-```bash
-pip install -r requirements.txt
-```
-
-6. Start Command:
-
-```bash
-uvicorn app.main:app --host 0.0.0.0 --port $PORT
-```
-
-7. Instance Type:
-
-```text
-Free
-```
-
-8. Environment variables:
-
-```text
-PYTHON_VERSION=3.12.13
-ENVIRONMENT=production
-ALLOW_TRADING=false
-PREDICTION_DB_PATH=/tmp/market-predictor/market_predictor.sqlite
-PREDICTION_STORE_PATH=/tmp/market-predictor/predictions
-FEATURE_STORE_PATH=/tmp/market-predictor/features
-MODEL_REGISTRY_PATH=/tmp/market-predictor/models
-MARKET_DATA_CACHE_DIR=/tmp/market-predictor/market_data_cache
-ALPHA_OUTPUT_DIR=/tmp/market-predictor/outputs
-```
-
-If Render still requires payment information, skip Render entirely. The Vercel + GitHub Actions path remains the free path.
-
-## Optional Vercel Env For Backend
-
-If you do have a working Render backend, set this in Vercel and redeploy:
-
-```text
-NEXT_PUBLIC_API_BASE_URL=https://<YOUR_RENDER_BACKEND_URL>
-```
-
-If the backend sleeps or fails, the frontend still falls back to the GitHub static JSON snapshot.
-
-## What Free Deployment Loses
-
-Compared with paid always-on backend:
-
-- no always-on backend guarantee,
-- no persistent backend SQLite storage on Render Free,
-- no reliable in-process APScheduler on a sleeping Render Free service,
-- frontend may show the latest committed snapshot instead of freshly computed API results,
-- GitHub Actions schedule can be delayed or skipped during platform load.
-
-The core forward-only observation remains free because GitHub Actions runs the tracker and commits the resulting audit files.
-
-## Quick Checks
-
-After GitHub Actions runs:
-
-- Open `outputs/forward_alpha_v1_report.md`.
-- Open `frontend/public/alpha-v1-status.json`.
-- Open `frontend/public/alpha-v1-analogs.json`.
-
-After Vercel deploys:
-
-- Open the Vercel URL on mobile.
-- Confirm Alpha v1 status, live signal, symbol bounce probabilities, and Historical Analogs are visible.
+Do not use any backend deployment that requires synthetic live signals, threshold changes, or Alpha v1 rule changes.
 
 Alpha v1 remains `RESEARCH ALPHA CANDIDATE`.

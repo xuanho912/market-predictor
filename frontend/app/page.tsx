@@ -1,7 +1,7 @@
 import { ProbabilityCard } from "../components/probability-card";
 import { getAlphaV1Analogs, getAlphaV1Status, getLatestPrediction } from "../lib/api";
 
-export const dynamic = "force-dynamic";
+export const dynamic = "force-static";
 
 function pct(value: number) {
   return `${Math.round(value * 100)}%`;

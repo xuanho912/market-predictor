@@ -81,22 +81,29 @@ Use `docker-compose.yml` as the local deployment baseline:
 4. Mount persistent storage or configure a database for prediction records, feature snapshots, labels, calibration tables, and model registry metadata.
 5. Schedule data updates and model evaluation outside the frontend.
 
-Free-first cloud deployment files are included:
+Free-first cloud deployment uses GitHub only:
 
-- `.github/workflows/forward-alpha-v1.yml`: runs the frozen Alpha v1 forward tracker on GitHub Actions and commits updated `outputs/`.
+- `.github/workflows/forward-alpha-v1.yml`: runs the frozen Alpha v1 forward tracker, commits updated `outputs/`, builds the static frontend, and deploys GitHub Pages.
 - `scripts/export_static_alpha_v1.py`: exports committed tracker results to frontend-readable static JSON.
-- `frontend/vercel.json`: deploys the Next.js PWA from the `frontend` directory.
-- `render.yaml`: optional Render Free Web Service backend config, with no disk and no paid instance.
-- `docs/cloud_deployment.md`: no-card, free-first deployment instructions.
+- `frontend/next.config.js`: switches to static export when `GITHUB_PAGES=true`.
+- `docs/cloud_deployment.md`: no-card, GitHub Pages deployment instructions.
 
-The recommended free path is Vercel Free frontend plus GitHub Actions daily tracker. If Render asks for payment information, skip Render. The frontend falls back to GitHub-hosted static snapshots:
+The recommended free path is GitHub Actions plus GitHub Pages. No Vercel, no Render, no payment information.
+
+Published URL after Pages is enabled:
+
+```text
+https://xuanho912.github.io/market-predictor/
+```
+
+The static page reads the latest committed snapshots:
 
 ```text
 frontend/public/alpha-v1-status.json
 frontend/public/alpha-v1-analogs.json
 ```
 
-If a free backend is available, set Vercel `NEXT_PUBLIC_API_BASE_URL` to the backend URL. If not, leave it unset. Codex cannot create Render/Vercel public URLs without the owner's browser authorization on those platforms.
+If a live backend is added later, set `NEXT_PUBLIC_API_BASE_URL` during the frontend build. This is optional and not required for the free Pages path.
 
 ## Update Data
 
@@ -242,7 +249,7 @@ Free cloud scheduling uses GitHub Actions:
 .github/workflows/forward-alpha-v1.yml
 ```
 
-It runs on weekdays at `22:37 UTC`, updates `outputs/forward_alpha_v1_*`, exports static frontend JSON, and commits the changes back to the repository. This is the preferred no-card option because Render Free services can sleep and lose local filesystem writes.
+It runs on weekdays at `22:37 UTC`, updates `outputs/forward_alpha_v1_*`, exports static frontend JSON, commits the changes back to the repository, builds the static frontend, and deploys GitHub Pages. This is the preferred no-card option because Render Free services can sleep and lose local filesystem writes.
 
 ## Historical Analog Engine
 
