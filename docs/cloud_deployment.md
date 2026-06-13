@@ -118,12 +118,13 @@ GitHub Pages can take a few minutes to publish after the first deployment.
 
 The GitHub Pages page shows:
 
-- Alpha v1 status.
-- live signal.
-- SPY / QQQ / IWM / DIA bounce probability.
-- distance to threshold.
-- Historical Analogs.
-- latest committed forward-only observation snapshot.
+- Market Prediction Dashboard in Chinese.
+- SPY / QQQ / IWM / DIA market cards.
+- Current state, live signal, bounce probability, downside risk, and trend reversal probability.
+- Past price plus simulated future paths.
+- Base, bounce, bearish, and historical analog scenarios.
+- Historical analog dates and invalidation conditions.
+- Latest committed forward-only observation snapshot.
 
 No backend is required for this free path.
 

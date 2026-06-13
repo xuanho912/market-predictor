@@ -84,7 +84,7 @@ Use `docker-compose.yml` as the local deployment baseline:
 Free-first cloud deployment uses GitHub only:
 
 - `.github/workflows/forward-alpha-v1.yml`: runs the frozen Alpha v1 forward tracker, commits updated `outputs/`, builds the static frontend, and deploys GitHub Pages.
-- `scripts/export_static_alpha_v1.py`: exports committed tracker results to frontend-readable static JSON.
+- `scripts/export_static_alpha_v1.py`: exports committed tracker results to frontend-readable static JSON, including the Market Prediction Dashboard payload.
 - `frontend/next.config.js`: switches to static export when `GITHUB_PAGES=true`.
 - `docs/cloud_deployment.md`: no-card, GitHub Pages deployment instructions.
 
@@ -101,6 +101,9 @@ The static page reads the latest committed snapshots:
 ```text
 frontend/public/alpha-v1-status.json
 frontend/public/alpha-v1-analogs.json
+frontend/public/market-overview.json
+frontend/public/simulated-paths.json
+frontend/public/prediction-dashboard.json
 ```
 
 If a live backend is added later, set `NEXT_PUBLIC_API_BASE_URL` during the frontend build. This is optional and not required for the free Pages path.

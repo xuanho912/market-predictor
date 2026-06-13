@@ -105,6 +105,80 @@ export type HistoricalAnalogReport = {
   };
 };
 
+export type MarketSymbolOverview = {
+  symbol: string;
+  name: string;
+  current_price: number | null;
+  market_state: "oversold_bounce" | "risk_off" | "sideways" | "recovery" | "panic" | "no_edge";
+  bounce_probability: number;
+  downside_continuation_probability: number;
+  trend_reversal_probability: number;
+  historical_support: "supportive" | "weak_or_conflicting" | "neutral";
+  live_signal: boolean;
+  distance_to_threshold: number | null;
+  as_of: string | null;
+  data_source_status?: string | null;
+};
+
+export type SimulatedSymbolPaths = {
+  symbol: string;
+  name: string;
+  current_price: number | null;
+  market_state: string;
+  live_signal: boolean;
+  bounce_probability: number;
+  downside_continuation_probability: number;
+  trend_reversal_probability: number;
+  historical_support: string;
+  paths: {
+    dates: string[];
+    split_index: number;
+    historical_price: Array<number | null>;
+    expected_path: Array<number | null>;
+    bounce_path: Array<number | null>;
+    bearish_path: Array<number | null>;
+    analog_average_path: Array<number | null>;
+    confidence_band_upper: Array<number | null>;
+    confidence_band_lower: Array<number | null>;
+  };
+  horizon_summary: Record<string, {
+    expected_return: number;
+    up_probability: number;
+    down_probability: number;
+    risk_note: string;
+  }>;
+  scenario_cards: Array<{
+    name: string;
+    name_cn: string;
+    summary_cn: string;
+    return_20d: number;
+    probability_weight: number;
+  }>;
+  risk_invalidation_conditions: string[];
+};
+
+export type PredictionDashboard = {
+  generated_by: string;
+  source: string;
+  as_of: string | null;
+  status_note: string;
+  overview: {
+    as_of: string | null;
+    strongest_symbol: string;
+    dashboard_status: string;
+    status_note: string;
+    symbols: Record<string, MarketSymbolOverview>;
+  };
+  simulated_paths: {
+    as_of: string | null;
+    disclaimer: string;
+    symbols: Record<string, SimulatedSymbolPaths>;
+  };
+  alpha_status: AlphaV1Status;
+  forward_report: unknown;
+  analogs: Record<string, HistoricalAnalogReport>;
+};
+
 const fallbackPrediction: PredictionSnapshot = {
   forecast_timestamp: new Date().toISOString(),
   symbol: "SPY",
@@ -169,6 +243,28 @@ const fallbackHistoricalAnalogReport: HistoricalAnalogReport = {
   },
 };
 
+const fallbackDashboard: PredictionDashboard = {
+  generated_by: "frontend-fallback",
+  source: "frontend-fallback",
+  as_of: null,
+  status_note: "暂无可用的预测面板数据。",
+  overview: {
+    as_of: null,
+    strongest_symbol: "SPY",
+    dashboard_status: "no_data",
+    status_note: "暂无可用的预测面板数据。",
+    symbols: {},
+  },
+  simulated_paths: {
+    as_of: null,
+    disclaimer: "模拟路径是概率情景，不是确定性预测。",
+    symbols: {},
+  },
+  alpha_status: fallbackAlphaV1Status,
+  forward_report: null,
+  analogs: {},
+};
+
 const staticDataBaseUrl =
   process.env.NEXT_PUBLIC_STATIC_DATA_BASE_URL ??
   "https://raw.githubusercontent.com/xuanho912/market-predictor/main/frontend/public";
@@ -224,6 +320,24 @@ export async function getAlphaV1Analogs(symbol = "SPY"): Promise<HistoricalAnalo
     return response.json();
   } catch {
     return getStaticAlphaV1Analogs(symbol);
+  }
+}
+
+export async function getPredictionDashboard(): Promise<PredictionDashboard> {
+  const localPayload = await readLocalStaticJson<PredictionDashboard>("prediction-dashboard.json");
+  if (localPayload?.overview?.symbols) {
+    return localPayload;
+  }
+  try {
+    const response = await fetch(`${staticDataBaseUrl}/prediction-dashboard.json`, {
+      next: { revalidate: 300 },
+    });
+    if (!response.ok) {
+      return fallbackDashboard;
+    }
+    return response.json();
+  } catch {
+    return fallbackDashboard;
   }
 }
 

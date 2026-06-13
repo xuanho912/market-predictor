@@ -1,8 +1,11 @@
 from __future__ import annotations
 
 import json
+import math
 import sys
+from datetime import datetime, timedelta
 from pathlib import Path
+from typing import Any
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -11,10 +14,19 @@ if str(BACKEND_ROOT) not in sys.path:
     sys.path.insert(0, str(BACKEND_ROOT))
 
 from app.services.analysis.historical_analogs import build_alpha_v1_analog_report
+from app.services.data_providers.auto_download import refresh_market_data
 from app.services.validation.forward_alpha_tracker import alpha_status_payload, report_payload
 
 
 SYMBOLS = ("SPY", "QQQ", "IWM", "DIA")
+SYMBOL_NAMES = {
+    "SPY": "S&P 500",
+    "QQQ": "Nasdaq 100",
+    "IWM": "Russell 2000",
+    "DIA": "Dow Jones",
+}
+HORIZONS = (3, 5, 10, 20, 60)
+PAST_WINDOW = 90
 
 
 def main() -> int:
@@ -24,37 +36,375 @@ def main() -> int:
     alpha_status = alpha_status_payload()
     alpha_report = report_payload()
     analogs = {symbol: build_alpha_v1_analog_report(symbol, top_k=20) for symbol in SYMBOLS}
+    price_history = _load_price_history()
 
-    (public_dir / "alpha-v1-status.json").write_text(
-        json.dumps(
-            {
-                "generated_by": "scripts/export_static_alpha_v1.py",
-                "source": "github_actions_forward_tracker_outputs",
-                "alpha_status": alpha_status,
-                "forward_report": alpha_report,
-            },
-            indent=2,
-            sort_keys=True,
-        )
-        + "\n",
-        encoding="utf-8",
-    )
-    (public_dir / "alpha-v1-analogs.json").write_text(
-        json.dumps(
-            {
-                "generated_by": "scripts/export_static_alpha_v1.py",
-                "source": "github_actions_forward_tracker_outputs",
-                "analogs": analogs,
-            },
-            indent=2,
-            sort_keys=True,
-        )
-        + "\n",
-        encoding="utf-8",
-    )
+    market_overview = _build_market_overview(alpha_status, analogs, price_history)
+    simulated_paths = _build_simulated_paths(alpha_status, analogs, price_history, market_overview)
+    dashboard = {
+        "generated_by": "scripts/export_static_alpha_v1.py",
+        "source": "github_actions_forward_tracker_outputs",
+        "as_of": _latest_as_of(alpha_status, analogs),
+        "status_note": "Alpha v1 remains a research candidate. Simulated paths are probabilistic scenarios, not guaranteed forecasts.",
+        "overview": market_overview,
+        "simulated_paths": simulated_paths,
+        "alpha_status": alpha_status,
+        "forward_report": alpha_report,
+        "analogs": analogs,
+    }
+
+    _write_json(public_dir / "alpha-v1-status.json", {
+        "generated_by": "scripts/export_static_alpha_v1.py",
+        "source": "github_actions_forward_tracker_outputs",
+        "alpha_status": alpha_status,
+        "forward_report": alpha_report,
+    })
+    _write_json(public_dir / "alpha-v1-analogs.json", {
+        "generated_by": "scripts/export_static_alpha_v1.py",
+        "source": "github_actions_forward_tracker_outputs",
+        "analogs": analogs,
+    })
+    _write_json(public_dir / "market-overview.json", market_overview)
+    _write_json(public_dir / "simulated-paths.json", simulated_paths)
+    _write_json(public_dir / "prediction-dashboard.json", dashboard)
+
     print("wrote frontend/public/alpha-v1-status.json")
     print("wrote frontend/public/alpha-v1-analogs.json")
+    print("wrote frontend/public/market-overview.json")
+    print("wrote frontend/public/simulated-paths.json")
+    print("wrote frontend/public/prediction-dashboard.json")
     return 0
+
+
+def _load_price_history() -> dict[str, list[dict[str, Any]]]:
+    downloaded = refresh_market_data(symbols=SYMBOLS, lookback_days=220)
+    history: dict[str, list[dict[str, Any]]] = {}
+    for series in downloaded:
+        clean_rows = [
+            {
+                "date": str(row["date"]),
+                "close": float(row["close"]),
+                "source": series.source,
+            }
+            for row in series.rows
+            if row.get("date") and float(row.get("close") or 0.0) > 0
+        ]
+        history[series.symbol] = clean_rows[-PAST_WINDOW:]
+    return history
+
+
+def _build_market_overview(
+    alpha_status: dict[str, Any],
+    analogs: dict[str, dict[str, Any]],
+    price_history: dict[str, list[dict[str, Any]]],
+) -> dict[str, Any]:
+    symbols: dict[str, Any] = {}
+    latest_bounce = alpha_status.get("latest_bounce_probability_by_symbol", {})
+    distance = alpha_status.get("distance_to_threshold_by_symbol", {})
+    live_symbols = {item.get("symbol") for item in alpha_status.get("live_signals", [])}
+    for symbol in SYMBOLS:
+        analog = analogs.get(symbol, {})
+        distribution = analog.get("historical_distribution", {})
+        bounce_probability = _float_or_none(latest_bounce.get(symbol))
+        if bounce_probability is None:
+            bounce_probability = _float_or_none(analog.get("current_bounce_probability")) or 0.0
+        live_signal = symbol in live_symbols or bool(analog.get("current_alpha_v1_triggered"))
+        historical_support = analog.get("interpretation", {}).get("historical_support", "neutral")
+        downside = _downside_continuation_probability(distribution)
+        reversal = _trend_reversal_probability(distribution)
+        current_price = _current_price(symbol, alpha_status, price_history)
+        state = _market_state(live_signal, bounce_probability, historical_support, downside, analog.get("current_regime"))
+        symbols[symbol] = {
+            "symbol": symbol,
+            "name": SYMBOL_NAMES[symbol],
+            "current_price": current_price,
+            "market_state": state,
+            "bounce_probability": bounce_probability,
+            "downside_continuation_probability": downside,
+            "trend_reversal_probability": reversal,
+            "historical_support": historical_support,
+            "live_signal": live_signal,
+            "distance_to_threshold": _float_or_none(distance.get(symbol)),
+            "as_of": analog.get("as_of") or alpha_status.get("latest_checked_date"),
+            "data_source_status": alpha_status.get("data_source_status") or analog.get("data_source_status"),
+        }
+    strongest = max(symbols.values(), key=lambda item: item["bounce_probability"])
+    return {
+        "as_of": alpha_status.get("latest_checked_date") or _latest_as_of(alpha_status, analogs),
+        "symbols": symbols,
+        "strongest_symbol": strongest["symbol"],
+        "dashboard_status": "forward_only_observation",
+        "status_note": "Alpha v1 is still a research candidate. No auto-trading is enabled.",
+    }
+
+
+def _build_simulated_paths(
+    alpha_status: dict[str, Any],
+    analogs: dict[str, dict[str, Any]],
+    price_history: dict[str, list[dict[str, Any]]],
+    overview: dict[str, Any],
+) -> dict[str, Any]:
+    payload: dict[str, Any] = {
+        "as_of": overview.get("as_of"),
+        "disclaimer": "Simulated future paths are probabilistic scenarios based on current signals and historical analogs, not guaranteed forecasts.",
+        "symbols": {},
+    }
+    for symbol in SYMBOLS:
+        rows = price_history.get(symbol, [])
+        if not rows:
+            continue
+        current_price = overview["symbols"][symbol]["current_price"] or rows[-1]["close"]
+        cases = analogs.get(symbol, {}).get("top_similar_cases", [])
+        horizon_returns = _scenario_returns(cases)
+        past_dates = [row["date"] for row in rows]
+        past_prices = [row["close"] for row in rows]
+        future_dates = _future_business_dates(rows[-1]["date"], max(HORIZONS))
+        chart_dates = past_dates + future_dates[1:]
+
+        analog_average = _path_from_horizon_returns(current_price, horizon_returns["average"])
+        bounce_path = _path_from_horizon_returns(current_price, horizon_returns["best_quartile"])
+        bearish_path = _path_from_horizon_returns(current_price, horizon_returns["worst_quartile"])
+        expected_path = _expected_path(current_price, horizon_returns, overview["symbols"][symbol])
+        confidence_upper = [max(values) for values in zip(bounce_path, analog_average, expected_path)]
+        confidence_lower = [min(values) for values in zip(bearish_path, analog_average, expected_path)]
+
+        payload["symbols"][symbol] = {
+            "symbol": symbol,
+            "name": SYMBOL_NAMES[symbol],
+            "current_price": current_price,
+            "market_state": overview["symbols"][symbol]["market_state"],
+            "live_signal": overview["symbols"][symbol]["live_signal"],
+            "bounce_probability": overview["symbols"][symbol]["bounce_probability"],
+            "downside_continuation_probability": overview["symbols"][symbol]["downside_continuation_probability"],
+            "trend_reversal_probability": overview["symbols"][symbol]["trend_reversal_probability"],
+            "historical_support": overview["symbols"][symbol]["historical_support"],
+            "paths": {
+                "dates": chart_dates,
+                "split_index": len(past_dates) - 1,
+                "historical_price": past_prices + [None for _ in future_dates[1:]],
+                "expected_path": [None for _ in past_dates[:-1]] + expected_path,
+                "bounce_path": [None for _ in past_dates[:-1]] + bounce_path,
+                "bearish_path": [None for _ in past_dates[:-1]] + bearish_path,
+                "analog_average_path": [None for _ in past_dates[:-1]] + analog_average,
+                "confidence_band_upper": [None for _ in past_dates[:-1]] + confidence_upper,
+                "confidence_band_lower": [None for _ in past_dates[:-1]] + confidence_lower,
+            },
+            "horizon_summary": _horizon_summary(horizon_returns, overview["symbols"][symbol]),
+            "scenario_cards": _scenario_cards(horizon_returns, overview["symbols"][symbol]),
+            "risk_invalidation_conditions": _risk_invalidation_conditions(overview["symbols"][symbol]),
+        }
+    return payload
+
+
+def _scenario_returns(cases: list[dict[str, Any]]) -> dict[str, dict[int, float]]:
+    if not cases:
+        return {
+            "average": {horizon: 0.0 for horizon in HORIZONS},
+            "best_quartile": {horizon: 0.0 for horizon in HORIZONS},
+            "worst_quartile": {horizon: 0.0 for horizon in HORIZONS},
+        }
+    sorted_cases = sorted(cases, key=lambda case: _float_or_none(case.get("forward_return_20d")) or 0.0)
+    quartile = max(1, math.ceil(len(sorted_cases) * 0.25))
+    worst = sorted_cases[:quartile]
+    best = sorted_cases[-quartile:]
+    return {
+        "average": {h: _mean([_float_or_none(case.get(f"forward_return_{h}d")) for case in cases]) for h in HORIZONS},
+        "best_quartile": {h: _mean([_float_or_none(case.get(f"forward_return_{h}d")) for case in best]) for h in HORIZONS},
+        "worst_quartile": {h: _mean([_float_or_none(case.get(f"forward_return_{h}d")) for case in worst]) for h in HORIZONS},
+    }
+
+
+def _path_from_horizon_returns(current_price: float, returns_by_horizon: dict[int, float]) -> list[float]:
+    points = {0: 0.0, **returns_by_horizon}
+    values: list[float] = []
+    sorted_horizons = sorted(points)
+    for day in range(0, max(HORIZONS) + 1):
+        lower = max(h for h in sorted_horizons if h <= day)
+        upper = min(h for h in sorted_horizons if h >= day)
+        if lower == upper:
+            value = points[lower]
+        else:
+            weight = (day - lower) / (upper - lower)
+            value = points[lower] + (points[upper] - points[lower]) * weight
+        values.append(round(current_price * (1 + value), 4))
+    return values
+
+
+def _expected_path(current_price: float, scenario_returns: dict[str, dict[int, float]], overview: dict[str, Any]) -> list[float]:
+    bounce_weight = 0.25 + (0.25 if overview["live_signal"] else 0.0) + overview["bounce_probability"] * 0.25
+    bearish_weight = 0.20 + overview["downside_continuation_probability"] * 0.30
+    if overview["historical_support"] == "supportive":
+        bounce_weight += 0.10
+    if overview["market_state"] in {"risk_off", "panic"}:
+        bearish_weight += 0.15
+    base_weight = max(0.10, 1.0 - bounce_weight - bearish_weight)
+    total = bounce_weight + bearish_weight + base_weight
+    bounce_weight, bearish_weight, base_weight = bounce_weight / total, bearish_weight / total, base_weight / total
+    blended = {
+        horizon: (
+            scenario_returns["best_quartile"][horizon] * bounce_weight
+            + scenario_returns["worst_quartile"][horizon] * bearish_weight
+            + scenario_returns["average"][horizon] * base_weight
+        )
+        for horizon in HORIZONS
+    }
+    return _path_from_horizon_returns(current_price, blended)
+
+
+def _horizon_summary(scenario_returns: dict[str, dict[int, float]], overview: dict[str, Any]) -> dict[str, Any]:
+    summary: dict[str, Any] = {}
+    for horizon in HORIZONS:
+        expected = scenario_returns["average"][horizon]
+        up_probability = _clip(0.45 + overview["bounce_probability"] * 0.35 + max(expected, 0) * 3.0, 0.0, 0.95)
+        down_probability = _clip(0.35 + overview["downside_continuation_probability"] * 0.35 + max(-expected, 0) * 3.0, 0.0, 0.95)
+        total = up_probability + down_probability
+        if total > 1:
+            up_probability, down_probability = up_probability / total, down_probability / total
+        summary[f"{horizon}d"] = {
+            "expected_return": expected,
+            "up_probability": up_probability,
+            "down_probability": down_probability,
+            "risk_note": _risk_note_for_horizon(horizon, overview),
+        }
+    return summary
+
+
+def _scenario_cards(scenario_returns: dict[str, dict[int, float]], overview: dict[str, Any]) -> list[dict[str, Any]]:
+    return [
+        {
+            "name": "Base case",
+            "name_cn": "基准情景",
+            "summary_cn": "按最相似历史样本的平均路径推演。",
+            "return_20d": scenario_returns["average"][20],
+            "probability_weight": _clip(0.45 - overview["downside_continuation_probability"] * 0.15, 0.15, 0.65),
+        },
+        {
+            "name": "Bounce case",
+            "name_cn": "反弹情景",
+            "summary_cn": "如果 Alpha v1 信号继续有效，路径更接近历史上较好的反抽样本。",
+            "return_20d": scenario_returns["best_quartile"][20],
+            "probability_weight": _clip(overview["bounce_probability"], 0.05, 0.80),
+        },
+        {
+            "name": "Bearish case",
+            "name_cn": "失败反弹情景",
+            "summary_cn": "如果波动和信用代理恶化，路径更接近历史上较差的一组样本。",
+            "return_20d": scenario_returns["worst_quartile"][20],
+            "probability_weight": _clip(overview["downside_continuation_probability"], 0.05, 0.80),
+        },
+        {
+            "name": "Historical analog case",
+            "name_cn": "历史相似情景",
+            "summary_cn": "只看最相似历史样本后的实际表现，不做确定性预测。",
+            "return_20d": scenario_returns["average"][20],
+            "probability_weight": 0.50 if overview["historical_support"] == "supportive" else 0.35,
+        },
+    ]
+
+
+def _risk_invalidation_conditions(overview: dict[str, Any]) -> list[str]:
+    conditions = [
+        "VIX 重新快速上升，说明波动压力没有解除。",
+        "HYG 明显走弱或信用代理指标恶化。",
+        "价格跌破最近低点，反弹候选失效。",
+        "历史相似情景支持度从 supportive 转为 weak_or_conflicting。",
+    ]
+    if overview["market_state"] in {"risk_off", "panic"}:
+        conditions.insert(0, "市场状态仍处于 risk_off / panic，反弹更容易失败。")
+    return conditions
+
+
+def _market_state(
+    live_signal: bool,
+    bounce_probability: float,
+    historical_support: str,
+    downside_probability: float,
+    regime: str | None,
+) -> str:
+    if regime in {"crisis", "panic", "crisis_mode"}:
+        return "panic"
+    if downside_probability >= 0.65:
+        return "risk_off"
+    if live_signal and bounce_probability >= 0.50:
+        return "oversold_bounce"
+    if live_signal or historical_support == "supportive":
+        return "recovery"
+    if bounce_probability < 0.25 and historical_support != "supportive":
+        return "no_edge"
+    return "sideways"
+
+
+def _downside_continuation_probability(distribution: dict[str, Any]) -> float:
+    avg_20d = _float_or_none(distribution.get("avg_return_20d")) or 0.0
+    hit_20d = _float_or_none(distribution.get("hit_rate_20d"))
+    worst_20d = _float_or_none(distribution.get("worst_case_20d")) or 0.0
+    base = 0.45
+    base += _clip(-avg_20d * 4.0, 0.0, 0.25)
+    base += _clip(-worst_20d * 1.5, 0.0, 0.20)
+    if hit_20d is not None:
+        base += _clip((0.50 - hit_20d) * 0.50, -0.15, 0.20)
+    return _clip(base, 0.05, 0.95)
+
+
+def _trend_reversal_probability(distribution: dict[str, Any]) -> float:
+    avg_20d = _float_or_none(distribution.get("avg_return_20d")) or 0.0
+    avg_60d = _float_or_none(distribution.get("avg_return_60d")) or 0.0
+    hit_20d = _float_or_none(distribution.get("hit_rate_20d")) or 0.5
+    return _clip(0.30 + avg_20d * 3.0 + avg_60d * 1.5 + (hit_20d - 0.50) * 0.35, 0.05, 0.90)
+
+
+def _current_price(symbol: str, alpha_status: dict[str, Any], price_history: dict[str, list[dict[str, Any]]]) -> float | None:
+    for signal in alpha_status.get("live_signals", []):
+        if signal.get("symbol") == symbol and signal.get("close_price") is not None:
+            return float(signal["close_price"])
+    rows = price_history.get(symbol, [])
+    return float(rows[-1]["close"]) if rows else None
+
+
+def _future_business_dates(start_date: str, days: int) -> list[str]:
+    current = datetime.fromisoformat(start_date).date()
+    dates: list[str] = []
+    while len(dates) < days + 1:
+        if len(dates) == 0:
+            dates.append(current.isoformat())
+        current += timedelta(days=1)
+        if current.weekday() < 5:
+            dates.append(current.isoformat())
+    return dates[: days + 1]
+
+
+def _latest_as_of(alpha_status: dict[str, Any], analogs: dict[str, dict[str, Any]]) -> str | None:
+    return alpha_status.get("latest_checked_date") or max((analog.get("as_of") for analog in analogs.values() if analog.get("as_of")), default=None)
+
+
+def _mean(values: list[float | None]) -> float:
+    clean = [value for value in values if value is not None and math.isfinite(value)]
+    return sum(clean) / len(clean) if clean else 0.0
+
+
+def _float_or_none(value: Any) -> float | None:
+    if value is None or value == "":
+        return None
+    try:
+        parsed = float(value)
+    except (TypeError, ValueError):
+        return None
+    return parsed if math.isfinite(parsed) else None
+
+
+def _clip(value: float, lower: float, upper: float) -> float:
+    return min(upper, max(lower, value))
+
+
+def _risk_note_for_horizon(horizon: int, overview: dict[str, Any]) -> str:
+    if overview["market_state"] in {"risk_off", "panic"}:
+        return f"{horizon}日路径受风险偏好和波动压力影响较大。"
+    if overview["live_signal"]:
+        return f"{horizon}日路径偏向反弹观察，但仍需等待未来真实结果验证。"
+    return f"{horizon}日没有强信号，按历史相似情景做中性观察。"
+
+
+def _write_json(path: Path, payload: dict[str, Any]) -> None:
+    path.write_text(json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":

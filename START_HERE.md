@@ -35,6 +35,24 @@ Set `Build and deployment -> Source -> GitHub Actions`.
 
 Details are in `docs/cloud_deployment.md`.
 
+## Dashboard Output
+
+The GitHub Pages site is a Chinese Market Prediction Dashboard. It shows:
+
+- SPY / QQQ / IWM / DIA market cards.
+- Current state, live signal, bounce probability, downside risk, and trend reversal probability.
+- Past price plus simulated future paths.
+- Base, bounce, bearish, and historical analog scenarios.
+- Historical analog dates and invalidation conditions.
+
+Daily workflow outputs:
+
+```text
+frontend/public/market-overview.json
+frontend/public/simulated-paths.json
+frontend/public/prediction-dashboard.json
+```
+
 ## Daily Forward Observation
 
 Free persistent daily observation is handled by GitHub Actions:
