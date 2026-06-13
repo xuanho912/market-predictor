@@ -67,6 +67,7 @@ outputs/high_confidence_signal_report.md
 Current v2 data reality:
 
 - Available: SPY / QQQ / IWM / DIA, VIX, HYG, LQD, TLT, UUP, ^TNX, sector ETFs when public data is available.
+- Optional Finnhub: quotes, candle fallback, market status, economic calendar, market news, news sentiment. It requires GitHub Actions Secret `FINNHUB_API_KEY`.
 - Proxy only: breadth, flow, liquidity, market structure, credit if FRED OAS is unavailable.
 - Fallback only: macro/event calendar.
 - Still missing unless a real feed is added: put/call ratio, gamma exposure, true fund flow, constituent-level breadth.

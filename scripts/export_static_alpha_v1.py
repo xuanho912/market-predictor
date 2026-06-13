@@ -25,6 +25,7 @@ from scripts.market_intelligence_v3 import (
     build_market_intelligence_v3,
     render_high_confidence_signal_report_markdown,
 )
+from scripts.providers.finnhub_provider import fetch_finnhub_bundle
 
 
 SYMBOLS = ("SPY", "QQQ", "IWM", "DIA")
@@ -49,6 +50,7 @@ def main() -> int:
     market_symbols = tuple(dict.fromkeys(SYMBOLS + SUPPORT_SYMBOLS + V3_MARKET_SYMBOLS))
     downloaded = refresh_market_data(symbols=market_symbols, lookback_days=520)
     series_by_symbol = {series.symbol: series for series in downloaded}
+    finnhub_bundle = fetch_finnhub_bundle(symbols=SYMBOLS, lookback_days=520)
     price_history = _load_price_history(series_by_symbol)
 
     market_overview = _build_market_overview(alpha_status, analogs, price_history)
@@ -65,6 +67,7 @@ def main() -> int:
         simulated_paths=simulated_paths,
         analogs=analogs,
         prior_intelligence=intelligence_v2,
+        finnhub_bundle=finnhub_bundle,
     )
     dashboard = {
         "generated_by": "scripts/export_static_alpha_v1.py",

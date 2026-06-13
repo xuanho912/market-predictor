@@ -111,6 +111,14 @@ export type DataQualityReport = {
   summary: {
     data_source_status: string;
     real_market_data: boolean;
+    finnhub_available?: boolean;
+    finnhub_missing?: boolean;
+    finnhub_rate_limited?: boolean;
+    yahoo_fallback_used?: boolean;
+    fred_required?: boolean;
+    options_required?: boolean;
+    breadth_required?: boolean;
+    flow_required?: boolean;
     fallback_used: boolean;
     synthetic_used: boolean;
     stale_data: boolean;
@@ -125,7 +133,7 @@ export type DataQualityReport = {
   sources: Record<string, {
     symbol: string;
     source: string;
-    status?: "available" | "partial" | "proxy" | "fallback" | "missing" | "stale" | "not_available";
+    status?: "available" | "partial" | "proxy" | "fallback" | "missing" | "stale" | "rate_limited" | "not_available";
     rows: number;
     latest_date: string | null;
     real_data: boolean;
@@ -135,7 +143,7 @@ export type DataQualityReport = {
     point_in_time_safe: boolean;
   }>;
   coverage_categories: Record<string, {
-    status: "available" | "partial" | "proxy" | "fallback" | "missing" | "stale" | "not_available";
+    status: "available" | "partial" | "proxy" | "fallback" | "missing" | "stale" | "rate_limited" | "not_available";
     detail: string;
     available_items: number;
     expected_items: number;
@@ -357,6 +365,7 @@ export type PredictionDashboard = {
     model_confidence_by_symbol: Record<string, ModelConfidence>;
     edge_status_by_symbol: Record<string, MarketEdgeStatus>;
     high_confidence_signal_report: Record<string, unknown>;
+    finnhub_status?: Record<string, unknown>;
     warnings: string[];
   };
   feature_snapshot_v2?: Record<string, unknown>;

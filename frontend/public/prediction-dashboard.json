@@ -2646,7 +2646,7 @@
       },
       "macro": {
         "available_items": 1,
-        "detail": "Rule-based CPI/FOMC/NFP/options-expiry/month-end calendar risk, not a live event feed",
+        "detail": "Finnhub economic calendar if available, otherwise rule-based CPI/FOMC/NFP/options-expiry/month-end calendar risk",
         "expected_items": 5,
         "fallback_used": true,
         "proxy_used": false,
@@ -2661,6 +2661,15 @@
         "proxy_used": true,
         "real_data": false,
         "status": "proxy"
+      },
+      "news": {
+        "available_items": 0,
+        "detail": "Finnhub market news risk score and daily market brief",
+        "expected_items": 1,
+        "fallback_used": false,
+        "proxy_used": false,
+        "real_data": false,
+        "status": "missing"
       },
       "options": {
         "available_items": 5,
@@ -2699,7 +2708,7 @@
         "status": "available"
       }
     },
-    "generated_at": "2026-06-13T16:53:23.874811+00:00",
+    "generated_at": "2026-06-13T17:21:47.485355+00:00",
     "notes": [
       "Breadth and flow are ETF/sector proxies, not constituent-level feeds.",
       "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -2769,6 +2778,19 @@
         "stale_data": false,
         "status": "available",
         "symbol": "DIA"
+      },
+      "FINNHUB_API": {
+        "fallback_used": false,
+        "latest_date": null,
+        "missing_data": true,
+        "point_in_time_safe": false,
+        "rate_limited": false,
+        "real_data": false,
+        "rows": 1,
+        "source": "finnhub",
+        "stale_data": false,
+        "status": "missing",
+        "symbol": "FINNHUB_API"
       },
       "HYG": {
         "fallback_used": false,
@@ -3132,6 +3154,240 @@
         "status": "available",
         "symbol": "^VVIX"
       },
+      "finnhub_alternative_data": {
+        "fallback_used": false,
+        "latest_date": null,
+        "missing_data": true,
+        "point_in_time_safe": false,
+        "rate_limited": false,
+        "real_data": false,
+        "rows": 0,
+        "source": "finnhub",
+        "stale_data": false,
+        "status": "missing",
+        "symbol": "finnhub_alternative_data"
+      },
+      "finnhub_candle_DIA": {
+        "fallback_used": false,
+        "latest_date": null,
+        "missing_data": true,
+        "point_in_time_safe": false,
+        "rate_limited": false,
+        "real_data": false,
+        "rows": 0,
+        "source": "finnhub",
+        "stale_data": false,
+        "status": "missing",
+        "symbol": "finnhub_candle_DIA"
+      },
+      "finnhub_candle_IWM": {
+        "fallback_used": false,
+        "latest_date": null,
+        "missing_data": true,
+        "point_in_time_safe": false,
+        "rate_limited": false,
+        "real_data": false,
+        "rows": 0,
+        "source": "finnhub",
+        "stale_data": false,
+        "status": "missing",
+        "symbol": "finnhub_candle_IWM"
+      },
+      "finnhub_candle_QQQ": {
+        "fallback_used": false,
+        "latest_date": null,
+        "missing_data": true,
+        "point_in_time_safe": false,
+        "rate_limited": false,
+        "real_data": false,
+        "rows": 0,
+        "source": "finnhub",
+        "stale_data": false,
+        "status": "missing",
+        "symbol": "finnhub_candle_QQQ"
+      },
+      "finnhub_candle_SPY": {
+        "fallback_used": false,
+        "latest_date": null,
+        "missing_data": true,
+        "point_in_time_safe": false,
+        "rate_limited": false,
+        "real_data": false,
+        "rows": 0,
+        "source": "finnhub",
+        "stale_data": false,
+        "status": "missing",
+        "symbol": "finnhub_candle_SPY"
+      },
+      "finnhub_economic_calendar": {
+        "fallback_used": false,
+        "latest_date": null,
+        "missing_data": true,
+        "point_in_time_safe": false,
+        "rate_limited": false,
+        "real_data": false,
+        "rows": 0,
+        "source": "finnhub",
+        "stale_data": false,
+        "status": "missing",
+        "symbol": "finnhub_economic_calendar"
+      },
+      "finnhub_market_holiday": {
+        "fallback_used": false,
+        "latest_date": null,
+        "missing_data": true,
+        "point_in_time_safe": false,
+        "rate_limited": false,
+        "real_data": false,
+        "rows": 0,
+        "source": "finnhub",
+        "stale_data": false,
+        "status": "missing",
+        "symbol": "finnhub_market_holiday"
+      },
+      "finnhub_market_news": {
+        "fallback_used": false,
+        "latest_date": null,
+        "missing_data": true,
+        "point_in_time_safe": false,
+        "rate_limited": false,
+        "real_data": false,
+        "rows": 0,
+        "source": "finnhub",
+        "stale_data": false,
+        "status": "missing",
+        "symbol": "finnhub_market_news"
+      },
+      "finnhub_market_status": {
+        "fallback_used": false,
+        "latest_date": null,
+        "missing_data": true,
+        "point_in_time_safe": false,
+        "rate_limited": false,
+        "real_data": false,
+        "rows": 0,
+        "source": "finnhub",
+        "stale_data": false,
+        "status": "missing",
+        "symbol": "finnhub_market_status"
+      },
+      "finnhub_news_sentiment_DIA": {
+        "fallback_used": false,
+        "latest_date": null,
+        "missing_data": true,
+        "point_in_time_safe": false,
+        "rate_limited": false,
+        "real_data": false,
+        "rows": 0,
+        "source": "finnhub",
+        "stale_data": false,
+        "status": "missing",
+        "symbol": "finnhub_news_sentiment_DIA"
+      },
+      "finnhub_news_sentiment_IWM": {
+        "fallback_used": false,
+        "latest_date": null,
+        "missing_data": true,
+        "point_in_time_safe": false,
+        "rate_limited": false,
+        "real_data": false,
+        "rows": 0,
+        "source": "finnhub",
+        "stale_data": false,
+        "status": "missing",
+        "symbol": "finnhub_news_sentiment_IWM"
+      },
+      "finnhub_news_sentiment_QQQ": {
+        "fallback_used": false,
+        "latest_date": null,
+        "missing_data": true,
+        "point_in_time_safe": false,
+        "rate_limited": false,
+        "real_data": false,
+        "rows": 0,
+        "source": "finnhub",
+        "stale_data": false,
+        "status": "missing",
+        "symbol": "finnhub_news_sentiment_QQQ"
+      },
+      "finnhub_news_sentiment_SPY": {
+        "fallback_used": false,
+        "latest_date": null,
+        "missing_data": true,
+        "point_in_time_safe": false,
+        "rate_limited": false,
+        "real_data": false,
+        "rows": 0,
+        "source": "finnhub",
+        "stale_data": false,
+        "status": "missing",
+        "symbol": "finnhub_news_sentiment_SPY"
+      },
+      "finnhub_quote_DIA": {
+        "fallback_used": false,
+        "latest_date": null,
+        "missing_data": true,
+        "point_in_time_safe": false,
+        "rate_limited": false,
+        "real_data": false,
+        "rows": 0,
+        "source": "finnhub",
+        "stale_data": false,
+        "status": "missing",
+        "symbol": "finnhub_quote_DIA"
+      },
+      "finnhub_quote_IWM": {
+        "fallback_used": false,
+        "latest_date": null,
+        "missing_data": true,
+        "point_in_time_safe": false,
+        "rate_limited": false,
+        "real_data": false,
+        "rows": 0,
+        "source": "finnhub",
+        "stale_data": false,
+        "status": "missing",
+        "symbol": "finnhub_quote_IWM"
+      },
+      "finnhub_quote_QQQ": {
+        "fallback_used": false,
+        "latest_date": null,
+        "missing_data": true,
+        "point_in_time_safe": false,
+        "rate_limited": false,
+        "real_data": false,
+        "rows": 0,
+        "source": "finnhub",
+        "stale_data": false,
+        "status": "missing",
+        "symbol": "finnhub_quote_QQQ"
+      },
+      "finnhub_quote_SPY": {
+        "fallback_used": false,
+        "latest_date": null,
+        "missing_data": true,
+        "point_in_time_safe": false,
+        "rate_limited": false,
+        "real_data": false,
+        "rows": 0,
+        "source": "finnhub",
+        "stale_data": false,
+        "status": "missing",
+        "symbol": "finnhub_quote_SPY"
+      },
+      "finnhub_rates_data": {
+        "fallback_used": false,
+        "latest_date": null,
+        "missing_data": true,
+        "point_in_time_safe": false,
+        "rate_limited": false,
+        "real_data": false,
+        "rows": 0,
+        "source": "finnhub",
+        "stale_data": false,
+        "status": "missing",
+        "symbol": "finnhub_rates_data"
+      },
       "macro_event_calendar": {
         "detail": "CPI/FOMC/NFP/options-expiry/month-end flags are rule-based calendar approximations.",
         "fallback_used": true,
@@ -3147,9 +3403,15 @@
       }
     },
     "summary": {
+      "breadth_required": true,
       "data_completeness_score": 79,
       "data_source_status": "real_core_with_proxies",
       "fallback_used": true,
+      "finnhub_available": false,
+      "finnhub_missing": true,
+      "finnhub_rate_limited": false,
+      "flow_required": true,
+      "fred_required": true,
       "latest_date": "2026-06-12",
       "missing_data": true,
       "missing_key_sources": [
@@ -3158,19 +3420,42 @@
         "DGS2",
         "DGS3MO",
         "HY_OAS",
-        "IG_OAS"
+        "IG_OAS",
+        "FINNHUB_API",
+        "finnhub_quote_SPY",
+        "finnhub_candle_SPY",
+        "finnhub_news_sentiment_SPY",
+        "finnhub_quote_QQQ",
+        "finnhub_candle_QQQ",
+        "finnhub_news_sentiment_QQQ",
+        "finnhub_quote_IWM",
+        "finnhub_candle_IWM",
+        "finnhub_news_sentiment_IWM",
+        "finnhub_quote_DIA",
+        "finnhub_candle_DIA",
+        "finnhub_news_sentiment_DIA",
+        "finnhub_economic_calendar",
+        "finnhub_market_news",
+        "finnhub_market_status",
+        "finnhub_market_holiday",
+        "finnhub_rates_data",
+        "finnhub_alternative_data"
       ],
+      "options_required": true,
       "quality_note": "Score includes real data plus explicitly labeled proxy/fallback categories; it is not equal to institutional-grade data coverage.",
       "real_market_data": true,
       "stale_data": false,
       "synthetic_used": false,
       "target_completeness_score": 75,
-      "unavailable_categories": []
+      "unavailable_categories": [
+        "news"
+      ],
+      "yahoo_fallback_used": true
     },
     "version": "market_intelligence_engine_v3_data_quality"
   },
   "feature_snapshot_v2": {
-    "generated_at": "2026-06-13T16:51:23.423107+00:00",
+    "generated_at": "2026-06-13T17:20:26.805993+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -3408,7 +3693,7 @@
     "version": "market_intelligence_engine_v2_features"
   },
   "feature_snapshot_v3": {
-    "generated_at": "2026-06-13T16:53:23.872365+00:00",
+    "generated_at": "2026-06-13T17:21:47.484166+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -3432,6 +3717,24 @@
           "ig_oas": null,
           "ig_oas_20d_change": 0.0
         },
+        "daily_market_brief": {
+          "brief": "Finnhub quote unavailable; news risk unavailable; macro event risk flagged; rates pressure 18%.",
+          "finnhub_quote_available": false,
+          "macro_event_risk_flag": true,
+          "news_risk_score": null,
+          "rates_pressure_score": 0.18106443792778512,
+          "symbol": "DIA"
+        },
+        "finnhub": {
+          "candle_status": "missing",
+          "news_sentiment_status": "missing",
+          "quote_change_percent": null,
+          "quote_previous_close": null,
+          "quote_price": null,
+          "quote_source": null,
+          "quote_status": "missing",
+          "sentiment_score": null
+        },
         "flow_positioning_proxy": {
           "data_note": "Proxy only; no true fund-flow or positioning feed connected.",
           "defensive_vs_cyclical_20d": 0.01108516209386513,
@@ -3443,11 +3746,15 @@
         "macro_event_calendar": {
           "cpi_date": "2026-07-14",
           "data_note": "Fallback calendar approximation; replace with a real economic calendar for production.",
+          "fallback_macro_event_risk_flag": true,
+          "finnhub_economic_calendar_status": "missing_api_key",
+          "finnhub_event_count": 0,
+          "finnhub_macro_risk_events": [],
           "fomc_date": "2026-06-17",
-          "macro_event_risk_flag": false,
+          "macro_event_risk_flag": true,
           "month_end_effect": false,
           "nfp_date": "2026-07-03",
-          "options_expiry_week": false,
+          "options_expiry_week": true,
           "quarter_end_effect": false
         },
         "market_structure": {
@@ -3456,6 +3763,12 @@
           "growth_vs_large_cap_20d": 0.010734388598132472,
           "sector_participation_20d": 0.7272727272727273,
           "small_cap_vs_large_cap_20d": 0.038463142421619634
+        },
+        "news": {
+          "market_news_status": "missing_api_key",
+          "news_item_count": 0,
+          "news_risk_score": null,
+          "top_headlines": []
         },
         "price": {
           "current_price": 513.0599975585938,
@@ -3468,6 +3781,7 @@
         },
         "rates_liquidity": {
           "liquidity_stress_proxy": 0.04779144296582327,
+          "rates_pressure_score": 0.18106443792778512,
           "real_yield_proxy": null,
           "ten_year_minus_three_month": null,
           "ten_year_minus_two_year": null,
@@ -3517,6 +3831,24 @@
           "ig_oas": null,
           "ig_oas_20d_change": 0.0
         },
+        "daily_market_brief": {
+          "brief": "Finnhub quote unavailable; news risk unavailable; macro event risk flagged; rates pressure 18%.",
+          "finnhub_quote_available": false,
+          "macro_event_risk_flag": true,
+          "news_risk_score": null,
+          "rates_pressure_score": 0.18106443792778512,
+          "symbol": "IWM"
+        },
+        "finnhub": {
+          "candle_status": "missing",
+          "news_sentiment_status": "missing",
+          "quote_change_percent": null,
+          "quote_previous_close": null,
+          "quote_price": null,
+          "quote_source": null,
+          "quote_status": "missing",
+          "sentiment_score": null
+        },
         "flow_positioning_proxy": {
           "data_note": "Proxy only; no true fund-flow or positioning feed connected.",
           "defensive_vs_cyclical_20d": 0.01108516209386513,
@@ -3528,11 +3860,15 @@
         "macro_event_calendar": {
           "cpi_date": "2026-07-14",
           "data_note": "Fallback calendar approximation; replace with a real economic calendar for production.",
+          "fallback_macro_event_risk_flag": true,
+          "finnhub_economic_calendar_status": "missing_api_key",
+          "finnhub_event_count": 0,
+          "finnhub_macro_risk_events": [],
           "fomc_date": "2026-06-17",
-          "macro_event_risk_flag": false,
+          "macro_event_risk_flag": true,
           "month_end_effect": false,
           "nfp_date": "2026-07-03",
-          "options_expiry_week": false,
+          "options_expiry_week": true,
           "quarter_end_effect": false
         },
         "market_structure": {
@@ -3541,6 +3877,12 @@
           "growth_vs_large_cap_20d": 0.010734388598132472,
           "sector_participation_20d": 0.7272727272727273,
           "small_cap_vs_large_cap_20d": 0.038463142421619634
+        },
+        "news": {
+          "market_news_status": "missing_api_key",
+          "news_item_count": 0,
+          "news_risk_score": null,
+          "top_headlines": []
         },
         "price": {
           "current_price": 292.95001220703125,
@@ -3553,6 +3895,7 @@
         },
         "rates_liquidity": {
           "liquidity_stress_proxy": 0.04779144296582327,
+          "rates_pressure_score": 0.18106443792778512,
           "real_yield_proxy": null,
           "ten_year_minus_three_month": null,
           "ten_year_minus_two_year": null,
@@ -3602,6 +3945,24 @@
           "ig_oas": null,
           "ig_oas_20d_change": 0.0
         },
+        "daily_market_brief": {
+          "brief": "Finnhub quote unavailable; news risk unavailable; macro event risk flagged; rates pressure 18%.",
+          "finnhub_quote_available": false,
+          "macro_event_risk_flag": true,
+          "news_risk_score": null,
+          "rates_pressure_score": 0.18106443792778512,
+          "symbol": "QQQ"
+        },
+        "finnhub": {
+          "candle_status": "missing",
+          "news_sentiment_status": "missing",
+          "quote_change_percent": null,
+          "quote_previous_close": null,
+          "quote_price": null,
+          "quote_source": null,
+          "quote_status": "missing",
+          "sentiment_score": null
+        },
         "flow_positioning_proxy": {
           "data_note": "Proxy only; no true fund-flow or positioning feed connected.",
           "defensive_vs_cyclical_20d": 0.01108516209386513,
@@ -3613,11 +3974,15 @@
         "macro_event_calendar": {
           "cpi_date": "2026-07-14",
           "data_note": "Fallback calendar approximation; replace with a real economic calendar for production.",
+          "fallback_macro_event_risk_flag": true,
+          "finnhub_economic_calendar_status": "missing_api_key",
+          "finnhub_event_count": 0,
+          "finnhub_macro_risk_events": [],
           "fomc_date": "2026-06-17",
-          "macro_event_risk_flag": false,
+          "macro_event_risk_flag": true,
           "month_end_effect": false,
           "nfp_date": "2026-07-03",
-          "options_expiry_week": false,
+          "options_expiry_week": true,
           "quarter_end_effect": false
         },
         "market_structure": {
@@ -3626,6 +3991,12 @@
           "growth_vs_large_cap_20d": 0.010734388598132472,
           "sector_participation_20d": 0.7272727272727273,
           "small_cap_vs_large_cap_20d": 0.038463142421619634
+        },
+        "news": {
+          "market_news_status": "missing_api_key",
+          "news_item_count": 0,
+          "news_risk_score": null,
+          "top_headlines": []
         },
         "price": {
           "current_price": 721.3400268554688,
@@ -3638,6 +4009,7 @@
         },
         "rates_liquidity": {
           "liquidity_stress_proxy": 0.04779144296582327,
+          "rates_pressure_score": 0.18106443792778512,
           "real_yield_proxy": null,
           "ten_year_minus_three_month": null,
           "ten_year_minus_two_year": null,
@@ -3687,6 +4059,24 @@
           "ig_oas": null,
           "ig_oas_20d_change": 0.0
         },
+        "daily_market_brief": {
+          "brief": "Finnhub quote unavailable; news risk unavailable; macro event risk flagged; rates pressure 18%.",
+          "finnhub_quote_available": false,
+          "macro_event_risk_flag": true,
+          "news_risk_score": null,
+          "rates_pressure_score": 0.18106443792778512,
+          "symbol": "SPY"
+        },
+        "finnhub": {
+          "candle_status": "missing",
+          "news_sentiment_status": "missing",
+          "quote_change_percent": null,
+          "quote_previous_close": null,
+          "quote_price": null,
+          "quote_source": null,
+          "quote_status": "missing",
+          "sentiment_score": null
+        },
         "flow_positioning_proxy": {
           "data_note": "Proxy only; no true fund-flow or positioning feed connected.",
           "defensive_vs_cyclical_20d": 0.01108516209386513,
@@ -3698,11 +4088,15 @@
         "macro_event_calendar": {
           "cpi_date": "2026-07-14",
           "data_note": "Fallback calendar approximation; replace with a real economic calendar for production.",
+          "fallback_macro_event_risk_flag": true,
+          "finnhub_economic_calendar_status": "missing_api_key",
+          "finnhub_event_count": 0,
+          "finnhub_macro_risk_events": [],
           "fomc_date": "2026-06-17",
-          "macro_event_risk_flag": false,
+          "macro_event_risk_flag": true,
           "month_end_effect": false,
           "nfp_date": "2026-07-03",
-          "options_expiry_week": false,
+          "options_expiry_week": true,
           "quarter_end_effect": false
         },
         "market_structure": {
@@ -3711,6 +4105,12 @@
           "growth_vs_large_cap_20d": 0.010734388598132472,
           "sector_participation_20d": 0.7272727272727273,
           "small_cap_vs_large_cap_20d": 0.038463142421619634
+        },
+        "news": {
+          "market_news_status": "missing_api_key",
+          "news_item_count": 0,
+          "news_risk_score": null,
+          "top_headlines": []
         },
         "price": {
           "current_price": 741.75,
@@ -3723,6 +4123,7 @@
         },
         "rates_liquidity": {
           "liquidity_stress_proxy": 0.04779144296582327,
+          "rates_pressure_score": 0.18106443792778512,
           "real_yield_proxy": null,
           "ten_year_minus_three_month": null,
           "ten_year_minus_two_year": null,
@@ -4423,7 +4824,7 @@
       }
     },
     "conclusion": "confidence_not_yet_validated",
-    "generated_at": "2026-06-13T16:53:23.878983+00:00",
+    "generated_at": "2026-06-13T17:21:47.487380+00:00",
     "high_confidence_better_than_low_confidence": false,
     "high_vs_low_comparison_by_horizon": {
       "10d": false,
@@ -4501,7 +4902,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-06-13T16:51:23.421969+00:00",
+      "generated_at": "2026-06-13T17:20:26.805243+00:00",
       "notes": [
         "price/volatility/credit/rates/liquidity currently use public market proxies.",
         "options breadth macro flow are not treated as available unless real feeds are connected.",
@@ -4637,7 +5038,7 @@
       }
     },
     "feature_snapshot_v2": {
-      "generated_at": "2026-06-13T16:51:23.423107+00:00",
+      "generated_at": "2026-06-13T17:20:26.805993+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -4874,7 +5275,7 @@
       },
       "version": "market_intelligence_engine_v2_features"
     },
-    "generated_at": "2026-06-13T16:51:23.423674+00:00",
+    "generated_at": "2026-06-13T17:20:26.806340+00:00",
     "model_confidence_by_symbol": {
       "DIA": {
         "components": {
@@ -4995,7 +5396,7 @@
         },
         "macro": {
           "available_items": 1,
-          "detail": "Rule-based CPI/FOMC/NFP/options-expiry/month-end calendar risk, not a live event feed",
+          "detail": "Finnhub economic calendar if available, otherwise rule-based CPI/FOMC/NFP/options-expiry/month-end calendar risk",
           "expected_items": 5,
           "fallback_used": true,
           "proxy_used": false,
@@ -5010,6 +5411,15 @@
           "proxy_used": true,
           "real_data": false,
           "status": "proxy"
+        },
+        "news": {
+          "available_items": 0,
+          "detail": "Finnhub market news risk score and daily market brief",
+          "expected_items": 1,
+          "fallback_used": false,
+          "proxy_used": false,
+          "real_data": false,
+          "status": "missing"
         },
         "options": {
           "available_items": 5,
@@ -5048,7 +5458,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-06-13T16:53:23.874811+00:00",
+      "generated_at": "2026-06-13T17:21:47.485355+00:00",
       "notes": [
         "Breadth and flow are ETF/sector proxies, not constituent-level feeds.",
         "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -5118,6 +5528,19 @@
           "stale_data": false,
           "status": "available",
           "symbol": "DIA"
+        },
+        "FINNHUB_API": {
+          "fallback_used": false,
+          "latest_date": null,
+          "missing_data": true,
+          "point_in_time_safe": false,
+          "rate_limited": false,
+          "real_data": false,
+          "rows": 1,
+          "source": "finnhub",
+          "stale_data": false,
+          "status": "missing",
+          "symbol": "FINNHUB_API"
         },
         "HYG": {
           "fallback_used": false,
@@ -5481,6 +5904,240 @@
           "status": "available",
           "symbol": "^VVIX"
         },
+        "finnhub_alternative_data": {
+          "fallback_used": false,
+          "latest_date": null,
+          "missing_data": true,
+          "point_in_time_safe": false,
+          "rate_limited": false,
+          "real_data": false,
+          "rows": 0,
+          "source": "finnhub",
+          "stale_data": false,
+          "status": "missing",
+          "symbol": "finnhub_alternative_data"
+        },
+        "finnhub_candle_DIA": {
+          "fallback_used": false,
+          "latest_date": null,
+          "missing_data": true,
+          "point_in_time_safe": false,
+          "rate_limited": false,
+          "real_data": false,
+          "rows": 0,
+          "source": "finnhub",
+          "stale_data": false,
+          "status": "missing",
+          "symbol": "finnhub_candle_DIA"
+        },
+        "finnhub_candle_IWM": {
+          "fallback_used": false,
+          "latest_date": null,
+          "missing_data": true,
+          "point_in_time_safe": false,
+          "rate_limited": false,
+          "real_data": false,
+          "rows": 0,
+          "source": "finnhub",
+          "stale_data": false,
+          "status": "missing",
+          "symbol": "finnhub_candle_IWM"
+        },
+        "finnhub_candle_QQQ": {
+          "fallback_used": false,
+          "latest_date": null,
+          "missing_data": true,
+          "point_in_time_safe": false,
+          "rate_limited": false,
+          "real_data": false,
+          "rows": 0,
+          "source": "finnhub",
+          "stale_data": false,
+          "status": "missing",
+          "symbol": "finnhub_candle_QQQ"
+        },
+        "finnhub_candle_SPY": {
+          "fallback_used": false,
+          "latest_date": null,
+          "missing_data": true,
+          "point_in_time_safe": false,
+          "rate_limited": false,
+          "real_data": false,
+          "rows": 0,
+          "source": "finnhub",
+          "stale_data": false,
+          "status": "missing",
+          "symbol": "finnhub_candle_SPY"
+        },
+        "finnhub_economic_calendar": {
+          "fallback_used": false,
+          "latest_date": null,
+          "missing_data": true,
+          "point_in_time_safe": false,
+          "rate_limited": false,
+          "real_data": false,
+          "rows": 0,
+          "source": "finnhub",
+          "stale_data": false,
+          "status": "missing",
+          "symbol": "finnhub_economic_calendar"
+        },
+        "finnhub_market_holiday": {
+          "fallback_used": false,
+          "latest_date": null,
+          "missing_data": true,
+          "point_in_time_safe": false,
+          "rate_limited": false,
+          "real_data": false,
+          "rows": 0,
+          "source": "finnhub",
+          "stale_data": false,
+          "status": "missing",
+          "symbol": "finnhub_market_holiday"
+        },
+        "finnhub_market_news": {
+          "fallback_used": false,
+          "latest_date": null,
+          "missing_data": true,
+          "point_in_time_safe": false,
+          "rate_limited": false,
+          "real_data": false,
+          "rows": 0,
+          "source": "finnhub",
+          "stale_data": false,
+          "status": "missing",
+          "symbol": "finnhub_market_news"
+        },
+        "finnhub_market_status": {
+          "fallback_used": false,
+          "latest_date": null,
+          "missing_data": true,
+          "point_in_time_safe": false,
+          "rate_limited": false,
+          "real_data": false,
+          "rows": 0,
+          "source": "finnhub",
+          "stale_data": false,
+          "status": "missing",
+          "symbol": "finnhub_market_status"
+        },
+        "finnhub_news_sentiment_DIA": {
+          "fallback_used": false,
+          "latest_date": null,
+          "missing_data": true,
+          "point_in_time_safe": false,
+          "rate_limited": false,
+          "real_data": false,
+          "rows": 0,
+          "source": "finnhub",
+          "stale_data": false,
+          "status": "missing",
+          "symbol": "finnhub_news_sentiment_DIA"
+        },
+        "finnhub_news_sentiment_IWM": {
+          "fallback_used": false,
+          "latest_date": null,
+          "missing_data": true,
+          "point_in_time_safe": false,
+          "rate_limited": false,
+          "real_data": false,
+          "rows": 0,
+          "source": "finnhub",
+          "stale_data": false,
+          "status": "missing",
+          "symbol": "finnhub_news_sentiment_IWM"
+        },
+        "finnhub_news_sentiment_QQQ": {
+          "fallback_used": false,
+          "latest_date": null,
+          "missing_data": true,
+          "point_in_time_safe": false,
+          "rate_limited": false,
+          "real_data": false,
+          "rows": 0,
+          "source": "finnhub",
+          "stale_data": false,
+          "status": "missing",
+          "symbol": "finnhub_news_sentiment_QQQ"
+        },
+        "finnhub_news_sentiment_SPY": {
+          "fallback_used": false,
+          "latest_date": null,
+          "missing_data": true,
+          "point_in_time_safe": false,
+          "rate_limited": false,
+          "real_data": false,
+          "rows": 0,
+          "source": "finnhub",
+          "stale_data": false,
+          "status": "missing",
+          "symbol": "finnhub_news_sentiment_SPY"
+        },
+        "finnhub_quote_DIA": {
+          "fallback_used": false,
+          "latest_date": null,
+          "missing_data": true,
+          "point_in_time_safe": false,
+          "rate_limited": false,
+          "real_data": false,
+          "rows": 0,
+          "source": "finnhub",
+          "stale_data": false,
+          "status": "missing",
+          "symbol": "finnhub_quote_DIA"
+        },
+        "finnhub_quote_IWM": {
+          "fallback_used": false,
+          "latest_date": null,
+          "missing_data": true,
+          "point_in_time_safe": false,
+          "rate_limited": false,
+          "real_data": false,
+          "rows": 0,
+          "source": "finnhub",
+          "stale_data": false,
+          "status": "missing",
+          "symbol": "finnhub_quote_IWM"
+        },
+        "finnhub_quote_QQQ": {
+          "fallback_used": false,
+          "latest_date": null,
+          "missing_data": true,
+          "point_in_time_safe": false,
+          "rate_limited": false,
+          "real_data": false,
+          "rows": 0,
+          "source": "finnhub",
+          "stale_data": false,
+          "status": "missing",
+          "symbol": "finnhub_quote_QQQ"
+        },
+        "finnhub_quote_SPY": {
+          "fallback_used": false,
+          "latest_date": null,
+          "missing_data": true,
+          "point_in_time_safe": false,
+          "rate_limited": false,
+          "real_data": false,
+          "rows": 0,
+          "source": "finnhub",
+          "stale_data": false,
+          "status": "missing",
+          "symbol": "finnhub_quote_SPY"
+        },
+        "finnhub_rates_data": {
+          "fallback_used": false,
+          "latest_date": null,
+          "missing_data": true,
+          "point_in_time_safe": false,
+          "rate_limited": false,
+          "real_data": false,
+          "rows": 0,
+          "source": "finnhub",
+          "stale_data": false,
+          "status": "missing",
+          "symbol": "finnhub_rates_data"
+        },
         "macro_event_calendar": {
           "detail": "CPI/FOMC/NFP/options-expiry/month-end flags are rule-based calendar approximations.",
           "fallback_used": true,
@@ -5496,9 +6153,15 @@
         }
       },
       "summary": {
+        "breadth_required": true,
         "data_completeness_score": 79,
         "data_source_status": "real_core_with_proxies",
         "fallback_used": true,
+        "finnhub_available": false,
+        "finnhub_missing": true,
+        "finnhub_rate_limited": false,
+        "flow_required": true,
+        "fred_required": true,
         "latest_date": "2026-06-12",
         "missing_data": true,
         "missing_key_sources": [
@@ -5507,14 +6170,37 @@
           "DGS2",
           "DGS3MO",
           "HY_OAS",
-          "IG_OAS"
+          "IG_OAS",
+          "FINNHUB_API",
+          "finnhub_quote_SPY",
+          "finnhub_candle_SPY",
+          "finnhub_news_sentiment_SPY",
+          "finnhub_quote_QQQ",
+          "finnhub_candle_QQQ",
+          "finnhub_news_sentiment_QQQ",
+          "finnhub_quote_IWM",
+          "finnhub_candle_IWM",
+          "finnhub_news_sentiment_IWM",
+          "finnhub_quote_DIA",
+          "finnhub_candle_DIA",
+          "finnhub_news_sentiment_DIA",
+          "finnhub_economic_calendar",
+          "finnhub_market_news",
+          "finnhub_market_status",
+          "finnhub_market_holiday",
+          "finnhub_rates_data",
+          "finnhub_alternative_data"
         ],
+        "options_required": true,
         "quality_note": "Score includes real data plus explicitly labeled proxy/fallback categories; it is not equal to institutional-grade data coverage.",
         "real_market_data": true,
         "stale_data": false,
         "synthetic_used": false,
         "target_completeness_score": 75,
-        "unavailable_categories": []
+        "unavailable_categories": [
+          "news"
+        ],
+        "yahoo_fallback_used": true
       },
       "version": "market_intelligence_engine_v3_data_quality"
     },
@@ -5577,7 +6263,7 @@
       }
     },
     "feature_snapshot_v3": {
-      "generated_at": "2026-06-13T16:53:23.872365+00:00",
+      "generated_at": "2026-06-13T17:21:47.484166+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -5601,6 +6287,24 @@
             "ig_oas": null,
             "ig_oas_20d_change": 0.0
           },
+          "daily_market_brief": {
+            "brief": "Finnhub quote unavailable; news risk unavailable; macro event risk flagged; rates pressure 18%.",
+            "finnhub_quote_available": false,
+            "macro_event_risk_flag": true,
+            "news_risk_score": null,
+            "rates_pressure_score": 0.18106443792778512,
+            "symbol": "DIA"
+          },
+          "finnhub": {
+            "candle_status": "missing",
+            "news_sentiment_status": "missing",
+            "quote_change_percent": null,
+            "quote_previous_close": null,
+            "quote_price": null,
+            "quote_source": null,
+            "quote_status": "missing",
+            "sentiment_score": null
+          },
           "flow_positioning_proxy": {
             "data_note": "Proxy only; no true fund-flow or positioning feed connected.",
             "defensive_vs_cyclical_20d": 0.01108516209386513,
@@ -5612,11 +6316,15 @@
           "macro_event_calendar": {
             "cpi_date": "2026-07-14",
             "data_note": "Fallback calendar approximation; replace with a real economic calendar for production.",
+            "fallback_macro_event_risk_flag": true,
+            "finnhub_economic_calendar_status": "missing_api_key",
+            "finnhub_event_count": 0,
+            "finnhub_macro_risk_events": [],
             "fomc_date": "2026-06-17",
-            "macro_event_risk_flag": false,
+            "macro_event_risk_flag": true,
             "month_end_effect": false,
             "nfp_date": "2026-07-03",
-            "options_expiry_week": false,
+            "options_expiry_week": true,
             "quarter_end_effect": false
           },
           "market_structure": {
@@ -5625,6 +6333,12 @@
             "growth_vs_large_cap_20d": 0.010734388598132472,
             "sector_participation_20d": 0.7272727272727273,
             "small_cap_vs_large_cap_20d": 0.038463142421619634
+          },
+          "news": {
+            "market_news_status": "missing_api_key",
+            "news_item_count": 0,
+            "news_risk_score": null,
+            "top_headlines": []
           },
           "price": {
             "current_price": 513.0599975585938,
@@ -5637,6 +6351,7 @@
           },
           "rates_liquidity": {
             "liquidity_stress_proxy": 0.04779144296582327,
+            "rates_pressure_score": 0.18106443792778512,
             "real_yield_proxy": null,
             "ten_year_minus_three_month": null,
             "ten_year_minus_two_year": null,
@@ -5686,6 +6401,24 @@
             "ig_oas": null,
             "ig_oas_20d_change": 0.0
           },
+          "daily_market_brief": {
+            "brief": "Finnhub quote unavailable; news risk unavailable; macro event risk flagged; rates pressure 18%.",
+            "finnhub_quote_available": false,
+            "macro_event_risk_flag": true,
+            "news_risk_score": null,
+            "rates_pressure_score": 0.18106443792778512,
+            "symbol": "IWM"
+          },
+          "finnhub": {
+            "candle_status": "missing",
+            "news_sentiment_status": "missing",
+            "quote_change_percent": null,
+            "quote_previous_close": null,
+            "quote_price": null,
+            "quote_source": null,
+            "quote_status": "missing",
+            "sentiment_score": null
+          },
           "flow_positioning_proxy": {
             "data_note": "Proxy only; no true fund-flow or positioning feed connected.",
             "defensive_vs_cyclical_20d": 0.01108516209386513,
@@ -5697,11 +6430,15 @@
           "macro_event_calendar": {
             "cpi_date": "2026-07-14",
             "data_note": "Fallback calendar approximation; replace with a real economic calendar for production.",
+            "fallback_macro_event_risk_flag": true,
+            "finnhub_economic_calendar_status": "missing_api_key",
+            "finnhub_event_count": 0,
+            "finnhub_macro_risk_events": [],
             "fomc_date": "2026-06-17",
-            "macro_event_risk_flag": false,
+            "macro_event_risk_flag": true,
             "month_end_effect": false,
             "nfp_date": "2026-07-03",
-            "options_expiry_week": false,
+            "options_expiry_week": true,
             "quarter_end_effect": false
           },
           "market_structure": {
@@ -5710,6 +6447,12 @@
             "growth_vs_large_cap_20d": 0.010734388598132472,
             "sector_participation_20d": 0.7272727272727273,
             "small_cap_vs_large_cap_20d": 0.038463142421619634
+          },
+          "news": {
+            "market_news_status": "missing_api_key",
+            "news_item_count": 0,
+            "news_risk_score": null,
+            "top_headlines": []
           },
           "price": {
             "current_price": 292.95001220703125,
@@ -5722,6 +6465,7 @@
           },
           "rates_liquidity": {
             "liquidity_stress_proxy": 0.04779144296582327,
+            "rates_pressure_score": 0.18106443792778512,
             "real_yield_proxy": null,
             "ten_year_minus_three_month": null,
             "ten_year_minus_two_year": null,
@@ -5771,6 +6515,24 @@
             "ig_oas": null,
             "ig_oas_20d_change": 0.0
           },
+          "daily_market_brief": {
+            "brief": "Finnhub quote unavailable; news risk unavailable; macro event risk flagged; rates pressure 18%.",
+            "finnhub_quote_available": false,
+            "macro_event_risk_flag": true,
+            "news_risk_score": null,
+            "rates_pressure_score": 0.18106443792778512,
+            "symbol": "QQQ"
+          },
+          "finnhub": {
+            "candle_status": "missing",
+            "news_sentiment_status": "missing",
+            "quote_change_percent": null,
+            "quote_previous_close": null,
+            "quote_price": null,
+            "quote_source": null,
+            "quote_status": "missing",
+            "sentiment_score": null
+          },
           "flow_positioning_proxy": {
             "data_note": "Proxy only; no true fund-flow or positioning feed connected.",
             "defensive_vs_cyclical_20d": 0.01108516209386513,
@@ -5782,11 +6544,15 @@
           "macro_event_calendar": {
             "cpi_date": "2026-07-14",
             "data_note": "Fallback calendar approximation; replace with a real economic calendar for production.",
+            "fallback_macro_event_risk_flag": true,
+            "finnhub_economic_calendar_status": "missing_api_key",
+            "finnhub_event_count": 0,
+            "finnhub_macro_risk_events": [],
             "fomc_date": "2026-06-17",
-            "macro_event_risk_flag": false,
+            "macro_event_risk_flag": true,
             "month_end_effect": false,
             "nfp_date": "2026-07-03",
-            "options_expiry_week": false,
+            "options_expiry_week": true,
             "quarter_end_effect": false
           },
           "market_structure": {
@@ -5795,6 +6561,12 @@
             "growth_vs_large_cap_20d": 0.010734388598132472,
             "sector_participation_20d": 0.7272727272727273,
             "small_cap_vs_large_cap_20d": 0.038463142421619634
+          },
+          "news": {
+            "market_news_status": "missing_api_key",
+            "news_item_count": 0,
+            "news_risk_score": null,
+            "top_headlines": []
           },
           "price": {
             "current_price": 721.3400268554688,
@@ -5807,6 +6579,7 @@
           },
           "rates_liquidity": {
             "liquidity_stress_proxy": 0.04779144296582327,
+            "rates_pressure_score": 0.18106443792778512,
             "real_yield_proxy": null,
             "ten_year_minus_three_month": null,
             "ten_year_minus_two_year": null,
@@ -5856,6 +6629,24 @@
             "ig_oas": null,
             "ig_oas_20d_change": 0.0
           },
+          "daily_market_brief": {
+            "brief": "Finnhub quote unavailable; news risk unavailable; macro event risk flagged; rates pressure 18%.",
+            "finnhub_quote_available": false,
+            "macro_event_risk_flag": true,
+            "news_risk_score": null,
+            "rates_pressure_score": 0.18106443792778512,
+            "symbol": "SPY"
+          },
+          "finnhub": {
+            "candle_status": "missing",
+            "news_sentiment_status": "missing",
+            "quote_change_percent": null,
+            "quote_previous_close": null,
+            "quote_price": null,
+            "quote_source": null,
+            "quote_status": "missing",
+            "sentiment_score": null
+          },
           "flow_positioning_proxy": {
             "data_note": "Proxy only; no true fund-flow or positioning feed connected.",
             "defensive_vs_cyclical_20d": 0.01108516209386513,
@@ -5867,11 +6658,15 @@
           "macro_event_calendar": {
             "cpi_date": "2026-07-14",
             "data_note": "Fallback calendar approximation; replace with a real economic calendar for production.",
+            "fallback_macro_event_risk_flag": true,
+            "finnhub_economic_calendar_status": "missing_api_key",
+            "finnhub_event_count": 0,
+            "finnhub_macro_risk_events": [],
             "fomc_date": "2026-06-17",
-            "macro_event_risk_flag": false,
+            "macro_event_risk_flag": true,
             "month_end_effect": false,
             "nfp_date": "2026-07-03",
-            "options_expiry_week": false,
+            "options_expiry_week": true,
             "quarter_end_effect": false
           },
           "market_structure": {
@@ -5880,6 +6675,12 @@
             "growth_vs_large_cap_20d": 0.010734388598132472,
             "sector_participation_20d": 0.7272727272727273,
             "small_cap_vs_large_cap_20d": 0.038463142421619634
+          },
+          "news": {
+            "market_news_status": "missing_api_key",
+            "news_item_count": 0,
+            "news_risk_score": null,
+            "top_headlines": []
           },
           "price": {
             "current_price": 741.75,
@@ -5892,6 +6693,7 @@
           },
           "rates_liquidity": {
             "liquidity_stress_proxy": 0.04779144296582327,
+            "rates_pressure_score": 0.18106443792778512,
             "real_yield_proxy": null,
             "ten_year_minus_three_month": null,
             "ten_year_minus_two_year": null,
@@ -5922,7 +6724,15 @@
       },
       "version": "market_intelligence_engine_v3_features"
     },
-    "generated_at": "2026-06-13T16:53:23.879003+00:00",
+    "finnhub_status": {
+      "finnhub_available": false,
+      "finnhub_cache_used": false,
+      "finnhub_failed_requests": 0,
+      "finnhub_missing": true,
+      "finnhub_rate_limited": false,
+      "finnhub_successful_requests": 0
+    },
+    "generated_at": "2026-06-13T17:21:47.487389+00:00",
     "high_confidence_signal_report": {
       "by_bucket": {
         "low_confidence_reference": {
@@ -6536,7 +7346,7 @@
         }
       },
       "conclusion": "confidence_not_yet_validated",
-      "generated_at": "2026-06-13T16:53:23.878983+00:00",
+      "generated_at": "2026-06-13T17:21:47.487380+00:00",
       "high_confidence_better_than_low_confidence": false,
       "high_vs_low_comparison_by_horizon": {
         "10d": false,
@@ -6554,13 +7364,15 @@
         "components": {
           "analog_support": 0.45,
           "data_completeness": 0.79,
-          "predictor_consistency": 0.8611075528511359,
+          "predictor_consistency": 0.8827795026456551,
           "prior_confidence": 0.49,
-          "signal_agreement": 0.73
+          "signal_agreement": 0.68
         },
         "confidence_level": "medium",
-        "confidence_score": 68,
+        "confidence_score": 67,
         "why_confidence_is_limited": [
+          "仍有缺失/未接入类别：news。",
+          "信号一致性还不是 strong。",
           "短周期历史相似样本偏弱。"
         ]
       },
@@ -6568,27 +7380,28 @@
         "components": {
           "analog_support": 0.45,
           "data_completeness": 0.79,
-          "predictor_consistency": 0.8162097595082916,
+          "predictor_consistency": 0.8358248743719073,
           "prior_confidence": 0.57,
-          "signal_agreement": 0.82
+          "signal_agreement": 0.77
         },
         "confidence_level": "medium",
-        "confidence_score": 72,
+        "confidence_score": 70,
         "why_confidence_is_limited": [
-          "数据、信号和历史样本当前相对一致，但仍不是确定性预测。"
+          "仍有缺失/未接入类别：news。"
         ]
       },
       "QQQ": {
         "components": {
           "analog_support": 0.45,
           "data_completeness": 0.79,
-          "predictor_consistency": 0.8767353862619122,
+          "predictor_consistency": 0.9026912291979803,
           "prior_confidence": 0.52,
-          "signal_agreement": 0.64
+          "signal_agreement": 0.58
         },
         "confidence_level": "medium",
-        "confidence_score": 66,
+        "confidence_score": 65,
         "why_confidence_is_limited": [
+          "仍有缺失/未接入类别：news。",
           "信号一致性还不是 strong。",
           "短周期历史相似样本偏弱。"
         ]
@@ -6597,13 +7410,14 @@
         "components": {
           "analog_support": 0.7,
           "data_completeness": 0.79,
-          "predictor_consistency": 0.7810184325679442,
+          "predictor_consistency": 0.7995500374158179,
           "prior_confidence": 0.58,
-          "signal_agreement": 0.87
+          "signal_agreement": 0.82
         },
         "confidence_level": "high",
-        "confidence_score": 76,
+        "confidence_score": 75,
         "why_confidence_is_limited": [
+          "仍有缺失/未接入类别：news。",
           "短周期历史相似样本偏弱。"
         ]
       }
@@ -6612,7 +7426,7 @@
       "DIA": {
         "bounce_predictor": {
           "best_horizon": "3d-10d",
-          "confidence": 0.701,
+          "confidence": 0.6835,
           "historical_analog_support": "weak",
           "invalidation_conditions": [
             "VIX turns higher again",
@@ -6626,11 +7440,11 @@
             "breadth improvement proxy: 0.77",
             "Alpha v1 bounce probability: 0.57"
           ],
-          "probability": 0.6099
+          "probability": 0.6009
         },
         "downside_continuation_predictor": {
           "best_horizon": "5d-20d",
-          "confidence": 0.56,
+          "confidence": 0.5775,
           "historical_analog_support": "weak",
           "invalidation_conditions": [
             "VIX falls and stays lower",
@@ -6640,15 +7454,15 @@
           ],
           "main_drivers": [
             "base downside continuation: 0.54",
+            "rates pressure: 0.18",
             "risk-off rotation: 0.06",
-            "liquidity stress proxy: 0.05",
-            "credit deterioration: 0.03"
+            "liquidity stress proxy: 0.05"
           ],
           "probability": 0.3249
         },
         "risk_expansion_predictor": {
           "best_horizon": "20d-60d",
-          "confidence": 0.56,
+          "confidence": 0.5775,
           "historical_analog_support": "high",
           "invalidation_conditions": [
             "credit proxy stabilizes",
@@ -6657,16 +7471,16 @@
             "risk assets regain broad participation"
           ],
           "main_drivers": [
+            "macro event risk: 1.00",
             "VIX percentile: 0.60",
             "risk-off rotation: 0.06",
-            "liquidity stress proxy: 0.05",
-            "credit deterioration: 0.03"
+            "liquidity stress proxy: 0.05"
           ],
-          "probability": 0.2373
+          "probability": 0.3054
         },
         "trend_reversal_predictor": {
           "best_horizon": "20d-60d",
-          "confidence": 0.701,
+          "confidence": 0.6835,
           "historical_analog_support": "weak",
           "invalidation_conditions": [
             "20d/60d analogs turn weak",
@@ -6686,7 +7500,7 @@
       "IWM": {
         "bounce_predictor": {
           "best_horizon": "3d-10d",
-          "confidence": 0.7825,
+          "confidence": 0.765,
           "historical_analog_support": "supportive",
           "invalidation_conditions": [
             "VIX turns higher again",
@@ -6700,11 +7514,11 @@
             "credit stabilization: 0.97",
             "breadth improvement proxy: 0.77"
           ],
-          "probability": 0.6862
+          "probability": 0.6772
         },
         "downside_continuation_predictor": {
           "best_horizon": "5d-20d",
-          "confidence": 0.5285,
+          "confidence": 0.546,
           "historical_analog_support": "supportive",
           "invalidation_conditions": [
             "VIX falls and stays lower",
@@ -6714,15 +7528,15 @@
           ],
           "main_drivers": [
             "base downside continuation: 0.62",
+            "rates pressure: 0.18",
             "risk-off rotation: 0.06",
-            "liquidity stress proxy: 0.05",
-            "credit deterioration: 0.03"
+            "liquidity stress proxy: 0.05"
           ],
           "probability": 0.2788
         },
         "risk_expansion_predictor": {
           "best_horizon": "20d-60d",
-          "confidence": 0.5486,
+          "confidence": 0.5724,
           "historical_analog_support": "high",
           "invalidation_conditions": [
             "credit proxy stabilizes",
@@ -6731,16 +7545,16 @@
             "risk assets regain broad participation"
           ],
           "main_drivers": [
+            "macro event risk: 1.00",
             "VIX percentile: 0.60",
             "risk-off rotation: 0.06",
-            "liquidity stress proxy: 0.05",
-            "credit deterioration: 0.03"
+            "liquidity stress proxy: 0.05"
           ],
-          "probability": 0.2373
+          "probability": 0.3054
         },
         "trend_reversal_predictor": {
           "best_horizon": "20d-60d",
-          "confidence": 0.7325,
+          "confidence": 0.715,
           "historical_analog_support": "weak",
           "invalidation_conditions": [
             "20d/60d analogs turn weak",
@@ -6760,7 +7574,7 @@
       "QQQ": {
         "bounce_predictor": {
           "best_horizon": "3d-10d",
-          "confidence": 0.6695,
+          "confidence": 0.6485,
           "historical_analog_support": "weak",
           "invalidation_conditions": [
             "VIX turns higher again",
@@ -6774,11 +7588,11 @@
             "breadth improvement proxy: 0.77",
             "Alpha v1 bounce probability: 0.38"
           ],
-          "probability": 0.5156
+          "probability": 0.5048
         },
         "downside_continuation_predictor": {
           "best_horizon": "5d-20d",
-          "confidence": 0.5915,
+          "confidence": 0.6125,
           "historical_analog_support": "weak",
           "invalidation_conditions": [
             "VIX falls and stays lower",
@@ -6788,15 +7602,15 @@
           ],
           "main_drivers": [
             "base downside continuation: 0.66",
+            "rates pressure: 0.18",
             "risk-off rotation: 0.06",
-            "liquidity stress proxy: 0.05",
-            "credit deterioration: 0.03"
+            "liquidity stress proxy: 0.05"
           ],
           "probability": 0.3755
         },
         "risk_expansion_predictor": {
           "best_horizon": "20d-60d",
-          "confidence": 0.5915,
+          "confidence": 0.6125,
           "historical_analog_support": "high",
           "invalidation_conditions": [
             "credit proxy stabilizes",
@@ -6805,16 +7619,16 @@
             "risk assets regain broad participation"
           ],
           "main_drivers": [
+            "macro event risk: 1.00",
             "VIX percentile: 0.60",
             "risk-off rotation: 0.06",
-            "liquidity stress proxy: 0.05",
-            "credit deterioration: 0.03"
+            "liquidity stress proxy: 0.05"
           ],
-          "probability": 0.2373
+          "probability": 0.3054
         },
         "trend_reversal_predictor": {
           "best_horizon": "20d-60d",
-          "confidence": 0.6695,
+          "confidence": 0.6485,
           "historical_analog_support": "weak",
           "invalidation_conditions": [
             "20d/60d analogs turn weak",
@@ -6834,7 +7648,7 @@
       "SPY": {
         "bounce_predictor": {
           "best_horizon": "3d-10d",
-          "confidence": 0.75,
+          "confidence": 0.7325,
           "historical_analog_support": "weak",
           "invalidation_conditions": [
             "VIX turns higher again",
@@ -6848,11 +7662,11 @@
             "breadth improvement proxy: 0.77",
             "Alpha v1 bounce probability: 0.59"
           ],
-          "probability": 0.6444
+          "probability": 0.6354
         },
         "downside_continuation_predictor": {
           "best_horizon": "5d-20d",
-          "confidence": 0.511,
+          "confidence": 0.5285,
           "historical_analog_support": "weak",
           "invalidation_conditions": [
             "VIX falls and stays lower",
@@ -6862,15 +7676,15 @@
           ],
           "main_drivers": [
             "base downside continuation: 0.37",
+            "rates pressure: 0.18",
             "risk-off rotation: 0.06",
-            "negative 20d trend: 0.05",
-            "liquidity stress proxy: 0.05"
+            "negative 20d trend: 0.05"
           ],
           "probability": 0.2714
         },
         "risk_expansion_predictor": {
           "best_horizon": "20d-60d",
-          "confidence": 0.5486,
+          "confidence": 0.5724,
           "historical_analog_support": "high",
           "invalidation_conditions": [
             "credit proxy stabilizes",
@@ -6879,16 +7693,16 @@
             "risk assets regain broad participation"
           ],
           "main_drivers": [
+            "macro event risk: 1.00",
             "VIX percentile: 0.60",
             "risk-off rotation: 0.06",
-            "liquidity stress proxy: 0.05",
-            "credit deterioration: 0.03"
+            "liquidity stress proxy: 0.05"
           ],
-          "probability": 0.2373
+          "probability": 0.3054
         },
         "trend_reversal_predictor": {
           "best_horizon": "20d-60d",
-          "confidence": 0.8,
+          "confidence": 0.7825,
           "historical_analog_support": "supportive",
           "invalidation_conditions": [
             "20d/60d analogs turn weak",
@@ -6909,7 +7723,7 @@
     "prior_engine": "market_intelligence_engine_v2",
     "signal_agreement_by_symbol": {
       "DIA": {
-        "agreement_level": "strong",
+        "agreement_level": "mixed",
         "conflicting_signals": [
           {
             "detail": "3d/5d/10d analogs are weak or negative.",
@@ -6920,10 +7734,15 @@
             "detail": "20d/60d analogs are weak or negative.",
             "name": "medium-term analog conflict",
             "score": 0.15
+          },
+          {
+            "detail": "Upcoming macro event risk is flagged.",
+            "name": "macro event risk",
+            "score": 0.08
           }
         ],
         "data_completeness_cap_applied": false,
-        "signal_agreement_score": 73,
+        "signal_agreement_score": 68,
         "supporting_signals": [
           {
             "detail": "Frozen Alpha v1 is currently triggered.",
@@ -6969,10 +7788,15 @@
             "detail": "Downside continuation probability is elevated.",
             "name": "failed bounce risk",
             "score": 0.14
+          },
+          {
+            "detail": "Upcoming macro event risk is flagged.",
+            "name": "macro event risk",
+            "score": 0.08
           }
         ],
         "data_completeness_cap_applied": false,
-        "signal_agreement_score": 82,
+        "signal_agreement_score": 77,
         "supporting_signals": [
           {
             "detail": "Frozen Alpha v1 is currently triggered.",
@@ -7028,10 +7852,15 @@
             "detail": "Downside continuation probability is elevated.",
             "name": "failed bounce risk",
             "score": 0.14
+          },
+          {
+            "detail": "Upcoming macro event risk is flagged.",
+            "name": "macro event risk",
+            "score": 0.08
           }
         ],
         "data_completeness_cap_applied": false,
-        "signal_agreement_score": 64,
+        "signal_agreement_score": 58,
         "supporting_signals": [
           {
             "detail": "Frozen Alpha v1 is currently triggered.",
@@ -7072,10 +7901,15 @@
             "detail": "3d/5d/10d analogs are weak or negative.",
             "name": "short-term analog conflict",
             "score": 0.16
+          },
+          {
+            "detail": "Upcoming macro event risk is flagged.",
+            "name": "macro event risk",
+            "score": 0.08
           }
         ],
         "data_completeness_cap_applied": false,
-        "signal_agreement_score": 87,
+        "signal_agreement_score": 82,
         "supporting_signals": [
           {
             "detail": "Frozen Alpha v1 is currently triggered.",
@@ -7122,13 +7956,15 @@
       "components": {
         "analog_support": 0.45,
         "data_completeness": 0.79,
-        "predictor_consistency": 0.8611075528511359,
+        "predictor_consistency": 0.8827795026456551,
         "prior_confidence": 0.49,
-        "signal_agreement": 0.73
+        "signal_agreement": 0.68
       },
       "confidence_level": "medium",
-      "confidence_score": 68,
+      "confidence_score": 67,
       "why_confidence_is_limited": [
+        "仍有缺失/未接入类别：news。",
+        "信号一致性还不是 strong。",
         "短周期历史相似样本偏弱。"
       ]
     },
@@ -7136,27 +7972,28 @@
       "components": {
         "analog_support": 0.45,
         "data_completeness": 0.79,
-        "predictor_consistency": 0.8162097595082916,
+        "predictor_consistency": 0.8358248743719073,
         "prior_confidence": 0.57,
-        "signal_agreement": 0.82
+        "signal_agreement": 0.77
       },
       "confidence_level": "medium",
-      "confidence_score": 72,
+      "confidence_score": 70,
       "why_confidence_is_limited": [
-        "数据、信号和历史样本当前相对一致，但仍不是确定性预测。"
+        "仍有缺失/未接入类别：news。"
       ]
     },
     "QQQ": {
       "components": {
         "analog_support": 0.45,
         "data_completeness": 0.79,
-        "predictor_consistency": 0.8767353862619122,
+        "predictor_consistency": 0.9026912291979803,
         "prior_confidence": 0.52,
-        "signal_agreement": 0.64
+        "signal_agreement": 0.58
       },
       "confidence_level": "medium",
-      "confidence_score": 66,
+      "confidence_score": 65,
       "why_confidence_is_limited": [
+        "仍有缺失/未接入类别：news。",
         "信号一致性还不是 strong。",
         "短周期历史相似样本偏弱。"
       ]
@@ -7165,13 +8002,14 @@
       "components": {
         "analog_support": 0.7,
         "data_completeness": 0.79,
-        "predictor_consistency": 0.7810184325679442,
+        "predictor_consistency": 0.7995500374158179,
         "prior_confidence": 0.58,
-        "signal_agreement": 0.87
+        "signal_agreement": 0.82
       },
       "confidence_level": "high",
-      "confidence_score": 76,
+      "confidence_score": 75,
       "why_confidence_is_limited": [
+        "仍有缺失/未接入类别：news。",
         "短周期历史相似样本偏弱。"
       ]
     }
@@ -7180,9 +8018,15 @@
     "as_of": "2026-06-12",
     "dashboard_status": "forward_only_observation",
     "data_quality_summary": {
+      "breadth_required": true,
       "data_completeness_score": 79,
       "data_source_status": "real_core_with_proxies",
       "fallback_used": true,
+      "finnhub_available": false,
+      "finnhub_missing": true,
+      "finnhub_rate_limited": false,
+      "flow_required": true,
+      "fred_required": true,
       "latest_date": "2026-06-12",
       "missing_data": true,
       "missing_key_sources": [
@@ -7191,14 +8035,37 @@
         "DGS2",
         "DGS3MO",
         "HY_OAS",
-        "IG_OAS"
+        "IG_OAS",
+        "FINNHUB_API",
+        "finnhub_quote_SPY",
+        "finnhub_candle_SPY",
+        "finnhub_news_sentiment_SPY",
+        "finnhub_quote_QQQ",
+        "finnhub_candle_QQQ",
+        "finnhub_news_sentiment_QQQ",
+        "finnhub_quote_IWM",
+        "finnhub_candle_IWM",
+        "finnhub_news_sentiment_IWM",
+        "finnhub_quote_DIA",
+        "finnhub_candle_DIA",
+        "finnhub_news_sentiment_DIA",
+        "finnhub_economic_calendar",
+        "finnhub_market_news",
+        "finnhub_market_status",
+        "finnhub_market_holiday",
+        "finnhub_rates_data",
+        "finnhub_alternative_data"
       ],
+      "options_required": true,
       "quality_note": "Score includes real data plus explicitly labeled proxy/fallback categories; it is not equal to institutional-grade data coverage.",
       "real_market_data": true,
       "stale_data": false,
       "synthetic_used": false,
       "target_completeness_score": 75,
-      "unavailable_categories": []
+      "unavailable_categories": [
+        "news"
+      ],
+      "yahoo_fallback_used": true
     },
     "edge_status_by_symbol": {
       "DIA": {
@@ -7263,13 +8130,15 @@
         "components": {
           "analog_support": 0.45,
           "data_completeness": 0.79,
-          "predictor_consistency": 0.8611075528511359,
+          "predictor_consistency": 0.8827795026456551,
           "prior_confidence": 0.49,
-          "signal_agreement": 0.73
+          "signal_agreement": 0.68
         },
         "confidence_level": "medium",
-        "confidence_score": 68,
+        "confidence_score": 67,
         "why_confidence_is_limited": [
+          "仍有缺失/未接入类别：news。",
+          "信号一致性还不是 strong。",
           "短周期历史相似样本偏弱。"
         ]
       },
@@ -7277,27 +8146,28 @@
         "components": {
           "analog_support": 0.45,
           "data_completeness": 0.79,
-          "predictor_consistency": 0.8162097595082916,
+          "predictor_consistency": 0.8358248743719073,
           "prior_confidence": 0.57,
-          "signal_agreement": 0.82
+          "signal_agreement": 0.77
         },
         "confidence_level": "medium",
-        "confidence_score": 72,
+        "confidence_score": 70,
         "why_confidence_is_limited": [
-          "数据、信号和历史样本当前相对一致，但仍不是确定性预测。"
+          "仍有缺失/未接入类别：news。"
         ]
       },
       "QQQ": {
         "components": {
           "analog_support": 0.45,
           "data_completeness": 0.79,
-          "predictor_consistency": 0.8767353862619122,
+          "predictor_consistency": 0.9026912291979803,
           "prior_confidence": 0.52,
-          "signal_agreement": 0.64
+          "signal_agreement": 0.58
         },
         "confidence_level": "medium",
-        "confidence_score": 66,
+        "confidence_score": 65,
         "why_confidence_is_limited": [
+          "仍有缺失/未接入类别：news。",
           "信号一致性还不是 strong。",
           "短周期历史相似样本偏弱。"
         ]
@@ -7306,20 +8176,21 @@
         "components": {
           "analog_support": 0.7,
           "data_completeness": 0.79,
-          "predictor_consistency": 0.7810184325679442,
+          "predictor_consistency": 0.7995500374158179,
           "prior_confidence": 0.58,
-          "signal_agreement": 0.87
+          "signal_agreement": 0.82
         },
         "confidence_level": "high",
-        "confidence_score": 76,
+        "confidence_score": 75,
         "why_confidence_is_limited": [
+          "仍有缺失/未接入类别：news。",
           "短周期历史相似样本偏弱。"
         ]
       }
     },
     "signal_agreement_by_symbol": {
       "DIA": {
-        "agreement_level": "strong",
+        "agreement_level": "mixed",
         "conflicting_signals": [
           {
             "detail": "3d/5d/10d analogs are weak or negative.",
@@ -7330,10 +8201,15 @@
             "detail": "20d/60d analogs are weak or negative.",
             "name": "medium-term analog conflict",
             "score": 0.15
+          },
+          {
+            "detail": "Upcoming macro event risk is flagged.",
+            "name": "macro event risk",
+            "score": 0.08
           }
         ],
         "data_completeness_cap_applied": false,
-        "signal_agreement_score": 73,
+        "signal_agreement_score": 68,
         "supporting_signals": [
           {
             "detail": "Frozen Alpha v1 is currently triggered.",
@@ -7379,10 +8255,15 @@
             "detail": "Downside continuation probability is elevated.",
             "name": "failed bounce risk",
             "score": 0.14
+          },
+          {
+            "detail": "Upcoming macro event risk is flagged.",
+            "name": "macro event risk",
+            "score": 0.08
           }
         ],
         "data_completeness_cap_applied": false,
-        "signal_agreement_score": 82,
+        "signal_agreement_score": 77,
         "supporting_signals": [
           {
             "detail": "Frozen Alpha v1 is currently triggered.",
@@ -7438,10 +8319,15 @@
             "detail": "Downside continuation probability is elevated.",
             "name": "failed bounce risk",
             "score": 0.14
+          },
+          {
+            "detail": "Upcoming macro event risk is flagged.",
+            "name": "macro event risk",
+            "score": 0.08
           }
         ],
         "data_completeness_cap_applied": false,
-        "signal_agreement_score": 64,
+        "signal_agreement_score": 58,
         "supporting_signals": [
           {
             "detail": "Frozen Alpha v1 is currently triggered.",
@@ -7482,10 +8368,15 @@
             "detail": "3d/5d/10d analogs are weak or negative.",
             "name": "short-term analog conflict",
             "score": 0.16
+          },
+          {
+            "detail": "Upcoming macro event risk is flagged.",
+            "name": "macro event risk",
+            "score": 0.08
           }
         ],
         "data_completeness_cap_applied": false,
-        "signal_agreement_score": 87,
+        "signal_agreement_score": 82,
         "supporting_signals": [
           {
             "detail": "Frozen Alpha v1 is currently triggered.",
@@ -7524,13 +8415,13 @@
     "strongest_symbol": "SPY",
     "symbols": {
       "DIA": {
-        "analog_path_weight": 0.2108,
+        "analog_path_weight": 0.2013,
         "as_of": "2026-06-12",
-        "base_path_weight": 0.201,
-        "bearish_path_weight": 0.2053,
-        "bounce_path_weight": 0.3829,
+        "base_path_weight": 0.2001,
+        "bearish_path_weight": 0.2321,
+        "bounce_path_weight": 0.3665,
         "bounce_probability": 0.57070947,
-        "current_integrated_judgment": "DIA 当前可用预测优势：MODERATE_EDGE。反抽预测器 61%，下跌延续预测器 32%，风险扩散预测器 24%。5d 判断：偏上行/反抽；20d 判断：偏上行/反抽。信号一致性 73 分，模型可信度 68 分。如果是 NO_EDGE 或 WEAK_EDGE，应以观察为主，不应强行下结论。",
+        "current_integrated_judgment": "DIA 当前可用预测优势：MODERATE_EDGE。反抽预测器 60%，下跌延续预测器 32%，风险扩散预测器 31%。5d 判断：偏上行/反抽；20d 判断：偏上行/反抽。信号一致性 68 分，模型可信度 67 分。如果是 NO_EDGE 或 WEAK_EDGE，应以观察为主，不应强行下结论。",
         "current_price": 513.05999756,
         "data_source_status": "real_market_data",
         "distance_to_threshold": -0.24536636,
@@ -7615,6 +8506,24 @@
             "ig_oas": null,
             "ig_oas_20d_change": 0.0
           },
+          "daily_market_brief": {
+            "brief": "Finnhub quote unavailable; news risk unavailable; macro event risk flagged; rates pressure 18%.",
+            "finnhub_quote_available": false,
+            "macro_event_risk_flag": true,
+            "news_risk_score": null,
+            "rates_pressure_score": 0.18106443792778512,
+            "symbol": "DIA"
+          },
+          "finnhub": {
+            "candle_status": "missing",
+            "news_sentiment_status": "missing",
+            "quote_change_percent": null,
+            "quote_previous_close": null,
+            "quote_price": null,
+            "quote_source": null,
+            "quote_status": "missing",
+            "sentiment_score": null
+          },
           "flow_positioning_proxy": {
             "data_note": "Proxy only; no true fund-flow or positioning feed connected.",
             "defensive_vs_cyclical_20d": 0.01108516209386513,
@@ -7626,11 +8535,15 @@
           "macro_event_calendar": {
             "cpi_date": "2026-07-14",
             "data_note": "Fallback calendar approximation; replace with a real economic calendar for production.",
+            "fallback_macro_event_risk_flag": true,
+            "finnhub_economic_calendar_status": "missing_api_key",
+            "finnhub_event_count": 0,
+            "finnhub_macro_risk_events": [],
             "fomc_date": "2026-06-17",
-            "macro_event_risk_flag": false,
+            "macro_event_risk_flag": true,
             "month_end_effect": false,
             "nfp_date": "2026-07-03",
-            "options_expiry_week": false,
+            "options_expiry_week": true,
             "quarter_end_effect": false
           },
           "market_structure": {
@@ -7639,6 +8552,12 @@
             "growth_vs_large_cap_20d": 0.010734388598132472,
             "sector_participation_20d": 0.7272727272727273,
             "small_cap_vs_large_cap_20d": 0.038463142421619634
+          },
+          "news": {
+            "market_news_status": "missing_api_key",
+            "news_item_count": 0,
+            "news_risk_score": null,
+            "top_headlines": []
           },
           "price": {
             "current_price": 513.0599975585938,
@@ -7651,6 +8570,7 @@
           },
           "rates_liquidity": {
             "liquidity_stress_proxy": 0.04779144296582327,
+            "rates_pressure_score": 0.18106443792778512,
             "real_yield_proxy": null,
             "ten_year_minus_three_month": null,
             "ten_year_minus_two_year": null,
@@ -7872,22 +8792,24 @@
           "components": {
             "analog_support": 0.45,
             "data_completeness": 0.79,
-            "predictor_consistency": 0.8611075528511359,
+            "predictor_consistency": 0.8827795026456551,
             "prior_confidence": 0.49,
-            "signal_agreement": 0.73
+            "signal_agreement": 0.68
           },
           "confidence_level": "medium",
-          "confidence_score": 68,
+          "confidence_score": 67,
           "why_confidence_is_limited": [
+            "仍有缺失/未接入类别：news。",
+            "信号一致性还不是 strong。",
             "短周期历史相似样本偏弱。"
           ]
         },
         "name": "Dow Jones",
         "path_weight_model": {
-          "analog_path_weight": 0.2108,
-          "base_path_weight": 0.201,
-          "bearish_path_weight": 0.2053,
-          "bounce_path_weight": 0.3829,
+          "analog_path_weight": 0.2013,
+          "base_path_weight": 0.2001,
+          "bearish_path_weight": 0.2321,
+          "bounce_path_weight": 0.3665,
           "low_confidence_simulation": false,
           "simulation_confidence_level": "medium",
           "weight_factors": {
@@ -7897,7 +8819,10 @@
             "data_completeness": 0.79,
             "failed_bounce_risk": 0.3249,
             "historical_analog_support": 0.15,
-            "signal_agreement": 0.73,
+            "macro_event_risk": 1.0,
+            "news_risk": 0.0,
+            "rates_pressure": 0.1811,
+            "signal_agreement": 0.68,
             "volatility_reversal": 1.0
           },
           "weight_source_notes": [
@@ -7913,7 +8838,7 @@
             "analog_best_path": 0.040223953939106494,
             "analog_hit_rate": 0.4,
             "analog_worst_path": -0.029518478068982335,
-            "bounce_probability": 0.5742642615000001,
+            "bounce_probability": 0.5693142615000001,
             "confidence": 0.441,
             "down_probability": 0.5181379887255372,
             "expected_direction": "偏下行/反抽失败风险",
@@ -7944,7 +8869,7 @@
             "failed_bounce_risk": 0.543237316016,
             "historical_support": "supportive",
             "market_edge_status": "MODERATE_EDGE",
-            "risk_expansion_probability": 0.2373,
+            "risk_expansion_probability": 0.3054,
             "trend_reversal_probability": 0.4316,
             "up_probability": 0.5984509337864641
           },
@@ -7953,7 +8878,7 @@
             "analog_best_path": 0.038450618190532415,
             "analog_hit_rate": 0.4,
             "analog_worst_path": -0.029603216317034775,
-            "bounce_probability": 0.5742642615000001,
+            "bounce_probability": 0.5693142615000001,
             "confidence": 0.441,
             "down_probability": 0.5195358256796426,
             "expected_direction": "偏下行/反抽失败风险",
@@ -7972,7 +8897,7 @@
             "analog_best_path": 0.042122705403438765,
             "analog_hit_rate": 0.7,
             "analog_worst_path": -0.02466933234073798,
-            "bounce_probability": 0.6147642615000001,
+            "bounce_probability": 0.6098142615000001,
             "confidence": 0.441,
             "down_probability": 0.40213686587577857,
             "expected_direction": "偏上行/反抽",
@@ -8003,7 +8928,7 @@
             "failed_bounce_risk": 0.643237316016,
             "historical_support": "weak",
             "market_edge_status": "MODERATE_EDGE",
-            "risk_expansion_probability": 0.2373,
+            "risk_expansion_probability": 0.3054,
             "trend_reversal_probability": 0.4316,
             "up_probability": 0.45490403859371054
           }
@@ -8011,7 +8936,7 @@
         "predictors": {
           "bounce_predictor": {
             "best_horizon": "3d-10d",
-            "confidence": 0.701,
+            "confidence": 0.6835,
             "historical_analog_support": "weak",
             "invalidation_conditions": [
               "VIX turns higher again",
@@ -8025,11 +8950,11 @@
               "breadth improvement proxy: 0.77",
               "Alpha v1 bounce probability: 0.57"
             ],
-            "probability": 0.6099
+            "probability": 0.6009
           },
           "downside_continuation_predictor": {
             "best_horizon": "5d-20d",
-            "confidence": 0.56,
+            "confidence": 0.5775,
             "historical_analog_support": "weak",
             "invalidation_conditions": [
               "VIX falls and stays lower",
@@ -8039,15 +8964,15 @@
             ],
             "main_drivers": [
               "base downside continuation: 0.54",
+              "rates pressure: 0.18",
               "risk-off rotation: 0.06",
-              "liquidity stress proxy: 0.05",
-              "credit deterioration: 0.03"
+              "liquidity stress proxy: 0.05"
             ],
             "probability": 0.3249
           },
           "risk_expansion_predictor": {
             "best_horizon": "20d-60d",
-            "confidence": 0.56,
+            "confidence": 0.5775,
             "historical_analog_support": "high",
             "invalidation_conditions": [
               "credit proxy stabilizes",
@@ -8056,16 +8981,16 @@
               "risk assets regain broad participation"
             ],
             "main_drivers": [
+              "macro event risk: 1.00",
               "VIX percentile: 0.60",
               "risk-off rotation: 0.06",
-              "liquidity stress proxy: 0.05",
-              "credit deterioration: 0.03"
+              "liquidity stress proxy: 0.05"
             ],
-            "probability": 0.2373
+            "probability": 0.3054
           },
           "trend_reversal_predictor": {
             "best_horizon": "20d-60d",
-            "confidence": 0.701,
+            "confidence": 0.6835,
             "historical_analog_support": "weak",
             "invalidation_conditions": [
               "20d/60d analogs turn weak",
@@ -8083,7 +9008,7 @@
           }
         },
         "signal_agreement": {
-          "agreement_level": "strong",
+          "agreement_level": "mixed",
           "conflicting_signals": [
             {
               "detail": "3d/5d/10d analogs are weak or negative.",
@@ -8094,10 +9019,15 @@
               "detail": "20d/60d analogs are weak or negative.",
               "name": "medium-term analog conflict",
               "score": 0.15
+            },
+            {
+              "detail": "Upcoming macro event risk is flagged.",
+              "name": "macro event risk",
+              "score": 0.08
             }
           ],
           "data_completeness_cap_applied": false,
-          "signal_agreement_score": 73,
+          "signal_agreement_score": 68,
           "supporting_signals": [
             {
               "detail": "Frozen Alpha v1 is currently triggered.",
@@ -8135,13 +9065,13 @@
         "trend_reversal_probability": 0.31497261963287615
       },
       "IWM": {
-        "analog_path_weight": 0.2577,
+        "analog_path_weight": 0.2469,
         "as_of": "2026-06-12",
-        "base_path_weight": 0.1948,
-        "bearish_path_weight": 0.1636,
-        "bounce_path_weight": 0.3838,
+        "base_path_weight": 0.1942,
+        "bearish_path_weight": 0.1913,
+        "bounce_path_weight": 0.3676,
         "bounce_probability": 0.40434541,
-        "current_integrated_judgment": "IWM 当前可用预测优势：STRONG_EDGE。反抽预测器 69%，下跌延续预测器 28%，风险扩散预测器 24%。5d 判断：偏上行/反抽；20d 判断：偏下行/反抽失败风险。信号一致性 82 分，模型可信度 72 分。如果是 NO_EDGE 或 WEAK_EDGE，应以观察为主，不应强行下结论。",
+        "current_integrated_judgment": "IWM 当前可用预测优势：STRONG_EDGE。反抽预测器 68%，下跌延续预测器 28%，风险扩散预测器 31%。5d 判断：偏上行/反抽；20d 判断：偏下行/反抽失败风险。信号一致性 77 分，模型可信度 70 分。如果是 NO_EDGE 或 WEAK_EDGE，应以观察为主，不应强行下结论。",
         "current_price": 292.95001221,
         "data_source_status": "real_market_data",
         "distance_to_threshold": -0.0790023,
@@ -8226,6 +9156,24 @@
             "ig_oas": null,
             "ig_oas_20d_change": 0.0
           },
+          "daily_market_brief": {
+            "brief": "Finnhub quote unavailable; news risk unavailable; macro event risk flagged; rates pressure 18%.",
+            "finnhub_quote_available": false,
+            "macro_event_risk_flag": true,
+            "news_risk_score": null,
+            "rates_pressure_score": 0.18106443792778512,
+            "symbol": "IWM"
+          },
+          "finnhub": {
+            "candle_status": "missing",
+            "news_sentiment_status": "missing",
+            "quote_change_percent": null,
+            "quote_previous_close": null,
+            "quote_price": null,
+            "quote_source": null,
+            "quote_status": "missing",
+            "sentiment_score": null
+          },
           "flow_positioning_proxy": {
             "data_note": "Proxy only; no true fund-flow or positioning feed connected.",
             "defensive_vs_cyclical_20d": 0.01108516209386513,
@@ -8237,11 +9185,15 @@
           "macro_event_calendar": {
             "cpi_date": "2026-07-14",
             "data_note": "Fallback calendar approximation; replace with a real economic calendar for production.",
+            "fallback_macro_event_risk_flag": true,
+            "finnhub_economic_calendar_status": "missing_api_key",
+            "finnhub_event_count": 0,
+            "finnhub_macro_risk_events": [],
             "fomc_date": "2026-06-17",
-            "macro_event_risk_flag": false,
+            "macro_event_risk_flag": true,
             "month_end_effect": false,
             "nfp_date": "2026-07-03",
-            "options_expiry_week": false,
+            "options_expiry_week": true,
             "quarter_end_effect": false
           },
           "market_structure": {
@@ -8250,6 +9202,12 @@
             "growth_vs_large_cap_20d": 0.010734388598132472,
             "sector_participation_20d": 0.7272727272727273,
             "small_cap_vs_large_cap_20d": 0.038463142421619634
+          },
+          "news": {
+            "market_news_status": "missing_api_key",
+            "news_item_count": 0,
+            "news_risk_score": null,
+            "top_headlines": []
           },
           "price": {
             "current_price": 292.95001220703125,
@@ -8262,6 +9220,7 @@
           },
           "rates_liquidity": {
             "liquidity_stress_proxy": 0.04779144296582327,
+            "rates_pressure_score": 0.18106443792778512,
             "real_yield_proxy": null,
             "ten_year_minus_three_month": null,
             "ten_year_minus_two_year": null,
@@ -8498,22 +9457,22 @@
           "components": {
             "analog_support": 0.45,
             "data_completeness": 0.79,
-            "predictor_consistency": 0.8162097595082916,
+            "predictor_consistency": 0.8358248743719073,
             "prior_confidence": 0.57,
-            "signal_agreement": 0.82
+            "signal_agreement": 0.77
           },
           "confidence_level": "medium",
-          "confidence_score": 72,
+          "confidence_score": 70,
           "why_confidence_is_limited": [
-            "数据、信号和历史样本当前相对一致，但仍不是确定性预测。"
+            "仍有缺失/未接入类别：news。"
           ]
         },
         "name": "Russell 2000",
         "path_weight_model": {
-          "analog_path_weight": 0.2577,
-          "base_path_weight": 0.1948,
-          "bearish_path_weight": 0.1636,
-          "bounce_path_weight": 0.3838,
+          "analog_path_weight": 0.2469,
+          "base_path_weight": 0.1942,
+          "bearish_path_weight": 0.1913,
+          "bounce_path_weight": 0.3676,
           "low_confidence_simulation": false,
           "simulation_confidence_level": "medium",
           "weight_factors": {
@@ -8523,7 +9482,10 @@
             "data_completeness": 0.79,
             "failed_bounce_risk": 0.2788,
             "historical_analog_support": 0.575,
-            "signal_agreement": 0.82,
+            "macro_event_risk": 1.0,
+            "news_risk": 0.0,
+            "rates_pressure": 0.1811,
+            "signal_agreement": 0.77,
             "volatility_reversal": 1.0
           },
           "weight_source_notes": [
@@ -8539,7 +9501,7 @@
             "analog_best_path": 0.06585872378573088,
             "analog_hit_rate": 0.55,
             "analog_worst_path": -0.03890791768285917,
-            "bounce_probability": 0.5818654345000001,
+            "bounce_probability": 0.5769154345,
             "confidence": 0.513,
             "down_probability": 0.43451899175249536,
             "expected_direction": "偏上行/反抽",
@@ -8570,7 +9532,7 @@
             "failed_bounce_risk": 0.7239599215955844,
             "historical_support": "weak",
             "market_edge_status": "STRONG_EDGE",
-            "risk_expansion_probability": 0.2373,
+            "risk_expansion_probability": 0.3054,
             "trend_reversal_probability": 0.5275,
             "up_probability": 0.44069433366571326
           },
@@ -8579,7 +9541,7 @@
             "analog_best_path": 0.04947346375331296,
             "analog_hit_rate": 0.6,
             "analog_worst_path": -0.012640662559037175,
-            "bounce_probability": 0.5818654345000001,
+            "bounce_probability": 0.5769154345,
             "confidence": 0.513,
             "down_probability": 0.43224020498844196,
             "expected_direction": "偏上行/反抽",
@@ -8598,7 +9560,7 @@
             "analog_best_path": 0.036593176190090615,
             "analog_hit_rate": 0.55,
             "analog_worst_path": -0.04048378795281027,
-            "bounce_probability": 0.5818654345000001,
+            "bounce_probability": 0.5769154345,
             "confidence": 0.513,
             "down_probability": 0.4374841262817995,
             "expected_direction": "偏上行/反抽",
@@ -8629,7 +9591,7 @@
             "failed_bounce_risk": 0.6239599215955844,
             "historical_support": "supportive",
             "market_edge_status": "STRONG_EDGE",
-            "risk_expansion_probability": 0.2373,
+            "risk_expansion_probability": 0.3054,
             "trend_reversal_probability": 0.5275,
             "up_probability": 0.5850414141921713
           }
@@ -8637,7 +9599,7 @@
         "predictors": {
           "bounce_predictor": {
             "best_horizon": "3d-10d",
-            "confidence": 0.7825,
+            "confidence": 0.765,
             "historical_analog_support": "supportive",
             "invalidation_conditions": [
               "VIX turns higher again",
@@ -8651,11 +9613,11 @@
               "credit stabilization: 0.97",
               "breadth improvement proxy: 0.77"
             ],
-            "probability": 0.6862
+            "probability": 0.6772
           },
           "downside_continuation_predictor": {
             "best_horizon": "5d-20d",
-            "confidence": 0.5285,
+            "confidence": 0.546,
             "historical_analog_support": "supportive",
             "invalidation_conditions": [
               "VIX falls and stays lower",
@@ -8665,15 +9627,15 @@
             ],
             "main_drivers": [
               "base downside continuation: 0.62",
+              "rates pressure: 0.18",
               "risk-off rotation: 0.06",
-              "liquidity stress proxy: 0.05",
-              "credit deterioration: 0.03"
+              "liquidity stress proxy: 0.05"
             ],
             "probability": 0.2788
           },
           "risk_expansion_predictor": {
             "best_horizon": "20d-60d",
-            "confidence": 0.5486,
+            "confidence": 0.5724,
             "historical_analog_support": "high",
             "invalidation_conditions": [
               "credit proxy stabilizes",
@@ -8682,16 +9644,16 @@
               "risk assets regain broad participation"
             ],
             "main_drivers": [
+              "macro event risk: 1.00",
               "VIX percentile: 0.60",
               "risk-off rotation: 0.06",
-              "liquidity stress proxy: 0.05",
-              "credit deterioration: 0.03"
+              "liquidity stress proxy: 0.05"
             ],
-            "probability": 0.2373
+            "probability": 0.3054
           },
           "trend_reversal_predictor": {
             "best_horizon": "20d-60d",
-            "confidence": 0.7325,
+            "confidence": 0.715,
             "historical_analog_support": "weak",
             "invalidation_conditions": [
               "20d/60d analogs turn weak",
@@ -8720,10 +9682,15 @@
               "detail": "Downside continuation probability is elevated.",
               "name": "failed bounce risk",
               "score": 0.14
+            },
+            {
+              "detail": "Upcoming macro event risk is flagged.",
+              "name": "macro event risk",
+              "score": 0.08
             }
           ],
           "data_completeness_cap_applied": false,
-          "signal_agreement_score": 82,
+          "signal_agreement_score": 77,
           "supporting_signals": [
             {
               "detail": "Frozen Alpha v1 is currently triggered.",
@@ -8766,13 +9733,13 @@
         "trend_reversal_probability": 0.28456949892335187
       },
       "QQQ": {
-        "analog_path_weight": 0.2081,
+        "analog_path_weight": 0.1981,
         "as_of": "2026-06-12",
-        "base_path_weight": 0.223,
-        "bearish_path_weight": 0.2238,
-        "bounce_path_weight": 0.3451,
+        "base_path_weight": 0.2224,
+        "bearish_path_weight": 0.2506,
+        "bounce_path_weight": 0.3289,
         "bounce_probability": 0.38471703,
-        "current_integrated_judgment": "QQQ 当前可用预测优势：WEAK_EDGE。反抽预测器 52%，下跌延续预测器 38%，风险扩散预测器 24%。5d 判断：偏上行/反抽；20d 判断：偏下行/反抽失败风险。信号一致性 64 分，模型可信度 66 分。如果是 NO_EDGE 或 WEAK_EDGE，应以观察为主，不应强行下结论。",
+        "current_integrated_judgment": "QQQ 当前可用预测优势：WEAK_EDGE。反抽预测器 50%，下跌延续预测器 38%，风险扩散预测器 31%。5d 判断：偏上行/反抽；20d 判断：偏下行/反抽失败风险。信号一致性 58 分，模型可信度 65 分。如果是 NO_EDGE 或 WEAK_EDGE，应以观察为主，不应强行下结论。",
         "current_price": 721.34002686,
         "data_source_status": "real_market_data",
         "distance_to_threshold": -0.05937392,
@@ -8857,6 +9824,24 @@
             "ig_oas": null,
             "ig_oas_20d_change": 0.0
           },
+          "daily_market_brief": {
+            "brief": "Finnhub quote unavailable; news risk unavailable; macro event risk flagged; rates pressure 18%.",
+            "finnhub_quote_available": false,
+            "macro_event_risk_flag": true,
+            "news_risk_score": null,
+            "rates_pressure_score": 0.18106443792778512,
+            "symbol": "QQQ"
+          },
+          "finnhub": {
+            "candle_status": "missing",
+            "news_sentiment_status": "missing",
+            "quote_change_percent": null,
+            "quote_previous_close": null,
+            "quote_price": null,
+            "quote_source": null,
+            "quote_status": "missing",
+            "sentiment_score": null
+          },
           "flow_positioning_proxy": {
             "data_note": "Proxy only; no true fund-flow or positioning feed connected.",
             "defensive_vs_cyclical_20d": 0.01108516209386513,
@@ -8868,11 +9853,15 @@
           "macro_event_calendar": {
             "cpi_date": "2026-07-14",
             "data_note": "Fallback calendar approximation; replace with a real economic calendar for production.",
+            "fallback_macro_event_risk_flag": true,
+            "finnhub_economic_calendar_status": "missing_api_key",
+            "finnhub_event_count": 0,
+            "finnhub_macro_risk_events": [],
             "fomc_date": "2026-06-17",
-            "macro_event_risk_flag": false,
+            "macro_event_risk_flag": true,
             "month_end_effect": false,
             "nfp_date": "2026-07-03",
-            "options_expiry_week": false,
+            "options_expiry_week": true,
             "quarter_end_effect": false
           },
           "market_structure": {
@@ -8881,6 +9870,12 @@
             "growth_vs_large_cap_20d": 0.010734388598132472,
             "sector_participation_20d": 0.7272727272727273,
             "small_cap_vs_large_cap_20d": 0.038463142421619634
+          },
+          "news": {
+            "market_news_status": "missing_api_key",
+            "news_item_count": 0,
+            "news_risk_score": null,
+            "top_headlines": []
           },
           "price": {
             "current_price": 721.3400268554688,
@@ -8893,6 +9888,7 @@
           },
           "rates_liquidity": {
             "liquidity_stress_proxy": 0.04779144296582327,
+            "rates_pressure_score": 0.18106443792778512,
             "real_yield_proxy": null,
             "ten_year_minus_three_month": null,
             "ten_year_minus_two_year": null,
@@ -9123,23 +10119,24 @@
           "components": {
             "analog_support": 0.45,
             "data_completeness": 0.79,
-            "predictor_consistency": 0.8767353862619122,
+            "predictor_consistency": 0.9026912291979803,
             "prior_confidence": 0.52,
-            "signal_agreement": 0.64
+            "signal_agreement": 0.58
           },
           "confidence_level": "medium",
-          "confidence_score": 66,
+          "confidence_score": 65,
           "why_confidence_is_limited": [
+            "仍有缺失/未接入类别：news。",
             "信号一致性还不是 strong。",
             "短周期历史相似样本偏弱。"
           ]
         },
         "name": "Nasdaq 100",
         "path_weight_model": {
-          "analog_path_weight": 0.2081,
-          "base_path_weight": 0.223,
-          "bearish_path_weight": 0.2238,
-          "bounce_path_weight": 0.3451,
+          "analog_path_weight": 0.1981,
+          "base_path_weight": 0.2224,
+          "bearish_path_weight": 0.2506,
+          "bounce_path_weight": 0.3289,
           "low_confidence_simulation": false,
           "simulation_confidence_level": "medium",
           "weight_factors": {
@@ -9149,7 +10146,10 @@
             "data_completeness": 0.79,
             "failed_bounce_risk": 0.3755,
             "historical_analog_support": 0.15,
-            "signal_agreement": 0.64,
+            "macro_event_risk": 1.0,
+            "news_risk": 0.0,
+            "rates_pressure": 0.1811,
+            "signal_agreement": 0.58,
             "volatility_reversal": 1.0
           },
           "weight_source_notes": [
@@ -9165,7 +10165,7 @@
             "analog_best_path": 0.04275835159659991,
             "analog_hit_rate": 0.6,
             "analog_worst_path": -0.05937379636838658,
-            "bounce_probability": 0.4387026635,
+            "bounce_probability": 0.43276266350000003,
             "confidence": 0.468,
             "down_probability": 0.5626570845291613,
             "expected_direction": "偏下行/反抽失败风险",
@@ -9196,7 +10196,7 @@
             "failed_bounce_risk": 0.763808439868502,
             "historical_support": "weak",
             "market_edge_status": "WEAK_EDGE",
-            "risk_expansion_probability": 0.2373,
+            "risk_expansion_probability": 0.3054,
             "trend_reversal_probability": 0.5476,
             "up_probability": 0.42602108070956873
           },
@@ -9205,7 +10205,7 @@
             "analog_best_path": 0.03658810507227139,
             "analog_hit_rate": 0.75,
             "analog_worst_path": -0.04368237134685249,
-            "bounce_probability": 0.4792026635,
+            "bounce_probability": 0.47326266350000007,
             "confidence": 0.468,
             "down_probability": 0.44391535520549336,
             "expected_direction": "偏上行/反抽",
@@ -9224,7 +10224,7 @@
             "analog_best_path": 0.03437433286772329,
             "analog_hit_rate": 0.75,
             "analog_worst_path": -0.03612173763231907,
-            "bounce_probability": 0.4792026635,
+            "bounce_probability": 0.47326266350000007,
             "confidence": 0.468,
             "down_probability": 0.44185655596802853,
             "expected_direction": "偏上行/反抽",
@@ -9255,7 +10255,7 @@
             "failed_bounce_risk": 0.763808439868502,
             "historical_support": "weak",
             "market_edge_status": "WEAK_EDGE",
-            "risk_expansion_probability": 0.2373,
+            "risk_expansion_probability": 0.3054,
             "trend_reversal_probability": 0.5476,
             "up_probability": 0.41756068859941337
           }
@@ -9263,7 +10263,7 @@
         "predictors": {
           "bounce_predictor": {
             "best_horizon": "3d-10d",
-            "confidence": 0.6695,
+            "confidence": 0.6485,
             "historical_analog_support": "weak",
             "invalidation_conditions": [
               "VIX turns higher again",
@@ -9277,11 +10277,11 @@
               "breadth improvement proxy: 0.77",
               "Alpha v1 bounce probability: 0.38"
             ],
-            "probability": 0.5156
+            "probability": 0.5048
           },
           "downside_continuation_predictor": {
             "best_horizon": "5d-20d",
-            "confidence": 0.5915,
+            "confidence": 0.6125,
             "historical_analog_support": "weak",
             "invalidation_conditions": [
               "VIX falls and stays lower",
@@ -9291,15 +10291,15 @@
             ],
             "main_drivers": [
               "base downside continuation: 0.66",
+              "rates pressure: 0.18",
               "risk-off rotation: 0.06",
-              "liquidity stress proxy: 0.05",
-              "credit deterioration: 0.03"
+              "liquidity stress proxy: 0.05"
             ],
             "probability": 0.3755
           },
           "risk_expansion_predictor": {
             "best_horizon": "20d-60d",
-            "confidence": 0.5915,
+            "confidence": 0.6125,
             "historical_analog_support": "high",
             "invalidation_conditions": [
               "credit proxy stabilizes",
@@ -9308,16 +10308,16 @@
               "risk assets regain broad participation"
             ],
             "main_drivers": [
+              "macro event risk: 1.00",
               "VIX percentile: 0.60",
               "risk-off rotation: 0.06",
-              "liquidity stress proxy: 0.05",
-              "credit deterioration: 0.03"
+              "liquidity stress proxy: 0.05"
             ],
-            "probability": 0.2373
+            "probability": 0.3054
           },
           "trend_reversal_predictor": {
             "best_horizon": "20d-60d",
-            "confidence": 0.6695,
+            "confidence": 0.6485,
             "historical_analog_support": "weak",
             "invalidation_conditions": [
               "20d/60d analogs turn weak",
@@ -9351,10 +10351,15 @@
               "detail": "Downside continuation probability is elevated.",
               "name": "failed bounce risk",
               "score": 0.14
+            },
+            {
+              "detail": "Upcoming macro event risk is flagged.",
+              "name": "macro event risk",
+              "score": 0.08
             }
           ],
           "data_completeness_cap_applied": false,
-          "signal_agreement_score": 64,
+          "signal_agreement_score": 58,
           "supporting_signals": [
             {
               "detail": "Frozen Alpha v1 is currently triggered.",
@@ -9392,13 +10397,13 @@
         "trend_reversal_probability": 0.2629852193517149
       },
       "SPY": {
-        "analog_path_weight": 0.2551,
+        "analog_path_weight": 0.2445,
         "as_of": "2026-06-12",
         "base_path_weight": 0.1762,
-        "bearish_path_weight": 0.1554,
-        "bounce_path_weight": 0.4133,
+        "bearish_path_weight": 0.1829,
+        "bounce_path_weight": 0.3964,
         "bounce_probability": 0.59293002,
-        "current_integrated_judgment": "SPY 当前可用预测优势：STRONG_EDGE。反抽预测器 64%，下跌延续预测器 27%，风险扩散预测器 24%。5d 判断：偏下行/反抽失败风险；20d 判断：偏上行/反抽。信号一致性 87 分，模型可信度 76 分。如果是 NO_EDGE 或 WEAK_EDGE，应以观察为主，不应强行下结论。",
+        "current_integrated_judgment": "SPY 当前可用预测优势：STRONG_EDGE。反抽预测器 64%，下跌延续预测器 27%，风险扩散预测器 31%。5d 判断：偏下行/反抽失败风险；20d 判断：偏上行/反抽。信号一致性 82 分，模型可信度 75 分。如果是 NO_EDGE 或 WEAK_EDGE，应以观察为主，不应强行下结论。",
         "current_price": 741.75,
         "data_source_status": "real_market_data",
         "distance_to_threshold": -0.26758691,
@@ -9483,6 +10488,24 @@
             "ig_oas": null,
             "ig_oas_20d_change": 0.0
           },
+          "daily_market_brief": {
+            "brief": "Finnhub quote unavailable; news risk unavailable; macro event risk flagged; rates pressure 18%.",
+            "finnhub_quote_available": false,
+            "macro_event_risk_flag": true,
+            "news_risk_score": null,
+            "rates_pressure_score": 0.18106443792778512,
+            "symbol": "SPY"
+          },
+          "finnhub": {
+            "candle_status": "missing",
+            "news_sentiment_status": "missing",
+            "quote_change_percent": null,
+            "quote_previous_close": null,
+            "quote_price": null,
+            "quote_source": null,
+            "quote_status": "missing",
+            "sentiment_score": null
+          },
           "flow_positioning_proxy": {
             "data_note": "Proxy only; no true fund-flow or positioning feed connected.",
             "defensive_vs_cyclical_20d": 0.01108516209386513,
@@ -9494,11 +10517,15 @@
           "macro_event_calendar": {
             "cpi_date": "2026-07-14",
             "data_note": "Fallback calendar approximation; replace with a real economic calendar for production.",
+            "fallback_macro_event_risk_flag": true,
+            "finnhub_economic_calendar_status": "missing_api_key",
+            "finnhub_event_count": 0,
+            "finnhub_macro_risk_events": [],
             "fomc_date": "2026-06-17",
-            "macro_event_risk_flag": false,
+            "macro_event_risk_flag": true,
             "month_end_effect": false,
             "nfp_date": "2026-07-03",
-            "options_expiry_week": false,
+            "options_expiry_week": true,
             "quarter_end_effect": false
           },
           "market_structure": {
@@ -9507,6 +10534,12 @@
             "growth_vs_large_cap_20d": 0.010734388598132472,
             "sector_participation_20d": 0.7272727272727273,
             "small_cap_vs_large_cap_20d": 0.038463142421619634
+          },
+          "news": {
+            "market_news_status": "missing_api_key",
+            "news_item_count": 0,
+            "news_risk_score": null,
+            "top_headlines": []
           },
           "price": {
             "current_price": 741.75,
@@ -9519,6 +10552,7 @@
           },
           "rates_liquidity": {
             "liquidity_stress_proxy": 0.04779144296582327,
+            "rates_pressure_score": 0.18106443792778512,
             "real_yield_proxy": null,
             "ten_year_minus_three_month": null,
             "ten_year_minus_two_year": null,
@@ -9746,22 +10780,23 @@
           "components": {
             "analog_support": 0.7,
             "data_completeness": 0.79,
-            "predictor_consistency": 0.7810184325679442,
+            "predictor_consistency": 0.7995500374158179,
             "prior_confidence": 0.58,
-            "signal_agreement": 0.87
+            "signal_agreement": 0.82
           },
           "confidence_level": "high",
-          "confidence_score": 76,
+          "confidence_score": 75,
           "why_confidence_is_limited": [
+            "仍有缺失/未接入类别：news。",
             "短周期历史相似样本偏弱。"
           ]
         },
         "name": "S&P 500",
         "path_weight_model": {
-          "analog_path_weight": 0.2551,
+          "analog_path_weight": 0.2445,
           "base_path_weight": 0.1762,
-          "bearish_path_weight": 0.1554,
-          "bounce_path_weight": 0.4133,
+          "bearish_path_weight": 0.1829,
+          "bounce_path_weight": 0.3964,
           "low_confidence_simulation": false,
           "simulation_confidence_level": "high",
           "weight_factors": {
@@ -9771,7 +10806,10 @@
             "data_completeness": 0.79,
             "failed_bounce_risk": 0.2714,
             "historical_analog_support": 0.575,
-            "signal_agreement": 0.87,
+            "macro_event_risk": 1.0,
+            "news_risk": 0.0,
+            "rates_pressure": 0.1811,
+            "signal_agreement": 0.82,
             "volatility_reversal": 1.0
           },
           "weight_source_notes": [
@@ -9787,7 +10825,7 @@
             "analog_best_path": 0.03084991429141004,
             "analog_hit_rate": 0.4,
             "analog_worst_path": -0.030486369566841365,
-            "bounce_probability": 0.603238509,
+            "bounce_probability": 0.598288509,
             "confidence": 0.522,
             "down_probability": 0.4885245602973188,
             "expected_direction": "偏下行/反抽失败风险",
@@ -9818,7 +10856,7 @@
             "failed_bounce_risk": 0.37097413696176773,
             "historical_support": "supportive",
             "market_edge_status": "STRONG_EDGE",
-            "risk_expansion_probability": 0.2373,
+            "risk_expansion_probability": 0.3054,
             "trend_reversal_probability": 0.7304,
             "up_probability": 0.6463351620429129
           },
@@ -9827,7 +10865,7 @@
             "analog_best_path": 0.02370684376897536,
             "analog_hit_rate": 0.35,
             "analog_worst_path": -0.033125078535713115,
-            "bounce_probability": 0.603238509,
+            "bounce_probability": 0.598288509,
             "confidence": 0.522,
             "down_probability": 0.4970059222000698,
             "expected_direction": "偏下行/反抽失败风险",
@@ -9846,7 +10884,7 @@
             "analog_best_path": 0.0239858130688948,
             "analog_hit_rate": 0.35,
             "analog_worst_path": -0.04054406755435924,
-            "bounce_probability": 0.603238509,
+            "bounce_probability": 0.598288509,
             "confidence": 0.522,
             "down_probability": 0.5016664237451672,
             "expected_direction": "偏下行/反抽失败风险",
@@ -9877,7 +10915,7 @@
             "failed_bounce_risk": 0.37097413696176773,
             "historical_support": "supportive",
             "market_edge_status": "STRONG_EDGE",
-            "risk_expansion_probability": 0.2373,
+            "risk_expansion_probability": 0.3054,
             "trend_reversal_probability": 0.7304,
             "up_probability": 0.6676258605669345
           }
@@ -9885,7 +10923,7 @@
         "predictors": {
           "bounce_predictor": {
             "best_horizon": "3d-10d",
-            "confidence": 0.75,
+            "confidence": 0.7325,
             "historical_analog_support": "weak",
             "invalidation_conditions": [
               "VIX turns higher again",
@@ -9899,11 +10937,11 @@
               "breadth improvement proxy: 0.77",
               "Alpha v1 bounce probability: 0.59"
             ],
-            "probability": 0.6444
+            "probability": 0.6354
           },
           "downside_continuation_predictor": {
             "best_horizon": "5d-20d",
-            "confidence": 0.511,
+            "confidence": 0.5285,
             "historical_analog_support": "weak",
             "invalidation_conditions": [
               "VIX falls and stays lower",
@@ -9913,15 +10951,15 @@
             ],
             "main_drivers": [
               "base downside continuation: 0.37",
+              "rates pressure: 0.18",
               "risk-off rotation: 0.06",
-              "negative 20d trend: 0.05",
-              "liquidity stress proxy: 0.05"
+              "negative 20d trend: 0.05"
             ],
             "probability": 0.2714
           },
           "risk_expansion_predictor": {
             "best_horizon": "20d-60d",
-            "confidence": 0.5486,
+            "confidence": 0.5724,
             "historical_analog_support": "high",
             "invalidation_conditions": [
               "credit proxy stabilizes",
@@ -9930,16 +10968,16 @@
               "risk assets regain broad participation"
             ],
             "main_drivers": [
+              "macro event risk: 1.00",
               "VIX percentile: 0.60",
               "risk-off rotation: 0.06",
-              "liquidity stress proxy: 0.05",
-              "credit deterioration: 0.03"
+              "liquidity stress proxy: 0.05"
             ],
-            "probability": 0.2373
+            "probability": 0.3054
           },
           "trend_reversal_predictor": {
             "best_horizon": "20d-60d",
-            "confidence": 0.8,
+            "confidence": 0.7825,
             "historical_analog_support": "supportive",
             "invalidation_conditions": [
               "20d/60d analogs turn weak",
@@ -9963,10 +11001,15 @@
               "detail": "3d/5d/10d analogs are weak or negative.",
               "name": "short-term analog conflict",
               "score": 0.16
+            },
+            {
+              "detail": "Upcoming macro event risk is flagged.",
+              "name": "macro event risk",
+              "score": 0.08
             }
           ],
           "data_completeness_cap_applied": false,
-          "signal_agreement_score": 87,
+          "signal_agreement_score": 82,
           "supporting_signals": [
             {
               "detail": "Frozen Alpha v1 is currently triggered.",
@@ -10008,9 +11051,15 @@
   "simulated_paths": {
     "as_of": "2026-06-12",
     "data_quality_summary": {
+      "breadth_required": true,
       "data_completeness_score": 79,
       "data_source_status": "real_core_with_proxies",
       "fallback_used": true,
+      "finnhub_available": false,
+      "finnhub_missing": true,
+      "finnhub_rate_limited": false,
+      "flow_required": true,
+      "fred_required": true,
       "latest_date": "2026-06-12",
       "missing_data": true,
       "missing_key_sources": [
@@ -10019,24 +11068,47 @@
         "DGS2",
         "DGS3MO",
         "HY_OAS",
-        "IG_OAS"
+        "IG_OAS",
+        "FINNHUB_API",
+        "finnhub_quote_SPY",
+        "finnhub_candle_SPY",
+        "finnhub_news_sentiment_SPY",
+        "finnhub_quote_QQQ",
+        "finnhub_candle_QQQ",
+        "finnhub_news_sentiment_QQQ",
+        "finnhub_quote_IWM",
+        "finnhub_candle_IWM",
+        "finnhub_news_sentiment_IWM",
+        "finnhub_quote_DIA",
+        "finnhub_candle_DIA",
+        "finnhub_news_sentiment_DIA",
+        "finnhub_economic_calendar",
+        "finnhub_market_news",
+        "finnhub_market_status",
+        "finnhub_market_holiday",
+        "finnhub_rates_data",
+        "finnhub_alternative_data"
       ],
+      "options_required": true,
       "quality_note": "Score includes real data plus explicitly labeled proxy/fallback categories; it is not equal to institutional-grade data coverage.",
       "real_market_data": true,
       "stale_data": false,
       "synthetic_used": false,
       "target_completeness_score": 75,
-      "unavailable_categories": []
+      "unavailable_categories": [
+        "news"
+      ],
+      "yahoo_fallback_used": true
     },
     "disclaimer": "Simulated future paths are probabilistic scenarios based on current signals and historical analogs, not guaranteed forecasts.",
     "symbols": {
       "DIA": {
-        "analog_path_weight": 0.2108,
-        "base_path_weight": 0.201,
-        "bearish_path_weight": 0.2053,
-        "bounce_path_weight": 0.3829,
+        "analog_path_weight": 0.2013,
+        "base_path_weight": 0.2001,
+        "bearish_path_weight": 0.2321,
+        "bounce_path_weight": 0.3665,
         "bounce_probability": 0.57070947,
-        "current_integrated_judgment": "DIA 当前可用预测优势：MODERATE_EDGE。反抽预测器 61%，下跌延续预测器 32%，风险扩散预测器 24%。5d 判断：偏上行/反抽；20d 判断：偏上行/反抽。信号一致性 73 分，模型可信度 68 分。如果是 NO_EDGE 或 WEAK_EDGE，应以观察为主，不应强行下结论。",
+        "current_integrated_judgment": "DIA 当前可用预测优势：MODERATE_EDGE。反抽预测器 60%，下跌延续预测器 32%，风险扩散预测器 31%。5d 判断：偏上行/反抽；20d 判断：偏上行/反抽。信号一致性 68 分，模型可信度 67 分。如果是 NO_EDGE 或 WEAK_EDGE，应以观察为主，不应强行下结论。",
         "current_price": 513.05999756,
         "data_quality": {
           "data_completeness_score": 57,
@@ -10077,6 +11149,24 @@
             "ig_oas": null,
             "ig_oas_20d_change": 0.0
           },
+          "daily_market_brief": {
+            "brief": "Finnhub quote unavailable; news risk unavailable; macro event risk flagged; rates pressure 18%.",
+            "finnhub_quote_available": false,
+            "macro_event_risk_flag": true,
+            "news_risk_score": null,
+            "rates_pressure_score": 0.18106443792778512,
+            "symbol": "DIA"
+          },
+          "finnhub": {
+            "candle_status": "missing",
+            "news_sentiment_status": "missing",
+            "quote_change_percent": null,
+            "quote_previous_close": null,
+            "quote_price": null,
+            "quote_source": null,
+            "quote_status": "missing",
+            "sentiment_score": null
+          },
           "flow_positioning_proxy": {
             "data_note": "Proxy only; no true fund-flow or positioning feed connected.",
             "defensive_vs_cyclical_20d": 0.01108516209386513,
@@ -10088,11 +11178,15 @@
           "macro_event_calendar": {
             "cpi_date": "2026-07-14",
             "data_note": "Fallback calendar approximation; replace with a real economic calendar for production.",
+            "fallback_macro_event_risk_flag": true,
+            "finnhub_economic_calendar_status": "missing_api_key",
+            "finnhub_event_count": 0,
+            "finnhub_macro_risk_events": [],
             "fomc_date": "2026-06-17",
-            "macro_event_risk_flag": false,
+            "macro_event_risk_flag": true,
             "month_end_effect": false,
             "nfp_date": "2026-07-03",
-            "options_expiry_week": false,
+            "options_expiry_week": true,
             "quarter_end_effect": false
           },
           "market_structure": {
@@ -10101,6 +11195,12 @@
             "growth_vs_large_cap_20d": 0.010734388598132472,
             "sector_participation_20d": 0.7272727272727273,
             "small_cap_vs_large_cap_20d": 0.038463142421619634
+          },
+          "news": {
+            "market_news_status": "missing_api_key",
+            "news_item_count": 0,
+            "news_risk_score": null,
+            "top_headlines": []
           },
           "price": {
             "current_price": 513.0599975585938,
@@ -10113,6 +11213,7 @@
           },
           "rates_liquidity": {
             "liquidity_stress_proxy": 0.04779144296582327,
+            "rates_pressure_score": 0.18106443792778512,
             "real_yield_proxy": null,
             "ten_year_minus_three_month": null,
             "ten_year_minus_two_year": null,
@@ -10366,13 +11467,15 @@
           "components": {
             "analog_support": 0.45,
             "data_completeness": 0.79,
-            "predictor_consistency": 0.8611075528511359,
+            "predictor_consistency": 0.8827795026456551,
             "prior_confidence": 0.49,
-            "signal_agreement": 0.73
+            "signal_agreement": 0.68
           },
           "confidence_level": "medium",
-          "confidence_score": 68,
+          "confidence_score": 67,
           "why_confidence_is_limited": [
+            "仍有缺失/未接入类别：news。",
+            "信号一致性还不是 strong。",
             "短周期历史相似样本偏弱。"
           ]
         },
@@ -10385,10 +11488,10 @@
           "基准情景：使用相似样本平均路径；所有路径都是概率情景，不是确定预测。"
         ],
         "path_weight_model": {
-          "analog_path_weight": 0.2108,
-          "base_path_weight": 0.201,
-          "bearish_path_weight": 0.2053,
-          "bounce_path_weight": 0.3829,
+          "analog_path_weight": 0.2013,
+          "base_path_weight": 0.2001,
+          "bearish_path_weight": 0.2321,
+          "bounce_path_weight": 0.3665,
           "low_confidence_simulation": false,
           "simulation_confidence_level": "medium",
           "weight_factors": {
@@ -10398,7 +11501,10 @@
             "data_completeness": 0.79,
             "failed_bounce_risk": 0.3249,
             "historical_analog_support": 0.15,
-            "signal_agreement": 0.73,
+            "macro_event_risk": 1.0,
+            "news_risk": 0.0,
+            "rates_pressure": 0.1811,
+            "signal_agreement": 0.68,
             "volatility_reversal": 1.0
           },
           "weight_source_notes": [
@@ -11633,7 +12739,7 @@
             "analog_best_path": 0.040223953939106494,
             "analog_hit_rate": 0.4,
             "analog_worst_path": -0.029518478068982335,
-            "bounce_probability": 0.5742642615000001,
+            "bounce_probability": 0.5693142615000001,
             "confidence": 0.441,
             "down_probability": 0.5181379887255372,
             "expected_direction": "偏下行/反抽失败风险",
@@ -11664,7 +12770,7 @@
             "failed_bounce_risk": 0.543237316016,
             "historical_support": "supportive",
             "market_edge_status": "MODERATE_EDGE",
-            "risk_expansion_probability": 0.2373,
+            "risk_expansion_probability": 0.3054,
             "trend_reversal_probability": 0.4316,
             "up_probability": 0.5984509337864641
           },
@@ -11673,7 +12779,7 @@
             "analog_best_path": 0.038450618190532415,
             "analog_hit_rate": 0.4,
             "analog_worst_path": -0.029603216317034775,
-            "bounce_probability": 0.5742642615000001,
+            "bounce_probability": 0.5693142615000001,
             "confidence": 0.441,
             "down_probability": 0.5195358256796426,
             "expected_direction": "偏下行/反抽失败风险",
@@ -11692,7 +12798,7 @@
             "analog_best_path": 0.042122705403438765,
             "analog_hit_rate": 0.7,
             "analog_worst_path": -0.02466933234073798,
-            "bounce_probability": 0.6147642615000001,
+            "bounce_probability": 0.6098142615000001,
             "confidence": 0.441,
             "down_probability": 0.40213686587577857,
             "expected_direction": "偏上行/反抽",
@@ -11723,7 +12829,7 @@
             "failed_bounce_risk": 0.643237316016,
             "historical_support": "weak",
             "market_edge_status": "MODERATE_EDGE",
-            "risk_expansion_probability": 0.2373,
+            "risk_expansion_probability": 0.3054,
             "trend_reversal_probability": 0.4316,
             "up_probability": 0.45490403859371054
           }
@@ -11731,7 +12837,7 @@
         "predictors": {
           "bounce_predictor": {
             "best_horizon": "3d-10d",
-            "confidence": 0.701,
+            "confidence": 0.6835,
             "historical_analog_support": "weak",
             "invalidation_conditions": [
               "VIX turns higher again",
@@ -11745,11 +12851,11 @@
               "breadth improvement proxy: 0.77",
               "Alpha v1 bounce probability: 0.57"
             ],
-            "probability": 0.6099
+            "probability": 0.6009
           },
           "downside_continuation_predictor": {
             "best_horizon": "5d-20d",
-            "confidence": 0.56,
+            "confidence": 0.5775,
             "historical_analog_support": "weak",
             "invalidation_conditions": [
               "VIX falls and stays lower",
@@ -11759,15 +12865,15 @@
             ],
             "main_drivers": [
               "base downside continuation: 0.54",
+              "rates pressure: 0.18",
               "risk-off rotation: 0.06",
-              "liquidity stress proxy: 0.05",
-              "credit deterioration: 0.03"
+              "liquidity stress proxy: 0.05"
             ],
             "probability": 0.3249
           },
           "risk_expansion_predictor": {
             "best_horizon": "20d-60d",
-            "confidence": 0.56,
+            "confidence": 0.5775,
             "historical_analog_support": "high",
             "invalidation_conditions": [
               "credit proxy stabilizes",
@@ -11776,16 +12882,16 @@
               "risk assets regain broad participation"
             ],
             "main_drivers": [
+              "macro event risk: 1.00",
               "VIX percentile: 0.60",
               "risk-off rotation: 0.06",
-              "liquidity stress proxy: 0.05",
-              "credit deterioration: 0.03"
+              "liquidity stress proxy: 0.05"
             ],
-            "probability": 0.2373
+            "probability": 0.3054
           },
           "trend_reversal_predictor": {
             "best_horizon": "20d-60d",
-            "confidence": 0.701,
+            "confidence": 0.6835,
             "historical_analog_support": "weak",
             "invalidation_conditions": [
               "20d/60d analogs turn weak",
@@ -11812,40 +12918,40 @@
           {
             "name": "Base case",
             "name_cn": "基准情景",
-            "probability_weight": 0.201,
+            "probability_weight": 0.2001,
             "return_20d": 0.003845170212865895,
             "summary_cn": "按最相似历史样本的平均路径推演。"
           },
           {
             "name": "Bounce case",
             "name_cn": "反弹情景",
-            "probability_weight": 0.3829,
+            "probability_weight": 0.3665,
             "return_20d": 0.04702682462932421,
             "summary_cn": "如果 Alpha v1 信号继续有效，路径更接近历史上较好的反抽样本。"
           },
           {
             "name": "Bearish case",
             "name_cn": "失败反弹情景",
-            "probability_weight": 0.2053,
+            "probability_weight": 0.2321,
             "return_20d": -0.04670557099247843,
             "summary_cn": "如果波动和信用代理恶化，路径更接近历史上较差的一组样本。"
           },
           {
             "name": "Historical analog case",
             "name_cn": "历史相似情景",
-            "probability_weight": 0.2108,
+            "probability_weight": 0.2013,
             "return_20d": 0.003845170212865895,
             "summary_cn": "只看最相似历史样本后的实际表现，不做确定性预测。"
           }
         ],
         "scenario_weights": {
-          "base_scenario": 0.201,
-          "bearish_scenario": 0.2053,
-          "bounce_scenario": 0.3829,
-          "historical_analog_average": 0.2108
+          "base_scenario": 0.2001,
+          "bearish_scenario": 0.2321,
+          "bounce_scenario": 0.3665,
+          "historical_analog_average": 0.2013
         },
         "signal_agreement": {
-          "agreement_level": "strong",
+          "agreement_level": "mixed",
           "conflicting_signals": [
             {
               "detail": "3d/5d/10d analogs are weak or negative.",
@@ -11856,10 +12962,15 @@
               "detail": "20d/60d analogs are weak or negative.",
               "name": "medium-term analog conflict",
               "score": 0.15
+            },
+            {
+              "detail": "Upcoming macro event risk is flagged.",
+              "name": "macro event risk",
+              "score": 0.08
             }
           ],
           "data_completeness_cap_applied": false,
-          "signal_agreement_score": 73,
+          "signal_agreement_score": 68,
           "supporting_signals": [
             {
               "detail": "Frozen Alpha v1 is currently triggered.",
@@ -11897,12 +13008,12 @@
         "trend_reversal_probability": 0.31497261963287615
       },
       "IWM": {
-        "analog_path_weight": 0.2577,
-        "base_path_weight": 0.1948,
-        "bearish_path_weight": 0.1636,
-        "bounce_path_weight": 0.3838,
+        "analog_path_weight": 0.2469,
+        "base_path_weight": 0.1942,
+        "bearish_path_weight": 0.1913,
+        "bounce_path_weight": 0.3676,
         "bounce_probability": 0.40434541,
-        "current_integrated_judgment": "IWM 当前可用预测优势：STRONG_EDGE。反抽预测器 69%，下跌延续预测器 28%，风险扩散预测器 24%。5d 判断：偏上行/反抽；20d 判断：偏下行/反抽失败风险。信号一致性 82 分，模型可信度 72 分。如果是 NO_EDGE 或 WEAK_EDGE，应以观察为主，不应强行下结论。",
+        "current_integrated_judgment": "IWM 当前可用预测优势：STRONG_EDGE。反抽预测器 68%，下跌延续预测器 28%，风险扩散预测器 31%。5d 判断：偏上行/反抽；20d 判断：偏下行/反抽失败风险。信号一致性 77 分，模型可信度 70 分。如果是 NO_EDGE 或 WEAK_EDGE，应以观察为主，不应强行下结论。",
         "current_price": 292.95001221,
         "data_quality": {
           "data_completeness_score": 57,
@@ -11943,6 +13054,24 @@
             "ig_oas": null,
             "ig_oas_20d_change": 0.0
           },
+          "daily_market_brief": {
+            "brief": "Finnhub quote unavailable; news risk unavailable; macro event risk flagged; rates pressure 18%.",
+            "finnhub_quote_available": false,
+            "macro_event_risk_flag": true,
+            "news_risk_score": null,
+            "rates_pressure_score": 0.18106443792778512,
+            "symbol": "IWM"
+          },
+          "finnhub": {
+            "candle_status": "missing",
+            "news_sentiment_status": "missing",
+            "quote_change_percent": null,
+            "quote_previous_close": null,
+            "quote_price": null,
+            "quote_source": null,
+            "quote_status": "missing",
+            "sentiment_score": null
+          },
           "flow_positioning_proxy": {
             "data_note": "Proxy only; no true fund-flow or positioning feed connected.",
             "defensive_vs_cyclical_20d": 0.01108516209386513,
@@ -11954,11 +13083,15 @@
           "macro_event_calendar": {
             "cpi_date": "2026-07-14",
             "data_note": "Fallback calendar approximation; replace with a real economic calendar for production.",
+            "fallback_macro_event_risk_flag": true,
+            "finnhub_economic_calendar_status": "missing_api_key",
+            "finnhub_event_count": 0,
+            "finnhub_macro_risk_events": [],
             "fomc_date": "2026-06-17",
-            "macro_event_risk_flag": false,
+            "macro_event_risk_flag": true,
             "month_end_effect": false,
             "nfp_date": "2026-07-03",
-            "options_expiry_week": false,
+            "options_expiry_week": true,
             "quarter_end_effect": false
           },
           "market_structure": {
@@ -11967,6 +13100,12 @@
             "growth_vs_large_cap_20d": 0.010734388598132472,
             "sector_participation_20d": 0.7272727272727273,
             "small_cap_vs_large_cap_20d": 0.038463142421619634
+          },
+          "news": {
+            "market_news_status": "missing_api_key",
+            "news_item_count": 0,
+            "news_risk_score": null,
+            "top_headlines": []
           },
           "price": {
             "current_price": 292.95001220703125,
@@ -11979,6 +13118,7 @@
           },
           "rates_liquidity": {
             "liquidity_stress_proxy": 0.04779144296582327,
+            "rates_pressure_score": 0.18106443792778512,
             "real_yield_proxy": null,
             "ten_year_minus_three_month": null,
             "ten_year_minus_two_year": null,
@@ -12247,14 +13387,14 @@
           "components": {
             "analog_support": 0.45,
             "data_completeness": 0.79,
-            "predictor_consistency": 0.8162097595082916,
+            "predictor_consistency": 0.8358248743719073,
             "prior_confidence": 0.57,
-            "signal_agreement": 0.82
+            "signal_agreement": 0.77
           },
           "confidence_level": "medium",
-          "confidence_score": 72,
+          "confidence_score": 70,
           "why_confidence_is_limited": [
-            "数据、信号和历史样本当前相对一致，但仍不是确定性预测。"
+            "仍有缺失/未接入类别：news。"
           ]
         },
         "name": "Russell 2000",
@@ -12266,10 +13406,10 @@
           "基准情景：使用相似样本平均路径；所有路径都是概率情景，不是确定预测。"
         ],
         "path_weight_model": {
-          "analog_path_weight": 0.2577,
-          "base_path_weight": 0.1948,
-          "bearish_path_weight": 0.1636,
-          "bounce_path_weight": 0.3838,
+          "analog_path_weight": 0.2469,
+          "base_path_weight": 0.1942,
+          "bearish_path_weight": 0.1913,
+          "bounce_path_weight": 0.3676,
           "low_confidence_simulation": false,
           "simulation_confidence_level": "medium",
           "weight_factors": {
@@ -12279,7 +13419,10 @@
             "data_completeness": 0.79,
             "failed_bounce_risk": 0.2788,
             "historical_analog_support": 0.575,
-            "signal_agreement": 0.82,
+            "macro_event_risk": 1.0,
+            "news_risk": 0.0,
+            "rates_pressure": 0.1811,
+            "signal_agreement": 0.77,
             "volatility_reversal": 1.0
           },
           "weight_source_notes": [
@@ -13514,7 +14657,7 @@
             "analog_best_path": 0.06585872378573088,
             "analog_hit_rate": 0.55,
             "analog_worst_path": -0.03890791768285917,
-            "bounce_probability": 0.5818654345000001,
+            "bounce_probability": 0.5769154345,
             "confidence": 0.513,
             "down_probability": 0.43451899175249536,
             "expected_direction": "偏上行/反抽",
@@ -13545,7 +14688,7 @@
             "failed_bounce_risk": 0.7239599215955844,
             "historical_support": "weak",
             "market_edge_status": "STRONG_EDGE",
-            "risk_expansion_probability": 0.2373,
+            "risk_expansion_probability": 0.3054,
             "trend_reversal_probability": 0.5275,
             "up_probability": 0.44069433366571326
           },
@@ -13554,7 +14697,7 @@
             "analog_best_path": 0.04947346375331296,
             "analog_hit_rate": 0.6,
             "analog_worst_path": -0.012640662559037175,
-            "bounce_probability": 0.5818654345000001,
+            "bounce_probability": 0.5769154345,
             "confidence": 0.513,
             "down_probability": 0.43224020498844196,
             "expected_direction": "偏上行/反抽",
@@ -13573,7 +14716,7 @@
             "analog_best_path": 0.036593176190090615,
             "analog_hit_rate": 0.55,
             "analog_worst_path": -0.04048378795281027,
-            "bounce_probability": 0.5818654345000001,
+            "bounce_probability": 0.5769154345,
             "confidence": 0.513,
             "down_probability": 0.4374841262817995,
             "expected_direction": "偏上行/反抽",
@@ -13604,7 +14747,7 @@
             "failed_bounce_risk": 0.6239599215955844,
             "historical_support": "supportive",
             "market_edge_status": "STRONG_EDGE",
-            "risk_expansion_probability": 0.2373,
+            "risk_expansion_probability": 0.3054,
             "trend_reversal_probability": 0.5275,
             "up_probability": 0.5850414141921713
           }
@@ -13612,7 +14755,7 @@
         "predictors": {
           "bounce_predictor": {
             "best_horizon": "3d-10d",
-            "confidence": 0.7825,
+            "confidence": 0.765,
             "historical_analog_support": "supportive",
             "invalidation_conditions": [
               "VIX turns higher again",
@@ -13626,11 +14769,11 @@
               "credit stabilization: 0.97",
               "breadth improvement proxy: 0.77"
             ],
-            "probability": 0.6862
+            "probability": 0.6772
           },
           "downside_continuation_predictor": {
             "best_horizon": "5d-20d",
-            "confidence": 0.5285,
+            "confidence": 0.546,
             "historical_analog_support": "supportive",
             "invalidation_conditions": [
               "VIX falls and stays lower",
@@ -13640,15 +14783,15 @@
             ],
             "main_drivers": [
               "base downside continuation: 0.62",
+              "rates pressure: 0.18",
               "risk-off rotation: 0.06",
-              "liquidity stress proxy: 0.05",
-              "credit deterioration: 0.03"
+              "liquidity stress proxy: 0.05"
             ],
             "probability": 0.2788
           },
           "risk_expansion_predictor": {
             "best_horizon": "20d-60d",
-            "confidence": 0.5486,
+            "confidence": 0.5724,
             "historical_analog_support": "high",
             "invalidation_conditions": [
               "credit proxy stabilizes",
@@ -13657,16 +14800,16 @@
               "risk assets regain broad participation"
             ],
             "main_drivers": [
+              "macro event risk: 1.00",
               "VIX percentile: 0.60",
               "risk-off rotation: 0.06",
-              "liquidity stress proxy: 0.05",
-              "credit deterioration: 0.03"
+              "liquidity stress proxy: 0.05"
             ],
-            "probability": 0.2373
+            "probability": 0.3054
           },
           "trend_reversal_predictor": {
             "best_horizon": "20d-60d",
-            "confidence": 0.7325,
+            "confidence": 0.715,
             "historical_analog_support": "weak",
             "invalidation_conditions": [
               "20d/60d analogs turn weak",
@@ -13693,37 +14836,37 @@
           {
             "name": "Base case",
             "name_cn": "基准情景",
-            "probability_weight": 0.1948,
+            "probability_weight": 0.1942,
             "return_20d": -0.004647763319492282,
             "summary_cn": "按最相似历史样本的平均路径推演。"
           },
           {
             "name": "Bounce case",
             "name_cn": "反弹情景",
-            "probability_weight": 0.3838,
+            "probability_weight": 0.3676,
             "return_20d": 0.03472324137495168,
             "summary_cn": "如果 Alpha v1 信号继续有效，路径更接近历史上较好的反抽样本。"
           },
           {
             "name": "Bearish case",
             "name_cn": "失败反弹情景",
-            "probability_weight": 0.1636,
+            "probability_weight": 0.1913,
             "return_20d": -0.04463476111909799,
             "summary_cn": "如果波动和信用代理恶化，路径更接近历史上较差的一组样本。"
           },
           {
             "name": "Historical analog case",
             "name_cn": "历史相似情景",
-            "probability_weight": 0.2577,
+            "probability_weight": 0.2469,
             "return_20d": -0.004647763319492282,
             "summary_cn": "只看最相似历史样本后的实际表现，不做确定性预测。"
           }
         ],
         "scenario_weights": {
-          "base_scenario": 0.1948,
-          "bearish_scenario": 0.1636,
-          "bounce_scenario": 0.3838,
-          "historical_analog_average": 0.2577
+          "base_scenario": 0.1942,
+          "bearish_scenario": 0.1913,
+          "bounce_scenario": 0.3676,
+          "historical_analog_average": 0.2469
         },
         "signal_agreement": {
           "agreement_level": "strong",
@@ -13737,10 +14880,15 @@
               "detail": "Downside continuation probability is elevated.",
               "name": "failed bounce risk",
               "score": 0.14
+            },
+            {
+              "detail": "Upcoming macro event risk is flagged.",
+              "name": "macro event risk",
+              "score": 0.08
             }
           ],
           "data_completeness_cap_applied": false,
-          "signal_agreement_score": 82,
+          "signal_agreement_score": 77,
           "supporting_signals": [
             {
               "detail": "Frozen Alpha v1 is currently triggered.",
@@ -13783,12 +14931,12 @@
         "trend_reversal_probability": 0.28456949892335187
       },
       "QQQ": {
-        "analog_path_weight": 0.2081,
-        "base_path_weight": 0.223,
-        "bearish_path_weight": 0.2238,
-        "bounce_path_weight": 0.3451,
+        "analog_path_weight": 0.1981,
+        "base_path_weight": 0.2224,
+        "bearish_path_weight": 0.2506,
+        "bounce_path_weight": 0.3289,
         "bounce_probability": 0.38471703,
-        "current_integrated_judgment": "QQQ 当前可用预测优势：WEAK_EDGE。反抽预测器 52%，下跌延续预测器 38%，风险扩散预测器 24%。5d 判断：偏上行/反抽；20d 判断：偏下行/反抽失败风险。信号一致性 64 分，模型可信度 66 分。如果是 NO_EDGE 或 WEAK_EDGE，应以观察为主，不应强行下结论。",
+        "current_integrated_judgment": "QQQ 当前可用预测优势：WEAK_EDGE。反抽预测器 50%，下跌延续预测器 38%，风险扩散预测器 31%。5d 判断：偏上行/反抽；20d 判断：偏下行/反抽失败风险。信号一致性 58 分，模型可信度 65 分。如果是 NO_EDGE 或 WEAK_EDGE，应以观察为主，不应强行下结论。",
         "current_price": 721.34002686,
         "data_quality": {
           "data_completeness_score": 57,
@@ -13829,6 +14977,24 @@
             "ig_oas": null,
             "ig_oas_20d_change": 0.0
           },
+          "daily_market_brief": {
+            "brief": "Finnhub quote unavailable; news risk unavailable; macro event risk flagged; rates pressure 18%.",
+            "finnhub_quote_available": false,
+            "macro_event_risk_flag": true,
+            "news_risk_score": null,
+            "rates_pressure_score": 0.18106443792778512,
+            "symbol": "QQQ"
+          },
+          "finnhub": {
+            "candle_status": "missing",
+            "news_sentiment_status": "missing",
+            "quote_change_percent": null,
+            "quote_previous_close": null,
+            "quote_price": null,
+            "quote_source": null,
+            "quote_status": "missing",
+            "sentiment_score": null
+          },
           "flow_positioning_proxy": {
             "data_note": "Proxy only; no true fund-flow or positioning feed connected.",
             "defensive_vs_cyclical_20d": 0.01108516209386513,
@@ -13840,11 +15006,15 @@
           "macro_event_calendar": {
             "cpi_date": "2026-07-14",
             "data_note": "Fallback calendar approximation; replace with a real economic calendar for production.",
+            "fallback_macro_event_risk_flag": true,
+            "finnhub_economic_calendar_status": "missing_api_key",
+            "finnhub_event_count": 0,
+            "finnhub_macro_risk_events": [],
             "fomc_date": "2026-06-17",
-            "macro_event_risk_flag": false,
+            "macro_event_risk_flag": true,
             "month_end_effect": false,
             "nfp_date": "2026-07-03",
-            "options_expiry_week": false,
+            "options_expiry_week": true,
             "quarter_end_effect": false
           },
           "market_structure": {
@@ -13853,6 +15023,12 @@
             "growth_vs_large_cap_20d": 0.010734388598132472,
             "sector_participation_20d": 0.7272727272727273,
             "small_cap_vs_large_cap_20d": 0.038463142421619634
+          },
+          "news": {
+            "market_news_status": "missing_api_key",
+            "news_item_count": 0,
+            "news_risk_score": null,
+            "top_headlines": []
           },
           "price": {
             "current_price": 721.3400268554688,
@@ -13865,6 +15041,7 @@
           },
           "rates_liquidity": {
             "liquidity_stress_proxy": 0.04779144296582327,
+            "rates_pressure_score": 0.18106443792778512,
             "real_yield_proxy": null,
             "ten_year_minus_three_month": null,
             "ten_year_minus_two_year": null,
@@ -14127,13 +15304,14 @@
           "components": {
             "analog_support": 0.45,
             "data_completeness": 0.79,
-            "predictor_consistency": 0.8767353862619122,
+            "predictor_consistency": 0.9026912291979803,
             "prior_confidence": 0.52,
-            "signal_agreement": 0.64
+            "signal_agreement": 0.58
           },
           "confidence_level": "medium",
-          "confidence_score": 66,
+          "confidence_score": 65,
           "why_confidence_is_limited": [
+            "仍有缺失/未接入类别：news。",
             "信号一致性还不是 strong。",
             "短周期历史相似样本偏弱。"
           ]
@@ -14147,10 +15325,10 @@
           "基准情景：使用相似样本平均路径；所有路径都是概率情景，不是确定预测。"
         ],
         "path_weight_model": {
-          "analog_path_weight": 0.2081,
-          "base_path_weight": 0.223,
-          "bearish_path_weight": 0.2238,
-          "bounce_path_weight": 0.3451,
+          "analog_path_weight": 0.1981,
+          "base_path_weight": 0.2224,
+          "bearish_path_weight": 0.2506,
+          "bounce_path_weight": 0.3289,
           "low_confidence_simulation": false,
           "simulation_confidence_level": "medium",
           "weight_factors": {
@@ -14160,7 +15338,10 @@
             "data_completeness": 0.79,
             "failed_bounce_risk": 0.3755,
             "historical_analog_support": 0.15,
-            "signal_agreement": 0.64,
+            "macro_event_risk": 1.0,
+            "news_risk": 0.0,
+            "rates_pressure": 0.1811,
+            "signal_agreement": 0.58,
             "volatility_reversal": 1.0
           },
           "weight_source_notes": [
@@ -15395,7 +16576,7 @@
             "analog_best_path": 0.04275835159659991,
             "analog_hit_rate": 0.6,
             "analog_worst_path": -0.05937379636838658,
-            "bounce_probability": 0.4387026635,
+            "bounce_probability": 0.43276266350000003,
             "confidence": 0.468,
             "down_probability": 0.5626570845291613,
             "expected_direction": "偏下行/反抽失败风险",
@@ -15426,7 +16607,7 @@
             "failed_bounce_risk": 0.763808439868502,
             "historical_support": "weak",
             "market_edge_status": "WEAK_EDGE",
-            "risk_expansion_probability": 0.2373,
+            "risk_expansion_probability": 0.3054,
             "trend_reversal_probability": 0.5476,
             "up_probability": 0.42602108070956873
           },
@@ -15435,7 +16616,7 @@
             "analog_best_path": 0.03658810507227139,
             "analog_hit_rate": 0.75,
             "analog_worst_path": -0.04368237134685249,
-            "bounce_probability": 0.4792026635,
+            "bounce_probability": 0.47326266350000007,
             "confidence": 0.468,
             "down_probability": 0.44391535520549336,
             "expected_direction": "偏上行/反抽",
@@ -15454,7 +16635,7 @@
             "analog_best_path": 0.03437433286772329,
             "analog_hit_rate": 0.75,
             "analog_worst_path": -0.03612173763231907,
-            "bounce_probability": 0.4792026635,
+            "bounce_probability": 0.47326266350000007,
             "confidence": 0.468,
             "down_probability": 0.44185655596802853,
             "expected_direction": "偏上行/反抽",
@@ -15485,7 +16666,7 @@
             "failed_bounce_risk": 0.763808439868502,
             "historical_support": "weak",
             "market_edge_status": "WEAK_EDGE",
-            "risk_expansion_probability": 0.2373,
+            "risk_expansion_probability": 0.3054,
             "trend_reversal_probability": 0.5476,
             "up_probability": 0.41756068859941337
           }
@@ -15493,7 +16674,7 @@
         "predictors": {
           "bounce_predictor": {
             "best_horizon": "3d-10d",
-            "confidence": 0.6695,
+            "confidence": 0.6485,
             "historical_analog_support": "weak",
             "invalidation_conditions": [
               "VIX turns higher again",
@@ -15507,11 +16688,11 @@
               "breadth improvement proxy: 0.77",
               "Alpha v1 bounce probability: 0.38"
             ],
-            "probability": 0.5156
+            "probability": 0.5048
           },
           "downside_continuation_predictor": {
             "best_horizon": "5d-20d",
-            "confidence": 0.5915,
+            "confidence": 0.6125,
             "historical_analog_support": "weak",
             "invalidation_conditions": [
               "VIX falls and stays lower",
@@ -15521,15 +16702,15 @@
             ],
             "main_drivers": [
               "base downside continuation: 0.66",
+              "rates pressure: 0.18",
               "risk-off rotation: 0.06",
-              "liquidity stress proxy: 0.05",
-              "credit deterioration: 0.03"
+              "liquidity stress proxy: 0.05"
             ],
             "probability": 0.3755
           },
           "risk_expansion_predictor": {
             "best_horizon": "20d-60d",
-            "confidence": 0.5915,
+            "confidence": 0.6125,
             "historical_analog_support": "high",
             "invalidation_conditions": [
               "credit proxy stabilizes",
@@ -15538,16 +16719,16 @@
               "risk assets regain broad participation"
             ],
             "main_drivers": [
+              "macro event risk: 1.00",
               "VIX percentile: 0.60",
               "risk-off rotation: 0.06",
-              "liquidity stress proxy: 0.05",
-              "credit deterioration: 0.03"
+              "liquidity stress proxy: 0.05"
             ],
-            "probability": 0.2373
+            "probability": 0.3054
           },
           "trend_reversal_predictor": {
             "best_horizon": "20d-60d",
-            "confidence": 0.6695,
+            "confidence": 0.6485,
             "historical_analog_support": "weak",
             "invalidation_conditions": [
               "20d/60d analogs turn weak",
@@ -15575,37 +16756,37 @@
           {
             "name": "Base case",
             "name_cn": "基准情景",
-            "probability_weight": 0.223,
+            "probability_weight": 0.2224,
             "return_20d": -0.0097021099671255,
             "summary_cn": "按最相似历史样本的平均路径推演。"
           },
           {
             "name": "Bounce case",
             "name_cn": "反弹情景",
-            "probability_weight": 0.3451,
+            "probability_weight": 0.3289,
             "return_20d": 0.035730326553365985,
             "summary_cn": "如果 Alpha v1 信号继续有效，路径更接近历史上较好的反抽样本。"
           },
           {
             "name": "Bearish case",
             "name_cn": "失败反弹情景",
-            "probability_weight": 0.2238,
+            "probability_weight": 0.2506,
             "return_20d": -0.07025770583472808,
             "summary_cn": "如果波动和信用代理恶化，路径更接近历史上较差的一组样本。"
           },
           {
             "name": "Historical analog case",
             "name_cn": "历史相似情景",
-            "probability_weight": 0.2081,
+            "probability_weight": 0.1981,
             "return_20d": -0.0097021099671255,
             "summary_cn": "只看最相似历史样本后的实际表现，不做确定性预测。"
           }
         ],
         "scenario_weights": {
-          "base_scenario": 0.223,
-          "bearish_scenario": 0.2238,
-          "bounce_scenario": 0.3451,
-          "historical_analog_average": 0.2081
+          "base_scenario": 0.2224,
+          "bearish_scenario": 0.2506,
+          "bounce_scenario": 0.3289,
+          "historical_analog_average": 0.1981
         },
         "signal_agreement": {
           "agreement_level": "mixed",
@@ -15624,10 +16805,15 @@
               "detail": "Downside continuation probability is elevated.",
               "name": "failed bounce risk",
               "score": 0.14
+            },
+            {
+              "detail": "Upcoming macro event risk is flagged.",
+              "name": "macro event risk",
+              "score": 0.08
             }
           ],
           "data_completeness_cap_applied": false,
-          "signal_agreement_score": 64,
+          "signal_agreement_score": 58,
           "supporting_signals": [
             {
               "detail": "Frozen Alpha v1 is currently triggered.",
@@ -15665,12 +16851,12 @@
         "trend_reversal_probability": 0.2629852193517149
       },
       "SPY": {
-        "analog_path_weight": 0.2551,
+        "analog_path_weight": 0.2445,
         "base_path_weight": 0.1762,
-        "bearish_path_weight": 0.1554,
-        "bounce_path_weight": 0.4133,
+        "bearish_path_weight": 0.1829,
+        "bounce_path_weight": 0.3964,
         "bounce_probability": 0.59293002,
-        "current_integrated_judgment": "SPY 当前可用预测优势：STRONG_EDGE。反抽预测器 64%，下跌延续预测器 27%，风险扩散预测器 24%。5d 判断：偏下行/反抽失败风险；20d 判断：偏上行/反抽。信号一致性 87 分，模型可信度 76 分。如果是 NO_EDGE 或 WEAK_EDGE，应以观察为主，不应强行下结论。",
+        "current_integrated_judgment": "SPY 当前可用预测优势：STRONG_EDGE。反抽预测器 64%，下跌延续预测器 27%，风险扩散预测器 31%。5d 判断：偏下行/反抽失败风险；20d 判断：偏上行/反抽。信号一致性 82 分，模型可信度 75 分。如果是 NO_EDGE 或 WEAK_EDGE，应以观察为主，不应强行下结论。",
         "current_price": 741.75,
         "data_quality": {
           "data_completeness_score": 57,
@@ -15711,6 +16897,24 @@
             "ig_oas": null,
             "ig_oas_20d_change": 0.0
           },
+          "daily_market_brief": {
+            "brief": "Finnhub quote unavailable; news risk unavailable; macro event risk flagged; rates pressure 18%.",
+            "finnhub_quote_available": false,
+            "macro_event_risk_flag": true,
+            "news_risk_score": null,
+            "rates_pressure_score": 0.18106443792778512,
+            "symbol": "SPY"
+          },
+          "finnhub": {
+            "candle_status": "missing",
+            "news_sentiment_status": "missing",
+            "quote_change_percent": null,
+            "quote_previous_close": null,
+            "quote_price": null,
+            "quote_source": null,
+            "quote_status": "missing",
+            "sentiment_score": null
+          },
           "flow_positioning_proxy": {
             "data_note": "Proxy only; no true fund-flow or positioning feed connected.",
             "defensive_vs_cyclical_20d": 0.01108516209386513,
@@ -15722,11 +16926,15 @@
           "macro_event_calendar": {
             "cpi_date": "2026-07-14",
             "data_note": "Fallback calendar approximation; replace with a real economic calendar for production.",
+            "fallback_macro_event_risk_flag": true,
+            "finnhub_economic_calendar_status": "missing_api_key",
+            "finnhub_event_count": 0,
+            "finnhub_macro_risk_events": [],
             "fomc_date": "2026-06-17",
-            "macro_event_risk_flag": false,
+            "macro_event_risk_flag": true,
             "month_end_effect": false,
             "nfp_date": "2026-07-03",
-            "options_expiry_week": false,
+            "options_expiry_week": true,
             "quarter_end_effect": false
           },
           "market_structure": {
@@ -15735,6 +16943,12 @@
             "growth_vs_large_cap_20d": 0.010734388598132472,
             "sector_participation_20d": 0.7272727272727273,
             "small_cap_vs_large_cap_20d": 0.038463142421619634
+          },
+          "news": {
+            "market_news_status": "missing_api_key",
+            "news_item_count": 0,
+            "news_risk_score": null,
+            "top_headlines": []
           },
           "price": {
             "current_price": 741.75,
@@ -15747,6 +16961,7 @@
           },
           "rates_liquidity": {
             "liquidity_stress_proxy": 0.04779144296582327,
+            "rates_pressure_score": 0.18106443792778512,
             "real_yield_proxy": null,
             "ten_year_minus_three_month": null,
             "ten_year_minus_two_year": null,
@@ -16006,13 +17221,14 @@
           "components": {
             "analog_support": 0.7,
             "data_completeness": 0.79,
-            "predictor_consistency": 0.7810184325679442,
+            "predictor_consistency": 0.7995500374158179,
             "prior_confidence": 0.58,
-            "signal_agreement": 0.87
+            "signal_agreement": 0.82
           },
           "confidence_level": "high",
-          "confidence_score": 76,
+          "confidence_score": 75,
           "why_confidence_is_limited": [
+            "仍有缺失/未接入类别：news。",
             "短周期历史相似样本偏弱。"
           ]
         },
@@ -16025,10 +17241,10 @@
           "基准情景：使用相似样本平均路径；所有路径都是概率情景，不是确定预测。"
         ],
         "path_weight_model": {
-          "analog_path_weight": 0.2551,
+          "analog_path_weight": 0.2445,
           "base_path_weight": 0.1762,
-          "bearish_path_weight": 0.1554,
-          "bounce_path_weight": 0.4133,
+          "bearish_path_weight": 0.1829,
+          "bounce_path_weight": 0.3964,
           "low_confidence_simulation": false,
           "simulation_confidence_level": "high",
           "weight_factors": {
@@ -16038,7 +17254,10 @@
             "data_completeness": 0.79,
             "failed_bounce_risk": 0.2714,
             "historical_analog_support": 0.575,
-            "signal_agreement": 0.87,
+            "macro_event_risk": 1.0,
+            "news_risk": 0.0,
+            "rates_pressure": 0.1811,
+            "signal_agreement": 0.82,
             "volatility_reversal": 1.0
           },
           "weight_source_notes": [
@@ -17273,7 +18492,7 @@
             "analog_best_path": 0.03084991429141004,
             "analog_hit_rate": 0.4,
             "analog_worst_path": -0.030486369566841365,
-            "bounce_probability": 0.603238509,
+            "bounce_probability": 0.598288509,
             "confidence": 0.522,
             "down_probability": 0.4885245602973188,
             "expected_direction": "偏下行/反抽失败风险",
@@ -17304,7 +18523,7 @@
             "failed_bounce_risk": 0.37097413696176773,
             "historical_support": "supportive",
             "market_edge_status": "STRONG_EDGE",
-            "risk_expansion_probability": 0.2373,
+            "risk_expansion_probability": 0.3054,
             "trend_reversal_probability": 0.7304,
             "up_probability": 0.6463351620429129
           },
@@ -17313,7 +18532,7 @@
             "analog_best_path": 0.02370684376897536,
             "analog_hit_rate": 0.35,
             "analog_worst_path": -0.033125078535713115,
-            "bounce_probability": 0.603238509,
+            "bounce_probability": 0.598288509,
             "confidence": 0.522,
             "down_probability": 0.4970059222000698,
             "expected_direction": "偏下行/反抽失败风险",
@@ -17332,7 +18551,7 @@
             "analog_best_path": 0.0239858130688948,
             "analog_hit_rate": 0.35,
             "analog_worst_path": -0.04054406755435924,
-            "bounce_probability": 0.603238509,
+            "bounce_probability": 0.598288509,
             "confidence": 0.522,
             "down_probability": 0.5016664237451672,
             "expected_direction": "偏下行/反抽失败风险",
@@ -17363,7 +18582,7 @@
             "failed_bounce_risk": 0.37097413696176773,
             "historical_support": "supportive",
             "market_edge_status": "STRONG_EDGE",
-            "risk_expansion_probability": 0.2373,
+            "risk_expansion_probability": 0.3054,
             "trend_reversal_probability": 0.7304,
             "up_probability": 0.6676258605669345
           }
@@ -17371,7 +18590,7 @@
         "predictors": {
           "bounce_predictor": {
             "best_horizon": "3d-10d",
-            "confidence": 0.75,
+            "confidence": 0.7325,
             "historical_analog_support": "weak",
             "invalidation_conditions": [
               "VIX turns higher again",
@@ -17385,11 +18604,11 @@
               "breadth improvement proxy: 0.77",
               "Alpha v1 bounce probability: 0.59"
             ],
-            "probability": 0.6444
+            "probability": 0.6354
           },
           "downside_continuation_predictor": {
             "best_horizon": "5d-20d",
-            "confidence": 0.511,
+            "confidence": 0.5285,
             "historical_analog_support": "weak",
             "invalidation_conditions": [
               "VIX falls and stays lower",
@@ -17399,15 +18618,15 @@
             ],
             "main_drivers": [
               "base downside continuation: 0.37",
+              "rates pressure: 0.18",
               "risk-off rotation: 0.06",
-              "negative 20d trend: 0.05",
-              "liquidity stress proxy: 0.05"
+              "negative 20d trend: 0.05"
             ],
             "probability": 0.2714
           },
           "risk_expansion_predictor": {
             "best_horizon": "20d-60d",
-            "confidence": 0.5486,
+            "confidence": 0.5724,
             "historical_analog_support": "high",
             "invalidation_conditions": [
               "credit proxy stabilizes",
@@ -17416,16 +18635,16 @@
               "risk assets regain broad participation"
             ],
             "main_drivers": [
+              "macro event risk: 1.00",
               "VIX percentile: 0.60",
               "risk-off rotation: 0.06",
-              "liquidity stress proxy: 0.05",
-              "credit deterioration: 0.03"
+              "liquidity stress proxy: 0.05"
             ],
-            "probability": 0.2373
+            "probability": 0.3054
           },
           "trend_reversal_predictor": {
             "best_horizon": "20d-60d",
-            "confidence": 0.8,
+            "confidence": 0.7825,
             "historical_analog_support": "supportive",
             "invalidation_conditions": [
               "20d/60d analogs turn weak",
@@ -17459,30 +18678,30 @@
           {
             "name": "Bounce case",
             "name_cn": "反弹情景",
-            "probability_weight": 0.4133,
+            "probability_weight": 0.3964,
             "return_20d": 0.04904937115556929,
             "summary_cn": "如果 Alpha v1 信号继续有效，路径更接近历史上较好的反抽样本。"
           },
           {
             "name": "Bearish case",
             "name_cn": "失败反弹情景",
-            "probability_weight": 0.1554,
+            "probability_weight": 0.1829,
             "return_20d": -0.02281417461895483,
             "summary_cn": "如果波动和信用代理恶化，路径更接近历史上较差的一组样本。"
           },
           {
             "name": "Historical analog case",
             "name_cn": "历史相似情景",
-            "probability_weight": 0.2551,
+            "probability_weight": 0.2445,
             "return_20d": 0.02000877398698462,
             "summary_cn": "只看最相似历史样本后的实际表现，不做确定性预测。"
           }
         ],
         "scenario_weights": {
           "base_scenario": 0.1762,
-          "bearish_scenario": 0.1554,
-          "bounce_scenario": 0.4133,
-          "historical_analog_average": 0.2551
+          "bearish_scenario": 0.1829,
+          "bounce_scenario": 0.3964,
+          "historical_analog_average": 0.2445
         },
         "signal_agreement": {
           "agreement_level": "strong",
@@ -17491,10 +18710,15 @@
               "detail": "3d/5d/10d analogs are weak or negative.",
               "name": "short-term analog conflict",
               "score": 0.16
+            },
+            {
+              "detail": "Upcoming macro event risk is flagged.",
+              "name": "macro event risk",
+              "score": 0.08
             }
           ],
           "data_completeness_cap_applied": false,
-          "signal_agreement_score": 87,
+          "signal_agreement_score": 82,
           "supporting_signals": [
             {
               "detail": "Frozen Alpha v1 is currently triggered.",

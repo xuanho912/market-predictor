@@ -289,6 +289,7 @@ The page shows `data_completeness_score`, `model_confidence_score`, Market State
 
 V3 adds a higher-quality signal layer without changing Alpha v1:
 
+- optional Finnhub provider via GitHub Actions Secret `FINNHUB_API_KEY` for quotes, candle fallback, market status, economic calendar, market news and news sentiment where available,
 - additional market symbols for volatility term proxies, sector breadth proxies, high-beta/low-vol rotation, and equal-weight/cap-weight comparison,
 - FRED downloader for HY OAS, IG OAS, 10Y, 2Y, 3M and real-yield proxy when available,
 - explicit `available / proxy / fallback / missing / stale` source status in `data_quality_report.json`,
@@ -301,6 +302,8 @@ V3 adds a higher-quality signal layer without changing Alpha v1:
 Proxy categories are clearly labeled. Breadth uses sector ETFs and RSP/SPY, not constituent-level breadth. Flow uses volume and rotation proxies, not real fund-flow data. Macro currently uses a deterministic event-calendar fallback, not a live economic calendar feed.
 
 Simulated path weights are driven by bounce probability, failed-bounce risk, signal agreement, historical analog support, credit stability, volatility reversal, breadth support, and data completeness. If data completeness falls below the threshold, the path is marked `low_confidence_simulation`.
+
+Finnhub responses are cached under `data/finnhub_cache` during GitHub Actions. The cache is ignored by git and the API key is never written to code, README, public JSON, logs, or frontend environment variables.
 
 ## Historical Analog Engine
 

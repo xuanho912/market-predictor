@@ -54,6 +54,9 @@ const factorText: Record<string, string> = {
   credit_stability: "信用稳定",
   volatility_reversal: "波动率回落",
   breadth_support: "宽度支持",
+  news_risk: "新闻风险",
+  macro_event_risk: "宏观事件风险",
+  rates_pressure: "利率压力",
   data_completeness: "数据完整度",
 };
 
@@ -95,6 +98,7 @@ function statusCn(value: string | undefined) {
   if (value === "fallback") return "备用/规则";
   if (value === "missing") return "缺失";
   if (value === "stale") return "过期";
+  if (value === "rate_limited") return "限速";
   if (value === "not_available") return "未接入";
   return value ?? "未知";
 }
@@ -367,6 +371,11 @@ function DataQualityPanel({ report }: { report?: DataQualityReport }) {
       {summary.missing_key_sources?.length ? (
         <p className="mt-2 text-xs text-muted">缺失关键源：{summary.missing_key_sources.slice(0, 8).join(" / ")}</p>
       ) : null}
+      <p className="mt-2 text-xs text-muted">
+        Finnhub：{summary.finnhub_available ? "可用" : summary.finnhub_rate_limited ? "限速/使用缓存或回退" : "未接入或 Secret 未注入"}；
+        Yahoo fallback：{summary.yahoo_fallback_used ? "已使用" : "未使用"}；
+        仍需真实源：FRED / options / breadth / flow。
+      </p>
       {summary.quality_note ? <p className="mt-2 text-xs text-muted">{summary.quality_note}</p> : null}
     </section>
   );

@@ -64,10 +64,12 @@ def build_market_intelligence_v3(
     simulated_paths: dict[str, Any],
     analogs: dict[str, dict[str, Any]],
     prior_intelligence: dict[str, Any],
+    finnhub_bundle: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
+    finnhub_bundle = finnhub_bundle or _empty_finnhub_bundle()
     fred_series = load_fred_series_bundle()
-    feature_snapshot = build_feature_snapshot_v3(series_by_symbol, fred_series)
-    data_quality = build_data_quality_report_v3(series_by_symbol, fred_series, feature_snapshot, overview.get("as_of"))
+    feature_snapshot = build_feature_snapshot_v3(series_by_symbol, fred_series, finnhub_bundle)
+    data_quality = build_data_quality_report_v3(series_by_symbol, fred_series, feature_snapshot, overview.get("as_of"), finnhub_bundle)
     model_confidence_by_symbol: dict[str, Any] = {}
     predictor_outputs_by_symbol: dict[str, Any] = {}
     signal_agreement_by_symbol: dict[str, Any] = {}
@@ -175,6 +177,7 @@ def build_market_intelligence_v3(
         "model_confidence_by_symbol": model_confidence_by_symbol,
         "edge_status_by_symbol": edge_status_by_symbol,
         "high_confidence_signal_report": high_confidence_report,
+        "finnhub_status": _finnhub_status_summary(finnhub_bundle),
         "warnings": [
             "Alpha v1 threshold remains frozen at 0.32534311.",
             "Proxy breadth, proxy flow and calendar fallbacks are labeled as proxy/fallback, not true constituent or fund-flow feeds.",
@@ -209,7 +212,11 @@ def load_fred_series(name: str, series_id: str, lookback_days: int) -> FredSerie
     return FredSeries(name=name, series_id=series_id, rows=[], source="missing", real_data=False)
 
 
-def build_feature_snapshot_v3(series_by_symbol: dict[str, DownloadedSeries], fred_series: dict[str, FredSeries]) -> dict[str, Any]:
+def build_feature_snapshot_v3(
+    series_by_symbol: dict[str, DownloadedSeries],
+    fred_series: dict[str, FredSeries],
+    finnhub_bundle: dict[str, Any],
+) -> dict[str, Any]:
     closes = {symbol: _closes(series_by_symbol.get(symbol)) for symbol in set(TARGET_SYMBOLS + V3_MARKET_SYMBOLS + ("^VIX", "HYG", "LQD", "TLT", "UUP", "^TNX"))}
     volumes = {symbol: _volumes(series_by_symbol.get(symbol)) for symbol in closes}
     fred = {name: _fred_values(series) for name, series in fred_series.items()}
@@ -235,12 +242,21 @@ def build_feature_snapshot_v3(series_by_symbol: dict[str, DownloadedSeries], fre
     for symbol in TARGET_SYMBOLS:
         target = closes.get(symbol, [])
         target_volume = volumes.get(symbol, [])
+        finnhub_symbol = _finnhub_symbol_snapshot(finnhub_bundle, symbol)
         breadth = _breadth_proxy(sector_closes, rsp, spy)
         flow = _flow_proxy(target_volume, target, sphb, splv, sector_closes)
         credit = _credit_snapshot(hyg, lqd, fred)
         rates = _rates_snapshot(tlt, uup, fred)
         volatility = _volatility_snapshot(vix, vix9d, vix3m, vix6m, vvix, skew)
         market_structure = _market_structure_snapshot(closes, sector_closes)
+        macro_calendar = _macro_event_calendar_snapshot()
+        fallback_macro_risk = bool(macro_calendar.get("macro_event_risk_flag"))
+        finnhub_macro = _finnhub_macro_snapshot(finnhub_bundle)
+        macro_calendar.update(finnhub_macro)
+        macro_calendar["fallback_macro_event_risk_flag"] = fallback_macro_risk
+        macro_calendar["macro_event_risk_flag"] = fallback_macro_risk or bool(finnhub_macro.get("macro_event_risk_flag"))
+        news = _finnhub_news_snapshot(finnhub_bundle)
+        rates["rates_pressure_score"] = _clip((rates.get("liquidity_stress_proxy") or 0.0) * 0.65 + (0.15 if macro_calendar.get("macro_event_risk_flag") else 0.0), 0.0, 1.0)
         symbols[symbol] = {
             "price": {
                 "current_price": _last(target),
@@ -256,8 +272,11 @@ def build_feature_snapshot_v3(series_by_symbol: dict[str, DownloadedSeries], fre
             "credit": credit,
             "rates_liquidity": rates,
             "market_structure": market_structure,
-            "macro_event_calendar": _macro_event_calendar_snapshot(),
+            "macro_event_calendar": macro_calendar,
             "flow_positioning_proxy": flow,
+            "news": news,
+            "daily_market_brief": _daily_market_brief(symbol, finnhub_symbol, news, macro_calendar, rates),
+            "finnhub": finnhub_symbol,
         }
 
     return {
@@ -272,6 +291,7 @@ def build_data_quality_report_v3(
     fred_series: dict[str, FredSeries],
     feature_snapshot: dict[str, Any],
     as_of: str | None,
+    finnhub_bundle: dict[str, Any],
 ) -> dict[str, Any]:
     market_required = set(TARGET_SYMBOLS + ("^VIX", "HYG", "LQD", "TLT", "UUP", "^TNX") + V3_MARKET_SYMBOLS)
     source_rows: dict[str, Any] = {}
@@ -287,6 +307,7 @@ def build_data_quality_report_v3(
         if latest:
             latest_dates.append(latest)
         source_rows[name] = _fred_source_status(name, series, latest)
+    source_rows.update(_finnhub_source_rows(finnhub_bundle))
 
     reference_date = max(latest_dates) if latest_dates else as_of
     for row in source_rows.values():
@@ -317,6 +338,8 @@ def build_data_quality_report_v3(
     any_stale = any(row.get("stale_data") for row in source_rows.values())
     any_missing = any(row.get("missing_data") for row in source_rows.values())
     real_core = all(source_rows.get(symbol, {}).get("real_data") for symbol in TARGET_SYMBOLS + ("^VIX", "HYG", "LQD", "TLT", "UUP", "^TNX"))
+    finnhub_status = _finnhub_status_summary(finnhub_bundle)
+    yahoo_fallback_used = any(str(row.get("source", "")).startswith(("yfinance", "yahoo-chart", "local-cache-yfinance", "local-cache-yahoo-chart")) for row in source_rows.values())
 
     return {
         "version": "market_intelligence_engine_v3_data_quality",
@@ -325,6 +348,14 @@ def build_data_quality_report_v3(
         "summary": {
             "data_source_status": "real_core_with_proxies" if real_core else "partial_or_failed",
             "real_market_data": real_core,
+            "finnhub_available": finnhub_status["finnhub_available"],
+            "finnhub_missing": finnhub_status["finnhub_missing"],
+            "finnhub_rate_limited": finnhub_status["finnhub_rate_limited"],
+            "yahoo_fallback_used": yahoo_fallback_used,
+            "fred_required": True,
+            "options_required": True,
+            "breadth_required": True,
+            "flow_required": True,
             "fallback_used": any_fallback,
             "synthetic_used": any_synthetic,
             "stale_data": any_stale,
@@ -366,6 +397,8 @@ def build_signal_agreement_score(
     price = features.get("price", {})
     rates = features.get("rates_liquidity", {})
     flow = features.get("flow_positioning_proxy", {})
+    news = features.get("news", {})
+    macro = features.get("macro_event_calendar", {})
     vix_change_5d = _float_or_none(vol.get("vix_change_5d")) or 0.0
     vix_change_20d = _float_or_none(vol.get("vix_change_20d")) or 0.0
     credit_stability = _float_or_none(credit.get("credit_stabilization_score")) or 0.0
@@ -373,7 +406,10 @@ def build_signal_agreement_score(
     breadth_score = _float_or_none(breadth.get("breadth_improvement_score")) or 0.0
     trend_20d = _float_or_none(price.get("return_20d")) or 0.0
     liquidity_stress = _float_or_none(rates.get("liquidity_stress_proxy")) or 0.0
+    rates_pressure = _float_or_none(rates.get("rates_pressure_score")) or liquidity_stress
     risk_off_rotation = _float_or_none(flow.get("risk_off_rotation_score")) or 0.0
+    news_risk = _float_or_none(news.get("news_risk_score"))
+    macro_event_risk = bool(macro.get("macro_event_risk_flag"))
     failed_bounce = float(overview_symbol.get("downside_continuation_probability") or 0.0)
 
     add(bool(overview_symbol.get("live_signal")), supporting, "Alpha v1 bounce signal", 0.16, "Frozen Alpha v1 is currently triggered.")
@@ -384,6 +420,7 @@ def build_signal_agreement_score(
     add(breadth_score > 0.55, supporting, "breadth improvement proxy", 0.11, "Sector/equal-weight breadth proxy is improving.")
     add(trend_20d > 0, supporting, "trend momentum", 0.08, "20d momentum is positive.")
     add(liquidity_stress < 0.40, supporting, "liquidity proxy", 0.08, "Liquidity proxy is not stressed.")
+    add(news_risk is not None and news_risk < 0.35, supporting, "news risk low", 0.06, "Finnhub market-news risk score is low.")
 
     add(analog_support.get("short_term_support") == "weak", conflicting, "short-term analog conflict", 0.16, "3d/5d/10d analogs are weak or negative.")
     add(analog_support.get("medium_term_support") == "weak", conflicting, "medium-term analog conflict", 0.15, "20d/60d analogs are weak or negative.")
@@ -392,7 +429,10 @@ def build_signal_agreement_score(
     add(breadth_score < 0.42, conflicting, "breadth weak", 0.12, "Breadth proxy is weak.")
     add(failed_bounce > 0.55, conflicting, "failed bounce risk", 0.14, "Downside continuation probability is elevated.")
     add(liquidity_stress > 0.55, conflicting, "liquidity stress", 0.12, "Liquidity proxy is stressed.")
+    add(rates_pressure > 0.55, conflicting, "rates pressure", 0.10, "Rates pressure proxy is elevated.")
     add(risk_off_rotation > 0.55, conflicting, "risk-off rotation", 0.10, "Rotation proxy favors defensive/risk-off assets.")
+    add(news_risk is not None and news_risk > 0.55, conflicting, "news risk", 0.10, "Finnhub news-risk score is elevated.")
+    add(macro_event_risk, conflicting, "macro event risk", 0.08, "Upcoming macro event risk is flagged.")
 
     support_score = sum(item["score"] for item in supporting)
     conflict_score = sum(item["score"] for item in conflicting)
@@ -425,6 +465,8 @@ def build_predictors(
     rates = features.get("rates_liquidity", {})
     price = features.get("price", {})
     flow = features.get("flow_positioning_proxy", {})
+    news = features.get("news", {})
+    macro = features.get("macro_event_calendar", {})
     bounce_base = float(overview_symbol.get("bounce_probability") or 0.0)
     downside_base = float(overview_symbol.get("downside_continuation_probability") or 0.0)
     reversal_base = float(overview_symbol.get("trend_reversal_probability") or 0.0)
@@ -435,10 +477,13 @@ def build_predictors(
     credit_deterioration = _float_or_none(credit.get("credit_deterioration_score")) or 0.0
     breadth_improvement = _float_or_none(breadth.get("breadth_improvement_score")) or 0.0
     liquidity_stress = _float_or_none(rates.get("liquidity_stress_proxy")) or 0.0
+    rates_pressure = _float_or_none(rates.get("rates_pressure_score")) or liquidity_stress
     trend_20d = _float_or_none(price.get("return_20d")) or 0.0
     trend_60d = _float_or_none(price.get("return_60d")) or 0.0
     risk_off_rotation = _float_or_none(flow.get("risk_off_rotation_score")) or 0.0
     vix_percentile = _float_or_none(vol.get("vix_percentile_1y")) or 0.5
+    news_risk = _float_or_none(news.get("news_risk_score")) or 0.0
+    macro_event_risk = 1.0 if macro.get("macro_event_risk_flag") else 0.0
 
     short_support = analog_support.get("short_term_support", "neutral")
     medium_support = analog_support.get("medium_term_support", "neutral")
@@ -476,6 +521,9 @@ def build_predictors(
         + credit_deterioration * 0.23
         + liquidity_stress * 0.20
         + risk_off_rotation * 0.15
+        + news_risk * 0.08
+        + rates_pressure * 0.10
+        + macro_event_risk * 0.05
         + max(-trend_60d, 0.0) * 1.2
         + (0.08 if analog_support.get("worst_path_risk") == "high" else 0.0),
         0.0,
@@ -504,6 +552,7 @@ def build_predictors(
                 ("base downside continuation", downside_base),
                 ("credit deterioration", credit_deterioration),
                 ("liquidity stress proxy", liquidity_stress),
+                ("rates pressure", rates_pressure),
                 ("risk-off rotation", risk_off_rotation),
                 ("negative 20d trend", max(-trend_20d, 0.0) * 6.0),
             ]),
@@ -531,6 +580,8 @@ def build_predictors(
                 ("VIX percentile", vix_percentile),
                 ("credit deterioration", credit_deterioration),
                 ("liquidity stress proxy", liquidity_stress),
+                ("news risk", news_risk),
+                ("macro event risk", macro_event_risk),
                 ("risk-off rotation", risk_off_rotation),
                 ("negative 60d trend", max(-trend_60d, 0.0) * 4.0),
             ]),
@@ -671,6 +722,9 @@ def build_path_weight_model(
     volatility = features.get("volatility_options", {})
     credit = features.get("credit", {})
     breadth = features.get("breadth", {})
+    news = features.get("news", {})
+    macro = features.get("macro_event_calendar", {})
+    rates = features.get("rates_liquidity", {})
     bounce_probability = float(overview_symbol.get("bounce_probability") or 0.0)
     failed_bounce_risk = float(predictors.get("downside_continuation_predictor", {}).get("probability") or overview_symbol.get("downside_continuation_probability") or 0.0)
     signal_agreement_score = float(signal_agreement.get("signal_agreement_score") or 0.0) / 100.0
@@ -680,6 +734,9 @@ def build_path_weight_model(
     vix_change_20d = _float_or_none(volatility.get("vix_change_20d")) or 0.0
     volatility_reversal = 1.0 if vix_change_5d < 0 and vix_change_20d <= 0 else 0.55 if vix_change_5d < 0 else 0.15
     breadth_support = _float_or_none(breadth.get("breadth_improvement_score")) or 0.0
+    news_risk = _float_or_none(news.get("news_risk_score")) or 0.0
+    macro_event_risk = 1.0 if macro.get("macro_event_risk_flag") else 0.0
+    rates_pressure = _float_or_none(rates.get("rates_pressure_score")) or 0.0
     data_completeness = float(data_quality.get("summary", {}).get("data_completeness_score") or 0.0) / 100.0
     confidence_score = float(confidence.get("confidence_score") or 0.0) / 100.0
 
@@ -698,6 +755,9 @@ def build_path_weight_model(
         + (1.0 - historical_support_score) * 0.09
         + (1.0 - credit_stability) * 0.08
         + (1.0 - volatility_reversal) * 0.07
+        + news_risk * 0.06
+        + rates_pressure * 0.06
+        + macro_event_risk * 0.04
         + max(0.0, 0.75 - data_completeness) * 0.10,
         "analog_path_weight": 0.18 + historical_support_score * 0.18 + data_completeness * 0.10 + signal_agreement_score * 0.08,
     }
@@ -717,6 +777,9 @@ def build_path_weight_model(
                 "credit_stability": round(credit_stability, 4),
                 "volatility_reversal": round(volatility_reversal, 4),
                 "breadth_support": round(breadth_support, 4),
+                "news_risk": round(news_risk, 4),
+                "macro_event_risk": round(macro_event_risk, 4),
+                "rates_pressure": round(rates_pressure, 4),
                 "data_completeness": round(data_completeness, 4),
             },
             "weight_source_notes": [
@@ -867,6 +930,202 @@ def render_high_confidence_signal_report_markdown(report: dict[str, Any]) -> str
     return "\n".join(lines)
 
 
+def _empty_finnhub_bundle() -> dict[str, Any]:
+    return {
+        "provider": "finnhub",
+        "configured": False,
+        "available": False,
+        "missing": True,
+        "rate_limited": False,
+        "cache_used": False,
+        "quotes": {},
+        "candles": {},
+        "news_sentiment": {},
+        "economic_calendar": {"status": "missing_api_key", "events": [], "event_count": 0},
+        "market_status": {"status": "missing_api_key", "payload": None},
+        "market_holiday": {"status": "missing_api_key", "payload": None},
+        "market_news": {"status": "missing_api_key", "items": [], "news_risk_score": None},
+        "rates_data": {"status": "missing"},
+        "alternative_data": {"status": "missing"},
+    }
+
+
+def _finnhub_status_summary(bundle: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "finnhub_available": bool(bundle.get("available")),
+        "finnhub_missing": bool(bundle.get("missing")) or not bool(bundle.get("configured")),
+        "finnhub_rate_limited": bool(bundle.get("rate_limited")),
+        "finnhub_cache_used": bool(bundle.get("cache_used")),
+        "finnhub_successful_requests": int(bundle.get("successful_requests") or 0),
+        "finnhub_failed_requests": int(bundle.get("failed_requests") or 0),
+    }
+
+
+def _finnhub_source_rows(bundle: dict[str, Any]) -> dict[str, Any]:
+    rows: dict[str, Any] = {
+        "FINNHUB_API": _finnhub_source_row(
+            "FINNHUB_API",
+            {
+                "status": "available" if bundle.get("available") else "rate_limited" if bundle.get("rate_limited") else "missing",
+                "source": "finnhub",
+                "cache_used": bundle.get("cache_used", False),
+                "payload": {"configured": bundle.get("configured", False)},
+            },
+        )
+    }
+    for symbol, result in (bundle.get("quotes") or {}).items():
+        rows[f"finnhub_quote_{symbol}"] = _finnhub_source_row(f"finnhub_quote_{symbol}", result)
+    for symbol, result in (bundle.get("candles") or {}).items():
+        rows[f"finnhub_candle_{symbol}"] = _finnhub_source_row(f"finnhub_candle_{symbol}", result)
+    for symbol, result in (bundle.get("news_sentiment") or {}).items():
+        rows[f"finnhub_news_sentiment_{symbol}"] = _finnhub_source_row(f"finnhub_news_sentiment_{symbol}", result)
+    for symbol in TARGET_SYMBOLS:
+        rows.setdefault(f"finnhub_quote_{symbol}", _finnhub_source_row(f"finnhub_quote_{symbol}", {"status": "missing", "source": "finnhub"}))
+        rows.setdefault(f"finnhub_candle_{symbol}", _finnhub_source_row(f"finnhub_candle_{symbol}", {"status": "missing", "source": "finnhub"}))
+        rows.setdefault(f"finnhub_news_sentiment_{symbol}", _finnhub_source_row(f"finnhub_news_sentiment_{symbol}", {"status": "missing", "source": "finnhub"}))
+    rows["finnhub_economic_calendar"] = _finnhub_source_row("finnhub_economic_calendar", bundle.get("economic_calendar") or {})
+    rows["finnhub_market_news"] = _finnhub_source_row("finnhub_market_news", bundle.get("market_news") or {})
+    rows["finnhub_market_status"] = _finnhub_source_row("finnhub_market_status", bundle.get("market_status") or {})
+    rows["finnhub_market_holiday"] = _finnhub_source_row("finnhub_market_holiday", bundle.get("market_holiday") or {})
+    rows["finnhub_rates_data"] = _finnhub_source_row("finnhub_rates_data", bundle.get("rates_data") or {})
+    rows["finnhub_alternative_data"] = _finnhub_source_row("finnhub_alternative_data", bundle.get("alternative_data") or {})
+    return rows
+
+
+def _finnhub_source_row(name: str, result: dict[str, Any]) -> dict[str, Any]:
+    raw_status = str(result.get("status") or "missing")
+    cache_used = bool(result.get("cache_used"))
+    if raw_status == "available":
+        status = "available"
+        missing = False
+        real_data = True
+    elif cache_used:
+        status = "fallback"
+        missing = False
+        real_data = True
+    elif raw_status == "rate_limited":
+        status = "rate_limited"
+        missing = True
+        real_data = False
+    else:
+        status = "missing"
+        missing = True
+        real_data = False
+    return {
+        "symbol": name,
+        "source": result.get("source", "finnhub"),
+        "status": status,
+        "rows": _payload_size(result),
+        "latest_date": None,
+        "real_data": real_data,
+        "fallback_used": cache_used,
+        "rate_limited": raw_status == "rate_limited",
+        "stale_data": False,
+        "missing_data": missing,
+        "point_in_time_safe": real_data,
+    }
+
+
+def _payload_size(result: dict[str, Any]) -> int:
+    if "event_count" in result:
+        return int(result.get("event_count") or 0)
+    if "items" in result:
+        return len(result.get("items") or [])
+    payload = result.get("payload") if "payload" in result else result.get("data")
+    if isinstance(payload, list):
+        return len(payload)
+    if isinstance(payload, dict):
+        for key in ("c", "t", "economicCalendar"):
+            value = payload.get(key)
+            if isinstance(value, list):
+                return len(value)
+        return 1 if payload else 0
+    return 0
+
+
+def _finnhub_symbol_snapshot(bundle: dict[str, Any], symbol: str) -> dict[str, Any]:
+    quote = (bundle.get("quotes") or {}).get(symbol, {})
+    candle = (bundle.get("candles") or {}).get(symbol, {})
+    sentiment = (bundle.get("news_sentiment") or {}).get(symbol, {})
+    quote_payload = quote.get("payload") if isinstance(quote, dict) else None
+    sentiment_payload = sentiment.get("payload") if isinstance(sentiment, dict) else None
+    return {
+        "quote_status": quote.get("status", "missing") if isinstance(quote, dict) else "missing",
+        "quote_source": quote.get("source") if isinstance(quote, dict) else None,
+        "quote_price": _float_or_none((quote_payload or {}).get("c")) if isinstance(quote_payload, dict) else None,
+        "quote_previous_close": _float_or_none((quote_payload or {}).get("pc")) if isinstance(quote_payload, dict) else None,
+        "quote_change_percent": _float_or_none((quote_payload or {}).get("dp")) if isinstance(quote_payload, dict) else None,
+        "candle_status": candle.get("status", "missing") if isinstance(candle, dict) else "missing",
+        "news_sentiment_status": sentiment.get("status", "missing") if isinstance(sentiment, dict) else "missing",
+        "sentiment_score": _extract_sentiment_score(sentiment_payload),
+    }
+
+
+def _extract_sentiment_score(payload: Any) -> float | None:
+    if not isinstance(payload, dict):
+        return None
+    for key in ("sentiment", "companyNewsScore", "sectorAverageBullishPercent", "buzz"):
+        value = payload.get(key)
+        if isinstance(value, (int, float)):
+            return float(value)
+        if isinstance(value, dict):
+            for nested in ("score", "bullishPercent"):
+                if isinstance(value.get(nested), (int, float)):
+                    return float(value[nested])
+    return None
+
+
+def _finnhub_macro_snapshot(bundle: dict[str, Any]) -> dict[str, Any]:
+    calendar = bundle.get("economic_calendar") or {}
+    events = calendar.get("events") or []
+    high_risk_keywords = ("cpi", "inflation", "fomc", "fed", "payroll", "nonfarm", "nfp", "unemployment", "pce", "rate")
+    risk_events = []
+    for event in events:
+        text = f"{event.get('event') or ''} {event.get('impact') or ''}".lower()
+        if any(keyword in text for keyword in high_risk_keywords):
+            risk_events.append(event)
+    return {
+        "finnhub_economic_calendar_status": calendar.get("status", "missing"),
+        "finnhub_event_count": len(events),
+        "finnhub_macro_risk_events": risk_events[:10],
+        "macro_event_risk_flag": bool(risk_events) or False,
+    }
+
+
+def _finnhub_news_snapshot(bundle: dict[str, Any]) -> dict[str, Any]:
+    market_news = bundle.get("market_news") or {}
+    items = market_news.get("items") or []
+    return {
+        "market_news_status": market_news.get("status", "missing"),
+        "news_risk_score": _float_or_none(market_news.get("news_risk_score")),
+        "top_headlines": [item.get("headline") for item in items[:5] if item.get("headline")],
+        "news_item_count": len(items),
+    }
+
+
+def _daily_market_brief(
+    symbol: str,
+    finnhub_symbol: dict[str, Any],
+    news: dict[str, Any],
+    macro: dict[str, Any],
+    rates: dict[str, Any],
+) -> dict[str, Any]:
+    quote_price = finnhub_symbol.get("quote_price")
+    quote_text = f"Finnhub quote {quote_price:.2f}" if isinstance(quote_price, (int, float)) else "Finnhub quote unavailable"
+    news_risk = news.get("news_risk_score")
+    news_text = "news risk unavailable" if news_risk is None else f"news risk {float(news_risk):.0%}"
+    macro_text = "macro event risk flagged" if macro.get("macro_event_risk_flag") else "no major macro event flag"
+    rates_text = f"rates pressure {(rates.get('rates_pressure_score') or 0.0):.0%}"
+    return {
+        "symbol": symbol,
+        "brief": f"{quote_text}; {news_text}; {macro_text}; {rates_text}.",
+        "finnhub_quote_available": finnhub_symbol.get("quote_status") == "available",
+        "news_risk_score": news_risk,
+        "macro_event_risk_flag": bool(macro.get("macro_event_risk_flag")),
+        "rates_pressure_score": rates.get("rates_pressure_score"),
+    }
+
+
 def _coverage_categories_v3(source_rows: dict[str, Any], feature_snapshot: dict[str, Any]) -> dict[str, Any]:
     def status(symbol: str) -> str:
         return source_rows.get(symbol, {}).get("status", "missing")
@@ -877,6 +1136,8 @@ def _coverage_categories_v3(source_rows: dict[str, Any], feature_snapshot: dict[
     fred_credit_available = sum(1 for name in ("HY_OAS", "IG_OAS") if source_rows.get(name, {}).get("real_data"))
     fred_rates_available = sum(1 for name in ("DGS10", "DGS2", "DGS3MO", "DFII10") if source_rows.get(name, {}).get("real_data"))
     target_available = sum(1 for symbol in TARGET_SYMBOLS if source_rows.get(symbol, {}).get("real_data"))
+    finnhub_news_available = source_rows.get("finnhub_market_news", {}).get("status") == "available"
+    finnhub_calendar_available = source_rows.get("finnhub_economic_calendar", {}).get("status") == "available"
 
     return {
         "price": _coverage_payload_v3("available" if target_available == 4 else "missing", "SPY/QQQ/IWM/DIA OHLCV", target_available, 4, True),
@@ -886,7 +1147,8 @@ def _coverage_categories_v3(source_rows: dict[str, Any], feature_snapshot: dict[
         "credit": _coverage_payload_v3("available" if fred_credit_available == 2 else "proxy" if status("HYG") == "available" and status("LQD") == "available" else "missing", "FRED HY/IG OAS plus HYG/LQD proxy", fred_credit_available + int(status("HYG") == "available") + int(status("LQD") == "available"), 4, fred_credit_available == 2),
         "rates": _coverage_payload_v3("available" if fred_rates_available >= 3 else "partial" if status("^TNX") == "available" else "missing", "FRED 10Y/2Y/3M/TIPS plus ^TNX", fred_rates_available + int(status("^TNX") == "available"), 5, fred_rates_available >= 3),
         "liquidity": _coverage_payload_v3("proxy" if status("TLT") == "available" and status("UUP") == "available" else "missing", "TLT/UUP/rates stress proxy, not reserves/repo/TGA", int(status("TLT") == "available") + int(status("UUP") == "available") + fred_rates_available, 5, False),
-        "macro": _coverage_payload_v3("fallback", "Rule-based CPI/FOMC/NFP/options-expiry/month-end calendar risk, not a live event feed", 1, 5, False),
+        "macro": _coverage_payload_v3("available" if finnhub_calendar_available else "fallback", "Finnhub economic calendar if available, otherwise rule-based CPI/FOMC/NFP/options-expiry/month-end calendar risk", 2 if finnhub_calendar_available else 1, 5, finnhub_calendar_available),
+        "news": _coverage_payload_v3("available" if finnhub_news_available else "missing", "Finnhub market news risk score and daily market brief", int(finnhub_news_available), 1, finnhub_news_available),
         "flow": _coverage_payload_v3("proxy" if target_available == 4 else "missing", "Volume z-score, relative volume, high-beta vs low-vol and sector rotation proxy", target_available + int(status("SPHB") == "available") + int(status("SPLV") == "available"), 7, False),
         "market_structure": _coverage_payload_v3("proxy" if sector_available >= 7 else "missing", "Sector ETF participation, defensive/cyclical, small/large, growth/value proxies", sector_available, 11, False),
     }
@@ -902,6 +1164,7 @@ def _data_completeness_score_v3(coverage: dict[str, Any], source_rows: dict[str,
         "rates": 10,
         "liquidity": 8,
         "macro": 6,
+        "news": 5,
         "flow": 7,
         "market_structure": 12,
     }
