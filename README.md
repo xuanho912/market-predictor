@@ -85,16 +85,47 @@ Free-first cloud deployment uses GitHub only:
 
 - `.github/workflows/forward-alpha-v1.yml`: runs the frozen Alpha v1 forward tracker, commits updated `outputs/`, builds the static frontend, and deploys GitHub Pages.
 - `scripts/export_static_alpha_v1.py`: exports committed tracker results to frontend-readable static JSON, including the Market Prediction Dashboard payload.
+- `scripts/export_public_dashboard_bundle.py`: exports a sanitized static dashboard bundle for a public display repository without backend code, research scripts, Codex skills, `.env` files, source maps, or secret markers.
 - `scripts/market_intelligence_v2.py`: adds data quality auditing, proxy feature snapshots, Market State Engine v2, model confidence scoring, horizon-specific analog support, and scenario weights.
 - `frontend/next.config.js`: switches to static export when `GITHUB_PAGES=true`.
 - `docs/cloud_deployment.md`: no-card, GitHub Pages deployment instructions.
+- `docs/private_core_public_dashboard.md`: recommended private-code / public-results structure.
 
 The recommended free path is GitHub Actions plus GitHub Pages. No Vercel, no Render, no payment information.
 
-Published URL after Pages is enabled:
+If the code repository stays public, the published URL after Pages is enabled:
 
 ```text
 https://xuanho912.github.io/market-predictor/
+```
+
+If you want to protect the core work, use the recommended two-repository structure:
+
+```text
+private: xuanho912/market-predictor
+public:  xuanho912/market-predictor-dashboard
+```
+
+The private repository runs the model and generates results. The public repository receives only the generated static dashboard. Configure these private-repo Actions variables:
+
+```text
+PUBLIC_DASHBOARD_REPO=xuanho912/market-predictor-dashboard
+PUBLIC_DASHBOARD_BRANCH=main
+GITHUB_PAGES_BASE_PATH=/market-predictor-dashboard
+```
+
+Configure this private-repo Actions secret:
+
+```text
+DASHBOARD_DEPLOY_TOKEN
+```
+
+Use a fine-grained token with `Contents: read/write` access only to the public dashboard repository. Keep `FINNHUB_API_KEY` as a secret. Do not put API keys in code, README files, frontend public JSON, or `NEXT_PUBLIC_*` variables.
+
+Then the phone URL is normally:
+
+```text
+https://xuanho912.github.io/market-predictor-dashboard/
 ```
 
 The static page reads the latest committed snapshots:

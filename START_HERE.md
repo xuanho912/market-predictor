@@ -12,7 +12,7 @@ Do not use Alpha v1 for live trading. It is not a confirmed alpha.
 
 ## Free Cloud Path
 
-Recommended no-card setup:
+Recommended no-card setup while the repo is public:
 
 1. Enable GitHub Actions in the repo.
 2. Run workflow `Forward Alpha v1 Observation` once.
@@ -34,6 +34,38 @@ https://github.com/xuanho912/market-predictor/settings/pages
 Set `Build and deployment -> Source -> GitHub Actions`.
 
 Details are in `docs/cloud_deployment.md`.
+
+## Recommended Protected Setup
+
+If you want code private and results visible, use this instead:
+
+```text
+private core repo:      xuanho912/market-predictor
+public dashboard repo: xuanho912/market-predictor-dashboard
+```
+
+Private repo Actions secrets:
+
+```text
+FINNHUB_API_KEY
+DASHBOARD_DEPLOY_TOKEN
+```
+
+Private repo Actions variables:
+
+```text
+PUBLIC_DASHBOARD_REPO=xuanho912/market-predictor-dashboard
+PUBLIC_DASHBOARD_BRANCH=main
+GITHUB_PAGES_BASE_PATH=/market-predictor-dashboard
+```
+
+Then the public phone URL is normally:
+
+```text
+https://xuanho912.github.io/market-predictor-dashboard/
+```
+
+The private repo keeps code, model logic, Skill files, and secrets. The public repo receives only the generated static dashboard. Details are in `docs/private_core_public_dashboard.md`.
 
 ## Dashboard Output
 

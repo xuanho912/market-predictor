@@ -30,6 +30,9 @@ jobs:
       MARKET_DATA_CACHE_DIR: data/market_data_cache
       FINNHUB_CACHE_DIR: data/finnhub_cache
       FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+      PUBLIC_DASHBOARD_REPO: ${{ vars.PUBLIC_DASHBOARD_REPO }}
+      PUBLIC_DASHBOARD_BRANCH: ${{ vars.PUBLIC_DASHBOARD_BRANCH || 'main' }}
+      GITHUB_PAGES_BASE_PATH: ${{ vars.GITHUB_PAGES_BASE_PATH || '/market-predictor' }}
       ALLOW_TRADING: "false"
       PYTHONPATH: backend
 
@@ -90,16 +93,48 @@ jobs:
         working-directory: frontend
         env:
           GITHUB_PAGES: "true"
+          GITHUB_PAGES_BASE_PATH: ${{ env.GITHUB_PAGES_BASE_PATH }}
         run: npm run build
 
+      - name: Export sanitized public dashboard bundle
+        run: python scripts/export_public_dashboard_bundle.py --source frontend/out --dest outputs/public_dashboard_site
+
+      - name: Publish sanitized dashboard to public repository
+        if: ${{ env.PUBLIC_DASHBOARD_REPO != '' }}
+        env:
+          DASHBOARD_DEPLOY_TOKEN: ${{ secrets.DASHBOARD_DEPLOY_TOKEN }}
+        run: |
+          if [ -z "$DASHBOARD_DEPLOY_TOKEN" ]; then
+            echo "::warning::PUBLIC_DASHBOARD_REPO is set but DASHBOARD_DEPLOY_TOKEN is missing. Skipping public dashboard publish."
+            exit 0
+          fi
+          rm -rf /tmp/market-predictor-dashboard-publish
+          git clone --depth 1 --branch "$PUBLIC_DASHBOARD_BRANCH" "https://x-access-token:${DASHBOARD_DEPLOY_TOKEN}@github.com/${PUBLIC_DASHBOARD_REPO}.git" /tmp/market-predictor-dashboard-publish || \
+            git clone --depth 1 "https://x-access-token:${DASHBOARD_DEPLOY_TOKEN}@github.com/${PUBLIC_DASHBOARD_REPO}.git" /tmp/market-predictor-dashboard-publish
+          rsync -a --delete --exclude ".git" outputs/public_dashboard_site/ /tmp/market-predictor-dashboard-publish/
+          cd /tmp/market-predictor-dashboard-publish
+          git remote set-url origin "https://github.com/${PUBLIC_DASHBOARD_REPO}.git"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No public dashboard changes to publish."
+          else
+            git commit -m "Update generated market prediction dashboard"
+            git push "https://x-access-token:${DASHBOARD_DEPLOY_TOKEN}@github.com/${PUBLIC_DASHBOARD_REPO}.git" "HEAD:${PUBLIC_DASHBOARD_BRANCH}"
+          fi
+
       - name: Configure GitHub Pages
+        if: ${{ !github.event.repository.private }}
         uses: actions/configure-pages@v5
 
       - name: Upload GitHub Pages artifact
+        if: ${{ !github.event.repository.private }}
         uses: actions/upload-pages-artifact@v4
         with:
           path: frontend/out
 
       - name: Deploy to GitHub Pages
+        if: ${{ !github.event.repository.private }}
         id: deployment
         uses: actions/deploy-pages@v4

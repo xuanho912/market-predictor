@@ -28,6 +28,70 @@ https://xuanho912.github.io/market-predictor/
 
 GitHub Pages is available for public repositories on GitHub Free. For private repositories, Pages availability depends on the account plan.
 
+## Privacy-First Free Architecture
+
+If you do not want the core code to be public, use two repositories:
+
+```text
+private core:      xuanho912/market-predictor
+public dashboard: xuanho912/market-predictor-dashboard
+```
+
+The private core repository keeps:
+
+- backend code,
+- model logic,
+- feature engineering,
+- validation scripts,
+- Codex Skill files,
+- research documents,
+- GitHub Actions secrets.
+
+The public dashboard repository receives only:
+
+- generated HTML/CSS/JS static dashboard files,
+- generated JSON prediction snapshots,
+- a `dashboard_manifest.json` saying this is public static output only.
+
+It does not receive `backend/`, `scripts/`, `.agents/`, `.github/`, `.env`, data caches, model files, or API keys.
+
+Private core repository settings:
+
+```text
+Settings -> Secrets and variables -> Actions
+```
+
+Secrets:
+
+```text
+FINNHUB_API_KEY
+DASHBOARD_DEPLOY_TOKEN
+```
+
+Use a fine-grained `DASHBOARD_DEPLOY_TOKEN` with access only to `xuanho912/market-predictor-dashboard` and only `Contents: read/write`.
+
+Variables:
+
+```text
+PUBLIC_DASHBOARD_REPO=xuanho912/market-predictor-dashboard
+PUBLIC_DASHBOARD_BRANCH=main
+GITHUB_PAGES_BASE_PATH=/market-predictor-dashboard
+```
+
+Public dashboard repository Pages setting:
+
+```text
+Build and deployment -> Source -> Deploy from a branch
+Branch -> main
+Folder -> / (root)
+```
+
+Public URL:
+
+```text
+https://xuanho912.github.io/market-predictor-dashboard/
+```
+
 ## Required GitHub Setting
 
 Open:
@@ -89,7 +153,17 @@ outputs/high_confidence_signal_report.md
 GITHUB_PAGES=true npm run build
 ```
 
-6. Deploys `frontend/out` to GitHub Pages.
+6. Exports and safety-scans a public-only dashboard bundle:
+
+```bash
+python scripts/export_public_dashboard_bundle.py --source frontend/out --dest outputs/public_dashboard_site
+```
+
+7. If `PUBLIC_DASHBOARD_REPO` is configured, publishes only `outputs/public_dashboard_site` to the public dashboard repository.
+
+8. If the core repository is public, deploys `frontend/out` to the same repository's GitHub Pages.
+
+If the core repository is private, same-repo Pages deployment is skipped. The public dashboard repository remains the free display path.
 
 Schedule:
 
@@ -140,6 +214,18 @@ The GitHub Pages page shows:
 The page explicitly marks unavailable or proxy data categories. Breadth and flow are proxy-based until real feeds are connected; macro/event risk is a fallback calendar approximation. These improve situational awareness but do not confirm alpha.
 
 No backend is required for this free path.
+
+## What Is Protected
+
+The privacy-first setup protects:
+
+- core source code,
+- model and feature logic,
+- validation workflow internals,
+- Codex Skill and research framework,
+- API keys and deployment tokens.
+
+It cannot protect what is intentionally displayed on the public dashboard. Anyone who can open the public URL can view the visible prediction results and chart data.
 
 ## What Free GitHub Pages Loses
 
