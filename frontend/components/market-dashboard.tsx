@@ -124,6 +124,41 @@ function strongestScenario(symbolData: SimulatedSymbolPaths | undefined) {
   return cards[0]?.name_cn ?? "暂无";
 }
 
+function strongestPredictor(data: SimulatedSymbolPaths | undefined) {
+  const entries = Object.entries(data?.predictors ?? {});
+  if (!entries.length) return null;
+  return entries.sort(([, left], [, right]) => right.probability - left.probability)[0];
+}
+
+function strongestPredictorText(data: SimulatedSymbolPaths | undefined) {
+  const winner = strongestPredictor(data);
+  if (!winner) return "暂无";
+  return `${predictorText[winner[0]] ?? winner[0]} ${pct(winner[1].probability)}`;
+}
+
+function plainAction(data: SimulatedSymbolPaths) {
+  const edge = data.market_edge_status?.market_edge_status;
+  const winner = strongestPredictor(data)?.[0];
+  if (edge === "NO_EDGE" || edge === "WEAK_EDGE") return "先等，不要强行下结论";
+  if (winner === "bounce_predictor") return "重点观察反抽是否延续";
+  if (winner === "downside_continuation_predictor") return "防继续下跌，别急着抄底";
+  if (winner === "trend_reversal_predictor") return "观察修复能否站稳";
+  if (winner === "risk_expansion_predictor") return "先防风险扩散";
+  return "观察信号是否继续同向";
+}
+
+function plainDecision(data: SimulatedSymbolPaths) {
+  const state = stateCn(data.market_state);
+  const edge = edgeCn(data.market_edge_status?.market_edge_status);
+  const strongest = strongestPredictorText(data);
+  const fiveDay = data.prediction_horizons?.["5d"];
+  const twentyDay = data.prediction_horizons?.["20d"];
+  const fiveText = fiveDay ? `${fiveDay.expected_direction}，区间 ${signedPct(fiveDay.expected_return_range?.[0])} 到 ${signedPct(fiveDay.expected_return_range?.[1])}` : "暂无";
+  const twentyText = twentyDay ? `${twentyDay.expected_direction}，区间 ${signedPct(twentyDay.expected_return_range?.[0])} 到 ${signedPct(twentyDay.expected_return_range?.[1])}` : "暂无";
+  const action = plainAction(data);
+  return `${data.symbol} 现在是“${state}”，今天的可用预测优势是“${edge}”。最强方向是 ${strongest}。5日看法：${fiveText}；20日看法：${twentyText}。大白话：${action}。这不是确定走势，也不是交易指令。`;
+}
+
 function plainSummary(symbolData: SimulatedSymbolPaths | undefined) {
   if (!symbolData) return "当前没有可用数据。";
   if (symbolData.current_integrated_judgment) return symbolData.current_integrated_judgment;
@@ -150,10 +185,17 @@ function xForIndex(index: number, total: number, width: number, pad: number) {
   return pad + index * step;
 }
 
+function valueAt(values: Array<number | null>, index: number | null) {
+  if (index == null) return null;
+  const value = values[index];
+  return typeof value === "number" && Number.isFinite(value) ? value : null;
+}
+
 function PredictionChart({ data }: { data: SimulatedSymbolPaths }) {
+  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
   const width = 760;
-  const height = 320;
-  const pad = 36;
+  const height = 360;
+  const pad = 42;
   const paths = data.paths;
   const allValues = [
     ...paths.historical_price,
@@ -171,22 +213,50 @@ function PredictionChart({ data }: { data: SimulatedSymbolPaths }) {
   const historicalValues = paths.historical_price.filter((value): value is number => value != null);
   const currentPrice = data.current_price ?? historicalValues[historicalValues.length - 1] ?? null;
   const priceTicks = [maxY, (maxY + minY) / 2, minY];
+  const chartSeries = [
+    { key: "history", label: "历史价格", values: paths.historical_price, color: "#14211f" },
+    { key: "expected", label: "综合期望", values: paths.expected_path, color: "#2563eb" },
+    { key: "bounce", label: "反抽情景", values: paths.bounce_path, color: "#0f9f7a" },
+    { key: "bearish", label: "失败反抽", values: paths.bearish_path, color: "#dc4a4a" },
+    { key: "analog", label: "历史均值", values: paths.analog_average_path, color: "#f59e0b" },
+    { key: "upper", label: "上沿", values: paths.confidence_band_upper, color: "#64748b" },
+    { key: "lower", label: "下沿", values: paths.confidence_band_lower, color: "#64748b" },
+  ];
+  const hoverRows = (hoverIndex == null
+    ? []
+    : chartSeries
+        .map((item) => ({ ...item, value: valueAt(item.values, hoverIndex) }))
+        .filter((item) => item.value != null)) as Array<(typeof chartSeries)[number] & { value: number }>;
+  const hoverX = hoverIndex == null ? null : xForIndex(hoverIndex, paths.dates.length, width, pad);
+  const hoverPrimary = hoverRows[0]?.value ?? null;
+  const hoverY = hoverPrimary == null ? null : yForPrice(hoverPrimary);
+  const tooltipWidth = 190;
+  const tooltipHeight = Math.max(86, 44 + hoverRows.length * 19);
+  const tooltipX = hoverX == null ? 0 : Math.min(Math.max(hoverX + 12, pad), width - pad - tooltipWidth);
+  const tooltipY = hoverY == null ? pad : Math.min(Math.max(hoverY - tooltipHeight / 2, pad), height - pad - tooltipHeight);
+  const hoverDate = hoverIndex == null ? null : paths.dates[hoverIndex];
+  const hoverPhase = hoverIndex == null ? "" : hoverIndex <= paths.split_index ? "历史已发生" : "未来情景模拟";
   const horizonIndexes = [3, 5, 10, 20, 60].map((days) => ({
     days,
     index: Math.min(paths.split_index + days, paths.dates.length - 1),
   }));
 
   return (
-    <section className="mt-5 rounded-lg border border-line bg-panel p-4">
+    <section className="mt-5 rounded-lg border border-teal bg-white p-4 shadow-sm">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <p className="text-xs uppercase text-muted">Past + Simulated Future Path</p>
-          <h2 className="mt-1 text-base font-semibold">过去走势 + 概率情景路径</h2>
+          <p className="text-xs uppercase text-teal">核心图表</p>
+          <h2 className="mt-1 text-xl font-semibold">过去走势 + 未来概率路径</h2>
+          <p className="mt-1 text-xs text-muted">鼠标放到图中任意一天，可以看到当天价格和各条模拟路径价格。</p>
         </div>
-        <p className="text-xs text-muted sm:text-right">分界线右侧为模拟路径，低可信路径会被标记为观察。</p>
+        <p className="text-xs text-muted sm:text-right">竖虚线右侧是概率情景，不是保证会发生的预测。</p>
       </div>
       <div className="mt-3 overflow-x-auto">
-        <svg viewBox={`0 0 ${width} ${height}`} className="h-80 min-w-[720px] w-full">
+        <svg
+          viewBox={`0 0 ${width} ${height}`}
+          className="h-[360px] min-w-[720px] w-full"
+          onMouseLeave={() => setHoverIndex(null)}
+        >
           <rect x="0" y="0" width={width} height={height} rx="8" fill="#ffffff" />
           {priceTicks.map((tick) => (
             <g key={tick}>
@@ -220,6 +290,51 @@ function PredictionChart({ data }: { data: SimulatedSymbolPaths }) {
           <path d={svgPath(paths.analog_average_path, minY, maxY, width, height, pad)} fill="none" stroke="#f59e0b" strokeWidth="2" />
           <text x={pad} y={22} fontSize="12" fill="#62706b">历史价格</text>
           <text x={splitX + 10} y={22} fontSize="12" fill="#62706b">模拟未来</text>
+          {paths.dates.map((date, index) => {
+            const x = xForIndex(index, paths.dates.length, width, pad);
+            const step = (width - pad * 2) / Math.max(paths.dates.length - 1, 1);
+            const titleRows = chartSeries
+              .map((item) => {
+                const rowValue = valueAt(item.values, index);
+                return rowValue == null ? null : `${item.label}: ${price(rowValue)}`;
+              })
+              .filter(Boolean)
+              .join("\n");
+            return (
+              <rect
+                key={`${date}-${index}`}
+                x={x - step / 2}
+                y={pad}
+                width={Math.max(step, 4)}
+                height={height - pad * 2}
+                fill="transparent"
+                onMouseEnter={() => setHoverIndex(index)}
+                onMouseMove={() => setHoverIndex(index)}
+                onTouchStart={() => setHoverIndex(index)}
+              >
+                <title>{`${date}\n${index <= paths.split_index ? "历史已发生" : "未来情景模拟"}\n${titleRows}`}</title>
+              </rect>
+            );
+          })}
+          {hoverIndex != null && hoverX != null ? (
+            <g pointerEvents="none">
+              <line x1={hoverX} x2={hoverX} y1={pad} y2={height - pad} stroke="#0f766e" strokeWidth="1.2" strokeDasharray="3 3" />
+              {hoverRows.map((item) => (
+                <circle key={item.key} cx={hoverX} cy={yForPrice(item.value)} r="3.5" fill={item.color} stroke="#ffffff" strokeWidth="1.5" />
+              ))}
+              <rect x={tooltipX} y={tooltipY} width={tooltipWidth} height={tooltipHeight} rx="8" fill="#14211f" opacity="0.94" />
+              <text x={tooltipX + 12} y={tooltipY + 20} fontSize="12" fontWeight="700" fill="#ffffff">{hoverDate}</text>
+              <text x={tooltipX + 12} y={tooltipY + 37} fontSize="11" fill="#cbd5d1">{hoverPhase}</text>
+              {hoverRows.map((item, rowIndex) => (
+                <g key={item.key}>
+                  <circle cx={tooltipX + 13} cy={tooltipY + 58 + rowIndex * 19} r="3" fill={item.color} />
+                  <text x={tooltipX + 23} y={tooltipY + 62 + rowIndex * 19} fontSize="11" fill="#ffffff">
+                    {item.label}: {price(item.value)}
+                  </text>
+                </g>
+              ))}
+            </g>
+          ) : null}
         </svg>
       </div>
       <div className="mt-3 grid grid-cols-2 gap-2 text-xs text-muted sm:grid-cols-5">
@@ -275,18 +390,6 @@ function edgeRank(value: string | undefined) {
   return 1;
 }
 
-function strongestPredictor(data: SimulatedSymbolPaths | undefined) {
-  const entries = Object.entries(data?.predictors ?? {});
-  if (!entries.length) return null;
-  return entries.sort(([, left], [, right]) => right.probability - left.probability)[0];
-}
-
-function strongestPredictorText(data: SimulatedSymbolPaths | undefined) {
-  const winner = strongestPredictor(data);
-  if (!winner) return "暂无";
-  return `${predictorText[winner[0]] ?? winner[0]} ${pct(winner[1].probability)}`;
-}
-
 function MarketCard({
   symbol,
   selected,
@@ -303,7 +406,8 @@ function MarketCard({
     <button
       type="button"
       onClick={onSelect}
-      className={`rounded-lg border p-3 text-left transition ${selected ? "border-teal bg-panel shadow-sm" : "border-line bg-white"}`}
+      title={`${symbol} 最近收盘价：${price(data.current_price)}；状态：${stateCn(data.market_state)}；反抽概率：${pct(data.bounce_probability)}`}
+      className={`rounded-lg border p-3 text-left transition hover:border-teal hover:shadow-sm ${selected ? "border-teal bg-panel shadow-sm" : "border-line bg-white"}`}
     >
       <div className="flex items-center justify-between gap-2">
         <div className="flex items-center gap-2">
@@ -414,13 +518,23 @@ function ConfidencePanel({ data }: { data: SimulatedSymbolPaths }) {
 function CurrentSummary({ data }: { data: SimulatedSymbolPaths }) {
   const support = data.historical_support_by_horizon;
   return (
-    <section className="rounded-lg border border-teal bg-[#eefaf5] p-4">
-      <p className="text-xs uppercase text-teal">大白话预测总结</p>
-      <h2 className="mt-1 text-lg font-semibold">{data.symbol} 当前判断</h2>
-      <p className="mt-3 text-sm leading-6">{plainSummary(data)}</p>
-      <div className="mt-4 grid gap-3 text-sm sm:grid-cols-3">
+    <section className="rounded-lg border border-teal bg-[#eefaf5] p-5 shadow-sm">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <p className="text-xs uppercase text-teal">大白话预测总结</p>
+          <h2 className="mt-1 text-2xl font-semibold">{data.symbol} 当前判断</h2>
+        </div>
+        <div className="rounded-md bg-white px-3 py-2 text-sm">
+          <p className="text-muted">下一步</p>
+          <p className="font-semibold text-ink">{plainAction(data)}</p>
+        </div>
+      </div>
+      <p className="mt-4 text-base leading-7">{plainDecision(data)}</p>
+      <p className="mt-3 text-sm leading-6 text-muted">{plainSummary(data)}</p>
+      <div className="mt-5 grid gap-3 text-sm sm:grid-cols-4">
         <Metric label="今天是否有预测优势" value={edgeCn(data.market_edge_status?.market_edge_status)} />
         <Metric label="当前状态" value={stateCn(data.market_state)} />
+        <Metric label="最强方向" value={strongestPredictorText(data)} />
         <Metric label="最强情景" value={strongestScenario(data)} />
         <Metric label="5d / 20d / 60d 历史支持" value={`${supportCn(support?.by_horizon?.["5d"]?.support)} / ${supportCn(support?.by_horizon?.["20d"]?.support)} / ${supportCn(support?.by_horizon?.["60d"]?.support)}`} />
       </div>
@@ -747,21 +861,20 @@ export function MarketDashboard({ dashboard }: { dashboard: PredictionDashboard 
         </div>
       </section>
 
-      <FirstScreenDecisionPanel selected={selected} strongest={strongest} />
-      <DataQualityPanel report={dashboard.data_quality_report ?? dashboard.market_intelligence_v2?.data_quality_report} />
-
       <div className="mt-5 grid gap-5 lg:grid-cols-[1.4fr_0.9fr]">
         <CurrentSummary data={selected} />
         <ConfidencePanel data={selected} />
       </div>
 
       <PredictionChart data={selected} />
+      <FirstScreenDecisionPanel selected={selected} strongest={strongest} />
       <HorizonTable data={selected} />
       <PredictorPanel data={selected} />
       <MarketStatePanel data={selected} />
       <ScenarioCards data={selected} />
       <HistoricalAnalogs cases={topAnalogs} data={selected} />
       <RiskPanel data={selected} />
+      <DataQualityPanel report={dashboard.data_quality_report ?? dashboard.market_intelligence_v2?.data_quality_report} />
     </main>
   );
 }
