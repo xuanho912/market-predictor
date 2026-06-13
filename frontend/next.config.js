@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const isGithubPages = process.env.GITHUB_PAGES === "true";
-const configuredBasePath = process.env.GITHUB_PAGES_BASE_PATH ?? "/market-predictor";
+const configuredBasePath =
+  process.env.PUBLIC_DASHBOARD_BASE_PATH ??
+  process.env.GITHUB_PAGES_BASE_PATH ??
+  "/market-predictor";
 const normalizedBasePath =
   configuredBasePath === "/"
     ? ""

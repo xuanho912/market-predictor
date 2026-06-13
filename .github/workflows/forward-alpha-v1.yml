@@ -32,7 +32,7 @@ jobs:
       FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
       PUBLIC_DASHBOARD_REPO: ${{ vars.PUBLIC_DASHBOARD_REPO }}
       PUBLIC_DASHBOARD_BRANCH: ${{ vars.PUBLIC_DASHBOARD_BRANCH || 'main' }}
-      GITHUB_PAGES_BASE_PATH: ${{ vars.GITHUB_PAGES_BASE_PATH || '/market-predictor' }}
+      PUBLIC_DASHBOARD_BASE_PATH: ${{ vars.PUBLIC_DASHBOARD_BASE_PATH || '/market-predictor' }}
       ALLOW_TRADING: "false"
       PYTHONPATH: backend
 
@@ -93,7 +93,7 @@ jobs:
         working-directory: frontend
         env:
           GITHUB_PAGES: "true"
-          GITHUB_PAGES_BASE_PATH: ${{ env.GITHUB_PAGES_BASE_PATH }}
+          PUBLIC_DASHBOARD_BASE_PATH: ${{ env.PUBLIC_DASHBOARD_BASE_PATH }}
         run: npm run build
 
       - name: Export sanitized public dashboard bundle

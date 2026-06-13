@@ -1,4 +1,4 @@
-# Private Core, Public Dashboard
+﻿# Private Core, Public Dashboard
 
 Goal:
 
@@ -77,13 +77,13 @@ Add these repository variables:
 ```text
 PUBLIC_DASHBOARD_REPO=xuanho912/market-predictor-dashboard
 PUBLIC_DASHBOARD_BRANCH=main
-GITHUB_PAGES_BASE_PATH=/market-predictor-dashboard
+PUBLIC_DASHBOARD_BASE_PATH=/market-predictor-dashboard
 ```
 
 If you later use a custom domain at the site root, set:
 
 ```text
-GITHUB_PAGES_BASE_PATH=/
+PUBLIC_DASHBOARD_BASE_PATH=/
 ```
 
 ## Public Dashboard Repo Pages

@@ -1,4 +1,4 @@
-# market-predictor
+﻿# market-predictor
 
 `market-predictor` is a research-first market trend prediction engine. It is designed to estimate probabilities for broad-market trend, pullback, downside continuation, bounce, reversal, crash risk, and systemic crisis scenarios across multiple horizons and market regimes.
 
@@ -111,7 +111,7 @@ The private repository runs the model and generates results. The public reposito
 ```text
 PUBLIC_DASHBOARD_REPO=xuanho912/market-predictor-dashboard
 PUBLIC_DASHBOARD_BRANCH=main
-GITHUB_PAGES_BASE_PATH=/market-predictor-dashboard
+PUBLIC_DASHBOARD_BASE_PATH=/market-predictor-dashboard
 ```
 
 Configure this private-repo Actions secret:

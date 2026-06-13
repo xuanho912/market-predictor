@@ -1,4 +1,4 @@
-# START HERE
+﻿# START HERE
 
 Current state:
 
@@ -56,7 +56,7 @@ Private repo Actions variables:
 ```text
 PUBLIC_DASHBOARD_REPO=xuanho912/market-predictor-dashboard
 PUBLIC_DASHBOARD_BRANCH=main
-GITHUB_PAGES_BASE_PATH=/market-predictor-dashboard
+PUBLIC_DASHBOARD_BASE_PATH=/market-predictor-dashboard
 ```
 
 Then the public phone URL is normally:

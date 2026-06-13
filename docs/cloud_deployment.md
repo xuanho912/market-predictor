@@ -1,4 +1,4 @@
-# Free Cloud Deployment With GitHub Pages
+﻿# Free Cloud Deployment With GitHub Pages
 
 Goal: no Vercel, no Render, no payment information, and still keep Alpha v1 in daily `forward_only` observation.
 
@@ -75,7 +75,7 @@ Variables:
 ```text
 PUBLIC_DASHBOARD_REPO=xuanho912/market-predictor-dashboard
 PUBLIC_DASHBOARD_BRANCH=main
-GITHUB_PAGES_BASE_PATH=/market-predictor-dashboard
+PUBLIC_DASHBOARD_BASE_PATH=/market-predictor-dashboard
 ```
 
 Public dashboard repository Pages setting:
