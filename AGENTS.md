@@ -1,0 +1,26 @@
+# AGENTS.md
+
+This repository is a market trend prediction engine, not a normal indicator dashboard. When working here, Codex must follow these rules first.
+
+1. The core product is a market trend prediction engine for forward trend, pullback, crisis risk, downside continuation, bounce, and reversal probabilities.
+2. Every prediction must be probabilistic. Do not write or hard-code claims such as "must rise", "must fall", or "certain crisis".
+3. Every model, feature, label, backtest, and explanation must actively avoid future functions, data leakage, survivorship bias, and macro data revision leakage.
+4. Every training and backtest workflow must use time-series walk-forward validation. Randomly shuffling time-series samples is prohibited.
+5. Every prediction must be persisted as a historical record so future realized outcomes can audit forecast quality.
+6. Every model must output explanations: why bullish, why bearish, why bounce, why crisis, and which evidence changed the probability.
+7. Every new indicator must be assigned to exactly one of these groups: price, volatility, credit, rates, liquidity, macro, earnings, positioning, breadth, news_text, onchain_crypto, or alternative_data.
+8. Do not build automated trading, broker connections, or order placement.
+9. The mobile frontend is only a presentation layer. Prediction logic must not be hard-coded in the frontend.
+10. README.md must explain how to run locally, deploy, update data, train models, and validate models.
+11. Every prediction and model must identify market regime first: bull_trend, bear_trend, sideways, panic, oversold_bounce, topping, bottoming, recovery, liquidity_crunch, credit_stress, or crisis_mode.
+12. Every important indicator must generate level, change, acceleration, percentile, cross_signal, and divergence features when data allows.
+13. Normal pullbacks, crisis warnings, dead-cat bounces, and durable bottoms must be modeled separately.
+14. Data provider design must cover price, volatility, credit, rates, liquidity, macro, earnings, positioning, breadth, news_text, onchain_crypto, and alternative_data categories.
+15. The model architecture must remain layered: long-term vulnerability, medium-term pullback risk, short-term trigger, and bottom bounce.
+16. The API must output predictions with probabilities, confidence, risk scores, explanations, similar historical days, and risk source breakdowns.
+17. First-stage MVP scope is SPY, QQQ, IWM, DIA with no broker integration, no order placement, and no automated trading.
+18. The validation engine must replay historical predictions with walk-forward prior-window data and store horizon-level rows in `predictions_log`.
+19. Feature importance must include permutation importance, feature group ablation, instability checks, regime-specific features, and correlation leakage checks.
+20. Probability calibration must include Platt scaling, isotonic regression, Brier-score optimization, Brier score, log loss, and calibration curves.
+
+Before adding a feature, define the label, horizon, regime interpretation, point-in-time data availability, validation window, probability calibration method, and prediction logging path.
