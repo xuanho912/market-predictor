@@ -169,6 +169,10 @@ const fallbackHistoricalAnalogReport: HistoricalAnalogReport = {
   },
 };
 
+const staticDataBaseUrl =
+  process.env.NEXT_PUBLIC_STATIC_DATA_BASE_URL ??
+  "https://raw.githubusercontent.com/xuanho912/market-predictor/main/frontend/public";
+
 export async function getLatestPrediction(symbol = "SPY"): Promise<PredictionSnapshot> {
   const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000";
   try {
@@ -185,30 +189,66 @@ export async function getLatestPrediction(symbol = "SPY"): Promise<PredictionSna
 }
 
 export async function getAlphaV1Status(): Promise<AlphaV1Status> {
-  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000";
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+  if (!baseUrl) {
+    return getStaticAlphaV1Status();
+  }
   try {
     const response = await fetch(`${baseUrl}/api/alpha/v1/status`, {
       next: { revalidate: 60 },
     });
     if (!response.ok) {
-      return fallbackAlphaV1Status;
+      return getStaticAlphaV1Status();
     }
     return response.json();
   } catch {
-    return fallbackAlphaV1Status;
+    return getStaticAlphaV1Status();
   }
 }
 
 export async function getAlphaV1Analogs(symbol = "SPY"): Promise<HistoricalAnalogReport> {
-  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000";
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+  if (!baseUrl) {
+    return getStaticAlphaV1Analogs(symbol);
+  }
   try {
     const response = await fetch(`${baseUrl}/api/analogs/alpha-v1?symbol=${symbol}&top_k=20`, {
       next: { revalidate: 300 },
     });
     if (!response.ok) {
-      return { ...fallbackHistoricalAnalogReport, symbol };
+      return getStaticAlphaV1Analogs(symbol);
     }
     return response.json();
+  } catch {
+    return getStaticAlphaV1Analogs(symbol);
+  }
+}
+
+async function getStaticAlphaV1Status(): Promise<AlphaV1Status> {
+  try {
+    const response = await fetch(`${staticDataBaseUrl}/alpha-v1-status.json`, {
+      next: { revalidate: 300 },
+    });
+    if (!response.ok) {
+      return fallbackAlphaV1Status;
+    }
+    const payload = await response.json();
+    return payload.alpha_status ?? fallbackAlphaV1Status;
+  } catch {
+    return fallbackAlphaV1Status;
+  }
+}
+
+async function getStaticAlphaV1Analogs(symbol = "SPY"): Promise<HistoricalAnalogReport> {
+  try {
+    const response = await fetch(`${staticDataBaseUrl}/alpha-v1-analogs.json`, {
+      next: { revalidate: 300 },
+    });
+    if (!response.ok) {
+      return { ...fallbackHistoricalAnalogReport, symbol };
+    }
+    const payload = await response.json();
+    return payload.analogs?.[symbol] ?? { ...fallbackHistoricalAnalogReport, symbol };
   } catch {
     return { ...fallbackHistoricalAnalogReport, symbol };
   }

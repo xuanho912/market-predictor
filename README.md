@@ -81,20 +81,22 @@ Use `docker-compose.yml` as the local deployment baseline:
 4. Mount persistent storage or configure a database for prediction records, feature snapshots, labels, calibration tables, and model registry metadata.
 5. Schedule data updates and model evaluation outside the frontend.
 
-Cloud deployment files are included:
+Free-first cloud deployment files are included:
 
-- `render.yaml`: deploys the FastAPI backend on Render with a persistent disk at `/var/data`.
+- `.github/workflows/forward-alpha-v1.yml`: runs the frozen Alpha v1 forward tracker on GitHub Actions and commits updated `outputs/`.
+- `scripts/export_static_alpha_v1.py`: exports committed tracker results to frontend-readable static JSON.
 - `frontend/vercel.json`: deploys the Next.js PWA from the `frontend` directory.
-- `docs/cloud_deployment.md`: step-by-step Render and Vercel setup.
+- `render.yaml`: optional Render Free Web Service backend config, with no disk and no paid instance.
+- `docs/cloud_deployment.md`: no-card, free-first deployment instructions.
 
-The backend runs the forward-only Alpha v1 tracker with APScheduler on weekdays. Default schedule:
+The recommended free path is Vercel Free frontend plus GitHub Actions daily tracker. If Render asks for payment information, skip Render. The frontend falls back to GitHub-hosted static snapshots:
 
 ```text
-FORWARD_TRACKER_UTC_HOUR=22
-FORWARD_TRACKER_UTC_MINUTE=30
+frontend/public/alpha-v1-status.json
+frontend/public/alpha-v1-analogs.json
 ```
 
-Set Vercel `NEXT_PUBLIC_API_BASE_URL` to the Render backend URL after the backend is deployed. Codex cannot create the public Render/Vercel URLs without the owner's browser authorization on those platforms.
+If a free backend is available, set Vercel `NEXT_PUBLIC_API_BASE_URL` to the backend URL. If not, leave it unset. Codex cannot create Render/Vercel public URLs without the owner's browser authorization on those platforms.
 
 ## Update Data
 
@@ -233,6 +235,14 @@ Invoke-RestMethod http://localhost:8000/api/alpha/v1/report
 The status API returns whether there is a live signal, the latest checked date, latest `bounce_probability` by symbol, distance to threshold, expected validation horizons, data source status, and the risk note. If there is no live signal, the next action is wait. If real data fails, the next action is no live signal because the real data source failed. If a signal appears, the next action is forward-only observation, not paper trading.
 
 To schedule the tracker after market close on Windows, see `docs/windows_daily_tracker_setup.md`.
+
+Free cloud scheduling uses GitHub Actions:
+
+```text
+.github/workflows/forward-alpha-v1.yml
+```
+
+It runs on weekdays at `22:37 UTC`, updates `outputs/forward_alpha_v1_*`, exports static frontend JSON, and commits the changes back to the repository. This is the preferred no-card option because Render Free services can sleep and lose local filesystem writes.
 
 ## Historical Analog Engine
 

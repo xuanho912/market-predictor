@@ -3,7 +3,7 @@ services:
     name: market-predictor-backend
     runtime: python
     rootDir: backend
-    plan: starter
+    plan: free
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /api/health
@@ -16,22 +16,18 @@ services:
       - key: ALLOW_TRADING
         value: "false"
       - key: PREDICTION_DB_PATH
-        value: /var/data/market_predictor.sqlite
+        value: /tmp/market-predictor/market_predictor.sqlite
       - key: PREDICTION_STORE_PATH
-        value: /var/data/predictions
+        value: /tmp/market-predictor/predictions
       - key: FEATURE_STORE_PATH
-        value: /var/data/features
+        value: /tmp/market-predictor/features
       - key: MODEL_REGISTRY_PATH
-        value: /var/data/models
+        value: /tmp/market-predictor/models
       - key: MARKET_DATA_CACHE_DIR
-        value: /var/data/market_data_cache
+        value: /tmp/market-predictor/market_data_cache
       - key: ALPHA_OUTPUT_DIR
-        value: /var/data/outputs
+        value: /tmp/market-predictor/outputs
       - key: FORWARD_TRACKER_UTC_HOUR
         value: "22"
       - key: FORWARD_TRACKER_UTC_MINUTE
         value: "30"
-    disk:
-      name: market-predictor-data
-      mountPath: /var/data
-      sizeGB: 1
