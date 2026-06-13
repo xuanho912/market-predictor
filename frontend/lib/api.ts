@@ -68,6 +68,43 @@ export type AlphaV1Status = {
   validation_period: string;
 };
 
+export type HistoricalAnalogCase = {
+  date: string;
+  similarity_score: number;
+  regime: string;
+  bounce_probability: number;
+  alpha_v1_triggered: boolean;
+  forward_return_5d: number | null;
+  forward_return_20d: number | null;
+  forward_return_60d: number | null;
+  max_adverse_excursion: number | null;
+  max_favorable_excursion: number | null;
+  key_shared_features: string[];
+  key_differences: string[];
+};
+
+export type HistoricalAnalogReport = {
+  symbol: string;
+  as_of: string | null;
+  current_regime: string;
+  alpha_v1_status: string;
+  data_source_status?: string;
+  sample_count: number;
+  low_sample_warning: boolean;
+  current_bounce_probability?: number;
+  distance_to_threshold?: number;
+  current_alpha_v1_triggered?: boolean;
+  top_similar_cases: HistoricalAnalogCase[];
+  historical_distribution: Record<string, number | null>;
+  interpretation: {
+    supports_bounce_alpha: boolean;
+    historical_support: "supportive" | "weak_or_conflicting";
+    confidence_note: string;
+    risk_note: string;
+    not_proof_of_alpha: string;
+  };
+};
+
 const fallbackPrediction: PredictionSnapshot = {
   forecast_timestamp: new Date().toISOString(),
   symbol: "SPY",
@@ -113,6 +150,25 @@ const fallbackAlphaV1Status: AlphaV1Status = {
   validation_period: "forward_only",
 };
 
+const fallbackHistoricalAnalogReport: HistoricalAnalogReport = {
+  symbol: "SPY",
+  as_of: null,
+  current_regime: "unknown",
+  alpha_v1_status: "RESEARCH ALPHA CANDIDATE",
+  data_source_status: "unknown",
+  sample_count: 0,
+  low_sample_warning: true,
+  top_similar_cases: [],
+  historical_distribution: { sample_count: 0 },
+  interpretation: {
+    supports_bounce_alpha: false,
+    historical_support: "weak_or_conflicting",
+    confidence_note: "Historical analog data is unavailable.",
+    risk_note: "Historical analogs are not proof of alpha.",
+    not_proof_of_alpha: "Historical analogs are not proof of alpha.",
+  },
+};
+
 export async function getLatestPrediction(symbol = "SPY"): Promise<PredictionSnapshot> {
   const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000";
   try {
@@ -140,5 +196,20 @@ export async function getAlphaV1Status(): Promise<AlphaV1Status> {
     return response.json();
   } catch {
     return fallbackAlphaV1Status;
+  }
+}
+
+export async function getAlphaV1Analogs(symbol = "SPY"): Promise<HistoricalAnalogReport> {
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000";
+  try {
+    const response = await fetch(`${baseUrl}/api/analogs/alpha-v1?symbol=${symbol}&top_k=20`, {
+      next: { revalidate: 300 },
+    });
+    if (!response.ok) {
+      return { ...fallbackHistoricalAnalogReport, symbol };
+    }
+    return response.json();
+  } catch {
+    return { ...fallbackHistoricalAnalogReport, symbol };
   }
 }

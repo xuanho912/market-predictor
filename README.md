@@ -81,6 +81,21 @@ Use `docker-compose.yml` as the local deployment baseline:
 4. Mount persistent storage or configure a database for prediction records, feature snapshots, labels, calibration tables, and model registry metadata.
 5. Schedule data updates and model evaluation outside the frontend.
 
+Cloud deployment files are included:
+
+- `render.yaml`: deploys the FastAPI backend on Render with a persistent disk at `/var/data`.
+- `frontend/vercel.json`: deploys the Next.js PWA from the `frontend` directory.
+- `docs/cloud_deployment.md`: step-by-step Render and Vercel setup.
+
+The backend runs the forward-only Alpha v1 tracker with APScheduler on weekdays. Default schedule:
+
+```text
+FORWARD_TRACKER_UTC_HOUR=22
+FORWARD_TRACKER_UTC_MINUTE=30
+```
+
+Set Vercel `NEXT_PUBLIC_API_BASE_URL` to the Render backend URL after the backend is deployed. Codex cannot create the public Render/Vercel URLs without the owner's browser authorization on those platforms.
+
 ## Update Data
 
 Data updates must be point-in-time. Each provider record should include:
@@ -159,6 +174,9 @@ Required MVP endpoints:
 - `GET /api/alpha/v1/latest`
 - `GET /api/alpha/v1/signals`
 - `GET /api/alpha/v1/report`
+- `GET /api/analogs/latest?symbol=SPY`
+- `GET /api/analogs/alpha-v1?symbol=SPY`
+- `GET /api/analogs/similar-days?symbol=SPY&top_k=20`
 - `POST /api/admin/refresh-data`
 - `POST /api/admin/retrain`
 - `POST /api/admin/run-backtest`
@@ -215,6 +233,36 @@ Invoke-RestMethod http://localhost:8000/api/alpha/v1/report
 The status API returns whether there is a live signal, the latest checked date, latest `bounce_probability` by symbol, distance to threshold, expected validation horizons, data source status, and the risk note. If there is no live signal, the next action is wait. If real data fails, the next action is no live signal because the real data source failed. If a signal appears, the next action is forward-only observation, not paper trading.
 
 To schedule the tracker after market close on Windows, see `docs/windows_daily_tracker_setup.md`.
+
+## Historical Analog Engine
+
+The Historical Analog Engine is an explanation and auxiliary validation module, not a replacement for Alpha v1.
+
+It answers:
+
+- which historical dates had similar market structure,
+- how those analogs performed after 3d/5d/10d/20d/60d,
+- whether the frozen Alpha v1 bounce signal is historically supported or conflicting,
+- what conditions are shared with historical analogs,
+- what current risks differ from the analog set.
+
+Similarity is computed across market structure, not only price:
+
+- 20d/60d return
+- drawdown depth
+- RSI / oversold level
+- VIX level and VIX changes
+- credit proxy and HYG/LQD relative strength
+- TLT, UUP, and 10-year yield proxy
+- regime
+- bounce probability
+- volatility contribution
+- market stress score
+- liquidity proxy
+
+The engine implements z-score normalized Euclidean distance, cosine similarity, and regime-filtered nearest neighbors. It never uses future returns to choose similar days; future returns are attached only after retrieval for conditional distribution and explanation.
+
+Historical analogs are not proof of alpha. They must not be used to change the Alpha v1 threshold, retune the model, or upgrade Alpha v1 from `RESEARCH ALPHA CANDIDATE`.
 
 ## Validate Models
 

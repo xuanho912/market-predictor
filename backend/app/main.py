@@ -4,6 +4,11 @@ from fastapi import FastAPI, HTTPException, Query
 
 from app.db.storage import initialize_database, load_history, save_prediction
 from app.schemas.predictions import BacktestSummary, FeatureSnapshot, HorizonForecast, PredictionSnapshot
+from app.services.analysis.historical_analogs import (
+    build_alpha_v1_analog_report,
+    build_historical_analog_report,
+    build_similar_days_payload,
+)
 from app.services.backtesting.summary import build_backtest_summary
 from app.services.backtesting.walk_forward_engine import build_evaluation_report, run_walk_forward_backtest
 from app.services.data_providers.auto_download import refresh_market_data
@@ -19,6 +24,7 @@ from app.services.validation.forward_alpha_tracker import (
     alpha_status_payload,
     latest_alpha_payload,
     report_payload,
+    run_daily_forward_observation,
     signal_rows_payload,
 )
 
@@ -54,7 +60,7 @@ def refresh_predictions() -> None:
 def startup() -> None:
     initialize_database()
     refresh_predictions()
-    start_scheduler(refresh_predictions)
+    start_scheduler(refresh_predictions, run_daily_forward_observation)
 
 
 @app.get("/health")
@@ -125,6 +131,30 @@ def explanations_latest(symbol: str = Query(default="SPY")) -> dict[str, object]
 def similar_days(symbol: str = Query(default="SPY")) -> dict[str, object]:
     snapshot = prediction_latest(symbol)
     return {"symbol": snapshot.symbol, "historical_similar_days": snapshot.historical_similar_days}
+
+
+@app.get("/api/analogs/latest")
+def analogs_latest(symbol: str = Query(default="SPY"), top_k: int = Query(default=20, ge=1, le=100)) -> dict[str, object]:
+    try:
+        return build_historical_analog_report(normalize_symbol(symbol), top_k=top_k)
+    except ValueError as error:
+        raise HTTPException(status_code=400, detail=str(error)) from error
+
+
+@app.get("/api/analogs/alpha-v1")
+def analogs_alpha_v1(symbol: str = Query(default="SPY"), top_k: int = Query(default=20, ge=1, le=100)) -> dict[str, object]:
+    try:
+        return build_alpha_v1_analog_report(normalize_symbol(symbol), top_k=top_k)
+    except ValueError as error:
+        raise HTTPException(status_code=400, detail=str(error)) from error
+
+
+@app.get("/api/analogs/similar-days")
+def analogs_similar_days(symbol: str = Query(default="SPY"), top_k: int = Query(default=20, ge=1, le=100)) -> dict[str, object]:
+    try:
+        return build_similar_days_payload(normalize_symbol(symbol), top_k=top_k)
+    except ValueError as error:
+        raise HTTPException(status_code=400, detail=str(error)) from error
 
 
 @app.get("/api/backtest/summary", response_model=BacktestSummary)

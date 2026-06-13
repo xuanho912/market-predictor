@@ -291,6 +291,27 @@ Current frozen research candidate:
 - `down_probability` and `crash_probability` failed current validation as trading signals and must not be used as active trade triggers.
 - Volatility is the strongest current information source, with small credit contribution, but both require forward validation before paper trading.
 
+## 19. Use Historical Analogs As Context, Not Proof
+
+When a user asks to "let history train the model", "learn from similar history", or "find markets like today", prefer a Historical Analog Engine over any model that memorizes history.
+
+Hard rules:
+
+- Use historical samples for similar-scenario retrieval, conditional distributions, and explanation only.
+- Do not use historical analog results as a post-hoc reason to retune thresholds, labels, features, regimes, horizons, or model parameters.
+- Do not let historical analogs replace the frozen Alpha v1 rule or any forward validation requirement.
+- Every analog output must include sample count, average results, worst-case results, shared features, and key differences from the current market.
+- Historical similarity does not imply the future must repeat.
+- If sample count is low, or the regime is crisis/high-volatility with few analogs, output a low-sample warning and avoid strong conclusions.
+- Any analog-derived signal must be versioned separately and forward validated before research or trading use.
+
+For Alpha v1:
+
+- Historical analogs may answer whether current `bounce_probability_top_decile_v1` conditions look similar to prior successful bounce environments.
+- Output `historical_support = supportive` only as contextual support.
+- Output `historical_support = weak_or_conflicting` when samples are weak, mixed, sparse, or risk conditions differ.
+- Never upgrade Alpha v1 to confirmed alpha because historical analogs look good.
+
 ## Non-Negotiable Summary
 
 Always enforce: label-first design, walk-forward validation, regime-aware modeling, credit + liquidity + options + breadth inputs, no future leakage, no random train-test split, probability output with calibration, feature ablation, horizon-specific models, and persistent prediction logs for backtesting.
