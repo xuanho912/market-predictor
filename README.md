@@ -261,9 +261,11 @@ The dashboard is no longer only an Alpha v1 observer. Each GitHub Actions run al
 
 ```text
 frontend/public/data_quality_report.json
+frontend/public/high-confidence-signal-report.json
 frontend/public/market-overview.json
 frontend/public/simulated-paths.json
 frontend/public/prediction-dashboard.json
+outputs/high_confidence_signal_report.md
 ```
 
 Current real data coverage:
@@ -282,6 +284,20 @@ Explicitly not available unless real feeds are added:
 - flow: ETF flow, fund flow, option flow
 
 The page shows `data_completeness_score`, `model_confidence_score`, Market State Engine v2 probabilities, 3d/5d/10d/20d/60d horizon predictions, period-specific historical analog support, and scenario path weights. Missing data reduces confidence and is shown directly on the page.
+
+## Market Intelligence Engine v3
+
+V3 adds a higher-quality signal layer without changing Alpha v1:
+
+- additional market symbols for volatility term proxies, sector breadth proxies, high-beta/low-vol rotation, and equal-weight/cap-weight comparison,
+- FRED downloader for HY OAS, IG OAS, 10Y, 2Y, 3M and real-yield proxy when available,
+- explicit `available / proxy / fallback / missing / stale` source status in `data_quality_report.json`,
+- `signal_agreement_score` with supporting and conflicting signals,
+- four predictor outputs: bounce, downside continuation, trend reversal, risk expansion,
+- `market_edge_status`: `NO_EDGE`, `WEAK_EDGE`, `MODERATE_EDGE`, `STRONG_EDGE`,
+- high-confidence signal report focused on top-confidence buckets instead of full-sample accuracy.
+
+Proxy categories are clearly labeled. Breadth uses sector ETFs and RSP/SPY, not constituent-level breadth. Flow uses volume and rotation proxies, not real fund-flow data. Macro currently uses a deterministic event-calendar fallback, not a live economic calendar feed.
 
 ## Historical Analog Engine
 

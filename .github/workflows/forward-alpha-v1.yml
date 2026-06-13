@@ -59,7 +59,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add outputs/forward_alpha_v1_daily_checks.csv outputs/forward_alpha_v1_signals.csv outputs/forward_alpha_v1_report.md frontend/public/alpha-v1-status.json frontend/public/alpha-v1-analogs.json frontend/public/data_quality_report.json frontend/public/market-overview.json frontend/public/simulated-paths.json frontend/public/prediction-dashboard.json
+          git add outputs/forward_alpha_v1_daily_checks.csv outputs/forward_alpha_v1_signals.csv outputs/forward_alpha_v1_report.md outputs/high_confidence_signal_report.md frontend/public/alpha-v1-status.json frontend/public/alpha-v1-analogs.json frontend/public/data_quality_report.json frontend/public/high-confidence-signal-report.json frontend/public/market-overview.json frontend/public/simulated-paths.json frontend/public/prediction-dashboard.json
           if git diff --cached --quiet; then
             echo "No forward observation output changes to commit."
           else

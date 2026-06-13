@@ -1,0 +1,1268 @@
+from __future__ import annotations
+
+import csv
+import json
+import math
+import statistics
+import urllib.request
+from dataclasses import dataclass
+from datetime import date, datetime, timedelta, timezone
+from pathlib import Path
+from typing import Any
+
+from app.services.data_providers.auto_download import DownloadedSeries, is_real_market_data
+from scripts.market_intelligence_v2 import build_period_specific_analog_support
+
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+TARGET_SYMBOLS = ("SPY", "QQQ", "IWM", "DIA")
+HORIZONS = (3, 5, 10, 20, 60)
+V3_MARKET_SYMBOLS = (
+    "^VIX9D",
+    "^VIX3M",
+    "^VIX6M",
+    "^VVIX",
+    "^SKEW",
+    "RSP",
+    "SPHB",
+    "SPLV",
+    "XLC",
+    "XLY",
+    "XLP",
+    "XLE",
+    "XLF",
+    "XLV",
+    "XLI",
+    "XLK",
+    "XLB",
+    "XLU",
+    "XLRE",
+)
+FRED_SERIES = {
+    "HY_OAS": "BAMLH0A0HYM2",
+    "IG_OAS": "BAMLC0A0CM",
+    "DGS10": "DGS10",
+    "DGS2": "DGS2",
+    "DGS3MO": "DGS3MO",
+    "DFII10": "DFII10",
+}
+
+
+@dataclass(frozen=True)
+class FredSeries:
+    name: str
+    series_id: str
+    rows: list[dict[str, float | str]]
+    source: str
+    real_data: bool
+
+
+def build_market_intelligence_v3(
+    *,
+    series_by_symbol: dict[str, DownloadedSeries],
+    overview: dict[str, Any],
+    simulated_paths: dict[str, Any],
+    analogs: dict[str, dict[str, Any]],
+    prior_intelligence: dict[str, Any],
+) -> dict[str, Any]:
+    fred_series = load_fred_series_bundle()
+    feature_snapshot = build_feature_snapshot_v3(series_by_symbol, fred_series)
+    data_quality = build_data_quality_report_v3(series_by_symbol, fred_series, feature_snapshot, overview.get("as_of"))
+    model_confidence_by_symbol: dict[str, Any] = {}
+    predictor_outputs_by_symbol: dict[str, Any] = {}
+    signal_agreement_by_symbol: dict[str, Any] = {}
+    edge_status_by_symbol: dict[str, Any] = {}
+
+    for symbol in TARGET_SYMBOLS:
+        overview_symbol = overview.get("symbols", {}).get(symbol, {})
+        simulated_symbol = simulated_paths.get("symbols", {}).get(symbol, {})
+        if not overview_symbol or not simulated_symbol:
+            continue
+
+        analog = analogs.get(symbol, {})
+        analog_support = simulated_symbol.get("historical_support_by_horizon") or build_period_specific_analog_support(analog)
+        features = feature_snapshot["symbols"].get(symbol, {})
+        signal_agreement = build_signal_agreement_score(
+            overview_symbol=overview_symbol,
+            analog_support=analog_support,
+            features=features,
+            data_quality=data_quality,
+        )
+        predictors = build_predictors(
+            overview_symbol=overview_symbol,
+            analog_support=analog_support,
+            features=features,
+            signal_agreement=signal_agreement,
+            data_quality=data_quality,
+        )
+        confidence = enhance_model_confidence(
+            prior_confidence=simulated_symbol.get("model_confidence") or overview_symbol.get("model_confidence") or {},
+            data_quality=data_quality,
+            signal_agreement=signal_agreement,
+            predictors=predictors,
+            analog_support=analog_support,
+        )
+        edge_status = build_market_edge_status(
+            data_quality=data_quality,
+            signal_agreement=signal_agreement,
+            confidence=confidence,
+            analog_support=analog_support,
+            overview_symbol=overview_symbol,
+            predictors=predictors,
+        )
+        horizon_predictions = enhance_horizon_predictions(
+            simulated_symbol.get("prediction_horizons", {}),
+            predictors,
+            analog_support,
+            edge_status,
+        )
+        judgment = build_v3_judgment(symbol, edge_status, predictors, horizon_predictions, signal_agreement, confidence)
+
+        patch = {
+            "market_intelligence_version": "v3",
+            "feature_snapshot_v3": features,
+            "signal_agreement": signal_agreement,
+            "predictors": predictors,
+            "market_edge_status": edge_status,
+            "model_confidence": confidence,
+            "prediction_horizons": horizon_predictions,
+            "current_integrated_judgment": judgment,
+        }
+        overview_symbol.update(patch)
+        simulated_symbol.update(patch)
+        model_confidence_by_symbol[symbol] = confidence
+        predictor_outputs_by_symbol[symbol] = predictors
+        signal_agreement_by_symbol[symbol] = signal_agreement
+        edge_status_by_symbol[symbol] = edge_status
+
+    overview["data_quality_summary"] = data_quality["summary"]
+    overview["model_confidence_by_symbol"] = model_confidence_by_symbol
+    overview["signal_agreement_by_symbol"] = signal_agreement_by_symbol
+    overview["edge_status_by_symbol"] = edge_status_by_symbol
+    simulated_paths["data_quality_summary"] = data_quality["summary"]
+
+    high_confidence_report = build_high_confidence_signal_report(analogs, simulated_paths)
+    return {
+        "version": "market_intelligence_engine_v3",
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "data_quality_report": data_quality,
+        "feature_snapshot_v3": feature_snapshot,
+        "signal_agreement_by_symbol": signal_agreement_by_symbol,
+        "predictor_outputs_by_symbol": predictor_outputs_by_symbol,
+        "model_confidence_by_symbol": model_confidence_by_symbol,
+        "edge_status_by_symbol": edge_status_by_symbol,
+        "high_confidence_signal_report": high_confidence_report,
+        "warnings": [
+            "Alpha v1 threshold remains frozen at 0.32534311.",
+            "Proxy breadth, proxy flow and calendar fallbacks are labeled as proxy/fallback, not true constituent or fund-flow feeds.",
+            "NO_EDGE is allowed and preferred when signals conflict or data is insufficient.",
+        ],
+        "prior_engine": prior_intelligence.get("version", "market_intelligence_engine_v2"),
+    }
+
+
+def load_fred_series_bundle(lookback_days: int = 1800) -> dict[str, FredSeries]:
+    return {name: load_fred_series(name, series_id, lookback_days) for name, series_id in FRED_SERIES.items()}
+
+
+def load_fred_series(name: str, series_id: str, lookback_days: int) -> FredSeries:
+    cache = _fred_cache_file(series_id)
+    try:
+        url = f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={series_id}"
+        request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        text = urllib.request.urlopen(request, timeout=20).read().decode("utf-8")
+        rows = _parse_fred_csv(text, lookback_days)
+        if rows:
+            cache.parent.mkdir(parents=True, exist_ok=True)
+            cache.write_text(json.dumps({"series_id": series_id, "rows": rows}, ensure_ascii=False), encoding="utf-8")
+            return FredSeries(name=name, series_id=series_id, rows=rows, source="fred", real_data=True)
+    except Exception:
+        pass
+    if cache.exists():
+        payload = json.loads(cache.read_text(encoding="utf-8"))
+        rows = list(payload.get("rows", []))[-lookback_days:]
+        if rows:
+            return FredSeries(name=name, series_id=series_id, rows=rows, source="local-cache-fred", real_data=True)
+    return FredSeries(name=name, series_id=series_id, rows=[], source="missing", real_data=False)
+
+
+def build_feature_snapshot_v3(series_by_symbol: dict[str, DownloadedSeries], fred_series: dict[str, FredSeries]) -> dict[str, Any]:
+    closes = {symbol: _closes(series_by_symbol.get(symbol)) for symbol in set(TARGET_SYMBOLS + V3_MARKET_SYMBOLS + ("^VIX", "HYG", "LQD", "TLT", "UUP", "^TNX"))}
+    volumes = {symbol: _volumes(series_by_symbol.get(symbol)) for symbol in closes}
+    fred = {name: _fred_values(series) for name, series in fred_series.items()}
+    sector_symbols = ("XLC", "XLY", "XLP", "XLE", "XLF", "XLV", "XLI", "XLK", "XLB", "XLU", "XLRE")
+    sector_closes = {symbol: closes.get(symbol, []) for symbol in sector_symbols}
+
+    vix = closes.get("^VIX", [])
+    vix9d = closes.get("^VIX9D", [])
+    vix3m = closes.get("^VIX3M", [])
+    vix6m = closes.get("^VIX6M", [])
+    vvix = closes.get("^VVIX", [])
+    skew = closes.get("^SKEW", [])
+    hyg = closes.get("HYG", [])
+    lqd = closes.get("LQD", [])
+    tlt = closes.get("TLT", [])
+    uup = closes.get("UUP", [])
+    rsp = closes.get("RSP", [])
+    spy = closes.get("SPY", [])
+    sphb = closes.get("SPHB", [])
+    splv = closes.get("SPLV", [])
+
+    symbols: dict[str, Any] = {}
+    for symbol in TARGET_SYMBOLS:
+        target = closes.get(symbol, [])
+        target_volume = volumes.get(symbol, [])
+        breadth = _breadth_proxy(sector_closes, rsp, spy)
+        flow = _flow_proxy(target_volume, target, sphb, splv, sector_closes)
+        credit = _credit_snapshot(hyg, lqd, fred)
+        rates = _rates_snapshot(tlt, uup, fred)
+        volatility = _volatility_snapshot(vix, vix9d, vix3m, vix6m, vvix, skew)
+        market_structure = _market_structure_snapshot(closes, sector_closes)
+        symbols[symbol] = {
+            "price": {
+                "current_price": _last(target),
+                "return_20d": _return(target, 20),
+                "return_60d": _return(target, 60),
+                "drawdown_depth": _drawdown(target, 60),
+                "rsi_14": _rsi(target, 14),
+                "realized_vol_20d": _realized_vol(target, 20),
+                "volume_zscore_20d": _zscore_last(target_volume, 20),
+            },
+            "volatility_options": volatility,
+            "breadth": breadth,
+            "credit": credit,
+            "rates_liquidity": rates,
+            "market_structure": market_structure,
+            "macro_event_calendar": _macro_event_calendar_snapshot(),
+            "flow_positioning_proxy": flow,
+        }
+
+    return {
+        "version": "market_intelligence_engine_v3_features",
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "symbols": symbols,
+    }
+
+
+def build_data_quality_report_v3(
+    series_by_symbol: dict[str, DownloadedSeries],
+    fred_series: dict[str, FredSeries],
+    feature_snapshot: dict[str, Any],
+    as_of: str | None,
+) -> dict[str, Any]:
+    market_required = set(TARGET_SYMBOLS + ("^VIX", "HYG", "LQD", "TLT", "UUP", "^TNX") + V3_MARKET_SYMBOLS)
+    source_rows: dict[str, Any] = {}
+    latest_dates: list[str] = []
+    for symbol in sorted(market_required):
+        series = series_by_symbol.get(symbol)
+        latest = _latest_date(series)
+        if latest:
+            latest_dates.append(latest)
+        source_rows[symbol] = _market_source_status(symbol, series, latest)
+    for name, series in sorted(fred_series.items()):
+        latest = _latest_fred_date(series)
+        if latest:
+            latest_dates.append(latest)
+        source_rows[name] = _fred_source_status(name, series, latest)
+
+    reference_date = max(latest_dates) if latest_dates else as_of
+    for row in source_rows.values():
+        row["stale_data"] = False if row.get("missing_data") else _is_stale(row.get("latest_date"), reference_date, max_days=10 if row.get("source") in {"fred", "local-cache-fred"} else 5)
+        if row["stale_data"] and row["status"] == "available":
+            row["status"] = "stale"
+
+    macro_status = {
+        "symbol": "macro_event_calendar",
+        "source": "deterministic_calendar_fallback",
+        "status": "fallback",
+        "rows": 1,
+        "latest_date": reference_date,
+        "real_data": False,
+        "fallback_used": True,
+        "stale_data": False,
+        "missing_data": False,
+        "point_in_time_safe": True,
+        "detail": "CPI/FOMC/NFP/options-expiry/month-end flags are rule-based calendar approximations.",
+    }
+    source_rows["macro_event_calendar"] = macro_status
+
+    coverage = _coverage_categories_v3(source_rows, feature_snapshot)
+    completeness_score = _data_completeness_score_v3(coverage, source_rows)
+    unavailable = [name for name, payload in coverage.items() if payload["status"] in {"missing", "not_available"}]
+    any_synthetic = any(row["source"] == "synthetic-fallback" for row in source_rows.values())
+    any_fallback = any(row.get("fallback_used") for row in source_rows.values())
+    any_stale = any(row.get("stale_data") for row in source_rows.values())
+    any_missing = any(row.get("missing_data") for row in source_rows.values())
+    real_core = all(source_rows.get(symbol, {}).get("real_data") for symbol in TARGET_SYMBOLS + ("^VIX", "HYG", "LQD", "TLT", "UUP", "^TNX"))
+
+    return {
+        "version": "market_intelligence_engine_v3_data_quality",
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "as_of": reference_date or as_of,
+        "summary": {
+            "data_source_status": "real_core_with_proxies" if real_core else "partial_or_failed",
+            "real_market_data": real_core,
+            "fallback_used": any_fallback,
+            "synthetic_used": any_synthetic,
+            "stale_data": any_stale,
+            "missing_data": any_missing,
+            "data_completeness_score": completeness_score,
+            "target_completeness_score": 75,
+            "unavailable_categories": unavailable,
+            "missing_key_sources": [name for name, row in source_rows.items() if row.get("missing_data")],
+            "latest_date": reference_date,
+            "quality_note": "Score includes real data plus explicitly labeled proxy/fallback categories; it is not equal to institutional-grade data coverage.",
+        },
+        "sources": source_rows,
+        "coverage_categories": coverage,
+        "notes": [
+            "Breadth and flow are ETF/sector proxies, not constituent-level feeds.",
+            "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
+            "Put/call ratio, gamma exposure and true fund flow remain missing unless a real feed is added.",
+        ],
+    }
+
+
+def build_signal_agreement_score(
+    *,
+    overview_symbol: dict[str, Any],
+    analog_support: dict[str, Any],
+    features: dict[str, Any],
+    data_quality: dict[str, Any],
+) -> dict[str, Any]:
+    supporting: list[dict[str, Any]] = []
+    conflicting: list[dict[str, Any]] = []
+
+    def add(condition: bool, bucket: list[dict[str, Any]], name: str, score: float, detail: str) -> None:
+        if condition:
+            bucket.append({"name": name, "score": round(score, 3), "detail": detail})
+
+    vol = features.get("volatility_options", {})
+    credit = features.get("credit", {})
+    breadth = features.get("breadth", {})
+    price = features.get("price", {})
+    rates = features.get("rates_liquidity", {})
+    flow = features.get("flow_positioning_proxy", {})
+    vix_change_5d = _float_or_none(vol.get("vix_change_5d")) or 0.0
+    vix_change_20d = _float_or_none(vol.get("vix_change_20d")) or 0.0
+    credit_stability = _float_or_none(credit.get("credit_stabilization_score")) or 0.0
+    credit_deterioration = _float_or_none(credit.get("credit_deterioration_score")) or 0.0
+    breadth_score = _float_or_none(breadth.get("breadth_improvement_score")) or 0.0
+    trend_20d = _float_or_none(price.get("return_20d")) or 0.0
+    liquidity_stress = _float_or_none(rates.get("liquidity_stress_proxy")) or 0.0
+    risk_off_rotation = _float_or_none(flow.get("risk_off_rotation_score")) or 0.0
+    failed_bounce = float(overview_symbol.get("downside_continuation_probability") or 0.0)
+
+    add(bool(overview_symbol.get("live_signal")), supporting, "Alpha v1 bounce signal", 0.16, "Frozen Alpha v1 is currently triggered.")
+    add(analog_support.get("short_term_support") == "supportive", supporting, "short-term historical analogs", 0.13, "3d/5d/10d analogs lean positive.")
+    add(analog_support.get("medium_term_support") == "supportive", supporting, "medium-term historical analogs", 0.15, "20d/60d analogs lean positive.")
+    add(vix_change_5d < 0 and vix_change_20d <= 0, supporting, "VIX direction", 0.11, "Volatility is not rising on 5d/20d windows.")
+    add(credit_stability > 0.45, supporting, "credit stabilization", 0.12, "Credit proxy is stable or improving.")
+    add(breadth_score > 0.55, supporting, "breadth improvement proxy", 0.11, "Sector/equal-weight breadth proxy is improving.")
+    add(trend_20d > 0, supporting, "trend momentum", 0.08, "20d momentum is positive.")
+    add(liquidity_stress < 0.40, supporting, "liquidity proxy", 0.08, "Liquidity proxy is not stressed.")
+
+    add(analog_support.get("short_term_support") == "weak", conflicting, "short-term analog conflict", 0.16, "3d/5d/10d analogs are weak or negative.")
+    add(analog_support.get("medium_term_support") == "weak", conflicting, "medium-term analog conflict", 0.15, "20d/60d analogs are weak or negative.")
+    add(vix_change_5d > 0 or vix_change_20d > 0, conflicting, "VIX rising", 0.12, "Volatility is rising.")
+    add(credit_deterioration > 0.45, conflicting, "credit deterioration", 0.14, "Credit proxy is deteriorating.")
+    add(breadth_score < 0.42, conflicting, "breadth weak", 0.12, "Breadth proxy is weak.")
+    add(failed_bounce > 0.55, conflicting, "failed bounce risk", 0.14, "Downside continuation probability is elevated.")
+    add(liquidity_stress > 0.55, conflicting, "liquidity stress", 0.12, "Liquidity proxy is stressed.")
+    add(risk_off_rotation > 0.55, conflicting, "risk-off rotation", 0.10, "Rotation proxy favors defensive/risk-off assets.")
+
+    support_score = sum(item["score"] for item in supporting)
+    conflict_score = sum(item["score"] for item in conflicting)
+    raw = 50.0 + support_score * 65.0 - conflict_score * 65.0
+    completeness = float(data_quality.get("summary", {}).get("data_completeness_score") or 0.0)
+    if completeness < 70:
+        raw = min(raw, 62.0)
+    score = int(round(_clip(raw, 0.0, 100.0)))
+    level = "strong" if score >= 70 else "mixed" if score >= 45 else "weak"
+    return {
+        "signal_agreement_score": score,
+        "agreement_level": level,
+        "supporting_signals": supporting,
+        "conflicting_signals": conflicting,
+        "data_completeness_cap_applied": completeness < 70,
+    }
+
+
+def build_predictors(
+    *,
+    overview_symbol: dict[str, Any],
+    analog_support: dict[str, Any],
+    features: dict[str, Any],
+    signal_agreement: dict[str, Any],
+    data_quality: dict[str, Any],
+) -> dict[str, Any]:
+    vol = features.get("volatility_options", {})
+    credit = features.get("credit", {})
+    breadth = features.get("breadth", {})
+    rates = features.get("rates_liquidity", {})
+    price = features.get("price", {})
+    flow = features.get("flow_positioning_proxy", {})
+    bounce_base = float(overview_symbol.get("bounce_probability") or 0.0)
+    downside_base = float(overview_symbol.get("downside_continuation_probability") or 0.0)
+    reversal_base = float(overview_symbol.get("trend_reversal_probability") or 0.0)
+    agreement = float(signal_agreement.get("signal_agreement_score") or 0.0) / 100.0
+    data_score = float(data_quality.get("summary", {}).get("data_completeness_score") or 0.0) / 100.0
+    vix_rollover = 1.0 if (_float_or_none(vol.get("vix_change_5d")) or 0.0) < 0 else 0.0
+    credit_stability = _float_or_none(credit.get("credit_stabilization_score")) or 0.0
+    credit_deterioration = _float_or_none(credit.get("credit_deterioration_score")) or 0.0
+    breadth_improvement = _float_or_none(breadth.get("breadth_improvement_score")) or 0.0
+    liquidity_stress = _float_or_none(rates.get("liquidity_stress_proxy")) or 0.0
+    trend_20d = _float_or_none(price.get("return_20d")) or 0.0
+    trend_60d = _float_or_none(price.get("return_60d")) or 0.0
+    risk_off_rotation = _float_or_none(flow.get("risk_off_rotation_score")) or 0.0
+    vix_percentile = _float_or_none(vol.get("vix_percentile_1y")) or 0.5
+
+    short_support = analog_support.get("short_term_support", "neutral")
+    medium_support = analog_support.get("medium_term_support", "neutral")
+    bounce_probability = _clip(
+        bounce_base * 0.42
+        + agreement * 0.18
+        + vix_rollover * 0.08
+        + credit_stability * 0.12
+        + breadth_improvement * 0.12
+        + (0.08 if short_support == "supportive" else -0.05 if short_support == "weak" else 0.0),
+        0.0,
+        0.95,
+    )
+    downside_probability = _clip(
+        downside_base * 0.42
+        + credit_deterioration * 0.15
+        + liquidity_stress * 0.13
+        + risk_off_rotation * 0.10
+        + max(-trend_20d, 0.0) * 2.2
+        + (0.08 if short_support == "weak" else 0.0),
+        0.0,
+        0.95,
+    )
+    reversal_probability = _clip(
+        reversal_base * 0.38
+        + max(trend_60d, 0.0) * 1.3
+        + breadth_improvement * 0.15
+        + credit_stability * 0.14
+        + (0.12 if medium_support == "supportive" else -0.08 if medium_support == "weak" else 0.0),
+        0.0,
+        0.92,
+    )
+    risk_expansion_probability = _clip(
+        vix_percentile * 0.22
+        + credit_deterioration * 0.23
+        + liquidity_stress * 0.20
+        + risk_off_rotation * 0.15
+        + max(-trend_60d, 0.0) * 1.2
+        + (0.08 if analog_support.get("worst_path_risk") == "high" else 0.0),
+        0.0,
+        0.92,
+    )
+
+    return {
+        "bounce_predictor": _predictor_payload(
+            probability=bounce_probability,
+            confidence=_predictor_confidence(data_score, agreement, short_support),
+            main_drivers=_drivers([
+                ("Alpha v1 bounce probability", bounce_base),
+                ("VIX rollover", vix_rollover),
+                ("credit stabilization", credit_stability),
+                ("breadth improvement proxy", breadth_improvement),
+                ("short-term analog support", 1.0 if short_support == "supportive" else 0.0),
+            ]),
+            invalidation_conditions=["VIX turns higher again", "HYG/LQD relative strength weakens", "price breaks the recent low", "short-term analog support remains weak"],
+            historical_analog_support=short_support,
+            best_horizon="3d-10d",
+        ),
+        "downside_continuation_predictor": _predictor_payload(
+            probability=downside_probability,
+            confidence=_predictor_confidence(data_score, 1.0 - agreement, "supportive" if downside_probability > 0.55 else "neutral"),
+            main_drivers=_drivers([
+                ("base downside continuation", downside_base),
+                ("credit deterioration", credit_deterioration),
+                ("liquidity stress proxy", liquidity_stress),
+                ("risk-off rotation", risk_off_rotation),
+                ("negative 20d trend", max(-trend_20d, 0.0) * 6.0),
+            ]),
+            invalidation_conditions=["VIX falls and stays lower", "credit spreads/proxies stabilize", "breadth recovers above 50d proxy", "price reclaims short-term trend"],
+            historical_analog_support=short_support,
+            best_horizon="5d-20d",
+        ),
+        "trend_reversal_predictor": _predictor_payload(
+            probability=reversal_probability,
+            confidence=_predictor_confidence(data_score, agreement, medium_support),
+            main_drivers=_drivers([
+                ("medium-term analog support", 1.0 if medium_support == "supportive" else 0.0),
+                ("60d trend", max(trend_60d, 0.0) * 6.0),
+                ("breadth improvement proxy", breadth_improvement),
+                ("credit stabilization", credit_stability),
+            ]),
+            invalidation_conditions=["20d/60d analogs turn weak", "breadth proxy rolls over", "credit deterioration resumes", "recovery fails near moving-average resistance"],
+            historical_analog_support=medium_support,
+            best_horizon="20d-60d",
+        ),
+        "risk_expansion_predictor": _predictor_payload(
+            probability=risk_expansion_probability,
+            confidence=_predictor_confidence(data_score, max(risk_expansion_probability, 1.0 - agreement), "supportive" if risk_expansion_probability > 0.55 else "neutral"),
+            main_drivers=_drivers([
+                ("VIX percentile", vix_percentile),
+                ("credit deterioration", credit_deterioration),
+                ("liquidity stress proxy", liquidity_stress),
+                ("risk-off rotation", risk_off_rotation),
+                ("negative 60d trend", max(-trend_60d, 0.0) * 4.0),
+            ]),
+            invalidation_conditions=["credit proxy stabilizes", "VIX term structure normalizes", "defensive rotation fades", "risk assets regain broad participation"],
+            historical_analog_support=analog_support.get("worst_path_risk", "unknown"),
+            best_horizon="20d-60d",
+        ),
+    }
+
+
+def enhance_model_confidence(
+    *,
+    prior_confidence: dict[str, Any],
+    data_quality: dict[str, Any],
+    signal_agreement: dict[str, Any],
+    predictors: dict[str, Any],
+    analog_support: dict[str, Any],
+) -> dict[str, Any]:
+    prior_score = float(prior_confidence.get("confidence_score") or 0.0)
+    completeness = float(data_quality.get("summary", {}).get("data_completeness_score") or 0.0)
+    agreement = float(signal_agreement.get("signal_agreement_score") or 0.0)
+    predictor_spread = _predictor_spread(predictors)
+    analog_score = 70.0 if analog_support.get("medium_term_support") == "supportive" else 45.0 if analog_support.get("medium_term_support") == "weak" else 55.0
+    raw = prior_score * 0.20 + completeness * 0.30 + agreement * 0.28 + analog_score * 0.12 + (1.0 - predictor_spread) * 100.0 * 0.10
+    if completeness < 70:
+        raw = min(raw, 64.0)
+    if signal_agreement.get("agreement_level") == "weak":
+        raw = min(raw, 55.0)
+    score = int(round(_clip(raw, 0.0, 88.0)))
+    level = "high" if score >= 75 else "medium" if score >= 55 else "low"
+    why = []
+    missing = data_quality.get("summary", {}).get("unavailable_categories", [])
+    if missing:
+        why.append(f"仍有缺失/未接入类别：{', '.join(missing)}。")
+    if completeness < 75:
+        why.append("数据完整度尚未达到 75+ 的目标。")
+    if signal_agreement.get("agreement_level") != "strong":
+        why.append("信号一致性还不是 strong。")
+    if analog_support.get("short_term_support") == "weak":
+        why.append("短周期历史相似样本偏弱。")
+    return {
+        "confidence_score": score,
+        "confidence_level": level,
+        "components": {
+            "prior_confidence": prior_score / 100.0,
+            "data_completeness": completeness / 100.0,
+            "signal_agreement": agreement / 100.0,
+            "analog_support": analog_score / 100.0,
+            "predictor_consistency": 1.0 - predictor_spread,
+        },
+        "why_confidence_is_limited": why or ["数据、信号和历史样本当前相对一致，但仍不是确定性预测。"],
+    }
+
+
+def build_market_edge_status(
+    *,
+    data_quality: dict[str, Any],
+    signal_agreement: dict[str, Any],
+    confidence: dict[str, Any],
+    analog_support: dict[str, Any],
+    overview_symbol: dict[str, Any],
+    predictors: dict[str, Any],
+) -> dict[str, Any]:
+    completeness = int(data_quality.get("summary", {}).get("data_completeness_score") or 0)
+    agreement = int(signal_agreement.get("signal_agreement_score") or 0)
+    confidence_score = int(confidence.get("confidence_score") or 0)
+    analog_conflict = analog_support.get("short_term_support") == "weak" and analog_support.get("medium_term_support") == "weak"
+    regime_known = overview_symbol.get("market_state") not in {None, "", "unknown", "no_edge"}
+    risk_expansion = predictors.get("risk_expansion_predictor", {}).get("probability", 0.0)
+    conditions = {
+        "data_completeness_ge_70": completeness >= 70,
+        "signal_agreement_ge_65": agreement >= 65,
+        "historical_analog_not_conflicting": not analog_conflict,
+        "confidence_score_ge_60": confidence_score >= 60,
+        "current_regime_identified": regime_known,
+        "risk_conditions_not_conflicting": risk_expansion < 0.55,
+    }
+    passed = sum(1 for value in conditions.values() if value)
+    if all(conditions.values()):
+        status = "STRONG_EDGE"
+    elif passed >= 5 and agreement >= 58 and confidence_score >= 58:
+        status = "MODERATE_EDGE"
+    elif passed >= 3 and confidence_score >= 45:
+        status = "WEAK_EDGE"
+    else:
+        status = "NO_EDGE"
+    return {
+        "market_edge_status": status,
+        "has_usable_prediction_edge_today": status in {"MODERATE_EDGE", "STRONG_EDGE"},
+        "conditions": conditions,
+        "passed_conditions": passed,
+        "summary": _edge_summary(status),
+    }
+
+
+def enhance_horizon_predictions(
+    predictions: dict[str, Any],
+    predictors: dict[str, Any],
+    analog_support: dict[str, Any],
+    edge_status: dict[str, Any],
+) -> dict[str, Any]:
+    enhanced = dict(predictions)
+    bounce = predictors["bounce_predictor"]["probability"]
+    downside = predictors["downside_continuation_predictor"]["probability"]
+    reversal = predictors["trend_reversal_predictor"]["probability"]
+    risk_expansion = predictors["risk_expansion_predictor"]["probability"]
+    for horizon in HORIZONS:
+        key = f"{horizon}d"
+        row = dict(enhanced.get(key, {}))
+        support = analog_support.get("by_horizon", {}).get(key, {})
+        if horizon <= 10:
+            row["bounce_probability"] = _clip((row.get("bounce_probability") or bounce) * 0.45 + bounce * 0.55, 0.0, 1.0)
+            row["failed_bounce_risk"] = _clip((row.get("failed_bounce_risk") or downside) * 0.45 + downside * 0.55, 0.0, 1.0)
+        else:
+            row["trend_reversal_probability"] = reversal
+            row["risk_expansion_probability"] = risk_expansion
+        if edge_status["market_edge_status"] == "NO_EDGE":
+            row["expected_direction"] = "无优势/观望"
+        row["market_edge_status"] = edge_status["market_edge_status"]
+        row["analog_avg_return"] = support.get("avg_return")
+        row["analog_hit_rate"] = support.get("hit_rate")
+        row["analog_worst_path"] = support.get("worst_case")
+        row["analog_best_path"] = support.get("best_case")
+        enhanced[key] = row
+    return enhanced
+
+
+def build_v3_judgment(
+    symbol: str,
+    edge_status: dict[str, Any],
+    predictors: dict[str, Any],
+    horizon_predictions: dict[str, Any],
+    signal_agreement: dict[str, Any],
+    confidence: dict[str, Any],
+) -> str:
+    edge = edge_status["market_edge_status"]
+    bounce = predictors["bounce_predictor"]["probability"]
+    downside = predictors["downside_continuation_predictor"]["probability"]
+    risk = predictors["risk_expansion_predictor"]["probability"]
+    h5 = horizon_predictions.get("5d", {}).get("expected_direction", "未知")
+    h20 = horizon_predictions.get("20d", {}).get("expected_direction", "未知")
+    return (
+        f"{symbol} 当前可用预测优势：{edge}。"
+        f"反抽预测器 {bounce:.0%}，下跌延续预测器 {downside:.0%}，风险扩散预测器 {risk:.0%}。"
+        f"5d 判断：{h5}；20d 判断：{h20}。"
+        f"信号一致性 {signal_agreement.get('signal_agreement_score')} 分，模型可信度 {confidence.get('confidence_score')} 分。"
+        "如果是 NO_EDGE 或 WEAK_EDGE，应以观察为主，不应强行下结论。"
+    )
+
+
+def build_high_confidence_signal_report(analogs: dict[str, dict[str, Any]], simulated_paths: dict[str, Any]) -> dict[str, Any]:
+    cases: list[dict[str, Any]] = []
+    for symbol, analog in analogs.items():
+        for case in analog.get("top_similar_cases", []):
+            enriched = dict(case)
+            enriched["symbol"] = symbol
+            enriched["proxy_confidence"] = _float_or_none(case.get("similarity_score")) or 0.0
+            cases.append(enriched)
+    cases = [case for case in cases if case.get("proxy_confidence") is not None]
+    cases.sort(key=lambda item: item["proxy_confidence"], reverse=True)
+    buckets = {
+        "top_10_confidence_signals": cases[: max(1, math.ceil(len(cases) * 0.10))],
+        "top_20_confidence_signals": cases[: max(1, math.ceil(len(cases) * 0.20))],
+        "strong_signal_only": [
+            case
+            for case in cases
+            if simulated_paths.get("symbols", {}).get(case["symbol"], {}).get("market_edge_status", {}).get("market_edge_status") in {"MODERATE_EDGE", "STRONG_EDGE"}
+        ],
+        "low_confidence_reference": cases[-max(1, math.ceil(len(cases) * 0.20)) :] if cases else [],
+    }
+    by_bucket = {name: _bucket_metrics(rows) for name, rows in buckets.items()}
+    by_symbol = {symbol: _bucket_metrics([case for case in cases if case["symbol"] == symbol]) for symbol in TARGET_SYMBOLS}
+    by_regime: dict[str, list[dict[str, Any]]] = {}
+    for case in cases:
+        by_regime.setdefault(str(case.get("regime", "unknown")), []).append(case)
+    by_regime_metrics = {regime: _bucket_metrics(rows) for regime, rows in by_regime.items()}
+    wins = 0
+    comparisons: dict[str, bool] = {}
+    for horizon in (3, 5, 10, 20, 60):
+        high = by_bucket["top_20_confidence_signals"].get("horizons", {}).get(f"{horizon}d", {})
+        low = by_bucket["low_confidence_reference"].get("horizons", {}).get(f"{horizon}d", {})
+        better = (high.get("hit_rate") or 0.0) > (low.get("hit_rate") or 0.0) and (high.get("avg_return") or 0.0) > (low.get("avg_return") or 0.0)
+        comparisons[f"{horizon}d"] = better
+        wins += int(better)
+    high_better = wins >= 3
+    return {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "status": "historical_proxy_only_not_forward_confirmed",
+        "sample_size": len(cases),
+        "method_note": "Uses current historical analog case set as a proxy confidence study. Forward-only confidence validation is still insufficient until more frozen signals mature.",
+        "by_bucket": by_bucket,
+        "by_symbol": by_symbol,
+        "by_regime": by_regime_metrics,
+        "high_vs_low_comparison_by_horizon": comparisons,
+        "high_confidence_better_than_low_confidence": high_better,
+        "conclusion": "confidence_useful_proxy" if high_better else "confidence_not_yet_validated",
+    }
+
+
+def render_high_confidence_signal_report_markdown(report: dict[str, Any]) -> str:
+    lines = [
+        "# High Confidence Signal Report",
+        "",
+        f"Generated at: `{report.get('generated_at')}`",
+        "",
+        "This report does not confirm alpha. It checks whether higher-confidence historical analog candidates look better than lower-confidence candidates.",
+        "",
+        f"Status: `{report.get('status')}`",
+        f"Sample size: `{report.get('sample_size')}`",
+        f"Conclusion: `{report.get('conclusion')}`",
+        "",
+        "## Bucket Metrics",
+        "",
+    ]
+    for bucket, payload in report.get("by_bucket", {}).items():
+        lines.append(f"### {bucket}")
+        lines.append(f"- sample_size: `{payload.get('sample_size')}`")
+        for horizon, metrics in payload.get("horizons", {}).items():
+            lines.append(
+                f"- {horizon}: hit_rate `{_fmt(metrics.get('hit_rate'))}`, avg `{_fmt(metrics.get('avg_return'))}`, "
+                f"median `{_fmt(metrics.get('median_return'))}`, brier `{_fmt(metrics.get('brier_score'))}`, calibration_gap `{_fmt(metrics.get('calibration_gap'))}`"
+            )
+        lines.append("")
+    lines.extend(
+        [
+            "## Interpretation",
+            "",
+            "- If high-confidence buckets do not beat low-confidence buckets, confidence is not yet usable.",
+            "- Forward-only validation still matters more than this historical proxy report.",
+            "- Alpha v1 remains RESEARCH ALPHA CANDIDATE.",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def _coverage_categories_v3(source_rows: dict[str, Any], feature_snapshot: dict[str, Any]) -> dict[str, Any]:
+    def status(symbol: str) -> str:
+        return source_rows.get(symbol, {}).get("status", "missing")
+
+    sector_symbols = ("XLC", "XLY", "XLP", "XLE", "XLF", "XLV", "XLI", "XLK", "XLB", "XLU", "XLRE")
+    sector_available = sum(1 for symbol in sector_symbols if source_rows.get(symbol, {}).get("real_data"))
+    option_available = sum(1 for symbol in ("^VIX9D", "^VIX3M", "^VIX6M", "^VVIX", "^SKEW") if source_rows.get(symbol, {}).get("real_data"))
+    fred_credit_available = sum(1 for name in ("HY_OAS", "IG_OAS") if source_rows.get(name, {}).get("real_data"))
+    fred_rates_available = sum(1 for name in ("DGS10", "DGS2", "DGS3MO", "DFII10") if source_rows.get(name, {}).get("real_data"))
+    target_available = sum(1 for symbol in TARGET_SYMBOLS if source_rows.get(symbol, {}).get("real_data"))
+
+    return {
+        "price": _coverage_payload_v3("available" if target_available == 4 else "missing", "SPY/QQQ/IWM/DIA OHLCV", target_available, 4, True),
+        "volatility": _coverage_payload_v3("available" if status("^VIX") == "available" else "missing", "VIX level/change/percentile", int(status("^VIX") == "available"), 1, status("^VIX") == "available"),
+        "options": _coverage_payload_v3("partial" if option_available >= 2 else "missing", "VIX9D/VIX3M/VIX6M/VVIX/SKEW when Yahoo/Stooq provides them; put/call and gamma still missing", option_available, 7, option_available >= 2),
+        "breadth": _coverage_payload_v3("proxy" if status("RSP") == "available" and sector_available >= 7 else "missing", "RSP/SPY and sector ETF participation proxy, not constituent breadth", sector_available + int(status("RSP") == "available"), 12, False),
+        "credit": _coverage_payload_v3("available" if fred_credit_available == 2 else "proxy" if status("HYG") == "available" and status("LQD") == "available" else "missing", "FRED HY/IG OAS plus HYG/LQD proxy", fred_credit_available + int(status("HYG") == "available") + int(status("LQD") == "available"), 4, fred_credit_available == 2),
+        "rates": _coverage_payload_v3("available" if fred_rates_available >= 3 else "partial" if status("^TNX") == "available" else "missing", "FRED 10Y/2Y/3M/TIPS plus ^TNX", fred_rates_available + int(status("^TNX") == "available"), 5, fred_rates_available >= 3),
+        "liquidity": _coverage_payload_v3("proxy" if status("TLT") == "available" and status("UUP") == "available" else "missing", "TLT/UUP/rates stress proxy, not reserves/repo/TGA", int(status("TLT") == "available") + int(status("UUP") == "available") + fred_rates_available, 5, False),
+        "macro": _coverage_payload_v3("fallback", "Rule-based CPI/FOMC/NFP/options-expiry/month-end calendar risk, not a live event feed", 1, 5, False),
+        "flow": _coverage_payload_v3("proxy" if target_available == 4 else "missing", "Volume z-score, relative volume, high-beta vs low-vol and sector rotation proxy", target_available + int(status("SPHB") == "available") + int(status("SPLV") == "available"), 7, False),
+        "market_structure": _coverage_payload_v3("proxy" if sector_available >= 7 else "missing", "Sector ETF participation, defensive/cyclical, small/large, growth/value proxies", sector_available, 11, False),
+    }
+
+
+def _data_completeness_score_v3(coverage: dict[str, Any], source_rows: dict[str, Any]) -> int:
+    weights = {
+        "price": 15,
+        "volatility": 10,
+        "options": 8,
+        "breadth": 12,
+        "credit": 12,
+        "rates": 10,
+        "liquidity": 8,
+        "macro": 6,
+        "flow": 7,
+        "market_structure": 12,
+    }
+    values = {
+        "available": 1.0,
+        "partial": 0.65,
+        "proxy": 0.78,
+        "fallback": 0.45,
+        "stale": 0.35,
+        "missing": 0.0,
+        "not_available": 0.0,
+    }
+    score = sum(weights[name] * values.get(payload.get("status"), 0.0) for name, payload in coverage.items())
+    if any(row.get("source") == "synthetic-fallback" for row in source_rows.values()):
+        score -= 20
+    return int(round(_clip(score, 0.0, 100.0)))
+
+
+def _market_source_status(symbol: str, series: DownloadedSeries | None, latest: str | None) -> dict[str, Any]:
+    rows = len(series.rows) if series else 0
+    real_data = bool(series and is_real_market_data(series))
+    source = series.source if series else "missing"
+    fallback = source.startswith("local-cache") or "fallback" in source
+    return {
+        "symbol": symbol,
+        "source": source,
+        "status": "available" if real_data else "fallback" if fallback and rows else "missing",
+        "rows": rows,
+        "latest_date": latest,
+        "real_data": real_data,
+        "fallback_used": fallback,
+        "stale_data": False,
+        "missing_data": rows == 0 or not real_data,
+        "point_in_time_safe": bool(series and series.point_in_time_safe and real_data),
+    }
+
+
+def _fred_source_status(name: str, series: FredSeries, latest: str | None) -> dict[str, Any]:
+    rows = len(series.rows)
+    fallback = series.source.startswith("local-cache")
+    return {
+        "symbol": name,
+        "source": series.source,
+        "series_id": series.series_id,
+        "status": "available" if series.real_data else "fallback" if fallback and rows else "missing",
+        "rows": rows,
+        "latest_date": latest,
+        "real_data": series.real_data,
+        "fallback_used": fallback,
+        "stale_data": False,
+        "missing_data": rows == 0 or not series.real_data,
+        "point_in_time_safe": series.real_data,
+    }
+
+
+def _coverage_payload_v3(status: str, detail: str, available_items: int, expected_items: int, real_data: bool) -> dict[str, Any]:
+    return {
+        "status": status,
+        "detail": detail,
+        "available_items": available_items,
+        "expected_items": expected_items,
+        "real_data": real_data,
+        "fallback_used": status == "fallback",
+        "proxy_used": status == "proxy",
+    }
+
+
+def _volatility_snapshot(vix: list[float], vix9d: list[float], vix3m: list[float], vix6m: list[float], vvix: list[float], skew: list[float]) -> dict[str, Any]:
+    vix_level = _last(vix)
+    vix3m_level = _last(vix3m)
+    term_front = (vix_level / vix3m_level - 1.0) if vix_level and vix3m_level else None
+    term_slope = ((_last(vix6m) or 0.0) - (vix_level or 0.0)) if vix and vix6m else None
+    return {
+        "vix_level": vix_level,
+        "vix_change_5d": _change(vix, 5),
+        "vix_change_20d": _change(vix, 20),
+        "vix_percentile_1y": _percentile_rank(vix, vix_level, 252),
+        "vix9d": _last(vix9d),
+        "vix3m": vix3m_level,
+        "vix6m": _last(vix6m),
+        "vvix": _last(vvix),
+        "skew": _last(skew),
+        "put_call_ratio": "missing",
+        "implied_vol_term_structure_proxy": term_front,
+        "vix_term_slope_proxy": term_slope,
+        "options_data_note": "VIX term proxies if available; put/call and gamma are not connected.",
+    }
+
+
+def _breadth_proxy(sector_closes: dict[str, list[float]], rsp: list[float], spy: list[float]) -> dict[str, Any]:
+    sector_values = list(sector_closes.values())
+    above_20 = _percent_above_ma(sector_values, 20)
+    above_50 = _percent_above_ma(sector_values, 50)
+    above_200 = _percent_above_ma(sector_values, 200)
+    sector_participation = above_20
+    equal_weight_relative = _relative_return(rsp, spy, 20)
+    improvement = _clip((above_20 or 0.0) * 0.45 + (above_50 or 0.0) * 0.25 + max(equal_weight_relative, 0.0) * 6.0, 0.0, 1.0)
+    return {
+        "advance_decline": "proxy_not_constituent_level",
+        "new_highs_new_lows": "missing",
+        "percent_above_20d_ma_proxy": above_20,
+        "percent_above_50d_ma_proxy": above_50,
+        "percent_above_200d_ma_proxy": above_200,
+        "equal_weight_vs_cap_weight_20d": equal_weight_relative,
+        "sector_participation": sector_participation,
+        "breadth_improvement_score": improvement,
+        "data_note": "Uses sector ETFs and RSP/SPY proxy, not real constituent breadth.",
+    }
+
+
+def _credit_snapshot(hyg: list[float], lqd: list[float], fred: dict[str, list[float]]) -> dict[str, Any]:
+    hy_oas = fred.get("HY_OAS", [])
+    ig_oas = fred.get("IG_OAS", [])
+    hyg_lqd = _relative_return(hyg, lqd, 20)
+    hy_change = _change(hy_oas, 20)
+    ig_change = _change(ig_oas, 20)
+    hyg_drawdown = _drawdown(hyg, 60)
+    deterioration = _clip(max(hy_change, 0.0) / 2.0 + max(ig_change, 0.0) / 1.0 + max(-hyg_lqd, 0.0) * 5.0 + max(-hyg_drawdown, 0.0) * 2.0, 0.0, 1.0)
+    stabilization = _clip(1.0 - deterioration + max(-hy_change, 0.0) / 2.0 + max(hyg_lqd, 0.0) * 3.0, 0.0, 1.0)
+    return {
+        "hy_oas": _last(hy_oas),
+        "ig_oas": _last(ig_oas),
+        "hy_oas_20d_change": hy_change,
+        "ig_oas_20d_change": ig_change,
+        "hyg_lqd_relative_strength_20d": hyg_lqd,
+        "hyg_drawdown_60d": hyg_drawdown,
+        "credit_deterioration_score": deterioration,
+        "credit_stabilization_score": stabilization,
+    }
+
+
+def _rates_snapshot(tlt: list[float], uup: list[float], fred: dict[str, list[float]]) -> dict[str, Any]:
+    dgs10 = fred.get("DGS10", [])
+    dgs2 = fred.get("DGS2", [])
+    dgs3mo = fred.get("DGS3MO", [])
+    dfii10 = fred.get("DFII10", [])
+    ten_two = (_last(dgs10) - _last(dgs2)) if _last(dgs10) is not None and _last(dgs2) is not None else None
+    ten_three = (_last(dgs10) - _last(dgs3mo)) if _last(dgs10) is not None and _last(dgs3mo) is not None else None
+    inversion_stress = _clip(max(-(ten_two or 0.0), 0.0) / 1.2 + max(-(ten_three or 0.0), 0.0) / 1.5, 0.0, 1.0)
+    liquidity_stress = _clip(inversion_stress * 0.35 + max(_return(uup, 20), 0.0) * 4.0 + max(-_return(tlt, 20), 0.0) * 2.0, 0.0, 1.0)
+    return {
+        "ten_year_yield": _last(dgs10),
+        "two_year_yield": _last(dgs2),
+        "three_month_yield": _last(dgs3mo),
+        "ten_year_minus_two_year": ten_two,
+        "ten_year_minus_three_month": ten_three,
+        "real_yield_proxy": _last(dfii10),
+        "tnx_proxy": None,
+        "tlt_return_20d": _return(tlt, 20),
+        "uup_return_20d": _return(uup, 20),
+        "liquidity_stress_proxy": liquidity_stress,
+        "yield_curve_inversion_stress": inversion_stress,
+    }
+
+
+def _flow_proxy(target_volume: list[float], target: list[float], sphb: list[float], splv: list[float], sector_closes: dict[str, list[float]]) -> dict[str, Any]:
+    defensive = _basket_return([sector_closes.get("XLP", []), sector_closes.get("XLU", []), sector_closes.get("XLV", [])], 20)
+    cyclical = _basket_return([sector_closes.get("XLY", []), sector_closes.get("XLI", []), sector_closes.get("XLF", []), sector_closes.get("XLE", [])], 20)
+    high_beta_vs_low_vol = _relative_return(sphb, splv, 20)
+    volume_z = _zscore_last(target_volume, 20)
+    rel_volume = _relative_volume(target_volume, 20)
+    risk_off = _clip(max(defensive - cyclical, 0.0) * 5.0 + max(-high_beta_vs_low_vol, 0.0) * 4.0, 0.0, 1.0)
+    return {
+        "volume_zscore_20d": volume_z,
+        "etf_relative_volume_20d": rel_volume,
+        "high_beta_vs_low_vol_20d": high_beta_vs_low_vol,
+        "defensive_vs_cyclical_20d": defensive - cyclical,
+        "risk_off_rotation_score": risk_off,
+        "data_note": "Proxy only; no true fund-flow or positioning feed connected.",
+    }
+
+
+def _market_structure_snapshot(closes: dict[str, list[float]], sector_closes: dict[str, list[float]]) -> dict[str, Any]:
+    spy = closes.get("SPY", [])
+    qqq = closes.get("QQQ", [])
+    iwm = closes.get("IWM", [])
+    rsp = closes.get("RSP", [])
+    defensive = _basket_return([sector_closes.get("XLP", []), sector_closes.get("XLU", []), sector_closes.get("XLV", [])], 20)
+    cyclical = _basket_return([sector_closes.get("XLY", []), sector_closes.get("XLI", []), sector_closes.get("XLF", []), sector_closes.get("XLE", [])], 20)
+    return {
+        "small_cap_vs_large_cap_20d": _relative_return(iwm, spy, 20),
+        "growth_vs_large_cap_20d": _relative_return(qqq, spy, 20),
+        "equal_weight_vs_cap_weight_20d": _relative_return(rsp, spy, 20),
+        "defensive_vs_cyclical_20d": defensive - cyclical,
+        "sector_participation_20d": _percent_above_ma(list(sector_closes.values()), 20),
+    }
+
+
+def _macro_event_calendar_snapshot(as_of: date | None = None) -> dict[str, Any]:
+    current = as_of or date.today()
+    fomc = _approx_next_fomc(current)
+    cpi = _nth_weekday(current.year, current.month, 1, 2)
+    if cpi < current:
+        next_month = _add_month(current.replace(day=1), 1)
+        cpi = _nth_weekday(next_month.year, next_month.month, 1, 2)
+    nfp = _nth_weekday(current.year, current.month, 4, 1)
+    if nfp < current:
+        next_month = _add_month(current.replace(day=1), 1)
+        nfp = _nth_weekday(next_month.year, next_month.month, 4, 1)
+    opex = _nth_weekday(current.year, current.month, 4, 3)
+    if opex < current:
+        next_month = _add_month(current.replace(day=1), 1)
+        opex = _nth_weekday(next_month.year, next_month.month, 4, 3)
+    month_end_days = (_add_month(current.replace(day=1), 1) - timedelta(days=1) - current).days
+    quarter_end_month = ((current.month - 1) // 3 + 1) * 3
+    quarter_end = date(current.year, quarter_end_month, 1)
+    quarter_end = _add_month(quarter_end, 1) - timedelta(days=1)
+    macro_event_risk = min(_days_until(cpi, current), _days_until(fomc, current), _days_until(nfp, current), _days_until(opex, current)) <= 3
+    return {
+        "cpi_date": cpi.isoformat(),
+        "fomc_date": fomc.isoformat(),
+        "nfp_date": nfp.isoformat(),
+        "options_expiry_week": 0 <= _days_until(opex, current) <= 5,
+        "month_end_effect": 0 <= month_end_days <= 3,
+        "quarter_end_effect": 0 <= (quarter_end - current).days <= 5,
+        "macro_event_risk_flag": macro_event_risk,
+        "data_note": "Fallback calendar approximation; replace with a real economic calendar for production.",
+    }
+
+
+def _bucket_metrics(cases: list[dict[str, Any]]) -> dict[str, Any]:
+    horizons: dict[str, Any] = {}
+    for horizon in HORIZONS:
+        values = [_float_or_none(case.get(f"forward_return_{horizon}d")) for case in cases]
+        clean = [value for value in values if value is not None]
+        hit_rate = sum(1 for value in clean if value > 0) / len(clean) if clean else None
+        predicted = [_float_or_none(case.get("proxy_confidence")) for case in cases if _float_or_none(case.get(f"forward_return_{horizon}d")) is not None]
+        brier = None
+        calibration_gap = None
+        if clean and predicted:
+            actual = [1.0 if value > 0 else 0.0 for value in clean]
+            probs = [min(0.95, max(0.05, value or 0.5)) for value in predicted[: len(actual)]]
+            brier = sum((prob - outcome) ** 2 for prob, outcome in zip(probs, actual)) / len(actual)
+            calibration_gap = (sum(probs) / len(probs)) - (hit_rate or 0.0)
+        horizons[f"{horizon}d"] = {
+            "sample_size": len(clean),
+            "hit_rate": hit_rate,
+            "avg_return": sum(clean) / len(clean) if clean else None,
+            "median_return": statistics.median(clean) if clean else None,
+            "max_adverse_excursion": min((_float_or_none(case.get("max_adverse_excursion")) for case in cases if _float_or_none(case.get("max_adverse_excursion")) is not None), default=None),
+            "max_favorable_excursion": max((_float_or_none(case.get("max_favorable_excursion")) for case in cases if _float_or_none(case.get("max_favorable_excursion")) is not None), default=None),
+            "brier_score": brier,
+            "calibration_gap": calibration_gap,
+        }
+    return {"sample_size": len(cases), "horizons": horizons}
+
+
+def _predictor_payload(
+    *,
+    probability: float,
+    confidence: float,
+    main_drivers: list[str],
+    invalidation_conditions: list[str],
+    historical_analog_support: str,
+    best_horizon: str,
+) -> dict[str, Any]:
+    return {
+        "probability": round(probability, 4),
+        "confidence": round(confidence, 4),
+        "main_drivers": main_drivers,
+        "invalidation_conditions": invalidation_conditions,
+        "historical_analog_support": historical_analog_support,
+        "best_horizon": best_horizon,
+    }
+
+
+def _predictor_confidence(data_score: float, agreement: float, analog_support: str) -> float:
+    analog = 0.7 if analog_support == "supportive" else 0.45 if analog_support == "weak" else 0.55
+    return _clip(data_score * 0.45 + agreement * 0.35 + analog * 0.20, 0.05, 0.90)
+
+
+def _predictor_spread(predictors: dict[str, Any]) -> float:
+    values = [float(payload.get("probability") or 0.0) for payload in predictors.values()]
+    if not values:
+        return 1.0
+    return statistics.pstdev(values)
+
+
+def _drivers(items: list[tuple[str, float]]) -> list[str]:
+    ranked = sorted(items, key=lambda item: item[1], reverse=True)
+    return [f"{name}: {value:.2f}" for name, value in ranked[:4]]
+
+
+def _edge_summary(status: str) -> str:
+    return {
+        "NO_EDGE": "今天没有足够可用预测优势，应该观察而不是强行判断。",
+        "WEAK_EDGE": "存在弱信号，但冲突或数据限制较多。",
+        "MODERATE_EDGE": "存在中等预测优势，仍需控制情景风险。",
+        "STRONG_EDGE": "数据、信号和历史样本较一致，但仍不是确定性预测。",
+    }[status]
+
+
+def _parse_fred_csv(text: str, lookback_days: int) -> list[dict[str, float | str]]:
+    rows: list[dict[str, float | str]] = []
+    for row in csv.DictReader(text.splitlines()):
+        raw_value = row.get("value") or row.get("VALUE") or ""
+        if raw_value in {"", "."}:
+            continue
+        try:
+            value = float(raw_value)
+        except ValueError:
+            continue
+        observation_date = row.get("observation_date") or row.get("DATE")
+        if not observation_date:
+            continue
+        rows.append({"date": observation_date, "value": value})
+    rows.sort(key=lambda item: str(item["date"]))
+    return rows[-lookback_days:]
+
+
+def _fred_cache_file(series_id: str) -> Path:
+    return PROJECT_ROOT / "data" / "fred_cache" / f"{series_id}.json"
+
+
+def _fmt(value: Any) -> str:
+    parsed = _float_or_none(value)
+    return "n/a" if parsed is None else f"{parsed:.4f}"
+
+
+def _closes(series: DownloadedSeries | None) -> list[float]:
+    if not series or not is_real_market_data(series):
+        return []
+    return [float(row["close"]) for row in series.rows if row.get("close") is not None and float(row.get("close") or 0.0) > 0]
+
+
+def _volumes(series: DownloadedSeries | None) -> list[float]:
+    if not series or not is_real_market_data(series):
+        return []
+    return [float(row.get("volume") or 0.0) for row in series.rows if row.get("volume") is not None]
+
+
+def _fred_values(series: FredSeries) -> list[float]:
+    return [float(row["value"]) for row in series.rows if row.get("value") is not None]
+
+
+def _latest_date(series: DownloadedSeries | None) -> str | None:
+    if not series or not series.rows:
+        return None
+    return max(str(row["date"]) for row in series.rows if row.get("date"))
+
+
+def _latest_fred_date(series: FredSeries) -> str | None:
+    if not series.rows:
+        return None
+    return max(str(row["date"]) for row in series.rows if row.get("date"))
+
+
+def _is_stale(latest_date: str | None, reference_date: str | None, max_days: int) -> bool:
+    if not latest_date or not reference_date:
+        return True
+    try:
+        latest = datetime.fromisoformat(latest_date).date()
+        reference = datetime.fromisoformat(reference_date).date()
+    except ValueError:
+        return True
+    return (reference - latest).days > max_days
+
+
+def _last(values: list[float]) -> float | None:
+    return values[-1] if values else None
+
+
+def _return(values: list[float], lookback: int) -> float:
+    if len(values) <= lookback or values[-lookback - 1] == 0:
+        return 0.0
+    return values[-1] / values[-lookback - 1] - 1.0
+
+
+def _change(values: list[float], lookback: int) -> float:
+    if len(values) <= lookback:
+        return 0.0
+    return values[-1] - values[-lookback - 1]
+
+
+def _relative_return(left: list[float], right: list[float], lookback: int) -> float:
+    return _return(left, lookback) - _return(right, lookback)
+
+
+def _drawdown(values: list[float], lookback: int) -> float:
+    if not values:
+        return 0.0
+    window = values[-lookback:] if len(values) >= lookback else values
+    peak = max(window)
+    return values[-1] / peak - 1.0 if peak else 0.0
+
+
+def _percentile_rank(values: list[float], value: float | None, lookback: int) -> float | None:
+    if value is None or not values:
+        return None
+    window = values[-lookback:] if len(values) >= lookback else values
+    below = sum(1 for item in window if item <= value)
+    return below / len(window) if window else None
+
+
+def _percent_above_ma(series_list: list[list[float]], lookback: int) -> float | None:
+    valid = [values for values in series_list if len(values) >= lookback]
+    if not valid:
+        return None
+    return sum(1 for values in valid if values[-1] > sum(values[-lookback:]) / lookback) / len(valid)
+
+
+def _basket_return(series_list: list[list[float]], lookback: int) -> float:
+    values = [_return(values, lookback) for values in series_list if len(values) > lookback]
+    return sum(values) / len(values) if values else 0.0
+
+
+def _rsi(values: list[float], period: int) -> float:
+    if len(values) <= period:
+        return 50.0
+    gains: list[float] = []
+    losses: list[float] = []
+    for previous, current in zip(values[-period - 1 : -1], values[-period:]):
+        change = current - previous
+        gains.append(max(change, 0.0))
+        losses.append(abs(min(change, 0.0)))
+    avg_gain = sum(gains) / period
+    avg_loss = sum(losses) / period
+    if avg_loss == 0:
+        return 100.0
+    rs = avg_gain / avg_loss
+    return 100.0 - (100.0 / (1.0 + rs))
+
+
+def _realized_vol(values: list[float], lookback: int) -> float:
+    if len(values) <= lookback:
+        return 0.0
+    returns = [values[index] / values[index - 1] - 1.0 for index in range(len(values) - lookback, len(values)) if values[index - 1] != 0]
+    if not returns:
+        return 0.0
+    mean = sum(returns) / len(returns)
+    variance = sum((value - mean) ** 2 for value in returns) / len(returns)
+    return math.sqrt(variance) * math.sqrt(252.0)
+
+
+def _zscore_last(values: list[float], lookback: int) -> float:
+    if len(values) < lookback:
+        return 0.0
+    window = values[-lookback:]
+    mean = sum(window) / len(window)
+    std = statistics.pstdev(window)
+    return 0.0 if std == 0 else (window[-1] - mean) / std
+
+
+def _relative_volume(values: list[float], lookback: int) -> float:
+    if len(values) < lookback:
+        return 1.0
+    avg = sum(values[-lookback:]) / lookback
+    return values[-1] / avg if avg else 1.0
+
+
+def _nth_weekday(year: int, month: int, weekday: int, nth: int) -> date:
+    current = date(year, month, 1)
+    while current.weekday() != weekday:
+        current += timedelta(days=1)
+    return current + timedelta(days=7 * (nth - 1))
+
+
+def _add_month(value: date, months: int) -> date:
+    month = value.month - 1 + months
+    year = value.year + month // 12
+    month = month % 12 + 1
+    return date(year, month, 1)
+
+
+def _approx_next_fomc(current: date) -> date:
+    months = (1, 3, 5, 6, 7, 9, 11, 12)
+    candidates = [_nth_weekday(current.year, month, 2, 3) for month in months if month >= current.month]
+    candidates += [_nth_weekday(current.year + 1, month, 2, 3) for month in months[:2]]
+    return min(candidate for candidate in candidates if candidate >= current)
+
+
+def _days_until(target: date, current: date) -> int:
+    return (target - current).days
+
+
+def _float_or_none(value: Any) -> float | None:
+    if value is None or value == "":
+        return None
+    try:
+        parsed = float(value)
+    except (TypeError, ValueError):
+        return None
+    return parsed if math.isfinite(parsed) else None
+
+
+def _clip(value: float, lower: float, upper: float) -> float:
+    return min(upper, max(lower, value))

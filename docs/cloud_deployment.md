@@ -76,9 +76,11 @@ outputs/forward_alpha_v1_report.md
 frontend/public/alpha-v1-status.json
 frontend/public/alpha-v1-analogs.json
 frontend/public/data_quality_report.json
+frontend/public/high-confidence-signal-report.json
 frontend/public/market-overview.json
 frontend/public/simulated-paths.json
 frontend/public/prediction-dashboard.json
+outputs/high_confidence_signal_report.md
 ```
 
 5. Builds the frontend with:
@@ -125,6 +127,7 @@ The GitHub Pages page shows:
 - Market Prediction Dashboard in Chinese.
 - Data Quality Panel and data completeness score.
 - Market State Engine v2 with state probabilities and conflicts.
+- Market Intelligence Engine v3 with signal agreement score, edge status and four predictor outputs.
 - Model Confidence Score and confidence limits.
 - SPY / QQQ / IWM / DIA market cards.
 - Current state, live signal, bounce probability, downside risk, and trend reversal probability.
@@ -134,7 +137,7 @@ The GitHub Pages page shows:
 - Historical analog dates and invalidation conditions.
 - Latest committed forward-only observation snapshot.
 
-The page explicitly marks unavailable data categories. At the current stage, options, breadth, macro, and flow are not connected and must not be treated as real model inputs.
+The page explicitly marks unavailable or proxy data categories. Breadth and flow are proxy-based until real feeds are connected; macro/event risk is a fallback calendar approximation. These improve situational awareness but do not confirm alpha.
 
 No backend is required for this free path.
 

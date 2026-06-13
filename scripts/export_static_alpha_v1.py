@@ -20,6 +20,11 @@ from app.services.data_providers.auto_download import DownloadedSeries
 from app.services.data_providers.auto_download import refresh_market_data
 from app.services.validation.forward_alpha_tracker import alpha_status_payload, report_payload
 from scripts.market_intelligence_v2 import build_market_intelligence_v2
+from scripts.market_intelligence_v3 import (
+    V3_MARKET_SYMBOLS,
+    build_market_intelligence_v3,
+    render_high_confidence_signal_report_markdown,
+)
 
 
 SYMBOLS = ("SPY", "QQQ", "IWM", "DIA")
@@ -41,7 +46,8 @@ def main() -> int:
     alpha_status = alpha_status_payload()
     alpha_report = report_payload()
     analogs = {symbol: build_alpha_v1_analog_report(symbol, top_k=20) for symbol in SYMBOLS}
-    downloaded = refresh_market_data(symbols=SYMBOLS + SUPPORT_SYMBOLS, lookback_days=260)
+    market_symbols = tuple(dict.fromkeys(SYMBOLS + SUPPORT_SYMBOLS + V3_MARKET_SYMBOLS))
+    downloaded = refresh_market_data(symbols=market_symbols, lookback_days=520)
     series_by_symbol = {series.symbol: series for series in downloaded}
     price_history = _load_price_history(series_by_symbol)
 
@@ -53,6 +59,13 @@ def main() -> int:
         simulated_paths=simulated_paths,
         analogs=analogs,
     )
+    intelligence_v3 = build_market_intelligence_v3(
+        series_by_symbol=series_by_symbol,
+        overview=market_overview,
+        simulated_paths=simulated_paths,
+        analogs=analogs,
+        prior_intelligence=intelligence_v2,
+    )
     dashboard = {
         "generated_by": "scripts/export_static_alpha_v1.py",
         "source": "github_actions_forward_tracker_outputs",
@@ -61,9 +74,12 @@ def main() -> int:
         "overview": market_overview,
         "simulated_paths": simulated_paths,
         "market_intelligence_v2": intelligence_v2,
-        "data_quality_report": intelligence_v2["data_quality_report"],
+        "market_intelligence_v3": intelligence_v3,
+        "data_quality_report": intelligence_v3["data_quality_report"],
         "feature_snapshot_v2": intelligence_v2["feature_snapshot_v2"],
-        "model_confidence_by_symbol": intelligence_v2["model_confidence_by_symbol"],
+        "feature_snapshot_v3": intelligence_v3["feature_snapshot_v3"],
+        "model_confidence_by_symbol": intelligence_v3["model_confidence_by_symbol"],
+        "high_confidence_signal_report": intelligence_v3["high_confidence_signal_report"],
         "alpha_status": alpha_status,
         "forward_report": alpha_report,
         "analogs": analogs,
@@ -80,17 +96,21 @@ def main() -> int:
         "source": "github_actions_forward_tracker_outputs",
         "analogs": analogs,
     })
-    _write_json(public_dir / "data_quality_report.json", intelligence_v2["data_quality_report"])
+    _write_json(public_dir / "data_quality_report.json", intelligence_v3["data_quality_report"])
+    _write_json(public_dir / "high-confidence-signal-report.json", intelligence_v3["high_confidence_signal_report"])
     _write_json(public_dir / "market-overview.json", market_overview)
     _write_json(public_dir / "simulated-paths.json", simulated_paths)
     _write_json(public_dir / "prediction-dashboard.json", dashboard)
+    _write_report(PROJECT_ROOT / "outputs" / "high_confidence_signal_report.md", intelligence_v3["high_confidence_signal_report"])
 
     print("wrote frontend/public/alpha-v1-status.json")
     print("wrote frontend/public/alpha-v1-analogs.json")
     print("wrote frontend/public/data_quality_report.json")
+    print("wrote frontend/public/high-confidence-signal-report.json")
     print("wrote frontend/public/market-overview.json")
     print("wrote frontend/public/simulated-paths.json")
     print("wrote frontend/public/prediction-dashboard.json")
+    print("wrote outputs/high_confidence_signal_report.md")
     return 0
 
 
@@ -428,6 +448,11 @@ def _risk_note_for_horizon(horizon: int, overview: dict[str, Any]) -> str:
 
 def _write_json(path: Path, payload: dict[str, Any]) -> None:
     path.write_text(json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def _write_report(path: Path, payload: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(render_high_confidence_signal_report_markdown(payload), encoding="utf-8")
 
 
 if __name__ == "__main__":

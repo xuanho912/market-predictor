@@ -116,12 +116,16 @@ export type DataQualityReport = {
     stale_data: boolean;
     missing_data: boolean;
     data_completeness_score: number;
+    target_completeness_score?: number;
     unavailable_categories: string[];
+    missing_key_sources?: string[];
     latest_date: string | null;
+    quality_note?: string;
   };
   sources: Record<string, {
     symbol: string;
     source: string;
+    status?: "available" | "partial" | "proxy" | "fallback" | "missing" | "stale" | "not_available";
     rows: number;
     latest_date: string | null;
     real_data: boolean;
@@ -131,10 +135,13 @@ export type DataQualityReport = {
     point_in_time_safe: boolean;
   }>;
   coverage_categories: Record<string, {
-    status: "available" | "partial" | "not_available";
+    status: "available" | "partial" | "proxy" | "fallback" | "missing" | "stale" | "not_available";
     detail: string;
     available_items: number;
     expected_items: number;
+    real_data?: boolean;
+    fallback_used?: boolean;
+    proxy_used?: boolean;
   }>;
   notes: string[];
 };
@@ -189,6 +196,31 @@ export type ModelConfidence = {
   why_confidence_is_limited: string[];
 };
 
+export type SignalAgreement = {
+  signal_agreement_score: number;
+  agreement_level: "weak" | "mixed" | "strong";
+  supporting_signals: Array<{ name: string; score: number; detail: string }>;
+  conflicting_signals: Array<{ name: string; score: number; detail: string }>;
+  data_completeness_cap_applied?: boolean;
+};
+
+export type PredictorOutput = {
+  probability: number;
+  confidence: number;
+  main_drivers: string[];
+  invalidation_conditions: string[];
+  historical_analog_support: string;
+  best_horizon: string;
+};
+
+export type MarketEdgeStatus = {
+  market_edge_status: "NO_EDGE" | "WEAK_EDGE" | "MODERATE_EDGE" | "STRONG_EDGE";
+  has_usable_prediction_edge_today: boolean;
+  conditions: Record<string, boolean>;
+  passed_conditions: number;
+  summary: string;
+};
+
 export type HorizonPredictionV2 = {
   expected_direction: string;
   expected_return: number;
@@ -220,6 +252,11 @@ export type MarketSymbolOverview = {
   prediction_horizons?: Record<string, HorizonPredictionV2>;
   current_integrated_judgment?: string;
   feature_snapshot_v2?: Record<string, unknown>;
+  feature_snapshot_v3?: Record<string, unknown>;
+  signal_agreement?: SignalAgreement;
+  predictors?: Record<string, PredictorOutput>;
+  market_edge_status?: MarketEdgeStatus;
+  market_intelligence_version?: string;
 };
 
 export type SimulatedSymbolPaths = {
@@ -237,6 +274,11 @@ export type SimulatedSymbolPaths = {
   model_confidence?: ModelConfidence;
   prediction_horizons?: Record<string, HorizonPredictionV2>;
   current_integrated_judgment?: string;
+  feature_snapshot_v3?: Record<string, unknown>;
+  signal_agreement?: SignalAgreement;
+  predictors?: Record<string, PredictorOutput>;
+  market_edge_status?: MarketEdgeStatus;
+  market_intelligence_version?: string;
   scenario_weights?: Record<string, number>;
   path_confidence?: "low" | "medium" | "high";
   path_source_notes?: string[];
@@ -282,8 +324,22 @@ export type PredictionDashboard = {
     model_confidence_by_symbol: Record<string, ModelConfidence>;
     warnings: string[];
   };
+  market_intelligence_v3?: {
+    version: string;
+    generated_at: string;
+    data_quality_report: DataQualityReport;
+    feature_snapshot_v3: Record<string, unknown>;
+    signal_agreement_by_symbol: Record<string, SignalAgreement>;
+    predictor_outputs_by_symbol: Record<string, Record<string, PredictorOutput>>;
+    model_confidence_by_symbol: Record<string, ModelConfidence>;
+    edge_status_by_symbol: Record<string, MarketEdgeStatus>;
+    high_confidence_signal_report: Record<string, unknown>;
+    warnings: string[];
+  };
   feature_snapshot_v2?: Record<string, unknown>;
+  feature_snapshot_v3?: Record<string, unknown>;
   model_confidence_by_symbol?: Record<string, ModelConfidence>;
+  high_confidence_signal_report?: Record<string, unknown>;
   overview: {
     as_of: string | null;
     strongest_symbol: string;
@@ -292,6 +348,8 @@ export type PredictionDashboard = {
     symbols: Record<string, MarketSymbolOverview>;
     data_quality_summary?: Record<string, unknown>;
     model_confidence_by_symbol?: Record<string, ModelConfidence>;
+    signal_agreement_by_symbol?: Record<string, SignalAgreement>;
+    edge_status_by_symbol?: Record<string, MarketEdgeStatus>;
   };
   simulated_paths: {
     as_of: string | null;

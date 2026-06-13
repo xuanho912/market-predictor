@@ -73,7 +73,26 @@ function confidenceCn(value: string | undefined) {
 function statusCn(value: string | undefined) {
   if (value === "available") return "可用";
   if (value === "partial") return "部分可用";
+  if (value === "proxy") return "代理可用";
+  if (value === "fallback") return "备用/规则";
+  if (value === "missing") return "缺失";
+  if (value === "stale") return "过期";
   if (value === "not_available") return "未接入";
+  return value ?? "未知";
+}
+
+function edgeCn(value: string | undefined) {
+  if (value === "NO_EDGE") return "无优势";
+  if (value === "WEAK_EDGE") return "弱优势";
+  if (value === "MODERATE_EDGE") return "中等优势";
+  if (value === "STRONG_EDGE") return "强优势";
+  return value ?? "未知";
+}
+
+function agreementCn(value: string | undefined) {
+  if (value === "strong") return "强一致";
+  if (value === "mixed") return "有冲突";
+  if (value === "weak") return "弱一致";
   return value ?? "未知";
 }
 
@@ -234,6 +253,8 @@ function MarketCard({
       <div className="mt-3 grid grid-cols-2 gap-2 text-xs">
         <Metric label="收盘价" value={price(data.current_price)} />
         <Metric label="状态" value={stateCn(data.market_state)} />
+        <Metric label="预测优势" value={edgeCn(data.market_edge_status?.market_edge_status)} />
+        <Metric label="信号一致性" value={`${data.signal_agreement?.signal_agreement_score ?? "暂无"}`} />
         <Metric label="反抽概率" value={pct(data.bounce_probability)} />
         <Metric label="下跌延续" value={pct(data.downside_continuation_probability)} />
         <Metric label="趋势反转" value={pct(data.trend_reversal_probability)} />
@@ -282,6 +303,10 @@ function DataQualityPanel({ report }: { report?: DataQualityReport }) {
       <p className="mt-3 text-xs text-muted">
         重要：期权、市场宽度、资金流、宏观如果没有真实接入，会明确显示“未接入”，不会假装参与预测。
       </p>
+      {summary.missing_key_sources?.length ? (
+        <p className="mt-2 text-xs text-muted">缺失关键源：{summary.missing_key_sources.slice(0, 8).join(" / ")}</p>
+      ) : null}
+      {summary.quality_note ? <p className="mt-2 text-xs text-muted">{summary.quality_note}</p> : null}
     </section>
   );
 }
@@ -306,6 +331,12 @@ function ConfidencePanel({ data }: { data: SimulatedSymbolPaths }) {
           <li key={item}>{item}</li>
         ))}
       </ul>
+      {data.signal_agreement ? (
+        <div className="mt-3 rounded-md bg-panel p-3 text-xs">
+          <p className="font-medium text-ink">信号一致性：{data.signal_agreement.signal_agreement_score}/100，{agreementCn(data.signal_agreement.agreement_level)}</p>
+          <p className="mt-1 text-muted">冲突信号：{data.signal_agreement.conflicting_signals.map((item) => item.name).join(" / ") || "暂无明显冲突"}</p>
+        </div>
+      ) : null}
     </section>
   );
 }
@@ -318,10 +349,43 @@ function CurrentSummary({ data }: { data: SimulatedSymbolPaths }) {
       <h2 className="mt-1 text-lg font-semibold">{data.symbol} 当前判断</h2>
       <p className="mt-3 text-sm leading-6">{plainSummary(data)}</p>
       <div className="mt-4 grid gap-3 text-sm sm:grid-cols-3">
+        <Metric label="今天是否有预测优势" value={edgeCn(data.market_edge_status?.market_edge_status)} />
         <Metric label="当前状态" value={stateCn(data.market_state)} />
         <Metric label="最强情景" value={strongestScenario(data)} />
         <Metric label="5d / 20d / 60d 历史支持" value={`${supportCn(support?.by_horizon?.["5d"]?.support)} / ${supportCn(support?.by_horizon?.["20d"]?.support)} / ${supportCn(support?.by_horizon?.["60d"]?.support)}`} />
       </div>
+    </section>
+  );
+}
+
+function PredictorPanel({ data }: { data: SimulatedSymbolPaths }) {
+  const predictors = data.predictors;
+  if (!predictors) return null;
+  const labels: Record<string, string> = {
+    bounce_predictor: "反抽预测器",
+    downside_continuation_predictor: "下跌延续预测器",
+    trend_reversal_predictor: "趋势修复/反转预测器",
+    risk_expansion_predictor: "风险扩散预测器",
+  };
+  return (
+    <section className="mt-5 rounded-lg border border-line bg-white p-4">
+      <p className="text-xs uppercase text-muted">Predictor Stack</p>
+      <h2 className="mt-1 text-base font-semibold">四个独立预测器</h2>
+      <div className="mt-3 grid gap-3 md:grid-cols-4">
+        {Object.entries(predictors).map(([key, predictor]) => (
+          <div key={key} className="rounded-md bg-panel p-3">
+            <div className="flex items-center justify-between gap-2">
+              <p className="text-sm font-medium">{labels[key] ?? key}</p>
+              <p className="text-sm font-semibold">{pct(predictor.probability)}</p>
+            </div>
+            <p className="mt-1 text-xs text-muted">可信度：{pct(predictor.confidence)}，最佳周期：{predictor.best_horizon}</p>
+            <ul className="mt-2 space-y-1 text-xs text-muted">
+              {predictor.main_drivers.slice(0, 3).map((item) => <li key={item}>{item}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+      <p className="mt-3 text-xs text-muted">四个预测器分开看，避免一个综合模型强行解释所有市场状态。</p>
     </section>
   );
 }
@@ -574,6 +638,7 @@ export function MarketDashboard({ dashboard }: { dashboard: PredictionDashboard 
 
       <PredictionChart data={selected} />
       <HorizonTable data={selected} />
+      <PredictorPanel data={selected} />
       <MarketStatePanel data={selected} />
       <ScenarioCards data={selected} />
       <HistoricalAnalogs cases={topAnalogs} data={selected} />

@@ -42,6 +42,8 @@ The GitHub Pages site is a Chinese Market Prediction Dashboard. It shows:
 - SPY / QQQ / IWM / DIA market cards.
 - Data Quality Panel with real-data status, stale/missing checks, fallback status, and completeness score.
 - Market State Engine v2 probabilities: risk_on, risk_off, oversold_bounce, failed_bounce_risk, downside_continuation, sideways, recovery, panic, no_edge.
+- Market Intelligence Engine v3 signal agreement score and edge status: NO_EDGE / WEAK_EDGE / MODERATE_EDGE / STRONG_EDGE.
+- Four predictor stack: bounce, downside continuation, trend reversal, risk expansion.
 - Model Confidence Score with reasons why confidence is limited.
 - Current state, live signal, bounce probability, downside risk, and trend reversal probability.
 - 3d / 5d / 10d / 20d / 60d horizon predictions.
@@ -53,16 +55,19 @@ Daily workflow outputs:
 
 ```text
 frontend/public/data_quality_report.json
+frontend/public/high-confidence-signal-report.json
 frontend/public/market-overview.json
 frontend/public/simulated-paths.json
 frontend/public/prediction-dashboard.json
+outputs/high_confidence_signal_report.md
 ```
 
 Current v2 data reality:
 
-- Available: SPY / QQQ / IWM / DIA, VIX, HYG, LQD, TLT, UUP, ^TNX.
-- Proxy only: credit, rates, liquidity, market structure.
-- Not available yet: options, breadth, macro, flow.
+- Available: SPY / QQQ / IWM / DIA, VIX, HYG, LQD, TLT, UUP, ^TNX, sector ETFs when public data is available.
+- Proxy only: breadth, flow, liquidity, market structure, credit if FRED OAS is unavailable.
+- Fallback only: macro/event calendar.
+- Still missing unless a real feed is added: put/call ratio, gamma exposure, true fund flow, constituent-level breadth.
 
 ## Daily Forward Observation
 

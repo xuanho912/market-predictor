@@ -2,82 +2,165 @@
   "as_of": "2026-06-12",
   "coverage_categories": {
     "breadth": {
-      "available_items": 0,
-      "detail": "advance/decline, highs/lows, percent above MA not connected",
-      "expected_items": 5,
-      "status": "not_available"
+      "available_items": 12,
+      "detail": "RSP/SPY and sector ETF participation proxy, not constituent breadth",
+      "expected_items": 12,
+      "fallback_used": false,
+      "proxy_used": true,
+      "real_data": false,
+      "status": "proxy"
     },
     "credit": {
       "available_items": 2,
-      "detail": "HYG/LQD proxy only; HY OAS and IG OAS not connected",
+      "detail": "FRED HY/IG OAS plus HYG/LQD proxy",
       "expected_items": 4,
-      "status": "partial"
+      "fallback_used": false,
+      "proxy_used": true,
+      "real_data": false,
+      "status": "proxy"
     },
     "flow": {
-      "available_items": 0,
-      "detail": "ETF flow, dealer positioning and fund flow not connected",
-      "expected_items": 5,
-      "status": "not_available"
+      "available_items": 6,
+      "detail": "Volume z-score, relative volume, high-beta vs low-vol and sector rotation proxy",
+      "expected_items": 7,
+      "fallback_used": false,
+      "proxy_used": true,
+      "real_data": false,
+      "status": "proxy"
     },
     "liquidity": {
-      "available_items": 3,
-      "detail": "TLT/UUP/^TNX proxy only; reserves/repo/TGA not connected",
+      "available_items": 2,
+      "detail": "TLT/UUP/rates stress proxy, not reserves/repo/TGA",
       "expected_items": 5,
-      "status": "partial"
+      "fallback_used": false,
+      "proxy_used": true,
+      "real_data": false,
+      "status": "proxy"
     },
     "macro": {
-      "available_items": 0,
-      "detail": "economic releases and revisions not connected",
+      "available_items": 1,
+      "detail": "Rule-based CPI/FOMC/NFP/options-expiry/month-end calendar risk, not a live event feed",
       "expected_items": 5,
-      "status": "not_available"
+      "fallback_used": true,
+      "proxy_used": false,
+      "real_data": false,
+      "status": "fallback"
     },
     "market_structure": {
-      "available_items": 4,
-      "detail": "small/large and growth/value ETF proxy; sectors not connected",
-      "expected_items": 8,
-      "status": "partial"
+      "available_items": 11,
+      "detail": "Sector ETF participation, defensive/cyclical, small/large, growth/value proxies",
+      "expected_items": 11,
+      "fallback_used": false,
+      "proxy_used": true,
+      "real_data": false,
+      "status": "proxy"
     },
     "options": {
-      "available_items": 0,
-      "detail": "VVIX, put/call, skew, gamma and option flow are not connected; VIX is counted under volatility only",
-      "expected_items": 5,
-      "status": "not_available"
+      "available_items": 5,
+      "detail": "VIX9D/VIX3M/VIX6M/VVIX/SKEW when Yahoo/Stooq provides them; put/call and gamma still missing",
+      "expected_items": 7,
+      "fallback_used": false,
+      "proxy_used": false,
+      "real_data": true,
+      "status": "partial"
     },
     "price": {
       "available_items": 4,
       "detail": "SPY/QQQ/IWM/DIA OHLCV",
       "expected_items": 4,
+      "fallback_used": false,
+      "proxy_used": false,
+      "real_data": true,
       "status": "available"
     },
     "rates": {
       "available_items": 1,
-      "detail": "10Y yield proxy via ^TNX; 2Y/3M curve not connected",
-      "expected_items": 4,
+      "detail": "FRED 10Y/2Y/3M/TIPS plus ^TNX",
+      "expected_items": 5,
+      "fallback_used": false,
+      "proxy_used": false,
+      "real_data": false,
       "status": "partial"
     },
     "volatility": {
       "available_items": 1,
-      "detail": "VIX level/change/percentile proxy",
+      "detail": "VIX level/change/percentile",
       "expected_items": 1,
+      "fallback_used": false,
+      "proxy_used": false,
+      "real_data": true,
       "status": "available"
     }
   },
-  "generated_at": "2026-06-13T15:58:27.036631+00:00",
+  "generated_at": "2026-06-13T16:26:27.801415+00:00",
   "notes": [
-    "price/volatility/credit/rates/liquidity currently use public market proxies.",
-    "options breadth macro flow are not treated as available unless real feeds are connected.",
-    "synthetic fallback is never allowed to create a live signal."
+    "Breadth and flow are ETF/sector proxies, not constituent-level feeds.",
+    "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
+    "Put/call ratio, gamma exposure and true fund flow remain missing unless a real feed is added."
   ],
   "sources": {
+    "DFII10": {
+      "fallback_used": false,
+      "latest_date": null,
+      "missing_data": true,
+      "point_in_time_safe": false,
+      "real_data": false,
+      "rows": 0,
+      "series_id": "DFII10",
+      "source": "missing",
+      "stale_data": false,
+      "status": "missing",
+      "symbol": "DFII10"
+    },
+    "DGS10": {
+      "fallback_used": false,
+      "latest_date": null,
+      "missing_data": true,
+      "point_in_time_safe": false,
+      "real_data": false,
+      "rows": 0,
+      "series_id": "DGS10",
+      "source": "missing",
+      "stale_data": false,
+      "status": "missing",
+      "symbol": "DGS10"
+    },
+    "DGS2": {
+      "fallback_used": false,
+      "latest_date": null,
+      "missing_data": true,
+      "point_in_time_safe": false,
+      "real_data": false,
+      "rows": 0,
+      "series_id": "DGS2",
+      "source": "missing",
+      "stale_data": false,
+      "status": "missing",
+      "symbol": "DGS2"
+    },
+    "DGS3MO": {
+      "fallback_used": false,
+      "latest_date": null,
+      "missing_data": true,
+      "point_in_time_safe": false,
+      "real_data": false,
+      "rows": 0,
+      "series_id": "DGS3MO",
+      "source": "missing",
+      "stale_data": false,
+      "status": "missing",
+      "symbol": "DGS3MO"
+    },
     "DIA": {
       "fallback_used": false,
       "latest_date": "2026-06-12",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
-      "rows": 260,
+      "rows": 520,
       "source": "yahoo-chart",
       "stale_data": false,
+      "status": "available",
       "symbol": "DIA"
     },
     "HYG": {
@@ -86,10 +169,37 @@
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
-      "rows": 260,
+      "rows": 520,
       "source": "yahoo-chart",
       "stale_data": false,
+      "status": "available",
       "symbol": "HYG"
+    },
+    "HY_OAS": {
+      "fallback_used": false,
+      "latest_date": null,
+      "missing_data": true,
+      "point_in_time_safe": false,
+      "real_data": false,
+      "rows": 0,
+      "series_id": "BAMLH0A0HYM2",
+      "source": "missing",
+      "stale_data": false,
+      "status": "missing",
+      "symbol": "HY_OAS"
+    },
+    "IG_OAS": {
+      "fallback_used": false,
+      "latest_date": null,
+      "missing_data": true,
+      "point_in_time_safe": false,
+      "real_data": false,
+      "rows": 0,
+      "series_id": "BAMLC0A0CM",
+      "source": "missing",
+      "stale_data": false,
+      "status": "missing",
+      "symbol": "IG_OAS"
     },
     "IWM": {
       "fallback_used": false,
@@ -97,9 +207,10 @@
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
-      "rows": 260,
+      "rows": 520,
       "source": "yahoo-chart",
       "stale_data": false,
+      "status": "available",
       "symbol": "IWM"
     },
     "LQD": {
@@ -108,9 +219,10 @@
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
-      "rows": 260,
+      "rows": 520,
       "source": "yahoo-chart",
       "stale_data": false,
+      "status": "available",
       "symbol": "LQD"
     },
     "QQQ": {
@@ -119,10 +231,47 @@
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
-      "rows": 260,
+      "rows": 520,
       "source": "yahoo-chart",
       "stale_data": false,
+      "status": "available",
       "symbol": "QQQ"
+    },
+    "RSP": {
+      "fallback_used": false,
+      "latest_date": "2026-06-12",
+      "missing_data": false,
+      "point_in_time_safe": true,
+      "real_data": true,
+      "rows": 520,
+      "source": "yahoo-chart",
+      "stale_data": false,
+      "status": "available",
+      "symbol": "RSP"
+    },
+    "SPHB": {
+      "fallback_used": false,
+      "latest_date": "2026-06-12",
+      "missing_data": false,
+      "point_in_time_safe": true,
+      "real_data": true,
+      "rows": 520,
+      "source": "yahoo-chart",
+      "stale_data": false,
+      "status": "available",
+      "symbol": "SPHB"
+    },
+    "SPLV": {
+      "fallback_used": false,
+      "latest_date": "2026-06-12",
+      "missing_data": false,
+      "point_in_time_safe": true,
+      "real_data": true,
+      "rows": 520,
+      "source": "yahoo-chart",
+      "stale_data": false,
+      "status": "available",
+      "symbol": "SPLV"
     },
     "SPY": {
       "fallback_used": false,
@@ -130,9 +279,10 @@
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
-      "rows": 260,
+      "rows": 520,
       "source": "yahoo-chart",
       "stale_data": false,
+      "status": "available",
       "symbol": "SPY"
     },
     "TLT": {
@@ -141,9 +291,10 @@
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
-      "rows": 260,
+      "rows": 520,
       "source": "yahoo-chart",
       "stale_data": false,
+      "status": "available",
       "symbol": "TLT"
     },
     "UUP": {
@@ -152,10 +303,155 @@
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
-      "rows": 260,
+      "rows": 520,
       "source": "yahoo-chart",
       "stale_data": false,
+      "status": "available",
       "symbol": "UUP"
+    },
+    "XLB": {
+      "fallback_used": false,
+      "latest_date": "2026-06-12",
+      "missing_data": false,
+      "point_in_time_safe": true,
+      "real_data": true,
+      "rows": 520,
+      "source": "yahoo-chart",
+      "stale_data": false,
+      "status": "available",
+      "symbol": "XLB"
+    },
+    "XLC": {
+      "fallback_used": false,
+      "latest_date": "2026-06-12",
+      "missing_data": false,
+      "point_in_time_safe": true,
+      "real_data": true,
+      "rows": 520,
+      "source": "yahoo-chart",
+      "stale_data": false,
+      "status": "available",
+      "symbol": "XLC"
+    },
+    "XLE": {
+      "fallback_used": false,
+      "latest_date": "2026-06-12",
+      "missing_data": false,
+      "point_in_time_safe": true,
+      "real_data": true,
+      "rows": 520,
+      "source": "yahoo-chart",
+      "stale_data": false,
+      "status": "available",
+      "symbol": "XLE"
+    },
+    "XLF": {
+      "fallback_used": false,
+      "latest_date": "2026-06-12",
+      "missing_data": false,
+      "point_in_time_safe": true,
+      "real_data": true,
+      "rows": 520,
+      "source": "yahoo-chart",
+      "stale_data": false,
+      "status": "available",
+      "symbol": "XLF"
+    },
+    "XLI": {
+      "fallback_used": false,
+      "latest_date": "2026-06-12",
+      "missing_data": false,
+      "point_in_time_safe": true,
+      "real_data": true,
+      "rows": 520,
+      "source": "yahoo-chart",
+      "stale_data": false,
+      "status": "available",
+      "symbol": "XLI"
+    },
+    "XLK": {
+      "fallback_used": false,
+      "latest_date": "2026-06-12",
+      "missing_data": false,
+      "point_in_time_safe": true,
+      "real_data": true,
+      "rows": 520,
+      "source": "yahoo-chart",
+      "stale_data": false,
+      "status": "available",
+      "symbol": "XLK"
+    },
+    "XLP": {
+      "fallback_used": false,
+      "latest_date": "2026-06-12",
+      "missing_data": false,
+      "point_in_time_safe": true,
+      "real_data": true,
+      "rows": 520,
+      "source": "yahoo-chart",
+      "stale_data": false,
+      "status": "available",
+      "symbol": "XLP"
+    },
+    "XLRE": {
+      "fallback_used": false,
+      "latest_date": "2026-06-12",
+      "missing_data": false,
+      "point_in_time_safe": true,
+      "real_data": true,
+      "rows": 520,
+      "source": "yahoo-chart",
+      "stale_data": false,
+      "status": "available",
+      "symbol": "XLRE"
+    },
+    "XLU": {
+      "fallback_used": false,
+      "latest_date": "2026-06-12",
+      "missing_data": false,
+      "point_in_time_safe": true,
+      "real_data": true,
+      "rows": 520,
+      "source": "yahoo-chart",
+      "stale_data": false,
+      "status": "available",
+      "symbol": "XLU"
+    },
+    "XLV": {
+      "fallback_used": false,
+      "latest_date": "2026-06-12",
+      "missing_data": false,
+      "point_in_time_safe": true,
+      "real_data": true,
+      "rows": 520,
+      "source": "yahoo-chart",
+      "stale_data": false,
+      "status": "available",
+      "symbol": "XLV"
+    },
+    "XLY": {
+      "fallback_used": false,
+      "latest_date": "2026-06-12",
+      "missing_data": false,
+      "point_in_time_safe": true,
+      "real_data": true,
+      "rows": 520,
+      "source": "yahoo-chart",
+      "stale_data": false,
+      "status": "available",
+      "symbol": "XLY"
+    },
+    "^SKEW": {
+      "fallback_used": false,
+      "latest_date": "2026-06-12",
+      "missing_data": false,
+      "point_in_time_safe": true,
+      "real_data": true,
+      "rows": 520,
+      "source": "yahoo-chart",
+      "stale_data": false,
+      "status": "available",
+      "symbol": "^SKEW"
     },
     "^TNX": {
       "fallback_used": false,
@@ -163,9 +459,10 @@
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
-      "rows": 260,
+      "rows": 520,
       "source": "yahoo-chart",
       "stale_data": false,
+      "status": "available",
       "symbol": "^TNX"
     },
     "^VIX": {
@@ -174,26 +471,94 @@
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
-      "rows": 260,
+      "rows": 520,
       "source": "yahoo-chart",
       "stale_data": false,
+      "status": "available",
       "symbol": "^VIX"
+    },
+    "^VIX3M": {
+      "fallback_used": false,
+      "latest_date": "2026-06-12",
+      "missing_data": false,
+      "point_in_time_safe": true,
+      "real_data": true,
+      "rows": 520,
+      "source": "yahoo-chart",
+      "stale_data": false,
+      "status": "available",
+      "symbol": "^VIX3M"
+    },
+    "^VIX6M": {
+      "fallback_used": false,
+      "latest_date": "2026-06-12",
+      "missing_data": false,
+      "point_in_time_safe": true,
+      "real_data": true,
+      "rows": 520,
+      "source": "yahoo-chart",
+      "stale_data": false,
+      "status": "available",
+      "symbol": "^VIX6M"
+    },
+    "^VIX9D": {
+      "fallback_used": false,
+      "latest_date": "2026-06-12",
+      "missing_data": false,
+      "point_in_time_safe": true,
+      "real_data": true,
+      "rows": 520,
+      "source": "yahoo-chart",
+      "stale_data": false,
+      "status": "available",
+      "symbol": "^VIX9D"
+    },
+    "^VVIX": {
+      "fallback_used": false,
+      "latest_date": "2026-06-12",
+      "missing_data": false,
+      "point_in_time_safe": true,
+      "real_data": true,
+      "rows": 520,
+      "source": "yahoo-chart",
+      "stale_data": false,
+      "status": "available",
+      "symbol": "^VVIX"
+    },
+    "macro_event_calendar": {
+      "detail": "CPI/FOMC/NFP/options-expiry/month-end flags are rule-based calendar approximations.",
+      "fallback_used": true,
+      "latest_date": "2026-06-12",
+      "missing_data": false,
+      "point_in_time_safe": true,
+      "real_data": false,
+      "rows": 1,
+      "source": "deterministic_calendar_fallback",
+      "stale_data": false,
+      "status": "fallback",
+      "symbol": "macro_event_calendar"
     }
   },
   "summary": {
-    "data_completeness_score": 57,
-    "data_source_status": "real_market_data",
-    "fallback_used": false,
+    "data_completeness_score": 79,
+    "data_source_status": "real_core_with_proxies",
+    "fallback_used": true,
     "latest_date": "2026-06-12",
-    "missing_data": false,
+    "missing_data": true,
+    "missing_key_sources": [
+      "DFII10",
+      "DGS10",
+      "DGS2",
+      "DGS3MO",
+      "HY_OAS",
+      "IG_OAS"
+    ],
+    "quality_note": "Score includes real data plus explicitly labeled proxy/fallback categories; it is not equal to institutional-grade data coverage.",
     "real_market_data": true,
     "stale_data": false,
     "synthetic_used": false,
-    "unavailable_categories": [
-      "breadth",
-      "options",
-      "macro",
-      "flow"
-    ]
-  }
+    "target_completeness_score": 75,
+    "unavailable_categories": []
+  },
+  "version": "market_intelligence_engine_v3_data_quality"
 }
