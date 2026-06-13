@@ -85,6 +85,7 @@ Free-first cloud deployment uses GitHub only:
 
 - `.github/workflows/forward-alpha-v1.yml`: runs the frozen Alpha v1 forward tracker, commits updated `outputs/`, builds the static frontend, and deploys GitHub Pages.
 - `scripts/export_static_alpha_v1.py`: exports committed tracker results to frontend-readable static JSON, including the Market Prediction Dashboard payload.
+- `scripts/market_intelligence_v2.py`: adds data quality auditing, proxy feature snapshots, Market State Engine v2, model confidence scoring, horizon-specific analog support, and scenario weights.
 - `frontend/next.config.js`: switches to static export when `GITHUB_PAGES=true`.
 - `docs/cloud_deployment.md`: no-card, GitHub Pages deployment instructions.
 
@@ -253,6 +254,34 @@ Free cloud scheduling uses GitHub Actions:
 ```
 
 It runs on weekdays at `22:37 UTC`, updates `outputs/forward_alpha_v1_*`, exports static frontend JSON, commits the changes back to the repository, builds the static frontend, and deploys GitHub Pages. This is the preferred no-card option because Render Free services can sleep and lose local filesystem writes.
+
+## Market Intelligence Engine v2
+
+The dashboard is no longer only an Alpha v1 observer. Each GitHub Actions run also exports:
+
+```text
+frontend/public/data_quality_report.json
+frontend/public/market-overview.json
+frontend/public/simulated-paths.json
+frontend/public/prediction-dashboard.json
+```
+
+Current real data coverage:
+
+- price: SPY / QQQ / IWM / DIA
+- volatility: VIX level, 5d/20d change, percentile
+- credit proxies: HYG / LQD relative strength, HYG drawdown
+- rates and liquidity proxies: ^TNX, TLT, UUP
+- market structure proxies: small cap vs large cap, growth vs SPY, DIA vs SPY
+
+Explicitly not available unless real feeds are added:
+
+- breadth: advance/decline, new highs/lows, percent above moving averages
+- options: VVIX, put/call, skew, gamma, dealer positioning
+- macro: economic release calendar and point-in-time revisions
+- flow: ETF flow, fund flow, option flow
+
+The page shows `data_completeness_score`, `model_confidence_score`, Market State Engine v2 probabilities, 3d/5d/10d/20d/60d horizon predictions, period-specific historical analog support, and scenario path weights. Missing data reduces confidence and is shown directly on the page.
 
 ## Historical Analog Engine
 

@@ -105,11 +105,107 @@ export type HistoricalAnalogReport = {
   };
 };
 
+export type DataQualityReport = {
+  generated_at: string;
+  as_of: string | null;
+  summary: {
+    data_source_status: string;
+    real_market_data: boolean;
+    fallback_used: boolean;
+    synthetic_used: boolean;
+    stale_data: boolean;
+    missing_data: boolean;
+    data_completeness_score: number;
+    unavailable_categories: string[];
+    latest_date: string | null;
+  };
+  sources: Record<string, {
+    symbol: string;
+    source: string;
+    rows: number;
+    latest_date: string | null;
+    real_data: boolean;
+    fallback_used: boolean;
+    stale_data: boolean;
+    missing_data: boolean;
+    point_in_time_safe: boolean;
+  }>;
+  coverage_categories: Record<string, {
+    status: "available" | "partial" | "not_available";
+    detail: string;
+    available_items: number;
+    expected_items: number;
+  }>;
+  notes: string[];
+};
+
+export type MarketStateName =
+  | "risk_on"
+  | "risk_off"
+  | "oversold_bounce"
+  | "failed_bounce_risk"
+  | "downside_continuation"
+  | "sideways"
+  | "recovery"
+  | "panic"
+  | "no_edge";
+
+export type MarketStateV2 = {
+  version: string;
+  primary_state: MarketStateName;
+  states: Record<MarketStateName, {
+    probability: number;
+    reason: string;
+    supporting_features: string[];
+    conflicting_features: string[];
+    confidence: number;
+  }>;
+  stress_inputs: Record<string, number>;
+};
+
+export type HistoricalSupportByHorizon = {
+  by_horizon: Record<string, {
+    support: "supportive" | "weak" | "neutral" | "low_sample";
+    avg_return: number | null;
+    median_return: number | null;
+    hit_rate: number | null;
+    worst_case: number | null;
+    best_case: number | null;
+    sample_count: number;
+  }>;
+  short_term_support: "supportive" | "weak" | "neutral" | "low_sample";
+  medium_term_support: "supportive" | "weak" | "neutral" | "low_sample";
+  worst_path_risk: "low" | "medium" | "high" | "unknown";
+  analog_sample_quality: "low" | "medium" | "high";
+  sample_count: number;
+  low_sample_warning: boolean;
+  historical_analogs_are_not_proof: boolean;
+};
+
+export type ModelConfidence = {
+  confidence_score: number;
+  confidence_level: "low" | "medium" | "high";
+  components: Record<string, number>;
+  why_confidence_is_limited: string[];
+};
+
+export type HorizonPredictionV2 = {
+  expected_direction: string;
+  expected_return: number;
+  expected_return_range: [number, number];
+  up_probability: number;
+  down_probability: number;
+  bounce_probability: number;
+  failed_bounce_risk: number;
+  confidence: number;
+  historical_support: string;
+};
+
 export type MarketSymbolOverview = {
   symbol: string;
   name: string;
   current_price: number | null;
-  market_state: "oversold_bounce" | "risk_off" | "sideways" | "recovery" | "panic" | "no_edge";
+  market_state: MarketStateName;
   bounce_probability: number;
   downside_continuation_probability: number;
   trend_reversal_probability: number;
@@ -118,6 +214,12 @@ export type MarketSymbolOverview = {
   distance_to_threshold: number | null;
   as_of: string | null;
   data_source_status?: string | null;
+  market_state_v2?: MarketStateV2;
+  historical_support_by_horizon?: HistoricalSupportByHorizon;
+  model_confidence?: ModelConfidence;
+  prediction_horizons?: Record<string, HorizonPredictionV2>;
+  current_integrated_judgment?: string;
+  feature_snapshot_v2?: Record<string, unknown>;
 };
 
 export type SimulatedSymbolPaths = {
@@ -130,6 +232,15 @@ export type SimulatedSymbolPaths = {
   downside_continuation_probability: number;
   trend_reversal_probability: number;
   historical_support: string;
+  market_state_v2?: MarketStateV2;
+  historical_support_by_horizon?: HistoricalSupportByHorizon;
+  model_confidence?: ModelConfidence;
+  prediction_horizons?: Record<string, HorizonPredictionV2>;
+  current_integrated_judgment?: string;
+  scenario_weights?: Record<string, number>;
+  path_confidence?: "low" | "medium" | "high";
+  path_source_notes?: string[];
+  data_quality?: Record<string, unknown>;
   paths: {
     dates: string[];
     split_index: number;
@@ -162,17 +273,31 @@ export type PredictionDashboard = {
   source: string;
   as_of: string | null;
   status_note: string;
+  data_quality_report?: DataQualityReport;
+  market_intelligence_v2?: {
+    version: string;
+    generated_at: string;
+    data_quality_report: DataQualityReport;
+    feature_snapshot_v2: Record<string, unknown>;
+    model_confidence_by_symbol: Record<string, ModelConfidence>;
+    warnings: string[];
+  };
+  feature_snapshot_v2?: Record<string, unknown>;
+  model_confidence_by_symbol?: Record<string, ModelConfidence>;
   overview: {
     as_of: string | null;
     strongest_symbol: string;
     dashboard_status: string;
     status_note: string;
     symbols: Record<string, MarketSymbolOverview>;
+    data_quality_summary?: Record<string, unknown>;
+    model_confidence_by_symbol?: Record<string, ModelConfidence>;
   };
   simulated_paths: {
     as_of: string | null;
     disclaimer: string;
     symbols: Record<string, SimulatedSymbolPaths>;
+    data_quality_summary?: Record<string, unknown>;
   };
   alpha_status: AlphaV1Status;
   forward_report: unknown;

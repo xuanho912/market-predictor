@@ -10,12 +10,16 @@ from typing import Any
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 BACKEND_ROOT = PROJECT_ROOT / "backend"
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 if str(BACKEND_ROOT) not in sys.path:
     sys.path.insert(0, str(BACKEND_ROOT))
 
 from app.services.analysis.historical_analogs import build_alpha_v1_analog_report
+from app.services.data_providers.auto_download import DownloadedSeries
 from app.services.data_providers.auto_download import refresh_market_data
 from app.services.validation.forward_alpha_tracker import alpha_status_payload, report_payload
+from scripts.market_intelligence_v2 import build_market_intelligence_v2
 
 
 SYMBOLS = ("SPY", "QQQ", "IWM", "DIA")
@@ -25,6 +29,7 @@ SYMBOL_NAMES = {
     "IWM": "Russell 2000",
     "DIA": "Dow Jones",
 }
+SUPPORT_SYMBOLS = ("^VIX", "HYG", "LQD", "TLT", "UUP", "^TNX")
 HORIZONS = (3, 5, 10, 20, 60)
 PAST_WINDOW = 90
 
@@ -36,10 +41,18 @@ def main() -> int:
     alpha_status = alpha_status_payload()
     alpha_report = report_payload()
     analogs = {symbol: build_alpha_v1_analog_report(symbol, top_k=20) for symbol in SYMBOLS}
-    price_history = _load_price_history()
+    downloaded = refresh_market_data(symbols=SYMBOLS + SUPPORT_SYMBOLS, lookback_days=260)
+    series_by_symbol = {series.symbol: series for series in downloaded}
+    price_history = _load_price_history(series_by_symbol)
 
     market_overview = _build_market_overview(alpha_status, analogs, price_history)
     simulated_paths = _build_simulated_paths(alpha_status, analogs, price_history, market_overview)
+    intelligence_v2 = build_market_intelligence_v2(
+        series_by_symbol=series_by_symbol,
+        overview=market_overview,
+        simulated_paths=simulated_paths,
+        analogs=analogs,
+    )
     dashboard = {
         "generated_by": "scripts/export_static_alpha_v1.py",
         "source": "github_actions_forward_tracker_outputs",
@@ -47,6 +60,10 @@ def main() -> int:
         "status_note": "Alpha v1 remains a research candidate. Simulated paths are probabilistic scenarios, not guaranteed forecasts.",
         "overview": market_overview,
         "simulated_paths": simulated_paths,
+        "market_intelligence_v2": intelligence_v2,
+        "data_quality_report": intelligence_v2["data_quality_report"],
+        "feature_snapshot_v2": intelligence_v2["feature_snapshot_v2"],
+        "model_confidence_by_symbol": intelligence_v2["model_confidence_by_symbol"],
         "alpha_status": alpha_status,
         "forward_report": alpha_report,
         "analogs": analogs,
@@ -63,20 +80,26 @@ def main() -> int:
         "source": "github_actions_forward_tracker_outputs",
         "analogs": analogs,
     })
+    _write_json(public_dir / "data_quality_report.json", intelligence_v2["data_quality_report"])
     _write_json(public_dir / "market-overview.json", market_overview)
     _write_json(public_dir / "simulated-paths.json", simulated_paths)
     _write_json(public_dir / "prediction-dashboard.json", dashboard)
 
     print("wrote frontend/public/alpha-v1-status.json")
     print("wrote frontend/public/alpha-v1-analogs.json")
+    print("wrote frontend/public/data_quality_report.json")
     print("wrote frontend/public/market-overview.json")
     print("wrote frontend/public/simulated-paths.json")
     print("wrote frontend/public/prediction-dashboard.json")
     return 0
 
 
-def _load_price_history() -> dict[str, list[dict[str, Any]]]:
-    downloaded = refresh_market_data(symbols=SYMBOLS, lookback_days=220)
+def _load_price_history(series_by_symbol: dict[str, DownloadedSeries] | None = None) -> dict[str, list[dict[str, Any]]]:
+    downloaded = (
+        [series_by_symbol[symbol] for symbol in SYMBOLS if symbol in series_by_symbol]
+        if series_by_symbol is not None
+        else refresh_market_data(symbols=SYMBOLS, lookback_days=220)
+    )
     history: dict[str, list[dict[str, Any]]] = {}
     for series in downloaded:
         clean_rows = [

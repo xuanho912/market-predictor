@@ -40,7 +40,11 @@ Details are in `docs/cloud_deployment.md`.
 The GitHub Pages site is a Chinese Market Prediction Dashboard. It shows:
 
 - SPY / QQQ / IWM / DIA market cards.
+- Data Quality Panel with real-data status, stale/missing checks, fallback status, and completeness score.
+- Market State Engine v2 probabilities: risk_on, risk_off, oversold_bounce, failed_bounce_risk, downside_continuation, sideways, recovery, panic, no_edge.
+- Model Confidence Score with reasons why confidence is limited.
 - Current state, live signal, bounce probability, downside risk, and trend reversal probability.
+- 3d / 5d / 10d / 20d / 60d horizon predictions.
 - Past price plus simulated future paths.
 - Base, bounce, bearish, and historical analog scenarios.
 - Historical analog dates and invalidation conditions.
@@ -48,10 +52,17 @@ The GitHub Pages site is a Chinese Market Prediction Dashboard. It shows:
 Daily workflow outputs:
 
 ```text
+frontend/public/data_quality_report.json
 frontend/public/market-overview.json
 frontend/public/simulated-paths.json
 frontend/public/prediction-dashboard.json
 ```
+
+Current v2 data reality:
+
+- Available: SPY / QQQ / IWM / DIA, VIX, HYG, LQD, TLT, UUP, ^TNX.
+- Proxy only: credit, rates, liquidity, market structure.
+- Not available yet: options, breadth, macro, flow.
 
 ## Daily Forward Observation
 

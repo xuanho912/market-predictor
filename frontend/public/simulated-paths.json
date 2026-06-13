@@ -1,12 +1,101 @@
 {
   "as_of": "2026-06-12",
+  "data_quality_summary": {
+    "data_completeness_score": 57,
+    "data_source_status": "real_market_data",
+    "fallback_used": false,
+    "latest_date": "2026-06-12",
+    "missing_data": false,
+    "real_market_data": true,
+    "stale_data": false,
+    "synthetic_used": false,
+    "unavailable_categories": [
+      "breadth",
+      "options",
+      "macro",
+      "flow"
+    ]
+  },
   "disclaimer": "Simulated future paths are probabilistic scenarios based on current signals and historical analogs, not guaranteed forecasts.",
   "symbols": {
     "DIA": {
       "bounce_probability": 0.57070947,
+      "current_integrated_judgment": "DIA 当前综合状态偏向“反抽失败风险”。短线 5d 历史支持为 supportive，20d 为 supportive，60d 为 weak；最坏路径风险为 high。模型可信度为 low（49 分）。这代表概率情景，不代表确定走势。",
       "current_price": 513.05999756,
+      "data_quality": {
+        "data_completeness_score": 57,
+        "data_source_status": "real_market_data",
+        "fallback_used": false,
+        "latest_date": "2026-06-12",
+        "missing_data": false,
+        "real_market_data": true,
+        "stale_data": false,
+        "synthetic_used": false,
+        "unavailable_categories": [
+          "breadth",
+          "options",
+          "macro",
+          "flow"
+        ]
+      },
       "downside_continuation_probability": 0.543237316016,
       "historical_support": "supportive",
+      "historical_support_by_horizon": {
+        "analog_sample_quality": "high",
+        "by_horizon": {
+          "10d": {
+            "avg_return": 0.00022419942671077496,
+            "best_case": 0.040223953939106494,
+            "hit_rate": 0.4,
+            "median_return": -0.0060175788569483135,
+            "sample_count": 20,
+            "support": "weak",
+            "worst_case": -0.029518478068982335
+          },
+          "20d": {
+            "avg_return": 0.003845170212865895,
+            "best_case": 0.06579547192712853,
+            "hit_rate": 0.6,
+            "median_return": 0.012009594569658333,
+            "sample_count": 20,
+            "support": "supportive",
+            "worst_case": -0.09549154401066673
+          },
+          "3d": {
+            "avg_return": -0.0008613621675019001,
+            "best_case": 0.038450618190532415,
+            "hit_rate": 0.4,
+            "median_return": -0.0040354530131388455,
+            "sample_count": 20,
+            "support": "weak",
+            "worst_case": -0.029603216317034775
+          },
+          "5d": {
+            "avg_return": 0.003311815463386125,
+            "best_case": 0.042122705403438765,
+            "hit_rate": 0.7,
+            "median_return": 0.003370232607712187,
+            "sample_count": 20,
+            "support": "supportive",
+            "worst_case": -0.02466933234073798
+          },
+          "60d": {
+            "avg_return": -0.021041927337147687,
+            "best_case": 0.09692116407287377,
+            "hit_rate": 0.25,
+            "median_return": -0.03329041852105713,
+            "sample_count": 20,
+            "support": "weak",
+            "worst_case": -0.08818516060439652
+          }
+        },
+        "historical_analogs_are_not_proof": true,
+        "low_sample_warning": false,
+        "medium_term_support": "weak",
+        "sample_count": 20,
+        "short_term_support": "weak",
+        "worst_path_risk": "high"
+      },
       "horizon_summary": {
         "10d": {
           "down_probability": 0.4536821283873033,
@@ -40,8 +129,148 @@
         }
       },
       "live_signal": true,
-      "market_state": "oversold_bounce",
+      "market_state": "failed_bounce_risk",
+      "market_state_v2": {
+        "primary_state": "failed_bounce_risk",
+        "states": {
+          "downside_continuation": {
+            "confidence": 0.3918,
+            "conflicting_features": [
+              "当前未发现明显一阶冲突。"
+            ],
+            "probability": 0.1643,
+            "reason": "历史样本或压力代理显示下跌延续风险偏高。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。"
+            ]
+          },
+          "failed_bounce_risk": {
+            "confidence": 0.4001,
+            "conflicting_features": [
+              "当前未发现明显一阶冲突。"
+            ],
+            "probability": 0.1761,
+            "reason": "反抽信号存在，但下跌延续和压力代理仍有冲突。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。"
+            ]
+          },
+          "no_edge": {
+            "confidence": 0.3115,
+            "conflicting_features": [
+              "当前未发现明显一阶冲突。"
+            ],
+            "probability": 0.0495,
+            "reason": "信号不足，当前不应强行预测。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。"
+            ]
+          },
+          "oversold_bounce": {
+            "confidence": 0.3769,
+            "conflicting_features": [
+              "短周期历史样本偏弱。",
+              "中周期历史样本不支持。"
+            ],
+            "probability": 0.143,
+            "reason": "反抽概率、超跌程度和历史样本共同指向短中期反抽候选。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。"
+            ]
+          },
+          "panic": {
+            "confidence": 0.308,
+            "conflicting_features": [
+              "当前未发现明显一阶冲突。"
+            ],
+            "probability": 0.0445,
+            "reason": "压力代理接近危机场景，需要降低推断强度。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。"
+            ]
+          },
+          "recovery": {
+            "confidence": 0.3359,
+            "conflicting_features": [
+              "短周期历史样本偏弱。",
+              "中周期历史样本不支持。"
+            ],
+            "probability": 0.0844,
+            "reason": "中期历史样本和趋势修复概率更好。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。"
+            ]
+          },
+          "risk_off": {
+            "confidence": 0.3678,
+            "conflicting_features": [
+              "当前未发现明显一阶冲突。"
+            ],
+            "probability": 0.13,
+            "reason": "波动、信用或流动性压力偏高。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。"
+            ]
+          },
+          "risk_on": {
+            "confidence": 0.3529,
+            "conflicting_features": [
+              "短周期历史样本偏弱。",
+              "中周期历史样本不支持。"
+            ],
+            "probability": 0.1087,
+            "reason": "DIA 的趋势和压力代理更偏风险偏好。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。"
+            ]
+          },
+          "sideways": {
+            "confidence": 0.3464,
+            "conflicting_features": [
+              "当前未发现明显一阶冲突。"
+            ],
+            "probability": 0.0995,
+            "reason": "方向信号不够集中，更像震荡观察。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。"
+            ]
+          }
+        },
+        "stress_inputs": {
+          "combined_market_stress": 0.3454846291554097,
+          "credit_deterioration_score": 0.03756118514626594,
+          "liquidity_stress_proxy": 0.258293665874691,
+          "oversold_score": 0.0,
+          "vix_percentile": 0.5992063492063492
+        },
+        "version": "market_state_engine_v2"
+      },
+      "model_confidence": {
+        "components": {
+          "analog_sample_size": 1.0,
+          "calibration_quality": 0.45,
+          "conflict_level": 0.6000000000000001,
+          "data_completeness": 0.57,
+          "feature_availability": 0.6,
+          "historical_hit_rate": 0.47000000000000003,
+          "signal_agreement": 0.12999999999999998
+        },
+        "confidence_level": "low",
+        "confidence_score": 49,
+        "why_confidence_is_limited": [
+          "缺少真实 options, breadth, macro, flow 数据，可信度上限被限制。",
+          "当前仍是 forward-only observation，概率校准样本不足。",
+          "信号之间存在冲突，尤其是反抽与下跌延续风险同时存在。"
+        ]
+      },
       "name": "Dow Jones",
+      "path_confidence": "low",
+      "path_source_notes": [
+        "历史相似路径：取当前最相似样本后续 3d/5d/10d/20d/60d 的真实表现。",
+        "反抽情景：使用相似样本中 20d 表现较好的四分位路径。",
+        "偏空情景：使用相似样本中 20d 表现较差的四分位路径。",
+        "基准情景：使用相似样本平均路径；所有路径都是概率情景，不是确定预测。"
+      ],
       "paths": {
         "analog_average_path": [
           null,
@@ -1261,6 +1490,78 @@
         ],
         "split_index": 89
       },
+      "prediction_horizons": {
+        "10d": {
+          "bounce_probability": 0.53070947,
+          "confidence": 0.441,
+          "down_probability": 0.5181379887255372,
+          "expected_direction": "偏下行/反抽失败风险",
+          "expected_return": 0.00022419942671077496,
+          "expected_return_range": [
+            -0.029518478068982335,
+            0.040223953939106494
+          ],
+          "failed_bounce_risk": 0.643237316016,
+          "historical_support": "weak",
+          "up_probability": 0.48186201127446276
+        },
+        "20d": {
+          "bounce_probability": 0.6207094700000001,
+          "confidence": 0.441,
+          "down_probability": 0.4015490662135359,
+          "expected_direction": "偏上行/反抽",
+          "expected_return": 0.003845170212865895,
+          "expected_return_range": [
+            -0.09549154401066673,
+            0.06579547192712853
+          ],
+          "failed_bounce_risk": 0.543237316016,
+          "historical_support": "supportive",
+          "up_probability": 0.5984509337864641
+        },
+        "3d": {
+          "bounce_probability": 0.53070947,
+          "confidence": 0.441,
+          "down_probability": 0.5195358256796426,
+          "expected_direction": "偏下行/反抽失败风险",
+          "expected_return": -0.0008613621675019001,
+          "expected_return_range": [
+            -0.029603216317034775,
+            0.038450618190532415
+          ],
+          "failed_bounce_risk": 0.643237316016,
+          "historical_support": "weak",
+          "up_probability": 0.4804641743203573
+        },
+        "5d": {
+          "bounce_probability": 0.6207094700000001,
+          "confidence": 0.441,
+          "down_probability": 0.40213686587577857,
+          "expected_direction": "偏上行/反抽",
+          "expected_return": 0.003311815463386125,
+          "expected_return_range": [
+            -0.02466933234073798,
+            0.042122705403438765
+          ],
+          "failed_bounce_risk": 0.543237316016,
+          "historical_support": "supportive",
+          "up_probability": 0.5978631341242214
+        },
+        "60d": {
+          "bounce_probability": 0.53070947,
+          "confidence": 0.441,
+          "down_probability": 0.5450959614062895,
+          "expected_direction": "偏下行/反抽失败风险",
+          "expected_return": -0.021041927337147687,
+          "expected_return_range": [
+            -0.08818516060439652,
+            0.09692116407287377
+          ],
+          "failed_bounce_risk": 0.643237316016,
+          "historical_support": "weak",
+          "up_probability": 0.45490403859371054
+        }
+      },
       "risk_invalidation_conditions": [
         "VIX 重新快速上升，说明波动压力没有解除。",
         "HYG 明显走弱或信用代理指标恶化。",
@@ -1271,40 +1572,119 @@
         {
           "name": "Base case",
           "name_cn": "基准情景",
-          "probability_weight": 0.36851440259760004,
+          "probability_weight": 0.2057,
           "return_20d": 0.003845170212865895,
           "summary_cn": "按最相似历史样本的平均路径推演。"
         },
         {
           "name": "Bounce case",
           "name_cn": "反弹情景",
-          "probability_weight": 0.57070947,
+          "probability_weight": 0.3069,
           "return_20d": 0.04702682462932421,
           "summary_cn": "如果 Alpha v1 信号继续有效，路径更接近历史上较好的反抽样本。"
         },
         {
           "name": "Bearish case",
           "name_cn": "失败反弹情景",
-          "probability_weight": 0.543237316016,
+          "probability_weight": 0.3135,
           "return_20d": -0.04670557099247843,
           "summary_cn": "如果波动和信用代理恶化，路径更接近历史上较差的一组样本。"
         },
         {
           "name": "Historical analog case",
           "name_cn": "历史相似情景",
-          "probability_weight": 0.5,
+          "probability_weight": 0.174,
           "return_20d": 0.003845170212865895,
           "summary_cn": "只看最相似历史样本后的实际表现，不做确定性预测。"
         }
       ],
+      "scenario_weights": {
+        "base_scenario": 0.2057,
+        "bearish_scenario": 0.3135,
+        "bounce_scenario": 0.3069,
+        "historical_analog_average": 0.174
+      },
       "symbol": "DIA",
       "trend_reversal_probability": 0.31497261963287615
     },
     "IWM": {
       "bounce_probability": 0.40434541,
+      "current_integrated_judgment": "IWM 当前综合状态偏向“风险偏好”。短线 5d 历史支持为 supportive，20d 为 weak，60d 为 supportive；最坏路径风险为 high。模型可信度为 medium（57 分）。这代表概率情景，不代表确定走势。",
       "current_price": 292.95001221,
+      "data_quality": {
+        "data_completeness_score": 57,
+        "data_source_status": "real_market_data",
+        "fallback_used": false,
+        "latest_date": "2026-06-12",
+        "missing_data": false,
+        "real_market_data": true,
+        "stale_data": false,
+        "synthetic_used": false,
+        "unavailable_categories": [
+          "breadth",
+          "options",
+          "macro",
+          "flow"
+        ]
+      },
       "downside_continuation_probability": 0.6239599215955844,
       "historical_support": "weak_or_conflicting",
+      "historical_support_by_horizon": {
+        "analog_sample_quality": "high",
+        "by_horizon": {
+          "10d": {
+            "avg_return": 0.005455264443160068,
+            "best_case": 0.06585872378573088,
+            "hit_rate": 0.55,
+            "median_return": 0.0014859182192690223,
+            "sample_count": 20,
+            "support": "supportive",
+            "worst_case": -0.03890791768285917
+          },
+          "20d": {
+            "avg_return": -0.004647763319492282,
+            "best_case": 0.08138159077580198,
+            "hit_rate": 0.4,
+            "median_return": -0.004620845274193708,
+            "sample_count": 20,
+            "support": "weak",
+            "worst_case": -0.07024591221174359
+          },
+          "3d": {
+            "avg_return": 0.007350439663016772,
+            "best_case": 0.04947346375331296,
+            "hit_rate": 0.6,
+            "median_return": 0.003213417455144918,
+            "sample_count": 20,
+            "support": "supportive",
+            "worst_case": -0.012640662559037175
+          },
+          "5d": {
+            "avg_return": 0.003016408384372482,
+            "best_case": 0.036593176190090615,
+            "hit_rate": 0.55,
+            "median_return": 0.003971260421658962,
+            "sample_count": 20,
+            "support": "supportive",
+            "worst_case": -0.04048378795281027
+          },
+          "60d": {
+            "avg_return": 0.02234185925455246,
+            "best_case": 0.11401595080841376,
+            "hit_rate": 0.6,
+            "median_return": 0.04019449724860713,
+            "sample_count": 20,
+            "support": "supportive",
+            "worst_case": -0.08572110915564113
+          }
+        },
+        "historical_analogs_are_not_proof": true,
+        "low_sample_warning": false,
+        "medium_term_support": "weak",
+        "sample_count": 20,
+        "short_term_support": "supportive",
+        "worst_path_risk": "high"
+      },
       "horizon_summary": {
         "10d": {
           "down_probability": 0.4832093715875452,
@@ -1338,8 +1718,162 @@
         }
       },
       "live_signal": true,
-      "market_state": "recovery",
+      "market_state": "risk_on",
+      "market_state_v2": {
+        "primary_state": "risk_on",
+        "states": {
+          "downside_continuation": {
+            "confidence": 0.3733,
+            "conflicting_features": [
+              "当前未发现明显一阶冲突。"
+            ],
+            "probability": 0.1379,
+            "reason": "历史样本或压力代理显示下跌延续风险偏高。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。",
+              "历史相似样本存在正向支持。",
+              "下跌延续概率偏高。"
+            ]
+          },
+          "failed_bounce_risk": {
+            "confidence": 0.3749,
+            "conflicting_features": [
+              "当前未发现明显一阶冲突。"
+            ],
+            "probability": 0.1401,
+            "reason": "反抽信号存在，但下跌延续和压力代理仍有冲突。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。",
+              "历史相似样本存在正向支持。",
+              "下跌延续概率偏高。"
+            ]
+          },
+          "no_edge": {
+            "confidence": 0.3141,
+            "conflicting_features": [
+              "当前未发现明显一阶冲突。"
+            ],
+            "probability": 0.0532,
+            "reason": "信号不足，当前不应强行预测。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。",
+              "历史相似样本存在正向支持。",
+              "下跌延续概率偏高。"
+            ]
+          },
+          "oversold_bounce": {
+            "confidence": 0.3722,
+            "conflicting_features": [
+              "中周期历史样本不支持。"
+            ],
+            "probability": 0.1362,
+            "reason": "反抽概率、超跌程度和历史样本共同指向短中期反抽候选。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。",
+              "历史相似样本存在正向支持。",
+              "下跌延续概率偏高。"
+            ]
+          },
+          "panic": {
+            "confidence": 0.3104,
+            "conflicting_features": [
+              "当前未发现明显一阶冲突。"
+            ],
+            "probability": 0.0479,
+            "reason": "压力代理接近危机场景，需要降低推断强度。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。",
+              "历史相似样本存在正向支持。",
+              "下跌延续概率偏高。"
+            ]
+          },
+          "recovery": {
+            "confidence": 0.3384,
+            "conflicting_features": [
+              "中周期历史样本不支持。"
+            ],
+            "probability": 0.088,
+            "reason": "中期历史样本和趋势修复概率更好。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。",
+              "历史相似样本存在正向支持。",
+              "下跌延续概率偏高。"
+            ]
+          },
+          "risk_off": {
+            "confidence": 0.38,
+            "conflicting_features": [
+              "当前未发现明显一阶冲突。"
+            ],
+            "probability": 0.1474,
+            "reason": "波动、信用或流动性压力偏高。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。",
+              "历史相似样本存在正向支持。",
+              "下跌延续概率偏高。"
+            ]
+          },
+          "risk_on": {
+            "confidence": 0.3804,
+            "conflicting_features": [
+              "中周期历史样本不支持。"
+            ],
+            "probability": 0.148,
+            "reason": "IWM 的趋势和压力代理更偏风险偏好。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。",
+              "历史相似样本存在正向支持。",
+              "下跌延续概率偏高。"
+            ]
+          },
+          "sideways": {
+            "confidence": 0.3477,
+            "conflicting_features": [
+              "当前未发现明显一阶冲突。"
+            ],
+            "probability": 0.1013,
+            "reason": "方向信号不够集中，更像震荡观察。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。",
+              "历史相似样本存在正向支持。",
+              "下跌延续概率偏高。"
+            ]
+          }
+        },
+        "stress_inputs": {
+          "combined_market_stress": 0.3454846291554097,
+          "credit_deterioration_score": 0.03756118514626594,
+          "liquidity_stress_proxy": 0.258293665874691,
+          "oversold_score": 0.0,
+          "vix_percentile": 0.5992063492063492
+        },
+        "version": "market_state_engine_v2"
+      },
+      "model_confidence": {
+        "components": {
+          "analog_sample_size": 1.0,
+          "calibration_quality": 0.45,
+          "conflict_level": 0.15,
+          "data_completeness": 0.57,
+          "feature_availability": 0.6,
+          "historical_hit_rate": 0.54,
+          "signal_agreement": 0.35
+        },
+        "confidence_level": "medium",
+        "confidence_score": 57,
+        "why_confidence_is_limited": [
+          "缺少真实 options, breadth, macro, flow 数据，可信度上限被限制。",
+          "当前仍是 forward-only observation，概率校准样本不足。"
+        ]
+      },
       "name": "Russell 2000",
+      "path_confidence": "low",
+      "path_source_notes": [
+        "历史相似路径：取当前最相似样本后续 3d/5d/10d/20d/60d 的真实表现。",
+        "反抽情景：使用相似样本中 20d 表现较好的四分位路径。",
+        "偏空情景：使用相似样本中 20d 表现较差的四分位路径。",
+        "基准情景：使用相似样本平均路径；所有路径都是概率情景，不是确定预测。"
+      ],
       "paths": {
         "analog_average_path": [
           null,
@@ -2559,6 +3093,78 @@
         ],
         "split_index": 89
       },
+      "prediction_horizons": {
+        "10d": {
+          "bounce_probability": 0.45434541,
+          "confidence": 0.513,
+          "down_probability": 0.43451899175249536,
+          "expected_direction": "偏上行/反抽",
+          "expected_return": 0.005455264443160068,
+          "expected_return_range": [
+            -0.03890791768285917,
+            0.06585872378573088
+          ],
+          "failed_bounce_risk": 0.6239599215955844,
+          "historical_support": "supportive",
+          "up_probability": 0.5654810082475047
+        },
+        "20d": {
+          "bounce_probability": 0.36434541000000004,
+          "confidence": 0.513,
+          "down_probability": 0.5593056663342867,
+          "expected_direction": "偏下行/反抽失败风险",
+          "expected_return": -0.004647763319492282,
+          "expected_return_range": [
+            -0.07024591221174359,
+            0.08138159077580198
+          ],
+          "failed_bounce_risk": 0.7239599215955844,
+          "historical_support": "weak",
+          "up_probability": 0.44069433366571326
+        },
+        "3d": {
+          "bounce_probability": 0.45434541,
+          "confidence": 0.513,
+          "down_probability": 0.43224020498844196,
+          "expected_direction": "偏上行/反抽",
+          "expected_return": 0.007350439663016772,
+          "expected_return_range": [
+            -0.012640662559037175,
+            0.04947346375331296
+          ],
+          "failed_bounce_risk": 0.6239599215955844,
+          "historical_support": "supportive",
+          "up_probability": 0.567759795011558
+        },
+        "5d": {
+          "bounce_probability": 0.45434541,
+          "confidence": 0.513,
+          "down_probability": 0.4374841262817995,
+          "expected_direction": "偏上行/反抽",
+          "expected_return": 0.003016408384372482,
+          "expected_return_range": [
+            -0.04048378795281027,
+            0.036593176190090615
+          ],
+          "failed_bounce_risk": 0.6239599215955844,
+          "historical_support": "supportive",
+          "up_probability": 0.5625158737182006
+        },
+        "60d": {
+          "bounce_probability": 0.45434541,
+          "confidence": 0.513,
+          "down_probability": 0.41495858580782863,
+          "expected_direction": "偏上行/反抽",
+          "expected_return": 0.02234185925455246,
+          "expected_return_range": [
+            -0.08572110915564113,
+            0.11401595080841376
+          ],
+          "failed_bounce_risk": 0.6239599215955844,
+          "historical_support": "supportive",
+          "up_probability": 0.5850414141921713
+        }
+      },
       "risk_invalidation_conditions": [
         "VIX 重新快速上升，说明波动压力没有解除。",
         "HYG 明显走弱或信用代理指标恶化。",
@@ -2569,40 +3175,119 @@
         {
           "name": "Base case",
           "name_cn": "基准情景",
-          "probability_weight": 0.35640601176066233,
+          "probability_weight": 0.2233,
           "return_20d": -0.004647763319492282,
           "summary_cn": "按最相似历史样本的平均路径推演。"
         },
         {
           "name": "Bounce case",
           "name_cn": "反弹情景",
-          "probability_weight": 0.40434541,
+          "probability_weight": 0.2782,
           "return_20d": 0.03472324137495168,
           "summary_cn": "如果 Alpha v1 信号继续有效，路径更接近历史上较好的反抽样本。"
         },
         {
           "name": "Bearish case",
           "name_cn": "失败反弹情景",
-          "probability_weight": 0.6239599215955844,
+          "probability_weight": 0.3048,
           "return_20d": -0.04463476111909799,
           "summary_cn": "如果波动和信用代理恶化，路径更接近历史上较差的一组样本。"
         },
         {
           "name": "Historical analog case",
           "name_cn": "历史相似情景",
-          "probability_weight": 0.35,
+          "probability_weight": 0.1936,
           "return_20d": -0.004647763319492282,
           "summary_cn": "只看最相似历史样本后的实际表现，不做确定性预测。"
         }
       ],
+      "scenario_weights": {
+        "base_scenario": 0.2233,
+        "bearish_scenario": 0.3048,
+        "bounce_scenario": 0.2782,
+        "historical_analog_average": 0.1936
+      },
       "symbol": "IWM",
       "trend_reversal_probability": 0.28456949892335187
     },
     "QQQ": {
       "bounce_probability": 0.38471703,
+      "current_integrated_judgment": "QQQ 当前综合状态偏向“下跌延续”。短线 5d 历史支持为 supportive，20d 为 weak，60d 为 weak；最坏路径风险为 high。模型可信度为 medium（52 分）。这代表概率情景，不代表确定走势。",
       "current_price": 721.34002686,
+      "data_quality": {
+        "data_completeness_score": 57,
+        "data_source_status": "real_market_data",
+        "fallback_used": false,
+        "latest_date": "2026-06-12",
+        "missing_data": false,
+        "real_market_data": true,
+        "stale_data": false,
+        "synthetic_used": false,
+        "unavailable_categories": [
+          "breadth",
+          "options",
+          "macro",
+          "flow"
+        ]
+      },
       "downside_continuation_probability": 0.663808439868502,
       "historical_support": "weak_or_conflicting",
+      "historical_support_by_horizon": {
+        "analog_sample_quality": "high",
+        "by_horizon": {
+          "10d": {
+            "avg_return": -0.00041192032711198645,
+            "best_case": 0.04275835159659991,
+            "hit_rate": 0.6,
+            "median_return": 0.005897470925320669,
+            "sample_count": 20,
+            "support": "weak",
+            "worst_case": -0.05937379636838658
+          },
+          "20d": {
+            "avg_return": -0.0097021099671255,
+            "best_case": 0.055400242207169104,
+            "hit_rate": 0.55,
+            "median_return": 0.0028019517475686984,
+            "sample_count": 20,
+            "support": "weak",
+            "worst_case": -0.14202828641676313
+          },
+          "3d": {
+            "avg_return": 0.004904471146417339,
+            "best_case": 0.03658810507227139,
+            "hit_rate": 0.75,
+            "median_return": 0.008878086992354706,
+            "sample_count": 20,
+            "support": "supportive",
+            "worst_case": -0.04368237134685249
+          },
+          "5d": {
+            "avg_return": 0.006590203796632027,
+            "best_case": 0.03437433286772329,
+            "hit_rate": 0.75,
+            "median_return": 0.0108854508676689,
+            "sample_count": 20,
+            "support": "supportive",
+            "worst_case": -0.03612173763231907
+          },
+          "60d": {
+            "avg_return": -0.016938967164605682,
+            "best_case": 0.07973195798272092,
+            "hit_rate": 0.3,
+            "median_return": -0.011067780257929483,
+            "sample_count": 20,
+            "support": "weak",
+            "worst_case": -0.17875194401997563
+          }
+        },
+        "historical_analogs_are_not_proof": true,
+        "low_sample_warning": false,
+        "medium_term_support": "weak",
+        "sample_count": 20,
+        "short_term_support": "weak",
+        "worst_path_risk": "high"
+      },
       "horizon_summary": {
         "10d": {
           "down_probability": 0.4995367970650361,
@@ -2636,8 +3321,156 @@
         }
       },
       "live_signal": true,
-      "market_state": "risk_off",
+      "market_state": "downside_continuation",
+      "market_state_v2": {
+        "primary_state": "downside_continuation",
+        "states": {
+          "downside_continuation": {
+            "confidence": 0.3944,
+            "conflicting_features": [
+              "当前未发现明显一阶冲突。"
+            ],
+            "probability": 0.168,
+            "reason": "历史样本或压力代理显示下跌延续风险偏高。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。",
+              "下跌延续概率偏高。"
+            ]
+          },
+          "failed_bounce_risk": {
+            "confidence": 0.3944,
+            "conflicting_features": [
+              "当前未发现明显一阶冲突。"
+            ],
+            "probability": 0.1679,
+            "reason": "反抽信号存在，但下跌延续和压力代理仍有冲突。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。",
+              "下跌延续概率偏高。"
+            ]
+          },
+          "no_edge": {
+            "confidence": 0.3097,
+            "conflicting_features": [
+              "当前未发现明显一阶冲突。"
+            ],
+            "probability": 0.047,
+            "reason": "信号不足，当前不应强行预测。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。",
+              "下跌延续概率偏高。"
+            ]
+          },
+          "oversold_bounce": {
+            "confidence": 0.3597,
+            "conflicting_features": [
+              "短周期历史样本偏弱。",
+              "中周期历史样本不支持。"
+            ],
+            "probability": 0.1184,
+            "reason": "反抽概率、超跌程度和历史样本共同指向短中期反抽候选。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。",
+              "下跌延续概率偏高。"
+            ]
+          },
+          "panic": {
+            "confidence": 0.3064,
+            "conflicting_features": [
+              "当前未发现明显一阶冲突。"
+            ],
+            "probability": 0.0423,
+            "reason": "压力代理接近危机场景，需要降低推断强度。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。",
+              "下跌延续概率偏高。"
+            ]
+          },
+          "recovery": {
+            "confidence": 0.3299,
+            "conflicting_features": [
+              "短周期历史样本偏弱。",
+              "中周期历史样本不支持。"
+            ],
+            "probability": 0.0759,
+            "reason": "中期历史样本和趋势修复概率更好。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。",
+              "下跌延续概率偏高。"
+            ]
+          },
+          "risk_off": {
+            "confidence": 0.3702,
+            "conflicting_features": [
+              "当前未发现明显一阶冲突。"
+            ],
+            "probability": 0.1334,
+            "reason": "波动、信用或流动性压力偏高。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。",
+              "下跌延续概率偏高。"
+            ]
+          },
+          "risk_on": {
+            "confidence": 0.369,
+            "conflicting_features": [
+              "短周期历史样本偏弱。",
+              "中周期历史样本不支持。"
+            ],
+            "probability": 0.1317,
+            "reason": "QQQ 的趋势和压力代理更偏风险偏好。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。",
+              "下跌延续概率偏高。"
+            ]
+          },
+          "sideways": {
+            "confidence": 0.3576,
+            "conflicting_features": [
+              "当前未发现明显一阶冲突。"
+            ],
+            "probability": 0.1155,
+            "reason": "方向信号不够集中，更像震荡观察。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。",
+              "下跌延续概率偏高。"
+            ]
+          }
+        },
+        "stress_inputs": {
+          "combined_market_stress": 0.3454846291554097,
+          "credit_deterioration_score": 0.03756118514626594,
+          "liquidity_stress_proxy": 0.258293665874691,
+          "oversold_score": 0.0,
+          "vix_percentile": 0.5992063492063492
+        },
+        "version": "market_state_engine_v2"
+      },
+      "model_confidence": {
+        "components": {
+          "analog_sample_size": 1.0,
+          "calibration_quality": 0.45,
+          "conflict_level": 0.4,
+          "data_completeness": 0.57,
+          "feature_availability": 0.6,
+          "historical_hit_rate": 0.5900000000000001,
+          "signal_agreement": 0.12999999999999998
+        },
+        "confidence_level": "medium",
+        "confidence_score": 52,
+        "why_confidence_is_limited": [
+          "缺少真实 options, breadth, macro, flow 数据，可信度上限被限制。",
+          "当前仍是 forward-only observation，概率校准样本不足。"
+        ]
+      },
       "name": "Nasdaq 100",
+      "path_confidence": "low",
+      "path_source_notes": [
+        "历史相似路径：取当前最相似样本后续 3d/5d/10d/20d/60d 的真实表现。",
+        "反抽情景：使用相似样本中 20d 表现较好的四分位路径。",
+        "偏空情景：使用相似样本中 20d 表现较差的四分位路径。",
+        "基准情景：使用相似样本平均路径；所有路径都是概率情景，不是确定预测。"
+      ],
       "paths": {
         "analog_average_path": [
           null,
@@ -3857,6 +4690,78 @@
         ],
         "split_index": 89
       },
+      "prediction_horizons": {
+        "10d": {
+          "bounce_probability": 0.34471703000000004,
+          "confidence": 0.468,
+          "down_probability": 0.5626570845291613,
+          "expected_direction": "偏下行/反抽失败风险",
+          "expected_return": -0.00041192032711198645,
+          "expected_return_range": [
+            -0.05937379636838658,
+            0.04275835159659991
+          ],
+          "failed_bounce_risk": 0.763808439868502,
+          "historical_support": "weak",
+          "up_probability": 0.43734291547083876
+        },
+        "20d": {
+          "bounce_probability": 0.34471703000000004,
+          "confidence": 0.468,
+          "down_probability": 0.5739789192904314,
+          "expected_direction": "偏下行/反抽失败风险",
+          "expected_return": -0.0097021099671255,
+          "expected_return_range": [
+            -0.14202828641676313,
+            0.055400242207169104
+          ],
+          "failed_bounce_risk": 0.763808439868502,
+          "historical_support": "weak",
+          "up_probability": 0.42602108070956873
+        },
+        "3d": {
+          "bounce_probability": 0.43471703,
+          "confidence": 0.468,
+          "down_probability": 0.44391535520549336,
+          "expected_direction": "偏上行/反抽",
+          "expected_return": 0.004904471146417339,
+          "expected_return_range": [
+            -0.04368237134685249,
+            0.03658810507227139
+          ],
+          "failed_bounce_risk": 0.663808439868502,
+          "historical_support": "supportive",
+          "up_probability": 0.5560846447945067
+        },
+        "5d": {
+          "bounce_probability": 0.43471703,
+          "confidence": 0.468,
+          "down_probability": 0.44185655596802853,
+          "expected_direction": "偏上行/反抽",
+          "expected_return": 0.006590203796632027,
+          "expected_return_range": [
+            -0.03612173763231907,
+            0.03437433286772329
+          ],
+          "failed_bounce_risk": 0.663808439868502,
+          "historical_support": "supportive",
+          "up_probability": 0.5581434440319715
+        },
+        "60d": {
+          "bounce_probability": 0.34471703000000004,
+          "confidence": 0.468,
+          "down_probability": 0.5824393114005866,
+          "expected_direction": "偏下行/反抽失败风险",
+          "expected_return": -0.016938967164605682,
+          "expected_return_range": [
+            -0.17875194401997563,
+            0.07973195798272092
+          ],
+          "failed_bounce_risk": 0.763808439868502,
+          "historical_support": "weak",
+          "up_probability": 0.41756068859941337
+        }
+      },
       "risk_invalidation_conditions": [
         "市场状态仍处于 risk_off / panic，反弹更容易失败。",
         "VIX 重新快速上升，说明波动压力没有解除。",
@@ -3868,40 +4773,119 @@
         {
           "name": "Base case",
           "name_cn": "基准情景",
-          "probability_weight": 0.35042873401972474,
+          "probability_weight": 0.2249,
           "return_20d": -0.0097021099671255,
           "summary_cn": "按最相似历史样本的平均路径推演。"
         },
         {
           "name": "Bounce case",
           "name_cn": "反弹情景",
-          "probability_weight": 0.38471703,
+          "probability_weight": 0.2685,
           "return_20d": 0.035730326553365985,
           "summary_cn": "如果 Alpha v1 信号继续有效，路径更接近历史上较好的反抽样本。"
         },
         {
           "name": "Bearish case",
           "name_cn": "失败反弹情景",
-          "probability_weight": 0.663808439868502,
+          "probability_weight": 0.3146,
           "return_20d": -0.07025770583472808,
           "summary_cn": "如果波动和信用代理恶化，路径更接近历史上较差的一组样本。"
         },
         {
           "name": "Historical analog case",
           "name_cn": "历史相似情景",
-          "probability_weight": 0.35,
+          "probability_weight": 0.192,
           "return_20d": -0.0097021099671255,
           "summary_cn": "只看最相似历史样本后的实际表现，不做确定性预测。"
         }
       ],
+      "scenario_weights": {
+        "base_scenario": 0.2249,
+        "bearish_scenario": 0.3146,
+        "bounce_scenario": 0.2685,
+        "historical_analog_average": 0.192
+      },
       "symbol": "QQQ",
       "trend_reversal_probability": 0.2629852193517149
     },
     "SPY": {
       "bounce_probability": 0.59293002,
+      "current_integrated_judgment": "SPY 当前综合状态偏向“超跌反抽”。短线 5d 历史支持为 weak，20d 为 supportive，60d 为 supportive；最坏路径风险为 high。模型可信度为 medium（58 分）。这代表概率情景，不代表确定走势。",
       "current_price": 741.75,
+      "data_quality": {
+        "data_completeness_score": 57,
+        "data_source_status": "real_market_data",
+        "fallback_used": false,
+        "latest_date": "2026-06-12",
+        "missing_data": false,
+        "real_market_data": true,
+        "stale_data": false,
+        "synthetic_used": false,
+        "unavailable_categories": [
+          "breadth",
+          "options",
+          "macro",
+          "flow"
+        ]
+      },
       "downside_continuation_probability": 0.37097413696176773,
       "historical_support": "supportive",
+      "historical_support_by_horizon": {
+        "analog_sample_quality": "high",
+        "by_horizon": {
+          "10d": {
+            "avg_return": -0.000849558579427473,
+            "best_case": 0.03084991429141004,
+            "hit_rate": 0.4,
+            "median_return": -0.0015773520964218468,
+            "sample_count": 20,
+            "support": "weak",
+            "worst_case": -0.030486369566841365
+          },
+          "20d": {
+            "avg_return": 0.02000877398698462,
+            "best_case": 0.058395848999592825,
+            "hit_rate": 0.8,
+            "median_return": 0.028978668971702426,
+            "sample_count": 20,
+            "support": "supportive",
+            "worst_case": -0.0473160913078452
+          },
+          "3d": {
+            "avg_return": -0.006692635480672837,
+            "best_case": 0.02370684376897536,
+            "hit_rate": 0.35,
+            "median_return": -0.009738515776980483,
+            "sample_count": 20,
+            "support": "weak",
+            "worst_case": -0.033125078535713115
+          },
+          "5d": {
+            "avg_return": -0.009980558612075752,
+            "best_case": 0.0239858130688948,
+            "hit_rate": 0.35,
+            "median_return": -0.007292714998855587,
+            "sample_count": 20,
+            "support": "weak",
+            "worst_case": -0.04054406755435924
+          },
+          "60d": {
+            "avg_return": 0.04287747388498211,
+            "best_case": 0.12182607729705519,
+            "hit_rate": 0.75,
+            "median_return": 0.062395003782393155,
+            "sample_count": 20,
+            "support": "supportive",
+            "worst_case": -0.09915820596545744
+          }
+        },
+        "historical_analogs_are_not_proof": true,
+        "low_sample_warning": false,
+        "medium_term_support": "supportive",
+        "sample_count": 20,
+        "short_term_support": "weak",
+        "worst_path_risk": "high"
+      },
       "horizon_summary": {
         "10d": {
           "down_probability": 0.4231802971062383,
@@ -3936,7 +4920,152 @@
       },
       "live_signal": true,
       "market_state": "oversold_bounce",
+      "market_state_v2": {
+        "primary_state": "oversold_bounce",
+        "states": {
+          "downside_continuation": {
+            "confidence": 0.3726,
+            "conflicting_features": [
+              "当前未发现明显一阶冲突。"
+            ],
+            "probability": 0.1368,
+            "reason": "历史样本或压力代理显示下跌延续风险偏高。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。",
+              "历史相似样本存在正向支持。"
+            ]
+          },
+          "failed_bounce_risk": {
+            "confidence": 0.3843,
+            "conflicting_features": [
+              "当前未发现明显一阶冲突。"
+            ],
+            "probability": 0.1536,
+            "reason": "反抽信号存在，但下跌延续和压力代理仍有冲突。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。",
+              "历史相似样本存在正向支持。"
+            ]
+          },
+          "no_edge": {
+            "confidence": 0.3092,
+            "conflicting_features": [
+              "当前未发现明显一阶冲突。"
+            ],
+            "probability": 0.0462,
+            "reason": "信号不足，当前不应强行预测。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。",
+              "历史相似样本存在正向支持。"
+            ]
+          },
+          "oversold_bounce": {
+            "confidence": 0.388,
+            "conflicting_features": [
+              "短周期历史样本偏弱。"
+            ],
+            "probability": 0.1588,
+            "reason": "反抽概率、超跌程度和历史样本共同指向短中期反抽候选。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。",
+              "历史相似样本存在正向支持。"
+            ]
+          },
+          "panic": {
+            "confidence": 0.3059,
+            "conflicting_features": [
+              "当前未发现明显一阶冲突。"
+            ],
+            "probability": 0.0416,
+            "reason": "压力代理接近危机场景，需要降低推断强度。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。",
+              "历史相似样本存在正向支持。"
+            ]
+          },
+          "recovery": {
+            "confidence": 0.3798,
+            "conflicting_features": [
+              "短周期历史样本偏弱。"
+            ],
+            "probability": 0.1471,
+            "reason": "中期历史样本和趋势修复概率更好。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。",
+              "历史相似样本存在正向支持。"
+            ]
+          },
+          "risk_off": {
+            "confidence": 0.3521,
+            "conflicting_features": [
+              "当前未发现明显一阶冲突。"
+            ],
+            "probability": 0.1076,
+            "reason": "波动、信用或流动性压力偏高。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。",
+              "历史相似样本存在正向支持。"
+            ]
+          },
+          "risk_on": {
+            "confidence": 0.3473,
+            "conflicting_features": [
+              "短周期历史样本偏弱。"
+            ],
+            "probability": 0.1007,
+            "reason": "SPY 的趋势和压力代理更偏风险偏好。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。",
+              "历史相似样本存在正向支持。"
+            ]
+          },
+          "sideways": {
+            "confidence": 0.3522,
+            "conflicting_features": [
+              "当前未发现明显一阶冲突。"
+            ],
+            "probability": 0.1076,
+            "reason": "方向信号不够集中，更像震荡观察。",
+            "supporting_features": [
+              "Alpha v1 当前触发反抽候选。",
+              "历史相似样本存在正向支持。"
+            ]
+          }
+        },
+        "stress_inputs": {
+          "combined_market_stress": 0.3454846291554097,
+          "credit_deterioration_score": 0.03756118514626594,
+          "liquidity_stress_proxy": 0.258293665874691,
+          "oversold_score": 0.0,
+          "vix_percentile": 0.5992063492063492
+        },
+        "version": "market_state_engine_v2"
+      },
+      "model_confidence": {
+        "components": {
+          "analog_sample_size": 1.0,
+          "calibration_quality": 0.45,
+          "conflict_level": 0.4,
+          "data_completeness": 0.57,
+          "feature_availability": 0.6,
+          "historical_hit_rate": 0.53,
+          "signal_agreement": 0.68
+        },
+        "confidence_level": "medium",
+        "confidence_score": 58,
+        "why_confidence_is_limited": [
+          "缺少真实 options, breadth, macro, flow 数据，可信度上限被限制。",
+          "当前仍是 forward-only observation，概率校准样本不足。"
+        ]
+      },
       "name": "S&P 500",
+      "path_confidence": "low",
+      "path_source_notes": [
+        "历史相似路径：取当前最相似样本后续 3d/5d/10d/20d/60d 的真实表现。",
+        "反抽情景：使用相似样本中 20d 表现较好的四分位路径。",
+        "偏空情景：使用相似样本中 20d 表现较差的四分位路径。",
+        "基准情景：使用相似样本平均路径；所有路径都是概率情景，不是确定预测。"
+      ],
       "paths": {
         "analog_average_path": [
           null,
@@ -5156,6 +6285,78 @@
         ],
         "split_index": 89
       },
+      "prediction_horizons": {
+        "10d": {
+          "bounce_probability": 0.5529300199999999,
+          "confidence": 0.522,
+          "down_probability": 0.4885245602973188,
+          "expected_direction": "偏下行/反抽失败风险",
+          "expected_return": -0.000849558579427473,
+          "expected_return_range": [
+            -0.030486369566841365,
+            0.03084991429141004
+          ],
+          "failed_bounce_risk": 0.4709741369617677,
+          "historical_support": "weak",
+          "up_probability": 0.5114754397026814
+        },
+        "20d": {
+          "bounce_probability": 0.64293002,
+          "confidence": 0.522,
+          "down_probability": 0.35366483795708703,
+          "expected_direction": "偏上行/反抽",
+          "expected_return": 0.02000877398698462,
+          "expected_return_range": [
+            -0.0473160913078452,
+            0.058395848999592825
+          ],
+          "failed_bounce_risk": 0.37097413696176773,
+          "historical_support": "supportive",
+          "up_probability": 0.6463351620429129
+        },
+        "3d": {
+          "bounce_probability": 0.5529300199999999,
+          "confidence": 0.522,
+          "down_probability": 0.4970059222000698,
+          "expected_direction": "偏下行/反抽失败风险",
+          "expected_return": -0.006692635480672837,
+          "expected_return_range": [
+            -0.033125078535713115,
+            0.02370684376897536
+          ],
+          "failed_bounce_risk": 0.4709741369617677,
+          "historical_support": "weak",
+          "up_probability": 0.5029940777999303
+        },
+        "5d": {
+          "bounce_probability": 0.5529300199999999,
+          "confidence": 0.522,
+          "down_probability": 0.5016664237451672,
+          "expected_direction": "偏下行/反抽失败风险",
+          "expected_return": -0.009980558612075752,
+          "expected_return_range": [
+            -0.04054406755435924,
+            0.0239858130688948
+          ],
+          "failed_bounce_risk": 0.4709741369617677,
+          "historical_support": "weak",
+          "up_probability": 0.4983335762548328
+        },
+        "60d": {
+          "bounce_probability": 0.64293002,
+          "confidence": 0.522,
+          "down_probability": 0.33237413943306554,
+          "expected_direction": "偏上行/反抽",
+          "expected_return": 0.04287747388498211,
+          "expected_return_range": [
+            -0.09915820596545744,
+            0.12182607729705519
+          ],
+          "failed_bounce_risk": 0.37097413696176773,
+          "historical_support": "supportive",
+          "up_probability": 0.6676258605669345
+        }
+      },
       "risk_invalidation_conditions": [
         "VIX 重新快速上升，说明波动压力没有解除。",
         "HYG 明显走弱或信用代理指标恶化。",
@@ -5166,32 +6367,38 @@
         {
           "name": "Base case",
           "name_cn": "基准情景",
-          "probability_weight": 0.39435387945573486,
+          "probability_weight": 0.2098,
           "return_20d": 0.02000877398698462,
           "summary_cn": "按最相似历史样本的平均路径推演。"
         },
         {
           "name": "Bounce case",
           "name_cn": "反弹情景",
-          "probability_weight": 0.59293002,
+          "probability_weight": 0.3948,
           "return_20d": 0.04904937115556929,
           "summary_cn": "如果 Alpha v1 信号继续有效，路径更接近历史上较好的反抽样本。"
         },
         {
           "name": "Bearish case",
           "name_cn": "失败反弹情景",
-          "probability_weight": 0.37097413696176773,
+          "probability_weight": 0.213,
           "return_20d": -0.02281417461895483,
           "summary_cn": "如果波动和信用代理恶化，路径更接近历史上较差的一组样本。"
         },
         {
           "name": "Historical analog case",
           "name_cn": "历史相似情景",
-          "probability_weight": 0.5,
+          "probability_weight": 0.1824,
           "return_20d": 0.02000877398698462,
           "summary_cn": "只看最相似历史样本后的实际表现，不做确定性预测。"
         }
       ],
+      "scenario_weights": {
+        "base_scenario": 0.2098,
+        "bearish_scenario": 0.213,
+        "bounce_scenario": 0.3948,
+        "historical_analog_average": 0.1824
+      },
       "symbol": "SPY",
       "trend_reversal_probability": 0.529342532788427
     }
