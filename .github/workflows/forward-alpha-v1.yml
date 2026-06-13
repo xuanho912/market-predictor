@@ -20,6 +20,7 @@ jobs:
       MODEL_REGISTRY_PATH: data/models
       MARKET_DATA_CACHE_DIR: data/market_data_cache
       ALLOW_TRADING: "false"
+      PYTHONPATH: backend
 
     steps:
       - name: Check out repository
@@ -40,7 +41,7 @@ jobs:
           pip install -r backend/requirements.txt
 
       - name: Run frozen Alpha v1 forward-only tracker
-        run: python -m backend.app.services.validation.forward_alpha_tracker
+        run: python -m app.services.validation.forward_alpha_tracker
 
       - name: Export static frontend fallback data
         run: python scripts/export_static_alpha_v1.py
