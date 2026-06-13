@@ -34,13 +34,15 @@ jobs:
       PUBLIC_DASHBOARD_BRANCH: ${{ vars.PUBLIC_DASHBOARD_BRANCH || 'main' }}
       PUBLIC_DASHBOARD_BASE_PATH: ${{ vars.PUBLIC_DASHBOARD_BASE_PATH || '/market-predictor' }}
       ALLOW_TRADING: "false"
+      PIP_DISABLE_PIP_VERSION_CHECK: "1"
+      PIP_NO_PYTHON_VERSION_WARNING: "1"
       PYTHONPATH: backend
 
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 1
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -51,16 +53,7 @@ jobs:
 
       - name: Install backend dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install -r backend/requirements.txt
-
-      - name: Restore Finnhub response cache
-        uses: actions/cache@v4
-        with:
-          path: data/finnhub_cache
-          key: finnhub-cache-${{ github.ref_name }}
-          restore-keys: |
-            finnhub-cache-
+          python -m pip install --disable-pip-version-check --progress-bar off -r backend/requirements.txt
 
       - name: Run frozen Alpha v1 forward-only tracker
         run: python -m app.services.validation.forward_alpha_tracker
@@ -85,9 +78,19 @@ jobs:
         with:
           node-version: "22"
 
+      - name: Restore frontend dependency and build cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.npm
+            frontend/.next/cache
+          key: frontend-cache-${{ runner.os }}-${{ hashFiles('frontend/package.json', 'frontend/tailwind.config.ts', 'frontend/postcss.config.js', 'frontend/app/**/*', 'frontend/components/**/*', 'frontend/lib/**/*') }}
+          restore-keys: |
+            frontend-cache-${{ runner.os }}-
+
       - name: Install frontend dependencies
         working-directory: frontend
-        run: npm install
+        run: npm install --prefer-offline --no-audit --no-fund --loglevel=error
 
       - name: Build GitHub Pages static site
         working-directory: frontend
