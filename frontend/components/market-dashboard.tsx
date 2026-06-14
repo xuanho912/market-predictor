@@ -152,6 +152,16 @@ function num(value: unknown) {
   return typeof value === "number" && Number.isFinite(value) ? value : null;
 }
 
+function safeRecord(value: unknown): Record<string, unknown> {
+  return value && typeof value === "object" && !Array.isArray(value) ? value as Record<string, unknown> : {};
+}
+
+function bestReplayHorizon(spread: Record<string, unknown>) {
+  return Object.entries(spread)
+    .map(([horizon, value]) => ({ horizon, value: typeof value === "number" ? value : Number.NEGATIVE_INFINITY }))
+    .sort((left, right) => right.value - left.value)[0]?.horizon ?? "";
+}
+
 function breadthImpactText(status: BreadthStatus | undefined, data: SimulatedSymbolPaths | undefined) {
   if (!status || !data) return "暂无 breadth 数据。";
   const item = status.universes?.[data.symbol];
@@ -927,6 +937,53 @@ function FlowPositioningPanel({
   );
 }
 
+function HistoricalReplayBenchmarkPanel({ benchmark }: { benchmark?: Record<string, unknown> }) {
+  if (!benchmark) return null;
+  const core = safeRecord(benchmark.core_questions);
+  const forwardGap = safeRecord(benchmark.forward_validation_gap);
+  const signal = safeRecord(benchmark.signal_confirmation_effectiveness);
+  const breadth = safeRecord(benchmark.breadth_effectiveness);
+  const options = safeRecord(benchmark.options_effectiveness);
+  const flow = safeRecord(benchmark.flow_proxy_effectiveness);
+  const bestPredictorByHorizon = safeRecord(benchmark.best_predictor_by_horizon);
+  const primarySpread = safeRecord(benchmark.primary_vs_secondary_spread);
+  const bestHorizon = bestReplayHorizon(primarySpread);
+  const bestPredictor = safeRecord(bestPredictorByHorizon[bestHorizon]).predictor;
+  return (
+    <section className="mt-5 rounded-lg border border-line bg-white p-4">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <p className="text-xs uppercase text-muted">Historical Replay Benchmark</p>
+          <h2 className="mt-1 text-base font-semibold">历史回放基准</h2>
+          <p className="mt-1 text-sm text-muted">
+            这是研究评估，不是前向验证；如果和 forward validation 冲突，优先相信 forward validation。
+          </p>
+        </div>
+        <div className="rounded-md bg-panel px-4 py-2 text-right">
+          <p className="text-xs text-muted">Replay Grade</p>
+          <p className="text-2xl font-semibold">{String(benchmark.historical_replay_grade ?? "暂无")}</p>
+          <p className="text-xs text-muted">样本 {String(benchmark.total_samples ?? benchmark.sample_size ?? 0)}</p>
+        </div>
+      </div>
+      <div className="mt-3 grid gap-2 text-xs sm:grid-cols-4">
+        <Metric label="主路径是否胜过次路径" value={String(core.primary_scenario_beats_secondary ?? "暂无")} />
+        <Metric label="最有效周期" value={bestHorizon || "暂无"} />
+        <Metric label="最有效 predictor" value={String(bestPredictor ?? "暂无")} />
+        <Metric label="Forward gap" value={String(forwardGap.gap ?? "暂无")} />
+      </div>
+      <div className="mt-3 grid gap-2 text-xs sm:grid-cols-4">
+        <Metric label="Signal confirmation" value={String(signal.effectiveness_question ?? "暂无")} />
+        <Metric label="Breadth" value={String(breadth.verdict ?? "暂无")} />
+        <Metric label="Options" value={String(options.verdict ?? "暂无")} />
+        <Metric label="Flow proxy" value={String(flow.verdict ?? "暂无")} />
+      </div>
+      <p className="mt-3 rounded-md bg-panel p-3 text-sm text-muted">
+        当前结论：{String(core.forward_validation_required ?? "仍需要每日 forward validation")}。历史回放只能帮助决定下一步补 put/call、gamma proxy、真实 flow，不能确认 alpha。
+      </p>
+    </section>
+  );
+}
+
 function ConfidencePanel({ data }: { data: SimulatedSymbolPaths }) {
   const confidence = data.model_confidence;
   if (!confidence) return null;
@@ -1371,6 +1428,7 @@ export function MarketDashboard({ dashboard: initialDashboard }: { dashboard: Pr
       <OptionsPanel status={dashboard.options_status} selected={selected} />
       <FlowPositioningPanel status={dashboard.flow_positioning_status ?? dashboard.flow_status} selected={selected} />
       <ForecastAccuracyPanel scorecard={dashboard.forecast_accuracy_scorecard} />
+      <HistoricalReplayBenchmarkPanel benchmark={dashboard.historical_replay_benchmark} />
     </main>
   );
 }

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import csv
 import json
 import math
 from datetime import datetime, timezone
@@ -17,6 +18,12 @@ SCENARIO_LABELS = {
     "bearish_path": "failed_bounce_path",
     "analog_average_path": "analog_average_path",
 }
+PREDICTOR_NAMES = (
+    "bounce_predictor",
+    "downside_continuation_predictor",
+    "trend_reversal_predictor",
+    "risk_expansion_predictor",
+)
 
 
 def build_historical_replay_benchmark(dashboard: dict[str, Any]) -> dict[str, Any]:
@@ -24,6 +31,9 @@ def build_historical_replay_benchmark(dashboard: dict[str, Any]) -> dict[str, An
     primary_secondary = {f"{horizon}d": _primary_secondary_metrics(rows, horizon) for horizon in HORIZONS}
     scenario_type = {SCENARIO_LABELS[scenario]: _scenario_metrics(rows, scenario) for scenario in SCENARIO_PATHS}
     edge_status = _bucket_metrics(rows, "edge_status")
+    predictor_performance = _predictor_performance(rows)
+    best_predictor_by_horizon = _best_predictor_by_horizon(predictor_performance)
+    best_worst_scenario = _best_worst_scenario_type(scenario_type)
     signal_confirmation = {
         "top_10": _bucket_summary(_top_fraction(rows, "signal_confirmation_score", 0.10)),
         "top_20": _bucket_summary(_top_fraction(rows, "signal_confirmation_score", 0.20)),
@@ -31,6 +41,28 @@ def build_historical_replay_benchmark(dashboard: dict[str, Any]) -> dict[str, An
         "effectiveness_question": _compare_high_low(rows, "signal_confirmation_score"),
     }
     data_effectiveness = _data_effectiveness(rows)
+    breadth_effectiveness = _evidence_effectiveness(
+        data_effectiveness["breadth_confirmed"],
+        data_effectiveness["breadth_conflicted"],
+        confirmed_label="breadth_confirmed",
+        conflicted_label="breadth_conflicted",
+    )
+    options_effectiveness = _evidence_effectiveness(
+        data_effectiveness["options_confirmed"],
+        data_effectiveness["options_conflicted"],
+        confirmed_label="options_confirmed",
+        conflicted_label="options_conflicted",
+    )
+    flow_effectiveness = _evidence_effectiveness(
+        data_effectiveness["flow_confirmed"],
+        data_effectiveness["flow_conflicted"],
+        confirmed_label="flow_confirmed",
+        conflicted_label="flow_conflicted",
+    )
+    horizon_performance = _horizon_performance(primary_secondary, scenario_type, best_predictor_by_horizon)
+    forward_gap = _forward_validation_gap()
+    overfit_warning = _overfit_warning(primary_secondary, signal_confirmation, forward_gap)
+    grade = _historical_replay_grade(primary_secondary, signal_confirmation, forward_gap)
     report = {
         "version": "historical_replay_benchmark_v1",
         "validation_type": "historical_replay",
@@ -38,13 +70,29 @@ def build_historical_replay_benchmark(dashboard: dict[str, Any]) -> dict[str, An
         "source": "prediction-dashboard historical analog replay rows",
         "as_of": dashboard.get("as_of"),
         "sample_size": len(rows),
+        "total_samples": len(rows),
+        "samples_by_horizon": {horizon: primary_secondary[horizon]["sample_size"] for horizon in primary_secondary},
+        "primary_hit_rate_by_horizon": {horizon: primary_secondary[horizon]["primary_hit_rate"] for horizon in primary_secondary},
+        "primary_vs_secondary_spread": {horizon: primary_secondary[horizon]["primary_vs_secondary_accuracy_spread"] for horizon in primary_secondary},
         "symbols": list(SYMBOLS),
         "horizons": [f"{horizon}d" for horizon in HORIZONS],
         "status": "research_evaluation_only_not_forward_validation",
+        "historical_replay_grade": grade,
+        "best_scenario_type": best_worst_scenario["best"],
+        "worst_scenario_type": best_worst_scenario["worst"],
+        "best_predictor_by_horizon": best_predictor_by_horizon,
+        "edge_status_ranking": _edge_status_ranking(edge_status),
+        "overfit_warning": overfit_warning,
+        "forward_validation_gap": forward_gap,
+        "horizon_performance": horizon_performance,
         "primary_vs_secondary": primary_secondary,
         "scenario_type_performance": scenario_type,
+        "predictor_performance": predictor_performance,
         "edge_status_performance": edge_status,
         "signal_confirmation_effectiveness": signal_confirmation,
+        "breadth_effectiveness": breadth_effectiveness,
+        "options_effectiveness": options_effectiveness,
+        "flow_proxy_effectiveness": flow_effectiveness,
         "data_completeness_effectiveness": data_effectiveness,
         "by_symbol": _bucket_metrics(rows, "symbol"),
         "by_regime": _bucket_metrics(rows, "regime"),
@@ -68,6 +116,8 @@ def render_historical_replay_benchmark_markdown(report: dict[str, Any]) -> str:
         f"Validation type: `{report.get('validation_type')}`",
         f"Status: `{report.get('status')}`",
         f"Sample size: `{report.get('sample_size')}`",
+        f"Historical replay grade: `{report.get('historical_replay_grade')}`",
+        f"Overfit warning: `{report.get('overfit_warning')}`",
         "",
         "> Historical replay is only a research benchmark. It is not forward validation and does not confirm alpha.",
         "",
@@ -103,6 +153,18 @@ def render_historical_replay_benchmark_markdown(report: dict[str, Any]) -> str:
         lines.append(f"### {bucket}")
         lines.extend(_summary_lines(payload))
         lines.append("")
+    lines.extend(["## Predictor Performance", ""])
+    for predictor, payload in (report.get("predictor_performance") or {}).items():
+        lines.append(f"### {predictor}")
+        lines.extend(_summary_lines(payload))
+        lines.append("")
+    lines.extend(["## Best Predictor By Horizon", ""])
+    for horizon, payload in (report.get("best_predictor_by_horizon") or {}).items():
+        lines.append(f"- {horizon}: `{payload}`")
+    lines.extend(["", "## Horizon Performance", ""])
+    for horizon, payload in (report.get("horizon_performance") or {}).items():
+        lines.append(f"- {horizon}: `{payload}`")
+    lines.append("")
     lines.extend(["## Signal Confirmation Effectiveness", ""])
     signal = report.get("signal_confirmation_effectiveness") or {}
     for bucket in ("top_10", "top_20", "bottom_20"):
@@ -324,6 +386,131 @@ def _bucket_summary(rows: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
+def _predictor_performance(rows: list[dict[str, Any]]) -> dict[str, Any]:
+    return {
+        predictor: _bucket_summary([row for row in rows if row.get("strongest_predictor") == predictor])
+        for predictor in PREDICTOR_NAMES
+    }
+
+
+def _best_predictor_by_horizon(predictor_performance: dict[str, Any]) -> dict[str, Any]:
+    result: dict[str, Any] = {}
+    for horizon in HORIZONS:
+        key = f"{horizon}d"
+        candidates: list[dict[str, Any]] = []
+        for predictor, payload in predictor_performance.items():
+            row = ((payload.get("by_horizon") or {}).get(key) or {})
+            sample_size = int(row.get("sample_size") or 0)
+            if sample_size <= 0:
+                continue
+            mae = _float(row.get("primary_mean_absolute_error"))
+            hit = _float(row.get("primary_hit_rate")) or 0.0
+            closer = _float(row.get("primary_closer_than_secondary_rate")) or 0.0
+            candidates.append(
+                {
+                    "predictor": predictor,
+                    "sample_size": sample_size,
+                    "primary_hit_rate": hit,
+                    "primary_closer_than_secondary_rate": closer,
+                    "primary_mean_absolute_error": mae,
+                }
+            )
+        if not candidates:
+            result[key] = {
+                "predictor": None,
+                "reason": "no historical replay samples for predictor buckets",
+            }
+            continue
+        candidates.sort(
+            key=lambda item: (
+                item["primary_mean_absolute_error"] if item["primary_mean_absolute_error"] is not None else 999.0,
+                -item["primary_hit_rate"],
+                -item["primary_closer_than_secondary_rate"],
+            )
+        )
+        best = candidates[0]
+        result[key] = {
+            **best,
+            "selection_method": "lowest primary path error, tie-broken by hit rate and primary-vs-secondary closeness",
+        }
+    return result
+
+
+def _best_worst_scenario_type(scenario_type: dict[str, Any]) -> dict[str, Any]:
+    by_horizon: dict[str, dict[str, Any]] = {}
+    aggregate: list[dict[str, Any]] = []
+    for horizon in HORIZONS:
+        key = f"{horizon}d"
+        candidates: list[dict[str, Any]] = []
+        for scenario, payload in scenario_type.items():
+            row = ((payload.get("by_horizon") or {}).get(key) or {})
+            sample_size = int(row.get("sample_size") or 0)
+            mae = _float(row.get("path_mean_absolute_error"))
+            hit = _float(row.get("direction_hit_rate"))
+            if sample_size and mae is not None:
+                candidates.append(
+                    {
+                        "scenario": scenario,
+                        "sample_size": sample_size,
+                        "path_mean_absolute_error": mae,
+                        "direction_hit_rate": hit,
+                    }
+                )
+                aggregate.append({**candidates[-1], "horizon": key})
+        candidates.sort(key=lambda item: (item["path_mean_absolute_error"], -(item["direction_hit_rate"] or 0.0)))
+        by_horizon[key] = {
+            "best": candidates[0] if candidates else None,
+            "worst": candidates[-1] if candidates else None,
+        }
+    if not aggregate:
+        return {"best": None, "worst": None, "by_horizon": by_horizon}
+    grouped: dict[str, list[dict[str, Any]]] = {}
+    for item in aggregate:
+        grouped.setdefault(item["scenario"], []).append(item)
+    summary = []
+    for scenario, items in grouped.items():
+        summary.append(
+            {
+                "scenario": scenario,
+                "avg_path_mean_absolute_error": _mean([item["path_mean_absolute_error"] for item in items]),
+                "avg_direction_hit_rate": _mean([item["direction_hit_rate"] for item in items if item["direction_hit_rate"] is not None]),
+                "horizon_count": len(items),
+            }
+        )
+    summary.sort(key=lambda item: (item["avg_path_mean_absolute_error"] if item["avg_path_mean_absolute_error"] is not None else 999.0, -(item["avg_direction_hit_rate"] or 0.0)))
+    return {
+        "best": summary[0],
+        "worst": summary[-1],
+        "by_horizon": by_horizon,
+        "ranking": summary,
+    }
+
+
+def _edge_status_ranking(edge_status: dict[str, Any]) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    for status, payload in edge_status.items():
+        h20 = ((payload.get("by_horizon") or {}).get("20d") or {})
+        sample_size = int(h20.get("sample_size") or 0)
+        if not sample_size:
+            continue
+        rows.append(
+            {
+                "edge_status": status,
+                "sample_size_20d": sample_size,
+                "primary_hit_rate_20d": h20.get("primary_hit_rate"),
+                "primary_closer_than_secondary_rate_20d": h20.get("primary_closer_than_secondary_rate"),
+                "primary_mean_absolute_error_20d": h20.get("primary_mean_absolute_error"),
+            }
+        )
+    rows.sort(
+        key=lambda item: (
+            item["primary_mean_absolute_error_20d"] if item["primary_mean_absolute_error_20d"] is not None else 999.0,
+            -(item["primary_hit_rate_20d"] or 0.0),
+        )
+    )
+    return rows
+
+
 def _data_effectiveness(rows: list[dict[str, Any]]) -> dict[str, Any]:
     high_completeness = [row for row in rows if (_float(row.get("data_completeness")) or 0.0) >= 85.0]
     low_completeness = [row for row in rows if (_float(row.get("data_completeness")) or 0.0) < 85.0]
@@ -348,6 +535,82 @@ def _data_effectiveness(rows: list[dict[str, Any]]) -> dict[str, Any]:
         "flow_conflicted": _bucket_summary(flow_conflicted),
         "data_enhancement_question": _data_enhancement_question(high_completeness, low_completeness, breadth_confirmed, breadth_conflicted, options_confirmed, options_conflicted, flow_confirmed, flow_conflicted),
     }
+
+
+def _evidence_effectiveness(
+    confirmed: dict[str, Any],
+    conflicted: dict[str, Any],
+    *,
+    confirmed_label: str,
+    conflicted_label: str,
+) -> dict[str, Any]:
+    comparison: dict[str, Any] = {}
+    supportive_horizons = 0
+    comparable_horizons = 0
+    for horizon in HORIZONS:
+        key = f"{horizon}d"
+        confirmed_row = ((confirmed.get("by_horizon") or {}).get(key) or {})
+        conflicted_row = ((conflicted.get("by_horizon") or {}).get(key) or {})
+        c_sample = int(confirmed_row.get("sample_size") or 0)
+        x_sample = int(conflicted_row.get("sample_size") or 0)
+        c_mae = _float(confirmed_row.get("primary_mean_absolute_error"))
+        x_mae = _float(conflicted_row.get("primary_mean_absolute_error"))
+        c_hit = _float(confirmed_row.get("primary_hit_rate"))
+        x_hit = _float(conflicted_row.get("primary_hit_rate"))
+        is_supportive = False
+        if c_sample and x_sample and c_mae is not None and x_mae is not None:
+            comparable_horizons += 1
+            is_supportive = c_mae < x_mae and (c_hit or 0.0) >= (x_hit or 0.0)
+            supportive_horizons += int(is_supportive)
+        comparison[key] = {
+            "confirmed_sample_size": c_sample,
+            "conflicted_sample_size": x_sample,
+            "confirmed_primary_hit_rate": c_hit,
+            "conflicted_primary_hit_rate": x_hit,
+            "confirmed_primary_mae": c_mae,
+            "conflicted_primary_mae": x_mae,
+            "supportive": is_supportive,
+        }
+    if comparable_horizons == 0:
+        verdict = "insufficient_contrast_in_historical_replay"
+    elif supportive_horizons >= max(1, math.ceil(comparable_horizons * 0.6)):
+        verdict = "historical_replay_supportive_but_forward_validation_required"
+    else:
+        verdict = "historical_replay_mixed_or_not_better_keep_confidence_capped"
+    return {
+        "confirmed_label": confirmed_label,
+        "conflicted_label": conflicted_label,
+        "confirmed": confirmed,
+        "conflicted": conflicted,
+        "comparison_by_horizon": comparison,
+        "supportive_horizon_count": supportive_horizons,
+        "comparable_horizon_count": comparable_horizons,
+        "verdict": verdict,
+    }
+
+
+def _horizon_performance(
+    primary_secondary: dict[str, Any],
+    scenario_type: dict[str, Any],
+    best_predictor_by_horizon: dict[str, Any],
+) -> dict[str, Any]:
+    best_worst = _best_worst_scenario_type(scenario_type)
+    result: dict[str, Any] = {}
+    for horizon in HORIZONS:
+        key = f"{horizon}d"
+        primary = primary_secondary.get(key) or {}
+        result[key] = {
+            "sample_size": primary.get("sample_size"),
+            "sample_gate": primary.get("sample_gate"),
+            "primary_hit_rate": primary.get("primary_hit_rate"),
+            "secondary_hit_rate": primary.get("secondary_hit_rate"),
+            "primary_vs_secondary_accuracy_spread": primary.get("primary_vs_secondary_accuracy_spread"),
+            "primary_closer_than_secondary_rate": primary.get("primary_closer_than_secondary_rate"),
+            "best_scenario_type": ((best_worst.get("by_horizon") or {}).get(key) or {}).get("best"),
+            "worst_scenario_type": ((best_worst.get("by_horizon") or {}).get(key) or {}).get("worst"),
+            "best_predictor": best_predictor_by_horizon.get(key),
+        }
+    return result
 
 
 def _core_questions(
@@ -404,6 +667,88 @@ def _compare_bucket_20d(left_buckets: list[dict[str, Any]], right_buckets: list[
     if left_error is not None and right_error is not None and left_error < right_error:
         return "historical_replay_supportive_but_forward_validation_required"
     return "historical_replay_not_better_or_mixed"
+
+
+def _forward_validation_gap() -> dict[str, Any]:
+    records_path = PROJECT_ROOT / "outputs" / "forecast_records.csv"
+    completed = {f"{horizon}d": 0 for horizon in HORIZONS}
+    total = pending = 0
+    if records_path.exists():
+        with records_path.open("r", encoding="utf-8", newline="") as handle:
+            for row in csv.DictReader(handle):
+                total += 1
+                if row.get("status") != "completed":
+                    pending += 1
+                for horizon in HORIZONS:
+                    if _float(row.get(f"actual_return_{horizon}d")) is not None:
+                        completed[f"{horizon}d"] += 1
+    max_completed = max(completed.values(), default=0)
+    if max_completed < 20:
+        gap = "large_forward_validation_gap"
+    elif max_completed <= 50:
+        gap = "early_forward_validation_gap"
+    elif max_completed <= 100:
+        gap = "moderate_forward_validation_gap"
+    else:
+        gap = "smaller_forward_validation_gap"
+    return {
+        "forecast_records_total": total,
+        "forecast_records_pending": pending,
+        "completed_by_horizon": completed,
+        "max_completed_count": max_completed,
+        "sample_gate": _sample_gate(max_completed),
+        "gap": gap,
+        "note": "Historical replay cannot upgrade alpha or confidence until forward validation samples mature.",
+    }
+
+
+def _overfit_warning(
+    primary_secondary: dict[str, Any],
+    signal_confirmation: dict[str, Any],
+    forward_gap: dict[str, Any],
+) -> dict[str, Any]:
+    weak_path_horizons = 0
+    for payload in primary_secondary.values():
+        if (_float(payload.get("primary_closer_than_secondary_rate")) or 0.0) <= 0.50:
+            weak_path_horizons += 1
+    reasons: list[str] = []
+    if weak_path_horizons >= 3:
+        reasons.append("primary path is not closer than secondary path on most horizons")
+    if signal_confirmation.get("effectiveness_question") != "historical_replay_supportive_but_not_forward_validated":
+        reasons.append("high signal confirmation is mixed or not better in historical replay")
+    if forward_gap.get("max_completed_count", 0) < 20:
+        reasons.append("forward validation completed samples are below the minimum gate")
+    level = "high" if len(reasons) >= 3 else "medium" if reasons else "low"
+    return {
+        "level": level,
+        "reasons": reasons,
+        "rule": "If historical replay is mixed and forward samples are insufficient, keep confidence capped and avoid adding new data blindly.",
+    }
+
+
+def _historical_replay_grade(
+    primary_secondary: dict[str, Any],
+    signal_confirmation: dict[str, Any],
+    forward_gap: dict[str, Any],
+) -> str:
+    positive_hit_spread = 0
+    path_advantage = 0
+    for payload in primary_secondary.values():
+        if (_float(payload.get("primary_vs_secondary_accuracy_spread")) or 0.0) > 0:
+            positive_hit_spread += 1
+        if (_float(payload.get("primary_closer_than_secondary_rate")) or 0.0) > 0.50 and _is_positive(payload.get("primary_error_advantage")):
+            path_advantage += 1
+    signal_supportive = signal_confirmation.get("effectiveness_question") == "historical_replay_supportive_but_not_forward_validated"
+    forward_ready = int(forward_gap.get("max_completed_count") or 0) >= 20
+    if path_advantage >= 4 and signal_supportive:
+        return "STRONG_HISTORICAL_ONLY"
+    if path_advantage >= 2 and positive_hit_spread >= 3:
+        return "PROMISING"
+    if positive_hit_spread >= 2:
+        return "WEAK"
+    if forward_ready and path_advantage == 0:
+        return "FAIL"
+    return "WEAK"
 
 
 def _scenario_expected_returns(symbol_state: dict[str, Any]) -> dict[str, dict[str, float | None]]:
