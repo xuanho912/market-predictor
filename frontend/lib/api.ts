@@ -611,6 +611,7 @@ export type SimulatedSymbolPaths = {
   path_confidence?: "low" | "medium" | "high";
   path_source_notes?: string[];
   data_quality?: Record<string, unknown>;
+  forecast_price_levels?: ForecastPriceLevelsBySymbol;
   paths: {
     dates: string[];
     split_index: number;
