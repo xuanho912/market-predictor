@@ -41,6 +41,7 @@ from scripts.historical_replay_benchmark import (
     render_historical_replay_benchmark_markdown,
     build_historical_replay_benchmark,
 )
+from scripts.model_challenger_framework import write_model_challenger_outputs
 from scripts.providers.finnhub_provider import fetch_finnhub_bundle
 from scripts.providers.fred_provider import DEFAULT_FRED_SERIES, fetch_fred_bundle
 from scripts.providers.breadth_provider import fetch_breadth_bundle, render_breadth_status_markdown
@@ -210,10 +211,13 @@ def main() -> int:
     forecast_records = export_forecast_records_json()
     forecast_scorecard = build_forecast_accuracy_scorecard()
     historical_replay_benchmark = build_historical_replay_benchmark(dashboard)
+    model_governance = write_model_challenger_outputs(dashboard=dashboard, public_dir=public_dir, outputs_dir=PROJECT_ROOT / "outputs")
     dashboard["forecast_ledger_summary"] = ledger_summary
     dashboard["forecast_records"] = forecast_records
     dashboard["forecast_accuracy_scorecard"] = forecast_scorecard
     dashboard["historical_replay_benchmark"] = historical_replay_benchmark
+    dashboard["model_leaderboard"] = model_governance["leaderboard"]
+    dashboard["model_promotion_status"] = model_governance["promotion_status"]
 
     _write_json(public_dir / "alpha-v1-status.json", {
         "generated_by": "scripts/export_static_alpha_v1.py",
@@ -237,6 +241,8 @@ def main() -> int:
     _write_json(public_dir / "forecast-records.json", forecast_records)
     _write_json(public_dir / "forecast-accuracy-scorecard.json", forecast_scorecard)
     _write_json(public_dir / "historical-replay-benchmark.json", historical_replay_benchmark)
+    _write_json(public_dir / "model-leaderboard.json", model_governance["leaderboard"])
+    _write_json(public_dir / "model-promotion-status.json", model_governance["promotion_status"])
     _write_json(public_dir / "market-overview.json", market_overview)
     _write_json(public_dir / "simulated-paths.json", simulated_paths)
     _write_json(public_dir / "prediction-dashboard.json", dashboard)
@@ -264,6 +270,8 @@ def main() -> int:
     print("wrote frontend/public/forecast-records.json")
     print("wrote frontend/public/forecast-accuracy-scorecard.json")
     print("wrote frontend/public/historical-replay-benchmark.json")
+    print("wrote frontend/public/model-leaderboard.json")
+    print("wrote frontend/public/model-promotion-status.json")
     print("wrote frontend/public/market-overview.json")
     print("wrote frontend/public/simulated-paths.json")
     print("wrote frontend/public/prediction-dashboard.json")
@@ -277,6 +285,8 @@ def main() -> int:
     print("wrote outputs/breadth_impact_report.md")
     print("wrote outputs/forecast_accuracy_scorecard.md")
     print("wrote outputs/historical_replay_benchmark.md")
+    print("wrote outputs/model_leaderboard.md")
+    print("wrote outputs/model_promotion_rules.md")
     return 0
 
 

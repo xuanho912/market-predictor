@@ -449,6 +449,22 @@ Hard rules:
 - Track `flow_confirmed` and `flow_conflicted` forecast buckets in forward validation.
 - Do not treat proxy flow as a standalone alpha or execution signal.
 
+## 24. Use Baseline / Challenger Model Governance
+
+The active frozen production model is `baseline_v1`. This name refers to the current combination of scenario ranking, signal confirmation, historical analogs, FRED rates/credit, breadth/internal resonance, VIX term / VVIX / SKEW, flow proxy, Forecast Accuracy Ledger, and Historical Replay Benchmark.
+
+Hard rules:
+
+- Do not rewrite pre-freeze forecast rows to rename them. Historical rows must keep their original `model_version`.
+- New production forecasts must use `model_version = baseline_v1` until a challenger is promoted.
+- Any new data source, predictor, scenario weighting rule, or confidence rule must first run as a challenger / shadow model.
+- A challenger can be registered as blocked if required point-in-time data is unavailable. Do not generate fake challenger forecasts from missing put/call, gamma, true flow, or macro-event data.
+- Historical replay can produce research priority, but it cannot promote a model to active.
+- Promotion requires forward validation gates by horizon: 3d >= 20, 5d >= 20, 10d >= 30, 20d >= 50, and 60d >= 50 completed samples, preferably 100+ for 60d.
+- A challenger must beat `baseline_v1` on a majority of relevant metrics: primary hit rate, primary-vs-secondary spread, mean/median path error, high-confidence accuracy, signal-confirmation top bucket, edge-status performance, calibration quality, and adverse-path control.
+- If a challenger improves one horizon but degrades others, keep it as a shadow model.
+- Valid promotion statuses are `blocked_missing_required_data`, `insufficient_forward_evidence`, `historical_only_not_validated`, `promotion_candidate`, and `active_model`.
+
 ## Non-Negotiable Summary
 
 Always enforce: label-first design, walk-forward validation, regime-aware modeling, credit + liquidity + options + breadth inputs, no future leakage, no random train-test split, probability output with calibration, feature ablation, horizon-specific models, persistent prediction logs for backtesting, and Wardley Mapping build-vs-buy discipline.

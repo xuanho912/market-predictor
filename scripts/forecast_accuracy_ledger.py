@@ -12,6 +12,7 @@ from typing import Any
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 SYMBOLS = ("SPY", "QQQ", "IWM", "DIA")
 HORIZONS = (3, 5, 10, 20, 60)
+BASELINE_MODEL_VERSION = "baseline_v1"
 
 FORECAST_FIELDS = [
     "forecast_id",
@@ -99,6 +100,7 @@ def update_forecast_accuracy_ledger(
     return {
         "version": "forecast_accuracy_ledger_v1",
         "generated_at": datetime.now(timezone.utc).isoformat(),
+        "active_model_version": BASELINE_MODEL_VERSION,
         "records_path": str(records_path),
         "total_records": len(merged_rows),
         "new_records_considered": len(new_rows),
@@ -123,6 +125,8 @@ def export_forecast_records_json(records_path: Path | None = None, *, limit: int
             "total_records": len(rows),
             "exported_records": len(parsed),
             "pending_records": sum(1 for row in rows if row.get("status") != "completed"),
+            "model_versions": sorted({str(row.get("model_version") or "unknown") for row in rows}),
+            "active_model_version": BASELINE_MODEL_VERSION,
             "completed_by_horizon": {
                 f"{horizon}d": sum(1 for row in rows if _float(row.get(f"actual_return_{horizon}d")) is not None)
                 for horizon in HORIZONS
@@ -244,7 +248,7 @@ def _build_forecast_record(dashboard: dict[str, Any], symbol: str) -> dict[str, 
     data_quality = dashboard.get("data_quality_report") or {}
     summary = data_quality.get("summary") or {}
     forecast_date = str(simulated_symbol.get("as_of") or overview_symbol.get("as_of") or dashboard.get("as_of") or "")[:10]
-    model_version = "market_intelligence_engine_v5"
+    model_version = BASELINE_MODEL_VERSION
     data_version = f"{summary.get('latest_date') or forecast_date}|completeness={summary.get('data_completeness_score')}"
     forecast_id = _forecast_id(forecast_date, model_version, symbol)
     expected_by_horizon = _expected_return_by_horizon(simulated_symbol)

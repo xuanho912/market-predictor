@@ -1,0 +1,88 @@
+{
+  "active_model_version": "baseline_v1",
+  "generated_at": "2026-06-14T15:01:26.319283+00:00",
+  "guardrails": [
+    "Alpha v1 threshold remains frozen at 0.32534311.",
+    "Baseline v1 records are immutable except realized-outcome backfills.",
+    "Challengers must run as shadow forecasts before replacing baseline.",
+    "Historical replay cannot promote a model without forward validation.",
+    "This system validates market probability paths, not execution guidance or portfolio accounting.",
+    "If a challenger only wins one horizon while degrading others, it cannot be promoted.",
+    "Historical replay can create research priority, not active-model promotion.",
+    "Only forward validation can promote a challenger to active_model."
+  ],
+  "minimum_sample_gates": {
+    "10d": 30,
+    "20d": 50,
+    "3d": 20,
+    "5d": 20,
+    "60d": 50
+  },
+  "models": [
+    {
+      "eligible": false,
+      "failed_gates": [
+        "put_call_available"
+      ],
+      "model_version": "challenger_v2_put_call",
+      "reason": "Missing put_call_available; cannot generate this shadow forecast without stable real put/call ratio data.",
+      "status": "blocked_missing_required_data",
+      "wins_vs_baseline": 0
+    },
+    {
+      "eligible": false,
+      "failed_gates": [
+        "gamma_available"
+      ],
+      "model_version": "challenger_v2_gamma_proxy",
+      "reason": "Missing gamma_available; cannot generate this shadow forecast without reliable gamma exposure source or defensible proxy.",
+      "status": "blocked_missing_required_data",
+      "wins_vs_baseline": 0
+    },
+    {
+      "eligible": false,
+      "failed_gates": [
+        "true_flow_available"
+      ],
+      "model_version": "challenger_v2_real_flow",
+      "reason": "Missing true_flow_available; cannot generate this shadow forecast without true flow / positioning feed.",
+      "status": "blocked_missing_required_data",
+      "wins_vs_baseline": 0
+    },
+    {
+      "eligible": false,
+      "failed_gates": [
+        "macro_event_quality_available"
+      ],
+      "model_version": "challenger_v2_macro_event_risk",
+      "reason": "Missing macro_event_quality_available; cannot generate this shadow forecast without validated macro event quality data.",
+      "status": "blocked_missing_required_data",
+      "wins_vs_baseline": 0
+    },
+    {
+      "eligible": false,
+      "failed_gates": [
+        "put_call_available",
+        "gamma_available",
+        "true_flow_available",
+        "macro_event_quality_available"
+      ],
+      "model_version": "challenger_v3_full_options_flow",
+      "reason": "Missing put_call_available, gamma_available, true_flow_available, macro_event_quality_available; cannot generate this shadow forecast without all component challengers passing their own shadow validation gates.",
+      "status": "blocked_missing_required_data",
+      "wins_vs_baseline": 0
+    }
+  ],
+  "required_majority_win_metrics": [
+    "primary scenario hit rate",
+    "primary vs secondary accuracy spread",
+    "mean absolute path error",
+    "median absolute path error",
+    "high confidence accuracy",
+    "signal confirmation top 10% performance",
+    "edge status performance",
+    "calibration quality",
+    "max adverse path control"
+  ],
+  "version": "model_promotion_status_v1"
+}
