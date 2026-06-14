@@ -1,7 +1,16 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import type { BreadthStatus, DataQualityReport, HistoricalAnalogCase, OptionsStatus, PredictionDashboard, SimulatedSymbolPaths } from "../lib/api";
+import type {
+  BreadthStatus,
+  DataQualityReport,
+  FlowPositioningStatus,
+  ForecastAccuracyScorecard,
+  HistoricalAnalogCase,
+  OptionsStatus,
+  PredictionDashboard,
+  SimulatedSymbolPaths,
+} from "../lib/api";
 
 const SYMBOL_ORDER = ["SPY", "QQQ", "IWM", "DIA"];
 const HORIZON_ORDER = ["3d", "5d", "10d", "20d", "60d"];
@@ -805,6 +814,119 @@ function OptionsPanel({ status, selected }: { status?: OptionsStatus; selected?:
   );
 }
 
+function ForecastAccuracyPanel({ scorecard }: { scorecard?: ForecastAccuracyScorecard }) {
+  if (!scorecard) return null;
+  const counts = scorecard.sample_counts ?? {};
+  const completedCounts = HORIZON_ORDER.map((horizon) => Number(counts[`completed_${horizon}`] ?? 0));
+  const maxCompleted = Math.max(0, ...completedCounts);
+  const evidenceLevel = maxCompleted < 20
+    ? "insufficient"
+    : maxCompleted < 50
+      ? "early"
+      : maxCompleted < 100
+        ? "moderate"
+        : "stronger";
+  const accuracy20 = (scorecard.primary_scenario_accuracy?.["20d"] ?? {}) as Record<string, number | string | null>;
+  const hitRate = typeof accuracy20.primary_scenario_hit_rate === "number" ? pct(accuracy20.primary_scenario_hit_rate) : "样本不足";
+  const primarySecondary = scorecard.core_questions?.primary_beats_secondary ?? "insufficient_samples";
+  const highConfidence = scorecard.core_questions?.high_confidence_better ?? "insufficient_samples";
+  return (
+    <section className="mt-5 rounded-lg border border-line bg-white p-4">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <p className="text-xs uppercase text-muted">Forecast Accuracy</p>
+          <h2 className="mt-1 text-base font-semibold">预测准确度账本</h2>
+          <p className="mt-1 text-sm text-muted">
+            每天追加预测记录，未来只回填真实收益和命中字段；这是预测验证，不是交易记录。
+          </p>
+        </div>
+        <div className="rounded-md bg-panel px-4 py-2 text-right">
+          <p className="text-xs text-muted">Evidence Level</p>
+          <p className="text-2xl font-semibold">{evidenceLevel}</p>
+          <p className="text-xs text-muted">最大完成样本 {maxCompleted}</p>
+        </div>
+      </div>
+      <div className="mt-3 grid gap-2 text-xs sm:grid-cols-5">
+        <Metric label="总预测数" value={String(counts.total_forecasts ?? 0)} />
+        <Metric label="待验证" value={String(counts.pending_forecasts ?? 0)} />
+        <Metric label="3d 完成" value={String(counts.completed_3d ?? 0)} />
+        <Metric label="20d 完成" value={String(counts.completed_20d ?? 0)} />
+        <Metric label="60d 完成" value={String(counts.completed_60d ?? 0)} />
+      </div>
+      <div className="mt-3 grid gap-2 text-xs sm:grid-cols-3">
+        <Metric label="20d 主路径命中率" value={hitRate} />
+        <Metric label="主路径 vs 次路径" value={primarySecondary} />
+        <Metric label="高置信是否更准" value={highConfidence} />
+      </div>
+      {maxCompleted < 20 ? (
+        <p className="mt-3 rounded-md bg-panel p-3 text-sm text-muted">
+          当前预测准确度仍在前向验证中，样本不足，不能把高置信预测视为稳定能力。
+        </p>
+      ) : null}
+    </section>
+  );
+}
+
+function FlowPositioningPanel({
+  status,
+  selected,
+}: {
+  status?: FlowPositioningStatus;
+  selected?: SimulatedSymbolPaths;
+}) {
+  if (!status) return null;
+  const summary = status.summary ?? {};
+  const item = selected ? status.symbols?.[selected.symbol] : undefined;
+  const scores = (item?.scores ?? {}) as NonNullable<FlowPositioningStatus["symbols"][string]["scores"]>;
+  const metrics = (item?.metrics ?? {}) as Record<string, unknown>;
+  const confirmation = scores.flow_confirmation_score ?? summary.overall_flow_confirmation_score;
+  const conflict = scores.flow_conflict_score ?? summary.overall_flow_conflict_score;
+  const primary = selected?.scenario_ranking?.primary?.scenario ?? "";
+  const supportsPrimary = confirmation >= conflict && confirmation >= 55;
+  const conflictsPrimary = conflict > confirmation && conflict >= 45;
+  const impact = supportsPrimary
+    ? `${selected?.symbol ?? "当前指数"} 的 Flow / Positioning proxy 支持主路径：risk-on 轮动和成交活跃度没有明显冲突。`
+    : conflictsPrimary
+      ? `${selected?.symbol ?? "当前指数"} 的 Flow / Positioning proxy 与主路径冲突：risk-off 轮动、成交压力或防御板块相对更强。`
+      : `${selected?.symbol ?? "当前指数"} 的 Flow / Positioning proxy 偏混合，只能作为辅助证据。`;
+  return (
+    <section className="mt-5 rounded-lg border border-line bg-white p-4">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <p className="text-xs uppercase text-muted">Flow / Positioning</p>
+          <h2 className="mt-1 text-base font-semibold">资金流与仓位代理</h2>
+          <p className="mt-1 text-sm text-muted">
+            当前阶段是 proxy，不是真实资金流；用于辅助确认主路径、冲突和失败反抽风险。
+          </p>
+        </div>
+        <div className="rounded-md bg-panel px-4 py-2 text-right">
+          <p className="text-xs text-muted">Flow Quality</p>
+          <p className="text-2xl font-semibold">{scorePct(scores.flow_quality_score ?? summary.average_flow_quality_score)}</p>
+          <p className="text-xs text-muted">{summary.true_flow_available ? "true flow" : "proxy only"}</p>
+        </div>
+      </div>
+      <div className="mt-3 grid gap-2 text-xs sm:grid-cols-5">
+        <Metric label="True flow" value={summary.true_flow_available ? "available" : "false"} />
+        <Metric label="Proxy only" value={(summary.proxy_only ?? summary.flow_proxy_only) ? "true" : "false"} />
+        <Metric label="Risk-on flow" value={scorePct(scores.risk_on_flow_score)} />
+        <Metric label="Risk-off flow" value={scorePct(scores.risk_off_flow_score)} />
+        <Metric label="主路径" value={primary || "暂无"} />
+      </div>
+      <div className="mt-3 grid gap-2 text-xs sm:grid-cols-5">
+        <Metric label="Flow confirmation" value={scorePct(confirmation)} />
+        <Metric label="Flow conflict" value={scorePct(conflict)} />
+        <Metric label="Volume z-score" value={String(metrics.volume_z_score ?? metrics.volume_zscore_20d ?? "暂无")} />
+        <Metric label="Relative volume 5d" value={String(metrics.relative_volume_5d ?? "暂无")} />
+        <Metric label="Positioning pressure" value={scorePct(scores.positioning_pressure_score)} />
+      </div>
+      <p className="mt-3 rounded-md bg-panel p-3 text-sm text-muted">{impact}</p>
+      <p className="mt-2 text-xs text-muted">
+        缺失真实来源：{(summary.missing_real_flow_feeds ?? []).join(" / ") || "暂无"}。不能把 proxy 包装成真实 flow。
+      </p>
+    </section>
+  );
+}
+
 function ConfidencePanel({ data }: { data: SimulatedSymbolPaths }) {
   const confidence = data.model_confidence;
   if (!confidence) return null;
@@ -1247,6 +1369,8 @@ export function MarketDashboard({ dashboard: initialDashboard }: { dashboard: Pr
       <DataQualityPanel report={dashboard.data_quality_report ?? dashboard.market_intelligence_v2?.data_quality_report} />
       <BreadthPanel status={dashboard.breadth_status} selected={selected} />
       <OptionsPanel status={dashboard.options_status} selected={selected} />
+      <FlowPositioningPanel status={dashboard.flow_positioning_status ?? dashboard.flow_status} selected={selected} />
+      <ForecastAccuracyPanel scorecard={dashboard.forecast_accuracy_scorecard} />
     </main>
   );
 }

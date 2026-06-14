@@ -242,6 +242,68 @@ export type OptionsStatus = {
   warnings?: string[];
 };
 
+export type FlowPositioningSymbolStatus = {
+  symbol: string;
+  status: string;
+  is_proxy: boolean;
+  proxy_only?: boolean;
+  true_flow_available: boolean;
+  source: string;
+  latest_date: string | null;
+  stale_data?: boolean;
+  missing_symbols?: string[];
+  metrics: Record<string, number | string | Record<string, number> | null>;
+  scores: {
+    risk_on_flow_score?: number;
+    risk_off_flow_score?: number;
+    flow_confirmation_score?: number;
+    flow_conflict_score?: number;
+    positioning_pressure_score?: number;
+    forced_selling_proxy?: number;
+    short_covering_proxy?: number;
+    crowding_proxy_score?: number;
+    flow_quality_score?: number;
+  };
+  data_note?: string;
+};
+
+export type FlowPositioningStatus = {
+  provider: string;
+  version: string;
+  generated_at: string;
+  latest_date: string | null;
+  summary: {
+    flow_available: boolean;
+    flow_proxy_only?: boolean;
+    proxy_only?: boolean;
+    true_flow_available: boolean;
+    stale_data?: boolean;
+    missing_symbols?: string[];
+    average_flow_quality_score: number;
+    overall_flow_confirmation_score: number;
+    overall_flow_conflict_score: number;
+    flow_symbols?: string[];
+    missing_real_flow_feeds?: string[];
+    data_note?: string;
+  };
+  symbols: Record<string, FlowPositioningSymbolStatus>;
+  sources?: Record<string, Record<string, unknown>>;
+  warnings?: string[];
+};
+
+export type ForecastAccuracyScorecard = {
+  version: string;
+  generated_at: string;
+  sample_counts: Record<string, number>;
+  primary_scenario_accuracy: Record<string, Record<string, number | string | null>>;
+  by_scenario?: Record<string, unknown>;
+  by_edge_status?: Record<string, unknown>;
+  confidence_validation?: Record<string, unknown>;
+  core_questions?: Record<string, string>;
+  sample_gate_rules?: Record<string, string>;
+  guardrails?: string[];
+};
+
 export type MarketStateName =
   | "risk_on"
   | "risk_off"
@@ -509,6 +571,8 @@ export type PredictionDashboard = {
   data_quality_report?: DataQualityReport;
   breadth_status?: BreadthStatus;
   options_status?: OptionsStatus;
+  flow_status?: FlowPositioningStatus;
+  flow_positioning_status?: FlowPositioningStatus;
   breadth_impact_report?: Record<string, unknown>;
   market_intelligence_v2?: {
     version: string;
@@ -548,6 +612,9 @@ export type PredictionDashboard = {
   model_confidence_by_symbol?: Record<string, ModelConfidence>;
   high_confidence_signal_report?: Record<string, unknown>;
   high_confidence_edge_report?: Record<string, unknown>;
+  forecast_ledger_summary?: Record<string, unknown>;
+  forecast_records?: Record<string, unknown>;
+  forecast_accuracy_scorecard?: ForecastAccuracyScorecard;
   overview: {
     as_of: string | null;
     strongest_symbol: string;

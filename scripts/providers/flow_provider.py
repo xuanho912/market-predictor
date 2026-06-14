@@ -60,8 +60,8 @@ def render_flow_status_markdown(bundle: dict[str, Any]) -> str:
         "",
         "## Symbol Detail",
         "",
-        "| symbol | quality | confirmation | conflict | risk-on | risk-off | rel volume | note |",
-        "|---|---:|---:|---:|---:|---:|---:|---|",
+        "| symbol | quality | confirmation | conflict | risk-on | risk-off | volume z | rel vol 5d | rel vol 20d | note |",
+        "|---|---:|---:|---:|---:|---:|---:|---:|---:|---|",
     ]
     for symbol, payload in (bundle.get("symbols") or {}).items():
         scores = payload.get("scores") or {}
@@ -76,7 +76,9 @@ def render_flow_status_markdown(bundle: dict[str, Any]) -> str:
                     str(scores.get("flow_conflict_score")),
                     str(scores.get("risk_on_flow_score")),
                     str(scores.get("risk_off_flow_score")),
-                    str(metrics.get("etf_relative_volume_20d")),
+                    str(metrics.get("volume_z_score")),
+                    str(metrics.get("relative_volume_5d")),
+                    str(metrics.get("relative_volume_20d")),
                     str(payload.get("data_note")),
                 ]
             )
@@ -113,21 +115,35 @@ def _symbol_flow_payload(symbol: str, series_by_symbol: dict[str, DownloadedSeri
     sectors = {name: _closes(series_by_symbol.get(name)) for name in SECTOR_SYMBOLS}
 
     volume_z = _zscore_last(target_volume, 20)
-    relative_volume = _relative_volume(target_volume, 20)
+    relative_volume_5d = _relative_volume(target_volume, 5)
+    relative_volume_20d = _relative_volume(target_volume, 20)
     high_beta_vs_low_vol = _relative_return(sphb, splv, 20)
     small_vs_large = _relative_return(iwm, spy, 20)
     equal_weight_vs_cap = _relative_return(rsp, spy, 20)
     credit_risk_appetite = _relative_return(hyg, lqd, 20)
+    hyg_lqd_relative_strength = _relative_return(hyg, lqd, 20)
+    hyg_tlt_relative_strength = _relative_return(hyg, tlt, 20)
+    spy_tlt_relative_strength = _relative_return(spy, tlt, 20)
+    qqq_spy_relative_strength = _relative_return(qqq, spy, 20)
+    iwm_spy_relative_strength = _relative_return(iwm, spy, 20)
+    uup_behavior = _return(uup, 20)
+    tlt_behavior = _return(tlt, 20)
     risk_on_rotation = _basket_return([qqq, iwm, hyg, sphb], 20) - _basket_return([tlt, uup, splv], 20)
-    defensive_vs_cyclical = _basket_return(
+    defensive_return = _basket_return(
         [sectors.get("XLP", []), sectors.get("XLU", []), sectors.get("XLV", [])],
         20,
-    ) - _basket_return(
+    )
+    cyclical_return = _basket_return(
         [sectors.get("XLY", []), sectors.get("XLI", []), sectors.get("XLF", []), sectors.get("XLE", [])],
         20,
     )
+    growth_return = _basket_return([sectors.get("XLK", []), sectors.get("XLC", []), qqq], 20)
+    defensive_vs_cyclical = defensive_return - cyclical_return
+    cyclical_vs_defensive = cyclical_return - defensive_return
+    growth_vs_defensive = growth_return - defensive_return
     sector_participation = _sector_participation(sectors)
-    volume_confirmation = _volume_confirmation_score(volume_z, relative_volume, _return(target_close, 5))
+    sector_rotation = {name: round(_return(values, 20), 6) for name, values in sectors.items() if len(values) > 20}
+    volume_confirmation = _volume_confirmation_score(volume_z, relative_volume_20d, _return(target_close, 5))
 
     risk_on_score = _clip(
         0.42
@@ -152,29 +168,70 @@ def _symbol_flow_payload(symbol: str, series_by_symbol: dict[str, DownloadedSeri
         0.0,
         1.0,
     )
-    crowding_score = _clip(abs(volume_z) / 3.0 * 0.45 + max(relative_volume - 1.25, 0.0) * 0.35, 0.0, 1.0)
+    crowding_score = _clip(abs(volume_z) / 3.0 * 0.45 + max(relative_volume_20d - 1.25, 0.0) * 0.35, 0.0, 1.0)
     flow_confirmation = _clip(risk_on_score * 0.55 + volume_confirmation * 0.20 + max(credit_risk_appetite, 0.0) * 2.0 + sector_participation * 0.15, 0.0, 1.0)
     flow_conflict = _clip(risk_off_score * 0.58 + max(-credit_risk_appetite, 0.0) * 2.2 + max(defensive_vs_cyclical, 0.0) * 1.8 + max(-sector_participation + 0.45, 0.0) * 0.20, 0.0, 1.0)
+    positioning_pressure = _clip(
+        crowding_score * 0.35
+        + risk_off_score * 0.30
+        + max(relative_volume_5d - 1.15, 0.0) * 0.20
+        + max(-_return(target_close, 5), 0.0) * 3.0,
+        0.0,
+        1.0,
+    )
+    forced_selling_proxy = _clip(
+        risk_off_score * 0.45
+        + max(-_return(target_close, 5), 0.0) * 4.0
+        + max(relative_volume_5d - 1.0, 0.0) * 0.22
+        + max(-credit_risk_appetite, 0.0) * 2.0,
+        0.0,
+        1.0,
+    )
+    short_covering_proxy = _clip(
+        max(_return(target_close, 5), 0.0) * 4.0
+        + max(relative_volume_5d - 1.0, 0.0) * 0.22
+        + max(high_beta_vs_low_vol, 0.0) * 2.5
+        + max(credit_risk_appetite, 0.0) * 2.0,
+        0.0,
+        1.0,
+    )
     quality = _flow_quality_score(symbol, series_by_symbol)
     status = "proxy" if quality >= 45 else "missing"
+    missing_symbols = _missing_symbols(symbol, series_by_symbol)
 
     return {
         "symbol": symbol,
         "status": status,
         "is_proxy": True,
+        "proxy_only": True,
         "true_flow_available": False,
+        "stale_data": False,
+        "missing_symbols": missing_symbols,
         "source": "market_data_proxy",
         "latest_date": _latest_date(target),
         "metrics": {
+            "volume_z_score": round(volume_z, 4),
             "volume_zscore_20d": round(volume_z, 4),
-            "etf_relative_volume_20d": round(relative_volume, 4),
+            "relative_volume_5d": round(relative_volume_5d, 4),
+            "relative_volume_20d": round(relative_volume_20d, 4),
+            "etf_relative_volume_20d": round(relative_volume_20d, 4),
             "volume_confirmation_score": round(volume_confirmation, 4),
+            "hyg_lqd_relative_strength_20d": round(hyg_lqd_relative_strength, 6),
+            "hyg_tlt_relative_strength_20d": round(hyg_tlt_relative_strength, 6),
+            "spy_tlt_relative_strength_20d": round(spy_tlt_relative_strength, 6),
+            "qqq_spy_relative_strength_20d": round(qqq_spy_relative_strength, 6),
+            "iwm_spy_relative_strength_20d": round(iwm_spy_relative_strength, 6),
+            "uup_behavior_20d": round(uup_behavior, 6),
+            "tlt_behavior_20d": round(tlt_behavior, 6),
             "high_beta_vs_low_vol_20d": round(high_beta_vs_low_vol, 6),
             "small_cap_vs_large_cap_20d": round(small_vs_large, 6),
             "equal_weight_vs_cap_weight_20d": round(equal_weight_vs_cap, 6),
             "credit_risk_appetite_20d": round(credit_risk_appetite, 6),
             "risk_on_rotation_20d": round(risk_on_rotation, 6),
             "defensive_vs_cyclical_20d": round(defensive_vs_cyclical, 6),
+            "cyclical_vs_defensive_20d": round(cyclical_vs_defensive, 6),
+            "growth_vs_defensive_20d": round(growth_vs_defensive, 6),
+            "sector_rotation_proxy_20d": sector_rotation,
             "sector_participation_proxy": round(sector_participation, 4),
             "crowding_proxy_score": round(crowding_score, 4),
         },
@@ -183,6 +240,9 @@ def _symbol_flow_payload(symbol: str, series_by_symbol: dict[str, DownloadedSeri
             "risk_off_flow_score": round(risk_off_score * 100.0, 2),
             "flow_confirmation_score": round(flow_confirmation * 100.0, 2),
             "flow_conflict_score": round(flow_conflict * 100.0, 2),
+            "positioning_pressure_score": round(positioning_pressure * 100.0, 2),
+            "forced_selling_proxy": round(forced_selling_proxy * 100.0, 2),
+            "short_covering_proxy": round(short_covering_proxy * 100.0, 2),
             "crowding_proxy_score": round(crowding_score * 100.0, 2),
             "flow_quality_score": round(quality, 2),
         },
@@ -198,6 +258,9 @@ def _summary(symbols: dict[str, Any]) -> dict[str, Any]:
         "flow_available": any(value >= 45 for value in qualities),
         "flow_proxy_only": True,
         "true_flow_available": False,
+        "proxy_only": True,
+        "stale_data": any(bool(payload.get("stale_data")) for payload in symbols.values()),
+        "missing_symbols": sorted({symbol for payload in symbols.values() for symbol in (payload.get("missing_symbols") or [])}),
         "average_flow_quality_score": round(sum(qualities) / len(qualities), 2) if qualities else 0,
         "overall_flow_confirmation_score": round(sum(confirmations) / len(confirmations), 2) if confirmations else 0,
         "overall_flow_conflict_score": round(sum(conflicts) / len(conflicts), 2) if conflicts else 0,
@@ -231,6 +294,16 @@ def _flow_quality_score(symbol: str, series_by_symbol: dict[str, DownloadedSerie
             available += 1
     sector_available = sum(1 for name in SECTOR_SYMBOLS if series_by_symbol.get(name) and len(series_by_symbol[name].rows) >= 60)
     return _clip((available / len(required)) * 72.0 + (sector_available / len(SECTOR_SYMBOLS)) * 28.0, 0.0, 100.0)
+
+
+def _missing_symbols(symbol: str, series_by_symbol: dict[str, DownloadedSeries]) -> list[str]:
+    required = [symbol, "SPY", "QQQ", "IWM", "HYG", "LQD", "TLT", "UUP", "SPHB", "SPLV", "RSP", *SECTOR_SYMBOLS]
+    missing: list[str] = []
+    for name in dict.fromkeys(required):
+        series = series_by_symbol.get(name)
+        if not series or len(getattr(series, "rows", []) or []) < 30 or getattr(series, "source", "") == "synthetic-fallback":
+            missing.append(name)
+    return missing
 
 
 def _closes(series: DownloadedSeries | None) -> list[float]:

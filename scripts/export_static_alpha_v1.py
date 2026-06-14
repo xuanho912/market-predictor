@@ -40,7 +40,10 @@ from scripts.forecast_accuracy_ledger import (
 from scripts.providers.finnhub_provider import fetch_finnhub_bundle
 from scripts.providers.fred_provider import DEFAULT_FRED_SERIES, fetch_fred_bundle
 from scripts.providers.breadth_provider import fetch_breadth_bundle, render_breadth_status_markdown
-from scripts.providers.flow_provider import fetch_flow_bundle, render_flow_status_markdown
+from scripts.providers.flow_positioning_provider import (
+    fetch_flow_positioning_bundle,
+    render_flow_positioning_status_markdown,
+)
 from scripts.providers.options_provider import fetch_options_bundle, render_options_status_markdown
 
 
@@ -73,7 +76,7 @@ def main() -> int:
     _print_breadth_diagnostics(breadth_bundle)
     options_bundle = fetch_options_bundle(series_by_symbol=series_by_symbol)
     _print_options_diagnostics(options_bundle)
-    flow_bundle = fetch_flow_bundle(series_by_symbol=series_by_symbol)
+    flow_bundle = fetch_flow_positioning_bundle(series_by_symbol=series_by_symbol)
     _print_flow_diagnostics(flow_bundle)
     price_history = _load_price_history(series_by_symbol)
 
@@ -188,6 +191,7 @@ def main() -> int:
         "breadth_status": breadth_bundle,
         "options_status": options_bundle,
         "flow_status": flow_bundle,
+        "flow_positioning_status": flow_bundle,
         "breadth_impact_report": breadth_impact_report,
         "feature_snapshot_v2": intelligence_v2["feature_snapshot_v2"],
         "feature_snapshot_v3": intelligence_v3["feature_snapshot_v3"],
@@ -220,6 +224,7 @@ def main() -> int:
     _write_json(public_dir / "breadth-status.json", breadth_bundle)
     _write_json(public_dir / "options-status.json", options_bundle)
     _write_json(public_dir / "flow-status.json", flow_bundle)
+    _write_json(public_dir / "flow-positioning-status.json", flow_bundle)
     _write_json(public_dir / "breadth-impact-report.json", breadth_impact_report)
     _write_json(public_dir / "high-confidence-signal-report.json", intelligence_v3["high_confidence_signal_report"])
     _write_json(public_dir / "high-confidence-edge-report.json", intelligence_v4["high_confidence_edge_report"])
@@ -234,6 +239,7 @@ def main() -> int:
     _write_breadth_status_report(PROJECT_ROOT / "outputs" / "breadth_data_status.md", breadth_bundle)
     _write_options_status_report(PROJECT_ROOT / "outputs" / "options_data_status.md", options_bundle)
     _write_flow_status_report(PROJECT_ROOT / "outputs" / "flow_data_status.md", flow_bundle)
+    _write_flow_status_report(PROJECT_ROOT / "outputs" / "flow_positioning_status.md", flow_bundle)
     _write_breadth_impact_status_report(PROJECT_ROOT / "outputs" / "breadth_impact_report.md", breadth_impact_report)
     _write_forecast_accuracy_scorecard_report(PROJECT_ROOT / "outputs" / "forecast_accuracy_scorecard.md", forecast_scorecard)
 
@@ -243,6 +249,7 @@ def main() -> int:
     print("wrote frontend/public/breadth-status.json")
     print("wrote frontend/public/options-status.json")
     print("wrote frontend/public/flow-status.json")
+    print("wrote frontend/public/flow-positioning-status.json")
     print("wrote frontend/public/breadth-impact-report.json")
     print("wrote frontend/public/high-confidence-signal-report.json")
     print("wrote frontend/public/high-confidence-edge-report.json")
@@ -257,6 +264,7 @@ def main() -> int:
     print("wrote outputs/breadth_data_status.md")
     print("wrote outputs/options_data_status.md")
     print("wrote outputs/flow_data_status.md")
+    print("wrote outputs/flow_positioning_status.md")
     print("wrote outputs/breadth_impact_report.md")
     print("wrote outputs/forecast_accuracy_scorecard.md")
     return 0
@@ -674,7 +682,7 @@ def _write_options_status_report(path: Path, bundle: dict[str, Any]) -> None:
 
 def _write_flow_status_report(path: Path, bundle: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(render_flow_status_markdown(bundle), encoding="utf-8")
+    path.write_text(render_flow_positioning_status_markdown(bundle), encoding="utf-8")
 
 
 def _write_forecast_accuracy_scorecard_report(path: Path, scorecard: dict[str, Any]) -> None:
