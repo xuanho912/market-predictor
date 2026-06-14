@@ -1,6 +1,6 @@
 # FRED Data Status
 
-Generated at: `2026-06-14T09:33:56.552987Z`
+Generated at: `2026-06-14T09:45:19.846243Z`
 
 ## Provider
 
@@ -8,7 +8,7 @@ Generated at: `2026-06-14T09:33:56.552987Z`
 - provider available: `True`
 - fallback used: `False`
 - rate limited: `False`
-- successful series: `IG_OAS, HY_OAS, BAA_SPREAD, DGS2, DGS3MO, DGS10, RECESSION, DFII10, FINANCIAL_STRESS`
+- successful series: `DGS2, HY_OAS, IG_OAS, BAA_SPREAD, DGS3MO, DGS10, RECESSION, FINANCIAL_STRESS, DFII10`
 - failed series: `none`
 
 ## Series
@@ -27,11 +27,11 @@ Generated at: `2026-06-14T09:33:56.552987Z`
 
 ## Data Completeness Effect
 
-- without FRED: `83`
-- with current FRED status: `88`
+- without FRED: `85`
+- with current FRED status: `90`
 - delta: `5`
 - target 85 met: `True`
-- current report score: `88`
+- current report score: `90`
 
 ## Risk Expansion / Failed Bounce Effect
 

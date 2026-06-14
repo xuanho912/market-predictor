@@ -2607,7 +2607,7 @@
   "as_of": "2026-06-12",
   "breadth_status": {
     "cache_root": "data/breadth_cache",
-    "generated_at": "2026-06-14T09:33:48.171094+00:00",
+    "generated_at": "2026-06-14T09:45:18.916848+00:00",
     "provider": "true_breadth_provider",
     "sector_participation_proxy": {
       "data_note": "Sector ETF proxy, not constituent-level sector breadth.",
@@ -2827,7 +2827,7 @@
         },
         "missing_ratio": 0.0,
         "name": "Nasdaq 100",
-        "price_source": "yfinance-incremental-cache",
+        "price_source": "local-cache-prices",
         "sample_limited": false,
         "scores": {
           "breadth_confirmation_score": 79.07,
@@ -2875,7 +2875,7 @@
         },
         "missing_ratio": 0.0,
         "name": "S&P 500",
-        "price_source": "yfinance-incremental-cache",
+        "price_source": "local-cache-prices",
         "sample_limited": false,
         "scores": {
           "breadth_confirmation_score": 98.29,
@@ -3003,7 +3003,7 @@
         "status": "available"
       }
     },
-    "generated_at": "2026-06-14T09:33:56.499048+00:00",
+    "generated_at": "2026-06-14T09:45:19.792942+00:00",
     "notes": [
       "Breadth and flow are ETF/sector proxies, not constituent-level feeds.",
       "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -3833,7 +3833,7 @@
         "IWM"
       ],
       "breadth_required": true,
-      "data_completeness_score": 88,
+      "data_completeness_score": 90,
       "data_source_status": "real_core_with_proxies",
       "fallback_used": true,
       "finnhub_available": true,
@@ -3844,8 +3844,8 @@
       "fred_available": true,
       "fred_effect_summary": {
         "data_completeness_delta": 5,
-        "data_completeness_with_fred": 88,
-        "data_completeness_without_fred": 83,
+        "data_completeness_with_fred": 90,
+        "data_completeness_without_fred": 85,
         "note": "This compares the current run against the same run with FRED disabled. It does not change Alpha v1.",
         "symbols": {
           "DIA": {
@@ -3914,15 +3914,15 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
-        "IG_OAS",
-        "HY_OAS",
-        "BAA_SPREAD",
         "DGS2",
+        "HY_OAS",
+        "IG_OAS",
+        "BAA_SPREAD",
         "DGS3MO",
         "DGS10",
         "RECESSION",
-        "DFII10",
-        "FINANCIAL_STRESS"
+        "FINANCIAL_STRESS",
+        "DFII10"
       ],
       "gamma_exposure_available": false,
       "latest_date": "2026-06-12",
@@ -3964,7 +3964,7 @@
     "version": "market_intelligence_engine_v4_data_quality"
   },
   "feature_snapshot_v2": {
-    "generated_at": "2026-06-14T09:33:56.484601+00:00",
+    "generated_at": "2026-06-14T09:45:19.779073+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -4202,7 +4202,7 @@
     "version": "market_intelligence_engine_v2_features"
   },
   "feature_snapshot_v3": {
-    "generated_at": "2026-06-14T09:33:56.490834+00:00",
+    "generated_at": "2026-06-14T09:45:19.785195+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -4909,6 +4909,248 @@
   },
   "generated_by": "scripts/export_static_alpha_v1.py",
   "high_confidence_edge_report": {
+    "breadth_forward_validation": {
+      "bounce_with_breadth_support": {
+        "by_horizon": {
+          "10d": {
+            "avg_return": 0.001104,
+            "hit_rate": 0.4875,
+            "max_adverse_excursion": -0.059374,
+            "max_favorable_excursion": 0.065859,
+            "mean_absolute_return": 0.017979,
+            "median_return": -0.0004,
+            "sample_size": 80
+          },
+          "20d": {
+            "avg_return": 0.002376,
+            "hit_rate": 0.5875,
+            "max_adverse_excursion": -0.142028,
+            "max_favorable_excursion": 0.081382,
+            "mean_absolute_return": 0.02924,
+            "median_return": 0.009112,
+            "sample_size": 80
+          },
+          "3d": {
+            "avg_return": 0.001175,
+            "hit_rate": 0.525,
+            "max_adverse_excursion": -0.043682,
+            "max_favorable_excursion": 0.049473,
+            "mean_absolute_return": 0.013373,
+            "median_return": 0.001558,
+            "sample_size": 80
+          },
+          "5d": {
+            "avg_return": 0.000734,
+            "hit_rate": 0.5875,
+            "max_adverse_excursion": -0.040544,
+            "max_favorable_excursion": 0.042123,
+            "mean_absolute_return": 0.01561,
+            "median_return": 0.003005,
+            "sample_size": 80
+          },
+          "60d": {
+            "avg_return": 0.00681,
+            "hit_rate": 0.475,
+            "max_adverse_excursion": -0.178752,
+            "max_favorable_excursion": 0.121826,
+            "mean_absolute_return": 0.053208,
+            "median_return": -0.003049,
+            "sample_size": 80
+          }
+        },
+        "sample_size": 80
+      },
+      "bounce_without_breadth_support": {
+        "by_horizon": {
+          "10d": {
+            "sample_size": 0
+          },
+          "20d": {
+            "sample_size": 0
+          },
+          "3d": {
+            "sample_size": 0
+          },
+          "5d": {
+            "sample_size": 0
+          },
+          "60d": {
+            "sample_size": 0
+          }
+        },
+        "sample_size": 0
+      },
+      "breadth_confirmed_signals": {
+        "by_horizon": {
+          "10d": {
+            "avg_return": 0.001104,
+            "hit_rate": 0.4875,
+            "max_adverse_excursion": -0.059374,
+            "max_favorable_excursion": 0.065859,
+            "mean_absolute_return": 0.017979,
+            "median_return": -0.0004,
+            "sample_size": 80
+          },
+          "20d": {
+            "avg_return": 0.002376,
+            "hit_rate": 0.5875,
+            "max_adverse_excursion": -0.142028,
+            "max_favorable_excursion": 0.081382,
+            "mean_absolute_return": 0.02924,
+            "median_return": 0.009112,
+            "sample_size": 80
+          },
+          "3d": {
+            "avg_return": 0.001175,
+            "hit_rate": 0.525,
+            "max_adverse_excursion": -0.043682,
+            "max_favorable_excursion": 0.049473,
+            "mean_absolute_return": 0.013373,
+            "median_return": 0.001558,
+            "sample_size": 80
+          },
+          "5d": {
+            "avg_return": 0.000734,
+            "hit_rate": 0.5875,
+            "max_adverse_excursion": -0.040544,
+            "max_favorable_excursion": 0.042123,
+            "mean_absolute_return": 0.01561,
+            "median_return": 0.003005,
+            "sample_size": 80
+          },
+          "60d": {
+            "avg_return": 0.00681,
+            "hit_rate": 0.475,
+            "max_adverse_excursion": -0.178752,
+            "max_favorable_excursion": 0.121826,
+            "mean_absolute_return": 0.053208,
+            "median_return": -0.003049,
+            "sample_size": 80
+          }
+        },
+        "sample_size": 80
+      },
+      "breadth_conflicted_signals": {
+        "by_horizon": {
+          "10d": {
+            "sample_size": 0
+          },
+          "20d": {
+            "sample_size": 0
+          },
+          "3d": {
+            "sample_size": 0
+          },
+          "5d": {
+            "sample_size": 0
+          },
+          "60d": {
+            "sample_size": 0
+          }
+        },
+        "sample_size": 0
+      },
+      "completed_sample_counter": {
+        "by_horizon": {
+          "10d": {
+            "completed_count": 0,
+            "evidence_gate": "insufficient"
+          },
+          "20d": {
+            "completed_count": 0,
+            "evidence_gate": "insufficient"
+          },
+          "3d": {
+            "completed_count": 0,
+            "evidence_gate": "insufficient"
+          },
+          "5d": {
+            "completed_count": 0,
+            "evidence_gate": "insufficient"
+          },
+          "60d": {
+            "completed_count": 0,
+            "evidence_gate": "insufficient"
+          }
+        },
+        "completed_rows": 0,
+        "max_completed_count": 0
+      },
+      "core_question": "Does breadth confirmation improve forward hit rate / average return versus breadth conflict?",
+      "evidence_note": "Forward-only breadth attribution is still below the minimum sample gate; these buckets are tracked but not proof.",
+      "failed_bounce_risk_with_breadth_conflict": {
+        "by_horizon": {
+          "10d": {
+            "sample_size": 0
+          },
+          "20d": {
+            "sample_size": 0
+          },
+          "3d": {
+            "sample_size": 0
+          },
+          "5d": {
+            "sample_size": 0
+          },
+          "60d": {
+            "sample_size": 0
+          }
+        },
+        "sample_size": 0
+      },
+      "forward_validation_required": true,
+      "status": "not_enough_forward_samples",
+      "trend_reversal_with_breadth_support": {
+        "by_horizon": {
+          "10d": {
+            "avg_return": -0.00085,
+            "hit_rate": 0.4,
+            "max_adverse_excursion": -0.030486,
+            "max_favorable_excursion": 0.03085,
+            "mean_absolute_return": 0.013253,
+            "median_return": -0.001222,
+            "sample_size": 20
+          },
+          "20d": {
+            "avg_return": 0.020009,
+            "hit_rate": 0.8,
+            "max_adverse_excursion": -0.047316,
+            "max_favorable_excursion": 0.058396,
+            "mean_absolute_return": 0.031437,
+            "median_return": 0.029166,
+            "sample_size": 20
+          },
+          "3d": {
+            "avg_return": -0.006693,
+            "hit_rate": 0.35,
+            "max_adverse_excursion": -0.033125,
+            "max_favorable_excursion": 0.023707,
+            "mean_absolute_return": 0.014506,
+            "median_return": -0.009383,
+            "sample_size": 20
+          },
+          "5d": {
+            "avg_return": -0.009981,
+            "hit_rate": 0.35,
+            "max_adverse_excursion": -0.040544,
+            "max_favorable_excursion": 0.023986,
+            "mean_absolute_return": 0.014545,
+            "median_return": -0.006798,
+            "sample_size": 20
+          },
+          "60d": {
+            "avg_return": 0.042877,
+            "hit_rate": 0.75,
+            "max_adverse_excursion": -0.099158,
+            "max_favorable_excursion": 0.121826,
+            "mean_absolute_return": 0.069044,
+            "median_return": 0.065295,
+            "sample_size": 20
+          }
+        },
+        "sample_size": 20
+      }
+    },
     "by_edge_status": {
       "MODERATE_EDGE": {
         "by_horizon": {
@@ -5723,7 +5965,7 @@
     },
     "forward_completed_sample_size": 0,
     "forward_validation_notice": "当前高置信度还没有被前向样本验证，不应当视为稳定预测能力。",
-    "generated_at": "2026-06-14T09:33:56.499893+00:00",
+    "generated_at": "2026-06-14T09:45:19.794089+00:00",
     "minimum_sample_gate": {
       "10d": {
         "completed_count": 0,
@@ -5749,7 +5991,8 @@
     "notes": [
       "This report is not proof of alpha; it is a proxy check until forward-only samples mature.",
       "If strong/high-confirmation buckets do not beat weak/no-edge buckets, model confidence must remain capped.",
-      "Forward completed samples are required before STRONG_EDGE or high-confidence buckets can be treated as validated."
+      "Forward completed samples are required before STRONG_EDGE or high-confidence buckets can be treated as validated.",
+      "Breadth buckets remain not_enough_forward_samples until enough forward-only observations complete."
     ],
     "primary_scenario_hit_rate": {
       "10d": {
@@ -6486,7 +6729,7 @@
       }
     },
     "conclusion": "confidence_not_yet_validated",
-    "generated_at": "2026-06-14T09:33:56.498446+00:00",
+    "generated_at": "2026-06-14T09:45:19.792351+00:00",
     "high_confidence_better_than_low_confidence": false,
     "high_vs_low_comparison_by_horizon": {
       "10d": false,
@@ -6564,7 +6807,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-06-14T09:33:56.483643+00:00",
+      "generated_at": "2026-06-14T09:45:19.778184+00:00",
       "notes": [
         "price/volatility/credit/rates/liquidity currently use public market proxies.",
         "options breadth macro flow are not treated as available unless real feeds are connected.",
@@ -6700,7 +6943,7 @@
       }
     },
     "feature_snapshot_v2": {
-      "generated_at": "2026-06-14T09:33:56.484601+00:00",
+      "generated_at": "2026-06-14T09:45:19.779073+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -6937,7 +7180,7 @@
       },
       "version": "market_intelligence_engine_v2_features"
     },
-    "generated_at": "2026-06-14T09:33:56.485078+00:00",
+    "generated_at": "2026-06-14T09:45:19.779611+00:00",
     "model_confidence_by_symbol": {
       "DIA": {
         "components": {
@@ -7134,7 +7377,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-06-14T09:33:56.494716+00:00",
+      "generated_at": "2026-06-14T09:45:19.788606+00:00",
       "notes": [
         "Breadth and flow are ETF/sector proxies, not constituent-level feeds.",
         "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -8057,7 +8300,7 @@
       }
     },
     "feature_snapshot_v3": {
-      "generated_at": "2026-06-14T09:33:56.490834+00:00",
+      "generated_at": "2026-06-14T09:45:19.785195+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -8722,18 +8965,18 @@
       "fred_missing": false,
       "fred_rate_limited": false,
       "fred_successful_series": [
-        "IG_OAS",
-        "HY_OAS",
-        "BAA_SPREAD",
         "DGS2",
+        "HY_OAS",
+        "IG_OAS",
+        "BAA_SPREAD",
         "DGS3MO",
         "DGS10",
         "RECESSION",
-        "DFII10",
-        "FINANCIAL_STRESS"
+        "FINANCIAL_STRESS",
+        "DFII10"
       ]
     },
-    "generated_at": "2026-06-14T09:33:56.498470+00:00",
+    "generated_at": "2026-06-14T09:45:19.792368+00:00",
     "high_confidence_signal_report": {
       "by_bucket": {
         "low_confidence_reference": {
@@ -9347,7 +9590,7 @@
         }
       },
       "conclusion": "confidence_not_yet_validated",
-      "generated_at": "2026-06-14T09:33:56.498446+00:00",
+      "generated_at": "2026-06-14T09:45:19.792351+00:00",
       "high_confidence_better_than_low_confidence": false,
       "high_vs_low_comparison_by_horizon": {
         "10d": false,
@@ -10056,7 +10299,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-06-14T09:33:56.499048+00:00",
+      "generated_at": "2026-06-14T09:45:19.792942+00:00",
       "notes": [
         "Breadth and flow are ETF/sector proxies, not constituent-level feeds.",
         "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -10886,7 +11129,7 @@
           "IWM"
         ],
         "breadth_required": true,
-        "data_completeness_score": 88,
+        "data_completeness_score": 90,
         "data_source_status": "real_core_with_proxies",
         "fallback_used": true,
         "finnhub_available": true,
@@ -10897,8 +11140,8 @@
         "fred_available": true,
         "fred_effect_summary": {
           "data_completeness_delta": 5,
-          "data_completeness_with_fred": 88,
-          "data_completeness_without_fred": 83,
+          "data_completeness_with_fred": 90,
+          "data_completeness_without_fred": 85,
           "note": "This compares the current run against the same run with FRED disabled. It does not change Alpha v1.",
           "symbols": {
             "DIA": {
@@ -10967,15 +11210,15 @@
         "fred_rate_limited": false,
         "fred_required": true,
         "fred_successful_series": [
-          "IG_OAS",
-          "HY_OAS",
-          "BAA_SPREAD",
           "DGS2",
+          "HY_OAS",
+          "IG_OAS",
+          "BAA_SPREAD",
           "DGS3MO",
           "DGS10",
           "RECESSION",
-          "DFII10",
-          "FINANCIAL_STRESS"
+          "FINANCIAL_STRESS",
+          "DFII10"
         ],
         "gamma_exposure_available": false,
         "latest_date": "2026-06-12",
@@ -11094,8 +11337,8 @@
     },
     "fred_effect_summary": {
       "data_completeness_delta": 5,
-      "data_completeness_with_fred": 88,
-      "data_completeness_without_fred": 83,
+      "data_completeness_with_fred": 90,
+      "data_completeness_without_fred": 85,
       "note": "This compares the current run against the same run with FRED disabled. It does not change Alpha v1.",
       "symbols": {
         "DIA": {
@@ -11165,19 +11408,261 @@
       "fallback_used": false,
       "rate_limited": false,
       "successful_series": [
-        "IG_OAS",
-        "HY_OAS",
-        "BAA_SPREAD",
         "DGS2",
+        "HY_OAS",
+        "IG_OAS",
+        "BAA_SPREAD",
         "DGS3MO",
         "DGS10",
         "RECESSION",
-        "DFII10",
-        "FINANCIAL_STRESS"
+        "FINANCIAL_STRESS",
+        "DFII10"
       ]
     },
-    "generated_at": "2026-06-14T09:33:56.502190+00:00",
+    "generated_at": "2026-06-14T09:45:19.796898+00:00",
     "high_confidence_edge_report": {
+      "breadth_forward_validation": {
+        "bounce_with_breadth_support": {
+          "by_horizon": {
+            "10d": {
+              "avg_return": 0.001104,
+              "hit_rate": 0.4875,
+              "max_adverse_excursion": -0.059374,
+              "max_favorable_excursion": 0.065859,
+              "mean_absolute_return": 0.017979,
+              "median_return": -0.0004,
+              "sample_size": 80
+            },
+            "20d": {
+              "avg_return": 0.002376,
+              "hit_rate": 0.5875,
+              "max_adverse_excursion": -0.142028,
+              "max_favorable_excursion": 0.081382,
+              "mean_absolute_return": 0.02924,
+              "median_return": 0.009112,
+              "sample_size": 80
+            },
+            "3d": {
+              "avg_return": 0.001175,
+              "hit_rate": 0.525,
+              "max_adverse_excursion": -0.043682,
+              "max_favorable_excursion": 0.049473,
+              "mean_absolute_return": 0.013373,
+              "median_return": 0.001558,
+              "sample_size": 80
+            },
+            "5d": {
+              "avg_return": 0.000734,
+              "hit_rate": 0.5875,
+              "max_adverse_excursion": -0.040544,
+              "max_favorable_excursion": 0.042123,
+              "mean_absolute_return": 0.01561,
+              "median_return": 0.003005,
+              "sample_size": 80
+            },
+            "60d": {
+              "avg_return": 0.00681,
+              "hit_rate": 0.475,
+              "max_adverse_excursion": -0.178752,
+              "max_favorable_excursion": 0.121826,
+              "mean_absolute_return": 0.053208,
+              "median_return": -0.003049,
+              "sample_size": 80
+            }
+          },
+          "sample_size": 80
+        },
+        "bounce_without_breadth_support": {
+          "by_horizon": {
+            "10d": {
+              "sample_size": 0
+            },
+            "20d": {
+              "sample_size": 0
+            },
+            "3d": {
+              "sample_size": 0
+            },
+            "5d": {
+              "sample_size": 0
+            },
+            "60d": {
+              "sample_size": 0
+            }
+          },
+          "sample_size": 0
+        },
+        "breadth_confirmed_signals": {
+          "by_horizon": {
+            "10d": {
+              "avg_return": 0.001104,
+              "hit_rate": 0.4875,
+              "max_adverse_excursion": -0.059374,
+              "max_favorable_excursion": 0.065859,
+              "mean_absolute_return": 0.017979,
+              "median_return": -0.0004,
+              "sample_size": 80
+            },
+            "20d": {
+              "avg_return": 0.002376,
+              "hit_rate": 0.5875,
+              "max_adverse_excursion": -0.142028,
+              "max_favorable_excursion": 0.081382,
+              "mean_absolute_return": 0.02924,
+              "median_return": 0.009112,
+              "sample_size": 80
+            },
+            "3d": {
+              "avg_return": 0.001175,
+              "hit_rate": 0.525,
+              "max_adverse_excursion": -0.043682,
+              "max_favorable_excursion": 0.049473,
+              "mean_absolute_return": 0.013373,
+              "median_return": 0.001558,
+              "sample_size": 80
+            },
+            "5d": {
+              "avg_return": 0.000734,
+              "hit_rate": 0.5875,
+              "max_adverse_excursion": -0.040544,
+              "max_favorable_excursion": 0.042123,
+              "mean_absolute_return": 0.01561,
+              "median_return": 0.003005,
+              "sample_size": 80
+            },
+            "60d": {
+              "avg_return": 0.00681,
+              "hit_rate": 0.475,
+              "max_adverse_excursion": -0.178752,
+              "max_favorable_excursion": 0.121826,
+              "mean_absolute_return": 0.053208,
+              "median_return": -0.003049,
+              "sample_size": 80
+            }
+          },
+          "sample_size": 80
+        },
+        "breadth_conflicted_signals": {
+          "by_horizon": {
+            "10d": {
+              "sample_size": 0
+            },
+            "20d": {
+              "sample_size": 0
+            },
+            "3d": {
+              "sample_size": 0
+            },
+            "5d": {
+              "sample_size": 0
+            },
+            "60d": {
+              "sample_size": 0
+            }
+          },
+          "sample_size": 0
+        },
+        "completed_sample_counter": {
+          "by_horizon": {
+            "10d": {
+              "completed_count": 0,
+              "evidence_gate": "insufficient"
+            },
+            "20d": {
+              "completed_count": 0,
+              "evidence_gate": "insufficient"
+            },
+            "3d": {
+              "completed_count": 0,
+              "evidence_gate": "insufficient"
+            },
+            "5d": {
+              "completed_count": 0,
+              "evidence_gate": "insufficient"
+            },
+            "60d": {
+              "completed_count": 0,
+              "evidence_gate": "insufficient"
+            }
+          },
+          "completed_rows": 0,
+          "max_completed_count": 0
+        },
+        "core_question": "Does breadth confirmation improve forward hit rate / average return versus breadth conflict?",
+        "evidence_note": "Forward-only breadth attribution is still below the minimum sample gate; these buckets are tracked but not proof.",
+        "failed_bounce_risk_with_breadth_conflict": {
+          "by_horizon": {
+            "10d": {
+              "sample_size": 0
+            },
+            "20d": {
+              "sample_size": 0
+            },
+            "3d": {
+              "sample_size": 0
+            },
+            "5d": {
+              "sample_size": 0
+            },
+            "60d": {
+              "sample_size": 0
+            }
+          },
+          "sample_size": 0
+        },
+        "forward_validation_required": true,
+        "status": "not_enough_forward_samples",
+        "trend_reversal_with_breadth_support": {
+          "by_horizon": {
+            "10d": {
+              "avg_return": -0.00085,
+              "hit_rate": 0.4,
+              "max_adverse_excursion": -0.030486,
+              "max_favorable_excursion": 0.03085,
+              "mean_absolute_return": 0.013253,
+              "median_return": -0.001222,
+              "sample_size": 20
+            },
+            "20d": {
+              "avg_return": 0.020009,
+              "hit_rate": 0.8,
+              "max_adverse_excursion": -0.047316,
+              "max_favorable_excursion": 0.058396,
+              "mean_absolute_return": 0.031437,
+              "median_return": 0.029166,
+              "sample_size": 20
+            },
+            "3d": {
+              "avg_return": -0.006693,
+              "hit_rate": 0.35,
+              "max_adverse_excursion": -0.033125,
+              "max_favorable_excursion": 0.023707,
+              "mean_absolute_return": 0.014506,
+              "median_return": -0.009383,
+              "sample_size": 20
+            },
+            "5d": {
+              "avg_return": -0.009981,
+              "hit_rate": 0.35,
+              "max_adverse_excursion": -0.040544,
+              "max_favorable_excursion": 0.023986,
+              "mean_absolute_return": 0.014545,
+              "median_return": -0.006798,
+              "sample_size": 20
+            },
+            "60d": {
+              "avg_return": 0.042877,
+              "hit_rate": 0.75,
+              "max_adverse_excursion": -0.099158,
+              "max_favorable_excursion": 0.121826,
+              "mean_absolute_return": 0.069044,
+              "median_return": 0.065295,
+              "sample_size": 20
+            }
+          },
+          "sample_size": 20
+        }
+      },
       "by_edge_status": {
         "MODERATE_EDGE": {
           "by_horizon": {
@@ -11992,7 +12477,7 @@
       },
       "forward_completed_sample_size": 0,
       "forward_validation_notice": "当前高置信度还没有被前向样本验证，不应当视为稳定预测能力。",
-      "generated_at": "2026-06-14T09:33:56.499893+00:00",
+      "generated_at": "2026-06-14T09:45:19.794089+00:00",
       "minimum_sample_gate": {
         "10d": {
           "completed_count": 0,
@@ -12018,7 +12503,8 @@
       "notes": [
         "This report is not proof of alpha; it is a proxy check until forward-only samples mature.",
         "If strong/high-confirmation buckets do not beat weak/no-edge buckets, model confidence must remain capped.",
-        "Forward completed samples are required before STRONG_EDGE or high-confidence buckets can be treated as validated."
+        "Forward completed samples are required before STRONG_EDGE or high-confidence buckets can be treated as validated.",
+        "Breadth buckets remain not_enough_forward_samples until enough forward-only observations complete."
       ],
       "primary_scenario_hit_rate": {
         "10d": {
@@ -12147,13 +12633,13 @@
         "components": {
           "analog_support": 0.45,
           "breadth_quality": 1.0,
-          "data_completeness": 0.88,
+          "data_completeness": 0.9,
           "predictor_consistency": 0.6453,
           "prior_confidence": 0.7,
           "signal_confirmation": 0.8
         },
         "confidence_level": "high",
-        "confidence_score": 78,
+        "confidence_score": 79,
         "why_confidence_is_limited": [
           "仍有关键证据缺失：options stress / news",
           "短周期 historical analog 仍有冲突。"
@@ -12163,7 +12649,7 @@
         "components": {
           "analog_support": 0.45,
           "breadth_quality": 0.64,
-          "data_completeness": 0.88,
+          "data_completeness": 0.9,
           "predictor_consistency": 0.581,
           "prior_confidence": 0.74,
           "signal_confirmation": 0.9
@@ -12179,7 +12665,7 @@
         "components": {
           "analog_support": 0.45,
           "breadth_quality": 1.0,
-          "data_completeness": 0.88,
+          "data_completeness": 0.9,
           "predictor_consistency": 0.7493000000000001,
           "prior_confidence": 0.68,
           "signal_confirmation": 0.8
@@ -12195,7 +12681,7 @@
         "components": {
           "analog_support": 0.7,
           "breadth_quality": 1.0,
-          "data_completeness": 0.88,
+          "data_completeness": 0.9,
           "predictor_consistency": 0.4599,
           "prior_confidence": 0.78,
           "signal_confirmation": 0.89
@@ -12936,13 +13422,13 @@
       "components": {
         "analog_support": 0.45,
         "breadth_quality": 1.0,
-        "data_completeness": 0.88,
+        "data_completeness": 0.9,
         "predictor_consistency": 0.6453,
         "prior_confidence": 0.7,
         "signal_confirmation": 0.8
       },
       "confidence_level": "high",
-      "confidence_score": 78,
+      "confidence_score": 79,
       "why_confidence_is_limited": [
         "仍有关键证据缺失：options stress / news",
         "短周期 historical analog 仍有冲突。"
@@ -12952,7 +13438,7 @@
       "components": {
         "analog_support": 0.45,
         "breadth_quality": 0.64,
-        "data_completeness": 0.88,
+        "data_completeness": 0.9,
         "predictor_consistency": 0.581,
         "prior_confidence": 0.74,
         "signal_confirmation": 0.9
@@ -12968,7 +13454,7 @@
       "components": {
         "analog_support": 0.45,
         "breadth_quality": 1.0,
-        "data_completeness": 0.88,
+        "data_completeness": 0.9,
         "predictor_consistency": 0.7493000000000001,
         "prior_confidence": 0.68,
         "signal_confirmation": 0.8
@@ -12984,7 +13470,7 @@
       "components": {
         "analog_support": 0.7,
         "breadth_quality": 1.0,
-        "data_completeness": 0.88,
+        "data_completeness": 0.9,
         "predictor_consistency": 0.4599,
         "prior_confidence": 0.78,
         "signal_confirmation": 0.89
@@ -13009,7 +13495,7 @@
         "IWM"
       ],
       "breadth_required": true,
-      "data_completeness_score": 88,
+      "data_completeness_score": 90,
       "data_source_status": "real_core_with_proxies",
       "fallback_used": true,
       "finnhub_available": true,
@@ -13020,8 +13506,8 @@
       "fred_available": true,
       "fred_effect_summary": {
         "data_completeness_delta": 5,
-        "data_completeness_with_fred": 88,
-        "data_completeness_without_fred": 83,
+        "data_completeness_with_fred": 90,
+        "data_completeness_without_fred": 85,
         "note": "This compares the current run against the same run with FRED disabled. It does not change Alpha v1.",
         "symbols": {
           "DIA": {
@@ -13090,15 +13576,15 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
-        "IG_OAS",
-        "HY_OAS",
-        "BAA_SPREAD",
         "DGS2",
+        "HY_OAS",
+        "IG_OAS",
+        "BAA_SPREAD",
         "DGS3MO",
         "DGS10",
         "RECESSION",
-        "DFII10",
-        "FINANCIAL_STRESS"
+        "FINANCIAL_STRESS",
+        "DFII10"
       ],
       "gamma_exposure_available": false,
       "latest_date": "2026-06-12",
@@ -13212,13 +13698,13 @@
         "components": {
           "analog_support": 0.45,
           "breadth_quality": 1.0,
-          "data_completeness": 0.88,
+          "data_completeness": 0.9,
           "predictor_consistency": 0.6453,
           "prior_confidence": 0.7,
           "signal_confirmation": 0.8
         },
         "confidence_level": "high",
-        "confidence_score": 78,
+        "confidence_score": 79,
         "why_confidence_is_limited": [
           "仍有关键证据缺失：options stress / news",
           "短周期 historical analog 仍有冲突。"
@@ -13228,7 +13714,7 @@
         "components": {
           "analog_support": 0.45,
           "breadth_quality": 0.64,
-          "data_completeness": 0.88,
+          "data_completeness": 0.9,
           "predictor_consistency": 0.581,
           "prior_confidence": 0.74,
           "signal_confirmation": 0.9
@@ -13244,7 +13730,7 @@
         "components": {
           "analog_support": 0.45,
           "breadth_quality": 1.0,
-          "data_completeness": 0.88,
+          "data_completeness": 0.9,
           "predictor_consistency": 0.7493000000000001,
           "prior_confidence": 0.68,
           "signal_confirmation": 0.8
@@ -13260,7 +13746,7 @@
         "components": {
           "analog_support": 0.7,
           "breadth_quality": 1.0,
-          "data_completeness": 0.88,
+          "data_completeness": 0.9,
           "predictor_consistency": 0.4599,
           "prior_confidence": 0.78,
           "signal_confirmation": 0.89
@@ -13765,13 +14251,13 @@
     "strongest_symbol": "SPY",
     "symbols": {
       "DIA": {
-        "analog_path_weight": 0.2182,
+        "analog_path_weight": 0.2193,
         "as_of": "2026-06-12",
-        "base_path_weight": 0.1553,
+        "base_path_weight": 0.154,
         "bearish_path_weight": 0.2394,
-        "bounce_path_weight": 0.3872,
+        "bounce_path_weight": 0.3873,
         "bounce_probability": 0.57070947,
-        "current_integrated_judgment": "DIA 当前 edge 状态：MODERATE_EDGE。最大概率路径是“反抽情景”(39%)，第二路径是“失败反抽情景”(24%)，差距 15%。多源确认分数 80/100，模型可信度 78/100。可以观察主路径，但仍需按失效条件动态切换。",
+        "current_integrated_judgment": "DIA 当前 edge 状态：MODERATE_EDGE。最大概率路径是“反抽情景”(39%)，第二路径是“失败反抽情景”(24%)，差距 15%。多源确认分数 80/100，模型可信度 79/100。可以观察主路径，但仍需按失效条件动态切换。",
         "current_price": 513.05999756,
         "data_source_status": "real_market_data",
         "distance_to_threshold": -0.24536636,
@@ -14192,13 +14678,13 @@
           "components": {
             "analog_support": 0.45,
             "breadth_quality": 1.0,
-            "data_completeness": 0.88,
+            "data_completeness": 0.9,
             "predictor_consistency": 0.6453,
             "prior_confidence": 0.7,
             "signal_confirmation": 0.8
           },
           "confidence_level": "high",
-          "confidence_score": 78,
+          "confidence_score": 79,
           "why_confidence_is_limited": [
             "仍有关键证据缺失：options stress / news",
             "短周期 historical analog 仍有冲突。"
@@ -14206,10 +14692,10 @@
         },
         "name": "Dow Jones",
         "path_weight_model": {
-          "analog_path_weight": 0.2182,
-          "base_path_weight": 0.1553,
+          "analog_path_weight": 0.2193,
+          "base_path_weight": 0.154,
           "bearish_path_weight": 0.2394,
-          "bounce_path_weight": 0.3872,
+          "bounce_path_weight": 0.3873,
           "low_confidence_simulation": false,
           "simulation_confidence_level": "high",
           "weight_factors": {
@@ -14528,7 +15014,7 @@
               "confidence": "high",
               "expected_horizon": "10d-20d",
               "label": "反抽情景",
-              "probability": 0.3872,
+              "probability": 0.3873,
               "reason": "Bounce Predictor 69%，多源确认 80/100，20d/60d historical support 为 weak。",
               "scenario": "bounce_path"
             },
@@ -14544,7 +15030,7 @@
               "confidence": "high",
               "expected_horizon": "20d-60d",
               "label": "历史均值情景",
-              "probability": 0.2182,
+              "probability": 0.2193,
               "reason": "历史相似样本质量 high，样本数 20，中期支持 weak。",
               "scenario": "analog_average_path"
             },
@@ -14552,7 +15038,7 @@
               "confidence": "high",
               "expected_horizon": "3d-20d",
               "label": "综合期望情景",
-              "probability": 0.1553,
+              "probability": 0.154,
               "reason": "综合期望用于平衡反抽、失败反抽、历史均值和数据不完整带来的不确定性。",
               "scenario": "expected_path"
             }
@@ -14564,22 +15050,22 @@
             "confidence": "high",
             "expected_horizon": "10d-20d",
             "label": "反抽情景",
-            "probability": 0.3872,
+            "probability": 0.3873,
             "reason": "Bounce Predictor 69%，多源确认 80/100，20d/60d historical support 为 weak。",
             "scenario": "bounce_path"
           },
           "primary_scenario": "bounce_path",
-          "primary_secondary_gap": 0.1478,
+          "primary_secondary_gap": 0.1479,
           "primary_to_secondary_switch_conditions": [
             "VIX 重新上升",
             "HYG/LQD 转弱",
             "DIA 跌破近期低点",
             "historical support 转弱"
           ],
-          "probability_gap": 0.1478,
+          "probability_gap": 0.1479,
           "ranking_note": "V4 scenario ranking is derived from predictor probabilities, signal confirmation, historical analog distribution, data completeness and macro event risk. It is not a guaranteed forecast.",
           "risk_scenario": "bearish_path",
-          "scenario_probability": 0.3872,
+          "scenario_probability": 0.3873,
           "secondary": {
             "confidence": "high",
             "expected_horizon": "3d-10d",
@@ -14599,16 +15085,16 @@
             "confidence": "high",
             "expected_horizon": "20d-60d",
             "label": "历史均值情景",
-            "probability": 0.2182,
+            "probability": 0.2193,
             "reason": "历史相似样本质量 high，样本数 20，中期支持 weak。",
             "scenario": "analog_average_path"
           }
         },
         "scenario_weights": {
-          "base_scenario": 0.1553,
+          "base_scenario": 0.154,
           "bearish_scenario": 0.2394,
-          "bounce_scenario": 0.3872,
-          "historical_analog_average": 0.2182
+          "bounce_scenario": 0.3873,
+          "historical_analog_average": 0.2193
         },
         "signal_agreement": {
           "agreement_level": "mixed",
@@ -14735,11 +15221,11 @@
         "trend_reversal_probability": 0.31497261963287615
       },
       "IWM": {
-        "analog_path_weight": 0.2521,
+        "analog_path_weight": 0.2532,
         "as_of": "2026-06-12",
-        "base_path_weight": 0.1201,
+        "base_path_weight": 0.1188,
         "bearish_path_weight": 0.2208,
-        "bounce_path_weight": 0.407,
+        "bounce_path_weight": 0.4072,
         "bounce_probability": 0.40434541,
         "current_integrated_judgment": "IWM 当前 edge 状态：MODERATE_EDGE。最大概率路径是“反抽情景”(41%)，第二路径是“历史均值情景”(25%)，差距 15%。多源确认分数 90/100，模型可信度 79/100。可以观察主路径，但仍需按失效条件动态切换。",
         "current_price": 292.95001221,
@@ -15177,7 +15663,7 @@
           "components": {
             "analog_support": 0.45,
             "breadth_quality": 0.64,
-            "data_completeness": 0.88,
+            "data_completeness": 0.9,
             "predictor_consistency": 0.581,
             "prior_confidence": 0.74,
             "signal_confirmation": 0.9
@@ -15191,10 +15677,10 @@
         },
         "name": "Russell 2000",
         "path_weight_model": {
-          "analog_path_weight": 0.2521,
-          "base_path_weight": 0.1201,
+          "analog_path_weight": 0.2532,
+          "base_path_weight": 0.1188,
           "bearish_path_weight": 0.2208,
-          "bounce_path_weight": 0.407,
+          "bounce_path_weight": 0.4072,
           "low_confidence_simulation": false,
           "simulation_confidence_level": "high",
           "weight_factors": {
@@ -15513,7 +15999,7 @@
               "confidence": "high",
               "expected_horizon": "10d-20d",
               "label": "反抽情景",
-              "probability": 0.407,
+              "probability": 0.4072,
               "reason": "Bounce Predictor 74%，多源确认 90/100，20d/60d historical support 为 weak。",
               "scenario": "bounce_path"
             },
@@ -15521,7 +16007,7 @@
               "confidence": "high",
               "expected_horizon": "20d-60d",
               "label": "历史均值情景",
-              "probability": 0.2521,
+              "probability": 0.2532,
               "reason": "历史相似样本质量 high，样本数 20，中期支持 weak。",
               "scenario": "analog_average_path"
             },
@@ -15537,7 +16023,7 @@
               "confidence": "high",
               "expected_horizon": "3d-20d",
               "label": "综合期望情景",
-              "probability": 0.1201,
+              "probability": 0.1188,
               "reason": "综合期望用于平衡反抽、失败反抽、历史均值和数据不完整带来的不确定性。",
               "scenario": "expected_path"
             }
@@ -15549,27 +16035,27 @@
             "confidence": "high",
             "expected_horizon": "10d-20d",
             "label": "反抽情景",
-            "probability": 0.407,
+            "probability": 0.4072,
             "reason": "Bounce Predictor 74%，多源确认 90/100，20d/60d historical support 为 weak。",
             "scenario": "bounce_path"
           },
           "primary_scenario": "bounce_path",
-          "primary_secondary_gap": 0.1549,
+          "primary_secondary_gap": 0.154,
           "primary_to_secondary_switch_conditions": [
             "VIX 重新上升",
             "HYG/LQD 转弱",
             "IWM 跌破近期低点",
             "historical support 转弱"
           ],
-          "probability_gap": 0.1549,
+          "probability_gap": 0.154,
           "ranking_note": "V4 scenario ranking is derived from predictor probabilities, signal confirmation, historical analog distribution, data completeness and macro event risk. It is not a guaranteed forecast.",
           "risk_scenario": "bearish_path",
-          "scenario_probability": 0.407,
+          "scenario_probability": 0.4072,
           "secondary": {
             "confidence": "high",
             "expected_horizon": "20d-60d",
             "label": "历史均值情景",
-            "probability": 0.2521,
+            "probability": 0.2532,
             "reason": "历史相似样本质量 high，样本数 20，中期支持 weak。",
             "scenario": "analog_average_path"
           },
@@ -15590,10 +16076,10 @@
           }
         },
         "scenario_weights": {
-          "base_scenario": 0.1201,
+          "base_scenario": 0.1188,
           "bearish_scenario": 0.2208,
-          "bounce_scenario": 0.407,
-          "historical_analog_average": 0.2521
+          "bounce_scenario": 0.4072,
+          "historical_analog_average": 0.2532
         },
         "signal_agreement": {
           "agreement_level": "strong",
@@ -15724,11 +16210,11 @@
         "trend_reversal_probability": 0.28456949892335187
       },
       "QQQ": {
-        "analog_path_weight": 0.2194,
+        "analog_path_weight": 0.2206,
         "as_of": "2026-06-12",
-        "base_path_weight": 0.1562,
+        "base_path_weight": 0.1548,
         "bearish_path_weight": 0.259,
-        "bounce_path_weight": 0.3654,
+        "bounce_path_weight": 0.3655,
         "bounce_probability": 0.38471703,
         "current_integrated_judgment": "QQQ 当前 edge 状态：MODERATE_EDGE。最大概率路径是“反抽情景”(37%)，第二路径是“失败反抽情景”(26%)，差距 11%。多源确认分数 80/100，模型可信度 79/100。可以观察主路径，但仍需按失效条件动态切换。",
         "current_price": 721.34002686,
@@ -16160,7 +16646,7 @@
           "components": {
             "analog_support": 0.45,
             "breadth_quality": 1.0,
-            "data_completeness": 0.88,
+            "data_completeness": 0.9,
             "predictor_consistency": 0.7493000000000001,
             "prior_confidence": 0.68,
             "signal_confirmation": 0.8
@@ -16174,10 +16660,10 @@
         },
         "name": "Nasdaq 100",
         "path_weight_model": {
-          "analog_path_weight": 0.2194,
-          "base_path_weight": 0.1562,
+          "analog_path_weight": 0.2206,
+          "base_path_weight": 0.1548,
           "bearish_path_weight": 0.259,
-          "bounce_path_weight": 0.3654,
+          "bounce_path_weight": 0.3655,
           "low_confidence_simulation": false,
           "simulation_confidence_level": "high",
           "weight_factors": {
@@ -16496,7 +16982,7 @@
               "confidence": "high",
               "expected_horizon": "10d-20d",
               "label": "反抽情景",
-              "probability": 0.3654,
+              "probability": 0.3655,
               "reason": "Bounce Predictor 60%，多源确认 80/100，20d/60d historical support 为 weak。",
               "scenario": "bounce_path"
             },
@@ -16512,7 +16998,7 @@
               "confidence": "high",
               "expected_horizon": "20d-60d",
               "label": "历史均值情景",
-              "probability": 0.2194,
+              "probability": 0.2206,
               "reason": "历史相似样本质量 high，样本数 20，中期支持 weak。",
               "scenario": "analog_average_path"
             },
@@ -16520,7 +17006,7 @@
               "confidence": "high",
               "expected_horizon": "3d-20d",
               "label": "综合期望情景",
-              "probability": 0.1562,
+              "probability": 0.1548,
               "reason": "综合期望用于平衡反抽、失败反抽、历史均值和数据不完整带来的不确定性。",
               "scenario": "expected_path"
             }
@@ -16532,22 +17018,22 @@
             "confidence": "high",
             "expected_horizon": "10d-20d",
             "label": "反抽情景",
-            "probability": 0.3654,
+            "probability": 0.3655,
             "reason": "Bounce Predictor 60%，多源确认 80/100，20d/60d historical support 为 weak。",
             "scenario": "bounce_path"
           },
           "primary_scenario": "bounce_path",
-          "primary_secondary_gap": 0.1064,
+          "primary_secondary_gap": 0.1065,
           "primary_to_secondary_switch_conditions": [
             "VIX 重新上升",
             "HYG/LQD 转弱",
             "QQQ 跌破近期低点",
             "historical support 转弱"
           ],
-          "probability_gap": 0.1064,
+          "probability_gap": 0.1065,
           "ranking_note": "V4 scenario ranking is derived from predictor probabilities, signal confirmation, historical analog distribution, data completeness and macro event risk. It is not a guaranteed forecast.",
           "risk_scenario": "bearish_path",
-          "scenario_probability": 0.3654,
+          "scenario_probability": 0.3655,
           "secondary": {
             "confidence": "high",
             "expected_horizon": "3d-10d",
@@ -16567,16 +17053,16 @@
             "confidence": "high",
             "expected_horizon": "20d-60d",
             "label": "历史均值情景",
-            "probability": 0.2194,
+            "probability": 0.2206,
             "reason": "历史相似样本质量 high，样本数 20，中期支持 weak。",
             "scenario": "analog_average_path"
           }
         },
         "scenario_weights": {
-          "base_scenario": 0.1562,
+          "base_scenario": 0.1548,
           "bearish_scenario": 0.259,
-          "bounce_scenario": 0.3654,
-          "historical_analog_average": 0.2194
+          "bounce_scenario": 0.3655,
+          "historical_analog_average": 0.2206
         },
         "signal_agreement": {
           "agreement_level": "mixed",
@@ -16708,11 +17194,11 @@
         "trend_reversal_probability": 0.2629852193517149
       },
       "SPY": {
-        "analog_path_weight": 0.2684,
+        "analog_path_weight": 0.2695,
         "as_of": "2026-06-12",
-        "base_path_weight": 0.1199,
+        "base_path_weight": 0.1186,
         "bearish_path_weight": 0.1967,
-        "bounce_path_weight": 0.415,
+        "bounce_path_weight": 0.4151,
         "bounce_probability": 0.59293002,
         "current_integrated_judgment": "SPY 当前 edge 状态：MODERATE_EDGE。最大概率路径是“反抽情景”(42%)，第二路径是“历史均值情景”(27%)，差距 15%。多源确认分数 89/100，模型可信度 83/100。可以观察主路径，但仍需按失效条件动态切换。",
         "current_price": 741.75,
@@ -17141,7 +17627,7 @@
           "components": {
             "analog_support": 0.7,
             "breadth_quality": 1.0,
-            "data_completeness": 0.88,
+            "data_completeness": 0.9,
             "predictor_consistency": 0.4599,
             "prior_confidence": 0.78,
             "signal_confirmation": 0.89
@@ -17155,10 +17641,10 @@
         },
         "name": "S&P 500",
         "path_weight_model": {
-          "analog_path_weight": 0.2684,
-          "base_path_weight": 0.1199,
+          "analog_path_weight": 0.2695,
+          "base_path_weight": 0.1186,
           "bearish_path_weight": 0.1967,
-          "bounce_path_weight": 0.415,
+          "bounce_path_weight": 0.4151,
           "low_confidence_simulation": false,
           "simulation_confidence_level": "high",
           "weight_factors": {
@@ -17477,7 +17963,7 @@
               "confidence": "high",
               "expected_horizon": "10d-20d",
               "label": "反抽情景",
-              "probability": 0.415,
+              "probability": 0.4151,
               "reason": "Bounce Predictor 75%，多源确认 89/100，20d/60d historical support 为 supportive。",
               "scenario": "bounce_path"
             },
@@ -17485,7 +17971,7 @@
               "confidence": "high",
               "expected_horizon": "20d-60d",
               "label": "历史均值情景",
-              "probability": 0.2684,
+              "probability": 0.2695,
               "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。",
               "scenario": "analog_average_path"
             },
@@ -17501,7 +17987,7 @@
               "confidence": "high",
               "expected_horizon": "3d-20d",
               "label": "综合期望情景",
-              "probability": 0.1199,
+              "probability": 0.1186,
               "reason": "综合期望用于平衡反抽、失败反抽、历史均值和数据不完整带来的不确定性。",
               "scenario": "expected_path"
             }
@@ -17513,27 +17999,27 @@
             "confidence": "high",
             "expected_horizon": "10d-20d",
             "label": "反抽情景",
-            "probability": 0.415,
+            "probability": 0.4151,
             "reason": "Bounce Predictor 75%，多源确认 89/100，20d/60d historical support 为 supportive。",
             "scenario": "bounce_path"
           },
           "primary_scenario": "bounce_path",
-          "primary_secondary_gap": 0.1466,
+          "primary_secondary_gap": 0.1456,
           "primary_to_secondary_switch_conditions": [
             "VIX 重新上升",
             "HYG/LQD 转弱",
             "SPY 跌破近期低点",
             "historical support 转弱"
           ],
-          "probability_gap": 0.1466,
+          "probability_gap": 0.1456,
           "ranking_note": "V4 scenario ranking is derived from predictor probabilities, signal confirmation, historical analog distribution, data completeness and macro event risk. It is not a guaranteed forecast.",
           "risk_scenario": "bearish_path",
-          "scenario_probability": 0.415,
+          "scenario_probability": 0.4151,
           "secondary": {
             "confidence": "high",
             "expected_horizon": "20d-60d",
             "label": "历史均值情景",
-            "probability": 0.2684,
+            "probability": 0.2695,
             "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。",
             "scenario": "analog_average_path"
           },
@@ -17554,10 +18040,10 @@
           }
         },
         "scenario_weights": {
-          "base_scenario": 0.1199,
+          "base_scenario": 0.1186,
           "bearish_scenario": 0.1967,
-          "bounce_scenario": 0.415,
-          "historical_analog_average": 0.2684
+          "bounce_scenario": 0.4151,
+          "historical_analog_average": 0.2695
         },
         "signal_agreement": {
           "agreement_level": "strong",
@@ -17691,7 +18177,7 @@
         "IWM"
       ],
       "breadth_required": true,
-      "data_completeness_score": 88,
+      "data_completeness_score": 90,
       "data_source_status": "real_core_with_proxies",
       "fallback_used": true,
       "finnhub_available": true,
@@ -17702,8 +18188,8 @@
       "fred_available": true,
       "fred_effect_summary": {
         "data_completeness_delta": 5,
-        "data_completeness_with_fred": 88,
-        "data_completeness_without_fred": 83,
+        "data_completeness_with_fred": 90,
+        "data_completeness_without_fred": 85,
         "note": "This compares the current run against the same run with FRED disabled. It does not change Alpha v1.",
         "symbols": {
           "DIA": {
@@ -17772,15 +18258,15 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
-        "IG_OAS",
-        "HY_OAS",
-        "BAA_SPREAD",
         "DGS2",
+        "HY_OAS",
+        "IG_OAS",
+        "BAA_SPREAD",
         "DGS3MO",
         "DGS10",
         "RECESSION",
-        "DFII10",
-        "FINANCIAL_STRESS"
+        "FINANCIAL_STRESS",
+        "DFII10"
       ],
       "gamma_exposure_available": false,
       "latest_date": "2026-06-12",
@@ -17822,12 +18308,12 @@
     "disclaimer": "Simulated future paths are probabilistic scenarios based on current signals and historical analogs, not guaranteed forecasts.",
     "symbols": {
       "DIA": {
-        "analog_path_weight": 0.2182,
-        "base_path_weight": 0.1553,
+        "analog_path_weight": 0.2193,
+        "base_path_weight": 0.154,
         "bearish_path_weight": 0.2394,
-        "bounce_path_weight": 0.3872,
+        "bounce_path_weight": 0.3873,
         "bounce_probability": 0.57070947,
-        "current_integrated_judgment": "DIA 当前 edge 状态：MODERATE_EDGE。最大概率路径是“反抽情景”(39%)，第二路径是“失败反抽情景”(24%)，差距 15%。多源确认分数 80/100，模型可信度 78/100。可以观察主路径，但仍需按失效条件动态切换。",
+        "current_integrated_judgment": "DIA 当前 edge 状态：MODERATE_EDGE。最大概率路径是“反抽情景”(39%)，第二路径是“失败反抽情景”(24%)，差距 15%。多源确认分数 80/100，模型可信度 79/100。可以观察主路径，但仍需按失效条件动态切换。",
         "current_price": 513.05999756,
         "data_quality": {
           "data_completeness_score": 57,
@@ -18236,13 +18722,13 @@
           "components": {
             "analog_support": 0.45,
             "breadth_quality": 1.0,
-            "data_completeness": 0.88,
+            "data_completeness": 0.9,
             "predictor_consistency": 0.6453,
             "prior_confidence": 0.7,
             "signal_confirmation": 0.8
           },
           "confidence_level": "high",
-          "confidence_score": 78,
+          "confidence_score": 79,
           "why_confidence_is_limited": [
             "仍有关键证据缺失：options stress / news",
             "短周期 historical analog 仍有冲突。"
@@ -18257,10 +18743,10 @@
           "基准情景：使用相似样本平均路径；所有路径都是概率情景，不是确定预测。"
         ],
         "path_weight_model": {
-          "analog_path_weight": 0.2182,
-          "base_path_weight": 0.1553,
+          "analog_path_weight": 0.2193,
+          "base_path_weight": 0.154,
           "bearish_path_weight": 0.2394,
-          "bounce_path_weight": 0.3872,
+          "bounce_path_weight": 0.3873,
           "low_confidence_simulation": false,
           "simulation_confidence_level": "high",
           "weight_factors": {
@@ -19802,14 +20288,14 @@
           {
             "name": "Base case",
             "name_cn": "基准情景",
-            "probability_weight": 0.1553,
+            "probability_weight": 0.154,
             "return_20d": 0.003845170212865895,
             "summary_cn": "按最相似历史样本的平均路径推演。"
           },
           {
             "name": "Bounce case",
             "name_cn": "反弹情景",
-            "probability_weight": 0.3872,
+            "probability_weight": 0.3873,
             "return_20d": 0.04702682462932421,
             "summary_cn": "如果 Alpha v1 信号继续有效，路径更接近历史上较好的反抽样本。"
           },
@@ -19823,7 +20309,7 @@
           {
             "name": "Historical analog case",
             "name_cn": "历史相似情景",
-            "probability_weight": 0.2182,
+            "probability_weight": 0.2193,
             "return_20d": 0.003845170212865895,
             "summary_cn": "只看最相似历史样本后的实际表现，不做确定性预测。"
           }
@@ -19834,7 +20320,7 @@
               "confidence": "high",
               "expected_horizon": "10d-20d",
               "label": "反抽情景",
-              "probability": 0.3872,
+              "probability": 0.3873,
               "reason": "Bounce Predictor 69%，多源确认 80/100，20d/60d historical support 为 weak。",
               "scenario": "bounce_path"
             },
@@ -19850,7 +20336,7 @@
               "confidence": "high",
               "expected_horizon": "20d-60d",
               "label": "历史均值情景",
-              "probability": 0.2182,
+              "probability": 0.2193,
               "reason": "历史相似样本质量 high，样本数 20，中期支持 weak。",
               "scenario": "analog_average_path"
             },
@@ -19858,7 +20344,7 @@
               "confidence": "high",
               "expected_horizon": "3d-20d",
               "label": "综合期望情景",
-              "probability": 0.1553,
+              "probability": 0.154,
               "reason": "综合期望用于平衡反抽、失败反抽、历史均值和数据不完整带来的不确定性。",
               "scenario": "expected_path"
             }
@@ -19870,22 +20356,22 @@
             "confidence": "high",
             "expected_horizon": "10d-20d",
             "label": "反抽情景",
-            "probability": 0.3872,
+            "probability": 0.3873,
             "reason": "Bounce Predictor 69%，多源确认 80/100，20d/60d historical support 为 weak。",
             "scenario": "bounce_path"
           },
           "primary_scenario": "bounce_path",
-          "primary_secondary_gap": 0.1478,
+          "primary_secondary_gap": 0.1479,
           "primary_to_secondary_switch_conditions": [
             "VIX 重新上升",
             "HYG/LQD 转弱",
             "DIA 跌破近期低点",
             "historical support 转弱"
           ],
-          "probability_gap": 0.1478,
+          "probability_gap": 0.1479,
           "ranking_note": "V4 scenario ranking is derived from predictor probabilities, signal confirmation, historical analog distribution, data completeness and macro event risk. It is not a guaranteed forecast.",
           "risk_scenario": "bearish_path",
-          "scenario_probability": 0.3872,
+          "scenario_probability": 0.3873,
           "secondary": {
             "confidence": "high",
             "expected_horizon": "3d-10d",
@@ -19905,16 +20391,16 @@
             "confidence": "high",
             "expected_horizon": "20d-60d",
             "label": "历史均值情景",
-            "probability": 0.2182,
+            "probability": 0.2193,
             "reason": "历史相似样本质量 high，样本数 20，中期支持 weak。",
             "scenario": "analog_average_path"
           }
         },
         "scenario_weights": {
-          "base_scenario": 0.1553,
+          "base_scenario": 0.154,
           "bearish_scenario": 0.2394,
-          "bounce_scenario": 0.3872,
-          "historical_analog_average": 0.2182
+          "bounce_scenario": 0.3873,
+          "historical_analog_average": 0.2193
         },
         "signal_agreement": {
           "agreement_level": "mixed",
@@ -20041,10 +20527,10 @@
         "trend_reversal_probability": 0.31497261963287615
       },
       "IWM": {
-        "analog_path_weight": 0.2521,
-        "base_path_weight": 0.1201,
+        "analog_path_weight": 0.2532,
+        "base_path_weight": 0.1188,
         "bearish_path_weight": 0.2208,
-        "bounce_path_weight": 0.407,
+        "bounce_path_weight": 0.4072,
         "bounce_probability": 0.40434541,
         "current_integrated_judgment": "IWM 当前 edge 状态：MODERATE_EDGE。最大概率路径是“反抽情景”(41%)，第二路径是“历史均值情景”(25%)，差距 15%。多源确认分数 90/100，模型可信度 79/100。可以观察主路径，但仍需按失效条件动态切换。",
         "current_price": 292.95001221,
@@ -20470,7 +20956,7 @@
           "components": {
             "analog_support": 0.45,
             "breadth_quality": 0.64,
-            "data_completeness": 0.88,
+            "data_completeness": 0.9,
             "predictor_consistency": 0.581,
             "prior_confidence": 0.74,
             "signal_confirmation": 0.9
@@ -20491,10 +20977,10 @@
           "基准情景：使用相似样本平均路径；所有路径都是概率情景，不是确定预测。"
         ],
         "path_weight_model": {
-          "analog_path_weight": 0.2521,
-          "base_path_weight": 0.1201,
+          "analog_path_weight": 0.2532,
+          "base_path_weight": 0.1188,
           "bearish_path_weight": 0.2208,
-          "bounce_path_weight": 0.407,
+          "bounce_path_weight": 0.4072,
           "low_confidence_simulation": false,
           "simulation_confidence_level": "high",
           "weight_factors": {
@@ -22036,14 +22522,14 @@
           {
             "name": "Base case",
             "name_cn": "基准情景",
-            "probability_weight": 0.1201,
+            "probability_weight": 0.1188,
             "return_20d": -0.004647763319492282,
             "summary_cn": "按最相似历史样本的平均路径推演。"
           },
           {
             "name": "Bounce case",
             "name_cn": "反弹情景",
-            "probability_weight": 0.407,
+            "probability_weight": 0.4072,
             "return_20d": 0.03472324137495168,
             "summary_cn": "如果 Alpha v1 信号继续有效，路径更接近历史上较好的反抽样本。"
           },
@@ -22057,7 +22543,7 @@
           {
             "name": "Historical analog case",
             "name_cn": "历史相似情景",
-            "probability_weight": 0.2521,
+            "probability_weight": 0.2532,
             "return_20d": -0.004647763319492282,
             "summary_cn": "只看最相似历史样本后的实际表现，不做确定性预测。"
           }
@@ -22068,7 +22554,7 @@
               "confidence": "high",
               "expected_horizon": "10d-20d",
               "label": "反抽情景",
-              "probability": 0.407,
+              "probability": 0.4072,
               "reason": "Bounce Predictor 74%，多源确认 90/100，20d/60d historical support 为 weak。",
               "scenario": "bounce_path"
             },
@@ -22076,7 +22562,7 @@
               "confidence": "high",
               "expected_horizon": "20d-60d",
               "label": "历史均值情景",
-              "probability": 0.2521,
+              "probability": 0.2532,
               "reason": "历史相似样本质量 high，样本数 20，中期支持 weak。",
               "scenario": "analog_average_path"
             },
@@ -22092,7 +22578,7 @@
               "confidence": "high",
               "expected_horizon": "3d-20d",
               "label": "综合期望情景",
-              "probability": 0.1201,
+              "probability": 0.1188,
               "reason": "综合期望用于平衡反抽、失败反抽、历史均值和数据不完整带来的不确定性。",
               "scenario": "expected_path"
             }
@@ -22104,27 +22590,27 @@
             "confidence": "high",
             "expected_horizon": "10d-20d",
             "label": "反抽情景",
-            "probability": 0.407,
+            "probability": 0.4072,
             "reason": "Bounce Predictor 74%，多源确认 90/100，20d/60d historical support 为 weak。",
             "scenario": "bounce_path"
           },
           "primary_scenario": "bounce_path",
-          "primary_secondary_gap": 0.1549,
+          "primary_secondary_gap": 0.154,
           "primary_to_secondary_switch_conditions": [
             "VIX 重新上升",
             "HYG/LQD 转弱",
             "IWM 跌破近期低点",
             "historical support 转弱"
           ],
-          "probability_gap": 0.1549,
+          "probability_gap": 0.154,
           "ranking_note": "V4 scenario ranking is derived from predictor probabilities, signal confirmation, historical analog distribution, data completeness and macro event risk. It is not a guaranteed forecast.",
           "risk_scenario": "bearish_path",
-          "scenario_probability": 0.407,
+          "scenario_probability": 0.4072,
           "secondary": {
             "confidence": "high",
             "expected_horizon": "20d-60d",
             "label": "历史均值情景",
-            "probability": 0.2521,
+            "probability": 0.2532,
             "reason": "历史相似样本质量 high，样本数 20，中期支持 weak。",
             "scenario": "analog_average_path"
           },
@@ -22145,10 +22631,10 @@
           }
         },
         "scenario_weights": {
-          "base_scenario": 0.1201,
+          "base_scenario": 0.1188,
           "bearish_scenario": 0.2208,
-          "bounce_scenario": 0.407,
-          "historical_analog_average": 0.2521
+          "bounce_scenario": 0.4072,
+          "historical_analog_average": 0.2532
         },
         "signal_agreement": {
           "agreement_level": "strong",
@@ -22279,10 +22765,10 @@
         "trend_reversal_probability": 0.28456949892335187
       },
       "QQQ": {
-        "analog_path_weight": 0.2194,
-        "base_path_weight": 0.1562,
+        "analog_path_weight": 0.2206,
+        "base_path_weight": 0.1548,
         "bearish_path_weight": 0.259,
-        "bounce_path_weight": 0.3654,
+        "bounce_path_weight": 0.3655,
         "bounce_probability": 0.38471703,
         "current_integrated_judgment": "QQQ 当前 edge 状态：MODERATE_EDGE。最大概率路径是“反抽情景”(37%)，第二路径是“失败反抽情景”(26%)，差距 11%。多源确认分数 80/100，模型可信度 79/100。可以观察主路径，但仍需按失效条件动态切换。",
         "current_price": 721.34002686,
@@ -22702,7 +23188,7 @@
           "components": {
             "analog_support": 0.45,
             "breadth_quality": 1.0,
-            "data_completeness": 0.88,
+            "data_completeness": 0.9,
             "predictor_consistency": 0.7493000000000001,
             "prior_confidence": 0.68,
             "signal_confirmation": 0.8
@@ -22723,10 +23209,10 @@
           "基准情景：使用相似样本平均路径；所有路径都是概率情景，不是确定预测。"
         ],
         "path_weight_model": {
-          "analog_path_weight": 0.2194,
-          "base_path_weight": 0.1562,
+          "analog_path_weight": 0.2206,
+          "base_path_weight": 0.1548,
           "bearish_path_weight": 0.259,
-          "bounce_path_weight": 0.3654,
+          "bounce_path_weight": 0.3655,
           "low_confidence_simulation": false,
           "simulation_confidence_level": "high",
           "weight_factors": {
@@ -24269,14 +24755,14 @@
           {
             "name": "Base case",
             "name_cn": "基准情景",
-            "probability_weight": 0.1562,
+            "probability_weight": 0.1548,
             "return_20d": -0.0097021099671255,
             "summary_cn": "按最相似历史样本的平均路径推演。"
           },
           {
             "name": "Bounce case",
             "name_cn": "反弹情景",
-            "probability_weight": 0.3654,
+            "probability_weight": 0.3655,
             "return_20d": 0.035730326553365985,
             "summary_cn": "如果 Alpha v1 信号继续有效，路径更接近历史上较好的反抽样本。"
           },
@@ -24290,7 +24776,7 @@
           {
             "name": "Historical analog case",
             "name_cn": "历史相似情景",
-            "probability_weight": 0.2194,
+            "probability_weight": 0.2206,
             "return_20d": -0.0097021099671255,
             "summary_cn": "只看最相似历史样本后的实际表现，不做确定性预测。"
           }
@@ -24301,7 +24787,7 @@
               "confidence": "high",
               "expected_horizon": "10d-20d",
               "label": "反抽情景",
-              "probability": 0.3654,
+              "probability": 0.3655,
               "reason": "Bounce Predictor 60%，多源确认 80/100，20d/60d historical support 为 weak。",
               "scenario": "bounce_path"
             },
@@ -24317,7 +24803,7 @@
               "confidence": "high",
               "expected_horizon": "20d-60d",
               "label": "历史均值情景",
-              "probability": 0.2194,
+              "probability": 0.2206,
               "reason": "历史相似样本质量 high，样本数 20，中期支持 weak。",
               "scenario": "analog_average_path"
             },
@@ -24325,7 +24811,7 @@
               "confidence": "high",
               "expected_horizon": "3d-20d",
               "label": "综合期望情景",
-              "probability": 0.1562,
+              "probability": 0.1548,
               "reason": "综合期望用于平衡反抽、失败反抽、历史均值和数据不完整带来的不确定性。",
               "scenario": "expected_path"
             }
@@ -24337,22 +24823,22 @@
             "confidence": "high",
             "expected_horizon": "10d-20d",
             "label": "反抽情景",
-            "probability": 0.3654,
+            "probability": 0.3655,
             "reason": "Bounce Predictor 60%，多源确认 80/100，20d/60d historical support 为 weak。",
             "scenario": "bounce_path"
           },
           "primary_scenario": "bounce_path",
-          "primary_secondary_gap": 0.1064,
+          "primary_secondary_gap": 0.1065,
           "primary_to_secondary_switch_conditions": [
             "VIX 重新上升",
             "HYG/LQD 转弱",
             "QQQ 跌破近期低点",
             "historical support 转弱"
           ],
-          "probability_gap": 0.1064,
+          "probability_gap": 0.1065,
           "ranking_note": "V4 scenario ranking is derived from predictor probabilities, signal confirmation, historical analog distribution, data completeness and macro event risk. It is not a guaranteed forecast.",
           "risk_scenario": "bearish_path",
-          "scenario_probability": 0.3654,
+          "scenario_probability": 0.3655,
           "secondary": {
             "confidence": "high",
             "expected_horizon": "3d-10d",
@@ -24372,16 +24858,16 @@
             "confidence": "high",
             "expected_horizon": "20d-60d",
             "label": "历史均值情景",
-            "probability": 0.2194,
+            "probability": 0.2206,
             "reason": "历史相似样本质量 high，样本数 20，中期支持 weak。",
             "scenario": "analog_average_path"
           }
         },
         "scenario_weights": {
-          "base_scenario": 0.1562,
+          "base_scenario": 0.1548,
           "bearish_scenario": 0.259,
-          "bounce_scenario": 0.3654,
-          "historical_analog_average": 0.2194
+          "bounce_scenario": 0.3655,
+          "historical_analog_average": 0.2206
         },
         "signal_agreement": {
           "agreement_level": "mixed",
@@ -24513,10 +24999,10 @@
         "trend_reversal_probability": 0.2629852193517149
       },
       "SPY": {
-        "analog_path_weight": 0.2684,
-        "base_path_weight": 0.1199,
+        "analog_path_weight": 0.2695,
+        "base_path_weight": 0.1186,
         "bearish_path_weight": 0.1967,
-        "bounce_path_weight": 0.415,
+        "bounce_path_weight": 0.4151,
         "bounce_probability": 0.59293002,
         "current_integrated_judgment": "SPY 当前 edge 状态：MODERATE_EDGE。最大概率路径是“反抽情景”(42%)，第二路径是“历史均值情景”(27%)，差距 15%。多源确认分数 89/100，模型可信度 83/100。可以观察主路径，但仍需按失效条件动态切换。",
         "current_price": 741.75,
@@ -24933,7 +25419,7 @@
           "components": {
             "analog_support": 0.7,
             "breadth_quality": 1.0,
-            "data_completeness": 0.88,
+            "data_completeness": 0.9,
             "predictor_consistency": 0.4599,
             "prior_confidence": 0.78,
             "signal_confirmation": 0.89
@@ -24954,10 +25440,10 @@
           "基准情景：使用相似样本平均路径；所有路径都是概率情景，不是确定预测。"
         ],
         "path_weight_model": {
-          "analog_path_weight": 0.2684,
-          "base_path_weight": 0.1199,
+          "analog_path_weight": 0.2695,
+          "base_path_weight": 0.1186,
           "bearish_path_weight": 0.1967,
-          "bounce_path_weight": 0.415,
+          "bounce_path_weight": 0.4151,
           "low_confidence_simulation": false,
           "simulation_confidence_level": "high",
           "weight_factors": {
@@ -26499,14 +26985,14 @@
           {
             "name": "Base case",
             "name_cn": "基准情景",
-            "probability_weight": 0.1199,
+            "probability_weight": 0.1186,
             "return_20d": 0.02000877398698462,
             "summary_cn": "按最相似历史样本的平均路径推演。"
           },
           {
             "name": "Bounce case",
             "name_cn": "反弹情景",
-            "probability_weight": 0.415,
+            "probability_weight": 0.4151,
             "return_20d": 0.04904937115556929,
             "summary_cn": "如果 Alpha v1 信号继续有效，路径更接近历史上较好的反抽样本。"
           },
@@ -26520,7 +27006,7 @@
           {
             "name": "Historical analog case",
             "name_cn": "历史相似情景",
-            "probability_weight": 0.2684,
+            "probability_weight": 0.2695,
             "return_20d": 0.02000877398698462,
             "summary_cn": "只看最相似历史样本后的实际表现，不做确定性预测。"
           }
@@ -26531,7 +27017,7 @@
               "confidence": "high",
               "expected_horizon": "10d-20d",
               "label": "反抽情景",
-              "probability": 0.415,
+              "probability": 0.4151,
               "reason": "Bounce Predictor 75%，多源确认 89/100，20d/60d historical support 为 supportive。",
               "scenario": "bounce_path"
             },
@@ -26539,7 +27025,7 @@
               "confidence": "high",
               "expected_horizon": "20d-60d",
               "label": "历史均值情景",
-              "probability": 0.2684,
+              "probability": 0.2695,
               "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。",
               "scenario": "analog_average_path"
             },
@@ -26555,7 +27041,7 @@
               "confidence": "high",
               "expected_horizon": "3d-20d",
               "label": "综合期望情景",
-              "probability": 0.1199,
+              "probability": 0.1186,
               "reason": "综合期望用于平衡反抽、失败反抽、历史均值和数据不完整带来的不确定性。",
               "scenario": "expected_path"
             }
@@ -26567,27 +27053,27 @@
             "confidence": "high",
             "expected_horizon": "10d-20d",
             "label": "反抽情景",
-            "probability": 0.415,
+            "probability": 0.4151,
             "reason": "Bounce Predictor 75%，多源确认 89/100，20d/60d historical support 为 supportive。",
             "scenario": "bounce_path"
           },
           "primary_scenario": "bounce_path",
-          "primary_secondary_gap": 0.1466,
+          "primary_secondary_gap": 0.1456,
           "primary_to_secondary_switch_conditions": [
             "VIX 重新上升",
             "HYG/LQD 转弱",
             "SPY 跌破近期低点",
             "historical support 转弱"
           ],
-          "probability_gap": 0.1466,
+          "probability_gap": 0.1456,
           "ranking_note": "V4 scenario ranking is derived from predictor probabilities, signal confirmation, historical analog distribution, data completeness and macro event risk. It is not a guaranteed forecast.",
           "risk_scenario": "bearish_path",
-          "scenario_probability": 0.415,
+          "scenario_probability": 0.4151,
           "secondary": {
             "confidence": "high",
             "expected_horizon": "20d-60d",
             "label": "历史均值情景",
-            "probability": 0.2684,
+            "probability": 0.2695,
             "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。",
             "scenario": "analog_average_path"
           },
@@ -26608,10 +27094,10 @@
           }
         },
         "scenario_weights": {
-          "base_scenario": 0.1199,
+          "base_scenario": 0.1186,
           "bearish_scenario": 0.1967,
-          "bounce_scenario": 0.415,
-          "historical_analog_average": 0.2684
+          "bounce_scenario": 0.4151,
+          "historical_analog_average": 0.2695
         },
         "signal_agreement": {
           "agreement_level": "strong",
