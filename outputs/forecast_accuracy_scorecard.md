@@ -1,11 +1,11 @@
 # Forecast Accuracy Scorecard
 
-Generated at: `2026-06-14T13:35:31.619321+00:00`
+Generated at: `2026-06-14T15:06:01.249488+00:00`
 
 ## Sample Counts
 
-- total_forecasts: `4`
-- pending_forecasts: `4`
+- total_forecasts: `8`
+- pending_forecasts: `8`
 - completed_3d: `0`
 - completed_5d: `0`
 - completed_10d: `0`
