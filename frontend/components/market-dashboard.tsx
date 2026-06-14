@@ -1,1520 +1,1127 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import type { MouseEvent } from "react";
 import type {
-  BreadthStatus,
-  DataQualityReport,
-  FlowPositioningStatus,
-  ForecastAccuracyScorecard,
   HistoricalAnalogCase,
-  OptionsStatus,
   PredictionDashboard,
+  ScenarioRankingItem,
   SimulatedSymbolPaths,
 } from "../lib/api";
 
 const SYMBOL_ORDER = ["SPY", "QQQ", "IWM", "DIA"];
 const HORIZON_ORDER = ["3d", "5d", "10d", "20d", "60d"];
 
-const stateText: Record<string, string> = {
-  risk_on: "风险偏好",
-  risk_off: "风险偏弱",
-  oversold_bounce: "超跌反抽",
-  failed_bounce_risk: "反抽失败风险",
-  downside_continuation: "下跌延续",
-  sideways: "震荡观察",
-  recovery: "修复中",
-  panic: "恐慌压力",
-  no_edge: "暂无优势",
+const SCENARIO_LABELS: Record<string, string> = {
+  bounce_path: "反抽情景",
+  bearish_path: "失败反抽风险",
+  expected_path: "综合期望路径",
+  analog_average_path: "历史均值情景",
 };
 
-const supportText: Record<string, string> = {
-  supportive: "支持",
-  weak_or_conflicting: "偏弱/冲突",
-  weak: "偏弱",
-  neutral: "中性",
-  low_sample: "样本少",
+const SCENARIO_STROKES: Record<string, string> = {
+  historical_price: "#d7e4e1",
+  expected_path: "#38bdf8",
+  bounce_path: "#22c55e",
+  bearish_path: "#f87171",
+  analog_average_path: "#f59e0b",
 };
 
-const categoryText: Record<string, string> = {
-  price: "价格",
-  volatility: "波动率",
-  credit: "信用",
-  rates: "利率",
-  liquidity: "流动性",
-  breadth: "市场宽度",
-  options: "期权",
-  macro: "宏观",
-  flow: "资金流",
-  market_structure: "市场结构",
+const SCENARIO_NAMES: Record<string, string> = {
+  historical_price: "历史价格",
+  expected_path: "综合期望",
+  bounce_path: "反抽情景",
+  bearish_path: "风险路径",
+  analog_average_path: "历史均值",
 };
 
-const predictorText: Record<string, string> = {
-  bounce_predictor: "反抽",
-  downside_continuation_predictor: "继续下跌",
-  trend_reversal_predictor: "修复/反转",
-  risk_expansion_predictor: "风险扩散",
-};
+type PathSeriesKey =
+  | "historical_price"
+  | "expected_path"
+  | "bounce_path"
+  | "bearish_path"
+  | "analog_average_path";
 
-const factorText: Record<string, string> = {
-  bounce_probability: "反抽概率",
-  failed_bounce_risk: "失败反抽风险",
-  signal_agreement: "信号一致性",
-  historical_analog_support: "历史相似支持",
-  credit_stability: "信用稳定",
-  volatility_reversal: "波动率回落",
-  breadth_support: "宽度支持",
-  news_risk: "新闻风险",
-  macro_event_risk: "宏观事件风险",
-  rates_pressure: "利率压力",
-  data_completeness: "数据完整度",
-};
+type TooltipState = {
+  index: number;
+  left: number;
+  top: number;
+} | null;
 
-function pct(value: number | null | undefined, digits = 0) {
-  if (value == null || Number.isNaN(value)) return "暂无";
-  return `${(value * 100).toFixed(digits)}%`;
+type AnyRecord = Record<string, unknown>;
+
+function isRecord(value: unknown): value is AnyRecord {
+  return Boolean(value) && typeof value === "object" && !Array.isArray(value);
 }
 
-function price(value: number | null | undefined) {
-  if (value == null || Number.isNaN(value)) return "暂无";
-  return value.toLocaleString("zh-CN", { maximumFractionDigits: 2 });
+function asRecord(value: unknown): AnyRecord {
+  return isRecord(value) ? value : {};
 }
 
-function displayTimestamp(value: string | null | undefined) {
-  if (!value) return "暂无";
-  const normalized = value
-    .replace("T", " ")
-    .replace(/\.\d+/, "")
-    .replace(/Z$/, "")
-    .replace(/\+00:00$/, "")
-    .trim();
-  return `${normalized} UTC`;
+function asStringArray(value: unknown): string[] {
+  return Array.isArray(value) ? value.filter((item): item is string => typeof item === "string") : [];
 }
 
-function dashboardGeneratedAt(dashboard: PredictionDashboard) {
-  return dashboard.data_quality_report?.generated_at
-    ?? dashboard.market_intelligence_v3?.generated_at
-    ?? dashboard.market_intelligence_v2?.generated_at
-    ?? dashboard.as_of
-    ?? "";
-}
-
-function publicAssetPath(filename: string) {
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-  return `${basePath}/${filename}`;
-}
-
-function signedPct(value: number | null | undefined, digits = 1) {
-  if (value == null || Number.isNaN(value)) return "暂无";
-  const formatted = `${(value * 100).toFixed(digits)}%`;
-  return value > 0 ? `+${formatted}` : formatted;
-}
-
-function stateCn(value: string | undefined) {
-  return stateText[value ?? ""] ?? value ?? "未知";
-}
-
-function supportCn(value: string | undefined) {
-  return supportText[value ?? ""] ?? value ?? "中性";
-}
-
-function confidenceCn(value: string | undefined) {
-  if (value === "high") return "高";
-  if (value === "medium") return "中";
-  if (value === "low") return "低";
-  return "未知";
-}
-
-function statusCn(value: string | undefined) {
-  if (value === "available") return "可用";
-  if (value === "partial") return "部分可用";
-  if (value === "proxy") return "代理可用";
-  if (value === "fallback") return "备用/规则";
-  if (value === "missing") return "缺失";
-  if (value === "stale") return "过期";
-  if (value === "rate_limited") return "限速";
-  if (value === "not_available") return "未接入";
-  return value ?? "未知";
-}
-
-function breadthCoverageText(value: string | undefined, isTrue?: boolean, isProxy?: boolean) {
-  if (isTrue) return "true";
-  if (isProxy || value === "proxy") return "proxy";
-  if (value === "available" || value === "partial" || value === "stale") return "true";
-  return "missing";
-}
-
-function scorePct(value: number | null | undefined) {
-  if (value == null || Number.isNaN(value)) return "暂无";
-  return `${value.toFixed(0)}/100`;
-}
-
-function num(value: unknown) {
+function asNumber(value: unknown): number | null {
   return typeof value === "number" && Number.isFinite(value) ? value : null;
 }
 
-function safeRecord(value: unknown): Record<string, unknown> {
-  return value && typeof value === "object" && !Array.isArray(value) ? value as Record<string, unknown> : {};
+function formatPrice(value: unknown): string {
+  const n = asNumber(value);
+  return n === null ? "数据缺失" : n.toFixed(2);
 }
 
-function bestReplayHorizon(spread: Record<string, unknown>) {
-  return Object.entries(spread)
-    .map(([horizon, value]) => ({ horizon, value: typeof value === "number" ? value : Number.NEGATIVE_INFINITY }))
-    .sort((left, right) => right.value - left.value)[0]?.horizon ?? "";
+function formatPercent(value: unknown, digits = 0): string {
+  const n = asNumber(value);
+  return n === null ? "数据缺失" : `${(n * 100).toFixed(digits)}%`;
 }
 
-function breadthImpactText(status: BreadthStatus | undefined, data: SimulatedSymbolPaths | undefined) {
-  if (!status || !data) return "暂无 breadth 数据。";
-  const item = status.universes?.[data.symbol];
-  if (!item) return `${data.symbol} 暂无 breadth 数据。`;
-  const confirmation = item.scores?.breadth_confirmation_score ?? 0;
-  const conflict = item.scores?.breadth_conflict_score ?? 0;
-  const above20 = item.metrics?.percent_above_20d;
-  const change20 = item.metrics?.percent_above_20d_change_5d;
-  const low20 = item.metrics?.new_lows_20d;
-  if (confirmation >= 65 && confirmation >= conflict) {
-    return `${data.symbol} 当前主路径获得 breadth 支持：20d 上方比例 ${pct(above20)}，5d 宽度变化 ${signedPct(change20)}，20d 新低 ${low20 ?? "暂无"}。`;
+function formatSignedPercent(value: unknown, digits = 1): string {
+  const n = asNumber(value);
+  if (n === null) return "数据缺失";
+  const sign = n > 0 ? "+" : "";
+  return `${sign}${(n * 100).toFixed(digits)}%`;
+}
+
+function formatScore(value: unknown): string {
+  const n = asNumber(value);
+  return n === null ? "数据缺失" : `${Math.round(n)}/100`;
+}
+
+function formatGap(value: unknown): string {
+  const n = asNumber(value);
+  return n === null ? "数据缺失" : `${(n * 100).toFixed(1)} 个百分点`;
+}
+
+function shortDate(value: string | null | undefined): string {
+  if (!value) return "数据缺失";
+  return value.slice(0, 10);
+}
+
+function cnScenario(value: string | undefined): string {
+  if (!value) return "数据缺失";
+  return SCENARIO_LABELS[value] ?? value;
+}
+
+function cnEdgeStatus(value: string | undefined): string {
+  const map: Record<string, string> = {
+    STRONG_EDGE: "强预测优势",
+    MODERATE_EDGE: "中等预测优势",
+    WEAK_EDGE: "弱预测优势",
+    NO_EDGE: "暂无预测优势",
+    RISK_WARNING: "风险警报",
+  };
+  return value ? map[value] ?? value : "数据缺失";
+}
+
+function cnValidationStatus(value: string | undefined): string {
+  const map: Record<string, string> = {
+    not_yet_validated: "尚未验证",
+    insufficient_forward_samples: "前向样本不足",
+    insufficient_forward_evidence: "前向证据不足",
+    historical_only_not_validated: "仅历史证据",
+    promotion_candidate: "候选升级",
+    active_model: "当前基准模型",
+  };
+  return value ? map[value] ?? value : "尚未验证";
+}
+
+function badgeClass(status: string | undefined): string {
+  const normalized = (status ?? "").toLowerCase();
+  if (normalized.includes("strong_edge") || normalized.includes("support") || normalized.includes("active_model")) {
+    return "border-emerald-400/35 bg-emerald-400/10 text-emerald-200";
   }
-  if (conflict >= 55) {
-    return `${data.symbol} 当前存在 breadth 冲突：成分股参与不足或新低扩张，反抽更容易切到失败反抽/震荡路径。`;
+  if (normalized.includes("moderate") || normalized.includes("mixed") || normalized.includes("candidate")) {
+    return "border-cyan-400/35 bg-cyan-400/10 text-cyan-200";
   }
-  return `${data.symbol} breadth 目前偏中性：可以辅助判断，但不足以单独提高主路径置信度。`;
-}
-
-function resonanceCn(value: string | undefined) {
-  if (value === "aligned") return "内部共振";
-  if (value === "mixed") return "部分共振";
-  if (value === "surface_only") return "指数表面强";
-  if (value === "weak") return "内部未共振";
-  return value ?? "未知";
-}
-
-function edgeCn(value: string | undefined) {
-  if (value === "NO_EDGE") return "无优势";
-  if (value === "WEAK_EDGE") return "弱优势";
-  if (value === "MODERATE_EDGE") return "中等优势";
-  if (value === "STRONG_EDGE") return "强优势";
-  if (value === "RISK_WARNING") return "风险预警";
-  return value ?? "未知";
-}
-
-function agreementCn(value: string | undefined) {
-  if (value === "strong") return "强一致";
-  if (value === "mixed") return "有冲突";
-  if (value === "weak") return "弱一致";
-  return value ?? "未知";
-}
-
-function confirmationCn(value: string | undefined) {
-  if (value === "strong") return "强确认";
-  if (value === "mixed") return "混合确认";
-  if (value === "weak") return "弱确认";
-  return value ?? "未知";
-}
-
-function strongestScenario(symbolData: SimulatedSymbolPaths | undefined) {
-  if (!symbolData) return "暂无";
-  if (symbolData.scenario_ranking?.primary?.label) return symbolData.scenario_ranking.primary.label;
-  const cards = [...symbolData.scenario_cards].sort((left, right) => right.probability_weight - left.probability_weight);
-  return cards[0]?.name_cn ?? "暂无";
-}
-
-function scenarioRankLabel(rank: number | undefined) {
-  if (rank === 1) return "最可能";
-  if (rank === 2) return "第二可能";
-  if (rank === 3) return "风险路径";
-  return "";
-}
-
-function scenarioRankingFor(data: SimulatedSymbolPaths, scenario: string) {
-  const ranking = data.scenario_ranking;
-  const items = ranking?.all_scenarios ?? [ranking?.primary, ranking?.secondary, ranking?.tertiary].filter(Boolean);
-  const index = items.findIndex((item) => item?.scenario === scenario);
-  const item = index >= 0 ? items[index] : undefined;
-  return item ? { item, rank: index + 1 } : { item: undefined, rank: undefined };
-}
-
-function scenarioProbability(data: SimulatedSymbolPaths, scenario: string) {
-  const ranked = scenarioRankingFor(data, scenario).item;
-  if (ranked?.probability != null) return ranked.probability;
-  const weights = data.scenario_weights ?? {};
-  if (scenario === "expected_path") return data.base_path_weight ?? data.path_weight_model?.base_path_weight ?? weights.base_scenario;
-  if (scenario === "bounce_path") return data.bounce_path_weight ?? data.path_weight_model?.bounce_path_weight ?? weights.bounce_scenario;
-  if (scenario === "bearish_path") return data.bearish_path_weight ?? data.path_weight_model?.bearish_path_weight ?? weights.bearish_scenario;
-  if (scenario === "analog_average_path") return data.analog_path_weight ?? data.path_weight_model?.analog_path_weight ?? weights.historical_analog_average;
-  return undefined;
-}
-
-function scenarioDisplayLabel(data: SimulatedSymbolPaths, scenario: string, fallback: string) {
-  const { item, rank } = scenarioRankingFor(data, scenario);
-  const rankLabel = scenarioRankLabel(rank);
-  const probability = scenarioProbability(data, scenario);
-  const label = item?.label ?? fallback;
-  return `${label}${rankLabel ? `｜${rankLabel}` : ""}${probability != null ? ` ${pct(probability)}` : ""}`;
-}
-
-function scenarioStrokeWidth(data: SimulatedSymbolPaths, scenario: string) {
-  const { rank } = scenarioRankingFor(data, scenario);
-  if (data.scenario_ranking?.close_call) {
-    if (rank === 1 || rank === 2) return 2.8;
-    if (rank === 3) return 2.1;
-    return 1.8;
+  if (normalized.includes("weak") || normalized.includes("not_yet") || normalized.includes("insufficient")) {
+    return "border-amber-400/35 bg-amber-400/10 text-amber-200";
   }
-  if (rank === 1) return 3.8;
-  if (rank === 2) return 2.8;
-  if (rank === 3) return 2;
-  return 1.6;
+  if (normalized.includes("risk") || normalized.includes("conflict") || normalized.includes("failed")) {
+    return "border-rose-400/35 bg-rose-400/10 text-rose-200";
+  }
+  return "border-white/15 bg-white/5 text-slate-300";
 }
 
-function scenarioGapText(data: SimulatedSymbolPaths) {
-  const gap = data.scenario_ranking?.primary_secondary_gap;
-  if (gap == null) return "暂无";
-  const level = gap < 0.08 ? "路径分歧" : gap < 0.16 ? "中等优势" : "优势较明显";
-  return `${(gap * 100).toFixed(0)} 个百分点，${level}`;
+function getSymbols(dashboard: PredictionDashboard): Record<string, SimulatedSymbolPaths> {
+  return dashboard.simulated_paths?.symbols ?? {};
 }
 
-function primarySwitchText(data: SimulatedSymbolPaths) {
-  return data.scenario_ranking?.primary_to_secondary_switch_conditions?.slice(0, 4).join(" / ") || data.risk_invalidation_conditions.slice(0, 4).join(" / ") || "暂无";
+function getSymbolList(dashboard: PredictionDashboard): SimulatedSymbolPaths[] {
+  const symbols = getSymbols(dashboard);
+  return SYMBOL_ORDER.map((symbol) => symbols[symbol]).filter(Boolean);
 }
 
-function strongestPredictor(data: SimulatedSymbolPaths | undefined) {
-  const entries = Object.entries(data?.predictors_v4 ?? data?.predictors ?? {});
-  if (!entries.length) return null;
-  return entries.sort(([, left], [, right]) => right.probability - left.probability)[0];
+function getEdgeStatus(symbolData: SimulatedSymbolPaths | undefined): string {
+  return symbolData?.market_edge_status?.market_edge_status ?? "NO_EDGE";
 }
 
-function strongestPredictorText(data: SimulatedSymbolPaths | undefined) {
-  const winner = strongestPredictor(data);
-  if (!winner) return "暂无";
-  return `${predictorText[winner[0]] ?? winner[0]} ${pct(winner[1].probability)}`;
+function getConfirmationScore(symbolData: SimulatedSymbolPaths | undefined): number | null {
+  return (
+    asNumber(symbolData?.signal_confirmation?.signal_confirmation_score) ??
+    asNumber(symbolData?.signal_confirmation?.confirmation_score) ??
+    asNumber(symbolData?.signal_confirmation_score)
+  );
 }
 
-function plainAction(data: SimulatedSymbolPaths) {
-  const edge = data.market_edge_status?.market_edge_status;
-  const winner = strongestPredictor(data)?.[0];
-  if (edge === "NO_EDGE" || edge === "WEAK_EDGE") return "先等，不要强行下结论";
-  if (winner === "bounce_predictor") return "重点观察反抽是否延续";
-  if (winner === "downside_continuation_predictor") return "防继续下跌，别急着抄底";
-  if (winner === "trend_reversal_predictor") return "观察修复能否站稳";
-  if (winner === "risk_expansion_predictor") return "先防风险扩散";
-  return "观察信号是否继续同向";
+function getConfidenceScore(symbolData: SimulatedSymbolPaths | undefined): number | null {
+  return asNumber(symbolData?.model_confidence?.confidence_score);
 }
 
-function plainDecision(data: SimulatedSymbolPaths) {
-  const state = stateCn(data.market_state);
-  const edge = edgeCn(data.market_edge_status?.market_edge_status);
-  const strongest = strongestPredictorText(data);
-  const fiveDay = data.prediction_horizons?.["5d"];
-  const twentyDay = data.prediction_horizons?.["20d"];
-  const fiveText = fiveDay ? `${fiveDay.expected_direction}，区间 ${signedPct(fiveDay.expected_return_range?.[0])} 到 ${signedPct(fiveDay.expected_return_range?.[1])}` : "暂无";
-  const twentyText = twentyDay ? `${twentyDay.expected_direction}，区间 ${signedPct(twentyDay.expected_return_range?.[0])} 到 ${signedPct(twentyDay.expected_return_range?.[1])}` : "暂无";
-  const action = plainAction(data);
-  const primary = data.scenario_ranking?.primary;
-  const secondary = data.scenario_ranking?.secondary;
-  const scenarioText = primary && secondary
-    ? `当前最大概率路径是“${primary.label}”，概率 ${pct(primary.probability)}；第二可能是“${secondary.label}”，概率 ${pct(secondary.probability)}；两者差距 ${scenarioGapText(data)}。如果 ${primarySwitchText(data)}，主路径可能失效并切换到风险路径。`
-    : "";
-  const confirmation = data.signal_confirmation ? `多源确认 ${data.signal_confirmation.confirmation_score}/100（${confirmationCn(data.signal_confirmation.confirmation_level)}）。` : "";
-  const noEdge = data.market_edge_status?.no_edge_note ? `${data.market_edge_status.no_edge_note} ` : "";
-  return `${data.symbol} 现在是“${state}”，今天的可用预测优势是“${edge}”。${noEdge}${scenarioText} ${confirmation}最强方向是 ${strongest}。5日看法：${fiveText}；20日看法：${twentyText}。大白话：${action}。这不是确定走势，也不用于下单。`;
+function getPrimary(symbolData: SimulatedSymbolPaths | undefined): ScenarioRankingItem | undefined {
+  return symbolData?.scenario_ranking?.primary;
 }
 
-function plainSummary(symbolData: SimulatedSymbolPaths | undefined) {
-  if (!symbolData) return "当前没有可用数据。";
-  if (symbolData.current_integrated_judgment) return symbolData.current_integrated_judgment;
-  const state = stateCn(symbolData.market_state);
-  const scenario = strongestScenario(symbolData);
-  return `${symbolData.symbol} 当前状态偏向“${state}”，最强情景是“${scenario}”。这是概率情景，不是确定预测。`;
+function getSecondary(symbolData: SimulatedSymbolPaths | undefined): ScenarioRankingItem | undefined {
+  return symbolData?.scenario_ranking?.secondary;
 }
 
-function svgPath(values: Array<number | null>, minY: number, maxY: number, width: number, height: number, pad: number) {
-  const step = (width - pad * 2) / Math.max(values.length - 1, 1);
-  const scaleY = (value: number) => height - pad - ((value - minY) / Math.max(maxY - minY, 1)) * (height - pad * 2);
+function getTertiary(symbolData: SimulatedSymbolPaths | undefined): ScenarioRankingItem | undefined {
+  return symbolData?.scenario_ranking?.tertiary;
+}
+
+function getScenarioProbability(symbolData: SimulatedSymbolPaths, scenario: string): number | null {
+  const ranking = symbolData.scenario_ranking;
+  const item = ranking?.all_scenarios?.find((entry) => entry.scenario === scenario);
+  return (
+    asNumber(item?.probability) ??
+    (ranking?.primary?.scenario === scenario ? asNumber(ranking.primary.probability) : null) ??
+    (ranking?.secondary?.scenario === scenario ? asNumber(ranking.secondary.probability) : null) ??
+    (ranking?.tertiary?.scenario === scenario ? asNumber(ranking.tertiary.probability) : null)
+  );
+}
+
+function getScenarioRank(symbolData: SimulatedSymbolPaths, scenario: string): string {
+  const ranking = symbolData.scenario_ranking;
+  if (ranking?.primary?.scenario === scenario) return "第一可能";
+  if (ranking?.secondary?.scenario === scenario) return "第二可能";
+  if (ranking?.tertiary?.scenario === scenario) return "风险路径";
+  return "参考路径";
+}
+
+function getLineWidth(symbolData: SimulatedSymbolPaths, scenario: PathSeriesKey): number {
+  if (scenario === "historical_price") return 2.6;
+  const closeCall = Boolean(symbolData.scenario_ranking?.close_call);
+  const ranking = symbolData.scenario_ranking;
+  if (ranking?.primary?.scenario === scenario) return closeCall ? 3.2 : 4.8;
+  if (ranking?.secondary?.scenario === scenario) return closeCall ? 3.0 : 3.2;
+  if (ranking?.tertiary?.scenario === scenario) return 2.2;
+  return 1.8;
+}
+
+function getSummarySentence(dashboard: PredictionDashboard, selected: SimulatedSymbolPaths | undefined): string {
+  if (!selected) return "当前没有可展示的预测数据。";
+  const symbols = getSymbolList(dashboard);
+  const supportive = symbols
+    .filter((item) => ["STRONG_EDGE", "MODERATE_EDGE"].includes(getEdgeStatus(item)))
+    .map((item) => item.symbol);
+  const conflicting = symbols
+    .filter((item) => getEdgeStatus(item) === "RISK_WARNING" || item.scenario_ranking?.close_call)
+    .map((item) => item.symbol);
+  const primary = getPrimary(selected);
+  const secondary = getSecondary(selected);
+  const validated = getValidationStandards(dashboard);
+  const validation = cnValidationStatus(validated.highPrecisionStatus);
+  const supportText = supportive.length ? `${supportive.join(" / ")} 的路径支持较强` : "当前强支持指数有限";
+  const conflictText = conflicting.length ? `${conflicting.join(" / ")} 存在分歧或风险提示` : "暂未出现明显路径分歧";
+
+  return `当前主路径偏向${primary?.label ?? cnScenario(primary?.scenario)}，第二路径为${secondary?.label ?? cnScenario(secondary?.scenario)}。${supportText}，${conflictText}。模型状态：${validation}，仍以概率路径和前向验证为准。`;
+}
+
+function getValidationStandards(dashboard: PredictionDashboard) {
+  const leaderboard = asRecord(dashboard.model_leaderboard);
+  const standards = asRecord(leaderboard.validation_standards ?? asRecord(dashboard.model_promotion_status).validation_standards);
+  const highPrecision = asRecord(standards.high_precision_standard);
+  const stableAlpha = asRecord(standards.stable_alpha_standard);
+  const validated = asRecord(standards.validated_forecasting_system_standard);
+  const completed = asRecord(standards.forward_completed_samples_by_horizon);
+  return {
+    activeModel: String(leaderboard.active_model_version ?? asRecord(dashboard.model_promotion_status).active_model_version ?? "baseline_v1"),
+    highPrecisionStatus: String(highPrecision.status ?? "not_yet_validated"),
+    stableAlphaStatus: String(stableAlpha.status ?? "not_yet_validated"),
+    validatedStatus: String(validated.status ?? "not_yet_validated"),
+    completed,
+  };
+}
+
+function getModelList(dashboard: PredictionDashboard): AnyRecord[] {
+  const models = asRecord(dashboard.model_leaderboard).models;
+  return Array.isArray(models) ? models.slice(0, 5) : [];
+}
+
+function buildPath(values: Array<number | null | undefined>, xFor: (index: number) => number, yFor: (value: number) => number): string {
   let path = "";
+  let drawing = false;
   values.forEach((value, index) => {
-    if (value == null) return;
-    const x = pad + index * step;
-    const y = scaleY(value);
-    path += path ? ` L ${x.toFixed(2)} ${y.toFixed(2)}` : `M ${x.toFixed(2)} ${y.toFixed(2)}`;
+    if (typeof value !== "number" || !Number.isFinite(value)) {
+      drawing = false;
+      return;
+    }
+    const command = drawing ? "L" : "M";
+    path += `${command}${xFor(index).toFixed(2)},${yFor(value).toFixed(2)} `;
+    drawing = true;
   });
-  return path;
+  return path.trim();
 }
 
-function xForIndex(index: number, total: number, width: number, pad: number) {
-  const step = (width - pad * 2) / Math.max(total - 1, 1);
-  return pad + index * step;
+function buildArea(
+  upper: Array<number | null | undefined>,
+  lower: Array<number | null | undefined>,
+  xFor: (index: number) => number,
+  yFor: (value: number) => number,
+): string {
+  const top: string[] = [];
+  const bottom: string[] = [];
+  upper.forEach((value, index) => {
+    if (typeof value === "number" && Number.isFinite(value)) {
+      top.push(`${xFor(index).toFixed(2)},${yFor(value).toFixed(2)}`);
+    }
+  });
+  lower.forEach((value, index) => {
+    if (typeof value === "number" && Number.isFinite(value)) {
+      bottom.unshift(`${xFor(index).toFixed(2)},${yFor(value).toFixed(2)}`);
+    }
+  });
+  if (!top.length || !bottom.length) return "";
+  return `M${top.join(" L")} L${bottom.join(" L")} Z`;
 }
 
-function valueAt(values: Array<number | null>, index: number | null) {
-  if (index == null) return null;
-  const value = values[index];
-  return typeof value === "number" && Number.isFinite(value) ? value : null;
+function getChartDomain(symbolData: SimulatedSymbolPaths): [number, number] {
+  const values: number[] = [];
+  const paths = symbolData.paths;
+  ([
+    "historical_price",
+    "expected_path",
+    "bounce_path",
+    "bearish_path",
+    "analog_average_path",
+    "confidence_band_upper",
+    "confidence_band_lower",
+  ] as const).forEach((key) => {
+    paths[key]?.forEach((value) => {
+      if (typeof value === "number" && Number.isFinite(value)) values.push(value);
+    });
+  });
+  if (!values.length) return [0, 1];
+  const min = Math.min(...values);
+  const max = Math.max(...values);
+  const pad = Math.max((max - min) * 0.12, max * 0.005, 1);
+  return [min - pad, max + pad];
 }
 
-function PredictionChart({ data }: { data: SimulatedSymbolPaths }) {
-  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
-  const width = 760;
-  const height = 360;
-  const pad = 42;
-  const paths = data.paths;
-  const allValues = [
-    ...paths.historical_price,
-    ...paths.expected_path,
-    ...paths.bounce_path,
-    ...paths.bearish_path,
-    ...paths.analog_average_path,
-    ...paths.confidence_band_upper,
-    ...paths.confidence_band_lower,
-  ].filter((value): value is number => typeof value === "number" && Number.isFinite(value));
-  const minY = Math.min(...allValues) * 0.985;
-  const maxY = Math.max(...allValues) * 1.015;
-  const splitX = xForIndex(paths.split_index, paths.dates.length, width, pad);
-  const yForPrice = (value: number) => height - pad - ((value - minY) / Math.max(maxY - minY, 1)) * (height - pad * 2);
-  const historicalValues = paths.historical_price.filter((value): value is number => value != null);
-  const currentPrice = data.current_price ?? historicalValues[historicalValues.length - 1] ?? null;
-  const priceTicks = [maxY, (maxY + minY) / 2, minY];
-  const chartSeries = [
-    { key: "history", label: "历史价格", values: paths.historical_price, color: "#14211f" },
-    { key: "expected", scenario: "expected_path", label: scenarioDisplayLabel(data, "expected_path", "综合期望"), values: paths.expected_path, color: "#2563eb" },
-    { key: "bounce", scenario: "bounce_path", label: scenarioDisplayLabel(data, "bounce_path", "反抽情景"), values: paths.bounce_path, color: "#0f9f7a" },
-    { key: "bearish", scenario: "bearish_path", label: scenarioDisplayLabel(data, "bearish_path", "失败反抽"), values: paths.bearish_path, color: "#dc4a4a" },
-    { key: "analog", scenario: "analog_average_path", label: scenarioDisplayLabel(data, "analog_average_path", "历史均值"), values: paths.analog_average_path, color: "#f59e0b" },
-    { key: "upper", label: "上沿", values: paths.confidence_band_upper, color: "#64748b" },
-    { key: "lower", label: "下沿", values: paths.confidence_band_lower, color: "#64748b" },
-  ];
-  const hoverRows = (hoverIndex == null
-    ? []
-    : chartSeries
-        .map((item) => ({ ...item, value: valueAt(item.values, hoverIndex) }))
-        .filter((item) => item.value != null)) as Array<(typeof chartSeries)[number] & { value: number }>;
-  const hoverX = hoverIndex == null ? null : xForIndex(hoverIndex, paths.dates.length, width, pad);
-  const hoverPrimary = hoverRows[0]?.value ?? null;
-  const hoverY = hoverPrimary == null ? null : yForPrice(hoverPrimary);
-  const tooltipWidth = 280;
-  const tooltipHeight = Math.max(92, 48 + hoverRows.length * 22);
-  const tooltipX = hoverX == null ? 0 : Math.min(Math.max(hoverX + 12, pad), width - pad - tooltipWidth);
-  const tooltipY = hoverY == null ? pad : Math.min(Math.max(hoverY - tooltipHeight / 2, pad), height - pad - tooltipHeight);
-  const hoverDate = hoverIndex == null ? null : paths.dates[hoverIndex];
-  const hoverPhase = hoverIndex == null ? "" : hoverIndex <= paths.split_index ? "历史已发生" : "未来情景模拟";
-  const horizonIndexes = [3, 5, 10, 20, 60].map((days) => ({
-    days,
-    index: Math.min(paths.split_index + days, paths.dates.length - 1),
-  }));
+function getCurrentPrice(symbolData: SimulatedSymbolPaths): number | null {
+  const direct = asNumber(symbolData.current_price);
+  if (direct !== null) return direct;
+  const historical = symbolData.paths?.historical_price ?? [];
+  for (let i = historical.length - 1; i >= 0; i -= 1) {
+    const value = asNumber(historical[i]);
+    if (value !== null) return value;
+  }
+  return null;
+}
+
+function TerminalHeader({ dashboard }: { dashboard: PredictionDashboard }) {
+  return (
+    <header className="flex flex-col gap-4 border-b border-white/10 pb-5 lg:flex-row lg:items-end lg:justify-between">
+      <div>
+        <div className="text-xs uppercase tracking-[0.35em] text-cyan-300/75">Market Prediction Terminal</div>
+        <h1 className="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl">市场预测终端</h1>
+        <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-300">
+          展示大盘概率路径、情景排序、支持/冲突证据和前向验证状态。Alpha v1 仍是 Research Alpha Candidate，不是交易建议。
+        </p>
+      </div>
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+        <MiniStat label="最近更新" value={shortDate(dashboard.as_of ?? dashboard.overview?.as_of)} tone="cyan" />
+        <MiniStat
+          label="数据完整度"
+          value={formatScore(dashboard.data_quality_report?.summary?.data_completeness_score)}
+          tone="emerald"
+        />
+        <MiniStat label="当前模型" value={getValidationStandards(dashboard).activeModel} tone="slate" />
+      </div>
+    </header>
+  );
+}
+
+function MiniStat({ label, value, tone }: { label: string; value: string; tone: "cyan" | "emerald" | "slate" | "amber" }) {
+  const toneClass =
+    tone === "cyan"
+      ? "text-cyan-200"
+      : tone === "emerald"
+        ? "text-emerald-200"
+        : tone === "amber"
+          ? "text-amber-200"
+          : "text-slate-200";
+  return (
+    <div className="rounded-lg border border-white/10 bg-white/[0.04] px-4 py-3">
+      <div className="text-[11px] uppercase tracking-[0.18em] text-slate-500">{label}</div>
+      <div className={`mt-1 text-sm font-semibold ${toneClass}`}>{value}</div>
+    </div>
+  );
+}
+
+function ForecastSummary({ dashboard, selected }: { dashboard: PredictionDashboard; selected: SimulatedSymbolPaths | undefined }) {
+  const validation = getValidationStandards(dashboard);
+  const strongest = dashboard.overview?.strongest_symbol ?? selected?.symbol ?? "SPY";
+  const edgeStatus = getEdgeStatus(selected);
+  const confidence = getConfidenceScore(selected);
 
   return (
-    <section className="mt-5 rounded-lg border border-teal bg-white p-4 shadow-sm">
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-        <div>
-          <p className="text-xs uppercase text-teal">核心图表</p>
-          <h2 className="mt-1 text-xl font-semibold">过去走势 + 未来概率路径</h2>
-          <p className="mt-1 text-xs text-muted">鼠标放到图中任意一天，可以看到当天价格和各条模拟路径价格。</p>
+    <section className="grid gap-4 lg:grid-cols-[1.5fr_0.9fr_0.9fr]">
+      <div className="rounded-xl border border-cyan-400/25 bg-cyan-400/[0.06] p-5 shadow-2xl shadow-black/20">
+        <div className="text-xs uppercase tracking-[0.22em] text-cyan-200/80">Market Forecast Summary</div>
+        <h2 className="mt-2 text-2xl font-semibold text-white">今日核心判断</h2>
+        <p className="mt-3 text-sm leading-6 text-slate-200">{getSummarySentence(dashboard, selected)}</p>
+        <div className="mt-5 grid gap-3 sm:grid-cols-3">
+          <Metric label="今日 Edge" value={cnEdgeStatus(edgeStatus)} badge={edgeStatus} />
+          <Metric label="最强指数" value={strongest} />
+          <Metric label="模型可信度" value={formatScore(confidence)} />
         </div>
-        <p className="text-xs text-muted sm:text-right">竖虚线右侧是概率情景，不是保证会发生的预测。</p>
       </div>
-      <ScenarioRankingPanel data={data} />
-      <div className="mt-3 overflow-x-auto">
-        <svg
-          viewBox={`0 0 ${width} ${height}`}
-          className="h-[360px] min-w-[720px] w-full"
-          onMouseLeave={() => setHoverIndex(null)}
-        >
-          <rect x="0" y="0" width={width} height={height} rx="8" fill="#ffffff" />
-          {priceTicks.map((tick) => (
-            <g key={tick}>
-              <line x1={pad} x2={width - pad} y1={yForPrice(tick)} y2={yForPrice(tick)} stroke="#e5ece9" />
-              <text x={8} y={yForPrice(tick) + 4} fontSize="11" fill="#62706b">{price(tick)}</text>
-            </g>
-          ))}
-          {currentPrice != null ? (
-            <g>
-              <line x1={pad} x2={width - pad} y1={yForPrice(currentPrice)} y2={yForPrice(currentPrice)} stroke="#0f9f7a" strokeDasharray="2 4" />
-              <rect x={width - 94} y={yForPrice(currentPrice) - 13} width="86" height="22" rx="5" fill="#0f9f7a" />
-              <text x={width - 51} y={yForPrice(currentPrice) + 3} textAnchor="middle" fontSize="11" fill="#ffffff">现价 {price(currentPrice)}</text>
-            </g>
-          ) : null}
-          <line x1={splitX} x2={splitX} y1={pad} y2={height - pad} stroke="#14211f" strokeDasharray="4 4" />
-          {horizonIndexes.map(({ days, index }) => {
-            const x = xForIndex(index, paths.dates.length, width, pad);
-            return (
-              <g key={days}>
-                <line x1={x} x2={x} y1={pad} y2={height - pad} stroke="#d6dedb" strokeDasharray="3 6" />
-                <text x={x} y={height - 12} textAnchor="middle" fontSize="11" fill="#62706b">{days}日</text>
-              </g>
-            );
-          })}
-          <path d={svgPath(paths.confidence_band_upper, minY, maxY, width, height, pad)} fill="none" stroke="#94a3b8" strokeWidth="1.2" strokeDasharray="5 5" />
-          <path d={svgPath(paths.confidence_band_lower, minY, maxY, width, height, pad)} fill="none" stroke="#94a3b8" strokeWidth="1.2" strokeDasharray="5 5" />
-          <path d={svgPath(paths.historical_price, minY, maxY, width, height, pad)} fill="none" stroke="#14211f" strokeWidth="2.4" />
-          <path d={svgPath(paths.expected_path, minY, maxY, width, height, pad)} fill="none" stroke="#2563eb" strokeWidth={scenarioStrokeWidth(data, "expected_path")} />
-          <path d={svgPath(paths.bounce_path, minY, maxY, width, height, pad)} fill="none" stroke="#0f9f7a" strokeWidth={scenarioStrokeWidth(data, "bounce_path")} />
-          <path d={svgPath(paths.bearish_path, minY, maxY, width, height, pad)} fill="none" stroke="#dc4a4a" strokeWidth={scenarioStrokeWidth(data, "bearish_path")} />
-          <path d={svgPath(paths.analog_average_path, minY, maxY, width, height, pad)} fill="none" stroke="#f59e0b" strokeWidth={scenarioStrokeWidth(data, "analog_average_path")} />
-          <text x={pad} y={22} fontSize="12" fill="#62706b">历史价格</text>
-          <text x={splitX + 10} y={22} fontSize="12" fill="#62706b">模拟未来</text>
-          {paths.dates.map((date, index) => {
-            const x = xForIndex(index, paths.dates.length, width, pad);
-            const step = (width - pad * 2) / Math.max(paths.dates.length - 1, 1);
-            const titleRows = chartSeries
-              .map((item) => {
-                const rowValue = valueAt(item.values, index);
-                if (rowValue == null) return null;
-                const scenario = "scenario" in item ? item.scenario : undefined;
-                const ranked = scenario ? scenarioRankingFor(data, scenario) : { item: undefined, rank: undefined };
-                const expectedReturn = currentPrice ? `，预期收益 ${signedPct(rowValue / currentPrice - 1)}` : "";
-                const rankText = ranked.rank ? `，排名 ${ranked.rank}` : "";
-                const reason = ranked.item?.reason ? `，原因：${ranked.item.reason}` : "";
-                return `${item.label}: ${price(rowValue)}${expectedReturn}${rankText}${reason}`;
-              })
-              .filter(Boolean)
-              .join("\n");
-            return (
-              <rect
-                key={`${date}-${index}`}
-                x={x - step / 2}
-                y={pad}
-                width={Math.max(step, 4)}
-                height={height - pad * 2}
-                fill="transparent"
-                onMouseEnter={() => setHoverIndex(index)}
-                onMouseMove={() => setHoverIndex(index)}
-                onTouchStart={() => setHoverIndex(index)}
-              >
-                <title>{`${date}\n${index <= paths.split_index ? "历史已发生" : "未来情景模拟"}\n${titleRows}`}</title>
-              </rect>
-            );
-          })}
-          {hoverIndex != null && hoverX != null ? (
-            <g pointerEvents="none">
-              <line x1={hoverX} x2={hoverX} y1={pad} y2={height - pad} stroke="#0f766e" strokeWidth="1.2" strokeDasharray="3 3" />
-              {hoverRows.map((item) => (
-                <circle key={item.key} cx={hoverX} cy={yForPrice(item.value)} r="3.5" fill={item.color} stroke="#ffffff" strokeWidth="1.5" />
-              ))}
-              <rect x={tooltipX} y={tooltipY} width={tooltipWidth} height={tooltipHeight} rx="8" fill="#14211f" opacity="0.94" />
-              <text x={tooltipX + 12} y={tooltipY + 20} fontSize="12" fontWeight="700" fill="#ffffff">{hoverDate}</text>
-              <text x={tooltipX + 12} y={tooltipY + 37} fontSize="11" fill="#cbd5d1">{hoverPhase}</text>
-              {hoverRows.map((item, rowIndex) => (
-                <g key={item.key}>
-                  <circle cx={tooltipX + 13} cy={tooltipY + 60 + rowIndex * 22} r="3" fill={item.color} />
-                  <text x={tooltipX + 23} y={tooltipY + 64 + rowIndex * 22} fontSize="11" fill="#ffffff">
-                    {item.label}: {price(item.value)}{currentPrice ? ` / ${signedPct(item.value / currentPrice - 1)}` : ""}
-                  </text>
-                </g>
-              ))}
-            </g>
-          ) : null}
-        </svg>
+
+      <div className="rounded-xl border border-white/10 bg-[#101819] p-5">
+        <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Strongest Scenario</div>
+        <div className="mt-3 text-2xl font-semibold text-white">{getPrimary(selected)?.label ?? "数据缺失"}</div>
+        <div className="mt-2 text-4xl font-semibold text-emerald-300">{formatPercent(getPrimary(selected)?.probability, 1)}</div>
+        <p className="mt-3 text-sm leading-6 text-slate-400">{getPrimary(selected)?.reason ?? "当前没有可解释的主路径理由。"}</p>
       </div>
-      <div className="mt-3 grid grid-cols-2 gap-2 text-xs text-muted sm:grid-cols-5">
-        <span>黑线：历史价格</span>
-        <span className="text-blue-700">蓝线：{scenarioDisplayLabel(data, "expected_path", "综合期望")}</span>
-        <span className="text-teal">绿线：{scenarioDisplayLabel(data, "bounce_path", "反抽情景")}</span>
-        <span className="text-rose">红线：{scenarioDisplayLabel(data, "bearish_path", "失败反抽")}</span>
-        <span className="text-amber">黄线：{scenarioDisplayLabel(data, "analog_average_path", "历史均值")}</span>
+
+      <div className="rounded-xl border border-white/10 bg-[#101819] p-5">
+        <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Validation Status</div>
+        <div className="mt-3 flex flex-wrap gap-2">
+          <StatusBadge status={validation.highPrecisionStatus} label={`高精度：${cnValidationStatus(validation.highPrecisionStatus)}`} />
+          <StatusBadge status={validation.stableAlphaStatus} label={`稳定 Alpha：${cnValidationStatus(validation.stableAlphaStatus)}`} />
+          <StatusBadge status={validation.validatedStatus} label={`预测系统：${cnValidationStatus(validation.validatedStatus)}`} />
+        </div>
+        <p className="mt-4 text-sm leading-6 text-slate-400">
+          前向样本不足时，页面必须保持 not yet validated。当前系统用于预测验证，不用于下单或仓位决策。
+        </p>
       </div>
-      <ScenarioWeights data={data} />
-      <p className="mt-3 text-xs text-muted">
-        模拟路径基于当前信号和历史相似情景生成，是概率情景，不是保证会发生的预测。
-      </p>
     </section>
   );
 }
 
-function ScenarioRankingPanel({ data }: { data: SimulatedSymbolPaths }) {
-  const ranking = data.scenario_ranking;
-  if (!ranking) return null;
-  const items = [
-    ["第一可能", ranking.primary],
-    ["第二可能", ranking.secondary],
-    ["第三可能", ranking.tertiary],
-  ] as const;
+function Metric({ label, value, badge }: { label: string; value: string; badge?: string }) {
   return (
-    <div className="mt-4 rounded-lg border border-line bg-panel p-4">
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-        <div>
-          <p className="text-xs uppercase text-muted">Scenario Probability Ranking</p>
-          <h3 className="mt-1 text-base font-semibold">最可能路径排序</h3>
-          <p className="mt-1 text-sm text-muted">
-            当前主路径：<b className="text-ink">{ranking.primary.label} {pct(ranking.primary.probability)}</b>
-            {" "}；第二路径：<b className="text-ink">{ranking.secondary.label} {pct(ranking.secondary.probability)}</b>
-          </p>
-        </div>
-        <div className="rounded-md bg-white px-3 py-2 text-sm">
-          <p className="text-muted">路径差距</p>
-          <p className="font-semibold">{scenarioGapText(data)}</p>
-          {ranking.close_call ? <p className="mt-1 text-xs text-rose">路径分歧较大，不宜过度押注单一路径</p> : null}
-        </div>
+    <div className="rounded-lg border border-white/10 bg-black/20 p-3">
+      <div className="text-xs text-slate-500">{label}</div>
+      <div className="mt-1 text-base font-semibold text-white">
+        {badge ? <StatusBadge status={badge} label={value} /> : value}
       </div>
-      <div className="mt-4 grid gap-3 md:grid-cols-3">
-        {items.map(([rankLabel, item]) => (
-          <div key={rankLabel} className="rounded-md border border-line bg-white p-3">
-            <div className="flex items-center justify-between gap-2">
-              <p className="text-xs text-muted">{rankLabel}</p>
-              <p className="text-sm font-semibold">{pct(item.probability)}</p>
-            </div>
-            <p className="mt-1 font-semibold text-ink">{item.label}</p>
-            <p className="mt-2 text-xs leading-5 text-muted">{item.reason}</p>
-            <p className="mt-2 text-xs text-muted">预期周期：{item.expected_horizon}；可靠度：{confidenceCn(item.confidence)}</p>
-          </div>
-        ))}
-      </div>
-      <div className="mt-3 rounded-md bg-white p-3 text-xs">
-        <p className="font-medium text-ink">主路径切换条件</p>
-        <p className="mt-1 text-muted">{primarySwitchText(data)}</p>
-      </div>
-      {ranking.ranking_note ? <p className="mt-3 text-xs text-muted">{ranking.ranking_note}</p> : null}
     </div>
   );
 }
 
-function ScenarioWeights({ data }: { data: SimulatedSymbolPaths }) {
-  const pathModel = data.path_weight_model;
-  const scenarioWeights = data.scenario_weights ?? {};
-  const items = [
-    ["基准", data.base_path_weight ?? pathModel?.base_path_weight ?? scenarioWeights.base_scenario],
-    ["反抽", data.bounce_path_weight ?? pathModel?.bounce_path_weight ?? scenarioWeights.bounce_scenario],
-    ["偏空", data.bearish_path_weight ?? pathModel?.bearish_path_weight ?? scenarioWeights.bearish_scenario],
-    ["历史均值", data.analog_path_weight ?? pathModel?.analog_path_weight ?? scenarioWeights.historical_analog_average],
-  ] as const;
-  const factors = pathModel?.weight_factors ?? {};
+function StatusBadge({ status, label }: { status?: string; label?: string }) {
   return (
-    <div className="mt-3 rounded-md bg-white p-3">
-      <div className="flex flex-wrap items-center gap-3 text-xs">
-        <span className="font-medium text-ink">路径权重</span>
-        {items.map(([label, value]) => (
-          <span key={label} className="text-muted">{label}: <b className="text-ink">{pct(value, 0)}</b></span>
-        ))}
-        <span className="text-muted">路径可信度: <b className="text-ink">{confidenceCn(data.path_confidence)}</b></span>
-        {data.low_confidence_simulation ? <span className="font-medium text-rose">低可信模拟</span> : null}
-      </div>
-      {Object.keys(factors).length ? (
-        <div className="mt-3 grid gap-2 text-xs sm:grid-cols-4">
-          {Object.entries(factors).map(([key, value]) => (
-            <span key={key} className="rounded bg-panel px-2 py-1 text-muted">{factorText[key] ?? key}: <b className="text-ink">{pct(value, 0)}</b></span>
-          ))}
-        </div>
-      ) : null}
-    </div>
+    <span className={`inline-flex items-center rounded-full border px-2.5 py-1 text-xs font-medium ${badgeClass(status)}`}>
+      {label ?? status ?? "数据缺失"}
+    </span>
   );
 }
 
-function edgeRank(value: string | undefined) {
-  if (value === "STRONG_EDGE") return 4;
-  if (value === "MODERATE_EDGE") return 3;
-  if (value === "WEAK_EDGE") return 2;
-  return 1;
-}
-
-function MarketCard({
-  symbol,
-  selected,
-  data,
+function IndexCards({
+  symbols,
+  selectedSymbol,
   onSelect,
 }: {
-  symbol: string;
-  selected: boolean;
-  data: SimulatedSymbolPaths;
-  onSelect: () => void;
+  symbols: SimulatedSymbolPaths[];
+  selectedSymbol: string;
+  onSelect: (symbol: string) => void;
 }) {
-  const support = data.historical_support_by_horizon;
   return (
-    <button
-      type="button"
-      onClick={onSelect}
-      title={`${symbol} 最近收盘价：${price(data.current_price)}；状态：${stateCn(data.market_state)}；反抽概率：${pct(data.bounce_probability)}`}
-      className={`rounded-lg border p-3 text-left transition hover:border-teal hover:shadow-sm ${selected ? "border-teal bg-panel shadow-sm" : "border-line bg-white"}`}
-    >
-      <div className="flex items-center justify-between gap-2">
-        <div className="flex items-center gap-2">
-          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-ink text-sm font-semibold text-white">{symbol}</span>
-          <div>
-            <p className="font-semibold">{symbol}</p>
-            <p className="text-xs text-muted">{data.name}</p>
-          </div>
+    <section>
+      <div className="mb-3 flex items-end justify-between gap-3">
+        <div>
+          <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Index Overview</div>
+          <h2 className="mt-1 text-xl font-semibold text-white">四大指数预测概览</h2>
         </div>
-        <span className={data.live_signal ? "text-xs font-semibold text-teal" : "text-xs text-muted"}>{data.live_signal ? "有预测信号" : "无预测信号"}</span>
+        <div className="hidden text-xs text-slate-500 sm:block">点击卡片切换图表和情景说明</div>
       </div>
-      <div className="mt-3 grid grid-cols-2 gap-2 text-xs">
-        <Metric label="收盘价" value={price(data.current_price)} />
-        <Metric label="状态" value={stateCn(data.market_state)} />
-        <Metric label="预测优势" value={edgeCn(data.market_edge_status?.market_edge_status)} />
-        <Metric label="信号一致性" value={`${data.signal_agreement?.signal_agreement_score ?? "暂无"}`} />
-        <Metric label="反抽概率" value={pct(data.bounce_probability)} />
-        <Metric label="下跌延续" value={pct(data.downside_continuation_probability)} />
-        <Metric label="趋势反转" value={pct(data.trend_reversal_probability)} />
-        <Metric label="20d历史支持" value={supportCn(support?.by_horizon?.["20d"]?.support ?? data.historical_support)} />
+      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+        {symbols.map((item) => {
+          const primary = getPrimary(item);
+          const secondary = getSecondary(item);
+          const selected = item.symbol === selectedSymbol;
+          return (
+            <button
+              key={item.symbol}
+              className={`text-left transition hover:-translate-y-0.5 hover:border-cyan-300/50 ${
+                selected ? "border-cyan-300/60 bg-cyan-300/[0.08]" : "border-white/10 bg-[#101819]"
+              } rounded-xl border p-4 shadow-xl shadow-black/10`}
+              onClick={() => onSelect(item.symbol)}
+              type="button"
+            >
+              <div className="flex items-start justify-between gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="grid h-11 w-11 place-items-center rounded-full bg-white text-sm font-black text-slate-950">
+                    {item.symbol}
+                  </div>
+                  <div>
+                    <div className="text-lg font-semibold text-white">{item.symbol}</div>
+                    <div className="text-xs text-slate-400">{item.name}</div>
+                  </div>
+                </div>
+                <StatusBadge status={getEdgeStatus(item)} label={cnEdgeStatus(getEdgeStatus(item))} />
+              </div>
+
+              <div className="mt-4 grid grid-cols-2 gap-3 text-sm">
+                <CardDatum label="收盘价" value={formatPrice(getCurrentPrice(item))} />
+                <CardDatum label="主路径" value={primary?.label ?? "数据缺失"} />
+                <CardDatum label="主路径概率" value={formatPercent(primary?.probability, 1)} accent="emerald" />
+                <CardDatum label="第二路径" value={secondary?.label ?? "数据缺失"} />
+                <CardDatum label="主次差距" value={formatGap(item.scenario_ranking?.primary_secondary_gap)} />
+                <CardDatum label="确认分" value={formatScore(getConfirmationScore(item))} accent="cyan" />
+              </div>
+            </button>
+          );
+        })}
       </div>
-    </button>
+    </section>
   );
 }
 
-function Metric({ label, value }: { label: string; value: string }) {
+function CardDatum({ label, value, accent }: { label: string; value: string; accent?: "emerald" | "cyan" }) {
   return (
     <div>
-      <p className="text-muted">{label}</p>
-      <p className="mt-1 font-medium">{value}</p>
+      <div className="text-[11px] text-slate-500">{label}</div>
+      <div className={`mt-0.5 font-medium ${accent === "emerald" ? "text-emerald-200" : accent === "cyan" ? "text-cyan-200" : "text-slate-100"}`}>
+        {value}
+      </div>
     </div>
   );
 }
 
-function DataQualityPanel({ report }: { report?: DataQualityReport }) {
-  if (!report) return null;
-  const summary = report.summary;
+function ScenarioRankingPanel({ selected }: { selected: SimulatedSymbolPaths | undefined }) {
+  const ranking = selected?.scenario_ranking;
+  if (!selected || !ranking) {
+    return (
+      <section className="rounded-xl border border-white/10 bg-[#101819] p-5">
+        <h2 className="text-lg font-semibold text-white">最可能路径排序</h2>
+        <p className="mt-3 text-sm text-slate-400">当前没有情景排序数据。</p>
+      </section>
+    );
+  }
+
+  const rows = [
+    { title: "第一可能", item: ranking.primary, tone: "emerald" },
+    { title: "第二可能", item: ranking.secondary, tone: "cyan" },
+    { title: "风险路径", item: ranking.tertiary, tone: "rose" },
+  ];
+
   return (
-    <section className="mt-5 rounded-lg border border-line bg-white p-4">
+    <section className="rounded-xl border border-white/10 bg-[#101819] p-5">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <p className="text-xs uppercase text-muted">Data Quality Panel</p>
-          <h2 className="mt-1 text-base font-semibold">数据质量审计</h2>
-          <p className="mt-1 text-xs text-muted">最新市场数据日：{summary.latest_date ?? report.as_of ?? "暂无"}</p>
-          <p className="mt-1 text-xs text-muted">页面生成：{displayTimestamp(report.generated_at)}</p>
-          <p className="mt-1 text-xs text-teal">自动更新：美股收盘后由 GitHub Actions 刷新，页面每 5 分钟检查新结果</p>
+          <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Scenario Probability Ranking</div>
+          <h2 className="mt-1 text-xl font-semibold text-white">最可能路径排序</h2>
         </div>
-        <div className="rounded-md bg-panel px-4 py-2 text-right">
-          <p className="text-xs text-muted">数据完整度</p>
-          <p className="text-2xl font-semibold">{summary.data_completeness_score}<span className="text-sm text-muted">/100</span></p>
+        <div className="flex flex-wrap gap-2">
+          <StatusBadge
+            status={ranking.close_call ? "weak" : "supportive"}
+            label={ranking.close_call ? "路径分歧较大" : `主次差距 ${formatGap(ranking.primary_secondary_gap)}`}
+          />
+          <StatusBadge status={ranking.path_reliability} label={`可靠度：${ranking.path_reliability ?? "数据缺失"}`} />
         </div>
       </div>
-      <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
-        {Object.entries(report.coverage_categories).map(([key, item]) => (
-          <div key={key} className="rounded-md border border-line bg-panel p-3">
+
+      <div className="mt-4 grid gap-3 lg:grid-cols-3">
+        {rows.map(({ title, item, tone }) => (
+          <div key={title} className="rounded-lg border border-white/10 bg-black/20 p-4">
             <div className="flex items-center justify-between gap-2">
-              <p className="text-sm font-medium">{categoryText[key] ?? key}</p>
-              <span className={`text-xs ${item.status === "available" ? "text-teal" : item.status === "partial" ? "text-amber" : "text-rose"}`}>{statusCn(item.status)}</span>
+              <div className="text-xs uppercase tracking-[0.18em] text-slate-500">{title}</div>
+              <div
+                className={`text-lg font-semibold ${
+                  tone === "emerald" ? "text-emerald-300" : tone === "cyan" ? "text-cyan-300" : "text-rose-300"
+                }`}
+              >
+                {formatPercent(item?.probability, 1)}
+              </div>
             </div>
-            <p className="mt-2 text-xs text-muted">{item.detail}</p>
+            <div className="mt-2 text-lg font-semibold text-white">{item?.label ?? cnScenario(item?.scenario)}</div>
+            <p className="mt-2 text-sm leading-6 text-slate-400">{item?.reason ?? "缺少路径解释。"}</p>
           </div>
         ))}
       </div>
-      <p className="mt-3 text-xs text-muted">
-        重要：期权、市场宽度、资金流、宏观如果没有真实接入，会明确显示“未接入”，不会假装参与预测。
-      </p>
-      {summary.missing_key_sources?.length ? (
-        <p className="mt-2 text-xs text-muted">缺失关键源：{summary.missing_key_sources.slice(0, 8).join(" / ")}</p>
+
+      {ranking.close_call ? (
+        <div className="mt-4 rounded-lg border border-amber-400/25 bg-amber-400/10 p-3 text-sm text-amber-100">
+          路径分歧较大，不宜过度押注单一路径。请重点观察失效条件是否触发。
+        </div>
       ) : null}
-      <p className="mt-2 text-xs text-muted">
-        Finnhub：{summary.finnhub_available ? "可用" : summary.finnhub_rate_limited ? "限速/使用缓存或回退" : "未接入或 Secret 未注入"}；
-        Yahoo fallback：{summary.yahoo_fallback_used ? "已使用" : "未使用"}；
-        仍需真实源：FRED / options / breadth / flow。
-      </p>
-      {summary.quality_note ? <p className="mt-2 text-xs text-muted">{summary.quality_note}</p> : null}
     </section>
   );
 }
 
-function BreadthPanel({ status, selected }: { status?: BreadthStatus; selected?: SimulatedSymbolPaths }) {
-  if (!status) return null;
-  const summary = status.summary;
+function PredictionChart({ selected }: { selected: SimulatedSymbolPaths | undefined }) {
+  const svgRef = useRef<SVGSVGElement | null>(null);
+  const [tooltip, setTooltip] = useState<TooltipState>(null);
+
+  if (!selected?.paths?.dates?.length) {
+    return (
+      <section className="rounded-xl border border-white/10 bg-[#101819] p-5">
+        <h2 className="text-xl font-semibold text-white">概率路径图</h2>
+        <p className="mt-3 text-sm text-slate-400">当前没有可绘制的路径数据。</p>
+      </section>
+    );
+  }
+
+  const width = 920;
+  const height = 430;
+  const margin = { top: 34, right: 28, bottom: 50, left: 68 };
+  const dates = selected.paths.dates;
+  const splitIndex = Math.max(0, Math.min(selected.paths.split_index ?? dates.length - 1, dates.length - 1));
+  const [minY, maxY] = getChartDomain(selected);
+  const chartWidth = width - margin.left - margin.right;
+  const chartHeight = height - margin.top - margin.bottom;
+  const xFor = (index: number) => margin.left + (dates.length <= 1 ? 0 : (index / (dates.length - 1)) * chartWidth);
+  const yFor = (value: number) => margin.top + ((maxY - value) / (maxY - minY || 1)) * chartHeight;
+  const current = getCurrentPrice(selected);
+
+  const series: PathSeriesKey[] = ["historical_price", "expected_path", "bounce_path", "bearish_path", "analog_average_path"];
+  const area = buildArea(selected.paths.confidence_band_upper, selected.paths.confidence_band_lower, xFor, yFor);
+
+  const onMove = (event: MouseEvent<SVGSVGElement>) => {
+    const rect = svgRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    const svgX = (event.clientX - rect.left) * (width / rect.width);
+    const index = Math.max(0, Math.min(dates.length - 1, Math.round(((svgX - margin.left) / chartWidth) * (dates.length - 1))));
+    setTooltip({
+      index,
+      left: event.clientX - rect.left,
+      top: event.clientY - rect.top,
+    });
+  };
+
+  const tooltipRows = tooltip
+    ? series
+        .map((key) => ({
+          key,
+          value: asNumber(selected.paths[key]?.[tooltip.index]),
+          probability: getScenarioProbability(selected, key),
+          rank: getScenarioRank(selected, key),
+        }))
+        .filter((row) => row.value !== null)
+    : [];
+
   return (
-    <section className="mt-5 rounded-lg border border-line bg-white p-4">
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-        <div>
-          <p className="text-xs uppercase text-muted">Data / Breadth</p>
-          <h2 className="mt-1 text-base font-semibold">市场宽度：内部参与度</h2>
-          <p className="mt-1 text-xs text-muted">判断反抽/修复是不是多数股票参与，而不是少数大票撑指数。</p>
+    <section className="grid gap-4 xl:grid-cols-[1.6fr_0.7fr]">
+      <div className="rounded-xl border border-white/10 bg-[#101819] p-5">
+        <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+          <div>
+            <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Past + Simulated Future Path</div>
+            <h2 className="mt-1 text-xl font-semibold text-white">{selected.symbol} 概率路径图</h2>
+          </div>
+          <div className="text-xs leading-5 text-slate-400">
+            未来路径是概率情景，不是确定预测。鼠标悬停可查看每一天价格。
+          </div>
         </div>
-        <div className="rounded-md bg-panel px-4 py-2 text-right">
-          <p className="text-xs text-muted">平均质量</p>
-          <p className="text-2xl font-semibold">{scorePct(summary.average_breadth_quality_score)}</p>
-          <p className="text-xs text-muted">{summary.true_breadth_available ? "true breadth" : "partial / proxy"}</p>
-        </div>
-      </div>
-      <div className="mt-3 grid gap-2 text-xs sm:grid-cols-4">
-        <Metric label="Breadth Coverage" value={summary.true_breadth_available ? "true" : summary.provider_available ? "partial" : "missing"} />
-        <Metric label="真实宽度" value={summary.true_breadth_symbols?.join(" / ") || "暂无"} />
-        <Metric label="Proxy" value={summary.breadth_proxy_only_symbols?.join(" / ") || "无"} />
-        <Metric label="Stale warning" value={summary.stale_data ? `有：${summary.stale_symbols?.join(" / ")}` : "无"} />
-      </div>
-      {selected?.internal_resonance ? (
-        <div className="mt-3 grid gap-2 text-xs sm:grid-cols-4">
-          <Metric label="内部共振状态" value={resonanceCn(selected.internal_resonance.resonance_state)} />
-          <Metric label="内部共振分数" value={scorePct(selected.internal_resonance.resonance_score)} />
-          <Metric label="广泛参与" value={selected.internal_resonance.broad_participation ? "是" : "否"} />
-          <Metric label="表面强风险" value={selected.internal_resonance.surface_strength_without_participation ? "有" : "无"} />
-        </div>
-      ) : null}
-      <div className="mt-4 overflow-x-auto">
-        <table className="w-full min-w-[860px] text-left text-xs">
-          <thead className="border-b border-line text-muted">
-            <tr>
-              <th className="py-2">Universe</th>
-              <th>Coverage</th>
-              <th>有效 / 应有</th>
-              <th>缺失样本</th>
-              <th>Above 20/50/200d</th>
-              <th>Advance / Decline</th>
-              <th>New High / Low</th>
-              <th>Confirmation</th>
-              <th>Conflict</th>
-            </tr>
-          </thead>
-          <tbody>
-            {SYMBOL_ORDER.map((symbol) => {
-              const item = status.universes?.[symbol];
-              if (!item) return null;
-              const missing = item.failed_tickers_sample?.length ? item.failed_tickers_sample.slice(0, 5).join(" / ") : "无";
+
+        <div className="relative">
+          <svg
+            ref={svgRef}
+            className="h-auto w-full overflow-visible rounded-lg bg-[#0a1112]"
+            onMouseLeave={() => setTooltip(null)}
+            onMouseMove={onMove}
+            role="img"
+            viewBox={`0 0 ${width} ${height}`}
+          >
+            <defs>
+              <linearGradient id="confidenceFill" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.18" />
+                <stop offset="100%" stopColor="#38bdf8" stopOpacity="0.03" />
+              </linearGradient>
+            </defs>
+
+            {[0, 0.25, 0.5, 0.75, 1].map((tick) => {
+              const y = margin.top + tick * chartHeight;
+              const value = maxY - tick * (maxY - minY);
               return (
-                <tr key={symbol} className="border-b border-line last:border-0">
-                  <td className="py-2 font-semibold">{symbol}</td>
-                  <td>{breadthCoverageText(item.status, item.is_true_breadth, item.is_proxy)}</td>
-                  <td>{item.constituents_used ?? "proxy"} / {item.constituents_expected ?? "proxy"}</td>
-                  <td>{missing}</td>
-                  <td>{pct(item.metrics.percent_above_20d)} / {pct(item.metrics.percent_above_50d)} / {pct(item.metrics.percent_above_200d)}</td>
-                  <td>{item.metrics.advancers ?? "暂无"} / {item.metrics.decliners ?? "暂无"}</td>
-                  <td>{item.metrics.new_highs_20d ?? "暂无"} / {item.metrics.new_lows_20d ?? "暂无"}</td>
-                  <td className="font-medium text-teal">{scorePct(item.scores.breadth_confirmation_score)}</td>
-                  <td className="font-medium text-rose">{scorePct(item.scores.breadth_conflict_score)}</td>
-                </tr>
+                <g key={tick}>
+                  <line stroke="#1f3031" strokeWidth="1" x1={margin.left} x2={width - margin.right} y1={y} y2={y} />
+                  <text fill="#78908e" fontSize="11" x={12} y={y + 4}>
+                    {value.toFixed(2)}
+                  </text>
+                </g>
               );
             })}
-          </tbody>
-        </table>
+
+            {area ? <path d={area} fill="url(#confidenceFill)" /> : null}
+
+            <line
+              stroke="#94a3b8"
+              strokeDasharray="4 6"
+              strokeWidth="1.5"
+              x1={xFor(splitIndex)}
+              x2={xFor(splitIndex)}
+              y1={margin.top - 8}
+              y2={height - margin.bottom + 12}
+            />
+            <text fill="#94a3b8" fontSize="12" x={xFor(splitIndex) + 8} y={margin.top - 12}>
+              当前
+            </text>
+
+            {HORIZON_ORDER.map((horizon) => {
+              const offset = Number.parseInt(horizon, 10);
+              const index = Math.min(dates.length - 1, splitIndex + offset);
+              return (
+                <g key={horizon}>
+                  <line
+                    stroke="#334155"
+                    strokeDasharray="3 7"
+                    strokeWidth="1"
+                    x1={xFor(index)}
+                    x2={xFor(index)}
+                    y1={margin.top}
+                    y2={height - margin.bottom}
+                  />
+                  <text fill="#8aa09d" fontSize="11" textAnchor="middle" x={xFor(index)} y={height - 18}>
+                    {horizon}
+                  </text>
+                </g>
+              );
+            })}
+
+            {series.map((key) => {
+              const path = buildPath(selected.paths[key], xFor, yFor);
+              if (!path) return null;
+              const isHistorical = key === "historical_price";
+              const rank = getScenarioRank(selected, key);
+              return (
+                <path
+                  key={key}
+                  d={path}
+                  fill="none"
+                  opacity={isHistorical ? 1 : rank === "参考路径" ? 0.72 : 0.95}
+                  stroke={SCENARIO_STROKES[key]}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={getLineWidth(selected, key)}
+                />
+              );
+            })}
+
+            {current !== null ? (
+              <>
+                <line
+                  stroke="#2dd4bf"
+                  strokeDasharray="2 6"
+                  strokeOpacity="0.65"
+                  strokeWidth="1"
+                  x1={margin.left}
+                  x2={width - margin.right}
+                  y1={yFor(current)}
+                  y2={yFor(current)}
+                />
+                <text fill="#99f6e4" fontSize="12" x={width - margin.right - 88} y={yFor(current) - 8}>
+                  现价 {current.toFixed(2)}
+                </text>
+              </>
+            ) : null}
+
+            {tooltip ? (
+              <line
+                stroke="#e2e8f0"
+                strokeDasharray="3 5"
+                strokeOpacity="0.55"
+                strokeWidth="1"
+                x1={xFor(tooltip.index)}
+                x2={xFor(tooltip.index)}
+                y1={margin.top}
+                y2={height - margin.bottom}
+              />
+            ) : null}
+          </svg>
+
+          {tooltip && tooltipRows.length ? (
+            <div
+              className="pointer-events-none absolute z-20 min-w-64 rounded-lg border border-white/10 bg-[#071111]/95 p-3 text-xs shadow-2xl shadow-black/50"
+              style={{
+                left: Math.min(Math.max(tooltip.left + 12, 8), 680),
+                top: Math.max(tooltip.top - 8, 8),
+              }}
+            >
+              <div className="mb-2 font-semibold text-white">{dates[tooltip.index]}</div>
+              <div className="space-y-1.5">
+                {tooltipRows.map((row) => (
+                  <div key={row.key} className="grid grid-cols-[0.8rem_1fr_auto] items-center gap-2">
+                    <span className="h-2 w-2 rounded-full" style={{ backgroundColor: SCENARIO_STROKES[row.key] }} />
+                    <span className="text-slate-300">
+                      {SCENARIO_NAMES[row.key]} · {row.rank}
+                      {row.key !== "historical_price" ? ` · ${formatPercent(row.probability, 1)}` : ""}
+                    </span>
+                    <span className="font-semibold text-white">{formatPrice(row.value)}</span>
+                  </div>
+                ))}
+              </div>
+              {current !== null ? (
+                <div className="mt-2 border-t border-white/10 pt-2 text-slate-400">
+                  相对当前价：{formatSignedPercent(((tooltipRows[0]?.value ?? current) - current) / current, 1)}
+                </div>
+              ) : null}
+            </div>
+          ) : null}
+        </div>
+
+        <div className="mt-4 flex flex-wrap gap-3 text-xs text-slate-400">
+          {series.map((key) => (
+            <div key={key} className="flex items-center gap-2">
+              <span className="h-2.5 w-6 rounded-full" style={{ backgroundColor: SCENARIO_STROKES[key] }} />
+              {SCENARIO_NAMES[key]}
+              {key !== "historical_price" ? ` · ${getScenarioRank(selected, key)}` : ""}
+            </div>
+          ))}
+        </div>
       </div>
-      <div className="mt-3 rounded-md bg-panel p-3 text-sm">
-        <p className="font-medium text-ink">Breadth 对当前判断的影响</p>
-        <p className="mt-1 text-muted">{breadthImpactText(status, selected)}</p>
+
+      <ChartExplanation selected={selected} />
+    </section>
+  );
+}
+
+function ChartExplanation({ selected }: { selected: SimulatedSymbolPaths }) {
+  const primary = getPrimary(selected);
+  const secondary = getSecondary(selected);
+  const tertiary = getTertiary(selected);
+  const primarySwitchers = asStringArray(selected.scenario_ranking?.primary_to_secondary_switch_conditions);
+  const fallbackSwitchers = asStringArray(asRecord(selected.scenario_ranking).switching_conditions);
+  const invalidationSwitchers = asStringArray(selected.risk_invalidation_conditions);
+  const switchers = primarySwitchers.length ? primarySwitchers : fallbackSwitchers.length ? fallbackSwitchers : invalidationSwitchers;
+
+  return (
+    <aside className="rounded-xl border border-white/10 bg-[#101819] p-5">
+      <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Path Explanation</div>
+      <h3 className="mt-1 text-lg font-semibold text-white">为什么这样排序</h3>
+      <div className="mt-4 space-y-4">
+        <ReasonBlock title="主路径" scenario={primary} />
+        <ReasonBlock title="第二路径" scenario={secondary} />
+        <ReasonBlock title="风险路径" scenario={tertiary} />
+      </div>
+      <div className="mt-5 rounded-lg border border-rose-400/20 bg-rose-400/[0.07] p-3">
+        <div className="text-sm font-semibold text-rose-100">主路径失效条件</div>
+        <ul className="mt-2 space-y-1 text-sm text-slate-300">
+          {switchers.length ? switchers.slice(0, 5).map((item) => <li key={item}>· {item}</li>) : <li>· 数据缺失</li>}
+        </ul>
+      </div>
+    </aside>
+  );
+}
+
+function ReasonBlock({ title, scenario }: { title: string; scenario?: ScenarioRankingItem }) {
+  return (
+    <div>
+      <div className="text-xs text-slate-500">{title}</div>
+      <div className="mt-1 flex items-center justify-between gap-3">
+        <div className="font-semibold text-white">{scenario?.label ?? cnScenario(scenario?.scenario)}</div>
+        <div className="text-sm font-semibold text-cyan-200">{formatPercent(scenario?.probability, 1)}</div>
+      </div>
+      <p className="mt-1 text-sm leading-6 text-slate-400">{scenario?.reason ?? "缺少解释。"}</p>
+    </div>
+  );
+}
+
+function EvidenceSections({ selected }: { selected: SimulatedSymbolPaths | undefined }) {
+  if (!selected) return null;
+  const confirmation = selected.signal_confirmation;
+  const supporting = confirmation?.supporting_evidence ?? selected.signal_agreement?.supporting_signals ?? [];
+  const conflicting = confirmation?.conflicting_evidence ?? selected.signal_agreement?.conflicting_signals ?? [];
+  const missing = confirmation?.missing_evidence ?? [];
+  const invalidation = selected.risk_invalidation_conditions ?? selected.scenario_ranking?.primary_to_secondary_switch_conditions ?? [];
+
+  return (
+    <section className="grid gap-4 lg:grid-cols-3">
+      <EvidenceCard title="支持证据" tone="supportive" items={supporting} empty="暂无明确支持证据" />
+      <EvidenceCard title="冲突证据" tone="conflicting" items={conflicting} empty="暂无明显冲突证据" />
+      <div className="rounded-xl border border-white/10 bg-[#101819] p-5">
+        <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Invalidation Conditions</div>
+        <h3 className="mt-1 text-lg font-semibold text-white">需要观察的失效条件</h3>
+        <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-300">
+          {invalidation.length ? invalidation.slice(0, 6).map((item) => <li key={item}>· {item}</li>) : <li>· 数据缺失</li>}
+        </ul>
+        {missing.length ? (
+          <div className="mt-4 rounded-lg border border-white/10 bg-white/[0.03] p-3 text-xs leading-5 text-slate-400">
+            缺失证据：{missing.map((item) => item.name).join(" / ")}
+          </div>
+        ) : null}
       </div>
     </section>
   );
 }
 
-function OptionsPanel({ status, selected }: { status?: OptionsStatus; selected?: SimulatedSymbolPaths }) {
-  if (!status) return null;
-  const summary = status.summary;
-  const symbolOptions = selected ? status.symbols?.[selected.symbol] : undefined;
-  const market = status.market ?? {};
-  const termState = String(symbolOptions?.term_structure_state ?? market.term_structure_state ?? "missing");
-  const stress = num(symbolOptions?.option_stress_score ?? market.option_stress_score);
-  const panic = num(symbolOptions?.panic_release_score ?? market.panic_release_score);
-  const tail = num(symbolOptions?.tail_risk_score ?? market.tail_risk_score);
-  const supports = Boolean(symbolOptions?.options_supports_bounce ?? market.options_supports_bounce);
-  const conflicts = Boolean(symbolOptions?.options_conflicts_bounce ?? market.options_conflicts_bounce);
+function EvidenceCard({
+  title,
+  tone,
+  items,
+  empty,
+}: {
+  title: string;
+  tone: "supportive" | "conflicting";
+  items: Array<{ name: string; score?: number; detail?: string }>;
+  empty: string;
+}) {
+  const toneClass = tone === "supportive" ? "text-emerald-200" : "text-rose-200";
   return (
-    <section className="mt-5 rounded-lg border border-line bg-white p-4">
+    <div className="rounded-xl border border-white/10 bg-[#101819] p-5">
+      <div className="text-xs uppercase tracking-[0.22em] text-slate-500">{tone === "supportive" ? "Supporting Signals" : "Conflicting Signals"}</div>
+      <h3 className="mt-1 text-lg font-semibold text-white">{title}</h3>
+      <div className="mt-4 space-y-3">
+        {items.length ? (
+          items.slice(0, 6).map((item) => (
+            <div key={`${item.name}-${item.detail}`} className="rounded-lg border border-white/10 bg-black/20 p-3">
+              <div className="flex items-center justify-between gap-3">
+                <div className={`text-sm font-semibold ${toneClass}`}>{item.name}</div>
+                {typeof item.score === "number" ? <div className="text-xs text-slate-400">{Math.round(item.score * 100)}%</div> : null}
+              </div>
+              <p className="mt-1 text-xs leading-5 text-slate-400">{item.detail ?? "无详细说明"}</p>
+            </div>
+          ))
+        ) : (
+          <div className="text-sm text-slate-400">{empty}</div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function HorizonTable({ selected }: { selected: SimulatedSymbolPaths | undefined }) {
+  const rows = (selected?.horizon_summary ?? selected?.prediction_horizons ?? {}) as Record<string, unknown>;
+  return (
+    <section className="rounded-xl border border-white/10 bg-[#101819] p-5">
+      <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Forecast Horizons</div>
+      <h2 className="mt-1 text-xl font-semibold text-white">未来周期概率摘要</h2>
+      <div className="mt-4 grid gap-3 md:grid-cols-5">
+        {HORIZON_ORDER.map((horizon) => {
+          const row = asRecord(rows[horizon]);
+          return (
+            <div key={horizon} className="rounded-lg border border-white/10 bg-black/20 p-3">
+              <div className="text-sm font-semibold text-white">{horizon}</div>
+              <div className="mt-3 space-y-2 text-xs text-slate-400">
+                <div className="flex justify-between gap-2">
+                  <span>期望收益</span>
+                  <span className="font-semibold text-slate-100">{formatSignedPercent(row.expected_return)}</span>
+                </div>
+                <div className="flex justify-between gap-2">
+                  <span>上行概率</span>
+                  <span className="text-emerald-200">{formatPercent(row.up_probability)}</span>
+                </div>
+                <div className="flex justify-between gap-2">
+                  <span>下行概率</span>
+                  <span className="text-rose-200">{formatPercent(row.down_probability)}</span>
+                </div>
+              </div>
+              <p className="mt-3 text-xs leading-5 text-slate-500">{String(row.risk_note ?? row.expected_direction ?? "前向验证中")}</p>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
+function HistoricalAnalogs({ dashboard, symbol }: { dashboard: PredictionDashboard; symbol: string }) {
+  const report = dashboard.analogs?.[symbol];
+  const cases: HistoricalAnalogCase[] = report?.top_similar_cases ?? [];
+  const distribution = asRecord(report?.historical_distribution);
+
+  return (
+    <section className="rounded-xl border border-white/10 bg-[#101819] p-5">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <p className="text-xs uppercase text-muted">Options / Volatility Structure</p>
-          <h2 className="mt-1 text-base font-semibold">期权与波动率结构</h2>
-          <p className="mt-1 text-xs text-muted">用 VIX term、VVIX、SKEW 判断恐慌释放、尾部风险和失败反抽风险。</p>
+          <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Historical Analogs</div>
+          <h2 className="mt-1 text-xl font-semibold text-white">历史相似情景</h2>
         </div>
-        <div className="rounded-md bg-panel px-4 py-2 text-right">
-          <p className="text-xs text-muted">Options Quality</p>
-          <p className="text-2xl font-semibold">{scorePct(summary.options_quality_score)}</p>
-          <p className="text-xs text-muted">{summary.options_available ? "available" : summary.options_partial ? "partial" : "missing"}</p>
+        <StatusBadge
+          status={report?.low_sample_warning ? "weak" : report?.interpretation?.historical_support}
+          label={report?.low_sample_warning ? "样本偏少" : `样本数 ${report?.sample_count ?? "数据缺失"}`}
+        />
+      </div>
+      <div className="mt-4 grid gap-3 lg:grid-cols-[1fr_1fr]">
+        <div className="grid gap-3 sm:grid-cols-3">
+          <Metric label="5d 均值" value={formatSignedPercent(distribution.avg_return_5d)} />
+          <Metric label="20d 均值" value={formatSignedPercent(distribution.avg_return_20d)} />
+          <Metric label="60d 均值" value={formatSignedPercent(distribution.avg_return_60d)} />
         </div>
-      </div>
-      <div className="mt-3 grid gap-2 text-xs sm:grid-cols-4">
-        <Metric label="VIX term" value={summary.vix_term_available ? termState : "missing"} />
-        <Metric label="Vol stress" value={pct(stress)} />
-        <Metric label="Panic release" value={pct(panic)} />
-        <Metric label="Tail risk" value={pct(tail)} />
-      </div>
-      <div className="mt-3 grid gap-2 text-xs sm:grid-cols-4">
-        <Metric label="VVIX" value={summary.vvix_available ? price(num(market.vvix)) : "missing"} />
-        <Metric label="SKEW" value={summary.skew_available ? price(num(market.skew)) : "missing"} />
-        <Metric label="Put/Call" value={summary.put_call_available ? "available" : "missing"} />
-        <Metric label="Gamma" value={summary.gamma_available ? "available" : "missing"} />
-      </div>
-      <div className="mt-3 rounded-md bg-panel p-3 text-sm">
-        <p className="font-medium text-ink">对主路径的影响</p>
-        <p className="mt-1 text-muted">
-          {supports ? "波动率结构支持反抽/修复路径。" : conflicts ? "波动率结构与干净反抽冲突，失败反抽风险上升。" : "波动率结构目前偏混合，只能作为辅助证据。"}
+        <p className="rounded-lg border border-white/10 bg-black/20 p-3 text-sm leading-6 text-slate-400">
+          历史相似只用于解释和条件分布，不等于未来会重复。若与前向验证冲突，以前向验证为准。
         </p>
-        <p className="mt-1 text-xs text-muted">{String(symbolOptions?.options_risk_note ?? market.options_risk_note ?? "put/call 和 gamma 未接入，不能把 options 视为完整确认。")}</p>
+      </div>
+
+      <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+        {cases.slice(0, 5).map((item) => (
+          <div key={`${item.date}-${item.similarity_score}`} className="rounded-lg border border-white/10 bg-black/20 p-3">
+            <div className="flex items-start justify-between gap-2">
+              <div>
+                <div className="font-semibold text-white">{item.date}</div>
+                <div className="text-xs text-slate-500">{item.regime}</div>
+              </div>
+              <div className="text-sm font-semibold text-cyan-200">{formatPercent(item.similarity_score, 0)}</div>
+            </div>
+            <div className="mt-3 space-y-1 text-xs text-slate-400">
+              <div>5d：{formatSignedPercent(item.forward_return_5d)}</div>
+              <div>20d：{formatSignedPercent(item.forward_return_20d)}</div>
+              <div>最大不利：{formatSignedPercent(item.max_adverse_excursion)}</div>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
 }
 
-function ForecastAccuracyPanel({ scorecard }: { scorecard?: ForecastAccuracyScorecard }) {
-  if (!scorecard) return null;
-  const counts = scorecard.sample_counts ?? {};
-  const completedCounts = HORIZON_ORDER.map((horizon) => Number(counts[`completed_${horizon}`] ?? 0));
-  const maxCompleted = Math.max(0, ...completedCounts);
-  const evidenceLevel = maxCompleted < 20
-    ? "insufficient"
-    : maxCompleted < 50
-      ? "early"
-      : maxCompleted < 100
-        ? "moderate"
-        : "stronger";
-  const accuracy20 = (scorecard.primary_scenario_accuracy?.["20d"] ?? {}) as Record<string, number | string | null>;
-  const hitRate = typeof accuracy20.primary_scenario_hit_rate === "number" ? pct(accuracy20.primary_scenario_hit_rate) : "样本不足";
-  const primarySecondary = scorecard.core_questions?.primary_beats_secondary ?? "insufficient_samples";
-  const highConfidence = scorecard.core_questions?.high_confidence_better ?? "insufficient_samples";
+function DataQuality({ dashboard }: { dashboard: PredictionDashboard }) {
+  const report = dashboard.data_quality_report;
+  const categories = report?.coverage_categories ?? {};
+  const categoryRows = Object.entries(categories).slice(0, 10);
+
   return (
-    <section className="mt-5 rounded-lg border border-line bg-white p-4">
+    <section className="rounded-xl border border-white/10 bg-[#101819] p-5">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <p className="text-xs uppercase text-muted">Forecast Accuracy</p>
-          <h2 className="mt-1 text-base font-semibold">预测准确度账本</h2>
-          <p className="mt-1 text-sm text-muted">
-            每天追加预测记录，未来只回填真实收益和命中字段；这是预测验证，不是交易记录。
-          </p>
+          <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Data Quality</div>
+          <h2 className="mt-1 text-xl font-semibold text-white">数据质量</h2>
         </div>
-        <div className="rounded-md bg-panel px-4 py-2 text-right">
-          <p className="text-xs text-muted">Evidence Level</p>
-          <p className="text-2xl font-semibold">{evidenceLevel}</p>
-          <p className="text-xs text-muted">最大完成样本 {maxCompleted}</p>
-        </div>
+        <div className="text-3xl font-semibold text-emerald-200">{formatScore(report?.summary?.data_completeness_score)}</div>
       </div>
-      <div className="mt-3 grid gap-2 text-xs sm:grid-cols-5">
-        <Metric label="总预测数" value={String(counts.total_forecasts ?? 0)} />
-        <Metric label="待验证" value={String(counts.pending_forecasts ?? 0)} />
+      <div className="mt-4 grid gap-2 md:grid-cols-5">
+        {categoryRows.map(([name, item]) => (
+          <div key={name} className="rounded-lg border border-white/10 bg-black/20 p-3">
+            <div className="text-xs uppercase tracking-[0.14em] text-slate-500">{name}</div>
+            <div className="mt-2">
+              <StatusBadge status={item.status} label={item.status === "proxy" ? "proxy only" : item.status} />
+            </div>
+          </div>
+        ))}
+      </div>
+      <p className="mt-4 text-sm text-slate-400">
+        缺失或 proxy 数据会限制模型可信度，不会被显示成 0% 或假装已接入。
+      </p>
+    </section>
+  );
+}
+
+function ForecastAccuracy({ dashboard }: { dashboard: PredictionDashboard }) {
+  const scorecard = dashboard.forecast_accuracy_scorecard;
+  const counts = scorecard?.sample_counts ?? {};
+  const validation = getValidationStandards(dashboard);
+  return (
+    <section className="rounded-xl border border-white/10 bg-[#101819] p-5">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Forecast Accuracy</div>
+          <h2 className="mt-1 text-xl font-semibold text-white">前向验证状态</h2>
+        </div>
+        <StatusBadge status={validation.highPrecisionStatus} label={cnValidationStatus(validation.highPrecisionStatus)} />
+      </div>
+      <div className="mt-4 grid gap-3 sm:grid-cols-3 lg:grid-cols-6">
+        <Metric label="总记录" value={String(counts.total_forecasts ?? 0)} />
+        <Metric label="待回填" value={String(counts.pending_forecasts ?? 0)} />
         <Metric label="3d 完成" value={String(counts.completed_3d ?? 0)} />
+        <Metric label="5d 完成" value={String(counts.completed_5d ?? 0)} />
         <Metric label="20d 完成" value={String(counts.completed_20d ?? 0)} />
         <Metric label="60d 完成" value={String(counts.completed_60d ?? 0)} />
       </div>
-      <div className="mt-3 grid gap-2 text-xs sm:grid-cols-3">
-        <Metric label="20d 主路径命中率" value={hitRate} />
-        <Metric label="主路径 vs 次路径" value={primarySecondary} />
-        <Metric label="高置信是否更准" value={highConfidence} />
+      <div className="mt-4 rounded-lg border border-amber-400/20 bg-amber-400/[0.07] p-3 text-sm leading-6 text-amber-100">
+        当前预测能力仍处于前向验证期，样本不足，不能称为 high precision / stable alpha / validated forecasting system。
       </div>
-      {maxCompleted < 20 ? (
-        <p className="mt-3 rounded-md bg-panel p-3 text-sm text-muted">
-          当前预测准确度仍在前向验证中，样本不足，不能把高置信预测视为稳定能力。
-        </p>
-      ) : null}
     </section>
   );
 }
 
-function FlowPositioningPanel({
-  status,
-  selected,
-}: {
-  status?: FlowPositioningStatus;
-  selected?: SimulatedSymbolPaths;
-}) {
-  if (!status) return null;
-  const summary = status.summary ?? {};
-  const item = selected ? status.symbols?.[selected.symbol] : undefined;
-  const scores = (item?.scores ?? {}) as NonNullable<FlowPositioningStatus["symbols"][string]["scores"]>;
-  const metrics = (item?.metrics ?? {}) as Record<string, unknown>;
-  const confirmation = scores.flow_confirmation_score ?? summary.overall_flow_confirmation_score;
-  const conflict = scores.flow_conflict_score ?? summary.overall_flow_conflict_score;
-  const primary = selected?.scenario_ranking?.primary?.scenario ?? "";
-  const supportsPrimary = confirmation >= conflict && confirmation >= 55;
-  const conflictsPrimary = conflict > confirmation && conflict >= 45;
-  const impact = supportsPrimary
-    ? `${selected?.symbol ?? "当前指数"} 的 Flow / Positioning proxy 支持主路径：risk-on 轮动和成交活跃度没有明显冲突。`
-    : conflictsPrimary
-      ? `${selected?.symbol ?? "当前指数"} 的 Flow / Positioning proxy 与主路径冲突：risk-off 轮动、成交压力或防御板块相对更强。`
-      : `${selected?.symbol ?? "当前指数"} 的 Flow / Positioning proxy 偏混合，只能作为辅助证据。`;
-  return (
-    <section className="mt-5 rounded-lg border border-line bg-white p-4">
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-        <div>
-          <p className="text-xs uppercase text-muted">Flow / Positioning</p>
-          <h2 className="mt-1 text-base font-semibold">资金流与仓位代理</h2>
-          <p className="mt-1 text-sm text-muted">
-            当前阶段是 proxy，不是真实资金流；用于辅助确认主路径、冲突和失败反抽风险。
-          </p>
-        </div>
-        <div className="rounded-md bg-panel px-4 py-2 text-right">
-          <p className="text-xs text-muted">Flow Quality</p>
-          <p className="text-2xl font-semibold">{scorePct(scores.flow_quality_score ?? summary.average_flow_quality_score)}</p>
-          <p className="text-xs text-muted">{summary.true_flow_available ? "true flow" : "proxy only"}</p>
-        </div>
-      </div>
-      <div className="mt-3 grid gap-2 text-xs sm:grid-cols-5">
-        <Metric label="True flow" value={summary.true_flow_available ? "available" : "false"} />
-        <Metric label="Proxy only" value={(summary.proxy_only ?? summary.flow_proxy_only) ? "true" : "false"} />
-        <Metric label="Risk-on flow" value={scorePct(scores.risk_on_flow_score)} />
-        <Metric label="Risk-off flow" value={scorePct(scores.risk_off_flow_score)} />
-        <Metric label="主路径" value={primary || "暂无"} />
-      </div>
-      <div className="mt-3 grid gap-2 text-xs sm:grid-cols-5">
-        <Metric label="Flow confirmation" value={scorePct(confirmation)} />
-        <Metric label="Flow conflict" value={scorePct(conflict)} />
-        <Metric label="Volume z-score" value={String(metrics.volume_z_score ?? metrics.volume_zscore_20d ?? "暂无")} />
-        <Metric label="Relative volume 5d" value={String(metrics.relative_volume_5d ?? "暂无")} />
-        <Metric label="Positioning pressure" value={scorePct(scores.positioning_pressure_score)} />
-      </div>
-      <p className="mt-3 rounded-md bg-panel p-3 text-sm text-muted">{impact}</p>
-      <p className="mt-2 text-xs text-muted">
-        缺失真实来源：{(summary.missing_real_flow_feeds ?? []).join(" / ") || "暂无"}。不能把 proxy 包装成真实 flow。
-      </p>
-    </section>
-  );
-}
+function ModelLeaderboard({ dashboard }: { dashboard: PredictionDashboard }) {
+  const models = getModelList(dashboard);
+  const validation = getValidationStandards(dashboard);
 
-function HistoricalReplayBenchmarkPanel({ benchmark }: { benchmark?: Record<string, unknown> }) {
-  if (!benchmark) return null;
-  const core = safeRecord(benchmark.core_questions);
-  const forwardGap = safeRecord(benchmark.forward_validation_gap);
-  const signal = safeRecord(benchmark.signal_confirmation_effectiveness);
-  const breadth = safeRecord(benchmark.breadth_effectiveness);
-  const options = safeRecord(benchmark.options_effectiveness);
-  const flow = safeRecord(benchmark.flow_proxy_effectiveness);
-  const bestPredictorByHorizon = safeRecord(benchmark.best_predictor_by_horizon);
-  const primarySpread = safeRecord(benchmark.primary_vs_secondary_spread);
-  const bestHorizon = bestReplayHorizon(primarySpread);
-  const bestPredictor = safeRecord(bestPredictorByHorizon[bestHorizon]).predictor;
   return (
-    <section className="mt-5 rounded-lg border border-line bg-white p-4">
+    <section className="rounded-xl border border-white/10 bg-[#101819] p-5">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <p className="text-xs uppercase text-muted">Historical Replay Benchmark</p>
-          <h2 className="mt-1 text-base font-semibold">历史回放基准</h2>
-          <p className="mt-1 text-sm text-muted">
-            这是研究评估，不是前向验证；如果和 forward validation 冲突，优先相信 forward validation。
-          </p>
+          <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Model Leaderboard</div>
+          <h2 className="mt-1 text-xl font-semibold text-white">模型验证看板</h2>
         </div>
-        <div className="rounded-md bg-panel px-4 py-2 text-right">
-          <p className="text-xs text-muted">Replay Grade</p>
-          <p className="text-2xl font-semibold">{String(benchmark.historical_replay_grade ?? "暂无")}</p>
-          <p className="text-xs text-muted">样本 {String(benchmark.total_samples ?? benchmark.sample_size ?? 0)}</p>
-        </div>
+        <StatusBadge status="active_model" label={`Active: ${validation.activeModel}`} />
       </div>
-      <div className="mt-3 grid gap-2 text-xs sm:grid-cols-4">
-        <Metric label="主路径是否胜过次路径" value={String(core.primary_scenario_beats_secondary ?? "暂无")} />
-        <Metric label="最有效周期" value={bestHorizon || "暂无"} />
-        <Metric label="最有效 predictor" value={String(bestPredictor ?? "暂无")} />
-        <Metric label="Forward gap" value={String(forwardGap.gap ?? "暂无")} />
-      </div>
-      <div className="mt-3 grid gap-2 text-xs sm:grid-cols-4">
-        <Metric label="Signal confirmation" value={String(signal.effectiveness_question ?? "暂无")} />
-        <Metric label="Breadth" value={String(breadth.verdict ?? "暂无")} />
-        <Metric label="Options" value={String(options.verdict ?? "暂无")} />
-        <Metric label="Flow proxy" value={String(flow.verdict ?? "暂无")} />
-      </div>
-      <p className="mt-3 rounded-md bg-panel p-3 text-sm text-muted">
-        当前结论：{String(core.forward_validation_required ?? "仍需要每日 forward validation")}。历史回放只能帮助决定下一步补 put/call、gamma proxy、真实 flow，不能确认 alpha。
-      </p>
-    </section>
-  );
-}
-
-function ModelValidationStatusPanel({
-  leaderboard,
-  promotionStatus,
-}: {
-  leaderboard?: Record<string, unknown>;
-  promotionStatus?: Record<string, unknown>;
-}) {
-  if (!leaderboard && !promotionStatus) return null;
-  const board = safeRecord(leaderboard);
-  const promotion = safeRecord(promotionStatus);
-  const standards = safeRecord(promotion.validation_standards ?? board.validation_standards);
-  const highPrecision = safeRecord(standards.high_precision_standard);
-  const stableAlpha = safeRecord(standards.stable_alpha_standard);
-  const validatedSystem = safeRecord(standards.validated_forecasting_system_standard);
-  const completed = safeRecord(standards.forward_completed_samples_by_horizon);
-  const models = Array.isArray(board.models) ? board.models.map(safeRecord) : [];
-  const challengers = models.filter((model) => String(model.role ?? "").includes("challenger"));
-  const promotions = Array.isArray(promotion.models) ? promotion.models.map(safeRecord) : [];
-  const activeModel = String(board.active_model_version ?? promotion.active_model_version ?? "baseline_v1");
-  const completedText = ["3d", "5d", "10d", "20d", "60d"]
-    .map((horizon) => `${horizon}:${String(completed[horizon] ?? 0)}`)
-    .join(" / ");
-  const anyPromotion = promotions.some((item) => item.status === "promotion_candidate");
-  return (
-    <section className="mt-5 rounded-lg border border-line bg-white p-4">
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-        <div>
-          <p className="text-xs uppercase text-muted">Model Validation Status</p>
-          <h2 className="mt-1 text-base font-semibold">模型验证与进化状态</h2>
-          <p className="mt-1 text-sm text-muted">
-            当前只验证概率路径，不做执行建议。新模型必须先作为 challenger 影子模型跑赢 baseline_v1。
-          </p>
-        </div>
-        <div className="rounded-md bg-panel px-4 py-2 text-right">
-          <p className="text-xs text-muted">Active Model</p>
-          <p className="text-2xl font-semibold">{activeModel}</p>
-          <p className="text-xs text-muted">{anyPromotion ? "有候选可审查" : "暂无可升级 challenger"}</p>
-        </div>
-      </div>
-      <div className="mt-3 grid gap-2 text-xs sm:grid-cols-4">
-        <Metric label="Baseline version" value="baseline_v1" />
-        <Metric label="Challenger count" value={String(challengers.length)} />
-        <Metric label="Forward samples" value={completedText} />
-        <Metric label="Promotion standard" value={anyPromotion ? "promotion_candidate" : "insufficient_forward_samples"} />
-      </div>
-      <div className="mt-3 grid gap-2 text-xs sm:grid-cols-3">
-        <Metric label="High precision" value={String(highPrecision.status ?? "not_yet_validated")} />
-        <Metric label="Stable alpha" value={String(stableAlpha.status ?? "not_yet_validated")} />
-        <Metric label="Validated system" value={String(validatedSystem.status ?? "not_yet_validated")} />
-      </div>
-      <div className="mt-3 overflow-x-auto">
-        <table className="min-w-full text-left text-xs">
-          <thead className="text-muted">
+      <div className="mt-4 overflow-x-auto">
+        <table className="min-w-full text-left text-sm">
+          <thead className="border-b border-white/10 text-xs uppercase tracking-[0.16em] text-slate-500">
             <tr>
-              <th className="px-2 py-2">模型</th>
-              <th className="px-2 py-2">角色</th>
-              <th className="px-2 py-2">状态</th>
-              <th className="px-2 py-2">完成样本</th>
-              <th className="px-2 py-2">升级资格</th>
+              <th className="py-3 pr-4">模型</th>
+              <th className="py-3 pr-4">角色</th>
+              <th className="py-3 pr-4">状态</th>
+              <th className="py-3 pr-4">待验证</th>
+              <th className="py-3 pr-4">完成样本</th>
             </tr>
           </thead>
-          <tbody>
-            {models.slice(0, 8).map((model) => (
-              <tr key={String(model.model_version)} className="border-t border-line">
-                <td className="px-2 py-2 font-medium">{String(model.model_version ?? "unknown")}</td>
-                <td className="px-2 py-2 text-muted">{String(model.role ?? "unknown")}</td>
-                <td className="px-2 py-2 text-muted">{String(model.status ?? "unknown")}</td>
-                <td className="px-2 py-2 text-muted">{String(model.completed_forecasts ?? 0)}</td>
-                <td className="px-2 py-2 text-muted">{String(model.promotion_status ?? "not_applicable")}</td>
+          <tbody className="divide-y divide-white/10">
+            {models.map((model) => (
+              <tr key={String(model.model_version)} className="text-slate-300">
+                <td className="py-3 pr-4 font-semibold text-white">{String(model.model_version)}</td>
+                <td className="py-3 pr-4">{String(model.role ?? "数据缺失")}</td>
+                <td className="py-3 pr-4">
+                  <StatusBadge status={String(model.promotion_status ?? model.status)} label={cnValidationStatus(String(model.promotion_status ?? model.status))} />
+                </td>
+                <td className="py-3 pr-4">{String(model.pending_forecasts ?? 0)}</td>
+                <td className="py-3 pr-4">{String(model.completed_forecasts ?? 0)}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-      <p className="mt-3 rounded-md bg-panel p-3 text-sm text-muted">
-        当前结论：高精度、stable alpha、validated forecasting system 都是
-        {` ${String(highPrecision.status ?? "not_yet_validated")} `}状态；必须继续积累 forward validation，不能用历史回放替代。
-      </p>
     </section>
   );
 }
 
-function ConfidencePanel({ data }: { data: SimulatedSymbolPaths }) {
-  const confidence = data.model_confidence;
-  if (!confidence) return null;
-  return (
-    <section className="rounded-lg border border-line bg-white p-4">
-      <div className="flex items-start justify-between gap-3">
-        <div>
-          <p className="text-xs uppercase text-muted">Model Confidence</p>
-          <h2 className="mt-1 text-base font-semibold">模型可信度评分</h2>
-        </div>
-        <div className="text-right">
-          <p className="text-2xl font-semibold">{confidence.confidence_score}<span className="text-sm text-muted">/100</span></p>
-          <p className="text-xs text-muted">{confidenceCn(confidence.confidence_level)}</p>
-        </div>
-      </div>
-      <ul className="mt-3 space-y-1 text-xs text-muted">
-        {confidence.why_confidence_is_limited.map((item) => (
-          <li key={item}>{item}</li>
-        ))}
-      </ul>
-      {data.signal_agreement ? (
-        <div className="mt-3 rounded-md bg-panel p-3 text-xs">
-          <p className="font-medium text-ink">信号一致性：{data.signal_agreement.signal_agreement_score}/100，{agreementCn(data.signal_agreement.agreement_level)}</p>
-          <p className="mt-1 text-muted">冲突信号：{data.signal_agreement.conflicting_signals.map((item) => item.name).join(" / ") || "暂无明显冲突"}</p>
-        </div>
-      ) : null}
-    </section>
-  );
-}
-
-function CurrentSummary({ data }: { data: SimulatedSymbolPaths }) {
-  const support = data.historical_support_by_horizon;
-  const ranking = data.scenario_ranking;
-  return (
-    <section className="rounded-lg border border-teal bg-[#eefaf5] p-5 shadow-sm">
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-        <div>
-          <p className="text-xs uppercase text-teal">大白话预测总结</p>
-          <h2 className="mt-1 text-2xl font-semibold">{data.symbol} 当前判断</h2>
-        </div>
-        <div className="rounded-md bg-white px-3 py-2 text-sm">
-          <p className="text-muted">下一步</p>
-          <p className="font-semibold text-ink">{plainAction(data)}</p>
-        </div>
-      </div>
-      <p className="mt-4 text-base leading-7">{plainDecision(data)}</p>
-      <p className="mt-3 text-sm leading-6 text-muted">{plainSummary(data)}</p>
-      <div className="mt-5 grid gap-3 text-sm sm:grid-cols-4">
-        <Metric label="今天是否有预测优势" value={edgeCn(data.market_edge_status?.market_edge_status)} />
-        <Metric label="多源确认" value={data.signal_confirmation ? `${data.signal_confirmation.confirmation_score}/100 / ${confirmationCn(data.signal_confirmation.confirmation_level)}` : "暂无"} />
-        <Metric label="当前状态" value={stateCn(data.market_state)} />
-        <Metric label="最强方向" value={strongestPredictorText(data)} />
-        <Metric label="最大概率路径" value={ranking?.primary ? `${ranking.primary.label} ${pct(ranking.primary.probability)}` : strongestScenario(data)} />
-        <Metric label="第二可能路径" value={ranking?.secondary ? `${ranking.secondary.label} ${pct(ranking.secondary.probability)}` : "暂无"} />
-        <Metric label="路径差距" value={scenarioGapText(data)} />
-        <Metric label="主路径失效条件" value={primarySwitchText(data)} />
-        <Metric label="5d / 20d / 60d 历史支持" value={`${supportCn(support?.by_horizon?.["5d"]?.support)} / ${supportCn(support?.by_horizon?.["20d"]?.support)} / ${supportCn(support?.by_horizon?.["60d"]?.support)}`} />
-      </div>
-    </section>
-  );
-}
-
-function FirstScreenDecisionPanel({
-  selected,
-  strongest,
-}: {
-  selected: SimulatedSymbolPaths;
-  strongest?: SimulatedSymbolPaths;
-}) {
-  const supporting = selected.signal_confirmation?.supporting_evidence ?? selected.signal_agreement?.supporting_signals ?? [];
-  const conflicts = selected.signal_confirmation?.conflicting_evidence ?? selected.signal_agreement?.conflicting_signals ?? [];
-  const missing = selected.signal_confirmation?.missing_evidence ?? [];
-  return (
-    <section className="mt-5 rounded-lg border border-line bg-white p-4">
-      <div className="grid gap-4 lg:grid-cols-[1.15fr_0.85fr]">
-        <div>
-          <p className="text-xs uppercase text-muted">Today&apos;s Prediction Edge</p>
-          <h2 className="mt-1 text-xl font-semibold">今天是否有可用预测优势：{edgeCn(selected.market_edge_status?.market_edge_status)}</h2>
-          <p className="mt-2 text-sm leading-6 text-muted">{selected.market_edge_status?.summary ?? "当前优势状态未知。"}</p>
-          <div className="mt-4 grid gap-3 text-sm sm:grid-cols-4">
-            <Metric label="最强预测方向" value={strongestPredictorText(selected)} />
-            <Metric label="当前状态" value={stateCn(selected.market_state)} />
-            <Metric label="最强指数信号" value={strongest ? `${strongest.symbol} / ${edgeCn(strongest.market_edge_status?.market_edge_status)}` : "暂无"} />
-            <Metric label="预测可信度" value={`${selected.model_confidence?.confidence_score ?? "暂无"}/100`} />
-            <Metric label="多源确认" value={selected.signal_confirmation ? `${selected.signal_confirmation.confirmation_score}/100 / ${confirmationCn(selected.signal_confirmation.confirmation_level)}` : "暂无"} />
-            <Metric label="主路径" value={selected.scenario_ranking?.primary ? `${selected.scenario_ranking.primary.label} ${pct(selected.scenario_ranking.primary.probability)}` : "暂无"} />
-            <Metric label="第二路径" value={selected.scenario_ranking?.secondary ? `${selected.scenario_ranking.secondary.label} ${pct(selected.scenario_ranking.secondary.probability)}` : "暂无"} />
-            <Metric label="路径差距" value={scenarioGapText(selected)} />
-          </div>
-        </div>
-        <div className="grid gap-3 text-xs sm:grid-cols-3 lg:grid-cols-1">
-          <div className="rounded-md bg-panel p-3">
-            <p className="font-medium text-ink">支持信号</p>
-            <p className="mt-1 text-muted">{supporting.slice(0, 4).map((item) => item.name).join(" / ") || "暂无明显支持"}</p>
-          </div>
-          <div className="rounded-md bg-panel p-3">
-            <p className="font-medium text-ink">冲突信号</p>
-            <p className="mt-1 text-muted">{conflicts.slice(0, 4).map((item) => item.name).join(" / ") || "暂无明显冲突"}</p>
-          </div>
-          <div className="rounded-md bg-panel p-3">
-            <p className="font-medium text-ink">缺失证据</p>
-            <p className="mt-1 text-muted">{missing.slice(0, 4).map((item) => item.name).join(" / ") || "暂无关键缺失"}</p>
-          </div>
-          <div className="rounded-md bg-panel p-3">
-            <p className="font-medium text-ink">失效条件</p>
-            <p className="mt-1 text-muted">{selected.risk_invalidation_conditions.slice(0, 3).join(" / ")}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function PredictorPanel({ data }: { data: SimulatedSymbolPaths }) {
-  const predictors = data.predictors;
-  if (!predictors) return null;
-  const labels: Record<string, string> = {
-    bounce_predictor: "反抽预测器",
-    downside_continuation_predictor: "下跌延续预测器",
-    trend_reversal_predictor: "趋势修复/反转预测器",
-    risk_expansion_predictor: "风险扩散预测器",
-  };
-  return (
-    <section className="mt-5 rounded-lg border border-line bg-white p-4">
-      <p className="text-xs uppercase text-muted">Predictor Stack</p>
-      <h2 className="mt-1 text-base font-semibold">四个独立预测器</h2>
-      <div className="mt-3 grid gap-3 md:grid-cols-4">
-        {Object.entries(predictors).map(([key, predictor]) => (
-          <div key={key} className="rounded-md bg-panel p-3">
-            <div className="flex items-center justify-between gap-2">
-              <p className="text-sm font-medium">{labels[key] ?? key}</p>
-              <p className="text-sm font-semibold">{pct(predictor.probability)}</p>
-            </div>
-            <p className="mt-1 text-xs text-muted">可信度：{pct(predictor.confidence)}，最佳周期：{predictor.best_horizon}</p>
-            <ul className="mt-2 space-y-1 text-xs text-muted">
-              {predictor.main_drivers.slice(0, 3).map((item) => <li key={item}>{item}</li>)}
-            </ul>
-          </div>
-        ))}
-      </div>
-      <p className="mt-3 text-xs text-muted">四个预测器分开看，避免一个综合模型强行解释所有市场状态。</p>
-    </section>
-  );
-}
-
-function HorizonTable({ data }: { data: SimulatedSymbolPaths }) {
-  const predictions = data.prediction_horizons ?? {};
-  return (
-    <section className="mt-5 rounded-lg border border-line bg-white p-4">
-      <div>
-        <p className="text-xs uppercase text-muted">Period Forecast</p>
-        <h2 className="mt-1 text-base font-semibold">分周期预测</h2>
-      </div>
-      <div className="mt-3 overflow-x-auto">
-        <table className="w-full min-w-[760px] text-left text-sm">
-          <thead className="border-b border-line text-xs text-muted">
-            <tr>
-              <th className="py-2">周期</th>
-              <th>方向判断</th>
-              <th>预期区间</th>
-              <th>上涨概率</th>
-              <th>下跌概率</th>
-              <th>反抽概率</th>
-              <th>失败反抽风险</th>
-              <th>可信度</th>
-              <th>历史支持</th>
-            </tr>
-          </thead>
-          <tbody>
-            {HORIZON_ORDER.map((key) => {
-              const row = predictions[key];
-              if (!row) return null;
-              return (
-                <tr key={key} className="border-b border-line last:border-0">
-                  <td className="py-2 font-medium">{key}</td>
-                  <td>{row.expected_direction}</td>
-                  <td>{signedPct(row.expected_return_range?.[0])} 到 {signedPct(row.expected_return_range?.[1])}</td>
-                  <td>{pct(row.up_probability)}</td>
-                  <td>{pct(row.down_probability)}</td>
-                  <td>{pct(row.bounce_probability)}</td>
-                  <td>{pct(row.failed_bounce_risk)}</td>
-                  <td>{pct(row.confidence)}</td>
-                  <td>{supportCn(row.historical_support)}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
-    </section>
-  );
-}
-
-function MarketStatePanel({ data }: { data: SimulatedSymbolPaths }) {
-  const states = data.market_state_v2?.states;
-  if (!states) return null;
-  const topStates = Object.entries(states).sort(([, left], [, right]) => right.probability - left.probability).slice(0, 5);
-  const selectedState = states[data.market_state as keyof typeof states];
-  return (
-    <section className="mt-5 rounded-lg border border-line bg-white p-4">
-      <p className="text-xs uppercase text-muted">Market State Engine v2</p>
-      <h2 className="mt-1 text-base font-semibold">综合市场状态</h2>
-      <div className="mt-3 grid gap-3 md:grid-cols-5">
-        {topStates.map(([state, payload]) => (
-          <div key={state} className="rounded-md bg-panel p-3">
-            <div className="flex items-center justify-between gap-2">
-              <p className="text-sm font-medium">{stateCn(state)}</p>
-              <p className="text-sm font-semibold">{pct(payload.probability)}</p>
-            </div>
-            <p className="mt-2 text-xs text-muted">{payload.reason}</p>
-          </div>
-        ))}
-      </div>
-      <div className="mt-4 grid gap-3 md:grid-cols-2">
-        <div className="rounded-md border border-line p-3">
-          <p className="text-sm font-medium">支持特征</p>
-          <ul className="mt-2 space-y-1 text-xs text-muted">
-            {selectedState?.supporting_features?.map((item) => <li key={item}>{item}</li>)}
-          </ul>
-        </div>
-        <div className="rounded-md border border-line p-3">
-          <p className="text-sm font-medium">冲突特征</p>
-          <ul className="mt-2 space-y-1 text-xs text-muted">
-            {selectedState?.conflicting_features?.map((item) => <li key={item}>{item}</li>)}
-          </ul>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function ScenarioCards({ data }: { data: SimulatedSymbolPaths }) {
-  return (
-    <section className="mt-5 grid gap-3 md:grid-cols-4">
-      {data.scenario_cards.map((card) => (
-        <div key={card.name} className="rounded-lg border border-line bg-white p-4">
-          <p className="text-sm font-semibold">{card.name_cn}</p>
-          <p className="mt-2 text-xs leading-5 text-muted">{card.summary_cn}</p>
-          <div className="mt-3 flex items-center justify-between text-xs">
-            <span className="text-muted">20d收益</span>
-            <span className={card.return_20d >= 0 ? "font-medium text-teal" : "font-medium text-rose"}>{signedPct(card.return_20d)}</span>
-          </div>
-          <div className="mt-1 flex items-center justify-between text-xs">
-            <span className="text-muted">权重</span>
-            <span className="font-medium">{pct(card.probability_weight)}</span>
-          </div>
-        </div>
-      ))}
-    </section>
-  );
-}
-
-function HistoricalAnalogs({
-  cases,
-  data,
-}: {
-  cases: HistoricalAnalogCase[];
-  data: SimulatedSymbolPaths;
-}) {
-  const support = data.historical_support_by_horizon;
-  return (
-    <section className="mt-5 rounded-lg border border-line bg-white p-4">
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-        <div>
-          <p className="text-xs uppercase text-muted">Historical Analogs</p>
-          <h2 className="mt-1 text-base font-semibold">历史相似情景</h2>
-        </div>
-        <div className="text-xs text-muted sm:text-right">
-          <p>样本质量：{support?.analog_sample_quality ? confidenceCn(support.analog_sample_quality) : "未知"}</p>
-          <p>最坏路径风险：{support?.worst_path_risk ?? "未知"}</p>
-        </div>
-      </div>
-      <div className="mt-3 grid gap-2 sm:grid-cols-5">
-        {["3d", "5d", "10d", "20d", "60d"].map((key) => {
-          const item = support?.by_horizon?.[key];
-          return (
-            <div key={key} className="rounded-md bg-panel p-3 text-xs">
-              <p className="font-medium">{key}</p>
-              <p className="mt-1 text-muted">支持：{supportCn(item?.support)}</p>
-              <p className="text-muted">均值：{signedPct(item?.avg_return)}</p>
-              <p className="text-muted">胜率：{pct(item?.hit_rate)}</p>
-            </div>
-          );
-        })}
-      </div>
-      <div className="mt-4 grid gap-3 lg:grid-cols-5">
-        {cases.map((item) => (
-          <div key={item.date} className="rounded-md border border-line p-3">
-            <div className="flex items-center justify-between gap-2">
-              <p className="font-medium">{item.date}</p>
-              <p className="text-xs text-muted">{pct(item.similarity_score)}</p>
-            </div>
-            <p className="mt-2 text-xs text-muted">状态：{item.regime}</p>
-            <p className="mt-1 text-xs text-muted">5d：{signedPct(item.forward_return_5d)}</p>
-            <p className="text-xs text-muted">20d：{signedPct(item.forward_return_20d)}</p>
-            <p className="text-xs text-muted">60d：{signedPct(item.forward_return_60d)}</p>
-            <p className="mt-2 text-xs text-rose">最差路径：{signedPct(item.max_adverse_excursion)}</p>
-          </div>
-        ))}
-      </div>
-      <p className="mt-3 text-xs text-muted">历史相似不等于未来必然重复，只用于解释、条件分布和前向观察。</p>
-    </section>
-  );
-}
-
-function RiskPanel({ data }: { data: SimulatedSymbolPaths }) {
-  return (
-    <section className="mt-5 rounded-lg border border-line bg-white p-4">
-      <p className="text-xs uppercase text-muted">Risk / Invalidation</p>
-      <h2 className="mt-1 text-base font-semibold">预测失效条件</h2>
-      <div className="mt-3 grid gap-2 md:grid-cols-2">
-        {data.risk_invalidation_conditions.map((item) => (
-          <div key={item} className="rounded-md bg-panel p-3 text-sm text-muted">{item}</div>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-export function MarketDashboard({ dashboard: initialDashboard }: { dashboard: PredictionDashboard }) {
-  const [dashboard, setDashboard] = useState(initialDashboard);
-  const availableSymbols = SYMBOL_ORDER.filter((symbol) => dashboard.simulated_paths.symbols[symbol]);
-  const defaultSymbol = availableSymbols.includes(dashboard.overview.strongest_symbol)
+export function MarketDashboard({ dashboard }: { dashboard: PredictionDashboard }) {
+  const [data, setData] = useState(dashboard);
+  const initialSymbol = dashboard.overview?.strongest_symbol && getSymbols(dashboard)[dashboard.overview.strongest_symbol]
     ? dashboard.overview.strongest_symbol
-    : availableSymbols[0] ?? "SPY";
-  const [selectedSymbol, setSelectedSymbol] = useState(defaultSymbol);
-  const selected = dashboard.simulated_paths.symbols[selectedSymbol];
-  const analog = dashboard.analogs[selectedSymbol];
-  const topAnalogs = (analog?.top_similar_cases ?? []).slice(0, 5);
-  const strongest = useMemo(() => {
-    return availableSymbols
-      .map((symbol) => dashboard.simulated_paths.symbols[symbol])
-      .sort((left, right) => {
-        const edgeDelta = edgeRank(right.market_edge_status?.market_edge_status) - edgeRank(left.market_edge_status?.market_edge_status);
-        if (edgeDelta !== 0) return edgeDelta;
-        const agreementDelta = (right.signal_agreement?.signal_agreement_score ?? 0) - (left.signal_agreement?.signal_agreement_score ?? 0);
-        if (agreementDelta !== 0) return agreementDelta;
-        return right.bounce_probability - left.bounce_probability;
-      })[0];
-  }, [availableSymbols, dashboard.simulated_paths.symbols]);
+    : "SPY";
+  const [selectedSymbol, setSelectedSymbol] = useState(initialSymbol);
 
   useEffect(() => {
-    setDashboard(initialDashboard);
-  }, [initialDashboard]);
-
-  useEffect(() => {
-    const refreshDashboard = async () => {
+    let active = true;
+    const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+    const loadLatest = async () => {
       try {
-        const response = await fetch(`${publicAssetPath("prediction-dashboard.json")}?ts=${Date.now()}`, {
-          cache: "no-store",
-        });
+        const response = await fetch(`${basePath}/prediction-dashboard.json?ts=${Date.now()}`, { cache: "no-store" });
         if (!response.ok) return;
-        const nextDashboard = (await response.json()) as PredictionDashboard;
-        if (!nextDashboard?.overview?.symbols) return;
-        setDashboard((currentDashboard) => (
-          dashboardGeneratedAt(nextDashboard) !== dashboardGeneratedAt(currentDashboard)
-            ? nextDashboard
-            : currentDashboard
-        ));
+        const nextData = (await response.json()) as PredictionDashboard;
+        if (active) setData(nextData);
       } catch {
-        // Keep the last rendered dashboard when the static file is temporarily unavailable.
+        // Keep the server-rendered snapshot if the static JSON cannot be refreshed.
       }
     };
-    const interval = window.setInterval(refreshDashboard, 5 * 60 * 1000);
-    return () => window.clearInterval(interval);
+    loadLatest();
+    const interval = window.setInterval(loadLatest, 5 * 60 * 1000);
+    return () => {
+      active = false;
+      window.clearInterval(interval);
+    };
   }, []);
 
-  useEffect(() => {
-    if (availableSymbols.length && !availableSymbols.includes(selectedSymbol)) {
-      setSelectedSymbol(defaultSymbol);
-    }
-  }, [availableSymbols, defaultSymbol, selectedSymbol]);
+  const symbols = useMemo(() => getSymbolList(data), [data]);
+  const selected = getSymbols(data)[selectedSymbol] ?? symbols[0];
 
-  if (!selected) {
-    return (
-      <main className="mx-auto min-h-screen w-full max-w-5xl px-4 py-5">
-        <h1 className="text-2xl font-semibold">市场预测终端</h1>
-        <p className="mt-3 text-muted">暂无可用数据。请先运行 GitHub Actions 的 Forward Alpha v1 Observation。</p>
-      </main>
-    );
-  }
+  useEffect(() => {
+    if (!selected && symbols[0]) {
+      setSelectedSymbol(symbols[0].symbol);
+    }
+  }, [selected, symbols]);
 
   return (
-    <main className="mx-auto min-h-screen w-full max-w-6xl px-4 py-5">
-      <header className="border-b border-line pb-5">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="text-xs uppercase tracking-[0.18em] text-muted">Market Prediction Dashboard</p>
-            <h1 className="mt-2 text-3xl font-semibold tracking-normal">市场预测终端</h1>
-            <p className="mt-2 max-w-3xl text-sm leading-6 text-muted">
-              页面直接展示大盘状态、概率路径、历史相似情景和数据质量。Alpha v1 仍是 RESEARCH ALPHA CANDIDATE，只是预测信号 / 反抽场景输入。
-            </p>
-          </div>
-          <div className="rounded-lg border border-line bg-white p-3 text-sm">
-            <p className="text-muted">最新市场数据日</p>
-            <p className="mt-1 font-medium">{dashboard.data_quality_report?.summary.latest_date ?? dashboard.as_of ?? "暂无"}</p>
-            <p className="mt-2 text-muted">页面生成</p>
-            <p className="mt-1 font-medium">{displayTimestamp(dashboard.data_quality_report?.generated_at ?? dashboard.market_intelligence_v3?.generated_at ?? dashboard.market_intelligence_v2?.generated_at)}</p>
-            <p className="mt-2 text-xs text-teal">自动：收盘后更新，页面每 5 分钟检查</p>
-          </div>
-        </div>
-      </header>
-
-      <section className="mt-5">
-        <div className="flex items-center justify-between gap-3">
-          <div>
-            <p className="text-xs uppercase text-muted">Market Overview</p>
-            <h2 className="mt-1 text-base font-semibold">主要大盘指数 / ETF</h2>
-          </div>
-          {strongest && (
-            <p className="text-right text-xs text-muted">当前反抽概率最高：<b className="text-ink">{strongest.symbol}</b></p>
-          )}
-        </div>
-        <div className="mt-3 grid gap-3 md:grid-cols-4">
-          {availableSymbols.map((symbol) => (
-            <MarketCard
-              key={symbol}
-              symbol={symbol}
-              selected={selectedSymbol === symbol}
-              data={dashboard.simulated_paths.symbols[symbol]}
-              onSelect={() => setSelectedSymbol(symbol)}
-            />
-          ))}
-        </div>
-      </section>
-
-      <div className="mt-5 grid gap-5 lg:grid-cols-[1.4fr_0.9fr]">
-        <CurrentSummary data={selected} />
-        <ConfidencePanel data={selected} />
+    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(20,184,166,0.16),_transparent_28rem),linear-gradient(180deg,#071111_0%,#0b1112_42%,#071111_100%)] px-4 py-5 text-slate-100 sm:px-6 lg:px-10">
+      <div className="mx-auto flex max-w-7xl flex-col gap-5">
+        <TerminalHeader dashboard={data} />
+        <ForecastSummary dashboard={data} selected={selected} />
+        <IndexCards symbols={symbols} selectedSymbol={selected?.symbol ?? selectedSymbol} onSelect={setSelectedSymbol} />
+        <ScenarioRankingPanel selected={selected} />
+        <PredictionChart selected={selected} />
+        <HorizonTable selected={selected} />
+        <EvidenceSections selected={selected} />
+        <HistoricalAnalogs dashboard={data} symbol={selected?.symbol ?? selectedSymbol} />
+        <DataQuality dashboard={data} />
+        <ForecastAccuracy dashboard={data} />
+        <ModelLeaderboard dashboard={data} />
       </div>
-
-      <PredictionChart data={selected} />
-      <FirstScreenDecisionPanel selected={selected} strongest={strongest} />
-      <HorizonTable data={selected} />
-      <PredictorPanel data={selected} />
-      <MarketStatePanel data={selected} />
-      <ScenarioCards data={selected} />
-      <HistoricalAnalogs cases={topAnalogs} data={selected} />
-      <RiskPanel data={selected} />
-      <DataQualityPanel report={dashboard.data_quality_report ?? dashboard.market_intelligence_v2?.data_quality_report} />
-      <BreadthPanel status={dashboard.breadth_status} selected={selected} />
-      <OptionsPanel status={dashboard.options_status} selected={selected} />
-      <FlowPositioningPanel status={dashboard.flow_positioning_status ?? dashboard.flow_status} selected={selected} />
-      <ForecastAccuracyPanel scorecard={dashboard.forecast_accuracy_scorecard} />
-      <HistoricalReplayBenchmarkPanel benchmark={dashboard.historical_replay_benchmark} />
-      <ModelValidationStatusPanel
-        leaderboard={dashboard.model_leaderboard}
-        promotionStatus={dashboard.model_promotion_status}
-      />
     </main>
   );
 }
