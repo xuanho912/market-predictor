@@ -38,5 +38,6 @@ Strategic principle: build only what creates unique market-prediction judgment; 
 32. The active frozen production model is `baseline_v1` until a challenger passes explicit forward-validation promotion gates. Past pre-freeze rows must keep their original `model_version`; never rewrite them to make history look cleaner.
 33. Any new data source, predictor, weighting rule, or scenario-ranking change must first run as a challenger / shadow model. It cannot replace `baseline_v1` because of a promising historical replay alone.
 34. Model promotion requires forward samples by horizon, majority wins versus `baseline_v1`, and no material degradation in other horizons. If samples are insufficient, status must remain `insufficient_forward_evidence` or `historical_only_not_validated`.
+35. High precision and stable alpha are formal validation standards, not marketing labels. Follow `docs/forecast_accuracy_definition.md` and `docs/stable_alpha_definition.md`; output `not_yet_validated` until forward evidence satisfies the gates.
 
 Before adding a feature, define the label, horizon, regime interpretation, point-in-time data availability, validation window, probability calibration method, prediction logging path, and Wardley classification. If the feature is a right-side commodity module, prefer a managed service, API, or existing library over custom engineering.

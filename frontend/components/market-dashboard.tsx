@@ -984,6 +984,88 @@ function HistoricalReplayBenchmarkPanel({ benchmark }: { benchmark?: Record<stri
   );
 }
 
+function ModelValidationStatusPanel({
+  leaderboard,
+  promotionStatus,
+}: {
+  leaderboard?: Record<string, unknown>;
+  promotionStatus?: Record<string, unknown>;
+}) {
+  if (!leaderboard && !promotionStatus) return null;
+  const board = safeRecord(leaderboard);
+  const promotion = safeRecord(promotionStatus);
+  const standards = safeRecord(promotion.validation_standards ?? board.validation_standards);
+  const highPrecision = safeRecord(standards.high_precision_standard);
+  const stableAlpha = safeRecord(standards.stable_alpha_standard);
+  const validatedSystem = safeRecord(standards.validated_forecasting_system_standard);
+  const completed = safeRecord(standards.forward_completed_samples_by_horizon);
+  const models = Array.isArray(board.models) ? board.models.map(safeRecord) : [];
+  const challengers = models.filter((model) => String(model.role ?? "").includes("challenger"));
+  const promotions = Array.isArray(promotion.models) ? promotion.models.map(safeRecord) : [];
+  const activeModel = String(board.active_model_version ?? promotion.active_model_version ?? "baseline_v1");
+  const completedText = ["3d", "5d", "10d", "20d", "60d"]
+    .map((horizon) => `${horizon}:${String(completed[horizon] ?? 0)}`)
+    .join(" / ");
+  const anyPromotion = promotions.some((item) => item.status === "promotion_candidate");
+  return (
+    <section className="mt-5 rounded-lg border border-line bg-white p-4">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <p className="text-xs uppercase text-muted">Model Validation Status</p>
+          <h2 className="mt-1 text-base font-semibold">模型验证与进化状态</h2>
+          <p className="mt-1 text-sm text-muted">
+            当前只验证概率路径，不做执行建议。新模型必须先作为 challenger 影子模型跑赢 baseline_v1。
+          </p>
+        </div>
+        <div className="rounded-md bg-panel px-4 py-2 text-right">
+          <p className="text-xs text-muted">Active Model</p>
+          <p className="text-2xl font-semibold">{activeModel}</p>
+          <p className="text-xs text-muted">{anyPromotion ? "有候选可审查" : "暂无可升级 challenger"}</p>
+        </div>
+      </div>
+      <div className="mt-3 grid gap-2 text-xs sm:grid-cols-4">
+        <Metric label="Baseline version" value="baseline_v1" />
+        <Metric label="Challenger count" value={String(challengers.length)} />
+        <Metric label="Forward samples" value={completedText} />
+        <Metric label="Promotion standard" value={anyPromotion ? "promotion_candidate" : "insufficient_forward_samples"} />
+      </div>
+      <div className="mt-3 grid gap-2 text-xs sm:grid-cols-3">
+        <Metric label="High precision" value={String(highPrecision.status ?? "not_yet_validated")} />
+        <Metric label="Stable alpha" value={String(stableAlpha.status ?? "not_yet_validated")} />
+        <Metric label="Validated system" value={String(validatedSystem.status ?? "not_yet_validated")} />
+      </div>
+      <div className="mt-3 overflow-x-auto">
+        <table className="min-w-full text-left text-xs">
+          <thead className="text-muted">
+            <tr>
+              <th className="px-2 py-2">模型</th>
+              <th className="px-2 py-2">角色</th>
+              <th className="px-2 py-2">状态</th>
+              <th className="px-2 py-2">完成样本</th>
+              <th className="px-2 py-2">升级资格</th>
+            </tr>
+          </thead>
+          <tbody>
+            {models.slice(0, 8).map((model) => (
+              <tr key={String(model.model_version)} className="border-t border-line">
+                <td className="px-2 py-2 font-medium">{String(model.model_version ?? "unknown")}</td>
+                <td className="px-2 py-2 text-muted">{String(model.role ?? "unknown")}</td>
+                <td className="px-2 py-2 text-muted">{String(model.status ?? "unknown")}</td>
+                <td className="px-2 py-2 text-muted">{String(model.completed_forecasts ?? 0)}</td>
+                <td className="px-2 py-2 text-muted">{String(model.promotion_status ?? "not_applicable")}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="mt-3 rounded-md bg-panel p-3 text-sm text-muted">
+        当前结论：高精度、stable alpha、validated forecasting system 都是
+        {` ${String(highPrecision.status ?? "not_yet_validated")} `}状态；必须继续积累 forward validation，不能用历史回放替代。
+      </p>
+    </section>
+  );
+}
+
 function ConfidencePanel({ data }: { data: SimulatedSymbolPaths }) {
   const confidence = data.model_confidence;
   if (!confidence) return null;
@@ -1429,6 +1511,10 @@ export function MarketDashboard({ dashboard: initialDashboard }: { dashboard: Pr
       <FlowPositioningPanel status={dashboard.flow_positioning_status ?? dashboard.flow_status} selected={selected} />
       <ForecastAccuracyPanel scorecard={dashboard.forecast_accuracy_scorecard} />
       <HistoricalReplayBenchmarkPanel benchmark={dashboard.historical_replay_benchmark} />
+      <ModelValidationStatusPanel
+        leaderboard={dashboard.model_leaderboard}
+        promotionStatus={dashboard.model_promotion_status}
+      />
     </main>
   );
 }

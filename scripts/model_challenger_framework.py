@@ -123,6 +123,9 @@ def build_model_challenger_outputs(
     registry = [_registry_status(item, data_flags) for item in CHALLENGER_REGISTRY]
     leaderboard = _build_leaderboard(baseline_records, challenger_records, registry)
     promotion_status = _build_promotion_status(leaderboard, registry)
+    standards = _validation_standards(leaderboard, promotion_status)
+    leaderboard["validation_standards"] = standards
+    promotion_status["validation_standards"] = standards
     return {
         "leaderboard": leaderboard,
         "promotion_status": promotion_status,
@@ -155,7 +158,7 @@ def write_model_challenger_outputs(
             "version": "model_challenger_forecasts_public_v1",
             "generated_at": datetime.now(timezone.utc).isoformat(),
             "records": payload["challenger_records"],
-        "note": "Shadow forecasts are forecast-validation records, not execution records.",
+            "note": "Shadow forecasts are forecast-validation records, not execution records.",
         },
     )
     (outputs_dir / "model_leaderboard.md").write_text(
@@ -184,6 +187,16 @@ def render_model_leaderboard_markdown(leaderboard: dict[str, Any]) -> str:
     freeze = leaderboard.get("baseline_freeze") or {}
     for key, value in freeze.items():
         lines.append(f"- {key}: `{value}`")
+    standards = leaderboard.get("validation_standards") or {}
+    lines.extend(["", "## Validation Standards", ""])
+    for key in ("high_precision_standard", "stable_alpha_standard", "validated_forecasting_system_standard"):
+        payload = standards.get(key) or {}
+        lines.append(f"- {key}: `{payload.get('status')}`")
+        for reason in payload.get("reasons") or []:
+            lines.append(f"  - {reason}")
+    lines.extend(["", "## Best Model By Horizon", ""])
+    for horizon, payload in (leaderboard.get("best_model_by_horizon") or {}).items():
+        lines.append(f"- {horizon}: `{payload}`")
     lines.extend(["", "## Models", ""])
     for model in leaderboard.get("models", []):
         lines.append(f"### {model.get('model_version')}")
@@ -233,6 +246,12 @@ def render_model_promotion_rules_markdown(status: dict[str, Any]) -> str:
         for key in ("status", "eligible", "reason", "wins_vs_baseline", "failed_gates"):
             lines.append(f"- {key}: `{model.get(key)}`")
         lines.append("")
+    lines.extend(["## Validation Standards", ""])
+    for key, payload in (status.get("validation_standards") or {}).items():
+        if isinstance(payload, dict) and "status" in payload:
+            lines.append(f"- {key}: `{payload.get('status')}`")
+            for reason in payload.get("reasons") or []:
+                lines.append(f"  - {reason}")
     lines.extend(["## Non-Negotiable Rules", ""])
     for rule in status.get("guardrails", []):
         lines.append(f"- {rule}")
@@ -261,6 +280,7 @@ def _build_leaderboard(
         "version": "model_leaderboard_v1",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "active_model_version": BASELINE_MODEL_VERSION,
+        "best_model_by_horizon": _best_model_by_horizon(models),
         "baseline_freeze": {
             "model_version": BASELINE_MODEL_VERSION,
             "frozen_components": [
@@ -314,6 +334,97 @@ def _build_promotion_status(leaderboard: dict[str, Any], registry: list[dict[str
             "Only forward validation can promote a challenger to active_model.",
         ],
     }
+
+
+def _validation_standards(leaderboard: dict[str, Any], promotion_status: dict[str, Any]) -> dict[str, Any]:
+    baseline = next((model for model in leaderboard.get("models", []) if model.get("model_version") == BASELINE_MODEL_VERSION), {})
+    horizon_metrics = baseline.get("horizon_metrics") or {}
+    completed = {horizon: int((horizon_metrics.get(horizon) or {}).get("completed_count") or 0) for horizon in MINIMUM_PROMOTION_GATES}
+    max_completed = max(completed.values(), default=0)
+    min_completed = min(completed.values(), default=0)
+    has_promotion_candidate = any(model.get("status") == "promotion_candidate" for model in promotion_status.get("models", []))
+
+    high_precision_reasons: list[str] = []
+    if min_completed < 20:
+        high_precision_reasons.append("forward completed samples are below the minimum validation gate")
+    if not _moderate_strong_edge_validated(baseline):
+        high_precision_reasons.append("MODERATE_EDGE / STRONG_EDGE samples are not yet proven better than NO_EDGE")
+    if not _horizon_advantage_validated(baseline):
+        high_precision_reasons.append("5d / 20d primary-path advantage is not yet forward validated")
+
+    stable_alpha_reasons: list[str] = []
+    if max_completed < 50:
+        stable_alpha_reasons.append("forward-only samples are too small for stable alpha")
+    stable_alpha_reasons.append("Alpha v1 remains RESEARCH ALPHA CANDIDATE and cannot be upgraded by historical replay")
+
+    validated_reasons: list[str] = []
+    if min_completed < 20:
+        validated_reasons.append("forecast accuracy ledger has insufficient completed forward samples")
+    if not has_promotion_candidate:
+        validated_reasons.append("no challenger has qualified for promotion against baseline_v1")
+
+    return {
+        "high_precision_standard": {
+            "status": "met" if not high_precision_reasons else "not_yet_validated",
+            "reasons": high_precision_reasons,
+            "definition_doc": "docs/forecast_accuracy_definition.md",
+        },
+        "stable_alpha_standard": {
+            "status": "met" if not stable_alpha_reasons else "not_yet_validated",
+            "alpha_v1_status": "RESEARCH ALPHA CANDIDATE",
+            "reasons": stable_alpha_reasons,
+            "definition_doc": "docs/stable_alpha_definition.md",
+        },
+        "validated_forecasting_system_standard": {
+            "status": "met" if not validated_reasons else "not_yet_validated",
+            "reasons": validated_reasons,
+            "requires_forward_validation": True,
+        },
+        "forward_completed_samples_by_horizon": completed,
+        "summary": "Current system is an auditable baseline and challenger framework, not yet a high-precision or stable-alpha system.",
+    }
+
+
+def _best_model_by_horizon(models: list[dict[str, Any]]) -> dict[str, Any]:
+    result: dict[str, Any] = {}
+    for horizon in MINIMUM_PROMOTION_GATES:
+        candidates: list[dict[str, Any]] = []
+        for model in models:
+            metrics = ((model.get("horizon_metrics") or {}).get(horizon) or {})
+            completed = int(metrics.get("completed_count") or 0)
+            mae = _float(metrics.get("primary_mean_absolute_error"))
+            hit = _float(metrics.get("primary_hit_rate"))
+            if completed and mae is not None:
+                candidates.append(
+                    {
+                        "model_version": model.get("model_version"),
+                        "completed_count": completed,
+                        "primary_hit_rate": hit,
+                        "primary_mean_absolute_error": mae,
+                    }
+                )
+        candidates.sort(key=lambda item: (item["primary_mean_absolute_error"], -(item["primary_hit_rate"] or 0.0)))
+        result[horizon] = candidates[0] if candidates else {
+            "model_version": None,
+            "completed_count": 0,
+            "status": "insufficient_forward_samples",
+        }
+    return result
+
+
+def _moderate_strong_edge_validated(model: dict[str, Any]) -> bool:
+    return int(model.get("completed_forecasts") or 0) >= 20 and model.get("promotion_status") == "active_model"
+
+
+def _horizon_advantage_validated(model: dict[str, Any]) -> bool:
+    metrics = model.get("horizon_metrics") or {}
+    for horizon in ("5d", "20d"):
+        row = metrics.get(horizon) or {}
+        if int(row.get("completed_count") or 0) < MINIMUM_PROMOTION_GATES[horizon]:
+            return False
+        if (_float(row.get("primary_vs_secondary_accuracy_spread")) or 0.0) <= 0:
+            return False
+    return True
 
 
 def _model_card(version: str, role: str, rows: list[dict[str, Any]]) -> dict[str, Any]:

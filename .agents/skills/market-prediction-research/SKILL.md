@@ -465,6 +465,18 @@ Hard rules:
 - If a challenger improves one horizon but degrades others, keep it as a shadow model.
 - Valid promotion statuses are `blocked_missing_required_data`, `insufficient_forward_evidence`, `historical_only_not_validated`, `promotion_candidate`, and `active_model`.
 
+## 25. Define High Precision And Stable Alpha Conservatively
+
+Read `docs/forecast_accuracy_definition.md` and `docs/stable_alpha_definition.md` before claiming precision or alpha quality.
+
+Hard rules:
+
+- High precision does not mean every daily forecast is right. It means the system can identify `NO_EDGE`, and high-evidence buckets beat low-evidence buckets in forward validation.
+- Stable alpha does not mean one historical replay or one backtest worked. It requires enough forward-only samples, multiple-symbol checks, horizon checks, regime checks, confidence validation, and overfit controls.
+- The dashboard and reports must output `not_yet_validated` until the evidence gates are met.
+- `Alpha v1` remains `RESEARCH ALPHA CANDIDATE` until forward-only evidence satisfies the stable alpha definition.
+- Do not use historical replay, historical analogs, or data-source additions as a shortcut to high precision or stable alpha.
+
 ## Non-Negotiable Summary
 
 Always enforce: label-first design, walk-forward validation, regime-aware modeling, credit + liquidity + options + breadth inputs, no future leakage, no random train-test split, probability output with calibration, feature ablation, horizon-specific models, persistent prediction logs for backtesting, and Wardley Mapping build-vs-buy discipline.

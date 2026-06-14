@@ -1,6 +1,6 @@
 # Model Leaderboard
 
-Generated at: `2026-06-14T15:06:01.265702+00:00`
+Generated at: `2026-06-14T15:13:31.535389+00:00`
 Active model: `baseline_v1`
 
 > This is forecast model validation, not execution guidance or portfolio accounting.
@@ -11,6 +11,27 @@ Active model: `baseline_v1`
 - frozen_components: `['scenario ranking', 'signal confirmation', 'historical analog engine', 'FRED rates/credit', 'breadth/internal resonance', 'VIX term / VVIX / SKEW', 'flow / positioning proxy', 'forecast accuracy ledger', 'historical replay benchmark']`
 - alpha_v1_threshold: `0.32534311`
 - past_forecast_policy: `Past rows are immutable. Pre-freeze rows keep their original model_version.`
+
+## Validation Standards
+
+- high_precision_standard: `not_yet_validated`
+  - forward completed samples are below the minimum validation gate
+  - MODERATE_EDGE / STRONG_EDGE samples are not yet proven better than NO_EDGE
+  - 5d / 20d primary-path advantage is not yet forward validated
+- stable_alpha_standard: `not_yet_validated`
+  - forward-only samples are too small for stable alpha
+  - Alpha v1 remains RESEARCH ALPHA CANDIDATE and cannot be upgraded by historical replay
+- validated_forecasting_system_standard: `not_yet_validated`
+  - forecast accuracy ledger has insufficient completed forward samples
+  - no challenger has qualified for promotion against baseline_v1
+
+## Best Model By Horizon
+
+- 3d: `{'model_version': None, 'completed_count': 0, 'status': 'insufficient_forward_samples'}`
+- 5d: `{'model_version': None, 'completed_count': 0, 'status': 'insufficient_forward_samples'}`
+- 10d: `{'model_version': None, 'completed_count': 0, 'status': 'insufficient_forward_samples'}`
+- 20d: `{'model_version': None, 'completed_count': 0, 'status': 'insufficient_forward_samples'}`
+- 60d: `{'model_version': None, 'completed_count': 0, 'status': 'insufficient_forward_samples'}`
 
 ## Models
 

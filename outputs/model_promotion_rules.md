@@ -1,6 +1,6 @@
 # Model Promotion Rules
 
-Generated at: `2026-06-14T15:06:01.265729+00:00`
+Generated at: `2026-06-14T15:13:31.535424+00:00`
 
 ## Minimum Forward Sample Gates
 
@@ -59,6 +59,18 @@ Generated at: `2026-06-14T15:06:01.265729+00:00`
 - wins_vs_baseline: `0`
 - failed_gates: `['put_call_available', 'gamma_available', 'true_flow_available', 'macro_event_quality_available']`
 
+## Validation Standards
+
+- high_precision_standard: `not_yet_validated`
+  - forward completed samples are below the minimum validation gate
+  - MODERATE_EDGE / STRONG_EDGE samples are not yet proven better than NO_EDGE
+  - 5d / 20d primary-path advantage is not yet forward validated
+- stable_alpha_standard: `not_yet_validated`
+  - forward-only samples are too small for stable alpha
+  - Alpha v1 remains RESEARCH ALPHA CANDIDATE and cannot be upgraded by historical replay
+- validated_forecasting_system_standard: `not_yet_validated`
+  - forecast accuracy ledger has insufficient completed forward samples
+  - no challenger has qualified for promotion against baseline_v1
 ## Non-Negotiable Rules
 
 - Alpha v1 threshold remains frozen at 0.32534311.
