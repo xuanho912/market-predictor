@@ -121,6 +121,15 @@ def build_market_intelligence_v3(
             predictors=predictors,
             confidence=confidence,
         )
+        scenario_ranking = build_scenario_ranking(
+            overview_symbol=overview_symbol,
+            path_weight_model=path_weight_model,
+            signal_agreement=signal_agreement,
+            analog_support=analog_support,
+            features=features,
+            predictors=predictors,
+            confidence=confidence,
+        )
         horizon_predictions = enhance_horizon_predictions(
             simulated_symbol.get("prediction_horizons", {}),
             predictors,
@@ -144,6 +153,7 @@ def build_market_intelligence_v3(
             "bearish_path_weight": path_weight_model["bearish_path_weight"],
             "analog_path_weight": path_weight_model["analog_path_weight"],
             "low_confidence_simulation": path_weight_model["low_confidence_simulation"],
+            "scenario_ranking": scenario_ranking,
         }
         overview_symbol.update(patch)
         simulated_symbol.update(patch)
@@ -804,6 +814,215 @@ def _update_scenario_card_weights_v3(simulated_symbol: dict[str, Any], path_weig
         key = mapping.get(card.get("name"))
         if key:
             card["probability_weight"] = path_weight_model[key]
+
+
+def build_scenario_ranking(
+    *,
+    overview_symbol: dict[str, Any],
+    path_weight_model: dict[str, Any],
+    signal_agreement: dict[str, Any],
+    analog_support: dict[str, Any],
+    features: dict[str, Any],
+    predictors: dict[str, Any],
+    confidence: dict[str, Any],
+) -> dict[str, Any]:
+    scenarios = [
+        {
+            "scenario": "expected_path",
+            "label": "综合期望情景",
+            "weight_key": "base_path_weight",
+            "expected_horizon": "3d-20d",
+        },
+        {
+            "scenario": "bounce_path",
+            "label": "反抽情景",
+            "weight_key": "bounce_path_weight",
+            "expected_horizon": "10d-20d",
+        },
+        {
+            "scenario": "bearish_path",
+            "label": "失败反抽情景",
+            "weight_key": "bearish_path_weight",
+            "expected_horizon": "3d-10d",
+        },
+        {
+            "scenario": "analog_average_path",
+            "label": "历史均值情景",
+            "weight_key": "analog_path_weight",
+            "expected_horizon": "20d-60d",
+        },
+    ]
+    raw_weights = {item["scenario"]: max(float(path_weight_model.get(item["weight_key"]) or 0.0), 0.0) for item in scenarios}
+    total = sum(raw_weights.values()) or 1.0
+    normalized = {key: value / total for key, value in raw_weights.items()}
+    enriched = []
+    for item in scenarios:
+        scenario = item["scenario"]
+        probability = normalized[scenario]
+        enriched.append(
+            {
+                "scenario": scenario,
+                "label": item["label"],
+                "probability": round(probability, 4),
+                "reason": _scenario_ranking_reason(
+                    scenario=scenario,
+                    overview_symbol=overview_symbol,
+                    path_weight_model=path_weight_model,
+                    signal_agreement=signal_agreement,
+                    analog_support=analog_support,
+                    features=features,
+                    predictors=predictors,
+                ),
+                "expected_horizon": item["expected_horizon"],
+                "confidence": _scenario_confidence(probability, confidence, path_weight_model),
+            }
+        )
+    enriched.sort(key=lambda item: item["probability"], reverse=True)
+    primary, secondary, tertiary = enriched[0], enriched[1], enriched[2]
+    gap = round(primary["probability"] - secondary["probability"], 4)
+    close_call = gap < 0.08
+    switch_conditions = _primary_switch_conditions(primary["scenario"], secondary["scenario"], overview_symbol, analog_support, features)
+    return {
+        "primary": primary,
+        "secondary": secondary,
+        "tertiary": tertiary,
+        "all_scenarios": enriched,
+        "primary_secondary_gap": gap,
+        "close_call": close_call,
+        "path_reliability": path_weight_model.get("simulation_confidence_level", "low"),
+        "primary_to_secondary_switch_conditions": switch_conditions,
+        "ranking_note": (
+            "情景排序基于当前路径权重、信号一致性、历史相似样本、信用/波动率/宽度代理和数据完整度；"
+            "这是概率情景排序，不是确定性预测，也不是 confirmed alpha。"
+        ),
+        "close_call_note": "路径分歧较大，不宜过度押注单一路径。" if close_call else "",
+    }
+
+
+def _scenario_ranking_reason(
+    *,
+    scenario: str,
+    overview_symbol: dict[str, Any],
+    path_weight_model: dict[str, Any],
+    signal_agreement: dict[str, Any],
+    analog_support: dict[str, Any],
+    features: dict[str, Any],
+    predictors: dict[str, Any],
+) -> str:
+    factors = path_weight_model.get("weight_factors", {})
+    signal_score = float(signal_agreement.get("signal_agreement_score") or 0.0)
+    data_completeness = float(factors.get("data_completeness") or 0.0)
+    bounce_probability = float(overview_symbol.get("bounce_probability") or 0.0)
+    downside_probability = float(overview_symbol.get("downside_continuation_probability") or predictors.get("downside_continuation_predictor", {}).get("probability") or 0.0)
+    failed_bounce_risk = float(predictors.get("downside_continuation_predictor", {}).get("probability") or downside_probability)
+    credit_stability = float(factors.get("credit_stability") or 0.0)
+    volatility_reversal = float(factors.get("volatility_reversal") or 0.0)
+    breadth_support = float(factors.get("breadth_support") or 0.0)
+    sample_count = int(analog_support.get("sample_count") or 0)
+    support_20d = analog_support.get("by_horizon", {}).get("20d", {}).get("support")
+    support_60d = analog_support.get("by_horizon", {}).get("60d", {}).get("support")
+    hit_20d = _float_or_none(analog_support.get("by_horizon", {}).get("20d", {}).get("hit_rate")) or 0.0
+    hit_60d = _float_or_none(analog_support.get("by_horizon", {}).get("60d", {}).get("hit_rate")) or 0.0
+    market_state = overview_symbol.get("market_state")
+
+    if scenario == "bounce_path":
+        reasons = [f"反抽概率 {bounce_probability:.0%}"]
+        if overview_symbol.get("live_signal"):
+            reasons.append("Alpha v1 当前触发")
+        if support_20d == "supportive" or support_60d == "supportive":
+            reasons.append("20d/60d 历史相似情景偏支持")
+        if volatility_reversal >= 0.55:
+            reasons.append("波动率有回落迹象")
+        if credit_stability >= 0.55:
+            reasons.append("信用代理相对稳定")
+        if breadth_support >= 0.50:
+            reasons.append("宽度代理改善")
+        if signal_score >= 65:
+            reasons.append(f"信号一致性 {signal_score:.0f}/100")
+        return "，".join(reasons) + "。"
+
+    if scenario == "bearish_path":
+        reasons = [f"失败反抽/下跌延续风险 {max(failed_bounce_risk, downside_probability):.0%}"]
+        if market_state in {"risk_off", "panic", "failed_bounce_risk", "downside_continuation"}:
+            reasons.append(f"当前状态偏 {market_state}")
+        if volatility_reversal < 0.55:
+            reasons.append("波动率没有明确回落")
+        if credit_stability < 0.50:
+            reasons.append("信用代理偏弱")
+        if analog_support.get("worst_path_risk") in {"high", "medium"}:
+            reasons.append("历史最差路径风险不可忽视")
+        return "，".join(reasons) + "。"
+
+    if scenario == "analog_average_path":
+        reasons = [f"历史相似样本数 {sample_count}"]
+        if support_20d:
+            reasons.append(f"20d 历史支持为 {support_20d}")
+        if support_60d:
+            reasons.append(f"60d 历史支持为 {support_60d}")
+        if hit_20d or hit_60d:
+            reasons.append(f"20d/60d 胜率约 {hit_20d:.0%}/{hit_60d:.0%}")
+        if analog_support.get("analog_sample_quality"):
+            reasons.append(f"样本质量 {analog_support.get('analog_sample_quality')}")
+        return "，".join(reasons) + "。"
+
+    reasons = []
+    if signal_score < 65:
+        reasons.append("信号一致性不够强")
+    if market_state in {"sideways", "no_edge"}:
+        reasons.append(f"市场状态偏 {market_state}")
+    if data_completeness < 0.75:
+        reasons.append(f"数据完整度约 {data_completeness:.0%}")
+    if not reasons:
+        reasons.append("综合期望路径用于平衡反抽、失败反抽和历史均值情景")
+    return "，".join(reasons) + "。"
+
+
+def _scenario_confidence(probability: float, confidence: dict[str, Any], path_weight_model: dict[str, Any]) -> str:
+    if path_weight_model.get("low_confidence_simulation"):
+        return "low"
+    confidence_score = float(confidence.get("confidence_score") or 0.0) / 100.0
+    if probability >= 0.34 and confidence_score >= 0.70:
+        return "high"
+    if probability >= 0.22 and confidence_score >= 0.55:
+        return "medium"
+    return "low"
+
+
+def _primary_switch_conditions(
+    primary_scenario: str,
+    secondary_scenario: str,
+    overview_symbol: dict[str, Any],
+    analog_support: dict[str, Any],
+    features: dict[str, Any],
+) -> list[str]:
+    symbol = overview_symbol.get("symbol", "symbol")
+    common_risk = [
+        "VIX 重新上升或波动率回落失败",
+        "HYG/LQD 相对强度转弱，信用代理恶化",
+        f"{symbol} 跌破近期低点",
+        "historical support 从 supportive 转为 weak 或 conflicting",
+    ]
+    if primary_scenario == "bounce_path":
+        return common_risk
+    if primary_scenario == "analog_average_path":
+        return [
+            "新的历史相似样本分布转弱",
+            "20d/60d 胜率跌破 50%",
+            "当前市场与相似样本差异扩大",
+            *common_risk[:2],
+        ]
+    if primary_scenario == "expected_path":
+        return [
+            "信号一致性明显增强并偏向反抽或下跌延续",
+            "market edge 从 NO_EDGE/WEAK_EDGE 切换为更强状态",
+            "波动率、信用或宽度代理出现同向突破",
+        ]
+    return [
+        "VIX 快速回落并维持低位",
+        "信用代理企稳，HYG/LQD 修复",
+        "价格重新站回短期趋势线",
+        "20d/60d 历史相似支持转强",
+    ]
 
 
 def _historical_support_score(analog_support: dict[str, Any]) -> float:

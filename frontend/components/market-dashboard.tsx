@@ -144,8 +144,67 @@ function agreementCn(value: string | undefined) {
 
 function strongestScenario(symbolData: SimulatedSymbolPaths | undefined) {
   if (!symbolData) return "暂无";
+  if (symbolData.scenario_ranking?.primary?.label) return symbolData.scenario_ranking.primary.label;
   const cards = [...symbolData.scenario_cards].sort((left, right) => right.probability_weight - left.probability_weight);
   return cards[0]?.name_cn ?? "暂无";
+}
+
+function scenarioRankLabel(rank: number | undefined) {
+  if (rank === 1) return "最可能";
+  if (rank === 2) return "第二可能";
+  if (rank === 3) return "风险路径";
+  return "";
+}
+
+function scenarioRankingFor(data: SimulatedSymbolPaths, scenario: string) {
+  const ranking = data.scenario_ranking;
+  const items = ranking?.all_scenarios ?? [ranking?.primary, ranking?.secondary, ranking?.tertiary].filter(Boolean);
+  const index = items.findIndex((item) => item?.scenario === scenario);
+  const item = index >= 0 ? items[index] : undefined;
+  return item ? { item, rank: index + 1 } : { item: undefined, rank: undefined };
+}
+
+function scenarioProbability(data: SimulatedSymbolPaths, scenario: string) {
+  const ranked = scenarioRankingFor(data, scenario).item;
+  if (ranked?.probability != null) return ranked.probability;
+  const weights = data.scenario_weights ?? {};
+  if (scenario === "expected_path") return data.base_path_weight ?? data.path_weight_model?.base_path_weight ?? weights.base_scenario;
+  if (scenario === "bounce_path") return data.bounce_path_weight ?? data.path_weight_model?.bounce_path_weight ?? weights.bounce_scenario;
+  if (scenario === "bearish_path") return data.bearish_path_weight ?? data.path_weight_model?.bearish_path_weight ?? weights.bearish_scenario;
+  if (scenario === "analog_average_path") return data.analog_path_weight ?? data.path_weight_model?.analog_path_weight ?? weights.historical_analog_average;
+  return undefined;
+}
+
+function scenarioDisplayLabel(data: SimulatedSymbolPaths, scenario: string, fallback: string) {
+  const { item, rank } = scenarioRankingFor(data, scenario);
+  const rankLabel = scenarioRankLabel(rank);
+  const probability = scenarioProbability(data, scenario);
+  const label = item?.label ?? fallback;
+  return `${label}${rankLabel ? `｜${rankLabel}` : ""}${probability != null ? ` ${pct(probability)}` : ""}`;
+}
+
+function scenarioStrokeWidth(data: SimulatedSymbolPaths, scenario: string) {
+  const { rank } = scenarioRankingFor(data, scenario);
+  if (data.scenario_ranking?.close_call) {
+    if (rank === 1 || rank === 2) return 2.8;
+    if (rank === 3) return 2.1;
+    return 1.8;
+  }
+  if (rank === 1) return 3.8;
+  if (rank === 2) return 2.8;
+  if (rank === 3) return 2;
+  return 1.6;
+}
+
+function scenarioGapText(data: SimulatedSymbolPaths) {
+  const gap = data.scenario_ranking?.primary_secondary_gap;
+  if (gap == null) return "暂无";
+  const level = gap < 0.08 ? "路径分歧" : gap < 0.16 ? "中等优势" : "优势较明显";
+  return `${(gap * 100).toFixed(0)} 个百分点，${level}`;
+}
+
+function primarySwitchText(data: SimulatedSymbolPaths) {
+  return data.scenario_ranking?.primary_to_secondary_switch_conditions?.slice(0, 4).join(" / ") || data.risk_invalidation_conditions.slice(0, 4).join(" / ") || "暂无";
 }
 
 function strongestPredictor(data: SimulatedSymbolPaths | undefined) {
@@ -180,7 +239,12 @@ function plainDecision(data: SimulatedSymbolPaths) {
   const fiveText = fiveDay ? `${fiveDay.expected_direction}，区间 ${signedPct(fiveDay.expected_return_range?.[0])} 到 ${signedPct(fiveDay.expected_return_range?.[1])}` : "暂无";
   const twentyText = twentyDay ? `${twentyDay.expected_direction}，区间 ${signedPct(twentyDay.expected_return_range?.[0])} 到 ${signedPct(twentyDay.expected_return_range?.[1])}` : "暂无";
   const action = plainAction(data);
-  return `${data.symbol} 现在是“${state}”，今天的可用预测优势是“${edge}”。最强方向是 ${strongest}。5日看法：${fiveText}；20日看法：${twentyText}。大白话：${action}。这不是确定走势，也不是交易指令。`;
+  const primary = data.scenario_ranking?.primary;
+  const secondary = data.scenario_ranking?.secondary;
+  const scenarioText = primary && secondary
+    ? `当前最大概率路径是“${primary.label}”，概率 ${pct(primary.probability)}；第二可能是“${secondary.label}”，概率 ${pct(secondary.probability)}；两者差距 ${scenarioGapText(data)}。如果 ${primarySwitchText(data)}，主路径可能失效并切换到风险路径。`
+    : "";
+  return `${data.symbol} 现在是“${state}”，今天的可用预测优势是“${edge}”。${scenarioText} 最强方向是 ${strongest}。5日看法：${fiveText}；20日看法：${twentyText}。大白话：${action}。这不是确定走势，也不是交易指令。`;
 }
 
 function plainSummary(symbolData: SimulatedSymbolPaths | undefined) {
@@ -239,10 +303,10 @@ function PredictionChart({ data }: { data: SimulatedSymbolPaths }) {
   const priceTicks = [maxY, (maxY + minY) / 2, minY];
   const chartSeries = [
     { key: "history", label: "历史价格", values: paths.historical_price, color: "#14211f" },
-    { key: "expected", label: "综合期望", values: paths.expected_path, color: "#2563eb" },
-    { key: "bounce", label: "反抽情景", values: paths.bounce_path, color: "#0f9f7a" },
-    { key: "bearish", label: "失败反抽", values: paths.bearish_path, color: "#dc4a4a" },
-    { key: "analog", label: "历史均值", values: paths.analog_average_path, color: "#f59e0b" },
+    { key: "expected", scenario: "expected_path", label: scenarioDisplayLabel(data, "expected_path", "综合期望"), values: paths.expected_path, color: "#2563eb" },
+    { key: "bounce", scenario: "bounce_path", label: scenarioDisplayLabel(data, "bounce_path", "反抽情景"), values: paths.bounce_path, color: "#0f9f7a" },
+    { key: "bearish", scenario: "bearish_path", label: scenarioDisplayLabel(data, "bearish_path", "失败反抽"), values: paths.bearish_path, color: "#dc4a4a" },
+    { key: "analog", scenario: "analog_average_path", label: scenarioDisplayLabel(data, "analog_average_path", "历史均值"), values: paths.analog_average_path, color: "#f59e0b" },
     { key: "upper", label: "上沿", values: paths.confidence_band_upper, color: "#64748b" },
     { key: "lower", label: "下沿", values: paths.confidence_band_lower, color: "#64748b" },
   ];
@@ -254,8 +318,8 @@ function PredictionChart({ data }: { data: SimulatedSymbolPaths }) {
   const hoverX = hoverIndex == null ? null : xForIndex(hoverIndex, paths.dates.length, width, pad);
   const hoverPrimary = hoverRows[0]?.value ?? null;
   const hoverY = hoverPrimary == null ? null : yForPrice(hoverPrimary);
-  const tooltipWidth = 190;
-  const tooltipHeight = Math.max(86, 44 + hoverRows.length * 19);
+  const tooltipWidth = 280;
+  const tooltipHeight = Math.max(92, 48 + hoverRows.length * 22);
   const tooltipX = hoverX == null ? 0 : Math.min(Math.max(hoverX + 12, pad), width - pad - tooltipWidth);
   const tooltipY = hoverY == null ? pad : Math.min(Math.max(hoverY - tooltipHeight / 2, pad), height - pad - tooltipHeight);
   const hoverDate = hoverIndex == null ? null : paths.dates[hoverIndex];
@@ -275,6 +339,7 @@ function PredictionChart({ data }: { data: SimulatedSymbolPaths }) {
         </div>
         <p className="text-xs text-muted sm:text-right">竖虚线右侧是概率情景，不是保证会发生的预测。</p>
       </div>
+      <ScenarioRankingPanel data={data} />
       <div className="mt-3 overflow-x-auto">
         <svg
           viewBox={`0 0 ${width} ${height}`}
@@ -308,10 +373,10 @@ function PredictionChart({ data }: { data: SimulatedSymbolPaths }) {
           <path d={svgPath(paths.confidence_band_upper, minY, maxY, width, height, pad)} fill="none" stroke="#94a3b8" strokeWidth="1.2" strokeDasharray="5 5" />
           <path d={svgPath(paths.confidence_band_lower, minY, maxY, width, height, pad)} fill="none" stroke="#94a3b8" strokeWidth="1.2" strokeDasharray="5 5" />
           <path d={svgPath(paths.historical_price, minY, maxY, width, height, pad)} fill="none" stroke="#14211f" strokeWidth="2.4" />
-          <path d={svgPath(paths.expected_path, minY, maxY, width, height, pad)} fill="none" stroke="#2563eb" strokeWidth="2.3" />
-          <path d={svgPath(paths.bounce_path, minY, maxY, width, height, pad)} fill="none" stroke="#0f9f7a" strokeWidth="2" />
-          <path d={svgPath(paths.bearish_path, minY, maxY, width, height, pad)} fill="none" stroke="#dc4a4a" strokeWidth="2" />
-          <path d={svgPath(paths.analog_average_path, minY, maxY, width, height, pad)} fill="none" stroke="#f59e0b" strokeWidth="2" />
+          <path d={svgPath(paths.expected_path, minY, maxY, width, height, pad)} fill="none" stroke="#2563eb" strokeWidth={scenarioStrokeWidth(data, "expected_path")} />
+          <path d={svgPath(paths.bounce_path, minY, maxY, width, height, pad)} fill="none" stroke="#0f9f7a" strokeWidth={scenarioStrokeWidth(data, "bounce_path")} />
+          <path d={svgPath(paths.bearish_path, minY, maxY, width, height, pad)} fill="none" stroke="#dc4a4a" strokeWidth={scenarioStrokeWidth(data, "bearish_path")} />
+          <path d={svgPath(paths.analog_average_path, minY, maxY, width, height, pad)} fill="none" stroke="#f59e0b" strokeWidth={scenarioStrokeWidth(data, "analog_average_path")} />
           <text x={pad} y={22} fontSize="12" fill="#62706b">历史价格</text>
           <text x={splitX + 10} y={22} fontSize="12" fill="#62706b">模拟未来</text>
           {paths.dates.map((date, index) => {
@@ -320,7 +385,13 @@ function PredictionChart({ data }: { data: SimulatedSymbolPaths }) {
             const titleRows = chartSeries
               .map((item) => {
                 const rowValue = valueAt(item.values, index);
-                return rowValue == null ? null : `${item.label}: ${price(rowValue)}`;
+                if (rowValue == null) return null;
+                const scenario = "scenario" in item ? item.scenario : undefined;
+                const ranked = scenario ? scenarioRankingFor(data, scenario) : { item: undefined, rank: undefined };
+                const expectedReturn = currentPrice ? `，预期收益 ${signedPct(rowValue / currentPrice - 1)}` : "";
+                const rankText = ranked.rank ? `，排名 ${ranked.rank}` : "";
+                const reason = ranked.item?.reason ? `，原因：${ranked.item.reason}` : "";
+                return `${item.label}: ${price(rowValue)}${expectedReturn}${rankText}${reason}`;
               })
               .filter(Boolean)
               .join("\n");
@@ -351,9 +422,9 @@ function PredictionChart({ data }: { data: SimulatedSymbolPaths }) {
               <text x={tooltipX + 12} y={tooltipY + 37} fontSize="11" fill="#cbd5d1">{hoverPhase}</text>
               {hoverRows.map((item, rowIndex) => (
                 <g key={item.key}>
-                  <circle cx={tooltipX + 13} cy={tooltipY + 58 + rowIndex * 19} r="3" fill={item.color} />
-                  <text x={tooltipX + 23} y={tooltipY + 62 + rowIndex * 19} fontSize="11" fill="#ffffff">
-                    {item.label}: {price(item.value)}
+                  <circle cx={tooltipX + 13} cy={tooltipY + 60 + rowIndex * 22} r="3" fill={item.color} />
+                  <text x={tooltipX + 23} y={tooltipY + 64 + rowIndex * 22} fontSize="11" fill="#ffffff">
+                    {item.label}: {price(item.value)}{currentPrice ? ` / ${signedPct(item.value / currentPrice - 1)}` : ""}
                   </text>
                 </g>
               ))}
@@ -363,16 +434,63 @@ function PredictionChart({ data }: { data: SimulatedSymbolPaths }) {
       </div>
       <div className="mt-3 grid grid-cols-2 gap-2 text-xs text-muted sm:grid-cols-5">
         <span>黑线：历史价格</span>
-        <span className="text-blue-700">蓝线：综合期望</span>
-        <span className="text-teal">绿线：反抽情景</span>
-        <span className="text-rose">红线：失败反抽</span>
-        <span className="text-amber">黄线：历史均值</span>
+        <span className="text-blue-700">蓝线：{scenarioDisplayLabel(data, "expected_path", "综合期望")}</span>
+        <span className="text-teal">绿线：{scenarioDisplayLabel(data, "bounce_path", "反抽情景")}</span>
+        <span className="text-rose">红线：{scenarioDisplayLabel(data, "bearish_path", "失败反抽")}</span>
+        <span className="text-amber">黄线：{scenarioDisplayLabel(data, "analog_average_path", "历史均值")}</span>
       </div>
       <ScenarioWeights data={data} />
       <p className="mt-3 text-xs text-muted">
         模拟路径基于当前信号和历史相似情景生成，是概率情景，不是保证会发生的预测。
       </p>
     </section>
+  );
+}
+
+function ScenarioRankingPanel({ data }: { data: SimulatedSymbolPaths }) {
+  const ranking = data.scenario_ranking;
+  if (!ranking) return null;
+  const items = [
+    ["第一可能", ranking.primary],
+    ["第二可能", ranking.secondary],
+    ["第三可能", ranking.tertiary],
+  ] as const;
+  return (
+    <div className="mt-4 rounded-lg border border-line bg-panel p-4">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <p className="text-xs uppercase text-muted">Scenario Probability Ranking</p>
+          <h3 className="mt-1 text-base font-semibold">最可能路径排序</h3>
+          <p className="mt-1 text-sm text-muted">
+            当前主路径：<b className="text-ink">{ranking.primary.label} {pct(ranking.primary.probability)}</b>
+            {" "}；第二路径：<b className="text-ink">{ranking.secondary.label} {pct(ranking.secondary.probability)}</b>
+          </p>
+        </div>
+        <div className="rounded-md bg-white px-3 py-2 text-sm">
+          <p className="text-muted">路径差距</p>
+          <p className="font-semibold">{scenarioGapText(data)}</p>
+          {ranking.close_call ? <p className="mt-1 text-xs text-rose">路径分歧较大，不宜过度押注单一路径</p> : null}
+        </div>
+      </div>
+      <div className="mt-4 grid gap-3 md:grid-cols-3">
+        {items.map(([rankLabel, item]) => (
+          <div key={rankLabel} className="rounded-md border border-line bg-white p-3">
+            <div className="flex items-center justify-between gap-2">
+              <p className="text-xs text-muted">{rankLabel}</p>
+              <p className="text-sm font-semibold">{pct(item.probability)}</p>
+            </div>
+            <p className="mt-1 font-semibold text-ink">{item.label}</p>
+            <p className="mt-2 text-xs leading-5 text-muted">{item.reason}</p>
+            <p className="mt-2 text-xs text-muted">预期周期：{item.expected_horizon}；可靠度：{confidenceCn(item.confidence)}</p>
+          </div>
+        ))}
+      </div>
+      <div className="mt-3 rounded-md bg-white p-3 text-xs">
+        <p className="font-medium text-ink">主路径切换条件</p>
+        <p className="mt-1 text-muted">{primarySwitchText(data)}</p>
+      </div>
+      {ranking.ranking_note ? <p className="mt-3 text-xs text-muted">{ranking.ranking_note}</p> : null}
+    </div>
   );
 }
 
@@ -543,6 +661,7 @@ function ConfidencePanel({ data }: { data: SimulatedSymbolPaths }) {
 
 function CurrentSummary({ data }: { data: SimulatedSymbolPaths }) {
   const support = data.historical_support_by_horizon;
+  const ranking = data.scenario_ranking;
   return (
     <section className="rounded-lg border border-teal bg-[#eefaf5] p-5 shadow-sm">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
@@ -561,7 +680,10 @@ function CurrentSummary({ data }: { data: SimulatedSymbolPaths }) {
         <Metric label="今天是否有预测优势" value={edgeCn(data.market_edge_status?.market_edge_status)} />
         <Metric label="当前状态" value={stateCn(data.market_state)} />
         <Metric label="最强方向" value={strongestPredictorText(data)} />
-        <Metric label="最强情景" value={strongestScenario(data)} />
+        <Metric label="最大概率路径" value={ranking?.primary ? `${ranking.primary.label} ${pct(ranking.primary.probability)}` : strongestScenario(data)} />
+        <Metric label="第二可能路径" value={ranking?.secondary ? `${ranking.secondary.label} ${pct(ranking.secondary.probability)}` : "暂无"} />
+        <Metric label="路径差距" value={scenarioGapText(data)} />
+        <Metric label="主路径失效条件" value={primarySwitchText(data)} />
         <Metric label="5d / 20d / 60d 历史支持" value={`${supportCn(support?.by_horizon?.["5d"]?.support)} / ${supportCn(support?.by_horizon?.["20d"]?.support)} / ${supportCn(support?.by_horizon?.["60d"]?.support)}`} />
       </div>
     </section>

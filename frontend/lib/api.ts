@@ -282,6 +282,29 @@ export type MarketSymbolOverview = {
   bearish_path_weight?: number;
   analog_path_weight?: number;
   low_confidence_simulation?: boolean;
+  scenario_ranking?: ScenarioRanking;
+};
+
+export type ScenarioRankingItem = {
+  scenario: "expected_path" | "bounce_path" | "bearish_path" | "analog_average_path" | string;
+  label: string;
+  probability: number;
+  reason: string;
+  expected_horizon: string;
+  confidence: "low" | "medium" | "high" | string;
+};
+
+export type ScenarioRanking = {
+  primary: ScenarioRankingItem;
+  secondary: ScenarioRankingItem;
+  tertiary: ScenarioRankingItem;
+  all_scenarios?: ScenarioRankingItem[];
+  primary_secondary_gap: number;
+  close_call: boolean;
+  path_reliability?: "low" | "medium" | "high" | string;
+  primary_to_secondary_switch_conditions?: string[];
+  ranking_note?: string;
+  close_call_note?: string;
 };
 
 export type SimulatedSymbolPaths = {
@@ -310,6 +333,7 @@ export type SimulatedSymbolPaths = {
   bearish_path_weight?: number;
   analog_path_weight?: number;
   low_confidence_simulation?: boolean;
+  scenario_ranking?: ScenarioRanking;
   scenario_weights?: Record<string, number>;
   path_confidence?: "low" | "medium" | "high";
   path_source_notes?: string[];
