@@ -10,13 +10,14 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
+from urllib.error import HTTPError, URLError
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 FRED_API_URL = "https://api.stlouisfed.org/fred/series/observations"
 FRED_CSV_URL = "https://fred.stlouisfed.org/graph/fredgraph.csv"
-DEFAULT_TIMEOUT_SECONDS = 8
-MAX_RETRIES = 1
+DEFAULT_TIMEOUT_SECONDS = 30
+MAX_RETRIES = 3
 BACKOFF_SECONDS = 1.4
 
 DEFAULT_FRED_SERIES: dict[str, str] = {
@@ -65,6 +66,7 @@ def fetch_fred_bundle(lookback_days: int = 1800, series_map: dict[str, str] | No
         "provider": "fred",
         "generated_at": generated_at,
         "configured": bool(token),
+        "api_key_present": bool(token),
         "available": status["successful_series_count"] > 0,
         "missing": status["successful_series_count"] == 0,
         "rate_limited": status["rate_limited"],
@@ -90,53 +92,63 @@ class _FredClient:
 
     def fetch_series(self, *, name: str, series_id: str) -> dict[str, Any]:
         sources = ("api", "public_csv") if self._token else ("public_csv",)
-        last_error = None
+        last_error: Exception | None = None
+        last_reason = "unknown"
+        last_source = "fred"
         for source in sources:
             for attempt in range(MAX_RETRIES + 1):
                 try:
+                    last_source = "fred-api" if source == "api" else "fred-public-csv"
                     rows = self._fetch_api(series_id) if source == "api" else self._fetch_public_csv(series_id)
                     if rows:
                         rows = rows[-self._lookback_days :]
                         _write_cache(_cache_file(series_id), {"series_id": series_id, "rows": rows})
                         if source == "public_csv":
                             self._fallback_used = bool(self._token)
+                        latest_date = rows[-1]["date"]
                         return {
                             "name": name,
                             "series_id": series_id,
                             "rows": rows,
                             "row_count": len(rows),
-                            "latest_date": rows[-1]["date"],
+                            "latest_date": latest_date,
+                            "latest_value": rows[-1]["value"],
                             "source": "fred-api" if source == "api" else "fred-public-csv",
                             "status": "available",
                             "real_data": True,
                             "fallback_used": source == "public_csv" and bool(self._token),
-                            "stale_data": False,
+                            "stale_data": _is_stale(latest_date, max_days=10),
                             "missing_data": False,
                         }
+                    last_reason = "empty_response"
                 except Exception as exc:
                     last_error = exc
-                    if "HTTP Error 429" in str(exc):
+                    last_reason = _classify_error(exc)
+                    if last_reason == "rate_limited":
                         self._rate_limited = True
                         break
                     if attempt < MAX_RETRIES:
-                        time.sleep(BACKOFF_SECONDS * (attempt + 1))
+                        time.sleep(BACKOFF_SECONDS * (2 ** attempt))
         cached = _read_cache(_cache_file(series_id))
         if cached:
             rows = list(cached.get("rows") or [])[-self._lookback_days :]
             if rows:
                 self._cache_used = True
+                latest_date = rows[-1]["date"]
                 return {
                     "name": name,
                     "series_id": series_id,
                     "rows": rows,
                     "row_count": len(rows),
-                    "latest_date": rows[-1]["date"],
+                    "latest_date": latest_date,
+                    "latest_value": rows[-1]["value"],
                     "source": "local-cache-fred",
                     "status": "available",
                     "real_data": True,
                     "fallback_used": True,
-                    "stale_data": False,
+                    "stale_data": True,
                     "missing_data": False,
+                    "warning": "FRED live request failed; using latest successful cache and marking stale_data=true.",
                 }
         return {
             "name": name,
@@ -144,6 +156,7 @@ class _FredClient:
             "rows": [],
             "row_count": 0,
             "latest_date": None,
+            "latest_value": None,
             "source": "fred",
             "status": "rate_limited" if self._rate_limited else "missing",
             "real_data": False,
@@ -151,6 +164,8 @@ class _FredClient:
             "stale_data": True,
             "missing_data": True,
             "error_type": type(last_error).__name__ if last_error else None,
+            "error_reason": last_reason if self._token else "no_api_key_and_csv_failed",
+            "last_attempted_source": last_source,
         }
 
     def _fetch_api(self, series_id: str) -> list[dict[str, Any]]:
@@ -229,6 +244,34 @@ def _derive_fred_metrics(series_payloads: dict[str, Any]) -> dict[str, Any]:
         "financial_stress_20d_change": _change(stress, 20),
         "recession_latest": _last(recession),
     }
+
+
+def _classify_error(exc: Exception) -> str:
+    text = str(exc).lower()
+    if isinstance(exc, TimeoutError) or "timed out" in text or "timeout" in text:
+        return "timeout"
+    if isinstance(exc, HTTPError):
+        if exc.code == 429:
+            return "rate_limited"
+        if exc.code in {400, 404}:
+            return "invalid_series_id"
+        return f"http_{exc.code}"
+    if isinstance(exc, (URLError, OSError)):
+        return "network_error"
+    if isinstance(exc, (json.JSONDecodeError, csv.Error, ValueError)):
+        return "parsing_error"
+    return type(exc).__name__
+
+
+def _is_stale(latest_date: str | None, max_days: int) -> bool:
+    if not latest_date:
+        return True
+    try:
+        latest = datetime.fromisoformat(str(latest_date)).date()
+    except ValueError:
+        return True
+    today = datetime.now(timezone.utc).date()
+    return (today - latest).days > max_days
 
 
 def _values(payload: dict[str, Any]) -> list[float]:

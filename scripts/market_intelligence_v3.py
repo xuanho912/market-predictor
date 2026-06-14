@@ -332,7 +332,8 @@ def build_data_quality_report_v3(
 
     reference_date = max(latest_dates) if latest_dates else as_of
     for row in source_rows.values():
-        row["stale_data"] = False if row.get("missing_data") else _is_stale(row.get("latest_date"), reference_date, max_days=10 if row.get("source") in {"fred", "local-cache-fred"} else 5)
+        provider_stale = bool(row.get("stale_data"))
+        row["stale_data"] = False if row.get("missing_data") else provider_stale or _is_stale(row.get("latest_date"), reference_date, max_days=10 if row.get("source") in {"fred-api", "fred-public-csv", "local-cache-fred"} else 5)
         if row["stale_data"] and row["status"] == "available":
             row["status"] = "stale"
 
@@ -1447,6 +1448,7 @@ def _market_source_status(symbol: str, series: DownloadedSeries | None, latest: 
 def _fred_source_status(name: str, series: FredSeries, latest: str | None) -> dict[str, Any]:
     rows = len(series.rows)
     fallback = series.source.startswith("local-cache")
+    latest_value = series.rows[-1].get("value") if series.rows else None
     return {
         "symbol": name,
         "source": series.source,
@@ -1454,9 +1456,10 @@ def _fred_source_status(name: str, series: FredSeries, latest: str | None) -> di
         "status": "available" if series.real_data else "fallback" if fallback and rows else "missing",
         "rows": rows,
         "latest_date": latest,
+        "latest_value": latest_value,
         "real_data": series.real_data,
         "fallback_used": fallback,
-        "stale_data": False,
+        "stale_data": fallback,
         "missing_data": rows == 0 or not series.real_data,
         "point_in_time_safe": series.real_data,
     }
@@ -1553,6 +1556,7 @@ def _credit_snapshot(hyg: list[float], lqd: list[float], fred: dict[str, list[fl
         "hyg_lqd_relative_strength_20d": hyg_lqd,
         "hyg_drawdown_60d": hyg_drawdown,
         "credit_deterioration_score": deterioration,
+        "credit_stress_score": deterioration,
         "credit_stabilization_score": stabilization,
     }
 

@@ -1,7 +1,9 @@
 from __future__ import annotations
 
+import copy
 import json
 import math
+import os
 import sys
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -30,7 +32,7 @@ from scripts.market_intelligence_v4 import (
     render_high_confidence_edge_report_markdown,
 )
 from scripts.providers.finnhub_provider import fetch_finnhub_bundle
-from scripts.providers.fred_provider import fetch_fred_bundle
+from scripts.providers.fred_provider import DEFAULT_FRED_SERIES, fetch_fred_bundle
 
 
 SYMBOLS = ("SPY", "QQQ", "IWM", "DIA")
@@ -57,10 +59,38 @@ def main() -> int:
     series_by_symbol = {series.symbol: series for series in downloaded}
     finnhub_bundle = fetch_finnhub_bundle(symbols=SYMBOLS, lookback_days=520)
     fred_bundle = fetch_fred_bundle(lookback_days=1800)
+    _print_fred_diagnostics(fred_bundle)
     price_history = _load_price_history(series_by_symbol)
 
     market_overview = _build_market_overview(alpha_status, analogs, price_history)
     simulated_paths = _build_simulated_paths(alpha_status, analogs, price_history, market_overview)
+    baseline_overview = copy.deepcopy(market_overview)
+    baseline_paths = copy.deepcopy(simulated_paths)
+    no_fred_bundle = _empty_fred_bundle()
+    baseline_v2 = build_market_intelligence_v2(
+        series_by_symbol=series_by_symbol,
+        overview=baseline_overview,
+        simulated_paths=baseline_paths,
+        analogs=analogs,
+    )
+    baseline_v3 = build_market_intelligence_v3(
+        series_by_symbol=series_by_symbol,
+        overview=baseline_overview,
+        simulated_paths=baseline_paths,
+        analogs=analogs,
+        prior_intelligence=baseline_v2,
+        finnhub_bundle=finnhub_bundle,
+        fred_bundle=no_fred_bundle,
+    )
+    baseline_v4 = build_market_intelligence_v4(
+        series_by_symbol=series_by_symbol,
+        overview=baseline_overview,
+        simulated_paths=baseline_paths,
+        analogs=analogs,
+        prior_intelligence=baseline_v3,
+        finnhub_bundle=finnhub_bundle,
+        fred_bundle=no_fred_bundle,
+    )
     intelligence_v2 = build_market_intelligence_v2(
         series_by_symbol=series_by_symbol,
         overview=market_overview,
@@ -85,6 +115,9 @@ def main() -> int:
         finnhub_bundle=finnhub_bundle,
         fred_bundle=fred_bundle,
     )
+    fred_effect_summary = _fred_effect_summary(baseline_v4, intelligence_v4, baseline_paths, simulated_paths)
+    intelligence_v4["fred_effect_summary"] = fred_effect_summary
+    intelligence_v4["data_quality_report"]["summary"]["fred_effect_summary"] = fred_effect_summary
     dashboard = {
         "generated_by": "scripts/export_static_alpha_v1.py",
         "source": "github_actions_forward_tracker_outputs",
@@ -125,6 +158,7 @@ def main() -> int:
     _write_json(public_dir / "prediction-dashboard.json", dashboard)
     _write_report(PROJECT_ROOT / "outputs" / "high_confidence_signal_report.md", intelligence_v3["high_confidence_signal_report"])
     _write_edge_report(PROJECT_ROOT / "outputs" / "high_confidence_edge_report.md", intelligence_v4["high_confidence_edge_report"])
+    _write_fred_status_report(PROJECT_ROOT / "outputs" / "fred_data_status.md", fred_bundle, fred_effect_summary, intelligence_v4)
 
     print("wrote frontend/public/alpha-v1-status.json")
     print("wrote frontend/public/alpha-v1-analogs.json")
@@ -136,7 +170,194 @@ def main() -> int:
     print("wrote frontend/public/prediction-dashboard.json")
     print("wrote outputs/high_confidence_signal_report.md")
     print("wrote outputs/high_confidence_edge_report.md")
+    print("wrote outputs/fred_data_status.md")
     return 0
+
+
+def _print_fred_diagnostics(bundle: dict[str, Any]) -> None:
+    print(f"FRED_API_KEY_PRESENT={str(bool(os.getenv('FRED_API_KEY', '').strip())).lower()}")
+    print(f"FRED_PROVIDER_AVAILABLE={str(bool(bundle.get('available'))).lower()}")
+    print(f"FRED_PROVIDER_FALLBACK_USED={str(bool(bundle.get('fallback_used'))).lower()}")
+    print(f"FRED_PROVIDER_RATE_LIMITED={str(bool(bundle.get('rate_limited'))).lower()}")
+    for name in sorted((bundle.get("series") or {}).keys()):
+        payload = bundle["series"][name]
+        success = bool(payload.get("real_data"))
+        print(
+            "FRED_SERIES "
+            f"name={name} "
+            f"series_id={payload.get('series_id')} "
+            f"success={str(success).lower()} "
+            f"latest_date={payload.get('latest_date') or 'NA'} "
+            f"latest_value={payload.get('latest_value') if payload.get('latest_value') is not None else 'NA'} "
+            f"source={payload.get('source') or 'NA'} "
+            f"stale={str(bool(payload.get('stale_data'))).lower()} "
+            f"error_type={payload.get('error_type') or 'NA'} "
+            f"error_reason={payload.get('error_reason') or 'NA'}"
+        )
+
+
+def _empty_fred_bundle() -> dict[str, Any]:
+    return {
+        "provider": "fred",
+        "configured": bool(os.getenv("FRED_API_KEY", "").strip()),
+        "api_key_present": bool(os.getenv("FRED_API_KEY", "").strip()),
+        "available": False,
+        "missing": True,
+        "rate_limited": False,
+        "fallback_used": False,
+        "cache_used": False,
+        "successful_series": [],
+        "failed_series": list(DEFAULT_FRED_SERIES.keys()),
+        "series": {
+            name: {
+                "name": name,
+                "series_id": series_id,
+                "rows": [],
+                "row_count": 0,
+                "latest_date": None,
+                "latest_value": None,
+                "source": "disabled_baseline",
+                "status": "missing",
+                "real_data": False,
+                "fallback_used": False,
+                "stale_data": True,
+                "missing_data": True,
+                "error_reason": "baseline_without_fred",
+            }
+            for name, series_id in DEFAULT_FRED_SERIES.items()
+        },
+        "derived": {},
+    }
+
+
+def _fred_effect_summary(
+    without_fred: dict[str, Any],
+    with_fred: dict[str, Any],
+    paths_without_fred: dict[str, Any],
+    paths_with_fred: dict[str, Any],
+) -> dict[str, Any]:
+    before_quality = without_fred.get("data_quality_report", {}).get("summary", {})
+    after_quality = with_fred.get("data_quality_report", {}).get("summary", {})
+    symbols: dict[str, Any] = {}
+    for symbol in SYMBOLS:
+        before_edge = without_fred.get("edge_status_by_symbol", {}).get(symbol, {})
+        after_edge = with_fred.get("edge_status_by_symbol", {}).get(symbol, {})
+        before_predictors = without_fred.get("predictor_outputs_by_symbol", {}).get(symbol, {})
+        after_predictors = with_fred.get("predictor_outputs_by_symbol", {}).get(symbol, {})
+        before_rank = paths_without_fred.get("symbols", {}).get(symbol, {}).get("scenario_ranking", {})
+        after_rank = paths_with_fred.get("symbols", {}).get(symbol, {}).get("scenario_ranking", {})
+        before_risk = float((before_predictors.get("risk_expansion_predictor") or {}).get("probability") or 0.0)
+        after_risk = float((after_predictors.get("risk_expansion_predictor") or {}).get("probability") or 0.0)
+        before_downside = float((before_predictors.get("downside_continuation_predictor") or {}).get("probability") or 0.0)
+        after_downside = float((after_predictors.get("downside_continuation_predictor") or {}).get("probability") or 0.0)
+        symbols[symbol] = {
+            "edge_status_without_fred": before_edge.get("market_edge_status"),
+            "edge_status_with_fred": after_edge.get("market_edge_status"),
+            "edge_status_changed": before_edge.get("market_edge_status") != after_edge.get("market_edge_status"),
+            "primary_scenario_without_fred": before_rank.get("primary_scenario"),
+            "primary_scenario_with_fred": after_rank.get("primary_scenario"),
+            "primary_scenario_changed": before_rank.get("primary_scenario") != after_rank.get("primary_scenario"),
+            "risk_expansion_without_fred": round(before_risk, 4),
+            "risk_expansion_with_fred": round(after_risk, 4),
+            "risk_expansion_delta": round(after_risk - before_risk, 4),
+            "failed_bounce_without_fred": round(before_downside, 4),
+            "failed_bounce_with_fred": round(after_downside, 4),
+            "failed_bounce_delta": round(after_downside - before_downside, 4),
+        }
+    return {
+        "data_completeness_without_fred": before_quality.get("data_completeness_score"),
+        "data_completeness_with_fred": after_quality.get("data_completeness_score"),
+        "data_completeness_delta": (after_quality.get("data_completeness_score") or 0) - (before_quality.get("data_completeness_score") or 0),
+        "target_85_met_with_fred": bool(after_quality.get("v4_target_met")),
+        "symbols": symbols,
+        "note": "This compares the current run against the same run with FRED disabled. It does not change Alpha v1.",
+    }
+
+
+def _write_fred_status_report(path: Path, bundle: dict[str, Any], effect_summary: dict[str, Any], intelligence_v4: dict[str, Any]) -> None:
+    quality = intelligence_v4.get("data_quality_report", {}).get("summary", {})
+    lines = [
+        "# FRED Data Status",
+        "",
+        f"Generated at: `{datetime.utcnow().isoformat()}Z`",
+        "",
+        "## Provider",
+        "",
+        f"- FRED_API_KEY present: `{bool(os.getenv('FRED_API_KEY', '').strip())}`",
+        f"- provider available: `{bool(bundle.get('available'))}`",
+        f"- fallback used: `{bool(bundle.get('fallback_used'))}`",
+        f"- rate limited: `{bool(bundle.get('rate_limited'))}`",
+        f"- successful series: `{', '.join(bundle.get('successful_series') or []) or 'none'}`",
+        f"- failed series: `{', '.join(bundle.get('failed_series') or []) or 'none'}`",
+        "",
+        "## Series",
+        "",
+        "| name | series_id | success | latest_date | latest_value | source | stale | error |",
+        "|---|---|---:|---|---:|---|---:|---|",
+    ]
+    for name in sorted((bundle.get("series") or {}).keys()):
+        payload = bundle["series"][name]
+        error = payload.get("error_reason") or payload.get("error_type") or ""
+        lines.append(
+            "| "
+            + " | ".join(
+                [
+                    str(name),
+                    str(payload.get("series_id") or ""),
+                    str(bool(payload.get("real_data"))),
+                    str(payload.get("latest_date") or ""),
+                    str(payload.get("latest_value") if payload.get("latest_value") is not None else ""),
+                    str(payload.get("source") or ""),
+                    str(bool(payload.get("stale_data"))),
+                    str(error),
+                ]
+            )
+            + " |"
+        )
+    lines.extend(
+        [
+            "",
+            "## Data Completeness Effect",
+            "",
+            f"- without FRED: `{effect_summary.get('data_completeness_without_fred')}`",
+            f"- with current FRED status: `{effect_summary.get('data_completeness_with_fred')}`",
+            f"- delta: `{effect_summary.get('data_completeness_delta')}`",
+            f"- target 85 met: `{effect_summary.get('target_85_met_with_fred')}`",
+            f"- current report score: `{quality.get('data_completeness_score')}`",
+            "",
+            "## Risk Expansion / Failed Bounce Effect",
+            "",
+            "| symbol | edge without | edge with | primary without | primary with | risk expansion delta | failed bounce delta |",
+            "|---|---|---|---|---|---:|---:|",
+        ]
+    )
+    for symbol in SYMBOLS:
+        row = effect_summary.get("symbols", {}).get(symbol, {})
+        lines.append(
+            "| "
+            + " | ".join(
+                [
+                    symbol,
+                    str(row.get("edge_status_without_fred")),
+                    str(row.get("edge_status_with_fred")),
+                    str(row.get("primary_scenario_without_fred")),
+                    str(row.get("primary_scenario_with_fred")),
+                    str(row.get("risk_expansion_delta")),
+                    str(row.get("failed_bounce_delta")),
+                ]
+            )
+            + " |"
+        )
+    lines.extend(
+        [
+            "",
+            "## Warning",
+            "",
+            "If FRED uses local-cache-fred, stale_data remains true. Stale data must not be treated as fresh real-time confirmation.",
+        ]
+    )
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 def _load_price_history(series_by_symbol: dict[str, DownloadedSeries] | None = None) -> dict[str, list[dict[str, Any]]]:
