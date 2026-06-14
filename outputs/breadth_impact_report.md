@@ -1,6 +1,6 @@
 # Breadth Impact Audit
 
-Generated at: `2026-06-14T10:58:14.106771Z`
+Generated at: `2026-06-14T11:37:06.550566Z`
 
 ## Summary
 
