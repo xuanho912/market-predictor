@@ -42,4 +42,4 @@ This is a short-to-medium-term bounce / mean-reversion research signal. It is no
 
 `RESEARCH ALPHA CANDIDATE`
 
-This candidate is not a stable tradable alpha. It must pass forward-only validation before paper trading is considered.
+This candidate is not a confirmed forecast component. It must pass forward-only scenario validation before it can be treated as a stronger input to the Market Prediction Dashboard.

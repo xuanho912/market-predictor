@@ -1,6 +1,6 @@
 # Windows Daily Tracker Setup
 
-This guide schedules Alpha v1 forward-only observation after the market close.
+This guide schedules Alpha v1 forward-only forecast observation after the market close.
 
 Alpha v1 is fixed:
 
@@ -9,7 +9,7 @@ Alpha v1 is fixed:
 - Status: `RESEARCH ALPHA CANDIDATE`
 - Validation mode: `forward_only`
 
-The tracker must not tune thresholds, add features, or use synthetic data to create live signals.
+The tracker must not tune thresholds, add features, or use synthetic data to create forecast signals.
 
 ## Manual Command
 
@@ -57,14 +57,14 @@ C:\Users\xuanx\Documents\Codex\2026-06-13\codex-skill-github-codex-skill-market\
 ## Expected Behavior
 
 - If real data succeeds, the tracker checks SPY, QQQ, IWM, and DIA against the frozen threshold.
-- If a symbol triggers, the signal is appended to `outputs/forward_alpha_v1_signals.csv` with `validation_period=forward_only`.
+- If a symbol triggers, the forecast signal is appended to `outputs/forward_alpha_v1_signals.csv` with `validation_period=forward_only`.
 - If no symbol triggers, the daily check is still saved.
-- If real data fails, the tracker records `synthetic_fallback_no_signal` and does not write a live signal.
-- Pending signals are backfilled when 3d/5d/10d/20d/60d future returns become available.
+- If real data fails, the tracker records `synthetic_fallback_no_signal` and does not write a forecast signal.
+- Pending forecast signals are backfilled when 3d/5d/10d/20d/60d future returns become available.
 
 ## Safety Rules
 
-- Do not use synthetic data for Alpha v1 live signals.
-- Do not use `down_probability` or `crash_probability` as trade signals.
+- Do not use synthetic data for Alpha v1 forecast signals.
+- Do not use `down_probability` or `crash_probability` as order triggers or execution recommendations.
 - Do not change the Alpha v1 threshold.
-- Do not paper trade until forward-only validation has enough stable completed observations.
+- Do not turn forecast validation into an order-simulation workflow. The tracker is only for scenario validation and prediction accuracy tracking.

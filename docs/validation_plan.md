@@ -126,7 +126,7 @@ Backtests must include:
 - liquidity limits
 - no-fill or stressed-fill assumptions during extreme markets
 
-This project does not place trades, but any validation of signal usefulness must account for market frictions.
+This project does not place orders or simulate orders. Validation should focus on forecast accuracy, scenario hit rate, calibration quality, and realized forward-return tracking.
 
 ## Backtest Audit Checklist
 
@@ -140,4 +140,4 @@ Before trusting a result, verify:
 - Financial statements and earnings revisions are known-at timestamped.
 - Same-day close is not used before the forecast timestamp.
 - The same prediction record format is used in research and production.
-- The strategy does not assume execution or trading because this project does not automate orders.
+- The forecast evaluation does not assume execution, order placement, or position management because this project is not a trading bot.

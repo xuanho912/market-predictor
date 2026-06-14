@@ -2,7 +2,7 @@
 
 `market-predictor` is a research-first market trend prediction engine. It is designed to estimate probabilities for broad-market trend, pullback, downside continuation, bounce, reversal, crash risk, and systemic crisis scenarios across multiple horizons and market regimes.
 
-It is not an automated trading system. It does not connect to brokers or place orders.
+It is a Market Prediction Dashboard, not a Trading Bot. It does not connect to brokers, place orders, provide execution recommendations, or simulate order execution.
 
 ## Architecture
 
@@ -29,7 +29,7 @@ First-stage scope:
 - APScheduler background refresh hook
 - Next.js + React + TypeScript + Tailwind PWA dashboard
 
-No broker integration, no order placement, and no automated trading.
+No broker integration, no order placement, no order simulation workflow, and no execution recommendations.
 
 ## Local Run
 
@@ -176,7 +176,7 @@ The market data downloader uses this priority order:
 4. local cache from a prior real-data download
 5. synthetic fallback for smoke tests only
 
-Synthetic fallback data is never allowed to create Alpha v1 live signals.
+Synthetic fallback data is never allowed to create Alpha v1 forecast signals.
 
 ## Train Models
 
@@ -227,7 +227,7 @@ Required MVP endpoints:
 
 Prediction responses include market regime, horizon probabilities, expected return, confidence, pullback risk score, crisis risk score, bounce probability, bounce quality score, downside continuation probability, trend reversal probability, dead-cat bounce risk, top reasons, similar historical days, and current risk source breakdown.
 
-The evaluation report includes overall prediction accuracy, by-regime accuracy, by-horizon accuracy, calibration quality, best and worst signal types, and an expected trading edge score. The score is diagnostic only; this project does not trade.
+The evaluation report includes overall prediction accuracy, by-regime accuracy, by-horizon accuracy, calibration quality, best and worst forecast signal types, and an expected forecast edge score. The score is diagnostic only; this project tracks forecast quality and scenario outcomes.
 
 ## Alpha v1 Forward Observation
 
@@ -239,7 +239,7 @@ Current frozen candidate:
 - Status: `RESEARCH ALPHA CANDIDATE`
 - Validation mode: `forward_only`
 
-Alpha v1 is not a confirmed alpha and must not be used for live trading. It is only a forward-observation candidate until enough post-freeze signals mature with stable performance. Do not change the threshold, add new features, retune the model, or reuse `alpha_v1` for a modified rule. Any future change must be versioned as `alpha_v2` or later.
+Alpha v1 is not a confirmed alpha and must not be used as an execution recommendation. It is only a frozen forecast signal and bounce-scenario input until enough post-freeze observations mature with stable prediction accuracy. Do not change the threshold, add new features, retune the model, or reuse `alpha_v1` for a modified rule. Any future change must be versioned as `alpha_v2` or later.
 
 Run the daily forward tracker from the repository root:
 
@@ -274,7 +274,7 @@ Invoke-RestMethod http://localhost:8000/api/alpha/v1/signals
 Invoke-RestMethod http://localhost:8000/api/alpha/v1/report
 ```
 
-The status API returns whether there is a live signal, the latest checked date, latest `bounce_probability` by symbol, distance to threshold, expected validation horizons, data source status, and the risk note. If there is no live signal, the next action is wait. If real data fails, the next action is no live signal because the real data source failed. If a signal appears, the next action is forward-only observation, not paper trading.
+The status API returns whether there is a forecast signal, the latest checked date, latest `bounce_probability` by symbol, distance to threshold, expected validation horizons, data source status, and the risk note. If there is no forecast signal, the next action is continued observation. If real data fails, the next action is no forecast signal because the real data source failed. If a forecast signal appears, the next action is scenario validation and forward return tracking.
 
 To schedule the tracker after market close on Windows, see `docs/windows_daily_tracker_setup.md`.
 
@@ -286,7 +286,7 @@ Free cloud scheduling uses GitHub Actions:
 
 It runs automatically on weekdays at `22:37 UTC`, updates `outputs/forward_alpha_v1_*`, exports static frontend JSON, commits the changes back to the repository, builds the static frontend, and deploys GitHub Pages. This is the preferred no-card option because Render Free services can sleep and lose local filesystem writes.
 
-The dashboard date is the latest real market trading date, not the calendar date. On weekends and US market holidays it is normal for the dashboard to keep showing the prior trading day until the next market-close workflow finishes. Manual `Run workflow` is only needed when you want an immediate refresh or deployment check.
+The dashboard date is the latest real market data date, not the calendar date. On weekends and US market holidays it is normal for the dashboard to keep showing the prior market session until the next market-close workflow finishes. Manual `Run workflow` is only needed when you want an immediate refresh or deployment check.
 
 ## Market Intelligence Engine v2
 

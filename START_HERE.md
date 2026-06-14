@@ -8,7 +8,7 @@ Current state:
 - Alpha v1 status: `RESEARCH ALPHA CANDIDATE`
 - Validation mode: `forward_only`
 
-Do not use Alpha v1 for live trading. It is not a confirmed alpha.
+Do not use Alpha v1 as an execution recommendation. It is only a frozen forecast signal / bounce scenario input and is not a confirmed alpha.
 
 ## Free Cloud Path
 
@@ -77,7 +77,7 @@ The GitHub Pages site is a Chinese Market Prediction Dashboard. It shows:
 - Market Intelligence Engine v3 signal agreement score and edge status: NO_EDGE / WEAK_EDGE / MODERATE_EDGE / STRONG_EDGE.
 - Four predictor stack: bounce, downside continuation, trend reversal, risk expansion.
 - Model Confidence Score with reasons why confidence is limited.
-- Current state, live signal, bounce probability, downside risk, and trend reversal probability.
+- Current state, forecast signal status, bounce probability, downside risk, and trend reversal probability.
 - 3d / 5d / 10d / 20d / 60d horizon predictions.
 - Past price plus simulated future paths.
 - Price labels inside the prediction chart, including current price.
@@ -118,7 +118,7 @@ Schedule:
 37 22 * * 1-5
 ```
 
-This runs automatically after regular US market closes on weekdays. The dashboard shows the latest real trading date, so weekends and market holidays will usually keep showing the prior trading day until the next close completes. You only need a manual run when you want to force an immediate refresh.
+This runs automatically after regular US market closes on weekdays. The dashboard shows the latest real market data date, so weekends and market holidays will usually keep showing the prior market session until the next close completes. You only need a manual run when you want to force an immediate refresh.
 
 Manual GitHub run:
 

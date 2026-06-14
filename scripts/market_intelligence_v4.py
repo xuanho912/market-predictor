@@ -1045,7 +1045,7 @@ def _options_status_summary(bundle: dict[str, Any]) -> dict[str, Any]:
 
 def _edge_summary_v4(status: str) -> str:
     if status == "STRONG_EDGE":
-        return "多源确认较强，可以给出较明确的概率路径，但仍不是交易指令。"
+        return "多源确认较强，可以给出较明确的概率路径，但仍不是下单依据。"
     if status == "MODERATE_EDGE":
         return "有一定预测优势，但仍需观察冲突信号和失效条件。"
     if status == "RISK_WARNING":

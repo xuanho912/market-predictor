@@ -754,8 +754,8 @@ def _build_market_overview(
         "as_of": alpha_status.get("latest_checked_date") or _latest_as_of(alpha_status, analogs),
         "symbols": symbols,
         "strongest_symbol": strongest["symbol"],
-        "dashboard_status": "forward_only_observation",
-        "status_note": "Alpha v1 is still a research candidate. No auto-trading is enabled.",
+        "dashboard_status": "forecast_validation",
+        "status_note": "Alpha v1 is still a research candidate and only a bounce scenario input. The dashboard is for probability-path forecasting, not execution recommendations.",
     }
 
 

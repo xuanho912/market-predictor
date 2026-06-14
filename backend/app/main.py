@@ -66,7 +66,12 @@ def startup() -> None:
 @app.get("/health")
 @app.get("/api/health")
 def health() -> dict[str, str]:
-    return {"status": "ok", "engine": "market-predictor", "trading_enabled": "false"}
+    return {
+        "status": "ok",
+        "engine": "market-predictor",
+        "product_type": "market_prediction_dashboard",
+        "broker_execution_enabled": "false",
+    }
 
 
 @app.get("/api/markets")

@@ -56,6 +56,7 @@ export type AlphaV1Status = {
   signal_version: string;
   status: "NO ALPHA" | "RESEARCH ALPHA CANDIDATE" | "FORWARD-VALIDATED ALPHA CANDIDATE";
   live_signal: boolean;
+  forecast_signal?: boolean;
   threshold: number;
   latest_checked_date: string | null;
   latest_bounce_probability_by_symbol: Record<string, number | null>;
@@ -607,10 +608,11 @@ const fallbackAlphaV1Status: AlphaV1Status = {
   latest_bounce_probability_by_symbol: {},
   distance_to_threshold_by_symbol: {},
   expected_validation_horizons: ["3d", "5d", "10d", "20d", "60d"],
-  risk_note: "Research alpha candidate only. Forward-only observation; not paper trading and not live trading.",
+  risk_note: "Research alpha candidate only. Forecast validation only; not an execution recommendation.",
   data_source_status: "unknown",
   signal_blocked_reason: null,
-  no_signal: "no live signal",
+  forecast_signal: false,
+  no_signal: "no forecast signal",
   validation_period: "forward_only",
 };
 

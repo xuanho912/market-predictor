@@ -22,7 +22,7 @@ ALPHA_STATUS = "RESEARCH ALPHA CANDIDATE"
 SUPPORTED_SYMBOLS = ("SPY", "QQQ", "IWM", "DIA")
 FORWARD_HORIZONS = (3, 5, 10, 20, 60)
 VALIDATION_PERIOD = "forward_only"
-RISK_NOTE = "Research alpha candidate only. Forward-only observation; not paper trading and not live trading."
+RISK_NOTE = "Research alpha candidate only. Forecast validation only; not an execution recommendation."
 
 CSV_FIELDS = [
     "signal_date",
@@ -351,6 +351,7 @@ def alpha_status_payload() -> dict[str, Any]:
         "signal_version": SIGNAL_VERSION,
         "status": ALPHA_STATUS,
         "live_signal": live_signal,
+        "forecast_signal": live_signal,
         "threshold": FROZEN_BOUNCE_THRESHOLD,
         "latest_checked_date": latest_date,
         "latest_bounce_probability_by_symbol": latest_by_symbol,
@@ -360,7 +361,8 @@ def alpha_status_payload() -> dict[str, Any]:
         "data_source_status": data_source_status,
         "signal_blocked_reason": signal_blocked_reason,
         "live_signals": [_public_signal(row) for row in pending],
-        "no_signal": None if live_signal else "no live signal",
+        "forecast_signals": [_public_signal(row) for row in pending],
+        "no_signal": None if live_signal else "no forecast signal",
         "validation_period": VALIDATION_PERIOD,
     }
 
@@ -445,6 +447,7 @@ def run_daily_forward_observation() -> dict[str, Any]:
         "new_signal_count": len(appended),
         "new_signals": [signal.to_row() for signal in appended],
         "live_signal": bool(appended) or alpha_status_payload()["live_signal"],
+        "forecast_signal": bool(appended) or alpha_status_payload()["live_signal"],
         "daily_check_count": len(checks),
         "data_source_status": data_source_status,
         "data_sources": {symbol: source_by_symbol.get(symbol, "missing") for symbol in symbols},
@@ -477,7 +480,7 @@ def write_forward_report(path: Path | None = None) -> Path:
         f"- signal count: {performance['signal_count']}",
         f"- pending signals: {performance['pending_count']}",
         f"- completed signals: {performance['completed_count']}",
-        f"- live signal: {str(status['live_signal']).lower()}",
+        f"- forecast signal: {str(status['live_signal']).lower()}",
         f"- latest checked date: {status['latest_checked_date'] or 'n/a'}",
         f"- data source status: {status.get('data_source_status') or 'n/a'}",
         f"- signal blocked reason: {status.get('signal_blocked_reason') or 'n/a'}",
@@ -508,7 +511,7 @@ def write_forward_report(path: Path | None = None) -> Path:
         "",
         "## Historical Alpha Character Check",
         "",
-        "Forward validation has not confirmed alpha v1. Do not paper trade until completed forward observations are sufficient and stable.",
+        "Forward validation has not confirmed alpha v1. Treat it only as a bounce scenario input until completed forward observations are sufficient and stable.",
     ]
     report_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
     return report_path
@@ -693,7 +696,7 @@ def main() -> int:
     print(f"threshold={result['threshold']:.8f}")
     print(f"latest_checked_date={result['latest_checked_date']}")
     print(f"new_signal_count={result['new_signal_count']}")
-    print(f"live_signal={str(result['live_signal']).lower()}")
+    print(f"forecast_signal={str(result['live_signal']).lower()}")
     print(f"data_source_status={result['data_source_status']}")
     if result["signal_blocked_reason"]:
         print(f"signal_blocked_reason={result['signal_blocked_reason']}")

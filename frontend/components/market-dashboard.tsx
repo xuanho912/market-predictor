@@ -296,7 +296,7 @@ function plainDecision(data: SimulatedSymbolPaths) {
     : "";
   const confirmation = data.signal_confirmation ? `多源确认 ${data.signal_confirmation.confirmation_score}/100（${confirmationCn(data.signal_confirmation.confirmation_level)}）。` : "";
   const noEdge = data.market_edge_status?.no_edge_note ? `${data.market_edge_status.no_edge_note} ` : "";
-  return `${data.symbol} 现在是“${state}”，今天的可用预测优势是“${edge}”。${noEdge}${scenarioText} ${confirmation}最强方向是 ${strongest}。5日看法：${fiveText}；20日看法：${twentyText}。大白话：${action}。这不是确定走势，也不是交易指令。`;
+  return `${data.symbol} 现在是“${state}”，今天的可用预测优势是“${edge}”。${noEdge}${scenarioText} ${confirmation}最强方向是 ${strongest}。5日看法：${fiveText}；20日看法：${twentyText}。大白话：${action}。这不是确定走势，也不用于下单。`;
 }
 
 function plainSummary(symbolData: SimulatedSymbolPaths | undefined) {
@@ -611,7 +611,7 @@ function MarketCard({
             <p className="text-xs text-muted">{data.name}</p>
           </div>
         </div>
-        <span className={data.live_signal ? "text-xs font-semibold text-teal" : "text-xs text-muted"}>{data.live_signal ? "有信号" : "无信号"}</span>
+        <span className={data.live_signal ? "text-xs font-semibold text-teal" : "text-xs text-muted"}>{data.live_signal ? "有预测信号" : "无预测信号"}</span>
       </div>
       <div className="mt-3 grid grid-cols-2 gap-2 text-xs">
         <Metric label="收盘价" value={price(data.current_price)} />
@@ -645,9 +645,9 @@ function DataQualityPanel({ report }: { report?: DataQualityReport }) {
         <div>
           <p className="text-xs uppercase text-muted">Data Quality Panel</p>
           <h2 className="mt-1 text-base font-semibold">数据质量审计</h2>
-          <p className="mt-1 text-xs text-muted">最新交易日：{summary.latest_date ?? report.as_of ?? "暂无"}</p>
+          <p className="mt-1 text-xs text-muted">最新市场数据日：{summary.latest_date ?? report.as_of ?? "暂无"}</p>
           <p className="mt-1 text-xs text-muted">页面生成：{displayTimestamp(report.generated_at)}</p>
-          <p className="mt-1 text-xs text-teal">自动更新：美股交易日收盘后由 GitHub Actions 刷新，页面每 5 分钟检查新结果</p>
+          <p className="mt-1 text-xs text-teal">自动更新：美股收盘后由 GitHub Actions 刷新，页面每 5 分钟检查新结果</p>
         </div>
         <div className="rounded-md bg-panel px-4 py-2 text-right">
           <p className="text-xs text-muted">数据完整度</p>
@@ -1195,11 +1195,11 @@ export function MarketDashboard({ dashboard: initialDashboard }: { dashboard: Pr
             <p className="text-xs uppercase tracking-[0.18em] text-muted">Market Prediction Dashboard</p>
             <h1 className="mt-2 text-3xl font-semibold tracking-normal">市场预测终端</h1>
             <p className="mt-2 max-w-3xl text-sm leading-6 text-muted">
-              页面直接展示大盘状态、概率路径、历史相似情景和数据质量。Alpha v1 仍是 RESEARCH ALPHA CANDIDATE，不是实盘交易信号。
+              页面直接展示大盘状态、概率路径、历史相似情景和数据质量。Alpha v1 仍是 RESEARCH ALPHA CANDIDATE，只是预测信号 / 反抽场景输入。
             </p>
           </div>
           <div className="rounded-lg border border-line bg-white p-3 text-sm">
-            <p className="text-muted">最新交易日</p>
+            <p className="text-muted">最新市场数据日</p>
             <p className="mt-1 font-medium">{dashboard.data_quality_report?.summary.latest_date ?? dashboard.as_of ?? "暂无"}</p>
             <p className="mt-2 text-muted">页面生成</p>
             <p className="mt-1 font-medium">{displayTimestamp(dashboard.data_quality_report?.generated_at ?? dashboard.market_intelligence_v3?.generated_at ?? dashboard.market_intelligence_v2?.generated_at)}</p>

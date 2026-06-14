@@ -1,6 +1,6 @@
 # AGENTS.md
 
-This repository is a market trend prediction engine, not a normal indicator dashboard. When working here, Codex must follow these rules first.
+This repository is a Market Prediction Dashboard and market trend prediction engine, not a normal indicator dashboard and not a Trading Bot. When working here, Codex must follow these rules first.
 
 Strategic principle: build only what creates unique market-prediction judgment; buy, rent, or reuse commodity infrastructure. See `docs/wardley_strategy.md` before adding non-trivial features.
 
@@ -11,7 +11,7 @@ Strategic principle: build only what creates unique market-prediction judgment; 
 5. Every prediction must be persisted as a historical record so future realized outcomes can audit forecast quality.
 6. Every model must output explanations: why bullish, why bearish, why bounce, why crisis, and which evidence changed the probability.
 7. Every new indicator must be assigned to exactly one of these groups: price, volatility, credit, rates, liquidity, macro, earnings, positioning, breadth, news_text, onchain_crypto, or alternative_data.
-8. Do not build automated trading, broker connections, or order placement.
+8. Do not build automated execution, broker connections, order placement, simulated order execution, position-management rules, portfolio-accounting reports, or execution recommendations.
 9. The mobile frontend is only a presentation layer. Prediction logic must not be hard-coded in the frontend.
 10. README.md must explain how to run locally, deploy, update data, train models, and validate models.
 11. Every prediction and model must identify market regime first: bull_trend, bear_trend, sideways, panic, oversold_bounce, topping, bottoming, recovery, liquidity_crunch, credit_stress, or crisis_mode.
@@ -20,7 +20,7 @@ Strategic principle: build only what creates unique market-prediction judgment; 
 14. Data provider design must cover price, volatility, credit, rates, liquidity, macro, earnings, positioning, breadth, news_text, onchain_crypto, and alternative_data categories.
 15. The model architecture must remain layered: long-term vulnerability, medium-term pullback risk, short-term trigger, and bottom bounce.
 16. The API must output predictions with probabilities, confidence, risk scores, explanations, similar historical days, and risk source breakdowns.
-17. First-stage MVP scope is SPY, QQQ, IWM, DIA with no broker integration, no order placement, and no automated trading.
+17. First-stage MVP scope is SPY, QQQ, IWM, DIA with no broker integration, no order placement, no simulated execution workflow, and no automated execution.
 18. The validation engine must replay historical predictions with walk-forward prior-window data and store horizon-level rows in `predictions_log`.
 19. Feature importance must include permutation importance, feature group ablation, instability checks, regime-specific features, and correlation leakage checks.
 20. Probability calibration must include Platt scaling, isotonic regression, Brier-score optimization, Brier score, log loss, and calibration curves.
@@ -31,6 +31,7 @@ Strategic principle: build only what creates unique market-prediction judgment; 
 25. Do not self-build a generic data platform, charting system, login system, cloud platform, broker system, or any deployment architecture that sacrifices prediction quality.
 26. Core code, Alpha logic, Market Intelligence Engine, Historical Analog Engine, Signal Agreement, and simulated path weighting must remain private. Public outputs may show results only, not keys or full algorithmic details.
 27. API keys must remain in GitHub Secrets or local environment variables only. Never commit keys, `.env`, public JSON secrets, logs with keys, or `NEXT_PUBLIC_*` provider keys.
-28. The final page must answer without user prompting: whether there is edge today, current market state, strongest symbol, simulated future paths, historical analog support or conflict, largest risk, invalidation conditions, and model confidence.
+28. The final page must answer without user prompting: whether there is forecast edge today, current market state, strongest symbol, primary/secondary/risk probability paths, historical analog support or conflict, largest risk, invalidation conditions, model confidence, and which horizons need observation.
+29. Alpha v1 must be described as a forecast signal / bounce scenario input, not an execution input. Use forecast start date, forecast horizon, scenario validation, forward return tracking, prediction accuracy, invalidation condition, and risk condition language.
 
 Before adding a feature, define the label, horizon, regime interpretation, point-in-time data availability, validation window, probability calibration method, prediction logging path, and Wardley classification. If the feature is a right-side commodity module, prefer a managed service, API, or existing library over custom engineering.

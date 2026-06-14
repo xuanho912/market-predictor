@@ -124,7 +124,7 @@ def fetch_breadth_bundle(
             "IWM is proxy-only in v1; this is not full Russell 2000 constituent breadth.",
             "Market internal resonance is a confirmation layer, not a standalone alpha signal.",
             "Cached data is marked stale when live refresh fails or latest dates lag the reference date.",
-            "No synthetic breadth is used for live signal generation.",
+            "No synthetic breadth is used for forecast signal generation.",
         ],
     }
 

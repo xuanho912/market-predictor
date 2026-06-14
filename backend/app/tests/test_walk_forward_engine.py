@@ -17,4 +17,4 @@ def test_evaluation_report_contains_edge_score() -> None:
     assert "overall_prediction_accuracy" in report
     assert "by_regime_accuracy" in report
     assert "by_horizon_accuracy" in report
-    assert "expected_trading_edge_score" in report
+    assert "expected_forecast_edge_score" in report

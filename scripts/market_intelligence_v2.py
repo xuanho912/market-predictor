@@ -162,7 +162,7 @@ def build_data_quality_report(series_by_symbol: dict[str, DownloadedSeries], as_
         "notes": [
             "price/volatility/credit/rates/liquidity currently use public market proxies.",
             "options breadth macro flow are not treated as available unless real feeds are connected.",
-            "synthetic fallback is never allowed to create a live signal.",
+            "synthetic fallback is never allowed to create a forecast signal.",
         ],
     }
 

@@ -1,6 +1,6 @@
 ---
 name: market-prediction-research
-description: Use this skill whenever working on market prediction, macro risk modeling, pullback forecasting, crisis early warning, bounce detection, trading signal validation, feature engineering, financial time-series backtesting, or point-in-time market data pipelines. This skill forces the agent to define labels first, separate horizons and regimes, use credit/liquidity/options/breadth data, prevent leakage, and validate with walk-forward probability calibration.
+description: Use this skill whenever working on market prediction, macro risk modeling, pullback forecasting, crisis early warning, bounce detection, forecast signal validation, feature engineering, financial time-series backtesting, or point-in-time market data pipelines. This skill forces the agent to define labels first, separate horizons and regimes, use credit/liquidity/options/breadth data, prevent leakage, and validate with walk-forward probability calibration. This project is a Market Prediction Dashboard, not a Trading Bot.
 ---
 
 # Market Prediction Research
@@ -229,7 +229,7 @@ First-stage MVP scope:
 - mobile PWA dashboard
 - Codex Skill, AGENTS.md, README, Docker one-command startup
 
-Do not add broker integration, order placement, or automated trading.
+Do not add broker integration, order placement, simulated execution workflows, portfolio-accounting reports, position-management rules, or execution recommendations.
 
 ## 16. Use Walk-Forward Probability Calibration
 
@@ -281,17 +281,57 @@ Hard rules:
 - Treat any post-hoc alpha as a research candidate until it passes forward validation.
 - Compare every candidate with simple baselines such as RSI oversold, VIX spike, drawdown, simple mean reversion, and random same-frequency signals.
 - Never call one historical backtest a confirmed alpha.
-- Save every live signal, including pending, skipped, failed, and completed observations.
+- Save every forecast observation, including pending, skipped, failed, and completed outcomes.
 - If a future change uses a different feature set, threshold, model, label, or regime rule, create a new version such as `alpha_v2`. Do not contaminate `alpha_v1`.
 
 Current frozen research candidate:
 
 - `bounce_probability_top_decile_v1` can only be treated as a research alpha candidate.
 - `bounce_probability_top_decile_v1` means a long-bounce / mean-reversion candidate, not a long-term market direction call.
-- `down_probability` and `crash_probability` failed current validation as trading signals and must not be used as active trade triggers.
-- Volatility is the strongest current information source, with small credit contribution, but both require forward validation before paper trading.
+- `down_probability` and `crash_probability` failed current validation as standalone forecast signals and must not be used as order triggers or execution recommendations.
+- Volatility is the strongest current information source, with small credit contribution, but both require forward validation before they can be treated as reliable forecast inputs.
 
-## 19. Use Historical Analogs As Context, Not Proof
+## 19. Keep Product Language Forecast-Only
+
+This project is a Market Prediction Dashboard, not a Trading Bot. The dashboard must answer what market path is more probable and why; it must not tell the user how to execute orders, manage positions, size positions, or connect to brokers.
+
+Use these terms:
+
+- forecast signal
+- forecast start date
+- forecast horizon
+- scenario validation
+- forward return tracking
+- prediction accuracy
+- primary scenario hit rate
+- high-confidence forecast validation
+- invalidation condition
+- risk condition
+
+Avoid or remove these terms unless explicitly discussing something out of scope:
+
+- order-simulation workflows
+- execution-oriented signals
+- position-management rules
+- order-risk rules
+- simulated portfolio accounting
+- execution strategies
+- execution recommendations
+- actionable order recommendations
+
+The first screen must directly answer:
+
+- current most likely probability path
+- second most likely path
+- primary path probability
+- primary versus secondary probability gap
+- model confidence
+- supporting evidence
+- conflicting evidence
+- invalidation conditions
+- future horizons to observe
+
+## 20. Use Historical Analogs As Context, Not Proof
 
 When a user asks to "let history train the model", "learn from similar history", or "find markets like today", prefer a Historical Analog Engine over any model that memorizes history.
 
@@ -303,7 +343,7 @@ Hard rules:
 - Every analog output must include sample count, average results, worst-case results, shared features, and key differences from the current market.
 - Historical similarity does not imply the future must repeat.
 - If sample count is low, or the regime is crisis/high-volatility with few analogs, output a low-sample warning and avoid strong conclusions.
-- Any analog-derived signal must be versioned separately and forward validated before research or trading use.
+- Any analog-derived signal must be versioned separately and forward validated before being treated as a reliable forecast component.
 
 For Alpha v1:
 
@@ -312,7 +352,7 @@ For Alpha v1:
 - Output `historical_support = weak_or_conflicting` when samples are weak, mixed, sparse, or risk conditions differ.
 - Never upgrade Alpha v1 to confirmed alpha because historical analogs look good.
 
-## 20. Apply Wardley Mapping Before Building
+## 21. Apply Wardley Mapping Before Building
 
 Use the project Wardley strategy before adding non-trivial work. Read `docs/wardley_strategy.md` when changing product direction, adding data providers, adding dashboard modules, or restructuring deployment.
 

@@ -119,7 +119,7 @@ def build_evaluation_report(symbol: str = "SPY") -> dict[str, object]:
     }
     best = sorted(signal_scores.items(), key=lambda item: item[1], reverse=True)[:3]
     worst = sorted(signal_scores.items(), key=lambda item: item[1])[:3]
-    edge = _expected_trading_edge_score(overall)
+    edge = _expected_forecast_edge_score(overall)
     return {
         "symbol": normalize_symbol(symbol),
         "overall_prediction_accuracy": overall["accuracy"],
@@ -132,7 +132,7 @@ def build_evaluation_report(symbol: str = "SPY") -> dict[str, object]:
         },
         "best_performing_signal_types": [{"signal_type": name, "score": score} for name, score in best],
         "worst_performing_signal_types": [{"signal_type": name, "score": score} for name, score in worst],
-        "expected_trading_edge_score": edge,
+        "expected_forecast_edge_score": edge,
         "validation_method": "walk-forward replay using only prior-window data at each forecast timestamp",
     }
 
@@ -264,7 +264,7 @@ def _pr_auc(y_true: list[int], scores: list[float]) -> float:
     return area
 
 
-def _expected_trading_edge_score(metrics: dict[str, object]) -> float:
+def _expected_forecast_edge_score(metrics: dict[str, object]) -> float:
     accuracy = float(metrics["accuracy"])
     brier = float(metrics["brier_score"])
     pr_auc = float(metrics["pr_auc"])

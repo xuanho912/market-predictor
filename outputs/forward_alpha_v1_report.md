@@ -14,7 +14,7 @@ Alpha v1 remains a frozen research candidate until enough post-freeze observatio
 - signal count: 4
 - pending signals: 4
 - completed signals: 0
-- live signal: true
+- forecast signal: true
 - latest checked date: 2026-06-12
 - data source status: real_market_data
 - signal blocked reason: n/a
@@ -57,4 +57,4 @@ n/a
 
 ## Historical Alpha Character Check
 
-Forward validation has not confirmed alpha v1. Do not paper trade until completed forward observations are sufficient and stable.
+Forward validation has not confirmed alpha v1. Treat it only as a bounce scenario input until completed forward observations are sufficient and stable.

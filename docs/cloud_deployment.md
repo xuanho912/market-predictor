@@ -1,15 +1,15 @@
 ﻿# Free Cloud Deployment With GitHub Pages
 
-Goal: no Vercel, no Render, no payment information, and still keep Alpha v1 in daily `forward_only` observation.
+Goal: no Vercel, no Render, no payment information, and still keep Alpha v1 in daily `forward_only` forecast validation.
 
 Alpha v1 stays frozen:
 
 - signal: `bounce_probability_top_decile_v1`
 - threshold: `0.32534311`
 - status: `RESEARCH ALPHA CANDIDATE`
-- no synthetic live signals
+- no synthetic forecast signals
 - no threshold tuning
-- no use of `down_probability` or `crash_probability` as trade triggers
+- no use of `down_probability` or `crash_probability` as order triggers or execution recommendations
 
 ## Recommended Free Architecture
 
@@ -173,7 +173,7 @@ cron: "37 22 * * 1-5"
 
 This is UTC and intentionally not at minute `0`, reducing the chance of high-load schedule delays.
 
-The public dashboard shows the latest real trading day, not the current calendar day. If today is a weekend or US market holiday, the latest date should remain the previous trading day. The workflow still re-fetches data on every run; stale or failed data must be marked as `stale_data` or `data_source_failed`, never silently reused as fresh.
+The public dashboard shows the latest real market data day, not the current calendar day. If today is a weekend or US market holiday, the latest date should remain the previous market session. The workflow still re-fetches data on every run; stale or failed data must be marked as `stale_data` or `data_source_failed`, never silently reused as fresh.
 
 ## Manual Run
 
@@ -206,7 +206,7 @@ The GitHub Pages page shows:
 - Market Intelligence Engine v3 with signal agreement score, edge status and four predictor outputs.
 - Model Confidence Score and confidence limits.
 - SPY / QQQ / IWM / DIA market cards.
-- Current state, live signal, bounce probability, downside risk, and trend reversal probability.
+- Current state, forecast signal status, bounce probability, downside risk, and trend reversal probability.
 - 3d / 5d / 10d / 20d / 60d horizon predictions.
 - Past price plus simulated future paths.
 - Base, bounce, bearish, and historical analog scenarios.
@@ -249,6 +249,6 @@ If you later want live API calls, deploy a backend separately and set:
 NEXT_PUBLIC_API_BASE_URL=https://<BACKEND_URL>
 ```
 
-Do not use any backend deployment that requires synthetic live signals, threshold changes, or Alpha v1 rule changes.
+Do not use any backend deployment that requires synthetic forecast signals, threshold changes, or Alpha v1 rule changes.
 
 Alpha v1 remains `RESEARCH ALPHA CANDIDATE`.
