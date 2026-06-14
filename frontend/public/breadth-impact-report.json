@@ -1,0 +1,327 @@
+{
+  "forward_validation": {
+    "breadth_confirmed_bounce_signals": {
+      "by_horizon": {
+        "10d": {
+          "avg_return": 0.001104,
+          "hit_rate": 0.4875,
+          "max_adverse_excursion": -0.059374,
+          "max_favorable_excursion": 0.065859,
+          "mean_absolute_return": 0.017979,
+          "median_return": -0.0004,
+          "sample_size": 80
+        },
+        "20d": {
+          "avg_return": 0.002376,
+          "hit_rate": 0.5875,
+          "max_adverse_excursion": -0.142028,
+          "max_favorable_excursion": 0.081382,
+          "mean_absolute_return": 0.02924,
+          "median_return": 0.009112,
+          "sample_size": 80
+        },
+        "3d": {
+          "avg_return": 0.001175,
+          "hit_rate": 0.525,
+          "max_adverse_excursion": -0.043682,
+          "max_favorable_excursion": 0.049473,
+          "mean_absolute_return": 0.013373,
+          "median_return": 0.001558,
+          "sample_size": 80
+        },
+        "5d": {
+          "avg_return": 0.000734,
+          "hit_rate": 0.5875,
+          "max_adverse_excursion": -0.040544,
+          "max_favorable_excursion": 0.042123,
+          "mean_absolute_return": 0.01561,
+          "median_return": 0.003005,
+          "sample_size": 80
+        },
+        "60d": {
+          "avg_return": 0.00681,
+          "hit_rate": 0.475,
+          "max_adverse_excursion": -0.178752,
+          "max_favorable_excursion": 0.121826,
+          "mean_absolute_return": 0.053208,
+          "median_return": -0.003049,
+          "sample_size": 80
+        }
+      },
+      "sample_size": 80
+    },
+    "breadth_confirmed_reversal_signals": {
+      "by_horizon": {
+        "10d": {
+          "avg_return": -0.00085,
+          "hit_rate": 0.4,
+          "max_adverse_excursion": -0.030486,
+          "max_favorable_excursion": 0.03085,
+          "mean_absolute_return": 0.013253,
+          "median_return": -0.001222,
+          "sample_size": 20
+        },
+        "20d": {
+          "avg_return": 0.020009,
+          "hit_rate": 0.8,
+          "max_adverse_excursion": -0.047316,
+          "max_favorable_excursion": 0.058396,
+          "mean_absolute_return": 0.031437,
+          "median_return": 0.029166,
+          "sample_size": 20
+        },
+        "3d": {
+          "avg_return": -0.006693,
+          "hit_rate": 0.35,
+          "max_adverse_excursion": -0.033125,
+          "max_favorable_excursion": 0.023707,
+          "mean_absolute_return": 0.014506,
+          "median_return": -0.009383,
+          "sample_size": 20
+        },
+        "5d": {
+          "avg_return": -0.009981,
+          "hit_rate": 0.35,
+          "max_adverse_excursion": -0.040544,
+          "max_favorable_excursion": 0.023986,
+          "mean_absolute_return": 0.014545,
+          "median_return": -0.006798,
+          "sample_size": 20
+        },
+        "60d": {
+          "avg_return": 0.042877,
+          "hit_rate": 0.75,
+          "max_adverse_excursion": -0.099158,
+          "max_favorable_excursion": 0.121826,
+          "mean_absolute_return": 0.069044,
+          "median_return": 0.065295,
+          "sample_size": 20
+        }
+      },
+      "sample_size": 20
+    },
+    "breadth_conflicted_bounce_signals": {
+      "by_horizon": {
+        "10d": {
+          "sample_size": 0
+        },
+        "20d": {
+          "sample_size": 0
+        },
+        "3d": {
+          "sample_size": 0
+        },
+        "5d": {
+          "sample_size": 0
+        },
+        "60d": {
+          "sample_size": 0
+        }
+      },
+      "sample_size": 0
+    },
+    "breadth_conflicted_reversal_signals": {
+      "by_horizon": {
+        "10d": {
+          "sample_size": 0
+        },
+        "20d": {
+          "sample_size": 0
+        },
+        "3d": {
+          "sample_size": 0
+        },
+        "5d": {
+          "sample_size": 0
+        },
+        "60d": {
+          "sample_size": 0
+        }
+      },
+      "sample_size": 0
+    },
+    "completed_sample_counter": {
+      "by_horizon": {
+        "10d": {
+          "completed_count": 0,
+          "evidence_gate": "insufficient"
+        },
+        "20d": {
+          "completed_count": 0,
+          "evidence_gate": "insufficient"
+        },
+        "3d": {
+          "completed_count": 0,
+          "evidence_gate": "insufficient"
+        },
+        "5d": {
+          "completed_count": 0,
+          "evidence_gate": "insufficient"
+        },
+        "60d": {
+          "completed_count": 0,
+          "evidence_gate": "insufficient"
+        }
+      },
+      "completed_rows": 0,
+      "max_completed_count": 0
+    },
+    "evidence_note": "Forward-only breadth attribution is still below the minimum sample gate; these buckets are tracked but not proof.",
+    "status": "not_enough_forward_samples"
+  },
+  "generated_at": "2026-06-14T10:58:14.106771Z",
+  "notes": [
+    "This audit compares the same run with true breadth provider disabled vs enabled.",
+    "The audit does not change Alpha v1 and does not prove tradable alpha.",
+    "Forward validation is required before treating breadth-confirmed signals as a proven edge."
+  ],
+  "status": "information_quality_audit_forward_validation_pending",
+  "summary": {
+    "breadth_conflicts_primary_count": 0,
+    "breadth_supports_primary_count": 4,
+    "changed_symbol_count": 4,
+    "conclusion": "breadth improves information quality, not proven alpha yet.",
+    "data_completeness_with_true_breadth": 90,
+    "data_completeness_without_true_breadth": 86,
+    "forward_validation_status": "not_enough_forward_samples"
+  },
+  "symbols": {
+    "DIA": {
+      "baseline": "without_true_breadth_provider",
+      "breadth_confirmation_score": 90.72,
+      "breadth_conflict_score": 18.56,
+      "breadth_conflicts_primary_scenario": false,
+      "breadth_reason": "DIA breadth supports bounce_path: internal resonance is aligned, support score 91%, above 20d/50d MA 63%/67%.",
+      "breadth_risk_note": "DIA breadth improves confidence in the primary path, but forward validation is still required.",
+      "breadth_supports_primary_scenario": true,
+      "broad_participation": true,
+      "edge_status_changed": false,
+      "edge_status_with_breadth": "MODERATE_EDGE",
+      "edge_status_without_breadth": "MODERATE_EDGE",
+      "failed_bounce_risk_delta": 0.0161,
+      "failed_bounce_risk_with_breadth": 0.2529,
+      "failed_bounce_risk_without_breadth": 0.2368,
+      "internal_resonance_score": 78.09,
+      "internal_resonance_state": "aligned",
+      "model_confidence_delta": 12,
+      "model_confidence_with_breadth": 83,
+      "model_confidence_without_breadth": 71,
+      "primary_scenario_changed": false,
+      "primary_scenario_with_breadth": "bounce_path",
+      "primary_scenario_without_breadth": "bounce_path",
+      "risk_expansion_delta": 0.022,
+      "risk_expansion_with_breadth": 0.3037,
+      "risk_expansion_without_breadth": 0.2817,
+      "secondary_scenario_changed": false,
+      "secondary_scenario_with_breadth": "analog_average_path",
+      "secondary_scenario_without_breadth": "analog_average_path",
+      "signal_confirmation_delta": 10,
+      "signal_confirmation_with_breadth": 97,
+      "signal_confirmation_without_breadth": 87,
+      "symbol": "DIA"
+    },
+    "IWM": {
+      "baseline": "without_true_breadth_provider",
+      "breadth_confirmation_score": 77.57,
+      "breadth_conflict_score": 29.36,
+      "breadth_conflicts_primary_scenario": false,
+      "breadth_reason": "IWM breadth supports bounce_path: internal resonance is mixed, support score 78%.",
+      "breadth_risk_note": "IWM breadth improves confidence in the primary path, but forward validation is still required.",
+      "breadth_supports_primary_scenario": true,
+      "broad_participation": false,
+      "edge_status_changed": false,
+      "edge_status_with_breadth": "MODERATE_EDGE",
+      "edge_status_without_breadth": "MODERATE_EDGE",
+      "failed_bounce_risk_delta": 0.0428,
+      "failed_bounce_risk_with_breadth": 0.2725,
+      "failed_bounce_risk_without_breadth": 0.2297,
+      "internal_resonance_score": 60.21,
+      "internal_resonance_state": "mixed",
+      "model_confidence_delta": 7,
+      "model_confidence_with_breadth": 73,
+      "model_confidence_without_breadth": 66,
+      "primary_scenario_changed": false,
+      "primary_scenario_with_breadth": "bounce_path",
+      "primary_scenario_without_breadth": "bounce_path",
+      "risk_expansion_delta": 0.0288,
+      "risk_expansion_with_breadth": 0.3105,
+      "risk_expansion_without_breadth": 0.2817,
+      "secondary_scenario_changed": false,
+      "secondary_scenario_with_breadth": "analog_average_path",
+      "secondary_scenario_without_breadth": "analog_average_path",
+      "signal_confirmation_delta": 0,
+      "signal_confirmation_with_breadth": 70,
+      "signal_confirmation_without_breadth": 70,
+      "symbol": "IWM"
+    },
+    "QQQ": {
+      "baseline": "without_true_breadth_provider",
+      "breadth_confirmation_score": 79.07,
+      "breadth_conflict_score": 30.46,
+      "breadth_conflicts_primary_scenario": false,
+      "breadth_reason": "QQQ breadth supports bounce_path: internal resonance is mixed, support score 79%, above 20d/50d MA 54%/51%.",
+      "breadth_risk_note": "QQQ breadth improves confidence in the primary path, but forward validation is still required.",
+      "breadth_supports_primary_scenario": true,
+      "broad_participation": false,
+      "edge_status_changed": false,
+      "edge_status_with_breadth": "MODERATE_EDGE",
+      "edge_status_without_breadth": "MODERATE_EDGE",
+      "failed_bounce_risk_delta": 0.0632,
+      "failed_bounce_risk_with_breadth": 0.3283,
+      "failed_bounce_risk_without_breadth": 0.2651,
+      "internal_resonance_score": 70.77,
+      "internal_resonance_state": "mixed",
+      "model_confidence_delta": 5,
+      "model_confidence_with_breadth": 76,
+      "model_confidence_without_breadth": 71,
+      "primary_scenario_changed": false,
+      "primary_scenario_with_breadth": "bounce_path",
+      "primary_scenario_without_breadth": "bounce_path",
+      "risk_expansion_delta": 0.0361,
+      "risk_expansion_with_breadth": 0.3178,
+      "risk_expansion_without_breadth": 0.2817,
+      "secondary_scenario_changed": true,
+      "secondary_scenario_with_breadth": "bearish_path",
+      "secondary_scenario_without_breadth": "analog_average_path",
+      "signal_confirmation_delta": -17,
+      "signal_confirmation_with_breadth": 70,
+      "signal_confirmation_without_breadth": 87,
+      "symbol": "QQQ"
+    },
+    "SPY": {
+      "baseline": "without_true_breadth_provider",
+      "breadth_confirmation_score": 98.29,
+      "breadth_conflict_score": 16.27,
+      "breadth_conflicts_primary_scenario": false,
+      "breadth_reason": "SPY breadth supports bounce_path: internal resonance is aligned, support score 98%, above 20d/50d MA 71%/60%.",
+      "breadth_risk_note": "SPY breadth improves confidence in the primary path, but forward validation is still required.",
+      "breadth_supports_primary_scenario": true,
+      "broad_participation": true,
+      "edge_status_changed": false,
+      "edge_status_with_breadth": "MODERATE_EDGE",
+      "edge_status_without_breadth": "MODERATE_EDGE",
+      "failed_bounce_risk_delta": 0.0194,
+      "failed_bounce_risk_with_breadth": 0.2163,
+      "failed_bounce_risk_without_breadth": 0.1969,
+      "internal_resonance_score": 83.12,
+      "internal_resonance_state": "aligned",
+      "model_confidence_delta": 11,
+      "model_confidence_with_breadth": 87,
+      "model_confidence_without_breadth": 76,
+      "primary_scenario_changed": false,
+      "primary_scenario_with_breadth": "bounce_path",
+      "primary_scenario_without_breadth": "bounce_path",
+      "risk_expansion_delta": 0.0193,
+      "risk_expansion_with_breadth": 0.301,
+      "risk_expansion_without_breadth": 0.2817,
+      "secondary_scenario_changed": false,
+      "secondary_scenario_with_breadth": "analog_average_path",
+      "secondary_scenario_without_breadth": "analog_average_path",
+      "signal_confirmation_delta": 4,
+      "signal_confirmation_with_breadth": 100,
+      "signal_confirmation_without_breadth": 96,
+      "symbol": "SPY"
+    }
+  },
+  "version": "breadth_impact_audit_v1"
+}
