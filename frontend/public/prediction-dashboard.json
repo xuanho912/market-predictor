@@ -2619,8 +2619,8 @@
       },
       "credit": {
         "available_items": 2,
-        "detail": "FRED HY/IG OAS plus HYG/LQD proxy",
-        "expected_items": 4,
+        "detail": "FRED HY/IG/BAA/stress plus HYG/LQD proxy",
+        "expected_items": 6,
         "fallback_used": false,
         "proxy_used": true,
         "real_data": false,
@@ -2691,8 +2691,8 @@
       },
       "rates": {
         "available_items": 1,
-        "detail": "FRED 10Y/2Y/3M/TIPS plus ^TNX",
-        "expected_items": 5,
+        "detail": "FRED 10Y/2Y/3M/TIPS/recession plus ^TNX",
+        "expected_items": 6,
         "fallback_used": false,
         "proxy_used": false,
         "real_data": false,
@@ -2708,7 +2708,7 @@
         "status": "available"
       }
     },
-    "generated_at": "2026-06-14T07:14:05.880654+00:00",
+    "generated_at": "2026-06-14T08:10:03.998359+00:00",
     "notes": [
       "Breadth and flow are ETF/sector proxies, not constituent-level feeds.",
       "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -2716,6 +2716,19 @@
       "V4 target is 85/100. If not reached, the blocking items are listed in missing_key_sources and unavailable_categories."
     ],
     "sources": {
+      "BAA_SPREAD": {
+        "fallback_used": false,
+        "latest_date": null,
+        "missing_data": true,
+        "point_in_time_safe": false,
+        "real_data": false,
+        "rows": 0,
+        "series_id": "BAA10Y",
+        "source": "fred",
+        "stale_data": false,
+        "status": "missing",
+        "symbol": "BAA_SPREAD"
+      },
       "DFII10": {
         "fallback_used": false,
         "latest_date": null,
@@ -2724,7 +2737,7 @@
         "real_data": false,
         "rows": 0,
         "series_id": "DFII10",
-        "source": "missing",
+        "source": "fred",
         "stale_data": false,
         "status": "missing",
         "symbol": "DFII10"
@@ -2737,7 +2750,7 @@
         "real_data": false,
         "rows": 0,
         "series_id": "DGS10",
-        "source": "missing",
+        "source": "fred",
         "stale_data": false,
         "status": "missing",
         "symbol": "DGS10"
@@ -2750,7 +2763,7 @@
         "real_data": false,
         "rows": 0,
         "series_id": "DGS2",
-        "source": "missing",
+        "source": "fred",
         "stale_data": false,
         "status": "missing",
         "symbol": "DGS2"
@@ -2763,7 +2776,7 @@
         "real_data": false,
         "rows": 0,
         "series_id": "DGS3MO",
-        "source": "missing",
+        "source": "fred",
         "stale_data": false,
         "status": "missing",
         "symbol": "DGS3MO"
@@ -2779,6 +2792,19 @@
         "stale_data": false,
         "status": "available",
         "symbol": "DIA"
+      },
+      "FINANCIAL_STRESS": {
+        "fallback_used": false,
+        "latest_date": null,
+        "missing_data": true,
+        "point_in_time_safe": false,
+        "real_data": false,
+        "rows": 0,
+        "series_id": "STLFSI4",
+        "source": "fred",
+        "stale_data": false,
+        "status": "missing",
+        "symbol": "FINANCIAL_STRESS"
       },
       "FINNHUB_API": {
         "fallback_used": false,
@@ -2813,7 +2839,7 @@
         "real_data": false,
         "rows": 0,
         "series_id": "BAMLH0A0HYM2",
-        "source": "missing",
+        "source": "fred",
         "stale_data": false,
         "status": "missing",
         "symbol": "HY_OAS"
@@ -2826,7 +2852,7 @@
         "real_data": false,
         "rows": 0,
         "series_id": "BAMLC0A0CM",
-        "source": "missing",
+        "source": "fred",
         "stale_data": false,
         "status": "missing",
         "symbol": "IG_OAS"
@@ -2866,6 +2892,19 @@
         "stale_data": false,
         "status": "available",
         "symbol": "QQQ"
+      },
+      "RECESSION": {
+        "fallback_used": false,
+        "latest_date": null,
+        "missing_data": true,
+        "point_in_time_safe": false,
+        "real_data": false,
+        "rows": 0,
+        "series_id": "USREC",
+        "source": "fred",
+        "stale_data": false,
+        "status": "missing",
+        "symbol": "RECESSION"
       },
       "RSP": {
         "fallback_used": false,
@@ -3405,6 +3444,7 @@
     },
     "summary": {
       "breadth_provider_status": "proxy",
+      "breadth_proxy_only": true,
       "breadth_required": true,
       "data_completeness_score": 80,
       "data_source_status": "real_core_with_proxies",
@@ -3414,17 +3454,37 @@
       "finnhub_rate_limited": false,
       "flow_provider_status": "proxy",
       "flow_required": true,
+      "fred_available": false,
+      "fred_failed_series": [
+        "BAA_SPREAD",
+        "DGS3MO",
+        "DGS10",
+        "HY_OAS",
+        "DGS2",
+        "IG_OAS",
+        "RECESSION",
+        "FINANCIAL_STRESS",
+        "DFII10"
+      ],
+      "fred_fallback_used": true,
+      "fred_missing": true,
       "fred_provider_status": "missing",
+      "fred_rate_limited": false,
       "fred_required": true,
+      "fred_successful_series": [],
+      "gamma_exposure_available": false,
       "latest_date": "2026-06-12",
       "missing_data": true,
       "missing_key_sources": [
+        "BAA_SPREAD",
         "DFII10",
         "DGS10",
         "DGS2",
         "DGS3MO",
+        "FINANCIAL_STRESS",
         "HY_OAS",
         "IG_OAS",
+        "RECESSION",
         "FINNHUB_API",
         "finnhub_quote_SPY",
         "finnhub_candle_SPY",
@@ -3447,11 +3507,14 @@
       ],
       "options_provider_status": "partial",
       "options_required": true,
+      "options_structure_status": "partial",
+      "put_call_available": false,
       "quality_note": "V4 score rewards real FRED/Finnhub/market data, gives partial credit to explicitly labeled proxies, and keeps missing options/flow/breadth details visible.",
       "real_market_data": true,
       "stale_data": false,
       "synthetic_used": false,
       "target_completeness_score": 85,
+      "true_breadth_available": false,
       "unavailable_categories": [
         "news"
       ],
@@ -3461,7 +3524,7 @@
     "version": "market_intelligence_engine_v4_data_quality"
   },
   "feature_snapshot_v2": {
-    "generated_at": "2026-06-14T07:13:04.948903+00:00",
+    "generated_at": "2026-06-14T08:10:03.985015+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -3699,7 +3762,7 @@
     "version": "market_intelligence_engine_v2_features"
   },
   "feature_snapshot_v3": {
-    "generated_at": "2026-06-14T07:14:05.876655+00:00",
+    "generated_at": "2026-06-14T08:10:03.991980+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -3714,8 +3777,12 @@
           "sector_participation": 0.7272727272727273
         },
         "credit": {
+          "baa_spread_20d_change": 0.0,
+          "baa_spread_proxy": null,
           "credit_deterioration_score": 0.03315945500962836,
           "credit_stabilization_score": 0.9668405449903716,
+          "financial_stress_20d_change": 0.0,
+          "financial_stress_proxy": null,
           "hy_oas": null,
           "hy_oas_20d_change": 0.0,
           "hyg_drawdown_60d": -0.008803460273275165,
@@ -3788,10 +3855,13 @@
         "rates_liquidity": {
           "liquidity_stress_proxy": 0.04779144296582327,
           "rates_pressure_score": 0.18106443792778512,
+          "real_yield_20d_change": 0.0,
           "real_yield_proxy": null,
+          "recession_proxy": null,
           "ten_year_minus_three_month": null,
           "ten_year_minus_two_year": null,
           "ten_year_yield": null,
+          "ten_year_yield_20d_change": 0.0,
           "three_month_yield": null,
           "tlt_return_20d": 0.01000940287857821,
           "tnx_proxy": null,
@@ -3828,8 +3898,12 @@
           "sector_participation": 0.7272727272727273
         },
         "credit": {
+          "baa_spread_20d_change": 0.0,
+          "baa_spread_proxy": null,
           "credit_deterioration_score": 0.03315945500962836,
           "credit_stabilization_score": 0.9668405449903716,
+          "financial_stress_20d_change": 0.0,
+          "financial_stress_proxy": null,
           "hy_oas": null,
           "hy_oas_20d_change": 0.0,
           "hyg_drawdown_60d": -0.008803460273275165,
@@ -3902,10 +3976,13 @@
         "rates_liquidity": {
           "liquidity_stress_proxy": 0.04779144296582327,
           "rates_pressure_score": 0.18106443792778512,
+          "real_yield_20d_change": 0.0,
           "real_yield_proxy": null,
+          "recession_proxy": null,
           "ten_year_minus_three_month": null,
           "ten_year_minus_two_year": null,
           "ten_year_yield": null,
+          "ten_year_yield_20d_change": 0.0,
           "three_month_yield": null,
           "tlt_return_20d": 0.01000940287857821,
           "tnx_proxy": null,
@@ -3942,8 +4019,12 @@
           "sector_participation": 0.7272727272727273
         },
         "credit": {
+          "baa_spread_20d_change": 0.0,
+          "baa_spread_proxy": null,
           "credit_deterioration_score": 0.03315945500962836,
           "credit_stabilization_score": 0.9668405449903716,
+          "financial_stress_20d_change": 0.0,
+          "financial_stress_proxy": null,
           "hy_oas": null,
           "hy_oas_20d_change": 0.0,
           "hyg_drawdown_60d": -0.008803460273275165,
@@ -4016,10 +4097,13 @@
         "rates_liquidity": {
           "liquidity_stress_proxy": 0.04779144296582327,
           "rates_pressure_score": 0.18106443792778512,
+          "real_yield_20d_change": 0.0,
           "real_yield_proxy": null,
+          "recession_proxy": null,
           "ten_year_minus_three_month": null,
           "ten_year_minus_two_year": null,
           "ten_year_yield": null,
+          "ten_year_yield_20d_change": 0.0,
           "three_month_yield": null,
           "tlt_return_20d": 0.01000940287857821,
           "tnx_proxy": null,
@@ -4056,8 +4140,12 @@
           "sector_participation": 0.7272727272727273
         },
         "credit": {
+          "baa_spread_20d_change": 0.0,
+          "baa_spread_proxy": null,
           "credit_deterioration_score": 0.03315945500962836,
           "credit_stabilization_score": 0.9668405449903716,
+          "financial_stress_20d_change": 0.0,
+          "financial_stress_proxy": null,
           "hy_oas": null,
           "hy_oas_20d_change": 0.0,
           "hyg_drawdown_60d": -0.008803460273275165,
@@ -4130,10 +4218,13 @@
         "rates_liquidity": {
           "liquidity_stress_proxy": 0.04779144296582327,
           "rates_pressure_score": 0.18106443792778512,
+          "real_yield_20d_change": 0.0,
           "real_yield_proxy": null,
+          "recession_proxy": null,
           "ten_year_minus_three_month": null,
           "ten_year_minus_two_year": null,
           "ten_year_yield": null,
+          "ten_year_yield_20d_change": 0.0,
           "three_month_yield": null,
           "tlt_return_20d": 0.01000940287857821,
           "tnx_proxy": null,
@@ -4226,6 +4317,7 @@
             "hit_rate": 0.4875,
             "max_adverse_excursion": -0.059374,
             "max_favorable_excursion": 0.065859,
+            "mean_absolute_return": 0.017979,
             "median_return": -0.0004,
             "sample_size": 80
           },
@@ -4234,6 +4326,7 @@
             "hit_rate": 0.5875,
             "max_adverse_excursion": -0.142028,
             "max_favorable_excursion": 0.081382,
+            "mean_absolute_return": 0.02924,
             "median_return": 0.009112,
             "sample_size": 80
           },
@@ -4242,6 +4335,7 @@
             "hit_rate": 0.525,
             "max_adverse_excursion": -0.043682,
             "max_favorable_excursion": 0.049473,
+            "mean_absolute_return": 0.013373,
             "median_return": 0.001558,
             "sample_size": 80
           },
@@ -4250,6 +4344,7 @@
             "hit_rate": 0.5875,
             "max_adverse_excursion": -0.040544,
             "max_favorable_excursion": 0.042123,
+            "mean_absolute_return": 0.01561,
             "median_return": 0.003005,
             "sample_size": 80
           },
@@ -4258,6 +4353,7 @@
             "hit_rate": 0.475,
             "max_adverse_excursion": -0.178752,
             "max_favorable_excursion": 0.121826,
+            "mean_absolute_return": 0.053208,
             "median_return": -0.003049,
             "sample_size": 80
           }
@@ -4353,6 +4449,7 @@
             "hit_rate": 0.5789,
             "max_adverse_excursion": -0.059374,
             "max_favorable_excursion": 0.065859,
+            "mean_absolute_return": 0.021342,
             "median_return": 0.005417,
             "sample_size": 38
           },
@@ -4361,6 +4458,7 @@
             "hit_rate": 0.4474,
             "max_adverse_excursion": -0.142028,
             "max_favorable_excursion": 0.081382,
+            "mean_absolute_return": 0.027406,
             "median_return": -0.002539,
             "sample_size": 38
           },
@@ -4369,6 +4467,7 @@
             "hit_rate": 0.6842,
             "max_adverse_excursion": -0.016763,
             "max_favorable_excursion": 0.049473,
+            "mean_absolute_return": 0.012447,
             "median_return": 0.006895,
             "sample_size": 38
           },
@@ -4377,6 +4476,7 @@
             "hit_rate": 0.6579,
             "max_adverse_excursion": -0.040484,
             "max_favorable_excursion": 0.036593,
+            "mean_absolute_return": 0.0173,
             "median_return": 0.008121,
             "sample_size": 38
           },
@@ -4385,6 +4485,7 @@
             "hit_rate": 0.4211,
             "max_adverse_excursion": -0.178752,
             "max_favorable_excursion": 0.114016,
+            "mean_absolute_return": 0.046393,
             "median_return": -0.005997,
             "sample_size": 38
           }
@@ -4398,6 +4499,7 @@
             "hit_rate": 1.0,
             "max_adverse_excursion": 0.02569,
             "max_favorable_excursion": 0.02569,
+            "mean_absolute_return": 0.02569,
             "median_return": 0.02569,
             "sample_size": 1
           },
@@ -4406,6 +4508,7 @@
             "hit_rate": 1.0,
             "max_adverse_excursion": 0.009812,
             "max_favorable_excursion": 0.009812,
+            "mean_absolute_return": 0.009812,
             "median_return": 0.009812,
             "sample_size": 1
           },
@@ -4414,6 +4517,7 @@
             "hit_rate": 1.0,
             "max_adverse_excursion": 0.025242,
             "max_favorable_excursion": 0.025242,
+            "mean_absolute_return": 0.025242,
             "median_return": 0.025242,
             "sample_size": 1
           },
@@ -4422,6 +4526,7 @@
             "hit_rate": 1.0,
             "max_adverse_excursion": 0.021374,
             "max_favorable_excursion": 0.021374,
+            "mean_absolute_return": 0.021374,
             "median_return": 0.021374,
             "sample_size": 1
           },
@@ -4430,6 +4535,7 @@
             "hit_rate": 1.0,
             "max_adverse_excursion": 0.064286,
             "max_favorable_excursion": 0.064286,
+            "mean_absolute_return": 0.064286,
             "median_return": 0.064286,
             "sample_size": 1
           }
@@ -4443,6 +4549,7 @@
             "hit_rate": 0.3902,
             "max_adverse_excursion": -0.030486,
             "max_favorable_excursion": 0.040224,
+            "mean_absolute_return": 0.014674,
             "median_return": -0.004918,
             "sample_size": 41
           },
@@ -4451,6 +4558,7 @@
             "hit_rate": 0.7073,
             "max_adverse_excursion": -0.095492,
             "max_favorable_excursion": 0.065795,
+            "mean_absolute_return": 0.031414,
             "median_return": 0.020068,
             "sample_size": 41
           },
@@ -4459,6 +4567,7 @@
             "hit_rate": 0.3659,
             "max_adverse_excursion": -0.043682,
             "max_favorable_excursion": 0.038451,
+            "mean_absolute_return": 0.013941,
             "median_return": -0.006734,
             "sample_size": 41
           },
@@ -4467,6 +4576,7 @@
             "hit_rate": 0.5122,
             "max_adverse_excursion": -0.040544,
             "max_favorable_excursion": 0.042123,
+            "mean_absolute_return": 0.013903,
             "median_return": 0.000208,
             "sample_size": 41
           },
@@ -4475,6 +4585,7 @@
             "hit_rate": 0.5122,
             "max_adverse_excursion": -0.099158,
             "max_favorable_excursion": 0.121826,
+            "mean_absolute_return": 0.059253,
             "median_return": 0.012092,
             "sample_size": 41
           }
@@ -4490,6 +4601,7 @@
             "hit_rate": 0.4,
             "max_adverse_excursion": -0.029518,
             "max_favorable_excursion": 0.040224,
+            "mean_absolute_return": 0.016272,
             "median_return": -0.004918,
             "sample_size": 20
           },
@@ -4498,6 +4610,7 @@
             "hit_rate": 0.6,
             "max_adverse_excursion": -0.095492,
             "max_favorable_excursion": 0.065795,
+            "mean_absolute_return": 0.030192,
             "median_return": 0.012291,
             "sample_size": 20
           },
@@ -4506,6 +4619,7 @@
             "hit_rate": 0.4,
             "max_adverse_excursion": -0.029603,
             "max_favorable_excursion": 0.038451,
+            "mean_absolute_return": 0.011888,
             "median_return": -0.002654,
             "sample_size": 20
           },
@@ -4514,6 +4628,7 @@
             "hit_rate": 0.7,
             "max_adverse_excursion": -0.024669,
             "max_favorable_excursion": 0.042123,
+            "mean_absolute_return": 0.012777,
             "median_return": 0.003714,
             "sample_size": 20
           },
@@ -4522,6 +4637,7 @@
             "hit_rate": 0.25,
             "max_adverse_excursion": -0.088185,
             "max_favorable_excursion": 0.096921,
+            "mean_absolute_return": 0.048438,
             "median_return": -0.03023,
             "sample_size": 20
           }
@@ -4535,6 +4651,7 @@
             "hit_rate": 0.55,
             "max_adverse_excursion": -0.038908,
             "max_favorable_excursion": 0.065859,
+            "mean_absolute_return": 0.021229,
             "median_return": 0.00273,
             "sample_size": 20
           },
@@ -4543,6 +4660,7 @@
             "hit_rate": 0.4,
             "max_adverse_excursion": -0.070246,
             "max_favorable_excursion": 0.081382,
+            "mean_absolute_return": 0.024524,
             "median_return": -0.004162,
             "sample_size": 20
           },
@@ -4551,6 +4669,7 @@
             "hit_rate": 0.6,
             "max_adverse_excursion": -0.012641,
             "max_favorable_excursion": 0.049473,
+            "mean_absolute_return": 0.013121,
             "median_return": 0.003538,
             "sample_size": 20
           },
@@ -4559,6 +4678,7 @@
             "hit_rate": 0.55,
             "max_adverse_excursion": -0.040484,
             "max_favorable_excursion": 0.036593,
+            "mean_absolute_return": 0.017107,
             "median_return": 0.005327,
             "sample_size": 20
           },
@@ -4567,6 +4687,7 @@
             "hit_rate": 0.6,
             "max_adverse_excursion": -0.085721,
             "max_favorable_excursion": 0.114016,
+            "mean_absolute_return": 0.054457,
             "median_return": 0.046677,
             "sample_size": 20
           }
@@ -4580,6 +4701,7 @@
             "hit_rate": 0.6,
             "max_adverse_excursion": -0.059374,
             "max_favorable_excursion": 0.042758,
+            "mean_absolute_return": 0.021162,
             "median_return": 0.006378,
             "sample_size": 20
           },
@@ -4588,6 +4710,7 @@
             "hit_rate": 0.55,
             "max_adverse_excursion": -0.142028,
             "max_favorable_excursion": 0.0554,
+            "mean_absolute_return": 0.030808,
             "median_return": 0.002988,
             "sample_size": 20
           },
@@ -4596,6 +4719,7 @@
             "hit_rate": 0.75,
             "max_adverse_excursion": -0.043682,
             "max_favorable_excursion": 0.036588,
+            "mean_absolute_return": 0.013975,
             "median_return": 0.008941,
             "sample_size": 20
           },
@@ -4604,6 +4728,7 @@
             "hit_rate": 0.75,
             "max_adverse_excursion": -0.036122,
             "max_favorable_excursion": 0.034374,
+            "mean_absolute_return": 0.018011,
             "median_return": 0.01152,
             "sample_size": 20
           },
@@ -4612,6 +4737,7 @@
             "hit_rate": 0.3,
             "max_adverse_excursion": -0.178752,
             "max_favorable_excursion": 0.079732,
+            "mean_absolute_return": 0.040891,
             "median_return": -0.009954,
             "sample_size": 20
           }
@@ -4625,6 +4751,7 @@
             "hit_rate": 0.4,
             "max_adverse_excursion": -0.030486,
             "max_favorable_excursion": 0.03085,
+            "mean_absolute_return": 0.013253,
             "median_return": -0.001222,
             "sample_size": 20
           },
@@ -4633,6 +4760,7 @@
             "hit_rate": 0.8,
             "max_adverse_excursion": -0.047316,
             "max_favorable_excursion": 0.058396,
+            "mean_absolute_return": 0.031437,
             "median_return": 0.029166,
             "sample_size": 20
           },
@@ -4641,6 +4769,7 @@
             "hit_rate": 0.35,
             "max_adverse_excursion": -0.033125,
             "max_favorable_excursion": 0.023707,
+            "mean_absolute_return": 0.014506,
             "median_return": -0.009383,
             "sample_size": 20
           },
@@ -4649,6 +4778,7 @@
             "hit_rate": 0.35,
             "max_adverse_excursion": -0.040544,
             "max_favorable_excursion": 0.023986,
+            "mean_absolute_return": 0.014545,
             "median_return": -0.006798,
             "sample_size": 20
           },
@@ -4657,6 +4787,7 @@
             "hit_rate": 0.75,
             "max_adverse_excursion": -0.099158,
             "max_favorable_excursion": 0.121826,
+            "mean_absolute_return": 0.069044,
             "median_return": 0.065295,
             "sample_size": 20
           }
@@ -4664,7 +4795,108 @@
         "sample_size": 20
       }
     },
-    "conclusion": "not_enough_strong_edge_samples",
+    "close_call_samples": {
+      "close_call_metrics": {
+        "by_horizon": {
+          "10d": {
+            "sample_size": 0
+          },
+          "20d": {
+            "sample_size": 0
+          },
+          "3d": {
+            "sample_size": 0
+          },
+          "5d": {
+            "sample_size": 0
+          },
+          "60d": {
+            "sample_size": 0
+          }
+        },
+        "sample_size": 0
+      },
+      "close_call_sample_size": 0,
+      "non_close_call_metrics": {
+        "by_horizon": {
+          "10d": {
+            "avg_return": 0.001104,
+            "hit_rate": 0.4875,
+            "max_adverse_excursion": -0.059374,
+            "max_favorable_excursion": 0.065859,
+            "mean_absolute_return": 0.017979,
+            "median_return": -0.0004,
+            "sample_size": 80
+          },
+          "20d": {
+            "avg_return": 0.002376,
+            "hit_rate": 0.5875,
+            "max_adverse_excursion": -0.142028,
+            "max_favorable_excursion": 0.081382,
+            "mean_absolute_return": 0.02924,
+            "median_return": 0.009112,
+            "sample_size": 80
+          },
+          "3d": {
+            "avg_return": 0.001175,
+            "hit_rate": 0.525,
+            "max_adverse_excursion": -0.043682,
+            "max_favorable_excursion": 0.049473,
+            "mean_absolute_return": 0.013373,
+            "median_return": 0.001558,
+            "sample_size": 80
+          },
+          "5d": {
+            "avg_return": 0.000734,
+            "hit_rate": 0.5875,
+            "max_adverse_excursion": -0.040544,
+            "max_favorable_excursion": 0.042123,
+            "mean_absolute_return": 0.01561,
+            "median_return": 0.003005,
+            "sample_size": 80
+          },
+          "60d": {
+            "avg_return": 0.00681,
+            "hit_rate": 0.475,
+            "max_adverse_excursion": -0.178752,
+            "max_favorable_excursion": 0.121826,
+            "mean_absolute_return": 0.053208,
+            "median_return": -0.003049,
+            "sample_size": 80
+          }
+        },
+        "sample_size": 80
+      },
+      "non_close_call_sample_size": 80,
+      "note": "close_call rows are tracked separately because path probabilities differ by less than eight percentage points."
+    },
+    "completed_sample_counter": {
+      "by_horizon": {
+        "10d": {
+          "completed_count": 0,
+          "evidence_gate": "insufficient"
+        },
+        "20d": {
+          "completed_count": 0,
+          "evidence_gate": "insufficient"
+        },
+        "3d": {
+          "completed_count": 0,
+          "evidence_gate": "insufficient"
+        },
+        "5d": {
+          "completed_count": 0,
+          "evidence_gate": "insufficient"
+        },
+        "60d": {
+          "completed_count": 0,
+          "evidence_gate": "insufficient"
+        }
+      },
+      "completed_rows": 0,
+      "max_completed_count": 0
+    },
+    "conclusion": "forward_validation_insufficient_keep_confidence_capped",
     "confidence_top_10": {
       "by_horizon": {
         "10d": {
@@ -4672,6 +4904,7 @@
           "hit_rate": 0.375,
           "max_adverse_excursion": -0.023505,
           "max_favorable_excursion": 0.03085,
+          "mean_absolute_return": 0.016678,
           "median_return": -0.007011,
           "sample_size": 8
         },
@@ -4680,6 +4913,7 @@
           "hit_rate": 0.625,
           "max_adverse_excursion": -0.047316,
           "max_favorable_excursion": 0.031196,
+          "mean_absolute_return": 0.026589,
           "median_return": 0.020068,
           "sample_size": 8
         },
@@ -4688,6 +4922,7 @@
           "hit_rate": 0.375,
           "max_adverse_excursion": -0.030499,
           "max_favorable_excursion": 0.01018,
+          "mean_absolute_return": 0.013329,
           "median_return": -0.009383,
           "sample_size": 8
         },
@@ -4696,6 +4931,7 @@
           "hit_rate": 0.375,
           "max_adverse_excursion": -0.031628,
           "max_favorable_excursion": 0.023986,
+          "mean_absolute_return": 0.014041,
           "median_return": -0.004438,
           "sample_size": 8
         },
@@ -4704,17 +4940,216 @@
           "hit_rate": 0.5,
           "max_adverse_excursion": -0.099158,
           "max_favorable_excursion": 0.092646,
+          "mean_absolute_return": 0.05141,
           "median_return": 0.012092,
           "sample_size": 8
         }
       },
       "sample_size": 8
     },
+    "confidence_validation": {
+      "confidence_top_10": {
+        "by_horizon": {
+          "10d": {
+            "avg_return": -0.001836,
+            "hit_rate": 0.375,
+            "max_adverse_excursion": -0.023505,
+            "max_favorable_excursion": 0.03085,
+            "mean_absolute_return": 0.016678,
+            "median_return": -0.007011,
+            "sample_size": 8
+          },
+          "20d": {
+            "avg_return": 0.003391,
+            "hit_rate": 0.625,
+            "max_adverse_excursion": -0.047316,
+            "max_favorable_excursion": 0.031196,
+            "mean_absolute_return": 0.026589,
+            "median_return": 0.020068,
+            "sample_size": 8
+          },
+          "3d": {
+            "avg_return": -0.008716,
+            "hit_rate": 0.375,
+            "max_adverse_excursion": -0.030499,
+            "max_favorable_excursion": 0.01018,
+            "mean_absolute_return": 0.013329,
+            "median_return": -0.009383,
+            "sample_size": 8
+          },
+          "5d": {
+            "avg_return": -0.00719,
+            "hit_rate": 0.375,
+            "max_adverse_excursion": -0.031628,
+            "max_favorable_excursion": 0.023986,
+            "mean_absolute_return": 0.014041,
+            "median_return": -0.004438,
+            "sample_size": 8
+          },
+          "60d": {
+            "avg_return": -0.006235,
+            "hit_rate": 0.5,
+            "max_adverse_excursion": -0.099158,
+            "max_favorable_excursion": 0.092646,
+            "mean_absolute_return": 0.05141,
+            "median_return": 0.012092,
+            "sample_size": 8
+          }
+        },
+        "sample_size": 8
+      },
+      "moderate_edge": {
+        "by_horizon": {
+          "10d": {
+            "avg_return": 0.001104,
+            "hit_rate": 0.4875,
+            "max_adverse_excursion": -0.059374,
+            "max_favorable_excursion": 0.065859,
+            "mean_absolute_return": 0.017979,
+            "median_return": -0.0004,
+            "sample_size": 80
+          },
+          "20d": {
+            "avg_return": 0.002376,
+            "hit_rate": 0.5875,
+            "max_adverse_excursion": -0.142028,
+            "max_favorable_excursion": 0.081382,
+            "mean_absolute_return": 0.02924,
+            "median_return": 0.009112,
+            "sample_size": 80
+          },
+          "3d": {
+            "avg_return": 0.001175,
+            "hit_rate": 0.525,
+            "max_adverse_excursion": -0.043682,
+            "max_favorable_excursion": 0.049473,
+            "mean_absolute_return": 0.013373,
+            "median_return": 0.001558,
+            "sample_size": 80
+          },
+          "5d": {
+            "avg_return": 0.000734,
+            "hit_rate": 0.5875,
+            "max_adverse_excursion": -0.040544,
+            "max_favorable_excursion": 0.042123,
+            "mean_absolute_return": 0.01561,
+            "median_return": 0.003005,
+            "sample_size": 80
+          },
+          "60d": {
+            "avg_return": 0.00681,
+            "hit_rate": 0.475,
+            "max_adverse_excursion": -0.178752,
+            "max_favorable_excursion": 0.121826,
+            "mean_absolute_return": 0.053208,
+            "median_return": -0.003049,
+            "sample_size": 80
+          }
+        },
+        "sample_size": 80
+      },
+      "ordinary_confidence": {
+        "by_horizon": {
+          "10d": {
+            "avg_return": 0.001431,
+            "hit_rate": 0.5,
+            "max_adverse_excursion": -0.059374,
+            "max_favorable_excursion": 0.065859,
+            "mean_absolute_return": 0.018124,
+            "median_return": 0.000242,
+            "sample_size": 72
+          },
+          "20d": {
+            "avg_return": 0.002263,
+            "hit_rate": 0.5833,
+            "max_adverse_excursion": -0.142028,
+            "max_favorable_excursion": 0.081382,
+            "mean_absolute_return": 0.029535,
+            "median_return": 0.004543,
+            "sample_size": 72
+          },
+          "3d": {
+            "avg_return": 0.002274,
+            "hit_rate": 0.5417,
+            "max_adverse_excursion": -0.043682,
+            "max_favorable_excursion": 0.049473,
+            "mean_absolute_return": 0.013377,
+            "median_return": 0.00234,
+            "sample_size": 72
+          },
+          "5d": {
+            "avg_return": 0.001615,
+            "hit_rate": 0.6111,
+            "max_adverse_excursion": -0.040544,
+            "max_favorable_excursion": 0.042123,
+            "mean_absolute_return": 0.015784,
+            "median_return": 0.003829,
+            "sample_size": 72
+          },
+          "60d": {
+            "avg_return": 0.008259,
+            "hit_rate": 0.4722,
+            "max_adverse_excursion": -0.178752,
+            "max_favorable_excursion": 0.121826,
+            "mean_absolute_return": 0.053407,
+            "median_return": -0.003049,
+            "sample_size": 72
+          }
+        },
+        "sample_size": 72
+      },
+      "status": "forward_validation_required",
+      "strong_edge": {
+        "by_horizon": {
+          "10d": {
+            "sample_size": 0
+          },
+          "20d": {
+            "sample_size": 0
+          },
+          "3d": {
+            "sample_size": 0
+          },
+          "5d": {
+            "sample_size": 0
+          },
+          "60d": {
+            "sample_size": 0
+          }
+        },
+        "sample_size": 0
+      },
+      "validation_question": "Does high confidence beat ordinary confidence in hit rate, average return, and lower mean absolute error?"
+    },
     "forward_completed_sample_size": 0,
-    "generated_at": "2026-06-14T07:14:05.880654+00:00",
+    "forward_validation_notice": "当前高置信度还没有被前向样本验证，不应当视为稳定预测能力。",
+    "generated_at": "2026-06-14T08:10:03.999633+00:00",
+    "minimum_sample_gate": {
+      "10d": {
+        "completed_count": 0,
+        "evidence_gate": "insufficient"
+      },
+      "20d": {
+        "completed_count": 0,
+        "evidence_gate": "insufficient"
+      },
+      "3d": {
+        "completed_count": 0,
+        "evidence_gate": "insufficient"
+      },
+      "5d": {
+        "completed_count": 0,
+        "evidence_gate": "insufficient"
+      },
+      "60d": {
+        "completed_count": 0,
+        "evidence_gate": "insufficient"
+      }
+    },
     "notes": [
       "This report is not proof of alpha; it is a proxy check until forward-only samples mature.",
-      "If strong/high-confirmation buckets do not beat weak/no-edge buckets, model confidence must remain capped."
+      "If strong/high-confirmation buckets do not beat weak/no-edge buckets, model confidence must remain capped.",
+      "Forward completed samples are required before STRONG_EDGE or high-confidence buckets can be treated as validated."
     ],
     "primary_scenario_hit_rate": {
       "10d": {
@@ -4739,30 +5174,50 @@
       }
     },
     "primary_vs_secondary": {
-      "note": "Primary vs secondary path closeness needs forward realized paths; current report uses historical analog direction as a proxy.",
-      "primary_scenario_hit_rate": {
+      "by_horizon": {
         "10d": {
-          "hit_rate": 0.4875,
-          "sample_size": 80
+          "both_hit": 19,
+          "both_miss": 21,
+          "primary_hit_rate": 0.4875,
+          "primary_minus_secondary": 0.0,
+          "sample_size": 80,
+          "secondary_hit_rate": 0.4875
         },
         "20d": {
-          "hit_rate": 0.5875,
-          "sample_size": 80
+          "both_hit": 24,
+          "both_miss": 16,
+          "primary_hit_rate": 0.5875,
+          "primary_minus_secondary": 0.075,
+          "sample_size": 80,
+          "secondary_hit_rate": 0.5125
         },
         "3d": {
-          "hit_rate": 0.525,
-          "sample_size": 80
+          "both_hit": 19,
+          "both_miss": 21,
+          "primary_hit_rate": 0.525,
+          "primary_minus_secondary": 0.075,
+          "sample_size": 80,
+          "secondary_hit_rate": 0.45
         },
         "5d": {
-          "hit_rate": 0.5875,
-          "sample_size": 80
+          "both_hit": 18,
+          "both_miss": 22,
+          "primary_hit_rate": 0.5875,
+          "primary_minus_secondary": 0.225,
+          "sample_size": 80,
+          "secondary_hit_rate": 0.3625
         },
         "60d": {
-          "hit_rate": 0.475,
-          "sample_size": 80
+          "both_hit": 27,
+          "both_miss": 13,
+          "primary_hit_rate": 0.475,
+          "primary_minus_secondary": -0.225,
+          "sample_size": 80,
+          "secondary_hit_rate": 0.7
         }
       },
-      "status": "proxy_only"
+      "note": "Forward samples are still below the minimum gate; primary-vs-secondary remains a historical analog proxy.",
+      "status": "forward_pending"
     },
     "sample_size": 80,
     "signal_confirmation_top_10": {
@@ -4772,6 +5227,7 @@
           "hit_rate": 0.625,
           "max_adverse_excursion": -0.024633,
           "max_favorable_excursion": 0.042458,
+          "mean_absolute_return": 0.019592,
           "median_return": 0.00903,
           "sample_size": 8
         },
@@ -4780,6 +5236,7 @@
           "hit_rate": 0.375,
           "max_adverse_excursion": -0.070246,
           "max_favorable_excursion": 0.01666,
+          "mean_absolute_return": 0.028847,
           "median_return": -0.014517,
           "sample_size": 8
         },
@@ -4788,6 +5245,7 @@
           "hit_rate": 0.5,
           "max_adverse_excursion": -0.012528,
           "max_favorable_excursion": 0.025242,
+          "mean_absolute_return": 0.009556,
           "median_return": 0.003538,
           "sample_size": 8
         },
@@ -4796,6 +5254,7 @@
           "hit_rate": 0.5,
           "max_adverse_excursion": -0.013303,
           "max_favorable_excursion": 0.021374,
+          "mean_absolute_return": 0.009613,
           "median_return": 0.006133,
           "sample_size": 8
         },
@@ -4804,6 +5263,7 @@
           "hit_rate": 0.75,
           "max_adverse_excursion": -0.085721,
           "max_favorable_excursion": 0.096756,
+          "mean_absolute_return": 0.073304,
           "median_return": 0.069306,
           "sample_size": 8
         }
@@ -5426,7 +5886,7 @@
       }
     },
     "conclusion": "confidence_not_yet_validated",
-    "generated_at": "2026-06-14T07:14:05.880654+00:00",
+    "generated_at": "2026-06-14T08:10:03.998067+00:00",
     "high_confidence_better_than_low_confidence": false,
     "high_vs_low_comparison_by_horizon": {
       "10d": false,
@@ -5504,7 +5964,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-06-14T07:13:04.948903+00:00",
+      "generated_at": "2026-06-14T08:10:03.983675+00:00",
       "notes": [
         "price/volatility/credit/rates/liquidity currently use public market proxies.",
         "options breadth macro flow are not treated as available unless real feeds are connected.",
@@ -5640,7 +6100,7 @@
       }
     },
     "feature_snapshot_v2": {
-      "generated_at": "2026-06-14T07:13:04.948903+00:00",
+      "generated_at": "2026-06-14T08:10:03.985015+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -5877,7 +6337,7 @@
       },
       "version": "market_intelligence_engine_v2_features"
     },
-    "generated_at": "2026-06-14T07:13:04.948903+00:00",
+    "generated_at": "2026-06-14T08:10:03.985545+00:00",
     "model_confidence_by_symbol": {
       "DIA": {
         "components": {
@@ -5971,8 +6431,8 @@
         },
         "credit": {
           "available_items": 2,
-          "detail": "FRED HY/IG OAS plus HYG/LQD proxy",
-          "expected_items": 4,
+          "detail": "FRED HY/IG/BAA/stress plus HYG/LQD proxy",
+          "expected_items": 6,
           "fallback_used": false,
           "proxy_used": true,
           "real_data": false,
@@ -6043,8 +6503,8 @@
         },
         "rates": {
           "available_items": 1,
-          "detail": "FRED 10Y/2Y/3M/TIPS plus ^TNX",
-          "expected_items": 5,
+          "detail": "FRED 10Y/2Y/3M/TIPS/recession plus ^TNX",
+          "expected_items": 6,
           "fallback_used": false,
           "proxy_used": false,
           "real_data": false,
@@ -6060,13 +6520,26 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-06-14T07:14:05.877654+00:00",
+      "generated_at": "2026-06-14T08:10:03.994442+00:00",
       "notes": [
         "Breadth and flow are ETF/sector proxies, not constituent-level feeds.",
         "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
         "Put/call ratio, gamma exposure and true fund flow remain missing unless a real feed is added."
       ],
       "sources": {
+        "BAA_SPREAD": {
+          "fallback_used": false,
+          "latest_date": null,
+          "missing_data": true,
+          "point_in_time_safe": false,
+          "real_data": false,
+          "rows": 0,
+          "series_id": "BAA10Y",
+          "source": "fred",
+          "stale_data": false,
+          "status": "missing",
+          "symbol": "BAA_SPREAD"
+        },
         "DFII10": {
           "fallback_used": false,
           "latest_date": null,
@@ -6075,7 +6548,7 @@
           "real_data": false,
           "rows": 0,
           "series_id": "DFII10",
-          "source": "missing",
+          "source": "fred",
           "stale_data": false,
           "status": "missing",
           "symbol": "DFII10"
@@ -6088,7 +6561,7 @@
           "real_data": false,
           "rows": 0,
           "series_id": "DGS10",
-          "source": "missing",
+          "source": "fred",
           "stale_data": false,
           "status": "missing",
           "symbol": "DGS10"
@@ -6101,7 +6574,7 @@
           "real_data": false,
           "rows": 0,
           "series_id": "DGS2",
-          "source": "missing",
+          "source": "fred",
           "stale_data": false,
           "status": "missing",
           "symbol": "DGS2"
@@ -6114,7 +6587,7 @@
           "real_data": false,
           "rows": 0,
           "series_id": "DGS3MO",
-          "source": "missing",
+          "source": "fred",
           "stale_data": false,
           "status": "missing",
           "symbol": "DGS3MO"
@@ -6130,6 +6603,19 @@
           "stale_data": false,
           "status": "available",
           "symbol": "DIA"
+        },
+        "FINANCIAL_STRESS": {
+          "fallback_used": false,
+          "latest_date": null,
+          "missing_data": true,
+          "point_in_time_safe": false,
+          "real_data": false,
+          "rows": 0,
+          "series_id": "STLFSI4",
+          "source": "fred",
+          "stale_data": false,
+          "status": "missing",
+          "symbol": "FINANCIAL_STRESS"
         },
         "FINNHUB_API": {
           "fallback_used": false,
@@ -6164,7 +6650,7 @@
           "real_data": false,
           "rows": 0,
           "series_id": "BAMLH0A0HYM2",
-          "source": "missing",
+          "source": "fred",
           "stale_data": false,
           "status": "missing",
           "symbol": "HY_OAS"
@@ -6177,7 +6663,7 @@
           "real_data": false,
           "rows": 0,
           "series_id": "BAMLC0A0CM",
-          "source": "missing",
+          "source": "fred",
           "stale_data": false,
           "status": "missing",
           "symbol": "IG_OAS"
@@ -6217,6 +6703,19 @@
           "stale_data": false,
           "status": "available",
           "symbol": "QQQ"
+        },
+        "RECESSION": {
+          "fallback_used": false,
+          "latest_date": null,
+          "missing_data": true,
+          "point_in_time_safe": false,
+          "real_data": false,
+          "rows": 0,
+          "series_id": "USREC",
+          "source": "fred",
+          "stale_data": false,
+          "status": "missing",
+          "symbol": "RECESSION"
         },
         "RSP": {
           "fallback_used": false,
@@ -6767,12 +7266,15 @@
         "latest_date": "2026-06-12",
         "missing_data": true,
         "missing_key_sources": [
+          "BAA_SPREAD",
           "DFII10",
           "DGS10",
           "DGS2",
           "DGS3MO",
+          "FINANCIAL_STRESS",
           "HY_OAS",
           "IG_OAS",
+          "RECESSION",
           "FINNHUB_API",
           "finnhub_quote_SPY",
           "finnhub_candle_SPY",
@@ -6865,7 +7367,7 @@
       }
     },
     "feature_snapshot_v3": {
-      "generated_at": "2026-06-14T07:14:05.876655+00:00",
+      "generated_at": "2026-06-14T08:10:03.991980+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -6880,8 +7382,12 @@
             "sector_participation": 0.7272727272727273
           },
           "credit": {
+            "baa_spread_20d_change": 0.0,
+            "baa_spread_proxy": null,
             "credit_deterioration_score": 0.03315945500962836,
             "credit_stabilization_score": 0.9668405449903716,
+            "financial_stress_20d_change": 0.0,
+            "financial_stress_proxy": null,
             "hy_oas": null,
             "hy_oas_20d_change": 0.0,
             "hyg_drawdown_60d": -0.008803460273275165,
@@ -6954,10 +7460,13 @@
           "rates_liquidity": {
             "liquidity_stress_proxy": 0.04779144296582327,
             "rates_pressure_score": 0.18106443792778512,
+            "real_yield_20d_change": 0.0,
             "real_yield_proxy": null,
+            "recession_proxy": null,
             "ten_year_minus_three_month": null,
             "ten_year_minus_two_year": null,
             "ten_year_yield": null,
+            "ten_year_yield_20d_change": 0.0,
             "three_month_yield": null,
             "tlt_return_20d": 0.01000940287857821,
             "tnx_proxy": null,
@@ -6994,8 +7503,12 @@
             "sector_participation": 0.7272727272727273
           },
           "credit": {
+            "baa_spread_20d_change": 0.0,
+            "baa_spread_proxy": null,
             "credit_deterioration_score": 0.03315945500962836,
             "credit_stabilization_score": 0.9668405449903716,
+            "financial_stress_20d_change": 0.0,
+            "financial_stress_proxy": null,
             "hy_oas": null,
             "hy_oas_20d_change": 0.0,
             "hyg_drawdown_60d": -0.008803460273275165,
@@ -7068,10 +7581,13 @@
           "rates_liquidity": {
             "liquidity_stress_proxy": 0.04779144296582327,
             "rates_pressure_score": 0.18106443792778512,
+            "real_yield_20d_change": 0.0,
             "real_yield_proxy": null,
+            "recession_proxy": null,
             "ten_year_minus_three_month": null,
             "ten_year_minus_two_year": null,
             "ten_year_yield": null,
+            "ten_year_yield_20d_change": 0.0,
             "three_month_yield": null,
             "tlt_return_20d": 0.01000940287857821,
             "tnx_proxy": null,
@@ -7108,8 +7624,12 @@
             "sector_participation": 0.7272727272727273
           },
           "credit": {
+            "baa_spread_20d_change": 0.0,
+            "baa_spread_proxy": null,
             "credit_deterioration_score": 0.03315945500962836,
             "credit_stabilization_score": 0.9668405449903716,
+            "financial_stress_20d_change": 0.0,
+            "financial_stress_proxy": null,
             "hy_oas": null,
             "hy_oas_20d_change": 0.0,
             "hyg_drawdown_60d": -0.008803460273275165,
@@ -7182,10 +7702,13 @@
           "rates_liquidity": {
             "liquidity_stress_proxy": 0.04779144296582327,
             "rates_pressure_score": 0.18106443792778512,
+            "real_yield_20d_change": 0.0,
             "real_yield_proxy": null,
+            "recession_proxy": null,
             "ten_year_minus_three_month": null,
             "ten_year_minus_two_year": null,
             "ten_year_yield": null,
+            "ten_year_yield_20d_change": 0.0,
             "three_month_yield": null,
             "tlt_return_20d": 0.01000940287857821,
             "tnx_proxy": null,
@@ -7222,8 +7745,12 @@
             "sector_participation": 0.7272727272727273
           },
           "credit": {
+            "baa_spread_20d_change": 0.0,
+            "baa_spread_proxy": null,
             "credit_deterioration_score": 0.03315945500962836,
             "credit_stabilization_score": 0.9668405449903716,
+            "financial_stress_20d_change": 0.0,
+            "financial_stress_proxy": null,
             "hy_oas": null,
             "hy_oas_20d_change": 0.0,
             "hyg_drawdown_60d": -0.008803460273275165,
@@ -7296,10 +7823,13 @@
           "rates_liquidity": {
             "liquidity_stress_proxy": 0.04779144296582327,
             "rates_pressure_score": 0.18106443792778512,
+            "real_yield_20d_change": 0.0,
             "real_yield_proxy": null,
+            "recession_proxy": null,
             "ten_year_minus_three_month": null,
             "ten_year_minus_two_year": null,
             "ten_year_yield": null,
+            "ten_year_yield_20d_change": 0.0,
             "three_month_yield": null,
             "tlt_return_20d": 0.01000940287857821,
             "tnx_proxy": null,
@@ -7334,7 +7864,26 @@
       "finnhub_rate_limited": false,
       "finnhub_successful_requests": 0
     },
-    "generated_at": "2026-06-14T07:14:05.880654+00:00",
+    "fred_status": {
+      "fred_available": false,
+      "fred_cache_used": false,
+      "fred_failed_series": [
+        "BAA_SPREAD",
+        "DGS3MO",
+        "DGS10",
+        "HY_OAS",
+        "DGS2",
+        "IG_OAS",
+        "RECESSION",
+        "FINANCIAL_STRESS",
+        "DFII10"
+      ],
+      "fred_fallback_used": true,
+      "fred_missing": true,
+      "fred_rate_limited": false,
+      "fred_successful_series": []
+    },
+    "generated_at": "2026-06-14T08:10:03.998081+00:00",
     "high_confidence_signal_report": {
       "by_bucket": {
         "low_confidence_reference": {
@@ -7948,7 +8497,7 @@
         }
       },
       "conclusion": "confidence_not_yet_validated",
-      "generated_at": "2026-06-14T07:14:05.880654+00:00",
+      "generated_at": "2026-06-14T08:10:03.998067+00:00",
       "high_confidence_better_than_low_confidence": false,
       "high_vs_low_comparison_by_horizon": {
         "10d": false,
@@ -8568,8 +9117,8 @@
         },
         "credit": {
           "available_items": 2,
-          "detail": "FRED HY/IG OAS plus HYG/LQD proxy",
-          "expected_items": 4,
+          "detail": "FRED HY/IG/BAA/stress plus HYG/LQD proxy",
+          "expected_items": 6,
           "fallback_used": false,
           "proxy_used": true,
           "real_data": false,
@@ -8640,8 +9189,8 @@
         },
         "rates": {
           "available_items": 1,
-          "detail": "FRED 10Y/2Y/3M/TIPS plus ^TNX",
-          "expected_items": 5,
+          "detail": "FRED 10Y/2Y/3M/TIPS/recession plus ^TNX",
+          "expected_items": 6,
           "fallback_used": false,
           "proxy_used": false,
           "real_data": false,
@@ -8657,7 +9206,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-06-14T07:14:05.880654+00:00",
+      "generated_at": "2026-06-14T08:10:03.998359+00:00",
       "notes": [
         "Breadth and flow are ETF/sector proxies, not constituent-level feeds.",
         "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -8665,6 +9214,19 @@
         "V4 target is 85/100. If not reached, the blocking items are listed in missing_key_sources and unavailable_categories."
       ],
       "sources": {
+        "BAA_SPREAD": {
+          "fallback_used": false,
+          "latest_date": null,
+          "missing_data": true,
+          "point_in_time_safe": false,
+          "real_data": false,
+          "rows": 0,
+          "series_id": "BAA10Y",
+          "source": "fred",
+          "stale_data": false,
+          "status": "missing",
+          "symbol": "BAA_SPREAD"
+        },
         "DFII10": {
           "fallback_used": false,
           "latest_date": null,
@@ -8673,7 +9235,7 @@
           "real_data": false,
           "rows": 0,
           "series_id": "DFII10",
-          "source": "missing",
+          "source": "fred",
           "stale_data": false,
           "status": "missing",
           "symbol": "DFII10"
@@ -8686,7 +9248,7 @@
           "real_data": false,
           "rows": 0,
           "series_id": "DGS10",
-          "source": "missing",
+          "source": "fred",
           "stale_data": false,
           "status": "missing",
           "symbol": "DGS10"
@@ -8699,7 +9261,7 @@
           "real_data": false,
           "rows": 0,
           "series_id": "DGS2",
-          "source": "missing",
+          "source": "fred",
           "stale_data": false,
           "status": "missing",
           "symbol": "DGS2"
@@ -8712,7 +9274,7 @@
           "real_data": false,
           "rows": 0,
           "series_id": "DGS3MO",
-          "source": "missing",
+          "source": "fred",
           "stale_data": false,
           "status": "missing",
           "symbol": "DGS3MO"
@@ -8728,6 +9290,19 @@
           "stale_data": false,
           "status": "available",
           "symbol": "DIA"
+        },
+        "FINANCIAL_STRESS": {
+          "fallback_used": false,
+          "latest_date": null,
+          "missing_data": true,
+          "point_in_time_safe": false,
+          "real_data": false,
+          "rows": 0,
+          "series_id": "STLFSI4",
+          "source": "fred",
+          "stale_data": false,
+          "status": "missing",
+          "symbol": "FINANCIAL_STRESS"
         },
         "FINNHUB_API": {
           "fallback_used": false,
@@ -8762,7 +9337,7 @@
           "real_data": false,
           "rows": 0,
           "series_id": "BAMLH0A0HYM2",
-          "source": "missing",
+          "source": "fred",
           "stale_data": false,
           "status": "missing",
           "symbol": "HY_OAS"
@@ -8775,7 +9350,7 @@
           "real_data": false,
           "rows": 0,
           "series_id": "BAMLC0A0CM",
-          "source": "missing",
+          "source": "fred",
           "stale_data": false,
           "status": "missing",
           "symbol": "IG_OAS"
@@ -8815,6 +9390,19 @@
           "stale_data": false,
           "status": "available",
           "symbol": "QQQ"
+        },
+        "RECESSION": {
+          "fallback_used": false,
+          "latest_date": null,
+          "missing_data": true,
+          "point_in_time_safe": false,
+          "real_data": false,
+          "rows": 0,
+          "series_id": "USREC",
+          "source": "fred",
+          "stale_data": false,
+          "status": "missing",
+          "symbol": "RECESSION"
         },
         "RSP": {
           "fallback_used": false,
@@ -9354,6 +9942,7 @@
       },
       "summary": {
         "breadth_provider_status": "proxy",
+        "breadth_proxy_only": true,
         "breadth_required": true,
         "data_completeness_score": 80,
         "data_source_status": "real_core_with_proxies",
@@ -9363,17 +9952,37 @@
         "finnhub_rate_limited": false,
         "flow_provider_status": "proxy",
         "flow_required": true,
+        "fred_available": false,
+        "fred_failed_series": [
+          "BAA_SPREAD",
+          "DGS3MO",
+          "DGS10",
+          "HY_OAS",
+          "DGS2",
+          "IG_OAS",
+          "RECESSION",
+          "FINANCIAL_STRESS",
+          "DFII10"
+        ],
+        "fred_fallback_used": true,
+        "fred_missing": true,
         "fred_provider_status": "missing",
+        "fred_rate_limited": false,
         "fred_required": true,
+        "fred_successful_series": [],
+        "gamma_exposure_available": false,
         "latest_date": "2026-06-12",
         "missing_data": true,
         "missing_key_sources": [
+          "BAA_SPREAD",
           "DFII10",
           "DGS10",
           "DGS2",
           "DGS3MO",
+          "FINANCIAL_STRESS",
           "HY_OAS",
           "IG_OAS",
+          "RECESSION",
           "FINNHUB_API",
           "finnhub_quote_SPY",
           "finnhub_candle_SPY",
@@ -9396,11 +10005,14 @@
         ],
         "options_provider_status": "partial",
         "options_required": true,
+        "options_structure_status": "partial",
+        "put_call_available": false,
         "quality_note": "V4 score rewards real FRED/Finnhub/market data, gives partial credit to explicitly labeled proxies, and keeps missing options/flow/breadth details visible.",
         "real_market_data": true,
         "stale_data": false,
         "synthetic_used": false,
         "target_completeness_score": 85,
+        "true_breadth_available": false,
         "unavailable_categories": [
           "news"
         ],
@@ -9485,7 +10097,26 @@
       "configured": false,
       "rate_limited": false
     },
-    "generated_at": "2026-06-14T07:14:05.881655+00:00",
+    "fred_status": {
+      "available": false,
+      "cache_used": false,
+      "configured": false,
+      "failed_series": [
+        "BAA_SPREAD",
+        "DGS3MO",
+        "DGS10",
+        "HY_OAS",
+        "DGS2",
+        "IG_OAS",
+        "RECESSION",
+        "FINANCIAL_STRESS",
+        "DFII10"
+      ],
+      "fallback_used": true,
+      "rate_limited": false,
+      "successful_series": []
+    },
+    "generated_at": "2026-06-14T08:10:04.002339+00:00",
     "high_confidence_edge_report": {
       "by_edge_status": {
         "MODERATE_EDGE": {
@@ -9495,6 +10126,7 @@
               "hit_rate": 0.4875,
               "max_adverse_excursion": -0.059374,
               "max_favorable_excursion": 0.065859,
+              "mean_absolute_return": 0.017979,
               "median_return": -0.0004,
               "sample_size": 80
             },
@@ -9503,6 +10135,7 @@
               "hit_rate": 0.5875,
               "max_adverse_excursion": -0.142028,
               "max_favorable_excursion": 0.081382,
+              "mean_absolute_return": 0.02924,
               "median_return": 0.009112,
               "sample_size": 80
             },
@@ -9511,6 +10144,7 @@
               "hit_rate": 0.525,
               "max_adverse_excursion": -0.043682,
               "max_favorable_excursion": 0.049473,
+              "mean_absolute_return": 0.013373,
               "median_return": 0.001558,
               "sample_size": 80
             },
@@ -9519,6 +10153,7 @@
               "hit_rate": 0.5875,
               "max_adverse_excursion": -0.040544,
               "max_favorable_excursion": 0.042123,
+              "mean_absolute_return": 0.01561,
               "median_return": 0.003005,
               "sample_size": 80
             },
@@ -9527,6 +10162,7 @@
               "hit_rate": 0.475,
               "max_adverse_excursion": -0.178752,
               "max_favorable_excursion": 0.121826,
+              "mean_absolute_return": 0.053208,
               "median_return": -0.003049,
               "sample_size": 80
             }
@@ -9622,6 +10258,7 @@
               "hit_rate": 0.5789,
               "max_adverse_excursion": -0.059374,
               "max_favorable_excursion": 0.065859,
+              "mean_absolute_return": 0.021342,
               "median_return": 0.005417,
               "sample_size": 38
             },
@@ -9630,6 +10267,7 @@
               "hit_rate": 0.4474,
               "max_adverse_excursion": -0.142028,
               "max_favorable_excursion": 0.081382,
+              "mean_absolute_return": 0.027406,
               "median_return": -0.002539,
               "sample_size": 38
             },
@@ -9638,6 +10276,7 @@
               "hit_rate": 0.6842,
               "max_adverse_excursion": -0.016763,
               "max_favorable_excursion": 0.049473,
+              "mean_absolute_return": 0.012447,
               "median_return": 0.006895,
               "sample_size": 38
             },
@@ -9646,6 +10285,7 @@
               "hit_rate": 0.6579,
               "max_adverse_excursion": -0.040484,
               "max_favorable_excursion": 0.036593,
+              "mean_absolute_return": 0.0173,
               "median_return": 0.008121,
               "sample_size": 38
             },
@@ -9654,6 +10294,7 @@
               "hit_rate": 0.4211,
               "max_adverse_excursion": -0.178752,
               "max_favorable_excursion": 0.114016,
+              "mean_absolute_return": 0.046393,
               "median_return": -0.005997,
               "sample_size": 38
             }
@@ -9667,6 +10308,7 @@
               "hit_rate": 1.0,
               "max_adverse_excursion": 0.02569,
               "max_favorable_excursion": 0.02569,
+              "mean_absolute_return": 0.02569,
               "median_return": 0.02569,
               "sample_size": 1
             },
@@ -9675,6 +10317,7 @@
               "hit_rate": 1.0,
               "max_adverse_excursion": 0.009812,
               "max_favorable_excursion": 0.009812,
+              "mean_absolute_return": 0.009812,
               "median_return": 0.009812,
               "sample_size": 1
             },
@@ -9683,6 +10326,7 @@
               "hit_rate": 1.0,
               "max_adverse_excursion": 0.025242,
               "max_favorable_excursion": 0.025242,
+              "mean_absolute_return": 0.025242,
               "median_return": 0.025242,
               "sample_size": 1
             },
@@ -9691,6 +10335,7 @@
               "hit_rate": 1.0,
               "max_adverse_excursion": 0.021374,
               "max_favorable_excursion": 0.021374,
+              "mean_absolute_return": 0.021374,
               "median_return": 0.021374,
               "sample_size": 1
             },
@@ -9699,6 +10344,7 @@
               "hit_rate": 1.0,
               "max_adverse_excursion": 0.064286,
               "max_favorable_excursion": 0.064286,
+              "mean_absolute_return": 0.064286,
               "median_return": 0.064286,
               "sample_size": 1
             }
@@ -9712,6 +10358,7 @@
               "hit_rate": 0.3902,
               "max_adverse_excursion": -0.030486,
               "max_favorable_excursion": 0.040224,
+              "mean_absolute_return": 0.014674,
               "median_return": -0.004918,
               "sample_size": 41
             },
@@ -9720,6 +10367,7 @@
               "hit_rate": 0.7073,
               "max_adverse_excursion": -0.095492,
               "max_favorable_excursion": 0.065795,
+              "mean_absolute_return": 0.031414,
               "median_return": 0.020068,
               "sample_size": 41
             },
@@ -9728,6 +10376,7 @@
               "hit_rate": 0.3659,
               "max_adverse_excursion": -0.043682,
               "max_favorable_excursion": 0.038451,
+              "mean_absolute_return": 0.013941,
               "median_return": -0.006734,
               "sample_size": 41
             },
@@ -9736,6 +10385,7 @@
               "hit_rate": 0.5122,
               "max_adverse_excursion": -0.040544,
               "max_favorable_excursion": 0.042123,
+              "mean_absolute_return": 0.013903,
               "median_return": 0.000208,
               "sample_size": 41
             },
@@ -9744,6 +10394,7 @@
               "hit_rate": 0.5122,
               "max_adverse_excursion": -0.099158,
               "max_favorable_excursion": 0.121826,
+              "mean_absolute_return": 0.059253,
               "median_return": 0.012092,
               "sample_size": 41
             }
@@ -9759,6 +10410,7 @@
               "hit_rate": 0.4,
               "max_adverse_excursion": -0.029518,
               "max_favorable_excursion": 0.040224,
+              "mean_absolute_return": 0.016272,
               "median_return": -0.004918,
               "sample_size": 20
             },
@@ -9767,6 +10419,7 @@
               "hit_rate": 0.6,
               "max_adverse_excursion": -0.095492,
               "max_favorable_excursion": 0.065795,
+              "mean_absolute_return": 0.030192,
               "median_return": 0.012291,
               "sample_size": 20
             },
@@ -9775,6 +10428,7 @@
               "hit_rate": 0.4,
               "max_adverse_excursion": -0.029603,
               "max_favorable_excursion": 0.038451,
+              "mean_absolute_return": 0.011888,
               "median_return": -0.002654,
               "sample_size": 20
             },
@@ -9783,6 +10437,7 @@
               "hit_rate": 0.7,
               "max_adverse_excursion": -0.024669,
               "max_favorable_excursion": 0.042123,
+              "mean_absolute_return": 0.012777,
               "median_return": 0.003714,
               "sample_size": 20
             },
@@ -9791,6 +10446,7 @@
               "hit_rate": 0.25,
               "max_adverse_excursion": -0.088185,
               "max_favorable_excursion": 0.096921,
+              "mean_absolute_return": 0.048438,
               "median_return": -0.03023,
               "sample_size": 20
             }
@@ -9804,6 +10460,7 @@
               "hit_rate": 0.55,
               "max_adverse_excursion": -0.038908,
               "max_favorable_excursion": 0.065859,
+              "mean_absolute_return": 0.021229,
               "median_return": 0.00273,
               "sample_size": 20
             },
@@ -9812,6 +10469,7 @@
               "hit_rate": 0.4,
               "max_adverse_excursion": -0.070246,
               "max_favorable_excursion": 0.081382,
+              "mean_absolute_return": 0.024524,
               "median_return": -0.004162,
               "sample_size": 20
             },
@@ -9820,6 +10478,7 @@
               "hit_rate": 0.6,
               "max_adverse_excursion": -0.012641,
               "max_favorable_excursion": 0.049473,
+              "mean_absolute_return": 0.013121,
               "median_return": 0.003538,
               "sample_size": 20
             },
@@ -9828,6 +10487,7 @@
               "hit_rate": 0.55,
               "max_adverse_excursion": -0.040484,
               "max_favorable_excursion": 0.036593,
+              "mean_absolute_return": 0.017107,
               "median_return": 0.005327,
               "sample_size": 20
             },
@@ -9836,6 +10496,7 @@
               "hit_rate": 0.6,
               "max_adverse_excursion": -0.085721,
               "max_favorable_excursion": 0.114016,
+              "mean_absolute_return": 0.054457,
               "median_return": 0.046677,
               "sample_size": 20
             }
@@ -9849,6 +10510,7 @@
               "hit_rate": 0.6,
               "max_adverse_excursion": -0.059374,
               "max_favorable_excursion": 0.042758,
+              "mean_absolute_return": 0.021162,
               "median_return": 0.006378,
               "sample_size": 20
             },
@@ -9857,6 +10519,7 @@
               "hit_rate": 0.55,
               "max_adverse_excursion": -0.142028,
               "max_favorable_excursion": 0.0554,
+              "mean_absolute_return": 0.030808,
               "median_return": 0.002988,
               "sample_size": 20
             },
@@ -9865,6 +10528,7 @@
               "hit_rate": 0.75,
               "max_adverse_excursion": -0.043682,
               "max_favorable_excursion": 0.036588,
+              "mean_absolute_return": 0.013975,
               "median_return": 0.008941,
               "sample_size": 20
             },
@@ -9873,6 +10537,7 @@
               "hit_rate": 0.75,
               "max_adverse_excursion": -0.036122,
               "max_favorable_excursion": 0.034374,
+              "mean_absolute_return": 0.018011,
               "median_return": 0.01152,
               "sample_size": 20
             },
@@ -9881,6 +10546,7 @@
               "hit_rate": 0.3,
               "max_adverse_excursion": -0.178752,
               "max_favorable_excursion": 0.079732,
+              "mean_absolute_return": 0.040891,
               "median_return": -0.009954,
               "sample_size": 20
             }
@@ -9894,6 +10560,7 @@
               "hit_rate": 0.4,
               "max_adverse_excursion": -0.030486,
               "max_favorable_excursion": 0.03085,
+              "mean_absolute_return": 0.013253,
               "median_return": -0.001222,
               "sample_size": 20
             },
@@ -9902,6 +10569,7 @@
               "hit_rate": 0.8,
               "max_adverse_excursion": -0.047316,
               "max_favorable_excursion": 0.058396,
+              "mean_absolute_return": 0.031437,
               "median_return": 0.029166,
               "sample_size": 20
             },
@@ -9910,6 +10578,7 @@
               "hit_rate": 0.35,
               "max_adverse_excursion": -0.033125,
               "max_favorable_excursion": 0.023707,
+              "mean_absolute_return": 0.014506,
               "median_return": -0.009383,
               "sample_size": 20
             },
@@ -9918,6 +10587,7 @@
               "hit_rate": 0.35,
               "max_adverse_excursion": -0.040544,
               "max_favorable_excursion": 0.023986,
+              "mean_absolute_return": 0.014545,
               "median_return": -0.006798,
               "sample_size": 20
             },
@@ -9926,6 +10596,7 @@
               "hit_rate": 0.75,
               "max_adverse_excursion": -0.099158,
               "max_favorable_excursion": 0.121826,
+              "mean_absolute_return": 0.069044,
               "median_return": 0.065295,
               "sample_size": 20
             }
@@ -9933,7 +10604,108 @@
           "sample_size": 20
         }
       },
-      "conclusion": "not_enough_strong_edge_samples",
+      "close_call_samples": {
+        "close_call_metrics": {
+          "by_horizon": {
+            "10d": {
+              "sample_size": 0
+            },
+            "20d": {
+              "sample_size": 0
+            },
+            "3d": {
+              "sample_size": 0
+            },
+            "5d": {
+              "sample_size": 0
+            },
+            "60d": {
+              "sample_size": 0
+            }
+          },
+          "sample_size": 0
+        },
+        "close_call_sample_size": 0,
+        "non_close_call_metrics": {
+          "by_horizon": {
+            "10d": {
+              "avg_return": 0.001104,
+              "hit_rate": 0.4875,
+              "max_adverse_excursion": -0.059374,
+              "max_favorable_excursion": 0.065859,
+              "mean_absolute_return": 0.017979,
+              "median_return": -0.0004,
+              "sample_size": 80
+            },
+            "20d": {
+              "avg_return": 0.002376,
+              "hit_rate": 0.5875,
+              "max_adverse_excursion": -0.142028,
+              "max_favorable_excursion": 0.081382,
+              "mean_absolute_return": 0.02924,
+              "median_return": 0.009112,
+              "sample_size": 80
+            },
+            "3d": {
+              "avg_return": 0.001175,
+              "hit_rate": 0.525,
+              "max_adverse_excursion": -0.043682,
+              "max_favorable_excursion": 0.049473,
+              "mean_absolute_return": 0.013373,
+              "median_return": 0.001558,
+              "sample_size": 80
+            },
+            "5d": {
+              "avg_return": 0.000734,
+              "hit_rate": 0.5875,
+              "max_adverse_excursion": -0.040544,
+              "max_favorable_excursion": 0.042123,
+              "mean_absolute_return": 0.01561,
+              "median_return": 0.003005,
+              "sample_size": 80
+            },
+            "60d": {
+              "avg_return": 0.00681,
+              "hit_rate": 0.475,
+              "max_adverse_excursion": -0.178752,
+              "max_favorable_excursion": 0.121826,
+              "mean_absolute_return": 0.053208,
+              "median_return": -0.003049,
+              "sample_size": 80
+            }
+          },
+          "sample_size": 80
+        },
+        "non_close_call_sample_size": 80,
+        "note": "close_call rows are tracked separately because path probabilities differ by less than eight percentage points."
+      },
+      "completed_sample_counter": {
+        "by_horizon": {
+          "10d": {
+            "completed_count": 0,
+            "evidence_gate": "insufficient"
+          },
+          "20d": {
+            "completed_count": 0,
+            "evidence_gate": "insufficient"
+          },
+          "3d": {
+            "completed_count": 0,
+            "evidence_gate": "insufficient"
+          },
+          "5d": {
+            "completed_count": 0,
+            "evidence_gate": "insufficient"
+          },
+          "60d": {
+            "completed_count": 0,
+            "evidence_gate": "insufficient"
+          }
+        },
+        "completed_rows": 0,
+        "max_completed_count": 0
+      },
+      "conclusion": "forward_validation_insufficient_keep_confidence_capped",
       "confidence_top_10": {
         "by_horizon": {
           "10d": {
@@ -9941,6 +10713,7 @@
             "hit_rate": 0.375,
             "max_adverse_excursion": -0.023505,
             "max_favorable_excursion": 0.03085,
+            "mean_absolute_return": 0.016678,
             "median_return": -0.007011,
             "sample_size": 8
           },
@@ -9949,6 +10722,7 @@
             "hit_rate": 0.625,
             "max_adverse_excursion": -0.047316,
             "max_favorable_excursion": 0.031196,
+            "mean_absolute_return": 0.026589,
             "median_return": 0.020068,
             "sample_size": 8
           },
@@ -9957,6 +10731,7 @@
             "hit_rate": 0.375,
             "max_adverse_excursion": -0.030499,
             "max_favorable_excursion": 0.01018,
+            "mean_absolute_return": 0.013329,
             "median_return": -0.009383,
             "sample_size": 8
           },
@@ -9965,6 +10740,7 @@
             "hit_rate": 0.375,
             "max_adverse_excursion": -0.031628,
             "max_favorable_excursion": 0.023986,
+            "mean_absolute_return": 0.014041,
             "median_return": -0.004438,
             "sample_size": 8
           },
@@ -9973,17 +10749,216 @@
             "hit_rate": 0.5,
             "max_adverse_excursion": -0.099158,
             "max_favorable_excursion": 0.092646,
+            "mean_absolute_return": 0.05141,
             "median_return": 0.012092,
             "sample_size": 8
           }
         },
         "sample_size": 8
       },
+      "confidence_validation": {
+        "confidence_top_10": {
+          "by_horizon": {
+            "10d": {
+              "avg_return": -0.001836,
+              "hit_rate": 0.375,
+              "max_adverse_excursion": -0.023505,
+              "max_favorable_excursion": 0.03085,
+              "mean_absolute_return": 0.016678,
+              "median_return": -0.007011,
+              "sample_size": 8
+            },
+            "20d": {
+              "avg_return": 0.003391,
+              "hit_rate": 0.625,
+              "max_adverse_excursion": -0.047316,
+              "max_favorable_excursion": 0.031196,
+              "mean_absolute_return": 0.026589,
+              "median_return": 0.020068,
+              "sample_size": 8
+            },
+            "3d": {
+              "avg_return": -0.008716,
+              "hit_rate": 0.375,
+              "max_adverse_excursion": -0.030499,
+              "max_favorable_excursion": 0.01018,
+              "mean_absolute_return": 0.013329,
+              "median_return": -0.009383,
+              "sample_size": 8
+            },
+            "5d": {
+              "avg_return": -0.00719,
+              "hit_rate": 0.375,
+              "max_adverse_excursion": -0.031628,
+              "max_favorable_excursion": 0.023986,
+              "mean_absolute_return": 0.014041,
+              "median_return": -0.004438,
+              "sample_size": 8
+            },
+            "60d": {
+              "avg_return": -0.006235,
+              "hit_rate": 0.5,
+              "max_adverse_excursion": -0.099158,
+              "max_favorable_excursion": 0.092646,
+              "mean_absolute_return": 0.05141,
+              "median_return": 0.012092,
+              "sample_size": 8
+            }
+          },
+          "sample_size": 8
+        },
+        "moderate_edge": {
+          "by_horizon": {
+            "10d": {
+              "avg_return": 0.001104,
+              "hit_rate": 0.4875,
+              "max_adverse_excursion": -0.059374,
+              "max_favorable_excursion": 0.065859,
+              "mean_absolute_return": 0.017979,
+              "median_return": -0.0004,
+              "sample_size": 80
+            },
+            "20d": {
+              "avg_return": 0.002376,
+              "hit_rate": 0.5875,
+              "max_adverse_excursion": -0.142028,
+              "max_favorable_excursion": 0.081382,
+              "mean_absolute_return": 0.02924,
+              "median_return": 0.009112,
+              "sample_size": 80
+            },
+            "3d": {
+              "avg_return": 0.001175,
+              "hit_rate": 0.525,
+              "max_adverse_excursion": -0.043682,
+              "max_favorable_excursion": 0.049473,
+              "mean_absolute_return": 0.013373,
+              "median_return": 0.001558,
+              "sample_size": 80
+            },
+            "5d": {
+              "avg_return": 0.000734,
+              "hit_rate": 0.5875,
+              "max_adverse_excursion": -0.040544,
+              "max_favorable_excursion": 0.042123,
+              "mean_absolute_return": 0.01561,
+              "median_return": 0.003005,
+              "sample_size": 80
+            },
+            "60d": {
+              "avg_return": 0.00681,
+              "hit_rate": 0.475,
+              "max_adverse_excursion": -0.178752,
+              "max_favorable_excursion": 0.121826,
+              "mean_absolute_return": 0.053208,
+              "median_return": -0.003049,
+              "sample_size": 80
+            }
+          },
+          "sample_size": 80
+        },
+        "ordinary_confidence": {
+          "by_horizon": {
+            "10d": {
+              "avg_return": 0.001431,
+              "hit_rate": 0.5,
+              "max_adverse_excursion": -0.059374,
+              "max_favorable_excursion": 0.065859,
+              "mean_absolute_return": 0.018124,
+              "median_return": 0.000242,
+              "sample_size": 72
+            },
+            "20d": {
+              "avg_return": 0.002263,
+              "hit_rate": 0.5833,
+              "max_adverse_excursion": -0.142028,
+              "max_favorable_excursion": 0.081382,
+              "mean_absolute_return": 0.029535,
+              "median_return": 0.004543,
+              "sample_size": 72
+            },
+            "3d": {
+              "avg_return": 0.002274,
+              "hit_rate": 0.5417,
+              "max_adverse_excursion": -0.043682,
+              "max_favorable_excursion": 0.049473,
+              "mean_absolute_return": 0.013377,
+              "median_return": 0.00234,
+              "sample_size": 72
+            },
+            "5d": {
+              "avg_return": 0.001615,
+              "hit_rate": 0.6111,
+              "max_adverse_excursion": -0.040544,
+              "max_favorable_excursion": 0.042123,
+              "mean_absolute_return": 0.015784,
+              "median_return": 0.003829,
+              "sample_size": 72
+            },
+            "60d": {
+              "avg_return": 0.008259,
+              "hit_rate": 0.4722,
+              "max_adverse_excursion": -0.178752,
+              "max_favorable_excursion": 0.121826,
+              "mean_absolute_return": 0.053407,
+              "median_return": -0.003049,
+              "sample_size": 72
+            }
+          },
+          "sample_size": 72
+        },
+        "status": "forward_validation_required",
+        "strong_edge": {
+          "by_horizon": {
+            "10d": {
+              "sample_size": 0
+            },
+            "20d": {
+              "sample_size": 0
+            },
+            "3d": {
+              "sample_size": 0
+            },
+            "5d": {
+              "sample_size": 0
+            },
+            "60d": {
+              "sample_size": 0
+            }
+          },
+          "sample_size": 0
+        },
+        "validation_question": "Does high confidence beat ordinary confidence in hit rate, average return, and lower mean absolute error?"
+      },
       "forward_completed_sample_size": 0,
-      "generated_at": "2026-06-14T07:14:05.880654+00:00",
+      "forward_validation_notice": "当前高置信度还没有被前向样本验证，不应当视为稳定预测能力。",
+      "generated_at": "2026-06-14T08:10:03.999633+00:00",
+      "minimum_sample_gate": {
+        "10d": {
+          "completed_count": 0,
+          "evidence_gate": "insufficient"
+        },
+        "20d": {
+          "completed_count": 0,
+          "evidence_gate": "insufficient"
+        },
+        "3d": {
+          "completed_count": 0,
+          "evidence_gate": "insufficient"
+        },
+        "5d": {
+          "completed_count": 0,
+          "evidence_gate": "insufficient"
+        },
+        "60d": {
+          "completed_count": 0,
+          "evidence_gate": "insufficient"
+        }
+      },
       "notes": [
         "This report is not proof of alpha; it is a proxy check until forward-only samples mature.",
-        "If strong/high-confirmation buckets do not beat weak/no-edge buckets, model confidence must remain capped."
+        "If strong/high-confirmation buckets do not beat weak/no-edge buckets, model confidence must remain capped.",
+        "Forward completed samples are required before STRONG_EDGE or high-confidence buckets can be treated as validated."
       ],
       "primary_scenario_hit_rate": {
         "10d": {
@@ -10008,30 +10983,50 @@
         }
       },
       "primary_vs_secondary": {
-        "note": "Primary vs secondary path closeness needs forward realized paths; current report uses historical analog direction as a proxy.",
-        "primary_scenario_hit_rate": {
+        "by_horizon": {
           "10d": {
-            "hit_rate": 0.4875,
-            "sample_size": 80
+            "both_hit": 19,
+            "both_miss": 21,
+            "primary_hit_rate": 0.4875,
+            "primary_minus_secondary": 0.0,
+            "sample_size": 80,
+            "secondary_hit_rate": 0.4875
           },
           "20d": {
-            "hit_rate": 0.5875,
-            "sample_size": 80
+            "both_hit": 24,
+            "both_miss": 16,
+            "primary_hit_rate": 0.5875,
+            "primary_minus_secondary": 0.075,
+            "sample_size": 80,
+            "secondary_hit_rate": 0.5125
           },
           "3d": {
-            "hit_rate": 0.525,
-            "sample_size": 80
+            "both_hit": 19,
+            "both_miss": 21,
+            "primary_hit_rate": 0.525,
+            "primary_minus_secondary": 0.075,
+            "sample_size": 80,
+            "secondary_hit_rate": 0.45
           },
           "5d": {
-            "hit_rate": 0.5875,
-            "sample_size": 80
+            "both_hit": 18,
+            "both_miss": 22,
+            "primary_hit_rate": 0.5875,
+            "primary_minus_secondary": 0.225,
+            "sample_size": 80,
+            "secondary_hit_rate": 0.3625
           },
           "60d": {
-            "hit_rate": 0.475,
-            "sample_size": 80
+            "both_hit": 27,
+            "both_miss": 13,
+            "primary_hit_rate": 0.475,
+            "primary_minus_secondary": -0.225,
+            "sample_size": 80,
+            "secondary_hit_rate": 0.7
           }
         },
-        "status": "proxy_only"
+        "note": "Forward samples are still below the minimum gate; primary-vs-secondary remains a historical analog proxy.",
+        "status": "forward_pending"
       },
       "sample_size": 80,
       "signal_confirmation_top_10": {
@@ -10041,6 +11036,7 @@
             "hit_rate": 0.625,
             "max_adverse_excursion": -0.024633,
             "max_favorable_excursion": 0.042458,
+            "mean_absolute_return": 0.019592,
             "median_return": 0.00903,
             "sample_size": 8
           },
@@ -10049,6 +11045,7 @@
             "hit_rate": 0.375,
             "max_adverse_excursion": -0.070246,
             "max_favorable_excursion": 0.01666,
+            "mean_absolute_return": 0.028847,
             "median_return": -0.014517,
             "sample_size": 8
           },
@@ -10057,6 +11054,7 @@
             "hit_rate": 0.5,
             "max_adverse_excursion": -0.012528,
             "max_favorable_excursion": 0.025242,
+            "mean_absolute_return": 0.009556,
             "median_return": 0.003538,
             "sample_size": 8
           },
@@ -10065,6 +11063,7 @@
             "hit_rate": 0.5,
             "max_adverse_excursion": -0.013303,
             "max_favorable_excursion": 0.021374,
+            "mean_absolute_return": 0.009613,
             "median_return": 0.006133,
             "sample_size": 8
           },
@@ -10073,6 +11072,7 @@
             "hit_rate": 0.75,
             "max_adverse_excursion": -0.085721,
             "max_favorable_excursion": 0.096756,
+            "mean_absolute_return": 0.073304,
             "median_return": 0.069306,
             "sample_size": 8
           }
@@ -10904,6 +11904,7 @@
     "dashboard_status": "forward_only_observation",
     "data_quality_summary": {
       "breadth_provider_status": "proxy",
+      "breadth_proxy_only": true,
       "breadth_required": true,
       "data_completeness_score": 80,
       "data_source_status": "real_core_with_proxies",
@@ -10913,17 +11914,37 @@
       "finnhub_rate_limited": false,
       "flow_provider_status": "proxy",
       "flow_required": true,
+      "fred_available": false,
+      "fred_failed_series": [
+        "BAA_SPREAD",
+        "DGS3MO",
+        "DGS10",
+        "HY_OAS",
+        "DGS2",
+        "IG_OAS",
+        "RECESSION",
+        "FINANCIAL_STRESS",
+        "DFII10"
+      ],
+      "fred_fallback_used": true,
+      "fred_missing": true,
       "fred_provider_status": "missing",
+      "fred_rate_limited": false,
       "fred_required": true,
+      "fred_successful_series": [],
+      "gamma_exposure_available": false,
       "latest_date": "2026-06-12",
       "missing_data": true,
       "missing_key_sources": [
+        "BAA_SPREAD",
         "DFII10",
         "DGS10",
         "DGS2",
         "DGS3MO",
+        "FINANCIAL_STRESS",
         "HY_OAS",
         "IG_OAS",
+        "RECESSION",
         "FINNHUB_API",
         "finnhub_quote_SPY",
         "finnhub_candle_SPY",
@@ -10946,11 +11967,14 @@
       ],
       "options_provider_status": "partial",
       "options_required": true,
+      "options_structure_status": "partial",
+      "put_call_available": false,
       "quality_note": "V4 score rewards real FRED/Finnhub/market data, gives partial credit to explicitly labeled proxies, and keeps missing options/flow/breadth details visible.",
       "real_market_data": true,
       "stale_data": false,
       "synthetic_used": false,
       "target_completeness_score": 85,
+      "true_breadth_available": false,
       "unavailable_categories": [
         "news"
       ],
@@ -11666,8 +12690,12 @@
             "sector_participation": 0.7272727272727273
           },
           "credit": {
+            "baa_spread_20d_change": 0.0,
+            "baa_spread_proxy": null,
             "credit_deterioration_score": 0.03315945500962836,
             "credit_stabilization_score": 0.9668405449903716,
+            "financial_stress_20d_change": 0.0,
+            "financial_stress_proxy": null,
             "hy_oas": null,
             "hy_oas_20d_change": 0.0,
             "hyg_drawdown_60d": -0.008803460273275165,
@@ -11740,10 +12768,13 @@
           "rates_liquidity": {
             "liquidity_stress_proxy": 0.04779144296582327,
             "rates_pressure_score": 0.18106443792778512,
+            "real_yield_20d_change": 0.0,
             "real_yield_proxy": null,
+            "recession_proxy": null,
             "ten_year_minus_three_month": null,
             "ten_year_minus_two_year": null,
             "ten_year_yield": null,
+            "ten_year_yield_20d_change": 0.0,
             "three_month_yield": null,
             "tlt_return_20d": 0.01000940287857821,
             "tnx_proxy": null,
@@ -12577,8 +13608,12 @@
             "sector_participation": 0.7272727272727273
           },
           "credit": {
+            "baa_spread_20d_change": 0.0,
+            "baa_spread_proxy": null,
             "credit_deterioration_score": 0.03315945500962836,
             "credit_stabilization_score": 0.9668405449903716,
+            "financial_stress_20d_change": 0.0,
+            "financial_stress_proxy": null,
             "hy_oas": null,
             "hy_oas_20d_change": 0.0,
             "hyg_drawdown_60d": -0.008803460273275165,
@@ -12651,10 +13686,13 @@
           "rates_liquidity": {
             "liquidity_stress_proxy": 0.04779144296582327,
             "rates_pressure_score": 0.18106443792778512,
+            "real_yield_20d_change": 0.0,
             "real_yield_proxy": null,
+            "recession_proxy": null,
             "ten_year_minus_three_month": null,
             "ten_year_minus_two_year": null,
             "ten_year_yield": null,
+            "ten_year_yield_20d_change": 0.0,
             "three_month_yield": null,
             "tlt_return_20d": 0.01000940287857821,
             "tnx_proxy": null,
@@ -13506,8 +14544,12 @@
             "sector_participation": 0.7272727272727273
           },
           "credit": {
+            "baa_spread_20d_change": 0.0,
+            "baa_spread_proxy": null,
             "credit_deterioration_score": 0.03315945500962836,
             "credit_stabilization_score": 0.9668405449903716,
+            "financial_stress_20d_change": 0.0,
+            "financial_stress_proxy": null,
             "hy_oas": null,
             "hy_oas_20d_change": 0.0,
             "hyg_drawdown_60d": -0.008803460273275165,
@@ -13580,10 +14622,13 @@
           "rates_liquidity": {
             "liquidity_stress_proxy": 0.04779144296582327,
             "rates_pressure_score": 0.18106443792778512,
+            "real_yield_20d_change": 0.0,
             "real_yield_proxy": null,
+            "recession_proxy": null,
             "ten_year_minus_three_month": null,
             "ten_year_minus_two_year": null,
             "ten_year_yield": null,
+            "ten_year_yield_20d_change": 0.0,
             "three_month_yield": null,
             "tlt_return_20d": 0.01000940287857821,
             "tnx_proxy": null,
@@ -14431,8 +15476,12 @@
             "sector_participation": 0.7272727272727273
           },
           "credit": {
+            "baa_spread_20d_change": 0.0,
+            "baa_spread_proxy": null,
             "credit_deterioration_score": 0.03315945500962836,
             "credit_stabilization_score": 0.9668405449903716,
+            "financial_stress_20d_change": 0.0,
+            "financial_stress_proxy": null,
             "hy_oas": null,
             "hy_oas_20d_change": 0.0,
             "hyg_drawdown_60d": -0.008803460273275165,
@@ -14505,10 +15554,13 @@
           "rates_liquidity": {
             "liquidity_stress_proxy": 0.04779144296582327,
             "rates_pressure_score": 0.18106443792778512,
+            "real_yield_20d_change": 0.0,
             "real_yield_proxy": null,
+            "recession_proxy": null,
             "ten_year_minus_three_month": null,
             "ten_year_minus_two_year": null,
             "ten_year_yield": null,
+            "ten_year_yield_20d_change": 0.0,
             "three_month_yield": null,
             "tlt_return_20d": 0.01000940287857821,
             "tnx_proxy": null,
@@ -15266,6 +16318,7 @@
     "as_of": "2026-06-12",
     "data_quality_summary": {
       "breadth_provider_status": "proxy",
+      "breadth_proxy_only": true,
       "breadth_required": true,
       "data_completeness_score": 80,
       "data_source_status": "real_core_with_proxies",
@@ -15275,17 +16328,37 @@
       "finnhub_rate_limited": false,
       "flow_provider_status": "proxy",
       "flow_required": true,
+      "fred_available": false,
+      "fred_failed_series": [
+        "BAA_SPREAD",
+        "DGS3MO",
+        "DGS10",
+        "HY_OAS",
+        "DGS2",
+        "IG_OAS",
+        "RECESSION",
+        "FINANCIAL_STRESS",
+        "DFII10"
+      ],
+      "fred_fallback_used": true,
+      "fred_missing": true,
       "fred_provider_status": "missing",
+      "fred_rate_limited": false,
       "fred_required": true,
+      "fred_successful_series": [],
+      "gamma_exposure_available": false,
       "latest_date": "2026-06-12",
       "missing_data": true,
       "missing_key_sources": [
+        "BAA_SPREAD",
         "DFII10",
         "DGS10",
         "DGS2",
         "DGS3MO",
+        "FINANCIAL_STRESS",
         "HY_OAS",
         "IG_OAS",
+        "RECESSION",
         "FINNHUB_API",
         "finnhub_quote_SPY",
         "finnhub_candle_SPY",
@@ -15308,11 +16381,14 @@
       ],
       "options_provider_status": "partial",
       "options_required": true,
+      "options_structure_status": "partial",
+      "put_call_available": false,
       "quality_note": "V4 score rewards real FRED/Finnhub/market data, gives partial credit to explicitly labeled proxies, and keeps missing options/flow/breadth details visible.",
       "real_market_data": true,
       "stale_data": false,
       "synthetic_used": false,
       "target_completeness_score": 85,
+      "true_breadth_available": false,
       "unavailable_categories": [
         "news"
       ],
@@ -15359,8 +16435,12 @@
             "sector_participation": 0.7272727272727273
           },
           "credit": {
+            "baa_spread_20d_change": 0.0,
+            "baa_spread_proxy": null,
             "credit_deterioration_score": 0.03315945500962836,
             "credit_stabilization_score": 0.9668405449903716,
+            "financial_stress_20d_change": 0.0,
+            "financial_stress_proxy": null,
             "hy_oas": null,
             "hy_oas_20d_change": 0.0,
             "hyg_drawdown_60d": -0.008803460273275165,
@@ -15433,10 +16513,13 @@
           "rates_liquidity": {
             "liquidity_stress_proxy": 0.04779144296582327,
             "rates_pressure_score": 0.18106443792778512,
+            "real_yield_20d_change": 0.0,
             "real_yield_proxy": null,
+            "recession_proxy": null,
             "ten_year_minus_three_month": null,
             "ten_year_minus_two_year": null,
             "ten_year_yield": null,
+            "ten_year_yield_20d_change": 0.0,
             "three_month_yield": null,
             "tlt_return_20d": 0.01000940287857821,
             "tnx_proxy": null,
@@ -17519,8 +18602,12 @@
             "sector_participation": 0.7272727272727273
           },
           "credit": {
+            "baa_spread_20d_change": 0.0,
+            "baa_spread_proxy": null,
             "credit_deterioration_score": 0.03315945500962836,
             "credit_stabilization_score": 0.9668405449903716,
+            "financial_stress_20d_change": 0.0,
+            "financial_stress_proxy": null,
             "hy_oas": null,
             "hy_oas_20d_change": 0.0,
             "hyg_drawdown_60d": -0.008803460273275165,
@@ -17593,10 +18680,13 @@
           "rates_liquidity": {
             "liquidity_stress_proxy": 0.04779144296582327,
             "rates_pressure_score": 0.18106443792778512,
+            "real_yield_20d_change": 0.0,
             "real_yield_proxy": null,
+            "recession_proxy": null,
             "ten_year_minus_three_month": null,
             "ten_year_minus_two_year": null,
             "ten_year_yield": null,
+            "ten_year_yield_20d_change": 0.0,
             "three_month_yield": null,
             "tlt_return_20d": 0.01000940287857821,
             "tnx_proxy": null,
@@ -19697,8 +20787,12 @@
             "sector_participation": 0.7272727272727273
           },
           "credit": {
+            "baa_spread_20d_change": 0.0,
+            "baa_spread_proxy": null,
             "credit_deterioration_score": 0.03315945500962836,
             "credit_stabilization_score": 0.9668405449903716,
+            "financial_stress_20d_change": 0.0,
+            "financial_stress_proxy": null,
             "hy_oas": null,
             "hy_oas_20d_change": 0.0,
             "hyg_drawdown_60d": -0.008803460273275165,
@@ -19771,10 +20865,13 @@
           "rates_liquidity": {
             "liquidity_stress_proxy": 0.04779144296582327,
             "rates_pressure_score": 0.18106443792778512,
+            "real_yield_20d_change": 0.0,
             "real_yield_proxy": null,
+            "recession_proxy": null,
             "ten_year_minus_three_month": null,
             "ten_year_minus_two_year": null,
             "ten_year_yield": null,
+            "ten_year_yield_20d_change": 0.0,
             "three_month_yield": null,
             "tlt_return_20d": 0.01000940287857821,
             "tnx_proxy": null,
@@ -21872,8 +22969,12 @@
             "sector_participation": 0.7272727272727273
           },
           "credit": {
+            "baa_spread_20d_change": 0.0,
+            "baa_spread_proxy": null,
             "credit_deterioration_score": 0.03315945500962836,
             "credit_stabilization_score": 0.9668405449903716,
+            "financial_stress_20d_change": 0.0,
+            "financial_stress_proxy": null,
             "hy_oas": null,
             "hy_oas_20d_change": 0.0,
             "hyg_drawdown_60d": -0.008803460273275165,
@@ -21946,10 +23047,13 @@
           "rates_liquidity": {
             "liquidity_stress_proxy": 0.04779144296582327,
             "rates_pressure_score": 0.18106443792778512,
+            "real_yield_20d_change": 0.0,
             "real_yield_proxy": null,
+            "recession_proxy": null,
             "ten_year_minus_three_month": null,
             "ten_year_minus_two_year": null,
             "ten_year_yield": null,
+            "ten_year_yield_20d_change": 0.0,
             "three_month_yield": null,
             "tlt_return_20d": 0.01000940287857821,
             "tnx_proxy": null,

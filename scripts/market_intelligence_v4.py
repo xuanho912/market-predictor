@@ -21,10 +21,12 @@ def build_market_intelligence_v4(
     analogs: dict[str, dict[str, Any]],
     prior_intelligence: dict[str, Any],
     finnhub_bundle: dict[str, Any] | None = None,
+    fred_bundle: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     finnhub_bundle = finnhub_bundle or {}
+    fred_bundle = fred_bundle or {}
     prior_quality = prior_intelligence["data_quality_report"]
-    data_quality = build_data_quality_report_v4(prior_quality, finnhub_bundle)
+    data_quality = build_data_quality_report_v4(prior_quality, finnhub_bundle, fred_bundle)
     confirmation_by_symbol: dict[str, Any] = {}
     predictors_by_symbol: dict[str, Any] = {}
     confidence_by_symbol: dict[str, Any] = {}
@@ -142,6 +144,7 @@ def build_market_intelligence_v4(
             "rate_limited": bool(finnhub_bundle.get("rate_limited")),
             "cache_used": bool(finnhub_bundle.get("cache_used")),
         },
+        "fred_status": _fred_status_summary(fred_bundle),
         "warnings": [
             "Alpha v1 threshold remains frozen at 0.32534311.",
             "V4 strong edge requires multi-source confirmation; missing evidence caps confidence.",
@@ -151,7 +154,8 @@ def build_market_intelligence_v4(
     }
 
 
-def build_data_quality_report_v4(prior_quality: dict[str, Any], finnhub_bundle: dict[str, Any]) -> dict[str, Any]:
+def build_data_quality_report_v4(prior_quality: dict[str, Any], finnhub_bundle: dict[str, Any], fred_bundle: dict[str, Any] | None = None) -> dict[str, Any]:
+    fred_bundle = fred_bundle or {}
     report = _deepcopy(prior_quality)
     coverage = report.get("coverage_categories", {})
     sources = report.get("sources", {})
@@ -159,6 +163,8 @@ def build_data_quality_report_v4(prior_quality: dict[str, Any], finnhub_bundle: 
     score = _data_completeness_score_v4(coverage, sources)
     missing_sources = [name for name, row in sources.items() if row.get("missing_data")]
     unavailable = [name for name, payload in coverage.items() if payload.get("status") in {"missing", "not_available"}]
+    fred_success = list(fred_bundle.get("successful_series") or [])
+    fred_failed = list(fred_bundle.get("failed_series") or [])
     summary.update(
         {
             "data_completeness_score": score,
@@ -169,9 +175,20 @@ def build_data_quality_report_v4(prior_quality: dict[str, Any], finnhub_bundle: 
             "finnhub_available": bool(finnhub_bundle.get("available")),
             "finnhub_missing": bool(finnhub_bundle.get("missing")) or not bool(finnhub_bundle.get("configured")),
             "finnhub_rate_limited": bool(finnhub_bundle.get("rate_limited")),
-            "fred_provider_status": _provider_status(sources, ("DGS10", "DGS2", "DGS3MO", "HY_OAS", "IG_OAS")),
+            "fred_available": bool(fred_bundle.get("available")) or _provider_status(sources, ("DGS10", "DGS2", "DGS3MO", "HY_OAS", "IG_OAS")) != "missing",
+            "fred_missing": bool(fred_bundle.get("missing")) and _provider_status(sources, ("DGS10", "DGS2", "DGS3MO", "HY_OAS", "IG_OAS")) == "missing",
+            "fred_rate_limited": bool(fred_bundle.get("rate_limited")),
+            "fred_fallback_used": bool(fred_bundle.get("fallback_used")) or any(str(sources.get(name, {}).get("source", "")).startswith("local-cache-fred") for name in ("DGS10", "DGS2", "DGS3MO", "HY_OAS", "IG_OAS")),
+            "fred_successful_series": fred_success or [name for name in ("DGS10", "DGS2", "DGS3MO", "HY_OAS", "IG_OAS", "BAA_SPREAD", "FINANCIAL_STRESS", "RECESSION") if sources.get(name, {}).get("real_data")],
+            "fred_failed_series": fred_failed,
+            "fred_provider_status": _provider_status(sources, ("DGS10", "DGS2", "DGS3MO", "HY_OAS", "IG_OAS", "BAA_SPREAD", "FINANCIAL_STRESS", "RECESSION")),
             "breadth_provider_status": coverage.get("breadth", {}).get("status", "missing"),
+            "true_breadth_available": False,
+            "breadth_proxy_only": coverage.get("breadth", {}).get("status") == "proxy",
             "options_provider_status": coverage.get("options", {}).get("status", "missing"),
+            "options_structure_status": coverage.get("options", {}).get("status", "missing"),
+            "put_call_available": False,
+            "gamma_exposure_available": False,
             "flow_provider_status": coverage.get("flow", {}).get("status", "missing"),
             "quality_note": (
                 "V4 score rewards real FRED/Finnhub/market data, gives partial credit to explicitly labeled proxies, "
@@ -588,27 +605,40 @@ def build_high_confidence_edge_report(analogs: dict[str, dict[str, Any]], simula
                     "primary_scenario": ranking.get("primary_scenario"),
                     "secondary_scenario": ranking.get("secondary_scenario"),
                     "primary_probability": ranking.get("scenario_probability"),
+                    "secondary_probability": (ranking.get("secondary") or {}).get("probability"),
                     "probability_gap": ranking.get("probability_gap"),
+                    "close_call": bool(ranking.get("close_call")),
                 }
             )
             rows.append(row)
+    forward_counts = _forward_completion_counts()
     report = {
         "version": "market_intelligence_engine_v4_high_confidence_edge_report",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "status": "historical_proxy_and_forward_pending",
         "sample_size": len(rows),
-        "forward_completed_sample_size": _forward_completed_sample_size(),
+        "forward_completed_sample_size": forward_counts["completed_rows"],
+        "completed_sample_counter": forward_counts,
+        "minimum_sample_gate": forward_counts["by_horizon"],
+        "forward_validation_notice": (
+            "当前高置信度还没有被前向样本验证，不应当视为稳定预测能力。"
+            if forward_counts["max_completed_count"] < 20
+            else "Forward samples have started to mature, but alpha status remains research-only until stability is proven."
+        ),
         "by_edge_status": {status: _edge_bucket_metrics([row for row in rows if row["edge_status"] == status]) for status in ("STRONG_EDGE", "MODERATE_EDGE", "WEAK_EDGE", "NO_EDGE", "RISK_WARNING")},
         "signal_confirmation_top_10": _edge_bucket_metrics(_top_fraction(rows, "signal_confirmation_score", 0.10)),
         "confidence_top_10": _edge_bucket_metrics(_top_fraction(rows, "confidence_score", 0.10)),
+        "confidence_validation": _confidence_validation(rows),
         "primary_scenario_hit_rate": _primary_scenario_hit_rate(rows),
-        "primary_vs_secondary": _primary_vs_secondary_proxy(rows),
+        "primary_vs_secondary": _primary_vs_secondary_proxy(rows, forward_counts),
+        "close_call_samples": _close_call_stats(rows),
         "by_symbol": {symbol: _edge_bucket_metrics([row for row in rows if row["symbol"] == symbol]) for symbol in TARGET_SYMBOLS},
         "by_regime": _by_regime(rows),
-        "conclusion": _edge_report_conclusion(rows),
+        "conclusion": _edge_report_conclusion(rows, forward_counts),
         "notes": [
             "This report is not proof of alpha; it is a proxy check until forward-only samples mature.",
             "If strong/high-confirmation buckets do not beat weak/no-edge buckets, model confidence must remain capped.",
+            "Forward completed samples are required before STRONG_EDGE or high-confidence buckets can be treated as validated.",
         ],
     }
     return report
@@ -623,11 +653,21 @@ def render_high_confidence_edge_report_markdown(report: dict[str, Any]) -> str:
         f"Status: `{report.get('status')}`",
         f"Sample size: `{report.get('sample_size')}`",
         f"Forward completed sample size: `{report.get('forward_completed_sample_size')}`",
+        f"Forward validation notice: `{report.get('forward_validation_notice')}`",
         f"Conclusion: `{report.get('conclusion')}`",
         "",
-        "## By Edge Status",
+        "## Forward Sample Gates",
         "",
     ]
+    for horizon, payload in (report.get("minimum_sample_gate") or {}).items():
+        lines.append(f"- {horizon}: completed `{payload.get('completed_count')}`, gate `{payload.get('evidence_gate')}`")
+    lines.extend(
+        [
+            "",
+            "## By Edge Status",
+            "",
+        ]
+    )
     for status, payload in report.get("by_edge_status", {}).items():
         lines.append(f"### {status}")
         lines.extend(_metrics_markdown(payload))
@@ -640,10 +680,14 @@ def render_high_confidence_edge_report_markdown(report: dict[str, Any]) -> str:
     lines.append("### confidence_score top 10%")
     lines.extend(_metrics_markdown(report.get("confidence_top_10", {})))
     lines.append("")
+    lines.append("### confidence validation")
+    lines.append(f"- `{report.get('confidence_validation')}`")
+    lines.append("")
     lines.append("## Scenario Checks")
     lines.append("")
     lines.append(f"- primary_scenario_hit_rate: `{report.get('primary_scenario_hit_rate')}`")
     lines.append(f"- primary_vs_secondary: `{report.get('primary_vs_secondary')}`")
+    lines.append(f"- close_call_samples: `{report.get('close_call_samples')}`")
     lines.append("")
     lines.extend(f"- {note}" for note in report.get("notes", []))
     lines.append("")
@@ -700,6 +744,18 @@ def _provider_status(sources: dict[str, Any], names: tuple[str, ...]) -> str:
     if available:
         return "partial"
     return "missing"
+
+
+def _fred_status_summary(bundle: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "available": bool(bundle.get("available")),
+        "configured": bool(bundle.get("configured")),
+        "rate_limited": bool(bundle.get("rate_limited")),
+        "fallback_used": bool(bundle.get("fallback_used")),
+        "cache_used": bool(bundle.get("cache_used")),
+        "successful_series": list(bundle.get("successful_series") or []),
+        "failed_series": list(bundle.get("failed_series") or []),
+    }
 
 
 def _edge_summary_v4(status: str) -> str:
@@ -811,6 +867,7 @@ def _edge_bucket_metrics(rows: list[dict[str, Any]]) -> dict[str, Any]:
             "hit_rate": round(sum(1 for value in values if value > 0) / len(values), 4),
             "avg_return": round(sum(values) / len(values), 6),
             "median_return": round(sorted(values)[len(values) // 2], 6),
+            "mean_absolute_return": round(sum(abs(value) for value in values) / len(values), 6),
             "max_adverse_excursion": round(min(values), 6),
             "max_favorable_excursion": round(max(values), 6),
         }
@@ -835,11 +892,65 @@ def _primary_scenario_hit_rate(rows: list[dict[str, Any]]) -> dict[str, Any]:
     return result
 
 
-def _primary_vs_secondary_proxy(rows: list[dict[str, Any]]) -> dict[str, Any]:
+def _primary_vs_secondary_proxy(rows: list[dict[str, Any]], forward_counts: dict[str, Any]) -> dict[str, Any]:
+    status = "forward_pending" if forward_counts.get("max_completed_count", 0) < 20 else "forward_ready"
+    result: dict[str, Any] = {"status": status, "by_horizon": {}}
+    for horizon in HORIZONS:
+        primary_hits = secondary_hits = total = both_hit = both_miss = 0
+        for row in rows:
+            value = _float(row.get(f"forward_return_{horizon}d"), None)
+            if value is None:
+                continue
+            primary_hit = _scenario_hit(row.get("primary_scenario"), value)
+            secondary_hit = _scenario_hit(row.get("secondary_scenario"), value)
+            if primary_hit is None or secondary_hit is None:
+                continue
+            total += 1
+            primary_hits += int(primary_hit)
+            secondary_hits += int(secondary_hit)
+            both_hit += int(primary_hit and secondary_hit)
+            both_miss += int((not primary_hit) and (not secondary_hit))
+        result["by_horizon"][f"{horizon}d"] = {
+            "sample_size": total,
+            "primary_hit_rate": round(primary_hits / total, 4) if total else None,
+            "secondary_hit_rate": round(secondary_hits / total, 4) if total else None,
+            "primary_minus_secondary": round((primary_hits - secondary_hits) / total, 4) if total else None,
+            "both_hit": both_hit,
+            "both_miss": both_miss,
+        }
+    result["note"] = (
+        "Forward samples are still below the minimum gate; primary-vs-secondary remains a historical analog proxy."
+        if status == "forward_pending"
+        else "Forward sample gate has opened, but alpha status still requires stable performance over time."
+    )
+    return result
+
+
+def _close_call_stats(rows: list[dict[str, Any]]) -> dict[str, Any]:
+    close_rows = [row for row in rows if row.get("close_call")]
+    non_close_rows = [row for row in rows if not row.get("close_call")]
     return {
-        "status": "proxy_only",
-        "note": "Primary vs secondary path closeness needs forward realized paths; current report uses historical analog direction as a proxy.",
-        "primary_scenario_hit_rate": _primary_scenario_hit_rate(rows),
+        "close_call_sample_size": len(close_rows),
+        "non_close_call_sample_size": len(non_close_rows),
+        "close_call_metrics": _edge_bucket_metrics(close_rows),
+        "non_close_call_metrics": _edge_bucket_metrics(non_close_rows),
+        "note": "close_call rows are tracked separately because path probabilities differ by less than eight percentage points.",
+    }
+
+
+def _confidence_validation(rows: list[dict[str, Any]]) -> dict[str, Any]:
+    high_conf = _top_fraction(rows, "confidence_score", 0.10)
+    high_conf_ids = {id(row) for row in high_conf}
+    ordinary = [row for row in rows if id(row) not in high_conf_ids]
+    strong = [row for row in rows if row.get("edge_status") == "STRONG_EDGE"]
+    moderate = [row for row in rows if row.get("edge_status") == "MODERATE_EDGE"]
+    return {
+        "strong_edge": _edge_bucket_metrics(strong),
+        "moderate_edge": _edge_bucket_metrics(moderate),
+        "confidence_top_10": _edge_bucket_metrics(high_conf),
+        "ordinary_confidence": _edge_bucket_metrics(ordinary),
+        "validation_question": "Does high confidence beat ordinary confidence in hit rate, average return, and lower mean absolute error?",
+        "status": "forward_validation_required",
     }
 
 
@@ -850,7 +961,9 @@ def _by_regime(rows: list[dict[str, Any]]) -> dict[str, Any]:
     return {regime: _edge_bucket_metrics(items) for regime, items in regimes.items()}
 
 
-def _edge_report_conclusion(rows: list[dict[str, Any]]) -> str:
+def _edge_report_conclusion(rows: list[dict[str, Any]], forward_counts: dict[str, Any] | None = None) -> str:
+    if forward_counts and forward_counts.get("max_completed_count", 0) < 20:
+        return "forward_validation_insufficient_keep_confidence_capped"
     strong = _edge_bucket_metrics([row for row in rows if row.get("edge_status") == "STRONG_EDGE"]).get("by_horizon", {}).get("20d", {})
     no_edge = _edge_bucket_metrics([row for row in rows if row.get("edge_status") == "NO_EDGE"]).get("by_horizon", {}).get("20d", {})
     if not strong.get("sample_size"):
@@ -868,11 +981,60 @@ def _forward_completed_sample_size() -> int:
         return sum(1 for row in csv.DictReader(handle) if row.get("signal_status") == "completed")
 
 
+def _forward_completion_counts() -> dict[str, Any]:
+    path = PROJECT_ROOT / "outputs" / "forward_alpha_v1_signals.csv"
+    counts = {f"{horizon}d": {"completed_count": 0, "evidence_gate": "insufficient"} for horizon in HORIZONS}
+    completed_rows = 0
+    if path.exists():
+        with path.open("r", encoding="utf-8", newline="") as handle:
+            for row in csv.DictReader(handle):
+                if row.get("signal_status") == "completed":
+                    completed_rows += 1
+                for horizon in HORIZONS:
+                    if _float(row.get(f"forward_return_{horizon}d"), None) is not None:
+                        counts[f"{horizon}d"]["completed_count"] += 1
+    for payload in counts.values():
+        payload["evidence_gate"] = _sample_gate(int(payload["completed_count"]))
+    max_completed = max((int(payload["completed_count"]) for payload in counts.values()), default=0)
+    return {
+        "completed_rows": completed_rows,
+        "max_completed_count": max_completed,
+        "by_horizon": counts,
+    }
+
+
+def _sample_gate(count: int) -> str:
+    if count < 20:
+        return "insufficient"
+    if count <= 50:
+        return "early_evidence"
+    if count <= 100:
+        return "moderate_evidence"
+    return "stronger_evidence"
+
+
+def _scenario_hit(scenario: Any, forward_return: float) -> bool | None:
+    direction = _scenario_direction(scenario)
+    if direction == 0:
+        return None
+    if forward_return == 0:
+        return False
+    return (forward_return > 0 and direction > 0) or (forward_return < 0 and direction < 0)
+
+
+def _scenario_direction(scenario: Any) -> int:
+    if scenario in {"bounce_path", "analog_average_path", "expected_path"}:
+        return 1
+    if scenario == "bearish_path":
+        return -1
+    return 0
+
+
 def _metrics_markdown(payload: dict[str, Any]) -> list[str]:
     lines = [f"- sample_size: `{payload.get('sample_size', 0)}`"]
     for horizon, row in (payload.get("by_horizon") or {}).items():
         lines.append(
-            f"- {horizon}: sample `{row.get('sample_size', 0)}`, hit `{row.get('hit_rate')}`, avg `{row.get('avg_return')}`, median `{row.get('median_return')}`"
+            f"- {horizon}: sample `{row.get('sample_size', 0)}`, hit `{row.get('hit_rate')}`, avg `{row.get('avg_return')}`, median `{row.get('median_return')}`, mae `{row.get('mean_absolute_return')}`"
         )
     return lines
 

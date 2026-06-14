@@ -12,8 +12,8 @@
     },
     "credit": {
       "available_items": 2,
-      "detail": "FRED HY/IG OAS plus HYG/LQD proxy",
-      "expected_items": 4,
+      "detail": "FRED HY/IG/BAA/stress plus HYG/LQD proxy",
+      "expected_items": 6,
       "fallback_used": false,
       "proxy_used": true,
       "real_data": false,
@@ -84,8 +84,8 @@
     },
     "rates": {
       "available_items": 1,
-      "detail": "FRED 10Y/2Y/3M/TIPS plus ^TNX",
-      "expected_items": 5,
+      "detail": "FRED 10Y/2Y/3M/TIPS/recession plus ^TNX",
+      "expected_items": 6,
       "fallback_used": false,
       "proxy_used": false,
       "real_data": false,
@@ -101,7 +101,7 @@
       "status": "available"
     }
   },
-  "generated_at": "2026-06-14T07:14:05.880654+00:00",
+  "generated_at": "2026-06-14T08:10:03.998359+00:00",
   "notes": [
     "Breadth and flow are ETF/sector proxies, not constituent-level feeds.",
     "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -109,6 +109,19 @@
     "V4 target is 85/100. If not reached, the blocking items are listed in missing_key_sources and unavailable_categories."
   ],
   "sources": {
+    "BAA_SPREAD": {
+      "fallback_used": false,
+      "latest_date": null,
+      "missing_data": true,
+      "point_in_time_safe": false,
+      "real_data": false,
+      "rows": 0,
+      "series_id": "BAA10Y",
+      "source": "fred",
+      "stale_data": false,
+      "status": "missing",
+      "symbol": "BAA_SPREAD"
+    },
     "DFII10": {
       "fallback_used": false,
       "latest_date": null,
@@ -117,7 +130,7 @@
       "real_data": false,
       "rows": 0,
       "series_id": "DFII10",
-      "source": "missing",
+      "source": "fred",
       "stale_data": false,
       "status": "missing",
       "symbol": "DFII10"
@@ -130,7 +143,7 @@
       "real_data": false,
       "rows": 0,
       "series_id": "DGS10",
-      "source": "missing",
+      "source": "fred",
       "stale_data": false,
       "status": "missing",
       "symbol": "DGS10"
@@ -143,7 +156,7 @@
       "real_data": false,
       "rows": 0,
       "series_id": "DGS2",
-      "source": "missing",
+      "source": "fred",
       "stale_data": false,
       "status": "missing",
       "symbol": "DGS2"
@@ -156,7 +169,7 @@
       "real_data": false,
       "rows": 0,
       "series_id": "DGS3MO",
-      "source": "missing",
+      "source": "fred",
       "stale_data": false,
       "status": "missing",
       "symbol": "DGS3MO"
@@ -172,6 +185,19 @@
       "stale_data": false,
       "status": "available",
       "symbol": "DIA"
+    },
+    "FINANCIAL_STRESS": {
+      "fallback_used": false,
+      "latest_date": null,
+      "missing_data": true,
+      "point_in_time_safe": false,
+      "real_data": false,
+      "rows": 0,
+      "series_id": "STLFSI4",
+      "source": "fred",
+      "stale_data": false,
+      "status": "missing",
+      "symbol": "FINANCIAL_STRESS"
     },
     "FINNHUB_API": {
       "fallback_used": false,
@@ -206,7 +232,7 @@
       "real_data": false,
       "rows": 0,
       "series_id": "BAMLH0A0HYM2",
-      "source": "missing",
+      "source": "fred",
       "stale_data": false,
       "status": "missing",
       "symbol": "HY_OAS"
@@ -219,7 +245,7 @@
       "real_data": false,
       "rows": 0,
       "series_id": "BAMLC0A0CM",
-      "source": "missing",
+      "source": "fred",
       "stale_data": false,
       "status": "missing",
       "symbol": "IG_OAS"
@@ -259,6 +285,19 @@
       "stale_data": false,
       "status": "available",
       "symbol": "QQQ"
+    },
+    "RECESSION": {
+      "fallback_used": false,
+      "latest_date": null,
+      "missing_data": true,
+      "point_in_time_safe": false,
+      "real_data": false,
+      "rows": 0,
+      "series_id": "USREC",
+      "source": "fred",
+      "stale_data": false,
+      "status": "missing",
+      "symbol": "RECESSION"
     },
     "RSP": {
       "fallback_used": false,
@@ -798,6 +837,7 @@
   },
   "summary": {
     "breadth_provider_status": "proxy",
+    "breadth_proxy_only": true,
     "breadth_required": true,
     "data_completeness_score": 80,
     "data_source_status": "real_core_with_proxies",
@@ -807,17 +847,37 @@
     "finnhub_rate_limited": false,
     "flow_provider_status": "proxy",
     "flow_required": true,
+    "fred_available": false,
+    "fred_failed_series": [
+      "BAA_SPREAD",
+      "DGS3MO",
+      "DGS10",
+      "HY_OAS",
+      "DGS2",
+      "IG_OAS",
+      "RECESSION",
+      "FINANCIAL_STRESS",
+      "DFII10"
+    ],
+    "fred_fallback_used": true,
+    "fred_missing": true,
     "fred_provider_status": "missing",
+    "fred_rate_limited": false,
     "fred_required": true,
+    "fred_successful_series": [],
+    "gamma_exposure_available": false,
     "latest_date": "2026-06-12",
     "missing_data": true,
     "missing_key_sources": [
+      "BAA_SPREAD",
       "DFII10",
       "DGS10",
       "DGS2",
       "DGS3MO",
+      "FINANCIAL_STRESS",
       "HY_OAS",
       "IG_OAS",
+      "RECESSION",
       "FINNHUB_API",
       "finnhub_quote_SPY",
       "finnhub_candle_SPY",
@@ -840,11 +900,14 @@
     ],
     "options_provider_status": "partial",
     "options_required": true,
+    "options_structure_status": "partial",
+    "put_call_available": false,
     "quality_note": "V4 score rewards real FRED/Finnhub/market data, gives partial credit to explicitly labeled proxies, and keeps missing options/flow/breadth details visible.",
     "real_market_data": true,
     "stale_data": false,
     "synthetic_used": false,
     "target_completeness_score": 85,
+    "true_breadth_available": false,
     "unavailable_categories": [
       "news"
     ],

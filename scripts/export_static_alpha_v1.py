@@ -30,6 +30,7 @@ from scripts.market_intelligence_v4 import (
     render_high_confidence_edge_report_markdown,
 )
 from scripts.providers.finnhub_provider import fetch_finnhub_bundle
+from scripts.providers.fred_provider import fetch_fred_bundle
 
 
 SYMBOLS = ("SPY", "QQQ", "IWM", "DIA")
@@ -55,6 +56,7 @@ def main() -> int:
     downloaded = refresh_market_data(symbols=market_symbols, lookback_days=520)
     series_by_symbol = {series.symbol: series for series in downloaded}
     finnhub_bundle = fetch_finnhub_bundle(symbols=SYMBOLS, lookback_days=520)
+    fred_bundle = fetch_fred_bundle(lookback_days=1800)
     price_history = _load_price_history(series_by_symbol)
 
     market_overview = _build_market_overview(alpha_status, analogs, price_history)
@@ -72,6 +74,7 @@ def main() -> int:
         analogs=analogs,
         prior_intelligence=intelligence_v2,
         finnhub_bundle=finnhub_bundle,
+        fred_bundle=fred_bundle,
     )
     intelligence_v4 = build_market_intelligence_v4(
         series_by_symbol=series_by_symbol,
@@ -80,6 +83,7 @@ def main() -> int:
         analogs=analogs,
         prior_intelligence=intelligence_v3,
         finnhub_bundle=finnhub_bundle,
+        fred_bundle=fred_bundle,
     )
     dashboard = {
         "generated_by": "scripts/export_static_alpha_v1.py",

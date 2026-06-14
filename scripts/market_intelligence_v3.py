@@ -12,6 +12,7 @@ from typing import Any
 
 from app.services.data_providers.auto_download import DownloadedSeries, is_real_market_data
 from scripts.market_intelligence_v2 import build_period_specific_analog_support
+from scripts.providers.fred_provider import DEFAULT_FRED_SERIES, fetch_fred_bundle
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -38,14 +39,7 @@ V3_MARKET_SYMBOLS = (
     "XLU",
     "XLRE",
 )
-FRED_SERIES = {
-    "HY_OAS": "BAMLH0A0HYM2",
-    "IG_OAS": "BAMLC0A0CM",
-    "DGS10": "DGS10",
-    "DGS2": "DGS2",
-    "DGS3MO": "DGS3MO",
-    "DFII10": "DFII10",
-}
+FRED_SERIES = DEFAULT_FRED_SERIES
 
 
 @dataclass(frozen=True)
@@ -65,9 +59,11 @@ def build_market_intelligence_v3(
     analogs: dict[str, dict[str, Any]],
     prior_intelligence: dict[str, Any],
     finnhub_bundle: dict[str, Any] | None = None,
+    fred_bundle: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     finnhub_bundle = finnhub_bundle or _empty_finnhub_bundle()
-    fred_series = load_fred_series_bundle()
+    fred_bundle = fred_bundle or fetch_fred_bundle()
+    fred_series = load_fred_series_bundle(fred_bundle=fred_bundle)
     feature_snapshot = build_feature_snapshot_v3(series_by_symbol, fred_series, finnhub_bundle)
     data_quality = build_data_quality_report_v3(series_by_symbol, fred_series, feature_snapshot, overview.get("as_of"), finnhub_bundle)
     model_confidence_by_symbol: dict[str, Any] = {}
@@ -188,6 +184,7 @@ def build_market_intelligence_v3(
         "edge_status_by_symbol": edge_status_by_symbol,
         "high_confidence_signal_report": high_confidence_report,
         "finnhub_status": _finnhub_status_summary(finnhub_bundle),
+        "fred_status": _fred_bundle_summary(fred_bundle),
         "warnings": [
             "Alpha v1 threshold remains frozen at 0.32534311.",
             "Proxy breadth, proxy flow and calendar fallbacks are labeled as proxy/fallback, not true constituent or fund-flow feeds.",
@@ -197,8 +194,22 @@ def build_market_intelligence_v3(
     }
 
 
-def load_fred_series_bundle(lookback_days: int = 1800) -> dict[str, FredSeries]:
-    return {name: load_fred_series(name, series_id, lookback_days) for name, series_id in FRED_SERIES.items()}
+def load_fred_series_bundle(lookback_days: int = 1800, fred_bundle: dict[str, Any] | None = None) -> dict[str, FredSeries]:
+    if fred_bundle is None:
+        fred_bundle = fetch_fred_bundle(lookback_days=lookback_days)
+    series_payloads = fred_bundle.get("series") or {}
+    converted: dict[str, FredSeries] = {}
+    for name, series_id in FRED_SERIES.items():
+        payload = series_payloads.get(name) or {}
+        rows = list(payload.get("rows") or [])[-lookback_days:]
+        converted[name] = FredSeries(
+            name=name,
+            series_id=str(payload.get("series_id") or series_id),
+            rows=rows,
+            source=str(payload.get("source") or "missing"),
+            real_data=bool(payload.get("real_data")) and bool(rows),
+        )
+    return converted
 
 
 def load_fred_series(name: str, series_id: str, lookback_days: int) -> FredSeries:
@@ -1180,6 +1191,18 @@ def _finnhub_status_summary(bundle: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def _fred_bundle_summary(bundle: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "fred_available": bool(bundle.get("available")),
+        "fred_missing": bool(bundle.get("missing")),
+        "fred_rate_limited": bool(bundle.get("rate_limited")),
+        "fred_fallback_used": bool(bundle.get("fallback_used")),
+        "fred_cache_used": bool(bundle.get("cache_used")),
+        "fred_successful_series": list(bundle.get("successful_series") or []),
+        "fred_failed_series": list(bundle.get("failed_series") or []),
+    }
+
+
 def _finnhub_source_rows(bundle: dict[str, Any]) -> dict[str, Any]:
     rows: dict[str, Any] = {
         "FINNHUB_API": _finnhub_source_row(
@@ -1352,8 +1375,8 @@ def _coverage_categories_v3(source_rows: dict[str, Any], feature_snapshot: dict[
     sector_symbols = ("XLC", "XLY", "XLP", "XLE", "XLF", "XLV", "XLI", "XLK", "XLB", "XLU", "XLRE")
     sector_available = sum(1 for symbol in sector_symbols if source_rows.get(symbol, {}).get("real_data"))
     option_available = sum(1 for symbol in ("^VIX9D", "^VIX3M", "^VIX6M", "^VVIX", "^SKEW") if source_rows.get(symbol, {}).get("real_data"))
-    fred_credit_available = sum(1 for name in ("HY_OAS", "IG_OAS") if source_rows.get(name, {}).get("real_data"))
-    fred_rates_available = sum(1 for name in ("DGS10", "DGS2", "DGS3MO", "DFII10") if source_rows.get(name, {}).get("real_data"))
+    fred_credit_available = sum(1 for name in ("HY_OAS", "IG_OAS", "BAA_SPREAD", "FINANCIAL_STRESS") if source_rows.get(name, {}).get("real_data"))
+    fred_rates_available = sum(1 for name in ("DGS10", "DGS2", "DGS3MO", "DFII10", "RECESSION") if source_rows.get(name, {}).get("real_data"))
     target_available = sum(1 for symbol in TARGET_SYMBOLS if source_rows.get(symbol, {}).get("real_data"))
     finnhub_news_available = source_rows.get("finnhub_market_news", {}).get("status") == "available"
     finnhub_calendar_available = source_rows.get("finnhub_economic_calendar", {}).get("status") == "available"
@@ -1363,8 +1386,8 @@ def _coverage_categories_v3(source_rows: dict[str, Any], feature_snapshot: dict[
         "volatility": _coverage_payload_v3("available" if status("^VIX") == "available" else "missing", "VIX level/change/percentile", int(status("^VIX") == "available"), 1, status("^VIX") == "available"),
         "options": _coverage_payload_v3("partial" if option_available >= 2 else "missing", "VIX9D/VIX3M/VIX6M/VVIX/SKEW when Yahoo/Stooq provides them; put/call and gamma still missing", option_available, 7, option_available >= 2),
         "breadth": _coverage_payload_v3("proxy" if status("RSP") == "available" and sector_available >= 7 else "missing", "RSP/SPY and sector ETF participation proxy, not constituent breadth", sector_available + int(status("RSP") == "available"), 12, False),
-        "credit": _coverage_payload_v3("available" if fred_credit_available == 2 else "proxy" if status("HYG") == "available" and status("LQD") == "available" else "missing", "FRED HY/IG OAS plus HYG/LQD proxy", fred_credit_available + int(status("HYG") == "available") + int(status("LQD") == "available"), 4, fred_credit_available == 2),
-        "rates": _coverage_payload_v3("available" if fred_rates_available >= 3 else "partial" if status("^TNX") == "available" else "missing", "FRED 10Y/2Y/3M/TIPS plus ^TNX", fred_rates_available + int(status("^TNX") == "available"), 5, fred_rates_available >= 3),
+        "credit": _coverage_payload_v3("available" if fred_credit_available >= 3 else "proxy" if status("HYG") == "available" and status("LQD") == "available" else "missing", "FRED HY/IG/BAA/stress plus HYG/LQD proxy", fred_credit_available + int(status("HYG") == "available") + int(status("LQD") == "available"), 6, fred_credit_available >= 3),
+        "rates": _coverage_payload_v3("available" if fred_rates_available >= 4 else "partial" if status("^TNX") == "available" else "missing", "FRED 10Y/2Y/3M/TIPS/recession plus ^TNX", fred_rates_available + int(status("^TNX") == "available"), 6, fred_rates_available >= 4),
         "liquidity": _coverage_payload_v3("proxy" if status("TLT") == "available" and status("UUP") == "available" else "missing", "TLT/UUP/rates stress proxy, not reserves/repo/TGA", int(status("TLT") == "available") + int(status("UUP") == "available") + fred_rates_available, 5, False),
         "macro": _coverage_payload_v3("available" if finnhub_calendar_available else "fallback", "Finnhub economic calendar if available, otherwise rule-based CPI/FOMC/NFP/options-expiry/month-end calendar risk", 2 if finnhub_calendar_available else 1, 5, finnhub_calendar_available),
         "news": _coverage_payload_v3("available" if finnhub_news_available else "missing", "Finnhub market news risk score and daily market brief", int(finnhub_news_available), 1, finnhub_news_available),
@@ -1497,17 +1520,36 @@ def _breadth_proxy(sector_closes: dict[str, list[float]], rsp: list[float], spy:
 def _credit_snapshot(hyg: list[float], lqd: list[float], fred: dict[str, list[float]]) -> dict[str, Any]:
     hy_oas = fred.get("HY_OAS", [])
     ig_oas = fred.get("IG_OAS", [])
+    baa_spread = fred.get("BAA_SPREAD", [])
+    financial_stress = fred.get("FINANCIAL_STRESS", [])
     hyg_lqd = _relative_return(hyg, lqd, 20)
     hy_change = _change(hy_oas, 20)
     ig_change = _change(ig_oas, 20)
+    baa_change = _change(baa_spread, 20)
+    stress_change = _change(financial_stress, 20)
     hyg_drawdown = _drawdown(hyg, 60)
-    deterioration = _clip(max(hy_change, 0.0) / 2.0 + max(ig_change, 0.0) / 1.0 + max(-hyg_lqd, 0.0) * 5.0 + max(-hyg_drawdown, 0.0) * 2.0, 0.0, 1.0)
+    stress_level = _last(financial_stress)
+    deterioration = _clip(
+        max(hy_change, 0.0) / 2.0
+        + max(ig_change, 0.0) / 1.0
+        + max(baa_change, 0.0) / 2.0
+        + max(stress_change, 0.0) / 2.0
+        + max(stress_level or 0.0, 0.0) / 6.0
+        + max(-hyg_lqd, 0.0) * 5.0
+        + max(-hyg_drawdown, 0.0) * 2.0,
+        0.0,
+        1.0,
+    )
     stabilization = _clip(1.0 - deterioration + max(-hy_change, 0.0) / 2.0 + max(hyg_lqd, 0.0) * 3.0, 0.0, 1.0)
     return {
         "hy_oas": _last(hy_oas),
         "ig_oas": _last(ig_oas),
+        "baa_spread_proxy": _last(baa_spread),
+        "financial_stress_proxy": stress_level,
         "hy_oas_20d_change": hy_change,
         "ig_oas_20d_change": ig_change,
+        "baa_spread_20d_change": baa_change,
+        "financial_stress_20d_change": stress_change,
         "hyg_lqd_relative_strength_20d": hyg_lqd,
         "hyg_drawdown_60d": hyg_drawdown,
         "credit_deterioration_score": deterioration,
@@ -1520,10 +1562,23 @@ def _rates_snapshot(tlt: list[float], uup: list[float], fred: dict[str, list[flo
     dgs2 = fred.get("DGS2", [])
     dgs3mo = fred.get("DGS3MO", [])
     dfii10 = fred.get("DFII10", [])
+    recession = fred.get("RECESSION", [])
     ten_two = (_last(dgs10) - _last(dgs2)) if _last(dgs10) is not None and _last(dgs2) is not None else None
     ten_three = (_last(dgs10) - _last(dgs3mo)) if _last(dgs10) is not None and _last(dgs3mo) is not None else None
     inversion_stress = _clip(max(-(ten_two or 0.0), 0.0) / 1.2 + max(-(ten_three or 0.0), 0.0) / 1.5, 0.0, 1.0)
-    liquidity_stress = _clip(inversion_stress * 0.35 + max(_return(uup, 20), 0.0) * 4.0 + max(-_return(tlt, 20), 0.0) * 2.0, 0.0, 1.0)
+    ten_year_change = _change(dgs10, 20)
+    real_yield_change = _change(dfii10, 20)
+    recession_latest = _last(recession)
+    rates_pressure = _clip(max(ten_year_change, 0.0) / 1.0 + max(real_yield_change, 0.0) / 0.8 + inversion_stress * 0.35, 0.0, 1.0)
+    liquidity_stress = _clip(
+        inversion_stress * 0.35
+        + rates_pressure * 0.25
+        + max(_return(uup, 20), 0.0) * 4.0
+        + max(-_return(tlt, 20), 0.0) * 2.0
+        + max(recession_latest or 0.0, 0.0) * 0.25,
+        0.0,
+        1.0,
+    )
     return {
         "ten_year_yield": _last(dgs10),
         "two_year_yield": _last(dgs2),
@@ -1531,6 +1586,10 @@ def _rates_snapshot(tlt: list[float], uup: list[float], fred: dict[str, list[flo
         "ten_year_minus_two_year": ten_two,
         "ten_year_minus_three_month": ten_three,
         "real_yield_proxy": _last(dfii10),
+        "ten_year_yield_20d_change": ten_year_change,
+        "real_yield_20d_change": real_yield_change,
+        "rates_pressure_score": rates_pressure,
+        "recession_proxy": recession_latest,
         "tnx_proxy": None,
         "tlt_return_20d": _return(tlt, 20),
         "uup_return_20d": _return(uup, 20),
