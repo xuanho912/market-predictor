@@ -312,6 +312,77 @@ For Alpha v1:
 - Output `historical_support = weak_or_conflicting` when samples are weak, mixed, sparse, or risk conditions differ.
 - Never upgrade Alpha v1 to confirmed alpha because historical analogs look good.
 
+## 20. Apply Wardley Mapping Before Building
+
+Use the project Wardley strategy before adding non-trivial work. Read `docs/wardley_strategy.md` when changing product direction, adding data providers, adding dashboard modules, or restructuring deployment.
+
+Core principle:
+
+```text
+Build what creates unique market-prediction judgment.
+Buy, rent, or reuse commodity infrastructure.
+```
+
+The final user is the owner of this project. The user need is not a chat tool or an engineering demo. The page must directly answer:
+
+- Is there edge today?
+- Is the market more like bounce, downside continuation, sideways chop, or recovery?
+- Which symbol has the strongest signal?
+- What are the simulated future paths for SPY / QQQ / IWM / DIA?
+- Do historical analogs support or conflict with the current setup?
+- What is the biggest risk?
+- What invalidates the forecast?
+- What is current model confidence?
+
+Classify every new feature:
+
+- Genesis / Custom: self-build only when it improves prediction, explanation, or validation quality.
+- Product / Rental: use providers, APIs, managed services, or existing libraries.
+- Commodity / Utility: keep low priority and avoid custom engineering.
+- Do Not Build: reject work that distracts from prediction quality.
+
+Self-build focus:
+
+- Market State Engine
+- Edge / No Edge
+- Historical Analog explanations
+- Signal Agreement
+- Confidence Score
+- Simulated Path Weighting
+- Predictor Ensemble
+- Invalidation Conditions
+- Daily Market Brief judgment quality
+- High-confidence signal validation
+
+Use or rent:
+
+- Finnhub API
+- FRED API
+- Yahoo / Stooq fallback
+- CBOE / options feeds when available
+- Cloudflare Pages / GitHub Actions
+- mature chart libraries and frontend frameworks
+
+Do not waste time self-building:
+
+- generic data platforms
+- charting systems
+- login systems
+- cloud platforms
+- broker execution systems
+- deployment architecture that sacrifices prediction quality
+
+Data vendors are not the moat. Finnhub, FRED, CBOE, Yahoo, Stooq, and similar providers exist to improve `data_completeness`, `model_confidence`, `signal_agreement`, `macro_event_risk`, and `simulated_path_weighting`. If a feed is missing, stale, fallback, or rate-limited, say so explicitly. Never pretend unavailable data is available.
+
+Privacy and protection rules:
+
+- Keep core code, Alpha logic, Market Intelligence Engine, Historical Analog Engine, Signal Agreement, and simulated path weighting in the private repo.
+- Publish only sanitized dashboard outputs.
+- Keep API keys in GitHub Secrets or local environment variables only.
+- Never expose keys in code, README, logs, `.env`, `frontend/public`, or `NEXT_PUBLIC_*` provider variables.
+
+If a requested feature is a right-side commodity module, prefer an existing service or library. If it is a left-side judgment module that improves predictive quality, validation quality, or explanation quality, it is worth deeper research.
+
 ## Non-Negotiable Summary
 
-Always enforce: label-first design, walk-forward validation, regime-aware modeling, credit + liquidity + options + breadth inputs, no future leakage, no random train-test split, probability output with calibration, feature ablation, horizon-specific models, and persistent prediction logs for backtesting.
+Always enforce: label-first design, walk-forward validation, regime-aware modeling, credit + liquidity + options + breadth inputs, no future leakage, no random train-test split, probability output with calibration, feature ablation, horizon-specific models, persistent prediction logs for backtesting, and Wardley Mapping build-vs-buy discipline.
