@@ -441,34 +441,69 @@ export type ForecastPriceLevel = {
 };
 
 export type ForecastPriceHorizonRow = {
-  horizon: string;
+  horizon?: string;
   expected_price: number | null;
   expected_return: number | null;
-  primary_scenario: string;
-  primary_scenario_label: string;
+  primary_scenario?: string;
+  primary_scenario_label?: string;
   primary_scenario_price: number | null;
-  secondary_scenario: string;
-  secondary_scenario_label: string;
+  secondary_scenario?: string;
+  secondary_scenario_label?: string;
   secondary_scenario_price: number | null;
-  risk_scenario: string;
-  risk_scenario_label: string;
+  risk_scenario?: string;
+  risk_scenario_label?: string;
   risk_scenario_price: number | null;
   upper_confidence_price: number | null;
   lower_confidence_price: number | null;
   analog_average_price: number | null;
   probability_of_reaching_primary_price: number | null;
-  confidence_level: string;
+  confidence_level?: string;
+  confidence?: string;
   source: string;
   not_guaranteed_forecast: boolean;
+};
+
+export type CompactForecastPriceLevel = {
+  price: number | null;
+  meaning: string;
+  source: string;
+  source_type?: string;
+  distance_pct: number | null;
+  confidence: string;
+};
+
+export type CompactForecastTriggerLevels = {
+  primary_confirmation_level: CompactForecastPriceLevel;
+  primary_invalidation_level: CompactForecastPriceLevel;
+  risk_scenario_activation_level: CompactForecastPriceLevel;
+  trend_reversal_confirmation_level: CompactForecastPriceLevel;
+  bounce_target_zone: {
+    conservative: number | null;
+    base: number | null;
+    extended: number | null;
+  };
+  failed_bounce_warning_zone: {
+    first_warning: number | null;
+    critical_warning: number | null;
+  };
+  not_trading_advice: boolean;
 };
 
 export type ForecastPriceLevelsBySymbol = {
   symbol: string;
   name?: string;
   current_price: number | null;
+  primary_scenario?: string | null;
+  primary_probability?: number | null;
+  secondary_scenario?: string | null;
+  secondary_probability?: number | null;
+  risk_scenario?: string | null;
+  risk_probability?: number | null;
   source_note: string;
   not_trading_advice: boolean;
+  horizon_prices?: Record<string, ForecastPriceHorizonRow>;
   forecast_price_table: Record<string, ForecastPriceHorizonRow>;
+  trigger_levels?: CompactForecastTriggerLevels;
   path_trigger_levels: {
     current_price: number | null;
     primary_scenario: string;

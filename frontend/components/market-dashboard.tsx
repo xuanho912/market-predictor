@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { MouseEvent } from "react";
 import type {
+  CompactForecastPriceLevel,
   ForecastPriceLevel,
   ForecastPriceLevelsBySymbol,
   HistoricalAnalogCase,
@@ -334,6 +335,90 @@ function getCurrentPrice(symbolData: SimulatedSymbolPaths): number | null {
   return null;
 }
 
+function getPriceLevelData(selected: SimulatedSymbolPaths | undefined): ForecastPriceLevelsBySymbol | undefined {
+  return selected?.forecast_price_levels;
+}
+
+function getHorizonPriceTable(levels: ForecastPriceLevelsBySymbol | undefined) {
+  return levels?.horizon_prices ?? levels?.forecast_price_table ?? {};
+}
+
+function getTriggerLevels(levels: ForecastPriceLevelsBySymbol | undefined) {
+  return levels?.trigger_levels ?? levels?.path_trigger_levels;
+}
+
+function getLevelPrice(level: unknown): number | null {
+  return asNumber(asRecord(level).price);
+}
+
+function getLevelMeaning(level: unknown): string {
+  const row = asRecord(level);
+  return String(row.meaning ?? row.condition ?? "数据缺失");
+}
+
+function getLevelDistance(level: unknown): number | null {
+  const row = asRecord(level);
+  return asNumber(row.distance_pct ?? row.distance_percent);
+}
+
+function getPriceLevelSource(level: unknown): string {
+  const row = asRecord(level);
+  return String(row.source_type ?? row.source ?? "data_missing");
+}
+
+function getPlainPricePointSentence(selected: SimulatedSymbolPaths | undefined): string | null {
+  const levels = getPriceLevelData(selected);
+  const triggers = getTriggerLevels(levels);
+  if (!selected || !levels || !triggers) return null;
+  const primary = getPrimary(selected);
+  const confirmation = asRecord(triggers.primary_confirmation_level);
+  const invalidation = asRecord(triggers.primary_invalidation_level);
+  const risk = asRecord(triggers.risk_scenario_activation_level);
+  const trend = asRecord(triggers.trend_reversal_confirmation_level);
+  const bounceZone = asRecord(triggers.bounce_target_zone);
+  const conservative = asNumber(bounceZone.conservative ?? asRecord(bounceZone.conservative_bounce_target).price);
+  const base = asNumber(bounceZone.base ?? asRecord(bounceZone.base_bounce_target).price);
+  const extended = asNumber(bounceZone.extended ?? asRecord(bounceZone.extended_bounce_target).price);
+  const bounceText =
+    conservative !== null && extended !== null
+      ? `${formatPrice(conservative)}-${formatPrice(extended)}`
+      : base !== null
+        ? formatPrice(base)
+        : "数据缺失";
+  return `${selected.symbol} 当前最大概率路径是“${primary?.label ?? cnScenario(primary?.scenario)}”，概率 ${formatPercent(
+    primary?.probability,
+    1,
+  )}。如果价格站上 ${formatPrice(confirmation.price)}，说明主路径开始兑现；如果跌破 ${formatPrice(
+    invalidation.price,
+  )}，主路径可信度下降；20d 基准反抽目标区在 ${bounceText}；若突破 ${formatPrice(
+    trend.price,
+  )}，趋势修复概率提高；若跌破 ${formatPrice(risk.price)}，风险路径权重会上升。这些是概率路径点位，不是确定预测，也不是买卖建议。`;
+}
+
+function getTooltipHorizon(selected: SimulatedSymbolPaths, index: number): string {
+  const split = selected.paths.split_index ?? 0;
+  const delta = index - split;
+  if (delta <= 0) return "历史区间";
+  return `${delta}d`;
+}
+
+function getTriggerRelevance(selected: SimulatedSymbolPaths, value: number | null): string {
+  if (value === null) return "";
+  const triggers = getTriggerLevels(getPriceLevelData(selected));
+  if (!triggers) return "";
+  const checks: Array<[unknown, string]> = [
+    [triggers.primary_confirmation_level, "接近主路径确认价"],
+    [triggers.primary_invalidation_level, "接近主路径失效价"],
+    [triggers.risk_scenario_activation_level, "接近风险路径接管价"],
+    [triggers.trend_reversal_confirmation_level, "接近趋势修复确认价"],
+  ];
+  for (const [level, label] of checks) {
+    const price = getLevelPrice(level);
+    if (price !== null && price !== 0 && Math.abs(value / price - 1) <= 0.004) return label;
+  }
+  return "";
+}
+
 function TerminalHeader({ dashboard }: { dashboard: PredictionDashboard }) {
   return (
     <header className="flex flex-col gap-4 border-b border-white/10 pb-5 lg:flex-row lg:items-end lg:justify-between">
@@ -379,6 +464,7 @@ function ForecastSummary({ dashboard, selected }: { dashboard: PredictionDashboa
   const strongest = dashboard.overview?.strongest_symbol ?? selected?.symbol ?? "SPY";
   const edgeStatus = getEdgeStatus(selected);
   const confidence = getConfidenceScore(selected);
+  const pricePointSentence = getPlainPricePointSentence(selected);
 
   return (
     <section className="grid gap-4 lg:grid-cols-[1.5fr_0.9fr_0.9fr]">
@@ -386,6 +472,12 @@ function ForecastSummary({ dashboard, selected }: { dashboard: PredictionDashboa
         <div className="text-xs uppercase tracking-[0.22em] text-cyan-200/80">Market Forecast Summary</div>
         <h2 className="mt-2 text-2xl font-semibold text-white">今日核心判断</h2>
         <p className="mt-3 text-sm leading-6 text-slate-200">{getSummarySentence(dashboard, selected)}</p>
+        {pricePointSentence ? (
+          <div className="mt-4 rounded-lg border border-cyan-300/20 bg-black/20 p-3 text-sm leading-6 text-cyan-50">
+            <div className="mb-1 text-xs uppercase tracking-[0.18em] text-cyan-300/70">大白话价格点</div>
+            {pricePointSentence}
+          </div>
+        ) : null}
         <div className="mt-5 grid gap-3 sm:grid-cols-3">
           <Metric label="今日 Edge" value={cnEdgeStatus(edgeStatus)} badge={edgeStatus} />
           <Metric label="最强指数" value={strongest} />
@@ -609,14 +701,20 @@ function PredictionChart({ selected }: { selected: SimulatedSymbolPaths | undefi
 
   const tooltipRows = tooltip
     ? series
-        .map((key) => ({
-          key,
-          value: asNumber(selected.paths[key]?.[tooltip.index]),
-          probability: getScenarioProbability(selected, key),
-          rank: getScenarioRank(selected, key),
-        }))
+        .map((key) => {
+          const value = asNumber(selected.paths[key]?.[tooltip.index]);
+          return {
+            key,
+            value,
+            probability: getScenarioProbability(selected, key),
+            rank: getScenarioRank(selected, key),
+            expectedReturn: current !== null && value !== null ? value / current - 1 : null,
+            triggerRelevance: getTriggerRelevance(selected, value),
+          };
+        })
         .filter((row) => row.value !== null)
     : [];
+  const tooltipHorizon = tooltip ? getTooltipHorizon(selected, tooltip.index) : "";
 
   return (
     <section className="grid gap-4 xl:grid-cols-[1.6fr_0.7fr]">
@@ -756,15 +854,22 @@ function PredictionChart({ selected }: { selected: SimulatedSymbolPaths | undefi
               }}
             >
               <div className="mb-2 font-semibold text-white">{dates[tooltip.index]}</div>
+              <div className="mb-2 text-slate-400">周期：{tooltipHorizon}</div>
               <div className="space-y-1.5">
                 {tooltipRows.map((row) => (
-                  <div key={row.key} className="grid grid-cols-[0.8rem_1fr_auto] items-center gap-2">
-                    <span className="h-2 w-2 rounded-full" style={{ backgroundColor: SCENARIO_STROKES[row.key] }} />
-                    <span className="text-slate-300">
-                      {SCENARIO_NAMES[row.key]} · {row.rank}
-                      {row.key !== "historical_price" ? ` · ${formatPercent(row.probability, 1)}` : ""}
-                    </span>
-                    <span className="font-semibold text-white">{formatPrice(row.value)}</span>
+                  <div key={row.key} className="rounded-md border border-white/5 bg-white/[0.03] p-2">
+                    <div className="grid grid-cols-[0.8rem_1fr_auto] items-center gap-2">
+                      <span className="h-2 w-2 rounded-full" style={{ backgroundColor: SCENARIO_STROKES[row.key] }} />
+                      <span className="text-slate-300">
+                        {SCENARIO_NAMES[row.key]} · {row.rank}
+                        {row.key !== "historical_price" ? ` · ${formatPercent(row.probability, 1)}` : ""}
+                      </span>
+                      <span className="font-semibold text-white">{formatPrice(row.value)}</span>
+                    </div>
+                    <div className="mt-1 flex flex-wrap gap-2 pl-5 text-[11px] text-slate-400">
+                      <span>预期收益 {formatSignedPercent(row.expectedReturn, 1)}</span>
+                      {row.triggerRelevance ? <span className="text-amber-200">{row.triggerRelevance}</span> : null}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -844,8 +949,11 @@ function ForecastPriceLevelsPanel({ selected }: { selected: SimulatedSymbolPaths
       </section>
     );
   }
-  const triggers = levels.path_trigger_levels;
-  const table = levels.forecast_price_table ?? {};
+  const triggers = getTriggerLevels(levels);
+  const table = getHorizonPriceTable(levels);
+  const bounceZone = asRecord(triggers?.bounce_target_zone);
+  const failedZone = asRecord(triggers?.failed_bounce_warning_zone);
+  const validationStatus = String(asRecord(asRecord(selected.data_quality).validation_status).high_precision_status ?? "not_yet_validated");
 
   return (
     <section className="rounded-xl border border-white/10 bg-[#101819] p-5">
@@ -854,8 +962,11 @@ function ForecastPriceLevelsPanel({ selected }: { selected: SimulatedSymbolPaths
           <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Forecast Price Levels</div>
           <h2 className="mt-1 text-xl font-semibold text-white">{selected.symbol} 预测价格点位</h2>
           <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-400">
-            这些是概率路径下的价格情景点位和路径切换条件，不是目标价承诺、执行风控规则或操作指令。
+            价格点位是概率路径和历史相似情景生成的情景参考，不是确定预测，也不是买卖建议。
           </p>
+          {validationStatus === "not_yet_validated" ? (
+            <p className="mt-2 text-xs leading-5 text-amber-200">当前价格点位尚未经过足够前向样本验证。</p>
+          ) : null}
         </div>
         <div className="rounded-lg border border-white/10 bg-black/20 p-3 text-sm">
           <div className="text-xs text-slate-500">当前价</div>
@@ -900,10 +1011,10 @@ function ForecastPriceLevelsPanel({ selected }: { selected: SimulatedSymbolPaths
       </div>
 
       <div className="mt-5 grid gap-3 lg:grid-cols-4">
-        <LevelCard title="主路径确认价" level={triggers.primary_confirmation_level} tone="emerald" />
-        <LevelCard title="主路径失效价" level={triggers.primary_invalidation_level} tone="amber" />
-        <LevelCard title="风险路径接管价" level={triggers.risk_scenario_activation_level} tone="rose" />
-        <LevelCard title="趋势修复确认价" level={triggers.trend_reversal_confirmation_level} tone="cyan" />
+        <LevelCard title="主路径确认价" level={triggers?.primary_confirmation_level} tone="emerald" />
+        <LevelCard title="主路径失效价" level={triggers?.primary_invalidation_level} tone="amber" />
+        <LevelCard title="风险路径接管价" level={triggers?.risk_scenario_activation_level} tone="rose" />
+        <LevelCard title="趋势修复确认价" level={triggers?.trend_reversal_confirmation_level} tone="cyan" />
       </div>
 
       <div className="mt-4 grid gap-4 lg:grid-cols-2">
@@ -911,17 +1022,17 @@ function ForecastPriceLevelsPanel({ selected }: { selected: SimulatedSymbolPaths
           <div className="text-xs uppercase tracking-[0.18em] text-slate-500">Bounce Target Zone</div>
           <h3 className="mt-1 text-lg font-semibold text-white">反抽情景点位区</h3>
           <div className="mt-3 grid gap-3 sm:grid-cols-3">
-            <CompactLevel label="保守" level={triggers.bounce_target_zone?.conservative_bounce_target} />
-            <CompactLevel label="基准" level={triggers.bounce_target_zone?.base_bounce_target} />
-            <CompactLevel label="扩展" level={triggers.bounce_target_zone?.extended_bounce_target} />
+            <CompactLevel label="保守" level={bounceZone.conservative ?? bounceZone.conservative_bounce_target} />
+            <CompactLevel label="基准" level={bounceZone.base ?? bounceZone.base_bounce_target} />
+            <CompactLevel label="扩展" level={bounceZone.extended ?? bounceZone.extended_bounce_target} />
           </div>
         </div>
         <div className="rounded-lg border border-white/10 bg-black/20 p-4">
           <div className="text-xs uppercase tracking-[0.18em] text-slate-500">Failed Bounce Warning Zone</div>
           <h3 className="mt-1 text-lg font-semibold text-white">失败反抽警戒区</h3>
           <div className="mt-3 grid gap-3 sm:grid-cols-2">
-            <CompactLevel label="第一警戒" level={triggers.failed_bounce_warning_zone?.first_warning_level} />
-            <CompactLevel label="关键警戒" level={triggers.failed_bounce_warning_zone?.critical_warning_level} />
+            <CompactLevel label="第一警戒" level={failedZone.first_warning ?? failedZone.first_warning_level} />
+            <CompactLevel label="关键警戒" level={failedZone.critical_warning ?? failedZone.critical_warning_level} />
           </div>
         </div>
       </div>
@@ -939,7 +1050,7 @@ function LevelCard({
   tone,
 }: {
   title: string;
-  level?: ForecastPriceLevel;
+  level?: ForecastPriceLevel | CompactForecastPriceLevel;
   tone: "emerald" | "amber" | "rose" | "cyan";
 }) {
   const color =
@@ -955,23 +1066,26 @@ function LevelCard({
       <div className="text-xs text-slate-500">{title}</div>
       <div className={`mt-2 text-2xl font-semibold ${color}`}>{formatPrice(level?.price)}</div>
       <div className="mt-2 flex flex-wrap gap-2">
-        <StatusBadge status={level?.source} label={cnSource(level?.source)} />
+        <StatusBadge status={getPriceLevelSource(level)} label={cnSource(getPriceLevelSource(level))} />
         <span className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-xs text-slate-300">
-          距当前 {formatSignedPercent(level?.distance_percent)}
+          距当前 {formatSignedPercent(getLevelDistance(level))}
         </span>
       </div>
-      <p className="mt-3 text-xs leading-5 text-slate-400">{level?.condition ?? "数据缺失"}</p>
+      <p className="mt-3 text-xs leading-5 text-slate-400">{getLevelMeaning(level)}</p>
     </div>
   );
 }
 
-function CompactLevel({ label, level }: { label: string; level?: ForecastPriceLevel }) {
+function CompactLevel({ label, level }: { label: string; level?: ForecastPriceLevel | number | unknown }) {
+  const price = typeof level === "number" ? level : getLevelPrice(level);
+  const distance = typeof level === "number" ? null : getLevelDistance(level);
+  const source = typeof level === "number" ? "simulated_path" : getPriceLevelSource(level);
   return (
     <div className="rounded-lg border border-white/10 bg-white/[0.03] p-3">
       <div className="text-xs text-slate-500">{label}</div>
-      <div className="mt-1 text-lg font-semibold text-white">{formatPrice(level?.price)}</div>
-      <div className="mt-1 text-xs text-slate-400">{formatSignedPercent(level?.distance_percent)}</div>
-      <div className="mt-2 text-[11px] text-slate-500">{cnSource(level?.source)}</div>
+      <div className="mt-1 text-lg font-semibold text-white">{formatPrice(price)}</div>
+      <div className="mt-1 text-xs text-slate-400">{distance === null ? "距离见上方触发价" : formatSignedPercent(distance)}</div>
+      <div className="mt-2 text-[11px] text-slate-500">{cnSource(source)}</div>
     </div>
   );
 }

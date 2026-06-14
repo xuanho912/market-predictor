@@ -87,14 +87,28 @@ def _build_symbol_price_levels(symbol: str, rows: list[dict[str, Any]], path_pay
     structure = _price_structure(rows, current_price)
     price_table = _price_table(path_payload, current_price)
     triggers = _path_trigger_levels(path_payload, price_table, structure, current_price)
+    horizon_prices = _compact_horizon_prices(price_table)
+    trigger_levels = _compact_trigger_levels(triggers)
     summary = _summary(symbol, path_payload, triggers, current_price)
+    ranking = path_payload.get("scenario_ranking") or {}
+    primary = ranking.get("primary") or {}
+    secondary = ranking.get("secondary") or {}
+    tertiary = ranking.get("tertiary") or {}
     return {
         "symbol": symbol,
         "name": path_payload.get("name"),
         "current_price": current_price,
+        "primary_scenario": primary.get("scenario"),
+        "primary_probability": _round_return(_float_or_none(primary.get("probability"))),
+        "secondary_scenario": secondary.get("scenario"),
+        "secondary_probability": _round_return(_float_or_none(secondary.get("probability"))),
+        "risk_scenario": tertiary.get("scenario") or ranking.get("risk_scenario"),
+        "risk_probability": _round_return(_float_or_none(tertiary.get("probability"))),
         "source_note": "Derived from existing simulated paths, recent price structure and realized-volatility bands.",
         "not_trading_advice": True,
+        "horizon_prices": horizon_prices,
         "forecast_price_table": price_table,
+        "trigger_levels": trigger_levels,
         "path_trigger_levels": triggers,
         "price_structure": structure,
         "summary": summary,
@@ -289,6 +303,81 @@ def _path_trigger_levels(
         },
         "calculation_note": "Levels are derived from simulated paths, recent price structure, realized-volatility bands and scenario probabilities. They are not trading instructions.",
     }
+
+
+def _compact_horizon_prices(price_table: dict[str, Any]) -> dict[str, Any]:
+    compact: dict[str, Any] = {}
+    for horizon, row in price_table.items():
+        compact[horizon] = {
+            "expected_price": row.get("expected_price"),
+            "expected_return": row.get("expected_return"),
+            "primary_scenario_price": row.get("primary_scenario_price"),
+            "secondary_scenario_price": row.get("secondary_scenario_price"),
+            "risk_scenario_price": row.get("risk_scenario_price"),
+            "upper_confidence_price": row.get("upper_confidence_price"),
+            "lower_confidence_price": row.get("lower_confidence_price"),
+            "analog_average_price": row.get("analog_average_price"),
+            "probability_of_reaching_primary_price": row.get("probability_of_reaching_primary_price"),
+            "confidence": row.get("confidence_level"),
+            "source": row.get("source"),
+            "not_guaranteed_forecast": row.get("not_guaranteed_forecast", True),
+        }
+    return compact
+
+
+def _compact_trigger_levels(triggers: dict[str, Any]) -> dict[str, Any]:
+    bounce_zone = triggers.get("bounce_target_zone") or {}
+    failed_zone = triggers.get("failed_bounce_warning_zone") or {}
+    return {
+        "primary_confirmation_level": _compact_level(triggers.get("primary_confirmation_level")),
+        "primary_invalidation_level": _compact_level(triggers.get("primary_invalidation_level")),
+        "risk_scenario_activation_level": _compact_level(triggers.get("risk_scenario_activation_level")),
+        "trend_reversal_confirmation_level": _compact_level(triggers.get("trend_reversal_confirmation_level")),
+        "bounce_target_zone": {
+            "conservative": _compact_level_price(bounce_zone.get("conservative_bounce_target")),
+            "base": _compact_level_price(bounce_zone.get("base_bounce_target")),
+            "extended": _compact_level_price(bounce_zone.get("extended_bounce_target")),
+        },
+        "failed_bounce_warning_zone": {
+            "first_warning": _compact_level_price(failed_zone.get("first_warning_level")),
+            "critical_warning": _compact_level_price(failed_zone.get("critical_warning_level")),
+        },
+        "not_trading_advice": True,
+    }
+
+
+def _compact_level(level: Any) -> dict[str, Any]:
+    if not isinstance(level, dict):
+        return {
+            "price": None,
+            "meaning": "data_missing",
+            "source": "data_missing",
+            "distance_pct": None,
+            "confidence": "low",
+        }
+    inputs = level.get("inputs") if isinstance(level.get("inputs"), list) else []
+    source = level.get("source") or "data_missing"
+    input_text = " + ".join(str(item) for item in inputs) if inputs else source
+    return {
+        "price": level.get("price"),
+        "meaning": level.get("condition"),
+        "source": "confluence" if source == "confluence" else input_text,
+        "source_type": source,
+        "distance_pct": level.get("distance_percent"),
+        "confidence": _level_confidence(source),
+    }
+
+
+def _compact_level_price(level: Any) -> float | None:
+    return _round_price(_float_or_none(level.get("price"))) if isinstance(level, dict) else None
+
+
+def _level_confidence(source: Any) -> str:
+    if source == "confluence":
+        return "medium_high"
+    if source in {"simulated_path", "price_structure", "volatility_band"}:
+        return "medium"
+    return "low"
 
 
 def _summary(symbol: str, path_payload: dict[str, Any], triggers: dict[str, Any], current_price: float | None) -> dict[str, Any]:
