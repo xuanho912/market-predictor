@@ -61,12 +61,13 @@ def build_market_intelligence_v3(
     finnhub_bundle: dict[str, Any] | None = None,
     fred_bundle: dict[str, Any] | None = None,
     breadth_bundle: dict[str, Any] | None = None,
+    options_bundle: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     finnhub_bundle = finnhub_bundle or _empty_finnhub_bundle()
     fred_bundle = fred_bundle or fetch_fred_bundle()
     fred_series = load_fred_series_bundle(fred_bundle=fred_bundle)
-    feature_snapshot = build_feature_snapshot_v3(series_by_symbol, fred_series, finnhub_bundle, breadth_bundle=breadth_bundle)
-    data_quality = build_data_quality_report_v3(series_by_symbol, fred_series, feature_snapshot, overview.get("as_of"), finnhub_bundle, breadth_bundle=breadth_bundle)
+    feature_snapshot = build_feature_snapshot_v3(series_by_symbol, fred_series, finnhub_bundle, breadth_bundle=breadth_bundle, options_bundle=options_bundle)
+    data_quality = build_data_quality_report_v3(series_by_symbol, fred_series, feature_snapshot, overview.get("as_of"), finnhub_bundle, breadth_bundle=breadth_bundle, options_bundle=options_bundle)
     model_confidence_by_symbol: dict[str, Any] = {}
     predictor_outputs_by_symbol: dict[str, Any] = {}
     signal_agreement_by_symbol: dict[str, Any] = {}
@@ -187,9 +188,11 @@ def build_market_intelligence_v3(
         "finnhub_status": _finnhub_status_summary(finnhub_bundle),
         "fred_status": _fred_bundle_summary(fred_bundle),
         "breadth_status": _breadth_bundle_summary(breadth_bundle),
+        "options_status": _options_bundle_summary(options_bundle),
         "warnings": [
             "Alpha v1 threshold remains frozen at 0.32534311.",
             "True breadth is used when SPY/QQQ/DIA constituent data is available; IWM remains explicitly proxy-only.",
+            "Options structure is partial unless VIX term plus VVIX/SKEW are available; put/call and gamma remain missing until real feeds exist.",
             "NO_EDGE is allowed and preferred when signals conflict or data is insufficient.",
         ],
         "prior_engine": prior_intelligence.get("version", "market_intelligence_engine_v2"),
@@ -240,6 +243,7 @@ def build_feature_snapshot_v3(
     fred_series: dict[str, FredSeries],
     finnhub_bundle: dict[str, Any],
     breadth_bundle: dict[str, Any] | None = None,
+    options_bundle: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     closes = {symbol: _closes(series_by_symbol.get(symbol)) for symbol in set(TARGET_SYMBOLS + V3_MARKET_SYMBOLS + ("^VIX", "HYG", "LQD", "TLT", "UUP", "^TNX"))}
     volumes = {symbol: _volumes(series_by_symbol.get(symbol)) for symbol in closes}
@@ -272,6 +276,7 @@ def build_feature_snapshot_v3(
         credit = _credit_snapshot(hyg, lqd, fred)
         rates = _rates_snapshot(tlt, uup, fred)
         volatility = _volatility_snapshot(vix, vix9d, vix3m, vix6m, vvix, skew)
+        volatility.update(_options_from_bundle(symbol, options_bundle))
         market_structure = _market_structure_snapshot(closes, sector_closes)
         macro_calendar = _macro_event_calendar_snapshot()
         fallback_macro_risk = bool(macro_calendar.get("macro_event_risk_flag"))
@@ -317,6 +322,7 @@ def build_data_quality_report_v3(
     as_of: str | None,
     finnhub_bundle: dict[str, Any],
     breadth_bundle: dict[str, Any] | None = None,
+    options_bundle: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     market_required = set(TARGET_SYMBOLS + ("^VIX", "HYG", "LQD", "TLT", "UUP", "^TNX") + V3_MARKET_SYMBOLS)
     source_rows: dict[str, Any] = {}
@@ -334,6 +340,7 @@ def build_data_quality_report_v3(
         source_rows[name] = _fred_source_status(name, series, latest)
     source_rows.update(_finnhub_source_rows(finnhub_bundle))
     source_rows.update(_breadth_source_rows(breadth_bundle))
+    source_rows.update(_options_source_rows(options_bundle))
 
     reference_date = max(latest_dates) if latest_dates else as_of
     for row in source_rows.values():
@@ -367,6 +374,7 @@ def build_data_quality_report_v3(
     real_core = all(source_rows.get(symbol, {}).get("real_data") for symbol in TARGET_SYMBOLS + ("^VIX", "HYG", "LQD", "TLT", "UUP", "^TNX"))
     finnhub_status = _finnhub_status_summary(finnhub_bundle)
     breadth_status = _breadth_bundle_summary(breadth_bundle)
+    options_status = _options_bundle_summary(options_bundle)
     yahoo_fallback_used = any(str(row.get("source", "")).startswith(("yfinance", "yahoo-chart", "local-cache-yfinance", "local-cache-yahoo-chart")) for row in source_rows.values())
 
     return {
@@ -387,6 +395,16 @@ def build_data_quality_report_v3(
             "breadth_provider_available": breadth_status["provider_available"],
             "breadth_proxy_only_symbols": breadth_status["breadth_proxy_only_symbols"],
             "average_breadth_quality_score": breadth_status["average_breadth_quality_score"],
+            "options_available": options_status["options_available"],
+            "vix_term_available": options_status["vix_term_available"],
+            "vvix_available": options_status["vvix_available"],
+            "skew_available": options_status["skew_available"],
+            "put_call_available": options_status["put_call_available"],
+            "gamma_available": options_status["gamma_available"],
+            "options_partial": options_status["options_partial"],
+            "options_missing": options_status["options_missing"],
+            "options_stale": options_status["options_stale"],
+            "options_source": options_status["options_source"],
             "flow_required": True,
             "fallback_used": any_fallback,
             "synthetic_used": any_synthetic,
@@ -404,6 +422,7 @@ def build_data_quality_report_v3(
         "notes": [
             "Breadth and flow are ETF/sector proxies, not constituent-level feeds.",
             "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
+            "Options coverage is partial unless real VIX term plus VVIX/SKEW are available; put/call and gamma are not inferred.",
             "Put/call ratio, gamma exposure and true fund flow remain missing unless a real feed is added.",
         ],
     }
@@ -1248,6 +1267,24 @@ def _breadth_bundle_summary(bundle: dict[str, Any] | None) -> dict[str, Any]:
     }
 
 
+def _options_bundle_summary(bundle: dict[str, Any] | None) -> dict[str, Any]:
+    summary = (bundle or {}).get("summary") or {}
+    return {
+        "options_available": bool(summary.get("options_available")),
+        "vix_term_available": bool(summary.get("vix_term_available")),
+        "vvix_available": bool(summary.get("vvix_available")),
+        "skew_available": bool(summary.get("skew_available")),
+        "put_call_available": bool(summary.get("put_call_available")),
+        "gamma_available": bool(summary.get("gamma_available")),
+        "options_partial": bool(summary.get("options_partial")),
+        "options_missing": bool(summary.get("options_missing", not bool(bundle))),
+        "options_stale": bool(summary.get("options_stale")),
+        "options_source": summary.get("options_source") or "missing",
+        "options_quality_score": summary.get("options_quality_score") or 0,
+        "missing_symbols": list(summary.get("missing_symbols") or []),
+    }
+
+
 def _finnhub_source_rows(bundle: dict[str, Any]) -> dict[str, Any]:
     rows: dict[str, Any] = {
         "FINNHUB_API": _finnhub_source_row(
@@ -1318,6 +1355,42 @@ def _breadth_source_rows(bundle: dict[str, Any] | None) -> dict[str, Any]:
         "is_proxy": True,
         "detail": sector.get("data_note"),
     }
+    return rows
+
+
+def _options_source_rows(bundle: dict[str, Any] | None) -> dict[str, Any]:
+    rows: dict[str, Any] = {}
+    if not bundle:
+        return rows
+    summary = bundle.get("summary") or {}
+    rows["options_provider"] = {
+        "symbol": "options_provider",
+        "source": summary.get("options_source") or "options_volatility_structure",
+        "status": "available" if summary.get("options_available") else "partial" if summary.get("options_partial") else "missing",
+        "rows": len(bundle.get("sources") or {}),
+        "latest_date": None,
+        "real_data": bool(summary.get("options_available") or summary.get("options_partial")),
+        "fallback_used": False,
+        "stale_data": bool(summary.get("options_stale")),
+        "missing_data": bool(summary.get("options_missing")),
+        "point_in_time_safe": bool(summary.get("options_available") or summary.get("options_partial")),
+        "options_quality_score": summary.get("options_quality_score"),
+        "detail": summary.get("coverage_note"),
+    }
+    for symbol, payload in (bundle.get("sources") or {}).items():
+        rows[f"options_{symbol.replace('^', '')}"] = {
+            "symbol": symbol,
+            "source": payload.get("source") or "options_volatility_structure",
+            "status": payload.get("status") or "missing",
+            "rows": payload.get("rows") or 0,
+            "latest_date": payload.get("latest_date"),
+            "latest_value": payload.get("latest_value"),
+            "real_data": bool(payload.get("real_data")),
+            "fallback_used": bool(payload.get("fallback_used")),
+            "stale_data": bool(payload.get("stale_data")),
+            "missing_data": bool(payload.get("missing_data")),
+            "point_in_time_safe": bool(payload.get("point_in_time_safe")),
+        }
     return rows
 
 
@@ -1462,6 +1535,9 @@ def _coverage_categories_v3(source_rows: dict[str, Any], feature_snapshot: dict[
     sector_symbols = ("XLC", "XLY", "XLP", "XLE", "XLF", "XLV", "XLI", "XLK", "XLB", "XLU", "XLRE")
     sector_available = sum(1 for symbol in sector_symbols if source_rows.get(symbol, {}).get("real_data"))
     option_available = sum(1 for symbol in ("^VIX9D", "^VIX3M", "^VIX6M", "^VVIX", "^SKEW") if source_rows.get(symbol, {}).get("real_data"))
+    option_provider = source_rows.get("options_provider", {})
+    option_provider_status = option_provider.get("status")
+    option_provider_count = int(bool(option_provider.get("real_data"))) + option_available
     fred_credit_available = sum(1 for name in ("HY_OAS", "IG_OAS", "BAA_SPREAD", "FINANCIAL_STRESS") if source_rows.get(name, {}).get("real_data"))
     fred_rates_available = sum(1 for name in ("DGS10", "DGS2", "DGS3MO", "DFII10", "RECESSION") if source_rows.get(name, {}).get("real_data"))
     true_breadth_available = sum(1 for name in ("breadth_SPY", "breadth_QQQ", "breadth_DIA") if source_rows.get(name, {}).get("real_data"))
@@ -1473,7 +1549,13 @@ def _coverage_categories_v3(source_rows: dict[str, Any], feature_snapshot: dict[
     return {
         "price": _coverage_payload_v3("available" if target_available == 4 else "missing", "SPY/QQQ/IWM/DIA OHLCV", target_available, 4, True),
         "volatility": _coverage_payload_v3("available" if status("^VIX") == "available" else "missing", "VIX level/change/percentile", int(status("^VIX") == "available"), 1, status("^VIX") == "available"),
-        "options": _coverage_payload_v3("partial" if option_available >= 2 else "missing", "VIX9D/VIX3M/VIX6M/VVIX/SKEW when Yahoo/Stooq provides them; put/call and gamma still missing", option_available, 7, option_available >= 2),
+        "options": _coverage_payload_v3(
+            "available" if option_provider_status == "available" else "partial" if option_provider_status == "partial" or option_available >= 2 else "missing",
+            "VIX term/VVIX/SKEW when real data exists; put/call and gamma remain explicitly missing",
+            option_provider_count,
+            7,
+            option_provider_status in {"available", "partial"} or option_available >= 2,
+        ),
         "breadth": _coverage_payload_v3(
             "available" if true_breadth_available >= 3 else "partial" if true_breadth_available else "proxy" if (breadth_proxy_available or (status("RSP") == "available" and sector_available >= 7)) else "missing",
             "Constituent breadth for SPY/QQQ/DIA when available; IWM/RSP/sector ETF proxy remains explicitly labeled",
@@ -1590,6 +1672,53 @@ def _volatility_snapshot(vix: list[float], vix9d: list[float], vix3m: list[float
         "implied_vol_term_structure_proxy": term_front,
         "vix_term_slope_proxy": term_slope,
         "options_data_note": "VIX term proxies if available; put/call and gamma are not connected.",
+    }
+
+
+def _options_from_bundle(symbol: str, options_bundle: dict[str, Any] | None) -> dict[str, Any]:
+    if not options_bundle:
+        return {
+            "options_available": False,
+            "vix_term_available": False,
+            "put_call_available": False,
+            "gamma_available": False,
+            "options_quality_score": 0,
+            "options_provider_status": "missing",
+        }
+    summary = options_bundle.get("summary") or {}
+    market = options_bundle.get("market") or {}
+    symbol_payload = (options_bundle.get("symbols") or {}).get(symbol) or {}
+    merged = {**market, **symbol_payload}
+    return {
+        "options_available": bool(summary.get("options_available")),
+        "vix_term_available": bool(summary.get("vix_term_available")),
+        "vvix_available": bool(summary.get("vvix_available")),
+        "skew_available": bool(summary.get("skew_available")),
+        "put_call_available": bool(summary.get("put_call_available")),
+        "gamma_available": bool(summary.get("gamma_available")),
+        "options_partial": bool(summary.get("options_partial")),
+        "options_missing": bool(summary.get("options_missing")),
+        "options_stale": bool(summary.get("options_stale")),
+        "options_source": summary.get("options_source"),
+        "options_provider_status": "available" if summary.get("options_available") else "partial" if summary.get("options_partial") else "missing",
+        "options_quality_score": _score01(merged.get("options_quality_score")),
+        "vix9d_minus_vix": merged.get("vix9d_minus_vix"),
+        "vix3m_minus_vix": merged.get("vix3m_minus_vix"),
+        "vix6m_minus_vix": merged.get("vix6m_minus_vix"),
+        "term_structure_state": merged.get("term_structure_state"),
+        "volatility_reversal_score": _score01(merged.get("volatility_reversal_score")),
+        "panic_release_score": _score01(merged.get("panic_release_score")),
+        "tail_risk_score": _score01(merged.get("tail_risk_score")),
+        "option_stress_score": _score01(merged.get("option_stress_score"), 0.45),
+        "failed_bounce_options_risk": _score01(merged.get("failed_bounce_options_risk"), 0.45),
+        "options_supports_bounce": bool(merged.get("options_supports_bounce")),
+        "options_conflicts_bounce": bool(merged.get("options_conflicts_bounce")),
+        "options_reason": merged.get("options_reason"),
+        "options_risk_note": merged.get("options_risk_note"),
+        "realized_volatility_20d": merged.get("realized_volatility_20d"),
+        "implied_vs_realized_proxy": merged.get("implied_vs_realized_proxy"),
+        "put_call_status": merged.get("put_call_status") or "missing",
+        "gamma_status": merged.get("gamma_status") or "missing",
     }
 
 

@@ -34,6 +34,7 @@ from scripts.market_intelligence_v4 import (
 from scripts.providers.finnhub_provider import fetch_finnhub_bundle
 from scripts.providers.fred_provider import DEFAULT_FRED_SERIES, fetch_fred_bundle
 from scripts.providers.breadth_provider import fetch_breadth_bundle, render_breadth_status_markdown
+from scripts.providers.options_provider import fetch_options_bundle, render_options_status_markdown
 
 
 SYMBOLS = ("SPY", "QQQ", "IWM", "DIA")
@@ -63,6 +64,8 @@ def main() -> int:
     _print_fred_diagnostics(fred_bundle)
     breadth_bundle = fetch_breadth_bundle(series_by_symbol=series_by_symbol, lookback_days=420)
     _print_breadth_diagnostics(breadth_bundle)
+    options_bundle = fetch_options_bundle(series_by_symbol=series_by_symbol)
+    _print_options_diagnostics(options_bundle)
     price_history = _load_price_history(series_by_symbol)
 
     market_overview = _build_market_overview(alpha_status, analogs, price_history)
@@ -85,6 +88,7 @@ def main() -> int:
         finnhub_bundle=finnhub_bundle,
         fred_bundle=no_fred_bundle,
         breadth_bundle=breadth_bundle,
+        options_bundle=options_bundle,
     )
     baseline_v4 = build_market_intelligence_v4(
         series_by_symbol=series_by_symbol,
@@ -94,6 +98,36 @@ def main() -> int:
         prior_intelligence=baseline_v3,
         finnhub_bundle=finnhub_bundle,
         fred_bundle=no_fred_bundle,
+        options_bundle=options_bundle,
+    )
+    no_breadth_overview = copy.deepcopy(market_overview)
+    no_breadth_paths = copy.deepcopy(simulated_paths)
+    no_breadth_v2 = build_market_intelligence_v2(
+        series_by_symbol=series_by_symbol,
+        overview=no_breadth_overview,
+        simulated_paths=no_breadth_paths,
+        analogs=analogs,
+    )
+    no_breadth_v3 = build_market_intelligence_v3(
+        series_by_symbol=series_by_symbol,
+        overview=no_breadth_overview,
+        simulated_paths=no_breadth_paths,
+        analogs=analogs,
+        prior_intelligence=no_breadth_v2,
+        finnhub_bundle=finnhub_bundle,
+        fred_bundle=fred_bundle,
+        breadth_bundle=None,
+        options_bundle=options_bundle,
+    )
+    no_breadth_v4 = build_market_intelligence_v4(
+        series_by_symbol=series_by_symbol,
+        overview=no_breadth_overview,
+        simulated_paths=no_breadth_paths,
+        analogs=analogs,
+        prior_intelligence=no_breadth_v3,
+        finnhub_bundle=finnhub_bundle,
+        fred_bundle=fred_bundle,
+        options_bundle=options_bundle,
     )
     intelligence_v2 = build_market_intelligence_v2(
         series_by_symbol=series_by_symbol,
@@ -110,6 +144,7 @@ def main() -> int:
         finnhub_bundle=finnhub_bundle,
         fred_bundle=fred_bundle,
         breadth_bundle=breadth_bundle,
+        options_bundle=options_bundle,
     )
     intelligence_v4 = build_market_intelligence_v4(
         series_by_symbol=series_by_symbol,
@@ -119,10 +154,14 @@ def main() -> int:
         prior_intelligence=intelligence_v3,
         finnhub_bundle=finnhub_bundle,
         fred_bundle=fred_bundle,
+        options_bundle=options_bundle,
     )
     fred_effect_summary = _fred_effect_summary(baseline_v4, intelligence_v4, baseline_paths, simulated_paths)
+    breadth_impact_report = _breadth_impact_report(no_breadth_v4, intelligence_v4, no_breadth_paths, simulated_paths)
     intelligence_v4["fred_effect_summary"] = fred_effect_summary
+    intelligence_v4["breadth_impact_report"] = breadth_impact_report
     intelligence_v4["data_quality_report"]["summary"]["fred_effect_summary"] = fred_effect_summary
+    intelligence_v4["data_quality_report"]["summary"]["breadth_impact_summary"] = breadth_impact_report["summary"]
     dashboard = {
         "generated_by": "scripts/export_static_alpha_v1.py",
         "source": "github_actions_forward_tracker_outputs",
@@ -135,6 +174,8 @@ def main() -> int:
         "market_intelligence_v4": intelligence_v4,
         "data_quality_report": intelligence_v4["data_quality_report"],
         "breadth_status": breadth_bundle,
+        "options_status": options_bundle,
+        "breadth_impact_report": breadth_impact_report,
         "feature_snapshot_v2": intelligence_v2["feature_snapshot_v2"],
         "feature_snapshot_v3": intelligence_v3["feature_snapshot_v3"],
         "model_confidence_by_symbol": intelligence_v4["model_confidence_by_symbol"],
@@ -158,6 +199,8 @@ def main() -> int:
     })
     _write_json(public_dir / "data_quality_report.json", intelligence_v4["data_quality_report"])
     _write_json(public_dir / "breadth-status.json", breadth_bundle)
+    _write_json(public_dir / "options-status.json", options_bundle)
+    _write_json(public_dir / "breadth-impact-report.json", breadth_impact_report)
     _write_json(public_dir / "high-confidence-signal-report.json", intelligence_v3["high_confidence_signal_report"])
     _write_json(public_dir / "high-confidence-edge-report.json", intelligence_v4["high_confidence_edge_report"])
     _write_json(public_dir / "market-overview.json", market_overview)
@@ -167,11 +210,15 @@ def main() -> int:
     _write_edge_report(PROJECT_ROOT / "outputs" / "high_confidence_edge_report.md", intelligence_v4["high_confidence_edge_report"])
     _write_fred_status_report(PROJECT_ROOT / "outputs" / "fred_data_status.md", fred_bundle, fred_effect_summary, intelligence_v4)
     _write_breadth_status_report(PROJECT_ROOT / "outputs" / "breadth_data_status.md", breadth_bundle)
+    _write_options_status_report(PROJECT_ROOT / "outputs" / "options_data_status.md", options_bundle)
+    _write_breadth_impact_status_report(PROJECT_ROOT / "outputs" / "breadth_impact_report.md", breadth_impact_report)
 
     print("wrote frontend/public/alpha-v1-status.json")
     print("wrote frontend/public/alpha-v1-analogs.json")
     print("wrote frontend/public/data_quality_report.json")
     print("wrote frontend/public/breadth-status.json")
+    print("wrote frontend/public/options-status.json")
+    print("wrote frontend/public/breadth-impact-report.json")
     print("wrote frontend/public/high-confidence-signal-report.json")
     print("wrote frontend/public/high-confidence-edge-report.json")
     print("wrote frontend/public/market-overview.json")
@@ -181,6 +228,8 @@ def main() -> int:
     print("wrote outputs/high_confidence_edge_report.md")
     print("wrote outputs/fred_data_status.md")
     print("wrote outputs/breadth_data_status.md")
+    print("wrote outputs/options_data_status.md")
+    print("wrote outputs/breadth_impact_report.md")
     return 0
 
 
@@ -229,6 +278,33 @@ def _print_breadth_diagnostics(bundle: dict[str, Any]) -> None:
             f"improvement={scores.get('breadth_improvement_score') if scores.get('breadth_improvement_score') is not None else 'NA'} "
             f"conflict={scores.get('breadth_conflict_score') if scores.get('breadth_conflict_score') is not None else 'NA'} "
             f"quality={scores.get('breadth_quality_score') if scores.get('breadth_quality_score') is not None else 'NA'}"
+        )
+
+
+def _print_options_diagnostics(bundle: dict[str, Any]) -> None:
+    summary = bundle.get("summary") or {}
+    market = bundle.get("market") or {}
+    print(f"OPTIONS_AVAILABLE={str(bool(summary.get('options_available'))).lower()}")
+    print(f"OPTIONS_PARTIAL={str(bool(summary.get('options_partial'))).lower()}")
+    print(f"OPTIONS_MISSING={str(bool(summary.get('options_missing'))).lower()}")
+    print(f"VIX_TERM_AVAILABLE={str(bool(summary.get('vix_term_available'))).lower()}")
+    print(f"VVIX_AVAILABLE={str(bool(summary.get('vvix_available'))).lower()}")
+    print(f"SKEW_AVAILABLE={str(bool(summary.get('skew_available'))).lower()}")
+    print(f"PUT_CALL_AVAILABLE={str(bool(summary.get('put_call_available'))).lower()}")
+    print(f"GAMMA_AVAILABLE={str(bool(summary.get('gamma_available'))).lower()}")
+    print(f"OPTIONS_QUALITY_SCORE={summary.get('options_quality_score')}")
+    print(f"VIX_TERM_STATE={market.get('term_structure_state') or 'missing'}")
+    print(f"OPTION_STRESS_SCORE={market.get('option_stress_score') if market.get('option_stress_score') is not None else 'NA'}")
+    for symbol, payload in sorted((bundle.get("sources") or {}).items()):
+        print(
+            "OPTIONS_SOURCE "
+            f"symbol={symbol} "
+            f"status={payload.get('status') or 'missing'} "
+            f"latest_date={payload.get('latest_date') or 'NA'} "
+            f"latest_value={payload.get('latest_value') if payload.get('latest_value') is not None else 'NA'} "
+            f"source={payload.get('source') or 'NA'} "
+            f"real_data={str(bool(payload.get('real_data'))).lower()} "
+            f"stale={str(bool(payload.get('stale_data'))).lower()}"
         )
 
 
@@ -308,6 +384,145 @@ def _fred_effect_summary(
         "symbols": symbols,
         "note": "This compares the current run against the same run with FRED disabled. It does not change Alpha v1.",
     }
+
+
+def _breadth_impact_report(
+    without_true_breadth: dict[str, Any],
+    with_true_breadth: dict[str, Any],
+    paths_without_true_breadth: dict[str, Any],
+    paths_with_true_breadth: dict[str, Any],
+) -> dict[str, Any]:
+    before_quality = without_true_breadth.get("data_quality_report", {}).get("summary", {})
+    after_quality = with_true_breadth.get("data_quality_report", {}).get("summary", {})
+    high_confidence = with_true_breadth.get("high_confidence_edge_report") or {}
+    breadth_forward = high_confidence.get("breadth_forward_validation") or {}
+    symbols: dict[str, Any] = {}
+    changed = 0
+    supports = 0
+    conflicts = 0
+    for symbol in SYMBOLS:
+        before_path = paths_without_true_breadth.get("symbols", {}).get(symbol, {})
+        after_path = paths_with_true_breadth.get("symbols", {}).get(symbol, {})
+        before_edge = without_true_breadth.get("edge_status_by_symbol", {}).get(symbol, {})
+        after_edge = with_true_breadth.get("edge_status_by_symbol", {}).get(symbol, {})
+        before_predictors = without_true_breadth.get("predictor_outputs_by_symbol", {}).get(symbol, {})
+        after_predictors = with_true_breadth.get("predictor_outputs_by_symbol", {}).get(symbol, {})
+        before_rank = before_path.get("scenario_ranking", {})
+        after_rank = after_path.get("scenario_ranking", {})
+        before_confirmation = without_true_breadth.get("signal_confirmation_by_symbol", {}).get(symbol, {})
+        after_confirmation = with_true_breadth.get("signal_confirmation_by_symbol", {}).get(symbol, {})
+        before_confidence = without_true_breadth.get("model_confidence_by_symbol", {}).get(symbol, {})
+        after_confidence = with_true_breadth.get("model_confidence_by_symbol", {}).get(symbol, {})
+        features = after_path.get("feature_snapshot_v3") or {}
+        breadth = features.get("breadth") or {}
+        resonance = after_path.get("internal_resonance") or {}
+        support = _score01_local(breadth.get("breadth_confirmation_score"), _score01_local(breadth.get("breadth_improvement_score")))
+        conflict = _score01_local(breadth.get("breadth_conflict_score"), _score01_local(breadth.get("breadth_deterioration_score")))
+        primary_scenario = after_rank.get("primary_scenario") or (after_rank.get("primary") or {}).get("scenario")
+        supports_primary = support >= 0.55 and conflict < 0.55
+        conflicts_primary = conflict >= 0.55 or resonance.get("resonance_state") == "surface_only"
+        before_failed = float((before_predictors.get("downside_continuation_predictor") or {}).get("probability") or 0.0)
+        after_failed = float((after_predictors.get("downside_continuation_predictor") or {}).get("probability") or 0.0)
+        before_risk = float((before_predictors.get("risk_expansion_predictor") or {}).get("probability") or 0.0)
+        after_risk = float((after_predictors.get("risk_expansion_predictor") or {}).get("probability") or 0.0)
+        row = {
+            "symbol": symbol,
+            "baseline": "without_true_breadth_provider",
+            "edge_status_without_breadth": before_edge.get("market_edge_status"),
+            "edge_status_with_breadth": after_edge.get("market_edge_status"),
+            "edge_status_changed": before_edge.get("market_edge_status") != after_edge.get("market_edge_status"),
+            "primary_scenario_without_breadth": before_rank.get("primary_scenario"),
+            "primary_scenario_with_breadth": after_rank.get("primary_scenario"),
+            "primary_scenario_changed": before_rank.get("primary_scenario") != after_rank.get("primary_scenario"),
+            "secondary_scenario_without_breadth": before_rank.get("secondary_scenario"),
+            "secondary_scenario_with_breadth": after_rank.get("secondary_scenario"),
+            "secondary_scenario_changed": before_rank.get("secondary_scenario") != after_rank.get("secondary_scenario"),
+            "failed_bounce_risk_without_breadth": round(before_failed, 4),
+            "failed_bounce_risk_with_breadth": round(after_failed, 4),
+            "failed_bounce_risk_delta": round(after_failed - before_failed, 4),
+            "risk_expansion_without_breadth": round(before_risk, 4),
+            "risk_expansion_with_breadth": round(after_risk, 4),
+            "risk_expansion_delta": round(after_risk - before_risk, 4),
+            "signal_confirmation_without_breadth": before_confirmation.get("confirmation_score"),
+            "signal_confirmation_with_breadth": after_confirmation.get("confirmation_score"),
+            "signal_confirmation_delta": (after_confirmation.get("confirmation_score") or 0) - (before_confirmation.get("confirmation_score") or 0),
+            "model_confidence_without_breadth": before_confidence.get("confidence_score"),
+            "model_confidence_with_breadth": after_confidence.get("confidence_score"),
+            "model_confidence_delta": (after_confidence.get("confidence_score") or 0) - (before_confidence.get("confidence_score") or 0),
+            "breadth_supports_primary_scenario": supports_primary,
+            "breadth_conflicts_primary_scenario": conflicts_primary,
+            "breadth_confirmation_score": round(support * 100.0, 2),
+            "breadth_conflict_score": round(conflict * 100.0, 2),
+            "internal_resonance_score": resonance.get("resonance_score"),
+            "internal_resonance_state": resonance.get("resonance_state"),
+            "broad_participation": bool(resonance.get("broad_participation")),
+            "breadth_reason": _breadth_reason(symbol, primary_scenario, support, conflict, resonance, breadth),
+            "breadth_risk_note": _breadth_risk_note(symbol, support, conflict, resonance, after_failed),
+        }
+        if row["edge_status_changed"] or row["primary_scenario_changed"] or row["secondary_scenario_changed"] or abs(row["failed_bounce_risk_delta"]) >= 0.01:
+            changed += 1
+        supports += int(supports_primary)
+        conflicts += int(conflicts_primary)
+        symbols[symbol] = row
+    return {
+        "version": "breadth_impact_audit_v1",
+        "generated_at": datetime.utcnow().isoformat() + "Z",
+        "status": "information_quality_audit_forward_validation_pending",
+        "summary": {
+            "data_completeness_without_true_breadth": before_quality.get("data_completeness_score"),
+            "data_completeness_with_true_breadth": after_quality.get("data_completeness_score"),
+            "changed_symbol_count": changed,
+            "breadth_supports_primary_count": supports,
+            "breadth_conflicts_primary_count": conflicts,
+            "forward_validation_status": breadth_forward.get("status") or "not_enough_forward_samples",
+            "conclusion": "breadth improves information quality, not proven alpha yet.",
+        },
+        "symbols": symbols,
+        "forward_validation": {
+            "status": breadth_forward.get("status") or "not_enough_forward_samples",
+            "completed_sample_counter": breadth_forward.get("completed_sample_counter"),
+            "breadth_confirmed_bounce_signals": breadth_forward.get("breadth_confirmed_bounce_signals"),
+            "breadth_conflicted_bounce_signals": breadth_forward.get("breadth_conflicted_bounce_signals"),
+            "breadth_confirmed_reversal_signals": breadth_forward.get("breadth_confirmed_reversal_signals"),
+            "breadth_conflicted_reversal_signals": breadth_forward.get("breadth_conflicted_reversal_signals"),
+            "evidence_note": breadth_forward.get("evidence_note") or "not_enough_forward_samples",
+        },
+        "notes": [
+            "This audit compares the same run with true breadth provider disabled vs enabled.",
+            "The audit does not change Alpha v1 and does not prove tradable alpha.",
+            "Forward validation is required before treating breadth-confirmed signals as a proven edge.",
+        ],
+    }
+
+
+def _score01_local(value: Any, default: float = 0.0) -> float:
+    parsed = _float_or_none(value)
+    if parsed is None:
+        return default
+    if parsed > 1.0:
+        parsed = parsed / 100.0
+    return min(1.0, max(0.0, parsed))
+
+
+def _breadth_reason(symbol: str, primary_scenario: str | None, support: float, conflict: float, resonance: dict[str, Any], breadth: dict[str, Any]) -> str:
+    state = resonance.get("resonance_state") or "unknown"
+    above20 = _float_or_none(breadth.get("percent_above_20d"))
+    above50 = _float_or_none(breadth.get("percent_above_50d"))
+    if support >= 0.65 and conflict < 0.55:
+        return f"{symbol} breadth supports {primary_scenario}: internal resonance is {state}, support score {support:.0%}, above 20d/50d MA {above20:.0%}/{above50:.0%}." if above20 is not None and above50 is not None else f"{symbol} breadth supports {primary_scenario}: internal resonance is {state}, support score {support:.0%}."
+    if conflict >= 0.55:
+        return f"{symbol} breadth conflicts with {primary_scenario}: conflict score {conflict:.0%}, internal resonance is {state}."
+    return f"{symbol} breadth is mixed for {primary_scenario}: support score {support:.0%}, conflict score {conflict:.0%}, internal resonance is {state}."
+
+
+def _breadth_risk_note(symbol: str, support: float, conflict: float, resonance: dict[str, Any], failed_bounce: float) -> str:
+    if resonance.get("surface_strength_without_participation"):
+        return f"{symbol} index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens."
+    if conflict >= 0.55 or failed_bounce >= 0.55:
+        return f"{symbol} breadth conflict or failed-bounce risk is elevated; watch new lows, percent above 20/50d MA and sector participation."
+    if support >= 0.65:
+        return f"{symbol} breadth improves confidence in the primary path, but forward validation is still required."
+    return f"{symbol} breadth is useful context but not strong enough to validate the primary path by itself."
 
 
 def _write_fred_status_report(path: Path, bundle: dict[str, Any], effect_summary: dict[str, Any], intelligence_v4: dict[str, Any]) -> None:
@@ -399,6 +614,83 @@ def _write_fred_status_report(path: Path, bundle: dict[str, Any], effect_summary
 def _write_breadth_status_report(path: Path, bundle: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(render_breadth_status_markdown(bundle), encoding="utf-8")
+
+
+def _write_options_status_report(path: Path, bundle: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(render_options_status_markdown(bundle), encoding="utf-8")
+
+
+def _write_breadth_impact_status_report(path: Path, report: dict[str, Any]) -> None:
+    lines = [
+        "# Breadth Impact Audit",
+        "",
+        f"Generated at: `{report.get('generated_at')}`",
+        "",
+        "## Summary",
+        "",
+    ]
+    summary = report.get("summary") or {}
+    for key in (
+        "data_completeness_without_true_breadth",
+        "data_completeness_with_true_breadth",
+        "changed_symbol_count",
+        "breadth_supports_primary_count",
+        "breadth_conflicts_primary_count",
+        "forward_validation_status",
+        "conclusion",
+    ):
+        lines.append(f"- {key}: `{summary.get(key)}`")
+    lines.extend(
+        [
+            "",
+            "## Symbol Impact",
+            "",
+            "| symbol | supports primary | conflicts primary | edge before | edge after | primary before | primary after | failed bounce delta | confirmation delta | confidence delta | reason | risk note |",
+            "|---|---:|---:|---|---|---|---|---:|---:|---:|---|---|",
+        ]
+    )
+    for symbol in SYMBOLS:
+        row = (report.get("symbols") or {}).get(symbol, {})
+        lines.append(
+            "| "
+            + " | ".join(
+                [
+                    symbol,
+                    str(row.get("breadth_supports_primary_scenario")),
+                    str(row.get("breadth_conflicts_primary_scenario")),
+                    str(row.get("edge_status_without_breadth")),
+                    str(row.get("edge_status_with_breadth")),
+                    str(row.get("primary_scenario_without_breadth")),
+                    str(row.get("primary_scenario_with_breadth")),
+                    str(row.get("failed_bounce_risk_delta")),
+                    str(row.get("signal_confirmation_delta")),
+                    str(row.get("model_confidence_delta")),
+                    str(row.get("breadth_reason")),
+                    str(row.get("breadth_risk_note")),
+                ]
+            )
+            + " |"
+        )
+    forward = report.get("forward_validation") or {}
+    lines.extend(
+        [
+            "",
+            "## Forward Validation",
+            "",
+            f"- status: `{forward.get('status')}`",
+            f"- evidence_note: `{forward.get('evidence_note')}`",
+            "",
+            "## Guardrail",
+            "",
+            "- Breadth improves information quality, not proven alpha yet.",
+            "- If completed samples are insufficient, keep status as not_enough_forward_samples.",
+            "- Alpha v1 threshold remains frozen at 0.32534311.",
+            "",
+        ]
+    )
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(lines), encoding="utf-8")
 
 
 def _load_price_history(series_by_symbol: dict[str, DownloadedSeries] | None = None) -> dict[str, list[dict[str, Any]]]:

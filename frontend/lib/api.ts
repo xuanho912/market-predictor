@@ -216,6 +216,31 @@ export type BreadthStatus = {
   warnings?: string[];
 };
 
+export type OptionsStatus = {
+  provider: string;
+  version: string;
+  generated_at: string;
+  summary: {
+    options_available: boolean;
+    vix_term_available: boolean;
+    vvix_available: boolean;
+    skew_available: boolean;
+    put_call_available: boolean;
+    gamma_available: boolean;
+    options_partial: boolean;
+    options_missing: boolean;
+    options_stale: boolean;
+    options_source: string;
+    options_quality_score: number;
+    missing_symbols?: string[];
+    coverage_note?: string;
+  };
+  market: Record<string, unknown>;
+  symbols: Record<string, Record<string, unknown>>;
+  sources: Record<string, Record<string, unknown>>;
+  warnings?: string[];
+};
+
 export type MarketStateName =
   | "risk_on"
   | "risk_off"
@@ -482,6 +507,8 @@ export type PredictionDashboard = {
   status_note: string;
   data_quality_report?: DataQualityReport;
   breadth_status?: BreadthStatus;
+  options_status?: OptionsStatus;
+  breadth_impact_report?: Record<string, unknown>;
   market_intelligence_v2?: {
     version: string;
     generated_at: string;

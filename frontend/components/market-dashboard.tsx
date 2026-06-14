@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import type { BreadthStatus, DataQualityReport, HistoricalAnalogCase, PredictionDashboard, SimulatedSymbolPaths } from "../lib/api";
+import type { BreadthStatus, DataQualityReport, HistoricalAnalogCase, OptionsStatus, PredictionDashboard, SimulatedSymbolPaths } from "../lib/api";
 
 const SYMBOL_ORDER = ["SPY", "QQQ", "IWM", "DIA"];
 const HORIZON_ORDER = ["3d", "5d", "10d", "20d", "60d"];
@@ -137,6 +137,10 @@ function breadthCoverageText(value: string | undefined, isTrue?: boolean, isProx
 function scorePct(value: number | null | undefined) {
   if (value == null || Number.isNaN(value)) return "暂无";
   return `${value.toFixed(0)}/100`;
+}
+
+function num(value: unknown) {
+  return typeof value === "number" && Number.isFinite(value) ? value : null;
 }
 
 function breadthImpactText(status: BreadthStatus | undefined, data: SimulatedSymbolPaths | undefined) {
@@ -753,6 +757,54 @@ function BreadthPanel({ status, selected }: { status?: BreadthStatus; selected?:
   );
 }
 
+function OptionsPanel({ status, selected }: { status?: OptionsStatus; selected?: SimulatedSymbolPaths }) {
+  if (!status) return null;
+  const summary = status.summary;
+  const symbolOptions = selected ? status.symbols?.[selected.symbol] : undefined;
+  const market = status.market ?? {};
+  const termState = String(symbolOptions?.term_structure_state ?? market.term_structure_state ?? "missing");
+  const stress = num(symbolOptions?.option_stress_score ?? market.option_stress_score);
+  const panic = num(symbolOptions?.panic_release_score ?? market.panic_release_score);
+  const tail = num(symbolOptions?.tail_risk_score ?? market.tail_risk_score);
+  const supports = Boolean(symbolOptions?.options_supports_bounce ?? market.options_supports_bounce);
+  const conflicts = Boolean(symbolOptions?.options_conflicts_bounce ?? market.options_conflicts_bounce);
+  return (
+    <section className="mt-5 rounded-lg border border-line bg-white p-4">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <p className="text-xs uppercase text-muted">Options / Volatility Structure</p>
+          <h2 className="mt-1 text-base font-semibold">期权与波动率结构</h2>
+          <p className="mt-1 text-xs text-muted">用 VIX term、VVIX、SKEW 判断恐慌释放、尾部风险和失败反抽风险。</p>
+        </div>
+        <div className="rounded-md bg-panel px-4 py-2 text-right">
+          <p className="text-xs text-muted">Options Quality</p>
+          <p className="text-2xl font-semibold">{scorePct(summary.options_quality_score)}</p>
+          <p className="text-xs text-muted">{summary.options_available ? "available" : summary.options_partial ? "partial" : "missing"}</p>
+        </div>
+      </div>
+      <div className="mt-3 grid gap-2 text-xs sm:grid-cols-4">
+        <Metric label="VIX term" value={summary.vix_term_available ? termState : "missing"} />
+        <Metric label="Vol stress" value={pct(stress)} />
+        <Metric label="Panic release" value={pct(panic)} />
+        <Metric label="Tail risk" value={pct(tail)} />
+      </div>
+      <div className="mt-3 grid gap-2 text-xs sm:grid-cols-4">
+        <Metric label="VVIX" value={summary.vvix_available ? price(num(market.vvix)) : "missing"} />
+        <Metric label="SKEW" value={summary.skew_available ? price(num(market.skew)) : "missing"} />
+        <Metric label="Put/Call" value={summary.put_call_available ? "available" : "missing"} />
+        <Metric label="Gamma" value={summary.gamma_available ? "available" : "missing"} />
+      </div>
+      <div className="mt-3 rounded-md bg-panel p-3 text-sm">
+        <p className="font-medium text-ink">对主路径的影响</p>
+        <p className="mt-1 text-muted">
+          {supports ? "波动率结构支持反抽/修复路径。" : conflicts ? "波动率结构与干净反抽冲突，失败反抽风险上升。" : "波动率结构目前偏混合，只能作为辅助证据。"}
+        </p>
+        <p className="mt-1 text-xs text-muted">{String(symbolOptions?.options_risk_note ?? market.options_risk_note ?? "put/call 和 gamma 未接入，不能把 options 视为完整确认。")}</p>
+      </div>
+    </section>
+  );
+}
+
 function ConfidencePanel({ data }: { data: SimulatedSymbolPaths }) {
   const confidence = data.model_confidence;
   if (!confidence) return null;
@@ -1194,6 +1246,7 @@ export function MarketDashboard({ dashboard: initialDashboard }: { dashboard: Pr
       <RiskPanel data={selected} />
       <DataQualityPanel report={dashboard.data_quality_report ?? dashboard.market_intelligence_v2?.data_quality_report} />
       <BreadthPanel status={dashboard.breadth_status} selected={selected} />
+      <OptionsPanel status={dashboard.options_status} selected={selected} />
     </main>
   );
 }

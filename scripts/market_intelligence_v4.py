@@ -22,11 +22,13 @@ def build_market_intelligence_v4(
     prior_intelligence: dict[str, Any],
     finnhub_bundle: dict[str, Any] | None = None,
     fred_bundle: dict[str, Any] | None = None,
+    options_bundle: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     finnhub_bundle = finnhub_bundle or {}
     fred_bundle = fred_bundle or {}
+    options_bundle = options_bundle or {}
     prior_quality = prior_intelligence["data_quality_report"]
-    data_quality = build_data_quality_report_v4(prior_quality, finnhub_bundle, fred_bundle)
+    data_quality = build_data_quality_report_v4(prior_quality, finnhub_bundle, fred_bundle, options_bundle)
     confirmation_by_symbol: dict[str, Any] = {}
     predictors_by_symbol: dict[str, Any] = {}
     confidence_by_symbol: dict[str, Any] = {}
@@ -146,17 +148,20 @@ def build_market_intelligence_v4(
             "cache_used": bool(finnhub_bundle.get("cache_used")),
         },
         "fred_status": _fred_status_summary(fred_bundle),
+        "options_status": _options_status_summary(options_bundle),
         "warnings": [
             "Alpha v1 threshold remains frozen at 0.32534311.",
             "V4 strong edge requires multi-source confirmation; missing evidence caps confidence.",
+            "Options structure is partial unless real VIX term and tail-risk proxies are available; put/call and gamma remain missing.",
             "Breadth uses SPY/QQQ/DIA constituent data when available; IWM and flow remain explicitly proxy-based.",
         ],
         "prior_engine": prior_intelligence.get("version", "market_intelligence_engine_v3"),
     }
 
 
-def build_data_quality_report_v4(prior_quality: dict[str, Any], finnhub_bundle: dict[str, Any], fred_bundle: dict[str, Any] | None = None) -> dict[str, Any]:
+def build_data_quality_report_v4(prior_quality: dict[str, Any], finnhub_bundle: dict[str, Any], fred_bundle: dict[str, Any] | None = None, options_bundle: dict[str, Any] | None = None) -> dict[str, Any]:
     fred_bundle = fred_bundle or {}
+    options_bundle = options_bundle or {}
     report = _deepcopy(prior_quality)
     coverage = report.get("coverage_categories", {})
     sources = report.get("sources", {})
@@ -173,6 +178,7 @@ def build_data_quality_report_v4(prior_quality: dict[str, Any], finnhub_bundle: 
         if sources.get(name)
     ]
     avg_breadth_quality = round(sum(breadth_quality_values) / len(breadth_quality_values), 2) if breadth_quality_values else 0
+    options_summary = _options_status_summary(options_bundle)
     summary.update(
         {
             "data_completeness_score": score,
@@ -195,10 +201,20 @@ def build_data_quality_report_v4(prior_quality: dict[str, Any], finnhub_bundle: 
             "true_breadth_symbols": [name.replace("breadth_", "") for name in true_breadth_sources],
             "breadth_proxy_only": coverage.get("breadth", {}).get("status") == "proxy",
             "average_breadth_quality_score": avg_breadth_quality,
-            "options_provider_status": coverage.get("options", {}).get("status", "missing"),
-            "options_structure_status": coverage.get("options", {}).get("status", "missing"),
-            "put_call_available": False,
-            "gamma_exposure_available": False,
+            "options_provider_status": "available" if options_summary["options_available"] else "partial" if options_summary["options_partial"] else coverage.get("options", {}).get("status", "missing"),
+            "options_structure_status": "available" if options_summary["options_available"] else "partial" if options_summary["options_partial"] else coverage.get("options", {}).get("status", "missing"),
+            "options_available": options_summary["options_available"],
+            "vix_term_available": options_summary["vix_term_available"],
+            "vvix_available": options_summary["vvix_available"],
+            "skew_available": options_summary["skew_available"],
+            "put_call_available": options_summary["put_call_available"],
+            "gamma_available": options_summary["gamma_available"],
+            "gamma_exposure_available": options_summary["gamma_available"],
+            "options_partial": options_summary["options_partial"],
+            "options_missing": options_summary["options_missing"],
+            "options_stale": options_summary["options_stale"],
+            "options_source": options_summary["options_source"],
+            "options_quality_score": options_summary["options_quality_score"],
             "flow_provider_status": coverage.get("flow", {}).get("status", "missing"),
             "quality_note": (
                 "V4 score rewards real FRED/Finnhub/market data, gives partial credit to explicitly labeled proxies, "
@@ -247,6 +263,11 @@ def build_signal_confirmation_engine(
     vix5 = _float(vol.get("vix_change_5d"), 0.0)
     vix20 = _float(vol.get("vix_change_20d"), 0.0)
     options_stress = _options_stress_score(vol)
+    volatility_reversal = _score01(vol.get("volatility_reversal_score"), 0.35)
+    panic_release = _score01(vol.get("panic_release_score"), 0.35)
+    tail_risk = _score01(vol.get("tail_risk_score"), options_stress)
+    options_quality = _score01(vol.get("options_quality_score"), 0.0)
+    term_state = str(vol.get("term_structure_state") or "missing")
     credit_stability = _float(credit.get("credit_stabilization_score"), 0.0)
     credit_deterioration = _float(credit.get("credit_deterioration_score"), 0.0)
     breadth_improvement = _score01(breadth.get("breadth_improvement_score"))
@@ -294,12 +315,22 @@ def build_signal_confirmation_engine(
         miss("market internal resonance", "Market internals are not strongly aligned.")
     if resonance_quality < 0.45:
         conflict("internal resonance quality", 0.05, "Internal-resonance evidence is too low quality for high confidence.")
-    if options_stress <= 0.45:
-        support("options stress", 0.08, "Options/volatility proxy is not in high stress.")
-    elif options_stress >= 0.65:
-        conflict("options stress", 0.10, "Options/volatility proxy is stressed.")
+    if volatility_reversal >= 0.58 and panic_release >= 0.45 and options_stress <= 0.55:
+        support("options volatility repair", 0.10, "VIX term/volatility structure supports panic release or bounce repair.")
+    elif options_stress <= 0.45:
+        support("options stress", 0.07, "Options/volatility structure is not in high stress.")
+    elif options_stress >= 0.65 or term_state in {"stress", "backwardation"}:
+        conflict("options stress", 0.12, "Options/volatility structure is stressed or inverted.")
     else:
         miss("options stress", "Options proxy is mixed.")
+    if tail_risk >= 0.62:
+        conflict("tail risk", 0.08, "VVIX/SKEW or term-structure tail-risk proxies remain elevated.")
+    if options_quality < 0.35:
+        miss("options structure", "Options evidence is missing or too partial for high confidence.")
+    if not vol.get("put_call_available"):
+        miss("put/call ratio", "Put/call ratio is not connected; it is not inferred.")
+    if not vol.get("gamma_available"):
+        miss("gamma exposure", "Dealer gamma exposure is not connected; it is not inferred.")
     if macro_event_risk:
         conflict("macro event risk", 0.08, "Macro/event calendar risk is elevated.")
     else:
@@ -385,13 +416,62 @@ def build_predictors_v4(
     resonance_support = resonance_score if resonance_state == "aligned" else resonance_score * 0.45 if resonance_state == "mixed" else 0.0
     surface_only = 1.0 if resonance_state == "surface_only" else 0.0
     volatility_risk = _options_stress_score(vol)
+    volatility_reversal = _score01(vol.get("volatility_reversal_score"), 0.35)
+    panic_release = _score01(vol.get("panic_release_score"), 0.35)
+    tail_risk = _score01(vol.get("tail_risk_score"), volatility_risk)
+    failed_options_risk = _score01(vol.get("failed_bounce_options_risk"), volatility_risk)
+    options_quality = _score01(vol.get("options_quality_score"), 0.0)
+    term_state = str(vol.get("term_structure_state") or "missing")
     liquidity_risk = _float(rates.get("liquidity_stress_proxy"), 0.0)
     macro_risk = 1.0 if macro.get("macro_event_risk_flag") else 0.0
 
-    bounce_probability = _clip(_float(bounce_prior.get("probability"), 0.0) * 0.62 + confirmation * 0.18 + breadth_confirmation * 0.10 + resonance_support * 0.10 - surface_only * 0.05, 0.0, 0.95)
-    downside_probability = _clip(_float(downside_prior.get("probability"), 0.0) * 0.60 + (1.0 - confirmation) * 0.12 + volatility_risk * 0.12 + breadth_conflict * 0.09 + surface_only * 0.07, 0.0, 0.95)
-    reversal_probability = _clip(_float(reversal_prior.get("probability"), 0.0) * 0.60 + (1.0 if analog_support.get("medium_term_support") == "supportive" else 0.35) * 0.14 + confirmation * 0.08 + breadth_confirmation * 0.08 + resonance_support * 0.10 - surface_only * 0.04, 0.0, 0.95)
-    risk_probability = _clip(_float(risk_prior.get("probability"), 0.0) * 0.56 + credit_deterioration * 0.14 + volatility_risk * 0.10 + liquidity_risk * 0.07 + macro_risk * 0.04 + breadth_conflict * 0.05 + surface_only * 0.04, 0.0, 0.95)
+    bounce_probability = _clip(
+        _float(bounce_prior.get("probability"), 0.0) * 0.56
+        + confirmation * 0.16
+        + breadth_confirmation * 0.09
+        + resonance_support * 0.09
+        + volatility_reversal * 0.06
+        + panic_release * 0.05
+        - tail_risk * 0.04
+        - surface_only * 0.05,
+        0.0,
+        0.95,
+    )
+    downside_probability = _clip(
+        _float(downside_prior.get("probability"), 0.0) * 0.56
+        + (1.0 - confirmation) * 0.11
+        + volatility_risk * 0.08
+        + failed_options_risk * 0.07
+        + breadth_conflict * 0.09
+        + surface_only * 0.06
+        + (0.04 if term_state in {"stress", "backwardation"} else 0.0),
+        0.0,
+        0.95,
+    )
+    reversal_probability = _clip(
+        _float(reversal_prior.get("probability"), 0.0) * 0.58
+        + (1.0 if analog_support.get("medium_term_support") == "supportive" else 0.35) * 0.13
+        + confirmation * 0.08
+        + breadth_confirmation * 0.08
+        + resonance_support * 0.09
+        + volatility_reversal * 0.04
+        - surface_only * 0.04,
+        0.0,
+        0.95,
+    )
+    risk_probability = _clip(
+        _float(risk_prior.get("probability"), 0.0) * 0.52
+        + credit_deterioration * 0.14
+        + volatility_risk * 0.08
+        + tail_risk * 0.07
+        + failed_options_risk * 0.05
+        + liquidity_risk * 0.06
+        + macro_risk * 0.04
+        + breadth_conflict * 0.05
+        + surface_only * 0.04,
+        0.0,
+        0.95,
+    )
 
     return {
         "bounce_predictor": {
@@ -404,6 +484,11 @@ def build_predictors_v4(
             "conflicting_evidence": [item for item in signal_confirmation["conflicting_evidence"] if item["name"] in {"VIX direction", "credit deterioration", "breadth weak", "failed bounce risk"}],
             "breadth_confirmation": round(breadth_confirmation, 4),
             "breadth_quality": round(breadth_quality, 4),
+            "volatility_reversal_score": round(volatility_reversal, 4),
+            "panic_release_score": round(panic_release, 4),
+            "tail_risk_score": round(tail_risk, 4),
+            "options_quality": round(options_quality, 4),
+            "term_structure_state": term_state,
             "internal_resonance_score": round(resonance_score, 4),
             "internal_resonance_state": resonance_state,
         },
@@ -416,6 +501,10 @@ def build_predictors_v4(
             "invalidation_conditions": downside_prior.get("invalidation_conditions", []),
             "breadth_conflict": round(breadth_conflict, 4),
             "breadth_quality": round(breadth_quality, 4),
+            "failed_bounce_options_risk": round(failed_options_risk, 4),
+            "tail_risk_score": round(tail_risk, 4),
+            "options_quality": round(options_quality, 4),
+            "term_structure_state": term_state,
             "internal_resonance_score": round(resonance_score, 4),
             "internal_resonance_state": resonance_state,
         },
@@ -427,6 +516,9 @@ def build_predictors_v4(
             "regime_support": analog_support.get("medium_term_support", "neutral"),
             "breadth_confirmation": round(breadth_confirmation, 4),
             "breadth_quality": round(breadth_quality, 4),
+            "volatility_reversal_score": round(volatility_reversal, 4),
+            "options_quality": round(options_quality, 4),
+            "term_structure_state": term_state,
             "internal_resonance_score": round(resonance_score, 4),
             "internal_resonance_state": resonance_state,
         },
@@ -440,6 +532,10 @@ def build_predictors_v4(
             "macro_event_risk": round(macro_risk, 4),
             "breadth_risk": round(breadth_conflict, 4),
             "breadth_quality": round(breadth_quality, 4),
+            "tail_risk_score": round(tail_risk, 4),
+            "failed_bounce_options_risk": round(failed_options_risk, 4),
+            "options_quality": round(options_quality, 4),
+            "term_structure_state": term_state,
             "internal_resonance_score": round(resonance_score, 4),
             "internal_resonance_state": resonance_state,
         },
@@ -460,16 +556,19 @@ def build_confidence_v4(
     analog = 70.0 if analog_support.get("medium_term_support") == "supportive" else 45.0 if analog_support.get("medium_term_support") == "weak" else 55.0
     spread = _predictor_spread(predictors_v4)
     breadth_quality = max(float((payload or {}).get("breadth_quality") or 0.0) for payload in predictors_v4.values()) * 100.0 if predictors_v4 else 50.0
+    options_quality = max(float((payload or {}).get("options_quality") or 0.0) for payload in predictors_v4.values()) * 100.0 if predictors_v4 else 0.0
     resonance_scores = [float((payload or {}).get("internal_resonance_score") or 0.0) for payload in predictors_v4.values()]
     resonance_score = max(resonance_scores) * 100.0 if resonance_scores else 50.0
     surface_only = any((payload or {}).get("internal_resonance_state") == "surface_only" for payload in predictors_v4.values())
-    raw = prior * 0.14 + completeness * 0.26 + confirmation * 0.30 + analog * 0.08 + (1.0 - spread) * 100.0 * 0.07 + breadth_quality * 0.07 + resonance_score * 0.08
+    raw = prior * 0.13 + completeness * 0.25 + confirmation * 0.29 + analog * 0.08 + (1.0 - spread) * 100.0 * 0.06 + breadth_quality * 0.07 + resonance_score * 0.07 + options_quality * 0.05
     if completeness < 80:
         raw = min(raw, 69.0)
     if confirmation < 70:
         raw = min(raw, 68.0)
     if breadth_quality < 50:
         raw = min(raw, 64.0)
+    if options_quality < 35:
+        raw = min(raw, 72.0)
     if surface_only:
         raw = min(raw, 68.0)
     if signal_confirmation.get("confirmation_level") == "weak":
@@ -484,6 +583,8 @@ def build_confidence_v4(
         why.append("仍有关键证据缺失：" + " / ".join(item["name"] for item in signal_confirmation["missing_evidence"][:5]))
     if breadth_quality < 65:
         why.append("市场宽度数据质量或覆盖率仍限制预测可信度。")
+    if options_quality < 45:
+        why.append("Options / volatility structure evidence is partial or missing; put/call and gamma are not connected.")
     if analog_support.get("short_term_support") == "weak":
         why.append("短周期 historical analog 仍有冲突。")
     return {
@@ -498,6 +599,7 @@ def build_confidence_v4(
             "predictor_consistency": 1.0 - spread,
             "breadth_quality": breadth_quality / 100.0,
             "internal_resonance": resonance_score / 100.0,
+            "options_quality": options_quality / 100.0,
         },
         "why_confidence_is_limited": why or ["多源确认、数据完整度和预测器分歧当前相对可接受，但仍不是确定性预测。"],
     }
@@ -522,9 +624,12 @@ def build_edge_status_v4(
     risk = predictors_v4["risk_expansion_predictor"]["probability"]
     credit_risk = predictors_v4["risk_expansion_predictor"].get("credit_risk", 0.0)
     vol_risk = predictors_v4["risk_expansion_predictor"].get("volatility_risk", 0.0)
+    tail_risk = predictors_v4["risk_expansion_predictor"].get("tail_risk_score", 0.0)
+    failed_options_risk = predictors_v4["risk_expansion_predictor"].get("failed_bounce_options_risk", 0.0)
+    options_quality = max(float((payload or {}).get("options_quality") or 0.0) for payload in predictors_v4.values()) if predictors_v4 else 0.0
     internal_resonance = _internal_resonance_payload(features)
     surface_only = internal_resonance.get("resonance_state") == "surface_only"
-    strong_conflict = credit_risk >= 0.65 or vol_risk >= 0.72
+    strong_conflict = credit_risk >= 0.65 or vol_risk >= 0.72 or tail_risk >= 0.72 or failed_options_risk >= 0.72
     conditions = {
         "data_completeness_ge_80": completeness >= 80,
         "signal_confirmation_ge_70": confirmation >= 70,
@@ -534,6 +639,7 @@ def build_edge_status_v4(
         "macro_event_risk_not_high": not macro_high,
         "credit_volatility_no_strong_conflict": not strong_conflict,
         "market_internals_not_surface_only": not surface_only,
+        "options_structure_not_missing": options_quality >= 0.25,
     }
     if risk >= 0.60 or strong_conflict:
         status = "RISK_WARNING"
@@ -574,6 +680,7 @@ def build_path_weight_model_v4(
     risk = predictors_v4["risk_expansion_predictor"]["probability"]
     macro = features.get("macro_event_calendar", {})
     breadth = features.get("breadth", {})
+    vol = features.get("volatility_options", {})
     macro_risk = 1.0 if macro.get("macro_event_risk_flag") else 0.0
     breadth_confirmation = _score01(breadth.get("breadth_confirmation_score"), _score01(breadth.get("breadth_improvement_score")))
     breadth_conflict = _score01(breadth.get("breadth_conflict_score"), _score01(breadth.get("breadth_deterioration_score")))
@@ -583,13 +690,19 @@ def build_path_weight_model_v4(
     resonance_state = str(internal_resonance.get("resonance_state") or "unknown")
     resonance_support = resonance_score if resonance_state == "aligned" else resonance_score * 0.45 if resonance_state == "mixed" else 0.0
     surface_only = 1.0 if resonance_state == "surface_only" else 0.0
+    volatility_reversal = _score01(vol.get("volatility_reversal_score"), 0.35)
+    panic_release = _score01(vol.get("panic_release_score"), 0.35)
+    options_stress = _options_stress_score(vol)
+    tail_risk = _score01(vol.get("tail_risk_score"), options_stress)
+    failed_options_risk = _score01(vol.get("failed_bounce_options_risk"), options_stress)
+    options_quality = _score01(vol.get("options_quality_score"), 0.0)
     analog_score = _analog_score(analog_support)
     conflict_penalty = min(len(signal_confirmation["conflicting_evidence"]) / 8.0, 1.0)
     raw = {
-        "base_path_weight": 0.12 + (1.0 - abs(confirmation - 0.50) * 2.0) * 0.15 + (1.0 - completeness) * 0.09 + conflict_penalty * 0.09 + max(0.0, 0.55 - breadth_quality) * 0.07 + (1.0 if resonance_state in {"mixed", "weak"} else 0.0) * 0.05,
-        "bounce_path_weight": 0.08 + bounce * 0.29 + confirmation * 0.13 + analog_score * 0.10 + reversal * 0.06 + breadth_confirmation * 0.08 + resonance_support * 0.09,
-        "bearish_path_weight": 0.08 + downside * 0.24 + risk * 0.16 + (1.0 - confirmation) * 0.10 + macro_risk * 0.06 + conflict_penalty * 0.06 + breadth_conflict * 0.07 + surface_only * 0.08,
-        "analog_path_weight": 0.10 + analog_score * 0.23 + completeness * 0.08 + (0.08 if analog_support.get("analog_sample_quality") == "high" else 0.02) + resonance_score * 0.03,
+        "base_path_weight": 0.12 + (1.0 - abs(confirmation - 0.50) * 2.0) * 0.15 + (1.0 - completeness) * 0.09 + conflict_penalty * 0.09 + max(0.0, 0.55 - breadth_quality) * 0.07 + max(0.0, 0.45 - options_quality) * 0.05 + (1.0 if resonance_state in {"mixed", "weak"} else 0.0) * 0.05,
+        "bounce_path_weight": 0.08 + bounce * 0.26 + confirmation * 0.12 + analog_score * 0.09 + reversal * 0.06 + breadth_confirmation * 0.08 + resonance_support * 0.08 + volatility_reversal * 0.06 + panic_release * 0.04,
+        "bearish_path_weight": 0.08 + downside * 0.22 + risk * 0.15 + (1.0 - confirmation) * 0.10 + macro_risk * 0.06 + conflict_penalty * 0.06 + breadth_conflict * 0.07 + surface_only * 0.07 + options_stress * 0.06 + tail_risk * 0.04 + failed_options_risk * 0.05,
+        "analog_path_weight": 0.10 + analog_score * 0.22 + completeness * 0.08 + (0.08 if analog_support.get("analog_sample_quality") == "high" else 0.02) + resonance_score * 0.03 + max(0.0, 0.65 - tail_risk) * 0.02,
     }
     total = sum(max(value, 0.001) for value in raw.values())
     weights = {key: round(max(value, 0.001) / total, 4) for key, value in raw.items()}
@@ -607,9 +720,15 @@ def build_path_weight_model_v4(
                 "breadth_quality": round(breadth_quality, 4),
                 "internal_resonance": round(resonance_score, 4),
                 "internal_resonance_state": resonance_state,
+                "volatility_reversal": round(volatility_reversal, 4),
+                "panic_release": round(panic_release, 4),
+                "options_stress": round(options_stress, 4),
+                "tail_risk": round(tail_risk, 4),
+                "failed_bounce_options_risk": round(failed_options_risk, 4),
+                "options_quality": round(options_quality, 4),
             },
             "weight_source_notes": [
-                "V4 path weights come from the four independent predictors, signal confirmation, historical analog distribution, data completeness and macro event risk.",
+                "V4 path weights come from the four independent predictors, signal confirmation, historical analog distribution, data completeness, macro event risk and options/volatility structure.",
                 "If primary and secondary differ by less than 8 percentage points, close_call is true and single-path conviction should be reduced.",
             ],
         }
@@ -800,6 +919,10 @@ def render_high_confidence_edge_report_markdown(report: dict[str, Any]) -> str:
     for key in (
         "breadth_confirmed_signals",
         "breadth_conflicted_signals",
+        "breadth_confirmed_bounce_signals",
+        "breadth_conflicted_bounce_signals",
+        "breadth_confirmed_reversal_signals",
+        "breadth_conflicted_reversal_signals",
         "bounce_with_breadth_support",
         "bounce_without_breadth_support",
         "trend_reversal_with_breadth_support",
@@ -902,6 +1025,24 @@ def _fred_status_summary(bundle: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def _options_status_summary(bundle: dict[str, Any]) -> dict[str, Any]:
+    summary = (bundle or {}).get("summary") or {}
+    return {
+        "options_available": bool(summary.get("options_available")),
+        "vix_term_available": bool(summary.get("vix_term_available")),
+        "vvix_available": bool(summary.get("vvix_available")),
+        "skew_available": bool(summary.get("skew_available")),
+        "put_call_available": bool(summary.get("put_call_available")),
+        "gamma_available": bool(summary.get("gamma_available")),
+        "options_partial": bool(summary.get("options_partial")),
+        "options_missing": bool(summary.get("options_missing", not bool(bundle))),
+        "options_stale": bool(summary.get("options_stale")),
+        "options_source": summary.get("options_source") or "missing",
+        "options_quality_score": summary.get("options_quality_score") or 0,
+        "missing_symbols": list(summary.get("missing_symbols") or []),
+    }
+
+
 def _edge_summary_v4(status: str) -> str:
     if status == "STRONG_EDGE":
         return "多源确认较强，可以给出较明确的概率路径，但仍不是交易指令。"
@@ -981,6 +1122,9 @@ def _internal_resonance_payload(features: dict[str, Any]) -> dict[str, Any]:
 
 
 def _options_stress_score(vol: dict[str, Any]) -> float:
+    explicit = vol.get("option_stress_score")
+    if explicit is not None:
+        return _score01(explicit, 0.45)
     vix_pct = _float(vol.get("vix_percentile_1y"), 0.5)
     vvix = _float(vol.get("vvix_percentile_1y"), vix_pct)
     skew = _float(vol.get("skew_percentile_1y"), vix_pct)
@@ -1053,6 +1197,10 @@ def _breadth_forward_validation(rows: list[dict[str, Any]], forward_counts: dict
     downside_rows = [row for row in rows if row.get("strongest_predictor") == "downside_continuation_predictor" or row.get("primary_scenario") == "bearish_path"]
     enough_forward = forward_counts.get("max_completed_count", 0) >= 20
     status = "forward_ready" if enough_forward else "not_enough_forward_samples"
+    bounce_confirmed = [row for row in bounce_rows if _float(row.get("breadth_confirmation_score"), 0.0) >= 55.0]
+    bounce_conflicted = [row for row in bounce_rows if _float(row.get("breadth_conflict_score"), 0.0) >= 55.0]
+    reversal_confirmed = [row for row in reversal_rows if _float(row.get("breadth_confirmation_score"), 0.0) >= 55.0]
+    reversal_conflicted = [row for row in reversal_rows if _float(row.get("breadth_conflict_score"), 0.0) >= 55.0]
     return {
         "status": status,
         "completed_sample_counter": forward_counts,
@@ -1063,9 +1211,13 @@ def _breadth_forward_validation(rows: list[dict[str, Any]], forward_counts: dict
         ),
         "breadth_confirmed_signals": _edge_bucket_metrics(confirmed),
         "breadth_conflicted_signals": _edge_bucket_metrics(conflicted),
-        "bounce_with_breadth_support": _edge_bucket_metrics([row for row in bounce_rows if _float(row.get("breadth_confirmation_score"), 0.0) >= 55.0]),
+        "breadth_confirmed_bounce_signals": _edge_bucket_metrics(bounce_confirmed),
+        "breadth_conflicted_bounce_signals": _edge_bucket_metrics(bounce_conflicted),
+        "breadth_confirmed_reversal_signals": _edge_bucket_metrics(reversal_confirmed),
+        "breadth_conflicted_reversal_signals": _edge_bucket_metrics(reversal_conflicted),
+        "bounce_with_breadth_support": _edge_bucket_metrics(bounce_confirmed),
         "bounce_without_breadth_support": _edge_bucket_metrics([row for row in bounce_rows if _float(row.get("breadth_confirmation_score"), 0.0) < 55.0]),
-        "trend_reversal_with_breadth_support": _edge_bucket_metrics([row for row in reversal_rows if _float(row.get("breadth_confirmation_score"), 0.0) >= 55.0]),
+        "trend_reversal_with_breadth_support": _edge_bucket_metrics(reversal_confirmed),
         "failed_bounce_risk_with_breadth_conflict": _edge_bucket_metrics([row for row in downside_rows if _float(row.get("breadth_conflict_score"), 0.0) >= 55.0]),
         "core_question": "Does breadth confirmation improve forward hit rate / average return versus breadth conflict?",
         "forward_validation_required": not enough_forward,
