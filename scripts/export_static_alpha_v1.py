@@ -31,9 +31,16 @@ from scripts.market_intelligence_v4 import (
     build_market_intelligence_v4,
     render_high_confidence_edge_report_markdown,
 )
+from scripts.forecast_accuracy_ledger import (
+    build_forecast_accuracy_scorecard,
+    export_forecast_records_json,
+    render_forecast_accuracy_scorecard_markdown,
+    update_forecast_accuracy_ledger,
+)
 from scripts.providers.finnhub_provider import fetch_finnhub_bundle
 from scripts.providers.fred_provider import DEFAULT_FRED_SERIES, fetch_fred_bundle
 from scripts.providers.breadth_provider import fetch_breadth_bundle, render_breadth_status_markdown
+from scripts.providers.flow_provider import fetch_flow_bundle, render_flow_status_markdown
 from scripts.providers.options_provider import fetch_options_bundle, render_options_status_markdown
 
 
@@ -66,6 +73,8 @@ def main() -> int:
     _print_breadth_diagnostics(breadth_bundle)
     options_bundle = fetch_options_bundle(series_by_symbol=series_by_symbol)
     _print_options_diagnostics(options_bundle)
+    flow_bundle = fetch_flow_bundle(series_by_symbol=series_by_symbol)
+    _print_flow_diagnostics(flow_bundle)
     price_history = _load_price_history(series_by_symbol)
 
     market_overview = _build_market_overview(alpha_status, analogs, price_history)
@@ -89,6 +98,7 @@ def main() -> int:
         fred_bundle=no_fred_bundle,
         breadth_bundle=breadth_bundle,
         options_bundle=options_bundle,
+        flow_bundle=flow_bundle,
     )
     baseline_v4 = build_market_intelligence_v4(
         series_by_symbol=series_by_symbol,
@@ -118,6 +128,7 @@ def main() -> int:
         fred_bundle=fred_bundle,
         breadth_bundle=None,
         options_bundle=options_bundle,
+        flow_bundle=flow_bundle,
     )
     no_breadth_v4 = build_market_intelligence_v4(
         series_by_symbol=series_by_symbol,
@@ -145,6 +156,7 @@ def main() -> int:
         fred_bundle=fred_bundle,
         breadth_bundle=breadth_bundle,
         options_bundle=options_bundle,
+        flow_bundle=flow_bundle,
     )
     intelligence_v4 = build_market_intelligence_v4(
         series_by_symbol=series_by_symbol,
@@ -175,6 +187,7 @@ def main() -> int:
         "data_quality_report": intelligence_v4["data_quality_report"],
         "breadth_status": breadth_bundle,
         "options_status": options_bundle,
+        "flow_status": flow_bundle,
         "breadth_impact_report": breadth_impact_report,
         "feature_snapshot_v2": intelligence_v2["feature_snapshot_v2"],
         "feature_snapshot_v3": intelligence_v3["feature_snapshot_v3"],
@@ -185,6 +198,12 @@ def main() -> int:
         "forward_report": alpha_report,
         "analogs": analogs,
     }
+    ledger_summary = update_forecast_accuracy_ledger(dashboard=dashboard, price_history=price_history)
+    forecast_records = export_forecast_records_json()
+    forecast_scorecard = build_forecast_accuracy_scorecard()
+    dashboard["forecast_ledger_summary"] = ledger_summary
+    dashboard["forecast_records"] = forecast_records
+    dashboard["forecast_accuracy_scorecard"] = forecast_scorecard
 
     _write_json(public_dir / "alpha-v1-status.json", {
         "generated_by": "scripts/export_static_alpha_v1.py",
@@ -200,9 +219,12 @@ def main() -> int:
     _write_json(public_dir / "data_quality_report.json", intelligence_v4["data_quality_report"])
     _write_json(public_dir / "breadth-status.json", breadth_bundle)
     _write_json(public_dir / "options-status.json", options_bundle)
+    _write_json(public_dir / "flow-status.json", flow_bundle)
     _write_json(public_dir / "breadth-impact-report.json", breadth_impact_report)
     _write_json(public_dir / "high-confidence-signal-report.json", intelligence_v3["high_confidence_signal_report"])
     _write_json(public_dir / "high-confidence-edge-report.json", intelligence_v4["high_confidence_edge_report"])
+    _write_json(public_dir / "forecast-records.json", forecast_records)
+    _write_json(public_dir / "forecast-accuracy-scorecard.json", forecast_scorecard)
     _write_json(public_dir / "market-overview.json", market_overview)
     _write_json(public_dir / "simulated-paths.json", simulated_paths)
     _write_json(public_dir / "prediction-dashboard.json", dashboard)
@@ -211,16 +233,21 @@ def main() -> int:
     _write_fred_status_report(PROJECT_ROOT / "outputs" / "fred_data_status.md", fred_bundle, fred_effect_summary, intelligence_v4)
     _write_breadth_status_report(PROJECT_ROOT / "outputs" / "breadth_data_status.md", breadth_bundle)
     _write_options_status_report(PROJECT_ROOT / "outputs" / "options_data_status.md", options_bundle)
+    _write_flow_status_report(PROJECT_ROOT / "outputs" / "flow_data_status.md", flow_bundle)
     _write_breadth_impact_status_report(PROJECT_ROOT / "outputs" / "breadth_impact_report.md", breadth_impact_report)
+    _write_forecast_accuracy_scorecard_report(PROJECT_ROOT / "outputs" / "forecast_accuracy_scorecard.md", forecast_scorecard)
 
     print("wrote frontend/public/alpha-v1-status.json")
     print("wrote frontend/public/alpha-v1-analogs.json")
     print("wrote frontend/public/data_quality_report.json")
     print("wrote frontend/public/breadth-status.json")
     print("wrote frontend/public/options-status.json")
+    print("wrote frontend/public/flow-status.json")
     print("wrote frontend/public/breadth-impact-report.json")
     print("wrote frontend/public/high-confidence-signal-report.json")
     print("wrote frontend/public/high-confidence-edge-report.json")
+    print("wrote frontend/public/forecast-records.json")
+    print("wrote frontend/public/forecast-accuracy-scorecard.json")
     print("wrote frontend/public/market-overview.json")
     print("wrote frontend/public/simulated-paths.json")
     print("wrote frontend/public/prediction-dashboard.json")
@@ -229,7 +256,9 @@ def main() -> int:
     print("wrote outputs/fred_data_status.md")
     print("wrote outputs/breadth_data_status.md")
     print("wrote outputs/options_data_status.md")
+    print("wrote outputs/flow_data_status.md")
     print("wrote outputs/breadth_impact_report.md")
+    print("wrote outputs/forecast_accuracy_scorecard.md")
     return 0
 
 
@@ -305,6 +334,28 @@ def _print_options_diagnostics(bundle: dict[str, Any]) -> None:
             f"source={payload.get('source') or 'NA'} "
             f"real_data={str(bool(payload.get('real_data'))).lower()} "
             f"stale={str(bool(payload.get('stale_data'))).lower()}"
+        )
+
+
+def _print_flow_diagnostics(bundle: dict[str, Any]) -> None:
+    summary = bundle.get("summary") or {}
+    print(f"FLOW_AVAILABLE={str(bool(summary.get('flow_available'))).lower()}")
+    print(f"FLOW_PROXY_ONLY={str(bool(summary.get('flow_proxy_only'))).lower()}")
+    print(f"TRUE_FLOW_AVAILABLE={str(bool(summary.get('true_flow_available'))).lower()}")
+    print(f"FLOW_AVERAGE_QUALITY={summary.get('average_flow_quality_score')}")
+    print(f"FLOW_CONFIRMATION_SCORE={summary.get('overall_flow_confirmation_score')}")
+    print(f"FLOW_CONFLICT_SCORE={summary.get('overall_flow_conflict_score')}")
+    for symbol, payload in sorted((bundle.get("symbols") or {}).items()):
+        scores = payload.get("scores") or {}
+        print(
+            "FLOW_PROXY "
+            f"symbol={symbol} "
+            f"status={payload.get('status') or 'missing'} "
+            f"latest_date={payload.get('latest_date') or 'NA'} "
+            f"quality={scores.get('flow_quality_score') if scores.get('flow_quality_score') is not None else 'NA'} "
+            f"confirmation={scores.get('flow_confirmation_score') if scores.get('flow_confirmation_score') is not None else 'NA'} "
+            f"conflict={scores.get('flow_conflict_score') if scores.get('flow_conflict_score') is not None else 'NA'} "
+            f"true_flow={str(bool(payload.get('true_flow_available'))).lower()}"
         )
 
 
@@ -619,6 +670,16 @@ def _write_breadth_status_report(path: Path, bundle: dict[str, Any]) -> None:
 def _write_options_status_report(path: Path, bundle: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(render_options_status_markdown(bundle), encoding="utf-8")
+
+
+def _write_flow_status_report(path: Path, bundle: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(render_flow_status_markdown(bundle), encoding="utf-8")
+
+
+def _write_forecast_accuracy_scorecard_report(path: Path, scorecard: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(render_forecast_accuracy_scorecard_markdown(scorecard), encoding="utf-8")
 
 
 def _write_breadth_impact_status_report(path: Path, report: dict[str, Any]) -> None:

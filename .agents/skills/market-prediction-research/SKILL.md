@@ -423,6 +423,32 @@ Privacy and protection rules:
 
 If a requested feature is a right-side commodity module, prefer an existing service or library. If it is a left-side judgment module that improves predictive quality, validation quality, or explanation quality, it is worth deeper research.
 
+## 22. Maintain An Immutable Forecast Accuracy Ledger
+
+Every daily production forecast must append or preserve a record in the Forecast Accuracy Ledger. This is prediction accuracy tracking, not paper trading, PnL, or execution simulation.
+
+Hard rules:
+
+- Store `forecast_id`, `forecast_date`, `model_version`, `data_version`, symbol, current price, primary/secondary/risk scenarios, probabilities, edge status, signal confirmation, model confidence, data completeness, strongest predictor, supporting/conflicting evidence, missing data, invalidation conditions, horizon expectations, realized returns, best-matching scenarios, primary-hit flags, and status.
+- After a forecast exists, do not rewrite forecast fields because a newer model or cleaner data arrived.
+- Model upgrades must create a new `model_version`; they must not mutate historical forecast rows.
+- Outcome backfills may update only realized-return fields, best-matching-scenario fields, primary-hit fields, and completion status.
+- Score accuracy separately by `3d`, `5d`, `10d`, `20d`, and `60d`. Do not mix horizons.
+- If completed samples are below 20, output `insufficient_samples` and keep confidence capped.
+
+## 23. Treat Flow / Positioning As Proxy Until Proven
+
+Flow / positioning improves scenario confirmation only when it is explicitly sourced and labeled.
+
+Hard rules:
+
+- Use real fund-flow, CFTC, dealer-positioning, prime-brokerage, or option-flow feeds only when available and point-in-time safe.
+- If using ETF volume, relative volume, factor rotation, sector rotation, HYG/LQD, TLT/UUP, high-beta/low-vol, or equal-weight/cap-weight, label it `proxy`.
+- Proxy flow may affect `signal_confirmation_score`, failed-bounce risk, scenario weights, and model confidence only modestly.
+- Missing true flow must remain visible in `data_quality_report`.
+- Track `flow_confirmed` and `flow_conflicted` forecast buckets in forward validation.
+- Do not treat proxy flow as a standalone alpha or execution signal.
+
 ## Non-Negotiable Summary
 
 Always enforce: label-first design, walk-forward validation, regime-aware modeling, credit + liquidity + options + breadth inputs, no future leakage, no random train-test split, probability output with calibration, feature ablation, horizon-specific models, persistent prediction logs for backtesting, and Wardley Mapping build-vs-buy discipline.

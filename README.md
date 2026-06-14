@@ -136,7 +136,17 @@ frontend/public/alpha-v1-analogs.json
 frontend/public/market-overview.json
 frontend/public/simulated-paths.json
 frontend/public/prediction-dashboard.json
+frontend/public/forecast-records.json
+frontend/public/forecast-accuracy-scorecard.json
+frontend/public/flow-status.json
 ```
+
+Market Intelligence Engine v5 adds an immutable forecast accuracy ledger:
+
+- `outputs/forecast_records.csv`: append/preserve daily forecast rows. Forecast fields are write-once by `forecast_id`; future runs may only backfill realized returns, best-matching scenario, primary-hit fields, and status.
+- `frontend/public/forecast-records.json`: sanitized frontend-readable forecast ledger.
+- `outputs/forecast_accuracy_scorecard.md` and `frontend/public/forecast-accuracy-scorecard.json`: horizon-specific accuracy tracking for primary scenario hit rate, primary-vs-secondary path accuracy, edge-status buckets, high-confidence buckets, and breadth/options/flow confirmation buckets.
+- `frontend/public/flow-status.json` and `outputs/flow_data_status.md`: proxy-only flow / positioning status. This is not true fund flow unless a real feed is explicitly connected.
 
 If a live backend is added later, set `NEXT_PUBLIC_API_BASE_URL` during the frontend build. This is optional and not required for the free Pages path.
 

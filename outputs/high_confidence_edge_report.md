@@ -1,6 +1,6 @@
 # High Confidence Edge Report
 
-Generated at: `2026-06-14T11:37:06.547567+00:00`
+Generated at: `2026-06-14T12:22:18.427914+00:00`
 
 Status: `historical_proxy_and_forward_pending`
 Sample size: `80`
@@ -82,7 +82,7 @@ Conclusion: `forward_validation_insufficient_keep_confidence_capped`
 ## Scenario Checks
 
 - primary_scenario_hit_rate: `{'3d': {'sample_size': 80, 'hit_rate': 0.525}, '5d': {'sample_size': 80, 'hit_rate': 0.5875}, '10d': {'sample_size': 80, 'hit_rate': 0.4875}, '20d': {'sample_size': 80, 'hit_rate': 0.5875}, '60d': {'sample_size': 80, 'hit_rate': 0.475}}`
-- primary_vs_secondary: `{'status': 'forward_pending', 'by_horizon': {'3d': {'sample_size': 80, 'primary_hit_rate': 0.525, 'secondary_hit_rate': 0.4, 'primary_minus_secondary': 0.125, 'both_hit': 27, 'both_miss': 33}, '5d': {'sample_size': 80, 'primary_hit_rate': 0.5875, 'secondary_hit_rate': 0.4625, 'primary_minus_secondary': 0.125, 'both_hit': 32, 'both_miss': 28}, '10d': {'sample_size': 80, 'primary_hit_rate': 0.4875, 'secondary_hit_rate': 0.4375, 'primary_minus_secondary': 0.05, 'both_hit': 27, 'both_miss': 33}, '20d': {'sample_size': 80, 'primary_hit_rate': 0.5875, 'secondary_hit_rate': 0.5625, 'primary_minus_secondary': 0.025, 'both_hit': 36, 'both_miss': 24}, '60d': {'sample_size': 80, 'primary_hit_rate': 0.475, 'secondary_hit_rate': 0.575, 'primary_minus_secondary': -0.1, 'both_hit': 32, 'both_miss': 28}}, 'note': 'Forward samples are still below the minimum gate; primary-vs-secondary remains a historical analog proxy.'}`
+- primary_vs_secondary: `{'status': 'forward_pending', 'by_horizon': {'3d': {'sample_size': 80, 'primary_hit_rate': 0.525, 'secondary_hit_rate': 0.45, 'primary_minus_secondary': 0.075, 'both_hit': 19, 'both_miss': 21}, '5d': {'sample_size': 80, 'primary_hit_rate': 0.5875, 'secondary_hit_rate': 0.3625, 'primary_minus_secondary': 0.225, 'both_hit': 18, 'both_miss': 22}, '10d': {'sample_size': 80, 'primary_hit_rate': 0.4875, 'secondary_hit_rate': 0.4875, 'primary_minus_secondary': 0.0, 'both_hit': 19, 'both_miss': 21}, '20d': {'sample_size': 80, 'primary_hit_rate': 0.5875, 'secondary_hit_rate': 0.5125, 'primary_minus_secondary': 0.075, 'both_hit': 24, 'both_miss': 16}, '60d': {'sample_size': 80, 'primary_hit_rate': 0.475, 'secondary_hit_rate': 0.7, 'primary_minus_secondary': -0.225, 'both_hit': 27, 'both_miss': 13}}, 'note': 'Forward samples are still below the minimum gate; primary-vs-secondary remains a historical analog proxy.'}`
 - close_call_samples: `{'close_call_sample_size': 0, 'non_close_call_sample_size': 80, 'close_call_metrics': {'sample_size': 0, 'by_horizon': {'3d': {'sample_size': 0}, '5d': {'sample_size': 0}, '10d': {'sample_size': 0}, '20d': {'sample_size': 0}, '60d': {'sample_size': 0}}}, 'non_close_call_metrics': {'sample_size': 80, 'by_horizon': {'3d': {'sample_size': 80, 'hit_rate': 0.525, 'avg_return': 0.001175, 'median_return': 0.001558, 'mean_absolute_return': 0.013373, 'max_adverse_excursion': -0.043682, 'max_favorable_excursion': 0.049473}, '5d': {'sample_size': 80, 'hit_rate': 0.5875, 'avg_return': 0.000734, 'median_return': 0.003005, 'mean_absolute_return': 0.01561, 'max_adverse_excursion': -0.040544, 'max_favorable_excursion': 0.042123}, '10d': {'sample_size': 80, 'hit_rate': 0.4875, 'avg_return': 0.001104, 'median_return': -0.0004, 'mean_absolute_return': 0.017979, 'max_adverse_excursion': -0.059374, 'max_favorable_excursion': 0.065859}, '20d': {'sample_size': 80, 'hit_rate': 0.5875, 'avg_return': 0.002376, 'median_return': 0.009112, 'mean_absolute_return': 0.02924, 'max_adverse_excursion': -0.142028, 'max_favorable_excursion': 0.081382}, '60d': {'sample_size': 80, 'hit_rate': 0.475, 'avg_return': 0.00681, 'median_return': -0.003049, 'mean_absolute_return': 0.053208, 'max_adverse_excursion': -0.178752, 'max_favorable_excursion': 0.121826}}}, 'note': 'close_call rows are tracked separately because path probabilities differ by less than eight percentage points.'}`
 
 ## Breadth Forward Validation
@@ -215,7 +215,53 @@ Conclusion: `forward_validation_insufficient_keep_confidence_capped`
 - 20d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
 - 60d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
 
+## Flow / Positioning Proxy Forward Validation
+
+- status: `not_enough_forward_samples`
+- evidence_note: `Flow / positioning proxy attribution is tracked, but forward-only samples are still below the minimum gate.`
+
+### flow_confirmed_signals
+- sample_size: `80`
+- 3d: sample `80`, hit `0.525`, avg `0.001175`, median `0.001558`, mae `0.013373`
+- 5d: sample `80`, hit `0.5875`, avg `0.000734`, median `0.003005`, mae `0.01561`
+- 10d: sample `80`, hit `0.4875`, avg `0.001104`, median `-0.0004`, mae `0.017979`
+- 20d: sample `80`, hit `0.5875`, avg `0.002376`, median `0.009112`, mae `0.02924`
+- 60d: sample `80`, hit `0.475`, avg `0.00681`, median `-0.003049`, mae `0.053208`
+
+### flow_conflicted_signals
+- sample_size: `0`
+- 3d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 5d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 10d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 20d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 60d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+
+### bounce_with_flow_support
+- sample_size: `80`
+- 3d: sample `80`, hit `0.525`, avg `0.001175`, median `0.001558`, mae `0.013373`
+- 5d: sample `80`, hit `0.5875`, avg `0.000734`, median `0.003005`, mae `0.01561`
+- 10d: sample `80`, hit `0.4875`, avg `0.001104`, median `-0.0004`, mae `0.017979`
+- 20d: sample `80`, hit `0.5875`, avg `0.002376`, median `0.009112`, mae `0.02924`
+- 60d: sample `80`, hit `0.475`, avg `0.00681`, median `-0.003049`, mae `0.053208`
+
+### bounce_with_flow_conflict
+- sample_size: `0`
+- 3d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 5d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 10d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 20d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 60d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+
+### risk_path_with_flow_conflict
+- sample_size: `0`
+- 3d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 5d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 10d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 20d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 60d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+
 - This report is not proof of alpha; it is a proxy check until forward-only samples mature.
 - If strong/high-confirmation buckets do not beat weak/no-edge buckets, model confidence must remain capped.
 - Forward completed samples are required before STRONG_EDGE or high-confidence buckets can be treated as validated.
 - Breadth buckets remain not_enough_forward_samples until enough forward-only observations complete.
+- Flow buckets are proxy-only until true fund-flow / positioning feeds are connected and forward validation matures.

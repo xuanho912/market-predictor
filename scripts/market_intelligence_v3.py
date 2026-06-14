@@ -62,12 +62,13 @@ def build_market_intelligence_v3(
     fred_bundle: dict[str, Any] | None = None,
     breadth_bundle: dict[str, Any] | None = None,
     options_bundle: dict[str, Any] | None = None,
+    flow_bundle: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     finnhub_bundle = finnhub_bundle or _empty_finnhub_bundle()
     fred_bundle = fred_bundle or fetch_fred_bundle()
     fred_series = load_fred_series_bundle(fred_bundle=fred_bundle)
-    feature_snapshot = build_feature_snapshot_v3(series_by_symbol, fred_series, finnhub_bundle, breadth_bundle=breadth_bundle, options_bundle=options_bundle)
-    data_quality = build_data_quality_report_v3(series_by_symbol, fred_series, feature_snapshot, overview.get("as_of"), finnhub_bundle, breadth_bundle=breadth_bundle, options_bundle=options_bundle)
+    feature_snapshot = build_feature_snapshot_v3(series_by_symbol, fred_series, finnhub_bundle, breadth_bundle=breadth_bundle, options_bundle=options_bundle, flow_bundle=flow_bundle)
+    data_quality = build_data_quality_report_v3(series_by_symbol, fred_series, feature_snapshot, overview.get("as_of"), finnhub_bundle, breadth_bundle=breadth_bundle, options_bundle=options_bundle, flow_bundle=flow_bundle)
     model_confidence_by_symbol: dict[str, Any] = {}
     predictor_outputs_by_symbol: dict[str, Any] = {}
     signal_agreement_by_symbol: dict[str, Any] = {}
@@ -189,6 +190,7 @@ def build_market_intelligence_v3(
         "fred_status": _fred_bundle_summary(fred_bundle),
         "breadth_status": _breadth_bundle_summary(breadth_bundle),
         "options_status": _options_bundle_summary(options_bundle),
+        "flow_status": _flow_bundle_summary(flow_bundle),
         "warnings": [
             "Alpha v1 threshold remains frozen at 0.32534311.",
             "True breadth is used when SPY/QQQ/DIA constituent data is available; IWM remains explicitly proxy-only.",
@@ -244,6 +246,7 @@ def build_feature_snapshot_v3(
     finnhub_bundle: dict[str, Any],
     breadth_bundle: dict[str, Any] | None = None,
     options_bundle: dict[str, Any] | None = None,
+    flow_bundle: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     closes = {symbol: _closes(series_by_symbol.get(symbol)) for symbol in set(TARGET_SYMBOLS + V3_MARKET_SYMBOLS + ("^VIX", "HYG", "LQD", "TLT", "UUP", "^TNX"))}
     volumes = {symbol: _volumes(series_by_symbol.get(symbol)) for symbol in closes}
@@ -272,7 +275,7 @@ def build_feature_snapshot_v3(
         target_volume = volumes.get(symbol, [])
         finnhub_symbol = _finnhub_symbol_snapshot(finnhub_bundle, symbol)
         breadth = _breadth_from_bundle(symbol, breadth_bundle) or _breadth_proxy(sector_closes, rsp, spy)
-        flow = _flow_proxy(target_volume, target, sphb, splv, sector_closes)
+        flow = _flow_from_bundle(symbol, flow_bundle) or _flow_proxy(target_volume, target, sphb, splv, sector_closes)
         credit = _credit_snapshot(hyg, lqd, fred)
         rates = _rates_snapshot(tlt, uup, fred)
         volatility = _volatility_snapshot(vix, vix9d, vix3m, vix6m, vvix, skew)
@@ -323,6 +326,7 @@ def build_data_quality_report_v3(
     finnhub_bundle: dict[str, Any],
     breadth_bundle: dict[str, Any] | None = None,
     options_bundle: dict[str, Any] | None = None,
+    flow_bundle: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     market_required = set(TARGET_SYMBOLS + ("^VIX", "HYG", "LQD", "TLT", "UUP", "^TNX") + V3_MARKET_SYMBOLS)
     source_rows: dict[str, Any] = {}
@@ -341,6 +345,7 @@ def build_data_quality_report_v3(
     source_rows.update(_finnhub_source_rows(finnhub_bundle))
     source_rows.update(_breadth_source_rows(breadth_bundle))
     source_rows.update(_options_source_rows(options_bundle))
+    source_rows.update(_flow_source_rows(flow_bundle))
 
     reference_date = max(latest_dates) if latest_dates else as_of
     for row in source_rows.values():
@@ -375,6 +380,7 @@ def build_data_quality_report_v3(
     finnhub_status = _finnhub_status_summary(finnhub_bundle)
     breadth_status = _breadth_bundle_summary(breadth_bundle)
     options_status = _options_bundle_summary(options_bundle)
+    flow_status = _flow_bundle_summary(flow_bundle)
     yahoo_fallback_used = any(str(row.get("source", "")).startswith(("yfinance", "yahoo-chart", "local-cache-yfinance", "local-cache-yahoo-chart")) for row in source_rows.values())
 
     return {
@@ -406,6 +412,13 @@ def build_data_quality_report_v3(
             "options_stale": options_status["options_stale"],
             "options_source": options_status["options_source"],
             "flow_required": True,
+            "flow_available": flow_status["flow_available"],
+            "flow_proxy_only": flow_status["flow_proxy_only"],
+            "true_flow_available": flow_status["true_flow_available"],
+            "average_flow_quality_score": flow_status["average_flow_quality_score"],
+            "overall_flow_confirmation_score": flow_status["overall_flow_confirmation_score"],
+            "overall_flow_conflict_score": flow_status["overall_flow_conflict_score"],
+            "missing_real_flow_feeds": flow_status["missing_real_flow_feeds"],
             "fallback_used": any_fallback,
             "synthetic_used": any_synthetic,
             "stale_data": any_stale,
@@ -420,7 +433,7 @@ def build_data_quality_report_v3(
         "sources": source_rows,
         "coverage_categories": coverage,
         "notes": [
-            "Breadth and flow are ETF/sector proxies, not constituent-level feeds.",
+            "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
             "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
             "Options coverage is partial unless real VIX term plus VVIX/SKEW are available; put/call and gamma are not inferred.",
             "Put/call ratio, gamma exposure and true fund flow remain missing unless a real feed is added.",
@@ -461,7 +474,10 @@ def build_signal_agreement_score(
     trend_20d = _float_or_none(price.get("return_20d")) or 0.0
     liquidity_stress = _float_or_none(rates.get("liquidity_stress_proxy")) or 0.0
     rates_pressure = _float_or_none(rates.get("rates_pressure_score")) or liquidity_stress
-    risk_off_rotation = _float_or_none(flow.get("risk_off_rotation_score")) or 0.0
+    risk_off_rotation = _score01(flow.get("risk_off_flow_score"), _score01(flow.get("risk_off_rotation_score")))
+    flow_confirmation = _score01(flow.get("flow_confirmation_score"), 0.0)
+    flow_conflict = _score01(flow.get("flow_conflict_score"), risk_off_rotation)
+    flow_quality = _score01(flow.get("flow_quality_score"), 0.0)
     news_risk = _float_or_none(news.get("news_risk_score"))
     macro_event_risk = bool(macro.get("macro_event_risk_flag"))
     failed_bounce = float(overview_symbol.get("downside_continuation_probability") or 0.0)
@@ -475,6 +491,7 @@ def build_signal_agreement_score(
     add(trend_20d > 0, supporting, "trend momentum", 0.08, "20d momentum is positive.")
     add(liquidity_stress < 0.40, supporting, "liquidity proxy", 0.08, "Liquidity proxy is not stressed.")
     add(news_risk is not None and news_risk < 0.35, supporting, "news risk low", 0.06, "Finnhub market-news risk score is low.")
+    add(flow_confirmation > 0.58 and flow_quality >= 0.45, supporting, "flow confirmation", 0.10, "Proxy flow/positioning confirms risk appetite or participation.")
 
     add(analog_support.get("short_term_support") == "weak", conflicting, "short-term analog conflict", 0.16, "3d/5d/10d analogs are weak or negative.")
     add(analog_support.get("medium_term_support") == "weak", conflicting, "medium-term analog conflict", 0.15, "20d/60d analogs are weak or negative.")
@@ -485,7 +502,8 @@ def build_signal_agreement_score(
     add(failed_bounce > 0.55, conflicting, "failed bounce risk", 0.14, "Downside continuation probability is elevated.")
     add(liquidity_stress > 0.55, conflicting, "liquidity stress", 0.12, "Liquidity proxy is stressed.")
     add(rates_pressure > 0.55, conflicting, "rates pressure", 0.10, "Rates pressure proxy is elevated.")
-    add(risk_off_rotation > 0.55, conflicting, "risk-off rotation", 0.10, "Rotation proxy favors defensive/risk-off assets.")
+    add(flow_conflict > 0.55 or risk_off_rotation > 0.55, conflicting, "flow conflict", 0.11, "Proxy flow/positioning favors defensive/risk-off assets or weak participation.")
+    add(flow_quality < 0.35, conflicting, "flow quality weak", 0.05, "Flow proxy coverage is too weak for high confidence.")
     add(news_risk is not None and news_risk > 0.55, conflicting, "news risk", 0.10, "Finnhub news-risk score is elevated.")
     add(macro_event_risk, conflicting, "macro event risk", 0.08, "Upcoming macro event risk is flagged.")
 
@@ -538,7 +556,11 @@ def build_predictors(
     rates_pressure = _float_or_none(rates.get("rates_pressure_score")) or liquidity_stress
     trend_20d = _float_or_none(price.get("return_20d")) or 0.0
     trend_60d = _float_or_none(price.get("return_60d")) or 0.0
-    risk_off_rotation = _float_or_none(flow.get("risk_off_rotation_score")) or 0.0
+    risk_off_rotation = _score01(flow.get("risk_off_flow_score"), _score01(flow.get("risk_off_rotation_score")))
+    flow_confirmation = _score01(flow.get("flow_confirmation_score"), 0.0)
+    flow_conflict = _score01(flow.get("flow_conflict_score"), risk_off_rotation)
+    flow_quality = _score01(flow.get("flow_quality_score"), 0.0)
+    crowding_proxy = _score01(flow.get("crowding_proxy_score"), 0.0)
     vix_percentile = _float_or_none(vol.get("vix_percentile_1y")) or 0.5
     news_risk = _float_or_none(news.get("news_risk_score")) or 0.0
     macro_event_risk = 1.0 if macro.get("macro_event_risk_flag") else 0.0
@@ -551,6 +573,8 @@ def build_predictors(
         + vix_rollover * 0.08
         + credit_stability * 0.12
         + breadth_confirmation * 0.12
+        + flow_confirmation * 0.06
+        - flow_conflict * 0.04
         + (0.08 if short_support == "supportive" else -0.05 if short_support == "weak" else 0.0),
         0.0,
         0.95,
@@ -560,7 +584,8 @@ def build_predictors(
         + credit_deterioration * 0.15
         + liquidity_stress * 0.13
         + breadth_conflict * 0.10
-        + risk_off_rotation * 0.10
+        + flow_conflict * 0.10
+        + crowding_proxy * 0.04
         + max(-trend_20d, 0.0) * 2.2
         + (0.08 if short_support == "weak" else 0.0),
         0.0,
@@ -570,6 +595,7 @@ def build_predictors(
         reversal_base * 0.38
         + max(trend_60d, 0.0) * 1.3
         + breadth_confirmation * 0.15
+        + flow_confirmation * 0.06
         + credit_stability * 0.14
         + (0.12 if medium_support == "supportive" else -0.08 if medium_support == "weak" else 0.0),
         0.0,
@@ -580,7 +606,8 @@ def build_predictors(
         + credit_deterioration * 0.23
         + liquidity_stress * 0.20
         + breadth_deterioration * 0.10
-        + risk_off_rotation * 0.15
+        + flow_conflict * 0.14
+        + crowding_proxy * 0.05
         + news_risk * 0.08
         + rates_pressure * 0.10
         + macro_event_risk * 0.05
@@ -599,6 +626,7 @@ def build_predictors(
                 ("VIX rollover", vix_rollover),
                 ("credit stabilization", credit_stability),
                 ("breadth confirmation", breadth_confirmation),
+                ("flow confirmation", flow_confirmation),
                 ("short-term analog support", 1.0 if short_support == "supportive" else 0.0),
             ]),
             invalidation_conditions=["VIX turns higher again", "HYG/LQD relative strength weakens", "price breaks the recent low", "short-term analog support remains weak"],
@@ -614,6 +642,7 @@ def build_predictors(
                 ("liquidity stress proxy", liquidity_stress),
                 ("rates pressure", rates_pressure),
                 ("risk-off rotation", risk_off_rotation),
+                ("flow conflict", flow_conflict),
                 ("breadth conflict", breadth_conflict),
                 ("negative 20d trend", max(-trend_20d, 0.0) * 6.0),
             ]),
@@ -628,6 +657,7 @@ def build_predictors(
                 ("medium-term analog support", 1.0 if medium_support == "supportive" else 0.0),
                 ("60d trend", max(trend_60d, 0.0) * 6.0),
                 ("breadth confirmation", breadth_confirmation),
+                ("flow confirmation", flow_confirmation),
                 ("credit stabilization", credit_stability),
             ]),
             invalidation_conditions=["20d/60d analogs turn weak", "breadth rolls over", "credit deterioration resumes", "recovery fails near moving-average resistance"],
@@ -644,6 +674,7 @@ def build_predictors(
                 ("news risk", news_risk),
                 ("macro event risk", macro_event_risk),
                 ("risk-off rotation", risk_off_rotation),
+                ("flow conflict", flow_conflict),
                 ("breadth deterioration", breadth_deterioration),
                 ("negative 60d trend", max(-trend_60d, 0.0) * 4.0),
             ]),
@@ -1285,6 +1316,20 @@ def _options_bundle_summary(bundle: dict[str, Any] | None) -> dict[str, Any]:
     }
 
 
+def _flow_bundle_summary(bundle: dict[str, Any] | None) -> dict[str, Any]:
+    summary = (bundle or {}).get("summary") or {}
+    return {
+        "flow_available": bool(summary.get("flow_available")),
+        "flow_proxy_only": bool(summary.get("flow_proxy_only", bool(bundle))),
+        "true_flow_available": bool(summary.get("true_flow_available")),
+        "average_flow_quality_score": summary.get("average_flow_quality_score") or 0,
+        "overall_flow_confirmation_score": summary.get("overall_flow_confirmation_score") or 0,
+        "overall_flow_conflict_score": summary.get("overall_flow_conflict_score") or 0,
+        "flow_symbols": list(summary.get("flow_symbols") or []),
+        "missing_real_flow_feeds": list(summary.get("missing_real_flow_feeds") or []),
+    }
+
+
 def _finnhub_source_rows(bundle: dict[str, Any]) -> dict[str, Any]:
     rows: dict[str, Any] = {
         "FINNHUB_API": _finnhub_source_row(
@@ -1390,6 +1435,52 @@ def _options_source_rows(bundle: dict[str, Any] | None) -> dict[str, Any]:
             "stale_data": bool(payload.get("stale_data")),
             "missing_data": bool(payload.get("missing_data")),
             "point_in_time_safe": bool(payload.get("point_in_time_safe")),
+        }
+    return rows
+
+
+def _flow_source_rows(bundle: dict[str, Any] | None) -> dict[str, Any]:
+    rows: dict[str, Any] = {}
+    if not bundle:
+        return rows
+    summary = bundle.get("summary") or {}
+    rows["flow_provider"] = {
+        "symbol": "flow_provider",
+        "source": bundle.get("provider") or "flow_positioning_proxy",
+        "status": "proxy" if summary.get("flow_available") else "missing",
+        "rows": len(bundle.get("symbols") or {}),
+        "latest_date": bundle.get("latest_date"),
+        "real_data": False,
+        "fallback_used": True,
+        "stale_data": False,
+        "missing_data": not bool(summary.get("flow_available")),
+        "point_in_time_safe": True,
+        "is_proxy": True,
+        "true_flow_available": False,
+        "average_flow_quality_score": summary.get("average_flow_quality_score"),
+        "flow_confirmation_score": summary.get("overall_flow_confirmation_score"),
+        "flow_conflict_score": summary.get("overall_flow_conflict_score"),
+        "detail": summary.get("data_note") or "Proxy-only flow / positioning. No true fund-flow feed.",
+    }
+    for symbol, payload in (bundle.get("symbols") or {}).items():
+        scores = payload.get("scores") or {}
+        rows[f"flow_{symbol}"] = {
+            "symbol": f"flow_{symbol}",
+            "source": payload.get("source") or "market_data_proxy",
+            "status": payload.get("status") or "missing",
+            "rows": 1,
+            "latest_date": payload.get("latest_date"),
+            "real_data": False,
+            "fallback_used": True,
+            "stale_data": False,
+            "missing_data": payload.get("status") == "missing",
+            "point_in_time_safe": True,
+            "is_proxy": True,
+            "true_flow_available": False,
+            "flow_quality_score": scores.get("flow_quality_score"),
+            "flow_confirmation_score": scores.get("flow_confirmation_score"),
+            "flow_conflict_score": scores.get("flow_conflict_score"),
+            "detail": payload.get("data_note"),
         }
     return rows
 
@@ -1542,6 +1633,8 @@ def _coverage_categories_v3(source_rows: dict[str, Any], feature_snapshot: dict[
     fred_rates_available = sum(1 for name in ("DGS10", "DGS2", "DGS3MO", "DFII10", "RECESSION") if source_rows.get(name, {}).get("real_data"))
     true_breadth_available = sum(1 for name in ("breadth_SPY", "breadth_QQQ", "breadth_DIA") if source_rows.get(name, {}).get("real_data"))
     breadth_proxy_available = sum(1 for name in ("breadth_IWM",) if source_rows.get(name, {}).get("status") == "proxy")
+    flow_provider = source_rows.get("flow_provider", {})
+    flow_symbol_available = sum(1 for name in ("flow_SPY", "flow_QQQ", "flow_IWM", "flow_DIA") if source_rows.get(name, {}).get("status") in {"proxy", "available", "partial", "stale"})
     target_available = sum(1 for symbol in TARGET_SYMBOLS if source_rows.get(symbol, {}).get("real_data"))
     finnhub_news_available = source_rows.get("finnhub_market_news", {}).get("status") == "available"
     finnhub_calendar_available = source_rows.get("finnhub_economic_calendar", {}).get("status") == "available"
@@ -1568,7 +1661,13 @@ def _coverage_categories_v3(source_rows: dict[str, Any], feature_snapshot: dict[
         "liquidity": _coverage_payload_v3("proxy" if status("TLT") == "available" and status("UUP") == "available" else "missing", "TLT/UUP/rates stress proxy, not reserves/repo/TGA", int(status("TLT") == "available") + int(status("UUP") == "available") + fred_rates_available, 5, False),
         "macro": _coverage_payload_v3("available" if finnhub_calendar_available else "fallback", "Finnhub economic calendar if available, otherwise rule-based CPI/FOMC/NFP/options-expiry/month-end calendar risk", 2 if finnhub_calendar_available else 1, 5, finnhub_calendar_available),
         "news": _coverage_payload_v3("available" if finnhub_news_available else "missing", "Finnhub market news risk score and daily market brief", int(finnhub_news_available), 1, finnhub_news_available),
-        "flow": _coverage_payload_v3("proxy" if target_available == 4 else "missing", "Volume z-score, relative volume, high-beta vs low-vol and sector rotation proxy", target_available + int(status("SPHB") == "available") + int(status("SPLV") == "available"), 7, False),
+        "flow": _coverage_payload_v3(
+            "proxy" if flow_provider.get("status") == "proxy" or flow_symbol_available else "missing",
+            "Proxy-only ETF volume, relative volume, HYG/LQD, TLT/UUP, high-beta/low-vol, equal-weight/cap-weight and sector rotation. True flow remains missing.",
+            flow_symbol_available + int(status("SPHB") == "available") + int(status("SPLV") == "available") + int(status("RSP") == "available"),
+            10,
+            False,
+        ),
         "market_structure": _coverage_payload_v3("proxy" if sector_available >= 7 else "missing", "Sector ETF participation, defensive/cyclical, small/large, growth/value proxies", sector_available, 11, False),
     }
 
@@ -1813,6 +1912,49 @@ def _breadth_from_bundle(symbol: str, breadth_bundle: dict[str, Any] | None) -> 
         "supports_downside_or_failed_bounce": bool(internal.get("supports_downside_or_failed_bounce")),
         "internal_resonance_components": internal.get("components") or {},
         "internal_resonance_reason": internal.get("reason"),
+        "data_note": payload.get("data_note"),
+    }
+
+
+def _flow_from_bundle(symbol: str, flow_bundle: dict[str, Any] | None) -> dict[str, Any] | None:
+    if not flow_bundle:
+        return None
+    payload = (flow_bundle.get("symbols") or {}).get(symbol)
+    if not payload:
+        return None
+    metrics = payload.get("metrics") or {}
+    scores = payload.get("scores") or {}
+    quality = _score01(scores.get("flow_quality_score"), 0.0)
+    if quality <= 0:
+        return None
+    risk_off = _score01(scores.get("risk_off_flow_score"), 0.0)
+    return {
+        "source": payload.get("source"),
+        "status": payload.get("status"),
+        "is_proxy": bool(payload.get("is_proxy", True)),
+        "true_flow_available": bool(payload.get("true_flow_available")),
+        "latest_date": payload.get("latest_date"),
+        "volume_zscore_20d": metrics.get("volume_zscore_20d"),
+        "etf_relative_volume_20d": metrics.get("etf_relative_volume_20d"),
+        "volume_confirmation_score": _score01(metrics.get("volume_confirmation_score"), 0.0),
+        "high_beta_vs_low_vol_20d": metrics.get("high_beta_vs_low_vol_20d"),
+        "small_cap_vs_large_cap_20d": metrics.get("small_cap_vs_large_cap_20d"),
+        "equal_weight_vs_cap_weight_20d": metrics.get("equal_weight_vs_cap_weight_20d"),
+        "credit_risk_appetite_20d": metrics.get("credit_risk_appetite_20d"),
+        "risk_on_rotation_20d": metrics.get("risk_on_rotation_20d"),
+        "defensive_vs_cyclical_20d": metrics.get("defensive_vs_cyclical_20d"),
+        "sector_participation_proxy": metrics.get("sector_participation_proxy"),
+        "risk_on_flow_score": _score01(scores.get("risk_on_flow_score"), 0.0),
+        "risk_off_flow_score": risk_off,
+        "risk_off_rotation_score": risk_off,
+        "flow_confirmation_score": _score01(scores.get("flow_confirmation_score"), 0.0),
+        "flow_conflict_score": _score01(scores.get("flow_conflict_score"), risk_off),
+        "flow_quality_score": quality,
+        "crowding_proxy_score": _score01(scores.get("crowding_proxy_score"), _score01(metrics.get("crowding_proxy_score"), 0.0)),
+        "flow_confirmation_score_raw": scores.get("flow_confirmation_score"),
+        "flow_conflict_score_raw": scores.get("flow_conflict_score"),
+        "flow_quality_score_raw": scores.get("flow_quality_score"),
+        "crowding_proxy_score_raw": scores.get("crowding_proxy_score"),
         "data_note": payload.get("data_note"),
     }
 
