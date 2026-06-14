@@ -429,10 +429,10 @@ Every daily production forecast must append or preserve a record in the Forecast
 
 Hard rules:
 
-- Store `forecast_id`, `forecast_date`, `model_version`, `data_version`, symbol, current price, primary/secondary/risk scenarios, probabilities, edge status, signal confirmation, model confidence, data completeness, strongest predictor, supporting/conflicting evidence, missing data, invalidation conditions, horizon expectations, realized returns, best-matching scenarios, primary-hit flags, and status.
+- Store `forecast_id`, `forecast_date`, `model_version`, `data_version`, symbol, current price, primary/secondary/risk scenarios, probabilities, edge status, signal confirmation, model confidence, data completeness, strongest predictor, supporting/conflicting evidence, missing data, invalidation conditions, horizon expectations, realized returns, best-matching scenarios, primary-hit flags, path-error fields, and status.
 - After a forecast exists, do not rewrite forecast fields because a newer model or cleaner data arrived.
 - Model upgrades must create a new `model_version`; they must not mutate historical forecast rows.
-- Outcome backfills may update only realized-return fields, best-matching-scenario fields, primary-hit fields, and completion status.
+- Outcome backfills may update only realized-return fields, best-matching-scenario fields, primary-hit fields, path-error fields, and completion status.
 - Score accuracy separately by `3d`, `5d`, `10d`, `20d`, and `60d`. Do not mix horizons.
 - If completed samples are below 20, output `insufficient_samples` and keep confidence capped.
 

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import hashlib
 import json
 import math
 from datetime import datetime, timezone
@@ -22,7 +23,7 @@ MINIMUM_PROMOTION_GATES = {
     "60d": 50,
 }
 
-FORECAST_OUTCOME_PREFIXES = ("actual_return", "best_matching_scenario", "primary_hit")
+FORECAST_OUTCOME_PREFIXES = ("actual_return", "best_matching_scenario", "primary_hit", "path_error")
 CHALLENGER_FORECAST_FIELDS = [
     "forecast_id",
     "forecast_date",
@@ -55,22 +56,33 @@ CHALLENGER_FORECAST_FIELDS = [
     "actual_return_3d",
     "best_matching_scenario_3d",
     "primary_hit_3d",
+    "path_error_3d",
     "actual_return_5d",
     "best_matching_scenario_5d",
     "primary_hit_5d",
+    "path_error_5d",
     "actual_return_10d",
     "best_matching_scenario_10d",
     "primary_hit_10d",
+    "path_error_10d",
     "actual_return_20d",
     "best_matching_scenario_20d",
     "primary_hit_20d",
+    "path_error_20d",
     "actual_return_60d",
     "best_matching_scenario_60d",
     "primary_hit_60d",
+    "path_error_60d",
     "status",
 ]
 
 CHALLENGER_REGISTRY = [
+    {
+        "model_version": "challenger_v2_options_flow",
+        "description": "Shadow-tests stricter scenario weighting from real volatility structure plus explicitly labeled flow proxy agreement.",
+        "required_data_flags": ("options_structure_available", "flow_proxy_available"),
+        "forbidden_without": "real volatility-structure data and explicitly labeled flow proxy inputs",
+    },
     {
         "model_version": "challenger_v2_put_call",
         "description": "Adds real put/call pressure if a stable point-in-time source is available.",
@@ -145,6 +157,11 @@ def write_model_challenger_outputs(
     outputs_dir.mkdir(parents=True, exist_ok=True)
     challenger_records_path = outputs_dir / "model_challenger_forecasts.csv"
     _ensure_challenger_csv(challenger_records_path)
+    _append_ready_shadow_forecasts(
+        dashboard=dashboard,
+        records_path=outputs_dir / "forecast_records.csv",
+        challenger_records_path=challenger_records_path,
+    )
     payload = build_model_challenger_outputs(
         dashboard=dashboard,
         records_path=outputs_dir / "forecast_records.csv",
@@ -532,12 +549,103 @@ def _data_availability_flags(dashboard: dict[str, Any]) -> dict[str, bool]:
     flow = ((dashboard.get("flow_positioning_status") or dashboard.get("flow_status") or {}).get("summary") or {})
     data_quality = ((dashboard.get("data_quality_report") or {}).get("summary") or {})
     finnhub_available = bool(data_quality.get("finnhub_available"))
+    options_structure_available = bool(
+        options.get("options_available")
+        and options.get("vix_term_available")
+        and (options.get("vvix_available") or options.get("skew_available"))
+    )
     return {
+        "options_structure_available": options_structure_available,
+        "flow_proxy_available": bool(flow.get("flow_available")) and bool(flow.get("flow_proxy_only")),
         "put_call_available": bool(options.get("put_call_available")),
         "gamma_available": bool(options.get("gamma_available")),
         "true_flow_available": bool(flow.get("true_flow_available")),
         "macro_event_quality_available": finnhub_available and bool(data_quality.get("macro_event_quality_available")),
     }
+
+
+def _append_ready_shadow_forecasts(
+    *,
+    dashboard: dict[str, Any],
+    records_path: Path,
+    challenger_records_path: Path,
+) -> None:
+    baseline_rows = [row for row in _read_rows(records_path) if row.get("model_version") == BASELINE_MODEL_VERSION]
+    if not baseline_rows:
+        return
+    data_flags = _data_availability_flags(dashboard)
+    registry = [_registry_status(item, data_flags) for item in CHALLENGER_REGISTRY]
+    ready = [item for item in registry if item.get("status") == "ready_for_shadow_implementation"]
+    if not ready:
+        return
+    latest_date = max(str(row.get("forecast_date") or "") for row in baseline_rows)
+    current_baseline_rows = [row for row in baseline_rows if str(row.get("forecast_date") or "") == latest_date]
+    existing = _read_rows(challenger_records_path)
+    existing_ids = {row.get("forecast_id") for row in existing if row.get("forecast_id")}
+    additions: list[dict[str, Any]] = []
+    for registry_item in ready:
+        for baseline_row in current_baseline_rows:
+            shadow = _build_shadow_forecast_from_baseline(baseline_row, registry_item)
+            if shadow and shadow["forecast_id"] not in existing_ids:
+                additions.append(shadow)
+                existing_ids.add(shadow["forecast_id"])
+    if not additions:
+        return
+    with challenger_records_path.open("a", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=CHALLENGER_FORECAST_FIELDS, lineterminator="\n")
+        writer.writerows(additions)
+
+
+def _build_shadow_forecast_from_baseline(
+    baseline_row: dict[str, Any],
+    registry_item: dict[str, Any],
+) -> dict[str, Any] | None:
+    if registry_item.get("model_version") != "challenger_v2_options_flow":
+        return None
+    forecast_date = str(baseline_row.get("forecast_date") or "")
+    symbol = str(baseline_row.get("symbol") or "")
+    if not forecast_date or not symbol:
+        return None
+    primary_probability = _float(baseline_row.get("primary_probability")) or 0.0
+    secondary_probability = _float(baseline_row.get("secondary_probability")) or 0.0
+    risk_probability = _float(baseline_row.get("risk_scenario_probability")) or 0.0
+    option_support = (_float(baseline_row.get("options_confirmation_score")) or 0.0) / 100.0
+    option_conflict = (_float(baseline_row.get("options_conflict_score")) or 0.0) / 100.0
+    flow_support = (_float(baseline_row.get("flow_confirmation_score")) or 0.0) / 100.0
+    flow_conflict = (_float(baseline_row.get("flow_conflict_score")) or 0.0) / 100.0
+    support = (option_support + flow_support) / 2.0
+    conflict = (option_conflict + flow_conflict) / 2.0
+    tilt = max(-0.04, min(0.04, (support - conflict) * 0.05))
+    if baseline_row.get("primary_scenario") != "bounce_path":
+        tilt *= 0.5
+    primary_probability = max(0.01, min(0.95, primary_probability + tilt))
+    secondary_probability = max(0.01, min(0.95, secondary_probability - tilt * 0.55))
+    risk_probability = max(0.01, min(0.95, risk_probability - tilt * 0.45))
+    row = {field: baseline_row.get(field, "") for field in CHALLENGER_FORECAST_FIELDS}
+    model_version = registry_item["model_version"]
+    row.update(
+        {
+            "forecast_id": _forecast_id(forecast_date, model_version, symbol),
+            "model_version": model_version,
+            "primary_probability": _fmt_float(primary_probability),
+            "secondary_probability": _fmt_float(secondary_probability),
+            "risk_scenario_probability": _fmt_float(risk_probability),
+            "probability_gap": _fmt_float(primary_probability - secondary_probability),
+            "close_call": str(abs(primary_probability - secondary_probability) < 0.08).lower(),
+            "shadow_status": "pending_forward_validation",
+            "blocked_reason": "",
+            "supporting_signals": _json_append(baseline_row.get("supporting_signals"), "options_flow_shadow_confirmation"),
+            "conflicting_signals": _json_append(baseline_row.get("conflicting_signals"), "options_flow_shadow_conflicts_if_vol_or_flow_reverses"),
+            "status": "pending",
+        }
+    )
+    for horizon in HORIZONS:
+        key = f"{horizon}d"
+        row[f"actual_return_{key}"] = ""
+        row[f"best_matching_scenario_{key}"] = ""
+        row[f"primary_hit_{key}"] = ""
+        row[f"path_error_{key}"] = ""
+    return {field: row.get(field, "") for field in CHALLENGER_FORECAST_FIELDS}
 
 
 def _horizon_metrics(rows: list[dict[str, Any]], horizon: int) -> dict[str, Any]:
@@ -617,11 +725,20 @@ def _read_rows(path: Path) -> list[dict[str, Any]]:
 
 
 def _ensure_challenger_csv(path: Path) -> None:
-    if path.exists():
-        return
     path.parent.mkdir(parents=True, exist_ok=True)
+    if path.exists():
+        with path.open("r", encoding="utf-8", newline="") as handle:
+            reader = csv.DictReader(handle)
+            if reader.fieldnames == CHALLENGER_FORECAST_FIELDS:
+                return
+            rows = [{field: row.get(field, "") for field in CHALLENGER_FORECAST_FIELDS} for row in reader]
+        with path.open("w", encoding="utf-8", newline="") as handle:
+            writer = csv.DictWriter(handle, fieldnames=CHALLENGER_FORECAST_FIELDS, lineterminator="\n")
+            writer.writeheader()
+            writer.writerows(rows)
+        return
     with path.open("w", encoding="utf-8", newline="") as handle:
-        csv.DictWriter(handle, fieldnames=CHALLENGER_FORECAST_FIELDS).writeheader()
+        csv.DictWriter(handle, fieldnames=CHALLENGER_FORECAST_FIELDS, lineterminator="\n").writeheader()
 
 
 def _public_records(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -666,6 +783,23 @@ def _loads_dict(value: Any) -> dict[str, Any]:
 
 def _write_json(path: Path, payload: dict[str, Any]) -> None:
     path.write_text(json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def _forecast_id(forecast_date: str, model_version: str, symbol: str) -> str:
+    return hashlib.sha256(f"{forecast_date}|{model_version}|{symbol}".encode("utf-8")).hexdigest()[:18]
+
+
+def _json_append(value: Any, item: str) -> str:
+    parsed = _loads(value)
+    items = parsed if isinstance(parsed, list) else []
+    if item not in items:
+        items.append(item)
+    return json.dumps(items, ensure_ascii=False, sort_keys=True)
+
+
+def _fmt_float(value: Any) -> str:
+    parsed = _float(value)
+    return "" if parsed is None else f"{parsed:.10g}"
 
 
 def _float(value: Any) -> float | None:

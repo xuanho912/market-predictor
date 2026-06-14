@@ -56,6 +56,7 @@ for horizon in HORIZONS:
             f"actual_return_{horizon}d",
             f"best_matching_scenario_{horizon}d",
             f"primary_hit_{horizon}d",
+            f"path_error_{horizon}d",
         ]
     )
 OUTCOME_FIELDS.append("status")
@@ -109,7 +110,7 @@ def update_forecast_accuracy_ledger(
             f"{horizon}d": sum(1 for row in merged_rows if _float(row.get(f"actual_return_{horizon}d")) is not None)
             for horizon in HORIZONS
         },
-        "immutability_note": "Forecast fields are write-once by forecast_id. Backfill may update only actual_return, best_matching_scenario, primary_hit and status fields.",
+        "immutability_note": "Forecast fields are write-once by forecast_id. Backfill may update only actual_return, best_matching_scenario, primary_hit, path_error and status fields.",
         "not_trading_note": "This is a forecast accuracy ledger, not a paper-trading, execution or PnL ledger.",
     }
 
@@ -321,6 +322,8 @@ def _backfill_outcomes(row: dict[str, Any], price_history: dict[str, list[dict[s
         best = _best_matching_scenario(actual, scenario_returns.get(key) or {})
         row[f"best_matching_scenario_{key}"] = best or ""
         row[f"primary_hit_{key}"] = str(best == row.get("primary_scenario")).lower() if best else ""
+        primary_expected = _float((scenario_returns.get(key) or {}).get(row.get("primary_scenario")))
+        row[f"path_error_{key}"] = _fmt_float(abs(actual - primary_expected)) if primary_expected is not None else ""
         completed += 1
     row["status"] = "completed" if completed == len(HORIZONS) else "partially_completed" if completed else "pending"
 
@@ -418,7 +421,7 @@ def _read_records(path: Path) -> list[dict[str, Any]]:
 
 def _write_records(path: Path, rows: list[dict[str, Any]]) -> None:
     with path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=CSV_FIELDS)
+        writer = csv.DictWriter(handle, fieldnames=CSV_FIELDS, lineterminator="\n")
         writer.writeheader()
         writer.writerows({field: row.get(field, "") for field in CSV_FIELDS} for row in rows)
 

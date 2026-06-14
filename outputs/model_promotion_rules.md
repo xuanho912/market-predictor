@@ -1,6 +1,6 @@
 # Model Promotion Rules
 
-Generated at: `2026-06-14T15:20:16.901524+00:00`
+Generated at: `2026-06-14T15:59:28.529416+00:00`
 
 ## Minimum Forward Sample Gates
 
@@ -23,6 +23,13 @@ Generated at: `2026-06-14T15:20:16.901524+00:00`
 - max adverse path control
 
 ## Current Promotion Status
+
+### challenger_v2_options_flow
+- status: `insufficient_forward_evidence`
+- eligible: `False`
+- reason: `Forward validation sample gates are not met.`
+- wins_vs_baseline: `0`
+- failed_gates: `['3d', '5d', '10d', '20d', '60d']`
 
 ### challenger_v2_put_call
 - status: `blocked_missing_required_data`
