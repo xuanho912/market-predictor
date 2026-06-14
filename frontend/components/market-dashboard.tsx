@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { DataQualityReport, HistoricalAnalogCase, PredictionDashboard, SimulatedSymbolPaths } from "../lib/api";
 
 const SYMBOL_ORDER = ["SPY", "QQQ", "IWM", "DIA"];
@@ -79,6 +79,19 @@ function displayTimestamp(value: string | null | undefined) {
     .replace(/\+00:00$/, "")
     .trim();
   return `${normalized} UTC`;
+}
+
+function dashboardGeneratedAt(dashboard: PredictionDashboard) {
+  return dashboard.data_quality_report?.generated_at
+    ?? dashboard.market_intelligence_v3?.generated_at
+    ?? dashboard.market_intelligence_v2?.generated_at
+    ?? dashboard.as_of
+    ?? "";
+}
+
+function publicAssetPath(filename: string) {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+  return `${basePath}/${filename}`;
 }
 
 function signedPct(value: number | null | undefined, digits = 1) {
@@ -464,7 +477,7 @@ function DataQualityPanel({ report }: { report?: DataQualityReport }) {
           <h2 className="mt-1 text-base font-semibold">数据质量审计</h2>
           <p className="mt-1 text-xs text-muted">最新交易日：{summary.latest_date ?? report.as_of ?? "暂无"}</p>
           <p className="mt-1 text-xs text-muted">页面生成：{displayTimestamp(report.generated_at)}</p>
-          <p className="mt-1 text-xs text-teal">自动更新：美股交易日收盘后由 GitHub Actions 刷新</p>
+          <p className="mt-1 text-xs text-teal">自动更新：美股交易日收盘后由 GitHub Actions 刷新，页面每 5 分钟检查新结果</p>
         </div>
         <div className="rounded-md bg-panel px-4 py-2 text-right">
           <p className="text-xs text-muted">数据完整度</p>
@@ -803,7 +816,8 @@ function RiskPanel({ data }: { data: SimulatedSymbolPaths }) {
   );
 }
 
-export function MarketDashboard({ dashboard }: { dashboard: PredictionDashboard }) {
+export function MarketDashboard({ dashboard: initialDashboard }: { dashboard: PredictionDashboard }) {
+  const [dashboard, setDashboard] = useState(initialDashboard);
   const availableSymbols = SYMBOL_ORDER.filter((symbol) => dashboard.simulated_paths.symbols[symbol]);
   const defaultSymbol = availableSymbols.includes(dashboard.overview.strongest_symbol)
     ? dashboard.overview.strongest_symbol
@@ -823,6 +837,38 @@ export function MarketDashboard({ dashboard }: { dashboard: PredictionDashboard 
         return right.bounce_probability - left.bounce_probability;
       })[0];
   }, [availableSymbols, dashboard.simulated_paths.symbols]);
+
+  useEffect(() => {
+    setDashboard(initialDashboard);
+  }, [initialDashboard]);
+
+  useEffect(() => {
+    const refreshDashboard = async () => {
+      try {
+        const response = await fetch(`${publicAssetPath("prediction-dashboard.json")}?ts=${Date.now()}`, {
+          cache: "no-store",
+        });
+        if (!response.ok) return;
+        const nextDashboard = (await response.json()) as PredictionDashboard;
+        if (!nextDashboard?.overview?.symbols) return;
+        setDashboard((currentDashboard) => (
+          dashboardGeneratedAt(nextDashboard) !== dashboardGeneratedAt(currentDashboard)
+            ? nextDashboard
+            : currentDashboard
+        ));
+      } catch {
+        // Keep the last rendered dashboard when the static file is temporarily unavailable.
+      }
+    };
+    const interval = window.setInterval(refreshDashboard, 5 * 60 * 1000);
+    return () => window.clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (availableSymbols.length && !availableSymbols.includes(selectedSymbol)) {
+      setSelectedSymbol(defaultSymbol);
+    }
+  }, [availableSymbols, defaultSymbol, selectedSymbol]);
 
   if (!selected) {
     return (
@@ -849,7 +895,7 @@ export function MarketDashboard({ dashboard }: { dashboard: PredictionDashboard 
             <p className="mt-1 font-medium">{dashboard.data_quality_report?.summary.latest_date ?? dashboard.as_of ?? "暂无"}</p>
             <p className="mt-2 text-muted">页面生成</p>
             <p className="mt-1 font-medium">{displayTimestamp(dashboard.data_quality_report?.generated_at ?? dashboard.market_intelligence_v3?.generated_at ?? dashboard.market_intelligence_v2?.generated_at)}</p>
-            <p className="mt-2 text-xs text-teal">自动：美股交易日收盘后</p>
+            <p className="mt-2 text-xs text-teal">自动：收盘后更新，页面每 5 分钟检查</p>
           </div>
         </div>
       </header>
