@@ -2,6 +2,15 @@ name: Forward Alpha v1 Observation
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/forward-alpha-v1.yml"
+      - "scripts/providers/fred_provider.py"
+      - "scripts/export_static_alpha_v1.py"
+      - "scripts/market_intelligence_v3.py"
+      - "scripts/market_intelligence_v4.py"
   schedule:
     - cron: "37 22 * * 1-5"
 
