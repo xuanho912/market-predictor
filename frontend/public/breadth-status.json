@@ -1,0 +1,295 @@
+{
+  "cache_root": "data/breadth_cache",
+  "generated_at": "2026-06-14T09:33:48.171094+00:00",
+  "provider": "true_breadth_provider",
+  "sector_participation_proxy": {
+    "data_note": "Sector ETF proxy, not constituent-level sector breadth.",
+    "is_proxy": true,
+    "sector_count": 10,
+    "sector_participation_above_20d": 0.8,
+    "sector_positive_5d_ratio": 0.9,
+    "sectors": [
+      {
+        "above_20d_ma": true,
+        "return_20d": 0.029526,
+        "return_5d": 0.024958,
+        "symbol": "XLK"
+      },
+      {
+        "above_20d_ma": true,
+        "return_20d": 0.039969,
+        "return_5d": 0.019885,
+        "symbol": "XLF"
+      },
+      {
+        "above_20d_ma": false,
+        "return_20d": -0.017443,
+        "return_5d": 0.015149,
+        "symbol": "XLY"
+      },
+      {
+        "above_20d_ma": true,
+        "return_20d": 0.00957,
+        "return_5d": 0.011482,
+        "symbol": "XLI"
+      },
+      {
+        "above_20d_ma": false,
+        "return_20d": -0.008955,
+        "return_5d": -0.002081,
+        "symbol": "XLE"
+      },
+      {
+        "above_20d_ma": true,
+        "return_20d": 0.048967,
+        "return_5d": 0.005228,
+        "symbol": "XLV"
+      },
+      {
+        "above_20d_ma": true,
+        "return_20d": 0.009885,
+        "return_5d": 0.028523,
+        "symbol": "XLP"
+      },
+      {
+        "above_20d_ma": true,
+        "return_20d": -0.008241,
+        "return_5d": 0.004059,
+        "symbol": "XLU"
+      },
+      {
+        "above_20d_ma": true,
+        "return_20d": 0.00987,
+        "return_5d": 0.030614,
+        "symbol": "XLB"
+      },
+      {
+        "above_20d_ma": true,
+        "return_20d": 0.033022,
+        "return_5d": 0.014765,
+        "symbol": "XLRE"
+      }
+    ],
+    "source": "sector-etf-participation-proxy"
+  },
+  "summary": {
+    "average_breadth_quality_score": 91.0,
+    "breadth_proxy_only_symbols": [
+      "IWM"
+    ],
+    "data_note": "SPY/QQQ/DIA can be true constituent breadth; IWM remains proxy-only in this phase.",
+    "provider_available": true,
+    "sector_proxy_available": true,
+    "stale_data": false,
+    "stale_symbols": [],
+    "true_breadth_available": true,
+    "true_breadth_symbols": [
+      "SPY",
+      "QQQ",
+      "DIA"
+    ]
+  },
+  "universe_order": [
+    "SPY",
+    "QQQ",
+    "DIA",
+    "IWM"
+  ],
+  "universes": {
+    "DIA": {
+      "constituent_error_reason": null,
+      "constituent_error_type": null,
+      "constituents_expected": 30,
+      "constituents_used": 30,
+      "coverage_ratio": 1.0,
+      "data_note": "True constituent breadth when status is available/stale/partial; stale flags must be respected.",
+      "failed_tickers_sample": [],
+      "is_proxy": false,
+      "is_true_breadth": true,
+      "latest_date": "2026-06-12",
+      "metrics": {
+        "advance_decline_ratio": 2.3333,
+        "advancers": 21,
+        "decliners": 9,
+        "improvement_acceleration": 0.0667,
+        "index_return_5d": 0.006592,
+        "new_highs_20d": 9,
+        "new_highs_52w": 0,
+        "new_lows_20d": 1,
+        "new_lows_52w": 0,
+        "percent_above_200d": 0.6667,
+        "percent_above_20d": 0.6333,
+        "percent_above_20d_change_5d": 0.0667,
+        "percent_above_50d": 0.6667,
+        "percent_above_50d_change_10d": 0.0333,
+        "price_falling_breadth_improving": false,
+        "price_rising_breadth_weakening": false,
+        "up_volume_down_volume_ratio": 1.5856
+      },
+      "missing_ratio": 0.0,
+      "name": "Dow Jones 30",
+      "price_source": "local-cache-prices",
+      "sample_limited": false,
+      "scores": {
+        "breadth_confirmation_score": 90.72,
+        "breadth_conflict_score": 18.56,
+        "breadth_deterioration_score": 24.42,
+        "breadth_improvement_score": 89.83,
+        "breadth_quality_score": 100.0
+      },
+      "source": "static-dow30-list",
+      "stale_constituents": false,
+      "stale_price_data": false,
+      "stale_tickers_sample": [],
+      "status": "available",
+      "symbol": "DIA"
+    },
+    "IWM": {
+      "constituents_expected": null,
+      "constituents_used": null,
+      "coverage_ratio": null,
+      "data_note": "Proxy only: IWM/SPY, RSP/SPY and IWM trend. Not full Russell 2000 constituent breadth.",
+      "is_proxy": true,
+      "is_true_breadth": false,
+      "latest_date": "2026-06-12",
+      "metrics": {
+        "advance_decline_ratio": null,
+        "advancers": null,
+        "decliners": null,
+        "improvement_acceleration": null,
+        "iwm_return_20d": 0.029882,
+        "iwm_return_5d": 0.040121,
+        "iwm_spy_relative_strength_20d": 0.038463,
+        "new_highs_20d": null,
+        "new_highs_52w": null,
+        "new_lows_20d": null,
+        "new_lows_52w": null,
+        "percent_above_200d": null,
+        "percent_above_20d": null,
+        "percent_above_20d_change_5d": null,
+        "percent_above_50d": null,
+        "percent_above_50d_change_10d": null,
+        "price_falling_breadth_improving": null,
+        "price_rising_breadth_weakening": null,
+        "rsp_spy_relative_strength_20d": 0.047813,
+        "up_volume_down_volume_ratio": null
+      },
+      "name": "Russell 2000",
+      "scores": {
+        "breadth_confirmation_score": 77.57,
+        "breadth_conflict_score": 29.36,
+        "breadth_deterioration_score": 27.14,
+        "breadth_improvement_score": 82.1,
+        "breadth_quality_score": 64
+      },
+      "source": "iwm-spy-relative-strength-proxy",
+      "stale_constituents": false,
+      "stale_price_data": false,
+      "status": "proxy",
+      "symbol": "IWM"
+    },
+    "QQQ": {
+      "constituent_error_reason": null,
+      "constituent_error_type": null,
+      "constituents_expected": 101,
+      "constituents_used": 101,
+      "coverage_ratio": 1.0,
+      "data_note": "True constituent breadth when status is available/stale/partial; stale flags must be respected.",
+      "failed_tickers_sample": [],
+      "is_proxy": false,
+      "is_true_breadth": true,
+      "latest_date": "2026-06-12",
+      "metrics": {
+        "advance_decline_ratio": 2.2581,
+        "advancers": 70,
+        "decliners": 31,
+        "improvement_acceleration": 0.1089,
+        "index_return_5d": 0.02309,
+        "new_highs_20d": 13,
+        "new_highs_52w": 9,
+        "new_lows_20d": 9,
+        "new_lows_52w": 5,
+        "percent_above_200d": 0.5842,
+        "percent_above_20d": 0.5446,
+        "percent_above_20d_change_5d": 0.0495,
+        "percent_above_50d": 0.5149,
+        "percent_above_50d_change_10d": -0.0396,
+        "price_falling_breadth_improving": false,
+        "price_rising_breadth_weakening": false,
+        "up_volume_down_volume_ratio": 2.0102
+      },
+      "missing_ratio": 0.0,
+      "name": "Nasdaq 100",
+      "price_source": "yfinance-incremental-cache",
+      "sample_limited": false,
+      "scores": {
+        "breadth_confirmation_score": 79.07,
+        "breadth_conflict_score": 30.46,
+        "breadth_deterioration_score": 40.08,
+        "breadth_improvement_score": 75.38,
+        "breadth_quality_score": 100.0
+      },
+      "source": "wikipedia-nasdaq100",
+      "stale_constituents": false,
+      "stale_price_data": false,
+      "stale_tickers_sample": [],
+      "status": "available",
+      "symbol": "QQQ"
+    },
+    "SPY": {
+      "constituent_error_reason": null,
+      "constituent_error_type": null,
+      "constituents_expected": 503,
+      "constituents_used": 503,
+      "coverage_ratio": 1.0,
+      "data_note": "True constituent breadth when status is available/stale/partial; stale flags must be respected.",
+      "failed_tickers_sample": [],
+      "is_proxy": false,
+      "is_true_breadth": true,
+      "latest_date": "2026-06-12",
+      "metrics": {
+        "advance_decline_ratio": 3.7453,
+        "advancers": 397,
+        "decliners": 106,
+        "improvement_acceleration": 0.0159,
+        "index_return_5d": 0.005695,
+        "new_highs_20d": 126,
+        "new_highs_52w": 38,
+        "new_lows_20d": 14,
+        "new_lows_52w": 6,
+        "percent_above_200d": 0.6088,
+        "percent_above_20d": 0.7112,
+        "percent_above_20d_change_5d": 0.1135,
+        "percent_above_50d": 0.6036,
+        "percent_above_50d_change_10d": 0.0797,
+        "price_falling_breadth_improving": false,
+        "price_rising_breadth_weakening": false,
+        "up_volume_down_volume_ratio": 2.8134
+      },
+      "missing_ratio": 0.0,
+      "name": "S&P 500",
+      "price_source": "yfinance-incremental-cache",
+      "sample_limited": false,
+      "scores": {
+        "breadth_confirmation_score": 98.29,
+        "breadth_conflict_score": 16.27,
+        "breadth_deterioration_score": 21.41,
+        "breadth_improvement_score": 100.0,
+        "breadth_quality_score": 100.0
+      },
+      "source": "wikipedia-sp500",
+      "stale_constituents": false,
+      "stale_price_data": false,
+      "stale_tickers_sample": [],
+      "status": "available",
+      "symbol": "SPY"
+    }
+  },
+  "version": "true_breadth_provider_v1",
+  "warnings": [
+    "SPY/QQQ/DIA breadth uses constituent-level price data when available.",
+    "IWM is proxy-only in v1; this is not full Russell 2000 constituent breadth.",
+    "Cached data is marked stale when live refresh fails or latest dates lag the reference date.",
+    "No synthetic breadth is used for live signal generation."
+  ]
+}

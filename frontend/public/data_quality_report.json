@@ -2,13 +2,13 @@
   "as_of": "2026-06-12",
   "coverage_categories": {
     "breadth": {
-      "available_items": 12,
-      "detail": "RSP/SPY and sector ETF participation proxy, not constituent breadth",
-      "expected_items": 12,
+      "available_items": 16,
+      "detail": "Constituent breadth for SPY/QQQ/DIA when available; IWM/RSP/sector ETF proxy remains explicitly labeled",
+      "expected_items": 15,
       "fallback_used": false,
-      "proxy_used": true,
-      "real_data": false,
-      "status": "proxy"
+      "proxy_used": false,
+      "real_data": true,
+      "status": "available"
     },
     "credit": {
       "available_items": 6,
@@ -101,7 +101,7 @@
       "status": "available"
     }
   },
-  "generated_at": "2026-06-14T09:13:53.374105+00:00",
+  "generated_at": "2026-06-14T09:33:56.499048+00:00",
   "notes": [
     "Breadth and flow are ETF/sector proxies, not constituent-level feeds.",
     "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -596,6 +596,84 @@
       "status": "available",
       "symbol": "^VVIX"
     },
+    "breadth_DIA": {
+      "breadth_quality_score": 100.0,
+      "coverage_ratio": 1.0,
+      "detail": "True constituent breadth when status is available/stale/partial; stale flags must be respected.",
+      "fallback_used": false,
+      "is_proxy": false,
+      "latest_date": "2026-06-12",
+      "missing_data": false,
+      "point_in_time_safe": true,
+      "real_data": true,
+      "rows": 30,
+      "source": "static-dow30-list",
+      "stale_data": false,
+      "status": "available",
+      "symbol": "breadth_DIA"
+    },
+    "breadth_IWM": {
+      "breadth_quality_score": 64,
+      "coverage_ratio": null,
+      "detail": "Proxy only: IWM/SPY, RSP/SPY and IWM trend. Not full Russell 2000 constituent breadth.",
+      "fallback_used": true,
+      "is_proxy": true,
+      "latest_date": "2026-06-12",
+      "missing_data": false,
+      "point_in_time_safe": false,
+      "real_data": false,
+      "rows": 0,
+      "source": "iwm-spy-relative-strength-proxy",
+      "stale_data": false,
+      "status": "proxy",
+      "symbol": "breadth_IWM"
+    },
+    "breadth_QQQ": {
+      "breadth_quality_score": 100.0,
+      "coverage_ratio": 1.0,
+      "detail": "True constituent breadth when status is available/stale/partial; stale flags must be respected.",
+      "fallback_used": false,
+      "is_proxy": false,
+      "latest_date": "2026-06-12",
+      "missing_data": false,
+      "point_in_time_safe": true,
+      "real_data": true,
+      "rows": 101,
+      "source": "wikipedia-nasdaq100",
+      "stale_data": false,
+      "status": "available",
+      "symbol": "breadth_QQQ"
+    },
+    "breadth_SPY": {
+      "breadth_quality_score": 100.0,
+      "coverage_ratio": 1.0,
+      "detail": "True constituent breadth when status is available/stale/partial; stale flags must be respected.",
+      "fallback_used": false,
+      "is_proxy": false,
+      "latest_date": "2026-06-12",
+      "missing_data": false,
+      "point_in_time_safe": true,
+      "real_data": true,
+      "rows": 503,
+      "source": "wikipedia-sp500",
+      "stale_data": false,
+      "status": "available",
+      "symbol": "breadth_SPY"
+    },
+    "breadth_sector_participation_proxy": {
+      "detail": "Sector ETF proxy, not constituent-level sector breadth.",
+      "fallback_used": true,
+      "is_proxy": true,
+      "latest_date": null,
+      "missing_data": false,
+      "point_in_time_safe": true,
+      "real_data": false,
+      "rows": 10,
+      "source": "sector-etf-participation-proxy",
+      "stale_data": true,
+      "status": "proxy",
+      "symbol": "breadth_sector_participation_proxy"
+    },
     "finnhub_alternative_data": {
       "fallback_used": false,
       "latest_date": null,
@@ -845,10 +923,15 @@
     }
   },
   "summary": {
-    "breadth_provider_status": "proxy",
-    "breadth_proxy_only": true,
+    "average_breadth_quality_score": 91.0,
+    "breadth_provider_available": true,
+    "breadth_provider_status": "available",
+    "breadth_proxy_only": false,
+    "breadth_proxy_only_symbols": [
+      "IWM"
+    ],
     "breadth_required": true,
-    "data_completeness_score": 86,
+    "data_completeness_score": 88,
     "data_source_status": "real_core_with_proxies",
     "fallback_used": true,
     "finnhub_available": true,
@@ -858,66 +941,66 @@
     "flow_required": true,
     "fred_available": true,
     "fred_effect_summary": {
-      "data_completeness_delta": 6,
-      "data_completeness_with_fred": 86,
-      "data_completeness_without_fred": 80,
+      "data_completeness_delta": 5,
+      "data_completeness_with_fred": 88,
+      "data_completeness_without_fred": 83,
       "note": "This compares the current run against the same run with FRED disabled. It does not change Alpha v1.",
       "symbols": {
         "DIA": {
           "edge_status_changed": false,
           "edge_status_with_fred": "MODERATE_EDGE",
           "edge_status_without_fred": "MODERATE_EDGE",
-          "failed_bounce_delta": 0.0049,
-          "failed_bounce_with_fred": 0.3492,
-          "failed_bounce_without_fred": 0.3443,
+          "failed_bounce_delta": 0.0044,
+          "failed_bounce_with_fred": 0.3428,
+          "failed_bounce_without_fred": 0.3384,
           "primary_scenario_changed": false,
           "primary_scenario_with_fred": "bounce_path",
           "primary_scenario_without_fred": "bounce_path",
-          "risk_expansion_delta": 0.013,
-          "risk_expansion_with_fred": 0.3258,
-          "risk_expansion_without_fred": 0.3128
+          "risk_expansion_delta": 0.0118,
+          "risk_expansion_with_fred": 0.3358,
+          "risk_expansion_without_fred": 0.324
         },
         "IWM": {
           "edge_status_changed": false,
           "edge_status_with_fred": "MODERATE_EDGE",
           "edge_status_without_fred": "MODERATE_EDGE",
-          "failed_bounce_delta": 0.0048,
-          "failed_bounce_with_fred": 0.3019,
-          "failed_bounce_without_fred": 0.2971,
+          "failed_bounce_delta": 0.0044,
+          "failed_bounce_with_fred": 0.318,
+          "failed_bounce_without_fred": 0.3136,
           "primary_scenario_changed": false,
           "primary_scenario_with_fred": "bounce_path",
           "primary_scenario_without_fred": "bounce_path",
-          "risk_expansion_delta": 0.013,
-          "risk_expansion_with_fred": 0.3258,
-          "risk_expansion_without_fred": 0.3128
+          "risk_expansion_delta": 0.0119,
+          "risk_expansion_with_fred": 0.3439,
+          "risk_expansion_without_fred": 0.332
         },
         "QQQ": {
           "edge_status_changed": false,
           "edge_status_with_fred": "MODERATE_EDGE",
           "edge_status_without_fred": "MODERATE_EDGE",
-          "failed_bounce_delta": 0.0048,
-          "failed_bounce_with_fred": 0.3846,
-          "failed_bounce_without_fred": 0.3798,
+          "failed_bounce_delta": 0.0044,
+          "failed_bounce_with_fred": 0.3947,
+          "failed_bounce_without_fred": 0.3903,
           "primary_scenario_changed": false,
           "primary_scenario_with_fred": "bounce_path",
           "primary_scenario_without_fred": "bounce_path",
-          "risk_expansion_delta": 0.013,
-          "risk_expansion_with_fred": 0.3258,
-          "risk_expansion_without_fred": 0.3128
+          "risk_expansion_delta": 0.0119,
+          "risk_expansion_with_fred": 0.3521,
+          "risk_expansion_without_fred": 0.3402
         },
         "SPY": {
           "edge_status_changed": false,
           "edge_status_with_fred": "MODERATE_EDGE",
           "edge_status_without_fred": "MODERATE_EDGE",
-          "failed_bounce_delta": 0.0048,
-          "failed_bounce_with_fred": 0.2982,
-          "failed_bounce_without_fred": 0.2934,
+          "failed_bounce_delta": 0.0044,
+          "failed_bounce_with_fred": 0.2931,
+          "failed_bounce_without_fred": 0.2887,
           "primary_scenario_changed": false,
           "primary_scenario_with_fred": "bounce_path",
           "primary_scenario_without_fred": "bounce_path",
-          "risk_expansion_delta": 0.013,
-          "risk_expansion_with_fred": 0.3258,
-          "risk_expansion_without_fred": 0.3128
+          "risk_expansion_delta": 0.0119,
+          "risk_expansion_with_fred": 0.3327,
+          "risk_expansion_without_fred": 0.3208
         }
       },
       "target_85_met_with_fred": true
@@ -931,13 +1014,13 @@
     "fred_successful_series": [
       "IG_OAS",
       "HY_OAS",
-      "DGS3MO",
       "BAA_SPREAD",
-      "DGS10",
       "DGS2",
-      "FINANCIAL_STRESS",
+      "DGS3MO",
+      "DGS10",
+      "RECESSION",
       "DFII10",
-      "RECESSION"
+      "FINANCIAL_STRESS"
     ],
     "gamma_exposure_available": false,
     "latest_date": "2026-06-12",
@@ -964,7 +1047,12 @@
     "stale_data": true,
     "synthetic_used": false,
     "target_completeness_score": 85,
-    "true_breadth_available": false,
+    "true_breadth_available": true,
+    "true_breadth_symbols": [
+      "SPY",
+      "QQQ",
+      "DIA"
+    ],
     "unavailable_categories": [
       "news"
     ],
