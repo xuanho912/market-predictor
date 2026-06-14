@@ -93,6 +93,7 @@ def build_market_intelligence_v4(
 
         patch = {
             "market_intelligence_version": "v4",
+            "internal_resonance": _internal_resonance_payload(features),
             "signal_confirmation": confirmation,
             "signal_confirmation_score": confirmation["confirmation_score"],
             "predictors_v4": predictors_v4,
@@ -252,6 +253,11 @@ def build_signal_confirmation_engine(
     breadth_confirmation = _score01(breadth.get("breadth_confirmation_score"), breadth_improvement)
     breadth_conflict = _score01(breadth.get("breadth_conflict_score"))
     breadth_quality = _score01(breadth.get("breadth_quality_score"), 0.5)
+    internal_resonance = _internal_resonance_payload(features)
+    resonance_score = _score01(internal_resonance.get("resonance_score"))
+    resonance_quality = _score01(internal_resonance.get("resonance_quality_score"), breadth_quality)
+    resonance_state = str(internal_resonance.get("resonance_state") or "unknown")
+    surface_only = resonance_state == "surface_only"
     flow_risk_off = _float(flow.get("risk_off_rotation_score"), 0.0)
     trend_20d = _float(price.get("return_20d"), 0.0)
     medium_support = analog_support.get("medium_term_support")
@@ -280,6 +286,14 @@ def build_signal_confirmation_engine(
         miss("breadth confirmation", "Breadth evidence is mixed.")
     if breadth_quality < 0.45:
         conflict("breadth data quality", 0.06, "Breadth coverage or freshness is too weak for high confidence.")
+    if resonance_state == "aligned" and resonance_score >= 0.65:
+        support("market internal resonance", 0.13, "Constituent breadth, sector participation and equal-weight/small-cap proxies broadly confirm the path.")
+    elif surface_only:
+        conflict("index surface strength", 0.14, "Index strength is not broadly confirmed by internals; this raises failed-bounce risk.")
+    elif resonance_state in {"mixed", "weak"}:
+        miss("market internal resonance", "Market internals are not strongly aligned.")
+    if resonance_quality < 0.45:
+        conflict("internal resonance quality", 0.05, "Internal-resonance evidence is too low quality for high confidence.")
     if options_stress <= 0.45:
         support("options stress", 0.08, "Options/volatility proxy is not in high stress.")
     elif options_stress >= 0.65:
@@ -328,6 +342,8 @@ def build_signal_confirmation_engine(
         "confirmation_score": score,
         "signal_confirmation_score": score,
         "confirmation_level": level,
+        "internal_resonance_score": int(round(resonance_score * 100)),
+        "internal_resonance_state": resonance_state,
         "supporting_evidence": supporting,
         "conflicting_evidence": conflicting,
         "missing_evidence": missing,
@@ -363,14 +379,19 @@ def build_predictors_v4(
     breadth_confirmation = _score01(breadth.get("breadth_confirmation_score"), _score01(breadth.get("breadth_improvement_score")))
     breadth_conflict = _score01(breadth.get("breadth_conflict_score"), _score01(breadth.get("breadth_deterioration_score")))
     breadth_quality = _score01(breadth.get("breadth_quality_score"), 0.5)
+    internal_resonance = _internal_resonance_payload(features)
+    resonance_score = _score01(internal_resonance.get("resonance_score"))
+    resonance_state = str(internal_resonance.get("resonance_state") or "unknown")
+    resonance_support = resonance_score if resonance_state == "aligned" else resonance_score * 0.45 if resonance_state == "mixed" else 0.0
+    surface_only = 1.0 if resonance_state == "surface_only" else 0.0
     volatility_risk = _options_stress_score(vol)
     liquidity_risk = _float(rates.get("liquidity_stress_proxy"), 0.0)
     macro_risk = 1.0 if macro.get("macro_event_risk_flag") else 0.0
 
-    bounce_probability = _clip(_float(bounce_prior.get("probability"), 0.0) * 0.68 + confirmation * 0.20 + breadth_confirmation * 0.12, 0.0, 0.95)
-    downside_probability = _clip(_float(downside_prior.get("probability"), 0.0) * 0.64 + (1.0 - confirmation) * 0.13 + volatility_risk * 0.13 + breadth_conflict * 0.10, 0.0, 0.95)
-    reversal_probability = _clip(_float(reversal_prior.get("probability"), 0.0) * 0.66 + (1.0 if analog_support.get("medium_term_support") == "supportive" else 0.35) * 0.16 + confirmation * 0.08 + breadth_confirmation * 0.10, 0.0, 0.95)
-    risk_probability = _clip(_float(risk_prior.get("probability"), 0.0) * 0.58 + credit_deterioration * 0.15 + volatility_risk * 0.10 + liquidity_risk * 0.07 + macro_risk * 0.04 + breadth_conflict * 0.06, 0.0, 0.95)
+    bounce_probability = _clip(_float(bounce_prior.get("probability"), 0.0) * 0.62 + confirmation * 0.18 + breadth_confirmation * 0.10 + resonance_support * 0.10 - surface_only * 0.05, 0.0, 0.95)
+    downside_probability = _clip(_float(downside_prior.get("probability"), 0.0) * 0.60 + (1.0 - confirmation) * 0.12 + volatility_risk * 0.12 + breadth_conflict * 0.09 + surface_only * 0.07, 0.0, 0.95)
+    reversal_probability = _clip(_float(reversal_prior.get("probability"), 0.0) * 0.60 + (1.0 if analog_support.get("medium_term_support") == "supportive" else 0.35) * 0.14 + confirmation * 0.08 + breadth_confirmation * 0.08 + resonance_support * 0.10 - surface_only * 0.04, 0.0, 0.95)
+    risk_probability = _clip(_float(risk_prior.get("probability"), 0.0) * 0.56 + credit_deterioration * 0.14 + volatility_risk * 0.10 + liquidity_risk * 0.07 + macro_risk * 0.04 + breadth_conflict * 0.05 + surface_only * 0.04, 0.0, 0.95)
 
     return {
         "bounce_predictor": {
@@ -383,6 +404,8 @@ def build_predictors_v4(
             "conflicting_evidence": [item for item in signal_confirmation["conflicting_evidence"] if item["name"] in {"VIX direction", "credit deterioration", "breadth weak", "failed bounce risk"}],
             "breadth_confirmation": round(breadth_confirmation, 4),
             "breadth_quality": round(breadth_quality, 4),
+            "internal_resonance_score": round(resonance_score, 4),
+            "internal_resonance_state": resonance_state,
         },
         "downside_continuation_predictor": {
             **downside_prior,
@@ -393,6 +416,8 @@ def build_predictors_v4(
             "invalidation_conditions": downside_prior.get("invalidation_conditions", []),
             "breadth_conflict": round(breadth_conflict, 4),
             "breadth_quality": round(breadth_quality, 4),
+            "internal_resonance_score": round(resonance_score, 4),
+            "internal_resonance_state": resonance_state,
         },
         "trend_reversal_predictor": {
             **reversal_prior,
@@ -402,6 +427,8 @@ def build_predictors_v4(
             "regime_support": analog_support.get("medium_term_support", "neutral"),
             "breadth_confirmation": round(breadth_confirmation, 4),
             "breadth_quality": round(breadth_quality, 4),
+            "internal_resonance_score": round(resonance_score, 4),
+            "internal_resonance_state": resonance_state,
         },
         "risk_expansion_predictor": {
             **risk_prior,
@@ -413,6 +440,8 @@ def build_predictors_v4(
             "macro_event_risk": round(macro_risk, 4),
             "breadth_risk": round(breadth_conflict, 4),
             "breadth_quality": round(breadth_quality, 4),
+            "internal_resonance_score": round(resonance_score, 4),
+            "internal_resonance_state": resonance_state,
         },
     }
 
@@ -431,13 +460,18 @@ def build_confidence_v4(
     analog = 70.0 if analog_support.get("medium_term_support") == "supportive" else 45.0 if analog_support.get("medium_term_support") == "weak" else 55.0
     spread = _predictor_spread(predictors_v4)
     breadth_quality = max(float((payload or {}).get("breadth_quality") or 0.0) for payload in predictors_v4.values()) * 100.0 if predictors_v4 else 50.0
-    raw = prior * 0.16 + completeness * 0.28 + confirmation * 0.32 + analog * 0.08 + (1.0 - spread) * 100.0 * 0.08 + breadth_quality * 0.08
+    resonance_scores = [float((payload or {}).get("internal_resonance_score") or 0.0) for payload in predictors_v4.values()]
+    resonance_score = max(resonance_scores) * 100.0 if resonance_scores else 50.0
+    surface_only = any((payload or {}).get("internal_resonance_state") == "surface_only" for payload in predictors_v4.values())
+    raw = prior * 0.14 + completeness * 0.26 + confirmation * 0.30 + analog * 0.08 + (1.0 - spread) * 100.0 * 0.07 + breadth_quality * 0.07 + resonance_score * 0.08
     if completeness < 80:
         raw = min(raw, 69.0)
     if confirmation < 70:
         raw = min(raw, 68.0)
     if breadth_quality < 50:
         raw = min(raw, 64.0)
+    if surface_only:
+        raw = min(raw, 68.0)
     if signal_confirmation.get("confirmation_level") == "weak":
         raw = min(raw, 55.0)
     score = int(round(_clip(raw, 0.0, 90.0)))
@@ -463,6 +497,7 @@ def build_confidence_v4(
             "analog_support": analog / 100.0,
             "predictor_consistency": 1.0 - spread,
             "breadth_quality": breadth_quality / 100.0,
+            "internal_resonance": resonance_score / 100.0,
         },
         "why_confidence_is_limited": why or ["多源确认、数据完整度和预测器分歧当前相对可接受，但仍不是确定性预测。"],
     }
@@ -487,6 +522,8 @@ def build_edge_status_v4(
     risk = predictors_v4["risk_expansion_predictor"]["probability"]
     credit_risk = predictors_v4["risk_expansion_predictor"].get("credit_risk", 0.0)
     vol_risk = predictors_v4["risk_expansion_predictor"].get("volatility_risk", 0.0)
+    internal_resonance = _internal_resonance_payload(features)
+    surface_only = internal_resonance.get("resonance_state") == "surface_only"
     strong_conflict = credit_risk >= 0.65 or vol_risk >= 0.72
     conditions = {
         "data_completeness_ge_80": completeness >= 80,
@@ -496,6 +533,7 @@ def build_edge_status_v4(
         "current_regime_identified": regime_known,
         "macro_event_risk_not_high": not macro_high,
         "credit_volatility_no_strong_conflict": not strong_conflict,
+        "market_internals_not_surface_only": not surface_only,
     }
     if risk >= 0.60 or strong_conflict:
         status = "RISK_WARNING"
@@ -540,13 +578,18 @@ def build_path_weight_model_v4(
     breadth_confirmation = _score01(breadth.get("breadth_confirmation_score"), _score01(breadth.get("breadth_improvement_score")))
     breadth_conflict = _score01(breadth.get("breadth_conflict_score"), _score01(breadth.get("breadth_deterioration_score")))
     breadth_quality = _score01(breadth.get("breadth_quality_score"), 0.5)
+    internal_resonance = _internal_resonance_payload(features)
+    resonance_score = _score01(internal_resonance.get("resonance_score"))
+    resonance_state = str(internal_resonance.get("resonance_state") or "unknown")
+    resonance_support = resonance_score if resonance_state == "aligned" else resonance_score * 0.45 if resonance_state == "mixed" else 0.0
+    surface_only = 1.0 if resonance_state == "surface_only" else 0.0
     analog_score = _analog_score(analog_support)
     conflict_penalty = min(len(signal_confirmation["conflicting_evidence"]) / 8.0, 1.0)
     raw = {
-        "base_path_weight": 0.12 + (1.0 - abs(confirmation - 0.50) * 2.0) * 0.16 + (1.0 - completeness) * 0.10 + conflict_penalty * 0.10 + max(0.0, 0.55 - breadth_quality) * 0.08,
-        "bounce_path_weight": 0.08 + bounce * 0.31 + confirmation * 0.14 + analog_score * 0.11 + reversal * 0.07 + breadth_confirmation * 0.09,
-        "bearish_path_weight": 0.08 + downside * 0.26 + risk * 0.17 + (1.0 - confirmation) * 0.11 + macro_risk * 0.06 + conflict_penalty * 0.07 + breadth_conflict * 0.08,
-        "analog_path_weight": 0.10 + analog_score * 0.24 + completeness * 0.08 + (0.08 if analog_support.get("analog_sample_quality") == "high" else 0.02),
+        "base_path_weight": 0.12 + (1.0 - abs(confirmation - 0.50) * 2.0) * 0.15 + (1.0 - completeness) * 0.09 + conflict_penalty * 0.09 + max(0.0, 0.55 - breadth_quality) * 0.07 + (1.0 if resonance_state in {"mixed", "weak"} else 0.0) * 0.05,
+        "bounce_path_weight": 0.08 + bounce * 0.29 + confirmation * 0.13 + analog_score * 0.10 + reversal * 0.06 + breadth_confirmation * 0.08 + resonance_support * 0.09,
+        "bearish_path_weight": 0.08 + downside * 0.24 + risk * 0.16 + (1.0 - confirmation) * 0.10 + macro_risk * 0.06 + conflict_penalty * 0.06 + breadth_conflict * 0.07 + surface_only * 0.08,
+        "analog_path_weight": 0.10 + analog_score * 0.23 + completeness * 0.08 + (0.08 if analog_support.get("analog_sample_quality") == "high" else 0.02) + resonance_score * 0.03,
     }
     total = sum(max(value, 0.001) for value in raw.values())
     weights = {key: round(max(value, 0.001) / total, 4) for key, value in raw.items()}
@@ -562,6 +605,8 @@ def build_path_weight_model_v4(
                 "breadth_confirmation": round(breadth_confirmation, 4),
                 "breadth_conflict": round(breadth_conflict, 4),
                 "breadth_quality": round(breadth_quality, 4),
+                "internal_resonance": round(resonance_score, 4),
+                "internal_resonance_state": resonance_state,
             },
             "weight_source_notes": [
                 "V4 path weights come from the four independent predictors, signal confirmation, historical analog distribution, data completeness and macro event risk.",
@@ -636,6 +681,7 @@ def build_high_confidence_edge_report(analogs: dict[str, dict[str, Any]], simula
         for case in analog.get("top_similar_cases", []):
             features = symbol_state.get("feature_snapshot_v3") or {}
             breadth = features.get("breadth") or {}
+            internal = symbol_state.get("internal_resonance") or _internal_resonance_payload(features)
             predictors = symbol_state.get("predictors_v4") or {}
             strongest_predictor = _strongest_predictor_name(predictors)
             row = dict(case)
@@ -658,6 +704,10 @@ def build_high_confidence_edge_report(analogs: dict[str, dict[str, Any]], simula
                     "breadth_quality_score": _score01(breadth.get("breadth_quality_score"), 0.0) * 100.0,
                     "true_breadth": bool(breadth.get("is_true_breadth")),
                     "breadth_proxy": bool(breadth.get("is_proxy")),
+                    "internal_resonance_score": _float(internal.get("resonance_score"), 0.0),
+                    "internal_resonance_state": internal.get("resonance_state"),
+                    "broad_participation": bool(internal.get("broad_participation")),
+                    "surface_strength_without_participation": bool(internal.get("surface_strength_without_participation")),
                 }
             )
             rows.append(row)
@@ -683,6 +733,7 @@ def build_high_confidence_edge_report(analogs: dict[str, dict[str, Any]], simula
         "primary_vs_secondary": _primary_vs_secondary_proxy(rows, forward_counts),
         "close_call_samples": _close_call_stats(rows),
         "breadth_forward_validation": _breadth_forward_validation(rows, forward_counts),
+        "internal_resonance_forward_validation": _internal_resonance_forward_validation(rows, forward_counts),
         "by_symbol": {symbol: _edge_bucket_metrics([row for row in rows if row["symbol"] == symbol]) for symbol in TARGET_SYMBOLS},
         "by_regime": _by_regime(rows),
         "conclusion": _edge_report_conclusion(rows, forward_counts),
@@ -757,6 +808,22 @@ def render_high_confidence_edge_report_markdown(report: dict[str, Any]) -> str:
         lines.append("")
         lines.append(f"### {key}")
         lines.extend(_metrics_markdown(breadth.get(key, {})))
+    lines.append("")
+    lines.append("## Internal Resonance Forward Validation")
+    lines.append("")
+    resonance = report.get("internal_resonance_forward_validation") or {}
+    lines.append(f"- status: `{resonance.get('status')}`")
+    lines.append(f"- evidence_note: `{resonance.get('evidence_note')}`")
+    for key in (
+        "aligned_internal_resonance",
+        "mixed_internal_resonance",
+        "surface_only_strength",
+        "bounce_with_internal_resonance",
+        "bounce_surface_only",
+    ):
+        lines.append("")
+        lines.append(f"### {key}")
+        lines.extend(_metrics_markdown(resonance.get(key, {})))
     lines.append("")
     lines.extend(f"- {note}" for note in report.get("notes", []))
     lines.append("")
@@ -886,6 +953,33 @@ def _update_scenario_card_weights(simulated_symbol: dict[str, Any], path_weight_
             card["probability_weight"] = path_weight_model[key]
 
 
+def _internal_resonance_payload(features: dict[str, Any]) -> dict[str, Any]:
+    breadth = features.get("breadth") or {}
+    components = breadth.get("internal_resonance_components") or {}
+    raw_score = breadth.get("internal_resonance_score_raw")
+    score = _score01(raw_score, _score01(breadth.get("market_internal_resonance_score"), _score01(breadth.get("breadth_confirmation_score")))) * 100.0
+    quality = _score01(breadth.get("internal_resonance_quality_score_raw"), _score01(breadth.get("internal_resonance_quality_score"), _score01(breadth.get("breadth_quality_score"), 0.5))) * 100.0
+    state = str(breadth.get("internal_resonance_state") or "unknown")
+    label = str(breadth.get("internal_resonance_label") or state)
+    surface_only = bool(breadth.get("surface_strength_without_participation")) or state == "surface_only"
+    broad_participation = bool(breadth.get("broad_participation")) or state == "aligned"
+    supports_bounce = bool(breadth.get("supports_bounce_or_repair")) or state == "aligned"
+    supports_downside = bool(breadth.get("supports_downside_or_failed_bounce")) or surface_only
+    return {
+        "resonance_score": round(score, 2),
+        "resonance_state": state,
+        "resonance_label": label,
+        "resonance_quality_score": round(quality, 2),
+        "broad_participation": broad_participation,
+        "surface_strength_without_participation": surface_only,
+        "supports_bounce_or_repair": supports_bounce,
+        "supports_downside_or_failed_bounce": supports_downside,
+        "components": components,
+        "reason": breadth.get("internal_resonance_reason"),
+        "data_note": "Internal resonance checks whether constituent breadth, sector participation, equal-weight and small-cap proxies agree. It is not a standalone alpha.",
+    }
+
+
 def _options_stress_score(vol: dict[str, Any]) -> float:
     vix_pct = _float(vol.get("vix_percentile_1y"), 0.5)
     vvix = _float(vol.get("vvix_percentile_1y"), vix_pct)
@@ -974,6 +1068,30 @@ def _breadth_forward_validation(rows: list[dict[str, Any]], forward_counts: dict
         "trend_reversal_with_breadth_support": _edge_bucket_metrics([row for row in reversal_rows if _float(row.get("breadth_confirmation_score"), 0.0) >= 55.0]),
         "failed_bounce_risk_with_breadth_conflict": _edge_bucket_metrics([row for row in downside_rows if _float(row.get("breadth_conflict_score"), 0.0) >= 55.0]),
         "core_question": "Does breadth confirmation improve forward hit rate / average return versus breadth conflict?",
+        "forward_validation_required": not enough_forward,
+    }
+
+
+def _internal_resonance_forward_validation(rows: list[dict[str, Any]], forward_counts: dict[str, Any]) -> dict[str, Any]:
+    aligned = [row for row in rows if row.get("internal_resonance_state") == "aligned"]
+    mixed = [row for row in rows if row.get("internal_resonance_state") == "mixed"]
+    surface_only = [row for row in rows if row.get("surface_strength_without_participation")]
+    bounce_aligned = [row for row in rows if row.get("primary_scenario") == "bounce_path" and row.get("internal_resonance_state") == "aligned"]
+    bounce_surface_only = [row for row in rows if row.get("primary_scenario") == "bounce_path" and row.get("surface_strength_without_participation")]
+    enough_forward = forward_counts.get("max_completed_count", 0) >= 20
+    return {
+        "status": "forward_ready" if enough_forward else "not_enough_forward_samples",
+        "evidence_note": (
+            "Internal-resonance attribution is being tracked, but forward-only samples are still below the minimum gate."
+            if not enough_forward
+            else "Forward sample gate has opened; compare aligned internals against surface-only cases before raising confidence."
+        ),
+        "aligned_internal_resonance": _edge_bucket_metrics(aligned),
+        "mixed_internal_resonance": _edge_bucket_metrics(mixed),
+        "surface_only_strength": _edge_bucket_metrics(surface_only),
+        "bounce_with_internal_resonance": _edge_bucket_metrics(bounce_aligned),
+        "bounce_surface_only": _edge_bucket_metrics(bounce_surface_only),
+        "core_question": "Does broad internal resonance beat surface-only index strength in forward returns and path hit rate?",
         "forward_validation_required": not enough_forward,
     }
 

@@ -157,6 +157,14 @@ function breadthImpactText(status: BreadthStatus | undefined, data: SimulatedSym
   return `${data.symbol} breadth 目前偏中性：可以辅助判断，但不足以单独提高主路径置信度。`;
 }
 
+function resonanceCn(value: string | undefined) {
+  if (value === "aligned") return "内部共振";
+  if (value === "mixed") return "部分共振";
+  if (value === "surface_only") return "指数表面强";
+  if (value === "weak") return "内部未共振";
+  return value ?? "未知";
+}
+
 function edgeCn(value: string | undefined) {
   if (value === "NO_EDGE") return "无优势";
   if (value === "WEAK_EDGE") return "弱优势";
@@ -692,6 +700,14 @@ function BreadthPanel({ status, selected }: { status?: BreadthStatus; selected?:
         <Metric label="Proxy" value={summary.breadth_proxy_only_symbols?.join(" / ") || "无"} />
         <Metric label="Stale warning" value={summary.stale_data ? `有：${summary.stale_symbols?.join(" / ")}` : "无"} />
       </div>
+      {selected?.internal_resonance ? (
+        <div className="mt-3 grid gap-2 text-xs sm:grid-cols-4">
+          <Metric label="内部共振状态" value={resonanceCn(selected.internal_resonance.resonance_state)} />
+          <Metric label="内部共振分数" value={scorePct(selected.internal_resonance.resonance_score)} />
+          <Metric label="广泛参与" value={selected.internal_resonance.broad_participation ? "是" : "否"} />
+          <Metric label="表面强风险" value={selected.internal_resonance.surface_strength_without_participation ? "有" : "无"} />
+        </div>
+      ) : null}
       <div className="mt-4 overflow-x-auto">
         <table className="w-full min-w-[860px] text-left text-xs">
           <thead className="border-b border-line text-muted">

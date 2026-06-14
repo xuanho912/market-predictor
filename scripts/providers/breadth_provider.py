@@ -107,7 +107,9 @@ def fetch_breadth_bundle(
 
     universes["IWM"] = build_iwm_proxy_payload(series_by_symbol or {})
     sector_payload = build_sector_participation_payload(series_by_symbol or {})
+    internal_resonance = attach_internal_resonance(universes, sector_payload)
     summary = build_summary(universes, sector_payload)
+    summary["market_internal_resonance"] = internal_resonance
     return {
         "provider": "true_breadth_provider",
         "version": "true_breadth_provider_v1",
@@ -120,6 +122,7 @@ def fetch_breadth_bundle(
         "warnings": [
             "SPY/QQQ/DIA breadth uses constituent-level price data when available.",
             "IWM is proxy-only in v1; this is not full Russell 2000 constituent breadth.",
+            "Market internal resonance is a confirmation layer, not a standalone alpha signal.",
             "Cached data is marked stale when live refresh fails or latest dates lag the reference date.",
             "No synthetic breadth is used for live signal generation.",
         ],
@@ -525,6 +528,190 @@ def build_sector_participation_payload(series_by_symbol: dict[str, Any]) -> dict
     }
 
 
+def attach_internal_resonance(universes: dict[str, Any], sector_payload: dict[str, Any]) -> dict[str, Any]:
+    """Attach per-universe and aggregate market-internal resonance scores.
+
+    Resonance answers a different question than raw breadth: are constituents,
+    equal-weight/small-cap proxies and sector participation pointing the same
+    way, or is index strength mostly surface-level?
+    """
+
+    iwm_metrics = (universes.get("IWM") or {}).get("metrics") or {}
+    equal_weight = _safe_float(iwm_metrics.get("rsp_spy_relative_strength_20d")) or 0.0
+    small_large = _safe_float(iwm_metrics.get("iwm_spy_relative_strength_20d")) or 0.0
+    sector_participation = _safe_float(sector_payload.get("sector_participation_above_20d"))
+    sector_positive = _safe_float(sector_payload.get("sector_positive_5d_ratio"))
+    sector_score = _clip(((sector_participation if sector_participation is not None else 0.5) * 0.6 + (sector_positive if sector_positive is not None else 0.5) * 0.4) * 100.0, 0.0, 100.0)
+
+    symbol_scores: list[float] = []
+    symbol_payloads: dict[str, Any] = {}
+    for symbol, payload in universes.items():
+        resonance = calculate_internal_resonance(
+            symbol=symbol,
+            payload=payload,
+            sector_score=sector_score,
+            sector_participation=sector_participation,
+            sector_positive=sector_positive,
+            equal_weight_relative=equal_weight,
+            small_large_relative=small_large,
+        )
+        payload["internal_resonance"] = resonance
+        symbol_payloads[symbol] = resonance
+        if resonance.get("resonance_quality_score", 0) >= 45:
+            symbol_scores.append(float(resonance.get("resonance_score") or 0.0))
+
+    average_score = round(sum(symbol_scores) / len(symbol_scores), 2) if symbol_scores else 0.0
+    surface_only_symbols = [symbol for symbol, item in symbol_payloads.items() if item.get("resonance_state") == "surface_only"]
+    aligned_symbols = [symbol for symbol, item in symbol_payloads.items() if item.get("resonance_state") == "aligned"]
+    if average_score >= 70 and len(surface_only_symbols) <= 1:
+        state = "aligned"
+        label = "market_internal_resonance"
+    elif surface_only_symbols and average_score < 60:
+        state = "surface_only"
+        label = "index_surface_strength"
+    elif average_score >= 45:
+        state = "mixed"
+        label = "partial_resonance"
+    else:
+        state = "weak"
+        label = "no_internal_resonance"
+
+    return {
+        "resonance_score": average_score,
+        "resonance_state": state,
+        "label": label,
+        "aligned_symbols": aligned_symbols,
+        "surface_only_symbols": surface_only_symbols,
+        "sector_score": round(sector_score, 2),
+        "sector_participation_above_20d": _round_or_none(sector_participation, 4),
+        "sector_positive_5d_ratio": _round_or_none(sector_positive, 4),
+        "equal_weight_vs_cap_weight_20d": round(equal_weight, 6),
+        "small_cap_vs_large_cap_20d": round(small_large, 6),
+        "symbols": symbol_payloads,
+        "data_note": "Resonance combines true/proxy breadth, sector ETF participation, RSP/SPY and IWM/SPY. It is not a standalone alpha.",
+    }
+
+
+def calculate_internal_resonance(
+    *,
+    symbol: str,
+    payload: dict[str, Any],
+    sector_score: float,
+    sector_participation: float | None,
+    sector_positive: float | None,
+    equal_weight_relative: float,
+    small_large_relative: float,
+) -> dict[str, Any]:
+    metrics = payload.get("metrics") or {}
+    scores = payload.get("scores") or {}
+    confirmation = float(scores.get("breadth_confirmation_score") or 0.0)
+    conflict = float(scores.get("breadth_conflict_score") or 0.0)
+    quality = float(scores.get("breadth_quality_score") or 0.0)
+    p20 = _safe_float(metrics.get("percent_above_20d"))
+    p50 = _safe_float(metrics.get("percent_above_50d"))
+    p200 = _safe_float(metrics.get("percent_above_200d"))
+    change20 = _safe_float(metrics.get("percent_above_20d_change_5d")) or 0.0
+    adv_ratio = _safe_float(metrics.get("advance_decline_ratio"))
+    highs20 = _safe_float(metrics.get("new_highs_20d")) or 0.0
+    lows20 = _safe_float(metrics.get("new_lows_20d")) or 0.0
+    high_low_score = ((highs20 + 1.0) / (highs20 + lows20 + 2.0)) * 100.0 if highs20 or lows20 else 50.0
+    adv_score = _clip(((adv_ratio if adv_ratio is not None else 1.0) / 3.0) * 100.0, 0.0, 100.0)
+    constituent_score = _clip(
+        ((p20 if p20 is not None else 0.5) * 34.0)
+        + ((p50 if p50 is not None else 0.5) * 28.0)
+        + ((p200 if p200 is not None else 0.5) * 14.0)
+        + adv_score * 0.12
+        + high_low_score * 0.12,
+        0.0,
+        100.0,
+    )
+    equal_weight_score = _clip(50.0 + equal_weight_relative * 900.0, 0.0, 100.0)
+    small_large_score = _clip(50.0 + small_large_relative * 900.0, 0.0, 100.0)
+    participation_score = _clip(sector_score * 0.55 + equal_weight_score * 0.25 + small_large_score * 0.20, 0.0, 100.0)
+
+    surface_strength = bool(
+        metrics.get("price_rising_breadth_weakening")
+        or (metrics.get("index_return_5d") or 0.0) > 0 and confirmation < 55.0
+        or (metrics.get("index_return_5d") or 0.0) > 0 and (p20 is not None and p20 < 0.45)
+        or equal_weight_relative < -0.006
+        or small_large_relative < -0.010
+    )
+    broad_participation = confirmation >= 65.0 and constituent_score >= 60.0 and participation_score >= 55.0 and conflict < 45.0
+    resonance_score = _clip(
+        constituent_score * 0.32
+        + confirmation * 0.24
+        + participation_score * 0.20
+        + quality * 0.14
+        + max(change20, 0.0) * 450.0 * 0.10
+        - max(conflict - 35.0, 0.0) * 0.18
+        - (12.0 if surface_strength else 0.0),
+        0.0,
+        100.0,
+    )
+    resonance_quality = quality if payload.get("is_true_breadth") else min(quality, 68.0)
+    if broad_participation and resonance_score >= 70:
+        state = "aligned"
+        label = "内部共振"
+    elif surface_strength and resonance_score < 65:
+        state = "surface_only"
+        label = "指数表面强"
+    elif resonance_score >= 50:
+        state = "mixed"
+        label = "部分共振"
+    else:
+        state = "weak"
+        label = "内部未共振"
+    supports_bounce = state == "aligned" or (state == "mixed" and confirmation > conflict and change20 >= 0.0)
+    supports_downside = state == "surface_only" or conflict >= 58.0
+    return {
+        "resonance_score": round(resonance_score, 2),
+        "resonance_state": state,
+        "resonance_label": label,
+        "resonance_quality_score": round(resonance_quality, 2),
+        "broad_participation": bool(broad_participation),
+        "surface_strength_without_participation": bool(surface_strength),
+        "supports_bounce_or_repair": bool(supports_bounce),
+        "supports_downside_or_failed_bounce": bool(supports_downside),
+        "components": {
+            "constituent_participation_score": round(constituent_score, 2),
+            "sector_participation_score": round(sector_score, 2),
+            "equal_weight_score": round(equal_weight_score, 2),
+            "small_cap_score": round(small_large_score, 2),
+            "participation_score": round(participation_score, 2),
+            "confirmation_score": round(confirmation, 2),
+            "conflict_score": round(conflict, 2),
+            "quality_score": round(quality, 2),
+            "sector_participation_above_20d": _round_or_none(sector_participation, 4),
+            "sector_positive_5d_ratio": _round_or_none(sector_positive, 4),
+            "equal_weight_vs_cap_weight_20d": round(equal_weight_relative, 6),
+            "small_cap_vs_large_cap_20d": round(small_large_relative, 6),
+        },
+        "reason": _internal_resonance_reason(symbol, state, confirmation, conflict, p20, sector_participation, equal_weight_relative, small_large_relative),
+        "data_note": "Point-in-time breadth/ETF proxy confirmation only; not a deterministic forecast.",
+    }
+
+
+def _internal_resonance_reason(
+    symbol: str,
+    state: str,
+    confirmation: float,
+    conflict: float,
+    p20: float | None,
+    sector_participation: float | None,
+    equal_weight_relative: float,
+    small_large_relative: float,
+) -> str:
+    p20_text = f"{p20:.0%}" if p20 is not None else "unknown"
+    sector_text = f"{sector_participation:.0%}" if sector_participation is not None else "unknown"
+    if state == "aligned":
+        return f"{symbol} 内部共振：成分股 20d 上方比例 {p20_text}，行业参与 {sector_text}，confirmation {confirmation:.0f} 高于 conflict {conflict:.0f}。"
+    if state == "surface_only":
+        return f"{symbol} 指数表面强但内部没充分跟上：confirmation {confirmation:.0f}，conflict {conflict:.0f}，RSP/SPY {equal_weight_relative:.2%}，IWM/SPY {small_large_relative:.2%}。"
+    if state == "mixed":
+        return f"{symbol} 内部信号分歧：成分股/行业有部分支持，但等权、小盘或新高新低没有完全确认。"
+    return f"{symbol} 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。"
+
+
 def build_summary(universes: dict[str, Any], sector_payload: dict[str, Any]) -> dict[str, Any]:
     true_available = [symbol for symbol in TRUE_UNIVERSES if universes.get(symbol, {}).get("is_true_breadth")]
     stale = [symbol for symbol, payload in universes.items() if payload.get("stale_price_data") or payload.get("stale_constituents")]
@@ -557,6 +744,17 @@ def render_breadth_status_markdown(bundle: dict[str, Any]) -> str:
         f"Average breadth quality score: {summary.get('average_breadth_quality_score')}",
         f"Stale data: {summary.get('stale_data')}",
         "",
+        "## Market Internal Resonance",
+        "",
+        f"- resonance_score: {(summary.get('market_internal_resonance') or {}).get('resonance_score')}",
+        f"- resonance_state: {(summary.get('market_internal_resonance') or {}).get('resonance_state')}",
+        f"- label: {(summary.get('market_internal_resonance') or {}).get('label')}",
+        f"- aligned_symbols: {', '.join((summary.get('market_internal_resonance') or {}).get('aligned_symbols') or []) or 'none'}",
+        f"- surface_only_symbols: {', '.join((summary.get('market_internal_resonance') or {}).get('surface_only_symbols') or []) or 'none'}",
+        f"- sector_score: {(summary.get('market_internal_resonance') or {}).get('sector_score')}",
+        f"- equal_weight_vs_cap_weight_20d: {(summary.get('market_internal_resonance') or {}).get('equal_weight_vs_cap_weight_20d')}",
+        f"- small_cap_vs_large_cap_20d: {(summary.get('market_internal_resonance') or {}).get('small_cap_vs_large_cap_20d')}",
+        "",
         "## Universe Status",
         "",
     ]
@@ -564,6 +762,7 @@ def render_breadth_status_markdown(bundle: dict[str, Any]) -> str:
         payload = (bundle.get("universes") or {}).get(symbol, {})
         scores = payload.get("scores") or {}
         metrics = payload.get("metrics") or {}
+        internal = payload.get("internal_resonance") or {}
         lines.extend(
             [
                 f"### {symbol}",
@@ -582,6 +781,7 @@ def render_breadth_status_markdown(bundle: dict[str, Any]) -> str:
                 f"- new highs/lows 20d: {metrics.get('new_highs_20d')} / {metrics.get('new_lows_20d')}",
                 f"- new highs/lows 52w: {metrics.get('new_highs_52w')} / {metrics.get('new_lows_52w')}",
                 f"- improvement / deterioration / confirmation / conflict / quality: {scores.get('breadth_improvement_score')} / {scores.get('breadth_deterioration_score')} / {scores.get('breadth_confirmation_score')} / {scores.get('breadth_conflict_score')} / {scores.get('breadth_quality_score')}",
+                f"- internal_resonance: {internal.get('resonance_state')} / score {internal.get('resonance_score')} / {internal.get('reason')}",
                 "",
             ]
         )

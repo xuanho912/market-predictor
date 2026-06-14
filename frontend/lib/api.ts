@@ -266,6 +266,20 @@ export type ModelConfidence = {
   why_confidence_is_limited: string[];
 };
 
+export type InternalResonance = {
+  resonance_score: number;
+  resonance_state: "aligned" | "mixed" | "surface_only" | "weak" | "unknown" | string;
+  resonance_label: string;
+  resonance_quality_score: number;
+  broad_participation: boolean;
+  surface_strength_without_participation: boolean;
+  supports_bounce_or_repair: boolean;
+  supports_downside_or_failed_bounce: boolean;
+  components?: Record<string, number | string | boolean | null>;
+  reason?: string | null;
+  data_note?: string;
+};
+
 export type SignalAgreement = {
   signal_agreement_score: number;
   agreement_level: "weak" | "mixed" | "strong";
@@ -363,6 +377,7 @@ export type MarketSymbolOverview = {
   signal_agreement?: SignalAgreement;
   signal_confirmation?: SignalConfirmation;
   signal_confirmation_score?: number;
+  internal_resonance?: InternalResonance;
   predictors?: Record<string, PredictorOutput>;
   predictors_v4?: Record<string, PredictorOutput>;
   market_edge_status?: MarketEdgeStatus;
@@ -417,6 +432,7 @@ export type SimulatedSymbolPaths = {
   signal_agreement?: SignalAgreement;
   signal_confirmation?: SignalConfirmation;
   signal_confirmation_score?: number;
+  internal_resonance?: InternalResonance;
   predictors?: Record<string, PredictorOutput>;
   predictors_v4?: Record<string, PredictorOutput>;
   market_edge_status?: MarketEdgeStatus;

@@ -1622,6 +1622,7 @@ def _breadth_from_bundle(symbol: str, breadth_bundle: dict[str, Any] | None) -> 
         return None
     metrics = payload.get("metrics") or {}
     scores = payload.get("scores") or {}
+    internal = payload.get("internal_resonance") or {}
     if not scores:
         return None
     improvement = _score01(scores.get("breadth_improvement_score"))
@@ -1671,6 +1672,18 @@ def _breadth_from_bundle(symbol: str, breadth_bundle: dict[str, Any] | None) -> 
         "breadth_confirmation_score_raw": scores.get("breadth_confirmation_score"),
         "breadth_conflict_score_raw": scores.get("breadth_conflict_score"),
         "breadth_quality_score_raw": scores.get("breadth_quality_score"),
+        "market_internal_resonance_score": _score01(internal.get("resonance_score")),
+        "internal_resonance_score_raw": internal.get("resonance_score"),
+        "internal_resonance_state": internal.get("resonance_state"),
+        "internal_resonance_label": internal.get("resonance_label"),
+        "internal_resonance_quality_score": _score01(internal.get("resonance_quality_score"), quality),
+        "internal_resonance_quality_score_raw": internal.get("resonance_quality_score"),
+        "broad_participation": bool(internal.get("broad_participation")),
+        "surface_strength_without_participation": bool(internal.get("surface_strength_without_participation")),
+        "supports_bounce_or_repair": bool(internal.get("supports_bounce_or_repair")),
+        "supports_downside_or_failed_bounce": bool(internal.get("supports_downside_or_failed_bounce")),
+        "internal_resonance_components": internal.get("components") or {},
+        "internal_resonance_reason": internal.get("reason"),
         "data_note": payload.get("data_note"),
     }
 
