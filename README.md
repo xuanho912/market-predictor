@@ -284,7 +284,9 @@ Free cloud scheduling uses GitHub Actions:
 .github/workflows/forward-alpha-v1.yml
 ```
 
-It runs on weekdays at `22:37 UTC`, updates `outputs/forward_alpha_v1_*`, exports static frontend JSON, commits the changes back to the repository, builds the static frontend, and deploys GitHub Pages. This is the preferred no-card option because Render Free services can sleep and lose local filesystem writes.
+It runs automatically on weekdays at `22:37 UTC`, updates `outputs/forward_alpha_v1_*`, exports static frontend JSON, commits the changes back to the repository, builds the static frontend, and deploys GitHub Pages. This is the preferred no-card option because Render Free services can sleep and lose local filesystem writes.
+
+The dashboard date is the latest real market trading date, not the calendar date. On weekends and US market holidays it is normal for the dashboard to keep showing the prior trading day until the next market-close workflow finishes. Manual `Run workflow` is only needed when you want an immediate refresh or deployment check.
 
 ## Market Intelligence Engine v2
 

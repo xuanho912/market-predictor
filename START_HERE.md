@@ -118,6 +118,8 @@ Schedule:
 37 22 * * 1-5
 ```
 
+This runs automatically after regular US market closes on weekdays. The dashboard shows the latest real trading date, so weekends and market holidays will usually keep showing the prior trading day until the next close completes. You only need a manual run when you want to force an immediate refresh.
+
 Manual GitHub run:
 
 1. Open `https://github.com/xuanho912/market-predictor/actions`.

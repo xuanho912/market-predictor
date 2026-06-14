@@ -173,6 +173,8 @@ cron: "37 22 * * 1-5"
 
 This is UTC and intentionally not at minute `0`, reducing the chance of high-load schedule delays.
 
+The public dashboard shows the latest real trading day, not the current calendar day. If today is a weekend or US market holiday, the latest date should remain the previous trading day. The workflow still re-fetches data on every run; stale or failed data must be marked as `stale_data` or `data_source_failed`, never silently reused as fresh.
+
 ## Manual Run
 
 Open:
