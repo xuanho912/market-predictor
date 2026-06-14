@@ -212,6 +212,17 @@ export type SignalAgreement = {
   data_completeness_cap_applied?: boolean;
 };
 
+export type SignalConfirmation = {
+  confirmation_score: number;
+  signal_confirmation_score?: number;
+  confirmation_level: "weak" | "mixed" | "strong" | string;
+  supporting_evidence: Array<{ name: string; score: number; detail: string }>;
+  conflicting_evidence: Array<{ name: string; score: number; detail: string }>;
+  missing_evidence: Array<{ name: string; detail: string }>;
+  data_completeness_cap_applied?: boolean;
+  missing_evidence_cap_applied?: boolean;
+};
+
 export type PredictorOutput = {
   probability: number;
   confidence: number;
@@ -219,14 +230,29 @@ export type PredictorOutput = {
   invalidation_conditions: string[];
   historical_analog_support: string;
   best_horizon: string;
+  key_drivers?: string[];
+  bounce_probability?: number;
+  downside_continuation_probability?: number;
+  trend_reversal_probability?: number;
+  risk_expansion_probability?: number;
+  break_level?: number | null;
+  risk_triggers?: string[];
+  confirmation_requirements?: string[];
+  regime_support?: string;
+  credit_risk?: number;
+  volatility_risk?: number;
+  liquidity_risk?: number;
+  macro_event_risk?: number;
 };
 
 export type MarketEdgeStatus = {
-  market_edge_status: "NO_EDGE" | "WEAK_EDGE" | "MODERATE_EDGE" | "STRONG_EDGE";
+  market_edge_status: "NO_EDGE" | "WEAK_EDGE" | "MODERATE_EDGE" | "STRONG_EDGE" | "RISK_WARNING";
   has_usable_prediction_edge_today: boolean;
   conditions: Record<string, boolean>;
   passed_conditions: number;
   summary: string;
+  no_edge_note?: string;
+  risk_warning?: boolean;
 };
 
 export type PathWeightModel = {
@@ -273,7 +299,10 @@ export type MarketSymbolOverview = {
   feature_snapshot_v2?: Record<string, unknown>;
   feature_snapshot_v3?: Record<string, unknown>;
   signal_agreement?: SignalAgreement;
+  signal_confirmation?: SignalConfirmation;
+  signal_confirmation_score?: number;
   predictors?: Record<string, PredictorOutput>;
+  predictors_v4?: Record<string, PredictorOutput>;
   market_edge_status?: MarketEdgeStatus;
   market_intelligence_version?: string;
   path_weight_model?: PathWeightModel;
@@ -324,7 +353,10 @@ export type SimulatedSymbolPaths = {
   current_integrated_judgment?: string;
   feature_snapshot_v3?: Record<string, unknown>;
   signal_agreement?: SignalAgreement;
+  signal_confirmation?: SignalConfirmation;
+  signal_confirmation_score?: number;
   predictors?: Record<string, PredictorOutput>;
+  predictors_v4?: Record<string, PredictorOutput>;
   market_edge_status?: MarketEdgeStatus;
   market_intelligence_version?: string;
   path_weight_model?: PathWeightModel;
@@ -392,10 +424,23 @@ export type PredictionDashboard = {
     finnhub_status?: Record<string, unknown>;
     warnings: string[];
   };
+  market_intelligence_v4?: {
+    version: string;
+    generated_at: string;
+    data_quality_report: DataQualityReport;
+    signal_confirmation_by_symbol: Record<string, SignalConfirmation>;
+    predictor_outputs_by_symbol: Record<string, Record<string, PredictorOutput>>;
+    model_confidence_by_symbol: Record<string, ModelConfidence>;
+    edge_status_by_symbol: Record<string, MarketEdgeStatus>;
+    high_confidence_edge_report: Record<string, unknown>;
+    finnhub_status?: Record<string, unknown>;
+    warnings: string[];
+  };
   feature_snapshot_v2?: Record<string, unknown>;
   feature_snapshot_v3?: Record<string, unknown>;
   model_confidence_by_symbol?: Record<string, ModelConfidence>;
   high_confidence_signal_report?: Record<string, unknown>;
+  high_confidence_edge_report?: Record<string, unknown>;
   overview: {
     as_of: string | null;
     strongest_symbol: string;

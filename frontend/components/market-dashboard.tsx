@@ -132,6 +132,7 @@ function edgeCn(value: string | undefined) {
   if (value === "WEAK_EDGE") return "弱优势";
   if (value === "MODERATE_EDGE") return "中等优势";
   if (value === "STRONG_EDGE") return "强优势";
+  if (value === "RISK_WARNING") return "风险预警";
   return value ?? "未知";
 }
 
@@ -139,6 +140,13 @@ function agreementCn(value: string | undefined) {
   if (value === "strong") return "强一致";
   if (value === "mixed") return "有冲突";
   if (value === "weak") return "弱一致";
+  return value ?? "未知";
+}
+
+function confirmationCn(value: string | undefined) {
+  if (value === "strong") return "强确认";
+  if (value === "mixed") return "混合确认";
+  if (value === "weak") return "弱确认";
   return value ?? "未知";
 }
 
@@ -208,7 +216,7 @@ function primarySwitchText(data: SimulatedSymbolPaths) {
 }
 
 function strongestPredictor(data: SimulatedSymbolPaths | undefined) {
-  const entries = Object.entries(data?.predictors ?? {});
+  const entries = Object.entries(data?.predictors_v4 ?? data?.predictors ?? {});
   if (!entries.length) return null;
   return entries.sort(([, left], [, right]) => right.probability - left.probability)[0];
 }
@@ -244,7 +252,9 @@ function plainDecision(data: SimulatedSymbolPaths) {
   const scenarioText = primary && secondary
     ? `当前最大概率路径是“${primary.label}”，概率 ${pct(primary.probability)}；第二可能是“${secondary.label}”，概率 ${pct(secondary.probability)}；两者差距 ${scenarioGapText(data)}。如果 ${primarySwitchText(data)}，主路径可能失效并切换到风险路径。`
     : "";
-  return `${data.symbol} 现在是“${state}”，今天的可用预测优势是“${edge}”。${scenarioText} 最强方向是 ${strongest}。5日看法：${fiveText}；20日看法：${twentyText}。大白话：${action}。这不是确定走势，也不是交易指令。`;
+  const confirmation = data.signal_confirmation ? `多源确认 ${data.signal_confirmation.confirmation_score}/100（${confirmationCn(data.signal_confirmation.confirmation_level)}）。` : "";
+  const noEdge = data.market_edge_status?.no_edge_note ? `${data.market_edge_status.no_edge_note} ` : "";
+  return `${data.symbol} 现在是“${state}”，今天的可用预测优势是“${edge}”。${noEdge}${scenarioText} ${confirmation}最强方向是 ${strongest}。5日看法：${fiveText}；20日看法：${twentyText}。大白话：${action}。这不是确定走势，也不是交易指令。`;
 }
 
 function plainSummary(symbolData: SimulatedSymbolPaths | undefined) {
@@ -678,6 +688,7 @@ function CurrentSummary({ data }: { data: SimulatedSymbolPaths }) {
       <p className="mt-3 text-sm leading-6 text-muted">{plainSummary(data)}</p>
       <div className="mt-5 grid gap-3 text-sm sm:grid-cols-4">
         <Metric label="今天是否有预测优势" value={edgeCn(data.market_edge_status?.market_edge_status)} />
+        <Metric label="多源确认" value={data.signal_confirmation ? `${data.signal_confirmation.confirmation_score}/100 / ${confirmationCn(data.signal_confirmation.confirmation_level)}` : "暂无"} />
         <Metric label="当前状态" value={stateCn(data.market_state)} />
         <Metric label="最强方向" value={strongestPredictorText(data)} />
         <Metric label="最大概率路径" value={ranking?.primary ? `${ranking.primary.label} ${pct(ranking.primary.probability)}` : strongestScenario(data)} />
@@ -697,8 +708,9 @@ function FirstScreenDecisionPanel({
   selected: SimulatedSymbolPaths;
   strongest?: SimulatedSymbolPaths;
 }) {
-  const supporting = selected.signal_agreement?.supporting_signals ?? [];
-  const conflicts = selected.signal_agreement?.conflicting_signals ?? [];
+  const supporting = selected.signal_confirmation?.supporting_evidence ?? selected.signal_agreement?.supporting_signals ?? [];
+  const conflicts = selected.signal_confirmation?.conflicting_evidence ?? selected.signal_agreement?.conflicting_signals ?? [];
+  const missing = selected.signal_confirmation?.missing_evidence ?? [];
   return (
     <section className="mt-5 rounded-lg border border-line bg-white p-4">
       <div className="grid gap-4 lg:grid-cols-[1.15fr_0.85fr]">
@@ -711,6 +723,10 @@ function FirstScreenDecisionPanel({
             <Metric label="当前状态" value={stateCn(selected.market_state)} />
             <Metric label="最强指数信号" value={strongest ? `${strongest.symbol} / ${edgeCn(strongest.market_edge_status?.market_edge_status)}` : "暂无"} />
             <Metric label="预测可信度" value={`${selected.model_confidence?.confidence_score ?? "暂无"}/100`} />
+            <Metric label="多源确认" value={selected.signal_confirmation ? `${selected.signal_confirmation.confirmation_score}/100 / ${confirmationCn(selected.signal_confirmation.confirmation_level)}` : "暂无"} />
+            <Metric label="主路径" value={selected.scenario_ranking?.primary ? `${selected.scenario_ranking.primary.label} ${pct(selected.scenario_ranking.primary.probability)}` : "暂无"} />
+            <Metric label="第二路径" value={selected.scenario_ranking?.secondary ? `${selected.scenario_ranking.secondary.label} ${pct(selected.scenario_ranking.secondary.probability)}` : "暂无"} />
+            <Metric label="路径差距" value={scenarioGapText(selected)} />
           </div>
         </div>
         <div className="grid gap-3 text-xs sm:grid-cols-3 lg:grid-cols-1">
@@ -721,6 +737,10 @@ function FirstScreenDecisionPanel({
           <div className="rounded-md bg-panel p-3">
             <p className="font-medium text-ink">冲突信号</p>
             <p className="mt-1 text-muted">{conflicts.slice(0, 4).map((item) => item.name).join(" / ") || "暂无明显冲突"}</p>
+          </div>
+          <div className="rounded-md bg-panel p-3">
+            <p className="font-medium text-ink">缺失证据</p>
+            <p className="mt-1 text-muted">{missing.slice(0, 4).map((item) => item.name).join(" / ") || "暂无关键缺失"}</p>
           </div>
           <div className="rounded-md bg-panel p-3">
             <p className="font-medium text-ink">失效条件</p>

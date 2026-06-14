@@ -25,6 +25,10 @@ from scripts.market_intelligence_v3 import (
     build_market_intelligence_v3,
     render_high_confidence_signal_report_markdown,
 )
+from scripts.market_intelligence_v4 import (
+    build_market_intelligence_v4,
+    render_high_confidence_edge_report_markdown,
+)
 from scripts.providers.finnhub_provider import fetch_finnhub_bundle
 
 
@@ -69,6 +73,14 @@ def main() -> int:
         prior_intelligence=intelligence_v2,
         finnhub_bundle=finnhub_bundle,
     )
+    intelligence_v4 = build_market_intelligence_v4(
+        series_by_symbol=series_by_symbol,
+        overview=market_overview,
+        simulated_paths=simulated_paths,
+        analogs=analogs,
+        prior_intelligence=intelligence_v3,
+        finnhub_bundle=finnhub_bundle,
+    )
     dashboard = {
         "generated_by": "scripts/export_static_alpha_v1.py",
         "source": "github_actions_forward_tracker_outputs",
@@ -78,11 +90,13 @@ def main() -> int:
         "simulated_paths": simulated_paths,
         "market_intelligence_v2": intelligence_v2,
         "market_intelligence_v3": intelligence_v3,
-        "data_quality_report": intelligence_v3["data_quality_report"],
+        "market_intelligence_v4": intelligence_v4,
+        "data_quality_report": intelligence_v4["data_quality_report"],
         "feature_snapshot_v2": intelligence_v2["feature_snapshot_v2"],
         "feature_snapshot_v3": intelligence_v3["feature_snapshot_v3"],
-        "model_confidence_by_symbol": intelligence_v3["model_confidence_by_symbol"],
+        "model_confidence_by_symbol": intelligence_v4["model_confidence_by_symbol"],
         "high_confidence_signal_report": intelligence_v3["high_confidence_signal_report"],
+        "high_confidence_edge_report": intelligence_v4["high_confidence_edge_report"],
         "alpha_status": alpha_status,
         "forward_report": alpha_report,
         "analogs": analogs,
@@ -99,21 +113,25 @@ def main() -> int:
         "source": "github_actions_forward_tracker_outputs",
         "analogs": analogs,
     })
-    _write_json(public_dir / "data_quality_report.json", intelligence_v3["data_quality_report"])
+    _write_json(public_dir / "data_quality_report.json", intelligence_v4["data_quality_report"])
     _write_json(public_dir / "high-confidence-signal-report.json", intelligence_v3["high_confidence_signal_report"])
+    _write_json(public_dir / "high-confidence-edge-report.json", intelligence_v4["high_confidence_edge_report"])
     _write_json(public_dir / "market-overview.json", market_overview)
     _write_json(public_dir / "simulated-paths.json", simulated_paths)
     _write_json(public_dir / "prediction-dashboard.json", dashboard)
     _write_report(PROJECT_ROOT / "outputs" / "high_confidence_signal_report.md", intelligence_v3["high_confidence_signal_report"])
+    _write_edge_report(PROJECT_ROOT / "outputs" / "high_confidence_edge_report.md", intelligence_v4["high_confidence_edge_report"])
 
     print("wrote frontend/public/alpha-v1-status.json")
     print("wrote frontend/public/alpha-v1-analogs.json")
     print("wrote frontend/public/data_quality_report.json")
     print("wrote frontend/public/high-confidence-signal-report.json")
+    print("wrote frontend/public/high-confidence-edge-report.json")
     print("wrote frontend/public/market-overview.json")
     print("wrote frontend/public/simulated-paths.json")
     print("wrote frontend/public/prediction-dashboard.json")
     print("wrote outputs/high_confidence_signal_report.md")
+    print("wrote outputs/high_confidence_edge_report.md")
     return 0
 
 
@@ -456,6 +474,11 @@ def _write_json(path: Path, payload: dict[str, Any]) -> None:
 def _write_report(path: Path, payload: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(render_high_confidence_signal_report_markdown(payload), encoding="utf-8")
+
+
+def _write_edge_report(path: Path, payload: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(render_high_confidence_edge_report_markdown(payload), encoding="utf-8")
 
 
 if __name__ == "__main__":

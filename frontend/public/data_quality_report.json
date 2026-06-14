@@ -101,11 +101,12 @@
       "status": "available"
     }
   },
-  "generated_at": "2026-06-14T06:53:37.763741+00:00",
+  "generated_at": "2026-06-14T07:14:05.880654+00:00",
   "notes": [
     "Breadth and flow are ETF/sector proxies, not constituent-level feeds.",
     "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
-    "Put/call ratio, gamma exposure and true fund flow remain missing unless a real feed is added."
+    "Put/call ratio, gamma exposure and true fund flow remain missing unless a real feed is added.",
+    "V4 target is 85/100. If not reached, the blocking items are listed in missing_key_sources and unavailable_categories."
   ],
   "sources": {
     "DFII10": {
@@ -796,14 +797,17 @@
     }
   },
   "summary": {
+    "breadth_provider_status": "proxy",
     "breadth_required": true,
-    "data_completeness_score": 79,
+    "data_completeness_score": 80,
     "data_source_status": "real_core_with_proxies",
     "fallback_used": true,
     "finnhub_available": false,
     "finnhub_missing": true,
     "finnhub_rate_limited": false,
+    "flow_provider_status": "proxy",
     "flow_required": true,
+    "fred_provider_status": "missing",
     "fred_required": true,
     "latest_date": "2026-06-12",
     "missing_data": true,
@@ -834,16 +838,18 @@
       "finnhub_rates_data",
       "finnhub_alternative_data"
     ],
+    "options_provider_status": "partial",
     "options_required": true,
-    "quality_note": "Score includes real data plus explicitly labeled proxy/fallback categories; it is not equal to institutional-grade data coverage.",
+    "quality_note": "V4 score rewards real FRED/Finnhub/market data, gives partial credit to explicitly labeled proxies, and keeps missing options/flow/breadth details visible.",
     "real_market_data": true,
     "stale_data": false,
     "synthetic_used": false,
-    "target_completeness_score": 75,
+    "target_completeness_score": 85,
     "unavailable_categories": [
       "news"
     ],
+    "v4_target_met": false,
     "yahoo_fallback_used": true
   },
-  "version": "market_intelligence_engine_v3_data_quality"
+  "version": "market_intelligence_engine_v4_data_quality"
 }
