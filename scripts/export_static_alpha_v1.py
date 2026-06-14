@@ -37,6 +37,10 @@ from scripts.forecast_accuracy_ledger import (
     render_forecast_accuracy_scorecard_markdown,
     update_forecast_accuracy_ledger,
 )
+from scripts.historical_replay_benchmark import (
+    render_historical_replay_benchmark_markdown,
+    build_historical_replay_benchmark,
+)
 from scripts.providers.finnhub_provider import fetch_finnhub_bundle
 from scripts.providers.fred_provider import DEFAULT_FRED_SERIES, fetch_fred_bundle
 from scripts.providers.breadth_provider import fetch_breadth_bundle, render_breadth_status_markdown
@@ -205,9 +209,11 @@ def main() -> int:
     ledger_summary = update_forecast_accuracy_ledger(dashboard=dashboard, price_history=price_history)
     forecast_records = export_forecast_records_json()
     forecast_scorecard = build_forecast_accuracy_scorecard()
+    historical_replay_benchmark = build_historical_replay_benchmark(dashboard)
     dashboard["forecast_ledger_summary"] = ledger_summary
     dashboard["forecast_records"] = forecast_records
     dashboard["forecast_accuracy_scorecard"] = forecast_scorecard
+    dashboard["historical_replay_benchmark"] = historical_replay_benchmark
 
     _write_json(public_dir / "alpha-v1-status.json", {
         "generated_by": "scripts/export_static_alpha_v1.py",
@@ -230,6 +236,7 @@ def main() -> int:
     _write_json(public_dir / "high-confidence-edge-report.json", intelligence_v4["high_confidence_edge_report"])
     _write_json(public_dir / "forecast-records.json", forecast_records)
     _write_json(public_dir / "forecast-accuracy-scorecard.json", forecast_scorecard)
+    _write_json(public_dir / "historical-replay-benchmark.json", historical_replay_benchmark)
     _write_json(public_dir / "market-overview.json", market_overview)
     _write_json(public_dir / "simulated-paths.json", simulated_paths)
     _write_json(public_dir / "prediction-dashboard.json", dashboard)
@@ -242,6 +249,7 @@ def main() -> int:
     _write_flow_status_report(PROJECT_ROOT / "outputs" / "flow_positioning_status.md", flow_bundle)
     _write_breadth_impact_status_report(PROJECT_ROOT / "outputs" / "breadth_impact_report.md", breadth_impact_report)
     _write_forecast_accuracy_scorecard_report(PROJECT_ROOT / "outputs" / "forecast_accuracy_scorecard.md", forecast_scorecard)
+    _write_historical_replay_benchmark_report(PROJECT_ROOT / "outputs" / "historical_replay_benchmark.md", historical_replay_benchmark)
 
     print("wrote frontend/public/alpha-v1-status.json")
     print("wrote frontend/public/alpha-v1-analogs.json")
@@ -255,6 +263,7 @@ def main() -> int:
     print("wrote frontend/public/high-confidence-edge-report.json")
     print("wrote frontend/public/forecast-records.json")
     print("wrote frontend/public/forecast-accuracy-scorecard.json")
+    print("wrote frontend/public/historical-replay-benchmark.json")
     print("wrote frontend/public/market-overview.json")
     print("wrote frontend/public/simulated-paths.json")
     print("wrote frontend/public/prediction-dashboard.json")
@@ -267,6 +276,7 @@ def main() -> int:
     print("wrote outputs/flow_positioning_status.md")
     print("wrote outputs/breadth_impact_report.md")
     print("wrote outputs/forecast_accuracy_scorecard.md")
+    print("wrote outputs/historical_replay_benchmark.md")
     return 0
 
 
@@ -688,6 +698,11 @@ def _write_flow_status_report(path: Path, bundle: dict[str, Any]) -> None:
 def _write_forecast_accuracy_scorecard_report(path: Path, scorecard: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(render_forecast_accuracy_scorecard_markdown(scorecard), encoding="utf-8")
+
+
+def _write_historical_replay_benchmark_report(path: Path, report: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(render_historical_replay_benchmark_markdown(report), encoding="utf-8")
 
 
 def _write_breadth_impact_status_report(path: Path, report: dict[str, Any]) -> None:

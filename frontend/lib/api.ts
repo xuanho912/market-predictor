@@ -615,6 +615,7 @@ export type PredictionDashboard = {
   forecast_ledger_summary?: Record<string, unknown>;
   forecast_records?: Record<string, unknown>;
   forecast_accuracy_scorecard?: ForecastAccuracyScorecard;
+  historical_replay_benchmark?: Record<string, unknown>;
   overview: {
     as_of: string | null;
     strongest_symbol: string;
