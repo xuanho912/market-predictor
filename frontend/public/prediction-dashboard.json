@@ -200,7 +200,7 @@
         "TLT": "yahoo-chart",
         "UUP": "yahoo-chart",
         "^TNX": "yahoo-chart",
-        "^VIX": "local-cache-yahoo-chart"
+        "^VIX": "yahoo-chart"
       },
       "distance_to_threshold": -0.24536636000000006,
       "historical_distribution": {
@@ -2851,7 +2851,7 @@
       "evidence_note": "Forward-only breadth attribution is still below the minimum sample gate; these buckets are tracked but not proof.",
       "status": "not_enough_forward_samples"
     },
-    "generated_at": "2026-06-14T18:28:10.338810Z",
+    "generated_at": "2026-06-14T18:36:29.971223Z",
     "notes": [
       "This audit compares the same run with true breadth provider disabled vs enabled.",
       "The audit does not change Alpha v1 and does not prove tradable alpha.",
@@ -3009,7 +3009,7 @@
   },
   "breadth_status": {
     "cache_root": "data/breadth_cache",
-    "generated_at": "2026-06-14T18:28:09.166010+00:00",
+    "generated_at": "2026-06-14T18:36:28.789545+00:00",
     "provider": "true_breadth_provider",
     "sector_participation_proxy": {
       "data_note": "Sector ETF proxy, not constituent-level sector breadth.",
@@ -3632,7 +3632,7 @@
         "status": "available"
       }
     },
-    "generated_at": "2026-06-14T18:28:10.333913+00:00",
+    "generated_at": "2026-06-14T18:36:29.965019+00:00",
     "notes": [
       "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
       "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -4738,14 +4738,14 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
-        "HY_OAS",
         "IG_OAS",
-        "BAA_SPREAD",
-        "DGS2",
+        "HY_OAS",
         "DGS10",
         "DGS3MO",
-        "FINANCIAL_STRESS",
+        "BAA_SPREAD",
+        "DGS2",
         "DFII10",
+        "FINANCIAL_STRESS",
         "RECESSION"
       ],
       "gamma_available": false,
@@ -4807,7 +4807,7 @@
     "version": "market_intelligence_engine_v4_data_quality"
   },
   "feature_snapshot_v2": {
-    "generated_at": "2026-06-14T18:28:10.322450+00:00",
+    "generated_at": "2026-06-14T18:36:29.951891+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -5045,7 +5045,7 @@
     "version": "market_intelligence_engine_v2_features"
   },
   "feature_snapshot_v3": {
-    "generated_at": "2026-06-14T18:28:10.327353+00:00",
+    "generated_at": "2026-06-14T18:36:29.957374+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -5995,7 +5995,7 @@
     "version": "market_intelligence_engine_v3_features"
   },
   "flow_positioning_status": {
-    "generated_at": "2026-06-14T18:28:10.279307+00:00",
+    "generated_at": "2026-06-14T18:36:29.899352+00:00",
     "latest_date": "2026-06-12",
     "provider": "flow_positioning_proxy",
     "sources": {
@@ -6446,7 +6446,7 @@
     ]
   },
   "flow_status": {
-    "generated_at": "2026-06-14T18:28:10.279307+00:00",
+    "generated_at": "2026-06-14T18:36:29.899352+00:00",
     "latest_date": "2026-06-12",
     "provider": "flow_positioning_proxy",
     "sources": {
@@ -7672,7 +7672,7 @@
       "high_confidence_better": "insufficient_samples_for_high_confidence_validation",
       "primary_beats_secondary": "insufficient_samples"
     },
-    "generated_at": "2026-06-14T18:28:10.342554+00:00",
+    "generated_at": "2026-06-14T18:36:29.976018+00:00",
     "guardrails": [
       "This scorecard validates probabilistic forecast paths, not trades.",
       "Forecast records are immutable except for future-outcome backfill fields.",
@@ -7767,7 +7767,7 @@
       "5d": 0,
       "60d": 0
     },
-    "generated_at": "2026-06-14T18:28:10.341277+00:00",
+    "generated_at": "2026-06-14T18:36:29.974305+00:00",
     "immutability_note": "Forecast fields are write-once by forecast_id. Backfill may update only actual_return, best_matching_scenario, primary_hit, path_error and status fields.",
     "new_records_considered": 4,
     "not_trading_note": "This is a forecast accuracy ledger, not a paper-trading, execution or PnL ledger.",
@@ -7779,7 +7779,7 @@
   "forecast_price_levels": {
     "as_of": "2026-06-12",
     "disclaimer": "Forecast price levels are probabilistic scenario points derived from simulated paths, recent price structure and volatility bands. They are not execution instructions, risk-control rules, or guaranteed target prices.",
-    "generated_at": "2026-06-14T18:28:10.339794Z",
+    "generated_at": "2026-06-14T18:36:29.972466Z",
     "symbols": {
       "DIA": {
         "current_price": 513.05999756,
@@ -9522,7 +9522,7 @@
     "version": "forecast_price_levels_v1"
   },
   "forecast_records": {
-    "generated_at": "2026-06-14T18:28:10.342238+00:00",
+    "generated_at": "2026-06-14T18:36:29.975562+00:00",
     "records": [
       {
         "actual_return_10d": "",
@@ -12077,7 +12077,7 @@
     },
     "forward_completed_sample_size": 0,
     "forward_validation_notice": "当前高置信度还没有被前向样本验证，不应当视为稳定预测能力。",
-    "generated_at": "2026-06-14T18:28:10.335312+00:00",
+    "generated_at": "2026-06-14T18:36:29.966762+00:00",
     "internal_resonance_forward_validation": {
       "aligned_internal_resonance": {
         "by_horizon": {
@@ -13038,7 +13038,7 @@
       }
     },
     "conclusion": "confidence_not_yet_validated",
-    "generated_at": "2026-06-14T18:28:10.333349+00:00",
+    "generated_at": "2026-06-14T18:36:29.964325+00:00",
     "high_confidence_better_than_low_confidence": false,
     "high_vs_low_comparison_by_horizon": {
       "10d": false,
@@ -15449,7 +15449,7 @@
       "note": "Historical replay cannot upgrade alpha or confidence until forward validation samples mature.",
       "sample_gate": "insufficient_samples"
     },
-    "generated_at": "2026-06-14T18:28:10.352655+00:00",
+    "generated_at": "2026-06-14T18:36:29.989625+00:00",
     "guardrails": [
       "Historical replay is research evaluation only and cannot replace daily forward validation.",
       "Historical replay results must not be described as confirmed alpha.",
@@ -17043,7 +17043,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-06-14T18:28:10.321683+00:00",
+      "generated_at": "2026-06-14T18:36:29.951036+00:00",
       "notes": [
         "price/volatility/credit/rates/liquidity currently use public market proxies.",
         "options breadth macro flow are not treated as available unless real feeds are connected.",
@@ -17179,7 +17179,7 @@
       }
     },
     "feature_snapshot_v2": {
-      "generated_at": "2026-06-14T18:28:10.322450+00:00",
+      "generated_at": "2026-06-14T18:36:29.951891+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -17416,7 +17416,7 @@
       },
       "version": "market_intelligence_engine_v2_features"
     },
-    "generated_at": "2026-06-14T18:28:10.322875+00:00",
+    "generated_at": "2026-06-14T18:36:29.952458+00:00",
     "model_confidence_by_symbol": {
       "DIA": {
         "components": {
@@ -17613,7 +17613,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-06-14T18:28:10.330338+00:00",
+      "generated_at": "2026-06-14T18:36:29.960305+00:00",
       "notes": [
         "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
         "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -18741,7 +18741,7 @@
       }
     },
     "feature_snapshot_v3": {
-      "generated_at": "2026-06-14T18:28:10.327353+00:00",
+      "generated_at": "2026-06-14T18:36:29.957374+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -19726,18 +19726,18 @@
       "fred_missing": false,
       "fred_rate_limited": false,
       "fred_successful_series": [
-        "HY_OAS",
         "IG_OAS",
-        "BAA_SPREAD",
-        "DGS2",
+        "HY_OAS",
         "DGS10",
         "DGS3MO",
-        "FINANCIAL_STRESS",
+        "BAA_SPREAD",
+        "DGS2",
         "DFII10",
+        "FINANCIAL_STRESS",
         "RECESSION"
       ]
     },
-    "generated_at": "2026-06-14T18:28:10.333361+00:00",
+    "generated_at": "2026-06-14T18:36:29.964341+00:00",
     "high_confidence_signal_report": {
       "by_bucket": {
         "low_confidence_reference": {
@@ -20351,7 +20351,7 @@
         }
       },
       "conclusion": "confidence_not_yet_validated",
-      "generated_at": "2026-06-14T18:28:10.333349+00:00",
+      "generated_at": "2026-06-14T18:36:29.964325+00:00",
       "high_confidence_better_than_low_confidence": false,
       "high_vs_low_comparison_by_horizon": {
         "10d": false,
@@ -21162,7 +21162,7 @@
         "evidence_note": "Forward-only breadth attribution is still below the minimum sample gate; these buckets are tracked but not proof.",
         "status": "not_enough_forward_samples"
       },
-      "generated_at": "2026-06-14T18:28:10.338810Z",
+      "generated_at": "2026-06-14T18:36:29.971223Z",
       "notes": [
         "This audit compares the same run with true breadth provider disabled vs enabled.",
         "The audit does not change Alpha v1 and does not prove tradable alpha.",
@@ -21421,7 +21421,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-06-14T18:28:10.333913+00:00",
+      "generated_at": "2026-06-14T18:36:29.965019+00:00",
       "notes": [
         "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
         "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -22527,14 +22527,14 @@
         "fred_rate_limited": false,
         "fred_required": true,
         "fred_successful_series": [
-          "HY_OAS",
           "IG_OAS",
-          "BAA_SPREAD",
-          "DGS2",
+          "HY_OAS",
           "DGS10",
           "DGS3MO",
-          "FINANCIAL_STRESS",
+          "BAA_SPREAD",
+          "DGS2",
           "DFII10",
+          "FINANCIAL_STRESS",
           "RECESSION"
         ],
         "gamma_available": false,
@@ -22756,18 +22756,18 @@
       "fallback_used": false,
       "rate_limited": false,
       "successful_series": [
-        "HY_OAS",
         "IG_OAS",
-        "BAA_SPREAD",
-        "DGS2",
+        "HY_OAS",
         "DGS10",
         "DGS3MO",
-        "FINANCIAL_STRESS",
+        "BAA_SPREAD",
+        "DGS2",
         "DFII10",
+        "FINANCIAL_STRESS",
         "RECESSION"
       ]
     },
-    "generated_at": "2026-06-14T18:28:10.338453+00:00",
+    "generated_at": "2026-06-14T18:36:29.970842+00:00",
     "high_confidence_edge_report": {
       "breadth_forward_validation": {
         "bounce_with_breadth_support": {
@@ -24158,7 +24158,7 @@
       },
       "forward_completed_sample_size": 0,
       "forward_validation_notice": "当前高置信度还没有被前向样本验证，不应当视为稳定预测能力。",
-      "generated_at": "2026-06-14T18:28:10.335312+00:00",
+      "generated_at": "2026-06-14T18:36:29.966762+00:00",
       "internal_resonance_forward_validation": {
         "aligned_internal_resonance": {
           "by_horizon": {
@@ -25686,7 +25686,7 @@
         "status": "insufficient_forward_samples"
       }
     },
-    "generated_at": "2026-06-14T18:28:10.355501+00:00",
+    "generated_at": "2026-06-14T18:36:29.993381+00:00",
     "guardrails": [
       "Alpha v1 threshold remains frozen at 0.32534311.",
       "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -26357,7 +26357,7 @@
   },
   "model_promotion_status": {
     "active_model_version": "baseline_v1",
-    "generated_at": "2026-06-14T18:28:10.355543+00:00",
+    "generated_at": "2026-06-14T18:36:29.993432+00:00",
     "guardrails": [
       "Alpha v1 threshold remains frozen at 0.32534311.",
       "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -26494,7 +26494,7 @@
     "version": "model_promotion_status_v1"
   },
   "options_status": {
-    "generated_at": "2026-06-14T18:28:10.274143+00:00",
+    "generated_at": "2026-06-14T18:36:29.892744+00:00",
     "market": {
       "failed_bounce_options_risk": 0.2395,
       "gamma_exposure": null,
@@ -26882,14 +26882,14 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
-        "HY_OAS",
         "IG_OAS",
-        "BAA_SPREAD",
-        "DGS2",
+        "HY_OAS",
         "DGS10",
         "DGS3MO",
-        "FINANCIAL_STRESS",
+        "BAA_SPREAD",
+        "DGS2",
         "DFII10",
+        "FINANCIAL_STRESS",
         "RECESSION"
       ],
       "gamma_available": false,
@@ -32517,14 +32517,14 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
-        "HY_OAS",
         "IG_OAS",
-        "BAA_SPREAD",
-        "DGS2",
+        "HY_OAS",
         "DGS10",
         "DGS3MO",
-        "FINANCIAL_STRESS",
+        "BAA_SPREAD",
+        "DGS2",
         "DFII10",
+        "FINANCIAL_STRESS",
         "RECESSION"
       ],
       "gamma_available": false,
