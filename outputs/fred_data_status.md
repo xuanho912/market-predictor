@@ -1,6 +1,6 @@
 # FRED Data Status
 
-Generated at: `2026-06-14T08:30:49.494131Z`
+Generated at: `2026-06-14T08:39:37.544785Z`
 
 ## Provider
 
@@ -9,21 +9,21 @@ Generated at: `2026-06-14T08:30:49.494131Z`
 - fallback used: `True`
 - rate limited: `False`
 - successful series: `none`
-- failed series: `DGS10, IG_OAS, DGS2, BAA_SPREAD, HY_OAS, DGS3MO, RECESSION, FINANCIAL_STRESS, DFII10`
+- failed series: `DGS10, DGS3MO, IG_OAS, BAA_SPREAD, HY_OAS, DGS2, RECESSION, FINANCIAL_STRESS, DFII10`
 
 ## Series
 
 | name | series_id | success | latest_date | latest_value | source | stale | error |
 |---|---|---:|---|---:|---|---:|---|
-| BAA_SPREAD | BAA10Y | False |  |  | fred | True | no_api_key_and_csv_failed |
-| DFII10 | DFII10 | False |  |  | fred | True | no_api_key_and_csv_failed |
-| DGS10 | DGS10 | False |  |  | fred | True | no_api_key_and_csv_failed |
-| DGS2 | DGS2 | False |  |  | fred | True | no_api_key_and_csv_failed |
-| DGS3MO | DGS3MO | False |  |  | fred | True | no_api_key_and_csv_failed |
-| FINANCIAL_STRESS | STLFSI4 | False |  |  | fred | True | no_api_key_and_csv_failed |
-| HY_OAS | BAMLH0A0HYM2 | False |  |  | fred | True | no_api_key_and_csv_failed |
-| IG_OAS | BAMLC0A0CM | False |  |  | fred | True | no_api_key_and_csv_failed |
-| RECESSION | USREC | False |  |  | fred | True | no_api_key_and_csv_failed |
+| BAA_SPREAD | BAA10Y | False |  |  | fred | True | no_api_key; csv_fallback_timeout |
+| DFII10 | DFII10 | False |  |  | fred | True | no_api_key; csv_fallback_timeout |
+| DGS10 | DGS10 | False |  |  | fred | True | no_api_key; csv_fallback_timeout |
+| DGS2 | DGS2 | False |  |  | fred | True | no_api_key; csv_fallback_timeout |
+| DGS3MO | DGS3MO | False |  |  | fred | True | no_api_key; csv_fallback_timeout |
+| FINANCIAL_STRESS | STLFSI4 | False |  |  | fred | True | no_api_key; csv_fallback_timeout |
+| HY_OAS | BAMLH0A0HYM2 | False |  |  | fred | True | no_api_key; csv_fallback_timeout |
+| IG_OAS | BAMLC0A0CM | False |  |  | fred | True | no_api_key; csv_fallback_timeout |
+| RECESSION | USREC | False |  |  | fred | True | no_api_key; csv_fallback_timeout |
 
 ## Data Completeness Effect
 
