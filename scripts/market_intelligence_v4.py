@@ -634,6 +634,10 @@ def build_high_confidence_edge_report(analogs: dict[str, dict[str, Any]], simula
         confidence = symbol_state.get("model_confidence", {})
         edge_status = symbol_state.get("market_edge_status", {}).get("market_edge_status", "NO_EDGE")
         for case in analog.get("top_similar_cases", []):
+            features = symbol_state.get("feature_snapshot_v3") or {}
+            breadth = features.get("breadth") or {}
+            predictors = symbol_state.get("predictors_v4") or {}
+            strongest_predictor = _strongest_predictor_name(predictors)
             row = dict(case)
             row.update(
                 {
@@ -647,6 +651,13 @@ def build_high_confidence_edge_report(analogs: dict[str, dict[str, Any]], simula
                     "secondary_probability": (ranking.get("secondary") or {}).get("probability"),
                     "probability_gap": ranking.get("probability_gap"),
                     "close_call": bool(ranking.get("close_call")),
+                    "strongest_predictor": strongest_predictor,
+                    "breadth_confirmation_score": _score01(breadth.get("breadth_confirmation_score"), _score01(breadth.get("breadth_improvement_score"))) * 100.0,
+                    "breadth_conflict_score": _score01(breadth.get("breadth_conflict_score"), _score01(breadth.get("breadth_deterioration_score"))) * 100.0,
+                    "breadth_improvement_score": _score01(breadth.get("breadth_improvement_score")) * 100.0,
+                    "breadth_quality_score": _score01(breadth.get("breadth_quality_score"), 0.0) * 100.0,
+                    "true_breadth": bool(breadth.get("is_true_breadth")),
+                    "breadth_proxy": bool(breadth.get("is_proxy")),
                 }
             )
             rows.append(row)
@@ -671,6 +682,7 @@ def build_high_confidence_edge_report(analogs: dict[str, dict[str, Any]], simula
         "primary_scenario_hit_rate": _primary_scenario_hit_rate(rows),
         "primary_vs_secondary": _primary_vs_secondary_proxy(rows, forward_counts),
         "close_call_samples": _close_call_stats(rows),
+        "breadth_forward_validation": _breadth_forward_validation(rows, forward_counts),
         "by_symbol": {symbol: _edge_bucket_metrics([row for row in rows if row["symbol"] == symbol]) for symbol in TARGET_SYMBOLS},
         "by_regime": _by_regime(rows),
         "conclusion": _edge_report_conclusion(rows, forward_counts),
@@ -678,6 +690,7 @@ def build_high_confidence_edge_report(analogs: dict[str, dict[str, Any]], simula
             "This report is not proof of alpha; it is a proxy check until forward-only samples mature.",
             "If strong/high-confirmation buckets do not beat weak/no-edge buckets, model confidence must remain capped.",
             "Forward completed samples are required before STRONG_EDGE or high-confidence buckets can be treated as validated.",
+            "Breadth buckets remain not_enough_forward_samples until enough forward-only observations complete.",
         ],
     }
     return report
@@ -728,6 +741,23 @@ def render_high_confidence_edge_report_markdown(report: dict[str, Any]) -> str:
     lines.append(f"- primary_vs_secondary: `{report.get('primary_vs_secondary')}`")
     lines.append(f"- close_call_samples: `{report.get('close_call_samples')}`")
     lines.append("")
+    lines.append("## Breadth Forward Validation")
+    lines.append("")
+    breadth = report.get("breadth_forward_validation") or {}
+    lines.append(f"- status: `{breadth.get('status')}`")
+    lines.append(f"- evidence_note: `{breadth.get('evidence_note')}`")
+    for key in (
+        "breadth_confirmed_signals",
+        "breadth_conflicted_signals",
+        "bounce_with_breadth_support",
+        "bounce_without_breadth_support",
+        "trend_reversal_with_breadth_support",
+        "failed_bounce_risk_with_breadth_conflict",
+    ):
+        lines.append("")
+        lines.append(f"### {key}")
+        lines.extend(_metrics_markdown(breadth.get(key, {})))
+    lines.append("")
     lines.extend(f"- {note}" for note in report.get("notes", []))
     lines.append("")
     return "\n".join(lines)
@@ -771,6 +801,14 @@ def _data_completeness_score_v4(coverage: dict[str, Any], source_rows: dict[str,
         "not_available": 0.0,
     }
     score = sum(weights[name] * values.get(coverage.get(name, {}).get("status"), 0.0) for name in weights)
+    true_breadth_rows = [source_rows.get(name, {}) for name in ("breadth_SPY", "breadth_QQQ", "breadth_DIA")]
+    true_breadth_available = all(row.get("real_data") and not row.get("missing_data") for row in true_breadth_rows)
+    breadth_quality_values = [_float(row.get("breadth_quality_score"), 0.0) or 0.0 for row in true_breadth_rows if row]
+    avg_breadth_quality = sum(breadth_quality_values) / len(breadth_quality_values) if breadth_quality_values else 0.0
+    if true_breadth_available and avg_breadth_quality >= 80:
+        score += 2.0
+    elif coverage.get("breadth", {}).get("status") == "proxy":
+        score = min(score, 87.0)
     if any(row.get("source") == "synthetic-fallback" for row in source_rows.values()):
         score -= 25
     return int(round(_clip(score, 0.0, 100.0)))
@@ -911,6 +949,39 @@ def _edge_bucket_metrics(rows: list[dict[str, Any]]) -> dict[str, Any]:
             "max_favorable_excursion": round(max(values), 6),
         }
     return payload
+
+
+def _breadth_forward_validation(rows: list[dict[str, Any]], forward_counts: dict[str, Any]) -> dict[str, Any]:
+    confirmed = [row for row in rows if _float(row.get("breadth_confirmation_score"), 0.0) >= 55.0]
+    conflicted = [row for row in rows if _float(row.get("breadth_conflict_score"), 0.0) >= 55.0]
+    bounce_rows = [row for row in rows if row.get("primary_scenario") == "bounce_path"]
+    reversal_rows = [row for row in rows if row.get("strongest_predictor") == "trend_reversal_predictor"]
+    downside_rows = [row for row in rows if row.get("strongest_predictor") == "downside_continuation_predictor" or row.get("primary_scenario") == "bearish_path"]
+    enough_forward = forward_counts.get("max_completed_count", 0) >= 20
+    status = "forward_ready" if enough_forward else "not_enough_forward_samples"
+    return {
+        "status": status,
+        "completed_sample_counter": forward_counts,
+        "evidence_note": (
+            "Forward-only breadth attribution is still below the minimum sample gate; these buckets are tracked but not proof."
+            if not enough_forward
+            else "Forward-only sample gate has opened; compare breadth-supported buckets against conflicted buckets before raising confidence."
+        ),
+        "breadth_confirmed_signals": _edge_bucket_metrics(confirmed),
+        "breadth_conflicted_signals": _edge_bucket_metrics(conflicted),
+        "bounce_with_breadth_support": _edge_bucket_metrics([row for row in bounce_rows if _float(row.get("breadth_confirmation_score"), 0.0) >= 55.0]),
+        "bounce_without_breadth_support": _edge_bucket_metrics([row for row in bounce_rows if _float(row.get("breadth_confirmation_score"), 0.0) < 55.0]),
+        "trend_reversal_with_breadth_support": _edge_bucket_metrics([row for row in reversal_rows if _float(row.get("breadth_confirmation_score"), 0.0) >= 55.0]),
+        "failed_bounce_risk_with_breadth_conflict": _edge_bucket_metrics([row for row in downside_rows if _float(row.get("breadth_conflict_score"), 0.0) >= 55.0]),
+        "core_question": "Does breadth confirmation improve forward hit rate / average return versus breadth conflict?",
+        "forward_validation_required": not enough_forward,
+    }
+
+
+def _strongest_predictor_name(predictors: dict[str, Any]) -> str | None:
+    if not predictors:
+        return None
+    return max(predictors.items(), key=lambda item: _float((item[1] or {}).get("probability"), 0.0))[0]
 
 
 def _primary_scenario_hit_rate(rows: list[dict[str, Any]]) -> dict[str, Any]:

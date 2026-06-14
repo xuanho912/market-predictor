@@ -154,6 +154,68 @@ export type DataQualityReport = {
   notes: string[];
 };
 
+export type BreadthUniverseStatus = {
+  symbol: string;
+  name: string;
+  is_true_breadth: boolean;
+  is_proxy: boolean;
+  status: string;
+  source: string;
+  latest_date: string | null;
+  constituents_expected: number | null;
+  constituents_used: number | null;
+  coverage_ratio: number | null;
+  stale_constituents: boolean;
+  stale_price_data: boolean;
+  missing_ratio?: number | null;
+  failed_tickers_sample?: string[];
+  stale_tickers_sample?: string[];
+  metrics: {
+    percent_above_20d: number | null;
+    percent_above_50d: number | null;
+    percent_above_200d: number | null;
+    advancers: number | null;
+    decliners: number | null;
+    advance_decline_ratio: number | null;
+    up_volume_down_volume_ratio: number | null;
+    new_highs_20d: number | null;
+    new_lows_20d: number | null;
+    new_highs_52w: number | null;
+    new_lows_52w: number | null;
+    percent_above_20d_change_5d: number | null;
+    percent_above_50d_change_10d: number | null;
+    improvement_acceleration: number | null;
+  };
+  scores: {
+    breadth_improvement_score: number;
+    breadth_deterioration_score: number;
+    breadth_confirmation_score: number;
+    breadth_conflict_score: number;
+    breadth_quality_score: number;
+  };
+  data_note?: string;
+};
+
+export type BreadthStatus = {
+  provider: string;
+  version: string;
+  generated_at: string;
+  universe_order: string[];
+  universes: Record<string, BreadthUniverseStatus>;
+  summary: {
+    provider_available: boolean;
+    true_breadth_available: boolean;
+    true_breadth_symbols: string[];
+    breadth_proxy_only_symbols: string[];
+    stale_data: boolean;
+    stale_symbols: string[];
+    average_breadth_quality_score: number;
+    sector_proxy_available: boolean;
+    data_note?: string;
+  };
+  warnings?: string[];
+};
+
 export type MarketStateName =
   | "risk_on"
   | "risk_off"
@@ -403,6 +465,7 @@ export type PredictionDashboard = {
   as_of: string | null;
   status_note: string;
   data_quality_report?: DataQualityReport;
+  breadth_status?: BreadthStatus;
   market_intelligence_v2?: {
     version: string;
     generated_at: string;

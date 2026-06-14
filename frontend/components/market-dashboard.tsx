@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import type { DataQualityReport, HistoricalAnalogCase, PredictionDashboard, SimulatedSymbolPaths } from "../lib/api";
+import type { BreadthStatus, DataQualityReport, HistoricalAnalogCase, PredictionDashboard, SimulatedSymbolPaths } from "../lib/api";
 
 const SYMBOL_ORDER = ["SPY", "QQQ", "IWM", "DIA"];
 const HORIZON_ORDER = ["3d", "5d", "10d", "20d", "60d"];
@@ -125,6 +125,36 @@ function statusCn(value: string | undefined) {
   if (value === "rate_limited") return "限速";
   if (value === "not_available") return "未接入";
   return value ?? "未知";
+}
+
+function breadthCoverageText(value: string | undefined, isTrue?: boolean, isProxy?: boolean) {
+  if (isTrue) return "true";
+  if (isProxy || value === "proxy") return "proxy";
+  if (value === "available" || value === "partial" || value === "stale") return "true";
+  return "missing";
+}
+
+function scorePct(value: number | null | undefined) {
+  if (value == null || Number.isNaN(value)) return "暂无";
+  return `${value.toFixed(0)}/100`;
+}
+
+function breadthImpactText(status: BreadthStatus | undefined, data: SimulatedSymbolPaths | undefined) {
+  if (!status || !data) return "暂无 breadth 数据。";
+  const item = status.universes?.[data.symbol];
+  if (!item) return `${data.symbol} 暂无 breadth 数据。`;
+  const confirmation = item.scores?.breadth_confirmation_score ?? 0;
+  const conflict = item.scores?.breadth_conflict_score ?? 0;
+  const above20 = item.metrics?.percent_above_20d;
+  const change20 = item.metrics?.percent_above_20d_change_5d;
+  const low20 = item.metrics?.new_lows_20d;
+  if (confirmation >= 65 && confirmation >= conflict) {
+    return `${data.symbol} 当前主路径获得 breadth 支持：20d 上方比例 ${pct(above20)}，5d 宽度变化 ${signedPct(change20)}，20d 新低 ${low20 ?? "暂无"}。`;
+  }
+  if (conflict >= 55) {
+    return `${data.symbol} 当前存在 breadth 冲突：成分股参与不足或新低扩张，反抽更容易切到失败反抽/震荡路径。`;
+  }
+  return `${data.symbol} breadth 目前偏中性：可以辅助判断，但不足以单独提高主路径置信度。`;
 }
 
 function edgeCn(value: string | undefined) {
@@ -639,6 +669,74 @@ function DataQualityPanel({ report }: { report?: DataQualityReport }) {
   );
 }
 
+function BreadthPanel({ status, selected }: { status?: BreadthStatus; selected?: SimulatedSymbolPaths }) {
+  if (!status) return null;
+  const summary = status.summary;
+  return (
+    <section className="mt-5 rounded-lg border border-line bg-white p-4">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <p className="text-xs uppercase text-muted">Data / Breadth</p>
+          <h2 className="mt-1 text-base font-semibold">市场宽度：内部参与度</h2>
+          <p className="mt-1 text-xs text-muted">判断反抽/修复是不是多数股票参与，而不是少数大票撑指数。</p>
+        </div>
+        <div className="rounded-md bg-panel px-4 py-2 text-right">
+          <p className="text-xs text-muted">平均质量</p>
+          <p className="text-2xl font-semibold">{scorePct(summary.average_breadth_quality_score)}</p>
+          <p className="text-xs text-muted">{summary.true_breadth_available ? "true breadth" : "partial / proxy"}</p>
+        </div>
+      </div>
+      <div className="mt-3 grid gap-2 text-xs sm:grid-cols-4">
+        <Metric label="Breadth Coverage" value={summary.true_breadth_available ? "true" : summary.provider_available ? "partial" : "missing"} />
+        <Metric label="真实宽度" value={summary.true_breadth_symbols?.join(" / ") || "暂无"} />
+        <Metric label="Proxy" value={summary.breadth_proxy_only_symbols?.join(" / ") || "无"} />
+        <Metric label="Stale warning" value={summary.stale_data ? `有：${summary.stale_symbols?.join(" / ")}` : "无"} />
+      </div>
+      <div className="mt-4 overflow-x-auto">
+        <table className="w-full min-w-[860px] text-left text-xs">
+          <thead className="border-b border-line text-muted">
+            <tr>
+              <th className="py-2">Universe</th>
+              <th>Coverage</th>
+              <th>有效 / 应有</th>
+              <th>缺失样本</th>
+              <th>Above 20/50/200d</th>
+              <th>Advance / Decline</th>
+              <th>New High / Low</th>
+              <th>Confirmation</th>
+              <th>Conflict</th>
+            </tr>
+          </thead>
+          <tbody>
+            {SYMBOL_ORDER.map((symbol) => {
+              const item = status.universes?.[symbol];
+              if (!item) return null;
+              const missing = item.failed_tickers_sample?.length ? item.failed_tickers_sample.slice(0, 5).join(" / ") : "无";
+              return (
+                <tr key={symbol} className="border-b border-line last:border-0">
+                  <td className="py-2 font-semibold">{symbol}</td>
+                  <td>{breadthCoverageText(item.status, item.is_true_breadth, item.is_proxy)}</td>
+                  <td>{item.constituents_used ?? "proxy"} / {item.constituents_expected ?? "proxy"}</td>
+                  <td>{missing}</td>
+                  <td>{pct(item.metrics.percent_above_20d)} / {pct(item.metrics.percent_above_50d)} / {pct(item.metrics.percent_above_200d)}</td>
+                  <td>{item.metrics.advancers ?? "暂无"} / {item.metrics.decliners ?? "暂无"}</td>
+                  <td>{item.metrics.new_highs_20d ?? "暂无"} / {item.metrics.new_lows_20d ?? "暂无"}</td>
+                  <td className="font-medium text-teal">{scorePct(item.scores.breadth_confirmation_score)}</td>
+                  <td className="font-medium text-rose">{scorePct(item.scores.breadth_conflict_score)}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+      <div className="mt-3 rounded-md bg-panel p-3 text-sm">
+        <p className="font-medium text-ink">Breadth 对当前判断的影响</p>
+        <p className="mt-1 text-muted">{breadthImpactText(status, selected)}</p>
+      </div>
+    </section>
+  );
+}
+
 function ConfidencePanel({ data }: { data: SimulatedSymbolPaths }) {
   const confidence = data.model_confidence;
   if (!confidence) return null;
@@ -1079,6 +1177,7 @@ export function MarketDashboard({ dashboard: initialDashboard }: { dashboard: Pr
       <HistoricalAnalogs cases={topAnalogs} data={selected} />
       <RiskPanel data={selected} />
       <DataQualityPanel report={dashboard.data_quality_report ?? dashboard.market_intelligence_v2?.data_quality_report} />
+      <BreadthPanel status={dashboard.breadth_status} selected={selected} />
     </main>
   );
 }
