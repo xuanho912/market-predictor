@@ -1,7 +1,7 @@
 {
   "as_of": "2026-06-12",
   "disclaimer": "Forecast price levels are probabilistic scenario points derived from simulated paths, recent price structure and volatility bands. They are not execution instructions, risk-control rules, or guaranteed target prices.",
-  "generated_at": "2026-06-14T18:10:27.846997Z",
+  "generated_at": "2026-06-14T18:28:10.339794Z",
   "symbols": {
     "DIA": {
       "current_price": 513.05999756,
@@ -128,6 +128,92 @@
           "risk_scenario_price": 489.21,
           "secondary_scenario": "bearish_path",
           "secondary_scenario_label": "风险路径",
+          "secondary_scenario_price": 489.21,
+          "source": "simulated_path",
+          "upper_confidence_price": 532.26
+        }
+      },
+      "horizon_prices": {
+        "10d": {
+          "analog_average_price": 513.17,
+          "confidence": "medium",
+          "expected_price": 516.15,
+          "expected_return": 0.006,
+          "lower_confidence_price": 507.92,
+          "not_guaranteed_forecast": true,
+          "primary_scenario_price": 520.57,
+          "probability_of_reaching_primary_price": 0.4081,
+          "risk_scenario_price": 507.92,
+          "secondary_scenario_price": 507.92,
+          "source": "simulated_path",
+          "upper_confidence_price": 520.57
+        },
+        "1d": {
+          "analog_average_price": 512.91,
+          "confidence": "medium",
+          "expected_price": 513.95,
+          "expected_return": 0.0017,
+          "lower_confidence_price": 511.81,
+          "not_guaranteed_forecast": true,
+          "primary_scenario_price": 515.14,
+          "probability_of_reaching_primary_price": 0.4081,
+          "risk_scenario_price": 511.81,
+          "secondary_scenario_price": 511.81,
+          "source": "simulated_path",
+          "upper_confidence_price": 515.14
+        },
+        "20d": {
+          "analog_average_price": 515.03,
+          "confidence": "medium",
+          "expected_price": 520.87,
+          "expected_return": 0.0152,
+          "lower_confidence_price": 489.1,
+          "not_guaranteed_forecast": true,
+          "primary_scenario_price": 537.19,
+          "probability_of_reaching_primary_price": 0.4081,
+          "risk_scenario_price": 489.1,
+          "secondary_scenario_price": 489.1,
+          "source": "simulated_path",
+          "upper_confidence_price": 537.19
+        },
+        "3d": {
+          "analog_average_price": 512.62,
+          "confidence": "medium",
+          "expected_price": 515.74,
+          "expected_return": 0.0052,
+          "lower_confidence_price": 509.3,
+          "not_guaranteed_forecast": true,
+          "primary_scenario_price": 519.31,
+          "probability_of_reaching_primary_price": 0.4081,
+          "risk_scenario_price": 509.3,
+          "secondary_scenario_price": 509.3,
+          "source": "simulated_path",
+          "upper_confidence_price": 519.31
+        },
+        "5d": {
+          "analog_average_price": 514.76,
+          "confidence": "medium",
+          "expected_price": 518.93,
+          "expected_return": 0.0114,
+          "lower_confidence_price": 514.05,
+          "not_guaranteed_forecast": true,
+          "primary_scenario_price": 521.88,
+          "probability_of_reaching_primary_price": 0.4081,
+          "risk_scenario_price": 514.05,
+          "secondary_scenario_price": 514.05,
+          "source": "simulated_path",
+          "upper_confidence_price": 521.88
+        },
+        "60d": {
+          "analog_average_price": 502.26,
+          "confidence": "medium",
+          "expected_price": 516.81,
+          "expected_return": 0.0073,
+          "lower_confidence_price": 489.21,
+          "not_guaranteed_forecast": true,
+          "primary_scenario_price": 532.26,
+          "probability_of_reaching_primary_price": 0.4081,
+          "risk_scenario_price": 489.21,
           "secondary_scenario_price": 489.21,
           "source": "simulated_path",
           "upper_confidence_price": 532.26
@@ -280,6 +366,12 @@
         "source": "price_structure",
         "status": "available"
       },
+      "primary_probability": 0.4081,
+      "primary_scenario": "bounce_path",
+      "risk_probability": 0.2138,
+      "risk_scenario": "analog_average_path",
+      "secondary_probability": 0.2339,
+      "secondary_scenario": "bearish_path",
       "source_note": "Derived from existing simulated paths, recent price structure and realized-volatility bands.",
       "summary": {
         "plain_language": "DIA 当前主路径是 反抽情景，第二路径是 失败反抽情景。价格点位只是路径验证条件，不是操作建议。",
@@ -299,7 +391,51 @@
           "price": 489.1
         }
       },
-      "symbol": "DIA"
+      "symbol": "DIA",
+      "trigger_levels": {
+        "bounce_target_zone": {
+          "base": 537.19,
+          "conservative": 521.88,
+          "extended": 537.19
+        },
+        "failed_bounce_warning_zone": {
+          "critical_warning": 489.1,
+          "first_warning": 500.25
+        },
+        "not_trading_advice": true,
+        "primary_confirmation_level": {
+          "confidence": "medium",
+          "distance_pct": 0.0172,
+          "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
+          "price": 521.88,
+          "source": "primary_path_5d + recent_5d_high + realized_volatility_band",
+          "source_type": "simulated_path"
+        },
+        "primary_invalidation_level": {
+          "confidence": "medium",
+          "distance_pct": -0.025,
+          "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
+          "price": 500.25,
+          "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
+          "source_type": "price_structure"
+        },
+        "risk_scenario_activation_level": {
+          "confidence": "medium",
+          "distance_pct": -0.0467,
+          "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
+          "price": 489.1,
+          "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
+          "source_type": "simulated_path"
+        },
+        "trend_reversal_confirmation_level": {
+          "confidence": "medium",
+          "distance_pct": 0.047,
+          "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
+          "price": 537.19,
+          "source": "primary_path_20d + recent_20d_high + 20d_or_50d_moving_average",
+          "source_type": "price_structure"
+        }
+      }
     },
     "IWM": {
       "current_price": 292.95001221,
@@ -426,6 +562,92 @@
           "risk_scenario_price": 298.16,
           "secondary_scenario": "analog_average_path",
           "secondary_scenario_label": "历史均值情景",
+          "secondary_scenario_price": 299.5,
+          "source": "simulated_path",
+          "upper_confidence_price": 305.65
+        }
+      },
+      "horizon_prices": {
+        "10d": {
+          "analog_average_price": 294.55,
+          "confidence": "medium",
+          "expected_price": 296.58,
+          "expected_return": 0.0124,
+          "lower_confidence_price": 288.33,
+          "not_guaranteed_forecast": true,
+          "primary_scenario_price": 302.23,
+          "probability_of_reaching_primary_price": 0.3793,
+          "risk_scenario_price": 288.33,
+          "secondary_scenario_price": 294.55,
+          "source": "simulated_path",
+          "upper_confidence_price": 302.23
+        },
+        "1d": {
+          "analog_average_price": 293.67,
+          "confidence": "medium",
+          "expected_price": 293.59,
+          "expected_return": 0.0022,
+          "lower_confidence_price": 292.95,
+          "not_guaranteed_forecast": true,
+          "primary_scenario_price": 293.99,
+          "probability_of_reaching_primary_price": 0.3793,
+          "risk_scenario_price": 292.95,
+          "secondary_scenario_price": 293.67,
+          "source": "simulated_path",
+          "upper_confidence_price": 293.99
+        },
+        "20d": {
+          "analog_average_price": 291.59,
+          "confidence": "medium",
+          "expected_price": 293.79,
+          "expected_return": 0.0029,
+          "lower_confidence_price": 279.87,
+          "not_guaranteed_forecast": true,
+          "primary_scenario_price": 303.12,
+          "probability_of_reaching_primary_price": 0.3793,
+          "risk_scenario_price": 279.87,
+          "secondary_scenario_price": 291.59,
+          "source": "simulated_path",
+          "upper_confidence_price": 303.12
+        },
+        "3d": {
+          "analog_average_price": 295.1,
+          "confidence": "medium",
+          "expected_price": 294.87,
+          "expected_return": 0.0066,
+          "lower_confidence_price": 292.94,
+          "not_guaranteed_forecast": true,
+          "primary_scenario_price": 296.08,
+          "probability_of_reaching_primary_price": 0.3793,
+          "risk_scenario_price": 292.94,
+          "secondary_scenario_price": 295.1,
+          "source": "simulated_path",
+          "upper_confidence_price": 296.08
+        },
+        "5d": {
+          "analog_average_price": 293.83,
+          "confidence": "medium",
+          "expected_price": 294.8,
+          "expected_return": 0.0063,
+          "lower_confidence_price": 292.23,
+          "not_guaranteed_forecast": true,
+          "primary_scenario_price": 296.61,
+          "probability_of_reaching_primary_price": 0.3793,
+          "risk_scenario_price": 292.23,
+          "secondary_scenario_price": 293.83,
+          "source": "simulated_path",
+          "upper_confidence_price": 296.61
+        },
+        "60d": {
+          "analog_average_price": 299.5,
+          "confidence": "medium",
+          "expected_price": 302.42,
+          "expected_return": 0.0323,
+          "lower_confidence_price": 298.16,
+          "not_guaranteed_forecast": true,
+          "primary_scenario_price": 305.65,
+          "probability_of_reaching_primary_price": 0.3793,
+          "risk_scenario_price": 298.16,
           "secondary_scenario_price": 299.5,
           "source": "simulated_path",
           "upper_confidence_price": 305.65
@@ -578,6 +800,12 @@
         "source": "price_structure",
         "status": "available"
       },
+      "primary_probability": 0.3793,
+      "primary_scenario": "bounce_path",
+      "risk_probability": 0.2174,
+      "risk_scenario": "bearish_path",
+      "secondary_probability": 0.2391,
+      "secondary_scenario": "analog_average_path",
       "source_note": "Derived from existing simulated paths, recent price structure and realized-volatility bands.",
       "summary": {
         "plain_language": "IWM 当前主路径是 反抽情景，第二路径是 历史均值情景。价格点位只是路径验证条件，不是操作建议。",
@@ -597,7 +825,51 @@
           "price": 273.0
         }
       },
-      "symbol": "IWM"
+      "symbol": "IWM",
+      "trigger_levels": {
+        "bounce_target_zone": {
+          "base": 303.12,
+          "conservative": 296.61,
+          "extended": 305.65
+        },
+        "failed_bounce_warning_zone": {
+          "critical_warning": 273.0,
+          "first_warning": 282.05
+        },
+        "not_trading_advice": true,
+        "primary_confirmation_level": {
+          "confidence": "medium",
+          "distance_pct": 0.0125,
+          "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
+          "price": 296.61,
+          "source": "primary_path_5d + recent_5d_high + realized_volatility_band",
+          "source_type": "simulated_path"
+        },
+        "primary_invalidation_level": {
+          "confidence": "medium",
+          "distance_pct": -0.0386,
+          "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
+          "price": 281.65,
+          "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
+          "source_type": "price_structure"
+        },
+        "risk_scenario_activation_level": {
+          "confidence": "medium",
+          "distance_pct": -0.0681,
+          "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
+          "price": 273.0,
+          "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
+          "source_type": "simulated_path"
+        },
+        "trend_reversal_confirmation_level": {
+          "confidence": "medium",
+          "distance_pct": 0.0347,
+          "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
+          "price": 303.12,
+          "source": "primary_path_20d + recent_20d_high + 20d_or_50d_moving_average",
+          "source_type": "price_structure"
+        }
+      }
     },
     "QQQ": {
       "current_price": 721.34002686,
@@ -724,6 +996,92 @@
           "risk_scenario_price": 678.99,
           "secondary_scenario": "bearish_path",
           "secondary_scenario_label": "风险路径",
+          "secondary_scenario_price": 678.99,
+          "source": "simulated_path",
+          "upper_confidence_price": 740.73
+        }
+      },
+      "horizon_prices": {
+        "10d": {
+          "analog_average_price": 721.04,
+          "confidence": "medium",
+          "expected_price": 723.82,
+          "expected_return": 0.0034,
+          "lower_confidence_price": 707.8,
+          "not_guaranteed_forecast": true,
+          "primary_scenario_price": 739.05,
+          "probability_of_reaching_primary_price": 0.3689,
+          "risk_scenario_price": 707.8,
+          "secondary_scenario_price": 707.8,
+          "source": "simulated_path",
+          "upper_confidence_price": 739.05
+        },
+        "1d": {
+          "analog_average_price": 722.52,
+          "confidence": "medium",
+          "expected_price": 722.57,
+          "expected_return": 0.0017,
+          "lower_confidence_price": 722.52,
+          "not_guaranteed_forecast": true,
+          "primary_scenario_price": 722.6,
+          "probability_of_reaching_primary_price": 0.3689,
+          "risk_scenario_price": 722.54,
+          "secondary_scenario_price": 722.54,
+          "source": "simulated_path",
+          "upper_confidence_price": 722.6
+        },
+        "20d": {
+          "analog_average_price": 714.34,
+          "confidence": "medium",
+          "expected_price": 710.77,
+          "expected_return": -0.0147,
+          "lower_confidence_price": 670.66,
+          "not_guaranteed_forecast": true,
+          "primary_scenario_price": 747.11,
+          "probability_of_reaching_primary_price": 0.3689,
+          "risk_scenario_price": 670.66,
+          "secondary_scenario_price": 670.66,
+          "source": "simulated_path",
+          "upper_confidence_price": 747.11
+        },
+        "3d": {
+          "analog_average_price": 724.88,
+          "confidence": "medium",
+          "expected_price": 725.02,
+          "expected_return": 0.0051,
+          "lower_confidence_price": 724.88,
+          "not_guaranteed_forecast": true,
+          "primary_scenario_price": 725.11,
+          "probability_of_reaching_primary_price": 0.3689,
+          "risk_scenario_price": 724.95,
+          "secondary_scenario_price": 724.95,
+          "source": "simulated_path",
+          "upper_confidence_price": 725.11
+        },
+        "5d": {
+          "analog_average_price": 726.09,
+          "confidence": "medium",
+          "expected_price": 727.5,
+          "expected_return": 0.0085,
+          "lower_confidence_price": 721.65,
+          "not_guaranteed_forecast": true,
+          "primary_scenario_price": 733.11,
+          "probability_of_reaching_primary_price": 0.3689,
+          "risk_scenario_price": 721.65,
+          "secondary_scenario_price": 721.65,
+          "source": "simulated_path",
+          "upper_confidence_price": 733.11
+        },
+        "60d": {
+          "analog_average_price": 709.12,
+          "confidence": "medium",
+          "expected_price": 710.97,
+          "expected_return": -0.0144,
+          "lower_confidence_price": 678.99,
+          "not_guaranteed_forecast": true,
+          "primary_scenario_price": 740.73,
+          "probability_of_reaching_primary_price": 0.3689,
+          "risk_scenario_price": 678.99,
           "secondary_scenario_price": 678.99,
           "source": "simulated_path",
           "upper_confidence_price": 740.73
@@ -876,6 +1234,12 @@
         "source": "price_structure",
         "status": "available"
       },
+      "primary_probability": 0.3689,
+      "primary_scenario": "bounce_path",
+      "risk_probability": 0.2169,
+      "risk_scenario": "analog_average_path",
+      "secondary_probability": 0.2365,
+      "secondary_scenario": "bearish_path",
       "source_note": "Derived from existing simulated paths, recent price structure and realized-volatility bands.",
       "summary": {
         "plain_language": "QQQ 当前主路径是 反抽情景，第二路径是 失败反抽情景。价格点位只是路径验证条件，不是操作建议。",
@@ -895,7 +1259,51 @@
           "price": 670.66
         }
       },
-      "symbol": "QQQ"
+      "symbol": "QQQ",
+      "trigger_levels": {
+        "bounce_target_zone": {
+          "base": 747.11,
+          "conservative": 733.11,
+          "extended": 747.11
+        },
+        "failed_bounce_warning_zone": {
+          "critical_warning": 670.66,
+          "first_warning": 693.69
+        },
+        "not_trading_advice": true,
+        "primary_confirmation_level": {
+          "confidence": "medium",
+          "distance_pct": 0.0163,
+          "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
+          "price": 733.11,
+          "source": "primary_path_5d + recent_5d_high + realized_volatility_band",
+          "source_type": "simulated_path"
+        },
+        "primary_invalidation_level": {
+          "confidence": "medium",
+          "distance_pct": -0.0383,
+          "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
+          "price": 693.69,
+          "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
+          "source_type": "price_structure"
+        },
+        "risk_scenario_activation_level": {
+          "confidence": "medium",
+          "distance_pct": -0.0703,
+          "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
+          "price": 670.66,
+          "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
+          "source_type": "simulated_path"
+        },
+        "trend_reversal_confirmation_level": {
+          "confidence": "medium_high",
+          "distance_pct": 0.0357,
+          "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
+          "price": 747.11,
+          "source": "confluence",
+          "source_type": "confluence"
+        }
+      }
     },
     "SPY": {
       "current_price": 741.75,
@@ -1022,6 +1430,92 @@
           "risk_scenario_price": 714.74,
           "secondary_scenario": "analog_average_path",
           "secondary_scenario_label": "历史均值情景",
+          "secondary_scenario_price": 773.55,
+          "source": "simulated_path",
+          "upper_confidence_price": 809.65
+        }
+      },
+      "horizon_prices": {
+        "10d": {
+          "analog_average_price": 741.12,
+          "confidence": "medium",
+          "expected_price": 739.04,
+          "expected_return": -0.0037,
+          "lower_confidence_price": 730.59,
+          "not_guaranteed_forecast": true,
+          "primary_scenario_price": 742.28,
+          "probability_of_reaching_primary_price": 0.4159,
+          "risk_scenario_price": 730.59,
+          "secondary_scenario_price": 741.12,
+          "source": "simulated_path",
+          "upper_confidence_price": 742.28
+        },
+        "1d": {
+          "analog_average_price": 740.1,
+          "confidence": "medium",
+          "expected_price": 739.35,
+          "expected_return": -0.0032,
+          "lower_confidence_price": 738.93,
+          "not_guaranteed_forecast": true,
+          "primary_scenario_price": 739.43,
+          "probability_of_reaching_primary_price": 0.4159,
+          "risk_scenario_price": 738.93,
+          "secondary_scenario_price": 740.1,
+          "source": "simulated_path",
+          "upper_confidence_price": 740.1
+        },
+        "20d": {
+          "analog_average_price": 756.59,
+          "confidence": "medium",
+          "expected_price": 761.96,
+          "expected_return": 0.0273,
+          "lower_confidence_price": 724.83,
+          "not_guaranteed_forecast": true,
+          "primary_scenario_price": 778.13,
+          "probability_of_reaching_primary_price": 0.4159,
+          "risk_scenario_price": 724.83,
+          "secondary_scenario_price": 756.59,
+          "source": "simulated_path",
+          "upper_confidence_price": 778.13
+        },
+        "3d": {
+          "analog_average_price": 736.79,
+          "confidence": "medium",
+          "expected_price": 734.55,
+          "expected_return": -0.0097,
+          "lower_confidence_price": 733.28,
+          "not_guaranteed_forecast": true,
+          "primary_scenario_price": 734.78,
+          "probability_of_reaching_primary_price": 0.4159,
+          "risk_scenario_price": 733.28,
+          "secondary_scenario_price": 736.79,
+          "source": "simulated_path",
+          "upper_confidence_price": 736.79
+        },
+        "5d": {
+          "analog_average_price": 734.35,
+          "confidence": "medium",
+          "expected_price": 736.22,
+          "expected_return": -0.0075,
+          "lower_confidence_price": 732.31,
+          "not_guaranteed_forecast": true,
+          "primary_scenario_price": 738.09,
+          "probability_of_reaching_primary_price": 0.4159,
+          "risk_scenario_price": 732.31,
+          "secondary_scenario_price": 734.35,
+          "source": "simulated_path",
+          "upper_confidence_price": 738.09
+        },
+        "60d": {
+          "analog_average_price": 773.55,
+          "confidence": "medium",
+          "expected_price": 781.06,
+          "expected_return": 0.053,
+          "lower_confidence_price": 714.74,
+          "not_guaranteed_forecast": true,
+          "primary_scenario_price": 809.65,
+          "probability_of_reaching_primary_price": 0.4159,
+          "risk_scenario_price": 714.74,
           "secondary_scenario_price": 773.55,
           "source": "simulated_path",
           "upper_confidence_price": 809.65
@@ -1174,6 +1668,12 @@
         "source": "price_structure",
         "status": "available"
       },
+      "primary_probability": 0.4159,
+      "primary_scenario": "bounce_path",
+      "risk_probability": 0.1957,
+      "risk_scenario": "bearish_path",
+      "secondary_probability": 0.2565,
+      "secondary_scenario": "analog_average_path",
       "source_note": "Derived from existing simulated paths, recent price structure and realized-volatility bands.",
       "summary": {
         "plain_language": "SPY 当前主路径是 反抽情景，第二路径是 历史均值情景。价格点位只是路径验证条件，不是操作建议。",
@@ -1193,7 +1693,51 @@
           "price": 724.83
         }
       },
-      "symbol": "SPY"
+      "symbol": "SPY",
+      "trigger_levels": {
+        "bounce_target_zone": {
+          "base": 778.13,
+          "conservative": 741.75,
+          "extended": 809.65
+        },
+        "failed_bounce_warning_zone": {
+          "critical_warning": 724.83,
+          "first_warning": 725.43
+        },
+        "not_trading_advice": true,
+        "primary_confirmation_level": {
+          "confidence": "medium",
+          "distance_pct": 0.0025,
+          "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
+          "price": 743.58,
+          "source": "primary_path_5d + recent_5d_high + realized_volatility_band",
+          "source_type": "simulated_path"
+        },
+        "primary_invalidation_level": {
+          "confidence": "medium",
+          "distance_pct": -0.022,
+          "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
+          "price": 725.43,
+          "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
+          "source_type": "price_structure"
+        },
+        "risk_scenario_activation_level": {
+          "confidence": "medium",
+          "distance_pct": -0.0228,
+          "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
+          "price": 724.83,
+          "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
+          "source_type": "simulated_path"
+        },
+        "trend_reversal_confirmation_level": {
+          "confidence": "medium",
+          "distance_pct": 0.049,
+          "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
+          "price": 778.13,
+          "source": "primary_path_20d + recent_20d_high + 20d_or_50d_moving_average",
+          "source_type": "price_structure"
+        }
+      }
     }
   },
   "validation_type": "forecast_scenario_levels",
