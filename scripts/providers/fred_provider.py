@@ -164,7 +164,7 @@ class _FredClient:
             "stale_data": True,
             "missing_data": True,
             "error_type": type(last_error).__name__ if last_error else None,
-            "error_reason": last_reason if self._token else "no_api_key_and_csv_failed",
+            "error_reason": last_reason if self._token else f"no_api_key; csv_fallback_{last_reason}",
             "last_attempted_source": last_source,
         }
 
