@@ -33,6 +33,7 @@ from scripts.market_intelligence_v4 import (
 )
 from scripts.providers.finnhub_provider import fetch_finnhub_bundle
 from scripts.providers.fred_provider import DEFAULT_FRED_SERIES, fetch_fred_bundle
+from scripts.providers.breadth_provider import fetch_breadth_bundle, render_breadth_status_markdown
 
 
 SYMBOLS = ("SPY", "QQQ", "IWM", "DIA")
@@ -60,6 +61,8 @@ def main() -> int:
     finnhub_bundle = fetch_finnhub_bundle(symbols=SYMBOLS, lookback_days=520)
     fred_bundle = fetch_fred_bundle(lookback_days=1800)
     _print_fred_diagnostics(fred_bundle)
+    breadth_bundle = fetch_breadth_bundle(series_by_symbol=series_by_symbol, lookback_days=420)
+    _print_breadth_diagnostics(breadth_bundle)
     price_history = _load_price_history(series_by_symbol)
 
     market_overview = _build_market_overview(alpha_status, analogs, price_history)
@@ -81,6 +84,7 @@ def main() -> int:
         prior_intelligence=baseline_v2,
         finnhub_bundle=finnhub_bundle,
         fred_bundle=no_fred_bundle,
+        breadth_bundle=breadth_bundle,
     )
     baseline_v4 = build_market_intelligence_v4(
         series_by_symbol=series_by_symbol,
@@ -105,6 +109,7 @@ def main() -> int:
         prior_intelligence=intelligence_v2,
         finnhub_bundle=finnhub_bundle,
         fred_bundle=fred_bundle,
+        breadth_bundle=breadth_bundle,
     )
     intelligence_v4 = build_market_intelligence_v4(
         series_by_symbol=series_by_symbol,
@@ -129,6 +134,7 @@ def main() -> int:
         "market_intelligence_v3": intelligence_v3,
         "market_intelligence_v4": intelligence_v4,
         "data_quality_report": intelligence_v4["data_quality_report"],
+        "breadth_status": breadth_bundle,
         "feature_snapshot_v2": intelligence_v2["feature_snapshot_v2"],
         "feature_snapshot_v3": intelligence_v3["feature_snapshot_v3"],
         "model_confidence_by_symbol": intelligence_v4["model_confidence_by_symbol"],
@@ -151,6 +157,7 @@ def main() -> int:
         "analogs": analogs,
     })
     _write_json(public_dir / "data_quality_report.json", intelligence_v4["data_quality_report"])
+    _write_json(public_dir / "breadth-status.json", breadth_bundle)
     _write_json(public_dir / "high-confidence-signal-report.json", intelligence_v3["high_confidence_signal_report"])
     _write_json(public_dir / "high-confidence-edge-report.json", intelligence_v4["high_confidence_edge_report"])
     _write_json(public_dir / "market-overview.json", market_overview)
@@ -159,10 +166,12 @@ def main() -> int:
     _write_report(PROJECT_ROOT / "outputs" / "high_confidence_signal_report.md", intelligence_v3["high_confidence_signal_report"])
     _write_edge_report(PROJECT_ROOT / "outputs" / "high_confidence_edge_report.md", intelligence_v4["high_confidence_edge_report"])
     _write_fred_status_report(PROJECT_ROOT / "outputs" / "fred_data_status.md", fred_bundle, fred_effect_summary, intelligence_v4)
+    _write_breadth_status_report(PROJECT_ROOT / "outputs" / "breadth_data_status.md", breadth_bundle)
 
     print("wrote frontend/public/alpha-v1-status.json")
     print("wrote frontend/public/alpha-v1-analogs.json")
     print("wrote frontend/public/data_quality_report.json")
+    print("wrote frontend/public/breadth-status.json")
     print("wrote frontend/public/high-confidence-signal-report.json")
     print("wrote frontend/public/high-confidence-edge-report.json")
     print("wrote frontend/public/market-overview.json")
@@ -171,6 +180,7 @@ def main() -> int:
     print("wrote outputs/high_confidence_signal_report.md")
     print("wrote outputs/high_confidence_edge_report.md")
     print("wrote outputs/fred_data_status.md")
+    print("wrote outputs/breadth_data_status.md")
     return 0
 
 
@@ -193,6 +203,32 @@ def _print_fred_diagnostics(bundle: dict[str, Any]) -> None:
             f"stale={str(bool(payload.get('stale_data'))).lower()} "
             f"error_type={payload.get('error_type') or 'NA'} "
             f"error_reason={payload.get('error_reason') or 'NA'}"
+        )
+
+
+def _print_breadth_diagnostics(bundle: dict[str, Any]) -> None:
+    summary = bundle.get("summary") or {}
+    print(f"BREADTH_PROVIDER_AVAILABLE={str(bool(summary.get('provider_available'))).lower()}")
+    print(f"BREADTH_TRUE_AVAILABLE={str(bool(summary.get('true_breadth_available'))).lower()}")
+    print(f"BREADTH_AVERAGE_QUALITY={summary.get('average_breadth_quality_score')}")
+    print(f"BREADTH_STALE_DATA={str(bool(summary.get('stale_data'))).lower()}")
+    for symbol, payload in sorted((bundle.get("universes") or {}).items()):
+        scores = payload.get("scores") or {}
+        print(
+            "BREADTH_UNIVERSE "
+            f"symbol={symbol} "
+            f"status={payload.get('status') or 'missing'} "
+            f"true_breadth={str(bool(payload.get('is_true_breadth'))).lower()} "
+            f"proxy={str(bool(payload.get('is_proxy'))).lower()} "
+            f"latest_date={payload.get('latest_date') or 'NA'} "
+            f"used={payload.get('constituents_used') if payload.get('constituents_used') is not None else 'NA'} "
+            f"expected={payload.get('constituents_expected') if payload.get('constituents_expected') is not None else 'NA'} "
+            f"coverage={payload.get('coverage_ratio') if payload.get('coverage_ratio') is not None else 'NA'} "
+            f"stale_constituents={str(bool(payload.get('stale_constituents'))).lower()} "
+            f"stale_price_data={str(bool(payload.get('stale_price_data'))).lower()} "
+            f"improvement={scores.get('breadth_improvement_score') if scores.get('breadth_improvement_score') is not None else 'NA'} "
+            f"conflict={scores.get('breadth_conflict_score') if scores.get('breadth_conflict_score') is not None else 'NA'} "
+            f"quality={scores.get('breadth_quality_score') if scores.get('breadth_quality_score') is not None else 'NA'}"
         )
 
 
@@ -358,6 +394,11 @@ def _write_fred_status_report(path: Path, bundle: dict[str, Any], effect_summary
     )
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def _write_breadth_status_report(path: Path, bundle: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(render_breadth_status_markdown(bundle), encoding="utf-8")
 
 
 def _load_price_history(series_by_symbol: dict[str, DownloadedSeries] | None = None) -> dict[str, list[dict[str, Any]]]:

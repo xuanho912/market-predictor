@@ -60,12 +60,13 @@ def build_market_intelligence_v3(
     prior_intelligence: dict[str, Any],
     finnhub_bundle: dict[str, Any] | None = None,
     fred_bundle: dict[str, Any] | None = None,
+    breadth_bundle: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     finnhub_bundle = finnhub_bundle or _empty_finnhub_bundle()
     fred_bundle = fred_bundle or fetch_fred_bundle()
     fred_series = load_fred_series_bundle(fred_bundle=fred_bundle)
-    feature_snapshot = build_feature_snapshot_v3(series_by_symbol, fred_series, finnhub_bundle)
-    data_quality = build_data_quality_report_v3(series_by_symbol, fred_series, feature_snapshot, overview.get("as_of"), finnhub_bundle)
+    feature_snapshot = build_feature_snapshot_v3(series_by_symbol, fred_series, finnhub_bundle, breadth_bundle=breadth_bundle)
+    data_quality = build_data_quality_report_v3(series_by_symbol, fred_series, feature_snapshot, overview.get("as_of"), finnhub_bundle, breadth_bundle=breadth_bundle)
     model_confidence_by_symbol: dict[str, Any] = {}
     predictor_outputs_by_symbol: dict[str, Any] = {}
     signal_agreement_by_symbol: dict[str, Any] = {}
@@ -185,9 +186,10 @@ def build_market_intelligence_v3(
         "high_confidence_signal_report": high_confidence_report,
         "finnhub_status": _finnhub_status_summary(finnhub_bundle),
         "fred_status": _fred_bundle_summary(fred_bundle),
+        "breadth_status": _breadth_bundle_summary(breadth_bundle),
         "warnings": [
             "Alpha v1 threshold remains frozen at 0.32534311.",
-            "Proxy breadth, proxy flow and calendar fallbacks are labeled as proxy/fallback, not true constituent or fund-flow feeds.",
+            "True breadth is used when SPY/QQQ/DIA constituent data is available; IWM remains explicitly proxy-only.",
             "NO_EDGE is allowed and preferred when signals conflict or data is insufficient.",
         ],
         "prior_engine": prior_intelligence.get("version", "market_intelligence_engine_v2"),
@@ -237,6 +239,7 @@ def build_feature_snapshot_v3(
     series_by_symbol: dict[str, DownloadedSeries],
     fred_series: dict[str, FredSeries],
     finnhub_bundle: dict[str, Any],
+    breadth_bundle: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     closes = {symbol: _closes(series_by_symbol.get(symbol)) for symbol in set(TARGET_SYMBOLS + V3_MARKET_SYMBOLS + ("^VIX", "HYG", "LQD", "TLT", "UUP", "^TNX"))}
     volumes = {symbol: _volumes(series_by_symbol.get(symbol)) for symbol in closes}
@@ -264,7 +267,7 @@ def build_feature_snapshot_v3(
         target = closes.get(symbol, [])
         target_volume = volumes.get(symbol, [])
         finnhub_symbol = _finnhub_symbol_snapshot(finnhub_bundle, symbol)
-        breadth = _breadth_proxy(sector_closes, rsp, spy)
+        breadth = _breadth_from_bundle(symbol, breadth_bundle) or _breadth_proxy(sector_closes, rsp, spy)
         flow = _flow_proxy(target_volume, target, sphb, splv, sector_closes)
         credit = _credit_snapshot(hyg, lqd, fred)
         rates = _rates_snapshot(tlt, uup, fred)
@@ -313,6 +316,7 @@ def build_data_quality_report_v3(
     feature_snapshot: dict[str, Any],
     as_of: str | None,
     finnhub_bundle: dict[str, Any],
+    breadth_bundle: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     market_required = set(TARGET_SYMBOLS + ("^VIX", "HYG", "LQD", "TLT", "UUP", "^TNX") + V3_MARKET_SYMBOLS)
     source_rows: dict[str, Any] = {}
@@ -329,6 +333,7 @@ def build_data_quality_report_v3(
             latest_dates.append(latest)
         source_rows[name] = _fred_source_status(name, series, latest)
     source_rows.update(_finnhub_source_rows(finnhub_bundle))
+    source_rows.update(_breadth_source_rows(breadth_bundle))
 
     reference_date = max(latest_dates) if latest_dates else as_of
     for row in source_rows.values():
@@ -361,6 +366,7 @@ def build_data_quality_report_v3(
     any_missing = any(row.get("missing_data") for row in source_rows.values())
     real_core = all(source_rows.get(symbol, {}).get("real_data") for symbol in TARGET_SYMBOLS + ("^VIX", "HYG", "LQD", "TLT", "UUP", "^TNX"))
     finnhub_status = _finnhub_status_summary(finnhub_bundle)
+    breadth_status = _breadth_bundle_summary(breadth_bundle)
     yahoo_fallback_used = any(str(row.get("source", "")).startswith(("yfinance", "yahoo-chart", "local-cache-yfinance", "local-cache-yahoo-chart")) for row in source_rows.values())
 
     return {
@@ -377,6 +383,10 @@ def build_data_quality_report_v3(
             "fred_required": True,
             "options_required": True,
             "breadth_required": True,
+            "true_breadth_available": breadth_status["true_breadth_available"],
+            "breadth_provider_available": breadth_status["provider_available"],
+            "breadth_proxy_only_symbols": breadth_status["breadth_proxy_only_symbols"],
+            "average_breadth_quality_score": breadth_status["average_breadth_quality_score"],
             "flow_required": True,
             "fallback_used": any_fallback,
             "synthetic_used": any_synthetic,
@@ -425,7 +435,10 @@ def build_signal_agreement_score(
     vix_change_20d = _float_or_none(vol.get("vix_change_20d")) or 0.0
     credit_stability = _float_or_none(credit.get("credit_stabilization_score")) or 0.0
     credit_deterioration = _float_or_none(credit.get("credit_deterioration_score")) or 0.0
-    breadth_score = _float_or_none(breadth.get("breadth_improvement_score")) or 0.0
+    breadth_score = _score01(breadth.get("breadth_improvement_score"))
+    breadth_confirmation = _score01(breadth.get("breadth_confirmation_score"), breadth_score)
+    breadth_conflict = _score01(breadth.get("breadth_conflict_score"))
+    breadth_quality = _score01(breadth.get("breadth_quality_score"), 0.5)
     trend_20d = _float_or_none(price.get("return_20d")) or 0.0
     liquidity_stress = _float_or_none(rates.get("liquidity_stress_proxy")) or 0.0
     rates_pressure = _float_or_none(rates.get("rates_pressure_score")) or liquidity_stress
@@ -439,7 +452,7 @@ def build_signal_agreement_score(
     add(analog_support.get("medium_term_support") == "supportive", supporting, "medium-term historical analogs", 0.15, "20d/60d analogs lean positive.")
     add(vix_change_5d < 0 and vix_change_20d <= 0, supporting, "VIX direction", 0.11, "Volatility is not rising on 5d/20d windows.")
     add(credit_stability > 0.45, supporting, "credit stabilization", 0.12, "Credit proxy is stable or improving.")
-    add(breadth_score > 0.55, supporting, "breadth improvement proxy", 0.11, "Sector/equal-weight breadth proxy is improving.")
+    add(breadth_confirmation > 0.55, supporting, "breadth confirmation", 0.13, "Constituent/proxy breadth supports the current path.")
     add(trend_20d > 0, supporting, "trend momentum", 0.08, "20d momentum is positive.")
     add(liquidity_stress < 0.40, supporting, "liquidity proxy", 0.08, "Liquidity proxy is not stressed.")
     add(news_risk is not None and news_risk < 0.35, supporting, "news risk low", 0.06, "Finnhub market-news risk score is low.")
@@ -448,7 +461,8 @@ def build_signal_agreement_score(
     add(analog_support.get("medium_term_support") == "weak", conflicting, "medium-term analog conflict", 0.15, "20d/60d analogs are weak or negative.")
     add(vix_change_5d > 0 or vix_change_20d > 0, conflicting, "VIX rising", 0.12, "Volatility is rising.")
     add(credit_deterioration > 0.45, conflicting, "credit deterioration", 0.14, "Credit proxy is deteriorating.")
-    add(breadth_score < 0.42, conflicting, "breadth weak", 0.12, "Breadth proxy is weak.")
+    add(breadth_conflict > 0.55 or breadth_score < 0.42, conflicting, "breadth weak", 0.13, "Breadth is weak or diverging from the index.")
+    add(breadth_quality < 0.45, conflicting, "breadth quality weak", 0.06, "Breadth data quality is too low for strong confirmation.")
     add(failed_bounce > 0.55, conflicting, "failed bounce risk", 0.14, "Downside continuation probability is elevated.")
     add(liquidity_stress > 0.55, conflicting, "liquidity stress", 0.12, "Liquidity proxy is stressed.")
     add(rates_pressure > 0.55, conflicting, "rates pressure", 0.10, "Rates pressure proxy is elevated.")
@@ -497,7 +511,10 @@ def build_predictors(
     vix_rollover = 1.0 if (_float_or_none(vol.get("vix_change_5d")) or 0.0) < 0 else 0.0
     credit_stability = _float_or_none(credit.get("credit_stabilization_score")) or 0.0
     credit_deterioration = _float_or_none(credit.get("credit_deterioration_score")) or 0.0
-    breadth_improvement = _float_or_none(breadth.get("breadth_improvement_score")) or 0.0
+    breadth_improvement = _score01(breadth.get("breadth_improvement_score"))
+    breadth_deterioration = _score01(breadth.get("breadth_deterioration_score"))
+    breadth_confirmation = _score01(breadth.get("breadth_confirmation_score"), breadth_improvement)
+    breadth_conflict = _score01(breadth.get("breadth_conflict_score"), breadth_deterioration)
     liquidity_stress = _float_or_none(rates.get("liquidity_stress_proxy")) or 0.0
     rates_pressure = _float_or_none(rates.get("rates_pressure_score")) or liquidity_stress
     trend_20d = _float_or_none(price.get("return_20d")) or 0.0
@@ -514,7 +531,7 @@ def build_predictors(
         + agreement * 0.18
         + vix_rollover * 0.08
         + credit_stability * 0.12
-        + breadth_improvement * 0.12
+        + breadth_confirmation * 0.12
         + (0.08 if short_support == "supportive" else -0.05 if short_support == "weak" else 0.0),
         0.0,
         0.95,
@@ -523,6 +540,7 @@ def build_predictors(
         downside_base * 0.42
         + credit_deterioration * 0.15
         + liquidity_stress * 0.13
+        + breadth_conflict * 0.10
         + risk_off_rotation * 0.10
         + max(-trend_20d, 0.0) * 2.2
         + (0.08 if short_support == "weak" else 0.0),
@@ -532,7 +550,7 @@ def build_predictors(
     reversal_probability = _clip(
         reversal_base * 0.38
         + max(trend_60d, 0.0) * 1.3
-        + breadth_improvement * 0.15
+        + breadth_confirmation * 0.15
         + credit_stability * 0.14
         + (0.12 if medium_support == "supportive" else -0.08 if medium_support == "weak" else 0.0),
         0.0,
@@ -542,6 +560,7 @@ def build_predictors(
         vix_percentile * 0.22
         + credit_deterioration * 0.23
         + liquidity_stress * 0.20
+        + breadth_deterioration * 0.10
         + risk_off_rotation * 0.15
         + news_risk * 0.08
         + rates_pressure * 0.10
@@ -560,7 +579,7 @@ def build_predictors(
                 ("Alpha v1 bounce probability", bounce_base),
                 ("VIX rollover", vix_rollover),
                 ("credit stabilization", credit_stability),
-                ("breadth improvement proxy", breadth_improvement),
+                ("breadth confirmation", breadth_confirmation),
                 ("short-term analog support", 1.0 if short_support == "supportive" else 0.0),
             ]),
             invalidation_conditions=["VIX turns higher again", "HYG/LQD relative strength weakens", "price breaks the recent low", "short-term analog support remains weak"],
@@ -576,9 +595,10 @@ def build_predictors(
                 ("liquidity stress proxy", liquidity_stress),
                 ("rates pressure", rates_pressure),
                 ("risk-off rotation", risk_off_rotation),
+                ("breadth conflict", breadth_conflict),
                 ("negative 20d trend", max(-trend_20d, 0.0) * 6.0),
             ]),
-            invalidation_conditions=["VIX falls and stays lower", "credit spreads/proxies stabilize", "breadth recovers above 50d proxy", "price reclaims short-term trend"],
+            invalidation_conditions=["VIX falls and stays lower", "credit spreads/proxies stabilize", "breadth recovers above 50d", "price reclaims short-term trend"],
             historical_analog_support=short_support,
             best_horizon="5d-20d",
         ),
@@ -588,10 +608,10 @@ def build_predictors(
             main_drivers=_drivers([
                 ("medium-term analog support", 1.0 if medium_support == "supportive" else 0.0),
                 ("60d trend", max(trend_60d, 0.0) * 6.0),
-                ("breadth improvement proxy", breadth_improvement),
+                ("breadth confirmation", breadth_confirmation),
                 ("credit stabilization", credit_stability),
             ]),
-            invalidation_conditions=["20d/60d analogs turn weak", "breadth proxy rolls over", "credit deterioration resumes", "recovery fails near moving-average resistance"],
+            invalidation_conditions=["20d/60d analogs turn weak", "breadth rolls over", "credit deterioration resumes", "recovery fails near moving-average resistance"],
             historical_analog_support=medium_support,
             best_horizon="20d-60d",
         ),
@@ -605,6 +625,7 @@ def build_predictors(
                 ("news risk", news_risk),
                 ("macro event risk", macro_event_risk),
                 ("risk-off rotation", risk_off_rotation),
+                ("breadth deterioration", breadth_deterioration),
                 ("negative 60d trend", max(-trend_60d, 0.0) * 4.0),
             ]),
             invalidation_conditions=["credit proxy stabilizes", "VIX term structure normalizes", "defensive rotation fades", "risk assets regain broad participation"],
@@ -755,7 +776,8 @@ def build_path_weight_model(
     vix_change_5d = _float_or_none(volatility.get("vix_change_5d")) or 0.0
     vix_change_20d = _float_or_none(volatility.get("vix_change_20d")) or 0.0
     volatility_reversal = 1.0 if vix_change_5d < 0 and vix_change_20d <= 0 else 0.55 if vix_change_5d < 0 else 0.15
-    breadth_support = _float_or_none(breadth.get("breadth_improvement_score")) or 0.0
+    breadth_support = _score01(breadth.get("breadth_confirmation_score"), _score01(breadth.get("breadth_improvement_score")))
+    breadth_conflict = _score01(breadth.get("breadth_conflict_score"), _score01(breadth.get("breadth_deterioration_score")))
     news_risk = _float_or_none(news.get("news_risk_score")) or 0.0
     macro_event_risk = 1.0 if macro.get("macro_event_risk_flag") else 0.0
     rates_pressure = _float_or_none(rates.get("rates_pressure_score")) or 0.0
@@ -778,6 +800,7 @@ def build_path_weight_model(
         + (1.0 - credit_stability) * 0.08
         + (1.0 - volatility_reversal) * 0.07
         + news_risk * 0.06
+        + breadth_conflict * 0.08
         + rates_pressure * 0.06
         + macro_event_risk * 0.04
         + max(0.0, 0.75 - data_completeness) * 0.10,
@@ -799,6 +822,7 @@ def build_path_weight_model(
                 "credit_stability": round(credit_stability, 4),
                 "volatility_reversal": round(volatility_reversal, 4),
                 "breadth_support": round(breadth_support, 4),
+                "breadth_conflict": round(breadth_conflict, 4),
                 "news_risk": round(news_risk, 4),
                 "macro_event_risk": round(macro_event_risk, 4),
                 "rates_pressure": round(rates_pressure, 4),
@@ -1204,6 +1228,26 @@ def _fred_bundle_summary(bundle: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def _breadth_bundle_summary(bundle: dict[str, Any] | None) -> dict[str, Any]:
+    if not bundle:
+        return {
+            "provider_available": False,
+            "true_breadth_available": False,
+            "true_breadth_symbols": [],
+            "breadth_proxy_only_symbols": [],
+            "average_breadth_quality_score": 0,
+        }
+    summary = bundle.get("summary") or {}
+    return {
+        "provider_available": bool(summary.get("provider_available")),
+        "true_breadth_available": bool(summary.get("true_breadth_available")),
+        "true_breadth_symbols": list(summary.get("true_breadth_symbols") or []),
+        "breadth_proxy_only_symbols": list(summary.get("breadth_proxy_only_symbols") or []),
+        "stale_data": bool(summary.get("stale_data")),
+        "average_breadth_quality_score": summary.get("average_breadth_quality_score"),
+    }
+
+
 def _finnhub_source_rows(bundle: dict[str, Any]) -> dict[str, Any]:
     rows: dict[str, Any] = {
         "FINNHUB_API": _finnhub_source_row(
@@ -1232,6 +1276,48 @@ def _finnhub_source_rows(bundle: dict[str, Any]) -> dict[str, Any]:
     rows["finnhub_market_holiday"] = _finnhub_source_row("finnhub_market_holiday", bundle.get("market_holiday") or {})
     rows["finnhub_rates_data"] = _finnhub_source_row("finnhub_rates_data", bundle.get("rates_data") or {})
     rows["finnhub_alternative_data"] = _finnhub_source_row("finnhub_alternative_data", bundle.get("alternative_data") or {})
+    return rows
+
+
+def _breadth_source_rows(bundle: dict[str, Any] | None) -> dict[str, Any]:
+    rows: dict[str, Any] = {}
+    if not bundle:
+        return rows
+    for symbol, payload in (bundle.get("universes") or {}).items():
+        scores = payload.get("scores") or {}
+        status = str(payload.get("status") or "missing")
+        real_data = bool(payload.get("is_true_breadth")) and status in {"available", "stale", "partial"}
+        rows[f"breadth_{symbol}"] = {
+            "symbol": f"breadth_{symbol}",
+            "source": payload.get("source") or "breadth_provider",
+            "status": status,
+            "rows": payload.get("constituents_used") or 0,
+            "latest_date": payload.get("latest_date"),
+            "real_data": real_data,
+            "fallback_used": bool(payload.get("stale_constituents") or payload.get("stale_price_data") or payload.get("is_proxy")),
+            "stale_data": bool(payload.get("stale_constituents") or payload.get("stale_price_data")),
+            "missing_data": status in {"missing", "not_available"} or not (payload.get("metrics") or {}),
+            "point_in_time_safe": real_data,
+            "is_proxy": bool(payload.get("is_proxy")),
+            "breadth_quality_score": scores.get("breadth_quality_score"),
+            "coverage_ratio": payload.get("coverage_ratio"),
+            "detail": payload.get("data_note"),
+        }
+    sector = bundle.get("sector_participation_proxy") or {}
+    rows["breadth_sector_participation_proxy"] = {
+        "symbol": "breadth_sector_participation_proxy",
+        "source": sector.get("source", "sector-etf-participation-proxy"),
+        "status": "proxy" if sector.get("sector_count") else "missing",
+        "rows": sector.get("sector_count") or 0,
+        "latest_date": None,
+        "real_data": False,
+        "fallback_used": True,
+        "stale_data": False,
+        "missing_data": not bool(sector.get("sector_count")),
+        "point_in_time_safe": True,
+        "is_proxy": True,
+        "detail": sector.get("data_note"),
+    }
     return rows
 
 
@@ -1378,6 +1464,8 @@ def _coverage_categories_v3(source_rows: dict[str, Any], feature_snapshot: dict[
     option_available = sum(1 for symbol in ("^VIX9D", "^VIX3M", "^VIX6M", "^VVIX", "^SKEW") if source_rows.get(symbol, {}).get("real_data"))
     fred_credit_available = sum(1 for name in ("HY_OAS", "IG_OAS", "BAA_SPREAD", "FINANCIAL_STRESS") if source_rows.get(name, {}).get("real_data"))
     fred_rates_available = sum(1 for name in ("DGS10", "DGS2", "DGS3MO", "DFII10", "RECESSION") if source_rows.get(name, {}).get("real_data"))
+    true_breadth_available = sum(1 for name in ("breadth_SPY", "breadth_QQQ", "breadth_DIA") if source_rows.get(name, {}).get("real_data"))
+    breadth_proxy_available = sum(1 for name in ("breadth_IWM",) if source_rows.get(name, {}).get("status") == "proxy")
     target_available = sum(1 for symbol in TARGET_SYMBOLS if source_rows.get(symbol, {}).get("real_data"))
     finnhub_news_available = source_rows.get("finnhub_market_news", {}).get("status") == "available"
     finnhub_calendar_available = source_rows.get("finnhub_economic_calendar", {}).get("status") == "available"
@@ -1386,7 +1474,13 @@ def _coverage_categories_v3(source_rows: dict[str, Any], feature_snapshot: dict[
         "price": _coverage_payload_v3("available" if target_available == 4 else "missing", "SPY/QQQ/IWM/DIA OHLCV", target_available, 4, True),
         "volatility": _coverage_payload_v3("available" if status("^VIX") == "available" else "missing", "VIX level/change/percentile", int(status("^VIX") == "available"), 1, status("^VIX") == "available"),
         "options": _coverage_payload_v3("partial" if option_available >= 2 else "missing", "VIX9D/VIX3M/VIX6M/VVIX/SKEW when Yahoo/Stooq provides them; put/call and gamma still missing", option_available, 7, option_available >= 2),
-        "breadth": _coverage_payload_v3("proxy" if status("RSP") == "available" and sector_available >= 7 else "missing", "RSP/SPY and sector ETF participation proxy, not constituent breadth", sector_available + int(status("RSP") == "available"), 12, False),
+        "breadth": _coverage_payload_v3(
+            "available" if true_breadth_available >= 3 else "partial" if true_breadth_available else "proxy" if (breadth_proxy_available or (status("RSP") == "available" and sector_available >= 7)) else "missing",
+            "Constituent breadth for SPY/QQQ/DIA when available; IWM/RSP/sector ETF proxy remains explicitly labeled",
+            true_breadth_available + breadth_proxy_available + sector_available + int(status("RSP") == "available"),
+            15,
+            true_breadth_available >= 3,
+        ),
         "credit": _coverage_payload_v3("available" if fred_credit_available >= 3 else "proxy" if status("HYG") == "available" and status("LQD") == "available" else "missing", "FRED HY/IG/BAA/stress plus HYG/LQD proxy", fred_credit_available + int(status("HYG") == "available") + int(status("LQD") == "available"), 6, fred_credit_available >= 3),
         "rates": _coverage_payload_v3("available" if fred_rates_available >= 4 else "partial" if status("^TNX") == "available" else "missing", "FRED 10Y/2Y/3M/TIPS/recession plus ^TNX", fred_rates_available + int(status("^TNX") == "available"), 6, fred_rates_available >= 4),
         "liquidity": _coverage_payload_v3("proxy" if status("TLT") == "available" and status("UUP") == "available" else "missing", "TLT/UUP/rates stress proxy, not reserves/repo/TGA", int(status("TLT") == "available") + int(status("UUP") == "available") + fred_rates_available, 5, False),
@@ -1517,6 +1611,67 @@ def _breadth_proxy(sector_closes: dict[str, list[float]], rsp: list[float], spy:
         "sector_participation": sector_participation,
         "breadth_improvement_score": improvement,
         "data_note": "Uses sector ETFs and RSP/SPY proxy, not real constituent breadth.",
+    }
+
+
+def _breadth_from_bundle(symbol: str, breadth_bundle: dict[str, Any] | None) -> dict[str, Any] | None:
+    if not breadth_bundle:
+        return None
+    payload = (breadth_bundle.get("universes") or {}).get(symbol)
+    if not payload:
+        return None
+    metrics = payload.get("metrics") or {}
+    scores = payload.get("scores") or {}
+    if not scores:
+        return None
+    improvement = _score01(scores.get("breadth_improvement_score"))
+    deterioration = _score01(scores.get("breadth_deterioration_score"))
+    confirmation = _score01(scores.get("breadth_confirmation_score"), improvement)
+    conflict = _score01(scores.get("breadth_conflict_score"), deterioration)
+    quality = _score01(scores.get("breadth_quality_score"), 0.5)
+    return {
+        "source": payload.get("source"),
+        "status": payload.get("status"),
+        "is_true_breadth": bool(payload.get("is_true_breadth")),
+        "is_proxy": bool(payload.get("is_proxy")),
+        "latest_date": payload.get("latest_date"),
+        "constituents_used": payload.get("constituents_used"),
+        "constituents_expected": payload.get("constituents_expected"),
+        "coverage_ratio": payload.get("coverage_ratio"),
+        "stale_constituents": payload.get("stale_constituents"),
+        "stale_price_data": payload.get("stale_price_data"),
+        "percent_above_20d": metrics.get("percent_above_20d"),
+        "percent_above_50d": metrics.get("percent_above_50d"),
+        "percent_above_200d": metrics.get("percent_above_200d"),
+        "percent_above_20d_ma_proxy": metrics.get("percent_above_20d"),
+        "percent_above_50d_ma_proxy": metrics.get("percent_above_50d"),
+        "percent_above_200d_ma_proxy": metrics.get("percent_above_200d"),
+        "advancers": metrics.get("advancers"),
+        "decliners": metrics.get("decliners"),
+        "advance_decline_ratio": metrics.get("advance_decline_ratio"),
+        "up_volume_down_volume_ratio": metrics.get("up_volume_down_volume_ratio"),
+        "new_highs_20d": metrics.get("new_highs_20d"),
+        "new_lows_20d": metrics.get("new_lows_20d"),
+        "new_highs_52w": metrics.get("new_highs_52w"),
+        "new_lows_52w": metrics.get("new_lows_52w"),
+        "percent_above_20d_change_5d": metrics.get("percent_above_20d_change_5d"),
+        "percent_above_50d_change_10d": metrics.get("percent_above_50d_change_10d"),
+        "improvement_acceleration": metrics.get("improvement_acceleration"),
+        "price_rising_breadth_weakening": metrics.get("price_rising_breadth_weakening"),
+        "price_falling_breadth_improving": metrics.get("price_falling_breadth_improving"),
+        "equal_weight_vs_cap_weight_20d": metrics.get("rsp_spy_relative_strength_20d"),
+        "iwm_spy_relative_strength_20d": metrics.get("iwm_spy_relative_strength_20d"),
+        "breadth_improvement_score": improvement,
+        "breadth_deterioration_score": deterioration,
+        "breadth_confirmation_score": confirmation,
+        "breadth_conflict_score": conflict,
+        "breadth_quality_score": quality,
+        "breadth_improvement_score_raw": scores.get("breadth_improvement_score"),
+        "breadth_deterioration_score_raw": scores.get("breadth_deterioration_score"),
+        "breadth_confirmation_score_raw": scores.get("breadth_confirmation_score"),
+        "breadth_conflict_score_raw": scores.get("breadth_conflict_score"),
+        "breadth_quality_score_raw": scores.get("breadth_quality_score"),
+        "data_note": payload.get("data_note"),
     }
 
 
@@ -1930,6 +2085,15 @@ def _float_or_none(value: Any) -> float | None:
     except (TypeError, ValueError):
         return None
     return parsed if math.isfinite(parsed) else None
+
+
+def _score01(value: Any, default: float = 0.0) -> float:
+    parsed = _float_or_none(value)
+    if parsed is None:
+        return default
+    if parsed > 1.0:
+        parsed = parsed / 100.0
+    return _clip(parsed, 0.0, 1.0)
 
 
 def _clip(value: float, lower: float, upper: float) -> float:

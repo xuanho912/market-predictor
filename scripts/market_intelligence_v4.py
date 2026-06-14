@@ -148,7 +148,7 @@ def build_market_intelligence_v4(
         "warnings": [
             "Alpha v1 threshold remains frozen at 0.32534311.",
             "V4 strong edge requires multi-source confirmation; missing evidence caps confidence.",
-            "Breadth and flow remain ETF/sector proxies unless a true constituent or fund-flow feed is added.",
+            "Breadth uses SPY/QQQ/DIA constituent data when available; IWM and flow remain explicitly proxy-based.",
         ],
         "prior_engine": prior_intelligence.get("version", "market_intelligence_engine_v3"),
     }
@@ -165,6 +165,13 @@ def build_data_quality_report_v4(prior_quality: dict[str, Any], finnhub_bundle: 
     unavailable = [name for name, payload in coverage.items() if payload.get("status") in {"missing", "not_available"}]
     fred_success = list(fred_bundle.get("successful_series") or [])
     fred_failed = list(fred_bundle.get("failed_series") or [])
+    true_breadth_sources = [name for name in ("breadth_SPY", "breadth_QQQ", "breadth_DIA") if sources.get(name, {}).get("real_data")]
+    breadth_quality_values = [
+        float(sources.get(name, {}).get("breadth_quality_score") or 0.0)
+        for name in ("breadth_SPY", "breadth_QQQ", "breadth_DIA", "breadth_IWM")
+        if sources.get(name)
+    ]
+    avg_breadth_quality = round(sum(breadth_quality_values) / len(breadth_quality_values), 2) if breadth_quality_values else 0
     summary.update(
         {
             "data_completeness_score": score,
@@ -183,8 +190,10 @@ def build_data_quality_report_v4(prior_quality: dict[str, Any], finnhub_bundle: 
             "fred_failed_series": fred_failed,
             "fred_provider_status": _provider_status(sources, ("DGS10", "DGS2", "DGS3MO", "HY_OAS", "IG_OAS", "BAA_SPREAD", "FINANCIAL_STRESS", "RECESSION")),
             "breadth_provider_status": coverage.get("breadth", {}).get("status", "missing"),
-            "true_breadth_available": False,
+            "true_breadth_available": len(true_breadth_sources) >= 3,
+            "true_breadth_symbols": [name.replace("breadth_", "") for name in true_breadth_sources],
             "breadth_proxy_only": coverage.get("breadth", {}).get("status") == "proxy",
+            "average_breadth_quality_score": avg_breadth_quality,
             "options_provider_status": coverage.get("options", {}).get("status", "missing"),
             "options_structure_status": coverage.get("options", {}).get("status", "missing"),
             "put_call_available": False,
@@ -239,7 +248,10 @@ def build_signal_confirmation_engine(
     options_stress = _options_stress_score(vol)
     credit_stability = _float(credit.get("credit_stabilization_score"), 0.0)
     credit_deterioration = _float(credit.get("credit_deterioration_score"), 0.0)
-    breadth_improvement = _float(breadth.get("breadth_improvement_score"), 0.0)
+    breadth_improvement = _score01(breadth.get("breadth_improvement_score"))
+    breadth_confirmation = _score01(breadth.get("breadth_confirmation_score"), breadth_improvement)
+    breadth_conflict = _score01(breadth.get("breadth_conflict_score"))
+    breadth_quality = _score01(breadth.get("breadth_quality_score"), 0.5)
     flow_risk_off = _float(flow.get("risk_off_rotation_score"), 0.0)
     trend_20d = _float(price.get("return_20d"), 0.0)
     medium_support = analog_support.get("medium_term_support")
@@ -260,12 +272,14 @@ def build_signal_confirmation_engine(
         conflict("credit deterioration", 0.14, "Credit proxy is deteriorating.")
     else:
         miss("credit stability", "Credit signal is inconclusive.")
-    if breadth_improvement >= 0.55:
-        support("breadth improvement", 0.10, "Breadth proxy is improving.")
-    elif breadth_improvement <= 0.40:
-        conflict("breadth weak", 0.10, "Breadth proxy is weak.")
+    if breadth_confirmation >= 0.55:
+        support("breadth confirmation", 0.12, "Constituent/proxy breadth is improving or confirming the path.")
+    elif breadth_conflict >= 0.55 or breadth_improvement <= 0.40:
+        conflict("breadth weak", 0.12, "Breadth is weak, deteriorating or diverging from price.")
     else:
-        miss("breadth improvement", "Breadth proxy is mixed.")
+        miss("breadth confirmation", "Breadth evidence is mixed.")
+    if breadth_quality < 0.45:
+        conflict("breadth data quality", 0.06, "Breadth coverage or freshness is too weak for high confidence.")
     if options_stress <= 0.45:
         support("options stress", 0.08, "Options/volatility proxy is not in high stress.")
     elif options_stress >= 0.65:
@@ -335,6 +349,7 @@ def build_predictors_v4(
     price = features.get("price", {})
     vol = features.get("volatility_options", {})
     credit = features.get("credit", {})
+    breadth = features.get("breadth", {})
     rates = features.get("rates_liquidity", {})
     macro = features.get("macro_event_calendar", {})
     confirmation = signal_confirmation["confirmation_score"] / 100.0
@@ -345,14 +360,17 @@ def build_predictors_v4(
     reversal_prior = prior_predictors.get("trend_reversal_predictor", {})
     risk_prior = prior_predictors.get("risk_expansion_predictor", {})
     credit_deterioration = _float(credit.get("credit_deterioration_score"), 0.0)
+    breadth_confirmation = _score01(breadth.get("breadth_confirmation_score"), _score01(breadth.get("breadth_improvement_score")))
+    breadth_conflict = _score01(breadth.get("breadth_conflict_score"), _score01(breadth.get("breadth_deterioration_score")))
+    breadth_quality = _score01(breadth.get("breadth_quality_score"), 0.5)
     volatility_risk = _options_stress_score(vol)
     liquidity_risk = _float(rates.get("liquidity_stress_proxy"), 0.0)
     macro_risk = 1.0 if macro.get("macro_event_risk_flag") else 0.0
 
-    bounce_probability = _clip(_float(bounce_prior.get("probability"), 0.0) * 0.75 + confirmation * 0.25, 0.0, 0.95)
-    downside_probability = _clip(_float(downside_prior.get("probability"), 0.0) * 0.70 + (1.0 - confirmation) * 0.15 + volatility_risk * 0.15, 0.0, 0.95)
-    reversal_probability = _clip(_float(reversal_prior.get("probability"), 0.0) * 0.72 + (1.0 if analog_support.get("medium_term_support") == "supportive" else 0.35) * 0.18 + confirmation * 0.10, 0.0, 0.95)
-    risk_probability = _clip(_float(risk_prior.get("probability"), 0.0) * 0.62 + credit_deterioration * 0.16 + volatility_risk * 0.10 + liquidity_risk * 0.08 + macro_risk * 0.04, 0.0, 0.95)
+    bounce_probability = _clip(_float(bounce_prior.get("probability"), 0.0) * 0.68 + confirmation * 0.20 + breadth_confirmation * 0.12, 0.0, 0.95)
+    downside_probability = _clip(_float(downside_prior.get("probability"), 0.0) * 0.64 + (1.0 - confirmation) * 0.13 + volatility_risk * 0.13 + breadth_conflict * 0.10, 0.0, 0.95)
+    reversal_probability = _clip(_float(reversal_prior.get("probability"), 0.0) * 0.66 + (1.0 if analog_support.get("medium_term_support") == "supportive" else 0.35) * 0.16 + confirmation * 0.08 + breadth_confirmation * 0.10, 0.0, 0.95)
+    risk_probability = _clip(_float(risk_prior.get("probability"), 0.0) * 0.58 + credit_deterioration * 0.15 + volatility_risk * 0.10 + liquidity_risk * 0.07 + macro_risk * 0.04 + breadth_conflict * 0.06, 0.0, 0.95)
 
     return {
         "bounce_predictor": {
@@ -363,21 +381,27 @@ def build_predictors_v4(
             "key_drivers": bounce_prior.get("main_drivers", []),
             "invalidation_conditions": bounce_prior.get("invalidation_conditions", []),
             "conflicting_evidence": [item for item in signal_confirmation["conflicting_evidence"] if item["name"] in {"VIX direction", "credit deterioration", "breadth weak", "failed bounce risk"}],
+            "breadth_confirmation": round(breadth_confirmation, 4),
+            "breadth_quality": round(breadth_quality, 4),
         },
         "downside_continuation_predictor": {
             **downside_prior,
             "downside_continuation_probability": round(downside_probability, 4),
             "probability": round(downside_probability, 4),
             "break_level": round(recent_low, 2) if recent_low else None,
-            "risk_triggers": ["VIX rising", "HYG/LQD weakens", f"{symbol} breaks recent low", "macro event surprise"],
+            "risk_triggers": ["VIX rising", "HYG/LQD weakens", "breadth deterioration", f"{symbol} breaks recent low", "macro event surprise"],
             "invalidation_conditions": downside_prior.get("invalidation_conditions", []),
+            "breadth_conflict": round(breadth_conflict, 4),
+            "breadth_quality": round(breadth_quality, 4),
         },
         "trend_reversal_predictor": {
             **reversal_prior,
             "trend_reversal_probability": round(reversal_probability, 4),
             "probability": round(reversal_probability, 4),
-            "confirmation_requirements": ["20d/60d analog support remains positive", "breadth proxy keeps improving", "credit proxy stays stable", "price holds above recent low"],
+            "confirmation_requirements": ["20d/60d analog support remains positive", "constituent/proxy breadth keeps improving", "credit proxy stays stable", "price holds above recent low"],
             "regime_support": analog_support.get("medium_term_support", "neutral"),
+            "breadth_confirmation": round(breadth_confirmation, 4),
+            "breadth_quality": round(breadth_quality, 4),
         },
         "risk_expansion_predictor": {
             **risk_prior,
@@ -387,6 +411,8 @@ def build_predictors_v4(
             "volatility_risk": round(volatility_risk, 4),
             "liquidity_risk": round(liquidity_risk, 4),
             "macro_event_risk": round(macro_risk, 4),
+            "breadth_risk": round(breadth_conflict, 4),
+            "breadth_quality": round(breadth_quality, 4),
         },
     }
 
@@ -404,11 +430,14 @@ def build_confidence_v4(
     confirmation = float(signal_confirmation.get("confirmation_score") or 0.0)
     analog = 70.0 if analog_support.get("medium_term_support") == "supportive" else 45.0 if analog_support.get("medium_term_support") == "weak" else 55.0
     spread = _predictor_spread(predictors_v4)
-    raw = prior * 0.18 + completeness * 0.30 + confirmation * 0.34 + analog * 0.08 + (1.0 - spread) * 100.0 * 0.10
+    breadth_quality = max(float((payload or {}).get("breadth_quality") or 0.0) for payload in predictors_v4.values()) * 100.0 if predictors_v4 else 50.0
+    raw = prior * 0.16 + completeness * 0.28 + confirmation * 0.32 + analog * 0.08 + (1.0 - spread) * 100.0 * 0.08 + breadth_quality * 0.08
     if completeness < 80:
         raw = min(raw, 69.0)
     if confirmation < 70:
         raw = min(raw, 68.0)
+    if breadth_quality < 50:
+        raw = min(raw, 64.0)
     if signal_confirmation.get("confirmation_level") == "weak":
         raw = min(raw, 55.0)
     score = int(round(_clip(raw, 0.0, 90.0)))
@@ -419,6 +448,8 @@ def build_confidence_v4(
         why.append("多源确认分数未达到 strong edge 门槛。")
     if signal_confirmation.get("missing_evidence"):
         why.append("仍有关键证据缺失：" + " / ".join(item["name"] for item in signal_confirmation["missing_evidence"][:5]))
+    if breadth_quality < 65:
+        why.append("市场宽度数据质量或覆盖率仍限制预测可信度。")
     if analog_support.get("short_term_support") == "weak":
         why.append("短周期 historical analog 仍有冲突。")
     return {
@@ -431,6 +462,7 @@ def build_confidence_v4(
             "signal_confirmation": confirmation / 100.0,
             "analog_support": analog / 100.0,
             "predictor_consistency": 1.0 - spread,
+            "breadth_quality": breadth_quality / 100.0,
         },
         "why_confidence_is_limited": why or ["多源确认、数据完整度和预测器分歧当前相对可接受，但仍不是确定性预测。"],
     }
@@ -503,13 +535,17 @@ def build_path_weight_model_v4(
     reversal = predictors_v4["trend_reversal_predictor"]["probability"]
     risk = predictors_v4["risk_expansion_predictor"]["probability"]
     macro = features.get("macro_event_calendar", {})
+    breadth = features.get("breadth", {})
     macro_risk = 1.0 if macro.get("macro_event_risk_flag") else 0.0
+    breadth_confirmation = _score01(breadth.get("breadth_confirmation_score"), _score01(breadth.get("breadth_improvement_score")))
+    breadth_conflict = _score01(breadth.get("breadth_conflict_score"), _score01(breadth.get("breadth_deterioration_score")))
+    breadth_quality = _score01(breadth.get("breadth_quality_score"), 0.5)
     analog_score = _analog_score(analog_support)
     conflict_penalty = min(len(signal_confirmation["conflicting_evidence"]) / 8.0, 1.0)
     raw = {
-        "base_path_weight": 0.12 + (1.0 - abs(confirmation - 0.50) * 2.0) * 0.16 + (1.0 - completeness) * 0.10 + conflict_penalty * 0.10,
-        "bounce_path_weight": 0.08 + bounce * 0.34 + confirmation * 0.16 + analog_score * 0.12 + reversal * 0.08,
-        "bearish_path_weight": 0.08 + downside * 0.28 + risk * 0.18 + (1.0 - confirmation) * 0.12 + macro_risk * 0.06 + conflict_penalty * 0.08,
+        "base_path_weight": 0.12 + (1.0 - abs(confirmation - 0.50) * 2.0) * 0.16 + (1.0 - completeness) * 0.10 + conflict_penalty * 0.10 + max(0.0, 0.55 - breadth_quality) * 0.08,
+        "bounce_path_weight": 0.08 + bounce * 0.31 + confirmation * 0.14 + analog_score * 0.11 + reversal * 0.07 + breadth_confirmation * 0.09,
+        "bearish_path_weight": 0.08 + downside * 0.26 + risk * 0.17 + (1.0 - confirmation) * 0.11 + macro_risk * 0.06 + conflict_penalty * 0.07 + breadth_conflict * 0.08,
         "analog_path_weight": 0.10 + analog_score * 0.24 + completeness * 0.08 + (0.08 if analog_support.get("analog_sample_quality") == "high" else 0.02),
     }
     total = sum(max(value, 0.001) for value in raw.values())
@@ -523,6 +559,9 @@ def build_path_weight_model_v4(
                 "signal_confirmation": round(confirmation, 4),
                 "risk_expansion": round(risk, 4),
                 "macro_event_risk": round(macro_risk, 4),
+                "breadth_confirmation": round(breadth_confirmation, 4),
+                "breadth_conflict": round(breadth_conflict, 4),
+                "breadth_quality": round(breadth_quality, 4),
             },
             "weight_source_notes": [
                 "V4 path weights come from the four independent predictors, signal confirmation, historical analog distribution, data completeness and macro event risk.",
@@ -1049,6 +1088,15 @@ def _float(value: Any, default: float | None = 0.0) -> float | None:
         return parsed
     except (TypeError, ValueError):
         return default
+
+
+def _score01(value: Any, default: float = 0.0) -> float:
+    parsed = _float(value, None)
+    if parsed is None:
+        return default
+    if parsed > 1.0:
+        parsed = parsed / 100.0
+    return _clip(parsed, 0.0, 1.0)
 
 
 def _clip(value: float, low: float, high: float) -> float:
