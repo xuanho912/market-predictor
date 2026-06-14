@@ -3,6 +3,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { MouseEvent } from "react";
 import type {
+  ForecastPriceLevel,
+  ForecastPriceLevelsBySymbol,
   HistoricalAnalogCase,
   PredictionDashboard,
   ScenarioRankingItem,
@@ -10,6 +12,7 @@ import type {
 } from "../lib/api";
 
 const SYMBOL_ORDER = ["SPY", "QQQ", "IWM", "DIA"];
+const PRICE_LEVEL_HORIZON_ORDER = ["1d", "3d", "5d", "10d", "20d", "60d"];
 const HORIZON_ORDER = ["3d", "5d", "10d", "20d", "60d"];
 
 const SCENARIO_LABELS: Record<string, string> = {
@@ -91,6 +94,17 @@ function formatScore(value: unknown): string {
 function formatGap(value: unknown): string {
   const n = asNumber(value);
   return n === null ? "数据缺失" : `${(n * 100).toFixed(1)} 个百分点`;
+}
+
+function cnSource(value: string | undefined): string {
+  const map: Record<string, string> = {
+    simulated_path: "路径模型",
+    price_structure: "价格结构",
+    volatility_band: "波动区间",
+    confluence: "多来源共振",
+    data_missing: "数据缺失",
+  };
+  return value ? map[value] ?? value : "数据缺失";
 }
 
 function shortDate(value: string | null | undefined): string {
@@ -327,7 +341,7 @@ function TerminalHeader({ dashboard }: { dashboard: PredictionDashboard }) {
         <div className="text-xs uppercase tracking-[0.35em] text-cyan-300/75">Market Prediction Terminal</div>
         <h1 className="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl">市场预测终端</h1>
         <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-300">
-          展示大盘概率路径、情景排序、支持/冲突证据和前向验证状态。Alpha v1 仍是 Research Alpha Candidate，不是交易建议。
+          展示大盘概率路径、情景排序、支持/冲突证据和前向验证状态。Alpha v1 仍是 Research Alpha Candidate，不是操作建议。
         </p>
       </div>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
@@ -820,6 +834,148 @@ function ReasonBlock({ title, scenario }: { title: string; scenario?: ScenarioRa
   );
 }
 
+function ForecastPriceLevelsPanel({ selected }: { selected: SimulatedSymbolPaths | undefined }) {
+  const levels = selected?.forecast_price_levels;
+  if (!selected || !levels) {
+    return (
+      <section className="rounded-xl border border-white/10 bg-[#101819] p-5">
+        <h2 className="text-xl font-semibold text-white">预测价格点位</h2>
+        <p className="mt-3 text-sm text-slate-400">当前没有价格点位数据。下一次 GitHub Actions 生成后会显示。</p>
+      </section>
+    );
+  }
+  const triggers = levels.path_trigger_levels;
+  const table = levels.forecast_price_table ?? {};
+
+  return (
+    <section className="rounded-xl border border-white/10 bg-[#101819] p-5">
+      <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
+        <div>
+          <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Forecast Price Levels</div>
+          <h2 className="mt-1 text-xl font-semibold text-white">{selected.symbol} 预测价格点位</h2>
+          <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-400">
+            这些是概率路径下的价格情景点位和路径切换条件，不是目标价承诺、执行风控规则或操作指令。
+          </p>
+        </div>
+        <div className="rounded-lg border border-white/10 bg-black/20 p-3 text-sm">
+          <div className="text-xs text-slate-500">当前价</div>
+          <div className="mt-1 text-2xl font-semibold text-white">{formatPrice(levels.current_price)}</div>
+        </div>
+      </div>
+
+      <div className="mt-5 overflow-x-auto rounded-lg border border-white/10">
+        <table className="min-w-[920px] w-full text-left text-sm">
+          <thead className="bg-white/[0.04] text-xs uppercase tracking-[0.14em] text-slate-500">
+            <tr>
+              <th className="px-3 py-3">周期</th>
+              <th className="px-3 py-3">综合期望价</th>
+              <th className="px-3 py-3">期望收益</th>
+              <th className="px-3 py-3">主路径价</th>
+              <th className="px-3 py-3">第二路径价</th>
+              <th className="px-3 py-3">风险路径价</th>
+              <th className="px-3 py-3">置信区间</th>
+              <th className="px-3 py-3">主路径权重</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-white/10">
+            {PRICE_LEVEL_HORIZON_ORDER.map((horizon) => {
+              const row = table[horizon];
+              return (
+                <tr key={horizon} className="text-slate-300">
+                  <td className="px-3 py-3 font-semibold text-white">{horizon}</td>
+                  <td className="px-3 py-3">{formatPrice(row?.expected_price)}</td>
+                  <td className="px-3 py-3">{formatSignedPercent(row?.expected_return)}</td>
+                  <td className="px-3 py-3 text-emerald-200">{formatPrice(row?.primary_scenario_price)}</td>
+                  <td className="px-3 py-3 text-cyan-200">{formatPrice(row?.secondary_scenario_price)}</td>
+                  <td className="px-3 py-3 text-rose-200">{formatPrice(row?.risk_scenario_price)}</td>
+                  <td className="px-3 py-3">
+                    {formatPrice(row?.lower_confidence_price)} - {formatPrice(row?.upper_confidence_price)}
+                  </td>
+                  <td className="px-3 py-3">{formatPercent(row?.probability_of_reaching_primary_price, 1)}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="mt-5 grid gap-3 lg:grid-cols-4">
+        <LevelCard title="主路径确认价" level={triggers.primary_confirmation_level} tone="emerald" />
+        <LevelCard title="主路径失效价" level={triggers.primary_invalidation_level} tone="amber" />
+        <LevelCard title="风险路径接管价" level={triggers.risk_scenario_activation_level} tone="rose" />
+        <LevelCard title="趋势修复确认价" level={triggers.trend_reversal_confirmation_level} tone="cyan" />
+      </div>
+
+      <div className="mt-4 grid gap-4 lg:grid-cols-2">
+        <div className="rounded-lg border border-white/10 bg-black/20 p-4">
+          <div className="text-xs uppercase tracking-[0.18em] text-slate-500">Bounce Target Zone</div>
+          <h3 className="mt-1 text-lg font-semibold text-white">反抽情景点位区</h3>
+          <div className="mt-3 grid gap-3 sm:grid-cols-3">
+            <CompactLevel label="保守" level={triggers.bounce_target_zone?.conservative_bounce_target} />
+            <CompactLevel label="基准" level={triggers.bounce_target_zone?.base_bounce_target} />
+            <CompactLevel label="扩展" level={triggers.bounce_target_zone?.extended_bounce_target} />
+          </div>
+        </div>
+        <div className="rounded-lg border border-white/10 bg-black/20 p-4">
+          <div className="text-xs uppercase tracking-[0.18em] text-slate-500">Failed Bounce Warning Zone</div>
+          <h3 className="mt-1 text-lg font-semibold text-white">失败反抽警戒区</h3>
+          <div className="mt-3 grid gap-3 sm:grid-cols-2">
+            <CompactLevel label="第一警戒" level={triggers.failed_bounce_warning_zone?.first_warning_level} />
+            <CompactLevel label="关键警戒" level={triggers.failed_bounce_warning_zone?.critical_warning_level} />
+          </div>
+        </div>
+      </div>
+
+      <p className="mt-4 text-xs leading-5 text-slate-500">
+        来源说明：路径模型 = simulated_path，价格结构 = recent high/low 与均线，波动区间 = realized volatility / confidence band，多来源共振 = 多个来源点位接近。
+      </p>
+    </section>
+  );
+}
+
+function LevelCard({
+  title,
+  level,
+  tone,
+}: {
+  title: string;
+  level?: ForecastPriceLevel;
+  tone: "emerald" | "amber" | "rose" | "cyan";
+}) {
+  const color =
+    tone === "emerald"
+      ? "text-emerald-200"
+      : tone === "amber"
+        ? "text-amber-200"
+        : tone === "rose"
+          ? "text-rose-200"
+          : "text-cyan-200";
+  return (
+    <div className="rounded-lg border border-white/10 bg-black/20 p-4">
+      <div className="text-xs text-slate-500">{title}</div>
+      <div className={`mt-2 text-2xl font-semibold ${color}`}>{formatPrice(level?.price)}</div>
+      <div className="mt-2 flex flex-wrap gap-2">
+        <StatusBadge status={level?.source} label={cnSource(level?.source)} />
+        <span className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-xs text-slate-300">
+          距当前 {formatSignedPercent(level?.distance_percent)}
+        </span>
+      </div>
+      <p className="mt-3 text-xs leading-5 text-slate-400">{level?.condition ?? "数据缺失"}</p>
+    </div>
+  );
+}
+
+function CompactLevel({ label, level }: { label: string; level?: ForecastPriceLevel }) {
+  return (
+    <div className="rounded-lg border border-white/10 bg-white/[0.03] p-3">
+      <div className="text-xs text-slate-500">{label}</div>
+      <div className="mt-1 text-lg font-semibold text-white">{formatPrice(level?.price)}</div>
+      <div className="mt-1 text-xs text-slate-400">{formatSignedPercent(level?.distance_percent)}</div>
+      <div className="mt-2 text-[11px] text-slate-500">{cnSource(level?.source)}</div>
+    </div>
+  );
+}
+
 function EvidenceSections({ selected }: { selected: SimulatedSymbolPaths | undefined }) {
   if (!selected) return null;
   const confirmation = selected.signal_confirmation;
@@ -1115,6 +1271,7 @@ export function MarketDashboard({ dashboard }: { dashboard: PredictionDashboard 
         <IndexCards symbols={symbols} selectedSymbol={selected?.symbol ?? selectedSymbol} onSelect={setSelectedSymbol} />
         <ScenarioRankingPanel selected={selected} />
         <PredictionChart selected={selected} />
+        <ForecastPriceLevelsPanel selected={selected} />
         <HorizonTable selected={selected} />
         <EvidenceSections selected={selected} />
         <HistoricalAnalogs dashboard={data} symbol={selected?.symbol ?? selectedSymbol} />

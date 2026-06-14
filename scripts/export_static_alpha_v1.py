@@ -42,6 +42,7 @@ from scripts.historical_replay_benchmark import (
     build_historical_replay_benchmark,
 )
 from scripts.model_challenger_framework import write_model_challenger_outputs
+from scripts.forecast_price_levels import build_forecast_price_levels, render_forecast_price_levels_markdown
 from scripts.providers.finnhub_provider import fetch_finnhub_bundle
 from scripts.providers.fred_provider import DEFAULT_FRED_SERIES, fetch_fred_bundle
 from scripts.providers.breadth_provider import fetch_breadth_bundle, render_breadth_status_markdown
@@ -83,7 +84,8 @@ def main() -> int:
     _print_options_diagnostics(options_bundle)
     flow_bundle = fetch_flow_positioning_bundle(series_by_symbol=series_by_symbol)
     _print_flow_diagnostics(flow_bundle)
-    price_history = _load_price_history(series_by_symbol)
+    price_history = _load_price_history(series_by_symbol, window=PAST_WINDOW)
+    price_structure_history = _load_price_history(series_by_symbol, window=260)
 
     market_overview = _build_market_overview(alpha_status, analogs, price_history)
     simulated_paths = _build_simulated_paths(alpha_status, analogs, price_history, market_overview)
@@ -182,6 +184,11 @@ def main() -> int:
     intelligence_v4["breadth_impact_report"] = breadth_impact_report
     intelligence_v4["data_quality_report"]["summary"]["fred_effect_summary"] = fred_effect_summary
     intelligence_v4["data_quality_report"]["summary"]["breadth_impact_summary"] = breadth_impact_report["summary"]
+    forecast_price_levels = build_forecast_price_levels(
+        price_history=price_structure_history,
+        simulated_paths=simulated_paths,
+    )
+    _attach_forecast_price_levels(market_overview, simulated_paths, forecast_price_levels)
     dashboard = {
         "generated_by": "scripts/export_static_alpha_v1.py",
         "source": "github_actions_forward_tracker_outputs",
@@ -198,6 +205,7 @@ def main() -> int:
         "flow_status": flow_bundle,
         "flow_positioning_status": flow_bundle,
         "breadth_impact_report": breadth_impact_report,
+        "forecast_price_levels": forecast_price_levels,
         "feature_snapshot_v2": intelligence_v2["feature_snapshot_v2"],
         "feature_snapshot_v3": intelligence_v3["feature_snapshot_v3"],
         "model_confidence_by_symbol": intelligence_v4["model_confidence_by_symbol"],
@@ -236,6 +244,7 @@ def main() -> int:
     _write_json(public_dir / "flow-status.json", flow_bundle)
     _write_json(public_dir / "flow-positioning-status.json", flow_bundle)
     _write_json(public_dir / "breadth-impact-report.json", breadth_impact_report)
+    _write_json(public_dir / "forecast-price-levels.json", forecast_price_levels)
     _write_json(public_dir / "high-confidence-signal-report.json", intelligence_v3["high_confidence_signal_report"])
     _write_json(public_dir / "high-confidence-edge-report.json", intelligence_v4["high_confidence_edge_report"])
     _write_json(public_dir / "forecast-records.json", forecast_records)
@@ -254,6 +263,7 @@ def main() -> int:
     _write_flow_status_report(PROJECT_ROOT / "outputs" / "flow_data_status.md", flow_bundle)
     _write_flow_status_report(PROJECT_ROOT / "outputs" / "flow_positioning_status.md", flow_bundle)
     _write_breadth_impact_status_report(PROJECT_ROOT / "outputs" / "breadth_impact_report.md", breadth_impact_report)
+    _write_forecast_price_levels_report(PROJECT_ROOT / "outputs" / "forecast_price_levels.md", forecast_price_levels)
     _write_forecast_accuracy_scorecard_report(PROJECT_ROOT / "outputs" / "forecast_accuracy_scorecard.md", forecast_scorecard)
     _write_historical_replay_benchmark_report(PROJECT_ROOT / "outputs" / "historical_replay_benchmark.md", historical_replay_benchmark)
 
@@ -265,6 +275,7 @@ def main() -> int:
     print("wrote frontend/public/flow-status.json")
     print("wrote frontend/public/flow-positioning-status.json")
     print("wrote frontend/public/breadth-impact-report.json")
+    print("wrote frontend/public/forecast-price-levels.json")
     print("wrote frontend/public/high-confidence-signal-report.json")
     print("wrote frontend/public/high-confidence-edge-report.json")
     print("wrote frontend/public/forecast-records.json")
@@ -283,6 +294,7 @@ def main() -> int:
     print("wrote outputs/flow_data_status.md")
     print("wrote outputs/flow_positioning_status.md")
     print("wrote outputs/breadth_impact_report.md")
+    print("wrote outputs/forecast_price_levels.md")
     print("wrote outputs/forecast_accuracy_scorecard.md")
     print("wrote outputs/historical_replay_benchmark.md")
     print("wrote outputs/model_leaderboard.md")
@@ -787,7 +799,7 @@ def _write_breadth_impact_status_report(path: Path, report: dict[str, Any]) -> N
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
-def _load_price_history(series_by_symbol: dict[str, DownloadedSeries] | None = None) -> dict[str, list[dict[str, Any]]]:
+def _load_price_history(series_by_symbol: dict[str, DownloadedSeries] | None = None, window: int = PAST_WINDOW) -> dict[str, list[dict[str, Any]]]:
     downloaded = (
         [series_by_symbol[symbol] for symbol in SYMBOLS if symbol in series_by_symbol]
         if series_by_symbol is not None
@@ -799,13 +811,28 @@ def _load_price_history(series_by_symbol: dict[str, DownloadedSeries] | None = N
             {
                 "date": str(row["date"]),
                 "close": float(row["close"]),
+                "high": _float_or_none(row.get("high")) or float(row["close"]),
+                "low": _float_or_none(row.get("low")) or float(row["close"]),
+                "volume": _float_or_none(row.get("volume")),
                 "source": series.source,
             }
             for row in series.rows
             if row.get("date") and float(row.get("close") or 0.0) > 0
         ]
-        history[series.symbol] = clean_rows[-PAST_WINDOW:]
+        history[series.symbol] = clean_rows[-window:]
     return history
+
+
+def _attach_forecast_price_levels(
+    market_overview: dict[str, Any],
+    simulated_paths: dict[str, Any],
+    forecast_price_levels: dict[str, Any],
+) -> None:
+    for symbol, payload in (forecast_price_levels.get("symbols") or {}).items():
+        if symbol in (simulated_paths.get("symbols") or {}):
+            simulated_paths["symbols"][symbol]["forecast_price_levels"] = payload
+        if symbol in (market_overview.get("symbols") or {}):
+            market_overview["symbols"][symbol]["forecast_price_levels_summary"] = payload.get("summary")
 
 
 def _build_market_overview(
@@ -1131,6 +1158,11 @@ def _write_report(path: Path, payload: dict[str, Any]) -> None:
 def _write_edge_report(path: Path, payload: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(render_high_confidence_edge_report_markdown(payload), encoding="utf-8")
+
+
+def _write_forecast_price_levels_report(path: Path, payload: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(render_forecast_price_levels_markdown(payload), encoding="utf-8")
 
 
 if __name__ == "__main__":

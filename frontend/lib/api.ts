@@ -430,6 +430,80 @@ export type PathWeightModel = {
   weight_source_notes: string[];
 };
 
+export type ForecastPriceLevel = {
+  price: number | null;
+  source: "simulated_path" | "price_structure" | "volatility_band" | "confluence" | "data_missing" | string;
+  distance_from_current: number | null;
+  distance_percent: number | null;
+  condition: string;
+  inputs: string[];
+  not_trading_advice: boolean;
+};
+
+export type ForecastPriceHorizonRow = {
+  horizon: string;
+  expected_price: number | null;
+  expected_return: number | null;
+  primary_scenario: string;
+  primary_scenario_label: string;
+  primary_scenario_price: number | null;
+  secondary_scenario: string;
+  secondary_scenario_label: string;
+  secondary_scenario_price: number | null;
+  risk_scenario: string;
+  risk_scenario_label: string;
+  risk_scenario_price: number | null;
+  upper_confidence_price: number | null;
+  lower_confidence_price: number | null;
+  analog_average_price: number | null;
+  probability_of_reaching_primary_price: number | null;
+  confidence_level: string;
+  source: string;
+  not_guaranteed_forecast: boolean;
+};
+
+export type ForecastPriceLevelsBySymbol = {
+  symbol: string;
+  name?: string;
+  current_price: number | null;
+  source_note: string;
+  not_trading_advice: boolean;
+  forecast_price_table: Record<string, ForecastPriceHorizonRow>;
+  path_trigger_levels: {
+    current_price: number | null;
+    primary_scenario: string;
+    primary_probability: number | null;
+    secondary_probability: number | null;
+    risk_probability: number | null;
+    probability_gap: number | null;
+    primary_confirmation_level: ForecastPriceLevel;
+    primary_invalidation_level: ForecastPriceLevel;
+    risk_scenario_activation_level: ForecastPriceLevel;
+    trend_reversal_confirmation_level: ForecastPriceLevel;
+    bounce_target_zone: {
+      conservative_bounce_target: ForecastPriceLevel;
+      base_bounce_target: ForecastPriceLevel;
+      extended_bounce_target: ForecastPriceLevel;
+    };
+    failed_bounce_warning_zone: {
+      first_warning_level: ForecastPriceLevel;
+      critical_warning_level: ForecastPriceLevel;
+    };
+    calculation_note: string;
+  };
+  price_structure: Record<string, unknown>;
+  summary: Record<string, unknown>;
+};
+
+export type ForecastPriceLevels = {
+  version: string;
+  generated_at: string;
+  as_of: string | null;
+  validation_type: string;
+  disclaimer: string;
+  symbols: Record<string, ForecastPriceLevelsBySymbol>;
+};
+
 export type HorizonPredictionV2 = {
   expected_direction: string;
   expected_return: number;
@@ -477,6 +551,7 @@ export type MarketSymbolOverview = {
   analog_path_weight?: number;
   low_confidence_simulation?: boolean;
   scenario_ranking?: ScenarioRanking;
+  forecast_price_levels?: ForecastPriceLevelsBySymbol;
 };
 
 export type ScenarioRankingItem = {
@@ -618,6 +693,7 @@ export type PredictionDashboard = {
   historical_replay_benchmark?: Record<string, unknown>;
   model_leaderboard?: Record<string, unknown>;
   model_promotion_status?: Record<string, unknown>;
+  forecast_price_levels?: ForecastPriceLevels;
   overview: {
     as_of: string | null;
     strongest_symbol: string;
