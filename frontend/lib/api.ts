@@ -541,7 +541,12 @@ export type ForecastPriceLevels = {
 
 export type NewsEventIntelligence = {
   status?: string;
+  validation_type?: string;
   dashboard_note?: string;
+  event_risk_level?: "low" | "medium" | "high" | string;
+  news_direction?: "risk_on" | "risk_off" | "mixed" | string;
+  economic_calendar_risk?: Record<string, unknown>;
+  prediction_logic_effect?: Record<string, unknown>;
   market_narrative?: {
     market_narrative?: string;
     summary?: string;
@@ -712,6 +717,8 @@ export type SimulatedSymbolPaths = {
 export type PredictionDashboard = {
   generated_by: string;
   source: string;
+  validation_type?: string;
+  event_refresh?: boolean;
   as_of: string | null;
   status_note: string;
   data_quality_report?: DataQualityReport;

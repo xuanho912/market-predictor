@@ -73,6 +73,8 @@ PAST_WINDOW = 90
 def main() -> int:
     public_dir = PROJECT_ROOT / "frontend" / "public"
     public_dir.mkdir(parents=True, exist_ok=True)
+    event_refresh = _event_refresh_enabled()
+    validation_type = "event_refresh" if event_refresh else "daily"
 
     alpha_status = alpha_status_payload()
     alpha_report = report_payload()
@@ -187,6 +189,7 @@ def main() -> int:
         finnhub_bundle=finnhub_bundle,
         series_by_symbol=series_by_symbol,
         simulated_paths=simulated_paths,
+        validation_type=validation_type,
     )
     _print_news_event_diagnostics(news_event_bundle)
     fred_effect_summary = _fred_effect_summary(baseline_v4, intelligence_v4, baseline_paths, simulated_paths)
@@ -197,15 +200,27 @@ def main() -> int:
     intelligence_v4["data_quality_report"]["summary"]["fred_effect_summary"] = fred_effect_summary
     intelligence_v4["data_quality_report"]["summary"]["breadth_impact_summary"] = breadth_impact_report["summary"]
     _apply_news_event_quality(intelligence_v4["data_quality_report"], news_event_bundle)
+    news_event_effect_summary = _apply_news_event_overlay(
+        market_overview=market_overview,
+        simulated_paths=simulated_paths,
+        intelligence_v4=intelligence_v4,
+        news_event_bundle=news_event_bundle,
+        validation_type=validation_type,
+    )
+    news_event_bundle["prediction_logic_effect"] = news_event_effect_summary
+    intelligence_v4["news_event_prediction_effect"] = news_event_effect_summary
     _attach_news_event_intelligence(market_overview, simulated_paths, news_event_bundle)
     forecast_price_levels = build_forecast_price_levels(
         price_history=price_structure_history,
         simulated_paths=simulated_paths,
     )
+    forecast_price_levels["validation_type"] = validation_type
     _attach_forecast_price_levels(market_overview, simulated_paths, forecast_price_levels)
     dashboard = {
         "generated_by": "scripts/export_static_alpha_v1.py",
         "source": "github_actions_forward_tracker_outputs",
+        "validation_type": validation_type,
+        "event_refresh": event_refresh,
         "as_of": _latest_as_of(alpha_status, analogs),
         "status_note": "Alpha v1 remains a research candidate. Simulated paths are probabilistic scenarios, not guaranteed forecasts.",
         "overview": market_overview,
@@ -230,7 +245,11 @@ def main() -> int:
         "forward_report": alpha_report,
         "analogs": analogs,
     }
-    ledger_summary = update_forecast_accuracy_ledger(dashboard=dashboard, price_history=price_history)
+    ledger_summary = (
+        _event_refresh_ledger_summary()
+        if event_refresh
+        else update_forecast_accuracy_ledger(dashboard=dashboard, price_history=price_history)
+    )
     forecast_records = export_forecast_records_json()
     forecast_scorecard = build_forecast_accuracy_scorecard()
     historical_replay_benchmark = build_historical_replay_benchmark(dashboard)
@@ -422,12 +441,563 @@ def _print_news_event_diagnostics(bundle: dict[str, Any]) -> None:
     narrative = bundle.get("market_narrative") or {}
     reaction = bundle.get("price_reaction_confirmation") or {}
     print(f"NEWS_EVENT_STATUS={bundle.get('status') or 'missing'}")
+    print(f"NEWS_EVENT_VALIDATION_TYPE={bundle.get('validation_type') or 'daily'}")
     print(f"NEWS_EVENT_PROVIDER_FAILED={str(bool(bundle.get('provider_failed'))).lower()}")
     print(f"NEWS_EVENT_MAJOR_COUNT={bundle.get('major_event_count') if bundle.get('major_event_count') is not None else 'NA'}")
+    print(f"NEWS_EVENT_RISK_LEVEL={bundle.get('event_risk_level') or 'NA'}")
     print(f"NEWS_EVENT_NARRATIVE={narrative.get('market_narrative') or 'no_clear_narrative'}")
     print(f"NEWS_EVENT_DIRECTION={narrative.get('narrative_direction') or 'mixed'}")
     print(f"NEWS_EVENT_PRICE_CONFIRMED={str(bool(reaction.get('price_reaction_confirmed'))).lower()}")
     print(f"NEWS_EVENT_CONFIRMATION_SCORE={reaction.get('confirmation_score') if reaction.get('confirmation_score') is not None else 'NA'}")
+    calendar = bundle.get("economic_calendar_risk") or {}
+    print(f"NEWS_EVENT_MACRO_RISK_FLAG={str(bool(calendar.get('macro_event_risk_flag'))).lower()}")
+    print(f"NEWS_EVENT_MACRO_RISK_SCORE={calendar.get('macro_event_risk_score') if calendar.get('macro_event_risk_score') is not None else 'NA'}")
+
+
+def _event_refresh_enabled() -> bool:
+    return os.getenv("EVENT_REFRESH", "").strip().lower() in {"1", "true", "yes", "y"}
+
+
+def _event_refresh_ledger_summary() -> dict[str, Any]:
+    return {
+        "version": "forecast_accuracy_ledger_v1",
+        "generated_at": datetime.utcnow().isoformat() + "Z",
+        "active_model_version": "baseline_v1",
+        "event_refresh_mode": True,
+        "ledger_append_skipped": True,
+        "validation_type": "event_refresh",
+        "immutability_note": "Manual event refresh updates the current dashboard only. It does not rewrite or append baseline_v1 forecast records.",
+        "not_trading_note": "This is a forecast refresh, not a trading signal or execution workflow.",
+    }
+
+
+def _apply_news_event_overlay(
+    *,
+    market_overview: dict[str, Any],
+    simulated_paths: dict[str, Any],
+    intelligence_v4: dict[str, Any],
+    news_event_bundle: dict[str, Any],
+    validation_type: str,
+) -> dict[str, Any]:
+    narrative = news_event_bundle.get("market_narrative") or {}
+    reaction = news_event_bundle.get("price_reaction_confirmation") or {}
+    calendar = news_event_bundle.get("economic_calendar_risk") or {}
+    direction = str(narrative.get("narrative_direction") or "mixed")
+    strength = _clip((_float_or_none(narrative.get("narrative_strength")) or 0.0) / 100.0, 0.0, 1.0)
+    reaction_score = _clip((_float_or_none(reaction.get("confirmation_score")) or 0.0) / 100.0, 0.0, 1.0)
+    major_count = int(news_event_bundle.get("major_event_count") or 0)
+    price_confirmed = bool(reaction.get("price_reaction_confirmed"))
+    macro_score = _clip((_float_or_none(calendar.get("macro_event_risk_score")) or 0.0) / 100.0, 0.0, 1.0)
+    macro_risk = bool(calendar.get("macro_event_risk_flag"))
+    event_risk_level = str(news_event_bundle.get("event_risk_level") or "low")
+    impacts = news_event_bundle.get("symbol_impacts") or {}
+    summary: dict[str, Any] = {
+        "version": "news_event_overlay_v1",
+        "validation_type": validation_type,
+        "applied": False,
+        "major_event_count": major_count,
+        "direction": direction,
+        "price_reaction_confirmed": price_confirmed,
+        "macro_event_risk_flag": macro_risk,
+        "event_risk_level": event_risk_level,
+        "not_a_trading_signal": True,
+        "symbols": {},
+    }
+    if major_count == 0 and not macro_risk:
+        summary["reason"] = "no_major_event_or_macro_risk"
+        return summary
+
+    for symbol in SYMBOLS:
+        overview_symbol = (market_overview.get("symbols") or {}).get(symbol)
+        simulated_symbol = (simulated_paths.get("symbols") or {}).get(symbol)
+        if not isinstance(overview_symbol, dict) or not isinstance(simulated_symbol, dict):
+            continue
+        impact = impacts.get(symbol, {})
+        symbol_effect = _apply_news_event_overlay_to_symbol(
+            symbol=symbol,
+            overview_symbol=overview_symbol,
+            simulated_symbol=simulated_symbol,
+            intelligence_v4=intelligence_v4,
+            impact=impact,
+            direction=direction,
+            strength=strength,
+            reaction_score=reaction_score,
+            price_confirmed=price_confirmed,
+            macro_score=macro_score,
+            macro_risk=macro_risk,
+            event_risk_level=event_risk_level,
+            major_count=major_count,
+            validation_type=validation_type,
+        )
+        summary["symbols"][symbol] = symbol_effect
+        summary["applied"] = bool(summary["applied"] or symbol_effect.get("overlay_applied"))
+    return summary
+
+
+def _apply_news_event_overlay_to_symbol(
+    *,
+    symbol: str,
+    overview_symbol: dict[str, Any],
+    simulated_symbol: dict[str, Any],
+    intelligence_v4: dict[str, Any],
+    impact: dict[str, Any],
+    direction: str,
+    strength: float,
+    reaction_score: float,
+    price_confirmed: bool,
+    macro_score: float,
+    macro_risk: bool,
+    event_risk_level: str,
+    major_count: int,
+    validation_type: str,
+) -> dict[str, Any]:
+    before_ranking = copy.deepcopy(simulated_symbol.get("scenario_ranking") or {})
+    before_primary = (before_ranking.get("primary") or {}).get("scenario")
+    before_primary_prob = _float_or_none((before_ranking.get("primary") or {}).get("probability"))
+    confirmation_delta = 0.0
+    predictor_deltas = {
+        "bounce_predictor": 0.0,
+        "downside_continuation_predictor": 0.0,
+        "trend_reversal_predictor": 0.0,
+        "risk_expansion_predictor": 0.0,
+    }
+    weight_deltas = {
+        "base_path_weight": 0.0,
+        "bounce_path_weight": 0.0,
+        "bearish_path_weight": 0.0,
+        "analog_path_weight": 0.0,
+    }
+    overlay_applied = major_count > 0 or macro_risk
+    reason_parts: list[str] = []
+    if major_count > 0 and direction in {"supports_bounce", "supports_trend_reversal"}:
+        if price_confirmed:
+            magnitude = min(0.055, 0.015 + 0.045 * strength * max(reaction_score, 0.35))
+            weight_deltas["bounce_path_weight"] += magnitude
+            weight_deltas["bearish_path_weight"] -= magnitude * 0.35
+            confirmation_delta += min(6.0, 2.0 + 5.0 * strength * reaction_score)
+            predictor_deltas["bounce_predictor"] += min(0.04, 0.015 + magnitude * 0.45)
+            predictor_deltas["trend_reversal_predictor"] += min(0.02, magnitude * 0.30)
+            predictor_deltas["risk_expansion_predictor"] -= min(0.025, magnitude * 0.35)
+            reason_parts.append("risk-on news with price confirmation raised bounce path weight")
+        else:
+            magnitude = min(0.035, 0.012 + 0.025 * strength)
+            weight_deltas["base_path_weight"] += magnitude
+            weight_deltas["bearish_path_weight"] += magnitude * 0.35
+            confirmation_delta -= min(2.0, 0.5 + 2.0 * strength)
+            predictor_deltas["downside_continuation_predictor"] += min(0.015, magnitude * 0.25)
+            reason_parts.append("risk-on news is not confirmed by price, so base/risk paths gained weight")
+    elif major_count > 0 and direction in {"supports_downside", "supports_risk_expansion"}:
+        magnitude = min(0.060, 0.016 + 0.050 * strength * (reaction_score if price_confirmed else 0.45))
+        weight_deltas["bearish_path_weight"] += magnitude
+        weight_deltas["bounce_path_weight"] -= magnitude * 0.35
+        weight_deltas["base_path_weight"] += 0.010 if not price_confirmed else 0.0
+        confirmation_delta -= min(8.0, 2.0 + 6.0 * strength * (reaction_score if price_confirmed else 0.50))
+        predictor_deltas["downside_continuation_predictor"] += min(0.04, magnitude * 0.55)
+        predictor_deltas["risk_expansion_predictor"] += min(0.05, magnitude * 0.65)
+        predictor_deltas["bounce_predictor"] -= min(0.025, magnitude * 0.30)
+        reason_parts.append("risk-off news raised failed-bounce / risk-expansion path weight")
+    elif major_count > 0:
+        magnitude = min(0.030, 0.010 + 0.020 * strength)
+        weight_deltas["base_path_weight"] += magnitude
+        confirmation_delta -= 1.0 if strength >= 0.35 else 0.0
+        reason_parts.append("mixed news increased base path uncertainty")
+    if macro_risk:
+        macro_delta = min(0.035, 0.010 + 0.030 * macro_score)
+        weight_deltas["base_path_weight"] += macro_delta
+        confirmation_delta -= min(4.0, 1.0 + 4.0 * macro_score)
+        reason_parts.append("near-term macro calendar risk capped conviction")
+
+    _update_signal_confirmation_for_news(
+        simulated_symbol=simulated_symbol,
+        overview_symbol=overview_symbol,
+        intelligence_v4=intelligence_v4,
+        symbol=symbol,
+        delta=confirmation_delta,
+        direction=direction,
+        price_confirmed=price_confirmed,
+        macro_risk=macro_risk,
+        reason_parts=reason_parts,
+    )
+    _update_predictors_for_news(simulated_symbol, overview_symbol, intelligence_v4, symbol, predictor_deltas, reason_parts)
+    new_weights = _adjust_path_weights_for_news(simulated_symbol, weight_deltas, direction, price_confirmed, macro_risk, reason_parts)
+    for target in (simulated_symbol, overview_symbol):
+        target["path_weight_model"] = copy.deepcopy(new_weights)
+        target["base_path_weight"] = new_weights["base_path_weight"]
+        target["bounce_path_weight"] = new_weights["bounce_path_weight"]
+        target["bearish_path_weight"] = new_weights["bearish_path_weight"]
+        target["analog_path_weight"] = new_weights["analog_path_weight"]
+        target["scenario_ranking"] = _scenario_ranking_from_adjusted_weights(symbol, new_weights, simulated_symbol.get("scenario_ranking") or {}, reason_parts)
+    simulated_symbol["scenario_weights"] = {
+        "base_scenario": new_weights["base_path_weight"],
+        "bounce_scenario": new_weights["bounce_path_weight"],
+        "bearish_scenario": new_weights["bearish_path_weight"],
+        "historical_analog_average": new_weights["analog_path_weight"],
+    }
+    _update_scenario_cards_for_news(simulated_symbol, new_weights)
+    path_overlay = _apply_news_event_path_shock(
+        simulated_symbol=simulated_symbol,
+        direction=direction,
+        strength=strength,
+        reaction_score=reaction_score,
+        price_confirmed=price_confirmed,
+        major_count=major_count,
+        validation_type=validation_type,
+    )
+    if event_risk_level == "high" and direction in {"supports_downside", "supports_risk_expansion"} and price_confirmed:
+        _apply_news_event_risk_warning(simulated_symbol, overview_symbol, intelligence_v4, symbol)
+
+    after_ranking = simulated_symbol.get("scenario_ranking") or {}
+    after_primary = (after_ranking.get("primary") or {}).get("scenario")
+    after_primary_prob = _float_or_none((after_ranking.get("primary") or {}).get("probability"))
+    effect = {
+        "overlay_applied": overlay_applied,
+        "validation_type": validation_type,
+        "before_primary_scenario": before_primary,
+        "after_primary_scenario": after_primary,
+        "primary_scenario_changed": before_primary != after_primary,
+        "before_primary_probability": before_primary_prob,
+        "after_primary_probability": after_primary_prob,
+        "primary_probability_delta": _round_return((after_primary_prob or 0.0) - (before_primary_prob or 0.0)),
+        "confirmation_delta": round(confirmation_delta, 2),
+        "predictor_deltas": {key: round(value, 4) for key, value in predictor_deltas.items()},
+        "path_weight_deltas": {key: round(value, 4) for key, value in weight_deltas.items()},
+        "path_overlay": path_overlay,
+        "reason": "; ".join(reason_parts) if reason_parts else "no material news/event effect",
+        "impact": impact.get("impact"),
+        "not_a_trading_signal": True,
+    }
+    patch = simulated_symbol.setdefault("news_event_intelligence", {})
+    patch["prediction_logic_effect"] = effect
+    patch["validation_type"] = validation_type
+    overview_patch = overview_symbol.setdefault("news_event_intelligence", {})
+    overview_patch["prediction_logic_effect"] = effect
+    overview_patch["validation_type"] = validation_type
+    return effect
+
+
+def _update_signal_confirmation_for_news(
+    *,
+    simulated_symbol: dict[str, Any],
+    overview_symbol: dict[str, Any],
+    intelligence_v4: dict[str, Any],
+    symbol: str,
+    delta: float,
+    direction: str,
+    price_confirmed: bool,
+    macro_risk: bool,
+    reason_parts: list[str],
+) -> None:
+    confirmation = copy.deepcopy(simulated_symbol.get("signal_confirmation") or {})
+    if not confirmation:
+        confirmation = copy.deepcopy((intelligence_v4.get("signal_confirmation_by_symbol") or {}).get(symbol) or {})
+    if not confirmation:
+        return
+    before = _float_or_none(confirmation.get("confirmation_score")) or _float_or_none(confirmation.get("signal_confirmation_score")) or 0.0
+    after = _clip(before + delta, 0.0, 100.0)
+    confirmation["confirmation_score"] = round(after, 2)
+    confirmation["signal_confirmation_score"] = round(after, 2)
+    confirmation["confirmation_level"] = "strong" if after >= 70 else "mixed" if after >= 45 else "weak"
+    if direction in {"supports_bounce", "supports_trend_reversal"} and price_confirmed:
+        confirmation.setdefault("supporting_evidence", []).append(
+            {"name": "news_event_price_confirmed", "score": round(after, 2), "detail": "重大 risk-on 新闻已被价格反应初步确认。"}
+        )
+    elif direction in {"supports_downside", "supports_risk_expansion"}:
+        confirmation.setdefault("conflicting_evidence", []).append(
+            {"name": "risk_off_news_event", "score": round(100 - after, 2), "detail": "重大 risk-off 新闻提高风险路径权重。"}
+        )
+    elif direction in {"supports_bounce", "supports_trend_reversal"} and not price_confirmed:
+        confirmation.setdefault("conflicting_evidence", []).append(
+            {"name": "news_not_confirmed_by_price", "score": round(100 - after, 2), "detail": "新闻文字利多，但指数/VIX/信用代理没有充分确认。"}
+        )
+    if macro_risk:
+        confirmation.setdefault("conflicting_evidence", []).append(
+            {"name": "macro_event_calendar_risk", "score": round(100 - after, 2), "detail": "临近重要宏观事件，短线路径置信度需要打折。"}
+        )
+    for target in (simulated_symbol, overview_symbol):
+        target["signal_confirmation"] = copy.deepcopy(confirmation)
+        target["signal_confirmation_score"] = round(after, 2)
+    (intelligence_v4.setdefault("signal_confirmation_by_symbol", {}))[symbol] = copy.deepcopy(confirmation)
+    reason_parts.append(f"signal confirmation adjusted {delta:+.2f} points")
+
+
+def _update_predictors_for_news(
+    simulated_symbol: dict[str, Any],
+    overview_symbol: dict[str, Any],
+    intelligence_v4: dict[str, Any],
+    symbol: str,
+    deltas: dict[str, float],
+    reason_parts: list[str],
+) -> None:
+    predictors = copy.deepcopy(simulated_symbol.get("predictors_v4") or {})
+    if not predictors:
+        predictors = copy.deepcopy((intelligence_v4.get("predictor_outputs_by_symbol") or {}).get(symbol) or {})
+    if not predictors:
+        return
+    for predictor_name, delta in deltas.items():
+        if predictor_name not in predictors or abs(delta) < 0.0001:
+            continue
+        payload = predictors[predictor_name]
+        before = _float_or_none(payload.get("probability")) or 0.0
+        after = _clip(before + delta, 0.0, 0.95)
+        payload["probability"] = round(after, 4)
+        for probability_key in (
+            "bounce_probability",
+            "downside_continuation_probability",
+            "trend_reversal_probability",
+            "risk_expansion_probability",
+        ):
+            if probability_key in payload:
+                payload[probability_key] = round(after, 4)
+        drivers_key = "main_drivers" if "main_drivers" in payload else "key_drivers"
+        payload.setdefault(drivers_key, [])
+        payload[drivers_key] = list(payload[drivers_key]) + [f"news_event_overlay:{delta:+.3f}"]
+    for target in (simulated_symbol, overview_symbol):
+        target["predictors_v4"] = copy.deepcopy(predictors)
+        target["predictors"] = copy.deepcopy(predictors)
+    (intelligence_v4.setdefault("predictor_outputs_by_symbol", {}))[symbol] = copy.deepcopy(predictors)
+    if any(abs(value) >= 0.0001 for value in deltas.values()):
+        reason_parts.append("independent predictors adjusted by news/event overlay")
+
+
+def _adjust_path_weights_for_news(
+    simulated_symbol: dict[str, Any],
+    deltas: dict[str, float],
+    direction: str,
+    price_confirmed: bool,
+    macro_risk: bool,
+    reason_parts: list[str],
+) -> dict[str, Any]:
+    weights = copy.deepcopy(simulated_symbol.get("path_weight_model") or {})
+    if not weights:
+        weights = {
+            "base_path_weight": _float_or_none(simulated_symbol.get("base_path_weight")) or 0.25,
+            "bounce_path_weight": _float_or_none(simulated_symbol.get("bounce_path_weight")) or 0.25,
+            "bearish_path_weight": _float_or_none(simulated_symbol.get("bearish_path_weight")) or 0.25,
+            "analog_path_weight": _float_or_none(simulated_symbol.get("analog_path_weight")) or 0.25,
+        }
+    raw = {
+        key: max((_float_or_none(weights.get(key)) or 0.0) + deltas.get(key, 0.0), 0.001)
+        for key in ("base_path_weight", "bounce_path_weight", "bearish_path_weight", "analog_path_weight")
+    }
+    total = sum(raw.values()) or 1.0
+    for key, value in raw.items():
+        weights[key] = round(value / total, 4)
+    factors = dict(weights.get("weight_factors") or {})
+    factors.update(
+        {
+            "news_event_direction": direction,
+            "news_event_price_confirmed": 1.0 if price_confirmed else 0.0,
+            "news_event_macro_risk": 1.0 if macro_risk else 0.0,
+        }
+    )
+    weights["weight_factors"] = factors
+    notes = list(weights.get("weight_source_notes") or [])
+    notes.append("News/Event overlay can move a small amount of weight between bounce, base and risk paths when a major event is detected.")
+    weights["weight_source_notes"] = notes
+    weights["news_event_overlay_applied"] = True
+    weights["news_event_overlay_note"] = "; ".join(reason_parts) if reason_parts else "no material event adjustment"
+    weights["low_confidence_simulation"] = bool(weights.get("low_confidence_simulation")) or (macro_risk and not price_confirmed)
+    if weights.get("low_confidence_simulation"):
+        weights["simulation_confidence_level"] = "low" if weights.get("simulation_confidence_level") == "low" else "medium"
+    return weights
+
+
+def _scenario_ranking_from_adjusted_weights(
+    symbol: str,
+    weights: dict[str, Any],
+    previous_ranking: dict[str, Any],
+    reason_parts: list[str],
+) -> dict[str, Any]:
+    scenario_defs = [
+        ("expected_path", "综合期望情景", "base_path_weight", "3d-20d"),
+        ("bounce_path", "反抽情景", "bounce_path_weight", "10d-20d"),
+        ("bearish_path", "失败反抽情景", "bearish_path_weight", "3d-10d"),
+        ("analog_average_path", "历史均值情景", "analog_path_weight", "20d-60d"),
+    ]
+    total = sum(max(_float_or_none(weights.get(weight_key)) or 0.0, 0.0) for _, _, weight_key, _ in scenario_defs) or 1.0
+    previous_by_scenario = {
+        item.get("scenario"): item for item in (previous_ranking.get("all_scenarios") or []) if isinstance(item, dict)
+    }
+    ranked: list[dict[str, Any]] = []
+    for scenario, label, weight_key, horizon in scenario_defs:
+        probability = max(_float_or_none(weights.get(weight_key)) or 0.0, 0.0) / total
+        prior = previous_by_scenario.get(scenario) or {}
+        reason = str(prior.get("reason") or f"{label} weight after current multi-source model.")
+        if reason_parts:
+            reason = f"{reason} News/Event overlay: {'; '.join(reason_parts)}."
+        ranked.append(
+            {
+                "scenario": scenario,
+                "label": label,
+                "probability": round(probability, 4),
+                "reason": reason,
+                "expected_horizon": prior.get("expected_horizon") or horizon,
+                "confidence": weights.get("simulation_confidence_level") or prior.get("confidence") or "medium",
+            }
+        )
+    ranked.sort(key=lambda item: item["probability"], reverse=True)
+    primary, secondary, tertiary = ranked[0], ranked[1], ranked[2]
+    risk = next((item for item in ranked if item["scenario"] == "bearish_path"), tertiary)
+    gap = round(primary["probability"] - secondary["probability"], 4)
+    return {
+        "primary": primary,
+        "secondary": secondary,
+        "tertiary": tertiary,
+        "all_scenarios": ranked,
+        "primary_scenario": primary["scenario"],
+        "secondary_scenario": secondary["scenario"],
+        "risk_scenario": risk["scenario"],
+        "scenario_probability": primary["probability"],
+        "probability_gap": gap,
+        "primary_secondary_gap": gap,
+        "close_call": gap < 0.08,
+        "path_reliability": weights.get("simulation_confidence_level", "medium"),
+        "switching_conditions": _news_switching_conditions(symbol, primary["scenario"], secondary["scenario"]),
+        "primary_to_secondary_switch_conditions": _news_switching_conditions(symbol, primary["scenario"], secondary["scenario"]),
+        "ranking_note": "Scenario ranking includes a bounded News/Event overlay when a major event or macro calendar risk is detected. It is probabilistic, not deterministic.",
+        "close_call_note": "路径分歧较大，不宜过度押注单一路径。" if gap < 0.08 else "",
+    }
+
+
+def _news_switching_conditions(symbol: str, primary: str, secondary: str) -> list[str]:
+    conditions = ["VIX 与新闻方向背离", "HYG/LQD 转弱", "重大新闻没有被价格继续确认"]
+    if primary == "bounce_path":
+        conditions.extend([f"{symbol} 跌破主路径失效价", "油价或美元重新走强"])
+    elif primary == "bearish_path":
+        conditions.extend(["VIX 快速回落", f"{symbol} 重新站上主路径确认价"])
+    else:
+        conditions.extend(["主路径和第二路径概率差距扩大", "宏观事件风险下降"])
+    if secondary:
+        conditions.append(f"第二路径 {secondary} 获得多源确认")
+    return conditions
+
+
+def _update_scenario_cards_for_news(simulated_symbol: dict[str, Any], weights: dict[str, Any]) -> None:
+    mapping = {
+        "Base case": "base_path_weight",
+        "Bounce case": "bounce_path_weight",
+        "Bearish case": "bearish_path_weight",
+        "Historical analog case": "analog_path_weight",
+    }
+    for card in simulated_symbol.get("scenario_cards", []):
+        key = mapping.get(card.get("name"))
+        if key:
+            card["probability_weight"] = weights[key]
+
+
+def _apply_news_event_path_shock(
+    *,
+    simulated_symbol: dict[str, Any],
+    direction: str,
+    strength: float,
+    reaction_score: float,
+    price_confirmed: bool,
+    major_count: int,
+    validation_type: str,
+) -> dict[str, Any]:
+    if major_count <= 0 or not price_confirmed or direction not in {"supports_bounce", "supports_trend_reversal", "supports_downside", "supports_risk_expansion"}:
+        overlay = {
+            "applied": False,
+            "validation_type": validation_type,
+            "reason": "No confirmed major directional event; short-term paths were not moved.",
+            "not_a_trading_signal": True,
+        }
+        simulated_symbol["news_event_path_overlay"] = overlay
+        return overlay
+    paths = simulated_symbol.get("paths") or {}
+    split_index = int(paths.get("split_index") or 0)
+    sign = 1.0 if direction in {"supports_bounce", "supports_trend_reversal"} else -1.0
+    shock = min(0.008, 0.002 + 0.008 * strength * max(reaction_score, 0.35))
+    path_shocks = {
+        "expected_path": 1.0,
+        "bounce_path": 1.15 if sign > 0 else 0.35,
+        "bearish_path": 0.35 if sign > 0 else 1.15,
+        "analog_average_path": 0.55,
+    }
+    for path_key, multiplier in path_shocks.items():
+        values = paths.get(path_key)
+        if not isinstance(values, list):
+            continue
+        for offset, fade in ((1, 1.0), (2, 0.72), (3, 0.45)):
+            index = split_index + offset
+            if index >= len(values) or values[index] is None:
+                continue
+            adjusted = float(values[index]) * (1.0 + sign * shock * multiplier * fade)
+            values[index] = round(adjusted, 4)
+    _refresh_confidence_band(paths)
+    _adjust_short_horizon_summary(simulated_symbol, sign, shock)
+    overlay = {
+        "applied": True,
+        "validation_type": validation_type,
+        "direction": direction,
+        "shock_return_1d": round(sign * shock, 4),
+        "shock_return_3d": round(sign * shock * 0.45, 4),
+        "source": "news_event_price_reaction_overlay",
+        "reason": "Confirmed major event adjusted only the 1d/3d probability path; historical records are not rewritten.",
+        "not_a_trading_signal": True,
+    }
+    simulated_symbol["news_event_path_overlay"] = overlay
+    return overlay
+
+
+def _refresh_confidence_band(paths: dict[str, Any]) -> None:
+    upper = paths.get("confidence_band_upper")
+    lower = paths.get("confidence_band_lower")
+    expected = paths.get("expected_path")
+    bounce = paths.get("bounce_path")
+    bearish = paths.get("bearish_path")
+    analog = paths.get("analog_average_path")
+    if not all(isinstance(item, list) for item in (upper, lower, expected, bounce, bearish, analog)):
+        return
+    for index in range(min(len(upper), len(lower), len(expected), len(bounce), len(bearish), len(analog))):
+        values = [item[index] for item in (expected, bounce, bearish, analog) if item[index] is not None]
+        if values:
+            upper[index] = round(max(values), 4)
+            lower[index] = round(min(values), 4)
+
+
+def _adjust_short_horizon_summary(simulated_symbol: dict[str, Any], sign: float, shock: float) -> None:
+    summary = simulated_symbol.get("horizon_summary") or {}
+    row = summary.get("3d")
+    if not isinstance(row, dict):
+        return
+    row["expected_return"] = _round_return((_float_or_none(row.get("expected_return")) or 0.0) + sign * shock * 0.45)
+    up = _float_or_none(row.get("up_probability")) or 0.5
+    down = _float_or_none(row.get("down_probability")) or 0.5
+    if sign > 0:
+        up = _clip(up + shock * 4.0, 0.0, 0.95)
+        down = _clip(down - shock * 2.5, 0.0, 0.95)
+    else:
+        down = _clip(down + shock * 4.0, 0.0, 0.95)
+        up = _clip(up - shock * 2.5, 0.0, 0.95)
+    total = up + down
+    if total > 1.0:
+        up, down = up / total, down / total
+    row["up_probability"] = round(up, 4)
+    row["down_probability"] = round(down, 4)
+    row["risk_note"] = f"{row.get('risk_note', '')} News/Event overlay adjusted short-term probability path; not a guaranteed forecast.".strip()
+
+
+def _apply_news_event_risk_warning(
+    simulated_symbol: dict[str, Any],
+    overview_symbol: dict[str, Any],
+    intelligence_v4: dict[str, Any],
+    symbol: str,
+) -> None:
+    existing = copy.deepcopy(simulated_symbol.get("market_edge_status") or {})
+    if not existing:
+        existing = copy.deepcopy((intelligence_v4.get("edge_status_by_symbol") or {}).get(symbol) or {})
+    existing.update(
+        {
+            "market_edge_status": "RISK_WARNING",
+            "has_usable_prediction_edge_today": False,
+            "risk_warning": True,
+            "summary": "重大 risk-off 新闻已被价格反应确认，风险路径权重上升；这不是交易建议。",
+        }
+    )
+    for target in (simulated_symbol, overview_symbol):
+        target["market_edge_status"] = copy.deepcopy(existing)
+    (intelligence_v4.setdefault("edge_status_by_symbol", {}))[symbol] = copy.deepcopy(existing)
 
 
 def _empty_fred_bundle() -> dict[str, Any]:
@@ -1158,15 +1728,52 @@ def _apply_news_event_quality(data_quality: dict[str, Any], news_event_bundle: d
     raw_count = int(news_event_bundle.get("raw_item_count") or 0)
     major_count = int(news_event_bundle.get("major_event_count") or 0)
     provider_failed = bool(news_event_bundle.get("provider_failed"))
-    source_status = "available" if raw_count > 0 and not provider_failed else "provider_failed" if provider_failed else "missing"
+    reaction = news_event_bundle.get("price_reaction_confirmation") or {}
+    narrative = news_event_bundle.get("market_narrative") or {}
+    source_status = "available" if major_count > 0 and not provider_failed else "partial" if raw_count > 0 and not provider_failed else "provider_failed" if provider_failed else "missing"
+    missing_reason = (
+        "provider_failed"
+        if provider_failed
+        else "no_major_event_detected"
+        if raw_count > 0 and major_count == 0
+        else "no_news_items"
+        if raw_count == 0
+        else None
+    )
+    news_event_quality = {
+        "available": major_count > 0 and not provider_failed,
+        "status": source_status,
+        "provider": "finnhub+gdelt",
+        "headline_count": raw_count,
+        "major_event_count": major_count,
+        "stale": bool(news_event_bundle.get("stale")),
+        "last_update": news_event_bundle.get("generated_at"),
+        "event_detection_confidence": news_event_bundle.get("event_detection_confidence"),
+        "price_reaction_confirmed": bool(reaction.get("price_reaction_confirmed")),
+        "missing_reason": missing_reason,
+        "news_event_partial": raw_count > 0 and major_count == 0 and not provider_failed,
+        "event_risk_level": news_event_bundle.get("event_risk_level"),
+        "news_direction": news_event_bundle.get("news_direction"),
+    }
     coverage["news"] = {
-        "status": "available" if raw_count > 0 and not provider_failed else "missing",
-        "detail": "News/Event Intelligence: Finnhub/GDELT headlines, event classification, narrative detection, and price-reaction confirmation.",
+        "status": source_status,
+        "detail": "News/Event Intelligence: Finnhub/GDELT headlines. Full availability requires major event recognition and price-reaction confirmation.",
         "expected_items": 4,
         "available_items": 4 if major_count else 2 if raw_count else 0,
         "real_data": raw_count > 0 and not provider_failed,
         "proxy_used": False,
         "fallback_used": bool(news_event_bundle.get("stale")),
+    }
+    coverage["news_event"] = {
+        "status": source_status,
+        "detail": "Event classification, narrative detection, economic calendar risk and market price-reaction confirmation.",
+        "expected_items": 5,
+        "available_items": 5 if major_count else 3 if raw_count else 0,
+        "real_data": raw_count > 0 and not provider_failed,
+        "proxy_used": False,
+        "fallback_used": bool(news_event_bundle.get("stale")),
+        "headline_count": raw_count,
+        "major_event_count": major_count,
     }
     sources["news_event_provider"] = {
         "symbol": "news_event_provider",
@@ -1180,13 +1787,20 @@ def _apply_news_event_quality(data_quality: dict[str, Any], news_event_bundle: d
         "missing_data": raw_count == 0 or provider_failed,
         "point_in_time_safe": True,
         "major_event_count": major_count,
-        "narrative": (news_event_bundle.get("market_narrative") or {}).get("market_narrative"),
+        "narrative": narrative.get("market_narrative"),
+        "event_detection_confidence": news_event_bundle.get("event_detection_confidence"),
+        "price_reaction_confirmed": bool(reaction.get("price_reaction_confirmed")),
+        "missing_reason": missing_reason,
     }
-    summary["news_event_available"] = raw_count > 0 and not provider_failed
+    summary["news_event"] = news_event_quality
+    summary["news_event_available"] = major_count > 0 and not provider_failed
+    summary["news_event_partial"] = raw_count > 0 and major_count == 0 and not provider_failed
     summary["news_event_provider_failed"] = provider_failed
     summary["news_event_major_count"] = major_count
-    summary["news_event_narrative"] = (news_event_bundle.get("market_narrative") or {}).get("market_narrative")
-    summary["news_event_price_confirmed"] = bool((news_event_bundle.get("price_reaction_confirmation") or {}).get("price_reaction_confirmed"))
+    summary["news_event_narrative"] = narrative.get("market_narrative")
+    summary["news_event_price_confirmed"] = bool(reaction.get("price_reaction_confirmed"))
+    summary["news_event_event_risk_level"] = news_event_bundle.get("event_risk_level")
+    summary["news_event_missing_reason"] = missing_reason
     if raw_count > 0 and not provider_failed:
         current_score = float(summary.get("data_completeness_score") or 0)
         summary["data_completeness_score_before_news_event"] = current_score
@@ -1203,10 +1817,15 @@ def _attach_news_event_intelligence(
 ) -> None:
     summary = {
         "status": news_event_bundle.get("status"),
+        "validation_type": news_event_bundle.get("validation_type"),
         "dashboard_note": news_event_bundle.get("dashboard_note"),
         "market_narrative": news_event_bundle.get("market_narrative"),
         "price_reaction_confirmation": news_event_bundle.get("price_reaction_confirmation"),
+        "economic_calendar_risk": news_event_bundle.get("economic_calendar_risk"),
+        "event_risk_level": news_event_bundle.get("event_risk_level"),
+        "news_direction": news_event_bundle.get("news_direction"),
         "major_event_count": news_event_bundle.get("major_event_count"),
+        "prediction_logic_effect": news_event_bundle.get("prediction_logic_effect"),
     }
     overview["news_event_summary"] = summary
     simulated_paths["news_event_summary"] = summary
@@ -1215,20 +1834,29 @@ def _attach_news_event_intelligence(
         impact = impacts.get(symbol, {})
         overview_symbol = (overview.get("symbols") or {}).get(symbol)
         simulated_symbol = (simulated_paths.get("symbols") or {}).get(symbol)
-        patch = {
-            "news_event_intelligence": {
+        patch_payload = {
                 "status": news_event_bundle.get("status"),
+                "validation_type": news_event_bundle.get("validation_type"),
                 "dashboard_note": news_event_bundle.get("dashboard_note"),
                 "market_narrative": news_event_bundle.get("market_narrative"),
                 "price_reaction_confirmation": news_event_bundle.get("price_reaction_confirmation"),
+                "economic_calendar_risk": news_event_bundle.get("economic_calendar_risk"),
+                "event_risk_level": news_event_bundle.get("event_risk_level"),
+                "news_direction": news_event_bundle.get("news_direction"),
                 "symbol_impact": impact,
+                "prediction_logic_effect": ((news_event_bundle.get("prediction_logic_effect") or {}).get("symbols") or {}).get(symbol),
                 "major_events": (news_event_bundle.get("major_events") or [])[:6],
-            }
         }
         if isinstance(overview_symbol, dict):
-            overview_symbol.update(patch)
+            overview_symbol["news_event_intelligence"] = {
+                **(overview_symbol.get("news_event_intelligence") or {}),
+                **patch_payload,
+            }
         if isinstance(simulated_symbol, dict):
-            simulated_symbol.update(patch)
+            simulated_symbol["news_event_intelligence"] = {
+                **(simulated_symbol.get("news_event_intelligence") or {}),
+                **patch_payload,
+            }
 
 
 def _mean(values: list[float | None]) -> float:
@@ -1248,6 +1876,10 @@ def _float_or_none(value: Any) -> float | None:
 
 def _clip(value: float, lower: float, upper: float) -> float:
     return min(upper, max(lower, value))
+
+
+def _round_return(value: float | None) -> float | None:
+    return round(value, 4) if value is not None and math.isfinite(value) else None
 
 
 def _risk_note_for_horizon(horizon: int, overview: dict[str, Any]) -> str:

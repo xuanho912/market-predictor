@@ -2,6 +2,12 @@ name: Forward Alpha v1 Observation
 
 on:
   workflow_dispatch:
+    inputs:
+      event_refresh:
+        description: "Refresh news/event intelligence after a major event without appending a new baseline forecast record"
+        required: false
+        default: false
+        type: boolean
   push:
     branches:
       - main
@@ -58,6 +64,7 @@ jobs:
       FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
       BREADTH_CACHE_DIR: data/breadth_cache
       NEWS_EVENT_CACHE_DIR: data/news_event_cache
+      EVENT_REFRESH: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.event_refresh == 'true' && 'true' || 'false' }}
       PUBLIC_DASHBOARD_REPO: ${{ vars.PUBLIC_DASHBOARD_REPO }}
       PUBLIC_DASHBOARD_BRANCH: ${{ vars.PUBLIC_DASHBOARD_BRANCH || 'main' }}
       PUBLIC_DASHBOARD_BASE_PATH: ${{ vars.PUBLIC_DASHBOARD_BASE_PATH || '/market-predictor' }}

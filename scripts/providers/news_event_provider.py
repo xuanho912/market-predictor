@@ -6,7 +6,7 @@ import os
 import time
 import urllib.parse
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
@@ -163,10 +163,12 @@ def fetch_news_event_bundle(
     finnhub_bundle: dict[str, Any],
     series_by_symbol: dict[str, DownloadedSeries],
     simulated_paths: dict[str, Any] | None = None,
+    validation_type: str = "daily",
 ) -> dict[str, Any]:
     now = datetime.now(timezone.utc)
     finnhub_items = _items_from_finnhub(finnhub_bundle)
     gdelt_status, gdelt_items = _fetch_gdelt_items()
+    economic_risk = _economic_calendar_risk(finnhub_bundle, now)
     raw_items = _dedupe_items(finnhub_items + gdelt_items)
     classified = [_classify_item(item, now) for item in raw_items]
     major_events = [
@@ -179,15 +181,22 @@ def fetch_news_event_bundle(
     price_confirmation = _price_reaction_confirmation(narrative, series_by_symbol)
     symbol_impacts = _symbol_impacts(narrative, price_confirmation, simulated_paths or {})
     provider_failed = not finnhub_items and gdelt_status["status"] not in {"available", "stale_cache"}
-    status = "available" if major_events else "no_major_event" if raw_items else "missing"
+    status = "available" if major_events else "news_event_partial" if raw_items else "missing"
     if provider_failed:
         status = "provider_failed"
+    event_detection_confidence = _mean_score([item.get("confidence_score") for item in major_events])
+    stale = bool(gdelt_status.get("stale")) or bool(finnhub_bundle.get("cache_used"))
+    event_risk_level = _event_risk_level(narrative, price_confirmation, major_events, economic_risk)
     return {
         "version": "news_event_intelligence_v1",
         "generated_at": now.isoformat(),
+        "validation_type": validation_type,
         "status": status,
         "provider_failed": provider_failed,
-        "stale": bool(gdelt_status.get("stale")),
+        "stale": stale,
+        "event_detection_confidence": event_detection_confidence,
+        "event_risk_level": event_risk_level,
+        "news_direction": _news_direction(narrative),
         "sources": {
             "finnhub_market_news": {
                 "status": (finnhub_bundle.get("market_news") or {}).get("status", "missing"),
@@ -201,6 +210,7 @@ def fetch_news_event_bundle(
             },
             "gdelt_public_news": gdelt_status,
         },
+        "economic_calendar_risk": economic_risk,
         "raw_item_count": len(raw_items),
         "major_event_count": len(major_events),
         "major_events": major_events[:20],
@@ -212,6 +222,7 @@ def fetch_news_event_bundle(
             "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
             "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
             "The provider never exposes API keys and never lets frontend call Finnhub directly.",
+            "Economic calendar items are treated as event-risk context, not automatic directional forecasts.",
         ],
     }
 
@@ -224,7 +235,10 @@ def render_news_event_status_markdown(payload: dict[str, Any]) -> str:
         "",
         f"- generated_at: `{payload.get('generated_at')}`",
         f"- status: `{payload.get('status')}`",
+        f"- validation_type: `{payload.get('validation_type')}`",
         f"- major_event_count: `{payload.get('major_event_count')}`",
+        f"- event_detection_confidence: `{payload.get('event_detection_confidence')}`",
+        f"- event_risk_level: `{payload.get('event_risk_level')}`",
         f"- narrative: `{narrative.get('market_narrative')}`",
         f"- narrative_direction: `{narrative.get('narrative_direction')}`",
         f"- narrative_strength: `{narrative.get('narrative_strength')}`",
@@ -235,9 +249,21 @@ def render_news_event_status_markdown(payload: dict[str, Any]) -> str:
         "",
         str(payload.get("dashboard_note") or "No clear narrative."),
         "",
-        "## Major Events",
+        "## Economic Calendar Risk",
         "",
     ]
+    economic_risk = payload.get("economic_calendar_risk") or {}
+    lines.extend(
+        [
+            f"- status: `{economic_risk.get('status')}`",
+            f"- macro_event_risk_flag: `{economic_risk.get('macro_event_risk_flag')}`",
+            f"- macro_event_risk_score: `{economic_risk.get('macro_event_risk_score')}`",
+            f"- high_importance_event_count: `{economic_risk.get('high_importance_event_count')}`",
+            "",
+            "## Major Events",
+            "",
+        ]
+    )
     for event in (payload.get("major_events") or [])[:10]:
         lines.extend(
             [
@@ -498,6 +524,106 @@ def _symbol_impacts(narrative: dict[str, Any], reaction: dict[str, Any], simulat
     return impacts
 
 
+def _economic_calendar_risk(finnhub_bundle: dict[str, Any], now: datetime) -> dict[str, Any]:
+    calendar = finnhub_bundle.get("economic_calendar") or {}
+    events = calendar.get("events") or []
+    high_keywords = ("cpi", "pce", "inflation", "fomc", "fed", "payroll", "nonfarm", "nfp", "unemployment", "rate")
+    medium_keywords = ("retail", "pmi", "ism", "gdp", "consumer confidence", "jobless", "claims", "ppi")
+    macro_events: list[dict[str, Any]] = []
+    for event in events if isinstance(events, list) else []:
+        if not isinstance(event, dict):
+            continue
+        name = str(event.get("event") or event.get("name") or "").strip()
+        if not name:
+            continue
+        lower = name.lower()
+        event_time = _calendar_event_datetime(event, now)
+        days_to_event = (event_time.date() - now.date()).days if event_time is not None else None
+        high = any(keyword in lower for keyword in high_keywords)
+        medium = any(keyword in lower for keyword in medium_keywords)
+        if not high and not medium:
+            continue
+        if days_to_event is not None and (days_to_event < -1 or days_to_event > 7):
+            continue
+        importance = "high" if high else "medium"
+        macro_events.append(
+            {
+                "date": event.get("date"),
+                "event": name,
+                "country": event.get("country"),
+                "impact": event.get("impact") or importance,
+                "actual": event.get("actual"),
+                "estimate": event.get("estimate"),
+                "importance": importance,
+                "days_to_event": days_to_event,
+                "expected_horizon": "intraday-3d" if days_to_event is not None and days_to_event <= 1 else "1d-5d",
+                "directional_read": "unknown_until_release",
+                "source": calendar.get("source", "finnhub"),
+            }
+        )
+    high_count = sum(1 for event in macro_events if event.get("importance") == "high")
+    risk_score = min(100, high_count * 35 + max(0, len(macro_events) - high_count) * 18)
+    return {
+        "status": calendar.get("status", "missing"),
+        "source": calendar.get("source", "finnhub"),
+        "event_count": calendar.get("event_count", 0),
+        "high_importance_event_count": high_count,
+        "macro_event_risk_flag": risk_score >= 35,
+        "macro_event_risk_score": risk_score,
+        "macro_events": macro_events[:12],
+        "risk_note": (
+            "Major macro events are present. Treat path confidence as event-sensitive."
+            if risk_score >= 35
+            else "No near-term high-importance macro event detected from the available calendar."
+        ),
+    }
+
+
+def _calendar_event_datetime(event: dict[str, Any], now: datetime) -> datetime | None:
+    raw = event.get("date") or event.get("time")
+    parsed = _parse_timestamp(raw)
+    if parsed:
+        try:
+            return datetime.fromisoformat(parsed.replace("Z", "+00:00")).astimezone(timezone.utc)
+        except ValueError:
+            return None
+    if isinstance(raw, str) and raw:
+        try:
+            return datetime.fromisoformat(raw[:10]).replace(tzinfo=timezone.utc)
+        except ValueError:
+            return None
+    return now + timedelta(days=30)
+
+
+def _event_risk_level(
+    narrative: dict[str, Any],
+    reaction: dict[str, Any],
+    events: list[dict[str, Any]],
+    economic_risk: dict[str, Any],
+) -> str:
+    strength = float(narrative.get("narrative_strength") or 0.0)
+    direction = narrative.get("narrative_direction")
+    macro_score = float(economic_risk.get("macro_event_risk_score") or 0.0)
+    major_risk_off = any(item.get("expected_market_direction") == "risk_off" for item in events[:5])
+    unconfirmed = bool(events) and not bool(reaction.get("price_reaction_confirmed"))
+    if direction == "supports_risk_expansion" and (strength >= 45 or major_risk_off):
+        return "high"
+    if macro_score >= 70:
+        return "high"
+    if strength >= 45 or macro_score >= 35 or unconfirmed:
+        return "medium"
+    return "low"
+
+
+def _news_direction(narrative: dict[str, Any]) -> str:
+    direction = narrative.get("narrative_direction")
+    if direction in {"supports_bounce", "supports_trend_reversal"}:
+        return "risk_on"
+    if direction in {"supports_downside", "supports_risk_expansion"}:
+        return "risk_off"
+    return "mixed"
+
+
 def _dashboard_note(narrative: dict[str, Any], reaction: dict[str, Any]) -> str:
     name = narrative.get("market_narrative")
     if name == "no_clear_narrative":
@@ -572,6 +698,18 @@ def _headline_payload(item: dict[str, Any]) -> dict[str, Any]:
         "event_type": item.get("event_type"),
         "importance_score": item.get("importance_score"),
     }
+
+
+def _mean_score(values: list[Any]) -> int:
+    clean: list[float] = []
+    for value in values:
+        try:
+            parsed = float(value)
+        except (TypeError, ValueError):
+            continue
+        if math.isfinite(parsed):
+            clean.append(parsed)
+    return int(round(sum(clean) / len(clean))) if clean else 0
 
 
 def _dedupe_items(items: list[dict[str, Any]]) -> list[dict[str, Any]]:

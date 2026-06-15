@@ -1141,12 +1141,19 @@ function NewsEventIntelligencePanel({
   const narrative = asRecord(symbolNews?.market_narrative ?? bundle.market_narrative);
   const reaction = asRecord(symbolNews?.price_reaction_confirmation ?? bundle.price_reaction_confirmation);
   const impact = asRecord(symbolNews?.symbol_impact);
+  const effect = asRecord(symbolNews?.prediction_logic_effect);
+  const calendarRisk = asRecord(symbolNews?.economic_calendar_risk ?? bundle.economic_calendar_risk);
   const events = (symbolNews?.major_events ?? (Array.isArray(bundle.major_events) ? bundle.major_events : [])) as Array<Record<string, unknown>>;
   const status = String(symbolNews?.status ?? bundle.status ?? "missing");
   const direction = String(narrative.narrative_direction ?? "mixed");
+  const newsDirection = String(symbolNews?.news_direction ?? bundle.news_direction ?? "mixed");
+  const eventRiskLevel = String(symbolNews?.event_risk_level ?? bundle.event_risk_level ?? "low");
+  const validationType = String(symbolNews?.validation_type ?? bundle.validation_type ?? dashboard.validation_type ?? "daily");
+  const affectedAssets = Array.isArray(narrative.affected_symbols) ? narrative.affected_symbols.map(String) : [];
   const supports = Boolean(impact.news_supports_primary_scenario);
   const conflicts = Boolean(impact.news_conflicts_primary_scenario);
   const confirmed = Boolean(reaction.price_reaction_confirmed);
+  const primaryChanged = Boolean(effect.primary_scenario_changed);
 
   return (
     <section className="rounded-xl border border-white/10 bg-[#101819] p-5">
@@ -1156,7 +1163,9 @@ function NewsEventIntelligencePanel({
           <h2 className="mt-1 text-xl font-semibold text-white">新闻事件智能层</h2>
         </div>
         <div className="flex flex-wrap gap-2">
-          <StatusBadge status={status} label={status === "no_major_event" ? "无重大事件" : status} />
+          <StatusBadge status={status} label={status === "news_event_partial" || status === "no_major_event" ? "新闻部分可用" : status} />
+          <StatusBadge status={eventRiskLevel} label={`事件风险：${eventRiskLevel}`} />
+          <StatusBadge status={validationType} label={validationType === "event_refresh" ? "重大事件手动刷新" : "每日刷新"} />
           <StatusBadge
             status={confirmed ? "supportive" : "mixed"}
             label={confirmed ? "价格已确认" : "价格未充分确认"}
@@ -1171,10 +1180,16 @@ function NewsEventIntelligencePanel({
           <p className="mt-2 text-sm leading-6 text-slate-300">
             {String(symbolNews?.dashboard_note ?? bundle.dashboard_note ?? narrative.summary ?? "当前新闻层没有足够清晰的市场叙事。")}
           </p>
-          <div className="mt-3 grid gap-2 sm:grid-cols-3">
+          <div className="mt-3 grid gap-2 sm:grid-cols-4">
             <Metric label="叙事强度" value={formatScore(asNumber(narrative.narrative_strength))} />
             <Metric label="方向" value={cnNarrativeDirection(direction)} />
             <Metric label="价格确认" value={formatScore(asNumber(reaction.confirmation_score))} />
+            <Metric label="宏观事件风险" value={formatScore(asNumber(calendarRisk.macro_event_risk_score))} />
+          </div>
+          <div className="mt-3 flex flex-wrap gap-2 text-xs text-slate-400">
+            <span>新闻方向：{newsDirection === "risk_on" ? "risk-on" : newsDirection === "risk_off" ? "risk-off" : "mixed"}</span>
+            <span>受影响资产：{affectedAssets.length ? affectedAssets.join(" / ") : "数据缺失"}</span>
+            <span>重大事件数：{String(bundle.major_event_count ?? events.length ?? 0)}</span>
           </div>
         </div>
 
@@ -1184,9 +1199,18 @@ function NewsEventIntelligencePanel({
           <div className="mt-3 flex flex-wrap gap-2">
             <StatusBadge status={supports ? "supportive" : "neutral"} label={supports ? "支持主路径" : "未支持主路径"} />
             <StatusBadge status={conflicts ? "conflicting" : "neutral"} label={conflicts ? "与主路径冲突" : "无明显冲突"} />
+            <StatusBadge status={primaryChanged ? "mixed" : "neutral"} label={primaryChanged ? "主路径被事件影响" : "主路径未切换"} />
           </div>
           <p className="mt-3 text-sm leading-6 text-slate-300">
             {String(impact.explanation ?? "新闻层当前只作为解释和确认输入，不直接替代主路径排序。")}
+          </p>
+          <div className="mt-3 grid gap-2 sm:grid-cols-3">
+            <Metric label="主路径变化" value={primaryChanged ? `${String(effect.before_primary_scenario)} → ${String(effect.after_primary_scenario)}` : "未切换"} />
+            <Metric label="主路径概率变化" value={formatSignedPercent(asNumber(effect.primary_probability_delta), 1)} />
+            <Metric label="确认分变化" value={effect.confirmation_delta == null ? "数据缺失" : `${String(effect.confirmation_delta)} 分`} />
+          </div>
+          <p className="mt-3 text-xs leading-5 text-slate-500">
+            新闻事件只会在重大事件且价格反应确认时小幅影响短线概率路径；如果只是标题利好但 VIX、HYG/LQD、指数价格没有确认，系统会提高分歧和失败反抽观察权重。
           </p>
           {reaction.contradiction_warning ? (
             <div className="mt-3 rounded-lg border border-amber-400/20 bg-amber-400/[0.08] p-3 text-sm text-amber-100">
@@ -1207,6 +1231,7 @@ function NewsEventIntelligencePanel({
               <p className="mt-2 text-sm leading-6 text-slate-200">{String(event.headline ?? "无标题")}</p>
               <div className="mt-2 flex flex-wrap gap-2 text-xs text-slate-400">
                 <span>方向：{String(event.expected_market_direction ?? "unknown")}</span>
+                <span>影响资产：{Array.isArray(event.affected_assets) ? event.affected_assets.map(String).slice(0, 8).join(" / ") : "unknown"}</span>
                 <span>重要性：{formatScore(asNumber(event.importance_score))}</span>
                 <span>新鲜度：{formatScore(asNumber(event.freshness_score))}</span>
               </div>
