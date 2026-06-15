@@ -1,6 +1,6 @@
 # Data Freshness Status
 
-Generated at: `2026-06-15T14:41:20.731828+00:00`
+Generated at: `2026-06-15T15:11:25.108322+00:00`
 
 ## Summary
 
@@ -29,8 +29,8 @@ Generated at: `2026-06-15T14:41:20.731828+00:00`
 - FINANCIAL_STRESS: status=`available`, latest_date=`2026-06-05`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
 - FINNHUB_API: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
 - HYG: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- HY_OAS: status=`available`, latest_date=`2026-06-11`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
-- IG_OAS: status=`available`, latest_date=`2026-06-11`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
+- HY_OAS: status=`available`, latest_date=`2026-06-12`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
+- IG_OAS: status=`available`, latest_date=`2026-06-12`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
 - IWM: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - LQD: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - QQQ: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`

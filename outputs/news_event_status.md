@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-06-15T14:41:14.544905+00:00`
+- generated_at: `2026-06-15T15:11:16.403916+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `24`
@@ -10,7 +10,7 @@
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `25`
+- confirmation_score: `0`
 
 ## Dashboard Note
 
