@@ -1,6 +1,6 @@
 # Historical Replay Benchmark
 
-Generated at: `2026-06-15T11:21:16.342529+00:00`
+Generated at: `2026-06-15T11:48:28.178439+00:00`
 Validation type: `historical_replay`
 Status: `research_evaluation_only_not_forward_validation`
 Sample size: `80`
@@ -28,8 +28,8 @@ Overfit warning: `{'level': 'high', 'reasons': ['primary path is not closer than
 - primary_mean_absolute_error: `0.014491`
 - secondary_mean_absolute_error: `0.012671`
 - primary_error_advantage: `-0.00182`
-- close_call_sample_size: `20`
-- close_call_primary_closer_rate: `0.6`
+- close_call_sample_size: `0`
+- close_call_primary_closer_rate: `None`
 
 ### 5d
 - sample_size: `80`
@@ -40,8 +40,8 @@ Overfit warning: `{'level': 'high', 'reasons': ['primary path is not closer than
 - primary_mean_absolute_error: `0.016428`
 - secondary_mean_absolute_error: `0.015135`
 - primary_error_advantage: `-0.001293`
-- close_call_sample_size: `20`
-- close_call_primary_closer_rate: `0.6`
+- close_call_sample_size: `0`
+- close_call_primary_closer_rate: `None`
 
 ### 10d
 - sample_size: `80`
@@ -52,8 +52,8 @@ Overfit warning: `{'level': 'high', 'reasons': ['primary path is not closer than
 - primary_mean_absolute_error: `0.023769`
 - secondary_mean_absolute_error: `0.020715`
 - primary_error_advantage: `-0.003054`
-- close_call_sample_size: `20`
-- close_call_primary_closer_rate: `0.55`
+- close_call_sample_size: `0`
+- close_call_primary_closer_rate: `None`
 
 ### 20d
 - sample_size: `80`
@@ -64,8 +64,8 @@ Overfit warning: `{'level': 'high', 'reasons': ['primary path is not closer than
 - primary_mean_absolute_error: `0.04243`
 - secondary_mean_absolute_error: `0.047327`
 - primary_error_advantage: `0.004897`
-- close_call_sample_size: `20`
-- close_call_primary_closer_rate: `0.7`
+- close_call_sample_size: `0`
+- close_call_primary_closer_rate: `None`
 
 ### 60d
 - sample_size: `80`
@@ -76,8 +76,8 @@ Overfit warning: `{'level': 'high', 'reasons': ['primary path is not closer than
 - primary_mean_absolute_error: `0.058157`
 - secondary_mean_absolute_error: `0.054048`
 - primary_error_advantage: `-0.004109`
-- close_call_sample_size: `20`
-- close_call_primary_closer_rate: `0.6`
+- close_call_sample_size: `0`
+- close_call_primary_closer_rate: `None`
 
 ## Scenario Type Performance
 

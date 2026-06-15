@@ -1,13 +1,13 @@
 {
   "disclaimer": "Market alerts are forecast warnings and scenario-confirmation notes only. They are not trading signals or buy/sell/entry/exit guidance.",
-  "generated_at": "2026-06-15T11:21:16.325438+00:00",
+  "generated_at": "2026-06-15T11:48:28.162644+00:00",
   "summary": {
     "alert_count_by_level": {
       "EXTREME": 0,
       "HIGH_CONVICTION": 8,
       "NO_ALERT": 2,
-      "WARNING": 2,
-      "WATCH": 8
+      "WARNING": 3,
+      "WATCH": 7
     },
     "alert_count_by_type": {
       "Bottoming Setup Alert": 4,
@@ -102,7 +102,7 @@
         {
           "detail": "VIX/波动率结构显示恐慌释放",
           "name": "VIX/波动率结构显示恐慌释放",
-          "score": 70,
+          "score": 73,
           "source": "options"
         },
         {
@@ -200,7 +200,7 @@
           {
             "detail": "VIX/波动率结构显示恐慌释放",
             "name": "VIX/波动率结构显示恐慌释放",
-            "score": 70,
+            "score": 73,
             "source": "options"
           },
           {
@@ -297,7 +297,7 @@
           {
             "detail": "VIX/波动率结构显示恐慌释放",
             "name": "VIX/波动率结构显示恐慌释放",
-            "score": 70,
+            "score": 73,
             "source": "options"
           },
           {
@@ -374,16 +374,16 @@
         ],
         "supporting_evidence": [
           {
+            "detail": "波动率结构修复",
+            "name": "波动率结构修复",
+            "score": 100,
+            "source": "options"
+          },
+          {
             "detail": "信用稳定支持修复",
             "name": "信用稳定支持修复",
             "score": 98,
             "source": "credit"
-          },
-          {
-            "detail": "波动率结构修复",
-            "name": "波动率结构修复",
-            "score": 96,
-            "source": "options"
           },
           {
             "detail": "risk-on rotation 扩散",
@@ -396,6 +396,109 @@
             "name": "50d/200d 宽度与内部参与修复",
             "score": 79,
             "source": "breadth"
+          }
+        ],
+        "validation_status": "not_yet_forward_validated"
+      },
+      {
+        "affected_symbols": [
+          "DIA"
+        ],
+        "alert_level": "HIGH_CONVICTION",
+        "alert_score": 82,
+        "alert_type": "Bounce Setup Alert",
+        "confidence": "high",
+        "conflicting_evidence": [],
+        "invalidation_conditions": [
+          "跌破主路径失效价",
+          "VIX 重新上升",
+          "宽度确认转弱"
+        ],
+        "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
+        "related_price_levels": {
+          "bounce_target_zone": {
+            "base": 537.19,
+            "conservative": 521.88,
+            "extended": 537.19
+          },
+          "failed_bounce_warning_zone": {
+            "critical_warning": 489.1,
+            "first_warning": 500.25
+          },
+          "primary_confirmation_level": {
+            "confidence": "medium",
+            "distance_pct": 0.0172,
+            "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
+            "price": 521.88,
+            "source": "primary_path_5d + recent_5d_high + realized_volatility_band",
+            "source_type": "simulated_path"
+          },
+          "primary_invalidation_level": {
+            "confidence": "medium",
+            "distance_pct": -0.025,
+            "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
+            "price": 500.25,
+            "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
+            "source_type": "price_structure"
+          },
+          "risk_scenario_activation_level": {
+            "confidence": "medium",
+            "distance_pct": -0.0467,
+            "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
+            "price": 489.1,
+            "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
+            "source_type": "simulated_path"
+          },
+          "trend_reversal_confirmation_level": {
+            "confidence": "medium",
+            "distance_pct": 0.047,
+            "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
+            "price": 537.19,
+            "source": "primary_path_20d + recent_20d_high + 20d_or_50d_moving_average",
+            "source_type": "price_structure"
+          }
+        },
+        "required_confirmation": [
+          "价格站上主路径确认价",
+          "成交量放大且收盘靠近高位",
+          "VIX 继续回落，HYG/LQD 保持稳定"
+        ],
+        "supporting_evidence": [
+          {
+            "detail": "信用压力未继续恶化",
+            "name": "信用压力未继续恶化",
+            "score": 98,
+            "source": "credit"
+          },
+          {
+            "detail": "risk-on flow proxy 改善",
+            "name": "risk-on flow proxy 改善",
+            "score": 92,
+            "source": "flow"
+          },
+          {
+            "detail": "宽度改善支持反抽",
+            "name": "宽度改善支持反抽",
+            "score": 91,
+            "source": "breadth"
+          },
+          {
+            "detail": "VIX/波动率结构显示恐慌释放",
+            "name": "VIX/波动率结构显示恐慌释放",
+            "score": 73,
+            "source": "options"
+          },
+          {
+            "detail": "K线/成交量支持反抽确认",
+            "name": "K线/成交量支持反抽确认",
+            "score": 60,
+            "source": "price_volume"
+          },
+          {
+            "detail": "反抽概率偏高",
+            "name": "反抽概率偏高",
+            "score": 57,
+            "source": "bounce_probability"
           }
         ],
         "validation_status": "not_yet_forward_validated"
@@ -485,7 +588,7 @@
           {
             "detail": "VIX/波动率结构显示恐慌释放",
             "name": "VIX/波动率结构显示恐慌释放",
-            "score": 70,
+            "score": 73,
             "source": "options"
           },
           {
@@ -498,109 +601,6 @@
             "detail": "反抽概率偏高",
             "name": "反抽概率偏高",
             "score": 59,
-            "source": "bounce_probability"
-          }
-        ],
-        "validation_status": "not_yet_forward_validated"
-      },
-      {
-        "affected_symbols": [
-          "DIA"
-        ],
-        "alert_level": "HIGH_CONVICTION",
-        "alert_score": 81,
-        "alert_type": "Bounce Setup Alert",
-        "confidence": "high",
-        "conflicting_evidence": [],
-        "invalidation_conditions": [
-          "跌破主路径失效价",
-          "VIX 重新上升",
-          "宽度确认转弱"
-        ],
-        "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
-        "related_price_levels": {
-          "bounce_target_zone": {
-            "base": 537.19,
-            "conservative": 521.88,
-            "extended": 537.19
-          },
-          "failed_bounce_warning_zone": {
-            "critical_warning": 489.1,
-            "first_warning": 500.25
-          },
-          "primary_confirmation_level": {
-            "confidence": "medium",
-            "distance_pct": 0.0172,
-            "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
-            "price": 521.88,
-            "source": "primary_path_5d + recent_5d_high + realized_volatility_band",
-            "source_type": "simulated_path"
-          },
-          "primary_invalidation_level": {
-            "confidence": "medium",
-            "distance_pct": -0.025,
-            "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
-            "price": 500.25,
-            "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
-            "source_type": "price_structure"
-          },
-          "risk_scenario_activation_level": {
-            "confidence": "medium",
-            "distance_pct": -0.0467,
-            "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
-            "price": 489.1,
-            "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
-            "source_type": "simulated_path"
-          },
-          "trend_reversal_confirmation_level": {
-            "confidence": "medium",
-            "distance_pct": 0.047,
-            "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
-            "price": 537.19,
-            "source": "primary_path_20d + recent_20d_high + 20d_or_50d_moving_average",
-            "source_type": "price_structure"
-          }
-        },
-        "required_confirmation": [
-          "价格站上主路径确认价",
-          "成交量放大且收盘靠近高位",
-          "VIX 继续回落，HYG/LQD 保持稳定"
-        ],
-        "supporting_evidence": [
-          {
-            "detail": "信用压力未继续恶化",
-            "name": "信用压力未继续恶化",
-            "score": 98,
-            "source": "credit"
-          },
-          {
-            "detail": "risk-on flow proxy 改善",
-            "name": "risk-on flow proxy 改善",
-            "score": 92,
-            "source": "flow"
-          },
-          {
-            "detail": "宽度改善支持反抽",
-            "name": "宽度改善支持反抽",
-            "score": 91,
-            "source": "breadth"
-          },
-          {
-            "detail": "VIX/波动率结构显示恐慌释放",
-            "name": "VIX/波动率结构显示恐慌释放",
-            "score": 70,
-            "source": "options"
-          },
-          {
-            "detail": "K线/成交量支持反抽确认",
-            "name": "K线/成交量支持反抽确认",
-            "score": 60,
-            "source": "price_volume"
-          },
-          {
-            "detail": "反抽概率偏高",
-            "name": "反抽概率偏高",
-            "score": 57,
             "source": "bounce_probability"
           }
         ],
@@ -671,16 +671,16 @@
         ],
         "supporting_evidence": [
           {
+            "detail": "波动率结构修复",
+            "name": "波动率结构修复",
+            "score": 100,
+            "source": "options"
+          },
+          {
             "detail": "信用稳定支持修复",
             "name": "信用稳定支持修复",
             "score": 98,
             "source": "credit"
-          },
-          {
-            "detail": "波动率结构修复",
-            "name": "波动率结构修复",
-            "score": 96,
-            "source": "options"
           },
           {
             "detail": "risk-on rotation 扩散",
@@ -708,7 +708,7 @@
           "SPY"
         ],
         "alert_level": "HIGH_CONVICTION",
-        "alert_score": 79,
+        "alert_score": 80,
         "alert_type": "Trend Repair Alert",
         "confidence": "high",
         "conflicting_evidence": [],
@@ -768,6 +768,12 @@
         ],
         "supporting_evidence": [
           {
+            "detail": "波动率结构修复",
+            "name": "波动率结构修复",
+            "score": 100,
+            "source": "options"
+          },
+          {
             "detail": "50d/200d 宽度与内部参与修复",
             "name": "50d/200d 宽度与内部参与修复",
             "score": 98,
@@ -780,12 +786,6 @@
             "source": "credit"
           },
           {
-            "detail": "波动率结构修复",
-            "name": "波动率结构修复",
-            "score": 96,
-            "source": "options"
-          },
-          {
             "detail": "risk-on rotation 扩散",
             "name": "risk-on rotation 扩散",
             "score": 90,
@@ -794,7 +794,7 @@
           {
             "detail": "主次路径差距扩大",
             "name": "主次路径差距扩大",
-            "score": 41,
+            "score": 42,
             "source": "scenario_ranking"
           }
         ],
@@ -865,16 +865,16 @@
         ],
         "supporting_evidence": [
           {
+            "detail": "波动率结构修复",
+            "name": "波动率结构修复",
+            "score": 100,
+            "source": "options"
+          },
+          {
             "detail": "信用稳定支持修复",
             "name": "信用稳定支持修复",
             "score": 98,
             "source": "credit"
-          },
-          {
-            "detail": "波动率结构修复",
-            "name": "波动率结构修复",
-            "score": 96,
-            "source": "options"
           },
           {
             "detail": "risk-on rotation 扩散",
@@ -897,7 +897,7 @@
           {
             "detail": "主次路径差距扩大",
             "name": "主次路径差距扩大",
-            "score": 36,
+            "score": 37,
             "source": "scenario_ranking"
           }
         ],
@@ -913,7 +913,7 @@
             "DIA"
           ],
           "alert_level": "HIGH_CONVICTION",
-          "alert_score": 81,
+          "alert_score": 82,
           "alert_type": "Bounce Setup Alert",
           "confidence": "high",
           "conflicting_evidence": [],
@@ -993,7 +993,7 @@
             {
               "detail": "VIX/波动率结构显示恐慌释放",
               "name": "VIX/波动率结构显示恐慌释放",
-              "score": 70,
+              "score": 73,
               "source": "options"
             },
             {
@@ -1076,16 +1076,16 @@
           ],
           "supporting_evidence": [
             {
+              "detail": "波动率结构修复",
+              "name": "波动率结构修复",
+              "score": 100,
+              "source": "options"
+            },
+            {
               "detail": "信用稳定支持修复",
               "name": "信用稳定支持修复",
               "score": 98,
               "source": "credit"
-            },
-            {
-              "detail": "波动率结构修复",
-              "name": "波动率结构修复",
-              "score": 96,
-              "source": "options"
             },
             {
               "detail": "risk-on rotation 扩散",
@@ -1108,7 +1108,7 @@
             {
               "detail": "主次路径差距扩大",
               "name": "主次路径差距扩大",
-              "score": 36,
+              "score": 37,
               "source": "scenario_ranking"
             }
           ],
@@ -1118,8 +1118,8 @@
           "affected_symbols": [
             "DIA"
           ],
-          "alert_level": "WATCH",
-          "alert_score": 54,
+          "alert_level": "WARNING",
+          "alert_score": 55,
           "alert_type": "Bottoming Setup Alert",
           "confidence": "medium",
           "conflicting_evidence": [
@@ -1200,7 +1200,7 @@
             {
               "detail": "恐慌释放",
               "name": "恐慌释放",
-              "score": 70,
+              "score": 73,
               "source": "options"
             },
             {
@@ -1217,7 +1217,7 @@
             "DIA"
           ],
           "alert_level": "WATCH",
-          "alert_score": 37,
+          "alert_score": 36,
           "alert_type": "Failed Bounce Alert",
           "confidence": "low",
           "conflicting_evidence": [
@@ -1230,7 +1230,7 @@
             {
               "detail": "恐慌释放支持修复",
               "name": "恐慌释放支持修复",
-              "score": 70,
+              "score": 73,
               "source": "options"
             }
           ],
@@ -1396,7 +1396,7 @@
           "DIA"
         ],
         "alert_level": "HIGH_CONVICTION",
-        "alert_score": 81,
+        "alert_score": 82,
         "alert_type": "Bounce Setup Alert",
         "confidence": "high",
         "conflicting_evidence": [],
@@ -1476,7 +1476,7 @@
           {
             "detail": "VIX/波动率结构显示恐慌释放",
             "name": "VIX/波动率结构显示恐慌释放",
-            "score": 70,
+            "score": 73,
             "source": "options"
           },
           {
@@ -1594,7 +1594,7 @@
             {
               "detail": "VIX/波动率结构显示恐慌释放",
               "name": "VIX/波动率结构显示恐慌释放",
-              "score": 70,
+              "score": 73,
               "source": "options"
             },
             {
@@ -1671,16 +1671,16 @@
           ],
           "supporting_evidence": [
             {
+              "detail": "波动率结构修复",
+              "name": "波动率结构修复",
+              "score": 100,
+              "source": "options"
+            },
+            {
               "detail": "信用稳定支持修复",
               "name": "信用稳定支持修复",
               "score": 98,
               "source": "credit"
-            },
-            {
-              "detail": "波动率结构修复",
-              "name": "波动率结构修复",
-              "score": 96,
-              "source": "options"
             },
             {
               "detail": "risk-on rotation 扩散",
@@ -1789,7 +1789,7 @@
             {
               "detail": "恐慌释放",
               "name": "恐慌释放",
-              "score": 70,
+              "score": 73,
               "source": "options"
             }
           ],
@@ -1813,7 +1813,7 @@
             {
               "detail": "恐慌释放支持修复",
               "name": "恐慌释放支持修复",
-              "score": 70,
+              "score": 73,
               "source": "options"
             }
           ],
@@ -2065,7 +2065,7 @@
           {
             "detail": "VIX/波动率结构显示恐慌释放",
             "name": "VIX/波动率结构显示恐慌释放",
-            "score": 70,
+            "score": 73,
             "source": "options"
           },
           {
@@ -2177,7 +2177,7 @@
             {
               "detail": "VIX/波动率结构显示恐慌释放",
               "name": "VIX/波动率结构显示恐慌释放",
-              "score": 70,
+              "score": 73,
               "source": "options"
             },
             {
@@ -2254,16 +2254,16 @@
           ],
           "supporting_evidence": [
             {
+              "detail": "波动率结构修复",
+              "name": "波动率结构修复",
+              "score": 100,
+              "source": "options"
+            },
+            {
               "detail": "信用稳定支持修复",
               "name": "信用稳定支持修复",
               "score": 98,
               "source": "credit"
-            },
-            {
-              "detail": "波动率结构修复",
-              "name": "波动率结构修复",
-              "score": 96,
-              "source": "options"
             },
             {
               "detail": "risk-on rotation 扩散",
@@ -2285,7 +2285,7 @@
             "QQQ"
           ],
           "alert_level": "WATCH",
-          "alert_score": 53,
+          "alert_score": 54,
           "alert_type": "Bottoming Setup Alert",
           "confidence": "medium",
           "conflicting_evidence": [
@@ -2366,7 +2366,7 @@
             {
               "detail": "恐慌释放",
               "name": "恐慌释放",
-              "score": 70,
+              "score": 73,
               "source": "options"
             },
             {
@@ -2396,7 +2396,7 @@
             {
               "detail": "恐慌释放支持修复",
               "name": "恐慌释放支持修复",
-              "score": 70,
+              "score": 73,
               "source": "options"
             }
           ],
@@ -2648,7 +2648,7 @@
           {
             "detail": "VIX/波动率结构显示恐慌释放",
             "name": "VIX/波动率结构显示恐慌释放",
-            "score": 70,
+            "score": 73,
             "source": "options"
           },
           {
@@ -2760,7 +2760,7 @@
             {
               "detail": "VIX/波动率结构显示恐慌释放",
               "name": "VIX/波动率结构显示恐慌释放",
-              "score": 70,
+              "score": 73,
               "source": "options"
             },
             {
@@ -2783,7 +2783,7 @@
             "SPY"
           ],
           "alert_level": "HIGH_CONVICTION",
-          "alert_score": 79,
+          "alert_score": 80,
           "alert_type": "Trend Repair Alert",
           "confidence": "high",
           "conflicting_evidence": [],
@@ -2843,6 +2843,12 @@
           ],
           "supporting_evidence": [
             {
+              "detail": "波动率结构修复",
+              "name": "波动率结构修复",
+              "score": 100,
+              "source": "options"
+            },
+            {
               "detail": "50d/200d 宽度与内部参与修复",
               "name": "50d/200d 宽度与内部参与修复",
               "score": 98,
@@ -2855,12 +2861,6 @@
               "source": "credit"
             },
             {
-              "detail": "波动率结构修复",
-              "name": "波动率结构修复",
-              "score": 96,
-              "source": "options"
-            },
-            {
               "detail": "risk-on rotation 扩散",
               "name": "risk-on rotation 扩散",
               "score": 90,
@@ -2869,7 +2869,7 @@
             {
               "detail": "主次路径差距扩大",
               "name": "主次路径差距扩大",
-              "score": 41,
+              "score": 42,
               "source": "scenario_ranking"
             }
           ],
@@ -2961,7 +2961,7 @@
             {
               "detail": "恐慌释放",
               "name": "恐慌释放",
-              "score": 70,
+              "score": 73,
               "source": "options"
             },
             {
@@ -2978,7 +2978,7 @@
             "SPY"
           ],
           "alert_level": "WATCH",
-          "alert_score": 36,
+          "alert_score": 35,
           "alert_type": "Failed Bounce Alert",
           "confidence": "low",
           "conflicting_evidence": [
@@ -2991,7 +2991,7 @@
             {
               "detail": "恐慌释放支持修复",
               "name": "恐慌释放支持修复",
-              "score": 70,
+              "score": 73,
               "source": "options"
             }
           ],
@@ -3231,7 +3231,7 @@
           {
             "detail": "VIX/波动率结构显示恐慌释放",
             "name": "VIX/波动率结构显示恐慌释放",
-            "score": 70,
+            "score": 73,
             "source": "options"
           },
           {
