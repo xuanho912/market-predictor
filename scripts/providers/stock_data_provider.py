@@ -20,6 +20,7 @@ def load_stock_watchlist(path: Path | None = None) -> dict[str, Any]:
             "watchlist": list(DEFAULT_WATCHLIST),
             "benchmark_map": {symbol: "QQQ" for symbol in DEFAULT_WATCHLIST},
             "sector_etf_map": {},
+            "company_map": {symbol: symbol for symbol in DEFAULT_WATCHLIST},
             "source": "default_watchlist",
         }
     payload = json.loads(path.read_text(encoding="utf-8"))
@@ -35,10 +36,16 @@ def load_stock_watchlist(path: Path | None = None) -> dict[str, Any]:
         for symbol, etf in (payload.get("sector_etf_map") or {}).items()
         if str(symbol).upper() in watchlist
     }
+    company_map = {
+        str(symbol).upper(): str(name)
+        for symbol, name in (payload.get("company_map") or {}).items()
+        if str(symbol).upper() in watchlist
+    }
     return {
         "watchlist": watchlist,
         "benchmark_map": {symbol: benchmark_map.get(symbol, "QQQ") for symbol in watchlist},
         "sector_etf_map": sector_etf_map,
+        "company_map": company_map,
         "source": str(path),
     }
 
@@ -52,6 +59,7 @@ def fetch_stock_data_bundle(
     watchlist = tuple(config.get("watchlist") or DEFAULT_WATCHLIST)
     benchmark_map = dict(config.get("benchmark_map") or {})
     sector_etf_map = dict(config.get("sector_etf_map") or {})
+    company_map = dict(config.get("company_map") or {})
     support_symbols = tuple(sorted(set(benchmark_map.values()) | set(sector_etf_map.values()) | {"SPY", "QQQ"}))
     download_symbols = tuple(dict.fromkeys(watchlist + support_symbols))
     downloaded = refresh_market_data(symbols=download_symbols, lookback_days=lookback_days)
@@ -64,6 +72,7 @@ def fetch_stock_data_bundle(
         provider_status[symbol] = _series_status(series)
         symbols[symbol] = {
             "symbol": symbol,
+            "company_name": company_map.get(symbol, symbol),
             "benchmark": benchmark_map.get(symbol, "QQQ"),
             "sector_etf": sector_etf_map.get(symbol),
             "status": provider_status[symbol]["status"],
@@ -103,6 +112,7 @@ def fetch_stock_data_bundle(
         "watchlist": list(watchlist),
         "benchmark_map": benchmark_map,
         "sector_etf_map": sector_etf_map,
+        "company_map": company_map,
         "symbols": symbols,
         "support_symbols": support,
         "provider_status": provider_status,
@@ -120,7 +130,7 @@ def fetch_stock_data_bundle(
         "guardrails": [
             "Synthetic stock data is blocked and cannot create a live stock forecast.",
             "Company fundamentals, earnings, news and options are marked missing unless a real provider is connected.",
-            "Stock forecasts are probabilistic scenario paths, not buy/sell recommendations.",
+            "Stock forecasts are probabilistic scenario paths, not execution recommendations.",
         ],
     }
 

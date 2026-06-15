@@ -32,12 +32,19 @@ def build_stock_prediction_dashboard(
             continue
         benchmark = payload.get("benchmark") or "QQQ"
         sector_etf = payload.get("sector_etf")
-        features = _stock_features(rows, support_rows.get("SPY", []), support_rows.get("QQQ", []), support_rows.get(benchmark, []), support_rows.get(sector_etf, []))
+        benchmark_rows = support_rows.get(benchmark, [])
+        sector_rows = support_rows.get(sector_etf, [])
+        features = _stock_features(rows, support_rows.get("SPY", []), support_rows.get("QQQ", []), benchmark_rows, sector_rows)
         market_context = _market_context_for_stock(symbol, benchmark, market_dashboard)
         scenarios = _scenario_ranking(features, market_context, payload)
         price_levels = _price_levels(rows, scenarios, features)
+        analogs = _stock_historical_analogs(rows, benchmark_rows, features, market_context)
+        missing_data = _missing_data(payload)
+        confluence = _stock_confluence(features, market_context, scenarios, analogs, missing_data)
+        alerts = _stock_alerts(symbol, features, market_context, scenarios, price_levels, confluence, missing_data)
         symbols[symbol] = {
             "symbol": symbol,
+            "company_name": payload.get("company_name") or symbol,
             "model_version": STOCK_MODEL_VERSION,
             "as_of": rows[-1]["date"],
             "current_price": rows[-1]["close"],
@@ -48,9 +55,13 @@ def build_stock_prediction_dashboard(
             "features": features,
             "scenario_ranking": scenarios,
             "forecast_price_levels": price_levels,
+            "stock_confluence": confluence,
+            "stock_alerts": alerts,
+            "historical_analogs": analogs,
+            "simulated_paths": _stock_simulated_paths(rows, price_levels, scenarios),
             "supporting_signals": scenarios.get("supporting_signals", []),
             "conflicting_signals": scenarios.get("conflicting_signals", []),
-            "missing_data": _missing_data(payload),
+            "missing_data": missing_data,
             "validation_status": "not_yet_validated",
             "not_trading_advice": True,
         }
@@ -90,7 +101,7 @@ def render_stock_prediction_report(payload: dict[str, Any]) -> str:
         f"Generated at: `{payload.get('generated_at')}`",
         f"Model version: `{payload.get('model_version')}`",
         "",
-        "This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce buy/sell instructions.",
+        "This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.",
         "",
         "## Summary",
         "",
@@ -103,16 +114,24 @@ def render_stock_prediction_report(payload: dict[str, Any]) -> str:
         primary = ranking.get("primary") or {}
         secondary = ranking.get("secondary") or {}
         risk = ranking.get("risk") or {}
+        confluence = data.get("stock_confluence") or {}
+        alerts = data.get("stock_alerts") or {}
+        strongest_alert = alerts.get("strongest_alert") or {}
+        analogs = data.get("historical_analogs") or {}
         lines.extend(
             [
                 f"### {symbol}",
                 "",
+                f"- company_name: `{data.get('company_name')}`",
                 f"- status: `{data.get('data_status')}`",
                 f"- current_price: `{_fmt(data.get('current_price'))}`",
                 f"- market_context: `{(data.get('market_context_for_stock') or {}).get('context')}`",
                 f"- primary: `{primary.get('scenario')}` / `{_pct(primary.get('probability'))}`",
                 f"- secondary: `{secondary.get('scenario')}` / `{_pct(secondary.get('probability'))}`",
                 f"- risk: `{risk.get('scenario')}` / `{_pct(risk.get('probability'))}`",
+                f"- stock_confluence_score: `{confluence.get('stock_confluence_score')}` / `{confluence.get('confluence_level')}`",
+                f"- strongest_alert: `{strongest_alert.get('alert_type')}` / `{strongest_alert.get('alert_level')}` / `{strongest_alert.get('alert_score')}`",
+                f"- historical_analog_support: `{analogs.get('analog_support')}` / samples `{analogs.get('sample_count')}`",
                 f"- validation_status: `{data.get('validation_status')}`",
                 "",
             ]
@@ -123,6 +142,13 @@ def render_stock_prediction_report(payload: dict[str, Any]) -> str:
                 f"- primary_confirmation_level: `{_fmt((levels.get('primary_confirmation_level') or {}).get('price'))}`",
                 f"- primary_invalidation_level: `{_fmt((levels.get('primary_invalidation_level') or {}).get('price'))}`",
                 f"- risk_scenario_activation_level: `{_fmt((levels.get('risk_scenario_activation_level') or {}).get('price'))}`",
+                f"- trend_repair_confirmation_level: `{_fmt((levels.get('trend_repair_confirmation_level') or {}).get('price'))}`",
+                f"- breakout_level: `{_fmt((levels.get('breakout_level') or {}).get('price'))}`",
+                f"- breakdown_level: `{_fmt((levels.get('breakdown_level') or {}).get('price'))}`",
+                f"- nearest_support: `{_fmt((levels.get('nearest_support') or {}).get('price'))}`",
+                f"- nearest_resistance: `{_fmt((levels.get('nearest_resistance') or {}).get('price'))}`",
+                f"- bounce_target_zone: `{json.dumps(levels.get('bounce_target_zone') or {}, ensure_ascii=False)}`",
+                f"- failed_bounce_warning_zone: `{json.dumps(levels.get('failed_bounce_warning_zone') or {}, ensure_ascii=False)}`",
                 "",
             ]
         )
@@ -149,6 +175,10 @@ def _missing_symbol_payload(symbol: str, payload: dict[str, Any], market_dashboa
             "ranking_note": "Stock forecast blocked because real point-in-time price data is missing.",
         },
         "forecast_price_levels": {},
+        "stock_confluence": _missing_confluence(),
+        "stock_alerts": _missing_alerts(symbol),
+        "historical_analogs": _missing_analogs(),
+        "simulated_paths": {},
         "supporting_signals": [],
         "conflicting_signals": ["真实个股价格数据缺失，不能生成 live stock forecast。"],
         "missing_data": _missing_data(payload),
@@ -394,6 +424,15 @@ def _price_levels(rows: list[dict[str, Any]], scenarios: dict[str, Any], feature
     invalidation = min(recent_low, current - atr * 0.65)
     risk_activation = min(invalidation, current - atr * 1.1)
     trend_repair = max(recent_high, _float(rows_by_horizon.get("20d", {}).get("primary_scenario_price")) or current)
+    conservative_bounce = max(current + atr * 0.6, _float(rows_by_horizon.get("5d", {}).get("primary_scenario_price")) or current)
+    base_bounce = max(conservative_bounce, _float(rows_by_horizon.get("20d", {}).get("primary_scenario_price")) or conservative_bounce)
+    extended_bounce = max(base_bounce, recent_high + atr * 0.8)
+    first_warning = min(current - atr * 0.45, _float(rows_by_horizon.get("3d", {}).get("risk_scenario_price")) or current)
+    critical_warning = min(invalidation, _float(rows_by_horizon.get("10d", {}).get("risk_scenario_price")) or invalidation)
+    nearest_support = max(recent_low, current - atr * 0.8)
+    nearest_resistance = min(recent_high, current + atr * 1.2) if recent_high > current else current + atr * 1.2
+    breakout = max(recent_high, confirmation)
+    breakdown = min(recent_low, risk_activation)
     return {
         "forecast_price_table": rows_by_horizon,
         "trigger_levels": {
@@ -401,8 +440,326 @@ def _price_levels(rows: list[dict[str, Any]], scenarios: dict[str, Any], feature
             "primary_invalidation_level": _level(invalidation, current, "跌破该价位说明个股主路径失效概率上升", "recent_low + volatility_band"),
             "risk_scenario_activation_level": _level(risk_activation, current, "跌破该价位说明个股风险路径权重上升", "volatility_band"),
             "trend_repair_confirmation_level": _level(trend_repair, current, "突破该价位说明个股趋势修复概率提高", "recent_high + scenario_path"),
+            "bounce_target_zone": {
+                "conservative": _round_price(conservative_bounce),
+                "base": _round_price(base_bounce),
+                "extended": _round_price(extended_bounce),
+                "source": "scenario_path + atr + recent_resistance",
+                "meaning": "概率反抽情景参考区间，不是目标价承诺。",
+                "not_trading_instruction": True,
+            },
+            "failed_bounce_warning_zone": {
+                "first_warning": _round_price(first_warning),
+                "critical_warning": _round_price(critical_warning),
+                "source": "risk_path + atr + recent_support",
+                "meaning": "跌入该区间说明失败反抽风险上升。",
+                "not_trading_instruction": True,
+            },
+            "breakout_level": _level(breakout, current, "突破该价位说明个股突破情景需要重新评估", "recent_high + primary_confirmation"),
+            "breakdown_level": _level(breakdown, current, "跌破该价位说明个股跌破结构风险上升", "recent_low + risk_activation"),
+            "nearest_support": _level(nearest_support, current, "最近支撑代理，来自近期低点和 ATR 区间", "price_structure + volatility_band"),
+            "nearest_resistance": _level(nearest_resistance, current, "最近阻力代理，来自近期高点和 ATR 区间", "price_structure + volatility_band"),
         },
         "disclaimer": "Price levels are probabilistic scenario references, not target prices or execution instructions.",
+    }
+
+
+def _stock_confluence(
+    features: dict[str, Any],
+    market_context: dict[str, Any],
+    scenarios: dict[str, Any],
+    analogs: dict[str, Any],
+    missing_data: list[str],
+) -> dict[str, Any]:
+    trend = features.get("price_trend") or {}
+    volume = features.get("volume") or {}
+    rel = features.get("relative_strength") or {}
+    vol = features.get("volatility") or {}
+    primary = scenarios.get("primary") or {}
+    support: list[str] = []
+    conflict: list[str] = []
+    missing: list[str] = list(missing_data)
+    score = 45.0
+
+    if market_context.get("context") in {"market_tailwind", "supportive"}:
+        support.append("大盘背景支持个股主路径")
+        score += 10
+    elif market_context.get("context") in {"risk_off_pressure", "market_headwind"}:
+        conflict.append("大盘背景对个股主路径形成压力")
+        score -= 12
+
+    if _float(trend.get("distance_to_20d_ma")) and (_float(trend.get("distance_to_20d_ma")) or 0) > 0:
+        support.append("价格站上 20d 均线")
+        score += 7
+    elif (_float(trend.get("distance_to_50d_ma")) or 0) < 0:
+        conflict.append("价格仍低于 50d 均线")
+        score -= 7
+
+    if (_float(volume.get("volume_confirmation_score")) or 0) >= 60:
+        support.append("成交量结构支持当前路径")
+        score += 8
+    elif (_float(volume.get("volume_confirmation_score")) or 50) < 42:
+        conflict.append("成交量结构没有确认当前路径")
+        score -= 7
+
+    if (_float(rel.get("relative_strength_trend")) or 50) >= 60:
+        support.append("相对强弱优于 benchmark")
+        score += 9
+    elif (_float(rel.get("relative_strength_trend")) or 50) < 42:
+        conflict.append("相对强弱弱于 benchmark")
+        score -= 9
+
+    sector_rs = _float(rel.get("stock_vs_sector_20d"))
+    if sector_rs is not None and sector_rs > 0:
+        support.append("相对板块表现偏强")
+        score += 5
+    elif sector_rs is not None and sector_rs < -0.03:
+        conflict.append("相对板块表现偏弱")
+        score -= 5
+
+    analog_support = (analogs.get("analog_support") or "low sample").lower()
+    if analog_support == "supportive":
+        support.append("历史相似情景支持当前主路径")
+        score += 8
+    elif analog_support == "conflicting":
+        conflict.append("历史相似情景与当前主路径冲突")
+        score -= 8
+    elif analogs.get("low_sample_warning"):
+        missing.append("historical_analog_sample")
+
+    atr_pct = _float(vol.get("atr_pct")) or 0.0
+    if atr_pct > 0.08:
+        conflict.append("个股波动率较高，路径跳空/偏离风险较大")
+        score -= 6
+    elif atr_pct and atr_pct < 0.035:
+        support.append("波动率处于可控区间")
+        score += 3
+
+    if _float(primary.get("probability")) and (_float(primary.get("probability")) or 0) >= 0.34:
+        support.append("主路径概率相对领先")
+        score += 5
+    if scenarios.get("close_call"):
+        conflict.append("主路径和第二路径差距较小")
+        score -= 6
+
+    if "company_news" in missing_data:
+        missing.append("company_news")
+    if "fundamentals" in missing_data:
+        missing.append("fundamentals")
+    if "single_stock_options" in missing_data:
+        missing.append("single_stock_options")
+
+    score -= min(len(set(missing)) * 1.5, 12)
+    score = _clamp(score, 0, 100)
+    if score >= 75 and len(support) >= 4 and len(conflict) <= 1:
+        level = "strong"
+    elif score >= 60:
+        level = "moderate"
+    elif score >= 45:
+        level = "mixed"
+    else:
+        level = "weak"
+    return {
+        "stock_confluence_score": round(score, 2),
+        "confluence_level": level,
+        "supporting_evidence": support,
+        "conflicting_evidence": conflict,
+        "missing_evidence": sorted(set(missing)),
+        "dominant_path": primary.get("scenario"),
+        "requires_multi_source_confirmation": True,
+        "summary": "个股强判断必须由大盘、板块、价格、成交量、相对强弱、波动率、新闻/事件和历史相似多源共振支持。",
+        "validation_status": "not_yet_validated",
+    }
+
+
+def _stock_alerts(
+    symbol: str,
+    features: dict[str, Any],
+    market_context: dict[str, Any],
+    scenarios: dict[str, Any],
+    price_levels: dict[str, Any],
+    confluence: dict[str, Any],
+    missing_data: list[str],
+) -> dict[str, Any]:
+    trend = features.get("price_trend") or {}
+    volume = features.get("volume") or {}
+    rel = features.get("relative_strength") or {}
+    trigger = price_levels.get("trigger_levels") or {}
+    confluence_score = _float(confluence.get("stock_confluence_score")) or 0.0
+    bounce_prob = _scenario_probability(scenarios, "stock_bounce")
+    failed_prob = _scenario_probability(scenarios, "stock_failed_bounce")
+    downside_prob = _scenario_probability(scenarios, "stock_downside_continuation")
+    trend_repair_prob = _scenario_probability(scenarios, "stock_trend_repair")
+    event_prob = _scenario_probability(scenarios, "stock_event_risk")
+    rel_score = _float(rel.get("relative_strength_trend")) or 50.0
+    volume_score = _float(volume.get("volume_confirmation_score")) or 50.0
+    current = _float(trend.get("close")) or 0.0
+    confirmation_price = _float((trigger.get("primary_confirmation_level") or {}).get("price"))
+    invalidation_price = _float((trigger.get("primary_invalidation_level") or {}).get("price"))
+
+    alerts = [
+        _alert(
+            "Stock Bounce Setup",
+            bounce_prob * 55 + max(confluence_score - 45, 0) * 0.45 + (8 if market_context.get("context") in {"market_tailwind", "supportive"} else 0),
+            symbol,
+            "反抽情景、成交量/相对强弱和大盘背景共同支持时触发。",
+            ["价格站上主路径确认价", "成交量继续确认", "benchmark 不转为 risk-off"],
+            ["跌破主路径失效价", "相对强弱转弱", "大盘 risk alert 升级"],
+            trigger,
+        ),
+        _alert(
+            "Stock Failed Bounce Risk",
+            failed_prob * 50 + downside_prob * 25 + max(55 - volume_score, 0) * 0.3 + (8 if market_context.get("context") in {"risk_off_pressure", "market_headwind"} else 0),
+            symbol,
+            "反抽路径缺少成交量/相对强弱确认或大盘风险压力上升。",
+            ["价格无法站上确认价", "成交量萎缩", "benchmark 转弱"],
+            ["价格重新站上确认价且成交量扩张"],
+            trigger,
+        ),
+        _alert(
+            "Stock Breakdown Warning",
+            downside_prob * 60 + max(-(_float(trend.get("distance_to_50d_ma")) or 0), 0) * 180 + (10 if invalidation_price and current < invalidation_price else 0),
+            symbol,
+            "跌破结构风险、均线压力和下跌延续概率共同上升。",
+            ["跌破 breakdown level", "下跌放量", "相对强弱继续恶化"],
+            ["重新站回 breakdown level 上方"],
+            trigger,
+        ),
+        _alert(
+            "Stock Breakout Watch",
+            trend_repair_prob * 50 + max(rel_score - 55, 0) * 0.7 + (10 if confirmation_price and current > confirmation_price else 0),
+            symbol,
+            "趋势修复概率、相对强弱和突破价位接近度改善。",
+            ["站上 breakout level", "相对强弱继续扩散", "benchmark 支持"],
+            ["跌回确认价下方"],
+            trigger,
+        ),
+        _alert(
+            "Earnings/Event Risk",
+            event_prob * 55 + (10 if "company_news" in missing_data or "earnings" in missing_data else 0),
+            symbol,
+            "公司新闻、财报或个股期权信息缺失时，事件风险保持独立预警。",
+            ["接入真实公司新闻/财报日期", "价格反应确认"],
+            ["事件风险消退且价格结构确认"],
+            trigger,
+        ),
+        _alert(
+            "Relative Weakness Alert",
+            max(50 - rel_score, 0) * 1.6,
+            symbol,
+            "个股相对 benchmark 或板块明显走弱。",
+            ["相对强弱继续低于 benchmark", "反弹时跑输"],
+            ["相对强弱重新上穿中性区"],
+            trigger,
+        ),
+        _alert(
+            "Relative Strength Alert",
+            max(rel_score - 55, 0) * 1.5,
+            symbol,
+            "个股相对 benchmark 或板块明显走强。",
+            ["相对强弱保持扩散", "价格站上确认价"],
+            ["相对强弱回落"],
+            trigger,
+        ),
+        _alert(
+            "Liquidity / Gap Risk Alert",
+            max((_float((features.get("volatility") or {}).get("atr_pct")) or 0) - 0.04, 0) * 600 + abs(_float(trend.get("gap_up_down")) or 0) * 220,
+            symbol,
+            "高 ATR、跳空或成交量异常会提高路径偏离风险。",
+            ["ATR 回落", "跳空缺口被消化", "成交量恢复正常"],
+            ["继续大幅跳空或波动扩张"],
+            trigger,
+        ),
+    ]
+    alerts = sorted(alerts, key=lambda item: item["alert_score"], reverse=True)
+    return {
+        "alerts": alerts,
+        "strongest_alert": alerts[0] if alerts else _alert("NO_ALERT", 0, symbol, "暂无个股预警。", [], [], trigger),
+        "validation_status": "not_yet_validated",
+        "not_trading_advice": True,
+    }
+
+
+def _stock_historical_analogs(
+    rows: list[dict[str, Any]],
+    benchmark_rows: list[dict[str, Any]],
+    features: dict[str, Any],
+    market_context: dict[str, Any],
+    top_k: int = 10,
+) -> dict[str, Any]:
+    if len(rows) < 160:
+        return _missing_analogs()
+    current_vector = _analog_vector_at(rows, benchmark_rows, len(rows) - 1)
+    cases: list[dict[str, Any]] = []
+    for index in range(80, len(rows) - 60):
+        vector = _analog_vector_at(rows, benchmark_rows, index)
+        distance = _analog_distance(current_vector, vector)
+        forward = {f"{h}d": _forward_return_at(rows, index, h) for h in HORIZONS}
+        future_path = [_forward_return_at(rows, index, h) for h in range(1, 61) if index + h < len(rows)]
+        cases.append(
+            {
+                "date": rows[index]["date"],
+                "similarity_score": _round(max(0.0, 1.0 - distance), 4),
+                "market_context": market_context.get("context"),
+                "forward_returns": forward,
+                "worst_path_60d": _round(min(future_path) if future_path else None),
+                "best_path_60d": _round(max(future_path) if future_path else None),
+                "key_shared_features": _analog_shared_features(current_vector, vector),
+                "key_differences": _analog_differences(current_vector, vector),
+            }
+        )
+    top_cases = sorted(cases, key=lambda item: item["similarity_score"], reverse=True)[:top_k]
+    avg_20 = _avg([((case.get("forward_returns") or {}).get("20d")) for case in top_cases])
+    hit_20 = _hit_rate([((case.get("forward_returns") or {}).get("20d")) for case in top_cases])
+    if len(top_cases) < 8:
+        support = "low sample"
+    elif (avg_20 or 0) > 0 and (hit_20 or 0) >= 0.55:
+        support = "supportive"
+    elif (avg_20 or 0) < 0 and (hit_20 or 0) < 0.45:
+        support = "conflicting"
+    else:
+        support = "weak"
+    return {
+        "validation_type": "historical_analog_explanation_only",
+        "sample_count": len(top_cases),
+        "low_sample_warning": len(top_cases) < 8,
+        "analog_support": support,
+        "top_similar_dates": top_cases,
+        "distribution": {
+            "avg_return_3d": _round(_avg([((case.get("forward_returns") or {}).get("3d")) for case in top_cases])),
+            "avg_return_5d": _round(_avg([((case.get("forward_returns") or {}).get("5d")) for case in top_cases])),
+            "avg_return_10d": _round(_avg([((case.get("forward_returns") or {}).get("10d")) for case in top_cases])),
+            "avg_return_20d": _round(avg_20),
+            "avg_return_60d": _round(_avg([((case.get("forward_returns") or {}).get("60d")) for case in top_cases])),
+            "hit_rate_20d": _round(hit_20),
+            "worst_path": _round(min((case.get("worst_path_60d") for case in top_cases if case.get("worst_path_60d") is not None), default=None)),
+            "best_path": _round(max((case.get("best_path_60d") for case in top_cases if case.get("best_path_60d") is not None), default=None)),
+        },
+        "note": "Historical analogs are explanatory and require forward validation; they are not proof of alpha.",
+    }
+
+
+def _stock_simulated_paths(rows: list[dict[str, Any]], price_levels: dict[str, Any], scenarios: dict[str, Any]) -> dict[str, Any]:
+    history = rows[-120:]
+    table = price_levels.get("forecast_price_table") or {}
+    future_labels = [f"+{h}d" for h in HORIZONS]
+    current = _last_close(rows)
+    primary = [current] + [_float((table.get(f"{h}d") or {}).get("primary_scenario_price")) for h in HORIZONS]
+    secondary = [current] + [_float((table.get(f"{h}d") or {}).get("secondary_scenario_price")) for h in HORIZONS]
+    risk = [current] + [_float((table.get(f"{h}d") or {}).get("risk_scenario_price")) for h in HORIZONS]
+    expected = [current] + [_float((table.get(f"{h}d") or {}).get("expected_price")) for h in HORIZONS]
+    return {
+        "dates": [row["date"] for row in history] + future_labels,
+        "historical_price": [_round_price(_float(row.get("close"))) for row in history] + [None for _ in future_labels],
+        "expected_path": [None for _ in history[:-1]] + expected,
+        "primary_path": [None for _ in history[:-1]] + primary,
+        "secondary_path": [None for _ in history[:-1]] + secondary,
+        "risk_path": [None for _ in history[:-1]] + risk,
+        "path_ranking": {
+            "primary": scenarios.get("primary"),
+            "secondary": scenarios.get("secondary"),
+            "risk": scenarios.get("risk"),
+        },
     }
 
 
@@ -496,8 +853,11 @@ def _update_stock_forecast_records(symbols: dict[str, Any], path: Path | None = 
     fields = [
         "forecast_id",
         "forecast_date",
+        "asset_type",
         "model_version",
+        "ticker",
         "symbol",
+        "benchmark",
         "current_price",
         "primary_scenario",
         "primary_probability",
@@ -505,7 +865,28 @@ def _update_stock_forecast_records(symbols: dict[str, Any], path: Path | None = 
         "secondary_probability",
         "risk_scenario",
         "risk_probability",
+        "confluence_score",
         "market_context",
+        "stock_specific_drivers",
+        "expected_price_by_horizon",
+        "actual_return_1d",
+        "actual_return_3d",
+        "actual_return_5d",
+        "actual_return_10d",
+        "actual_return_20d",
+        "actual_return_60d",
+        "primary_hit_1d",
+        "primary_hit_3d",
+        "primary_hit_5d",
+        "primary_hit_10d",
+        "primary_hit_20d",
+        "primary_hit_60d",
+        "path_error_1d",
+        "path_error_3d",
+        "path_error_5d",
+        "path_error_10d",
+        "path_error_20d",
+        "path_error_60d",
         "validation_status",
         "status",
     ]
@@ -522,14 +903,23 @@ def _update_stock_forecast_records(symbols: dict[str, Any], path: Path | None = 
         primary = ranking.get("primary") or {}
         secondary = ranking.get("secondary") or {}
         risk = ranking.get("risk") or {}
+        confluence = payload.get("stock_confluence") or {}
+        price_table = (payload.get("forecast_price_levels") or {}).get("forecast_price_table") or {}
+        expected_price_by_horizon = {
+            horizon: (price_table.get(horizon) or {}).get("expected_price")
+            for horizon in ("1d", "3d", "5d", "10d", "20d", "60d")
+        }
         forecast_id = _forecast_id(payload["as_of"], STOCK_MODEL_VERSION, symbol)
         existing.setdefault(
             forecast_id,
             {
                 "forecast_id": forecast_id,
                 "forecast_date": payload.get("as_of"),
+                "asset_type": "stock",
                 "model_version": STOCK_MODEL_VERSION,
+                "ticker": symbol,
                 "symbol": symbol,
+                "benchmark": payload.get("benchmark"),
                 "current_price": payload.get("current_price"),
                 "primary_scenario": primary.get("scenario"),
                 "primary_probability": primary.get("probability"),
@@ -537,7 +927,36 @@ def _update_stock_forecast_records(symbols: dict[str, Any], path: Path | None = 
                 "secondary_probability": secondary.get("probability"),
                 "risk_scenario": risk.get("scenario"),
                 "risk_probability": risk.get("probability"),
+                "confluence_score": confluence.get("stock_confluence_score"),
                 "market_context": (payload.get("market_context_for_stock") or {}).get("context"),
+                "stock_specific_drivers": json.dumps(
+                    {
+                        "supporting": payload.get("supporting_signals") or [],
+                        "conflicting": payload.get("conflicting_signals") or [],
+                        "missing": payload.get("missing_data") or [],
+                    },
+                    ensure_ascii=False,
+                    sort_keys=True,
+                ),
+                "expected_price_by_horizon": json.dumps(expected_price_by_horizon, sort_keys=True),
+                "actual_return_1d": "",
+                "actual_return_3d": "",
+                "actual_return_5d": "",
+                "actual_return_10d": "",
+                "actual_return_20d": "",
+                "actual_return_60d": "",
+                "primary_hit_1d": "",
+                "primary_hit_3d": "",
+                "primary_hit_5d": "",
+                "primary_hit_10d": "",
+                "primary_hit_20d": "",
+                "primary_hit_60d": "",
+                "path_error_1d": "",
+                "path_error_3d": "",
+                "path_error_5d": "",
+                "path_error_10d": "",
+                "path_error_20d": "",
+                "path_error_60d": "",
                 "validation_status": "not_yet_validated",
                 "status": "pending",
             },
@@ -551,6 +970,160 @@ def _update_stock_forecast_records(symbols: dict[str, Any], path: Path | None = 
 
 def _forecast_id(forecast_date: str, model_version: str, symbol: str) -> str:
     return hashlib.sha256(f"{forecast_date}|{model_version}|{symbol}".encode("utf-8")).hexdigest()[:20]
+
+
+def _scenario_probability(scenarios: dict[str, Any], scenario_name: str) -> float:
+    for item in scenarios.get("all_scenarios") or []:
+        if item.get("scenario") == scenario_name:
+            return _float(item.get("probability")) or 0.0
+    return 0.0
+
+
+def _alert(
+    alert_type: str,
+    score: float,
+    symbol: str,
+    reason: str,
+    confirmation_needed: list[str],
+    invalidation_conditions: list[str],
+    trigger_levels: dict[str, Any],
+) -> dict[str, Any]:
+    clean_score = round(_clamp(score, 0, 100), 2)
+    return {
+        "alert_type": alert_type,
+        "alert_level": _alert_level(clean_score),
+        "alert_score": clean_score,
+        "affected_ticker": symbol,
+        "one_line_reason": reason,
+        "confirmation_needed": confirmation_needed,
+        "invalidation_conditions": invalidation_conditions,
+        "related_price_levels": {
+            "primary_confirmation_level": trigger_levels.get("primary_confirmation_level"),
+            "primary_invalidation_level": trigger_levels.get("primary_invalidation_level"),
+            "risk_scenario_activation_level": trigger_levels.get("risk_scenario_activation_level"),
+            "breakout_level": trigger_levels.get("breakout_level"),
+            "breakdown_level": trigger_levels.get("breakdown_level"),
+        },
+        "not_trading_advice": True,
+    }
+
+
+def _alert_level(score: float) -> str:
+    if score >= 85:
+        return "EXTREME"
+    if score >= 72:
+        return "HIGH_CONVICTION"
+    if score >= 58:
+        return "WARNING"
+    if score >= 38:
+        return "WATCH"
+    return "NO_ALERT"
+
+
+def _missing_confluence() -> dict[str, Any]:
+    return {
+        "stock_confluence_score": 0,
+        "confluence_level": "weak",
+        "supporting_evidence": [],
+        "conflicting_evidence": ["真实个股数据缺失"],
+        "missing_evidence": ["price", "volume", "relative_strength"],
+        "dominant_path": "stock_data_missing",
+        "requires_multi_source_confirmation": True,
+        "validation_status": "not_yet_validated",
+    }
+
+
+def _missing_alerts(symbol: str) -> dict[str, Any]:
+    alert = _alert("NO_ALERT", 0, symbol, "真实个股数据缺失，暂不生成个股预警。", [], [], {})
+    return {"alerts": [alert], "strongest_alert": alert, "validation_status": "not_yet_validated", "not_trading_advice": True}
+
+
+def _missing_analogs() -> dict[str, Any]:
+    return {
+        "validation_type": "historical_analog_explanation_only",
+        "sample_count": 0,
+        "low_sample_warning": True,
+        "analog_support": "low sample",
+        "top_similar_dates": [],
+        "distribution": {},
+        "note": "Not enough real stock history for analog retrieval.",
+    }
+
+
+def _analog_vector_at(rows: list[dict[str, Any]], benchmark_rows: list[dict[str, Any]], index: int) -> dict[str, float]:
+    prefix = rows[: index + 1]
+    benchmark_prefix = benchmark_rows[: min(len(benchmark_rows), index + 1)] if benchmark_rows else []
+    stock_20 = _return(prefix, 20) or 0.0
+    benchmark_20 = _return(benchmark_prefix, 20) or 0.0
+    return {
+        "ret20": stock_20,
+        "ret60": _return(prefix, 60) or 0.0,
+        "drawdown20": _drawdown(prefix, 20) or 0.0,
+        "drawdown60": _drawdown(prefix, 60) or 0.0,
+        "volume_z": _volume_z_score(prefix, 20) or 0.0,
+        "atr_pct": _safe_div(_atr(prefix, 14), _last_close(prefix)) or 0.0,
+        "relative20": stock_20 - benchmark_20,
+    }
+
+
+def _analog_distance(current: dict[str, float], candidate: dict[str, float]) -> float:
+    scales = {
+        "ret20": 0.08,
+        "ret60": 0.16,
+        "drawdown20": 0.08,
+        "drawdown60": 0.18,
+        "volume_z": 2.5,
+        "atr_pct": 0.05,
+        "relative20": 0.08,
+    }
+    total = 0.0
+    for key, scale in scales.items():
+        total += ((current.get(key, 0.0) - candidate.get(key, 0.0)) / scale) ** 2
+    return math.sqrt(total / max(len(scales), 1))
+
+
+def _forward_return_at(rows: list[dict[str, Any]], index: int, horizon: int) -> float | None:
+    if index + horizon >= len(rows):
+        return None
+    start = _float(rows[index].get("close"))
+    end = _float(rows[index + horizon].get("close"))
+    return _safe_div(end - start, start)
+
+
+def _analog_shared_features(current: dict[str, float], candidate: dict[str, float]) -> list[str]:
+    items: list[str] = []
+    if abs(current.get("drawdown20", 0) - candidate.get("drawdown20", 0)) < 0.03:
+        items.append("20d 回撤深度接近")
+    if abs(current.get("relative20", 0) - candidate.get("relative20", 0)) < 0.03:
+        items.append("相对 benchmark 强弱接近")
+    if abs(current.get("atr_pct", 0) - candidate.get("atr_pct", 0)) < 0.02:
+        items.append("波动率区间接近")
+    if abs(current.get("volume_z", 0) - candidate.get("volume_z", 0)) < 0.8:
+        items.append("成交量异常程度接近")
+    return items or ["价格路径结构相似"]
+
+
+def _analog_differences(current: dict[str, float], candidate: dict[str, float]) -> list[str]:
+    items: list[str] = []
+    if abs(current.get("ret20", 0) - candidate.get("ret20", 0)) >= 0.06:
+        items.append("20d 动量差异较大")
+    if abs(current.get("relative20", 0) - candidate.get("relative20", 0)) >= 0.06:
+        items.append("相对 benchmark 强弱差异较大")
+    if abs(current.get("atr_pct", 0) - candidate.get("atr_pct", 0)) >= 0.04:
+        items.append("波动率状态差异较大")
+    return items
+
+
+def _avg(values: list[Any]) -> float | None:
+    clean = [_float(value) for value in values]
+    clean = [value for value in clean if value is not None]
+    return sum(clean) / len(clean) if clean else None
+
+
+def _hit_rate(values: list[Any]) -> float | None:
+    clean = [_float(value) for value in values]
+    clean = [value for value in clean if value is not None]
+    return sum(1 for value in clean if value > 0) / len(clean) if clean else None
 
 
 def _last_close(rows: list[dict[str, Any]]) -> float:

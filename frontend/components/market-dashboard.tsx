@@ -2020,12 +2020,60 @@ function ModelLeaderboard({ dashboard }: { dashboard: PredictionDashboard }) {
   );
 }
 
+function StockEvidenceList({
+  title,
+  items,
+  tone,
+  empty,
+}: {
+  title: string;
+  items: string[];
+  tone: "supportive" | "conflicting" | "neutral";
+  empty: string;
+}) {
+  const toneClass =
+    tone === "supportive"
+      ? "border-emerald-400/20 bg-emerald-400/[0.06] text-emerald-100"
+      : tone === "conflicting"
+        ? "border-rose-400/20 bg-rose-400/[0.06] text-rose-100"
+        : "border-slate-500/20 bg-slate-500/[0.06] text-slate-200";
+  return (
+    <div className="rounded-xl border border-white/10 bg-black/20 p-4">
+      <div className="text-xs uppercase tracking-[0.18em] text-slate-500">{title}</div>
+      <div className="mt-3 space-y-2">
+        {(items.length ? items : [empty]).slice(0, 6).map((item) => (
+          <div key={item} className={`rounded-lg border px-3 py-2 text-xs leading-5 ${toneClass}`}>
+            {item}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function StockPredictionSection({ dashboard }: { dashboard: PredictionDashboard }) {
   const stockDashboard = asRecord(dashboard.stock_prediction_dashboard);
   const symbols = asRecord(stockDashboard.symbols);
   const rows = Object.entries(symbols).slice(0, 20);
+  const [selectedStock, setSelectedStock] = useState(rows[0]?.[0] ?? "");
   if (!rows.length) return null;
   const summary = asRecord(stockDashboard.summary);
+  const selectedEntry = rows.find(([symbol]) => symbol === selectedStock) ?? rows[0];
+  const selected = asRecord(selectedEntry?.[1]);
+  const selectedRanking = asRecord(selected.scenario_ranking);
+  const selectedPrimary = asRecord(selectedRanking.primary);
+  const selectedSecondary = asRecord(selectedRanking.secondary);
+  const selectedRisk = asRecord(selectedRanking.risk);
+  const selectedContext = asRecord(selected.market_context_for_stock);
+  const selectedConfluence = asRecord(selected.stock_confluence);
+  const selectedAlerts = asRecord(selected.stock_alerts);
+  const strongestAlert = asRecord(selectedAlerts.strongest_alert);
+  const selectedAnalogs = asRecord(selected.historical_analogs);
+  const selectedLevels = asRecord(asRecord(selected.forecast_price_levels).trigger_levels);
+  const priceTable = asRecord(asRecord(selected.forecast_price_levels).forecast_price_table);
+  const support = asStringArray(selectedConfluence.supporting_evidence);
+  const conflict = asStringArray(selectedConfluence.conflicting_evidence);
+  const missing = asStringArray(selected.missing_data);
 
   return (
     <section className="rounded-2xl border border-white/10 bg-[#101819] p-5">
@@ -2034,7 +2082,7 @@ function StockPredictionSection({ dashboard }: { dashboard: PredictionDashboard 
           <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Stock Prediction</div>
           <h2 className="mt-1 text-xl font-semibold text-white">个股预测模块</h2>
           <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-400">
-            个股模块复用当前大盘背景，但独立输出个股概率路径。它不是交易系统，不输出买卖建议；财报、估值、公司新闻和个股期权缺失时会明确标记。
+            个股模块复用当前大盘背景，但独立输出个股概率路径。它不是交易系统，不输出操作建议；财报、估值、公司新闻和个股期权缺失时会明确标记。
           </p>
         </div>
         <div className="flex flex-wrap gap-2">
@@ -2052,12 +2100,22 @@ function StockPredictionSection({ dashboard }: { dashboard: PredictionDashboard 
           const risk = asRecord(ranking.risk);
           const context = asRecord(payload.market_context_for_stock);
           const missing = asStringArray(payload.missing_data);
+          const confluence = asRecord(payload.stock_confluence);
           return (
-            <div key={symbol} className="rounded-xl border border-white/10 bg-black/20 p-4">
+            <button
+              key={symbol}
+              type="button"
+              onClick={() => setSelectedStock(symbol)}
+              className={`rounded-xl border p-4 text-left transition ${
+                selectedEntry?.[0] === symbol
+                  ? "border-cyan-300/70 bg-cyan-300/[0.08]"
+                  : "border-white/10 bg-black/20 hover:border-white/25"
+              }`}
+            >
               <div className="flex items-start justify-between gap-3">
                 <div>
                   <div className="text-lg font-semibold text-white">{symbol}</div>
-                  <div className="text-xs text-slate-500">Benchmark: {String(payload.benchmark ?? "QQQ")}</div>
+                  <div className="text-xs text-slate-500">{String(payload.company_name ?? symbol)} · Benchmark: {String(payload.benchmark ?? "QQQ")}</div>
                 </div>
                 <StatusBadge status={String(payload.data_status ?? "missing")} label={String(payload.data_status ?? "missing")} />
               </div>
@@ -2067,16 +2125,115 @@ function StockPredictionSection({ dashboard }: { dashboard: PredictionDashboard 
                 <Metric label="主路径" value={String(primary.label ?? primary.scenario ?? "数据缺失")} />
                 <Metric label="主路径概率" value={formatPercent(primary.probability, 1)} />
                 <Metric label="第二路径" value={String(secondary.label ?? secondary.scenario ?? "数据缺失")} />
-                <Metric label="风险路径" value={String(risk.label ?? risk.scenario ?? "数据缺失")} />
+                <Metric label="共振评分" value={formatScore(asNumber(confluence.stock_confluence_score))} />
               </div>
               {missing.length ? (
                 <div className="mt-3 rounded-lg border border-amber-400/20 bg-amber-400/[0.07] p-3 text-xs leading-5 text-amber-100">
                   缺失数据：{missing.slice(0, 4).join(" / ")}
                 </div>
               ) : null}
-            </div>
+            </button>
           );
         })}
+      </div>
+
+      <div className="mt-5 grid gap-4 xl:grid-cols-[minmax(0,1fr)_340px]">
+        <div className="rounded-xl border border-white/10 bg-black/20 p-4">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <div className="text-xs uppercase tracking-[0.2em] text-slate-500">Stock Command Center</div>
+              <h3 className="mt-1 text-2xl font-semibold text-white">
+                {selectedEntry?.[0]} 个股预测
+              </h3>
+              <p className="mt-2 text-sm leading-6 text-slate-300">
+                当前主路径为 {String(selectedPrimary.label ?? selectedPrimary.scenario ?? "数据缺失")}（{formatPercent(selectedPrimary.probability, 1)}），
+                第二路径为 {String(selectedSecondary.label ?? selectedSecondary.scenario ?? "数据缺失")}。
+                大盘背景为 {String(selectedContext.context ?? "数据缺失")}，个股共振评分 {formatScore(asNumber(selectedConfluence.stock_confluence_score))}。
+                该模块仍是 not_yet_validated，只做概率路径解释。
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <StatusBadge status={String(selectedConfluence.confluence_level ?? "mixed")} label={`共振：${String(selectedConfluence.confluence_level ?? "mixed")}`} />
+              <StatusBadge status={String(strongestAlert.alert_level ?? "NO_ALERT")} label={`预警：${cnAlertLevel(String(strongestAlert.alert_level ?? "NO_ALERT"))}`} />
+            </div>
+          </div>
+
+          <div className="mt-4 grid gap-3 md:grid-cols-3">
+            <Metric label="主路径" value={`${String(selectedPrimary.label ?? selectedPrimary.scenario ?? "缺失")} · ${formatPercent(selectedPrimary.probability, 1)}`} />
+            <Metric label="第二路径" value={`${String(selectedSecondary.label ?? selectedSecondary.scenario ?? "缺失")} · ${formatPercent(selectedSecondary.probability, 1)}`} />
+            <Metric label="风险路径" value={`${String(selectedRisk.label ?? selectedRisk.scenario ?? "缺失")} · ${formatPercent(selectedRisk.probability, 1)}`} />
+          </div>
+
+          <div className="mt-4 overflow-x-auto">
+            <table className="w-full min-w-[680px] text-left text-sm">
+              <thead className="text-xs uppercase tracking-[0.14em] text-slate-500">
+                <tr>
+                  <th className="py-2 pr-3">周期</th>
+                  <th className="py-2 pr-3">综合预期</th>
+                  <th className="py-2 pr-3">主路径价</th>
+                  <th className="py-2 pr-3">第二路径价</th>
+                  <th className="py-2 pr-3">风险路径价</th>
+                  <th className="py-2 pr-3">区间</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-white/10">
+                {PRICE_LEVEL_HORIZON_ORDER.map((horizon) => {
+                  const row = asRecord(priceTable[horizon]);
+                  return (
+                    <tr key={horizon} className="text-slate-200">
+                      <td className="py-2 pr-3 text-slate-400">{horizon}</td>
+                      <td className="py-2 pr-3">{formatPrice(row.expected_price)}</td>
+                      <td className="py-2 pr-3">{formatPrice(row.primary_scenario_price)}</td>
+                      <td className="py-2 pr-3">{formatPrice(row.secondary_scenario_price)}</td>
+                      <td className="py-2 pr-3">{formatPrice(row.risk_scenario_price)}</td>
+                      <td className="py-2 pr-3">{formatPrice(row.lower_confidence_price)} - {formatPrice(row.upper_confidence_price)}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <aside className="space-y-3">
+          <div className="rounded-xl border border-white/10 bg-black/20 p-4">
+            <div className="text-xs uppercase tracking-[0.2em] text-slate-500">Key Levels</div>
+            <div className="mt-3 grid grid-cols-2 gap-3 text-sm">
+              <Metric label="确认价" value={formatPrice(asRecord(selectedLevels.primary_confirmation_level).price)} />
+              <Metric label="失效价" value={formatPrice(asRecord(selectedLevels.primary_invalidation_level).price)} />
+              <Metric label="风险接管" value={formatPrice(asRecord(selectedLevels.risk_scenario_activation_level).price)} />
+              <Metric label="趋势修复" value={formatPrice(asRecord(selectedLevels.trend_repair_confirmation_level).price)} />
+              <Metric label="突破价" value={formatPrice(asRecord(selectedLevels.breakout_level).price)} />
+              <Metric label="跌破价" value={formatPrice(asRecord(selectedLevels.breakdown_level).price)} />
+              <Metric label="最近支撑" value={formatPrice(asRecord(selectedLevels.nearest_support).price)} />
+              <Metric label="最近阻力" value={formatPrice(asRecord(selectedLevels.nearest_resistance).price)} />
+            </div>
+          </div>
+          <div className="rounded-xl border border-white/10 bg-black/20 p-4">
+            <div className="text-xs uppercase tracking-[0.2em] text-slate-500">Stock Alert</div>
+            <div className="mt-2 text-lg font-semibold text-white">{String(strongestAlert.alert_type ?? "NO_ALERT")}</div>
+            <div className="mt-1 text-sm text-slate-400">{String(strongestAlert.one_line_reason ?? "等待更多数据确认。")}</div>
+            <div className="mt-3 grid grid-cols-2 gap-3">
+              <Metric label="预警等级" value={cnAlertLevel(String(strongestAlert.alert_level ?? "NO_ALERT"))} />
+              <Metric label="预警评分" value={formatScore(asNumber(strongestAlert.alert_score))} />
+            </div>
+          </div>
+          <div className="rounded-xl border border-white/10 bg-black/20 p-4">
+            <div className="text-xs uppercase tracking-[0.2em] text-slate-500">Historical Analogs</div>
+            <div className="mt-2 text-sm text-slate-300">
+              支持度：{String(selectedAnalogs.analog_support ?? "low sample")} · 样本：{String(selectedAnalogs.sample_count ?? 0)}
+            </div>
+            <div className="mt-1 text-xs text-slate-500">
+              历史相似只用于解释，不等于已验证 alpha。
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div className="mt-4 grid gap-3 lg:grid-cols-3">
+        <StockEvidenceList title="支持证据" items={support} tone="supportive" empty="暂无足够支持证据" />
+        <StockEvidenceList title="冲突证据" items={conflict} tone="conflicting" empty="暂无明显冲突证据" />
+        <StockEvidenceList title="缺失数据" items={missing.length ? missing : ["无主要缺失项"]} tone="neutral" empty="无主要缺失项" />
       </div>
 
       <div className="mt-4 grid gap-3 sm:grid-cols-3">
