@@ -1,13 +1,13 @@
 # Forecast Price Levels
 
-Generated at: `2026-06-15T14:29:14.625122Z`
+Generated at: `2026-06-15T14:41:20.726135Z`
 
 These are probability-path scenario levels, not execution instructions, risk-control rules, or guaranteed targets.
 
 ## SPY
 
 - current price: `741.75`
-- primary confirmation: `753.47`
+- primary confirmation: `753.28`
 - primary invalidation: `725.43`
 - risk activation: `725.43`
 - trend repair confirmation: `779.52`
@@ -24,7 +24,7 @@ These are probability-path scenario levels, not execution instructions, risk-con
 ## QQQ
 
 - current price: `721.34`
-- primary confirmation: `740.62`
+- primary confirmation: `740.50`
 - primary invalidation: `693.69`
 - risk activation: `649.52`
 - trend repair confirmation: `765.73`
@@ -41,19 +41,19 @@ These are probability-path scenario levels, not execution instructions, risk-con
 ## IWM
 
 - current price: `292.95`
-- primary confirmation: `300.69`
+- primary confirmation: `302.98`
 - primary invalidation: `281.65`
 - risk activation: `273.00`
-- trend repair confirmation: `317.09`
+- trend repair confirmation: `314.86`
 
 | Horizon | Expected | Primary | Secondary | Risk | Upper | Lower |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| 1d | 294.05 | 294.46 | 293.76 | 293.31 | 294.46 | 293.31 |
-| 3d | 296.25 | 297.48 | 295.39 | 294.03 | 297.48 | 294.03 |
-| 5d | 297.64 | 300.69 | 295.89 | 292.06 | 300.69 | 292.06 |
-| 10d | 300.49 | 307.73 | 296.58 | 287.17 | 307.73 | 287.17 |
-| 20d | 303.66 | 317.09 | 297.13 | 278.75 | 317.09 | 278.75 |
-| 60d | 319.38 | 332.76 | 309.26 | 295.60 | 332.76 | 295.60 |
+| 1d | 294.35 | 294.96 | 293.76 | 293.31 | 294.96 | 293.31 |
+| 3d | 297.14 | 298.99 | 295.37 | 294.03 | 298.99 | 294.03 |
+| 5d | 298.99 | 302.98 | 295.91 | 292.06 | 302.98 | 292.06 |
+| 10d | 300.90 | 308.66 | 295.74 | 287.17 | 308.66 | 287.17 |
+| 20d | 302.00 | 314.86 | 295.41 | 278.75 | 314.86 | 278.75 |
+| 60d | 320.02 | 334.22 | 308.23 | 295.60 | 334.22 | 295.60 |
 
 ## DIA
 
