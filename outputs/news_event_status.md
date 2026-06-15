@@ -1,8 +1,8 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-06-15T08:04:19.404503+00:00`
+- generated_at: `2026-06-15T08:22:24.557308+00:00`
 - status: `available`
-- validation_type: `daily`
+- validation_type: `event_refresh`
 - major_event_count: `20`
 - event_detection_confidence: `77`
 - event_risk_level: `high`
