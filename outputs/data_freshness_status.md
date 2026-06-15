@@ -1,6 +1,6 @@
 # Data Freshness Status
 
-Generated at: `2026-06-15T12:31:56.689584+00:00`
+Generated at: `2026-06-15T12:41:14.914863+00:00`
 
 ## Summary
 
@@ -53,7 +53,7 @@ Generated at: `2026-06-15T12:31:56.689584+00:00`
 - XLV: status=`available`, latest_date=`2026-06-12`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - XLY: status=`available`, latest_date=`2026-06-12`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - ^SKEW: status=`available`, latest_date=`2026-06-12`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- ^TNX: status=`available`, latest_date=`2026-06-12`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- ^TNX: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - ^VIX: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - ^VIX3M: status=`available`, latest_date=`2026-06-12`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - ^VIX6M: status=`available`, latest_date=`2026-06-12`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
@@ -79,7 +79,7 @@ Generated at: `2026-06-15T12:31:56.689584+00:00`
 - finnhub_news_sentiment_SPY: status=`missing`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
 - finnhub_quote_DIA: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
 - finnhub_quote_IWM: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
-- finnhub_quote_QQQ: status=`missing`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
+- finnhub_quote_QQQ: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
 - finnhub_quote_SPY: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
 - finnhub_rates_data: status=`missing`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
 - flow_DIA: status=`proxy`, latest_date=`2026-06-12`, source=`market_data_proxy`, stale=`False`, fallback=`True`, real_data=`False`
@@ -88,7 +88,7 @@ Generated at: `2026-06-15T12:31:56.689584+00:00`
 - flow_SPY: status=`proxy`, latest_date=`2026-06-12`, source=`market_data_proxy`, stale=`False`, fallback=`True`, real_data=`False`
 - flow_provider: status=`proxy`, latest_date=`2026-06-12`, source=`flow_positioning_proxy`, stale=`False`, fallback=`True`, real_data=`False`
 - macro_event_calendar: status=`fallback`, latest_date=`2026-06-15`, source=`deterministic_calendar_fallback`, stale=`False`, fallback=`True`, real_data=`False`
-- news_event_provider: status=`provider_failed`, latest_date=`2026-06-15`, source=`finnhub+gdelt`, stale=`False`, fallback=`False`, real_data=`False`
+- news_event_provider: status=`available`, latest_date=`2026-06-15`, source=`finnhub+gdelt`, stale=`False`, fallback=`False`, real_data=`True`
 - options_SKEW: status=`available`, latest_date=`2026-06-12`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - options_VIX: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - options_VIX3M: status=`available`, latest_date=`2026-06-12`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
