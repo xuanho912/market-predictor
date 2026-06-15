@@ -539,6 +539,39 @@ export type ForecastPriceLevels = {
   symbols: Record<string, ForecastPriceLevelsBySymbol>;
 };
 
+export type NewsEventIntelligence = {
+  status?: string;
+  dashboard_note?: string;
+  market_narrative?: {
+    market_narrative?: string;
+    summary?: string;
+    supporting_headlines?: Array<Record<string, unknown>>;
+    conflicting_headlines?: Array<Record<string, unknown>>;
+    affected_symbols?: string[];
+    affected_scenarios?: string[];
+    narrative_strength?: number;
+    narrative_direction?: string;
+  };
+  price_reaction_confirmation?: {
+    price_reaction_confirmed?: boolean;
+    confirmation_score?: number;
+    asset_reaction_summary?: Record<string, unknown>;
+    contradiction_warning?: string | null;
+  };
+  symbol_impact?: {
+    primary_scenario?: string;
+    secondary_scenario?: string;
+    risk_scenario?: string;
+    news_supports_primary_scenario?: boolean;
+    news_conflicts_primary_scenario?: boolean;
+    scenario_bias?: string[];
+    impact?: string;
+    expected_changes?: string[];
+    explanation?: string;
+  };
+  major_events?: Array<Record<string, unknown>>;
+};
+
 export type HorizonPredictionV2 = {
   expected_direction: string;
   expected_return: number;
@@ -587,6 +620,7 @@ export type MarketSymbolOverview = {
   low_confidence_simulation?: boolean;
   scenario_ranking?: ScenarioRanking;
   forecast_price_levels?: ForecastPriceLevelsBySymbol;
+  news_event_intelligence?: NewsEventIntelligence;
 };
 
 export type ScenarioRankingItem = {
@@ -647,6 +681,7 @@ export type SimulatedSymbolPaths = {
   path_source_notes?: string[];
   data_quality?: Record<string, unknown>;
   forecast_price_levels?: ForecastPriceLevelsBySymbol;
+  news_event_intelligence?: NewsEventIntelligence;
   paths: {
     dates: string[];
     split_index: number;
@@ -684,6 +719,7 @@ export type PredictionDashboard = {
   options_status?: OptionsStatus;
   flow_status?: FlowPositioningStatus;
   flow_positioning_status?: FlowPositioningStatus;
+  news_event_status?: Record<string, unknown>;
   breadth_impact_report?: Record<string, unknown>;
   market_intelligence_v2?: {
     version: string;
@@ -715,6 +751,7 @@ export type PredictionDashboard = {
     model_confidence_by_symbol: Record<string, ModelConfidence>;
     edge_status_by_symbol: Record<string, MarketEdgeStatus>;
     high_confidence_edge_report: Record<string, unknown>;
+    news_event_intelligence?: Record<string, unknown>;
     finnhub_status?: Record<string, unknown>;
     warnings: string[];
   };

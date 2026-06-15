@@ -12,6 +12,7 @@ on:
       - "scripts/providers/options_provider.py"
       - "scripts/providers/flow_provider.py"
       - "scripts/providers/flow_positioning_provider.py"
+      - "scripts/providers/news_event_provider.py"
       - "scripts/forecast_accuracy_ledger.py"
       - "scripts/forecast_price_levels.py"
       - "scripts/historical_replay_benchmark.py"
@@ -56,6 +57,7 @@ jobs:
       FRED_CACHE_DIR: data/fred_cache
       FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
       BREADTH_CACHE_DIR: data/breadth_cache
+      NEWS_EVENT_CACHE_DIR: data/news_event_cache
       PUBLIC_DASHBOARD_REPO: ${{ vars.PUBLIC_DASHBOARD_REPO }}
       PUBLIC_DASHBOARD_BRANCH: ${{ vars.PUBLIC_DASHBOARD_BRANCH || 'main' }}
       PUBLIC_DASHBOARD_BASE_PATH: ${{ vars.PUBLIC_DASHBOARD_BASE_PATH || '/market-predictor' }}
@@ -99,7 +101,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add outputs/forward_alpha_v1_daily_checks.csv outputs/forward_alpha_v1_signals.csv outputs/forward_alpha_v1_report.md outputs/fred_data_status.md outputs/breadth_data_status.md outputs/options_data_status.md outputs/flow_data_status.md outputs/flow_positioning_status.md outputs/breadth_impact_report.md outputs/forecast_price_levels.md outputs/high_confidence_signal_report.md outputs/high_confidence_edge_report.md outputs/forecast_records.csv outputs/forecast_accuracy_scorecard.md outputs/historical_replay_benchmark.md outputs/model_challenger_forecasts.csv outputs/model_leaderboard.md outputs/model_promotion_rules.md frontend/public/alpha-v1-status.json frontend/public/alpha-v1-analogs.json frontend/public/data_quality_report.json frontend/public/breadth-status.json frontend/public/options-status.json frontend/public/flow-status.json frontend/public/flow-positioning-status.json frontend/public/breadth-impact-report.json frontend/public/forecast-price-levels.json frontend/public/high-confidence-signal-report.json frontend/public/high-confidence-edge-report.json frontend/public/forecast-records.json frontend/public/forecast-accuracy-scorecard.json frontend/public/historical-replay-benchmark.json frontend/public/model-challenger-forecasts.json frontend/public/model-leaderboard.json frontend/public/model-promotion-status.json frontend/public/market-overview.json frontend/public/simulated-paths.json frontend/public/prediction-dashboard.json
+          git add outputs/forward_alpha_v1_daily_checks.csv outputs/forward_alpha_v1_signals.csv outputs/forward_alpha_v1_report.md outputs/fred_data_status.md outputs/breadth_data_status.md outputs/options_data_status.md outputs/flow_data_status.md outputs/flow_positioning_status.md outputs/news_event_status.md outputs/breadth_impact_report.md outputs/forecast_price_levels.md outputs/high_confidence_signal_report.md outputs/high_confidence_edge_report.md outputs/forecast_records.csv outputs/forecast_accuracy_scorecard.md outputs/historical_replay_benchmark.md outputs/model_challenger_forecasts.csv outputs/model_leaderboard.md outputs/model_promotion_rules.md frontend/public/alpha-v1-status.json frontend/public/alpha-v1-analogs.json frontend/public/data_quality_report.json frontend/public/breadth-status.json frontend/public/options-status.json frontend/public/flow-status.json frontend/public/flow-positioning-status.json frontend/public/news-event-status.json frontend/public/breadth-impact-report.json frontend/public/forecast-price-levels.json frontend/public/high-confidence-signal-report.json frontend/public/high-confidence-edge-report.json frontend/public/forecast-records.json frontend/public/forecast-accuracy-scorecard.json frontend/public/historical-replay-benchmark.json frontend/public/model-challenger-forecasts.json frontend/public/model-leaderboard.json frontend/public/model-promotion-status.json frontend/public/market-overview.json frontend/public/simulated-paths.json frontend/public/prediction-dashboard.json
           if git diff --cached --quiet; then
             echo "No forward observation output changes to commit."
           else

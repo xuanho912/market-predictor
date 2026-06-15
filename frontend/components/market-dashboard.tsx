@@ -141,6 +141,17 @@ function cnValidationStatus(value: string | undefined): string {
   return value ? map[value] ?? value : "尚未验证";
 }
 
+function cnNarrativeDirection(value: string | undefined): string {
+  const map: Record<string, string> = {
+    supports_bounce: "支持反抽",
+    supports_downside: "支持下跌延续",
+    supports_trend_reversal: "支持趋势修复",
+    supports_risk_expansion: "支持风险扩散",
+    mixed: "混合",
+  };
+  return value ? map[value] ?? value : "数据缺失";
+}
+
 function badgeClass(status: string | undefined): string {
   const normalized = (status ?? "").toLowerCase();
   if (normalized.includes("strong_edge") || normalized.includes("support") || normalized.includes("active_model")) {
@@ -1118,6 +1129,102 @@ function EvidenceSections({ selected }: { selected: SimulatedSymbolPaths | undef
   );
 }
 
+function NewsEventIntelligencePanel({
+  dashboard,
+  selected,
+}: {
+  dashboard: PredictionDashboard;
+  selected: SimulatedSymbolPaths | undefined;
+}) {
+  const symbolNews = selected?.news_event_intelligence;
+  const bundle = asRecord(dashboard.news_event_status);
+  const narrative = asRecord(symbolNews?.market_narrative ?? bundle.market_narrative);
+  const reaction = asRecord(symbolNews?.price_reaction_confirmation ?? bundle.price_reaction_confirmation);
+  const impact = asRecord(symbolNews?.symbol_impact);
+  const events = (symbolNews?.major_events ?? (Array.isArray(bundle.major_events) ? bundle.major_events : [])) as Array<Record<string, unknown>>;
+  const status = String(symbolNews?.status ?? bundle.status ?? "missing");
+  const direction = String(narrative.narrative_direction ?? "mixed");
+  const supports = Boolean(impact.news_supports_primary_scenario);
+  const conflicts = Boolean(impact.news_conflicts_primary_scenario);
+  const confirmed = Boolean(reaction.price_reaction_confirmed);
+
+  return (
+    <section className="rounded-xl border border-white/10 bg-[#101819] p-5">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <div className="text-xs uppercase tracking-[0.22em] text-slate-500">News / Event Intelligence</div>
+          <h2 className="mt-1 text-xl font-semibold text-white">新闻事件智能层</h2>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          <StatusBadge status={status} label={status === "no_major_event" ? "无重大事件" : status} />
+          <StatusBadge
+            status={confirmed ? "supportive" : "mixed"}
+            label={confirmed ? "价格已确认" : "价格未充分确认"}
+          />
+        </div>
+      </div>
+
+      <div className="mt-4 grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="rounded-lg border border-white/10 bg-black/20 p-4">
+          <div className="text-xs uppercase tracking-[0.18em] text-slate-500">Market Narrative</div>
+          <div className="mt-2 text-lg font-semibold text-white">{String(narrative.market_narrative ?? "no_clear_narrative")}</div>
+          <p className="mt-2 text-sm leading-6 text-slate-300">
+            {String(symbolNews?.dashboard_note ?? bundle.dashboard_note ?? narrative.summary ?? "当前新闻层没有足够清晰的市场叙事。")}
+          </p>
+          <div className="mt-3 grid gap-2 sm:grid-cols-3">
+            <Metric label="叙事强度" value={formatScore(asNumber(narrative.narrative_strength))} />
+            <Metric label="方向" value={cnNarrativeDirection(direction)} />
+            <Metric label="价格确认" value={formatScore(asNumber(reaction.confirmation_score))} />
+          </div>
+        </div>
+
+        <div className="rounded-lg border border-white/10 bg-black/20 p-4">
+          <div className="text-xs uppercase tracking-[0.18em] text-slate-500">Path Impact</div>
+          <h3 className="mt-1 text-lg font-semibold text-white">{selected?.symbol ?? "SPY"} 路径影响</h3>
+          <div className="mt-3 flex flex-wrap gap-2">
+            <StatusBadge status={supports ? "supportive" : "neutral"} label={supports ? "支持主路径" : "未支持主路径"} />
+            <StatusBadge status={conflicts ? "conflicting" : "neutral"} label={conflicts ? "与主路径冲突" : "无明显冲突"} />
+          </div>
+          <p className="mt-3 text-sm leading-6 text-slate-300">
+            {String(impact.explanation ?? "新闻层当前只作为解释和确认输入，不直接替代主路径排序。")}
+          </p>
+          {reaction.contradiction_warning ? (
+            <div className="mt-3 rounded-lg border border-amber-400/20 bg-amber-400/[0.08] p-3 text-sm text-amber-100">
+              {String(reaction.contradiction_warning)}
+            </div>
+          ) : null}
+        </div>
+      </div>
+
+      <div className="mt-4 grid gap-3 lg:grid-cols-2">
+        {events.length ? (
+          events.slice(0, 4).map((event, index) => (
+            <div key={`${String(event.headline)}-${index}`} className="rounded-lg border border-white/10 bg-white/[0.03] p-3">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <StatusBadge status={String(event.event_type ?? "unknown")} label={String(event.event_type ?? "unknown")} />
+                <span className="text-xs text-slate-500">{String(event.source ?? "unknown source")}</span>
+              </div>
+              <p className="mt-2 text-sm leading-6 text-slate-200">{String(event.headline ?? "无标题")}</p>
+              <div className="mt-2 flex flex-wrap gap-2 text-xs text-slate-400">
+                <span>方向：{String(event.expected_market_direction ?? "unknown")}</span>
+                <span>重要性：{formatScore(asNumber(event.importance_score))}</span>
+                <span>新鲜度：{formatScore(asNumber(event.freshness_score))}</span>
+              </div>
+            </div>
+          ))
+        ) : (
+          <div className="rounded-lg border border-white/10 bg-white/[0.03] p-3 text-sm text-slate-400">
+            暂无可用于路径判断的重大新闻事件。新闻源失败时会显示 missing / provider_failed，不会用旧新闻冒充最新。
+          </div>
+        )}
+      </div>
+      <p className="mt-4 text-xs leading-5 text-slate-500">
+        新闻事件智能层用于解释“为什么路径可能被支持或冲突”，不是独立预测模型，也不是买卖建议；其有效性仍需前向验证。
+      </p>
+    </section>
+  );
+}
+
 function EvidenceCard({
   title,
   tone,
@@ -1388,6 +1495,7 @@ export function MarketDashboard({ dashboard }: { dashboard: PredictionDashboard 
         <ForecastPriceLevelsPanel selected={selected} />
         <HorizonTable selected={selected} />
         <EvidenceSections selected={selected} />
+        <NewsEventIntelligencePanel dashboard={data} selected={selected} />
         <HistoricalAnalogs dashboard={data} symbol={selected?.symbol ?? selectedSymbol} />
         <DataQuality dashboard={data} />
         <ForecastAccuracy dashboard={data} />

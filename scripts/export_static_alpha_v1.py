@@ -51,6 +51,11 @@ from scripts.providers.flow_positioning_provider import (
     render_flow_positioning_status_markdown,
 )
 from scripts.providers.options_provider import fetch_options_bundle, render_options_status_markdown
+from scripts.providers.news_event_provider import (
+    NEWS_EVENT_MARKET_SYMBOLS,
+    fetch_news_event_bundle,
+    render_news_event_status_markdown,
+)
 
 
 SYMBOLS = ("SPY", "QQQ", "IWM", "DIA")
@@ -72,7 +77,7 @@ def main() -> int:
     alpha_status = alpha_status_payload()
     alpha_report = report_payload()
     analogs = {symbol: build_alpha_v1_analog_report(symbol, top_k=20) for symbol in SYMBOLS}
-    market_symbols = tuple(dict.fromkeys(SYMBOLS + SUPPORT_SYMBOLS + V3_MARKET_SYMBOLS))
+    market_symbols = tuple(dict.fromkeys(SYMBOLS + SUPPORT_SYMBOLS + V3_MARKET_SYMBOLS + NEWS_EVENT_MARKET_SYMBOLS))
     downloaded = refresh_market_data(symbols=market_symbols, lookback_days=520)
     series_by_symbol = {series.symbol: series for series in downloaded}
     finnhub_bundle = fetch_finnhub_bundle(symbols=SYMBOLS, lookback_days=520)
@@ -178,12 +183,21 @@ def main() -> int:
         fred_bundle=fred_bundle,
         options_bundle=options_bundle,
     )
+    news_event_bundle = fetch_news_event_bundle(
+        finnhub_bundle=finnhub_bundle,
+        series_by_symbol=series_by_symbol,
+        simulated_paths=simulated_paths,
+    )
+    _print_news_event_diagnostics(news_event_bundle)
     fred_effect_summary = _fred_effect_summary(baseline_v4, intelligence_v4, baseline_paths, simulated_paths)
     breadth_impact_report = _breadth_impact_report(no_breadth_v4, intelligence_v4, no_breadth_paths, simulated_paths)
     intelligence_v4["fred_effect_summary"] = fred_effect_summary
     intelligence_v4["breadth_impact_report"] = breadth_impact_report
+    intelligence_v4["news_event_intelligence"] = news_event_bundle
     intelligence_v4["data_quality_report"]["summary"]["fred_effect_summary"] = fred_effect_summary
     intelligence_v4["data_quality_report"]["summary"]["breadth_impact_summary"] = breadth_impact_report["summary"]
+    _apply_news_event_quality(intelligence_v4["data_quality_report"], news_event_bundle)
+    _attach_news_event_intelligence(market_overview, simulated_paths, news_event_bundle)
     forecast_price_levels = build_forecast_price_levels(
         price_history=price_structure_history,
         simulated_paths=simulated_paths,
@@ -204,6 +218,7 @@ def main() -> int:
         "options_status": options_bundle,
         "flow_status": flow_bundle,
         "flow_positioning_status": flow_bundle,
+        "news_event_status": news_event_bundle,
         "breadth_impact_report": breadth_impact_report,
         "forecast_price_levels": forecast_price_levels,
         "feature_snapshot_v2": intelligence_v2["feature_snapshot_v2"],
@@ -243,6 +258,7 @@ def main() -> int:
     _write_json(public_dir / "options-status.json", options_bundle)
     _write_json(public_dir / "flow-status.json", flow_bundle)
     _write_json(public_dir / "flow-positioning-status.json", flow_bundle)
+    _write_json(public_dir / "news-event-status.json", news_event_bundle)
     _write_json(public_dir / "breadth-impact-report.json", breadth_impact_report)
     _write_json(public_dir / "forecast-price-levels.json", forecast_price_levels)
     _write_json(public_dir / "high-confidence-signal-report.json", intelligence_v3["high_confidence_signal_report"])
@@ -262,6 +278,7 @@ def main() -> int:
     _write_options_status_report(PROJECT_ROOT / "outputs" / "options_data_status.md", options_bundle)
     _write_flow_status_report(PROJECT_ROOT / "outputs" / "flow_data_status.md", flow_bundle)
     _write_flow_status_report(PROJECT_ROOT / "outputs" / "flow_positioning_status.md", flow_bundle)
+    _write_news_event_status_report(PROJECT_ROOT / "outputs" / "news_event_status.md", news_event_bundle)
     _write_breadth_impact_status_report(PROJECT_ROOT / "outputs" / "breadth_impact_report.md", breadth_impact_report)
     _write_forecast_price_levels_report(PROJECT_ROOT / "outputs" / "forecast_price_levels.md", forecast_price_levels)
     _write_forecast_accuracy_scorecard_report(PROJECT_ROOT / "outputs" / "forecast_accuracy_scorecard.md", forecast_scorecard)
@@ -274,6 +291,7 @@ def main() -> int:
     print("wrote frontend/public/options-status.json")
     print("wrote frontend/public/flow-status.json")
     print("wrote frontend/public/flow-positioning-status.json")
+    print("wrote frontend/public/news-event-status.json")
     print("wrote frontend/public/breadth-impact-report.json")
     print("wrote frontend/public/forecast-price-levels.json")
     print("wrote frontend/public/high-confidence-signal-report.json")
@@ -293,6 +311,7 @@ def main() -> int:
     print("wrote outputs/options_data_status.md")
     print("wrote outputs/flow_data_status.md")
     print("wrote outputs/flow_positioning_status.md")
+    print("wrote outputs/news_event_status.md")
     print("wrote outputs/breadth_impact_report.md")
     print("wrote outputs/forecast_price_levels.md")
     print("wrote outputs/forecast_accuracy_scorecard.md")
@@ -397,6 +416,18 @@ def _print_flow_diagnostics(bundle: dict[str, Any]) -> None:
             f"conflict={scores.get('flow_conflict_score') if scores.get('flow_conflict_score') is not None else 'NA'} "
             f"true_flow={str(bool(payload.get('true_flow_available'))).lower()}"
         )
+
+
+def _print_news_event_diagnostics(bundle: dict[str, Any]) -> None:
+    narrative = bundle.get("market_narrative") or {}
+    reaction = bundle.get("price_reaction_confirmation") or {}
+    print(f"NEWS_EVENT_STATUS={bundle.get('status') or 'missing'}")
+    print(f"NEWS_EVENT_PROVIDER_FAILED={str(bool(bundle.get('provider_failed'))).lower()}")
+    print(f"NEWS_EVENT_MAJOR_COUNT={bundle.get('major_event_count') if bundle.get('major_event_count') is not None else 'NA'}")
+    print(f"NEWS_EVENT_NARRATIVE={narrative.get('market_narrative') or 'no_clear_narrative'}")
+    print(f"NEWS_EVENT_DIRECTION={narrative.get('narrative_direction') or 'mixed'}")
+    print(f"NEWS_EVENT_PRICE_CONFIRMED={str(bool(reaction.get('price_reaction_confirmed'))).lower()}")
+    print(f"NEWS_EVENT_CONFIRMATION_SCORE={reaction.get('confirmation_score') if reaction.get('confirmation_score') is not None else 'NA'}")
 
 
 def _empty_fred_bundle() -> dict[str, Any]:
@@ -1119,6 +1150,87 @@ def _latest_as_of(alpha_status: dict[str, Any], analogs: dict[str, dict[str, Any
     return alpha_status.get("latest_checked_date") or max((analog.get("as_of") for analog in analogs.values() if analog.get("as_of")), default=None)
 
 
+def _apply_news_event_quality(data_quality: dict[str, Any], news_event_bundle: dict[str, Any]) -> None:
+    summary = data_quality.setdefault("summary", {})
+    coverage = data_quality.setdefault("coverage_categories", {})
+    sources = data_quality.setdefault("sources", {})
+    status = news_event_bundle.get("status") or "missing"
+    raw_count = int(news_event_bundle.get("raw_item_count") or 0)
+    major_count = int(news_event_bundle.get("major_event_count") or 0)
+    provider_failed = bool(news_event_bundle.get("provider_failed"))
+    source_status = "available" if raw_count > 0 and not provider_failed else "provider_failed" if provider_failed else "missing"
+    coverage["news"] = {
+        "status": "available" if raw_count > 0 and not provider_failed else "missing",
+        "detail": "News/Event Intelligence: Finnhub/GDELT headlines, event classification, narrative detection, and price-reaction confirmation.",
+        "expected_items": 4,
+        "available_items": 4 if major_count else 2 if raw_count else 0,
+        "real_data": raw_count > 0 and not provider_failed,
+        "proxy_used": False,
+        "fallback_used": bool(news_event_bundle.get("stale")),
+    }
+    sources["news_event_provider"] = {
+        "symbol": "news_event_provider",
+        "source": "finnhub+gdelt",
+        "status": source_status,
+        "rows": raw_count,
+        "latest_date": data_quality.get("as_of") or summary.get("latest_date"),
+        "real_data": raw_count > 0 and not provider_failed,
+        "fallback_used": bool(news_event_bundle.get("stale")),
+        "stale_data": bool(news_event_bundle.get("stale")),
+        "missing_data": raw_count == 0 or provider_failed,
+        "point_in_time_safe": True,
+        "major_event_count": major_count,
+        "narrative": (news_event_bundle.get("market_narrative") or {}).get("market_narrative"),
+    }
+    summary["news_event_available"] = raw_count > 0 and not provider_failed
+    summary["news_event_provider_failed"] = provider_failed
+    summary["news_event_major_count"] = major_count
+    summary["news_event_narrative"] = (news_event_bundle.get("market_narrative") or {}).get("market_narrative")
+    summary["news_event_price_confirmed"] = bool((news_event_bundle.get("price_reaction_confirmation") or {}).get("price_reaction_confirmed"))
+    if raw_count > 0 and not provider_failed:
+        current_score = float(summary.get("data_completeness_score") or 0)
+        summary["data_completeness_score_before_news_event"] = current_score
+        summary["data_completeness_score"] = min(100, round(current_score + (2 if major_count else 1), 2))
+        unavailable = set(summary.get("unavailable_categories") or [])
+        unavailable.discard("news")
+        summary["unavailable_categories"] = sorted(unavailable)
+
+
+def _attach_news_event_intelligence(
+    overview: dict[str, Any],
+    simulated_paths: dict[str, Any],
+    news_event_bundle: dict[str, Any],
+) -> None:
+    summary = {
+        "status": news_event_bundle.get("status"),
+        "dashboard_note": news_event_bundle.get("dashboard_note"),
+        "market_narrative": news_event_bundle.get("market_narrative"),
+        "price_reaction_confirmation": news_event_bundle.get("price_reaction_confirmation"),
+        "major_event_count": news_event_bundle.get("major_event_count"),
+    }
+    overview["news_event_summary"] = summary
+    simulated_paths["news_event_summary"] = summary
+    impacts = news_event_bundle.get("symbol_impacts") or {}
+    for symbol in SYMBOLS:
+        impact = impacts.get(symbol, {})
+        overview_symbol = (overview.get("symbols") or {}).get(symbol)
+        simulated_symbol = (simulated_paths.get("symbols") or {}).get(symbol)
+        patch = {
+            "news_event_intelligence": {
+                "status": news_event_bundle.get("status"),
+                "dashboard_note": news_event_bundle.get("dashboard_note"),
+                "market_narrative": news_event_bundle.get("market_narrative"),
+                "price_reaction_confirmation": news_event_bundle.get("price_reaction_confirmation"),
+                "symbol_impact": impact,
+                "major_events": (news_event_bundle.get("major_events") or [])[:6],
+            }
+        }
+        if isinstance(overview_symbol, dict):
+            overview_symbol.update(patch)
+        if isinstance(simulated_symbol, dict):
+            simulated_symbol.update(patch)
+
+
 def _mean(values: list[float | None]) -> float:
     clean = [value for value in values if value is not None and math.isfinite(value)]
     return sum(clean) / len(clean) if clean else 0.0
@@ -1163,6 +1275,11 @@ def _write_edge_report(path: Path, payload: dict[str, Any]) -> None:
 def _write_forecast_price_levels_report(path: Path, payload: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(render_forecast_price_levels_markdown(payload), encoding="utf-8")
+
+
+def _write_news_event_status_report(path: Path, payload: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(render_news_event_status_markdown(payload), encoding="utf-8")
 
 
 if __name__ == "__main__":
