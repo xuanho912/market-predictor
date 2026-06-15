@@ -477,6 +477,31 @@ Hard rules:
 - `Alpha v1` remains `RESEARCH ALPHA CANDIDATE` until forward-only evidence satisfies the stable alpha definition.
 - Do not use historical replay, historical analogs, or data-source additions as a shortcut to high precision or stable alpha.
 
+## 26. Require Multi-Source Confluence
+
+Multi-source confluence is mandatory for any strong market forecast. A single indicator is never enough.
+
+The core confluence stack is:
+
+- price structure
+- volume structure
+- breadth / internal resonance
+- credit conditions
+- volatility and options structure
+- flow / positioning
+- news and event intelligence
+- historical analogs
+
+Hard rules:
+
+- Treat every individual indicator as evidence, not as a conclusion.
+- Do not call a forecast `STRONG_EDGE`, `HIGH_CONVICTION`, `Trend Repair`, `Bounce Setup`, or `Risk Expansion` unless multiple independent evidence groups point in the same direction.
+- Always show supporting evidence and conflicting evidence side by side.
+- If price, volume, breadth, credit, volatility, flow, news, and historical analogs disagree, reduce confidence, mark `mixed` / `NO_EDGE`, or keep the module as shadow evidence.
+- If data is missing, stale, proxy-only, or unvalidated, cap confidence and display the limitation.
+- Multi-source confluence must feed forecast confirmation, scenario ranking, failed-bounce risk, risk-expansion risk, trend-repair probability, forecast price levels, and the Daily Market Brief.
+- Confluence itself must be forward validated. A better-looking explanation is not proof of alpha.
+
 ## Non-Negotiable Summary
 
-Always enforce: label-first design, walk-forward validation, regime-aware modeling, credit + liquidity + options + breadth inputs, no future leakage, no random train-test split, probability output with calibration, feature ablation, horizon-specific models, persistent prediction logs for backtesting, and Wardley Mapping build-vs-buy discipline.
+Always enforce: label-first design, walk-forward validation, regime-aware modeling, multi-source confluence, credit + liquidity + options + breadth inputs, no future leakage, no random train-test split, probability output with calibration, feature ablation, horizon-specific models, persistent prediction logs for backtesting, and Wardley Mapping build-vs-buy discipline.
