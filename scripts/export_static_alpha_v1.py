@@ -43,6 +43,17 @@ from scripts.historical_replay_benchmark import (
 )
 from scripts.model_challenger_framework import write_model_challenger_outputs
 from scripts.forecast_price_levels import build_forecast_price_levels, render_forecast_price_levels_markdown
+from scripts.price_volume_structure import build_price_volume_structure, render_price_volume_structure_markdown
+from scripts.confluence_engine import (
+    attach_confluence_to_symbols,
+    build_confluence_score,
+    render_confluence_score_markdown,
+)
+from scripts.market_alert_engine import (
+    attach_alerts_to_symbols,
+    build_market_alerts,
+    render_market_alerts_markdown,
+)
 from scripts.providers.finnhub_provider import fetch_finnhub_bundle
 from scripts.providers.fred_provider import DEFAULT_FRED_SERIES, fetch_fred_bundle
 from scripts.providers.breadth_provider import fetch_breadth_bundle, render_breadth_status_markdown
@@ -216,6 +227,28 @@ def main() -> int:
     )
     forecast_price_levels["validation_type"] = validation_type
     _attach_forecast_price_levels(market_overview, simulated_paths, forecast_price_levels)
+    price_volume_structure = build_price_volume_structure(series_by_symbol=series_by_symbol)
+    confluence_score = build_confluence_score(
+        market_overview=market_overview,
+        simulated_paths=simulated_paths,
+        intelligence_v4=intelligence_v4,
+        forecast_price_levels=forecast_price_levels,
+        price_volume_structure=price_volume_structure,
+        breadth_bundle=breadth_bundle,
+        options_bundle=options_bundle,
+        flow_bundle=flow_bundle,
+        news_event_bundle=news_event_bundle,
+    )
+    attach_confluence_to_symbols(market_overview, simulated_paths, confluence_score)
+    market_alerts = build_market_alerts(
+        market_overview=market_overview,
+        simulated_paths=simulated_paths,
+        forecast_price_levels=forecast_price_levels,
+        price_volume_structure=price_volume_structure,
+        confluence_score=confluence_score,
+        news_event_bundle=news_event_bundle,
+    )
+    attach_alerts_to_symbols(market_overview, simulated_paths, market_alerts)
     dashboard = {
         "generated_by": "scripts/export_static_alpha_v1.py",
         "source": "github_actions_forward_tracker_outputs",
@@ -236,6 +269,9 @@ def main() -> int:
         "news_event_status": news_event_bundle,
         "breadth_impact_report": breadth_impact_report,
         "forecast_price_levels": forecast_price_levels,
+        "price_volume_structure": price_volume_structure,
+        "confluence_score": confluence_score,
+        "market_alerts": market_alerts,
         "feature_snapshot_v2": intelligence_v2["feature_snapshot_v2"],
         "feature_snapshot_v3": intelligence_v3["feature_snapshot_v3"],
         "model_confidence_by_symbol": intelligence_v4["model_confidence_by_symbol"],
@@ -280,6 +316,9 @@ def main() -> int:
     _write_json(public_dir / "news-event-status.json", news_event_bundle)
     _write_json(public_dir / "breadth-impact-report.json", breadth_impact_report)
     _write_json(public_dir / "forecast-price-levels.json", forecast_price_levels)
+    _write_json(public_dir / "price-volume-structure.json", price_volume_structure)
+    _write_json(public_dir / "confluence-score.json", confluence_score)
+    _write_json(public_dir / "market-alerts.json", market_alerts)
     _write_json(public_dir / "high-confidence-signal-report.json", intelligence_v3["high_confidence_signal_report"])
     _write_json(public_dir / "high-confidence-edge-report.json", intelligence_v4["high_confidence_edge_report"])
     _write_json(public_dir / "forecast-records.json", forecast_records)
@@ -300,6 +339,9 @@ def main() -> int:
     _write_news_event_status_report(PROJECT_ROOT / "outputs" / "news_event_status.md", news_event_bundle)
     _write_breadth_impact_status_report(PROJECT_ROOT / "outputs" / "breadth_impact_report.md", breadth_impact_report)
     _write_forecast_price_levels_report(PROJECT_ROOT / "outputs" / "forecast_price_levels.md", forecast_price_levels)
+    _write_price_volume_structure_report(PROJECT_ROOT / "outputs" / "price_volume_structure.md", price_volume_structure)
+    _write_confluence_score_report(PROJECT_ROOT / "outputs" / "confluence_score.md", confluence_score)
+    _write_market_alerts_report(PROJECT_ROOT / "outputs" / "market_alerts.md", market_alerts)
     _write_forecast_accuracy_scorecard_report(PROJECT_ROOT / "outputs" / "forecast_accuracy_scorecard.md", forecast_scorecard)
     _write_historical_replay_benchmark_report(PROJECT_ROOT / "outputs" / "historical_replay_benchmark.md", historical_replay_benchmark)
 
@@ -313,6 +355,9 @@ def main() -> int:
     print("wrote frontend/public/news-event-status.json")
     print("wrote frontend/public/breadth-impact-report.json")
     print("wrote frontend/public/forecast-price-levels.json")
+    print("wrote frontend/public/price-volume-structure.json")
+    print("wrote frontend/public/confluence-score.json")
+    print("wrote frontend/public/market-alerts.json")
     print("wrote frontend/public/high-confidence-signal-report.json")
     print("wrote frontend/public/high-confidence-edge-report.json")
     print("wrote frontend/public/forecast-records.json")
@@ -333,6 +378,9 @@ def main() -> int:
     print("wrote outputs/news_event_status.md")
     print("wrote outputs/breadth_impact_report.md")
     print("wrote outputs/forecast_price_levels.md")
+    print("wrote outputs/price_volume_structure.md")
+    print("wrote outputs/confluence_score.md")
+    print("wrote outputs/market_alerts.md")
     print("wrote outputs/forecast_accuracy_scorecard.md")
     print("wrote outputs/historical_replay_benchmark.md")
     print("wrote outputs/model_leaderboard.md")
@@ -1907,6 +1955,21 @@ def _write_edge_report(path: Path, payload: dict[str, Any]) -> None:
 def _write_forecast_price_levels_report(path: Path, payload: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(render_forecast_price_levels_markdown(payload), encoding="utf-8")
+
+
+def _write_price_volume_structure_report(path: Path, payload: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(render_price_volume_structure_markdown(payload), encoding="utf-8")
+
+
+def _write_confluence_score_report(path: Path, payload: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(render_confluence_score_markdown(payload), encoding="utf-8")
+
+
+def _write_market_alerts_report(path: Path, payload: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(render_market_alerts_markdown(payload), encoding="utf-8")
 
 
 def _write_news_event_status_report(path: Path, payload: dict[str, Any]) -> None:

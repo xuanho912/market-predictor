@@ -169,13 +169,19 @@ function badgeClass(status: string | undefined): string {
   if (normalized.includes("strong_edge") || normalized.includes("support") || normalized.includes("active_model")) {
     return "border-emerald-400/35 bg-emerald-400/10 text-emerald-200";
   }
+  if (normalized.includes("high_conviction") || normalized.includes("strong")) {
+    return "border-emerald-400/35 bg-emerald-400/10 text-emerald-200";
+  }
   if (normalized.includes("moderate") || normalized.includes("mixed") || normalized.includes("candidate")) {
     return "border-cyan-400/35 bg-cyan-400/10 text-cyan-200";
+  }
+  if (normalized.includes("watch") || normalized.includes("warning")) {
+    return "border-amber-400/35 bg-amber-400/10 text-amber-200";
   }
   if (normalized.includes("weak") || normalized.includes("not_yet") || normalized.includes("insufficient")) {
     return "border-amber-400/35 bg-amber-400/10 text-amber-200";
   }
-  if (normalized.includes("risk") || normalized.includes("conflict") || normalized.includes("failed")) {
+  if (normalized.includes("risk") || normalized.includes("conflict") || normalized.includes("failed") || normalized.includes("extreme")) {
     return "border-rose-400/35 bg-rose-400/10 text-rose-200";
   }
   return "border-white/15 bg-white/5 text-slate-300";
@@ -1267,6 +1273,191 @@ function NewsEventIntelligencePanel({
   );
 }
 
+function cnAlertType(value: string | undefined): string {
+  const map: Record<string, string> = {
+    "Risk Expansion Alert": "风险扩散预警",
+    "Failed Bounce Alert": "反抽失败预警",
+    "Bounce Setup Alert": "反抽预警",
+    "Bottoming Setup Alert": "疑似底部预警",
+    "Trend Repair Alert": "趋势修复预警",
+  };
+  return value ? map[value] ?? value : "暂无强预警";
+}
+
+function cnAlertLevel(value: string | undefined): string {
+  const map: Record<string, string> = {
+    NO_ALERT: "无预警",
+    WATCH: "观察",
+    WARNING: "预警",
+    HIGH_CONVICTION: "高共振",
+    EXTREME: "极端预警",
+  };
+  return value ? map[value] ?? value : "无预警";
+}
+
+function cnConfluenceLevel(value: string | undefined): string {
+  const map: Record<string, string> = {
+    weak: "弱",
+    mixed: "分歧",
+    moderate: "中等",
+    strong: "强",
+  };
+  return value ? map[value] ?? value : "数据缺失";
+}
+
+function cnDominantPath(value: string | undefined): string {
+  const map: Record<string, string> = {
+    bounce: "反抽",
+    failed_bounce: "失败反抽",
+    downside: "下跌延续",
+    trend_repair: "趋势修复",
+    no_edge: "暂无优势",
+  };
+  return value ? map[value] ?? value : "数据缺失";
+}
+
+function normalizeEvidence(value: unknown): AnyRecord[] {
+  return Array.isArray(value) ? value.map(asRecord).filter((item) => Object.keys(item).length > 0) : [];
+}
+
+function evidenceTitle(item: AnyRecord): string {
+  return String(item.name ?? item.source ?? item.type ?? "证据");
+}
+
+function evidenceDetail(item: AnyRecord): string {
+  return String(item.detail ?? item.reason ?? item.note ?? "暂无详细解释");
+}
+
+function MarketAlertConfluencePanel({
+  dashboard,
+  selected,
+}: {
+  dashboard: PredictionDashboard;
+  selected: SimulatedSymbolPaths | undefined;
+}) {
+  if (!selected) return null;
+  const topLevelAlerts = asRecord(dashboard.market_alerts);
+  const symbolAlerts = asRecord(selected.market_alerts ?? asRecord(asRecord(topLevelAlerts.symbols)[selected.symbol]));
+  const topAlert = asRecord(symbolAlerts.strongest_alert ?? asRecord(topLevelAlerts.summary).strongest_alert);
+  const confluenceBundle = asRecord(dashboard.confluence_score);
+  const confluence = asRecord(selected.confluence ?? asRecord(asRecord(confluenceBundle.symbols)[selected.symbol]));
+  const alertType = String(topAlert.alert_type ?? "NO_ALERT");
+  const alertLevel = String(topAlert.alert_level ?? "NO_ALERT");
+  const alertScore = asNumber(topAlert.alert_score);
+  const support = normalizeEvidence(topAlert.supporting_evidence ?? confluence.supporting_evidence);
+  const conflict = normalizeEvidence(topAlert.conflicting_evidence ?? confluence.conflicting_evidence);
+  const required = asStringArray(topAlert.required_confirmation);
+  const invalidation = asStringArray(topAlert.invalidation_conditions);
+  const relatedLevels = asRecord(topAlert.related_price_levels);
+  const confluenceScore = asNumber(confluence.confluence_score);
+  const confluenceLevel = String(confluence.confluence_level ?? "mixed");
+  const dominantPath = String(confluence.dominant_path ?? "no_edge");
+  const summary = String(confluence.confluence_summary ?? "多源共振层用于判断当前主路径是否获得价格、成交量、宽度、信用、期权、flow、新闻和历史相似情景共同支持。");
+
+  return (
+    <section className="rounded-xl border border-white/10 bg-[#101819] p-5">
+      <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
+        <div>
+          <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Market Alert & Confluence</div>
+          <h2 className="mt-1 text-xl font-semibold text-white">{selected.symbol} 强预警与多源共振</h2>
+          <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-400">
+            这是预测确认层，只回答“当前路径有没有强预警和多源共振”，不是交易信号，也不是买卖建议。
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          <StatusBadge status={alertLevel} label={cnAlertLevel(alertLevel)} />
+          <StatusBadge status={confluenceLevel} label={`共振：${cnConfluenceLevel(confluenceLevel)}`} />
+          <StatusBadge status={dominantPath} label={`主导路径：${cnDominantPath(dominantPath)}`} />
+        </div>
+      </div>
+
+      <div className="mt-4 grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="rounded-lg border border-white/10 bg-black/20 p-4">
+          <div className="text-xs uppercase tracking-[0.18em] text-slate-500">Strongest Alert</div>
+          <div className="mt-2 text-2xl font-semibold text-white">{cnAlertType(alertType)}</div>
+          <div className="mt-4 grid gap-3 sm:grid-cols-3">
+            <Metric label="预警强度" value={cnAlertLevel(alertLevel)} />
+            <Metric label="预警评分" value={formatScore(alertScore)} />
+            <Metric label="验证状态" value={String(topAlert.validation_status ?? "not_yet_validated")} />
+          </div>
+          <p className="mt-4 text-sm leading-6 text-slate-400">
+            {String(topAlert.confidence ?? "当前预警仍需要前向验证。强预警必须由多个来源共同确认，不能由单一指标触发。")}
+          </p>
+        </div>
+
+        <div className="rounded-lg border border-white/10 bg-black/20 p-4">
+          <div className="text-xs uppercase tracking-[0.18em] text-slate-500">Confluence Score</div>
+          <div className="mt-2 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div className="text-4xl font-semibold text-cyan-100">{formatScore(confluenceScore)}</div>
+            <div className="text-sm text-slate-400">主导路径：{cnDominantPath(dominantPath)}</div>
+          </div>
+          <p className="mt-4 text-sm leading-6 text-slate-300">{summary}</p>
+          <div className="mt-4 grid gap-2 sm:grid-cols-3">
+            <Metric label="主路径确认价" value={formatPrice(asRecord(relatedLevels.primary_confirmation_level).price)} />
+            <Metric label="主路径失效价" value={formatPrice(asRecord(relatedLevels.primary_invalidation_level).price)} />
+            <Metric label="风险路径接管价" value={formatPrice(asRecord(relatedLevels.risk_scenario_activation_level).price)} />
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-4 grid gap-4 lg:grid-cols-2">
+        <MiniEvidenceList title="最重要支持证据" tone="supportive" items={support} empty="暂无足够多源支持证据" />
+        <MiniEvidenceList title="最重要冲突证据" tone="conflicting" items={conflict} empty="暂无明显冲突证据" />
+      </div>
+
+      <div className="mt-4 grid gap-4 lg:grid-cols-2">
+        <SimpleList title="需要确认" items={required} empty="暂无额外确认条件" />
+        <SimpleList title="路径失效 / 切换条件" items={invalidation} empty="暂无明确失效条件" />
+      </div>
+    </section>
+  );
+}
+
+function MiniEvidenceList({
+  title,
+  tone,
+  items,
+  empty,
+}: {
+  title: string;
+  tone: "supportive" | "conflicting";
+  items: AnyRecord[];
+  empty: string;
+}) {
+  const color = tone === "supportive" ? "text-emerald-200" : "text-rose-200";
+  return (
+    <div className="rounded-lg border border-white/10 bg-white/[0.03] p-4">
+      <h3 className="text-sm font-semibold text-white">{title}</h3>
+      <div className="mt-3 space-y-2">
+        {items.length ? (
+          items.slice(0, 5).map((item, index) => (
+            <div key={`${evidenceTitle(item)}-${index}`} className="rounded-lg border border-white/10 bg-black/20 p-3">
+              <div className="flex items-center justify-between gap-3">
+                <div className={`text-sm font-semibold ${color}`}>{evidenceTitle(item)}</div>
+                {asNumber(item.score) !== null ? <div className="text-xs text-slate-400">{formatScore(asNumber(item.score))}</div> : null}
+              </div>
+              <p className="mt-1 text-xs leading-5 text-slate-400">{evidenceDetail(item)}</p>
+            </div>
+          ))
+        ) : (
+          <div className="text-sm text-slate-400">{empty}</div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function SimpleList({ title, items, empty }: { title: string; items: string[]; empty: string }) {
+  return (
+    <div className="rounded-lg border border-white/10 bg-white/[0.03] p-4">
+      <h3 className="text-sm font-semibold text-white">{title}</h3>
+      <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-300">
+        {items.length ? items.slice(0, 6).map((item) => <li key={item}>· {item}</li>) : <li>{empty}</li>}
+      </ul>
+    </div>
+  );
+}
+
 function EvidenceCard({
   title,
   tone,
@@ -1533,6 +1724,7 @@ export function MarketDashboard({ dashboard }: { dashboard: PredictionDashboard 
         <ForecastSummary dashboard={data} selected={selected} />
         <IndexCards symbols={symbols} selectedSymbol={selected?.symbol ?? selectedSymbol} onSelect={setSelectedSymbol} />
         <ScenarioRankingPanel selected={selected} />
+        <MarketAlertConfluencePanel dashboard={data} selected={selected} />
         <PredictionChart selected={selected} />
         <ForecastPriceLevelsPanel selected={selected} />
         <HorizonTable selected={selected} />
