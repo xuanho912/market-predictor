@@ -2020,6 +2020,74 @@ function ModelLeaderboard({ dashboard }: { dashboard: PredictionDashboard }) {
   );
 }
 
+function StockPredictionSection({ dashboard }: { dashboard: PredictionDashboard }) {
+  const stockDashboard = asRecord(dashboard.stock_prediction_dashboard);
+  const symbols = asRecord(stockDashboard.symbols);
+  const rows = Object.entries(symbols).slice(0, 20);
+  if (!rows.length) return null;
+  const summary = asRecord(stockDashboard.summary);
+
+  return (
+    <section className="rounded-2xl border border-white/10 bg-[#101819] p-5">
+      <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
+        <div>
+          <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Stock Prediction</div>
+          <h2 className="mt-1 text-xl font-semibold text-white">个股预测模块</h2>
+          <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-400">
+            个股模块复用当前大盘背景，但独立输出个股概率路径。它不是交易系统，不输出买卖建议；财报、估值、公司新闻和个股期权缺失时会明确标记。
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          <StatusBadge status="not_yet_validated" label="个股模块：尚未验证" />
+          <StatusBadge status="active_model" label={`模型：${String(stockDashboard.model_version ?? "stock_baseline_v1")}`} />
+        </div>
+      </div>
+
+      <div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+        {rows.map(([symbol, raw]) => {
+          const payload = asRecord(raw);
+          const ranking = asRecord(payload.scenario_ranking);
+          const primary = asRecord(ranking.primary);
+          const secondary = asRecord(ranking.secondary);
+          const risk = asRecord(ranking.risk);
+          const context = asRecord(payload.market_context_for_stock);
+          const missing = asStringArray(payload.missing_data);
+          return (
+            <div key={symbol} className="rounded-xl border border-white/10 bg-black/20 p-4">
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <div className="text-lg font-semibold text-white">{symbol}</div>
+                  <div className="text-xs text-slate-500">Benchmark: {String(payload.benchmark ?? "QQQ")}</div>
+                </div>
+                <StatusBadge status={String(payload.data_status ?? "missing")} label={String(payload.data_status ?? "missing")} />
+              </div>
+              <div className="mt-4 grid grid-cols-2 gap-3 text-sm">
+                <Metric label="现价" value={formatPrice(payload.current_price)} />
+                <Metric label="大盘背景" value={String(context.context ?? "数据缺失")} />
+                <Metric label="主路径" value={String(primary.label ?? primary.scenario ?? "数据缺失")} />
+                <Metric label="主路径概率" value={formatPercent(primary.probability, 1)} />
+                <Metric label="第二路径" value={String(secondary.label ?? secondary.scenario ?? "数据缺失")} />
+                <Metric label="风险路径" value={String(risk.label ?? risk.scenario ?? "数据缺失")} />
+              </div>
+              {missing.length ? (
+                <div className="mt-3 rounded-lg border border-amber-400/20 bg-amber-400/[0.07] p-3 text-xs leading-5 text-amber-100">
+                  缺失数据：{missing.slice(0, 4).join(" / ")}
+                </div>
+              ) : null}
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="mt-4 grid gap-3 sm:grid-cols-3">
+        <Metric label="Watchlist 数量" value={String(summary.watchlist_size ?? rows.length)} />
+        <Metric label="可用个股" value={String(summary.supported_symbols ?? "数据缺失")} />
+        <Metric label="个股数据质量" value={formatScore(summary.stock_data_quality_score)} />
+      </div>
+    </section>
+  );
+}
+
 function ForecastCommandCenterCompact({
   dashboard,
   selected,
@@ -2256,6 +2324,7 @@ export function MarketDashboard({ dashboard }: { dashboard: PredictionDashboard 
         <DataFreshnessBanner dashboard={data} />
         <ForecastCommandCenterCompact dashboard={data} selected={selected} />
         <IndexCards symbols={symbols} selectedSymbol={selected?.symbol ?? selectedSymbol} onSelect={setSelectedSymbol} />
+        <StockPredictionSection dashboard={data} />
 
         <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_320px]">
           <AlertRail dashboard={data} selected={selected} className="xl:order-2" />

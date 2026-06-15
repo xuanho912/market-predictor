@@ -807,6 +807,7 @@ export type PredictionDashboard = {
   price_volume_structure?: Record<string, unknown>;
   confluence_score?: Record<string, unknown>;
   market_alerts?: Record<string, unknown>;
+  stock_prediction_dashboard?: Record<string, unknown>;
   shadow_evidence_v1?: Record<string, unknown>;
   overview: {
     as_of: string | null;
