@@ -8,6 +8,11 @@ on:
         required: false
         default: false
         type: boolean
+      ticker_list:
+        description: "Optional stock watchlist override for static stock prediction JSON, for example JD,KC,NVDA,TSLA"
+        required: false
+        default: ""
+        type: string
   push:
     branches:
       - main
@@ -72,6 +77,7 @@ jobs:
       BREADTH_CACHE_DIR: data/breadth_cache
       NEWS_EVENT_CACHE_DIR: data/news_event_cache
       EVENT_REFRESH: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.event_refresh == 'true' && 'true' || 'false' }}
+      STOCK_TICKER_LIST: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.ticker_list || '' }}
       PUBLIC_DASHBOARD_REPO: ${{ vars.PUBLIC_DASHBOARD_REPO }}
       PUBLIC_DASHBOARD_BRANCH: ${{ vars.PUBLIC_DASHBOARD_BRANCH || 'main' }}
       PUBLIC_DASHBOARD_BASE_PATH: ${{ vars.PUBLIC_DASHBOARD_BASE_PATH || '/market-predictor' }}

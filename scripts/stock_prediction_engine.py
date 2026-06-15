@@ -40,7 +40,7 @@ def build_stock_prediction_dashboard(
         price_levels = _price_levels(rows, scenarios, features)
         analogs = _stock_historical_analogs(rows, benchmark_rows, features, market_context)
         missing_data = _missing_data(payload)
-        confluence = _stock_confluence(features, market_context, scenarios, analogs, missing_data)
+        confluence = _stock_confluence(features, market_context, scenarios, analogs, missing_data, payload)
         alerts = _stock_alerts(symbol, features, market_context, scenarios, price_levels, confluence, missing_data)
         symbols[symbol] = {
             "symbol": symbol,
@@ -56,6 +56,7 @@ def build_stock_prediction_dashboard(
             "scenario_ranking": scenarios,
             "forecast_price_levels": price_levels,
             "stock_confluence": confluence,
+            "data_quality": _stock_data_quality(payload, missing_data, confluence),
             "stock_alerts": alerts,
             "historical_analogs": analogs,
             "simulated_paths": _stock_simulated_paths(rows, price_levels, scenarios),
@@ -489,92 +490,50 @@ def _price_levels(rows: list[dict[str, Any]], scenarios: dict[str, Any], feature
     }
 
 
+
 def _stock_confluence(
     features: dict[str, Any],
     market_context: dict[str, Any],
     scenarios: dict[str, Any],
     analogs: dict[str, Any],
     missing_data: list[str],
+    data_payload: dict[str, Any],
 ) -> dict[str, Any]:
-    trend = features.get("price_trend") or {}
-    volume = features.get("volume") or {}
-    rel = features.get("relative_strength") or {}
-    vol = features.get("volatility") or {}
     primary = scenarios.get("primary") or {}
-    support: list[str] = []
-    conflict: list[str] = []
-    missing: list[str] = list(missing_data)
-    score = 45.0
+    modules = _stock_confluence_modules(features, market_context, scenarios, analogs, missing_data, data_payload)
+    weights = {
+        "market_context": 0.18,
+        "sector_context": 0.12,
+        "price_structure": 0.15,
+        "volume_structure": 0.12,
+        "relative_strength": 0.13,
+        "news_event": 0.08,
+        "fundamentals_earnings": 0.07,
+        "options_volatility": 0.07,
+        "historical_analog": 0.08,
+    }
+    weighted_total = 0.0
+    weight_sum = 0.0
+    for key, module in modules.items():
+        weight = weights.get(key, 0.0)
+        module_score = _float(module.get("score")) or 50.0
+        if module.get("status") == "missing":
+            module_score = 35.0
+        elif module.get("status") == "proxy":
+            module_score = max(25.0, module_score - 5.0)
+        weighted_total += module_score * weight
+        weight_sum += weight
+    score = weighted_total / max(weight_sum, 0.01)
+    support = [str(module.get("evidence")) for module in modules.values() if module.get("status") == "supportive"]
+    conflict = [str(module.get("evidence")) for module in modules.values() if module.get("status") == "conflicting"]
+    missing = list(dict.fromkeys(list(missing_data) + [key for key, module in modules.items() if module.get("status") in {"missing", "proxy"}]))
 
-    if market_context.get("context") in {"market_tailwind", "supportive"}:
-        support.append("大盘背景支持个股主路径")
-        score += 10
-    elif market_context.get("context") in {"risk_off_pressure", "market_headwind"}:
-        conflict.append("大盘背景对个股主路径形成压力")
-        score -= 18
-
-    if _float(trend.get("distance_to_20d_ma")) and (_float(trend.get("distance_to_20d_ma")) or 0) > 0:
-        support.append("价格站上 20d 均线")
-        score += 7
-    elif (_float(trend.get("distance_to_50d_ma")) or 0) < 0:
-        conflict.append("价格仍低于 50d 均线")
-        score -= 7
-
-    if (_float(volume.get("volume_confirmation_score")) or 0) >= 60:
-        support.append("成交量结构支持当前路径")
-        score += 8
-    elif (_float(volume.get("volume_confirmation_score")) or 50) < 42:
-        conflict.append("成交量结构没有确认当前路径")
-        score -= 7
-
-    if (_float(rel.get("relative_strength_trend")) or 50) >= 60:
-        support.append("相对强弱优于 benchmark")
-        score += 9
-    elif (_float(rel.get("relative_strength_trend")) or 50) < 42:
-        conflict.append("相对强弱弱于 benchmark")
-        score -= 9
-
-    sector_rs = _float(rel.get("stock_vs_sector_20d"))
-    if sector_rs is not None and sector_rs > 0:
-        support.append("相对板块表现偏强")
-        score += 5
-    elif sector_rs is not None and sector_rs < -0.03:
-        conflict.append("相对板块表现偏弱")
-        score -= 5
-    elif sector_rs is None:
-        missing.append("sector_context")
-
-    analog_support = (analogs.get("analog_support") or "low sample").lower()
-    if analog_support == "supportive":
-        support.append("历史相似情景支持当前主路径")
-        score += 8
-    elif analog_support == "conflicting":
-        conflict.append("历史相似情景与当前主路径冲突")
-        score -= 8
-    elif analogs.get("low_sample_warning"):
-        missing.append("historical_analog_sample")
-
-    atr_pct = _float(vol.get("atr_pct")) or 0.0
-    if atr_pct > 0.08:
-        conflict.append("个股波动率较高，路径跳空/偏离风险较大")
-        score -= 6
-    elif atr_pct and atr_pct < 0.035:
-        support.append("波动率处于可控区间")
-        score += 3
-
-    if _float(primary.get("probability")) and (_float(primary.get("probability")) or 0) >= 0.34:
+    if (_float(primary.get("probability")) or 0.0) >= 0.34:
         support.append("主路径概率相对领先")
-        score += 5
+        score += 3
     if scenarios.get("close_call"):
         conflict.append("主路径和第二路径差距较小")
-        score -= 6
-
-    if "company_news" in missing_data:
-        missing.append("company_news")
-    if "fundamentals" in missing_data:
-        missing.append("fundamentals")
-    if "single_stock_options" in missing_data:
-        missing.append("single_stock_options")
+        score -= 5
 
     score -= min(len(set(missing)) * 1.5, 12)
     score = _clamp(score, 0, 100)
@@ -589,6 +548,7 @@ def _stock_confluence(
     return {
         "stock_confluence_score": round(score, 2),
         "confluence_level": level,
+        "module_scores": modules,
         "supporting_evidence": support,
         "conflicting_evidence": conflict,
         "missing_evidence": sorted(set(missing)),
@@ -603,6 +563,127 @@ def _stock_confluence(
         "validation_status": "not_yet_validated",
     }
 
+
+def _stock_confluence_modules(
+    features: dict[str, Any],
+    market_context: dict[str, Any],
+    scenarios: dict[str, Any],
+    analogs: dict[str, Any],
+    missing_data: list[str],
+    data_payload: dict[str, Any],
+) -> dict[str, Any]:
+    trend = features.get("price_trend") or {}
+    volume = features.get("volume") or {}
+    rel = features.get("relative_strength") or {}
+    vol = features.get("volatility") or {}
+    modules: dict[str, Any] = {}
+
+    context = str(market_context.get("context") or "neutral")
+    if context in {"market_tailwind", "supportive"}:
+        modules["market_context"] = _component(78, "supportive", "大盘背景支持该股主路径", f"benchmark={market_context.get('benchmark')} / {context}")
+    elif context in {"risk_off_pressure", "market_headwind"}:
+        modules["market_context"] = _component(28, "conflicting", "大盘风险背景压低个股置信度", f"benchmark={market_context.get('benchmark')} / {context}")
+    else:
+        modules["market_context"] = _component(52, "neutral", "大盘背景中性，不能单独强化个股路径", f"benchmark={market_context.get('benchmark')} / {context}")
+
+    sector_rs = _float(rel.get("stock_vs_sector_20d"))
+    sector_etf = data_payload.get("sector_etf")
+    if sector_rs is None:
+        modules["sector_context"] = _component(35, "missing", "板块过滤数据缺失", "sector ETF 或相对板块强弱不可用")
+    elif sector_rs > 0.02:
+        modules["sector_context"] = _component(72, "supportive", "个股跑赢所属板块", f"{data_payload.get('symbol')} vs {sector_etf}: {sector_rs:.2%}")
+    elif sector_rs < -0.03:
+        modules["sector_context"] = _component(30, "conflicting", "个股弱于所属板块", f"{data_payload.get('symbol')} vs {sector_etf}: {sector_rs:.2%}")
+    else:
+        modules["sector_context"] = _component(52, "neutral", "个股相对板块没有明显优势", f"{data_payload.get('symbol')} vs {sector_etf}: {sector_rs:.2%}")
+
+    dist20 = _float(trend.get("distance_to_20d_ma")) or 0.0
+    dist50 = _float(trend.get("distance_to_50d_ma")) or 0.0
+    ret5 = _float((trend.get("returns") or {}).get("5d")) or 0.0
+    price_score = _clamp(50 + dist20 * 180 + dist50 * 100 + ret5 * 140, 0, 100)
+    if price_score >= 62:
+        modules["price_structure"] = _component(price_score, "supportive", "价格结构支持主路径", "站上短中期结构或近期动量改善")
+    elif price_score <= 42:
+        modules["price_structure"] = _component(price_score, "conflicting", "价格结构与主路径冲突", "低于关键均线或近期动量偏弱")
+    else:
+        modules["price_structure"] = _component(price_score, "neutral", "价格结构中性", "尚未形成清晰突破或跌破")
+
+    volume_score = _float(volume.get("volume_confirmation_score")) or 50.0
+    if volume_score >= 62:
+        modules["volume_structure"] = _component(volume_score, "supportive", "成交量确认当前路径", "量能改善或放量上涨代理成立")
+    elif volume_score <= 42:
+        modules["volume_structure"] = _component(volume_score, "conflicting", "成交量不确认当前路径", "缩量反抽或下跌量能压力")
+    else:
+        modules["volume_structure"] = _component(volume_score, "neutral", "成交量结构中性", "量能没有明显共振")
+
+    rs_score = _float(rel.get("relative_strength_trend")) or 50.0
+    if rs_score >= 62:
+        modules["relative_strength"] = _component(rs_score, "supportive", "个股相对强于大盘/benchmark", "相对强弱 5d/20d/60d 综合偏强")
+    elif rs_score <= 42:
+        modules["relative_strength"] = _component(rs_score, "conflicting", "个股相对弱于大盘/benchmark", "相对强弱趋势偏弱")
+    else:
+        modules["relative_strength"] = _component(rs_score, "neutral", "相对强弱中性", "尚未明显跑赢或跑输")
+
+    news_status = "missing" if "company_news" in missing_data else "proxy"
+    modules["news_event"] = _component(35 if news_status == "missing" else 48, news_status, "公司新闻/事件数据未完整接入", "不伪造新闻情绪，缺失时降低置信度")
+
+    fundamentals_status = "missing" if "fundamentals" in missing_data or "earnings" in missing_data else "proxy"
+    modules["fundamentals_earnings"] = _component(35 if fundamentals_status == "missing" else 48, fundamentals_status, "财报/估值/盈利预期未完整接入", "缺失不阻断预测，但限制高置信判断")
+
+    atr_pct = _float(vol.get("atr_pct")) or 0.0
+    options_status = "missing" if "single_stock_options" in missing_data else "proxy"
+    option_score = 35 if options_status == "missing" else _clamp(55 - atr_pct * 180, 0, 100)
+    modules["options_volatility"] = _component(option_score, options_status, "个股期权/隐含波动率未完整接入", "当前用实现波动率和 ATR 作为风险代理")
+
+    analog_support = str(analogs.get("analog_support") or "low sample").lower()
+    if analog_support == "supportive":
+        modules["historical_analog"] = _component(68, "supportive", "历史相似结构支持主路径", f"samples={analogs.get('sample_count')}")
+    elif analog_support == "conflicting":
+        modules["historical_analog"] = _component(32, "conflicting", "历史相似结构与主路径冲突", f"samples={analogs.get('sample_count')}")
+    elif analogs.get("low_sample_warning"):
+        modules["historical_analog"] = _component(38, "missing", "历史相似样本不足", f"samples={analogs.get('sample_count')}")
+    else:
+        modules["historical_analog"] = _component(52, "neutral", "历史相似结构中性", f"samples={analogs.get('sample_count')}")
+
+    primary_prob = _float((scenarios.get("primary") or {}).get("probability")) or 0.0
+    if primary_prob < 0.25:
+        modules["price_structure"]["reason"] += "；主路径概率不够集中"
+    return modules
+
+
+def _component(score: float, status: str, evidence: str, reason: str) -> dict[str, Any]:
+    return {
+        "score": round(_clamp(score, 0, 100), 2),
+        "status": status,
+        "evidence": evidence,
+        "reason": reason,
+    }
+
+
+def _stock_data_quality(data_payload: dict[str, Any], missing_data: list[str], confluence: dict[str, Any]) -> dict[str, Any]:
+    categories = data_payload.get("data_categories") or {}
+    available = [key for key, value in categories.items() if value == "available"]
+    missing = [key for key, value in categories.items() if value != "available"]
+    profile = data_payload.get("company_profile") or {}
+    analog_missing = "historical_analog" in (confluence.get("missing_evidence") or [])
+    score = 100.0 * len(available) / max(len(categories), 1)
+    score -= 8 if analog_missing else 0
+    score = _clamp(score, 0, 100)
+    return {
+        "score": round(score, 2),
+        "price_available": categories.get("price") == "available",
+        "volume_available": categories.get("volume") == "available",
+        "company_profile": profile.get("status") or categories.get("company_profile") or "missing",
+        "company_news": categories.get("company_news") or "missing",
+        "fundamentals": categories.get("fundamentals") or "missing",
+        "earnings": categories.get("earnings") or "missing",
+        "single_stock_options": categories.get("single_stock_options") or "missing",
+        "sector_context": "available" if data_payload.get("sector_etf") else "missing",
+        "relative_strength": categories.get("relative_strength") or "missing",
+        "available_fields": available,
+        "missing_fields": sorted(set(missing + missing_data)),
+        "note": "Missing stock-specific news, fundamentals, earnings or options lowers confidence but does not create synthetic data.",
+    }
 
 def _stock_alerts(
     symbol: str,
@@ -851,7 +932,7 @@ def _scenario_reason(scenario: str, features: dict[str, Any], market_context: di
 
 def _missing_data(payload: dict[str, Any]) -> list[str]:
     categories = payload.get("data_categories") or {}
-    missing = [key for key, value in categories.items() if value == "missing"]
+    missing = [key for key, value in categories.items() if value != "available"]
     if payload.get("synthetic_blocked"):
         missing.append("synthetic_blocked")
     return missing
