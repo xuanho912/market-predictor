@@ -910,7 +910,13 @@ function ScenarioRankingPanel({ selected }: { selected: SimulatedSymbolPaths | u
   );
 }
 
-function PredictionChart({ selected }: { selected: SimulatedSymbolPaths | undefined }) {
+function PredictionChart({
+  dashboard,
+  selected,
+}: {
+  dashboard: PredictionDashboard;
+  selected: SimulatedSymbolPaths | undefined;
+}) {
   const svgRef = useRef<SVGSVGElement | null>(null);
   const [tooltip, setTooltip] = useState<TooltipState>(null);
 
@@ -923,9 +929,9 @@ function PredictionChart({ selected }: { selected: SimulatedSymbolPaths | undefi
     );
   }
 
-  const width = 920;
-  const height = 430;
-  const margin = { top: 34, right: 28, bottom: 50, left: 68 };
+  const width = 1100;
+  const height = 620;
+  const margin = { top: 42, right: 34, bottom: 66, left: 76 };
   const dates = selected.paths.dates;
   const splitIndex = Math.max(0, Math.min(selected.paths.split_index ?? dates.length - 1, dates.length - 1));
   const [minY, maxY] = getChartDomain(selected);
@@ -968,8 +974,7 @@ function PredictionChart({ selected }: { selected: SimulatedSymbolPaths | undefi
   const tooltipHorizon = tooltip ? getTooltipHorizon(selected, tooltip.index) : "";
 
   return (
-    <section className="grid gap-4 xl:grid-cols-[1.6fr_0.7fr]">
-      <div className="rounded-xl border border-white/10 bg-[#101819] p-5">
+    <section className="rounded-xl border border-white/10 bg-[#101819] p-5">
         <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Past + Simulated Future Path</div>
@@ -983,11 +988,12 @@ function PredictionChart({ selected }: { selected: SimulatedSymbolPaths | undefi
         <div className="relative">
           <svg
             ref={svgRef}
-            className="h-auto w-full overflow-visible rounded-lg bg-[#0a1112]"
+            className="h-[430px] w-full overflow-visible rounded-lg bg-[#0a1112] sm:h-[520px] xl:h-[620px]"
             onMouseLeave={() => setTooltip(null)}
             onMouseMove={onMove}
             role="img"
             viewBox={`0 0 ${width} ${height}`}
+            preserveAspectRatio="none"
           >
             <defs>
               <linearGradient id="confidenceFill" x1="0" x2="0" y1="0" y2="1">
@@ -1142,9 +1148,8 @@ function PredictionChart({ selected }: { selected: SimulatedSymbolPaths | undefi
             </div>
           ))}
         </div>
-      </div>
-
       <ChartExplanation selected={selected} />
+      <InlineAlertSummary dashboard={dashboard} selected={selected} />
     </section>
   );
 }
@@ -1159,21 +1164,65 @@ function ChartExplanation({ selected }: { selected: SimulatedSymbolPaths }) {
   const switchers = primarySwitchers.length ? primarySwitchers : fallbackSwitchers.length ? fallbackSwitchers : invalidationSwitchers;
 
   return (
-    <aside className="rounded-xl border border-white/10 bg-[#101819] p-5">
+    <div className="mt-5 border-t border-white/10 pt-4">
       <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Path Explanation</div>
       <h3 className="mt-1 text-lg font-semibold text-white">为什么这样排序</h3>
-      <div className="mt-4 space-y-4">
+      <div className="mt-4 grid gap-3 lg:grid-cols-3">
         <ReasonBlock title="主路径" scenario={primary} />
         <ReasonBlock title="第二路径" scenario={secondary} />
         <ReasonBlock title="风险路径" scenario={tertiary} />
       </div>
-      <div className="mt-5 rounded-lg border border-rose-400/20 bg-rose-400/[0.07] p-3">
+      <div className="mt-4 rounded-lg border border-rose-400/20 bg-rose-400/[0.07] p-3">
         <div className="text-sm font-semibold text-rose-100">主路径失效条件</div>
         <ul className="mt-2 space-y-1 text-sm text-slate-300">
           {switchers.length ? switchers.slice(0, 5).map((item) => <li key={item}>· {item}</li>) : <li>· 数据缺失</li>}
         </ul>
       </div>
-    </aside>
+    </div>
+  );
+}
+
+function InlineAlertSummary({
+  dashboard,
+  selected,
+}: {
+  dashboard: PredictionDashboard;
+  selected: SimulatedSymbolPaths | undefined;
+}) {
+  if (!selected) return null;
+  const alerts = getSymbolAlerts(dashboard, selected);
+  const rows = ALERT_TYPE_ORDER.map((type) => {
+    const alert = getAlertByType(alerts, type);
+    return {
+      type,
+      level: String(alert.alert_level ?? "NO_ALERT"),
+      score: asNumber(alert.alert_score),
+      reason: getAlertOneLineReason(alert),
+    };
+  });
+
+  return (
+    <div className="mt-4 border-t border-white/10 pt-4">
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Alerts Under The Path</div>
+          <h3 className="mt-1 text-lg font-semibold text-white">今日预警</h3>
+        </div>
+        <div className="text-xs text-slate-500">预警是路径确认层，不是确定预测</div>
+      </div>
+      <div className="mt-3 grid gap-2 md:grid-cols-2 xl:grid-cols-5">
+        {rows.map((row) => (
+          <div key={row.type} className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2">
+            <div className="flex items-center justify-between gap-2">
+              <div className="text-xs font-semibold text-slate-200">{cnAlertType(row.type)}</div>
+              <StatusBadge status={row.level} label={cnAlertLevel(row.level)} />
+            </div>
+            <div className="mt-1 text-xs text-slate-500">{formatScore(row.score)}</div>
+            <p className="mt-2 line-clamp-2 text-xs leading-5 text-slate-400">{row.reason}</p>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -1997,98 +2046,6 @@ function getAlertOneLineReason(alert: AnyRecord): string {
   return String(alert.reason ?? alert.confidence ?? "等待更多数据确认。");
 }
 
-function AlertRailContent({
-  dashboard,
-  selected,
-}: {
-  dashboard: PredictionDashboard;
-  selected: SimulatedSymbolPaths | undefined;
-}) {
-  if (!selected) return null;
-  const alerts = getSymbolAlerts(dashboard, selected);
-  const validation = getValidationStandards(dashboard);
-  const triggers = getTriggerLevels(getPriceLevelData(selected));
-  const confirmation = asRecord(triggers?.primary_confirmation_level);
-  const invalidation = asRecord(triggers?.primary_invalidation_level);
-  const riskActivation = asRecord(triggers?.risk_scenario_activation_level);
-  const trendRepair = asRecord(triggers?.trend_reversal_confirmation_level);
-
-  return (
-    <div className="space-y-4">
-      <section className="rounded-2xl border border-white/10 bg-[#101819] p-4">
-        <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Alert Rail</div>
-        <h3 className="mt-1 text-lg font-semibold text-white">今日预警</h3>
-        <div className="mt-3 space-y-2">
-          {ALERT_TYPE_ORDER.map((type) => {
-            const alert = getAlertByType(alerts, type);
-            const level = String(alert.alert_level ?? "NO_ALERT");
-            return (
-              <div key={type} className="rounded-xl border border-white/10 bg-black/20 p-3">
-                <div className="flex items-start justify-between gap-3">
-                  <div className="text-sm font-semibold text-slate-100">{cnAlertType(type)}</div>
-                  <div className="shrink-0 text-right">
-                    <StatusBadge status={level} label={cnAlertLevel(level)} />
-                    <div className="mt-1 text-xs text-slate-500">{formatScore(asNumber(alert.alert_score))}</div>
-                  </div>
-                </div>
-                <p className="mt-2 line-clamp-2 text-xs leading-5 text-slate-400">{getAlertOneLineReason(alert)}</p>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      <section className="rounded-2xl border border-white/10 bg-[#101819] p-4">
-        <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Key Levels</div>
-        <h3 className="mt-1 text-lg font-semibold text-white">关键价位</h3>
-        <div className="mt-3 grid gap-3">
-          <CompactLevel label="确认价" level={confirmation} />
-          <CompactLevel label="失效价" level={invalidation} />
-          <CompactLevel label="风险接管价" level={riskActivation} />
-          <CompactLevel label="趋势修复价" level={trendRepair} />
-        </div>
-      </section>
-
-      <section className="rounded-2xl border border-white/10 bg-[#101819] p-4">
-        <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Validation</div>
-        <h3 className="mt-1 text-lg font-semibold text-white">验证状态</h3>
-        <div className="mt-3 grid gap-3">
-          <Metric label="Active model" value={validation.activeModel} />
-          <Metric label="完成样本" value={getCompletedSamplesText(dashboard)} />
-          <Metric label="高精度状态" value={cnValidationStatus(validation.highPrecisionStatus)} badge={validation.highPrecisionStatus} />
-        </div>
-        <p className="mt-3 text-xs leading-5 text-amber-100">
-          前向样本不足时，页面必须继续显示 not_yet_validated，不能包装成稳定预测能力。
-        </p>
-      </section>
-    </div>
-  );
-}
-
-function AlertRail({
-  dashboard,
-  selected,
-  className = "",
-}: {
-  dashboard: PredictionDashboard;
-  selected: SimulatedSymbolPaths | undefined;
-  className?: string;
-}) {
-  return (
-    <aside className={className}>
-      <details className="rounded-2xl border border-white/10 bg-[#101819] p-4 xl:hidden">
-        <summary className="cursor-pointer text-sm font-semibold text-white">展开今日预警、关键价位和验证状态</summary>
-        <div className="mt-4">
-          <AlertRailContent dashboard={dashboard} selected={selected} />
-        </div>
-      </details>
-      <div className="hidden xl:block xl:sticky xl:top-5">
-        <AlertRailContent dashboard={dashboard} selected={selected} />
-      </div>
-    </aside>
-  );
-}
-
 function DisclosureSection({
   title,
   subtitle,
@@ -2161,13 +2118,8 @@ export function MarketDashboard({ dashboard }: { dashboard: PredictionDashboard 
         <ForecastCommandCenterCompact dashboard={data} selected={selected} />
         <IndexCards symbols={symbols} selectedSymbol={selected?.symbol ?? selectedSymbol} onSelect={setSelectedSymbol} />
 
-        <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_330px]">
-          <div className="flex flex-col gap-5">
-            <PredictionChart selected={selected} />
-            <ForecastPriceLevelsPanel selected={selected} />
-          </div>
-          <AlertRail dashboard={data} selected={selected} className="order-first xl:order-none" />
-        </div>
+        <PredictionChart dashboard={data} selected={selected} />
+        <ForecastPriceLevelsPanel selected={selected} />
 
         <EvidenceSections selected={selected} />
         <HistoricalAnalogs dashboard={data} symbol={selected?.symbol ?? selectedSymbol} />
