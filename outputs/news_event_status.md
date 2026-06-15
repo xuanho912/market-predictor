@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-06-15T13:55:23.108035+00:00`
+- generated_at: `2026-06-15T14:29:10.110312+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `23`
+- major_event_count: `24`
 - event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `0`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: We're adding to our position in a consumer bank that benefits from lower oil prices
+- source: CNBC
+- published_at: `2026-06-15T13:57:17+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -96,11 +104,3 @@
 - published_at: `2026-06-15T02:24:00+00:00`
 - importance_score: `100`
 - confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump veers toward exit in Iran war but risks loom - Reuters
-- source: Reuters
-- published_at: `2026-06-15T01:41:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
