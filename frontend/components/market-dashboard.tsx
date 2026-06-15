@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import type { MouseEvent } from "react";
+import type { MouseEvent, ReactNode } from "react";
 import type {
   CompactForecastPriceLevel,
   ForecastPriceLevel,
@@ -1902,6 +1902,221 @@ function ModelLeaderboard({ dashboard }: { dashboard: PredictionDashboard }) {
   );
 }
 
+function ForecastCommandCenterCompact({
+  dashboard,
+  selected,
+}: {
+  dashboard: PredictionDashboard;
+  selected: SimulatedSymbolPaths | undefined;
+}) {
+  if (!selected) return null;
+  const validation = getValidationStandards(dashboard);
+  const ranking = selected.scenario_ranking;
+  const primary = getPrimary(selected);
+  const secondary = getSecondary(selected);
+  const tertiary = getTertiary(selected);
+  const alerts = getSymbolAlerts(dashboard, selected);
+  const strongestAlert = asRecord(alerts.strongest_alert);
+  const confluence = getSymbolConfluence(dashboard, selected);
+  const triggers = getTriggerLevels(getPriceLevelData(selected));
+  const confirmation = asRecord(triggers?.primary_confirmation_level);
+  const invalidation = asRecord(triggers?.primary_invalidation_level);
+  const riskActivation = asRecord(triggers?.risk_scenario_activation_level);
+  const edgeStatus = getEdgeStatus(selected);
+  const strongestSymbol = dashboard.overview?.strongest_symbol ?? selected.symbol;
+
+  return (
+    <section className="rounded-2xl border border-cyan-300/20 bg-[#0c1718] p-5 shadow-2xl shadow-black/30">
+      <div className="grid gap-5 xl:grid-cols-[minmax(0,1.15fr)_0.85fr]">
+        <div>
+          <div className="text-xs uppercase tracking-[0.24em] text-cyan-200/80">Forecast Command Center</div>
+          <h2 className="mt-2 text-2xl font-semibold text-white">预测指挥中心</h2>
+          <p className="mt-3 max-w-4xl text-sm leading-6 text-slate-200">
+            {buildCommandCenterSentence(dashboard, selected, alerts, confluence)}
+          </p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            <StatusBadge status={edgeStatus} label={cnEdgeStatus(edgeStatus)} />
+            <StatusBadge status={validation.validatedStatus} label={cnValidationStatus(validation.validatedStatus)} />
+            <StatusBadge
+              status={String(strongestAlert.alert_level ?? "NO_ALERT")}
+              label={cnAlertLevel(String(strongestAlert.alert_level ?? "NO_ALERT"))}
+            />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-2">
+          <Metric label="最强指数" value={strongestSymbol} />
+          <Metric label="Edge status" value={cnEdgeStatus(edgeStatus)} badge={edgeStatus} />
+          <Metric label="模型可信度" value={formatScore(getConfidenceScore(selected))} />
+          <Metric label="信号确认" value={formatScore(getConfirmationScore(selected))} />
+          <Metric label="多源共振" value={formatScore(asNumber(confluence.confluence_score))} />
+          <Metric label="前向验证" value={cnValidationStatus(validation.highPrecisionStatus)} badge={validation.highPrecisionStatus} />
+        </div>
+      </div>
+
+      <div className="mt-5 grid gap-3 lg:grid-cols-3">
+        <div className="rounded-xl border border-emerald-300/20 bg-emerald-300/[0.07] p-4">
+          <div className="text-xs uppercase tracking-[0.18em] text-emerald-200/80">最可能路径</div>
+          <div className="mt-2 text-xl font-semibold text-white">{primary?.label ?? cnScenario(primary?.scenario)}</div>
+          <div className="mt-2 text-3xl font-semibold text-emerald-200">{formatPercent(primary?.probability, 1)}</div>
+          <p className="mt-3 text-xs leading-5 text-slate-300">{primary?.reason ?? "主路径理由数据缺失。"}</p>
+        </div>
+        <div className="rounded-xl border border-cyan-300/20 bg-cyan-300/[0.06] p-4">
+          <div className="text-xs uppercase tracking-[0.18em] text-cyan-200/80">第二路径</div>
+          <div className="mt-2 text-xl font-semibold text-white">{secondary?.label ?? cnScenario(secondary?.scenario)}</div>
+          <div className="mt-2 text-3xl font-semibold text-cyan-200">{formatPercent(secondary?.probability, 1)}</div>
+          <p className="mt-3 text-xs leading-5 text-slate-300">
+            主次差距：{formatGap(ranking?.primary_secondary_gap)}。{ranking?.close_call ? "路径分歧较大。" : "主路径有一定领先。"}
+          </p>
+        </div>
+        <div className="rounded-xl border border-rose-300/20 bg-rose-300/[0.06] p-4">
+          <div className="text-xs uppercase tracking-[0.18em] text-rose-200/80">风险路径</div>
+          <div className="mt-2 text-xl font-semibold text-white">{tertiary?.label ?? cnScenario(tertiary?.scenario)}</div>
+          <div className="mt-2 text-3xl font-semibold text-rose-200">{formatPercent(tertiary?.probability, 1)}</div>
+          <p className="mt-3 text-xs leading-5 text-slate-300">{tertiary?.reason ?? "风险路径理由数据缺失。"}</p>
+        </div>
+      </div>
+
+      <div className="mt-4 grid gap-3 md:grid-cols-3">
+        <CompactLevel label="主路径确认价" level={confirmation} />
+        <CompactLevel label="主路径失效价" level={invalidation} />
+        <CompactLevel label="风险路径接管价" level={riskActivation} />
+      </div>
+      <p className="mt-3 text-xs leading-5 text-amber-100">
+        当前预测仍处于前向验证期。这里展示的是概率路径和情景价位，不是确定预测，也不是买卖建议。
+      </p>
+    </section>
+  );
+}
+
+function getAlertOneLineReason(alert: AnyRecord): string {
+  const support = normalizeEvidence(alert.supporting_evidence);
+  const conflict = normalizeEvidence(alert.conflicting_evidence);
+  const first = support[0] ?? conflict[0];
+  if (first) return evidenceDetail(first);
+  return String(alert.reason ?? alert.confidence ?? "等待更多数据确认。");
+}
+
+function AlertRailContent({
+  dashboard,
+  selected,
+}: {
+  dashboard: PredictionDashboard;
+  selected: SimulatedSymbolPaths | undefined;
+}) {
+  if (!selected) return null;
+  const alerts = getSymbolAlerts(dashboard, selected);
+  const validation = getValidationStandards(dashboard);
+  const triggers = getTriggerLevels(getPriceLevelData(selected));
+  const confirmation = asRecord(triggers?.primary_confirmation_level);
+  const invalidation = asRecord(triggers?.primary_invalidation_level);
+  const riskActivation = asRecord(triggers?.risk_scenario_activation_level);
+  const trendRepair = asRecord(triggers?.trend_reversal_confirmation_level);
+
+  return (
+    <div className="space-y-4">
+      <section className="rounded-2xl border border-white/10 bg-[#101819] p-4">
+        <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Alert Rail</div>
+        <h3 className="mt-1 text-lg font-semibold text-white">今日预警</h3>
+        <div className="mt-3 space-y-2">
+          {ALERT_TYPE_ORDER.map((type) => {
+            const alert = getAlertByType(alerts, type);
+            const level = String(alert.alert_level ?? "NO_ALERT");
+            return (
+              <div key={type} className="rounded-xl border border-white/10 bg-black/20 p-3">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="text-sm font-semibold text-slate-100">{cnAlertType(type)}</div>
+                  <div className="shrink-0 text-right">
+                    <StatusBadge status={level} label={cnAlertLevel(level)} />
+                    <div className="mt-1 text-xs text-slate-500">{formatScore(asNumber(alert.alert_score))}</div>
+                  </div>
+                </div>
+                <p className="mt-2 line-clamp-2 text-xs leading-5 text-slate-400">{getAlertOneLineReason(alert)}</p>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="rounded-2xl border border-white/10 bg-[#101819] p-4">
+        <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Key Levels</div>
+        <h3 className="mt-1 text-lg font-semibold text-white">关键价位</h3>
+        <div className="mt-3 grid gap-3">
+          <CompactLevel label="确认价" level={confirmation} />
+          <CompactLevel label="失效价" level={invalidation} />
+          <CompactLevel label="风险接管价" level={riskActivation} />
+          <CompactLevel label="趋势修复价" level={trendRepair} />
+        </div>
+      </section>
+
+      <section className="rounded-2xl border border-white/10 bg-[#101819] p-4">
+        <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Validation</div>
+        <h3 className="mt-1 text-lg font-semibold text-white">验证状态</h3>
+        <div className="mt-3 grid gap-3">
+          <Metric label="Active model" value={validation.activeModel} />
+          <Metric label="完成样本" value={getCompletedSamplesText(dashboard)} />
+          <Metric label="高精度状态" value={cnValidationStatus(validation.highPrecisionStatus)} badge={validation.highPrecisionStatus} />
+        </div>
+        <p className="mt-3 text-xs leading-5 text-amber-100">
+          前向样本不足时，页面必须继续显示 not_yet_validated，不能包装成稳定预测能力。
+        </p>
+      </section>
+    </div>
+  );
+}
+
+function AlertRail({
+  dashboard,
+  selected,
+  className = "",
+}: {
+  dashboard: PredictionDashboard;
+  selected: SimulatedSymbolPaths | undefined;
+  className?: string;
+}) {
+  return (
+    <aside className={className}>
+      <details className="rounded-2xl border border-white/10 bg-[#101819] p-4 xl:hidden">
+        <summary className="cursor-pointer text-sm font-semibold text-white">展开今日预警、关键价位和验证状态</summary>
+        <div className="mt-4">
+          <AlertRailContent dashboard={dashboard} selected={selected} />
+        </div>
+      </details>
+      <div className="hidden xl:block xl:sticky xl:top-5">
+        <AlertRailContent dashboard={dashboard} selected={selected} />
+      </div>
+    </aside>
+  );
+}
+
+function DisclosureSection({
+  title,
+  subtitle,
+  children,
+  defaultOpen = false,
+}: {
+  title: string;
+  subtitle?: string;
+  children: ReactNode;
+  defaultOpen?: boolean;
+}) {
+  return (
+    <details open={defaultOpen} className="rounded-2xl border border-white/10 bg-[#0d1516] p-4">
+      <summary className="cursor-pointer list-none">
+        <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Details</div>
+            <h2 className="mt-1 text-lg font-semibold text-white">{title}</h2>
+          </div>
+          <span className="text-xs text-slate-500">点击展开 / 收起</span>
+        </div>
+        {subtitle ? <p className="mt-2 text-sm leading-6 text-slate-400">{subtitle}</p> : null}
+      </summary>
+      <div className="mt-4 flex flex-col gap-5">{children}</div>
+    </details>
+  );
+}
+
 export function MarketDashboard({ dashboard }: { dashboard: PredictionDashboard }) {
   const [data, setData] = useState(dashboard);
   const initialSymbol = dashboard.overview?.strongest_symbol && getSymbols(dashboard)[dashboard.overview.strongest_symbol]
@@ -1943,20 +2158,45 @@ export function MarketDashboard({ dashboard }: { dashboard: PredictionDashboard 
     <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(20,184,166,0.16),_transparent_28rem),linear-gradient(180deg,#071111_0%,#0b1112_42%,#071111_100%)] px-4 py-5 text-slate-100 sm:px-6 lg:px-10">
       <div className="mx-auto flex max-w-7xl flex-col gap-5">
         <TerminalHeader dashboard={data} />
-        <ForecastCommandCenter dashboard={data} selected={selected} />
-        <ForecastSummary dashboard={data} selected={selected} />
+        <ForecastCommandCenterCompact dashboard={data} selected={selected} />
         <IndexCards symbols={symbols} selectedSymbol={selected?.symbol ?? selectedSymbol} onSelect={setSelectedSymbol} />
-        <ScenarioRankingPanel selected={selected} />
-        <MarketAlertConfluencePanel dashboard={data} selected={selected} />
-        <PredictionChart selected={selected} />
-        <ForecastPriceLevelsPanel selected={selected} />
-        <HorizonTable selected={selected} />
+
+        <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_330px]">
+          <div className="flex flex-col gap-5">
+            <PredictionChart selected={selected} />
+            <ForecastPriceLevelsPanel selected={selected} />
+          </div>
+          <AlertRail dashboard={data} selected={selected} className="order-first xl:order-none" />
+        </div>
+
         <EvidenceSections selected={selected} />
-        <NewsEventIntelligencePanel dashboard={data} selected={selected} />
         <HistoricalAnalogs dashboard={data} symbol={selected?.symbol ?? selectedSymbol} />
-        <DataQuality dashboard={data} />
-        <ForecastAccuracy dashboard={data} />
-        <ModelLeaderboard dashboard={data} />
+
+        <DisclosureSection
+          title="查看推理细节"
+          subtitle="情景排序、新闻事件、周期概率和多源共振细节放在这里，默认后置，避免抢占第一屏。"
+        >
+          <ForecastSummary dashboard={data} selected={selected} />
+          <ScenarioRankingPanel selected={selected} />
+          <MarketAlertConfluencePanel dashboard={data} selected={selected} />
+          <NewsEventIntelligencePanel dashboard={data} selected={selected} />
+          <HorizonTable selected={selected} />
+        </DisclosureSection>
+
+        <DisclosureSection
+          title="查看模型验证"
+          subtitle="这里展示前向样本、命中率、baseline/challenger 和是否达到高精度标准。样本不足时必须保持 not_yet_validated。"
+        >
+          <ForecastAccuracy dashboard={data} />
+          <ModelLeaderboard dashboard={data} />
+        </DisclosureSection>
+
+        <DisclosureSection
+          title="查看数据质量"
+          subtitle="数据源、proxy、missing、provider 状态属于审计层，默认放在页面底部。"
+        >
+          <DataQuality dashboard={data} />
+        </DisclosureSection>
       </div>
     </main>
   );
