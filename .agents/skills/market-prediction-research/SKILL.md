@@ -502,6 +502,26 @@ Hard rules:
 - Multi-source confluence must feed forecast confirmation, scenario ranking, failed-bounce risk, risk-expansion risk, trend-repair probability, forecast price levels, and the Daily Market Brief.
 - Confluence itself must be forward validated. A better-looking explanation is not proof of alpha.
 
+## 27. Stock Prediction Uses Market -> Sector -> Stock Hierarchy
+
+When extending the dashboard from index / ETF forecasts to individual stocks, do not copy the market model directly. Individual-stock prediction must use this hierarchy:
+
+```text
+Market = risk background
+Sector / industry = filter
+Stock = final forecast object
+```
+
+Hard rules:
+
+- Evaluate market context first: SPY / QQQ / IWM / DIA state, primary scenario, risk expansion alerts, VIX, credit, breadth, flow, and news.
+- If the market shows risk expansion, risk-off pressure, credit stress, volatility stress, or major event risk, cap individual-stock confidence even when the stock has strong price action.
+- Evaluate sector / industry confirmation second: sector ETF relative strength, sector participation, benchmark support, and sector conflict.
+- A stock forecast has higher information value only when market context supports the setup, sector / industry confirms, and the stock itself improves on price, volume, relative strength, and event risk.
+- If market and sector conflict with the stock, downgrade confluence to `mixed` or `weak`, raise risk-path weight, and show the conflict explicitly.
+- Do not produce stock forecasts without clear missing-data labels for fundamentals, earnings, company news, single-stock options, and true flow when unavailable.
+- Stock forecasts must remain probabilistic scenario paths, not execution instructions.
+
 ## Non-Negotiable Summary
 
 Always enforce: label-first design, walk-forward validation, regime-aware modeling, multi-source confluence, credit + liquidity + options + breadth inputs, no future leakage, no random train-test split, probability output with calibration, feature ablation, horizon-specific models, persistent prediction logs for backtesting, and Wardley Mapping build-vs-buy discipline.

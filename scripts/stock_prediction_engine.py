@@ -90,6 +90,7 @@ def build_stock_prediction_dashboard(
             "This is a probabilistic stock forecast module, not a trading system.",
             "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
             "Stock forecasts are separate from the SPY/QQQ/IWM/DIA baseline_v1 market model.",
+            "Stock hierarchy: market is the risk background, sector is the filter, stock is the final forecast object.",
         ],
     }
 
@@ -324,6 +325,7 @@ def _scenario_ranking(features: dict[str, Any], market_context: dict[str, Any], 
     dist20 = _float(trend.get("distance_to_20d_ma")) or 0.0
     dist50 = _float(trend.get("distance_to_50d_ma")) or 0.0
     rel_score = _float(rel.get("relative_strength_trend")) or 50.0
+    sector_rs = _float(rel.get("stock_vs_sector_20d"))
     volume_score = _float(volume.get("volume_confirmation_score")) or 50.0
     atr_pct = _float(vol.get("atr_pct")) or 0.03
     context = market_context.get("context")
@@ -338,6 +340,14 @@ def _scenario_ranking(features: dict[str, Any], market_context: dict[str, Any], 
     if volume_score >= 62 and ret5 > 0:
         bounce += 0.05
         trend_repair += 0.04
+    if context in {"market_tailwind", "supportive"} and sector_rs is not None and sector_rs > 0 and volume_score >= 60:
+        bounce += 0.06
+        trend_repair += 0.05
+    if context in {"risk_off_pressure", "market_headwind"}:
+        bounce *= 0.72
+        trend_repair *= 0.75
+        downside += 0.07
+        failed_bounce += 0.07
     if rel_score < 42:
         downside += 0.05
         failed_bounce += 0.04
@@ -367,7 +377,7 @@ def _scenario_ranking(features: dict[str, Any], market_context: dict[str, Any], 
         "close_call": probability_gap < 0.08,
         "supporting_signals": supporting,
         "conflicting_signals": conflicting,
-        "ranking_note": "Stock scenario probabilities combine market context, price structure, volume, relative strength and volatility. They are not validated alpha and not trading advice.",
+        "ranking_note": "Stock scenario probabilities follow market -> sector -> stock hierarchy. Market risk sets confidence, sector/industry filters the setup, and stock evidence decides the final path. They are not validated alpha and not execution advice.",
     }
 
 
@@ -386,8 +396,23 @@ def _scenario_item(item: tuple[str, float], features: dict[str, Any], market_con
         "label": labels.get(scenario, scenario),
         "probability": _round(probability),
         "reason": _scenario_reason(scenario, features, market_context),
-        "confidence": "low" if _missing_event_or_fundamental(features) else "medium",
+        "confidence": _stock_scenario_confidence(features, market_context, probability),
     }
+
+
+def _stock_scenario_confidence(features: dict[str, Any], market_context: dict[str, Any], probability: float) -> str:
+    if market_context.get("context") in {"risk_off_pressure", "market_headwind"}:
+        return "low"
+    if _missing_event_or_fundamental(features):
+        return "low" if probability < 0.35 else "medium"
+    rel_score = _float(((features.get("relative_strength") or {}).get("relative_strength_trend"))) or 50
+    volume_score = _float(((features.get("volume") or {}).get("volume_confirmation_score"))) or 50
+    sector_rs = _float(((features.get("relative_strength") or {}).get("stock_vs_sector_20d")))
+    if probability >= 0.38 and rel_score >= 60 and volume_score >= 60 and (sector_rs is None or sector_rs >= 0):
+        return "high"
+    if probability >= 0.30:
+        return "medium"
+    return "low"
 
 
 def _price_levels(rows: list[dict[str, Any]], scenarios: dict[str, Any], features: dict[str, Any]) -> dict[str, Any]:
@@ -486,7 +511,7 @@ def _stock_confluence(
         score += 10
     elif market_context.get("context") in {"risk_off_pressure", "market_headwind"}:
         conflict.append("大盘背景对个股主路径形成压力")
-        score -= 12
+        score -= 18
 
     if _float(trend.get("distance_to_20d_ma")) and (_float(trend.get("distance_to_20d_ma")) or 0) > 0:
         support.append("价格站上 20d 均线")
@@ -516,6 +541,8 @@ def _stock_confluence(
     elif sector_rs is not None and sector_rs < -0.03:
         conflict.append("相对板块表现偏弱")
         score -= 5
+    elif sector_rs is None:
+        missing.append("sector_context")
 
     analog_support = (analogs.get("analog_support") or "low sample").lower()
     if analog_support == "supportive":
@@ -567,7 +594,12 @@ def _stock_confluence(
         "missing_evidence": sorted(set(missing)),
         "dominant_path": primary.get("scenario"),
         "requires_multi_source_confirmation": True,
-        "summary": "个股强判断必须由大盘、板块、价格、成交量、相对强弱、波动率、新闻/事件和历史相似多源共振支持。",
+        "hierarchy": {
+            "market": "risk_background",
+            "sector": "filter",
+            "stock": "final_forecast_object",
+        },
+        "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "validation_status": "not_yet_validated",
     }
 
