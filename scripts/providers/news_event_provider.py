@@ -15,7 +15,9 @@ from app.services.data_providers.auto_download import DownloadedSeries
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 TARGET_SYMBOLS = ("SPY", "QQQ", "IWM", "DIA")
-NEWS_EVENT_MARKET_SYMBOLS = ("USO",)
+EQUITY_FUTURES_SYMBOLS = ("ES=F", "NQ=F", "RTY=F", "YM=F")
+OIL_PROXY_SYMBOLS = ("USO", "CL=F")
+NEWS_EVENT_MARKET_SYMBOLS = OIL_PROXY_SYMBOLS + EQUITY_FUTURES_SYMBOLS
 DEFAULT_TIMEOUT_SECONDS = 10
 MAX_GDELT_ITEMS = 40
 
@@ -25,8 +27,24 @@ EVENT_RULES: tuple[dict[str, Any], ...] = (
         "narrative": "geopolitics_easing_risk_on",
         "direction": "risk_on",
         "horizon": "1d-5d",
-        "keywords": ("ceasefire", "peace deal", "peace talks", "de-escalation", "truce", "reopening", "hormuz reopening", "diplomatic breakthrough"),
-        "assets": ("SPY", "QQQ", "IWM", "DIA", "^VIX", "HYG", "LQD", "USO", "UUP"),
+        "keywords": (
+            "ceasefire",
+            "peace deal",
+            "peace talks",
+            "de-escalation",
+            "truce",
+            "reopening",
+            "hormuz reopening",
+            "diplomatic breakthrough",
+            "us iran deal",
+            "u.s. iran deal",
+            "iran agreement",
+            "iran peace",
+            "war risk eases",
+            "geopolitical risk eases",
+            "strait of hormuz reopening",
+        ),
+        "assets": ("SPY", "QQQ", "IWM", "DIA", "^VIX", "HYG", "LQD", "USO", "CL=F", "UUP", "ES=F", "NQ=F"),
         "importance": 0.80,
     },
     {
@@ -43,8 +61,27 @@ EVENT_RULES: tuple[dict[str, Any], ...] = (
         "narrative": "oil_relief_rally",
         "direction": "risk_on",
         "horizon": "1d-5d",
-        "keywords": ("oil falls", "oil prices fall", "crude falls", "crude drops", "supply restored", "hormuz reopening", "oil shock eases"),
-        "assets": ("SPY", "QQQ", "IWM", "DIA", "USO", "XLE", "^VIX"),
+        "keywords": (
+            "oil falls",
+            "oil prices fall",
+            "oil tumbles",
+            "oil plunges",
+            "oil plunging",
+            "oil slumps",
+            "oil falling",
+            "oil drops",
+            "crude falls",
+            "crude drops",
+            "crude tumbles",
+            "crude plunges",
+            "crude plunging",
+            "brent falls",
+            "brent plunges",
+            "supply restored",
+            "hormuz reopening",
+            "oil shock eases",
+        ),
+        "assets": ("SPY", "QQQ", "IWM", "DIA", "USO", "CL=F", "XLE", "^VIX"),
         "importance": 0.74,
     },
     {
@@ -55,6 +92,44 @@ EVENT_RULES: tuple[dict[str, Any], ...] = (
         "keywords": ("oil spikes", "oil surges", "crude spikes", "crude surges", "supply disruption", "tanker attack", "hormuz threat"),
         "assets": ("SPY", "QQQ", "IWM", "DIA", "USO", "XLE", "^VIX"),
         "importance": 0.78,
+    },
+    {
+        "event_type": "market_futures_risk_on",
+        "narrative": "equity_futures_rally",
+        "direction": "risk_on",
+        "horizon": "intraday-3d",
+        "keywords": (
+            "stock futures rise",
+            "stock futures jump",
+            "stock futures surge",
+            "s&p futures rise",
+            "s&p 500 futures rise",
+            "nasdaq futures rise",
+            "dow futures rise",
+            "equity futures rally",
+            "futures point higher",
+        ),
+        "assets": ("SPY", "QQQ", "IWM", "DIA", "ES=F", "NQ=F", "RTY=F", "YM=F", "^VIX"),
+        "importance": 0.70,
+    },
+    {
+        "event_type": "market_futures_risk_off",
+        "narrative": "equity_futures_selloff",
+        "direction": "risk_off",
+        "horizon": "intraday-3d",
+        "keywords": (
+            "stock futures fall",
+            "stock futures slide",
+            "stock futures plunge",
+            "s&p futures fall",
+            "s&p 500 futures fall",
+            "nasdaq futures fall",
+            "dow futures fall",
+            "equity futures sell off",
+            "futures point lower",
+        ),
+        "assets": ("SPY", "QQQ", "IWM", "DIA", "ES=F", "NQ=F", "RTY=F", "YM=F", "^VIX"),
+        "importance": 0.72,
     },
     {
         "event_type": "fed_dovish",
@@ -303,7 +378,12 @@ def _fetch_gdelt_items() -> tuple[dict[str, Any], list[dict[str, Any]]]:
     if os.getenv("NEWS_EVENT_ENABLE_GDELT", "true").lower() in {"0", "false", "no"}:
         return {"status": "disabled", "source": "gdelt", "stale": False}, []
     cache_path = _cache_file("gdelt_market_news")
-    query = '(market OR stocks OR "stock futures" OR inflation OR Fed OR oil OR Iran OR "Strait of Hormuz" OR credit)'
+    query = (
+        '(market OR stocks OR "stock futures" OR "s&p futures" OR "nasdaq futures" '
+        'OR inflation OR Fed OR oil OR crude OR "oil falls" OR "oil plunges" '
+        'OR Iran OR "US Iran" OR "U.S. Iran" OR "peace deal" OR "ceasefire" '
+        'OR "Strait of Hormuz" OR "Hormuz reopening" OR credit)'
+    )
     params = {
         "query": query,
         "mode": "ArtList",
@@ -353,6 +433,7 @@ def _items_from_gdelt(payload: dict[str, Any]) -> list[dict[str, Any]]:
 def _classify_item(item: dict[str, Any], now: datetime) -> dict[str, Any]:
     headline = str(item.get("headline") or "").strip()
     text = f"{headline} {item.get('summary') or ''}".lower()
+    condition_tags = _event_condition_tags(text)
     best_rule: dict[str, Any] | None = None
     best_hits = 0
     for rule in EVENT_RULES:
@@ -374,10 +455,11 @@ def _classify_item(item: dict[str, Any], now: datetime) -> dict[str, Any]:
             "confidence": "low",
             "importance_score": 0,
             "freshness_score": freshness,
+            "detected_event_conditions": condition_tags,
             "provider": item.get("provider"),
         }
-    importance = int(round(min(100.0, best_rule["importance"] * 100 + best_hits * 7 + freshness * 0.10)))
-    confidence_score = min(100, 35 + best_hits * 18 + int(freshness * 0.25))
+    importance = int(round(min(100.0, best_rule["importance"] * 100 + best_hits * 7 + len(condition_tags) * 3 + freshness * 0.10)))
+    confidence_score = min(100, 35 + best_hits * 18 + len(condition_tags) * 4 + int(freshness * 0.25))
     return {
         "headline": headline,
         "source": item.get("source"),
@@ -391,8 +473,60 @@ def _classify_item(item: dict[str, Any], now: datetime) -> dict[str, Any]:
         "importance_score": importance,
         "freshness_score": freshness,
         "narrative": best_rule["narrative"],
+        "detected_event_conditions": condition_tags,
         "provider": item.get("provider"),
     }
+
+
+def _event_condition_tags(text: str) -> list[str]:
+    checks = [
+        (
+            "geopolitical_risk_easing",
+            ("peace deal", "ceasefire", "truce", "de-escalation", "war risk eases", "geopolitical risk eases", "hormuz reopening", "strait of hormuz reopening", "iran agreement", "iran peace"),
+        ),
+        (
+            "oil_shock_relief",
+            (
+                "oil falls",
+                "oil prices fall",
+                "oil tumbles",
+                "oil plunges",
+                "oil plunging",
+                "oil slumps",
+                "oil falling",
+                "oil drops",
+                "crude falls",
+                "crude drops",
+                "crude tumbles",
+                "crude plunges",
+                "crude plunging",
+                "brent falls",
+                "brent plunges",
+                "oil shock eases",
+            ),
+        ),
+        (
+            "equity_futures_rally",
+            ("stock futures rise", "stock futures jump", "stock futures surge", "s&p futures rise", "nasdaq futures rise", "dow futures rise", "equity futures rally", "futures point higher"),
+        ),
+        (
+            "geopolitical_risk_escalation",
+            ("missile", "strike", "war", "attack", "blockade", "hormuz closed", "retaliation", "invasion"),
+        ),
+        (
+            "oil_shock_risk",
+            ("oil spikes", "oil surges", "crude spikes", "supply disruption", "hormuz threat"),
+        ),
+        (
+            "equity_futures_selloff",
+            ("stock futures fall", "stock futures slide", "stock futures plunge", "futures point lower"),
+        ),
+    ]
+    tags: list[str] = []
+    for tag, keywords in checks:
+        if any(keyword in text for keyword in keywords):
+            tags.append(tag)
+    return tags
 
 
 def _detect_narrative(events: list[dict[str, Any]]) -> dict[str, Any]:
@@ -406,6 +540,7 @@ def _detect_narrative(events: list[dict[str, Any]]) -> dict[str, Any]:
             "affected_scenarios": [],
             "narrative_strength": 0,
             "narrative_direction": "mixed",
+            "detected_event_conditions": [],
         }
     grouped: dict[str, list[dict[str, Any]]] = {}
     for event in events:
@@ -421,6 +556,14 @@ def _detect_narrative(events: list[dict[str, Any]]) -> dict[str, Any]:
         for item in events
         if item not in narrative_events and _direction_to_narrative(item.get("expected_market_direction")) != direction
     ]
+    condition_tags = sorted(
+        {
+            str(tag)
+            for item in narrative_events
+            for tag in (item.get("detected_event_conditions") or [])
+            if tag
+        }
+    )
     return {
         "market_narrative": narrative_name,
         "summary": _narrative_summary(narrative_name, direction),
@@ -430,37 +573,51 @@ def _detect_narrative(events: list[dict[str, Any]]) -> dict[str, Any]:
         "affected_scenarios": _affected_scenarios(direction),
         "narrative_strength": strength,
         "narrative_direction": direction,
+        "detected_event_conditions": condition_tags,
     }
 
 
 def _price_reaction_confirmation(narrative: dict[str, Any], series_by_symbol: dict[str, DownloadedSeries]) -> dict[str, Any]:
     direction = narrative.get("narrative_direction")
-    returns = {symbol: _return(series_by_symbol.get(symbol), 1) for symbol in TARGET_SYMBOLS + ("^VIX", "HYG", "LQD", "TLT", "UUP", "USO")}
+    condition_tags = {str(tag) for tag in (narrative.get("detected_event_conditions") or []) if tag}
+    market_check_symbols = TARGET_SYMBOLS + ("^VIX", "HYG", "LQD", "TLT", "UUP") + OIL_PROXY_SYMBOLS + EQUITY_FUTURES_SYMBOLS
+    returns = {symbol: _return(series_by_symbol.get(symbol), 1) for symbol in market_check_symbols}
     equity_returns = [value for symbol, value in returns.items() if symbol in TARGET_SYMBOLS and value is not None]
     avg_equity = sum(equity_returns) / len(equity_returns) if equity_returns else None
+    futures_returns = [value for symbol in EQUITY_FUTURES_SYMBOLS if (value := returns.get(symbol)) is not None]
+    avg_equity_futures = sum(futures_returns) / len(futures_returns) if futures_returns else None
     vix = returns.get("^VIX")
     hyg_lqd = _relative_return(series_by_symbol.get("HYG"), series_by_symbol.get("LQD"), 1)
-    oil = returns.get("USO")
+    oil_returns = [value for symbol in OIL_PROXY_SYMBOLS if (value := returns.get(symbol)) is not None]
+    oil = sum(oil_returns) / len(oil_returns) if oil_returns else None
     uup = returns.get("UUP")
     tlt = returns.get("TLT")
     checks: list[tuple[bool, str]] = []
     contradictions: list[str] = []
     if direction in {"supports_bounce", "supports_trend_reversal"}:
+        equity_or_futures_positive = (
+            (avg_equity is not None and avg_equity > 0) or (avg_equity_futures is not None and avg_equity_futures > 0)
+        )
         checks = [
-            (avg_equity is not None and avg_equity > 0, "SPY/QQQ/IWM/DIA 平均上涨"),
+            (equity_or_futures_positive, "股票ETF或股指期货上涨"),
             (vix is not None and vix < 0, "VIX 下跌"),
             (hyg_lqd is not None and hyg_lqd >= -0.002, "HYG/LQD 稳定或走强"),
             (uup is None or uup < 0.004, "美元没有明显走强"),
         ]
-        if "oil" in str(narrative.get("market_narrative")):
-            checks.append((oil is not None and oil < 0, "油价代理回落"))
+        if "oil_shock_relief" in condition_tags or "oil" in str(narrative.get("market_narrative")):
+            checks.append((oil is not None and oil < 0, "油价/原油代理回落"))
     elif direction in {"supports_downside", "supports_risk_expansion"}:
+        equity_or_futures_negative = (
+            (avg_equity is not None and avg_equity < 0) or (avg_equity_futures is not None and avg_equity_futures < 0)
+        )
         checks = [
-            (avg_equity is not None and avg_equity < 0, "SPY/QQQ/IWM/DIA 平均下跌"),
+            (equity_or_futures_negative, "股票ETF或股指期货下跌"),
             (vix is not None and vix > 0, "VIX 上升"),
             (hyg_lqd is not None and hyg_lqd < 0, "HYG/LQD 走弱"),
             (uup is not None and uup > 0, "美元走强"),
         ]
+        if "oil_shock_risk" in condition_tags or "oil_shock" in str(narrative.get("market_narrative")):
+            checks.append((oil is not None and oil > 0, "油价/原油代理上升"))
     else:
         checks = []
     passed = [label for ok, label in checks if ok]
@@ -473,11 +630,14 @@ def _price_reaction_confirmation(narrative: dict[str, Any], series_by_symbol: di
         "confirmation_score": score,
         "asset_reaction_summary": {
             "avg_equity_1d_return": _round_return(avg_equity),
+            "avg_equity_futures_1d_return": _round_return(avg_equity_futures),
             "vix_1d_return": _round_return(vix),
             "hyg_lqd_1d_relative_return": _round_return(hyg_lqd),
             "oil_proxy_1d_return": _round_return(oil),
             "uup_1d_return": _round_return(uup),
             "tlt_1d_return": _round_return(tlt),
+            "equity_futures_symbols_used": [symbol for symbol in EQUITY_FUTURES_SYMBOLS if returns.get(symbol) is not None],
+            "oil_proxy_symbols_used": [symbol for symbol in OIL_PROXY_SYMBOLS if returns.get(symbol) is not None],
             "confirmed_checks": passed,
             "failed_checks": failed,
         },
@@ -686,6 +846,10 @@ def _narrative_summary(name: str, direction: str) -> str:
         "recession_fear": "增长转弱会增加下跌延续和风险扩散概率。",
         "credit_stress": "信用压力是风险扩散的重要确认信号。",
         "credit_relief": "信用缓和支持反抽或趋势修复，但仍需市场宽度确认。",
+        "equity_futures_rally": "股指期货大涨通常表示盘前风险偏好修复，但仍需要现货指数、VIX 和信用代理确认。",
+        "equity_futures_selloff": "股指期货走弱通常表示盘前风险偏好恶化，需要观察现货开盘、VIX 和信用代理是否同步恶化。",
+        "geopolitics_escalation_risk_off": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
+        "oil_shock_risk": "油价冲击会抬高通胀和增长压力，若同时伴随 VIX 上升和信用走弱，风险路径权重会提高。",
     }
     return summaries.get(name, f"当前新闻叙事方向为 {direction}，需要价格反应确认。")
 
@@ -696,7 +860,10 @@ def _headline_payload(item: dict[str, Any]) -> dict[str, Any]:
         "source": item.get("source"),
         "published_at": item.get("published_at"),
         "event_type": item.get("event_type"),
+        "expected_market_direction": item.get("expected_market_direction"),
         "importance_score": item.get("importance_score"),
+        "confidence": item.get("confidence"),
+        "detected_event_conditions": item.get("detected_event_conditions") or [],
     }
 
 

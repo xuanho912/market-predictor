@@ -152,6 +152,18 @@ function cnNarrativeDirection(value: string | undefined): string {
   return value ? map[value] ?? value : "数据缺失";
 }
 
+function cnEventCondition(value: string | undefined): string {
+  const map: Record<string, string> = {
+    geopolitical_risk_easing: "地缘风险缓和",
+    geopolitical_risk_escalation: "地缘风险升级",
+    oil_shock_relief: "油价压力释放",
+    oil_shock_risk: "油价冲击风险",
+    equity_futures_rally: "股指期货上涨",
+    equity_futures_selloff: "股指期货走弱",
+  };
+  return value ? map[value] ?? value : "未知事件线索";
+}
+
 function badgeClass(status: string | undefined): string {
   const normalized = (status ?? "").toLowerCase();
   if (normalized.includes("strong_edge") || normalized.includes("support") || normalized.includes("active_model")) {
@@ -1150,6 +1162,7 @@ function NewsEventIntelligencePanel({
   const eventRiskLevel = String(symbolNews?.event_risk_level ?? bundle.event_risk_level ?? "low");
   const validationType = String(symbolNews?.validation_type ?? bundle.validation_type ?? dashboard.validation_type ?? "daily");
   const affectedAssets = Array.isArray(narrative.affected_symbols) ? narrative.affected_symbols.map(String) : [];
+  const conditionTags = asStringArray(narrative.detected_event_conditions);
   const supports = Boolean(impact.news_supports_primary_scenario);
   const conflicts = Boolean(impact.news_conflicts_primary_scenario);
   const confirmed = Boolean(reaction.price_reaction_confirmed);
@@ -1189,6 +1202,7 @@ function NewsEventIntelligencePanel({
           <div className="mt-3 flex flex-wrap gap-2 text-xs text-slate-400">
             <span>新闻方向：{newsDirection === "risk_on" ? "risk-on" : newsDirection === "risk_off" ? "risk-off" : "mixed"}</span>
             <span>受影响资产：{affectedAssets.length ? affectedAssets.join(" / ") : "数据缺失"}</span>
+            {conditionTags.length ? <span>识别到的事件线索：{conditionTags.map(cnEventCondition).join(" / ")}</span> : null}
             <span>重大事件数：{String(bundle.major_event_count ?? events.length ?? 0)}</span>
           </div>
         </div>
@@ -1232,6 +1246,9 @@ function NewsEventIntelligencePanel({
               <div className="mt-2 flex flex-wrap gap-2 text-xs text-slate-400">
                 <span>方向：{String(event.expected_market_direction ?? "unknown")}</span>
                 <span>影响资产：{Array.isArray(event.affected_assets) ? event.affected_assets.map(String).slice(0, 8).join(" / ") : "unknown"}</span>
+                {asStringArray(event.detected_event_conditions).length ? (
+                  <span>事件线索：{asStringArray(event.detected_event_conditions).map(cnEventCondition).join(" / ")}</span>
+                ) : null}
                 <span>重要性：{formatScore(asNumber(event.importance_score))}</span>
                 <span>新鲜度：{formatScore(asNumber(event.freshness_score))}</span>
               </div>

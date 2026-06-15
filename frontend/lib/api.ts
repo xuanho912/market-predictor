@@ -556,6 +556,7 @@ export type NewsEventIntelligence = {
     affected_scenarios?: string[];
     narrative_strength?: number;
     narrative_direction?: string;
+    detected_event_conditions?: string[];
   };
   price_reaction_confirmation?: {
     price_reaction_confirmed?: boolean;
