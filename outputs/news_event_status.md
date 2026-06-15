@@ -1,20 +1,20 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-06-15T10:17:54.802044+00:00`
+- generated_at: `2026-06-15T10:30:15.897471+00:00`
 - status: `available`
-- validation_type: `daily`
+- validation_type: `event_refresh`
 - major_event_count: `23`
 - event_detection_confidence: `77`
-- event_risk_level: `medium`
-- narrative: `geopolitics_easing_risk_on`
-- narrative_direction: `supports_bounce`
+- event_risk_level: `high`
+- narrative: `geopolitics_escalation_risk_off`
+- narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
-- price_reaction_confirmed: `True`
-- confirmation_score: `100`
+- price_reaction_confirmed: `False`
+- confirmation_score: `0`
 
 ## Dashboard Note
 
-当前新闻叙事为 geopolitics_easing_risk_on，方向为 supports_bounce，已被价格反应初步确认。地缘风险缓和通常支持风险资产反抽，并降低短线风险扩散概率。
+当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，尚未被价格反应充分确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
 
 ## Economic Calendar Risk
 
