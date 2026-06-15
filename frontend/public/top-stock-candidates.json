@@ -1,0 +1,862 @@
+{
+  "version": "next_day_stock_radar_v1",
+  "generated_at": "2026-06-15T15:05:15.387016+00:00",
+  "as_of": null,
+  "model_version": "stock_baseline_v1",
+  "universe_size": 11,
+  "top_n": 20,
+  "command_center": {
+    "radar_status": "NO_STRONG_RADAR_EDGE",
+    "top_candidate": "AMD",
+    "top3_candidates": [
+      "AMD",
+      "SMCI",
+      "PLTR"
+    ],
+    "top10_count": 10,
+    "market_context_note": "market risk pressure is high for many candidates",
+    "data_freshness_note": "as_of=None",
+    "validation_status": "not_yet_validated",
+    "risk_note": "High elasticity means larger forecast movement potential, not a buy/sell recommendation."
+  },
+  "top_candidates": [
+    {
+      "rank": 1,
+      "ticker": "AMD",
+      "company_name": "Advanced Micro Devices Inc",
+      "logo": null,
+      "last_close": 546.6300048828125,
+      "forecast_date": "2026-06-15",
+      "as_of": "2026-06-15",
+      "model_version": "stock_baseline_v1",
+      "data_status": "available",
+      "candidate_type": "upside_momentum",
+      "radar_level": "MODERATE_OPPORTUNITY",
+      "final_radar_score": 53.04,
+      "elasticity_score": 100,
+      "next_day_move_probability": 0.5975,
+      "confluence_score": 42.83,
+      "catalyst_score": 23.77,
+      "volume_anomaly_score": 0,
+      "relative_strength_score": 100,
+      "squeeze_proxy_score": 35.0,
+      "risk_score": 57.81,
+      "market_context": "risk_off_pressure",
+      "sector_context": "supportive",
+      "primary_scenario": "stock_trend_repair",
+      "primary_probability": 0.274,
+      "secondary_scenario": "stock_failed_bounce",
+      "risk_scenario": "stock_failed_bounce",
+      "expected_next_day_range": {
+        "low": 528.43,
+        "mid": 545.94,
+        "high": 563.45,
+        "range_pct": 0.0641
+      },
+      "expected_next_day_low": 528.43,
+      "expected_next_day_mid": 545.94,
+      "expected_next_day_high": 563.45,
+      "upside_trigger_level": 562.64,
+      "downside_risk_level": 393.36,
+      "invalidation_level": 393.36,
+      "one_line_reason": "upside_momentum: 弹性 100 / 成交量 0 / 相对强弱 100 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 supportive",
+      "main_supporting_evidence": [
+        "个股跑赢所属板块",
+        "价格结构支持主路径",
+        "个股相对强于大盘/benchmark",
+        "历史相似结构支持主路径"
+      ],
+      "main_conflicting_evidence": [
+        "大盘风险背景压低个股置信度",
+        "成交量不确认当前路径",
+        "主路径和第二路径差距较小"
+      ],
+      "validation_status": "not_yet_validated",
+      "data_quality": 50.0,
+      "data_missing": [
+        "company_news",
+        "earnings",
+        "fundamentals",
+        "single_stock_options"
+      ],
+      "news_fields": {
+        "company_news": "missing",
+        "earnings": "missing",
+        "catalyst_note": "real company news/earnings unavailable; catalyst score capped"
+      },
+      "volume_fields": {
+        "volume_z_score": -3.8428,
+        "relative_volume_5d": null,
+        "relative_volume_20d": 0.3643,
+        "abnormal_volume_flag": false
+      },
+      "relative_strength_fields": {
+        "stock_vs_SPY_20d": 0.2697,
+        "stock_vs_QQQ_20d": 0.2449,
+        "stock_vs_benchmark_20d": 0.2449,
+        "stock_vs_sector_20d": 0.2081,
+        "relative_strength_rank": 100
+      },
+      "whether_top10_candidate": true
+    },
+    {
+      "rank": 2,
+      "ticker": "SMCI",
+      "company_name": "Super Micro Computer Inc",
+      "logo": null,
+      "last_close": 31.31999969482422,
+      "forecast_date": "2026-06-15",
+      "as_of": "2026-06-15",
+      "model_version": "stock_baseline_v1",
+      "data_status": "available",
+      "candidate_type": "failed_bounce_risk",
+      "radar_level": "WATCH",
+      "final_radar_score": 46.99,
+      "elasticity_score": 100,
+      "next_day_move_probability": 0.7063,
+      "confluence_score": 25.41,
+      "catalyst_score": 23.68,
+      "volume_anomaly_score": 43.6,
+      "relative_strength_score": 16.62,
+      "squeeze_proxy_score": 99.54,
+      "risk_score": 64.35,
+      "market_context": "risk_off_pressure",
+      "sector_context": "conflicting",
+      "primary_scenario": "stock_failed_bounce",
+      "primary_probability": 0.3253,
+      "secondary_scenario": "stock_downside_continuation",
+      "risk_scenario": "stock_failed_bounce",
+      "expected_next_day_range": {
+        "low": 28.89,
+        "mid": 31.15,
+        "high": 33.4,
+        "range_pct": 0.144
+      },
+      "expected_next_day_low": 28.89,
+      "expected_next_day_mid": 31.15,
+      "expected_next_day_high": 33.4,
+      "upside_trigger_level": 51.4,
+      "downside_risk_level": 26.29,
+      "invalidation_level": 28.35,
+      "one_line_reason": "failed_bounce_risk: 弹性 100 / 成交量 44 / 相对强弱 17 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 conflicting",
+      "main_supporting_evidence": [],
+      "main_conflicting_evidence": [
+        "大盘风险背景压低个股置信度",
+        "个股弱于所属板块",
+        "价格结构与主路径冲突",
+        "个股相对弱于大盘/benchmark"
+      ],
+      "validation_status": "not_yet_validated",
+      "data_quality": 50.0,
+      "data_missing": [
+        "company_news",
+        "earnings",
+        "fundamentals",
+        "single_stock_options"
+      ],
+      "news_fields": {
+        "company_news": "missing",
+        "earnings": "missing",
+        "catalyst_note": "real company news/earnings unavailable; catalyst score capped"
+      },
+      "volume_fields": {
+        "volume_z_score": -0.7007,
+        "relative_volume_5d": null,
+        "relative_volume_20d": 0.3822,
+        "abnormal_volume_flag": false
+      },
+      "relative_strength_fields": {
+        "stock_vs_SPY_20d": -0.0102,
+        "stock_vs_QQQ_20d": -0.035,
+        "stock_vs_benchmark_20d": -0.035,
+        "stock_vs_sector_20d": -0.0718,
+        "relative_strength_rank": 16.62
+      },
+      "whether_top10_candidate": true
+    },
+    {
+      "rank": 3,
+      "ticker": "PLTR",
+      "company_name": "Palantir Technologies Inc",
+      "logo": null,
+      "last_close": 133.3114013671875,
+      "forecast_date": "2026-06-15",
+      "as_of": "2026-06-15",
+      "model_version": "stock_baseline_v1",
+      "data_status": "available",
+      "candidate_type": "failed_bounce_risk",
+      "radar_level": "WATCH",
+      "final_radar_score": 39.54,
+      "elasticity_score": 100,
+      "next_day_move_probability": 0.672,
+      "confluence_score": 13.17,
+      "catalyst_score": 23.54,
+      "volume_anomaly_score": 29.98,
+      "relative_strength_score": 0,
+      "squeeze_proxy_score": 86.32,
+      "risk_score": 62.1,
+      "market_context": "risk_off_pressure",
+      "sector_context": "conflicting",
+      "primary_scenario": "stock_failed_bounce",
+      "primary_probability": 0.2447,
+      "secondary_scenario": "stock_downside_continuation",
+      "risk_scenario": "stock_failed_bounce",
+      "expected_next_day_range": {
+        "low": 129.29,
+        "mid": 133.02,
+        "high": 136.76,
+        "range_pct": 0.056
+      },
+      "expected_next_day_low": 129.29,
+      "expected_next_day_mid": 133.02,
+      "expected_next_day_high": 136.76,
+      "upside_trigger_level": 163.7,
+      "downside_risk_level": 124.96,
+      "invalidation_level": 126.65,
+      "one_line_reason": "failed_bounce_risk: 弹性 100 / 成交量 30 / 相对强弱 0 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 conflicting",
+      "main_supporting_evidence": [],
+      "main_conflicting_evidence": [
+        "大盘风险背景压低个股置信度",
+        "个股弱于所属板块",
+        "价格结构与主路径冲突",
+        "成交量不确认当前路径"
+      ],
+      "validation_status": "not_yet_validated",
+      "data_quality": 50.0,
+      "data_missing": [
+        "company_news",
+        "earnings",
+        "fundamentals",
+        "single_stock_options"
+      ],
+      "news_fields": {
+        "company_news": "missing",
+        "earnings": "missing",
+        "catalyst_note": "real company news/earnings unavailable; catalyst score capped"
+      },
+      "volume_fields": {
+        "volume_z_score": -1.6555,
+        "relative_volume_5d": null,
+        "relative_volume_20d": 0.3709,
+        "abnormal_volume_flag": false
+      },
+      "relative_strength_fields": {
+        "stock_vs_SPY_20d": -0.0242,
+        "stock_vs_QQQ_20d": -0.0491,
+        "stock_vs_benchmark_20d": -0.0491,
+        "stock_vs_sector_20d": -0.0859,
+        "relative_strength_rank": 0
+      },
+      "whether_top10_candidate": true
+    },
+    {
+      "rank": 4,
+      "ticker": "KC",
+      "company_name": "Kingsoft Cloud Holdings Ltd",
+      "logo": null,
+      "last_close": 11.255000114440918,
+      "forecast_date": "2026-06-15",
+      "as_of": "2026-06-15",
+      "model_version": "stock_baseline_v1",
+      "data_status": "available",
+      "candidate_type": "downside_continuation",
+      "radar_level": "WATCH",
+      "final_radar_score": 37.54,
+      "elasticity_score": 100,
+      "next_day_move_probability": 0.6419,
+      "confluence_score": 21.87,
+      "catalyst_score": 23.0,
+      "volume_anomaly_score": 18.36,
+      "relative_strength_score": 0,
+      "squeeze_proxy_score": 65.14,
+      "risk_score": 64.32,
+      "market_context": "risk_off_pressure",
+      "sector_context": "conflicting",
+      "primary_scenario": "stock_downside_continuation",
+      "primary_probability": 0.3423,
+      "secondary_scenario": "stock_failed_bounce",
+      "risk_scenario": "stock_downside_continuation",
+      "expected_next_day_range": {
+        "low": 10.89,
+        "mid": 11.22,
+        "high": 11.55,
+        "range_pct": 0.0586
+      },
+      "expected_next_day_low": 10.89,
+      "expected_next_day_mid": 11.22,
+      "expected_next_day_high": 11.55,
+      "upside_trigger_level": 15.25,
+      "downside_risk_level": 10.47,
+      "invalidation_level": 10.47,
+      "one_line_reason": "downside_continuation: 弹性 100 / 成交量 18 / 相对强弱 0 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 conflicting",
+      "main_supporting_evidence": [
+        "主路径概率相对领先"
+      ],
+      "main_conflicting_evidence": [
+        "大盘风险背景压低个股置信度",
+        "个股弱于所属板块",
+        "价格结构与主路径冲突",
+        "成交量不确认当前路径"
+      ],
+      "validation_status": "not_yet_validated",
+      "data_quality": 50.0,
+      "data_missing": [
+        "company_news",
+        "earnings",
+        "fundamentals",
+        "single_stock_options"
+      ],
+      "news_fields": {
+        "company_news": "missing",
+        "earnings": "missing",
+        "catalyst_note": "real company news/earnings unavailable; catalyst score capped"
+      },
+      "volume_fields": {
+        "volume_z_score": -2.1986,
+        "relative_volume_5d": null,
+        "relative_volume_20d": 0.1884,
+        "abnormal_volume_flag": false
+      },
+      "relative_strength_fields": {
+        "stock_vs_SPY_20d": -0.285,
+        "stock_vs_QQQ_20d": -0.3098,
+        "stock_vs_benchmark_20d": -0.3098,
+        "stock_vs_sector_20d": -0.3466,
+        "relative_strength_rank": 0
+      },
+      "whether_top10_candidate": true
+    },
+    {
+      "rank": 5,
+      "ticker": "META",
+      "company_name": "Meta Platforms Inc",
+      "logo": null,
+      "last_close": 593.0999755859375,
+      "forecast_date": "2026-06-15",
+      "as_of": "2026-06-15",
+      "model_version": "stock_baseline_v1",
+      "data_status": "available",
+      "candidate_type": "downside_continuation",
+      "radar_level": "WATCH",
+      "final_radar_score": 35.52,
+      "elasticity_score": 89.31,
+      "next_day_move_probability": 0.5855,
+      "confluence_score": 17.21,
+      "catalyst_score": 23.36,
+      "volume_anomaly_score": 19.06,
+      "relative_strength_score": 0,
+      "squeeze_proxy_score": 66.85,
+      "risk_score": 61.69,
+      "market_context": "risk_off_pressure",
+      "sector_context": "neutral",
+      "primary_scenario": "stock_downside_continuation",
+      "primary_probability": 0.2533,
+      "secondary_scenario": "stock_failed_bounce",
+      "risk_scenario": "stock_downside_continuation",
+      "expected_next_day_range": {
+        "low": 581.28,
+        "mid": 591.99,
+        "high": 602.7,
+        "range_pct": 0.0361
+      },
+      "expected_next_day_low": 581.28,
+      "expected_next_day_mid": 591.99,
+      "expected_next_day_high": 602.7,
+      "upside_trigger_level": 643.0,
+      "downside_risk_level": 557.01,
+      "invalidation_level": 557.01,
+      "one_line_reason": "downside_continuation: 弹性 89 / 成交量 19 / 相对强弱 0 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 neutral",
+      "main_supporting_evidence": [],
+      "main_conflicting_evidence": [
+        "大盘风险背景压低个股置信度",
+        "成交量不确认当前路径",
+        "个股相对弱于大盘/benchmark",
+        "历史相似结构与主路径冲突"
+      ],
+      "validation_status": "not_yet_validated",
+      "data_quality": 50.0,
+      "data_missing": [
+        "company_news",
+        "earnings",
+        "fundamentals",
+        "single_stock_options"
+      ],
+      "news_fields": {
+        "company_news": "missing",
+        "earnings": "missing",
+        "catalyst_note": "real company news/earnings unavailable; catalyst score capped"
+      },
+      "volume_fields": {
+        "volume_z_score": -2.3306,
+        "relative_volume_5d": null,
+        "relative_volume_20d": 0.3038,
+        "abnormal_volume_flag": false
+      },
+      "relative_strength_fields": {
+        "stock_vs_SPY_20d": -0.0536,
+        "stock_vs_QQQ_20d": -0.0784,
+        "stock_vs_benchmark_20d": -0.0784,
+        "stock_vs_sector_20d": -0.0009,
+        "relative_strength_rank": 0
+      },
+      "whether_top10_candidate": true
+    },
+    {
+      "rank": 6,
+      "ticker": "BABA",
+      "company_name": "Alibaba Group Holding Ltd",
+      "logo": null,
+      "last_close": 113.02999877929688,
+      "forecast_date": "2026-06-15",
+      "as_of": "2026-06-15",
+      "model_version": "stock_baseline_v1",
+      "data_status": "available",
+      "candidate_type": "downside_continuation",
+      "radar_level": "NO_EDGE",
+      "final_radar_score": 34.84,
+      "elasticity_score": 85.36,
+      "next_day_move_probability": 0.5688,
+      "confluence_score": 14.74,
+      "catalyst_score": 22.84,
+      "volume_anomaly_score": 21.45,
+      "relative_strength_score": 15.53,
+      "squeeze_proxy_score": 54.06,
+      "risk_score": 61.18,
+      "market_context": "risk_off_pressure",
+      "sector_context": "conflicting",
+      "primary_scenario": "stock_downside_continuation",
+      "primary_probability": 0.2851,
+      "secondary_scenario": "stock_failed_bounce",
+      "risk_scenario": "stock_downside_continuation",
+      "expected_next_day_range": {
+        "low": 110.97,
+        "mid": 112.84,
+        "high": 114.71,
+        "range_pct": 0.0331
+      },
+      "expected_next_day_low": 110.97,
+      "expected_next_day_mid": 112.84,
+      "expected_next_day_high": 114.71,
+      "upside_trigger_level": 136.78,
+      "downside_risk_level": 108.84,
+      "invalidation_level": 109.66,
+      "one_line_reason": "downside_continuation: 弹性 85 / 成交量 21 / 相对强弱 16 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 conflicting",
+      "main_supporting_evidence": [],
+      "main_conflicting_evidence": [
+        "大盘风险背景压低个股置信度",
+        "个股弱于所属板块",
+        "价格结构与主路径冲突",
+        "成交量不确认当前路径"
+      ],
+      "validation_status": "not_yet_validated",
+      "data_quality": 50.0,
+      "data_missing": [
+        "company_news",
+        "earnings",
+        "fundamentals",
+        "single_stock_options"
+      ],
+      "news_fields": {
+        "company_news": "missing",
+        "earnings": "missing",
+        "catalyst_note": "real company news/earnings unavailable; catalyst score capped"
+      },
+      "volume_fields": {
+        "volume_z_score": -2.2718,
+        "relative_volume_5d": null,
+        "relative_volume_20d": 0.3751,
+        "abnormal_volume_flag": false
+      },
+      "relative_strength_fields": {
+        "stock_vs_SPY_20d": -0.1667,
+        "stock_vs_QQQ_20d": -0.1915,
+        "stock_vs_benchmark_20d": -0.1915,
+        "stock_vs_sector_20d": -0.1675,
+        "relative_strength_rank": 15.53
+      },
+      "whether_top10_candidate": true
+    },
+    {
+      "rank": 7,
+      "ticker": "TSLA",
+      "company_name": "Tesla Inc",
+      "logo": null,
+      "last_close": 409.2349853515625,
+      "forecast_date": "2026-06-15",
+      "as_of": "2026-06-15",
+      "model_version": "stock_baseline_v1",
+      "data_status": "available",
+      "candidate_type": "failed_bounce_risk",
+      "radar_level": "NO_EDGE",
+      "final_radar_score": 34.27,
+      "elasticity_score": 100,
+      "next_day_move_probability": 0.5972,
+      "confluence_score": 14.77,
+      "catalyst_score": 23.6,
+      "volume_anomaly_score": 0,
+      "relative_strength_score": 7.59,
+      "squeeze_proxy_score": 60.36,
+      "risk_score": 63.34,
+      "market_context": "risk_off_pressure",
+      "sector_context": "conflicting",
+      "primary_scenario": "stock_failed_bounce",
+      "primary_probability": 0.2544,
+      "secondary_scenario": "stock_downside_continuation",
+      "risk_scenario": "stock_failed_bounce",
+      "expected_next_day_range": {
+        "low": 399.64,
+        "mid": 408.4,
+        "high": 417.15,
+        "range_pct": 0.0428
+      },
+      "expected_next_day_low": 399.64,
+      "expected_next_day_mid": 408.4,
+      "expected_next_day_high": 417.15,
+      "upside_trigger_level": 445.6,
+      "downside_risk_level": 380.15,
+      "invalidation_level": 380.15,
+      "one_line_reason": "failed_bounce_risk: 弹性 100 / 成交量 0 / 相对强弱 8 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 conflicting",
+      "main_supporting_evidence": [],
+      "main_conflicting_evidence": [
+        "大盘风险背景压低个股置信度",
+        "个股弱于所属板块",
+        "成交量不确认当前路径",
+        "个股相对弱于大盘/benchmark"
+      ],
+      "validation_status": "not_yet_validated",
+      "data_quality": 50.0,
+      "data_missing": [
+        "company_news",
+        "earnings",
+        "fundamentals",
+        "single_stock_options"
+      ],
+      "news_fields": {
+        "company_news": "missing",
+        "earnings": "missing",
+        "catalyst_note": "real company news/earnings unavailable; catalyst score capped"
+      },
+      "volume_fields": {
+        "volume_z_score": -4.3243,
+        "relative_volume_5d": null,
+        "relative_volume_20d": 0.2848,
+        "abnormal_volume_flag": false
+      },
+      "relative_strength_fields": {
+        "stock_vs_SPY_20d": -0.05,
+        "stock_vs_QQQ_20d": -0.0748,
+        "stock_vs_benchmark_20d": -0.0748,
+        "stock_vs_sector_20d": -0.0508,
+        "relative_strength_rank": 7.59
+      },
+      "whether_top10_candidate": true
+    },
+    {
+      "rank": 8,
+      "ticker": "MSFT",
+      "company_name": "Microsoft Corp",
+      "logo": null,
+      "last_close": 397.8900146484375,
+      "forecast_date": "2026-06-15",
+      "as_of": "2026-06-15",
+      "model_version": "stock_baseline_v1",
+      "data_status": "available",
+      "candidate_type": "failed_bounce_risk",
+      "radar_level": "NO_EDGE",
+      "final_radar_score": 34.02,
+      "elasticity_score": 89.92,
+      "next_day_move_probability": 0.586,
+      "confluence_score": 12.9,
+      "catalyst_score": 23.04,
+      "volume_anomaly_score": 18.15,
+      "relative_strength_score": 0,
+      "squeeze_proxy_score": 73.05,
+      "risk_score": 61.95,
+      "market_context": "risk_off_pressure",
+      "sector_context": "conflicting",
+      "primary_scenario": "stock_failed_bounce",
+      "primary_probability": 0.2589,
+      "secondary_scenario": "stock_downside_continuation",
+      "risk_scenario": "stock_failed_bounce",
+      "expected_next_day_range": {
+        "low": 390.74,
+        "mid": 397.28,
+        "high": 403.82,
+        "range_pct": 0.0329
+      },
+      "expected_next_day_low": 390.74,
+      "expected_next_day_mid": 397.28,
+      "expected_next_day_high": 403.82,
+      "upside_trigger_level": 466.32,
+      "downside_risk_level": 382.27,
+      "invalidation_level": 382.27,
+      "one_line_reason": "failed_bounce_risk: 弹性 90 / 成交量 18 / 相对强弱 0 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 conflicting",
+      "main_supporting_evidence": [],
+      "main_conflicting_evidence": [
+        "大盘风险背景压低个股置信度",
+        "个股弱于所属板块",
+        "价格结构与主路径冲突",
+        "成交量不确认当前路径"
+      ],
+      "validation_status": "not_yet_validated",
+      "data_quality": 50.0,
+      "data_missing": [
+        "company_news",
+        "earnings",
+        "fundamentals",
+        "single_stock_options"
+      ],
+      "news_fields": {
+        "company_news": "missing",
+        "earnings": "missing",
+        "catalyst_note": "real company news/earnings unavailable; catalyst score capped"
+      },
+      "volume_fields": {
+        "volume_z_score": -2.3136,
+        "relative_volume_5d": null,
+        "relative_volume_20d": 0.2517,
+        "abnormal_volume_flag": false
+      },
+      "relative_strength_fields": {
+        "stock_vs_SPY_20d": -0.0761,
+        "stock_vs_QQQ_20d": -0.101,
+        "stock_vs_benchmark_20d": -0.101,
+        "stock_vs_sector_20d": -0.1377,
+        "relative_strength_rank": 0
+      },
+      "whether_top10_candidate": true
+    },
+    {
+      "rank": 9,
+      "ticker": "NVDA",
+      "company_name": "NVIDIA Corp",
+      "logo": null,
+      "last_close": 209.49000549316406,
+      "forecast_date": "2026-06-15",
+      "as_of": "2026-06-15",
+      "model_version": "stock_baseline_v1",
+      "data_status": "available",
+      "candidate_type": "downside_continuation",
+      "radar_level": "NO_EDGE",
+      "final_radar_score": 33.84,
+      "elasticity_score": 100,
+      "next_day_move_probability": 0.5969,
+      "confluence_score": 18.11,
+      "catalyst_score": 23.45,
+      "volume_anomaly_score": 0,
+      "relative_strength_score": 2.12,
+      "squeeze_proxy_score": 58.74,
+      "risk_score": 64.12,
+      "market_context": "risk_off_pressure",
+      "sector_context": "conflicting",
+      "primary_scenario": "stock_downside_continuation",
+      "primary_probability": 0.2546,
+      "secondary_scenario": "stock_failed_bounce",
+      "risk_scenario": "stock_downside_continuation",
+      "expected_next_day_range": {
+        "low": 204.97,
+        "mid": 209.06,
+        "high": 213.15,
+        "range_pct": 0.039
+      },
+      "expected_next_day_low": 204.97,
+      "expected_next_day_mid": 209.06,
+      "expected_next_day_high": 213.15,
+      "upside_trigger_level": 232.28,
+      "downside_risk_level": 199.34,
+      "invalidation_level": 199.34,
+      "one_line_reason": "downside_continuation: 弹性 100 / 成交量 0 / 相对强弱 2 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 conflicting",
+      "main_supporting_evidence": [
+        "历史相似结构支持主路径"
+      ],
+      "main_conflicting_evidence": [
+        "大盘风险背景压低个股置信度",
+        "个股弱于所属板块",
+        "成交量不确认当前路径",
+        "个股相对弱于大盘/benchmark"
+      ],
+      "validation_status": "not_yet_validated",
+      "data_quality": 50.0,
+      "data_missing": [
+        "company_news",
+        "earnings",
+        "fundamentals",
+        "single_stock_options"
+      ],
+      "news_fields": {
+        "company_news": "missing",
+        "earnings": "missing",
+        "catalyst_note": "real company news/earnings unavailable; catalyst score capped"
+      },
+      "volume_fields": {
+        "volume_z_score": -3.7315,
+        "relative_volume_5d": null,
+        "relative_volume_20d": 0.231,
+        "abnormal_volume_flag": false
+      },
+      "relative_strength_fields": {
+        "stock_vs_SPY_20d": -0.0894,
+        "stock_vs_QQQ_20d": -0.1143,
+        "stock_vs_benchmark_20d": -0.1143,
+        "stock_vs_sector_20d": -0.151,
+        "relative_strength_rank": 2.12
+      },
+      "whether_top10_candidate": true
+    },
+    {
+      "rank": 10,
+      "ticker": "JD",
+      "company_name": "JD.com Inc",
+      "logo": null,
+      "last_close": 28.770000457763672,
+      "forecast_date": "2026-06-15",
+      "as_of": "2026-06-15",
+      "model_version": "stock_baseline_v1",
+      "data_status": "available",
+      "candidate_type": "no_edge",
+      "radar_level": "NO_EDGE",
+      "final_radar_score": 29.76,
+      "elasticity_score": 77.06,
+      "next_day_move_probability": 0.5018,
+      "confluence_score": 14.47,
+      "catalyst_score": 22.88,
+      "volume_anomaly_score": 12.87,
+      "relative_strength_score": 0,
+      "squeeze_proxy_score": 69.15,
+      "risk_score": 59.47,
+      "market_context": "risk_off_pressure",
+      "sector_context": "conflicting",
+      "primary_scenario": "stock_downside_continuation",
+      "primary_probability": 0.2778,
+      "secondary_scenario": "stock_failed_bounce",
+      "risk_scenario": "stock_downside_continuation",
+      "expected_next_day_range": {
+        "low": 28.35,
+        "mid": 28.73,
+        "high": 29.11,
+        "range_pct": 0.0264
+      },
+      "expected_next_day_low": 28.35,
+      "expected_next_day_mid": 28.73,
+      "expected_next_day_high": 29.11,
+      "upside_trigger_level": 32.83,
+      "downside_risk_level": 27.48,
+      "invalidation_level": 27.48,
+      "one_line_reason": "no_edge: 弹性 77 / 成交量 13 / 相对强弱 0 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 conflicting",
+      "main_supporting_evidence": [],
+      "main_conflicting_evidence": [
+        "大盘风险背景压低个股置信度",
+        "个股弱于所属板块",
+        "价格结构与主路径冲突",
+        "成交量不确认当前路径"
+      ],
+      "validation_status": "not_yet_validated",
+      "data_quality": 50.0,
+      "data_missing": [
+        "company_news",
+        "earnings",
+        "fundamentals",
+        "single_stock_options"
+      ],
+      "news_fields": {
+        "company_news": "missing",
+        "earnings": "missing",
+        "catalyst_note": "real company news/earnings unavailable; catalyst score capped"
+      },
+      "volume_fields": {
+        "volume_z_score": -2.5315,
+        "relative_volume_5d": null,
+        "relative_volume_20d": 0.1504,
+        "abnormal_volume_flag": false
+      },
+      "relative_strength_fields": {
+        "stock_vs_SPY_20d": -0.1204,
+        "stock_vs_QQQ_20d": -0.1452,
+        "stock_vs_benchmark_20d": -0.1452,
+        "stock_vs_sector_20d": -0.1212,
+        "relative_strength_rank": 0
+      },
+      "whether_top10_candidate": true
+    },
+    {
+      "rank": 11,
+      "ticker": "AAPL",
+      "company_name": "Apple Inc",
+      "logo": null,
+      "last_close": 295.6000061035156,
+      "forecast_date": "2026-06-15",
+      "as_of": "2026-06-15",
+      "model_version": "stock_baseline_v1",
+      "data_status": "available",
+      "candidate_type": "no_edge",
+      "radar_level": "NO_EDGE",
+      "final_radar_score": 29.25,
+      "elasticity_score": 74.11,
+      "next_day_move_probability": 0.4564,
+      "confluence_score": 16.59,
+      "catalyst_score": 23.09,
+      "volume_anomaly_score": 1.03,
+      "relative_strength_score": 23.14,
+      "squeeze_proxy_score": 43.49,
+      "risk_score": 57.95,
+      "market_context": "risk_off_pressure",
+      "sector_context": "conflicting",
+      "primary_scenario": "stock_failed_bounce",
+      "primary_probability": 0.2674,
+      "secondary_scenario": "stock_downside_continuation",
+      "risk_scenario": "stock_failed_bounce",
+      "expected_next_day_range": {
+        "low": 291.49,
+        "mid": 295.25,
+        "high": 299.02,
+        "range_pct": 0.0255
+      },
+      "expected_next_day_low": 291.49,
+      "expected_next_day_mid": 295.25,
+      "expected_next_day_high": 299.02,
+      "upside_trigger_level": 317.4,
+      "downside_risk_level": 287.17,
+      "invalidation_level": 287.38,
+      "one_line_reason": "no_edge: 弹性 74 / 成交量 1 / 相对强弱 23 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 conflicting",
+      "main_supporting_evidence": [],
+      "main_conflicting_evidence": [
+        "大盘风险背景压低个股置信度",
+        "个股弱于所属板块",
+        "成交量不确认当前路径",
+        "个股相对弱于大盘/benchmark"
+      ],
+      "validation_status": "not_yet_validated",
+      "data_quality": 50.0,
+      "data_missing": [
+        "company_news",
+        "earnings",
+        "fundamentals",
+        "single_stock_options"
+      ],
+      "news_fields": {
+        "company_news": "missing",
+        "earnings": "missing",
+        "catalyst_note": "real company news/earnings unavailable; catalyst score capped"
+      },
+      "volume_fields": {
+        "volume_z_score": -3.4847,
+        "relative_volume_5d": null,
+        "relative_volume_20d": 0.219,
+        "abnormal_volume_flag": false
+      },
+      "relative_strength_fields": {
+        "stock_vs_SPY_20d": -0.0346,
+        "stock_vs_QQQ_20d": -0.0594,
+        "stock_vs_benchmark_20d": -0.0594,
+        "stock_vs_sector_20d": -0.0962,
+        "relative_strength_rank": 23.14
+      },
+      "whether_top10_candidate": false
+    }
+  ],
+  "notes": [
+    "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
+    "Missing company news, earnings, options or real flow lowers confidence and is not filled synthetically.",
+    "Candidates are evaluated after the market dashboard context; the market remains the first layer."
+  ]
+}

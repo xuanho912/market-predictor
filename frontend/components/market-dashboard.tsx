@@ -128,6 +128,40 @@ function cnScenario(value: string | undefined): string {
   return SCENARIO_LABELS[value] ?? value;
 }
 
+function cnCandidateType(value: string | undefined): string {
+  const map: Record<string, string> = {
+    upside_momentum: "上行动量",
+    oversold_bounce: "超跌反抽",
+    high_volatility_watch: "高波动观察",
+    event_driven_move: "事件驱动",
+    gap_continuation: "跳空延续",
+    short_squeeze_proxy: "挤压代理",
+    failed_bounce_risk: "失败反抽风险",
+    downside_continuation: "下跌延续",
+    no_edge: "暂无优势",
+  };
+  return value ? map[value] ?? value : "数据缺失";
+}
+
+function cnRadarLevel(value: string | undefined): string {
+  const map: Record<string, string> = {
+    NO_EDGE: "暂无优势",
+    WATCH: "观察",
+    MODERATE_OPPORTUNITY: "中等机会",
+    HIGH_ELASTICITY: "高弹性",
+    HIGH_RISK_HIGH_VOLATILITY: "高风险高波动",
+  };
+  return value ? map[value] ?? value : "数据缺失";
+}
+
+function formatPriceRange(value: unknown): string {
+  const record = asRecord(value);
+  const low = asNumber(record.low);
+  const high = asNumber(record.high);
+  if (low === null || high === null) return "数据缺失";
+  return `${low.toFixed(2)} - ${high.toFixed(2)}`;
+}
+
 function cnEdgeStatus(value: string | undefined): string {
   const map: Record<string, string> = {
     STRONG_EDGE: "强预测优势",
@@ -2063,6 +2097,11 @@ function StockEvidenceList({
 
 function StockPredictionSection({ dashboard }: { dashboard: PredictionDashboard }) {
   const stockDashboard = asRecord(dashboard.stock_prediction_dashboard);
+  const topStockPayload = asRecord(stockDashboard.top_stock_candidates ?? dashboard.top_stock_candidates);
+  const topCandidates = Array.isArray(topStockPayload.top_candidates)
+    ? topStockPayload.top_candidates.map((item) => asRecord(item))
+    : [];
+  const radarCommand = asRecord(topStockPayload.command_center);
   const symbols = asRecord(stockDashboard.symbols);
   const rows = useMemo(() => Object.entries(symbols).slice(0, 50), [symbols]);
   const [query, setQuery] = useState("");
@@ -2121,6 +2160,77 @@ function StockPredictionSection({ dashboard }: { dashboard: PredictionDashboard 
         <div className="flex flex-wrap gap-2">
           <StatusBadge status="not_yet_validated" label="个股模块：尚未前向验证" />
           <StatusBadge status="active_model" label={`模型：${String(stockDashboard.model_version ?? "stock_baseline_v1")}`} />
+        </div>
+      </div>
+
+      <div className="mt-5 rounded-xl border border-cyan-300/20 bg-cyan-300/[0.06] p-4">
+        <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
+          <div>
+            <div className="text-xs uppercase tracking-[0.22em] text-cyan-200/70">Next-Day Stock Radar Command Center</div>
+            <h3 className="mt-1 text-2xl font-semibold text-white">次日高弹性股票候选雷达</h3>
+            <p className="mt-2 max-w-4xl text-sm leading-6 text-slate-300">
+              先筛选明天最值得盯的候选，再点开单股详情。雷达只判断概率路径、波动区间和证据共振，不提供买卖、仓位或止损建议。
+            </p>
+          </div>
+          <div className="grid min-w-[260px] grid-cols-2 gap-3">
+            <Metric label="雷达状态" value={String(radarCommand.radar_status ?? "not_yet_validated")} />
+            <Metric label="Top 1" value={String(radarCommand.top_candidate ?? "数据缺失")} />
+            <Metric label="Top 3" value={Array.isArray(radarCommand.top3_candidates) ? radarCommand.top3_candidates.join(" / ") : "数据缺失"} />
+            <Metric label="验证状态" value={String(radarCommand.validation_status ?? "not_yet_validated")} />
+          </div>
+        </div>
+
+        <div className="mt-4 overflow-x-auto">
+          <table className="w-full min-w-[1120px] text-left text-sm">
+            <thead className="text-xs uppercase tracking-[0.14em] text-slate-500">
+              <tr>
+                <th className="py-2 pr-3">Rank</th>
+                <th className="py-2 pr-3">Ticker</th>
+                <th className="py-2 pr-3">类型</th>
+                <th className="py-2 pr-3">雷达分</th>
+                <th className="py-2 pr-3">弹性</th>
+                <th className="py-2 pr-3">共振</th>
+                <th className="py-2 pr-3">催化</th>
+                <th className="py-2 pr-3">风险</th>
+                <th className="py-2 pr-3">次日区间</th>
+                <th className="py-2 pr-3">触发价</th>
+                <th className="py-2 pr-3">失效价</th>
+                <th className="py-2 pr-3">原因</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-white/10">
+              {topCandidates.slice(0, 20).map((candidate) => {
+                const ticker = String(candidate.ticker ?? "");
+                return (
+                  <tr
+                    key={`${candidate.rank}-${ticker}`}
+                    className="cursor-pointer text-slate-200 transition hover:bg-white/[0.04]"
+                    onClick={() => ticker && setSelectedStock(ticker)}
+                  >
+                    <td className="py-2 pr-3 text-slate-400">{String(candidate.rank ?? "-")}</td>
+                    <td className="py-2 pr-3 font-semibold text-white">{ticker}</td>
+                    <td className="py-2 pr-3">{cnCandidateType(String(candidate.candidate_type ?? ""))}</td>
+                    <td className="py-2 pr-3 text-cyan-100">{formatScore(asNumber(candidate.final_radar_score))}</td>
+                    <td className="py-2 pr-3">{formatScore(asNumber(candidate.elasticity_score))}</td>
+                    <td className="py-2 pr-3">{formatScore(asNumber(candidate.confluence_score))}</td>
+                    <td className="py-2 pr-3">{formatScore(asNumber(candidate.catalyst_score))}</td>
+                    <td className="py-2 pr-3 text-amber-100">{formatScore(asNumber(candidate.risk_score))}</td>
+                    <td className="py-2 pr-3">{formatPriceRange(candidate.expected_next_day_range)}</td>
+                    <td className="py-2 pr-3 text-emerald-100">{formatPrice(candidate.upside_trigger_level)}</td>
+                    <td className="py-2 pr-3 text-rose-100">{formatPrice(candidate.invalidation_level)}</td>
+                    <td className="max-w-[300px] py-2 pr-3 text-xs leading-5 text-slate-400">{String(candidate.one_line_reason ?? "")}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+          {!topCandidates.length ? (
+            <div className="py-6 text-sm text-slate-400">暂无 Top Candidates。请等待 GitHub Actions 生成 top-stock-candidates.json。</div>
+          ) : null}
+        </div>
+        <div className="mt-3 flex flex-wrap gap-2 text-xs text-slate-400">
+          <StatusBadge status="not_yet_validated" label="雷达仍处于前向验证期" />
+          <span>新闻 / 财报 / 个股期权缺失时，catalyst_score 和置信度会被压低。</span>
         </div>
       </div>
 

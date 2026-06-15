@@ -77,6 +77,12 @@ from scripts.stock_prediction_engine import (
     export_stock_forecast_records_json,
     render_stock_prediction_report,
 )
+from scripts.stock_radar_ranking_engine import (
+    build_stock_radar_validation_scorecard,
+    build_top_stock_candidates,
+    render_stock_radar_validation_scorecard,
+    render_top_stock_candidates_report,
+)
 
 
 SYMBOLS = ("SPY", "QQQ", "IWM", "DIA")
@@ -335,8 +341,17 @@ def main() -> int:
         market_dashboard=dashboard,
         write_ledger=not event_refresh,
     )
+    top_stock_candidates = build_top_stock_candidates(
+        stock_prediction_dashboard,
+        write_ledger=not event_refresh,
+    )
+    stock_radar_validation_scorecard = build_stock_radar_validation_scorecard()
     stock_forecast_records = export_stock_forecast_records_json()
+    stock_prediction_dashboard["top_stock_candidates"] = top_stock_candidates
+    stock_prediction_dashboard["stock_radar_validation_scorecard"] = stock_radar_validation_scorecard
     dashboard["stock_prediction_dashboard"] = stock_prediction_dashboard
+    dashboard["top_stock_candidates"] = top_stock_candidates
+    dashboard["stock_radar_validation_scorecard"] = stock_radar_validation_scorecard
 
     _write_json(public_dir / "alpha-v1-status.json", {
         "generated_by": "scripts/export_static_alpha_v1.py",
@@ -373,7 +388,9 @@ def main() -> int:
     _write_json(public_dir / "model-leaderboard.json", model_governance["leaderboard"])
     _write_json(public_dir / "model-promotion-status.json", model_governance["promotion_status"])
     _write_json(public_dir / "stock-prediction-dashboard.json", stock_prediction_dashboard)
+    _write_json(public_dir / "top-stock-candidates.json", top_stock_candidates)
     _write_json(public_dir / "stock-forecast-records.json", stock_forecast_records)
+    _write_json(public_dir / "stock-radar-validation-scorecard.json", stock_radar_validation_scorecard)
     _write_json(public_dir / "market-overview.json", market_overview)
     _write_json(public_dir / "simulated-paths.json", simulated_paths)
     _write_json(public_dir / "prediction-dashboard.json", dashboard)
@@ -393,6 +410,8 @@ def main() -> int:
     _write_forecast_accuracy_scorecard_report(PROJECT_ROOT / "outputs" / "forecast_accuracy_scorecard.md", forecast_scorecard)
     _write_historical_replay_benchmark_report(PROJECT_ROOT / "outputs" / "historical_replay_benchmark.md", historical_replay_benchmark)
     _write_stock_prediction_report(PROJECT_ROOT / "outputs" / "stock_prediction_report.md", stock_prediction_dashboard)
+    _write_top_stock_candidates_report(PROJECT_ROOT / "outputs" / "top_stock_candidates_report.md", top_stock_candidates)
+    _write_stock_radar_validation_report(PROJECT_ROOT / "outputs" / "stock_radar_validation_scorecard.md", stock_radar_validation_scorecard)
 
     print("wrote frontend/public/alpha-v1-status.json")
     print("wrote frontend/public/alpha-v1-analogs.json")
@@ -416,7 +435,9 @@ def main() -> int:
     print("wrote frontend/public/model-leaderboard.json")
     print("wrote frontend/public/model-promotion-status.json")
     print("wrote frontend/public/stock-prediction-dashboard.json")
+    print("wrote frontend/public/top-stock-candidates.json")
     print("wrote frontend/public/stock-forecast-records.json")
+    print("wrote frontend/public/stock-radar-validation-scorecard.json")
     print("wrote frontend/public/market-overview.json")
     print("wrote frontend/public/simulated-paths.json")
     print("wrote frontend/public/prediction-dashboard.json")
@@ -437,6 +458,8 @@ def main() -> int:
     print("wrote outputs/forecast_accuracy_scorecard.md")
     print("wrote outputs/historical_replay_benchmark.md")
     print("wrote outputs/stock_prediction_report.md")
+    print("wrote outputs/top_stock_candidates_report.md")
+    print("wrote outputs/stock_radar_validation_scorecard.md")
     print("wrote outputs/model_leaderboard.md")
     print("wrote outputs/model_promotion_rules.md")
     return 0
@@ -1433,6 +1456,16 @@ def _write_historical_replay_benchmark_report(path: Path, report: dict[str, Any]
 def _write_stock_prediction_report(path: Path, payload: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(render_stock_prediction_report(payload), encoding="utf-8")
+
+
+def _write_top_stock_candidates_report(path: Path, payload: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(render_top_stock_candidates_report(payload), encoding="utf-8")
+
+
+def _write_stock_radar_validation_report(path: Path, payload: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(render_stock_radar_validation_scorecard(payload), encoding="utf-8")
 
 
 def _write_breadth_impact_status_report(path: Path, report: dict[str, Any]) -> None:

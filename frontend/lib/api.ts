@@ -808,6 +808,8 @@ export type PredictionDashboard = {
   confluence_score?: Record<string, unknown>;
   market_alerts?: Record<string, unknown>;
   stock_prediction_dashboard?: Record<string, unknown>;
+  top_stock_candidates?: Record<string, unknown>;
+  stock_radar_validation_scorecard?: Record<string, unknown>;
   shadow_evidence_v1?: Record<string, unknown>;
   overview: {
     as_of: string | null;

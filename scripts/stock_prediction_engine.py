@@ -1143,7 +1143,7 @@ def _update_stock_forecast_records(symbols: dict[str, Any], path: Path | None = 
             },
         )
     with path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fields)
+        writer = csv.DictWriter(handle, fieldnames=fields, lineterminator="\n")
         writer.writeheader()
         for row in sorted(existing.values(), key=lambda item: (str(item.get("forecast_date")), str(item.get("symbol")))):
             writer.writerow({field: row.get(field, "") for field in fields})
@@ -1169,10 +1169,18 @@ def _parse_stock_record(row: dict[str, Any]) -> dict[str, Any]:
         "news_event_score",
         "data_quality",
         "current_price",
+        "top_rank",
+        "final_radar_score",
+        "elasticity_score",
+        "catalyst_score",
+        "risk_score",
+        "actual_next_day_return",
+        "actual_next_day_high_low_range",
     ):
         parsed[key] = _float(row.get(key))
-    for key in ("stock_specific_drivers", "expected_price_by_horizon", "next_day_expected_range", "trigger_levels"):
+    for key in ("stock_specific_drivers", "expected_price_by_horizon", "next_day_expected_range", "expected_next_day_range", "trigger_levels"):
         parsed[key] = _json_loads(row.get(key))
+    parsed["whether_top10_candidate"] = _bool_or_none(row.get("whether_top10_candidate"))
     for horizon in STOCK_LEDGER_HORIZONS:
         alias = f"actual_{horizon}_return"
         legacy = f"actual_return_{horizon}"
