@@ -945,8 +945,12 @@ def _closes(series: DownloadedSeries | None) -> list[float]:
         return []
     values: list[float] = []
     for row in series.rows:
+        if isinstance(row, dict):
+            raw_close = row.get("close", row.get("Close", row.get("adj_close", row.get("Adj Close"))))
+        else:
+            raw_close = getattr(row, "close", None)
         try:
-            close = float(row.close)
+            close = float(raw_close)
         except (TypeError, ValueError):
             continue
         if math.isfinite(close):
