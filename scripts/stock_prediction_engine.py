@@ -12,6 +12,7 @@ from typing import Any
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 HORIZONS = (1, 3, 5, 10, 20, 60)
 STOCK_MODEL_VERSION = "stock_baseline_v1"
+STOCK_LEDGER_HORIZONS = ("1d", "3d", "5d", "10d", "20d", "60d")
 
 
 def build_stock_prediction_dashboard(
@@ -960,6 +961,27 @@ def _summary(symbols: dict[str, Any], stock_data_bundle: dict[str, Any]) -> dict
     }
 
 
+def export_stock_forecast_records_json(records_path: Path | None = None, *, limit: int = 1000) -> dict[str, Any]:
+    records_path = records_path or PROJECT_ROOT / "outputs" / "stock_forecast_records.csv"
+    rows = _read_stock_records(records_path)
+    parsed = [_parse_stock_record(row) for row in rows[-limit:]]
+    return {
+        "version": "stock_forecast_records_public_v1",
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "summary": {
+            "total_records": len(rows),
+            "exported_records": len(parsed),
+            "pending_records": sum(1 for row in rows if row.get("status") != "completed"),
+            "model_versions": sorted({str(row.get("model_version") or "unknown") for row in rows}),
+            "asset_type": "stock",
+            "validation_status": "not_yet_validated",
+        },
+        "immutability_note": "Stock forecast fields are append-only by forecast_id. Future outcome fields may be backfilled; historical forecast content must not be rewritten.",
+        "not_trading_note": "This is a stock forecast validation ledger, not a trading, entry/exit or PnL ledger.",
+        "records": parsed,
+    }
+
+
 def _update_stock_forecast_records(symbols: dict[str, Any], path: Path | None = None) -> None:
     path = path or PROJECT_ROOT / "outputs" / "stock_forecast_records.csv"
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -980,8 +1002,22 @@ def _update_stock_forecast_records(symbols: dict[str, Any], path: Path | None = 
         "risk_probability",
         "confluence_score",
         "market_context",
+        "sector_context",
+        "price_structure_score",
+        "volume_confirmation_score",
+        "relative_strength_score",
+        "news_event_score",
+        "data_quality",
+        "next_day_expected_range",
+        "trigger_levels",
         "stock_specific_drivers",
         "expected_price_by_horizon",
+        "actual_1d_return",
+        "actual_3d_return",
+        "actual_5d_return",
+        "actual_10d_return",
+        "actual_20d_return",
+        "actual_60d_return",
         "actual_return_1d",
         "actual_return_3d",
         "actual_return_5d",
@@ -994,6 +1030,8 @@ def _update_stock_forecast_records(symbols: dict[str, Any], path: Path | None = 
         "primary_hit_10d",
         "primary_hit_20d",
         "primary_hit_60d",
+        "primary_hit",
+        "range_hit",
         "path_error_1d",
         "path_error_3d",
         "path_error_5d",
@@ -1004,11 +1042,9 @@ def _update_stock_forecast_records(symbols: dict[str, Any], path: Path | None = 
         "status",
     ]
     existing: dict[str, dict[str, Any]] = {}
-    if path.exists():
-        with path.open(newline="", encoding="utf-8") as handle:
-            for row in csv.DictReader(handle):
-                if row.get("forecast_id"):
-                    existing[row["forecast_id"]] = row
+    for row in _read_stock_records(path):
+        if row.get("forecast_id"):
+            existing[row["forecast_id"]] = row
     for symbol, payload in symbols.items():
         if payload.get("data_status") != "available" or not payload.get("as_of"):
             continue
@@ -1017,10 +1053,23 @@ def _update_stock_forecast_records(symbols: dict[str, Any], path: Path | None = 
         secondary = ranking.get("secondary") or {}
         risk = ranking.get("risk") or {}
         confluence = payload.get("stock_confluence") or {}
+        modules = confluence.get("module_scores") or {}
+        features = payload.get("features") or {}
+        relative_strength = features.get("relative_strength") or {}
+        price_trend = features.get("price_trend") or {}
+        volume = features.get("volume") or {}
+        data_quality = payload.get("data_quality") or {}
         price_table = (payload.get("forecast_price_levels") or {}).get("forecast_price_table") or {}
+        trigger_levels = (payload.get("forecast_price_levels") or {}).get("trigger_levels") or {}
         expected_price_by_horizon = {
             horizon: (price_table.get(horizon) or {}).get("expected_price")
-            for horizon in ("1d", "3d", "5d", "10d", "20d", "60d")
+            for horizon in STOCK_LEDGER_HORIZONS
+        }
+        one_day = price_table.get("1d") or {}
+        next_day_expected_range = {
+            "lower": one_day.get("lower_confidence_price"),
+            "upper": one_day.get("upper_confidence_price"),
+            "expected": one_day.get("expected_price"),
         }
         forecast_id = _forecast_id(payload["as_of"], STOCK_MODEL_VERSION, symbol)
         existing.setdefault(
@@ -1042,16 +1091,33 @@ def _update_stock_forecast_records(symbols: dict[str, Any], path: Path | None = 
                 "risk_probability": risk.get("probability"),
                 "confluence_score": confluence.get("stock_confluence_score"),
                 "market_context": (payload.get("market_context_for_stock") or {}).get("context"),
+                "sector_context": (modules.get("sector_context") or {}).get("status"),
+                "price_structure_score": (modules.get("price_structure") or {}).get("score"),
+                "volume_confirmation_score": volume.get("volume_confirmation_score") or (modules.get("volume_structure") or {}).get("score"),
+                "relative_strength_score": relative_strength.get("relative_strength_trend") or (modules.get("relative_strength") or {}).get("score"),
+                "news_event_score": (modules.get("news_event") or {}).get("score"),
+                "data_quality": data_quality.get("score"),
+                "next_day_expected_range": json.dumps(next_day_expected_range, ensure_ascii=False, sort_keys=True),
+                "trigger_levels": json.dumps(_compact_trigger_levels(trigger_levels), ensure_ascii=False, sort_keys=True),
                 "stock_specific_drivers": json.dumps(
                     {
-                        "supporting": payload.get("supporting_signals") or [],
-                        "conflicting": payload.get("conflicting_signals") or [],
-                        "missing": payload.get("missing_data") or [],
+                        "supporting": confluence.get("supporting_evidence") or payload.get("supporting_signals") or [],
+                        "conflicting": confluence.get("conflicting_evidence") or payload.get("conflicting_signals") or [],
+                        "missing": confluence.get("missing_evidence") or payload.get("missing_data") or [],
+                        "market_context": (payload.get("market_context_for_stock") or {}).get("context"),
+                        "sector_relative_strength_20d": relative_strength.get("stock_vs_sector_20d"),
+                        "price_close": price_trend.get("close"),
                     },
                     ensure_ascii=False,
                     sort_keys=True,
                 ),
                 "expected_price_by_horizon": json.dumps(expected_price_by_horizon, sort_keys=True),
+                "actual_1d_return": "",
+                "actual_3d_return": "",
+                "actual_5d_return": "",
+                "actual_10d_return": "",
+                "actual_20d_return": "",
+                "actual_60d_return": "",
                 "actual_return_1d": "",
                 "actual_return_3d": "",
                 "actual_return_5d": "",
@@ -1064,6 +1130,8 @@ def _update_stock_forecast_records(symbols: dict[str, Any], path: Path | None = 
                 "primary_hit_10d": "",
                 "primary_hit_20d": "",
                 "primary_hit_60d": "",
+                "primary_hit": "",
+                "range_hit": "",
                 "path_error_1d": "",
                 "path_error_3d": "",
                 "path_error_5d": "",
@@ -1079,6 +1147,74 @@ def _update_stock_forecast_records(symbols: dict[str, Any], path: Path | None = 
         writer.writeheader()
         for row in sorted(existing.values(), key=lambda item: (str(item.get("forecast_date")), str(item.get("symbol")))):
             writer.writerow({field: row.get(field, "") for field in fields})
+
+
+def _read_stock_records(path: Path) -> list[dict[str, Any]]:
+    if not path.exists():
+        return []
+    with path.open(newline="", encoding="utf-8") as handle:
+        return [dict(row) for row in csv.DictReader(handle)]
+
+
+def _parse_stock_record(row: dict[str, Any]) -> dict[str, Any]:
+    parsed = dict(row)
+    for key in (
+        "primary_probability",
+        "secondary_probability",
+        "risk_probability",
+        "confluence_score",
+        "price_structure_score",
+        "volume_confirmation_score",
+        "relative_strength_score",
+        "news_event_score",
+        "data_quality",
+        "current_price",
+    ):
+        parsed[key] = _float(row.get(key))
+    for key in ("stock_specific_drivers", "expected_price_by_horizon", "next_day_expected_range", "trigger_levels"):
+        parsed[key] = _json_loads(row.get(key))
+    for horizon in STOCK_LEDGER_HORIZONS:
+        alias = f"actual_{horizon}_return"
+        legacy = f"actual_return_{horizon}"
+        parsed[alias] = _float(row.get(alias) or row.get(legacy))
+        parsed[f"primary_hit_{horizon}"] = _bool_or_none(row.get(f"primary_hit_{horizon}"))
+        parsed[f"path_error_{horizon}"] = _float(row.get(f"path_error_{horizon}"))
+    parsed["primary_hit"] = _bool_or_none(row.get("primary_hit"))
+    parsed["range_hit"] = _bool_or_none(row.get("range_hit"))
+    return parsed
+
+
+def _json_loads(value: Any) -> Any:
+    if not value:
+        return None
+    try:
+        return json.loads(str(value))
+    except (TypeError, ValueError, json.JSONDecodeError):
+        return value
+
+
+def _bool_or_none(value: Any) -> bool | None:
+    if value in (True, "true", "True", "1", 1):
+        return True
+    if value in (False, "false", "False", "0", 0):
+        return False
+    return None
+
+
+def _compact_trigger_levels(trigger_levels: dict[str, Any]) -> dict[str, Any]:
+    keys = (
+        "primary_confirmation_level",
+        "primary_invalidation_level",
+        "risk_scenario_activation_level",
+        "trend_repair_confirmation_level",
+        "breakout_level",
+        "breakdown_level",
+        "nearest_support",
+        "nearest_resistance",
+        "bounce_target_zone",
+        "failed_bounce_warning_zone",
+    )
+    return {key: trigger_levels.get(key) for key in keys if key in trigger_levels}
 
 
 def _forecast_id(forecast_date: str, model_version: str, symbol: str) -> str:

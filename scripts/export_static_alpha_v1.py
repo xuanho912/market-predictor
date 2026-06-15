@@ -72,7 +72,11 @@ from scripts.providers.news_event_provider import (
     render_news_event_status_markdown,
 )
 from scripts.providers.stock_data_provider import fetch_stock_data_bundle, load_stock_watchlist
-from scripts.stock_prediction_engine import build_stock_prediction_dashboard, render_stock_prediction_report
+from scripts.stock_prediction_engine import (
+    build_stock_prediction_dashboard,
+    export_stock_forecast_records_json,
+    render_stock_prediction_report,
+)
 
 
 SYMBOLS = ("SPY", "QQQ", "IWM", "DIA")
@@ -331,6 +335,7 @@ def main() -> int:
         market_dashboard=dashboard,
         write_ledger=not event_refresh,
     )
+    stock_forecast_records = export_stock_forecast_records_json()
     dashboard["stock_prediction_dashboard"] = stock_prediction_dashboard
 
     _write_json(public_dir / "alpha-v1-status.json", {
@@ -368,6 +373,7 @@ def main() -> int:
     _write_json(public_dir / "model-leaderboard.json", model_governance["leaderboard"])
     _write_json(public_dir / "model-promotion-status.json", model_governance["promotion_status"])
     _write_json(public_dir / "stock-prediction-dashboard.json", stock_prediction_dashboard)
+    _write_json(public_dir / "stock-forecast-records.json", stock_forecast_records)
     _write_json(public_dir / "market-overview.json", market_overview)
     _write_json(public_dir / "simulated-paths.json", simulated_paths)
     _write_json(public_dir / "prediction-dashboard.json", dashboard)
@@ -410,6 +416,7 @@ def main() -> int:
     print("wrote frontend/public/model-leaderboard.json")
     print("wrote frontend/public/model-promotion-status.json")
     print("wrote frontend/public/stock-prediction-dashboard.json")
+    print("wrote frontend/public/stock-forecast-records.json")
     print("wrote frontend/public/market-overview.json")
     print("wrote frontend/public/simulated-paths.json")
     print("wrote frontend/public/prediction-dashboard.json")
