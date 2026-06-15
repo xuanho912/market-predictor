@@ -1,6 +1,6 @@
 # Forecast Accuracy Scorecard
 
-Generated at: `2026-06-15T11:48:28.165908+00:00`
+Generated at: `2026-06-15T12:25:50.105495+00:00`
 
 ## Sample Counts
 
@@ -11,6 +11,8 @@ Generated at: `2026-06-15T11:48:28.165908+00:00`
 - completed_10d: `0`
 - completed_20d: `0`
 - completed_60d: `0`
+- current_evidence_level: `insufficient_samples`
+- validation_warning: 当前预测准确度仍未被前向样本验证，不能称为 high precision / stable alpha / validated forecasting system。
 
 ## Primary Scenario Accuracy
 

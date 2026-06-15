@@ -37,6 +37,10 @@ from scripts.forecast_accuracy_ledger import (
     render_forecast_accuracy_scorecard_markdown,
     update_forecast_accuracy_ledger,
 )
+from scripts.data_freshness_gate import (
+    build_data_freshness_status,
+    write_data_freshness_outputs,
+)
 from scripts.historical_replay_benchmark import (
     render_historical_replay_benchmark_markdown,
     build_historical_replay_benchmark,
@@ -292,6 +296,16 @@ def main() -> int:
         "forward_report": alpha_report,
         "analogs": analogs,
     }
+    data_freshness_status = build_data_freshness_status(
+        data_quality_report=intelligence_v4["data_quality_report"],
+        dashboard_as_of=dashboard.get("as_of"),
+    )
+    _attach_data_freshness(
+        dashboard=dashboard,
+        market_overview=market_overview,
+        simulated_paths=simulated_paths,
+        data_freshness_status=data_freshness_status,
+    )
     ledger_summary = (
         _event_refresh_ledger_summary()
         if event_refresh
@@ -307,6 +321,7 @@ def main() -> int:
     dashboard["historical_replay_benchmark"] = historical_replay_benchmark
     dashboard["model_leaderboard"] = model_governance["leaderboard"]
     dashboard["model_promotion_status"] = model_governance["promotion_status"]
+    dashboard["data_freshness_status"] = data_freshness_status
 
     _write_json(public_dir / "alpha-v1-status.json", {
         "generated_by": "scripts/export_static_alpha_v1.py",
@@ -319,6 +334,11 @@ def main() -> int:
         "source": "github_actions_forward_tracker_outputs",
         "analogs": analogs,
     })
+    write_data_freshness_outputs(
+        data_freshness_status,
+        public_dir=public_dir,
+        outputs_dir=PROJECT_ROOT / "outputs",
+    )
     _write_json(public_dir / "data_quality_report.json", intelligence_v4["data_quality_report"])
     _write_json(public_dir / "breadth-status.json", breadth_bundle)
     _write_json(public_dir / "options-status.json", options_bundle)
@@ -358,6 +378,7 @@ def main() -> int:
 
     print("wrote frontend/public/alpha-v1-status.json")
     print("wrote frontend/public/alpha-v1-analogs.json")
+    print("wrote frontend/public/data-freshness-status.json")
     print("wrote frontend/public/data_quality_report.json")
     print("wrote frontend/public/breadth-status.json")
     print("wrote frontend/public/options-status.json")
@@ -379,6 +400,7 @@ def main() -> int:
     print("wrote frontend/public/market-overview.json")
     print("wrote frontend/public/simulated-paths.json")
     print("wrote frontend/public/prediction-dashboard.json")
+    print("wrote outputs/data_freshness_status.md")
     print("wrote outputs/high_confidence_signal_report.md")
     print("wrote outputs/high_confidence_edge_report.md")
     print("wrote outputs/fred_data_status.md")
@@ -1777,6 +1799,39 @@ def _future_business_dates(start_date: str, days: int) -> list[str]:
 
 def _latest_as_of(alpha_status: dict[str, Any], analogs: dict[str, dict[str, Any]]) -> str | None:
     return alpha_status.get("latest_checked_date") or max((analog.get("as_of") for analog in analogs.values() if analog.get("as_of")), default=None)
+
+
+def _attach_data_freshness(
+    *,
+    dashboard: dict[str, Any],
+    market_overview: dict[str, Any],
+    simulated_paths: dict[str, Any],
+    data_freshness_status: dict[str, Any],
+) -> None:
+    latest_market_date = data_freshness_status.get("latest_market_date") or dashboard.get("as_of")
+    freshness_status = str(data_freshness_status.get("data_freshness_status") or "unknown")
+    warning = str(data_freshness_status.get("warning_message") or "")
+
+    dashboard["data_freshness_status"] = data_freshness_status
+    market_overview["data_freshness_status"] = data_freshness_status
+    simulated_paths["data_freshness_status"] = data_freshness_status
+
+    if latest_market_date:
+        dashboard["as_of"] = latest_market_date
+        market_overview["as_of"] = latest_market_date
+        simulated_paths["as_of"] = latest_market_date
+        for payload in (market_overview.get("symbols") or {}).values():
+            if isinstance(payload, dict):
+                payload["as_of"] = latest_market_date
+        for payload in (simulated_paths.get("symbols") or {}).values():
+            if isinstance(payload, dict):
+                payload["as_of"] = latest_market_date
+
+    if freshness_status in {"stale", "provider_failed"}:
+        dashboard["status_note"] = warning
+        market_overview["dashboard_status"] = freshness_status
+        market_overview["status_note"] = warning
+        simulated_paths["status_note"] = warning
 
 
 def _apply_news_event_quality(data_quality: dict[str, Any], news_event_bundle: dict[str, Any]) -> None:

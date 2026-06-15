@@ -141,6 +141,9 @@ def build_forecast_accuracy_scorecard(records_path: Path | None = None) -> dict[
     records_path = records_path or PROJECT_ROOT / "outputs" / "forecast_records.csv"
     rows = _read_records(records_path)
     by_horizon = {f"{horizon}d": _horizon_scorecard(rows, horizon) for horizon in HORIZONS}
+    completed_counts = [by_horizon[f"{horizon}d"]["completed_count"] for horizon in HORIZONS]
+    strongest_completed_count = max(completed_counts) if completed_counts else 0
+    current_evidence_level = _sample_gate(strongest_completed_count)
     return {
         "version": "forecast_accuracy_scorecard_v1",
         "generated_at": datetime.now(timezone.utc).isoformat(),
@@ -149,6 +152,12 @@ def build_forecast_accuracy_scorecard(records_path: Path | None = None) -> dict[
             "pending_forecasts": sum(1 for row in rows if row.get("status") != "completed"),
             **{f"completed_{horizon}d": by_horizon[f"{horizon}d"]["completed_count"] for horizon in HORIZONS},
         },
+        "current_evidence_level": current_evidence_level,
+        "validation_warning": (
+            "当前预测准确度仍未被前向样本验证，不能称为 high precision / stable alpha / validated forecasting system。"
+            if current_evidence_level == "insufficient_samples"
+            else "Forward validation evidence is accumulating; do not promote models without horizon-specific proof."
+        ),
         "primary_scenario_accuracy": by_horizon,
         "by_scenario": _bucket_scorecards(rows, "primary_scenario"),
         "by_edge_status": _bucket_scorecards(rows, "edge_status"),
@@ -195,6 +204,12 @@ def render_forecast_accuracy_scorecard_markdown(scorecard: dict[str, Any]) -> st
     ]
     for key, value in (scorecard.get("sample_counts") or {}).items():
         lines.append(f"- {key}: `{value}`")
+    lines.extend(
+        [
+            f"- current_evidence_level: `{scorecard.get('current_evidence_level')}`",
+            f"- validation_warning: {scorecard.get('validation_warning')}",
+        ]
+    )
     lines.extend(["", "## Primary Scenario Accuracy", ""])
     for horizon, payload in (scorecard.get("primary_scenario_accuracy") or {}).items():
         lines.append(f"### {horizon}")

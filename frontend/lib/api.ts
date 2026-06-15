@@ -295,12 +295,33 @@ export type ForecastAccuracyScorecard = {
   version: string;
   generated_at: string;
   sample_counts: Record<string, number>;
+  current_evidence_level?: string;
+  validation_warning?: string;
   primary_scenario_accuracy: Record<string, Record<string, number | string | null>>;
   by_scenario?: Record<string, unknown>;
   by_edge_status?: Record<string, unknown>;
   confidence_validation?: Record<string, unknown>;
   core_questions?: Record<string, string>;
   sample_gate_rules?: Record<string, string>;
+  guardrails?: string[];
+};
+
+export type DataFreshnessStatus = {
+  version: string;
+  generated_at: string;
+  current_date: string;
+  current_time_us_eastern?: string;
+  latest_market_date: string | null;
+  expected_latest_trading_date: string | null;
+  is_latest_trading_day: boolean;
+  is_today_us_market_trading_day?: boolean;
+  stale_days: number | string;
+  data_freshness_status: "fresh" | "stale" | "market_closed" | "provider_failed" | string;
+  affected_symbols: string[];
+  provider_status: Record<string, Record<string, unknown>>;
+  last_successful_core_market_update?: string | null;
+  last_successful_update: string | null;
+  warning_message: string;
   guardrails?: string[];
 };
 
@@ -728,6 +749,7 @@ export type PredictionDashboard = {
   event_refresh?: boolean;
   as_of: string | null;
   status_note: string;
+  data_freshness_status?: DataFreshnessStatus;
   data_quality_report?: DataQualityReport;
   breadth_status?: BreadthStatus;
   options_status?: OptionsStatus;

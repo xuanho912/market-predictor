@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import type { MouseEvent, ReactNode } from "react";
 import type {
   CompactForecastPriceLevel,
+  DataFreshnessStatus,
   ForecastPriceLevel,
   ForecastPriceLevelsBySymbol,
   HistoricalAnalogCase,
@@ -132,6 +133,7 @@ function cnEdgeStatus(value: string | undefined): string {
 function cnValidationStatus(value: string | undefined): string {
   const map: Record<string, string> = {
     not_yet_validated: "尚未验证",
+    insufficient_samples: "样本不足",
     insufficient_forward_samples: "前向样本不足",
     insufficient_forward_evidence: "前向证据不足",
     historical_only_not_validated: "仅历史证据",
@@ -286,6 +288,25 @@ function getValidationStandards(dashboard: PredictionDashboard) {
     validatedStatus: String(validated.status ?? "not_yet_validated"),
     completed,
   };
+}
+
+function getDataFreshnessStatus(dashboard: PredictionDashboard): DataFreshnessStatus | undefined {
+  return dashboard.data_freshness_status;
+}
+
+function isDataStaleOrFailed(status: DataFreshnessStatus | undefined): boolean {
+  const value = status?.data_freshness_status;
+  return value === "stale" || value === "provider_failed";
+}
+
+function cnFreshnessStatus(value: string | undefined): string {
+  const map: Record<string, string> = {
+    fresh: "数据新鲜",
+    stale: "数据过期",
+    market_closed: "市场休市 / 未形成新交易日",
+    provider_failed: "数据源失败",
+  };
+  return value ? map[value] ?? value : "新鲜度未知";
 }
 
 function getModelList(dashboard: PredictionDashboard): AnyRecord[] {
@@ -449,6 +470,8 @@ function getTriggerRelevance(selected: SimulatedSymbolPaths, value: number | nul
 }
 
 function TerminalHeader({ dashboard }: { dashboard: PredictionDashboard }) {
+  const freshness = getDataFreshnessStatus(dashboard);
+  const latestDate = freshness?.latest_market_date ?? dashboard.as_of ?? dashboard.overview?.as_of;
   return (
     <header className="flex flex-col gap-4 border-b border-white/10 pb-5 lg:flex-row lg:items-end lg:justify-between">
       <div>
@@ -459,7 +482,7 @@ function TerminalHeader({ dashboard }: { dashboard: PredictionDashboard }) {
         </p>
       </div>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-        <MiniStat label="最近更新" value={shortDate(dashboard.as_of ?? dashboard.overview?.as_of)} tone="cyan" />
+        <MiniStat label="核心行情日期" value={shortDate(latestDate)} tone="cyan" />
         <MiniStat
           label="数据完整度"
           value={formatScore(dashboard.data_quality_report?.summary?.data_completeness_score)}
@@ -485,6 +508,49 @@ function MiniStat({ label, value, tone }: { label: string; value: string; tone: 
       <div className="text-[11px] uppercase tracking-[0.18em] text-slate-500">{label}</div>
       <div className={`mt-1 text-sm font-semibold ${toneClass}`}>{value}</div>
     </div>
+  );
+}
+
+function DataFreshnessBanner({ dashboard }: { dashboard: PredictionDashboard }) {
+  const freshness = getDataFreshnessStatus(dashboard);
+  if (!freshness) {
+    return (
+      <section className="rounded-xl border border-amber-400/25 bg-amber-400/[0.08] p-4 text-sm leading-6 text-amber-100">
+        数据新鲜度状态缺失。当前预测只能作为最近一次快照查看，不能视为今日判断。
+      </section>
+    );
+  }
+  const staleOrFailed = isDataStaleOrFailed(freshness);
+  const className = staleOrFailed
+    ? "border-rose-400/35 bg-rose-500/[0.10] text-rose-100"
+    : "border-emerald-400/20 bg-emerald-400/[0.06] text-emerald-100";
+
+  return (
+    <section className={`rounded-xl border p-4 ${className}`}>
+      <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+        <div>
+          <div className="text-xs uppercase tracking-[0.22em] opacity-75">Data Freshness Gate</div>
+          <h2 className="mt-1 text-lg font-semibold">
+            {staleOrFailed ? "数据已过期，当前预测不可作为今日判断" : cnFreshnessStatus(freshness.data_freshness_status)}
+          </h2>
+          <p className="mt-2 text-sm leading-6 opacity-90">{freshness.warning_message}</p>
+        </div>
+        <div className="grid gap-2 text-xs sm:grid-cols-3 lg:min-w-[420px]">
+          <div className="rounded-lg border border-white/10 bg-black/20 p-3">
+            <div className="opacity-65">最新核心行情</div>
+            <div className="mt-1 font-semibold">{shortDate(freshness.latest_market_date)}</div>
+          </div>
+          <div className="rounded-lg border border-white/10 bg-black/20 p-3">
+            <div className="opacity-65">应更新到</div>
+            <div className="mt-1 font-semibold">{shortDate(freshness.expected_latest_trading_date)}</div>
+          </div>
+          <div className="rounded-lg border border-white/10 bg-black/20 p-3">
+            <div className="opacity-65">滞后交易日</div>
+            <div className="mt-1 font-semibold">{String(freshness.stale_days ?? "unknown")}</div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -1880,6 +1946,9 @@ function ForecastAccuracy({ dashboard }: { dashboard: PredictionDashboard }) {
   const scorecard = dashboard.forecast_accuracy_scorecard;
   const counts = scorecard?.sample_counts ?? {};
   const validation = getValidationStandards(dashboard);
+  const warning =
+    scorecard?.validation_warning ??
+    "当前预测准确度仍未被前向样本验证，不能称为 high precision / stable alpha / validated forecasting system。";
   return (
     <section className="rounded-xl border border-white/10 bg-[#101819] p-5">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
@@ -1889,16 +1958,20 @@ function ForecastAccuracy({ dashboard }: { dashboard: PredictionDashboard }) {
         </div>
         <StatusBadge status={validation.highPrecisionStatus} label={cnValidationStatus(validation.highPrecisionStatus)} />
       </div>
-      <div className="mt-4 grid gap-3 sm:grid-cols-3 lg:grid-cols-6">
+      <div className="mt-4 grid gap-3 sm:grid-cols-3 lg:grid-cols-7">
         <Metric label="总记录" value={String(counts.total_forecasts ?? 0)} />
         <Metric label="待回填" value={String(counts.pending_forecasts ?? 0)} />
         <Metric label="3d 完成" value={String(counts.completed_3d ?? 0)} />
         <Metric label="5d 完成" value={String(counts.completed_5d ?? 0)} />
+        <Metric label="10d 完成" value={String(counts.completed_10d ?? 0)} />
         <Metric label="20d 完成" value={String(counts.completed_20d ?? 0)} />
         <Metric label="60d 完成" value={String(counts.completed_60d ?? 0)} />
       </div>
+      <div className="mt-3">
+        <StatusBadge status={scorecard?.current_evidence_level} label={`证据等级：${cnValidationStatus(scorecard?.current_evidence_level)}`} />
+      </div>
       <div className="mt-4 rounded-lg border border-amber-400/20 bg-amber-400/[0.07] p-3 text-sm leading-6 text-amber-100">
-        当前预测能力仍处于前向验证期，样本不足，不能称为 high precision / stable alpha / validated forecasting system。
+        {warning}
       </div>
     </section>
   );
@@ -2180,6 +2253,7 @@ export function MarketDashboard({ dashboard }: { dashboard: PredictionDashboard 
     <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(20,184,166,0.16),_transparent_28rem),linear-gradient(180deg,#071111_0%,#0b1112_42%,#071111_100%)] px-4 py-5 text-slate-100 sm:px-6 lg:px-10">
       <div className="mx-auto flex max-w-7xl flex-col gap-5">
         <TerminalHeader dashboard={data} />
+        <DataFreshnessBanner dashboard={data} />
         <ForecastCommandCenterCompact dashboard={data} selected={selected} />
         <IndexCards symbols={symbols} selectedSymbol={selected?.symbol ?? selectedSymbol} onSelect={setSelectedSymbol} />
 
