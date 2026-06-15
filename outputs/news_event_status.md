@@ -1,8 +1,8 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-06-15T08:22:24.557308+00:00`
+- generated_at: `2026-06-15T09:59:46.685002+00:00`
 - status: `available`
-- validation_type: `event_refresh`
+- validation_type: `daily`
 - major_event_count: `20`
 - event_detection_confidence: `77`
 - event_risk_level: `high`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Gold extends gains after US, Iran reach peace deal - Reuters
+- source: Reuters
+- published_at: `2026-06-15T07:37:57+00:00`
+- importance_score: `99`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -61,7 +69,7 @@
 
 - headline: Indian rupee, bonds to get a boost from Iran peace deal, eye Fed move - Reuters
 - source: Reuters
-- published_at: `2026-06-15T02:39:00+00:00`
+- published_at: `2026-06-15T02:40:09+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -83,17 +91,9 @@
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: Dollar hits 10-day low as US, Iran reach peace deal - Reuters
+- headline: Dollar hovers around 10-day low as US, Iran reach peace deal - Reuters
 - source: Reuters
 - published_at: `2026-06-15T00:03:00+00:00`
-- importance_score: `98`
-- confidence: `high`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Gold extends gains after US, Iran reach peace deal - Reuters
-- source: Reuters
-- published_at: `2026-06-15T00:02:00+00:00`
 - importance_score: `98`
 - confidence: `high`
 
