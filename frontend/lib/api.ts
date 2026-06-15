@@ -629,6 +629,7 @@ export type MarketSymbolOverview = {
   news_event_intelligence?: NewsEventIntelligence;
   confluence?: Record<string, unknown>;
   market_alerts?: Record<string, unknown>;
+  shadow_evidence_v1?: Record<string, unknown>;
 };
 
 export type ScenarioRankingItem = {
@@ -692,6 +693,7 @@ export type SimulatedSymbolPaths = {
   news_event_intelligence?: NewsEventIntelligence;
   confluence?: Record<string, unknown>;
   market_alerts?: Record<string, unknown>;
+  shadow_evidence_v1?: Record<string, unknown>;
   paths: {
     dates: string[];
     split_index: number;
@@ -764,6 +766,7 @@ export type PredictionDashboard = {
     edge_status_by_symbol: Record<string, MarketEdgeStatus>;
     high_confidence_edge_report: Record<string, unknown>;
     news_event_intelligence?: Record<string, unknown>;
+    shadow_evidence_v1?: Record<string, unknown>;
     finnhub_status?: Record<string, unknown>;
     warnings: string[];
   };
@@ -782,6 +785,7 @@ export type PredictionDashboard = {
   price_volume_structure?: Record<string, unknown>;
   confluence_score?: Record<string, unknown>;
   market_alerts?: Record<string, unknown>;
+  shadow_evidence_v1?: Record<string, unknown>;
   overview: {
     as_of: string | null;
     strongest_symbol: string;

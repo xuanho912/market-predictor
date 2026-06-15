@@ -249,6 +249,16 @@ def main() -> int:
         news_event_bundle=news_event_bundle,
     )
     attach_alerts_to_symbols(market_overview, simulated_paths, market_alerts)
+    shadow_evidence_summary = _attach_shadow_evidence_v1(
+        market_overview=market_overview,
+        simulated_paths=simulated_paths,
+        intelligence_v4=intelligence_v4,
+        forecast_price_levels=forecast_price_levels,
+        price_volume_structure=price_volume_structure,
+        confluence_score=confluence_score,
+        market_alerts=market_alerts,
+    )
+    intelligence_v4["shadow_evidence_v1"] = shadow_evidence_summary
     dashboard = {
         "generated_by": "scripts/export_static_alpha_v1.py",
         "source": "github_actions_forward_tracker_outputs",
@@ -272,6 +282,7 @@ def main() -> int:
         "price_volume_structure": price_volume_structure,
         "confluence_score": confluence_score,
         "market_alerts": market_alerts,
+        "shadow_evidence_v1": shadow_evidence_summary,
         "feature_snapshot_v2": intelligence_v2["feature_snapshot_v2"],
         "feature_snapshot_v3": intelligence_v3["feature_snapshot_v3"],
         "model_confidence_by_symbol": intelligence_v4["model_confidence_by_symbol"],
@@ -1905,6 +1916,148 @@ def _attach_news_event_intelligence(
                 **(simulated_symbol.get("news_event_intelligence") or {}),
                 **patch_payload,
             }
+
+
+def _attach_shadow_evidence_v1(
+    market_overview: dict[str, Any],
+    simulated_paths: dict[str, Any],
+    intelligence_v4: dict[str, Any],
+    forecast_price_levels: dict[str, Any],
+    price_volume_structure: dict[str, Any],
+    confluence_score: dict[str, Any],
+    market_alerts: dict[str, Any],
+) -> dict[str, Any]:
+    """Attach forecast-only shadow evidence without changing baseline_v1 outputs."""
+    symbols_summary: dict[str, Any] = {}
+    for symbol in SYMBOLS:
+        overview_symbol = (market_overview.get("symbols") or {}).get(symbol)
+        simulated_symbol = (simulated_paths.get("symbols") or {}).get(symbol)
+        symbol_alerts = ((market_alerts.get("symbols") or {}).get(symbol) or {})
+        alerts = symbol_alerts.get("alerts") or []
+        strongest_alert = symbol_alerts.get("strongest_alert") or (alerts[0] if alerts else {})
+        confluence = ((confluence_score.get("symbols") or {}).get(symbol) or {})
+        price_volume = ((price_volume_structure.get("symbols") or {}).get(symbol) or {})
+        price_levels = ((forecast_price_levels.get("symbols") or {}).get(symbol) or {})
+        trigger_levels = price_levels.get("trigger_levels") or price_levels.get("path_trigger_levels") or {}
+
+        alert_by_type = {
+            str(alert.get("alert_type")): {
+                "alert_level": alert.get("alert_level"),
+                "alert_score": alert.get("alert_score"),
+                "confidence": alert.get("confidence"),
+            }
+            for alert in alerts
+            if isinstance(alert, dict)
+        }
+        pv_supports_primary = (
+            (_float_or_none(price_volume.get("price_structure_score")) or 0) >= 55
+            or (_float_or_none(price_volume.get("volume_confirmation_score")) or 0) >= 55
+            or (_float_or_none(price_volume.get("reversal_candle_score")) or 0) >= 55
+        )
+        pv_conflicts_primary = (
+            (_float_or_none(price_volume.get("breakdown_risk_score")) or 0) >= 65
+            or (_float_or_none(price_volume.get("volume_confirmation_score")) or 0) <= 25
+        )
+
+        payload = {
+            "version": "shadow_evidence_v1",
+            "role": "challenger_shadow_evidence",
+            "model_version": "baseline_v1",
+            "does_not_override_baseline_v1": True,
+            "does_not_rewrite_forecast_records": True,
+            "alpha_v1_threshold_unchanged": 0.32534311,
+            "validation_status": "not_yet_forward_validated",
+            "enters_as_shadow_evidence": [
+                "signal_confirmation",
+                "scenario_ranking",
+                "failed_bounce_risk",
+                "risk_expansion_predictor",
+                "bounce_predictor",
+                "trend_repair_predictor",
+                "model_confidence",
+                "forecast_price_levels",
+                "daily_market_summary",
+            ],
+            "dominant_path_shadow": confluence.get("dominant_path"),
+            "confluence_score": confluence.get("confluence_score"),
+            "confluence_level": confluence.get("confluence_level"),
+            "strongest_alert": {
+                "alert_type": strongest_alert.get("alert_type") if isinstance(strongest_alert, dict) else None,
+                "alert_level": strongest_alert.get("alert_level") if isinstance(strongest_alert, dict) else None,
+                "alert_score": strongest_alert.get("alert_score") if isinstance(strongest_alert, dict) else None,
+                "confidence": strongest_alert.get("confidence") if isinstance(strongest_alert, dict) else None,
+            },
+            "alert_status_by_type": alert_by_type,
+            "price_volume_confirmation": {
+                "supports_primary_path": pv_supports_primary,
+                "conflicts_primary_path": pv_conflicts_primary,
+                "latest_candle_type": (price_volume.get("candle") or {}).get("latest_candle_type")
+                if isinstance(price_volume.get("candle"), dict)
+                else None,
+                "price_structure_score": price_volume.get("price_structure_score"),
+                "volume_confirmation_score": price_volume.get("volume_confirmation_score"),
+                "reversal_candle_score": price_volume.get("reversal_candle_score"),
+                "breakdown_risk_score": price_volume.get("breakdown_risk_score"),
+            },
+            "predictor_shadow_effects": {
+                "bounce_predictor": {
+                    "support": alert_by_type.get("Bounce Setup Alert", {}).get("alert_level"),
+                    "notes": "Bounce setup alerts, price/volume reclaim evidence and confluence are tracked as shadow confirmation only.",
+                },
+                "failed_bounce_risk": {
+                    "support": alert_by_type.get("Failed Bounce Alert", {}).get("alert_level"),
+                    "notes": "Failed bounce alerts and breakdown-risk evidence can flag scenario switching risk without rewriting baseline_v1.",
+                },
+                "risk_expansion_predictor": {
+                    "support": alert_by_type.get("Risk Expansion Alert", {}).get("alert_level"),
+                    "notes": "Risk expansion alerts require multi-source stress confirmation before becoming high-conviction evidence.",
+                },
+                "trend_repair_predictor": {
+                    "support": alert_by_type.get("Trend Repair Alert", {}).get("alert_level"),
+                    "notes": "Trend repair alerts require price, breadth, credit and volatility confirmation.",
+                },
+            },
+            "related_price_levels": {
+                "primary_confirmation_level": trigger_levels.get("primary_confirmation_level"),
+                "primary_invalidation_level": trigger_levels.get("primary_invalidation_level"),
+                "risk_scenario_activation_level": trigger_levels.get("risk_scenario_activation_level"),
+                "trend_reversal_confirmation_level": trigger_levels.get("trend_reversal_confirmation_level"),
+                "bounce_target_zone": trigger_levels.get("bounce_target_zone"),
+            },
+            "daily_market_summary_shadow": (
+                f"{symbol} shadow evidence: strongest alert is "
+                f"{(strongest_alert or {}).get('alert_type') if isinstance(strongest_alert, dict) else 'NO_ALERT'}; "
+                f"confluence is {confluence.get('confluence_level')} at {confluence.get('confluence_score')}/100. "
+                "This evidence is for forecast validation and challenger comparison only."
+            ),
+        }
+        symbols_summary[symbol] = payload
+        if isinstance(overview_symbol, dict):
+            overview_symbol["shadow_evidence_v1"] = payload
+        if isinstance(simulated_symbol, dict):
+            simulated_symbol["shadow_evidence_v1"] = payload
+
+    summary = {
+        "version": "shadow_evidence_v1",
+        "role": "challenger_shadow_evidence",
+        "active_model": "baseline_v1",
+        "policy": {
+            "does_not_override_baseline_v1": True,
+            "does_not_change_alpha_v1_threshold": True,
+            "does_not_rewrite_historical_forecast_records": True,
+            "requires_forward_validation_before_promotion": True,
+        },
+        "modules": [
+            "Market Alert Engine",
+            "Price/Volume Structure",
+            "Confluence Engine",
+        ],
+        "symbols": symbols_summary,
+    }
+    market_overview["shadow_evidence_summary"] = summary
+    simulated_paths["shadow_evidence_summary"] = summary
+    intelligence_v4["shadow_evidence_policy"] = summary["policy"]
+    return summary
 
 
 def _mean(values: list[float | None]) -> float:
