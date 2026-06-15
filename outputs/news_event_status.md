@@ -1,8 +1,8 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-06-15T12:41:07.475225+00:00`
+- generated_at: `2026-06-15T13:43:04.750106+00:00`
 - status: `available`
-- validation_type: `event_refresh`
+- validation_type: `daily`
 - major_event_count: `23`
 - event_detection_confidence: `76`
 - event_risk_level: `high`
@@ -25,20 +25,20 @@
 
 ## Major Events
 
+### geopolitical_risk_escalation / risk_off
+
+- headline: The Club's top 10 things to watch in the stock market Monday
+- source: CNBC
+- published_at: `2026-06-15T13:07:10+00:00`
+- importance_score: `100`
+- confidence: `high`
+
 ### geopolitical_risk_easing / risk_on
 
 - headline: Why an Iran peace deal won't pull the yen back from the brink - Reuters
 - source: Reuters
 - published_at: `2026-06-15T06:36:00+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: STOXX 600 hits record high after US-Iran preliminary peace deal - Reuters
-- source: Reuters
-- published_at: `2026-06-15T06:46:00+00:00`
-- importance_score: `99`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -55,6 +55,14 @@
 - source: Reuters
 - published_at: `2026-06-15T05:26:00+00:00`
 - importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: STOXX 600 hits record high after US-Iran preliminary peace deal - Reuters
+- source: Reuters
+- published_at: `2026-06-15T06:46:00+00:00`
+- importance_score: `98`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -95,12 +103,4 @@
 - source: Reuters
 - published_at: `2026-06-15T01:41:00+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Gold hits near one-week high after US-Iran peace deal - Reuters
-- source: Reuters
-- published_at: `2026-06-15T00:02:00+00:00`
-- importance_score: `100`
-- confidence: `high`
+- confidence: `medium`

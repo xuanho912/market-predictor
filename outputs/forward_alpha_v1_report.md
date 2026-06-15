@@ -11,11 +11,11 @@ Alpha v1 remains a frozen research candidate until enough post-freeze observatio
 
 ## Summary
 
-- signal count: 4
-- pending signals: 4
+- signal count: 8
+- pending signals: 8
 - completed signals: 0
 - forecast signal: true
-- latest checked date: 2026-06-12
+- latest checked date: 2026-06-15
 - data source status: real_market_data
 - signal blocked reason: n/a
 

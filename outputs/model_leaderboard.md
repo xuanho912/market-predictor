@@ -1,6 +1,6 @@
 # Model Leaderboard
 
-Generated at: `2026-06-15T12:41:14.934099+00:00`
+Generated at: `2026-06-15T13:43:10.448018+00:00`
 Active model: `baseline_v1`
 
 > This is forecast model validation, not execution guidance or portfolio accounting.
@@ -38,8 +38,8 @@ Active model: `baseline_v1`
 ### baseline_v1
 - role: `active_baseline`
 - status: `tracking`
-- total_forecasts: `4`
-- pending_forecasts: `4`
+- total_forecasts: `8`
+- pending_forecasts: `8`
 - promotion_status: `active_model`
 - reason: `Frozen current production model. Not a claim of high precision or stable alpha.`
 - horizon_metrics:
@@ -52,8 +52,8 @@ Active model: `baseline_v1`
 ### challenger_v2_options_flow
 - role: `shadow_challenger`
 - status: `tracking`
-- total_forecasts: `4`
-- pending_forecasts: `4`
+- total_forecasts: `8`
+- pending_forecasts: `8`
 - promotion_status: `insufficient_forward_evidence`
 - reason: `Forward samples have not met promotion gates.`
 - horizon_metrics:
