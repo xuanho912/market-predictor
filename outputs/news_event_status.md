@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-06-15T15:20:52.571663+00:00`
+- generated_at: `2026-06-15T17:16:56.769091+00:00`
 - status: `available`
 - validation_type: `event_refresh`
-- major_event_count: `24`
+- major_event_count: `23`
 - event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -79,7 +79,7 @@
 - source: Reuters
 - published_at: `2026-06-15T04:03:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_easing / risk_on
 
