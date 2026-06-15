@@ -1,6 +1,6 @@
 # Next-Day Stock Radar v1
 
-Generated at: `2026-06-15T15:11:25.388278+00:00`
+Generated at: `2026-06-15T15:21:00.891293+00:00`
 As of: `None`
 
 This report ranks next-day high-elasticity stock forecast candidates. It is not a trading report and does not contain buy/sell instructions.
@@ -19,16 +19,16 @@ This report ranks next-day high-elasticity stock forecast candidates. It is not 
 
 | Rank | Ticker | Type | Radar | Elasticity | Confluence | Catalyst | Risk | Range | Trigger | Invalidation | Reason |
 | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- | ---: | ---: | --- |
-| 1 | AMD | upside_momentum | 54.02 | 100 | 43.14 | 23.74 | 57.76 | 533.2-568.19 | 567.38 | 393.36 | upside_momentum: 弹性 100 / 成交量 5 / 相对强弱 100 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 supportive |
-| 2 | SMCI | failed_bounce_risk | 47.54 | 100 | 25.49 | 23.69 | 64.34 | 29.0-33.5 | 51.4 | 28.45 | failed_bounce_risk: 弹性 100 / 成交量 47 / 相对强弱 17 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 conflicting |
-| 3 | PLTR | failed_bounce_risk | 40.81 | 100 | 15.76 | 23.57 | 61.87 | 130.09-137.62 | 163.7 | 126.65 | failed_bounce_risk: 弹性 100 / 成交量 35 / 相对强弱 0 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 conflicting |
-| 4 | KC | downside_continuation | 38.52 | 100 | 22.21 | 23.01 | 64.28 | 10.91-11.57 | 15.25 | 10.47 | downside_continuation: 弹性 100 / 成交量 23 / 相对强弱 0 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 conflicting |
-| 5 | META | failed_bounce_risk | 35.89 | 88.16 | 17.65 | 23.37 | 61.32 | 583.71-605.28 | 643.0 | 557.01 | failed_bounce_risk: 弹性 88 / 成交量 23 / 相对强弱 0 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 neutral |
-| 6 | BABA | downside_continuation | 35.19 | 83.41 | 15.01 | 22.84 | 60.74 | 111.03-114.78 | 136.78 | 109.66 | downside_continuation: 弹性 83 / 成交量 26 / 相对强弱 15 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 conflicting |
-| 7 | NVDA | failed_bounce_risk | 34.63 | 100 | 18.89 | 23.48 | 64.13 | 206.37-214.57 | 232.28 | 199.34 | failed_bounce_risk: 弹性 100 / 成交量 3 / 相对强弱 4 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 conflicting |
-| 8 | MSFT | failed_bounce_risk | 34.36 | 88.58 | 13.18 | 23.06 | 61.59 | 391.78-404.89 | 466.32 | 382.27 | failed_bounce_risk: 弹性 89 / 成交量 22 / 相对强弱 0 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 conflicting |
-| 9 | TSLA | failed_bounce_risk | 34.03 | 100 | 14.94 | 23.6 | 63.37 | 399.15-416.65 | 445.6 | 380.15 | failed_bounce_risk: 弹性 100 / 成交量 0 / 相对强弱 6 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 conflicting |
-| 10 | JD | no_edge | 29.92 | 76.49 | 14.34 | 22.88 | 59.35 | 28.32-29.09 | 32.83 | 27.48 | no_edge: 弹性 76 / 成交量 14 / 相对强弱 0 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 conflicting |
-| 11 | AAPL | no_edge | 29.52 | 72.84 | 16.91 | 23.1 | 57.55 | 292.28-299.86 | 317.4 | 287.38 | no_edge: 弹性 73 / 成交量 4 / 相对强弱 23 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 conflicting |
+| 1 | AMD | upside_momentum | 54.3 | 100 | 43.22 | 23.74 | 57.77 | 532.47-567.47 | 566.66 | 393.36 | upside_momentum: 弹性 100 / 成交量 6 / 相对强弱 100 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 supportive |
+| 2 | SMCI | failed_bounce_risk | 47.32 | 100 | 25.35 | 23.67 | 64.35 | 28.88-33.38 | 51.4 | 28.33 | failed_bounce_risk: 弹性 100 / 成交量 47 / 相对强弱 15 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 conflicting |
+| 3 | PLTR | failed_bounce_risk | 40.71 | 100 | 13.69 | 23.56 | 61.9 | 129.84-137.38 | 163.7 | 126.65 | failed_bounce_risk: 弹性 100 / 成交量 36 / 相对强弱 0 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 conflicting |
+| 4 | KC | downside_continuation | 38.68 | 100 | 22.29 | 23.01 | 64.27 | 10.92-11.58 | 15.25 | 10.47 | downside_continuation: 弹性 100 / 成交量 24 / 相对强弱 0 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 conflicting |
+| 5 | META | failed_bounce_risk | 35.99 | 87.9 | 17.6 | 23.37 | 61.28 | 583.27-604.88 | 643.0 | 557.01 | failed_bounce_risk: 弹性 88 / 成交量 23 / 相对强弱 0 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 neutral |
+| 6 | BABA | downside_continuation | 35.33 | 82.62 | 15.06 | 22.84 | 60.58 | 110.94-114.68 | 136.78 | 109.66 | downside_continuation: 弹性 83 / 成交量 29 / 相对强弱 15 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 conflicting |
+| 7 | NVDA | failed_bounce_risk | 34.94 | 100 | 19.05 | 23.48 | 64.13 | 206.61-214.82 | 232.28 | 199.34 | failed_bounce_risk: 弹性 100 / 成交量 4 / 相对强弱 4 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 conflicting |
+| 8 | MSFT | failed_bounce_risk | 34.42 | 88.31 | 13.18 | 23.05 | 61.54 | 391.71-404.82 | 466.32 | 382.27 | failed_bounce_risk: 弹性 88 / 成交量 22 / 相对强弱 0 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 conflicting |
+| 9 | TSLA | failed_bounce_risk | 34.28 | 100 | 15.21 | 23.6 | 63.33 | 399.79-417.32 | 445.6 | 380.15 | failed_bounce_risk: 弹性 100 / 成交量 1 / 相对强弱 6 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 conflicting |
+| 10 | JD | no_edge | 29.99 | 76.23 | 14.47 | 22.89 | 59.29 | 28.36-29.12 | 32.83 | 27.48 | no_edge: 弹性 76 / 成交量 15 / 相对强弱 0 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 conflicting |
+| 11 | AAPL | no_edge | 29.58 | 72.49 | 16.96 | 23.1 | 57.47 | 292.37-299.95 | 317.4 | 287.38 | no_edge: 弹性 72 / 成交量 5 / 相对强弱 23 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 conflicting |
 
 Validation status: `not_yet_validated` until enough forward samples complete.

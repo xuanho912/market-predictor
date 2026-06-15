@@ -1,13 +1,13 @@
 # Forecast Price Levels
 
-Generated at: `2026-06-15T15:11:25.104063Z`
+Generated at: `2026-06-15T15:21:00.528749Z`
 
 These are probability-path scenario levels, not execution instructions, risk-control rules, or guaranteed targets.
 
 ## SPY
 
 - current price: `741.75`
-- primary confirmation: `754.71`
+- primary confirmation: `754.57`
 - primary invalidation: `725.43`
 - risk activation: `725.43`
 - trend repair confirmation: `777.33`
@@ -24,7 +24,7 @@ These are probability-path scenario levels, not execution instructions, risk-con
 ## QQQ
 
 - current price: `721.34`
-- primary confirmation: `742.66`
+- primary confirmation: `742.41`
 - primary invalidation: `693.69`
 - risk activation: `649.52`
 - trend repair confirmation: `762.35`
@@ -48,12 +48,12 @@ These are probability-path scenario levels, not execution instructions, risk-con
 
 | Horizon | Expected | Primary | Secondary | Risk | Upper | Lower |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| 1d | 294.35 | 294.96 | 293.76 | 293.31 | 294.96 | 293.31 |
-| 3d | 297.14 | 298.99 | 295.37 | 294.03 | 298.99 | 294.03 |
-| 5d | 298.99 | 302.98 | 295.91 | 292.06 | 302.98 | 292.06 |
-| 10d | 300.90 | 308.66 | 295.74 | 287.17 | 308.66 | 287.17 |
-| 20d | 302.00 | 314.86 | 295.41 | 278.75 | 314.86 | 278.75 |
-| 60d | 320.02 | 334.22 | 308.23 | 295.60 | 334.22 | 295.60 |
+| 1d | 294.36 | 294.96 | 293.81 | 293.31 | 294.96 | 293.31 |
+| 3d | 297.18 | 298.99 | 295.53 | 294.03 | 298.99 | 294.03 |
+| 5d | 299.05 | 302.98 | 296.04 | 292.06 | 302.98 | 292.06 |
+| 10d | 301.06 | 308.66 | 296.58 | 287.17 | 308.66 | 287.17 |
+| 20d | 302.21 | 314.86 | 296.08 | 278.75 | 314.86 | 278.75 |
+| 60d | 320.21 | 334.22 | 308.52 | 295.60 | 334.22 | 295.60 |
 
 ## DIA
 
@@ -65,10 +65,10 @@ These are probability-path scenario levels, not execution instructions, risk-con
 
 | Horizon | Expected | Primary | Secondary | Risk | Upper | Lower |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| 1d | 514.66 | 515.14 | 513.65 | 513.89 | 515.14 | 513.65 |
-| 3d | 517.87 | 519.31 | 514.84 | 515.56 | 519.31 | 514.84 |
-| 5d | 519.26 | 521.88 | 515.41 | 514.56 | 521.88 | 514.56 |
-| 10d | 518.32 | 520.57 | 517.31 | 513.59 | 520.57 | 513.59 |
-| 20d | 524.47 | 537.19 | 519.25 | 497.54 | 537.19 | 497.54 |
-| 60d | 520.75 | 532.26 | 511.28 | 497.79 | 532.26 | 497.79 |
+| 1d | 514.66 | 515.14 | 513.89 | 513.89 | 515.14 | 513.65 |
+| 3d | 517.87 | 519.31 | 515.56 | 515.56 | 519.31 | 514.84 |
+| 5d | 519.26 | 521.88 | 514.56 | 514.56 | 521.88 | 514.56 |
+| 10d | 518.32 | 520.57 | 513.59 | 513.59 | 520.57 | 513.59 |
+| 20d | 524.47 | 537.19 | 497.54 | 497.54 | 537.19 | 497.54 |
+| 60d | 520.75 | 532.26 | 497.79 | 497.79 | 532.26 | 497.79 |
 

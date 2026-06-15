@@ -1,6 +1,6 @@
 # Data Freshness Status
 
-Generated at: `2026-06-15T15:11:25.108322+00:00`
+Generated at: `2026-06-15T15:21:00.534302+00:00`
 
 ## Summary
 
@@ -56,7 +56,7 @@ Generated at: `2026-06-15T15:11:25.108322+00:00`
 - ^TNX: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - ^VIX: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - ^VIX3M: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- ^VIX6M: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- ^VIX6M: status=`fallback`, latest_date=`2026-06-14`, source=`synthetic-fallback`, stale=`False`, fallback=`True`, real_data=`False`
 - ^VIX9D: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - ^VVIX: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - breadth_DIA: status=`available`, latest_date=`2026-06-12`, source=`static-dow30-list`, stale=`False`, fallback=`False`, real_data=`True`
@@ -92,7 +92,7 @@ Generated at: `2026-06-15T15:11:25.108322+00:00`
 - options_SKEW: status=`available`, latest_date=`2026-06-12`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - options_VIX: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - options_VIX3M: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- options_VIX6M: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- options_VIX6M: status=`fallback`, latest_date=`2026-06-14`, source=`synthetic-fallback`, stale=`False`, fallback=`True`, real_data=`False`
 - options_VIX9D: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - options_VVIX: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - options_provider: status=`stale`, latest_date=`None`, source=`market_data_cache/yahoo/stooq`, stale=`True`, fallback=`False`, real_data=`True`
