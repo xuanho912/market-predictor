@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-06-16T11:19:57.149279+00:00`
+- generated_at: `2026-06-16T13:41:57.068765+00:00`
 - status: `available`
-- validation_type: `event_refresh`
-- major_event_count: `14`
+- validation_type: `daily`
+- major_event_count: `13`
 - event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `25`
+- confirmation_score: `0`
 
 ## Dashboard Note
 
@@ -27,6 +27,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Spot oil premiums slip to pre-war levels after US-Iran deal, but shipping angst provides floor - Reuters
+- source: Reuters
+- published_at: `2026-06-16T10:10:50+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Treasury yields fall ahead of Kevin Warsh's first Fed meeting
 - source: CNBC
 - published_at: `2026-06-16T09:30:09+00:00`
@@ -35,17 +43,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US-Iran deal promises end to war but how it will work remains unclear - Reuters
+- headline: Is the Iran war just an energy shock - or a turning point? - Reuters
 - source: Reuters
-- published_at: `2026-06-16T06:33:00+00:00`
+- published_at: `2026-06-16T06:55:43+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Is the Iran war just an energy shock - or a turning point? - Reuters
+- headline: US-Iran deal promises end to war but how it will work remains unclear - Reuters
 - source: Reuters
-- published_at: `2026-06-16T06:02:02+00:00`
+- published_at: `2026-06-16T06:33:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -59,7 +67,15 @@
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: Oil drops to fresh three-month low as markets weigh US-Iran peace deal - Reuters
+- headline: Russia should make peace deal, Trump says after 'very good' Zelenskiy meeting - Reuters
+- source: Reuters
+- published_at: `2026-06-16T04:01:00+00:00`
+- importance_score: `98`
+- confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Oil drops over 2% to 3-month low as markets weigh US-Iran peace deal - Reuters
 - source: Reuters
 - published_at: `2026-06-16T01:14:00+00:00`
 - importance_score: `100`
@@ -67,40 +83,24 @@
 
 ### geopolitical_risk_easing / risk_on
 
+- headline: Indian rupee extends gains; US-Iran peace agreement details, Fed guidance awaited - Reuters
+- source: Reuters
+- published_at: `2026-06-16T03:02:00+00:00`
+- importance_score: `97`
+- confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
 - headline: Trump may release US-Iran agreement before Friday, Vance says - Reuters
 - source: Reuters
 - published_at: `2026-06-16T01:15:00+00:00`
-- importance_score: `98`
-- confidence: `high`
+- importance_score: `97`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Trump’s Iran accord offers exit from war — and fresh political risks - Reuters
 - source: Reuters
 - published_at: `2026-06-15T22:01:45+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trading Day: US-Iran war halted - now what? - Reuters
-- source: Reuters
-- published_at: `2026-06-15T21:06:16+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: With war likely over, Iranian rulers must face demands of angry, embittered population - Reuters
-- source: Reuters
-- published_at: `2026-06-15T18:15:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Amateur saboteurs: the young men carrying out attacks for gangs, Russia and Iran - Reuters
-- source: Reuters
-- published_at: `2026-06-15T16:30:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
