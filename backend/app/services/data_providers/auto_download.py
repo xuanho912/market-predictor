@@ -10,13 +10,25 @@ import time
 import urllib.parse
 import urllib.request
 from dataclasses import dataclass
-from datetime import date, datetime, timedelta, timezone
+from datetime import date, datetime, time as dt_time, timedelta, timezone
 from pathlib import Path
 from typing import Any
+from zoneinfo import ZoneInfo
 
 
 DEFAULT_DOWNLOAD_SYMBOLS = ("SPY", "QQQ", "IWM", "DIA", "^VIX", "HYG", "LQD", "TLT", "UUP", "^TNX")
-REAL_DATA_SOURCES = {"yfinance", "yahoo-chart", "stooq", "local-cache-yfinance", "local-cache-yahoo-chart", "local-cache-stooq"}
+REAL_DATA_SOURCES = {
+    "yfinance",
+    "yahoo-chart",
+    "stooq",
+    "finnhub-quote-patch",
+    "local-cache-yfinance",
+    "local-cache-yahoo-chart",
+    "local-cache-stooq",
+    "local-cache-finnhub-quote-patch",
+}
+EASTERN = ZoneInfo("America/New_York")
+MARKET_CLOSE_BUFFER = dt_time(16, 30)
 
 
 @dataclass(frozen=True)
@@ -40,20 +52,183 @@ def is_real_market_data(series: DownloadedSeries) -> bool:
 
 
 def _download_with_fallback(symbol: str, lookback_days: int) -> DownloadedSeries:
+    candidates: list[DownloadedSeries] = []
+    expected_latest = _expected_latest_trading_date()
     for loader in (_download_yfinance, _download_yahoo_chart, _download_stooq):
         try:
             series = loader(symbol, lookback_days)
             if series.rows:
-                _write_cache(series)
-                return series
+                candidates.append(series)
+                if _latest_row_date(series) and _latest_row_date(series) >= expected_latest:
+                    _write_cache(series)
+                    return series
         except Exception:
             continue
 
     cached = _read_cache(symbol, lookback_days)
     if cached is not None:
-        return cached
+        candidates.append(cached)
+
+    quote_patch = _download_finnhub_quote_patch(symbol, lookback_days, candidates, expected_latest)
+    if quote_patch is not None:
+        _write_cache(quote_patch)
+        return quote_patch
+
+    if candidates:
+        best = max(candidates, key=lambda item: (_latest_row_date(item) or date.min, _source_priority(item.source)))
+        if best.source in {"yfinance", "yahoo-chart", "stooq", "finnhub-quote-patch"}:
+            _write_cache(best)
+        return best
 
     return _synthetic_series(symbol, lookback_days, source="synthetic-fallback")
+
+
+def _latest_row_date(series: DownloadedSeries) -> date | None:
+    if not series.rows:
+        return None
+    value = series.rows[-1].get("date")
+    try:
+        return datetime.strptime(str(value), "%Y-%m-%d").date()
+    except (TypeError, ValueError):
+        return None
+
+
+def _source_priority(source: str) -> int:
+    if source == "finnhub-quote-patch":
+        return 4
+    if source in {"yfinance", "yahoo-chart", "stooq"}:
+        return 3
+    if source.startswith("local-cache-"):
+        return 2
+    return 1
+
+
+def _download_finnhub_quote_patch(
+    symbol: str,
+    lookback_days: int,
+    candidates: list[DownloadedSeries],
+    expected_latest: date,
+) -> DownloadedSeries | None:
+    token = os.getenv("FINNHUB_API_KEY", "").strip()
+    if not token or symbol.startswith("^"):
+        return None
+    base = max(candidates, key=lambda item: (_latest_row_date(item) or date.min, _source_priority(item.source)), default=None)
+    if base is None or not base.rows:
+        return None
+    base_latest = _latest_row_date(base)
+    if base_latest is not None and base_latest >= expected_latest:
+        return None
+
+    url = f"https://finnhub.io/api/v1/quote?{urllib.parse.urlencode({'symbol': symbol, 'token': token})}"
+    request = urllib.request.Request(url, headers={"User-Agent": "market-predictor/1.0"})
+    payload = json.loads(urllib.request.urlopen(request, timeout=12).read().decode("utf-8"))
+    close = _scalar_value(payload.get("c"))
+    if close is None or close <= 0:
+        return None
+    timestamp = int(payload.get("t") or time.time())
+    quote_date = datetime.fromtimestamp(timestamp, tz=timezone.utc).astimezone(EASTERN).date()
+    if quote_date < expected_latest:
+        return None
+
+    open_price = _scalar_value(payload.get("o")) or close
+    high_price = _scalar_value(payload.get("h")) or max(open_price, close)
+    low_price = _scalar_value(payload.get("l")) or min(open_price, close)
+    patched_rows = list(base.rows)
+    patched_row = {
+        "date": quote_date.isoformat(),
+        "open": open_price,
+        "high": high_price,
+        "low": low_price,
+        "close": close,
+        "volume": 0.0,
+    }
+    if patched_rows and str(patched_rows[-1].get("date")) == patched_row["date"]:
+        patched_rows[-1] = patched_row
+    else:
+        patched_rows.append(patched_row)
+    return DownloadedSeries(
+        symbol=symbol,
+        rows=_clean_rows(patched_rows)[-lookback_days:],
+        source="finnhub-quote-patch",
+        point_in_time_safe=True,
+    )
+
+
+def _expected_latest_trading_date(now_utc: datetime | None = None) -> date:
+    now_utc = now_utc or datetime.now(timezone.utc)
+    now_et = now_utc.astimezone(EASTERN)
+    candidate = now_et.date()
+    if _is_us_market_trading_day(candidate) and now_et.time() >= MARKET_CLOSE_BUFFER:
+        return candidate
+    return _previous_us_market_trading_day(candidate)
+
+
+def _is_us_market_trading_day(day: date) -> bool:
+    if day.weekday() >= 5:
+        return False
+    return day not in _us_market_holidays(day.year)
+
+
+def _previous_us_market_trading_day(day: date) -> date:
+    candidate = day - timedelta(days=1)
+    while not _is_us_market_trading_day(candidate):
+        candidate -= timedelta(days=1)
+    return candidate
+
+
+def _us_market_holidays(year: int) -> set[date]:
+    return {
+        _observed(date(year, 1, 1)),
+        _nth_weekday(year, 1, 0, 3),
+        _nth_weekday(year, 2, 0, 3),
+        _good_friday(year),
+        _last_weekday(year, 5, 0),
+        _observed(date(year, 6, 19)),
+        _observed(date(year, 7, 4)),
+        _nth_weekday(year, 9, 0, 1),
+        _nth_weekday(year, 11, 3, 4),
+        _observed(date(year, 12, 25)),
+    }
+
+
+def _observed(day: date) -> date:
+    if day.weekday() == 5:
+        return day - timedelta(days=1)
+    if day.weekday() == 6:
+        return day + timedelta(days=1)
+    return day
+
+
+def _nth_weekday(year: int, month: int, weekday: int, nth: int) -> date:
+    candidate = date(year, month, 1)
+    while candidate.weekday() != weekday:
+        candidate += timedelta(days=1)
+    return candidate + timedelta(days=7 * (nth - 1))
+
+
+def _last_weekday(year: int, month: int, weekday: int) -> date:
+    candidate = date(year, 12, 31) if month == 12 else date(year, month + 1, 1) - timedelta(days=1)
+    while candidate.weekday() != weekday:
+        candidate -= timedelta(days=1)
+    return candidate
+
+
+def _good_friday(year: int) -> date:
+    a = year % 19
+    b = year // 100
+    c = year % 100
+    d = b // 4
+    e = b % 4
+    f = (b + 8) // 25
+    g = (b - f + 1) // 3
+    h = (19 * a + b - d - g + 15) % 30
+    i = c // 4
+    k = c % 4
+    l = (32 + 2 * e + 2 * i - h - k) % 7
+    m = (a + 11 * h + 22 * l) // 451
+    month = (h + l - 7 * m + 114) // 31
+    day = ((h + l - 7 * m + 114) % 31) + 1
+    return date(year, month, day) - timedelta(days=2)
 
 
 def _download_yfinance(symbol: str, lookback_days: int) -> DownloadedSeries:
@@ -65,14 +240,17 @@ def _download_yfinance(symbol: str, lookback_days: int) -> DownloadedSeries:
         raise RuntimeError(f"empty yfinance result for {symbol}")
     rows = []
     for timestamp, row in frame.tail(lookback_days).iterrows():
+        close = _scalar_value(row.get("Close"))
+        if close is None:
+            continue
         rows.append(
             {
                 "date": timestamp.date().isoformat(),
-                "open": float(row.get("Open", 0.0)),
-                "high": float(row.get("High", 0.0)),
-                "low": float(row.get("Low", 0.0)),
-                "close": float(row.get("Close", 0.0)),
-                "volume": float(row.get("Volume", 0.0)),
+                "open": _scalar_value(row.get("Open")) or close,
+                "high": _scalar_value(row.get("High")) or close,
+                "low": _scalar_value(row.get("Low")) or close,
+                "close": close,
+                "volume": _scalar_value(row.get("Volume")) or 0.0,
             }
         )
     return DownloadedSeries(symbol=symbol, rows=_clean_rows(rows)[-lookback_days:], source="yfinance", point_in_time_safe=True)
@@ -176,6 +354,25 @@ def _value_at(payload: dict[str, list[Any]], field: str, index: int) -> float | 
     return float(values[index])
 
 
+def _scalar_value(value: Any) -> float | None:
+    if value is None:
+        return None
+    if hasattr(value, "dropna"):
+        try:
+            value = value.dropna()
+            if getattr(value, "empty", False):
+                return None
+            value = value.iloc[0]
+        except Exception:
+            return None
+    try:
+        if math.isnan(float(value)):
+            return None
+    except (TypeError, ValueError):
+        return None
+    return float(value)
+
+
 def _clean_rows(rows: list[dict[str, float | str]]) -> list[dict[str, float | str]]:
     by_date = {str(row["date"]): row for row in rows if row.get("date") and float(row.get("close") or 0.0) > 0}
     return [by_date[key] for key in sorted(by_date)]
@@ -194,7 +391,7 @@ def _cache_file(symbol: str) -> Path:
 
 
 def _write_cache(series: DownloadedSeries) -> None:
-    if series.source not in {"yfinance", "yahoo-chart", "stooq"}:
+    if series.source not in {"yfinance", "yahoo-chart", "stooq", "finnhub-quote-patch"}:
         return
     path = _cache_file(series.symbol)
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -214,7 +411,7 @@ def _read_cache(symbol: str, lookback_days: int) -> DownloadedSeries | None:
     payload = json.loads(path.read_text(encoding="utf-8"))
     source = str(payload.get("source", "unknown"))
     rows = _clean_rows(list(payload.get("rows", [])))[-lookback_days:]
-    if source not in {"yfinance", "yahoo-chart", "stooq"} or not rows:
+    if source not in {"yfinance", "yahoo-chart", "stooq", "finnhub-quote-patch"} or not rows:
         return None
     return DownloadedSeries(symbol=symbol, rows=rows, source=f"local-cache-{source}", point_in_time_safe=True)
 

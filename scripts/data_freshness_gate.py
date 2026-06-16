@@ -66,6 +66,9 @@ def build_data_freshness_status(
     else:
         provider_note = ""
 
+    if freshness_status == "fresh" and any_provider_stale:
+        provider_note = "部分辅助数据源存在 stale/cache 状态，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。"
+
     warning_message = _warning_message(
         freshness_status=freshness_status,
         latest_market_date=latest_market_date,
@@ -315,6 +318,36 @@ def _to_utc(value: datetime) -> datetime:
     if value.tzinfo is None:
         return value.replace(tzinfo=timezone.utc)
     return value.astimezone(timezone.utc)
+
+
+def _warning_message(
+    *,
+    freshness_status: str,
+    latest_market_date: date | None,
+    expected_latest: date,
+    now_et: datetime,
+    provider_note: str,
+) -> str:
+    latest = _date_str(latest_market_date) or "unknown"
+    if freshness_status == "provider_failed":
+        return "核心市场数据源失败，当前预测不可作为今日判断。"
+    if freshness_status == "stale":
+        return (
+            "数据已过期，当前预测不可作为今日判断。"
+            f" 最新核心行情日期为 {latest}，按美股交易日应至少更新到 {expected_latest.isoformat()}。"
+        )
+    if freshness_status == MARKET_OPEN_UNCONFIRMED:
+        return (
+            "当前行情日期来自美股盘中快照，尚未形成收盘确认数据。"
+            f" 盘中快照日期为 {latest}；正式预测记录应等美东 {MARKET_CLOSE_BUFFER.strftime('%H:%M')} 后重新生成。"
+        )
+    if freshness_status == "market_closed":
+        return (
+            f"美股当前未形成新的完整交易日，使用最近完成交易日 {latest} 的数据。"
+            f" 当前美东时间 {now_et.strftime('%Y-%m-%d %H:%M')}。"
+        )
+    base = f"核心行情已更新至最新应有交易日 {latest}。"
+    return f"{base} {provider_note}".strip()
 
 
 def _observed(day: date) -> date:
