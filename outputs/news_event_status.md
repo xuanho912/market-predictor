@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-06-16T14:42:19.017052+00:00`
+- generated_at: `2026-06-16T15:33:50.039883+00:00`
 - status: `available`
-- validation_type: `daily`
-- major_event_count: `12`
-- event_detection_confidence: `78`
+- validation_type: `event_refresh`
+- major_event_count: `11`
+- event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `25`
+- confirmation_score: `0`
 
 ## Dashboard Note
 
@@ -46,7 +46,7 @@
 - headline: Oil drops about 4% to three-month low as markets weigh US-Iran deal - Reuters
 - source: Reuters
 - published_at: `2026-06-16T13:10:15+00:00`
-- importance_score: `94`
+- importance_score: `93`
 - confidence: `high`
 
 ### geopolitical_risk_easing / risk_on
@@ -75,19 +75,11 @@
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: Russia should make peace deal, Trump says after 'very good' Zelenskiy meeting - Reuters
-- source: Reuters
-- published_at: `2026-06-16T04:01:00+00:00`
-- importance_score: `97`
-- confidence: `high`
-
-### geopolitical_risk_easing / risk_on
-
 - headline: Indian rupee extends gains; US-Iran peace agreement details, Fed guidance awaited - Reuters
 - source: Reuters
 - published_at: `2026-06-16T03:02:00+00:00`
 - importance_score: `97`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_easing / risk_on
 
@@ -102,5 +94,13 @@
 - headline: Trump’s Iran accord offers exit from war — and fresh political risks - Reuters
 - source: Reuters
 - published_at: `2026-06-15T22:01:45+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Trading Day: US-Iran war halted - now what? - Reuters
+- source: Reuters
+- published_at: `2026-06-15T21:06:16+00:00`
 - importance_score: `100`
 - confidence: `medium`
