@@ -1048,6 +1048,13 @@ function PredictionChart({ selected }: { selected: SimulatedSymbolPaths | undefi
   const xFor = (index: number) => margin.left + (dates.length <= 1 ? 0 : (index / (dates.length - 1)) * chartWidth);
   const yFor = (value: number) => margin.top + ((maxY - value) / (maxY - minY || 1)) * chartHeight;
   const current = getCurrentPrice(selected);
+  const currentAnchor =
+    asNumber(selected.paths.historical_price?.[splitIndex]) ??
+    asNumber(selected.paths.expected_path?.[splitIndex]) ??
+    current;
+  const currentX = xFor(splitIndex);
+  const currentY = currentAnchor !== null ? yFor(currentAnchor) : null;
+  const currentLabelX = Math.min(width - margin.right - 134, currentX + 14);
 
   const series: PathSeriesKey[] = ["historical_price", "expected_path", "bounce_path", "bearish_path", "analog_average_path"];
   const area = buildArea(selected.paths.confidence_band_upper, selected.paths.confidence_band_lower, xFor, yFor);
@@ -1129,12 +1136,12 @@ function PredictionChart({ selected }: { selected: SimulatedSymbolPaths | undefi
               stroke="#94a3b8"
               strokeDasharray="4 6"
               strokeWidth="1.5"
-              x1={xFor(splitIndex)}
-              x2={xFor(splitIndex)}
+              x1={currentX}
+              x2={currentX}
               y1={margin.top - 8}
               y2={height - margin.bottom + 12}
             />
-            <text fill="#94a3b8" fontSize="12" x={xFor(splitIndex) + 8} y={margin.top - 12}>
+            <text fill="#94a3b8" fontSize="12" x={currentX + 8} y={margin.top - 12}>
               当前
             </text>
 
@@ -1178,20 +1185,22 @@ function PredictionChart({ selected }: { selected: SimulatedSymbolPaths | undefi
               );
             })}
 
-            {current !== null ? (
+            {currentAnchor !== null && currentY !== null ? (
               <>
                 <line
                   stroke="#2dd4bf"
                   strokeDasharray="2 6"
-                  strokeOpacity="0.65"
+                  strokeOpacity="0.38"
                   strokeWidth="1"
                   x1={margin.left}
                   x2={width - margin.right}
-                  y1={yFor(current)}
-                  y2={yFor(current)}
+                  y1={currentY}
+                  y2={currentY}
                 />
-                <text fill="#99f6e4" fontSize="12" x={width - margin.right - 88} y={yFor(current) - 8}>
-                  现价 {current.toFixed(2)}
+                <circle cx={currentX} cy={currentY} fill="#2dd4bf" r="5.5" stroke="#0a1112" strokeWidth="2" />
+                <line stroke="#2dd4bf" strokeOpacity="0.45" strokeWidth="1.5" x1={currentX} x2={currentLabelX - 5} y1={currentY} y2={currentY - 6} />
+                <text fill="#99f6e4" fontSize="12" fontWeight="700" x={currentLabelX} y={currentY - 10}>
+                  当前价 {currentAnchor.toFixed(2)}
                 </text>
               </>
             ) : null}
