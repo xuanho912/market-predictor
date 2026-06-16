@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-06-16T10:23:34.229592+00:00`
+- generated_at: `2026-06-16T11:19:57.149279+00:00`
 - status: `available`
-- validation_type: `daily`
-- major_event_count: `16`
-- event_detection_confidence: `79`
+- validation_type: `event_refresh`
+- major_event_count: `14`
+- event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -41,19 +41,19 @@
 - importance_score: `100`
 - confidence: `high`
 
-### geopolitical_risk_easing / risk_on
-
-- headline: Indian shares extend gains on US-Iran peace deal - Reuters
-- source: Reuters
-- published_at: `2026-06-16T04:18:37+00:00`
-- importance_score: `100`
-- confidence: `high`
-
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Is the Iran war just an energy shock - or a turning point? - Reuters
 - source: Reuters
-- published_at: `2026-06-16T04:05:40+00:00`
+- published_at: `2026-06-16T06:02:02+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Indian shares extend gains on US-Iran peace deal - Reuters
+- source: Reuters
+- published_at: `2026-06-16T02:25:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -62,14 +62,6 @@
 - headline: Oil drops to fresh three-month low as markets weigh US-Iran peace deal - Reuters
 - source: Reuters
 - published_at: `2026-06-16T01:14:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Gold gains as US-Iran peace deal eases rate hike concerns - Reuters
-- source: Reuters
-- published_at: `2026-06-16T01:13:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -102,5 +94,13 @@
 - headline: With war likely over, Iranian rulers must face demands of angry, embittered population - Reuters
 - source: Reuters
 - published_at: `2026-06-15T18:15:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Amateur saboteurs: the young men carrying out attacks for gangs, Russia and Iran - Reuters
+- source: Reuters
+- published_at: `2026-06-15T16:30:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
