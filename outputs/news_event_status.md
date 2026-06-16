@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-06-16T08:19:30.822807+00:00`
+- generated_at: `2026-06-16T08:39:51.369677+00:00`
 - status: `available`
-- validation_type: `event_refresh`
-- major_event_count: `20`
-- event_detection_confidence: `77`
+- validation_type: `daily`
+- major_event_count: `18`
+- event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -37,7 +37,7 @@
 
 - headline: Is the Iran war just an energy shock - or a turning point? - Reuters
 - source: Reuters
-- published_at: `2026-06-16T02:33:33+00:00`
+- published_at: `2026-06-16T06:04:29+00:00`
 - importance_score: `100`
 - confidence: `high`
 

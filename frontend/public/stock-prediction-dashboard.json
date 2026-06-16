@@ -2,20 +2,24 @@
   "data_provider": {
     "provider": "stock_data_provider",
     "summary": {
-      "available_symbols": 1,
+      "available_symbols": 0,
       "company_news_available": false,
-      "company_profiles_available": 1,
-      "data_quality_score": 100.0,
+      "company_profiles_available": 0,
+      "data_quality_score": 0.0,
       "earnings_available": false,
       "fundamentals_available": false,
-      "missing_symbols": [],
+      "missing_symbols": [
+        "NVDA TSLA SMR CEG"
+      ],
       "requested_symbols": 1,
       "single_stock_options_available": false,
-      "synthetic_blocked_symbols": []
+      "synthetic_blocked_symbols": [
+        "NVDA TSLA SMR CEG"
+      ]
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-06-16T08:19:36.388440+00:00",
+  "generated_at": "2026-06-16T08:39:54.077179+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -104,7 +108,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-06-16T08:19:36.388868+00:00",
+    "generated_at": "2026-06-16T08:39:54.078200+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 11,
     "risk_score_effectiveness": {
@@ -167,266 +171,23 @@
       "company_news",
       "single_stock_options"
     ],
-    "stock_data_quality_score": 100.0,
-    "strongest_stock_symbol": "SPCX",
-    "supported_symbols": 1,
+    "stock_data_quality_score": 0.0,
+    "strongest_stock_symbol": null,
+    "supported_symbols": 0,
     "validation_status": "not_yet_validated",
     "watchlist_size": 1
   },
   "symbols": {
-    "SPCX": {
-      "as_of": "2026-06-15",
+    "NVDA TSLA SMR CEG": {
+      "as_of": null,
       "benchmark": "QQQ",
-      "company_name": "Space Exploration Technologies Corp",
       "conflicting_signals": [
-        "大盘背景对个股路径形成压力。",
-        "个股相对强弱弱于基准。",
-        "财报、估值、公司新闻或个股期权数据缺失，个股置信度受限。"
+        "真实个股价格数据缺失，不能生成 live stock forecast。"
       ],
-      "current_price": 192.5,
-      "data_quality": {
-        "available_fields": [
-          "price",
-          "volume",
-          "relative_strength",
-          "company_profile"
-        ],
-        "company_news": "missing",
-        "company_profile": "available",
-        "earnings": "missing",
-        "fundamentals": "missing",
-        "missing_fields": [
-          "company_news",
-          "earnings",
-          "fundamentals",
-          "single_stock_options"
-        ],
-        "note": "Missing stock-specific news, fundamentals, earnings or options lowers confidence but does not create synthetic data.",
-        "price_available": true,
-        "relative_strength": "available",
-        "score": 42.0,
-        "sector_context": "missing",
-        "single_stock_options": "missing",
-        "volume_available": true
-      },
-      "data_status": "available",
-      "features": {
-        "fundamentals_valuation": {
-          "cash_flow_quality": null,
-          "debt_risk": null,
-          "earnings_growth": null,
-          "forward_pe": null,
-          "profitability": null,
-          "revenue_growth": null,
-          "status": "missing",
-          "valuation_percentile": null
-        },
-        "news_event": {
-          "analyst_rating_news": "missing",
-          "company_news": "missing",
-          "earnings_date": null,
-          "earnings_risk_flag": "missing",
-          "news_risk_score": null,
-          "news_sentiment": "missing"
-        },
-        "price_trend": {
-          "close": 192.5,
-          "distance_to_200d_ma": null,
-          "distance_to_20d_ma": null,
-          "distance_to_50d_ma": null,
-          "distance_to_5d_ma": null,
-          "drawdown_20d": 0.0,
-          "drawdown_60d": 0.0,
-          "gap_up_down": 0.067,
-          "recent_swing_high": 193.0,
-          "recent_swing_low": 149.33999633789062,
-          "returns": {
-            "10d": null,
-            "1d": 0.19602363249440488,
-            "20d": null,
-            "3d": null,
-            "5d": null,
-            "60d": null
-          },
-          "trend_slope": 0.0
-        },
-        "relative_strength": {
-          "relative_strength_trend": 18.18,
-          "stock_vs_benchmark_20d": -0.0495,
-          "stock_vs_benchmark_60d": -0.2546,
-          "stock_vs_qqq_20d": -0.0495,
-          "stock_vs_sector_20d": null,
-          "stock_vs_spy_20d": -0.0212
-        },
-        "volatility": {
-          "atr_14d": 32.05,
-          "atr_pct": 0.1665,
-          "implied_volatility": null,
-          "option_stress": "missing",
-          "price_range_20d": 0.2268,
-          "realized_volatility_20d": null
-        },
-        "volume": {
-          "accumulation_distribution_proxy": null,
-          "panic_volume_proxy": false,
-          "up_volume_down_volume_proxy": null,
-          "volume_confirmation_score": 44,
-          "volume_vs_20d_average": 0.0,
-          "volume_z_score": null
-        }
-      },
-      "forecast_price_levels": {
-        "disclaimer": "Price levels are probabilistic scenario references, not target prices or execution instructions.",
-        "forecast_price_table": {
-          "10d": {
-            "confidence_level": "low",
-            "expected_price": 180.9,
-            "expected_return": -0.0603,
-            "lower_confidence_price": 131.04,
-            "primary_scenario_price": 163.65,
-            "probability_of_reaching_primary_price": 0.2486,
-            "risk_scenario_price": 163.65,
-            "secondary_scenario_price": 158.85,
-            "upper_confidence_price": 230.76
-          },
-          "1d": {
-            "confidence_level": "low",
-            "expected_price": 190.78,
-            "expected_return": -0.0089,
-            "lower_confidence_price": 175.01,
-            "primary_scenario_price": 189.94,
-            "probability_of_reaching_primary_price": 0.2486,
-            "risk_scenario_price": 189.94,
-            "secondary_scenario_price": 186.09,
-            "upper_confidence_price": 206.55
-          },
-          "20d": {
-            "confidence_level": "low",
-            "expected_price": 179.39,
-            "expected_return": -0.0681,
-            "lower_confidence_price": 108.88,
-            "primary_scenario_price": 158.85,
-            "probability_of_reaching_primary_price": 0.2486,
-            "risk_scenario_price": 158.85,
-            "secondary_scenario_price": 148.27,
-            "upper_confidence_price": 249.9
-          },
-          "3d": {
-            "confidence_level": "low",
-            "expected_price": 187.73,
-            "expected_return": -0.0248,
-            "lower_confidence_price": 160.42,
-            "primary_scenario_price": 183.53,
-            "probability_of_reaching_primary_price": 0.2486,
-            "risk_scenario_price": 183.53,
-            "secondary_scenario_price": 177.12,
-            "upper_confidence_price": 215.03
-          },
-          "5d": {
-            "confidence_level": "low",
-            "expected_price": 184.88,
-            "expected_return": -0.0396,
-            "lower_confidence_price": 149.62,
-            "primary_scenario_price": 175.83,
-            "probability_of_reaching_primary_price": 0.2486,
-            "risk_scenario_price": 175.83,
-            "secondary_scenario_price": 169.42,
-            "upper_confidence_price": 220.13
-          },
-          "60d": {
-            "confidence_level": "low",
-            "expected_price": 179.89,
-            "expected_return": -0.0655,
-            "lower_confidence_price": 57.76,
-            "primary_scenario_price": 155.64,
-            "probability_of_reaching_primary_price": 0.2486,
-            "risk_scenario_price": 155.64,
-            "secondary_scenario_price": 138.01,
-            "upper_confidence_price": 302.02
-          }
-        },
-        "trigger_levels": {
-          "bounce_target_zone": {
-            "base": 211.73,
-            "conservative": 211.73,
-            "extended": 218.64,
-            "meaning": "概率反抽情景参考区间，不是目标价承诺。",
-            "not_trading_instruction": true,
-            "source": "scenario_path + atr + recent_resistance"
-          },
-          "breakdown_level": {
-            "confidence": "low",
-            "distance_pct": -0.2242,
-            "meaning": "跌破该价位说明个股跌破结构风险上升",
-            "not_trading_instruction": true,
-            "price": 149.34,
-            "source": "recent_low + risk_activation"
-          },
-          "breakout_level": {
-            "confidence": "low",
-            "distance_pct": 0.0749,
-            "meaning": "突破该价位说明个股突破情景需要重新评估",
-            "not_trading_instruction": true,
-            "price": 206.92,
-            "source": "recent_high + primary_confirmation"
-          },
-          "failed_bounce_warning_zone": {
-            "critical_warning": 149.34,
-            "first_warning": 178.08,
-            "meaning": "跌入该区间说明失败反抽风险上升。",
-            "not_trading_instruction": true,
-            "source": "risk_path + atr + recent_support"
-          },
-          "nearest_resistance": {
-            "confidence": "low",
-            "distance_pct": 0.0026,
-            "meaning": "最近阻力代理，来自近期高点和 ATR 区间",
-            "not_trading_instruction": true,
-            "price": 193.0,
-            "source": "price_structure + volatility_band"
-          },
-          "nearest_support": {
-            "confidence": "low",
-            "distance_pct": -0.1332,
-            "meaning": "最近支撑代理，来自近期低点和 ATR 区间",
-            "not_trading_instruction": true,
-            "price": 166.86,
-            "source": "price_structure + volatility_band"
-          },
-          "primary_confirmation_level": {
-            "confidence": "low",
-            "distance_pct": 0.0749,
-            "meaning": "站上该价位说明个股主路径正在兑现",
-            "not_trading_instruction": true,
-            "price": 206.92,
-            "source": "price_structure + scenario_path"
-          },
-          "primary_invalidation_level": {
-            "confidence": "low",
-            "distance_pct": -0.2242,
-            "meaning": "跌破该价位说明个股主路径失效概率上升",
-            "not_trading_instruction": true,
-            "price": 149.34,
-            "source": "recent_low + volatility_band"
-          },
-          "risk_scenario_activation_level": {
-            "confidence": "low",
-            "distance_pct": -0.2242,
-            "meaning": "跌破该价位说明个股风险路径权重上升",
-            "not_trading_instruction": true,
-            "price": 149.34,
-            "source": "volatility_band"
-          },
-          "trend_repair_confirmation_level": {
-            "confidence": "low",
-            "distance_pct": 0.0026,
-            "meaning": "突破该价位说明个股趋势修复概率提高",
-            "not_trading_instruction": true,
-            "price": 193.0,
-            "source": "recent_high + scenario_path"
-          }
-        }
-      },
+      "current_price": null,
+      "data_status": "synthetic_blocked",
+      "features": {},
+      "forecast_price_levels": {},
       "historical_analogs": {
         "analog_support": "low sample",
         "distribution": {},
@@ -446,797 +207,100 @@
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
         "risk_alert_level": "HIGH_CONVICTION",
         "risk_alert_type": "Bounce Setup Alert",
-        "symbol": "SPCX"
+        "symbol": "NVDA TSLA SMR CEG"
       },
       "missing_data": [
+        "price",
+        "volume",
+        "relative_strength",
+        "company_profile",
         "fundamentals",
         "earnings",
         "company_news",
-        "single_stock_options"
+        "single_stock_options",
+        "synthetic_blocked"
       ],
       "model_version": "stock_baseline_v1",
       "not_trading_advice": true,
       "scenario_ranking": {
-        "all_scenarios": [
-          {
-            "confidence": "low",
-            "label": "个股失败反抽",
-            "probability": 0.2486,
-            "reason": "反抽缺乏成交量/相对强弱确认或大盘风险上升时，失败反抽权重上升。",
-            "scenario": "stock_failed_bounce"
-          },
-          {
-            "confidence": "low",
-            "label": "个股下跌延续",
-            "probability": 0.2109,
-            "reason": "价格低于关键均线、相对弱势或大盘 risk-off 时，下跌延续权重上升。",
-            "scenario": "stock_downside_continuation"
-          },
-          {
-            "confidence": "low",
-            "label": "个股事件风险",
-            "probability": 0.1808,
-            "reason": "个股新闻、财报、估值或期权数据缺失时，事件风险保持为独立风险路径。",
-            "scenario": "stock_event_risk"
-          },
-          {
-            "confidence": "low",
-            "label": "个股震荡",
-            "probability": 0.1717,
-            "reason": "信号分歧较大时，震荡路径权重上升。",
-            "scenario": "stock_sideways"
-          },
-          {
-            "confidence": "low",
-            "label": "个股反抽",
-            "probability": 0.0976,
-            "reason": "结合回撤、成交量和大盘背景，短中期反抽权重较高；当前市场背景为 risk_off_pressure。",
-            "scenario": "stock_bounce"
-          },
-          {
-            "confidence": "low",
-            "label": "个股趋势修复",
-            "probability": 0.0904,
-            "reason": "相对强弱和中期趋势修复信号较强时，该路径上升。",
-            "scenario": "stock_trend_repair"
-          }
-        ],
         "close_call": true,
-        "conflicting_signals": [
-          "大盘背景对个股路径形成压力。",
-          "个股相对强弱弱于基准。",
-          "财报、估值、公司新闻或个股期权数据缺失，个股置信度受限。"
-        ],
         "primary": {
-          "confidence": "low",
-          "label": "个股失败反抽",
-          "probability": 0.2486,
-          "reason": "反抽缺乏成交量/相对强弱确认或大盘风险上升时，失败反抽权重上升。",
-          "scenario": "stock_failed_bounce"
+          "label": "数据缺失",
+          "probability": null,
+          "scenario": "stock_data_missing"
         },
-        "probability_gap": 0.0377,
-        "ranking_note": "Stock scenario probabilities follow market -> sector -> stock hierarchy. Market risk sets confidence, sector/industry filters the setup, and stock evidence decides the final path. They are not validated alpha and not execution advice.",
+        "ranking_note": "Stock forecast blocked because real point-in-time price data is missing.",
         "risk": {
-          "confidence": "low",
-          "label": "个股失败反抽",
-          "probability": 0.2486,
-          "reason": "反抽缺乏成交量/相对强弱确认或大盘风险上升时，失败反抽权重上升。",
-          "scenario": "stock_failed_bounce"
+          "label": "数据缺失",
+          "probability": null,
+          "scenario": "stock_data_missing"
         },
         "secondary": {
-          "confidence": "low",
-          "label": "个股下跌延续",
-          "probability": 0.2109,
-          "reason": "价格低于关键均线、相对弱势或大盘 risk-off 时，下跌延续权重上升。",
-          "scenario": "stock_downside_continuation"
-        },
-        "supporting_signals": [
-          "当前没有足够强的多源支持证据。"
-        ]
+          "label": "数据缺失",
+          "probability": null,
+          "scenario": "stock_data_missing"
+        }
       },
       "sector_etf": null,
-      "simulated_paths": {
-        "dates": [
-          "2026-06-12",
-          "2026-06-15",
-          "+1d",
-          "+3d",
-          "+5d",
-          "+10d",
-          "+20d",
-          "+60d"
-        ],
-        "expected_path": [
-          null,
-          192.5,
-          190.78,
-          187.73,
-          184.88,
-          180.9,
-          179.39,
-          179.89
-        ],
-        "historical_price": [
-          160.95,
-          192.5,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
-        "path_ranking": {
-          "primary": {
-            "confidence": "low",
-            "label": "个股失败反抽",
-            "probability": 0.2486,
-            "reason": "反抽缺乏成交量/相对强弱确认或大盘风险上升时，失败反抽权重上升。",
-            "scenario": "stock_failed_bounce"
-          },
-          "risk": {
-            "confidence": "low",
-            "label": "个股失败反抽",
-            "probability": 0.2486,
-            "reason": "反抽缺乏成交量/相对强弱确认或大盘风险上升时，失败反抽权重上升。",
-            "scenario": "stock_failed_bounce"
-          },
-          "secondary": {
-            "confidence": "low",
-            "label": "个股下跌延续",
-            "probability": 0.2109,
-            "reason": "价格低于关键均线、相对弱势或大盘 risk-off 时，下跌延续权重上升。",
-            "scenario": "stock_downside_continuation"
-          }
-        },
-        "primary_path": [
-          null,
-          192.5,
-          189.94,
-          183.53,
-          175.83,
-          163.65,
-          158.85,
-          155.64
-        ],
-        "risk_path": [
-          null,
-          192.5,
-          189.94,
-          183.53,
-          175.83,
-          163.65,
-          158.85,
-          155.64
-        ],
-        "secondary_path": [
-          null,
-          192.5,
-          186.09,
-          177.12,
-          169.42,
-          158.85,
-          148.27,
-          138.01
-        ]
-      },
+      "simulated_paths": {},
       "stock_alerts": {
         "alerts": [
           {
-            "affected_ticker": "SPCX",
-            "alert_level": "EXTREME",
-            "alert_score": 90.64,
-            "alert_type": "Liquidity / Gap Risk Alert",
-            "confirmation_needed": [
-              "ATR 回落",
-              "跳空缺口被消化",
-              "成交量恢复正常"
-            ],
-            "invalidation_conditions": [
-              "继续大幅跳空或波动扩张"
-            ],
-            "not_trading_advice": true,
-            "one_line_reason": "高 ATR、跳空或成交量异常会提高路径偏离风险。",
-            "related_price_levels": {
-              "breakdown_level": {
-                "confidence": "low",
-                "distance_pct": -0.2242,
-                "meaning": "跌破该价位说明个股跌破结构风险上升",
-                "not_trading_instruction": true,
-                "price": 149.34,
-                "source": "recent_low + risk_activation"
-              },
-              "breakout_level": {
-                "confidence": "low",
-                "distance_pct": 0.0749,
-                "meaning": "突破该价位说明个股突破情景需要重新评估",
-                "not_trading_instruction": true,
-                "price": 206.92,
-                "source": "recent_high + primary_confirmation"
-              },
-              "primary_confirmation_level": {
-                "confidence": "low",
-                "distance_pct": 0.0749,
-                "meaning": "站上该价位说明个股主路径正在兑现",
-                "not_trading_instruction": true,
-                "price": 206.92,
-                "source": "price_structure + scenario_path"
-              },
-              "primary_invalidation_level": {
-                "confidence": "low",
-                "distance_pct": -0.2242,
-                "meaning": "跌破该价位说明个股主路径失效概率上升",
-                "not_trading_instruction": true,
-                "price": 149.34,
-                "source": "recent_low + volatility_band"
-              },
-              "risk_scenario_activation_level": {
-                "confidence": "low",
-                "distance_pct": -0.2242,
-                "meaning": "跌破该价位说明个股风险路径权重上升",
-                "not_trading_instruction": true,
-                "price": 149.34,
-                "source": "volatility_band"
-              }
-            }
-          },
-          {
-            "affected_ticker": "SPCX",
-            "alert_level": "WATCH",
-            "alert_score": 50.91,
-            "alert_type": "Relative Weakness Alert",
-            "confirmation_needed": [
-              "相对强弱继续低于 benchmark",
-              "反弹时跑输"
-            ],
-            "invalidation_conditions": [
-              "相对强弱重新上穿中性区"
-            ],
-            "not_trading_advice": true,
-            "one_line_reason": "个股相对 benchmark 或板块明显走弱。",
-            "related_price_levels": {
-              "breakdown_level": {
-                "confidence": "low",
-                "distance_pct": -0.2242,
-                "meaning": "跌破该价位说明个股跌破结构风险上升",
-                "not_trading_instruction": true,
-                "price": 149.34,
-                "source": "recent_low + risk_activation"
-              },
-              "breakout_level": {
-                "confidence": "low",
-                "distance_pct": 0.0749,
-                "meaning": "突破该价位说明个股突破情景需要重新评估",
-                "not_trading_instruction": true,
-                "price": 206.92,
-                "source": "recent_high + primary_confirmation"
-              },
-              "primary_confirmation_level": {
-                "confidence": "low",
-                "distance_pct": 0.0749,
-                "meaning": "站上该价位说明个股主路径正在兑现",
-                "not_trading_instruction": true,
-                "price": 206.92,
-                "source": "price_structure + scenario_path"
-              },
-              "primary_invalidation_level": {
-                "confidence": "low",
-                "distance_pct": -0.2242,
-                "meaning": "跌破该价位说明个股主路径失效概率上升",
-                "not_trading_instruction": true,
-                "price": 149.34,
-                "source": "recent_low + volatility_band"
-              },
-              "risk_scenario_activation_level": {
-                "confidence": "low",
-                "distance_pct": -0.2242,
-                "meaning": "跌破该价位说明个股风险路径权重上升",
-                "not_trading_instruction": true,
-                "price": 149.34,
-                "source": "volatility_band"
-              }
-            }
-          },
-          {
-            "affected_ticker": "SPCX",
-            "alert_level": "NO_ALERT",
-            "alert_score": 29.0,
-            "alert_type": "Stock Failed Bounce Risk",
-            "confirmation_needed": [
-              "价格无法站上确认价",
-              "成交量萎缩",
-              "benchmark 转弱"
-            ],
-            "invalidation_conditions": [
-              "价格重新站上确认价且成交量扩张"
-            ],
-            "not_trading_advice": true,
-            "one_line_reason": "反抽路径缺少成交量/相对强弱确认或大盘风险压力上升。",
-            "related_price_levels": {
-              "breakdown_level": {
-                "confidence": "low",
-                "distance_pct": -0.2242,
-                "meaning": "跌破该价位说明个股跌破结构风险上升",
-                "not_trading_instruction": true,
-                "price": 149.34,
-                "source": "recent_low + risk_activation"
-              },
-              "breakout_level": {
-                "confidence": "low",
-                "distance_pct": 0.0749,
-                "meaning": "突破该价位说明个股突破情景需要重新评估",
-                "not_trading_instruction": true,
-                "price": 206.92,
-                "source": "recent_high + primary_confirmation"
-              },
-              "primary_confirmation_level": {
-                "confidence": "low",
-                "distance_pct": 0.0749,
-                "meaning": "站上该价位说明个股主路径正在兑现",
-                "not_trading_instruction": true,
-                "price": 206.92,
-                "source": "price_structure + scenario_path"
-              },
-              "primary_invalidation_level": {
-                "confidence": "low",
-                "distance_pct": -0.2242,
-                "meaning": "跌破该价位说明个股主路径失效概率上升",
-                "not_trading_instruction": true,
-                "price": 149.34,
-                "source": "recent_low + volatility_band"
-              },
-              "risk_scenario_activation_level": {
-                "confidence": "low",
-                "distance_pct": -0.2242,
-                "meaning": "跌破该价位说明个股风险路径权重上升",
-                "not_trading_instruction": true,
-                "price": 149.34,
-                "source": "volatility_band"
-              }
-            }
-          },
-          {
-            "affected_ticker": "SPCX",
-            "alert_level": "NO_ALERT",
-            "alert_score": 19.94,
-            "alert_type": "Earnings/Event Risk",
-            "confirmation_needed": [
-              "接入真实公司新闻/财报日期",
-              "价格反应确认"
-            ],
-            "invalidation_conditions": [
-              "事件风险消退且价格结构确认"
-            ],
-            "not_trading_advice": true,
-            "one_line_reason": "公司新闻、财报或个股期权信息缺失时，事件风险保持独立预警。",
-            "related_price_levels": {
-              "breakdown_level": {
-                "confidence": "low",
-                "distance_pct": -0.2242,
-                "meaning": "跌破该价位说明个股跌破结构风险上升",
-                "not_trading_instruction": true,
-                "price": 149.34,
-                "source": "recent_low + risk_activation"
-              },
-              "breakout_level": {
-                "confidence": "low",
-                "distance_pct": 0.0749,
-                "meaning": "突破该价位说明个股突破情景需要重新评估",
-                "not_trading_instruction": true,
-                "price": 206.92,
-                "source": "recent_high + primary_confirmation"
-              },
-              "primary_confirmation_level": {
-                "confidence": "low",
-                "distance_pct": 0.0749,
-                "meaning": "站上该价位说明个股主路径正在兑现",
-                "not_trading_instruction": true,
-                "price": 206.92,
-                "source": "price_structure + scenario_path"
-              },
-              "primary_invalidation_level": {
-                "confidence": "low",
-                "distance_pct": -0.2242,
-                "meaning": "跌破该价位说明个股主路径失效概率上升",
-                "not_trading_instruction": true,
-                "price": 149.34,
-                "source": "recent_low + volatility_band"
-              },
-              "risk_scenario_activation_level": {
-                "confidence": "low",
-                "distance_pct": -0.2242,
-                "meaning": "跌破该价位说明个股风险路径权重上升",
-                "not_trading_instruction": true,
-                "price": 149.34,
-                "source": "volatility_band"
-              }
-            }
-          },
-          {
-            "affected_ticker": "SPCX",
-            "alert_level": "NO_ALERT",
-            "alert_score": 12.65,
-            "alert_type": "Stock Breakdown Warning",
-            "confirmation_needed": [
-              "跌破 breakdown level",
-              "下跌放量",
-              "相对强弱继续恶化"
-            ],
-            "invalidation_conditions": [
-              "重新站回 breakdown level 上方"
-            ],
-            "not_trading_advice": true,
-            "one_line_reason": "跌破结构风险、均线压力和下跌延续概率共同上升。",
-            "related_price_levels": {
-              "breakdown_level": {
-                "confidence": "low",
-                "distance_pct": -0.2242,
-                "meaning": "跌破该价位说明个股跌破结构风险上升",
-                "not_trading_instruction": true,
-                "price": 149.34,
-                "source": "recent_low + risk_activation"
-              },
-              "breakout_level": {
-                "confidence": "low",
-                "distance_pct": 0.0749,
-                "meaning": "突破该价位说明个股突破情景需要重新评估",
-                "not_trading_instruction": true,
-                "price": 206.92,
-                "source": "recent_high + primary_confirmation"
-              },
-              "primary_confirmation_level": {
-                "confidence": "low",
-                "distance_pct": 0.0749,
-                "meaning": "站上该价位说明个股主路径正在兑现",
-                "not_trading_instruction": true,
-                "price": 206.92,
-                "source": "price_structure + scenario_path"
-              },
-              "primary_invalidation_level": {
-                "confidence": "low",
-                "distance_pct": -0.2242,
-                "meaning": "跌破该价位说明个股主路径失效概率上升",
-                "not_trading_instruction": true,
-                "price": 149.34,
-                "source": "recent_low + volatility_band"
-              },
-              "risk_scenario_activation_level": {
-                "confidence": "low",
-                "distance_pct": -0.2242,
-                "meaning": "跌破该价位说明个股风险路径权重上升",
-                "not_trading_instruction": true,
-                "price": 149.34,
-                "source": "volatility_band"
-              }
-            }
-          },
-          {
-            "affected_ticker": "SPCX",
-            "alert_level": "NO_ALERT",
-            "alert_score": 5.37,
-            "alert_type": "Stock Bounce Setup",
-            "confirmation_needed": [
-              "价格站上主路径确认价",
-              "成交量继续确认",
-              "benchmark 不转为 risk-off"
-            ],
-            "invalidation_conditions": [
-              "跌破主路径失效价",
-              "相对强弱转弱",
-              "大盘 risk alert 升级"
-            ],
-            "not_trading_advice": true,
-            "one_line_reason": "反抽情景、成交量/相对强弱和大盘背景共同支持时触发。",
-            "related_price_levels": {
-              "breakdown_level": {
-                "confidence": "low",
-                "distance_pct": -0.2242,
-                "meaning": "跌破该价位说明个股跌破结构风险上升",
-                "not_trading_instruction": true,
-                "price": 149.34,
-                "source": "recent_low + risk_activation"
-              },
-              "breakout_level": {
-                "confidence": "low",
-                "distance_pct": 0.0749,
-                "meaning": "突破该价位说明个股突破情景需要重新评估",
-                "not_trading_instruction": true,
-                "price": 206.92,
-                "source": "recent_high + primary_confirmation"
-              },
-              "primary_confirmation_level": {
-                "confidence": "low",
-                "distance_pct": 0.0749,
-                "meaning": "站上该价位说明个股主路径正在兑现",
-                "not_trading_instruction": true,
-                "price": 206.92,
-                "source": "price_structure + scenario_path"
-              },
-              "primary_invalidation_level": {
-                "confidence": "low",
-                "distance_pct": -0.2242,
-                "meaning": "跌破该价位说明个股主路径失效概率上升",
-                "not_trading_instruction": true,
-                "price": 149.34,
-                "source": "recent_low + volatility_band"
-              },
-              "risk_scenario_activation_level": {
-                "confidence": "low",
-                "distance_pct": -0.2242,
-                "meaning": "跌破该价位说明个股风险路径权重上升",
-                "not_trading_instruction": true,
-                "price": 149.34,
-                "source": "volatility_band"
-              }
-            }
-          },
-          {
-            "affected_ticker": "SPCX",
-            "alert_level": "NO_ALERT",
-            "alert_score": 4.52,
-            "alert_type": "Stock Breakout Watch",
-            "confirmation_needed": [
-              "站上 breakout level",
-              "相对强弱继续扩散",
-              "benchmark 支持"
-            ],
-            "invalidation_conditions": [
-              "跌回确认价下方"
-            ],
-            "not_trading_advice": true,
-            "one_line_reason": "趋势修复概率、相对强弱和突破价位接近度改善。",
-            "related_price_levels": {
-              "breakdown_level": {
-                "confidence": "low",
-                "distance_pct": -0.2242,
-                "meaning": "跌破该价位说明个股跌破结构风险上升",
-                "not_trading_instruction": true,
-                "price": 149.34,
-                "source": "recent_low + risk_activation"
-              },
-              "breakout_level": {
-                "confidence": "low",
-                "distance_pct": 0.0749,
-                "meaning": "突破该价位说明个股突破情景需要重新评估",
-                "not_trading_instruction": true,
-                "price": 206.92,
-                "source": "recent_high + primary_confirmation"
-              },
-              "primary_confirmation_level": {
-                "confidence": "low",
-                "distance_pct": 0.0749,
-                "meaning": "站上该价位说明个股主路径正在兑现",
-                "not_trading_instruction": true,
-                "price": 206.92,
-                "source": "price_structure + scenario_path"
-              },
-              "primary_invalidation_level": {
-                "confidence": "low",
-                "distance_pct": -0.2242,
-                "meaning": "跌破该价位说明个股主路径失效概率上升",
-                "not_trading_instruction": true,
-                "price": 149.34,
-                "source": "recent_low + volatility_band"
-              },
-              "risk_scenario_activation_level": {
-                "confidence": "low",
-                "distance_pct": -0.2242,
-                "meaning": "跌破该价位说明个股风险路径权重上升",
-                "not_trading_instruction": true,
-                "price": 149.34,
-                "source": "volatility_band"
-              }
-            }
-          },
-          {
-            "affected_ticker": "SPCX",
+            "affected_ticker": "NVDA TSLA SMR CEG",
             "alert_level": "NO_ALERT",
             "alert_score": 0,
-            "alert_type": "Relative Strength Alert",
-            "confirmation_needed": [
-              "相对强弱保持扩散",
-              "价格站上确认价"
-            ],
-            "invalidation_conditions": [
-              "相对强弱回落"
-            ],
+            "alert_type": "NO_ALERT",
+            "confirmation_needed": [],
+            "invalidation_conditions": [],
             "not_trading_advice": true,
-            "one_line_reason": "个股相对 benchmark 或板块明显走强。",
+            "one_line_reason": "真实个股数据缺失，暂不生成个股预警。",
             "related_price_levels": {
-              "breakdown_level": {
-                "confidence": "low",
-                "distance_pct": -0.2242,
-                "meaning": "跌破该价位说明个股跌破结构风险上升",
-                "not_trading_instruction": true,
-                "price": 149.34,
-                "source": "recent_low + risk_activation"
-              },
-              "breakout_level": {
-                "confidence": "low",
-                "distance_pct": 0.0749,
-                "meaning": "突破该价位说明个股突破情景需要重新评估",
-                "not_trading_instruction": true,
-                "price": 206.92,
-                "source": "recent_high + primary_confirmation"
-              },
-              "primary_confirmation_level": {
-                "confidence": "low",
-                "distance_pct": 0.0749,
-                "meaning": "站上该价位说明个股主路径正在兑现",
-                "not_trading_instruction": true,
-                "price": 206.92,
-                "source": "price_structure + scenario_path"
-              },
-              "primary_invalidation_level": {
-                "confidence": "low",
-                "distance_pct": -0.2242,
-                "meaning": "跌破该价位说明个股主路径失效概率上升",
-                "not_trading_instruction": true,
-                "price": 149.34,
-                "source": "recent_low + volatility_band"
-              },
-              "risk_scenario_activation_level": {
-                "confidence": "low",
-                "distance_pct": -0.2242,
-                "meaning": "跌破该价位说明个股风险路径权重上升",
-                "not_trading_instruction": true,
-                "price": 149.34,
-                "source": "volatility_band"
-              }
+              "breakdown_level": null,
+              "breakout_level": null,
+              "primary_confirmation_level": null,
+              "primary_invalidation_level": null,
+              "risk_scenario_activation_level": null
             }
           }
         ],
         "not_trading_advice": true,
         "strongest_alert": {
-          "affected_ticker": "SPCX",
-          "alert_level": "EXTREME",
-          "alert_score": 90.64,
-          "alert_type": "Liquidity / Gap Risk Alert",
-          "confirmation_needed": [
-            "ATR 回落",
-            "跳空缺口被消化",
-            "成交量恢复正常"
-          ],
-          "invalidation_conditions": [
-            "继续大幅跳空或波动扩张"
-          ],
+          "affected_ticker": "NVDA TSLA SMR CEG",
+          "alert_level": "NO_ALERT",
+          "alert_score": 0,
+          "alert_type": "NO_ALERT",
+          "confirmation_needed": [],
+          "invalidation_conditions": [],
           "not_trading_advice": true,
-          "one_line_reason": "高 ATR、跳空或成交量异常会提高路径偏离风险。",
+          "one_line_reason": "真实个股数据缺失，暂不生成个股预警。",
           "related_price_levels": {
-            "breakdown_level": {
-              "confidence": "low",
-              "distance_pct": -0.2242,
-              "meaning": "跌破该价位说明个股跌破结构风险上升",
-              "not_trading_instruction": true,
-              "price": 149.34,
-              "source": "recent_low + risk_activation"
-            },
-            "breakout_level": {
-              "confidence": "low",
-              "distance_pct": 0.0749,
-              "meaning": "突破该价位说明个股突破情景需要重新评估",
-              "not_trading_instruction": true,
-              "price": 206.92,
-              "source": "recent_high + primary_confirmation"
-            },
-            "primary_confirmation_level": {
-              "confidence": "low",
-              "distance_pct": 0.0749,
-              "meaning": "站上该价位说明个股主路径正在兑现",
-              "not_trading_instruction": true,
-              "price": 206.92,
-              "source": "price_structure + scenario_path"
-            },
-            "primary_invalidation_level": {
-              "confidence": "low",
-              "distance_pct": -0.2242,
-              "meaning": "跌破该价位说明个股主路径失效概率上升",
-              "not_trading_instruction": true,
-              "price": 149.34,
-              "source": "recent_low + volatility_band"
-            },
-            "risk_scenario_activation_level": {
-              "confidence": "low",
-              "distance_pct": -0.2242,
-              "meaning": "跌破该价位说明个股风险路径权重上升",
-              "not_trading_instruction": true,
-              "price": 149.34,
-              "source": "volatility_band"
-            }
+            "breakdown_level": null,
+            "breakout_level": null,
+            "primary_confirmation_level": null,
+            "primary_invalidation_level": null,
+            "risk_scenario_activation_level": null
           }
         },
         "validation_status": "not_yet_validated"
       },
       "stock_confluence": {
         "conflicting_evidence": [
-          "大盘风险背景压低个股置信度",
-          "个股相对弱于大盘/benchmark",
-          "主路径和第二路径差距较小"
+          "真实个股数据缺失"
         ],
         "confluence_level": "weak",
-        "dominant_path": "stock_failed_bounce",
-        "hierarchy": {
-          "market": "risk_background",
-          "sector": "filter",
-          "stock": "final_forecast_object"
-        },
+        "dominant_path": "stock_data_missing",
         "missing_evidence": [
-          "company_news",
-          "earnings",
-          "fundamentals",
-          "fundamentals_earnings",
-          "historical_analog",
-          "news_event",
-          "options_volatility",
-          "sector_context",
-          "single_stock_options"
+          "price",
+          "volume",
+          "relative_strength"
         ],
-        "module_scores": {
-          "fundamentals_earnings": {
-            "evidence": "财报/估值/盈利预期未完整接入",
-            "reason": "缺失不阻断预测，但限制高置信判断",
-            "score": 35,
-            "status": "missing"
-          },
-          "historical_analog": {
-            "evidence": "历史相似样本不足",
-            "reason": "samples=0",
-            "score": 38,
-            "status": "missing"
-          },
-          "market_context": {
-            "evidence": "大盘风险背景压低个股置信度",
-            "reason": "benchmark=QQQ / risk_off_pressure",
-            "score": 28,
-            "status": "conflicting"
-          },
-          "news_event": {
-            "evidence": "公司新闻/事件数据未完整接入",
-            "reason": "不伪造新闻情绪，缺失时降低置信度",
-            "score": 35,
-            "status": "missing"
-          },
-          "options_volatility": {
-            "evidence": "个股期权/隐含波动率未完整接入",
-            "reason": "当前用实现波动率和 ATR 作为风险代理",
-            "score": 35,
-            "status": "missing"
-          },
-          "price_structure": {
-            "evidence": "价格结构中性",
-            "reason": "尚未形成清晰突破或跌破；主路径概率不够集中",
-            "score": 50.0,
-            "status": "neutral"
-          },
-          "relative_strength": {
-            "evidence": "个股相对弱于大盘/benchmark",
-            "reason": "相对强弱趋势偏弱",
-            "score": 18.18,
-            "status": "conflicting"
-          },
-          "sector_context": {
-            "evidence": "板块过滤数据缺失",
-            "reason": "sector ETF 或相对板块强弱不可用",
-            "score": 35,
-            "status": "missing"
-          },
-          "volume_structure": {
-            "evidence": "成交量结构中性",
-            "reason": "量能没有明显共振",
-            "score": 44.0,
-            "status": "neutral"
-          }
-        },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 17.88,
-        "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
+        "stock_confluence_score": 0,
         "supporting_evidence": [],
         "validation_status": "not_yet_validated"
       },
-      "supporting_signals": [
-        "当前没有足够强的多源支持证据。"
-      ],
-      "symbol": "SPCX",
+      "supporting_signals": [],
+      "symbol": "NVDA TSLA SMR CEG",
       "validation_status": "not_yet_validated"
     }
   },
@@ -1247,102 +311,25 @@
       "market_context_note": "market context is mixed or supportive for selected candidates",
       "radar_status": "NO_STRONG_RADAR_EDGE",
       "risk_note": "High elasticity means larger forecast movement potential, not a buy/sell recommendation.",
-      "top10_count": 1,
-      "top3_candidates": [
-        "SPCX"
-      ],
-      "top_candidate": "SPCX",
+      "top10_count": 0,
+      "top3_candidates": [],
+      "top_candidate": null,
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-06-16T08:19:36.388584+00:00",
+    "generated_at": "2026-06-16T08:39:54.077920+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
       "Missing company news, earnings, options or real flow lowers confidence and is not filled synthetically.",
       "Candidates are evaluated after the market dashboard context; the market remains the first layer."
     ],
-    "top_candidates": [
-      {
-        "as_of": "2026-06-15",
-        "candidate_type": "failed_bounce_risk",
-        "catalyst_score": 25.13,
-        "company_name": "Space Exploration Technologies Corp",
-        "confluence_score": 17.88,
-        "data_missing": [
-          "company_news",
-          "earnings",
-          "fundamentals",
-          "single_stock_options"
-        ],
-        "data_quality": 42.0,
-        "data_status": "available",
-        "downside_risk_level": 149.34,
-        "elasticity_score": 100,
-        "expected_next_day_high": 206.55,
-        "expected_next_day_low": 175.01,
-        "expected_next_day_mid": 190.78,
-        "expected_next_day_range": {
-          "high": 206.55,
-          "low": 175.01,
-          "mid": 190.78,
-          "range_pct": 0.1638
-        },
-        "final_radar_score": 43.66,
-        "forecast_date": "2026-06-15",
-        "invalidation_level": 149.34,
-        "last_close": 192.5,
-        "logo": null,
-        "main_conflicting_evidence": [
-          "大盘风险背景压低个股置信度",
-          "个股相对弱于大盘/benchmark",
-          "主路径和第二路径差距较小"
-        ],
-        "main_supporting_evidence": [],
-        "market_context": "risk_off_pressure",
-        "model_version": "stock_baseline_v1",
-        "news_fields": {
-          "catalyst_note": "real company news/earnings unavailable; catalyst score capped",
-          "company_news": "missing",
-          "earnings": "missing"
-        },
-        "next_day_move_probability": 0.7128,
-        "one_line_reason": "failed_bounce_risk: 弹性 100 / 成交量 45 / 相对强弱 9 / 新闻/财报催化不足 / 大盘 risk_off_pressure / 板块 missing",
-        "primary_probability": 0.2486,
-        "primary_scenario": "stock_failed_bounce",
-        "radar_level": "WATCH",
-        "rank": 1,
-        "relative_strength_fields": {
-          "relative_strength_rank": 9.27,
-          "stock_vs_QQQ_20d": -0.0495,
-          "stock_vs_SPY_20d": -0.0212,
-          "stock_vs_benchmark_20d": -0.0495,
-          "stock_vs_sector_20d": null
-        },
-        "relative_strength_score": 9.27,
-        "risk_scenario": "stock_failed_bounce",
-        "risk_score": 62.09,
-        "secondary_scenario": "stock_downside_continuation",
-        "sector_context": "missing",
-        "squeeze_proxy_score": 68.75,
-        "ticker": "SPCX",
-        "upside_trigger_level": 206.92,
-        "validation_status": "not_yet_validated",
-        "volume_anomaly_score": 45.0,
-        "volume_fields": {
-          "abnormal_volume_flag": false,
-          "relative_volume_20d": 0.0,
-          "relative_volume_5d": null,
-          "volume_z_score": 0.0
-        },
-        "whether_top10_candidate": true
-      }
-    ],
+    "top_candidates": [],
     "top_n": 20,
-    "universe_size": 1,
+    "universe_size": 0,
     "version": "next_day_stock_radar_v1"
   },
   "version": "stock_prediction_dashboard_v1",
   "watchlist": [
-    "SPCX"
+    "NVDA TSLA SMR CEG"
   ]
 }
