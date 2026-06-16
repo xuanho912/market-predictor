@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-16T08:39:54.078895+00:00",
+  "generated_at": "2026-06-16T09:59:04.360581+00:00",
   "immutability_note": "Stock forecast fields are append-only by forecast_id. Future outcome fields may be backfilled; historical forecast content must not be rewritten.",
   "not_trading_note": "This is a stock forecast validation ledger, not a trading, entry/exit or PnL ledger.",
   "records": [
@@ -269,6 +269,191 @@
       "validation_status": "not_yet_validated",
       "volume_confirmation_score": null,
       "whether_top10_candidate": false
+    },
+    {
+      "actual_10d_return": null,
+      "actual_1d_return": null,
+      "actual_20d_return": null,
+      "actual_3d_return": null,
+      "actual_5d_return": null,
+      "actual_60d_return": null,
+      "actual_next_day_high_low_range": null,
+      "actual_next_day_return": null,
+      "actual_return_10d": "",
+      "actual_return_1d": "",
+      "actual_return_20d": "",
+      "actual_return_3d": "",
+      "actual_return_5d": "",
+      "actual_return_60d": "",
+      "asset_type": "stock",
+      "benchmark": "SPY",
+      "candidate_type": "downside_continuation",
+      "catalyst_score": 23.24,
+      "confluence_score": 19.92,
+      "current_price": 262.3500061035156,
+      "data_quality": 50.0,
+      "elasticity_score": 94.25,
+      "expected_next_day_range": {
+        "high": 267.13,
+        "low": 256.62,
+        "mid": 261.88,
+        "range_pct": 0.0401
+      },
+      "expected_price_by_horizon": {
+        "10d": 258.99,
+        "1d": 261.88,
+        "20d": 258.57,
+        "3d": 261.03,
+        "5d": 260.2,
+        "60d": 258.72
+      },
+      "final_radar_score": 45.71,
+      "forecast_date": "2026-06-15",
+      "forecast_id": "521e86d438cee785f47d",
+      "market_context": "risk_off_pressure",
+      "model_version": "stock_baseline_v1",
+      "news_event_score": 35.0,
+      "next_day_expected_range": {
+        "expected": 261.88,
+        "lower": 256.62,
+        "upper": 267.13
+      },
+      "path_error_10d": null,
+      "path_error_1d": null,
+      "path_error_20d": null,
+      "path_error_3d": null,
+      "path_error_5d": null,
+      "path_error_60d": null,
+      "price_structure_score": 44.15,
+      "primary_hit": null,
+      "primary_hit_10d": null,
+      "primary_hit_1d": null,
+      "primary_hit_20d": null,
+      "primary_hit_3d": null,
+      "primary_hit_5d": null,
+      "primary_hit_60d": null,
+      "primary_probability": 0.2448,
+      "primary_scenario": "stock_downside_continuation",
+      "radar_level": "WATCH",
+      "range_hit": null,
+      "relative_strength_score": 14.57,
+      "risk_probability": 0.2448,
+      "risk_scenario": "stock_downside_continuation",
+      "risk_score": 61.8,
+      "secondary_probability": 0.2396,
+      "secondary_scenario": "stock_failed_bounce",
+      "sector_context": "conflicting",
+      "status": "pending",
+      "stock_specific_drivers": {
+        "conflicting": [
+          "大盘风险背景压低个股置信度",
+          "个股弱于所属板块",
+          "个股相对弱于大盘/benchmark",
+          "主路径和第二路径差距较小"
+        ],
+        "market_context": "risk_off_pressure",
+        "missing": [
+          "company_news",
+          "earnings",
+          "fundamentals",
+          "fundamentals_earnings",
+          "news_event",
+          "options_volatility",
+          "single_stock_options"
+        ],
+        "price_close": 262.3500061035156,
+        "sector_relative_strength_20d": -0.038,
+        "supporting": [
+          "历史相似结构支持主路径"
+        ]
+      },
+      "symbol": "CEG",
+      "ticker": "CEG",
+      "top_rank": 2.0,
+      "trigger_levels": {
+        "bounce_target_zone": {
+          "base": 268.76,
+          "conservative": 268.76,
+          "extended": 318.99,
+          "meaning": "概率反抽情景参考区间，不是目标价承诺。",
+          "not_trading_instruction": true,
+          "source": "scenario_path + atr + recent_resistance"
+        },
+        "breakdown_level": {
+          "confidence": "low",
+          "distance_pct": -0.0832,
+          "meaning": "跌破该价位说明个股跌破结构风险上升",
+          "not_trading_instruction": true,
+          "price": 240.51,
+          "source": "recent_low + risk_activation"
+        },
+        "breakout_level": {
+          "confidence": "low",
+          "distance_pct": 0.1833,
+          "meaning": "突破该价位说明个股突破情景需要重新评估",
+          "not_trading_instruction": true,
+          "price": 310.45,
+          "source": "recent_high + primary_confirmation"
+        },
+        "failed_bounce_warning_zone": {
+          "critical_warning": 240.51,
+          "first_warning": 257.22,
+          "meaning": "跌入该区间说明失败反抽风险上升。",
+          "not_trading_instruction": true,
+          "source": "risk_path + atr + recent_support"
+        },
+        "nearest_resistance": {
+          "confidence": "low",
+          "distance_pct": 0.0488,
+          "meaning": "最近阻力代理，来自近期高点和 ATR 区间",
+          "not_trading_instruction": true,
+          "price": 275.16,
+          "source": "price_structure + volatility_band"
+        },
+        "nearest_support": {
+          "confidence": "low",
+          "distance_pct": -0.0326,
+          "meaning": "最近支撑代理，来自近期低点和 ATR 区间",
+          "not_trading_instruction": true,
+          "price": 253.81,
+          "source": "price_structure + volatility_band"
+        },
+        "primary_confirmation_level": {
+          "confidence": "low",
+          "distance_pct": 0.1833,
+          "meaning": "站上该价位说明个股主路径正在兑现",
+          "not_trading_instruction": true,
+          "price": 310.45,
+          "source": "price_structure + scenario_path"
+        },
+        "primary_invalidation_level": {
+          "confidence": "low",
+          "distance_pct": -0.0832,
+          "meaning": "跌破该价位说明个股主路径失效概率上升",
+          "not_trading_instruction": true,
+          "price": 240.51,
+          "source": "recent_low + volatility_band"
+        },
+        "risk_scenario_activation_level": {
+          "confidence": "low",
+          "distance_pct": -0.0832,
+          "meaning": "跌破该价位说明个股风险路径权重上升",
+          "not_trading_instruction": true,
+          "price": 240.51,
+          "source": "volatility_band"
+        },
+        "trend_repair_confirmation_level": {
+          "confidence": "low",
+          "distance_pct": 0.1833,
+          "meaning": "突破该价位说明个股趋势修复概率提高",
+          "not_trading_instruction": true,
+          "price": 310.45,
+          "source": "recent_high + scenario_path"
+        }
+      },
+      "validation_status": "not_yet_validated",
+      "volume_confirmation_score": 42.66,
+      "whether_top10_candidate": true
     },
     {
       "actual_10d_return": null,
@@ -646,13 +831,18 @@
       "actual_return_60d": "",
       "asset_type": "stock",
       "benchmark": "QQQ",
-      "candidate_type": "",
-      "catalyst_score": null,
+      "candidate_type": "failed_bounce_risk",
+      "catalyst_score": 23.52,
       "confluence_score": 8.0,
       "current_price": 209.42999267578125,
       "data_quality": null,
-      "elasticity_score": null,
-      "expected_next_day_range": null,
+      "elasticity_score": 100.0,
+      "expected_next_day_range": {
+        "high": 216.16,
+        "low": 207.86,
+        "mid": 212.01,
+        "range_pct": 0.0391
+      },
       "expected_price_by_horizon": {
         "10d": 207.89,
         "1d": 209.22,
@@ -661,7 +851,7 @@
         "5d": 208.44,
         "60d": 208.47
       },
-      "final_radar_score": null,
+      "final_radar_score": 34.27,
       "forecast_date": "2026-06-15",
       "forecast_id": "fca1118c0e7a76fc3755",
       "market_context": "risk_off_pressure",
@@ -684,12 +874,12 @@
       "primary_hit_60d": null,
       "primary_probability": 0.2065,
       "primary_scenario": "stock_downside_continuation",
-      "radar_level": "",
+      "radar_level": "NO_EDGE",
       "range_hit": null,
       "relative_strength_score": null,
       "risk_probability": 0.2065,
       "risk_scenario": "stock_downside_continuation",
-      "risk_score": null,
+      "risk_score": 64.13,
       "secondary_probability": 0.2042,
       "secondary_scenario": "stock_failed_bounce",
       "sector_context": "",
@@ -712,11 +902,11 @@
       },
       "symbol": "NVDA",
       "ticker": "NVDA",
-      "top_rank": null,
+      "top_rank": 4.0,
       "trigger_levels": null,
       "validation_status": "not_yet_validated",
       "volume_confirmation_score": null,
-      "whether_top10_candidate": false
+      "whether_top10_candidate": true
     },
     {
       "actual_10d_return": null,
@@ -914,14 +1104,206 @@
       "actual_return_5d": "",
       "actual_return_60d": "",
       "asset_type": "stock",
+      "benchmark": "IWM",
+      "candidate_type": "downside_continuation",
+      "catalyst_score": 24.35,
+      "confluence_score": 13.84,
+      "current_price": 10.640000343322754,
+      "data_quality": 50.0,
+      "elasticity_score": 100.0,
+      "expected_next_day_range": {
+        "high": 11.17,
+        "low": 10.01,
+        "mid": 10.59,
+        "range_pct": 0.109
+      },
+      "expected_price_by_horizon": {
+        "10d": 10.3,
+        "1d": 10.59,
+        "20d": 10.26,
+        "3d": 10.5,
+        "5d": 10.42,
+        "60d": 10.29
+      },
+      "final_radar_score": 47.22,
+      "forecast_date": "2026-06-15",
+      "forecast_id": "a2929a38786251b47441",
+      "market_context": "risk_off_pressure",
+      "model_version": "stock_baseline_v1",
+      "news_event_score": 35.0,
+      "next_day_expected_range": {
+        "expected": 10.59,
+        "lower": 10.01,
+        "upper": 11.17
+      },
+      "path_error_10d": null,
+      "path_error_1d": null,
+      "path_error_20d": null,
+      "path_error_3d": null,
+      "path_error_5d": null,
+      "path_error_60d": null,
+      "price_structure_score": 31.66,
+      "primary_hit": null,
+      "primary_hit_10d": null,
+      "primary_hit_1d": null,
+      "primary_hit_20d": null,
+      "primary_hit_3d": null,
+      "primary_hit_5d": null,
+      "primary_hit_60d": null,
+      "primary_probability": 0.2377,
+      "primary_scenario": "stock_downside_continuation",
+      "radar_level": "WATCH",
+      "range_hit": null,
+      "relative_strength_score": 2.28,
+      "risk_probability": 0.2377,
+      "risk_scenario": "stock_downside_continuation",
+      "risk_score": 61.98,
+      "secondary_probability": 0.2239,
+      "secondary_scenario": "stock_failed_bounce",
+      "sector_context": "conflicting",
+      "status": "pending",
+      "stock_specific_drivers": {
+        "conflicting": [
+          "大盘风险背景压低个股置信度",
+          "个股弱于所属板块",
+          "价格结构与主路径冲突",
+          "个股相对弱于大盘/benchmark",
+          "历史相似结构与主路径冲突",
+          "主路径和第二路径差距较小"
+        ],
+        "market_context": "risk_off_pressure",
+        "missing": [
+          "company_news",
+          "earnings",
+          "fundamentals",
+          "fundamentals_earnings",
+          "news_event",
+          "options_volatility",
+          "single_stock_options"
+        ],
+        "price_close": 10.640000343322754,
+        "sector_relative_strength_20d": -0.0724,
+        "supporting": [
+          "当前没有足够强的多源支持证据。"
+        ]
+      },
+      "symbol": "SMR",
+      "ticker": "SMR",
+      "top_rank": 1.0,
+      "trigger_levels": {
+        "bounce_target_zone": {
+          "base": 11.35,
+          "conservative": 11.35,
+          "extended": 15.25,
+          "meaning": "概率反抽情景参考区间，不是目标价承诺。",
+          "not_trading_instruction": true,
+          "source": "scenario_path + atr + recent_resistance"
+        },
+        "breakdown_level": {
+          "confidence": "low",
+          "distance_pct": -0.1429,
+          "meaning": "跌破该价位说明个股跌破结构风险上升",
+          "not_trading_instruction": true,
+          "price": 9.12,
+          "source": "recent_low + risk_activation"
+        },
+        "breakout_level": {
+          "confidence": "low",
+          "distance_pct": 0.344,
+          "meaning": "突破该价位说明个股突破情景需要重新评估",
+          "not_trading_instruction": true,
+          "price": 14.3,
+          "source": "recent_high + primary_confirmation"
+        },
+        "failed_bounce_warning_zone": {
+          "critical_warning": 9.12,
+          "first_warning": 10.07,
+          "meaning": "跌入该区间说明失败反抽风险上升。",
+          "not_trading_instruction": true,
+          "source": "risk_path + atr + recent_support"
+        },
+        "nearest_resistance": {
+          "confidence": "low",
+          "distance_pct": 0.1334,
+          "meaning": "最近阻力代理，来自近期高点和 ATR 区间",
+          "not_trading_instruction": true,
+          "price": 12.06,
+          "source": "price_structure + volatility_band"
+        },
+        "nearest_support": {
+          "confidence": "low",
+          "distance_pct": -0.089,
+          "meaning": "最近支撑代理，来自近期低点和 ATR 区间",
+          "not_trading_instruction": true,
+          "price": 9.69,
+          "source": "price_structure + volatility_band"
+        },
+        "primary_confirmation_level": {
+          "confidence": "low",
+          "distance_pct": 0.344,
+          "meaning": "站上该价位说明个股主路径正在兑现",
+          "not_trading_instruction": true,
+          "price": 14.3,
+          "source": "price_structure + scenario_path"
+        },
+        "primary_invalidation_level": {
+          "confidence": "low",
+          "distance_pct": -0.1429,
+          "meaning": "跌破该价位说明个股主路径失效概率上升",
+          "not_trading_instruction": true,
+          "price": 9.12,
+          "source": "recent_low + volatility_band"
+        },
+        "risk_scenario_activation_level": {
+          "confidence": "low",
+          "distance_pct": -0.1429,
+          "meaning": "跌破该价位说明个股风险路径权重上升",
+          "not_trading_instruction": true,
+          "price": 9.12,
+          "source": "volatility_band"
+        },
+        "trend_repair_confirmation_level": {
+          "confidence": "low",
+          "distance_pct": 0.344,
+          "meaning": "突破该价位说明个股趋势修复概率提高",
+          "not_trading_instruction": true,
+          "price": 14.3,
+          "source": "recent_high + scenario_path"
+        }
+      },
+      "validation_status": "not_yet_validated",
+      "volume_confirmation_score": 44.98,
+      "whether_top10_candidate": true
+    },
+    {
+      "actual_10d_return": null,
+      "actual_1d_return": null,
+      "actual_20d_return": null,
+      "actual_3d_return": null,
+      "actual_5d_return": null,
+      "actual_60d_return": null,
+      "actual_next_day_high_low_range": null,
+      "actual_next_day_return": null,
+      "actual_return_10d": "",
+      "actual_return_1d": "",
+      "actual_return_20d": "",
+      "actual_return_3d": "",
+      "actual_return_5d": "",
+      "actual_return_60d": "",
+      "asset_type": "stock",
       "benchmark": "QQQ",
-      "candidate_type": "",
-      "catalyst_score": null,
+      "candidate_type": "failed_bounce_risk",
+      "catalyst_score": 23.6,
       "confluence_score": 0.0,
       "current_price": 411.5400085449219,
       "data_quality": null,
-      "elasticity_score": null,
-      "expected_next_day_range": null,
+      "elasticity_score": 100.0,
+      "expected_next_day_range": {
+        "high": 419.07,
+        "low": 401.56,
+        "mid": 410.32,
+        "range_pct": 0.0426
+      },
       "expected_price_by_horizon": {
         "10d": 408.73,
         "1d": 411.19,
@@ -930,7 +1312,7 @@
         "5d": 409.75,
         "60d": 410.33
       },
-      "final_radar_score": null,
+      "final_radar_score": 35.2,
       "forecast_date": "2026-06-15",
       "forecast_id": "002b035b4b69057a1cb5",
       "market_context": "risk_off_pressure",
@@ -953,12 +1335,12 @@
       "primary_hit_60d": null,
       "primary_probability": 0.2059,
       "primary_scenario": "stock_failed_bounce",
-      "radar_level": "",
+      "radar_level": "WATCH",
       "range_hit": null,
       "relative_strength_score": null,
       "risk_probability": 0.2059,
       "risk_scenario": "stock_failed_bounce",
-      "risk_score": null,
+      "risk_score": 63.24,
       "secondary_probability": 0.1891,
       "secondary_scenario": "stock_bounce",
       "sector_context": "",
@@ -981,21 +1363,21 @@
       },
       "symbol": "TSLA",
       "ticker": "TSLA",
-      "top_rank": null,
+      "top_rank": 3.0,
       "trigger_levels": null,
       "validation_status": "not_yet_validated",
       "volume_confirmation_score": null,
-      "whether_top10_candidate": false
+      "whether_top10_candidate": true
     }
   ],
   "summary": {
     "asset_type": "stock",
-    "exported_records": 11,
+    "exported_records": 13,
     "model_versions": [
       "stock_baseline_v1"
     ],
-    "pending_records": 11,
-    "total_records": 11,
+    "pending_records": 13,
+    "total_records": 13,
     "validation_status": "not_yet_validated"
   },
   "version": "stock_forecast_records_public_v1"

@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-06-16T08:39:51.369677+00:00`
+- generated_at: `2026-06-16T09:58:59.061573+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `18`
-- event_detection_confidence: `78`
+- event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -37,7 +37,7 @@
 
 - headline: Is the Iran war just an energy shock - or a turning point? - Reuters
 - source: Reuters
-- published_at: `2026-06-16T06:04:29+00:00`
+- published_at: `2026-06-16T06:02:02+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -45,13 +45,13 @@
 
 - headline: Indian shares extend gains on US-Iran peace deal - Reuters
 - source: Reuters
-- published_at: `2026-06-16T02:25:00+00:00`
+- published_at: `2026-06-16T04:18:37+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: Oil falls as markets weigh return of supply, US-Iran peace deal - Reuters
+- headline: Oil drops to fresh three-month low as markets weigh US-Iran peace deal - Reuters
 - source: Reuters
 - published_at: `2026-06-16T01:14:00+00:00`
 - importance_score: `100`
@@ -59,7 +59,7 @@
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: Gold edges higher as US-Iran peace deal eases rate hike concerns - Reuters
+- headline: Gold gains as US-Iran peace deal eases rate hike concerns - Reuters
 - source: Reuters
 - published_at: `2026-06-16T01:13:00+00:00`
 - importance_score: `100`
@@ -79,7 +79,7 @@
 - source: Reuters
 - published_at: `2026-06-15T22:01:45+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -87,7 +87,7 @@
 - source: Reuters
 - published_at: `2026-06-15T21:06:16+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
