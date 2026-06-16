@@ -1987,6 +1987,12 @@ function DataQuality({ dashboard }: { dashboard: PredictionDashboard }) {
 
 function ForecastAccuracy({ dashboard }: { dashboard: PredictionDashboard }) {
   const scorecard = dashboard.forecast_accuracy_scorecard;
+  const deviationReview = asRecord(dashboard.forecast_deviation_review);
+  const deviationSummary = asRecord(deviationReview.summary);
+  const latestDeviations = Array.isArray(deviationReview.latest_deviations)
+    ? deviationReview.latest_deviations.map((item) => asRecord(item))
+    : [];
+  const latestMaterialDeviation = latestDeviations.find((item) => item.material_deviation) ?? latestDeviations[0];
   const counts = scorecard?.sample_counts ?? {};
   const validation = getValidationStandards(dashboard);
   const warning =
@@ -2001,9 +2007,10 @@ function ForecastAccuracy({ dashboard }: { dashboard: PredictionDashboard }) {
         </div>
         <StatusBadge status={validation.highPrecisionStatus} label={cnValidationStatus(validation.highPrecisionStatus)} />
       </div>
-      <div className="mt-4 grid gap-3 sm:grid-cols-3 lg:grid-cols-7">
+      <div className="mt-4 grid gap-3 sm:grid-cols-3 lg:grid-cols-8">
         <Metric label="总记录" value={String(counts.total_forecasts ?? 0)} />
         <Metric label="待回填" value={String(counts.pending_forecasts ?? 0)} />
+        <Metric label="1d 完成" value={String(counts.completed_1d ?? 0)} />
         <Metric label="3d 完成" value={String(counts.completed_3d ?? 0)} />
         <Metric label="5d 完成" value={String(counts.completed_5d ?? 0)} />
         <Metric label="10d 完成" value={String(counts.completed_10d ?? 0)} />
@@ -2015,6 +2022,40 @@ function ForecastAccuracy({ dashboard }: { dashboard: PredictionDashboard }) {
       </div>
       <div className="mt-4 rounded-lg border border-amber-400/20 bg-amber-400/[0.07] p-3 text-sm leading-6 text-amber-100">
         {warning}
+      </div>
+      <div className="mt-4 rounded-lg border border-white/10 bg-black/20 p-4">
+        <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+          <div>
+            <div className="text-xs uppercase tracking-[0.2em] text-slate-500">Forecast Deviation Review</div>
+            <h3 className="mt-1 text-lg font-semibold text-white">预测偏差复盘</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-400">
+              收盘后对比预测路径和真实结果，记录偏差，并标注可能低估/高估的驱动。这里只做预测质量复盘，不是交易复盘。
+            </p>
+          </div>
+          <StatusBadge status={String(deviationSummary.validation_status ?? "not_yet_validated")} label={cnValidationStatus(String(deviationSummary.validation_status ?? "not_yet_validated"))} />
+        </div>
+        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <Metric label="已复盘结果" value={String(deviationSummary.completed_outcomes_reviewed ?? 0)} />
+          <Metric label="实质偏差" value={String(deviationSummary.material_deviation_count ?? 0)} />
+          <Metric label="最大绝对偏差" value={formatPercent(deviationSummary.largest_absolute_error, 2)} />
+          <Metric label="主导偏差主题" value={String(deviationSummary.dominant_error_theme ?? "样本不足")} />
+        </div>
+        {latestMaterialDeviation ? (
+          <div className="mt-4 rounded-lg border border-white/10 bg-white/[0.03] p-3 text-sm leading-6 text-slate-300">
+            <div className="font-semibold text-white">
+              最近偏差：{String(latestMaterialDeviation.symbol ?? "-")} / {String(latestMaterialDeviation.horizon ?? "-")} / {String(latestMaterialDeviation.severity ?? "normal")}
+            </div>
+            <div className="mt-1">
+              预测 {formatPercent(latestMaterialDeviation.expected_return, 2)}，实际 {formatPercent(latestMaterialDeviation.actual_return, 2)}，
+              偏差 {formatPercent(latestMaterialDeviation.forecast_error, 2)}。
+            </div>
+            <div className="mt-1 text-slate-400">{String(latestMaterialDeviation.diagnostic_note ?? "样本仍在积累。")}</div>
+          </div>
+        ) : (
+          <div className="mt-4 rounded-lg border border-white/10 bg-white/[0.03] p-3 text-sm text-slate-400">
+            暂无已到期预测可复盘。等 1d / 3d / 5d 等实际结果回填后，这里会显示偏差原因。
+          </div>
+        )}
       </div>
     </section>
   );

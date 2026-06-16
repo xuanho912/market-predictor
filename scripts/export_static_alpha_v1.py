@@ -37,6 +37,10 @@ from scripts.forecast_accuracy_ledger import (
     render_forecast_accuracy_scorecard_markdown,
     update_forecast_accuracy_ledger,
 )
+from scripts.forecast_deviation_review import (
+    build_forecast_deviation_review,
+    render_forecast_deviation_review_markdown,
+)
 from scripts.data_freshness_gate import (
     build_data_freshness_status,
     write_data_freshness_outputs,
@@ -327,11 +331,16 @@ def main() -> int:
     )
     forecast_records = export_forecast_records_json()
     forecast_scorecard = build_forecast_accuracy_scorecard()
+    forecast_deviation_review = build_forecast_deviation_review(
+        news_event_bundle=news_event_bundle,
+        data_quality_report=intelligence_v4["data_quality_report"],
+    )
     historical_replay_benchmark = build_historical_replay_benchmark(dashboard)
     model_governance = write_model_challenger_outputs(dashboard=dashboard, public_dir=public_dir, outputs_dir=PROJECT_ROOT / "outputs")
     dashboard["forecast_ledger_summary"] = ledger_summary
     dashboard["forecast_records"] = forecast_records
     dashboard["forecast_accuracy_scorecard"] = forecast_scorecard
+    dashboard["forecast_deviation_review"] = forecast_deviation_review
     dashboard["historical_replay_benchmark"] = historical_replay_benchmark
     dashboard["model_leaderboard"] = model_governance["leaderboard"]
     dashboard["model_promotion_status"] = model_governance["promotion_status"]
@@ -384,6 +393,7 @@ def main() -> int:
     _write_json(public_dir / "high-confidence-edge-report.json", intelligence_v4["high_confidence_edge_report"])
     _write_json(public_dir / "forecast-records.json", forecast_records)
     _write_json(public_dir / "forecast-accuracy-scorecard.json", forecast_scorecard)
+    _write_json(public_dir / "forecast-deviation-review.json", forecast_deviation_review)
     _write_json(public_dir / "historical-replay-benchmark.json", historical_replay_benchmark)
     _write_json(public_dir / "model-leaderboard.json", model_governance["leaderboard"])
     _write_json(public_dir / "model-promotion-status.json", model_governance["promotion_status"])
@@ -408,6 +418,7 @@ def main() -> int:
     _write_confluence_score_report(PROJECT_ROOT / "outputs" / "confluence_score.md", confluence_score)
     _write_market_alerts_report(PROJECT_ROOT / "outputs" / "market_alerts.md", market_alerts)
     _write_forecast_accuracy_scorecard_report(PROJECT_ROOT / "outputs" / "forecast_accuracy_scorecard.md", forecast_scorecard)
+    _write_forecast_deviation_review_report(PROJECT_ROOT / "outputs" / "forecast_deviation_review.md", forecast_deviation_review)
     _write_historical_replay_benchmark_report(PROJECT_ROOT / "outputs" / "historical_replay_benchmark.md", historical_replay_benchmark)
     _write_stock_prediction_report(PROJECT_ROOT / "outputs" / "stock_prediction_report.md", stock_prediction_dashboard)
     _write_top_stock_candidates_report(PROJECT_ROOT / "outputs" / "top_stock_candidates_report.md", top_stock_candidates)
@@ -431,6 +442,7 @@ def main() -> int:
     print("wrote frontend/public/high-confidence-edge-report.json")
     print("wrote frontend/public/forecast-records.json")
     print("wrote frontend/public/forecast-accuracy-scorecard.json")
+    print("wrote frontend/public/forecast-deviation-review.json")
     print("wrote frontend/public/historical-replay-benchmark.json")
     print("wrote frontend/public/model-leaderboard.json")
     print("wrote frontend/public/model-promotion-status.json")
@@ -456,6 +468,7 @@ def main() -> int:
     print("wrote outputs/confluence_score.md")
     print("wrote outputs/market_alerts.md")
     print("wrote outputs/forecast_accuracy_scorecard.md")
+    print("wrote outputs/forecast_deviation_review.md")
     print("wrote outputs/historical_replay_benchmark.md")
     print("wrote outputs/stock_prediction_report.md")
     print("wrote outputs/top_stock_candidates_report.md")
@@ -1446,6 +1459,11 @@ def _write_flow_status_report(path: Path, bundle: dict[str, Any]) -> None:
 def _write_forecast_accuracy_scorecard_report(path: Path, scorecard: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(render_forecast_accuracy_scorecard_markdown(scorecard), encoding="utf-8")
+
+
+def _write_forecast_deviation_review_report(path: Path, payload: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(render_forecast_deviation_review_markdown(payload), encoding="utf-8")
 
 
 def _write_historical_replay_benchmark_report(path: Path, report: dict[str, Any]) -> None:

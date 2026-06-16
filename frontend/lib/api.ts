@@ -800,6 +800,7 @@ export type PredictionDashboard = {
   forecast_ledger_summary?: Record<string, unknown>;
   forecast_records?: Record<string, unknown>;
   forecast_accuracy_scorecard?: ForecastAccuracyScorecard;
+  forecast_deviation_review?: Record<string, unknown>;
   historical_replay_benchmark?: Record<string, unknown>;
   model_leaderboard?: Record<string, unknown>;
   model_promotion_status?: Record<string, unknown>;

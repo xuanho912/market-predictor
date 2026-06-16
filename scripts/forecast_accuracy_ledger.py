@@ -11,7 +11,7 @@ from typing import Any
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 SYMBOLS = ("SPY", "QQQ", "IWM", "DIA")
-HORIZONS = (3, 5, 10, 20, 60)
+HORIZONS = (1, 3, 5, 10, 20, 60)
 BASELINE_MODEL_VERSION = "baseline_v1"
 
 FORECAST_FIELDS = [
@@ -456,7 +456,15 @@ def _parse_public_row(row: dict[str, Any]) -> dict[str, Any]:
 
 def _expected_return_by_horizon(simulated_symbol: dict[str, Any]) -> dict[str, float | None]:
     summary = simulated_symbol.get("horizon_summary") or simulated_symbol.get("prediction_horizons") or {}
-    return {f"{horizon}d": _float((summary.get(f"{horizon}d") or {}).get("expected_return")) for horizon in HORIZONS}
+    price_table = ((simulated_symbol.get("forecast_price_levels") or {}).get("forecast_price_table") or {})
+    result: dict[str, float | None] = {}
+    for horizon in HORIZONS:
+        key = f"{horizon}d"
+        expected = _float((summary.get(key) or {}).get("expected_return"))
+        if expected is None:
+            expected = _float((price_table.get(key) or {}).get("expected_return"))
+        result[key] = expected
+    return result
 
 
 def _scenario_expected_returns(simulated_symbol: dict[str, Any]) -> dict[str, dict[str, float | None]]:
