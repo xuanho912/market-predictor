@@ -1,7 +1,22 @@
 {
-  "watchlist": [],
-  "benchmark_map": {},
-  "sector_etf_map": {},
-  "company_map": {},
-  "note": "Default stock universe is intentionally empty. Add tickers through GitHub Actions workflow_dispatch ticker_list, for example: JD,KC,NVDA,TSLA."
+  "watchlist": ["NVDA", "TSLA", "SMR", "CEG"],
+  "benchmark_map": {
+    "NVDA": "QQQ",
+    "TSLA": "QQQ",
+    "SMR": "IWM",
+    "CEG": "SPY"
+  },
+  "sector_etf_map": {
+    "NVDA": "XLK",
+    "TSLA": "XLY",
+    "SMR": "XLU",
+    "CEG": "XLU"
+  },
+  "company_map": {
+    "NVDA": "NVIDIA",
+    "TSLA": "Tesla",
+    "SMR": "NuScale Power",
+    "CEG": "Constellation Energy"
+  },
+  "note": "Default stock universe includes the requested tickers for daily static stock prediction output. To analyze a different set, run GitHub Actions workflow_dispatch with ticker_list, for example: JD,KC,NVDA,TSLA."
 }
