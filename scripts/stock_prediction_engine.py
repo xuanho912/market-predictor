@@ -41,7 +41,8 @@ def build_stock_prediction_dashboard(
         price_levels = _price_levels(rows, scenarios, features)
         analogs = _stock_historical_analogs(rows, benchmark_rows, features, market_context)
         missing_data = _missing_data(payload)
-        confluence = _stock_confluence(features, market_context, scenarios, analogs, missing_data, payload)
+        alpha_score = _stock_alpha_score_v1(features, market_context, scenarios, price_levels, analogs, missing_data, payload)
+        confluence = _stock_confluence(features, market_context, scenarios, analogs, missing_data, payload, alpha_score)
         alerts = _stock_alerts(symbol, features, market_context, scenarios, price_levels, confluence, missing_data)
         symbols[symbol] = {
             "symbol": symbol,
@@ -56,6 +57,7 @@ def build_stock_prediction_dashboard(
             "features": features,
             "scenario_ranking": scenarios,
             "forecast_price_levels": price_levels,
+            "stock_alpha_score_v1": alpha_score,
             "stock_confluence": confluence,
             "data_quality": _stock_data_quality(payload, missing_data, confluence),
             "stock_alerts": alerts,
@@ -118,6 +120,8 @@ def render_stock_prediction_report(payload: dict[str, Any]) -> str:
         secondary = ranking.get("secondary") or {}
         risk = ranking.get("risk") or {}
         confluence = data.get("stock_confluence") or {}
+        alpha = data.get("stock_alpha_score_v1") or {}
+        expected_alpha = alpha.get("expected_alpha") or {}
         alerts = data.get("stock_alerts") or {}
         strongest_alert = alerts.get("strongest_alert") or {}
         analogs = data.get("historical_analogs") or {}
@@ -133,6 +137,10 @@ def render_stock_prediction_report(payload: dict[str, Any]) -> str:
                 f"- secondary: `{secondary.get('scenario')}` / `{_pct(secondary.get('probability'))}`",
                 f"- risk: `{risk.get('scenario')}` / `{_pct(risk.get('probability'))}`",
                 f"- stock_confluence_score: `{confluence.get('stock_confluence_score')}` / `{confluence.get('confluence_level')}`",
+                f"- stock_alpha_score_v1: `{alpha.get('total_score')}` / `{alpha.get('forecast_grade')}`",
+                f"- 20d_outperformance_probability: `{_pct(expected_alpha.get('outperformance_probability_20d'))}`",
+                f"- 60d_expected_return: `{_pct(expected_alpha.get('expected_return_60d'))}`",
+                f"- risk_reward_ratio: `{expected_alpha.get('risk_reward_ratio')}`",
                 f"- strongest_alert: `{strongest_alert.get('alert_type')}` / `{strongest_alert.get('alert_level')}` / `{strongest_alert.get('alert_score')}`",
                 f"- historical_analog_support: `{analogs.get('analog_support')}` / samples `{analogs.get('sample_count')}`",
                 f"- validation_status: `{data.get('validation_status')}`",
@@ -546,6 +554,73 @@ def _price_levels(rows: list[dict[str, Any]], scenarios: dict[str, Any], feature
     }
 
 
+def _stock_alpha_score_v1(
+    features: dict[str, Any],
+    market_context: dict[str, Any],
+    scenarios: dict[str, Any],
+    price_levels: dict[str, Any],
+    analogs: dict[str, Any],
+    missing_data: list[str],
+    data_payload: dict[str, Any],
+) -> dict[str, Any]:
+    trend = features.get("price_trend") or {}
+    volume = features.get("volume") or {}
+    rel = features.get("relative_strength") or {}
+    fundamentals = features.get("fundamentals_valuation") or {}
+    news = features.get("news_event") or {}
+    vol = features.get("volatility") or {}
+    current = _float(trend.get("close")) or 0.0
+    benchmark = data_payload.get("benchmark") or market_context.get("benchmark") or "QQQ"
+    sector_etf = data_payload.get("sector_etf")
+    components = {
+        "growth": _growth_component(fundamentals, rel),
+        "quality": _quality_component(fundamentals),
+        "valuation": _valuation_component(fundamentals),
+        "technical": _technical_component(trend, rel, volume),
+        "flow": _flow_component(volume, rel),
+        "catalyst": _catalyst_component(news, fundamentals),
+        "market_industry": _market_industry_component(market_context, rel, sector_etf),
+    }
+    positive_points = sum((_float(item.get("points")) or 0.0) for item in components.values())
+    risk = _alpha_risk_penalty(fundamentals, trend, news, market_context, missing_data, vol)
+    total_score = _clamp(positive_points - (_float(risk.get("points")) or 0.0), 0, 100)
+    outperformance_probability = _clamp(0.38 + total_score / 250 + ((_float(rel.get("stock_vs_benchmark_20d")) or 0) * 0.8), 0.05, 0.88)
+    table = price_levels.get("forecast_price_table") or {}
+    expected_60d = _safe_div((_float((table.get("60d") or {}).get("expected_price")) or current) - current, current)
+    expected_20d = _safe_div((_float((table.get("20d") or {}).get("expected_price")) or current) - current, current)
+    atr_pct = _float(vol.get("atr_pct")) or 0.04
+    drawdown_20 = abs(_float(trend.get("drawdown_20d")) or 0.0)
+    drawdown_60 = abs(_float(trend.get("drawdown_60d")) or 0.0)
+    max_drawdown_20 = min(max(drawdown_20, atr_pct * 2.2), 0.75)
+    max_drawdown_60 = min(max(drawdown_60, atr_pct * 3.8), 0.90)
+    upside_60 = max(_float(expected_60d) or 0.0, (_scenario_probability(scenarios, "stock_trend_repair") + _scenario_probability(scenarios, "stock_bounce")) * atr_pct * 8)
+    downside_60 = max(max_drawdown_60, (_scenario_probability(scenarios, "stock_downside_continuation") + _scenario_probability(scenarios, "stock_failed_bounce")) * atr_pct * 7)
+    risk_reward = _safe_div(upside_60, downside_60)
+    return {
+        "version": "stock_alpha_score_v1",
+        "purpose": "Estimate whether the stock has positive expectation-gap alpha versus its benchmark over 20d/60d horizons.",
+        "total_score": round(total_score, 2),
+        "forecast_grade": _alpha_grade(total_score, outperformance_probability, risk_reward),
+        "components": components,
+        "risk_penalty": risk,
+        "expected_alpha": {
+            "benchmark": benchmark,
+            "outperformance_probability_20d": _round(outperformance_probability),
+            "expected_return_20d": _round(expected_20d),
+            "expected_return_60d": _round(expected_60d),
+            "max_drawdown_risk_20d": _round(max_drawdown_20),
+            "max_drawdown_risk_60d": _round(max_drawdown_60),
+            "upside_potential_60d": _round(upside_60),
+            "downside_risk_60d": _round(downside_60),
+            "risk_reward_ratio": _round(risk_reward, 2),
+        },
+        "thesis": _alpha_thesis(features, market_context, scenarios, analogs, components, risk, data_payload),
+        "missing_data": sorted(set(missing_data + _alpha_missing_fields(components))),
+        "validation_status": "not_yet_validated",
+        "not_trading_advice": True,
+        "note": "This is a forecast-quality score, not a buy/sell, position sizing, stop loss or PnL instruction.",
+    }
+
 
 def _stock_confluence(
     features: dict[str, Any],
@@ -554,9 +629,19 @@ def _stock_confluence(
     analogs: dict[str, Any],
     missing_data: list[str],
     data_payload: dict[str, Any],
+    alpha_score: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     primary = scenarios.get("primary") or {}
     modules = _stock_confluence_modules(features, market_context, scenarios, analogs, missing_data, data_payload)
+    if alpha_score:
+        alpha_total = _float(alpha_score.get("total_score")) or 0.0
+        alpha_status = "supportive" if alpha_total >= 70 else "neutral" if alpha_total >= 55 else "conflicting"
+        modules["alpha_quality"] = _component(
+            alpha_total,
+            alpha_status,
+            "个股 Alpha 评分已接入",
+            f"score={alpha_total:.1f}; grade={alpha_score.get('forecast_grade')}; benchmark={(alpha_score.get('expected_alpha') or {}).get('benchmark')}",
+        )
     weights = {
         "market_context": 0.18,
         "sector_context": 0.12,
@@ -565,8 +650,9 @@ def _stock_confluence(
         "relative_strength": 0.13,
         "news_event": 0.08,
         "fundamentals_earnings": 0.07,
-        "options_volatility": 0.07,
-        "historical_analog": 0.08,
+        "alpha_quality": 0.10,
+        "options_volatility": 0.05,
+        "historical_analog": 0.10,
     }
     weighted_total = 0.0
     weight_sum = 0.0
@@ -618,6 +704,379 @@ def _stock_confluence(
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "validation_status": "not_yet_validated",
     }
+
+
+def _growth_component(fundamentals: dict[str, Any], rel: dict[str, Any]) -> dict[str, Any]:
+    revenue = _float(fundamentals.get("revenue_growth"))
+    eps = _float(fundamentals.get("earnings_growth"))
+    sector_rs = _float(rel.get("stock_vs_sector_20d"))
+    points = 0.0
+    evidence: list[str] = []
+    missing: list[str] = []
+    if revenue is None:
+        missing.append("revenue_growth")
+    elif revenue > 25:
+        points += 6
+        evidence.append(f"收入同比增长较强 {revenue:.1f}%")
+    elif revenue > 10:
+        points += 4
+        evidence.append(f"收入同比增长为正 {revenue:.1f}%")
+    elif revenue > 0:
+        points += 2
+        evidence.append(f"收入小幅增长 {revenue:.1f}%")
+    else:
+        evidence.append(f"收入增长偏弱 {revenue:.1f}%")
+    if eps is None:
+        missing.append("eps_growth")
+    elif eps > 25:
+        points += 5
+        evidence.append(f"EPS 增长较强 {eps:.1f}%")
+    elif eps > 10:
+        points += 3
+        evidence.append(f"EPS 增长为正 {eps:.1f}%")
+    elif eps > 0:
+        points += 1.5
+        evidence.append(f"EPS 小幅增长 {eps:.1f}%")
+    else:
+        evidence.append(f"EPS 增长为负 {eps:.1f}%")
+    if revenue is not None and eps is not None and revenue > 0 and eps > 0:
+        points += 4
+        evidence.append("收入与 EPS 同时为正，存在基本面改善线索")
+    if sector_rs is None:
+        missing.append("sector_relative_strength")
+    elif sector_rs > 0.02:
+        points += 4
+        evidence.append("相对板块走强，行业需求/资金环境偏支持")
+    return _alpha_component(min(points, 25), 25, evidence, missing, "growth")
+
+
+def _quality_component(fundamentals: dict[str, Any]) -> dict[str, Any]:
+    profitability = _float(fundamentals.get("profitability"))
+    cash_quality = _float(fundamentals.get("cash_flow_quality"))
+    debt_risk = _float(fundamentals.get("debt_risk"))
+    points = 0.0
+    evidence: list[str] = []
+    missing: list[str] = []
+    if profitability is None:
+        missing.append("profitability")
+    elif profitability > 20:
+        points += 5
+        evidence.append(f"利润率较高 {profitability:.1f}%")
+    elif profitability > 8:
+        points += 3
+        evidence.append(f"利润率为正 {profitability:.1f}%")
+    else:
+        evidence.append(f"利润率偏低 {profitability:.1f}%")
+    if cash_quality is None:
+        missing.append("current_ratio_or_cash_quality")
+    elif cash_quality >= 1.5:
+        points += 3
+        evidence.append(f"流动性质量较好 current ratio {cash_quality:.2f}")
+    elif cash_quality >= 1.0:
+        points += 1.5
+        evidence.append(f"流动性质量尚可 current ratio {cash_quality:.2f}")
+    if debt_risk is None:
+        missing.append("debt_risk")
+    elif debt_risk <= 35:
+        points += 4
+        evidence.append("债务风险较低")
+    elif debt_risk <= 60:
+        points += 2
+        evidence.append("债务风险中等")
+    else:
+        evidence.append("债务风险偏高")
+    return _alpha_component(min(points, 15), 15, evidence, missing, "quality")
+
+
+def _valuation_component(fundamentals: dict[str, Any]) -> dict[str, Any]:
+    forward_pe = _float(fundamentals.get("forward_pe"))
+    val_pct = _float(fundamentals.get("valuation_percentile"))
+    revenue = _float(fundamentals.get("revenue_growth"))
+    eps = _float(fundamentals.get("earnings_growth"))
+    growth_anchor = max(revenue or 0.0, eps or 0.0)
+    points = 0.0
+    evidence: list[str] = []
+    missing: list[str] = []
+    if forward_pe is None and val_pct is None:
+        missing.append("valuation_metrics")
+    elif val_pct is not None and val_pct <= 0.45:
+        points += 5
+        evidence.append("估值没有明显过热")
+    elif val_pct is not None and val_pct <= 0.70:
+        points += 3
+        evidence.append("估值处于中等偏高区间")
+    else:
+        evidence.append("估值压力较高")
+    if forward_pe is not None and growth_anchor > 25:
+        peg_proxy = forward_pe / max(growth_anchor, 1)
+        if peg_proxy <= 1.5:
+            points += 5
+            evidence.append(f"增长可部分解释估值，PEG proxy {peg_proxy:.2f}")
+        elif peg_proxy <= 2.5:
+            points += 3
+            evidence.append(f"增长与估值大致匹配，PEG proxy {peg_proxy:.2f}")
+        else:
+            evidence.append(f"估值相对增长偏贵，PEG proxy {peg_proxy:.2f}")
+    elif growth_anchor > 0:
+        points += 2
+        evidence.append("增长为正，但估值匹配度不足")
+    return _alpha_component(min(points, 15), 15, evidence, missing, "valuation")
+
+
+def _technical_component(trend: dict[str, Any], rel: dict[str, Any], volume: dict[str, Any]) -> dict[str, Any]:
+    points = 0.0
+    evidence: list[str] = []
+    if (_float(trend.get("distance_to_200d_ma")) or 0) > 0:
+        points += 3
+        evidence.append("价格站上 200d 均线")
+    if (_float(trend.get("distance_to_50d_ma")) or 0) > 0:
+        points += 3
+        evidence.append("价格站上 50d 均线")
+    if (_float(trend.get("distance_to_20d_ma")) or 0) > 0:
+        points += 2
+        evidence.append("价格站上 20d 均线")
+    if (_float(rel.get("relative_strength_trend")) or 50) >= 60:
+        points += 3
+        evidence.append("相对大盘/benchmark 走强")
+    if (_float(volume.get("volume_confirmation_score")) or 50) >= 62:
+        points += 4
+        evidence.append("成交量确认技术路径")
+    if not evidence:
+        evidence.append("技术结构尚未形成明显优势")
+    return _alpha_component(min(points, 15), 15, evidence, [], "technical")
+
+
+def _flow_component(volume: dict[str, Any], rel: dict[str, Any]) -> dict[str, Any]:
+    volume_z = _float(volume.get("volume_z_score")) or 0.0
+    accumulation = _float(volume.get("accumulation_distribution_proxy")) or 0.0
+    rs = _float(rel.get("relative_strength_trend")) or 50.0
+    points = 0.0
+    evidence: list[str] = []
+    if volume_z >= 1.5:
+        points += 3
+        evidence.append(f"成交量异常放大 z={volume_z:.2f}")
+    elif volume_z >= 0.5:
+        points += 1.5
+        evidence.append(f"成交量温和放大 z={volume_z:.2f}")
+    if accumulation > 0.15:
+        points += 3
+        evidence.append("上涨日成交量占优，资金确认代理偏正")
+    if rs >= 60:
+        points += 3
+        evidence.append("相对强弱配合资金流代理")
+    if not evidence:
+        evidence.append("资金确认不足")
+    return _alpha_component(min(points, 10), 10, evidence, [], "flow")
+
+
+def _catalyst_component(news: dict[str, Any], fundamentals: dict[str, Any]) -> dict[str, Any]:
+    points = 0.0
+    evidence: list[str] = []
+    missing: list[str] = []
+    news_status = str(news.get("company_news") or "missing")
+    earnings_status = str(news.get("earnings") or "missing")
+    if news_status == "available":
+        points += 2
+        headline = news.get("major_company_headline")
+        evidence.append(f"公司新闻已接入{(': ' + str(headline)) if headline else ''}")
+        if news.get("news_sentiment") == "positive":
+            points += 2
+            evidence.append("新闻情绪偏正")
+    else:
+        missing.append("company_news")
+    if earnings_status == "available":
+        points += 2
+        if news.get("earnings_within_30d"):
+            points += 2
+            evidence.append(f"未来 30 天存在财报催化：{news.get('earnings_date')}")
+    else:
+        missing.append("earnings_calendar")
+    if (_float(fundamentals.get("revenue_growth")) or 0) > 25 or (_float(fundamentals.get("earnings_growth")) or 0) > 25:
+        points += 2
+        evidence.append("增长数据具备 EPS 上修叙事基础")
+    if not evidence:
+        evidence.append("催化剂不足或缺失")
+    return _alpha_component(min(points, 10), 10, evidence, missing, "catalyst")
+
+
+def _market_industry_component(market_context: dict[str, Any], rel: dict[str, Any], sector_etf: Any) -> dict[str, Any]:
+    context = str(market_context.get("context") or "neutral")
+    sector_rs = _float(rel.get("stock_vs_sector_20d"))
+    points = 0.0
+    evidence: list[str] = []
+    missing: list[str] = []
+    if context in {"market_tailwind", "supportive"}:
+        points += 4
+        evidence.append(f"大盘背景支持：{context}")
+    elif context == "neutral":
+        points += 2
+        evidence.append("大盘背景中性")
+    else:
+        evidence.append(f"大盘背景压制：{context}")
+    if sector_rs is None:
+        missing.append("sector_relative_strength")
+    elif sector_rs > 0.02:
+        points += 4
+        evidence.append(f"相对板块走强：{sector_etf}")
+    elif sector_rs > -0.02:
+        points += 2
+        evidence.append("板块过滤中性")
+    else:
+        evidence.append("相对板块走弱")
+    if (_float(rel.get("stock_vs_benchmark_20d")) or 0) > 0:
+        points += 2
+        evidence.append("20d 跑赢 benchmark")
+    return _alpha_component(min(points, 10), 10, evidence, missing, "market_industry")
+
+
+def _alpha_risk_penalty(
+    fundamentals: dict[str, Any],
+    trend: dict[str, Any],
+    news: dict[str, Any],
+    market_context: dict[str, Any],
+    missing_data: list[str],
+    vol: dict[str, Any],
+) -> dict[str, Any]:
+    points = 0.0
+    reasons: list[str] = []
+    if (_float(fundamentals.get("valuation_percentile")) or 0) >= 0.85:
+        points += 5
+        reasons.append("估值处于高位")
+    if (_float(fundamentals.get("revenue_growth")) or 0) < 0:
+        points += 5
+        reasons.append("收入增长为负")
+    if (_float(fundamentals.get("earnings_growth")) or 0) < 0:
+        points += 5
+        reasons.append("EPS 增长为负")
+    if (_float(trend.get("distance_to_200d_ma")) or 0) < 0:
+        points += 5
+        reasons.append("价格低于 200d 均线")
+    if market_context.get("context") in {"risk_off_pressure", "market_headwind"}:
+        points += 5
+        reasons.append("大盘风险背景压制")
+    if news.get("earnings_within_7d") or str(news.get("event_risk_flag")) == "high":
+        points += 5
+        reasons.append("财报/事件风险偏高")
+    if (_float(vol.get("atr_pct")) or 0) >= 0.08:
+        points += 3
+        reasons.append("个股波动率较高")
+    key_missing = [item for item in missing_data if item in {"fundamentals", "earnings", "company_news", "single_stock_options"}]
+    if key_missing:
+        points += min(len(key_missing) * 1.5, 6)
+        reasons.append("关键个股数据缺失：" + ", ".join(key_missing))
+    return {
+        "points": round(min(points, 30), 2),
+        "max_points": 30,
+        "reasons": reasons or ["暂无明显风险扣分项"],
+    }
+
+
+def _alpha_component(points: float, max_points: float, evidence: list[str], missing: list[str], name: str) -> dict[str, Any]:
+    ratio = _safe_div(points, max_points) or 0.0
+    if missing and points <= max_points * 0.25:
+        status = "missing_or_weak"
+    elif ratio >= 0.70:
+        status = "supportive"
+    elif ratio >= 0.45:
+        status = "neutral"
+    else:
+        status = "weak"
+    return {
+        "name": name,
+        "points": round(points, 2),
+        "max_points": max_points,
+        "score_pct": round(ratio * 100, 2),
+        "status": status,
+        "evidence": evidence,
+        "missing_fields": missing,
+    }
+
+
+def _alpha_grade(score: float, outperformance_probability: float, risk_reward: float | None) -> str:
+    rr = risk_reward or 0.0
+    if score >= 85 and outperformance_probability >= 0.62 and rr >= 2.0:
+        return "strong_alpha_watch"
+    if score >= 75 and outperformance_probability >= 0.57 and rr >= 1.5:
+        return "positive_alpha_watch"
+    if score >= 65:
+        return "watchlist_candidate"
+    if score >= 55:
+        return "wait_for_confirmation"
+    return "weak_or_no_alpha_edge"
+
+
+def _alpha_missing_fields(components: dict[str, Any]) -> list[str]:
+    missing: list[str] = []
+    for item in components.values():
+        missing.extend([str(value) for value in item.get("missing_fields") or []])
+    return missing
+
+
+def _alpha_thesis(
+    features: dict[str, Any],
+    market_context: dict[str, Any],
+    scenarios: dict[str, Any],
+    analogs: dict[str, Any],
+    components: dict[str, Any],
+    risk: dict[str, Any],
+    data_payload: dict[str, Any],
+) -> dict[str, Any]:
+    fundamentals = features.get("fundamentals_valuation") or {}
+    rel = features.get("relative_strength") or {}
+    news = features.get("news_event") or {}
+    primary = (scenarios.get("primary") or {}).get("scenario")
+    growth_status = (components.get("growth") or {}).get("status")
+    valuation_status = (components.get("valuation") or {}).get("status")
+    technical_status = (components.get("technical") or {}).get("status")
+    expectation_gap = []
+    if (_float(fundamentals.get("revenue_growth")) or 0) > 25:
+        expectation_gap.append("收入增长较强，具备正向预期差基础")
+    if (_float(fundamentals.get("earnings_growth")) or 0) > 25:
+        expectation_gap.append("EPS 增长较强，可能支持盈利上修叙事")
+    if news.get("earnings_within_30d"):
+        expectation_gap.append("未来 30 天财报可能成为重新定价窗口")
+    return {
+        "main_logic": _stock_main_logic(data_payload, features),
+        "expectation_gap": expectation_gap or ["暂未看到明确正向预期差证据"],
+        "valuation_repricing": "估值有扩张条件" if valuation_status in {"supportive", "neutral"} and growth_status == "supportive" else "估值扩张证据不足或存在压力",
+        "capital_confirmation": "资金/技术确认较强" if technical_status == "supportive" and (_float(rel.get("relative_strength_trend")) or 50) >= 60 else "资金确认不足或仍需观察",
+        "catalyst": str(news.get("major_company_headline") or news.get("earnings_date") or "暂无明确强催化"),
+        "primary_path": primary,
+        "historical_analog_support": analogs.get("analog_support"),
+        "invalidation_summary": _alpha_invalidation_summary(features, market_context, risk),
+    }
+
+
+def _stock_main_logic(data_payload: dict[str, Any], features: dict[str, Any]) -> str:
+    symbol = data_payload.get("symbol")
+    sector = data_payload.get("sector_etf")
+    fundamentals = features.get("fundamentals_valuation") or {}
+    if sector == "SMH" or symbol in {"NVDA", "AMD", "SMCI"}:
+        return "半导体/AI 逻辑：订单、毛利率、资本开支周期、估值重估和资金确认。"
+    if symbol in {"TSLA"}:
+        return "高 beta 成长股逻辑：交付/毛利率预期、估值扩张、风险偏好和技术资金确认。"
+    if sector == "XLU" or symbol in {"SMR", "CEG"}:
+        return "电力/核能/能源基础设施逻辑：政策与订单催化、盈利兑现能力、利率敏感度和资金确认。"
+    if (_float(fundamentals.get("revenue_growth")) or 0) > 25:
+        return "高成长逻辑：收入/EPS 是否持续超预期，以及市场是否愿意给更高估值。"
+    return "通用个股 Alpha 逻辑：盈利预期差、估值重估、资金确认、催化剂和风险扣分。"
+
+
+def _alpha_invalidation_summary(features: dict[str, Any], market_context: dict[str, Any], risk: dict[str, Any]) -> list[str]:
+    trend = features.get("price_trend") or {}
+    items = [
+        "跌破 recent swing low 或主路径失效价",
+        "相对 benchmark 强弱转弱",
+        "成交量确认消失或出现放量下跌",
+    ]
+    if market_context.get("context") in {"risk_off_pressure", "market_headwind"}:
+        items.append("大盘风险背景继续恶化")
+    if (_float(trend.get("distance_to_200d_ma")) or 0) < 0:
+        items.append("无法重新站上长期均线结构")
+    for reason in risk.get("reasons") or []:
+        if reason not in items:
+            items.append(str(reason))
+    return items[:6]
 
 
 def _stock_confluence_modules(
@@ -1113,6 +1572,11 @@ def _update_stock_forecast_records(symbols: dict[str, Any], path: Path | None = 
         "volume_confirmation_score",
         "relative_strength_score",
         "news_event_score",
+        "alpha_score",
+        "outperformance_probability_20d",
+        "expected_return_60d",
+        "max_drawdown_risk_60d",
+        "risk_reward_ratio",
         "data_quality",
         "next_day_expected_range",
         "trigger_levels",
@@ -1159,6 +1623,8 @@ def _update_stock_forecast_records(symbols: dict[str, Any], path: Path | None = 
         secondary = ranking.get("secondary") or {}
         risk = ranking.get("risk") or {}
         confluence = payload.get("stock_confluence") or {}
+        alpha = payload.get("stock_alpha_score_v1") or {}
+        expected_alpha = alpha.get("expected_alpha") or {}
         modules = confluence.get("module_scores") or {}
         features = payload.get("features") or {}
         relative_strength = features.get("relative_strength") or {}
@@ -1202,6 +1668,11 @@ def _update_stock_forecast_records(symbols: dict[str, Any], path: Path | None = 
                 "volume_confirmation_score": volume.get("volume_confirmation_score") or (modules.get("volume_structure") or {}).get("score"),
                 "relative_strength_score": relative_strength.get("relative_strength_trend") or (modules.get("relative_strength") or {}).get("score"),
                 "news_event_score": (modules.get("news_event") or {}).get("score"),
+                "alpha_score": alpha.get("total_score"),
+                "outperformance_probability_20d": expected_alpha.get("outperformance_probability_20d"),
+                "expected_return_60d": expected_alpha.get("expected_return_60d"),
+                "max_drawdown_risk_60d": expected_alpha.get("max_drawdown_risk_60d"),
+                "risk_reward_ratio": expected_alpha.get("risk_reward_ratio"),
                 "data_quality": data_quality.get("score"),
                 "next_day_expected_range": json.dumps(next_day_expected_range, ensure_ascii=False, sort_keys=True),
                 "trigger_levels": json.dumps(_compact_trigger_levels(trigger_levels), ensure_ascii=False, sort_keys=True),
@@ -1273,6 +1744,11 @@ def _parse_stock_record(row: dict[str, Any]) -> dict[str, Any]:
         "volume_confirmation_score",
         "relative_strength_score",
         "news_event_score",
+        "alpha_score",
+        "outperformance_probability_20d",
+        "expected_return_60d",
+        "max_drawdown_risk_60d",
+        "risk_reward_ratio",
         "data_quality",
         "current_price",
         "top_rank",

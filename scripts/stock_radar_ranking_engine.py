@@ -131,16 +131,17 @@ def render_top_stock_candidates_report(payload: dict[str, Any]) -> str:
         "risk_note",
     ):
         lines.append(f"- {key}: `{command.get(key)}`")
-    lines.extend(["", "## Top Candidates", "", "| Rank | Ticker | Type | Radar | Elasticity | Confluence | Catalyst | Risk | Range | Trigger | Invalidation | Reason |", "| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- | ---: | ---: | --- |"])
+    lines.extend(["", "## Top Candidates", "", "| Rank | Ticker | Type | Radar | Alpha | Elasticity | Confluence | Catalyst | Risk | Range | Trigger | Invalidation | Reason |", "| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- | ---: | ---: | --- |"])
     for item in payload.get("top_candidates") or []:
         rng = item.get("expected_next_day_range") or {}
         lines.append(
-            "| {rank} | {ticker} | {candidate_type} | {final_radar_score} | {elasticity_score} | "
+            "| {rank} | {ticker} | {candidate_type} | {final_radar_score} | {alpha_quality_score} | {elasticity_score} | "
             "{confluence_score} | {catalyst_score} | {risk_score} | {low}-{high} | {trigger} | {invalid} | {reason} |".format(
                 rank=item.get("rank"),
                 ticker=item.get("ticker"),
                 candidate_type=item.get("candidate_type"),
                 final_radar_score=item.get("final_radar_score"),
+                alpha_quality_score=item.get("alpha_quality_score"),
                 elasticity_score=item.get("elasticity_score"),
                 confluence_score=item.get("confluence_score"),
                 catalyst_score=item.get("catalyst_score"),
@@ -203,6 +204,7 @@ def update_stock_forecast_records_with_radar(
         "candidate_type",
         "radar_level",
         "final_radar_score",
+        "alpha_quality_score",
         "elasticity_score",
         "catalyst_score",
         "risk_score",
@@ -224,6 +226,7 @@ def update_stock_forecast_records_with_radar(
         row["candidate_type"] = candidate.get("candidate_type")
         row["radar_level"] = candidate.get("radar_level")
         row["final_radar_score"] = candidate.get("final_radar_score")
+        row["alpha_quality_score"] = candidate.get("alpha_quality_score")
         row["elasticity_score"] = candidate.get("elasticity_score")
         row["catalyst_score"] = candidate.get("catalyst_score")
         row["risk_score"] = candidate.get("risk_score")
@@ -250,6 +253,8 @@ def _candidate_from_symbol(symbol: str, payload: dict[str, Any]) -> dict[str, An
     secondary = ranking.get("secondary") or {}
     risk = ranking.get("risk") or {}
     confluence = payload.get("stock_confluence") or {}
+    alpha = payload.get("stock_alpha_score_v1") or {}
+    expected_alpha = alpha.get("expected_alpha") or {}
     modules = confluence.get("module_scores") or {}
     levels = ((payload.get("forecast_price_levels") or {}).get("trigger_levels") or {})
     price_table = ((payload.get("forecast_price_levels") or {}).get("forecast_price_table") or {})
@@ -263,6 +268,9 @@ def _candidate_from_symbol(symbol: str, payload: dict[str, Any]) -> dict[str, An
     gap = abs(_float(trend.get("gap_up_down")) or 0.0)
     rs_score = _float(rel.get("relative_strength_trend")) or 50.0
     confluence_score = _float(confluence.get("stock_confluence_score")) or 0.0
+    alpha_quality_score = _float(alpha.get("total_score")) or 35.0
+    risk_reward_ratio = _float(expected_alpha.get("risk_reward_ratio"))
+    outperformance_probability = _float(expected_alpha.get("outperformance_probability_20d"))
     news_status = str(data_quality.get("company_news") or "missing")
     earnings_status = str(data_quality.get("earnings") or "missing")
     primary_probability = _float(primary.get("probability")) or 0.0
@@ -281,14 +289,15 @@ def _candidate_from_symbol(symbol: str, payload: dict[str, Any]) -> dict[str, An
     sector_score = _sector_context_score(sector_context)
     risk_score = _risk_score(market_context, failed_probability, downside_probability, elasticity_score, data_quality)
     final_score = (
-        elasticity_score * 0.26
-        + volume_anomaly_score * 0.17
-        + relative_strength_score * 0.15
-        + catalyst_score * 0.11
-        + confluence_score * 0.15
-        + squeeze_proxy_score * 0.06
-        + market_score * 0.05
-        + sector_score * 0.05
+        elasticity_score * 0.20
+        + volume_anomaly_score * 0.14
+        + relative_strength_score * 0.13
+        + catalyst_score * 0.10
+        + confluence_score * 0.12
+        + alpha_quality_score * 0.18
+        + squeeze_proxy_score * 0.05
+        + market_score * 0.04
+        + sector_score * 0.04
     )
     missing_count = len(data_quality.get("missing_fields") or [])
     final_score -= min(missing_count * 1.0, 8)
@@ -323,6 +332,9 @@ def _candidate_from_symbol(symbol: str, payload: dict[str, Any]) -> dict[str, An
         "elasticity_score": round(elasticity_score, 2),
         "next_day_move_probability": _round(_clamp((elasticity_score * 0.55 + volume_anomaly_score * 0.25 + catalyst_score * 0.20) / 100, 0, 1)),
         "confluence_score": round(confluence_score, 2),
+        "alpha_quality_score": round(alpha_quality_score, 2),
+        "outperformance_probability_20d": _round(outperformance_probability),
+        "risk_reward_ratio": _round(risk_reward_ratio, 2),
         "catalyst_score": round(catalyst_score, 2),
         "volume_anomaly_score": round(volume_anomaly_score, 2),
         "relative_strength_score": round(relative_strength_score, 2),
@@ -341,7 +353,7 @@ def _candidate_from_symbol(symbol: str, payload: dict[str, Any]) -> dict[str, An
         "upside_trigger_level": upside_trigger,
         "downside_risk_level": downside_risk,
         "invalidation_level": invalidation,
-        "one_line_reason": _one_line_reason(candidate_type, elasticity_score, volume_anomaly_score, relative_strength_score, catalyst_score, market_context, sector_context),
+        "one_line_reason": _one_line_reason(candidate_type, elasticity_score, volume_anomaly_score, relative_strength_score, catalyst_score, market_context, sector_context, alpha_quality_score),
         "main_supporting_evidence": support[:4],
         "main_conflicting_evidence": conflict[:4],
         "validation_status": "not_yet_validated",
@@ -351,6 +363,14 @@ def _candidate_from_symbol(symbol: str, payload: dict[str, Any]) -> dict[str, An
             "company_news": news_status,
             "earnings": earnings_status,
             "catalyst_note": "real company news/earnings unavailable; catalyst score capped" if catalyst_score <= 40 else "catalyst data present or event risk proxy elevated",
+        },
+        "alpha_fields": {
+            "alpha_score": round(alpha_quality_score, 2),
+            "forecast_grade": alpha.get("forecast_grade"),
+            "outperformance_probability_20d": _round(outperformance_probability),
+            "expected_return_60d": expected_alpha.get("expected_return_60d"),
+            "risk_reward_ratio": _round(risk_reward_ratio, 2),
+            "main_logic": ((alpha.get("thesis") or {}).get("main_logic")),
         },
         "volume_fields": {
             "volume_z_score": _round(volume_z),
@@ -448,8 +468,9 @@ def _one_line_reason(
     catalyst_score: float,
     market_context: str,
     sector_context: str,
+    alpha_quality_score: float,
 ) -> str:
-    parts = [f"弹性 {elasticity_score:.0f}", f"成交量 {volume_score:.0f}", f"相对强弱 {rs_score:.0f}"]
+    parts = [f"Alpha {alpha_quality_score:.0f}", f"弹性 {elasticity_score:.0f}", f"成交量 {volume_score:.0f}", f"相对强弱 {rs_score:.0f}"]
     if catalyst_score >= 50:
         parts.append(f"催化 {catalyst_score:.0f}")
     else:

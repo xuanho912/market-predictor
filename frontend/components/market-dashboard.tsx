@@ -2277,6 +2277,10 @@ function StockPredictionSection({ dashboard }: { dashboard: PredictionDashboard 
   const selectedRisk = asRecord(selectedRanking.risk);
   const selectedContext = asRecord(selected.market_context_for_stock);
   const selectedConfluence = asRecord(selected.stock_confluence);
+  const selectedAlpha = asRecord(selected.stock_alpha_score_v1);
+  const selectedExpectedAlpha = asRecord(selectedAlpha.expected_alpha);
+  const selectedThesis = asRecord(selectedAlpha.thesis);
+  const selectedAlphaComponents = Object.entries(asRecord(selectedAlpha.components));
   const moduleScores = Object.entries(asRecord(selectedConfluence.module_scores));
   const selectedAlerts = asRecord(selected.stock_alerts);
   const strongestAlert = asRecord(selectedAlerts.strongest_alert);
@@ -2324,13 +2328,14 @@ function StockPredictionSection({ dashboard }: { dashboard: PredictionDashboard 
         </div>
 
         <div className="mt-4 overflow-x-auto">
-          <table className="w-full min-w-[1120px] text-left text-sm">
+          <table className="w-full min-w-[1180px] text-left text-sm">
             <thead className="text-xs uppercase tracking-[0.14em] text-slate-500">
               <tr>
                 <th className="py-2 pr-3">Rank</th>
                 <th className="py-2 pr-3">Ticker</th>
                 <th className="py-2 pr-3">类型</th>
                 <th className="py-2 pr-3">雷达分</th>
+                <th className="py-2 pr-3">Alpha</th>
                 <th className="py-2 pr-3">弹性</th>
                 <th className="py-2 pr-3">共振</th>
                 <th className="py-2 pr-3">催化</th>
@@ -2354,6 +2359,7 @@ function StockPredictionSection({ dashboard }: { dashboard: PredictionDashboard 
                     <td className="py-2 pr-3 font-semibold text-white">{ticker}</td>
                     <td className="py-2 pr-3">{cnCandidateType(String(candidate.candidate_type ?? ""))}</td>
                     <td className="py-2 pr-3 text-cyan-100">{formatScore(asNumber(candidate.final_radar_score))}</td>
+                    <td className="py-2 pr-3 text-emerald-100">{formatScore(asNumber(candidate.alpha_quality_score))}</td>
                     <td className="py-2 pr-3">{formatScore(asNumber(candidate.elasticity_score))}</td>
                     <td className="py-2 pr-3">{formatScore(asNumber(candidate.confluence_score))}</td>
                     <td className="py-2 pr-3">{formatScore(asNumber(candidate.catalyst_score))}</td>
@@ -2442,6 +2448,7 @@ function StockPredictionSection({ dashboard }: { dashboard: PredictionDashboard 
                 <Metric label="Benchmark" value={String(payload.benchmark ?? "QQQ")} />
                 <Metric label="主路径" value={String(primary.label ?? cnScenario(String(primary.scenario ?? "")))} />
                 <Metric label="主路径概率" value={formatPercent(primary.probability, 1)} />
+                <Metric label="Alpha评分" value={formatScore(asNumber(asRecord(payload.stock_alpha_score_v1).total_score))} />
                 <Metric label="第二路径" value={String(secondary.label ?? cnScenario(String(secondary.scenario ?? "")))} />
                 <Metric label="风险路径" value={String(risk.label ?? cnScenario(String(risk.scenario ?? "")))} />
                 <Metric label="共振评分" value={formatScore(asNumber(confluence.stock_confluence_score))} />
@@ -2474,6 +2481,61 @@ function StockPredictionSection({ dashboard }: { dashboard: PredictionDashboard 
             </div>
           </div>
 
+          <div className="mt-4 rounded-xl border border-emerald-300/20 bg-emerald-300/[0.05] p-4">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+              <div>
+                <div className="text-xs uppercase tracking-[0.2em] text-emerald-200/70">Stock Alpha Score v1</div>
+                <h4 className="mt-1 text-xl font-semibold text-white">个股 Alpha 评分：{formatScore(asNumber(selectedAlpha.total_score))}</h4>
+                <p className="mt-2 max-w-4xl text-sm leading-6 text-slate-300">
+                  主逻辑：{String(selectedThesis.main_logic ?? "数据不足")} 预期差：
+                  {asStringArray(selectedThesis.expectation_gap).join("；") || "暂无明确正向预期差证据"}。
+                  这不是买卖建议，而是判断这只股票未来是否可能跑赢 {String(selectedExpectedAlpha.benchmark ?? selected.benchmark ?? "benchmark")} 的预测质量层。
+                </p>
+              </div>
+              <div className="grid min-w-[280px] grid-cols-2 gap-3">
+                <Metric label="预测等级" value={String(selectedAlpha.forecast_grade ?? "not_yet_validated")} />
+                <Metric label="20d跑赢概率" value={formatPercent(selectedExpectedAlpha.outperformance_probability_20d, 1)} />
+                <Metric label="60d预期收益" value={formatPercent(selectedExpectedAlpha.expected_return_60d, 1)} />
+                <Metric label="赔率" value={String(selectedExpectedAlpha.risk_reward_ratio ?? "数据缺失")} />
+                <Metric label="60d回撤风险" value={formatPercent(selectedExpectedAlpha.max_drawdown_risk_60d, 1)} />
+                <Metric label="验证状态" value={String(selectedAlpha.validation_status ?? "not_yet_validated")} />
+              </div>
+            </div>
+            <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+              {selectedAlphaComponents.map(([key, raw]) => {
+                const component = asRecord(raw);
+                return (
+                  <div key={key} className="rounded-lg border border-white/10 bg-black/20 p-3">
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="text-sm font-semibold text-white">{stockAlphaComponentLabel(key)}</div>
+                      <StatusBadge status={String(component.status ?? "weak")} label={String(component.status ?? "weak")} />
+                    </div>
+                    <div className="mt-2 text-lg font-semibold text-emerald-100">
+                      {String(component.points ?? "0")} / {String(component.max_points ?? "-")}
+                    </div>
+                    <div className="mt-2 text-xs leading-5 text-slate-400">
+                      {asStringArray(component.evidence).slice(0, 2).join("；") || "暂无证据"}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="mt-3 grid gap-3 text-xs leading-5 text-slate-400 md:grid-cols-3">
+              <div className="rounded-lg border border-white/10 bg-black/20 p-3">
+                <div className="font-semibold text-slate-200">估值重估</div>
+                <div className="mt-1">{String(selectedThesis.valuation_repricing ?? "数据不足")}</div>
+              </div>
+              <div className="rounded-lg border border-white/10 bg-black/20 p-3">
+                <div className="font-semibold text-slate-200">资金确认</div>
+                <div className="mt-1">{String(selectedThesis.capital_confirmation ?? "数据不足")}</div>
+              </div>
+              <div className="rounded-lg border border-white/10 bg-black/20 p-3">
+                <div className="font-semibold text-slate-200">失效条件</div>
+                <div className="mt-1">{asStringArray(selectedThesis.invalidation_summary).slice(0, 3).join("；") || "数据不足"}</div>
+              </div>
+            </div>
+          </div>
+
           <div className="mt-4 grid gap-4 lg:grid-cols-[minmax(0,1fr)_280px]">
             <StockPathChart selected={selected} />
             <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4">
@@ -2490,12 +2552,12 @@ function StockPredictionSection({ dashboard }: { dashboard: PredictionDashboard 
             <table className="w-full min-w-[760px] text-left text-sm">
               <thead className="text-xs uppercase tracking-[0.14em] text-slate-500">
                 <tr>
-                  <th className="py-2 pr-3">??</th>
+                  <th className="py-2 pr-3">周期</th>
                   <th className="py-2 pr-3">综合预期</th>
                   <th className="py-2 pr-3">主路径价</th>
                   <th className="py-2 pr-3">第二路径价</th>
                   <th className="py-2 pr-3">风险路径价</th>
-                  <th className="py-2 pr-3">??</th>
+                  <th className="py-2 pr-3">区间</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/10">
@@ -2544,9 +2606,9 @@ function StockPredictionSection({ dashboard }: { dashboard: PredictionDashboard 
           <div className="rounded-xl border border-white/10 bg-black/20 p-4">
             <div className="text-xs uppercase tracking-[0.2em] text-slate-500">Data Quality</div>
             <div className="mt-3 grid grid-cols-2 gap-3 text-sm">
-              <Metric label="??" value={String(dataQuality.price_available ?? false)} />
+              <Metric label="价格" value={String(dataQuality.price_available ?? false)} />
               <Metric label="成交量" value={String(dataQuality.volume_available ?? false)} />
-              <Metric label="?? profile" value={String(dataQuality.company_profile ?? "missing")} />
+              <Metric label="公司资料" value={String(dataQuality.company_profile ?? "missing")} />
               <Metric label="公司新闻" value={String(dataQuality.company_news ?? "missing")} />
               <Metric label="基本面" value={String(dataQuality.fundamentals ?? "missing")} />
               <Metric label="个股期权" value={String(dataQuality.single_stock_options ?? "missing")} />
@@ -2678,6 +2740,20 @@ function stockModuleLabel(key: string): string {
     fundamentals_earnings: "基本面 / 财报",
     options_volatility: "期权 / 波动率",
     historical_analog: "历史相似",
+    alpha_quality: "个股 Alpha 质量",
+  };
+  return map[key] ?? key;
+}
+
+function stockAlphaComponentLabel(key: string): string {
+  const map: Record<string, string> = {
+    growth: "成长",
+    quality: "质量",
+    valuation: "估值",
+    technical: "技术结构",
+    flow: "资金确认",
+    catalyst: "催化剂",
+    market_industry: "大盘 / 行业",
   };
   return map[key] ?? key;
 }
