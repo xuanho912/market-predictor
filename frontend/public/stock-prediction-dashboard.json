@@ -1,67 +1,204 @@
 {
-  "version": "stock_prediction_dashboard_v1",
-  "generated_at": "2026-06-15T15:34:22.762736+00:00",
+  "data_provider": {
+    "provider": "stock_data_provider",
+    "summary": {
+      "available_symbols": 0,
+      "company_news_available": false,
+      "company_profiles_available": 0,
+      "data_quality_score": null,
+      "earnings_available": false,
+      "fundamentals_available": false,
+      "manual_ticker_input_required": true,
+      "missing_symbols": [],
+      "requested_symbols": 0,
+      "single_stock_options_available": false,
+      "synthetic_blocked_symbols": []
+    },
+    "version": "stock_data_provider_v1"
+  },
+  "generated_at": "2026-06-16T07:29:12.848058+00:00",
+  "guardrails": [
+    "This is a probabilistic stock forecast module, not a trading system.",
+    "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
+    "Stock forecasts are separate from the SPY/QQQ/IWM/DIA baseline_v1 market model.",
+    "Stock hierarchy: market is the risk background, sector is the filter, stock is the final forecast object."
+  ],
+  "market_context_source": {
+    "active_market_model": "baseline_v1",
+    "alpha_v1_threshold_unchanged": 0.32534311,
+    "market_as_of": "2026-06-12",
+    "note": "Stock module consumes market context but does not modify baseline_v1 or Alpha v1."
+  },
   "model_version": "stock_baseline_v1",
-  "watchlist": [],
-  "summary": {
-    "supported_symbols": 0,
-    "watchlist_size": 0,
-    "strongest_stock_symbol": null,
-    "stock_data_quality_score": null,
+  "stock_radar_validation_scorecard": {
+    "catalyst_effectiveness": {
+      "all_completed": {
+        "avg_abs_next_day_return": null,
+        "avg_next_day_high_low_range": null,
+        "avg_next_day_return": null,
+        "completed_return_samples": 0,
+        "failure_rate": null,
+        "primary_hit_rate": null,
+        "range_hit_rate": null,
+        "sample_size": 0
+      },
+      "answer": "not_enough_forward_samples",
+      "catalyst_candidates": {
+        "avg_abs_next_day_return": null,
+        "avg_next_day_high_low_range": null,
+        "avg_next_day_return": null,
+        "completed_return_samples": 0,
+        "failure_rate": null,
+        "primary_hit_rate": null,
+        "range_hit_rate": null,
+        "sample_size": 0
+      },
+      "question": "catalyst candidates 是否真的波动更大？"
+    },
+    "completed_next_day_samples": 0,
+    "confluence_effectiveness": {
+      "answer": "not_enough_forward_samples",
+      "high_confluence_top20pct": {
+        "avg_abs_next_day_return": null,
+        "avg_next_day_high_low_range": null,
+        "avg_next_day_return": null,
+        "completed_return_samples": 0,
+        "failure_rate": null,
+        "primary_hit_rate": null,
+        "range_hit_rate": null,
+        "sample_size": 0
+      },
+      "low_confluence_bottom20pct": {
+        "avg_abs_next_day_return": null,
+        "avg_next_day_high_low_range": null,
+        "avg_next_day_return": null,
+        "completed_return_samples": 0,
+        "failure_rate": null,
+        "primary_hit_rate": null,
+        "range_hit_rate": null,
+        "sample_size": 0
+      },
+      "question": "high confluence 是否真的更准？"
+    },
+    "evidence_level": "insufficient_samples",
+    "final_radar_score_effectiveness": {
+      "answer": "not_enough_forward_samples",
+      "high_score_top20pct": {
+        "avg_abs_next_day_return": null,
+        "avg_next_day_high_low_range": null,
+        "avg_next_day_return": null,
+        "completed_return_samples": 0,
+        "failure_rate": null,
+        "primary_hit_rate": null,
+        "range_hit_rate": null,
+        "sample_size": 0
+      },
+      "low_score_bottom20pct": {
+        "avg_abs_next_day_return": null,
+        "avg_next_day_high_low_range": null,
+        "avg_next_day_return": null,
+        "completed_return_samples": 0,
+        "failure_rate": null,
+        "primary_hit_rate": null,
+        "range_hit_rate": null,
+        "sample_size": 0
+      },
+      "question": "high final_radar_score 是否真的对应更大次日 range？"
+    },
+    "generated_at": "2026-06-16T07:29:12.848392+00:00",
+    "not_validated_warning": "not_enough_forward_samples",
+    "pending_records": 11,
+    "risk_score_effectiveness": {
+      "all_completed": {
+        "avg_abs_next_day_return": null,
+        "avg_next_day_high_low_range": null,
+        "avg_next_day_return": null,
+        "completed_return_samples": 0,
+        "failure_rate": null,
+        "primary_hit_rate": null,
+        "range_hit_rate": null,
+        "sample_size": 0
+      },
+      "answer": "not_enough_forward_samples",
+      "high_risk": {
+        "avg_abs_next_day_return": null,
+        "avg_next_day_high_low_range": null,
+        "avg_next_day_return": null,
+        "completed_return_samples": 0,
+        "failure_rate": null,
+        "primary_hit_rate": null,
+        "range_hit_rate": null,
+        "sample_size": 0
+      },
+      "question": "risk_score 高的股票是否真的更容易失败？"
+    },
+    "top10_vs_watchlist": {
+      "answer": "not_enough_forward_samples",
+      "non_top10": {
+        "avg_abs_next_day_return": null,
+        "avg_next_day_high_low_range": null,
+        "avg_next_day_return": null,
+        "completed_return_samples": 0,
+        "failure_rate": null,
+        "primary_hit_rate": null,
+        "range_hit_rate": null,
+        "sample_size": 0
+      },
+      "question": "Top 10 candidates 是否比普通 watchlist 股票波动更大？",
+      "top10": {
+        "avg_abs_next_day_return": null,
+        "avg_next_day_high_low_range": null,
+        "avg_next_day_return": null,
+        "completed_return_samples": 0,
+        "failure_rate": null,
+        "primary_hit_rate": null,
+        "range_hit_rate": null,
+        "sample_size": 0
+      }
+    },
+    "total_records": 11,
     "validation_status": "not_yet_validated",
-    "manual_ticker_input_required": true,
+    "validation_type": "forward_validation",
+    "version": "stock_radar_validation_scorecard_v1"
+  },
+  "summary": {
     "missing_high_value_data": [
       "fundamentals",
       "earnings",
       "company_news",
       "single_stock_options"
-    ]
-  },
-  "market_context_source": {
-    "market_as_of": "2026-06-15",
-    "active_market_model": "baseline_v1",
-    "alpha_v1_threshold_unchanged": 0.32534311,
-    "note": "Stock module consumes market context but does not modify baseline_v1 or Alpha v1."
+    ],
+    "stock_data_quality_score": null,
+    "strongest_stock_symbol": null,
+    "supported_symbols": 0,
+    "validation_status": "not_yet_validated",
+    "watchlist_size": 0
   },
   "symbols": {},
-  "data_provider": {
-    "provider": "stock_data_provider",
-    "version": "stock_data_provider_v1",
-    "summary": {
-      "requested_symbols": 0,
-      "available_symbols": 0,
-      "missing_symbols": [],
-      "manual_ticker_input_required": true
-    }
-  },
-  "guardrails": [
-    "No default stock universe is generated. Use GitHub Actions workflow_dispatch ticker_list to create stock forecasts.",
-    "This is a probabilistic stock forecast module, not a trading system.",
-    "Missing fundamentals, earnings, news and options are labeled missing, not inferred.",
-    "Stock forecasts are separate from the SPY/QQQ/IWM/DIA baseline_v1 market model."
-  ],
   "top_stock_candidates": {
-    "version": "next_day_stock_radar_v1",
-    "generated_at": "2026-06-15T15:34:22.762736+00:00",
-    "as_of": "2026-06-15",
-    "model_version": "stock_baseline_v1",
-    "universe_size": 0,
-    "top_n": 20,
+    "as_of": null,
     "command_center": {
-      "radar_status": "NO_STOCK_UNIVERSE",
-      "top_candidate": null,
-      "top3_candidates": [],
+      "data_freshness_note": "as_of=None",
+      "market_context_note": "market context is mixed or supportive for selected candidates",
+      "radar_status": "NO_STRONG_RADAR_EDGE",
+      "risk_note": "High elasticity means larger forecast movement potential, not a buy/sell recommendation.",
       "top10_count": 0,
-      "market_context_note": "No stock universe has been generated yet.",
-      "data_freshness_note": "as_of=2026-06-15",
-      "validation_status": "not_yet_validated",
-      "risk_note": "Add tickers through GitHub Actions workflow_dispatch ticker_list to generate candidates."
+      "top3_candidates": [],
+      "top_candidate": null,
+      "validation_status": "not_yet_validated"
     },
-    "top_candidates": [],
+    "generated_at": "2026-06-16T07:29:12.848089+00:00",
+    "model_version": "stock_baseline_v1",
     "notes": [
-      "The default stock universe is intentionally empty.",
-      "Use workflow_dispatch ticker_list to generate a custom stock universe.",
-      "This radar ranks forecast candidates, not trade recommendations."
-    ]
-  }
+      "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
+      "Missing company news, earnings, options or real flow lowers confidence and is not filled synthetically.",
+      "Candidates are evaluated after the market dashboard context; the market remains the first layer."
+    ],
+    "top_candidates": [],
+    "top_n": 20,
+    "universe_size": 0,
+    "version": "next_day_stock_radar_v1"
+  },
+  "version": "stock_prediction_dashboard_v1",
+  "watchlist": []
 }

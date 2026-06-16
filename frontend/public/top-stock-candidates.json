@@ -1,24 +1,24 @@
 {
-  "version": "next_day_stock_radar_v1",
-  "generated_at": "2026-06-15T15:34:22.762736+00:00",
-  "as_of": "2026-06-15",
-  "model_version": "stock_baseline_v1",
-  "universe_size": 0,
-  "top_n": 20,
+  "as_of": null,
   "command_center": {
-    "radar_status": "NO_STOCK_UNIVERSE",
-    "top_candidate": null,
-    "top3_candidates": [],
+    "data_freshness_note": "as_of=None",
+    "market_context_note": "market context is mixed or supportive for selected candidates",
+    "radar_status": "NO_STRONG_RADAR_EDGE",
+    "risk_note": "High elasticity means larger forecast movement potential, not a buy/sell recommendation.",
     "top10_count": 0,
-    "market_context_note": "No stock universe has been generated yet.",
-    "data_freshness_note": "as_of=2026-06-15",
-    "validation_status": "not_yet_validated",
-    "risk_note": "Add tickers through GitHub Actions workflow_dispatch ticker_list to generate candidates."
+    "top3_candidates": [],
+    "top_candidate": null,
+    "validation_status": "not_yet_validated"
   },
-  "top_candidates": [],
+  "generated_at": "2026-06-16T07:29:12.848089+00:00",
+  "model_version": "stock_baseline_v1",
   "notes": [
-    "The default stock universe is intentionally empty.",
-    "Use workflow_dispatch ticker_list to generate a custom stock universe.",
-    "This radar ranks forecast candidates, not trade recommendations."
-  ]
+    "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
+    "Missing company news, earnings, options or real flow lowers confidence and is not filled synthetically.",
+    "Candidates are evaluated after the market dashboard context; the market remains the first layer."
+  ],
+  "top_candidates": [],
+  "top_n": 20,
+  "universe_size": 0,
+  "version": "next_day_stock_radar_v1"
 }

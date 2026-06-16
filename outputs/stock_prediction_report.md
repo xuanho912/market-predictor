@@ -1,7 +1,17 @@
 # Stock Prediction Report
 
-Generated at: `2026-06-15T15:34:22.762736+00:00`
+Generated at: `2026-06-16T07:29:12.848058+00:00`
+Model version: `stock_baseline_v1`
 
-Current stock universe is empty. Add tickers through GitHub Actions `workflow_dispatch` input `ticker_list` to generate stock forecasts.
+This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
 
-This module is not a trading system and does not produce buy/sell, entry/exit or PnL outputs.
+## Summary
+
+- supported_symbols: `0`
+- watchlist_size: `0`
+- strongest_stock_symbol: `None`
+- stock_data_quality_score: `None`
+- validation_status: `not_yet_validated`
+- missing_high_value_data: `['fundamentals', 'earnings', 'company_news', 'single_stock_options']`
+
+## Symbols
