@@ -14,7 +14,7 @@ from app.services.data_providers.auto_download import DownloadedSeries, refresh_
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_WATCHLIST_PATH = PROJECT_ROOT / "config" / "stock_watchlist.json"
-DEFAULT_WATCHLIST = ("JD", "KC", "NVDA", "TSLA", "AMD", "AAPL", "MSFT", "META", "BABA", "PLTR", "SMCI")
+DEFAULT_WATCHLIST: tuple[str, ...] = ()
 FINNHUB_BASE_URL = "https://finnhub.io/api/v1"
 FINNHUB_TIMEOUT_SECONDS = 10
 
@@ -23,17 +23,17 @@ def load_stock_watchlist(path: Path | None = None) -> dict[str, Any]:
     path = path or DEFAULT_WATCHLIST_PATH
     if not path.exists():
         return {
-            "watchlist": list(DEFAULT_WATCHLIST),
-            "benchmark_map": {symbol: "QQQ" for symbol in DEFAULT_WATCHLIST},
+            "watchlist": [],
+            "benchmark_map": {},
             "sector_etf_map": {},
-            "company_map": {symbol: symbol for symbol in DEFAULT_WATCHLIST},
-            "source": "default_watchlist",
+            "company_map": {},
+            "source": "missing_watchlist_config",
         }
     payload = json.loads(path.read_text(encoding="utf-8"))
     env_watchlist = _watchlist_from_env()
     configured_watchlist = payload.get("watchlist", [])
     watchlist = [str(symbol).upper().strip() for symbol in (env_watchlist or configured_watchlist) if str(symbol).strip()]
-    watchlist = watchlist[:20] or list(DEFAULT_WATCHLIST)
+    watchlist = watchlist[:20]
     benchmark_map = {
         str(symbol).upper(): str(benchmark).upper()
         for symbol, benchmark in (payload.get("benchmark_map") or {}).items()
@@ -64,10 +64,42 @@ def fetch_stock_data_bundle(
     lookback_days: int = 520,
 ) -> dict[str, Any]:
     config = watchlist_config or load_stock_watchlist()
-    watchlist = tuple(config.get("watchlist") or DEFAULT_WATCHLIST)
+    watchlist = tuple(config.get("watchlist") or ())
     benchmark_map = dict(config.get("benchmark_map") or {})
     sector_etf_map = dict(config.get("sector_etf_map") or {})
     company_map = dict(config.get("company_map") or {})
+    if not watchlist:
+        return {
+            "provider": "stock_data_provider",
+            "version": "stock_data_provider_v1",
+            "generated_at": datetime.now(timezone.utc).isoformat(),
+            "watchlist_source": config.get("source"),
+            "watchlist": [],
+            "benchmark_map": {},
+            "sector_etf_map": {},
+            "company_map": {},
+            "symbols": {},
+            "support_symbols": {},
+            "provider_status": {},
+            "summary": {
+                "requested_symbols": 0,
+                "available_symbols": 0,
+                "missing_symbols": [],
+                "synthetic_blocked_symbols": [],
+                "data_quality_score": None,
+                "company_profiles_available": 0,
+                "fundamentals_available": False,
+                "earnings_available": False,
+                "company_news_available": False,
+                "single_stock_options_available": False,
+                "manual_ticker_input_required": True,
+            },
+            "guardrails": [
+                "No default stock universe is generated. Use GitHub Actions workflow_dispatch ticker_list to create stock forecasts.",
+                "Synthetic stock data is blocked and cannot create a live stock forecast.",
+                "Stock forecasts are probabilistic scenario paths, not execution recommendations.",
+            ],
+        }
     company_profiles = _fetch_company_profiles(watchlist)
     support_symbols = tuple(sorted(set(benchmark_map.values()) | set(sector_etf_map.values()) | {"SPY", "QQQ"}))
     download_symbols = tuple(dict.fromkeys(watchlist + support_symbols))

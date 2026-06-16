@@ -2106,6 +2106,21 @@ function StockPredictionSection({ dashboard }: { dashboard: PredictionDashboard 
   const rows = useMemo(() => Object.entries(symbols).slice(0, 50), [symbols]);
   const [query, setQuery] = useState("");
   const [selectedStock, setSelectedStock] = useState(rows[0]?.[0] ?? "");
+  const [manualTickerInput, setManualTickerInput] = useState("");
+  const [copiedTickerList, setCopiedTickerList] = useState(false);
+  const normalizedManualTickers = useMemo(
+    () =>
+      manualTickerInput
+        .split(/[,，\s]+/)
+        .map((item) => item.trim().toUpperCase())
+        .filter(Boolean)
+        .filter((item, index, all) => all.indexOf(item) === index)
+        .slice(0, 20)
+        .join(","),
+    [manualTickerInput],
+  );
+  const workflowUrl = "https://github.com/xuanho912/market-predictor/actions/workflows/forward-alpha-v1.yml";
+  const tickerListForAction = normalizedManualTickers || "JD,KC,NVDA,TSLA";
   const filteredRows = useMemo(() => {
     const q = query.trim().toUpperCase();
     if (!q) return rows;
@@ -2122,7 +2137,80 @@ function StockPredictionSection({ dashboard }: { dashboard: PredictionDashboard 
     }
   }, [rows, selectedStock]);
 
-  if (!rows.length) return null;
+  if (!rows.length) {
+    return (
+      <section className="rounded-2xl border border-white/10 bg-[#101819] p-5">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+          <div>
+            <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Stock Prediction Module</div>
+            <h2 className="mt-1 text-xl font-semibold text-white">个股雷达尚未添加股票</h2>
+            <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-400">
+              当前默认股票池已经清空。公开页面不会直接调用 Finnhub / Yahoo，也不会暴露 API Key；你需要先在 GitHub Actions 手动输入
+              <span className="mx-1 rounded bg-white/10 px-1.5 py-0.5 text-cyan-100">ticker_list</span>
+              生成静态分析结果，跑完后这里才会出现 Top Candidates、个股路径图和关键价位。
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <StatusBadge status="not_yet_validated" label="个股模块：尚未前向验证" />
+            <StatusBadge status="missing" label="当前股票池：空" />
+          </div>
+        </div>
+
+        <div className="mt-5 grid gap-4 lg:grid-cols-[minmax(0,1fr)_340px]">
+          <div className="rounded-xl border border-cyan-300/20 bg-cyan-300/[0.06] p-4">
+            <div className="text-xs uppercase tracking-[0.22em] text-cyan-200/70">Manual Stock Universe</div>
+            <h3 className="mt-1 text-lg font-semibold text-white">手动添加你想分析的股票</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-300">
+              在下面输入股票代码，复制生成的列表，然后打开 GitHub Actions，点击
+              <span className="mx-1 rounded bg-white/10 px-1.5 py-0.5 text-cyan-100">Run workflow</span>
+              ，把它粘到 <span className="rounded bg-white/10 px-1.5 py-0.5 text-cyan-100">ticker_list</span>。
+            </p>
+            <input
+              value={manualTickerInput}
+              onChange={(event) => {
+                setManualTickerInput(event.target.value);
+                setCopiedTickerList(false);
+              }}
+              placeholder="例如：JD,KC,NVDA,TSLA,AMD,AAPL"
+              className="mt-4 w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-cyan-300/60"
+            />
+            <div className="mt-3 rounded-lg border border-white/10 bg-black/30 p-3 font-mono text-sm text-cyan-100">
+              {tickerListForAction}
+            </div>
+            <div className="mt-4 flex flex-wrap gap-3">
+              <button
+                type="button"
+                onClick={() => {
+                  void navigator.clipboard?.writeText(tickerListForAction);
+                  setCopiedTickerList(true);
+                }}
+                className="rounded-lg border border-cyan-300/40 bg-cyan-300/10 px-4 py-2 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-300/20"
+              >
+                {copiedTickerList ? "已复制 ticker_list" : "复制 ticker_list"}
+              </button>
+              <a
+                href={workflowUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                打开 GitHub Actions
+              </a>
+            </div>
+          </div>
+
+          <div className="rounded-xl border border-white/10 bg-black/20 p-4">
+            <div className="text-xs uppercase tracking-[0.2em] text-slate-500">为什么现在没有个股图？</div>
+            <div className="mt-3 space-y-3 text-sm leading-6 text-slate-300">
+              <p>不是因为页面没有图表功能。个股路径图需要对应 ticker 的历史价格、模拟路径和关键价位 JSON。</p>
+              <p>当前股票池为空，所以没有任何单股数据可画。你手动跑一次带 `ticker_list` 的 workflow 后，图表会随生成结果一起出现。</p>
+              <p className="text-amber-100">这不是实时交易终端；它是每日或手动刷新后的静态预测 Dashboard。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   const summary = asRecord(stockDashboard.summary);
   const selectedEntry = rows.find(([symbol]) => symbol === selectedStock) ?? filteredRows[0] ?? rows[0];
