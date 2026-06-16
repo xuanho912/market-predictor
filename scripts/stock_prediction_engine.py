@@ -35,7 +35,7 @@ def build_stock_prediction_dashboard(
         sector_etf = payload.get("sector_etf")
         benchmark_rows = support_rows.get(benchmark, [])
         sector_rows = support_rows.get(sector_etf, [])
-        features = _stock_features(rows, support_rows.get("SPY", []), support_rows.get("QQQ", []), benchmark_rows, sector_rows)
+        features = _stock_features(rows, support_rows.get("SPY", []), support_rows.get("QQQ", []), benchmark_rows, sector_rows, payload)
         market_context = _market_context_for_stock(symbol, benchmark, market_dashboard)
         scenarios = _scenario_ranking(features, market_context, payload)
         price_levels = _price_levels(rows, scenarios, features)
@@ -196,6 +196,7 @@ def _stock_features(
     qqq_rows: list[dict[str, Any]],
     benchmark_rows: list[dict[str, Any]],
     sector_rows: list[dict[str, Any]],
+    data_payload: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     close = _last_close(rows)
     returns = {f"{h}d": _return(rows, h) for h in HORIZONS}
@@ -222,6 +223,8 @@ def _stock_features(
     up_volume, down_volume = _up_down_volume(rows, 20)
     volume_confirmation = _clamp(50 + (volume_z or 0) * 8 + (10 if stock_20 > 0 else -6), 0, 100)
     relative_strength_trend = _clamp(50 + ((stock_20 - (benchmark_20 or 0)) * 180) + ((stock_60 - (benchmark_60 or 0)) * 90), 0, 100)
+    news_event = _news_event_features(data_payload or {})
+    fundamentals = _fundamental_features(data_payload or {})
     return {
         "price_trend": {
             "close": close,
@@ -258,24 +261,68 @@ def _stock_features(
             "implied_volatility": None,
             "option_stress": "missing",
         },
-        "news_event": {
-            "company_news": "missing",
-            "earnings_date": None,
-            "earnings_risk_flag": "missing",
-            "analyst_rating_news": "missing",
-            "news_sentiment": "missing",
-            "news_risk_score": None,
-        },
-        "fundamentals_valuation": {
-            "revenue_growth": None,
-            "earnings_growth": None,
-            "forward_pe": None,
-            "profitability": None,
-            "debt_risk": None,
-            "cash_flow_quality": None,
-            "valuation_percentile": None,
-            "status": "missing",
-        },
+        "news_event": news_event,
+        "fundamentals_valuation": fundamentals,
+    }
+
+
+def _news_event_features(data_payload: dict[str, Any]) -> dict[str, Any]:
+    news = data_payload.get("company_news") or {}
+    earnings = data_payload.get("earnings") or {}
+    news_status = news.get("status") or (data_payload.get("data_categories") or {}).get("company_news") or "missing"
+    earnings_status = earnings.get("status") or (data_payload.get("data_categories") or {}).get("earnings") or "missing"
+    earnings_within_7d = bool(earnings.get("earnings_within_7d"))
+    news_risk = _float(news.get("news_risk_score"))
+    if news_risk is None:
+        news_risk = 35.0 if news_status == "available" else None
+    event_risk = "high" if earnings_within_7d or (news_risk is not None and news_risk >= 65) else "medium" if news_risk is not None and news_risk >= 50 else "low"
+    return {
+        "company_news": news_status,
+        "earnings": earnings_status,
+        "earnings_date": earnings.get("next_earnings_date"),
+        "earnings_within_7d": earnings_within_7d,
+        "earnings_within_30d": bool(earnings.get("earnings_within_30d")),
+        "earnings_risk_flag": event_risk if earnings_status == "available" else earnings_status,
+        "analyst_rating_news": "missing",
+        "major_company_headline": news.get("major_company_headline"),
+        "news_count_24h": news.get("news_count_24h"),
+        "news_count_72h": news.get("news_count_72h"),
+        "news_sentiment": news.get("news_sentiment_proxy") or ("neutral" if news_status == "available" else news_status),
+        "news_risk_score": news_risk,
+        "event_risk_flag": event_risk,
+        "headlines": news.get("items") or [],
+    }
+
+
+def _fundamental_features(data_payload: dict[str, Any]) -> dict[str, Any]:
+    fundamentals = data_payload.get("fundamentals") or {}
+    metrics = fundamentals.get("metrics") or {}
+    status = fundamentals.get("status") or (data_payload.get("data_categories") or {}).get("fundamentals") or "missing"
+    revenue_growth = _float(metrics.get("revenue_growth_ttm_yoy"))
+    earnings_growth = _float(metrics.get("eps_growth_ttm_yoy"))
+    forward_pe = _float(metrics.get("forward_pe"))
+    gross_margin = _float(metrics.get("gross_margin_ttm"))
+    net_margin = _float(metrics.get("net_margin_ttm"))
+    debt_to_equity = _float(metrics.get("debt_to_equity"))
+    current_ratio = _float(metrics.get("current_ratio"))
+    profitability = net_margin if net_margin is not None else gross_margin
+    debt_risk = None
+    if debt_to_equity is not None:
+        debt_risk = _clamp(debt_to_equity / 2.0, 0, 100)
+    cash_flow_quality = current_ratio
+    valuation_percentile = None
+    if forward_pe is not None:
+        valuation_percentile = _clamp(forward_pe / 80.0, 0, 1)
+    return {
+        "revenue_growth": revenue_growth,
+        "earnings_growth": earnings_growth,
+        "forward_pe": forward_pe,
+        "profitability": profitability,
+        "debt_risk": debt_risk,
+        "cash_flow_quality": cash_flow_quality,
+        "valuation_percentile": valuation_percentile,
+        "raw_metrics": metrics,
+        "status": status,
     }
 
 
@@ -353,7 +400,15 @@ def _scenario_ranking(features: dict[str, Any], market_context: dict[str, Any], 
     if rel_score < 42:
         downside += 0.05
         failed_bounce += 0.04
-    if data_payload.get("data_categories", {}).get("company_news") == "missing":
+    news_event = features.get("news_event") or {}
+    news_risk_score = _float(news_event.get("news_risk_score"))
+    if news_event.get("earnings_within_7d"):
+        event_risk += 0.05
+        failed_bounce += 0.02
+    if news_risk_score is not None and news_risk_score >= 65:
+        event_risk += 0.05
+        failed_bounce += 0.03
+    if data_payload.get("data_categories", {}).get("company_news") not in {"available", "stale_cache"}:
         event_risk += 0.03
 
     raw = {
@@ -625,11 +680,40 @@ def _stock_confluence_modules(
     else:
         modules["relative_strength"] = _component(rs_score, "neutral", "相对强弱中性", "尚未明显跑赢或跑输")
 
-    news_status = "missing" if "company_news" in missing_data else "proxy"
-    modules["news_event"] = _component(35 if news_status == "missing" else 48, news_status, "公司新闻/事件数据未完整接入", "不伪造新闻情绪，缺失时降低置信度")
+    news = features.get("news_event") or {}
+    news_status = str(news.get("company_news") or "missing")
+    news_risk_score = _float(news.get("news_risk_score"))
+    news_sentiment = str(news.get("news_sentiment") or "neutral")
+    if news_status == "available":
+        news_score = _clamp(55 + (_float(news.get("news_count_24h")) or 0) * 4 - (news_risk_score or 35) * 0.18, 0, 100)
+        if news.get("earnings_within_7d") or (news_risk_score is not None and news_risk_score >= 65) or news_sentiment == "negative":
+            modules["news_event"] = _component(max(32, news_score), "conflicting", "公司新闻或财报事件风险上升", f"risk_score={news_risk_score}; earnings_date={news.get('earnings_date')}")
+        elif news_sentiment == "positive":
+            modules["news_event"] = _component(min(72, news_score + 12), "supportive", "近期公司新闻偏支持", str(news.get("major_company_headline") or "company news available"))
+        else:
+            modules["news_event"] = _component(news_score, "neutral", "公司新闻源已接入", str(news.get("major_company_headline") or "no major headline"))
+    else:
+        modules["news_event"] = _component(35, "missing", "公司新闻/事件数据缺失", "不伪造新闻情绪，缺失时降低置信度")
 
-    fundamentals_status = "missing" if "fundamentals" in missing_data or "earnings" in missing_data else "proxy"
-    modules["fundamentals_earnings"] = _component(35 if fundamentals_status == "missing" else 48, fundamentals_status, "财报/估值/盈利预期未完整接入", "缺失不阻断预测，但限制高置信判断")
+    fundamentals = features.get("fundamentals_valuation") or {}
+    fundamentals_status = str(fundamentals.get("status") or "missing")
+    earnings_status = str(news.get("earnings") or "missing")
+    if fundamentals_status == "available" or earnings_status == "available":
+        revenue_growth = _float(fundamentals.get("revenue_growth")) or 0.0
+        earnings_growth = _float(fundamentals.get("earnings_growth")) or 0.0
+        profitability = _float(fundamentals.get("profitability")) or 0.0
+        debt_risk = _float(fundamentals.get("debt_risk")) or 50.0
+        fundamental_score = _clamp(52 + revenue_growth * 0.35 + earnings_growth * 0.2 + profitability * 0.25 - max(debt_risk - 50, 0) * 0.15, 0, 100)
+        if news.get("earnings_within_7d"):
+            modules["fundamentals_earnings"] = _component(max(38, fundamental_score - 10), "conflicting", "财报日期临近", f"earnings_date={news.get('earnings_date')}")
+        elif fundamental_score >= 60:
+            modules["fundamentals_earnings"] = _component(fundamental_score, "supportive", "基础财务指标偏支持", "Finnhub basic metrics available")
+        elif fundamental_score <= 42:
+            modules["fundamentals_earnings"] = _component(fundamental_score, "conflicting", "基础财务指标偏弱", "Finnhub basic metrics available")
+        else:
+            modules["fundamentals_earnings"] = _component(fundamental_score, "neutral", "基础财务指标已接入", "暂无强确认")
+    else:
+        modules["fundamentals_earnings"] = _component(35, "missing", "财报/估值/盈利预期缺失", "缺失不阻断预测，但限制高置信判断")
 
     atr_pct = _float(vol.get("atr_pct")) or 0.0
     options_status = "missing" if "single_stock_options" in missing_data else "proxy"
@@ -900,6 +984,12 @@ def _supporting_signals(features: dict[str, Any], market_context: dict[str, Any]
         items.append("成交量结构支持当前路径。")
     if (_float(((features.get("price_trend") or {}).get("distance_to_20d_ma"))) or 0) > 0:
         items.append("价格站在 20d 均线上方。")
+    news = features.get("news_event") or {}
+    if news.get("company_news") == "available" and news.get("news_sentiment") == "positive":
+        items.append("近期公司新闻偏正面。")
+    fundamentals = features.get("fundamentals_valuation") or {}
+    if str(fundamentals.get("status") or "") == "available" and (_float(fundamentals.get("revenue_growth")) or 0) > 0:
+        items.append("基础财务指标已接入且收入增长为正。")
     return items or ["当前没有足够强的多源支持证据。"]
 
 
@@ -911,6 +1001,9 @@ def _conflicting_signals(features: dict[str, Any], market_context: dict[str, Any
         items.append("个股相对强弱弱于基准。")
     if (_float(((features.get("price_trend") or {}).get("distance_to_50d_ma"))) or 0) < 0:
         items.append("价格仍在 50d 均线下方。")
+    news = features.get("news_event") or {}
+    if news.get("earnings_within_7d") or ((_float(news.get("news_risk_score")) or 0) >= 65):
+        items.append("公司新闻或财报事件风险较高。")
     if _missing_event_or_fundamental(features):
         items.append("财报、估值、公司新闻或个股期权数据缺失，个股置信度受限。")
     return items
@@ -940,7 +1033,11 @@ def _missing_data(payload: dict[str, Any]) -> list[str]:
 
 
 def _missing_event_or_fundamental(features: dict[str, Any]) -> bool:
-    return (features.get("news_event") or {}).get("company_news") == "missing" or (features.get("fundamentals_valuation") or {}).get("status") == "missing"
+    news = features.get("news_event") or {}
+    fundamentals = features.get("fundamentals_valuation") or {}
+    news_missing = str(news.get("company_news") or "missing") not in {"available", "stale_cache"}
+    fundamentals_missing = str(fundamentals.get("status") or "missing") not in {"available", "stale_cache"}
+    return news_missing or fundamentals_missing
 
 
 def _summary(symbols: dict[str, Any], stock_data_bundle: dict[str, Any]) -> dict[str, Any]:
@@ -957,7 +1054,16 @@ def _summary(symbols: dict[str, Any], stock_data_bundle: dict[str, Any]) -> dict
         "strongest_stock_symbol": strongest,
         "stock_data_quality_score": (stock_data_bundle.get("summary") or {}).get("data_quality_score"),
         "validation_status": "not_yet_validated",
-        "missing_high_value_data": ["fundamentals", "earnings", "company_news", "single_stock_options"],
+        "missing_high_value_data": [
+            key
+            for key, available in {
+                "fundamentals": (stock_data_bundle.get("summary") or {}).get("fundamentals_available"),
+                "earnings": (stock_data_bundle.get("summary") or {}).get("earnings_available"),
+                "company_news": (stock_data_bundle.get("summary") or {}).get("company_news_available"),
+                "single_stock_options": (stock_data_bundle.get("summary") or {}).get("single_stock_options_available"),
+            }.items()
+            if not available
+        ],
     }
 
 
