@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-06-16T09:59:04.358111+00:00`
+Generated at: `2026-06-16T10:23:37.785156+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -12,7 +12,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - strongest_stock_symbol: `NVDA`
 - stock_data_quality_score: `100.0`
 - validation_status: `not_yet_validated`
-- missing_high_value_data: `['fundamentals', 'earnings', 'company_news', 'single_stock_options']`
+- missing_high_value_data: `['single_stock_options']`
 
 ## Symbols
 
@@ -22,11 +22,11 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - status: `available`
 - current_price: `212.45`
 - market_context: `risk_off_pressure`
-- primary: `stock_failed_bounce` / `25.6%`
-- secondary: `stock_downside_continuation` / `25.1%`
-- risk: `stock_failed_bounce` / `25.6%`
-- stock_confluence_score: `18.25` / `weak`
-- strongest_alert: `Stock Failed Bounce Risk` / `WATCH` / `41.88`
+- primary: `stock_failed_bounce` / `26.9%`
+- secondary: `stock_downside_continuation` / `24.1%`
+- risk: `stock_failed_bounce` / `26.9%`
+- stock_confluence_score: `35.5` / `weak`
+- strongest_alert: `Stock Failed Bounce Risk` / `WATCH` / `42.28`
 - historical_analog_support: `supportive` / samples `10`
 - validation_status: `not_yet_validated`
 
@@ -47,10 +47,10 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - status: `available`
 - current_price: `411.15`
 - market_context: `risk_off_pressure`
-- primary: `stock_failed_bounce` / `25.5%`
-- secondary: `stock_downside_continuation` / `23.1%`
-- risk: `stock_failed_bounce` / `25.5%`
-- stock_confluence_score: `21.49` / `weak`
+- primary: `stock_failed_bounce` / `26.7%`
+- secondary: `stock_downside_continuation` / `22.3%`
+- risk: `stock_failed_bounce` / `26.7%`
+- stock_confluence_score: `34.96` / `weak`
 - strongest_alert: `Relative Weakness Alert` / `WATCH` / `46.78`
 - historical_analog_support: `weak` / samples `10`
 - validation_status: `not_yet_validated`
@@ -72,10 +72,10 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - status: `available`
 - current_price: `10.64`
 - market_context: `risk_off_pressure`
-- primary: `stock_downside_continuation` / `23.8%`
-- secondary: `stock_failed_bounce` / `22.4%`
-- risk: `stock_downside_continuation` / `23.8%`
-- stock_confluence_score: `13.84` / `weak`
+- primary: `stock_downside_continuation` / `24.2%`
+- secondary: `stock_failed_bounce` / `22.9%`
+- risk: `stock_downside_continuation` / `24.2%`
+- stock_confluence_score: `23.91` / `weak`
 - strongest_alert: `Relative Weakness Alert` / `HIGH_CONVICTION` / `76.35`
 - historical_analog_support: `conflicting` / samples `10`
 - validation_status: `not_yet_validated`
@@ -97,10 +97,10 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - status: `available`
 - current_price: `262.35`
 - market_context: `risk_off_pressure`
-- primary: `stock_downside_continuation` / `24.5%`
-- secondary: `stock_failed_bounce` / `24.0%`
-- risk: `stock_downside_continuation` / `24.5%`
-- stock_confluence_score: `19.92` / `weak`
+- primary: `stock_downside_continuation` / `25.0%`
+- secondary: `stock_failed_bounce` / `24.5%`
+- risk: `stock_downside_continuation` / `25.0%`
+- stock_confluence_score: `32.19` / `weak`
 - strongest_alert: `Relative Weakness Alert` / `WATCH` / `56.69`
 - historical_analog_support: `supportive` / samples `10`
 - validation_status: `not_yet_validated`

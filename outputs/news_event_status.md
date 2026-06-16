@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-06-16T09:58:59.061573+00:00`
+- generated_at: `2026-06-16T10:23:34.229592+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `18`
-- event_detection_confidence: `77`
+- major_event_count: `16`
+- event_detection_confidence: `79`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,17 +27,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US-Iran deal promises end to war but how it will work remains unclear - Reuters
-- source: Reuters
-- published_at: `2026-06-16T06:33:00+00:00`
+- headline: Treasury yields fall ahead of Kevin Warsh's first Fed meeting
+- source: CNBC
+- published_at: `2026-06-16T09:30:09+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Is the Iran war just an energy shock - or a turning point? - Reuters
+- headline: US-Iran deal promises end to war but how it will work remains unclear - Reuters
 - source: Reuters
-- published_at: `2026-06-16T06:02:02+00:00`
+- published_at: `2026-06-16T06:33:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -46,6 +46,14 @@
 - headline: Indian shares extend gains on US-Iran peace deal - Reuters
 - source: Reuters
 - published_at: `2026-06-16T04:18:37+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Is the Iran war just an energy shock - or a turning point? - Reuters
+- source: Reuters
+- published_at: `2026-06-16T04:05:40+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -86,14 +94,6 @@
 - headline: Trading Day: US-Iran war halted - now what? - Reuters
 - source: Reuters
 - published_at: `2026-06-15T21:06:16+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Dollar falls to 10-day low on US-Iran war deal - Reuters
-- source: Reuters
-- published_at: `2026-06-15T19:18:05+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
