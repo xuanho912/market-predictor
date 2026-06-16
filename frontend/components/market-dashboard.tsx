@@ -339,7 +339,7 @@ function getDataFreshnessStatus(dashboard: PredictionDashboard): DataFreshnessSt
 
 function isDataStaleOrFailed(status: DataFreshnessStatus | undefined): boolean {
   const value = status?.data_freshness_status;
-  return value === "stale" || value === "provider_failed";
+  return value === "stale" || value === "provider_failed" || value === "market_open_unconfirmed";
 }
 
 function cnFreshnessStatus(value: string | undefined): string {
@@ -347,6 +347,7 @@ function cnFreshnessStatus(value: string | undefined): string {
     fresh: "数据新鲜",
     stale: "数据过期",
     market_closed: "市场休市 / 未形成新交易日",
+    market_open_unconfirmed: "盘中数据未确认",
     provider_failed: "数据源失败",
   };
   return value ? map[value] ?? value : "新鲜度未知";
@@ -574,7 +575,11 @@ function DataFreshnessBanner({ dashboard }: { dashboard: PredictionDashboard }) 
         <div>
           <div className="text-xs uppercase tracking-[0.22em] opacity-75">Data Freshness Gate</div>
           <h2 className="mt-1 text-lg font-semibold">
-            {staleOrFailed ? "数据已过期，当前预测不可作为今日判断" : cnFreshnessStatus(freshness.data_freshness_status)}
+            {freshness.data_freshness_status === "market_open_unconfirmed"
+              ? "盘中快照未确认，不能冻结为正式预测"
+              : staleOrFailed
+                ? "数据已过期，当前预测不可作为今日判断"
+                : cnFreshnessStatus(freshness.data_freshness_status)}
           </h2>
           <p className="mt-2 text-sm leading-6 opacity-90">{freshness.warning_message}</p>
         </div>

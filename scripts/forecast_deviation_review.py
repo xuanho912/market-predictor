@@ -17,6 +17,7 @@ def build_forecast_deviation_review(
     records_path: Path | None = None,
     news_event_bundle: dict[str, Any] | None = None,
     data_quality_report: dict[str, Any] | None = None,
+    data_freshness_status: dict[str, Any] | None = None,
     max_items: int = 60,
 ) -> dict[str, Any]:
     records_path = records_path or PROJECT_ROOT / "outputs" / "forecast_records.csv"
@@ -24,7 +25,13 @@ def build_forecast_deviation_review(
     deviations: list[dict[str, Any]] = []
     for record in records:
         for horizon in HORIZONS:
-            item = _deviation_item(record, horizon, news_event_bundle or {}, data_quality_report or {})
+            item = _deviation_item(
+                record,
+                horizon,
+                news_event_bundle or {},
+                data_quality_report or {},
+                data_freshness_status or {},
+            )
             if item:
                 deviations.append(item)
 
@@ -46,11 +53,15 @@ def build_forecast_deviation_review(
         "total_forecast_records": len(records),
         "completed_outcomes_reviewed": len(deviations),
         "material_deviation_count": len(material),
+        "latest_forecast_date": max((str(item.get("forecast_date") or "") for item in records), default=None),
         "latest_reviewed_forecast_date": max((str(item.get("forecast_date") or "") for item in deviations), default=None),
+        "latest_market_date": (data_freshness_status or {}).get("latest_market_date"),
+        "data_freshness_status": (data_freshness_status or {}).get("data_freshness_status"),
         "largest_absolute_error": max((float(item.get("absolute_error") or 0.0) for item in deviations), default=None),
         "dominant_error_theme": driver_counts.most_common(1)[0][0] if driver_counts else "not_enough_completed_outcomes",
         "evidence_level": _evidence_level(len(deviations)),
         "validation_status": "not_yet_validated" if len(deviations) < 20 else "early_evidence",
+        "update_blockers": _update_blockers(records, deviations, data_freshness_status or {}),
     }
     return {
         "version": "forecast_deviation_review_v1",
@@ -140,6 +151,7 @@ def _deviation_item(
     horizon: int,
     news_event_bundle: dict[str, Any],
     data_quality_report: dict[str, Any],
+    data_freshness_status: dict[str, Any],
 ) -> dict[str, Any] | None:
     key = f"{horizon}d"
     actual = _float(record.get(f"actual_return_{key}"))
@@ -157,7 +169,16 @@ def _deviation_item(
     abs_error = abs(error)
     threshold = _material_threshold(horizon)
     material = abs_error >= threshold
-    drivers = _likely_error_drivers(record, actual, expected, error, threshold, news_event_bundle, data_quality_report)
+    drivers = _likely_error_drivers(
+        record,
+        actual,
+        expected,
+        error,
+        threshold,
+        news_event_bundle,
+        data_quality_report,
+        data_freshness_status,
+    )
     return {
         "forecast_id": record.get("forecast_id"),
         "forecast_date": record.get("forecast_date"),
@@ -196,6 +217,7 @@ def _likely_error_drivers(
     threshold: float,
     news_event_bundle: dict[str, Any],
     data_quality_report: dict[str, Any],
+    data_freshness_status: dict[str, Any],
 ) -> list[str]:
     drivers: list[str] = []
     supporting = set(_loads_list(record.get("supporting_signals")))
@@ -227,8 +249,11 @@ def _likely_error_drivers(
             drivers.append("risk_off_flow_underweighted")
     if any("news" in item.lower() or "finnhub_news" in item.lower() for item in missing):
         drivers.append("news_data_gap_limited_attribution")
-    if (data_quality_report.get("summary") or {}).get("data_freshness_status") == "stale":
+    freshness_status = str(data_freshness_status.get("data_freshness_status") or "")
+    if (data_quality_report.get("summary") or {}).get("data_freshness_status") == "stale" or freshness_status == "stale":
         drivers.append("stale_data_risk")
+    if freshness_status == "market_open_unconfirmed":
+        drivers.append("intraday_snapshot_risk")
     return list(dict.fromkeys(drivers))
 
 
@@ -277,6 +302,70 @@ def _news_supports_risk_off(news_event_bundle: dict[str, Any]) -> bool:
     direction = str(narrative.get("narrative_direction") or news_event_bundle.get("news_direction") or "")
     effect = news_event_bundle.get("prediction_logic_effect") or {}
     return "risk_expansion" in direction or "downside" in direction or "risk_off" in direction or str(effect.get("direction")) == "supports_risk_expansion"
+
+
+def _update_blockers(
+    records: list[dict[str, Any]],
+    deviations: list[dict[str, Any]],
+    data_freshness_status: dict[str, Any],
+) -> list[dict[str, Any]]:
+    blockers: list[dict[str, Any]] = []
+    freshness_status = str(data_freshness_status.get("data_freshness_status") or "")
+    if freshness_status in {"stale", "provider_failed", "market_open_unconfirmed"}:
+        blockers.append(
+            {
+                "reason": freshness_status,
+                "detail": data_freshness_status.get("warning_message")
+                or "Data freshness gate blocked current-day forecast validation.",
+            }
+        )
+
+    latest_forecast_date = max((str(row.get("forecast_date") or "")[:10] for row in records), default="")
+    latest_market_date = str(data_freshness_status.get("latest_market_date") or "")[:10]
+    if latest_forecast_date and latest_market_date and latest_market_date <= latest_forecast_date:
+        blockers.append(
+            {
+                "reason": "no_future_market_close_yet",
+                "detail": (
+                    f"Latest market date {latest_market_date} is not after latest forecast date "
+                    f"{latest_forecast_date}, so no completed 1d/3d/5d outcome can be scored yet."
+                ),
+            }
+        )
+
+    if records and "actual_return_1d" not in records[0]:
+        blockers.append(
+            {
+                "reason": "legacy_records_missing_1d_fields",
+                "detail": "Older forecast_records.csv was created before 1d outcome fields were added; the next valid export will migrate the ledger columns.",
+            }
+        )
+
+    completed_actual_fields = [
+        (row.get("forecast_date"), row.get("symbol"), f"{horizon}d")
+        for row in records
+        for horizon in HORIZONS
+        if _float(row.get(f"actual_return_{horizon}d")) is not None
+    ]
+    if completed_actual_fields and not deviations:
+        blockers.append(
+            {
+                "reason": "completed_actuals_without_comparable_expected_path",
+                "detail": (
+                    "Some actual returns have been backfilled, but the matching historical forecast record "
+                    "does not contain an expected path for that horizon, so success/failure cannot be scored without rewriting old forecast fields."
+                ),
+            }
+        )
+
+    if not deviations and not blockers:
+        blockers.append(
+            {
+                "reason": "waiting_for_completed_horizons",
+                "detail": "Forecasts exist, but no configured horizon has a completed future close and actual_return backfill yet.",
+            }
+        )
+    return blockers
 
 
 def _read_records(path: Path) -> list[dict[str, Any]]:
@@ -385,9 +474,15 @@ def _evidence_level(count: int) -> str:
 if __name__ == "__main__":
     news_path = PROJECT_ROOT / "frontend" / "public" / "news-event-status.json"
     quality_path = PROJECT_ROOT / "frontend" / "public" / "data_quality_report.json"
+    freshness_path = PROJECT_ROOT / "frontend" / "public" / "data-freshness-status.json"
     news = _loads_dict(news_path.read_text(encoding="utf-8")) if news_path.exists() else {}
     quality = _loads_dict(quality_path.read_text(encoding="utf-8")) if quality_path.exists() else {}
-    review = build_forecast_deviation_review(news_event_bundle=news, data_quality_report=quality)
+    freshness = _loads_dict(freshness_path.read_text(encoding="utf-8")) if freshness_path.exists() else {}
+    review = build_forecast_deviation_review(
+        news_event_bundle=news,
+        data_quality_report=quality,
+        data_freshness_status=freshness,
+    )
     write_forecast_deviation_review_outputs(review)
     print("wrote frontend/public/forecast-deviation-review.json")
     print("wrote outputs/forecast_deviation_review.md")

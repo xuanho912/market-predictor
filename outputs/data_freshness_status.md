@@ -1,13 +1,16 @@
 # Data Freshness Status
 
-Generated at: `2026-06-16T00:16:23.690652+00:00`
+Generated at: `2026-06-16T07:21:04.700866+00:00`
 
 ## Summary
 
-- current_date: `2026-06-15`
+- current_date: `2026-06-16`
+- current_time_us_eastern: `2026-06-16T03:21:04.700866-04:00`
 - latest_market_date: `2026-06-15`
 - expected_latest_trading_date: `2026-06-15`
 - is_latest_trading_day: `True`
+- latest_market_session_status: `completed_or_prior_session`
+- can_append_forecast_record: `True`
 - stale_days: `0`
 - data_freshness_status: `fresh`
 - last_successful_core_market_update: `2026-06-15`
@@ -20,17 +23,17 @@ Generated at: `2026-06-16T00:16:23.690652+00:00`
 
 ## Provider Status
 
-- BAA_SPREAD: status=`available`, latest_date=`2026-06-12`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
-- DFII10: status=`available`, latest_date=`2026-06-12`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
-- DGS10: status=`available`, latest_date=`2026-06-12`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
-- DGS2: status=`available`, latest_date=`2026-06-12`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
-- DGS3MO: status=`available`, latest_date=`2026-06-12`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
+- BAA_SPREAD: status=`available`, latest_date=`2026-06-11`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
+- DFII10: status=`available`, latest_date=`2026-06-11`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
+- DGS10: status=`available`, latest_date=`2026-06-11`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
+- DGS2: status=`available`, latest_date=`2026-06-11`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
+- DGS3MO: status=`available`, latest_date=`2026-06-11`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
 - DIA: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - FINANCIAL_STRESS: status=`available`, latest_date=`2026-06-05`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
 - FINNHUB_API: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
 - HYG: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- HY_OAS: status=`available`, latest_date=`2026-06-12`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
-- IG_OAS: status=`available`, latest_date=`2026-06-12`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
+- HY_OAS: status=`available`, latest_date=`2026-06-11`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
+- IG_OAS: status=`available`, latest_date=`2026-06-11`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
 - IWM: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - LQD: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - QQQ: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
@@ -52,7 +55,7 @@ Generated at: `2026-06-16T00:16:23.690652+00:00`
 - XLU: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - XLV: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - XLY: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- ^SKEW: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- ^SKEW: status=`available`, latest_date=`2026-06-12`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - ^TNX: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - ^VIX: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - ^VIX3M: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
@@ -88,8 +91,8 @@ Generated at: `2026-06-16T00:16:23.690652+00:00`
 - flow_SPY: status=`proxy`, latest_date=`2026-06-15`, source=`market_data_proxy`, stale=`False`, fallback=`True`, real_data=`False`
 - flow_provider: status=`proxy`, latest_date=`2026-06-15`, source=`flow_positioning_proxy`, stale=`False`, fallback=`True`, real_data=`False`
 - macro_event_calendar: status=`fallback`, latest_date=`2026-06-15`, source=`deterministic_calendar_fallback`, stale=`False`, fallback=`True`, real_data=`False`
-- news_event_provider: status=`provider_failed`, latest_date=`2026-06-15`, source=`finnhub+gdelt`, stale=`False`, fallback=`False`, real_data=`False`
-- options_SKEW: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- news_event_provider: status=`available`, latest_date=`2026-06-15`, source=`finnhub+gdelt`, stale=`False`, fallback=`False`, real_data=`True`
+- options_SKEW: status=`available`, latest_date=`2026-06-12`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - options_VIX: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - options_VIX3M: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - options_VIX6M: status=`available`, latest_date=`2026-06-15`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
@@ -100,5 +103,6 @@ Generated at: `2026-06-16T00:16:23.690652+00:00`
 ## Guardrails
 
 - Stale data must be labeled before any forecast interpretation.
+- Intraday unconfirmed data cannot freeze a baseline forecast record.
 - Old data cannot be used as a current-day forecast.
 - This is a forecast freshness audit, not a trading signal.

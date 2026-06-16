@@ -1,12 +1,12 @@
 # Forecast Accuracy Scorecard
 
-Generated at: `2026-06-15T16:34:12.100212+00:00`
+Generated at: `2026-06-16T07:20:09.387385+00:00`
 
 ## Sample Counts
 
 - total_forecasts: `12`
 - pending_forecasts: `12`
-- completed_1d: `0`
+- completed_1d: `8`
 - completed_3d: `0`
 - completed_5d: `0`
 - completed_10d: `0`
@@ -18,13 +18,13 @@ Generated at: `2026-06-15T16:34:12.100212+00:00`
 ## Primary Scenario Accuracy
 
 ### 1d
-- completed_count: `0`
+- completed_count: `8`
 - sample_gate: `insufficient_samples`
-- primary_scenario_hit_rate: `None`
+- primary_scenario_hit_rate: `0.0`
 - primary_path_mean_absolute_error: `None`
 - primary_path_median_absolute_error: `None`
-- secondary_scenario_hit_rate: `None`
-- primary_vs_secondary_accuracy_spread: `None`
+- secondary_scenario_hit_rate: `0.0`
+- primary_vs_secondary_accuracy_spread: `0.0`
 - primary_closer_than_secondary_rate: `None`
 - close_call_primary_closer_rate: `None`
 

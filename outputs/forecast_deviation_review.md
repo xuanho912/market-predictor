@@ -1,6 +1,6 @@
 # Forecast Deviation Review
 
-Generated at: `2026-06-15T16:34:12.101206+00:00`
+Generated at: `2026-06-16T07:20:09.391747+00:00`
 
 This report reviews forecast-vs-actual deviations after horizons complete. It is not a trading, PnL or execution report.
 
@@ -9,11 +9,15 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - total_forecast_records: `12`
 - completed_outcomes_reviewed: `0`
 - material_deviation_count: `0`
+- latest_forecast_date: `2026-06-15`
 - latest_reviewed_forecast_date: `None`
+- latest_market_date: `2026-06-15`
+- data_freshness_status: `fresh`
 - largest_absolute_error: `None`
 - dominant_error_theme: `not_enough_completed_outcomes`
 - evidence_level: `insufficient_samples`
 - validation_status: `not_yet_validated`
+- update_blockers: `[{'reason': 'no_future_market_close_yet', 'detail': 'Latest market date 2026-06-15 is not after latest forecast date 2026-06-15, so no completed 1d/3d/5d outcome can be scored yet.'}, {'reason': 'completed_actuals_without_comparable_expected_path', 'detail': 'Some actual returns have been backfilled, but the matching historical forecast record does not contain an expected path for that horizon, so success/failure cannot be scored without rewriting old forecast fields.'}]`
 
 ## Latest Material Deviations
 

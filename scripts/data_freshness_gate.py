@@ -9,6 +9,7 @@ from zoneinfo import ZoneInfo
 CORE_SYMBOLS = ("SPY", "QQQ", "IWM", "DIA")
 EASTERN = ZoneInfo("America/New_York")
 MARKET_CLOSE_BUFFER = time(16, 30)
+MARKET_OPEN_UNCONFIRMED = "market_open_unconfirmed"
 
 
 def build_data_freshness_status(
@@ -26,10 +27,19 @@ def build_data_freshness_status(
     provider_status = _provider_status(data_quality_report)
     core_dates = _core_market_dates(provider_status)
     latest_market_date = _min_date(core_dates.values()) or _parse_date(dashboard_as_of)
+    intraday_unconfirmed = bool(
+        latest_market_date
+        and latest_market_date == today_et
+        and is_today_trading_day
+        and now_et.time() < MARKET_CLOSE_BUFFER
+    )
+
     affected_symbols = [
         symbol
         for symbol in CORE_SYMBOLS
-        if core_dates.get(symbol) is None or (latest_market_date and core_dates.get(symbol, date.min) < expected_latest)
+        if core_dates.get(symbol) is None
+        or (latest_market_date and core_dates.get(symbol, date.min) < expected_latest)
+        or intraday_unconfirmed
     ]
 
     stale_days = _trading_days_between(latest_market_date, expected_latest) if latest_market_date else None
@@ -42,6 +52,8 @@ def build_data_freshness_status(
 
     if provider_failed:
         freshness_status = "provider_failed"
+    elif intraday_unconfirmed:
+        freshness_status = MARKET_OPEN_UNCONFIRMED
     elif not is_latest and stale_days and stale_days > 0:
         freshness_status = "stale"
     elif not is_today_trading_day and is_latest:
@@ -50,8 +62,6 @@ def build_data_freshness_status(
         freshness_status = "fresh"
 
     if freshness_status == "fresh" and any_provider_stale:
-        # Core market data can be fresh while slower macro/news sources are stale.
-        # Keep the dashboard usable, but make the audit state visible.
         provider_note = "部分辅助数据源存在 stale/cache 状态，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。"
     else:
         provider_note = ""
@@ -64,8 +74,10 @@ def build_data_freshness_status(
         provider_note=provider_note,
     )
 
+    can_append_forecast_record = freshness_status not in {"stale", "provider_failed", MARKET_OPEN_UNCONFIRMED}
+
     return {
-        "version": "data_freshness_gate_v1",
+        "version": "data_freshness_gate_v2",
         "generated_at": now_utc.isoformat(),
         "current_date": today_et.isoformat(),
         "current_time_us_eastern": now_et.isoformat(),
@@ -73,6 +85,8 @@ def build_data_freshness_status(
         "expected_latest_trading_date": expected_latest.isoformat(),
         "is_latest_trading_day": is_latest,
         "is_today_us_market_trading_day": is_today_trading_day,
+        "latest_market_session_status": "intraday_unconfirmed" if intraday_unconfirmed else "completed_or_prior_session",
+        "can_append_forecast_record": can_append_forecast_record,
         "stale_days": stale_days if stale_days is not None else "unknown",
         "data_freshness_status": freshness_status,
         "affected_symbols": affected_symbols,
@@ -82,6 +96,7 @@ def build_data_freshness_status(
         "warning_message": warning_message,
         "guardrails": [
             "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
+            "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
             "Stale/cache fallback data may be shown only with an explicit warning.",
             "Synthetic data is never allowed to create a live forecast signal.",
         ],
@@ -97,9 +112,12 @@ def render_data_freshness_markdown(status: dict[str, Any]) -> str:
         "## Summary",
         "",
         f"- current_date: `{status.get('current_date')}`",
+        f"- current_time_us_eastern: `{status.get('current_time_us_eastern')}`",
         f"- latest_market_date: `{status.get('latest_market_date')}`",
         f"- expected_latest_trading_date: `{status.get('expected_latest_trading_date')}`",
         f"- is_latest_trading_day: `{status.get('is_latest_trading_day')}`",
+        f"- latest_market_session_status: `{status.get('latest_market_session_status')}`",
+        f"- can_append_forecast_record: `{status.get('can_append_forecast_record')}`",
         f"- stale_days: `{status.get('stale_days')}`",
         f"- data_freshness_status: `{status.get('data_freshness_status')}`",
         f"- last_successful_core_market_update: `{status.get('last_successful_core_market_update')}`",
@@ -129,6 +147,7 @@ def render_data_freshness_markdown(status: dict[str, Any]) -> str:
             "## Guardrails",
             "",
             "- Stale data must be labeled before any forecast interpretation.",
+            "- Intraday unconfirmed data cannot freeze a baseline forecast record.",
             "- Old data cannot be used as a current-day forecast.",
             "- This is a forecast freshness audit, not a trading signal.",
             "",
@@ -160,19 +179,18 @@ def previous_us_market_trading_day(day: date) -> date:
 
 
 def us_market_holidays(year: int) -> set[date]:
-    holidays = {
+    return {
         _observed(date(year, 1, 1)),
-        _nth_weekday(year, 1, 0, 3),  # Martin Luther King Jr. Day
-        _nth_weekday(year, 2, 0, 3),  # Presidents Day
+        _nth_weekday(year, 1, 0, 3),
+        _nth_weekday(year, 2, 0, 3),
         _good_friday(year),
-        _last_weekday(year, 5, 0),  # Memorial Day
-        _observed(date(year, 6, 19)),  # Juneteenth
+        _last_weekday(year, 5, 0),
+        _observed(date(year, 6, 19)),
         _observed(date(year, 7, 4)),
-        _nth_weekday(year, 9, 0, 1),  # Labor Day
-        _nth_weekday(year, 11, 3, 4),  # Thanksgiving
+        _nth_weekday(year, 9, 0, 1),
+        _nth_weekday(year, 11, 3, 4),
         _observed(date(year, 12, 25)),
     }
-    return holidays
 
 
 def _provider_status(data_quality_report: dict[str, Any]) -> dict[str, Any]:
@@ -250,6 +268,11 @@ def _warning_message(
             "数据已过期，当前预测不可作为今日判断。"
             f" 最新核心行情日期为 {latest}，按美股交易日应至少更新到 {expected_latest.isoformat()}。"
         )
+    if freshness_status == MARKET_OPEN_UNCONFIRMED:
+        return (
+            "当前行情日期来自美股盘中快照，尚未形成收盘确认数据。"
+            f" 盘中快照日期为 {latest}；正式预测记录应等美东 {MARKET_CLOSE_BUFFER.strftime('%H:%M')} 后重新生成。"
+        )
     if freshness_status == "market_closed":
         return (
             f"美股当前未形成新的完整交易日，使用最近完成交易日 {latest} 的数据。"
@@ -320,7 +343,6 @@ def _last_weekday(year: int, month: int, weekday: int) -> date:
 
 
 def _good_friday(year: int) -> date:
-    # Anonymous Gregorian computus.
     a = year % 19
     b = year // 100
     c = year % 100

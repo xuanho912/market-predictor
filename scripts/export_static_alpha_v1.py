@@ -324,16 +324,20 @@ def main() -> int:
         simulated_paths=simulated_paths,
         data_freshness_status=data_freshness_status,
     )
+    can_append_forecast = _can_append_forecast_record(data_freshness_status)
     ledger_summary = (
         _event_refresh_ledger_summary()
         if event_refresh
         else update_forecast_accuracy_ledger(dashboard=dashboard, price_history=price_history)
+        if can_append_forecast
+        else _freshness_blocked_ledger_summary(data_freshness_status)
     )
     forecast_records = export_forecast_records_json()
     forecast_scorecard = build_forecast_accuracy_scorecard()
     forecast_deviation_review = build_forecast_deviation_review(
         news_event_bundle=news_event_bundle,
         data_quality_report=intelligence_v4["data_quality_report"],
+        data_freshness_status=data_freshness_status,
     )
     historical_replay_benchmark = build_historical_replay_benchmark(dashboard)
     model_governance = write_model_challenger_outputs(dashboard=dashboard, public_dir=public_dir, outputs_dir=PROJECT_ROOT / "outputs")
@@ -348,11 +352,11 @@ def main() -> int:
     stock_prediction_dashboard = build_stock_prediction_dashboard(
         stock_data_bundle=stock_data_bundle,
         market_dashboard=dashboard,
-        write_ledger=not event_refresh,
+        write_ledger=not event_refresh and can_append_forecast,
     )
     top_stock_candidates = build_top_stock_candidates(
         stock_prediction_dashboard,
-        write_ledger=not event_refresh,
+        write_ledger=not event_refresh and can_append_forecast,
     )
     stock_radar_validation_scorecard = build_stock_radar_validation_scorecard()
     stock_forecast_records = export_stock_forecast_records_json()
@@ -606,6 +610,29 @@ def _event_refresh_ledger_summary() -> dict[str, Any]:
         "validation_type": "event_refresh",
         "immutability_note": "Manual event refresh updates the current dashboard only. It does not rewrite or append baseline_v1 forecast records.",
         "not_trading_note": "This is a forecast refresh, not a trading signal or execution workflow.",
+    }
+
+
+def _can_append_forecast_record(data_freshness_status: dict[str, Any]) -> bool:
+    if data_freshness_status.get("can_append_forecast_record") is False:
+        return False
+    freshness_status = str(data_freshness_status.get("data_freshness_status") or "")
+    return freshness_status not in {"stale", "provider_failed", "market_open_unconfirmed"}
+
+
+def _freshness_blocked_ledger_summary(data_freshness_status: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "version": "forecast_accuracy_ledger_v1",
+        "generated_at": datetime.utcnow().isoformat() + "Z",
+        "active_model_version": "baseline_v1",
+        "ledger_append_skipped": True,
+        "validation_type": "freshness_blocked",
+        "data_freshness_status": data_freshness_status.get("data_freshness_status"),
+        "latest_market_date": data_freshness_status.get("latest_market_date"),
+        "expected_latest_trading_date": data_freshness_status.get("expected_latest_trading_date"),
+        "reason": data_freshness_status.get("warning_message"),
+        "immutability_note": "The dashboard may refresh a snapshot, but baseline_v1 forecast records are appended only after data freshness is confirmed.",
+        "not_trading_note": "This is a forecast accuracy ledger, not a trading, execution or PnL ledger.",
     }
 
 
@@ -1855,11 +1882,13 @@ def _trend_reversal_probability(distribution: dict[str, Any]) -> float:
 
 
 def _current_price(symbol: str, alpha_status: dict[str, Any], price_history: dict[str, list[dict[str, Any]]]) -> float | None:
+    rows = price_history.get(symbol, [])
+    if rows and rows[-1].get("close") is not None:
+        return float(rows[-1]["close"])
     for signal in alpha_status.get("live_signals", []):
         if signal.get("symbol") == symbol and signal.get("close_price") is not None:
             return float(signal["close_price"])
-    rows = price_history.get(symbol, [])
-    return float(rows[-1]["close"]) if rows else None
+    return None
 
 
 def _future_business_dates(start_date: str, days: int) -> list[str]:
@@ -1904,7 +1933,7 @@ def _attach_data_freshness(
             if isinstance(payload, dict):
                 payload["as_of"] = latest_market_date
 
-    if freshness_status in {"stale", "provider_failed"}:
+    if freshness_status in {"stale", "provider_failed", "market_open_unconfirmed"}:
         dashboard["status_note"] = warning
         market_overview["dashboard_status"] = freshness_status
         market_overview["status_note"] = warning
