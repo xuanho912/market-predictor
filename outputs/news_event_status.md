@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-06-16T07:46:37.927726+00:00`
+- generated_at: `2026-06-16T08:02:30.739516+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `19`
+- major_event_count: `20`
 - event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -27,9 +27,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: US-Iran deal promises end to war but how it will work remains unclear - Reuters
+- source: Reuters
+- published_at: `2026-06-16T06:33:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Is the Iran war just an energy shock - or a turning point? - Reuters
 - source: Reuters
-- published_at: `2026-06-16T05:53:30+00:00`
+- published_at: `2026-06-16T02:33:33+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -94,13 +102,5 @@
 - headline: With war likely over, Iranian rulers must face demands of angry, embittered population - Reuters
 - source: Reuters
 - published_at: `2026-06-15T18:15:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Amateur saboteurs: the young men carrying out attacks for gangs, Russia and Iran - Reuters
-- source: Reuters
-- published_at: `2026-06-15T16:44:16+00:00`
 - importance_score: `100`
 - confidence: `medium`
