@@ -2618,9 +2618,14 @@ function StockPathChart({ selected }: { selected: AnyRecord }) {
   const y = (value: number) => height - pad - ((value - min) / span) * (height - pad * 2);
   const makePath = (values: Array<number | null>) => {
     let d = "";
+    let drawing = false;
     values.forEach((value, index) => {
-      if (value === null || !Number.isFinite(value)) return;
-      d += `${d.endsWith(" ") || d === "" ? "M" : "L"}${x(index).toFixed(1)},${y(value).toFixed(1)} `;
+      if (value === null || !Number.isFinite(value)) {
+        drawing = false;
+        return;
+      }
+      d += `${drawing ? "L" : "M"}${x(index).toFixed(1)},${y(value).toFixed(1)} `;
+      drawing = true;
     });
     return d.trim();
   };
