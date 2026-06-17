@@ -522,6 +522,39 @@ Hard rules:
 - Do not produce stock forecasts without clear missing-data labels for fundamentals, earnings, company news, single-stock options, and true flow when unavailable.
 - Stock forecasts must remain probabilistic scenario paths, not execution instructions.
 
+## 28. Use Agency-Style Specialist Review
+
+For non-trivial work, use a specialist review model adapted from the `agency-agents` idea of role-specific missions, deliverables, and metrics. This is a workflow discipline, not a dependency and not a reason to add process for its own sake.
+
+Required roles when relevant:
+
+- Market Forecast Lead: checks whether the change improves path forecasting for SPY / QQQ / IWM / DIA or selected stocks.
+- Investment Researcher / Stock Thesis Analyst: separates thesis from narrative, writes bull case, bear case, downside, catalyst map, horizon, confidence, and thesis breakers.
+- Data Reliability Engineer: checks provider contracts, freshness, fallback, cache, stale status, missing/proxy labels, and data-quality effect.
+- Model Validation Scientist: checks baseline/challenger governance, forecast ledger impact, horizon metrics, calibration, and forward-validation sample gates.
+- Scenario / Confluence Analyst: checks whether price, volume, breadth, credit, volatility/options, flow, news, and historical analogs agree or conflict.
+- News / Event Analyst: checks event classification, narrative strength, affected assets, price reaction confirmation, and contradiction warnings.
+- Product Terminal Designer: keeps the first screen focused on current path, second path, risk path, key prices, alerts, evidence, invalidation, freshness, and validation.
+- Security / Secrets Reviewer: checks that no keys, private algorithm details, provider credentials, `.env`, or public JSON secrets are exposed.
+
+Before changing prediction code, data providers, stock analysis, validation, or the dashboard first screen, explicitly identify:
+
+- lead role
+- reviewer roles
+- forecast impact
+- data impact
+- validation impact
+- user-facing decision impact
+- security / secrets impact
+
+Hard rules:
+
+- If the Investment Researcher role cannot define the bear case, downside path, thesis breakers, and horizon, the stock analysis is too generic.
+- If the Data Reliability role cannot state freshness and failure behavior, the provider work is incomplete.
+- If the Model Validation role cannot say how the change will be compared with `baseline_v1`, the change must stay out of the active model.
+- If the Product Terminal role cannot explain why the information belongs above the fold, move it lower or fold it.
+- If the Security role finds key exposure risk, stop and fix security before publishing.
+
 ## Non-Negotiable Summary
 
 Always enforce: label-first design, walk-forward validation, regime-aware modeling, multi-source confluence, credit + liquidity + options + breadth inputs, no future leakage, no random train-test split, probability output with calibration, feature ablation, horizon-specific models, persistent prediction logs for backtesting, and Wardley Mapping build-vs-buy discipline.
