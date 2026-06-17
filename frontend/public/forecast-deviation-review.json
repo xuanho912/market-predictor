@@ -1,6 +1,6 @@
 {
   "driver_counts": {},
-  "generated_at": "2026-06-16T15:33:57.554574+00:00",
+  "generated_at": "2026-06-17T00:01:37.245041+00:00",
   "guardrails": [
     "This is forecast error attribution, not a trading or PnL report.",
     "Attribution is diagnostic and probabilistic; it is not proof of causality.",
@@ -16,19 +16,19 @@
   ],
   "summary": {
     "completed_outcomes_reviewed": 0,
-    "data_freshness_status": "market_open_unconfirmed",
+    "data_freshness_status": "fresh",
     "dominant_error_theme": "not_enough_completed_outcomes",
     "evidence_level": "insufficient_samples",
     "largest_absolute_error": null,
-    "latest_forecast_date": "2026-06-15",
+    "latest_forecast_date": "2026-06-16",
     "latest_market_date": "2026-06-16",
     "latest_reviewed_forecast_date": null,
     "material_deviation_count": 0,
-    "total_forecast_records": 12,
+    "total_forecast_records": 16,
     "update_blockers": [
       {
-        "detail": "当前行情日期来自美股盘中快照，尚未形成收盘确认数据。 盘中快照日期为 2026-06-16；正式预测记录应等美东 16:30 后重新生成。",
-        "reason": "market_open_unconfirmed"
+        "detail": "Latest market date 2026-06-16 is not after latest forecast date 2026-06-16, so no completed 1d/3d/5d outcome can be scored yet.",
+        "reason": "no_future_market_close_yet"
       },
       {
         "detail": "Some actual returns have been backfilled, but the matching historical forecast record does not contain an expected path for that horizon, so success/failure cannot be scored without rewriting old forecast fields.",

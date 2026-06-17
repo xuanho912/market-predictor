@@ -1,6 +1,6 @@
 # Options / Volatility Structure Status
 
-Generated at: `2026-06-16T15:33:42.193244+00:00`
+Generated at: `2026-06-17T00:01:18.119550+00:00`
 
 ## Summary
 
@@ -18,29 +18,29 @@ Generated at: `2026-06-16T15:33:42.193244+00:00`
 
 ## Market Snapshot
 
-- VIX: `15.84000015258789`
-- VIX9D: `14.779999732971191`
-- VIX3M: `19.31999969482422`
-- VIX6M: `21.799999237060547`
-- VVIX: `86.63999938964844`
-- SKEW: `142.60000610351562`
+- VIX: `16.40999984741211`
+- VIX9D: `15.770000457763672`
+- VIX3M: `19.530000686645508`
+- VIX6M: `21.8700008392334`
+- VVIX: `87.69000244140625`
+- SKEW: `142.66000366210938`
 - term_structure_state: `contango`
 - volatility_reversal_score: `1.0`
 - panic_release_score: `0.78`
-- tail_risk_score: `0.1703`
-- option_stress_score: `0.1013`
-- failed_bounce_options_risk: `0.1398`
+- tail_risk_score: `0.1774`
+- option_stress_score: `0.1415`
+- failed_bounce_options_risk: `0.1633`
 
 ## Sources
 
 | symbol | status | latest_date | latest_value | source | real_data | stale |
 |---|---|---|---:|---|---:|---:|
-| ^SKEW | available | 2026-06-12 | 142.60000610351562 | yahoo-chart | True | False |
-| ^VIX | available | 2026-06-16 | 15.84000015258789 | yahoo-chart | True | False |
-| ^VIX3M | available | 2026-06-16 | 19.31999969482422 | yahoo-chart | True | False |
-| ^VIX6M | available | 2026-06-16 | 21.799999237060547 | yahoo-chart | True | False |
-| ^VIX9D | available | 2026-06-16 | 14.779999732971191 | yahoo-chart | True | False |
-| ^VVIX | available | 2026-06-16 | 86.63999938964844 | yahoo-chart | True | False |
+| ^SKEW | available | 2026-06-16 | 142.66000366210938 | yahoo-chart | True | False |
+| ^VIX | available | 2026-06-16 | 16.40999984741211 | yahoo-chart | True | False |
+| ^VIX3M | available | 2026-06-16 | 19.530000686645508 | yahoo-chart | True | False |
+| ^VIX6M | available | 2026-06-16 | 21.8700008392334 | yahoo-chart | True | False |
+| ^VIX9D | available | 2026-06-16 | 15.770000457763672 | yahoo-chart | True | False |
+| ^VVIX | available | 2026-06-16 | 87.69000244140625 | yahoo-chart | True | False |
 
 ## Guardrails
 
