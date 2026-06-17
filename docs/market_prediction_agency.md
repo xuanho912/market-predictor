@@ -1,8 +1,8 @@
 # Market Prediction Agency
 
-This project adapts the operating model from `msitarzewski/agency-agents` into a smaller, project-specific agency for building a Market Prediction Dashboard.
+This project uses `msitarzewski/agency-agents` directly as a Git submodule and adapts it into a smaller, project-specific agency for building a Market Prediction Dashboard.
 
-The goal is not to vendor or copy a large external agent library. The useful idea is the discipline: specialized roles with a clear mission, deliverables, metrics, and review gates. Every role exists to improve one thing: whether the dashboard can predict and explain the next probable path for SPY, QQQ, IWM, DIA, and selected stocks.
+The goal is not to let an external agent library override the product. The useful idea is the discipline: specialized roles with a clear mission, deliverables, metrics, and review gates. Every role exists to improve one thing: whether the dashboard can predict and explain the next probable path for SPY, QQQ, IWM, DIA, and selected stocks.
 
 Reference sources:
 
@@ -13,6 +13,24 @@ Reference sources:
 ## Core Rule
 
 Use specialist review when the work touches prediction quality, data quality, validation quality, user-facing judgment, or security.
+
+The upstream submodule lives at:
+
+```text
+external/agency-agents
+```
+
+The project adapter lives at:
+
+```text
+scripts/agency_agents_adapter.py
+```
+
+Run it after changing the selected agency roles:
+
+```bash
+python scripts/agency_agents_adapter.py
+```
 
 Do not use the agency model to create bureaucracy. Use it to stop vague work. Every role must output a concrete decision, evidence list, or failure warning.
 
@@ -251,4 +269,3 @@ The next highest-value work is not more UI, not more deployment, and not a new a
 3. challenger-only upgrades for put/call, gamma, and true flow
 4. better post-forecast error analysis
 5. clearer first-screen decision hierarchy
-

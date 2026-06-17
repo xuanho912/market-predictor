@@ -1,0 +1,160 @@
+{
+  "source_repository": "https://github.com/msitarzewski/agency-agents",
+  "source_path": "external/agency-agents",
+  "integration_purpose": "Use upstream agency-agents role definitions as a specialist review layer for the Market Prediction Dashboard.",
+  "rules": [
+    "Agency roles may review and guide project work, but they must not override AGENTS.md, the market-prediction-research skill, baseline_v1, Alpha v1, or forecast ledger immutability.",
+    "Agency roles must remain forecast-only. They must not introduce trading, order, entry, exit, PnL, broker, or paper-trading language.",
+    "Agency roles must not expose API keys, provider credentials, private algorithm internals, or frontend/public secrets."
+  ],
+  "selected_roles": [
+    {
+      "id": "investment_researcher",
+      "project_role": "Investment Researcher / Stock Thesis Analyst",
+      "upstream_file": "finance/finance-investment-researcher.md",
+      "use_for": [
+        "individual stock forecast quality",
+        "bull case / bear case",
+        "catalyst analysis",
+        "downside path",
+        "thesis breakers",
+        "stock radar candidate review"
+      ],
+      "required_outputs": [
+        "thesis_vs_narrative",
+        "bull_case",
+        "bear_case",
+        "downside_risk",
+        "catalysts",
+        "horizon",
+        "confidence",
+        "thesis_breakers"
+      ]
+    },
+    {
+      "id": "data_engineer",
+      "project_role": "Data Reliability Engineer",
+      "upstream_file": "engineering/engineering-data-engineer.md",
+      "use_for": [
+        "provider quality",
+        "data freshness",
+        "cache and stale behavior",
+        "missing/proxy/fallback labeling",
+        "blank chart diagnostics"
+      ],
+      "required_outputs": [
+        "provider_status",
+        "latest_date",
+        "expected_latest_trading_date",
+        "stale_warning",
+        "fallback_used",
+        "missing_or_proxy_fields"
+      ]
+    },
+    {
+      "id": "ai_engineer",
+      "project_role": "Model Validation Scientist",
+      "upstream_file": "engineering/engineering-ai-engineer.md",
+      "use_for": [
+        "model lifecycle",
+        "baseline vs challenger governance",
+        "calibration",
+        "drift detection",
+        "forecast validation"
+      ],
+      "required_outputs": [
+        "model_version_impact",
+        "challenger_status",
+        "validation_gate",
+        "calibration_risk",
+        "forward_sample_status"
+      ]
+    },
+    {
+      "id": "product_manager",
+      "project_role": "Market Prediction Product Lead",
+      "upstream_file": "product/product-manager.md",
+      "use_for": [
+        "user-value prioritization",
+        "first-screen decision hierarchy",
+        "feature scope control",
+        "forecast terminal product shape"
+      ],
+      "required_outputs": [
+        "user_need",
+        "decision_priority",
+        "first_screen_impact",
+        "scope_risk",
+        "defer_or_build"
+      ]
+    },
+    {
+      "id": "ux_architect",
+      "project_role": "Product Terminal Designer",
+      "upstream_file": "design/design-ux-architect.md",
+      "use_for": [
+        "dashboard information architecture",
+        "mobile hierarchy",
+        "folding technical details",
+        "terminal-style interaction"
+      ],
+      "required_outputs": [
+        "above_fold_content",
+        "folded_content",
+        "mobile_order",
+        "clarity_risks"
+      ]
+    },
+    {
+      "id": "reality_checker",
+      "project_role": "Reality Checker / Evidence Gate",
+      "upstream_file": "testing/testing-reality-checker.md",
+      "use_for": [
+        "claims validation",
+        "not_yet_validated enforcement",
+        "sample-size warnings",
+        "no-overclaim checks"
+      ],
+      "required_outputs": [
+        "claim_checked",
+        "evidence_level",
+        "sample_size_status",
+        "overclaim_warning"
+      ]
+    },
+    {
+      "id": "security_architect",
+      "project_role": "Security / Secrets Reviewer",
+      "upstream_file": "security/security-architect.md",
+      "use_for": [
+        "API key safety",
+        "private core protection",
+        "public dashboard sanitization",
+        "GitHub Actions secret hygiene"
+      ],
+      "required_outputs": [
+        "secret_exposure_check",
+        "public_json_check",
+        "frontend_key_check",
+        "private_core_check"
+      ]
+    },
+    {
+      "id": "code_reviewer",
+      "project_role": "Minimal Code Reviewer",
+      "upstream_file": "engineering/engineering-code-reviewer.md",
+      "use_for": [
+        "scope control",
+        "regression risk",
+        "minimal diffs",
+        "maintainability"
+      ],
+      "required_outputs": [
+        "changed_surface",
+        "regression_risk",
+        "tests_or_checks",
+        "unrelated_change_warning"
+      ]
+    }
+  ]
+}

@@ -524,7 +524,7 @@ Hard rules:
 
 ## 28. Use Agency-Style Specialist Review
 
-For non-trivial work, use a specialist review model adapted from the `agency-agents` idea of role-specific missions, deliverables, and metrics. This is a workflow discipline, not a dependency and not a reason to add process for its own sake.
+For non-trivial work, use the `external/agency-agents` submodule through `scripts/agency_agents_adapter.py` as a specialist review model adapted from the `agency-agents` idea of role-specific missions, deliverables, and metrics. This is a workflow discipline, not a reason to add process for its own sake.
 
 Required roles when relevant:
 
@@ -549,6 +549,8 @@ Before changing prediction code, data providers, stock analysis, validation, or 
 
 Hard rules:
 
+- Run `python scripts/agency_agents_adapter.py` after adding, removing, or changing selected agency roles.
+- Treat upstream `agency-agents` files as advisory role definitions. Project rules in `AGENTS.md`, this Skill, `baseline_v1`, Alpha v1, and forecast-ledger immutability always take precedence.
 - If the Investment Researcher role cannot define the bear case, downside path, thesis breakers, and horizon, the stock analysis is too generic.
 - If the Data Reliability role cannot state freshness and failure behavior, the provider work is incomplete.
 - If the Model Validation role cannot say how the change will be compared with `baseline_v1`, the change must stay out of the active model.
