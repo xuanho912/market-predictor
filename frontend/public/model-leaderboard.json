@@ -28,9 +28,10 @@
       "status": "insufficient_forward_samples"
     },
     "3d": {
-      "completed_count": 0,
-      "model_version": null,
-      "status": "insufficient_forward_samples"
+      "completed_count": 4,
+      "model_version": "baseline_v1",
+      "primary_hit_rate": 0.0,
+      "primary_mean_absolute_error": 0.009736
     },
     "5d": {
       "completed_count": 0,
@@ -43,7 +44,7 @@
       "status": "insufficient_forward_samples"
     }
   },
-  "generated_at": "2026-06-17T00:01:37.263442+00:00",
+  "generated_at": "2026-06-18T00:01:55.228919+00:00",
   "guardrails": [
     "Alpha v1 threshold remains frozen at 0.32534311.",
     "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -78,15 +79,15 @@
           "secondary_mean_absolute_error": null
         },
         "3d": {
-          "completed_count": 0,
-          "primary_closer_than_secondary_rate": null,
-          "primary_hit_rate": null,
-          "primary_mean_absolute_error": null,
-          "primary_median_absolute_error": null,
-          "primary_vs_secondary_accuracy_spread": null,
+          "completed_count": 4,
+          "primary_closer_than_secondary_rate": 0.25,
+          "primary_hit_rate": 0.0,
+          "primary_mean_absolute_error": 0.009736,
+          "primary_median_absolute_error": 0.007093,
+          "primary_vs_secondary_accuracy_spread": -0.25,
           "sample_gate": "insufficient_samples",
-          "secondary_hit_rate": null,
-          "secondary_mean_absolute_error": null
+          "secondary_hit_rate": 0.25,
+          "secondary_mean_absolute_error": 0.010119
         },
         "5d": {
           "completed_count": 0,
@@ -112,12 +113,12 @@
         }
       },
       "model_version": "baseline_v1",
-      "pending_forecasts": 12,
+      "pending_forecasts": 16,
       "promotion_status": "active_model",
       "reason": "Frozen current production model. Not a claim of high precision or stable alpha.",
       "role": "active_baseline",
       "status": "tracking",
-      "total_forecasts": 12
+      "total_forecasts": 16
     },
     {
       "completed_forecasts": 0,
@@ -179,12 +180,12 @@
         }
       },
       "model_version": "challenger_v2_options_flow",
-      "pending_forecasts": 12,
+      "pending_forecasts": 16,
       "promotion_status": "insufficient_forward_evidence",
       "reason": "Forward samples have not met promotion gates.",
       "role": "shadow_challenger",
       "status": "tracking",
-      "total_forecasts": 12
+      "total_forecasts": 16
     },
     {
       "completed_forecasts": 0,
@@ -212,15 +213,15 @@
           "secondary_mean_absolute_error": null
         },
         "3d": {
-          "completed_count": 0,
-          "primary_closer_than_secondary_rate": null,
-          "primary_hit_rate": null,
-          "primary_mean_absolute_error": null,
-          "primary_median_absolute_error": null,
-          "primary_vs_secondary_accuracy_spread": null,
+          "completed_count": 4,
+          "primary_closer_than_secondary_rate": 0.25,
+          "primary_hit_rate": 0.0,
+          "primary_mean_absolute_error": 0.009736,
+          "primary_median_absolute_error": 0.007093,
+          "primary_vs_secondary_accuracy_spread": -0.25,
           "sample_gate": "insufficient_samples",
-          "secondary_hit_rate": null,
-          "secondary_mean_absolute_error": null
+          "secondary_hit_rate": 0.25,
+          "secondary_mean_absolute_error": 0.010119
         },
         "5d": {
           "completed_count": 0,
@@ -678,7 +679,7 @@
     "forward_completed_samples_by_horizon": {
       "10d": 0,
       "20d": 0,
-      "3d": 0,
+      "3d": 4,
       "5d": 0,
       "60d": 0
     },

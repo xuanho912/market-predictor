@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-06-17T00:01:27.125979+00:00`
+- generated_at: `2026-06-18T00:01:45.108511+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
-- event_detection_confidence: `79`
+- major_event_count: `18`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `True`
-- confirmation_score: `75`
+- confirmation_score: `100`
 
 ## Dashboard Note
 
@@ -27,64 +27,80 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Databricks sales growth tops 80%, but margin are shrinking from swarm of AI agents
-- source: CNBC
-- published_at: `2026-06-16T22:25:28+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Pope Leo says 'thanks be to God' for interim US-Iran peace deal - Reuters
+- headline: Trump signs memo aimed at ending Iran war, White House official says - Reuters
 - source: Reuters
-- published_at: `2026-06-16T21:58:48+00:00`
+- published_at: `2026-06-17T21:59:43+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Norway's Equinor doubles share buyback as Iran war boosts cash flow - Reuters
+- headline: Trump thanks China's Xi, Russia's Putin for being 'neutral' in Iran war - Reuters
 - source: Reuters
-- published_at: `2026-06-16T19:16:22+00:00`
+- published_at: `2026-06-17T21:12:43+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: BMW lowers profit outlook due to China downturn, Iran war double whammy - Reuters
+- headline: The market didn't like what it heard from the Fed and its new leader Kevin Warsh
+- source: CNBC
+- published_at: `2026-06-17T20:55:56+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran and US to end fighting and maritime blockades in the Gulf area per MoU, Iran's official news agency says - Reuters
 - source: Reuters
-- published_at: `2026-06-16T19:08:18+00:00`
+- published_at: `2026-06-17T20:11:43+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Jim Cramer: Why we're headed back to pre-Iran war oil prices and what it means
-- source: CNBC
-- published_at: `2026-06-16T18:11:30+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Jim Cramer debates his next move on a software stock on an 11 day losing streak
-- source: CNBC
-- published_at: `2026-06-16T16:26:13+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Treasury yields fall ahead of Kevin Warsh's first Fed meeting
-- source: CNBC
-- published_at: `2026-06-16T09:30:09+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Is the Iran war just an energy shock - or a turning point? - Reuters
+- headline: Trump: unfair for Iran to lack ballistic missiles if other countries have them - Reuters
 - source: Reuters
-- published_at: `2026-06-16T05:11:41+00:00`
+- published_at: `2026-06-17T19:38:39+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Strong US retail sales showcase economy's resilience despite Iran war - Reuters
+- source: Reuters
+- published_at: `2026-06-17T19:32:21+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Trump says Iran deal averted 'economic catastrophe' but says he could still restart war - Reuters
+- source: Reuters
+- published_at: `2026-06-17T18:33:36+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: JetBlue to reduce Newark, LaGuardia footprint as it forges ahead in Fort Lauderdale
+- source: CNBC
+- published_at: `2026-06-17T16:18:13+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Jim Cramer's top 10 things to watch in the stock market Wednesday
+- source: CNBC
+- published_at: `2026-06-17T12:48:37+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: BMW shares sink after profit warning highlights China and Iran risk - Reuters
+- source: Reuters
+- published_at: `2026-06-17T11:16:26+00:00`
 - importance_score: `100`
 - confidence: `medium`
