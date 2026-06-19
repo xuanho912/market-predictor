@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-06-19T00:14:28.634685+00:00`
+- generated_at: `2026-06-19T23:43:29.406539+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `18`
@@ -10,7 +10,7 @@
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `25`
+- confirmation_score: `50`
 
 ## Dashboard Note
 
@@ -27,80 +27,80 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Trading Day: Stocks rally, oil hits pre-Iran-war lows as Strait of Hormuz reopens for business - Reuters
-- source: Reuters
-- published_at: `2026-06-18T21:03:43+00:00`
+- headline: DOJ rebuffs judge's request to put in writing it won't move forward with 'anti-weaponization' fund
+- source: CNBC
+- published_at: `2026-06-19T19:50:56+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: Republicans blast Trump's Iran agreement as details emerge - Reuters
+- headline: Lebanon ceasefire agreed after US-Iran talks in Switzerland scrapped - Reuters
 - source: Reuters
-- published_at: `2026-06-18T21:35:48+00:00`
+- published_at: `2026-06-19T19:58:37+00:00`
 - importance_score: `99`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Vance warns Israeli critics over Iran deal: Trump is your only ally - Reuters
-- source: Reuters
-- published_at: `2026-06-18T19:29:34+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Markets are set for a much more hawkish Warsh Fed than expected
+- headline: Fedspeak vs. war deal: Here are the things that drove this week's stock market
 - source: CNBC
-- published_at: `2026-06-18T17:24:56+00:00`
+- published_at: `2026-06-19T17:24:10+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Shares ease as investors ponder US-Iran peace talks; yen nears 40-year lows - Reuters
+- source: Reuters
+- published_at: `2026-06-19T14:28:28+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Accenture forecast takes hit from Iran war, shares tumble over 17% - Reuters
+- headline: Pentagon tells US lawmakers it needs $80 billion for Iran war and other bills, WSJ reports - Reuters
 - source: Reuters
-- published_at: `2026-06-18T16:36:47+00:00`
+- published_at: `2026-06-19T14:25:44+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Israel, Hezbollah agree to ceasefire starting on Friday -U.S. official - Reuters
+- source: Reuters
+- published_at: `2026-06-19T13:18:55+00:00`
+- importance_score: `98`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: EXCLUSIVE: Iran's Revolutionary Guards set up covert Iraqi cells to attack Gulf neighbors, sources say - Reuters
+- source: Reuters
+- published_at: `2026-06-19T06:03:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: US-Iran peace talks in Switzerland called off, clouding prospects for lasting truce - Reuters
+- source: Reuters
+- published_at: `2026-06-19T05:55:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Western countries warn of atrocities, imminent RSF escalation in Sudan's al-Obeid - Reuters
+- headline: Gulf airlines get back to business as flights near pre-war levels - Reuters
 - source: Reuters
-- published_at: `2026-06-18T16:16:15+00:00`
+- published_at: `2026-06-19T05:02:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: White House sends text of interim US-Iran agreement to US Congress - Reuters
+- headline: Israel, Hezbollah agree to ceasefire in Lebanon, U.S. official says - Reuters
 - source: Reuters
-- published_at: `2026-06-18T16:21:44+00:00`
-- importance_score: `98`
-- confidence: `high`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Bank of England keeps rates steady as it weighs Iran truce - Reuters
-- source: Reuters
-- published_at: `2026-06-18T14:52:50+00:00`
-- importance_score: `98`
-- confidence: `high`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Hormuz reopening to release wave of oil supply, depress prices - Reuters
-- source: Reuters
-- published_at: `2026-06-18T10:12:11+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Iran peace not stopping central banks from raising borrowing costs - Reuters
-- source: Reuters
-- published_at: `2026-06-18T12:52:43+00:00`
-- importance_score: `97`
-- confidence: `high`
+- published_at: `2026-06-19T06:10:00+00:00`
+- importance_score: `96`
+- confidence: `medium`

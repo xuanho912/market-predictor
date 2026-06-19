@@ -1,6 +1,6 @@
 # Breadth Impact Audit
 
-Generated at: `2026-06-19T00:14:33.908864Z`
+Generated at: `2026-06-19T23:43:33.391399Z`
 
 ## Summary
 
@@ -16,10 +16,10 @@ Generated at: `2026-06-19T00:14:33.908864Z`
 
 | symbol | supports primary | conflicts primary | edge before | edge after | primary before | primary after | failed bounce delta | confirmation delta | confidence delta | reason | risk note |
 |---|---:|---:|---|---|---|---|---:|---:|---:|---|---|
-| SPY | False | True | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.171 | 0 | -1 | SPY breadth conflicts with bounce_path: conflict score 76%, internal resonance is surface_only. | SPY index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
-| QQQ | False | True | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bearish_path | 0.1835 | -4 | 1 | QQQ breadth conflicts with bearish_path: conflict score 82%, internal resonance is surface_only. | QQQ index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
+| SPY | False | True | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.1796 | -8 | -1 | SPY breadth conflicts with bounce_path: conflict score 76%, internal resonance is surface_only. | SPY index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
+| QQQ | False | True | MODERATE_EDGE | WEAK_EDGE | bounce_path | bearish_path | 0.2055 | -24 | -9 | QQQ breadth conflicts with bearish_path: conflict score 82%, internal resonance is surface_only. | QQQ index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
 | IWM | True | False | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0311 | 0 | 6 | IWM breadth supports bounce_path: internal resonance is mixed, support score 73%. | IWM breadth improves confidence in the primary path, but forward validation is still required. |
-| DIA | True | False | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0552 | 0 | 9 | DIA breadth supports bounce_path: internal resonance is mixed, support score 85%, above 20d/50d MA 53%/60%. | DIA breadth improves confidence in the primary path, but forward validation is still required. |
+| DIA | True | False | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0486 | 6 | 11 | DIA breadth supports bounce_path: internal resonance is mixed, support score 85%, above 20d/50d MA 53%/60%. | DIA breadth improves confidence in the primary path, but forward validation is still required. |
 
 ## Forward Validation
 
