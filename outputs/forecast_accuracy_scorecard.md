@@ -1,42 +1,42 @@
 # Forecast Accuracy Scorecard
 
-Generated at: `2026-06-18T00:01:55.205056+00:00`
+Generated at: `2026-06-19T00:14:33.927422+00:00`
 
 ## Sample Counts
 
-- total_forecasts: `20`
-- pending_forecasts: `20`
-- completed_1d: `16`
-- completed_3d: `8`
+- total_forecasts: `24`
+- pending_forecasts: `24`
+- completed_1d: `20`
+- completed_3d: `12`
 - completed_5d: `0`
 - completed_10d: `0`
 - completed_20d: `0`
 - completed_60d: `0`
-- current_evidence_level: `insufficient_samples`
-- validation_warning: 当前预测准确度仍未被前向样本验证，不能称为 high precision / stable alpha / validated forecasting system。
+- current_evidence_level: `early_evidence`
+- validation_warning: Forward validation evidence is accumulating; do not promote models without horizon-specific proof.
 
 ## Primary Scenario Accuracy
 
 ### 1d
-- completed_count: `16`
-- sample_gate: `insufficient_samples`
-- primary_scenario_hit_rate: `0.0`
-- primary_path_mean_absolute_error: `0.010505`
-- primary_path_median_absolute_error: `0.009632`
-- secondary_scenario_hit_rate: `0.0625`
-- primary_vs_secondary_accuracy_spread: `-0.0625`
-- primary_closer_than_secondary_rate: `0.25`
-- close_call_primary_closer_rate: `None`
+- completed_count: `20`
+- sample_gate: `early_evidence`
+- primary_scenario_hit_rate: `0.1`
+- primary_path_mean_absolute_error: `0.014683`
+- primary_path_median_absolute_error: `0.012994`
+- secondary_scenario_hit_rate: `0.1`
+- primary_vs_secondary_accuracy_spread: `0.0`
+- primary_closer_than_secondary_rate: `0.375`
+- close_call_primary_closer_rate: `0.6667`
 
 ### 3d
-- completed_count: `8`
+- completed_count: `12`
 - sample_gate: `insufficient_samples`
 - primary_scenario_hit_rate: `0.0`
-- primary_path_mean_absolute_error: `0.009736`
-- primary_path_median_absolute_error: `0.007093`
-- secondary_scenario_hit_rate: `0.25`
-- primary_vs_secondary_accuracy_spread: `-0.25`
-- primary_closer_than_secondary_rate: `0.25`
+- primary_path_mean_absolute_error: `0.011453`
+- primary_path_median_absolute_error: `0.010337`
+- secondary_scenario_hit_rate: `0.3333`
+- primary_vs_secondary_accuracy_spread: `-0.3333`
+- primary_closer_than_secondary_rate: `0.1667`
 - close_call_primary_closer_rate: `None`
 
 ### 5d
