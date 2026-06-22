@@ -186,7 +186,10 @@ jobs:
             echo "No public dashboard changes to publish."
           else
             git commit -m "Update generated market prediction dashboard"
-            git push "https://x-access-token:${DASHBOARD_DEPLOY_TOKEN}@github.com/${PUBLIC_DASHBOARD_REPO}.git" "HEAD:${PUBLIC_DASHBOARD_BRANCH}"
+            if ! git push "https://x-access-token:${DASHBOARD_DEPLOY_TOKEN}@github.com/${PUBLIC_DASHBOARD_REPO}.git" "HEAD:${PUBLIC_DASHBOARD_BRANCH}"; then
+              echo "::warning::Failed to publish public dashboard. DASHBOARD_DEPLOY_TOKEN may be expired or missing write access to ${PUBLIC_DASHBOARD_REPO}. Private forecast outputs were already generated; fix the token and rerun this workflow."
+              exit 0
+            fi
           fi
 
       - name: Configure GitHub Pages
