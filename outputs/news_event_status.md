@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-06-22T16:01:43.915333+00:00`
+- generated_at: `2026-06-22T17:05:12.493977+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
-- event_detection_confidence: `75`
+- major_event_count: `9`
+- event_detection_confidence: `72`
 - event_risk_level: `medium`
 - narrative: `geopolitics_easing_risk_on`
 - narrative_direction: `supports_bounce`
 - narrative_strength: `100`
 - price_reaction_confirmed: `True`
-- confirmation_score: `80`
+- confirmation_score: `75`
 
 ## Dashboard Note
 
@@ -30,7 +30,7 @@
 - headline: US authorizes Iranian oil sales amid talks on final peace deal - Reuters
 - source: Reuters
 - published_at: `2026-06-22T14:46:30+00:00`
-- importance_score: `100`
+- importance_score: `99`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -51,11 +51,19 @@
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: Stocks steady, oil falls as Iran peace talks progress - Reuters
+- headline: Vance says US-Iran talks lay 'good foundation' for final peace deal - Reuters
+- source: Reuters
+- published_at: `2026-06-22T00:18:00+00:00`
+- importance_score: `96`
+- confidence: `medium`
+
+### oil_shock_relief / risk_on
+
+- headline: Stocks steady, oil falls as rate worries offset Iran talks optimism - Reuters
 - source: Reuters
 - published_at: `2026-06-22T00:45:00+00:00`
-- importance_score: `100`
-- confidence: `high`
+- importance_score: `90`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -67,7 +75,7 @@
 
 ### oil_shock_relief / risk_on
 
-- headline: Oil falls after US-Iran talks signal easing supply risks - Reuters
+- headline: Oil falls 4% after US-Iran talks signal easing supply risks - Reuters
 - source: Reuters
 - published_at: `2026-06-21T22:17:00+00:00`
 - importance_score: `90`
