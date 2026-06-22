@@ -433,10 +433,17 @@ def _scenario_ranking(features: dict[str, Any], market_context: dict[str, Any], 
     supporting = _supporting_signals(features, market_context)
     conflicting = _conflicting_signals(features, market_context)
     probability_gap = ordered[0][1] - ordered[1][1]
+    primary_item = ordered[0]
+    secondary_item = ordered[1]
+    used_scenarios = {primary_item[0], secondary_item[0]}
+    risk_set = {"stock_failed_bounce", "stock_downside_continuation", "stock_event_risk"}
+    risk_item = next((item for item in ordered if item[0] in risk_set and item[0] not in used_scenarios), None)
+    if risk_item is None:
+        risk_item = next((item for item in ordered if item[0] not in used_scenarios), ordered[min(2, len(ordered) - 1)])
     return {
-        "primary": _scenario_item(ordered[0], features, market_context),
-        "secondary": _scenario_item(ordered[1], features, market_context),
-        "risk": _scenario_item(next((item for item in ordered if item[0] in {"stock_failed_bounce", "stock_downside_continuation", "stock_event_risk"}), ordered[2]), features, market_context),
+        "primary": _scenario_item(primary_item, features, market_context),
+        "secondary": _scenario_item(secondary_item, features, market_context),
+        "risk": _scenario_item(risk_item, features, market_context),
         "all_scenarios": [_scenario_item(item, features, market_context) for item in ordered],
         "probability_gap": _round(probability_gap),
         "close_call": probability_gap < 0.08,

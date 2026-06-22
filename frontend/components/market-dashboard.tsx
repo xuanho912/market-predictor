@@ -2654,8 +2654,12 @@ function StockPredictionSection({ dashboard }: { dashboard: PredictionDashboard 
 }
 
 function StockPathChart({ selected }: { selected: AnyRecord }) {
+  const svgRef = useRef<SVGSVGElement | null>(null);
+  const [tooltip, setTooltip] = useState<TooltipState>(null);
   const paths = asRecord(selected.simulated_paths);
   const dates = Array.isArray(paths.dates) ? paths.dates.map(String) : [];
+  const ranking = asRecord(selected.scenario_ranking);
+  const pathRanking = asRecord(paths.path_ranking);
   const series = [
     { key: "historical_price", label: "历史价格", color: "#d7e4e1", width: 2.1 },
     { key: "primary_path", label: "主路径", color: "#22c55e", width: 3.4 },
@@ -2696,6 +2700,35 @@ function StockPathChart({ selected }: { selected: AnyRecord }) {
   historicalValues.forEach((value, index) => {
     if (value !== null) currentIndex = index;
   });
+  const current = asNumber(selected.current_price);
+  const chartWidth = width - pad * 2;
+  const onMove = (event: MouseEvent<SVGSVGElement>) => {
+    const rect = svgRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    const svgX = (event.clientX - rect.left) * (width / rect.width);
+    const index = Math.max(0, Math.min(dates.length - 1, Math.round(((svgX - pad) / chartWidth) * (dates.length - 1))));
+    setTooltip({
+      index,
+      left: event.clientX - rect.left,
+      top: event.clientY - rect.top,
+    });
+  };
+  const stockTooltipRows = tooltip
+    ? series
+        .map((item) => {
+          const value = valuesByKey[item.key]?.[tooltip.index] ?? null;
+          const scenario = stockScenarioForPath(item.key, pathRanking);
+          return {
+            ...item,
+            value,
+            scenario,
+            probability: stockScenarioProbability(item.key, pathRanking, ranking),
+            rank: stockPathRank(item.key),
+            expectedReturn: current !== null && value !== null ? value / current - 1 : null,
+          };
+        })
+        .filter((row) => row.value !== null)
+    : [];
   return (
     <div className="rounded-xl border border-white/10 bg-[#071111] p-4">
       <div className="mb-3 flex items-start justify-between gap-3">
@@ -2705,14 +2738,61 @@ function StockPathChart({ selected }: { selected: AnyRecord }) {
         </div>
         <div className="text-xs leading-5 text-slate-500">主路径最突出，第二路径次之；风险路径保留。</div>
       </div>
-      <svg viewBox={`0 0 ${width} ${height}`} className="h-[320px] w-full rounded-lg bg-black/20">
-        <line x1={pad} y1={pad} x2={pad} y2={height - pad} stroke="#334155" strokeWidth="1" />
-        <line x1={pad} y1={height - pad} x2={width - pad} y2={height - pad} stroke="#334155" strokeWidth="1" />
-        {currentIndex >= 0 ? <line x1={x(currentIndex)} y1={pad} x2={x(currentIndex)} y2={height - pad} stroke="#94a3b8" strokeDasharray="4 5" /> : null}
-        {series.map((item) => (
-          <path key={item.key} d={makePath(valuesByKey[item.key] ?? [])} fill="none" stroke={item.color} strokeWidth={item.width} strokeLinecap="round" strokeLinejoin="round" />
-        ))}
-      </svg>
+      <div className="relative">
+        <svg
+          ref={svgRef}
+          viewBox={`0 0 ${width} ${height}`}
+          className="h-[320px] w-full rounded-lg bg-black/20"
+          onMouseLeave={() => setTooltip(null)}
+          onMouseMove={onMove}
+          role="img"
+        >
+          <line x1={pad} y1={pad} x2={pad} y2={height - pad} stroke="#334155" strokeWidth="1" />
+          <line x1={pad} y1={height - pad} x2={width - pad} y2={height - pad} stroke="#334155" strokeWidth="1" />
+          {currentIndex >= 0 ? <line x1={x(currentIndex)} y1={pad} x2={x(currentIndex)} y2={height - pad} stroke="#94a3b8" strokeDasharray="4 5" /> : null}
+          {tooltip ? (
+            <line
+              x1={x(tooltip.index)}
+              x2={x(tooltip.index)}
+              y1={pad}
+              y2={height - pad}
+              stroke="#e2e8f0"
+              strokeDasharray="3 5"
+              strokeOpacity="0.55"
+            />
+          ) : null}
+          {series.map((item) => (
+            <path key={item.key} d={makePath(valuesByKey[item.key] ?? [])} fill="none" stroke={item.color} strokeWidth={item.width} strokeLinecap="round" strokeLinejoin="round" />
+          ))}
+        </svg>
+        {tooltip && stockTooltipRows.length ? (
+          <div
+            className="pointer-events-none absolute z-20 min-w-60 rounded-lg border border-white/10 bg-[#071111]/95 p-3 text-xs shadow-2xl shadow-black/50"
+            style={{
+              left: Math.min(Math.max(tooltip.left + 12, 8), 520),
+              top: Math.max(tooltip.top - 8, 8),
+            }}
+          >
+            <div className="mb-2 font-semibold text-white">{dates[tooltip.index]}</div>
+            <div className="space-y-1.5">
+              {stockTooltipRows.map((row) => (
+                <div key={row.key} className="rounded-md border border-white/5 bg-white/[0.03] p-2">
+                  <div className="grid grid-cols-[0.8rem_1fr_auto] items-center gap-2">
+                    <span className="h-2 w-2 rounded-full" style={{ backgroundColor: row.color }} />
+                    <span className="text-slate-300">
+                      {row.label} {row.rank}
+                      {row.scenario ? ` / ${cnScenario(row.scenario)}` : ""}
+                      {row.key !== "historical_price" ? ` / ${formatPercent(row.probability, 1)}` : ""}
+                    </span>
+                    <span className="font-semibold text-white">{formatPrice(row.value)}</span>
+                  </div>
+                  <div className="mt-1 pl-5 text-[11px] text-slate-400">相对当前价 {formatSignedPercent(row.expectedReturn, 1)}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : null}
+      </div>
       <div className="mt-3 flex flex-wrap gap-3 text-xs text-slate-300">
         {series.map((item) => (
           <span key={item.key} className="inline-flex items-center gap-2">
@@ -2727,6 +2807,26 @@ function StockPathChart({ selected }: { selected: AnyRecord }) {
 function stockPathValues(value: unknown): Array<number | null> {
   if (!Array.isArray(value)) return [];
   return value.map((item) => (typeof item === "number" && Number.isFinite(item) ? item : null));
+}
+
+function stockScenarioForPath(pathKey: string, pathRanking: AnyRecord): string | undefined {
+  if (pathKey === "primary_path") return String(asRecord(pathRanking.primary).scenario ?? "");
+  if (pathKey === "secondary_path") return String(asRecord(pathRanking.secondary).scenario ?? "");
+  if (pathKey === "risk_path") return String(asRecord(pathRanking.risk).scenario ?? "");
+  return undefined;
+}
+
+function stockScenarioProbability(pathKey: string, pathRanking: AnyRecord, ranking: AnyRecord): number | null {
+  const fallbackKey = pathKey === "primary_path" ? "primary" : pathKey === "secondary_path" ? "secondary" : pathKey === "risk_path" ? "risk" : "";
+  const item = Object.keys(asRecord(pathRanking[fallbackKey])).length ? asRecord(pathRanking[fallbackKey]) : asRecord(ranking[fallbackKey]);
+  return asNumber(item.probability);
+}
+
+function stockPathRank(pathKey: string): string {
+  if (pathKey === "primary_path") return "第一可能";
+  if (pathKey === "secondary_path") return "第二可能";
+  if (pathKey === "risk_path") return "风险路径";
+  return "";
 }
 
 function stockModuleLabel(key: string): string {
