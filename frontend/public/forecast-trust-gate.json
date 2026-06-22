@@ -1,42 +1,35 @@
 {
   "version": "forecast_trust_gate_v1",
-  "generated_at": "2026-06-22T15:21:15.994798+00:00",
+  "generated_at": "2026-06-22T15:51:13.268424+00:00",
   "validation_type": "forecast_reliability_gate",
-  "status": "BLOCKED_STALE_DATA",
-  "trust_score": 0,
+  "status": "RESEARCH_ONLY_FORWARD_VALIDATION_NEEDED",
+  "trust_score": 29,
   "would_rely_for_real_money": false,
-  "use_boundary": "Do not use the displayed forecast as today's forecast until data freshness is restored.",
-  "data_freshness_status": "stale",
-  "latest_market_date": "2026-06-16",
+  "use_boundary": "Use as a research radar and scenario explainer only; do not treat it as a dependable forecasting edge.",
+  "data_freshness_status": "market_closed",
+  "latest_market_date": "2026-06-18",
   "expected_latest_trading_date": "2026-06-18",
-  "data_completeness_score": 67.0,
+  "data_completeness_score": 92.0,
   "forward_completed_samples": {
-    "1d": 9,
-    "3d": 0,
+    "1d": 20,
+    "3d": 12,
     "5d": 0,
     "10d": 0,
     "20d": 0,
     "60d": 0
   },
-  "passes": [],
+  "passes": [
+    "data_is_current_or_market_closed",
+    "data_completeness_85_plus"
+  ],
   "blockers": [
-    {
-      "code": "stale_or_failed_data",
-      "severity": "critical",
-      "message": "数据已过期，当前预测不可作为今日判断。 核心行情最新日期为 2026-06-16，按美股交易日应至少更新到 2026-06-18。"
-    },
-    {
-      "code": "data_completeness_below_gate",
-      "severity": "high",
-      "message": "Data completeness is 67.0, below the 85/100 reliance gate."
-    },
     {
       "code": "insufficient_forward_samples",
       "severity": "critical",
       "message": "Forward validation samples are not enough to rely on the model as a high-confidence forecasting system.",
       "completed_by_horizon": {
-        "1d": 9,
-        "3d": 0,
+        "1d": 20,
+        "3d": 12,
         "5d": 0,
         "10d": 0,
         "20d": 0,
@@ -49,18 +42,18 @@
       "message": "Primary-vs-secondary path advantage is not yet proven on enough forward samples.",
       "details": {
         "passed": false,
-        "checked_horizons": 0,
+        "checked_horizons": 1,
         "passed_horizons": 0,
         "details": {
           "1d": {
-            "completed_count": 9,
-            "primary_closer_rate": 0.8889,
-            "primary_vs_secondary_spread": 0.7778
+            "completed_count": 20,
+            "primary_closer_rate": 0.375,
+            "primary_vs_secondary_spread": 0.0
           },
           "3d": {
-            "completed_count": 0,
-            "primary_closer_rate": null,
-            "primary_vs_secondary_spread": null
+            "completed_count": 12,
+            "primary_closer_rate": 0.1667,
+            "primary_vs_secondary_spread": -0.3333
           },
           "5d": {
             "completed_count": 0,
@@ -96,13 +89,13 @@
     {
       "code": "deviation_learning_needed",
       "severity": "medium",
-      "message": "Deviation sample is still too small to know whether errors are under control.",
+      "message": "Material deviation rate is too high; confidence must remain capped.",
       "details": {
         "passed": false,
-        "reviewed": 9,
-        "material": 2,
-        "material_rate": null,
-        "message": "Deviation sample is still too small to know whether errors are under control."
+        "reviewed": 20,
+        "material": 12,
+        "material_rate": 0.6,
+        "message": "Material deviation rate is too high; confidence must remain capped."
       }
     }
   ],
@@ -112,48 +105,48 @@
       "reason": "Global trust gate is not ready.",
       "edge_status": "MODERATE_EDGE",
       "confidence_score": 68.0,
-      "confluence_score": 53.0,
-      "primary_scenario": "bounce_path",
-      "primary_probability": 0.391,
-      "secondary_scenario": "analog_average_path",
-      "secondary_probability": 0.2404,
-      "probability_gap": 0.1506
+      "confluence_score": 48.0,
+      "primary_scenario": "bearish_path",
+      "primary_probability": 0.3112,
+      "secondary_scenario": "bounce_path",
+      "secondary_probability": 0.2761,
+      "probability_gap": 0.0351
     },
     "QQQ": {
       "readiness": "blocked_by_global_gate",
       "reason": "Global trust gate is not ready.",
-      "edge_status": "MODERATE_EDGE",
-      "confidence_score": 68.0,
-      "confluence_score": 52.0,
-      "primary_scenario": "bounce_path",
-      "primary_probability": 0.3541,
-      "secondary_scenario": "bearish_path",
-      "secondary_probability": 0.2413,
-      "probability_gap": 0.1128
+      "edge_status": "WEAK_EDGE",
+      "confidence_score": 55.0,
+      "confluence_score": 45.0,
+      "primary_scenario": "bearish_path",
+      "primary_probability": 0.3845,
+      "secondary_scenario": "bounce_path",
+      "secondary_probability": 0.2277,
+      "probability_gap": 0.1568
     },
     "IWM": {
       "readiness": "blocked_by_global_gate",
       "reason": "Global trust gate is not ready.",
       "edge_status": "MODERATE_EDGE",
-      "confidence_score": 67.0,
-      "confluence_score": 51.0,
+      "confidence_score": 73.0,
+      "confluence_score": 56.0,
       "primary_scenario": "bounce_path",
-      "primary_probability": 0.3481,
-      "secondary_scenario": "analog_average_path",
-      "secondary_probability": 0.2419,
-      "probability_gap": 0.1062
+      "primary_probability": 0.3334,
+      "secondary_scenario": "bearish_path",
+      "secondary_probability": 0.2501,
+      "probability_gap": 0.0833
     },
     "DIA": {
       "readiness": "blocked_by_global_gate",
       "reason": "Global trust gate is not ready.",
       "edge_status": "MODERATE_EDGE",
-      "confidence_score": 68.0,
-      "confluence_score": 54.0,
+      "confidence_score": 76.0,
+      "confluence_score": 56.0,
       "primary_scenario": "bounce_path",
-      "primary_probability": 0.3927,
+      "primary_probability": 0.3282,
       "secondary_scenario": "bearish_path",
-      "secondary_probability": 0.2316,
-      "probability_gap": 0.1611
+      "secondary_probability": 0.2761,
+      "probability_gap": 0.0521
     }
   },
   "minimum_reliance_rules": [
@@ -164,7 +157,6 @@
     "Material deviation themes must be reviewed and routed into a challenger, not silently baked into baseline_v1."
   ],
   "next_actions": [
-    "Restore latest market data and rerun GitHub Actions before reading the dashboard as today's forecast.",
     "Keep accumulating immutable forward forecasts until minimum sample gates are met.",
     "Do not promote any model until primary-vs-secondary path accuracy is proven by forward samples.",
     "Keep confidence capped until high-confidence buckets outperform ordinary samples.",
