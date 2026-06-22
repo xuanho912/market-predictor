@@ -1,20 +1,20 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-06-19T23:43:29.406539+00:00`
+- generated_at: `2026-06-22T15:54:58.798056+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `18`
-- event_detection_confidence: `74`
-- event_risk_level: `high`
-- narrative: `geopolitics_escalation_risk_off`
-- narrative_direction: `supports_risk_expansion`
+- major_event_count: `8`
+- event_detection_confidence: `75`
+- event_risk_level: `medium`
+- narrative: `geopolitics_easing_risk_on`
+- narrative_direction: `supports_bounce`
 - narrative_strength: `100`
-- price_reaction_confirmed: `False`
-- confirmation_score: `50`
+- price_reaction_confirmed: `True`
+- confirmation_score: `80`
 
 ## Dashboard Note
 
-当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，尚未被价格反应充分确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
+当前新闻叙事为 geopolitics_easing_risk_on，方向为 supports_bounce，已被价格反应初步确认。地缘风险缓和通常支持风险资产反抽，并降低短线风险扩散概率。
 
 ## Economic Calendar Risk
 
@@ -25,82 +25,66 @@
 
 ## Major Events
 
+### geopolitical_risk_easing / risk_on
+
+- headline: US authorizes Iranian oil sales amid talks on final peace deal - Reuters
+- source: Reuters
+- published_at: `2026-06-22T14:46:30+00:00`
+- importance_score: `100`
+- confidence: `high`
+
 ### geopolitical_risk_escalation / risk_off
 
-- headline: DOJ rebuffs judge's request to put in writing it won't move forward with 'anti-weaponization' fund
-- source: CNBC
-- published_at: `2026-06-19T19:50:56+00:00`
+- headline: Iran war triggers global race to build oil reserves - Reuters
+- source: Reuters
+- published_at: `2026-06-22T06:06:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: Lebanon ceasefire agreed after US-Iran talks in Switzerland scrapped - Reuters
+- headline: Gold bounces back on encouraging US-Iran peace talks - Reuters
 - source: Reuters
-- published_at: `2026-06-19T19:58:37+00:00`
-- importance_score: `99`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Fedspeak vs. war deal: Here are the things that drove this week's stock market
-- source: CNBC
-- published_at: `2026-06-19T17:24:10+00:00`
+- published_at: `2026-06-22T01:35:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: Shares ease as investors ponder US-Iran peace talks; yen nears 40-year lows - Reuters
+- headline: Stocks steady, oil falls as Iran peace talks progress - Reuters
 - source: Reuters
-- published_at: `2026-06-19T14:28:28+00:00`
+- published_at: `2026-06-22T00:45:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Pentagon tells US lawmakers it needs $80 billion for Iran war and other bills, WSJ reports - Reuters
+- headline: Trump says US will resume attacks if Iran does not restrain Hezbollah allies - Reuters
 - source: Reuters
-- published_at: `2026-06-19T14:25:44+00:00`
+- published_at: `2026-06-21T13:48:32+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
-### geopolitical_risk_easing / risk_on
+### oil_shock_relief / risk_on
 
-- headline: Israel, Hezbollah agree to ceasefire starting on Friday -U.S. official - Reuters
+- headline: Oil falls after US-Iran talks signal easing supply risks - Reuters
 - source: Reuters
-- published_at: `2026-06-19T13:18:55+00:00`
-- importance_score: `98`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: EXCLUSIVE: Iran's Revolutionary Guards set up covert Iraqi cells to attack Gulf neighbors, sources say - Reuters
-- source: Reuters
-- published_at: `2026-06-19T06:03:00+00:00`
-- importance_score: `100`
+- published_at: `2026-06-21T22:17:00+00:00`
+- importance_score: `90`
 - confidence: `medium`
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: US-Iran peace talks in Switzerland called off, clouding prospects for lasting truce - Reuters
+- headline: Iran's Tasnim news agency says Hormuz will not reopen until Lebanon ceasefire holds, oil waivers issued - Reuters
 - source: Reuters
-- published_at: `2026-06-19T05:55:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Gulf airlines get back to business as flights near pre-war levels - Reuters
-- source: Reuters
-- published_at: `2026-06-19T05:02:00+00:00`
-- importance_score: `100`
+- published_at: `2026-06-21T11:19:43+00:00`
+- importance_score: `93`
 - confidence: `medium`
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: Israel, Hezbollah agree to ceasefire in Lebanon, U.S. official says - Reuters
+- headline: US VP Vance arrives in Switzerland for peace talks with Iran - Reuters
 - source: Reuters
-- published_at: `2026-06-19T06:10:00+00:00`
-- importance_score: `96`
+- published_at: `2026-06-21T04:36:00+00:00`
+- importance_score: `88`
 - confidence: `medium`

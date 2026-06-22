@@ -1,6 +1,6 @@
 # Breadth Data Status
 
-Generated at: 2026-06-19T23:43:12.965436+00:00
+Generated at: 2026-06-22T15:54:48.939170+00:00
 
 Provider available: True
 True breadth available: True
@@ -11,14 +11,14 @@ Stale data: False
 
 ## Market Internal Resonance
 
-- resonance_score: 45.12
+- resonance_score: 44.39
 - resonance_state: surface_only
 - label: index_surface_strength
 - aligned_symbols: none
 - surface_only_symbols: SPY, QQQ
-- sector_score: 54.0
-- equal_weight_vs_cap_weight_20d: 0.022668
-- small_cap_vs_large_cap_20d: 0.048763
+- sector_score: 46.0
+- equal_weight_vs_cap_weight_20d: 0.023031
+- small_cap_vs_large_cap_20d: 0.051664
 
 ## Universe Status
 
@@ -38,7 +38,7 @@ Stale data: False
 - new highs/lows 20d: 32 / 82
 - new highs/lows 52w: 18 / 25
 - improvement / deterioration / confirmation / conflict / quality: 27.53 / 87.93 / 40.78 / 75.83 / 100.0
-- internal_resonance: surface_only / score 31.9 / SPY 指数表面强但内部没充分跟上：confirmation 41，conflict 76，RSP/SPY 2.27%，IWM/SPY 4.88%。
+- internal_resonance: surface_only / score 31.14 / SPY 指数表面强但内部没充分跟上：confirmation 41，conflict 76，RSP/SPY 2.30%，IWM/SPY 5.17%。
 
 ### QQQ
 
@@ -56,7 +56,7 @@ Stale data: False
 - new highs/lows 20d: 5 / 21
 - new highs/lows 52w: 4 / 7
 - improvement / deterioration / confirmation / conflict / quality: 30.81 / 95.46 / 42.55 / 81.55 / 100.0
-- internal_resonance: surface_only / score 28.53 / QQQ 指数表面强但内部没充分跟上：confirmation 43，conflict 82，RSP/SPY 2.27%，IWM/SPY 4.88%。
+- internal_resonance: surface_only / score 27.77 / QQQ 指数表面强但内部没充分跟上：confirmation 43，conflict 82，RSP/SPY 2.30%，IWM/SPY 5.17%。
 
 ### DIA
 
@@ -74,13 +74,13 @@ Stale data: False
 - new highs/lows 20d: 3 / 4
 - new highs/lows 52w: 2 / 1
 - improvement / deterioration / confirmation / conflict / quality: 85.2 / 49.76 / 85.36 / 37.81 / 100.0
-- internal_resonance: mixed / score 65.06 / DIA 内部信号分歧：成分股/行业有部分支持，但等权、小盘或新高新低没有完全确认。
+- internal_resonance: mixed / score 64.3 / DIA 内部信号分歧：成分股/行业有部分支持，但等权、小盘或新高新低没有完全确认。
 
 ### IWM
 
 - status: proxy
 - source: iwm-spy-relative-strength-proxy
-- latest_date: 2026-06-18
+- latest_date: 2026-06-22
 - true_breadth: False
 - proxy: True
 - constituents used / expected: None / None
@@ -91,8 +91,8 @@ Stale data: False
 - advancers / decliners / A-D ratio: None / None / None
 - new highs/lows 20d: None / None
 - new highs/lows 52w: None / None
-- improvement / deterioration / confirmation / conflict / quality: 75.61 / 16.45 / 72.7 / 21.34 / 64
-- internal_resonance: mixed / score 54.98 / IWM 内部信号分歧：成分股/行业有部分支持，但等权、小盘或新高新低没有完全确认。
+- improvement / deterioration / confirmation / conflict / quality: 76.39 / 15.76 / 73.29 / 20.82 / 64
+- internal_resonance: mixed / score 54.37 / IWM 内部信号分歧：成分股/行业有部分支持，但等权、小盘或新高新低没有完全确认。
 
 ## Notes
 

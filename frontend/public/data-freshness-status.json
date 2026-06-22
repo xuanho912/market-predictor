@@ -1,23 +1,31 @@
 {
-  "affected_symbols": [],
-  "can_append_forecast_record": true,
-  "current_date": "2026-06-19",
-  "current_time_us_eastern": "2026-06-19T19:43:33.401019-04:00",
-  "data_freshness_status": "market_closed",
+  "affected_symbols": [
+    "SPY",
+    "QQQ",
+    "IWM",
+    "DIA"
+  ],
+  "can_append_forecast_record": false,
+  "can_backfill_completed_outcomes": true,
+  "current_date": "2026-06-22",
+  "current_time_us_eastern": "2026-06-22T11:55:04.910379-04:00",
+  "data_freshness_status": "market_open_unconfirmed",
   "expected_latest_trading_date": "2026-06-18",
-  "generated_at": "2026-06-19T23:43:33.401019+00:00",
+  "generated_at": "2026-06-22T15:55:04.910379+00:00",
   "guardrails": [
     "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
     "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
+    "Backfilling completed historical outcomes is allowed even when a new forecast append is blocked.",
     "Stale/cache fallback data may be shown only with an explicit warning.",
     "Synthetic data is never allowed to create a live forecast signal."
   ],
   "is_latest_trading_day": true,
-  "is_today_us_market_trading_day": false,
-  "last_successful_core_market_update": "2026-06-18",
-  "last_successful_update": "2026-06-19",
-  "latest_market_date": "2026-06-18",
-  "latest_market_session_status": "completed_or_prior_session",
+  "is_today_us_market_trading_day": true,
+  "last_successful_core_market_update": "2026-06-22",
+  "last_successful_update": "2026-06-22",
+  "latest_confirmed_market_date": "2026-06-18",
+  "latest_market_date": "2026-06-22",
+  "latest_market_session_status": "intraday_unconfirmed",
   "provider_status": {
     "BAA_SPREAD": {
       "fallback_used": false,
@@ -81,7 +89,7 @@
     },
     "DIA": {
       "fallback_used": false,
-      "latest_date": "2026-06-18",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -97,7 +105,7 @@
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
-      "rows": 514,
+      "rows": 513,
       "source": "fred-api",
       "stale_data": false,
       "status": "available",
@@ -117,7 +125,7 @@
     },
     "HYG": {
       "fallback_used": false,
-      "latest_date": "2026-06-18",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -153,7 +161,7 @@
     },
     "IWM": {
       "fallback_used": false,
-      "latest_date": "2026-06-18",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -165,7 +173,7 @@
     },
     "LQD": {
       "fallback_used": false,
-      "latest_date": "2026-06-18",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -177,7 +185,7 @@
     },
     "QQQ": {
       "fallback_used": false,
-      "latest_date": "2026-06-18",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -201,7 +209,7 @@
     },
     "RSP": {
       "fallback_used": false,
-      "latest_date": "2026-06-18",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -213,7 +221,7 @@
     },
     "SPHB": {
       "fallback_used": false,
-      "latest_date": "2026-06-18",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -225,7 +233,7 @@
     },
     "SPLV": {
       "fallback_used": false,
-      "latest_date": "2026-06-18",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -237,7 +245,7 @@
     },
     "SPY": {
       "fallback_used": false,
-      "latest_date": "2026-06-18",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -249,7 +257,7 @@
     },
     "TLT": {
       "fallback_used": false,
-      "latest_date": "2026-06-18",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -261,7 +269,7 @@
     },
     "UUP": {
       "fallback_used": false,
-      "latest_date": "2026-06-18",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -273,7 +281,7 @@
     },
     "XLB": {
       "fallback_used": false,
-      "latest_date": "2026-06-18",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -285,7 +293,7 @@
     },
     "XLC": {
       "fallback_used": false,
-      "latest_date": "2026-06-18",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -297,7 +305,7 @@
     },
     "XLE": {
       "fallback_used": false,
-      "latest_date": "2026-06-18",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -309,7 +317,7 @@
     },
     "XLF": {
       "fallback_used": false,
-      "latest_date": "2026-06-18",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -321,7 +329,7 @@
     },
     "XLI": {
       "fallback_used": false,
-      "latest_date": "2026-06-18",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -333,7 +341,7 @@
     },
     "XLK": {
       "fallback_used": false,
-      "latest_date": "2026-06-18",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -345,7 +353,7 @@
     },
     "XLP": {
       "fallback_used": false,
-      "latest_date": "2026-06-18",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -357,7 +365,7 @@
     },
     "XLRE": {
       "fallback_used": false,
-      "latest_date": "2026-06-18",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -369,7 +377,7 @@
     },
     "XLU": {
       "fallback_used": false,
-      "latest_date": "2026-06-18",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -381,7 +389,7 @@
     },
     "XLV": {
       "fallback_used": false,
-      "latest_date": "2026-06-18",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -393,7 +401,7 @@
     },
     "XLY": {
       "fallback_used": false,
-      "latest_date": "2026-06-18",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -417,67 +425,67 @@
     },
     "^TNX": {
       "fallback_used": false,
-      "latest_date": "2026-06-12",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
       "rows": 520,
       "source": "yahoo-chart",
-      "stale_data": true,
-      "status": "stale",
+      "stale_data": false,
+      "status": "available",
       "symbol": "^TNX"
     },
     "^VIX": {
-      "fallback_used": true,
-      "latest_date": "2026-06-19",
+      "fallback_used": false,
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
       "rows": 520,
-      "source": "local-cache-yahoo-chart",
+      "source": "yahoo-chart",
       "stale_data": false,
       "status": "available",
       "symbol": "^VIX"
     },
     "^VIX3M": {
       "fallback_used": false,
-      "latest_date": "2026-06-12",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
       "rows": 520,
       "source": "yahoo-chart",
-      "stale_data": true,
-      "status": "stale",
+      "stale_data": false,
+      "status": "available",
       "symbol": "^VIX3M"
     },
     "^VIX6M": {
       "fallback_used": false,
-      "latest_date": "2026-06-12",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
       "rows": 520,
       "source": "yahoo-chart",
-      "stale_data": true,
-      "status": "stale",
+      "stale_data": false,
+      "status": "available",
       "symbol": "^VIX6M"
     },
     "^VIX9D": {
       "fallback_used": false,
-      "latest_date": "2026-06-12",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
       "rows": 520,
       "source": "yahoo-chart",
-      "stale_data": true,
-      "status": "stale",
+      "stale_data": false,
+      "status": "available",
       "symbol": "^VIX9D"
     },
     "^VVIX": {
       "fallback_used": false,
-      "latest_date": "2026-06-18",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -501,7 +509,7 @@
     },
     "breadth_IWM": {
       "fallback_used": true,
-      "latest_date": "2026-06-18",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": false,
       "real_data": false,
@@ -765,7 +773,7 @@
     },
     "flow_DIA": {
       "fallback_used": true,
-      "latest_date": "2026-06-18",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": false,
@@ -777,7 +785,7 @@
     },
     "flow_IWM": {
       "fallback_used": true,
-      "latest_date": "2026-06-18",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": false,
@@ -789,7 +797,7 @@
     },
     "flow_QQQ": {
       "fallback_used": true,
-      "latest_date": "2026-06-18",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": false,
@@ -801,7 +809,7 @@
     },
     "flow_SPY": {
       "fallback_used": true,
-      "latest_date": "2026-06-18",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": false,
@@ -813,7 +821,7 @@
     },
     "flow_provider": {
       "fallback_used": true,
-      "latest_date": "2026-06-18",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": false,
@@ -825,7 +833,7 @@
     },
     "macro_event_calendar": {
       "fallback_used": true,
-      "latest_date": "2026-06-19",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": false,
@@ -837,7 +845,7 @@
     },
     "news_event_provider": {
       "fallback_used": false,
-      "latest_date": "2026-06-19",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -860,56 +868,56 @@
       "symbol": "^SKEW"
     },
     "options_VIX": {
-      "fallback_used": true,
-      "latest_date": "2026-06-19",
+      "fallback_used": false,
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
       "rows": 520,
-      "source": "local-cache-yahoo-chart",
+      "source": "yahoo-chart",
       "stale_data": false,
       "status": "available",
       "symbol": "^VIX"
     },
     "options_VIX3M": {
       "fallback_used": false,
-      "latest_date": "2026-06-12",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
       "rows": 520,
       "source": "yahoo-chart",
-      "stale_data": true,
-      "status": "stale",
+      "stale_data": false,
+      "status": "available",
       "symbol": "^VIX3M"
     },
     "options_VIX6M": {
       "fallback_used": false,
-      "latest_date": "2026-06-12",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
       "rows": 520,
       "source": "yahoo-chart",
-      "stale_data": true,
-      "status": "stale",
+      "stale_data": false,
+      "status": "available",
       "symbol": "^VIX6M"
     },
     "options_VIX9D": {
       "fallback_used": false,
-      "latest_date": "2026-06-12",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
       "rows": 520,
       "source": "yahoo-chart",
-      "stale_data": true,
-      "status": "stale",
+      "stale_data": false,
+      "status": "available",
       "symbol": "^VIX9D"
     },
     "options_VVIX": {
       "fallback_used": false,
-      "latest_date": "2026-06-18",
+      "latest_date": "2026-06-22",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -933,6 +941,6 @@
     }
   },
   "stale_days": 0,
-  "version": "data_freshness_gate_v2",
-  "warning_message": "美股当前未形成新的完整交易日，使用最近完成交易日 2026-06-18 的数据。 当前美东时间 2026-06-19 19:43。"
+  "version": "data_freshness_gate_v3",
+  "warning_message": "当前行情日期来自美股盘中快照，尚未形成收盘确认数据。 盘中快照日期为 2026-06-22；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。"
 }

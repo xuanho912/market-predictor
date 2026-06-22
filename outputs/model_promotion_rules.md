@@ -1,6 +1,6 @@
 # Model Promotion Rules
 
-Generated at: `2026-06-19T23:43:33.435195+00:00`
+Generated at: `2026-06-22T15:55:04.993317+00:00`
 
 ## Minimum Forward Sample Gates
 
@@ -58,6 +58,13 @@ Generated at: `2026-06-19T23:43:33.435195+00:00`
 - reason: `Missing macro_event_quality_available; cannot generate this shadow forecast without validated macro event quality data.`
 - wins_vs_baseline: `0`
 - failed_gates: `['macro_event_quality_available']`
+
+### challenger_v2_error_learning
+- status: `insufficient_forward_evidence`
+- eligible: `False`
+- reason: `Forward validation sample gates are not met.`
+- wins_vs_baseline: `0`
+- failed_gates: `['3d', '5d', '10d', '20d', '60d']`
 
 ### challenger_v3_full_options_flow
 - status: `blocked_missing_required_data`

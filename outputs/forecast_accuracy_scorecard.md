@@ -1,10 +1,12 @@
 # Forecast Accuracy Scorecard
 
-Generated at: `2026-06-19T23:43:33.409825+00:00`
+Generated at: `2026-06-22T15:55:04.965891+00:00`
 
 ## Sample Counts
 
 - total_forecasts: `24`
+- raw_forecast_rows: `24`
+- deduped_legacy_rows: `0`
 - pending_forecasts: `24`
 - completed_1d: `20`
 - completed_3d: `12`
@@ -20,12 +22,12 @@ Generated at: `2026-06-19T23:43:33.409825+00:00`
 ### 1d
 - completed_count: `20`
 - sample_gate: `early_evidence`
-- primary_scenario_hit_rate: `0.1`
-- primary_path_mean_absolute_error: `0.014683`
-- primary_path_median_absolute_error: `0.012994`
-- secondary_scenario_hit_rate: `0.1`
-- primary_vs_secondary_accuracy_spread: `0.0`
-- primary_closer_than_secondary_rate: `0.375`
+- primary_scenario_hit_rate: `0.45`
+- primary_path_mean_absolute_error: `0.014045`
+- primary_path_median_absolute_error: `0.01262`
+- secondary_scenario_hit_rate: `0.25`
+- primary_vs_secondary_accuracy_spread: `0.2`
+- primary_closer_than_secondary_rate: `0.5`
 - close_call_primary_closer_rate: `0.6667`
 
 ### 3d

@@ -44,7 +44,7 @@
       "status": "insufficient_forward_samples"
     }
   },
-  "generated_at": "2026-06-19T23:43:33.435139+00:00",
+  "generated_at": "2026-06-22T15:55:04.993255+00:00",
   "guardrails": [
     "Alpha v1 threshold remains frozen at 0.32534311.",
     "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -119,6 +119,73 @@
       "role": "active_baseline",
       "status": "tracking",
       "total_forecasts": 20
+    },
+    {
+      "completed_forecasts": 0,
+      "horizon_metrics": {
+        "10d": {
+          "completed_count": 0,
+          "primary_closer_than_secondary_rate": null,
+          "primary_hit_rate": null,
+          "primary_mean_absolute_error": null,
+          "primary_median_absolute_error": null,
+          "primary_vs_secondary_accuracy_spread": null,
+          "sample_gate": "insufficient_samples",
+          "secondary_hit_rate": null,
+          "secondary_mean_absolute_error": null
+        },
+        "20d": {
+          "completed_count": 0,
+          "primary_closer_than_secondary_rate": null,
+          "primary_hit_rate": null,
+          "primary_mean_absolute_error": null,
+          "primary_median_absolute_error": null,
+          "primary_vs_secondary_accuracy_spread": null,
+          "sample_gate": "insufficient_samples",
+          "secondary_hit_rate": null,
+          "secondary_mean_absolute_error": null
+        },
+        "3d": {
+          "completed_count": 0,
+          "primary_closer_than_secondary_rate": null,
+          "primary_hit_rate": null,
+          "primary_mean_absolute_error": null,
+          "primary_median_absolute_error": null,
+          "primary_vs_secondary_accuracy_spread": null,
+          "sample_gate": "insufficient_samples",
+          "secondary_hit_rate": null,
+          "secondary_mean_absolute_error": null
+        },
+        "5d": {
+          "completed_count": 0,
+          "primary_closer_than_secondary_rate": null,
+          "primary_hit_rate": null,
+          "primary_mean_absolute_error": null,
+          "primary_median_absolute_error": null,
+          "primary_vs_secondary_accuracy_spread": null,
+          "sample_gate": "insufficient_samples",
+          "secondary_hit_rate": null,
+          "secondary_mean_absolute_error": null
+        },
+        "60d": {
+          "completed_count": 0,
+          "primary_closer_than_secondary_rate": null,
+          "primary_hit_rate": null,
+          "primary_mean_absolute_error": null,
+          "primary_median_absolute_error": null,
+          "primary_vs_secondary_accuracy_spread": null,
+          "sample_gate": "insufficient_samples",
+          "secondary_hit_rate": null,
+          "secondary_mean_absolute_error": null
+        }
+      },
+      "model_version": "challenger_v2_error_learning",
+      "pending_forecasts": 4,
+      "promotion_status": "insufficient_forward_evidence",
+      "reason": "Forward samples have not met promotion gates.",
+      "role": "shadow_challenger",
+      "status": "tracking",
+      "total_forecasts": 4
     },
     {
       "completed_forecasts": 0,
@@ -654,6 +721,17 @@
         "macro_event_quality_available"
       ],
       "status": "blocked_missing_required_data"
+    },
+    {
+      "blocked_reason": "",
+      "description": "Shadow-tests lessons learned from completed forecast deviations without rewriting baseline_v1.",
+      "forbidden_without": "at least 20 completed forecast deviation reviews and enough material deviations to avoid one-off hindsight fitting",
+      "missing_required_data": [],
+      "model_version": "challenger_v2_error_learning",
+      "required_data_flags": [
+        "forecast_deviation_evidence_available"
+      ],
+      "status": "ready_for_shadow_implementation"
     },
     {
       "blocked_reason": "Missing put_call_available, gamma_available, true_flow_available, macro_event_quality_available; cannot generate this shadow forecast without all component challengers passing their own shadow validation gates.",
