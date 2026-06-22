@@ -1,14 +1,14 @@
 "use client";
 
 import { useEffect } from "react";
-
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+import { getRuntimeBasePath } from "../lib/runtime-base-path";
 
 export function PwaRegister() {
   useEffect(() => {
     if ("serviceWorker" in navigator) {
+      const basePath = getRuntimeBasePath();
       const swPath = `${basePath}/sw.js`;
-      navigator.serviceWorker.register(swPath, { scope: `${basePath || "/"}` }).catch(() => undefined);
+      navigator.serviceWorker.register(swPath, { scope: basePath ? `${basePath}/` : "/" }).catch(() => undefined);
     }
   }, []);
 

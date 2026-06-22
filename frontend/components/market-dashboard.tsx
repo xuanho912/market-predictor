@@ -12,6 +12,7 @@ import type {
   ScenarioRankingItem,
   SimulatedSymbolPaths,
 } from "../lib/api";
+import { getRuntimeBasePath } from "../lib/runtime-base-path";
 
 const SYMBOL_ORDER = ["SPY", "QQQ", "IWM", "DIA"];
 const PRICE_LEVEL_HORIZON_ORDER = ["1d", "3d", "5d", "10d", "20d", "60d"];
@@ -3076,7 +3077,7 @@ export function MarketDashboard({ dashboard }: { dashboard: PredictionDashboard 
 
   useEffect(() => {
     let active = true;
-    const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+    const basePath = getRuntimeBasePath();
     const loadLatest = async () => {
       try {
         const response = await fetch(`${basePath}/prediction-dashboard.json?ts=${Date.now()}`, { cache: "no-store" });

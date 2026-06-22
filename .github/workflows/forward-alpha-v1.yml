@@ -161,6 +161,9 @@ jobs:
           NEXT_PUBLIC_BASE_PATH: ${{ env.PUBLIC_DASHBOARD_BASE_PATH }}
         run: npm run build
 
+      - name: Fix static dashboard asset paths
+        run: python scripts/fix_static_dashboard_assets.py --site frontend/out
+
       - name: Export sanitized public dashboard bundle
         run: python scripts/export_public_dashboard_bundle.py --source frontend/out --dest outputs/public_dashboard_site
 
