@@ -49,6 +49,7 @@ def build_forecast_deviation_review(
         for driver in item.get("likely_error_drivers") or []:
             driver_counts[str(driver)] += 1
 
+    learning_summary = _model_learning_summary(material, driver_counts)
     summary = {
         "total_forecast_records": len(records),
         "completed_outcomes_reviewed": len(deviations),
@@ -62,14 +63,18 @@ def build_forecast_deviation_review(
         "evidence_level": _evidence_level(len(deviations)),
         "validation_status": "not_yet_validated" if len(deviations) < 20 else "early_evidence",
         "update_blockers": _update_blockers(records, deviations, data_freshness_status or {}),
+        "correction_policy": "past_forecasts_are_not_rewritten_only_actuals_and_error_fields_are_backfilled",
+        "model_learning_status": learning_summary["status"],
     }
     return {
-        "version": "forecast_deviation_review_v1",
+        "version": "forecast_deviation_review_v2",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "validation_type": "forecast_validation",
         "summary": summary,
         "latest_deviations": deviations[:max_items],
         "driver_counts": dict(driver_counts.most_common()),
+        "model_learning_summary": learning_summary,
+        "model_upgrade_plan": _model_upgrade_plan(driver_counts, len(deviations), len(material)),
         "review_questions": [
             "预测方向是否错了，还是方向对但幅度低估/高估？",
             "主路径是否输给了第二路径或风险路径？",
@@ -81,6 +86,7 @@ def build_forecast_deviation_review(
             "Attribution is diagnostic and probabilistic; it is not proof of causality.",
             "Forecast fields are not rewritten. Only completed outcome fields are reviewed.",
             "Alpha v1 threshold remains frozen at 0.32534311.",
+            "Baseline v1 is not changed by this review. Lessons must enter a challenger first.",
         ],
     }
 
@@ -99,6 +105,7 @@ def render_forecast_deviation_review_markdown(payload: dict[str, Any]) -> str:
     ]
     for key, value in summary.items():
         lines.append(f"- {key}: `{value}`")
+
     lines.extend(["", "## Latest Material Deviations", ""])
     material = [item for item in (payload.get("latest_deviations") or []) if item.get("material_deviation")]
     if not material:
@@ -109,16 +116,41 @@ def render_forecast_deviation_review_markdown(payload: dict[str, Any]) -> str:
                 f"### {item.get('symbol')} {item.get('horizon')} from {item.get('forecast_date')}",
                 "",
                 f"- primary_scenario: `{item.get('primary_scenario')}`",
+                f"- secondary_scenario: `{item.get('secondary_scenario')}`",
+                f"- risk_scenario: `{item.get('risk_scenario')}`",
                 f"- expected_return: `{item.get('expected_return')}`",
                 f"- actual_return: `{item.get('actual_return')}`",
                 f"- forecast_error: `{item.get('forecast_error')}`",
                 f"- severity: `{item.get('severity')}`",
                 f"- primary_hit: `{item.get('primary_hit')}`",
+                f"- best_matching_scenario: `{item.get('best_matching_scenario')}`",
                 f"- likely_error_drivers: `{', '.join(item.get('likely_error_drivers') or [])}`",
+                f"- underweighted_factors: `{', '.join(item.get('underweighted_factors') or [])}`",
+                f"- overweighted_factors: `{', '.join(item.get('overweighted_factors') or [])}`",
                 f"- diagnostic_note: {item.get('diagnostic_note')}",
                 "",
             ]
         )
+
+    lines.extend(["", "## Model Learning Summary", ""])
+    learning = payload.get("model_learning_summary") or {}
+    for key, value in learning.items():
+        if key == "lessons":
+            continue
+        lines.append(f"- {key}: `{value}`")
+    lessons = learning.get("lessons") or []
+    if lessons:
+        lines.extend(["", "### Lessons", ""])
+        for item in lessons:
+            lines.append(
+                f"- `{item.get('driver')}` count `{item.get('count')}`: {item.get('lesson')} "
+                f"Action: {item.get('future_model_action')}"
+            )
+
+    lines.extend(["", "## Model Upgrade Plan", ""])
+    for item in payload.get("model_upgrade_plan") or []:
+        lines.append(f"- {item}")
+
     lines.extend(["", "## Guardrails", ""])
     for item in payload.get("guardrails") or []:
         lines.append(f"- {item}")
@@ -199,12 +231,12 @@ def _deviation_item(
         "best_matching_scenario": record.get(f"best_matching_scenario_{key}"),
         "path_error": _float(record.get(f"path_error_{key}")),
         "likely_error_drivers": drivers,
-        "underweighted_factors": _underweighted_factors(record, actual, error, threshold, drivers),
-        "overweighted_factors": _overweighted_factors(record, actual, error, threshold, drivers),
+        "underweighted_factors": _underweighted_factors(record, error, threshold, drivers),
+        "overweighted_factors": _overweighted_factors(record, error, threshold, drivers),
         "supporting_signals_at_forecast": _loads_list(record.get("supporting_signals")),
         "conflicting_signals_at_forecast": _loads_list(record.get("conflicting_signals")),
         "missing_data_at_forecast": _loads_list(record.get("missing_data")),
-        "diagnostic_note": _diagnostic_note(record, actual, expected, drivers, material),
+        "diagnostic_note": _diagnostic_note(record, drivers, material),
         "not_causal_proof": True,
     }
 
@@ -257,15 +289,21 @@ def _likely_error_drivers(
     return list(dict.fromkeys(drivers))
 
 
-def _underweighted_factors(record: dict[str, Any], actual: float, error: float, threshold: float, drivers: list[str]) -> list[str]:
+def _underweighted_factors(record: dict[str, Any], error: float, threshold: float, drivers: list[str]) -> list[str]:
     if abs(error) < threshold:
         return []
     if error > 0:
-        return [item for item in drivers if item.endswith("underweighted") or item in {"news_event_driver_underweighted", "volatility_repair_underweighted", "breadth_follow_through_underweighted", "risk_on_flow_underweighted"}]
+        allowed = {
+            "news_event_driver_underweighted",
+            "volatility_repair_underweighted",
+            "breadth_follow_through_underweighted",
+            "risk_on_flow_underweighted",
+        }
+        return [item for item in drivers if item.endswith("underweighted") or item in allowed]
     return [item for item in drivers if item.endswith("underweighted")]
 
 
-def _overweighted_factors(record: dict[str, Any], actual: float, error: float, threshold: float, drivers: list[str]) -> list[str]:
+def _overweighted_factors(record: dict[str, Any], error: float, threshold: float, drivers: list[str]) -> list[str]:
     if abs(error) < threshold:
         return []
     out: list[str] = []
@@ -276,18 +314,107 @@ def _overweighted_factors(record: dict[str, Any], actual: float, error: float, t
     return out
 
 
-def _diagnostic_note(record: dict[str, Any], actual: float, expected: float, drivers: list[str], material: bool) -> str:
+def _diagnostic_note(record: dict[str, Any], drivers: list[str], material: bool) -> str:
     if not material:
         return "实际结果与预测路径偏差不大，暂不做强归因。"
     if "news_event_driver_underweighted" in drivers:
-        return "实际走势强于预测，复盘优先检查是否低估了新闻/事件催化，例如地缘缓和、油价回落或期货风险偏好改善。"
+        return "实际走势强于预测，复盘优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落或期货风险偏好改善。"
     if "news_event_risk_underweighted" in drivers:
         return "实际走势弱于预测，复盘优先检查是否低估了新闻/事件风险或利空价格确认。"
+    if "risk_off_news_overweighted_or_resolved" in drivers:
+        return "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。"
     if "volatility_repair_underweighted" in drivers:
         return "实际走势强于预测，可能低估了波动率回落和恐慌释放后的修复力度。"
     if "breadth_conflict_underweighted" in drivers:
         return "实际走势弱于预测，可能低估了市场内部参与不足对主路径的拖累。"
     return "出现实质偏差，需要检查当时支持/冲突证据的权重是否合理。"
+
+
+def _model_learning_summary(material: list[dict[str, Any]], driver_counts: Counter[str]) -> dict[str, Any]:
+    lessons = []
+    for driver, count in driver_counts.most_common():
+        lessons.append(
+            {
+                "driver": driver,
+                "count": count,
+                "lesson": _driver_lesson(driver),
+                "future_model_action": _driver_action(driver),
+                "baseline_change_allowed": False,
+            }
+        )
+    if not lessons:
+        lessons.append(
+            {
+                "driver": "not_enough_completed_outcomes",
+                "count": 0,
+                "lesson": "还没有足够到期样本，不能根据主观感觉修改模型。",
+                "future_model_action": "继续回填实际结果；至少 20 个完成样本后再评估权重调整。",
+                "baseline_change_allowed": False,
+            }
+        )
+    status = "lessons_ready_for_shadow_challenger" if len(material) >= 20 else "insufficient_forward_evidence"
+    return {
+        "status": status,
+        "material_deviation_samples": len(material),
+        "minimum_samples_before_weight_change": 20,
+        "recommended_challenger": "challenger_v2_error_learning",
+        "baseline_v1_policy": "frozen_do_not_rewrite",
+        "lessons": lessons,
+    }
+
+
+def _model_upgrade_plan(driver_counts: Counter[str], completed_count: int, material_count: int) -> list[str]:
+    plan = [
+        "不改写旧预测；只允许回填 actual_return、best_matching_scenario、primary_hit、path_error。",
+        "baseline_v1 保持冻结；经验先进入 challenger_v2_error_learning 的 shadow 评估。",
+    ]
+    if completed_count < 20:
+        plan.append("完成样本少于 20，暂不允许基于偏差调整主模型权重。")
+    if material_count == 0:
+        plan.append("当前没有足够实质偏差样本；继续积累前向验证。")
+    if driver_counts.get("news_event_driver_underweighted"):
+        plan.append("在 challenger 中提高“重大新闻 + 价格反应确认”的短周期权重。")
+    if driver_counts.get("risk_off_news_overweighted_or_resolved"):
+        plan.append("在 challenger 中要求 risk-off 新闻必须得到价格确认，否则降低风险路径权重。")
+    if driver_counts.get("volatility_repair_underweighted"):
+        plan.append("在 challenger 中提高 VIX/VVIX/SKEW 修复对 1d/3d/5d 反抽路径的影响。")
+    if driver_counts.get("breadth_conflict_underweighted"):
+        plan.append("在 challenger 中提高 breadth 冲突对失败反抽风险的惩罚。")
+    if driver_counts.get("risk_on_flow_underweighted"):
+        plan.append("在 challenger 中提高 risk-on flow proxy 与成交量确认的共振权重。")
+    return plan
+
+
+def _driver_lesson(driver: str) -> str:
+    lessons = {
+        "model_underestimated_upside_or_repair": "模型低估了修复/反抽强度，需要检查事件催化、波动率修复和价格确认。",
+        "model_underestimated_downside_or_failed_bounce": "模型低估了下跌延续或反抽失败风险，需要检查信用、宽度、波动率和新闻风险。",
+        "news_event_driver_underweighted": "重大新闻如果被价格确认，短周期影响可能大于历史相似样本。",
+        "news_event_risk_underweighted": "风险新闻如果被价格确认，应提高风险路径权重。",
+        "risk_off_news_overweighted_or_resolved": "risk-off 新闻若快速缓和或未被价格确认，不能继续压低主路径。",
+        "volatility_repair_underweighted": "波动率结构修复会放大短线反抽，需要进入 1d/3d/5d 权重。",
+        "breadth_follow_through_underweighted": "宽度改善后的持续承接可能被低估。",
+        "breadth_conflict_underweighted": "指数上涨但内部参与不足时，失败反抽风险可能被低估。",
+        "risk_on_flow_underweighted": "risk-on flow 与成交量确认同向时，短线弹性可能被低估。",
+        "risk_off_flow_underweighted": "risk-off flow 与价格走弱同向时，下跌延续风险可能被低估。",
+        "news_data_gap_limited_attribution": "新闻数据缺口会限制归因质量，需要标记而不是事后编故事。",
+        "stale_data_risk": "数据过期时不应输出今日判断。",
+    }
+    return lessons.get(driver, "该偏差主题需要继续积累样本后再判断是否稳定。")
+
+
+def _driver_action(driver: str) -> str:
+    actions = {
+        "news_event_driver_underweighted": "shadow-test event_reaction_overlay：新闻方向必须与 SPY/QQQ、VIX、HYG/LQD 价格反应一致。",
+        "news_event_risk_underweighted": "shadow-test risk_event_confirmation：risk-off 新闻得到价格确认才提高风险路径。",
+        "risk_off_news_overweighted_or_resolved": "shadow-test news_decay：未被价格确认或快速缓和的 risk-off 新闻权重衰减。",
+        "volatility_repair_underweighted": "shadow-test vol_repair_boost：VIX term 修复提高短周期 bounce 权重。",
+        "breadth_follow_through_underweighted": "shadow-test breadth_follow_through：宽度改善持续两日以上才提高中期修复权重。",
+        "breadth_conflict_underweighted": "shadow-test breadth_conflict_penalty：宽度冲突提高 failed_bounce 风险。",
+        "risk_on_flow_underweighted": "shadow-test flow_confirmation_boost：risk-on flow 与成交量共振提高短线弹性。",
+        "risk_off_flow_underweighted": "shadow-test flow_conflict_penalty：risk-off flow 提高 downside continuation。",
+    }
+    return actions.get(driver, "keep_observing_until_forward_sample_gate")
 
 
 def _news_supports_risk_on(news_event_bundle: dict[str, Any]) -> bool:

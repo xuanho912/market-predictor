@@ -340,12 +340,12 @@ def main() -> int:
         data_freshness_status=data_freshness_status,
     )
     historical_replay_benchmark = build_historical_replay_benchmark(dashboard)
-    model_governance = write_model_challenger_outputs(dashboard=dashboard, public_dir=public_dir, outputs_dir=PROJECT_ROOT / "outputs")
     dashboard["forecast_ledger_summary"] = ledger_summary
     dashboard["forecast_records"] = forecast_records
     dashboard["forecast_accuracy_scorecard"] = forecast_scorecard
     dashboard["forecast_deviation_review"] = forecast_deviation_review
     dashboard["historical_replay_benchmark"] = historical_replay_benchmark
+    model_governance = write_model_challenger_outputs(dashboard=dashboard, public_dir=public_dir, outputs_dir=PROJECT_ROOT / "outputs")
     dashboard["model_leaderboard"] = model_governance["leaderboard"]
     dashboard["model_promotion_status"] = model_governance["promotion_status"]
     dashboard["data_freshness_status"] = data_freshness_status

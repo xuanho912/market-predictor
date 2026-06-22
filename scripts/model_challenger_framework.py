@@ -108,6 +108,12 @@ CHALLENGER_REGISTRY = [
         "forbidden_without": "validated macro event quality data",
     },
     {
+        "model_version": "challenger_v2_error_learning",
+        "description": "Shadow-tests lessons learned from completed forecast deviations without rewriting baseline_v1.",
+        "required_data_flags": ("forecast_deviation_evidence_available",),
+        "forbidden_without": "at least 20 completed forecast deviation reviews and enough material deviations to avoid one-off hindsight fitting",
+    },
+    {
         "model_version": "challenger_v3_full_options_flow",
         "description": "Combines put/call, gamma proxy, true flow, and macro event risk after each component is validated.",
         "required_data_flags": (
@@ -548,12 +554,16 @@ def _data_availability_flags(dashboard: dict[str, Any]) -> dict[str, bool]:
     options = ((dashboard.get("options_status") or {}).get("summary") or {})
     flow = ((dashboard.get("flow_positioning_status") or dashboard.get("flow_status") or {}).get("summary") or {})
     data_quality = ((dashboard.get("data_quality_report") or {}).get("summary") or {})
+    deviation_review = dashboard.get("forecast_deviation_review") or _load_latest_deviation_review()
+    deviation_summary = ((deviation_review or {}).get("summary") or {})
     finnhub_available = bool(data_quality.get("finnhub_available"))
     options_structure_available = bool(
         options.get("options_available")
         and options.get("vix_term_available")
         and (options.get("vvix_available") or options.get("skew_available"))
     )
+    completed_deviation_reviews = int(_float(deviation_summary.get("completed_outcomes_reviewed")) or 0)
+    material_deviation_count = int(_float(deviation_summary.get("material_deviation_count")) or 0)
     return {
         "options_structure_available": options_structure_available,
         "flow_proxy_available": bool(flow.get("flow_available")) and bool(flow.get("flow_proxy_only")),
@@ -561,7 +571,19 @@ def _data_availability_flags(dashboard: dict[str, Any]) -> dict[str, bool]:
         "gamma_available": bool(options.get("gamma_available")),
         "true_flow_available": bool(flow.get("true_flow_available")),
         "macro_event_quality_available": finnhub_available and bool(data_quality.get("macro_event_quality_available")),
+        "forecast_deviation_evidence_available": completed_deviation_reviews >= 20 and material_deviation_count >= 3,
     }
+
+
+def _load_latest_deviation_review() -> dict[str, Any]:
+    path = PROJECT_ROOT / "frontend" / "public" / "forecast-deviation-review.json"
+    if not path.exists():
+        return {}
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+    return payload if isinstance(payload, dict) else {}
 
 
 def _append_ready_shadow_forecasts(
@@ -585,7 +607,7 @@ def _append_ready_shadow_forecasts(
     additions: list[dict[str, Any]] = []
     for registry_item in ready:
         for baseline_row in current_baseline_rows:
-            shadow = _build_shadow_forecast_from_baseline(baseline_row, registry_item)
+            shadow = _build_shadow_forecast_from_baseline(baseline_row, registry_item, dashboard)
             if shadow and shadow["forecast_id"] not in existing_ids:
                 additions.append(shadow)
                 existing_ids.add(shadow["forecast_id"])
@@ -599,7 +621,10 @@ def _append_ready_shadow_forecasts(
 def _build_shadow_forecast_from_baseline(
     baseline_row: dict[str, Any],
     registry_item: dict[str, Any],
+    dashboard: dict[str, Any] | None = None,
 ) -> dict[str, Any] | None:
+    if registry_item.get("model_version") == "challenger_v2_error_learning":
+        return _build_error_learning_shadow_forecast(baseline_row, registry_item, dashboard or {})
     if registry_item.get("model_version") != "challenger_v2_options_flow":
         return None
     forecast_date = str(baseline_row.get("forecast_date") or "")
@@ -636,6 +661,77 @@ def _build_shadow_forecast_from_baseline(
             "blocked_reason": "",
             "supporting_signals": _json_append(baseline_row.get("supporting_signals"), "options_flow_shadow_confirmation"),
             "conflicting_signals": _json_append(baseline_row.get("conflicting_signals"), "options_flow_shadow_conflicts_if_vol_or_flow_reverses"),
+            "status": "pending",
+        }
+    )
+    for horizon in HORIZONS:
+        key = f"{horizon}d"
+        row[f"actual_return_{key}"] = ""
+        row[f"best_matching_scenario_{key}"] = ""
+        row[f"primary_hit_{key}"] = ""
+        row[f"path_error_{key}"] = ""
+    return {field: row.get(field, "") for field in CHALLENGER_FORECAST_FIELDS}
+
+
+def _build_error_learning_shadow_forecast(
+    baseline_row: dict[str, Any],
+    registry_item: dict[str, Any],
+    dashboard: dict[str, Any],
+) -> dict[str, Any] | None:
+    forecast_date = str(baseline_row.get("forecast_date") or "")
+    symbol = str(baseline_row.get("symbol") or "")
+    if not forecast_date or not symbol:
+        return None
+    review = dashboard.get("forecast_deviation_review") or {}
+    driver_counts = review.get("driver_counts") or {}
+    if not isinstance(driver_counts, dict):
+        driver_counts = {}
+    primary_probability = _float(baseline_row.get("primary_probability")) or 0.0
+    secondary_probability = _float(baseline_row.get("secondary_probability")) or 0.0
+    risk_probability = _float(baseline_row.get("risk_scenario_probability")) or 0.0
+    primary_scenario = str(baseline_row.get("primary_scenario") or "")
+    upside_pressure = sum(
+        int(driver_counts.get(key) or 0)
+        for key in (
+            "news_event_driver_underweighted",
+            "risk_off_news_overweighted_or_resolved",
+            "volatility_repair_underweighted",
+            "breadth_follow_through_underweighted",
+            "risk_on_flow_underweighted",
+        )
+    )
+    downside_pressure = sum(
+        int(driver_counts.get(key) or 0)
+        for key in (
+            "news_event_risk_underweighted",
+            "volatility_or_tail_risk_underweighted",
+            "breadth_conflict_underweighted",
+            "risk_off_flow_underweighted",
+            "model_underestimated_downside_or_failed_bounce",
+        )
+    )
+    net = max(-1.0, min(1.0, (upside_pressure - downside_pressure) / max(1, upside_pressure + downside_pressure)))
+    tilt = max(-0.05, min(0.05, net * 0.035))
+    if primary_scenario not in {"bounce_path", "analog_average_path", "expected_path"}:
+        tilt *= -0.5
+    primary_probability = max(0.01, min(0.95, primary_probability + tilt))
+    secondary_probability = max(0.01, min(0.95, secondary_probability - tilt * 0.5))
+    risk_probability = max(0.01, min(0.95, risk_probability - tilt * 0.5))
+    row = {field: baseline_row.get(field, "") for field in CHALLENGER_FORECAST_FIELDS}
+    model_version = registry_item["model_version"]
+    row.update(
+        {
+            "forecast_id": _forecast_id(forecast_date, model_version, symbol),
+            "model_version": model_version,
+            "primary_probability": _fmt_float(primary_probability),
+            "secondary_probability": _fmt_float(secondary_probability),
+            "risk_scenario_probability": _fmt_float(risk_probability),
+            "probability_gap": _fmt_float(primary_probability - secondary_probability),
+            "close_call": str(abs(primary_probability - secondary_probability) < 0.08).lower(),
+            "shadow_status": "pending_forward_validation",
+            "blocked_reason": "",
+            "supporting_signals": _json_append(baseline_row.get("supporting_signals"), "error_learning_shadow_adjustment"),
+            "conflicting_signals": _json_append(baseline_row.get("conflicting_signals"), "error_learning_requires_forward_validation"),
             "status": "pending",
         }
     )
