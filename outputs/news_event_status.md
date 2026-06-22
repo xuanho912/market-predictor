@@ -1,14 +1,14 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-06-22T17:42:40.060531+00:00`
+- generated_at: `2026-06-22T23:54:26.871024+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
-- event_detection_confidence: `69`
+- major_event_count: `7`
+- event_detection_confidence: `68`
 - event_risk_level: `medium`
 - narrative: `geopolitics_easing_risk_on`
 - narrative_direction: `supports_bounce`
-- narrative_strength: `100`
+- narrative_strength: `96`
 - price_reaction_confirmed: `True`
 - confirmation_score: `75`
 
@@ -30,8 +30,16 @@
 - headline: US authorizes Iranian oil sales amid talks on final peace deal - Reuters
 - source: Reuters
 - published_at: `2026-06-22T14:46:30+00:00`
-- importance_score: `99`
+- importance_score: `98`
 - confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Gulf markets mixed as Iran reports progress in peace talks - Reuters
+- source: Reuters
+- published_at: `2026-06-22T13:45:58+00:00`
+- importance_score: `95`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -39,30 +47,14 @@
 - source: Reuters
 - published_at: `2026-06-22T06:06:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_easing / risk_on
 
 - headline: Gold rises as US-Iran peace optimism pulls oil prices lower - Reuters
 - source: Reuters
 - published_at: `2026-06-22T01:35:00+00:00`
-- importance_score: `96`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Vance says US-Iran talks lay 'good foundation' for final peace deal - Reuters
-- source: Reuters
-- published_at: `2026-06-22T00:18:00+00:00`
-- importance_score: `96`
-- confidence: `medium`
-
-### oil_shock_relief / risk_on
-
-- headline: Stocks steady, oil falls as rate worries offset Iran talks optimism - Reuters
-- source: Reuters
-- published_at: `2026-06-22T00:45:00+00:00`
-- importance_score: `90`
+- importance_score: `95`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
@@ -75,24 +67,16 @@
 
 ### oil_shock_relief / risk_on
 
-- headline: Oil falls 4% after US-Iran talks signal easing supply risks - Reuters
+- headline: Stocks steady, oil falls as rate worries offset Iran talks optimism - Reuters
+- source: Reuters
+- published_at: `2026-06-22T00:45:00+00:00`
+- importance_score: `88`
+- confidence: `medium`
+
+### fed_dovish / risk_on
+
+- headline: Oil settles down more 3% after US-Iran talks signal easing supply risks - Reuters
 - source: Reuters
 - published_at: `2026-06-21T22:17:00+00:00`
-- importance_score: `89`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Iran's Tasnim news agency says Hormuz will not reopen until Lebanon ceasefire holds, oil waivers issued - Reuters
-- source: Reuters
-- published_at: `2026-06-21T11:19:43+00:00`
-- importance_score: `93`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: US VP Vance arrives in Switzerland for peace talks with Iran - Reuters
-- source: Reuters
-- published_at: `2026-06-21T04:36:00+00:00`
-- importance_score: `88`
+- importance_score: `81`
 - confidence: `medium`
