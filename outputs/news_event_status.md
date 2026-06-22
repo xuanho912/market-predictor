@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-06-22T17:05:12.493977+00:00`
+- generated_at: `2026-06-22T17:42:40.060531+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `9`
-- event_detection_confidence: `72`
+- event_detection_confidence: `69`
 - event_risk_level: `medium`
 - narrative: `geopolitics_easing_risk_on`
 - narrative_direction: `supports_bounce`
@@ -43,11 +43,11 @@
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: Gold bounces back on encouraging US-Iran peace talks - Reuters
+- headline: Gold rises as US-Iran peace optimism pulls oil prices lower - Reuters
 - source: Reuters
 - published_at: `2026-06-22T01:35:00+00:00`
-- importance_score: `100`
-- confidence: `high`
+- importance_score: `96`
+- confidence: `medium`
 
 ### geopolitical_risk_easing / risk_on
 
@@ -78,7 +78,7 @@
 - headline: Oil falls 4% after US-Iran talks signal easing supply risks - Reuters
 - source: Reuters
 - published_at: `2026-06-21T22:17:00+00:00`
-- importance_score: `90`
+- importance_score: `89`
 - confidence: `medium`
 
 ### geopolitical_risk_easing / risk_on
