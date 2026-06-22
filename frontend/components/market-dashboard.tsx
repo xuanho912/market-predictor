@@ -604,6 +604,8 @@ function DataFreshnessBanner({ dashboard }: { dashboard: PredictionDashboard }) 
 
 function ForecastSummary({ dashboard, selected }: { dashboard: PredictionDashboard; selected: SimulatedSymbolPaths | undefined }) {
   const validation = getValidationStandards(dashboard);
+  const trustGate = asRecord(dashboard.forecast_trust_gate);
+  const trustBlockers = Array.isArray(trustGate.blockers) ? trustGate.blockers.map((item) => asRecord(item)).slice(0, 3) : [];
   const strongest = dashboard.overview?.strongest_symbol ?? selected?.symbol ?? "SPY";
   const edgeStatus = getEdgeStatus(selected);
   const confidence = getConfidenceScore(selected);
@@ -645,6 +647,21 @@ function ForecastSummary({ dashboard, selected }: { dashboard: PredictionDashboa
         <p className="mt-4 text-sm leading-6 text-slate-400">
           前向样本不足时，页面必须保持 not yet validated。当前系统用于预测验证，不用于下单或仓位决策。
         </p>
+        <div className="mt-4 rounded-lg border border-amber-400/20 bg-amber-400/[0.07] p-3 text-sm leading-6 text-amber-100">
+          <div className="mb-2 flex flex-wrap items-center gap-2">
+            <span className="text-xs uppercase tracking-[0.18em] text-amber-200/80">Forecast Trust Gate</span>
+            <StatusBadge status={String(trustGate.status ?? "not_yet_validated")} label={String(trustGate.status ?? "not_yet_validated")} />
+            <span className="text-slate-300">信任分：{formatScore(asNumber(trustGate.trust_score))}</span>
+          </div>
+          <p>{String(trustGate.use_boundary ?? "当前预测仍处于验证期，不能当作可靠结论。")}</p>
+          {trustBlockers.length ? (
+            <ul className="mt-2 list-disc space-y-1 pl-5 text-amber-50/90">
+              {trustBlockers.map((item, index) => (
+                <li key={`${String(item.code ?? "blocker")}-${index}`}>{String(item.message ?? item.code ?? "阻塞原因缺失")}</li>
+              ))}
+            </ul>
+          ) : null}
+        </div>
       </div>
     </section>
   );

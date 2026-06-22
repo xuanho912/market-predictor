@@ -416,6 +416,19 @@ This log is the audit trail for proving whether the engine is learning or only p
 
 Start every prediction task by defining labels and horizons. Then decide which point-in-time features are allowed at each forecast timestamp. See `docs/labels.md`, `docs/data_dictionary.md`, and `.agents/skills/market-prediction-research/SKILL.md`.
 
+## Forecast Reliability Qualification
+
+The dashboard is not considered dependable just because it produces paths and probabilities. It must pass freshness, forward-sample, primary-vs-secondary, high-confidence, deviation-learning, and model-promotion gates first.
+
+See `docs/forecast_reliability_qualification.md`.
+
+Current status can be checked in:
+
+- `frontend/public/forecast-trust-gate.json`
+- `outputs/forecast_trust_gate.md`
+
+If the gate is `BLOCKED_STALE_DATA` or `RESEARCH_ONLY_*`, the dashboard is a research radar, not a validated forecasting tool.
+
 ## Push To GitHub
 
 If the environment cannot create a remote GitHub repository directly, initialize and push manually:

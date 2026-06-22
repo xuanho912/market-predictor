@@ -41,6 +41,10 @@ from scripts.forecast_deviation_review import (
     build_forecast_deviation_review,
     render_forecast_deviation_review_markdown,
 )
+from scripts.forecast_trust_gate import (
+    build_forecast_trust_gate,
+    render_forecast_trust_gate_markdown,
+)
 from scripts.data_freshness_gate import (
     build_data_freshness_status,
     write_data_freshness_outputs,
@@ -325,13 +329,18 @@ def main() -> int:
         data_freshness_status=data_freshness_status,
     )
     can_append_forecast = _can_append_forecast_record(data_freshness_status)
-    ledger_summary = (
-        _event_refresh_ledger_summary()
-        if event_refresh
-        else update_forecast_accuracy_ledger(dashboard=dashboard, price_history=price_history)
-        if can_append_forecast
-        else _freshness_blocked_ledger_summary(data_freshness_status)
+    ledger_summary = update_forecast_accuracy_ledger(
+        dashboard=dashboard,
+        price_history=price_history,
+        append_current_forecast=not event_refresh and can_append_forecast,
+        max_confirmed_market_date=data_freshness_status.get("latest_confirmed_market_date"),
     )
+    if event_refresh:
+        ledger_summary.update(_event_refresh_ledger_summary())
+    elif not can_append_forecast:
+        blocked_summary = _freshness_blocked_ledger_summary(data_freshness_status)
+        ledger_summary.update(blocked_summary)
+        ledger_summary["backfill_attempted"] = True
     forecast_records = export_forecast_records_json()
     forecast_scorecard = build_forecast_accuracy_scorecard()
     forecast_deviation_review = build_forecast_deviation_review(
@@ -340,10 +349,17 @@ def main() -> int:
         data_freshness_status=data_freshness_status,
     )
     historical_replay_benchmark = build_historical_replay_benchmark(dashboard)
+    forecast_trust_gate = build_forecast_trust_gate(
+        dashboard=dashboard,
+        data_freshness_status=data_freshness_status,
+        forecast_scorecard=forecast_scorecard,
+        forecast_deviation_review=forecast_deviation_review,
+    )
     dashboard["forecast_ledger_summary"] = ledger_summary
     dashboard["forecast_records"] = forecast_records
     dashboard["forecast_accuracy_scorecard"] = forecast_scorecard
     dashboard["forecast_deviation_review"] = forecast_deviation_review
+    dashboard["forecast_trust_gate"] = forecast_trust_gate
     dashboard["historical_replay_benchmark"] = historical_replay_benchmark
     model_governance = write_model_challenger_outputs(dashboard=dashboard, public_dir=public_dir, outputs_dir=PROJECT_ROOT / "outputs")
     dashboard["model_leaderboard"] = model_governance["leaderboard"]
@@ -398,6 +414,7 @@ def main() -> int:
     _write_json(public_dir / "forecast-records.json", forecast_records)
     _write_json(public_dir / "forecast-accuracy-scorecard.json", forecast_scorecard)
     _write_json(public_dir / "forecast-deviation-review.json", forecast_deviation_review)
+    _write_json(public_dir / "forecast-trust-gate.json", forecast_trust_gate)
     _write_json(public_dir / "historical-replay-benchmark.json", historical_replay_benchmark)
     _write_json(public_dir / "model-leaderboard.json", model_governance["leaderboard"])
     _write_json(public_dir / "model-promotion-status.json", model_governance["promotion_status"])
@@ -423,6 +440,7 @@ def main() -> int:
     _write_market_alerts_report(PROJECT_ROOT / "outputs" / "market_alerts.md", market_alerts)
     _write_forecast_accuracy_scorecard_report(PROJECT_ROOT / "outputs" / "forecast_accuracy_scorecard.md", forecast_scorecard)
     _write_forecast_deviation_review_report(PROJECT_ROOT / "outputs" / "forecast_deviation_review.md", forecast_deviation_review)
+    _write_forecast_trust_gate_report(PROJECT_ROOT / "outputs" / "forecast_trust_gate.md", forecast_trust_gate)
     _write_historical_replay_benchmark_report(PROJECT_ROOT / "outputs" / "historical_replay_benchmark.md", historical_replay_benchmark)
     _write_stock_prediction_report(PROJECT_ROOT / "outputs" / "stock_prediction_report.md", stock_prediction_dashboard)
     _write_top_stock_candidates_report(PROJECT_ROOT / "outputs" / "top_stock_candidates_report.md", top_stock_candidates)
@@ -447,6 +465,7 @@ def main() -> int:
     print("wrote frontend/public/forecast-records.json")
     print("wrote frontend/public/forecast-accuracy-scorecard.json")
     print("wrote frontend/public/forecast-deviation-review.json")
+    print("wrote frontend/public/forecast-trust-gate.json")
     print("wrote frontend/public/historical-replay-benchmark.json")
     print("wrote frontend/public/model-leaderboard.json")
     print("wrote frontend/public/model-promotion-status.json")
@@ -473,6 +492,7 @@ def main() -> int:
     print("wrote outputs/market_alerts.md")
     print("wrote outputs/forecast_accuracy_scorecard.md")
     print("wrote outputs/forecast_deviation_review.md")
+    print("wrote outputs/forecast_trust_gate.md")
     print("wrote outputs/historical_replay_benchmark.md")
     print("wrote outputs/stock_prediction_report.md")
     print("wrote outputs/top_stock_candidates_report.md")
@@ -1493,6 +1513,11 @@ def _write_forecast_deviation_review_report(path: Path, payload: dict[str, Any])
     path.write_text(render_forecast_deviation_review_markdown(payload), encoding="utf-8")
 
 
+def _write_forecast_trust_gate_report(path: Path, payload: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(render_forecast_trust_gate_markdown(payload), encoding="utf-8")
+
+
 def _write_historical_replay_benchmark_report(path: Path, report: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(render_historical_replay_benchmark_markdown(report), encoding="utf-8")
@@ -1921,6 +1946,15 @@ def _attach_data_freshness(
     dashboard["data_freshness_status"] = data_freshness_status
     market_overview["data_freshness_status"] = data_freshness_status
     simulated_paths["data_freshness_status"] = data_freshness_status
+    data_quality = dashboard.get("data_quality_report") or {}
+    if isinstance(data_quality, dict):
+        summary = data_quality.setdefault("summary", {})
+        summary["data_freshness_status"] = freshness_status
+        summary["latest_market_date"] = data_freshness_status.get("latest_market_date")
+        summary["latest_confirmed_market_date"] = data_freshness_status.get("latest_confirmed_market_date")
+        summary["expected_latest_trading_date"] = data_freshness_status.get("expected_latest_trading_date")
+        summary["can_append_forecast_record"] = data_freshness_status.get("can_append_forecast_record")
+        summary["freshness_warning_message"] = warning
 
     if latest_market_date:
         dashboard["as_of"] = latest_market_date

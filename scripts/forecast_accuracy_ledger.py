@@ -4,9 +4,11 @@ import csv
 import hashlib
 import json
 import math
-from datetime import datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
+
+from scripts.data_freshness_gate import is_us_market_trading_day
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -69,6 +71,8 @@ def update_forecast_accuracy_ledger(
     dashboard: dict[str, Any],
     price_history: dict[str, list[dict[str, Any]]],
     records_path: Path | None = None,
+    append_current_forecast: bool = True,
+    max_confirmed_market_date: str | date | None = None,
 ) -> dict[str, Any]:
     records_path = records_path or PROJECT_ROOT / "outputs" / "forecast_records.csv"
     records_path.parent.mkdir(parents=True, exist_ok=True)
@@ -77,24 +81,26 @@ def update_forecast_accuracy_ledger(
     by_id = {row.get("forecast_id"): row for row in existing if row.get("forecast_id")}
     new_rows: list[dict[str, Any]] = []
 
-    for symbol in SYMBOLS:
-        record = _build_forecast_record(dashboard, symbol)
-        if not record:
-            continue
-        forecast_id = record["forecast_id"]
-        if forecast_id in by_id:
-            preserved = {field: by_id[forecast_id].get(field, "") for field in CSV_FIELDS}
-            new_rows.append(preserved)
-        else:
-            new_rows.append(record)
+    if append_current_forecast:
+        for symbol in SYMBOLS:
+            record = _build_forecast_record(dashboard, symbol)
+            if not record:
+                continue
+            forecast_id = record["forecast_id"]
+            if forecast_id in by_id:
+                preserved = {field: by_id[forecast_id].get(field, "") for field in CSV_FIELDS}
+                new_rows.append(preserved)
+            else:
+                new_rows.append(record)
 
     merged_by_id = {row.get("forecast_id"): {field: row.get(field, "") for field in CSV_FIELDS} for row in existing if row.get("forecast_id")}
     for row in new_rows:
         merged_by_id.setdefault(row["forecast_id"], row)
 
     merged_rows = list(merged_by_id.values())
+    max_confirmed_date = _parse_date(max_confirmed_market_date)
     for row in merged_rows:
-        _backfill_outcomes(row, price_history)
+        _backfill_outcomes(row, price_history, max_confirmed_market_date=max_confirmed_date)
 
     merged_rows.sort(key=lambda row: (str(row.get("forecast_date") or ""), str(row.get("symbol") or "")))
     _write_records(records_path, merged_rows)
@@ -102,8 +108,12 @@ def update_forecast_accuracy_ledger(
         "version": "forecast_accuracy_ledger_v1",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "active_model_version": BASELINE_MODEL_VERSION,
+        "append_current_forecast": append_current_forecast,
+        "backfill_only": not append_current_forecast,
+        "max_confirmed_market_date": _date_str(max_confirmed_date),
         "records_path": str(records_path),
         "total_records": len(merged_rows),
+        "unique_validation_records": len(_dedupe_validation_rows(merged_rows)),
         "new_records_considered": len(new_rows),
         "pending_records": sum(1 for row in merged_rows if row.get("status") != "completed"),
         "completed_by_horizon": {
@@ -118,18 +128,20 @@ def update_forecast_accuracy_ledger(
 def export_forecast_records_json(records_path: Path | None = None, *, limit: int = 1000) -> dict[str, Any]:
     records_path = records_path or PROJECT_ROOT / "outputs" / "forecast_records.csv"
     rows = _read_records(records_path)
+    validation_rows = _dedupe_validation_rows(rows)
     parsed = [_parse_public_row(row) for row in rows[-limit:]]
     return {
         "version": "forecast_records_public_v1",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "summary": {
             "total_records": len(rows),
+            "unique_validation_records": len(validation_rows),
             "exported_records": len(parsed),
             "pending_records": sum(1 for row in rows if row.get("status") != "completed"),
             "model_versions": sorted({str(row.get("model_version") or "unknown") for row in rows}),
             "active_model_version": BASELINE_MODEL_VERSION,
             "completed_by_horizon": {
-                f"{horizon}d": sum(1 for row in rows if _float(row.get(f"actual_return_{horizon}d")) is not None)
+                f"{horizon}d": sum(1 for row in validation_rows if _float(row.get(f"actual_return_{horizon}d")) is not None)
                 for horizon in HORIZONS
             },
         },
@@ -139,7 +151,8 @@ def export_forecast_records_json(records_path: Path | None = None, *, limit: int
 
 def build_forecast_accuracy_scorecard(records_path: Path | None = None) -> dict[str, Any]:
     records_path = records_path or PROJECT_ROOT / "outputs" / "forecast_records.csv"
-    rows = _read_records(records_path)
+    raw_rows = _read_records(records_path)
+    rows = _dedupe_validation_rows(raw_rows)
     by_horizon = {f"{horizon}d": _horizon_scorecard(rows, horizon) for horizon in HORIZONS}
     completed_counts = [by_horizon[f"{horizon}d"]["completed_count"] for horizon in HORIZONS]
     strongest_completed_count = max(completed_counts) if completed_counts else 0
@@ -149,6 +162,8 @@ def build_forecast_accuracy_scorecard(records_path: Path | None = None) -> dict[
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "sample_counts": {
             "total_forecasts": len(rows),
+            "raw_forecast_rows": len(raw_rows),
+            "deduped_legacy_rows": max(0, len(raw_rows) - len(rows)),
             "pending_forecasts": sum(1 for row in rows if row.get("status") != "completed"),
             **{f"completed_{horizon}d": by_horizon[f"{horizon}d"]["completed_count"] for horizon in HORIZONS},
         },
@@ -311,7 +326,12 @@ def _build_forecast_record(dashboard: dict[str, Any], symbol: str) -> dict[str, 
     return {field: row.get(field, "") for field in CSV_FIELDS}
 
 
-def _backfill_outcomes(row: dict[str, Any], price_history: dict[str, list[dict[str, Any]]]) -> None:
+def _backfill_outcomes(
+    row: dict[str, Any],
+    price_history: dict[str, list[dict[str, Any]]],
+    *,
+    max_confirmed_market_date: date | None = None,
+) -> None:
     symbol = row.get("symbol")
     forecast_date = str(row.get("forecast_date") or "")[:10]
     rows = price_history.get(str(symbol), [])
@@ -320,24 +340,34 @@ def _backfill_outcomes(row: dict[str, Any], price_history: dict[str, list[dict[s
         row["status"] = row.get("status") or "pending"
         return
     start_index = by_date[forecast_date]
+    start_date = _parse_date(forecast_date)
     start_price = _float(rows[start_index].get("close"))
-    if start_price is None or start_price == 0:
+    if start_date is None or start_price is None or start_price == 0:
         return
     scenario_returns = _loads_dict(row.get("scenario_expected_return_by_horizon"))
     completed = 0
     for horizon in HORIZONS:
         key = f"{horizon}d"
-        if start_index + horizon >= len(rows):
+        expected_end_date = _add_us_trading_days(start_date, horizon)
+        target_index = by_date.get(expected_end_date.isoformat())
+        if target_index is None:
+            _clear_outcome(row, key)
             continue
-        end_price = _float(rows[start_index + horizon].get("close"))
+        end_date = _parse_date(rows[target_index].get("date"))
+        if max_confirmed_market_date and end_date and end_date > max_confirmed_market_date:
+            _clear_outcome(row, key)
+            continue
+        end_price = _float(rows[target_index].get("close"))
         if end_price is None:
+            _clear_outcome(row, key)
             continue
         actual = end_price / start_price - 1.0
         row[f"actual_return_{key}"] = _fmt_float(actual)
-        best = _best_matching_scenario(actual, scenario_returns.get(key) or {})
+        comparable_returns = _scenario_returns_for_horizon(scenario_returns, horizon)
+        best = _best_matching_scenario(actual, comparable_returns)
         row[f"best_matching_scenario_{key}"] = best or ""
         row[f"primary_hit_{key}"] = str(best == row.get("primary_scenario")).lower() if best else ""
-        primary_expected = _float((scenario_returns.get(key) or {}).get(row.get("primary_scenario")))
+        primary_expected = _float(comparable_returns.get(row.get("primary_scenario")))
         row[f"path_error_{key}"] = _fmt_float(abs(actual - primary_expected)) if primary_expected is not None else ""
         completed += 1
     row["status"] = "completed" if completed == len(HORIZONS) else "partially_completed" if completed else "pending"
@@ -351,7 +381,8 @@ def _horizon_scorecard(rows: list[dict[str, Any]], horizon: int) -> dict[str, An
     primary_hits = secondary_hits = primary_closer = close_total = close_primary_closer = 0
     for row in completed:
         actual = _float(row.get(f"actual_return_{key}"))
-        scenario_returns = _loads_dict(row.get("scenario_expected_return_by_horizon")).get(key) or {}
+        scenario_returns_all = _loads_dict(row.get("scenario_expected_return_by_horizon"))
+        scenario_returns = _scenario_returns_for_horizon(scenario_returns_all, horizon)
         primary_expected = _float(scenario_returns.get(row.get("primary_scenario")))
         secondary_expected = _float(scenario_returns.get(row.get("secondary_scenario")))
         if actual is None:
@@ -434,6 +465,25 @@ def _read_records(path: Path) -> list[dict[str, Any]]:
         return [{field: row.get(field, "") for field in CSV_FIELDS} for row in csv.DictReader(handle)]
 
 
+def _dedupe_validation_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Keep immutable CSV rows, but avoid double-counting legacy duplicate forecasts in validation."""
+    grouped: dict[tuple[str, str, str], dict[str, Any]] = {}
+    for row in rows:
+        key = (
+            str(row.get("forecast_date") or ""),
+            str(row.get("model_version") or ""),
+            str(row.get("symbol") or ""),
+        )
+        current = grouped.get(key)
+        if current is None or _completed_field_count(row) > _completed_field_count(current):
+            grouped[key] = row
+    return [grouped[key] for key in sorted(grouped)]
+
+
+def _completed_field_count(row: dict[str, Any]) -> int:
+    return sum(1 for horizon in HORIZONS if _float(row.get(f"actual_return_{horizon}d")) is not None)
+
+
 def _write_records(path: Path, rows: list[dict[str, Any]]) -> None:
     with path.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=CSV_FIELDS, lineterminator="\n")
@@ -494,6 +544,50 @@ def _best_matching_scenario(actual: float, scenario_returns: dict[str, Any]) -> 
         if parsed is not None:
             distances.append((abs(actual - parsed), scenario))
     return min(distances)[1] if distances else None
+
+
+def _scenario_returns_for_horizon(scenario_returns: dict[str, Any], horizon: int) -> dict[str, Any]:
+    key = f"{horizon}d"
+    direct = scenario_returns.get(key)
+    if isinstance(direct, dict) and direct:
+        return direct
+
+    available: list[tuple[int, dict[str, Any]]] = []
+    for raw_key, value in scenario_returns.items():
+        if not isinstance(value, dict):
+            continue
+        try:
+            days = int(str(raw_key).replace("d", ""))
+        except ValueError:
+            continue
+        if days > 0:
+            available.append((days, value))
+    if not available:
+        return {}
+
+    nearest_days, nearest_values = min(available, key=lambda item: abs(item[0] - horizon))
+    scale = horizon / nearest_days
+    return {
+        scenario: (_float(value) * scale if _float(value) is not None else None)
+        for scenario, value in nearest_values.items()
+    }
+
+
+def _clear_outcome(row: dict[str, Any], key: str) -> None:
+    row[f"actual_return_{key}"] = ""
+    row[f"best_matching_scenario_{key}"] = ""
+    row[f"primary_hit_{key}"] = ""
+    row[f"path_error_{key}"] = ""
+
+
+def _add_us_trading_days(start: date, count: int) -> date:
+    cursor = start
+    added = 0
+    while added < count:
+        cursor += timedelta(days=1)
+        if is_us_market_trading_day(cursor):
+            added += 1
+    return cursor
 
 
 def _top_fraction(rows: list[dict[str, Any]], key: str, fraction: float) -> list[dict[str, Any]]:
@@ -561,6 +655,28 @@ def _float(value: Any) -> float | None:
     except (TypeError, ValueError):
         return None
     return parsed if math.isfinite(parsed) else None
+
+
+def _parse_date(value: Any) -> date | None:
+    if value is None or value == "":
+        return None
+    if isinstance(value, date) and not isinstance(value, datetime):
+        return value
+    if isinstance(value, datetime):
+        return value.date()
+    text = str(value).strip()
+    try:
+        return datetime.fromisoformat(text.replace("Z", "+00:00")).date()
+    except ValueError:
+        pass
+    try:
+        return datetime.strptime(text[:10], "%Y-%m-%d").date()
+    except ValueError:
+        return None
+
+
+def _date_str(value: date | None) -> str | None:
+    return value.isoformat() if value else None
 
 
 def _mean(values: list[float]) -> float | None:

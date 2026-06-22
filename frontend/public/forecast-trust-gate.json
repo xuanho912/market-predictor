@@ -1,0 +1,178 @@
+{
+  "version": "forecast_trust_gate_v1",
+  "generated_at": "2026-06-22T15:21:15.994798+00:00",
+  "validation_type": "forecast_reliability_gate",
+  "status": "BLOCKED_STALE_DATA",
+  "trust_score": 0,
+  "would_rely_for_real_money": false,
+  "use_boundary": "Do not use the displayed forecast as today's forecast until data freshness is restored.",
+  "data_freshness_status": "stale",
+  "latest_market_date": "2026-06-16",
+  "expected_latest_trading_date": "2026-06-18",
+  "data_completeness_score": 67.0,
+  "forward_completed_samples": {
+    "1d": 9,
+    "3d": 0,
+    "5d": 0,
+    "10d": 0,
+    "20d": 0,
+    "60d": 0
+  },
+  "passes": [],
+  "blockers": [
+    {
+      "code": "stale_or_failed_data",
+      "severity": "critical",
+      "message": "数据已过期，当前预测不可作为今日判断。 核心行情最新日期为 2026-06-16，按美股交易日应至少更新到 2026-06-18。"
+    },
+    {
+      "code": "data_completeness_below_gate",
+      "severity": "high",
+      "message": "Data completeness is 67.0, below the 85/100 reliance gate."
+    },
+    {
+      "code": "insufficient_forward_samples",
+      "severity": "critical",
+      "message": "Forward validation samples are not enough to rely on the model as a high-confidence forecasting system.",
+      "completed_by_horizon": {
+        "1d": 9,
+        "3d": 0,
+        "5d": 0,
+        "10d": 0,
+        "20d": 0,
+        "60d": 0
+      }
+    },
+    {
+      "code": "primary_path_not_validated",
+      "severity": "high",
+      "message": "Primary-vs-secondary path advantage is not yet proven on enough forward samples.",
+      "details": {
+        "passed": false,
+        "checked_horizons": 0,
+        "passed_horizons": 0,
+        "details": {
+          "1d": {
+            "completed_count": 9,
+            "primary_closer_rate": 0.8889,
+            "primary_vs_secondary_spread": 0.7778
+          },
+          "3d": {
+            "completed_count": 0,
+            "primary_closer_rate": null,
+            "primary_vs_secondary_spread": null
+          },
+          "5d": {
+            "completed_count": 0,
+            "primary_closer_rate": null,
+            "primary_vs_secondary_spread": null
+          },
+          "10d": {
+            "completed_count": 0,
+            "primary_closer_rate": null,
+            "primary_vs_secondary_spread": null
+          },
+          "20d": {
+            "completed_count": 0,
+            "primary_closer_rate": null,
+            "primary_vs_secondary_spread": null
+          }
+        },
+        "message": "Primary-vs-secondary path advantage is not yet proven on enough forward samples."
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "code": "high_confidence_not_validated",
+      "severity": "medium",
+      "message": "High-confidence forecasts have not proven they are more accurate than ordinary forecasts.",
+      "details": {
+        "passed": false,
+        "core_question": "insufficient_samples_for_high_confidence_validation",
+        "message": "High-confidence forecasts have not proven they are more accurate than ordinary forecasts."
+      }
+    },
+    {
+      "code": "deviation_learning_needed",
+      "severity": "medium",
+      "message": "Deviation sample is still too small to know whether errors are under control.",
+      "details": {
+        "passed": false,
+        "reviewed": 9,
+        "material": 2,
+        "material_rate": null,
+        "message": "Deviation sample is still too small to know whether errors are under control."
+      }
+    }
+  ],
+  "symbol_readiness": {
+    "SPY": {
+      "readiness": "blocked_by_global_gate",
+      "reason": "Global trust gate is not ready.",
+      "edge_status": "MODERATE_EDGE",
+      "confidence_score": 68.0,
+      "confluence_score": 53.0,
+      "primary_scenario": "bounce_path",
+      "primary_probability": 0.391,
+      "secondary_scenario": "analog_average_path",
+      "secondary_probability": 0.2404,
+      "probability_gap": 0.1506
+    },
+    "QQQ": {
+      "readiness": "blocked_by_global_gate",
+      "reason": "Global trust gate is not ready.",
+      "edge_status": "MODERATE_EDGE",
+      "confidence_score": 68.0,
+      "confluence_score": 52.0,
+      "primary_scenario": "bounce_path",
+      "primary_probability": 0.3541,
+      "secondary_scenario": "bearish_path",
+      "secondary_probability": 0.2413,
+      "probability_gap": 0.1128
+    },
+    "IWM": {
+      "readiness": "blocked_by_global_gate",
+      "reason": "Global trust gate is not ready.",
+      "edge_status": "MODERATE_EDGE",
+      "confidence_score": 67.0,
+      "confluence_score": 51.0,
+      "primary_scenario": "bounce_path",
+      "primary_probability": 0.3481,
+      "secondary_scenario": "analog_average_path",
+      "secondary_probability": 0.2419,
+      "probability_gap": 0.1062
+    },
+    "DIA": {
+      "readiness": "blocked_by_global_gate",
+      "reason": "Global trust gate is not ready.",
+      "edge_status": "MODERATE_EDGE",
+      "confidence_score": 68.0,
+      "confluence_score": 54.0,
+      "primary_scenario": "bounce_path",
+      "primary_probability": 0.3927,
+      "secondary_scenario": "bearish_path",
+      "secondary_probability": 0.2316,
+      "probability_gap": 0.1611
+    }
+  },
+  "minimum_reliance_rules": [
+    "Fresh or market-closed current data is mandatory.",
+    "At least 20 completed 1d, 20 completed 3d, 20 completed 5d, 30 completed 10d and 50 completed 20d forecasts are required before treating the terminal as dependable.",
+    "Primary scenario must beat secondary scenario on completed samples, not just look plausible.",
+    "High-confidence forecasts must outperform ordinary forecasts before confidence can be trusted.",
+    "Material deviation themes must be reviewed and routed into a challenger, not silently baked into baseline_v1."
+  ],
+  "next_actions": [
+    "Restore latest market data and rerun GitHub Actions before reading the dashboard as today's forecast.",
+    "Keep accumulating immutable forward forecasts until minimum sample gates are met.",
+    "Do not promote any model until primary-vs-secondary path accuracy is proven by forward samples.",
+    "Keep confidence capped until high-confidence buckets outperform ordinary samples.",
+    "Route repeated deviation themes into a challenger model rather than editing baseline_v1."
+  ],
+  "guardrails": [
+    "This gate does not modify Alpha v1 threshold, baseline_v1 or historical forecast records.",
+    "This is forecast reliability assessment, not trading advice.",
+    "A blocked gate means the dashboard can still be used for research, but not as a dependable forecast tool."
+  ]
+}

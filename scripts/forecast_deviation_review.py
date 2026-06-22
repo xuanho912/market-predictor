@@ -21,7 +21,8 @@ def build_forecast_deviation_review(
     max_items: int = 60,
 ) -> dict[str, Any]:
     records_path = records_path or PROJECT_ROOT / "outputs" / "forecast_records.csv"
-    records = _read_records(records_path)
+    raw_records = _read_records(records_path)
+    records = _dedupe_records_for_validation(raw_records)
     deviations: list[dict[str, Any]] = []
     for record in records:
         for horizon in HORIZONS:
@@ -52,6 +53,8 @@ def build_forecast_deviation_review(
     learning_summary = _model_learning_summary(material, driver_counts)
     summary = {
         "total_forecast_records": len(records),
+        "raw_forecast_rows": len(raw_records),
+        "deduped_legacy_rows": max(0, len(raw_records) - len(records)),
         "completed_outcomes_reviewed": len(deviations),
         "material_deviation_count": len(material),
         "latest_forecast_date": max((str(item.get("forecast_date") or "") for item in records), default=None),
@@ -190,10 +193,11 @@ def _deviation_item(
     if actual is None:
         return None
     expected_returns = _loads_dict(record.get("expected_return_by_horizon"))
-    scenario_returns = _loads_dict(record.get("scenario_expected_return_by_horizon"))
+    scenario_returns_all = _loads_dict(record.get("scenario_expected_return_by_horizon"))
+    scenario_returns, expected_source = _scenario_returns_for_horizon(scenario_returns_all, horizon)
     expected = _float(expected_returns.get(key))
     primary = str(record.get("primary_scenario") or "")
-    primary_expected = _float((scenario_returns.get(key) or {}).get(primary))
+    primary_expected = _float(scenario_returns.get(primary))
     expected = primary_expected if primary_expected is not None else expected
     if expected is None:
         return None
@@ -221,6 +225,7 @@ def _deviation_item(
         "secondary_scenario": record.get("secondary_scenario"),
         "risk_scenario": record.get("risk_scenario"),
         "expected_return": _round(expected),
+        "expected_return_source": expected_source if primary_expected is not None else "expected_return_by_horizon",
         "actual_return": _round(actual),
         "forecast_error": _round(error),
         "absolute_error": _round(abs_error),
@@ -469,19 +474,25 @@ def _update_blockers(
         )
 
     completed_actual_fields = [
-        (row.get("forecast_date"), row.get("symbol"), f"{horizon}d")
+        (row, horizon)
         for row in records
         for horizon in HORIZONS
         if _float(row.get(f"actual_return_{horizon}d")) is not None
     ]
-    if completed_actual_fields and not deviations:
+    not_comparable = [
+        (row.get("forecast_date"), row.get("symbol"), f"{horizon}d")
+        for row, horizon in completed_actual_fields
+        if not _has_comparable_expected_path(row, horizon)
+    ]
+    if completed_actual_fields and not deviations and not_comparable:
         blockers.append(
             {
                 "reason": "completed_actuals_without_comparable_expected_path",
                 "detail": (
                     "Some actual returns have been backfilled, but the matching historical forecast record "
-                    "does not contain an expected path for that horizon, so success/failure cannot be scored without rewriting old forecast fields."
+                    "does not contain a stored or safely derived expected path for that horizon, so success/failure cannot be scored without rewriting old forecast fields."
                 ),
+                "examples": not_comparable[:8],
             }
         )
 
@@ -500,6 +511,64 @@ def _read_records(path: Path) -> list[dict[str, Any]]:
         return []
     with path.open("r", encoding="utf-8", newline="") as handle:
         return list(csv.DictReader(handle))
+
+
+def _dedupe_records_for_validation(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    grouped: dict[tuple[str, str, str], dict[str, Any]] = {}
+    for row in rows:
+        key = (
+            str(row.get("forecast_date") or ""),
+            str(row.get("model_version") or ""),
+            str(row.get("symbol") or ""),
+        )
+        current = grouped.get(key)
+        if current is None or _completed_field_count(row) > _completed_field_count(current):
+            grouped[key] = row
+    return [grouped[key] for key in sorted(grouped)]
+
+
+def _completed_field_count(row: dict[str, Any]) -> int:
+    return sum(1 for horizon in HORIZONS if _float(row.get(f"actual_return_{horizon}d")) is not None)
+
+
+def _scenario_returns_for_horizon(scenario_returns: dict[str, Any], horizon: int) -> tuple[dict[str, Any], str]:
+    key = f"{horizon}d"
+    direct = scenario_returns.get(key)
+    if isinstance(direct, dict) and direct:
+        return direct, "stored_scenario_path"
+
+    available: list[tuple[int, dict[str, Any]]] = []
+    for raw_key, value in scenario_returns.items():
+        if not isinstance(value, dict):
+            continue
+        try:
+            days = int(str(raw_key).replace("d", ""))
+        except ValueError:
+            continue
+        if days > 0:
+            available.append((days, value))
+    if not available:
+        return {}, "missing_expected_path"
+
+    nearest_days, nearest_values = min(available, key=lambda item: abs(item[0] - horizon))
+    scale = horizon / nearest_days
+    derived = {
+        scenario: (_float(value) * scale if _float(value) is not None else None)
+        for scenario, value in nearest_values.items()
+    }
+    return derived, f"derived_from_{nearest_days}d_path"
+
+
+def _has_comparable_expected_path(row: dict[str, Any], horizon: int) -> bool:
+    scenario_returns, _ = _scenario_returns_for_horizon(
+        _loads_dict(row.get("scenario_expected_return_by_horizon")),
+        horizon,
+    )
+    primary = str(row.get("primary_scenario") or "")
+    if primary and _float(scenario_returns.get(primary)) is not None:
+        return True
+    expected = _loads_dict(row.get("expected_return_by_horizon")).get(f"{horizon}d")
+    return _float(expected) is not None
 
 
 def _loads_dict(value: Any) -> dict[str, Any]:
