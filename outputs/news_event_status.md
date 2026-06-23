@@ -1,20 +1,20 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-06-23T05:17:12.979565+00:00`
+- generated_at: `2026-06-23T23:39:15.782341+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
-- event_detection_confidence: `69`
-- event_risk_level: `medium`
-- narrative: `geopolitics_easing_risk_on`
-- narrative_direction: `supports_bounce`
+- major_event_count: `9`
+- event_detection_confidence: `75`
+- event_risk_level: `high`
+- narrative: `geopolitics_escalation_risk_off`
+- narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `True`
-- confirmation_score: `75`
+- confirmation_score: `100`
 
 ## Dashboard Note
 
-当前新闻叙事为 geopolitics_easing_risk_on，方向为 supports_bounce，已被价格反应初步确认。地缘风险缓和通常支持风险资产反抽，并降低短线风险扩散概率。
+当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，已被价格反应初步确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
 
 ## Economic Calendar Risk
 
@@ -25,58 +25,74 @@
 
 ## Major Events
 
-### geopolitical_risk_easing / risk_on
+### geopolitical_risk_escalation / risk_off
 
-- headline: US authorizes Iranian oil sales amid talks on final peace deal - Reuters
+- headline: US, Iran at odds on nuclear inspections, frozen assets in deal to end war - Reuters
 - source: Reuters
-- published_at: `2026-06-22T14:46:30+00:00`
-- importance_score: `96`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Gulf markets mixed as Iran reports progress in peace talks - Reuters
-- source: Reuters
-- published_at: `2026-06-22T13:45:58+00:00`
-- importance_score: `93`
-- confidence: `medium`
+- published_at: `2026-06-23T22:40:36+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iran war triggers global race to build oil reserves - Reuters
+- headline: US Senate votes to halt Iran war in latest rebuke of Trump - Reuters
 - source: Reuters
-- published_at: `2026-06-22T06:06:00+00:00`
+- published_at: `2026-06-23T21:34:09+00:00`
 - importance_score: `100`
-- confidence: `medium`
+- confidence: `high`
 
-### geopolitical_risk_easing / risk_on
+### geopolitical_risk_escalation / risk_off
 
-- headline: Trump threatens new attacks as US-Iran peace talks open in Switzerland - Reuters
+- headline: Few in US say Iran war was worth it; Trump approval ties lowest of term, Reuters/Ipsos poll finds - Reuters
 - source: Reuters
-- published_at: `2026-06-21T23:09:46+00:00`
+- published_at: `2026-06-23T20:33:28+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Can Pakistan's peacekeeping role in Iran war give it an economic dividend? - Reuters
+- source: Reuters
+- published_at: `2026-06-23T17:22:26+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: Gold rises as US-Iran peace optimism pulls oil prices lower - Reuters
+- headline: Oil prices finish 1% lower as investors focus on Hormuz flows after peace talks - Reuters
 - source: Reuters
-- published_at: `2026-06-22T01:35:00+00:00`
+- published_at: `2026-06-23T19:26:45+00:00`
+- importance_score: `96`
+- confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Israel fire kills two in Lebanon, testing Iran-linked ceasefire - Reuters
+- source: Reuters
+- published_at: `2026-06-23T15:37:38+00:00`
+- importance_score: `98`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: India pivots to Russian crude and coal to mitigate Iran war fallout - Reuters
+- source: Reuters
+- published_at: `2026-06-23T11:07:09+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Rubio to address Gulf allies' fears over U.S. Iran deal - Reuters
+- source: Reuters
+- published_at: `2026-06-23T05:12:00+00:00`
 - importance_score: `93`
 - confidence: `medium`
 
-### oil_shock_relief / risk_on
+### geopolitical_risk_easing / risk_on
 
-- headline: Stocks flat, oil falls as rate worries offset Iran talks optimism - Reuters
+- headline: US authorizes Iranian oil sales amid talks on final peace deal - Reuters
 - source: Reuters
-- published_at: `2026-06-22T00:45:00+00:00`
-- importance_score: `87`
-- confidence: `medium`
-
-### fed_dovish / risk_on
-
-- headline: Oil settles down more 3% after US-Iran talks signal easing supply risks - Reuters
-- source: Reuters
-- published_at: `2026-06-21T22:17:00+00:00`
-- importance_score: `80`
+- published_at: `2026-06-22T14:46:30+00:00`
+- importance_score: `92`
 - confidence: `medium`
