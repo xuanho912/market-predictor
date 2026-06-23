@@ -1,6 +1,6 @@
 # FRED Data Status
 
-Generated at: `2026-06-22T23:54:33.252416Z`
+Generated at: `2026-06-23T05:17:21.778968Z`
 
 ## Provider
 
@@ -8,7 +8,7 @@ Generated at: `2026-06-22T23:54:33.252416Z`
 - provider available: `True`
 - fallback used: `False`
 - rate limited: `False`
-- successful series: `IG_OAS, DGS10, BAA_SPREAD, HY_OAS, DGS2, DGS3MO, DFII10, RECESSION, FINANCIAL_STRESS`
+- successful series: `HY_OAS, IG_OAS, BAA_SPREAD, DGS2, DGS3MO, DGS10, RECESSION, FINANCIAL_STRESS, DFII10`
 - failed series: `none`
 
 ## Series
@@ -20,7 +20,7 @@ Generated at: `2026-06-22T23:54:33.252416Z`
 | DGS10 | DGS10 | True | 2026-06-18 | 4.46 | fred-api | False |  |
 | DGS2 | DGS2 | True | 2026-06-18 | 4.19 | fred-api | False |  |
 | DGS3MO | DGS3MO | True | 2026-06-18 | 3.83 | fred-api | False |  |
-| FINANCIAL_STRESS | STLFSI4 | True | 2026-06-12 | -0.7698 | fred-api | False |  |
+| FINANCIAL_STRESS | STLFSI4 | True | 2026-06-12 | -0.7698 | fred-api | True |  |
 | HY_OAS | BAMLH0A0HYM2 | True | 2026-06-19 | 2.66 | fred-api | False |  |
 | IG_OAS | BAMLC0A0CM | True | 2026-06-19 | 0.74 | fred-api | False |  |
 | RECESSION | USREC | True | 2026-05-01 | 0.0 | fred-api | True |  |
@@ -37,10 +37,10 @@ Generated at: `2026-06-22T23:54:33.252416Z`
 
 | symbol | edge without | edge with | primary without | primary with | risk expansion delta | failed bounce delta |
 |---|---|---|---|---|---:|---:|
-| SPY | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0049 | 0.0018 |
-| QQQ | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.005 | 0.0017 |
-| IWM | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.005 | 0.0019 |
-| DIA | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0049 | 0.0018 |
+| SPY | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.005 | 0.0018 |
+| QQQ | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.005 | 0.0018 |
+| IWM | STRONG_EDGE | STRONG_EDGE | bounce_path | bounce_path | 0.0049 | 0.0018 |
+| DIA | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.005 | 0.0018 |
 
 ## Warning
 
