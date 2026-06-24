@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-06-23T23:39:15.782341+00:00`
+- generated_at: `2026-06-24T05:13:51.581654+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `9`
-- event_detection_confidence: `75`
+- event_detection_confidence: `72`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,6 +27,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: US Senate joins House in voting to halt Iran war, rebuking Trump - Reuters
+- source: Reuters
+- published_at: `2026-06-23T22:54:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: US, Iran at odds on nuclear inspections, frozen assets in deal to end war - Reuters
 - source: Reuters
 - published_at: `2026-06-23T22:40:36+00:00`
@@ -45,7 +53,7 @@
 
 - headline: Few in US say Iran war was worth it; Trump approval ties lowest of term, Reuters/Ipsos poll finds - Reuters
 - source: Reuters
-- published_at: `2026-06-23T20:33:28+00:00`
+- published_at: `2026-06-23T17:48:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -59,25 +67,17 @@
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: Oil prices finish 1% lower as investors focus on Hormuz flows after peace talks - Reuters
-- source: Reuters
-- published_at: `2026-06-23T19:26:45+00:00`
-- importance_score: `96`
-- confidence: `high`
-
-### geopolitical_risk_easing / risk_on
-
 - headline: Israel fire kills two in Lebanon, testing Iran-linked ceasefire - Reuters
 - source: Reuters
 - published_at: `2026-06-23T15:37:38+00:00`
-- importance_score: `98`
-- confidence: `high`
+- importance_score: `97`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: India pivots to Russian crude and coal to mitigate Iran war fallout - Reuters
 - source: Reuters
-- published_at: `2026-06-23T11:07:09+00:00`
+- published_at: `2026-06-23T06:07:09+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -86,13 +86,13 @@
 - headline: Rubio to address Gulf allies' fears over U.S. Iran deal - Reuters
 - source: Reuters
 - published_at: `2026-06-23T05:12:00+00:00`
-- importance_score: `93`
+- importance_score: `91`
 - confidence: `medium`
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: US authorizes Iranian oil sales amid talks on final peace deal - Reuters
+- headline: Oil prices finish 1% lower as investors focus on Hormuz flows after peace talks - Reuters
 - source: Reuters
-- published_at: `2026-06-22T14:46:30+00:00`
-- importance_score: `92`
+- published_at: `2026-06-23T00:35:00+00:00`
+- importance_score: `90`
 - confidence: `medium`
