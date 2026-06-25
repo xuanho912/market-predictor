@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-06-25T05:18:44.060662+00:00`
+- generated_at: `2026-06-25T23:56:24.315435+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `13`
-- event_detection_confidence: `70`
+- major_event_count: `14`
+- event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,80 +27,80 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: UN pauses Hormuz evacuation plan after ship reports attack - Reuters
+- source: Reuters
+- published_at: `2026-06-25T19:54:34+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Crude shipments through Hormuz at highest since Iran war began - Reuters
+- source: Reuters
+- published_at: `2026-06-25T19:12:33+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: We're trimming a health-care stock into strength and raising our price target
+- source: CNBC
+- published_at: `2026-06-25T16:35:24+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: EXCLUSIVE: Iraq warns it might leave OPEC if oil quota not raised, sources say - Reuters
+- source: Reuters
+- published_at: `2026-06-25T11:25:24+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: EXCLUSIVE: Dubai enlists businesses to help secure hub status after Iran war shock - Reuters
+- source: Reuters
+- published_at: `2026-06-25T10:41:20+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Iran peace deal no silver bullet for Fed's inflation dilemma - Reuters
+- source: Reuters
+- published_at: `2026-06-25T06:14:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: ECB's Schnabel sees more tightening even after Iran ceasefire - Reuters
+- source: Reuters
+- published_at: `2026-06-25T08:15:36+00:00`
+- importance_score: `96`
+- confidence: `medium`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Rubio wraps up Gulf tour as allies share concerns over Iran peace accord - Reuters
+- source: Reuters
+- published_at: `2026-06-25T05:01:00+00:00`
+- importance_score: `96`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Trump says it may never be known who was at fault for strike on girls' school in Iran - Reuters
 - source: Reuters
 - published_at: `2026-06-24T23:31:26+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Trump asks Congress for more funds to fight Iran, defying rebuke on war powers - Reuters
 - source: Reuters
 - published_at: `2026-06-24T20:51:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Italy rebukes NATO's Rutte over remarks on US use of bases in Iran war - Reuters
-- source: Reuters
-- published_at: `2026-06-24T20:27:02+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US airline stocks rise as oil retreats to pre-Iran war levels - Reuters
-- source: Reuters
-- published_at: `2026-06-24T16:56:14+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US reopens embassy in Kuwait months after Iranian attack - Reuters
-- source: Reuters
-- published_at: `2026-06-24T15:25:27+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump, Republican senator in shouting match over unpopular Iran war - Reuters
-- source: Reuters
-- published_at: `2026-06-24T13:42:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Qualcomm inks deal for AI startup Modular to bolster software stack, data center buildout
-- source: CNBC
-- published_at: `2026-06-24T13:29:23+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Airlines should still avoid airspace over Iran after framework deal, EU agency warns - Reuters
-- source: Reuters
-- published_at: `2026-06-24T07:09:13+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### growth_negative / risk_off
-
-- headline: JPMorgan Chase unveils $50 billion buyback, Goldman Sachs raises dividend after Fed stress test
-- source: CNBC
-- published_at: `2026-06-24T20:58:45+00:00`
-- importance_score: `83`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Brent settles at lowest since before start of Iran war as more tankers exit Hormuz - Reuters
-- source: Reuters
-- published_at: `2026-06-24T01:17:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
