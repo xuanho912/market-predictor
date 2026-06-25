@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-06-24T23:47:20.535205+00:00`
+- generated_at: `2026-06-25T05:18:44.060662+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
-- event_detection_confidence: `74`
+- major_event_count: `13`
+- event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,17 +27,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Trump administration asks Congress for $87.6 billion, mostly for Iran war - Reuters
+- headline: Trump says it may never be known who was at fault for strike on girls' school in Iran - Reuters
 - source: Reuters
-- published_at: `2026-06-24T21:49:58+00:00`
+- published_at: `2026-06-24T23:31:26+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Trump, Republican senator in shouting match over unpopular Iran war - Reuters
+- headline: Trump asks Congress for more funds to fight Iran, defying rebuke on war powers - Reuters
 - source: Reuters
-- published_at: `2026-06-24T21:45:32+00:00`
+- published_at: `2026-06-24T20:51:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -55,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-06-24T16:56:14+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -63,7 +63,15 @@
 - source: Reuters
 - published_at: `2026-06-24T15:25:27+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Trump, Republican senator in shouting match over unpopular Iran war - Reuters
+- source: Reuters
+- published_at: `2026-06-24T13:42:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -71,7 +79,7 @@
 - source: CNBC
 - published_at: `2026-06-24T13:29:23+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -86,21 +94,13 @@
 - headline: JPMorgan Chase unveils $50 billion buyback, Goldman Sachs raises dividend after Fed stress test
 - source: CNBC
 - published_at: `2026-06-24T20:58:45+00:00`
-- importance_score: `84`
-- confidence: `high`
+- importance_score: `83`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Brent settles at lowest since before start of Iran war as more tankers exit Hormuz - Reuters
 - source: Reuters
 - published_at: `2026-06-24T01:17:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US Senate joins House in voting to halt Iran war, rebuking Trump - Reuters
-- source: Reuters
-- published_at: `2026-06-23T22:54:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
