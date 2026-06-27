@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-06-26T23:46:17.939188+00:00`
+- generated_at: `2026-06-27T05:06:11.564061+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `14`
-- event_detection_confidence: `74`
+- major_event_count: `13`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,9 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US strikes Iran in response to attack on cargo ship in Strait of Hormuz - Reuters
+- headline: Iran's Revolutionary Guards say it targeted US positions in the region in response to attack - Reuters
 - source: Reuters
-- published_at: `2026-06-26T22:21:41+00:00`
+- published_at: `2026-06-26T23:03:48+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -55,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-06-26T15:36:48+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -63,7 +63,7 @@
 - source: Reuters
 - published_at: `2026-06-26T14:52:22+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -83,6 +83,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: US strikes Iran in response to attack on cargo ship in Strait of Hormuz - Reuters
+- source: Reuters
+- published_at: `2026-06-26T10:46:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Vance, Rubio strike different tone on Iran and Israel - Reuters
 - source: Reuters
 - published_at: `2026-06-26T05:04:00+00:00`
@@ -94,13 +102,5 @@
 - headline: Israel's Netanyahu faces election challenge from hawkish ex-general - Reuters
 - source: Reuters
 - published_at: `2026-06-26T13:09:43+00:00`
-- importance_score: `86`
-- confidence: `medium`
-
-### fed_hawkish / risk_off
-
-- headline: OpenAI and Anthropic face new AI reality as companies shift from tokenmaxxing to efficiency
-- source: CNBC
-- published_at: `2026-06-26T12:10:01+00:00`
-- importance_score: `86`
+- importance_score: `85`
 - confidence: `medium`

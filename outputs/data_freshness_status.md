@@ -1,11 +1,11 @@
 # Data Freshness Status
 
-Generated at: `2026-06-26T23:46:26.437526+00:00`
+Generated at: `2026-06-27T05:06:18.953613+00:00`
 
 ## Summary
 
-- current_date: `2026-06-26`
-- current_time_us_eastern: `2026-06-26T19:46:26.437526-04:00`
+- current_date: `2026-06-27`
+- current_time_us_eastern: `2026-06-27T01:06:18.953613-04:00`
 - latest_market_date: `2026-06-26`
 - latest_confirmed_market_date: `2026-06-26`
 - expected_latest_trading_date: `2026-06-26`
@@ -14,10 +14,10 @@ Generated at: `2026-06-26T23:46:26.437526+00:00`
 - can_append_forecast_record: `True`
 - can_backfill_completed_outcomes: `True`
 - stale_days: `0`
-- data_freshness_status: `fresh`
+- data_freshness_status: `market_closed`
 - last_successful_core_market_update: `2026-06-26`
 - last_successful_update: `2026-06-26`
-- warning_message: 核心行情已更新至最新应有交易日 2026-06-26。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。
+- warning_message: 美股当前没有新的完整交易日，使用最近完成交易日 2026-06-26 的数据。 当前美东时间 2026-06-27 01:06。
 
 ## Affected Symbols
 
@@ -45,7 +45,7 @@ Generated at: `2026-06-26T23:46:26.437526+00:00`
 - SPLV: status=`available`, latest_date=`2026-06-26`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - SPY: status=`available`, latest_date=`2026-06-26`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - TLT: status=`available`, latest_date=`2026-06-26`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- UUP: status=`available`, latest_date=`2026-06-26`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- UUP: status=`available`, latest_date=`2026-06-26`, source=`local-cache-yahoo-chart`, stale=`False`, fallback=`True`, real_data=`True`
 - XLB: status=`available`, latest_date=`2026-06-26`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - XLC: status=`available`, latest_date=`2026-06-26`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - XLE: status=`available`, latest_date=`2026-06-26`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
@@ -54,15 +54,15 @@ Generated at: `2026-06-26T23:46:26.437526+00:00`
 - XLK: status=`available`, latest_date=`2026-06-26`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - XLP: status=`available`, latest_date=`2026-06-26`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - XLRE: status=`available`, latest_date=`2026-06-26`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- XLU: status=`available`, latest_date=`2026-06-26`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- XLU: status=`available`, latest_date=`2026-06-26`, source=`finnhub-quote-patch`, stale=`False`, fallback=`False`, real_data=`True`
 - XLV: status=`available`, latest_date=`2026-06-26`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - XLY: status=`available`, latest_date=`2026-06-26`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- ^SKEW: status=`available`, latest_date=`2026-06-26`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- ^TNX: status=`available`, latest_date=`2026-06-26`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- ^VIX: status=`available`, latest_date=`2026-06-26`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- ^VIX3M: status=`available`, latest_date=`2026-06-26`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- ^VIX6M: status=`available`, latest_date=`2026-06-26`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- ^VIX9D: status=`available`, latest_date=`2026-06-26`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- ^SKEW: status=`available`, latest_date=`2026-06-25`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- ^TNX: status=`stale`, latest_date=`2026-06-18`, source=`yahoo-chart`, stale=`True`, fallback=`False`, real_data=`True`
+- ^VIX: status=`available`, latest_date=`2026-06-26`, source=`local-cache-yahoo-chart`, stale=`False`, fallback=`True`, real_data=`True`
+- ^VIX3M: status=`stale`, latest_date=`2026-06-18`, source=`yahoo-chart`, stale=`True`, fallback=`False`, real_data=`True`
+- ^VIX6M: status=`stale`, latest_date=`2026-06-18`, source=`yahoo-chart`, stale=`True`, fallback=`False`, real_data=`True`
+- ^VIX9D: status=`stale`, latest_date=`2026-06-18`, source=`yahoo-chart`, stale=`True`, fallback=`False`, real_data=`True`
 - ^VVIX: status=`available`, latest_date=`2026-06-26`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - breadth_DIA: status=`available`, latest_date=`2026-06-22`, source=`static-dow30-list`, stale=`False`, fallback=`False`, real_data=`True`
 - breadth_IWM: status=`proxy`, latest_date=`2026-06-26`, source=`iwm-spy-relative-strength-proxy`, stale=`False`, fallback=`True`, real_data=`False`
@@ -94,11 +94,11 @@ Generated at: `2026-06-26T23:46:26.437526+00:00`
 - flow_provider: status=`proxy`, latest_date=`2026-06-26`, source=`flow_positioning_proxy`, stale=`False`, fallback=`True`, real_data=`False`
 - macro_event_calendar: status=`fallback`, latest_date=`2026-06-26`, source=`deterministic_calendar_fallback`, stale=`False`, fallback=`True`, real_data=`False`
 - news_event_provider: status=`available`, latest_date=`2026-06-26`, source=`finnhub+gdelt`, stale=`False`, fallback=`False`, real_data=`True`
-- options_SKEW: status=`available`, latest_date=`2026-06-26`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- options_VIX: status=`available`, latest_date=`2026-06-26`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- options_VIX3M: status=`available`, latest_date=`2026-06-26`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- options_VIX6M: status=`available`, latest_date=`2026-06-26`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- options_VIX9D: status=`available`, latest_date=`2026-06-26`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- options_SKEW: status=`available`, latest_date=`2026-06-25`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- options_VIX: status=`available`, latest_date=`2026-06-26`, source=`local-cache-yahoo-chart`, stale=`False`, fallback=`True`, real_data=`True`
+- options_VIX3M: status=`stale`, latest_date=`2026-06-18`, source=`yahoo-chart`, stale=`True`, fallback=`False`, real_data=`True`
+- options_VIX6M: status=`stale`, latest_date=`2026-06-18`, source=`yahoo-chart`, stale=`True`, fallback=`False`, real_data=`True`
+- options_VIX9D: status=`stale`, latest_date=`2026-06-18`, source=`yahoo-chart`, stale=`True`, fallback=`False`, real_data=`True`
 - options_VVIX: status=`available`, latest_date=`2026-06-26`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - options_provider: status=`stale`, latest_date=`None`, source=`market_data_cache/yahoo/stooq`, stale=`True`, fallback=`False`, real_data=`True`
 
