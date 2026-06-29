@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-06-27T05:06:11.564061+00:00`
+- generated_at: `2026-06-29T23:38:12.437824+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `13`
-- event_detection_confidence: `73`
+- major_event_count: `11`
+- event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `50`
+- confirmation_score: `0`
 
 ## Dashboard Note
 
@@ -27,80 +27,80 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iran's Revolutionary Guards say it targeted US positions in the region in response to attack - Reuters
+- headline: Wall Street ends higher as US, Iran attacks ease; major tech-related shares jump - Reuters
 - source: Reuters
-- published_at: `2026-06-26T23:03:48+00:00`
+- published_at: `2026-06-29T22:49:17+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US military conducted strikes against Iran - Reuters
+- headline: Senior Lebanese official slams US-brokered deal with Israel, warns of divisions - Reuters
 - source: Reuters
-- published_at: `2026-06-26T20:53:09+00:00`
+- published_at: `2026-06-29T14:18:19+00:00`
 - importance_score: `100`
 - confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Middle East producers push on with oil and LNG loadings despite ship attacks - Reuters
+- source: Reuters
+- published_at: `2026-06-29T11:44:44+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: How 5 weeks of war shattered some of Iran’s cherished monuments - Reuters
+- source: Reuters
+- published_at: `2026-06-29T09:00:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran cyberattacks on Israel surged in 2026, Israeli cyber chief says - Reuters
+- source: Reuters
+- published_at: `2026-06-29T05:02:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran war developments, Fed rate path cues in focus for Indian rupee and bonds - Reuters
+- source: Reuters
+- published_at: `2026-06-29T01:31:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: US diesel refining economics remain firm despite Iran war truce - Reuters
+- headline: Asia shares choppy as South Korea chip push steadies sentiment; Iran truce in focus - Reuters
 - source: Reuters
-- published_at: `2026-06-26T17:53:53+00:00`
-- importance_score: `100`
-- confidence: `high`
+- published_at: `2026-06-29T05:07:00+00:00`
+- importance_score: `96`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: UAE stresses Hormuz security in rare call with Iran after war tensions - Reuters
+- headline: Oil settles up on US-Iran strikes; cautious hopes for shipping cap gains - Reuters
 - source: Reuters
-- published_at: `2026-06-26T15:36:48+00:00`
+- published_at: `2026-06-28T22:15:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: UAE says false public warning caused by technical malfunction - Reuters
+- headline: Iran canceled participation in technical talks over recent attacks, official tells state TV - Reuters
 - source: Reuters
-- published_at: `2026-06-26T14:52:22+00:00`
+- published_at: `2026-06-28T19:53:44+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Russian hawks urge Putin to escalate war, drop US talks as Ukraine strikes deep - Reuters
+- headline: Gulf markets mixed as US-Iran trade attacks - Reuters
 - source: Reuters
-- published_at: `2026-06-26T11:20:46+00:00`
+- published_at: `2026-06-28T13:11:43+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Traffic through Strait of Hormuz slows after attack on ship - Reuters
-- source: Reuters
-- published_at: `2026-06-26T11:02:09+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US strikes Iran in response to attack on cargo ship in Strait of Hormuz - Reuters
-- source: Reuters
-- published_at: `2026-06-26T10:46:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Vance, Rubio strike different tone on Iran and Israel - Reuters
-- source: Reuters
-- published_at: `2026-06-26T05:04:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### fed_hawkish / risk_off
-
-- headline: Israel's Netanyahu faces election challenge from hawkish ex-general - Reuters
-- source: Reuters
-- published_at: `2026-06-26T13:09:43+00:00`
-- importance_score: `85`
 - confidence: `medium`
