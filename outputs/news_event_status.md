@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-06-30T05:19:43.895779+00:00`
+- generated_at: `2026-06-30T23:48:02.969765+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `14`
-- event_detection_confidence: `71`
+- major_event_count: `8`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `0`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
@@ -27,19 +27,51 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Trump urges gasoline retailers to lower prices, warns of 'big problems' if they don't - Reuters
+- headline: S&P 500, Nasdaq register best quarter since 2020 despite Iran war - Reuters
 - source: Reuters
-- published_at: `2026-06-30T00:07:44+00:00`
+- published_at: `2026-06-30T22:30:58+00:00`
 - importance_score: `100`
 - confidence: `high`
 
-### oil_shock_relief / risk_on
+### geopolitical_risk_easing / risk_on
 
-- headline: Oil falls as investors focus on potential Iran-US talks in Doha - Reuters
+- headline: Iran says it won't meet with U.S. envoys, clouding prospects for peace deal - Reuters
 - source: Reuters
-- published_at: `2026-06-30T04:44:13+00:00`
-- importance_score: `94`
+- published_at: `2026-06-30T21:10:07+00:00`
+- importance_score: `99`
 - confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran war and AI boom drive wild ride on global markets - Reuters
+- source: Reuters
+- published_at: `2026-06-30T15:09:04+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Bird nests of fibre-optic cables show war's impact on Ukraine - Reuters
+- source: Reuters
+- published_at: `2026-06-30T14:33:38+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: UK economy grows as expected before Iran war impact, ONS data shows - Reuters
+- source: Reuters
+- published_at: `2026-06-30T07:38:51+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Trump urges gasoline retailers to lower prices, warns of 'big problems' if they don't - Reuters
+- source: Reuters
+- published_at: `2026-06-30T00:06:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,60 +79,12 @@
 - source: Reuters
 - published_at: `2026-06-29T22:49:17+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_easing / risk_on
 
 - headline: Trading Day: Wall Street gains, Dow hits record closing high as fragile U.S.-Iran truce holds - Reuters
 - source: Reuters
 - published_at: `2026-06-29T21:28:27+00:00`
-- importance_score: `98`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Israel-Lebanon deal may entrench stalemate rather than end war, analysts say - Reuters
-- source: Reuters
-- published_at: `2026-06-29T14:56:39+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Senior Lebanese official slams US-brokered deal with Israel, warns of divisions - Reuters
-- source: Reuters
-- published_at: `2026-06-29T14:18:19+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Middle East producers push on with oil and LNG loadings despite ship attacks - Reuters
-- source: Reuters
-- published_at: `2026-06-29T11:44:44+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: How 5 weeks of war shattered some of Iran’s cherished monuments - Reuters
-- source: Reuters
-- published_at: `2026-06-29T09:00:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran cyberattacks on Israel surged in 2026, Israeli cyber chief says - Reuters
-- source: Reuters
-- published_at: `2026-06-29T05:02:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran war developments, Fed rate path cues in focus for Indian rupee and bonds - Reuters
-- source: Reuters
-- published_at: `2026-06-29T01:31:00+00:00`
-- importance_score: `100`
+- importance_score: `94`
 - confidence: `medium`
