@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-06-29T23:38:12.437824+00:00`
+- generated_at: `2026-06-30T05:19:43.895779+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `11`
-- event_detection_confidence: `70`
+- major_event_count: `14`
+- event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,11 +27,43 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Trump urges gasoline retailers to lower prices, warns of 'big problems' if they don't - Reuters
+- source: Reuters
+- published_at: `2026-06-30T00:07:44+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### oil_shock_relief / risk_on
+
+- headline: Oil falls as investors focus on potential Iran-US talks in Doha - Reuters
+- source: Reuters
+- published_at: `2026-06-30T04:44:13+00:00`
+- importance_score: `94`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Wall Street ends higher as US, Iran attacks ease; major tech-related shares jump - Reuters
 - source: Reuters
 - published_at: `2026-06-29T22:49:17+00:00`
 - importance_score: `100`
 - confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Trading Day: Wall Street gains, Dow hits record closing high as fragile U.S.-Iran truce holds - Reuters
+- source: Reuters
+- published_at: `2026-06-29T21:28:27+00:00`
+- importance_score: `98`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Israel-Lebanon deal may entrench stalemate rather than end war, analysts say - Reuters
+- source: Reuters
+- published_at: `2026-06-29T14:56:39+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -39,7 +71,7 @@
 - source: Reuters
 - published_at: `2026-06-29T14:18:19+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -70,37 +102,5 @@
 - headline: Iran war developments, Fed rate path cues in focus for Indian rupee and bonds - Reuters
 - source: Reuters
 - published_at: `2026-06-29T01:31:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Asia shares choppy as South Korea chip push steadies sentiment; Iran truce in focus - Reuters
-- source: Reuters
-- published_at: `2026-06-29T05:07:00+00:00`
-- importance_score: `96`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil settles up on US-Iran strikes; cautious hopes for shipping cap gains - Reuters
-- source: Reuters
-- published_at: `2026-06-28T22:15:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran canceled participation in technical talks over recent attacks, official tells state TV - Reuters
-- source: Reuters
-- published_at: `2026-06-28T19:53:44+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Gulf markets mixed as US-Iran trade attacks - Reuters
-- source: Reuters
-- published_at: `2026-06-28T13:11:43+00:00`
 - importance_score: `100`
 - confidence: `medium`
