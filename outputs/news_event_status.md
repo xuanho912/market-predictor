@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-06-30T23:48:02.969765+00:00`
+- generated_at: `2026-07-01T05:56:28.160669+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
-- event_detection_confidence: `73`
+- major_event_count: `5`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `25`
+- confirmation_score: `50`
 
 ## Dashboard Note
 
@@ -27,18 +27,18 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: South Korea cargo ship Namu to exit Strait of Hormuz after attack in Gulf - Reuters
+- source: Reuters
+- published_at: `2026-07-01T02:34:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: S&P 500, Nasdaq register best quarter since 2020 despite Iran war - Reuters
 - source: Reuters
 - published_at: `2026-06-30T22:30:58+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Iran says it won't meet with U.S. envoys, clouding prospects for peace deal - Reuters
-- source: Reuters
-- published_at: `2026-06-30T21:10:07+00:00`
-- importance_score: `99`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -47,7 +47,7 @@
 - source: Reuters
 - published_at: `2026-06-30T15:09:04+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,36 +55,12 @@
 - source: Reuters
 - published_at: `2026-06-30T14:33:38+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: UK economy grows as expected before Iran war impact, ONS data shows - Reuters
-- source: Reuters
-- published_at: `2026-06-30T07:38:51+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump urges gasoline retailers to lower prices, warns of 'big problems' if they don't - Reuters
-- source: Reuters
-- published_at: `2026-06-30T00:06:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Wall Street ends higher as US, Iran attacks ease; major tech-related shares jump - Reuters
-- source: Reuters
-- published_at: `2026-06-29T22:49:17+00:00`
-- importance_score: `100`
 - confidence: `medium`
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: Trading Day: Wall Street gains, Dow hits record closing high as fragile U.S.-Iran truce holds - Reuters
+- headline: Iran says it won't meet with U.S. envoys, clouding prospects for peace deal - Reuters
 - source: Reuters
-- published_at: `2026-06-29T21:28:27+00:00`
-- importance_score: `94`
+- published_at: `2026-06-30T10:23:00+00:00`
+- importance_score: `95`
 - confidence: `medium`
