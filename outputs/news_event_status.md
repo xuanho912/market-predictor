@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-01T23:55:30.578384+00:00`
+- generated_at: `2026-07-02T05:12:13.424646+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `11`
-- event_detection_confidence: `73`
+- event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -25,12 +25,12 @@
 
 ## Major Events
 
-### geopolitical_risk_escalation / risk_off
+### oil_shock_relief / risk_on
 
-- headline: Gold gains over 2% after soft jobs data, Fed Chair Warsh's comments - Reuters
+- headline: Oil falls for a third straight day after US, Iran talks conclude in Doha - Reuters
 - source: Reuters
-- published_at: `2026-07-01T17:40:32+00:00`
-- importance_score: `100`
+- published_at: `2026-07-02T01:11:00+00:00`
+- importance_score: `93`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -39,7 +39,7 @@
 - source: CNBC
 - published_at: `2026-07-01T16:36:41+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -99,8 +99,8 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: S&P 500, Nasdaq register best quarter since 2020 despite Iran war - Reuters
+- headline: Gold gains over 2% after soft jobs data, Fed Chair Warsh's comments - Reuters
 - source: Reuters
-- published_at: `2026-06-30T22:30:58+00:00`
+- published_at: `2026-07-01T01:52:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
