@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-07-03T05:01:52.071794+00:00",
+  "generated_at": "2026-07-03T23:39:58.564752+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-07-03T05:01:52.080246+00:00",
+    "generated_at": "2026-07-03T23:39:58.573197+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 61,
     "risk_score_effectiveness": {
@@ -235,16 +235,22 @@
           "company_news": "available",
           "earnings": "available",
           "earnings_date": "2026-07-30",
-          "earnings_risk_flag": "medium",
+          "earnings_risk_flag": "low",
           "earnings_within_30d": true,
           "earnings_within_7d": false,
-          "event_risk_flag": "medium",
+          "event_risk_flag": "low",
           "headlines": [
             {
               "datetime": 1783028705,
               "headline": "Constellation Energy Corporation (CEG) Stock Moves 1.16%: What You Should Know",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=75bf05f6ae94f57a677409cc5c1406445369e78ee6a6ed9cff9c81bd1bc6abe4"
+            },
+            {
+              "datetime": 1783011630,
+              "headline": "Heat wave impact on energy prices",
+              "source": "CNBC",
+              "url": "https://finnhub.io/api/news?id=3552d5f6378af99426814d794595b2df5aff8acaaef9ba93d6797d07ad613412"
             },
             {
               "datetime": 1782992327,
@@ -281,18 +287,12 @@
               "headline": "Constellation Energy Corporation (CEG) Declines, Here’s What Wall Street Thinks About it",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=516a36ff5e886f652006346b8f32100109024e7c77dc2ada5ff8f8279b9898e1"
-            },
-            {
-              "datetime": 1782928488,
-              "headline": "Why Constellation Energy Stock Is Tumbling Today",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=2b73a7b55ac0e69edcf61bccb79e71cebbd1d7989c17236920833518c39315cf"
             }
           ],
           "major_company_headline": "Constellation Energy Corporation (CEG) Stock Moves 1.16%: What You Should Know",
-          "news_count_24h": 4,
-          "news_count_72h": 14,
-          "news_risk_score": 52.0,
+          "news_count_24h": 0,
+          "news_count_72h": 12,
+          "news_risk_score": 20.0,
           "news_sentiment": "neutral"
         },
         "price_trend": {
@@ -333,12 +333,12 @@
           "realized_volatility_20d": 0.3871
         },
         "volume": {
-          "accumulation_distribution_proxy": -0.0996,
+          "accumulation_distribution_proxy": -0.0995,
           "panic_volume_proxy": false,
-          "up_volume_down_volume_proxy": 0.8188,
-          "volume_confirmation_score": 44.72,
-          "volume_vs_20d_average": 1.0319,
-          "volume_z_score": 0.09
+          "up_volume_down_volume_proxy": 0.8189,
+          "volume_confirmation_score": 44.74,
+          "volume_vs_20d_average": 1.0328,
+          "volume_z_score": 0.0929
         }
       },
       "forecast_price_levels": {
@@ -527,7 +527,7 @@
               "波动率区间接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.7875,
+            "similarity_score": 0.7872,
             "worst_path_60d": -0.1142
           },
           {
@@ -548,7 +548,7 @@
               "波动率区间接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.7857,
+            "similarity_score": 0.7854,
             "worst_path_60d": -0.1074
           },
           {
@@ -569,7 +569,7 @@
               "波动率区间接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.7516,
+            "similarity_score": 0.7514,
             "worst_path_60d": -0.1065
           },
           {
@@ -590,7 +590,7 @@
               "波动率区间接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.7307,
+            "similarity_score": 0.7311,
             "worst_path_60d": -0.234
           },
           {
@@ -611,7 +611,7 @@
               "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.7177,
+            "similarity_score": 0.7176,
             "worst_path_60d": -0.2522
           },
           {
@@ -633,7 +633,7 @@
               "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.71,
+            "similarity_score": 0.7099,
             "worst_path_60d": -0.0987
           },
           {
@@ -677,7 +677,7 @@
               "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.6812,
+            "similarity_score": 0.6811,
             "worst_path_60d": -0.1405
           },
           {
@@ -719,7 +719,7 @@
               "波动率区间接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.6523,
+            "similarity_score": 0.652,
             "worst_path_60d": -0.12
           }
         ],
@@ -729,7 +729,7 @@
         "benchmark": "SPY",
         "benchmark_edge_status": "MODERATE_EDGE",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.3424,
+        "benchmark_primary_probability": 0.3432,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -1734,7 +1734,7 @@
           {
             "affected_ticker": "CEG",
             "alert_level": "NO_ALERT",
-            "alert_score": 32.11,
+            "alert_score": 32.1,
             "alert_type": "Stock Failed Bounce Risk",
             "confirmation_needed": [
               "价格无法站上确认价",
@@ -2325,7 +2325,7 @@
           "news_event": {
             "evidence": "公司新闻源已接入",
             "reason": "Constellation Energy Corporation (CEG) Stock Moves 1.16%: What You Should Know",
-            "score": 61.64,
+            "score": 51.4,
             "status": "neutral"
           },
           "options_volatility": {
@@ -2355,12 +2355,12 @@
           "volume_structure": {
             "evidence": "成交量结构中性",
             "reason": "量能没有明显共振",
-            "score": 44.72,
+            "score": 44.74,
             "status": "neutral"
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 25.4,
+        "stock_confluence_score": 24.66,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "基础财务指标偏支持",
@@ -2416,20 +2416,20 @@
           "cash_flow_quality": 3.9053,
           "debt_risk": 0.0269,
           "earnings_growth": 110.34,
-          "forward_pe": 39.9037,
+          "forward_pe": 39.2688,
           "profitability": 62.97,
           "raw_metrics": {
             "current_ratio": 3.9053,
             "debt_to_equity": 0.0538,
             "eps_growth_ttm_yoy": 110.34,
-            "forward_pe": 39.9037,
+            "forward_pe": 39.2688,
             "gross_margin_ttm": 74.15,
             "net_margin_ttm": 62.97,
             "revenue_growth_ttm_yoy": 70.68
           },
           "revenue_growth": 70.68,
           "status": "available",
-          "valuation_percentile": 0.49879625
+          "valuation_percentile": 0.49085999999999996
         },
         "news_event": {
           "analyst_rating_news": "missing",
@@ -2442,59 +2442,59 @@
           "event_risk_flag": "high",
           "headlines": [
             {
-              "datetime": 1783050252,
-              "headline": "Why AppLovin Stock Was Racing Higher This Week",
+              "datetime": 1783114980,
+              "headline": "Apple Is About 4% Away From Overtaking Nvidia as the World's Most Valuable Company. Could It Happen This Month?",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=420e02e1427236bab687b1d8424168b3485c9e68342bec86212e755bf3119c43"
+              "url": "https://finnhub.io/api/news?id=c8c41a2e7b34355421a47e8da5d740d9a34791d83446f9510e0cbe527c1a388e"
             },
             {
-              "datetime": 1783049580,
-              "headline": "SpaceX Might Be the Most Valuable Money-Losing Company in Market History. Should Investors Care?",
+              "datetime": 1783114500,
+              "headline": "Dividend ETFs vs. Bond ETFs: Which Is the Better Investment in 2026?",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=1baddd25a450388332e260d72e4b6100ab13ad1b53ba52d1f72cbb32a70bcab4"
+              "url": "https://finnhub.io/api/news?id=5b668e7e285dbae0c9afecd0a1bdd541c48e8f7d636d805250c41628719ad536"
             },
             {
-              "datetime": 1783048104,
-              "headline": "Why Dell (DELL) Shares Are Plunging Today",
+              "datetime": 1783113600,
+              "headline": "Better EV Stock: Rivian vs. Lucid",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=d5262c54e1104316f36417f8176e90e5899c5d8c9842317fc881d68c635ec71e"
+              "url": "https://finnhub.io/api/news?id=6b7ba4af43f28c3c393d2ff22c35a5060335ed9aa23a177739958572916c27cd"
             },
             {
-              "datetime": 1783046760,
-              "headline": "CrowdStrike Just Split Its Stock 4-for-1. Does a $193 Price Tag Make It a Buy?",
+              "datetime": 1783112584,
+              "headline": "Is This $17.5 Billion Nuclear Stock Your Ticket to Future Riches?",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=824d6313ca72c9d2ed7b5dfd871b483b7b962f2399d28d51a621fe9c2cb00d2f"
+              "url": "https://finnhub.io/api/news?id=345938db9c2f093a2124e4183a86adca4093421f6f27d76f1b648f9845c1cb74"
             },
             {
-              "datetime": 1783046100,
-              "headline": "What Makes a Bank Stock Worth Owning for Decades",
+              "datetime": 1783111020,
+              "headline": "3 Reasons You Should Buy Carnival Stock in July",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=64b5f6a77c73b1fb4fcccb628a0298d5670e64df822a9cd06a68faa69b5409d5"
+              "url": "https://finnhub.io/api/news?id=91d1a8570fef05767e6944018d278508e9d17cad12bb7d00620907d2ac431248"
             },
             {
-              "datetime": 1783044985,
-              "headline": "Why Apple Stock Rallied Today",
+              "datetime": 1783110594,
+              "headline": "How to Buy Pre-IPO Shares in Anthropic and OpenAI (And Why You Might Not Want To)",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=050e6da10683050edf69358e856258fcabecfdab4b48dbb6f5cf03d1dc18b3d6"
+              "url": "https://finnhub.io/api/news?id=003a46fd14059e5237ad60463507a86e71675ef73ce278b7598252cc14f84450"
             },
             {
-              "datetime": 1783043280,
-              "headline": "Meta Wants In on the Cloud. Is Amazon Stock Still a Buy?",
+              "datetime": 1783110060,
+              "headline": "The Case for and Against Buying NuScale Right Now",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=58b15272319f6ff1bc70492ed59291a23db1185492573db0e5c7a615343ab7c4"
+              "url": "https://finnhub.io/api/news?id=ee14ae01a1ec148fbf8a2b39403373986748e7806a6c526d1f4be42e02b178ba"
             },
             {
-              "datetime": 1783042620,
-              "headline": "Nvidia revealed missing puzzle piece of its long-term strategy",
+              "datetime": 1783109902,
+              "headline": "Why IonQ Stock Plummeted 26.1% in June",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=c4eb2058a33b6cf7d564db316ec1591d0fb40acf65847318f86b8b50719d7927"
+              "url": "https://finnhub.io/api/news?id=581014d6b75722b8e389ee63515508356c7ff43eee1708de47a05b76ba3147d3"
             }
           ],
-          "major_company_headline": "Why AppLovin Stock Was Racing Higher This Week",
+          "major_company_headline": "Apple Is About 4% Away From Overtaking Nvidia as the World's Most Valuable Company. Could It Happen This Month?",
           "news_count_24h": 20,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
-          "news_sentiment": "negative"
+          "news_sentiment": "positive"
         },
         "price_trend": {
           "close": 194.8300018310547,
@@ -2534,12 +2534,12 @@
           "realized_volatility_20d": 0.4052
         },
         "volume": {
-          "accumulation_distribution_proxy": -0.1832,
+          "accumulation_distribution_proxy": -0.1833,
           "panic_volume_proxy": false,
-          "up_volume_down_volume_proxy": 0.6903,
-          "volume_confirmation_score": 39.7,
-          "volume_vs_20d_average": 0.9033,
-          "volume_z_score": -0.5371
+          "up_volume_down_volume_proxy": 0.6902,
+          "volume_confirmation_score": 39.79,
+          "volume_vs_20d_average": 0.9053,
+          "volume_z_score": -0.5266
         }
       },
       "forecast_price_levels": {
@@ -2728,7 +2728,7 @@
               "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.7215,
+            "similarity_score": 0.7216,
             "worst_path_60d": -0.0499
           },
           {
@@ -2749,7 +2749,7 @@
               "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.7042,
+            "similarity_score": 0.704,
             "worst_path_60d": -0.0678
           },
           {
@@ -2770,7 +2770,7 @@
               "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.6946,
+            "similarity_score": 0.6943,
             "worst_path_60d": -0.0482
           },
           {
@@ -2791,7 +2791,7 @@
               "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.6833,
+            "similarity_score": 0.6836,
             "worst_path_60d": -0.208
           },
           {
@@ -2813,7 +2813,7 @@
               "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.6641,
+            "similarity_score": 0.6645,
             "worst_path_60d": -0.0233
           },
           {
@@ -2834,7 +2834,7 @@
               "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.6553,
+            "similarity_score": 0.6552,
             "worst_path_60d": -0.0517
           },
           {
@@ -2855,7 +2855,7 @@
               "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.6505,
+            "similarity_score": 0.6504,
             "worst_path_60d": -0.058
           },
           {
@@ -2876,7 +2876,7 @@
               "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.6462,
+            "similarity_score": 0.6463,
             "worst_path_60d": -0.0552
           },
           {
@@ -2897,7 +2897,7 @@
               "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.6407,
+            "similarity_score": 0.6408,
             "worst_path_60d": 0.0118
           },
           {
@@ -2918,7 +2918,7 @@
               "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.6226,
+            "similarity_score": 0.6225,
             "worst_path_60d": -0.0303
           }
         ],
@@ -2927,8 +2927,8 @@
       "market_context_for_stock": {
         "benchmark": "QQQ",
         "benchmark_edge_status": "MODERATE_EDGE",
-        "benchmark_market_state": "risk_on",
-        "benchmark_primary_probability": 0.3341,
+        "benchmark_market_state": "recovery",
+        "benchmark_primary_probability": 0.3311,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -3017,6 +3017,7 @@
           "scenario": "stock_failed_bounce"
         },
         "supporting_signals": [
+          "近期公司新闻偏正面。",
           "基础财务指标已接入且收入增长为正。"
         ]
       },
@@ -3819,7 +3820,7 @@
           {
             "affected_ticker": "NVDA",
             "alert_level": "NO_ALERT",
-            "alert_score": 32.04,
+            "alert_score": 32.01,
             "alert_type": "Stock Failed Bounce Risk",
             "confirmation_needed": [
               "价格无法站上确认价",
@@ -4284,7 +4285,7 @@
         "strongest_alert": {
           "affected_ticker": "NVDA",
           "alert_level": "NO_ALERT",
-          "alert_score": 32.04,
+          "alert_score": 32.01,
           "alert_type": "Stock Failed Bounce Risk",
           "confirmation_needed": [
             "价格无法站上确认价",
@@ -4345,15 +4346,16 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Why AppLovin Stock Was Racing Higher This Week",
+              "公司新闻已接入: Apple Is About 4% Away From Overtaking Nvidia as the World's Most Valuable Company. Could It Happen This Month?",
+              "新闻情绪偏正",
               "增长数据具备 EPS 上修叙事基础"
             ],
             "max_points": 10,
             "missing_fields": [],
             "name": "catalyst",
-            "points": 6.0,
-            "score_pct": 60.0,
-            "status": "neutral"
+            "points": 8.0,
+            "score_pct": 80.0,
+            "status": "supportive"
           },
           "flow": {
             "evidence": [
@@ -4435,7 +4437,7 @@
           "expected_return_60d": -0.0141,
           "max_drawdown_risk_20d": 0.109,
           "max_drawdown_risk_60d": 0.1735,
-          "outperformance_probability_20d": 0.4778,
+          "outperformance_probability_20d": 0.4858,
           "risk_reward_ratio": 0.33,
           "upside_potential_60d": 0.0573
         },
@@ -4457,7 +4459,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "Why AppLovin Stock Was Racing Higher This Week",
+          "catalyst": "Apple Is About 4% Away From Overtaking Nvidia as the World's Most Valuable Company. Could It Happen This Month?",
           "expectation_gap": [
             "收入增长较强，具备正向预期差基础",
             "EPS 增长较强，可能支持盈利上修叙事"
@@ -4475,7 +4477,7 @@
           "primary_path": "stock_downside_continuation",
           "valuation_repricing": "估值扩张证据不足或存在压力"
         },
-        "total_score": 34.5,
+        "total_score": 36.5,
         "validation_status": "not_yet_validated",
         "version": "stock_alpha_score_v1"
       },
@@ -4503,8 +4505,8 @@
         "module_scores": {
           "alpha_quality": {
             "evidence": "个股 Alpha 评分已接入",
-            "reason": "score=34.5; grade=weak_or_no_alpha_edge; benchmark=QQQ",
-            "score": 34.5,
+            "reason": "score=36.5; grade=weak_or_no_alpha_edge; benchmark=QQQ",
+            "score": 36.5,
             "status": "conflicting"
           },
           "fundamentals_earnings": {
@@ -4558,12 +4560,12 @@
           "volume_structure": {
             "evidence": "成交量不确认当前路径",
             "reason": "缩量反抽或下跌量能压力",
-            "score": 39.7,
+            "score": 39.79,
             "status": "conflicting"
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 39.44,
+        "stock_confluence_score": 39.63,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "基础财务指标偏支持",
@@ -4572,6 +4574,7 @@
         "validation_status": "not_yet_validated"
       },
       "supporting_signals": [
+        "近期公司新闻偏正面。",
         "基础财务指标已接入且收入增长为正。"
       ],
       "symbol": "NVDA",
@@ -4650,9 +4653,9 @@
             }
           ],
           "major_company_headline": "Jim Cramer: 'Go For' AST SpaceMobile, Power Plant Maker 'Too Speculative'",
-          "news_count_24h": 1,
+          "news_count_24h": 0,
           "news_count_72h": 1,
-          "news_risk_score": 28.0,
+          "news_risk_score": 20.0,
           "news_sentiment": "neutral"
         },
         "price_trend": {
@@ -4693,12 +4696,12 @@
           "realized_volatility_20d": 0.9436
         },
         "volume": {
-          "accumulation_distribution_proxy": -0.0256,
+          "accumulation_distribution_proxy": -0.0259,
           "panic_volume_proxy": false,
-          "up_volume_down_volume_proxy": 0.95,
-          "volume_confirmation_score": 38.99,
-          "volume_vs_20d_average": 0.8175,
-          "volume_z_score": -0.6265
+          "up_volume_down_volume_proxy": 0.9496,
+          "volume_confirmation_score": 39.09,
+          "volume_vs_20d_average": 0.822,
+          "volume_z_score": -0.6133
         }
       },
       "forecast_price_levels": {
@@ -4886,7 +4889,7 @@
               "波动率区间接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.6181,
+            "similarity_score": 0.6195,
             "worst_path_60d": -0.4838
           },
           {
@@ -4908,7 +4911,7 @@
               "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.5588,
+            "similarity_score": 0.5592,
             "worst_path_60d": -0.4764
           },
           {
@@ -4929,7 +4932,7 @@
               "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.4808,
+            "similarity_score": 0.4806,
             "worst_path_60d": -0.4632
           },
           {
@@ -4998,7 +5001,7 @@
               "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.2994,
+            "similarity_score": 0.2998,
             "worst_path_60d": -0.4153
           },
           {
@@ -5019,7 +5022,7 @@
               "20d 回撤深度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.2979,
+            "similarity_score": 0.2993,
             "worst_path_60d": -0.5005
           },
           {
@@ -5042,7 +5045,7 @@
               "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.2576,
+            "similarity_score": 0.2575,
             "worst_path_60d": -0.5944
           },
           {
@@ -5087,7 +5090,7 @@
               "波动率区间接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.1842,
+            "similarity_score": 0.1838,
             "worst_path_60d": -0.2841
           }
         ],
@@ -5097,7 +5100,7 @@
         "benchmark": "IWM",
         "benchmark_edge_status": "MODERATE_EDGE",
         "benchmark_market_state": "failed_bounce_risk",
-        "benchmark_primary_probability": 0.3257,
+        "benchmark_primary_probability": 0.3155,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -6102,7 +6105,7 @@
           {
             "affected_ticker": "SMR",
             "alert_level": "NO_ALERT",
-            "alert_score": 30.71,
+            "alert_score": 30.68,
             "alert_type": "Stock Failed Bounce Risk",
             "confirmation_needed": [
               "价格无法站上确认价",
@@ -6695,7 +6698,7 @@
           "news_event": {
             "evidence": "公司新闻源已接入",
             "reason": "Jim Cramer: 'Go For' AST SpaceMobile, Power Plant Maker 'Too Speculative'",
-            "score": 53.96,
+            "score": 51.4,
             "status": "neutral"
           },
           "options_volatility": {
@@ -6725,12 +6728,12 @@
           "volume_structure": {
             "evidence": "成交量不确认当前路径",
             "reason": "缩量反抽或下跌量能压力",
-            "score": 38.99,
+            "score": 39.09,
             "status": "conflicting"
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 37.25,
+        "stock_confluence_score": 37.08,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "历史相似结构支持主路径"
@@ -6811,59 +6814,59 @@
           "event_risk_flag": "high",
           "headlines": [
             {
-              "datetime": 1783047628,
-              "headline": "Dow Jones Futures Rise After Tesla, Sandisk, AI Stocks Dive; Apple, Robinhood Flash Buy Signals",
+              "datetime": 1783107081,
+              "headline": "Elon Musk's X Money — New Details On Bank Killer Super App",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=ba99dab84837e44d71b0c99fc646f2d0d40097c60a6459b64df4f5d7f3f12750"
+              "url": "https://finnhub.io/api/news?id=798b28b3d0fd2d47df85456bebc641caf9d71747d5bb2beb06efd5413d7312f3"
             },
             {
-              "datetime": 1783045774,
-              "headline": "Why Did Tesla’s Stock Drop 7% Despite a Record Delivery Quarter?",
+              "datetime": 1783103656,
+              "headline": "Dow Jones Futures: Techs' Rise Signal AI Trend Isn't Over; Apple, Robinhood Flash Buy Signals",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=779052920937d427c2dda80d20e663621016aeb0097e505a3f99f9243b132484"
+              "url": "https://finnhub.io/api/news?id=42caf97ca442208dddaca6df1716d1774e29504f50d3c7ffa3c93e2594115927"
             },
             {
-              "datetime": 1783038696,
-              "headline": "TSLA Stock Clocks Worst Day In 11 Months After Q2 Delivery Blows Past Estimates — Investors And Experts Weigh In",
+              "datetime": 1783100460,
+              "headline": "Worried About Tesla's 7% Slump Post Solid Q2 Deliveries? Grab These ETFs",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=51314b51cc23dd5fb6832ba656663f653924e7feab8ef17d6aa8293ef57d0d63"
+              "url": "https://finnhub.io/api/news?id=d1f3b349ccd2ac8776e61eaad56d3b6fb192662b5013cd1d2efeff26c79c6d94"
             },
             {
-              "datetime": 1783037544,
-              "headline": "Why Tesla (TSLA) Shares Are Getting Obliterated Today",
+              "datetime": 1783096500,
+              "headline": "Meet the Major Artificial Intelligence (AI) CPU Player That Just Joined Nvidia, Tesla, and Palantir as One of the Most Popular Stocks on Robinhood",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=471f6f5b6536d815712338979a54e5d5c2007fede57abc621b3831fc9fd7c65d"
+              "url": "https://finnhub.io/api/news?id=9396aadbda353e75df74740995ebcb9c370d18dd35d7f0fcc6f68b566b6e754d"
             },
             {
-              "datetime": 1783035567,
-              "headline": "Popular Tesla investor blames Trump for Bitcoin crash",
+              "datetime": 1783096499,
+              "headline": "Tesla Vs. SpaceX: Here’s Which Will Outperform the Other by the End of July",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=75cc4447fc339ed841814f6a58b1dde271941c267e25a1b26f0fac7f67a6d702"
+              "url": "https://finnhub.io/api/news?id=00d56d2adb28053a34ed7947cccdfd2d217ae29f5fb55bf528721dec8997833a"
             },
             {
-              "datetime": 1783028749,
-              "headline": "Dow Jones Futures: Dow Hits High But AI Tumbles; Apple, Robinhood Are Buys As Tesla, Sandisk Dive",
+              "datetime": 1783096183,
+              "headline": "Elon Musk Has Mojo Back, As Tesla Deliveries Skyrocket",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=00d99cf43ca34d8c0a02ba974d1fd52012fa46be6d172bb7ebb2a6d6a0a34310"
+              "url": "https://finnhub.io/api/news?id=f924e2a7af2e44a933dc8ee6c472494a8fabd767d6016f899777d3f9f39595cb"
             },
             {
-              "datetime": 1783028107,
-              "headline": "Stock Market Today, July 2: Rivian Jumps on Raised 2026 Delivery Guidance",
+              "datetime": 1783095710,
+              "headline": "Tesla Caps Staff AI Spending",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=d08b43c9a761de08c3b33a61140610007c6bf74737d54cdeb6a00de49a6abd5f"
+              "url": "https://finnhub.io/api/news?id=ca687ec4fc195196064cc163c2a6af6989e5f4963426c68d80bcf76701370da0"
             },
             {
-              "datetime": 1783027606,
-              "headline": "Tesla deliveries beat forecasts as Europe's rebound brightens outlook",
+              "datetime": 1783094066,
+              "headline": "Dow Jones Futures: Techs Rebound After Tesla, Sandisk, AI Stocks Dive; Apple, Robinhood Flash Buy Signals",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=2a8c12bb53ce4d6753b0ac68426dedb15827d6d9e55d11d986cc784f9ef00492"
+              "url": "https://finnhub.io/api/news?id=f29bf872ce4e799318dc82aba51e8c24832d308a23477a31b577e35fd3d81aaf"
             }
           ],
-          "major_company_headline": "Dow Jones Futures Rise After Tesla, Sandisk, AI Stocks Dive; Apple, Robinhood Flash Buy Signals",
+          "major_company_headline": "Elon Musk's X Money — New Details On Bank Killer Super App",
           "news_count_24h": 20,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
-          "news_sentiment": "positive"
+          "news_sentiment": "negative"
         },
         "price_trend": {
           "close": 393.45001220703125,
@@ -6903,12 +6906,12 @@
           "realized_volatility_20d": 0.6237
         },
         "volume": {
-          "accumulation_distribution_proxy": 0.0223,
+          "accumulation_distribution_proxy": 0.0221,
           "panic_volume_proxy": true,
-          "up_volume_down_volume_proxy": 1.0456,
-          "volume_confirmation_score": 66.64,
-          "volume_vs_20d_average": 1.4906,
-          "volume_z_score": 2.8296
+          "up_volume_down_volume_proxy": 1.0452,
+          "volume_confirmation_score": 66.81,
+          "volume_vs_20d_average": 1.4943,
+          "volume_z_score": 2.8514
         }
       },
       "forecast_price_levels": {
@@ -7097,7 +7100,7 @@
               "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.6589,
+            "similarity_score": 0.6579,
             "worst_path_60d": -0.0425
           },
           {
@@ -7120,7 +7123,7 @@
               "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.5632,
+            "similarity_score": 0.5634,
             "worst_path_60d": -0.0087
           },
           {
@@ -7139,7 +7142,7 @@
               "波动率区间接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.5183,
+            "similarity_score": 0.5162,
             "worst_path_60d": -0.0436
           },
           {
@@ -7159,7 +7162,7 @@
               "波动率区间接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.516,
+            "similarity_score": 0.5136,
             "worst_path_60d": -0.0492
           },
           {
@@ -7178,7 +7181,7 @@
               "波动率区间接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.5142,
+            "similarity_score": 0.5134,
             "worst_path_60d": -0.0271
           },
           {
@@ -7198,7 +7201,7 @@
               "波动率区间接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.5092,
+            "similarity_score": 0.5071,
             "worst_path_60d": -0.2361
           },
           {
@@ -7219,7 +7222,7 @@
               "波动率区间接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.4905,
+            "similarity_score": 0.4875,
             "worst_path_60d": 0.0201
           },
           {
@@ -7240,7 +7243,7 @@
               "波动率区间接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.4889,
+            "similarity_score": 0.4861,
             "worst_path_60d": -0.177
           },
           {
@@ -7260,7 +7263,7 @@
               "波动率区间接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.4722,
+            "similarity_score": 0.4701,
             "worst_path_60d": -0.1794
           },
           {
@@ -7281,7 +7284,7 @@
               "波动率区间接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.4556,
+            "similarity_score": 0.4532,
             "worst_path_60d": -0.1928
           }
         ],
@@ -7290,8 +7293,8 @@
       "market_context_for_stock": {
         "benchmark": "QQQ",
         "benchmark_edge_status": "MODERATE_EDGE",
-        "benchmark_market_state": "risk_on",
-        "benchmark_primary_probability": 0.3341,
+        "benchmark_market_state": "recovery",
+        "benchmark_primary_probability": 0.3311,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -7381,7 +7384,6 @@
         },
         "supporting_signals": [
           "成交量结构支持当前路径。",
-          "近期公司新闻偏正面。",
           "基础财务指标已接入且收入增长为正。"
         ]
       },
@@ -8710,20 +8712,19 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Dow Jones Futures Rise After Tesla, Sandisk, AI Stocks Dive; Apple, Robinhood Flash Buy Signals",
-              "新闻情绪偏正",
+              "公司新闻已接入: Elon Musk's X Money — New Details On Bank Killer Super App",
               "未来 30 天存在财报催化：2026-07-22"
             ],
             "max_points": 10,
             "missing_fields": [],
             "name": "catalyst",
-            "points": 8.0,
-            "score_pct": 80.0,
-            "status": "supportive"
+            "points": 6.0,
+            "score_pct": 60.0,
+            "status": "neutral"
           },
           "flow": {
             "evidence": [
-              "成交量异常放大 z=2.83"
+              "成交量异常放大 z=2.85"
             ],
             "max_points": 10,
             "missing_fields": [],
@@ -8825,7 +8826,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "Dow Jones Futures Rise After Tesla, Sandisk, AI Stocks Dive; Apple, Robinhood Flash Buy Signals",
+          "catalyst": "Elon Musk's X Money — New Details On Bank Killer Super App",
           "expectation_gap": [
             "未来 30 天财报可能成为重新定价窗口"
           ],
@@ -8924,12 +8925,12 @@
           "volume_structure": {
             "evidence": "成交量确认当前路径",
             "reason": "量能改善或放量上涨代理成立",
-            "score": 66.64,
+            "score": 66.81,
             "status": "supportive"
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 41.09,
+        "stock_confluence_score": 41.11,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "成交量确认当前路径",
@@ -8939,7 +8940,6 @@
       },
       "supporting_signals": [
         "成交量结构支持当前路径。",
-        "近期公司新闻偏正面。",
         "基础财务指标已接入且收入增长为正。"
       ],
       "symbol": "TSLA",
@@ -8962,7 +8962,7 @@
       "top_candidate": "TSLA",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-07-03T05:01:52.077754+00:00",
+    "generated_at": "2026-07-03T23:39:58.570696+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -8984,7 +8984,7 @@
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 63.38,
         "company_name": "Tesla Inc",
-        "confluence_score": 41.09,
+        "confluence_score": 41.11,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9001,7 +9001,7 @@
           "mid": 392.58,
           "range_pct": 0.0476
         },
-        "final_radar_score": 61.04,
+        "final_radar_score": 61.05,
         "forecast_date": "2026-07-02",
         "invalidation_level": 368.6,
         "last_close": 393.45001220703125,
@@ -9050,9 +9050,9 @@
         "volume_anomaly_score": 100,
         "volume_fields": {
           "abnormal_volume_flag": true,
-          "relative_volume_20d": 1.4906,
+          "relative_volume_20d": 1.4943,
           "relative_volume_5d": null,
-          "volume_z_score": 2.8296
+          "volume_z_score": 2.8514
         },
         "whether_top10_candidate": true
       },
@@ -9070,7 +9070,7 @@
         "candidate_type": "downside_continuation",
         "catalyst_score": 63.01,
         "company_name": "Nuscale Power Corp",
-        "confluence_score": 37.25,
+        "confluence_score": 37.08,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9087,7 +9087,7 @@
           "mid": 9.71,
           "range_pct": 0.0922
         },
-        "final_radar_score": 50.27,
+        "final_radar_score": 50.29,
         "forecast_date": "2026-07-02",
         "invalidation_level": 9.12,
         "last_close": 9.760000228881836,
@@ -9108,7 +9108,7 @@
           "company_news": "available",
           "earnings": "available"
         },
-        "next_day_move_probability": 0.8116,
+        "next_day_move_probability": 0.8123,
         "one_line_reason": "downside_continuation: Alpha 35 / 弹性 100 / 成交量 54 / 相对强弱 7 / 催化 63 / 大盘 risk_off_pressure / 板块 conflicting",
         "outperformance_probability_20d": 0.1888,
         "primary_probability": 0.3038,
@@ -9128,41 +9128,41 @@
         "risk_score": 60.27,
         "secondary_scenario": "stock_failed_bounce",
         "sector_context": "conflicting",
-        "squeeze_proxy_score": 70.81,
+        "squeeze_proxy_score": 70.9,
         "ticker": "SMR",
         "upside_trigger_level": 12.3,
         "validation_status": "not_yet_validated",
-        "volume_anomaly_score": 54.21,
+        "volume_anomaly_score": 54.5,
         "volume_fields": {
           "abnormal_volume_flag": true,
-          "relative_volume_20d": 0.8175,
+          "relative_volume_20d": 0.822,
           "relative_volume_5d": null,
-          "volume_z_score": -0.6265
+          "volume_z_score": -0.6133
         },
         "whether_top10_candidate": true
       },
       {
         "alpha_fields": {
-          "alpha_score": 34.5,
+          "alpha_score": 36.5,
           "expected_return_60d": -0.0141,
           "forecast_grade": "weak_or_no_alpha_edge",
           "main_logic": "半导体/AI 逻辑：订单、毛利率、资本开支周期、估值重估和资金确认。",
-          "outperformance_probability_20d": 0.4778,
+          "outperformance_probability_20d": 0.4858,
           "risk_reward_ratio": 0.33
         },
-        "alpha_quality_score": 34.5,
+        "alpha_quality_score": 36.5,
         "as_of": "2026-07-02",
         "candidate_type": "downside_continuation",
         "catalyst_score": 62.77,
         "company_name": "NVIDIA Corp",
-        "confluence_score": 39.44,
+        "confluence_score": 39.63,
         "data_missing": [
           "single_stock_options"
         ],
         "data_quality": 87.5,
         "data_status": "available",
         "downside_risk_level": 187.86,
-        "elasticity_score": 64.25,
+        "elasticity_score": 64.17,
         "expected_next_day_high": 197.6,
         "expected_next_day_low": 191.37,
         "expected_next_day_mid": 194.48,
@@ -9172,7 +9172,7 @@
           "mid": 194.48,
           "range_pct": 0.032
         },
-        "final_radar_score": 46.15,
+        "final_radar_score": 46.54,
         "forecast_date": "2026-07-02",
         "invalidation_level": 189.8,
         "last_close": 194.8300018310547,
@@ -9195,8 +9195,8 @@
           "earnings": "available"
         },
         "next_day_move_probability": 0.6223,
-        "one_line_reason": "downside_continuation: Alpha 34 / 弹性 64 / 成交量 57 / 相对强弱 21 / 催化 63 / 大盘 risk_off_pressure / 板块 neutral",
-        "outperformance_probability_20d": 0.4778,
+        "one_line_reason": "downside_continuation: Alpha 36 / 弹性 64 / 成交量 58 / 相对强弱 21 / 催化 63 / 大盘 risk_off_pressure / 板块 neutral",
+        "outperformance_probability_20d": 0.4858,
         "primary_probability": 0.271,
         "primary_scenario": "stock_downside_continuation",
         "radar_level": "WATCH",
@@ -9211,19 +9211,19 @@
         "relative_strength_score": 21.39,
         "risk_reward_ratio": 0.33,
         "risk_scenario": "stock_event_risk",
-        "risk_score": 53.39,
+        "risk_score": 53.37,
         "secondary_scenario": "stock_failed_bounce",
         "sector_context": "neutral",
-        "squeeze_proxy_score": 63.01,
+        "squeeze_proxy_score": 63.04,
         "ticker": "NVDA",
         "upside_trigger_level": 221.6,
         "validation_status": "not_yet_validated",
-        "volume_anomaly_score": 57.35,
+        "volume_anomaly_score": 57.54,
         "volume_fields": {
           "abnormal_volume_flag": true,
-          "relative_volume_20d": 0.9033,
+          "relative_volume_20d": 0.9053,
           "relative_volume_5d": null,
-          "volume_z_score": -0.5371
+          "volume_z_score": -0.5266
         },
         "whether_top10_candidate": true
       },
@@ -9241,14 +9241,14 @@
         "candidate_type": "downside_continuation",
         "catalyst_score": 60.87,
         "company_name": "Constellation Energy Corp",
-        "confluence_score": 25.4,
+        "confluence_score": 24.66,
         "data_missing": [
           "single_stock_options"
         ],
         "data_quality": 87.5,
         "data_status": "available",
         "downside_risk_level": 227.79,
-        "elasticity_score": 79.81,
+        "elasticity_score": 79.83,
         "expected_next_day_high": 243.79,
         "expected_next_day_low": 233.53,
         "expected_next_day_mid": 238.66,
@@ -9258,7 +9258,7 @@
           "mid": 238.66,
           "range_pct": 0.0429
         },
-        "final_radar_score": 43.84,
+        "final_radar_score": 43.77,
         "forecast_date": "2026-07-02",
         "invalidation_level": 228.63,
         "last_close": 239.25,
@@ -9280,7 +9280,7 @@
           "company_news": "available",
           "earnings": "available"
         },
-        "next_day_move_probability": 0.7331,
+        "next_day_move_probability": 0.7334,
         "one_line_reason": "downside_continuation: Alpha 20 / 弹性 80 / 成交量 69 / 相对强弱 0 / 催化 61 / 大盘 risk_off_pressure / 板块 conflicting",
         "outperformance_probability_20d": 0.3882,
         "primary_probability": 0.2887,
@@ -9300,16 +9300,16 @@
         "risk_score": 58.69,
         "secondary_scenario": "stock_failed_bounce",
         "sector_context": "conflicting",
-        "squeeze_proxy_score": 84.83,
+        "squeeze_proxy_score": 84.85,
         "ticker": "CEG",
         "upside_trigger_level": 282.77,
         "validation_status": "not_yet_validated",
-        "volume_anomaly_score": 68.96,
+        "volume_anomaly_score": 69.02,
         "volume_fields": {
           "abnormal_volume_flag": true,
-          "relative_volume_20d": 1.0319,
+          "relative_volume_20d": 1.0328,
           "relative_volume_5d": null,
-          "volume_z_score": 0.09
+          "volume_z_score": 0.0929
         },
         "whether_top10_candidate": true
       }

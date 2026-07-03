@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-03T05:01:41.619120+00:00`
+- generated_at: `2026-07-03T23:39:50.683521+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `4`
-- event_detection_confidence: `76`
+- major_event_count: `6`
+- event_detection_confidence: `72`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,6 +27,38 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: American Express and Chase move luxury lounge wars beyond the airport
+- source: CNBC
+- published_at: `2026-07-03T12:00:01+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Britain's services sector contracts sharply under strain of Iran war, PMI shows - Reuters
+- source: Reuters
+- published_at: `2026-07-03T08:35:43+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Dutch military invests millions in drone software platform - Reuters
+- source: Reuters
+- published_at: `2026-07-03T04:03:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Oil prices little changed as US-Iran peace efforts hold - Reuters
+- source: Reuters
+- published_at: `2026-07-03T02:05:00+00:00`
+- importance_score: `95`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Iran warns US, Israel against attacks ahead of funeral processions for Khamenei - Reuters
 - source: Reuters
 - published_at: `2026-07-02T17:56:56+00:00`
@@ -39,20 +71,4 @@
 - source: CNBC
 - published_at: `2026-07-02T12:45:01+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: UK business morale slumps as Iran war pushes up costs, survey shows - Reuters
-- source: Reuters
-- published_at: `2026-07-02T07:05:43+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### oil_shock_relief / risk_on
-
-- headline: Oil prices fall 1% to 4-month lows as progress in US-Iran talks cools supply concerns - Reuters
-- source: Reuters
-- published_at: `2026-07-02T09:20:41+00:00`
-- importance_score: `89`
 - confidence: `medium`
