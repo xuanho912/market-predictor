@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-02T23:42:32.561086+00:00`
+- generated_at: `2026-07-03T05:01:41.619120+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `5`
-- event_detection_confidence: `77`
+- major_event_count: `4`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -39,7 +39,7 @@
 - source: CNBC
 - published_at: `2026-07-02T12:45:01+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -49,18 +49,10 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
+### oil_shock_relief / risk_on
 
-- headline: Cramer shares next steps for a software stock after a rare bullish analyst call
-- source: CNBC
-- published_at: `2026-07-01T16:36:41+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: European shares pause after rally as concerns over Fed rates, Iran peace deal linger - Reuters
+- headline: Oil prices fall 1% to 4-month lows as progress in US-Iran talks cools supply concerns - Reuters
 - source: Reuters
-- published_at: `2026-07-01T16:12:33+00:00`
-- importance_score: `99`
-- confidence: `high`
+- published_at: `2026-07-02T09:20:41+00:00`
+- importance_score: `89`
+- confidence: `medium`
