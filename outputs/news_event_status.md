@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-03T23:39:50.683521+00:00`
+- generated_at: `2026-07-04T04:56:11.104456+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
-- event_detection_confidence: `72`
+- major_event_count: `5`
+- event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -31,7 +31,7 @@
 - source: CNBC
 - published_at: `2026-07-03T12:00:01+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -54,7 +54,7 @@
 - headline: Oil prices little changed as US-Iran peace efforts hold - Reuters
 - source: Reuters
 - published_at: `2026-07-03T02:05:00+00:00`
-- importance_score: `95`
+- importance_score: `94`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
@@ -64,11 +64,3 @@
 - published_at: `2026-07-02T17:56:56+00:00`
 - importance_score: `100`
 - confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: High-end camping and a capital raise: AutoCamp is banking on summer travel to fuel growth
-- source: CNBC
-- published_at: `2026-07-02T12:45:01+00:00`
-- importance_score: `100`
-- confidence: `medium`
