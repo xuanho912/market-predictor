@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-05T15:32:24.464569+00:00`
+- generated_at: `2026-07-05T15:36:30.745970+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `2`
-- event_detection_confidence: `63`
+- event_detection_confidence: `62`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
