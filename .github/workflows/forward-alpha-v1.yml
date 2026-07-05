@@ -184,10 +184,11 @@ jobs:
       - name: Deploy to GitHub Pages
         if: ${{ !github.event.repository.private }}
         id: deployment
+        continue-on-error: ${{ env.PUBLIC_DASHBOARD_REPO != '' }}
         uses: actions/deploy-pages@v4
 
       - name: Publish sanitized dashboard to public repository
-        if: ${{ env.PUBLIC_DASHBOARD_REPO != '' }}
+        if: ${{ always() && env.PUBLIC_DASHBOARD_REPO != '' }}
         env:
           DASHBOARD_DEPLOY_TOKEN: ${{ secrets.DASHBOARD_DEPLOY_TOKEN }}
         run: |
