@@ -49,6 +49,9 @@ on:
       - "frontend/tailwind.config.ts"
       - "frontend/postcss.config.js"
   schedule:
+    # Daily freshness heartbeat. This keeps the dashboard date/status current on
+    # weekends and US market holidays, even when no new forecast should be frozen.
+    - cron: "17 12 * * *"
     - cron: "37 22 * * 1-5"
     - cron: "17 1 * * 2-6"
 
@@ -167,14 +170,29 @@ jobs:
       - name: Export sanitized public dashboard bundle
         run: python scripts/export_public_dashboard_bundle.py --source frontend/out --dest outputs/public_dashboard_site
 
+      - name: Configure GitHub Pages
+        if: ${{ !github.event.repository.private }}
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        if: ${{ !github.event.repository.private }}
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: frontend/out
+
+      - name: Deploy to GitHub Pages
+        if: ${{ !github.event.repository.private }}
+        id: deployment
+        uses: actions/deploy-pages@v4
+
       - name: Publish sanitized dashboard to public repository
         if: ${{ env.PUBLIC_DASHBOARD_REPO != '' }}
         env:
           DASHBOARD_DEPLOY_TOKEN: ${{ secrets.DASHBOARD_DEPLOY_TOKEN }}
         run: |
           if [ -z "$DASHBOARD_DEPLOY_TOKEN" ]; then
-            echo "::warning::PUBLIC_DASHBOARD_REPO is set but DASHBOARD_DEPLOY_TOKEN is missing. Skipping public dashboard publish."
-            exit 0
+            echo "::error::PUBLIC_DASHBOARD_REPO is set to ${PUBLIC_DASHBOARD_REPO}, but DASHBOARD_DEPLOY_TOKEN is missing. The private/source dashboard may have updated, but the public display mirror will stay stale until this secret is fixed."
+            exit 1
           fi
           rm -rf /tmp/market-predictor-dashboard-publish
           git clone --depth 1 --branch "$PUBLIC_DASHBOARD_BRANCH" "https://x-access-token:${DASHBOARD_DEPLOY_TOKEN}@github.com/${PUBLIC_DASHBOARD_REPO}.git" /tmp/market-predictor-dashboard-publish || \
@@ -190,22 +208,7 @@ jobs:
           else
             git commit -m "Update generated market prediction dashboard"
             if ! git push "https://x-access-token:${DASHBOARD_DEPLOY_TOKEN}@github.com/${PUBLIC_DASHBOARD_REPO}.git" "HEAD:${PUBLIC_DASHBOARD_BRANCH}"; then
-              echo "::warning::Failed to publish public dashboard. DASHBOARD_DEPLOY_TOKEN may be expired or missing write access to ${PUBLIC_DASHBOARD_REPO}. Private forecast outputs were already generated; fix the token and rerun this workflow."
-              exit 0
+              echo "::error::Failed to publish public dashboard. DASHBOARD_DEPLOY_TOKEN may be expired or missing write access to ${PUBLIC_DASHBOARD_REPO}. The public dashboard will remain stale until the token is fixed and the workflow is rerun."
+              exit 1
             fi
           fi
-
-      - name: Configure GitHub Pages
-        if: ${{ !github.event.repository.private }}
-        uses: actions/configure-pages@v5
-
-      - name: Upload GitHub Pages artifact
-        if: ${{ !github.event.repository.private }}
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: frontend/out
-
-      - name: Deploy to GitHub Pages
-        if: ${{ !github.event.repository.private }}
-        id: deployment
-        uses: actions/deploy-pages@v4
