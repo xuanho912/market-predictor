@@ -114,6 +114,12 @@ CHALLENGER_REGISTRY = [
         "forbidden_without": "at least 20 completed forecast deviation reviews and enough material deviations to avoid one-off hindsight fitting",
     },
     {
+        "model_version": "challenger_v2_event_reaction_overlay",
+        "description": "Shadow-tests stricter news/event reaction handling using event direction plus market price confirmation.",
+        "required_data_flags": ("news_event_overlay_available", "event_reaction_learning_ready"),
+        "forbidden_without": "available news/event intelligence and enough forecast-deviation evidence that event reactions need shadow validation",
+    },
+    {
         "model_version": "challenger_v3_full_options_flow",
         "description": "Combines put/call, gamma proxy, true flow, and macro event risk after each component is validated.",
         "required_data_flags": (
@@ -556,6 +562,12 @@ def _data_availability_flags(dashboard: dict[str, Any]) -> dict[str, bool]:
     data_quality = ((dashboard.get("data_quality_report") or {}).get("summary") or {})
     deviation_review = dashboard.get("forecast_deviation_review") or _load_latest_deviation_review()
     deviation_summary = ((deviation_review or {}).get("summary") or {})
+    driver_counts = (deviation_review or {}).get("driver_counts") or {}
+    if not isinstance(driver_counts, dict):
+        driver_counts = {}
+    news_event_status = dashboard.get("news_event_status") or _load_latest_news_event_status()
+    news_event_summary = news_event_status if isinstance(news_event_status, dict) else {}
+    learning_queue = dashboard.get("forecast_learning_queue") or _load_latest_forecast_learning_queue()
     finnhub_available = bool(data_quality.get("finnhub_available"))
     options_structure_available = bool(
         options.get("options_available")
@@ -564,6 +576,27 @@ def _data_availability_flags(dashboard: dict[str, Any]) -> dict[str, bool]:
     )
     completed_deviation_reviews = int(_float(deviation_summary.get("completed_outcomes_reviewed")) or 0)
     material_deviation_count = int(_float(deviation_summary.get("material_deviation_count")) or 0)
+    news_evidence_count = sum(
+        int(_float(driver_counts.get(key)) or 0)
+        for key in (
+            "news_data_gap_limited_attribution",
+            "news_event_risk_underweighted",
+            "risk_off_news_overweighted_or_resolved",
+            "news_event_driver_underweighted",
+        )
+    )
+    queued_event_overlay = _learning_queue_has_candidate(learning_queue, "event_reaction_overlay")
+    headline_count = int(_float(news_event_summary.get("headline_count")) or 0)
+    major_event_count = int(_float(news_event_summary.get("major_event_count")) or 0)
+    news_status = str(news_event_summary.get("status") or "").lower()
+    news_event_overlay_available = bool(
+        data_quality.get("news_event_available")
+        or data_quality.get("news_event_partial")
+        or (
+            news_status in {"available", "partial", "news_event_partial"}
+            and (headline_count > 0 or major_event_count > 0 or news_event_summary.get("market_narrative"))
+        )
+    )
     return {
         "options_structure_available": options_structure_available,
         "flow_proxy_available": bool(flow.get("flow_available")) and bool(flow.get("flow_proxy_only")),
@@ -572,6 +605,8 @@ def _data_availability_flags(dashboard: dict[str, Any]) -> dict[str, bool]:
         "true_flow_available": bool(flow.get("true_flow_available")),
         "macro_event_quality_available": finnhub_available and bool(data_quality.get("macro_event_quality_available")),
         "forecast_deviation_evidence_available": completed_deviation_reviews >= 20 and material_deviation_count >= 3,
+        "news_event_overlay_available": news_event_overlay_available,
+        "event_reaction_learning_ready": queued_event_overlay or (completed_deviation_reviews >= 20 and news_evidence_count >= 10),
     }
 
 
@@ -584,6 +619,45 @@ def _load_latest_deviation_review() -> dict[str, Any]:
     except (OSError, json.JSONDecodeError):
         return {}
     return payload if isinstance(payload, dict) else {}
+
+
+def _load_latest_news_event_status() -> dict[str, Any]:
+    return _load_public_json("news-event-status.json")
+
+
+def _load_latest_forecast_learning_queue() -> dict[str, Any]:
+    return _load_public_json("forecast-learning-queue.json")
+
+
+def _load_public_json(name: str) -> dict[str, Any]:
+    path = PROJECT_ROOT / "frontend" / "public" / name
+    if not path.exists():
+        return {}
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+    return payload if isinstance(payload, dict) else {}
+
+
+def _learning_queue_has_candidate(payload: dict[str, Any], candidate_id: str) -> bool:
+    candidates = payload.get("candidates") if isinstance(payload, dict) else []
+    if not isinstance(candidates, list):
+        return False
+    allowed_statuses = {
+        "ready_for_shadow_challenger",
+        "ready_for_shadow_spec_not_weight_change",
+        "shadow_ready",
+        "research_only_forward_validation_needed",
+    }
+    for candidate in candidates:
+        if not isinstance(candidate, dict):
+            continue
+        if candidate.get("candidate_id") != candidate_id:
+            continue
+        status = str(candidate.get("status") or candidate.get("trust_gate_status") or "").lower()
+        return not status or status in allowed_statuses
+    return False
 
 
 def _append_ready_shadow_forecasts(
@@ -603,14 +677,15 @@ def _append_ready_shadow_forecasts(
     latest_date = max(str(row.get("forecast_date") or "") for row in baseline_rows)
     current_baseline_rows = [row for row in baseline_rows if str(row.get("forecast_date") or "") == latest_date]
     existing = _read_rows(challenger_records_path)
-    existing_ids = {row.get("forecast_id") for row in existing if row.get("forecast_id")}
+    existing_ids = {_shadow_row_key(row) for row in existing if _shadow_row_key(row)}
     additions: list[dict[str, Any]] = []
     for registry_item in ready:
         for baseline_row in current_baseline_rows:
             shadow = _build_shadow_forecast_from_baseline(baseline_row, registry_item, dashboard)
-            if shadow and shadow["forecast_id"] not in existing_ids:
+            shadow_key = _shadow_row_key(shadow or {})
+            if shadow and shadow_key and shadow_key not in existing_ids:
                 additions.append(shadow)
-                existing_ids.add(shadow["forecast_id"])
+                existing_ids.add(shadow_key)
     if not additions:
         return
     with challenger_records_path.open("a", encoding="utf-8", newline="") as handle:
@@ -625,6 +700,8 @@ def _build_shadow_forecast_from_baseline(
 ) -> dict[str, Any] | None:
     if registry_item.get("model_version") == "challenger_v2_error_learning":
         return _build_error_learning_shadow_forecast(baseline_row, registry_item, dashboard or {})
+    if registry_item.get("model_version") == "challenger_v2_event_reaction_overlay":
+        return _build_event_reaction_shadow_forecast(baseline_row, registry_item, dashboard or {})
     if registry_item.get("model_version") != "challenger_v2_options_flow":
         return None
     forecast_date = str(baseline_row.get("forecast_date") or "")
@@ -744,6 +821,196 @@ def _build_error_learning_shadow_forecast(
     return {field: row.get(field, "") for field in CHALLENGER_FORECAST_FIELDS}
 
 
+def _build_event_reaction_shadow_forecast(
+    baseline_row: dict[str, Any],
+    registry_item: dict[str, Any],
+    dashboard: dict[str, Any],
+) -> dict[str, Any] | None:
+    forecast_date = str(baseline_row.get("forecast_date") or "")
+    symbol = str(baseline_row.get("symbol") or "")
+    if not forecast_date or not symbol:
+        return None
+    signal = _event_reaction_signal(dashboard, symbol)
+    if not signal.get("available"):
+        return None
+
+    primary = {
+        "slot": "primary",
+        "scenario": str(baseline_row.get("primary_scenario") or ""),
+        "probability": _float(baseline_row.get("primary_probability")) or 0.0,
+    }
+    secondary = {
+        "slot": "secondary",
+        "scenario": str(baseline_row.get("secondary_scenario") or ""),
+        "probability": _float(baseline_row.get("secondary_probability")) or 0.0,
+    }
+    risk = {
+        "slot": "risk",
+        "scenario": str(baseline_row.get("risk_scenario") or ""),
+        "probability": _float(baseline_row.get("risk_scenario_probability")) or 0.0,
+    }
+    scenarios = [primary, secondary, risk]
+    direction = signal["direction"]
+    strength = float(signal["strength"])
+    price_confirmed = bool(signal["price_confirmed"])
+    base_shift = min(0.07, max(0.012, 0.018 + strength * 0.045))
+    if price_confirmed:
+        base_shift *= 1.12
+    else:
+        base_shift *= 0.55
+
+    for item in scenarios:
+        family = _scenario_family(item["scenario"])
+        if direction == "risk_on":
+            if family == "bounce":
+                item["probability"] += base_shift
+            elif family == "risk":
+                item["probability"] -= base_shift * 0.7
+            else:
+                item["probability"] += base_shift * 0.25
+        elif direction == "risk_off":
+            if family == "risk":
+                item["probability"] += base_shift
+            elif family == "bounce":
+                item["probability"] -= base_shift * 0.75
+            else:
+                item["probability"] += base_shift * 0.2
+        else:
+            if item["slot"] == "primary":
+                item["probability"] -= base_shift * 0.35
+            elif family == "base":
+                item["probability"] += base_shift * 0.35
+            else:
+                item["probability"] += base_shift * 0.15
+        item["probability"] = _clamp_probability(item["probability"])
+
+    ranked = _rank_unique_scenarios(scenarios)
+    primary_rank = ranked[0]
+    secondary_rank = ranked[1] if len(ranked) > 1 else ranked[0]
+    risk_rank = next((item for item in ranked if _scenario_family(item["scenario"]) == "risk"), risk)
+    row = {field: baseline_row.get(field, "") for field in CHALLENGER_FORECAST_FIELDS}
+    model_version = registry_item["model_version"]
+    support_note = f"event_reaction_shadow_{direction}_{'price_confirmed' if price_confirmed else 'price_unconfirmed'}"
+    conflict_note = "event_reaction_shadow_requires_forward_validation"
+    if not price_confirmed:
+        conflict_note = "event_reaction_shadow_news_not_price_confirmed"
+    row.update(
+        {
+            "forecast_id": _forecast_id(forecast_date, model_version, symbol),
+            "model_version": model_version,
+            "primary_scenario": primary_rank["scenario"],
+            "primary_probability": _fmt_float(primary_rank["probability"]),
+            "secondary_scenario": secondary_rank["scenario"],
+            "secondary_probability": _fmt_float(secondary_rank["probability"]),
+            "risk_scenario": risk_rank["scenario"],
+            "risk_scenario_probability": _fmt_float(risk_rank["probability"]),
+            "probability_gap": _fmt_float(primary_rank["probability"] - secondary_rank["probability"]),
+            "close_call": str(abs(primary_rank["probability"] - secondary_rank["probability"]) < 0.08).lower(),
+            "shadow_status": "pending_forward_validation",
+            "blocked_reason": "",
+            "supporting_signals": _json_append(baseline_row.get("supporting_signals"), support_note),
+            "conflicting_signals": _json_append(baseline_row.get("conflicting_signals"), conflict_note),
+            "status": "pending",
+        }
+    )
+    for horizon in HORIZONS:
+        key = f"{horizon}d"
+        row[f"actual_return_{key}"] = ""
+        row[f"best_matching_scenario_{key}"] = ""
+        row[f"primary_hit_{key}"] = ""
+        row[f"path_error_{key}"] = ""
+    return {field: row.get(field, "") for field in CHALLENGER_FORECAST_FIELDS}
+
+
+def _event_reaction_signal(dashboard: dict[str, Any], symbol: str) -> dict[str, Any]:
+    payload = dashboard.get("news_event_status") or _load_latest_news_event_status()
+    if not isinstance(payload, dict) or not payload:
+        return {"available": False}
+    status = str(payload.get("status") or "").lower()
+    if status in {"provider_failed", "missing", "failed"}:
+        return {"available": False}
+    narrative = payload.get("market_narrative") or {}
+    reaction = payload.get("price_reaction_confirmation") or {}
+    symbol_effect = ((payload.get("prediction_logic_effect") or {}).get("symbols") or {}).get(symbol) or {}
+    headline_count = int(_float(payload.get("headline_count")) or 0)
+    major_event_count = int(_float(payload.get("major_event_count")) or 0)
+    direction_text = " ".join(
+        str(value or "")
+        for value in (
+            payload.get("news_direction"),
+            narrative.get("narrative_direction") if isinstance(narrative, dict) else "",
+            symbol_effect.get("direction") if isinstance(symbol_effect, dict) else "",
+            symbol_effect.get("reason") if isinstance(symbol_effect, dict) else "",
+        )
+    ).lower()
+    if not direction_text and not headline_count and not major_event_count:
+        return {"available": False}
+    risk_on_hits = ("risk_on", "supports_bounce", "supports_trend_reversal", "easing", "relief", "dovish")
+    risk_off_hits = ("risk_off", "supports_downside", "supports_risk_expansion", "escalation", "hawkish", "stress")
+    risk_on = any(token in direction_text for token in risk_on_hits)
+    risk_off = any(token in direction_text for token in risk_off_hits)
+    if risk_on and not risk_off:
+        direction = "risk_on"
+    elif risk_off and not risk_on:
+        direction = "risk_off"
+    elif str(payload.get("news_direction") or "").lower() in {"risk_on", "risk_off"}:
+        direction = str(payload.get("news_direction")).lower()
+    else:
+        direction = "mixed"
+    confirmation_score = _float(
+        symbol_effect.get("confirmation_score") if isinstance(symbol_effect, dict) else None
+    )
+    if confirmation_score is None:
+        confirmation_score = _float(reaction.get("confirmation_score") if isinstance(reaction, dict) else None)
+    confirmation_score = confirmation_score if confirmation_score is not None else 45.0
+    price_confirmed = bool(
+        (symbol_effect.get("price_reaction_confirmed") if isinstance(symbol_effect, dict) else False)
+        or (reaction.get("price_reaction_confirmed") if isinstance(reaction, dict) else False)
+    )
+    narrative_strength = _float(narrative.get("narrative_strength") if isinstance(narrative, dict) else None)
+    event_strength = max(
+        0.2 if headline_count else 0.0,
+        0.35 if major_event_count else 0.0,
+        (narrative_strength or 0.0) / 100.0,
+        confirmation_score / 100.0,
+    )
+    if not price_confirmed:
+        event_strength *= 0.8
+    return {
+        "available": True,
+        "direction": direction,
+        "price_confirmed": price_confirmed,
+        "confirmation_score": confirmation_score,
+        "strength": max(0.05, min(1.0, event_strength)),
+    }
+
+
+def _scenario_family(scenario: str) -> str:
+    text = str(scenario or "").lower()
+    if any(token in text for token in ("failed", "bear", "downside", "risk", "breakdown")):
+        return "risk"
+    if any(token in text for token in ("bounce", "reversal", "repair", "breakout", "analog")):
+        return "bounce"
+    return "base"
+
+
+def _rank_unique_scenarios(scenarios: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    best_by_scenario: dict[str, dict[str, Any]] = {}
+    for item in scenarios:
+        scenario = str(item.get("scenario") or "")
+        if not scenario:
+            continue
+        current = best_by_scenario.get(scenario)
+        if current is None or float(item.get("probability") or 0.0) > float(current.get("probability") or 0.0):
+            best_by_scenario[scenario] = dict(item)
+    ranked = sorted(best_by_scenario.values(), key=lambda item: item["probability"], reverse=True)
+    return ranked or sorted(scenarios, key=lambda item: item["probability"], reverse=True)
+
+
+def _clamp_probability(value: float) -> float:
+    return max(0.01, min(0.95, value))
+
+
 def _horizon_metrics(rows: list[dict[str, Any]], horizon: int) -> dict[str, Any]:
     key = f"{horizon}d"
     completed = [row for row in rows if _float(row.get(f"actual_return_{key}")) is not None]
@@ -825,9 +1092,11 @@ def _ensure_challenger_csv(path: Path) -> None:
     if path.exists():
         with path.open("r", encoding="utf-8", newline="") as handle:
             reader = csv.DictReader(handle)
-            if reader.fieldnames == CHALLENGER_FORECAST_FIELDS:
-                return
-            rows = [{field: row.get(field, "") for field in CHALLENGER_FORECAST_FIELDS} for row in reader]
+            original_fields = reader.fieldnames
+            raw_rows = [{field: row.get(field, "") for field in CHALLENGER_FORECAST_FIELDS} for row in reader]
+        rows, changed = _normalise_challenger_rows(raw_rows)
+        if original_fields == CHALLENGER_FORECAST_FIELDS and not changed:
+            return
         with path.open("w", encoding="utf-8", newline="") as handle:
             writer = csv.DictWriter(handle, fieldnames=CHALLENGER_FORECAST_FIELDS, lineterminator="\n")
             writer.writeheader()
@@ -835,6 +1104,50 @@ def _ensure_challenger_csv(path: Path) -> None:
         return
     with path.open("w", encoding="utf-8", newline="") as handle:
         csv.DictWriter(handle, fieldnames=CHALLENGER_FORECAST_FIELDS, lineterminator="\n").writeheader()
+
+
+def _normalise_challenger_rows(rows: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], bool]:
+    cleaned: list[dict[str, Any]] = []
+    positions: dict[str, int] = {}
+    changed = False
+    for raw in rows:
+        row = {field: raw.get(field, "") for field in CHALLENGER_FORECAST_FIELDS}
+        if not row.get("forecast_id") and row.get("forecast_date") and row.get("model_version") and row.get("symbol"):
+            row["forecast_id"] = _forecast_id(str(row["forecast_date"]), str(row["model_version"]), str(row["symbol"]))
+            changed = True
+        key = _shadow_row_key(row)
+        if key and key in positions:
+            changed = True
+            existing_index = positions[key]
+            if _challenger_row_quality(row) > _challenger_row_quality(cleaned[existing_index]):
+                cleaned[existing_index] = row
+            continue
+        if key:
+            positions[key] = len(cleaned)
+        cleaned.append(row)
+    if len(cleaned) != len(rows):
+        changed = True
+    return cleaned, changed
+
+
+def _shadow_row_key(row: dict[str, Any]) -> str:
+    forecast_date = str(row.get("forecast_date") or "")
+    model_version = str(row.get("model_version") or "")
+    symbol = str(row.get("symbol") or "")
+    if forecast_date and model_version and symbol:
+        return f"{forecast_date}|{model_version}|{symbol}"
+    return str(row.get("forecast_id") or "")
+
+
+def _challenger_row_quality(row: dict[str, Any]) -> tuple[int, int]:
+    outcome_count = 0
+    for horizon in HORIZONS:
+        key = f"{horizon}d"
+        if row.get(f"actual_return_{key}") not in {None, ""}:
+            outcome_count += 1
+        if row.get(f"primary_hit_{key}") not in {None, ""}:
+            outcome_count += 1
+    return outcome_count, 1 if row.get("forecast_id") else 0
 
 
 def _public_records(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:

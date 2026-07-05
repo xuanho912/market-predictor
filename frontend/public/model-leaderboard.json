@@ -46,7 +46,7 @@
       "status": "insufficient_forward_samples"
     }
   },
-  "generated_at": "2026-07-05T15:36:38.680244+00:00",
+  "generated_at": "2026-07-05T16:06:03.789124+00:00",
   "guardrails": [
     "Alpha v1 threshold remains frozen at 0.32534311.",
     "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -188,6 +188,73 @@
       "role": "shadow_challenger",
       "status": "tracking",
       "total_forecasts": 40
+    },
+    {
+      "completed_forecasts": 0,
+      "horizon_metrics": {
+        "10d": {
+          "completed_count": 0,
+          "primary_closer_than_secondary_rate": null,
+          "primary_hit_rate": null,
+          "primary_mean_absolute_error": null,
+          "primary_median_absolute_error": null,
+          "primary_vs_secondary_accuracy_spread": null,
+          "sample_gate": "insufficient_samples",
+          "secondary_hit_rate": null,
+          "secondary_mean_absolute_error": null
+        },
+        "20d": {
+          "completed_count": 0,
+          "primary_closer_than_secondary_rate": null,
+          "primary_hit_rate": null,
+          "primary_mean_absolute_error": null,
+          "primary_median_absolute_error": null,
+          "primary_vs_secondary_accuracy_spread": null,
+          "sample_gate": "insufficient_samples",
+          "secondary_hit_rate": null,
+          "secondary_mean_absolute_error": null
+        },
+        "3d": {
+          "completed_count": 0,
+          "primary_closer_than_secondary_rate": null,
+          "primary_hit_rate": null,
+          "primary_mean_absolute_error": null,
+          "primary_median_absolute_error": null,
+          "primary_vs_secondary_accuracy_spread": null,
+          "sample_gate": "insufficient_samples",
+          "secondary_hit_rate": null,
+          "secondary_mean_absolute_error": null
+        },
+        "5d": {
+          "completed_count": 0,
+          "primary_closer_than_secondary_rate": null,
+          "primary_hit_rate": null,
+          "primary_mean_absolute_error": null,
+          "primary_median_absolute_error": null,
+          "primary_vs_secondary_accuracy_spread": null,
+          "sample_gate": "insufficient_samples",
+          "secondary_hit_rate": null,
+          "secondary_mean_absolute_error": null
+        },
+        "60d": {
+          "completed_count": 0,
+          "primary_closer_than_secondary_rate": null,
+          "primary_hit_rate": null,
+          "primary_mean_absolute_error": null,
+          "primary_median_absolute_error": null,
+          "primary_vs_secondary_accuracy_spread": null,
+          "sample_gate": "insufficient_samples",
+          "secondary_hit_rate": null,
+          "secondary_mean_absolute_error": null
+        }
+      },
+      "model_version": "challenger_v2_event_reaction_overlay",
+      "pending_forecasts": 4,
+      "promotion_status": "insufficient_forward_evidence",
+      "reason": "Forward samples have not met promotion gates.",
+      "role": "shadow_challenger",
+      "status": "tracking",
+      "total_forecasts": 4
     },
     {
       "completed_forecasts": 0,
@@ -732,6 +799,18 @@
       "model_version": "challenger_v2_error_learning",
       "required_data_flags": [
         "forecast_deviation_evidence_available"
+      ],
+      "status": "ready_for_shadow_implementation"
+    },
+    {
+      "blocked_reason": "",
+      "description": "Shadow-tests stricter news/event reaction handling using event direction plus market price confirmation.",
+      "forbidden_without": "available news/event intelligence and enough forecast-deviation evidence that event reactions need shadow validation",
+      "missing_required_data": [],
+      "model_version": "challenger_v2_event_reaction_overlay",
+      "required_data_flags": [
+        "news_event_overlay_available",
+        "event_reaction_learning_ready"
       ],
       "status": "ready_for_shadow_implementation"
     },
