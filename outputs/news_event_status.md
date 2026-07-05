@@ -1,14 +1,14 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-04T04:56:11.104456+00:00`
+- generated_at: `2026-07-05T14:58:36.615324+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `5`
-- event_detection_confidence: `70`
+- major_event_count: `2`
+- event_detection_confidence: `63`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
-- narrative_strength: `100`
+- narrative_strength: `67`
 - price_reaction_confirmed: `False`
 - confirmation_score: `50`
 
@@ -27,40 +27,16 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: American Express and Chase move luxury lounge wars beyond the airport
-- source: CNBC
-- published_at: `2026-07-03T12:00:01+00:00`
+- headline: Mass grief in Iran at Khamenei funeral after US, Israel war killing - Reuters
+- source: Reuters
+- published_at: `2026-07-04T11:02:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Britain's services sector contracts sharply under strain of Iran war, PMI shows - Reuters
-- source: Reuters
-- published_at: `2026-07-03T08:35:43+00:00`
+- headline: Oil is little changed as Persian Gulf flows near pre-war levels
+- source: Bloomberg
+- published_at: `2026-07-04T04:50:17+00:00`
 - importance_score: `100`
 - confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Dutch military invests millions in drone software platform - Reuters
-- source: Reuters
-- published_at: `2026-07-03T04:03:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Oil prices little changed as US-Iran peace efforts hold - Reuters
-- source: Reuters
-- published_at: `2026-07-03T02:05:00+00:00`
-- importance_score: `94`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran warns US, Israel against attacks ahead of funeral processions for Khamenei - Reuters
-- source: Reuters
-- published_at: `2026-07-02T17:56:56+00:00`
-- importance_score: `100`
-- confidence: `high`

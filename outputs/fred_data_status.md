@@ -1,6 +1,6 @@
 # FRED Data Status
 
-Generated at: `2026-07-04T04:56:22.939246Z`
+Generated at: `2026-07-05T14:58:43.265749Z`
 
 ## Provider
 
@@ -8,7 +8,7 @@ Generated at: `2026-07-04T04:56:22.939246Z`
 - provider available: `True`
 - fallback used: `False`
 - rate limited: `False`
-- successful series: `IG_OAS, HY_OAS, BAA_SPREAD, DGS10, DGS2, DGS3MO, DFII10, RECESSION, FINANCIAL_STRESS`
+- successful series: `DGS2, BAA_SPREAD, DGS10, DGS3MO, HY_OAS, IG_OAS, DFII10, RECESSION, FINANCIAL_STRESS`
 - failed series: `none`
 
 ## Series
@@ -27,9 +27,9 @@ Generated at: `2026-07-04T04:56:22.939246Z`
 
 ## Data Completeness Effect
 
-- without FRED: `78`
+- without FRED: `85`
 - with current FRED status: `90`
-- delta: `12`
+- delta: `5`
 - target 85 met: `True`
 - current report score: `92.0`
 
@@ -37,10 +37,10 @@ Generated at: `2026-07-04T04:56:22.939246Z`
 
 | symbol | edge without | edge with | primary without | primary with | risk expansion delta | failed bounce delta |
 |---|---|---|---|---|---:|---:|
-| SPY | MODERATE_EDGE | STRONG_EDGE | bounce_path | bounce_path | 0.0169 | 0.0038 |
-| QQQ | MODERATE_EDGE | STRONG_EDGE | bounce_path | bounce_path | 0.0169 | 0.0038 |
-| IWM | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0169 | 0.0038 |
-| DIA | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0169 | 0.006 |
+| SPY | STRONG_EDGE | STRONG_EDGE | bounce_path | bounce_path | 0.017 | 0.006 |
+| QQQ | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0168 | 0.0061 |
+| IWM | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0168 | 0.0061 |
+| DIA | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0169 | 0.006 |
 
 ## Warning
 
