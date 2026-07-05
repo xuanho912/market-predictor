@@ -1,6 +1,6 @@
 # Forecast Deviation Review
 
-Generated at: `2026-07-05T14:58:42.870715+00:00`
+Generated at: `2026-07-05T15:29:03.266536+00:00`
 
 This report reviews forecast-vs-actual deviations after horizons complete. It is not a trading, PnL or execution report.
 
@@ -55,7 +55,7 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - likely_error_drivers: `model_underestimated_downside_or_failed_bounce, news_event_risk_underweighted, news_data_gap_limited_attribution`
 - underweighted_factors: `news_event_risk_underweighted`
 - overweighted_factors: ``
-- diagnostic_note: 实际走势弱于预测，复盘优先检查是否低估了新闻/事件风险或利空价格确认。
+- diagnostic_note: 实际走势弱于预测，优先检查是否低估了新闻/事件风险，或利空是否得到了价格确认。
 
 ### QQQ 1d from 2026-06-30
 
@@ -71,7 +71,7 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - likely_error_drivers: `model_underestimated_downside_or_failed_bounce, news_event_risk_underweighted, news_data_gap_limited_attribution`
 - underweighted_factors: `news_event_risk_underweighted`
 - overweighted_factors: `bounce_repair_assumption`
-- diagnostic_note: 实际走势弱于预测，复盘优先检查是否低估了新闻/事件风险或利空价格确认。
+- diagnostic_note: 实际走势弱于预测，优先检查是否低估了新闻/事件风险，或利空是否得到了价格确认。
 
 ### QQQ 3d from 2026-06-29
 
@@ -87,7 +87,7 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - likely_error_drivers: `model_underestimated_downside_or_failed_bounce, news_event_risk_underweighted, news_data_gap_limited_attribution`
 - underweighted_factors: `news_event_risk_underweighted`
 - overweighted_factors: `bounce_repair_assumption`
-- diagnostic_note: 实际走势弱于预测，复盘优先检查是否低估了新闻/事件风险或利空价格确认。
+- diagnostic_note: 实际走势弱于预测，优先检查是否低估了新闻/事件风险，或利空是否得到了价格确认。
 
 ### DIA 3d from 2026-06-29
 
@@ -279,7 +279,7 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - likely_error_drivers: `model_underestimated_downside_or_failed_bounce, news_event_risk_underweighted, breadth_conflict_underweighted, news_data_gap_limited_attribution`
 - underweighted_factors: `news_event_risk_underweighted, breadth_conflict_underweighted`
 - overweighted_factors: `bounce_repair_assumption`
-- diagnostic_note: 实际走势弱于预测，复盘优先检查是否低估了新闻/事件风险或利空价格确认。
+- diagnostic_note: 实际走势弱于预测，优先检查是否低估了新闻/事件风险，或利空是否得到了价格确认。
 
 ### SPY 1d from 2026-06-25
 
@@ -295,7 +295,7 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - likely_error_drivers: `model_underestimated_downside_or_failed_bounce, news_event_risk_underweighted, breadth_conflict_underweighted, news_data_gap_limited_attribution`
 - underweighted_factors: `news_event_risk_underweighted, breadth_conflict_underweighted`
 - overweighted_factors: `bounce_repair_assumption`
-- diagnostic_note: 实际走势弱于预测，复盘优先检查是否低估了新闻/事件风险或利空价格确认。
+- diagnostic_note: 实际走势弱于预测，优先检查是否低估了新闻/事件风险，或利空是否得到了价格确认。
 
 ### SPY 5d from 2026-06-24
 
@@ -360,9 +360,9 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - `model_underestimated_downside_or_failed_bounce` count `40`: 模型低估了下跌延续或反抽失败风险，需要检查信用、宽度、波动率和新闻风险。 Action: keep_observing_until_forward_sample_gate
 - `news_event_risk_underweighted` count `40`: 风险新闻如果被价格确认，应提高风险路径权重。 Action: shadow-test risk_event_confirmation：risk-off 新闻得到价格确认才提高风险路径。
 - `model_underestimated_upside_or_repair` count `34`: 模型低估了修复/反抽强度，需要检查事件催化、波动率修复和价格确认。 Action: keep_observing_until_forward_sample_gate
-- `risk_off_news_overweighted_or_resolved` count `27`: risk-off 新闻若快速缓和或未被价格确认，不能继续压低主路径。 Action: shadow-test news_decay：未被价格确认或快速缓和的 risk-off 新闻权重衰减。
+- `risk_off_news_overweighted_or_resolved` count `27`: risk-off 新闻若快速缓和或未被价格确认，不应继续压低主路径。 Action: shadow-test news_decay：未被价格确认或快速缓和的 risk-off 新闻权重衰减。
 - `risk_on_flow_underweighted` count `18`: risk-on flow 与成交量确认同向时，短线弹性可能被低估。 Action: shadow-test flow_confirmation_boost：risk-on flow 与成交量共振提高短线弹性。
-- `volatility_repair_underweighted` count `9`: 波动率结构修复会放大短线反抽，需要进入 1d/3d/5d 权重。 Action: shadow-test vol_repair_boost：VIX term 修复提高短周期 bounce 权重。
+- `volatility_repair_underweighted` count `9`: 波动率结构修复会放大短线反抽，需要进入 1d/3d/5d 权重验证。 Action: shadow-test vol_repair_boost：VIX term 修复提高短周期 bounce 权重。
 - `breadth_conflict_underweighted` count `9`: 指数上涨但内部参与不足时，失败反抽风险可能被低估。 Action: shadow-test breadth_conflict_penalty：宽度冲突提高 failed_bounce 风险。
 - `breadth_follow_through_underweighted` count `8`: 宽度改善后的持续承接可能被低估。 Action: shadow-test breadth_follow_through：宽度改善持续两日以上才提高中期修复权重。
 

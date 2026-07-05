@@ -45,6 +45,10 @@ from scripts.forecast_trust_gate import (
     build_forecast_trust_gate,
     render_forecast_trust_gate_markdown,
 )
+from scripts.forecast_learning_queue import (
+    build_forecast_learning_queue,
+    render_forecast_learning_queue_markdown,
+)
 from scripts.data_freshness_gate import (
     build_data_freshness_status,
     write_data_freshness_outputs,
@@ -355,11 +359,18 @@ def main() -> int:
         forecast_scorecard=forecast_scorecard,
         forecast_deviation_review=forecast_deviation_review,
     )
+    forecast_learning_queue = build_forecast_learning_queue(
+        forecast_deviation_review=forecast_deviation_review,
+        forecast_scorecard=forecast_scorecard,
+        forecast_trust_gate=forecast_trust_gate,
+        dashboard=dashboard,
+    )
     dashboard["forecast_ledger_summary"] = ledger_summary
     dashboard["forecast_records"] = forecast_records
     dashboard["forecast_accuracy_scorecard"] = forecast_scorecard
     dashboard["forecast_deviation_review"] = forecast_deviation_review
     dashboard["forecast_trust_gate"] = forecast_trust_gate
+    dashboard["forecast_learning_queue"] = forecast_learning_queue
     dashboard["historical_replay_benchmark"] = historical_replay_benchmark
     model_governance = write_model_challenger_outputs(dashboard=dashboard, public_dir=public_dir, outputs_dir=PROJECT_ROOT / "outputs")
     dashboard["model_leaderboard"] = model_governance["leaderboard"]
@@ -415,6 +426,7 @@ def main() -> int:
     _write_json(public_dir / "forecast-accuracy-scorecard.json", forecast_scorecard)
     _write_json(public_dir / "forecast-deviation-review.json", forecast_deviation_review)
     _write_json(public_dir / "forecast-trust-gate.json", forecast_trust_gate)
+    _write_json(public_dir / "forecast-learning-queue.json", forecast_learning_queue)
     _write_json(public_dir / "historical-replay-benchmark.json", historical_replay_benchmark)
     _write_json(public_dir / "model-leaderboard.json", model_governance["leaderboard"])
     _write_json(public_dir / "model-promotion-status.json", model_governance["promotion_status"])
@@ -441,6 +453,7 @@ def main() -> int:
     _write_forecast_accuracy_scorecard_report(PROJECT_ROOT / "outputs" / "forecast_accuracy_scorecard.md", forecast_scorecard)
     _write_forecast_deviation_review_report(PROJECT_ROOT / "outputs" / "forecast_deviation_review.md", forecast_deviation_review)
     _write_forecast_trust_gate_report(PROJECT_ROOT / "outputs" / "forecast_trust_gate.md", forecast_trust_gate)
+    _write_forecast_learning_queue_report(PROJECT_ROOT / "outputs" / "forecast_learning_queue.md", forecast_learning_queue)
     _write_historical_replay_benchmark_report(PROJECT_ROOT / "outputs" / "historical_replay_benchmark.md", historical_replay_benchmark)
     _write_stock_prediction_report(PROJECT_ROOT / "outputs" / "stock_prediction_report.md", stock_prediction_dashboard)
     _write_top_stock_candidates_report(PROJECT_ROOT / "outputs" / "top_stock_candidates_report.md", top_stock_candidates)
@@ -466,6 +479,7 @@ def main() -> int:
     print("wrote frontend/public/forecast-accuracy-scorecard.json")
     print("wrote frontend/public/forecast-deviation-review.json")
     print("wrote frontend/public/forecast-trust-gate.json")
+    print("wrote frontend/public/forecast-learning-queue.json")
     print("wrote frontend/public/historical-replay-benchmark.json")
     print("wrote frontend/public/model-leaderboard.json")
     print("wrote frontend/public/model-promotion-status.json")
@@ -493,6 +507,7 @@ def main() -> int:
     print("wrote outputs/forecast_accuracy_scorecard.md")
     print("wrote outputs/forecast_deviation_review.md")
     print("wrote outputs/forecast_trust_gate.md")
+    print("wrote outputs/forecast_learning_queue.md")
     print("wrote outputs/historical_replay_benchmark.md")
     print("wrote outputs/stock_prediction_report.md")
     print("wrote outputs/top_stock_candidates_report.md")
@@ -1516,6 +1531,11 @@ def _write_forecast_deviation_review_report(path: Path, payload: dict[str, Any])
 def _write_forecast_trust_gate_report(path: Path, payload: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(render_forecast_trust_gate_markdown(payload), encoding="utf-8")
+
+
+def _write_forecast_learning_queue_report(path: Path, payload: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(render_forecast_learning_queue_markdown(payload), encoding="utf-8")
 
 
 def _write_historical_replay_benchmark_report(path: Path, report: dict[str, Any]) -> None:

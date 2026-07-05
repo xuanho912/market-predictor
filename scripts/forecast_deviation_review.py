@@ -667,6 +667,130 @@ def _evidence_level(count: int) -> str:
     return "stronger_evidence"
 
 
+_build_forecast_deviation_review_impl = build_forecast_deviation_review
+
+
+def build_forecast_deviation_review(*args: Any, **kwargs: Any) -> dict[str, Any]:
+    payload = _build_forecast_deviation_review_impl(*args, **kwargs)
+    payload["review_questions"] = [
+        "预测方向错了，还是方向对但幅度低估/高估？",
+        "主路径是否输给了第二路径或风险路径？",
+        "偏差是否来自新闻/事件、波动率修复、信用、宽度、资金流、价格结构或数据缺口？",
+        "高置信样本是否真的比普通样本偏差更小？",
+    ]
+    return payload
+
+
+def _diagnostic_note(record: dict[str, Any], drivers: list[str], material: bool) -> str:
+    if not material:
+        return "实际结果与预测路径偏差不大，暂不做强归因。"
+    if "news_event_driver_underweighted" in drivers:
+        return "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。"
+    if "news_event_risk_underweighted" in drivers:
+        return "实际走势弱于预测，优先检查是否低估了新闻/事件风险，或利空是否得到了价格确认。"
+    if "risk_off_news_overweighted_or_resolved" in drivers:
+        return "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。"
+    if "volatility_repair_underweighted" in drivers:
+        return "实际走势强于预测，可能低估了波动率回落和恐慌释放后的修复力度。"
+    if "breadth_conflict_underweighted" in drivers:
+        return "实际走势弱于预测，可能低估了市场内部参与不足对主路径的拖累。"
+    if "risk_off_flow_underweighted" in drivers:
+        return "实际走势弱于预测，可能低估了风险偏好资金流转弱对下跌延续路径的影响。"
+    if "risk_on_flow_underweighted" in drivers:
+        return "实际走势强于预测，可能低估了风险偏好资金流与成交量共振的短线弹性。"
+    return "出现实质偏差，需要复盘当时支持/冲突证据的权重是否合理；该归因是诊断，不是因果证明。"
+
+
+def _model_learning_summary(material: list[dict[str, Any]], driver_counts: Counter[str]) -> dict[str, Any]:
+    lessons = []
+    for driver, count in driver_counts.most_common():
+        lessons.append(
+            {
+                "driver": driver,
+                "count": count,
+                "lesson": _driver_lesson(driver),
+                "future_model_action": _driver_action(driver),
+                "baseline_change_allowed": False,
+            }
+        )
+    if not lessons:
+        lessons.append(
+            {
+                "driver": "not_enough_completed_outcomes",
+                "count": 0,
+                "lesson": "还没有足够到期样本，不能根据主观感觉修改模型。",
+                "future_model_action": "继续回填实际结果；至少 20 个完成样本后再评估 challenger 权重调整。",
+                "baseline_change_allowed": False,
+            }
+        )
+    status = "lessons_ready_for_shadow_challenger" if len(material) >= 20 else "insufficient_forward_evidence"
+    return {
+        "status": status,
+        "material_deviation_samples": len(material),
+        "minimum_samples_before_weight_change": 20,
+        "recommended_challenger": "challenger_v2_error_learning",
+        "baseline_v1_policy": "frozen_do_not_rewrite",
+        "lessons": lessons,
+    }
+
+
+def _model_upgrade_plan(driver_counts: Counter[str], completed_count: int, material_count: int) -> list[str]:
+    plan = [
+        "不改写旧预测；只允许回填 actual_return、best_matching_scenario、primary_hit、path_error。",
+        "baseline_v1 保持冻结；经验先进入 challenger_v2_error_learning 的 shadow 评估。",
+    ]
+    if completed_count < 20:
+        plan.append("完成样本少于 20，暂不允许基于偏差调整主模型权重。")
+    if material_count == 0:
+        plan.append("当前没有足够实质偏差样本；继续积累前向验证。")
+    if driver_counts.get("news_event_driver_underweighted"):
+        plan.append("在 challenger 中提高“重大新闻 + 价格反应确认”的短周期权重。")
+    if driver_counts.get("risk_off_news_overweighted_or_resolved"):
+        plan.append("在 challenger 中要求 risk-off 新闻必须得到价格确认，否则降低风险路径权重。")
+    if driver_counts.get("volatility_repair_underweighted"):
+        plan.append("在 challenger 中提高 VIX/VVIX/SKEW 修复对 1d/3d/5d 反抽路径的影响。")
+    if driver_counts.get("breadth_conflict_underweighted"):
+        plan.append("在 challenger 中提高 breadth 冲突对失败反抽风险的惩罚。")
+    if driver_counts.get("risk_on_flow_underweighted"):
+        plan.append("在 challenger 中提高 risk-on flow proxy 与成交量确认的共振权重。")
+    return plan
+
+
+def _driver_lesson(driver: str) -> str:
+    lessons = {
+        "model_underestimated_upside_or_repair": "模型低估了修复/反抽强度，需要检查事件催化、波动率修复和价格确认。",
+        "model_underestimated_downside_or_failed_bounce": "模型低估了下跌延续或反抽失败风险，需要检查信用、宽度、波动率和新闻风险。",
+        "news_event_driver_underweighted": "重大新闻如果被价格确认，短周期影响可能大于历史相似样本。",
+        "news_event_risk_underweighted": "风险新闻如果被价格确认，应提高风险路径权重。",
+        "risk_off_news_overweighted_or_resolved": "risk-off 新闻若快速缓和或未被价格确认，不应继续压低主路径。",
+        "volatility_repair_underweighted": "波动率结构修复会放大短线反抽，需要进入 1d/3d/5d 权重验证。",
+        "volatility_or_tail_risk_underweighted": "尾部风险或波动率重新上升时，失败反抽/风险扩散可能被低估。",
+        "breadth_follow_through_underweighted": "宽度改善后的持续承接可能被低估。",
+        "breadth_conflict_underweighted": "指数上涨但内部参与不足时，失败反抽风险可能被低估。",
+        "risk_on_flow_underweighted": "risk-on flow 与成交量确认同向时，短线弹性可能被低估。",
+        "risk_off_flow_underweighted": "risk-off flow 与价格走弱同向时，下跌延续风险可能被低估。",
+        "news_data_gap_limited_attribution": "新闻数据缺口会限制归因质量，需要标记而不是事后编故事。",
+        "stale_data_risk": "数据过期时不应输出今日判断。",
+        "intraday_snapshot_risk": "盘中快照未确认时，不应冻结为正式收盘预测。",
+    }
+    return lessons.get(driver, "该偏差主题需要继续积累样本后再判断是否稳定。")
+
+
+def _driver_action(driver: str) -> str:
+    actions = {
+        "news_event_driver_underweighted": "shadow-test event_reaction_overlay：新闻方向必须与 SPY/QQQ、VIX、HYG/LQD 价格反应一致。",
+        "news_event_risk_underweighted": "shadow-test risk_event_confirmation：risk-off 新闻得到价格确认才提高风险路径。",
+        "risk_off_news_overweighted_or_resolved": "shadow-test news_decay：未被价格确认或快速缓和的 risk-off 新闻权重衰减。",
+        "volatility_repair_underweighted": "shadow-test vol_repair_boost：VIX term 修复提高短周期 bounce 权重。",
+        "volatility_or_tail_risk_underweighted": "shadow-test tail_risk_penalty：VVIX/SKEW/VIX term 恶化时提高风险路径。",
+        "breadth_follow_through_underweighted": "shadow-test breadth_follow_through：宽度改善持续两日以上才提高中期修复权重。",
+        "breadth_conflict_underweighted": "shadow-test breadth_conflict_penalty：宽度冲突提高 failed_bounce 风险。",
+        "risk_on_flow_underweighted": "shadow-test flow_confirmation_boost：risk-on flow 与成交量共振提高短线弹性。",
+        "risk_off_flow_underweighted": "shadow-test flow_conflict_penalty：risk-off flow 提高 downside continuation。",
+    }
+    return actions.get(driver, "keep_observing_until_forward_sample_gate")
+
+
 if __name__ == "__main__":
     news_path = PROJECT_ROOT / "frontend" / "public" / "news-event-status.json"
     quality_path = PROJECT_ROOT / "frontend" / "public" / "data_quality_report.json"
