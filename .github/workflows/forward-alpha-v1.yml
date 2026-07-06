@@ -53,8 +53,14 @@ on:
     # Daily freshness heartbeat. This keeps the dashboard date/status current on
     # weekends and US market holidays, even when no new forecast should be frozen.
     - cron: "17 12 * * *"
-    - cron: "37 22 * * 1-5"
+    # Post-close refresh ladder. Data vendors can lag after the US close, so we
+    # run several attempts instead of relying on one fragile scheduled job.
+    - cron: "23 20 * * 1-5"
+    - cron: "37 21 * * 1-5"
+    - cron: "51 22 * * 1-5"
+    - cron: "11 23 * * 1-5"
     - cron: "17 1 * * 2-6"
+    - cron: "47 3 * * 2-6"
 
 permissions:
   contents: write

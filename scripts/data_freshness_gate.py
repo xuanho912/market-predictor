@@ -30,12 +30,7 @@ def build_data_freshness_status(
     latest_market_date = _min_date(core_dates.values()) or _parse_date(dashboard_as_of)
     provider_failed = not core_dates or all(value is None for value in core_dates.values())
 
-    intraday_unconfirmed = bool(
-        latest_market_date
-        and latest_market_date == today_et
-        and is_today_trading_day
-        and now_et.time() < MARKET_CLOSE_BUFFER
-    )
+    intraday_unconfirmed = bool(is_today_trading_day and now_et.time() < MARKET_CLOSE_BUFFER)
     stale_days = _trading_days_between(latest_market_date, expected_latest) if latest_market_date else None
     is_latest = bool(latest_market_date and latest_market_date >= expected_latest)
 
@@ -301,8 +296,8 @@ def _warning_message(
         )
     if freshness_status == MARKET_OPEN_UNCONFIRMED:
         return (
-            "当前行情日期来自美股盘中快照，尚未形成收盘确认数据。"
-            f" 盘中快照日期为 {latest}；正式 baseline_v1 预测记录应等美东 "
+            "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。"
+            f" 当前可用的完整核心行情日期为 {latest}；正式 baseline_v1 预测记录应等美东 "
             f"{MARKET_CLOSE_BUFFER.strftime('%H:%M')} 后重新生成。"
         )
     if freshness_status == "market_closed":
