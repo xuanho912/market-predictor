@@ -6,10 +6,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-07-06",
-    "current_time_us_eastern": "2026-07-06T18:49:45.242285-04:00",
+    "current_time_us_eastern": "2026-07-06T19:56:04.315140-04:00",
     "data_freshness_status": "fresh",
     "expected_latest_trading_date": "2026-07-06",
-    "generated_at": "2026-07-06T22:49:45.242285+00:00",
+    "generated_at": "2026-07-06T23:56:04.315140+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -1048,15 +1048,15 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "DGS10",
-      "DGS2",
-      "IG_OAS",
       "BAA_SPREAD",
-      "HY_OAS",
       "DGS3MO",
-      "RECESSION",
+      "IG_OAS",
+      "DGS2",
+      "DGS10",
+      "HY_OAS",
+      "DFII10",
       "FINANCIAL_STRESS",
-      "DFII10"
+      "RECESSION"
     ],
     "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-07-06。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
     "gamma_available": false,
@@ -1086,10 +1086,10 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 78,
+      "event_detection_confidence": 75,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-07-06T22:49:34.708590+00:00",
+      "last_update": "2026-07-06T23:55:54.249943+00:00",
       "major_event_count": 5,
       "missing_reason": null,
       "news_direction": "risk_off",
@@ -1343,18 +1343,6 @@
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_market_direction": "risk_off",
-          "headline": "Oil prices settle at pre-Iran war levels as crude output grows - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-07-06T20:12:28+00:00",
-          "source": "Reuters"
-        },
-        {
-          "confidence": "high",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
           "headline": "'Electronic warfare is a tech phenomenon': Why the market is rethinking defense valuations",
           "importance_score": 100,
           "published_at": "2026-07-06T13:37:33+00:00",
@@ -1394,6 +1382,18 @@
           "headline": "Alternative-fuel vehicles hit record market share in June after Iran war - Reuters",
           "importance_score": 100,
           "published_at": "2026-07-06T03:37:00+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "medium",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
+          "headline": "Stocks surge on chip news, oil holds at pre-war levels - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-07-06T00:59:00+00:00",
           "source": "Reuters"
         }
       ]
@@ -1543,7 +1543,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": 0.0079,
-        "avg_equity_futures_1d_return": 0.0086,
+        "avg_equity_futures_1d_return": 0.007,
         "confirmed_checks": [],
         "equity_futures_symbols_used": [
           "ES=F",
@@ -1558,7 +1558,7 @@
           "美元走强"
         ],
         "hyg_lqd_1d_relative_return": 0.0017,
-        "oil_proxy_1d_return": 0.0016,
+        "oil_proxy_1d_return": 0.0025,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -3098,8 +3098,8 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
+            "Trump says Sikorsky to fund White House helicopter landing pad - Reuters",
             "Trump says there will either be a deal with Iran or US will 'finish the job' - Reuters",
-            "Oil prices settle at pre-Iran war levels as crude output grows - Reuters",
             "Here's our plan for both Honeywell stocks after a divergent first week of trading",
             "France's Macron visits Syria, in first trip by an EU head of state since Assad toppled - Reuters",
             "As Khamenei mourners fill Iran's streets, discontent still simmers - Reuters"
@@ -4070,41 +4070,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 80,
+            "confidence_score": 93,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 94,
-            "headline": "Oil prices settle at pre-Iran war levels as crude output grows - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-06T20:12:28+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 94,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 78,
+            "freshness_score": 75,
             "headline": "'Electronic warfare is a tech phenomenon': Why the market is rethinking defense valuations",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4124,46 +4097,19 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 76,
+            "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 74,
             "headline": "World absorbs historic Iran war oil supply loss, but depleted stocks bring risks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-07-06T13:02:20+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 71,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 58,
-            "headline": "China preparing South Pacific missile test, Australian media report - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-06T05:09:00+00:00",
             "source": "Reuters"
           },
           {
@@ -4185,12 +4131,66 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 54,
+            "freshness_score": 55,
+            "headline": "China preparing South Pacific missile test, Australian media report - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-06T05:09:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 69,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 51,
             "headline": "Alternative-fuel vehicles hit record market share in June after Iran war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-07-06T03:37:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 68,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 45,
+            "headline": "Stocks surge on chip news, oil holds at pre-war levels - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-06T00:59:00+00:00",
             "source": "Reuters"
           }
         ],
@@ -4213,18 +4213,6 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Oil prices settle at pre-Iran war levels as crude output grows - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-07-06T20:12:28+00:00",
-              "source": "Reuters"
-            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -4272,6 +4260,18 @@
               "importance_score": 100,
               "published_at": "2026-07-06T03:37:00+00:00",
               "source": "Reuters"
+            },
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Stocks surge on chip news, oil holds at pre-war levels - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-06T00:59:00+00:00",
+              "source": "Reuters"
             }
           ]
         },
@@ -4311,7 +4311,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0079,
-            "avg_equity_futures_1d_return": 0.0086,
+            "avg_equity_futures_1d_return": 0.007,
             "confirmed_checks": [],
             "equity_futures_symbols_used": [
               "ES=F",
@@ -4326,7 +4326,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": 0.0017,
-            "oil_proxy_1d_return": 0.0016,
+            "oil_proxy_1d_return": 0.0025,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -5607,8 +5607,8 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
+            "Trump says Sikorsky to fund White House helicopter landing pad - Reuters",
             "Trump says there will either be a deal with Iran or US will 'finish the job' - Reuters",
-            "Oil prices settle at pre-Iran war levels as crude output grows - Reuters",
             "Here's our plan for both Honeywell stocks after a divergent first week of trading",
             "France's Macron visits Syria, in first trip by an EU head of state since Assad toppled - Reuters",
             "As Khamenei mourners fill Iran's streets, discontent still simmers - Reuters"
@@ -6558,41 +6558,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 80,
+            "confidence_score": 93,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 94,
-            "headline": "Oil prices settle at pre-Iran war levels as crude output grows - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-06T20:12:28+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 94,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 78,
+            "freshness_score": 75,
             "headline": "'Electronic warfare is a tech phenomenon': Why the market is rethinking defense valuations",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6612,46 +6585,19 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 76,
+            "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 74,
             "headline": "World absorbs historic Iran war oil supply loss, but depleted stocks bring risks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-07-06T13:02:20+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 71,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 58,
-            "headline": "China preparing South Pacific missile test, Australian media report - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-06T05:09:00+00:00",
             "source": "Reuters"
           },
           {
@@ -6673,12 +6619,66 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 54,
+            "freshness_score": 55,
+            "headline": "China preparing South Pacific missile test, Australian media report - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-06T05:09:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 69,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 51,
             "headline": "Alternative-fuel vehicles hit record market share in June after Iran war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-07-06T03:37:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 68,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 45,
+            "headline": "Stocks surge on chip news, oil holds at pre-war levels - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-06T00:59:00+00:00",
             "source": "Reuters"
           }
         ],
@@ -6701,18 +6701,6 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Oil prices settle at pre-Iran war levels as crude output grows - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-07-06T20:12:28+00:00",
-              "source": "Reuters"
-            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -6760,6 +6748,18 @@
               "importance_score": 100,
               "published_at": "2026-07-06T03:37:00+00:00",
               "source": "Reuters"
+            },
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Stocks surge on chip news, oil holds at pre-war levels - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-06T00:59:00+00:00",
+              "source": "Reuters"
             }
           ]
         },
@@ -6799,7 +6799,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0079,
-            "avg_equity_futures_1d_return": 0.0086,
+            "avg_equity_futures_1d_return": 0.007,
             "confirmed_checks": [],
             "equity_futures_symbols_used": [
               "ES=F",
@@ -6814,7 +6814,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": 0.0017,
-            "oil_proxy_1d_return": 0.0016,
+            "oil_proxy_1d_return": 0.0025,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -8110,8 +8110,8 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
+            "Trump says Sikorsky to fund White House helicopter landing pad - Reuters",
             "Trump says there will either be a deal with Iran or US will 'finish the job' - Reuters",
-            "Oil prices settle at pre-Iran war levels as crude output grows - Reuters",
             "Here's our plan for both Honeywell stocks after a divergent first week of trading",
             "France's Macron visits Syria, in first trip by an EU head of state since Assad toppled - Reuters",
             "As Khamenei mourners fill Iran's streets, discontent still simmers - Reuters"
@@ -9062,41 +9062,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 80,
+            "confidence_score": 93,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 94,
-            "headline": "Oil prices settle at pre-Iran war levels as crude output grows - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-06T20:12:28+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 94,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 78,
+            "freshness_score": 75,
             "headline": "'Electronic warfare is a tech phenomenon': Why the market is rethinking defense valuations",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9116,46 +9089,19 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 76,
+            "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 74,
             "headline": "World absorbs historic Iran war oil supply loss, but depleted stocks bring risks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-07-06T13:02:20+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 71,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 58,
-            "headline": "China preparing South Pacific missile test, Australian media report - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-06T05:09:00+00:00",
             "source": "Reuters"
           },
           {
@@ -9177,12 +9123,66 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 54,
+            "freshness_score": 55,
+            "headline": "China preparing South Pacific missile test, Australian media report - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-06T05:09:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 69,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 51,
             "headline": "Alternative-fuel vehicles hit record market share in June after Iran war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-07-06T03:37:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 68,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 45,
+            "headline": "Stocks surge on chip news, oil holds at pre-war levels - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-06T00:59:00+00:00",
             "source": "Reuters"
           }
         ],
@@ -9205,18 +9205,6 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Oil prices settle at pre-Iran war levels as crude output grows - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-07-06T20:12:28+00:00",
-              "source": "Reuters"
-            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -9264,6 +9252,18 @@
               "importance_score": 100,
               "published_at": "2026-07-06T03:37:00+00:00",
               "source": "Reuters"
+            },
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Stocks surge on chip news, oil holds at pre-war levels - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-06T00:59:00+00:00",
+              "source": "Reuters"
             }
           ]
         },
@@ -9303,7 +9303,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0079,
-            "avg_equity_futures_1d_return": 0.0086,
+            "avg_equity_futures_1d_return": 0.007,
             "confirmed_checks": [],
             "equity_futures_symbols_used": [
               "ES=F",
@@ -9318,7 +9318,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": 0.0017,
-            "oil_proxy_1d_return": 0.0016,
+            "oil_proxy_1d_return": 0.0025,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -10599,8 +10599,8 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
+            "Trump says Sikorsky to fund White House helicopter landing pad - Reuters",
             "Trump says there will either be a deal with Iran or US will 'finish the job' - Reuters",
-            "Oil prices settle at pre-Iran war levels as crude output grows - Reuters",
             "Here's our plan for both Honeywell stocks after a divergent first week of trading",
             "France's Macron visits Syria, in first trip by an EU head of state since Assad toppled - Reuters",
             "As Khamenei mourners fill Iran's streets, discontent still simmers - Reuters"
@@ -11577,41 +11577,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 80,
+            "confidence_score": 93,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 94,
-            "headline": "Oil prices settle at pre-Iran war levels as crude output grows - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-06T20:12:28+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 94,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 78,
+            "freshness_score": 75,
             "headline": "'Electronic warfare is a tech phenomenon': Why the market is rethinking defense valuations",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11631,46 +11604,19 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 76,
+            "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 74,
             "headline": "World absorbs historic Iran war oil supply loss, but depleted stocks bring risks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-07-06T13:02:20+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 71,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 58,
-            "headline": "China preparing South Pacific missile test, Australian media report - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-06T05:09:00+00:00",
             "source": "Reuters"
           },
           {
@@ -11692,12 +11638,66 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 54,
+            "freshness_score": 55,
+            "headline": "China preparing South Pacific missile test, Australian media report - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-06T05:09:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 69,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 51,
             "headline": "Alternative-fuel vehicles hit record market share in June after Iran war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-07-06T03:37:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 68,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 45,
+            "headline": "Stocks surge on chip news, oil holds at pre-war levels - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-06T00:59:00+00:00",
             "source": "Reuters"
           }
         ],
@@ -11720,18 +11720,6 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Oil prices settle at pre-Iran war levels as crude output grows - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-07-06T20:12:28+00:00",
-              "source": "Reuters"
-            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -11779,6 +11767,18 @@
               "importance_score": 100,
               "published_at": "2026-07-06T03:37:00+00:00",
               "source": "Reuters"
+            },
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Stocks surge on chip news, oil holds at pre-war levels - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-06T00:59:00+00:00",
+              "source": "Reuters"
             }
           ]
         },
@@ -11818,7 +11818,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0079,
-            "avg_equity_futures_1d_return": 0.0086,
+            "avg_equity_futures_1d_return": 0.007,
             "confirmed_checks": [],
             "equity_futures_symbols_used": [
               "ES=F",
@@ -11833,7 +11833,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": 0.0017,
-            "oil_proxy_1d_return": 0.0016,
+            "oil_proxy_1d_return": 0.0025,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"

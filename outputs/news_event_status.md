@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-06T22:49:34.708590+00:00`
+- generated_at: `2026-07-06T23:55:54.249943+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `5`
-- event_detection_confidence: `78`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,14 +24,6 @@
 - high_importance_event_count: `0`
 
 ## Major Events
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil prices settle at pre-Iran war levels as crude output grows - Reuters
-- source: Reuters
-- published_at: `2026-07-06T20:12:28+00:00`
-- importance_score: `100`
-- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -62,5 +54,13 @@
 - headline: Alternative-fuel vehicles hit record market share in June after Iran war - Reuters
 - source: Reuters
 - published_at: `2026-07-06T03:37:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Stocks surge on chip news, oil holds at pre-war levels - Reuters
+- source: Reuters
+- published_at: `2026-07-06T00:59:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
