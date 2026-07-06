@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-06T15:57:37.409180+00:00`
+- generated_at: `2026-07-06T21:54:04.483798+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
-- event_detection_confidence: `76`
+- major_event_count: `4`
+- event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `25`
+- confirmation_score: `0`
 
 ## Dashboard Note
 
@@ -43,32 +43,16 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: China preparing South Pacific missile test, Australian media report - Reuters
+- source: Reuters
+- published_at: `2026-07-06T05:09:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Alternative-fuel vehicles hit record market share in June after Iran war - Reuters
 - source: Reuters
 - published_at: `2026-07-06T03:37:00+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil prices steady at pre-Iran war levels - Reuters
-- source: Reuters
-- published_at: `2026-07-06T00:36:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Israeli strike kills two people in Gaza, medics say - Reuters
-- source: Reuters
-- published_at: `2026-07-05T16:53:15+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Russia says Ukraine rejects local ceasefire for handover of soldiers' bodies - Reuters
-- source: Reuters
-- published_at: `2026-07-05T16:03:30+00:00`
-- importance_score: `94`
 - confidence: `medium`
