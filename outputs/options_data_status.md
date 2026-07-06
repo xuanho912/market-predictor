@@ -1,6 +1,6 @@
 # Options / Volatility Structure Status
 
-Generated at: `2026-07-05T16:09:17.121072+00:00`
+Generated at: `2026-07-06T14:44:14.711567+00:00`
 
 ## Summary
 
@@ -18,29 +18,29 @@ Generated at: `2026-07-05T16:09:17.121072+00:00`
 
 ## Market Snapshot
 
-- VIX: `16.149999618530273`
-- VIX9D: `12.369999885559082`
-- VIX3M: `19.040000915527344`
-- VIX6M: `21.5`
-- VVIX: `88.80000305175781`
+- VIX: `16.040000915527344`
+- VIX9D: `13.479999542236328`
+- VIX3M: `18.940000534057617`
+- VIX6M: `21.299999237060547`
+- VVIX: `90.33000183105469`
 - SKEW: `150.02000427246094`
 - term_structure_state: `contango`
-- volatility_reversal_score: `0.95`
-- panic_release_score: `0.7214`
-- tail_risk_score: `0.3327`
-- option_stress_score: `0.1698`
-- failed_bounce_options_risk: `0.2099`
+- volatility_reversal_score: `0.895`
+- panic_release_score: `0.6686`
+- tail_risk_score: `0.3478`
+- option_stress_score: `0.1707`
+- failed_bounce_options_risk: `0.2135`
 
 ## Sources
 
 | symbol | status | latest_date | latest_value | source | real_data | stale |
 |---|---|---|---:|---|---:|---:|
 | ^SKEW | available | 2026-07-02 | 150.02000427246094 | yahoo-chart | True | False |
-| ^VIX | available | 2026-07-02 | 16.149999618530273 | yahoo-chart | True | False |
-| ^VIX3M | available | 2026-07-02 | 19.040000915527344 | yahoo-chart | True | False |
-| ^VIX6M | available | 2026-07-02 | 21.5 | yahoo-chart | True | False |
-| ^VIX9D | available | 2026-07-02 | 12.369999885559082 | yahoo-chart | True | False |
-| ^VVIX | available | 2026-07-02 | 88.80000305175781 | yahoo-chart | True | False |
+| ^VIX | available | 2026-07-06 | 16.040000915527344 | yahoo-chart | True | False |
+| ^VIX3M | available | 2026-07-06 | 18.940000534057617 | yahoo-chart | True | False |
+| ^VIX6M | available | 2026-07-06 | 21.299999237060547 | yahoo-chart | True | False |
+| ^VIX9D | available | 2026-07-06 | 13.479999542236328 | yahoo-chart | True | False |
+| ^VVIX | available | 2026-07-06 | 90.33000183105469 | yahoo-chart | True | False |
 
 ## Guardrails
 

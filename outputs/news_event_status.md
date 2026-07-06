@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-05T16:09:26.235588+00:00`
+- generated_at: `2026-07-06T14:44:23.222738+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `2`
-- event_detection_confidence: `62`
+- major_event_count: `6`
+- event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
-- narrative_strength: `67`
+- narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `50`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
@@ -27,16 +27,48 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Mass grief in Iran at Khamenei funeral after US, Israel war killing - Reuters
+- headline: 'Electronic warfare is a tech phenomenon': Why the market is rethinking defense valuations
+- source: CNBC
+- published_at: `2026-07-06T13:37:33+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: World absorbs historic Iran war oil supply loss, but depleted stocks bring risks - Reuters
 - source: Reuters
-- published_at: `2026-07-04T11:02:00+00:00`
+- published_at: `2026-07-06T13:02:20+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Alternative-fuel vehicles hit record market share in June after Iran war - Reuters
+- source: Reuters
+- published_at: `2026-07-06T03:37:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil prices steady at pre-Iran war levels - Reuters
+- source: Reuters
+- published_at: `2026-07-06T00:36:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil is little changed as Persian Gulf flows near pre-war levels
-- source: Bloomberg
-- published_at: `2026-07-04T04:50:17+00:00`
+- headline: Israeli strike kills two people in Gaza, medics say - Reuters
+- source: Reuters
+- published_at: `2026-07-05T16:53:15+00:00`
 - importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Russia says Ukraine rejects local ceasefire for handover of soldiers' bodies - Reuters
+- source: Reuters
+- published_at: `2026-07-05T16:03:30+00:00`
+- importance_score: `95`
 - confidence: `medium`
