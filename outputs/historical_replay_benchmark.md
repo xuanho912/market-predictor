@@ -1,6 +1,6 @@
 # Historical Replay Benchmark
 
-Generated at: `2026-07-06T14:44:32.122805+00:00`
+Generated at: `2026-07-06T14:50:58.461152+00:00`
 Validation type: `historical_replay`
 Status: `research_evaluation_only_not_forward_validation`
 Sample size: `80`
@@ -25,23 +25,23 @@ Overfit warning: `{'level': 'medium', 'reasons': ['primary path is not closer th
 - secondary_hit_rate: `0.475`
 - primary_vs_secondary_accuracy_spread: `0.025`
 - primary_closer_than_secondary_rate: `0.3875`
-- primary_mean_absolute_error: `0.014709`
-- secondary_mean_absolute_error: `0.01297`
-- primary_error_advantage: `-0.001739`
+- primary_mean_absolute_error: `0.014419`
+- secondary_mean_absolute_error: `0.012629`
+- primary_error_advantage: `-0.00179`
 - close_call_sample_size: `40`
-- close_call_primary_closer_rate: `0.375`
+- close_call_primary_closer_rate: `0.4`
 
 ### 5d
 - sample_size: `80`
-- primary_hit_rate: `0.5375`
-- secondary_hit_rate: `0.4375`
+- primary_hit_rate: `0.525`
+- secondary_hit_rate: `0.425`
 - primary_vs_secondary_accuracy_spread: `0.1`
-- primary_closer_than_secondary_rate: `0.4875`
-- primary_mean_absolute_error: `0.018144`
-- secondary_mean_absolute_error: `0.016371`
-- primary_error_advantage: `-0.001773`
+- primary_closer_than_secondary_rate: `0.4625`
+- primary_mean_absolute_error: `0.017817`
+- secondary_mean_absolute_error: `0.015924`
+- primary_error_advantage: `-0.001893`
 - close_call_sample_size: `40`
-- close_call_primary_closer_rate: `0.45`
+- close_call_primary_closer_rate: `0.425`
 
 ### 10d
 - sample_size: `80`
@@ -49,33 +49,33 @@ Overfit warning: `{'level': 'medium', 'reasons': ['primary path is not closer th
 - secondary_hit_rate: `0.45`
 - primary_vs_secondary_accuracy_spread: `0.05`
 - primary_closer_than_secondary_rate: `0.3875`
-- primary_mean_absolute_error: `0.025636`
-- secondary_mean_absolute_error: `0.018705`
-- primary_error_advantage: `-0.006931`
+- primary_mean_absolute_error: `0.025904`
+- secondary_mean_absolute_error: `0.018932`
+- primary_error_advantage: `-0.006972`
 - close_call_sample_size: `40`
 - close_call_primary_closer_rate: `0.35`
 
 ### 20d
 - sample_size: `80`
-- primary_hit_rate: `0.675`
-- secondary_hit_rate: `0.45`
+- primary_hit_rate: `0.6875`
+- secondary_hit_rate: `0.4625`
 - primary_vs_secondary_accuracy_spread: `0.225`
 - primary_closer_than_secondary_rate: `0.5`
-- primary_mean_absolute_error: `0.044154`
-- secondary_mean_absolute_error: `0.044823`
-- primary_error_advantage: `0.000669`
+- primary_mean_absolute_error: `0.044041`
+- secondary_mean_absolute_error: `0.044398`
+- primary_error_advantage: `0.000357`
 - close_call_sample_size: `40`
 - close_call_primary_closer_rate: `0.525`
 
 ### 60d
 - sample_size: `80`
-- primary_hit_rate: `0.4625`
-- secondary_hit_rate: `0.6875`
+- primary_hit_rate: `0.45`
+- secondary_hit_rate: `0.675`
 - primary_vs_secondary_accuracy_spread: `-0.225`
 - primary_closer_than_secondary_rate: `0.3625`
-- primary_mean_absolute_error: `0.070543`
-- secondary_mean_absolute_error: `0.054345`
-- primary_error_advantage: `-0.016198`
+- primary_mean_absolute_error: `0.071529`
+- secondary_mean_absolute_error: `0.055371`
+- primary_error_advantage: `-0.016158`
 - close_call_sample_size: `40`
 - close_call_primary_closer_rate: `0.425`
 
@@ -83,35 +83,35 @@ Overfit warning: `{'level': 'medium', 'reasons': ['primary path is not closer th
 
 ### base_path
 - sample_size: `80`
-- 3d: sample `80`, direction_hit `0.5`, path_mae `0.013576`, as_primary `0`, as_primary_hit `None`, avg `-0.001157`, median `-8.6e-05`
-- 5d: sample `80`, direction_hit `0.5375`, path_mae `0.016041`, as_primary `0`, as_primary_hit `None`, avg `-0.001785`, median `0.002195`
-- 10d: sample `80`, direction_hit `0.5`, path_mae `0.019005`, as_primary `0`, as_primary_hit `None`, avg `0.002683`, median `1.4e-05`
-- 20d: sample `80`, direction_hit `0.675`, path_mae `0.029209`, as_primary `0`, as_primary_hit `None`, avg `0.005851`, median `0.01072`
-- 60d: sample `80`, direction_hit `0.4625`, path_mae `0.053127`, as_primary `0`, as_primary_hit `None`, avg `0.00419`, median `-0.007739`
+- 3d: sample `80`, direction_hit `0.5`, path_mae `0.013196`, as_primary `0`, as_primary_hit `None`, avg `-0.0012`, median `-8.6e-05`
+- 5d: sample `80`, direction_hit `0.525`, path_mae `0.015616`, as_primary `0`, as_primary_hit `None`, avg `-0.001607`, median `0.001483`
+- 10d: sample `80`, direction_hit `0.5`, path_mae `0.019271`, as_primary `0`, as_primary_hit `None`, avg `0.002415`, median `1.4e-05`
+- 20d: sample `80`, direction_hit `0.6875`, path_mae `0.029137`, as_primary `0`, as_primary_hit `None`, avg `0.005965`, median `0.01072`
+- 60d: sample `80`, direction_hit `0.45`, path_mae `0.054137`, as_primary `0`, as_primary_hit `None`, avg `0.003205`, median `-0.011052`
 
 ### bounce_path
 - sample_size: `80`
-- 3d: sample `80`, direction_hit `0.5`, path_mae `0.014709`, as_primary `80`, as_primary_hit `0.5`, avg `-0.001157`, median `-8.6e-05`
-- 5d: sample `80`, direction_hit `0.5375`, path_mae `0.018144`, as_primary `80`, as_primary_hit `0.5375`, avg `-0.001785`, median `0.002195`
-- 10d: sample `80`, direction_hit `0.5`, path_mae `0.025636`, as_primary `80`, as_primary_hit `0.5`, avg `0.002683`, median `1.4e-05`
-- 20d: sample `80`, direction_hit `0.675`, path_mae `0.044154`, as_primary `80`, as_primary_hit `0.675`, avg `0.005851`, median `0.01072`
-- 60d: sample `80`, direction_hit `0.4625`, path_mae `0.070543`, as_primary `80`, as_primary_hit `0.4625`, avg `0.00419`, median `-0.007739`
+- 3d: sample `80`, direction_hit `0.5`, path_mae `0.014419`, as_primary `80`, as_primary_hit `0.5`, avg `-0.0012`, median `-8.6e-05`
+- 5d: sample `80`, direction_hit `0.525`, path_mae `0.017817`, as_primary `80`, as_primary_hit `0.525`, avg `-0.001607`, median `0.001483`
+- 10d: sample `80`, direction_hit `0.5`, path_mae `0.025904`, as_primary `80`, as_primary_hit `0.5`, avg `0.002415`, median `1.4e-05`
+- 20d: sample `80`, direction_hit `0.6875`, path_mae `0.044041`, as_primary `80`, as_primary_hit `0.6875`, avg `0.005965`, median `0.01072`
+- 60d: sample `80`, direction_hit `0.45`, path_mae `0.071529`, as_primary `80`, as_primary_hit `0.45`, avg `0.003205`, median `-0.011052`
 
 ### failed_bounce_path
 - sample_size: `80`
-- 3d: sample `80`, direction_hit `0.5`, path_mae `0.013723`, as_primary `0`, as_primary_hit `None`, avg `-0.001157`, median `-8.6e-05`
-- 5d: sample `80`, direction_hit `0.4625`, path_mae `0.017084`, as_primary `0`, as_primary_hit `None`, avg `-0.001785`, median `0.002195`
-- 10d: sample `80`, direction_hit `0.5`, path_mae `0.020323`, as_primary `0`, as_primary_hit `None`, avg `0.002683`, median `1.4e-05`
-- 20d: sample `80`, direction_hit `0.325`, path_mae `0.055074`, as_primary `0`, as_primary_hit `None`, avg `0.005851`, median `0.01072`
-- 60d: sample `80`, direction_hit `0.5375`, path_mae `0.065894`, as_primary `0`, as_primary_hit `None`, avg `0.00419`, median `-0.007739`
+- 3d: sample `80`, direction_hit `0.5`, path_mae `0.013274`, as_primary `0`, as_primary_hit `None`, avg `-0.0012`, median `-8.6e-05`
+- 5d: sample `80`, direction_hit `0.475`, path_mae `0.016654`, as_primary `0`, as_primary_hit `None`, avg `-0.001607`, median `0.001483`
+- 10d: sample `80`, direction_hit `0.5`, path_mae `0.020448`, as_primary `0`, as_primary_hit `None`, avg `0.002415`, median `1.4e-05`
+- 20d: sample `80`, direction_hit `0.3125`, path_mae `0.055188`, as_primary `0`, as_primary_hit `None`, avg `0.005965`, median `0.01072`
+- 60d: sample `80`, direction_hit `0.55`, path_mae `0.065174`, as_primary `0`, as_primary_hit `None`, avg `0.003205`, median `-0.011052`
 
 ### analog_average_path
 - sample_size: `80`
-- 3d: sample `80`, direction_hit `0.5`, path_mae `0.012909`, as_primary `0`, as_primary_hit `None`, avg `-0.001157`, median `-8.6e-05`
-- 5d: sample `80`, direction_hit `0.5375`, path_mae `0.015819`, as_primary `0`, as_primary_hit `None`, avg `-0.001785`, median `0.002195`
-- 10d: sample `80`, direction_hit `0.5`, path_mae `0.01796`, as_primary `0`, as_primary_hit `None`, avg `0.002683`, median `1.4e-05`
-- 20d: sample `80`, direction_hit `0.675`, path_mae `0.028277`, as_primary `0`, as_primary_hit `None`, avg `0.005851`, median `0.01072`
-- 60d: sample `80`, direction_hit `0.4625`, path_mae `0.050546`, as_primary `0`, as_primary_hit `None`, avg `0.00419`, median `-0.007739`
+- 3d: sample `80`, direction_hit `0.5`, path_mae `0.012569`, as_primary `0`, as_primary_hit `None`, avg `-0.0012`, median `-8.6e-05`
+- 5d: sample `80`, direction_hit `0.525`, path_mae `0.015372`, as_primary `0`, as_primary_hit `None`, avg `-0.001607`, median `0.001483`
+- 10d: sample `80`, direction_hit `0.5`, path_mae `0.018187`, as_primary `0`, as_primary_hit `None`, avg `0.002415`, median `1.4e-05`
+- 20d: sample `80`, direction_hit `0.6875`, path_mae `0.027852`, as_primary `0`, as_primary_hit `None`, avg `0.005965`, median `0.01072`
+- 60d: sample `80`, direction_hit `0.45`, path_mae `0.051572`, as_primary `0`, as_primary_hit `None`, avg `0.003205`, median `-0.011052`
 
 ## Edge Status Performance
 
@@ -120,16 +120,16 @@ Overfit warning: `{'level': 'medium', 'reasons': ['primary path is not closer th
 - 3d: sample `20`, primary_hit `0.45`, primary_closer `0.35`, primary_mae `0.009982`, avg `-0.002489`, median `-0.00191`
 - 5d: sample `20`, primary_hit `0.7`, primary_closer `0.55`, primary_mae `0.011281`, avg `0.002442`, median `0.003801`
 - 10d: sample `20`, primary_hit `0.55`, primary_closer `0.55`, primary_mae `0.011765`, avg `0.003657`, median `0.002926`
-- 20d: sample `20`, primary_hit `0.7`, primary_closer `0.7`, primary_mae `0.028366`, avg `0.00558`, median `0.01201`
+- 20d: sample `20`, primary_hit `0.7`, primary_closer `0.7`, primary_mae `0.028365`, avg `0.00558`, median `0.01201`
 - 60d: sample `20`, primary_hit `0.2`, primary_closer `0.25`, primary_mae `0.058062`, avg `-0.038559`, median `-0.038871`
 
 ### STRONG_EDGE
 - sample_size: `40`
-- 3d: sample `40`, primary_hit `0.475`, primary_closer `0.4`, primary_mae `0.015292`, avg `-0.002275`, median `-0.00052`
-- 5d: sample `40`, primary_hit `0.475`, primary_closer `0.475`, primary_mae `0.01751`, avg `-0.004258`, median `-0.001663`
-- 10d: sample `40`, primary_hit `0.45`, primary_closer `0.275`, primary_mae `0.026016`, avg `0.003442`, median `-0.004481`
-- 20d: sample `40`, primary_hit `0.625`, primary_closer `0.225`, primary_mae `0.053711`, avg `0.011208`, median `0.011873`
-- 60d: sample `40`, primary_hit `0.65`, primary_closer `0.4`, primary_mae `0.076542`, avg `0.03519`, median `0.051612`
+- 3d: sample `40`, primary_hit `0.475`, primary_closer `0.4`, primary_mae `0.014712`, avg `-0.002362`, median `-0.00052`
+- 5d: sample `40`, primary_hit `0.45`, primary_closer `0.425`, primary_mae `0.016856`, avg `-0.003901`, median `-0.002264`
+- 10d: sample `40`, primary_hit `0.45`, primary_closer `0.275`, primary_mae `0.026552`, avg `0.002907`, median `-0.004481`
+- 20d: sample `40`, primary_hit `0.65`, primary_closer `0.225`, primary_mae `0.053484`, avg `0.011435`, median `0.011873`
+- 60d: sample `40`, primary_hit `0.625`, primary_closer `0.4`, primary_mae `0.078513`, avg `0.033219`, median `0.051612`
 
 ### WEAK_EDGE
 - sample_size: `20`
@@ -146,7 +146,7 @@ Overfit warning: `{'level': 'medium', 'reasons': ['primary path is not closer th
 - 3d: sample `20`, primary_hit `0.45`, primary_closer `0.35`, primary_mae `0.009982`, avg `-0.002489`, median `-0.00191`
 - 5d: sample `20`, primary_hit `0.7`, primary_closer `0.55`, primary_mae `0.011281`, avg `0.002442`, median `0.003801`
 - 10d: sample `20`, primary_hit `0.55`, primary_closer `0.55`, primary_mae `0.011765`, avg `0.003657`, median `0.002926`
-- 20d: sample `20`, primary_hit `0.7`, primary_closer `0.7`, primary_mae `0.028366`, avg `0.00558`, median `0.01201`
+- 20d: sample `20`, primary_hit `0.7`, primary_closer `0.7`, primary_mae `0.028365`, avg `0.00558`, median `0.01201`
 - 60d: sample `20`, primary_hit `0.2`, primary_closer `0.25`, primary_mae `0.058062`, avg `-0.038559`, median `-0.038871`
 
 ### downside_continuation_predictor
@@ -159,11 +159,11 @@ Overfit warning: `{'level': 'medium', 'reasons': ['primary path is not closer th
 
 ### trend_reversal_predictor
 - sample_size: `60`
-- 3d: sample `60`, primary_hit `0.5167`, primary_closer `0.4`, primary_mae `0.016284`, avg `-0.000713`, median `0.000388`
-- 5d: sample `60`, primary_hit `0.4833`, primary_closer `0.4667`, primary_mae `0.020431`, avg `-0.003194`, median `-0.001663`
-- 10d: sample `60`, primary_hit `0.4833`, primary_closer `0.3333`, primary_mae `0.03026`, avg `0.002358`, median `-0.001735`
-- 20d: sample `60`, primary_hit `0.6667`, primary_closer `0.4333`, primary_mae `0.049417`, avg `0.005942`, median `0.008744`
-- 60d: sample `60`, primary_hit `0.55`, primary_closer `0.4`, primary_mae `0.074704`, avg `0.01844`, median `0.015994`
+- 3d: sample `60`, primary_hit `0.5167`, primary_closer `0.4`, primary_mae `0.015897`, avg `-0.000771`, median `0.000388`
+- 5d: sample `60`, primary_hit `0.4667`, primary_closer `0.4333`, primary_mae `0.019995`, avg `-0.002957`, median `-0.002264`
+- 10d: sample `60`, primary_hit `0.4833`, primary_closer `0.3333`, primary_mae `0.030617`, avg `0.002001`, median `-0.001735`
+- 20d: sample `60`, primary_hit `0.6833`, primary_closer `0.4333`, primary_mae `0.049266`, avg `0.006093`, median `0.008744`
+- 60d: sample `60`, primary_hit `0.5333`, primary_closer `0.4`, primary_mae `0.076018`, avg `0.017126`, median `0.012182`
 
 ### risk_expansion_predictor
 - sample_size: `0`
@@ -178,16 +178,16 @@ Overfit warning: `{'level': 'medium', 'reasons': ['primary path is not closer th
 - 3d: `{'predictor': 'bounce_predictor', 'sample_size': 20, 'primary_hit_rate': 0.45, 'primary_closer_than_secondary_rate': 0.35, 'primary_mean_absolute_error': 0.009982, 'selection_method': 'lowest primary path error, tie-broken by hit rate and primary-vs-secondary closeness'}`
 - 5d: `{'predictor': 'bounce_predictor', 'sample_size': 20, 'primary_hit_rate': 0.7, 'primary_closer_than_secondary_rate': 0.55, 'primary_mean_absolute_error': 0.011281, 'selection_method': 'lowest primary path error, tie-broken by hit rate and primary-vs-secondary closeness'}`
 - 10d: `{'predictor': 'bounce_predictor', 'sample_size': 20, 'primary_hit_rate': 0.55, 'primary_closer_than_secondary_rate': 0.55, 'primary_mean_absolute_error': 0.011765, 'selection_method': 'lowest primary path error, tie-broken by hit rate and primary-vs-secondary closeness'}`
-- 20d: `{'predictor': 'bounce_predictor', 'sample_size': 20, 'primary_hit_rate': 0.7, 'primary_closer_than_secondary_rate': 0.7, 'primary_mean_absolute_error': 0.028366, 'selection_method': 'lowest primary path error, tie-broken by hit rate and primary-vs-secondary closeness'}`
+- 20d: `{'predictor': 'bounce_predictor', 'sample_size': 20, 'primary_hit_rate': 0.7, 'primary_closer_than_secondary_rate': 0.7, 'primary_mean_absolute_error': 0.028365, 'selection_method': 'lowest primary path error, tie-broken by hit rate and primary-vs-secondary closeness'}`
 - 60d: `{'predictor': 'bounce_predictor', 'sample_size': 20, 'primary_hit_rate': 0.2, 'primary_closer_than_secondary_rate': 0.25, 'primary_mean_absolute_error': 0.058062, 'selection_method': 'lowest primary path error, tie-broken by hit rate and primary-vs-secondary closeness'}`
 
 ## Horizon Performance
 
-- 3d: `{'sample_size': 80, 'sample_gate': 'moderate_evidence', 'primary_hit_rate': 0.5, 'secondary_hit_rate': 0.475, 'primary_vs_secondary_accuracy_spread': 0.025, 'primary_closer_than_secondary_rate': 0.3875, 'best_scenario_type': {'scenario': 'analog_average_path', 'sample_size': 80, 'path_mean_absolute_error': 0.012909, 'direction_hit_rate': 0.5}, 'worst_scenario_type': {'scenario': 'bounce_path', 'sample_size': 80, 'path_mean_absolute_error': 0.014709, 'direction_hit_rate': 0.5}, 'best_predictor': {'predictor': 'bounce_predictor', 'sample_size': 20, 'primary_hit_rate': 0.45, 'primary_closer_than_secondary_rate': 0.35, 'primary_mean_absolute_error': 0.009982, 'selection_method': 'lowest primary path error, tie-broken by hit rate and primary-vs-secondary closeness'}}`
-- 5d: `{'sample_size': 80, 'sample_gate': 'moderate_evidence', 'primary_hit_rate': 0.5375, 'secondary_hit_rate': 0.4375, 'primary_vs_secondary_accuracy_spread': 0.1, 'primary_closer_than_secondary_rate': 0.4875, 'best_scenario_type': {'scenario': 'analog_average_path', 'sample_size': 80, 'path_mean_absolute_error': 0.015819, 'direction_hit_rate': 0.5375}, 'worst_scenario_type': {'scenario': 'bounce_path', 'sample_size': 80, 'path_mean_absolute_error': 0.018144, 'direction_hit_rate': 0.5375}, 'best_predictor': {'predictor': 'bounce_predictor', 'sample_size': 20, 'primary_hit_rate': 0.7, 'primary_closer_than_secondary_rate': 0.55, 'primary_mean_absolute_error': 0.011281, 'selection_method': 'lowest primary path error, tie-broken by hit rate and primary-vs-secondary closeness'}}`
-- 10d: `{'sample_size': 80, 'sample_gate': 'moderate_evidence', 'primary_hit_rate': 0.5, 'secondary_hit_rate': 0.45, 'primary_vs_secondary_accuracy_spread': 0.05, 'primary_closer_than_secondary_rate': 0.3875, 'best_scenario_type': {'scenario': 'analog_average_path', 'sample_size': 80, 'path_mean_absolute_error': 0.01796, 'direction_hit_rate': 0.5}, 'worst_scenario_type': {'scenario': 'bounce_path', 'sample_size': 80, 'path_mean_absolute_error': 0.025636, 'direction_hit_rate': 0.5}, 'best_predictor': {'predictor': 'bounce_predictor', 'sample_size': 20, 'primary_hit_rate': 0.55, 'primary_closer_than_secondary_rate': 0.55, 'primary_mean_absolute_error': 0.011765, 'selection_method': 'lowest primary path error, tie-broken by hit rate and primary-vs-secondary closeness'}}`
-- 20d: `{'sample_size': 80, 'sample_gate': 'moderate_evidence', 'primary_hit_rate': 0.675, 'secondary_hit_rate': 0.45, 'primary_vs_secondary_accuracy_spread': 0.225, 'primary_closer_than_secondary_rate': 0.5, 'best_scenario_type': {'scenario': 'analog_average_path', 'sample_size': 80, 'path_mean_absolute_error': 0.028277, 'direction_hit_rate': 0.675}, 'worst_scenario_type': {'scenario': 'failed_bounce_path', 'sample_size': 80, 'path_mean_absolute_error': 0.055074, 'direction_hit_rate': 0.325}, 'best_predictor': {'predictor': 'bounce_predictor', 'sample_size': 20, 'primary_hit_rate': 0.7, 'primary_closer_than_secondary_rate': 0.7, 'primary_mean_absolute_error': 0.028366, 'selection_method': 'lowest primary path error, tie-broken by hit rate and primary-vs-secondary closeness'}}`
-- 60d: `{'sample_size': 80, 'sample_gate': 'moderate_evidence', 'primary_hit_rate': 0.4625, 'secondary_hit_rate': 0.6875, 'primary_vs_secondary_accuracy_spread': -0.225, 'primary_closer_than_secondary_rate': 0.3625, 'best_scenario_type': {'scenario': 'analog_average_path', 'sample_size': 80, 'path_mean_absolute_error': 0.050546, 'direction_hit_rate': 0.4625}, 'worst_scenario_type': {'scenario': 'bounce_path', 'sample_size': 80, 'path_mean_absolute_error': 0.070543, 'direction_hit_rate': 0.4625}, 'best_predictor': {'predictor': 'bounce_predictor', 'sample_size': 20, 'primary_hit_rate': 0.2, 'primary_closer_than_secondary_rate': 0.25, 'primary_mean_absolute_error': 0.058062, 'selection_method': 'lowest primary path error, tie-broken by hit rate and primary-vs-secondary closeness'}}`
+- 3d: `{'sample_size': 80, 'sample_gate': 'moderate_evidence', 'primary_hit_rate': 0.5, 'secondary_hit_rate': 0.475, 'primary_vs_secondary_accuracy_spread': 0.025, 'primary_closer_than_secondary_rate': 0.3875, 'best_scenario_type': {'scenario': 'analog_average_path', 'sample_size': 80, 'path_mean_absolute_error': 0.012569, 'direction_hit_rate': 0.5}, 'worst_scenario_type': {'scenario': 'bounce_path', 'sample_size': 80, 'path_mean_absolute_error': 0.014419, 'direction_hit_rate': 0.5}, 'best_predictor': {'predictor': 'bounce_predictor', 'sample_size': 20, 'primary_hit_rate': 0.45, 'primary_closer_than_secondary_rate': 0.35, 'primary_mean_absolute_error': 0.009982, 'selection_method': 'lowest primary path error, tie-broken by hit rate and primary-vs-secondary closeness'}}`
+- 5d: `{'sample_size': 80, 'sample_gate': 'moderate_evidence', 'primary_hit_rate': 0.525, 'secondary_hit_rate': 0.425, 'primary_vs_secondary_accuracy_spread': 0.1, 'primary_closer_than_secondary_rate': 0.4625, 'best_scenario_type': {'scenario': 'analog_average_path', 'sample_size': 80, 'path_mean_absolute_error': 0.015372, 'direction_hit_rate': 0.525}, 'worst_scenario_type': {'scenario': 'bounce_path', 'sample_size': 80, 'path_mean_absolute_error': 0.017817, 'direction_hit_rate': 0.525}, 'best_predictor': {'predictor': 'bounce_predictor', 'sample_size': 20, 'primary_hit_rate': 0.7, 'primary_closer_than_secondary_rate': 0.55, 'primary_mean_absolute_error': 0.011281, 'selection_method': 'lowest primary path error, tie-broken by hit rate and primary-vs-secondary closeness'}}`
+- 10d: `{'sample_size': 80, 'sample_gate': 'moderate_evidence', 'primary_hit_rate': 0.5, 'secondary_hit_rate': 0.45, 'primary_vs_secondary_accuracy_spread': 0.05, 'primary_closer_than_secondary_rate': 0.3875, 'best_scenario_type': {'scenario': 'analog_average_path', 'sample_size': 80, 'path_mean_absolute_error': 0.018187, 'direction_hit_rate': 0.5}, 'worst_scenario_type': {'scenario': 'bounce_path', 'sample_size': 80, 'path_mean_absolute_error': 0.025904, 'direction_hit_rate': 0.5}, 'best_predictor': {'predictor': 'bounce_predictor', 'sample_size': 20, 'primary_hit_rate': 0.55, 'primary_closer_than_secondary_rate': 0.55, 'primary_mean_absolute_error': 0.011765, 'selection_method': 'lowest primary path error, tie-broken by hit rate and primary-vs-secondary closeness'}}`
+- 20d: `{'sample_size': 80, 'sample_gate': 'moderate_evidence', 'primary_hit_rate': 0.6875, 'secondary_hit_rate': 0.4625, 'primary_vs_secondary_accuracy_spread': 0.225, 'primary_closer_than_secondary_rate': 0.5, 'best_scenario_type': {'scenario': 'analog_average_path', 'sample_size': 80, 'path_mean_absolute_error': 0.027852, 'direction_hit_rate': 0.6875}, 'worst_scenario_type': {'scenario': 'failed_bounce_path', 'sample_size': 80, 'path_mean_absolute_error': 0.055188, 'direction_hit_rate': 0.3125}, 'best_predictor': {'predictor': 'bounce_predictor', 'sample_size': 20, 'primary_hit_rate': 0.7, 'primary_closer_than_secondary_rate': 0.7, 'primary_mean_absolute_error': 0.028365, 'selection_method': 'lowest primary path error, tie-broken by hit rate and primary-vs-secondary closeness'}}`
+- 60d: `{'sample_size': 80, 'sample_gate': 'moderate_evidence', 'primary_hit_rate': 0.45, 'secondary_hit_rate': 0.675, 'primary_vs_secondary_accuracy_spread': -0.225, 'primary_closer_than_secondary_rate': 0.3625, 'best_scenario_type': {'scenario': 'analog_average_path', 'sample_size': 80, 'path_mean_absolute_error': 0.051572, 'direction_hit_rate': 0.45}, 'worst_scenario_type': {'scenario': 'bounce_path', 'sample_size': 80, 'path_mean_absolute_error': 0.071529, 'direction_hit_rate': 0.45}, 'best_predictor': {'predictor': 'bounce_predictor', 'sample_size': 20, 'primary_hit_rate': 0.2, 'primary_closer_than_secondary_rate': 0.25, 'primary_mean_absolute_error': 0.058062, 'selection_method': 'lowest primary path error, tie-broken by hit rate and primary-vs-secondary closeness'}}`
 
 ## Signal Confirmation Effectiveness
 
@@ -221,11 +221,11 @@ Overfit warning: `{'level': 'medium', 'reasons': ['primary path is not closer th
 
 ### high_data_completeness
 - sample_size: `80`
-- 3d: sample `80`, primary_hit `0.5`, primary_closer `0.3875`, primary_mae `0.014709`, avg `-0.001157`, median `-8.6e-05`
-- 5d: sample `80`, primary_hit `0.5375`, primary_closer `0.4875`, primary_mae `0.018144`, avg `-0.001785`, median `0.002195`
-- 10d: sample `80`, primary_hit `0.5`, primary_closer `0.3875`, primary_mae `0.025636`, avg `0.002683`, median `1.4e-05`
-- 20d: sample `80`, primary_hit `0.675`, primary_closer `0.5`, primary_mae `0.044154`, avg `0.005851`, median `0.01072`
-- 60d: sample `80`, primary_hit `0.4625`, primary_closer `0.3625`, primary_mae `0.070543`, avg `0.00419`, median `-0.007739`
+- 3d: sample `80`, primary_hit `0.5`, primary_closer `0.3875`, primary_mae `0.014419`, avg `-0.0012`, median `-8.6e-05`
+- 5d: sample `80`, primary_hit `0.525`, primary_closer `0.4625`, primary_mae `0.017817`, avg `-0.001607`, median `0.001483`
+- 10d: sample `80`, primary_hit `0.5`, primary_closer `0.3875`, primary_mae `0.025904`, avg `0.002415`, median `1.4e-05`
+- 20d: sample `80`, primary_hit `0.6875`, primary_closer `0.5`, primary_mae `0.044041`, avg `0.005965`, median `0.01072`
+- 60d: sample `80`, primary_hit `0.45`, primary_closer `0.3625`, primary_mae `0.071529`, avg `0.003205`, median `-0.011052`
 
 ### low_data_completeness
 - sample_size: `0`
@@ -237,11 +237,11 @@ Overfit warning: `{'level': 'medium', 'reasons': ['primary path is not closer th
 
 ### fred_available
 - sample_size: `80`
-- 3d: sample `80`, primary_hit `0.5`, primary_closer `0.3875`, primary_mae `0.014709`, avg `-0.001157`, median `-8.6e-05`
-- 5d: sample `80`, primary_hit `0.5375`, primary_closer `0.4875`, primary_mae `0.018144`, avg `-0.001785`, median `0.002195`
-- 10d: sample `80`, primary_hit `0.5`, primary_closer `0.3875`, primary_mae `0.025636`, avg `0.002683`, median `1.4e-05`
-- 20d: sample `80`, primary_hit `0.675`, primary_closer `0.5`, primary_mae `0.044154`, avg `0.005851`, median `0.01072`
-- 60d: sample `80`, primary_hit `0.4625`, primary_closer `0.3625`, primary_mae `0.070543`, avg `0.00419`, median `-0.007739`
+- 3d: sample `80`, primary_hit `0.5`, primary_closer `0.3875`, primary_mae `0.014419`, avg `-0.0012`, median `-8.6e-05`
+- 5d: sample `80`, primary_hit `0.525`, primary_closer `0.4625`, primary_mae `0.017817`, avg `-0.001607`, median `0.001483`
+- 10d: sample `80`, primary_hit `0.5`, primary_closer `0.3875`, primary_mae `0.025904`, avg `0.002415`, median `1.4e-05`
+- 20d: sample `80`, primary_hit `0.6875`, primary_closer `0.5`, primary_mae `0.044041`, avg `0.005965`, median `0.01072`
+- 60d: sample `80`, primary_hit `0.45`, primary_closer `0.3625`, primary_mae `0.071529`, avg `0.003205`, median `-0.011052`
 
 ### fred_missing
 - sample_size: `0`
@@ -253,11 +253,11 @@ Overfit warning: `{'level': 'medium', 'reasons': ['primary path is not closer th
 
 ### breadth_confirmed
 - sample_size: `80`
-- 3d: sample `80`, primary_hit `0.5`, primary_closer `0.3875`, primary_mae `0.014709`, avg `-0.001157`, median `-8.6e-05`
-- 5d: sample `80`, primary_hit `0.5375`, primary_closer `0.4875`, primary_mae `0.018144`, avg `-0.001785`, median `0.002195`
-- 10d: sample `80`, primary_hit `0.5`, primary_closer `0.3875`, primary_mae `0.025636`, avg `0.002683`, median `1.4e-05`
-- 20d: sample `80`, primary_hit `0.675`, primary_closer `0.5`, primary_mae `0.044154`, avg `0.005851`, median `0.01072`
-- 60d: sample `80`, primary_hit `0.4625`, primary_closer `0.3625`, primary_mae `0.070543`, avg `0.00419`, median `-0.007739`
+- 3d: sample `80`, primary_hit `0.5`, primary_closer `0.3875`, primary_mae `0.014419`, avg `-0.0012`, median `-8.6e-05`
+- 5d: sample `80`, primary_hit `0.525`, primary_closer `0.4625`, primary_mae `0.017817`, avg `-0.001607`, median `0.001483`
+- 10d: sample `80`, primary_hit `0.5`, primary_closer `0.3875`, primary_mae `0.025904`, avg `0.002415`, median `1.4e-05`
+- 20d: sample `80`, primary_hit `0.6875`, primary_closer `0.5`, primary_mae `0.044041`, avg `0.005965`, median `0.01072`
+- 60d: sample `80`, primary_hit `0.45`, primary_closer `0.3625`, primary_mae `0.071529`, avg `0.003205`, median `-0.011052`
 
 ### breadth_conflicted
 - sample_size: `0`
@@ -269,11 +269,11 @@ Overfit warning: `{'level': 'medium', 'reasons': ['primary path is not closer th
 
 ### options_confirmed
 - sample_size: `80`
-- 3d: sample `80`, primary_hit `0.5`, primary_closer `0.3875`, primary_mae `0.014709`, avg `-0.001157`, median `-8.6e-05`
-- 5d: sample `80`, primary_hit `0.5375`, primary_closer `0.4875`, primary_mae `0.018144`, avg `-0.001785`, median `0.002195`
-- 10d: sample `80`, primary_hit `0.5`, primary_closer `0.3875`, primary_mae `0.025636`, avg `0.002683`, median `1.4e-05`
-- 20d: sample `80`, primary_hit `0.675`, primary_closer `0.5`, primary_mae `0.044154`, avg `0.005851`, median `0.01072`
-- 60d: sample `80`, primary_hit `0.4625`, primary_closer `0.3625`, primary_mae `0.070543`, avg `0.00419`, median `-0.007739`
+- 3d: sample `80`, primary_hit `0.5`, primary_closer `0.3875`, primary_mae `0.014419`, avg `-0.0012`, median `-8.6e-05`
+- 5d: sample `80`, primary_hit `0.525`, primary_closer `0.4625`, primary_mae `0.017817`, avg `-0.001607`, median `0.001483`
+- 10d: sample `80`, primary_hit `0.5`, primary_closer `0.3875`, primary_mae `0.025904`, avg `0.002415`, median `1.4e-05`
+- 20d: sample `80`, primary_hit `0.6875`, primary_closer `0.5`, primary_mae `0.044041`, avg `0.005965`, median `0.01072`
+- 60d: sample `80`, primary_hit `0.45`, primary_closer `0.3625`, primary_mae `0.071529`, avg `0.003205`, median `-0.011052`
 
 ### options_conflicted
 - sample_size: `0`

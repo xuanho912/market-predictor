@@ -1,6 +1,6 @@
 # Forecast Deviation Review
 
-Generated at: `2026-07-06T14:44:32.111910+00:00`
+Generated at: `2026-07-06T14:50:58.448052+00:00`
 
 This report reviews forecast-vs-actual deviations after horizons complete. It is not a trading, PnL or execution report.
 
@@ -19,7 +19,7 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - dominant_error_theme: `news_data_gap_limited_attribution`
 - evidence_level: `stronger_evidence`
 - validation_status: `early_evidence`
-- update_blockers: `[{'reason': 'market_open_unconfirmed', 'detail': '当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前可用的完整核心行情日期为 2026-07-06；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。'}]`
+- update_blockers: `[{'reason': 'market_open_unconfirmed', 'detail': '当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-07-06，最近完整收盘交易日为 2026-07-02；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。'}]`
 - correction_policy: `past_forecasts_are_not_rewritten_only_actuals_and_error_fields_are_backfilled`
 - model_learning_status: `lessons_ready_for_shadow_challenger`
 

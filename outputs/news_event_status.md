@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-06T14:44:23.222738+00:00`
+- generated_at: `2026-07-06T14:50:47.849793+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `6`
-- event_detection_confidence: `78`
+- event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -70,5 +70,5 @@
 - headline: Russia says Ukraine rejects local ceasefire for handover of soldiers' bodies - Reuters
 - source: Reuters
 - published_at: `2026-07-05T16:03:30+00:00`
-- importance_score: `95`
+- importance_score: `94`
 - confidence: `medium`
