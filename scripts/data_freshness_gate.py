@@ -297,7 +297,8 @@ def _warning_message(
     if freshness_status == MARKET_OPEN_UNCONFIRMED:
         return (
             "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。"
-            f" 当前可用的完整核心行情日期为 {latest}；正式 baseline_v1 预测记录应等美东 "
+            f" 当前盘中快照日期为 {latest}，最近完整收盘交易日为 {expected_latest.isoformat()}；"
+            "正式 baseline_v1 预测记录应等美东 "
             f"{MARKET_CLOSE_BUFFER.strftime('%H:%M')} 后重新生成。"
         )
     if freshness_status == "market_closed":
