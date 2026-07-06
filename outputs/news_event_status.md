@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-06T21:54:04.483798+00:00`
+- generated_at: `2026-07-06T22:49:34.708590+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `4`
+- major_event_count: `5`
 - event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil prices settle at pre-Iran war levels as crude output grows - Reuters
+- source: Reuters
+- published_at: `2026-07-06T20:12:28+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
