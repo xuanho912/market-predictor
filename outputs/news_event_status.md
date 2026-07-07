@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-07T00:19:01.343638+00:00`
+- generated_at: `2026-07-07T05:10:46.162235+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `5`
-- event_detection_confidence: `75`
+- major_event_count: `3`
+- event_detection_confidence: `81`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `0`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
@@ -27,6 +27,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Iran fires missiles at commercial ships in Strait of Hormuz, Axios reports - Reuters
+- source: Reuters
+- published_at: `2026-07-07T02:04:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: 'Electronic warfare is a tech phenomenon': Why the market is rethinking defense valuations
 - source: CNBC
 - published_at: `2026-07-06T13:37:33+00:00`
@@ -38,29 +46,5 @@
 - headline: World absorbs historic Iran war oil supply loss, but depleted stocks bring risks - Reuters
 - source: Reuters
 - published_at: `2026-07-06T13:02:20+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: China preparing South Pacific missile test, Australian media report - Reuters
-- source: Reuters
-- published_at: `2026-07-06T05:09:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Alternative-fuel vehicles hit record market share in June after Iran war - Reuters
-- source: Reuters
-- published_at: `2026-07-06T03:37:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Stocks surge on chip news, oil holds at pre-war levels - Reuters
-- source: Reuters
-- published_at: `2026-07-06T00:59:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
