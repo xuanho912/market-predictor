@@ -1,25 +1,25 @@
 # Forecast Trust Gate
 
-Generated at: `2026-07-07T15:18:00.654574+00:00`
+Generated at: `2026-07-07T21:51:11.754545+00:00`
 
 This report answers whether the current Market Prediction Dashboard is dependable as a forecasting tool. It is not trading advice.
 
 ## Current Status
 
 - status: `RESEARCH_ONLY_FORWARD_VALIDATION_NEEDED`
-- trust_score: `27`
+- trust_score: `39`
 - would_rely_for_real_money: `False`
 - use_boundary: Use as a research radar and scenario explainer only; do not treat it as a dependable forecasting edge.
 - latest_market_date: `2026-07-07`
-- expected_latest_trading_date: `2026-07-06`
+- expected_latest_trading_date: `2026-07-07`
 - data_completeness_score: `92.0`
 
 ## Forward Samples
 
-- 1d: `60`
-- 3d: `52`
-- 5d: `44`
-- 10d: `24`
+- 1d: `64`
+- 3d: `56`
+- 5d: `48`
+- 10d: `28`
 - 20d: `0`
 - 60d: `0`
 
@@ -30,16 +30,15 @@ This report answers whether the current Market Prediction Dashboard is dependabl
 
 ## Warnings
 
-- `market_open_unconfirmed` (medium): Current data is an intraday or unconfirmed snapshot; do not freeze it as a validated daily forecast.
 - `high_confidence_not_validated` (medium): High-confidence forecasts have not proven they are more accurate than ordinary forecasts.
 - `deviation_learning_needed` (medium): Material deviation rate is too high; confidence must remain capped.
 
 ## Symbol Readiness
 
-- SPY: `blocked_by_global_gate` | primary `bounce_path` 0.3983 | reason: Global trust gate is not ready.
-- QQQ: `blocked_by_global_gate` | primary `bounce_path` 0.3697 | reason: Global trust gate is not ready.
-- IWM: `blocked_by_global_gate` | primary `bounce_path` 0.3468 | reason: Global trust gate is not ready.
-- DIA: `blocked_by_global_gate` | primary `bounce_path` 0.4085 | reason: Global trust gate is not ready.
+- SPY: `blocked_by_global_gate` | primary `bounce_path` 0.4021 | reason: Global trust gate is not ready.
+- QQQ: `blocked_by_global_gate` | primary `bounce_path` 0.3736 | reason: Global trust gate is not ready.
+- IWM: `blocked_by_global_gate` | primary `bounce_path` 0.3469 | reason: Global trust gate is not ready.
+- DIA: `blocked_by_global_gate` | primary `bounce_path` 0.4136 | reason: Global trust gate is not ready.
 
 ## Next Actions
 

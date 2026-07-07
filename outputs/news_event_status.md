@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-07T15:17:51.055697+00:00`
+- generated_at: `2026-07-07T21:51:01.417082+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `5`
-- event_detection_confidence: `77`
+- event_detection_confidence: `81`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `True`
-- confirmation_score: `75`
+- confirmation_score: `80`
 
 ## Dashboard Note
 
@@ -27,6 +27,22 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Qatar blames Iran for strike on tanker in strait as vast crowds mourn Khamenei - Reuters
+- source: Reuters
+- published_at: `2026-07-07T18:46:07+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Strait of Hormuz threat level raised to 'severe' after Iran attacks tankers using U.S. Navy route
+- source: CNBC
+- published_at: `2026-07-07T18:26:32+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Bomb attack rocks Damascus during Macron visit - Reuters
 - source: Reuters
 - published_at: `2026-07-07T14:37:32+00:00`
@@ -35,32 +51,16 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Israeli strikes kill three people in Gaza, medics say - Reuters
+- headline: Diehl Defence says new version of IRIS-T system could reduce need for Patriot missiles - Reuters
 - source: Reuters
-- published_at: `2026-07-07T12:52:37+00:00`
+- published_at: `2026-07-07T12:48:06+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: India to supply BrahMos, Astra missiles to Indonesia, India government official says - Reuters
+- headline: OPEC is likely loser in Gulf’s post-war race for market share - Reuters
 - source: Reuters
-- published_at: `2026-07-07T05:21:00+00:00`
+- published_at: `2026-07-07T06:05:00+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil gains after vessels attacked near Strait of Hormuz - Reuters
-- source: Reuters
-- published_at: `2026-07-07T00:53:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### oil_shock_risk / risk_off
-
-- headline: Stocks falter on AI worries, oil spikes on Iran concerns - Reuters
-- source: Reuters
-- published_at: `2026-07-07T02:03:00+00:00`
-- importance_score: `95`
 - confidence: `medium`

@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-07-07T15:18:00.821592+00:00`
+Generated at: `2026-07-07T21:51:11.940264+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -20,46 +20,46 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 
 - company_name: `NVIDIA Corp`
 - status: `available`
-- current_price: `192.74`
+- current_price: `196.93`
 - market_context: `risk_off_pressure`
-- primary: `stock_downside_continuation` / `26.2%`
-- secondary: `stock_failed_bounce` / `26.2%`
-- risk: `stock_event_risk` / `13.1%`
-- stock_confluence_score: `33.96` / `weak`
+- primary: `stock_failed_bounce` / `26.4%`
+- secondary: `stock_downside_continuation` / `25.2%`
+- risk: `stock_event_risk` / `13.6%`
+- stock_confluence_score: `37.87` / `weak`
 - stock_alpha_score_v1: `34.5` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `46.8%`
+- 20d_outperformance_probability: `48.1%`
 - 60d_expected_return: `-1.4%`
-- risk_reward_ratio: `0.3`
-- strongest_alert: `Stock Failed Bounce Risk` / `WATCH` / `39.34`
+- risk_reward_ratio: `0.34`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `33.16`
 - historical_analog_support: `supportive` / samples `10`
 - validation_status: `not_yet_validated`
 
 - primary_confirmation_level: `213.99`
-- primary_invalidation_level: `188.77`
-- risk_scenario_activation_level: `186.02`
+- primary_invalidation_level: `189.80`
+- risk_scenario_activation_level: `189.80`
 - trend_repair_confirmation_level: `213.99`
 - breakout_level: `213.99`
-- breakdown_level: `186.02`
-- nearest_support: `189.80`
-- nearest_resistance: `200.08`
-- bounce_target_zone: `{"conservative": 196.41, "base": 196.41, "extended": 218.88, "source": "scenario_path + atr + recent_resistance", "meaning": "概率反抽情景参考区间，不是目标价承诺。", "not_trading_instruction": true}`
-- failed_bounce_warning_zone: `{"first_warning": 189.99, "critical_warning": 188.77, "source": "risk_path + atr + recent_support", "meaning": "跌入该区间说明失败反抽风险上升。", "not_trading_instruction": true}`
+- breakdown_level: `189.80`
+- nearest_support: `191.88`
+- nearest_resistance: `204.51`
+- bounce_target_zone: `{"conservative": 200.72, "base": 200.72, "extended": 219.04, "source": "scenario_path + atr + recent_resistance", "meaning": "概率反抽情景参考区间，不是目标价承诺。", "not_trading_instruction": true}`
+- failed_bounce_warning_zone: `{"first_warning": 194.09, "critical_warning": 189.8, "source": "risk_path + atr + recent_support", "meaning": "跌入该区间说明失败反抽风险上升。", "not_trading_instruction": true}`
 
 ### TSLA
 
 - company_name: `Tesla Inc`
 - status: `available`
-- current_price: `407.39`
+- current_price: `402.90`
 - market_context: `risk_off_pressure`
-- primary: `stock_failed_bounce` / `26.0%`
-- secondary: `stock_downside_continuation` / `18.3%`
-- risk: `stock_event_risk` / `16.2%`
-- stock_confluence_score: `37.8` / `weak`
-- stock_alpha_score_v1: `1.5` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `41.8%`
-- 60d_expected_return: `-1.2%`
-- risk_reward_ratio: `0.53`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `32.66`
+- primary: `stock_failed_bounce` / `26.4%`
+- secondary: `stock_downside_continuation` / `18.5%`
+- risk: `stock_event_risk` / `16.1%`
+- stock_confluence_score: `43.14` / `weak`
+- stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `39.9%`
+- 60d_expected_return: `-1.4%`
+- risk_reward_ratio: `0.51`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `27.24`
 - historical_analog_support: `supportive` / samples `10`
 - validation_status: `not_yet_validated`
 
@@ -69,65 +69,65 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - trend_repair_confirmation_level: `432.86`
 - breakout_level: `432.86`
 - breakdown_level: `368.60`
-- nearest_support: `391.42`
-- nearest_resistance: `431.35`
-- bounce_target_zone: `{"conservative": 419.37, "base": 419.37, "extended": 448.83, "source": "scenario_path + atr + recent_resistance", "meaning": "概率反抽情景参考区间，不是目标价承诺。", "not_trading_instruction": true}`
-- failed_bounce_warning_zone: `{"first_warning": 398.4, "critical_warning": 368.6, "source": "risk_path + atr + recent_support", "meaning": "跌入该区间说明失败反抽风险上升。", "not_trading_instruction": true}`
+- nearest_support: `386.64`
+- nearest_resistance: `427.29`
+- bounce_target_zone: `{"conservative": 415.1, "base": 415.1, "extended": 449.12, "source": "scenario_path + atr + recent_resistance", "meaning": "概率反抽情景参考区间，不是目标价承诺。", "not_trading_instruction": true}`
+- failed_bounce_warning_zone: `{"first_warning": 393.75, "critical_warning": 368.6, "source": "risk_path + atr + recent_support", "meaning": "跌入该区间说明失败反抽风险上升。", "not_trading_instruction": true}`
 
 ### SMR
 
 - company_name: `Nuscale Power Corp`
 - status: `available`
-- current_price: `8.77`
+- current_price: `8.96`
 - market_context: `risk_off_pressure`
-- primary: `stock_downside_continuation` / `28.4%`
-- secondary: `stock_failed_bounce` / `24.2%`
-- risk: `stock_event_risk` / `12.6%`
-- stock_confluence_score: `32.05` / `weak`
+- primary: `stock_downside_continuation` / `27.8%`
+- secondary: `stock_failed_bounce` / `24.1%`
+- risk: `stock_event_risk` / `12.8%`
+- stock_confluence_score: `36.31` / `weak`
 - stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `20.7%`
-- 60d_expected_return: `-4.2%`
+- 20d_outperformance_probability: `22.1%`
+- 60d_expected_return: `-3.9%`
 - risk_reward_ratio: `0.51`
-- strongest_alert: `Stock Breakdown Warning` / `WATCH` / `56.81`
-- historical_analog_support: `conflicting` / samples `10`
+- strongest_alert: `Stock Breakdown Warning` / `WATCH` / `53.56`
+- historical_analog_support: `supportive` / samples `10`
 - validation_status: `not_yet_validated`
 
 - primary_confirmation_level: `11.85`
-- primary_invalidation_level: `8.20`
-- risk_scenario_activation_level: `7.81`
+- primary_invalidation_level: `8.39`
+- risk_scenario_activation_level: `7.99`
 - trend_repair_confirmation_level: `11.85`
 - breakout_level: `11.85`
-- breakdown_level: `7.81`
+- breakdown_level: `7.99`
 - nearest_support: `8.64`
-- nearest_resistance: `9.83`
-- bounce_target_zone: `{"conservative": 9.3, "base": 9.3, "extended": 12.56, "source": "scenario_path + atr + recent_resistance", "meaning": "概率反抽情景参考区间，不是目标价承诺。", "not_trading_instruction": true}`
-- failed_bounce_warning_zone: `{"first_warning": 8.38, "critical_warning": 8.2, "source": "risk_path + atr + recent_support", "meaning": "跌入该区间说明失败反抽风险上升。", "not_trading_instruction": true}`
+- nearest_resistance: `10.02`
+- bounce_target_zone: `{"conservative": 9.49, "base": 9.49, "extended": 12.56, "source": "scenario_path + atr + recent_resistance", "meaning": "概率反抽情景参考区间，不是目标价承诺。", "not_trading_instruction": true}`
+- failed_bounce_warning_zone: `{"first_warning": 8.56, "critical_warning": 8.39, "source": "risk_path + atr + recent_support", "meaning": "跌入该区间说明失败反抽风险上升。", "not_trading_instruction": true}`
 
 ### CEG
 
 - company_name: `Constellation Energy Corp`
 - status: `available`
-- current_price: `240.88`
+- current_price: `239.71`
 - market_context: `risk_off_pressure`
-- primary: `stock_downside_continuation` / `27.4%`
+- primary: `stock_downside_continuation` / `27.6%`
 - secondary: `stock_failed_bounce` / `27.0%`
-- risk: `stock_event_risk` / `10.2%`
-- stock_confluence_score: `25.22` / `weak`
+- risk: `stock_event_risk` / `10.1%`
+- stock_confluence_score: `26.36` / `weak`
 - stock_alpha_score_v1: `20.5` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `40.9%`
+- 20d_outperformance_probability: `40.4%`
 - 60d_expected_return: `-1.8%`
 - risk_reward_ratio: `0.3`
-- strongest_alert: `Relative Weakness Alert` / `WATCH` / `53.25`
+- strongest_alert: `Relative Weakness Alert` / `WATCH` / `56.24`
 - historical_analog_support: `supportive` / samples `10`
 - validation_status: `not_yet_validated`
 
 - primary_confirmation_level: `282.77`
 - primary_invalidation_level: `228.63`
-- risk_scenario_activation_level: `228.63`
+- risk_scenario_activation_level: `228.56`
 - trend_repair_confirmation_level: `282.77`
 - breakout_level: `282.77`
-- breakdown_level: `228.63`
-- nearest_support: `232.89`
-- nearest_resistance: `252.87`
-- bounce_target_zone: `{"conservative": 246.88, "base": 246.88, "extended": 290.76, "source": "scenario_path + atr + recent_resistance", "meaning": "概率反抽情景参考区间，不是目标价承诺。", "not_trading_instruction": true}`
-- failed_bounce_warning_zone: `{"first_warning": 236.38, "critical_warning": 228.63, "source": "risk_path + atr + recent_support", "meaning": "跌入该区间说明失败反抽风险上升。", "not_trading_instruction": true}`
+- breakdown_level: `228.56`
+- nearest_support: `231.60`
+- nearest_resistance: `251.87`
+- bounce_target_zone: `{"conservative": 245.79, "base": 245.79, "extended": 290.88, "source": "scenario_path + atr + recent_resistance", "meaning": "概率反抽情景参考区间，不是目标价承诺。", "not_trading_instruction": true}`
+- failed_bounce_warning_zone: `{"first_warning": 235.15, "critical_warning": 228.63, "source": "risk_path + atr + recent_support", "meaning": "跌入该区间说明失败反抽风险上升。", "not_trading_instruction": true}`
