@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-07T21:51:01.417082+00:00`
+- generated_at: `2026-07-07T22:42:24.900850+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `5`
-- event_detection_confidence: `81`
+- major_event_count: `7`
+- event_detection_confidence: `82`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,25 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Qatar blames Iran for strike on tanker in strait as vast crowds mourn Khamenei - Reuters
+- headline: US military launches strikes against Iran, Central Command says - Reuters
 - source: Reuters
-- published_at: `2026-07-07T18:46:07+00:00`
+- published_at: `2026-07-07T21:45:52+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: US revokes Iran oil sale license in a threat to fragile truce after ships attacked - Reuters
+- source: Reuters
+- published_at: `2026-07-07T21:30:47+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US reinstates sanctions on Iranian oil sales after LNG, oil tanker attacks - Reuters
+- source: Reuters
+- published_at: `2026-07-07T21:06:09+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -38,6 +54,14 @@
 - headline: Strait of Hormuz threat level raised to 'severe' after Iran attacks tankers using U.S. Navy route
 - source: CNBC
 - published_at: `2026-07-07T18:26:32+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Prince Harry's war with UK press is over, and he's lost - Reuters
+- source: Reuters
+- published_at: `2026-07-07T15:48:45+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -56,11 +80,3 @@
 - published_at: `2026-07-07T12:48:06+00:00`
 - importance_score: `100`
 - confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: OPEC is likely loser in Gulf’s post-war race for market share - Reuters
-- source: Reuters
-- published_at: `2026-07-07T06:05:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
