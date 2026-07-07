@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-07T22:42:24.900850+00:00`
+- generated_at: `2026-07-07T23:44:40.109302+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `7`
-- event_detection_confidence: `82`
+- event_detection_confidence: `83`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US oil prices jump after US military launches strikes against Iran - Reuters
+- source: Reuters
+- published_at: `2026-07-07T22:55:59+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -70,13 +78,5 @@
 - headline: Bomb attack rocks Damascus during Macron visit - Reuters
 - source: Reuters
 - published_at: `2026-07-07T14:37:32+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Diehl Defence says new version of IRIS-T system could reduce need for Patriot missiles - Reuters
-- source: Reuters
-- published_at: `2026-07-07T12:48:06+00:00`
 - importance_score: `100`
 - confidence: `high`
