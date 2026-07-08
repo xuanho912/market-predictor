@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-08T22:39:37.745066+00:00`
+- generated_at: `2026-07-08T23:58:10.708794+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
-- event_detection_confidence: `83`
+- major_event_count: `7`
+- event_detection_confidence: `86`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,22 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil rises more than a dollar per barrel as US launches fresh strikes against Iran - Reuters
+- source: Reuters
+- published_at: `2026-07-08T22:10:36+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Trading Day: War on, risk-off: Stocks drop, crude jumps as Trump calls Iran peace deal 'over' - Reuters
+- source: Reuters
+- published_at: `2026-07-08T21:59:07+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -62,13 +78,5 @@
 - headline: Chevron-chartered oil tanker caught in Russia-Ukraine war as Kyiv steps up attacks - Reuters
 - source: Reuters
 - published_at: `2026-07-08T12:24:46+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump says interim accord with Iran to end war is "over" - Reuters
-- source: Reuters
-- published_at: `2026-07-08T11:32:42+00:00`
 - importance_score: `100`
 - confidence: `high`

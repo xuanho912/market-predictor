@@ -1,6 +1,6 @@
 # High Confidence Signal Report
 
-Generated at: `2026-07-08T22:39:37.738217+00:00`
+Generated at: `2026-07-08T23:58:10.701809+00:00`
 
 This report does not confirm alpha. It checks whether higher-confidence historical analog candidates look better than lower-confidence candidates.
 

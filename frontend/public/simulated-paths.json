@@ -5,10 +5,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-07-08",
-    "current_time_us_eastern": "2026-07-08T18:39:47.120137-04:00",
+    "current_time_us_eastern": "2026-07-08T19:58:20.055181-04:00",
     "data_freshness_status": "fresh",
     "expected_latest_trading_date": "2026-07-08",
-    "generated_at": "2026-07-08T22:39:47.120137+00:00",
+    "generated_at": "2026-07-08T23:58:20.055181+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -1047,11 +1047,11 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "HY_OAS",
-      "DGS2",
-      "DGS3MO",
       "IG_OAS",
+      "DGS2",
       "DGS10",
+      "HY_OAS",
+      "DGS3MO",
       "BAA_SPREAD",
       "RECESSION",
       "DFII10",
@@ -1085,11 +1085,11 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 83,
+      "event_detection_confidence": 86,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-07-08T22:39:37.745066+00:00",
-      "major_event_count": 6,
+      "last_update": "2026-07-08T23:58:10.708794+00:00",
+      "major_event_count": 7,
       "missing_reason": null,
       "news_direction": "risk_off",
       "news_event_partial": false,
@@ -1100,7 +1100,7 @@
     },
     "news_event_available": true,
     "news_event_event_risk_level": "high",
-    "news_event_major_count": 6,
+    "news_event_major_count": 7,
     "news_event_missing_reason": null,
     "news_event_narrative": "geopolitics_escalation_risk_off",
     "news_event_partial": false,
@@ -1151,7 +1151,7 @@
       "status": "failed"
     },
     "event_risk_level": "high",
-    "major_event_count": 6,
+    "major_event_count": 7,
     "market_narrative": {
       "affected_scenarios": [
         "bearish_path"
@@ -1162,7 +1162,21 @@
         "QQQ",
         "SPY"
       ],
-      "conflicting_headlines": [],
+      "conflicting_headlines": [
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_easing",
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_easing",
+          "expected_market_direction": "risk_on",
+          "headline": "Trading Day: War on, risk-off: Stocks drop, crude jumps as Trump calls Iran peace deal 'over' - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-07-08T21:59:07+00:00",
+          "source": "Reuters"
+        }
+      ],
       "detected_event_conditions": [
         "geopolitical_risk_escalation"
       ],
@@ -1171,6 +1185,18 @@
       "narrative_strength": 100,
       "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
       "supporting_headlines": [
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
+          "headline": "Oil rises more than a dollar per barrel as US launches fresh strikes against Iran - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-07-08T22:10:36+00:00",
+          "source": "Reuters"
+        },
         {
           "confidence": "high",
           "detected_event_conditions": [
@@ -1230,18 +1256,6 @@
           "importance_score": 100,
           "published_at": "2026-07-08T12:24:46+00:00",
           "source": "Reuters"
-        },
-        {
-          "confidence": "high",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Trump says interim accord with Iran to end war is \"over\" - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-07-08T11:32:42+00:00",
-          "source": "Reuters"
         }
       ]
     },
@@ -1251,7 +1265,7 @@
       "direction": "supports_risk_expansion",
       "event_risk_level": "high",
       "macro_event_risk_flag": false,
-      "major_event_count": 6,
+      "major_event_count": 7,
       "not_a_trading_signal": true,
       "price_reaction_confirmed": false,
       "symbols": {
@@ -1390,7 +1404,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": -0.005,
-        "avg_equity_futures_1d_return": -0.0066,
+        "avg_equity_futures_1d_return": -0.0055,
         "confirmed_checks": [
           "股票ETF或股指期货下跌",
           "VIX 上升"
@@ -2304,11 +2318,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
+            "Oil rises more than a dollar per barrel as US launches fresh strikes against Iran - Reuters",
+            "Trading Day: War on, risk-off: Stocks drop, crude jumps as Trump calls Iran peace deal 'over' - Reuters",
             "US military is conducting fresh strikes on Iran - Reuters",
             "S&P 500 ends down after Trump says Iran deal is 'over' - Reuters",
-            "Levi Strauss beats quarterly expectations, raises guidance and dividend",
-            "Thousands march as Khamenei's funeral procession crosses into Iraq - Reuters",
-            "Trump unexpectedly switches back to old Air Force One, sidelining Qatari jet - Reuters"
+            "Levi Strauss beats quarterly expectations, raises guidance and dividend"
           ]
         },
         "price": {
@@ -3685,6 +3699,65 @@
               "TLT"
             ],
             "confidence": "high",
+            "confidence_score": 81,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 96,
+            "headline": "Oil rises more than a dollar per barrel as US launches fresh strikes against Iran - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-08T22:10:36+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "HYG",
+              "LQD",
+              "USO",
+              "CL=F",
+              "UUP",
+              "ES=F",
+              "NQ=F"
+            ],
+            "confidence": "high",
+            "confidence_score": 100,
+            "detected_event_conditions": [
+              "geopolitical_risk_easing",
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_easing",
+            "expected_horizon": "1d-5d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 95,
+            "headline": "Trading Day: War on, risk-off: Stocks drop, crude jumps as Trump calls Iran peace deal 'over' - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_easing_risk_on",
+            "provider": "finnhub",
+            "published_at": "2026-07-08T21:59:07+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
             "confidence_score": 80,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
@@ -3692,7 +3765,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 95,
+            "freshness_score": 92,
             "headline": "US military is conducting fresh strikes on Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3712,14 +3785,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 97,
+            "confidence_score": 96,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 89,
+            "freshness_score": 86,
             "headline": "Some war insurers advise shipowners to pause Hormuz voyages after attacks, sources say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3739,14 +3812,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 78,
+            "confidence_score": 77,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
+            "freshness_score": 81,
             "headline": "Eight Iranian army members killed in U.S. attacks on southern parts of Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3773,66 +3846,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 79,
+            "freshness_score": 76,
             "headline": "Qatari LNG tanker awaits salvage off Oman after projectile strike - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-07-08T13:47:04+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 93,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 75,
-            "headline": "Chevron-chartered oil tanker caught in Russia-Ukraine war as Kyiv steps up attacks - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-08T12:24:46+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 73,
-            "headline": "Trump says interim accord with Iran to end war is \"over\" - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-08T11:32:42+00:00",
             "source": "Reuters"
           }
         ],
@@ -3846,7 +3865,21 @@
             "QQQ",
             "SPY"
           ],
-          "conflicting_headlines": [],
+          "conflicting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_easing",
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_easing",
+              "expected_market_direction": "risk_on",
+              "headline": "Trading Day: War on, risk-off: Stocks drop, crude jumps as Trump calls Iran peace deal 'over' - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-08T21:59:07+00:00",
+              "source": "Reuters"
+            }
+          ],
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -3855,6 +3888,18 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Oil rises more than a dollar per barrel as US launches fresh strikes against Iran - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-08T22:10:36+00:00",
+              "source": "Reuters"
+            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -3914,18 +3959,6 @@
               "importance_score": 100,
               "published_at": "2026-07-08T12:24:46+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Trump says interim accord with Iran to end war is \"over\" - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-07-08T11:32:42+00:00",
-              "source": "Reuters"
             }
           ]
         },
@@ -3965,7 +3998,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.005,
-            "avg_equity_futures_1d_return": -0.0066,
+            "avg_equity_futures_1d_return": -0.0055,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升"
@@ -6493,11 +6526,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
+            "Oil rises more than a dollar per barrel as US launches fresh strikes against Iran - Reuters",
+            "Trading Day: War on, risk-off: Stocks drop, crude jumps as Trump calls Iran peace deal 'over' - Reuters",
             "US military is conducting fresh strikes on Iran - Reuters",
             "S&P 500 ends down after Trump says Iran deal is 'over' - Reuters",
-            "Levi Strauss beats quarterly expectations, raises guidance and dividend",
-            "Thousands march as Khamenei's funeral procession crosses into Iraq - Reuters",
-            "Trump unexpectedly switches back to old Air Force One, sidelining Qatari jet - Reuters"
+            "Levi Strauss beats quarterly expectations, raises guidance and dividend"
           ]
         },
         "price": {
@@ -7816,6 +7849,65 @@
               "TLT"
             ],
             "confidence": "high",
+            "confidence_score": 81,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 96,
+            "headline": "Oil rises more than a dollar per barrel as US launches fresh strikes against Iran - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-08T22:10:36+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "HYG",
+              "LQD",
+              "USO",
+              "CL=F",
+              "UUP",
+              "ES=F",
+              "NQ=F"
+            ],
+            "confidence": "high",
+            "confidence_score": 100,
+            "detected_event_conditions": [
+              "geopolitical_risk_easing",
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_easing",
+            "expected_horizon": "1d-5d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 95,
+            "headline": "Trading Day: War on, risk-off: Stocks drop, crude jumps as Trump calls Iran peace deal 'over' - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_easing_risk_on",
+            "provider": "finnhub",
+            "published_at": "2026-07-08T21:59:07+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
             "confidence_score": 80,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
@@ -7823,7 +7915,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 95,
+            "freshness_score": 92,
             "headline": "US military is conducting fresh strikes on Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7843,14 +7935,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 97,
+            "confidence_score": 96,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 89,
+            "freshness_score": 86,
             "headline": "Some war insurers advise shipowners to pause Hormuz voyages after attacks, sources say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7870,14 +7962,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 78,
+            "confidence_score": 77,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
+            "freshness_score": 81,
             "headline": "Eight Iranian army members killed in U.S. attacks on southern parts of Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7904,66 +7996,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 79,
+            "freshness_score": 76,
             "headline": "Qatari LNG tanker awaits salvage off Oman after projectile strike - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-07-08T13:47:04+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 93,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 75,
-            "headline": "Chevron-chartered oil tanker caught in Russia-Ukraine war as Kyiv steps up attacks - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-08T12:24:46+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 73,
-            "headline": "Trump says interim accord with Iran to end war is \"over\" - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-08T11:32:42+00:00",
             "source": "Reuters"
           }
         ],
@@ -7977,7 +8015,21 @@
             "QQQ",
             "SPY"
           ],
-          "conflicting_headlines": [],
+          "conflicting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_easing",
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_easing",
+              "expected_market_direction": "risk_on",
+              "headline": "Trading Day: War on, risk-off: Stocks drop, crude jumps as Trump calls Iran peace deal 'over' - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-08T21:59:07+00:00",
+              "source": "Reuters"
+            }
+          ],
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -7986,6 +8038,18 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Oil rises more than a dollar per barrel as US launches fresh strikes against Iran - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-08T22:10:36+00:00",
+              "source": "Reuters"
+            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -8045,18 +8109,6 @@
               "importance_score": 100,
               "published_at": "2026-07-08T12:24:46+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Trump says interim accord with Iran to end war is \"over\" - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-07-08T11:32:42+00:00",
-              "source": "Reuters"
             }
           ]
         },
@@ -8096,7 +8148,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.005,
-            "avg_equity_futures_1d_return": -0.0066,
+            "avg_equity_futures_1d_return": -0.0055,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升"
@@ -10622,11 +10674,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
+            "Oil rises more than a dollar per barrel as US launches fresh strikes against Iran - Reuters",
+            "Trading Day: War on, risk-off: Stocks drop, crude jumps as Trump calls Iran peace deal 'over' - Reuters",
             "US military is conducting fresh strikes on Iran - Reuters",
             "S&P 500 ends down after Trump says Iran deal is 'over' - Reuters",
-            "Levi Strauss beats quarterly expectations, raises guidance and dividend",
-            "Thousands march as Khamenei's funeral procession crosses into Iraq - Reuters",
-            "Trump unexpectedly switches back to old Air Force One, sidelining Qatari jet - Reuters"
+            "Levi Strauss beats quarterly expectations, raises guidance and dividend"
           ]
         },
         "price": {
@@ -11976,6 +12028,65 @@
               "TLT"
             ],
             "confidence": "high",
+            "confidence_score": 81,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 96,
+            "headline": "Oil rises more than a dollar per barrel as US launches fresh strikes against Iran - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-08T22:10:36+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "HYG",
+              "LQD",
+              "USO",
+              "CL=F",
+              "UUP",
+              "ES=F",
+              "NQ=F"
+            ],
+            "confidence": "high",
+            "confidence_score": 100,
+            "detected_event_conditions": [
+              "geopolitical_risk_easing",
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_easing",
+            "expected_horizon": "1d-5d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 95,
+            "headline": "Trading Day: War on, risk-off: Stocks drop, crude jumps as Trump calls Iran peace deal 'over' - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_easing_risk_on",
+            "provider": "finnhub",
+            "published_at": "2026-07-08T21:59:07+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
             "confidence_score": 80,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
@@ -11983,7 +12094,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 95,
+            "freshness_score": 92,
             "headline": "US military is conducting fresh strikes on Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12003,14 +12114,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 97,
+            "confidence_score": 96,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 89,
+            "freshness_score": 86,
             "headline": "Some war insurers advise shipowners to pause Hormuz voyages after attacks, sources say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12030,14 +12141,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 78,
+            "confidence_score": 77,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
+            "freshness_score": 81,
             "headline": "Eight Iranian army members killed in U.S. attacks on southern parts of Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12064,66 +12175,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 79,
+            "freshness_score": 76,
             "headline": "Qatari LNG tanker awaits salvage off Oman after projectile strike - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-07-08T13:47:04+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 93,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 75,
-            "headline": "Chevron-chartered oil tanker caught in Russia-Ukraine war as Kyiv steps up attacks - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-08T12:24:46+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 73,
-            "headline": "Trump says interim accord with Iran to end war is \"over\" - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-08T11:32:42+00:00",
             "source": "Reuters"
           }
         ],
@@ -12137,7 +12194,21 @@
             "QQQ",
             "SPY"
           ],
-          "conflicting_headlines": [],
+          "conflicting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_easing",
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_easing",
+              "expected_market_direction": "risk_on",
+              "headline": "Trading Day: War on, risk-off: Stocks drop, crude jumps as Trump calls Iran peace deal 'over' - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-08T21:59:07+00:00",
+              "source": "Reuters"
+            }
+          ],
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -12146,6 +12217,18 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Oil rises more than a dollar per barrel as US launches fresh strikes against Iran - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-08T22:10:36+00:00",
+              "source": "Reuters"
+            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -12205,18 +12288,6 @@
               "importance_score": 100,
               "published_at": "2026-07-08T12:24:46+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Trump says interim accord with Iran to end war is \"over\" - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-07-08T11:32:42+00:00",
-              "source": "Reuters"
             }
           ]
         },
@@ -12256,7 +12327,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.005,
-            "avg_equity_futures_1d_return": -0.0066,
+            "avg_equity_futures_1d_return": -0.0055,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升"
@@ -14777,11 +14848,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
+            "Oil rises more than a dollar per barrel as US launches fresh strikes against Iran - Reuters",
+            "Trading Day: War on, risk-off: Stocks drop, crude jumps as Trump calls Iran peace deal 'over' - Reuters",
             "US military is conducting fresh strikes on Iran - Reuters",
             "S&P 500 ends down after Trump says Iran deal is 'over' - Reuters",
-            "Levi Strauss beats quarterly expectations, raises guidance and dividend",
-            "Thousands march as Khamenei's funeral procession crosses into Iraq - Reuters",
-            "Trump unexpectedly switches back to old Air Force One, sidelining Qatari jet - Reuters"
+            "Levi Strauss beats quarterly expectations, raises guidance and dividend"
           ]
         },
         "price": {
@@ -16173,6 +16244,65 @@
               "TLT"
             ],
             "confidence": "high",
+            "confidence_score": 81,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 96,
+            "headline": "Oil rises more than a dollar per barrel as US launches fresh strikes against Iran - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-08T22:10:36+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "HYG",
+              "LQD",
+              "USO",
+              "CL=F",
+              "UUP",
+              "ES=F",
+              "NQ=F"
+            ],
+            "confidence": "high",
+            "confidence_score": 100,
+            "detected_event_conditions": [
+              "geopolitical_risk_easing",
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_easing",
+            "expected_horizon": "1d-5d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 95,
+            "headline": "Trading Day: War on, risk-off: Stocks drop, crude jumps as Trump calls Iran peace deal 'over' - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_easing_risk_on",
+            "provider": "finnhub",
+            "published_at": "2026-07-08T21:59:07+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
             "confidence_score": 80,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
@@ -16180,7 +16310,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 95,
+            "freshness_score": 92,
             "headline": "US military is conducting fresh strikes on Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16200,14 +16330,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 97,
+            "confidence_score": 96,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 89,
+            "freshness_score": 86,
             "headline": "Some war insurers advise shipowners to pause Hormuz voyages after attacks, sources say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16227,14 +16357,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 78,
+            "confidence_score": 77,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
+            "freshness_score": 81,
             "headline": "Eight Iranian army members killed in U.S. attacks on southern parts of Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16261,66 +16391,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 79,
+            "freshness_score": 76,
             "headline": "Qatari LNG tanker awaits salvage off Oman after projectile strike - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-07-08T13:47:04+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 93,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 75,
-            "headline": "Chevron-chartered oil tanker caught in Russia-Ukraine war as Kyiv steps up attacks - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-08T12:24:46+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 73,
-            "headline": "Trump says interim accord with Iran to end war is \"over\" - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-08T11:32:42+00:00",
             "source": "Reuters"
           }
         ],
@@ -16334,7 +16410,21 @@
             "QQQ",
             "SPY"
           ],
-          "conflicting_headlines": [],
+          "conflicting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_easing",
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_easing",
+              "expected_market_direction": "risk_on",
+              "headline": "Trading Day: War on, risk-off: Stocks drop, crude jumps as Trump calls Iran peace deal 'over' - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-08T21:59:07+00:00",
+              "source": "Reuters"
+            }
+          ],
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -16343,6 +16433,18 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Oil rises more than a dollar per barrel as US launches fresh strikes against Iran - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-08T22:10:36+00:00",
+              "source": "Reuters"
+            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -16402,18 +16504,6 @@
               "importance_score": 100,
               "published_at": "2026-07-08T12:24:46+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Trump says interim accord with Iran to end war is \"over\" - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-07-08T11:32:42+00:00",
-              "source": "Reuters"
             }
           ]
         },
@@ -16453,7 +16543,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.005,
-            "avg_equity_futures_1d_return": -0.0066,
+            "avg_equity_futures_1d_return": -0.0055,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升"
