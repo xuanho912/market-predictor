@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-08T21:38:52.762283+00:00`
+- generated_at: `2026-07-08T22:39:37.745066+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
+- major_event_count: `6`
 - event_detection_confidence: `83`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -70,13 +70,5 @@
 - headline: Trump says interim accord with Iran to end war is "over" - Reuters
 - source: Reuters
 - published_at: `2026-07-08T11:32:42+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Airbus trims jet industry demand forecast after Iran war, tariffs - Reuters
-- source: Reuters
-- published_at: `2026-07-08T11:05:08+00:00`
 - importance_score: `100`
 - confidence: `high`
