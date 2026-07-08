@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-08T00:10:59.196197+00:00`
+- generated_at: `2026-07-08T04:36:17.136581+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
-- event_detection_confidence: `83`
+- major_event_count: `6`
+- event_detection_confidence: `82`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,25 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US oil prices jump after US military launches strikes against Iran - Reuters
+- headline: US says it has completed a new round of strikes on Iran - Reuters
 - source: Reuters
-- published_at: `2026-07-07T22:55:59+00:00`
+- published_at: `2026-07-08T02:39:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Dollar at week-high after US resumes Iran strikes; RBNZ hike hoists kiwi - Reuters
+- source: Reuters
+- published_at: `2026-07-08T00:08:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Oil prices climb as US strikes on Iran fuel fears truce is unravelling - Reuters
+- source: Reuters
+- published_at: `2026-07-07T22:42:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -38,14 +54,6 @@
 - headline: US military launches strikes against Iran, Central Command says - Reuters
 - source: Reuters
 - published_at: `2026-07-07T21:45:52+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: US revokes Iran oil sale license in a threat to fragile truce after ships attacked - Reuters
-- source: Reuters
-- published_at: `2026-07-07T21:30:47+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -62,21 +70,5 @@
 - headline: Strait of Hormuz threat level raised to 'severe' after Iran attacks tankers using U.S. Navy route
 - source: CNBC
 - published_at: `2026-07-07T18:26:32+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Prince Harry's war with UK press is over, and he's lost - Reuters
-- source: Reuters
-- published_at: `2026-07-07T15:48:45+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Bomb attack rocks Damascus during Macron visit - Reuters
-- source: Reuters
-- published_at: `2026-07-07T14:37:32+00:00`
 - importance_score: `100`
 - confidence: `high`

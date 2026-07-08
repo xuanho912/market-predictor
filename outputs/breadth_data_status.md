@@ -1,6 +1,6 @@
 # Breadth Data Status
 
-Generated at: 2026-07-08T00:10:43.503692+00:00
+Generated at: 2026-07-08T04:36:07.773301+00:00
 
 Provider available: True
 True breadth available: True
@@ -11,7 +11,7 @@ Stale data: False
 
 ## Market Internal Resonance
 
-- resonance_score: 66.54
+- resonance_score: 66.51
 - resonance_state: mixed
 - label: partial_resonance
 - aligned_symbols: SPY, DIA
@@ -47,16 +47,16 @@ Stale data: False
 - latest_date: 2026-07-07
 - true_breadth: True
 - proxy: False
-- constituents used / expected: 101 / 101
+- constituents used / expected: 103 / 103
 - coverage_ratio: 1.0
 - stale_constituents: False
 - stale_price_data: False
 - percent_above_20d / 50d / 200d: 0.5347 / 0.5248 / 0.6238
-- advancers / decliners / A-D ratio: 47 / 53 / 0.8868
-- new highs/lows 20d: 12 / 13
+- advancers / decliners / A-D ratio: 48 / 54 / 0.8889
+- new highs/lows 20d: 12 / 14
 - new highs/lows 52w: 0 / 0
-- improvement / deterioration / confirmation / conflict / quality: 57.07 / 42.55 / 65.69 / 32.34 / 100.0
-- internal_resonance: mixed / score 62.06 / QQQ 内部信号分歧：成分股/行业有部分支持，但等权、小盘或新高新低没有完全确认。
+- improvement / deterioration / confirmation / conflict / quality: 56.9 / 42.75 / 65.55 / 32.49 / 100.0
+- internal_resonance: mixed / score 61.96 / QQQ 内部信号分歧：成分股/行业有部分支持，但等权、小盘或新高新低没有完全确认。
 
 ### DIA
 
