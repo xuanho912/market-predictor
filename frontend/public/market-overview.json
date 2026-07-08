@@ -11,10 +11,10 @@
     "can_append_forecast_record": false,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-07-08",
-    "current_time_us_eastern": "2026-07-08T00:36:27.852098-04:00",
+    "current_time_us_eastern": "2026-07-08T02:17:32.335284-04:00",
     "data_freshness_status": "market_open_unconfirmed",
     "expected_latest_trading_date": "2026-07-07",
-    "generated_at": "2026-07-08T04:36:27.852098+00:00",
+    "generated_at": "2026-07-08T06:17:32.335284+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -1053,15 +1053,15 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "DGS2",
       "HY_OAS",
-      "DGS3MO",
       "BAA_SPREAD",
+      "DGS3MO",
       "IG_OAS",
+      "DGS2",
       "DGS10",
-      "FINANCIAL_STRESS",
       "DFII10",
-      "RECESSION"
+      "RECESSION",
+      "FINANCIAL_STRESS"
     ],
     "freshness_warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-07-07，最近完整收盘交易日为 2026-07-07；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
     "gamma_available": false,
@@ -1091,11 +1091,11 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 82,
+      "event_detection_confidence": 81,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-07-08T04:36:17.136581+00:00",
-      "major_event_count": 6,
+      "last_update": "2026-07-08T06:17:19.178797+00:00",
+      "major_event_count": 10,
       "missing_reason": null,
       "news_direction": "risk_off",
       "news_event_partial": false,
@@ -1106,7 +1106,7 @@
     },
     "news_event_available": true,
     "news_event_event_risk_level": "high",
-    "news_event_major_count": 6,
+    "news_event_major_count": 10,
     "news_event_missing_reason": null,
     "news_event_narrative": "geopolitics_escalation_risk_off",
     "news_event_partial": false,
@@ -1320,7 +1320,7 @@
       "status": "failed"
     },
     "event_risk_level": "high",
-    "major_event_count": 6,
+    "major_event_count": 10,
     "market_narrative": {
       "affected_scenarios": [
         "bearish_path"
@@ -1335,12 +1335,24 @@
         {
           "confidence": "high",
           "detected_event_conditions": [
+            "geopolitical_risk_easing"
+          ],
+          "event_type": "geopolitical_risk_easing",
+          "expected_market_direction": "risk_on",
+          "headline": "Morning Bid: Ceasefire? What ceasefire? - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-07-08T04:48:00+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
             "geopolitical_risk_easing",
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_easing",
           "expected_market_direction": "risk_on",
-          "headline": "Oil prices climb as US strikes on Iran fuel fears truce is unravelling - Reuters",
+          "headline": "Oil rises as US strikes on Iran raise fears over shaky truce - Reuters",
           "importance_score": 100,
           "published_at": "2026-07-07T22:42:00+00:00",
           "source": "Reuters"
@@ -1362,9 +1374,45 @@
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_market_direction": "risk_off",
+          "headline": "Iran targets sites in Bahrain, Kuwait after wave of US strikes - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-07-08T04:21:00+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
           "headline": "US says it has completed a new round of strikes on Iran - Reuters",
           "importance_score": 100,
           "published_at": "2026-07-08T02:39:00+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
+          "headline": "Indian shares slide as US strikes on Iran lift oil, sap risk appetite - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-07-08T02:35:00+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
+          "headline": "Gold wavers as investors weigh US strikes on Iran, await Fed minutes - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-07-08T01:28:00+00:00",
           "source": "Reuters"
         },
         {
@@ -1390,31 +1438,6 @@
           "importance_score": 100,
           "published_at": "2026-07-07T21:45:52+00:00",
           "source": "Reuters"
-        },
-        {
-          "confidence": "high",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "US reinstates sanctions on Iranian oil sales after LNG, oil tanker attacks - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-07-07T21:06:09+00:00",
-          "source": "Reuters"
-        },
-        {
-          "confidence": "high",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation",
-            "oil_shock_risk"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Strait of Hormuz threat level raised to 'severe' after Iran attacks tankers using U.S. Navy route",
-          "importance_score": 100,
-          "published_at": "2026-07-07T18:26:32+00:00",
-          "source": "CNBC"
         }
       ]
     },
@@ -1424,7 +1447,7 @@
       "direction": "supports_risk_expansion",
       "event_risk_level": "high",
       "macro_event_risk_flag": false,
-      "major_event_count": 6,
+      "major_event_count": 10,
       "not_a_trading_signal": true,
       "price_reaction_confirmed": true,
       "symbols": {
@@ -1579,7 +1602,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": -0.0089,
-        "avg_equity_futures_1d_return": 0.0006,
+        "avg_equity_futures_1d_return": -0.0019,
         "confirmed_checks": [
           "股票ETF或股指期货下跌",
           "VIX 上升",
@@ -1596,7 +1619,7 @@
           "HYG/LQD 走弱"
         ],
         "hyg_lqd_1d_relative_return": 0.0059,
-        "oil_proxy_1d_return": 0.035,
+        "oil_proxy_1d_return": 0.0388,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -2943,13 +2966,13 @@
           "rsi_14": 67.21703857362414
         },
         "rates_liquidity": {
-          "liquidity_stress_proxy": 0.1664093648170105,
+          "liquidity_stress_proxy": 0.16640935051189576,
           "real_yield_proxy": "not_available",
           "ten_year_minus_three_month": "not_available",
           "ten_year_minus_two_year": "not_available",
-          "ten_year_yield_proxy": 4.529000282287598,
+          "ten_year_yield_proxy": 4.5289998054504395,
           "tlt_return_20d": -0.005995703285608833,
-          "tnx_change_20d": 0.05200004577636719,
+          "tnx_change_20d": 0.051999568939208984,
           "two_year_yield": "not_available",
           "uup_return_20d": 0.013561711440347679
         },
@@ -3122,11 +3145,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.1,
           "top_headlines": [
+            "Morning Bid: Ceasefire? What ceasefire? - Reuters",
+            "Iran targets sites in Bahrain, Kuwait after wave of US strikes - Reuters",
             "US says it has completed a new round of strikes on Iran - Reuters",
-            "Indian shares open lower as US-Iran hostilities lift oil prices - Reuters",
-            "NATO leaders meet in Ankara after Trump rekindles disputes over Iran, Greenland - Reuters",
-            "Gold eases as fresh US-Iran tensions lift oil prices, rate-hike bets - Reuters",
-            "Dollar at week-high after US resumes Iran strikes; RBNZ hike hoists kiwi - Reuters"
+            "Indian shares slide as US strikes on Iran lift oil, sap risk appetite - Reuters",
+            "NATO leaders meet in Ankara after Trump rekindles disputes over Iran, Greenland - Reuters"
           ]
         },
         "price": {
@@ -4028,9 +4051,9 @@
           }
         },
         "stress_inputs": {
-          "combined_market_stress": 0.1683880554899669,
+          "combined_market_stress": 0.16838805191368822,
           "credit_deterioration_score": 0.0,
-          "liquidity_stress_proxy": 0.1664093648170105,
+          "liquidity_stress_proxy": 0.16640935051189576,
           "oversold_score": 0.0,
           "vix_percentile": 0.28174603174603174
         },
@@ -4078,6 +4101,37 @@
               "IWM",
               "DIA",
               "^VIX",
+              "HYG",
+              "LQD",
+              "USO",
+              "CL=F",
+              "UUP",
+              "ES=F",
+              "NQ=F"
+            ],
+            "confidence": "high",
+            "confidence_score": 81,
+            "detected_event_conditions": [
+              "geopolitical_risk_easing"
+            ],
+            "event_type": "geopolitical_risk_easing",
+            "expected_horizon": "1d-5d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 96,
+            "headline": "Morning Bid: Ceasefire? What ceasefire? - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_easing_risk_on",
+            "provider": "finnhub",
+            "published_at": "2026-07-08T04:48:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
               "USO",
               "UUP",
               "TLT"
@@ -4091,6 +4145,33 @@
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
             "freshness_score": 95,
+            "headline": "Iran targets sites in Bahrain, Kuwait after wave of US strikes - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-08T04:21:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 79,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 91,
             "headline": "US says it has completed a new round of strikes on Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4117,12 +4198,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 89,
-            "headline": "Dollar at week-high after US resumes Iran strikes; RBNZ hike hoists kiwi - Reuters",
+            "freshness_score": 91,
+            "headline": "Indian shares slide as US strikes on Iran lift oil, sap risk appetite - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-07-08T00:08:00+00:00",
+            "published_at": "2026-07-08T02:35:00+00:00",
             "source": "Reuters"
           },
           {
@@ -4132,29 +4213,24 @@
               "IWM",
               "DIA",
               "^VIX",
-              "HYG",
-              "LQD",
               "USO",
-              "CL=F",
               "UUP",
-              "ES=F",
-              "NQ=F"
+              "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 82,
+            "confidence_score": 79,
             "detected_event_conditions": [
-              "geopolitical_risk_easing",
               "geopolitical_risk_escalation"
             ],
-            "event_type": "geopolitical_risk_easing",
-            "expected_horizon": "1d-5d",
-            "expected_market_direction": "risk_on",
-            "freshness_score": 86,
-            "headline": "Oil prices climb as US strikes on Iran fuel fears truce is unravelling - Reuters",
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 88,
+            "headline": "Gold wavers as investors weigh US strikes on Iran, await Fed minutes - Reuters",
             "importance_score": 100,
-            "narrative": "geopolitics_easing_risk_on",
+            "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-07-07T22:42:00+00:00",
+            "published_at": "2026-07-08T01:28:00+00:00",
             "source": "Reuters"
           },
           {
@@ -4176,68 +4252,13 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
-            "headline": "US military launches strikes against Iran, Central Command says - Reuters",
+            "freshness_score": 85,
+            "headline": "Dollar at week-high after US resumes Iran strikes; RBNZ hike hoists kiwi - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-07-07T21:45:52+00:00",
+            "published_at": "2026-07-08T00:08:00+00:00",
             "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 77,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 82,
-            "headline": "US reinstates sanctions on Iranian oil sales after LNG, oil tanker attacks - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-07T21:06:09+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 98,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation",
-              "oil_shock_risk"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 76,
-            "headline": "Strait of Hormuz threat level raised to 'severe' after Iran attacks tankers using U.S. Navy route",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-07T18:26:32+00:00",
-            "source": "CNBC"
           }
         ],
         "market_narrative": {
@@ -4254,12 +4275,24 @@
             {
               "confidence": "high",
               "detected_event_conditions": [
+                "geopolitical_risk_easing"
+              ],
+              "event_type": "geopolitical_risk_easing",
+              "expected_market_direction": "risk_on",
+              "headline": "Morning Bid: Ceasefire? What ceasefire? - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-08T04:48:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
                 "geopolitical_risk_easing",
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_easing",
               "expected_market_direction": "risk_on",
-              "headline": "Oil prices climb as US strikes on Iran fuel fears truce is unravelling - Reuters",
+              "headline": "Oil rises as US strikes on Iran raise fears over shaky truce - Reuters",
               "importance_score": 100,
               "published_at": "2026-07-07T22:42:00+00:00",
               "source": "Reuters"
@@ -4281,9 +4314,45 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Iran targets sites in Bahrain, Kuwait after wave of US strikes - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-08T04:21:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "US says it has completed a new round of strikes on Iran - Reuters",
               "importance_score": 100,
               "published_at": "2026-07-08T02:39:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Indian shares slide as US strikes on Iran lift oil, sap risk appetite - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-08T02:35:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Gold wavers as investors weigh US strikes on Iran, await Fed minutes - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-08T01:28:00+00:00",
               "source": "Reuters"
             },
             {
@@ -4309,31 +4378,6 @@
               "importance_score": 100,
               "published_at": "2026-07-07T21:45:52+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "US reinstates sanctions on Iranian oil sales after LNG, oil tanker attacks - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-07-07T21:06:09+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation",
-                "oil_shock_risk"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Strait of Hormuz threat level raised to 'severe' after Iran attacks tankers using U.S. Navy route",
-              "importance_score": 100,
-              "published_at": "2026-07-07T18:26:32+00:00",
-              "source": "CNBC"
             }
           ]
         },
@@ -4377,7 +4421,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0089,
-            "avg_equity_futures_1d_return": 0.0006,
+            "avg_equity_futures_1d_return": -0.0019,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -4394,7 +4438,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0059,
-            "oil_proxy_1d_return": 0.035,
+            "oil_proxy_1d_return": 0.0388,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -5466,13 +5510,13 @@
           "rsi_14": 52.61204699318883
         },
         "rates_liquidity": {
-          "liquidity_stress_proxy": 0.1664093648170105,
+          "liquidity_stress_proxy": 0.16640935051189576,
           "real_yield_proxy": "not_available",
           "ten_year_minus_three_month": "not_available",
           "ten_year_minus_two_year": "not_available",
-          "ten_year_yield_proxy": 4.529000282287598,
+          "ten_year_yield_proxy": 4.5289998054504395,
           "tlt_return_20d": -0.005995703285608833,
-          "tnx_change_20d": 0.05200004577636719,
+          "tnx_change_20d": 0.051999568939208984,
           "two_year_yield": "not_available",
           "uup_return_20d": 0.013561711440347679
         },
@@ -5645,11 +5689,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.1,
           "top_headlines": [
+            "Morning Bid: Ceasefire? What ceasefire? - Reuters",
+            "Iran targets sites in Bahrain, Kuwait after wave of US strikes - Reuters",
             "US says it has completed a new round of strikes on Iran - Reuters",
-            "Indian shares open lower as US-Iran hostilities lift oil prices - Reuters",
-            "NATO leaders meet in Ankara after Trump rekindles disputes over Iran, Greenland - Reuters",
-            "Gold eases as fresh US-Iran tensions lift oil prices, rate-hike bets - Reuters",
-            "Dollar at week-high after US resumes Iran strikes; RBNZ hike hoists kiwi - Reuters"
+            "Indian shares slide as US strikes on Iran lift oil, sap risk appetite - Reuters",
+            "NATO leaders meet in Ankara after Trump rekindles disputes over Iran, Greenland - Reuters"
           ]
         },
         "price": {
@@ -6511,9 +6555,9 @@
           }
         },
         "stress_inputs": {
-          "combined_market_stress": 0.1683880554899669,
+          "combined_market_stress": 0.16838805191368822,
           "credit_deterioration_score": 0.0,
-          "liquidity_stress_proxy": 0.1664093648170105,
+          "liquidity_stress_proxy": 0.16640935051189576,
           "oversold_score": 0.0,
           "vix_percentile": 0.28174603174603174
         },
@@ -6562,6 +6606,37 @@
               "IWM",
               "DIA",
               "^VIX",
+              "HYG",
+              "LQD",
+              "USO",
+              "CL=F",
+              "UUP",
+              "ES=F",
+              "NQ=F"
+            ],
+            "confidence": "high",
+            "confidence_score": 81,
+            "detected_event_conditions": [
+              "geopolitical_risk_easing"
+            ],
+            "event_type": "geopolitical_risk_easing",
+            "expected_horizon": "1d-5d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 96,
+            "headline": "Morning Bid: Ceasefire? What ceasefire? - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_easing_risk_on",
+            "provider": "finnhub",
+            "published_at": "2026-07-08T04:48:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
               "USO",
               "UUP",
               "TLT"
@@ -6575,6 +6650,33 @@
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
             "freshness_score": 95,
+            "headline": "Iran targets sites in Bahrain, Kuwait after wave of US strikes - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-08T04:21:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 79,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 91,
             "headline": "US says it has completed a new round of strikes on Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6601,12 +6703,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 89,
-            "headline": "Dollar at week-high after US resumes Iran strikes; RBNZ hike hoists kiwi - Reuters",
+            "freshness_score": 91,
+            "headline": "Indian shares slide as US strikes on Iran lift oil, sap risk appetite - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-07-08T00:08:00+00:00",
+            "published_at": "2026-07-08T02:35:00+00:00",
             "source": "Reuters"
           },
           {
@@ -6616,29 +6718,24 @@
               "IWM",
               "DIA",
               "^VIX",
-              "HYG",
-              "LQD",
               "USO",
-              "CL=F",
               "UUP",
-              "ES=F",
-              "NQ=F"
+              "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 82,
+            "confidence_score": 79,
             "detected_event_conditions": [
-              "geopolitical_risk_easing",
               "geopolitical_risk_escalation"
             ],
-            "event_type": "geopolitical_risk_easing",
-            "expected_horizon": "1d-5d",
-            "expected_market_direction": "risk_on",
-            "freshness_score": 86,
-            "headline": "Oil prices climb as US strikes on Iran fuel fears truce is unravelling - Reuters",
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 88,
+            "headline": "Gold wavers as investors weigh US strikes on Iran, await Fed minutes - Reuters",
             "importance_score": 100,
-            "narrative": "geopolitics_easing_risk_on",
+            "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-07-07T22:42:00+00:00",
+            "published_at": "2026-07-08T01:28:00+00:00",
             "source": "Reuters"
           },
           {
@@ -6660,68 +6757,13 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
-            "headline": "US military launches strikes against Iran, Central Command says - Reuters",
+            "freshness_score": 85,
+            "headline": "Dollar at week-high after US resumes Iran strikes; RBNZ hike hoists kiwi - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-07-07T21:45:52+00:00",
+            "published_at": "2026-07-08T00:08:00+00:00",
             "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 77,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 82,
-            "headline": "US reinstates sanctions on Iranian oil sales after LNG, oil tanker attacks - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-07T21:06:09+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 98,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation",
-              "oil_shock_risk"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 76,
-            "headline": "Strait of Hormuz threat level raised to 'severe' after Iran attacks tankers using U.S. Navy route",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-07T18:26:32+00:00",
-            "source": "CNBC"
           }
         ],
         "market_narrative": {
@@ -6738,12 +6780,24 @@
             {
               "confidence": "high",
               "detected_event_conditions": [
+                "geopolitical_risk_easing"
+              ],
+              "event_type": "geopolitical_risk_easing",
+              "expected_market_direction": "risk_on",
+              "headline": "Morning Bid: Ceasefire? What ceasefire? - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-08T04:48:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
                 "geopolitical_risk_easing",
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_easing",
               "expected_market_direction": "risk_on",
-              "headline": "Oil prices climb as US strikes on Iran fuel fears truce is unravelling - Reuters",
+              "headline": "Oil rises as US strikes on Iran raise fears over shaky truce - Reuters",
               "importance_score": 100,
               "published_at": "2026-07-07T22:42:00+00:00",
               "source": "Reuters"
@@ -6765,9 +6819,45 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Iran targets sites in Bahrain, Kuwait after wave of US strikes - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-08T04:21:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "US says it has completed a new round of strikes on Iran - Reuters",
               "importance_score": 100,
               "published_at": "2026-07-08T02:39:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Indian shares slide as US strikes on Iran lift oil, sap risk appetite - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-08T02:35:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Gold wavers as investors weigh US strikes on Iran, await Fed minutes - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-08T01:28:00+00:00",
               "source": "Reuters"
             },
             {
@@ -6793,31 +6883,6 @@
               "importance_score": 100,
               "published_at": "2026-07-07T21:45:52+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "US reinstates sanctions on Iranian oil sales after LNG, oil tanker attacks - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-07-07T21:06:09+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation",
-                "oil_shock_risk"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Strait of Hormuz threat level raised to 'severe' after Iran attacks tankers using U.S. Navy route",
-              "importance_score": 100,
-              "published_at": "2026-07-07T18:26:32+00:00",
-              "source": "CNBC"
             }
           ]
         },
@@ -6861,7 +6926,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0089,
-            "avg_equity_futures_1d_return": 0.0006,
+            "avg_equity_futures_1d_return": -0.0019,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -6878,7 +6943,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0059,
-            "oil_proxy_1d_return": 0.035,
+            "oil_proxy_1d_return": 0.0388,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -7949,13 +8014,13 @@
           "rsi_14": 39.363733843117444
         },
         "rates_liquidity": {
-          "liquidity_stress_proxy": 0.1664093648170105,
+          "liquidity_stress_proxy": 0.16640935051189576,
           "real_yield_proxy": "not_available",
           "ten_year_minus_three_month": "not_available",
           "ten_year_minus_two_year": "not_available",
-          "ten_year_yield_proxy": 4.529000282287598,
+          "ten_year_yield_proxy": 4.5289998054504395,
           "tlt_return_20d": -0.005995703285608833,
-          "tnx_change_20d": 0.05200004577636719,
+          "tnx_change_20d": 0.051999568939208984,
           "two_year_yield": "not_available",
           "uup_return_20d": 0.013561711440347679
         },
@@ -8128,11 +8193,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.1,
           "top_headlines": [
+            "Morning Bid: Ceasefire? What ceasefire? - Reuters",
+            "Iran targets sites in Bahrain, Kuwait after wave of US strikes - Reuters",
             "US says it has completed a new round of strikes on Iran - Reuters",
-            "Indian shares open lower as US-Iran hostilities lift oil prices - Reuters",
-            "NATO leaders meet in Ankara after Trump rekindles disputes over Iran, Greenland - Reuters",
-            "Gold eases as fresh US-Iran tensions lift oil prices, rate-hike bets - Reuters",
-            "Dollar at week-high after US resumes Iran strikes; RBNZ hike hoists kiwi - Reuters"
+            "Indian shares slide as US strikes on Iran lift oil, sap risk appetite - Reuters",
+            "NATO leaders meet in Ankara after Trump rekindles disputes over Iran, Greenland - Reuters"
           ]
         },
         "price": {
@@ -9009,9 +9074,9 @@
           }
         },
         "stress_inputs": {
-          "combined_market_stress": 0.1683880554899669,
+          "combined_market_stress": 0.16838805191368822,
           "credit_deterioration_score": 0.0,
-          "liquidity_stress_proxy": 0.1664093648170105,
+          "liquidity_stress_proxy": 0.16640935051189576,
           "oversold_score": 0.3731266747037345,
           "vix_percentile": 0.28174603174603174
         },
@@ -9058,6 +9123,37 @@
               "IWM",
               "DIA",
               "^VIX",
+              "HYG",
+              "LQD",
+              "USO",
+              "CL=F",
+              "UUP",
+              "ES=F",
+              "NQ=F"
+            ],
+            "confidence": "high",
+            "confidence_score": 81,
+            "detected_event_conditions": [
+              "geopolitical_risk_easing"
+            ],
+            "event_type": "geopolitical_risk_easing",
+            "expected_horizon": "1d-5d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 96,
+            "headline": "Morning Bid: Ceasefire? What ceasefire? - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_easing_risk_on",
+            "provider": "finnhub",
+            "published_at": "2026-07-08T04:48:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
               "USO",
               "UUP",
               "TLT"
@@ -9071,6 +9167,33 @@
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
             "freshness_score": 95,
+            "headline": "Iran targets sites in Bahrain, Kuwait after wave of US strikes - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-08T04:21:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 79,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 91,
             "headline": "US says it has completed a new round of strikes on Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9097,12 +9220,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 89,
-            "headline": "Dollar at week-high after US resumes Iran strikes; RBNZ hike hoists kiwi - Reuters",
+            "freshness_score": 91,
+            "headline": "Indian shares slide as US strikes on Iran lift oil, sap risk appetite - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-07-08T00:08:00+00:00",
+            "published_at": "2026-07-08T02:35:00+00:00",
             "source": "Reuters"
           },
           {
@@ -9112,29 +9235,24 @@
               "IWM",
               "DIA",
               "^VIX",
-              "HYG",
-              "LQD",
               "USO",
-              "CL=F",
               "UUP",
-              "ES=F",
-              "NQ=F"
+              "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 82,
+            "confidence_score": 79,
             "detected_event_conditions": [
-              "geopolitical_risk_easing",
               "geopolitical_risk_escalation"
             ],
-            "event_type": "geopolitical_risk_easing",
-            "expected_horizon": "1d-5d",
-            "expected_market_direction": "risk_on",
-            "freshness_score": 86,
-            "headline": "Oil prices climb as US strikes on Iran fuel fears truce is unravelling - Reuters",
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 88,
+            "headline": "Gold wavers as investors weigh US strikes on Iran, await Fed minutes - Reuters",
             "importance_score": 100,
-            "narrative": "geopolitics_easing_risk_on",
+            "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-07-07T22:42:00+00:00",
+            "published_at": "2026-07-08T01:28:00+00:00",
             "source": "Reuters"
           },
           {
@@ -9156,68 +9274,13 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
-            "headline": "US military launches strikes against Iran, Central Command says - Reuters",
+            "freshness_score": 85,
+            "headline": "Dollar at week-high after US resumes Iran strikes; RBNZ hike hoists kiwi - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-07-07T21:45:52+00:00",
+            "published_at": "2026-07-08T00:08:00+00:00",
             "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 77,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 82,
-            "headline": "US reinstates sanctions on Iranian oil sales after LNG, oil tanker attacks - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-07T21:06:09+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 98,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation",
-              "oil_shock_risk"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 76,
-            "headline": "Strait of Hormuz threat level raised to 'severe' after Iran attacks tankers using U.S. Navy route",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-07T18:26:32+00:00",
-            "source": "CNBC"
           }
         ],
         "market_narrative": {
@@ -9234,12 +9297,24 @@
             {
               "confidence": "high",
               "detected_event_conditions": [
+                "geopolitical_risk_easing"
+              ],
+              "event_type": "geopolitical_risk_easing",
+              "expected_market_direction": "risk_on",
+              "headline": "Morning Bid: Ceasefire? What ceasefire? - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-08T04:48:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
                 "geopolitical_risk_easing",
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_easing",
               "expected_market_direction": "risk_on",
-              "headline": "Oil prices climb as US strikes on Iran fuel fears truce is unravelling - Reuters",
+              "headline": "Oil rises as US strikes on Iran raise fears over shaky truce - Reuters",
               "importance_score": 100,
               "published_at": "2026-07-07T22:42:00+00:00",
               "source": "Reuters"
@@ -9261,9 +9336,45 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Iran targets sites in Bahrain, Kuwait after wave of US strikes - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-08T04:21:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "US says it has completed a new round of strikes on Iran - Reuters",
               "importance_score": 100,
               "published_at": "2026-07-08T02:39:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Indian shares slide as US strikes on Iran lift oil, sap risk appetite - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-08T02:35:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Gold wavers as investors weigh US strikes on Iran, await Fed minutes - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-08T01:28:00+00:00",
               "source": "Reuters"
             },
             {
@@ -9289,31 +9400,6 @@
               "importance_score": 100,
               "published_at": "2026-07-07T21:45:52+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "US reinstates sanctions on Iranian oil sales after LNG, oil tanker attacks - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-07-07T21:06:09+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation",
-                "oil_shock_risk"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Strait of Hormuz threat level raised to 'severe' after Iran attacks tankers using U.S. Navy route",
-              "importance_score": 100,
-              "published_at": "2026-07-07T18:26:32+00:00",
-              "source": "CNBC"
             }
           ]
         },
@@ -9357,7 +9443,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0089,
-            "avg_equity_futures_1d_return": 0.0006,
+            "avg_equity_futures_1d_return": -0.0019,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -9374,7 +9460,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0059,
-            "oil_proxy_1d_return": 0.035,
+            "oil_proxy_1d_return": 0.0388,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -10438,13 +10524,13 @@
           "rsi_14": 44.867361144110234
         },
         "rates_liquidity": {
-          "liquidity_stress_proxy": 0.1664093648170105,
+          "liquidity_stress_proxy": 0.16640935051189576,
           "real_yield_proxy": "not_available",
           "ten_year_minus_three_month": "not_available",
           "ten_year_minus_two_year": "not_available",
-          "ten_year_yield_proxy": 4.529000282287598,
+          "ten_year_yield_proxy": 4.5289998054504395,
           "tlt_return_20d": -0.005995703285608833,
-          "tnx_change_20d": 0.05200004577636719,
+          "tnx_change_20d": 0.051999568939208984,
           "two_year_yield": "not_available",
           "uup_return_20d": 0.013561711440347679
         },
@@ -10617,11 +10703,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.1,
           "top_headlines": [
+            "Morning Bid: Ceasefire? What ceasefire? - Reuters",
+            "Iran targets sites in Bahrain, Kuwait after wave of US strikes - Reuters",
             "US says it has completed a new round of strikes on Iran - Reuters",
-            "Indian shares open lower as US-Iran hostilities lift oil prices - Reuters",
-            "NATO leaders meet in Ankara after Trump rekindles disputes over Iran, Greenland - Reuters",
-            "Gold eases as fresh US-Iran tensions lift oil prices, rate-hike bets - Reuters",
-            "Dollar at week-high after US resumes Iran strikes; RBNZ hike hoists kiwi - Reuters"
+            "Indian shares slide as US strikes on Iran lift oil, sap risk appetite - Reuters",
+            "NATO leaders meet in Ankara after Trump rekindles disputes over Iran, Greenland - Reuters"
           ]
         },
         "price": {
@@ -11537,9 +11623,9 @@
           }
         },
         "stress_inputs": {
-          "combined_market_stress": 0.1683880554899669,
+          "combined_market_stress": 0.16838805191368822,
           "credit_deterioration_score": 0.0,
-          "liquidity_stress_proxy": 0.1664093648170105,
+          "liquidity_stress_proxy": 0.16640935051189576,
           "oversold_score": 0.05214778827801547,
           "vix_percentile": 0.28174603174603174
         },
@@ -11587,6 +11673,37 @@
               "IWM",
               "DIA",
               "^VIX",
+              "HYG",
+              "LQD",
+              "USO",
+              "CL=F",
+              "UUP",
+              "ES=F",
+              "NQ=F"
+            ],
+            "confidence": "high",
+            "confidence_score": 81,
+            "detected_event_conditions": [
+              "geopolitical_risk_easing"
+            ],
+            "event_type": "geopolitical_risk_easing",
+            "expected_horizon": "1d-5d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 96,
+            "headline": "Morning Bid: Ceasefire? What ceasefire? - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_easing_risk_on",
+            "provider": "finnhub",
+            "published_at": "2026-07-08T04:48:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
               "USO",
               "UUP",
               "TLT"
@@ -11600,6 +11717,33 @@
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
             "freshness_score": 95,
+            "headline": "Iran targets sites in Bahrain, Kuwait after wave of US strikes - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-08T04:21:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 79,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 91,
             "headline": "US says it has completed a new round of strikes on Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11626,12 +11770,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 89,
-            "headline": "Dollar at week-high after US resumes Iran strikes; RBNZ hike hoists kiwi - Reuters",
+            "freshness_score": 91,
+            "headline": "Indian shares slide as US strikes on Iran lift oil, sap risk appetite - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-07-08T00:08:00+00:00",
+            "published_at": "2026-07-08T02:35:00+00:00",
             "source": "Reuters"
           },
           {
@@ -11641,29 +11785,24 @@
               "IWM",
               "DIA",
               "^VIX",
-              "HYG",
-              "LQD",
               "USO",
-              "CL=F",
               "UUP",
-              "ES=F",
-              "NQ=F"
+              "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 82,
+            "confidence_score": 79,
             "detected_event_conditions": [
-              "geopolitical_risk_easing",
               "geopolitical_risk_escalation"
             ],
-            "event_type": "geopolitical_risk_easing",
-            "expected_horizon": "1d-5d",
-            "expected_market_direction": "risk_on",
-            "freshness_score": 86,
-            "headline": "Oil prices climb as US strikes on Iran fuel fears truce is unravelling - Reuters",
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 88,
+            "headline": "Gold wavers as investors weigh US strikes on Iran, await Fed minutes - Reuters",
             "importance_score": 100,
-            "narrative": "geopolitics_easing_risk_on",
+            "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-07-07T22:42:00+00:00",
+            "published_at": "2026-07-08T01:28:00+00:00",
             "source": "Reuters"
           },
           {
@@ -11685,68 +11824,13 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
-            "headline": "US military launches strikes against Iran, Central Command says - Reuters",
+            "freshness_score": 85,
+            "headline": "Dollar at week-high after US resumes Iran strikes; RBNZ hike hoists kiwi - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-07-07T21:45:52+00:00",
+            "published_at": "2026-07-08T00:08:00+00:00",
             "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 77,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 82,
-            "headline": "US reinstates sanctions on Iranian oil sales after LNG, oil tanker attacks - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-07T21:06:09+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 98,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation",
-              "oil_shock_risk"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 76,
-            "headline": "Strait of Hormuz threat level raised to 'severe' after Iran attacks tankers using U.S. Navy route",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-07T18:26:32+00:00",
-            "source": "CNBC"
           }
         ],
         "market_narrative": {
@@ -11763,12 +11847,24 @@
             {
               "confidence": "high",
               "detected_event_conditions": [
+                "geopolitical_risk_easing"
+              ],
+              "event_type": "geopolitical_risk_easing",
+              "expected_market_direction": "risk_on",
+              "headline": "Morning Bid: Ceasefire? What ceasefire? - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-08T04:48:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
                 "geopolitical_risk_easing",
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_easing",
               "expected_market_direction": "risk_on",
-              "headline": "Oil prices climb as US strikes on Iran fuel fears truce is unravelling - Reuters",
+              "headline": "Oil rises as US strikes on Iran raise fears over shaky truce - Reuters",
               "importance_score": 100,
               "published_at": "2026-07-07T22:42:00+00:00",
               "source": "Reuters"
@@ -11790,9 +11886,45 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Iran targets sites in Bahrain, Kuwait after wave of US strikes - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-08T04:21:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "US says it has completed a new round of strikes on Iran - Reuters",
               "importance_score": 100,
               "published_at": "2026-07-08T02:39:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Indian shares slide as US strikes on Iran lift oil, sap risk appetite - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-08T02:35:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Gold wavers as investors weigh US strikes on Iran, await Fed minutes - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-08T01:28:00+00:00",
               "source": "Reuters"
             },
             {
@@ -11818,31 +11950,6 @@
               "importance_score": 100,
               "published_at": "2026-07-07T21:45:52+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "US reinstates sanctions on Iranian oil sales after LNG, oil tanker attacks - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-07-07T21:06:09+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation",
-                "oil_shock_risk"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Strait of Hormuz threat level raised to 'severe' after Iran attacks tankers using U.S. Navy route",
-              "importance_score": 100,
-              "published_at": "2026-07-07T18:26:32+00:00",
-              "source": "CNBC"
             }
           ]
         },
@@ -11886,7 +11993,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0089,
-            "avg_equity_futures_1d_return": 0.0006,
+            "avg_equity_futures_1d_return": -0.0019,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -11903,7 +12010,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0059,
-            "oil_proxy_1d_return": 0.035,
+            "oil_proxy_1d_return": 0.0388,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"

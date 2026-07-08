@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-08T04:36:17.136581+00:00`
+- generated_at: `2026-07-08T06:17:19.178797+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
-- event_detection_confidence: `82`
+- major_event_count: `10`
+- event_detection_confidence: `81`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -25,11 +25,43 @@
 
 ## Major Events
 
+### geopolitical_risk_easing / risk_on
+
+- headline: Morning Bid: Ceasefire? What ceasefire? - Reuters
+- source: Reuters
+- published_at: `2026-07-08T04:48:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran targets sites in Bahrain, Kuwait after wave of US strikes - Reuters
+- source: Reuters
+- published_at: `2026-07-08T04:21:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
 ### geopolitical_risk_escalation / risk_off
 
 - headline: US says it has completed a new round of strikes on Iran - Reuters
 - source: Reuters
 - published_at: `2026-07-08T02:39:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Indian shares slide as US strikes on Iran lift oil, sap risk appetite - Reuters
+- source: Reuters
+- published_at: `2026-07-08T02:35:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Gold wavers as investors weigh US strikes on Iran, await Fed minutes - Reuters
+- source: Reuters
+- published_at: `2026-07-08T01:28:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -43,7 +75,7 @@
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: Oil prices climb as US strikes on Iran fuel fears truce is unravelling - Reuters
+- headline: Oil rises as US strikes on Iran raise fears over shaky truce - Reuters
 - source: Reuters
 - published_at: `2026-07-07T22:42:00+00:00`
 - importance_score: `100`
