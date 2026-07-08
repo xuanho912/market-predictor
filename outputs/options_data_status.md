@@ -1,6 +1,6 @@
 # Options / Volatility Structure Status
 
-Generated at: `2026-07-08T14:43:27.797876+00:00`
+Generated at: `2026-07-08T21:38:45.631424+00:00`
 
 ## Summary
 
@@ -18,29 +18,29 @@ Generated at: `2026-07-08T14:43:27.797876+00:00`
 
 ## Market Snapshot
 
-- VIX: `17.610000610351562`
-- VIX9D: `15.899999618530273`
-- VIX3M: `19.729999542236328`
-- VIX6M: `21.809999465942383`
-- VVIX: `92.31999969482422`
-- SKEW: `145.74000549316406`
+- VIX: `16.899999618530273`
+- VIX9D: `14.40999984741211`
+- VIX3M: `19.459999084472656`
+- VIX6M: `21.559999465942383`
+- VVIX: `91.37999725341797`
+- SKEW: `149.7899932861328`
 - term_structure_state: `contango`
-- volatility_reversal_score: `0.642`
-- panic_release_score: `0.3678`
-- tail_risk_score: `0.3174`
-- option_stress_score: `0.4196`
-- failed_bounce_options_risk: `0.3733`
+- volatility_reversal_score: `0.702`
+- panic_release_score: `0.4563`
+- tail_risk_score: `0.364`
+- option_stress_score: `0.388`
+- failed_bounce_options_risk: `0.3474`
 
 ## Sources
 
 | symbol | status | latest_date | latest_value | source | real_data | stale |
 |---|---|---|---:|---|---:|---:|
-| ^SKEW | available | 2026-07-07 | 145.74000549316406 | yahoo-chart | True | False |
-| ^VIX | available | 2026-07-08 | 17.610000610351562 | yahoo-chart | True | False |
-| ^VIX3M | available | 2026-07-08 | 19.729999542236328 | yahoo-chart | True | False |
-| ^VIX6M | available | 2026-07-08 | 21.809999465942383 | yahoo-chart | True | False |
-| ^VIX9D | available | 2026-07-08 | 15.899999618530273 | yahoo-chart | True | False |
-| ^VVIX | available | 2026-07-08 | 92.31999969482422 | yahoo-chart | True | False |
+| ^SKEW | available | 2026-07-08 | 149.7899932861328 | yahoo-chart | True | False |
+| ^VIX | available | 2026-07-08 | 16.899999618530273 | yahoo-chart | True | False |
+| ^VIX3M | available | 2026-07-08 | 19.459999084472656 | yahoo-chart | True | False |
+| ^VIX6M | available | 2026-07-08 | 21.559999465942383 | yahoo-chart | True | False |
+| ^VIX9D | available | 2026-07-08 | 14.40999984741211 | yahoo-chart | True | False |
+| ^VVIX | available | 2026-07-08 | 91.37999725341797 | yahoo-chart | True | False |
 
 ## Guardrails
 

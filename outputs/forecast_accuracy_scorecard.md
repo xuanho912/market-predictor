@@ -1,17 +1,17 @@
 # Forecast Accuracy Scorecard
 
-Generated at: `2026-07-08T14:43:53.624095+00:00`
+Generated at: `2026-07-08T21:39:03.266148+00:00`
 
 ## Sample Counts
 
-- total_forecasts: `68`
-- raw_forecast_rows: `68`
+- total_forecasts: `72`
+- raw_forecast_rows: `72`
 - deduped_legacy_rows: `0`
-- pending_forecasts: `68`
-- completed_1d: `64`
-- completed_3d: `56`
-- completed_5d: `48`
-- completed_10d: `28`
+- pending_forecasts: `72`
+- completed_1d: `68`
+- completed_3d: `60`
+- completed_5d: `52`
+- completed_10d: `32`
 - completed_20d: `0`
 - completed_60d: `0`
 - current_evidence_level: `moderate_evidence`
@@ -20,48 +20,48 @@ Generated at: `2026-07-08T14:43:53.624095+00:00`
 ## Primary Scenario Accuracy
 
 ### 1d
-- completed_count: `64`
+- completed_count: `68`
 - sample_gate: `moderate_evidence`
-- primary_scenario_hit_rate: `0.3906`
-- primary_path_mean_absolute_error: `0.010812`
-- primary_path_median_absolute_error: `0.008016`
-- secondary_scenario_hit_rate: `0.2812`
-- primary_vs_secondary_accuracy_spread: `0.1094`
-- primary_closer_than_secondary_rate: `0.5312`
+- primary_scenario_hit_rate: `0.3971`
+- primary_path_mean_absolute_error: `0.010389`
+- primary_path_median_absolute_error: `0.007493`
+- secondary_scenario_hit_rate: `0.2794`
+- primary_vs_secondary_accuracy_spread: `0.1176`
+- primary_closer_than_secondary_rate: `0.5441`
 - close_call_primary_closer_rate: `0.5625`
 
 ### 3d
-- completed_count: `56`
+- completed_count: `60`
 - sample_gate: `moderate_evidence`
-- primary_scenario_hit_rate: `0.2857`
-- primary_path_mean_absolute_error: `0.013334`
-- primary_path_median_absolute_error: `0.011537`
-- secondary_scenario_hit_rate: `0.3214`
-- primary_vs_secondary_accuracy_spread: `-0.0357`
-- primary_closer_than_secondary_rate: `0.3929`
-- close_call_primary_closer_rate: `0.5517`
+- primary_scenario_hit_rate: `0.2833`
+- primary_path_mean_absolute_error: `0.013171`
+- primary_path_median_absolute_error: `0.011536`
+- secondary_scenario_hit_rate: `0.35`
+- primary_vs_secondary_accuracy_spread: `-0.0667`
+- primary_closer_than_secondary_rate: `0.3833`
+- close_call_primary_closer_rate: `0.5161`
 
 ### 5d
-- completed_count: `48`
-- sample_gate: `early_evidence`
-- primary_scenario_hit_rate: `0.3125`
-- primary_path_mean_absolute_error: `0.018901`
+- completed_count: `52`
+- sample_gate: `moderate_evidence`
+- primary_scenario_hit_rate: `0.3269`
+- primary_path_mean_absolute_error: `0.018868`
 - primary_path_median_absolute_error: `0.010695`
-- secondary_scenario_hit_rate: `0.2708`
-- primary_vs_secondary_accuracy_spread: `0.0417`
-- primary_closer_than_secondary_rate: `0.4583`
-- close_call_primary_closer_rate: `0.4583`
+- secondary_scenario_hit_rate: `0.2885`
+- primary_vs_secondary_accuracy_spread: `0.0385`
+- primary_closer_than_secondary_rate: `0.4615`
+- close_call_primary_closer_rate: `0.4231`
 
 ### 10d
-- completed_count: `28`
+- completed_count: `32`
 - sample_gate: `early_evidence`
-- primary_scenario_hit_rate: `0.25`
-- primary_path_mean_absolute_error: `0.01803`
-- primary_path_median_absolute_error: `0.016201`
-- secondary_scenario_hit_rate: `0.1429`
-- primary_vs_secondary_accuracy_spread: `0.1071`
-- primary_closer_than_secondary_rate: `0.5357`
-- close_call_primary_closer_rate: `0.6667`
+- primary_scenario_hit_rate: `0.2188`
+- primary_path_mean_absolute_error: `0.020383`
+- primary_path_median_absolute_error: `0.017931`
+- secondary_scenario_hit_rate: `0.1562`
+- primary_vs_secondary_accuracy_spread: `0.0625`
+- primary_closer_than_secondary_rate: `0.4688`
+- close_call_primary_closer_rate: `0.4`
 
 ### 20d
 - completed_count: `0`

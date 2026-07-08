@@ -1,6 +1,6 @@
 # FRED Data Status
 
-Generated at: `2026-07-08T14:43:54.053076Z`
+Generated at: `2026-07-08T21:39:03.730984Z`
 
 ## Provider
 
@@ -8,19 +8,19 @@ Generated at: `2026-07-08T14:43:54.053076Z`
 - provider available: `True`
 - fallback used: `False`
 - rate limited: `False`
-- successful series: `BAA_SPREAD, DGS3MO, HY_OAS, DGS10, IG_OAS, DGS2, FINANCIAL_STRESS, RECESSION, DFII10`
+- successful series: `HY_OAS, DGS10, DGS3MO, BAA_SPREAD, DGS2, IG_OAS, FINANCIAL_STRESS, RECESSION, DFII10`
 - failed series: `none`
 
 ## Series
 
 | name | series_id | success | latest_date | latest_value | source | stale | error |
 |---|---|---:|---|---:|---|---:|---|
-| BAA_SPREAD | BAA10Y | True | 2026-07-02 | 1.54 | fred-api | False |  |
-| DFII10 | DFII10 | True | 2026-07-06 | 2.24 | fred-api | False |  |
-| DGS10 | DGS10 | True | 2026-07-06 | 4.48 | fred-api | False |  |
-| DGS2 | DGS2 | True | 2026-07-06 | 4.13 | fred-api | False |  |
-| DGS3MO | DGS3MO | True | 2026-07-06 | 3.87 | fred-api | False |  |
-| FINANCIAL_STRESS | STLFSI4 | True | 2026-06-26 | -0.6445 | fred-api | True |  |
+| BAA_SPREAD | BAA10Y | True | 2026-07-07 | 1.55 | fred-api | False |  |
+| DFII10 | DFII10 | True | 2026-07-07 | 2.3 | fred-api | False |  |
+| DGS10 | DGS10 | True | 2026-07-07 | 4.55 | fred-api | False |  |
+| DGS2 | DGS2 | True | 2026-07-07 | 4.19 | fred-api | False |  |
+| DGS3MO | DGS3MO | True | 2026-07-07 | 3.86 | fred-api | False |  |
+| FINANCIAL_STRESS | STLFSI4 | True | 2026-07-03 | -0.7246 | fred-api | False |  |
 | HY_OAS | BAMLH0A0HYM2 | True | 2026-07-07 | 2.67 | fred-api | False |  |
 | IG_OAS | BAMLC0A0CM | True | 2026-07-07 | 0.76 | fred-api | False |  |
 | RECESSION | USREC | True | 2026-06-01 | 0.0 | fred-api | True |  |
@@ -37,10 +37,10 @@ Generated at: `2026-07-08T14:43:54.053076Z`
 
 | symbol | edge without | edge with | primary without | primary with | risk expansion delta | failed bounce delta |
 |---|---|---|---|---|---:|---:|
-| SPY | STRONG_EDGE | STRONG_EDGE | bounce_path | bounce_path | 0.0121 | 0.0043 |
-| QQQ | STRONG_EDGE | STRONG_EDGE | bounce_path | bounce_path | 0.012 | 0.0043 |
-| IWM | STRONG_EDGE | STRONG_EDGE | bounce_path | bounce_path | 0.012 | 0.0043 |
-| DIA | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.012 | 0.0043 |
+| SPY | STRONG_EDGE | STRONG_EDGE | bounce_path | bounce_path | 0.0146 | 0.005 |
+| QQQ | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0145 | 0.005 |
+| IWM | STRONG_EDGE | STRONG_EDGE | bounce_path | bounce_path | 0.0146 | 0.005 |
+| DIA | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0145 | 0.0051 |
 
 ## Warning
 

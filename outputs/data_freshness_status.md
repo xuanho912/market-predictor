@@ -1,40 +1,37 @@
 # Data Freshness Status
 
-Generated at: `2026-07-08T14:43:53.478668+00:00`
+Generated at: `2026-07-08T21:39:03.100941+00:00`
 
 ## Summary
 
 - current_date: `2026-07-08`
-- current_time_us_eastern: `2026-07-08T10:43:53.478668-04:00`
+- current_time_us_eastern: `2026-07-08T17:39:03.100941-04:00`
 - latest_market_date: `2026-07-08`
-- latest_confirmed_market_date: `2026-07-07`
-- expected_latest_trading_date: `2026-07-07`
+- latest_confirmed_market_date: `2026-07-08`
+- expected_latest_trading_date: `2026-07-08`
 - is_latest_trading_day: `True`
-- latest_market_session_status: `intraday_unconfirmed`
-- can_append_forecast_record: `False`
+- latest_market_session_status: `completed_or_prior_session`
+- can_append_forecast_record: `True`
 - can_backfill_completed_outcomes: `True`
 - stale_days: `0`
-- data_freshness_status: `market_open_unconfirmed`
+- data_freshness_status: `fresh`
 - last_successful_core_market_update: `2026-07-08`
 - last_successful_update: `2026-07-08`
-- warning_message: 当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-07-08，最近完整收盘交易日为 2026-07-07；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。
+- warning_message: 核心行情已更新至最新应有交易日 2026-07-08。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。
 
 ## Affected Symbols
 
-- `SPY`
-- `QQQ`
-- `IWM`
-- `DIA`
+- none
 
 ## Provider Status
 
-- BAA_SPREAD: status=`available`, latest_date=`2026-07-02`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
-- DFII10: status=`available`, latest_date=`2026-07-06`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
-- DGS10: status=`available`, latest_date=`2026-07-06`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
-- DGS2: status=`available`, latest_date=`2026-07-06`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
-- DGS3MO: status=`available`, latest_date=`2026-07-06`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
+- BAA_SPREAD: status=`available`, latest_date=`2026-07-07`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
+- DFII10: status=`available`, latest_date=`2026-07-07`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
+- DGS10: status=`available`, latest_date=`2026-07-07`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
+- DGS2: status=`available`, latest_date=`2026-07-07`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
+- DGS3MO: status=`available`, latest_date=`2026-07-07`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
 - DIA: status=`available`, latest_date=`2026-07-08`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- FINANCIAL_STRESS: status=`stale`, latest_date=`2026-06-26`, source=`fred-api`, stale=`True`, fallback=`False`, real_data=`True`
+- FINANCIAL_STRESS: status=`available`, latest_date=`2026-07-03`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
 - FINNHUB_API: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
 - HYG: status=`available`, latest_date=`2026-07-08`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - HY_OAS: status=`available`, latest_date=`2026-07-07`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
@@ -60,7 +57,7 @@ Generated at: `2026-07-08T14:43:53.478668+00:00`
 - XLU: status=`available`, latest_date=`2026-07-08`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - XLV: status=`available`, latest_date=`2026-07-08`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - XLY: status=`available`, latest_date=`2026-07-08`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- ^SKEW: status=`available`, latest_date=`2026-07-07`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- ^SKEW: status=`available`, latest_date=`2026-07-08`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - ^TNX: status=`available`, latest_date=`2026-07-08`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - ^VIX: status=`available`, latest_date=`2026-07-08`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - ^VIX3M: status=`available`, latest_date=`2026-07-08`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
@@ -97,7 +94,7 @@ Generated at: `2026-07-08T14:43:53.478668+00:00`
 - flow_provider: status=`proxy`, latest_date=`2026-07-08`, source=`flow_positioning_proxy`, stale=`False`, fallback=`True`, real_data=`False`
 - macro_event_calendar: status=`fallback`, latest_date=`2026-07-08`, source=`deterministic_calendar_fallback`, stale=`False`, fallback=`True`, real_data=`False`
 - news_event_provider: status=`available`, latest_date=`2026-07-08`, source=`finnhub+gdelt`, stale=`False`, fallback=`False`, real_data=`True`
-- options_SKEW: status=`available`, latest_date=`2026-07-07`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- options_SKEW: status=`available`, latest_date=`2026-07-08`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - options_VIX: status=`available`, latest_date=`2026-07-08`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - options_VIX3M: status=`available`, latest_date=`2026-07-08`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - options_VIX6M: status=`available`, latest_date=`2026-07-08`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`

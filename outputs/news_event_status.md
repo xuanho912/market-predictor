@@ -1,20 +1,20 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-08T14:43:43.192515+00:00`
+- generated_at: `2026-07-08T21:38:52.762283+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
-- event_detection_confidence: `80`
+- major_event_count: `7`
+- event_detection_confidence: `83`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
-- price_reaction_confirmed: `True`
-- confirmation_score: `75`
+- price_reaction_confirmed: `False`
+- confirmation_score: `50`
 
 ## Dashboard Note
 
-当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，已被价格反应初步确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
+当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，尚未被价格反应充分确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
 
 ## Economic Calendar Risk
 
@@ -27,6 +27,30 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: US military is conducting fresh strikes on Iran - Reuters
+- source: Reuters
+- published_at: `2026-07-08T20:26:25+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Some war insurers advise shipowners to pause Hormuz voyages after attacks, sources say - Reuters
+- source: Reuters
+- published_at: `2026-07-08T18:02:02+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Eight Iranian army members killed in U.S. attacks on southern parts of Iran - Reuters
+- source: Reuters
+- published_at: `2026-07-08T16:03:24+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Qatari LNG tanker awaits salvage off Oman after projectile strike - Reuters
 - source: Reuters
 - published_at: `2026-07-08T13:47:04+00:00`
@@ -35,9 +59,9 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Four oil and gas tankers turn back from Hormuz strait after vessel attacks - Reuters
+- headline: Chevron-chartered oil tanker caught in Russia-Ukraine war as Kyiv steps up attacks - Reuters
 - source: Reuters
-- published_at: `2026-07-08T12:01:57+00:00`
+- published_at: `2026-07-08T12:24:46+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -51,48 +75,8 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: New US attacks on Iran were absolutely necessary, NATO chief says - Reuters
+- headline: Airbus trims jet industry demand forecast after Iran war, tariffs - Reuters
 - source: Reuters
-- published_at: `2026-07-08T06:10:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump says interim accord to end war is 'over' after Iranian strikes - Reuters
-- source: Reuters
-- published_at: `2026-07-08T04:21:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Morning Bid: Ceasefire? What ceasefire? - Reuters
-- source: Reuters
-- published_at: `2026-07-08T04:48:00+00:00`
-- importance_score: `98`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US says it has completed a new round of strikes on Iran - Reuters
-- source: Reuters
-- published_at: `2026-07-08T02:39:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: UK to unveil $50 billion NATO effort for deep strike weapons - Reuters
-- source: Reuters
-- published_at: `2026-07-07T22:56:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil jumps around 5% to two-week high after Trump warns of more attacks on Iran - Reuters
-- source: Reuters
-- published_at: `2026-07-07T22:42:00+00:00`
+- published_at: `2026-07-08T11:05:08+00:00`
 - importance_score: `100`
 - confidence: `high`
