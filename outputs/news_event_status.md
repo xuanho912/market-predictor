@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-09T21:55:51.202979+00:00`
+- generated_at: `2026-07-09T22:54:20.891809+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `18`
-- event_detection_confidence: `74`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -25,20 +25,20 @@
 
 ## Major Events
 
-### geopolitical_risk_escalation / risk_off
-
-- headline: Fed's Williams expects energy prices to abate even as Iran war flares - Reuters
-- source: Reuters
-- published_at: `2026-07-09T16:51:45+00:00`
-- importance_score: `100`
-- confidence: `high`
-
 ### credit_stress / risk_off
 
 - headline: Why Salesforce is staying in the portfolio despite a harsh analyst downgrade
 - source: CNBC
 - published_at: `2026-07-09T18:39:25+00:00`
 - importance_score: `98`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Fed's Williams expects energy prices to abate even as Iran war flares - Reuters
+- source: Reuters
+- published_at: `2026-07-09T16:51:45+00:00`
+- importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -71,7 +71,7 @@
 - source: Reuters
 - published_at: `2026-07-09T10:27:31+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 

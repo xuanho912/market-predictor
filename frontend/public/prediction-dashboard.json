@@ -5331,7 +5331,7 @@
       "evidence_note": "Forward-only breadth attribution is still below the minimum sample gate; these buckets are tracked but not proof.",
       "status": "not_enough_forward_samples"
     },
-    "generated_at": "2026-07-09T21:56:01.373264Z",
+    "generated_at": "2026-07-09T22:54:31.033140Z",
     "notes": [
       "This audit compares the same run with true breadth provider disabled vs enabled.",
       "The audit does not change Alpha v1 and does not prove tradable alpha.",
@@ -5489,7 +5489,7 @@
   },
   "breadth_status": {
     "cache_root": "data/breadth_cache",
-    "generated_at": "2026-07-09T21:55:22.366024+00:00",
+    "generated_at": "2026-07-09T22:53:53.768540+00:00",
     "provider": "true_breadth_provider",
     "sector_participation_proxy": {
       "data_note": "Sector ETF proxy, not constituent-level sector breadth.",
@@ -5926,7 +5926,7 @@
         },
         "missing_ratio": 0.9474,
         "name": "Nasdaq 100",
-        "price_source": "yfinance-incremental-cache",
+        "price_source": "local-cache-prices",
         "sample_limited": false,
         "scores": {
           "breadth_confirmation_score": 79.57,
@@ -6028,7 +6028,7 @@
   },
   "confluence_score": {
     "disclaimer": "Confluence is a forecast-confirmation layer, not a trading signal or execution recommendation.",
-    "generated_at": "2026-07-09T21:56:01.382808+00:00",
+    "generated_at": "2026-07-09T22:54:31.042538+00:00",
     "summary": {
       "average_confluence_score": 54.5,
       "mixed_or_no_edge_symbols": [
@@ -6743,10 +6743,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-07-09",
-    "current_time_us_eastern": "2026-07-09T17:56:01.383535-04:00",
+    "current_time_us_eastern": "2026-07-09T18:54:31.043243-04:00",
     "data_freshness_status": "fresh",
     "expected_latest_trading_date": "2026-07-09",
-    "generated_at": "2026-07-09T21:56:01.383535+00:00",
+    "generated_at": "2026-07-09T22:54:31.043243+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -7793,7 +7793,7 @@
         "status": "available"
       }
     },
-    "generated_at": "2026-07-09T21:55:51.196859+00:00",
+    "generated_at": "2026-07-09T22:54:20.885936+00:00",
     "notes": [
       "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
       "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -8705,7 +8705,7 @@
         "symbol": "macro_event_calendar"
       },
       "news_event_provider": {
-        "event_detection_confidence": 74,
+        "event_detection_confidence": 73,
         "fallback_used": false,
         "latest_date": "2026-07-09",
         "major_event_count": 18,
@@ -8920,15 +8920,15 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
-        "DGS3MO",
-        "DGS10",
         "HY_OAS",
-        "DGS2",
         "IG_OAS",
-        "DFII10",
-        "FINANCIAL_STRESS",
+        "DGS10",
+        "DGS2",
         "BAA_SPREAD",
-        "RECESSION"
+        "DGS3MO",
+        "FINANCIAL_STRESS",
+        "RECESSION",
+        "DFII10"
       ],
       "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-07-09。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
       "gamma_available": false,
@@ -8959,10 +8959,10 @@
       ],
       "news_event": {
         "available": true,
-        "event_detection_confidence": 74,
+        "event_detection_confidence": 73,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-07-09T21:55:51.202979+00:00",
+        "last_update": "2026-07-09T22:54:20.891809+00:00",
         "major_event_count": 18,
         "missing_reason": null,
         "news_direction": "risk_off",
@@ -9014,7 +9014,7 @@
   },
   "event_refresh": false,
   "feature_snapshot_v2": {
-    "generated_at": "2026-07-09T21:55:51.183535+00:00",
+    "generated_at": "2026-07-09T22:54:20.871261+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -9252,7 +9252,7 @@
     "version": "market_intelligence_engine_v2_features"
   },
   "feature_snapshot_v3": {
-    "generated_at": "2026-07-09T21:55:51.189186+00:00",
+    "generated_at": "2026-07-09T22:54:20.877957+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -9412,8 +9412,8 @@
           "news_item_count": 40,
           "news_risk_score": 0.65,
           "top_headlines": [
-            "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
             "Iran says it hits U.S. military targets in Gulf, buries slain leader Khamenei - Reuters",
+            "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
             "A huge trade just happened on the Nasdaq 100. Bulls are taking notice",
             "It's a jam-packed afternoon of developments impacting 7 portfolio stocks",
             "BP CEO says company must sharpen financial discipline - Reuters"
@@ -9648,8 +9648,8 @@
           "news_item_count": 40,
           "news_risk_score": 0.65,
           "top_headlines": [
-            "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
             "Iran says it hits U.S. military targets in Gulf, buries slain leader Khamenei - Reuters",
+            "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
             "A huge trade just happened on the Nasdaq 100. Bulls are taking notice",
             "It's a jam-packed afternoon of developments impacting 7 portfolio stocks",
             "BP CEO says company must sharpen financial discipline - Reuters"
@@ -9884,8 +9884,8 @@
           "news_item_count": 40,
           "news_risk_score": 0.65,
           "top_headlines": [
-            "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
             "Iran says it hits U.S. military targets in Gulf, buries slain leader Khamenei - Reuters",
+            "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
             "A huge trade just happened on the Nasdaq 100. Bulls are taking notice",
             "It's a jam-packed afternoon of developments impacting 7 portfolio stocks",
             "BP CEO says company must sharpen financial discipline - Reuters"
@@ -10120,8 +10120,8 @@
           "news_item_count": 40,
           "news_risk_score": 0.65,
           "top_headlines": [
-            "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
             "Iran says it hits U.S. military targets in Gulf, buries slain leader Khamenei - Reuters",
+            "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
             "A huge trade just happened on the Nasdaq 100. Bulls are taking notice",
             "It's a jam-packed afternoon of developments impacting 7 portfolio stocks",
             "BP CEO says company must sharpen financial discipline - Reuters"
@@ -10202,7 +10202,7 @@
     "version": "market_intelligence_engine_v3_features"
   },
   "flow_positioning_status": {
-    "generated_at": "2026-07-09T21:55:42.100091+00:00",
+    "generated_at": "2026-07-09T22:54:12.809753+00:00",
     "latest_date": "2026-07-09",
     "provider": "flow_positioning_proxy",
     "sources": {
@@ -10653,7 +10653,7 @@
     ]
   },
   "flow_status": {
-    "generated_at": "2026-07-09T21:55:42.100091+00:00",
+    "generated_at": "2026-07-09T22:54:12.809753+00:00",
     "latest_date": "2026-07-09",
     "provider": "flow_positioning_proxy",
     "sources": {
@@ -12320,7 +12320,7 @@
       "primary_beats_secondary": "primary_path_not_better_than_secondary"
     },
     "current_evidence_level": "moderate_evidence",
-    "generated_at": "2026-07-09T21:56:01.560921+00:00",
+    "generated_at": "2026-07-09T22:54:31.207414+00:00",
     "guardrails": [
       "This scorecard validates probabilistic forecast paths, not trades.",
       "Forecast records are immutable except for future-outcome backfill fields.",
@@ -12435,7 +12435,7 @@
       "risk_on_flow_underweighted": 21,
       "volatility_repair_underweighted": 13
     },
-    "generated_at": "2026-07-09T21:56:01.605059+00:00",
+    "generated_at": "2026-07-09T22:54:31.248622+00:00",
     "guardrails": [
       "This is forecast error attribution, not a trading or PnL report.",
       "Attribution is diagnostic and probabilistic; it is not proof of causality.",
@@ -16174,7 +16174,7 @@
     },
     "dominant_error_theme": "news_data_gap_limited_attribution",
     "evidence_level": "stronger_evidence",
-    "generated_at": "2026-07-09T21:56:01.623289+00:00",
+    "generated_at": "2026-07-09T22:54:31.266372+00:00",
     "global_learning_status": "shadow_challenger_queue_ready",
     "guardrails": [
       "This queue does not change baseline_v1 or Alpha v1.",
@@ -16204,7 +16204,7 @@
       "5d": 56,
       "60d": 0
     },
-    "generated_at": "2026-07-09T21:56:01.543292+00:00",
+    "generated_at": "2026-07-09T22:54:31.190451+00:00",
     "immutability_note": "Forecast fields are write-once by forecast_id. Backfill may update only actual_return, best_matching_scenario, primary_hit, path_error and status fields.",
     "max_confirmed_market_date": "2026-07-09",
     "new_records_considered": 4,
@@ -16218,7 +16218,7 @@
   "forecast_price_levels": {
     "as_of": "2026-07-09",
     "disclaimer": "Forecast price levels are probabilistic scenario points derived from simulated paths, recent price structure and volatility bands. They are not execution instructions, risk-control rules, or guaranteed target prices.",
-    "generated_at": "2026-07-09T21:56:01.377887Z",
+    "generated_at": "2026-07-09T22:54:31.037593Z",
     "symbols": {
       "DIA": {
         "current_price": 524.1900024414062,
@@ -17961,7 +17961,7 @@
     "version": "forecast_price_levels_v1"
   },
   "forecast_records": {
-    "generated_at": "2026-07-09T21:56:01.553937+00:00",
+    "generated_at": "2026-07-09T22:54:31.200714+00:00",
     "records": [
       {
         "actual_return_10d": 0.01680114442,
@@ -28652,7 +28652,7 @@
       "5d": 56,
       "60d": 0
     },
-    "generated_at": "2026-07-09T21:56:01.623220+00:00",
+    "generated_at": "2026-07-09T22:54:31.266292+00:00",
     "guardrails": [
       "This gate does not modify Alpha v1 threshold, baseline_v1 or historical forecast records.",
       "This is forecast reliability assessment, not trading advice.",
@@ -30264,7 +30264,7 @@
     },
     "forward_completed_sample_size": 0,
     "forward_validation_notice": "当前高置信度还没有被前向样本验证，不应当视为稳定预测能力。",
-    "generated_at": "2026-07-09T21:55:51.199177+00:00",
+    "generated_at": "2026-07-09T22:54:20.888181+00:00",
     "internal_resonance_forward_validation": {
       "aligned_internal_resonance": {
         "by_horizon": {
@@ -31225,7 +31225,7 @@
       }
     },
     "conclusion": "confidence_not_yet_validated",
-    "generated_at": "2026-07-09T21:55:51.196144+00:00",
+    "generated_at": "2026-07-09T22:54:20.885212+00:00",
     "high_confidence_better_than_low_confidence": false,
     "high_vs_low_comparison_by_horizon": {
       "10d": false,
@@ -33743,7 +33743,7 @@
       "note": "Historical replay cannot upgrade alpha or confidence until forward validation samples mature.",
       "sample_gate": "moderate_evidence"
     },
-    "generated_at": "2026-07-09T21:56:01.620473+00:00",
+    "generated_at": "2026-07-09T22:54:31.263823+00:00",
     "guardrails": [
       "Historical replay is research evaluation only and cannot replace daily forward validation.",
       "Historical replay results must not be described as confirmed alpha.",
@@ -35273,7 +35273,7 @@
   },
   "market_alerts": {
     "disclaimer": "Market alerts are forecast warnings and scenario-confirmation notes only. They are not trading signals or buy/sell/entry/exit guidance.",
-    "generated_at": "2026-07-09T21:56:01.383451+00:00",
+    "generated_at": "2026-07-09T22:54:31.043152+00:00",
     "summary": {
       "alert_count_by_level": {
         "EXTREME": 0,
@@ -38560,7 +38560,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-07-09T21:55:51.182634+00:00",
+      "generated_at": "2026-07-09T22:54:20.870296+00:00",
       "notes": [
         "price/volatility/credit/rates/liquidity currently use public market proxies.",
         "options breadth macro flow are not treated as available unless real feeds are connected.",
@@ -38696,7 +38696,7 @@
       }
     },
     "feature_snapshot_v2": {
-      "generated_at": "2026-07-09T21:55:51.183535+00:00",
+      "generated_at": "2026-07-09T22:54:20.871261+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -38933,7 +38933,7 @@
       },
       "version": "market_intelligence_engine_v2_features"
     },
-    "generated_at": "2026-07-09T21:55:51.184086+00:00",
+    "generated_at": "2026-07-09T22:54:20.872180+00:00",
     "model_confidence_by_symbol": {
       "DIA": {
         "components": {
@@ -39129,7 +39129,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-07-09T21:55:51.192487+00:00",
+      "generated_at": "2026-07-09T22:54:20.881768+00:00",
       "notes": [
         "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
         "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -40258,7 +40258,7 @@
       }
     },
     "feature_snapshot_v3": {
-      "generated_at": "2026-07-09T21:55:51.189186+00:00",
+      "generated_at": "2026-07-09T22:54:20.877957+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -40418,8 +40418,8 @@
             "news_item_count": 40,
             "news_risk_score": 0.65,
             "top_headlines": [
-              "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
               "Iran says it hits U.S. military targets in Gulf, buries slain leader Khamenei - Reuters",
+              "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
               "A huge trade just happened on the Nasdaq 100. Bulls are taking notice",
               "It's a jam-packed afternoon of developments impacting 7 portfolio stocks",
               "BP CEO says company must sharpen financial discipline - Reuters"
@@ -40654,8 +40654,8 @@
             "news_item_count": 40,
             "news_risk_score": 0.65,
             "top_headlines": [
-              "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
               "Iran says it hits U.S. military targets in Gulf, buries slain leader Khamenei - Reuters",
+              "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
               "A huge trade just happened on the Nasdaq 100. Bulls are taking notice",
               "It's a jam-packed afternoon of developments impacting 7 portfolio stocks",
               "BP CEO says company must sharpen financial discipline - Reuters"
@@ -40890,8 +40890,8 @@
             "news_item_count": 40,
             "news_risk_score": 0.65,
             "top_headlines": [
-              "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
               "Iran says it hits U.S. military targets in Gulf, buries slain leader Khamenei - Reuters",
+              "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
               "A huge trade just happened on the Nasdaq 100. Bulls are taking notice",
               "It's a jam-packed afternoon of developments impacting 7 portfolio stocks",
               "BP CEO says company must sharpen financial discipline - Reuters"
@@ -41126,8 +41126,8 @@
             "news_item_count": 40,
             "news_risk_score": 0.65,
             "top_headlines": [
-              "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
               "Iran says it hits U.S. military targets in Gulf, buries slain leader Khamenei - Reuters",
+              "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
               "A huge trade just happened on the Nasdaq 100. Bulls are taking notice",
               "It's a jam-packed afternoon of developments impacting 7 portfolio stocks",
               "BP CEO says company must sharpen financial discipline - Reuters"
@@ -41243,18 +41243,18 @@
       "fred_missing": false,
       "fred_rate_limited": false,
       "fred_successful_series": [
-        "DGS3MO",
-        "DGS10",
         "HY_OAS",
-        "DGS2",
         "IG_OAS",
-        "DFII10",
-        "FINANCIAL_STRESS",
+        "DGS10",
+        "DGS2",
         "BAA_SPREAD",
-        "RECESSION"
+        "DGS3MO",
+        "FINANCIAL_STRESS",
+        "RECESSION",
+        "DFII10"
       ]
     },
-    "generated_at": "2026-07-09T21:55:51.196161+00:00",
+    "generated_at": "2026-07-09T22:54:20.885229+00:00",
     "high_confidence_signal_report": {
       "by_bucket": {
         "low_confidence_reference": {
@@ -41868,7 +41868,7 @@
         }
       },
       "conclusion": "confidence_not_yet_validated",
-      "generated_at": "2026-07-09T21:55:51.196144+00:00",
+      "generated_at": "2026-07-09T22:54:20.885212+00:00",
       "high_confidence_better_than_low_confidence": false,
       "high_vs_low_comparison_by_horizon": {
         "10d": false,
@@ -42705,7 +42705,7 @@
         "evidence_note": "Forward-only breadth attribution is still below the minimum sample gate; these buckets are tracked but not proof.",
         "status": "not_enough_forward_samples"
       },
-      "generated_at": "2026-07-09T21:56:01.373264Z",
+      "generated_at": "2026-07-09T22:54:31.033140Z",
       "notes": [
         "This audit compares the same run with true breadth provider disabled vs enabled.",
         "The audit does not change Alpha v1 and does not prove tradable alpha.",
@@ -42975,7 +42975,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-07-09T21:55:51.196859+00:00",
+      "generated_at": "2026-07-09T22:54:20.885936+00:00",
       "notes": [
         "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
         "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -43887,7 +43887,7 @@
           "symbol": "macro_event_calendar"
         },
         "news_event_provider": {
-          "event_detection_confidence": 74,
+          "event_detection_confidence": 73,
           "fallback_used": false,
           "latest_date": "2026-07-09",
           "major_event_count": 18,
@@ -44102,15 +44102,15 @@
         "fred_rate_limited": false,
         "fred_required": true,
         "fred_successful_series": [
-          "DGS3MO",
-          "DGS10",
           "HY_OAS",
-          "DGS2",
           "IG_OAS",
-          "DFII10",
-          "FINANCIAL_STRESS",
+          "DGS10",
+          "DGS2",
           "BAA_SPREAD",
-          "RECESSION"
+          "DGS3MO",
+          "FINANCIAL_STRESS",
+          "RECESSION",
+          "DFII10"
         ],
         "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-07-09。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
         "gamma_available": false,
@@ -44141,10 +44141,10 @@
         ],
         "news_event": {
           "available": true,
-          "event_detection_confidence": 74,
+          "event_detection_confidence": 73,
           "event_risk_level": "high",
           "headline_count": 40,
-          "last_update": "2026-07-09T21:55:51.202979+00:00",
+          "last_update": "2026-07-09T22:54:20.891809+00:00",
           "major_event_count": 18,
           "missing_reason": null,
           "news_direction": "risk_off",
@@ -44355,18 +44355,18 @@
       "fallback_used": false,
       "rate_limited": false,
       "successful_series": [
-        "DGS3MO",
-        "DGS10",
         "HY_OAS",
-        "DGS2",
         "IG_OAS",
-        "DFII10",
-        "FINANCIAL_STRESS",
+        "DGS10",
+        "DGS2",
         "BAA_SPREAD",
-        "RECESSION"
+        "DGS3MO",
+        "FINANCIAL_STRESS",
+        "RECESSION",
+        "DFII10"
       ]
     },
-    "generated_at": "2026-07-09T21:55:51.202965+00:00",
+    "generated_at": "2026-07-09T22:54:20.891796+00:00",
     "high_confidence_edge_report": {
       "breadth_forward_validation": {
         "bounce_with_breadth_support": {
@@ -45817,7 +45817,7 @@
       },
       "forward_completed_sample_size": 0,
       "forward_validation_notice": "当前高置信度还没有被前向样本验证，不应当视为稳定预测能力。",
-      "generated_at": "2026-07-09T21:55:51.199177+00:00",
+      "generated_at": "2026-07-09T22:54:20.888181+00:00",
       "internal_resonance_forward_validation": {
         "aligned_internal_resonance": {
           "by_horizon": {
@@ -46260,9 +46260,9 @@
         "source": "finnhub",
         "status": "failed"
       },
-      "event_detection_confidence": 74,
+      "event_detection_confidence": 73,
       "event_risk_level": "high",
-      "generated_at": "2026-07-09T21:55:51.202979+00:00",
+      "generated_at": "2026-07-09T22:54:20.891809+00:00",
       "limits": [
         "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
         "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
@@ -46277,44 +46277,17 @@
             "QQQ",
             "IWM",
             "DIA",
-            "^VIX",
-            "USO",
-            "UUP",
-            "TLT"
-          ],
-          "confidence": "high",
-          "confidence_score": 79,
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_horizon": "intraday-5d",
-          "expected_market_direction": "risk_off",
-          "freshness_score": 88,
-          "headline": "Fed's Williams expects energy prices to abate even as Iran war flares - Reuters",
-          "importance_score": 100,
-          "narrative": "geopolitics_escalation_risk_off",
-          "provider": "finnhub",
-          "published_at": "2026-07-09T16:51:45+00:00",
-          "source": "Reuters"
-        },
-        {
-          "affected_assets": [
-            "SPY",
-            "QQQ",
-            "IWM",
-            "DIA",
             "HYG",
             "LQD",
             "^VIX"
           ],
           "confidence": "high",
-          "confidence_score": 76,
+          "confidence_score": 75,
           "detected_event_conditions": [],
           "event_type": "credit_stress",
           "expected_horizon": "3d-60d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 92,
+          "freshness_score": 90,
           "headline": "Why Salesforce is staying in the portfolio despite a harsh analyst downgrade",
           "importance_score": 98,
           "narrative": "credit_stress",
@@ -46334,14 +46307,41 @@
             "TLT"
           ],
           "confidence": "high",
-          "confidence_score": 77,
+          "confidence_score": 78,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 80,
+          "freshness_score": 85,
+          "headline": "Fed's Williams expects energy prices to abate even as Iran war flares - Reuters",
+          "importance_score": 100,
+          "narrative": "geopolitics_escalation_risk_off",
+          "provider": "finnhub",
+          "published_at": "2026-07-09T16:51:45+00:00",
+          "source": "Reuters"
+        },
+        {
+          "affected_assets": [
+            "SPY",
+            "QQQ",
+            "IWM",
+            "DIA",
+            "^VIX",
+            "USO",
+            "UUP",
+            "TLT"
+          ],
+          "confidence": "high",
+          "confidence_score": 76,
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_horizon": "intraday-5d",
+          "expected_market_direction": "risk_off",
+          "freshness_score": 77,
           "headline": "Iran fired ten ballistic missiles on Jordan's Azraq military base - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -46373,7 +46373,7 @@
           "event_type": "geopolitical_risk_easing",
           "expected_horizon": "1d-5d",
           "expected_market_direction": "risk_on",
-          "freshness_score": 78,
+          "freshness_score": 76,
           "headline": "Oil tanker traffic through Hormuz at near standstill as attacks strain Iran truce - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_easing_risk_on",
@@ -46400,7 +46400,7 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 75,
+          "freshness_score": 73,
           "headline": "EU drafts 'electrification' plan to curb oil and gas use, after Iran war disruption - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -46419,15 +46419,15 @@
             "UUP",
             "TLT"
           ],
-          "confidence": "high",
-          "confidence_score": 75,
+          "confidence": "medium",
+          "confidence_score": 74,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 72,
+          "freshness_score": 70,
           "headline": "Platner out, US-Iran strikes, Air Force One and quantum leap - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -46454,7 +46454,7 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 71,
+          "freshness_score": 69,
           "headline": "The Iran War threatened a food crisis. The next Gulf conflict could do the same. - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -46474,14 +46474,14 @@
             "TLT"
           ],
           "confidence": "medium",
-          "confidence_score": 74,
+          "confidence_score": 73,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 69,
+          "freshness_score": 67,
           "headline": "As Iran war rolls on, some executives say the 'worst is behind us' - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -46504,7 +46504,7 @@
           "event_type": "fed_hawkish",
           "expected_horizon": "1d-20d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 91,
+          "freshness_score": 89,
           "headline": "Kalshi traders think gas prices will stay higher for longer as U.S.-Iran tensions heat back up",
           "importance_score": 88,
           "narrative": "fed_hawkish_risk",
@@ -46524,14 +46524,14 @@
             "TLT"
           ],
           "confidence": "medium",
-          "confidence_score": 72,
+          "confidence_score": 71,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 60,
+          "freshness_score": 58,
           "headline": "Bank of Japan sees growing inflation pressures from Iran war - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -46558,7 +46558,7 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 58,
+          "freshness_score": 56,
           "headline": "Morning Bid: Chip euphoria vies with war weariness - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -46578,14 +46578,14 @@
             "TLT"
           ],
           "confidence": "medium",
-          "confidence_score": 71,
+          "confidence_score": 70,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 57,
+          "freshness_score": 55,
           "headline": "Gulf companies are set to reveal the unequal toll of Iran war - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -46605,14 +46605,14 @@
             "TLT"
           ],
           "confidence": "medium",
-          "confidence_score": 68,
+          "confidence_score": 67,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 45,
+          "freshness_score": 43,
           "headline": "Venture Global's second-quarter liquefaction fee jumps 69% as Iran war lifts LNG prices - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -46632,14 +46632,14 @@
             "TLT"
           ],
           "confidence": "medium",
-          "confidence_score": 68,
+          "confidence_score": 67,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 44,
+          "freshness_score": 42,
           "headline": "Trump wants to leave the Iran war behind. That won't happen soon - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -46659,14 +46659,14 @@
             "TLT"
           ],
           "confidence": "medium",
-          "confidence_score": 68,
+          "confidence_score": 67,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 44,
+          "freshness_score": 41,
           "headline": "Oil rises more than a dollar per barrel as US launches fresh strikes against Iran - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -46698,7 +46698,7 @@
           "event_type": "geopolitical_risk_easing",
           "expected_horizon": "1d-5d",
           "expected_market_direction": "risk_on",
-          "freshness_score": 43,
+          "freshness_score": 40,
           "headline": "Trading Day: War on, risk-off: Stocks drop, crude jumps as Trump calls Iran peace deal 'over' - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_easing_risk_on",
@@ -46725,7 +46725,7 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 39,
+          "freshness_score": 36,
           "headline": "US military is conducting fresh strikes on Iran - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -46748,7 +46748,7 @@
           "event_type": "fed_dovish",
           "expected_horizon": "1d-20d",
           "expected_market_direction": "risk_on",
-          "freshness_score": 51,
+          "freshness_score": 49,
           "headline": "Gold ticks higher on easing dollar, focus on Middle East flare-up - Reuters",
           "importance_score": 82,
           "narrative": "fed_cut_hopes",
@@ -46850,7 +46850,7 @@
             "source": "Reuters"
           },
           {
-            "confidence": "high",
+            "confidence": "medium",
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
@@ -47032,7 +47032,7 @@
       "price_reaction_confirmation": {
         "asset_reaction_summary": {
           "avg_equity_1d_return": 0.0102,
-          "avg_equity_futures_1d_return": 0.0091,
+          "avg_equity_futures_1d_return": 0.0092,
           "confirmed_checks": [],
           "equity_futures_symbols_used": [
             "ES=F",
@@ -47047,7 +47047,7 @@
             "美元走强"
           ],
           "hyg_lqd_1d_relative_return": 0.0008,
-          "oil_proxy_1d_return": -0.0259,
+          "oil_proxy_1d_return": -0.0261,
           "oil_proxy_symbols_used": [
             "USO",
             "CL=F"
@@ -48952,7 +48952,7 @@
         "status": "insufficient_forward_samples"
       }
     },
-    "generated_at": "2026-07-09T21:56:01.646142+00:00",
+    "generated_at": "2026-07-09T22:54:31.289702+00:00",
     "guardrails": [
       "Alpha v1 threshold remains frozen at 0.32534311.",
       "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -49779,7 +49779,7 @@
   },
   "model_promotion_status": {
     "active_model_version": "baseline_v1",
-    "generated_at": "2026-07-09T21:56:01.646215+00:00",
+    "generated_at": "2026-07-09T22:54:31.289785+00:00",
     "guardrails": [
       "Alpha v1 threshold remains frozen at 0.32534311.",
       "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -49954,9 +49954,9 @@
       "source": "finnhub",
       "status": "failed"
     },
-    "event_detection_confidence": 74,
+    "event_detection_confidence": 73,
     "event_risk_level": "high",
-    "generated_at": "2026-07-09T21:55:51.202979+00:00",
+    "generated_at": "2026-07-09T22:54:20.891809+00:00",
     "limits": [
       "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
       "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
@@ -49971,44 +49971,17 @@
           "QQQ",
           "IWM",
           "DIA",
-          "^VIX",
-          "USO",
-          "UUP",
-          "TLT"
-        ],
-        "confidence": "high",
-        "confidence_score": 79,
-        "detected_event_conditions": [
-          "geopolitical_risk_escalation"
-        ],
-        "event_type": "geopolitical_risk_escalation",
-        "expected_horizon": "intraday-5d",
-        "expected_market_direction": "risk_off",
-        "freshness_score": 88,
-        "headline": "Fed's Williams expects energy prices to abate even as Iran war flares - Reuters",
-        "importance_score": 100,
-        "narrative": "geopolitics_escalation_risk_off",
-        "provider": "finnhub",
-        "published_at": "2026-07-09T16:51:45+00:00",
-        "source": "Reuters"
-      },
-      {
-        "affected_assets": [
-          "SPY",
-          "QQQ",
-          "IWM",
-          "DIA",
           "HYG",
           "LQD",
           "^VIX"
         ],
         "confidence": "high",
-        "confidence_score": 76,
+        "confidence_score": 75,
         "detected_event_conditions": [],
         "event_type": "credit_stress",
         "expected_horizon": "3d-60d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 92,
+        "freshness_score": 90,
         "headline": "Why Salesforce is staying in the portfolio despite a harsh analyst downgrade",
         "importance_score": 98,
         "narrative": "credit_stress",
@@ -50028,14 +50001,41 @@
           "TLT"
         ],
         "confidence": "high",
-        "confidence_score": 77,
+        "confidence_score": 78,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 80,
+        "freshness_score": 85,
+        "headline": "Fed's Williams expects energy prices to abate even as Iran war flares - Reuters",
+        "importance_score": 100,
+        "narrative": "geopolitics_escalation_risk_off",
+        "provider": "finnhub",
+        "published_at": "2026-07-09T16:51:45+00:00",
+        "source": "Reuters"
+      },
+      {
+        "affected_assets": [
+          "SPY",
+          "QQQ",
+          "IWM",
+          "DIA",
+          "^VIX",
+          "USO",
+          "UUP",
+          "TLT"
+        ],
+        "confidence": "high",
+        "confidence_score": 76,
+        "detected_event_conditions": [
+          "geopolitical_risk_escalation"
+        ],
+        "event_type": "geopolitical_risk_escalation",
+        "expected_horizon": "intraday-5d",
+        "expected_market_direction": "risk_off",
+        "freshness_score": 77,
         "headline": "Iran fired ten ballistic missiles on Jordan's Azraq military base - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -50067,7 +50067,7 @@
         "event_type": "geopolitical_risk_easing",
         "expected_horizon": "1d-5d",
         "expected_market_direction": "risk_on",
-        "freshness_score": 78,
+        "freshness_score": 76,
         "headline": "Oil tanker traffic through Hormuz at near standstill as attacks strain Iran truce - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_easing_risk_on",
@@ -50094,7 +50094,7 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 75,
+        "freshness_score": 73,
         "headline": "EU drafts 'electrification' plan to curb oil and gas use, after Iran war disruption - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -50113,15 +50113,15 @@
           "UUP",
           "TLT"
         ],
-        "confidence": "high",
-        "confidence_score": 75,
+        "confidence": "medium",
+        "confidence_score": 74,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 72,
+        "freshness_score": 70,
         "headline": "Platner out, US-Iran strikes, Air Force One and quantum leap - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -50148,7 +50148,7 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 71,
+        "freshness_score": 69,
         "headline": "The Iran War threatened a food crisis. The next Gulf conflict could do the same. - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -50168,14 +50168,14 @@
           "TLT"
         ],
         "confidence": "medium",
-        "confidence_score": 74,
+        "confidence_score": 73,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 69,
+        "freshness_score": 67,
         "headline": "As Iran war rolls on, some executives say the 'worst is behind us' - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -50198,7 +50198,7 @@
         "event_type": "fed_hawkish",
         "expected_horizon": "1d-20d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 91,
+        "freshness_score": 89,
         "headline": "Kalshi traders think gas prices will stay higher for longer as U.S.-Iran tensions heat back up",
         "importance_score": 88,
         "narrative": "fed_hawkish_risk",
@@ -50218,14 +50218,14 @@
           "TLT"
         ],
         "confidence": "medium",
-        "confidence_score": 72,
+        "confidence_score": 71,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 60,
+        "freshness_score": 58,
         "headline": "Bank of Japan sees growing inflation pressures from Iran war - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -50252,7 +50252,7 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 58,
+        "freshness_score": 56,
         "headline": "Morning Bid: Chip euphoria vies with war weariness - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -50272,14 +50272,14 @@
           "TLT"
         ],
         "confidence": "medium",
-        "confidence_score": 71,
+        "confidence_score": 70,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 57,
+        "freshness_score": 55,
         "headline": "Gulf companies are set to reveal the unequal toll of Iran war - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -50299,14 +50299,14 @@
           "TLT"
         ],
         "confidence": "medium",
-        "confidence_score": 68,
+        "confidence_score": 67,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 45,
+        "freshness_score": 43,
         "headline": "Venture Global's second-quarter liquefaction fee jumps 69% as Iran war lifts LNG prices - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -50326,14 +50326,14 @@
           "TLT"
         ],
         "confidence": "medium",
-        "confidence_score": 68,
+        "confidence_score": 67,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 44,
+        "freshness_score": 42,
         "headline": "Trump wants to leave the Iran war behind. That won't happen soon - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -50353,14 +50353,14 @@
           "TLT"
         ],
         "confidence": "medium",
-        "confidence_score": 68,
+        "confidence_score": 67,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 44,
+        "freshness_score": 41,
         "headline": "Oil rises more than a dollar per barrel as US launches fresh strikes against Iran - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -50392,7 +50392,7 @@
         "event_type": "geopolitical_risk_easing",
         "expected_horizon": "1d-5d",
         "expected_market_direction": "risk_on",
-        "freshness_score": 43,
+        "freshness_score": 40,
         "headline": "Trading Day: War on, risk-off: Stocks drop, crude jumps as Trump calls Iran peace deal 'over' - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_easing_risk_on",
@@ -50419,7 +50419,7 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 39,
+        "freshness_score": 36,
         "headline": "US military is conducting fresh strikes on Iran - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -50442,7 +50442,7 @@
         "event_type": "fed_dovish",
         "expected_horizon": "1d-20d",
         "expected_market_direction": "risk_on",
-        "freshness_score": 51,
+        "freshness_score": 49,
         "headline": "Gold ticks higher on easing dollar, focus on Middle East flare-up - Reuters",
         "importance_score": 82,
         "narrative": "fed_cut_hopes",
@@ -50544,7 +50544,7 @@
           "source": "Reuters"
         },
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -50726,7 +50726,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": 0.0102,
-        "avg_equity_futures_1d_return": 0.0091,
+        "avg_equity_futures_1d_return": 0.0092,
         "confirmed_checks": [],
         "equity_futures_symbols_used": [
           "ES=F",
@@ -50741,7 +50741,7 @@
           "美元走强"
         ],
         "hyg_lqd_1d_relative_return": 0.0008,
-        "oil_proxy_1d_return": -0.0259,
+        "oil_proxy_1d_return": -0.0261,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -50850,7 +50850,7 @@
     "version": "news_event_intelligence_v1"
   },
   "options_status": {
-    "generated_at": "2026-07-09T21:55:42.092921+00:00",
+    "generated_at": "2026-07-09T22:54:12.803271+00:00",
     "market": {
       "failed_bounce_options_risk": 0.1702,
       "gamma_exposure": null,
@@ -51141,10 +51141,10 @@
       "can_append_forecast_record": true,
       "can_backfill_completed_outcomes": true,
       "current_date": "2026-07-09",
-      "current_time_us_eastern": "2026-07-09T17:56:01.383535-04:00",
+      "current_time_us_eastern": "2026-07-09T18:54:31.043243-04:00",
       "data_freshness_status": "fresh",
       "expected_latest_trading_date": "2026-07-09",
-      "generated_at": "2026-07-09T21:56:01.383535+00:00",
+      "generated_at": "2026-07-09T22:54:31.043243+00:00",
       "guardrails": [
         "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
         "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -52183,15 +52183,15 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
-        "DGS3MO",
-        "DGS10",
         "HY_OAS",
-        "DGS2",
         "IG_OAS",
-        "DFII10",
-        "FINANCIAL_STRESS",
+        "DGS10",
+        "DGS2",
         "BAA_SPREAD",
-        "RECESSION"
+        "DGS3MO",
+        "FINANCIAL_STRESS",
+        "RECESSION",
+        "DFII10"
       ],
       "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-07-09。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
       "gamma_available": false,
@@ -52222,10 +52222,10 @@
       ],
       "news_event": {
         "available": true,
-        "event_detection_confidence": 74,
+        "event_detection_confidence": 73,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-07-09T21:55:51.202979+00:00",
+        "last_update": "2026-07-09T22:54:20.891809+00:00",
         "major_event_count": 18,
         "missing_reason": null,
         "news_direction": "risk_off",
@@ -52545,7 +52545,7 @@
             "source": "Reuters"
           },
           {
-            "confidence": "high",
+            "confidence": "medium",
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
@@ -52727,7 +52727,7 @@
       "price_reaction_confirmation": {
         "asset_reaction_summary": {
           "avg_equity_1d_return": 0.0102,
-          "avg_equity_futures_1d_return": 0.0091,
+          "avg_equity_futures_1d_return": 0.0092,
           "confirmed_checks": [],
           "equity_futures_symbols_used": [
             "ES=F",
@@ -52742,7 +52742,7 @@
             "美元走强"
           ],
           "hyg_lqd_1d_relative_return": 0.0008,
-          "oil_proxy_1d_return": -0.0259,
+          "oil_proxy_1d_return": -0.0261,
           "oil_proxy_symbols_used": [
             "USO",
             "CL=F"
@@ -54270,8 +54270,8 @@
             "news_item_count": 40,
             "news_risk_score": 0.65,
             "top_headlines": [
-              "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
               "Iran says it hits U.S. military targets in Gulf, buries slain leader Khamenei - Reuters",
+              "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
               "A huge trade just happened on the Nasdaq 100. Bulls are taking notice",
               "It's a jam-packed afternoon of developments impacting 7 portfolio stocks",
               "BP CEO says company must sharpen financial discipline - Reuters"
@@ -55239,44 +55239,17 @@
                 "QQQ",
                 "IWM",
                 "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "high",
-              "confidence_score": 79,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 88,
-              "headline": "Fed's Williams expects energy prices to abate even as Iran war flares - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-07-09T16:51:45+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
                 "HYG",
                 "LQD",
                 "^VIX"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [],
               "event_type": "credit_stress",
               "expected_horizon": "3d-60d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 92,
+              "freshness_score": 90,
               "headline": "Why Salesforce is staying in the portfolio despite a harsh analyst downgrade",
               "importance_score": 98,
               "narrative": "credit_stress",
@@ -55296,14 +55269,41 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 78,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 80,
+              "freshness_score": 85,
+              "headline": "Fed's Williams expects energy prices to abate even as Iran war flares - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-07-09T16:51:45+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 76,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 77,
               "headline": "Iran fired ten ballistic missiles on Jordan's Azraq military base - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -55335,7 +55335,7 @@
               "event_type": "geopolitical_risk_easing",
               "expected_horizon": "1d-5d",
               "expected_market_direction": "risk_on",
-              "freshness_score": 78,
+              "freshness_score": 76,
               "headline": "Oil tanker traffic through Hormuz at near standstill as attacks strain Iran truce - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_easing_risk_on",
@@ -55362,7 +55362,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 73,
               "headline": "EU drafts 'electrification' plan to curb oil and gas use, after Iran war disruption - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -55381,15 +55381,15 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "high",
-              "confidence_score": 75,
+              "confidence": "medium",
+              "confidence_score": 74,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 72,
+              "freshness_score": 70,
               "headline": "Platner out, US-Iran strikes, Air Force One and quantum leap - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -55491,7 +55491,7 @@
                 "source": "Reuters"
               },
               {
-                "confidence": "high",
+                "confidence": "medium",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
@@ -55564,7 +55564,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0102,
-              "avg_equity_futures_1d_return": 0.0091,
+              "avg_equity_futures_1d_return": 0.0092,
               "confirmed_checks": [],
               "equity_futures_symbols_used": [
                 "ES=F",
@@ -55579,7 +55579,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": 0.0008,
-              "oil_proxy_1d_return": -0.0259,
+              "oil_proxy_1d_return": -0.0261,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -56835,8 +56835,8 @@
             "news_item_count": 40,
             "news_risk_score": 0.65,
             "top_headlines": [
-              "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
               "Iran says it hits U.S. military targets in Gulf, buries slain leader Khamenei - Reuters",
+              "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
               "A huge trade just happened on the Nasdaq 100. Bulls are taking notice",
               "It's a jam-packed afternoon of developments impacting 7 portfolio stocks",
               "BP CEO says company must sharpen financial discipline - Reuters"
@@ -57741,44 +57741,17 @@
                 "QQQ",
                 "IWM",
                 "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "high",
-              "confidence_score": 79,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 88,
-              "headline": "Fed's Williams expects energy prices to abate even as Iran war flares - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-07-09T16:51:45+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
                 "HYG",
                 "LQD",
                 "^VIX"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [],
               "event_type": "credit_stress",
               "expected_horizon": "3d-60d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 92,
+              "freshness_score": 90,
               "headline": "Why Salesforce is staying in the portfolio despite a harsh analyst downgrade",
               "importance_score": 98,
               "narrative": "credit_stress",
@@ -57798,14 +57771,41 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 78,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 80,
+              "freshness_score": 85,
+              "headline": "Fed's Williams expects energy prices to abate even as Iran war flares - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-07-09T16:51:45+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 76,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 77,
               "headline": "Iran fired ten ballistic missiles on Jordan's Azraq military base - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -57837,7 +57837,7 @@
               "event_type": "geopolitical_risk_easing",
               "expected_horizon": "1d-5d",
               "expected_market_direction": "risk_on",
-              "freshness_score": 78,
+              "freshness_score": 76,
               "headline": "Oil tanker traffic through Hormuz at near standstill as attacks strain Iran truce - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_easing_risk_on",
@@ -57864,7 +57864,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 73,
               "headline": "EU drafts 'electrification' plan to curb oil and gas use, after Iran war disruption - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -57883,15 +57883,15 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "high",
-              "confidence_score": 75,
+              "confidence": "medium",
+              "confidence_score": 74,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 72,
+              "freshness_score": 70,
               "headline": "Platner out, US-Iran strikes, Air Force One and quantum leap - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -57993,7 +57993,7 @@
                 "source": "Reuters"
               },
               {
-                "confidence": "high",
+                "confidence": "medium",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
@@ -58066,7 +58066,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0102,
-              "avg_equity_futures_1d_return": 0.0091,
+              "avg_equity_futures_1d_return": 0.0092,
               "confirmed_checks": [],
               "equity_futures_symbols_used": [
                 "ES=F",
@@ -58081,7 +58081,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": 0.0008,
-              "oil_proxy_1d_return": -0.0259,
+              "oil_proxy_1d_return": -0.0261,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -59355,8 +59355,8 @@
             "news_item_count": 40,
             "news_risk_score": 0.65,
             "top_headlines": [
-              "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
               "Iran says it hits U.S. military targets in Gulf, buries slain leader Khamenei - Reuters",
+              "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
               "A huge trade just happened on the Nasdaq 100. Bulls are taking notice",
               "It's a jam-packed afternoon of developments impacting 7 portfolio stocks",
               "BP CEO says company must sharpen financial discipline - Reuters"
@@ -60328,44 +60328,17 @@
                 "QQQ",
                 "IWM",
                 "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "high",
-              "confidence_score": 79,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 88,
-              "headline": "Fed's Williams expects energy prices to abate even as Iran war flares - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-07-09T16:51:45+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
                 "HYG",
                 "LQD",
                 "^VIX"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [],
               "event_type": "credit_stress",
               "expected_horizon": "3d-60d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 92,
+              "freshness_score": 90,
               "headline": "Why Salesforce is staying in the portfolio despite a harsh analyst downgrade",
               "importance_score": 98,
               "narrative": "credit_stress",
@@ -60385,14 +60358,41 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 78,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 80,
+              "freshness_score": 85,
+              "headline": "Fed's Williams expects energy prices to abate even as Iran war flares - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-07-09T16:51:45+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 76,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 77,
               "headline": "Iran fired ten ballistic missiles on Jordan's Azraq military base - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -60424,7 +60424,7 @@
               "event_type": "geopolitical_risk_easing",
               "expected_horizon": "1d-5d",
               "expected_market_direction": "risk_on",
-              "freshness_score": 78,
+              "freshness_score": 76,
               "headline": "Oil tanker traffic through Hormuz at near standstill as attacks strain Iran truce - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_easing_risk_on",
@@ -60451,7 +60451,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 73,
               "headline": "EU drafts 'electrification' plan to curb oil and gas use, after Iran war disruption - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -60470,15 +60470,15 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "high",
-              "confidence_score": 75,
+              "confidence": "medium",
+              "confidence_score": 74,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 72,
+              "freshness_score": 70,
               "headline": "Platner out, US-Iran strikes, Air Force One and quantum leap - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -60580,7 +60580,7 @@
                 "source": "Reuters"
               },
               {
-                "confidence": "high",
+                "confidence": "medium",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
@@ -60653,7 +60653,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0102,
-              "avg_equity_futures_1d_return": 0.0091,
+              "avg_equity_futures_1d_return": 0.0092,
               "confirmed_checks": [],
               "equity_futures_symbols_used": [
                 "ES=F",
@@ -60668,7 +60668,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": 0.0008,
-              "oil_proxy_1d_return": -0.0259,
+              "oil_proxy_1d_return": -0.0261,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -61932,8 +61932,8 @@
             "news_item_count": 40,
             "news_risk_score": 0.65,
             "top_headlines": [
-              "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
               "Iran says it hits U.S. military targets in Gulf, buries slain leader Khamenei - Reuters",
+              "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
               "A huge trade just happened on the Nasdaq 100. Bulls are taking notice",
               "It's a jam-packed afternoon of developments impacting 7 portfolio stocks",
               "BP CEO says company must sharpen financial discipline - Reuters"
@@ -62880,44 +62880,17 @@
                 "QQQ",
                 "IWM",
                 "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "high",
-              "confidence_score": 79,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 88,
-              "headline": "Fed's Williams expects energy prices to abate even as Iran war flares - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-07-09T16:51:45+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
                 "HYG",
                 "LQD",
                 "^VIX"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [],
               "event_type": "credit_stress",
               "expected_horizon": "3d-60d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 92,
+              "freshness_score": 90,
               "headline": "Why Salesforce is staying in the portfolio despite a harsh analyst downgrade",
               "importance_score": 98,
               "narrative": "credit_stress",
@@ -62937,14 +62910,41 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 78,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 80,
+              "freshness_score": 85,
+              "headline": "Fed's Williams expects energy prices to abate even as Iran war flares - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-07-09T16:51:45+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 76,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 77,
               "headline": "Iran fired ten ballistic missiles on Jordan's Azraq military base - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -62976,7 +62976,7 @@
               "event_type": "geopolitical_risk_easing",
               "expected_horizon": "1d-5d",
               "expected_market_direction": "risk_on",
-              "freshness_score": 78,
+              "freshness_score": 76,
               "headline": "Oil tanker traffic through Hormuz at near standstill as attacks strain Iran truce - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_easing_risk_on",
@@ -63003,7 +63003,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 73,
               "headline": "EU drafts 'electrification' plan to curb oil and gas use, after Iran war disruption - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -63022,15 +63022,15 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "high",
-              "confidence_score": 75,
+              "confidence": "medium",
+              "confidence_score": 74,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 72,
+              "freshness_score": 70,
               "headline": "Platner out, US-Iran strikes, Air Force One and quantum leap - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -63132,7 +63132,7 @@
                 "source": "Reuters"
               },
               {
-                "confidence": "high",
+                "confidence": "medium",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
@@ -63205,7 +63205,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0102,
-              "avg_equity_futures_1d_return": 0.0091,
+              "avg_equity_futures_1d_return": 0.0092,
               "confirmed_checks": [],
               "equity_futures_symbols_used": [
                 "ES=F",
@@ -63220,7 +63220,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": 0.0008,
-              "oil_proxy_1d_return": -0.0259,
+              "oil_proxy_1d_return": -0.0261,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -64077,7 +64077,7 @@
   },
   "price_volume_structure": {
     "disclaimer": "K线和成交量结构只用于预测确认，不是交易信号、买卖建议或仓位建议。",
-    "generated_at": "2026-07-09T21:56:01.377900+00:00",
+    "generated_at": "2026-07-09T22:54:31.037608+00:00",
     "summary": {
       "average_price_structure_score": 81.0,
       "average_volume_confirmation_score": 44.5,
@@ -64859,10 +64859,10 @@
       "can_append_forecast_record": true,
       "can_backfill_completed_outcomes": true,
       "current_date": "2026-07-09",
-      "current_time_us_eastern": "2026-07-09T17:56:01.383535-04:00",
+      "current_time_us_eastern": "2026-07-09T18:54:31.043243-04:00",
       "data_freshness_status": "fresh",
       "expected_latest_trading_date": "2026-07-09",
-      "generated_at": "2026-07-09T21:56:01.383535+00:00",
+      "generated_at": "2026-07-09T22:54:31.043243+00:00",
       "guardrails": [
         "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
         "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -65901,15 +65901,15 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
-        "DGS3MO",
-        "DGS10",
         "HY_OAS",
-        "DGS2",
         "IG_OAS",
-        "DFII10",
-        "FINANCIAL_STRESS",
+        "DGS10",
+        "DGS2",
         "BAA_SPREAD",
-        "RECESSION"
+        "DGS3MO",
+        "FINANCIAL_STRESS",
+        "RECESSION",
+        "DFII10"
       ],
       "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-07-09。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
       "gamma_available": false,
@@ -65940,10 +65940,10 @@
       ],
       "news_event": {
         "available": true,
-        "event_detection_confidence": 74,
+        "event_detection_confidence": 73,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-07-09T21:55:51.202979+00:00",
+        "last_update": "2026-07-09T22:54:20.891809+00:00",
         "major_event_count": 18,
         "missing_reason": null,
         "news_direction": "risk_off",
@@ -66099,7 +66099,7 @@
             "source": "Reuters"
           },
           {
-            "confidence": "high",
+            "confidence": "medium",
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
@@ -66281,7 +66281,7 @@
       "price_reaction_confirmation": {
         "asset_reaction_summary": {
           "avg_equity_1d_return": 0.0102,
-          "avg_equity_futures_1d_return": 0.0091,
+          "avg_equity_futures_1d_return": 0.0092,
           "confirmed_checks": [],
           "equity_futures_symbols_used": [
             "ES=F",
@@ -66296,7 +66296,7 @@
             "美元走强"
           ],
           "hyg_lqd_1d_relative_return": 0.0008,
-          "oil_proxy_1d_return": -0.0259,
+          "oil_proxy_1d_return": -0.0261,
           "oil_proxy_symbols_used": [
             "USO",
             "CL=F"
@@ -67176,8 +67176,8 @@
             "news_item_count": 40,
             "news_risk_score": 0.65,
             "top_headlines": [
-              "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
               "Iran says it hits U.S. military targets in Gulf, buries slain leader Khamenei - Reuters",
+              "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
               "A huge trade just happened on the Nasdaq 100. Bulls are taking notice",
               "It's a jam-packed afternoon of developments impacting 7 portfolio stocks",
               "BP CEO says company must sharpen financial discipline - Reuters"
@@ -68593,44 +68593,17 @@
                 "QQQ",
                 "IWM",
                 "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "high",
-              "confidence_score": 79,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 88,
-              "headline": "Fed's Williams expects energy prices to abate even as Iran war flares - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-07-09T16:51:45+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
                 "HYG",
                 "LQD",
                 "^VIX"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [],
               "event_type": "credit_stress",
               "expected_horizon": "3d-60d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 92,
+              "freshness_score": 90,
               "headline": "Why Salesforce is staying in the portfolio despite a harsh analyst downgrade",
               "importance_score": 98,
               "narrative": "credit_stress",
@@ -68650,14 +68623,41 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 78,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 80,
+              "freshness_score": 85,
+              "headline": "Fed's Williams expects energy prices to abate even as Iran war flares - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-07-09T16:51:45+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 76,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 77,
               "headline": "Iran fired ten ballistic missiles on Jordan's Azraq military base - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -68689,7 +68689,7 @@
               "event_type": "geopolitical_risk_easing",
               "expected_horizon": "1d-5d",
               "expected_market_direction": "risk_on",
-              "freshness_score": 78,
+              "freshness_score": 76,
               "headline": "Oil tanker traffic through Hormuz at near standstill as attacks strain Iran truce - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_easing_risk_on",
@@ -68716,7 +68716,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 73,
               "headline": "EU drafts 'electrification' plan to curb oil and gas use, after Iran war disruption - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -68735,15 +68735,15 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "high",
-              "confidence_score": 75,
+              "confidence": "medium",
+              "confidence_score": 74,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 72,
+              "freshness_score": 70,
               "headline": "Platner out, US-Iran strikes, Air Force One and quantum leap - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -68845,7 +68845,7 @@
                 "source": "Reuters"
               },
               {
-                "confidence": "high",
+                "confidence": "medium",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
@@ -68918,7 +68918,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0102,
-              "avg_equity_futures_1d_return": 0.0091,
+              "avg_equity_futures_1d_return": 0.0092,
               "confirmed_checks": [],
               "equity_futures_symbols_used": [
                 "ES=F",
@@ -68933,7 +68933,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": 0.0008,
-              "oil_proxy_1d_return": -0.0259,
+              "oil_proxy_1d_return": -0.0261,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -71413,8 +71413,8 @@
             "news_item_count": 40,
             "news_risk_score": 0.65,
             "top_headlines": [
-              "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
               "Iran says it hits U.S. military targets in Gulf, buries slain leader Khamenei - Reuters",
+              "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
               "A huge trade just happened on the Nasdaq 100. Bulls are taking notice",
               "It's a jam-packed afternoon of developments impacting 7 portfolio stocks",
               "BP CEO says company must sharpen financial discipline - Reuters"
@@ -72767,44 +72767,17 @@
                 "QQQ",
                 "IWM",
                 "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "high",
-              "confidence_score": 79,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 88,
-              "headline": "Fed's Williams expects energy prices to abate even as Iran war flares - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-07-09T16:51:45+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
                 "HYG",
                 "LQD",
                 "^VIX"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [],
               "event_type": "credit_stress",
               "expected_horizon": "3d-60d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 92,
+              "freshness_score": 90,
               "headline": "Why Salesforce is staying in the portfolio despite a harsh analyst downgrade",
               "importance_score": 98,
               "narrative": "credit_stress",
@@ -72824,14 +72797,41 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 78,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 80,
+              "freshness_score": 85,
+              "headline": "Fed's Williams expects energy prices to abate even as Iran war flares - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-07-09T16:51:45+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 76,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 77,
               "headline": "Iran fired ten ballistic missiles on Jordan's Azraq military base - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -72863,7 +72863,7 @@
               "event_type": "geopolitical_risk_easing",
               "expected_horizon": "1d-5d",
               "expected_market_direction": "risk_on",
-              "freshness_score": 78,
+              "freshness_score": 76,
               "headline": "Oil tanker traffic through Hormuz at near standstill as attacks strain Iran truce - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_easing_risk_on",
@@ -72890,7 +72890,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 73,
               "headline": "EU drafts 'electrification' plan to curb oil and gas use, after Iran war disruption - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -72909,15 +72909,15 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "high",
-              "confidence_score": 75,
+              "confidence": "medium",
+              "confidence_score": 74,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 72,
+              "freshness_score": 70,
               "headline": "Platner out, US-Iran strikes, Air Force One and quantum leap - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -73019,7 +73019,7 @@
                 "source": "Reuters"
               },
               {
-                "confidence": "high",
+                "confidence": "medium",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
@@ -73092,7 +73092,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0102,
-              "avg_equity_futures_1d_return": 0.0091,
+              "avg_equity_futures_1d_return": 0.0092,
               "confirmed_checks": [],
               "equity_futures_symbols_used": [
                 "ES=F",
@@ -73107,7 +73107,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": 0.0008,
-              "oil_proxy_1d_return": -0.0259,
+              "oil_proxy_1d_return": -0.0261,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -75605,8 +75605,8 @@
             "news_item_count": 40,
             "news_risk_score": 0.65,
             "top_headlines": [
-              "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
               "Iran says it hits U.S. military targets in Gulf, buries slain leader Khamenei - Reuters",
+              "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
               "A huge trade just happened on the Nasdaq 100. Bulls are taking notice",
               "It's a jam-packed afternoon of developments impacting 7 portfolio stocks",
               "BP CEO says company must sharpen financial discipline - Reuters"
@@ -77026,44 +77026,17 @@
                 "QQQ",
                 "IWM",
                 "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "high",
-              "confidence_score": 79,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 88,
-              "headline": "Fed's Williams expects energy prices to abate even as Iran war flares - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-07-09T16:51:45+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
                 "HYG",
                 "LQD",
                 "^VIX"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [],
               "event_type": "credit_stress",
               "expected_horizon": "3d-60d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 92,
+              "freshness_score": 90,
               "headline": "Why Salesforce is staying in the portfolio despite a harsh analyst downgrade",
               "importance_score": 98,
               "narrative": "credit_stress",
@@ -77083,14 +77056,41 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 78,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 80,
+              "freshness_score": 85,
+              "headline": "Fed's Williams expects energy prices to abate even as Iran war flares - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-07-09T16:51:45+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 76,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 77,
               "headline": "Iran fired ten ballistic missiles on Jordan's Azraq military base - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -77122,7 +77122,7 @@
               "event_type": "geopolitical_risk_easing",
               "expected_horizon": "1d-5d",
               "expected_market_direction": "risk_on",
-              "freshness_score": 78,
+              "freshness_score": 76,
               "headline": "Oil tanker traffic through Hormuz at near standstill as attacks strain Iran truce - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_easing_risk_on",
@@ -77149,7 +77149,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 73,
               "headline": "EU drafts 'electrification' plan to curb oil and gas use, after Iran war disruption - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -77168,15 +77168,15 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "high",
-              "confidence_score": 75,
+              "confidence": "medium",
+              "confidence_score": 74,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 72,
+              "freshness_score": 70,
               "headline": "Platner out, US-Iran strikes, Air Force One and quantum leap - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -77278,7 +77278,7 @@
                 "source": "Reuters"
               },
               {
-                "confidence": "high",
+                "confidence": "medium",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
@@ -77351,7 +77351,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0102,
-              "avg_equity_futures_1d_return": 0.0091,
+              "avg_equity_futures_1d_return": 0.0092,
               "confirmed_checks": [],
               "equity_futures_symbols_used": [
                 "ES=F",
@@ -77366,7 +77366,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": 0.0008,
-              "oil_proxy_1d_return": -0.0259,
+              "oil_proxy_1d_return": -0.0261,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -79854,8 +79854,8 @@
             "news_item_count": 40,
             "news_risk_score": 0.65,
             "top_headlines": [
-              "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
               "Iran says it hits U.S. military targets in Gulf, buries slain leader Khamenei - Reuters",
+              "Nasdaq ends sharply higher; chip surge offsets Iran worries - Reuters",
               "A huge trade just happened on the Nasdaq 100. Bulls are taking notice",
               "It's a jam-packed afternoon of developments impacting 7 portfolio stocks",
               "BP CEO says company must sharpen financial discipline - Reuters"
@@ -81250,44 +81250,17 @@
                 "QQQ",
                 "IWM",
                 "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "high",
-              "confidence_score": 79,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 88,
-              "headline": "Fed's Williams expects energy prices to abate even as Iran war flares - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-07-09T16:51:45+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
                 "HYG",
                 "LQD",
                 "^VIX"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [],
               "event_type": "credit_stress",
               "expected_horizon": "3d-60d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 92,
+              "freshness_score": 90,
               "headline": "Why Salesforce is staying in the portfolio despite a harsh analyst downgrade",
               "importance_score": 98,
               "narrative": "credit_stress",
@@ -81307,14 +81280,41 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 78,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 80,
+              "freshness_score": 85,
+              "headline": "Fed's Williams expects energy prices to abate even as Iran war flares - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-07-09T16:51:45+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 76,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 77,
               "headline": "Iran fired ten ballistic missiles on Jordan's Azraq military base - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -81346,7 +81346,7 @@
               "event_type": "geopolitical_risk_easing",
               "expected_horizon": "1d-5d",
               "expected_market_direction": "risk_on",
-              "freshness_score": 78,
+              "freshness_score": 76,
               "headline": "Oil tanker traffic through Hormuz at near standstill as attacks strain Iran truce - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_easing_risk_on",
@@ -81373,7 +81373,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 73,
               "headline": "EU drafts 'electrification' plan to curb oil and gas use, after Iran war disruption - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -81392,15 +81392,15 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "high",
-              "confidence_score": 75,
+              "confidence": "medium",
+              "confidence_score": 74,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 72,
+              "freshness_score": 70,
               "headline": "Platner out, US-Iran strikes, Air Force One and quantum leap - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -81502,7 +81502,7 @@
                 "source": "Reuters"
               },
               {
-                "confidence": "high",
+                "confidence": "medium",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
@@ -81575,7 +81575,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0102,
-              "avg_equity_futures_1d_return": 0.0091,
+              "avg_equity_futures_1d_return": 0.0092,
               "confirmed_checks": [],
               "equity_futures_symbols_used": [
                 "ES=F",
@@ -81590,7 +81590,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": 0.0008,
-              "oil_proxy_1d_return": -0.0259,
+              "oil_proxy_1d_return": -0.0261,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -83735,7 +83735,7 @@
       },
       "version": "stock_data_provider_v1"
     },
-    "generated_at": "2026-07-09T21:56:01.810073+00:00",
+    "generated_at": "2026-07-09T22:54:31.452432+00:00",
     "guardrails": [
       "This is a probabilistic stock forecast module, not a trading system.",
       "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -83824,7 +83824,7 @@
         },
         "question": "high final_radar_score 是否真的对应更大次日 range？"
       },
-      "generated_at": "2026-07-09T21:56:01.820670+00:00",
+      "generated_at": "2026-07-09T22:54:31.463332+00:00",
       "not_validated_warning": "not_enough_forward_samples",
       "pending_records": 77,
       "risk_score_effectiveness": {
@@ -86156,55 +86156,55 @@
             "event_risk_flag": "high",
             "headlines": [
               {
-                "datetime": 1783626413,
-                "headline": "Veteran Energy Analyst: “Crude Oil Is Not the Problem.” Here’s What’s Keeping Gas Prices High.",
+                "datetime": 1783632696,
+                "headline": "Broadcom Stock Investors Just Got Incredible News from Apple CEO Tim Cook",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=2ffa3074b3081b892d78b7456e54abf590b5122166e5c44d897ab4bb989055a6"
+                "url": "https://finnhub.io/api/news?id=33b5b89fecee64047b66935a2da8d2eb2e734e0085c95cb7f4bc798f011d6f23"
               },
               {
-                "datetime": 1783626381,
-                "headline": "SandboxAQ CEO: “It’s Time That America Really Has a Sovereign Wealth Fund.” Why America Should Copy Norway’s $2 Trillion Fund",
+                "datetime": 1783632675,
+                "headline": "Dow Jones Futures: Micron, Sandisk Jump As Nasdaq Tops Key Level; Delta, Taiwan Semi, SK Hynix Due",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=592b04ad411921983eff793e6b06984bf6a6d79b99b791a1fb0b557c8f7ca7b6"
+                "url": "https://finnhub.io/api/news?id=767e61f5555b96ab1e3a5ec38f5be7b82be89aa70feba30bd1f201eef2c9a1bb"
               },
               {
-                "datetime": 1783626222,
-                "headline": "FormFactor, Amkor, and Kulicke and Soffa Shares Skyrocket, What You Need To Know",
+                "datetime": 1783632300,
+                "headline": "Want $1,000 in Annual Passive Income? Invest This Much in This Ultra-High-Yield Energy Stock.",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=367c52d3c2cbfe5e7a3899758c742d5baf089c92df77eb0a0a96d36877619824"
+                "url": "https://finnhub.io/api/news?id=8404ff82ac52edc3756012837187f307db53ec6d3079c5037b807b4921c861b2"
               },
               {
-                "datetime": 1783626063,
-                "headline": "TBPN’s John Coogan: “People Can’t Really Complain.” Here’s Why Blue Origin Is Worth $130 Billion.",
+                "datetime": 1783632000,
+                "headline": "This Small-Cap Growth ETF Is Beating the \"Magnificent Seven\" in 2026. Should You Buy It?",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=a738afb556d0ce41d926482a0668b8df244ca568e20343582566241b8cead7a6"
+                "url": "https://finnhub.io/api/news?id=e9376d4897ad7ad4c93e93d42eb311ce1c7edea32683cb642d3fd1c1ed2c9ff9"
               },
               {
-                "datetime": 1783625742,
-                "headline": "Nova, Lam Research, and Teradyne Stocks Trade Up, What You Need To Know",
+                "datetime": 1783631100,
+                "headline": "Are AI Agents SoFi Stock's Next Big Catalyst?",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=111068c3df495c3631f8e0a1c6a53fe1b18d272ea88dc859f3fa0dcb4ae030ae"
+                "url": "https://finnhub.io/api/news?id=ac2228cadf9e8b459d4caf0a7e4babe106dc0eea1bf79b095ddb9d3762358b03"
               },
               {
-                "datetime": 1783625340,
-                "headline": "Micron's Share Price Dip Presents a Compelling Buying Opportunity",
+                "datetime": 1783630542,
+                "headline": "Entegris, onsemi, and Power Integrations Shares Are Soaring, What You Need To Know",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=f8c2ba0d32c0e0fe482aa3de13e858ab8a50498bcb78a247c42505f419f6bdda"
+                "url": "https://finnhub.io/api/news?id=98b0412a1d815bf8957f5223067f32918babb27b8b63833b6ab657dbf15b3544"
               },
               {
-                "datetime": 1783625262,
-                "headline": "Applied Materials and KLA Corporation Shares Are Soaring, What You Need To Know",
+                "datetime": 1783630296,
+                "headline": "Nvidia owns the AI chips market. Google, Amazon, and others are coming",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=3c08aa34252c6ae430fc4f0d766335ed062e23e99e9329e0a7d70369a9f1a547"
+                "url": "https://finnhub.io/api/news?id=7620a6ac8ec29bf19328a734e82f30595d5b47b12263dac6d363796a99539adc"
               },
               {
-                "datetime": 1783625100,
-                "headline": "Oklo Just Dropped Below $50. Should Long-Term Investors Pounce?",
+                "datetime": 1783630200,
+                "headline": "This Top Cryptocurrency Could Soar 135% By the End of the Year, According to Wall Street Investment Firm Bernstein",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=bd25d8abc4046833db8d4768c07916fc085c72414add98f804b70cac038e59b3"
+                "url": "https://finnhub.io/api/news?id=7e892c5f82f7d79ace0aeabf348e9172a51dbf08fe49043887af4cf8da088a0d"
               }
             ],
-            "major_company_headline": "Veteran Energy Analyst: “Crude Oil Is Not the Problem.” Here’s What’s Keeping Gas Prices High.",
+            "major_company_headline": "Broadcom Stock Investors Just Got Incredible News from Apple CEO Tim Cook",
             "news_count_24h": 20,
             "news_count_72h": 20,
             "news_risk_score": 100.0,
@@ -88066,7 +88066,7 @@
           "components": {
             "catalyst": {
               "evidence": [
-                "公司新闻已接入: Veteran Energy Analyst: “Crude Oil Is Not the Problem.” Here’s What’s Keeping Gas Prices High.",
+                "公司新闻已接入: Broadcom Stock Investors Just Got Incredible News from Apple CEO Tim Cook",
                 "新闻情绪偏正",
                 "增长数据具备 EPS 上修叙事基础"
               ],
@@ -88180,7 +88180,7 @@
           },
           "thesis": {
             "capital_confirmation": "资金确认不足或仍需观察",
-            "catalyst": "Veteran Energy Analyst: “Crude Oil Is Not the Problem.” Here’s What’s Keeping Gas Prices High.",
+            "catalyst": "Broadcom Stock Investors Just Got Incredible News from Apple CEO Tim Cook",
             "expectation_gap": [
               "收入增长较强，具备正向预期差基础",
               "EPS 增长较强，可能支持盈利上修叙事"
@@ -90530,6 +90530,12 @@
             "event_risk_flag": "high",
             "headlines": [
               {
+                "datetime": 1783630296,
+                "headline": "Nvidia owns the AI chips market. Google, Amazon, and others are coming",
+                "source": "Yahoo",
+                "url": "https://finnhub.io/api/news?id=7620a6ac8ec29bf19328a734e82f30595d5b47b12263dac6d363796a99539adc"
+              },
+              {
                 "datetime": 1783622258,
                 "headline": "Is Tesla (TSLA) One of the Best QQQ Stocks to Invest in?",
                 "source": "Yahoo",
@@ -90570,15 +90576,9 @@
                 "headline": "RBC Capital Raises its Price Target on Tesla (TSLA)",
                 "source": "Yahoo",
                 "url": "https://finnhub.io/api/news?id=b6d5efbcc7b58612e85fc727e395919ddc2b438a8e8daaba676a0ed1ef65d335"
-              },
-              {
-                "datetime": 1783614662,
-                "headline": "Wall Street Finds a New Way to Help Investors Avoid Elon Musk",
-                "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=489ac25f1981dc51e6a9f33f09669f955854f7036c76f2fabde5f51b899a32c5"
               }
             ],
-            "major_company_headline": "Is Tesla (TSLA) One of the Best QQQ Stocks to Invest in?",
+            "major_company_headline": "Nvidia owns the AI chips market. Google, Amazon, and others are coming",
             "news_count_24h": 20,
             "news_count_72h": 20,
             "news_risk_score": 100.0,
@@ -92439,7 +92439,7 @@
           "components": {
             "catalyst": {
               "evidence": [
-                "公司新闻已接入: Is Tesla (TSLA) One of the Best QQQ Stocks to Invest in?",
+                "公司新闻已接入: Nvidia owns the AI chips market. Google, Amazon, and others are coming",
                 "新闻情绪偏正",
                 "未来 30 天存在财报催化：2026-07-22"
               ],
@@ -92555,7 +92555,7 @@
           },
           "thesis": {
             "capital_confirmation": "资金确认不足或仍需观察",
-            "catalyst": "Is Tesla (TSLA) One of the Best QQQ Stocks to Invest in?",
+            "catalyst": "Nvidia owns the AI chips market. Google, Amazon, and others are coming",
             "expectation_gap": [
               "未来 30 天财报可能成为重新定价窗口"
             ],
@@ -92688,7 +92688,7 @@
         "top_candidate": "TSLA",
         "validation_status": "not_yet_validated"
       },
-      "generated_at": "2026-07-09T21:56:01.817506+00:00",
+      "generated_at": "2026-07-09T22:54:31.460094+00:00",
       "model_version": "stock_baseline_v1",
       "notes": [
         "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -93124,7 +93124,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-07-09T21:56:01.820670+00:00",
+    "generated_at": "2026-07-09T22:54:31.463332+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 77,
     "risk_score_effectiveness": {
@@ -93196,7 +93196,7 @@
       "top_candidate": "TSLA",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-07-09T21:56:01.817506+00:00",
+    "generated_at": "2026-07-09T22:54:31.460094+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
