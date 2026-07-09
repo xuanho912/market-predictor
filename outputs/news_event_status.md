@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-09T00:21:35.789966+00:00`
+- generated_at: `2026-07-09T07:06:08.183318+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
-- event_detection_confidence: `84`
+- major_event_count: `9`
+- event_detection_confidence: `81`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,33 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Morning Bid: Chip euphoria vies with war weariness - Reuters
+- source: Reuters
+- published_at: `2026-07-09T04:32:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil rises after US launches fresh strikes on Iran - Reuters
+- source: Reuters
+- published_at: `2026-07-09T01:04:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Venture Global's second-quarter liquefaction fee jumps 69% as Iran war lifts LNG prices - Reuters
+- source: Reuters
+- published_at: `2026-07-08T23:08:36+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Trump wants to leave the Iran war behind. That won't happen soon - Reuters
 - source: Reuters
-- published_at: `2026-07-08T22:36:38+00:00`
+- published_at: `2026-07-08T22:33:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -71,12 +95,4 @@
 - source: Reuters
 - published_at: `2026-07-08T16:03:24+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Qatari LNG tanker awaits salvage off Oman after projectile strike - Reuters
-- source: Reuters
-- published_at: `2026-07-08T13:47:04+00:00`
-- importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
