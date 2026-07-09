@@ -1,6 +1,6 @@
 # Forecast Learning Queue
 
-Generated at: `2026-07-09T15:37:35.901110+00:00`
+Generated at: `2026-07-09T21:56:01.623289+00:00`
 
 This report turns forecast deviations into safe challenger-model hypotheses. It does not alter baseline_v1.
 
@@ -9,8 +9,8 @@ This report turns forecast deviations into safe challenger-model hypotheses. It 
 - active_model: `baseline_v1`
 - global_learning_status: `shadow_challenger_queue_ready`
 - evidence_level: `stronger_evidence`
-- completed_outcomes_reviewed: `212`
-- material_deviation_count: `92`
+- completed_outcomes_reviewed: `228`
+- material_deviation_count: `100`
 - dominant_error_theme: `news_data_gap_limited_attribution`
 - trust_gate_status: `RESEARCH_ONLY_FORWARD_VALIDATION_NEEDED`
 
@@ -21,7 +21,7 @@ This report turns forecast deviations into safe challenger-model hypotheses. It 
 - proposed_model_version: `challenger_v2_event_reaction_overlay`
 - priority_score: `100`
 - readiness: `ready_for_shadow_challenger`
-- evidence_count: `176`
+- evidence_count: `192`
 - hypothesis: 重大新闻只有在价格、VIX、信用或期货反应确认后，才应该提高短线情景权重；未确认新闻应快速衰减。
 - expected_improvement: 减少新闻驱动日对 1d/3d/5d 主路径的低估或误判。
 - required_validation: 至少 20 个已完成 1d/3d/5d 样本，并且 challenger 的主路径误差低于 baseline_v1。
@@ -33,7 +33,7 @@ This report turns forecast deviations into safe challenger-model hypotheses. It 
 - proposed_model_version: `challenger_v2_price_structure_confirmation_overlay`
 - priority_score: `100`
 - readiness: `ready_for_shadow_challenger`
-- evidence_count: `92`
+- evidence_count: `100`
 - hypothesis: 当价格结构确认或否定主路径时，情景排序应更快反映确认价、失效价和风险接管价。
 - expected_improvement: 减少路径已经被价格确认/否定但模型仍滞后的错误。
 - required_validation: 主路径确认价后的样本必须比未确认样本有更高 primary hit rate。
@@ -57,7 +57,7 @@ This report turns forecast deviations into safe challenger-model hypotheses. It 
 - proposed_model_version: `challenger_v2_breadth_follow_through_overlay`
 - priority_score: `100`
 - readiness: `ready_for_shadow_challenger`
-- evidence_count: `19`
+- evidence_count: `20`
 - hypothesis: 指数反弹但内部参与不足时应提高失败反抽风险；内部共振连续改善时才提高趋势修复权重。
 - expected_improvement: 降低只看指数表面导致的误判，改善 5d/10d/20d 路径排序。
 - required_validation: breadth confirmed 样本必须优于 breadth conflicted 样本，并且 primary-vs-secondary spread 为正。
@@ -69,7 +69,7 @@ This report turns forecast deviations into safe challenger-model hypotheses. It 
 - proposed_model_version: `challenger_v2_volatility_repair_overlay`
 - priority_score: `100`
 - readiness: `ready_for_shadow_challenger`
-- evidence_count: `12`
+- evidence_count: `13`
 - hypothesis: VIX term、VVIX、SKEW 的修复或恶化应更明确地区分反抽、失败反抽和风险扩散。
 - expected_improvement: 提高恐慌释放后反抽路径，以及波动率重新恶化时风险路径的识别质量。
 - required_validation: 至少 20 个 3d/5d 样本和 30 个 10d 样本证明路径排序优于 baseline_v1。

@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-09T15:37:24.316356+00:00`
+- generated_at: `2026-07-09T21:55:51.202979+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `16`
-- event_detection_confidence: `77`
+- major_event_count: `18`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `25`
+- confirmation_score: `0`
 
 ## Dashboard Note
 
@@ -24,6 +24,22 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Fed's Williams expects energy prices to abate even as Iran war flares - Reuters
+- source: Reuters
+- published_at: `2026-07-09T16:51:45+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### credit_stress / risk_off
+
+- headline: Why Salesforce is staying in the portfolio despite a harsh analyst downgrade
+- source: CNBC
+- published_at: `2026-07-09T18:39:25+00:00`
+- importance_score: `98`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -43,6 +59,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: EU drafts 'electrification' plan to curb oil and gas use, after Iran war disruption - Reuters
+- source: Reuters
+- published_at: `2026-07-09T11:31:52+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Platner out, US-Iran strikes, Air Force One and quantum leap - Reuters
 - source: Reuters
 - published_at: `2026-07-09T10:27:31+00:00`
@@ -55,6 +79,22 @@
 - source: Reuters
 - published_at: `2026-07-09T10:00:00+00:00`
 - importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: As Iran war rolls on, some executives say the 'worst is behind us' - Reuters
+- source: Reuters
+- published_at: `2026-07-09T09:02:06+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### fed_hawkish / risk_off
+
+- headline: Kalshi traders think gas prices will stay higher for longer as U.S.-Iran tensions heat back up
+- source: CNBC
+- published_at: `2026-07-09T18:11:22+00:00`
+- importance_score: `88`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -62,45 +102,5 @@
 - headline: Bank of Japan sees growing inflation pressures from Iran war - Reuters
 - source: Reuters
 - published_at: `2026-07-09T05:14:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Morning Bid: Chip euphoria vies with war weariness - Reuters
-- source: Reuters
-- published_at: `2026-07-09T04:32:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Gulf companies are set to reveal the unequal toll of Iran war - Reuters
-- source: Reuters
-- published_at: `2026-07-09T04:06:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Dollar stands tall as new Gulf attacks fuel oil price surge, Fed hike bets - Reuters
-- source: Reuters
-- published_at: `2026-07-09T01:21:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Venture Global's second-quarter liquefaction fee jumps 69% as Iran war lifts LNG prices - Reuters
-- source: Reuters
-- published_at: `2026-07-08T23:08:36+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump wants to leave the Iran war behind. That won't happen soon - Reuters
-- source: Reuters
-- published_at: `2026-07-08T22:33:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
