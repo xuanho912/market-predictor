@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-08T23:58:10.708794+00:00`
+- generated_at: `2026-07-09T00:21:35.789966+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `7`
-- event_detection_confidence: `86`
+- event_detection_confidence: `84`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Trump wants to leave the Iran war behind. That won't happen soon - Reuters
+- source: Reuters
+- published_at: `2026-07-08T22:36:38+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Oil rises more than a dollar per barrel as US launches fresh strikes against Iran - Reuters
 - source: Reuters
-- published_at: `2026-07-08T22:10:36+00:00`
+- published_at: `2026-07-08T22:23:53+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -70,13 +78,5 @@
 - headline: Qatari LNG tanker awaits salvage off Oman after projectile strike - Reuters
 - source: Reuters
 - published_at: `2026-07-08T13:47:04+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Chevron-chartered oil tanker caught in Russia-Ukraine war as Kyiv steps up attacks - Reuters
-- source: Reuters
-- published_at: `2026-07-08T12:24:46+00:00`
 - importance_score: `100`
 - confidence: `high`
