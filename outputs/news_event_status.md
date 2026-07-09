@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-09T07:06:08.183318+00:00`
+- generated_at: `2026-07-09T15:37:24.316356+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
-- event_detection_confidence: `81`
+- major_event_count: `16`
+- event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `50`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
@@ -27,6 +27,46 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Iran fired ten ballistic missiles on Jordan's Azraq military base - Reuters
+- source: Reuters
+- published_at: `2026-07-09T13:31:37+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Oil tanker traffic through Hormuz at near standstill as attacks strain Iran truce - Reuters
+- source: Reuters
+- published_at: `2026-07-09T12:45:45+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Platner out, US-Iran strikes, Air Force One and quantum leap - Reuters
+- source: Reuters
+- published_at: `2026-07-09T10:27:31+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: The Iran War threatened a food crisis. The next Gulf conflict could do the same. - Reuters
+- source: Reuters
+- published_at: `2026-07-09T10:00:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Bank of Japan sees growing inflation pressures from Iran war - Reuters
+- source: Reuters
+- published_at: `2026-07-09T05:14:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Morning Bid: Chip euphoria vies with war weariness - Reuters
 - source: Reuters
 - published_at: `2026-07-09T04:32:00+00:00`
@@ -35,11 +75,19 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil rises after US launches fresh strikes on Iran - Reuters
+- headline: Gulf companies are set to reveal the unequal toll of Iran war - Reuters
 - source: Reuters
-- published_at: `2026-07-09T01:04:00+00:00`
+- published_at: `2026-07-09T04:06:00+00:00`
 - importance_score: `100`
 - confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Dollar stands tall as new Gulf attacks fuel oil price surge, Fed hike bets - Reuters
+- source: Reuters
+- published_at: `2026-07-09T01:21:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,52 +95,12 @@
 - source: Reuters
 - published_at: `2026-07-08T23:08:36+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Trump wants to leave the Iran war behind. That won't happen soon - Reuters
 - source: Reuters
 - published_at: `2026-07-08T22:33:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil rises more than a dollar per barrel as US launches fresh strikes against Iran - Reuters
-- source: Reuters
-- published_at: `2026-07-08T22:23:53+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Trading Day: War on, risk-off: Stocks drop, crude jumps as Trump calls Iran peace deal 'over' - Reuters
-- source: Reuters
-- published_at: `2026-07-08T21:59:07+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US military is conducting fresh strikes on Iran - Reuters
-- source: Reuters
-- published_at: `2026-07-08T20:26:25+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Some war insurers advise shipowners to pause Hormuz voyages after attacks, sources say - Reuters
-- source: Reuters
-- published_at: `2026-07-08T18:02:02+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Eight Iranian army members killed in U.S. attacks on southern parts of Iran - Reuters
-- source: Reuters
-- published_at: `2026-07-08T16:03:24+00:00`
 - importance_score: `100`
 - confidence: `medium`
