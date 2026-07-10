@@ -1,6 +1,6 @@
 # High Confidence Edge Report
 
-Generated at: `2026-07-10T00:17:27.786644+00:00`
+Generated at: `2026-07-10T05:12:02.073787+00:00`
 
 Status: `historical_proxy_and_forward_pending`
 Sample size: `80`
@@ -221,12 +221,12 @@ Conclusion: `forward_validation_insufficient_keep_confidence_capped`
 - evidence_note: `Flow / positioning proxy attribution is tracked, but forward-only samples are still below the minimum gate.`
 
 ### flow_confirmed_signals
-- sample_size: `0`
-- 3d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 5d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 10d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 20d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 60d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- sample_size: `20`
+- 3d: sample `20`, hit `0.4`, avg `-0.008224`, median `-0.001811`, mae `0.013729`
+- 5d: sample `20`, hit `0.3`, avg `-0.010349`, median `-0.008162`, mae `0.016164`
+- 10d: sample `20`, hit `0.3`, avg `-0.005093`, median `-0.007011`, mae `0.017546`
+- 20d: sample `20`, hit `0.75`, avg `0.014507`, median `0.022652`, mae `0.030075`
+- 60d: sample `20`, hit `0.65`, avg `0.034003`, median `0.059495`, mae `0.06966`
 
 ### flow_conflicted_signals
 - sample_size: `0`
@@ -237,12 +237,12 @@ Conclusion: `forward_validation_insufficient_keep_confidence_capped`
 - 60d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
 
 ### bounce_with_flow_support
-- sample_size: `0`
-- 3d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 5d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 10d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 20d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 60d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- sample_size: `20`
+- 3d: sample `20`, hit `0.4`, avg `-0.008224`, median `-0.001811`, mae `0.013729`
+- 5d: sample `20`, hit `0.3`, avg `-0.010349`, median `-0.008162`, mae `0.016164`
+- 10d: sample `20`, hit `0.3`, avg `-0.005093`, median `-0.007011`, mae `0.017546`
+- 20d: sample `20`, hit `0.75`, avg `0.014507`, median `0.022652`, mae `0.030075`
+- 60d: sample `20`, hit `0.65`, avg `0.034003`, median `0.059495`, mae `0.06966`
 
 ### bounce_with_flow_conflict
 - sample_size: `0`

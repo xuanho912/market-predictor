@@ -1,6 +1,6 @@
 # Breadth Impact Audit
 
-Generated at: `2026-07-10T00:17:38.096444Z`
+Generated at: `2026-07-10T05:12:12.234205Z`
 
 ## Summary
 
@@ -18,8 +18,8 @@ Generated at: `2026-07-10T00:17:38.096444Z`
 |---|---:|---:|---|---|---|---|---:|---:|---:|---|---|
 | SPY | True | False | STRONG_EDGE | STRONG_EDGE | bounce_path | bounce_path | 0.0434 | 0 | 8 | SPY breadth supports bounce_path: internal resonance is mixed, support score 85%, above 20d/50d MA 67%/67%. | SPY breadth improves confidence in the primary path, but forward validation is still required. |
 | QQQ | False | True | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0957 | 0 | -3 | QQQ breadth conflicts with bounce_path: conflict score 66%, internal resonance is weak. | QQQ breadth conflict or failed-bounce risk is elevated; watch new lows, percent above 20/50d MA and sector participation. |
-| IWM | True | False | STRONG_EDGE | STRONG_EDGE | bounce_path | bounce_path | 0.046 | 0 | 4 | IWM breadth is mixed for bounce_path: support score 58%, conflict score 32%, internal resonance is mixed. | IWM breadth is useful context but not strong enough to validate the primary path by itself. |
-| DIA | True | False | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0313 | 0 | 8 | DIA breadth supports bounce_path: internal resonance is aligned, support score 98%, above 20d/50d MA 63%/63%. | DIA breadth improves confidence in the primary path, but forward validation is still required. |
+| IWM | True | False | STRONG_EDGE | STRONG_EDGE | bounce_path | bounce_path | 0.0461 | 0 | 4 | IWM breadth is mixed for bounce_path: support score 58%, conflict score 32%, internal resonance is mixed. | IWM breadth is useful context but not strong enough to validate the primary path by itself. |
+| DIA | True | False | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0314 | 0 | 8 | DIA breadth supports bounce_path: internal resonance is aligned, support score 98%, above 20d/50d MA 63%/63%. | DIA breadth improves confidence in the primary path, but forward validation is still required. |
 
 ## Forward Validation
 
