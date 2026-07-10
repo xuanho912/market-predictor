@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-10T07:05:26.451975+00:00`
+- generated_at: `2026-07-10T15:04:32.650250+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `15`
-- event_detection_confidence: `70`
+- event_detection_confidence: `66`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `25`
+- confirmation_score: `50`
 
 ## Dashboard Note
 
@@ -25,20 +25,12 @@
 
 ## Major Events
 
-### geopolitical_risk_escalation / risk_off
-
-- headline: Gold heads for weekly drop as Gulf attacks reinforce rate-hike bets - Reuters
-- source: Reuters
-- published_at: `2026-07-10T03:13:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
 ### geopolitical_risk_easing / risk_on
 
 - headline: Trading Day: What war? Chip-led rally helps markets ignore on-again, off-again US-Iran truce - Reuters
 - source: Reuters
 - published_at: `2026-07-09T23:44:34+00:00`
-- importance_score: `100`
+- importance_score: `99`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -49,14 +41,6 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### credit_stress / risk_off
-
-- headline: Why Salesforce is staying in the portfolio despite a harsh analyst downgrade
-- source: CNBC
-- published_at: `2026-07-09T18:39:25+00:00`
-- importance_score: `96`
-- confidence: `medium`
-
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Iran fired ten ballistic missiles on Jordan's Azraq military base - Reuters
@@ -65,13 +49,13 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_easing / risk_on
+### credit_stress / risk_off
 
-- headline: Oil tanker traffic through Hormuz at near standstill as attacks strain Iran truce - Reuters
-- source: Reuters
-- published_at: `2026-07-09T12:45:45+00:00`
-- importance_score: `99`
-- confidence: `high`
+- headline: Why Salesforce is staying in the portfolio despite a harsh analyst downgrade
+- source: CNBC
+- published_at: `2026-07-09T18:39:25+00:00`
+- importance_score: `94`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -97,10 +81,26 @@
 - importance_score: `100`
 - confidence: `medium`
 
+### geopolitical_risk_easing / risk_on
+
+- headline: Oil tanker traffic through Hormuz at near standstill as attacks strain Iran truce - Reuters
+- source: Reuters
+- published_at: `2026-07-09T12:45:45+00:00`
+- importance_score: `97`
+- confidence: `medium`
+
 ### geopolitical_risk_escalation / risk_off
 
 - headline: As Iran war rolls on, some executives say the 'worst is behind us' - Reuters
 - source: Reuters
 - published_at: `2026-07-09T09:02:06+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Bank of Japan sees growing inflation pressures from Iran war - Reuters
+- source: Reuters
+- published_at: `2026-07-09T05:14:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
