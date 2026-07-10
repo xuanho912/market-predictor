@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-10T15:04:32.650250+00:00`
+- generated_at: `2026-07-10T21:34:21.047901+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `15`
-- event_detection_confidence: `66`
+- major_event_count: `10`
+- event_detection_confidence: `63`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `50`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
@@ -30,8 +30,8 @@
 - headline: Trading Day: What war? Chip-led rally helps markets ignore on-again, off-again US-Iran truce - Reuters
 - source: Reuters
 - published_at: `2026-07-09T23:44:34+00:00`
-- importance_score: `99`
-- confidence: `high`
+- importance_score: `98`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -49,20 +49,20 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### credit_stress / risk_off
-
-- headline: Why Salesforce is staying in the portfolio despite a harsh analyst downgrade
-- source: CNBC
-- published_at: `2026-07-09T18:39:25+00:00`
-- importance_score: `94`
-- confidence: `medium`
-
 ### geopolitical_risk_escalation / risk_off
 
 - headline: EU drafts 'electrification' plan to curb oil and gas use, after Iran war disruption - Reuters
 - source: Reuters
 - published_at: `2026-07-09T11:31:52+00:00`
 - importance_score: `100`
+- confidence: `medium`
+
+### credit_stress / risk_off
+
+- headline: Why Salesforce is staying in the portfolio despite a harsh analyst downgrade
+- source: CNBC
+- published_at: `2026-07-09T18:39:25+00:00`
+- importance_score: `92`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
@@ -81,26 +81,26 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_easing / risk_on
-
-- headline: Oil tanker traffic through Hormuz at near standstill as attacks strain Iran truce - Reuters
-- source: Reuters
-- published_at: `2026-07-09T12:45:45+00:00`
-- importance_score: `97`
-- confidence: `medium`
-
 ### geopolitical_risk_escalation / risk_off
 
 - headline: As Iran war rolls on, some executives say the 'worst is behind us' - Reuters
 - source: Reuters
 - published_at: `2026-07-09T09:02:06+00:00`
-- importance_score: `100`
+- importance_score: `99`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
+### geopolitical_risk_easing / risk_on
 
-- headline: Bank of Japan sees growing inflation pressures from Iran war - Reuters
+- headline: Oil tanker traffic through Hormuz at near standstill as attacks strain Iran truce - Reuters
 - source: Reuters
-- published_at: `2026-07-09T05:14:00+00:00`
-- importance_score: `100`
+- published_at: `2026-07-09T12:45:45+00:00`
+- importance_score: `95`
+- confidence: `medium`
+
+### fed_hawkish / risk_off
+
+- headline: Kalshi traders think gas prices will stay higher for longer as U.S.-Iran tensions heat back up
+- source: CNBC
+- published_at: `2026-07-09T18:11:22+00:00`
+- importance_score: `82`
 - confidence: `medium`
