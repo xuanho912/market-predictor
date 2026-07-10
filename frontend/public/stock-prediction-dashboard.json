@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-07-10T05:12:12.666040+00:00",
+  "generated_at": "2026-07-10T07:05:37.578022+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-07-10T05:12:12.669635+00:00",
+    "generated_at": "2026-07-10T07:05:37.581501+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 77,
     "risk_score_effectiveness": {
@@ -241,6 +241,12 @@
           "event_risk_flag": "low",
           "headlines": [
             {
+              "datetime": 1783651500,
+              "headline": "The Nuclear Resurgence",
+              "source": "SeekingAlpha",
+              "url": "https://finnhub.io/api/news?id=766b77a1c942bb38e54da2dba5145ed2e81e9c0d6d62a2beddff0cf1e9416031"
+            },
+            {
               "datetime": 1783597032,
               "headline": "Energy Transition Update - Statkraft Expands With Major Wind Project In Brazil",
               "source": "Yahoo",
@@ -281,19 +287,13 @@
               "headline": "Nvidia Is Allegedly Delaying Its Kyber Rack-Scale Architecture by More Than 12 Months. What This Means for NVDA Stock.",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=340bdcb56321bcb61fa8bbf54c66991d0fa98f609b84b74391dc0daed1edf54e"
-            },
-            {
-              "datetime": 1783513852,
-              "headline": "3 Powerful Nuclear Energy Stocks to Buy in July",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=f240aacb53ffd1eb2a3026b437a97902f03ee590ab93d3ff91d17ce804eefec3"
             }
           ],
-          "major_company_headline": "Energy Transition Update - Statkraft Expands With Major Wind Project In Brazil",
-          "news_count_24h": 2,
-          "news_count_72h": 12,
-          "news_risk_score": 36.0,
-          "news_sentiment": "neutral"
+          "major_company_headline": "The Nuclear Resurgence",
+          "news_count_24h": 3,
+          "news_count_72h": 13,
+          "news_risk_score": 39.0,
+          "news_sentiment": "positive"
         },
         "price_trend": {
           "close": 250.74000549316406,
@@ -815,6 +815,7 @@
           "scenario": "stock_downside_continuation"
         },
         "supporting_signals": [
+          "近期公司新闻偏正面。",
           "基础财务指标已接入且收入增长为正。"
         ]
       },
@@ -2142,15 +2143,16 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Energy Transition Update - Statkraft Expands With Major Wind Project In Brazil",
+              "公司新闻已接入: The Nuclear Resurgence",
+              "新闻情绪偏正",
               "未来 30 天存在财报催化：2026-08-06"
             ],
             "max_points": 10,
             "missing_fields": [],
             "name": "catalyst",
-            "points": 6.0,
-            "score_pct": 60.0,
-            "status": "neutral"
+            "points": 8.0,
+            "score_pct": 80.0,
+            "status": "supportive"
           },
           "flow": {
             "evidence": [
@@ -2232,7 +2234,7 @@
           "expected_return_60d": -0.0143,
           "max_drawdown_risk_20d": 0.09,
           "max_drawdown_risk_60d": 0.2232,
-          "outperformance_probability_20d": 0.4432,
+          "outperformance_probability_20d": 0.4512,
           "risk_reward_ratio": 0.33,
           "upside_potential_60d": 0.0726
         },
@@ -2254,7 +2256,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "Energy Transition Update - Statkraft Expands With Major Wind Project In Brazil",
+          "catalyst": "The Nuclear Resurgence",
           "expectation_gap": [
             "未来 30 天财报可能成为重新定价窗口"
           ],
@@ -2271,7 +2273,7 @@
           "primary_path": "stock_failed_bounce",
           "valuation_repricing": "估值扩张证据不足或存在压力"
         },
-        "total_score": 20.5,
+        "total_score": 22.5,
         "validation_status": "not_yet_validated",
         "version": "stock_alpha_score_v1"
       },
@@ -2297,8 +2299,8 @@
         "module_scores": {
           "alpha_quality": {
             "evidence": "个股 Alpha 评分已接入",
-            "reason": "score=20.5; grade=weak_or_no_alpha_edge; benchmark=SPY",
-            "score": 20.5,
+            "reason": "score=22.5; grade=weak_or_no_alpha_edge; benchmark=SPY",
+            "score": 22.5,
             "status": "conflicting"
           },
           "fundamentals_earnings": {
@@ -2320,10 +2322,10 @@
             "status": "conflicting"
           },
           "news_event": {
-            "evidence": "公司新闻源已接入",
-            "reason": "Energy Transition Update - Statkraft Expands With Major Wind Project In Brazil",
-            "score": 56.52,
-            "status": "neutral"
+            "evidence": "近期公司新闻偏支持",
+            "reason": "The Nuclear Resurgence",
+            "score": 71.98,
+            "status": "supportive"
           },
           "options_volatility": {
             "evidence": "个股期权/隐含波动率未完整接入",
@@ -2357,14 +2359,16 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 32.06,
+        "stock_confluence_score": 33.36,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
+          "近期公司新闻偏支持",
           "基础财务指标偏支持"
         ],
         "validation_status": "not_yet_validated"
       },
       "supporting_signals": [
+        "近期公司新闻偏正面。",
         "基础财务指标已接入且收入增长为正。"
       ],
       "symbol": "CEG",
@@ -2438,6 +2442,12 @@
           "event_risk_flag": "high",
           "headlines": [
             {
+              "datetime": 1783655460,
+              "headline": "Costco's June Sales Rose 10.6%, but the Stock Fell 4%. Here's What Spooked Investors.",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=f8cc3c4e4d4679716b495438d89ecea0426202de31649840d05bdd4e31626468"
+            },
+            {
               "datetime": 1783654205,
               "headline": "Why Mara Holdings Stock Spiked Today",
               "source": "Yahoo",
@@ -2478,15 +2488,9 @@
               "headline": "Louis Navellier flags three top tech stocks for market growth",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=ba93a4d872500b22a8b116d090a3a5ba5c75ee04ab6309d8d9f4c929491b2ee5"
-            },
-            {
-              "datetime": 1783648201,
-              "headline": "Advanced Micro Devices vs. Nvidia: What Revenue Growth Rates and Scale Reveal for Investors",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=6d78eb4c73a0cc2877a3cdd366b067c660349d34f28c83b5f2c8c5029d6263ea"
             }
           ],
-          "major_company_headline": "Why Mara Holdings Stock Spiked Today",
+          "major_company_headline": "Costco's June Sales Rose 10.6%, but the Stock Fell 4%. Here's What Spooked Investors.",
           "news_count_24h": 20,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
@@ -4348,7 +4352,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Why Mara Holdings Stock Spiked Today",
+              "公司新闻已接入: Costco's June Sales Rose 10.6%, but the Stock Fell 4%. Here's What Spooked Investors.",
               "新闻情绪偏正",
               "增长数据具备 EPS 上修叙事基础"
             ],
@@ -4462,7 +4466,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "Why Mara Holdings Stock Spiked Today",
+          "catalyst": "Costco's June Sales Rose 10.6%, but the Stock Fell 4%. Here's What Spooked Investors.",
           "expectation_gap": [
             "收入增长较强，具备正向预期差基础",
             "EPS 增长较强，可能支持盈利上修叙事"
@@ -4649,12 +4653,19 @@
           "earnings_within_30d": true,
           "earnings_within_7d": false,
           "event_risk_flag": "low",
-          "headlines": [],
-          "major_company_headline": null,
-          "news_count_24h": 0,
-          "news_count_72h": 0,
-          "news_risk_score": 20.0,
-          "news_sentiment": "neutral"
+          "headlines": [
+            {
+              "datetime": 1783651500,
+              "headline": "The Nuclear Resurgence",
+              "source": "SeekingAlpha",
+              "url": "https://finnhub.io/api/news?id=766b77a1c942bb38e54da2dba5145ed2e81e9c0d6d62a2beddff0cf1e9416031"
+            }
+          ],
+          "major_company_headline": "The Nuclear Resurgence",
+          "news_count_24h": 1,
+          "news_count_72h": 1,
+          "news_risk_score": 23.0,
+          "news_sentiment": "positive"
         },
         "price_trend": {
           "close": 9.029999732971191,
@@ -5178,7 +5189,7 @@
           "scenario": "stock_failed_bounce"
         },
         "supporting_signals": [
-          "当前没有足够强的多源支持证据。"
+          "近期公司新闻偏正面。"
         ]
       },
       "sector_etf": "XLU",
@@ -6505,15 +6516,16 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入",
+              "公司新闻已接入: The Nuclear Resurgence",
+              "新闻情绪偏正",
               "未来 30 天存在财报催化：2026-08-05"
             ],
             "max_points": 10,
             "missing_fields": [],
             "name": "catalyst",
-            "points": 6.0,
-            "score_pct": 60.0,
-            "status": "neutral"
+            "points": 8.0,
+            "score_pct": 80.0,
+            "status": "supportive"
           },
           "flow": {
             "evidence": [
@@ -6620,7 +6632,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "2026-08-05",
+          "catalyst": "The Nuclear Resurgence",
           "expectation_gap": [
             "未来 30 天财报可能成为重新定价窗口"
           ],
@@ -6689,10 +6701,10 @@
             "status": "conflicting"
           },
           "news_event": {
-            "evidence": "公司新闻源已接入",
-            "reason": "no major headline",
-            "score": 51.4,
-            "status": "neutral"
+            "evidence": "近期公司新闻偏支持",
+            "reason": "The Nuclear Resurgence",
+            "score": 66.86,
+            "status": "supportive"
           },
           "options_volatility": {
             "evidence": "个股期权/隐含波动率未完整接入",
@@ -6726,15 +6738,16 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 30.83,
+        "stock_confluence_score": 31.96,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
+          "近期公司新闻偏支持",
           "历史相似结构支持主路径"
         ],
         "validation_status": "not_yet_validated"
       },
       "supporting_signals": [
-        "当前没有足够强的多源支持证据。"
+        "近期公司新闻偏正面。"
       ],
       "symbol": "SMR",
       "validation_status": "not_yet_validated"
@@ -8964,7 +8977,7 @@
       "top_candidate": "SMR",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-07-10T05:12:12.666318+00:00",
+    "generated_at": "2026-07-10T07:05:37.578265+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -8986,7 +8999,7 @@
         "candidate_type": "downside_continuation",
         "catalyst_score": 62.25,
         "company_name": "Nuscale Power Corp",
-        "confluence_score": 30.83,
+        "confluence_score": 31.96,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9003,7 +9016,7 @@
           "mid": 8.99,
           "range_pct": 0.0886
         },
-        "final_radar_score": 48.39,
+        "final_radar_score": 48.53,
         "forecast_date": "2026-07-09",
         "invalidation_level": 8.5,
         "last_close": 9.029999732971191,
@@ -9015,6 +9028,7 @@
           "成交量不确认当前路径"
         ],
         "main_supporting_evidence": [
+          "近期公司新闻偏支持",
           "历史相似结构支持主路径"
         ],
         "market_context": "risk_off_pressure",
@@ -9143,19 +9157,19 @@
       },
       {
         "alpha_fields": {
-          "alpha_score": 20.5,
+          "alpha_score": 22.5,
           "expected_return_60d": -0.0143,
           "forecast_grade": "weak_or_no_alpha_edge",
           "main_logic": "电力/核能/能源基础设施逻辑：政策与订单催化、盈利兑现能力、利率敏感度和资金确认。",
-          "outperformance_probability_20d": 0.4432,
+          "outperformance_probability_20d": 0.4512,
           "risk_reward_ratio": 0.33
         },
-        "alpha_quality_score": 20.5,
+        "alpha_quality_score": 22.5,
         "as_of": "2026-07-09",
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 61.47,
         "company_name": "Constellation Energy Corp",
-        "confluence_score": 32.06,
+        "confluence_score": 33.36,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9172,7 +9186,7 @@
           "mid": 250.29,
           "range_pct": 0.039
         },
-        "final_radar_score": 45.76,
+        "final_radar_score": 46.27,
         "forecast_date": "2026-07-09",
         "invalidation_level": 228.63,
         "last_close": 250.74000549316406,
@@ -9184,6 +9198,7 @@
           "个股 Alpha 评分已接入"
         ],
         "main_supporting_evidence": [
+          "近期公司新闻偏支持",
           "基础财务指标偏支持"
         ],
         "market_context": "risk_off_pressure",
@@ -9194,8 +9209,8 @@
           "earnings": "available"
         },
         "next_day_move_probability": 0.7139,
-        "one_line_reason": "failed_bounce_risk: Alpha 20 / 弹性 86 / 成交量 48 / 相对强弱 20 / 催化 61 / 大盘 risk_off_pressure / 板块 neutral",
-        "outperformance_probability_20d": 0.4432,
+        "one_line_reason": "failed_bounce_risk: Alpha 22 / 弹性 86 / 成交量 48 / 相对强弱 20 / 催化 61 / 大盘 risk_off_pressure / 板块 neutral",
+        "outperformance_probability_20d": 0.4512,
         "primary_probability": 0.2478,
         "primary_scenario": "stock_failed_bounce",
         "radar_level": "WATCH",
