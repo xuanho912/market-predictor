@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-10T21:34:21.047901+00:00`
+- generated_at: `2026-07-10T22:37:32.696973+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `10`
-- event_detection_confidence: `63`
+- event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,38 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US insists Iran commit to stopping attacks in Hormuz strait, say US officials - Reuters
+- source: Reuters
+- published_at: `2026-07-10T21:04:12+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Trump says US agreed to Iran's request to continue talks, but ceasefire is over - Reuters
+- source: Reuters
+- published_at: `2026-07-10T19:31:16+00:00`
+- importance_score: `99`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Fed report cites 'stepped-up' inflation due to tariffs, Iran war, AI buildout - Reuters
+- source: Reuters
+- published_at: `2026-07-10T16:30:28+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: ECB is back to square one as US-Iran war resumes - Reuters
+- source: Reuters
+- published_at: `2026-07-10T07:29:44+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_easing / risk_on
 
@@ -49,44 +81,12 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
-
-- headline: EU drafts 'electrification' plan to curb oil and gas use, after Iran war disruption - Reuters
-- source: Reuters
-- published_at: `2026-07-09T11:31:52+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
 ### credit_stress / risk_off
 
 - headline: Why Salesforce is staying in the portfolio despite a harsh analyst downgrade
 - source: CNBC
 - published_at: `2026-07-09T18:39:25+00:00`
 - importance_score: `92`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Platner out, US-Iran strikes, Air Force One and quantum leap - Reuters
-- source: Reuters
-- published_at: `2026-07-09T10:27:31+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: The Iran War threatened a food crisis. The next Gulf conflict could do the same. - Reuters
-- source: Reuters
-- published_at: `2026-07-09T10:00:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: As Iran war rolls on, some executives say the 'worst is behind us' - Reuters
-- source: Reuters
-- published_at: `2026-07-09T09:02:06+00:00`
-- importance_score: `99`
 - confidence: `medium`
 
 ### geopolitical_risk_easing / risk_on
