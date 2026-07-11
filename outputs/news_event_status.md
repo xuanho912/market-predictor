@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-11T06:02:40.614607+00:00`
+- generated_at: `2026-07-11T13:57:14.354151+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
+- major_event_count: `7`
 - event_detection_confidence: `69`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -39,15 +39,23 @@
 - source: Reuters
 - published_at: `2026-07-10T21:36:03+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Occidental's quarterly realized oil prices jump amid Iran war disruption - Reuters
+- source: Reuters
+- published_at: `2026-07-10T21:09:03+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_easing / risk_on
 
 - headline: Trump says US agreed to Iran's request to continue talks, but ceasefire is over - Reuters
 - source: Reuters
 - published_at: `2026-07-10T22:25:15+00:00`
-- importance_score: `98`
-- confidence: `high`
+- importance_score: `96`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -71,28 +79,4 @@
 - source: Bloomberg
 - published_at: `2026-07-10T03:51:03+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Trading Day: What war? Chip-led rally helps markets ignore on-again, off-again US-Iran truce - Reuters
-- source: Reuters
-- published_at: `2026-07-09T23:44:34+00:00`
-- importance_score: `96`
-- confidence: `medium`
-
-### credit_stress / risk_off
-
-- headline: Why Salesforce is staying in the portfolio despite a harsh analyst downgrade
-- source: CNBC
-- published_at: `2026-07-09T18:39:25+00:00`
-- importance_score: `90`
-- confidence: `medium`
-
-### fed_hawkish / risk_off
-
-- headline: Kalshi traders think gas prices will stay higher for longer as U.S.-Iran tensions heat back up
-- source: CNBC
-- published_at: `2026-07-09T18:11:22+00:00`
-- importance_score: `80`
 - confidence: `medium`
