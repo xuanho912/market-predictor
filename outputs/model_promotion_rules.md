@@ -1,6 +1,6 @@
 # Model Promotion Rules
 
-Generated at: `2026-07-10T23:46:01.125514+00:00`
+Generated at: `2026-07-11T00:09:53.583794+00:00`
 
 ## Minimum Forward Sample Gates
 
@@ -67,11 +67,11 @@ Generated at: `2026-07-10T23:46:01.125514+00:00`
 - failed_gates: `['3d', '5d', '10d', '20d', '60d']`
 
 ### challenger_v2_event_reaction_overlay
-- status: `blocked_missing_required_data`
+- status: `insufficient_forward_evidence`
 - eligible: `False`
-- reason: `Missing news_event_overlay_available; cannot generate this shadow forecast without available news/event intelligence and enough forecast-deviation evidence that event reactions need shadow validation.`
+- reason: `Forward validation sample gates are not met.`
 - wins_vs_baseline: `0`
-- failed_gates: `['news_event_overlay_available']`
+- failed_gates: `['3d', '5d', '10d', '20d', '60d']`
 
 ### challenger_v3_full_options_flow
 - status: `blocked_missing_required_data`
