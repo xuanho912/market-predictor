@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-11T13:57:14.354151+00:00`
+- generated_at: `2026-07-12T13:59:01.826598+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
-- event_detection_confidence: `69`
+- major_event_count: `4`
+- event_detection_confidence: `81`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,56 +27,32 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Trump says missiles aimed at Iran if Tehran targets US president - Reuters
+- headline: US says it launched strikes against Iran after attack on Cyprus-flagged container ship - Reuters
 - source: Reuters
-- published_at: `2026-07-11T03:35:00+00:00`
+- published_at: `2026-07-12T00:51:26+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US insists Iran commit to stopping attacks in Hormuz strait, say US officials - Reuters
+- headline: Iran expands attacks on Gulf states after US strikes, says Strait of Hormuz closed - Reuters
 - source: Reuters
-- published_at: `2026-07-10T21:36:03+00:00`
+- published_at: `2026-07-11T23:21:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran's IRGC navy says Strait of Hormuz closed until further notice, state media reports - Reuters
+- source: Reuters
+- published_at: `2026-07-11T22:32:09+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Occidental's quarterly realized oil prices jump amid Iran war disruption - Reuters
+- headline: Trump says missiles aimed at Iran if Tehran targets US president - Reuters
 - source: Reuters
-- published_at: `2026-07-10T21:09:03+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Trump says US agreed to Iran's request to continue talks, but ceasefire is over - Reuters
-- source: Reuters
-- published_at: `2026-07-10T22:25:15+00:00`
-- importance_score: `96`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Fed report cites 'stepped-up' inflation due to tariffs, Iran war, AI buildout - Reuters
-- source: Reuters
-- published_at: `2026-07-10T16:30:28+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: ECB is back to square one as US-Iran war resumes - Reuters
-- source: Reuters
-- published_at: `2026-07-10T07:29:44+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: AI, Iran war risks weigh on Indian IT firms’ earnings outlook
-- source: Bloomberg
-- published_at: `2026-07-10T03:51:03+00:00`
+- published_at: `2026-07-11T03:35:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
