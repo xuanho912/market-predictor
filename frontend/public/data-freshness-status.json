@@ -1,17 +1,12 @@
 {
-  "affected_symbols": [
-    "SPY",
-    "QQQ",
-    "IWM",
-    "DIA"
-  ],
-  "can_append_forecast_record": false,
+  "affected_symbols": [],
+  "can_append_forecast_record": true,
   "can_backfill_completed_outcomes": true,
   "current_date": "2026-07-13",
-  "current_time_us_eastern": "2026-07-13T11:14:56.452022-04:00",
-  "data_freshness_status": "market_open_unconfirmed",
-  "expected_latest_trading_date": "2026-07-10",
-  "generated_at": "2026-07-13T15:14:56.452022+00:00",
+  "current_time_us_eastern": "2026-07-13T17:28:28.711665-04:00",
+  "data_freshness_status": "fresh",
+  "expected_latest_trading_date": "2026-07-13",
+  "generated_at": "2026-07-13T21:28:28.711665+00:00",
   "guardrails": [
     "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
     "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -23,13 +18,13 @@
   "is_today_us_market_trading_day": true,
   "last_successful_core_market_update": "2026-07-13",
   "last_successful_update": "2026-07-13",
-  "latest_confirmed_market_date": "2026-07-10",
+  "latest_confirmed_market_date": "2026-07-13",
   "latest_market_date": "2026-07-13",
-  "latest_market_session_status": "intraday_unconfirmed",
+  "latest_market_session_status": "completed_or_prior_session",
   "provider_status": {
     "BAA_SPREAD": {
       "fallback_used": false,
-      "latest_date": "2026-07-09",
+      "latest_date": "2026-07-10",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -41,7 +36,7 @@
     },
     "DFII10": {
       "fallback_used": false,
-      "latest_date": "2026-07-09",
+      "latest_date": "2026-07-10",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -53,7 +48,7 @@
     },
     "DGS10": {
       "fallback_used": false,
-      "latest_date": "2026-07-09",
+      "latest_date": "2026-07-10",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -65,7 +60,7 @@
     },
     "DGS2": {
       "fallback_used": false,
-      "latest_date": "2026-07-09",
+      "latest_date": "2026-07-10",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -77,7 +72,7 @@
     },
     "DGS3MO": {
       "fallback_used": false,
-      "latest_date": "2026-07-09",
+      "latest_date": "2026-07-10",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -413,7 +408,7 @@
     },
     "^SKEW": {
       "fallback_used": false,
-      "latest_date": "2026-07-10",
+      "latest_date": "2026-07-13",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -857,7 +852,7 @@
     },
     "options_SKEW": {
       "fallback_used": false,
-      "latest_date": "2026-07-10",
+      "latest_date": "2026-07-13",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -942,5 +937,5 @@
   },
   "stale_days": 0,
   "version": "data_freshness_gate_v3",
-  "warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-07-13，最近完整收盘交易日为 2026-07-10；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。"
+  "warning_message": "核心行情已更新至最新应有交易日 2026-07-13。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。"
 }

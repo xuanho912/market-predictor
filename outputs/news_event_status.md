@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-13T15:14:46.208529+00:00`
+- generated_at: `2026-07-13T21:28:19.865275+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `13`
-- event_detection_confidence: `76`
+- major_event_count: `16`
+- event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,17 +27,57 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: UK bans support for two Iranian groups over antisemitic attacks in Britain - Reuters
+- headline: Houthis fire missiles at Saudi Arabia, breaking years of calm - Reuters
 - source: Reuters
-- published_at: `2026-07-13T13:58:01+00:00`
+- published_at: `2026-07-13T19:55:26+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Houthis accuse Saudi Arabia of striking Sanaa airport, vow retaliation - Reuters
+- headline: Lawmakers demand Pentagon release findings from probe of Iran school strike - Reuters
 - source: Reuters
-- published_at: `2026-07-13T13:42:24+00:00`
+- published_at: `2026-07-13T19:43:44+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: UN maritime agency opposes Hormuz transit fees after Trump demands protection money
+- source: CNBC
+- published_at: `2026-07-13T18:28:04+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US to begin enforcing maritime blockade on Iran on Tuesday - Reuters
+- source: Reuters
+- published_at: `2026-07-13T18:24:59+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US forces strike Iranian submarine, ship maintenance facility - Reuters
+- source: Reuters
+- published_at: `2026-07-13T14:58:41+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Trump: Iran blockade reinstated, US to charge 20% on Strait of Hormuz cargo - Reuters
+- source: Reuters
+- published_at: `2026-07-13T14:54:03+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: UK bans support for two Iranian groups over antisemitic attacks in Britain - Reuters
+- source: Reuters
+- published_at: `2026-07-13T13:58:01+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -51,56 +91,16 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: London's FTSE 100 muted as Iran escalates strikes on US bases - Reuters
+- headline: EU and partners launch $1 billion scheme to help Gaza recover from war - Reuters
 - source: Reuters
-- published_at: `2026-07-13T09:59:51+00:00`
+- published_at: `2026-07-13T12:45:11+00:00`
 - importance_score: `100`
 - confidence: `high`
 
-### geopolitical_risk_escalation / risk_off
+### geopolitical_risk_easing / risk_on
 
-- headline: US and Iran trade attacks as Strait of Hormuz dispute deepens - Reuters
+- headline: Explainer: Why has the Iran-US ceasefire memorandum frayed? - Reuters
 - source: Reuters
-- published_at: `2026-07-13T06:47:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Hormuz traffic slows to two-month low as renewed US, Iran strikes raise safety risk - Reuters
-- source: Reuters
-- published_at: `2026-07-13T04:52:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Dollar wavers amid renewed Iran attacks, yen slides on pensions doubts - Reuters
-- source: Reuters
-- published_at: `2026-07-13T00:29:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil gains over 3% as fresh military strikes threaten Hormuz shipments - Reuters
-- source: Reuters
-- published_at: `2026-07-12T22:12:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US conducts strikes on Iran missile systems around Strait of Hormuz, Axios reports - Reuters
-- source: Reuters
-- published_at: `2026-07-12T16:43:45+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran's IRNA says 'enemy' launches missiles towards Qeshm Island - Reuters
-- source: Reuters
-- published_at: `2026-07-12T16:29:41+00:00`
-- importance_score: `100`
+- published_at: `2026-07-13T14:32:03+00:00`
+- importance_score: `98`
 - confidence: `high`

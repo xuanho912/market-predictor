@@ -3,11 +3,11 @@
     {
       "code": "insufficient_forward_samples",
       "completed_by_horizon": {
-        "10d": 40,
-        "1d": 76,
+        "10d": 44,
+        "1d": 80,
         "20d": 0,
-        "3d": 68,
-        "5d": 60,
+        "3d": 72,
+        "5d": 64,
         "60d": 0
       },
       "message": "Forward validation samples are not enough to rely on the model as a high-confidence forecasting system.",
@@ -19,14 +19,14 @@
         "checked_horizons": 4,
         "details": {
           "10d": {
-            "completed_count": 40,
-            "primary_closer_rate": 0.425,
-            "primary_vs_secondary_spread": 0.0
+            "completed_count": 44,
+            "primary_closer_rate": 0.4091,
+            "primary_vs_secondary_spread": -0.0227
           },
           "1d": {
-            "completed_count": 76,
-            "primary_closer_rate": 0.5526,
-            "primary_vs_secondary_spread": 0.1579
+            "completed_count": 80,
+            "primary_closer_rate": 0.55,
+            "primary_vs_secondary_spread": 0.15
           },
           "20d": {
             "completed_count": 0,
@@ -34,14 +34,14 @@
             "primary_vs_secondary_spread": null
           },
           "3d": {
-            "completed_count": 68,
-            "primary_closer_rate": 0.3824,
-            "primary_vs_secondary_spread": -0.0882
+            "completed_count": 72,
+            "primary_closer_rate": 0.375,
+            "primary_vs_secondary_spread": -0.0833
           },
           "5d": {
-            "completed_count": 60,
-            "primary_closer_rate": 0.5,
-            "primary_vs_secondary_spread": 0.0833
+            "completed_count": 64,
+            "primary_closer_rate": 0.4844,
+            "primary_vs_secondary_spread": 0.0469
           }
         },
         "message": "Primary-vs-secondary path advantage is not yet proven on enough forward samples.",
@@ -53,17 +53,17 @@
     }
   ],
   "data_completeness_score": 87.0,
-  "data_freshness_status": "market_open_unconfirmed",
-  "expected_latest_trading_date": "2026-07-10",
+  "data_freshness_status": "fresh",
+  "expected_latest_trading_date": "2026-07-13",
   "forward_completed_samples": {
-    "10d": 40,
-    "1d": 76,
+    "10d": 44,
+    "1d": 80,
     "20d": 0,
-    "3d": 68,
-    "5d": 60,
+    "3d": 72,
+    "5d": 64,
     "60d": 0
   },
-  "generated_at": "2026-07-13T15:14:56.699429+00:00",
+  "generated_at": "2026-07-13T21:28:28.948106+00:00",
   "guardrails": [
     "This gate does not modify Alpha v1 threshold, baseline_v1 or historical forecast records.",
     "This is forecast reliability assessment, not trading advice.",
@@ -84,69 +84,65 @@
     "Route repeated deviation themes into a challenger model rather than editing baseline_v1."
   ],
   "passes": [
+    "data_is_current_or_market_closed",
     "data_completeness_85_plus"
   ],
   "status": "RESEARCH_ONLY_FORWARD_VALIDATION_NEEDED",
   "symbol_readiness": {
     "DIA": {
       "confidence_score": 68.0,
-      "confluence_score": 48.0,
+      "confluence_score": 50.0,
       "edge_status": "RISK_WARNING",
-      "primary_probability": 0.319,
+      "primary_probability": 0.3365,
       "primary_scenario": "bearish_path",
-      "probability_gap": 0.0314,
+      "probability_gap": 0.0672,
       "readiness": "blocked_by_global_gate",
       "reason": "Global trust gate is not ready.",
-      "secondary_probability": 0.2876,
+      "secondary_probability": 0.2693,
       "secondary_scenario": "bounce_path"
     },
     "IWM": {
       "confidence_score": 74.0,
-      "confluence_score": 49.0,
+      "confluence_score": 52.0,
       "edge_status": "RISK_WARNING",
-      "primary_probability": 0.2897,
+      "primary_probability": 0.3021,
       "primary_scenario": "bearish_path",
-      "probability_gap": 0.0055,
+      "probability_gap": 0.0273,
       "readiness": "blocked_by_global_gate",
       "reason": "Global trust gate is not ready.",
-      "secondary_probability": 0.2842,
+      "secondary_probability": 0.2748,
       "secondary_scenario": "bounce_path"
     },
     "QQQ": {
       "confidence_score": 64.0,
-      "confluence_score": 49.0,
+      "confluence_score": 51.0,
       "edge_status": "RISK_WARNING",
-      "primary_probability": 0.2986,
+      "primary_probability": 0.2912,
       "primary_scenario": "bearish_path",
-      "probability_gap": 0.0146,
+      "probability_gap": 0.0126,
       "readiness": "blocked_by_global_gate",
       "reason": "Global trust gate is not ready.",
-      "secondary_probability": 0.284,
+      "secondary_probability": 0.2786,
       "secondary_scenario": "bounce_path"
     },
     "SPY": {
-      "confidence_score": 68.0,
-      "confluence_score": 50.0,
+      "confidence_score": 78.0,
+      "confluence_score": 54.0,
       "edge_status": "RISK_WARNING",
-      "primary_probability": 0.3504,
-      "primary_scenario": "bearish_path",
-      "probability_gap": 0.1057,
+      "primary_probability": 0.2995,
+      "primary_scenario": "bounce_path",
+      "probability_gap": 0.0084,
       "readiness": "blocked_by_global_gate",
       "reason": "Global trust gate is not ready.",
-      "secondary_probability": 0.2447,
-      "secondary_scenario": "bounce_path"
+      "secondary_probability": 0.2911,
+      "secondary_scenario": "bearish_path"
     }
   },
-  "trust_score": 28,
+  "trust_score": 40,
   "use_boundary": "Use as a research radar and scenario explainer only; do not treat it as a dependable forecasting edge.",
   "validation_type": "forecast_reliability_gate",
   "version": "forecast_trust_gate_v1",
   "warnings": [
-    {
-      "code": "market_open_unconfirmed",
-      "message": "Current data is an intraday or unconfirmed snapshot; do not freeze it as a validated daily forecast.",
-      "severity": "medium"
-    },
     {
       "code": "high_confidence_not_validated",
       "details": {
@@ -160,11 +156,11 @@
     {
       "code": "deviation_learning_needed",
       "details": {
-        "material": 104,
-        "material_rate": 0.4262,
+        "material": 111,
+        "material_rate": 0.4269,
         "message": "Material deviation rate is too high; confidence must remain capped.",
         "passed": false,
-        "reviewed": 244
+        "reviewed": 260
       },
       "message": "Material deviation rate is too high; confidence must remain capped.",
       "severity": "medium"

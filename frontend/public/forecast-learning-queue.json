@@ -17,12 +17,12 @@
       "allowed_action": "Run as shadow challenger and compare against baseline_v1 after future outcomes complete.",
       "candidate_id": "event_reaction_overlay",
       "driver_counts": {
-        "news_data_gap_limited_attribution": 104,
+        "news_data_gap_limited_attribution": 111,
         "news_event_driver_underweighted": 0,
-        "news_event_risk_underweighted": 53,
-        "risk_off_news_overweighted_or_resolved": 43
+        "news_event_risk_underweighted": 59,
+        "risk_off_news_overweighted_or_resolved": 44
       },
-      "evidence_count": 200,
+      "evidence_count": 214,
       "expected_improvement": "减少新闻驱动日对 1d/3d/5d 主路径的低估或误判。",
       "forbidden_action": "Do not alter baseline_v1, Alpha v1 threshold, historical forecasts, or displayed probabilities based on this queue alone.",
       "hypothesis": "重大新闻只有在价格、VIX、信用或期货反应确认后，才应该提高短线情景权重；未确认新闻应快速衰减。",
@@ -35,10 +35,10 @@
       "allowed_action": "Run as shadow challenger and compare against baseline_v1 after future outcomes complete.",
       "candidate_id": "price_structure_confirmation_overlay",
       "driver_counts": {
-        "model_underestimated_downside_or_failed_bounce": 53,
-        "model_underestimated_upside_or_repair": 51
+        "model_underestimated_downside_or_failed_bounce": 59,
+        "model_underestimated_upside_or_repair": 52
       },
-      "evidence_count": 104,
+      "evidence_count": 111,
       "expected_improvement": "减少路径已经被价格确认/否定但模型仍滞后的错误。",
       "forbidden_action": "Do not alter baseline_v1, Alpha v1 threshold, historical forecasts, or displayed probabilities based on this queue alone.",
       "hypothesis": "当价格结构确认或否定主路径时，情景排序应更快反映确认价、失效价和风险接管价。",
@@ -46,6 +46,22 @@
       "proposed_model_version": "challenger_v2_price_structure_confirmation_overlay",
       "readiness": "ready_for_shadow_challenger",
       "required_validation": "主路径确认价后的样本必须比未确认样本有更高 primary hit rate。"
+    },
+    {
+      "allowed_action": "Run as shadow challenger and compare against baseline_v1 after future outcomes complete.",
+      "candidate_id": "breadth_follow_through_overlay",
+      "driver_counts": {
+        "breadth_conflict_underweighted": 11,
+        "breadth_follow_through_underweighted": 12
+      },
+      "evidence_count": 23,
+      "expected_improvement": "降低只看指数表面导致的误判，改善 5d/10d/20d 路径排序。",
+      "forbidden_action": "Do not alter baseline_v1, Alpha v1 threshold, historical forecasts, or displayed probabilities based on this queue alone.",
+      "hypothesis": "指数反弹但内部参与不足时应提高失败反抽风险；内部共振连续改善时才提高趋势修复权重。",
+      "priority_score": 100,
+      "proposed_model_version": "challenger_v2_breadth_follow_through_overlay",
+      "readiness": "ready_for_shadow_challenger",
+      "required_validation": "breadth confirmed 样本必须优于 breadth conflicted 样本，并且 primary-vs-secondary spread 为正。"
     },
     {
       "allowed_action": "Run as shadow challenger and compare against baseline_v1 after future outcomes complete.",
@@ -65,22 +81,6 @@
     },
     {
       "allowed_action": "Run as shadow challenger and compare against baseline_v1 after future outcomes complete.",
-      "candidate_id": "breadth_follow_through_overlay",
-      "driver_counts": {
-        "breadth_conflict_underweighted": 10,
-        "breadth_follow_through_underweighted": 12
-      },
-      "evidence_count": 22,
-      "expected_improvement": "降低只看指数表面导致的误判，改善 5d/10d/20d 路径排序。",
-      "forbidden_action": "Do not alter baseline_v1, Alpha v1 threshold, historical forecasts, or displayed probabilities based on this queue alone.",
-      "hypothesis": "指数反弹但内部参与不足时应提高失败反抽风险；内部共振连续改善时才提高趋势修复权重。",
-      "priority_score": 100,
-      "proposed_model_version": "challenger_v2_breadth_follow_through_overlay",
-      "readiness": "ready_for_shadow_challenger",
-      "required_validation": "breadth confirmed 样本必须优于 breadth conflicted 样本，并且 primary-vs-secondary spread 为正。"
-    },
-    {
-      "allowed_action": "Run as shadow challenger and compare against baseline_v1 after future outcomes complete.",
       "candidate_id": "volatility_repair_overlay",
       "driver_counts": {
         "volatility_or_tail_risk_underweighted": 0,
@@ -96,7 +96,7 @@
       "required_validation": "至少 20 个 3d/5d 样本和 30 个 10d 样本证明路径排序优于 baseline_v1。"
     }
   ],
-  "completed_outcomes_reviewed": 244,
+  "completed_outcomes_reviewed": 260,
   "confidence_policy": {
     "cap_displayed_confidence_until_validated": true,
     "high_confidence_question": "insufficient_samples_for_high_confidence_validation",
@@ -111,7 +111,7 @@
   },
   "dominant_error_theme": "news_data_gap_limited_attribution",
   "evidence_level": "stronger_evidence",
-  "generated_at": "2026-07-13T15:14:56.699500+00:00",
+  "generated_at": "2026-07-13T21:28:28.948180+00:00",
   "global_learning_status": "shadow_challenger_queue_ready",
   "guardrails": [
     "This queue does not change baseline_v1 or Alpha v1.",
@@ -119,7 +119,7 @@
     "Historical replay may prioritize a challenger, but forward validation is required for promotion.",
     "No trading, PnL, buy/sell, entry or exit language is used."
   ],
-  "material_deviation_count": 104,
+  "material_deviation_count": 111,
   "next_best_actions": [
     "优先把 `event_reaction_overlay` 做成 shadow challenger：`challenger_v2_event_reaction_overlay`。",
     "让 challenger 与 baseline_v1 同时预测，未来用真实结果比较主路径命中率、路径误差和高置信样本表现。",
