@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-13T21:28:19.865275+00:00`
+- generated_at: `2026-07-13T22:34:31.159635+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `16`
@@ -89,18 +89,18 @@
 - importance_score: `100`
 - confidence: `high`
 
-### geopolitical_risk_escalation / risk_off
-
-- headline: EU and partners launch $1 billion scheme to help Gaza recover from war - Reuters
-- source: Reuters
-- published_at: `2026-07-13T12:45:11+00:00`
-- importance_score: `100`
-- confidence: `high`
-
 ### geopolitical_risk_easing / risk_on
 
 - headline: Explainer: Why has the Iran-US ceasefire memorandum frayed? - Reuters
 - source: Reuters
 - published_at: `2026-07-13T14:32:03+00:00`
 - importance_score: `98`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: EU and partners launch $1 billion scheme to help Gaza recover from war - Reuters
+- source: Reuters
+- published_at: `2026-07-13T12:45:11+00:00`
+- importance_score: `100`
 - confidence: `high`
