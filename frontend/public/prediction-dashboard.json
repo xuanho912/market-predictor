@@ -5792,7 +5792,7 @@
       "evidence_note": "Forward-only breadth attribution is still below the minimum sample gate; these buckets are tracked but not proof.",
       "status": "not_enough_forward_samples"
     },
-    "generated_at": "2026-07-14T21:30:11.087857Z",
+    "generated_at": "2026-07-14T22:37:16.073240Z",
     "notes": [
       "This audit compares the same run with true breadth provider disabled vs enabled.",
       "The audit does not change Alpha v1 and does not prove tradable alpha.",
@@ -5950,7 +5950,7 @@
   },
   "breadth_status": {
     "cache_root": "data/breadth_cache",
-    "generated_at": "2026-07-14T21:29:36.450825+00:00",
+    "generated_at": "2026-07-14T22:36:37.254962+00:00",
     "provider": "true_breadth_provider",
     "sector_participation_proxy": {
       "data_note": "Sector ETF proxy, not constituent-level sector breadth.",
@@ -6490,7 +6490,7 @@
   },
   "confluence_score": {
     "disclaimer": "Confluence is a forecast-confirmation layer, not a trading signal or execution recommendation.",
-    "generated_at": "2026-07-14T21:30:11.096922+00:00",
+    "generated_at": "2026-07-14T22:37:16.082685+00:00",
     "summary": {
       "average_confluence_score": 48.75,
       "mixed_or_no_edge_symbols": [
@@ -7175,10 +7175,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-07-14",
-    "current_time_us_eastern": "2026-07-14T17:30:11.097568-04:00",
+    "current_time_us_eastern": "2026-07-14T18:37:16.083339-04:00",
     "data_freshness_status": "fresh",
     "expected_latest_trading_date": "2026-07-14",
-    "generated_at": "2026-07-14T21:30:11.097568+00:00",
+    "generated_at": "2026-07-14T22:37:16.083339+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -7917,13 +7917,13 @@
       "finnhub_quote_SPY": {
         "fallback_used": false,
         "latest_date": null,
-        "missing_data": true,
-        "point_in_time_safe": false,
-        "real_data": false,
-        "rows": 0,
+        "missing_data": false,
+        "point_in_time_safe": true,
+        "real_data": true,
+        "rows": 1,
         "source": "finnhub",
-        "stale_data": false,
-        "status": "rate_limited",
+        "stale_data": true,
+        "status": "stale",
         "symbol": "finnhub_quote_SPY"
       },
       "finnhub_rates_data": {
@@ -8183,7 +8183,7 @@
         "expected_items": 5,
         "fallback_used": false,
         "headline_count": 40,
-        "major_event_count": 13,
+        "major_event_count": 11,
         "proxy_used": false,
         "real_data": true,
         "status": "available"
@@ -8225,7 +8225,7 @@
         "status": "available"
       }
     },
-    "generated_at": "2026-07-14T21:30:01.028727+00:00",
+    "generated_at": "2026-07-14T22:37:04.568357+00:00",
     "notes": [
       "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
       "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -9010,14 +9010,14 @@
       "finnhub_quote_SPY": {
         "fallback_used": false,
         "latest_date": null,
-        "missing_data": true,
-        "point_in_time_safe": false,
-        "rate_limited": true,
-        "real_data": false,
-        "rows": 0,
+        "missing_data": false,
+        "point_in_time_safe": true,
+        "rate_limited": false,
+        "real_data": true,
+        "rows": 1,
         "source": "finnhub",
-        "stale_data": false,
-        "status": "rate_limited",
+        "stale_data": true,
+        "status": "stale",
         "symbol": "finnhub_quote_SPY"
       },
       "finnhub_rates_data": {
@@ -9140,7 +9140,7 @@
         "event_detection_confidence": 71,
         "fallback_used": false,
         "latest_date": "2026-07-14",
-        "major_event_count": 13,
+        "major_event_count": 11,
         "missing_data": false,
         "missing_reason": null,
         "narrative": "geopolitics_escalation_risk_off",
@@ -9274,7 +9274,7 @@
       "fallback_used": true,
       "finnhub_available": true,
       "finnhub_missing": false,
-      "finnhub_rate_limited": true,
+      "finnhub_rate_limited": false,
       "flow_available": true,
       "flow_provider_status": "proxy",
       "flow_proxy_only": true,
@@ -9353,14 +9353,14 @@
       "fred_required": true,
       "fred_successful_series": [
         "HY_OAS",
+        "DGS3MO",
         "IG_OAS",
+        "DGS2",
+        "DGS10",
         "BAA_SPREAD",
         "DFII10",
-        "FINANCIAL_STRESS",
         "RECESSION",
-        "DGS10",
-        "DGS3MO",
-        "DGS2"
+        "FINANCIAL_STRESS"
       ],
       "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-07-14。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
       "gamma_available": false,
@@ -9370,7 +9370,6 @@
       "latest_market_date": "2026-07-14",
       "missing_data": true,
       "missing_key_sources": [
-        "finnhub_quote_SPY",
         "finnhub_candle_SPY",
         "finnhub_candle_QQQ",
         "finnhub_candle_IWM",
@@ -9395,8 +9394,8 @@
         "event_detection_confidence": 71,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-07-14T21:30:01.034450+00:00",
-        "major_event_count": 13,
+        "last_update": "2026-07-14T22:37:04.574330+00:00",
+        "major_event_count": 11,
         "missing_reason": null,
         "news_direction": "risk_off",
         "news_event_partial": false,
@@ -9407,7 +9406,7 @@
       },
       "news_event_available": true,
       "news_event_event_risk_level": "high",
-      "news_event_major_count": 13,
+      "news_event_major_count": 11,
       "news_event_missing_reason": null,
       "news_event_narrative": "geopolitics_escalation_risk_off",
       "news_event_partial": false,
@@ -9447,7 +9446,7 @@
   },
   "event_refresh": false,
   "feature_snapshot_v2": {
-    "generated_at": "2026-07-14T21:30:01.015414+00:00",
+    "generated_at": "2026-07-14T22:37:04.554887+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -9685,7 +9684,7 @@
     "version": "market_intelligence_engine_v2_features"
   },
   "feature_snapshot_v3": {
-    "generated_at": "2026-07-14T21:30:01.021502+00:00",
+    "generated_at": "2026-07-14T22:37:04.560868+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -9845,11 +9844,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.45,
           "top_headlines": [
-            "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
-            "Stocks gain on softer inflation, bank results while oil rises on US-Iran hostilities - Reuters",
-            "Johnson & Johnson has a chance to show it's more than just a rotation winner",
+            "Jim Cramer says concerns about AI market froth are overblown. Here's why",
             "Trump wants fees for Hormuz just like Iran - is that legal? - Reuters",
-            "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters"
+            "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
+            "Lawmakers seek to counter China, Iran repression tactics on US soil - Reuters",
+            "Johnson & Johnson has a chance to show it's more than just a rotation winner"
           ]
         },
         "price": {
@@ -10081,11 +10080,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.45,
           "top_headlines": [
-            "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
-            "Stocks gain on softer inflation, bank results while oil rises on US-Iran hostilities - Reuters",
-            "Johnson & Johnson has a chance to show it's more than just a rotation winner",
+            "Jim Cramer says concerns about AI market froth are overblown. Here's why",
             "Trump wants fees for Hormuz just like Iran - is that legal? - Reuters",
-            "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters"
+            "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
+            "Lawmakers seek to counter China, Iran repression tactics on US soil - Reuters",
+            "Johnson & Johnson has a chance to show it's more than just a rotation winner"
           ]
         },
         "price": {
@@ -10317,11 +10316,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.45,
           "top_headlines": [
-            "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
-            "Stocks gain on softer inflation, bank results while oil rises on US-Iran hostilities - Reuters",
-            "Johnson & Johnson has a chance to show it's more than just a rotation winner",
+            "Jim Cramer says concerns about AI market froth are overblown. Here's why",
             "Trump wants fees for Hormuz just like Iran - is that legal? - Reuters",
-            "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters"
+            "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
+            "Lawmakers seek to counter China, Iran repression tactics on US soil - Reuters",
+            "Johnson & Johnson has a chance to show it's more than just a rotation winner"
           ]
         },
         "price": {
@@ -10481,8 +10480,8 @@
           "ig_oas_20d_change": 0.050000000000000044
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote unavailable; news risk 45%; macro event risk flagged; rates pressure 28%.",
-          "finnhub_quote_available": false,
+          "brief": "Finnhub quote 751.83; news risk 45%; macro event risk flagged; rates pressure 28%.",
+          "finnhub_quote_available": true,
           "macro_event_risk_flag": true,
           "news_risk_score": 0.45,
           "rates_pressure_score": 0.2847950429677243,
@@ -10491,11 +10490,11 @@
         "finnhub": {
           "candle_status": "failed",
           "news_sentiment_status": "failed",
-          "quote_change_percent": null,
-          "quote_previous_close": null,
-          "quote_price": null,
+          "quote_change_percent": 0.3551,
+          "quote_previous_close": 749.17,
+          "quote_price": 751.83,
           "quote_source": "finnhub",
-          "quote_status": "rate_limited",
+          "quote_status": "available",
           "sentiment_score": null
         },
         "flow_positioning_proxy": {
@@ -10553,11 +10552,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.45,
           "top_headlines": [
-            "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
-            "Stocks gain on softer inflation, bank results while oil rises on US-Iran hostilities - Reuters",
-            "Johnson & Johnson has a chance to show it's more than just a rotation winner",
+            "Jim Cramer says concerns about AI market froth are overblown. Here's why",
             "Trump wants fees for Hormuz just like Iran - is that legal? - Reuters",
-            "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters"
+            "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
+            "Lawmakers seek to counter China, Iran repression tactics on US soil - Reuters",
+            "Johnson & Johnson has a chance to show it's more than just a rotation winner"
           ]
         },
         "price": {
@@ -10635,7 +10634,7 @@
     "version": "market_intelligence_engine_v3_features"
   },
   "flow_positioning_status": {
-    "generated_at": "2026-07-14T21:29:53.447144+00:00",
+    "generated_at": "2026-07-14T22:36:54.496034+00:00",
     "latest_date": "2026-07-14",
     "provider": "flow_positioning_proxy",
     "sources": {
@@ -11086,7 +11085,7 @@
     ]
   },
   "flow_status": {
-    "generated_at": "2026-07-14T21:29:53.447144+00:00",
+    "generated_at": "2026-07-14T22:36:54.496034+00:00",
     "latest_date": "2026-07-14",
     "provider": "flow_positioning_proxy",
     "sources": {
@@ -12753,7 +12752,7 @@
       "primary_beats_secondary": "primary_path_not_better_than_secondary"
     },
     "current_evidence_level": "moderate_evidence",
-    "generated_at": "2026-07-14T21:30:11.283619+00:00",
+    "generated_at": "2026-07-14T22:37:16.283547+00:00",
     "guardrails": [
       "This scorecard validates probabilistic forecast paths, not trades.",
       "Forecast records are immutable except for future-outcome backfill fields.",
@@ -12868,7 +12867,7 @@
       "risk_on_flow_underweighted": 22,
       "volatility_repair_underweighted": 15
     },
-    "generated_at": "2026-07-14T21:30:11.334447+00:00",
+    "generated_at": "2026-07-14T22:37:16.337112+00:00",
     "guardrails": [
       "This is forecast error attribution, not a trading or PnL report.",
       "Attribution is diagnostic and probabilistic; it is not proof of causality.",
@@ -16632,7 +16631,7 @@
     },
     "dominant_error_theme": "news_data_gap_limited_attribution",
     "evidence_level": "stronger_evidence",
-    "generated_at": "2026-07-14T21:30:11.352322+00:00",
+    "generated_at": "2026-07-14T22:37:16.355240+00:00",
     "global_learning_status": "shadow_challenger_queue_ready",
     "guardrails": [
       "This queue does not change baseline_v1 or Alpha v1.",
@@ -16662,7 +16661,7 @@
       "5d": 68,
       "60d": 0
     },
-    "generated_at": "2026-07-14T21:30:11.263744+00:00",
+    "generated_at": "2026-07-14T22:37:16.263367+00:00",
     "immutability_note": "Forecast fields are write-once by forecast_id. Backfill may update only actual_return, best_matching_scenario, primary_hit, path_error and status fields.",
     "max_confirmed_market_date": "2026-07-14",
     "new_records_considered": 4,
@@ -16676,7 +16675,7 @@
   "forecast_price_levels": {
     "as_of": "2026-07-14",
     "disclaimer": "Forecast price levels are probabilistic scenario points derived from simulated paths, recent price structure and volatility bands. They are not execution instructions, risk-control rules, or guaranteed target prices.",
-    "generated_at": "2026-07-14T21:30:11.092349Z",
+    "generated_at": "2026-07-14T22:37:16.077875Z",
     "symbols": {
       "DIA": {
         "current_price": 524.6900024414062,
@@ -18419,7 +18418,7 @@
     "version": "forecast_price_levels_v1"
   },
   "forecast_records": {
-    "generated_at": "2026-07-14T21:30:11.275644+00:00",
+    "generated_at": "2026-07-14T22:37:16.275371+00:00",
     "records": [
       {
         "actual_return_10d": 0.01680114442,
@@ -30801,7 +30800,7 @@
       "5d": 68,
       "60d": 0
     },
-    "generated_at": "2026-07-14T21:30:11.352241+00:00",
+    "generated_at": "2026-07-14T22:37:16.355176+00:00",
     "guardrails": [
       "This gate does not modify Alpha v1 threshold, baseline_v1 or historical forecast records.",
       "This is forecast reliability assessment, not trading advice.",
@@ -32473,7 +32472,7 @@
     },
     "forward_completed_sample_size": 0,
     "forward_validation_notice": "当前高置信度还没有被前向样本验证，不应当视为稳定预测能力。",
-    "generated_at": "2026-07-14T21:30:01.030994+00:00",
+    "generated_at": "2026-07-14T22:37:04.570789+00:00",
     "internal_resonance_forward_validation": {
       "aligned_internal_resonance": {
         "by_horizon": {
@@ -33404,7 +33403,7 @@
       }
     },
     "conclusion": "confidence_not_yet_validated",
-    "generated_at": "2026-07-14T21:30:01.028010+00:00",
+    "generated_at": "2026-07-14T22:37:04.567646+00:00",
     "high_confidence_better_than_low_confidence": false,
     "high_vs_low_comparison_by_horizon": {
       "10d": false,
@@ -35922,7 +35921,7 @@
       "note": "Historical replay cannot upgrade alpha or confidence until forward validation samples mature.",
       "sample_gate": "moderate_evidence"
     },
-    "generated_at": "2026-07-14T21:30:11.349885+00:00",
+    "generated_at": "2026-07-14T22:37:16.352797+00:00",
     "guardrails": [
       "Historical replay is research evaluation only and cannot replace daily forward validation.",
       "Historical replay results must not be described as confirmed alpha.",
@@ -37451,7 +37450,7 @@
   },
   "market_alerts": {
     "disclaimer": "Market alerts are forecast warnings and scenario-confirmation notes only. They are not trading signals or buy/sell/entry/exit guidance.",
-    "generated_at": "2026-07-14T21:30:11.097477+00:00",
+    "generated_at": "2026-07-14T22:37:16.083255+00:00",
     "summary": {
       "alert_count_by_level": {
         "EXTREME": 0,
@@ -40408,7 +40407,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-07-14T21:30:01.014470+00:00",
+      "generated_at": "2026-07-14T22:37:04.553959+00:00",
       "notes": [
         "price/volatility/credit/rates/liquidity currently use public market proxies.",
         "options breadth macro flow are not treated as available unless real feeds are connected.",
@@ -40544,7 +40543,7 @@
       }
     },
     "feature_snapshot_v2": {
-      "generated_at": "2026-07-14T21:30:01.015414+00:00",
+      "generated_at": "2026-07-14T22:37:04.554887+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -40781,7 +40780,7 @@
       },
       "version": "market_intelligence_engine_v2_features"
     },
-    "generated_at": "2026-07-14T21:30:01.016243+00:00",
+    "generated_at": "2026-07-14T22:37:04.555686+00:00",
     "model_confidence_by_symbol": {
       "DIA": {
         "components": {
@@ -40978,7 +40977,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-07-14T21:30:01.024777+00:00",
+      "generated_at": "2026-07-14T22:37:04.564209+00:00",
       "notes": [
         "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
         "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -41762,14 +41761,14 @@
         "finnhub_quote_SPY": {
           "fallback_used": false,
           "latest_date": null,
-          "missing_data": true,
-          "point_in_time_safe": false,
-          "rate_limited": true,
-          "real_data": false,
-          "rows": 0,
+          "missing_data": false,
+          "point_in_time_safe": true,
+          "rate_limited": false,
+          "real_data": true,
+          "rows": 1,
           "source": "finnhub",
-          "stale_data": false,
-          "status": "rate_limited",
+          "stale_data": true,
+          "status": "stale",
           "symbol": "finnhub_quote_SPY"
         },
         "finnhub_rates_data": {
@@ -41994,7 +41993,7 @@
         "fallback_used": true,
         "finnhub_available": true,
         "finnhub_missing": false,
-        "finnhub_rate_limited": true,
+        "finnhub_rate_limited": false,
         "flow_available": true,
         "flow_proxy_only": true,
         "flow_required": true,
@@ -42003,7 +42002,6 @@
         "latest_date": "2026-07-14",
         "missing_data": true,
         "missing_key_sources": [
-          "finnhub_quote_SPY",
           "finnhub_candle_SPY",
           "finnhub_candle_QQQ",
           "finnhub_candle_IWM",
@@ -42108,7 +42106,7 @@
       }
     },
     "feature_snapshot_v3": {
-      "generated_at": "2026-07-14T21:30:01.021502+00:00",
+      "generated_at": "2026-07-14T22:37:04.560868+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -42268,11 +42266,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.45,
             "top_headlines": [
-              "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
-              "Stocks gain on softer inflation, bank results while oil rises on US-Iran hostilities - Reuters",
-              "Johnson & Johnson has a chance to show it's more than just a rotation winner",
+              "Jim Cramer says concerns about AI market froth are overblown. Here's why",
               "Trump wants fees for Hormuz just like Iran - is that legal? - Reuters",
-              "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters"
+              "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
+              "Lawmakers seek to counter China, Iran repression tactics on US soil - Reuters",
+              "Johnson & Johnson has a chance to show it's more than just a rotation winner"
             ]
           },
           "price": {
@@ -42504,11 +42502,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.45,
             "top_headlines": [
-              "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
-              "Stocks gain on softer inflation, bank results while oil rises on US-Iran hostilities - Reuters",
-              "Johnson & Johnson has a chance to show it's more than just a rotation winner",
+              "Jim Cramer says concerns about AI market froth are overblown. Here's why",
               "Trump wants fees for Hormuz just like Iran - is that legal? - Reuters",
-              "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters"
+              "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
+              "Lawmakers seek to counter China, Iran repression tactics on US soil - Reuters",
+              "Johnson & Johnson has a chance to show it's more than just a rotation winner"
             ]
           },
           "price": {
@@ -42740,11 +42738,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.45,
             "top_headlines": [
-              "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
-              "Stocks gain on softer inflation, bank results while oil rises on US-Iran hostilities - Reuters",
-              "Johnson & Johnson has a chance to show it's more than just a rotation winner",
+              "Jim Cramer says concerns about AI market froth are overblown. Here's why",
               "Trump wants fees for Hormuz just like Iran - is that legal? - Reuters",
-              "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters"
+              "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
+              "Lawmakers seek to counter China, Iran repression tactics on US soil - Reuters",
+              "Johnson & Johnson has a chance to show it's more than just a rotation winner"
             ]
           },
           "price": {
@@ -42904,8 +42902,8 @@
             "ig_oas_20d_change": 0.050000000000000044
           },
           "daily_market_brief": {
-            "brief": "Finnhub quote unavailable; news risk 45%; macro event risk flagged; rates pressure 28%.",
-            "finnhub_quote_available": false,
+            "brief": "Finnhub quote 751.83; news risk 45%; macro event risk flagged; rates pressure 28%.",
+            "finnhub_quote_available": true,
             "macro_event_risk_flag": true,
             "news_risk_score": 0.45,
             "rates_pressure_score": 0.2847950429677243,
@@ -42914,11 +42912,11 @@
           "finnhub": {
             "candle_status": "failed",
             "news_sentiment_status": "failed",
-            "quote_change_percent": null,
-            "quote_previous_close": null,
-            "quote_price": null,
+            "quote_change_percent": 0.3551,
+            "quote_previous_close": 749.17,
+            "quote_price": 751.83,
             "quote_source": "finnhub",
-            "quote_status": "rate_limited",
+            "quote_status": "available",
             "sentiment_score": null
           },
           "flow_positioning_proxy": {
@@ -42976,11 +42974,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.45,
             "top_headlines": [
-              "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
-              "Stocks gain on softer inflation, bank results while oil rises on US-Iran hostilities - Reuters",
-              "Johnson & Johnson has a chance to show it's more than just a rotation winner",
+              "Jim Cramer says concerns about AI market froth are overblown. Here's why",
               "Trump wants fees for Hormuz just like Iran - is that legal? - Reuters",
-              "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters"
+              "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
+              "Lawmakers seek to counter China, Iran repression tactics on US soil - Reuters",
+              "Johnson & Johnson has a chance to show it's more than just a rotation winner"
             ]
           },
           "price": {
@@ -43062,8 +43060,8 @@
       "finnhub_cache_used": false,
       "finnhub_failed_requests": 9,
       "finnhub_missing": false,
-      "finnhub_rate_limited": true,
-      "finnhub_successful_requests": 6
+      "finnhub_rate_limited": false,
+      "finnhub_successful_requests": 7
     },
     "flow_status": {
       "average_flow_quality_score": 100.0,
@@ -43094,17 +43092,17 @@
       "fred_rate_limited": false,
       "fred_successful_series": [
         "HY_OAS",
+        "DGS3MO",
         "IG_OAS",
+        "DGS2",
+        "DGS10",
         "BAA_SPREAD",
         "DFII10",
-        "FINANCIAL_STRESS",
         "RECESSION",
-        "DGS10",
-        "DGS3MO",
-        "DGS2"
+        "FINANCIAL_STRESS"
       ]
     },
-    "generated_at": "2026-07-14T21:30:01.028025+00:00",
+    "generated_at": "2026-07-14T22:37:04.567664+00:00",
     "high_confidence_signal_report": {
       "by_bucket": {
         "low_confidence_reference": {
@@ -43718,7 +43716,7 @@
         }
       },
       "conclusion": "confidence_not_yet_validated",
-      "generated_at": "2026-07-14T21:30:01.028010+00:00",
+      "generated_at": "2026-07-14T22:37:04.567646+00:00",
       "high_confidence_better_than_low_confidence": false,
       "high_vs_low_comparison_by_horizon": {
         "10d": false,
@@ -44571,7 +44569,7 @@
         "evidence_note": "Forward-only breadth attribution is still below the minimum sample gate; these buckets are tracked but not proof.",
         "status": "not_enough_forward_samples"
       },
-      "generated_at": "2026-07-14T21:30:11.087857Z",
+      "generated_at": "2026-07-14T22:37:16.073240Z",
       "notes": [
         "This audit compares the same run with true breadth provider disabled vs enabled.",
         "The audit does not change Alpha v1 and does not prove tradable alpha.",
@@ -44799,7 +44797,7 @@
           "expected_items": 5,
           "fallback_used": false,
           "headline_count": 40,
-          "major_event_count": 13,
+          "major_event_count": 11,
           "proxy_used": false,
           "real_data": true,
           "status": "available"
@@ -44841,7 +44839,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-07-14T21:30:01.028727+00:00",
+      "generated_at": "2026-07-14T22:37:04.568357+00:00",
       "notes": [
         "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
         "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -45626,14 +45624,14 @@
         "finnhub_quote_SPY": {
           "fallback_used": false,
           "latest_date": null,
-          "missing_data": true,
-          "point_in_time_safe": false,
-          "rate_limited": true,
-          "real_data": false,
-          "rows": 0,
+          "missing_data": false,
+          "point_in_time_safe": true,
+          "rate_limited": false,
+          "real_data": true,
+          "rows": 1,
           "source": "finnhub",
-          "stale_data": false,
-          "status": "rate_limited",
+          "stale_data": true,
+          "status": "stale",
           "symbol": "finnhub_quote_SPY"
         },
         "finnhub_rates_data": {
@@ -45756,7 +45754,7 @@
           "event_detection_confidence": 71,
           "fallback_used": false,
           "latest_date": "2026-07-14",
-          "major_event_count": 13,
+          "major_event_count": 11,
           "missing_data": false,
           "missing_reason": null,
           "narrative": "geopolitics_escalation_risk_off",
@@ -45890,7 +45888,7 @@
         "fallback_used": true,
         "finnhub_available": true,
         "finnhub_missing": false,
-        "finnhub_rate_limited": true,
+        "finnhub_rate_limited": false,
         "flow_available": true,
         "flow_provider_status": "proxy",
         "flow_proxy_only": true,
@@ -45969,14 +45967,14 @@
         "fred_required": true,
         "fred_successful_series": [
           "HY_OAS",
+          "DGS3MO",
           "IG_OAS",
+          "DGS2",
+          "DGS10",
           "BAA_SPREAD",
           "DFII10",
-          "FINANCIAL_STRESS",
           "RECESSION",
-          "DGS10",
-          "DGS3MO",
-          "DGS2"
+          "FINANCIAL_STRESS"
         ],
         "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-07-14。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
         "gamma_available": false,
@@ -45986,7 +45984,6 @@
         "latest_market_date": "2026-07-14",
         "missing_data": true,
         "missing_key_sources": [
-          "finnhub_quote_SPY",
           "finnhub_candle_SPY",
           "finnhub_candle_QQQ",
           "finnhub_candle_IWM",
@@ -46011,8 +46008,8 @@
           "event_detection_confidence": 71,
           "event_risk_level": "high",
           "headline_count": 40,
-          "last_update": "2026-07-14T21:30:01.034450+00:00",
-          "major_event_count": 13,
+          "last_update": "2026-07-14T22:37:04.574330+00:00",
+          "major_event_count": 11,
           "missing_reason": null,
           "news_direction": "risk_off",
           "news_event_partial": false,
@@ -46023,7 +46020,7 @@
         },
         "news_event_available": true,
         "news_event_event_risk_level": "high",
-        "news_event_major_count": 13,
+        "news_event_major_count": 11,
         "news_event_missing_reason": null,
         "news_event_narrative": "geopolitics_escalation_risk_off",
         "news_event_partial": false,
@@ -46147,7 +46144,7 @@
       "available": true,
       "cache_used": false,
       "configured": true,
-      "rate_limited": true
+      "rate_limited": false
     },
     "fred_effect_summary": {
       "data_completeness_delta": 6,
@@ -46223,17 +46220,17 @@
       "rate_limited": false,
       "successful_series": [
         "HY_OAS",
+        "DGS3MO",
         "IG_OAS",
+        "DGS2",
+        "DGS10",
         "BAA_SPREAD",
         "DFII10",
-        "FINANCIAL_STRESS",
         "RECESSION",
-        "DGS10",
-        "DGS3MO",
-        "DGS2"
+        "FINANCIAL_STRESS"
       ]
     },
-    "generated_at": "2026-07-14T21:30:01.034436+00:00",
+    "generated_at": "2026-07-14T22:37:04.574317+00:00",
     "high_confidence_edge_report": {
       "breadth_forward_validation": {
         "bounce_with_breadth_support": {
@@ -47744,7 +47741,7 @@
       },
       "forward_completed_sample_size": 0,
       "forward_validation_notice": "当前高置信度还没有被前向样本验证，不应当视为稳定预测能力。",
-      "generated_at": "2026-07-14T21:30:01.030994+00:00",
+      "generated_at": "2026-07-14T22:37:04.570789+00:00",
       "internal_resonance_forward_validation": {
         "aligned_internal_resonance": {
           "by_horizon": {
@@ -48162,70 +48159,15 @@
       },
       "event_detection_confidence": 71,
       "event_risk_level": "high",
-      "generated_at": "2026-07-14T21:30:01.034450+00:00",
+      "generated_at": "2026-07-14T22:37:04.574330+00:00",
       "limits": [
         "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
         "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
         "The provider never exposes API keys and never lets frontend call Finnhub directly.",
         "Economic calendar items are treated as event-risk context, not automatic directional forecasts."
       ],
-      "major_event_count": 13,
+      "major_event_count": 11,
       "major_events": [
-        {
-          "affected_assets": [
-            "SPY",
-            "QQQ",
-            "IWM",
-            "DIA",
-            "^VIX",
-            "USO",
-            "UUP",
-            "TLT"
-          ],
-          "confidence": "high",
-          "confidence_score": 84,
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation",
-            "oil_shock_risk"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_horizon": "intraday-5d",
-          "expected_market_direction": "risk_off",
-          "freshness_score": 95,
-          "headline": "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters",
-          "importance_score": 100,
-          "narrative": "geopolitics_escalation_risk_off",
-          "provider": "finnhub",
-          "published_at": "2026-07-14T19:12:54+00:00",
-          "source": "Reuters"
-        },
-        {
-          "affected_assets": [
-            "SPY",
-            "QQQ",
-            "IWM",
-            "DIA",
-            "^VIX",
-            "USO",
-            "UUP",
-            "TLT"
-          ],
-          "confidence": "high",
-          "confidence_score": 78,
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_horizon": "intraday-5d",
-          "expected_market_direction": "risk_off",
-          "freshness_score": 85,
-          "headline": "China blunted Iran war oil shock, but can it do the same for fuels? - Reuters",
-          "importance_score": 100,
-          "narrative": "geopolitics_escalation_risk_off",
-          "provider": "finnhub",
-          "published_at": "2026-07-14T15:19:46+00:00",
-          "source": "Reuters"
-        },
         {
           "affected_assets": [
             "SPY",
@@ -48245,7 +48187,34 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 80,
+          "freshness_score": 83,
+          "headline": "China blunted Iran war oil shock, but can it do the same for fuels? - Reuters",
+          "importance_score": 100,
+          "narrative": "geopolitics_escalation_risk_off",
+          "provider": "finnhub",
+          "published_at": "2026-07-14T15:19:46+00:00",
+          "source": "Reuters"
+        },
+        {
+          "affected_assets": [
+            "SPY",
+            "QQQ",
+            "IWM",
+            "DIA",
+            "^VIX",
+            "USO",
+            "UUP",
+            "TLT"
+          ],
+          "confidence": "high",
+          "confidence_score": 76,
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_horizon": "intraday-5d",
+          "expected_market_direction": "risk_off",
+          "freshness_score": 78,
           "headline": "EU aviation body reinstates Middle East flights warning as fighting resumes - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -48265,14 +48234,14 @@
             "TLT"
           ],
           "confidence": "medium",
-          "confidence_score": 74,
+          "confidence_score": 73,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 70,
+          "freshness_score": 67,
           "headline": "Spot Mideast crude prices strengthen after Iran attacks UAE tankers - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -48299,12 +48268,12 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 61,
-          "headline": "China's June oil imports hit near 10-year low amid Iran war - Reuters",
+          "freshness_score": 62,
+          "headline": "US resumes Iran port blockade, while Trump scraps proposed Hormuz shipping fee - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
           "provider": "finnhub",
-          "published_at": "2026-07-14T05:22:00+00:00",
+          "published_at": "2026-07-14T06:36:00+00:00",
           "source": "Reuters"
         },
         {
@@ -48326,7 +48295,34 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 56,
+          "freshness_score": 59,
+          "headline": "China's June oil imports hit near 10-year low amid Iran war - Reuters",
+          "importance_score": 100,
+          "narrative": "geopolitics_escalation_risk_off",
+          "provider": "finnhub",
+          "published_at": "2026-07-14T05:22:00+00:00",
+          "source": "Reuters"
+        },
+        {
+          "affected_assets": [
+            "SPY",
+            "QQQ",
+            "IWM",
+            "DIA",
+            "^VIX",
+            "USO",
+            "UUP",
+            "TLT"
+          ],
+          "confidence": "medium",
+          "confidence_score": 70,
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_horizon": "intraday-5d",
+          "expected_market_direction": "risk_off",
+          "freshness_score": 54,
           "headline": "US says it has completed its latest wave of strikes on Iran - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -48346,14 +48342,42 @@
             "TLT"
           ],
           "confidence": "medium",
-          "confidence_score": 68,
+          "confidence_score": 73,
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation",
+            "oil_shock_risk"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_horizon": "intraday-5d",
+          "expected_market_direction": "risk_off",
+          "freshness_score": 48,
+          "headline": "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters",
+          "importance_score": 100,
+          "narrative": "geopolitics_escalation_risk_off",
+          "provider": "finnhub",
+          "published_at": "2026-07-14T01:01:00+00:00",
+          "source": "Reuters"
+        },
+        {
+          "affected_assets": [
+            "SPY",
+            "QQQ",
+            "IWM",
+            "DIA",
+            "^VIX",
+            "USO",
+            "UUP",
+            "TLT"
+          ],
+          "confidence": "medium",
+          "confidence_score": 67,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 45,
+          "freshness_score": 42,
           "headline": "Trump says US attacking Iran capabilities related to Strait of Hormuz - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -48373,14 +48397,14 @@
             "TLT"
           ],
           "confidence": "medium",
-          "confidence_score": 68,
+          "confidence_score": 67,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 45,
+          "freshness_score": 42,
           "headline": "UAE says Iranian missiles struck oil tankers in Strait of Hormuz, one sailor killed - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -48400,41 +48424,14 @@
             "TLT"
           ],
           "confidence": "medium",
-          "confidence_score": 66,
+          "confidence_score": 65,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 39,
-          "headline": "Oil up 9% to one-month high as US says it will blockade entire Iranian coastline, all vessels - Reuters",
-          "importance_score": 100,
-          "narrative": "geopolitics_escalation_risk_off",
-          "provider": "finnhub",
-          "published_at": "2026-07-13T19:57:49+00:00",
-          "source": "Reuters"
-        },
-        {
-          "affected_assets": [
-            "SPY",
-            "QQQ",
-            "IWM",
-            "DIA",
-            "^VIX",
-            "USO",
-            "UUP",
-            "TLT"
-          ],
-          "confidence": "medium",
-          "confidence_score": 66,
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_horizon": "intraday-5d",
-          "expected_market_direction": "risk_off",
-          "freshness_score": 38,
+          "freshness_score": 35,
           "headline": "Lawmakers demand Pentagon release findings from probe of Iran school strike - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -48458,7 +48455,7 @@
             "NQ=F"
           ],
           "confidence": "medium",
-          "confidence_score": 72,
+          "confidence_score": 71,
           "detected_event_conditions": [
             "geopolitical_risk_easing",
             "geopolitical_risk_escalation"
@@ -48466,66 +48463,12 @@
           "event_type": "geopolitical_risk_easing",
           "expected_horizon": "1d-5d",
           "expected_market_direction": "risk_on",
-          "freshness_score": 44,
+          "freshness_score": 42,
           "headline": "Americans expect prolonged US-Iran war as ceasefire falters, Reuters/Ipsos poll finds - Reuters",
           "importance_score": 97,
           "narrative": "geopolitics_easing_risk_on",
           "provider": "finnhub",
           "published_at": "2026-07-13T22:15:00+00:00",
-          "source": "Reuters"
-        },
-        {
-          "affected_assets": [
-            "SPY",
-            "QQQ",
-            "IWM",
-            "DIA",
-            "^VIX",
-            "USO",
-            "UUP",
-            "TLT"
-          ],
-          "confidence": "medium",
-          "confidence_score": 65,
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_horizon": "intraday-5d",
-          "expected_market_direction": "risk_off",
-          "freshness_score": 35,
-          "headline": "UN maritime agency opposes Hormuz transit fees after Trump demands protection money",
-          "importance_score": 100,
-          "narrative": "geopolitics_escalation_risk_off",
-          "provider": "finnhub",
-          "published_at": "2026-07-13T18:28:04+00:00",
-          "source": "CNBC"
-        },
-        {
-          "affected_assets": [
-            "SPY",
-            "QQQ",
-            "IWM",
-            "DIA",
-            "^VIX",
-            "USO",
-            "UUP",
-            "TLT"
-          ],
-          "confidence": "medium",
-          "confidence_score": 65,
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_horizon": "intraday-5d",
-          "expected_market_direction": "risk_off",
-          "freshness_score": 35,
-          "headline": "US to begin enforcing maritime blockade on Iran on Tuesday - Reuters",
-          "importance_score": 100,
-          "narrative": "geopolitics_escalation_risk_off",
-          "provider": "finnhub",
-          "published_at": "2026-07-13T18:24:59+00:00",
           "source": "Reuters"
         }
       ],
@@ -48563,19 +48506,6 @@
         "narrative_strength": 100,
         "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
         "supporting_headlines": [
-          {
-            "confidence": "high",
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation",
-              "oil_shock_risk"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_market_direction": "risk_off",
-            "headline": "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters",
-            "importance_score": 100,
-            "published_at": "2026-07-14T19:12:54+00:00",
-            "source": "Reuters"
-          },
           {
             "confidence": "high",
             "detected_event_conditions": [
@@ -48619,6 +48549,18 @@
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_market_direction": "risk_off",
+            "headline": "US resumes Iran port blockade, while Trump scraps proposed Hormuz shipping fee - Reuters",
+            "importance_score": 100,
+            "published_at": "2026-07-14T06:36:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "confidence": "medium",
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_market_direction": "risk_off",
             "headline": "China's June oil imports hit near 10-year low amid Iran war - Reuters",
             "importance_score": 100,
             "published_at": "2026-07-14T05:22:00+00:00",
@@ -48644,7 +48586,7 @@
         "direction": "supports_risk_expansion",
         "event_risk_level": "high",
         "macro_event_risk_flag": false,
-        "major_event_count": 13,
+        "major_event_count": 11,
         "not_a_trading_signal": true,
         "price_reaction_confirmed": false,
         "symbols": {
@@ -48783,7 +48725,7 @@
       "price_reaction_confirmation": {
         "asset_reaction_summary": {
           "avg_equity_1d_return": 0.0047,
-          "avg_equity_futures_1d_return": 0.0048,
+          "avg_equity_futures_1d_return": 0.0045,
           "confirmed_checks": [
             "HYG/LQD 走弱",
             "油价/原油代理上升"
@@ -48800,7 +48742,7 @@
             "美元走强"
           ],
           "hyg_lqd_1d_relative_return": -0.0003,
-          "oil_proxy_1d_return": 0.0209,
+          "oil_proxy_1d_return": 0.0222,
           "oil_proxy_symbols_used": [
             "USO",
             "CL=F"
@@ -48827,7 +48769,7 @@
           "status": "available"
         },
         "gdelt_public_news": {
-          "error_type": "URLError",
+          "error_type": "HTTPError",
           "source": "gdelt",
           "stale": false,
           "status": "failed"
@@ -48913,7 +48855,7 @@
       "direction": "supports_risk_expansion",
       "event_risk_level": "high",
       "macro_event_risk_flag": false,
-      "major_event_count": 13,
+      "major_event_count": 11,
       "not_a_trading_signal": true,
       "price_reaction_confirmed": false,
       "symbols": {
@@ -50728,7 +50670,7 @@
         "status": "insufficient_forward_samples"
       }
     },
-    "generated_at": "2026-07-14T21:30:11.379715+00:00",
+    "generated_at": "2026-07-14T22:37:16.383073+00:00",
     "guardrails": [
       "Alpha v1 threshold remains frozen at 0.32534311.",
       "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -51555,7 +51497,7 @@
   },
   "model_promotion_status": {
     "active_model_version": "baseline_v1",
-    "generated_at": "2026-07-14T21:30:11.379793+00:00",
+    "generated_at": "2026-07-14T22:37:16.383144+00:00",
     "guardrails": [
       "Alpha v1 threshold remains frozen at 0.32534311.",
       "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -51732,70 +51674,15 @@
     },
     "event_detection_confidence": 71,
     "event_risk_level": "high",
-    "generated_at": "2026-07-14T21:30:01.034450+00:00",
+    "generated_at": "2026-07-14T22:37:04.574330+00:00",
     "limits": [
       "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
       "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
       "The provider never exposes API keys and never lets frontend call Finnhub directly.",
       "Economic calendar items are treated as event-risk context, not automatic directional forecasts."
     ],
-    "major_event_count": 13,
+    "major_event_count": 11,
     "major_events": [
-      {
-        "affected_assets": [
-          "SPY",
-          "QQQ",
-          "IWM",
-          "DIA",
-          "^VIX",
-          "USO",
-          "UUP",
-          "TLT"
-        ],
-        "confidence": "high",
-        "confidence_score": 84,
-        "detected_event_conditions": [
-          "geopolitical_risk_escalation",
-          "oil_shock_risk"
-        ],
-        "event_type": "geopolitical_risk_escalation",
-        "expected_horizon": "intraday-5d",
-        "expected_market_direction": "risk_off",
-        "freshness_score": 95,
-        "headline": "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters",
-        "importance_score": 100,
-        "narrative": "geopolitics_escalation_risk_off",
-        "provider": "finnhub",
-        "published_at": "2026-07-14T19:12:54+00:00",
-        "source": "Reuters"
-      },
-      {
-        "affected_assets": [
-          "SPY",
-          "QQQ",
-          "IWM",
-          "DIA",
-          "^VIX",
-          "USO",
-          "UUP",
-          "TLT"
-        ],
-        "confidence": "high",
-        "confidence_score": 78,
-        "detected_event_conditions": [
-          "geopolitical_risk_escalation"
-        ],
-        "event_type": "geopolitical_risk_escalation",
-        "expected_horizon": "intraday-5d",
-        "expected_market_direction": "risk_off",
-        "freshness_score": 85,
-        "headline": "China blunted Iran war oil shock, but can it do the same for fuels? - Reuters",
-        "importance_score": 100,
-        "narrative": "geopolitics_escalation_risk_off",
-        "provider": "finnhub",
-        "published_at": "2026-07-14T15:19:46+00:00",
-        "source": "Reuters"
-      },
       {
         "affected_assets": [
           "SPY",
@@ -51815,7 +51702,34 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 80,
+        "freshness_score": 83,
+        "headline": "China blunted Iran war oil shock, but can it do the same for fuels? - Reuters",
+        "importance_score": 100,
+        "narrative": "geopolitics_escalation_risk_off",
+        "provider": "finnhub",
+        "published_at": "2026-07-14T15:19:46+00:00",
+        "source": "Reuters"
+      },
+      {
+        "affected_assets": [
+          "SPY",
+          "QQQ",
+          "IWM",
+          "DIA",
+          "^VIX",
+          "USO",
+          "UUP",
+          "TLT"
+        ],
+        "confidence": "high",
+        "confidence_score": 76,
+        "detected_event_conditions": [
+          "geopolitical_risk_escalation"
+        ],
+        "event_type": "geopolitical_risk_escalation",
+        "expected_horizon": "intraday-5d",
+        "expected_market_direction": "risk_off",
+        "freshness_score": 78,
         "headline": "EU aviation body reinstates Middle East flights warning as fighting resumes - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -51835,14 +51749,14 @@
           "TLT"
         ],
         "confidence": "medium",
-        "confidence_score": 74,
+        "confidence_score": 73,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 70,
+        "freshness_score": 67,
         "headline": "Spot Mideast crude prices strengthen after Iran attacks UAE tankers - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -51869,12 +51783,12 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 61,
-        "headline": "China's June oil imports hit near 10-year low amid Iran war - Reuters",
+        "freshness_score": 62,
+        "headline": "US resumes Iran port blockade, while Trump scraps proposed Hormuz shipping fee - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
         "provider": "finnhub",
-        "published_at": "2026-07-14T05:22:00+00:00",
+        "published_at": "2026-07-14T06:36:00+00:00",
         "source": "Reuters"
       },
       {
@@ -51896,7 +51810,34 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 56,
+        "freshness_score": 59,
+        "headline": "China's June oil imports hit near 10-year low amid Iran war - Reuters",
+        "importance_score": 100,
+        "narrative": "geopolitics_escalation_risk_off",
+        "provider": "finnhub",
+        "published_at": "2026-07-14T05:22:00+00:00",
+        "source": "Reuters"
+      },
+      {
+        "affected_assets": [
+          "SPY",
+          "QQQ",
+          "IWM",
+          "DIA",
+          "^VIX",
+          "USO",
+          "UUP",
+          "TLT"
+        ],
+        "confidence": "medium",
+        "confidence_score": 70,
+        "detected_event_conditions": [
+          "geopolitical_risk_escalation"
+        ],
+        "event_type": "geopolitical_risk_escalation",
+        "expected_horizon": "intraday-5d",
+        "expected_market_direction": "risk_off",
+        "freshness_score": 54,
         "headline": "US says it has completed its latest wave of strikes on Iran - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -51916,14 +51857,42 @@
           "TLT"
         ],
         "confidence": "medium",
-        "confidence_score": 68,
+        "confidence_score": 73,
+        "detected_event_conditions": [
+          "geopolitical_risk_escalation",
+          "oil_shock_risk"
+        ],
+        "event_type": "geopolitical_risk_escalation",
+        "expected_horizon": "intraday-5d",
+        "expected_market_direction": "risk_off",
+        "freshness_score": 48,
+        "headline": "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters",
+        "importance_score": 100,
+        "narrative": "geopolitics_escalation_risk_off",
+        "provider": "finnhub",
+        "published_at": "2026-07-14T01:01:00+00:00",
+        "source": "Reuters"
+      },
+      {
+        "affected_assets": [
+          "SPY",
+          "QQQ",
+          "IWM",
+          "DIA",
+          "^VIX",
+          "USO",
+          "UUP",
+          "TLT"
+        ],
+        "confidence": "medium",
+        "confidence_score": 67,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 45,
+        "freshness_score": 42,
         "headline": "Trump says US attacking Iran capabilities related to Strait of Hormuz - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -51943,14 +51912,14 @@
           "TLT"
         ],
         "confidence": "medium",
-        "confidence_score": 68,
+        "confidence_score": 67,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 45,
+        "freshness_score": 42,
         "headline": "UAE says Iranian missiles struck oil tankers in Strait of Hormuz, one sailor killed - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -51970,41 +51939,14 @@
           "TLT"
         ],
         "confidence": "medium",
-        "confidence_score": 66,
+        "confidence_score": 65,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 39,
-        "headline": "Oil up 9% to one-month high as US says it will blockade entire Iranian coastline, all vessels - Reuters",
-        "importance_score": 100,
-        "narrative": "geopolitics_escalation_risk_off",
-        "provider": "finnhub",
-        "published_at": "2026-07-13T19:57:49+00:00",
-        "source": "Reuters"
-      },
-      {
-        "affected_assets": [
-          "SPY",
-          "QQQ",
-          "IWM",
-          "DIA",
-          "^VIX",
-          "USO",
-          "UUP",
-          "TLT"
-        ],
-        "confidence": "medium",
-        "confidence_score": 66,
-        "detected_event_conditions": [
-          "geopolitical_risk_escalation"
-        ],
-        "event_type": "geopolitical_risk_escalation",
-        "expected_horizon": "intraday-5d",
-        "expected_market_direction": "risk_off",
-        "freshness_score": 38,
+        "freshness_score": 35,
         "headline": "Lawmakers demand Pentagon release findings from probe of Iran school strike - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -52028,7 +51970,7 @@
           "NQ=F"
         ],
         "confidence": "medium",
-        "confidence_score": 72,
+        "confidence_score": 71,
         "detected_event_conditions": [
           "geopolitical_risk_easing",
           "geopolitical_risk_escalation"
@@ -52036,66 +51978,12 @@
         "event_type": "geopolitical_risk_easing",
         "expected_horizon": "1d-5d",
         "expected_market_direction": "risk_on",
-        "freshness_score": 44,
+        "freshness_score": 42,
         "headline": "Americans expect prolonged US-Iran war as ceasefire falters, Reuters/Ipsos poll finds - Reuters",
         "importance_score": 97,
         "narrative": "geopolitics_easing_risk_on",
         "provider": "finnhub",
         "published_at": "2026-07-13T22:15:00+00:00",
-        "source": "Reuters"
-      },
-      {
-        "affected_assets": [
-          "SPY",
-          "QQQ",
-          "IWM",
-          "DIA",
-          "^VIX",
-          "USO",
-          "UUP",
-          "TLT"
-        ],
-        "confidence": "medium",
-        "confidence_score": 65,
-        "detected_event_conditions": [
-          "geopolitical_risk_escalation"
-        ],
-        "event_type": "geopolitical_risk_escalation",
-        "expected_horizon": "intraday-5d",
-        "expected_market_direction": "risk_off",
-        "freshness_score": 35,
-        "headline": "UN maritime agency opposes Hormuz transit fees after Trump demands protection money",
-        "importance_score": 100,
-        "narrative": "geopolitics_escalation_risk_off",
-        "provider": "finnhub",
-        "published_at": "2026-07-13T18:28:04+00:00",
-        "source": "CNBC"
-      },
-      {
-        "affected_assets": [
-          "SPY",
-          "QQQ",
-          "IWM",
-          "DIA",
-          "^VIX",
-          "USO",
-          "UUP",
-          "TLT"
-        ],
-        "confidence": "medium",
-        "confidence_score": 65,
-        "detected_event_conditions": [
-          "geopolitical_risk_escalation"
-        ],
-        "event_type": "geopolitical_risk_escalation",
-        "expected_horizon": "intraday-5d",
-        "expected_market_direction": "risk_off",
-        "freshness_score": 35,
-        "headline": "US to begin enforcing maritime blockade on Iran on Tuesday - Reuters",
-        "importance_score": 100,
-        "narrative": "geopolitics_escalation_risk_off",
-        "provider": "finnhub",
-        "published_at": "2026-07-13T18:24:59+00:00",
         "source": "Reuters"
       }
     ],
@@ -52133,19 +52021,6 @@
       "narrative_strength": 100,
       "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
       "supporting_headlines": [
-        {
-          "confidence": "high",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation",
-            "oil_shock_risk"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-07-14T19:12:54+00:00",
-          "source": "Reuters"
-        },
         {
           "confidence": "high",
           "detected_event_conditions": [
@@ -52189,6 +52064,18 @@
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_market_direction": "risk_off",
+          "headline": "US resumes Iran port blockade, while Trump scraps proposed Hormuz shipping fee - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-07-14T06:36:00+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "medium",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
           "headline": "China's June oil imports hit near 10-year low amid Iran war - Reuters",
           "importance_score": 100,
           "published_at": "2026-07-14T05:22:00+00:00",
@@ -52214,7 +52101,7 @@
       "direction": "supports_risk_expansion",
       "event_risk_level": "high",
       "macro_event_risk_flag": false,
-      "major_event_count": 13,
+      "major_event_count": 11,
       "not_a_trading_signal": true,
       "price_reaction_confirmed": false,
       "symbols": {
@@ -52353,7 +52240,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": 0.0047,
-        "avg_equity_futures_1d_return": 0.0048,
+        "avg_equity_futures_1d_return": 0.0045,
         "confirmed_checks": [
           "HYG/LQD 走弱",
           "油价/原油代理上升"
@@ -52370,7 +52257,7 @@
           "美元走强"
         ],
         "hyg_lqd_1d_relative_return": -0.0003,
-        "oil_proxy_1d_return": 0.0209,
+        "oil_proxy_1d_return": 0.0222,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -52397,7 +52284,7 @@
         "status": "available"
       },
       "gdelt_public_news": {
-        "error_type": "URLError",
+        "error_type": "HTTPError",
         "source": "gdelt",
         "stale": false,
         "status": "failed"
@@ -52479,7 +52366,7 @@
     "version": "news_event_intelligence_v1"
   },
   "options_status": {
-    "generated_at": "2026-07-14T21:29:53.440783+00:00",
+    "generated_at": "2026-07-14T22:36:54.488532+00:00",
     "market": {
       "failed_bounce_options_risk": 0.3176,
       "gamma_exposure": null,
@@ -52770,10 +52657,10 @@
       "can_append_forecast_record": true,
       "can_backfill_completed_outcomes": true,
       "current_date": "2026-07-14",
-      "current_time_us_eastern": "2026-07-14T17:30:11.097568-04:00",
+      "current_time_us_eastern": "2026-07-14T18:37:16.083339-04:00",
       "data_freshness_status": "fresh",
       "expected_latest_trading_date": "2026-07-14",
-      "generated_at": "2026-07-14T21:30:11.097568+00:00",
+      "generated_at": "2026-07-14T22:37:16.083339+00:00",
       "guardrails": [
         "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
         "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -53512,13 +53399,13 @@
         "finnhub_quote_SPY": {
           "fallback_used": false,
           "latest_date": null,
-          "missing_data": true,
-          "point_in_time_safe": false,
-          "real_data": false,
-          "rows": 0,
+          "missing_data": false,
+          "point_in_time_safe": true,
+          "real_data": true,
+          "rows": 1,
           "source": "finnhub",
-          "stale_data": false,
-          "status": "rate_limited",
+          "stale_data": true,
+          "status": "stale",
           "symbol": "finnhub_quote_SPY"
         },
         "finnhub_rates_data": {
@@ -53734,7 +53621,7 @@
       "fallback_used": true,
       "finnhub_available": true,
       "finnhub_missing": false,
-      "finnhub_rate_limited": true,
+      "finnhub_rate_limited": false,
       "flow_available": true,
       "flow_provider_status": "proxy",
       "flow_proxy_only": true,
@@ -53813,14 +53700,14 @@
       "fred_required": true,
       "fred_successful_series": [
         "HY_OAS",
+        "DGS3MO",
         "IG_OAS",
+        "DGS2",
+        "DGS10",
         "BAA_SPREAD",
         "DFII10",
-        "FINANCIAL_STRESS",
         "RECESSION",
-        "DGS10",
-        "DGS3MO",
-        "DGS2"
+        "FINANCIAL_STRESS"
       ],
       "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-07-14。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
       "gamma_available": false,
@@ -53830,7 +53717,6 @@
       "latest_market_date": "2026-07-14",
       "missing_data": true,
       "missing_key_sources": [
-        "finnhub_quote_SPY",
         "finnhub_candle_SPY",
         "finnhub_candle_QQQ",
         "finnhub_candle_IWM",
@@ -53855,8 +53741,8 @@
         "event_detection_confidence": 71,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-07-14T21:30:01.034450+00:00",
-        "major_event_count": 13,
+        "last_update": "2026-07-14T22:37:04.574330+00:00",
+        "major_event_count": 11,
         "missing_reason": null,
         "news_direction": "risk_off",
         "news_event_partial": false,
@@ -53867,7 +53753,7 @@
       },
       "news_event_available": true,
       "news_event_event_risk_level": "high",
-      "news_event_major_count": 13,
+      "news_event_major_count": 11,
       "news_event_missing_reason": null,
       "news_event_narrative": "geopolitics_escalation_risk_off",
       "news_event_partial": false,
@@ -54084,7 +53970,7 @@
         "status": "failed"
       },
       "event_risk_level": "high",
-      "major_event_count": 13,
+      "major_event_count": 11,
       "market_narrative": {
         "affected_scenarios": [
           "bearish_path"
@@ -54119,19 +54005,6 @@
         "narrative_strength": 100,
         "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
         "supporting_headlines": [
-          {
-            "confidence": "high",
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation",
-              "oil_shock_risk"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_market_direction": "risk_off",
-            "headline": "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters",
-            "importance_score": 100,
-            "published_at": "2026-07-14T19:12:54+00:00",
-            "source": "Reuters"
-          },
           {
             "confidence": "high",
             "detected_event_conditions": [
@@ -54175,6 +54048,18 @@
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_market_direction": "risk_off",
+            "headline": "US resumes Iran port blockade, while Trump scraps proposed Hormuz shipping fee - Reuters",
+            "importance_score": 100,
+            "published_at": "2026-07-14T06:36:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "confidence": "medium",
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_market_direction": "risk_off",
             "headline": "China's June oil imports hit near 10-year low amid Iran war - Reuters",
             "importance_score": 100,
             "published_at": "2026-07-14T05:22:00+00:00",
@@ -54200,7 +54085,7 @@
         "direction": "supports_risk_expansion",
         "event_risk_level": "high",
         "macro_event_risk_flag": false,
-        "major_event_count": 13,
+        "major_event_count": 11,
         "not_a_trading_signal": true,
         "price_reaction_confirmed": false,
         "symbols": {
@@ -54339,7 +54224,7 @@
       "price_reaction_confirmation": {
         "asset_reaction_summary": {
           "avg_equity_1d_return": 0.0047,
-          "avg_equity_futures_1d_return": 0.0048,
+          "avg_equity_futures_1d_return": 0.0045,
           "confirmed_checks": [
             "HYG/LQD 走弱",
             "油价/原油代理上升"
@@ -54356,7 +54241,7 @@
             "美元走强"
           ],
           "hyg_lqd_1d_relative_return": -0.0003,
-          "oil_proxy_1d_return": 0.0209,
+          "oil_proxy_1d_return": 0.0222,
           "oil_proxy_symbols_used": [
             "USO",
             "CL=F"
@@ -55847,11 +55732,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.45,
             "top_headlines": [
-              "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
-              "Stocks gain on softer inflation, bank results while oil rises on US-Iran hostilities - Reuters",
-              "Johnson & Johnson has a chance to show it's more than just a rotation winner",
+              "Jim Cramer says concerns about AI market froth are overblown. Here's why",
               "Trump wants fees for Hormuz just like Iran - is that legal? - Reuters",
-              "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters"
+              "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
+              "Lawmakers seek to counter China, Iran repression tactics on US soil - Reuters",
+              "Johnson & Johnson has a chance to show it's more than just a rotation winner"
             ]
           },
           "price": {
@@ -56761,42 +56646,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 84,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation",
-                "oil_shock_risk"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 95,
-              "headline": "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-07-14T19:12:54+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "high",
-              "confidence_score": 78,
+              "confidence_score": 77,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 85,
+              "freshness_score": 83,
               "headline": "China blunted Iran war oil shock, but can it do the same for fuels? - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -56816,14 +56673,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 80,
+              "freshness_score": 78,
               "headline": "EU aviation body reinstates Middle East flights warning as fighting resumes - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -56843,14 +56700,14 @@
                 "TLT"
               ],
               "confidence": "medium",
-              "confidence_score": 74,
+              "confidence_score": 73,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 70,
+              "freshness_score": 67,
               "headline": "Spot Mideast crude prices strengthen after Iran attacks UAE tankers - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -56877,12 +56734,12 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 61,
-              "headline": "China's June oil imports hit near 10-year low amid Iran war - Reuters",
+              "freshness_score": 62,
+              "headline": "US resumes Iran port blockade, while Trump scraps proposed Hormuz shipping fee - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-07-14T05:22:00+00:00",
+              "published_at": "2026-07-14T06:36:00+00:00",
               "source": "Reuters"
             },
             {
@@ -56904,7 +56761,34 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 56,
+              "freshness_score": 59,
+              "headline": "China's June oil imports hit near 10-year low amid Iran war - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-07-14T05:22:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 70,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 54,
               "headline": "US says it has completed its latest wave of strikes on Iran - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -56950,19 +56834,6 @@
               {
                 "confidence": "high",
                 "detected_event_conditions": [
-                  "geopolitical_risk_escalation",
-                  "oil_shock_risk"
-                ],
-                "event_type": "geopolitical_risk_escalation",
-                "expected_market_direction": "risk_off",
-                "headline": "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters",
-                "importance_score": 100,
-                "published_at": "2026-07-14T19:12:54+00:00",
-                "source": "Reuters"
-              },
-              {
-                "confidence": "high",
-                "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
                 "event_type": "geopolitical_risk_escalation",
@@ -56994,6 +56865,18 @@
                 "headline": "Spot Mideast crude prices strengthen after Iran attacks UAE tankers - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-07-14T08:50:09+00:00",
+                "source": "Reuters"
+              },
+              {
+                "confidence": "medium",
+                "detected_event_conditions": [
+                  "geopolitical_risk_escalation"
+                ],
+                "event_type": "geopolitical_risk_escalation",
+                "expected_market_direction": "risk_off",
+                "headline": "US resumes Iran port blockade, while Trump scraps proposed Hormuz shipping fee - Reuters",
+                "importance_score": 100,
+                "published_at": "2026-07-14T06:36:00+00:00",
                 "source": "Reuters"
               },
               {
@@ -57058,7 +56941,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0047,
-              "avg_equity_futures_1d_return": 0.0048,
+              "avg_equity_futures_1d_return": 0.0045,
               "confirmed_checks": [
                 "HYG/LQD 走弱",
                 "油价/原油代理上升"
@@ -57075,7 +56958,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.0003,
-              "oil_proxy_1d_return": 0.0209,
+              "oil_proxy_1d_return": 0.0222,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -58331,11 +58214,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.45,
             "top_headlines": [
-              "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
-              "Stocks gain on softer inflation, bank results while oil rises on US-Iran hostilities - Reuters",
-              "Johnson & Johnson has a chance to show it's more than just a rotation winner",
+              "Jim Cramer says concerns about AI market froth are overblown. Here's why",
               "Trump wants fees for Hormuz just like Iran - is that legal? - Reuters",
-              "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters"
+              "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
+              "Lawmakers seek to counter China, Iran repression tactics on US soil - Reuters",
+              "Johnson & Johnson has a chance to show it's more than just a rotation winner"
             ]
           },
           "price": {
@@ -59206,42 +59089,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 84,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation",
-                "oil_shock_risk"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 95,
-              "headline": "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-07-14T19:12:54+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "high",
-              "confidence_score": 78,
+              "confidence_score": 77,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 85,
+              "freshness_score": 83,
               "headline": "China blunted Iran war oil shock, but can it do the same for fuels? - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -59261,14 +59116,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 80,
+              "freshness_score": 78,
               "headline": "EU aviation body reinstates Middle East flights warning as fighting resumes - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -59288,14 +59143,14 @@
                 "TLT"
               ],
               "confidence": "medium",
-              "confidence_score": 74,
+              "confidence_score": 73,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 70,
+              "freshness_score": 67,
               "headline": "Spot Mideast crude prices strengthen after Iran attacks UAE tankers - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -59322,12 +59177,12 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 61,
-              "headline": "China's June oil imports hit near 10-year low amid Iran war - Reuters",
+              "freshness_score": 62,
+              "headline": "US resumes Iran port blockade, while Trump scraps proposed Hormuz shipping fee - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-07-14T05:22:00+00:00",
+              "published_at": "2026-07-14T06:36:00+00:00",
               "source": "Reuters"
             },
             {
@@ -59349,7 +59204,34 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 56,
+              "freshness_score": 59,
+              "headline": "China's June oil imports hit near 10-year low amid Iran war - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-07-14T05:22:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 70,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 54,
               "headline": "US says it has completed its latest wave of strikes on Iran - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -59395,19 +59277,6 @@
               {
                 "confidence": "high",
                 "detected_event_conditions": [
-                  "geopolitical_risk_escalation",
-                  "oil_shock_risk"
-                ],
-                "event_type": "geopolitical_risk_escalation",
-                "expected_market_direction": "risk_off",
-                "headline": "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters",
-                "importance_score": 100,
-                "published_at": "2026-07-14T19:12:54+00:00",
-                "source": "Reuters"
-              },
-              {
-                "confidence": "high",
-                "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
                 "event_type": "geopolitical_risk_escalation",
@@ -59439,6 +59308,18 @@
                 "headline": "Spot Mideast crude prices strengthen after Iran attacks UAE tankers - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-07-14T08:50:09+00:00",
+                "source": "Reuters"
+              },
+              {
+                "confidence": "medium",
+                "detected_event_conditions": [
+                  "geopolitical_risk_escalation"
+                ],
+                "event_type": "geopolitical_risk_escalation",
+                "expected_market_direction": "risk_off",
+                "headline": "US resumes Iran port blockade, while Trump scraps proposed Hormuz shipping fee - Reuters",
+                "importance_score": 100,
+                "published_at": "2026-07-14T06:36:00+00:00",
                 "source": "Reuters"
               },
               {
@@ -59503,7 +59384,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0047,
-              "avg_equity_futures_1d_return": 0.0048,
+              "avg_equity_futures_1d_return": 0.0045,
               "confirmed_checks": [
                 "HYG/LQD 走弱",
                 "油价/原油代理上升"
@@ -59520,7 +59401,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.0003,
-              "oil_proxy_1d_return": 0.0209,
+              "oil_proxy_1d_return": 0.0222,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -60782,11 +60663,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.45,
             "top_headlines": [
-              "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
-              "Stocks gain on softer inflation, bank results while oil rises on US-Iran hostilities - Reuters",
-              "Johnson & Johnson has a chance to show it's more than just a rotation winner",
+              "Jim Cramer says concerns about AI market froth are overblown. Here's why",
               "Trump wants fees for Hormuz just like Iran - is that legal? - Reuters",
-              "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters"
+              "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
+              "Lawmakers seek to counter China, Iran repression tactics on US soil - Reuters",
+              "Johnson & Johnson has a chance to show it's more than just a rotation winner"
             ]
           },
           "price": {
@@ -61704,42 +61585,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 84,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation",
-                "oil_shock_risk"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 95,
-              "headline": "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-07-14T19:12:54+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "high",
-              "confidence_score": 78,
+              "confidence_score": 77,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 85,
+              "freshness_score": 83,
               "headline": "China blunted Iran war oil shock, but can it do the same for fuels? - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -61759,14 +61612,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 80,
+              "freshness_score": 78,
               "headline": "EU aviation body reinstates Middle East flights warning as fighting resumes - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -61786,14 +61639,14 @@
                 "TLT"
               ],
               "confidence": "medium",
-              "confidence_score": 74,
+              "confidence_score": 73,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 70,
+              "freshness_score": 67,
               "headline": "Spot Mideast crude prices strengthen after Iran attacks UAE tankers - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -61820,12 +61673,12 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 61,
-              "headline": "China's June oil imports hit near 10-year low amid Iran war - Reuters",
+              "freshness_score": 62,
+              "headline": "US resumes Iran port blockade, while Trump scraps proposed Hormuz shipping fee - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-07-14T05:22:00+00:00",
+              "published_at": "2026-07-14T06:36:00+00:00",
               "source": "Reuters"
             },
             {
@@ -61847,7 +61700,34 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 56,
+              "freshness_score": 59,
+              "headline": "China's June oil imports hit near 10-year low amid Iran war - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-07-14T05:22:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 70,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 54,
               "headline": "US says it has completed its latest wave of strikes on Iran - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -61893,19 +61773,6 @@
               {
                 "confidence": "high",
                 "detected_event_conditions": [
-                  "geopolitical_risk_escalation",
-                  "oil_shock_risk"
-                ],
-                "event_type": "geopolitical_risk_escalation",
-                "expected_market_direction": "risk_off",
-                "headline": "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters",
-                "importance_score": 100,
-                "published_at": "2026-07-14T19:12:54+00:00",
-                "source": "Reuters"
-              },
-              {
-                "confidence": "high",
-                "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
                 "event_type": "geopolitical_risk_escalation",
@@ -61937,6 +61804,18 @@
                 "headline": "Spot Mideast crude prices strengthen after Iran attacks UAE tankers - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-07-14T08:50:09+00:00",
+                "source": "Reuters"
+              },
+              {
+                "confidence": "medium",
+                "detected_event_conditions": [
+                  "geopolitical_risk_escalation"
+                ],
+                "event_type": "geopolitical_risk_escalation",
+                "expected_market_direction": "risk_off",
+                "headline": "US resumes Iran port blockade, while Trump scraps proposed Hormuz shipping fee - Reuters",
+                "importance_score": 100,
+                "published_at": "2026-07-14T06:36:00+00:00",
                 "source": "Reuters"
               },
               {
@@ -62001,7 +61880,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0047,
-              "avg_equity_futures_1d_return": 0.0048,
+              "avg_equity_futures_1d_return": 0.0045,
               "confirmed_checks": [
                 "HYG/LQD 走弱",
                 "油价/原油代理上升"
@@ -62018,7 +61897,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.0003,
-              "oil_proxy_1d_return": 0.0209,
+              "oil_proxy_1d_return": 0.0222,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -63219,8 +63098,8 @@
             "ig_oas_20d_change": 0.050000000000000044
           },
           "daily_market_brief": {
-            "brief": "Finnhub quote unavailable; news risk 45%; macro event risk flagged; rates pressure 28%.",
-            "finnhub_quote_available": false,
+            "brief": "Finnhub quote 751.83; news risk 45%; macro event risk flagged; rates pressure 28%.",
+            "finnhub_quote_available": true,
             "macro_event_risk_flag": true,
             "news_risk_score": 0.45,
             "rates_pressure_score": 0.2847950429677243,
@@ -63229,11 +63108,11 @@
           "finnhub": {
             "candle_status": "failed",
             "news_sentiment_status": "failed",
-            "quote_change_percent": null,
-            "quote_previous_close": null,
-            "quote_price": null,
+            "quote_change_percent": 0.3551,
+            "quote_previous_close": 749.17,
+            "quote_price": 751.83,
             "quote_source": "finnhub",
-            "quote_status": "rate_limited",
+            "quote_status": "available",
             "sentiment_score": null
           },
           "flow_positioning_proxy": {
@@ -63291,11 +63170,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.45,
             "top_headlines": [
-              "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
-              "Stocks gain on softer inflation, bank results while oil rises on US-Iran hostilities - Reuters",
-              "Johnson & Johnson has a chance to show it's more than just a rotation winner",
+              "Jim Cramer says concerns about AI market froth are overblown. Here's why",
               "Trump wants fees for Hormuz just like Iran - is that legal? - Reuters",
-              "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters"
+              "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
+              "Lawmakers seek to counter China, Iran repression tactics on US soil - Reuters",
+              "Johnson & Johnson has a chance to show it's more than just a rotation winner"
             ]
           },
           "price": {
@@ -64180,42 +64059,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 84,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation",
-                "oil_shock_risk"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 95,
-              "headline": "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-07-14T19:12:54+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "high",
-              "confidence_score": 78,
+              "confidence_score": 77,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 85,
+              "freshness_score": 83,
               "headline": "China blunted Iran war oil shock, but can it do the same for fuels? - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -64235,14 +64086,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 80,
+              "freshness_score": 78,
               "headline": "EU aviation body reinstates Middle East flights warning as fighting resumes - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -64262,14 +64113,14 @@
                 "TLT"
               ],
               "confidence": "medium",
-              "confidence_score": 74,
+              "confidence_score": 73,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 70,
+              "freshness_score": 67,
               "headline": "Spot Mideast crude prices strengthen after Iran attacks UAE tankers - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -64296,12 +64147,12 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 61,
-              "headline": "China's June oil imports hit near 10-year low amid Iran war - Reuters",
+              "freshness_score": 62,
+              "headline": "US resumes Iran port blockade, while Trump scraps proposed Hormuz shipping fee - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-07-14T05:22:00+00:00",
+              "published_at": "2026-07-14T06:36:00+00:00",
               "source": "Reuters"
             },
             {
@@ -64323,7 +64174,34 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 56,
+              "freshness_score": 59,
+              "headline": "China's June oil imports hit near 10-year low amid Iran war - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-07-14T05:22:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 70,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 54,
               "headline": "US says it has completed its latest wave of strikes on Iran - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -64369,19 +64247,6 @@
               {
                 "confidence": "high",
                 "detected_event_conditions": [
-                  "geopolitical_risk_escalation",
-                  "oil_shock_risk"
-                ],
-                "event_type": "geopolitical_risk_escalation",
-                "expected_market_direction": "risk_off",
-                "headline": "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters",
-                "importance_score": 100,
-                "published_at": "2026-07-14T19:12:54+00:00",
-                "source": "Reuters"
-              },
-              {
-                "confidence": "high",
-                "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
                 "event_type": "geopolitical_risk_escalation",
@@ -64413,6 +64278,18 @@
                 "headline": "Spot Mideast crude prices strengthen after Iran attacks UAE tankers - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-07-14T08:50:09+00:00",
+                "source": "Reuters"
+              },
+              {
+                "confidence": "medium",
+                "detected_event_conditions": [
+                  "geopolitical_risk_escalation"
+                ],
+                "event_type": "geopolitical_risk_escalation",
+                "expected_market_direction": "risk_off",
+                "headline": "US resumes Iran port blockade, while Trump scraps proposed Hormuz shipping fee - Reuters",
+                "importance_score": 100,
+                "published_at": "2026-07-14T06:36:00+00:00",
                 "source": "Reuters"
               },
               {
@@ -64477,7 +64354,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0047,
-              "avg_equity_futures_1d_return": 0.0048,
+              "avg_equity_futures_1d_return": 0.0045,
               "confirmed_checks": [
                 "HYG/LQD 走弱",
                 "油价/原油代理上升"
@@ -64494,7 +64371,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.0003,
-              "oil_proxy_1d_return": 0.0209,
+              "oil_proxy_1d_return": 0.0222,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -65369,7 +65246,7 @@
   },
   "price_volume_structure": {
     "disclaimer": "K线和成交量结构只用于预测确认，不是交易信号、买卖建议或仓位建议。",
-    "generated_at": "2026-07-14T21:30:11.092360+00:00",
+    "generated_at": "2026-07-14T22:37:16.077886+00:00",
     "summary": {
       "average_price_structure_score": 63.0,
       "average_volume_confirmation_score": 42.5,
@@ -66151,10 +66028,10 @@
       "can_append_forecast_record": true,
       "can_backfill_completed_outcomes": true,
       "current_date": "2026-07-14",
-      "current_time_us_eastern": "2026-07-14T17:30:11.097568-04:00",
+      "current_time_us_eastern": "2026-07-14T18:37:16.083339-04:00",
       "data_freshness_status": "fresh",
       "expected_latest_trading_date": "2026-07-14",
-      "generated_at": "2026-07-14T21:30:11.097568+00:00",
+      "generated_at": "2026-07-14T22:37:16.083339+00:00",
       "guardrails": [
         "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
         "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -66893,13 +66770,13 @@
         "finnhub_quote_SPY": {
           "fallback_used": false,
           "latest_date": null,
-          "missing_data": true,
-          "point_in_time_safe": false,
-          "real_data": false,
-          "rows": 0,
+          "missing_data": false,
+          "point_in_time_safe": true,
+          "real_data": true,
+          "rows": 1,
           "source": "finnhub",
-          "stale_data": false,
-          "status": "rate_limited",
+          "stale_data": true,
+          "status": "stale",
           "symbol": "finnhub_quote_SPY"
         },
         "finnhub_rates_data": {
@@ -67115,7 +66992,7 @@
       "fallback_used": true,
       "finnhub_available": true,
       "finnhub_missing": false,
-      "finnhub_rate_limited": true,
+      "finnhub_rate_limited": false,
       "flow_available": true,
       "flow_provider_status": "proxy",
       "flow_proxy_only": true,
@@ -67194,14 +67071,14 @@
       "fred_required": true,
       "fred_successful_series": [
         "HY_OAS",
+        "DGS3MO",
         "IG_OAS",
+        "DGS2",
+        "DGS10",
         "BAA_SPREAD",
         "DFII10",
-        "FINANCIAL_STRESS",
         "RECESSION",
-        "DGS10",
-        "DGS3MO",
-        "DGS2"
+        "FINANCIAL_STRESS"
       ],
       "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-07-14。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
       "gamma_available": false,
@@ -67211,7 +67088,6 @@
       "latest_market_date": "2026-07-14",
       "missing_data": true,
       "missing_key_sources": [
-        "finnhub_quote_SPY",
         "finnhub_candle_SPY",
         "finnhub_candle_QQQ",
         "finnhub_candle_IWM",
@@ -67236,8 +67112,8 @@
         "event_detection_confidence": 71,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-07-14T21:30:01.034450+00:00",
-        "major_event_count": 13,
+        "last_update": "2026-07-14T22:37:04.574330+00:00",
+        "major_event_count": 11,
         "missing_reason": null,
         "news_direction": "risk_off",
         "news_event_partial": false,
@@ -67248,7 +67124,7 @@
       },
       "news_event_available": true,
       "news_event_event_risk_level": "high",
-      "news_event_major_count": 13,
+      "news_event_major_count": 11,
       "news_event_missing_reason": null,
       "news_event_narrative": "geopolitics_escalation_risk_off",
       "news_event_partial": false,
@@ -67298,7 +67174,7 @@
         "status": "failed"
       },
       "event_risk_level": "high",
-      "major_event_count": 13,
+      "major_event_count": 11,
       "market_narrative": {
         "affected_scenarios": [
           "bearish_path"
@@ -67333,19 +67209,6 @@
         "narrative_strength": 100,
         "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
         "supporting_headlines": [
-          {
-            "confidence": "high",
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation",
-              "oil_shock_risk"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_market_direction": "risk_off",
-            "headline": "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters",
-            "importance_score": 100,
-            "published_at": "2026-07-14T19:12:54+00:00",
-            "source": "Reuters"
-          },
           {
             "confidence": "high",
             "detected_event_conditions": [
@@ -67389,6 +67252,18 @@
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_market_direction": "risk_off",
+            "headline": "US resumes Iran port blockade, while Trump scraps proposed Hormuz shipping fee - Reuters",
+            "importance_score": 100,
+            "published_at": "2026-07-14T06:36:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "confidence": "medium",
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_market_direction": "risk_off",
             "headline": "China's June oil imports hit near 10-year low amid Iran war - Reuters",
             "importance_score": 100,
             "published_at": "2026-07-14T05:22:00+00:00",
@@ -67414,7 +67289,7 @@
         "direction": "supports_risk_expansion",
         "event_risk_level": "high",
         "macro_event_risk_flag": false,
-        "major_event_count": 13,
+        "major_event_count": 11,
         "not_a_trading_signal": true,
         "price_reaction_confirmed": false,
         "symbols": {
@@ -67553,7 +67428,7 @@
       "price_reaction_confirmation": {
         "asset_reaction_summary": {
           "avg_equity_1d_return": 0.0047,
-          "avg_equity_futures_1d_return": 0.0048,
+          "avg_equity_futures_1d_return": 0.0045,
           "confirmed_checks": [
             "HYG/LQD 走弱",
             "油价/原油代理上升"
@@ -67570,7 +67445,7 @@
             "美元走强"
           ],
           "hyg_lqd_1d_relative_return": -0.0003,
-          "oil_proxy_1d_return": 0.0209,
+          "oil_proxy_1d_return": 0.0222,
           "oil_proxy_symbols_used": [
             "USO",
             "CL=F"
@@ -68438,11 +68313,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.45,
             "top_headlines": [
-              "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
-              "Stocks gain on softer inflation, bank results while oil rises on US-Iran hostilities - Reuters",
-              "Johnson & Johnson has a chance to show it's more than just a rotation winner",
+              "Jim Cramer says concerns about AI market froth are overblown. Here's why",
               "Trump wants fees for Hormuz just like Iran - is that legal? - Reuters",
-              "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters"
+              "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
+              "Lawmakers seek to counter China, Iran repression tactics on US soil - Reuters",
+              "Johnson & Johnson has a chance to show it's more than just a rotation winner"
             ]
           },
           "price": {
@@ -69800,42 +69675,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 84,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation",
-                "oil_shock_risk"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 95,
-              "headline": "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-07-14T19:12:54+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "high",
-              "confidence_score": 78,
+              "confidence_score": 77,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 85,
+              "freshness_score": 83,
               "headline": "China blunted Iran war oil shock, but can it do the same for fuels? - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -69855,14 +69702,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 80,
+              "freshness_score": 78,
               "headline": "EU aviation body reinstates Middle East flights warning as fighting resumes - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -69882,14 +69729,14 @@
                 "TLT"
               ],
               "confidence": "medium",
-              "confidence_score": 74,
+              "confidence_score": 73,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 70,
+              "freshness_score": 67,
               "headline": "Spot Mideast crude prices strengthen after Iran attacks UAE tankers - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -69916,12 +69763,12 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 61,
-              "headline": "China's June oil imports hit near 10-year low amid Iran war - Reuters",
+              "freshness_score": 62,
+              "headline": "US resumes Iran port blockade, while Trump scraps proposed Hormuz shipping fee - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-07-14T05:22:00+00:00",
+              "published_at": "2026-07-14T06:36:00+00:00",
               "source": "Reuters"
             },
             {
@@ -69943,7 +69790,34 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 56,
+              "freshness_score": 59,
+              "headline": "China's June oil imports hit near 10-year low amid Iran war - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-07-14T05:22:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 70,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 54,
               "headline": "US says it has completed its latest wave of strikes on Iran - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -69989,19 +69863,6 @@
               {
                 "confidence": "high",
                 "detected_event_conditions": [
-                  "geopolitical_risk_escalation",
-                  "oil_shock_risk"
-                ],
-                "event_type": "geopolitical_risk_escalation",
-                "expected_market_direction": "risk_off",
-                "headline": "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters",
-                "importance_score": 100,
-                "published_at": "2026-07-14T19:12:54+00:00",
-                "source": "Reuters"
-              },
-              {
-                "confidence": "high",
-                "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
                 "event_type": "geopolitical_risk_escalation",
@@ -70033,6 +69894,18 @@
                 "headline": "Spot Mideast crude prices strengthen after Iran attacks UAE tankers - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-07-14T08:50:09+00:00",
+                "source": "Reuters"
+              },
+              {
+                "confidence": "medium",
+                "detected_event_conditions": [
+                  "geopolitical_risk_escalation"
+                ],
+                "event_type": "geopolitical_risk_escalation",
+                "expected_market_direction": "risk_off",
+                "headline": "US resumes Iran port blockade, while Trump scraps proposed Hormuz shipping fee - Reuters",
+                "importance_score": 100,
+                "published_at": "2026-07-14T06:36:00+00:00",
                 "source": "Reuters"
               },
               {
@@ -70097,7 +69970,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0047,
-              "avg_equity_futures_1d_return": 0.0048,
+              "avg_equity_futures_1d_return": 0.0045,
               "confirmed_checks": [
                 "HYG/LQD 走弱",
                 "油价/原油代理上升"
@@ -70114,7 +69987,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.0003,
-              "oil_proxy_1d_return": 0.0209,
+              "oil_proxy_1d_return": 0.0222,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -72594,11 +72467,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.45,
             "top_headlines": [
-              "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
-              "Stocks gain on softer inflation, bank results while oil rises on US-Iran hostilities - Reuters",
-              "Johnson & Johnson has a chance to show it's more than just a rotation winner",
+              "Jim Cramer says concerns about AI market froth are overblown. Here's why",
               "Trump wants fees for Hormuz just like Iran - is that legal? - Reuters",
-              "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters"
+              "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
+              "Lawmakers seek to counter China, Iran repression tactics on US soil - Reuters",
+              "Johnson & Johnson has a chance to show it's more than just a rotation winner"
             ]
           },
           "price": {
@@ -73917,42 +73790,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 84,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation",
-                "oil_shock_risk"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 95,
-              "headline": "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-07-14T19:12:54+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "high",
-              "confidence_score": 78,
+              "confidence_score": 77,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 85,
+              "freshness_score": 83,
               "headline": "China blunted Iran war oil shock, but can it do the same for fuels? - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -73972,14 +73817,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 80,
+              "freshness_score": 78,
               "headline": "EU aviation body reinstates Middle East flights warning as fighting resumes - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -73999,14 +73844,14 @@
                 "TLT"
               ],
               "confidence": "medium",
-              "confidence_score": 74,
+              "confidence_score": 73,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 70,
+              "freshness_score": 67,
               "headline": "Spot Mideast crude prices strengthen after Iran attacks UAE tankers - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -74033,12 +73878,12 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 61,
-              "headline": "China's June oil imports hit near 10-year low amid Iran war - Reuters",
+              "freshness_score": 62,
+              "headline": "US resumes Iran port blockade, while Trump scraps proposed Hormuz shipping fee - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-07-14T05:22:00+00:00",
+              "published_at": "2026-07-14T06:36:00+00:00",
               "source": "Reuters"
             },
             {
@@ -74060,7 +73905,34 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 56,
+              "freshness_score": 59,
+              "headline": "China's June oil imports hit near 10-year low amid Iran war - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-07-14T05:22:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 70,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 54,
               "headline": "US says it has completed its latest wave of strikes on Iran - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -74106,19 +73978,6 @@
               {
                 "confidence": "high",
                 "detected_event_conditions": [
-                  "geopolitical_risk_escalation",
-                  "oil_shock_risk"
-                ],
-                "event_type": "geopolitical_risk_escalation",
-                "expected_market_direction": "risk_off",
-                "headline": "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters",
-                "importance_score": 100,
-                "published_at": "2026-07-14T19:12:54+00:00",
-                "source": "Reuters"
-              },
-              {
-                "confidence": "high",
-                "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
                 "event_type": "geopolitical_risk_escalation",
@@ -74150,6 +74009,18 @@
                 "headline": "Spot Mideast crude prices strengthen after Iran attacks UAE tankers - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-07-14T08:50:09+00:00",
+                "source": "Reuters"
+              },
+              {
+                "confidence": "medium",
+                "detected_event_conditions": [
+                  "geopolitical_risk_escalation"
+                ],
+                "event_type": "geopolitical_risk_escalation",
+                "expected_market_direction": "risk_off",
+                "headline": "US resumes Iran port blockade, while Trump scraps proposed Hormuz shipping fee - Reuters",
+                "importance_score": 100,
+                "published_at": "2026-07-14T06:36:00+00:00",
                 "source": "Reuters"
               },
               {
@@ -74214,7 +74085,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0047,
-              "avg_equity_futures_1d_return": 0.0048,
+              "avg_equity_futures_1d_return": 0.0045,
               "confirmed_checks": [
                 "HYG/LQD 走弱",
                 "油价/原油代理上升"
@@ -74231,7 +74102,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.0003,
-              "oil_proxy_1d_return": 0.0209,
+              "oil_proxy_1d_return": 0.0222,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -76717,11 +76588,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.45,
             "top_headlines": [
-              "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
-              "Stocks gain on softer inflation, bank results while oil rises on US-Iran hostilities - Reuters",
-              "Johnson & Johnson has a chance to show it's more than just a rotation winner",
+              "Jim Cramer says concerns about AI market froth are overblown. Here's why",
               "Trump wants fees for Hormuz just like Iran - is that legal? - Reuters",
-              "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters"
+              "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
+              "Lawmakers seek to counter China, Iran repression tactics on US soil - Reuters",
+              "Johnson & Johnson has a chance to show it's more than just a rotation winner"
             ]
           },
           "price": {
@@ -78087,42 +77958,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 84,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation",
-                "oil_shock_risk"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 95,
-              "headline": "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-07-14T19:12:54+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "high",
-              "confidence_score": 78,
+              "confidence_score": 77,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 85,
+              "freshness_score": 83,
               "headline": "China blunted Iran war oil shock, but can it do the same for fuels? - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -78142,14 +77985,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 80,
+              "freshness_score": 78,
               "headline": "EU aviation body reinstates Middle East flights warning as fighting resumes - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -78169,14 +78012,14 @@
                 "TLT"
               ],
               "confidence": "medium",
-              "confidence_score": 74,
+              "confidence_score": 73,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 70,
+              "freshness_score": 67,
               "headline": "Spot Mideast crude prices strengthen after Iran attacks UAE tankers - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -78203,12 +78046,12 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 61,
-              "headline": "China's June oil imports hit near 10-year low amid Iran war - Reuters",
+              "freshness_score": 62,
+              "headline": "US resumes Iran port blockade, while Trump scraps proposed Hormuz shipping fee - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-07-14T05:22:00+00:00",
+              "published_at": "2026-07-14T06:36:00+00:00",
               "source": "Reuters"
             },
             {
@@ -78230,7 +78073,34 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 56,
+              "freshness_score": 59,
+              "headline": "China's June oil imports hit near 10-year low amid Iran war - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-07-14T05:22:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 70,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 54,
               "headline": "US says it has completed its latest wave of strikes on Iran - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -78276,19 +78146,6 @@
               {
                 "confidence": "high",
                 "detected_event_conditions": [
-                  "geopolitical_risk_escalation",
-                  "oil_shock_risk"
-                ],
-                "event_type": "geopolitical_risk_escalation",
-                "expected_market_direction": "risk_off",
-                "headline": "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters",
-                "importance_score": 100,
-                "published_at": "2026-07-14T19:12:54+00:00",
-                "source": "Reuters"
-              },
-              {
-                "confidence": "high",
-                "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
                 "event_type": "geopolitical_risk_escalation",
@@ -78320,6 +78177,18 @@
                 "headline": "Spot Mideast crude prices strengthen after Iran attacks UAE tankers - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-07-14T08:50:09+00:00",
+                "source": "Reuters"
+              },
+              {
+                "confidence": "medium",
+                "detected_event_conditions": [
+                  "geopolitical_risk_escalation"
+                ],
+                "event_type": "geopolitical_risk_escalation",
+                "expected_market_direction": "risk_off",
+                "headline": "US resumes Iran port blockade, while Trump scraps proposed Hormuz shipping fee - Reuters",
+                "importance_score": 100,
+                "published_at": "2026-07-14T06:36:00+00:00",
                 "source": "Reuters"
               },
               {
@@ -78384,7 +78253,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0047,
-              "avg_equity_futures_1d_return": 0.0048,
+              "avg_equity_futures_1d_return": 0.0045,
               "confirmed_checks": [
                 "HYG/LQD 走弱",
                 "油价/原油代理上升"
@@ -78401,7 +78270,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.0003,
-              "oil_proxy_1d_return": 0.0209,
+              "oil_proxy_1d_return": 0.0222,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -80826,8 +80695,8 @@
             "ig_oas_20d_change": 0.050000000000000044
           },
           "daily_market_brief": {
-            "brief": "Finnhub quote unavailable; news risk 45%; macro event risk flagged; rates pressure 28%.",
-            "finnhub_quote_available": false,
+            "brief": "Finnhub quote 751.83; news risk 45%; macro event risk flagged; rates pressure 28%.",
+            "finnhub_quote_available": true,
             "macro_event_risk_flag": true,
             "news_risk_score": 0.45,
             "rates_pressure_score": 0.2847950429677243,
@@ -80836,11 +80705,11 @@
           "finnhub": {
             "candle_status": "failed",
             "news_sentiment_status": "failed",
-            "quote_change_percent": null,
-            "quote_previous_close": null,
-            "quote_price": null,
+            "quote_change_percent": 0.3551,
+            "quote_previous_close": 749.17,
+            "quote_price": 751.83,
             "quote_source": "finnhub",
-            "quote_status": "rate_limited",
+            "quote_status": "available",
             "sentiment_score": null
           },
           "flow_positioning_proxy": {
@@ -80898,11 +80767,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.45,
             "top_headlines": [
-              "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
-              "Stocks gain on softer inflation, bank results while oil rises on US-Iran hostilities - Reuters",
-              "Johnson & Johnson has a chance to show it's more than just a rotation winner",
+              "Jim Cramer says concerns about AI market froth are overblown. Here's why",
               "Trump wants fees for Hormuz just like Iran - is that legal? - Reuters",
-              "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters"
+              "S&P 500 and Nasdaq end higher on cool inflation data, solid bank earnings - Reuters",
+              "Lawmakers seek to counter China, Iran repression tactics on US soil - Reuters",
+              "Johnson & Johnson has a chance to show it's more than just a rotation winner"
             ]
           },
           "price": {
@@ -82235,42 +82104,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 84,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation",
-                "oil_shock_risk"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 95,
-              "headline": "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-07-14T19:12:54+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "high",
-              "confidence_score": 78,
+              "confidence_score": 77,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 85,
+              "freshness_score": 83,
               "headline": "China blunted Iran war oil shock, but can it do the same for fuels? - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -82290,14 +82131,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 80,
+              "freshness_score": 78,
               "headline": "EU aviation body reinstates Middle East flights warning as fighting resumes - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -82317,14 +82158,14 @@
                 "TLT"
               ],
               "confidence": "medium",
-              "confidence_score": 74,
+              "confidence_score": 73,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 70,
+              "freshness_score": 67,
               "headline": "Spot Mideast crude prices strengthen after Iran attacks UAE tankers - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -82351,12 +82192,12 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 61,
-              "headline": "China's June oil imports hit near 10-year low amid Iran war - Reuters",
+              "freshness_score": 62,
+              "headline": "US resumes Iran port blockade, while Trump scraps proposed Hormuz shipping fee - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-07-14T05:22:00+00:00",
+              "published_at": "2026-07-14T06:36:00+00:00",
               "source": "Reuters"
             },
             {
@@ -82378,7 +82219,34 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 56,
+              "freshness_score": 59,
+              "headline": "China's June oil imports hit near 10-year low amid Iran war - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-07-14T05:22:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 70,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 54,
               "headline": "US says it has completed its latest wave of strikes on Iran - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -82424,19 +82292,6 @@
               {
                 "confidence": "high",
                 "detected_event_conditions": [
-                  "geopolitical_risk_escalation",
-                  "oil_shock_risk"
-                ],
-                "event_type": "geopolitical_risk_escalation",
-                "expected_market_direction": "risk_off",
-                "headline": "Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters",
-                "importance_score": 100,
-                "published_at": "2026-07-14T19:12:54+00:00",
-                "source": "Reuters"
-              },
-              {
-                "confidence": "high",
-                "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
                 "event_type": "geopolitical_risk_escalation",
@@ -82468,6 +82323,18 @@
                 "headline": "Spot Mideast crude prices strengthen after Iran attacks UAE tankers - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-07-14T08:50:09+00:00",
+                "source": "Reuters"
+              },
+              {
+                "confidence": "medium",
+                "detected_event_conditions": [
+                  "geopolitical_risk_escalation"
+                ],
+                "event_type": "geopolitical_risk_escalation",
+                "expected_market_direction": "risk_off",
+                "headline": "US resumes Iran port blockade, while Trump scraps proposed Hormuz shipping fee - Reuters",
+                "importance_score": 100,
+                "published_at": "2026-07-14T06:36:00+00:00",
                 "source": "Reuters"
               },
               {
@@ -82532,7 +82399,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0047,
-              "avg_equity_futures_1d_return": 0.0048,
+              "avg_equity_futures_1d_return": 0.0045,
               "confirmed_checks": [
                 "HYG/LQD 走弱",
                 "油价/原油代理上升"
@@ -82549,7 +82416,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.0003,
-              "oil_proxy_1d_return": 0.0209,
+              "oil_proxy_1d_return": 0.0222,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -84712,7 +84579,7 @@
       },
       "version": "stock_data_provider_v1"
     },
-    "generated_at": "2026-07-14T21:30:11.548512+00:00",
+    "generated_at": "2026-07-14T22:37:16.553484+00:00",
     "guardrails": [
       "This is a probabilistic stock forecast module, not a trading system.",
       "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -84801,7 +84668,7 @@
         },
         "question": "high final_radar_score 是否真的对应更大次日 range？"
       },
-      "generated_at": "2026-07-14T21:30:11.560778+00:00",
+      "generated_at": "2026-07-14T22:37:16.565578+00:00",
       "not_validated_warning": "not_enough_forward_samples",
       "pending_records": 89,
       "risk_score_effectiveness": {
@@ -87133,59 +87000,59 @@
             "event_risk_flag": "high",
             "headlines": [
               {
-                "datetime": 1784058660,
-                "headline": "Jeff Bezos Put $2 Billion of His Own Money Into Blue Origin's Funding Round",
+                "datetime": 1784065980,
+                "headline": "Elon Musk's Tesla Posts Best Quarter in Two Years",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=585c35ddd70ca306a6793f81a87d627b5d522f8d119fe63ece84aa7233afe2a1"
+                "url": "https://finnhub.io/api/news?id=67eb43609e4ea8e7a7f6037e1f278f41e1c23fdfc87a691c3d7e0b5aab022b6c"
               },
               {
-                "datetime": 1784058364,
-                "headline": "Sector Update: Tech Stocks Rise Late Afternoon",
+                "datetime": 1784065462,
+                "headline": "China plans to let top AI firms buy limited NVIDIA Corporation (NVDA) H200 chips, the Information reports",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=74a9bf5ec2a7388aeb461eab72ae7f541af677992a41ab94e5064fe71b3941ce"
+                "url": "https://finnhub.io/api/news?id=4e4cfda1bfbbfd42db97a1fe7f5385ec28158ac1c47cc422ebdf07abfa196809"
               },
               {
-                "datetime": 1784057700,
-                "headline": "Microsoft Is Cheaper Than the S&P 500. Now Is the Perfect Time to Load Up on the Stock.",
+                "datetime": 1784065391,
+                "headline": "Nvidia (NVDA) Stock Trades Up, Here Is Why",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=91176e1c219e35f084e257f2ee901f9a489822e3d92f9915a076328b73cceee3"
+                "url": "https://finnhub.io/api/news?id=c73b90b63a733c6ab712fcdd3e3cdc24850eebe9631901e92efbf619cfd101d3"
               },
               {
-                "datetime": 1784057101,
-                "headline": "Inflation Slowed to 3.5% in June, but How Long Will It Last? Here's What Investors Need to Know.",
+                "datetime": 1784065384,
+                "headline": "S&P 500, Nasdaq End Higher On Support From Chipmakers, Cybersecurity Stocks And Soft Inflation Data — NVDA, GS, SKHY, VZ, LCID In Focus",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=3ebde78221cdcb29ca315998835cc6028268abf226d30ee216f8b8cc626c0c0e"
+                "url": "https://finnhub.io/api/news?id=ef8364d199cd9e8d251393935fdc9813d4c930c6b0dc3d187319a78ca22a7e48"
               },
               {
-                "datetime": 1784056800,
-                "headline": "OpenAI and Anthropic Are Developing Their Own Custom AI Chips: Here Are the Stocks That Could Benefit The Most",
+                "datetime": 1784065212,
+                "headline": "Why CleanSpark Stock Climbed Today",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=f7fdb7b7dcfb4d197d9875257d70f1e42b90dd6ce890667b0982406dfcab2a5c"
+                "url": "https://finnhub.io/api/news?id=9822fef2e3c0bed89b5756e1724425627cd4c2b0c1760fc0af8868abbb06dc98"
               },
               {
-                "datetime": 1784056756,
-                "headline": "2 Magnificent ETFs for Retirees That Pay More Than 3%",
+                "datetime": 1784064166,
+                "headline": "The Real Risk Inside Broadcom Stock",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=04ab91248811efa96d3d51c6d7b48d53a315e1fa650bbc2c3ece711b447c356b"
+                "url": "https://finnhub.io/api/news?id=9b3522e61ad38221821c6fbdaba2dbead0865f994a650f05b8c6c35e9de00306"
               },
               {
-                "datetime": 1784056733,
-                "headline": "Citigroup Is Up 14% This Year: Is It Outperforming Other Bank Stocks Like Wells Fargo and Bank of America?",
+                "datetime": 1784064000,
+                "headline": "Palantir Trades at 64X Sales. Here's Whether That Premium Is Justified.",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=5663e7fcafb2266c2d195943dde5a05f811be209b3b455a53c865011908ddeed"
+                "url": "https://finnhub.io/api/news?id=92b03df850e414cfb6022e7476729236801c6923707ad5508bd70ca08e23f365"
               },
               {
-                "datetime": 1784056380,
-                "headline": "Morgan Stanley says Nvidia stock remains top pick despite headwind",
+                "datetime": 1784063471,
+                "headline": "NVIDIA Stock Amplifies Your Market Ride",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=239d9a0200c227643c245fd06d06efffba241190b6e4df61058d31c6267746c3"
+                "url": "https://finnhub.io/api/news?id=e9b47454e2f4b422ef0c7b3db3922a225773a452820bf31d7cebd679e4e5dfcb"
               }
             ],
-            "major_company_headline": "Jeff Bezos Put $2 Billion of His Own Money Into Blue Origin's Funding Round",
+            "major_company_headline": "Elon Musk's Tesla Posts Best Quarter in Two Years",
             "news_count_24h": 20,
             "news_count_72h": 20,
             "news_risk_score": 100.0,
-            "news_sentiment": "negative"
+            "news_sentiment": "neutral"
           },
           "price_trend": {
             "close": 211.8000030517578,
@@ -89044,7 +88911,7 @@
           "components": {
             "catalyst": {
               "evidence": [
-                "公司新闻已接入: Jeff Bezos Put $2 Billion of His Own Money Into Blue Origin's Funding Round",
+                "公司新闻已接入: Elon Musk's Tesla Posts Best Quarter in Two Years",
                 "增长数据具备 EPS 上修叙事基础"
               ],
               "max_points": 10,
@@ -89160,7 +89027,7 @@
           },
           "thesis": {
             "capital_confirmation": "资金确认不足或仍需观察",
-            "catalyst": "Jeff Bezos Put $2 Billion of His Own Money Into Blue Origin's Funding Round",
+            "catalyst": "Elon Musk's Tesla Posts Best Quarter in Two Years",
             "expectation_gap": [
               "收入增长较强，具备正向预期差基础",
               "EPS 增长较强，可能支持盈利上修叙事"
@@ -91527,6 +91394,42 @@
             "event_risk_flag": "high",
             "headlines": [
               {
+                "datetime": 1784066290,
+                "headline": "Tesla Stock Rises After Wave of Wall Street Target Hikes",
+                "source": "Yahoo",
+                "url": "https://finnhub.io/api/news?id=c09f18a61443782ee66e3beb34924eaf6a89c773ce95891c920cd1a76c3135dc"
+              },
+              {
+                "datetime": 1784065980,
+                "headline": "Elon Musk's Tesla Posts Best Quarter in Two Years",
+                "source": "Yahoo",
+                "url": "https://finnhub.io/api/news?id=67eb43609e4ea8e7a7f6037e1f278f41e1c23fdfc87a691c3d7e0b5aab022b6c"
+              },
+              {
+                "datetime": 1784065298,
+                "headline": "Stock Market Today, July 14: Lucid Group Plunges but Denies Reports About Bankruptcy Filing",
+                "source": "Yahoo",
+                "url": "https://finnhub.io/api/news?id=7418cb633cdeb442555f2590786ca9583ea0d3c585b60959b40ea4277ef85e56"
+              },
+              {
+                "datetime": 1784065260,
+                "headline": "Zipline Accelerates U.S. Growth with 13X Marketplace Expansion, New Leadership Hires, and Launches in Austin and Cleveland",
+                "source": "Yahoo",
+                "url": "https://finnhub.io/api/news?id=bb1b5131b3b67b1ac837e8397338659ff0f4c3f3062e2f45325f2897c1bbccd7"
+              },
+              {
+                "datetime": 1784061403,
+                "headline": "Jim Cramer Shares Morgan Stanley’s View Of Space Exploration Technologies Corp. (SPCX)",
+                "source": "Yahoo",
+                "url": "https://finnhub.io/api/news?id=f86baf65ed6859916b0c3c7c197628eb7348cdeb34810bb800d97277248733a8"
+              },
+              {
+                "datetime": 1784061133,
+                "headline": "Tesla AI Chief Ashok Elluswamy Says Optimus Has 'Big Shoes to Fill' After Model S, X Production Line Closure",
+                "source": "Yahoo",
+                "url": "https://finnhub.io/api/news?id=b397d901519929b51252bcdfa65df1305d11464d78259def3b81ec903d261709"
+              },
+              {
                 "datetime": 1784057810,
                 "headline": "Tesla Stock Gains After Four Price-Target Hikes Ahead Of Q2 Earnings",
                 "source": "Yahoo",
@@ -91537,49 +91440,13 @@
                 "headline": "Why Meta stock suddenly broke out after a long slide",
                 "source": "Yahoo",
                 "url": "https://finnhub.io/api/news?id=cfa9e930b6b5f51e956125a29fedbe7e3e06128b68e5873d9c73ca286058bdc7"
-              },
-              {
-                "datetime": 1784052378,
-                "headline": "Most Stocks in the S&P 500 Are Actually Trading Lower",
-                "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=3c813bf6d3b4c80cd8341bdde0fe3f62e4c1ed0e4815610a91fca1c48f5d2292"
-              },
-              {
-                "datetime": 1784048844,
-                "headline": "TSLA Stock Remains Volatile Ahead Of Q2 Earnings: Analysts Raise Price Targets With Cautious Optimism",
-                "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=e85b6b0e4794431ec8a398c5acc3ffc96fc7502821c06ae2cd974de8a49e120b"
-              },
-              {
-                "datetime": 1784046000,
-                "headline": "OGBC Group Announces Global Hardware Accelerator in San Francisco",
-                "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=6730069f41d5304764fda869e6fa11a0f4766360a5658c6593f3d048cd1ae379"
-              },
-              {
-                "datetime": 1784043780,
-                "headline": "Bank Earnings Indicate Strong Economy; IBM Drops Dragging Software; Warsh Says No Tolerance For Inflation",
-                "source": "Benzinga",
-                "url": "https://finnhub.io/api/news?id=bdf8e6144f33c66c8df44fb53271888701ca013bc1052a437f55d14b10eab40a"
-              },
-              {
-                "datetime": 1784042689,
-                "headline": "What If the Car Is No Longer the Point For Tesla Stock?",
-                "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=386cc1201a7319eeb23e507abedf0a96e669057f4cebeeb85a7fb0d0b5758115"
-              },
-              {
-                "datetime": 1784040464,
-                "headline": "Tesla's Strong Auto, Energy Deliveries Position it for Solid Q2, Morgan Stanley Says",
-                "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=2b5ee8ddb539138ad976464cc509c8c6945c5068ea1153aa89039825c5d58088"
               }
             ],
-            "major_company_headline": "Tesla Stock Gains After Four Price-Target Hikes Ahead Of Q2 Earnings",
+            "major_company_headline": "Tesla Stock Rises After Wave of Wall Street Target Hikes",
             "news_count_24h": 20,
             "news_count_72h": 20,
             "news_risk_score": 100.0,
-            "news_sentiment": "positive"
+            "news_sentiment": "neutral"
           },
           "price_trend": {
             "close": 396.17999267578125,
@@ -92101,7 +91968,6 @@
             "scenario": "stock_downside_continuation"
           },
           "supporting_signals": [
-            "近期公司新闻偏正面。",
             "基础财务指标已接入且收入增长为正。"
           ]
         },
@@ -93430,16 +93296,15 @@
           "components": {
             "catalyst": {
               "evidence": [
-                "公司新闻已接入: Tesla Stock Gains After Four Price-Target Hikes Ahead Of Q2 Earnings",
-                "新闻情绪偏正",
+                "公司新闻已接入: Tesla Stock Rises After Wave of Wall Street Target Hikes",
                 "未来 30 天存在财报催化：2026-07-22"
               ],
               "max_points": 10,
               "missing_fields": [],
               "name": "catalyst",
-              "points": 8.0,
-              "score_pct": 80.0,
-              "status": "supportive"
+              "points": 6.0,
+              "score_pct": 60.0,
+              "status": "neutral"
             },
             "flow": {
               "evidence": [
@@ -93545,7 +93410,7 @@
           },
           "thesis": {
             "capital_confirmation": "资金确认不足或仍需观察",
-            "catalyst": "Tesla Stock Gains After Four Price-Target Hikes Ahead Of Q2 Earnings",
+            "catalyst": "Tesla Stock Rises After Wave of Wall Street Target Hikes",
             "expectation_gap": [
               "未来 30 天财报可能成为重新定价窗口"
             ],
@@ -93656,7 +93521,6 @@
           "validation_status": "not_yet_validated"
         },
         "supporting_signals": [
-          "近期公司新闻偏正面。",
           "基础财务指标已接入且收入增长为正。"
         ],
         "symbol": "TSLA",
@@ -93679,7 +93543,7 @@
         "top_candidate": "NVDA",
         "validation_status": "not_yet_validated"
       },
-      "generated_at": "2026-07-14T21:30:11.557176+00:00",
+      "generated_at": "2026-07-14T22:37:16.561968+00:00",
       "model_version": "stock_baseline_v1",
       "notes": [
         "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -94116,7 +93980,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-07-14T21:30:11.560778+00:00",
+    "generated_at": "2026-07-14T22:37:16.565578+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 89,
     "risk_score_effectiveness": {
@@ -94188,7 +94052,7 @@
       "top_candidate": "NVDA",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-07-14T21:30:11.557176+00:00",
+    "generated_at": "2026-07-14T22:37:16.561968+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",

@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-14T21:30:01.034450+00:00`
+- generated_at: `2026-07-14T22:37:04.574330+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `13`
+- major_event_count: `11`
 - event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -24,14 +24,6 @@
 - high_importance_event_count: `0`
 
 ## Major Events
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters
-- source: Reuters
-- published_at: `2026-07-14T19:12:54+00:00`
-- importance_score: `100`
-- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -59,6 +51,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: US resumes Iran port blockade, while Trump scraps proposed Hormuz shipping fee - Reuters
+- source: Reuters
+- published_at: `2026-07-14T06:36:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: China's June oil imports hit near 10-year low amid Iran war - Reuters
 - source: Reuters
 - published_at: `2026-07-14T05:22:00+00:00`
@@ -75,6 +75,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters
+- source: Reuters
+- published_at: `2026-07-14T01:01:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Trump says US attacking Iran capabilities related to Strait of Hormuz - Reuters
 - source: Reuters
 - published_at: `2026-07-13T22:31:43+00:00`
@@ -86,14 +94,6 @@
 - headline: UAE says Iranian missiles struck oil tankers in Strait of Hormuz, one sailor killed - Reuters
 - source: Reuters
 - published_at: `2026-07-13T22:27:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil up 9% to one-month high as US says it will blockade entire Iranian coastline, all vessels - Reuters
-- source: Reuters
-- published_at: `2026-07-13T19:57:49+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
