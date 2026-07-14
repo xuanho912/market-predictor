@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-14T22:37:04.574330+00:00`
+- generated_at: `2026-07-14T23:40:32.883724+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `11`
-- event_detection_confidence: `71`
+- major_event_count: `12`
+- event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -69,7 +69,7 @@
 
 - headline: US says it has completed its latest wave of strikes on Iran - Reuters
 - source: Reuters
-- published_at: `2026-07-14T03:17:45+00:00`
+- published_at: `2026-07-14T03:17:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -99,8 +99,8 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Lawmakers demand Pentagon release findings from probe of Iran school strike - Reuters
+- headline: Oil up 9% to one-month high as US says it will blockade entire Iranian coastline, all vessels - Reuters
 - source: Reuters
-- published_at: `2026-07-13T19:43:44+00:00`
+- published_at: `2026-07-13T19:57:49+00:00`
 - importance_score: `100`
 - confidence: `medium`
