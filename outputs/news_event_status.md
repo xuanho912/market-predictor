@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-14T04:21:36.562523+00:00`
+- generated_at: `2026-07-14T05:58:02.828583+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `16`
-- event_detection_confidence: `76`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,7 +27,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil climbs to one-month high as US, Iran step up attacks in Strait of Hormuz - Reuters
+- headline: Oil hits one-month high as US, Iran step up attacks in Strait of Hormuz - Reuters
 - source: Reuters
 - published_at: `2026-07-14T01:01:00+00:00`
 - importance_score: `100`
