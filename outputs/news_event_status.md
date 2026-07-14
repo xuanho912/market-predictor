@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-13T23:41:13.403684+00:00`
+- generated_at: `2026-07-14T00:04:27.988236+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `16`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: UAE says two tankers hit by Iranian cruise missiles in Strait of Hormuz; one crew member killed - Reuters
+- source: Reuters
+- published_at: `2026-07-13T22:35:22+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -95,12 +103,4 @@
 - source: Reuters
 - published_at: `2026-07-13T12:45:11+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Explainer: Why has the Iran-US ceasefire memorandum frayed? - Reuters
-- source: Reuters
-- published_at: `2026-07-13T14:32:03+00:00`
-- importance_score: `98`
 - confidence: `high`

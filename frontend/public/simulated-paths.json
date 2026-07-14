@@ -5,10 +5,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-07-13",
-    "current_time_us_eastern": "2026-07-13T19:41:25.353943-04:00",
+    "current_time_us_eastern": "2026-07-13T20:04:38.080528-04:00",
     "data_freshness_status": "fresh",
     "expected_latest_trading_date": "2026-07-13",
-    "generated_at": "2026-07-13T23:41:25.353943+00:00",
+    "generated_at": "2026-07-14T00:04:38.080528+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -1047,11 +1047,11 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "HY_OAS",
-      "IG_OAS",
-      "BAA_SPREAD",
       "DGS10",
+      "BAA_SPREAD",
       "DGS2",
+      "IG_OAS",
+      "HY_OAS",
       "DGS3MO",
       "DFII10",
       "RECESSION",
@@ -1089,7 +1089,7 @@
       "event_detection_confidence": 76,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-07-13T23:41:13.403684+00:00",
+      "last_update": "2026-07-14T00:04:27.988236+00:00",
       "major_event_count": 16,
       "missing_reason": null,
       "news_direction": "risk_off",
@@ -1191,6 +1191,18 @@
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_market_direction": "risk_off",
+          "headline": "UAE says two tankers hit by Iranian cruise missiles in Strait of Hormuz; one crew member killed - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-07-13T22:35:22+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
           "headline": "Houthis fire missiles at Saudi Arabia, breaking years of calm - Reuters",
           "importance_score": 100,
           "published_at": "2026-07-13T19:55:26+00:00",
@@ -1242,18 +1254,6 @@
           "headline": "US forces strike Iranian submarine, ship maintenance facility - Reuters",
           "importance_score": 100,
           "published_at": "2026-07-13T14:58:41+00:00",
-          "source": "Reuters"
-        },
-        {
-          "confidence": "high",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Trump: Iran blockade reinstated, US to charge 20% on Strait of Hormuz cargo - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-07-13T14:54:03+00:00",
           "source": "Reuters"
         }
       ]
@@ -1419,7 +1419,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": -0.0094,
-        "avg_equity_futures_1d_return": -0.0118,
+        "avg_equity_futures_1d_return": -0.0119,
         "confirmed_checks": [
           "股票ETF或股指期货下跌",
           "VIX 上升",
@@ -1435,7 +1435,7 @@
           "HYG/LQD 走弱"
         ],
         "hyg_lqd_1d_relative_return": 0.0023,
-        "oil_proxy_1d_return": 0.0949,
+        "oil_proxy_1d_return": 0.0969,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -2303,11 +2303,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.1,
           "top_headlines": [
+            "UAE says two tankers hit by Iranian cruise missiles in Strait of Hormuz; one crew member killed - Reuters",
             "3 things you need to know about cyclospora",
             "Trump says the US will take out Pickaxe Mountain in Iran - Reuters",
             "Wall Street ends lower as Iran tensions dampen risk appetite; chipmakers drop - Reuters",
-            "Chipotle is opening its first restaurant in Mexico",
-            "Houthis fire missiles at Saudi Arabia, breaking years of calm - Reuters"
+            "Chipotle is opening its first restaurant in Mexico"
           ]
         },
         "price": {
@@ -3686,6 +3686,33 @@
               "TLT"
             ],
             "confidence": "high",
+            "confidence_score": 81,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 96,
+            "headline": "UAE says two tankers hit by Iranian cruise missiles in Strait of Hormuz; one crew member killed - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-13T22:35:22+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
             "confidence_score": 79,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
@@ -3693,7 +3720,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 91,
+            "freshness_score": 90,
             "headline": "Houthis fire missiles at Saudi Arabia, breaking years of calm - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3720,7 +3747,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 91,
+            "freshness_score": 90,
             "headline": "Lawmakers demand Pentagon release findings from probe of Iran school strike - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3774,7 +3801,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 87,
+            "freshness_score": 86,
             "headline": "US to begin enforcing maritime blockade on Iran on Tuesday - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3801,39 +3828,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 79,
+            "freshness_score": 78,
             "headline": "US forces strike Iranian submarine, ship maintenance facility - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-07-13T14:58:41+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 76,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 79,
-            "headline": "Trump: Iran blockade reinstated, US to charge 20% on Strait of Hormuz cargo - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-13T14:54:03+00:00",
             "source": "Reuters"
           }
         ],
@@ -3869,6 +3869,18 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "UAE says two tankers hit by Iranian cruise missiles in Strait of Hormuz; one crew member killed - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-13T22:35:22+00:00",
+              "source": "Reuters"
+            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -3928,18 +3940,6 @@
               "importance_score": 100,
               "published_at": "2026-07-13T14:58:41+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Trump: Iran blockade reinstated, US to charge 20% on Strait of Hormuz cargo - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-07-13T14:54:03+00:00",
-              "source": "Reuters"
             }
           ]
         },
@@ -3983,7 +3983,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0094,
-            "avg_equity_futures_1d_return": -0.0118,
+            "avg_equity_futures_1d_return": -0.0119,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -3999,7 +3999,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0023,
-            "oil_proxy_1d_return": 0.0949,
+            "oil_proxy_1d_return": 0.0969,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -6493,11 +6493,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.1,
           "top_headlines": [
+            "UAE says two tankers hit by Iranian cruise missiles in Strait of Hormuz; one crew member killed - Reuters",
             "3 things you need to know about cyclospora",
             "Trump says the US will take out Pickaxe Mountain in Iran - Reuters",
             "Wall Street ends lower as Iran tensions dampen risk appetite; chipmakers drop - Reuters",
-            "Chipotle is opening its first restaurant in Mexico",
-            "Houthis fire missiles at Saudi Arabia, breaking years of calm - Reuters"
+            "Chipotle is opening its first restaurant in Mexico"
           ]
         },
         "price": {
@@ -7835,6 +7835,33 @@
               "TLT"
             ],
             "confidence": "high",
+            "confidence_score": 81,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 96,
+            "headline": "UAE says two tankers hit by Iranian cruise missiles in Strait of Hormuz; one crew member killed - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-13T22:35:22+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
             "confidence_score": 79,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
@@ -7842,7 +7869,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 91,
+            "freshness_score": 90,
             "headline": "Houthis fire missiles at Saudi Arabia, breaking years of calm - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7869,7 +7896,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 91,
+            "freshness_score": 90,
             "headline": "Lawmakers demand Pentagon release findings from probe of Iran school strike - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7923,7 +7950,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 87,
+            "freshness_score": 86,
             "headline": "US to begin enforcing maritime blockade on Iran on Tuesday - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7950,39 +7977,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 79,
+            "freshness_score": 78,
             "headline": "US forces strike Iranian submarine, ship maintenance facility - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-07-13T14:58:41+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 76,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 79,
-            "headline": "Trump: Iran blockade reinstated, US to charge 20% on Strait of Hormuz cargo - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-13T14:54:03+00:00",
             "source": "Reuters"
           }
         ],
@@ -8018,6 +8018,18 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "UAE says two tankers hit by Iranian cruise missiles in Strait of Hormuz; one crew member killed - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-13T22:35:22+00:00",
+              "source": "Reuters"
+            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -8077,18 +8089,6 @@
               "importance_score": 100,
               "published_at": "2026-07-13T14:58:41+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Trump: Iran blockade reinstated, US to charge 20% on Strait of Hormuz cargo - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-07-13T14:54:03+00:00",
-              "source": "Reuters"
             }
           ]
         },
@@ -8132,7 +8132,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0094,
-            "avg_equity_futures_1d_return": -0.0118,
+            "avg_equity_futures_1d_return": -0.0119,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -8148,7 +8148,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0023,
-            "oil_proxy_1d_return": 0.0949,
+            "oil_proxy_1d_return": 0.0969,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -10649,11 +10649,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.1,
           "top_headlines": [
+            "UAE says two tankers hit by Iranian cruise missiles in Strait of Hormuz; one crew member killed - Reuters",
             "3 things you need to know about cyclospora",
             "Trump says the US will take out Pickaxe Mountain in Iran - Reuters",
             "Wall Street ends lower as Iran tensions dampen risk appetite; chipmakers drop - Reuters",
-            "Chipotle is opening its first restaurant in Mexico",
-            "Houthis fire missiles at Saudi Arabia, breaking years of calm - Reuters"
+            "Chipotle is opening its first restaurant in Mexico"
           ]
         },
         "price": {
@@ -12073,6 +12073,33 @@
               "TLT"
             ],
             "confidence": "high",
+            "confidence_score": 81,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 96,
+            "headline": "UAE says two tankers hit by Iranian cruise missiles in Strait of Hormuz; one crew member killed - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-13T22:35:22+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
             "confidence_score": 79,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
@@ -12080,7 +12107,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 91,
+            "freshness_score": 90,
             "headline": "Houthis fire missiles at Saudi Arabia, breaking years of calm - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12107,7 +12134,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 91,
+            "freshness_score": 90,
             "headline": "Lawmakers demand Pentagon release findings from probe of Iran school strike - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12161,7 +12188,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 87,
+            "freshness_score": 86,
             "headline": "US to begin enforcing maritime blockade on Iran on Tuesday - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12188,39 +12215,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 79,
+            "freshness_score": 78,
             "headline": "US forces strike Iranian submarine, ship maintenance facility - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-07-13T14:58:41+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 76,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 79,
-            "headline": "Trump: Iran blockade reinstated, US to charge 20% on Strait of Hormuz cargo - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-13T14:54:03+00:00",
             "source": "Reuters"
           }
         ],
@@ -12256,6 +12256,18 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "UAE says two tankers hit by Iranian cruise missiles in Strait of Hormuz; one crew member killed - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-13T22:35:22+00:00",
+              "source": "Reuters"
+            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -12315,18 +12327,6 @@
               "importance_score": 100,
               "published_at": "2026-07-13T14:58:41+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Trump: Iran blockade reinstated, US to charge 20% on Strait of Hormuz cargo - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-07-13T14:54:03+00:00",
-              "source": "Reuters"
             }
           ]
         },
@@ -12370,7 +12370,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0094,
-            "avg_equity_futures_1d_return": -0.0118,
+            "avg_equity_futures_1d_return": -0.0119,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -12386,7 +12386,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0023,
-            "oil_proxy_1d_return": 0.0949,
+            "oil_proxy_1d_return": 0.0969,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -14902,11 +14902,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.1,
           "top_headlines": [
+            "UAE says two tankers hit by Iranian cruise missiles in Strait of Hormuz; one crew member killed - Reuters",
             "3 things you need to know about cyclospora",
             "Trump says the US will take out Pickaxe Mountain in Iran - Reuters",
             "Wall Street ends lower as Iran tensions dampen risk appetite; chipmakers drop - Reuters",
-            "Chipotle is opening its first restaurant in Mexico",
-            "Houthis fire missiles at Saudi Arabia, breaking years of calm - Reuters"
+            "Chipotle is opening its first restaurant in Mexico"
           ]
         },
         "price": {
@@ -16249,6 +16249,33 @@
               "TLT"
             ],
             "confidence": "high",
+            "confidence_score": 81,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 96,
+            "headline": "UAE says two tankers hit by Iranian cruise missiles in Strait of Hormuz; one crew member killed - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-13T22:35:22+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
             "confidence_score": 79,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
@@ -16256,7 +16283,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 91,
+            "freshness_score": 90,
             "headline": "Houthis fire missiles at Saudi Arabia, breaking years of calm - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16283,7 +16310,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 91,
+            "freshness_score": 90,
             "headline": "Lawmakers demand Pentagon release findings from probe of Iran school strike - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16337,7 +16364,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 87,
+            "freshness_score": 86,
             "headline": "US to begin enforcing maritime blockade on Iran on Tuesday - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16364,39 +16391,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 79,
+            "freshness_score": 78,
             "headline": "US forces strike Iranian submarine, ship maintenance facility - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-07-13T14:58:41+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 76,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 79,
-            "headline": "Trump: Iran blockade reinstated, US to charge 20% on Strait of Hormuz cargo - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-13T14:54:03+00:00",
             "source": "Reuters"
           }
         ],
@@ -16432,6 +16432,18 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "UAE says two tankers hit by Iranian cruise missiles in Strait of Hormuz; one crew member killed - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-13T22:35:22+00:00",
+              "source": "Reuters"
+            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -16491,18 +16503,6 @@
               "importance_score": 100,
               "published_at": "2026-07-13T14:58:41+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Trump: Iran blockade reinstated, US to charge 20% on Strait of Hormuz cargo - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-07-13T14:54:03+00:00",
-              "source": "Reuters"
             }
           ]
         },
@@ -16546,7 +16546,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0094,
-            "avg_equity_futures_1d_return": -0.0118,
+            "avg_equity_futures_1d_return": -0.0119,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -16562,7 +16562,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0023,
-            "oil_proxy_1d_return": 0.0949,
+            "oil_proxy_1d_return": 0.0969,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
