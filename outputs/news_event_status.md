@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-14T14:16:51.420400+00:00`
+- generated_at: `2026-07-14T21:30:01.034450+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `15`
-- event_detection_confidence: `72`
+- major_event_count: `13`
+- event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `25`
+- confirmation_score: `40`
 
 ## Dashboard Note
 
@@ -27,17 +27,9 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Spot Mideast crude prices strengthen after Iran attacks UAE tankers - Reuters
+- headline: Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters
 - source: Reuters
-- published_at: `2026-07-14T08:50:09+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: China's June oil imports hit near 10-year low amid Iran war - Reuters
-- source: Reuters
-- published_at: `2026-07-14T05:22:00+00:00`
+- published_at: `2026-07-14T19:12:54+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -45,23 +37,39 @@
 
 - headline: China blunted Iran war oil shock, but can it do the same for fuels? - Reuters
 - source: Reuters
-- published_at: `2026-07-14T05:11:35+00:00`
+- published_at: `2026-07-14T15:19:46+00:00`
 - importance_score: `100`
 - confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: EU aviation body reinstates Middle East flights warning as fighting resumes - Reuters
+- source: Reuters
+- published_at: `2026-07-14T13:18:08+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Spot Mideast crude prices strengthen after Iran attacks UAE tankers - Reuters
+- source: Reuters
+- published_at: `2026-07-14T08:50:09+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: China's June oil imports hit near 10-year low amid Iran war - Reuters
+- source: Reuters
+- published_at: `2026-07-14T05:22:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: US says it has completed its latest wave of strikes on Iran - Reuters
 - source: Reuters
-- published_at: `2026-07-14T03:17:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran and US launch new attacks, battle over control of Strait of Hormuz - Reuters
-- source: Reuters
-- published_at: `2026-07-14T00:44:15+00:00`
+- published_at: `2026-07-14T03:17:45+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -81,26 +89,18 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_easing / risk_on
+### geopolitical_risk_escalation / risk_off
 
-- headline: Americans expect prolonged US-Iran war as ceasefire falters, Reuters/Ipsos poll finds - Reuters
+- headline: Oil up 9% to one-month high as US says it will blockade entire Iranian coastline, all vessels - Reuters
 - source: Reuters
-- published_at: `2026-07-13T22:15:00+00:00`
-- importance_score: `99`
-- confidence: `high`
+- published_at: `2026-07-13T19:57:49+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Lawmakers demand Pentagon release findings from probe of Iran school strike - Reuters
 - source: Reuters
 - published_at: `2026-07-13T19:43:44+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: UN maritime agency opposes Hormuz transit fees after Trump demands protection money
-- source: CNBC
-- published_at: `2026-07-13T18:28:04+00:00`
 - importance_score: `100`
 - confidence: `medium`
