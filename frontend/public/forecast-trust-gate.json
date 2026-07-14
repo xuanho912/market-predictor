@@ -53,7 +53,7 @@
     }
   ],
   "data_completeness_score": 87.0,
-  "data_freshness_status": "fresh",
+  "data_freshness_status": "market_open_unconfirmed",
   "expected_latest_trading_date": "2026-07-13",
   "forward_completed_samples": {
     "10d": 44,
@@ -63,7 +63,7 @@
     "5d": 64,
     "60d": 0
   },
-  "generated_at": "2026-07-14T00:04:38.267709+00:00",
+  "generated_at": "2026-07-14T04:21:47.248506+00:00",
   "guardrails": [
     "This gate does not modify Alpha v1 threshold, baseline_v1 or historical forecast records.",
     "This is forecast reliability assessment, not trading advice.",
@@ -84,7 +84,6 @@
     "Route repeated deviation themes into a challenger model rather than editing baseline_v1."
   ],
   "passes": [
-    "data_is_current_or_market_closed",
     "data_completeness_85_plus"
   ],
   "status": "RESEARCH_ONLY_FORWARD_VALIDATION_NEEDED",
@@ -95,10 +94,10 @@
       "edge_status": "RISK_WARNING",
       "primary_probability": 0.3362,
       "primary_scenario": "bearish_path",
-      "probability_gap": 0.0668,
+      "probability_gap": 0.0667,
       "readiness": "blocked_by_global_gate",
       "reason": "Global trust gate is not ready.",
-      "secondary_probability": 0.2694,
+      "secondary_probability": 0.2695,
       "secondary_scenario": "bounce_path"
     },
     "IWM": {
@@ -117,12 +116,12 @@
       "confidence_score": 64.0,
       "confluence_score": 51.0,
       "edge_status": "RISK_WARNING",
-      "primary_probability": 0.291,
+      "primary_probability": 0.2907,
       "primary_scenario": "bearish_path",
-      "probability_gap": 0.0123,
+      "probability_gap": 0.0118,
       "readiness": "blocked_by_global_gate",
       "reason": "Global trust gate is not ready.",
-      "secondary_probability": 0.2787,
+      "secondary_probability": 0.2789,
       "secondary_scenario": "bounce_path"
     },
     "SPY": {
@@ -138,11 +137,16 @@
       "secondary_scenario": "bearish_path"
     }
   },
-  "trust_score": 40,
+  "trust_score": 28,
   "use_boundary": "Use as a research radar and scenario explainer only; do not treat it as a dependable forecasting edge.",
   "validation_type": "forecast_reliability_gate",
   "version": "forecast_trust_gate_v1",
   "warnings": [
+    {
+      "code": "market_open_unconfirmed",
+      "message": "Current data is an intraday or unconfirmed snapshot; do not freeze it as a validated daily forecast.",
+      "severity": "medium"
+    },
     {
       "code": "high_confidence_not_validated",
       "details": {

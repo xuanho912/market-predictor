@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-14T00:04:27.988236+00:00`
+- generated_at: `2026-07-14T04:21:36.562523+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `16`
@@ -27,9 +27,25 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: UAE says two tankers hit by Iranian cruise missiles in Strait of Hormuz; one crew member killed - Reuters
+- headline: Oil climbs to one-month high as US, Iran step up attacks in Strait of Hormuz - Reuters
 - source: Reuters
-- published_at: `2026-07-13T22:35:22+00:00`
+- published_at: `2026-07-14T01:01:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: UAE says Iranian missiles struck oil tankers in Strait of Hormuz, one sailor killed - Reuters
+- source: Reuters
+- published_at: `2026-07-13T22:27:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Americans expect prolonged US-Iran war as ceasefire falters, Reuters/Ipsos poll finds - Reuters
+- source: Reuters
+- published_at: `2026-07-13T22:15:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -71,7 +87,7 @@
 - source: Reuters
 - published_at: `2026-07-13T14:58:41+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -79,7 +95,7 @@
 - source: Reuters
 - published_at: `2026-07-13T14:54:03+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -87,20 +103,4 @@
 - source: Reuters
 - published_at: `2026-07-13T13:58:01+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump: U.S. should be reimbursed for guarding Strait of Hormuz
-- source: CNBC
-- published_at: `2026-07-13T12:56:25+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: EU and partners launch $1 billion scheme to help Gaza recover from war - Reuters
-- source: Reuters
-- published_at: `2026-07-13T12:45:11+00:00`
-- importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
