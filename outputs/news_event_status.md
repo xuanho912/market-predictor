@@ -1,20 +1,20 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-15T04:20:39.056739+00:00`
+- generated_at: `2026-07-15T06:01:19.755944+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
-- event_detection_confidence: `72`
+- major_event_count: `11`
+- event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
-- price_reaction_confirmed: `False`
-- confirmation_score: `40`
+- price_reaction_confirmed: `True`
+- confirmation_score: `60`
 
 ## Dashboard Note
 
-当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，尚未被价格反应充分确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
+当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，已被价格反应初步确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
 
 ## Economic Calendar Risk
 
@@ -27,9 +27,9 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil rises after US-Iran hostilities flare again with strikes on energy targets - Reuters
+- headline: Iran-linked vessels pass through Hormuz ahead of US blockade - Reuters
 - source: Reuters
-- published_at: `2026-07-15T01:14:45+00:00`
+- published_at: `2026-07-15T03:19:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -43,17 +43,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: China blunted Iran war oil shock, but can it do the same for fuels? - Reuters
+- headline: EU aviation body reinstates Middle East flights warning as fighting resumes - Reuters
 - source: Reuters
-- published_at: `2026-07-14T15:19:46+00:00`
+- published_at: `2026-07-14T13:18:08+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: EU aviation body reinstates Middle East flights warning as fighting resumes - Reuters
+- headline: China blunted Iran war oil shock, but can it do the same for fuels? - Reuters
 - source: Reuters
-- published_at: `2026-07-14T13:18:08+00:00`
+- published_at: `2026-07-14T12:00:57+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
