@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-15T00:04:29.253189+00:00`
+- generated_at: `2026-07-15T04:20:39.056739+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `12`
-- event_detection_confidence: `71`
+- event_detection_confidence: `72`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,6 +27,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Oil rises after US-Iran hostilities flare again with strikes on energy targets - Reuters
+- source: Reuters
+- published_at: `2026-07-15T01:14:45+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: US Senate Democrats block $1.15 trillion defense bill over Iran war objections - Reuters
 - source: Reuters
 - published_at: `2026-07-14T21:50:29+00:00`
@@ -39,7 +47,7 @@
 - source: Reuters
 - published_at: `2026-07-14T15:19:46+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-07-14T13:18:08+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -59,11 +67,11 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US resumes Iran port blockade, while Trump scraps proposed Hormuz shipping fee - Reuters
+- headline: Trump resumes Iran port blockade and threatens strikes on energy targets - Reuters
 - source: Reuters
 - published_at: `2026-07-14T06:36:00+00:00`
 - importance_score: `100`
-- confidence: `medium`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -77,7 +85,7 @@
 
 - headline: US says it has completed its latest wave of strikes on Iran - Reuters
 - source: Reuters
-- published_at: `2026-07-14T03:17:00+00:00`
+- published_at: `2026-07-14T03:17:45+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -94,13 +102,5 @@
 - headline: Trump says US attacking Iran capabilities related to Strait of Hormuz - Reuters
 - source: Reuters
 - published_at: `2026-07-13T22:31:43+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: UAE says Iranian missiles struck oil tankers in Strait of Hormuz, one sailor killed - Reuters
-- source: Reuters
-- published_at: `2026-07-13T22:27:00+00:00`
 - importance_score: `100`
 - confidence: `medium`

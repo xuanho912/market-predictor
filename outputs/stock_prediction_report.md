@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-07-15T00:04:39.857045+00:00`
+Generated at: `2026-07-15T04:20:49.609043+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -25,12 +25,12 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `26.8%`
 - secondary: `stock_downside_continuation` / `19.3%`
 - risk: `stock_event_risk` / `15.6%`
-- stock_confluence_score: `50.25` / `mixed`
+- stock_confluence_score: `46.39` / `mixed`
 - stock_alpha_score_v1: `47.5` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `59.8%`
 - 60d_expected_return: `-1.0%`
 - risk_reward_ratio: `0.47`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `26.48`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `37.09`
 - historical_analog_support: `weak` / samples `10`
 - validation_status: `not_yet_validated`
 
@@ -54,12 +54,12 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `27.1%`
 - secondary: `stock_downside_continuation` / `21.9%`
 - risk: `stock_event_risk` / `17.3%`
-- stock_confluence_score: `34.16` / `weak`
+- stock_confluence_score: `32.35` / `weak`
 - stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `36.2%`
 - 60d_expected_return: `-1.9%`
 - risk_reward_ratio: `0.42`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `35.09`
+- strongest_alert: `Stock Failed Bounce Risk` / `WATCH` / `40.07`
 - historical_analog_support: `conflicting` / samples `10`
 - validation_status: `not_yet_validated`
 
@@ -79,7 +79,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - company_name: `Nuscale Power Corp`
 - status: `available`
 - current_price: `8.60`
-- market_context: `risk_off_pressure`
+- market_context: `market_headwind`
 - primary: `stock_downside_continuation` / `29.0%`
 - secondary: `stock_failed_bounce` / `21.0%`
 - risk: `stock_event_risk` / `12.1%`
@@ -112,7 +112,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `25.6%`
 - secondary: `stock_downside_continuation` / `24.0%`
 - risk: `stock_event_risk` / `10.8%`
-- stock_confluence_score: `35.61` / `weak`
+- stock_confluence_score: `35.42` / `weak`
 - stock_alpha_score_v1: `24.5` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `47.5%`
 - 60d_expected_return: `-1.3%`
