@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-15T14:12:50.290409+00:00`
+- generated_at: `2026-07-15T21:31:03.690278+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `10`
-- event_detection_confidence: `74`
+- major_event_count: `11`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `40`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
@@ -24,6 +24,22 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Some ships refusing US-military guided Hormuz transits after attacks, sources say - Reuters
+- source: Reuters
+- published_at: `2026-07-15T20:14:51+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: EXCLUSIVE: US strikes on Iran strengthen Trump's options for new escalation, officials say - Reuters
+- source: Reuters
+- published_at: `2026-07-15T18:56:14+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -51,7 +67,15 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US launches new round of strikes against Iran as escalation threatens shipping - Reuters
+- headline: Japan to receive first Mexican crude cargo since start of Iran war - Reuters
+- source: Reuters
+- published_at: `2026-07-15T10:19:06+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US strikes Iran again as Tehran warns of 'existential war' with America - Reuters
 - source: Reuters
 - published_at: `2026-07-15T04:57:00+00:00`
 - importance_score: `100`
@@ -63,7 +87,7 @@
 - source: Reuters
 - published_at: `2026-07-15T03:19:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -78,29 +102,5 @@
 - headline: US Senate Democrats block $1.15 trillion defense bill over Iran war objections - Reuters
 - source: Reuters
 - published_at: `2026-07-14T21:50:29+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil prices rise 2% to one-month high as US-Iran attacks deepen supply disruption - Reuters
-- source: Reuters
-- published_at: `2026-07-14T19:12:54+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: EU aviation body reinstates Middle East flights warning as fighting resumes - Reuters
-- source: Reuters
-- published_at: `2026-07-14T13:18:08+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: China blunted Iran war oil shock, but can it do the same for fuels? - Reuters
-- source: Reuters
-- published_at: `2026-07-14T12:00:57+00:00`
 - importance_score: `100`
 - confidence: `medium`
