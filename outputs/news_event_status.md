@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-15T21:31:03.690278+00:00`
+- generated_at: `2026-07-15T22:35:54.831650+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `11`
@@ -10,7 +10,7 @@
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `25`
+- confirmation_score: `40`
 
 ## Dashboard Note
 
@@ -71,7 +71,7 @@
 - source: Reuters
 - published_at: `2026-07-15T10:19:06+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
