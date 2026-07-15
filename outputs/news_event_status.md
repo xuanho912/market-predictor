@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-14T23:40:32.883724+00:00`
+- generated_at: `2026-07-15T00:04:29.253189+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `12`
-- event_detection_confidence: `70`
+- event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US Senate Democrats block $1.15 trillion defense bill over Iran war objections - Reuters
+- source: Reuters
+- published_at: `2026-07-14T21:50:29+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -94,13 +102,5 @@
 - headline: UAE says Iranian missiles struck oil tankers in Strait of Hormuz, one sailor killed - Reuters
 - source: Reuters
 - published_at: `2026-07-13T22:27:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil up 9% to one-month high as US says it will blockade entire Iranian coastline, all vessels - Reuters
-- source: Reuters
-- published_at: `2026-07-13T19:57:49+00:00`
 - importance_score: `100`
 - confidence: `medium`

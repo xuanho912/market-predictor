@@ -1,6 +1,6 @@
 # Forecast Accuracy Scorecard
 
-Generated at: `2026-07-14T23:40:43.131998+00:00`
+Generated at: `2026-07-15T00:04:39.615632+00:00`
 
 ## Sample Counts
 
@@ -23,7 +23,7 @@ Generated at: `2026-07-14T23:40:43.131998+00:00`
 - completed_count: `84`
 - sample_gate: `moderate_evidence`
 - primary_scenario_hit_rate: `0.3929`
-- primary_path_mean_absolute_error: `0.010147`
+- primary_path_mean_absolute_error: `0.010148`
 - primary_path_median_absolute_error: `0.007198`
 - secondary_scenario_hit_rate: `0.2619`
 - primary_vs_secondary_accuracy_spread: `0.131`
@@ -34,7 +34,7 @@ Generated at: `2026-07-14T23:40:43.131998+00:00`
 - completed_count: `76`
 - sample_gate: `moderate_evidence`
 - primary_scenario_hit_rate: `0.2763`
-- primary_path_mean_absolute_error: `0.012788`
+- primary_path_mean_absolute_error: `0.012787`
 - primary_path_median_absolute_error: `0.011536`
 - secondary_scenario_hit_rate: `0.3421`
 - primary_vs_secondary_accuracy_spread: `-0.0658`
@@ -45,7 +45,7 @@ Generated at: `2026-07-14T23:40:43.131998+00:00`
 - completed_count: `68`
 - sample_gate: `moderate_evidence`
 - primary_scenario_hit_rate: `0.3529`
-- primary_path_mean_absolute_error: `0.01686`
+- primary_path_mean_absolute_error: `0.016859`
 - primary_path_median_absolute_error: `0.009358`
 - secondary_scenario_hit_rate: `0.2794`
 - primary_vs_secondary_accuracy_spread: `0.0735`
@@ -67,7 +67,7 @@ Generated at: `2026-07-14T23:40:43.131998+00:00`
 - completed_count: `8`
 - sample_gate: `insufficient_samples`
 - primary_scenario_hit_rate: `0.0`
-- primary_path_mean_absolute_error: `0.031809`
+- primary_path_mean_absolute_error: `0.031802`
 - primary_path_median_absolute_error: `0.032429`
 - secondary_scenario_hit_rate: `0.25`
 - primary_vs_secondary_accuracy_spread: `-0.25`

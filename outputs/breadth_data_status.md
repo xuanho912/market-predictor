@@ -1,6 +1,6 @@
 # Breadth Data Status
 
-Generated at: 2026-07-14T23:40:06.071742+00:00
+Generated at: 2026-07-15T00:03:51.022856+00:00
 
 Provider available: True
 True breadth available: False
@@ -44,7 +44,7 @@ Stale data: False
 
 - status: missing
 - source: wikipedia-nasdaq100
-- latest_date: 2026-07-09
+- latest_date: 2026-07-13
 - true_breadth: False
 - proxy: False
 - constituents used / expected: 1 / 19
@@ -52,11 +52,11 @@ Stale data: False
 - stale_constituents: False
 - stale_price_data: False
 - percent_above_20d / 50d / 200d: 0.0 / 0.0 / 0.0
-- advancers / decliners / A-D ratio: 1 / 0 / 1.0
-- new highs/lows 20d: 0 / 0
+- advancers / decliners / A-D ratio: 0 / 1 / 0.0
+- new highs/lows 20d: 0 / 1
 - new highs/lows 52w: 0 / 0
-- improvement / deterioration / confirmation / conflict / quality: 100.0 / 70.67 / 79.57 / 65.53 / 26.11
-- internal_resonance: surface_only / score 16.39 / QQQ 指数表面强但内部没充分跟上：confirmation 80，conflict 66，RSP/SPY -0.51%，IWM/SPY -0.83%。
+- improvement / deterioration / confirmation / conflict / quality: 100.0 / 100.0 / 77.22 / 87.82 / 26.11
+- internal_resonance: surface_only / score 9.89 / QQQ 指数表面强但内部没充分跟上：confirmation 77，conflict 88，RSP/SPY -0.51%，IWM/SPY -0.83%。
 
 ### DIA
 

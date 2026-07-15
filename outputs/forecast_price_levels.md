@@ -1,6 +1,6 @@
 # Forecast Price Levels
 
-Generated at: `2026-07-14T23:40:42.942249Z`
+Generated at: `2026-07-15T00:04:39.423649Z`
 
 These are probability-path scenario levels, not execution instructions, risk-control rules, or guaranteed targets.
 
@@ -23,20 +23,20 @@ These are probability-path scenario levels, not execution instructions, risk-con
 
 ## QQQ
 
-- current price: `719.69`
+- current price: `719.71`
 - primary confirmation: `725.51`
 - primary invalidation: `709.43`
-- risk activation: `672.46`
+- risk activation: `672.48`
 - trend repair confirmation: `744.00`
 
 | Horizon | Expected | Primary | Secondary | Risk | Upper | Lower |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| 1d | 722.12 | 721.04 | 722.92 | 721.04 | 722.92 | 720.43 |
-| 3d | 726.97 | 723.73 | 729.39 | 723.73 | 729.39 | 721.91 |
-| 5d | 725.61 | 715.52 | 731.79 | 715.52 | 731.79 | 715.52 |
-| 10d | 728.55 | 704.24 | 742.53 | 704.24 | 742.53 | 704.24 |
-| 20d | 726.02 | 672.46 | 754.93 | 672.46 | 754.93 | 672.46 |
-| 60d | 742.50 | 715.22 | 759.66 | 715.22 | 759.66 | 715.22 |
+| 1d | 722.14 | 721.06 | 722.94 | 721.06 | 722.94 | 720.45 |
+| 3d | 726.99 | 723.75 | 729.41 | 723.75 | 729.41 | 721.93 |
+| 5d | 725.63 | 715.54 | 731.81 | 715.54 | 731.81 | 715.54 |
+| 10d | 728.57 | 704.26 | 742.55 | 704.26 | 742.55 | 704.26 |
+| 20d | 726.04 | 672.48 | 754.95 | 672.48 | 754.95 | 672.48 |
+| 60d | 742.52 | 715.24 | 759.68 | 715.24 | 759.68 | 715.24 |
 
 ## IWM
 
