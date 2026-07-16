@@ -10,10 +10,10 @@
     "can_append_forecast_record": false,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-07-16",
-    "current_time_us_eastern": "2026-07-16T00:29:25.447808-04:00",
+    "current_time_us_eastern": "2026-07-16T02:07:04.555543-04:00",
     "data_freshness_status": "market_open_unconfirmed",
     "expected_latest_trading_date": "2026-07-15",
-    "generated_at": "2026-07-16T04:29:25.447808+00:00",
+    "generated_at": "2026-07-16T06:07:04.555543+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -1052,15 +1052,15 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "DGS10",
       "IG_OAS",
-      "HY_OAS",
       "DGS3MO",
-      "DGS2",
-      "BAA_SPREAD",
-      "RECESSION",
       "FINANCIAL_STRESS",
-      "DFII10"
+      "DFII10",
+      "RECESSION",
+      "BAA_SPREAD",
+      "DGS10",
+      "HY_OAS",
+      "DGS2"
     ],
     "freshness_warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-07-15，最近完整收盘交易日为 2026-07-15；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
     "gamma_available": false,
@@ -1091,10 +1091,10 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 72,
+      "event_detection_confidence": 70,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-07-16T04:29:15.281197+00:00",
+      "last_update": "2026-07-16T06:06:54.278301+00:00",
       "major_event_count": 14,
       "missing_reason": null,
       "news_direction": "risk_off",
@@ -1196,7 +1196,7 @@
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_market_direction": "risk_off",
-          "headline": "Oil prices rise for 4th day as US strikes on Iran raise fears of wider conflict - Reuters",
+          "headline": "Oil prices turn lower as traders weigh impact of renewed US strikes on Iran - Reuters",
           "importance_score": 100,
           "published_at": "2026-07-16T00:43:00+00:00",
           "source": "Reuters"
@@ -1396,7 +1396,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": 0.002,
-        "avg_equity_futures_1d_return": 0.0014,
+        "avg_equity_futures_1d_return": 0.0006,
         "confirmed_checks": [
           "HYG/LQD 走弱",
           "油价/原油代理上升"
@@ -1413,7 +1413,7 @@
           "美元走强"
         ],
         "hyg_lqd_1d_relative_return": -0.0018,
-        "oil_proxy_1d_return": 0.0043,
+        "oil_proxy_1d_return": 0.0037,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -2301,7 +2301,7 @@
           "news_risk_score": 0.45,
           "top_headlines": [
             "Fewer vessels travel through Hormuz as US, Iran continue strikes - Reuters",
-            "Oil prices rise for 4th day as US strikes on Iran raise fears of wider conflict - Reuters",
+            "Oil prices turn lower as traders weigh impact of renewed US strikes on Iran - Reuters",
             "Explainer: Who are the Houthis, Iran’s allies in Yemen? - Reuters",
             "Kalshi traders see gas prices crossing $4 by end of July",
             "Some ships refusing US-military guided Hormuz transits after attacks, sources say - Reuters"
@@ -3643,14 +3643,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 80,
+            "confidence_score": 79,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 95,
+            "freshness_score": 91,
             "headline": "Fewer vessels travel through Hormuz as US, Iran continue strikes - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3670,46 +3670,19 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 79,
+            "confidence_score": 78,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 91,
-            "headline": "Oil prices rise for 4th day as US strikes on Iran raise fears of wider conflict - Reuters",
+            "freshness_score": 87,
+            "headline": "Oil prices turn lower as traders weigh impact of renewed US strikes on Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-07-16T00:43:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 77,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 80,
-            "headline": "Some ships refusing US-military guided Hormuz transits after attacks, sources say - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-15T20:14:51+00:00",
             "source": "Reuters"
           },
           {
@@ -3731,7 +3704,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 76,
+            "headline": "Some ships refusing US-military guided Hormuz transits after attacks, sources say - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-15T20:14:51+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 75,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 73,
             "headline": "EXCLUSIVE: US strikes on Iran strengthen Trump's options for new escalation, officials say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3751,14 +3751,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 72,
+            "confidence_score": 71,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 62,
+            "freshness_score": 59,
             "headline": "Warren Buffett on the market today: 'It's tough to find values when everybody is preferring gambling'",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3778,14 +3778,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 72,
+            "confidence_score": 71,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 61,
+            "freshness_score": 57,
             "headline": "Buffett says Trump's pick of Kevin Warsh for Fed chair was 'good choice'",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3833,7 +3833,7 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "Oil prices rise for 4th day as US strikes on Iran raise fears of wider conflict - Reuters",
+              "headline": "Oil prices turn lower as traders weigh impact of renewed US strikes on Iran - Reuters",
               "importance_score": 100,
               "published_at": "2026-07-16T00:43:00+00:00",
               "source": "Reuters"
@@ -3924,7 +3924,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.002,
-            "avg_equity_futures_1d_return": 0.0014,
+            "avg_equity_futures_1d_return": 0.0006,
             "confirmed_checks": [
               "HYG/LQD 走弱",
               "油价/原油代理上升"
@@ -3941,7 +3941,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0018,
-            "oil_proxy_1d_return": 0.0043,
+            "oil_proxy_1d_return": 0.0037,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -6454,7 +6454,7 @@
           "news_risk_score": 0.45,
           "top_headlines": [
             "Fewer vessels travel through Hormuz as US, Iran continue strikes - Reuters",
-            "Oil prices rise for 4th day as US strikes on Iran raise fears of wider conflict - Reuters",
+            "Oil prices turn lower as traders weigh impact of renewed US strikes on Iran - Reuters",
             "Explainer: Who are the Houthis, Iran’s allies in Yemen? - Reuters",
             "Kalshi traders see gas prices crossing $4 by end of July",
             "Some ships refusing US-military guided Hormuz transits after attacks, sources say - Reuters"
@@ -7794,14 +7794,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 80,
+            "confidence_score": 79,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 95,
+            "freshness_score": 91,
             "headline": "Fewer vessels travel through Hormuz as US, Iran continue strikes - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7821,46 +7821,19 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 79,
+            "confidence_score": 78,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 91,
-            "headline": "Oil prices rise for 4th day as US strikes on Iran raise fears of wider conflict - Reuters",
+            "freshness_score": 87,
+            "headline": "Oil prices turn lower as traders weigh impact of renewed US strikes on Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-07-16T00:43:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 77,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 80,
-            "headline": "Some ships refusing US-military guided Hormuz transits after attacks, sources say - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-15T20:14:51+00:00",
             "source": "Reuters"
           },
           {
@@ -7882,7 +7855,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 76,
+            "headline": "Some ships refusing US-military guided Hormuz transits after attacks, sources say - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-15T20:14:51+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 75,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 73,
             "headline": "EXCLUSIVE: US strikes on Iran strengthen Trump's options for new escalation, officials say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7902,14 +7902,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 72,
+            "confidence_score": 71,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 62,
+            "freshness_score": 59,
             "headline": "Warren Buffett on the market today: 'It's tough to find values when everybody is preferring gambling'",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7929,14 +7929,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 72,
+            "confidence_score": 71,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 61,
+            "freshness_score": 57,
             "headline": "Buffett says Trump's pick of Kevin Warsh for Fed chair was 'good choice'",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7984,7 +7984,7 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "Oil prices rise for 4th day as US strikes on Iran raise fears of wider conflict - Reuters",
+              "headline": "Oil prices turn lower as traders weigh impact of renewed US strikes on Iran - Reuters",
               "importance_score": 100,
               "published_at": "2026-07-16T00:43:00+00:00",
               "source": "Reuters"
@@ -8075,7 +8075,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.002,
-            "avg_equity_futures_1d_return": 0.0014,
+            "avg_equity_futures_1d_return": 0.0006,
             "confirmed_checks": [
               "HYG/LQD 走弱",
               "油价/原油代理上升"
@@ -8092,7 +8092,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0018,
-            "oil_proxy_1d_return": 0.0043,
+            "oil_proxy_1d_return": 0.0037,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -10597,7 +10597,7 @@
           "news_risk_score": 0.45,
           "top_headlines": [
             "Fewer vessels travel through Hormuz as US, Iran continue strikes - Reuters",
-            "Oil prices rise for 4th day as US strikes on Iran raise fears of wider conflict - Reuters",
+            "Oil prices turn lower as traders weigh impact of renewed US strikes on Iran - Reuters",
             "Explainer: Who are the Houthis, Iran’s allies in Yemen? - Reuters",
             "Kalshi traders see gas prices crossing $4 by end of July",
             "Some ships refusing US-military guided Hormuz transits after attacks, sources say - Reuters"
@@ -11971,14 +11971,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 80,
+            "confidence_score": 79,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 95,
+            "freshness_score": 91,
             "headline": "Fewer vessels travel through Hormuz as US, Iran continue strikes - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11998,46 +11998,19 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 79,
+            "confidence_score": 78,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 91,
-            "headline": "Oil prices rise for 4th day as US strikes on Iran raise fears of wider conflict - Reuters",
+            "freshness_score": 87,
+            "headline": "Oil prices turn lower as traders weigh impact of renewed US strikes on Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-07-16T00:43:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 77,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 80,
-            "headline": "Some ships refusing US-military guided Hormuz transits after attacks, sources say - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-15T20:14:51+00:00",
             "source": "Reuters"
           },
           {
@@ -12059,7 +12032,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 76,
+            "headline": "Some ships refusing US-military guided Hormuz transits after attacks, sources say - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-15T20:14:51+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 75,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 73,
             "headline": "EXCLUSIVE: US strikes on Iran strengthen Trump's options for new escalation, officials say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12079,14 +12079,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 72,
+            "confidence_score": 71,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 62,
+            "freshness_score": 59,
             "headline": "Warren Buffett on the market today: 'It's tough to find values when everybody is preferring gambling'",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12106,14 +12106,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 72,
+            "confidence_score": 71,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 61,
+            "freshness_score": 57,
             "headline": "Buffett says Trump's pick of Kevin Warsh for Fed chair was 'good choice'",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12161,7 +12161,7 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "Oil prices rise for 4th day as US strikes on Iran raise fears of wider conflict - Reuters",
+              "headline": "Oil prices turn lower as traders weigh impact of renewed US strikes on Iran - Reuters",
               "importance_score": 100,
               "published_at": "2026-07-16T00:43:00+00:00",
               "source": "Reuters"
@@ -12252,7 +12252,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.002,
-            "avg_equity_futures_1d_return": 0.0014,
+            "avg_equity_futures_1d_return": 0.0006,
             "confirmed_checks": [
               "HYG/LQD 走弱",
               "油价/原油代理上升"
@@ -12269,7 +12269,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0018,
-            "oil_proxy_1d_return": 0.0043,
+            "oil_proxy_1d_return": 0.0037,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -14790,7 +14790,7 @@
           "news_risk_score": 0.45,
           "top_headlines": [
             "Fewer vessels travel through Hormuz as US, Iran continue strikes - Reuters",
-            "Oil prices rise for 4th day as US strikes on Iran raise fears of wider conflict - Reuters",
+            "Oil prices turn lower as traders weigh impact of renewed US strikes on Iran - Reuters",
             "Explainer: Who are the Houthis, Iran’s allies in Yemen? - Reuters",
             "Kalshi traders see gas prices crossing $4 by end of July",
             "Some ships refusing US-military guided Hormuz transits after attacks, sources say - Reuters"
@@ -16165,14 +16165,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 80,
+            "confidence_score": 79,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 95,
+            "freshness_score": 91,
             "headline": "Fewer vessels travel through Hormuz as US, Iran continue strikes - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16192,46 +16192,19 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 79,
+            "confidence_score": 78,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 91,
-            "headline": "Oil prices rise for 4th day as US strikes on Iran raise fears of wider conflict - Reuters",
+            "freshness_score": 87,
+            "headline": "Oil prices turn lower as traders weigh impact of renewed US strikes on Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-07-16T00:43:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 77,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 80,
-            "headline": "Some ships refusing US-military guided Hormuz transits after attacks, sources say - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-15T20:14:51+00:00",
             "source": "Reuters"
           },
           {
@@ -16253,7 +16226,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 76,
+            "headline": "Some ships refusing US-military guided Hormuz transits after attacks, sources say - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-15T20:14:51+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 75,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 73,
             "headline": "EXCLUSIVE: US strikes on Iran strengthen Trump's options for new escalation, officials say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16273,14 +16273,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 72,
+            "confidence_score": 71,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 62,
+            "freshness_score": 59,
             "headline": "Warren Buffett on the market today: 'It's tough to find values when everybody is preferring gambling'",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16300,14 +16300,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 72,
+            "confidence_score": 71,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 61,
+            "freshness_score": 57,
             "headline": "Buffett says Trump's pick of Kevin Warsh for Fed chair was 'good choice'",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16355,7 +16355,7 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "Oil prices rise for 4th day as US strikes on Iran raise fears of wider conflict - Reuters",
+              "headline": "Oil prices turn lower as traders weigh impact of renewed US strikes on Iran - Reuters",
               "importance_score": 100,
               "published_at": "2026-07-16T00:43:00+00:00",
               "source": "Reuters"
@@ -16446,7 +16446,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.002,
-            "avg_equity_futures_1d_return": 0.0014,
+            "avg_equity_futures_1d_return": 0.0006,
             "confirmed_checks": [
               "HYG/LQD 走弱",
               "油价/原油代理上升"
@@ -16463,7 +16463,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0018,
-            "oil_proxy_1d_return": 0.0043,
+            "oil_proxy_1d_return": 0.0037,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"

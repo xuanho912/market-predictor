@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-16T04:29:15.281197+00:00`
+- generated_at: `2026-07-16T06:06:54.278301+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `14`
-- event_detection_confidence: `72`
+- event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -35,7 +35,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil prices rise for 4th day as US strikes on Iran raise fears of wider conflict - Reuters
+- headline: Oil prices turn lower as traders weigh impact of renewed US strikes on Iran - Reuters
 - source: Reuters
 - published_at: `2026-07-16T00:43:00+00:00`
 - importance_score: `100`
@@ -99,8 +99,8 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US strikes Iran again as Tehran warns of 'existential war' with America - Reuters
+- headline: US launches multiple strikes on Iran, which retaliates against US targets in region - Reuters
 - source: Reuters
 - published_at: `2026-07-15T04:57:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
