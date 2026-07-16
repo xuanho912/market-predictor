@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-16T21:32:18.595310+00:00`
+- generated_at: `2026-07-16T22:35:29.350110+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `10`
-- event_detection_confidence: `69`
+- event_detection_confidence: `68`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -45,7 +45,7 @@
 
 - headline: Iran war leaves crisis-weary European airlines ready for a shakeout - Reuters
 - source: Reuters
-- published_at: `2026-07-16T06:21:02+00:00`
+- published_at: `2026-07-16T06:04:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
