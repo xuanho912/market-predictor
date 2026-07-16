@@ -5,13 +5,13 @@
     "model_underestimated_downside_or_failed_bounce": 68,
     "model_underestimated_upside_or_repair": 58,
     "news_data_gap_limited_attribution": 126,
-    "news_event_risk_underweighted": 68,
+    "news_event_risk_underweighted": 57,
     "risk_off_flow_underweighted": 1,
     "risk_off_news_overweighted_or_resolved": 49,
     "risk_on_flow_underweighted": 23,
     "volatility_repair_underweighted": 16
   },
-  "generated_at": "2026-07-15T23:46:54.964628+00:00",
+  "generated_at": "2026-07-16T00:09:38.342498+00:00",
   "guardrails": [
     "This is forecast error attribution, not a trading or PnL report.",
     "Attribution is diagnostic and probabilistic; it is not proof of causality.",
@@ -3584,17 +3584,17 @@
       },
       {
         "baseline_change_allowed": false,
-        "count": 68,
-        "driver": "news_event_risk_underweighted",
-        "future_model_action": "shadow-test risk_event_confirmation：risk-off 新闻得到价格确认才提高风险路径。",
-        "lesson": "风险新闻如果被价格确认，应提高风险路径权重。"
-      },
-      {
-        "baseline_change_allowed": false,
         "count": 58,
         "driver": "model_underestimated_upside_or_repair",
         "future_model_action": "keep_observing_until_forward_sample_gate",
         "lesson": "模型低估了修复/反抽强度，需要检查事件催化、波动率修复和价格确认。"
+      },
+      {
+        "baseline_change_allowed": false,
+        "count": 57,
+        "driver": "news_event_risk_underweighted",
+        "future_model_action": "shadow-test risk_event_confirmation：risk-off 新闻得到价格确认才提高风险路径。",
+        "lesson": "风险新闻如果被价格确认，应提高风险路径权重。"
       },
       {
         "baseline_change_allowed": false,

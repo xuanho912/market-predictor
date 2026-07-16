@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-07-15T23:46:55.186015+00:00",
+  "generated_at": "2026-07-16T00:09:38.576806+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-07-15T23:46:55.198602+00:00",
+    "generated_at": "2026-07-16T00:09:38.589636+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 93,
     "risk_score_effectiveness": {
@@ -527,7 +527,7 @@
               "波动率区间接近",
               "成交量异常程度接近"
             ],
-            "market_context": "market_headwind",
+            "market_context": "risk_off_pressure",
             "similarity_score": 0.7901,
             "worst_path_60d": -0.0839
           },
@@ -548,7 +548,7 @@
               "波动率区间接近",
               "成交量异常程度接近"
             ],
-            "market_context": "market_headwind",
+            "market_context": "risk_off_pressure",
             "similarity_score": 0.7597,
             "worst_path_60d": -0.073
           },
@@ -569,7 +569,7 @@
               "相对 benchmark 强弱接近",
               "波动率区间接近"
             ],
-            "market_context": "market_headwind",
+            "market_context": "risk_off_pressure",
             "similarity_score": 0.715,
             "worst_path_60d": -0.3032
           },
@@ -591,7 +591,7 @@
               "波动率区间接近",
               "成交量异常程度接近"
             ],
-            "market_context": "market_headwind",
+            "market_context": "risk_off_pressure",
             "similarity_score": 0.6956,
             "worst_path_60d": -0.3006
           },
@@ -613,7 +613,7 @@
               "波动率区间接近",
               "成交量异常程度接近"
             ],
-            "market_context": "market_headwind",
+            "market_context": "risk_off_pressure",
             "similarity_score": 0.6945,
             "worst_path_60d": -0.2012
           },
@@ -634,7 +634,7 @@
               "波动率区间接近",
               "成交量异常程度接近"
             ],
-            "market_context": "market_headwind",
+            "market_context": "risk_off_pressure",
             "similarity_score": 0.6893,
             "worst_path_60d": -0.2125
           },
@@ -654,7 +654,7 @@
               "波动率区间接近",
               "成交量异常程度接近"
             ],
-            "market_context": "market_headwind",
+            "market_context": "risk_off_pressure",
             "similarity_score": 0.6696,
             "worst_path_60d": -0.1128
           },
@@ -675,7 +675,7 @@
               "波动率区间接近",
               "成交量异常程度接近"
             ],
-            "market_context": "market_headwind",
+            "market_context": "risk_off_pressure",
             "similarity_score": 0.6693,
             "worst_path_60d": -0.2027
           },
@@ -695,7 +695,7 @@
               "20d 回撤深度接近",
               "波动率区间接近"
             ],
-            "market_context": "market_headwind",
+            "market_context": "risk_off_pressure",
             "similarity_score": 0.6642,
             "worst_path_60d": -0.1893
           },
@@ -715,7 +715,7 @@
               "波动率区间接近",
               "成交量异常程度接近"
             ],
-            "market_context": "market_headwind",
+            "market_context": "risk_off_pressure",
             "similarity_score": 0.656,
             "worst_path_60d": -0.1114
           }
@@ -726,12 +726,12 @@
         "benchmark": "SPY",
         "benchmark_edge_status": "WEAK_EDGE",
         "benchmark_market_state": "failed_bounce_risk",
-        "benchmark_primary_probability": 0.3876,
+        "benchmark_primary_probability": 0.3616,
         "benchmark_primary_scenario": "bearish_path",
-        "context": "market_headwind",
+        "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
-        "risk_alert_level": "WATCH",
-        "risk_alert_type": "Failed Bounce Alert",
+        "risk_alert_level": "WARNING",
+        "risk_alert_type": "Bounce Setup Alert",
         "symbol": "CEG"
       },
       "missing_data": [
@@ -766,7 +766,7 @@
             "confidence": "low",
             "label": "个股反抽",
             "probability": 0.1311,
-            "reason": "结合回撤、成交量和大盘背景，短中期反抽权重较高；当前市场背景为 market_headwind。",
+            "reason": "结合回撤、成交量和大盘背景，短中期反抽权重较高；当前市场背景为 risk_off_pressure。",
             "scenario": "stock_bounce"
           },
           {
@@ -2181,7 +2181,7 @@
           },
           "market_industry": {
             "evidence": [
-              "大盘背景压制：market_headwind",
+              "大盘背景压制：risk_off_pressure",
               "相对板块走弱"
             ],
             "max_points": 10,
@@ -2319,7 +2319,7 @@
           },
           "market_context": {
             "evidence": "大盘风险背景压低个股置信度",
-            "reason": "benchmark=SPY / market_headwind",
+            "reason": "benchmark=SPY / risk_off_pressure",
             "score": 28,
             "status": "conflicting"
           },
@@ -2936,7 +2936,7 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "WEAK_EDGE",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.3435,
+        "benchmark_primary_probability": 0.3161,
         "benchmark_primary_scenario": "bearish_path",
         "context": "market_headwind",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -5125,7 +5125,7 @@
         "benchmark": "IWM",
         "benchmark_edge_status": "MODERATE_EDGE",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.308,
+        "benchmark_primary_probability": 0.3328,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -7333,7 +7333,7 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "WEAK_EDGE",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.3435,
+        "benchmark_primary_probability": 0.3161,
         "benchmark_primary_scenario": "bearish_path",
         "context": "market_headwind",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -9001,7 +9001,7 @@
       "top_candidate": "NVDA",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-07-15T23:46:55.194856+00:00",
+    "generated_at": "2026-07-16T00:09:38.585811+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -9295,7 +9295,7 @@
           "mid": 257.68,
           "range_pct": 0.0355
         },
-        "final_radar_score": 45.2,
+        "final_radar_score": 44.88,
         "forecast_date": "2026-07-15",
         "invalidation_level": 228.63,
         "last_close": 258.114990234375,
@@ -9310,7 +9310,7 @@
           "近期公司新闻偏支持",
           "基础财务指标偏支持"
         ],
-        "market_context": "market_headwind",
+        "market_context": "risk_off_pressure",
         "model_version": "stock_baseline_v1",
         "news_fields": {
           "catalyst_note": "catalyst data present or event risk proxy elevated",
@@ -9318,7 +9318,7 @@
           "earnings": "available"
         },
         "next_day_move_probability": 0.665,
-        "one_line_reason": "failed_bounce_risk: Alpha 24 / 弹性 79 / 成交量 42 / 相对强弱 27 / 催化 62 / 大盘 market_headwind / 板块 neutral",
+        "one_line_reason": "failed_bounce_risk: Alpha 24 / 弹性 79 / 成交量 42 / 相对强弱 27 / 催化 62 / 大盘 risk_off_pressure / 板块 neutral",
         "outperformance_probability_20d": 0.4651,
         "primary_probability": 0.2571,
         "primary_scenario": "stock_failed_bounce",

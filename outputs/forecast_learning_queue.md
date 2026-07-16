@@ -1,6 +1,6 @@
 # Forecast Learning Queue
 
-Generated at: `2026-07-15T23:46:54.982784+00:00`
+Generated at: `2026-07-16T00:09:38.361196+00:00`
 
 This report turns forecast deviations into safe challenger-model hypotheses. It does not alter baseline_v1.
 
@@ -21,7 +21,7 @@ This report turns forecast deviations into safe challenger-model hypotheses. It 
 - proposed_model_version: `challenger_v2_event_reaction_overlay`
 - priority_score: `100`
 - readiness: `ready_for_shadow_challenger`
-- evidence_count: `243`
+- evidence_count: `232`
 - hypothesis: 重大新闻只有在价格、VIX、信用或期货反应确认后，才应该提高短线情景权重；未确认新闻应快速衰减。
 - expected_improvement: 减少新闻驱动日对 1d/3d/5d 主路径的低估或误判。
 - required_validation: 至少 20 个已完成 1d/3d/5d 样本，并且 challenger 的主路径误差低于 baseline_v1。
