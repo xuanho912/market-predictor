@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-16T22:35:29.350110+00:00`
+- generated_at: `2026-07-16T23:46:17.682898+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `10`
-- event_detection_confidence: `68`
+- event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -29,7 +29,15 @@
 
 - headline: Iran and US step up attacks, release of American in dispute - Reuters
 - source: Reuters
-- published_at: `2026-07-16T19:48:46+00:00`
+- published_at: `2026-07-16T22:09:06+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US House Republicans push forward on Trump funding plan for Iran war, election overhaul - Reuters
+- source: Reuters
+- published_at: `2026-07-16T19:22:22+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -67,6 +75,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Gurman on OpenAI’s Upcoming Hardware Product: ‘Movable, Screenless Speaker Built as AI Companion’
+- source: Bloomberg
+- published_at: `2026-07-15T23:02:54+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Some ships refusing US-military guided Hormuz transits after attacks, sources say - Reuters
 - source: Reuters
 - published_at: `2026-07-15T20:14:51+00:00`
@@ -86,21 +102,5 @@
 - headline: In occupied zone of Lebanon, Israeli military veterans see shadow of past wars - Reuters
 - source: Reuters
 - published_at: `2026-07-15T15:55:16+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Warren Buffett on the market today: 'It's tough to find values when everybody is preferring gambling'
-- source: CNBC
-- published_at: `2026-07-15T12:50:50+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Buffett says Trump's pick of Kevin Warsh for Fed chair was 'good choice'
-- source: CNBC
-- published_at: `2026-07-15T12:14:44+00:00`
 - importance_score: `100`
 - confidence: `medium`
