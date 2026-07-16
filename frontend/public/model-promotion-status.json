@@ -1,6 +1,6 @@
 {
   "active_model_version": "baseline_v1",
-  "generated_at": "2026-07-16T00:09:38.391685+00:00",
+  "generated_at": "2026-07-16T04:29:25.761712+00:00",
   "guardrails": [
     "Alpha v1 threshold remains frozen at 0.32534311.",
     "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -90,11 +90,15 @@
     {
       "eligible": false,
       "failed_gates": [
-        "news_event_overlay_available"
+        "3d",
+        "5d",
+        "10d",
+        "20d",
+        "60d"
       ],
       "model_version": "challenger_v2_event_reaction_overlay",
-      "reason": "Missing news_event_overlay_available; cannot generate this shadow forecast without available news/event intelligence and enough forecast-deviation evidence that event reactions need shadow validation.",
-      "status": "blocked_missing_required_data",
+      "reason": "Forward validation sample gates are not met.",
+      "status": "insufficient_forward_evidence",
       "wins_vs_baseline": 0
     },
     {

@@ -47,7 +47,7 @@
       "status": "insufficient_forward_samples"
     }
   },
-  "generated_at": "2026-07-16T00:09:38.391611+00:00",
+  "generated_at": "2026-07-16T04:29:25.761631+00:00",
   "guardrails": [
     "Alpha v1 threshold remains frozen at 0.32534311.",
     "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -804,18 +804,16 @@
       "status": "ready_for_shadow_implementation"
     },
     {
-      "blocked_reason": "Missing news_event_overlay_available; cannot generate this shadow forecast without available news/event intelligence and enough forecast-deviation evidence that event reactions need shadow validation.",
+      "blocked_reason": "",
       "description": "Shadow-tests stricter news/event reaction handling using event direction plus market price confirmation.",
       "forbidden_without": "available news/event intelligence and enough forecast-deviation evidence that event reactions need shadow validation",
-      "missing_required_data": [
-        "news_event_overlay_available"
-      ],
+      "missing_required_data": [],
       "model_version": "challenger_v2_event_reaction_overlay",
       "required_data_flags": [
         "news_event_overlay_available",
         "event_reaction_learning_ready"
       ],
-      "status": "blocked_missing_required_data"
+      "status": "ready_for_shadow_implementation"
     },
     {
       "blocked_reason": "Missing put_call_available, gamma_available, true_flow_available, macro_event_quality_available; cannot generate this shadow forecast without all component challengers passing their own shadow validation gates.",
