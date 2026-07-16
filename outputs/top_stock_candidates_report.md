@@ -1,6 +1,6 @@
 # Next-Day Stock Radar v1
 
-Generated at: `2026-07-16T14:26:45.389764+00:00`
+Generated at: `2026-07-16T21:32:30.273722+00:00`
 As of: `None`
 
 This report ranks next-day high-elasticity stock forecast candidates. It is not a trading report and does not contain buy/sell instructions.
@@ -19,9 +19,9 @@ This report ranks next-day high-elasticity stock forecast candidates. It is not 
 
 | Rank | Ticker | Type | Radar | Alpha | Elasticity | Confluence | Catalyst | Risk | Range | Trigger | Invalidation | Reason |
 | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- | ---: | ---: | --- |
-| 1 | NVDA | failed_bounce_risk | 50.9 | 46.5 | 92.59 | 45.15 | 64.11 | 56.62 | 204.56-211.35 | 213.99 | 189.8 | failed_bounce_risk: Alpha 46 / 弹性 93 / 成交量 0 / 相对强弱 54 / 催化 64 / 大盘 market_headwind / 板块 supportive |
-| 2 | TSLA | failed_bounce_risk | 48.18 | 35.0 | 100 | 33.04 | 65.28 | 60.37 | 381.35-400.01 | 432.86 | 368.6 | failed_bounce_risk: Alpha 35 / 弹性 100 / 成交量 9 / 相对强弱 39 / 催化 65 / 大盘 market_headwind / 板块 neutral |
-| 3 | SMR | downside_continuation | 45.87 | 35.0 | 100 | 37.51 | 61.74 | 62.2 | 7.38-8.03 | 11.85 | 7.31 | downside_continuation: Alpha 35 / 弹性 100 / 成交量 21 / 相对强弱 8 / 催化 62 / 大盘 risk_off_pressure / 板块 conflicting |
-| 4 | CEG | downside_continuation | 39.4 | 22.5 | 85.64 | 28.78 | 61.44 | 58.11 | 247.61-256.71 | 282.77 | 228.63 | downside_continuation: Alpha 22 / 弹性 86 / 成交量 19 / 相对强弱 11 / 催化 61 / 大盘 market_headwind / 板块 conflicting |
+| 1 | NVDA | failed_bounce_risk | 52.75 | 44.5 | 66.72 | 46.0 | 64.08 | 50.86 | 203.66-210.54 | 213.99 | 189.8 | failed_bounce_risk: Alpha 44 / 弹性 67 / 成交量 49 / 相对强弱 56 / 催化 64 / 大盘 market_headwind / 板块 supportive |
+| 2 | TSLA | failed_bounce_risk | 51.85 | 35.0 | 90.33 | 34.62 | 65.27 | 58.3 | 380.64-399.38 | 432.86 | 368.6 | failed_bounce_risk: Alpha 35 / 弹性 90 / 成交量 43 / 相对强弱 41 / 催化 65 / 大盘 market_headwind / 板块 neutral |
+| 3 | SMR | downside_continuation | 51.77 | 35.0 | 100 | 38.96 | 61.76 | 62.4 | 7.27-7.93 | 11.85 | 7.2 | downside_continuation: Alpha 35 / 弹性 100 / 成交量 59 / 相对强弱 7 / 催化 62 / 大盘 risk_off_pressure / 板块 conflicting |
+| 4 | CEG | downside_continuation | 40.84 | 15.5 | 74.72 | 27.35 | 63.23 | 55.41 | 246.63-255.89 | 282.77 | 228.63 | downside_continuation: Alpha 16 / 弹性 75 / 成交量 53 / 相对强弱 11 / 催化 63 / 大盘 risk_off_pressure / 板块 conflicting |
 
 Validation status: `not_yet_validated` until enough forward samples complete.

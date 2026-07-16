@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-16T14:26:35.306950+00:00`
+- generated_at: `2026-07-16T21:32:18.595310+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `14`
+- major_event_count: `10`
 - event_detection_confidence: `69`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -27,9 +27,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Fewer vessels travel through Hormuz after US resumes blockade - Reuters
+- headline: Iran and US step up attacks, release of American in dispute - Reuters
 - source: Reuters
-- published_at: `2026-07-16T08:22:13+00:00`
+- published_at: `2026-07-16T19:48:46+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Pakistan worries about being drawn into US-Iran conflict after Houthis attack Saudi Arabia - Reuters
+- source: Reuters
+- published_at: `2026-07-16T14:25:14+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -39,11 +47,19 @@
 - source: Reuters
 - published_at: `2026-07-16T06:21:02+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US military says it completed latest strikes on Iran, targets included Bandar Abbas - Reuters
+- headline: Fewer vessels travel through Hormuz after US resumes blockade - Reuters
+- source: Reuters
+- published_at: `2026-07-16T02:26:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US launches new wave of strikes against Iran, military says - Reuters
 - source: Reuters
 - published_at: `2026-07-16T02:18:00+00:00`
 - importance_score: `100`
@@ -86,21 +102,5 @@
 - headline: Buffett says Trump's pick of Kevin Warsh for Fed chair was 'good choice'
 - source: CNBC
 - published_at: `2026-07-15T12:14:44+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US says it has begun new wave of strikes on Iran - Reuters
-- source: Reuters
-- published_at: `2026-07-15T10:47:57+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Japan to receive first Mexican crude cargo since start of Iran war - Reuters
-- source: Reuters
-- published_at: `2026-07-15T10:19:06+00:00`
 - importance_score: `100`
 - confidence: `medium`
