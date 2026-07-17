@@ -1,12 +1,17 @@
 {
-  "affected_symbols": [],
-  "can_append_forecast_record": true,
+  "affected_symbols": [
+    "SPY",
+    "QQQ",
+    "IWM",
+    "DIA"
+  ],
+  "can_append_forecast_record": false,
   "can_backfill_completed_outcomes": true,
-  "current_date": "2026-07-16",
-  "current_time_us_eastern": "2026-07-16T20:11:54.138421-04:00",
-  "data_freshness_status": "fresh",
+  "current_date": "2026-07-17",
+  "current_time_us_eastern": "2026-07-17T00:28:54.780229-04:00",
+  "data_freshness_status": "market_open_unconfirmed",
   "expected_latest_trading_date": "2026-07-16",
-  "generated_at": "2026-07-17T00:11:54.138421+00:00",
+  "generated_at": "2026-07-17T04:28:54.780229+00:00",
   "guardrails": [
     "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
     "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -20,7 +25,7 @@
   "last_successful_update": "2026-07-16",
   "latest_confirmed_market_date": "2026-07-16",
   "latest_market_date": "2026-07-16",
-  "latest_market_session_status": "completed_or_prior_session",
+  "latest_market_session_status": "intraday_unconfirmed",
   "provider_status": {
     "BAA_SPREAD": {
       "fallback_used": false,
@@ -444,38 +449,38 @@
     },
     "^VIX3M": {
       "fallback_used": false,
-      "latest_date": "2026-07-16",
+      "latest_date": "2026-07-10",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
       "rows": 520,
       "source": "yahoo-chart",
-      "stale_data": false,
-      "status": "available",
+      "stale_data": true,
+      "status": "stale",
       "symbol": "^VIX3M"
     },
     "^VIX6M": {
       "fallback_used": false,
-      "latest_date": "2026-07-16",
+      "latest_date": "2026-07-10",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
       "rows": 520,
       "source": "yahoo-chart",
-      "stale_data": false,
-      "status": "available",
+      "stale_data": true,
+      "status": "stale",
       "symbol": "^VIX6M"
     },
     "^VIX9D": {
       "fallback_used": false,
-      "latest_date": "2026-07-16",
+      "latest_date": "2026-07-10",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
       "rows": 520,
       "source": "yahoo-chart",
-      "stale_data": false,
-      "status": "available",
+      "stale_data": true,
+      "status": "stale",
       "symbol": "^VIX9D"
     },
     "^VVIX": {
@@ -876,38 +881,38 @@
     },
     "options_VIX3M": {
       "fallback_used": false,
-      "latest_date": "2026-07-16",
+      "latest_date": "2026-07-10",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
       "rows": 520,
       "source": "yahoo-chart",
-      "stale_data": false,
-      "status": "available",
+      "stale_data": true,
+      "status": "stale",
       "symbol": "^VIX3M"
     },
     "options_VIX6M": {
       "fallback_used": false,
-      "latest_date": "2026-07-16",
+      "latest_date": "2026-07-10",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
       "rows": 520,
       "source": "yahoo-chart",
-      "stale_data": false,
-      "status": "available",
+      "stale_data": true,
+      "status": "stale",
       "symbol": "^VIX6M"
     },
     "options_VIX9D": {
       "fallback_used": false,
-      "latest_date": "2026-07-16",
+      "latest_date": "2026-07-10",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
       "rows": 520,
       "source": "yahoo-chart",
-      "stale_data": false,
-      "status": "available",
+      "stale_data": true,
+      "status": "stale",
       "symbol": "^VIX9D"
     },
     "options_VVIX": {
@@ -937,5 +942,5 @@
   },
   "stale_days": 0,
   "version": "data_freshness_gate_v3",
-  "warning_message": "核心行情已更新至最新应有交易日 2026-07-16。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。"
+  "warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-07-16，最近完整收盘交易日为 2026-07-16；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。"
 }

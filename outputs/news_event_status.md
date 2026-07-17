@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-17T00:11:44.048234+00:00`
+- generated_at: `2026-07-17T04:28:44.263855+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `10`
+- major_event_count: `9`
 - event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -43,17 +43,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Pakistan worries about being drawn into US-Iran conflict after Houthis attack Saudi Arabia - Reuters
+- headline: US launches new wave of strikes against Iran, military says - Reuters
 - source: Reuters
-- published_at: `2026-07-16T14:25:14+00:00`
+- published_at: `2026-07-16T18:27:53+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iran war leaves crisis-weary European airlines ready for a shakeout - Reuters
+- headline: Pakistan worries about being drawn into US-Iran conflict after Houthis attack Saudi Arabia - Reuters
 - source: Reuters
-- published_at: `2026-07-16T06:04:00+00:00`
+- published_at: `2026-07-16T14:25:14+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -61,15 +61,15 @@
 
 - headline: Fewer vessels travel through Hormuz after US resumes blockade - Reuters
 - source: Reuters
-- published_at: `2026-07-16T02:26:00+00:00`
+- published_at: `2026-07-16T08:22:13+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US launches new wave of strikes against Iran, military says - Reuters
+- headline: Iran war leaves crisis-weary European airlines ready for a shakeout - Reuters
 - source: Reuters
-- published_at: `2026-07-16T02:18:00+00:00`
+- published_at: `2026-07-16T06:04:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -94,13 +94,5 @@
 - headline: EXCLUSIVE: US strikes on Iran strengthen Trump's options for new escalation, officials say - Reuters
 - source: Reuters
 - published_at: `2026-07-15T18:52:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: In occupied zone of Lebanon, Israeli military veterans see shadow of past wars - Reuters
-- source: Reuters
-- published_at: `2026-07-15T15:55:16+00:00`
 - importance_score: `100`
 - confidence: `medium`
