@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-16T23:46:17.682898+00:00`
+- generated_at: `2026-07-17T00:11:44.048234+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `10`
@@ -27,17 +27,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iran and US step up attacks, release of American in dispute - Reuters
+- headline: US House Republicans push forward on Trump funding plan for Iran war, election overhaul - Reuters
 - source: Reuters
-- published_at: `2026-07-16T22:09:06+00:00`
+- published_at: `2026-07-16T22:49:04+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US House Republicans push forward on Trump funding plan for Iran war, election overhaul - Reuters
+- headline: Iran and US step up attacks, release of American in dispute - Reuters
 - source: Reuters
-- published_at: `2026-07-16T19:22:22+00:00`
+- published_at: `2026-07-16T22:09:06+00:00`
 - importance_score: `100`
 - confidence: `high`
 
