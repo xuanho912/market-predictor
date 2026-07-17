@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-17T14:06:23.272887+00:00`
+- generated_at: `2026-07-17T21:15:50.431030+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `12`
-- event_detection_confidence: `80`
+- event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `True`
-- confirmation_score: `100`
+- confirmation_score: `75`
 
 ## Dashboard Note
 
@@ -27,9 +27,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: China's oil imports have plunged during the Iran war. How much will they recover? - Reuters
+- headline: Meta's latest move in the AI talent war — plus Cramer's 4 quick hits on the market
+- source: CNBC
+- published_at: `2026-07-17T17:40:45+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iranians suffer new uncertainty and anxiety as US steps up attacks - Reuters
 - source: Reuters
-- published_at: `2026-07-17T08:33:45+00:00`
+- published_at: `2026-07-17T14:09:12+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -39,7 +47,7 @@
 - source: Reuters
 - published_at: `2026-07-17T06:31:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +55,15 @@
 - source: Reuters
 - published_at: `2026-07-17T06:12:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: China's oil imports have plunged during the Iran war. How much will they recover? - Reuters
+- source: Reuters
+- published_at: `2026-07-17T05:40:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -59,9 +75,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US, Iran each attack infrastructure in risky escalation - Reuters
+- headline: US and Iran attack infrastructure, raising fears of escalation - Reuters
 - source: Reuters
 - published_at: `2026-07-17T03:50:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Qatar says Iranian missile attack thwarted, child injured - Reuters
+- source: Reuters
+- published_at: `2026-07-17T02:40:28+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -75,32 +99,8 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Qatar says Iranian missile attack thwarted, child injured - Reuters
-- source: Reuters
-- published_at: `2026-07-17T01:43:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
 - headline: US House Republicans push forward on Trump funding plan for Iran war, election overhaul - Reuters
 - source: Reuters
 - published_at: `2026-07-16T22:49:04+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran and US step up attacks, release of American in dispute - Reuters
-- source: Reuters
-- published_at: `2026-07-16T22:09:06+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Pakistan worries about being drawn into US-Iran conflict after Houthis attack Saudi Arabia - Reuters
-- source: Reuters
-- published_at: `2026-07-16T14:25:14+00:00`
 - importance_score: `100`
 - confidence: `medium`

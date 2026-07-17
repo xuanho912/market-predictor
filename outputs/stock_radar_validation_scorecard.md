@@ -1,10 +1,10 @@
 # Stock Radar Validation Scorecard
 
-Generated at: `2026-07-17T14:06:34.913318+00:00`
+Generated at: `2026-07-17T21:16:00.926896+00:00`
 
-- total_records: `97`
+- total_records: `101`
 - completed_next_day_samples: `0`
-- pending_records: `97`
+- pending_records: `101`
 - evidence_level: `insufficient_samples`
 - validation_status: `not_yet_validated`
 - warning: `not_enough_forward_samples`
