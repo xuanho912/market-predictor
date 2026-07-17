@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-17T04:28:44.263855+00:00`
+- generated_at: `2026-07-17T06:06:33.966981+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
-- event_detection_confidence: `70`
+- major_event_count: `11`
+- event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,30 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran launches fresh attacks after sixth day of US strikes - Reuters
+- source: Reuters
+- published_at: `2026-07-17T03:50:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US military says it completed latest strikes on Iran, marking 6th consecutive night of attacks - Reuters
+- source: Reuters
+- published_at: `2026-07-17T02:30:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Qatar says Iranian missile attack thwarted, child injured - Reuters
+- source: Reuters
+- published_at: `2026-07-17T01:43:00+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -78,21 +102,5 @@
 - headline: Gurman on OpenAI’s Upcoming Hardware Product: ‘Movable, Screenless Speaker Built as AI Companion’
 - source: Bloomberg
 - published_at: `2026-07-15T23:02:54+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Some ships refusing US-military guided Hormuz transits after attacks, sources say - Reuters
-- source: Reuters
-- published_at: `2026-07-15T20:14:51+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: EXCLUSIVE: US strikes on Iran strengthen Trump's options for new escalation, officials say - Reuters
-- source: Reuters
-- published_at: `2026-07-15T18:52:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
