@@ -1,6 +1,6 @@
 # Breadth Data Status
 
-Generated at: 2026-07-17T06:06:06.181703+00:00
+Generated at: 2026-07-17T14:05:54.186713+00:00
 
 Provider available: True
 True breadth available: False
@@ -11,14 +11,14 @@ Stale data: False
 
 ## Market Internal Resonance
 
-- resonance_score: 50.37
-- resonance_state: surface_only
-- label: index_surface_strength
+- resonance_score: 58.33
+- resonance_state: mixed
+- label: partial_resonance
 - aligned_symbols: none
-- surface_only_symbols: DIA
-- sector_score: 70.0
-- equal_weight_vs_cap_weight_20d: 0.013101
-- small_cap_vs_large_cap_20d: 0.011498
+- surface_only_symbols: none
+- sector_score: 76.0
+- equal_weight_vs_cap_weight_20d: 0.024657
+- small_cap_vs_large_cap_20d: 0.011964
 
 ## Universe Status
 
@@ -38,7 +38,7 @@ Stale data: False
 - new highs/lows 20d: 74 / 17
 - new highs/lows 52w: 20 / 1
 - improvement / deterioration / confirmation / conflict / quality: 60.3 / 51.07 / 67.33 / 38.81 / 100.0
-- internal_resonance: mixed / score 63.06 / SPY 内部信号分歧：成分股/行业有部分支持，但等权、小盘或新高新低没有完全确认。
+- internal_resonance: mixed / score 64.26 / SPY 内部信号分歧：成分股/行业有部分支持，但等权、小盘或新高新低没有完全确认。
 
 ### QQQ
 
@@ -56,7 +56,7 @@ Stale data: False
 - new highs/lows 20d: 0 / 1
 - new highs/lows 52w: 0 / 0
 - improvement / deterioration / confirmation / conflict / quality: 100.0 / 100.0 / 77.22 / 87.82 / 26.11
-- internal_resonance: weak / score 27.16 / QQQ 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
+- internal_resonance: weak / score 28.36 / QQQ 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
 
 ### DIA
 
@@ -73,14 +73,14 @@ Stale data: False
 - advancers / decliners / A-D ratio: 16 / 14 / 1.1429
 - new highs/lows 20d: 3 / 0
 - new highs/lows 52w: 1 / 0
-- improvement / deterioration / confirmation / conflict / quality: 41.75 / 98.73 / 50.16 / 84.03 / 100.0
-- internal_resonance: surface_only / score 37.84 / DIA 指数表面强但内部没充分跟上：confirmation 50，conflict 84，RSP/SPY 1.31%，IWM/SPY 1.15%。
+- improvement / deterioration / confirmation / conflict / quality: 59.75 / 80.73 / 64.56 / 61.35 / 100.0
+- internal_resonance: mixed / score 58.58 / DIA 内部信号分歧：成分股/行业有部分支持，但等权、小盘或新高新低没有完全确认。
 
 ### IWM
 
 - status: proxy
 - source: iwm-spy-relative-strength-proxy
-- latest_date: 2026-07-16
+- latest_date: 2026-07-17
 - true_breadth: False
 - proxy: True
 - constituents used / expected: None / None
@@ -91,8 +91,8 @@ Stale data: False
 - advancers / decliners / A-D ratio: None / None / None
 - new highs/lows 20d: None / None
 - new highs/lows 52w: None / None
-- improvement / deterioration / confirmation / conflict / quality: 54.99 / 42.4 / 57.25 / 40.8 / 64
-- internal_resonance: mixed / score 50.22 / IWM 内部信号分歧：成分股/行业有部分支持，但等权、小盘或新高新低没有完全确认。
+- improvement / deterioration / confirmation / conflict / quality: 57.83 / 40.76 / 59.37 / 39.57 / 64
+- internal_resonance: mixed / score 52.15 / IWM 内部信号分歧：成分股/行业有部分支持，但等权、小盘或新高新低没有完全确认。
 
 ## Notes
 

@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-17T06:06:33.966981+00:00`
+- generated_at: `2026-07-17T14:06:23.272887+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `11`
-- event_detection_confidence: `78`
+- major_event_count: `12`
+- event_detection_confidence: `80`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `True`
-- confirmation_score: `75`
+- confirmation_score: `100`
 
 ## Dashboard Note
 
@@ -27,7 +27,39 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iran launches fresh attacks after sixth day of US strikes - Reuters
+- headline: China's oil imports have plunged during the Iran war. How much will they recover? - Reuters
+- source: Reuters
+- published_at: `2026-07-17T08:33:45+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Strait of Hormuz transits drop as US and Iran escalate attacks across Gulf - Reuters
+- source: Reuters
+- published_at: `2026-07-17T06:31:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Burberry's Europe sales hit by Iran war while US and China grow - Reuters
+- source: Reuters
+- published_at: `2026-07-17T06:12:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran strikes eastern Syria, in first such attack during current war - Reuters
+- source: Reuters
+- published_at: `2026-07-17T04:49:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US, Iran each attack infrastructure in risky escalation - Reuters
 - source: Reuters
 - published_at: `2026-07-17T03:50:00+00:00`
 - importance_score: `100`
@@ -55,7 +87,7 @@
 - source: Reuters
 - published_at: `2026-07-16T22:49:04+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -63,44 +95,12 @@
 - source: Reuters
 - published_at: `2026-07-16T22:09:06+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US launches new wave of strikes against Iran, military says - Reuters
-- source: Reuters
-- published_at: `2026-07-16T18:27:53+00:00`
-- importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Pakistan worries about being drawn into US-Iran conflict after Houthis attack Saudi Arabia - Reuters
 - source: Reuters
 - published_at: `2026-07-16T14:25:14+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Fewer vessels travel through Hormuz after US resumes blockade - Reuters
-- source: Reuters
-- published_at: `2026-07-16T08:22:13+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran war leaves crisis-weary European airlines ready for a shakeout - Reuters
-- source: Reuters
-- published_at: `2026-07-16T06:04:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Gurman on OpenAI’s Upcoming Hardware Product: ‘Movable, Screenless Speaker Built as AI Companion’
-- source: Bloomberg
-- published_at: `2026-07-15T23:02:54+00:00`
 - importance_score: `100`
 - confidence: `medium`
