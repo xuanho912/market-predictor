@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-17T21:15:50.431030+00:00`
+- generated_at: `2026-07-17T22:29:03.607609+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `12`
-- event_detection_confidence: `78`
+- event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -83,17 +83,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Qatar says Iranian missile attack thwarted, child injured - Reuters
+- headline: US military says it completed latest strikes on Iran, marking 6th consecutive night of attacks - Reuters
 - source: Reuters
-- published_at: `2026-07-17T02:40:28+00:00`
+- published_at: `2026-07-17T02:30:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US military says it completed latest strikes on Iran, marking 6th consecutive night of attacks - Reuters
+- headline: Qatar says Iranian missile attack thwarted, child injured - Reuters
 - source: Reuters
-- published_at: `2026-07-17T02:30:00+00:00`
+- published_at: `2026-07-17T01:43:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
