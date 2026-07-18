@@ -1,13 +1,13 @@
 # Breadth Data Status
 
-Generated at: 2026-07-18T05:53:16.132460+00:00
+Generated at: 2026-07-18T13:52:04.459190+00:00
 
 Provider available: True
 True breadth available: False
 True breadth symbols: SPY, DIA
 Proxy-only symbols: IWM
-Average breadth quality score: 72.53
-Stale data: False
+Average breadth quality score: 67.0
+Stale data: True
 
 ## Market Internal Resonance
 
@@ -44,19 +44,19 @@ Stale data: False
 
 - status: missing
 - source: wikipedia-nasdaq100
-- latest_date: 2026-07-13
+- latest_date: None
 - true_breadth: False
 - proxy: False
-- constituents used / expected: 1 / 19
-- coverage_ratio: 0.0526
+- constituents used / expected: 0 / 6
+- coverage_ratio: 0.0
 - stale_constituents: False
-- stale_price_data: False
-- percent_above_20d / 50d / 200d: 0.0 / 0.0 / 0.0
-- advancers / decliners / A-D ratio: 0 / 1 / 0.0
-- new highs/lows 20d: 0 / 1
+- stale_price_data: True
+- percent_above_20d / 50d / 200d: None / None / None
+- advancers / decliners / A-D ratio: 0 / 0 / 0.0
+- new highs/lows 20d: 0 / 0
 - new highs/lows 52w: 0 / 0
-- improvement / deterioration / confirmation / conflict / quality: 100.0 / 100.0 / 77.22 / 87.82 / 26.11
-- internal_resonance: weak / score 25.17 / QQQ 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
+- improvement / deterioration / confirmation / conflict / quality: 8.67 / 70.67 / 9.39 / 69.07 / 4.0
+- internal_resonance: weak / score 21.97 / QQQ 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
 
 ### DIA
 

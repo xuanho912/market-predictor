@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-18T05:53:42.491387+00:00`
+- generated_at: `2026-07-18T13:52:18.848471+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `18`
-- event_detection_confidence: `76`
+- major_event_count: `16`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -29,7 +29,7 @@
 
 - headline: Iran renews attacks on Gulf states after another night of US strikes - Reuters
 - source: Reuters
-- published_at: `2026-07-18T03:55:00+00:00`
+- published_at: `2026-07-18T11:39:29+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -47,7 +47,7 @@
 - source: Reuters
 - published_at: `2026-07-17T23:03:47+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 

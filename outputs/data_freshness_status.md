@@ -1,11 +1,11 @@
 # Data Freshness Status
 
-Generated at: `2026-07-18T05:53:51.762579+00:00`
+Generated at: `2026-07-18T13:52:29.354830+00:00`
 
 ## Summary
 
 - current_date: `2026-07-18`
-- current_time_us_eastern: `2026-07-18T01:53:51.762579-04:00`
+- current_time_us_eastern: `2026-07-18T09:52:29.354830-04:00`
 - latest_market_date: `2026-07-17`
 - latest_confirmed_market_date: `2026-07-17`
 - expected_latest_trading_date: `2026-07-17`
@@ -17,7 +17,7 @@ Generated at: `2026-07-18T05:53:51.762579+00:00`
 - data_freshness_status: `market_closed`
 - last_successful_core_market_update: `2026-07-17`
 - last_successful_update: `2026-07-17`
-- warning_message: 美股当前没有新的完整交易日，使用最近完成交易日 2026-07-17 的数据。 当前美东时间 2026-07-18 01:53。
+- warning_message: 美股当前没有新的完整交易日，使用最近完成交易日 2026-07-17 的数据。 当前美东时间 2026-07-18 09:52。
 
 ## Affected Symbols
 
@@ -66,7 +66,7 @@ Generated at: `2026-07-18T05:53:51.762579+00:00`
 - ^VVIX: status=`available`, latest_date=`2026-07-17`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - breadth_DIA: status=`available`, latest_date=`2026-07-13`, source=`static-dow30-list`, stale=`False`, fallback=`False`, real_data=`True`
 - breadth_IWM: status=`proxy`, latest_date=`2026-07-17`, source=`iwm-spy-relative-strength-proxy`, stale=`False`, fallback=`True`, real_data=`False`
-- breadth_QQQ: status=`missing`, latest_date=`2026-07-13`, source=`wikipedia-nasdaq100`, stale=`False`, fallback=`False`, real_data=`False`
+- breadth_QQQ: status=`missing`, latest_date=`None`, source=`wikipedia-nasdaq100`, stale=`False`, fallback=`True`, real_data=`False`
 - breadth_SPY: status=`available`, latest_date=`2026-07-13`, source=`wikipedia-sp500`, stale=`False`, fallback=`False`, real_data=`True`
 - breadth_sector_participation_proxy: status=`proxy`, latest_date=`None`, source=`sector-etf-participation-proxy`, stale=`True`, fallback=`True`, real_data=`False`
 - finnhub_alternative_data: status=`missing`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
