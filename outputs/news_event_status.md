@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-18T00:04:13.500033+00:00`
+- generated_at: `2026-07-18T04:17:30.193653+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
+- major_event_count: `15`
 - event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -27,6 +27,22 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: US military says it completed latest strikes on Iran, marking 7th consecutive night of attacks - Reuters
+- source: Reuters
+- published_at: `2026-07-18T02:40:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Boeing keeps 20-year forecast for jet demand steady, shrugs off Iran war impact - Reuters
+- source: Reuters
+- published_at: `2026-07-17T23:03:47+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Meta's latest move in the AI talent war — plus Cramer's 4 quick hits on the market
 - source: CNBC
 - published_at: `2026-07-17T17:40:45+00:00`
@@ -39,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-07-17T14:09:12+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -75,7 +91,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US and Iran attack infrastructure, raising fears of escalation - Reuters
+- headline: US and Iran target infrastructure as strait shipping comes under further attack - Reuters
 - source: Reuters
 - published_at: `2026-07-17T03:50:00+00:00`
 - importance_score: `100`
@@ -88,19 +104,3 @@
 - published_at: `2026-07-17T02:30:00+00:00`
 - importance_score: `100`
 - confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Qatar says Iranian missile attack thwarted, child injured - Reuters
-- source: Reuters
-- published_at: `2026-07-17T01:43:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US House Republicans push forward on Trump funding plan for Iran war, election overhaul - Reuters
-- source: Reuters
-- published_at: `2026-07-16T22:49:04+00:00`
-- importance_score: `100`
-- confidence: `medium`
