@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-18T04:17:30.193653+00:00`
+- generated_at: `2026-07-18T05:53:42.491387+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `15`
+- major_event_count: `18`
 - event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -27,6 +27,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Iran renews attacks on Gulf states after another night of US strikes - Reuters
+- source: Reuters
+- published_at: `2026-07-18T03:55:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: US military says it completed latest strikes on Iran, marking 7th consecutive night of attacks - Reuters
 - source: Reuters
 - published_at: `2026-07-18T02:40:00+00:00`
@@ -47,7 +55,15 @@
 - source: CNBC
 - published_at: `2026-07-17T17:40:45+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Israeli strikes kill Palestinians attending Gaza funeral for earlier strike victim - Reuters
+- source: Reuters
+- published_at: `2026-07-17T16:59:52+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -86,21 +102,5 @@
 - headline: Iran strikes eastern Syria, in first such attack during current war - Reuters
 - source: Reuters
 - published_at: `2026-07-17T04:49:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US and Iran target infrastructure as strait shipping comes under further attack - Reuters
-- source: Reuters
-- published_at: `2026-07-17T03:50:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US military says it completed latest strikes on Iran, marking 6th consecutive night of attacks - Reuters
-- source: Reuters
-- published_at: `2026-07-17T02:30:00+00:00`
 - importance_score: `100`
 - confidence: `high`

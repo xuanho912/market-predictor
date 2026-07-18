@@ -1,11 +1,11 @@
 # Data Freshness Status
 
-Generated at: `2026-07-18T04:17:40.837439+00:00`
+Generated at: `2026-07-18T05:53:51.762579+00:00`
 
 ## Summary
 
 - current_date: `2026-07-18`
-- current_time_us_eastern: `2026-07-18T00:17:40.837439-04:00`
+- current_time_us_eastern: `2026-07-18T01:53:51.762579-04:00`
 - latest_market_date: `2026-07-17`
 - latest_confirmed_market_date: `2026-07-17`
 - expected_latest_trading_date: `2026-07-17`
@@ -17,7 +17,7 @@ Generated at: `2026-07-18T04:17:40.837439+00:00`
 - data_freshness_status: `market_closed`
 - last_successful_core_market_update: `2026-07-17`
 - last_successful_update: `2026-07-17`
-- warning_message: 美股当前没有新的完整交易日，使用最近完成交易日 2026-07-17 的数据。 当前美东时间 2026-07-18 00:17。
+- warning_message: 美股当前没有新的完整交易日，使用最近完成交易日 2026-07-17 的数据。 当前美东时间 2026-07-18 01:53。
 
 ## Affected Symbols
 
