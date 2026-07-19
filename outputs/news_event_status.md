@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-18T13:52:18.848471+00:00`
+- generated_at: `2026-07-19T13:56:11.624152+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `16`
-- event_detection_confidence: `73`
+- major_event_count: `5`
+- event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,80 +27,40 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iran renews attacks on Gulf states after another night of US strikes - Reuters
+- headline: Israel to receive more US refuelling planes as Iran attacks intensify, Israeli officials say - Reuters
 - source: Reuters
-- published_at: `2026-07-18T11:39:29+00:00`
+- published_at: `2026-07-19T11:51:03+00:00`
 - importance_score: `100`
 - confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US renews strikes on Iran after two military personnel killed by Iranian attack - Reuters
+- source: Reuters
+- published_at: `2026-07-18T23:21:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US says two military personnel killed by Iranian attack in Jordan - Reuters
+- source: Reuters
+- published_at: `2026-07-18T21:30:29+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Two US service members in Jordan killed in Iranian attack, US says - Reuters
+- source: Reuters
+- published_at: `2026-07-18T17:27:35+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: US military says it completed latest strikes on Iran, marking 7th consecutive night of attacks - Reuters
 - source: Reuters
 - published_at: `2026-07-18T02:40:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Boeing keeps 20-year forecast for jet demand steady, shrugs off Iran war impact - Reuters
-- source: Reuters
-- published_at: `2026-07-17T23:03:47+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Meta's latest move in the AI talent war — plus Cramer's 4 quick hits on the market
-- source: CNBC
-- published_at: `2026-07-17T17:40:45+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Israeli strikes kill Palestinians attending Gaza funeral for earlier strike victim - Reuters
-- source: Reuters
-- published_at: `2026-07-17T16:59:52+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iranians suffer new uncertainty and anxiety as US steps up attacks - Reuters
-- source: Reuters
-- published_at: `2026-07-17T14:09:12+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Strait of Hormuz transits drop as US and Iran escalate attacks across Gulf - Reuters
-- source: Reuters
-- published_at: `2026-07-17T06:31:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Burberry's Europe sales hit by Iran war while US and China grow - Reuters
-- source: Reuters
-- published_at: `2026-07-17T06:12:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: China's oil imports have plunged during the Iran war. How much will they recover? - Reuters
-- source: Reuters
-- published_at: `2026-07-17T05:40:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran strikes eastern Syria, in first such attack during current war - Reuters
-- source: Reuters
-- published_at: `2026-07-17T04:49:00+00:00`
 - importance_score: `100`
 - confidence: `high`

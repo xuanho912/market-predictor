@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-07-18T13:52:29.749151+00:00",
+  "generated_at": "2026-07-19T13:56:22.865267+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-07-18T13:52:29.760126+00:00",
+    "generated_at": "2026-07-19T13:56:22.879237+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 101,
     "risk_score_effectiveness": {
@@ -235,11 +235,29 @@
           "company_news": "available",
           "earnings": "available",
           "earnings_date": "2026-08-06",
-          "earnings_risk_flag": "low",
+          "earnings_risk_flag": "medium",
           "earnings_within_30d": true,
           "earnings_within_7d": false,
-          "event_risk_flag": "low",
+          "event_risk_flag": "medium",
           "headlines": [
+            {
+              "datetime": 1784446213,
+              "headline": "Constellation Energy: The Inventory Is Smaller Than The Gap",
+              "source": "SeekingAlpha",
+              "url": "https://finnhub.io/api/news?id=0e92e582bccf93b91c761f34abfcfb27e7846d69317fe6f9047de99e6d6a7e0b"
+            },
+            {
+              "datetime": 1784431061,
+              "headline": "Bloom Energy vs. Constellation Energy: Which Industrials Stock Is a Better Buy in 2026?",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=324556eb7f3f952ad58ad2ad96e98c0f8f7389582048ef0400972b4f42a0279c"
+            },
+            {
+              "datetime": 1784385036,
+              "headline": "BlackRock CEO Larry Fink Warned of an AI Power Crunch—New York Just Halted Large Data Centers: CEG, VST, NEE in Focus",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=bd24c792bf5164d393b6163d1f058b45c6fc137e1d05f8401a44b6aabac213f5"
+            },
             {
               "datetime": 1784298420,
               "headline": "3 Utility Stocks Built for the Coming AI Power Crunch",
@@ -269,30 +287,12 @@
               "headline": "Senator Goes Stock, ETF Shopping: Palladium ETF Among Newest Purchases",
               "source": "Benzinga",
               "url": "https://finnhub.io/api/news?id=5a69e487f05fe91582493b555e214c87f58d4e51c9b48af7e4f0c57bc3880860"
-            },
-            {
-              "datetime": 1784223836,
-              "headline": "Sector Update: Energy Stocks Rise Thursday Afternoon",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=034fefda8e6e959fe078ec86622e7acd7a8dc76be1a1558bd66ff2e7fb14db62"
-            },
-            {
-              "datetime": 1784213640,
-              "headline": "Blue Energy Receives Strategic Investment from Constellation to Accelerate Commercialization of Novel Shipyard Manufacturing and Project Financing Model for New Nuclear",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=aa8bfa586c036dce006a1686b1a6556a7d4fb8668b714f0344f8a0e05070d6ec"
-            },
-            {
-              "datetime": 1784201833,
-              "headline": "Energy Transition Today - Climate Tech Boom Powered By Policy Innovation And Investment",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=de34c975071cb7e7e613e8b09cf65680376782645e47c6a7801702dbad556fd6"
             }
           ],
-          "major_company_headline": "3 Utility Stocks Built for the Coming AI Power Crunch",
-          "news_count_24h": 1,
+          "major_company_headline": "Constellation Energy: The Inventory Is Smaller Than The Gap",
+          "news_count_24h": 3,
           "news_count_72h": 10,
-          "news_risk_score": 40.0,
+          "news_risk_score": 56.0,
           "news_sentiment": "negative"
         },
         "price_trend": {
@@ -729,8 +729,8 @@
         "benchmark": "SPY",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "failed_bounce_risk",
-        "benchmark_primary_probability": 0.3165,
-        "benchmark_primary_scenario": "bearish_path",
+        "benchmark_primary_probability": 0.2984,
+        "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
         "risk_alert_level": "HIGH_CONVICTION",
@@ -2144,7 +2144,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: 3 Utility Stocks Built for the Coming AI Power Crunch",
+              "公司新闻已接入: Constellation Energy: The Inventory Is Smaller Than The Gap",
               "未来 30 天存在财报催化：2026-08-06"
             ],
             "max_points": 10,
@@ -2256,7 +2256,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "3 Utility Stocks Built for the Coming AI Power Crunch",
+          "catalyst": "Constellation Energy: The Inventory Is Smaller Than The Gap",
           "expectation_gap": [
             "未来 30 天财报可能成为重新定价窗口"
           ],
@@ -2326,8 +2326,8 @@
           },
           "news_event": {
             "evidence": "公司新闻或财报事件风险上升",
-            "reason": "risk_score=40.0; earnings_date=2026-08-06",
-            "score": 51.8,
+            "reason": "risk_score=56.0; earnings_date=2026-08-06",
+            "score": 56.92,
             "status": "conflicting"
           },
           "options_volatility": {
@@ -2362,7 +2362,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 27.26,
+        "stock_confluence_score": 27.64,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "基础财务指标偏支持"
@@ -2416,20 +2416,20 @@
           "cash_flow_quality": 3.9053,
           "debt_risk": 0.0269,
           "earnings_growth": 110.34,
-          "forward_pe": 39.9904,
+          "forward_pe": 40.8772,
           "profitability": 62.97,
           "raw_metrics": {
             "current_ratio": 3.9053,
             "debt_to_equity": 0.0538,
             "eps_growth_ttm_yoy": 110.34,
-            "forward_pe": 39.9904,
+            "forward_pe": 40.8772,
             "gross_margin_ttm": 74.15,
             "net_margin_ttm": 62.97,
             "revenue_growth_ttm_yoy": 70.68
           },
           "revenue_growth": 70.68,
           "status": "available",
-          "valuation_percentile": 0.49988
+          "valuation_percentile": 0.510965
         },
         "news_event": {
           "analyst_rating_news": "missing",
@@ -2442,59 +2442,59 @@
           "event_risk_flag": "high",
           "headlines": [
             {
-              "datetime": 1784375100,
-              "headline": "With SpaceX Falling Below Its IPO Opening Price, Is Tesla a Better Buy for the Second Half of 2026?",
+              "datetime": 1784461260,
+              "headline": "Oracle Crashed 65% From Its Peak. I Just Bought It Anyway. Here's Why.",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=d988a59c4f1620f934efbb21d13436c1d9994fd9621b866fe02d9551adb7c360"
+              "url": "https://finnhub.io/api/news?id=f97fb8688e23cbc233e924ce5fe34fb070696f8fd034a8052d76f46cd3420030"
             },
             {
-              "datetime": 1784373600,
-              "headline": "3 Dividend Stocks to Buy and Hold for the Next 5 Years",
+              "datetime": 1784460420,
+              "headline": "3 Stocks I'm Buying After Taiwan Semiconductor's Stellar Announcement",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=780ac7fdf3a9c9ed78dcc7320c36a95944e383b60304554e278ad0d3434c1058"
+              "url": "https://finnhub.io/api/news?id=94493af9cf6faacc977b90fda5624fd1a87b4a219e621b3d613b80057845708a"
             },
             {
-              "datetime": 1784372700,
-              "headline": "History Says Buying Chip Stocks After a 20% Drawdown Has Usually Worked in This Cycle. Will It Work Again?",
+              "datetime": 1784460300,
+              "headline": "Carnival Reported Earnings on June 23, Royal Caribbean Is Next on July 28, Then Norwegian Cruise Line on July 30. Here's My Top Buy of the Bunch.",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=81198598bb83481b717791df01a36986587608426595d1eae4681df7086fead8"
+              "url": "https://finnhub.io/api/news?id=40e940b90c55827cb323753d325791e3e4f6a8c71a8bcc21284fe74a74696c5c"
             },
             {
-              "datetime": 1784372160,
-              "headline": "Fed Chair Kevin Warsh, Welcome to Your No-Win Scenario, Courtesy of President Donald Trump",
+              "datetime": 1784460000,
+              "headline": "ETF Flows Smash Records in the First Half of 2026. Is It Time to Invest?",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=42759ffb7daf3162d65f8054213289838823ce3b768ec571ac70b940010ab967"
+              "url": "https://finnhub.io/api/news?id=c286c56a6f1acb89f9bea5c74198b5e15c8690aa026a7c8f217b1353cbb68271"
             },
             {
-              "datetime": 1784371201,
-              "headline": "SpaceX's Unlucky Flight 13 Fails to Launch Starship. Can the Stock Survive Yet Another Delay?",
+              "datetime": 1784459100,
+              "headline": "Here's My Highest-Yielding Dividend Stock Right Now (It Pays 10.9%)",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=3320ecba74d7a55caadd3ca0c75cf6407057677a143da92c778b3f3d94f7f159"
+              "url": "https://finnhub.io/api/news?id=c6ac0e0026868e34a7d792a8d21bad9651a5f2ae687945c5bc1da5cce4cad5c4"
             },
             {
-              "datetime": 1784370900,
-              "headline": "Can Starbucks Continue Obliterating Dutch Bros in the Second Half?",
+              "datetime": 1784458560,
+              "headline": "The Stock Market Is Doing Something Observed Only 3 Times in 155 Years -- 1999, 2022, and 2026 -- and It Offers a Dire Warning for Wall Street",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=2daf7851a3cddc061cee75c60a20113eea19cd72c3083ff63f93cf96f42474a1"
+              "url": "https://finnhub.io/api/news?id=5f430b1c165b7c4fe42356b3885733cacaa7113f19992b11ed2205a6cf0c1923"
             },
             {
-              "datetime": 1784370900,
-              "headline": "Jensen Huang Said Nvidia Will Be the First Customer for HBM4. Here's the AI Memory Stock That Has Reportedly Locked Up 70% of Those Orders.",
+              "datetime": 1784458200,
+              "headline": "4 Cryptocurrencies Poised to Deliver Huge Gains, According to Standard Chartered",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=da1fc3a6739bae030bc5394c167ef71891e631cb8403b03db20583e8db8ee35e"
+              "url": "https://finnhub.io/api/news?id=8b59d767eae2ab5e8c3e3aa89233d7774dfa4957f37c7a7712cbdc6041ffa83d"
             },
             {
-              "datetime": 1784369100,
-              "headline": "Google Cloud Revenue Grew 63% Last Quarter. Here's Why That Number Matters More Than Alphabet's Ad Business Right Now.",
+              "datetime": 1784457840,
+              "headline": "5 Stocks Poised to Outperform With Their Best Growth Still Ahead",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=5a63a5773ca7bf891411ae29c441dc1aa0960489bed679782fe80b53ce346ac4"
+              "url": "https://finnhub.io/api/news?id=bbc1ec06b3b9287ae10886c0ba4cd3604728d33b87976f105544ba53556a3390"
             }
           ],
-          "major_company_headline": "With SpaceX Falling Below Its IPO Opening Price, Is Tesla a Better Buy for the Second Half of 2026?",
+          "major_company_headline": "Oracle Crashed 65% From Its Peak. I Just Bought It Anyway. Here's Why.",
           "news_count_24h": 20,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
-          "news_sentiment": "positive"
+          "news_sentiment": "neutral"
         },
         "price_trend": {
           "close": 202.80999755859375,
@@ -2937,7 +2937,7 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.3706,
+        "benchmark_primary_probability": 0.3245,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -3026,7 +3026,6 @@
         },
         "supporting_signals": [
           "价格站在 20d 均线上方。",
-          "近期公司新闻偏正面。",
           "基础财务指标已接入且收入增长为正。"
         ]
       },
@@ -4355,16 +4354,15 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: With SpaceX Falling Below Its IPO Opening Price, Is Tesla a Better Buy for the Second Half of 2026?",
-              "新闻情绪偏正",
+              "公司新闻已接入: Oracle Crashed 65% From Its Peak. I Just Bought It Anyway. Here's Why.",
               "增长数据具备 EPS 上修叙事基础"
             ],
             "max_points": 10,
             "missing_fields": [],
             "name": "catalyst",
-            "points": 8.0,
-            "score_pct": 80.0,
-            "status": "supportive"
+            "points": 6.0,
+            "score_pct": 60.0,
+            "status": "neutral"
           },
           "flow": {
             "evidence": [
@@ -4432,7 +4430,7 @@
           "valuation": {
             "evidence": [
               "估值处于中等偏高区间",
-              "增长可部分解释估值，PEG proxy 0.36"
+              "增长可部分解释估值，PEG proxy 0.37"
             ],
             "max_points": 15,
             "missing_fields": [],
@@ -4449,7 +4447,7 @@
           "expected_return_60d": -0.0123,
           "max_drawdown_risk_20d": 0.0796,
           "max_drawdown_risk_60d": 0.1397,
-          "outperformance_probability_20d": 0.5889,
+          "outperformance_probability_20d": 0.5809,
           "risk_reward_ratio": 0.45,
           "upside_potential_60d": 0.0623
         },
@@ -4471,7 +4469,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "With SpaceX Falling Below Its IPO Opening Price, Is Tesla a Better Buy for the Second Half of 2026?",
+          "catalyst": "Oracle Crashed 65% From Its Peak. I Just Bought It Anyway. Here's Why.",
           "expectation_gap": [
             "收入增长较强，具备正向预期差基础",
             "EPS 增长较强，可能支持盈利上修叙事"
@@ -4489,7 +4487,7 @@
           "primary_path": "stock_failed_bounce",
           "valuation_repricing": "估值有扩张条件"
         },
-        "total_score": 46.5,
+        "total_score": 44.5,
         "validation_status": "not_yet_validated",
         "version": "stock_alpha_score_v1"
       },
@@ -4515,8 +4513,8 @@
         "module_scores": {
           "alpha_quality": {
             "evidence": "个股 Alpha 评分已接入",
-            "reason": "score=46.5; grade=weak_or_no_alpha_edge; benchmark=QQQ",
-            "score": 46.5,
+            "reason": "score=44.5; grade=weak_or_no_alpha_edge; benchmark=QQQ",
+            "score": 44.5,
             "status": "conflicting"
           },
           "fundamentals_earnings": {
@@ -4575,7 +4573,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 44.95,
+        "stock_confluence_score": 44.77,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "个股跑赢所属板块",
@@ -4585,7 +4583,6 @@
       },
       "supporting_signals": [
         "价格站在 20d 均线上方。",
-        "近期公司新闻偏正面。",
         "基础财务指标已接入且收入增长为正。"
       ],
       "symbol": "NVDA",
@@ -4706,10 +4703,10 @@
             }
           ],
           "major_company_headline": "NuScale Power (SMR) Faces More Cautious Sentiment, Is 92% Undervalued Enough?",
-          "news_count_24h": 2,
-          "news_count_72h": 8,
-          "news_risk_score": 43.0,
-          "news_sentiment": "neutral"
+          "news_count_24h": 0,
+          "news_count_72h": 7,
+          "news_risk_score": 32.0,
+          "news_sentiment": "negative"
         },
         "price_trend": {
           "close": 7.71999979019165,
@@ -5136,11 +5133,11 @@
         "benchmark": "IWM",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.3228,
+        "benchmark_primary_probability": 0.2894,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
-        "risk_alert_level": "HIGH_CONVICTION",
+        "risk_alert_level": "WARNING",
         "risk_alert_type": "Bounce Setup Alert",
         "symbol": "SMR"
       },
@@ -6693,6 +6690,7 @@
           "个股弱于所属板块",
           "价格结构与主路径冲突",
           "成交量不确认当前路径",
+          "公司新闻或财报事件风险上升",
           "基础财务指标偏弱",
           "历史相似结构与主路径冲突",
           "个股 Alpha 评分已接入"
@@ -6734,10 +6732,10 @@
             "status": "conflicting"
           },
           "news_event": {
-            "evidence": "公司新闻源已接入",
-            "reason": "NuScale Power (SMR) Faces More Cautious Sentiment, Is 92% Undervalued Enough?",
-            "score": 55.26,
-            "status": "neutral"
+            "evidence": "公司新闻或财报事件风险上升",
+            "reason": "risk_score=32.0; earnings_date=2026-08-05",
+            "score": 49.24,
+            "status": "conflicting"
           },
           "options_volatility": {
             "evidence": "个股期权/隐含波动率未完整接入",
@@ -6771,7 +6769,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 38.05,
+        "stock_confluence_score": 37.61,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [],
         "validation_status": "not_yet_validated"
@@ -6850,56 +6848,56 @@
           "event_risk_flag": "high",
           "headlines": [
             {
-              "datetime": 1784375100,
-              "headline": "With SpaceX Falling Below Its IPO Opening Price, Is Tesla a Better Buy for the Second Half of 2026?",
+              "datetime": 1784460662,
+              "headline": "Dow Jones Futures Loom As U.S.-Iran Attacks Escalate; Google, Tesla, AMD Ahead",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=d988a59c4f1620f934efbb21d13436c1d9994fd9621b866fe02d9551adb7c360"
+              "url": "https://finnhub.io/api/news?id=2d3cccb04a42f2252f4762d535a3541cb90b6bf4620f71342aa532df4c6056f3"
             },
             {
-              "datetime": 1784363580,
-              "headline": "Tesla Just Posted Its Best Second Quarter Deliveries Ever. Here's the 1 Number That Will Actually Move the Stock on July 22.",
+              "datetime": 1784453100,
+              "headline": "Even With Tesla Under $400, I'd Still Rather Buy This Unstoppable Growth Stock in July",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=b11b31449ae1b2d7d252a48fa735613b23610c9ce0f5e914949e0c0a2c767b15"
+              "url": "https://finnhub.io/api/news?id=77b436c9bb18abc3d190349190f14b630bb76728b95442d8b876702ee2da9406"
             },
             {
-              "datetime": 1784361600,
-              "headline": "Tesla Q2 Earnings Preview: The Numbers Will Beat, The Narrative May Not",
-              "source": "SeekingAlpha",
-              "url": "https://finnhub.io/api/news?id=8dbc706c614626787bcaa832086c874aa96164dcfab5f2df1e6b735d4fe25411"
+              "datetime": 1784452800,
+              "headline": "The 3 Biggest Bargain \"Magnificent Seven\" Stocks to Buy Today",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=05e038cce6ef844d68163ae6628b565cfd4ddd6bd51bd8d586e47dbe577b6e52"
             },
             {
-              "datetime": 1784338271,
-              "headline": "Elon Musk Reacts to Jamie Dimon's ‘Einstein’ Praise With Two-Word Reply as Viral Post Hails His SpaceX and Tesla Legacy",
+              "datetime": 1784422080,
+              "headline": "TSLY Investors Are Missing Tesla’s Rally: How Option Income Strategy Costs You 30% in Upside",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=40b2422ffc7eed60b3e8bf00913bc0393432591ca57ba9b23038e029de52e67e"
+              "url": "https://finnhub.io/api/news?id=9a8d589638a5625d1b2b032dc2381666de4736360ff6c66e45262027c52223ce"
             },
             {
-              "datetime": 1784329620,
-              "headline": "How Nvidia and Micron Are Single-Handedly Reshaping S&P 500 Tech Earnings",
+              "datetime": 1784418260,
+              "headline": "Tesla stock: How much does an improved auto business matter?",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=1aa7548b08ec2d62ae8d685abfe5c27dce90ed9a0dfe18473348b81b0cd47cc2"
+              "url": "https://finnhub.io/api/news?id=f4b69d7d7caddecbe7f932cca129a62dc45ea25959d627475ec70f6896d52897"
             },
             {
-              "datetime": 1784326020,
-              "headline": "Waymo wears out its welcome in major U.S. city as mayor responds",
+              "datetime": 1784417100,
+              "headline": "Which \"Magnificent Seven\" Stock Has the Best Risk/Reward Right Now?",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=c27b1e9b005a5e3afbd06e89ccabe70df72fbdd563c935de0de8ffcc2117a3d2"
+              "url": "https://finnhub.io/api/news?id=c7ccce599ed976f1123f68424ea51a0e966efa45f96e2cd4aabaf8e9ee96487a"
             },
             {
-              "datetime": 1784323740,
-              "headline": "Tesla and Alphabet Earnings: The Metrics That Matter Most",
+              "datetime": 1784411100,
+              "headline": "Pokémon Cards Beat the S&P 500 by 2.5x, But the Math Is a Lie",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=200790eac3ed0a7bbc2731792e0c7d30d34b1d2c811bd0b8b34479e5f4d1a64d"
+              "url": "https://finnhub.io/api/news?id=a2e6c8b9ec1e8336ecd1ba5029ebc6e59ea1513f41d6a3038a9ea44093167688"
             },
             {
-              "datetime": 1784322074,
-              "headline": "Dow Jones Futures: Google, Tesla, AMD Loom After AI Stock Sell-Off",
+              "datetime": 1784408760,
+              "headline": "Bank of America revamps Tesla forecast before earnings",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=ac86c3474518451b7cee3d50b899e8addbe274e82ee29770cc645795ac9b33b2"
+              "url": "https://finnhub.io/api/news?id=b83d33d593d92299813f10614e2737d095c023c555d5cc6292226f70157f9e92"
             }
           ],
-          "major_company_headline": "With SpaceX Falling Below Its IPO Opening Price, Is Tesla a Better Buy for the Second Half of 2026?",
-          "news_count_24h": 20,
+          "major_company_headline": "Dow Jones Futures Loom As U.S.-Iran Attacks Escalate; Google, Tesla, AMD Ahead",
+          "news_count_24h": 14,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
           "news_sentiment": "positive"
@@ -7340,7 +7338,7 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.3706,
+        "benchmark_primary_probability": 0.3245,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -8758,7 +8756,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: With SpaceX Falling Below Its IPO Opening Price, Is Tesla a Better Buy for the Second Half of 2026?",
+              "公司新闻已接入: Dow Jones Futures Loom As U.S.-Iran Attacks Escalate; Google, Tesla, AMD Ahead",
               "新闻情绪偏正",
               "未来 30 天存在财报催化：2026-07-22"
             ],
@@ -8873,7 +8871,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "With SpaceX Falling Below Its IPO Opening Price, Is Tesla a Better Buy for the Second Half of 2026?",
+          "catalyst": "Dow Jones Futures Loom As U.S.-Iran Attacks Escalate; Google, Tesla, AMD Ahead",
           "expectation_gap": [
             "未来 30 天财报可能成为重新定价窗口"
           ],
@@ -8946,7 +8944,7 @@
           "news_event": {
             "evidence": "公司新闻或财报事件风险上升",
             "reason": "risk_score=100.0; earnings_date=2026-07-22",
-            "score": 100,
+            "score": 93.0,
             "status": "conflicting"
           },
           "options_volatility": {
@@ -8981,7 +8979,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 31.01,
+        "stock_confluence_score": 30.5,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [],
         "validation_status": "not_yet_validated"
@@ -9010,7 +9008,7 @@
       "top_candidate": "NVDA",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-07-18T13:52:29.756840+00:00",
+    "generated_at": "2026-07-19T13:56:22.875096+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -9020,19 +9018,19 @@
     "top_candidates": [
       {
         "alpha_fields": {
-          "alpha_score": 46.5,
+          "alpha_score": 44.5,
           "expected_return_60d": -0.0123,
           "forecast_grade": "weak_or_no_alpha_edge",
           "main_logic": "半导体/AI 逻辑：订单、毛利率、资本开支周期、估值重估和资金确认。",
-          "outperformance_probability_20d": 0.5889,
+          "outperformance_probability_20d": 0.5809,
           "risk_reward_ratio": 0.45
         },
-        "alpha_quality_score": 46.5,
+        "alpha_quality_score": 44.5,
         "as_of": "2026-07-17",
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 63.83,
         "company_name": "NVIDIA Corp",
-        "confluence_score": 44.95,
+        "confluence_score": 44.77,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9049,7 +9047,7 @@
           "mid": 202.48,
           "range_pct": 0.0356
         },
-        "final_radar_score": 55.44,
+        "final_radar_score": 55.06,
         "forecast_date": "2026-07-17",
         "invalidation_level": 189.8,
         "last_close": 202.80999755859375,
@@ -9072,8 +9070,8 @@
           "earnings": "available"
         },
         "next_day_move_probability": 0.6633,
-        "one_line_reason": "failed_bounce_risk: Alpha 46 / 弹性 67 / 成交量 67 / 相对强弱 54 / 催化 64 / 大盘 risk_off_pressure / 板块 supportive",
-        "outperformance_probability_20d": 0.5889,
+        "one_line_reason": "failed_bounce_risk: Alpha 44 / 弹性 67 / 成交量 67 / 相对强弱 54 / 催化 64 / 大盘 risk_off_pressure / 板块 supportive",
+        "outperformance_probability_20d": 0.5809,
         "primary_probability": 0.2719,
         "primary_scenario": "stock_failed_bounce",
         "radar_level": "MODERATE_OPPORTUNITY",
@@ -9118,7 +9116,7 @@
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 64.96,
         "company_name": "Tesla Inc",
-        "confluence_score": 31.01,
+        "confluence_score": 30.5,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9135,7 +9133,7 @@
           "mid": 379.81,
           "range_pct": 0.0482
         },
-        "final_radar_score": 52.53,
+        "final_radar_score": 52.47,
         "forecast_date": "2026-07-17",
         "invalidation_level": 368.6,
         "last_close": 380.8399963378906,
@@ -9201,7 +9199,7 @@
         "candidate_type": "downside_continuation",
         "catalyst_score": 61.75,
         "company_name": "Nuscale Power Corp",
-        "confluence_score": 38.05,
+        "confluence_score": 37.61,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9218,7 +9216,7 @@
           "mid": 7.68,
           "range_pct": 0.0881
         },
-        "final_radar_score": 50.03,
+        "final_radar_score": 49.98,
         "forecast_date": "2026-07-17",
         "invalidation_level": 7.21,
         "last_close": 7.71999979019165,
@@ -9284,7 +9282,7 @@
         "candidate_type": "downside_continuation",
         "catalyst_score": 61.49,
         "company_name": "Constellation Energy Corp",
-        "confluence_score": 27.26,
+        "confluence_score": 27.64,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9301,7 +9299,7 @@
           "mid": 251.92,
           "range_pct": 0.0367
         },
-        "final_radar_score": 42.83,
+        "final_radar_score": 42.87,
         "forecast_date": "2026-07-17",
         "invalidation_level": 228.63,
         "last_close": 252.38999938964844,
