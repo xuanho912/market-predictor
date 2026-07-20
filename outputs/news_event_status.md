@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-20T14:36:49.193099+00:00`
+- generated_at: `2026-07-20T21:39:49.958252+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
+- major_event_count: `10`
 - event_detection_confidence: `82`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `25`
+- confirmation_score: `50`
 
 ## Dashboard Note
 
@@ -27,9 +27,41 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Houthis impose Saudi naval blockade, opening new front in US-Iran war - Reuters
+- headline: Yemen's Houthis declare naval blockade against Saudi Arabia - Reuters
 - source: Reuters
-- published_at: `2026-07-20T14:02:17+00:00`
+- published_at: `2026-07-20T20:56:13+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Houthis announce Saudi naval blockade, threatening new front in US-Iran war - Reuters
+- source: Reuters
+- published_at: `2026-07-20T19:46:09+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Red Sea war insurance costs rise after Houthi blockade, sources say - Reuters
+- source: Reuters
+- published_at: `2026-07-20T17:31:56+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Why oil prices haven't gone crazy despite 5 months of US-Iran war - Reuters
+- source: Reuters
+- published_at: `2026-07-20T15:32:04+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil transfer activity in Gulf of Oman slows following ship attacks, data shows - Reuters
+- source: Reuters
+- published_at: `2026-07-20T14:45:38+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -41,28 +73,20 @@
 - importance_score: `100`
 - confidence: `high`
 
-### geopolitical_risk_escalation / risk_off
-
-- headline: Yemen's Houthis say they will impose naval blockade against Saudi Arabia - Reuters
-- source: Reuters
-- published_at: `2026-07-20T12:34:07+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Why oil prices haven't gone crazy despite 5 months of US-Iran war - Reuters
-- source: Reuters
-- published_at: `2026-07-20T12:15:11+00:00`
-- importance_score: `100`
-- confidence: `high`
-
 ### geopolitical_risk_easing / risk_on
 
 - headline: Mediators propose 10-day ceasefire to revive Iran-U.S. interim deal, senior Iranian official tells Reuters - Reuters
 - source: Reuters
 - published_at: `2026-07-20T11:48:14+00:00`
-- importance_score: `99`
+- importance_score: `98`
+- confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Morning Bid: The most violent ceasefire - Reuters
+- source: Reuters
+- published_at: `2026-07-20T11:30:36+00:00`
+- importance_score: `98`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -71,20 +95,12 @@
 - source: Reuters
 - published_at: `2026-07-20T06:00:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Ryanair profits slump as Iran war dampens fares, hikes fuel costs - Reuters
 - source: Reuters
 - published_at: `2026-07-20T05:01:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Israel to receive more US refuelling planes as Iran attacks intensify, Israeli officials say - Reuters
-- source: Reuters
-- published_at: `2026-07-19T11:51:03+00:00`
 - importance_score: `100`
 - confidence: `medium`
