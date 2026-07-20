@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-20T22:35:23.358643+00:00`
+- generated_at: `2026-07-20T23:45:21.941749+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `10`
-- event_detection_confidence: `82`
+- event_detection_confidence: `81`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,17 +27,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Yemen's Houthis declare naval blockade against Saudi Arabia - Reuters
+- headline: Houthis announce Saudi naval blockade, threatening new front in US-Iran war - Reuters
 - source: Reuters
-- published_at: `2026-07-20T20:56:13+00:00`
+- published_at: `2026-07-20T22:22:51+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Houthis announce Saudi naval blockade, threatening new front in US-Iran war - Reuters
+- headline: Yemen's Houthis declare naval blockade against Saudi Arabia - Reuters
 - source: Reuters
-- published_at: `2026-07-20T19:46:09+00:00`
+- published_at: `2026-07-20T20:56:13+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -79,7 +79,7 @@
 - source: Reuters
 - published_at: `2026-07-20T11:48:14+00:00`
 - importance_score: `97`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_easing / risk_on
 
@@ -87,7 +87,7 @@
 - source: Reuters
 - published_at: `2026-07-20T11:30:36+00:00`
 - importance_score: `97`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
