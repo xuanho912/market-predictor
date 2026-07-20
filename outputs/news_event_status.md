@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-20T21:39:49.958252+00:00`
+- generated_at: `2026-07-20T22:35:23.358643+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `10`
@@ -78,7 +78,7 @@
 - headline: Mediators propose 10-day ceasefire to revive Iran-U.S. interim deal, senior Iranian official tells Reuters - Reuters
 - source: Reuters
 - published_at: `2026-07-20T11:48:14+00:00`
-- importance_score: `98`
+- importance_score: `97`
 - confidence: `high`
 
 ### geopolitical_risk_easing / risk_on
@@ -86,7 +86,7 @@
 - headline: Morning Bid: The most violent ceasefire - Reuters
 - source: Reuters
 - published_at: `2026-07-20T11:30:36+00:00`
-- importance_score: `98`
+- importance_score: `97`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
