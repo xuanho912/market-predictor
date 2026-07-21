@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-21T04:35:38.944229+00:00`
+- generated_at: `2026-07-21T06:19:01.048615+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `13`
+- major_event_count: `14`
 - event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US military completes its latest strikes on Iran, marking the 10th successive night of attacks - Reuters
+- source: Reuters
+- published_at: `2026-07-21T02:26:00+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -96,11 +104,3 @@
 - published_at: `2026-07-20T13:53:06+00:00`
 - importance_score: `100`
 - confidence: `high`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Mediators propose 10-day ceasefire to revive Iran-U.S. interim deal, senior Iranian official tells Reuters - Reuters
-- source: Reuters
-- published_at: `2026-07-20T11:48:14+00:00`
-- importance_score: `96`
-- confidence: `medium`
