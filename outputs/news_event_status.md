@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-21T14:25:58.968166+00:00`
+- generated_at: `2026-07-21T21:39:47.194427+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `13`
-- event_detection_confidence: `80`
+- major_event_count: `17`
+- event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,57 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iran's forces attack Bahrain and Kuwait after US hits Iranian ports and cities - Reuters
+- headline: Investing experts: Why 'just buy the market' doesn't necessarily apply to bonds
+- source: CNBC
+- published_at: `2026-07-21T19:04:51+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Tankers with Saudi crude turn back as Houthis open new front in US-Iran war - Reuters
 - source: Reuters
-- published_at: `2026-07-21T13:16:48+00:00`
+- published_at: `2026-07-21T18:05:41+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Houthis warn shipping companies to avoid Saudi ports, email shows - Reuters
+- source: Reuters
+- published_at: `2026-07-21T16:56:06+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Halliburton tumbles on tepid revenue forecast, Middle East recovery warning - Reuters
+- source: Reuters
+- published_at: `2026-07-21T16:19:40+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran warns Bulgaria against aiding US military operations after move to station US aircraft - Reuters
+- source: Reuters
+- published_at: `2026-07-21T15:27:40+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Two tankers carrying Saudi crude make U-turns in Red Sea after Houthi warning - Reuters
+- source: Reuters
+- published_at: `2026-07-21T14:20:45+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran war 'stagflation' premium quietly mounts - Reuters
+- source: Reuters
+- published_at: `2026-07-21T13:04:16+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -43,9 +91,9 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Houthis warn shipping companies to avoid Saudi ports, email shows - Reuters
+- headline: Woman seriously injured in knife attack during church service in Irish town - Reuters
 - source: Reuters
-- published_at: `2026-07-21T11:16:43+00:00`
+- published_at: `2026-07-21T11:44:45+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -54,53 +102,5 @@
 - headline: Tanker crew abandons vessel after reported projectile strike in Strait of Hormuz, UKMTO says - Reuters
 - source: Reuters
 - published_at: `2026-07-21T02:28:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US military completes its latest strikes on Iran, marking the 10th successive night of attacks - Reuters
-- source: Reuters
-- published_at: `2026-07-21T02:26:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Hormuz vessel crossings extend slide on fresh US-Iran attacks - Reuters
-- source: Reuters
-- published_at: `2026-07-21T02:13:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Gold rises as diplomatic efforts offer hope of de-escalation in Middle East - Reuters
-- source: Reuters
-- published_at: `2026-07-21T04:08:00+00:00`
-- importance_score: `98`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil prices rise over 2% on fresh attacks by US and Iran - Reuters
-- source: Reuters
-- published_at: `2026-07-21T01:04:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Saudi condemns Houthi maritime blockade threat; group warns of escalation - Reuters
-- source: Reuters
-- published_at: `2026-07-20T23:35:39+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Houthi Red Sea blockade would lift oil prices, but workarounds could limit impact - Reuters
-- source: Reuters
-- published_at: `2026-07-20T22:51:05+00:00`
 - importance_score: `100`
 - confidence: `medium`
