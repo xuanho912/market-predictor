@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-21T06:19:01.048615+00:00`
+- generated_at: `2026-07-21T14:25:58.968166+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `14`
-- event_detection_confidence: `78`
+- major_event_count: `13`
+- event_detection_confidence: `80`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `50`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
@@ -27,6 +27,38 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Iran's forces attack Bahrain and Kuwait after US hits Iranian ports and cities - Reuters
+- source: Reuters
+- published_at: `2026-07-21T13:16:48+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: As the U.S.-Iran war heats up again, these parts of the stock market and economy could be affected
+- source: CNBC
+- published_at: `2026-07-21T11:56:14+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Houthis warn shipping companies to avoid Saudi ports, email shows - Reuters
+- source: Reuters
+- published_at: `2026-07-21T11:16:43+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Tanker crew abandons vessel after reported projectile strike in Strait of Hormuz, UKMTO says - Reuters
+- source: Reuters
+- published_at: `2026-07-21T02:28:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: US military completes its latest strikes on Iran, marking the 10th successive night of attacks - Reuters
 - source: Reuters
 - published_at: `2026-07-21T02:26:00+00:00`
@@ -35,9 +67,33 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil prices dip as mediation efforts offset US-Iran strikes - Reuters
+- headline: Hormuz vessel crossings extend slide on fresh US-Iran attacks - Reuters
+- source: Reuters
+- published_at: `2026-07-21T02:13:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Gold rises as diplomatic efforts offer hope of de-escalation in Middle East - Reuters
+- source: Reuters
+- published_at: `2026-07-21T04:08:00+00:00`
+- importance_score: `98`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil prices rise over 2% on fresh attacks by US and Iran - Reuters
 - source: Reuters
 - published_at: `2026-07-21T01:04:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Saudi condemns Houthi maritime blockade threat; group warns of escalation - Reuters
+- source: Reuters
+- published_at: `2026-07-20T23:35:39+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -47,60 +103,4 @@
 - source: Reuters
 - published_at: `2026-07-20T22:51:05+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Yemen's Houthis declare naval blockade against Saudi Arabia - Reuters
-- source: Reuters
-- published_at: `2026-07-20T20:56:13+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Houthis announce Saudi naval blockade, threatening new front in US-Iran war - Reuters
-- source: Reuters
-- published_at: `2026-07-20T19:46:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Red Sea war insurance costs rise after Houthi blockade, sources say - Reuters
-- source: Reuters
-- published_at: `2026-07-20T17:31:56+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Why oil prices haven't gone crazy despite 5 months of US-Iran war - Reuters
-- source: Reuters
-- published_at: `2026-07-20T15:32:04+00:00`
-- importance_score: `100`
 - confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US attacks deepen hardship, not dissent, in Iran's restive south - Reuters
-- source: Reuters
-- published_at: `2026-07-20T14:52:10+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil transfer activity in Gulf of Oman slows following ship attacks, data shows - Reuters
-- source: Reuters
-- published_at: `2026-07-20T14:45:38+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Two Dynacom Tankers vessels attacked off Oman amid escalating US-Iran war - Reuters
-- source: Reuters
-- published_at: `2026-07-20T13:53:06+00:00`
-- importance_score: `100`
-- confidence: `high`

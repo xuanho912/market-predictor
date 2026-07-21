@@ -1,6 +1,6 @@
 # FRED Data Status
 
-Generated at: `2026-07-21T06:19:13.307736Z`
+Generated at: `2026-07-21T14:26:10.694672Z`
 
 ## Provider
 
@@ -8,7 +8,7 @@ Generated at: `2026-07-21T06:19:13.307736Z`
 - provider available: `True`
 - fallback used: `False`
 - rate limited: `False`
-- successful series: `DGS10, IG_OAS, HY_OAS, DGS2, DGS3MO, BAA_SPREAD, RECESSION, DFII10, FINANCIAL_STRESS`
+- successful series: `HY_OAS, IG_OAS, DGS10, BAA_SPREAD, DGS3MO, DGS2, DFII10, RECESSION, FINANCIAL_STRESS`
 - failed series: `none`
 
 ## Series
@@ -21,8 +21,8 @@ Generated at: `2026-07-21T06:19:13.307736Z`
 | DGS2 | DGS2 | True | 2026-07-17 | 4.18 | fred-api | False |  |
 | DGS3MO | DGS3MO | True | 2026-07-17 | 3.85 | fred-api | False |  |
 | FINANCIAL_STRESS | STLFSI4 | True | 2026-07-10 | -0.882 | fred-api | True |  |
-| HY_OAS | BAMLH0A0HYM2 | True | 2026-07-17 | 2.73 | fred-api | False |  |
-| IG_OAS | BAMLC0A0CM | True | 2026-07-17 | 0.79 | fred-api | False |  |
+| HY_OAS | BAMLH0A0HYM2 | True | 2026-07-20 | 2.69 | fred-api | False |  |
+| IG_OAS | BAMLC0A0CM | True | 2026-07-20 | 0.78 | fred-api | False |  |
 | RECESSION | USREC | True | 2026-06-01 | 0.0 | fred-api | True |  |
 
 ## Data Completeness Effect
@@ -37,10 +37,10 @@ Generated at: `2026-07-21T06:19:13.307736Z`
 
 | symbol | edge without | edge with | primary without | primary with | risk expansion delta | failed bounce delta |
 |---|---|---|---|---|---:|---:|
-| SPY | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0417 | 0.0138 |
-| QQQ | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0417 | 0.0138 |
-| IWM | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0417 | 0.0138 |
-| DIA | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0416 | 0.0138 |
+| SPY | MODERATE_EDGE | MODERATE_EDGE | bearish_path | bearish_path | 0.0352 | 0.0118 |
+| QQQ | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0352 | 0.0117 |
+| IWM | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0351 | 0.0118 |
+| DIA | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0351 | 0.0118 |
 
 ## Warning
 
