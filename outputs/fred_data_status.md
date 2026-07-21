@@ -1,6 +1,6 @@
 # FRED Data Status
 
-Generated at: `2026-07-20T23:45:33.880756Z`
+Generated at: `2026-07-21T00:08:13.517474Z`
 
 ## Provider
 
@@ -8,7 +8,7 @@ Generated at: `2026-07-20T23:45:33.880756Z`
 - provider available: `True`
 - fallback used: `False`
 - rate limited: `False`
-- successful series: `HY_OAS, DGS2, BAA_SPREAD, IG_OAS, DGS10, DGS3MO, DFII10, RECESSION, FINANCIAL_STRESS`
+- successful series: `DGS3MO, DGS2, HY_OAS, IG_OAS, DGS10, BAA_SPREAD, RECESSION, DFII10, FINANCIAL_STRESS`
 - failed series: `none`
 
 ## Series
@@ -20,7 +20,7 @@ Generated at: `2026-07-20T23:45:33.880756Z`
 | DGS10 | DGS10 | True | 2026-07-17 | 4.55 | fred-api | False |  |
 | DGS2 | DGS2 | True | 2026-07-17 | 4.18 | fred-api | False |  |
 | DGS3MO | DGS3MO | True | 2026-07-17 | 3.85 | fred-api | False |  |
-| FINANCIAL_STRESS | STLFSI4 | True | 2026-07-10 | -0.882 | fred-api | False |  |
+| FINANCIAL_STRESS | STLFSI4 | True | 2026-07-10 | -0.882 | fred-api | True |  |
 | HY_OAS | BAMLH0A0HYM2 | True | 2026-07-17 | 2.73 | fred-api | False |  |
 | IG_OAS | BAMLC0A0CM | True | 2026-07-17 | 0.79 | fred-api | False |  |
 | RECESSION | USREC | True | 2026-06-01 | 0.0 | fred-api | True |  |
