@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-21T21:39:47.194427+00:00`
+- generated_at: `2026-07-21T22:32:19.989139+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `17`
-- event_detection_confidence: `77`
+- major_event_count: `18`
+- event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,17 +27,25 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Investing experts: Why 'just buy the market' doesn't necessarily apply to bonds
-- source: CNBC
-- published_at: `2026-07-21T19:04:51+00:00`
+- headline: Tankers with Saudi crude turn back as Houthis open new front in US-Iran war - Reuters
+- source: Reuters
+- published_at: `2026-07-21T22:06:31+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Tankers with Saudi crude turn back as Houthis open new front in US-Iran war - Reuters
+- headline: US war in Iran has cost $37.5 billion so far, Pentagon says - Reuters
 - source: Reuters
-- published_at: `2026-07-21T18:05:41+00:00`
+- published_at: `2026-07-21T21:11:48+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Investing experts: Why 'just buy the market' doesn't necessarily apply to bonds
+- source: CNBC
+- published_at: `2026-07-21T19:04:51+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -96,11 +104,3 @@
 - published_at: `2026-07-21T11:44:45+00:00`
 - importance_score: `100`
 - confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Tanker crew abandons vessel after reported projectile strike in Strait of Hormuz, UKMTO says - Reuters
-- source: Reuters
-- published_at: `2026-07-21T02:28:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
