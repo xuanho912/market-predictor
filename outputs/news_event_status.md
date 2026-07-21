@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-21T22:32:19.989139+00:00`
+- generated_at: `2026-07-21T23:46:03.682640+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `18`
+- major_event_count: `17`
 - event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -37,7 +37,7 @@
 
 - headline: US war in Iran has cost $37.5 billion so far, Pentagon says - Reuters
 - source: Reuters
-- published_at: `2026-07-21T21:11:48+00:00`
+- published_at: `2026-07-21T21:29:03+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -47,6 +47,14 @@
 - source: CNBC
 - published_at: `2026-07-21T19:04:51+00:00`
 - importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Gold gains on hopes of de-escalation in Middle East conflict - Reuters
+- source: Reuters
+- published_at: `2026-07-21T18:09:03+00:00`
+- importance_score: `99`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -94,13 +102,5 @@
 - headline: As the U.S.-Iran war heats up again, these parts of the stock market and economy could be affected
 - source: CNBC
 - published_at: `2026-07-21T11:56:14+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Woman seriously injured in knife attack during church service in Irish town - Reuters
-- source: Reuters
-- published_at: `2026-07-21T11:44:45+00:00`
 - importance_score: `100`
 - confidence: `high`
