@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-07-21T00:08:13.273488+00:00`
+Generated at: `2026-07-21T04:35:51.188521+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -25,12 +25,12 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `25.8%`
 - secondary: `stock_downside_continuation` / `22.0%`
 - risk: `stock_event_risk` / `15.2%`
-- stock_confluence_score: `45.46` / `mixed`
+- stock_confluence_score: `45.47` / `mixed`
 - stock_alpha_score_v1: `46.5` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `58.6%`
 - 60d_expected_return: `-1.3%`
 - risk_reward_ratio: `0.46`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `34.58`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `34.56`
 - historical_analog_support: `supportive` / samples `10`
 - validation_status: `not_yet_validated`
 
@@ -54,24 +54,24 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `27.2%`
 - secondary: `stock_downside_continuation` / `24.7%`
 - risk: `stock_event_risk` / `15.9%`
-- stock_confluence_score: `29.77` / `weak`
+- stock_confluence_score: `29.83` / `weak`
 - stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `36.6%`
 - 60d_expected_return: `-2.1%`
 - risk_reward_ratio: `0.44`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `32.83`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `32.65`
 - historical_analog_support: `conflicting` / samples `10`
 - validation_status: `not_yet_validated`
 
 - primary_confirmation_level: `432.86`
 - primary_invalidation_level: `358.23`
-- risk_scenario_activation_level: `350.39`
+- risk_scenario_activation_level: `350.38`
 - trend_repair_confirmation_level: `432.86`
 - breakout_level: `432.86`
-- breakdown_level: `350.39`
+- breakdown_level: `350.38`
 - nearest_support: `368.60`
-- nearest_resistance: `390.50`
-- bounce_target_zone: `{"conservative": 380.03, "base": 380.03, "extended": 446.81, "source": "scenario_path + atr + recent_resistance", "meaning": "概率反抽情景参考区间，不是目标价承诺。", "not_trading_instruction": true}`
+- nearest_resistance: `390.51`
+- bounce_target_zone: `{"conservative": 380.04, "base": 380.04, "extended": 446.82, "source": "scenario_path + atr + recent_resistance", "meaning": "概率反抽情景参考区间，不是目标价承诺。", "not_trading_instruction": true}`
 - failed_bounce_warning_zone: `{"first_warning": 361.72, "critical_warning": 358.23, "source": "risk_path + atr + recent_support", "meaning": "跌入该区间说明失败反抽风险上升。", "not_trading_instruction": true}`
 
 ### SMR
@@ -83,7 +83,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_downside_continuation` / `35.5%`
 - secondary: `stock_failed_bounce` / `19.1%`
 - risk: `stock_event_risk` / `11.3%`
-- stock_confluence_score: `41.56` / `weak`
+- stock_confluence_score: `41.74` / `weak`
 - stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `13.1%`
 - 60d_expected_return: `-4.0%`

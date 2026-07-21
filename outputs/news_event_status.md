@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-21T00:08:02.682778+00:00`
+- generated_at: `2026-07-21T04:35:38.944229+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `10`
-- event_detection_confidence: `81`
+- major_event_count: `13`
+- event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Houthis announce Saudi naval blockade, threatening new front in US-Iran war - Reuters
+- headline: Oil prices dip as mediation efforts offset US-Iran strikes - Reuters
 - source: Reuters
-- published_at: `2026-07-20T22:22:51+00:00`
+- published_at: `2026-07-21T01:04:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Houthi Red Sea blockade would lift oil prices, but workarounds could limit impact - Reuters
+- source: Reuters
+- published_at: `2026-07-20T22:51:05+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -38,6 +46,14 @@
 - headline: Yemen's Houthis declare naval blockade against Saudi Arabia - Reuters
 - source: Reuters
 - published_at: `2026-07-20T20:56:13+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Houthis announce Saudi naval blockade, threatening new front in US-Iran war - Reuters
+- source: Reuters
+- published_at: `2026-07-20T19:46:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -55,7 +71,15 @@
 - source: Reuters
 - published_at: `2026-07-20T15:32:04+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US attacks deepen hardship, not dissent, in Iran's restive south - Reuters
+- source: Reuters
+- published_at: `2026-07-20T14:52:10+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -63,7 +87,7 @@
 - source: Reuters
 - published_at: `2026-07-20T14:45:38+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -78,29 +102,5 @@
 - headline: Mediators propose 10-day ceasefire to revive Iran-U.S. interim deal, senior Iranian official tells Reuters - Reuters
 - source: Reuters
 - published_at: `2026-07-20T11:48:14+00:00`
-- importance_score: `97`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Morning Bid: The most violent ceasefire - Reuters
-- source: Reuters
-- published_at: `2026-07-20T11:30:36+00:00`
-- importance_score: `97`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Forget crude. War pushes refiners to the brink - Reuters
-- source: Reuters
-- published_at: `2026-07-20T06:00:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Ryanair profits slump as Iran war dampens fares, hikes fuel costs - Reuters
-- source: Reuters
-- published_at: `2026-07-20T05:01:00+00:00`
-- importance_score: `100`
+- importance_score: `96`
 - confidence: `medium`
