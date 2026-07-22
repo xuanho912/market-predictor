@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-22T22:39:04.076967+00:00`
+- generated_at: `2026-07-22T23:50:22.525042+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `13`
-- event_detection_confidence: `74`
+- major_event_count: `15`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Yemen's Houthis say they targeted two Saudi tankers; source says Encelia hit by missile - Reuters
+- source: Reuters
+- published_at: `2026-07-22T22:31:34+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -96,11 +104,3 @@
 - published_at: `2026-07-22T02:11:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US military says its latest strikes on Iran have ended, marking 11th successive night of attacks - Reuters
-- source: Reuters
-- published_at: `2026-07-22T00:57:00+00:00`
-- importance_score: `100`
-- confidence: `high`
