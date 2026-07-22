@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-22T00:04:49.384097+00:00`
+- generated_at: `2026-07-22T04:37:11.466164+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `16`
-- event_detection_confidence: `77`
+- major_event_count: `14`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `25`
+- confirmation_score: `50`
 
 ## Dashboard Note
 
@@ -27,17 +27,25 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Tankers with Saudi crude turn back as Houthis open new front in US-Iran war - Reuters
+- headline: US military says its latest strikes on Iran have ended, marking 11th successive night of attacks - Reuters
 - source: Reuters
-- published_at: `2026-07-21T22:06:31+00:00`
+- published_at: `2026-07-22T00:57:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US war in Iran has cost $37.5 billion so far, Pentagon says - Reuters
+- headline: Oil prices rise slightly after US announces new round of strikes on Iran - Reuters
 - source: Reuters
-- published_at: `2026-07-21T21:29:03+00:00`
+- published_at: `2026-07-22T00:26:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: War in Iran has cost the US $37.5 billion so far, Pentagon says - Reuters
+- source: Reuters
+- published_at: `2026-07-21T20:55:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -47,14 +55,6 @@
 - source: CNBC
 - published_at: `2026-07-21T19:04:51+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Gold gains on hopes of de-escalation in Middle East conflict - Reuters
-- source: Reuters
-- published_at: `2026-07-21T18:09:03+00:00`
-- importance_score: `99`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -71,7 +71,7 @@
 - source: Reuters
 - published_at: `2026-07-21T16:19:40+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -79,7 +79,7 @@
 - source: Reuters
 - published_at: `2026-07-21T15:27:40+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -87,7 +87,7 @@
 - source: Reuters
 - published_at: `2026-07-21T14:20:45+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -95,7 +95,7 @@
 - source: Reuters
 - published_at: `2026-07-21T13:04:16+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
