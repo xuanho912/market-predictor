@@ -1,6 +1,6 @@
 # FRED Data Status
 
-Generated at: `2026-07-22T06:17:53.300729Z`
+Generated at: `2026-07-22T14:25:10.341566Z`
 
 ## Provider
 
@@ -8,7 +8,7 @@ Generated at: `2026-07-22T06:17:53.300729Z`
 - provider available: `True`
 - fallback used: `False`
 - rate limited: `False`
-- successful series: `DGS3MO, BAA_SPREAD, HY_OAS, IG_OAS, DGS2, FINANCIAL_STRESS, DGS10, DFII10, RECESSION`
+- successful series: `IG_OAS, BAA_SPREAD, DGS2, HY_OAS, DGS10, DGS3MO, DFII10, RECESSION, FINANCIAL_STRESS`
 - failed series: `none`
 
 ## Series
@@ -21,8 +21,8 @@ Generated at: `2026-07-22T06:17:53.300729Z`
 | DGS2 | DGS2 | True | 2026-07-20 | 4.21 | fred-api | False |  |
 | DGS3MO | DGS3MO | True | 2026-07-20 | 3.86 | fred-api | False |  |
 | FINANCIAL_STRESS | STLFSI4 | True | 2026-07-10 | -0.882 | fred-api | True |  |
-| HY_OAS | BAMLH0A0HYM2 | True | 2026-07-20 | 2.69 | fred-api | False |  |
-| IG_OAS | BAMLC0A0CM | True | 2026-07-20 | 0.78 | fred-api | False |  |
+| HY_OAS | BAMLH0A0HYM2 | True | 2026-07-21 | 2.69 | fred-api | False |  |
+| IG_OAS | BAMLC0A0CM | True | 2026-07-21 | 0.78 | fred-api | False |  |
 | RECESSION | USREC | True | 2026-06-01 | 0.0 | fred-api | True |  |
 
 ## Data Completeness Effect
@@ -37,10 +37,10 @@ Generated at: `2026-07-22T06:17:53.300729Z`
 
 | symbol | edge without | edge with | primary without | primary with | risk expansion delta | failed bounce delta |
 |---|---|---|---|---|---:|---:|
-| SPY | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bearish_path | 0.0441 | 0.0139 |
-| QQQ | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0441 | 0.015 |
-| IWM | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0441 | 0.015 |
-| DIA | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0441 | 0.0149 |
+| SPY | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0389 | 0.0112 |
+| QQQ | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.039 | 0.0133 |
+| IWM | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.039 | 0.0133 |
+| DIA | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.039 | 0.0133 |
 
 ## Warning
 

@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-22T06:17:41.316685+00:00`
+- generated_at: `2026-07-22T14:24:59.456182+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `12`
-- event_detection_confidence: `74`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `50`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
@@ -27,9 +27,33 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Bulgaria approves stationing of US tanker aircraft despite Iran warning - Reuters
+- source: Reuters
+- published_at: `2026-07-22T12:30:58+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Mideast war escalation threatens recovery in global oil refining - Reuters
+- source: Reuters
+- published_at: `2026-07-22T06:48:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: US military says its latest strikes on Iran have ended, marking 11th successive night of attacks - Reuters
 - source: Reuters
 - published_at: `2026-07-22T00:57:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Houthis announce Saudi naval blockade, threatening new front in US-Iran war - Reuters
+- source: Reuters
+- published_at: `2026-07-21T21:55:31+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -39,7 +63,7 @@
 - source: Reuters
 - published_at: `2026-07-21T20:55:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +71,7 @@
 - source: CNBC
 - published_at: `2026-07-21T19:04:51+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -78,29 +102,5 @@
 - headline: Three tankers carrying Saudi crude make U-turns in Red Sea after Houthi warning - Reuters
 - source: Reuters
 - published_at: `2026-07-21T13:25:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran war 'stagflation' premium quietly mounts - Reuters
-- source: Reuters
-- published_at: `2026-07-21T13:04:16+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: As the U.S.-Iran war heats up again, these parts of the stock market and economy could be affected
-- source: CNBC
-- published_at: `2026-07-21T11:56:14+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Woman seriously injured in knife attack during church service in Irish town - Reuters
-- source: Reuters
-- published_at: `2026-07-21T11:44:45+00:00`
 - importance_score: `100`
 - confidence: `medium`
