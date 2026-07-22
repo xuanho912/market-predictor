@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-22T04:37:11.466164+00:00`
+- generated_at: `2026-07-22T06:17:41.316685+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `14`
-- event_detection_confidence: `75`
+- major_event_count: `12`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -35,14 +35,6 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil prices rise slightly after US announces new round of strikes on Iran - Reuters
-- source: Reuters
-- published_at: `2026-07-22T00:26:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
 - headline: War in Iran has cost the US $37.5 billion so far, Pentagon says - Reuters
 - source: Reuters
 - published_at: `2026-07-21T20:55:00+00:00`
@@ -63,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-07-21T16:56:06+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -83,9 +75,9 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Two tankers carrying Saudi crude make U-turns in Red Sea after Houthi warning - Reuters
+- headline: Three tankers carrying Saudi crude make U-turns in Red Sea after Houthi warning - Reuters
 - source: Reuters
-- published_at: `2026-07-21T14:20:45+00:00`
+- published_at: `2026-07-21T13:25:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -102,5 +94,13 @@
 - headline: As the U.S.-Iran war heats up again, these parts of the stock market and economy could be affected
 - source: CNBC
 - published_at: `2026-07-21T11:56:14+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Woman seriously injured in knife attack during church service in Irish town - Reuters
+- source: Reuters
+- published_at: `2026-07-21T11:44:45+00:00`
 - importance_score: `100`
 - confidence: `medium`
