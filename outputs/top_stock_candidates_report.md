@@ -1,15 +1,15 @@
 # Next-Day Stock Radar v1
 
-Generated at: `2026-07-22T14:25:10.108669+00:00`
+Generated at: `2026-07-22T21:36:13.409240+00:00`
 As of: `None`
 
 This report ranks next-day high-elasticity stock forecast candidates. It is not a trading report and does not contain buy/sell instructions.
 
 ## Command Center
 
-- radar_status: `NO_STRONG_RADAR_EDGE`
-- top_candidate: `NVDA`
-- top3_candidates: `['NVDA', 'TSLA', 'SMR']`
+- radar_status: `MODERATE_OPPORTUNITY`
+- top_candidate: `SMR`
+- top3_candidates: `['SMR', 'NVDA', 'TSLA']`
 - market_context_note: `market risk pressure is high for many candidates`
 - data_freshness_note: `as_of=None`
 - validation_status: `not_yet_validated`
@@ -19,9 +19,9 @@ This report ranks next-day high-elasticity stock forecast candidates. It is not 
 
 | Rank | Ticker | Type | Radar | Alpha | Elasticity | Confluence | Catalyst | Risk | Range | Trigger | Invalidation | Reason |
 | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- | ---: | ---: | --- |
-| 1 | NVDA | failed_bounce_risk | 53.45 | 46.5 | 100 | 48.04 | 64.08 | 59.05 | 203.01-209.92 | 213.81 | 189.8 | failed_bounce_risk: Alpha 46 / 弹性 100 / 成交量 0 / 相对强弱 59 / 催化 64 / 大盘 market_headwind / 板块 supportive |
-| 2 | TSLA | failed_bounce_risk | 48.77 | 35.0 | 100 | 32.47 | 65.37 | 58.4 | 368.75-384.95 | 432.86 | 366.87 | failed_bounce_risk: Alpha 35 / 弹性 100 / 成交量 8 / 相对强弱 44 / 催化 65 / 大盘 market_headwind / 板块 neutral |
-| 3 | SMR | downside_continuation | 42.91 | 35.0 | 100 | 32.93 | 62.55 | 60.53 | 8.34-9.0 | 10.87 | 7.21 | downside_continuation: Alpha 35 / 弹性 100 / 成交量 5 / 相对强弱 14 / 催化 63 / 大盘 risk_off_pressure / 板块 conflicting |
-| 4 | CEG | failed_bounce_risk | 41.51 | 27.5 | 75.05 | 36.22 | 61.56 | 54.95 | 267.47-275.47 | 275.81 | 228.63 | failed_bounce_risk: Alpha 28 / 弹性 75 / 成交量 21 / 相对强弱 29 / 催化 62 / 大盘 risk_off_pressure / 板块 neutral |
+| 1 | SMR | downside_continuation | 57.92 | 35.0 | 100 | 40.17 | 62.58 | 60.52 | 8.31-8.98 | 10.87 | 7.21 | downside_continuation: Alpha 35 / 弹性 100 / 成交量 94 / 相对强弱 15 / 催化 63 / 大盘 market_headwind / 板块 conflicting |
+| 2 | NVDA | failed_bounce_risk | 56.31 | 49.5 | 60.99 | 48.35 | 64.26 | 49.67 | 208.08-215.43 | 215.42 | 189.8 | failed_bounce_risk: Alpha 50 / 弹性 61 / 成交量 60 / 相对强弱 72 / 催化 64 / 大盘 market_headwind / 板块 supportive |
+| 3 | TSLA | failed_bounce_risk | 51.63 | 35.0 | 87.52 | 33.31 | 65.31 | 56.05 | 365.09-381.43 | 432.86 | 363.2 | failed_bounce_risk: Alpha 35 / 弹性 88 / 成交量 46 / 相对强弱 41 / 催化 65 / 大盘 market_headwind / 板块 neutral |
+| 4 | CEG | failed_bounce_risk | 47.11 | 29.5 | 60.07 | 43.42 | 61.63 | 51.82 | 270.39-278.61 | 278.66 | 228.63 | failed_bounce_risk: Alpha 30 / 弹性 60 / 成交量 66 / 相对强弱 34 / 催化 62 / 大盘 risk_off_pressure / 板块 neutral |
 
 Validation status: `not_yet_validated` until enough forward samples complete.

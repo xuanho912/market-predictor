@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-22T14:24:59.456182+00:00`
+- generated_at: `2026-07-22T21:36:02.772791+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
-- event_detection_confidence: `73`
+- major_event_count: `14`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,57 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: EXCLUSIVE: Iran strikes on CIA facilities prompt questions about possible Russian role - Reuters
+- source: Reuters
+- published_at: `2026-07-22T19:33:52+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Trump attends return of US soldiers killed in Iran war - Reuters
+- source: Reuters
+- published_at: `2026-07-22T18:18:13+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Senate panel advances China auto bill that could bar Mercedes-Benz from U.S.
+- source: CNBC
+- published_at: `2026-07-22T17:52:23+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Trump: US will attack Iranian bridge, power plant for every ship targeted in Hormuz - Reuters
+- source: Reuters
+- published_at: `2026-07-22T13:40:09+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Bulgaria approves stationing of US tanker aircraft despite Iran warning - Reuters
 - source: Reuters
 - published_at: `2026-07-22T12:30:58+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: EU aviation agency adds Jordan to no-fly warning list as fighting continues - Reuters
+- source: Reuters
+- published_at: `2026-07-22T12:08:20+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Escalating Middle East war could slash global growth to 1.3% in 2026, World Bank chief economist says - Reuters
+- source: Reuters
+- published_at: `2026-07-22T10:31:38+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -39,7 +87,15 @@
 - source: Reuters
 - published_at: `2026-07-22T06:48:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Rubio meets China's Wang at regional gathering where Iran war looms large - Reuters
+- source: Reuters
+- published_at: `2026-07-22T02:11:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -48,59 +104,3 @@
 - published_at: `2026-07-22T00:57:00+00:00`
 - importance_score: `100`
 - confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Houthis announce Saudi naval blockade, threatening new front in US-Iran war - Reuters
-- source: Reuters
-- published_at: `2026-07-21T21:55:31+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: War in Iran has cost the US $37.5 billion so far, Pentagon says - Reuters
-- source: Reuters
-- published_at: `2026-07-21T20:55:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Investing experts: Why 'just buy the market' doesn't necessarily apply to bonds
-- source: CNBC
-- published_at: `2026-07-21T19:04:51+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Houthis warn shipping companies to avoid Saudi ports, email shows - Reuters
-- source: Reuters
-- published_at: `2026-07-21T16:56:06+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Halliburton tumbles on tepid revenue forecast, Middle East recovery warning - Reuters
-- source: Reuters
-- published_at: `2026-07-21T16:19:40+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran warns Bulgaria against aiding US military operations after move to station US aircraft - Reuters
-- source: Reuters
-- published_at: `2026-07-21T15:27:40+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Three tankers carrying Saudi crude make U-turns in Red Sea after Houthi warning - Reuters
-- source: Reuters
-- published_at: `2026-07-21T13:25:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
