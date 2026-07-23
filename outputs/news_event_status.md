@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-23T04:39:06.769549+00:00`
+- generated_at: `2026-07-23T06:19:56.503658+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `16`
-- event_detection_confidence: `74`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,6 +27,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Houthis say they attacked Saudi tankers in the Red Sea, threatening new chokepoint in Iran war - Reuters
+- source: Reuters
+- published_at: `2026-07-23T04:15:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Trump attends return of US soldiers killed in Iran war - Reuters
 - source: Reuters
 - published_at: `2026-07-22T22:06:43+00:00`
@@ -45,7 +53,7 @@
 
 - headline: EXCLUSIVE: Iran strikes on CIA facilities prompt questions about possible Russian role - Reuters
 - source: Reuters
-- published_at: `2026-07-22T19:33:52+00:00`
+- published_at: `2026-07-22T18:31:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -55,7 +63,7 @@
 - source: CNBC
 - published_at: `2026-07-22T17:52:23+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -63,7 +71,7 @@
 - source: Reuters
 - published_at: `2026-07-22T17:00:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -71,7 +79,7 @@
 - source: Reuters
 - published_at: `2026-07-22T16:46:46+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -94,13 +102,5 @@
 - headline: EU aviation agency adds Jordan to no-fly warning list as fighting continues - Reuters
 - source: Reuters
 - published_at: `2026-07-22T12:08:20+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Escalating Middle East war could slash global growth to 1.3% in 2026, World Bank chief economist says - Reuters
-- source: Reuters
-- published_at: `2026-07-22T10:31:38+00:00`
 - importance_score: `100`
 - confidence: `medium`
