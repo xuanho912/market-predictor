@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-22T23:50:22.525042+00:00`
+- generated_at: `2026-07-23T00:12:29.647776+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `15`
+- major_event_count: `16`
 - event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -59,6 +59,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Iran war drains U.S. blood and treasure - Reuters
+- source: Reuters
+- published_at: `2026-07-22T17:00:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Trump: US will attack Iranian bridge, power plant for every ship targeted in Hormuz - Reuters
 - source: Reuters
 - published_at: `2026-07-22T13:40:09+00:00`
@@ -79,7 +87,7 @@
 - source: Reuters
 - published_at: `2026-07-22T12:08:20+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -94,13 +102,5 @@
 - headline: Mideast war escalation threatens recovery in global oil refining - Reuters
 - source: Reuters
 - published_at: `2026-07-22T06:48:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Rubio meets China's Wang at regional gathering where Iran war looms large - Reuters
-- source: Reuters
-- published_at: `2026-07-22T02:11:00+00:00`
 - importance_score: `100`
 - confidence: `medium`

@@ -1,6 +1,6 @@
 # Breadth Impact Audit
 
-Generated at: `2026-07-22T23:50:32.698174Z`
+Generated at: `2026-07-23T00:12:39.701270Z`
 
 ## Summary
 
@@ -16,10 +16,10 @@ Generated at: `2026-07-22T23:50:32.698174Z`
 
 | symbol | supports primary | conflicts primary | edge before | edge after | primary before | primary after | failed bounce delta | confirmation delta | confidence delta | reason | risk note |
 |---|---:|---:|---|---|---|---|---:|---:|---:|---|---|
-| SPY | True | True | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.1154 | 1 | 0 | SPY breadth is mixed for bounce_path: support score 61%, conflict score 39%, internal resonance is surface_only. | SPY index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
+| SPY | True | True | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.1196 | 1 | 0 | SPY breadth is mixed for bounce_path: support score 58%, conflict score 42%, internal resonance is surface_only. | SPY index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
 | QQQ | False | True | MODERATE_EDGE | WEAK_EDGE | bounce_path | bearish_path | 0.1818 | -19 | -11 | QQQ breadth conflicts with bearish_path: conflict score 69%, internal resonance is surface_only. | QQQ index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
 | IWM | False | True | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.1519 | -11 | 0 | IWM breadth is mixed for bearish_path: support score 46%, conflict score 55%, internal resonance is surface_only. | IWM index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
-| DIA | True | True | WEAK_EDGE | WEAK_EDGE | bounce_path | bearish_path | 0.1265 | 7 | 8 | DIA breadth is mixed for bearish_path: support score 58%, conflict score 51%, internal resonance is surface_only. | DIA index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
+| DIA | True | True | WEAK_EDGE | WEAK_EDGE | bounce_path | bearish_path | 0.0977 | 7 | 8 | DIA breadth supports bearish_path: internal resonance is surface_only, support score 80%, above 20d/50d MA 57%/60%. | DIA index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
 
 ## Forward Validation
 
