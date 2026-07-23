@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-23T00:12:29.647776+00:00`
+- generated_at: `2026-07-23T04:39:06.769549+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `16`
-- event_detection_confidence: `75`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Yemen's Houthis say they targeted two Saudi tankers; source says Encelia hit by missile - Reuters
+- headline: Trump attends return of US soldiers killed in Iran war - Reuters
 - source: Reuters
-- published_at: `2026-07-22T22:31:34+00:00`
+- published_at: `2026-07-22T22:06:43+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Houthis say they attacked two Saudi tankers; Saudi Arabia says one ablaze in Red Sea - Reuters
+- source: Reuters
+- published_at: `2026-07-22T21:47:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -38,14 +46,6 @@
 - headline: EXCLUSIVE: Iran strikes on CIA facilities prompt questions about possible Russian role - Reuters
 - source: Reuters
 - published_at: `2026-07-22T19:33:52+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump attends return of US soldiers killed in Iran war - Reuters
-- source: Reuters
-- published_at: `2026-07-22T18:18:13+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -67,11 +67,19 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Middle East war deepens 2026 oil deficit outlook, but 2027 glut still looms - Reuters
+- source: Reuters
+- published_at: `2026-07-22T16:46:46+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Trump: US will attack Iranian bridge, power plant for every ship targeted in Hormuz - Reuters
 - source: Reuters
 - published_at: `2026-07-22T13:40:09+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -79,7 +87,7 @@
 - source: Reuters
 - published_at: `2026-07-22T12:30:58+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -94,13 +102,5 @@
 - headline: Escalating Middle East war could slash global growth to 1.3% in 2026, World Bank chief economist says - Reuters
 - source: Reuters
 - published_at: `2026-07-22T10:31:38+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Mideast war escalation threatens recovery in global oil refining - Reuters
-- source: Reuters
-- published_at: `2026-07-22T06:48:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
