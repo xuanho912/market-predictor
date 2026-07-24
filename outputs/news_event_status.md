@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-24T22:40:36.306616+00:00`
+- generated_at: `2026-07-24T23:52:41.554800+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `16`
@@ -59,14 +59,6 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US strikes Iran from south to north after Trump threats over Red Sea shipping - Reuters
-- source: Reuters
-- published_at: `2026-07-24T17:33:11+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
 - headline: Physical oil prices jump with some nearing $110 as Iran, Ukraine wars hit supply - Reuters
 - source: Reuters
 - published_at: `2026-07-24T14:36:19+00:00`
@@ -88,6 +80,14 @@
 - published_at: `2026-07-24T07:18:55+00:00`
 - importance_score: `100`
 - confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US missiles hit Iran as path towards de-escalation uncertain - Reuters
+- source: Reuters
+- published_at: `2026-07-24T04:00:00+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
