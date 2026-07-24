@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-24T14:15:30.654828+00:00`
+- generated_at: `2026-07-24T21:35:48.680769+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `13`
-- event_detection_confidence: `69`
+- major_event_count: `16`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,33 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: In India, Iran war forces Diet Coke to roll out a bigger can, heftier price tag - Reuters
+- headline: Yemen teeters towards renewed war in shadow of Iran conflict - Reuters
 - source: Reuters
-- published_at: `2026-07-24T07:18:55+00:00`
+- published_at: `2026-07-24T21:15:54+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Mozambique-flagged LPG tanker attacked in Iranian waters, Indian embassy says - Reuters
+- source: Reuters
+- published_at: `2026-07-24T19:48:21+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: The 'sell chips, buy software' trade reappears as Wall Street caps off another volatile week
+- source: CNBC
+- published_at: `2026-07-24T18:36:28+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Pakistan, Iran explore path towards new talks with US in a China-initiated push, sources say - Reuters
+- source: Reuters
+- published_at: `2026-07-24T17:59:38+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -37,9 +61,33 @@
 
 - headline: US strikes Iran from south to north after Trump threats over Red Sea shipping - Reuters
 - source: Reuters
-- published_at: `2026-07-24T04:00:00+00:00`
+- published_at: `2026-07-24T17:33:11+00:00`
 - importance_score: `100`
 - confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Physical oil prices jump with some nearing $110 as Iran, Ukraine wars hit supply - Reuters
+- source: Reuters
+- published_at: `2026-07-24T14:36:19+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Tanker switches Asia voyage via Suez amid Houthi warnings, owner says - Reuters
+- source: Reuters
+- published_at: `2026-07-24T12:55:58+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: In India, Iran war forces Diet Coke to roll out a bigger can, heftier price tag - Reuters
+- source: Reuters
+- published_at: `2026-07-24T07:18:55+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -51,56 +99,8 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US House votes to curb Trump's Iran war powers but Senate backs president - Reuters
+- headline: Oil falls on report China pushing for end US-Iran war - Reuters
 - source: Reuters
-- published_at: `2026-07-23T18:02:16+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: UK says armed forces ready to defend country after Iran warns over US bombers - Reuters
-- source: Reuters
-- published_at: `2026-07-23T17:34:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Pakistan's US funding push after Iran war role draws skepticism from economists - Reuters
-- source: Reuters
-- published_at: `2026-07-23T17:01:43+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US Senate blocks resolution curbing Trump's Iran war powers - Reuters
-- source: Reuters
-- published_at: `2026-07-23T16:44:19+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US House votes to halt Iran war, in another symbolic rebuke of Trump - Reuters
-- source: Reuters
-- published_at: `2026-07-23T15:12:44+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: EXCLUSIVE: Iran flew IRGC commanders, missile gear to Yemen's Houthis, sources say - Reuters
-- source: Reuters
-- published_at: `2026-07-23T14:23:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Houthis say they attacked two Saudi tankers; Saudi Arabia says one ablaze in Red Sea - Reuters
-- source: Reuters
-- published_at: `2026-07-23T13:45:54+00:00`
+- published_at: `2026-07-24T01:36:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
