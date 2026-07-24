@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-24T04:37:00.261135+00:00`
+- generated_at: `2026-07-24T06:14:58.628054+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `12`
-- event_detection_confidence: `73`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,6 +27,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Trump vows to punish Iran and Houthis for attacks in Red Sea - Reuters
+- source: Reuters
+- published_at: `2026-07-24T04:00:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: US military says it completed 13th consecutive night of strikes on Iran - Reuters
 - source: Reuters
 - published_at: `2026-07-24T01:56:00+00:00`
@@ -39,7 +47,7 @@
 - source: Reuters
 - published_at: `2026-07-23T18:02:16+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-07-23T17:48:05+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,7 +63,7 @@
 - source: Reuters
 - published_at: `2026-07-23T17:01:43+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -73,14 +81,6 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### oil_shock_risk / risk_off
-
-- headline: Wall Street stumbles as oil surges, and Lilly takes a new path on next-gen obesity drug
-- source: CNBC
-- published_at: `2026-07-23T18:35:53+00:00`
-- importance_score: `96`
-- confidence: `high`
-
 ### geopolitical_risk_escalation / risk_off
 
 - headline: EXCLUSIVE: Iran flew IRGC commanders, missile gear to Yemen's Houthis, sources say - Reuters
@@ -89,18 +89,18 @@
 - importance_score: `100`
 - confidence: `medium`
 
+### oil_shock_risk / risk_off
+
+- headline: Wall Street stumbles as oil surges, and Lilly takes a new path on next-gen obesity drug
+- source: CNBC
+- published_at: `2026-07-23T18:35:53+00:00`
+- importance_score: `95`
+- confidence: `high`
+
 ### geopolitical_risk_escalation / risk_off
 
 - headline: TotalEnergies posts strongest profit in nearly three years as Iran war lifts oil prices - Reuters
 - source: Reuters
-- published_at: `2026-07-23T06:22:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump vows to punish Iran for Houthi attacks in Red Sea; oil surges over $100 - Reuters
-- source: Reuters
-- published_at: `2026-07-23T04:15:00+00:00`
+- published_at: `2026-07-23T12:37:30+00:00`
 - importance_score: `100`
 - confidence: `medium`

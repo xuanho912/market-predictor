@@ -11,10 +11,10 @@
     "can_append_forecast_record": false,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-07-24",
-    "current_time_us_eastern": "2026-07-24T00:37:10.489454-04:00",
+    "current_time_us_eastern": "2026-07-24T02:15:09.776493-04:00",
     "data_freshness_status": "market_open_unconfirmed",
     "expected_latest_trading_date": "2026-07-23",
-    "generated_at": "2026-07-24T04:37:10.489454+00:00",
+    "generated_at": "2026-07-24T06:15:09.776493+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -1053,12 +1053,12 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "BAA_SPREAD",
-      "HY_OAS",
-      "IG_OAS",
-      "DGS10",
-      "DGS2",
       "DGS3MO",
+      "DGS10",
+      "IG_OAS",
+      "DGS2",
+      "HY_OAS",
+      "BAA_SPREAD",
       "RECESSION",
       "DFII10",
       "FINANCIAL_STRESS"
@@ -1092,10 +1092,10 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 73,
+      "event_detection_confidence": 74,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-07-24T04:37:00.261135+00:00",
+      "last_update": "2026-07-24T06:14:58.628054+00:00",
       "major_event_count": 12,
       "missing_reason": null,
       "news_direction": "risk_off",
@@ -1353,13 +1353,25 @@
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_market_direction": "risk_off",
+          "headline": "Trump vows to punish Iran and Houthis for attacks in Red Sea - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-07-24T04:00:00+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
           "headline": "US military says it completed 13th consecutive night of strikes on Iran - Reuters",
           "importance_score": 100,
           "published_at": "2026-07-24T01:56:00+00:00",
           "source": "Reuters"
         },
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -1371,7 +1383,7 @@
           "source": "Reuters"
         },
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -1383,7 +1395,7 @@
           "source": "Reuters"
         },
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -1404,18 +1416,6 @@
           "headline": "US Senate blocks resolution curbing Trump's Iran war powers - Reuters",
           "importance_score": 100,
           "published_at": "2026-07-23T16:44:19+00:00",
-          "source": "Reuters"
-        },
-        {
-          "confidence": "medium",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "US House votes to halt Iran war, in another symbolic rebuke of Trump - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-07-23T15:12:44+00:00",
           "source": "Reuters"
         }
       ]
@@ -1581,7 +1581,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": -0.0118,
-        "avg_equity_futures_1d_return": -0.0015,
+        "avg_equity_futures_1d_return": -0.0014,
         "confirmed_checks": [
           "股票ETF或股指期货下跌",
           "VIX 上升",
@@ -1598,7 +1598,7 @@
           "HYG/LQD 走弱"
         ],
         "hyg_lqd_1d_relative_return": 0.0002,
-        "oil_proxy_1d_return": 0.0272,
+        "oil_proxy_1d_return": 0.0264,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -3086,11 +3086,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.5,
           "top_headlines": [
+            "Oil batters bonds as AI burns cash - Reuters",
+            "Trump vows to punish Iran and Houthis for attacks in Red Sea - Reuters",
             "US military says it completed 13th consecutive night of strikes on Iran - Reuters",
             "Asian stocks skid as oil spike revives inflation fears, bonds take a hit - Reuters",
-            "Add a month at sea and $2.5 million - what it costs oil tankers to flee Hormuz and Bab el-Mandeb - Reuters",
-            "Southwest Airlines put Texas jet fuel on a boat to LA for the first time amid supply worries",
-            "US says Saudi nuclear deal off without Israel recognition - Reuters"
+            "Add a month at sea and $2.5 million - what it costs oil tankers to flee Hormuz and Bab el-Mandeb - Reuters"
           ]
         },
         "price": {
@@ -4038,7 +4038,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 94,
+            "freshness_score": 95,
+            "headline": "Trump vows to punish Iran and Houthis for attacks in Red Sea - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-24T04:00:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 79,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 90,
             "headline": "US military says it completed 13th consecutive night of strikes on Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4057,15 +4084,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 75,
+            "freshness_score": 71,
             "headline": "US House votes to curb Trump's Iran war powers but Senate backs president - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4084,15 +4111,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 74,
+            "freshness_score": 70,
             "headline": "UK says armed forces ready to defend country after Iran warning over US bombers - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4111,15 +4138,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 72,
+            "freshness_score": 68,
             "headline": "Pakistan's US funding push after Iran war role draws skepticism from economists - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4146,39 +4173,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 71,
+            "freshness_score": 68,
             "headline": "US Senate blocks resolution curbing Trump's Iran war powers - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-07-23T16:44:19+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 74,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 68,
-            "headline": "US House votes to halt Iran war, in another symbolic rebuke of Trump - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-23T15:12:44+00:00",
             "source": "Reuters"
           }
         ],
@@ -4209,13 +4209,25 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Trump vows to punish Iran and Houthis for attacks in Red Sea - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-24T04:00:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "US military says it completed 13th consecutive night of strikes on Iran - Reuters",
               "importance_score": 100,
               "published_at": "2026-07-24T01:56:00+00:00",
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -4227,7 +4239,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -4239,7 +4251,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -4260,18 +4272,6 @@
               "headline": "US Senate blocks resolution curbing Trump's Iran war powers - Reuters",
               "importance_score": 100,
               "published_at": "2026-07-23T16:44:19+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "US House votes to halt Iran war, in another symbolic rebuke of Trump - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-07-23T15:12:44+00:00",
               "source": "Reuters"
             }
           ]
@@ -4316,7 +4316,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0118,
-            "avg_equity_futures_1d_return": -0.0015,
+            "avg_equity_futures_1d_return": -0.0014,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -4333,7 +4333,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0002,
-            "oil_proxy_1d_return": 0.0272,
+            "oil_proxy_1d_return": 0.0264,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -5580,11 +5580,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.5,
           "top_headlines": [
+            "Oil batters bonds as AI burns cash - Reuters",
+            "Trump vows to punish Iran and Houthis for attacks in Red Sea - Reuters",
             "US military says it completed 13th consecutive night of strikes on Iran - Reuters",
             "Asian stocks skid as oil spike revives inflation fears, bonds take a hit - Reuters",
-            "Add a month at sea and $2.5 million - what it costs oil tankers to flee Hormuz and Bab el-Mandeb - Reuters",
-            "Southwest Airlines put Texas jet fuel on a boat to LA for the first time amid supply worries",
-            "US says Saudi nuclear deal off without Israel recognition - Reuters"
+            "Add a month at sea and $2.5 million - what it costs oil tankers to flee Hormuz and Bab el-Mandeb - Reuters"
           ]
         },
         "price": {
@@ -6510,7 +6510,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 94,
+            "freshness_score": 95,
+            "headline": "Trump vows to punish Iran and Houthis for attacks in Red Sea - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-24T04:00:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 79,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 90,
             "headline": "US military says it completed 13th consecutive night of strikes on Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6529,15 +6556,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 75,
+            "freshness_score": 71,
             "headline": "US House votes to curb Trump's Iran war powers but Senate backs president - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6556,15 +6583,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 74,
+            "freshness_score": 70,
             "headline": "UK says armed forces ready to defend country after Iran warning over US bombers - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6583,15 +6610,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 72,
+            "freshness_score": 68,
             "headline": "Pakistan's US funding push after Iran war role draws skepticism from economists - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6618,39 +6645,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 71,
+            "freshness_score": 68,
             "headline": "US Senate blocks resolution curbing Trump's Iran war powers - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-07-23T16:44:19+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 74,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 68,
-            "headline": "US House votes to halt Iran war, in another symbolic rebuke of Trump - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-23T15:12:44+00:00",
             "source": "Reuters"
           }
         ],
@@ -6681,13 +6681,25 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Trump vows to punish Iran and Houthis for attacks in Red Sea - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-24T04:00:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "US military says it completed 13th consecutive night of strikes on Iran - Reuters",
               "importance_score": 100,
               "published_at": "2026-07-24T01:56:00+00:00",
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -6699,7 +6711,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -6711,7 +6723,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -6732,18 +6744,6 @@
               "headline": "US Senate blocks resolution curbing Trump's Iran war powers - Reuters",
               "importance_score": 100,
               "published_at": "2026-07-23T16:44:19+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "US House votes to halt Iran war, in another symbolic rebuke of Trump - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-07-23T15:12:44+00:00",
               "source": "Reuters"
             }
           ]
@@ -6788,7 +6788,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0118,
-            "avg_equity_futures_1d_return": -0.0015,
+            "avg_equity_futures_1d_return": -0.0014,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -6805,7 +6805,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0002,
-            "oil_proxy_1d_return": 0.0272,
+            "oil_proxy_1d_return": 0.0264,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -8090,11 +8090,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.5,
           "top_headlines": [
+            "Oil batters bonds as AI burns cash - Reuters",
+            "Trump vows to punish Iran and Houthis for attacks in Red Sea - Reuters",
             "US military says it completed 13th consecutive night of strikes on Iran - Reuters",
             "Asian stocks skid as oil spike revives inflation fears, bonds take a hit - Reuters",
-            "Add a month at sea and $2.5 million - what it costs oil tankers to flee Hormuz and Bab el-Mandeb - Reuters",
-            "Southwest Airlines put Texas jet fuel on a boat to LA for the first time amid supply worries",
-            "US says Saudi nuclear deal off without Israel recognition - Reuters"
+            "Add a month at sea and $2.5 million - what it costs oil tankers to flee Hormuz and Bab el-Mandeb - Reuters"
           ]
         },
         "price": {
@@ -8998,7 +8998,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 94,
+            "freshness_score": 95,
+            "headline": "Trump vows to punish Iran and Houthis for attacks in Red Sea - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-24T04:00:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 79,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 90,
             "headline": "US military says it completed 13th consecutive night of strikes on Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9017,15 +9044,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 75,
+            "freshness_score": 71,
             "headline": "US House votes to curb Trump's Iran war powers but Senate backs president - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9044,15 +9071,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 74,
+            "freshness_score": 70,
             "headline": "UK says armed forces ready to defend country after Iran warning over US bombers - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9071,15 +9098,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 72,
+            "freshness_score": 68,
             "headline": "Pakistan's US funding push after Iran war role draws skepticism from economists - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9106,39 +9133,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 71,
+            "freshness_score": 68,
             "headline": "US Senate blocks resolution curbing Trump's Iran war powers - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-07-23T16:44:19+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 74,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 68,
-            "headline": "US House votes to halt Iran war, in another symbolic rebuke of Trump - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-23T15:12:44+00:00",
             "source": "Reuters"
           }
         ],
@@ -9169,13 +9169,25 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Trump vows to punish Iran and Houthis for attacks in Red Sea - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-24T04:00:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "US military says it completed 13th consecutive night of strikes on Iran - Reuters",
               "importance_score": 100,
               "published_at": "2026-07-24T01:56:00+00:00",
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -9187,7 +9199,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -9199,7 +9211,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -9220,18 +9232,6 @@
               "headline": "US Senate blocks resolution curbing Trump's Iran war powers - Reuters",
               "importance_score": 100,
               "published_at": "2026-07-23T16:44:19+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "US House votes to halt Iran war, in another symbolic rebuke of Trump - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-07-23T15:12:44+00:00",
               "source": "Reuters"
             }
           ]
@@ -9276,7 +9276,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0118,
-            "avg_equity_futures_1d_return": -0.0015,
+            "avg_equity_futures_1d_return": -0.0014,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -9293,7 +9293,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0002,
-            "oil_proxy_1d_return": 0.0272,
+            "oil_proxy_1d_return": 0.0264,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -10564,11 +10564,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.5,
           "top_headlines": [
+            "Oil batters bonds as AI burns cash - Reuters",
+            "Trump vows to punish Iran and Houthis for attacks in Red Sea - Reuters",
             "US military says it completed 13th consecutive night of strikes on Iran - Reuters",
             "Asian stocks skid as oil spike revives inflation fears, bonds take a hit - Reuters",
-            "Add a month at sea and $2.5 million - what it costs oil tankers to flee Hormuz and Bab el-Mandeb - Reuters",
-            "Southwest Airlines put Texas jet fuel on a boat to LA for the first time amid supply worries",
-            "US says Saudi nuclear deal off without Israel recognition - Reuters"
+            "Add a month at sea and $2.5 million - what it costs oil tankers to flee Hormuz and Bab el-Mandeb - Reuters"
           ]
         },
         "price": {
@@ -11471,7 +11471,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 94,
+            "freshness_score": 95,
+            "headline": "Trump vows to punish Iran and Houthis for attacks in Red Sea - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-24T04:00:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 79,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 90,
             "headline": "US military says it completed 13th consecutive night of strikes on Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11490,15 +11517,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 75,
+            "freshness_score": 71,
             "headline": "US House votes to curb Trump's Iran war powers but Senate backs president - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11517,15 +11544,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 74,
+            "freshness_score": 70,
             "headline": "UK says armed forces ready to defend country after Iran warning over US bombers - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11544,15 +11571,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 72,
+            "freshness_score": 68,
             "headline": "Pakistan's US funding push after Iran war role draws skepticism from economists - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11579,39 +11606,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 71,
+            "freshness_score": 68,
             "headline": "US Senate blocks resolution curbing Trump's Iran war powers - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-07-23T16:44:19+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 74,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 68,
-            "headline": "US House votes to halt Iran war, in another symbolic rebuke of Trump - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-23T15:12:44+00:00",
             "source": "Reuters"
           }
         ],
@@ -11642,13 +11642,25 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Trump vows to punish Iran and Houthis for attacks in Red Sea - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-07-24T04:00:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "US military says it completed 13th consecutive night of strikes on Iran - Reuters",
               "importance_score": 100,
               "published_at": "2026-07-24T01:56:00+00:00",
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -11660,7 +11672,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -11672,7 +11684,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -11693,18 +11705,6 @@
               "headline": "US Senate blocks resolution curbing Trump's Iran war powers - Reuters",
               "importance_score": 100,
               "published_at": "2026-07-23T16:44:19+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "US House votes to halt Iran war, in another symbolic rebuke of Trump - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-07-23T15:12:44+00:00",
               "source": "Reuters"
             }
           ]
@@ -11749,7 +11749,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0118,
-            "avg_equity_futures_1d_return": -0.0015,
+            "avg_equity_futures_1d_return": -0.0014,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -11766,7 +11766,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0002,
-            "oil_proxy_1d_return": 0.0272,
+            "oil_proxy_1d_return": 0.0264,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
