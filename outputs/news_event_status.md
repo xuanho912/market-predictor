@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-24T00:10:30.410037+00:00`
+- generated_at: `2026-07-24T04:37:00.261135+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `13`
+- major_event_count: `12`
 - event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -27,17 +27,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US House votes to curb Trump's Iran war powers but Senate backs president - Reuters
+- headline: US military says it completed 13th consecutive night of strikes on Iran - Reuters
 - source: Reuters
-- published_at: `2026-07-23T18:02:16+00:00`
+- published_at: `2026-07-24T01:56:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: EXCLUSIVE: Iran flew IRGC commanders, missile gear to Yemen's Houthis, sources say - Reuters
+- headline: US House votes to curb Trump's Iran war powers but Senate backs president - Reuters
 - source: Reuters
-- published_at: `2026-07-23T17:58:00+00:00`
+- published_at: `2026-07-23T18:02:16+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -63,15 +63,7 @@
 - source: Reuters
 - published_at: `2026-07-23T16:44:19+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### oil_shock_risk / risk_off
-
-- headline: Wall Street stumbles as oil surges, and Lilly takes a new path on next-gen obesity drug
-- source: CNBC
-- published_at: `2026-07-23T18:35:53+00:00`
-- importance_score: `97`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -79,7 +71,23 @@
 - source: Reuters
 - published_at: `2026-07-23T15:12:44+00:00`
 - importance_score: `100`
+- confidence: `medium`
+
+### oil_shock_risk / risk_off
+
+- headline: Wall Street stumbles as oil surges, and Lilly takes a new path on next-gen obesity drug
+- source: CNBC
+- published_at: `2026-07-23T18:35:53+00:00`
+- importance_score: `96`
 - confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: EXCLUSIVE: Iran flew IRGC commanders, missile gear to Yemen's Houthis, sources say - Reuters
+- source: Reuters
+- published_at: `2026-07-23T14:23:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -94,13 +102,5 @@
 - headline: Trump vows to punish Iran for Houthi attacks in Red Sea; oil surges over $100 - Reuters
 - source: Reuters
 - published_at: `2026-07-23T04:15:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US military completes 12th straight night of strikes on Iran - Reuters
-- source: Reuters
-- published_at: `2026-07-23T03:27:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
