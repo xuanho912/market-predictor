@@ -1,20 +1,20 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-25T06:08:20.793074+00:00`
+- generated_at: `2026-07-25T14:04:16.776342+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `17`
-- event_detection_confidence: `70`
+- major_event_count: `12`
+- event_detection_confidence: `68`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
-- price_reaction_confirmed: `True`
-- confirmation_score: `75`
+- price_reaction_confirmed: `False`
+- confirmation_score: `50`
 
 ## Dashboard Note
 
-当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，已被价格反应初步确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
+当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，尚未被价格反应充分确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
 
 ## Economic Calendar Risk
 
@@ -27,19 +27,19 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Saudi-led coalition says it strikes Houthi targets in Yemen's Hodeidah - Reuters
-- source: Reuters
-- published_at: `2026-07-24T22:54:27+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
 - headline: Yemen teeters towards renewed war in shadow of Iran conflict - Reuters
 - source: Reuters
 - published_at: `2026-07-24T21:15:54+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Saudi Arabia and Houthis exchange fire as air defences intercept attack on oil refinery - Reuters
+- source: Reuters
+- published_at: `2026-07-24T20:57:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +47,7 @@
 - source: Reuters
 - published_at: `2026-07-24T19:48:21+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,7 +55,7 @@
 - source: CNBC
 - published_at: `2026-07-24T18:36:28+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -91,11 +91,11 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US missiles hit Iran as path towards de-escalation uncertain - Reuters
+- headline: Missiles targeting Saudi oil refineries shot down, sources say - Reuters
 - source: Reuters
 - published_at: `2026-07-24T04:00:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
