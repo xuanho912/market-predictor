@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-07-25T04:32:41.438806+00:00",
+  "generated_at": "2026-07-25T06:08:31.484170+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-07-25T04:32:41.455340+00:00",
+    "generated_at": "2026-07-25T06:08:31.500898+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 121,
     "risk_score_effectiveness": {
@@ -717,10 +717,10 @@
       },
       "market_context_for_stock": {
         "benchmark": "SPY",
-        "benchmark_edge_status": "MODERATE_EDGE",
+        "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.3026,
-        "benchmark_primary_scenario": "bounce_path",
+        "benchmark_primary_probability": 0.3133,
+        "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
         "risk_alert_level": "HIGH_CONVICTION",
@@ -2921,9 +2921,9 @@
       },
       "market_context_for_stock": {
         "benchmark": "QQQ",
-        "benchmark_edge_status": "MODERATE_EDGE",
+        "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.3186,
+        "benchmark_primary_probability": 0.3531,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -5099,14 +5099,14 @@
       },
       "market_context_for_stock": {
         "benchmark": "IWM",
-        "benchmark_edge_status": "MODERATE_EDGE",
+        "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.3305,
+        "benchmark_primary_probability": 0.3621,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
         "risk_alert_level": "WARNING",
-        "risk_alert_type": "Bounce Setup Alert",
+        "risk_alert_type": "Failed Bounce Alert",
         "symbol": "SMR"
       },
       "missing_data": [
@@ -6820,6 +6820,18 @@
               "url": "https://finnhub.io/api/news?id=32beec2a8664e90632cae245adc89043ebec3927c12801f07bf03645dc1a6eb8"
             },
             {
+              "datetime": 1784943300,
+              "headline": "This Week's Market Wrap: Earnings, Inflation, And AI-Driven Spending Concerns",
+              "source": "SeekingAlpha",
+              "url": "https://finnhub.io/api/news?id=c4530315c69f8f4c69de402a2c6095d082f2dfc439c28a4d59602d188d7b1f9c"
+            },
+            {
+              "datetime": 1784939400,
+              "headline": "The Tumble Of Two Sectors",
+              "source": "SeekingAlpha",
+              "url": "https://finnhub.io/api/news?id=3042e3e381508a894bfe394cb808135846024a1b6584039a07da0c60a4bd58fe"
+            },
+            {
               "datetime": 1784937612,
               "headline": "Good News For Tesla Stock Fans",
               "source": "Yahoo",
@@ -6848,18 +6860,6 @@
               "headline": "What to watch next week: Big Tech earnings, the Fed, and Consumer Confidence",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=f78dcc04818cc6e472dd99772e70da6bd18b2b2acb2344559d63fae9b6899792"
-            },
-            {
-              "datetime": 1784927674,
-              "headline": "Dow Jones Futures: Apple Earnings, Iran News, Fed Meeting Loom As AI Stocks Sell Off",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=95418f4b57a5f09da2bb4319facd56354d920e90f88081375aa3b22fd17492a9"
-            },
-            {
-              "datetime": 1784927460,
-              "headline": "Weekly Wrap: Bitcoin Holds Firm As Stocks Post Losing Week",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=c9d12ffc3f8e755963ff83ab258e8732113df525799269a2a28793cd78257351"
             }
           ],
           "major_company_headline": "Waymo vs. human drivers: Experts reveal which is safer",
@@ -7284,9 +7284,9 @@
       },
       "market_context_for_stock": {
         "benchmark": "QQQ",
-        "benchmark_edge_status": "MODERATE_EDGE",
+        "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.3186,
+        "benchmark_primary_probability": 0.3531,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -8954,7 +8954,7 @@
       "top_candidate": "NVDA",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-07-25T04:32:41.450370+00:00",
+    "generated_at": "2026-07-25T06:08:31.495916+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
