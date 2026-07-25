@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-25T00:15:07.213904+00:00`
+- generated_at: `2026-07-25T04:32:29.266298+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `16`
-- event_detection_confidence: `72`
+- major_event_count: `17`
+- event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Saudi-led coalition says it strikes Houthi targets in Yemen's Hodeidah - Reuters
+- source: Reuters
+- published_at: `2026-07-24T22:54:27+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -63,7 +71,7 @@
 - source: Reuters
 - published_at: `2026-07-24T14:36:19+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -71,7 +79,7 @@
 - source: Reuters
 - published_at: `2026-07-24T12:55:58+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -91,16 +99,8 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US military says it completed 13th consecutive night of strikes on Iran - Reuters
-- source: Reuters
-- published_at: `2026-07-24T01:56:00+00:00`
+- headline: Brent crude trades above $100 amid Houthi attacks in Red Sea, widening US-Iran war
+- source: Bloomberg
+- published_at: `2026-07-24T02:00:12+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil falls on report China pushing for end US-Iran war - Reuters
-- source: Reuters
-- published_at: `2026-07-24T01:36:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
+- confidence: `high`
