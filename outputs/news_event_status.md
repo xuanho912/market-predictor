@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-25T14:04:16.776342+00:00`
+- generated_at: `2026-07-26T13:59:39.588817+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
-- event_detection_confidence: `68`
+- major_event_count: `4`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,80 +27,32 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Yemen teeters towards renewed war in shadow of Iran conflict - Reuters
+- headline: Iran war spreads to Red Sea and Caspian, Gulf quiet as US forgoes strikes - Reuters
 - source: Reuters
-- published_at: `2026-07-24T21:15:54+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Saudi Arabia and Houthis exchange fire as air defences intercept attack on oil refinery - Reuters
-- source: Reuters
-- published_at: `2026-07-24T20:57:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Mozambique-flagged LPG tanker attacked in Iranian waters, Indian embassy says - Reuters
-- source: Reuters
-- published_at: `2026-07-24T19:48:21+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: The 'sell chips, buy software' trade reappears as Wall Street caps off another volatile week
-- source: CNBC
-- published_at: `2026-07-24T18:36:28+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Pakistan, Iran explore path towards new talks with US in a China-initiated push, sources say - Reuters
-- source: Reuters
-- published_at: `2026-07-24T17:59:38+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Physical oil prices jump with some nearing $110 as Iran, Ukraine wars hit supply - Reuters
-- source: Reuters
-- published_at: `2026-07-24T14:36:19+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Tanker switches Asia voyage via Suez amid Houthi warnings, owner says - Reuters
-- source: Reuters
-- published_at: `2026-07-24T12:55:58+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: In India, Iran war forces Diet Coke to roll out a bigger can, heftier price tag - Reuters
-- source: Reuters
-- published_at: `2026-07-24T07:18:55+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Missiles targeting Saudi oil refineries shot down, sources say - Reuters
-- source: Reuters
-- published_at: `2026-07-24T04:00:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Brent crude trades above $100 amid Houthi attacks in Red Sea, widening US-Iran war
-- source: Bloomberg
-- published_at: `2026-07-24T02:00:12+00:00`
+- published_at: `2026-07-25T23:18:00+00:00`
 - importance_score: `100`
 - confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran says Ukrainian attack on vessel in Caspian Sea killed sailor - Reuters
+- source: Reuters
+- published_at: `2026-07-25T21:10:19+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Britain would be target if it supports US in war, Iran's Revolutionary Guards say - Reuters
+- source: Reuters
+- published_at: `2026-07-25T20:21:29+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil falls on report China pushing for end US-Iran war - Reuters
+- source: Reuters
+- published_at: `2026-07-25T04:52:31+00:00`
+- importance_score: `100`
+- confidence: `medium`
