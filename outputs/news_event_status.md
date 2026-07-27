@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-27T21:35:41.261674+00:00`
+- generated_at: `2026-07-27T22:38:25.999498+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `12`
@@ -49,20 +49,20 @@
 - importance_score: `92`
 - confidence: `high`
 
-### geopolitical_risk_easing / risk_on
-
-- headline: Crude oil futures are pricing market adaptability, not hopeful Iran peace - Reuters
-- source: Reuters
-- published_at: `2026-07-27T07:39:01+00:00`
-- importance_score: `97`
-- confidence: `medium`
-
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Morning Bid: Markets dare to hope as US, Iran put war on hold - Reuters
 - source: Reuters
 - published_at: `2026-07-27T04:32:00+00:00`
 - importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Crude oil futures are pricing market adaptability, not hopeful Iran peace - Reuters
+- source: Reuters
+- published_at: `2026-07-27T07:39:01+00:00`
+- importance_score: `96`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
@@ -94,7 +94,7 @@
 - headline: Indian rupee heads for steepest rise in three weeks as oil falls - Reuters
 - source: Reuters
 - published_at: `2026-07-27T02:55:00+00:00`
-- importance_score: `90`
+- importance_score: `89`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
