@@ -47,7 +47,7 @@
       "status": "insufficient_forward_samples"
     }
   },
-  "generated_at": "2026-07-27T15:16:36.736310+00:00",
+  "generated_at": "2026-07-27T21:35:53.754724+00:00",
   "guardrails": [
     "Alpha v1 threshold remains frozen at 0.32534311.",
     "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -60,48 +60,48 @@
       "completed_forecasts": 0,
       "horizon_metrics": {
         "10d": {
-          "completed_count": 72,
-          "primary_closer_than_secondary_rate": 0.3611,
-          "primary_hit_rate": 0.2361,
-          "primary_mean_absolute_error": 0.026069,
-          "primary_median_absolute_error": 0.021458,
-          "primary_vs_secondary_accuracy_spread": -0.0833,
+          "completed_count": 80,
+          "primary_closer_than_secondary_rate": 0.3375,
+          "primary_hit_rate": 0.225,
+          "primary_mean_absolute_error": 0.027461,
+          "primary_median_absolute_error": 0.022084,
+          "primary_vs_secondary_accuracy_spread": -0.075,
           "sample_gate": "moderate_evidence",
-          "secondary_hit_rate": 0.3194,
-          "secondary_mean_absolute_error": 0.016505
+          "secondary_hit_rate": 0.3,
+          "secondary_mean_absolute_error": 0.017488
         },
         "20d": {
-          "completed_count": 32,
-          "primary_closer_than_secondary_rate": 0.4375,
-          "primary_hit_rate": 0.1875,
-          "primary_mean_absolute_error": 0.045362,
-          "primary_median_absolute_error": 0.040393,
-          "primary_vs_secondary_accuracy_spread": -0.0312,
+          "completed_count": 40,
+          "primary_closer_than_secondary_rate": 0.35,
+          "primary_hit_rate": 0.15,
+          "primary_mean_absolute_error": 0.05103,
+          "primary_median_absolute_error": 0.043345,
+          "primary_vs_secondary_accuracy_spread": -0.1,
           "sample_gate": "early_evidence",
-          "secondary_hit_rate": 0.2188,
-          "secondary_mean_absolute_error": 0.040775
+          "secondary_hit_rate": 0.25,
+          "secondary_mean_absolute_error": 0.0393
         },
         "3d": {
-          "completed_count": 100,
-          "primary_closer_than_secondary_rate": 0.39,
-          "primary_hit_rate": 0.29,
-          "primary_mean_absolute_error": 0.013448,
-          "primary_median_absolute_error": 0.011864,
-          "primary_vs_secondary_accuracy_spread": -0.07,
-          "sample_gate": "moderate_evidence",
-          "secondary_hit_rate": 0.36,
-          "secondary_mean_absolute_error": 0.011342
+          "completed_count": 108,
+          "primary_closer_than_secondary_rate": 0.4167,
+          "primary_hit_rate": 0.3056,
+          "primary_mean_absolute_error": 0.013375,
+          "primary_median_absolute_error": 0.011974,
+          "primary_vs_secondary_accuracy_spread": -0.0278,
+          "sample_gate": "stronger_evidence",
+          "secondary_hit_rate": 0.3333,
+          "secondary_mean_absolute_error": 0.011952
         },
         "5d": {
-          "completed_count": 92,
-          "primary_closer_than_secondary_rate": 0.4348,
-          "primary_hit_rate": 0.2717,
-          "primary_mean_absolute_error": 0.017559,
+          "completed_count": 100,
+          "primary_closer_than_secondary_rate": 0.46,
+          "primary_hit_rate": 0.28,
+          "primary_mean_absolute_error": 0.017148,
           "primary_median_absolute_error": 0.011653,
-          "primary_vs_secondary_accuracy_spread": -0.0109,
+          "primary_vs_secondary_accuracy_spread": 0.01,
           "sample_gate": "moderate_evidence",
-          "secondary_hit_rate": 0.2826,
-          "secondary_mean_absolute_error": 0.015711
+          "secondary_hit_rate": 0.27,
+          "secondary_mean_absolute_error": 0.016149
         },
         "60d": {
           "completed_count": 0,
@@ -116,12 +116,12 @@
         }
       },
       "model_version": "baseline_v1",
-      "pending_forecasts": 116,
+      "pending_forecasts": 120,
       "promotion_status": "active_model",
       "reason": "Frozen current production model. Not a claim of high precision or stable alpha.",
       "role": "active_baseline",
       "status": "tracking",
-      "total_forecasts": 116
+      "total_forecasts": 120
     },
     {
       "completed_forecasts": 0,
@@ -183,12 +183,12 @@
         }
       },
       "model_version": "challenger_v2_error_learning",
-      "pending_forecasts": 100,
+      "pending_forecasts": 104,
       "promotion_status": "insufficient_forward_evidence",
       "reason": "Forward samples have not met promotion gates.",
       "role": "shadow_challenger",
       "status": "tracking",
-      "total_forecasts": 100
+      "total_forecasts": 104
     },
     {
       "completed_forecasts": 0,
@@ -250,12 +250,12 @@
         }
       },
       "model_version": "challenger_v2_event_reaction_overlay",
-      "pending_forecasts": 64,
+      "pending_forecasts": 68,
       "promotion_status": "insufficient_forward_evidence",
       "reason": "Forward samples have not met promotion gates.",
       "role": "shadow_challenger",
       "status": "tracking",
-      "total_forecasts": 64
+      "total_forecasts": 68
     },
     {
       "completed_forecasts": 0,
@@ -317,12 +317,12 @@
         }
       },
       "model_version": "challenger_v2_options_flow",
-      "pending_forecasts": 116,
+      "pending_forecasts": 120,
       "promotion_status": "insufficient_forward_evidence",
       "reason": "Forward samples have not met promotion gates.",
       "role": "shadow_challenger",
       "status": "tracking",
-      "total_forecasts": 116
+      "total_forecasts": 120
     },
     {
       "completed_forecasts": 0,
@@ -837,10 +837,10 @@
   ],
   "validation_standards": {
     "forward_completed_samples_by_horizon": {
-      "10d": 72,
-      "20d": 32,
-      "3d": 100,
-      "5d": 92,
+      "10d": 80,
+      "20d": 40,
+      "3d": 108,
+      "5d": 100,
       "60d": 0
     },
     "high_precision_standard": {
