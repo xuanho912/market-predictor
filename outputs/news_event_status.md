@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-27T22:38:25.999498+00:00`
+- generated_at: `2026-07-27T23:52:58.767701+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `12`
-- event_detection_confidence: `70`
+- event_detection_confidence: `69`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -41,14 +41,6 @@
 - importance_score: `100`
 - confidence: `high`
 
-### oil_shock_relief / risk_on
-
-- headline: We're buying more of a slumping industrial stock and a hard-hit chipmaker
-- source: CNBC
-- published_at: `2026-07-27T12:53:43+00:00`
-- importance_score: `92`
-- confidence: `high`
-
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Morning Bid: Markets dare to hope as US, Iran put war on hold - Reuters
@@ -56,6 +48,14 @@
 - published_at: `2026-07-27T04:32:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
+
+### oil_shock_relief / risk_on
+
+- headline: We're buying more of a slumping industrial stock and a hard-hit chipmaker
+- source: CNBC
+- published_at: `2026-07-27T12:53:43+00:00`
+- importance_score: `91`
+- confidence: `high`
 
 ### geopolitical_risk_easing / risk_on
 

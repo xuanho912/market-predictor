@@ -1,6 +1,6 @@
 # Breadth Impact Audit
 
-Generated at: `2026-07-27T22:38:36.107257Z`
+Generated at: `2026-07-27T23:53:10.619337Z`
 
 ## Summary
 
@@ -17,7 +17,7 @@ Generated at: `2026-07-27T22:38:36.107257Z`
 | symbol | supports primary | conflicts primary | edge before | edge after | primary before | primary after | failed bounce delta | confirmation delta | confidence delta | reason | risk note |
 |---|---:|---:|---|---|---|---|---:|---:|---:|---|---|
 | SPY | True | True | STRONG_EDGE | MODERATE_EDGE | bounce_path | bearish_path | 0.1272 | -6 | -2 | SPY breadth is mixed for bearish_path: support score 58%, conflict score 42%, internal resonance is surface_only. | SPY index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
-| QQQ | False | True | STRONG_EDGE | WEAK_EDGE | bounce_path | bearish_path | 0.1862 | -23 | -9 | QQQ breadth conflicts with bearish_path: conflict score 69%, internal resonance is surface_only. | QQQ index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
+| QQQ | False | True | STRONG_EDGE | WEAK_EDGE | bounce_path | bearish_path | 0.1905 | -27 | -16 | QQQ breadth conflicts with bearish_path: conflict score 69%, internal resonance is surface_only. | QQQ index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
 | IWM | False | True | MODERATE_EDGE | WEAK_EDGE | bounce_path | bearish_path | 0.1812 | -28 | -11 | IWM breadth conflicts with bearish_path: conflict score 62%, internal resonance is surface_only. | IWM index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
 | DIA | True | True | STRONG_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.1054 | 0 | -2 | DIA breadth supports bounce_path: internal resonance is surface_only, support score 74%, above 20d/50d MA 57%/60%. | DIA index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
 
