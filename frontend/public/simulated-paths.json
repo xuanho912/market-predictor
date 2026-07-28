@@ -5,10 +5,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-07-28",
-    "current_time_us_eastern": "2026-07-28T17:37:45.093440-04:00",
+    "current_time_us_eastern": "2026-07-28T18:39:17.425732-04:00",
     "data_freshness_status": "fresh",
     "expected_latest_trading_date": "2026-07-28",
-    "generated_at": "2026-07-28T21:37:45.093440+00:00",
+    "generated_at": "2026-07-28T22:39:17.425732+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -1047,15 +1047,15 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "HY_OAS",
       "IG_OAS",
+      "HY_OAS",
       "DGS3MO",
-      "DGS2",
-      "DGS10",
       "BAA_SPREAD",
+      "DGS10",
+      "DGS2",
+      "RECESSION",
       "FINANCIAL_STRESS",
-      "DFII10",
-      "RECESSION"
+      "DFII10"
     ],
     "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-07-28。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
     "gamma_available": false,
@@ -1089,8 +1089,8 @@
       "event_detection_confidence": 66,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-07-28T21:37:34.612596+00:00",
-      "major_event_count": 5,
+      "last_update": "2026-07-28T22:39:07.306516+00:00",
+      "major_event_count": 4,
       "missing_reason": null,
       "news_direction": "risk_off",
       "news_event_partial": false,
@@ -1101,7 +1101,7 @@
     },
     "news_event_available": true,
     "news_event_event_risk_level": "high",
-    "news_event_major_count": 5,
+    "news_event_major_count": 4,
     "news_event_missing_reason": null,
     "news_event_narrative": "geopolitics_escalation_risk_off",
     "news_event_partial": false,
@@ -1151,7 +1151,7 @@
       "status": "failed"
     },
     "event_risk_level": "high",
-    "major_event_count": 5,
+    "major_event_count": 4,
     "market_narrative": {
       "affected_scenarios": [
         "bearish_path"
@@ -1181,7 +1181,7 @@
       ],
       "market_narrative": "geopolitics_escalation_risk_off",
       "narrative_direction": "supports_risk_expansion",
-      "narrative_strength": 100,
+      "narrative_strength": 67,
       "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
       "supporting_headlines": [
         {
@@ -1207,18 +1207,6 @@
           "importance_score": 100,
           "published_at": "2026-07-27T18:58:23+00:00",
           "source": "CNBC"
-        },
-        {
-          "confidence": "medium",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "El Niño may push global warming to 2C or higher in the short term",
-          "importance_score": 99,
-          "published_at": "2026-07-27T08:55:01+00:00",
-          "source": "Bloomberg"
         }
       ]
     },
@@ -1228,16 +1216,16 @@
       "direction": "supports_risk_expansion",
       "event_risk_level": "high",
       "macro_event_risk_flag": false,
-      "major_event_count": 5,
+      "major_event_count": 4,
       "not_a_trading_signal": true,
       "price_reaction_confirmed": false,
       "symbols": {
         "DIA": {
-          "after_primary_probability": 0.3024,
-          "after_primary_scenario": "bearish_path",
+          "after_primary_probability": 0.303,
+          "after_primary_scenario": "bounce_path",
           "before_primary_probability": 0.323,
           "before_primary_scenario": "bounce_path",
-          "confirmation_delta": -5.0,
+          "confirmation_delta": -4.01,
           "impact": "potential_conflict_unconfirmed",
           "not_a_trading_signal": true,
           "overlay_applied": true,
@@ -1250,26 +1238,26 @@
           "path_weight_deltas": {
             "analog_path_weight": 0.0,
             "base_path_weight": 0.01,
-            "bearish_path_weight": 0.0385,
-            "bounce_path_weight": -0.0135
+            "bearish_path_weight": 0.0311,
+            "bounce_path_weight": -0.0109
           },
           "predictor_deltas": {
-            "bounce_predictor": -0.0116,
-            "downside_continuation_predictor": 0.0212,
-            "risk_expansion_predictor": 0.025,
+            "bounce_predictor": -0.0093,
+            "downside_continuation_predictor": 0.0171,
+            "risk_expansion_predictor": 0.0202,
             "trend_reversal_predictor": 0.0
           },
-          "primary_probability_delta": -0.0206,
-          "primary_scenario_changed": true,
-          "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay",
+          "primary_probability_delta": -0.02,
+          "primary_scenario_changed": false,
+          "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay",
           "validation_type": "daily"
         },
         "IWM": {
-          "after_primary_probability": 0.3563,
+          "after_primary_probability": 0.3507,
           "after_primary_scenario": "bearish_path",
           "before_primary_probability": 0.3302,
           "before_primary_scenario": "bearish_path",
-          "confirmation_delta": -5.0,
+          "confirmation_delta": -4.01,
           "impact": "text_support_unconfirmed",
           "not_a_trading_signal": true,
           "overlay_applied": true,
@@ -1282,26 +1270,26 @@
           "path_weight_deltas": {
             "analog_path_weight": 0.0,
             "base_path_weight": 0.01,
-            "bearish_path_weight": 0.0385,
-            "bounce_path_weight": -0.0135
+            "bearish_path_weight": 0.0311,
+            "bounce_path_weight": -0.0109
           },
           "predictor_deltas": {
-            "bounce_predictor": -0.0116,
-            "downside_continuation_predictor": 0.0212,
-            "risk_expansion_predictor": 0.025,
+            "bounce_predictor": -0.0093,
+            "downside_continuation_predictor": 0.0171,
+            "risk_expansion_predictor": 0.0202,
             "trend_reversal_predictor": 0.0
           },
-          "primary_probability_delta": 0.0261,
+          "primary_probability_delta": 0.0205,
           "primary_scenario_changed": false,
-          "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay",
+          "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay",
           "validation_type": "daily"
         },
         "QQQ": {
-          "after_primary_probability": 0.3423,
+          "after_primary_probability": 0.3367,
           "after_primary_scenario": "bearish_path",
           "before_primary_probability": 0.3158,
           "before_primary_scenario": "bearish_path",
-          "confirmation_delta": -5.0,
+          "confirmation_delta": -4.01,
           "impact": "text_support_unconfirmed",
           "not_a_trading_signal": true,
           "overlay_applied": true,
@@ -1314,26 +1302,26 @@
           "path_weight_deltas": {
             "analog_path_weight": 0.0,
             "base_path_weight": 0.01,
-            "bearish_path_weight": 0.0385,
-            "bounce_path_weight": -0.0135
+            "bearish_path_weight": 0.0311,
+            "bounce_path_weight": -0.0109
           },
           "predictor_deltas": {
-            "bounce_predictor": -0.0116,
-            "downside_continuation_predictor": 0.0212,
-            "risk_expansion_predictor": 0.025,
+            "bounce_predictor": -0.0093,
+            "downside_continuation_predictor": 0.0171,
+            "risk_expansion_predictor": 0.0202,
             "trend_reversal_predictor": 0.0
           },
-          "primary_probability_delta": 0.0265,
+          "primary_probability_delta": 0.0209,
           "primary_scenario_changed": false,
-          "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay",
+          "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay",
           "validation_type": "daily"
         },
         "SPY": {
-          "after_primary_probability": 0.3056,
+          "after_primary_probability": 0.2998,
           "after_primary_scenario": "bearish_path",
           "before_primary_probability": 0.295,
           "before_primary_scenario": "bounce_path",
-          "confirmation_delta": -5.0,
+          "confirmation_delta": -4.01,
           "impact": "potential_conflict_unconfirmed",
           "not_a_trading_signal": true,
           "overlay_applied": true,
@@ -1346,18 +1334,18 @@
           "path_weight_deltas": {
             "analog_path_weight": 0.0,
             "base_path_weight": 0.01,
-            "bearish_path_weight": 0.0385,
-            "bounce_path_weight": -0.0135
+            "bearish_path_weight": 0.0311,
+            "bounce_path_weight": -0.0109
           },
           "predictor_deltas": {
-            "bounce_predictor": -0.0116,
-            "downside_continuation_predictor": 0.0212,
-            "risk_expansion_predictor": 0.025,
+            "bounce_predictor": -0.0093,
+            "downside_continuation_predictor": 0.0171,
+            "risk_expansion_predictor": 0.0202,
             "trend_reversal_predictor": 0.0
           },
-          "primary_probability_delta": 0.0106,
+          "primary_probability_delta": 0.0048,
           "primary_scenario_changed": true,
-          "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay",
+          "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay",
           "validation_type": "daily"
         }
       },
@@ -1367,7 +1355,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": 0.0013,
-        "avg_equity_futures_1d_return": 0.0016,
+        "avg_equity_futures_1d_return": 0.0007,
         "confirmed_checks": [
           "HYG/LQD 走弱"
         ],
@@ -1383,7 +1371,7 @@
           "美元走强"
         ],
         "hyg_lqd_1d_relative_return": -0.0011,
-        "oil_proxy_1d_return": -0.0382,
+        "oil_proxy_1d_return": -0.0172,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -1418,37 +1406,37 @@
         "alert_status_by_type": {
           "Bottoming Setup Alert": {
             "alert_level": "WARNING",
-            "alert_score": 56,
+            "alert_score": 57,
             "confidence": "medium"
           },
           "Bounce Setup Alert": {
             "alert_level": "HIGH_CONVICTION",
-            "alert_score": 79,
+            "alert_score": 80,
             "confidence": "high"
           },
           "Failed Bounce Alert": {
             "alert_level": "NO_ALERT",
-            "alert_score": 30,
+            "alert_score": 31,
             "confidence": "low"
           },
           "Risk Expansion Alert": {
             "alert_level": "WATCH",
-            "alert_score": 37,
+            "alert_score": 38,
             "confidence": "low"
           },
           "Trend Repair Alert": {
             "alert_level": "HIGH_CONVICTION",
-            "alert_score": 75,
+            "alert_score": 76,
             "confidence": "high"
           }
         },
         "alpha_v1_threshold_unchanged": 0.32534311,
         "confluence_level": "mixed",
-        "confluence_score": 49,
-        "daily_market_summary_shadow": "DIA shadow evidence: strongest alert is Bounce Setup Alert; confluence is mixed at 49/100. This evidence is for forecast validation and challenger comparison only.",
+        "confluence_score": 55,
+        "daily_market_summary_shadow": "DIA shadow evidence: strongest alert is Bounce Setup Alert; confluence is mixed at 55/100. This evidence is for forecast validation and challenger comparison only.",
         "does_not_override_baseline_v1": true,
         "does_not_rewrite_forecast_records": true,
-        "dominant_path_shadow": "failed_bounce",
+        "dominant_path_shadow": "bounce",
         "enters_as_shadow_evidence": [
           "signal_confirmation",
           "scenario_ranking",
@@ -1495,12 +1483,12 @@
             "extended": 550.4
           },
           "primary_confirmation_level": {
-            "confidence": "medium_high",
-            "distance_pct": 0.0018,
+            "confidence": "medium",
+            "distance_pct": 0.0127,
             "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
-            "price": 527.84,
-            "source": "confluence",
-            "source_type": "confluence"
+            "price": 533.6,
+            "source": "primary_path_5d + recent_5d_high + realized_volatility_band",
+            "source_type": "simulated_path"
           },
           "primary_invalidation_level": {
             "confidence": "medium",
@@ -1520,9 +1508,9 @@
           },
           "trend_reversal_confirmation_level": {
             "confidence": "medium",
-            "distance_pct": 0.0061,
+            "distance_pct": 0.0426,
             "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
-            "price": 530.09,
+            "price": 549.34,
             "source": "primary_path_20d + recent_20d_high + 20d_or_50d_moving_average",
             "source_type": "price_structure"
           }
@@ -1530,7 +1518,7 @@
         "role": "challenger_shadow_evidence",
         "strongest_alert": {
           "alert_level": "HIGH_CONVICTION",
-          "alert_score": 79,
+          "alert_score": 80,
           "alert_type": "Bounce Setup Alert",
           "confidence": "high"
         },
@@ -1911,14 +1899,20 @@
   },
   "symbols": {
     "DIA": {
-      "analog_path_weight": 0.253,
+      "analog_path_weight": 0.2542,
       "as_of": "2026-07-28",
-      "base_path_weight": 0.1455,
-      "bearish_path_weight": 0.3024,
-      "bounce_path_weight": 0.2991,
+      "base_path_weight": 0.1462,
+      "bearish_path_weight": 0.2966,
+      "bounce_path_weight": 0.303,
       "bounce_probability": 0.57070947,
       "confluence": {
         "conflicting_evidence": [
+          {
+            "detail": "Proxy flow/positioning points to risk-off pressure.",
+            "name": "risk-off flow proxy",
+            "score": 93,
+            "source": "flow"
+          },
           {
             "detail": "News/event direction is not sufficiently confirmed by market reaction.",
             "name": "新闻未获价格确认",
@@ -1926,15 +1920,9 @@
             "source": "news"
           },
           {
-            "detail": "价格结构对风险路径构成冲突。",
-            "name": "修复结构冲突",
-            "score": 60,
-            "source": "price"
-          },
-          {
             "detail": "重大 risk-off 新闻提高风险路径权重。",
             "name": "risk_off_news_event",
-            "score": 35,
+            "score": 34,
             "source": "signal_confirmation"
           },
           {
@@ -1958,14 +1946,14 @@
           {
             "detail": "路径分歧较大，不宜给强结论。",
             "name": "主次路径差距小",
-            "score": 0.33,
+            "score": 0.64,
             "source": "scenario_gap"
           }
         ],
         "confluence_level": "mixed",
-        "confluence_score": 49,
-        "confluence_summary": "DIA 当前多源共振为 mixed（49/100），主导路径为 failed_bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
-        "dominant_path": "failed_bounce",
+        "confluence_score": 55,
+        "confluence_summary": "DIA 当前多源共振为 mixed（55/100），主导路径为 bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
+        "dominant_path": "bounce",
         "edge_status": "{'market_edge_status': 'MODERATE_EDGE', 'has_usable_prediction_edge_today': True, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': True, 'historical_analog_not_conflicting': True, 'confidence_score_ge_65': True, 'current_regime_identified': True, 'macro_event_risk_not_high': True, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': False, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': True}, 'passed_conditions': 9, 'summary': '有一定预测优势，但仍需观察冲突信号和失效条件。', 'no_edge_note': '', 'risk_warning': False}",
         "key_conflict_count": 2,
         "missing_evidence": [
@@ -1986,18 +1974,18 @@
           }
         ],
         "not_trading_advice": "This is forecast confirmation only, not a buy/sell/entry/exit or position-sizing recommendation.",
-        "primary_label": "失败反抽情景",
-        "primary_probability": 0.3024,
-        "primary_scenario": "bearish_path",
-        "probability_gap": 0.0033,
+        "primary_label": "反抽情景",
+        "primary_probability": 0.303,
+        "primary_scenario": "bounce_path",
+        "probability_gap": 0.0064,
         "related_price_levels": {
           "primary_confirmation_level": {
-            "confidence": "medium_high",
-            "distance_pct": 0.0018,
+            "confidence": "medium",
+            "distance_pct": 0.0127,
             "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
-            "price": 527.84,
-            "source": "confluence",
-            "source_type": "confluence"
+            "price": 533.6,
+            "source": "primary_path_5d + recent_5d_high + realized_volatility_band",
+            "source_type": "simulated_path"
           },
           "primary_invalidation_level": {
             "confidence": "medium",
@@ -2017,22 +2005,58 @@
           },
           "trend_reversal_confirmation_level": {
             "confidence": "medium",
-            "distance_pct": 0.0061,
+            "distance_pct": 0.0426,
             "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
-            "price": 530.09,
+            "price": 549.34,
             "source": "primary_path_20d + recent_20d_high + 20d_or_50d_moving_average",
             "source_type": "price_structure"
           }
         },
-        "secondary_probability": 0.2991,
-        "secondary_scenario": "bounce_path",
+        "secondary_probability": 0.2966,
+        "secondary_scenario": "bearish_path",
         "strong_conclusion_allowed": false,
         "supporting_evidence": [
           {
-            "detail": "Proxy flow/positioning points to risk-off pressure.",
-            "name": "risk-off flow proxy",
-            "score": 93,
+            "detail": "Breadth improvement supports bounce or repair.",
+            "name": "宽度改善",
+            "score": 100,
+            "source": "breadth"
+          },
+          {
+            "detail": "DIA 指数表面强但内部没充分跟上：confirmation 98，conflict 20，RSP/SPY 2.20%，IWM/SPY -1.85%。",
+            "name": "市场内部共振/宽度确认",
+            "score": 98,
+            "source": "breadth"
+          },
+          {
+            "detail": "Credit stress is contained or improving.",
+            "name": "信用稳定",
+            "score": 95,
+            "source": "credit"
+          },
+          {
+            "detail": "DIA 价格结构和成交量对当前主路径有一定确认。",
+            "name": "价格结构支持主路径",
+            "score": 74,
+            "source": "price"
+          },
+          {
+            "detail": "Proxy flow/positioning supports risk appetite.",
+            "name": "risk-on flow proxy",
+            "score": 70,
             "source": "flow"
+          },
+          {
+            "detail": "成交量结构支持当前路径。",
+            "name": "成交量确认",
+            "score": 69,
+            "source": "volume"
+          },
+          {
+            "detail": "K线出现反转或回收结构。",
+            "name": "反转/回收K线",
+            "score": 60,
+            "source": "price"
           },
           {
             "detail": "Frozen Alpha v1 is triggered; this remains research-only.",
@@ -2062,18 +2086,6 @@
             "detail": "Proxy flow/positioning confirms risk appetite or broad participation.",
             "name": "flow / positioning proxy",
             "score": 9,
-            "source": "signal_confirmation"
-          },
-          {
-            "detail": "20d price trend is not negative.",
-            "name": "price trend",
-            "score": 6,
-            "source": "signal_confirmation"
-          },
-          {
-            "detail": "No major macro event flag.",
-            "name": "macro event risk",
-            "score": 5,
             "source": "signal_confirmation"
           }
         ],
@@ -2346,16 +2358,16 @@
             "horizon": "10d",
             "lower_confidence_price": 513.55,
             "not_guaranteed_forecast": true,
-            "primary_scenario": "bearish_path",
-            "primary_scenario_label": "风险路径",
-            "primary_scenario_price": 513.55,
-            "probability_of_reaching_primary_price": 0.3024,
+            "primary_scenario": "bounce_path",
+            "primary_scenario_label": "反抽情景",
+            "primary_scenario_price": 533.59,
+            "probability_of_reaching_primary_price": 0.303,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 513.55,
-            "secondary_scenario": "bounce_path",
-            "secondary_scenario_label": "反抽情景",
-            "secondary_scenario_price": 533.59,
+            "secondary_scenario": "bearish_path",
+            "secondary_scenario_label": "风险路径",
+            "secondary_scenario_price": 513.55,
             "source": "simulated_path",
             "upper_confidence_price": 533.59
           },
@@ -2367,16 +2379,16 @@
             "horizon": "1d",
             "lower_confidence_price": 526.11,
             "not_guaranteed_forecast": true,
-            "primary_scenario": "bearish_path",
-            "primary_scenario_label": "风险路径",
-            "primary_scenario_price": 526.52,
-            "probability_of_reaching_primary_price": 0.3024,
+            "primary_scenario": "bounce_path",
+            "primary_scenario_label": "反抽情景",
+            "primary_scenario_price": 528.11,
+            "probability_of_reaching_primary_price": 0.303,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 526.52,
-            "secondary_scenario": "bounce_path",
-            "secondary_scenario_label": "反抽情景",
-            "secondary_scenario_price": 528.11,
+            "secondary_scenario": "bearish_path",
+            "secondary_scenario_label": "风险路径",
+            "secondary_scenario_price": 526.52,
             "source": "simulated_path",
             "upper_confidence_price": 528.11
           },
@@ -2388,16 +2400,16 @@
             "horizon": "20d",
             "lower_confidence_price": 499.7,
             "not_guaranteed_forecast": true,
-            "primary_scenario": "bearish_path",
-            "primary_scenario_label": "风险路径",
-            "primary_scenario_price": 499.7,
-            "probability_of_reaching_primary_price": 0.3024,
+            "primary_scenario": "bounce_path",
+            "primary_scenario_label": "反抽情景",
+            "primary_scenario_price": 549.34,
+            "probability_of_reaching_primary_price": 0.303,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 499.7,
-            "secondary_scenario": "bounce_path",
-            "secondary_scenario_label": "反抽情景",
-            "secondary_scenario_price": 549.34,
+            "secondary_scenario": "bearish_path",
+            "secondary_scenario_label": "风险路径",
+            "secondary_scenario_price": 499.7,
             "source": "simulated_path",
             "upper_confidence_price": 549.34
           },
@@ -2409,16 +2421,16 @@
             "horizon": "3d",
             "lower_confidence_price": 524.54,
             "not_guaranteed_forecast": true,
-            "primary_scenario": "bearish_path",
-            "primary_scenario_label": "风险路径",
-            "primary_scenario_price": 525.77,
-            "probability_of_reaching_primary_price": 0.3024,
+            "primary_scenario": "bounce_path",
+            "primary_scenario_label": "反抽情景",
+            "primary_scenario_price": 530.55,
+            "probability_of_reaching_primary_price": 0.303,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 525.77,
-            "secondary_scenario": "bounce_path",
-            "secondary_scenario_label": "反抽情景",
-            "secondary_scenario_price": 530.55,
+            "secondary_scenario": "bearish_path",
+            "secondary_scenario_label": "风险路径",
+            "secondary_scenario_price": 525.77,
             "source": "simulated_path",
             "upper_confidence_price": 530.55
           },
@@ -2430,16 +2442,16 @@
             "horizon": "5d",
             "lower_confidence_price": 524.92,
             "not_guaranteed_forecast": true,
-            "primary_scenario": "bearish_path",
-            "primary_scenario_label": "风险路径",
-            "primary_scenario_price": 527.84,
-            "probability_of_reaching_primary_price": 0.3024,
+            "primary_scenario": "bounce_path",
+            "primary_scenario_label": "反抽情景",
+            "primary_scenario_price": 533.6,
+            "probability_of_reaching_primary_price": 0.303,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 527.84,
-            "secondary_scenario": "bounce_path",
-            "secondary_scenario_label": "反抽情景",
-            "secondary_scenario_price": 533.6,
+            "secondary_scenario": "bearish_path",
+            "secondary_scenario_label": "风险路径",
+            "secondary_scenario_price": 527.84,
             "source": "simulated_path",
             "upper_confidence_price": 533.6
           },
@@ -2451,16 +2463,16 @@
             "horizon": "60d",
             "lower_confidence_price": 510.24,
             "not_guaranteed_forecast": true,
-            "primary_scenario": "bearish_path",
-            "primary_scenario_label": "风险路径",
-            "primary_scenario_price": 510.24,
-            "probability_of_reaching_primary_price": 0.3024,
+            "primary_scenario": "bounce_path",
+            "primary_scenario_label": "反抽情景",
+            "primary_scenario_price": 550.4,
+            "probability_of_reaching_primary_price": 0.303,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 510.24,
-            "secondary_scenario": "bounce_path",
-            "secondary_scenario_label": "反抽情景",
-            "secondary_scenario_price": 550.4,
+            "secondary_scenario": "bearish_path",
+            "secondary_scenario_label": "风险路径",
+            "secondary_scenario_price": 510.24,
             "source": "simulated_path",
             "upper_confidence_price": 550.4
           }
@@ -2473,10 +2485,10 @@
             "expected_return": -0.0006,
             "lower_confidence_price": 513.55,
             "not_guaranteed_forecast": true,
-            "primary_scenario_price": 513.55,
-            "probability_of_reaching_primary_price": 0.3024,
+            "primary_scenario_price": 533.59,
+            "probability_of_reaching_primary_price": 0.303,
             "risk_scenario_price": 513.55,
-            "secondary_scenario_price": 533.59,
+            "secondary_scenario_price": 513.55,
             "source": "simulated_path",
             "upper_confidence_price": 533.59
           },
@@ -2487,10 +2499,10 @@
             "expected_return": 0.0011,
             "lower_confidence_price": 526.11,
             "not_guaranteed_forecast": true,
-            "primary_scenario_price": 526.52,
-            "probability_of_reaching_primary_price": 0.3024,
+            "primary_scenario_price": 528.11,
+            "probability_of_reaching_primary_price": 0.303,
             "risk_scenario_price": 526.52,
-            "secondary_scenario_price": 528.11,
+            "secondary_scenario_price": 526.52,
             "source": "simulated_path",
             "upper_confidence_price": 528.11
           },
@@ -2501,10 +2513,10 @@
             "expected_return": 0.0101,
             "lower_confidence_price": 499.7,
             "not_guaranteed_forecast": true,
-            "primary_scenario_price": 499.7,
-            "probability_of_reaching_primary_price": 0.3024,
+            "primary_scenario_price": 549.34,
+            "probability_of_reaching_primary_price": 0.303,
             "risk_scenario_price": 499.7,
-            "secondary_scenario_price": 549.34,
+            "secondary_scenario_price": 499.7,
             "source": "simulated_path",
             "upper_confidence_price": 549.34
           },
@@ -2515,10 +2527,10 @@
             "expected_return": 0.0032,
             "lower_confidence_price": 524.54,
             "not_guaranteed_forecast": true,
-            "primary_scenario_price": 525.77,
-            "probability_of_reaching_primary_price": 0.3024,
+            "primary_scenario_price": 530.55,
+            "probability_of_reaching_primary_price": 0.303,
             "risk_scenario_price": 525.77,
-            "secondary_scenario_price": 530.55,
+            "secondary_scenario_price": 525.77,
             "source": "simulated_path",
             "upper_confidence_price": 530.55
           },
@@ -2529,10 +2541,10 @@
             "expected_return": 0.008,
             "lower_confidence_price": 524.92,
             "not_guaranteed_forecast": true,
-            "primary_scenario_price": 527.84,
-            "probability_of_reaching_primary_price": 0.3024,
+            "primary_scenario_price": 533.6,
+            "probability_of_reaching_primary_price": 0.303,
             "risk_scenario_price": 527.84,
-            "secondary_scenario_price": 533.6,
+            "secondary_scenario_price": 527.84,
             "source": "simulated_path",
             "upper_confidence_price": 533.6
           },
@@ -2543,10 +2555,10 @@
             "expected_return": 0.0183,
             "lower_confidence_price": 510.24,
             "not_guaranteed_forecast": true,
-            "primary_scenario_price": 510.24,
-            "probability_of_reaching_primary_price": 0.3024,
+            "primary_scenario_price": 550.4,
+            "probability_of_reaching_primary_price": 0.303,
             "risk_scenario_price": 510.24,
-            "secondary_scenario_price": 550.4,
+            "secondary_scenario_price": 510.24,
             "source": "simulated_path",
             "upper_confidence_price": 550.4
           }
@@ -2624,16 +2636,16 @@
           },
           "primary_confirmation_level": {
             "condition": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
-            "distance_from_current": 0.95,
-            "distance_percent": 0.0018,
+            "distance_from_current": 6.71,
+            "distance_percent": 0.0127,
             "inputs": [
               "primary_path_5d",
               "recent_5d_high",
               "realized_volatility_band"
             ],
             "not_trading_advice": true,
-            "price": 527.84,
-            "source": "confluence"
+            "price": 533.6,
+            "source": "simulated_path"
           },
           "primary_invalidation_level": {
             "condition": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
@@ -2648,10 +2660,10 @@
             "price": 516.26,
             "source": "price_structure"
           },
-          "primary_probability": 0.3024,
-          "primary_scenario": "bearish_path",
-          "probability_gap": 0.0033,
-          "risk_probability": 0.253,
+          "primary_probability": 0.303,
+          "primary_scenario": "bounce_path",
+          "probability_gap": 0.0064,
+          "risk_probability": 0.2542,
           "risk_scenario_activation_level": {
             "condition": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
             "distance_from_current": -27.19,
@@ -2665,18 +2677,18 @@
             "price": 499.7,
             "source": "simulated_path"
           },
-          "secondary_probability": 0.2991,
+          "secondary_probability": 0.2966,
           "trend_reversal_confirmation_level": {
             "condition": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
-            "distance_from_current": 3.2,
-            "distance_percent": 0.0061,
+            "distance_from_current": 22.45,
+            "distance_percent": 0.0426,
             "inputs": [
               "primary_path_20d",
               "recent_20d_high",
               "20d_or_50d_moving_average"
             ],
             "not_trading_advice": true,
-            "price": 530.09,
+            "price": 549.34,
             "source": "price_structure"
           }
         },
@@ -2698,19 +2710,19 @@
           "source": "price_structure",
           "status": "available"
         },
-        "primary_probability": 0.3024,
-        "primary_scenario": "bearish_path",
-        "risk_probability": 0.253,
+        "primary_probability": 0.303,
+        "primary_scenario": "bounce_path",
+        "risk_probability": 0.2542,
         "risk_scenario": "analog_average_path",
-        "secondary_probability": 0.2991,
-        "secondary_scenario": "bounce_path",
+        "secondary_probability": 0.2966,
+        "secondary_scenario": "bearish_path",
         "source_note": "Derived from existing simulated paths, recent price structure and realized-volatility bands.",
         "summary": {
-          "plain_language": "DIA 当前主路径是 失败反抽情景，第二路径是 反抽情景。价格点位只是路径验证条件，不是操作建议。",
+          "plain_language": "DIA 当前主路径是 反抽情景，第二路径是 失败反抽情景。价格点位只是路径验证条件，不是操作建议。",
           "primary_confirmation_distance": {
-            "distance_from_current": 0.95,
-            "distance_percent": 0.0018,
-            "price": 527.84
+            "distance_from_current": 6.71,
+            "distance_percent": 0.0127,
+            "price": 533.6
           },
           "primary_invalidation_distance": {
             "distance_from_current": -10.63,
@@ -2736,12 +2748,12 @@
           },
           "not_trading_advice": true,
           "primary_confirmation_level": {
-            "confidence": "medium_high",
-            "distance_pct": 0.0018,
+            "confidence": "medium",
+            "distance_pct": 0.0127,
             "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
-            "price": 527.84,
-            "source": "confluence",
-            "source_type": "confluence"
+            "price": 533.6,
+            "source": "primary_path_5d + recent_5d_high + realized_volatility_band",
+            "source_type": "simulated_path"
           },
           "primary_invalidation_level": {
             "confidence": "medium",
@@ -2761,9 +2773,9 @@
           },
           "trend_reversal_confirmation_level": {
             "confidence": "medium",
-            "distance_pct": 0.0061,
+            "distance_pct": 0.0426,
             "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
-            "price": 530.09,
+            "price": 549.34,
             "source": "primary_path_20d + recent_20d_high + 20d_or_50d_moving_average",
             "source_type": "price_structure"
           }
@@ -2893,7 +2905,7 @@
               "DIA"
             ],
             "alert_level": "HIGH_CONVICTION",
-            "alert_score": 79,
+            "alert_score": 80,
             "alert_type": "Bounce Setup Alert",
             "confidence": "high",
             "conflicting_evidence": [],
@@ -2914,12 +2926,12 @@
                 "first_warning": 516.26
               },
               "primary_confirmation_level": {
-                "confidence": "medium_high",
-                "distance_pct": 0.0018,
+                "confidence": "medium",
+                "distance_pct": 0.0127,
                 "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
-                "price": 527.84,
-                "source": "confluence",
-                "source_type": "confluence"
+                "price": 533.6,
+                "source": "primary_path_5d + recent_5d_high + realized_volatility_band",
+                "source_type": "simulated_path"
               },
               "primary_invalidation_level": {
                 "confidence": "medium",
@@ -2939,9 +2951,9 @@
               },
               "trend_reversal_confirmation_level": {
                 "confidence": "medium",
-                "distance_pct": 0.0061,
+                "distance_pct": 0.0426,
                 "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
-                "price": 530.09,
+                "price": 549.34,
                 "source": "primary_path_20d + recent_20d_high + 20d_or_50d_moving_average",
                 "source_type": "price_structure"
               }
@@ -2990,7 +3002,7 @@
               "DIA"
             ],
             "alert_level": "HIGH_CONVICTION",
-            "alert_score": 75,
+            "alert_score": 76,
             "alert_type": "Trend Repair Alert",
             "confidence": "high",
             "conflicting_evidence": [],
@@ -3011,12 +3023,12 @@
                 "first_warning": 516.26
               },
               "primary_confirmation_level": {
-                "confidence": "medium_high",
-                "distance_pct": 0.0018,
+                "confidence": "medium",
+                "distance_pct": 0.0127,
                 "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
-                "price": 527.84,
-                "source": "confluence",
-                "source_type": "confluence"
+                "price": 533.6,
+                "source": "primary_path_5d + recent_5d_high + realized_volatility_band",
+                "source_type": "simulated_path"
               },
               "primary_invalidation_level": {
                 "confidence": "medium",
@@ -3036,9 +3048,9 @@
               },
               "trend_reversal_confirmation_level": {
                 "confidence": "medium",
-                "distance_pct": 0.0061,
+                "distance_pct": 0.0426,
                 "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
-                "price": 530.09,
+                "price": 549.34,
                 "source": "primary_path_20d + recent_20d_high + 20d_or_50d_moving_average",
                 "source_type": "price_structure"
               }
@@ -3081,7 +3093,7 @@
               "DIA"
             ],
             "alert_level": "WARNING",
-            "alert_score": 56,
+            "alert_score": 57,
             "alert_type": "Bottoming Setup Alert",
             "confidence": "medium",
             "conflicting_evidence": [
@@ -3109,12 +3121,12 @@
                 "first_warning": 516.26
               },
               "primary_confirmation_level": {
-                "confidence": "medium_high",
-                "distance_pct": 0.0018,
+                "confidence": "medium",
+                "distance_pct": 0.0127,
                 "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
-                "price": 527.84,
-                "source": "confluence",
-                "source_type": "confluence"
+                "price": 533.6,
+                "source": "primary_path_5d + recent_5d_high + realized_volatility_band",
+                "source_type": "simulated_path"
               },
               "primary_invalidation_level": {
                 "confidence": "medium",
@@ -3134,9 +3146,9 @@
               },
               "trend_reversal_confirmation_level": {
                 "confidence": "medium",
-                "distance_pct": 0.0061,
+                "distance_pct": 0.0426,
                 "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
-                "price": 530.09,
+                "price": 549.34,
                 "source": "primary_path_20d + recent_20d_high + 20d_or_50d_moving_average",
                 "source_type": "price_structure"
               }
@@ -3173,7 +3185,7 @@
               "DIA"
             ],
             "alert_level": "WATCH",
-            "alert_score": 37,
+            "alert_score": 38,
             "alert_type": "Risk Expansion Alert",
             "confidence": "low",
             "conflicting_evidence": [
@@ -3207,12 +3219,12 @@
                 "first_warning": 516.26
               },
               "primary_confirmation_level": {
-                "confidence": "medium_high",
-                "distance_pct": 0.0018,
+                "confidence": "medium",
+                "distance_pct": 0.0127,
                 "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
-                "price": 527.84,
-                "source": "confluence",
-                "source_type": "confluence"
+                "price": 533.6,
+                "source": "primary_path_5d + recent_5d_high + realized_volatility_band",
+                "source_type": "simulated_path"
               },
               "primary_invalidation_level": {
                 "confidence": "medium",
@@ -3232,9 +3244,9 @@
               },
               "trend_reversal_confirmation_level": {
                 "confidence": "medium",
-                "distance_pct": 0.0061,
+                "distance_pct": 0.0426,
                 "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
-                "price": 530.09,
+                "price": 549.34,
                 "source": "primary_path_20d + recent_20d_high + 20d_or_50d_moving_average",
                 "source_type": "price_structure"
               }
@@ -3271,7 +3283,7 @@
               "DIA"
             ],
             "alert_level": "NO_ALERT",
-            "alert_score": 30,
+            "alert_score": 31,
             "alert_type": "Failed Bounce Alert",
             "confidence": "low",
             "conflicting_evidence": [
@@ -3299,12 +3311,12 @@
                 "first_warning": 516.26
               },
               "primary_confirmation_level": {
-                "confidence": "medium_high",
-                "distance_pct": 0.0018,
+                "confidence": "medium",
+                "distance_pct": 0.0127,
                 "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
-                "price": 527.84,
-                "source": "confluence",
-                "source_type": "confluence"
+                "price": 533.6,
+                "source": "primary_path_5d + recent_5d_high + realized_volatility_band",
+                "source_type": "simulated_path"
               },
               "primary_invalidation_level": {
                 "confidence": "medium",
@@ -3324,9 +3336,9 @@
               },
               "trend_reversal_confirmation_level": {
                 "confidence": "medium",
-                "distance_pct": 0.0061,
+                "distance_pct": 0.0426,
                 "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
-                "price": 530.09,
+                "price": 549.34,
                 "source": "primary_path_20d + recent_20d_high + 20d_or_50d_moving_average",
                 "source_type": "price_structure"
               }
@@ -3364,7 +3376,7 @@
             "DIA"
           ],
           "alert_level": "HIGH_CONVICTION",
-          "alert_score": 79,
+          "alert_score": 80,
           "alert_type": "Bounce Setup Alert",
           "confidence": "high",
           "conflicting_evidence": [],
@@ -3385,12 +3397,12 @@
               "first_warning": 516.26
             },
             "primary_confirmation_level": {
-              "confidence": "medium_high",
-              "distance_pct": 0.0018,
+              "confidence": "medium",
+              "distance_pct": 0.0127,
               "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
-              "price": 527.84,
-              "source": "confluence",
-              "source_type": "confluence"
+              "price": 533.6,
+              "source": "primary_path_5d + recent_5d_high + realized_volatility_band",
+              "source_type": "simulated_path"
             },
             "primary_invalidation_level": {
               "confidence": "medium",
@@ -3410,9 +3422,9 @@
             },
             "trend_reversal_confirmation_level": {
               "confidence": "medium",
-              "distance_pct": 0.0061,
+              "distance_pct": 0.0426,
               "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
-              "price": 530.09,
+              "price": 549.34,
               "source": "primary_path_20d + recent_20d_high + 20d_or_50d_moving_average",
               "source_type": "price_structure"
             }
@@ -3671,7 +3683,7 @@
             "event_type": "growth_negative",
             "expected_horizon": "3d-20d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 91,
+            "freshness_score": 88,
             "headline": "We're buying the dip on one of our stocks for two key reasons",
             "importance_score": 84,
             "narrative": "recession_fear",
@@ -3691,14 +3703,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 66,
+            "confidence_score": 65,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 38,
+            "freshness_score": 35,
             "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3718,14 +3730,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 66,
+            "confidence_score": 65,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 36,
+            "freshness_score": 34,
             "headline": "From 'oil' to 'shock',  here's what Kalshi traders expect Fed Chair Kevin Warsh will say this week",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3739,47 +3751,20 @@
               "QQQ",
               "IWM",
               "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 60,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 12,
-            "headline": "El Niño may push global warming to 2C or higher in the short term",
-            "importance_score": 99,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-27T08:55:01+00:00",
-            "source": "Bloomberg"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
               "USO",
               "CL=F",
               "XLE",
               "^VIX"
             ],
             "confidence": "medium",
-            "confidence_score": 62,
+            "confidence_score": 61,
             "detected_event_conditions": [
               "oil_shock_relief"
             ],
             "event_type": "oil_shock_relief",
             "expected_horizon": "1d-5d",
             "expected_market_direction": "risk_on",
-            "freshness_score": 21,
+            "freshness_score": 19,
             "headline": "We're buying more of a slumping industrial stock and a hard-hit chipmaker",
             "importance_score": 86,
             "narrative": "oil_relief_rally",
@@ -3817,7 +3802,7 @@
           ],
           "market_narrative": "geopolitics_escalation_risk_off",
           "narrative_direction": "supports_risk_expansion",
-          "narrative_strength": 100,
+          "narrative_strength": 67,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
             {
@@ -3843,28 +3828,16 @@
               "importance_score": 100,
               "published_at": "2026-07-27T18:58:23+00:00",
               "source": "CNBC"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "El Niño may push global warming to 2C or higher in the short term",
-              "importance_score": 99,
-              "published_at": "2026-07-27T08:55:01+00:00",
-              "source": "Bloomberg"
             }
           ]
         },
         "news_direction": "risk_off",
         "prediction_logic_effect": {
-          "after_primary_probability": 0.3024,
-          "after_primary_scenario": "bearish_path",
+          "after_primary_probability": 0.303,
+          "after_primary_scenario": "bounce_path",
           "before_primary_probability": 0.323,
           "before_primary_scenario": "bounce_path",
-          "confirmation_delta": -5.0,
+          "confirmation_delta": -4.01,
           "impact": "potential_conflict_unconfirmed",
           "not_a_trading_signal": true,
           "overlay_applied": true,
@@ -3877,24 +3850,24 @@
           "path_weight_deltas": {
             "analog_path_weight": 0.0,
             "base_path_weight": 0.01,
-            "bearish_path_weight": 0.0385,
-            "bounce_path_weight": -0.0135
+            "bearish_path_weight": 0.0311,
+            "bounce_path_weight": -0.0109
           },
           "predictor_deltas": {
-            "bounce_predictor": -0.0116,
-            "downside_continuation_predictor": 0.0212,
-            "risk_expansion_predictor": 0.025,
+            "bounce_predictor": -0.0093,
+            "downside_continuation_predictor": 0.0171,
+            "risk_expansion_predictor": 0.0202,
             "trend_reversal_predictor": 0.0
           },
-          "primary_probability_delta": -0.0206,
-          "primary_scenario_changed": true,
-          "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay",
+          "primary_probability_delta": -0.02,
+          "primary_scenario_changed": false,
+          "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay",
           "validation_type": "daily"
         },
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0013,
-            "avg_equity_futures_1d_return": 0.0016,
+            "avg_equity_futures_1d_return": 0.0007,
             "confirmed_checks": [
               "HYG/LQD 走弱"
             ],
@@ -3910,7 +3883,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0011,
-            "oil_proxy_1d_return": -0.0382,
+            "oil_proxy_1d_return": -0.0172,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -3957,13 +3930,13 @@
         "基准情景：使用相似样本平均路径；所有路径都是概率情景，不是确定预测。"
       ],
       "path_weight_model": {
-        "analog_path_weight": 0.253,
-        "base_path_weight": 0.1455,
-        "bearish_path_weight": 0.3024,
-        "bounce_path_weight": 0.2991,
+        "analog_path_weight": 0.2542,
+        "base_path_weight": 0.1462,
+        "bearish_path_weight": 0.2966,
+        "bounce_path_weight": 0.303,
         "low_confidence_simulation": false,
         "news_event_overlay_applied": true,
-        "news_event_overlay_note": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay",
+        "news_event_overlay_note": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay",
         "simulation_confidence_level": "medium",
         "weight_factors": {
           "bounce_probability": 0.5707,
@@ -5326,7 +5299,7 @@
       "predictors": {
         "bounce_predictor": {
           "best_horizon": "3d-10d",
-          "bounce_probability": 0.5218,
+          "bounce_probability": 0.524,
           "breadth_confirmation": 0.9792,
           "breadth_quality": 1.0,
           "confidence": 0.7095,
@@ -5361,11 +5334,11 @@
             "credit stabilization: 0.95",
             "flow confirmation: 0.68",
             "Alpha v1 bounce probability: 0.57",
-            "news_event_overlay:-0.012"
+            "news_event_overlay:-0.009"
           ],
           "options_quality": 0.92,
           "panic_release_score": 0.3246,
-          "probability": 0.5218,
+          "probability": 0.524,
           "tail_risk_score": 0.3591,
           "term_structure_state": "contango",
           "volatility_reversal_score": 0.5171
@@ -5377,7 +5350,7 @@
           "break_level": 516.26,
           "confidence": 0.5965,
           "crowding_proxy_score": 0.2856,
-          "downside_continuation_probability": 0.4946,
+          "downside_continuation_probability": 0.4905,
           "failed_bounce_options_risk": 0.4,
           "flow_confirmation_score": 0.6774,
           "flow_conflict_score": 0.5373,
@@ -5396,10 +5369,10 @@
             "base downside continuation: 0.59",
             "flow conflict: 0.54",
             "liquidity stress proxy: 0.25",
-            "news_event_overlay:+0.021"
+            "news_event_overlay:+0.017"
           ],
           "options_quality": 0.92,
-          "probability": 0.4946,
+          "probability": 0.4905,
           "risk_triggers": [
             "VIX rising",
             "HYG/LQD weakens",
@@ -5437,11 +5410,11 @@
             "VIX percentile: 0.64",
             "flow conflict: 0.54",
             "news risk: 0.35",
-            "news_event_overlay:+0.025"
+            "news_event_overlay:+0.020"
           ],
           "options_quality": 0.92,
-          "probability": 0.4578,
-          "risk_expansion_probability": 0.4578,
+          "probability": 0.453,
+          "risk_expansion_probability": 0.453,
           "tail_risk_score": 0.3591,
           "term_structure_state": "contango",
           "volatility_risk": 0.453
@@ -5487,7 +5460,7 @@
       "predictors_v4": {
         "bounce_predictor": {
           "best_horizon": "3d-10d",
-          "bounce_probability": 0.5218,
+          "bounce_probability": 0.524,
           "breadth_confirmation": 0.9792,
           "breadth_quality": 1.0,
           "confidence": 0.7095,
@@ -5522,11 +5495,11 @@
             "credit stabilization: 0.95",
             "flow confirmation: 0.68",
             "Alpha v1 bounce probability: 0.57",
-            "news_event_overlay:-0.012"
+            "news_event_overlay:-0.009"
           ],
           "options_quality": 0.92,
           "panic_release_score": 0.3246,
-          "probability": 0.5218,
+          "probability": 0.524,
           "tail_risk_score": 0.3591,
           "term_structure_state": "contango",
           "volatility_reversal_score": 0.5171
@@ -5538,7 +5511,7 @@
           "break_level": 516.26,
           "confidence": 0.5965,
           "crowding_proxy_score": 0.2856,
-          "downside_continuation_probability": 0.4946,
+          "downside_continuation_probability": 0.4905,
           "failed_bounce_options_risk": 0.4,
           "flow_confirmation_score": 0.6774,
           "flow_conflict_score": 0.5373,
@@ -5557,10 +5530,10 @@
             "base downside continuation: 0.59",
             "flow conflict: 0.54",
             "liquidity stress proxy: 0.25",
-            "news_event_overlay:+0.021"
+            "news_event_overlay:+0.017"
           ],
           "options_quality": 0.92,
-          "probability": 0.4946,
+          "probability": 0.4905,
           "risk_triggers": [
             "VIX rising",
             "HYG/LQD weakens",
@@ -5598,11 +5571,11 @@
             "VIX percentile: 0.64",
             "flow conflict: 0.54",
             "news risk: 0.35",
-            "news_event_overlay:+0.025"
+            "news_event_overlay:+0.020"
           ],
           "options_quality": 0.92,
-          "probability": 0.4578,
-          "risk_expansion_probability": 0.4578,
+          "probability": 0.453,
+          "risk_expansion_probability": 0.453,
           "tail_risk_score": 0.3591,
           "term_structure_state": "contango",
           "volatility_risk": 0.453
@@ -5655,28 +5628,28 @@
         {
           "name": "Base case",
           "name_cn": "基准情景",
-          "probability_weight": 0.1455,
+          "probability_weight": 0.1462,
           "return_20d": 0.0004558137306670595,
           "summary_cn": "按最相似历史样本的平均路径推演。"
         },
         {
           "name": "Bounce case",
           "name_cn": "反弹情景",
-          "probability_weight": 0.2991,
+          "probability_weight": 0.303,
           "return_20d": 0.042603402043932315,
           "summary_cn": "如果 Alpha v1 信号继续有效，路径更接近历史上较好的反抽样本。"
         },
         {
           "name": "Bearish case",
           "name_cn": "失败反弹情景",
-          "probability_weight": 0.3024,
+          "probability_weight": 0.2966,
           "return_20d": -0.0515990542700804,
           "summary_cn": "如果波动和信用代理恶化，路径更接近历史上较差的一组样本。"
         },
         {
           "name": "Historical analog case",
           "name_cn": "历史相似情景",
-          "probability_weight": 0.253,
+          "probability_weight": 0.2542,
           "return_20d": 0.0004558137306670595,
           "summary_cn": "只看最相似历史样本后的实际表现，不做确定性预测。"
         }
@@ -5685,34 +5658,34 @@
         "all_scenarios": [
           {
             "confidence": "medium",
-            "expected_horizon": "3d-10d",
-            "label": "失败反抽情景",
-            "probability": 0.3024,
-            "reason": "Downside/Risk predictors 为 47%/43%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
-            "scenario": "bearish_path"
+            "expected_horizon": "10d-20d",
+            "label": "反抽情景",
+            "probability": 0.303,
+            "reason": "Bounce Predictor 53%，多源确认 70/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay.",
+            "scenario": "bounce_path"
           },
           {
             "confidence": "medium",
-            "expected_horizon": "10d-20d",
-            "label": "反抽情景",
-            "probability": 0.2991,
-            "reason": "Bounce Predictor 53%，多源确认 70/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
-            "scenario": "bounce_path"
+            "expected_horizon": "3d-10d",
+            "label": "失败反抽情景",
+            "probability": 0.2966,
+            "reason": "Downside/Risk predictors 为 47%/43%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay.",
+            "scenario": "bearish_path"
           },
           {
             "confidence": "medium",
             "expected_horizon": "20d-60d",
             "label": "历史均值情景",
-            "probability": 0.253,
-            "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
+            "probability": 0.2542,
+            "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay.",
             "scenario": "analog_average_path"
           },
           {
             "confidence": "medium",
             "expected_horizon": "3d-20d",
             "label": "综合期望情景",
-            "probability": 0.1455,
-            "reason": "综合期望用于平衡反抽、失败反抽、历史均值和数据不完整带来的不确定性。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
+            "probability": 0.1462,
+            "reason": "综合期望用于平衡反抽、失败反抽、历史均值和数据不完整带来的不确定性。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay.",
             "scenario": "expected_path"
           }
         ],
@@ -5721,93 +5694,93 @@
         "path_reliability": "medium",
         "primary": {
           "confidence": "medium",
-          "expected_horizon": "3d-10d",
-          "label": "失败反抽情景",
-          "probability": 0.3024,
-          "reason": "Downside/Risk predictors 为 47%/43%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
-          "scenario": "bearish_path"
+          "expected_horizon": "10d-20d",
+          "label": "反抽情景",
+          "probability": 0.303,
+          "reason": "Bounce Predictor 53%，多源确认 70/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay.",
+          "scenario": "bounce_path"
         },
-        "primary_scenario": "bearish_path",
-        "primary_secondary_gap": 0.0033,
+        "primary_scenario": "bounce_path",
+        "primary_secondary_gap": 0.0064,
         "primary_to_secondary_switch_conditions": [
           "VIX 与新闻方向背离",
           "HYG/LQD 转弱",
           "重大新闻没有被价格继续确认",
-          "VIX 快速回落",
-          "DIA 重新站上主路径确认价",
-          "第二路径 bounce_path 获得多源确认"
+          "DIA 跌破主路径失效价",
+          "油价或美元重新走强",
+          "第二路径 bearish_path 获得多源确认"
         ],
-        "probability_gap": 0.0033,
+        "probability_gap": 0.0064,
         "ranking_note": "Scenario ranking includes a bounded News/Event overlay when a major event or macro calendar risk is detected. It is probabilistic, not deterministic.",
         "risk_scenario": "bearish_path",
-        "scenario_probability": 0.3024,
+        "scenario_probability": 0.303,
         "secondary": {
           "confidence": "medium",
-          "expected_horizon": "10d-20d",
-          "label": "反抽情景",
-          "probability": 0.2991,
-          "reason": "Bounce Predictor 53%，多源确认 70/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
-          "scenario": "bounce_path"
+          "expected_horizon": "3d-10d",
+          "label": "失败反抽情景",
+          "probability": 0.2966,
+          "reason": "Downside/Risk predictors 为 47%/43%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay.",
+          "scenario": "bearish_path"
         },
-        "secondary_scenario": "bounce_path",
+        "secondary_scenario": "bearish_path",
         "switching_conditions": [
           "VIX 与新闻方向背离",
           "HYG/LQD 转弱",
           "重大新闻没有被价格继续确认",
-          "VIX 快速回落",
-          "DIA 重新站上主路径确认价",
-          "第二路径 bounce_path 获得多源确认"
+          "DIA 跌破主路径失效价",
+          "油价或美元重新走强",
+          "第二路径 bearish_path 获得多源确认"
         ],
         "tertiary": {
           "confidence": "medium",
           "expected_horizon": "20d-60d",
           "label": "历史均值情景",
-          "probability": 0.253,
-          "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
+          "probability": 0.2542,
+          "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay.",
           "scenario": "analog_average_path"
         }
       },
       "scenario_weights": {
-        "base_scenario": 0.1455,
-        "bearish_scenario": 0.3024,
-        "bounce_scenario": 0.2991,
-        "historical_analog_average": 0.253
+        "base_scenario": 0.1462,
+        "bearish_scenario": 0.2966,
+        "bounce_scenario": 0.303,
+        "historical_analog_average": 0.2542
       },
       "shadow_evidence_v1": {
         "alert_status_by_type": {
           "Bottoming Setup Alert": {
             "alert_level": "WARNING",
-            "alert_score": 56,
+            "alert_score": 57,
             "confidence": "medium"
           },
           "Bounce Setup Alert": {
             "alert_level": "HIGH_CONVICTION",
-            "alert_score": 79,
+            "alert_score": 80,
             "confidence": "high"
           },
           "Failed Bounce Alert": {
             "alert_level": "NO_ALERT",
-            "alert_score": 30,
+            "alert_score": 31,
             "confidence": "low"
           },
           "Risk Expansion Alert": {
             "alert_level": "WATCH",
-            "alert_score": 37,
+            "alert_score": 38,
             "confidence": "low"
           },
           "Trend Repair Alert": {
             "alert_level": "HIGH_CONVICTION",
-            "alert_score": 75,
+            "alert_score": 76,
             "confidence": "high"
           }
         },
         "alpha_v1_threshold_unchanged": 0.32534311,
         "confluence_level": "mixed",
-        "confluence_score": 49,
-        "daily_market_summary_shadow": "DIA shadow evidence: strongest alert is Bounce Setup Alert; confluence is mixed at 49/100. This evidence is for forecast validation and challenger comparison only.",
+        "confluence_score": 55,
+        "daily_market_summary_shadow": "DIA shadow evidence: strongest alert is Bounce Setup Alert; confluence is mixed at 55/100. This evidence is for forecast validation and challenger comparison only.",
         "does_not_override_baseline_v1": true,
         "does_not_rewrite_forecast_records": true,
-        "dominant_path_shadow": "failed_bounce",
+        "dominant_path_shadow": "bounce",
         "enters_as_shadow_evidence": [
           "signal_confirmation",
           "scenario_ranking",
@@ -5854,12 +5827,12 @@
             "extended": 550.4
           },
           "primary_confirmation_level": {
-            "confidence": "medium_high",
-            "distance_pct": 0.0018,
+            "confidence": "medium",
+            "distance_pct": 0.0127,
             "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
-            "price": 527.84,
-            "source": "confluence",
-            "source_type": "confluence"
+            "price": 533.6,
+            "source": "primary_path_5d + recent_5d_high + realized_volatility_band",
+            "source_type": "simulated_path"
           },
           "primary_invalidation_level": {
             "confidence": "medium",
@@ -5879,9 +5852,9 @@
           },
           "trend_reversal_confirmation_level": {
             "confidence": "medium",
-            "distance_pct": 0.0061,
+            "distance_pct": 0.0426,
             "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
-            "price": 530.09,
+            "price": 549.34,
             "source": "primary_path_20d + recent_20d_high + 20d_or_50d_moving_average",
             "source_type": "price_structure"
           }
@@ -5889,7 +5862,7 @@
         "role": "challenger_shadow_evidence",
         "strongest_alert": {
           "alert_level": "HIGH_CONVICTION",
-          "alert_score": 79,
+          "alert_score": 80,
           "alert_type": "Bounce Setup Alert",
           "confidence": "high"
         },
@@ -5962,7 +5935,7 @@
       },
       "signal_confirmation": {
         "confirmation_level": "mixed",
-        "confirmation_score": 65.0,
+        "confirmation_score": 65.99,
         "conflicting_evidence": [
           {
             "detail": "VIX is rising or not confirming a bounce.",
@@ -5977,7 +5950,7 @@
           {
             "detail": "重大 risk-off 新闻提高风险路径权重。",
             "name": "risk_off_news_event",
-            "score": 35.0
+            "score": 34.01
           }
         ],
         "data_completeness_cap_applied": false,
@@ -6006,7 +5979,7 @@
           }
         ],
         "missing_evidence_cap_applied": true,
-        "signal_confirmation_score": 65.0,
+        "signal_confirmation_score": 65.99,
         "supporting_evidence": [
           {
             "detail": "Frozen Alpha v1 is triggered; this remains research-only.",
@@ -6045,16 +6018,16 @@
           }
         ]
       },
-      "signal_confirmation_score": 65.0,
+      "signal_confirmation_score": 65.99,
       "symbol": "DIA",
       "trend_reversal_probability": 0.3171241548330687
     },
     "IWM": {
-      "analog_path_weight": 0.2479,
+      "analog_path_weight": 0.2491,
       "as_of": "2026-07-28",
-      "base_path_weight": 0.1758,
-      "bearish_path_weight": 0.3563,
-      "bounce_path_weight": 0.22,
+      "base_path_weight": 0.1766,
+      "bearish_path_weight": 0.3507,
+      "bounce_path_weight": 0.2236,
       "bounce_probability": 0.40434541,
       "confluence": {
         "conflicting_evidence": [
@@ -6065,16 +6038,16 @@
             "source": "news"
           },
           {
-            "detail": "重大 risk-off 新闻提高风险路径权重。",
-            "name": "risk_off_news_event",
-            "score": 68,
-            "source": "signal_confirmation"
-          },
-          {
             "detail": "价格结构对风险路径构成冲突。",
             "name": "修复结构冲突",
             "score": 68,
             "source": "price"
+          },
+          {
+            "detail": "重大 risk-off 新闻提高风险路径权重。",
+            "name": "risk_off_news_event",
+            "score": 67,
+            "source": "signal_confirmation"
           },
           {
             "detail": "指数路径与内部参与度存在冲突。",
@@ -6138,9 +6111,9 @@
         ],
         "not_trading_advice": "This is forecast confirmation only, not a buy/sell/entry/exit or position-sizing recommendation.",
         "primary_label": "失败反抽情景",
-        "primary_probability": 0.3563,
+        "primary_probability": 0.3507,
         "primary_scenario": "bearish_path",
-        "probability_gap": 0.1084,
+        "probability_gap": 0.1016,
         "related_price_levels": {
           "primary_confirmation_level": {
             "confidence": "medium",
@@ -6175,7 +6148,7 @@
             "source_type": "price_structure"
           }
         },
-        "secondary_probability": 0.2479,
+        "secondary_probability": 0.2491,
         "secondary_scenario": "analog_average_path",
         "strong_conclusion_allowed": false,
         "supporting_evidence": [
@@ -6216,9 +6189,9 @@
             "source": "signal_confirmation"
           },
           {
-            "detail": "primary-secondary gap 10.8%",
+            "detail": "primary-secondary gap 10.2%",
             "name": "主次路径差距可观察",
-            "score": 10.84,
+            "score": 10.16,
             "source": "scenario_gap"
           },
           {
@@ -6500,7 +6473,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 278.58,
-            "probability_of_reaching_primary_price": 0.3563,
+            "probability_of_reaching_primary_price": 0.3507,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 278.58,
@@ -6521,7 +6494,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 290.78,
-            "probability_of_reaching_primary_price": 0.3563,
+            "probability_of_reaching_primary_price": 0.3507,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 290.78,
@@ -6542,7 +6515,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 269.51,
-            "probability_of_reaching_primary_price": 0.3563,
+            "probability_of_reaching_primary_price": 0.3507,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 269.51,
@@ -6563,7 +6536,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 285.61,
-            "probability_of_reaching_primary_price": 0.3563,
+            "probability_of_reaching_primary_price": 0.3507,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 285.61,
@@ -6584,7 +6557,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 279.14,
-            "probability_of_reaching_primary_price": 0.3563,
+            "probability_of_reaching_primary_price": 0.3507,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 279.14,
@@ -6605,7 +6578,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 261.18,
-            "probability_of_reaching_primary_price": 0.3563,
+            "probability_of_reaching_primary_price": 0.3507,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 261.18,
@@ -6625,7 +6598,7 @@
             "lower_confidence_price": 278.58,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 278.58,
-            "probability_of_reaching_primary_price": 0.3563,
+            "probability_of_reaching_primary_price": 0.3507,
             "risk_scenario_price": 278.58,
             "secondary_scenario_price": 295.29,
             "source": "simulated_path",
@@ -6639,7 +6612,7 @@
             "lower_confidence_price": 290.78,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 290.78,
-            "probability_of_reaching_primary_price": 0.3563,
+            "probability_of_reaching_primary_price": 0.3507,
             "risk_scenario_price": 290.78,
             "secondary_scenario_price": 293.32,
             "source": "simulated_path",
@@ -6653,7 +6626,7 @@
             "lower_confidence_price": 269.51,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 269.51,
-            "probability_of_reaching_primary_price": 0.3563,
+            "probability_of_reaching_primary_price": 0.3507,
             "risk_scenario_price": 269.51,
             "secondary_scenario_price": 296.25,
             "source": "simulated_path",
@@ -6667,7 +6640,7 @@
             "lower_confidence_price": 285.61,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 285.61,
-            "probability_of_reaching_primary_price": 0.3563,
+            "probability_of_reaching_primary_price": 0.3507,
             "risk_scenario_price": 285.61,
             "secondary_scenario_price": 293.23,
             "source": "simulated_path",
@@ -6681,7 +6654,7 @@
             "lower_confidence_price": 279.14,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 279.14,
-            "probability_of_reaching_primary_price": 0.3563,
+            "probability_of_reaching_primary_price": 0.3507,
             "risk_scenario_price": 279.14,
             "secondary_scenario_price": 292.31,
             "source": "simulated_path",
@@ -6695,7 +6668,7 @@
             "lower_confidence_price": 261.18,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 261.18,
-            "probability_of_reaching_primary_price": 0.3563,
+            "probability_of_reaching_primary_price": 0.3507,
             "risk_scenario_price": 261.18,
             "secondary_scenario_price": 298.51,
             "source": "simulated_path",
@@ -6799,10 +6772,10 @@
             "price": 285.61,
             "source": "price_structure"
           },
-          "primary_probability": 0.3563,
+          "primary_probability": 0.3507,
           "primary_scenario": "bearish_path",
-          "probability_gap": 0.1084,
-          "risk_probability": 0.22,
+          "probability_gap": 0.1016,
+          "risk_probability": 0.2236,
           "risk_scenario_activation_level": {
             "condition": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
             "distance_from_current": -23.86,
@@ -6816,7 +6789,7 @@
             "price": 269.51,
             "source": "simulated_path"
           },
-          "secondary_probability": 0.2479,
+          "secondary_probability": 0.2491,
           "trend_reversal_confirmation_level": {
             "condition": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
             "distance_from_current": 7.08,
@@ -6849,11 +6822,11 @@
           "source": "price_structure",
           "status": "available"
         },
-        "primary_probability": 0.3563,
+        "primary_probability": 0.3507,
         "primary_scenario": "bearish_path",
-        "risk_probability": 0.22,
+        "risk_probability": 0.2236,
         "risk_scenario": "bounce_path",
-        "secondary_probability": 0.2479,
+        "secondary_probability": 0.2491,
         "secondary_scenario": "analog_average_path",
         "source_note": "Derived from existing simulated paths, recent price structure and realized-volatility bands.",
         "summary": {
@@ -7782,7 +7755,7 @@
             "event_type": "growth_negative",
             "expected_horizon": "3d-20d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 91,
+            "freshness_score": 88,
             "headline": "We're buying the dip on one of our stocks for two key reasons",
             "importance_score": 84,
             "narrative": "recession_fear",
@@ -7802,14 +7775,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 66,
+            "confidence_score": 65,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 38,
+            "freshness_score": 35,
             "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7829,14 +7802,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 66,
+            "confidence_score": 65,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 36,
+            "freshness_score": 34,
             "headline": "From 'oil' to 'shock',  here's what Kalshi traders expect Fed Chair Kevin Warsh will say this week",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7850,47 +7823,20 @@
               "QQQ",
               "IWM",
               "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 60,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 12,
-            "headline": "El Niño may push global warming to 2C or higher in the short term",
-            "importance_score": 99,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-27T08:55:01+00:00",
-            "source": "Bloomberg"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
               "USO",
               "CL=F",
               "XLE",
               "^VIX"
             ],
             "confidence": "medium",
-            "confidence_score": 62,
+            "confidence_score": 61,
             "detected_event_conditions": [
               "oil_shock_relief"
             ],
             "event_type": "oil_shock_relief",
             "expected_horizon": "1d-5d",
             "expected_market_direction": "risk_on",
-            "freshness_score": 21,
+            "freshness_score": 19,
             "headline": "We're buying more of a slumping industrial stock and a hard-hit chipmaker",
             "importance_score": 86,
             "narrative": "oil_relief_rally",
@@ -7928,7 +7874,7 @@
           ],
           "market_narrative": "geopolitics_escalation_risk_off",
           "narrative_direction": "supports_risk_expansion",
-          "narrative_strength": 100,
+          "narrative_strength": 67,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
             {
@@ -7954,28 +7900,16 @@
               "importance_score": 100,
               "published_at": "2026-07-27T18:58:23+00:00",
               "source": "CNBC"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "El Niño may push global warming to 2C or higher in the short term",
-              "importance_score": 99,
-              "published_at": "2026-07-27T08:55:01+00:00",
-              "source": "Bloomberg"
             }
           ]
         },
         "news_direction": "risk_off",
         "prediction_logic_effect": {
-          "after_primary_probability": 0.3563,
+          "after_primary_probability": 0.3507,
           "after_primary_scenario": "bearish_path",
           "before_primary_probability": 0.3302,
           "before_primary_scenario": "bearish_path",
-          "confirmation_delta": -5.0,
+          "confirmation_delta": -4.01,
           "impact": "text_support_unconfirmed",
           "not_a_trading_signal": true,
           "overlay_applied": true,
@@ -7988,24 +7922,24 @@
           "path_weight_deltas": {
             "analog_path_weight": 0.0,
             "base_path_weight": 0.01,
-            "bearish_path_weight": 0.0385,
-            "bounce_path_weight": -0.0135
+            "bearish_path_weight": 0.0311,
+            "bounce_path_weight": -0.0109
           },
           "predictor_deltas": {
-            "bounce_predictor": -0.0116,
-            "downside_continuation_predictor": 0.0212,
-            "risk_expansion_predictor": 0.025,
+            "bounce_predictor": -0.0093,
+            "downside_continuation_predictor": 0.0171,
+            "risk_expansion_predictor": 0.0202,
             "trend_reversal_predictor": 0.0
           },
-          "primary_probability_delta": 0.0261,
+          "primary_probability_delta": 0.0205,
           "primary_scenario_changed": false,
-          "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay",
+          "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay",
           "validation_type": "daily"
         },
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0013,
-            "avg_equity_futures_1d_return": 0.0016,
+            "avg_equity_futures_1d_return": 0.0007,
             "confirmed_checks": [
               "HYG/LQD 走弱"
             ],
@@ -8021,7 +7955,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0011,
-            "oil_proxy_1d_return": -0.0382,
+            "oil_proxy_1d_return": -0.0172,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -8068,13 +8002,13 @@
         "基准情景：使用相似样本平均路径；所有路径都是概率情景，不是确定预测。"
       ],
       "path_weight_model": {
-        "analog_path_weight": 0.2479,
-        "base_path_weight": 0.1758,
-        "bearish_path_weight": 0.3563,
-        "bounce_path_weight": 0.22,
+        "analog_path_weight": 0.2491,
+        "base_path_weight": 0.1766,
+        "bearish_path_weight": 0.3507,
+        "bounce_path_weight": 0.2236,
         "low_confidence_simulation": true,
         "news_event_overlay_applied": true,
-        "news_event_overlay_note": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay",
+        "news_event_overlay_note": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay",
         "simulation_confidence_level": "low",
         "weight_factors": {
           "bounce_probability": 0.4043,
@@ -9437,7 +9371,7 @@
       "predictors": {
         "bounce_predictor": {
           "best_horizon": "3d-10d",
-          "bounce_probability": 0.3159,
+          "bounce_probability": 0.3181,
           "breadth_confirmation": 0.4959,
           "breadth_quality": 0.64,
           "confidence": 0.608,
@@ -9477,11 +9411,11 @@
             "flow confirmation: 0.57",
             "breadth confirmation: 0.50",
             "Alpha v1 bounce probability: 0.40",
-            "news_event_overlay:-0.012"
+            "news_event_overlay:-0.009"
           ],
           "options_quality": 0.92,
           "panic_release_score": 0.3246,
-          "probability": 0.3159,
+          "probability": 0.3181,
           "tail_risk_score": 0.3591,
           "term_structure_state": "contango",
           "volatility_reversal_score": 0.5171
@@ -9493,7 +9427,7 @@
           "break_level": 291.17,
           "confidence": 0.698,
           "crowding_proxy_score": 0.0409,
-          "downside_continuation_probability": 0.5888,
+          "downside_continuation_probability": 0.5847,
           "failed_bounce_options_risk": 0.4,
           "flow_confirmation_score": 0.5725,
           "flow_conflict_score": 0.5373,
@@ -9512,10 +9446,10 @@
             "base downside continuation: 0.57",
             "breadth conflict: 0.56",
             "flow conflict: 0.54",
-            "news_event_overlay:+0.021"
+            "news_event_overlay:+0.017"
           ],
           "options_quality": 0.92,
-          "probability": 0.5888,
+          "probability": 0.5847,
           "risk_triggers": [
             "VIX rising",
             "HYG/LQD weakens",
@@ -9553,11 +9487,11 @@
             "VIX percentile: 0.64",
             "breadth deterioration: 0.62",
             "flow conflict: 0.54",
-            "news_event_overlay:+0.025"
+            "news_event_overlay:+0.020"
           ],
           "options_quality": 0.92,
-          "probability": 0.4807,
-          "risk_expansion_probability": 0.4807,
+          "probability": 0.4759,
+          "risk_expansion_probability": 0.4759,
           "tail_risk_score": 0.3591,
           "term_structure_state": "contango",
           "volatility_risk": 0.453
@@ -9603,7 +9537,7 @@
       "predictors_v4": {
         "bounce_predictor": {
           "best_horizon": "3d-10d",
-          "bounce_probability": 0.3159,
+          "bounce_probability": 0.3181,
           "breadth_confirmation": 0.4959,
           "breadth_quality": 0.64,
           "confidence": 0.608,
@@ -9643,11 +9577,11 @@
             "flow confirmation: 0.57",
             "breadth confirmation: 0.50",
             "Alpha v1 bounce probability: 0.40",
-            "news_event_overlay:-0.012"
+            "news_event_overlay:-0.009"
           ],
           "options_quality": 0.92,
           "panic_release_score": 0.3246,
-          "probability": 0.3159,
+          "probability": 0.3181,
           "tail_risk_score": 0.3591,
           "term_structure_state": "contango",
           "volatility_reversal_score": 0.5171
@@ -9659,7 +9593,7 @@
           "break_level": 291.17,
           "confidence": 0.698,
           "crowding_proxy_score": 0.0409,
-          "downside_continuation_probability": 0.5888,
+          "downside_continuation_probability": 0.5847,
           "failed_bounce_options_risk": 0.4,
           "flow_confirmation_score": 0.5725,
           "flow_conflict_score": 0.5373,
@@ -9678,10 +9612,10 @@
             "base downside continuation: 0.57",
             "breadth conflict: 0.56",
             "flow conflict: 0.54",
-            "news_event_overlay:+0.021"
+            "news_event_overlay:+0.017"
           ],
           "options_quality": 0.92,
-          "probability": 0.5888,
+          "probability": 0.5847,
           "risk_triggers": [
             "VIX rising",
             "HYG/LQD weakens",
@@ -9719,11 +9653,11 @@
             "VIX percentile: 0.64",
             "breadth deterioration: 0.62",
             "flow conflict: 0.54",
-            "news_event_overlay:+0.025"
+            "news_event_overlay:+0.020"
           ],
           "options_quality": 0.92,
-          "probability": 0.4807,
-          "risk_expansion_probability": 0.4807,
+          "probability": 0.4759,
+          "risk_expansion_probability": 0.4759,
           "tail_risk_score": 0.3591,
           "term_structure_state": "contango",
           "volatility_risk": 0.453
@@ -9776,28 +9710,28 @@
         {
           "name": "Base case",
           "name_cn": "基准情景",
-          "probability_weight": 0.1758,
+          "probability_weight": 0.1766,
           "return_20d": 0.009822438207364392,
           "summary_cn": "按最相似历史样本的平均路径推演。"
         },
         {
           "name": "Bounce case",
           "name_cn": "反弹情景",
-          "probability_weight": 0.22,
+          "probability_weight": 0.2236,
           "return_20d": 0.09026948577316159,
           "summary_cn": "如果 Alpha v1 信号继续有效，路径更接近历史上较好的反抽样本。"
         },
         {
           "name": "Bearish case",
           "name_cn": "失败反弹情景",
-          "probability_weight": 0.3563,
+          "probability_weight": 0.3507,
           "return_20d": -0.08131489287772178,
           "summary_cn": "如果波动和信用代理恶化，路径更接近历史上较差的一组样本。"
         },
         {
           "name": "Historical analog case",
           "name_cn": "历史相似情景",
-          "probability_weight": 0.2479,
+          "probability_weight": 0.2491,
           "return_20d": 0.009822438207364392,
           "summary_cn": "只看最相似历史样本后的实际表现，不做确定性预测。"
         }
@@ -9808,32 +9742,32 @@
             "confidence": "low",
             "expected_horizon": "3d-10d",
             "label": "失败反抽情景",
-            "probability": 0.3563,
-            "reason": "Downside/Risk predictors 为 57%/46%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
+            "probability": 0.3507,
+            "reason": "Downside/Risk predictors 为 57%/46%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bearish_path"
           },
           {
             "confidence": "low",
             "expected_horizon": "20d-60d",
             "label": "历史均值情景",
-            "probability": 0.2479,
-            "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
+            "probability": 0.2491,
+            "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay.",
             "scenario": "analog_average_path"
           },
           {
             "confidence": "low",
             "expected_horizon": "10d-20d",
             "label": "反抽情景",
-            "probability": 0.22,
-            "reason": "Bounce Predictor 33%，多源确认 37/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
+            "probability": 0.2236,
+            "reason": "Bounce Predictor 33%，多源确认 37/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bounce_path"
           },
           {
             "confidence": "low",
             "expected_horizon": "3d-20d",
             "label": "综合期望情景",
-            "probability": 0.1758,
-            "reason": "综合期望用于平衡反抽、失败反抽、历史均值和数据不完整带来的不确定性。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
+            "probability": 0.1766,
+            "reason": "综合期望用于平衡反抽、失败反抽、历史均值和数据不完整带来的不确定性。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay.",
             "scenario": "expected_path"
           }
         ],
@@ -9844,12 +9778,12 @@
           "confidence": "low",
           "expected_horizon": "3d-10d",
           "label": "失败反抽情景",
-          "probability": 0.3563,
-          "reason": "Downside/Risk predictors 为 57%/46%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
+          "probability": 0.3507,
+          "reason": "Downside/Risk predictors 为 57%/46%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bearish_path"
         },
         "primary_scenario": "bearish_path",
-        "primary_secondary_gap": 0.1084,
+        "primary_secondary_gap": 0.1016,
         "primary_to_secondary_switch_conditions": [
           "VIX 与新闻方向背离",
           "HYG/LQD 转弱",
@@ -9858,16 +9792,16 @@
           "IWM 重新站上主路径确认价",
           "第二路径 analog_average_path 获得多源确认"
         ],
-        "probability_gap": 0.1084,
+        "probability_gap": 0.1016,
         "ranking_note": "Scenario ranking includes a bounded News/Event overlay when a major event or macro calendar risk is detected. It is probabilistic, not deterministic.",
         "risk_scenario": "bearish_path",
-        "scenario_probability": 0.3563,
+        "scenario_probability": 0.3507,
         "secondary": {
           "confidence": "low",
           "expected_horizon": "20d-60d",
           "label": "历史均值情景",
-          "probability": 0.2479,
-          "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
+          "probability": 0.2491,
+          "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay.",
           "scenario": "analog_average_path"
         },
         "secondary_scenario": "analog_average_path",
@@ -9883,16 +9817,16 @@
           "confidence": "low",
           "expected_horizon": "10d-20d",
           "label": "反抽情景",
-          "probability": 0.22,
-          "reason": "Bounce Predictor 33%，多源确认 37/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
+          "probability": 0.2236,
+          "reason": "Bounce Predictor 33%，多源确认 37/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bounce_path"
         }
       },
       "scenario_weights": {
-        "base_scenario": 0.1758,
-        "bearish_scenario": 0.3563,
-        "bounce_scenario": 0.22,
-        "historical_analog_average": 0.2479
+        "base_scenario": 0.1766,
+        "bearish_scenario": 0.3507,
+        "bounce_scenario": 0.2236,
+        "historical_analog_average": 0.2491
       },
       "shadow_evidence_v1": {
         "alert_status_by_type": {
@@ -10073,7 +10007,7 @@
       },
       "signal_confirmation": {
         "confirmation_level": "weak",
-        "confirmation_score": 32.0,
+        "confirmation_score": 32.99,
         "conflicting_evidence": [
           {
             "detail": "VIX is rising or not confirming a bounce.",
@@ -10103,7 +10037,7 @@
           {
             "detail": "重大 risk-off 新闻提高风险路径权重。",
             "name": "risk_off_news_event",
-            "score": 68.0
+            "score": 67.01
           }
         ],
         "data_completeness_cap_applied": false,
@@ -10132,7 +10066,7 @@
           }
         ],
         "missing_evidence_cap_applied": true,
-        "signal_confirmation_score": 32.0,
+        "signal_confirmation_score": 32.99,
         "supporting_evidence": [
           {
             "detail": "Frozen Alpha v1 is triggered; this remains research-only.",
@@ -10156,16 +10090,16 @@
           }
         ]
       },
-      "signal_confirmation_score": 32.0,
+      "signal_confirmation_score": 32.99,
       "symbol": "IWM",
       "trend_reversal_probability": 0.4082450141487835
     },
     "QQQ": {
-      "analog_path_weight": 0.2535,
+      "analog_path_weight": 0.2547,
       "as_of": "2026-07-28",
-      "base_path_weight": 0.1961,
-      "bearish_path_weight": 0.3423,
-      "bounce_path_weight": 0.2081,
+      "base_path_weight": 0.197,
+      "bearish_path_weight": 0.3367,
+      "bounce_path_weight": 0.2116,
       "bounce_probability": 0.38471703,
       "confluence": {
         "conflicting_evidence": [
@@ -10184,7 +10118,7 @@
           {
             "detail": "重大 risk-off 新闻提高风险路径权重。",
             "name": "risk_off_news_event",
-            "score": 62,
+            "score": 61,
             "source": "signal_confirmation"
           },
           {
@@ -10249,9 +10183,9 @@
         ],
         "not_trading_advice": "This is forecast confirmation only, not a buy/sell/entry/exit or position-sizing recommendation.",
         "primary_label": "失败反抽情景",
-        "primary_probability": 0.3423,
+        "primary_probability": 0.3367,
         "primary_scenario": "bearish_path",
-        "probability_gap": 0.0888,
+        "probability_gap": 0.082,
         "related_price_levels": {
           "primary_confirmation_level": {
             "confidence": "medium",
@@ -10286,7 +10220,7 @@
             "source_type": "price_structure"
           }
         },
-        "secondary_probability": 0.2535,
+        "secondary_probability": 0.2547,
         "secondary_scenario": "analog_average_path",
         "strong_conclusion_allowed": false,
         "supporting_evidence": [
@@ -10339,9 +10273,9 @@
             "source": "signal_confirmation"
           },
           {
-            "detail": "primary-secondary gap 8.9%",
+            "detail": "primary-secondary gap 8.2%",
             "name": "主次路径差距可观察",
-            "score": 8.88,
+            "score": 8.2,
             "source": "scenario_gap"
           },
           {
@@ -10623,7 +10557,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 665.47,
-            "probability_of_reaching_primary_price": 0.3423,
+            "probability_of_reaching_primary_price": 0.3367,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 665.47,
@@ -10644,7 +10578,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 674.37,
-            "probability_of_reaching_primary_price": 0.3423,
+            "probability_of_reaching_primary_price": 0.3367,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 674.37,
@@ -10665,7 +10599,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 655.09,
-            "probability_of_reaching_primary_price": 0.3423,
+            "probability_of_reaching_primary_price": 0.3367,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 655.09,
@@ -10686,7 +10620,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 672.12,
-            "probability_of_reaching_primary_price": 0.3423,
+            "probability_of_reaching_primary_price": 0.3367,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 672.12,
@@ -10707,7 +10641,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 668.74,
-            "probability_of_reaching_primary_price": 0.3423,
+            "probability_of_reaching_primary_price": 0.3367,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 668.74,
@@ -10728,7 +10662,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 667.84,
-            "probability_of_reaching_primary_price": 0.3423,
+            "probability_of_reaching_primary_price": 0.3367,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 667.84,
@@ -10748,7 +10682,7 @@
             "lower_confidence_price": 665.47,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 665.47,
-            "probability_of_reaching_primary_price": 0.3423,
+            "probability_of_reaching_primary_price": 0.3367,
             "risk_scenario_price": 665.47,
             "secondary_scenario_price": 693.79,
             "source": "simulated_path",
@@ -10762,7 +10696,7 @@
             "lower_confidence_price": 674.37,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 674.37,
-            "probability_of_reaching_primary_price": 0.3423,
+            "probability_of_reaching_primary_price": 0.3367,
             "risk_scenario_price": 674.37,
             "secondary_scenario_price": 676.96,
             "source": "simulated_path",
@@ -10776,7 +10710,7 @@
             "lower_confidence_price": 655.09,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 655.09,
-            "probability_of_reaching_primary_price": 0.3423,
+            "probability_of_reaching_primary_price": 0.3367,
             "risk_scenario_price": 655.09,
             "secondary_scenario_price": 708.69,
             "source": "simulated_path",
@@ -10790,7 +10724,7 @@
             "lower_confidence_price": 672.12,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 672.12,
-            "probability_of_reaching_primary_price": 0.3423,
+            "probability_of_reaching_primary_price": 0.3367,
             "risk_scenario_price": 672.12,
             "secondary_scenario_price": 679.89,
             "source": "simulated_path",
@@ -10804,7 +10738,7 @@
             "lower_confidence_price": 668.74,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 668.74,
-            "probability_of_reaching_primary_price": 0.3423,
+            "probability_of_reaching_primary_price": 0.3367,
             "risk_scenario_price": 668.74,
             "secondary_scenario_price": 685.5,
             "source": "simulated_path",
@@ -10818,7 +10752,7 @@
             "lower_confidence_price": 667.84,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 667.84,
-            "probability_of_reaching_primary_price": 0.3423,
+            "probability_of_reaching_primary_price": 0.3367,
             "risk_scenario_price": 667.84,
             "secondary_scenario_price": 733.66,
             "source": "simulated_path",
@@ -10922,10 +10856,10 @@
             "price": 671.1,
             "source": "price_structure"
           },
-          "primary_probability": 0.3423,
+          "primary_probability": 0.3367,
           "primary_scenario": "bearish_path",
-          "probability_gap": 0.0888,
-          "risk_probability": 0.2081,
+          "probability_gap": 0.082,
+          "risk_probability": 0.2116,
           "risk_scenario_activation_level": {
             "condition": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
             "distance_from_current": -20.4,
@@ -10939,7 +10873,7 @@
             "price": 655.09,
             "source": "simulated_path"
           },
-          "secondary_probability": 0.2535,
+          "secondary_probability": 0.2547,
           "trend_reversal_confirmation_level": {
             "condition": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
             "distance_from_current": 60.91,
@@ -10972,11 +10906,11 @@
           "source": "price_structure",
           "status": "available"
         },
-        "primary_probability": 0.3423,
+        "primary_probability": 0.3367,
         "primary_scenario": "bearish_path",
-        "risk_probability": 0.2081,
+        "risk_probability": 0.2116,
         "risk_scenario": "bounce_path",
-        "secondary_probability": 0.2535,
+        "secondary_probability": 0.2547,
         "secondary_scenario": "analog_average_path",
         "source_note": "Derived from existing simulated paths, recent price structure and realized-volatility bands.",
         "summary": {
@@ -11892,7 +11826,7 @@
             "event_type": "growth_negative",
             "expected_horizon": "3d-20d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 91,
+            "freshness_score": 88,
             "headline": "We're buying the dip on one of our stocks for two key reasons",
             "importance_score": 84,
             "narrative": "recession_fear",
@@ -11912,14 +11846,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 66,
+            "confidence_score": 65,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 38,
+            "freshness_score": 35,
             "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11939,14 +11873,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 66,
+            "confidence_score": 65,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 36,
+            "freshness_score": 34,
             "headline": "From 'oil' to 'shock',  here's what Kalshi traders expect Fed Chair Kevin Warsh will say this week",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11960,47 +11894,20 @@
               "QQQ",
               "IWM",
               "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 60,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 12,
-            "headline": "El Niño may push global warming to 2C or higher in the short term",
-            "importance_score": 99,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-27T08:55:01+00:00",
-            "source": "Bloomberg"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
               "USO",
               "CL=F",
               "XLE",
               "^VIX"
             ],
             "confidence": "medium",
-            "confidence_score": 62,
+            "confidence_score": 61,
             "detected_event_conditions": [
               "oil_shock_relief"
             ],
             "event_type": "oil_shock_relief",
             "expected_horizon": "1d-5d",
             "expected_market_direction": "risk_on",
-            "freshness_score": 21,
+            "freshness_score": 19,
             "headline": "We're buying more of a slumping industrial stock and a hard-hit chipmaker",
             "importance_score": 86,
             "narrative": "oil_relief_rally",
@@ -12038,7 +11945,7 @@
           ],
           "market_narrative": "geopolitics_escalation_risk_off",
           "narrative_direction": "supports_risk_expansion",
-          "narrative_strength": 100,
+          "narrative_strength": 67,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
             {
@@ -12064,28 +11971,16 @@
               "importance_score": 100,
               "published_at": "2026-07-27T18:58:23+00:00",
               "source": "CNBC"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "El Niño may push global warming to 2C or higher in the short term",
-              "importance_score": 99,
-              "published_at": "2026-07-27T08:55:01+00:00",
-              "source": "Bloomberg"
             }
           ]
         },
         "news_direction": "risk_off",
         "prediction_logic_effect": {
-          "after_primary_probability": 0.3423,
+          "after_primary_probability": 0.3367,
           "after_primary_scenario": "bearish_path",
           "before_primary_probability": 0.3158,
           "before_primary_scenario": "bearish_path",
-          "confirmation_delta": -5.0,
+          "confirmation_delta": -4.01,
           "impact": "text_support_unconfirmed",
           "not_a_trading_signal": true,
           "overlay_applied": true,
@@ -12098,24 +11993,24 @@
           "path_weight_deltas": {
             "analog_path_weight": 0.0,
             "base_path_weight": 0.01,
-            "bearish_path_weight": 0.0385,
-            "bounce_path_weight": -0.0135
+            "bearish_path_weight": 0.0311,
+            "bounce_path_weight": -0.0109
           },
           "predictor_deltas": {
-            "bounce_predictor": -0.0116,
-            "downside_continuation_predictor": 0.0212,
-            "risk_expansion_predictor": 0.025,
+            "bounce_predictor": -0.0093,
+            "downside_continuation_predictor": 0.0171,
+            "risk_expansion_predictor": 0.0202,
             "trend_reversal_predictor": 0.0
           },
-          "primary_probability_delta": 0.0265,
+          "primary_probability_delta": 0.0209,
           "primary_scenario_changed": false,
-          "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay",
+          "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay",
           "validation_type": "daily"
         },
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0013,
-            "avg_equity_futures_1d_return": 0.0016,
+            "avg_equity_futures_1d_return": 0.0007,
             "confirmed_checks": [
               "HYG/LQD 走弱"
             ],
@@ -12131,7 +12026,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0011,
-            "oil_proxy_1d_return": -0.0382,
+            "oil_proxy_1d_return": -0.0172,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -12178,13 +12073,13 @@
         "基准情景：使用相似样本平均路径；所有路径都是概率情景，不是确定预测。"
       ],
       "path_weight_model": {
-        "analog_path_weight": 0.2535,
-        "base_path_weight": 0.1961,
-        "bearish_path_weight": 0.3423,
-        "bounce_path_weight": 0.2081,
+        "analog_path_weight": 0.2547,
+        "base_path_weight": 0.197,
+        "bearish_path_weight": 0.3367,
+        "bounce_path_weight": 0.2116,
         "low_confidence_simulation": true,
         "news_event_overlay_applied": true,
-        "news_event_overlay_note": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay",
+        "news_event_overlay_note": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay",
         "simulation_confidence_level": "low",
         "weight_factors": {
           "bounce_probability": 0.3847,
@@ -13547,7 +13442,7 @@
       "predictors": {
         "bounce_predictor": {
           "best_horizon": "3d-10d",
-          "bounce_probability": 0.3664,
+          "bounce_probability": 0.3687,
           "breadth_confirmation": 0.0939,
           "breadth_quality": 0.04,
           "confidence": 0.7665,
@@ -13587,11 +13482,11 @@
             "credit stabilization: 0.95",
             "flow confirmation: 0.63",
             "Alpha v1 bounce probability: 0.38",
-            "news_event_overlay:-0.012"
+            "news_event_overlay:-0.009"
           ],
           "options_quality": 0.92,
           "panic_release_score": 0.3246,
-          "probability": 0.3664,
+          "probability": 0.3687,
           "tail_risk_score": 0.3591,
           "term_structure_state": "contango",
           "volatility_reversal_score": 0.5171
@@ -13603,7 +13498,7 @@
           "break_level": 675.49,
           "confidence": 0.5895,
           "crowding_proxy_score": 0.2383,
-          "downside_continuation_probability": 0.5925,
+          "downside_continuation_probability": 0.5884,
           "failed_bounce_options_risk": 0.4,
           "flow_confirmation_score": 0.6286,
           "flow_conflict_score": 0.5373,
@@ -13622,10 +13517,10 @@
             "breadth conflict: 0.69",
             "flow conflict: 0.54",
             "base downside continuation: 0.42",
-            "news_event_overlay:+0.021"
+            "news_event_overlay:+0.017"
           ],
           "options_quality": 0.92,
-          "probability": 0.5925,
+          "probability": 0.5884,
           "risk_triggers": [
             "VIX rising",
             "HYG/LQD weakens",
@@ -13663,11 +13558,11 @@
             "breadth deterioration: 0.71",
             "VIX percentile: 0.64",
             "flow conflict: 0.54",
-            "news_event_overlay:+0.025"
+            "news_event_overlay:+0.020"
           ],
           "options_quality": 0.92,
-          "probability": 0.503,
-          "risk_expansion_probability": 0.503,
+          "probability": 0.4982,
+          "risk_expansion_probability": 0.4982,
           "tail_risk_score": 0.3591,
           "term_structure_state": "contango",
           "volatility_risk": 0.453
@@ -13713,7 +13608,7 @@
       "predictors_v4": {
         "bounce_predictor": {
           "best_horizon": "3d-10d",
-          "bounce_probability": 0.3664,
+          "bounce_probability": 0.3687,
           "breadth_confirmation": 0.0939,
           "breadth_quality": 0.04,
           "confidence": 0.7665,
@@ -13753,11 +13648,11 @@
             "credit stabilization: 0.95",
             "flow confirmation: 0.63",
             "Alpha v1 bounce probability: 0.38",
-            "news_event_overlay:-0.012"
+            "news_event_overlay:-0.009"
           ],
           "options_quality": 0.92,
           "panic_release_score": 0.3246,
-          "probability": 0.3664,
+          "probability": 0.3687,
           "tail_risk_score": 0.3591,
           "term_structure_state": "contango",
           "volatility_reversal_score": 0.5171
@@ -13769,7 +13664,7 @@
           "break_level": 675.49,
           "confidence": 0.5895,
           "crowding_proxy_score": 0.2383,
-          "downside_continuation_probability": 0.5925,
+          "downside_continuation_probability": 0.5884,
           "failed_bounce_options_risk": 0.4,
           "flow_confirmation_score": 0.6286,
           "flow_conflict_score": 0.5373,
@@ -13788,10 +13683,10 @@
             "breadth conflict: 0.69",
             "flow conflict: 0.54",
             "base downside continuation: 0.42",
-            "news_event_overlay:+0.021"
+            "news_event_overlay:+0.017"
           ],
           "options_quality": 0.92,
-          "probability": 0.5925,
+          "probability": 0.5884,
           "risk_triggers": [
             "VIX rising",
             "HYG/LQD weakens",
@@ -13829,11 +13724,11 @@
             "breadth deterioration: 0.71",
             "VIX percentile: 0.64",
             "flow conflict: 0.54",
-            "news_event_overlay:+0.025"
+            "news_event_overlay:+0.020"
           ],
           "options_quality": 0.92,
-          "probability": 0.503,
-          "risk_expansion_probability": 0.503,
+          "probability": 0.4982,
+          "risk_expansion_probability": 0.4982,
           "tail_risk_score": 0.3591,
           "term_structure_state": "contango",
           "volatility_risk": 0.453
@@ -13886,28 +13781,28 @@
         {
           "name": "Base case",
           "name_cn": "基准情景",
-          "probability_weight": 0.1961,
+          "probability_weight": 0.197,
           "return_20d": 0.04914449748025363,
           "summary_cn": "按最相似历史样本的平均路径推演。"
         },
         {
           "name": "Bounce case",
           "name_cn": "反弹情景",
-          "probability_weight": 0.2081,
+          "probability_weight": 0.2116,
           "return_20d": 0.1037696356413865,
           "summary_cn": "如果 Alpha v1 信号继续有效，路径更接近历史上较好的反抽样本。"
         },
         {
           "name": "Bearish case",
           "name_cn": "失败反弹情景",
-          "probability_weight": 0.3423,
+          "probability_weight": 0.3367,
           "return_20d": -0.030196820020554925,
           "summary_cn": "如果波动和信用代理恶化，路径更接近历史上较差的一组样本。"
         },
         {
           "name": "Historical analog case",
           "name_cn": "历史相似情景",
-          "probability_weight": 0.2535,
+          "probability_weight": 0.2547,
           "return_20d": 0.04914449748025363,
           "summary_cn": "只看最相似历史样本后的实际表现，不做确定性预测。"
         }
@@ -13918,32 +13813,32 @@
             "confidence": "low",
             "expected_horizon": "3d-10d",
             "label": "失败反抽情景",
-            "probability": 0.3423,
-            "reason": "Downside/Risk predictors 为 57%/48%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
+            "probability": 0.3367,
+            "reason": "Downside/Risk predictors 为 57%/48%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bearish_path"
           },
           {
             "confidence": "low",
             "expected_horizon": "20d-60d",
             "label": "历史均值情景",
-            "probability": 0.2535,
-            "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
+            "probability": 0.2547,
+            "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay.",
             "scenario": "analog_average_path"
           },
           {
             "confidence": "low",
             "expected_horizon": "10d-20d",
             "label": "反抽情景",
-            "probability": 0.2081,
-            "reason": "Bounce Predictor 38%，多源确认 43/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
+            "probability": 0.2116,
+            "reason": "Bounce Predictor 38%，多源确认 43/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bounce_path"
           },
           {
             "confidence": "low",
             "expected_horizon": "3d-20d",
             "label": "综合期望情景",
-            "probability": 0.1961,
-            "reason": "综合期望用于平衡反抽、失败反抽、历史均值和数据不完整带来的不确定性。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
+            "probability": 0.197,
+            "reason": "综合期望用于平衡反抽、失败反抽、历史均值和数据不完整带来的不确定性。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay.",
             "scenario": "expected_path"
           }
         ],
@@ -13954,12 +13849,12 @@
           "confidence": "low",
           "expected_horizon": "3d-10d",
           "label": "失败反抽情景",
-          "probability": 0.3423,
-          "reason": "Downside/Risk predictors 为 57%/48%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
+          "probability": 0.3367,
+          "reason": "Downside/Risk predictors 为 57%/48%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bearish_path"
         },
         "primary_scenario": "bearish_path",
-        "primary_secondary_gap": 0.0888,
+        "primary_secondary_gap": 0.082,
         "primary_to_secondary_switch_conditions": [
           "VIX 与新闻方向背离",
           "HYG/LQD 转弱",
@@ -13968,16 +13863,16 @@
           "QQQ 重新站上主路径确认价",
           "第二路径 analog_average_path 获得多源确认"
         ],
-        "probability_gap": 0.0888,
+        "probability_gap": 0.082,
         "ranking_note": "Scenario ranking includes a bounded News/Event overlay when a major event or macro calendar risk is detected. It is probabilistic, not deterministic.",
         "risk_scenario": "bearish_path",
-        "scenario_probability": 0.3423,
+        "scenario_probability": 0.3367,
         "secondary": {
           "confidence": "low",
           "expected_horizon": "20d-60d",
           "label": "历史均值情景",
-          "probability": 0.2535,
-          "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
+          "probability": 0.2547,
+          "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay.",
           "scenario": "analog_average_path"
         },
         "secondary_scenario": "analog_average_path",
@@ -13993,16 +13888,16 @@
           "confidence": "low",
           "expected_horizon": "10d-20d",
           "label": "反抽情景",
-          "probability": 0.2081,
-          "reason": "Bounce Predictor 38%，多源确认 43/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
+          "probability": 0.2116,
+          "reason": "Bounce Predictor 38%，多源确认 43/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bounce_path"
         }
       },
       "scenario_weights": {
-        "base_scenario": 0.1961,
-        "bearish_scenario": 0.3423,
-        "bounce_scenario": 0.2081,
-        "historical_analog_average": 0.2535
+        "base_scenario": 0.197,
+        "bearish_scenario": 0.3367,
+        "bounce_scenario": 0.2116,
+        "historical_analog_average": 0.2547
       },
       "shadow_evidence_v1": {
         "alert_status_by_type": {
@@ -14188,7 +14083,7 @@
       },
       "signal_confirmation": {
         "confirmation_level": "weak",
-        "confirmation_score": 38.0,
+        "confirmation_score": 38.99,
         "conflicting_evidence": [
           {
             "detail": "VIX is rising or not confirming a bounce.",
@@ -14223,7 +14118,7 @@
           {
             "detail": "重大 risk-off 新闻提高风险路径权重。",
             "name": "risk_off_news_event",
-            "score": 62.0
+            "score": 61.01
           }
         ],
         "data_completeness_cap_applied": false,
@@ -14252,7 +14147,7 @@
           }
         ],
         "missing_evidence_cap_applied": true,
-        "signal_confirmation_score": 38.0,
+        "signal_confirmation_score": 38.99,
         "supporting_evidence": [
           {
             "detail": "Frozen Alpha v1 is triggered; this remains research-only.",
@@ -14281,16 +14176,16 @@
           }
         ]
       },
-      "signal_confirmation_score": 38.0,
+      "signal_confirmation_score": 38.99,
       "symbol": "QQQ",
       "trend_reversal_probability": 0.6816136780174746
     },
     "SPY": {
-      "analog_path_weight": 0.2451,
+      "analog_path_weight": 0.2463,
       "as_of": "2026-07-28",
-      "base_path_weight": 0.1773,
-      "bearish_path_weight": 0.3056,
-      "bounce_path_weight": 0.272,
+      "base_path_weight": 0.1781,
+      "bearish_path_weight": 0.2998,
+      "bounce_path_weight": 0.2758,
       "bounce_probability": 0.59293002,
       "confluence": {
         "conflicting_evidence": [
@@ -14309,7 +14204,7 @@
           {
             "detail": "重大 risk-off 新闻提高风险路径权重。",
             "name": "risk_off_news_event",
-            "score": 50,
+            "score": 49,
             "source": "signal_confirmation"
           },
           {
@@ -14345,7 +14240,7 @@
           {
             "detail": "路径分歧较大，不宜给强结论。",
             "name": "主次路径差距小",
-            "score": 3.36,
+            "score": 2.4,
             "source": "scenario_gap"
           }
         ],
@@ -14374,9 +14269,9 @@
         ],
         "not_trading_advice": "This is forecast confirmation only, not a buy/sell/entry/exit or position-sizing recommendation.",
         "primary_label": "失败反抽情景",
-        "primary_probability": 0.3056,
+        "primary_probability": 0.2998,
         "primary_scenario": "bearish_path",
-        "probability_gap": 0.0336,
+        "probability_gap": 0.024,
         "related_price_levels": {
           "primary_confirmation_level": {
             "confidence": "medium",
@@ -14411,7 +14306,7 @@
             "source_type": "price_structure"
           }
         },
-        "secondary_probability": 0.272,
+        "secondary_probability": 0.2758,
         "secondary_scenario": "bounce_path",
         "strong_conclusion_allowed": false,
         "supporting_evidence": [
@@ -14724,7 +14619,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 730.74,
-            "probability_of_reaching_primary_price": 0.3056,
+            "probability_of_reaching_primary_price": 0.2998,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 730.74,
@@ -14745,7 +14640,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 732.96,
-            "probability_of_reaching_primary_price": 0.3056,
+            "probability_of_reaching_primary_price": 0.2998,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 732.96,
@@ -14766,7 +14661,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 706.81,
-            "probability_of_reaching_primary_price": 0.3056,
+            "probability_of_reaching_primary_price": 0.2998,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 706.81,
@@ -14787,7 +14682,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 717.16,
-            "probability_of_reaching_primary_price": 0.3056,
+            "probability_of_reaching_primary_price": 0.2998,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 717.16,
@@ -14808,7 +14703,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 704.6,
-            "probability_of_reaching_primary_price": 0.3056,
+            "probability_of_reaching_primary_price": 0.2998,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 704.6,
@@ -14829,7 +14724,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 698.06,
-            "probability_of_reaching_primary_price": 0.3056,
+            "probability_of_reaching_primary_price": 0.2998,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 698.06,
@@ -14849,7 +14744,7 @@
             "lower_confidence_price": 730.74,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 730.74,
-            "probability_of_reaching_primary_price": 0.3056,
+            "probability_of_reaching_primary_price": 0.2998,
             "risk_scenario_price": 730.74,
             "secondary_scenario_price": 751.69,
             "source": "simulated_path",
@@ -14863,7 +14758,7 @@
             "lower_confidence_price": 732.96,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 732.96,
-            "probability_of_reaching_primary_price": 0.3056,
+            "probability_of_reaching_primary_price": 0.2998,
             "risk_scenario_price": 732.96,
             "secondary_scenario_price": 742.77,
             "source": "simulated_path",
@@ -14877,7 +14772,7 @@
             "lower_confidence_price": 706.81,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 706.81,
-            "probability_of_reaching_primary_price": 0.3056,
+            "probability_of_reaching_primary_price": 0.2998,
             "risk_scenario_price": 706.81,
             "secondary_scenario_price": 788.0,
             "source": "simulated_path",
@@ -14891,7 +14786,7 @@
             "lower_confidence_price": 717.16,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 717.16,
-            "probability_of_reaching_primary_price": 0.3056,
+            "probability_of_reaching_primary_price": 0.2998,
             "risk_scenario_price": 717.16,
             "secondary_scenario_price": 746.6,
             "source": "simulated_path",
@@ -14905,7 +14800,7 @@
             "lower_confidence_price": 704.6,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 704.6,
-            "probability_of_reaching_primary_price": 0.3056,
+            "probability_of_reaching_primary_price": 0.2998,
             "risk_scenario_price": 704.6,
             "secondary_scenario_price": 745.74,
             "source": "simulated_path",
@@ -14919,7 +14814,7 @@
             "lower_confidence_price": 698.06,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 698.06,
-            "probability_of_reaching_primary_price": 0.3056,
+            "probability_of_reaching_primary_price": 0.2998,
             "risk_scenario_price": 698.06,
             "secondary_scenario_price": 836.02,
             "source": "simulated_path",
@@ -15023,10 +14918,10 @@
             "price": 717.16,
             "source": "price_structure"
           },
-          "primary_probability": 0.3056,
+          "primary_probability": 0.2998,
           "primary_scenario": "bearish_path",
-          "probability_gap": 0.0336,
-          "risk_probability": 0.2451,
+          "probability_gap": 0.024,
+          "risk_probability": 0.2463,
           "risk_scenario_activation_level": {
             "condition": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
             "distance_from_current": -34.05,
@@ -15040,7 +14935,7 @@
             "price": 706.81,
             "source": "simulated_path"
           },
-          "secondary_probability": 0.272,
+          "secondary_probability": 0.2758,
           "trend_reversal_confirmation_level": {
             "condition": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
             "distance_from_current": 14.09,
@@ -15073,11 +14968,11 @@
           "source": "price_structure",
           "status": "available"
         },
-        "primary_probability": 0.3056,
+        "primary_probability": 0.2998,
         "primary_scenario": "bearish_path",
-        "risk_probability": 0.2451,
+        "risk_probability": 0.2463,
         "risk_scenario": "analog_average_path",
-        "secondary_probability": 0.272,
+        "secondary_probability": 0.2758,
         "secondary_scenario": "bounce_path",
         "source_note": "Derived from existing simulated paths, recent price structure and realized-volatility bands.",
         "summary": {
@@ -16026,7 +15921,7 @@
             "event_type": "growth_negative",
             "expected_horizon": "3d-20d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 91,
+            "freshness_score": 88,
             "headline": "We're buying the dip on one of our stocks for two key reasons",
             "importance_score": 84,
             "narrative": "recession_fear",
@@ -16046,14 +15941,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 66,
+            "confidence_score": 65,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 38,
+            "freshness_score": 35,
             "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16073,14 +15968,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 66,
+            "confidence_score": 65,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 36,
+            "freshness_score": 34,
             "headline": "From 'oil' to 'shock',  here's what Kalshi traders expect Fed Chair Kevin Warsh will say this week",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16094,47 +15989,20 @@
               "QQQ",
               "IWM",
               "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 60,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 12,
-            "headline": "El Niño may push global warming to 2C or higher in the short term",
-            "importance_score": 99,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-27T08:55:01+00:00",
-            "source": "Bloomberg"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
               "USO",
               "CL=F",
               "XLE",
               "^VIX"
             ],
             "confidence": "medium",
-            "confidence_score": 62,
+            "confidence_score": 61,
             "detected_event_conditions": [
               "oil_shock_relief"
             ],
             "event_type": "oil_shock_relief",
             "expected_horizon": "1d-5d",
             "expected_market_direction": "risk_on",
-            "freshness_score": 21,
+            "freshness_score": 19,
             "headline": "We're buying more of a slumping industrial stock and a hard-hit chipmaker",
             "importance_score": 86,
             "narrative": "oil_relief_rally",
@@ -16172,7 +16040,7 @@
           ],
           "market_narrative": "geopolitics_escalation_risk_off",
           "narrative_direction": "supports_risk_expansion",
-          "narrative_strength": 100,
+          "narrative_strength": 67,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
             {
@@ -16198,28 +16066,16 @@
               "importance_score": 100,
               "published_at": "2026-07-27T18:58:23+00:00",
               "source": "CNBC"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "El Niño may push global warming to 2C or higher in the short term",
-              "importance_score": 99,
-              "published_at": "2026-07-27T08:55:01+00:00",
-              "source": "Bloomberg"
             }
           ]
         },
         "news_direction": "risk_off",
         "prediction_logic_effect": {
-          "after_primary_probability": 0.3056,
+          "after_primary_probability": 0.2998,
           "after_primary_scenario": "bearish_path",
           "before_primary_probability": 0.295,
           "before_primary_scenario": "bounce_path",
-          "confirmation_delta": -5.0,
+          "confirmation_delta": -4.01,
           "impact": "potential_conflict_unconfirmed",
           "not_a_trading_signal": true,
           "overlay_applied": true,
@@ -16232,24 +16088,24 @@
           "path_weight_deltas": {
             "analog_path_weight": 0.0,
             "base_path_weight": 0.01,
-            "bearish_path_weight": 0.0385,
-            "bounce_path_weight": -0.0135
+            "bearish_path_weight": 0.0311,
+            "bounce_path_weight": -0.0109
           },
           "predictor_deltas": {
-            "bounce_predictor": -0.0116,
-            "downside_continuation_predictor": 0.0212,
-            "risk_expansion_predictor": 0.025,
+            "bounce_predictor": -0.0093,
+            "downside_continuation_predictor": 0.0171,
+            "risk_expansion_predictor": 0.0202,
             "trend_reversal_predictor": 0.0
           },
-          "primary_probability_delta": 0.0106,
+          "primary_probability_delta": 0.0048,
           "primary_scenario_changed": true,
-          "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay",
+          "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay",
           "validation_type": "daily"
         },
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0013,
-            "avg_equity_futures_1d_return": 0.0016,
+            "avg_equity_futures_1d_return": 0.0007,
             "confirmed_checks": [
               "HYG/LQD 走弱"
             ],
@@ -16265,7 +16121,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0011,
-            "oil_proxy_1d_return": -0.0382,
+            "oil_proxy_1d_return": -0.0172,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -16312,13 +16168,13 @@
         "基准情景：使用相似样本平均路径；所有路径都是概率情景，不是确定预测。"
       ],
       "path_weight_model": {
-        "analog_path_weight": 0.2451,
-        "base_path_weight": 0.1773,
-        "bearish_path_weight": 0.3056,
-        "bounce_path_weight": 0.272,
+        "analog_path_weight": 0.2463,
+        "base_path_weight": 0.1781,
+        "bearish_path_weight": 0.2998,
+        "bounce_path_weight": 0.2758,
         "low_confidence_simulation": true,
         "news_event_overlay_applied": true,
-        "news_event_overlay_note": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay",
+        "news_event_overlay_note": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay",
         "simulation_confidence_level": "low",
         "weight_factors": {
           "bounce_probability": 0.5929,
@@ -17681,7 +17537,7 @@
       "predictors": {
         "bounce_predictor": {
           "best_horizon": "3d-10d",
-          "bounce_probability": 0.4905,
+          "bounce_probability": 0.4928,
           "breadth_confirmation": 0.9787,
           "breadth_quality": 1.0,
           "confidence": 0.699,
@@ -17716,11 +17572,11 @@
             "credit stabilization: 0.95",
             "Alpha v1 bounce probability: 0.59",
             "flow confirmation: 0.57",
-            "news_event_overlay:-0.012"
+            "news_event_overlay:-0.009"
           ],
           "options_quality": 0.92,
           "panic_release_score": 0.3246,
-          "probability": 0.4905,
+          "probability": 0.4928,
           "tail_risk_score": 0.3591,
           "term_structure_state": "contango",
           "volatility_reversal_score": 0.5171
@@ -17732,7 +17588,7 @@
           "break_level": 738.18,
           "confidence": 0.607,
           "crowding_proxy_score": 0.0947,
-          "downside_continuation_probability": 0.488,
+          "downside_continuation_probability": 0.4839,
           "failed_bounce_options_risk": 0.4,
           "flow_confirmation_score": 0.5652,
           "flow_conflict_score": 0.5373,
@@ -17751,10 +17607,10 @@
             "flow conflict: 0.54",
             "base downside continuation: 0.53",
             "liquidity stress proxy: 0.25",
-            "news_event_overlay:+0.021"
+            "news_event_overlay:+0.017"
           ],
           "options_quality": 0.92,
-          "probability": 0.488,
+          "probability": 0.4839,
           "risk_triggers": [
             "VIX rising",
             "HYG/LQD weakens",
@@ -17792,11 +17648,11 @@
             "VIX percentile: 0.64",
             "flow conflict: 0.54",
             "news risk: 0.35",
-            "news_event_overlay:+0.025"
+            "news_event_overlay:+0.020"
           ],
           "options_quality": 0.92,
-          "probability": 0.4477,
-          "risk_expansion_probability": 0.4477,
+          "probability": 0.4429,
+          "risk_expansion_probability": 0.4429,
           "tail_risk_score": 0.3591,
           "term_structure_state": "contango",
           "volatility_risk": 0.453
@@ -17842,7 +17698,7 @@
       "predictors_v4": {
         "bounce_predictor": {
           "best_horizon": "3d-10d",
-          "bounce_probability": 0.4905,
+          "bounce_probability": 0.4928,
           "breadth_confirmation": 0.9787,
           "breadth_quality": 1.0,
           "confidence": 0.699,
@@ -17877,11 +17733,11 @@
             "credit stabilization: 0.95",
             "Alpha v1 bounce probability: 0.59",
             "flow confirmation: 0.57",
-            "news_event_overlay:-0.012"
+            "news_event_overlay:-0.009"
           ],
           "options_quality": 0.92,
           "panic_release_score": 0.3246,
-          "probability": 0.4905,
+          "probability": 0.4928,
           "tail_risk_score": 0.3591,
           "term_structure_state": "contango",
           "volatility_reversal_score": 0.5171
@@ -17893,7 +17749,7 @@
           "break_level": 738.18,
           "confidence": 0.607,
           "crowding_proxy_score": 0.0947,
-          "downside_continuation_probability": 0.488,
+          "downside_continuation_probability": 0.4839,
           "failed_bounce_options_risk": 0.4,
           "flow_confirmation_score": 0.5652,
           "flow_conflict_score": 0.5373,
@@ -17912,10 +17768,10 @@
             "flow conflict: 0.54",
             "base downside continuation: 0.53",
             "liquidity stress proxy: 0.25",
-            "news_event_overlay:+0.021"
+            "news_event_overlay:+0.017"
           ],
           "options_quality": 0.92,
-          "probability": 0.488,
+          "probability": 0.4839,
           "risk_triggers": [
             "VIX rising",
             "HYG/LQD weakens",
@@ -17953,11 +17809,11 @@
             "VIX percentile: 0.64",
             "flow conflict: 0.54",
             "news risk: 0.35",
-            "news_event_overlay:+0.025"
+            "news_event_overlay:+0.020"
           ],
           "options_quality": 0.92,
-          "probability": 0.4477,
-          "risk_expansion_probability": 0.4477,
+          "probability": 0.4429,
+          "risk_expansion_probability": 0.4429,
           "tail_risk_score": 0.3591,
           "term_structure_state": "contango",
           "volatility_risk": 0.453
@@ -18010,28 +17866,28 @@
         {
           "name": "Base case",
           "name_cn": "基准情景",
-          "probability_weight": 0.1773,
+          "probability_weight": 0.1781,
           "return_20d": 0.016474798798774153,
           "summary_cn": "按最相似历史样本的平均路径推演。"
         },
         {
           "name": "Bounce case",
           "name_cn": "反弹情景",
-          "probability_weight": 0.272,
+          "probability_weight": 0.2758,
           "return_20d": 0.06363199008074875,
           "summary_cn": "如果 Alpha v1 信号继续有效，路径更接近历史上较好的反抽样本。"
         },
         {
           "name": "Bearish case",
           "name_cn": "失败反弹情景",
-          "probability_weight": 0.3056,
+          "probability_weight": 0.2998,
           "return_20d": -0.04595889696917739,
           "summary_cn": "如果波动和信用代理恶化，路径更接近历史上较差的一组样本。"
         },
         {
           "name": "Historical analog case",
           "name_cn": "历史相似情景",
-          "probability_weight": 0.2451,
+          "probability_weight": 0.2463,
           "return_20d": 0.016474798798774153,
           "summary_cn": "只看最相似历史样本后的实际表现，不做确定性预测。"
         }
@@ -18042,32 +17898,32 @@
             "confidence": "low",
             "expected_horizon": "3d-10d",
             "label": "失败反抽情景",
-            "probability": 0.3056,
-            "reason": "Downside/Risk predictors 为 47%/42%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
+            "probability": 0.2998,
+            "reason": "Downside/Risk predictors 为 47%/42%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bearish_path"
           },
           {
             "confidence": "low",
             "expected_horizon": "10d-20d",
             "label": "反抽情景",
-            "probability": 0.272,
-            "reason": "Bounce Predictor 50%，多源确认 55/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
+            "probability": 0.2758,
+            "reason": "Bounce Predictor 50%，多源确认 55/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bounce_path"
           },
           {
             "confidence": "low",
             "expected_horizon": "20d-60d",
             "label": "历史均值情景",
-            "probability": 0.2451,
-            "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
+            "probability": 0.2463,
+            "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay.",
             "scenario": "analog_average_path"
           },
           {
             "confidence": "low",
             "expected_horizon": "3d-20d",
             "label": "综合期望情景",
-            "probability": 0.1773,
-            "reason": "综合期望用于平衡反抽、失败反抽、历史均值和数据不完整带来的不确定性。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
+            "probability": 0.1781,
+            "reason": "综合期望用于平衡反抽、失败反抽、历史均值和数据不完整带来的不确定性。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay.",
             "scenario": "expected_path"
           }
         ],
@@ -18078,12 +17934,12 @@
           "confidence": "low",
           "expected_horizon": "3d-10d",
           "label": "失败反抽情景",
-          "probability": 0.3056,
-          "reason": "Downside/Risk predictors 为 47%/42%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
+          "probability": 0.2998,
+          "reason": "Downside/Risk predictors 为 47%/42%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bearish_path"
         },
         "primary_scenario": "bearish_path",
-        "primary_secondary_gap": 0.0336,
+        "primary_secondary_gap": 0.024,
         "primary_to_secondary_switch_conditions": [
           "VIX 与新闻方向背离",
           "HYG/LQD 转弱",
@@ -18092,16 +17948,16 @@
           "SPY 重新站上主路径确认价",
           "第二路径 bounce_path 获得多源确认"
         ],
-        "probability_gap": 0.0336,
+        "probability_gap": 0.024,
         "ranking_note": "Scenario ranking includes a bounded News/Event overlay when a major event or macro calendar risk is detected. It is probabilistic, not deterministic.",
         "risk_scenario": "bearish_path",
-        "scenario_probability": 0.3056,
+        "scenario_probability": 0.2998,
         "secondary": {
           "confidence": "low",
           "expected_horizon": "10d-20d",
           "label": "反抽情景",
-          "probability": 0.272,
-          "reason": "Bounce Predictor 50%，多源确认 55/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
+          "probability": 0.2758,
+          "reason": "Bounce Predictor 50%，多源确认 55/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bounce_path"
         },
         "secondary_scenario": "bounce_path",
@@ -18117,16 +17973,16 @@
           "confidence": "low",
           "expected_horizon": "20d-60d",
           "label": "历史均值情景",
-          "probability": 0.2451,
-          "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
+          "probability": 0.2463,
+          "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay.",
           "scenario": "analog_average_path"
         }
       },
       "scenario_weights": {
-        "base_scenario": 0.1773,
-        "bearish_scenario": 0.3056,
-        "bounce_scenario": 0.272,
-        "historical_analog_average": 0.2451
+        "base_scenario": 0.1781,
+        "bearish_scenario": 0.2998,
+        "bounce_scenario": 0.2758,
+        "historical_analog_average": 0.2463
       },
       "shadow_evidence_v1": {
         "alert_status_by_type": {
@@ -18302,7 +18158,7 @@
       },
       "signal_confirmation": {
         "confirmation_level": "mixed",
-        "confirmation_score": 50.0,
+        "confirmation_score": 50.99,
         "conflicting_evidence": [
           {
             "detail": "VIX is rising or not confirming a bounce.",
@@ -18327,7 +18183,7 @@
           {
             "detail": "重大 risk-off 新闻提高风险路径权重。",
             "name": "risk_off_news_event",
-            "score": 50.0
+            "score": 49.01
           }
         ],
         "data_completeness_cap_applied": false,
@@ -18356,7 +18212,7 @@
           }
         ],
         "missing_evidence_cap_applied": true,
-        "signal_confirmation_score": 50.0,
+        "signal_confirmation_score": 50.99,
         "supporting_evidence": [
           {
             "detail": "Frozen Alpha v1 is triggered; this remains research-only.",
@@ -18385,7 +18241,7 @@
           }
         ]
       },
-      "signal_confirmation_score": 50.0,
+      "signal_confirmation_score": 50.99,
       "symbol": "SPY",
       "trend_reversal_probability": 0.49219130533665345
     }

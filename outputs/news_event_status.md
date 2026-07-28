@@ -1,14 +1,14 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-28T21:37:34.612596+00:00`
+- generated_at: `2026-07-28T22:39:07.306516+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `5`
+- major_event_count: `4`
 - event_detection_confidence: `66`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
-- narrative_strength: `100`
+- narrative_strength: `67`
 - price_reaction_confirmed: `False`
 - confirmation_score: `25`
 
@@ -47,14 +47,6 @@
 - source: CNBC
 - published_at: `2026-07-27T18:58:23+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: El Niño may push global warming to 2C or higher in the short term
-- source: Bloomberg
-- published_at: `2026-07-27T08:55:01+00:00`
-- importance_score: `99`
 - confidence: `medium`
 
 ### oil_shock_relief / risk_on
