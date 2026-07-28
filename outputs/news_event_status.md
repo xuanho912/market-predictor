@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-28T04:32:51.427062+00:00`
+- generated_at: `2026-07-28T06:15:58.080256+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
-- event_detection_confidence: `69`
+- major_event_count: `10`
+- event_detection_confidence: `68`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -86,7 +86,7 @@
 - headline: Iran foreign minister says Ukraine's attack on Iranian vessel 'cannot go unanswered' - Reuters
 - source: Reuters
 - published_at: `2026-07-26T17:43:43+00:00`
-- importance_score: `100`
+- importance_score: `99`
 - confidence: `medium`
 
 ### oil_shock_relief / risk_on
@@ -94,5 +94,13 @@
 - headline: Indian rupee heads for steepest rise in three weeks as oil falls - Reuters
 - source: Reuters
 - published_at: `2026-07-27T02:55:00+00:00`
-- importance_score: `88`
+- importance_score: `87`
+- confidence: `medium`
+
+### fed_hawkish / risk_off
+
+- headline: Bitcoin ETFs end inflow streak as Fed rate concerns mount
+- source: Bloomberg
+- published_at: `2026-07-27T05:34:41+00:00`
+- importance_score: `83`
 - confidence: `medium`
