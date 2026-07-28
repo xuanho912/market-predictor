@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-28T00:11:27.335469+00:00`
+- generated_at: `2026-07-28T04:32:51.427062+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
+- major_event_count: `9`
 - event_detection_confidence: `69`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `True`
-- confirmation_score: `75`
+- confirmation_score: `100`
 
 ## Dashboard Note
 
@@ -54,15 +54,15 @@
 - headline: We're buying more of a slumping industrial stock and a hard-hit chipmaker
 - source: CNBC
 - published_at: `2026-07-27T12:53:43+00:00`
-- importance_score: `91`
-- confidence: `high`
+- importance_score: `90`
+- confidence: `medium`
 
 ### geopolitical_risk_easing / risk_on
 
 - headline: Crude oil futures are pricing market adaptability, not hopeful Iran peace - Reuters
 - source: Reuters
 - published_at: `2026-07-27T07:39:01+00:00`
-- importance_score: `96`
+- importance_score: `95`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
@@ -94,13 +94,5 @@
 - headline: Indian rupee heads for steepest rise in three weeks as oil falls - Reuters
 - source: Reuters
 - published_at: `2026-07-27T02:55:00+00:00`
-- importance_score: `89`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran says it will halt strikes as long as US bombing pause holds - Reuters
-- source: Reuters
-- published_at: `2026-07-26T14:47:00+00:00`
-- importance_score: `100`
+- importance_score: `88`
 - confidence: `medium`
