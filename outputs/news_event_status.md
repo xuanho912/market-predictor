@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-28T22:39:07.306516+00:00`
+- generated_at: `2026-07-28T23:47:45.654416+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `4`
@@ -31,7 +31,7 @@
 - source: CNBC
 - published_at: `2026-07-28T17:45:21+00:00`
 - importance_score: `84`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
