@@ -1,20 +1,20 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-28T14:40:59.347890+00:00`
+- generated_at: `2026-07-28T21:37:34.612596+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
-- event_detection_confidence: `64`
+- major_event_count: `5`
+- event_detection_confidence: `66`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
-- price_reaction_confirmed: `True`
-- confirmation_score: `75`
+- price_reaction_confirmed: `False`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
-当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，已被价格反应初步确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
+当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，尚未被价格反应充分确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
 
 ## Economic Calendar Risk
 
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### growth_negative / risk_off
+
+- headline: We're buying the dip on one of our stocks for two key reasons
+- source: CNBC
+- published_at: `2026-07-28T17:45:21+00:00`
+- importance_score: `84`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -46,15 +54,7 @@
 - headline: El Niño may push global warming to 2C or higher in the short term
 - source: Bloomberg
 - published_at: `2026-07-27T08:55:01+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Morning Bid: Markets dare to hope as US, Iran put war on hold - Reuters
-- source: Reuters
-- published_at: `2026-07-27T04:32:00+00:00`
-- importance_score: `100`
+- importance_score: `99`
 - confidence: `medium`
 
 ### oil_shock_relief / risk_on
@@ -62,29 +62,5 @@
 - headline: We're buying more of a slumping industrial stock and a hard-hit chipmaker
 - source: CNBC
 - published_at: `2026-07-27T12:53:43+00:00`
-- importance_score: `88`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Crude oil futures are pricing market adaptability, not hopeful Iran peace - Reuters
-- source: Reuters
-- published_at: `2026-07-27T07:39:01+00:00`
-- importance_score: `93`
-- confidence: `medium`
-
-### oil_shock_relief / risk_on
-
-- headline: Indian rupee heads for steepest rise in three weeks as oil falls - Reuters
-- source: Reuters
-- published_at: `2026-07-27T02:55:00+00:00`
-- importance_score: `85`
-- confidence: `medium`
-
-### fed_hawkish / risk_off
-
-- headline: Bitcoin ETFs end inflow streak as Fed rate concerns mount
-- source: Bloomberg
-- published_at: `2026-07-27T05:34:41+00:00`
-- importance_score: `81`
+- importance_score: `86`
 - confidence: `medium`
