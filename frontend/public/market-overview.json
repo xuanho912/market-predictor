@@ -6,10 +6,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-07-29",
-    "current_time_us_eastern": "2026-07-29T17:26:31.595645-04:00",
+    "current_time_us_eastern": "2026-07-29T18:34:49.957167-04:00",
     "data_freshness_status": "fresh",
     "expected_latest_trading_date": "2026-07-29",
-    "generated_at": "2026-07-29T21:26:31.595645+00:00",
+    "generated_at": "2026-07-29T22:34:49.957167+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -748,13 +748,13 @@
       "finnhub_quote_SPY": {
         "fallback_used": false,
         "latest_date": null,
-        "missing_data": true,
-        "point_in_time_safe": false,
-        "real_data": false,
-        "rows": 0,
+        "missing_data": false,
+        "point_in_time_safe": true,
+        "real_data": true,
+        "rows": 1,
         "source": "finnhub",
-        "stale_data": false,
-        "status": "rate_limited",
+        "stale_data": true,
+        "status": "stale",
         "symbol": "finnhub_quote_SPY"
       },
       "finnhub_rates_data": {
@@ -970,7 +970,7 @@
     "fallback_used": true,
     "finnhub_available": true,
     "finnhub_missing": false,
-    "finnhub_rate_limited": true,
+    "finnhub_rate_limited": false,
     "flow_available": true,
     "flow_provider_status": "proxy",
     "flow_proxy_only": true,
@@ -1049,13 +1049,13 @@
     "fred_required": true,
     "fred_successful_series": [
       "HY_OAS",
+      "DGS2",
       "IG_OAS",
       "DGS10",
-      "DGS2",
       "DGS3MO",
-      "DFII10",
-      "RECESSION",
       "BAA_SPREAD",
+      "RECESSION",
+      "DFII10",
       "FINANCIAL_STRESS"
     ],
     "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-07-29。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
@@ -1066,7 +1066,6 @@
     "latest_market_date": "2026-07-29",
     "missing_data": true,
     "missing_key_sources": [
-      "finnhub_quote_SPY",
       "finnhub_candle_SPY",
       "finnhub_candle_QQQ",
       "finnhub_candle_IWM",
@@ -1091,7 +1090,7 @@
       "event_detection_confidence": 72,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-07-29T21:26:19.781162+00:00",
+      "last_update": "2026-07-29T22:34:38.900910+00:00",
       "major_event_count": 8,
       "missing_reason": null,
       "news_direction": "risk_off",
@@ -1361,7 +1360,7 @@
           "expected_market_direction": "risk_off",
           "headline": "EXCLUSIVE: Iran to get Chinese shoulder-launched missile systems in weeks, sources say - Reuters",
           "importance_score": 100,
-          "published_at": "2026-07-29T03:04:00+00:00",
+          "published_at": "2026-07-29T09:43:41+00:00",
           "source": "Reuters"
         },
         {
@@ -1559,7 +1558,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": -0.0185,
-        "avg_equity_futures_1d_return": -0.0212,
+        "avg_equity_futures_1d_return": -0.0161,
         "confirmed_checks": [
           "股票ETF或股指期货下跌",
           "VIX 上升"
@@ -1575,7 +1574,7 @@
           "美元走强"
         ],
         "hyg_lqd_1d_relative_return": 0.0034,
-        "oil_proxy_1d_return": 0.0703,
+        "oil_proxy_1d_return": 0.0686,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -3117,11 +3116,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.1,
           "top_headlines": [
-            "Here are the five big takeaways from this week's Fed meeting",
             "Drone hits gas storage tanker at Egypt's Mediterranean port, Ambrey reports - Reuters",
-            "Trump and Netanyahu explored all Iran options including attack, Israeli official says - Reuters",
-            "Fed keeps rates steady. The big question now: What will Microsoft and Meta say on AI capex?",
-            "Hims and Hers shares fall 10% as FTC sues company over data, billing practices"
+            "Saudi Arabia seeks international coalition to protect Red Sea shipping from Houthis, sources say - Reuters",
+            "Here are the five big takeaways from this week's Fed meeting",
+            "US issues new Iran-related sanctions targeting insurers, more tankers - Reuters",
+            "Trump and Netanyahu explored all Iran options including attack, Israeli official says - Reuters"
           ]
         },
         "price": {
@@ -4095,7 +4094,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 95,
+            "freshness_score": 92,
             "headline": "Trump and Netanyahu explored all Iran options including attack, Israeli official says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4115,19 +4114,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 71,
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 56,
+            "freshness_score": 69,
             "headline": "EXCLUSIVE: Iran to get Chinese shoulder-launched missile systems in weeks, sources say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-07-29T03:04:00+00:00",
+            "published_at": "2026-07-29T09:43:41+00:00",
             "source": "Reuters"
           },
           {
@@ -4142,14 +4141,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 69,
+            "confidence_score": 68,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 50,
+            "freshness_score": 47,
             "headline": "Oil jumps 7% on escalating Middle East airstrikes - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4169,14 +4168,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 69,
+            "confidence_score": 68,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 48,
+            "freshness_score": 45,
             "headline": "Minnesota IT officials disclose 'coordinated cyberattack' at more than 30 local water systems - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4196,14 +4195,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 69,
+            "confidence_score": 68,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 48,
+            "freshness_score": 45,
             "headline": "Zelenskiy says he told Trump, senators that Ukraine needs anti-ballistic systems, missiles - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4230,7 +4229,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 47,
+            "freshness_score": 45,
             "headline": "US says it intercepted Iranian ballistic missiles launched towards US forces in Middle East - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4279,7 +4278,7 @@
               "expected_market_direction": "risk_off",
               "headline": "EXCLUSIVE: Iran to get Chinese shoulder-launched missile systems in weeks, sources say - Reuters",
               "importance_score": 100,
-              "published_at": "2026-07-29T03:04:00+00:00",
+              "published_at": "2026-07-29T09:43:41+00:00",
               "source": "Reuters"
             },
             {
@@ -4368,7 +4367,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0185,
-            "avg_equity_futures_1d_return": -0.0212,
+            "avg_equity_futures_1d_return": -0.0161,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升"
@@ -4384,7 +4383,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": 0.0034,
-            "oil_proxy_1d_return": 0.0703,
+            "oil_proxy_1d_return": 0.0686,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -5669,11 +5668,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.1,
           "top_headlines": [
-            "Here are the five big takeaways from this week's Fed meeting",
             "Drone hits gas storage tanker at Egypt's Mediterranean port, Ambrey reports - Reuters",
-            "Trump and Netanyahu explored all Iran options including attack, Israeli official says - Reuters",
-            "Fed keeps rates steady. The big question now: What will Microsoft and Meta say on AI capex?",
-            "Hims and Hers shares fall 10% as FTC sues company over data, billing practices"
+            "Saudi Arabia seeks international coalition to protect Red Sea shipping from Houthis, sources say - Reuters",
+            "Here are the five big takeaways from this week's Fed meeting",
+            "US issues new Iran-related sanctions targeting insurers, more tankers - Reuters",
+            "Trump and Netanyahu explored all Iran options including attack, Israeli official says - Reuters"
           ]
         },
         "price": {
@@ -6634,7 +6633,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 95,
+            "freshness_score": 92,
             "headline": "Trump and Netanyahu explored all Iran options including attack, Israeli official says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6654,19 +6653,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 71,
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 56,
+            "freshness_score": 69,
             "headline": "EXCLUSIVE: Iran to get Chinese shoulder-launched missile systems in weeks, sources say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-07-29T03:04:00+00:00",
+            "published_at": "2026-07-29T09:43:41+00:00",
             "source": "Reuters"
           },
           {
@@ -6681,14 +6680,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 69,
+            "confidence_score": 68,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 50,
+            "freshness_score": 47,
             "headline": "Oil jumps 7% on escalating Middle East airstrikes - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6708,14 +6707,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 69,
+            "confidence_score": 68,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 48,
+            "freshness_score": 45,
             "headline": "Minnesota IT officials disclose 'coordinated cyberattack' at more than 30 local water systems - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6735,14 +6734,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 69,
+            "confidence_score": 68,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 48,
+            "freshness_score": 45,
             "headline": "Zelenskiy says he told Trump, senators that Ukraine needs anti-ballistic systems, missiles - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6769,7 +6768,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 47,
+            "freshness_score": 45,
             "headline": "US says it intercepted Iranian ballistic missiles launched towards US forces in Middle East - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6818,7 +6817,7 @@
               "expected_market_direction": "risk_off",
               "headline": "EXCLUSIVE: Iran to get Chinese shoulder-launched missile systems in weeks, sources say - Reuters",
               "importance_score": 100,
-              "published_at": "2026-07-29T03:04:00+00:00",
+              "published_at": "2026-07-29T09:43:41+00:00",
               "source": "Reuters"
             },
             {
@@ -6907,7 +6906,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0185,
-            "avg_equity_futures_1d_return": -0.0212,
+            "avg_equity_futures_1d_return": -0.0161,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升"
@@ -6923,7 +6922,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": 0.0034,
-            "oil_proxy_1d_return": 0.0703,
+            "oil_proxy_1d_return": 0.0686,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -8226,11 +8225,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.1,
           "top_headlines": [
-            "Here are the five big takeaways from this week's Fed meeting",
             "Drone hits gas storage tanker at Egypt's Mediterranean port, Ambrey reports - Reuters",
-            "Trump and Netanyahu explored all Iran options including attack, Israeli official says - Reuters",
-            "Fed keeps rates steady. The big question now: What will Microsoft and Meta say on AI capex?",
-            "Hims and Hers shares fall 10% as FTC sues company over data, billing practices"
+            "Saudi Arabia seeks international coalition to protect Red Sea shipping from Houthis, sources say - Reuters",
+            "Here are the five big takeaways from this week's Fed meeting",
+            "US issues new Iran-related sanctions targeting insurers, more tankers - Reuters",
+            "Trump and Netanyahu explored all Iran options including attack, Israeli official says - Reuters"
           ]
         },
         "price": {
@@ -9209,7 +9208,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 95,
+            "freshness_score": 92,
             "headline": "Trump and Netanyahu explored all Iran options including attack, Israeli official says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9229,19 +9228,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 71,
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 56,
+            "freshness_score": 69,
             "headline": "EXCLUSIVE: Iran to get Chinese shoulder-launched missile systems in weeks, sources say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-07-29T03:04:00+00:00",
+            "published_at": "2026-07-29T09:43:41+00:00",
             "source": "Reuters"
           },
           {
@@ -9256,14 +9255,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 69,
+            "confidence_score": 68,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 50,
+            "freshness_score": 47,
             "headline": "Oil jumps 7% on escalating Middle East airstrikes - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9283,14 +9282,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 69,
+            "confidence_score": 68,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 48,
+            "freshness_score": 45,
             "headline": "Minnesota IT officials disclose 'coordinated cyberattack' at more than 30 local water systems - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9310,14 +9309,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 69,
+            "confidence_score": 68,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 48,
+            "freshness_score": 45,
             "headline": "Zelenskiy says he told Trump, senators that Ukraine needs anti-ballistic systems, missiles - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9344,7 +9343,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 47,
+            "freshness_score": 45,
             "headline": "US says it intercepted Iranian ballistic missiles launched towards US forces in Middle East - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9393,7 +9392,7 @@
               "expected_market_direction": "risk_off",
               "headline": "EXCLUSIVE: Iran to get Chinese shoulder-launched missile systems in weeks, sources say - Reuters",
               "importance_score": 100,
-              "published_at": "2026-07-29T03:04:00+00:00",
+              "published_at": "2026-07-29T09:43:41+00:00",
               "source": "Reuters"
             },
             {
@@ -9482,7 +9481,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0185,
-            "avg_equity_futures_1d_return": -0.0212,
+            "avg_equity_futures_1d_return": -0.0161,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升"
@@ -9498,7 +9497,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": 0.0034,
-            "oil_proxy_1d_return": 0.0703,
+            "oil_proxy_1d_return": 0.0686,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -10729,8 +10728,8 @@
           "ig_oas_20d_change": 0.050000000000000044
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote unavailable; news risk 10%; no major macro event flag; rates pressure 14%.",
-          "finnhub_quote_available": false,
+          "brief": "Finnhub quote 729.46; news risk 10%; no major macro event flag; rates pressure 14%.",
+          "finnhub_quote_available": true,
           "macro_event_risk_flag": false,
           "news_risk_score": 0.1,
           "rates_pressure_score": 0.14277428477648885,
@@ -10739,11 +10738,11 @@
         "finnhub": {
           "candle_status": "failed",
           "news_sentiment_status": "failed",
-          "quote_change_percent": null,
-          "quote_previous_close": null,
-          "quote_price": null,
+          "quote_change_percent": -1.5388,
+          "quote_previous_close": 740.86,
+          "quote_price": 729.46,
           "quote_source": "finnhub",
-          "quote_status": "rate_limited",
+          "quote_status": "available",
           "sentiment_score": null
         },
         "flow_positioning_proxy": {
@@ -10801,11 +10800,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.1,
           "top_headlines": [
-            "Here are the five big takeaways from this week's Fed meeting",
             "Drone hits gas storage tanker at Egypt's Mediterranean port, Ambrey reports - Reuters",
-            "Trump and Netanyahu explored all Iran options including attack, Israeli official says - Reuters",
-            "Fed keeps rates steady. The big question now: What will Microsoft and Meta say on AI capex?",
-            "Hims and Hers shares fall 10% as FTC sues company over data, billing practices"
+            "Saudi Arabia seeks international coalition to protect Red Sea shipping from Houthis, sources say - Reuters",
+            "Here are the five big takeaways from this week's Fed meeting",
+            "US issues new Iran-related sanctions targeting insurers, more tankers - Reuters",
+            "Trump and Netanyahu explored all Iran options including attack, Israeli official says - Reuters"
           ]
         },
         "price": {
@@ -11793,7 +11792,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 95,
+            "freshness_score": 92,
             "headline": "Trump and Netanyahu explored all Iran options including attack, Israeli official says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11813,19 +11812,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 71,
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 56,
+            "freshness_score": 69,
             "headline": "EXCLUSIVE: Iran to get Chinese shoulder-launched missile systems in weeks, sources say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-07-29T03:04:00+00:00",
+            "published_at": "2026-07-29T09:43:41+00:00",
             "source": "Reuters"
           },
           {
@@ -11840,14 +11839,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 69,
+            "confidence_score": 68,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 50,
+            "freshness_score": 47,
             "headline": "Oil jumps 7% on escalating Middle East airstrikes - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11867,14 +11866,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 69,
+            "confidence_score": 68,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 48,
+            "freshness_score": 45,
             "headline": "Minnesota IT officials disclose 'coordinated cyberattack' at more than 30 local water systems - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11894,14 +11893,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 69,
+            "confidence_score": 68,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 48,
+            "freshness_score": 45,
             "headline": "Zelenskiy says he told Trump, senators that Ukraine needs anti-ballistic systems, missiles - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11928,7 +11927,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 47,
+            "freshness_score": 45,
             "headline": "US says it intercepted Iranian ballistic missiles launched towards US forces in Middle East - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11977,7 +11976,7 @@
               "expected_market_direction": "risk_off",
               "headline": "EXCLUSIVE: Iran to get Chinese shoulder-launched missile systems in weeks, sources say - Reuters",
               "importance_score": 100,
-              "published_at": "2026-07-29T03:04:00+00:00",
+              "published_at": "2026-07-29T09:43:41+00:00",
               "source": "Reuters"
             },
             {
@@ -12066,7 +12065,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0185,
-            "avg_equity_futures_1d_return": -0.0212,
+            "avg_equity_futures_1d_return": -0.0161,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升"
@@ -12082,7 +12081,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": 0.0034,
-            "oil_proxy_1d_return": 0.0703,
+            "oil_proxy_1d_return": 0.0686,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
