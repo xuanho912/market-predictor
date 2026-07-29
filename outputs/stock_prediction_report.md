@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-07-28T23:47:55.725524+00:00`
+Generated at: `2026-07-29T00:10:54.918894+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -9,7 +9,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 
 - supported_symbols: `4`
 - watchlist_size: `4`
-- strongest_stock_symbol: `SMR`
+- strongest_stock_symbol: `TSLA`
 - stock_data_quality_score: `100.0`
 - validation_status: `not_yet_validated`
 - missing_high_value_data: `['single_stock_options']`
@@ -18,14 +18,14 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 
 ### NVDA
 
-- company_name: `NVIDIA Corp`
+- company_name: `NVIDIA`
 - status: `available`
 - current_price: `197.01`
 - market_context: `market_headwind`
 - primary: `stock_failed_bounce` / `26.4%`
 - secondary: `stock_downside_continuation` / `19.0%`
 - risk: `stock_event_risk` / `14.2%`
-- stock_confluence_score: `45.11` / `mixed`
+- stock_confluence_score: `43.61` / `weak`
 - stock_alpha_score_v1: `50.5` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `64.4%`
 - 60d_expected_return: `-1.0%`
@@ -47,14 +47,14 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 
 ### TSLA
 
-- company_name: `Tesla Inc`
+- company_name: `Tesla`
 - status: `available`
 - current_price: `307.44`
 - market_context: `market_headwind`
 - primary: `stock_downside_continuation` / `30.1%`
 - secondary: `stock_failed_bounce` / `26.1%`
 - risk: `stock_event_risk` / `11.5%`
-- stock_confluence_score: `36.62` / `weak`
+- stock_confluence_score: `35.12` / `weak`
 - stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `23.1%`
 - 60d_expected_return: `-2.6%`
@@ -76,19 +76,19 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 
 ### SMR
 
-- company_name: `Nuscale Power Corp`
+- company_name: `NuScale Power`
 - status: `available`
 - current_price: `8.22`
 - market_context: `risk_off_pressure`
-- primary: `stock_downside_continuation` / `31.1%`
-- secondary: `stock_failed_bounce` / `21.6%`
-- risk: `stock_event_risk` / `11.9%`
-- stock_confluence_score: `33.13` / `weak`
+- primary: `stock_downside_continuation` / `29.8%`
+- secondary: `stock_failed_bounce` / `21.9%`
+- risk: `stock_event_risk` / `14.5%`
+- stock_confluence_score: `25.86` / `weak`
 - stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `23.6%`
-- 60d_expected_return: `-3.3%`
-- risk_reward_ratio: `0.35`
-- strongest_alert: `Stock Breakdown Warning` / `WATCH` / `52.35`
+- 60d_expected_return: `-3.4%`
+- risk_reward_ratio: `0.34`
+- strongest_alert: `Stock Breakdown Warning` / `WATCH` / `51.54`
 - historical_analog_support: `conflicting` / samples `10`
 - validation_status: `not_yet_validated`
 
@@ -105,14 +105,14 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 
 ### CEG
 
-- company_name: `Constellation Energy Corp`
+- company_name: `Constellation Energy`
 - status: `available`
 - current_price: `259.82`
 - market_context: `risk_off_pressure`
 - primary: `stock_failed_bounce` / `26.5%`
 - secondary: `stock_downside_continuation` / `22.6%`
 - risk: `stock_event_risk` / `10.7%`
-- stock_confluence_score: `36.42` / `weak`
+- stock_confluence_score: `34.92` / `weak`
 - stock_alpha_score_v1: `26.5` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `48.8%`
 - 60d_expected_return: `-1.1%`
