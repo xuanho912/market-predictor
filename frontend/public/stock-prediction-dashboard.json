@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-07-29T04:34:13.058455+00:00",
+  "generated_at": "2026-07-29T06:21:29.345519+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-07-29T04:34:13.064223+00:00",
+    "generated_at": "2026-07-29T06:21:29.350272+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 129,
     "risk_score_effectiveness": {
@@ -2442,6 +2442,30 @@
           "event_risk_flag": "high",
           "headlines": [
             {
+              "datetime": 1785302400,
+              "headline": "The S&P 500 and Dow Are on Track to Beat the Nasdaq for the First Time Since 2022. Here's What That Means for Investors.",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=efda01ca8d7f8593a145ec2978cb3372560c07d7091e0bfbae2fa74f507be194"
+            },
+            {
+              "datetime": 1785301200,
+              "headline": "A Tired Tech Trade Looks Set to Sink the Stock Market",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=7be7020126cef875b1ad36c7a8028b63fa81579611da2aa2e8a934460aca1461"
+            },
+            {
+              "datetime": 1785298020,
+              "headline": "Qualcomm Is Down 37% From Its High and Reports Wednesday. Is the Stock a Buy?",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=f2e3c53c9f7d93d9a8644995951bffda8664af0bb92b7705f74571c529c30e36"
+            },
+            {
+              "datetime": 1785297544,
+              "headline": "Is Avis Budget Group a Buy After Its Latest Earnings Report?",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=1f2e4cefdf603c16edc8272d84f1fee672282967aaf741a315f6cb8aa0f78b5f"
+            },
+            {
               "datetime": 1785294788,
               "headline": "Nvidia (NVDA) Pours $5 Billion Into Safe AI And Expands Data Center Reach",
               "source": "Yahoo",
@@ -2464,37 +2488,13 @@
               "headline": "Anthropic clarifies stance on open-weight AI models",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=d85e5db1a0f516464186898786f677efc1003b913e9171add623d2b507560802"
-            },
-            {
-              "datetime": 1785291590,
-              "headline": "Apple Hits $5 Trillion Market Cap: Will Earnings Extend the Rally?",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=4716f50be8f91b37a5893167337f2e348324fd3d9dbabcd31480062f5ec94103"
-            },
-            {
-              "datetime": 1785291420,
-              "headline": "Nvidia, oil and the Fed are fighting over the market",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=3698bec8e301bb56150b7ee627886e7b4cfdda5536afdf6394584ae6562f3aa1"
-            },
-            {
-              "datetime": 1785289878,
-              "headline": "SK hynix posts 1,200% net profit boost on AI chip boom",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=88d98c896226484f48160ac44d4ee45d5e5861fe40fdf23f93983c771ea86ea3"
-            },
-            {
-              "datetime": 1785288240,
-              "headline": "Kimi K3: DeepSeek 2.0, or is this Time Different?",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=e0e7a2f50c4fc97340626c0926d8668d8fb9d507559975d7591cf762e5338625"
             }
           ],
-          "major_company_headline": "Nvidia (NVDA) Pours $5 Billion Into Safe AI And Expands Data Center Reach",
+          "major_company_headline": "The S&P 500 and Dow Are on Track to Beat the Nasdaq for the First Time Since 2022. Here's What That Means for Investors.",
           "news_count_24h": 20,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
-          "news_sentiment": "negative"
+          "news_sentiment": "positive"
         },
         "price_trend": {
           "close": 197.00999450683594,
@@ -3017,6 +3017,7 @@
         "supporting_signals": [
           "个股相对强弱优于基准。",
           "成交量结构支持当前路径。",
+          "近期公司新闻偏正面。",
           "基础财务指标已接入且收入增长为正。"
         ]
       },
@@ -4107,7 +4108,7 @@
           {
             "affected_ticker": "NVDA",
             "alert_level": "NO_ALERT",
-            "alert_score": 7.26,
+            "alert_score": 7.34,
             "alert_type": "Stock Bounce Setup",
             "confirmation_needed": [
               "价格站上主路径确认价",
@@ -4345,15 +4346,16 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Nvidia (NVDA) Pours $5 Billion Into Safe AI And Expands Data Center Reach",
+              "公司新闻已接入: The S&P 500 and Dow Are on Track to Beat the Nasdaq for the First Time Since 2022. Here's What That Means for Investors.",
+              "新闻情绪偏正",
               "未来 30 天存在财报催化：2026-08-26",
               "增长数据具备 EPS 上修叙事基础"
             ],
             "max_points": 10,
             "missing_fields": [],
             "name": "catalyst",
-            "points": 8.0,
-            "score_pct": 80.0,
+            "points": 10.0,
+            "score_pct": 100.0,
             "status": "supportive"
           },
           "flow": {
@@ -4439,7 +4441,7 @@
           "expected_return_60d": -0.0103,
           "max_drawdown_risk_20d": 0.0865,
           "max_drawdown_risk_60d": 0.1643,
-          "outperformance_probability_20d": 0.6441,
+          "outperformance_probability_20d": 0.6521,
           "risk_reward_ratio": 0.47,
           "upside_potential_60d": 0.0771
         },
@@ -4461,7 +4463,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "Nvidia (NVDA) Pours $5 Billion Into Safe AI And Expands Data Center Reach",
+          "catalyst": "The S&P 500 and Dow Are on Track to Beat the Nasdaq for the First Time Since 2022. Here's What That Means for Investors.",
           "expectation_gap": [
             "收入增长较强，具备正向预期差基础",
             "EPS 增长较强，可能支持盈利上修叙事",
@@ -4480,7 +4482,7 @@
           "primary_path": "stock_failed_bounce",
           "valuation_repricing": "估值有扩张条件"
         },
-        "total_score": 50.5,
+        "total_score": 52.5,
         "validation_status": "not_yet_validated",
         "version": "stock_alpha_score_v1"
       },
@@ -4507,8 +4509,8 @@
         "module_scores": {
           "alpha_quality": {
             "evidence": "个股 Alpha 评分已接入",
-            "reason": "score=50.5; grade=weak_or_no_alpha_edge; benchmark=QQQ",
-            "score": 50.5,
+            "reason": "score=52.5; grade=weak_or_no_alpha_edge; benchmark=QQQ",
+            "score": 52.5,
             "status": "conflicting"
           },
           "fundamentals_earnings": {
@@ -4567,7 +4569,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 45.48,
+        "stock_confluence_score": 45.66,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "个股跑赢所属板块",
@@ -4578,6 +4580,7 @@
       "supporting_signals": [
         "个股相对强弱优于基准。",
         "成交量结构支持当前路径。",
+        "近期公司新闻偏正面。",
         "基础财务指标已接入且收入增长为正。"
       ],
       "symbol": "NVDA",
@@ -6815,6 +6818,18 @@
           "event_risk_flag": "high",
           "headlines": [
             {
+              "datetime": 1785297880,
+              "headline": "Gary Black Warns Tesla Stock Could Break Below $300, SpaceX Below $100 As AI Valuations Come Under Pressure",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=46161209cadb3e0e6681c1119700adfea2a823ea4c5f39de5aa7d02d8d56afe6"
+            },
+            {
+              "datetime": 1785297780,
+              "headline": "SpaceX stock sends investors a signal they need to see",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=09da2190a63e519cc8114f23693c2fd6526de9910ea426fe76494bb72588df90"
+            },
+            {
               "datetime": 1785287473,
               "headline": "Tesla (TSLA) Secures Long Term Power Deals And Expands Optimus Teleoperation",
               "source": "Yahoo",
@@ -6849,21 +6864,9 @@
               "headline": "Where Will Tesla Stock Be in 5 Years?",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=4fbd3486e8e3bb11c358d18a34c9c8ec96e37632bbd09dbe91218a01e1fa5b22"
-            },
-            {
-              "datetime": 1785275703,
-              "headline": "Berkshire Hathaway: Skip Tech Earnings, Buy This Classic Defensive",
-              "source": "SeekingAlpha",
-              "url": "https://finnhub.io/api/news?id=0f396bf7a2e70eef90cc9d6454d41ad48508bea502225276a3ff3a1c92a80d59"
-            },
-            {
-              "datetime": 1785274200,
-              "headline": "Coca-Cola Stock Is Rocking Like the 1990s, With a Higher P/E Than Most of the Magnificent 7",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=ca71f8ffaba31bd0ea32d95592c287f16fd66d65b9fc227115f04b6312fb01eb"
             }
           ],
-          "major_company_headline": "Tesla (TSLA) Secures Long Term Power Deals And Expands Optimus Teleoperation",
+          "major_company_headline": "Gary Black Warns Tesla Stock Could Break Below $300, SpaceX Below $100 As AI Valuations Come Under Pressure",
           "news_count_24h": 20,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
@@ -8718,7 +8721,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Tesla (TSLA) Secures Long Term Power Deals And Expands Optimus Teleoperation"
+              "公司新闻已接入: Gary Black Warns Tesla Stock Could Break Below $300, SpaceX Below $100 As AI Valuations Come Under Pressure"
             ],
             "max_points": 10,
             "missing_fields": [],
@@ -8831,7 +8834,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "Tesla (TSLA) Secures Long Term Power Deals And Expands Optimus Teleoperation",
+          "catalyst": "Gary Black Warns Tesla Stock Could Break Below $300, SpaceX Below $100 As AI Valuations Come Under Pressure",
           "expectation_gap": [
             "暂未看到明确正向预期差证据"
           ],
@@ -8964,7 +8967,7 @@
       "top_candidate": "NVDA",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-07-29T04:34:13.058771+00:00",
+    "generated_at": "2026-07-29T06:21:29.345735+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -8974,19 +8977,19 @@
     "top_candidates": [
       {
         "alpha_fields": {
-          "alpha_score": 50.5,
+          "alpha_score": 52.5,
           "expected_return_60d": -0.0103,
           "forecast_grade": "weak_or_no_alpha_edge",
           "main_logic": "半导体/AI 逻辑：订单、毛利率、资本开支周期、估值重估和资金确认。",
-          "outperformance_probability_20d": 0.6441,
+          "outperformance_probability_20d": 0.6521,
           "risk_reward_ratio": 0.47
         },
-        "alpha_quality_score": 50.5,
+        "alpha_quality_score": 52.5,
         "as_of": "2026-07-28",
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 63.52,
         "company_name": "NVIDIA Corp",
-        "confluence_score": 45.48,
+        "confluence_score": 45.66,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9003,7 +9006,7 @@
           "mid": 196.71,
           "range_pct": 0.0386
         },
-        "final_radar_score": 58.95,
+        "final_radar_score": 59.33,
         "forecast_date": "2026-07-28",
         "invalidation_level": 191.14,
         "last_close": 197.00999450683594,
@@ -9026,8 +9029,8 @@
           "earnings": "available"
         },
         "next_day_move_probability": 0.6517,
-        "one_line_reason": "failed_bounce_risk: Alpha 50 / 弹性 64 / 成交量 69 / 相对强弱 76 / 催化 64 / 大盘 market_headwind / 板块 supportive",
-        "outperformance_probability_20d": 0.6441,
+        "one_line_reason": "failed_bounce_risk: Alpha 52 / 弹性 64 / 成交量 69 / 相对强弱 76 / 催化 64 / 大盘 market_headwind / 板块 supportive",
+        "outperformance_probability_20d": 0.6521,
         "primary_probability": 0.2643,
         "primary_scenario": "stock_failed_bounce",
         "radar_level": "MODERATE_OPPORTUNITY",

@@ -4519,7 +4519,7 @@
         "SPY": "yahoo-chart",
         "TLT": "yahoo-chart",
         "UUP": "yahoo-chart",
-        "^TNX": "yahoo-chart",
+        "^TNX": "local-cache-yahoo-chart",
         "^VIX": "yahoo-chart"
       },
       "distance_to_threshold": -0.24536636000000006,
@@ -7210,7 +7210,7 @@
       "evidence_note": "Forward-only breadth attribution is still below the minimum sample gate; these buckets are tracked but not proof.",
       "status": "not_enough_forward_samples"
     },
-    "generated_at": "2026-07-29T04:34:12.406658Z",
+    "generated_at": "2026-07-29T06:21:28.863949Z",
     "notes": [
       "This audit compares the same run with true breadth provider disabled vs enabled.",
       "The audit does not change Alpha v1 and does not prove tradable alpha.",
@@ -7368,7 +7368,7 @@
   },
   "breadth_status": {
     "cache_root": "data/breadth_cache",
-    "generated_at": "2026-07-29T04:33:48.870121+00:00",
+    "generated_at": "2026-07-29T06:20:47.109203+00:00",
     "provider": "true_breadth_provider",
     "sector_participation_proxy": {
       "data_note": "Sector ETF proxy, not constituent-level sector breadth.",
@@ -7900,7 +7900,7 @@
   },
   "confluence_score": {
     "disclaimer": "Confluence is a forecast-confirmation layer, not a trading signal or execution recommendation.",
-    "generated_at": "2026-07-29T04:34:12.416172+00:00",
+    "generated_at": "2026-07-29T06:21:28.871500+00:00",
     "summary": {
       "average_confluence_score": 50.0,
       "mixed_or_no_edge_symbols": [
@@ -8680,10 +8680,10 @@
     "can_append_forecast_record": false,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-07-29",
-    "current_time_us_eastern": "2026-07-29T00:34:12.416893-04:00",
+    "current_time_us_eastern": "2026-07-29T02:21:28.872044-04:00",
     "data_freshness_status": "market_open_unconfirmed",
     "expected_latest_trading_date": "2026-07-28",
-    "generated_at": "2026-07-29T04:34:12.416893+00:00",
+    "generated_at": "2026-07-29T06:21:28.872044+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -8844,13 +8844,13 @@
         "symbol": "IWM"
       },
       "LQD": {
-        "fallback_used": false,
+        "fallback_used": true,
         "latest_date": "2026-07-28",
         "missing_data": false,
         "point_in_time_safe": true,
         "real_data": true,
         "rows": 520,
-        "source": "yahoo-chart",
+        "source": "local-cache-yahoo-chart",
         "stale_data": false,
         "status": "available",
         "symbol": "LQD"
@@ -8970,7 +8970,7 @@
         "point_in_time_safe": true,
         "real_data": true,
         "rows": 520,
-        "source": "yahoo-chart",
+        "source": "finnhub-quote-patch",
         "stale_data": false,
         "status": "available",
         "symbol": "XLC"
@@ -9006,7 +9006,7 @@
         "point_in_time_safe": true,
         "real_data": true,
         "rows": 520,
-        "source": "yahoo-chart",
+        "source": "finnhub-quote-patch",
         "stale_data": false,
         "status": "available",
         "symbol": "XLI"
@@ -9730,7 +9730,7 @@
         "status": "available"
       }
     },
-    "generated_at": "2026-07-29T04:34:02.293234+00:00",
+    "generated_at": "2026-07-29T06:21:18.778263+00:00",
     "notes": [
       "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
       "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -9901,13 +9901,13 @@
         "symbol": "IWM"
       },
       "LQD": {
-        "fallback_used": false,
+        "fallback_used": true,
         "latest_date": "2026-07-28",
         "missing_data": false,
         "point_in_time_safe": true,
         "real_data": true,
         "rows": 520,
-        "source": "yahoo-chart",
+        "source": "local-cache-yahoo-chart",
         "stale_data": false,
         "status": "available",
         "symbol": "LQD"
@@ -10029,7 +10029,7 @@
         "point_in_time_safe": true,
         "real_data": true,
         "rows": 520,
-        "source": "yahoo-chart",
+        "source": "finnhub-quote-patch",
         "stale_data": false,
         "status": "available",
         "symbol": "XLC"
@@ -10065,7 +10065,7 @@
         "point_in_time_safe": true,
         "real_data": true,
         "rows": 520,
-        "source": "yahoo-chart",
+        "source": "finnhub-quote-patch",
         "stale_data": false,
         "status": "available",
         "symbol": "XLI"
@@ -10642,7 +10642,7 @@
         "symbol": "macro_event_calendar"
       },
       "news_event_provider": {
-        "event_detection_confidence": 65,
+        "event_detection_confidence": 64,
         "fallback_used": false,
         "latest_date": "2026-07-28",
         "major_event_count": 3,
@@ -10857,15 +10857,15 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
-        "HY_OAS",
         "DGS10",
-        "BAA_SPREAD",
+        "HY_OAS",
         "IG_OAS",
         "DGS2",
+        "BAA_SPREAD",
         "DGS3MO",
         "RECESSION",
-        "DFII10",
-        "FINANCIAL_STRESS"
+        "FINANCIAL_STRESS",
+        "DFII10"
       ],
       "freshness_warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-07-28，最近完整收盘交易日为 2026-07-28；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
       "gamma_available": false,
@@ -10896,10 +10896,10 @@
       ],
       "news_event": {
         "available": true,
-        "event_detection_confidence": 65,
+        "event_detection_confidence": 64,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-07-29T04:34:02.300020+00:00",
+        "last_update": "2026-07-29T06:21:18.783250+00:00",
         "major_event_count": 3,
         "missing_reason": null,
         "news_direction": "risk_off",
@@ -10951,7 +10951,7 @@
   },
   "event_refresh": false,
   "feature_snapshot_v2": {
-    "generated_at": "2026-07-29T04:34:02.277168+00:00",
+    "generated_at": "2026-07-29T06:21:18.768518+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -11189,7 +11189,7 @@
     "version": "market_intelligence_engine_v2_features"
   },
   "feature_snapshot_v3": {
-    "generated_at": "2026-07-29T04:34:02.284227+00:00",
+    "generated_at": "2026-07-29T06:21:18.772627+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -11338,7 +11338,7 @@
           "quarter_end_effect": false
         },
         "market_structure": {
-          "defensive_vs_cyclical_20d": -0.0058729632566853485,
+          "defensive_vs_cyclical_20d": -0.005872955742507985,
           "equal_weight_vs_cap_weight_20d": 0.02196787559976887,
           "growth_vs_large_cap_20d": -0.06691692652168046,
           "sector_participation_20d": 0.7272727272727273,
@@ -11574,7 +11574,7 @@
           "quarter_end_effect": false
         },
         "market_structure": {
-          "defensive_vs_cyclical_20d": -0.0058729632566853485,
+          "defensive_vs_cyclical_20d": -0.005872955742507985,
           "equal_weight_vs_cap_weight_20d": 0.02196787559976887,
           "growth_vs_large_cap_20d": -0.06691692652168046,
           "sector_participation_20d": 0.7272727272727273,
@@ -11810,7 +11810,7 @@
           "quarter_end_effect": false
         },
         "market_structure": {
-          "defensive_vs_cyclical_20d": -0.0058729632566853485,
+          "defensive_vs_cyclical_20d": -0.005872955742507985,
           "equal_weight_vs_cap_weight_20d": 0.02196787559976887,
           "growth_vs_large_cap_20d": -0.06691692652168046,
           "sector_participation_20d": 0.7272727272727273,
@@ -12046,7 +12046,7 @@
           "quarter_end_effect": false
         },
         "market_structure": {
-          "defensive_vs_cyclical_20d": -0.0058729632566853485,
+          "defensive_vs_cyclical_20d": -0.005872955742507985,
           "equal_weight_vs_cap_weight_20d": 0.02196787559976887,
           "growth_vs_large_cap_20d": -0.06691692652168046,
           "sector_participation_20d": 0.7272727272727273,
@@ -12139,7 +12139,7 @@
     "version": "market_intelligence_engine_v3_features"
   },
   "flow_positioning_status": {
-    "generated_at": "2026-07-29T04:33:55.339247+00:00",
+    "generated_at": "2026-07-29T06:21:05.210854+00:00",
     "latest_date": "2026-07-28",
     "provider": "flow_positioning_proxy",
     "sources": {
@@ -12236,7 +12236,7 @@
         "missing_data": false,
         "real_data": true,
         "row_count": 520,
-        "source": "yahoo-chart",
+        "source": "finnhub-quote-patch",
         "symbol": "XLC"
       },
       "XLE": {
@@ -12260,7 +12260,7 @@
         "missing_data": false,
         "real_data": true,
         "row_count": 520,
-        "source": "yahoo-chart",
+        "source": "finnhub-quote-patch",
         "symbol": "XLI"
       },
       "XLK": {
@@ -12348,7 +12348,7 @@
           "defensive_vs_cyclical_20d": -0.005873,
           "equal_weight_vs_cap_weight_20d": 0.021968,
           "etf_relative_volume_20d": 1.4402,
-          "growth_vs_defensive_20d": -0.063109,
+          "growth_vs_defensive_20d": -0.057684,
           "high_beta_vs_low_vol_20d": -0.123867,
           "hyg_lqd_relative_strength_20d": 0.018788,
           "hyg_tlt_relative_strength_20d": 0.029333,
@@ -12360,7 +12360,7 @@
           "sector_participation_proxy": 0.6364,
           "sector_rotation_proxy_20d": {
             "XLB": 0.033162,
-            "XLC": 0.016593,
+            "XLC": 0.032869,
             "XLE": 0.074468,
             "XLF": 0.072226,
             "XLI": -0.001477,
@@ -12409,7 +12409,7 @@
           "defensive_vs_cyclical_20d": -0.005873,
           "equal_weight_vs_cap_weight_20d": 0.021968,
           "etf_relative_volume_20d": 0.9788,
-          "growth_vs_defensive_20d": -0.063109,
+          "growth_vs_defensive_20d": -0.057684,
           "high_beta_vs_low_vol_20d": -0.123867,
           "hyg_lqd_relative_strength_20d": 0.018788,
           "hyg_tlt_relative_strength_20d": 0.029333,
@@ -12421,7 +12421,7 @@
           "sector_participation_proxy": 0.6364,
           "sector_rotation_proxy_20d": {
             "XLB": 0.033162,
-            "XLC": 0.016593,
+            "XLC": 0.032869,
             "XLE": 0.074468,
             "XLF": 0.072226,
             "XLI": -0.001477,
@@ -12470,7 +12470,7 @@
           "defensive_vs_cyclical_20d": -0.005873,
           "equal_weight_vs_cap_weight_20d": 0.021968,
           "etf_relative_volume_20d": 1.3414,
-          "growth_vs_defensive_20d": -0.063109,
+          "growth_vs_defensive_20d": -0.057684,
           "high_beta_vs_low_vol_20d": -0.123867,
           "hyg_lqd_relative_strength_20d": 0.018788,
           "hyg_tlt_relative_strength_20d": 0.029333,
@@ -12482,7 +12482,7 @@
           "sector_participation_proxy": 0.6364,
           "sector_rotation_proxy_20d": {
             "XLB": 0.033162,
-            "XLC": 0.016593,
+            "XLC": 0.032869,
             "XLE": 0.074468,
             "XLF": 0.072226,
             "XLI": -0.001477,
@@ -12531,7 +12531,7 @@
           "defensive_vs_cyclical_20d": -0.005873,
           "equal_weight_vs_cap_weight_20d": 0.021968,
           "etf_relative_volume_20d": 1.0079,
-          "growth_vs_defensive_20d": -0.063109,
+          "growth_vs_defensive_20d": -0.057684,
           "high_beta_vs_low_vol_20d": -0.123867,
           "hyg_lqd_relative_strength_20d": 0.018788,
           "hyg_tlt_relative_strength_20d": 0.029333,
@@ -12543,7 +12543,7 @@
           "sector_participation_proxy": 0.6364,
           "sector_rotation_proxy_20d": {
             "XLB": 0.033162,
-            "XLC": 0.016593,
+            "XLC": 0.032869,
             "XLE": 0.074468,
             "XLF": 0.072226,
             "XLI": -0.001477,
@@ -12590,7 +12590,7 @@
     ]
   },
   "flow_status": {
-    "generated_at": "2026-07-29T04:33:55.339247+00:00",
+    "generated_at": "2026-07-29T06:21:05.210854+00:00",
     "latest_date": "2026-07-28",
     "provider": "flow_positioning_proxy",
     "sources": {
@@ -12687,7 +12687,7 @@
         "missing_data": false,
         "real_data": true,
         "row_count": 520,
-        "source": "yahoo-chart",
+        "source": "finnhub-quote-patch",
         "symbol": "XLC"
       },
       "XLE": {
@@ -12711,7 +12711,7 @@
         "missing_data": false,
         "real_data": true,
         "row_count": 520,
-        "source": "yahoo-chart",
+        "source": "finnhub-quote-patch",
         "symbol": "XLI"
       },
       "XLK": {
@@ -12799,7 +12799,7 @@
           "defensive_vs_cyclical_20d": -0.005873,
           "equal_weight_vs_cap_weight_20d": 0.021968,
           "etf_relative_volume_20d": 1.4402,
-          "growth_vs_defensive_20d": -0.063109,
+          "growth_vs_defensive_20d": -0.057684,
           "high_beta_vs_low_vol_20d": -0.123867,
           "hyg_lqd_relative_strength_20d": 0.018788,
           "hyg_tlt_relative_strength_20d": 0.029333,
@@ -12811,7 +12811,7 @@
           "sector_participation_proxy": 0.6364,
           "sector_rotation_proxy_20d": {
             "XLB": 0.033162,
-            "XLC": 0.016593,
+            "XLC": 0.032869,
             "XLE": 0.074468,
             "XLF": 0.072226,
             "XLI": -0.001477,
@@ -12860,7 +12860,7 @@
           "defensive_vs_cyclical_20d": -0.005873,
           "equal_weight_vs_cap_weight_20d": 0.021968,
           "etf_relative_volume_20d": 0.9788,
-          "growth_vs_defensive_20d": -0.063109,
+          "growth_vs_defensive_20d": -0.057684,
           "high_beta_vs_low_vol_20d": -0.123867,
           "hyg_lqd_relative_strength_20d": 0.018788,
           "hyg_tlt_relative_strength_20d": 0.029333,
@@ -12872,7 +12872,7 @@
           "sector_participation_proxy": 0.6364,
           "sector_rotation_proxy_20d": {
             "XLB": 0.033162,
-            "XLC": 0.016593,
+            "XLC": 0.032869,
             "XLE": 0.074468,
             "XLF": 0.072226,
             "XLI": -0.001477,
@@ -12921,7 +12921,7 @@
           "defensive_vs_cyclical_20d": -0.005873,
           "equal_weight_vs_cap_weight_20d": 0.021968,
           "etf_relative_volume_20d": 1.3414,
-          "growth_vs_defensive_20d": -0.063109,
+          "growth_vs_defensive_20d": -0.057684,
           "high_beta_vs_low_vol_20d": -0.123867,
           "hyg_lqd_relative_strength_20d": 0.018788,
           "hyg_tlt_relative_strength_20d": 0.029333,
@@ -12933,7 +12933,7 @@
           "sector_participation_proxy": 0.6364,
           "sector_rotation_proxy_20d": {
             "XLB": 0.033162,
-            "XLC": 0.016593,
+            "XLC": 0.032869,
             "XLE": 0.074468,
             "XLF": 0.072226,
             "XLI": -0.001477,
@@ -12982,7 +12982,7 @@
           "defensive_vs_cyclical_20d": -0.005873,
           "equal_weight_vs_cap_weight_20d": 0.021968,
           "etf_relative_volume_20d": 1.0079,
-          "growth_vs_defensive_20d": -0.063109,
+          "growth_vs_defensive_20d": -0.057684,
           "high_beta_vs_low_vol_20d": -0.123867,
           "hyg_lqd_relative_strength_20d": 0.018788,
           "hyg_tlt_relative_strength_20d": 0.029333,
@@ -12994,7 +12994,7 @@
           "sector_participation_proxy": 0.6364,
           "sector_rotation_proxy_20d": {
             "XLB": 0.033162,
-            "XLC": 0.016593,
+            "XLC": 0.032869,
             "XLE": 0.074468,
             "XLF": 0.072226,
             "XLI": -0.001477,
@@ -14257,7 +14257,7 @@
       "primary_beats_secondary": "primary_path_not_better_than_secondary"
     },
     "current_evidence_level": "stronger_evidence",
-    "generated_at": "2026-07-29T04:34:12.706852+00:00",
+    "generated_at": "2026-07-29T06:21:29.092592+00:00",
     "guardrails": [
       "This scorecard validates probabilistic forecast paths, not trades.",
       "Forecast records are immutable except for future-outcome backfill fields.",
@@ -14373,7 +14373,7 @@
       "risk_on_flow_underweighted": 25,
       "volatility_repair_underweighted": 20
     },
-    "generated_at": "2026-07-29T04:34:12.799150+00:00",
+    "generated_at": "2026-07-29T06:21:29.160262+00:00",
     "guardrails": [
       "This is forecast error attribution, not a trading or PnL report.",
       "Attribution is diagnostic and probabilistic; it is not proof of causality.",
@@ -18201,7 +18201,7 @@
     },
     "dominant_error_theme": "news_data_gap_limited_attribution",
     "evidence_level": "stronger_evidence",
-    "generated_at": "2026-07-29T04:34:12.820495+00:00",
+    "generated_at": "2026-07-29T06:21:29.174863+00:00",
     "global_learning_status": "shadow_challenger_queue_ready",
     "guardrails": [
       "This queue does not change baseline_v1 or Alpha v1.",
@@ -18234,7 +18234,7 @@
     },
     "data_freshness_status": "market_open_unconfirmed",
     "expected_latest_trading_date": "2026-07-28",
-    "generated_at": "2026-07-29T04:34:12.675458Z",
+    "generated_at": "2026-07-29T06:21:29.069204Z",
     "immutability_note": "The dashboard may refresh a snapshot, but baseline_v1 forecast records are appended only after data freshness is confirmed.",
     "latest_market_date": "2026-07-28",
     "ledger_append_skipped": true,
@@ -18252,7 +18252,7 @@
   "forecast_price_levels": {
     "as_of": "2026-07-28",
     "disclaimer": "Forecast price levels are probabilistic scenario points derived from simulated paths, recent price structure and volatility bands. They are not execution instructions, risk-control rules, or guaranteed target prices.",
-    "generated_at": "2026-07-29T04:34:12.411194Z",
+    "generated_at": "2026-07-29T06:21:28.867965Z",
     "symbols": {
       "DIA": {
         "current_price": 526.8900146484375,
@@ -19995,7 +19995,7 @@
     "version": "forecast_price_levels_v1"
   },
   "forecast_records": {
-    "generated_at": "2026-07-29T04:34:12.693551+00:00",
+    "generated_at": "2026-07-29T06:21:29.082478+00:00",
     "records": [
       {
         "actual_return_10d": 0.01680114442,
@@ -38022,7 +38022,7 @@
       "5d": 108,
       "60d": 0
     },
-    "generated_at": "2026-07-29T04:34:12.820412+00:00",
+    "generated_at": "2026-07-29T06:21:29.174800+00:00",
     "guardrails": [
       "This gate does not modify Alpha v1 threshold, baseline_v1 or historical forecast records.",
       "This is forecast reliability assessment, not trading advice.",
@@ -39748,7 +39748,7 @@
     },
     "forward_completed_sample_size": 0,
     "forward_validation_notice": "当前高置信度还没有被前向样本验证，不应当视为稳定预测能力。",
-    "generated_at": "2026-07-29T04:34:02.296124+00:00",
+    "generated_at": "2026-07-29T06:21:18.780338+00:00",
     "internal_resonance_forward_validation": {
       "aligned_internal_resonance": {
         "by_horizon": {
@@ -40734,7 +40734,7 @@
       }
     },
     "conclusion": "confidence_not_yet_validated",
-    "generated_at": "2026-07-29T04:34:02.292462+00:00",
+    "generated_at": "2026-07-29T06:21:18.777720+00:00",
     "high_confidence_better_than_low_confidence": false,
     "high_vs_low_comparison_by_horizon": {
       "10d": false,
@@ -43352,7 +43352,7 @@
       "note": "Historical replay cannot upgrade alpha or confidence until forward validation samples mature.",
       "sample_gate": "stronger_evidence"
     },
-    "generated_at": "2026-07-29T04:34:12.817636+00:00",
+    "generated_at": "2026-07-29T06:21:29.172962+00:00",
     "guardrails": [
       "Historical replay is research evaluation only and cannot replace daily forward validation.",
       "Historical replay results must not be described as confirmed alpha.",
@@ -44881,7 +44881,7 @@
   },
   "market_alerts": {
     "disclaimer": "Market alerts are forecast warnings and scenario-confirmation notes only. They are not trading signals or buy/sell/entry/exit guidance.",
-    "generated_at": "2026-07-29T04:34:12.416802+00:00",
+    "generated_at": "2026-07-29T06:21:28.871971+00:00",
     "summary": {
       "alert_count_by_level": {
         "EXTREME": 0,
@@ -48034,7 +48034,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-07-29T04:34:02.276092+00:00",
+      "generated_at": "2026-07-29T06:21:18.767894+00:00",
       "notes": [
         "price/volatility/credit/rates/liquidity currently use public market proxies.",
         "options breadth macro flow are not treated as available unless real feeds are connected.",
@@ -48075,13 +48075,13 @@
           "symbol": "IWM"
         },
         "LQD": {
-          "fallback_used": false,
+          "fallback_used": true,
           "latest_date": "2026-07-28",
           "missing_data": false,
           "point_in_time_safe": true,
           "real_data": true,
           "rows": 520,
-          "source": "yahoo-chart",
+          "source": "local-cache-yahoo-chart",
           "stale_data": false,
           "symbol": "LQD"
         },
@@ -48155,7 +48155,7 @@
       "summary": {
         "data_completeness_score": 57,
         "data_source_status": "real_market_data",
-        "fallback_used": false,
+        "fallback_used": true,
         "latest_date": "2026-07-28",
         "missing_data": false,
         "real_market_data": true,
@@ -48170,7 +48170,7 @@
       }
     },
     "feature_snapshot_v2": {
-      "generated_at": "2026-07-29T04:34:02.277168+00:00",
+      "generated_at": "2026-07-29T06:21:18.768518+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -48407,7 +48407,7 @@
       },
       "version": "market_intelligence_engine_v2_features"
     },
-    "generated_at": "2026-07-29T04:34:02.277732+00:00",
+    "generated_at": "2026-07-29T06:21:18.768971+00:00",
     "model_confidence_by_symbol": {
       "DIA": {
         "components": {
@@ -48604,7 +48604,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-07-29T04:34:02.288385+00:00",
+      "generated_at": "2026-07-29T06:21:18.774790+00:00",
       "notes": [
         "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
         "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -48774,13 +48774,13 @@
           "symbol": "IWM"
         },
         "LQD": {
-          "fallback_used": false,
+          "fallback_used": true,
           "latest_date": "2026-07-28",
           "missing_data": false,
           "point_in_time_safe": true,
           "real_data": true,
           "rows": 520,
-          "source": "yahoo-chart",
+          "source": "local-cache-yahoo-chart",
           "stale_data": false,
           "status": "available",
           "symbol": "LQD"
@@ -48902,7 +48902,7 @@
           "point_in_time_safe": true,
           "real_data": true,
           "rows": 520,
-          "source": "yahoo-chart",
+          "source": "finnhub-quote-patch",
           "stale_data": false,
           "status": "available",
           "symbol": "XLC"
@@ -48938,7 +48938,7 @@
           "point_in_time_safe": true,
           "real_data": true,
           "rows": 520,
-          "source": "yahoo-chart",
+          "source": "finnhub-quote-patch",
           "stale_data": false,
           "status": "available",
           "symbol": "XLI"
@@ -49733,7 +49733,7 @@
       }
     },
     "feature_snapshot_v3": {
-      "generated_at": "2026-07-29T04:34:02.284227+00:00",
+      "generated_at": "2026-07-29T06:21:18.772627+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -49882,7 +49882,7 @@
             "quarter_end_effect": false
           },
           "market_structure": {
-            "defensive_vs_cyclical_20d": -0.0058729632566853485,
+            "defensive_vs_cyclical_20d": -0.005872955742507985,
             "equal_weight_vs_cap_weight_20d": 0.02196787559976887,
             "growth_vs_large_cap_20d": -0.06691692652168046,
             "sector_participation_20d": 0.7272727272727273,
@@ -50118,7 +50118,7 @@
             "quarter_end_effect": false
           },
           "market_structure": {
-            "defensive_vs_cyclical_20d": -0.0058729632566853485,
+            "defensive_vs_cyclical_20d": -0.005872955742507985,
             "equal_weight_vs_cap_weight_20d": 0.02196787559976887,
             "growth_vs_large_cap_20d": -0.06691692652168046,
             "sector_participation_20d": 0.7272727272727273,
@@ -50354,7 +50354,7 @@
             "quarter_end_effect": false
           },
           "market_structure": {
-            "defensive_vs_cyclical_20d": -0.0058729632566853485,
+            "defensive_vs_cyclical_20d": -0.005872955742507985,
             "equal_weight_vs_cap_weight_20d": 0.02196787559976887,
             "growth_vs_large_cap_20d": -0.06691692652168046,
             "sector_participation_20d": 0.7272727272727273,
@@ -50590,7 +50590,7 @@
             "quarter_end_effect": false
           },
           "market_structure": {
-            "defensive_vs_cyclical_20d": -0.0058729632566853485,
+            "defensive_vs_cyclical_20d": -0.005872955742507985,
             "equal_weight_vs_cap_weight_20d": 0.02196787559976887,
             "growth_vs_large_cap_20d": -0.06691692652168046,
             "sector_participation_20d": 0.7272727272727273,
@@ -50718,18 +50718,18 @@
       "fred_missing": false,
       "fred_rate_limited": false,
       "fred_successful_series": [
-        "HY_OAS",
         "DGS10",
-        "BAA_SPREAD",
+        "HY_OAS",
         "IG_OAS",
         "DGS2",
+        "BAA_SPREAD",
         "DGS3MO",
         "RECESSION",
-        "DFII10",
-        "FINANCIAL_STRESS"
+        "FINANCIAL_STRESS",
+        "DFII10"
       ]
     },
-    "generated_at": "2026-07-29T04:34:02.292481+00:00",
+    "generated_at": "2026-07-29T06:21:18.777736+00:00",
     "high_confidence_signal_report": {
       "by_bucket": {
         "low_confidence_reference": {
@@ -51398,7 +51398,7 @@
         }
       },
       "conclusion": "confidence_not_yet_validated",
-      "generated_at": "2026-07-29T04:34:02.292462+00:00",
+      "generated_at": "2026-07-29T06:21:18.777720+00:00",
       "high_confidence_better_than_low_confidence": false,
       "high_vs_low_comparison_by_horizon": {
         "10d": false,
@@ -52219,7 +52219,7 @@
         "evidence_note": "Forward-only breadth attribution is still below the minimum sample gate; these buckets are tracked but not proof.",
         "status": "not_enough_forward_samples"
       },
-      "generated_at": "2026-07-29T04:34:12.406658Z",
+      "generated_at": "2026-07-29T06:21:28.863949Z",
       "notes": [
         "This audit compares the same run with true breadth provider disabled vs enabled.",
         "The audit does not change Alpha v1 and does not prove tradable alpha.",
@@ -52489,7 +52489,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-07-29T04:34:02.293234+00:00",
+      "generated_at": "2026-07-29T06:21:18.778263+00:00",
       "notes": [
         "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
         "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -52660,13 +52660,13 @@
           "symbol": "IWM"
         },
         "LQD": {
-          "fallback_used": false,
+          "fallback_used": true,
           "latest_date": "2026-07-28",
           "missing_data": false,
           "point_in_time_safe": true,
           "real_data": true,
           "rows": 520,
-          "source": "yahoo-chart",
+          "source": "local-cache-yahoo-chart",
           "stale_data": false,
           "status": "available",
           "symbol": "LQD"
@@ -52788,7 +52788,7 @@
           "point_in_time_safe": true,
           "real_data": true,
           "rows": 520,
-          "source": "yahoo-chart",
+          "source": "finnhub-quote-patch",
           "stale_data": false,
           "status": "available",
           "symbol": "XLC"
@@ -52824,7 +52824,7 @@
           "point_in_time_safe": true,
           "real_data": true,
           "rows": 520,
-          "source": "yahoo-chart",
+          "source": "finnhub-quote-patch",
           "stale_data": false,
           "status": "available",
           "symbol": "XLI"
@@ -53401,7 +53401,7 @@
           "symbol": "macro_event_calendar"
         },
         "news_event_provider": {
-          "event_detection_confidence": 65,
+          "event_detection_confidence": 64,
           "fallback_used": false,
           "latest_date": "2026-07-28",
           "major_event_count": 3,
@@ -53616,15 +53616,15 @@
         "fred_rate_limited": false,
         "fred_required": true,
         "fred_successful_series": [
-          "HY_OAS",
           "DGS10",
-          "BAA_SPREAD",
+          "HY_OAS",
           "IG_OAS",
           "DGS2",
+          "BAA_SPREAD",
           "DGS3MO",
           "RECESSION",
-          "DFII10",
-          "FINANCIAL_STRESS"
+          "FINANCIAL_STRESS",
+          "DFII10"
         ],
         "freshness_warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-07-28，最近完整收盘交易日为 2026-07-28；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
         "gamma_available": false,
@@ -53655,10 +53655,10 @@
         ],
         "news_event": {
           "available": true,
-          "event_detection_confidence": 65,
+          "event_detection_confidence": 64,
           "event_risk_level": "high",
           "headline_count": 40,
-          "last_update": "2026-07-29T04:34:02.300020+00:00",
+          "last_update": "2026-07-29T06:21:18.783250+00:00",
           "major_event_count": 3,
           "missing_reason": null,
           "news_direction": "risk_off",
@@ -53869,18 +53869,18 @@
       "fallback_used": false,
       "rate_limited": false,
       "successful_series": [
-        "HY_OAS",
         "DGS10",
-        "BAA_SPREAD",
+        "HY_OAS",
         "IG_OAS",
         "DGS2",
+        "BAA_SPREAD",
         "DGS3MO",
         "RECESSION",
-        "DFII10",
-        "FINANCIAL_STRESS"
+        "FINANCIAL_STRESS",
+        "DFII10"
       ]
     },
-    "generated_at": "2026-07-29T04:34:02.300005+00:00",
+    "generated_at": "2026-07-29T06:21:18.783239+00:00",
     "high_confidence_edge_report": {
       "breadth_forward_validation": {
         "bounce_with_breadth_support": {
@@ -55441,7 +55441,7 @@
       },
       "forward_completed_sample_size": 0,
       "forward_validation_notice": "当前高置信度还没有被前向样本验证，不应当视为稳定预测能力。",
-      "generated_at": "2026-07-29T04:34:02.296124+00:00",
+      "generated_at": "2026-07-29T06:21:18.780338+00:00",
       "internal_resonance_forward_validation": {
         "aligned_internal_resonance": {
           "by_horizon": {
@@ -55857,9 +55857,9 @@
         "source": "finnhub",
         "status": "failed"
       },
-      "event_detection_confidence": 65,
+      "event_detection_confidence": 64,
       "event_risk_level": "high",
-      "generated_at": "2026-07-29T04:34:02.300020+00:00",
+      "generated_at": "2026-07-29T06:21:18.783250+00:00",
       "limits": [
         "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
         "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
@@ -55878,44 +55878,17 @@
             "UUP"
           ],
           "confidence": "medium",
-          "confidence_score": 71,
+          "confidence_score": 70,
           "detected_event_conditions": [],
           "event_type": "growth_negative",
           "expected_horizon": "3d-20d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 74,
+          "freshness_score": 70,
           "headline": "We're buying the dip on one of our stocks for two key reasons",
           "importance_score": 82,
           "narrative": "recession_fear",
           "provider": "finnhub",
           "published_at": "2026-07-28T17:45:21+00:00",
-          "source": "CNBC"
-        },
-        {
-          "affected_assets": [
-            "SPY",
-            "QQQ",
-            "IWM",
-            "DIA",
-            "^VIX",
-            "USO",
-            "UUP",
-            "TLT"
-          ],
-          "confidence": "medium",
-          "confidence_score": 62,
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_horizon": "intraday-5d",
-          "expected_market_direction": "risk_off",
-          "freshness_score": 21,
-          "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
-          "importance_score": 100,
-          "narrative": "geopolitics_escalation_risk_off",
-          "provider": "finnhub",
-          "published_at": "2026-07-27T19:46:20+00:00",
           "source": "CNBC"
         },
         {
@@ -55937,7 +55910,34 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 19,
+          "freshness_score": 17,
+          "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
+          "importance_score": 100,
+          "narrative": "geopolitics_escalation_risk_off",
+          "provider": "finnhub",
+          "published_at": "2026-07-27T19:46:20+00:00",
+          "source": "CNBC"
+        },
+        {
+          "affected_assets": [
+            "SPY",
+            "QQQ",
+            "IWM",
+            "DIA",
+            "^VIX",
+            "USO",
+            "UUP",
+            "TLT"
+          ],
+          "confidence": "medium",
+          "confidence_score": 60,
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_horizon": "intraday-5d",
+          "expected_market_direction": "risk_off",
+          "freshness_score": 15,
           "headline": "From 'oil' to 'shock',  here's what Kalshi traders expect Fed Chair Kevin Warsh will say this week",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -56136,7 +56136,7 @@
       "price_reaction_confirmation": {
         "asset_reaction_summary": {
           "avg_equity_1d_return": 0.0013,
-          "avg_equity_futures_1d_return": -0.0043,
+          "avg_equity_futures_1d_return": -0.0028,
           "confirmed_checks": [
             "股票ETF或股指期货下跌",
             "HYG/LQD 走弱"
@@ -56152,7 +56152,7 @@
             "美元走强"
           ],
           "hyg_lqd_1d_relative_return": -0.0011,
-          "oil_proxy_1d_return": 0.0033,
+          "oil_proxy_1d_return": 0.0024,
           "oil_proxy_symbols_used": [
             "USO",
             "CL=F"
@@ -58098,7 +58098,7 @@
         "status": "insufficient_forward_samples"
       }
     },
-    "generated_at": "2026-07-29T04:34:12.867214+00:00",
+    "generated_at": "2026-07-29T06:21:29.211415+00:00",
     "guardrails": [
       "Alpha v1 threshold remains frozen at 0.32534311.",
       "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -58925,7 +58925,7 @@
   },
   "model_promotion_status": {
     "active_model_version": "baseline_v1",
-    "generated_at": "2026-07-29T04:34:12.867300+00:00",
+    "generated_at": "2026-07-29T06:21:29.211483+00:00",
     "guardrails": [
       "Alpha v1 threshold remains frozen at 0.32534311.",
       "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -59100,9 +59100,9 @@
       "source": "finnhub",
       "status": "failed"
     },
-    "event_detection_confidence": 65,
+    "event_detection_confidence": 64,
     "event_risk_level": "high",
-    "generated_at": "2026-07-29T04:34:02.300020+00:00",
+    "generated_at": "2026-07-29T06:21:18.783250+00:00",
     "limits": [
       "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
       "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
@@ -59121,44 +59121,17 @@
           "UUP"
         ],
         "confidence": "medium",
-        "confidence_score": 71,
+        "confidence_score": 70,
         "detected_event_conditions": [],
         "event_type": "growth_negative",
         "expected_horizon": "3d-20d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 74,
+        "freshness_score": 70,
         "headline": "We're buying the dip on one of our stocks for two key reasons",
         "importance_score": 82,
         "narrative": "recession_fear",
         "provider": "finnhub",
         "published_at": "2026-07-28T17:45:21+00:00",
-        "source": "CNBC"
-      },
-      {
-        "affected_assets": [
-          "SPY",
-          "QQQ",
-          "IWM",
-          "DIA",
-          "^VIX",
-          "USO",
-          "UUP",
-          "TLT"
-        ],
-        "confidence": "medium",
-        "confidence_score": 62,
-        "detected_event_conditions": [
-          "geopolitical_risk_escalation"
-        ],
-        "event_type": "geopolitical_risk_escalation",
-        "expected_horizon": "intraday-5d",
-        "expected_market_direction": "risk_off",
-        "freshness_score": 21,
-        "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
-        "importance_score": 100,
-        "narrative": "geopolitics_escalation_risk_off",
-        "provider": "finnhub",
-        "published_at": "2026-07-27T19:46:20+00:00",
         "source": "CNBC"
       },
       {
@@ -59180,7 +59153,34 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 19,
+        "freshness_score": 17,
+        "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
+        "importance_score": 100,
+        "narrative": "geopolitics_escalation_risk_off",
+        "provider": "finnhub",
+        "published_at": "2026-07-27T19:46:20+00:00",
+        "source": "CNBC"
+      },
+      {
+        "affected_assets": [
+          "SPY",
+          "QQQ",
+          "IWM",
+          "DIA",
+          "^VIX",
+          "USO",
+          "UUP",
+          "TLT"
+        ],
+        "confidence": "medium",
+        "confidence_score": 60,
+        "detected_event_conditions": [
+          "geopolitical_risk_escalation"
+        ],
+        "event_type": "geopolitical_risk_escalation",
+        "expected_horizon": "intraday-5d",
+        "expected_market_direction": "risk_off",
+        "freshness_score": 15,
         "headline": "From 'oil' to 'shock',  here's what Kalshi traders expect Fed Chair Kevin Warsh will say this week",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -59379,7 +59379,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": 0.0013,
-        "avg_equity_futures_1d_return": -0.0043,
+        "avg_equity_futures_1d_return": -0.0028,
         "confirmed_checks": [
           "股票ETF或股指期货下跌",
           "HYG/LQD 走弱"
@@ -59395,7 +59395,7 @@
           "美元走强"
         ],
         "hyg_lqd_1d_relative_return": -0.0011,
-        "oil_proxy_1d_return": 0.0033,
+        "oil_proxy_1d_return": 0.0024,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -59504,7 +59504,7 @@
     "version": "news_event_intelligence_v1"
   },
   "options_status": {
-    "generated_at": "2026-07-29T04:33:55.331307+00:00",
+    "generated_at": "2026-07-29T06:21:05.206602+00:00",
     "market": {
       "failed_bounce_options_risk": 0.4,
       "gamma_exposure": null,
@@ -59800,10 +59800,10 @@
       "can_append_forecast_record": false,
       "can_backfill_completed_outcomes": true,
       "current_date": "2026-07-29",
-      "current_time_us_eastern": "2026-07-29T00:34:12.416893-04:00",
+      "current_time_us_eastern": "2026-07-29T02:21:28.872044-04:00",
       "data_freshness_status": "market_open_unconfirmed",
       "expected_latest_trading_date": "2026-07-28",
-      "generated_at": "2026-07-29T04:34:12.416893+00:00",
+      "generated_at": "2026-07-29T06:21:28.872044+00:00",
       "guardrails": [
         "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
         "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -59964,13 +59964,13 @@
           "symbol": "IWM"
         },
         "LQD": {
-          "fallback_used": false,
+          "fallback_used": true,
           "latest_date": "2026-07-28",
           "missing_data": false,
           "point_in_time_safe": true,
           "real_data": true,
           "rows": 520,
-          "source": "yahoo-chart",
+          "source": "local-cache-yahoo-chart",
           "stale_data": false,
           "status": "available",
           "symbol": "LQD"
@@ -60090,7 +60090,7 @@
           "point_in_time_safe": true,
           "real_data": true,
           "rows": 520,
-          "source": "yahoo-chart",
+          "source": "finnhub-quote-patch",
           "stale_data": false,
           "status": "available",
           "symbol": "XLC"
@@ -60126,7 +60126,7 @@
           "point_in_time_safe": true,
           "real_data": true,
           "rows": 520,
-          "source": "yahoo-chart",
+          "source": "finnhub-quote-patch",
           "stale_data": false,
           "status": "available",
           "symbol": "XLI"
@@ -60842,15 +60842,15 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
-        "HY_OAS",
         "DGS10",
-        "BAA_SPREAD",
+        "HY_OAS",
         "IG_OAS",
         "DGS2",
+        "BAA_SPREAD",
         "DGS3MO",
         "RECESSION",
-        "DFII10",
-        "FINANCIAL_STRESS"
+        "FINANCIAL_STRESS",
+        "DFII10"
       ],
       "freshness_warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-07-28，最近完整收盘交易日为 2026-07-28；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
       "gamma_available": false,
@@ -60881,10 +60881,10 @@
       ],
       "news_event": {
         "available": true,
-        "event_detection_confidence": 65,
+        "event_detection_confidence": 64,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-07-29T04:34:02.300020+00:00",
+        "last_update": "2026-07-29T06:21:18.783250+00:00",
         "major_event_count": 3,
         "missing_reason": null,
         "news_direction": "risk_off",
@@ -61304,7 +61304,7 @@
       "price_reaction_confirmation": {
         "asset_reaction_summary": {
           "avg_equity_1d_return": 0.0013,
-          "avg_equity_futures_1d_return": -0.0043,
+          "avg_equity_futures_1d_return": -0.0028,
           "confirmed_checks": [
             "股票ETF或股指期货下跌",
             "HYG/LQD 走弱"
@@ -61320,7 +61320,7 @@
             "美元走强"
           ],
           "hyg_lqd_1d_relative_return": -0.0011,
-          "oil_proxy_1d_return": 0.0033,
+          "oil_proxy_1d_return": 0.0024,
           "oil_proxy_symbols_used": [
             "USO",
             "CL=F"
@@ -62868,7 +62868,7 @@
             "quarter_end_effect": false
           },
           "market_structure": {
-            "defensive_vs_cyclical_20d": -0.0058729632566853485,
+            "defensive_vs_cyclical_20d": -0.005872955742507985,
             "equal_weight_vs_cap_weight_20d": 0.02196787559976887,
             "growth_vs_large_cap_20d": -0.06691692652168046,
             "sector_participation_20d": 0.7272727272727273,
@@ -63840,44 +63840,17 @@
                 "UUP"
               ],
               "confidence": "medium",
-              "confidence_score": 71,
+              "confidence_score": 70,
               "detected_event_conditions": [],
               "event_type": "growth_negative",
               "expected_horizon": "3d-20d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 74,
+              "freshness_score": 70,
               "headline": "We're buying the dip on one of our stocks for two key reasons",
               "importance_score": 82,
               "narrative": "recession_fear",
               "provider": "finnhub",
               "published_at": "2026-07-28T17:45:21+00:00",
-              "source": "CNBC"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 62,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 21,
-              "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-07-27T19:46:20+00:00",
               "source": "CNBC"
             },
             {
@@ -63899,7 +63872,34 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 19,
+              "freshness_score": 17,
+              "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-07-27T19:46:20+00:00",
+              "source": "CNBC"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 60,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 15,
               "headline": "From 'oil' to 'shock',  here's what Kalshi traders expect Fed Chair Kevin Warsh will say this week",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -63989,7 +63989,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0013,
-              "avg_equity_futures_1d_return": -0.0043,
+              "avg_equity_futures_1d_return": -0.0028,
               "confirmed_checks": [
                 "股票ETF或股指期货下跌",
                 "HYG/LQD 走弱"
@@ -64005,7 +64005,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.0011,
-              "oil_proxy_1d_return": 0.0033,
+              "oil_proxy_1d_return": 0.0024,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -65285,7 +65285,7 @@
             "quarter_end_effect": false
           },
           "market_structure": {
-            "defensive_vs_cyclical_20d": -0.0058729632566853485,
+            "defensive_vs_cyclical_20d": -0.005872955742507985,
             "equal_weight_vs_cap_weight_20d": 0.02196787559976887,
             "growth_vs_large_cap_20d": -0.06691692652168046,
             "sector_participation_20d": 0.7272727272727273,
@@ -66223,44 +66223,17 @@
                 "UUP"
               ],
               "confidence": "medium",
-              "confidence_score": 71,
+              "confidence_score": 70,
               "detected_event_conditions": [],
               "event_type": "growth_negative",
               "expected_horizon": "3d-20d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 74,
+              "freshness_score": 70,
               "headline": "We're buying the dip on one of our stocks for two key reasons",
               "importance_score": 82,
               "narrative": "recession_fear",
               "provider": "finnhub",
               "published_at": "2026-07-28T17:45:21+00:00",
-              "source": "CNBC"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 62,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 21,
-              "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-07-27T19:46:20+00:00",
               "source": "CNBC"
             },
             {
@@ -66282,7 +66255,34 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 19,
+              "freshness_score": 17,
+              "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-07-27T19:46:20+00:00",
+              "source": "CNBC"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 60,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 15,
               "headline": "From 'oil' to 'shock',  here's what Kalshi traders expect Fed Chair Kevin Warsh will say this week",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -66372,7 +66372,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0013,
-              "avg_equity_futures_1d_return": -0.0043,
+              "avg_equity_futures_1d_return": -0.0028,
               "confirmed_checks": [
                 "股票ETF或股指期货下跌",
                 "HYG/LQD 走弱"
@@ -66388,7 +66388,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.0011,
-              "oil_proxy_1d_return": 0.0033,
+              "oil_proxy_1d_return": 0.0024,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -67688,7 +67688,7 @@
             "quarter_end_effect": false
           },
           "market_structure": {
-            "defensive_vs_cyclical_20d": -0.0058729632566853485,
+            "defensive_vs_cyclical_20d": -0.005872955742507985,
             "equal_weight_vs_cap_weight_20d": 0.02196787559976887,
             "growth_vs_large_cap_20d": -0.06691692652168046,
             "sector_participation_20d": 0.7272727272727273,
@@ -68607,44 +68607,17 @@
                 "UUP"
               ],
               "confidence": "medium",
-              "confidence_score": 71,
+              "confidence_score": 70,
               "detected_event_conditions": [],
               "event_type": "growth_negative",
               "expected_horizon": "3d-20d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 74,
+              "freshness_score": 70,
               "headline": "We're buying the dip on one of our stocks for two key reasons",
               "importance_score": 82,
               "narrative": "recession_fear",
               "provider": "finnhub",
               "published_at": "2026-07-28T17:45:21+00:00",
-              "source": "CNBC"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 62,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 21,
-              "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-07-27T19:46:20+00:00",
               "source": "CNBC"
             },
             {
@@ -68666,7 +68639,34 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 19,
+              "freshness_score": 17,
+              "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-07-27T19:46:20+00:00",
+              "source": "CNBC"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 60,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 15,
               "headline": "From 'oil' to 'shock',  here's what Kalshi traders expect Fed Chair Kevin Warsh will say this week",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -68756,7 +68756,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0013,
-              "avg_equity_futures_1d_return": -0.0043,
+              "avg_equity_futures_1d_return": -0.0028,
               "confirmed_checks": [
                 "股票ETF或股指期货下跌",
                 "HYG/LQD 走弱"
@@ -68772,7 +68772,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.0011,
-              "oil_proxy_1d_return": 0.0033,
+              "oil_proxy_1d_return": 0.0024,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -70073,7 +70073,7 @@
             "quarter_end_effect": false
           },
           "market_structure": {
-            "defensive_vs_cyclical_20d": -0.0058729632566853485,
+            "defensive_vs_cyclical_20d": -0.005872955742507985,
             "equal_weight_vs_cap_weight_20d": 0.02196787559976887,
             "growth_vs_large_cap_20d": -0.06691692652168046,
             "sector_participation_20d": 0.7272727272727273,
@@ -71025,44 +71025,17 @@
                 "UUP"
               ],
               "confidence": "medium",
-              "confidence_score": 71,
+              "confidence_score": 70,
               "detected_event_conditions": [],
               "event_type": "growth_negative",
               "expected_horizon": "3d-20d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 74,
+              "freshness_score": 70,
               "headline": "We're buying the dip on one of our stocks for two key reasons",
               "importance_score": 82,
               "narrative": "recession_fear",
               "provider": "finnhub",
               "published_at": "2026-07-28T17:45:21+00:00",
-              "source": "CNBC"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 62,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 21,
-              "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-07-27T19:46:20+00:00",
               "source": "CNBC"
             },
             {
@@ -71084,7 +71057,34 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 19,
+              "freshness_score": 17,
+              "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-07-27T19:46:20+00:00",
+              "source": "CNBC"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 60,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 15,
               "headline": "From 'oil' to 'shock',  here's what Kalshi traders expect Fed Chair Kevin Warsh will say this week",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -71174,7 +71174,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0013,
-              "avg_equity_futures_1d_return": -0.0043,
+              "avg_equity_futures_1d_return": -0.0028,
               "confirmed_checks": [
                 "股票ETF或股指期货下跌",
                 "HYG/LQD 走弱"
@@ -71190,7 +71190,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.0011,
-              "oil_proxy_1d_return": 0.0033,
+              "oil_proxy_1d_return": 0.0024,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -72060,7 +72060,7 @@
   },
   "price_volume_structure": {
     "disclaimer": "K线和成交量结构只用于预测确认，不是交易信号、买卖建议或仓位建议。",
-    "generated_at": "2026-07-29T04:34:12.411207+00:00",
+    "generated_at": "2026-07-29T06:21:28.867979+00:00",
     "summary": {
       "average_price_structure_score": 51.5,
       "average_volume_confirmation_score": 52.5,
@@ -72849,10 +72849,10 @@
       "can_append_forecast_record": false,
       "can_backfill_completed_outcomes": true,
       "current_date": "2026-07-29",
-      "current_time_us_eastern": "2026-07-29T00:34:12.416893-04:00",
+      "current_time_us_eastern": "2026-07-29T02:21:28.872044-04:00",
       "data_freshness_status": "market_open_unconfirmed",
       "expected_latest_trading_date": "2026-07-28",
-      "generated_at": "2026-07-29T04:34:12.416893+00:00",
+      "generated_at": "2026-07-29T06:21:28.872044+00:00",
       "guardrails": [
         "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
         "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -73013,13 +73013,13 @@
           "symbol": "IWM"
         },
         "LQD": {
-          "fallback_used": false,
+          "fallback_used": true,
           "latest_date": "2026-07-28",
           "missing_data": false,
           "point_in_time_safe": true,
           "real_data": true,
           "rows": 520,
-          "source": "yahoo-chart",
+          "source": "local-cache-yahoo-chart",
           "stale_data": false,
           "status": "available",
           "symbol": "LQD"
@@ -73139,7 +73139,7 @@
           "point_in_time_safe": true,
           "real_data": true,
           "rows": 520,
-          "source": "yahoo-chart",
+          "source": "finnhub-quote-patch",
           "stale_data": false,
           "status": "available",
           "symbol": "XLC"
@@ -73175,7 +73175,7 @@
           "point_in_time_safe": true,
           "real_data": true,
           "rows": 520,
-          "source": "yahoo-chart",
+          "source": "finnhub-quote-patch",
           "stale_data": false,
           "status": "available",
           "symbol": "XLI"
@@ -73891,15 +73891,15 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
-        "HY_OAS",
         "DGS10",
-        "BAA_SPREAD",
+        "HY_OAS",
         "IG_OAS",
         "DGS2",
+        "BAA_SPREAD",
         "DGS3MO",
         "RECESSION",
-        "DFII10",
-        "FINANCIAL_STRESS"
+        "FINANCIAL_STRESS",
+        "DFII10"
       ],
       "freshness_warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-07-28，最近完整收盘交易日为 2026-07-28；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
       "gamma_available": false,
@@ -73930,10 +73930,10 @@
       ],
       "news_event": {
         "available": true,
-        "event_detection_confidence": 65,
+        "event_detection_confidence": 64,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-07-29T04:34:02.300020+00:00",
+        "last_update": "2026-07-29T06:21:18.783250+00:00",
         "major_event_count": 3,
         "missing_reason": null,
         "news_direction": "risk_off",
@@ -74186,7 +74186,7 @@
       "price_reaction_confirmation": {
         "asset_reaction_summary": {
           "avg_equity_1d_return": 0.0013,
-          "avg_equity_futures_1d_return": -0.0043,
+          "avg_equity_futures_1d_return": -0.0028,
           "confirmed_checks": [
             "股票ETF或股指期货下跌",
             "HYG/LQD 走弱"
@@ -74202,7 +74202,7 @@
             "美元走强"
           ],
           "hyg_lqd_1d_relative_return": -0.0011,
-          "oil_proxy_1d_return": 0.0033,
+          "oil_proxy_1d_return": 0.0024,
           "oil_proxy_symbols_used": [
             "USO",
             "CL=F"
@@ -74929,7 +74929,7 @@
         "data_quality": {
           "data_completeness_score": 57,
           "data_source_status": "real_market_data",
-          "fallback_used": false,
+          "fallback_used": true,
           "latest_date": "2026-07-28",
           "missing_data": false,
           "real_market_data": true,
@@ -75090,7 +75090,7 @@
             "quarter_end_effect": false
           },
           "market_structure": {
-            "defensive_vs_cyclical_20d": -0.0058729632566853485,
+            "defensive_vs_cyclical_20d": -0.005872955742507985,
             "equal_weight_vs_cap_weight_20d": 0.02196787559976887,
             "growth_vs_large_cap_20d": -0.06691692652168046,
             "sector_participation_20d": 0.7272727272727273,
@@ -76510,44 +76510,17 @@
                 "UUP"
               ],
               "confidence": "medium",
-              "confidence_score": 71,
+              "confidence_score": 70,
               "detected_event_conditions": [],
               "event_type": "growth_negative",
               "expected_horizon": "3d-20d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 74,
+              "freshness_score": 70,
               "headline": "We're buying the dip on one of our stocks for two key reasons",
               "importance_score": 82,
               "narrative": "recession_fear",
               "provider": "finnhub",
               "published_at": "2026-07-28T17:45:21+00:00",
-              "source": "CNBC"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 62,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 21,
-              "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-07-27T19:46:20+00:00",
               "source": "CNBC"
             },
             {
@@ -76569,7 +76542,34 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 19,
+              "freshness_score": 17,
+              "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-07-27T19:46:20+00:00",
+              "source": "CNBC"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 60,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 15,
               "headline": "From 'oil' to 'shock',  here's what Kalshi traders expect Fed Chair Kevin Warsh will say this week",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -76659,7 +76659,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0013,
-              "avg_equity_futures_1d_return": -0.0043,
+              "avg_equity_futures_1d_return": -0.0028,
               "confirmed_checks": [
                 "股票ETF或股指期货下跌",
                 "HYG/LQD 走弱"
@@ -76675,7 +76675,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.0011,
-              "oil_proxy_1d_return": 0.0033,
+              "oil_proxy_1d_return": 0.0024,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -79018,7 +79018,7 @@
         "data_quality": {
           "data_completeness_score": 57,
           "data_source_status": "real_market_data",
-          "fallback_used": false,
+          "fallback_used": true,
           "latest_date": "2026-07-28",
           "missing_data": false,
           "real_market_data": true,
@@ -79179,7 +79179,7 @@
             "quarter_end_effect": false
           },
           "market_structure": {
-            "defensive_vs_cyclical_20d": -0.0058729632566853485,
+            "defensive_vs_cyclical_20d": -0.005872955742507985,
             "equal_weight_vs_cap_weight_20d": 0.02196787559976887,
             "growth_vs_large_cap_20d": -0.06691692652168046,
             "sector_participation_20d": 0.7272727272727273,
@@ -80565,44 +80565,17 @@
                 "UUP"
               ],
               "confidence": "medium",
-              "confidence_score": 71,
+              "confidence_score": 70,
               "detected_event_conditions": [],
               "event_type": "growth_negative",
               "expected_horizon": "3d-20d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 74,
+              "freshness_score": 70,
               "headline": "We're buying the dip on one of our stocks for two key reasons",
               "importance_score": 82,
               "narrative": "recession_fear",
               "provider": "finnhub",
               "published_at": "2026-07-28T17:45:21+00:00",
-              "source": "CNBC"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 62,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 21,
-              "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-07-27T19:46:20+00:00",
               "source": "CNBC"
             },
             {
@@ -80624,7 +80597,34 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 19,
+              "freshness_score": 17,
+              "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-07-27T19:46:20+00:00",
+              "source": "CNBC"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 60,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 15,
               "headline": "From 'oil' to 'shock',  here's what Kalshi traders expect Fed Chair Kevin Warsh will say this week",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -80714,7 +80714,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0013,
-              "avg_equity_futures_1d_return": -0.0043,
+              "avg_equity_futures_1d_return": -0.0028,
               "confirmed_checks": [
                 "股票ETF或股指期货下跌",
                 "HYG/LQD 走弱"
@@ -80730,7 +80730,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.0011,
-              "oil_proxy_1d_return": 0.0033,
+              "oil_proxy_1d_return": 0.0024,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -83093,7 +83093,7 @@
         "data_quality": {
           "data_completeness_score": 57,
           "data_source_status": "real_market_data",
-          "fallback_used": false,
+          "fallback_used": true,
           "latest_date": "2026-07-28",
           "missing_data": false,
           "real_market_data": true,
@@ -83254,7 +83254,7 @@
             "quarter_end_effect": false
           },
           "market_structure": {
-            "defensive_vs_cyclical_20d": -0.0058729632566853485,
+            "defensive_vs_cyclical_20d": -0.005872955742507985,
             "equal_weight_vs_cap_weight_20d": 0.02196787559976887,
             "growth_vs_large_cap_20d": -0.06691692652168046,
             "sector_participation_20d": 0.7272727272727273,
@@ -84621,44 +84621,17 @@
                 "UUP"
               ],
               "confidence": "medium",
-              "confidence_score": 71,
+              "confidence_score": 70,
               "detected_event_conditions": [],
               "event_type": "growth_negative",
               "expected_horizon": "3d-20d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 74,
+              "freshness_score": 70,
               "headline": "We're buying the dip on one of our stocks for two key reasons",
               "importance_score": 82,
               "narrative": "recession_fear",
               "provider": "finnhub",
               "published_at": "2026-07-28T17:45:21+00:00",
-              "source": "CNBC"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 62,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 21,
-              "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-07-27T19:46:20+00:00",
               "source": "CNBC"
             },
             {
@@ -84680,7 +84653,34 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 19,
+              "freshness_score": 17,
+              "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-07-27T19:46:20+00:00",
+              "source": "CNBC"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 60,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 15,
               "headline": "From 'oil' to 'shock',  here's what Kalshi traders expect Fed Chair Kevin Warsh will say this week",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -84770,7 +84770,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0013,
-              "avg_equity_futures_1d_return": -0.0043,
+              "avg_equity_futures_1d_return": -0.0028,
               "confirmed_checks": [
                 "股票ETF或股指期货下跌",
                 "HYG/LQD 走弱"
@@ -84786,7 +84786,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.0011,
-              "oil_proxy_1d_return": 0.0033,
+              "oil_proxy_1d_return": 0.0024,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -87150,7 +87150,7 @@
         "data_quality": {
           "data_completeness_score": 57,
           "data_source_status": "real_market_data",
-          "fallback_used": false,
+          "fallback_used": true,
           "latest_date": "2026-07-28",
           "missing_data": false,
           "real_market_data": true,
@@ -87311,7 +87311,7 @@
             "quarter_end_effect": false
           },
           "market_structure": {
-            "defensive_vs_cyclical_20d": -0.0058729632566853485,
+            "defensive_vs_cyclical_20d": -0.005872955742507985,
             "equal_weight_vs_cap_weight_20d": 0.02196787559976887,
             "growth_vs_large_cap_20d": -0.06691692652168046,
             "sector_participation_20d": 0.7272727272727273,
@@ -88711,44 +88711,17 @@
                 "UUP"
               ],
               "confidence": "medium",
-              "confidence_score": 71,
+              "confidence_score": 70,
               "detected_event_conditions": [],
               "event_type": "growth_negative",
               "expected_horizon": "3d-20d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 74,
+              "freshness_score": 70,
               "headline": "We're buying the dip on one of our stocks for two key reasons",
               "importance_score": 82,
               "narrative": "recession_fear",
               "provider": "finnhub",
               "published_at": "2026-07-28T17:45:21+00:00",
-              "source": "CNBC"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 62,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 21,
-              "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-07-27T19:46:20+00:00",
               "source": "CNBC"
             },
             {
@@ -88770,7 +88743,34 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 19,
+              "freshness_score": 17,
+              "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-07-27T19:46:20+00:00",
+              "source": "CNBC"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 60,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 15,
               "headline": "From 'oil' to 'shock',  here's what Kalshi traders expect Fed Chair Kevin Warsh will say this week",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -88860,7 +88860,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0013,
-              "avg_equity_futures_1d_return": -0.0043,
+              "avg_equity_futures_1d_return": -0.0028,
               "confirmed_checks": [
                 "股票ETF或股指期货下跌",
                 "HYG/LQD 走弱"
@@ -88876,7 +88876,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.0011,
-              "oil_proxy_1d_return": 0.0033,
+              "oil_proxy_1d_return": 0.0024,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -91034,7 +91034,7 @@
       },
       "version": "stock_data_provider_v1"
     },
-    "generated_at": "2026-07-29T04:34:13.058455+00:00",
+    "generated_at": "2026-07-29T06:21:29.345519+00:00",
     "guardrails": [
       "This is a probabilistic stock forecast module, not a trading system.",
       "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -91123,7 +91123,7 @@
         },
         "question": "high final_radar_score 是否真的对应更大次日 range？"
       },
-      "generated_at": "2026-07-29T04:34:13.064223+00:00",
+      "generated_at": "2026-07-29T06:21:29.350272+00:00",
       "not_validated_warning": "not_enough_forward_samples",
       "pending_records": 129,
       "risk_score_effectiveness": {
@@ -93458,6 +93458,30 @@
             "event_risk_flag": "high",
             "headlines": [
               {
+                "datetime": 1785302400,
+                "headline": "The S&P 500 and Dow Are on Track to Beat the Nasdaq for the First Time Since 2022. Here's What That Means for Investors.",
+                "source": "Yahoo",
+                "url": "https://finnhub.io/api/news?id=efda01ca8d7f8593a145ec2978cb3372560c07d7091e0bfbae2fa74f507be194"
+              },
+              {
+                "datetime": 1785301200,
+                "headline": "A Tired Tech Trade Looks Set to Sink the Stock Market",
+                "source": "Yahoo",
+                "url": "https://finnhub.io/api/news?id=7be7020126cef875b1ad36c7a8028b63fa81579611da2aa2e8a934460aca1461"
+              },
+              {
+                "datetime": 1785298020,
+                "headline": "Qualcomm Is Down 37% From Its High and Reports Wednesday. Is the Stock a Buy?",
+                "source": "Yahoo",
+                "url": "https://finnhub.io/api/news?id=f2e3c53c9f7d93d9a8644995951bffda8664af0bb92b7705f74571c529c30e36"
+              },
+              {
+                "datetime": 1785297544,
+                "headline": "Is Avis Budget Group a Buy After Its Latest Earnings Report?",
+                "source": "Yahoo",
+                "url": "https://finnhub.io/api/news?id=1f2e4cefdf603c16edc8272d84f1fee672282967aaf741a315f6cb8aa0f78b5f"
+              },
+              {
                 "datetime": 1785294788,
                 "headline": "Nvidia (NVDA) Pours $5 Billion Into Safe AI And Expands Data Center Reach",
                 "source": "Yahoo",
@@ -93480,37 +93504,13 @@
                 "headline": "Anthropic clarifies stance on open-weight AI models",
                 "source": "Yahoo",
                 "url": "https://finnhub.io/api/news?id=d85e5db1a0f516464186898786f677efc1003b913e9171add623d2b507560802"
-              },
-              {
-                "datetime": 1785291590,
-                "headline": "Apple Hits $5 Trillion Market Cap: Will Earnings Extend the Rally?",
-                "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=4716f50be8f91b37a5893167337f2e348324fd3d9dbabcd31480062f5ec94103"
-              },
-              {
-                "datetime": 1785291420,
-                "headline": "Nvidia, oil and the Fed are fighting over the market",
-                "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=3698bec8e301bb56150b7ee627886e7b4cfdda5536afdf6394584ae6562f3aa1"
-              },
-              {
-                "datetime": 1785289878,
-                "headline": "SK hynix posts 1,200% net profit boost on AI chip boom",
-                "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=88d98c896226484f48160ac44d4ee45d5e5861fe40fdf23f93983c771ea86ea3"
-              },
-              {
-                "datetime": 1785288240,
-                "headline": "Kimi K3: DeepSeek 2.0, or is this Time Different?",
-                "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=e0e7a2f50c4fc97340626c0926d8668d8fb9d507559975d7591cf762e5338625"
               }
             ],
-            "major_company_headline": "Nvidia (NVDA) Pours $5 Billion Into Safe AI And Expands Data Center Reach",
+            "major_company_headline": "The S&P 500 and Dow Are on Track to Beat the Nasdaq for the First Time Since 2022. Here's What That Means for Investors.",
             "news_count_24h": 20,
             "news_count_72h": 20,
             "news_risk_score": 100.0,
-            "news_sentiment": "negative"
+            "news_sentiment": "positive"
           },
           "price_trend": {
             "close": 197.00999450683594,
@@ -94033,6 +94033,7 @@
           "supporting_signals": [
             "个股相对强弱优于基准。",
             "成交量结构支持当前路径。",
+            "近期公司新闻偏正面。",
             "基础财务指标已接入且收入增长为正。"
           ]
         },
@@ -95123,7 +95124,7 @@
             {
               "affected_ticker": "NVDA",
               "alert_level": "NO_ALERT",
-              "alert_score": 7.26,
+              "alert_score": 7.34,
               "alert_type": "Stock Bounce Setup",
               "confirmation_needed": [
                 "价格站上主路径确认价",
@@ -95361,15 +95362,16 @@
           "components": {
             "catalyst": {
               "evidence": [
-                "公司新闻已接入: Nvidia (NVDA) Pours $5 Billion Into Safe AI And Expands Data Center Reach",
+                "公司新闻已接入: The S&P 500 and Dow Are on Track to Beat the Nasdaq for the First Time Since 2022. Here's What That Means for Investors.",
+                "新闻情绪偏正",
                 "未来 30 天存在财报催化：2026-08-26",
                 "增长数据具备 EPS 上修叙事基础"
               ],
               "max_points": 10,
               "missing_fields": [],
               "name": "catalyst",
-              "points": 8.0,
-              "score_pct": 80.0,
+              "points": 10.0,
+              "score_pct": 100.0,
               "status": "supportive"
             },
             "flow": {
@@ -95455,7 +95457,7 @@
             "expected_return_60d": -0.0103,
             "max_drawdown_risk_20d": 0.0865,
             "max_drawdown_risk_60d": 0.1643,
-            "outperformance_probability_20d": 0.6441,
+            "outperformance_probability_20d": 0.6521,
             "risk_reward_ratio": 0.47,
             "upside_potential_60d": 0.0771
           },
@@ -95477,7 +95479,7 @@
           },
           "thesis": {
             "capital_confirmation": "资金确认不足或仍需观察",
-            "catalyst": "Nvidia (NVDA) Pours $5 Billion Into Safe AI And Expands Data Center Reach",
+            "catalyst": "The S&P 500 and Dow Are on Track to Beat the Nasdaq for the First Time Since 2022. Here's What That Means for Investors.",
             "expectation_gap": [
               "收入增长较强，具备正向预期差基础",
               "EPS 增长较强，可能支持盈利上修叙事",
@@ -95496,7 +95498,7 @@
             "primary_path": "stock_failed_bounce",
             "valuation_repricing": "估值有扩张条件"
           },
-          "total_score": 50.5,
+          "total_score": 52.5,
           "validation_status": "not_yet_validated",
           "version": "stock_alpha_score_v1"
         },
@@ -95523,8 +95525,8 @@
           "module_scores": {
             "alpha_quality": {
               "evidence": "个股 Alpha 评分已接入",
-              "reason": "score=50.5; grade=weak_or_no_alpha_edge; benchmark=QQQ",
-              "score": 50.5,
+              "reason": "score=52.5; grade=weak_or_no_alpha_edge; benchmark=QQQ",
+              "score": 52.5,
               "status": "conflicting"
             },
             "fundamentals_earnings": {
@@ -95583,7 +95585,7 @@
             }
           },
           "requires_multi_source_confirmation": true,
-          "stock_confluence_score": 45.48,
+          "stock_confluence_score": 45.66,
           "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
           "supporting_evidence": [
             "个股跑赢所属板块",
@@ -95594,6 +95596,7 @@
         "supporting_signals": [
           "个股相对强弱优于基准。",
           "成交量结构支持当前路径。",
+          "近期公司新闻偏正面。",
           "基础财务指标已接入且收入增长为正。"
         ],
         "symbol": "NVDA",
@@ -97831,6 +97834,18 @@
             "event_risk_flag": "high",
             "headlines": [
               {
+                "datetime": 1785297880,
+                "headline": "Gary Black Warns Tesla Stock Could Break Below $300, SpaceX Below $100 As AI Valuations Come Under Pressure",
+                "source": "Yahoo",
+                "url": "https://finnhub.io/api/news?id=46161209cadb3e0e6681c1119700adfea2a823ea4c5f39de5aa7d02d8d56afe6"
+              },
+              {
+                "datetime": 1785297780,
+                "headline": "SpaceX stock sends investors a signal they need to see",
+                "source": "Yahoo",
+                "url": "https://finnhub.io/api/news?id=09da2190a63e519cc8114f23693c2fd6526de9910ea426fe76494bb72588df90"
+              },
+              {
                 "datetime": 1785287473,
                 "headline": "Tesla (TSLA) Secures Long Term Power Deals And Expands Optimus Teleoperation",
                 "source": "Yahoo",
@@ -97865,21 +97880,9 @@
                 "headline": "Where Will Tesla Stock Be in 5 Years?",
                 "source": "Yahoo",
                 "url": "https://finnhub.io/api/news?id=4fbd3486e8e3bb11c358d18a34c9c8ec96e37632bbd09dbe91218a01e1fa5b22"
-              },
-              {
-                "datetime": 1785275703,
-                "headline": "Berkshire Hathaway: Skip Tech Earnings, Buy This Classic Defensive",
-                "source": "SeekingAlpha",
-                "url": "https://finnhub.io/api/news?id=0f396bf7a2e70eef90cc9d6454d41ad48508bea502225276a3ff3a1c92a80d59"
-              },
-              {
-                "datetime": 1785274200,
-                "headline": "Coca-Cola Stock Is Rocking Like the 1990s, With a Higher P/E Than Most of the Magnificent 7",
-                "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=ca71f8ffaba31bd0ea32d95592c287f16fd66d65b9fc227115f04b6312fb01eb"
               }
             ],
-            "major_company_headline": "Tesla (TSLA) Secures Long Term Power Deals And Expands Optimus Teleoperation",
+            "major_company_headline": "Gary Black Warns Tesla Stock Could Break Below $300, SpaceX Below $100 As AI Valuations Come Under Pressure",
             "news_count_24h": 20,
             "news_count_72h": 20,
             "news_risk_score": 100.0,
@@ -99734,7 +99737,7 @@
           "components": {
             "catalyst": {
               "evidence": [
-                "公司新闻已接入: Tesla (TSLA) Secures Long Term Power Deals And Expands Optimus Teleoperation"
+                "公司新闻已接入: Gary Black Warns Tesla Stock Could Break Below $300, SpaceX Below $100 As AI Valuations Come Under Pressure"
               ],
               "max_points": 10,
               "missing_fields": [],
@@ -99847,7 +99850,7 @@
           },
           "thesis": {
             "capital_confirmation": "资金确认不足或仍需观察",
-            "catalyst": "Tesla (TSLA) Secures Long Term Power Deals And Expands Optimus Teleoperation",
+            "catalyst": "Gary Black Warns Tesla Stock Could Break Below $300, SpaceX Below $100 As AI Valuations Come Under Pressure",
             "expectation_gap": [
               "暂未看到明确正向预期差证据"
             ],
@@ -99980,7 +99983,7 @@
         "top_candidate": "NVDA",
         "validation_status": "not_yet_validated"
       },
-      "generated_at": "2026-07-29T04:34:13.058771+00:00",
+      "generated_at": "2026-07-29T06:21:29.345735+00:00",
       "model_version": "stock_baseline_v1",
       "notes": [
         "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -99990,19 +99993,19 @@
       "top_candidates": [
         {
           "alpha_fields": {
-            "alpha_score": 50.5,
+            "alpha_score": 52.5,
             "expected_return_60d": -0.0103,
             "forecast_grade": "weak_or_no_alpha_edge",
             "main_logic": "半导体/AI 逻辑：订单、毛利率、资本开支周期、估值重估和资金确认。",
-            "outperformance_probability_20d": 0.6441,
+            "outperformance_probability_20d": 0.6521,
             "risk_reward_ratio": 0.47
           },
-          "alpha_quality_score": 50.5,
+          "alpha_quality_score": 52.5,
           "as_of": "2026-07-28",
           "candidate_type": "failed_bounce_risk",
           "catalyst_score": 63.52,
           "company_name": "NVIDIA Corp",
-          "confluence_score": 45.48,
+          "confluence_score": 45.66,
           "data_missing": [
             "single_stock_options"
           ],
@@ -100019,7 +100022,7 @@
             "mid": 196.71,
             "range_pct": 0.0386
           },
-          "final_radar_score": 58.95,
+          "final_radar_score": 59.33,
           "forecast_date": "2026-07-28",
           "invalidation_level": 191.14,
           "last_close": 197.00999450683594,
@@ -100042,8 +100045,8 @@
             "earnings": "available"
           },
           "next_day_move_probability": 0.6517,
-          "one_line_reason": "failed_bounce_risk: Alpha 50 / 弹性 64 / 成交量 69 / 相对强弱 76 / 催化 64 / 大盘 market_headwind / 板块 supportive",
-          "outperformance_probability_20d": 0.6441,
+          "one_line_reason": "failed_bounce_risk: Alpha 52 / 弹性 64 / 成交量 69 / 相对强弱 76 / 催化 64 / 大盘 market_headwind / 板块 supportive",
+          "outperformance_probability_20d": 0.6521,
           "primary_probability": 0.2643,
           "primary_scenario": "stock_failed_bounce",
           "radar_level": "MODERATE_OPPORTUNITY",
@@ -100413,7 +100416,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-07-29T04:34:13.064223+00:00",
+    "generated_at": "2026-07-29T06:21:29.350272+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 129,
     "risk_score_effectiveness": {
@@ -100485,7 +100488,7 @@
       "top_candidate": "NVDA",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-07-29T04:34:13.058771+00:00",
+    "generated_at": "2026-07-29T06:21:29.345735+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -100495,19 +100498,19 @@
     "top_candidates": [
       {
         "alpha_fields": {
-          "alpha_score": 50.5,
+          "alpha_score": 52.5,
           "expected_return_60d": -0.0103,
           "forecast_grade": "weak_or_no_alpha_edge",
           "main_logic": "半导体/AI 逻辑：订单、毛利率、资本开支周期、估值重估和资金确认。",
-          "outperformance_probability_20d": 0.6441,
+          "outperformance_probability_20d": 0.6521,
           "risk_reward_ratio": 0.47
         },
-        "alpha_quality_score": 50.5,
+        "alpha_quality_score": 52.5,
         "as_of": "2026-07-28",
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 63.52,
         "company_name": "NVIDIA Corp",
-        "confluence_score": 45.48,
+        "confluence_score": 45.66,
         "data_missing": [
           "single_stock_options"
         ],
@@ -100524,7 +100527,7 @@
           "mid": 196.71,
           "range_pct": 0.0386
         },
-        "final_radar_score": 58.95,
+        "final_radar_score": 59.33,
         "forecast_date": "2026-07-28",
         "invalidation_level": 191.14,
         "last_close": 197.00999450683594,
@@ -100547,8 +100550,8 @@
           "earnings": "available"
         },
         "next_day_move_probability": 0.6517,
-        "one_line_reason": "failed_bounce_risk: Alpha 50 / 弹性 64 / 成交量 69 / 相对强弱 76 / 催化 64 / 大盘 market_headwind / 板块 supportive",
-        "outperformance_probability_20d": 0.6441,
+        "one_line_reason": "failed_bounce_risk: Alpha 52 / 弹性 64 / 成交量 69 / 相对强弱 76 / 催化 64 / 大盘 market_headwind / 板块 supportive",
+        "outperformance_probability_20d": 0.6521,
         "primary_probability": 0.2643,
         "primary_scenario": "stock_failed_bounce",
         "radar_level": "MODERATE_OPPORTUNITY",

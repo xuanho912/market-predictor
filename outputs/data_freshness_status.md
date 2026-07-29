@@ -1,11 +1,11 @@
 # Data Freshness Status
 
-Generated at: `2026-07-29T04:34:12.416893+00:00`
+Generated at: `2026-07-29T06:21:28.872044+00:00`
 
 ## Summary
 
 - current_date: `2026-07-29`
-- current_time_us_eastern: `2026-07-29T00:34:12.416893-04:00`
+- current_time_us_eastern: `2026-07-29T02:21:28.872044-04:00`
 - latest_market_date: `2026-07-28`
 - latest_confirmed_market_date: `2026-07-28`
 - expected_latest_trading_date: `2026-07-28`
@@ -40,7 +40,7 @@ Generated at: `2026-07-29T04:34:12.416893+00:00`
 - HY_OAS: status=`available`, latest_date=`2026-07-27`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
 - IG_OAS: status=`available`, latest_date=`2026-07-27`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
 - IWM: status=`available`, latest_date=`2026-07-28`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- LQD: status=`available`, latest_date=`2026-07-28`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- LQD: status=`available`, latest_date=`2026-07-28`, source=`local-cache-yahoo-chart`, stale=`False`, fallback=`True`, real_data=`True`
 - QQQ: status=`available`, latest_date=`2026-07-28`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - RECESSION: status=`stale`, latest_date=`2026-06-01`, source=`fred-api`, stale=`True`, fallback=`False`, real_data=`True`
 - RSP: status=`available`, latest_date=`2026-07-28`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
@@ -50,10 +50,10 @@ Generated at: `2026-07-29T04:34:12.416893+00:00`
 - TLT: status=`available`, latest_date=`2026-07-28`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - UUP: status=`available`, latest_date=`2026-07-28`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - XLB: status=`available`, latest_date=`2026-07-28`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- XLC: status=`available`, latest_date=`2026-07-28`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- XLC: status=`available`, latest_date=`2026-07-28`, source=`finnhub-quote-patch`, stale=`False`, fallback=`False`, real_data=`True`
 - XLE: status=`available`, latest_date=`2026-07-28`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - XLF: status=`available`, latest_date=`2026-07-28`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- XLI: status=`available`, latest_date=`2026-07-28`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- XLI: status=`available`, latest_date=`2026-07-28`, source=`finnhub-quote-patch`, stale=`False`, fallback=`False`, real_data=`True`
 - XLK: status=`available`, latest_date=`2026-07-28`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - XLP: status=`available`, latest_date=`2026-07-28`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - XLRE: status=`available`, latest_date=`2026-07-28`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`

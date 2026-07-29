@@ -11,10 +11,10 @@
     "can_append_forecast_record": false,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-07-29",
-    "current_time_us_eastern": "2026-07-29T00:34:12.416893-04:00",
+    "current_time_us_eastern": "2026-07-29T02:21:28.872044-04:00",
     "data_freshness_status": "market_open_unconfirmed",
     "expected_latest_trading_date": "2026-07-28",
-    "generated_at": "2026-07-29T04:34:12.416893+00:00",
+    "generated_at": "2026-07-29T06:21:28.872044+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -175,13 +175,13 @@
         "symbol": "IWM"
       },
       "LQD": {
-        "fallback_used": false,
+        "fallback_used": true,
         "latest_date": "2026-07-28",
         "missing_data": false,
         "point_in_time_safe": true,
         "real_data": true,
         "rows": 520,
-        "source": "yahoo-chart",
+        "source": "local-cache-yahoo-chart",
         "stale_data": false,
         "status": "available",
         "symbol": "LQD"
@@ -301,7 +301,7 @@
         "point_in_time_safe": true,
         "real_data": true,
         "rows": 520,
-        "source": "yahoo-chart",
+        "source": "finnhub-quote-patch",
         "stale_data": false,
         "status": "available",
         "symbol": "XLC"
@@ -337,7 +337,7 @@
         "point_in_time_safe": true,
         "real_data": true,
         "rows": 520,
-        "source": "yahoo-chart",
+        "source": "finnhub-quote-patch",
         "stale_data": false,
         "status": "available",
         "symbol": "XLI"
@@ -1053,15 +1053,15 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "HY_OAS",
       "DGS10",
-      "BAA_SPREAD",
+      "HY_OAS",
       "IG_OAS",
       "DGS2",
+      "BAA_SPREAD",
       "DGS3MO",
       "RECESSION",
-      "DFII10",
-      "FINANCIAL_STRESS"
+      "FINANCIAL_STRESS",
+      "DFII10"
     ],
     "freshness_warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-07-28，最近完整收盘交易日为 2026-07-28；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
     "gamma_available": false,
@@ -1092,10 +1092,10 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 65,
+      "event_detection_confidence": 64,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-07-29T04:34:02.300020+00:00",
+      "last_update": "2026-07-29T06:21:18.783250+00:00",
       "major_event_count": 3,
       "missing_reason": null,
       "news_direction": "risk_off",
@@ -1515,7 +1515,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": 0.0013,
-        "avg_equity_futures_1d_return": -0.0043,
+        "avg_equity_futures_1d_return": -0.0028,
         "confirmed_checks": [
           "股票ETF或股指期货下跌",
           "HYG/LQD 走弱"
@@ -1531,7 +1531,7 @@
           "美元走强"
         ],
         "hyg_lqd_1d_relative_return": -0.0011,
-        "oil_proxy_1d_return": 0.0033,
+        "oil_proxy_1d_return": 0.0024,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -3079,7 +3079,7 @@
           "quarter_end_effect": false
         },
         "market_structure": {
-          "defensive_vs_cyclical_20d": -0.0058729632566853485,
+          "defensive_vs_cyclical_20d": -0.005872955742507985,
           "equal_weight_vs_cap_weight_20d": 0.02196787559976887,
           "growth_vs_large_cap_20d": -0.06691692652168046,
           "sector_participation_20d": 0.7272727272727273,
@@ -4051,44 +4051,17 @@
               "UUP"
             ],
             "confidence": "medium",
-            "confidence_score": 71,
+            "confidence_score": 70,
             "detected_event_conditions": [],
             "event_type": "growth_negative",
             "expected_horizon": "3d-20d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 74,
+            "freshness_score": 70,
             "headline": "We're buying the dip on one of our stocks for two key reasons",
             "importance_score": 82,
             "narrative": "recession_fear",
             "provider": "finnhub",
             "published_at": "2026-07-28T17:45:21+00:00",
-            "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 62,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 21,
-            "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-27T19:46:20+00:00",
             "source": "CNBC"
           },
           {
@@ -4110,7 +4083,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 19,
+            "freshness_score": 17,
+            "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-27T19:46:20+00:00",
+            "source": "CNBC"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 60,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 15,
             "headline": "From 'oil' to 'shock',  here's what Kalshi traders expect Fed Chair Kevin Warsh will say this week",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4200,7 +4200,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0013,
-            "avg_equity_futures_1d_return": -0.0043,
+            "avg_equity_futures_1d_return": -0.0028,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "HYG/LQD 走弱"
@@ -4216,7 +4216,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0011,
-            "oil_proxy_1d_return": 0.0033,
+            "oil_proxy_1d_return": 0.0024,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -5496,7 +5496,7 @@
           "quarter_end_effect": false
         },
         "market_structure": {
-          "defensive_vs_cyclical_20d": -0.0058729632566853485,
+          "defensive_vs_cyclical_20d": -0.005872955742507985,
           "equal_weight_vs_cap_weight_20d": 0.02196787559976887,
           "growth_vs_large_cap_20d": -0.06691692652168046,
           "sector_participation_20d": 0.7272727272727273,
@@ -6434,44 +6434,17 @@
               "UUP"
             ],
             "confidence": "medium",
-            "confidence_score": 71,
+            "confidence_score": 70,
             "detected_event_conditions": [],
             "event_type": "growth_negative",
             "expected_horizon": "3d-20d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 74,
+            "freshness_score": 70,
             "headline": "We're buying the dip on one of our stocks for two key reasons",
             "importance_score": 82,
             "narrative": "recession_fear",
             "provider": "finnhub",
             "published_at": "2026-07-28T17:45:21+00:00",
-            "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 62,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 21,
-            "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-27T19:46:20+00:00",
             "source": "CNBC"
           },
           {
@@ -6493,7 +6466,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 19,
+            "freshness_score": 17,
+            "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-27T19:46:20+00:00",
+            "source": "CNBC"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 60,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 15,
             "headline": "From 'oil' to 'shock',  here's what Kalshi traders expect Fed Chair Kevin Warsh will say this week",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6583,7 +6583,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0013,
-            "avg_equity_futures_1d_return": -0.0043,
+            "avg_equity_futures_1d_return": -0.0028,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "HYG/LQD 走弱"
@@ -6599,7 +6599,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0011,
-            "oil_proxy_1d_return": 0.0033,
+            "oil_proxy_1d_return": 0.0024,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -7899,7 +7899,7 @@
           "quarter_end_effect": false
         },
         "market_structure": {
-          "defensive_vs_cyclical_20d": -0.0058729632566853485,
+          "defensive_vs_cyclical_20d": -0.005872955742507985,
           "equal_weight_vs_cap_weight_20d": 0.02196787559976887,
           "growth_vs_large_cap_20d": -0.06691692652168046,
           "sector_participation_20d": 0.7272727272727273,
@@ -8818,44 +8818,17 @@
               "UUP"
             ],
             "confidence": "medium",
-            "confidence_score": 71,
+            "confidence_score": 70,
             "detected_event_conditions": [],
             "event_type": "growth_negative",
             "expected_horizon": "3d-20d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 74,
+            "freshness_score": 70,
             "headline": "We're buying the dip on one of our stocks for two key reasons",
             "importance_score": 82,
             "narrative": "recession_fear",
             "provider": "finnhub",
             "published_at": "2026-07-28T17:45:21+00:00",
-            "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 62,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 21,
-            "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-27T19:46:20+00:00",
             "source": "CNBC"
           },
           {
@@ -8877,7 +8850,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 19,
+            "freshness_score": 17,
+            "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-27T19:46:20+00:00",
+            "source": "CNBC"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 60,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 15,
             "headline": "From 'oil' to 'shock',  here's what Kalshi traders expect Fed Chair Kevin Warsh will say this week",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -8967,7 +8967,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0013,
-            "avg_equity_futures_1d_return": -0.0043,
+            "avg_equity_futures_1d_return": -0.0028,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "HYG/LQD 走弱"
@@ -8983,7 +8983,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0011,
-            "oil_proxy_1d_return": 0.0033,
+            "oil_proxy_1d_return": 0.0024,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -10284,7 +10284,7 @@
           "quarter_end_effect": false
         },
         "market_structure": {
-          "defensive_vs_cyclical_20d": -0.0058729632566853485,
+          "defensive_vs_cyclical_20d": -0.005872955742507985,
           "equal_weight_vs_cap_weight_20d": 0.02196787559976887,
           "growth_vs_large_cap_20d": -0.06691692652168046,
           "sector_participation_20d": 0.7272727272727273,
@@ -11236,44 +11236,17 @@
               "UUP"
             ],
             "confidence": "medium",
-            "confidence_score": 71,
+            "confidence_score": 70,
             "detected_event_conditions": [],
             "event_type": "growth_negative",
             "expected_horizon": "3d-20d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 74,
+            "freshness_score": 70,
             "headline": "We're buying the dip on one of our stocks for two key reasons",
             "importance_score": 82,
             "narrative": "recession_fear",
             "provider": "finnhub",
             "published_at": "2026-07-28T17:45:21+00:00",
-            "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 62,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 21,
-            "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-27T19:46:20+00:00",
             "source": "CNBC"
           },
           {
@@ -11295,7 +11268,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 19,
+            "freshness_score": 17,
+            "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-07-27T19:46:20+00:00",
+            "source": "CNBC"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 60,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 15,
             "headline": "From 'oil' to 'shock',  here's what Kalshi traders expect Fed Chair Kevin Warsh will say this week",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11385,7 +11385,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0013,
-            "avg_equity_futures_1d_return": -0.0043,
+            "avg_equity_futures_1d_return": -0.0028,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "HYG/LQD 走弱"
@@ -11401,7 +11401,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0011,
-            "oil_proxy_1d_return": 0.0033,
+            "oil_proxy_1d_return": 0.0024,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
