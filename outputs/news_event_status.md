@@ -1,20 +1,20 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-29T06:21:18.783250+00:00`
+- generated_at: `2026-07-29T14:33:55.623353+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `3`
-- event_detection_confidence: `64`
+- major_event_count: `10`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
-- narrative_strength: `67`
-- price_reaction_confirmed: `False`
-- confirmation_score: `50`
+- narrative_strength: `100`
+- price_reaction_confirmed: `True`
+- confirmation_score: `75`
 
 ## Dashboard Note
 
-当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，尚未被价格反应充分确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
+当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，已被价格反应初步确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
 
 ## Economic Calendar Risk
 
@@ -25,26 +25,82 @@
 
 ## Major Events
 
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil jumps nearly 7% on escalating Middle East airstrikes - Reuters
+- source: Reuters
+- published_at: `2026-07-29T13:56:15+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: EXCLUSIVE: Iran to get Chinese shoulder-launched missile systems in weeks, sources say - Reuters
+- source: Reuters
+- published_at: `2026-07-29T09:43:41+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Fear of war's spread as US, Saudi hit Iran-backed fighters in Iraq - Reuters
+- source: Reuters
+- published_at: `2026-07-29T03:29:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Minnesota IT officials disclose 'coordinated cyberattack' at more than 30 local water systems - Reuters
+- source: Reuters
+- published_at: `2026-07-28T23:47:02+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Zelenskiy says he told Trump, senators that Ukraine needs anti-ballistic systems, missiles - Reuters
+- source: Reuters
+- published_at: `2026-07-28T23:43:04+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US says it intercepted Iranian ballistic missiles launched towards US forces in Middle East - Reuters
+- source: Reuters
+- published_at: `2026-07-28T23:32:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Yemen's Houthis say they fired missiles at Saudi oil tanker in Red Sea - Reuters
+- source: Reuters
+- published_at: `2026-07-28T21:00:10+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Ukrainian foreign minister says he warned Iranian counterpart against escalation, support for Russia - Reuters
+- source: Reuters
+- published_at: `2026-07-28T19:31:01+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Israel's yellow line, a shifting edge of war pushing Gazans from home - Reuters
+- source: Reuters
+- published_at: `2026-07-28T17:01:42+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
 ### growth_negative / risk_off
 
 - headline: We're buying the dip on one of our stocks for two key reasons
 - source: CNBC
 - published_at: `2026-07-28T17:45:21+00:00`
-- importance_score: `82`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade
-- source: CNBC
-- published_at: `2026-07-27T19:46:20+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: From 'oil' to 'shock',  here's what Kalshi traders expect Fed Chair Kevin Warsh will say this week
-- source: CNBC
-- published_at: `2026-07-27T18:58:23+00:00`
-- importance_score: `100`
+- importance_score: `80`
 - confidence: `medium`
