@@ -10,16 +10,16 @@
     "source": "finnhub",
     "status": "failed"
   },
-  "event_detection_confidence": 66,
+  "event_detection_confidence": 65,
   "event_risk_level": "high",
-  "generated_at": "2026-07-29T00:10:44.146428+00:00",
+  "generated_at": "2026-07-29T04:34:02.300020+00:00",
   "limits": [
     "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
     "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
     "The provider never exposes API keys and never lets frontend call Finnhub directly.",
     "Economic calendar items are treated as event-risk context, not automatic directional forecasts."
   ],
-  "major_event_count": 4,
+  "major_event_count": 3,
   "major_events": [
     {
       "affected_assets": [
@@ -31,14 +31,14 @@
         "UUP"
       ],
       "confidence": "medium",
-      "confidence_score": 74,
+      "confidence_score": 71,
       "detected_event_conditions": [],
       "event_type": "growth_negative",
       "expected_horizon": "3d-20d",
       "expected_market_direction": "risk_off",
-      "freshness_score": 85,
+      "freshness_score": 74,
       "headline": "We're buying the dip on one of our stocks for two key reasons",
-      "importance_score": 84,
+      "importance_score": 82,
       "narrative": "recession_fear",
       "provider": "finnhub",
       "published_at": "2026-07-28T17:45:21+00:00",
@@ -56,14 +56,14 @@
         "TLT"
       ],
       "confidence": "medium",
-      "confidence_score": 65,
+      "confidence_score": 62,
       "detected_event_conditions": [
         "geopolitical_risk_escalation"
       ],
       "event_type": "geopolitical_risk_escalation",
       "expected_horizon": "intraday-5d",
       "expected_market_direction": "risk_off",
-      "freshness_score": 32,
+      "freshness_score": 21,
       "headline": "Nvidia's potential $250B backstop for OpenAI is another strike against the AI trade",
       "importance_score": 100,
       "narrative": "geopolitics_escalation_risk_off",
@@ -83,46 +83,19 @@
         "TLT"
       ],
       "confidence": "medium",
-      "confidence_score": 64,
+      "confidence_score": 61,
       "detected_event_conditions": [
         "geopolitical_risk_escalation"
       ],
       "event_type": "geopolitical_risk_escalation",
       "expected_horizon": "intraday-5d",
       "expected_market_direction": "risk_off",
-      "freshness_score": 30,
+      "freshness_score": 19,
       "headline": "From 'oil' to 'shock',  here's what Kalshi traders expect Fed Chair Kevin Warsh will say this week",
       "importance_score": 100,
       "narrative": "geopolitics_escalation_risk_off",
       "provider": "finnhub",
       "published_at": "2026-07-27T18:58:23+00:00",
-      "source": "CNBC"
-    },
-    {
-      "affected_assets": [
-        "SPY",
-        "QQQ",
-        "IWM",
-        "DIA",
-        "USO",
-        "CL=F",
-        "XLE",
-        "^VIX"
-      ],
-      "confidence": "medium",
-      "confidence_score": 60,
-      "detected_event_conditions": [
-        "oil_shock_relief"
-      ],
-      "event_type": "oil_shock_relief",
-      "expected_horizon": "1d-5d",
-      "expected_market_direction": "risk_on",
-      "freshness_score": 15,
-      "headline": "We're buying more of a slumping industrial stock and a hard-hit chipmaker",
-      "importance_score": 86,
-      "narrative": "oil_relief_rally",
-      "provider": "finnhub",
-      "published_at": "2026-07-27T12:53:43+00:00",
       "source": "CNBC"
     }
   ],
@@ -136,20 +109,7 @@
       "QQQ",
       "SPY"
     ],
-    "conflicting_headlines": [
-      {
-        "confidence": "medium",
-        "detected_event_conditions": [
-          "oil_shock_relief"
-        ],
-        "event_type": "oil_shock_relief",
-        "expected_market_direction": "risk_on",
-        "headline": "We're buying more of a slumping industrial stock and a hard-hit chipmaker",
-        "importance_score": 86,
-        "published_at": "2026-07-27T12:53:43+00:00",
-        "source": "CNBC"
-      }
-    ],
+    "conflicting_headlines": [],
     "detected_event_conditions": [
       "geopolitical_risk_escalation"
     ],
@@ -190,14 +150,14 @@
     "direction": "supports_risk_expansion",
     "event_risk_level": "high",
     "macro_event_risk_flag": false,
-    "major_event_count": 4,
+    "major_event_count": 3,
     "not_a_trading_signal": true,
     "price_reaction_confirmed": false,
     "symbols": {
       "DIA": {
-        "after_primary_probability": 0.3148,
+        "after_primary_probability": 0.3021,
         "after_primary_scenario": "bounce_path",
-        "before_primary_probability": 0.3351,
+        "before_primary_probability": 0.3221,
         "before_primary_scenario": "bounce_path",
         "confirmation_delta": -4.01,
         "impact": "potential_conflict_unconfirmed",
@@ -221,15 +181,15 @@
           "risk_expansion_predictor": 0.0202,
           "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": -0.0203,
+        "primary_probability_delta": -0.02,
         "primary_scenario_changed": false,
         "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
       },
       "IWM": {
-        "after_primary_probability": 0.3667,
+        "after_primary_probability": 0.3858,
         "after_primary_scenario": "bearish_path",
-        "before_primary_probability": 0.3467,
+        "before_primary_probability": 0.3664,
         "before_primary_scenario": "bearish_path",
         "confirmation_delta": -4.01,
         "impact": "text_support_unconfirmed",
@@ -253,15 +213,15 @@
           "risk_expansion_predictor": 0.0202,
           "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": 0.02,
+        "primary_probability_delta": 0.0194,
         "primary_scenario_changed": false,
         "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
       },
       "QQQ": {
-        "after_primary_probability": 0.3115,
+        "after_primary_probability": 0.3369,
         "after_primary_scenario": "bearish_path",
-        "before_primary_probability": 0.2898,
+        "before_primary_probability": 0.316,
         "before_primary_scenario": "bearish_path",
         "confirmation_delta": -4.01,
         "impact": "text_support_unconfirmed",
@@ -285,15 +245,15 @@
           "risk_expansion_predictor": 0.0202,
           "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": 0.0217,
+        "primary_probability_delta": 0.0209,
         "primary_scenario_changed": false,
         "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
       },
       "SPY": {
-        "after_primary_probability": 0.3134,
+        "after_primary_probability": 0.3,
         "after_primary_scenario": "bounce_path",
-        "before_primary_probability": 0.3338,
+        "before_primary_probability": 0.3199,
         "before_primary_scenario": "bounce_path",
         "confirmation_delta": -4.01,
         "impact": "potential_conflict_unconfirmed",
@@ -317,7 +277,7 @@
           "risk_expansion_predictor": 0.0202,
           "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": -0.0204,
+        "primary_probability_delta": -0.0199,
         "primary_scenario_changed": false,
         "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
@@ -329,8 +289,9 @@
   "price_reaction_confirmation": {
     "asset_reaction_summary": {
       "avg_equity_1d_return": 0.0013,
-      "avg_equity_futures_1d_return": 0.0048,
+      "avg_equity_futures_1d_return": -0.0043,
       "confirmed_checks": [
+        "股票ETF或股指期货下跌",
         "HYG/LQD 走弱"
       ],
       "equity_futures_symbols_used": [
@@ -340,12 +301,11 @@
         "YM=F"
       ],
       "failed_checks": [
-        "股票ETF或股指期货下跌",
         "VIX 上升",
         "美元走强"
       ],
       "hyg_lqd_1d_relative_return": -0.0011,
-      "oil_proxy_1d_return": -0.0216,
+      "oil_proxy_1d_return": 0.0033,
       "oil_proxy_symbols_used": [
         "USO",
         "CL=F"
@@ -354,7 +314,7 @@
       "uup_1d_return": -0.0007,
       "vix_1d_return": -0.0246
     },
-    "confirmation_score": 25,
+    "confirmation_score": 50,
     "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
     "price_reaction_confirmed": false
   },
@@ -409,11 +369,11 @@
       "news_conflicts_primary_scenario": false,
       "news_supports_primary_scenario": true,
       "primary_scenario": "bearish_path",
-      "risk_scenario": "analog_average_path",
+      "risk_scenario": "bounce_path",
       "scenario_bias": [
         "bearish_path"
       ],
-      "secondary_scenario": "bounce_path"
+      "secondary_scenario": "analog_average_path"
     },
     "QQQ": {
       "expected_changes": [
@@ -426,11 +386,11 @@
       "news_conflicts_primary_scenario": false,
       "news_supports_primary_scenario": true,
       "primary_scenario": "bearish_path",
-      "risk_scenario": "analog_average_path",
+      "risk_scenario": "bounce_path",
       "scenario_bias": [
         "bearish_path"
       ],
-      "secondary_scenario": "bounce_path"
+      "secondary_scenario": "analog_average_path"
     },
     "SPY": {
       "expected_changes": [
@@ -443,11 +403,11 @@
       "news_conflicts_primary_scenario": true,
       "news_supports_primary_scenario": false,
       "primary_scenario": "bounce_path",
-      "risk_scenario": "bearish_path",
+      "risk_scenario": "analog_average_path",
       "scenario_bias": [
         "bearish_path"
       ],
-      "secondary_scenario": "analog_average_path"
+      "secondary_scenario": "bearish_path"
     }
   },
   "validation_type": "daily",

@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-29T00:10:44.146428+00:00`
+- generated_at: `2026-07-29T04:34:02.300020+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `4`
-- event_detection_confidence: `66`
+- major_event_count: `3`
+- event_detection_confidence: `65`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `67`
 - price_reaction_confirmed: `False`
-- confirmation_score: `25`
+- confirmation_score: `50`
 
 ## Dashboard Note
 
@@ -30,7 +30,7 @@
 - headline: We're buying the dip on one of our stocks for two key reasons
 - source: CNBC
 - published_at: `2026-07-28T17:45:21+00:00`
-- importance_score: `84`
+- importance_score: `82`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
@@ -47,12 +47,4 @@
 - source: CNBC
 - published_at: `2026-07-27T18:58:23+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### oil_shock_relief / risk_on
-
-- headline: We're buying more of a slumping industrial stock and a hard-hit chipmaker
-- source: CNBC
-- published_at: `2026-07-27T12:53:43+00:00`
-- importance_score: `86`
 - confidence: `medium`
