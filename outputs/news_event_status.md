@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-30T06:14:22.507091+00:00`
+- generated_at: `2026-07-30T14:35:01.854883+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `11`
-- event_detection_confidence: `76`
+- major_event_count: `10`
+- event_detection_confidence: `81`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `50`
+- confirmation_score: `0`
 
 ## Dashboard Note
 
@@ -27,9 +27,41 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Dollar recovers as Fed holds rates, US strikes Iran - Reuters
+- headline: Drone strike near Suez Canal in Egypt raises new security threat in widening war - Reuters
 - source: Reuters
-- published_at: `2026-07-30T01:13:00+00:00`
+- published_at: `2026-07-30T13:01:43+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Shell profit more than doubles to $9.8 billion, second-highest on record, as Iran war lifts prices - Reuters
+- source: Reuters
+- published_at: `2026-07-30T12:31:11+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Egypt says drone hit two ships at Mediterranean port as attacks on energy infrastructure widen
+- source: CNBC
+- published_at: `2026-07-30T11:53:56+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Treasury sell-off continues after divided Fed holds interest rates steady
+- source: CNBC
+- published_at: `2026-07-30T06:56:06+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US military says latest strikes on Iran last two hours, hitting dozens of targets - Reuters
+- source: Reuters
+- published_at: `2026-07-30T04:15:43+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -43,11 +75,19 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Canadian oil heads to Japan for the first time in over a year as Iran war tightens Middle East supplies - Reuters
+- source: Reuters
+- published_at: `2026-07-29T22:31:10+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Trump says will hit Iran hard after attack, was briefed on Egypt tanker - Reuters
 - source: Reuters
 - published_at: `2026-07-29T21:48:54+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,52 +95,12 @@
 - source: Reuters
 - published_at: `2026-07-29T19:14:50+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil jumps 7% on escalating Middle East airstrikes - Reuters
-- source: Reuters
-- published_at: `2026-07-29T19:11:02+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US strikes Iran as widening war engulfs more countries - Reuters
-- source: Reuters
-- published_at: `2026-07-29T03:29:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: EXCLUSIVE: Iran to get Chinese shoulder-launched missile systems in weeks, sources say - Reuters
-- source: Reuters
-- published_at: `2026-07-29T03:04:00+00:00`
-- importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
+### growth_positive / risk_on
 
-- headline: US intercepts Iranian missile attack as West Asia tensions push oil prices higher
-- source: Bloomberg
-- published_at: `2026-07-29T02:18:09+00:00`
-- importance_score: `100`
+- headline: Ferrari raises 2026 guidance after Q2 earnings beat
+- source: CNBC
+- published_at: `2026-07-30T11:58:06+00:00`
+- importance_score: `74`
 - confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Minnesota IT officials disclose 'coordinated cyberattack' at more than 30 local water systems - Reuters
-- source: Reuters
-- published_at: `2026-07-28T23:47:02+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Zelenskiy says he told Trump, senators that Ukraine needs anti-ballistic systems, missiles - Reuters
-- source: Reuters
-- published_at: `2026-07-28T23:43:04+00:00`
-- importance_score: `100`
-- confidence: `medium`
