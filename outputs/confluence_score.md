@@ -3,12 +3,12 @@
 This report explains whether current forecast paths have multi-source confirmation. It is not a trading system.
 
 - version: confluence_engine_v1
-- generated_at: 2026-07-30T00:09:04.900229+00:00
+- generated_at: 2026-07-30T04:26:16.641563+00:00
 - strongest_confluence_symbol: SPY
 
 | Symbol | Dominant path | Confluence | Level | Main supports | Main conflicts |
 | --- | --- | ---: | --- | --- | --- |
-| DIA | failed_bounce | 52/100 | mixed | flow, price, options, news | signal_confirmation, news, signal_confirmation, signal_confirmation |
-| IWM | failed_bounce | 52/100 | mixed | flow, price, breadth, options | breadth, signal_confirmation, news, signal_confirmation |
-| QQQ | failed_bounce | 47/100 | mixed | flow, price, breadth, options | signal_confirmation, breadth, news, signal_confirmation |
-| SPY | failed_bounce | 54/100 | mixed | flow, price, options, signal_confirmation | news, news, signal_confirmation, signal_confirmation |
+| DIA | failed_bounce | 50/100 | mixed | flow, options, price, news | signal_confirmation, news, signal_confirmation, signal_confirmation |
+| IWM | failed_bounce | 49/100 | mixed | flow, options, price, breadth | signal_confirmation, breadth, news, signal_confirmation |
+| QQQ | failed_bounce | 46/100 | mixed | flow, options, price, breadth | signal_confirmation, breadth, news, signal_confirmation |
+| SPY | failed_bounce | 54/100 | mixed | flow, options, price, news | news, signal_confirmation, signal_confirmation, signal_confirmation |

@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-30T00:08:54.717297+00:00`
+- generated_at: `2026-07-30T04:26:06.134942+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
-- event_detection_confidence: `74`
+- major_event_count: `11`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,25 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Dollar steadies as Fed holds rates, US strikes Iran - Reuters
+- source: Reuters
+- published_at: `2026-07-30T01:13:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: US strikes $58.6 billion Patriot missile deal amid rising stockpile concerns - Reuters
 - source: Reuters
 - published_at: `2026-07-29T23:23:08+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Trump says will hit Iran hard after attack, was briefed on Egypt tanker - Reuters
+- source: Reuters
+- published_at: `2026-07-29T21:48:54+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -43,11 +59,27 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: US strikes Iran as widening war engulfs more countries - Reuters
+- source: Reuters
+- published_at: `2026-07-29T03:29:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: EXCLUSIVE: Iran to get Chinese shoulder-launched missile systems in weeks, sources say - Reuters
 - source: Reuters
 - published_at: `2026-07-29T03:04:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US intercepts Iranian missile attack as West Asia tensions push oil prices higher
+- source: Bloomberg
+- published_at: `2026-07-29T02:18:09+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -70,29 +102,5 @@
 - headline: Zelenskiy says he told Trump, senators that Ukraine needs anti-ballistic systems, missiles - Reuters
 - source: Reuters
 - published_at: `2026-07-28T23:43:04+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US says it intercepted Iranian ballistic missiles launched towards US forces in Middle East - Reuters
-- source: Reuters
-- published_at: `2026-07-28T23:32:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Yemen's Houthis say they fired missiles at Saudi oil tanker in Red Sea - Reuters
-- source: Reuters
-- published_at: `2026-07-28T21:00:10+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Ukrainian foreign minister says he warned Iranian counterpart against escalation, support for Russia - Reuters
-- source: Reuters
-- published_at: `2026-07-28T19:31:01+00:00`
 - importance_score: `100`
 - confidence: `medium`
