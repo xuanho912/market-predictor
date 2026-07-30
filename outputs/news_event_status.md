@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-29T23:50:12.972139+00:00`
+- generated_at: `2026-07-30T00:08:54.717297+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
-- event_detection_confidence: `71`
+- major_event_count: `9`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US strikes $58.6 billion Patriot missile deal amid rising stockpile concerns - Reuters
+- source: Reuters
+- published_at: `2026-07-29T23:23:08+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 

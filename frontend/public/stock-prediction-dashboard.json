@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-07-29T23:50:23.825706+00:00",
+  "generated_at": "2026-07-30T00:09:05.583245+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-07-29T23:50:23.844179+00:00",
+    "generated_at": "2026-07-30T00:09:05.601621+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 133,
     "risk_score_effectiveness": {
@@ -180,7 +180,8 @@
       "company_name": "Constellation Energy Corp",
       "conflicting_signals": [
         "大盘背景对个股路径形成压力。",
-        "价格仍在 50d 均线下方。"
+        "价格仍在 50d 均线下方。",
+        "公司新闻或财报事件风险较高。"
       ],
       "current_price": 257.95001220703125,
       "data_quality": {
@@ -234,10 +235,10 @@
           "company_news": "available",
           "earnings": "available",
           "earnings_date": "2026-08-06",
-          "earnings_risk_flag": "low",
+          "earnings_risk_flag": "high",
           "earnings_within_30d": true,
-          "earnings_within_7d": false,
-          "event_risk_flag": "low",
+          "earnings_within_7d": true,
+          "event_risk_flag": "high",
           "headlines": [
             {
               "datetime": 1785257880,
@@ -345,69 +346,69 @@
         "forecast_price_table": {
           "10d": {
             "confidence_level": "low",
-            "expected_price": 255.43,
-            "expected_return": -0.0098,
-            "lower_confidence_price": 241.95,
+            "expected_price": 255.28,
+            "expected_return": -0.0104,
+            "lower_confidence_price": 241.8,
             "primary_scenario_price": 250.15,
-            "probability_of_reaching_primary_price": 0.2819,
+            "probability_of_reaching_primary_price": 0.2821,
             "risk_scenario_price": 253.62,
             "secondary_scenario_price": 248.85,
-            "upper_confidence_price": 268.92
+            "upper_confidence_price": 268.76
           },
           "1d": {
             "confidence_level": "low",
-            "expected_price": 257.63,
-            "expected_return": -0.0012,
-            "lower_confidence_price": 253.37,
+            "expected_price": 257.6,
+            "expected_return": -0.0014,
+            "lower_confidence_price": 253.33,
             "primary_scenario_price": 257.26,
-            "probability_of_reaching_primary_price": 0.2819,
+            "probability_of_reaching_primary_price": 0.2821,
             "risk_scenario_price": 256.91,
             "secondary_scenario_price": 256.22,
-            "upper_confidence_price": 261.9
+            "upper_confidence_price": 261.86
           },
           "20d": {
             "confidence_level": "low",
-            "expected_price": 255.23,
-            "expected_return": -0.0105,
-            "lower_confidence_price": 236.17,
+            "expected_price": 255.05,
+            "expected_return": -0.0112,
+            "lower_confidence_price": 235.99,
             "primary_scenario_price": 248.85,
-            "probability_of_reaching_primary_price": 0.2819,
+            "probability_of_reaching_primary_price": 0.2821,
             "risk_scenario_price": 253.18,
             "secondary_scenario_price": 245.99,
-            "upper_confidence_price": 274.3
+            "upper_confidence_price": 274.12
           },
           "3d": {
             "confidence_level": "low",
-            "expected_price": 257.01,
-            "expected_return": -0.0036,
-            "lower_confidence_price": 249.63,
+            "expected_price": 256.92,
+            "expected_return": -0.004,
+            "lower_confidence_price": 249.54,
             "primary_scenario_price": 255.52,
-            "probability_of_reaching_primary_price": 0.2819,
+            "probability_of_reaching_primary_price": 0.2821,
             "risk_scenario_price": 255.35,
             "secondary_scenario_price": 253.79,
-            "upper_confidence_price": 264.4
+            "upper_confidence_price": 264.31
           },
           "5d": {
             "confidence_level": "low",
-            "expected_price": 256.37,
-            "expected_return": -0.0061,
-            "lower_confidence_price": 246.83,
+            "expected_price": 256.25,
+            "expected_return": -0.0066,
+            "lower_confidence_price": 246.71,
             "primary_scenario_price": 253.44,
-            "probability_of_reaching_primary_price": 0.2819,
+            "probability_of_reaching_primary_price": 0.2821,
             "risk_scenario_price": 254.48,
             "secondary_scenario_price": 251.71,
-            "upper_confidence_price": 265.9
+            "upper_confidence_price": 265.78
           },
           "60d": {
             "confidence_level": "low",
-            "expected_price": 255.55,
-            "expected_return": -0.0093,
-            "lower_confidence_price": 222.52,
+            "expected_price": 255.37,
+            "expected_return": -0.01,
+            "lower_confidence_price": 222.34,
             "primary_scenario_price": 247.98,
-            "probability_of_reaching_primary_price": 0.2819,
+            "probability_of_reaching_primary_price": 0.2821,
             "risk_scenario_price": 254.05,
             "secondary_scenario_price": 243.22,
-            "upper_confidence_price": 288.57
+            "upper_confidence_price": 288.4
           }
         },
         "trigger_levels": {
@@ -740,42 +741,42 @@
           {
             "confidence": "low",
             "label": "个股失败反抽",
-            "probability": 0.2819,
+            "probability": 0.2821,
             "reason": "反抽缺乏成交量/相对强弱确认或大盘风险上升时，失败反抽权重上升。",
             "scenario": "stock_failed_bounce"
           },
           {
             "confidence": "low",
             "label": "个股下跌延续",
-            "probability": 0.2001,
+            "probability": 0.1891,
             "reason": "价格低于关键均线、相对弱势或大盘 risk-off 时，下跌延续权重上升。",
             "scenario": "stock_downside_continuation"
           },
           {
             "confidence": "low",
+            "label": "个股事件风险",
+            "probability": 0.1468,
+            "reason": "个股新闻、财报、估值或期权数据缺失时，事件风险保持为独立风险路径。",
+            "scenario": "stock_event_risk"
+          },
+          {
+            "confidence": "low",
             "label": "个股震荡",
-            "probability": 0.151,
+            "probability": 0.1427,
             "reason": "信号分歧较大时，震荡路径权重上升。",
             "scenario": "stock_sideways"
           },
           {
             "confidence": "low",
             "label": "个股反抽",
-            "probability": 0.1402,
+            "probability": 0.1325,
             "reason": "结合回撤、成交量和大盘背景，短中期反抽权重较高；当前市场背景为 risk_off_pressure。",
             "scenario": "stock_bounce"
           },
           {
             "confidence": "low",
-            "label": "个股事件风险",
-            "probability": 0.1138,
-            "reason": "个股新闻、财报、估值或期权数据缺失时，事件风险保持为独立风险路径。",
-            "scenario": "stock_event_risk"
-          },
-          {
-            "confidence": "low",
             "label": "个股趋势修复",
-            "probability": 0.1129,
+            "probability": 0.1067,
             "reason": "相对强弱和中期趋势修复信号较强时，该路径上升。",
             "scenario": "stock_trend_repair"
           }
@@ -783,28 +784,29 @@
         "close_call": false,
         "conflicting_signals": [
           "大盘背景对个股路径形成压力。",
-          "价格仍在 50d 均线下方。"
+          "价格仍在 50d 均线下方。",
+          "公司新闻或财报事件风险较高。"
         ],
         "primary": {
           "confidence": "low",
           "label": "个股失败反抽",
-          "probability": 0.2819,
+          "probability": 0.2821,
           "reason": "反抽缺乏成交量/相对强弱确认或大盘风险上升时，失败反抽权重上升。",
           "scenario": "stock_failed_bounce"
         },
-        "probability_gap": 0.0818,
+        "probability_gap": 0.093,
         "ranking_note": "Stock scenario probabilities follow market -> sector -> stock hierarchy. Market risk sets confidence, sector/industry filters the setup, and stock evidence decides the final path. They are not validated alpha and not execution advice.",
         "risk": {
           "confidence": "low",
           "label": "个股事件风险",
-          "probability": 0.1138,
+          "probability": 0.1468,
           "reason": "个股新闻、财报、估值或期权数据缺失时，事件风险保持为独立风险路径。",
           "scenario": "stock_event_risk"
         },
         "secondary": {
           "confidence": "low",
           "label": "个股下跌延续",
-          "probability": 0.2001,
+          "probability": 0.1891,
           "reason": "价格低于关键均线、相对弱势或大盘 risk-off 时，下跌延续权重上升。",
           "scenario": "stock_downside_continuation"
         },
@@ -1064,12 +1066,12 @@
           null,
           null,
           257.95001220703125,
-          257.63,
-          257.01,
-          256.37,
-          255.43,
-          255.23,
-          255.55
+          257.6,
+          256.92,
+          256.25,
+          255.28,
+          255.05,
+          255.37
         ],
         "historical_price": [
           247.06,
@@ -1203,21 +1205,21 @@
           "primary": {
             "confidence": "low",
             "label": "个股失败反抽",
-            "probability": 0.2819,
+            "probability": 0.2821,
             "reason": "反抽缺乏成交量/相对强弱确认或大盘风险上升时，失败反抽权重上升。",
             "scenario": "stock_failed_bounce"
           },
           "risk": {
             "confidence": "low",
             "label": "个股事件风险",
-            "probability": 0.1138,
+            "probability": 0.1468,
             "reason": "个股新闻、财报、估值或期权数据缺失时，事件风险保持为独立风险路径。",
             "scenario": "stock_event_risk"
           },
           "secondary": {
             "confidence": "low",
             "label": "个股下跌延续",
-            "probability": 0.2001,
+            "probability": 0.1891,
             "reason": "价格低于关键均线、相对弱势或大盘 risk-off 时，下跌延续权重上升。",
             "scenario": "stock_downside_continuation"
           }
@@ -1612,7 +1614,7 @@
           {
             "affected_ticker": "CEG",
             "alert_level": "NO_ALERT",
-            "alert_score": 27.1,
+            "alert_score": 26.83,
             "alert_type": "Stock Failed Bounce Risk",
             "confirmation_needed": [
               "价格无法站上确认价",
@@ -1670,7 +1672,7 @@
           {
             "affected_ticker": "CEG",
             "alert_level": "NO_ALERT",
-            "alert_score": 15.55,
+            "alert_score": 14.89,
             "alert_type": "Stock Breakdown Warning",
             "confirmation_needed": [
               "跌破 breakdown level",
@@ -1728,20 +1730,17 @@
           {
             "affected_ticker": "CEG",
             "alert_level": "NO_ALERT",
-            "alert_score": 7.71,
-            "alert_type": "Stock Bounce Setup",
+            "alert_score": 8.07,
+            "alert_type": "Earnings/Event Risk",
             "confirmation_needed": [
-              "价格站上主路径确认价",
-              "成交量继续确认",
-              "benchmark 不转为 risk-off"
+              "接入真实公司新闻/财报日期",
+              "价格反应确认"
             ],
             "invalidation_conditions": [
-              "跌破主路径失效价",
-              "相对强弱转弱",
-              "大盘 risk alert 升级"
+              "事件风险消退且价格结构确认"
             ],
             "not_trading_advice": true,
-            "one_line_reason": "反抽情景、成交量/相对强弱和大盘背景共同支持时触发。",
+            "one_line_reason": "公司新闻、财报或个股期权信息缺失时，事件风险保持独立预警。",
             "related_price_levels": {
               "breakdown_level": {
                 "confidence": "low",
@@ -1845,17 +1844,20 @@
           {
             "affected_ticker": "CEG",
             "alert_level": "NO_ALERT",
-            "alert_score": 6.26,
-            "alert_type": "Earnings/Event Risk",
+            "alert_score": 7.29,
+            "alert_type": "Stock Bounce Setup",
             "confirmation_needed": [
-              "接入真实公司新闻/财报日期",
-              "价格反应确认"
+              "价格站上主路径确认价",
+              "成交量继续确认",
+              "benchmark 不转为 risk-off"
             ],
             "invalidation_conditions": [
-              "事件风险消退且价格结构确认"
+              "跌破主路径失效价",
+              "相对强弱转弱",
+              "大盘 risk alert 升级"
             ],
             "not_trading_advice": true,
-            "one_line_reason": "公司新闻、财报或个股期权信息缺失时，事件风险保持独立预警。",
+            "one_line_reason": "反抽情景、成交量/相对强弱和大盘背景共同支持时触发。",
             "related_price_levels": {
               "breakdown_level": {
                 "confidence": "low",
@@ -1902,7 +1904,7 @@
           {
             "affected_ticker": "CEG",
             "alert_level": "NO_ALERT",
-            "alert_score": 5.64,
+            "alert_score": 5.33,
             "alert_type": "Stock Breakout Watch",
             "confirmation_needed": [
               "站上 breakout level",
@@ -2077,7 +2079,7 @@
         "strongest_alert": {
           "affected_ticker": "CEG",
           "alert_level": "NO_ALERT",
-          "alert_score": 27.1,
+          "alert_score": 26.83,
           "alert_type": "Stock Failed Bounce Risk",
           "confirmation_needed": [
             "价格无法站上确认价",
@@ -2226,13 +2228,13 @@
         "expected_alpha": {
           "benchmark": "SPY",
           "downside_risk_60d": 0.2008,
-          "expected_return_20d": -0.0105,
-          "expected_return_60d": -0.0093,
+          "expected_return_20d": -0.0112,
+          "expected_return_60d": -0.01,
           "max_drawdown_risk_20d": 0.0739,
           "max_drawdown_risk_60d": 0.2008,
-          "outperformance_probability_20d": 0.5594,
-          "risk_reward_ratio": 0.34,
-          "upside_potential_60d": 0.068
+          "outperformance_probability_20d": 0.5394,
+          "risk_reward_ratio": 0.32,
+          "upside_potential_60d": 0.0643
         },
         "forecast_grade": "weak_or_no_alpha_edge",
         "missing_data": [
@@ -2243,10 +2245,11 @@
         "purpose": "Estimate whether the stock has positive expectation-gap alpha versus its benchmark over 20d/60d horizons.",
         "risk_penalty": {
           "max_points": 30,
-          "points": 11.5,
+          "points": 16.5,
           "reasons": [
             "价格低于 200d 均线",
             "大盘风险背景压制",
+            "财报/事件风险偏高",
             "关键个股数据缺失：single_stock_options"
           ]
         },
@@ -2269,7 +2272,7 @@
           "primary_path": "stock_failed_bounce",
           "valuation_repricing": "估值扩张证据不足或存在压力"
         },
-        "total_score": 32.5,
+        "total_score": 27.5,
         "validation_status": "not_yet_validated",
         "version": "stock_alpha_score_v1"
       },
@@ -2277,6 +2280,8 @@
         "conflicting_evidence": [
           "大盘风险背景压低个股置信度",
           "价格结构与主路径冲突",
+          "公司新闻或财报事件风险上升",
+          "财报日期临近",
           "历史相似结构与主路径冲突",
           "个股 Alpha 评分已接入"
         ],
@@ -2294,15 +2299,15 @@
         "module_scores": {
           "alpha_quality": {
             "evidence": "个股 Alpha 评分已接入",
-            "reason": "score=32.5; grade=weak_or_no_alpha_edge; benchmark=SPY",
-            "score": 32.5,
+            "reason": "score=27.5; grade=weak_or_no_alpha_edge; benchmark=SPY",
+            "score": 27.5,
             "status": "conflicting"
           },
           "fundamentals_earnings": {
-            "evidence": "基础财务指标偏支持",
-            "reason": "Finnhub basic metrics available",
-            "score": 67.66,
-            "status": "supportive"
+            "evidence": "财报日期临近",
+            "reason": "earnings_date=2026-08-06",
+            "score": 57.66,
+            "status": "conflicting"
           },
           "historical_analog": {
             "evidence": "历史相似结构与主路径冲突",
@@ -2317,10 +2322,10 @@
             "status": "conflicting"
           },
           "news_event": {
-            "evidence": "公司新闻源已接入",
-            "reason": "Can CEG's Capital Allocation Strategy Enhance Shareholder Value?",
+            "evidence": "公司新闻或财报事件风险上升",
+            "reason": "risk_score=20.0; earnings_date=2026-08-06",
             "score": 51.4,
-            "status": "neutral"
+            "status": "conflicting"
           },
           "options_volatility": {
             "evidence": "个股期权/隐含波动率未完整接入",
@@ -2354,11 +2359,10 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 42.11,
+        "stock_confluence_score": 41.02,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
-          "个股跑赢所属板块",
-          "基础财务指标偏支持"
+          "个股跑赢所属板块"
         ],
         "validation_status": "not_yet_validated"
       },
@@ -4658,12 +4662,6 @@
               "headline": "Barclays Maintains Equal-Weight on NuScale Power, Lowers Price Target to $11",
               "source": "Benzinga",
               "url": "https://finnhub.io/api/news?id=9976aaac779620e70ba26efb02822c3207e257a21cae427db635ad04875d5644"
-            },
-            {
-              "datetime": 1784735899,
-              "headline": "NuScale Power: The Only Approved SMR, But Priced For A Perfection It Can't Yet Prove",
-              "source": "SeekingAlpha",
-              "url": "https://finnhub.io/api/news?id=2f1d5d216044e928a0e149fa312622b8088f612e901e85982fee6df95d7ec896"
             }
           ],
           "major_company_headline": "Forgent Power Solutions shares are trading lower after the company announced a secondary offering of 30 million shares.",
@@ -8962,7 +8960,7 @@
       "top_candidate": "NVDA",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-07-29T23:50:23.838622+00:00",
+    "generated_at": "2026-07-30T00:09:05.596100+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -9224,19 +9222,19 @@
       },
       {
         "alpha_fields": {
-          "alpha_score": 32.5,
-          "expected_return_60d": -0.0093,
+          "alpha_score": 27.5,
+          "expected_return_60d": -0.01,
           "forecast_grade": "weak_or_no_alpha_edge",
           "main_logic": "电力/核能/能源基础设施逻辑：政策与订单催化、盈利兑现能力、利率敏感度和资金确认。",
-          "outperformance_probability_20d": 0.5594,
-          "risk_reward_ratio": 0.34
+          "outperformance_probability_20d": 0.5394,
+          "risk_reward_ratio": 0.32
         },
-        "alpha_quality_score": 32.5,
+        "alpha_quality_score": 27.5,
         "as_of": "2026-07-29",
         "candidate_type": "failed_bounce_risk",
-        "catalyst_score": 61.83,
+        "catalyst_score": 63.81,
         "company_name": "Constellation Energy Corp",
-        "confluence_score": 42.11,
+        "confluence_score": 41.02,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9244,16 +9242,16 @@
         "data_status": "available",
         "downside_risk_level": 228.63,
         "elasticity_score": 68.71,
-        "expected_next_day_high": 261.9,
-        "expected_next_day_low": 253.37,
-        "expected_next_day_mid": 257.63,
+        "expected_next_day_high": 261.86,
+        "expected_next_day_low": 253.33,
+        "expected_next_day_mid": 257.6,
         "expected_next_day_range": {
-          "high": 261.9,
-          "low": 253.37,
-          "mid": 257.63,
+          "high": 261.86,
+          "low": 253.33,
+          "mid": 257.6,
           "range_pct": 0.0331
         },
-        "final_radar_score": 51.93,
+        "final_radar_score": 51.1,
         "forecast_date": "2026-07-29",
         "invalidation_level": 228.63,
         "last_close": 257.95001220703125,
@@ -9261,12 +9259,11 @@
         "main_conflicting_evidence": [
           "大盘风险背景压低个股置信度",
           "价格结构与主路径冲突",
-          "历史相似结构与主路径冲突",
-          "个股 Alpha 评分已接入"
+          "公司新闻或财报事件风险上升",
+          "财报日期临近"
         ],
         "main_supporting_evidence": [
-          "个股跑赢所属板块",
-          "基础财务指标偏支持"
+          "个股跑赢所属板块"
         ],
         "market_context": "risk_off_pressure",
         "model_version": "stock_baseline_v1",
@@ -9275,10 +9272,10 @@
           "company_news": "available",
           "earnings": "available"
         },
-        "next_day_move_probability": 0.648,
-        "one_line_reason": "failed_bounce_risk: Alpha 32 / 弹性 69 / 成交量 59 / 相对强弱 57 / 催化 62 / 大盘 risk_off_pressure / 板块 supportive",
-        "outperformance_probability_20d": 0.5594,
-        "primary_probability": 0.2819,
+        "next_day_move_probability": 0.652,
+        "one_line_reason": "failed_bounce_risk: Alpha 28 / 弹性 69 / 成交量 59 / 相对强弱 57 / 催化 64 / 大盘 risk_off_pressure / 板块 supportive",
+        "outperformance_probability_20d": 0.5394,
+        "primary_probability": 0.2821,
         "primary_scenario": "stock_failed_bounce",
         "radar_level": "WATCH",
         "rank": 4,
@@ -9290,9 +9287,9 @@
           "stock_vs_sector_20d": 0.0481
         },
         "relative_strength_score": 56.56,
-        "risk_reward_ratio": 0.34,
+        "risk_reward_ratio": 0.32,
         "risk_scenario": "stock_event_risk",
-        "risk_score": 52.82,
+        "risk_score": 52.36,
         "secondary_scenario": "stock_downside_continuation",
         "sector_context": "supportive",
         "squeeze_proxy_score": 52.64,
