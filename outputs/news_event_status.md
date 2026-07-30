@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-30T22:42:08.618212+00:00`
+- generated_at: `2026-07-30T23:48:41.079091+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `12`
@@ -30,6 +30,14 @@
 - headline: Drone strike in Egypt sparks security concerns about Suez oil exports - Reuters
 - source: Reuters
 - published_at: `2026-07-30T20:08:12+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Bank of England keeps rates on hold, awaits clearer sign of Iran war inflation hit - Reuters
+- source: Reuters
+- published_at: `2026-07-30T16:46:45+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -96,11 +104,3 @@
 - published_at: `2026-07-30T00:34:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US strikes $58.6 billion Patriot missile deal amid rising stockpile concerns - Reuters
-- source: Reuters
-- published_at: `2026-07-29T23:23:08+00:00`
-- importance_score: `100`
-- confidence: `high`
