@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-30T04:26:06.134942+00:00`
+- generated_at: `2026-07-30T06:14:22.507091+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `11`
@@ -27,7 +27,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Dollar steadies as Fed holds rates, US strikes Iran - Reuters
+- headline: Dollar recovers as Fed holds rates, US strikes Iran - Reuters
 - source: Reuters
 - published_at: `2026-07-30T01:13:00+00:00`
 - importance_score: `100`
@@ -59,6 +59,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Oil jumps 7% on escalating Middle East airstrikes - Reuters
+- source: Reuters
+- published_at: `2026-07-29T19:11:02+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: US strikes Iran as widening war engulfs more countries - Reuters
 - source: Reuters
 - published_at: `2026-07-29T03:29:00+00:00`
@@ -80,14 +88,6 @@
 - published_at: `2026-07-29T02:18:09+00:00`
 - importance_score: `100`
 - confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil jumps 7% on escalating Middle East airstrikes - Reuters
-- source: Reuters
-- published_at: `2026-07-29T00:27:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
