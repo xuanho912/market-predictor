@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-31T21:35:48.381745+00:00`
+- generated_at: `2026-07-31T22:39:13.148470+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `8`
@@ -39,7 +39,7 @@
 - source: Reuters
 - published_at: `2026-07-31T10:24:23+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -86,5 +86,5 @@
 - headline: Gaza ceasefire talks see rare progress, sources say - Reuters
 - source: Reuters
 - published_at: `2026-07-30T14:42:14+00:00`
-- importance_score: `93`
+- importance_score: `92`
 - confidence: `medium`

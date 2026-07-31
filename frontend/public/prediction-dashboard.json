@@ -7667,7 +7667,7 @@
       "evidence_note": "Forward-only breadth attribution is still below the minimum sample gate; these buckets are tracked but not proof.",
       "status": "not_enough_forward_samples"
     },
-    "generated_at": "2026-07-31T21:35:58.870193Z",
+    "generated_at": "2026-07-31T22:39:24.863213Z",
     "notes": [
       "This audit compares the same run with true breadth provider disabled vs enabled.",
       "The audit does not change Alpha v1 and does not prove tradable alpha.",
@@ -7825,7 +7825,7 @@
   },
   "breadth_status": {
     "cache_root": "data/breadth_cache",
-    "generated_at": "2026-07-31T21:35:33.068045+00:00",
+    "generated_at": "2026-07-31T22:38:50.496974+00:00",
     "provider": "true_breadth_provider",
     "sector_participation_proxy": {
       "data_note": "Sector ETF proxy, not constituent-level sector breadth.",
@@ -8357,7 +8357,7 @@
   },
   "confluence_score": {
     "disclaimer": "Confluence is a forecast-confirmation layer, not a trading signal or execution recommendation.",
-    "generated_at": "2026-07-31T21:35:58.880042+00:00",
+    "generated_at": "2026-07-31T22:39:24.869299+00:00",
     "summary": {
       "average_confluence_score": 51.5,
       "mixed_or_no_edge_symbols": [
@@ -9126,10 +9126,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-07-31",
-    "current_time_us_eastern": "2026-07-31T17:35:58.880809-04:00",
+    "current_time_us_eastern": "2026-07-31T18:39:24.869775-04:00",
     "data_freshness_status": "fresh",
     "expected_latest_trading_date": "2026-07-31",
-    "generated_at": "2026-07-31T21:35:58.880809+00:00",
+    "generated_at": "2026-07-31T22:39:24.869775+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -9868,13 +9868,13 @@
       "finnhub_quote_SPY": {
         "fallback_used": false,
         "latest_date": null,
-        "missing_data": true,
-        "point_in_time_safe": false,
-        "real_data": false,
-        "rows": 0,
+        "missing_data": false,
+        "point_in_time_safe": true,
+        "real_data": true,
+        "rows": 1,
         "source": "finnhub",
-        "stale_data": false,
-        "status": "rate_limited",
+        "stale_data": true,
+        "status": "stale",
         "symbol": "finnhub_quote_SPY"
       },
       "finnhub_rates_data": {
@@ -10176,7 +10176,7 @@
         "status": "available"
       }
     },
-    "generated_at": "2026-07-31T21:35:48.374833+00:00",
+    "generated_at": "2026-07-31T22:39:13.144349+00:00",
     "notes": [
       "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
       "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -10961,14 +10961,14 @@
       "finnhub_quote_SPY": {
         "fallback_used": false,
         "latest_date": null,
-        "missing_data": true,
-        "point_in_time_safe": false,
-        "rate_limited": true,
-        "real_data": false,
-        "rows": 0,
+        "missing_data": false,
+        "point_in_time_safe": true,
+        "rate_limited": false,
+        "real_data": true,
+        "rows": 1,
         "source": "finnhub",
-        "stale_data": false,
-        "status": "rate_limited",
+        "stale_data": true,
+        "status": "stale",
         "symbol": "finnhub_quote_SPY"
       },
       "finnhub_rates_data": {
@@ -11225,7 +11225,7 @@
       "fallback_used": true,
       "finnhub_available": true,
       "finnhub_missing": false,
-      "finnhub_rate_limited": true,
+      "finnhub_rate_limited": false,
       "flow_available": true,
       "flow_provider_status": "proxy",
       "flow_proxy_only": true,
@@ -11303,15 +11303,15 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
-        "DGS3MO",
-        "IG_OAS",
-        "DGS2",
         "HY_OAS",
         "DGS10",
+        "IG_OAS",
         "BAA_SPREAD",
-        "FINANCIAL_STRESS",
+        "DGS3MO",
+        "DGS2",
         "RECESSION",
-        "DFII10"
+        "DFII10",
+        "FINANCIAL_STRESS"
       ],
       "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-07-31。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
       "gamma_available": false,
@@ -11321,7 +11321,6 @@
       "latest_market_date": "2026-07-31",
       "missing_data": true,
       "missing_key_sources": [
-        "finnhub_quote_SPY",
         "finnhub_candle_SPY",
         "finnhub_candle_QQQ",
         "finnhub_candle_IWM",
@@ -11346,7 +11345,7 @@
         "event_detection_confidence": 67,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-07-31T21:35:48.381745+00:00",
+        "last_update": "2026-07-31T22:39:13.148470+00:00",
         "major_event_count": 8,
         "missing_reason": null,
         "news_direction": "risk_off",
@@ -11398,7 +11397,7 @@
   },
   "event_refresh": false,
   "feature_snapshot_v2": {
-    "generated_at": "2026-07-31T21:35:48.358812+00:00",
+    "generated_at": "2026-07-31T22:39:13.136526+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -11636,7 +11635,7 @@
     "version": "market_intelligence_engine_v2_features"
   },
   "feature_snapshot_v3": {
-    "generated_at": "2026-07-31T21:35:48.366106+00:00",
+    "generated_at": "2026-07-31T22:39:13.139945+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -12432,8 +12431,8 @@
           "ig_oas_20d_change": 0.050000000000000044
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote unavailable; news risk 35%; no major macro event flag; rates pressure 11%.",
-          "finnhub_quote_available": false,
+          "brief": "Finnhub quote 747.03; news risk 35%; no major macro event flag; rates pressure 11%.",
+          "finnhub_quote_available": true,
           "macro_event_risk_flag": false,
           "news_risk_score": 0.35,
           "rates_pressure_score": 0.11456148603935026,
@@ -12442,11 +12441,11 @@
         "finnhub": {
           "candle_status": "failed",
           "news_sentiment_status": "failed",
-          "quote_change_percent": null,
-          "quote_previous_close": null,
-          "quote_price": null,
+          "quote_change_percent": 0.72,
+          "quote_previous_close": 741.69,
+          "quote_price": 747.03,
           "quote_source": "finnhub",
-          "quote_status": "rate_limited",
+          "quote_status": "available",
           "sentiment_score": null
         },
         "flow_positioning_proxy": {
@@ -12586,7 +12585,7 @@
     "version": "market_intelligence_engine_v3_features"
   },
   "flow_positioning_status": {
-    "generated_at": "2026-07-31T21:35:40.062128+00:00",
+    "generated_at": "2026-07-31T22:38:59.726665+00:00",
     "latest_date": "2026-07-31",
     "provider": "flow_positioning_proxy",
     "sources": {
@@ -13037,7 +13036,7 @@
     ]
   },
   "flow_status": {
-    "generated_at": "2026-07-31T21:35:40.062128+00:00",
+    "generated_at": "2026-07-31T22:38:59.726665+00:00",
     "latest_date": "2026-07-31",
     "provider": "flow_positioning_proxy",
     "sources": {
@@ -14704,7 +14703,7 @@
       "primary_beats_secondary": "primary_path_not_better_than_secondary"
     },
     "current_evidence_level": "stronger_evidence",
-    "generated_at": "2026-07-31T21:35:59.197806+00:00",
+    "generated_at": "2026-07-31T22:39:25.061028+00:00",
     "guardrails": [
       "This scorecard validates probabilistic forecast paths, not trades.",
       "Forecast records are immutable except for future-outcome backfill fields.",
@@ -14819,7 +14818,7 @@
       "risk_on_flow_underweighted": 25,
       "volatility_repair_underweighted": 23
     },
-    "generated_at": "2026-07-31T21:35:59.299972+00:00",
+    "generated_at": "2026-07-31T22:39:25.123415+00:00",
     "guardrails": [
       "This is forecast error attribution, not a trading or PnL report.",
       "Attribution is diagnostic and probabilistic; it is not proof of causality.",
@@ -18704,7 +18703,7 @@
     },
     "dominant_error_theme": "news_data_gap_limited_attribution",
     "evidence_level": "stronger_evidence",
-    "generated_at": "2026-07-31T21:35:59.322254+00:00",
+    "generated_at": "2026-07-31T22:39:25.136068+00:00",
     "global_learning_status": "shadow_challenger_queue_ready",
     "guardrails": [
       "This queue does not change baseline_v1 or Alpha v1.",
@@ -18734,7 +18733,7 @@
       "5d": 120,
       "60d": 0
     },
-    "generated_at": "2026-07-31T21:35:59.162442+00:00",
+    "generated_at": "2026-07-31T22:39:25.038748+00:00",
     "immutability_note": "Forecast fields are write-once by forecast_id. Backfill may update only actual_return, best_matching_scenario, primary_hit, path_error and status fields.",
     "max_confirmed_market_date": "2026-07-31",
     "new_records_considered": 4,
@@ -18748,7 +18747,7 @@
   "forecast_price_levels": {
     "as_of": "2026-07-31",
     "disclaimer": "Forecast price levels are probabilistic scenario points derived from simulated paths, recent price structure and volatility bands. They are not execution instructions, risk-control rules, or guaranteed target prices.",
-    "generated_at": "2026-07-31T21:35:58.874835Z",
+    "generated_at": "2026-07-31T22:39:24.866319Z",
     "symbols": {
       "DIA": {
         "current_price": 524.3200073242188,
@@ -20491,7 +20490,7 @@
     "version": "forecast_price_levels_v1"
   },
   "forecast_records": {
-    "generated_at": "2026-07-31T21:35:59.183000+00:00",
+    "generated_at": "2026-07-31T22:39:25.052028+00:00",
     "records": [
       {
         "actual_return_10d": 0.01680114442,
@@ -40223,7 +40222,7 @@
       "5d": 120,
       "60d": 0
     },
-    "generated_at": "2026-07-31T21:35:59.322178+00:00",
+    "generated_at": "2026-07-31T22:39:25.136011+00:00",
     "guardrails": [
       "This gate does not modify Alpha v1 threshold, baseline_v1 or historical forecast records.",
       "This is forecast reliability assessment, not trading advice.",
@@ -41925,7 +41924,7 @@
     },
     "forward_completed_sample_size": 0,
     "forward_validation_notice": "当前高置信度还没有被前向样本验证，不应当视为稳定预测能力。",
-    "generated_at": "2026-07-31T21:35:48.377724+00:00",
+    "generated_at": "2026-07-31T22:39:13.146074+00:00",
     "internal_resonance_forward_validation": {
       "aligned_internal_resonance": {
         "by_horizon": {
@@ -42856,7 +42855,7 @@
       }
     },
     "conclusion": "confidence_not_yet_validated",
-    "generated_at": "2026-07-31T21:35:48.374052+00:00",
+    "generated_at": "2026-07-31T22:39:13.143886+00:00",
     "high_confidence_better_than_low_confidence": false,
     "high_vs_low_comparison_by_horizon": {
       "10d": false,
@@ -45374,7 +45373,7 @@
       "note": "Historical replay cannot upgrade alpha or confidence until forward validation samples mature.",
       "sample_gate": "stronger_evidence"
     },
-    "generated_at": "2026-07-31T21:35:59.319687+00:00",
+    "generated_at": "2026-07-31T22:39:25.134535+00:00",
     "guardrails": [
       "Historical replay is research evaluation only and cannot replace daily forward validation.",
       "Historical replay results must not be described as confirmed alpha.",
@@ -46904,7 +46903,7 @@
   },
   "market_alerts": {
     "disclaimer": "Market alerts are forecast warnings and scenario-confirmation notes only. They are not trading signals or buy/sell/entry/exit guidance.",
-    "generated_at": "2026-07-31T21:35:58.880717+00:00",
+    "generated_at": "2026-07-31T22:39:24.869711+00:00",
     "summary": {
       "alert_count_by_level": {
         "EXTREME": 0,
@@ -50176,7 +50175,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-07-31T21:35:48.357742+00:00",
+      "generated_at": "2026-07-31T22:39:13.136014+00:00",
       "notes": [
         "price/volatility/credit/rates/liquidity currently use public market proxies.",
         "options breadth macro flow are not treated as available unless real feeds are connected.",
@@ -50312,7 +50311,7 @@
       }
     },
     "feature_snapshot_v2": {
-      "generated_at": "2026-07-31T21:35:48.358812+00:00",
+      "generated_at": "2026-07-31T22:39:13.136526+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -50549,7 +50548,7 @@
       },
       "version": "market_intelligence_engine_v2_features"
     },
-    "generated_at": "2026-07-31T21:35:48.359395+00:00",
+    "generated_at": "2026-07-31T22:39:13.136924+00:00",
     "model_confidence_by_symbol": {
       "DIA": {
         "components": {
@@ -50746,7 +50745,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-07-31T21:35:48.370338+00:00",
+      "generated_at": "2026-07-31T22:39:13.141737+00:00",
       "notes": [
         "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
         "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -51530,14 +51529,14 @@
         "finnhub_quote_SPY": {
           "fallback_used": false,
           "latest_date": null,
-          "missing_data": true,
-          "point_in_time_safe": false,
-          "rate_limited": true,
-          "real_data": false,
-          "rows": 0,
+          "missing_data": false,
+          "point_in_time_safe": true,
+          "rate_limited": false,
+          "real_data": true,
+          "rows": 1,
           "source": "finnhub",
-          "stale_data": false,
-          "status": "rate_limited",
+          "stale_data": true,
+          "status": "stale",
           "symbol": "finnhub_quote_SPY"
         },
         "finnhub_rates_data": {
@@ -51762,7 +51761,7 @@
         "fallback_used": true,
         "finnhub_available": true,
         "finnhub_missing": false,
-        "finnhub_rate_limited": true,
+        "finnhub_rate_limited": false,
         "flow_available": true,
         "flow_proxy_only": true,
         "flow_required": true,
@@ -51771,7 +51770,6 @@
         "latest_date": "2026-07-31",
         "missing_data": true,
         "missing_key_sources": [
-          "finnhub_quote_SPY",
           "finnhub_candle_SPY",
           "finnhub_candle_QQQ",
           "finnhub_candle_IWM",
@@ -51876,7 +51874,7 @@
       }
     },
     "feature_snapshot_v3": {
-      "generated_at": "2026-07-31T21:35:48.366106+00:00",
+      "generated_at": "2026-07-31T22:39:13.139945+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -52672,8 +52670,8 @@
             "ig_oas_20d_change": 0.050000000000000044
           },
           "daily_market_brief": {
-            "brief": "Finnhub quote unavailable; news risk 35%; no major macro event flag; rates pressure 11%.",
-            "finnhub_quote_available": false,
+            "brief": "Finnhub quote 747.03; news risk 35%; no major macro event flag; rates pressure 11%.",
+            "finnhub_quote_available": true,
             "macro_event_risk_flag": false,
             "news_risk_score": 0.35,
             "rates_pressure_score": 0.11456148603935026,
@@ -52682,11 +52680,11 @@
           "finnhub": {
             "candle_status": "failed",
             "news_sentiment_status": "failed",
-            "quote_change_percent": null,
-            "quote_previous_close": null,
-            "quote_price": null,
+            "quote_change_percent": 0.72,
+            "quote_previous_close": 741.69,
+            "quote_price": 747.03,
             "quote_source": "finnhub",
-            "quote_status": "rate_limited",
+            "quote_status": "available",
             "sentiment_score": null
           },
           "flow_positioning_proxy": {
@@ -52830,8 +52828,8 @@
       "finnhub_cache_used": false,
       "finnhub_failed_requests": 9,
       "finnhub_missing": false,
-      "finnhub_rate_limited": true,
-      "finnhub_successful_requests": 6
+      "finnhub_rate_limited": false,
+      "finnhub_successful_requests": 7
     },
     "flow_status": {
       "average_flow_quality_score": 100.0,
@@ -52861,18 +52859,18 @@
       "fred_missing": false,
       "fred_rate_limited": false,
       "fred_successful_series": [
-        "DGS3MO",
-        "IG_OAS",
-        "DGS2",
         "HY_OAS",
         "DGS10",
+        "IG_OAS",
         "BAA_SPREAD",
-        "FINANCIAL_STRESS",
+        "DGS3MO",
+        "DGS2",
         "RECESSION",
-        "DFII10"
+        "DFII10",
+        "FINANCIAL_STRESS"
       ]
     },
-    "generated_at": "2026-07-31T21:35:48.374078+00:00",
+    "generated_at": "2026-07-31T22:39:13.143897+00:00",
     "high_confidence_signal_report": {
       "by_bucket": {
         "low_confidence_reference": {
@@ -53486,7 +53484,7 @@
         }
       },
       "conclusion": "confidence_not_yet_validated",
-      "generated_at": "2026-07-31T21:35:48.374052+00:00",
+      "generated_at": "2026-07-31T22:39:13.143886+00:00",
       "high_confidence_better_than_low_confidence": false,
       "high_vs_low_comparison_by_horizon": {
         "10d": false,
@@ -54323,7 +54321,7 @@
         "evidence_note": "Forward-only breadth attribution is still below the minimum sample gate; these buckets are tracked but not proof.",
         "status": "not_enough_forward_samples"
       },
-      "generated_at": "2026-07-31T21:35:58.870193Z",
+      "generated_at": "2026-07-31T22:39:24.863213Z",
       "notes": [
         "This audit compares the same run with true breadth provider disabled vs enabled.",
         "The audit does not change Alpha v1 and does not prove tradable alpha.",
@@ -54593,7 +54591,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-07-31T21:35:48.374833+00:00",
+      "generated_at": "2026-07-31T22:39:13.144349+00:00",
       "notes": [
         "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
         "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -55378,14 +55376,14 @@
         "finnhub_quote_SPY": {
           "fallback_used": false,
           "latest_date": null,
-          "missing_data": true,
-          "point_in_time_safe": false,
-          "rate_limited": true,
-          "real_data": false,
-          "rows": 0,
+          "missing_data": false,
+          "point_in_time_safe": true,
+          "rate_limited": false,
+          "real_data": true,
+          "rows": 1,
           "source": "finnhub",
-          "stale_data": false,
-          "status": "rate_limited",
+          "stale_data": true,
+          "status": "stale",
           "symbol": "finnhub_quote_SPY"
         },
         "finnhub_rates_data": {
@@ -55642,7 +55640,7 @@
         "fallback_used": true,
         "finnhub_available": true,
         "finnhub_missing": false,
-        "finnhub_rate_limited": true,
+        "finnhub_rate_limited": false,
         "flow_available": true,
         "flow_provider_status": "proxy",
         "flow_proxy_only": true,
@@ -55720,15 +55718,15 @@
         "fred_rate_limited": false,
         "fred_required": true,
         "fred_successful_series": [
-          "DGS3MO",
-          "IG_OAS",
-          "DGS2",
           "HY_OAS",
           "DGS10",
+          "IG_OAS",
           "BAA_SPREAD",
-          "FINANCIAL_STRESS",
+          "DGS3MO",
+          "DGS2",
           "RECESSION",
-          "DFII10"
+          "DFII10",
+          "FINANCIAL_STRESS"
         ],
         "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-07-31。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
         "gamma_available": false,
@@ -55738,7 +55736,6 @@
         "latest_market_date": "2026-07-31",
         "missing_data": true,
         "missing_key_sources": [
-          "finnhub_quote_SPY",
           "finnhub_candle_SPY",
           "finnhub_candle_QQQ",
           "finnhub_candle_IWM",
@@ -55763,7 +55760,7 @@
           "event_detection_confidence": 67,
           "event_risk_level": "high",
           "headline_count": 40,
-          "last_update": "2026-07-31T21:35:48.381745+00:00",
+          "last_update": "2026-07-31T22:39:13.148470+00:00",
           "major_event_count": 8,
           "missing_reason": null,
           "news_direction": "risk_off",
@@ -55899,7 +55896,7 @@
       "available": true,
       "cache_used": false,
       "configured": true,
-      "rate_limited": true
+      "rate_limited": false
     },
     "fred_effect_summary": {
       "data_completeness_delta": 6,
@@ -55974,18 +55971,18 @@
       "fallback_used": false,
       "rate_limited": false,
       "successful_series": [
-        "DGS3MO",
-        "IG_OAS",
-        "DGS2",
         "HY_OAS",
         "DGS10",
+        "IG_OAS",
         "BAA_SPREAD",
-        "FINANCIAL_STRESS",
+        "DGS3MO",
+        "DGS2",
         "RECESSION",
-        "DFII10"
+        "DFII10",
+        "FINANCIAL_STRESS"
       ]
     },
-    "generated_at": "2026-07-31T21:35:48.381727+00:00",
+    "generated_at": "2026-07-31T22:39:13.148459+00:00",
     "high_confidence_edge_report": {
       "breadth_forward_validation": {
         "bounce_with_breadth_support": {
@@ -57526,7 +57523,7 @@
       },
       "forward_completed_sample_size": 0,
       "forward_validation_notice": "当前高置信度还没有被前向样本验证，不应当视为稳定预测能力。",
-      "generated_at": "2026-07-31T21:35:48.377724+00:00",
+      "generated_at": "2026-07-31T22:39:13.146074+00:00",
       "internal_resonance_forward_validation": {
         "aligned_internal_resonance": {
           "by_horizon": {
@@ -57943,7 +57940,7 @@
       },
       "event_detection_confidence": 67,
       "event_risk_level": "high",
-      "generated_at": "2026-07-31T21:35:48.381745+00:00",
+      "generated_at": "2026-07-31T22:39:13.148470+00:00",
       "limits": [
         "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
         "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
@@ -57971,7 +57968,7 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 75,
+          "freshness_score": 72,
           "headline": "The Tech Download: Anduril CEO Brian Schimpf talks AI in warfare and manufacturing push",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -57990,15 +57987,15 @@
             "UUP",
             "TLT"
           ],
-          "confidence": "high",
-          "confidence_score": 75,
+          "confidence": "medium",
+          "confidence_score": 74,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 73,
+          "freshness_score": 71,
           "headline": "Trump convenes Cabinet at Camp David amid simmering Iran war - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -58025,7 +58022,7 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 43,
+          "freshness_score": 40,
           "headline": "US cyber defense agency warns hackers are increasingly targeting water systems - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -58052,7 +58049,7 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 39,
+          "freshness_score": 36,
           "headline": "Drone strike in Egypt sparks security concerns about Suez oil exports - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -58079,7 +58076,7 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 31,
+          "freshness_score": 28,
           "headline": "Bank of England keeps rates on hold, awaits clearer sign of Iran war inflation hit - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -58106,7 +58103,7 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 26,
+          "freshness_score": 24,
           "headline": "EXCLUSIVE: Yemen's Houthis are attacking Saudi Arabia from Iraq, sources say - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -58133,7 +58130,7 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 26,
+          "freshness_score": 24,
           "headline": "How NBCUniversal's deal with YouTube could jumpstart the next chapter of the streaming wars",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -58157,16 +58154,16 @@
             "NQ=F"
           ],
           "confidence": "medium",
-          "confidence_score": 63,
+          "confidence_score": 62,
           "detected_event_conditions": [
             "geopolitical_risk_easing"
           ],
           "event_type": "geopolitical_risk_easing",
           "expected_horizon": "1d-5d",
           "expected_market_direction": "risk_on",
-          "freshness_score": 26,
+          "freshness_score": 23,
           "headline": "Gaza ceasefire talks see rare progress, sources say - Reuters",
-          "importance_score": 93,
+          "importance_score": 92,
           "narrative": "geopolitics_easing_risk_on",
           "provider": "finnhub",
           "published_at": "2026-07-30T14:42:14+00:00",
@@ -58192,7 +58189,7 @@
             "event_type": "geopolitical_risk_easing",
             "expected_market_direction": "risk_on",
             "headline": "Gaza ceasefire talks see rare progress, sources say - Reuters",
-            "importance_score": 93,
+            "importance_score": 92,
             "published_at": "2026-07-30T14:42:14+00:00",
             "source": "Reuters"
           }
@@ -58218,7 +58215,7 @@
             "source": "CNBC"
           },
           {
-            "confidence": "high",
+            "confidence": "medium",
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
@@ -60367,7 +60364,7 @@
         "status": "insufficient_forward_samples"
       }
     },
-    "generated_at": "2026-07-31T21:35:59.374209+00:00",
+    "generated_at": "2026-07-31T22:39:25.164852+00:00",
     "guardrails": [
       "Alpha v1 threshold remains frozen at 0.32534311.",
       "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -61194,7 +61191,7 @@
   },
   "model_promotion_status": {
     "active_model_version": "baseline_v1",
-    "generated_at": "2026-07-31T21:35:59.374293+00:00",
+    "generated_at": "2026-07-31T22:39:25.164909+00:00",
     "guardrails": [
       "Alpha v1 threshold remains frozen at 0.32534311.",
       "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -61371,7 +61368,7 @@
     },
     "event_detection_confidence": 67,
     "event_risk_level": "high",
-    "generated_at": "2026-07-31T21:35:48.381745+00:00",
+    "generated_at": "2026-07-31T22:39:13.148470+00:00",
     "limits": [
       "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
       "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
@@ -61399,7 +61396,7 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 75,
+        "freshness_score": 72,
         "headline": "The Tech Download: Anduril CEO Brian Schimpf talks AI in warfare and manufacturing push",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -61418,15 +61415,15 @@
           "UUP",
           "TLT"
         ],
-        "confidence": "high",
-        "confidence_score": 75,
+        "confidence": "medium",
+        "confidence_score": 74,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 73,
+        "freshness_score": 71,
         "headline": "Trump convenes Cabinet at Camp David amid simmering Iran war - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -61453,7 +61450,7 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 43,
+        "freshness_score": 40,
         "headline": "US cyber defense agency warns hackers are increasingly targeting water systems - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -61480,7 +61477,7 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 39,
+        "freshness_score": 36,
         "headline": "Drone strike in Egypt sparks security concerns about Suez oil exports - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -61507,7 +61504,7 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 31,
+        "freshness_score": 28,
         "headline": "Bank of England keeps rates on hold, awaits clearer sign of Iran war inflation hit - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -61534,7 +61531,7 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 26,
+        "freshness_score": 24,
         "headline": "EXCLUSIVE: Yemen's Houthis are attacking Saudi Arabia from Iraq, sources say - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -61561,7 +61558,7 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 26,
+        "freshness_score": 24,
         "headline": "How NBCUniversal's deal with YouTube could jumpstart the next chapter of the streaming wars",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -61585,16 +61582,16 @@
           "NQ=F"
         ],
         "confidence": "medium",
-        "confidence_score": 63,
+        "confidence_score": 62,
         "detected_event_conditions": [
           "geopolitical_risk_easing"
         ],
         "event_type": "geopolitical_risk_easing",
         "expected_horizon": "1d-5d",
         "expected_market_direction": "risk_on",
-        "freshness_score": 26,
+        "freshness_score": 23,
         "headline": "Gaza ceasefire talks see rare progress, sources say - Reuters",
-        "importance_score": 93,
+        "importance_score": 92,
         "narrative": "geopolitics_easing_risk_on",
         "provider": "finnhub",
         "published_at": "2026-07-30T14:42:14+00:00",
@@ -61620,7 +61617,7 @@
           "event_type": "geopolitical_risk_easing",
           "expected_market_direction": "risk_on",
           "headline": "Gaza ceasefire talks see rare progress, sources say - Reuters",
-          "importance_score": 93,
+          "importance_score": 92,
           "published_at": "2026-07-30T14:42:14+00:00",
           "source": "Reuters"
         }
@@ -61646,7 +61643,7 @@
           "source": "CNBC"
         },
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -61977,7 +61974,7 @@
     "version": "news_event_intelligence_v1"
   },
   "options_status": {
-    "generated_at": "2026-07-31T21:35:40.054780+00:00",
+    "generated_at": "2026-07-31T22:38:59.723107+00:00",
     "market": {
       "failed_bounce_options_risk": 0.1492,
       "gamma_exposure": null,
@@ -62268,10 +62265,10 @@
       "can_append_forecast_record": true,
       "can_backfill_completed_outcomes": true,
       "current_date": "2026-07-31",
-      "current_time_us_eastern": "2026-07-31T17:35:58.880809-04:00",
+      "current_time_us_eastern": "2026-07-31T18:39:24.869775-04:00",
       "data_freshness_status": "fresh",
       "expected_latest_trading_date": "2026-07-31",
-      "generated_at": "2026-07-31T21:35:58.880809+00:00",
+      "generated_at": "2026-07-31T22:39:24.869775+00:00",
       "guardrails": [
         "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
         "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -63010,13 +63007,13 @@
         "finnhub_quote_SPY": {
           "fallback_used": false,
           "latest_date": null,
-          "missing_data": true,
-          "point_in_time_safe": false,
-          "real_data": false,
-          "rows": 0,
+          "missing_data": false,
+          "point_in_time_safe": true,
+          "real_data": true,
+          "rows": 1,
           "source": "finnhub",
-          "stale_data": false,
-          "status": "rate_limited",
+          "stale_data": true,
+          "status": "stale",
           "symbol": "finnhub_quote_SPY"
         },
         "finnhub_rates_data": {
@@ -63232,7 +63229,7 @@
       "fallback_used": true,
       "finnhub_available": true,
       "finnhub_missing": false,
-      "finnhub_rate_limited": true,
+      "finnhub_rate_limited": false,
       "flow_available": true,
       "flow_provider_status": "proxy",
       "flow_proxy_only": true,
@@ -63310,15 +63307,15 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
-        "DGS3MO",
-        "IG_OAS",
-        "DGS2",
         "HY_OAS",
         "DGS10",
+        "IG_OAS",
         "BAA_SPREAD",
-        "FINANCIAL_STRESS",
+        "DGS3MO",
+        "DGS2",
         "RECESSION",
-        "DFII10"
+        "DFII10",
+        "FINANCIAL_STRESS"
       ],
       "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-07-31。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
       "gamma_available": false,
@@ -63328,7 +63325,6 @@
       "latest_market_date": "2026-07-31",
       "missing_data": true,
       "missing_key_sources": [
-        "finnhub_quote_SPY",
         "finnhub_candle_SPY",
         "finnhub_candle_QQQ",
         "finnhub_candle_IWM",
@@ -63353,7 +63349,7 @@
         "event_detection_confidence": 67,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-07-31T21:35:48.381745+00:00",
+        "last_update": "2026-07-31T22:39:13.148470+00:00",
         "major_event_count": 8,
         "missing_reason": null,
         "news_direction": "risk_off",
@@ -63601,7 +63597,7 @@
             "event_type": "geopolitical_risk_easing",
             "expected_market_direction": "risk_on",
             "headline": "Gaza ceasefire talks see rare progress, sources say - Reuters",
-            "importance_score": 93,
+            "importance_score": 92,
             "published_at": "2026-07-30T14:42:14+00:00",
             "source": "Reuters"
           }
@@ -63627,7 +63623,7 @@
             "source": "CNBC"
           },
           {
-            "confidence": "high",
+            "confidence": "medium",
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
@@ -66380,7 +66376,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 72,
               "headline": "The Tech Download: Anduril CEO Brian Schimpf talks AI in warfare and manufacturing push",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -66399,15 +66395,15 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "high",
-              "confidence_score": 75,
+              "confidence": "medium",
+              "confidence_score": 74,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 73,
+              "freshness_score": 71,
               "headline": "Trump convenes Cabinet at Camp David amid simmering Iran war - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -66434,7 +66430,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 43,
+              "freshness_score": 40,
               "headline": "US cyber defense agency warns hackers are increasingly targeting water systems - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -66461,7 +66457,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 39,
+              "freshness_score": 36,
               "headline": "Drone strike in Egypt sparks security concerns about Suez oil exports - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -66488,7 +66484,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 31,
+              "freshness_score": 28,
               "headline": "Bank of England keeps rates on hold, awaits clearer sign of Iran war inflation hit - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -66515,7 +66511,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 26,
+              "freshness_score": 24,
               "headline": "EXCLUSIVE: Yemen's Houthis are attacking Saudi Arabia from Iraq, sources say - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -66543,7 +66539,7 @@
                 "event_type": "geopolitical_risk_easing",
                 "expected_market_direction": "risk_on",
                 "headline": "Gaza ceasefire talks see rare progress, sources say - Reuters",
-                "importance_score": 93,
+                "importance_score": 92,
                 "published_at": "2026-07-30T14:42:14+00:00",
                 "source": "Reuters"
               }
@@ -66569,7 +66565,7 @@
                 "source": "CNBC"
               },
               {
-                "confidence": "high",
+                "confidence": "medium",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
@@ -68879,7 +68875,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 72,
               "headline": "The Tech Download: Anduril CEO Brian Schimpf talks AI in warfare and manufacturing push",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -68898,15 +68894,15 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "high",
-              "confidence_score": 75,
+              "confidence": "medium",
+              "confidence_score": 74,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 73,
+              "freshness_score": 71,
               "headline": "Trump convenes Cabinet at Camp David amid simmering Iran war - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -68933,7 +68929,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 43,
+              "freshness_score": 40,
               "headline": "US cyber defense agency warns hackers are increasingly targeting water systems - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -68960,7 +68956,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 39,
+              "freshness_score": 36,
               "headline": "Drone strike in Egypt sparks security concerns about Suez oil exports - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -68987,7 +68983,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 31,
+              "freshness_score": 28,
               "headline": "Bank of England keeps rates on hold, awaits clearer sign of Iran war inflation hit - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -69014,7 +69010,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 26,
+              "freshness_score": 24,
               "headline": "EXCLUSIVE: Yemen's Houthis are attacking Saudi Arabia from Iraq, sources say - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -69042,7 +69038,7 @@
                 "event_type": "geopolitical_risk_easing",
                 "expected_market_direction": "risk_on",
                 "headline": "Gaza ceasefire talks see rare progress, sources say - Reuters",
-                "importance_score": 93,
+                "importance_score": 92,
                 "published_at": "2026-07-30T14:42:14+00:00",
                 "source": "Reuters"
               }
@@ -69068,7 +69064,7 @@
                 "source": "CNBC"
               },
               {
-                "confidence": "high",
+                "confidence": "medium",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
@@ -71442,7 +71438,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 72,
               "headline": "The Tech Download: Anduril CEO Brian Schimpf talks AI in warfare and manufacturing push",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -71461,15 +71457,15 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "high",
-              "confidence_score": 75,
+              "confidence": "medium",
+              "confidence_score": 74,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 73,
+              "freshness_score": 71,
               "headline": "Trump convenes Cabinet at Camp David amid simmering Iran war - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -71496,7 +71492,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 43,
+              "freshness_score": 40,
               "headline": "US cyber defense agency warns hackers are increasingly targeting water systems - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -71523,7 +71519,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 39,
+              "freshness_score": 36,
               "headline": "Drone strike in Egypt sparks security concerns about Suez oil exports - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -71550,7 +71546,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 31,
+              "freshness_score": 28,
               "headline": "Bank of England keeps rates on hold, awaits clearer sign of Iran war inflation hit - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -71577,7 +71573,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 26,
+              "freshness_score": 24,
               "headline": "EXCLUSIVE: Yemen's Houthis are attacking Saudi Arabia from Iraq, sources say - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -71605,7 +71601,7 @@
                 "event_type": "geopolitical_risk_easing",
                 "expected_market_direction": "risk_on",
                 "headline": "Gaza ceasefire talks see rare progress, sources say - Reuters",
-                "importance_score": 93,
+                "importance_score": 92,
                 "published_at": "2026-07-30T14:42:14+00:00",
                 "source": "Reuters"
               }
@@ -71631,7 +71627,7 @@
                 "source": "CNBC"
               },
               {
-                "confidence": "high",
+                "confidence": "medium",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
@@ -72957,8 +72953,8 @@
             "ig_oas_20d_change": 0.050000000000000044
           },
           "daily_market_brief": {
-            "brief": "Finnhub quote unavailable; news risk 35%; no major macro event flag; rates pressure 11%.",
-            "finnhub_quote_available": false,
+            "brief": "Finnhub quote 747.03; news risk 35%; no major macro event flag; rates pressure 11%.",
+            "finnhub_quote_available": true,
             "macro_event_risk_flag": false,
             "news_risk_score": 0.35,
             "rates_pressure_score": 0.11456148603935026,
@@ -72967,11 +72963,11 @@
           "finnhub": {
             "candle_status": "failed",
             "news_sentiment_status": "failed",
-            "quote_change_percent": null,
-            "quote_previous_close": null,
-            "quote_price": null,
+            "quote_change_percent": 0.72,
+            "quote_previous_close": 741.69,
+            "quote_price": 747.03,
             "quote_source": "finnhub",
-            "quote_status": "rate_limited",
+            "quote_status": "available",
             "sentiment_score": null
           },
           "flow_positioning_proxy": {
@@ -74023,7 +74019,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 72,
               "headline": "The Tech Download: Anduril CEO Brian Schimpf talks AI in warfare and manufacturing push",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -74042,15 +74038,15 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "high",
-              "confidence_score": 75,
+              "confidence": "medium",
+              "confidence_score": 74,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 73,
+              "freshness_score": 71,
               "headline": "Trump convenes Cabinet at Camp David amid simmering Iran war - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -74077,7 +74073,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 43,
+              "freshness_score": 40,
               "headline": "US cyber defense agency warns hackers are increasingly targeting water systems - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -74104,7 +74100,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 39,
+              "freshness_score": 36,
               "headline": "Drone strike in Egypt sparks security concerns about Suez oil exports - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -74131,7 +74127,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 31,
+              "freshness_score": 28,
               "headline": "Bank of England keeps rates on hold, awaits clearer sign of Iran war inflation hit - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -74158,7 +74154,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 26,
+              "freshness_score": 24,
               "headline": "EXCLUSIVE: Yemen's Houthis are attacking Saudi Arabia from Iraq, sources say - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -74186,7 +74182,7 @@
                 "event_type": "geopolitical_risk_easing",
                 "expected_market_direction": "risk_on",
                 "headline": "Gaza ceasefire talks see rare progress, sources say - Reuters",
-                "importance_score": 93,
+                "importance_score": 92,
                 "published_at": "2026-07-30T14:42:14+00:00",
                 "source": "Reuters"
               }
@@ -74212,7 +74208,7 @@
                 "source": "CNBC"
               },
               {
-                "confidence": "high",
+                "confidence": "medium",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
@@ -75189,7 +75185,7 @@
   },
   "price_volume_structure": {
     "disclaimer": "K线和成交量结构只用于预测确认，不是交易信号、买卖建议或仓位建议。",
-    "generated_at": "2026-07-31T21:35:58.874849+00:00",
+    "generated_at": "2026-07-31T22:39:24.866330+00:00",
     "summary": {
       "average_price_structure_score": 66.0,
       "average_volume_confirmation_score": 51.0,
@@ -75972,10 +75968,10 @@
       "can_append_forecast_record": true,
       "can_backfill_completed_outcomes": true,
       "current_date": "2026-07-31",
-      "current_time_us_eastern": "2026-07-31T17:35:58.880809-04:00",
+      "current_time_us_eastern": "2026-07-31T18:39:24.869775-04:00",
       "data_freshness_status": "fresh",
       "expected_latest_trading_date": "2026-07-31",
-      "generated_at": "2026-07-31T21:35:58.880809+00:00",
+      "generated_at": "2026-07-31T22:39:24.869775+00:00",
       "guardrails": [
         "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
         "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -76714,13 +76710,13 @@
         "finnhub_quote_SPY": {
           "fallback_used": false,
           "latest_date": null,
-          "missing_data": true,
-          "point_in_time_safe": false,
-          "real_data": false,
-          "rows": 0,
+          "missing_data": false,
+          "point_in_time_safe": true,
+          "real_data": true,
+          "rows": 1,
           "source": "finnhub",
-          "stale_data": false,
-          "status": "rate_limited",
+          "stale_data": true,
+          "status": "stale",
           "symbol": "finnhub_quote_SPY"
         },
         "finnhub_rates_data": {
@@ -76936,7 +76932,7 @@
       "fallback_used": true,
       "finnhub_available": true,
       "finnhub_missing": false,
-      "finnhub_rate_limited": true,
+      "finnhub_rate_limited": false,
       "flow_available": true,
       "flow_provider_status": "proxy",
       "flow_proxy_only": true,
@@ -77014,15 +77010,15 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
-        "DGS3MO",
-        "IG_OAS",
-        "DGS2",
         "HY_OAS",
         "DGS10",
+        "IG_OAS",
         "BAA_SPREAD",
-        "FINANCIAL_STRESS",
+        "DGS3MO",
+        "DGS2",
         "RECESSION",
-        "DFII10"
+        "DFII10",
+        "FINANCIAL_STRESS"
       ],
       "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-07-31。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
       "gamma_available": false,
@@ -77032,7 +77028,6 @@
       "latest_market_date": "2026-07-31",
       "missing_data": true,
       "missing_key_sources": [
-        "finnhub_quote_SPY",
         "finnhub_candle_SPY",
         "finnhub_candle_QQQ",
         "finnhub_candle_IWM",
@@ -77057,7 +77052,7 @@
         "event_detection_confidence": 67,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-07-31T21:35:48.381745+00:00",
+        "last_update": "2026-07-31T22:39:13.148470+00:00",
         "major_event_count": 8,
         "missing_reason": null,
         "news_direction": "risk_off",
@@ -77139,7 +77134,7 @@
             "event_type": "geopolitical_risk_easing",
             "expected_market_direction": "risk_on",
             "headline": "Gaza ceasefire talks see rare progress, sources say - Reuters",
-            "importance_score": 93,
+            "importance_score": 92,
             "published_at": "2026-07-30T14:42:14+00:00",
             "source": "Reuters"
           }
@@ -77165,7 +77160,7 @@
             "source": "CNBC"
           },
           {
-            "confidence": "high",
+            "confidence": "medium",
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
@@ -79716,7 +79711,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 72,
               "headline": "The Tech Download: Anduril CEO Brian Schimpf talks AI in warfare and manufacturing push",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -79735,15 +79730,15 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "high",
-              "confidence_score": 75,
+              "confidence": "medium",
+              "confidence_score": 74,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 73,
+              "freshness_score": 71,
               "headline": "Trump convenes Cabinet at Camp David amid simmering Iran war - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -79770,7 +79765,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 43,
+              "freshness_score": 40,
               "headline": "US cyber defense agency warns hackers are increasingly targeting water systems - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -79797,7 +79792,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 39,
+              "freshness_score": 36,
               "headline": "Drone strike in Egypt sparks security concerns about Suez oil exports - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -79824,7 +79819,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 31,
+              "freshness_score": 28,
               "headline": "Bank of England keeps rates on hold, awaits clearer sign of Iran war inflation hit - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -79851,7 +79846,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 26,
+              "freshness_score": 24,
               "headline": "EXCLUSIVE: Yemen's Houthis are attacking Saudi Arabia from Iraq, sources say - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -79879,7 +79874,7 @@
                 "event_type": "geopolitical_risk_easing",
                 "expected_market_direction": "risk_on",
                 "headline": "Gaza ceasefire talks see rare progress, sources say - Reuters",
-                "importance_score": 93,
+                "importance_score": 92,
                 "published_at": "2026-07-30T14:42:14+00:00",
                 "source": "Reuters"
               }
@@ -79905,7 +79900,7 @@
                 "source": "CNBC"
               },
               {
-                "confidence": "high",
+                "confidence": "medium",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
@@ -83888,7 +83883,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 72,
               "headline": "The Tech Download: Anduril CEO Brian Schimpf talks AI in warfare and manufacturing push",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -83907,15 +83902,15 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "high",
-              "confidence_score": 75,
+              "confidence": "medium",
+              "confidence_score": 74,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 73,
+              "freshness_score": 71,
               "headline": "Trump convenes Cabinet at Camp David amid simmering Iran war - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -83942,7 +83937,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 43,
+              "freshness_score": 40,
               "headline": "US cyber defense agency warns hackers are increasingly targeting water systems - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -83969,7 +83964,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 39,
+              "freshness_score": 36,
               "headline": "Drone strike in Egypt sparks security concerns about Suez oil exports - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -83996,7 +83991,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 31,
+              "freshness_score": 28,
               "headline": "Bank of England keeps rates on hold, awaits clearer sign of Iran war inflation hit - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -84023,7 +84018,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 26,
+              "freshness_score": 24,
               "headline": "EXCLUSIVE: Yemen's Houthis are attacking Saudi Arabia from Iraq, sources say - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -84051,7 +84046,7 @@
                 "event_type": "geopolitical_risk_easing",
                 "expected_market_direction": "risk_on",
                 "headline": "Gaza ceasefire talks see rare progress, sources say - Reuters",
-                "importance_score": 93,
+                "importance_score": 92,
                 "published_at": "2026-07-30T14:42:14+00:00",
                 "source": "Reuters"
               }
@@ -84077,7 +84072,7 @@
                 "source": "CNBC"
               },
               {
-                "confidence": "high",
+                "confidence": "medium",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
@@ -88124,7 +88119,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 72,
               "headline": "The Tech Download: Anduril CEO Brian Schimpf talks AI in warfare and manufacturing push",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -88143,15 +88138,15 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "high",
-              "confidence_score": 75,
+              "confidence": "medium",
+              "confidence_score": 74,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 73,
+              "freshness_score": 71,
               "headline": "Trump convenes Cabinet at Camp David amid simmering Iran war - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -88178,7 +88173,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 43,
+              "freshness_score": 40,
               "headline": "US cyber defense agency warns hackers are increasingly targeting water systems - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -88205,7 +88200,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 39,
+              "freshness_score": 36,
               "headline": "Drone strike in Egypt sparks security concerns about Suez oil exports - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -88232,7 +88227,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 31,
+              "freshness_score": 28,
               "headline": "Bank of England keeps rates on hold, awaits clearer sign of Iran war inflation hit - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -88259,7 +88254,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 26,
+              "freshness_score": 24,
               "headline": "EXCLUSIVE: Yemen's Houthis are attacking Saudi Arabia from Iraq, sources say - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -88287,7 +88282,7 @@
                 "event_type": "geopolitical_risk_easing",
                 "expected_market_direction": "risk_on",
                 "headline": "Gaza ceasefire talks see rare progress, sources say - Reuters",
-                "importance_score": 93,
+                "importance_score": 92,
                 "published_at": "2026-07-30T14:42:14+00:00",
                 "source": "Reuters"
               }
@@ -88313,7 +88308,7 @@
                 "source": "CNBC"
               },
               {
-                "confidence": "high",
+                "confidence": "medium",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
@@ -90863,8 +90858,8 @@
             "ig_oas_20d_change": 0.050000000000000044
           },
           "daily_market_brief": {
-            "brief": "Finnhub quote unavailable; news risk 35%; no major macro event flag; rates pressure 11%.",
-            "finnhub_quote_available": false,
+            "brief": "Finnhub quote 747.03; news risk 35%; no major macro event flag; rates pressure 11%.",
+            "finnhub_quote_available": true,
             "macro_event_risk_flag": false,
             "news_risk_score": 0.35,
             "rates_pressure_score": 0.11456148603935026,
@@ -90873,11 +90868,11 @@
           "finnhub": {
             "candle_status": "failed",
             "news_sentiment_status": "failed",
-            "quote_change_percent": null,
-            "quote_previous_close": null,
-            "quote_price": null,
+            "quote_change_percent": 0.72,
+            "quote_previous_close": 741.69,
+            "quote_price": 747.03,
             "quote_source": "finnhub",
-            "quote_status": "rate_limited",
+            "quote_status": "available",
             "sentiment_score": null
           },
           "flow_positioning_proxy": {
@@ -92377,7 +92372,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 72,
               "headline": "The Tech Download: Anduril CEO Brian Schimpf talks AI in warfare and manufacturing push",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -92396,15 +92391,15 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "high",
-              "confidence_score": 75,
+              "confidence": "medium",
+              "confidence_score": 74,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 73,
+              "freshness_score": 71,
               "headline": "Trump convenes Cabinet at Camp David amid simmering Iran war - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -92431,7 +92426,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 43,
+              "freshness_score": 40,
               "headline": "US cyber defense agency warns hackers are increasingly targeting water systems - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -92458,7 +92453,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 39,
+              "freshness_score": 36,
               "headline": "Drone strike in Egypt sparks security concerns about Suez oil exports - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -92485,7 +92480,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 31,
+              "freshness_score": 28,
               "headline": "Bank of England keeps rates on hold, awaits clearer sign of Iran war inflation hit - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -92512,7 +92507,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 26,
+              "freshness_score": 24,
               "headline": "EXCLUSIVE: Yemen's Houthis are attacking Saudi Arabia from Iraq, sources say - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -92540,7 +92535,7 @@
                 "event_type": "geopolitical_risk_easing",
                 "expected_market_direction": "risk_on",
                 "headline": "Gaza ceasefire talks see rare progress, sources say - Reuters",
-                "importance_score": 93,
+                "importance_score": 92,
                 "published_at": "2026-07-30T14:42:14+00:00",
                 "source": "Reuters"
               }
@@ -92566,7 +92561,7 @@
                 "source": "CNBC"
               },
               {
-                "confidence": "high",
+                "confidence": "medium",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
@@ -94831,7 +94826,7 @@
       },
       "version": "stock_data_provider_v1"
     },
-    "generated_at": "2026-07-31T21:35:59.584979+00:00",
+    "generated_at": "2026-07-31T22:39:25.289231+00:00",
     "guardrails": [
       "This is a probabilistic stock forecast module, not a trading system.",
       "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -94920,7 +94915,7 @@
         },
         "question": "high final_radar_score 是否真的对应更大次日 range？"
       },
-      "generated_at": "2026-07-31T21:35:59.606024+00:00",
+      "generated_at": "2026-07-31T22:39:25.301030+00:00",
       "not_validated_warning": "not_enough_forward_samples",
       "pending_records": 141,
       "risk_score_effectiveness": {
@@ -97245,59 +97240,59 @@
             "event_risk_flag": "high",
             "headlines": [
               {
-                "datetime": 1785527802,
-                "headline": "Alibaba's AI Bet Is Powering a Rival",
+                "datetime": 1785534263,
+                "headline": "Why CareDx Stock Jumped Today",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=cce9f6cd643aa56bf10db050187ff290946e0b08a5468457a30c08e752061a0f"
+                "url": "https://finnhub.io/api/news?id=c36158965215c0887cfc3e3c07e23830886d2225bc7412f8534889889290e104"
               },
               {
-                "datetime": 1785527400,
-                "headline": "Why Wall Street Keeps Underestimating Micron",
+                "datetime": 1785534060,
+                "headline": "Fed Chair Kevin Warsh Plays the Hawk But May Have a Dove Up His Sleeve",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=c170f20159985827c6caf472ca2672eee9b059eaeb4609e9b00fefaf7ddd2a60"
+                "url": "https://finnhub.io/api/news?id=f0290f9877eda30e842cdf85f35b089a1898a8f866b7cc4e6c9e3025bd5a73b1"
               },
               {
-                "datetime": 1785526837,
-                "headline": "Samsung Stock Soars 27% as Korea's AI-Chip Rally Breaks Records",
+                "datetime": 1785532896,
+                "headline": "AI trade is a combination of 'perception and reality': Bradley Tusk",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=8a182e4a0bb942b0448d96aaa02445ccd8ca2c15e679c7ddf08d697f9a463698"
+                "url": "https://finnhub.io/api/news?id=09e3189c56b73156f3de9367010e2ff997c7c28bc8513b44413117469505f22b"
               },
               {
-                "datetime": 1785526773,
-                "headline": "Forget SpaceX's Upcoming Q2 Results. History Says You Should Wait at Least This Long Before Buying SpaceX Stock.",
+                "datetime": 1785532501,
+                "headline": "Novo Nordisk Shares Plunge After a Key Trial Fails. Should Investors Buy the Dip?",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=0be1d1219145baf1faf13d75ecf0d723467930b4a2279ae0e31fbb7b6d48d84d"
+                "url": "https://finnhub.io/api/news?id=c53c9a315e7e91efc64054f7d6933231ea7c275384820cddc7972a046ecf7309"
               },
               {
-                "datetime": 1785526233,
-                "headline": "Why Micron Stock Was Up and Down Today",
+                "datetime": 1785532380,
+                "headline": "Coinbase Just Took a Record 10.3% of Global Crypto Trading. It Still Posted Its Third Straight Quarterly Loss.",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=288340d72ce559a83c424e66ba2075fc9eb9ac82f341742c03585ce7c4239da2"
+                "url": "https://finnhub.io/api/news?id=45fd172bcfeffa3ef70a107880f8deb1d925e31b54604f9bb1bd91af5a48e81d"
               },
               {
-                "datetime": 1785526140,
-                "headline": "Pfizer Yields 6.8%, Trades at 8.5X Earnings, and Has a Promising Late-Stage Weight Loss Drug. Why Are So Many Investors Still Ignoring the Stock?",
+                "datetime": 1785532122,
+                "headline": "Why Perimeter Solutions Stock Is Crashing Today",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=34bbc6f31196d333d7ef3c77e68b641ea5fbd45e6f4df7a3d894a3f27587888a"
+                "url": "https://finnhub.io/api/news?id=fb9249cb84fda29fd12d4ebb41128379fa6aab0269654e8ef26eb6da11d60288"
               },
               {
-                "datetime": 1785525900,
-                "headline": "Nano Nuclear Energy Surges: What's Driving the Rally Today?",
+                "datetime": 1785532027,
+                "headline": "WisdomTree, Inc. Q2 2026 Earnings Call Summary",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=9848193131587a15ce8cbef82194581521bb93346abce9f9f9c77a2e11e4ab1f"
+                "url": "https://finnhub.io/api/news?id=fb9ae706cefd37f297c453f6fc27bb31145bc8fbb19692e251c18d7c505da058"
               },
               {
-                "datetime": 1785525532,
-                "headline": "NVIDIA Stock Rises 1.8% as Morningstar Sees $280 Value",
+                "datetime": 1785531993,
+                "headline": "Oxford Square Capital Corp. Q2 2026 Earnings Call Summary",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=f6fef22dbf59b8cf97a8eddaca61d3ebfda42f18aeafeff1bdbd8d2127358ad7"
+                "url": "https://finnhub.io/api/news?id=bb91087c7cf88a3259bcaa3e7e666a9aaba82cd7ffe1492a75c917a89b8dbf1c"
               }
             ],
-            "major_company_headline": "Alibaba's AI Bet Is Powering a Rival",
+            "major_company_headline": "Why CareDx Stock Jumped Today",
             "news_count_24h": 20,
             "news_count_72h": 20,
             "news_risk_score": 100.0,
-            "news_sentiment": "positive"
+            "news_sentiment": "negative"
           },
           "price_trend": {
             "close": 200.75,
@@ -97822,7 +97817,6 @@
           "supporting_signals": [
             "个股相对强弱优于基准。",
             "成交量结构支持当前路径。",
-            "近期公司新闻偏正面。",
             "基础财务指标已接入且收入增长为正。"
           ]
         },
@@ -98856,7 +98850,7 @@
             {
               "affected_ticker": "NVDA",
               "alert_level": "NO_ALERT",
-              "alert_score": 9.82,
+              "alert_score": 9.74,
               "alert_type": "Stock Bounce Setup",
               "confirmation_needed": [
                 "价格站上主路径确认价",
@@ -99151,16 +99145,15 @@
           "components": {
             "catalyst": {
               "evidence": [
-                "公司新闻已接入: Alibaba's AI Bet Is Powering a Rival",
-                "新闻情绪偏正",
+                "公司新闻已接入: Why CareDx Stock Jumped Today",
                 "未来 30 天存在财报催化：2026-08-26",
                 "增长数据具备 EPS 上修叙事基础"
               ],
               "max_points": 10,
               "missing_fields": [],
               "name": "catalyst",
-              "points": 10.0,
-              "score_pct": 100.0,
+              "points": 8.0,
+              "score_pct": 80.0,
               "status": "supportive"
             },
             "flow": {
@@ -99249,7 +99242,7 @@
             "expected_return_60d": -0.0091,
             "max_drawdown_risk_20d": 0.0836,
             "max_drawdown_risk_60d": 0.1484,
-            "outperformance_probability_20d": 0.6759,
+            "outperformance_probability_20d": 0.6679,
             "risk_reward_ratio": 0.52,
             "upside_potential_60d": 0.0779
           },
@@ -99271,7 +99264,7 @@
           },
           "thesis": {
             "capital_confirmation": "资金确认不足或仍需观察",
-            "catalyst": "Alibaba's AI Bet Is Powering a Rival",
+            "catalyst": "Why CareDx Stock Jumped Today",
             "expectation_gap": [
               "收入增长较强，具备正向预期差基础",
               "EPS 增长较强，可能支持盈利上修叙事",
@@ -99290,7 +99283,7 @@
             "primary_path": "stock_failed_bounce",
             "valuation_repricing": "估值有扩张条件"
           },
-          "total_score": 61.0,
+          "total_score": 59.0,
           "validation_status": "not_yet_validated",
           "version": "stock_alpha_score_v1"
         },
@@ -99315,8 +99308,8 @@
           "module_scores": {
             "alpha_quality": {
               "evidence": "个股 Alpha 评分已接入",
-              "reason": "score=61.0; grade=wait_for_confirmation; benchmark=QQQ",
-              "score": 61.0,
+              "reason": "score=59.0; grade=wait_for_confirmation; benchmark=QQQ",
+              "score": 59.0,
               "status": "neutral"
             },
             "fundamentals_earnings": {
@@ -99375,7 +99368,7 @@
             }
           },
           "requires_multi_source_confirmation": true,
-          "stock_confluence_score": 51.53,
+          "stock_confluence_score": 51.35,
           "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
           "supporting_evidence": [
             "个股跑赢所属板块",
@@ -99389,7 +99382,6 @@
         "supporting_signals": [
           "个股相对强弱优于基准。",
           "成交量结构支持当前路径。",
-          "近期公司新闻偏正面。",
           "基础财务指标已接入且收入增长为正。"
         ],
         "symbol": "NVDA",
@@ -101620,55 +101612,55 @@
             "event_risk_flag": "high",
             "headlines": [
               {
+                "datetime": 1785533697,
+                "headline": "Stock Market Today, July 31: Rivian Beats Q2 Revenue Estimate as Concerns of Rising Costs Weigh on Stock",
+                "source": "Yahoo",
+                "url": "https://finnhub.io/api/news?id=788d1070d04dbf7c78c9f511bf9314021e8eb617a22625c7aa43d538d5e3fc28"
+              },
+              {
+                "datetime": 1785533122,
+                "headline": "TSLL: How Tesla Investors Lose Money Even When the Stock Goes Up",
+                "source": "Yahoo",
+                "url": "https://finnhub.io/api/news?id=47d26d7fa83e613435aa984481996a0cc252fe7992133a1eeee1d188455a05f3"
+              },
+              {
+                "datetime": 1785529740,
+                "headline": "Elon Musk Cools Off Tesla-SpaceX Merger Speculation as SpaceX Stock Hits Record Low",
+                "source": "Yahoo",
+                "url": "https://finnhub.io/api/news?id=7f7c063e55604f3f4b815d3984d2a154248ef53643745f7719d22db080eb8846"
+              },
+              {
+                "datetime": 1785528875,
+                "headline": "Tesla Stock Falls 1.8% as Musk Denies China Separation Report",
+                "source": "Yahoo",
+                "url": "https://finnhub.io/api/news?id=9f84308897a7b2ffbf98529eabf1d48a7651357b738cad973cee5aca4fd29448"
+              },
+              {
+                "datetime": 1785528300,
+                "headline": "SpaceX to release first earnings report: What investors are looking for",
+                "source": "Yahoo",
+                "url": "https://finnhub.io/api/news?id=d8f6cab6785966b541ad94c327c1039ee54e9a060f917eea965b2c0ef7ff36bf"
+              },
+              {
                 "datetime": 1785526423,
                 "headline": "Elon Musk denies claims that Tesla could sell off its China business",
                 "source": "Yahoo",
                 "url": "https://finnhub.io/api/news?id=ad3a24e1677e5691f6e441bf2a74a57c79be0db8940a6d670f995aa9c8cbf03b"
               },
               {
+                "datetime": 1785526260,
+                "headline": "SpaceX Stock Has Plunged: Buy it Now?",
+                "source": "Yahoo",
+                "url": "https://finnhub.io/api/news?id=5f1066ca2a9a0c08f5f1415c77863939a53d82c12bbfbd98af66175846e148a6"
+              },
+              {
                 "datetime": 1785521100,
                 "headline": "Curious about the most active S&P500 stocks in today's session?",
                 "source": "ChartMill",
                 "url": "https://finnhub.io/api/news?id=088075512575cbe9e0abbb1f6b911924f01ee3e8038560995c4fdd2a8d2bf7d0"
-              },
-              {
-                "datetime": 1785520938,
-                "headline": "Short sellers pile into SpaceX ahead of earnings, lockup expiration",
-                "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=9a3af99bc841828e612a099cb803e5539a396c30ca93bcc732275c3ada2e0641"
-              },
-              {
-                "datetime": 1785520834,
-                "headline": "SpaceX Is Now Down 36% in a Month. Would You Be Better Off With Rocket Lab or ASTS SpaceMobile?",
-                "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=1363f1e4f5628fe053282ce47a2c1db24d6869d23f480a210485108b5de879b6"
-              },
-              {
-                "datetime": 1785518400,
-                "headline": "Top Stocks Set to Benefit From Rising EV and AV Adoption",
-                "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=2ad8b772778cd172d63387b7abcd84af5390b7b9ff8a0278322445098ba3b364"
-              },
-              {
-                "datetime": 1785517692,
-                "headline": "SpaceX Short Interest Soars Ahead of Big Share Unlock, Earnings",
-                "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=733f11d952b24f84056ec3ef650b36f74a6893da1e7e0285ca670f3ac33769c1"
-              },
-              {
-                "datetime": 1785516567,
-                "headline": "Elon Musk Responds to Major Tesla Report",
-                "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=f1338e32e6ca68dca9ea6c7553e224b2a0132efed8e4431034bfbf55f0d395d8"
-              },
-              {
-                "datetime": 1785516073,
-                "headline": "Is This EV Stock The Next Tesla?",
-                "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=a0c265863a8b54c39b0247fc66735f3f69eab8913acbe85b4b670671c044f4da"
               }
             ],
-            "major_company_headline": "Elon Musk denies claims that Tesla could sell off its China business",
+            "major_company_headline": "Stock Market Today, July 31: Rivian Beats Q2 Revenue Estimate as Concerns of Rising Costs Weigh on Stock",
             "news_count_24h": 20,
             "news_count_72h": 20,
             "news_risk_score": 100.0,
@@ -103531,7 +103523,7 @@
           "components": {
             "catalyst": {
               "evidence": [
-                "公司新闻已接入: Elon Musk denies claims that Tesla could sell off its China business"
+                "公司新闻已接入: Stock Market Today, July 31: Rivian Beats Q2 Revenue Estimate as Concerns of Rising Costs Weigh on Stock"
               ],
               "max_points": 10,
               "missing_fields": [],
@@ -103644,7 +103636,7 @@
           },
           "thesis": {
             "capital_confirmation": "资金确认不足或仍需观察",
-            "catalyst": "Elon Musk denies claims that Tesla could sell off its China business",
+            "catalyst": "Stock Market Today, July 31: Rivian Beats Q2 Revenue Estimate as Concerns of Rising Costs Weigh on Stock",
             "expectation_gap": [
               "暂未看到明确正向预期差证据"
             ],
@@ -103777,7 +103769,7 @@
         "top_candidate": "NVDA",
         "validation_status": "not_yet_validated"
       },
-      "generated_at": "2026-07-31T21:35:59.600122+00:00",
+      "generated_at": "2026-07-31T22:39:25.297816+00:00",
       "model_version": "stock_baseline_v1",
       "notes": [
         "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -103787,19 +103779,19 @@
       "top_candidates": [
         {
           "alpha_fields": {
-            "alpha_score": 61.0,
+            "alpha_score": 59.0,
             "expected_return_60d": -0.0091,
             "forecast_grade": "wait_for_confirmation",
             "main_logic": "半导体/AI 逻辑：订单、毛利率、资本开支周期、估值重估和资金确认。",
-            "outperformance_probability_20d": 0.6759,
+            "outperformance_probability_20d": 0.6679,
             "risk_reward_ratio": 0.52
           },
-          "alpha_quality_score": 61.0,
+          "alpha_quality_score": 59.0,
           "as_of": "2026-07-31",
           "candidate_type": "failed_bounce_risk",
           "catalyst_score": 63.81,
           "company_name": "NVIDIA Corp",
-          "confluence_score": 51.53,
+          "confluence_score": 51.35,
           "data_missing": [
             "single_stock_options"
           ],
@@ -103816,7 +103808,7 @@
             "mid": 200.46,
             "range_pct": 0.0374
           },
-          "final_radar_score": 64.62,
+          "final_radar_score": 64.24,
           "forecast_date": "2026-07-31",
           "invalidation_level": 190.01,
           "last_close": 200.75,
@@ -103841,8 +103833,8 @@
             "earnings": "available"
           },
           "next_day_move_probability": 0.7223,
-          "one_line_reason": "failed_bounce_risk: Alpha 61 / 弹性 73 / 成交量 78 / 相对强弱 74 / 催化 64 / 大盘 market_headwind / 板块 supportive",
-          "outperformance_probability_20d": 0.6759,
+          "one_line_reason": "failed_bounce_risk: Alpha 59 / 弹性 73 / 成交量 78 / 相对强弱 74 / 催化 64 / 大盘 market_headwind / 板块 supportive",
+          "outperformance_probability_20d": 0.6679,
           "primary_probability": 0.2631,
           "primary_scenario": "stock_failed_bounce",
           "radar_level": "MODERATE_OPPORTUNITY",
@@ -104212,7 +104204,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-07-31T21:35:59.606024+00:00",
+    "generated_at": "2026-07-31T22:39:25.301030+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 141,
     "risk_score_effectiveness": {
@@ -104284,7 +104276,7 @@
       "top_candidate": "NVDA",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-07-31T21:35:59.600122+00:00",
+    "generated_at": "2026-07-31T22:39:25.297816+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -104294,19 +104286,19 @@
     "top_candidates": [
       {
         "alpha_fields": {
-          "alpha_score": 61.0,
+          "alpha_score": 59.0,
           "expected_return_60d": -0.0091,
           "forecast_grade": "wait_for_confirmation",
           "main_logic": "半导体/AI 逻辑：订单、毛利率、资本开支周期、估值重估和资金确认。",
-          "outperformance_probability_20d": 0.6759,
+          "outperformance_probability_20d": 0.6679,
           "risk_reward_ratio": 0.52
         },
-        "alpha_quality_score": 61.0,
+        "alpha_quality_score": 59.0,
         "as_of": "2026-07-31",
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 63.81,
         "company_name": "NVIDIA Corp",
-        "confluence_score": 51.53,
+        "confluence_score": 51.35,
         "data_missing": [
           "single_stock_options"
         ],
@@ -104323,7 +104315,7 @@
           "mid": 200.46,
           "range_pct": 0.0374
         },
-        "final_radar_score": 64.62,
+        "final_radar_score": 64.24,
         "forecast_date": "2026-07-31",
         "invalidation_level": 190.01,
         "last_close": 200.75,
@@ -104348,8 +104340,8 @@
           "earnings": "available"
         },
         "next_day_move_probability": 0.7223,
-        "one_line_reason": "failed_bounce_risk: Alpha 61 / 弹性 73 / 成交量 78 / 相对强弱 74 / 催化 64 / 大盘 market_headwind / 板块 supportive",
-        "outperformance_probability_20d": 0.6759,
+        "one_line_reason": "failed_bounce_risk: Alpha 59 / 弹性 73 / 成交量 78 / 相对强弱 74 / 催化 64 / 大盘 market_headwind / 板块 supportive",
+        "outperformance_probability_20d": 0.6679,
         "primary_probability": 0.2631,
         "primary_scenario": "stock_failed_bounce",
         "radar_level": "MODERATE_OPPORTUNITY",
