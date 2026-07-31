@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-07-31T04:46:19.372905+00:00`
+- generated_at: `2026-07-31T06:34:33.891663+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `13`
-- event_detection_confidence: `75`
+- major_event_count: `14`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,7 +27,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil falls more than $1 on greater flows despite US-Iran war - Reuters
+- headline: Oil falls more than $1 on greater flows despite US-Iran war - reuters.com
 - source: Reuters
 - published_at: `2026-07-31T03:00:00+00:00`
 - importance_score: `100`
@@ -35,7 +35,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US cyber defense agency warns hackers are increasingly targeting water systems - Reuters
+- headline: US cyber defense agency warns hackers are increasingly targeting water systems - reuters.com
 - source: Reuters
 - published_at: `2026-07-30T21:43:00+00:00`
 - importance_score: `100`
@@ -43,7 +43,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Drone strike in Egypt sparks security concerns about Suez oil exports - Reuters
+- headline: Drone strike in Egypt sparks security concerns about Suez oil exports - reuters.com
 - source: Reuters
 - published_at: `2026-07-30T20:08:12+00:00`
 - importance_score: `100`
@@ -51,7 +51,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Bank of England keeps rates on hold, awaits clearer sign of Iran war inflation hit - Reuters
+- headline: Bank of England keeps rates on hold, awaits clearer sign of Iran war inflation hit - reuters.com
 - source: Reuters
 - published_at: `2026-07-30T16:46:45+00:00`
 - importance_score: `100`
@@ -59,7 +59,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: EXCLUSIVE: Yemen's Houthis are attacking Saudi Arabia from Iraq, sources say - Reuters
+- headline: EXCLUSIVE: Yemen's Houthis are attacking Saudi Arabia from Iraq, sources say - reuters.com
 - source: Reuters
 - published_at: `2026-07-30T14:58:16+00:00`
 - importance_score: `100`
@@ -86,7 +86,7 @@
 - headline: Gaza ceasefire talks see rare progress, sources say - Reuters
 - source: Reuters
 - published_at: `2026-07-30T14:42:14+00:00`
-- importance_score: `97`
+- importance_score: `96`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
@@ -99,7 +99,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Drone strike at Egypt port near Suez Canal ignites new shipping risks - Reuters
+- headline: Drone strike at Egypt port near Suez Canal ignites new shipping risks - reuters.com
 - source: Reuters
 - published_at: `2026-07-30T06:30:00+00:00`
 - importance_score: `100`
