@@ -1,18 +1,18 @@
 # Forecast Accuracy Scorecard
 
-Generated at: `2026-07-31T14:38:38.214005+00:00`
+Generated at: `2026-07-31T21:35:59.197806+00:00`
 
 ## Sample Counts
 
-- total_forecasts: `136`
-- raw_forecast_rows: `136`
+- total_forecasts: `140`
+- raw_forecast_rows: `140`
 - deduped_legacy_rows: `0`
-- pending_forecasts: `136`
-- completed_1d: `132`
-- completed_3d: `124`
-- completed_5d: `116`
-- completed_10d: `96`
-- completed_20d: `56`
+- pending_forecasts: `140`
+- completed_1d: `136`
+- completed_3d: `128`
+- completed_5d: `120`
+- completed_10d: `100`
+- completed_20d: `60`
 - completed_60d: `0`
 - current_evidence_level: `stronger_evidence`
 - validation_warning: Forward validation evidence is accumulating; do not promote models without horizon-specific proof.
@@ -20,59 +20,59 @@ Generated at: `2026-07-31T14:38:38.214005+00:00`
 ## Primary Scenario Accuracy
 
 ### 1d
-- completed_count: `132`
+- completed_count: `136`
 - sample_gate: `stronger_evidence`
-- primary_scenario_hit_rate: `0.3561`
-- primary_path_mean_absolute_error: `0.010261`
-- primary_path_median_absolute_error: `0.007877`
-- secondary_scenario_hit_rate: `0.2803`
-- primary_vs_secondary_accuracy_spread: `0.0758`
-- primary_closer_than_secondary_rate: `0.5076`
-- close_call_primary_closer_rate: `0.4545`
+- primary_scenario_hit_rate: `0.3603`
+- primary_path_mean_absolute_error: `0.010128`
+- primary_path_median_absolute_error: `0.007799`
+- secondary_scenario_hit_rate: `0.2721`
+- primary_vs_secondary_accuracy_spread: `0.0882`
+- primary_closer_than_secondary_rate: `0.5147`
+- close_call_primary_closer_rate: `0.4714`
 
 ### 3d
-- completed_count: `124`
+- completed_count: `128`
 - sample_gate: `stronger_evidence`
-- primary_scenario_hit_rate: `0.2903`
-- primary_path_mean_absolute_error: `0.013794`
-- primary_path_median_absolute_error: `0.012088`
-- secondary_scenario_hit_rate: `0.3306`
-- primary_vs_secondary_accuracy_spread: `-0.0403`
-- primary_closer_than_secondary_rate: `0.4113`
-- close_call_primary_closer_rate: `0.4603`
+- primary_scenario_hit_rate: `0.2812`
+- primary_path_mean_absolute_error: `0.014032`
+- primary_path_median_absolute_error: `0.012132`
+- secondary_scenario_hit_rate: `0.3359`
+- primary_vs_secondary_accuracy_spread: `-0.0547`
+- primary_closer_than_secondary_rate: `0.4062`
+- close_call_primary_closer_rate: `0.4615`
 
 ### 5d
-- completed_count: `116`
+- completed_count: `120`
 - sample_gate: `stronger_evidence`
-- primary_scenario_hit_rate: `0.3017`
-- primary_path_mean_absolute_error: `0.017215`
-- primary_path_median_absolute_error: `0.011526`
-- secondary_scenario_hit_rate: `0.2586`
-- primary_vs_secondary_accuracy_spread: `0.0431`
-- primary_closer_than_secondary_rate: `0.4828`
-- close_call_primary_closer_rate: `0.431`
+- primary_scenario_hit_rate: `0.2917`
+- primary_path_mean_absolute_error: `0.017924`
+- primary_path_median_absolute_error: `0.011887`
+- secondary_scenario_hit_rate: `0.2833`
+- primary_vs_secondary_accuracy_spread: `0.0083`
+- primary_closer_than_secondary_rate: `0.4667`
+- close_call_primary_closer_rate: `0.4098`
 
 ### 10d
-- completed_count: `96`
+- completed_count: `100`
 - sample_gate: `moderate_evidence`
 - primary_scenario_hit_rate: `0.25`
-- primary_path_mean_absolute_error: `0.026067`
+- primary_path_mean_absolute_error: `0.025831`
 - primary_path_median_absolute_error: `0.021591`
-- secondary_scenario_hit_rate: `0.2812`
-- primary_vs_secondary_accuracy_spread: `-0.0312`
-- primary_closer_than_secondary_rate: `0.375`
-- close_call_primary_closer_rate: `0.2292`
+- secondary_scenario_hit_rate: `0.28`
+- primary_vs_secondary_accuracy_spread: `-0.03`
+- primary_closer_than_secondary_rate: `0.38`
+- close_call_primary_closer_rate: `0.24`
 
 ### 20d
-- completed_count: `56`
+- completed_count: `60`
 - sample_gate: `moderate_evidence`
-- primary_scenario_hit_rate: `0.125`
-- primary_path_mean_absolute_error: `0.054749`
-- primary_path_median_absolute_error: `0.048519`
-- secondary_scenario_hit_rate: `0.2857`
-- primary_vs_secondary_accuracy_spread: `-0.1607`
-- primary_closer_than_secondary_rate: `0.3214`
-- close_call_primary_closer_rate: `0.3103`
+- primary_scenario_hit_rate: `0.1333`
+- primary_path_mean_absolute_error: `0.054949`
+- primary_path_median_absolute_error: `0.052941`
+- secondary_scenario_hit_rate: `0.3`
+- primary_vs_secondary_accuracy_spread: `-0.1667`
+- primary_closer_than_secondary_rate: `0.3167`
+- close_call_primary_closer_rate: `0.2903`
 
 ### 60d
 - completed_count: `0`
