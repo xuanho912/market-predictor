@@ -1,6 +1,6 @@
 # Next-Day Stock Radar v1
 
-Generated at: `2026-08-01T06:18:53.440399+00:00`
+Generated at: `2026-08-01T13:58:07.392991+00:00`
 As of: `None`
 
 This report ranks next-day high-elasticity stock forecast candidates. It is not a trading report and does not contain buy/sell instructions.
@@ -19,9 +19,9 @@ This report ranks next-day high-elasticity stock forecast candidates. It is not 
 
 | Rank | Ticker | Type | Radar | Alpha | Elasticity | Confluence | Catalyst | Risk | Range | Trigger | Invalidation | Reason |
 | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- | ---: | ---: | --- |
-| 1 | NVDA | failed_bounce_risk | 64.75 | 61.0 | 72.83 | 51.55 | 63.82 | 52.24 | 196.7-204.23 | 214.39 | 190.01 | failed_bounce_risk: Alpha 61 / 弹性 73 / 成交量 79 / 相对强弱 74 / 催化 64 / 大盘 market_headwind / 板块 supportive |
+| 1 | NVDA | failed_bounce_risk | 64.37 | 59.0 | 72.83 | 51.37 | 63.82 | 52.24 | 196.7-204.23 | 214.39 | 190.01 | failed_bounce_risk: Alpha 59 / 弹性 73 / 成交量 79 / 相对强弱 74 / 催化 64 / 大盘 market_headwind / 板块 supportive |
 | 2 | SMR | downside_continuation | 55.78 | 35.0 | 100 | 29.79 | 64.19 | 60.98 | 8.04-8.71 | 10.12 | 7.21 | downside_continuation: Alpha 35 / 弹性 100 / 成交量 95 / 相对强弱 0 / 催化 64 / 大盘 risk_off_pressure / 板块 conflicting |
 | 3 | TSLA | downside_continuation | 53.06 | 35.0 | 100 | 35.13 | 62.67 | 60.26 | 302.59-318.18 | 420.0 | 297.38 | downside_continuation: Alpha 35 / 弹性 100 / 成交量 60 / 相对强弱 19 / 催化 63 / 大盘 market_headwind / 板块 conflicting |
-| 4 | CEG | failed_bounce_risk | 51.56 | 30.5 | 81.15 | 43.25 | 64.0 | 54.35 | 257.75-267.03 | 279.6 | 236.56 | failed_bounce_risk: Alpha 30 / 弹性 81 / 成交量 32 / 相对强弱 65 / 催化 64 / 大盘 risk_off_pressure / 板块 supportive |
+| 4 | CEG | failed_bounce_risk | 51.54 | 30.5 | 81.15 | 43.07 | 64.0 | 54.35 | 257.75-267.03 | 279.6 | 236.56 | failed_bounce_risk: Alpha 30 / 弹性 81 / 成交量 32 / 相对强弱 65 / 催化 64 / 大盘 risk_off_pressure / 板块 supportive |
 
 Validation status: `not_yet_validated` until enough forward samples complete.

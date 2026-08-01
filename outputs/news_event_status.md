@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-01T06:18:41.155013+00:00`
+- generated_at: `2026-08-01T13:57:57.448703+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `5`
-- event_detection_confidence: `64`
+- major_event_count: `3`
+- event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,6 +27,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: OpenAI's Hugging Face hack confirmed months of AI cyber warnings: 'Pandora's box is open'
+- source: CNBC
+- published_at: `2026-08-01T12:00:01+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: The Tech Download: Anduril CEO Brian Schimpf talks AI in warfare and manufacturing push
 - source: CNBC
 - published_at: `2026-07-31T11:11:29+00:00`
@@ -39,28 +47,4 @@
 - source: Reuters
 - published_at: `2026-07-31T10:24:23+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US cyber defense agency warns hackers are increasingly targeting water systems - Reuters
-- source: Reuters
-- published_at: `2026-07-30T21:43:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Drone strike in Egypt sparks security concerns about Suez oil exports - Reuters
-- source: Reuters
-- published_at: `2026-07-30T20:08:12+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Bank of England keeps rates on hold, awaits clearer sign of Iran war inflation hit - Reuters
-- source: Reuters
-- published_at: `2026-07-30T16:46:45+00:00`
-- importance_score: `99`
 - confidence: `medium`

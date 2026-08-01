@@ -5,10 +5,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-08-01",
-    "current_time_us_eastern": "2026-08-01T02:18:52.728690-04:00",
+    "current_time_us_eastern": "2026-08-01T09:58:06.672199-04:00",
     "data_freshness_status": "market_closed",
     "expected_latest_trading_date": "2026-07-31",
-    "generated_at": "2026-08-01T06:18:52.728690+00:00",
+    "generated_at": "2026-08-01T13:58:06.672199+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -939,7 +939,7 @@
     },
     "stale_days": 0,
     "version": "data_freshness_gate_v3",
-    "warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-07-31 的数据。 当前美东时间 2026-08-01 02:18。"
+    "warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-07-31 的数据。 当前美东时间 2026-08-01 09:58。"
   },
   "data_quality_summary": {
     "average_breadth_quality_score": 67.0,
@@ -1047,17 +1047,17 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "HY_OAS",
       "DGS10",
-      "DGS3MO",
       "DGS2",
-      "BAA_SPREAD",
+      "DGS3MO",
       "IG_OAS",
+      "HY_OAS",
+      "BAA_SPREAD",
       "DFII10",
-      "RECESSION",
-      "FINANCIAL_STRESS"
+      "FINANCIAL_STRESS",
+      "RECESSION"
     ],
-    "freshness_warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-07-31 的数据。 当前美东时间 2026-08-01 02:18。",
+    "freshness_warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-07-31 的数据。 当前美东时间 2026-08-01 09:58。",
     "gamma_available": false,
     "gamma_exposure_available": false,
     "latest_confirmed_market_date": "2026-07-31",
@@ -1086,11 +1086,11 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 64,
+      "event_detection_confidence": 70,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-08-01T06:18:41.155013+00:00",
-      "major_event_count": 5,
+      "last_update": "2026-08-01T13:57:57.448703+00:00",
+      "major_event_count": 3,
       "missing_reason": null,
       "news_direction": "risk_off",
       "news_event_partial": false,
@@ -1101,7 +1101,7 @@
     },
     "news_event_available": true,
     "news_event_event_risk_level": "high",
-    "news_event_major_count": 5,
+    "news_event_major_count": 3,
     "news_event_missing_reason": null,
     "news_event_narrative": "geopolitics_escalation_risk_off",
     "news_event_partial": false,
@@ -1151,7 +1151,7 @@
       "status": "failed"
     },
     "event_risk_level": "high",
-    "major_event_count": 5,
+    "major_event_count": 3,
     "market_narrative": {
       "affected_scenarios": [
         "bearish_path"
@@ -1171,6 +1171,18 @@
       "narrative_strength": 100,
       "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
       "supporting_headlines": [
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
+          "headline": "OpenAI's Hugging Face hack confirmed months of AI cyber warnings: 'Pandora's box is open'",
+          "importance_score": 100,
+          "published_at": "2026-08-01T12:00:01+00:00",
+          "source": "CNBC"
+        },
         {
           "confidence": "medium",
           "detected_event_conditions": [
@@ -1194,42 +1206,6 @@
           "importance_score": 100,
           "published_at": "2026-07-31T10:24:23+00:00",
           "source": "Reuters"
-        },
-        {
-          "confidence": "medium",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "US cyber defense agency warns hackers are increasingly targeting water systems - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-07-30T21:43:00+00:00",
-          "source": "Reuters"
-        },
-        {
-          "confidence": "medium",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Drone strike in Egypt sparks security concerns about Suez oil exports - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-07-30T20:08:12+00:00",
-          "source": "Reuters"
-        },
-        {
-          "confidence": "medium",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Bank of England keeps rates on hold, awaits clearer sign of Iran war inflation hit - Reuters",
-          "importance_score": 99,
-          "published_at": "2026-07-30T16:46:45+00:00",
-          "source": "Reuters"
         }
       ]
     },
@@ -1239,7 +1215,7 @@
       "direction": "supports_risk_expansion",
       "event_risk_level": "high",
       "macro_event_risk_flag": false,
-      "major_event_count": 5,
+      "major_event_count": 3,
       "not_a_trading_signal": true,
       "price_reaction_confirmed": false,
       "symbols": {
@@ -2304,11 +2280,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.35,
           "top_headlines": [
+            "Looking at just the odds isn’t enough. How traders gain an edge on prediction markets",
+            "OpenAI's Hugging Face hack confirmed months of AI cyber warnings: 'Pandora's box is open'",
             "Andy Jassy soothed concerns over Amazon's massive AI spending. Here's how he did it",
             "Fintech broker Clear Street offers investors pre-IPO access to $188 billion AI giant Databricks",
-            "The S&P 500 is stuck at a key battleground level. This obscure index could determine the market’s next move",
-            "‘Spider-Man: Brand New Day’ sets domestic box office preview record with $72 million",
-            "Jim Cramer: Buy this industrial stock on the dip if you don't own it already"
+            "The S&P 500 is stuck at a key battleground level. This obscure index could determine the market’s next move"
           ]
         },
         "price": {
@@ -3715,15 +3691,42 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "medium",
-            "confidence_score": 70,
+            "confidence": "high",
+            "confidence_score": 80,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 54,
+            "freshness_score": 95,
+            "headline": "OpenAI's Hugging Face hack confirmed months of AI cyber warnings: 'Pandora's box is open'",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-01T12:00:01+00:00",
+            "source": "CNBC"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 66,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 36,
             "headline": "The Tech Download: Anduril CEO Brian Schimpf talks AI in warfare and manufacturing push",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3743,100 +3746,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 70,
+            "confidence_score": 65,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 52,
+            "freshness_score": 34,
             "headline": "Trump convenes Cabinet at Camp David amid simmering Iran war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-07-31T10:24:23+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 62,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 22,
-            "headline": "US cyber defense agency warns hackers are increasingly targeting water systems - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-30T21:43:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 61,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 18,
-            "headline": "Drone strike in Egypt sparks security concerns about Suez oil exports - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-30T20:08:12+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 59,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 10,
-            "headline": "Bank of England keeps rates on hold, awaits clearer sign of Iran war inflation hit - Reuters",
-            "importance_score": 99,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-30T16:46:45+00:00",
             "source": "Reuters"
           }
         ],
@@ -3860,6 +3782,18 @@
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
             {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "OpenAI's Hugging Face hack confirmed months of AI cyber warnings: 'Pandora's box is open'",
+              "importance_score": 100,
+              "published_at": "2026-08-01T12:00:01+00:00",
+              "source": "CNBC"
+            },
+            {
               "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
@@ -3881,42 +3815,6 @@
               "headline": "Trump convenes Cabinet at Camp David amid simmering Iran war - Reuters",
               "importance_score": 100,
               "published_at": "2026-07-31T10:24:23+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "US cyber defense agency warns hackers are increasingly targeting water systems - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-07-30T21:43:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Drone strike in Egypt sparks security concerns about Suez oil exports - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-07-30T20:08:12+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Bank of England keeps rates on hold, awaits clearer sign of Iran war inflation hit - Reuters",
-              "importance_score": 99,
-              "published_at": "2026-07-30T16:46:45+00:00",
               "source": "Reuters"
             }
           ]
@@ -6457,11 +6355,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.35,
           "top_headlines": [
+            "Looking at just the odds isn’t enough. How traders gain an edge on prediction markets",
+            "OpenAI's Hugging Face hack confirmed months of AI cyber warnings: 'Pandora's box is open'",
             "Andy Jassy soothed concerns over Amazon's massive AI spending. Here's how he did it",
             "Fintech broker Clear Street offers investors pre-IPO access to $188 billion AI giant Databricks",
-            "The S&P 500 is stuck at a key battleground level. This obscure index could determine the market’s next move",
-            "‘Spider-Man: Brand New Day’ sets domestic box office preview record with $72 million",
-            "Jim Cramer: Buy this industrial stock on the dip if you don't own it already"
+            "The S&P 500 is stuck at a key battleground level. This obscure index could determine the market’s next move"
           ]
         },
         "price": {
@@ -7835,15 +7733,42 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "medium",
-            "confidence_score": 70,
+            "confidence": "high",
+            "confidence_score": 80,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 54,
+            "freshness_score": 95,
+            "headline": "OpenAI's Hugging Face hack confirmed months of AI cyber warnings: 'Pandora's box is open'",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-01T12:00:01+00:00",
+            "source": "CNBC"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 66,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 36,
             "headline": "The Tech Download: Anduril CEO Brian Schimpf talks AI in warfare and manufacturing push",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7863,100 +7788,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 70,
+            "confidence_score": 65,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 52,
+            "freshness_score": 34,
             "headline": "Trump convenes Cabinet at Camp David amid simmering Iran war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-07-31T10:24:23+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 62,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 22,
-            "headline": "US cyber defense agency warns hackers are increasingly targeting water systems - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-30T21:43:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 61,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 18,
-            "headline": "Drone strike in Egypt sparks security concerns about Suez oil exports - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-30T20:08:12+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 59,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 10,
-            "headline": "Bank of England keeps rates on hold, awaits clearer sign of Iran war inflation hit - Reuters",
-            "importance_score": 99,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-30T16:46:45+00:00",
             "source": "Reuters"
           }
         ],
@@ -7980,6 +7824,18 @@
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
             {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "OpenAI's Hugging Face hack confirmed months of AI cyber warnings: 'Pandora's box is open'",
+              "importance_score": 100,
+              "published_at": "2026-08-01T12:00:01+00:00",
+              "source": "CNBC"
+            },
+            {
               "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
@@ -8001,42 +7857,6 @@
               "headline": "Trump convenes Cabinet at Camp David amid simmering Iran war - Reuters",
               "importance_score": 100,
               "published_at": "2026-07-31T10:24:23+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "US cyber defense agency warns hackers are increasingly targeting water systems - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-07-30T21:43:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Drone strike in Egypt sparks security concerns about Suez oil exports - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-07-30T20:08:12+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Bank of England keeps rates on hold, awaits clearer sign of Iran war inflation hit - Reuters",
-              "importance_score": 99,
-              "published_at": "2026-07-30T16:46:45+00:00",
               "source": "Reuters"
             }
           ]
@@ -10621,11 +10441,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.35,
           "top_headlines": [
+            "Looking at just the odds isn’t enough. How traders gain an edge on prediction markets",
+            "OpenAI's Hugging Face hack confirmed months of AI cyber warnings: 'Pandora's box is open'",
             "Andy Jassy soothed concerns over Amazon's massive AI spending. Here's how he did it",
             "Fintech broker Clear Street offers investors pre-IPO access to $188 billion AI giant Databricks",
-            "The S&P 500 is stuck at a key battleground level. This obscure index could determine the market’s next move",
-            "‘Spider-Man: Brand New Day’ sets domestic box office preview record with $72 million",
-            "Jim Cramer: Buy this industrial stock on the dip if you don't own it already"
+            "The S&P 500 is stuck at a key battleground level. This obscure index could determine the market’s next move"
           ]
         },
         "price": {
@@ -12019,15 +11839,42 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "medium",
-            "confidence_score": 70,
+            "confidence": "high",
+            "confidence_score": 80,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 54,
+            "freshness_score": 95,
+            "headline": "OpenAI's Hugging Face hack confirmed months of AI cyber warnings: 'Pandora's box is open'",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-01T12:00:01+00:00",
+            "source": "CNBC"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 66,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 36,
             "headline": "The Tech Download: Anduril CEO Brian Schimpf talks AI in warfare and manufacturing push",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12047,100 +11894,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 70,
+            "confidence_score": 65,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 52,
+            "freshness_score": 34,
             "headline": "Trump convenes Cabinet at Camp David amid simmering Iran war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-07-31T10:24:23+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 62,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 22,
-            "headline": "US cyber defense agency warns hackers are increasingly targeting water systems - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-30T21:43:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 61,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 18,
-            "headline": "Drone strike in Egypt sparks security concerns about Suez oil exports - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-30T20:08:12+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 59,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 10,
-            "headline": "Bank of England keeps rates on hold, awaits clearer sign of Iran war inflation hit - Reuters",
-            "importance_score": 99,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-30T16:46:45+00:00",
             "source": "Reuters"
           }
         ],
@@ -12164,6 +11930,18 @@
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
             {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "OpenAI's Hugging Face hack confirmed months of AI cyber warnings: 'Pandora's box is open'",
+              "importance_score": 100,
+              "published_at": "2026-08-01T12:00:01+00:00",
+              "source": "CNBC"
+            },
+            {
               "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
@@ -12185,42 +11963,6 @@
               "headline": "Trump convenes Cabinet at Camp David amid simmering Iran war - Reuters",
               "importance_score": 100,
               "published_at": "2026-07-31T10:24:23+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "US cyber defense agency warns hackers are increasingly targeting water systems - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-07-30T21:43:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Drone strike in Egypt sparks security concerns about Suez oil exports - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-07-30T20:08:12+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Bank of England keeps rates on hold, awaits clearer sign of Iran war inflation hit - Reuters",
-              "importance_score": 99,
-              "published_at": "2026-07-30T16:46:45+00:00",
               "source": "Reuters"
             }
           ]
@@ -14786,11 +14528,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.35,
           "top_headlines": [
+            "Looking at just the odds isn’t enough. How traders gain an edge on prediction markets",
+            "OpenAI's Hugging Face hack confirmed months of AI cyber warnings: 'Pandora's box is open'",
             "Andy Jassy soothed concerns over Amazon's massive AI spending. Here's how he did it",
             "Fintech broker Clear Street offers investors pre-IPO access to $188 billion AI giant Databricks",
-            "The S&P 500 is stuck at a key battleground level. This obscure index could determine the market’s next move",
-            "‘Spider-Man: Brand New Day’ sets domestic box office preview record with $72 million",
-            "Jim Cramer: Buy this industrial stock on the dip if you don't own it already"
+            "The S&P 500 is stuck at a key battleground level. This obscure index could determine the market’s next move"
           ]
         },
         "price": {
@@ -16220,15 +15962,42 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "medium",
-            "confidence_score": 70,
+            "confidence": "high",
+            "confidence_score": 80,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 54,
+            "freshness_score": 95,
+            "headline": "OpenAI's Hugging Face hack confirmed months of AI cyber warnings: 'Pandora's box is open'",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-01T12:00:01+00:00",
+            "source": "CNBC"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 66,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 36,
             "headline": "The Tech Download: Anduril CEO Brian Schimpf talks AI in warfare and manufacturing push",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16248,100 +16017,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 70,
+            "confidence_score": 65,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 52,
+            "freshness_score": 34,
             "headline": "Trump convenes Cabinet at Camp David amid simmering Iran war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-07-31T10:24:23+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 62,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 22,
-            "headline": "US cyber defense agency warns hackers are increasingly targeting water systems - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-30T21:43:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 61,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 18,
-            "headline": "Drone strike in Egypt sparks security concerns about Suez oil exports - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-30T20:08:12+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 59,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 10,
-            "headline": "Bank of England keeps rates on hold, awaits clearer sign of Iran war inflation hit - Reuters",
-            "importance_score": 99,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-07-30T16:46:45+00:00",
             "source": "Reuters"
           }
         ],
@@ -16365,6 +16053,18 @@
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
             {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "OpenAI's Hugging Face hack confirmed months of AI cyber warnings: 'Pandora's box is open'",
+              "importance_score": 100,
+              "published_at": "2026-08-01T12:00:01+00:00",
+              "source": "CNBC"
+            },
+            {
               "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
@@ -16386,42 +16086,6 @@
               "headline": "Trump convenes Cabinet at Camp David amid simmering Iran war - Reuters",
               "importance_score": 100,
               "published_at": "2026-07-31T10:24:23+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "US cyber defense agency warns hackers are increasingly targeting water systems - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-07-30T21:43:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Drone strike in Egypt sparks security concerns about Suez oil exports - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-07-30T20:08:12+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Bank of England keeps rates on hold, awaits clearer sign of Iran war inflation hit - Reuters",
-              "importance_score": 99,
-              "published_at": "2026-07-30T16:46:45+00:00",
               "source": "Reuters"
             }
           ]
