@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-01T00:11:12.163422+00:00`
+- generated_at: `2026-08-01T04:39:06.434855+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
-- event_detection_confidence: `66`
+- major_event_count: `6`
+- event_detection_confidence: `64`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `50`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
@@ -62,7 +62,7 @@
 - headline: Bank of England keeps rates on hold, awaits clearer sign of Iran war inflation hit - Reuters
 - source: Reuters
 - published_at: `2026-07-30T16:46:45+00:00`
-- importance_score: `100`
+- importance_score: `99`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
@@ -70,21 +70,5 @@
 - headline: EXCLUSIVE: Yemen's Houthis are attacking Saudi Arabia from Iraq, sources say - Reuters
 - source: Reuters
 - published_at: `2026-07-30T14:58:16+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: How NBCUniversal's deal with YouTube could jumpstart the next chapter of the streaming wars
-- source: CNBC
-- published_at: `2026-07-30T14:55:17+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Gaza ceasefire talks see rare progress, sources say - Reuters
-- source: Reuters
-- published_at: `2026-07-30T14:42:14+00:00`
-- importance_score: `92`
+- importance_score: `99`
 - confidence: `medium`
