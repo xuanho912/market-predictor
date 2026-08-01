@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-01T04:39:06.434855+00:00`
+- generated_at: `2026-08-01T06:18:41.155013+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
+- major_event_count: `5`
 - event_detection_confidence: `64`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -62,13 +62,5 @@
 - headline: Bank of England keeps rates on hold, awaits clearer sign of Iran war inflation hit - Reuters
 - source: Reuters
 - published_at: `2026-07-30T16:46:45+00:00`
-- importance_score: `99`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: EXCLUSIVE: Yemen's Houthis are attacking Saudi Arabia from Iraq, sources say - Reuters
-- source: Reuters
-- published_at: `2026-07-30T14:58:16+00:00`
 - importance_score: `99`
 - confidence: `medium`
