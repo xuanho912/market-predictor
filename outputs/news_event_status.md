@@ -1,14 +1,14 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-01T13:57:57.448703+00:00`
+- generated_at: `2026-08-02T13:57:48.068647+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `3`
-- event_detection_confidence: `70`
+- major_event_count: `1`
+- event_detection_confidence: `66`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
-- narrative_strength: `100`
+- narrative_strength: `33`
 - price_reaction_confirmed: `False`
 - confirmation_score: `25`
 
@@ -30,21 +30,5 @@
 - headline: OpenAI's Hugging Face hack confirmed months of AI cyber warnings: 'Pandora's box is open'
 - source: CNBC
 - published_at: `2026-08-01T12:00:01+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: The Tech Download: Anduril CEO Brian Schimpf talks AI in warfare and manufacturing push
-- source: CNBC
-- published_at: `2026-07-31T11:11:29+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump convenes Cabinet at Camp David amid simmering Iran war - Reuters
-- source: Reuters
-- published_at: `2026-07-31T10:24:23+00:00`
 - importance_score: `100`
 - confidence: `medium`
