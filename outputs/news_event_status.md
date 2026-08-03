@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-03T21:38:24.810595+00:00`
+- generated_at: `2026-08-03T22:38:32.019261+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `15`
+- major_event_count: `16`
 - event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -27,7 +27,15 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Trump says Iran faces 'decapitation' if it doesn't strike deal - Reuters
+- headline: Jim Cramer says the market has warmed up to Big Tech's AI spending. Here's what flipped the switch
+- source: CNBC
+- published_at: `2026-08-03T22:20:01+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Trump says Iran faces 'decapitation' if it doesn't strike deal - reuters.com
 - source: Reuters
 - published_at: `2026-08-03T19:49:01+00:00`
 - importance_score: `100`
@@ -35,7 +43,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US signs deal to boost Patriot and THAAD missile parts production - Reuters
+- headline: US signs deal to boost Patriot and THAAD missile parts production - reuters.com
 - source: Reuters
 - published_at: `2026-08-03T15:35:44+00:00`
 - importance_score: `100`
@@ -59,7 +67,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Breakingviews - Iran war fuels new European airline dichotomy - Reuters
+- headline: Breakingviews - Iran war fuels new European airline dichotomy - reuters.com
 - source: Reuters
 - published_at: `2026-08-03T12:15:21+00:00`
 - importance_score: `100`
@@ -67,7 +75,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Factories faced weaker demand, higher costs in July as Iran war grinds on - Reuters
+- headline: Factories faced weaker demand, higher costs in July as Iran war grinds on - reuters.com
 - source: Reuters
 - published_at: `2026-08-03T11:08:03+00:00`
 - importance_score: `100`
@@ -75,7 +83,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iran war hit euro zone consumption especially hard, ECB says - Reuters
+- headline: Iran war hit euro zone consumption especially hard, ECB says - reuters.com
 - source: Reuters
 - published_at: `2026-08-03T08:03:44+00:00`
 - importance_score: `100`
@@ -83,7 +91,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iran war ushers in oil refining golden era. It won’t last - Reuters
+- headline: Iran war ushers in oil refining golden era. It won’t last - reuters.com
 - source: Reuters
 - published_at: `2026-08-03T06:01:00+00:00`
 - importance_score: `100`
@@ -91,16 +99,8 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Index snub to test Indian bonds; rupee, RBI policy and US-Iran war in focus - Reuters
+- headline: Index snub to test Indian bonds; rupee, RBI policy and US-Iran war in focus - reuters.com
 - source: Reuters
 - published_at: `2026-08-03T01:34:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil prices drop 7% to three-week low after Trump cancels attack on Iran - Reuters
-- source: Reuters
-- published_at: `2026-08-03T00:11:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
