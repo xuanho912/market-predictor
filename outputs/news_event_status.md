@@ -1,14 +1,14 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-02T13:57:48.068647+00:00`
+- generated_at: `2026-08-03T15:23:53.494572+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `1`
-- event_detection_confidence: `66`
+- major_event_count: `13`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
-- narrative_strength: `33`
+- narrative_strength: `100`
 - price_reaction_confirmed: `False`
 - confirmation_score: `25`
 
@@ -25,10 +25,82 @@
 
 ## Major Events
 
+### geopolitical_risk_easing / risk_on
+
+- headline: Jim Cramer's top 10 things to watch in the stock market Monday
+- source: CNBC
+- published_at: `2026-08-03T13:08:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
 ### geopolitical_risk_escalation / risk_off
 
-- headline: OpenAI's Hugging Face hack confirmed months of AI cyber warnings: 'Pandora's box is open'
+- headline: Senate appears ready to advance Blanche after Cornyn strikes deal
 - source: CNBC
-- published_at: `2026-08-01T12:00:01+00:00`
+- published_at: `2026-08-03T12:52:20+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran war hit euro zone consumption especially hard, ECB says - Reuters
+- source: Reuters
+- published_at: `2026-08-03T08:03:44+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran war ushers in oil refining golden era. It won’t last - Reuters
+- source: Reuters
+- published_at: `2026-08-03T06:01:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Index snub to test Indian bonds; rupee, RBI policy and US-Iran war in focus - Reuters
+- source: Reuters
+- published_at: `2026-08-03T01:34:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil prices drop after Trump cancels attack on Iran to seek deal - Reuters
+- source: Reuters
+- published_at: `2026-08-03T00:11:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran says no talks are under way with United States after Trump calls off attacks - Reuters
+- source: Reuters
+- published_at: `2026-08-02T23:23:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: UK faces recession if Strait of Hormuz stays closed, forecaster warns - Reuters
+- source: Reuters
+- published_at: `2026-08-02T23:05:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Iran peace hopes boost stocks, weaken crude; yen firms after intervention - Reuters
+- source: Reuters
+- published_at: `2026-08-03T01:03:00+00:00`
+- importance_score: `97`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Crew of Iranian ship hit in Ukrainian attack returns home, news agency says - Reuters
+- source: Reuters
+- published_at: `2026-08-02T19:17:05+00:00`
 - importance_score: `100`
 - confidence: `medium`

@@ -3,15 +3,15 @@
 These alerts are forecast-validation and scenario-confirmation warnings only. They are not trading recommendations.
 
 - version: market_alert_engine_v1
-- generated_at: 2026-08-02T13:57:58.123733+00:00
+- generated_at: 2026-08-03T15:24:04.526958+00:00
 
 | Alert | Level | Score | Symbols | Top evidence | Validation |
 | --- | --- | ---: | --- | --- | --- |
-| Bounce Setup Alert | HIGH_CONVICTION | 80/100 | DIA | 宽度改善支持反抽 | not_yet_forward_validated |
+| Bounce Setup Alert | HIGH_CONVICTION | 79/100 | DIA | 宽度改善支持反抽 | not_yet_forward_validated |
 | Trend Repair Alert | HIGH_CONVICTION | 79/100 | DIA | 50d/200d 宽度与内部参与修复 | not_yet_forward_validated |
-| Bounce Setup Alert | HIGH_CONVICTION | 76/100 | SPY | 信用压力未继续恶化 | not_yet_forward_validated |
-| Trend Repair Alert | HIGH_CONVICTION | 76/100 | SPY | 波动率结构修复 | not_yet_forward_validated |
-| Bottoming Setup Alert | WARNING | 56/100 | DIA | 内部宽度改善 | not_yet_forward_validated |
-| Trend Repair Alert | WARNING | 55/100 | IWM | 波动率结构修复 | not_yet_forward_validated |
-| Bottoming Setup Alert | WATCH | 58/100 | IWM | 信用压力停止恶化 | not_yet_forward_validated |
-| Bounce Setup Alert | WATCH | 54/100 | IWM | 信用压力未继续恶化 | not_yet_forward_validated |
+| Bounce Setup Alert | HIGH_CONVICTION | 74/100 | SPY | 信用压力未继续恶化 | not_yet_forward_validated |
+| Trend Repair Alert | HIGH_CONVICTION | 72/100 | SPY | 波动率结构修复 | not_yet_forward_validated |
+| Bottoming Setup Alert | WARNING | 58/100 | DIA | 内部宽度改善 | not_yet_forward_validated |
+| Bounce Setup Alert | WARNING | 56/100 | IWM | 信用压力未继续恶化 | not_yet_forward_validated |
+| Bottoming Setup Alert | WATCH | 54/100 | IWM | 信用压力停止恶化 | not_yet_forward_validated |
+| Bottoming Setup Alert | WATCH | 54/100 | SPY | 信用压力停止恶化 | not_yet_forward_validated |
