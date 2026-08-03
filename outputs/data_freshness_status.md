@@ -1,11 +1,11 @@
 # Data Freshness Status
 
-Generated at: `2026-08-03T22:38:42.004098+00:00`
+Generated at: `2026-08-03T23:57:21.514833+00:00`
 
 ## Summary
 
 - current_date: `2026-08-03`
-- current_time_us_eastern: `2026-08-03T18:38:42.004098-04:00`
+- current_time_us_eastern: `2026-08-03T19:57:21.514833-04:00`
 - latest_market_date: `2026-08-03`
 - latest_confirmed_market_date: `2026-08-03`
 - expected_latest_trading_date: `2026-08-03`
@@ -39,7 +39,7 @@ Generated at: `2026-08-03T22:38:42.004098+00:00`
 - IWM: status=`available`, latest_date=`2026-08-03`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - LQD: status=`available`, latest_date=`2026-08-03`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - QQQ: status=`available`, latest_date=`2026-08-03`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- RECESSION: status=`stale`, latest_date=`2026-06-01`, source=`fred-api`, stale=`True`, fallback=`False`, real_data=`True`
+- RECESSION: status=`stale`, latest_date=`2026-07-01`, source=`fred-api`, stale=`True`, fallback=`False`, real_data=`True`
 - RSP: status=`available`, latest_date=`2026-08-03`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - SPHB: status=`available`, latest_date=`2026-08-03`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - SPLV: status=`available`, latest_date=`2026-08-03`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
