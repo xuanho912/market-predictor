@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-03T15:23:53.494572+00:00`
+- generated_at: `2026-08-03T21:38:24.810595+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `13`
-- event_detection_confidence: `74`
+- major_event_count: `15`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -25,6 +25,22 @@
 
 ## Major Events
 
+### geopolitical_risk_escalation / risk_off
+
+- headline: Trump says Iran faces 'decapitation' if it doesn't strike deal - Reuters
+- source: Reuters
+- published_at: `2026-08-03T19:49:01+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US signs deal to boost Patriot and THAAD missile parts production - Reuters
+- source: Reuters
+- published_at: `2026-08-03T15:35:44+00:00`
+- importance_score: `100`
+- confidence: `high`
+
 ### geopolitical_risk_easing / risk_on
 
 - headline: Jim Cramer's top 10 things to watch in the stock market Monday
@@ -43,11 +59,27 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Breakingviews - Iran war fuels new European airline dichotomy - Reuters
+- source: Reuters
+- published_at: `2026-08-03T12:15:21+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Factories faced weaker demand, higher costs in July as Iran war grinds on - Reuters
+- source: Reuters
+- published_at: `2026-08-03T11:08:03+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Iran war hit euro zone consumption especially hard, ECB says - Reuters
 - source: Reuters
 - published_at: `2026-08-03T08:03:44+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,7 +87,7 @@
 - source: Reuters
 - published_at: `2026-08-03T06:01:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -67,40 +99,8 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil prices drop after Trump cancels attack on Iran to seek deal - Reuters
+- headline: Oil prices drop 7% to three-week low after Trump cancels attack on Iran - Reuters
 - source: Reuters
 - published_at: `2026-08-03T00:11:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran says no talks are under way with United States after Trump calls off attacks - Reuters
-- source: Reuters
-- published_at: `2026-08-02T23:23:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: UK faces recession if Strait of Hormuz stays closed, forecaster warns - Reuters
-- source: Reuters
-- published_at: `2026-08-02T23:05:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Iran peace hopes boost stocks, weaken crude; yen firms after intervention - Reuters
-- source: Reuters
-- published_at: `2026-08-03T01:03:00+00:00`
-- importance_score: `97`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Crew of Iranian ship hit in Ukrainian attack returns home, news agency says - Reuters
-- source: Reuters
-- published_at: `2026-08-02T19:17:05+00:00`
 - importance_score: `100`
 - confidence: `medium`
