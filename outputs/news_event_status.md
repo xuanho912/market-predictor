@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-04T06:18:30.729434+00:00`
+- generated_at: `2026-08-04T14:42:18.757095+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
-- event_detection_confidence: `73`
+- major_event_count: `11`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,57 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil ticks up after selloff as talks to end US-Iran war remain uncertain - Reuters
+- headline: EXCLUSIVE: US has used 'virtually all' of its long-range precision missiles during Iran war, sources say - Reuters
 - source: Reuters
-- published_at: `2026-08-04T01:02:00+00:00`
+- published_at: `2026-08-04T13:28:39+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: EXCLUSIVE: Ukraine's Fire Point starts to integrate European tech into missile defence system - Reuters
+- source: Reuters
+- published_at: `2026-08-04T11:19:34+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Turkey calls on Russia, Ukraine to ensure Black Sea safety after drone attack - Reuters
+- source: Reuters
+- published_at: `2026-08-04T09:15:46+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: BP's quarterly profit doubles to over $5 billion after Iran war oil surge - Reuters
+- source: Reuters
+- published_at: `2026-08-04T06:09:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Aramco says US-Iran war has cost the global market 2.6 billion barrels of oil - Reuters
+- source: Reuters
+- published_at: `2026-08-04T05:32:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Lufthansa warns profits could fall amid fuel price volatility - Reuters
+- source: Reuters
+- published_at: `2026-08-04T05:06:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Qatar says progress made toward US-Iran talks - Reuters
+- source: Reuters
+- published_at: `2026-08-04T03:41:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -39,68 +87,20 @@
 - source: CNBC
 - published_at: `2026-08-03T22:20:01+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Shipping traffic at key Gulf waterways little changed on uncertain peace talks - Reuters
+- source: Reuters
+- published_at: `2026-08-04T02:18:38+00:00`
+- importance_score: `94`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Trump says Iran faces 'decapitation' if it doesn't strike deal - Reuters
 - source: Reuters
 - published_at: `2026-08-03T19:49:01+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US signs deal to boost Patriot and THAAD missile parts production - Reuters
-- source: Reuters
-- published_at: `2026-08-03T15:35:44+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Jim Cramer's top 10 things to watch in the stock market Monday
-- source: CNBC
-- published_at: `2026-08-03T13:08:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Senate appears ready to advance Blanche after Cornyn strikes deal
-- source: CNBC
-- published_at: `2026-08-03T12:52:20+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Breakingviews - Iran war fuels new European airline dichotomy - Reuters
-- source: Reuters
-- published_at: `2026-08-03T12:15:21+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Factories faced weaker demand, higher costs in July as Iran war grinds on - Reuters
-- source: Reuters
-- published_at: `2026-08-03T11:08:03+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran war hit euro zone consumption especially hard, ECB says - Reuters
-- source: Reuters
-- published_at: `2026-08-03T08:03:44+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran war ushers in oil refining golden era. It won’t last - Reuters
-- source: Reuters
-- published_at: `2026-08-03T06:01:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
