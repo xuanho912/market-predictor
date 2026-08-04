@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-04T21:46:43.576572+00:00`
+- generated_at: `2026-08-04T22:40:49.658369+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `11`
-- event_detection_confidence: `75`
+- major_event_count: `12`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,9 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Qatar says progress made toward US-Iran talks on ending war - Reuters
-- source: Reuters
-- published_at: `2026-08-04T18:02:02+00:00`
+- headline: Jim Cramer says one hedge fund's collapse cleared the way for tech's rally
+- source: CNBC
+- published_at: `2026-08-04T22:22:22+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -91,16 +91,16 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Qatar says mediators make progress in efforts to end US-Iran war - Reuters
+- source: Reuters
+- published_at: `2026-08-04T01:06:12+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Jim Cramer says the market has warmed up to Big Tech's AI spending. Here's what flipped the switch
 - source: CNBC
 - published_at: `2026-08-03T22:20:01+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Oil drops, stocks gain amid Iran peace hopes; yen firms as investors watch for further intervention - Reuters
-- source: Reuters
-- published_at: `2026-08-03T21:29:38+00:00`
-- importance_score: `97`
 - confidence: `medium`

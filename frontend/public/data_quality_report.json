@@ -70,7 +70,7 @@
       "expected_items": 5,
       "fallback_used": false,
       "headline_count": 40,
-      "major_event_count": 11,
+      "major_event_count": 12,
       "proxy_used": false,
       "real_data": true,
       "status": "available"
@@ -112,7 +112,7 @@
       "status": "available"
     }
   },
-  "generated_at": "2026-08-04T21:46:43.569457+00:00",
+  "generated_at": "2026-08-04T22:40:49.651652+00:00",
   "notes": [
     "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
     "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -897,14 +897,14 @@
     "finnhub_quote_SPY": {
       "fallback_used": false,
       "latest_date": null,
-      "missing_data": true,
-      "point_in_time_safe": false,
-      "rate_limited": true,
-      "real_data": false,
-      "rows": 0,
+      "missing_data": false,
+      "point_in_time_safe": true,
+      "rate_limited": false,
+      "real_data": true,
+      "rows": 1,
       "source": "finnhub",
-      "stale_data": false,
-      "status": "rate_limited",
+      "stale_data": true,
+      "status": "stale",
       "symbol": "finnhub_quote_SPY"
     },
     "finnhub_rates_data": {
@@ -1024,10 +1024,10 @@
       "symbol": "macro_event_calendar"
     },
     "news_event_provider": {
-      "event_detection_confidence": 75,
+      "event_detection_confidence": 74,
       "fallback_used": false,
       "latest_date": "2026-08-04",
-      "major_event_count": 11,
+      "major_event_count": 12,
       "missing_data": false,
       "missing_reason": null,
       "narrative": "geopolitics_escalation_risk_off",
@@ -1161,7 +1161,7 @@
     "fallback_used": true,
     "finnhub_available": true,
     "finnhub_missing": false,
-    "finnhub_rate_limited": true,
+    "finnhub_rate_limited": false,
     "flow_available": true,
     "flow_provider_status": "proxy",
     "flow_proxy_only": true,
@@ -1184,8 +1184,8 @@
           "primary_scenario_with_fred": "bounce_path",
           "primary_scenario_without_fred": "bounce_path",
           "risk_expansion_delta": 0.0446,
-          "risk_expansion_with_fred": 0.3838,
-          "risk_expansion_without_fred": 0.3392
+          "risk_expansion_with_fred": 0.3859,
+          "risk_expansion_without_fred": 0.3413
         },
         "IWM": {
           "edge_status_changed": false,
@@ -1198,8 +1198,8 @@
           "primary_scenario_with_fred": "bounce_path",
           "primary_scenario_without_fred": "bounce_path",
           "risk_expansion_delta": 0.0447,
-          "risk_expansion_with_fred": 0.3792,
-          "risk_expansion_without_fred": 0.3345
+          "risk_expansion_with_fred": 0.3813,
+          "risk_expansion_without_fred": 0.3366
         },
         "QQQ": {
           "edge_status_changed": false,
@@ -1212,8 +1212,8 @@
           "primary_scenario_with_fred": "bearish_path",
           "primary_scenario_without_fred": "bearish_path",
           "risk_expansion_delta": 0.0447,
-          "risk_expansion_with_fred": 0.4142,
-          "risk_expansion_without_fred": 0.3695
+          "risk_expansion_with_fred": 0.4163,
+          "risk_expansion_without_fred": 0.3716
         },
         "SPY": {
           "edge_status_changed": false,
@@ -1225,9 +1225,9 @@
           "primary_scenario_changed": false,
           "primary_scenario_with_fred": "bounce_path",
           "primary_scenario_without_fred": "bounce_path",
-          "risk_expansion_delta": 0.0448,
-          "risk_expansion_with_fred": 0.3746,
-          "risk_expansion_without_fred": 0.3298
+          "risk_expansion_delta": 0.0447,
+          "risk_expansion_with_fred": 0.3766,
+          "risk_expansion_without_fred": 0.3319
         }
       },
       "target_85_met_with_fred": true
@@ -1239,14 +1239,14 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "IG_OAS",
-      "BAA_SPREAD",
+      "DGS10",
       "HY_OAS",
       "DGS2",
-      "DGS3MO",
-      "DGS10",
-      "DFII10",
+      "IG_OAS",
+      "BAA_SPREAD",
       "FINANCIAL_STRESS",
+      "DGS3MO",
+      "DFII10",
       "RECESSION"
     ],
     "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-08-04。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
@@ -1257,7 +1257,6 @@
     "latest_market_date": "2026-08-04",
     "missing_data": true,
     "missing_key_sources": [
-      "finnhub_quote_SPY",
       "finnhub_candle_SPY",
       "finnhub_candle_QQQ",
       "finnhub_candle_IWM",
@@ -1279,11 +1278,11 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 75,
+      "event_detection_confidence": 74,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-08-04T21:46:43.576572+00:00",
-      "major_event_count": 11,
+      "last_update": "2026-08-04T22:40:49.658369+00:00",
+      "major_event_count": 12,
       "missing_reason": null,
       "news_direction": "risk_off",
       "news_event_partial": false,
@@ -1294,7 +1293,7 @@
     },
     "news_event_available": true,
     "news_event_event_risk_level": "high",
-    "news_event_major_count": 11,
+    "news_event_major_count": 12,
     "news_event_missing_reason": null,
     "news_event_narrative": "geopolitics_escalation_risk_off",
     "news_event_partial": false,
