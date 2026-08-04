@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-04T14:42:18.757095+00:00`
+- generated_at: `2026-08-04T21:46:43.576572+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `11`
-- event_detection_confidence: `76`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `25`
+- confirmation_score: `50`
 
 ## Dashboard Note
 
@@ -27,9 +27,33 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Qatar says progress made toward US-Iran talks on ending war - Reuters
+- source: Reuters
+- published_at: `2026-08-04T18:02:02+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Turkey calls on Russia, Ukraine to ensure Black Sea safety after drone attack - Reuters
+- source: Reuters
+- published_at: `2026-08-04T16:21:43+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: EXCLUSIVE: US has used 'virtually all' of its long-range precision missiles during Iran war, sources say - Reuters
 - source: Reuters
-- published_at: `2026-08-04T13:28:39+00:00`
+- published_at: `2026-08-04T16:16:40+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Asia crude and fuel imports recover, still shy of pre-Iran war levels - Reuters
+- source: Reuters
+- published_at: `2026-08-04T16:04:20+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -43,19 +67,11 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Turkey calls on Russia, Ukraine to ensure Black Sea safety after drone attack - Reuters
-- source: Reuters
-- published_at: `2026-08-04T09:15:46+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
 - headline: BP's quarterly profit doubles to over $5 billion after Iran war oil surge - Reuters
 - source: Reuters
 - published_at: `2026-08-04T06:09:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -63,23 +79,15 @@
 - source: Reuters
 - published_at: `2026-08-04T05:32:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Lufthansa warns profits could fall amid fuel price volatility - Reuters
+- headline: Lufthansa warns profits could fall as Iran war stokes fuel costs - Reuters
 - source: Reuters
 - published_at: `2026-08-04T05:06:00+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Qatar says progress made toward US-Iran talks - Reuters
-- source: Reuters
-- published_at: `2026-08-04T03:41:00+00:00`
-- importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -91,16 +99,8 @@
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: Shipping traffic at key Gulf waterways little changed on uncertain peace talks - Reuters
+- headline: Oil drops, stocks gain amid Iran peace hopes; yen firms as investors watch for further intervention - Reuters
 - source: Reuters
-- published_at: `2026-08-04T02:18:38+00:00`
-- importance_score: `94`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump says Iran faces 'decapitation' if it doesn't strike deal - Reuters
-- source: Reuters
-- published_at: `2026-08-03T19:49:01+00:00`
-- importance_score: `100`
+- published_at: `2026-08-03T21:29:38+00:00`
+- importance_score: `97`
 - confidence: `medium`
