@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-04T00:16:40.045868+00:00`
+- generated_at: `2026-08-04T04:35:55.377671+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `15`
-- event_detection_confidence: `73`
+- major_event_count: `12`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil ticks up after selloff as talks to end US-Iran war remain uncertain - Reuters
+- source: Reuters
+- published_at: `2026-08-04T01:02:00+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-08-03T15:35:44+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_easing / risk_on
 
@@ -63,7 +71,7 @@
 - source: CNBC
 - published_at: `2026-08-03T12:52:20+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -94,13 +102,5 @@
 - headline: Iran war ushers in oil refining golden era. It won’t last - Reuters
 - source: Reuters
 - published_at: `2026-08-03T06:01:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Index snub to test Indian bonds; rupee, RBI policy and US-Iran war in focus - Reuters
-- source: Reuters
-- published_at: `2026-08-03T01:34:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
