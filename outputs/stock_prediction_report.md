@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-08-03T23:57:22.263087+00:00`
+Generated at: `2026-08-04T00:16:51.214606+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -21,7 +21,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - company_name: `NVIDIA Corp`
 - status: `available`
 - current_price: `206.64`
-- market_context: `market_headwind`
+- market_context: `risk_off_pressure`
 - primary: `stock_failed_bounce` / `25.5%`
 - secondary: `stock_downside_continuation` / `18.3%`
 - risk: `stock_event_risk` / `15.3%`
@@ -50,7 +50,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - company_name: `Tesla Inc`
 - status: `available`
 - current_price: `322.08`
-- market_context: `market_headwind`
+- market_context: `risk_off_pressure`
 - primary: `stock_downside_continuation` / `31.5%`
 - secondary: `stock_failed_bounce` / `20.2%`
 - risk: `stock_event_risk` / `13.0%`

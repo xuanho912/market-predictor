@@ -1,6 +1,6 @@
 # FRED Data Status
 
-Generated at: `2026-08-03T23:57:22.536418Z`
+Generated at: `2026-08-04T00:16:51.494475Z`
 
 ## Provider
 
@@ -8,7 +8,7 @@ Generated at: `2026-08-03T23:57:22.536418Z`
 - provider available: `True`
 - fallback used: `False`
 - rate limited: `False`
-- successful series: `DGS2, HY_OAS, DGS3MO, DGS10, BAA_SPREAD, IG_OAS, DFII10, RECESSION, FINANCIAL_STRESS`
+- successful series: `DGS10, HY_OAS, IG_OAS, DGS2, DGS3MO, BAA_SPREAD, DFII10, FINANCIAL_STRESS, RECESSION`
 - failed series: `none`
 
 ## Series
@@ -20,7 +20,7 @@ Generated at: `2026-08-03T23:57:22.536418Z`
 | DGS10 | DGS10 | True | 2026-07-31 | 4.75 | fred-api | False |  |
 | DGS2 | DGS2 | True | 2026-07-31 | 4.28 | fred-api | False |  |
 | DGS3MO | DGS3MO | True | 2026-07-31 | 3.83 | fred-api | False |  |
-| FINANCIAL_STRESS | STLFSI4 | True | 2026-07-24 | -0.8263 | fred-api | False |  |
+| FINANCIAL_STRESS | STLFSI4 | True | 2026-07-24 | -0.8263 | fred-api | True |  |
 | HY_OAS | BAMLH0A0HYM2 | True | 2026-07-30 | 2.84 | fred-api | False |  |
 | IG_OAS | BAMLC0A0CM | True | 2026-07-30 | 0.8 | fred-api | False |  |
 | RECESSION | USREC | True | 2026-07-01 | 0.0 | fred-api | True |  |
@@ -37,10 +37,10 @@ Generated at: `2026-08-03T23:57:22.536418Z`
 
 | symbol | edge without | edge with | primary without | primary with | risk expansion delta | failed bounce delta |
 |---|---|---|---|---|---:|---:|
-| SPY | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0622 | 0.0213 |
-| QQQ | WEAK_EDGE | WEAK_EDGE | bounce_path | bounce_path | 0.0621 | 0.0213 |
-| IWM | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0622 | 0.0257 |
-| DIA | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0622 | 0.0213 |
+| SPY | WEAK_EDGE | WEAK_EDGE | bounce_path | bearish_path | 0.0622 | 0.0213 |
+| QQQ | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0621 | 0.0213 |
+| IWM | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0622 | 0.0268 |
+| DIA | WEAK_EDGE | WEAK_EDGE | bounce_path | bounce_path | 0.0622 | 0.0213 |
 
 ## Warning
 
