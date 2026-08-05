@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-05T06:13:09.620906+00:00`
+- generated_at: `2026-08-05T14:35:57.956897+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `11`
-- event_detection_confidence: `72`
+- major_event_count: `13`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -25,13 +25,45 @@
 
 ## Major Events
 
-### geopolitical_risk_easing / risk_on
+### geopolitical_risk_escalation / risk_off
 
-- headline: Gulf shipping traffic steady amid uncertainty of peace talks - Reuters
-- source: Reuters
-- published_at: `2026-08-05T03:04:00+00:00`
-- importance_score: `96`
+- headline: Situational Awareness hedge fund meltdown was a warning shot for leveraged markets, BofA CEO says
+- source: CNBC
+- published_at: `2026-08-05T13:22:20+00:00`
+- importance_score: `100`
 - confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Israeli military issues evacuation warning to village in southern Lebanon - reuters.com
+- source: Reuters
+- published_at: `2026-08-05T12:59:28+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Euro zone services revival drives activity in July but outlook clouded by Iran war - reuters.com
+- source: Reuters
+- published_at: `2026-08-05T09:02:18+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Yemen's Houthis say they attacked Saudi oil tanker in Red Sea - reuters.com
+- source: Reuters
+- published_at: `2026-08-05T07:27:57+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil prices rebound after Houthis say they attacked Saudi tanker - reuters.com
+- source: Reuters
+- published_at: `2026-08-05T01:26:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -39,68 +71,36 @@
 - source: CNBC
 - published_at: `2026-08-04T22:22:22+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Gold scales one-month peak as US-Iran peace hopes ease inflation worries - reuters.com
+- source: Reuters
+- published_at: `2026-08-05T01:01:00+00:00`
+- importance_score: `97`
+- confidence: `medium`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Gulf shipping traffic steady amid uncertainty of peace talks - Reuters
+- source: Reuters
+- published_at: `2026-08-05T03:04:00+00:00`
+- importance_score: `94`
+- confidence: `medium`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Stocks get AI-boost; investors on tenterhooks over Mideast peace talks - Reuters
+- source: Reuters
+- published_at: `2026-08-05T01:37:00+00:00`
+- importance_score: `94`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Asia crude and fuel imports recover, still shy of pre-Iran war levels - Reuters
 - source: Reuters
 - published_at: `2026-08-04T18:43:50+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Turkey calls on Russia, Ukraine to ensure Black Sea safety after drone attack - Reuters
-- source: Reuters
-- published_at: `2026-08-04T16:21:43+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: EXCLUSIVE: Ukraine's Fire Point starts to integrate European tech into missile defence system - Reuters
-- source: Reuters
-- published_at: `2026-08-04T11:19:34+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: EXCLUSIVE: US has used 'virtually all' of its long-range precision missiles during Iran war, sources say - Reuters
-- source: Reuters
-- published_at: `2026-08-04T10:08:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: BP's quarterly profit doubles to over $5 billion after Iran war oil surge - Reuters
-- source: Reuters
-- published_at: `2026-08-04T06:09:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Aramco says US-Iran war has cost the global market 2.6 billion barrels of oil - Reuters
-- source: Reuters
-- published_at: `2026-08-04T05:32:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Lufthansa warns profits could fall as Iran war stokes fuel costs - Reuters
-- source: Reuters
-- published_at: `2026-08-04T05:06:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Qatar says mediators make progress in efforts to end US-Iran war - Reuters
-- source: Reuters
-- published_at: `2026-08-04T03:41:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
