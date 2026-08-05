@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-05T04:34:29.204370+00:00`
+- generated_at: `2026-08-05T06:13:09.620906+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
-- event_detection_confidence: `73`
+- major_event_count: `11`
+- event_detection_confidence: `72`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Gulf shipping traffic steady amid uncertainty of peace talks - Reuters
+- source: Reuters
+- published_at: `2026-08-05T03:04:00+00:00`
+- importance_score: `96`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -48,14 +56,6 @@
 - published_at: `2026-08-04T16:21:43+00:00`
 - importance_score: `100`
 - confidence: `medium`
-
-### oil_shock_relief / risk_on
-
-- headline: Stock indexes register records after upbeat company forecasts; oil drops - Reuters
-- source: Reuters
-- published_at: `2026-08-04T23:03:39+00:00`
-- importance_score: `93`
-- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
