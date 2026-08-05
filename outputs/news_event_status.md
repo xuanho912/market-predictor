@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-05T21:41:35.462273+00:00`
+- generated_at: `2026-08-05T22:39:18.388821+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `11`
@@ -29,7 +29,7 @@
 
 - headline: EXCLUSIVE: Iran threatens to hit Gulf states if US launches new strikes - Reuters
 - source: Reuters
-- published_at: `2026-08-05T19:44:24+00:00`
+- published_at: `2026-08-05T21:30:57+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -97,10 +97,10 @@
 - importance_score: `100`
 - confidence: `high`
 
-### geopolitical_risk_easing / risk_on
+### geopolitical_risk_escalation / risk_off
 
-- headline: Gulf shipping traffic steady amid uncertainty of peace talks - Reuters
+- headline: Qatar says mediators make progress in efforts to end US-Iran war - Reuters
 - source: Reuters
-- published_at: `2026-08-05T03:04:00+00:00`
-- importance_score: `92`
+- published_at: `2026-08-05T00:11:03+00:00`
+- importance_score: `100`
 - confidence: `medium`

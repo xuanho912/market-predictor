@@ -1,6 +1,6 @@
 # FRED Data Status
 
-Generated at: `2026-08-05T21:41:47.370544Z`
+Generated at: `2026-08-05T22:39:29.511072Z`
 
 ## Provider
 
@@ -8,7 +8,7 @@ Generated at: `2026-08-05T21:41:47.370544Z`
 - provider available: `True`
 - fallback used: `False`
 - rate limited: `False`
-- successful series: `HY_OAS, BAA_SPREAD, DGS10, DGS2, IG_OAS, DFII10, RECESSION, DGS3MO, FINANCIAL_STRESS`
+- successful series: `BAA_SPREAD, DGS2, IG_OAS, DGS10, HY_OAS, DGS3MO, FINANCIAL_STRESS, RECESSION, DFII10`
 - failed series: `none`
 
 ## Series
@@ -37,9 +37,9 @@ Generated at: `2026-08-05T21:41:47.370544Z`
 
 | symbol | edge without | edge with | primary without | primary with | risk expansion delta | failed bounce delta |
 |---|---|---|---|---|---:|---:|
-| SPY | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0348 | 0.0095 |
-| QQQ | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0348 | 0.0095 |
-| IWM | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0349 | 0.0095 |
+| SPY | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0347 | 0.0095 |
+| QQQ | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0347 | 0.0095 |
+| IWM | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0348 | 0.0095 |
 | DIA | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0348 | 0.0095 |
 
 ## Warning
