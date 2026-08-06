@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-06T04:33:34.567276+00:00`
+- generated_at: `2026-08-06T06:16:26.906636+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `10`
-- event_detection_confidence: `81`
+- major_event_count: `9`
+- event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,17 +27,9 @@
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters
+- headline: Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters
 - source: Reuters
-- published_at: `2026-08-06T01:12:07+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters
-- source: Reuters
-- published_at: `2026-08-06T01:07:41+00:00`
+- published_at: `2026-08-06T00:51:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 

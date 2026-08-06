@@ -8036,7 +8036,7 @@
       "evidence_note": "Forward-only breadth attribution is still below the minimum sample gate; these buckets are tracked but not proof.",
       "status": "not_enough_forward_samples"
     },
-    "generated_at": "2026-08-06T04:33:45.998032Z",
+    "generated_at": "2026-08-06T06:16:37.074313Z",
     "notes": [
       "This audit compares the same run with true breadth provider disabled vs enabled.",
       "The audit does not change Alpha v1 and does not prove tradable alpha.",
@@ -8194,7 +8194,7 @@
   },
   "breadth_status": {
     "cache_root": "data/breadth_cache",
-    "generated_at": "2026-08-06T04:33:20.693630+00:00",
+    "generated_at": "2026-08-06T06:16:13.677291+00:00",
     "provider": "true_breadth_provider",
     "sector_participation_proxy": {
       "data_note": "Sector ETF proxy, not constituent-level sector breadth.",
@@ -8697,7 +8697,7 @@
         },
         "missing_ratio": 0.0,
         "name": "S&P 500",
-        "price_source": "yfinance-incremental-cache",
+        "price_source": "local-cache-prices",
         "sample_limited": false,
         "scores": {
           "breadth_confirmation_score": 73.72,
@@ -8725,7 +8725,7 @@
   },
   "confluence_score": {
     "disclaimer": "Confluence is a forecast-confirmation layer, not a trading signal or execution recommendation.",
-    "generated_at": "2026-08-06T04:33:46.007804+00:00",
+    "generated_at": "2026-08-06T06:16:37.083429+00:00",
     "summary": {
       "average_confluence_score": 53.25,
       "mixed_or_no_edge_symbols": [
@@ -9505,10 +9505,10 @@
     "can_append_forecast_record": false,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-08-06",
-    "current_time_us_eastern": "2026-08-06T00:33:46.008546-04:00",
+    "current_time_us_eastern": "2026-08-06T02:16:37.084169-04:00",
     "data_freshness_status": "market_open_unconfirmed",
     "expected_latest_trading_date": "2026-08-05",
-    "generated_at": "2026-08-06T04:33:46.008546+00:00",
+    "generated_at": "2026-08-06T06:16:37.084169+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -10513,7 +10513,7 @@
         "expected_items": 5,
         "fallback_used": false,
         "headline_count": 40,
-        "major_event_count": 10,
+        "major_event_count": 9,
         "proxy_used": false,
         "real_data": true,
         "status": "available"
@@ -10555,7 +10555,7 @@
         "status": "available"
       }
     },
-    "generated_at": "2026-08-06T04:33:34.560087+00:00",
+    "generated_at": "2026-08-06T06:16:26.899602+00:00",
     "notes": [
       "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
       "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -11467,10 +11467,10 @@
         "symbol": "macro_event_calendar"
       },
       "news_event_provider": {
-        "event_detection_confidence": 81,
+        "event_detection_confidence": 78,
         "fallback_used": false,
         "latest_date": "2026-08-05",
-        "major_event_count": 10,
+        "major_event_count": 9,
         "missing_data": false,
         "missing_reason": null,
         "narrative": "geopolitics_escalation_risk_off",
@@ -11682,14 +11682,14 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
-        "IG_OAS",
-        "HY_OAS",
-        "BAA_SPREAD",
-        "DGS10",
-        "DGS2",
         "DGS3MO",
+        "DGS10",
+        "IG_OAS",
+        "DGS2",
+        "HY_OAS",
         "DFII10",
         "FINANCIAL_STRESS",
+        "BAA_SPREAD",
         "RECESSION"
       ],
       "freshness_warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-08-05，最近完整收盘交易日为 2026-08-05；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
@@ -11721,11 +11721,11 @@
       ],
       "news_event": {
         "available": true,
-        "event_detection_confidence": 81,
+        "event_detection_confidence": 78,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-08-06T04:33:34.567276+00:00",
-        "major_event_count": 10,
+        "last_update": "2026-08-06T06:16:26.906636+00:00",
+        "major_event_count": 9,
         "missing_reason": null,
         "news_direction": "risk_off",
         "news_event_partial": false,
@@ -11736,7 +11736,7 @@
       },
       "news_event_available": true,
       "news_event_event_risk_level": "high",
-      "news_event_major_count": 10,
+      "news_event_major_count": 9,
       "news_event_missing_reason": null,
       "news_event_narrative": "geopolitics_escalation_risk_off",
       "news_event_partial": false,
@@ -11776,7 +11776,7 @@
   },
   "event_refresh": false,
   "feature_snapshot_v2": {
-    "generated_at": "2026-08-06T04:33:34.545437+00:00",
+    "generated_at": "2026-08-06T06:16:26.886037+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -11815,13 +11815,13 @@
           "rsi_14": 63.784080721265696
         },
         "rates_liquidity": {
-          "liquidity_stress_proxy": 0.11146055686522403,
+          "liquidity_stress_proxy": 0.11146057117033878,
           "real_yield_proxy": "not_available",
           "ten_year_minus_three_month": "not_available",
           "ten_year_minus_two_year": "not_available",
-          "ten_year_yield_proxy": 4.616999626159668,
+          "ten_year_yield_proxy": 4.617000102996826,
           "tlt_return_20d": -0.016121391660880113,
-          "tnx_change_20d": 0.04799985885620117,
+          "tnx_change_20d": 0.048000335693359375,
           "two_year_yield": "not_available",
           "uup_return_20d": -0.009520467276193267
         },
@@ -11873,13 +11873,13 @@
           "rsi_14": 55.53789151764993
         },
         "rates_liquidity": {
-          "liquidity_stress_proxy": 0.11146055686522403,
+          "liquidity_stress_proxy": 0.11146057117033878,
           "real_yield_proxy": "not_available",
           "ten_year_minus_three_month": "not_available",
           "ten_year_minus_two_year": "not_available",
-          "ten_year_yield_proxy": 4.616999626159668,
+          "ten_year_yield_proxy": 4.617000102996826,
           "tlt_return_20d": -0.016121391660880113,
-          "tnx_change_20d": 0.04799985885620117,
+          "tnx_change_20d": 0.048000335693359375,
           "two_year_yield": "not_available",
           "uup_return_20d": -0.009520467276193267
         },
@@ -11931,13 +11931,13 @@
           "rsi_14": 54.05250873113335
         },
         "rates_liquidity": {
-          "liquidity_stress_proxy": 0.11146055686522403,
+          "liquidity_stress_proxy": 0.11146057117033878,
           "real_yield_proxy": "not_available",
           "ten_year_minus_three_month": "not_available",
           "ten_year_minus_two_year": "not_available",
-          "ten_year_yield_proxy": 4.616999626159668,
+          "ten_year_yield_proxy": 4.617000102996826,
           "tlt_return_20d": -0.016121391660880113,
-          "tnx_change_20d": 0.04799985885620117,
+          "tnx_change_20d": 0.048000335693359375,
           "two_year_yield": "not_available",
           "uup_return_20d": -0.009520467276193267
         },
@@ -11989,13 +11989,13 @@
           "rsi_14": 61.570206005754684
         },
         "rates_liquidity": {
-          "liquidity_stress_proxy": 0.11146055686522403,
+          "liquidity_stress_proxy": 0.11146057117033878,
           "real_yield_proxy": "not_available",
           "ten_year_minus_three_month": "not_available",
           "ten_year_minus_two_year": "not_available",
-          "ten_year_yield_proxy": 4.616999626159668,
+          "ten_year_yield_proxy": 4.617000102996826,
           "tlt_return_20d": -0.016121391660880113,
-          "tnx_change_20d": 0.04799985885620117,
+          "tnx_change_20d": 0.048000335693359375,
           "two_year_yield": "not_available",
           "uup_return_20d": -0.009520467276193267
         },
@@ -12014,7 +12014,7 @@
     "version": "market_intelligence_engine_v2_features"
   },
   "feature_snapshot_v3": {
-    "generated_at": "2026-08-06T04:33:34.551601+00:00",
+    "generated_at": "2026-08-06T06:16:26.891701+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -12174,11 +12174,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.3,
           "top_headlines": [
+            "Trump reiterates his positive portrayal of Iran talks - Reuters",
             "Yen and dollar drift on Iran deal concerns, payroll jitters - Reuters",
             "Asia shares ease on tech pullback, oil stable as Iran talks stay in focus - Reuters",
-            "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
-            "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-            "Dow closes at record on Mideast optimism; SpaceX, AMD drag Nasdaq - Reuters"
+            "Oil prices slip as Iran cites progress with Oman on Hormuz agreement - Reuters",
+            "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters"
           ]
         },
         "price": {
@@ -12410,11 +12410,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.3,
           "top_headlines": [
+            "Trump reiterates his positive portrayal of Iran talks - Reuters",
             "Yen and dollar drift on Iran deal concerns, payroll jitters - Reuters",
             "Asia shares ease on tech pullback, oil stable as Iran talks stay in focus - Reuters",
-            "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
-            "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-            "Dow closes at record on Mideast optimism; SpaceX, AMD drag Nasdaq - Reuters"
+            "Oil prices slip as Iran cites progress with Oman on Hormuz agreement - Reuters",
+            "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters"
           ]
         },
         "price": {
@@ -12646,11 +12646,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.3,
           "top_headlines": [
+            "Trump reiterates his positive portrayal of Iran talks - Reuters",
             "Yen and dollar drift on Iran deal concerns, payroll jitters - Reuters",
             "Asia shares ease on tech pullback, oil stable as Iran talks stay in focus - Reuters",
-            "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
-            "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-            "Dow closes at record on Mideast optimism; SpaceX, AMD drag Nasdaq - Reuters"
+            "Oil prices slip as Iran cites progress with Oman on Hormuz agreement - Reuters",
+            "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters"
           ]
         },
         "price": {
@@ -12882,11 +12882,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.3,
           "top_headlines": [
+            "Trump reiterates his positive portrayal of Iran talks - Reuters",
             "Yen and dollar drift on Iran deal concerns, payroll jitters - Reuters",
             "Asia shares ease on tech pullback, oil stable as Iran talks stay in focus - Reuters",
-            "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
-            "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-            "Dow closes at record on Mideast optimism; SpaceX, AMD drag Nasdaq - Reuters"
+            "Oil prices slip as Iran cites progress with Oman on Hormuz agreement - Reuters",
+            "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters"
           ]
         },
         "price": {
@@ -12964,7 +12964,7 @@
     "version": "market_intelligence_engine_v3_features"
   },
   "flow_positioning_status": {
-    "generated_at": "2026-08-06T04:33:27.298104+00:00",
+    "generated_at": "2026-08-06T06:16:19.830164+00:00",
     "latest_date": "2026-08-05",
     "provider": "flow_positioning_proxy",
     "sources": {
@@ -13415,7 +13415,7 @@
     ]
   },
   "flow_status": {
-    "generated_at": "2026-08-06T04:33:27.298104+00:00",
+    "generated_at": "2026-08-06T06:16:19.830164+00:00",
     "latest_date": "2026-08-05",
     "provider": "flow_positioning_proxy",
     "sources": {
@@ -15082,7 +15082,7 @@
       "primary_beats_secondary": "primary_path_not_better_than_secondary"
     },
     "current_evidence_level": "stronger_evidence",
-    "generated_at": "2026-08-06T04:33:46.361757+00:00",
+    "generated_at": "2026-08-06T06:16:37.425656+00:00",
     "guardrails": [
       "This scorecard validates probabilistic forecast paths, not trades.",
       "Forecast records are immutable except for future-outcome backfill fields.",
@@ -15198,7 +15198,7 @@
       "risk_on_flow_underweighted": 26,
       "volatility_repair_underweighted": 42
     },
-    "generated_at": "2026-08-06T04:33:46.482449+00:00",
+    "generated_at": "2026-08-06T06:16:37.541056+00:00",
     "guardrails": [
       "This is forecast error attribution, not a trading or PnL report.",
       "Attribution is diagnostic and probabilistic; it is not proof of causality.",
@@ -19273,7 +19273,7 @@
     },
     "dominant_error_theme": "news_data_gap_limited_attribution",
     "evidence_level": "stronger_evidence",
-    "generated_at": "2026-08-06T04:33:46.504844+00:00",
+    "generated_at": "2026-08-06T06:16:37.562221+00:00",
     "global_learning_status": "shadow_challenger_queue_ready",
     "guardrails": [
       "This queue does not change baseline_v1 or Alpha v1.",
@@ -19306,7 +19306,7 @@
     },
     "data_freshness_status": "market_open_unconfirmed",
     "expected_latest_trading_date": "2026-08-05",
-    "generated_at": "2026-08-06T04:33:46.323033Z",
+    "generated_at": "2026-08-06T06:16:37.388287Z",
     "immutability_note": "The dashboard may refresh a snapshot, but baseline_v1 forecast records are appended only after data freshness is confirmed.",
     "latest_market_date": "2026-08-05",
     "ledger_append_skipped": true,
@@ -19324,7 +19324,7 @@
   "forecast_price_levels": {
     "as_of": "2026-08-05",
     "disclaimer": "Forecast price levels are probabilistic scenario points derived from simulated paths, recent price structure and volatility bands. They are not execution instructions, risk-control rules, or guaranteed target prices.",
-    "generated_at": "2026-08-06T04:33:46.002803Z",
+    "generated_at": "2026-08-06T06:16:37.078684Z",
     "symbols": {
       "DIA": {
         "current_price": 542.8099975585938,
@@ -21067,7 +21067,7 @@
     "version": "forecast_price_levels_v1"
   },
   "forecast_records": {
-    "generated_at": "2026-08-06T04:33:46.345045+00:00",
+    "generated_at": "2026-08-06T06:16:37.409528+00:00",
     "records": [
       {
         "actual_return_10d": 0.01680114442,
@@ -42524,7 +42524,7 @@
       "5d": 132,
       "60d": 0
     },
-    "generated_at": "2026-08-06T04:33:46.504767+00:00",
+    "generated_at": "2026-08-06T06:16:37.562156+00:00",
     "guardrails": [
       "This gate does not modify Alpha v1 threshold, baseline_v1 or historical forecast records.",
       "This is forecast reliability assessment, not trading advice.",
@@ -44140,7 +44140,7 @@
     },
     "forward_completed_sample_size": 0,
     "forward_validation_notice": "当前高置信度还没有被前向样本验证，不应当视为稳定预测能力。",
-    "generated_at": "2026-08-06T04:33:34.563056+00:00",
+    "generated_at": "2026-08-06T06:16:26.902459+00:00",
     "internal_resonance_forward_validation": {
       "aligned_internal_resonance": {
         "by_horizon": {
@@ -45101,7 +45101,7 @@
       }
     },
     "conclusion": "confidence_useful_proxy",
-    "generated_at": "2026-08-06T04:33:34.559338+00:00",
+    "generated_at": "2026-08-06T06:16:26.898901+00:00",
     "high_confidence_better_than_low_confidence": true,
     "high_vs_low_comparison_by_horizon": {
       "10d": true,
@@ -47512,7 +47512,7 @@
       "note": "Historical replay cannot upgrade alpha or confidence until forward validation samples mature.",
       "sample_gate": "stronger_evidence"
     },
-    "generated_at": "2026-08-06T04:33:46.502192+00:00",
+    "generated_at": "2026-08-06T06:16:37.559759+00:00",
     "guardrails": [
       "Historical replay is research evaluation only and cannot replace daily forward validation.",
       "Historical replay results must not be described as confirmed alpha.",
@@ -49041,7 +49041,7 @@
   },
   "market_alerts": {
     "disclaimer": "Market alerts are forecast warnings and scenario-confirmation notes only. They are not trading signals or buy/sell/entry/exit guidance.",
-    "generated_at": "2026-08-06T04:33:46.008458+00:00",
+    "generated_at": "2026-08-06T06:16:37.084080+00:00",
     "summary": {
       "alert_count_by_level": {
         "EXTREME": 0,
@@ -52338,7 +52338,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-08-06T04:33:34.544468+00:00",
+      "generated_at": "2026-08-06T06:16:26.885142+00:00",
       "notes": [
         "price/volatility/credit/rates/liquidity currently use public market proxies.",
         "options breadth macro flow are not treated as available unless real feeds are connected.",
@@ -52474,7 +52474,7 @@
       }
     },
     "feature_snapshot_v2": {
-      "generated_at": "2026-08-06T04:33:34.545437+00:00",
+      "generated_at": "2026-08-06T06:16:26.886037+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -52513,13 +52513,13 @@
             "rsi_14": 63.784080721265696
           },
           "rates_liquidity": {
-            "liquidity_stress_proxy": 0.11146055686522403,
+            "liquidity_stress_proxy": 0.11146057117033878,
             "real_yield_proxy": "not_available",
             "ten_year_minus_three_month": "not_available",
             "ten_year_minus_two_year": "not_available",
-            "ten_year_yield_proxy": 4.616999626159668,
+            "ten_year_yield_proxy": 4.617000102996826,
             "tlt_return_20d": -0.016121391660880113,
-            "tnx_change_20d": 0.04799985885620117,
+            "tnx_change_20d": 0.048000335693359375,
             "two_year_yield": "not_available",
             "uup_return_20d": -0.009520467276193267
           },
@@ -52571,13 +52571,13 @@
             "rsi_14": 55.53789151764993
           },
           "rates_liquidity": {
-            "liquidity_stress_proxy": 0.11146055686522403,
+            "liquidity_stress_proxy": 0.11146057117033878,
             "real_yield_proxy": "not_available",
             "ten_year_minus_three_month": "not_available",
             "ten_year_minus_two_year": "not_available",
-            "ten_year_yield_proxy": 4.616999626159668,
+            "ten_year_yield_proxy": 4.617000102996826,
             "tlt_return_20d": -0.016121391660880113,
-            "tnx_change_20d": 0.04799985885620117,
+            "tnx_change_20d": 0.048000335693359375,
             "two_year_yield": "not_available",
             "uup_return_20d": -0.009520467276193267
           },
@@ -52629,13 +52629,13 @@
             "rsi_14": 54.05250873113335
           },
           "rates_liquidity": {
-            "liquidity_stress_proxy": 0.11146055686522403,
+            "liquidity_stress_proxy": 0.11146057117033878,
             "real_yield_proxy": "not_available",
             "ten_year_minus_three_month": "not_available",
             "ten_year_minus_two_year": "not_available",
-            "ten_year_yield_proxy": 4.616999626159668,
+            "ten_year_yield_proxy": 4.617000102996826,
             "tlt_return_20d": -0.016121391660880113,
-            "tnx_change_20d": 0.04799985885620117,
+            "tnx_change_20d": 0.048000335693359375,
             "two_year_yield": "not_available",
             "uup_return_20d": -0.009520467276193267
           },
@@ -52687,13 +52687,13 @@
             "rsi_14": 61.570206005754684
           },
           "rates_liquidity": {
-            "liquidity_stress_proxy": 0.11146055686522403,
+            "liquidity_stress_proxy": 0.11146057117033878,
             "real_yield_proxy": "not_available",
             "ten_year_minus_three_month": "not_available",
             "ten_year_minus_two_year": "not_available",
-            "ten_year_yield_proxy": 4.616999626159668,
+            "ten_year_yield_proxy": 4.617000102996826,
             "tlt_return_20d": -0.016121391660880113,
-            "tnx_change_20d": 0.04799985885620117,
+            "tnx_change_20d": 0.048000335693359375,
             "two_year_yield": "not_available",
             "uup_return_20d": -0.009520467276193267
           },
@@ -52711,7 +52711,7 @@
       },
       "version": "market_intelligence_engine_v2_features"
     },
-    "generated_at": "2026-08-06T04:33:34.546013+00:00",
+    "generated_at": "2026-08-06T06:16:26.886552+00:00",
     "model_confidence_by_symbol": {
       "DIA": {
         "components": {
@@ -52907,7 +52907,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-08-06T04:33:34.555197+00:00",
+      "generated_at": "2026-08-06T06:16:26.894848+00:00",
       "notes": [
         "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
         "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -54036,7 +54036,7 @@
       }
     },
     "feature_snapshot_v3": {
-      "generated_at": "2026-08-06T04:33:34.551601+00:00",
+      "generated_at": "2026-08-06T06:16:26.891701+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -54196,11 +54196,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.3,
             "top_headlines": [
+              "Trump reiterates his positive portrayal of Iran talks - Reuters",
               "Yen and dollar drift on Iran deal concerns, payroll jitters - Reuters",
               "Asia shares ease on tech pullback, oil stable as Iran talks stay in focus - Reuters",
-              "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
-              "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-              "Dow closes at record on Mideast optimism; SpaceX, AMD drag Nasdaq - Reuters"
+              "Oil prices slip as Iran cites progress with Oman on Hormuz agreement - Reuters",
+              "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters"
             ]
           },
           "price": {
@@ -54432,11 +54432,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.3,
             "top_headlines": [
+              "Trump reiterates his positive portrayal of Iran talks - Reuters",
               "Yen and dollar drift on Iran deal concerns, payroll jitters - Reuters",
               "Asia shares ease on tech pullback, oil stable as Iran talks stay in focus - Reuters",
-              "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
-              "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-              "Dow closes at record on Mideast optimism; SpaceX, AMD drag Nasdaq - Reuters"
+              "Oil prices slip as Iran cites progress with Oman on Hormuz agreement - Reuters",
+              "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters"
             ]
           },
           "price": {
@@ -54668,11 +54668,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.3,
             "top_headlines": [
+              "Trump reiterates his positive portrayal of Iran talks - Reuters",
               "Yen and dollar drift on Iran deal concerns, payroll jitters - Reuters",
               "Asia shares ease on tech pullback, oil stable as Iran talks stay in focus - Reuters",
-              "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
-              "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-              "Dow closes at record on Mideast optimism; SpaceX, AMD drag Nasdaq - Reuters"
+              "Oil prices slip as Iran cites progress with Oman on Hormuz agreement - Reuters",
+              "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters"
             ]
           },
           "price": {
@@ -54904,11 +54904,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.3,
             "top_headlines": [
+              "Trump reiterates his positive portrayal of Iran talks - Reuters",
               "Yen and dollar drift on Iran deal concerns, payroll jitters - Reuters",
               "Asia shares ease on tech pullback, oil stable as Iran talks stay in focus - Reuters",
-              "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
-              "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-              "Dow closes at record on Mideast optimism; SpaceX, AMD drag Nasdaq - Reuters"
+              "Oil prices slip as Iran cites progress with Oman on Hormuz agreement - Reuters",
+              "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters"
             ]
           },
           "price": {
@@ -55021,18 +55021,18 @@
       "fred_missing": false,
       "fred_rate_limited": false,
       "fred_successful_series": [
-        "IG_OAS",
-        "HY_OAS",
-        "BAA_SPREAD",
-        "DGS10",
-        "DGS2",
         "DGS3MO",
+        "DGS10",
+        "IG_OAS",
+        "DGS2",
+        "HY_OAS",
         "DFII10",
         "FINANCIAL_STRESS",
+        "BAA_SPREAD",
         "RECESSION"
       ]
     },
-    "generated_at": "2026-08-06T04:33:34.559361+00:00",
+    "generated_at": "2026-08-06T06:16:26.898921+00:00",
     "high_confidence_signal_report": {
       "by_bucket": {
         "low_confidence_reference": {
@@ -55646,7 +55646,7 @@
         }
       },
       "conclusion": "confidence_useful_proxy",
-      "generated_at": "2026-08-06T04:33:34.559338+00:00",
+      "generated_at": "2026-08-06T06:16:26.898901+00:00",
       "high_confidence_better_than_low_confidence": true,
       "high_vs_low_comparison_by_horizon": {
         "10d": true,
@@ -56480,7 +56480,7 @@
         "evidence_note": "Forward-only breadth attribution is still below the minimum sample gate; these buckets are tracked but not proof.",
         "status": "not_enough_forward_samples"
       },
-      "generated_at": "2026-08-06T04:33:45.998032Z",
+      "generated_at": "2026-08-06T06:16:37.074313Z",
       "notes": [
         "This audit compares the same run with true breadth provider disabled vs enabled.",
         "The audit does not change Alpha v1 and does not prove tradable alpha.",
@@ -56708,7 +56708,7 @@
           "expected_items": 5,
           "fallback_used": false,
           "headline_count": 40,
-          "major_event_count": 10,
+          "major_event_count": 9,
           "proxy_used": false,
           "real_data": true,
           "status": "available"
@@ -56750,7 +56750,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-08-06T04:33:34.560087+00:00",
+      "generated_at": "2026-08-06T06:16:26.899602+00:00",
       "notes": [
         "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
         "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -57662,10 +57662,10 @@
           "symbol": "macro_event_calendar"
         },
         "news_event_provider": {
-          "event_detection_confidence": 81,
+          "event_detection_confidence": 78,
           "fallback_used": false,
           "latest_date": "2026-08-05",
-          "major_event_count": 10,
+          "major_event_count": 9,
           "missing_data": false,
           "missing_reason": null,
           "narrative": "geopolitics_escalation_risk_off",
@@ -57877,14 +57877,14 @@
         "fred_rate_limited": false,
         "fred_required": true,
         "fred_successful_series": [
-          "IG_OAS",
-          "HY_OAS",
-          "BAA_SPREAD",
-          "DGS10",
-          "DGS2",
           "DGS3MO",
+          "DGS10",
+          "IG_OAS",
+          "DGS2",
+          "HY_OAS",
           "DFII10",
           "FINANCIAL_STRESS",
+          "BAA_SPREAD",
           "RECESSION"
         ],
         "freshness_warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-08-05，最近完整收盘交易日为 2026-08-05；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
@@ -57916,11 +57916,11 @@
         ],
         "news_event": {
           "available": true,
-          "event_detection_confidence": 81,
+          "event_detection_confidence": 78,
           "event_risk_level": "high",
           "headline_count": 40,
-          "last_update": "2026-08-06T04:33:34.567276+00:00",
-          "major_event_count": 10,
+          "last_update": "2026-08-06T06:16:26.906636+00:00",
+          "major_event_count": 9,
           "missing_reason": null,
           "news_direction": "risk_off",
           "news_event_partial": false,
@@ -57931,7 +57931,7 @@
         },
         "news_event_available": true,
         "news_event_event_risk_level": "high",
-        "news_event_major_count": 10,
+        "news_event_major_count": 9,
         "news_event_missing_reason": null,
         "news_event_narrative": "geopolitics_escalation_risk_off",
         "news_event_partial": false,
@@ -58130,18 +58130,18 @@
       "fallback_used": false,
       "rate_limited": false,
       "successful_series": [
-        "IG_OAS",
-        "HY_OAS",
-        "BAA_SPREAD",
-        "DGS10",
-        "DGS2",
         "DGS3MO",
+        "DGS10",
+        "IG_OAS",
+        "DGS2",
+        "HY_OAS",
         "DFII10",
         "FINANCIAL_STRESS",
+        "BAA_SPREAD",
         "RECESSION"
       ]
     },
-    "generated_at": "2026-08-06T04:33:34.567261+00:00",
+    "generated_at": "2026-08-06T06:16:26.906624+00:00",
     "high_confidence_edge_report": {
       "breadth_forward_validation": {
         "bounce_with_breadth_support": {
@@ -59592,7 +59592,7 @@
       },
       "forward_completed_sample_size": 0,
       "forward_validation_notice": "当前高置信度还没有被前向样本验证，不应当视为稳定预测能力。",
-      "generated_at": "2026-08-06T04:33:34.563056+00:00",
+      "generated_at": "2026-08-06T06:16:26.902459+00:00",
       "internal_resonance_forward_validation": {
         "aligned_internal_resonance": {
           "by_horizon": {
@@ -60034,16 +60034,16 @@
         "source": "finnhub",
         "status": "failed"
       },
-      "event_detection_confidence": 81,
+      "event_detection_confidence": 78,
       "event_risk_level": "high",
-      "generated_at": "2026-08-06T04:33:34.567276+00:00",
+      "generated_at": "2026-08-06T06:16:26.906636+00:00",
       "limits": [
         "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
         "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
         "The provider never exposes API keys and never lets frontend call Finnhub directly.",
         "Economic calendar items are treated as event-risk context, not automatic directional forecasts."
       ],
-      "major_event_count": 10,
+      "major_event_count": 9,
       "major_events": [
         {
           "affected_assets": [
@@ -60068,43 +60068,12 @@
           "event_type": "geopolitical_risk_easing",
           "expected_horizon": "1d-5d",
           "expected_market_direction": "risk_on",
-          "freshness_score": 92,
-          "headline": "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
+          "freshness_score": 87,
+          "headline": "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_easing_risk_on",
           "provider": "finnhub",
-          "published_at": "2026-08-06T01:12:07+00:00",
-          "source": "Reuters"
-        },
-        {
-          "affected_assets": [
-            "SPY",
-            "QQQ",
-            "IWM",
-            "DIA",
-            "^VIX",
-            "HYG",
-            "LQD",
-            "USO",
-            "CL=F",
-            "UUP",
-            "ES=F",
-            "NQ=F"
-          ],
-          "confidence": "high",
-          "confidence_score": 98,
-          "detected_event_conditions": [
-            "geopolitical_risk_easing"
-          ],
-          "event_type": "geopolitical_risk_easing",
-          "expected_horizon": "1d-5d",
-          "expected_market_direction": "risk_on",
-          "freshness_score": 92,
-          "headline": "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-          "importance_score": 100,
-          "narrative": "geopolitics_easing_risk_on",
-          "provider": "finnhub",
-          "published_at": "2026-08-06T01:07:41+00:00",
+          "published_at": "2026-08-06T00:51:00+00:00",
           "source": "Reuters"
         },
         {
@@ -60119,14 +60088,14 @@
             "TLT"
           ],
           "confidence": "high",
-          "confidence_score": 77,
+          "confidence_score": 76,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 83,
+          "freshness_score": 79,
           "headline": "EXCLUSIVE: Iran threatens to hit Gulf states if US launches new strikes - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -60146,14 +60115,14 @@
             "TLT"
           ],
           "confidence": "high",
-          "confidence_score": 94,
+          "confidence_score": 93,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 78,
+          "freshness_score": 74,
           "headline": "Israeli military strikes southern Lebanon after evacuation warning to village - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -60173,14 +60142,14 @@
             "TLT"
           ],
           "confidence": "high",
-          "confidence_score": 76,
+          "confidence_score": 75,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 76,
+          "freshness_score": 72,
           "headline": "Phillips 66 beats quarterly estimates as Iran war boosts US refining margins - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -60200,14 +60169,14 @@
             "TLT"
           ],
           "confidence": "high",
-          "confidence_score": 76,
+          "confidence_score": 75,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 76,
+          "freshness_score": 72,
           "headline": "Yemen's Houthis say they attacked Saudi oil tankers in Red Sea, Gulf of Aden - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -60227,14 +60196,14 @@
             "TLT"
           ],
           "confidence": "high",
-          "confidence_score": 76,
+          "confidence_score": 75,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 76,
+          "freshness_score": 72,
           "headline": "Gulf oil exports steady in July, still 40% below pre-war mark - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -60254,14 +60223,14 @@
             "TLT"
           ],
           "confidence": "medium",
-          "confidence_score": 73,
+          "confidence_score": 72,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 64,
+          "freshness_score": 60,
           "headline": "World faces fresh food price surge, FAO warns - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -60281,14 +60250,14 @@
             "TLT"
           ],
           "confidence": "medium",
-          "confidence_score": 73,
+          "confidence_score": 71,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 64,
+          "freshness_score": 59,
           "headline": "Situational Awareness hedge fund meltdown was a warning shot for leveraged markets, BofA CEO says",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -60308,14 +60277,14 @@
             "TLT"
           ],
           "confidence": "medium",
-          "confidence_score": 70,
+          "confidence_score": 69,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 53,
+          "freshness_score": 49,
           "headline": "Euro zone services revival drives activity in July but outlook clouded by Iran war - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -60342,21 +60311,9 @@
             ],
             "event_type": "geopolitical_risk_easing",
             "expected_market_direction": "risk_on",
-            "headline": "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
+            "headline": "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters",
             "importance_score": 100,
-            "published_at": "2026-08-06T01:12:07+00:00",
-            "source": "Reuters"
-          },
-          {
-            "confidence": "high",
-            "detected_event_conditions": [
-              "geopolitical_risk_easing"
-            ],
-            "event_type": "geopolitical_risk_easing",
-            "expected_market_direction": "risk_on",
-            "headline": "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-            "importance_score": 100,
-            "published_at": "2026-08-06T01:07:41+00:00",
+            "published_at": "2026-08-06T00:51:00+00:00",
             "source": "Reuters"
           }
         ],
@@ -60448,7 +60405,7 @@
         "direction": "supports_risk_expansion",
         "event_risk_level": "high",
         "macro_event_risk_flag": false,
-        "major_event_count": 10,
+        "major_event_count": 9,
         "not_a_trading_signal": true,
         "price_reaction_confirmed": false,
         "symbols": {
@@ -60587,7 +60544,7 @@
       "price_reaction_confirmation": {
         "asset_reaction_summary": {
           "avg_equity_1d_return": -0.0033,
-          "avg_equity_futures_1d_return": 0.0009,
+          "avg_equity_futures_1d_return": 0.0007,
           "confirmed_checks": [
             "股票ETF或股指期货下跌",
             "HYG/LQD 走弱"
@@ -60603,7 +60560,7 @@
             "美元走强"
           ],
           "hyg_lqd_1d_relative_return": -0.0002,
-          "oil_proxy_1d_return": -0.007,
+          "oil_proxy_1d_return": -0.0053,
           "oil_proxy_symbols_used": [
             "USO",
             "CL=F"
@@ -60630,7 +60587,7 @@
           "status": "available"
         },
         "gdelt_public_news": {
-          "error_type": "HTTPError",
+          "error_type": "URLError",
           "source": "gdelt",
           "stale": false,
           "status": "failed"
@@ -60716,7 +60673,7 @@
       "direction": "supports_risk_expansion",
       "event_risk_level": "high",
       "macro_event_risk_flag": false,
-      "major_event_count": 10,
+      "major_event_count": 9,
       "not_a_trading_signal": true,
       "price_reaction_confirmed": false,
       "symbols": {
@@ -62524,7 +62481,7 @@
         "status": "insufficient_forward_samples"
       }
     },
-    "generated_at": "2026-08-06T04:33:46.563497+00:00",
+    "generated_at": "2026-08-06T06:16:37.617554+00:00",
     "guardrails": [
       "Alpha v1 threshold remains frozen at 0.32534311.",
       "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -63351,7 +63308,7 @@
   },
   "model_promotion_status": {
     "active_model_version": "baseline_v1",
-    "generated_at": "2026-08-06T04:33:46.563582+00:00",
+    "generated_at": "2026-08-06T06:16:37.617626+00:00",
     "guardrails": [
       "Alpha v1 threshold remains frozen at 0.32534311.",
       "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -63526,16 +63483,16 @@
       "source": "finnhub",
       "status": "failed"
     },
-    "event_detection_confidence": 81,
+    "event_detection_confidence": 78,
     "event_risk_level": "high",
-    "generated_at": "2026-08-06T04:33:34.567276+00:00",
+    "generated_at": "2026-08-06T06:16:26.906636+00:00",
     "limits": [
       "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
       "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
       "The provider never exposes API keys and never lets frontend call Finnhub directly.",
       "Economic calendar items are treated as event-risk context, not automatic directional forecasts."
     ],
-    "major_event_count": 10,
+    "major_event_count": 9,
     "major_events": [
       {
         "affected_assets": [
@@ -63560,43 +63517,12 @@
         "event_type": "geopolitical_risk_easing",
         "expected_horizon": "1d-5d",
         "expected_market_direction": "risk_on",
-        "freshness_score": 92,
-        "headline": "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
+        "freshness_score": 87,
+        "headline": "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_easing_risk_on",
         "provider": "finnhub",
-        "published_at": "2026-08-06T01:12:07+00:00",
-        "source": "Reuters"
-      },
-      {
-        "affected_assets": [
-          "SPY",
-          "QQQ",
-          "IWM",
-          "DIA",
-          "^VIX",
-          "HYG",
-          "LQD",
-          "USO",
-          "CL=F",
-          "UUP",
-          "ES=F",
-          "NQ=F"
-        ],
-        "confidence": "high",
-        "confidence_score": 98,
-        "detected_event_conditions": [
-          "geopolitical_risk_easing"
-        ],
-        "event_type": "geopolitical_risk_easing",
-        "expected_horizon": "1d-5d",
-        "expected_market_direction": "risk_on",
-        "freshness_score": 92,
-        "headline": "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-        "importance_score": 100,
-        "narrative": "geopolitics_easing_risk_on",
-        "provider": "finnhub",
-        "published_at": "2026-08-06T01:07:41+00:00",
+        "published_at": "2026-08-06T00:51:00+00:00",
         "source": "Reuters"
       },
       {
@@ -63611,14 +63537,14 @@
           "TLT"
         ],
         "confidence": "high",
-        "confidence_score": 77,
+        "confidence_score": 76,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 83,
+        "freshness_score": 79,
         "headline": "EXCLUSIVE: Iran threatens to hit Gulf states if US launches new strikes - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -63638,14 +63564,14 @@
           "TLT"
         ],
         "confidence": "high",
-        "confidence_score": 94,
+        "confidence_score": 93,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 78,
+        "freshness_score": 74,
         "headline": "Israeli military strikes southern Lebanon after evacuation warning to village - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -63665,14 +63591,14 @@
           "TLT"
         ],
         "confidence": "high",
-        "confidence_score": 76,
+        "confidence_score": 75,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 76,
+        "freshness_score": 72,
         "headline": "Phillips 66 beats quarterly estimates as Iran war boosts US refining margins - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -63692,14 +63618,14 @@
           "TLT"
         ],
         "confidence": "high",
-        "confidence_score": 76,
+        "confidence_score": 75,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 76,
+        "freshness_score": 72,
         "headline": "Yemen's Houthis say they attacked Saudi oil tankers in Red Sea, Gulf of Aden - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -63719,14 +63645,14 @@
           "TLT"
         ],
         "confidence": "high",
-        "confidence_score": 76,
+        "confidence_score": 75,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 76,
+        "freshness_score": 72,
         "headline": "Gulf oil exports steady in July, still 40% below pre-war mark - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -63746,14 +63672,14 @@
           "TLT"
         ],
         "confidence": "medium",
-        "confidence_score": 73,
+        "confidence_score": 72,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 64,
+        "freshness_score": 60,
         "headline": "World faces fresh food price surge, FAO warns - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -63773,14 +63699,14 @@
           "TLT"
         ],
         "confidence": "medium",
-        "confidence_score": 73,
+        "confidence_score": 71,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 64,
+        "freshness_score": 59,
         "headline": "Situational Awareness hedge fund meltdown was a warning shot for leveraged markets, BofA CEO says",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -63800,14 +63726,14 @@
           "TLT"
         ],
         "confidence": "medium",
-        "confidence_score": 70,
+        "confidence_score": 69,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 53,
+        "freshness_score": 49,
         "headline": "Euro zone services revival drives activity in July but outlook clouded by Iran war - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -63834,21 +63760,9 @@
           ],
           "event_type": "geopolitical_risk_easing",
           "expected_market_direction": "risk_on",
-          "headline": "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
+          "headline": "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters",
           "importance_score": 100,
-          "published_at": "2026-08-06T01:12:07+00:00",
-          "source": "Reuters"
-        },
-        {
-          "confidence": "high",
-          "detected_event_conditions": [
-            "geopolitical_risk_easing"
-          ],
-          "event_type": "geopolitical_risk_easing",
-          "expected_market_direction": "risk_on",
-          "headline": "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-08-06T01:07:41+00:00",
+          "published_at": "2026-08-06T00:51:00+00:00",
           "source": "Reuters"
         }
       ],
@@ -63940,7 +63854,7 @@
       "direction": "supports_risk_expansion",
       "event_risk_level": "high",
       "macro_event_risk_flag": false,
-      "major_event_count": 10,
+      "major_event_count": 9,
       "not_a_trading_signal": true,
       "price_reaction_confirmed": false,
       "symbols": {
@@ -64079,7 +63993,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": -0.0033,
-        "avg_equity_futures_1d_return": 0.0009,
+        "avg_equity_futures_1d_return": 0.0007,
         "confirmed_checks": [
           "股票ETF或股指期货下跌",
           "HYG/LQD 走弱"
@@ -64095,7 +64009,7 @@
           "美元走强"
         ],
         "hyg_lqd_1d_relative_return": -0.0002,
-        "oil_proxy_1d_return": -0.007,
+        "oil_proxy_1d_return": -0.0053,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -64122,7 +64036,7 @@
         "status": "available"
       },
       "gdelt_public_news": {
-        "error_type": "HTTPError",
+        "error_type": "URLError",
         "source": "gdelt",
         "stale": false,
         "status": "failed"
@@ -64204,7 +64118,7 @@
     "version": "news_event_intelligence_v1"
   },
   "options_status": {
-    "generated_at": "2026-08-06T04:33:27.291992+00:00",
+    "generated_at": "2026-08-06T06:16:19.823532+00:00",
     "market": {
       "failed_bounce_options_risk": 0.1288,
       "gamma_exposure": null,
@@ -64500,10 +64414,10 @@
       "can_append_forecast_record": false,
       "can_backfill_completed_outcomes": true,
       "current_date": "2026-08-06",
-      "current_time_us_eastern": "2026-08-06T00:33:46.008546-04:00",
+      "current_time_us_eastern": "2026-08-06T02:16:37.084169-04:00",
       "data_freshness_status": "market_open_unconfirmed",
       "expected_latest_trading_date": "2026-08-05",
-      "generated_at": "2026-08-06T04:33:46.008546+00:00",
+      "generated_at": "2026-08-06T06:16:37.084169+00:00",
       "guardrails": [
         "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
         "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -65542,14 +65456,14 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
-        "IG_OAS",
-        "HY_OAS",
-        "BAA_SPREAD",
-        "DGS10",
-        "DGS2",
         "DGS3MO",
+        "DGS10",
+        "IG_OAS",
+        "DGS2",
+        "HY_OAS",
         "DFII10",
         "FINANCIAL_STRESS",
+        "BAA_SPREAD",
         "RECESSION"
       ],
       "freshness_warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-08-05，最近完整收盘交易日为 2026-08-05；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
@@ -65581,11 +65495,11 @@
       ],
       "news_event": {
         "available": true,
-        "event_detection_confidence": 81,
+        "event_detection_confidence": 78,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-08-06T04:33:34.567276+00:00",
-        "major_event_count": 10,
+        "last_update": "2026-08-06T06:16:26.906636+00:00",
+        "major_event_count": 9,
         "missing_reason": null,
         "news_direction": "risk_off",
         "news_event_partial": false,
@@ -65596,7 +65510,7 @@
       },
       "news_event_available": true,
       "news_event_event_risk_level": "high",
-      "news_event_major_count": 10,
+      "news_event_major_count": 9,
       "news_event_missing_reason": null,
       "news_event_narrative": "geopolitics_escalation_risk_off",
       "news_event_partial": false,
@@ -65809,7 +65723,7 @@
         "status": "failed"
       },
       "event_risk_level": "high",
-      "major_event_count": 10,
+      "major_event_count": 9,
       "market_narrative": {
         "affected_scenarios": [
           "bearish_path"
@@ -65828,21 +65742,9 @@
             ],
             "event_type": "geopolitical_risk_easing",
             "expected_market_direction": "risk_on",
-            "headline": "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
+            "headline": "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters",
             "importance_score": 100,
-            "published_at": "2026-08-06T01:12:07+00:00",
-            "source": "Reuters"
-          },
-          {
-            "confidence": "high",
-            "detected_event_conditions": [
-              "geopolitical_risk_easing"
-            ],
-            "event_type": "geopolitical_risk_easing",
-            "expected_market_direction": "risk_on",
-            "headline": "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-            "importance_score": 100,
-            "published_at": "2026-08-06T01:07:41+00:00",
+            "published_at": "2026-08-06T00:51:00+00:00",
             "source": "Reuters"
           }
         ],
@@ -65934,7 +65836,7 @@
         "direction": "supports_risk_expansion",
         "event_risk_level": "high",
         "macro_event_risk_flag": false,
-        "major_event_count": 10,
+        "major_event_count": 9,
         "not_a_trading_signal": true,
         "price_reaction_confirmed": false,
         "symbols": {
@@ -66073,7 +65975,7 @@
       "price_reaction_confirmation": {
         "asset_reaction_summary": {
           "avg_equity_1d_return": -0.0033,
-          "avg_equity_futures_1d_return": 0.0009,
+          "avg_equity_futures_1d_return": 0.0007,
           "confirmed_checks": [
             "股票ETF或股指期货下跌",
             "HYG/LQD 走弱"
@@ -66089,7 +65991,7 @@
             "美元走强"
           ],
           "hyg_lqd_1d_relative_return": -0.0002,
-          "oil_proxy_1d_return": -0.007,
+          "oil_proxy_1d_return": -0.0053,
           "oil_proxy_symbols_used": [
             "USO",
             "CL=F"
@@ -67484,13 +67386,13 @@
             "rsi_14": 63.784080721265696
           },
           "rates_liquidity": {
-            "liquidity_stress_proxy": 0.11146055686522403,
+            "liquidity_stress_proxy": 0.11146057117033878,
             "real_yield_proxy": "not_available",
             "ten_year_minus_three_month": "not_available",
             "ten_year_minus_two_year": "not_available",
-            "ten_year_yield_proxy": 4.616999626159668,
+            "ten_year_yield_proxy": 4.617000102996826,
             "tlt_return_20d": -0.016121391660880113,
-            "tnx_change_20d": 0.04799985885620117,
+            "tnx_change_20d": 0.048000335693359375,
             "two_year_yield": "not_available",
             "uup_return_20d": -0.009520467276193267
           },
@@ -67663,11 +67565,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.3,
             "top_headlines": [
+              "Trump reiterates his positive portrayal of Iran talks - Reuters",
               "Yen and dollar drift on Iran deal concerns, payroll jitters - Reuters",
               "Asia shares ease on tech pullback, oil stable as Iran talks stay in focus - Reuters",
-              "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
-              "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-              "Dow closes at record on Mideast optimism; SpaceX, AMD drag Nasdaq - Reuters"
+              "Oil prices slip as Iran cites progress with Oman on Hormuz agreement - Reuters",
+              "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters"
             ]
           },
           "price": {
@@ -68568,9 +68470,9 @@
             }
           },
           "stress_inputs": {
-            "combined_market_stress": 0.127865139216306,
+            "combined_market_stress": 0.12786514279258468,
             "credit_deterioration_score": 0.0,
-            "liquidity_stress_proxy": 0.11146055686522403,
+            "liquidity_stress_proxy": 0.11146057117033878,
             "oversold_score": 0.0,
             "vix_percentile": 0.2222222222222222
           },
@@ -68634,43 +68536,12 @@
               "event_type": "geopolitical_risk_easing",
               "expected_horizon": "1d-5d",
               "expected_market_direction": "risk_on",
-              "freshness_score": 92,
-              "headline": "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
+              "freshness_score": 87,
+              "headline": "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_easing_risk_on",
               "provider": "finnhub",
-              "published_at": "2026-08-06T01:12:07+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "HYG",
-                "LQD",
-                "USO",
-                "CL=F",
-                "UUP",
-                "ES=F",
-                "NQ=F"
-              ],
-              "confidence": "high",
-              "confidence_score": 98,
-              "detected_event_conditions": [
-                "geopolitical_risk_easing"
-              ],
-              "event_type": "geopolitical_risk_easing",
-              "expected_horizon": "1d-5d",
-              "expected_market_direction": "risk_on",
-              "freshness_score": 92,
-              "headline": "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_easing_risk_on",
-              "provider": "finnhub",
-              "published_at": "2026-08-06T01:07:41+00:00",
+              "published_at": "2026-08-06T00:51:00+00:00",
               "source": "Reuters"
             },
             {
@@ -68685,14 +68556,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 83,
+              "freshness_score": 79,
               "headline": "EXCLUSIVE: Iran threatens to hit Gulf states if US launches new strikes - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -68712,14 +68583,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 94,
+              "confidence_score": 93,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 78,
+              "freshness_score": 74,
               "headline": "Israeli military strikes southern Lebanon after evacuation warning to village - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -68739,14 +68610,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 76,
+              "freshness_score": 72,
               "headline": "Phillips 66 beats quarterly estimates as Iran war boosts US refining margins - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -68766,19 +68637,46 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 76,
+              "freshness_score": 72,
               "headline": "Yemen's Houthis say they attacked Saudi oil tankers in Red Sea, Gulf of Aden - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-08-05T18:34:15+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 75,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 72,
+              "headline": "Gulf oil exports steady in July, still 40% below pre-war mark - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-08-05T18:25:22+00:00",
               "source": "Reuters"
             }
           ],
@@ -68800,21 +68698,9 @@
                 ],
                 "event_type": "geopolitical_risk_easing",
                 "expected_market_direction": "risk_on",
-                "headline": "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
+                "headline": "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters",
                 "importance_score": 100,
-                "published_at": "2026-08-06T01:12:07+00:00",
-                "source": "Reuters"
-              },
-              {
-                "confidence": "high",
-                "detected_event_conditions": [
-                  "geopolitical_risk_easing"
-                ],
-                "event_type": "geopolitical_risk_easing",
-                "expected_market_direction": "risk_on",
-                "headline": "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-                "importance_score": 100,
-                "published_at": "2026-08-06T01:07:41+00:00",
+                "published_at": "2026-08-06T00:51:00+00:00",
                 "source": "Reuters"
               }
             ],
@@ -68936,7 +68822,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": -0.0033,
-              "avg_equity_futures_1d_return": 0.0009,
+              "avg_equity_futures_1d_return": 0.0007,
               "confirmed_checks": [
                 "股票ETF或股指期货下跌",
                 "HYG/LQD 走弱"
@@ -68952,7 +68838,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.0002,
-              "oil_proxy_1d_return": -0.007,
+              "oil_proxy_1d_return": -0.0053,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -70058,13 +69944,13 @@
             "rsi_14": 55.53789151764993
           },
           "rates_liquidity": {
-            "liquidity_stress_proxy": 0.11146055686522403,
+            "liquidity_stress_proxy": 0.11146057117033878,
             "real_yield_proxy": "not_available",
             "ten_year_minus_three_month": "not_available",
             "ten_year_minus_two_year": "not_available",
-            "ten_year_yield_proxy": 4.616999626159668,
+            "ten_year_yield_proxy": 4.617000102996826,
             "tlt_return_20d": -0.016121391660880113,
-            "tnx_change_20d": 0.04799985885620117,
+            "tnx_change_20d": 0.048000335693359375,
             "two_year_yield": "not_available",
             "uup_return_20d": -0.009520467276193267
           },
@@ -70237,11 +70123,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.3,
             "top_headlines": [
+              "Trump reiterates his positive portrayal of Iran talks - Reuters",
               "Yen and dollar drift on Iran deal concerns, payroll jitters - Reuters",
               "Asia shares ease on tech pullback, oil stable as Iran talks stay in focus - Reuters",
-              "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
-              "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-              "Dow closes at record on Mideast optimism; SpaceX, AMD drag Nasdaq - Reuters"
+              "Oil prices slip as Iran cites progress with Oman on Hormuz agreement - Reuters",
+              "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters"
             ]
           },
           "price": {
@@ -71122,9 +71008,9 @@
             }
           },
           "stress_inputs": {
-            "combined_market_stress": 0.127865139216306,
+            "combined_market_stress": 0.12786514279258468,
             "credit_deterioration_score": 0.0,
-            "liquidity_stress_proxy": 0.11146055686522403,
+            "liquidity_stress_proxy": 0.11146057117033878,
             "oversold_score": 0.0,
             "vix_percentile": 0.2222222222222222
           },
@@ -71188,43 +71074,12 @@
               "event_type": "geopolitical_risk_easing",
               "expected_horizon": "1d-5d",
               "expected_market_direction": "risk_on",
-              "freshness_score": 92,
-              "headline": "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
+              "freshness_score": 87,
+              "headline": "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_easing_risk_on",
               "provider": "finnhub",
-              "published_at": "2026-08-06T01:12:07+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "HYG",
-                "LQD",
-                "USO",
-                "CL=F",
-                "UUP",
-                "ES=F",
-                "NQ=F"
-              ],
-              "confidence": "high",
-              "confidence_score": 98,
-              "detected_event_conditions": [
-                "geopolitical_risk_easing"
-              ],
-              "event_type": "geopolitical_risk_easing",
-              "expected_horizon": "1d-5d",
-              "expected_market_direction": "risk_on",
-              "freshness_score": 92,
-              "headline": "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_easing_risk_on",
-              "provider": "finnhub",
-              "published_at": "2026-08-06T01:07:41+00:00",
+              "published_at": "2026-08-06T00:51:00+00:00",
               "source": "Reuters"
             },
             {
@@ -71239,14 +71094,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 83,
+              "freshness_score": 79,
               "headline": "EXCLUSIVE: Iran threatens to hit Gulf states if US launches new strikes - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -71266,14 +71121,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 94,
+              "confidence_score": 93,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 78,
+              "freshness_score": 74,
               "headline": "Israeli military strikes southern Lebanon after evacuation warning to village - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -71293,14 +71148,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 76,
+              "freshness_score": 72,
               "headline": "Phillips 66 beats quarterly estimates as Iran war boosts US refining margins - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -71320,19 +71175,46 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 76,
+              "freshness_score": 72,
               "headline": "Yemen's Houthis say they attacked Saudi oil tankers in Red Sea, Gulf of Aden - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-08-05T18:34:15+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 75,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 72,
+              "headline": "Gulf oil exports steady in July, still 40% below pre-war mark - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-08-05T18:25:22+00:00",
               "source": "Reuters"
             }
           ],
@@ -71354,21 +71236,9 @@
                 ],
                 "event_type": "geopolitical_risk_easing",
                 "expected_market_direction": "risk_on",
-                "headline": "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
+                "headline": "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters",
                 "importance_score": 100,
-                "published_at": "2026-08-06T01:12:07+00:00",
-                "source": "Reuters"
-              },
-              {
-                "confidence": "high",
-                "detected_event_conditions": [
-                  "geopolitical_risk_easing"
-                ],
-                "event_type": "geopolitical_risk_easing",
-                "expected_market_direction": "risk_on",
-                "headline": "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-                "importance_score": 100,
-                "published_at": "2026-08-06T01:07:41+00:00",
+                "published_at": "2026-08-06T00:51:00+00:00",
                 "source": "Reuters"
               }
             ],
@@ -71490,7 +71360,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": -0.0033,
-              "avg_equity_futures_1d_return": 0.0009,
+              "avg_equity_futures_1d_return": 0.0007,
               "confirmed_checks": [
                 "股票ETF或股指期货下跌",
                 "HYG/LQD 走弱"
@@ -71506,7 +71376,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.0002,
-              "oil_proxy_1d_return": -0.007,
+              "oil_proxy_1d_return": -0.0053,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -72617,13 +72487,13 @@
             "rsi_14": 54.05250873113335
           },
           "rates_liquidity": {
-            "liquidity_stress_proxy": 0.11146055686522403,
+            "liquidity_stress_proxy": 0.11146057117033878,
             "real_yield_proxy": "not_available",
             "ten_year_minus_three_month": "not_available",
             "ten_year_minus_two_year": "not_available",
-            "ten_year_yield_proxy": 4.616999626159668,
+            "ten_year_yield_proxy": 4.617000102996826,
             "tlt_return_20d": -0.016121391660880113,
-            "tnx_change_20d": 0.04799985885620117,
+            "tnx_change_20d": 0.048000335693359375,
             "two_year_yield": "not_available",
             "uup_return_20d": -0.009520467276193267
           },
@@ -72796,11 +72666,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.3,
             "top_headlines": [
+              "Trump reiterates his positive portrayal of Iran talks - Reuters",
               "Yen and dollar drift on Iran deal concerns, payroll jitters - Reuters",
               "Asia shares ease on tech pullback, oil stable as Iran talks stay in focus - Reuters",
-              "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
-              "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-              "Dow closes at record on Mideast optimism; SpaceX, AMD drag Nasdaq - Reuters"
+              "Oil prices slip as Iran cites progress with Oman on Hormuz agreement - Reuters",
+              "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters"
             ]
           },
           "price": {
@@ -73704,9 +73574,9 @@
             }
           },
           "stress_inputs": {
-            "combined_market_stress": 0.127865139216306,
+            "combined_market_stress": 0.12786514279258468,
             "credit_deterioration_score": 0.0,
-            "liquidity_stress_proxy": 0.11146055686522403,
+            "liquidity_stress_proxy": 0.11146057117033878,
             "oversold_score": 0.0,
             "vix_percentile": 0.2222222222222222
           },
@@ -73770,43 +73640,12 @@
               "event_type": "geopolitical_risk_easing",
               "expected_horizon": "1d-5d",
               "expected_market_direction": "risk_on",
-              "freshness_score": 92,
-              "headline": "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
+              "freshness_score": 87,
+              "headline": "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_easing_risk_on",
               "provider": "finnhub",
-              "published_at": "2026-08-06T01:12:07+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "HYG",
-                "LQD",
-                "USO",
-                "CL=F",
-                "UUP",
-                "ES=F",
-                "NQ=F"
-              ],
-              "confidence": "high",
-              "confidence_score": 98,
-              "detected_event_conditions": [
-                "geopolitical_risk_easing"
-              ],
-              "event_type": "geopolitical_risk_easing",
-              "expected_horizon": "1d-5d",
-              "expected_market_direction": "risk_on",
-              "freshness_score": 92,
-              "headline": "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_easing_risk_on",
-              "provider": "finnhub",
-              "published_at": "2026-08-06T01:07:41+00:00",
+              "published_at": "2026-08-06T00:51:00+00:00",
               "source": "Reuters"
             },
             {
@@ -73821,14 +73660,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 83,
+              "freshness_score": 79,
               "headline": "EXCLUSIVE: Iran threatens to hit Gulf states if US launches new strikes - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -73848,14 +73687,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 94,
+              "confidence_score": 93,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 78,
+              "freshness_score": 74,
               "headline": "Israeli military strikes southern Lebanon after evacuation warning to village - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -73875,14 +73714,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 76,
+              "freshness_score": 72,
               "headline": "Phillips 66 beats quarterly estimates as Iran war boosts US refining margins - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -73902,19 +73741,46 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 76,
+              "freshness_score": 72,
               "headline": "Yemen's Houthis say they attacked Saudi oil tankers in Red Sea, Gulf of Aden - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-08-05T18:34:15+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 75,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 72,
+              "headline": "Gulf oil exports steady in July, still 40% below pre-war mark - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-08-05T18:25:22+00:00",
               "source": "Reuters"
             }
           ],
@@ -73936,21 +73802,9 @@
                 ],
                 "event_type": "geopolitical_risk_easing",
                 "expected_market_direction": "risk_on",
-                "headline": "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
+                "headline": "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters",
                 "importance_score": 100,
-                "published_at": "2026-08-06T01:12:07+00:00",
-                "source": "Reuters"
-              },
-              {
-                "confidence": "high",
-                "detected_event_conditions": [
-                  "geopolitical_risk_easing"
-                ],
-                "event_type": "geopolitical_risk_easing",
-                "expected_market_direction": "risk_on",
-                "headline": "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-                "importance_score": 100,
-                "published_at": "2026-08-06T01:07:41+00:00",
+                "published_at": "2026-08-06T00:51:00+00:00",
                 "source": "Reuters"
               }
             ],
@@ -74072,7 +73926,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": -0.0033,
-              "avg_equity_futures_1d_return": 0.0009,
+              "avg_equity_futures_1d_return": 0.0007,
               "confirmed_checks": [
                 "股票ETF或股指期货下跌",
                 "HYG/LQD 走弱"
@@ -74088,7 +73942,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.0002,
-              "oil_proxy_1d_return": -0.007,
+              "oil_proxy_1d_return": -0.0053,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -75222,13 +75076,13 @@
             "rsi_14": 61.570206005754684
           },
           "rates_liquidity": {
-            "liquidity_stress_proxy": 0.11146055686522403,
+            "liquidity_stress_proxy": 0.11146057117033878,
             "real_yield_proxy": "not_available",
             "ten_year_minus_three_month": "not_available",
             "ten_year_minus_two_year": "not_available",
-            "ten_year_yield_proxy": 4.616999626159668,
+            "ten_year_yield_proxy": 4.617000102996826,
             "tlt_return_20d": -0.016121391660880113,
-            "tnx_change_20d": 0.04799985885620117,
+            "tnx_change_20d": 0.048000335693359375,
             "two_year_yield": "not_available",
             "uup_return_20d": -0.009520467276193267
           },
@@ -75401,11 +75255,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.3,
             "top_headlines": [
+              "Trump reiterates his positive portrayal of Iran talks - Reuters",
               "Yen and dollar drift on Iran deal concerns, payroll jitters - Reuters",
               "Asia shares ease on tech pullback, oil stable as Iran talks stay in focus - Reuters",
-              "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
-              "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-              "Dow closes at record on Mideast optimism; SpaceX, AMD drag Nasdaq - Reuters"
+              "Oil prices slip as Iran cites progress with Oman on Hormuz agreement - Reuters",
+              "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters"
             ]
           },
           "price": {
@@ -76301,9 +76155,9 @@
             }
           },
           "stress_inputs": {
-            "combined_market_stress": 0.127865139216306,
+            "combined_market_stress": 0.12786514279258468,
             "credit_deterioration_score": 0.0,
-            "liquidity_stress_proxy": 0.11146055686522403,
+            "liquidity_stress_proxy": 0.11146057117033878,
             "oversold_score": 0.0,
             "vix_percentile": 0.2222222222222222
           },
@@ -76367,43 +76221,12 @@
               "event_type": "geopolitical_risk_easing",
               "expected_horizon": "1d-5d",
               "expected_market_direction": "risk_on",
-              "freshness_score": 92,
-              "headline": "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
+              "freshness_score": 87,
+              "headline": "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_easing_risk_on",
               "provider": "finnhub",
-              "published_at": "2026-08-06T01:12:07+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "HYG",
-                "LQD",
-                "USO",
-                "CL=F",
-                "UUP",
-                "ES=F",
-                "NQ=F"
-              ],
-              "confidence": "high",
-              "confidence_score": 98,
-              "detected_event_conditions": [
-                "geopolitical_risk_easing"
-              ],
-              "event_type": "geopolitical_risk_easing",
-              "expected_horizon": "1d-5d",
-              "expected_market_direction": "risk_on",
-              "freshness_score": 92,
-              "headline": "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_easing_risk_on",
-              "provider": "finnhub",
-              "published_at": "2026-08-06T01:07:41+00:00",
+              "published_at": "2026-08-06T00:51:00+00:00",
               "source": "Reuters"
             },
             {
@@ -76418,14 +76241,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 83,
+              "freshness_score": 79,
               "headline": "EXCLUSIVE: Iran threatens to hit Gulf states if US launches new strikes - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -76445,14 +76268,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 94,
+              "confidence_score": 93,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 78,
+              "freshness_score": 74,
               "headline": "Israeli military strikes southern Lebanon after evacuation warning to village - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -76472,14 +76295,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 76,
+              "freshness_score": 72,
               "headline": "Phillips 66 beats quarterly estimates as Iran war boosts US refining margins - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -76499,19 +76322,46 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 76,
+              "freshness_score": 72,
               "headline": "Yemen's Houthis say they attacked Saudi oil tankers in Red Sea, Gulf of Aden - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-08-05T18:34:15+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 75,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 72,
+              "headline": "Gulf oil exports steady in July, still 40% below pre-war mark - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-08-05T18:25:22+00:00",
               "source": "Reuters"
             }
           ],
@@ -76533,21 +76383,9 @@
                 ],
                 "event_type": "geopolitical_risk_easing",
                 "expected_market_direction": "risk_on",
-                "headline": "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
+                "headline": "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters",
                 "importance_score": 100,
-                "published_at": "2026-08-06T01:12:07+00:00",
-                "source": "Reuters"
-              },
-              {
-                "confidence": "high",
-                "detected_event_conditions": [
-                  "geopolitical_risk_easing"
-                ],
-                "event_type": "geopolitical_risk_easing",
-                "expected_market_direction": "risk_on",
-                "headline": "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-                "importance_score": 100,
-                "published_at": "2026-08-06T01:07:41+00:00",
+                "published_at": "2026-08-06T00:51:00+00:00",
                 "source": "Reuters"
               }
             ],
@@ -76669,7 +76507,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": -0.0033,
-              "avg_equity_futures_1d_return": 0.0009,
+              "avg_equity_futures_1d_return": 0.0007,
               "confirmed_checks": [
                 "股票ETF或股指期货下跌",
                 "HYG/LQD 走弱"
@@ -76685,7 +76523,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.0002,
-              "oil_proxy_1d_return": -0.007,
+              "oil_proxy_1d_return": -0.0053,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -77554,7 +77392,7 @@
   },
   "price_volume_structure": {
     "disclaimer": "K线和成交量结构只用于预测确认，不是交易信号、买卖建议或仓位建议。",
-    "generated_at": "2026-08-06T04:33:46.002815+00:00",
+    "generated_at": "2026-08-06T06:16:37.078695+00:00",
     "summary": {
       "average_price_structure_score": 56.5,
       "average_volume_confirmation_score": 48.0,
@@ -78341,10 +78179,10 @@
       "can_append_forecast_record": false,
       "can_backfill_completed_outcomes": true,
       "current_date": "2026-08-06",
-      "current_time_us_eastern": "2026-08-06T00:33:46.008546-04:00",
+      "current_time_us_eastern": "2026-08-06T02:16:37.084169-04:00",
       "data_freshness_status": "market_open_unconfirmed",
       "expected_latest_trading_date": "2026-08-05",
-      "generated_at": "2026-08-06T04:33:46.008546+00:00",
+      "generated_at": "2026-08-06T06:16:37.084169+00:00",
       "guardrails": [
         "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
         "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -79383,14 +79221,14 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
-        "IG_OAS",
-        "HY_OAS",
-        "BAA_SPREAD",
-        "DGS10",
-        "DGS2",
         "DGS3MO",
+        "DGS10",
+        "IG_OAS",
+        "DGS2",
+        "HY_OAS",
         "DFII10",
         "FINANCIAL_STRESS",
+        "BAA_SPREAD",
         "RECESSION"
       ],
       "freshness_warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-08-05，最近完整收盘交易日为 2026-08-05；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
@@ -79422,11 +79260,11 @@
       ],
       "news_event": {
         "available": true,
-        "event_detection_confidence": 81,
+        "event_detection_confidence": 78,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-08-06T04:33:34.567276+00:00",
-        "major_event_count": 10,
+        "last_update": "2026-08-06T06:16:26.906636+00:00",
+        "major_event_count": 9,
         "missing_reason": null,
         "news_direction": "risk_off",
         "news_event_partial": false,
@@ -79437,7 +79275,7 @@
       },
       "news_event_available": true,
       "news_event_event_risk_level": "high",
-      "news_event_major_count": 10,
+      "news_event_major_count": 9,
       "news_event_missing_reason": null,
       "news_event_narrative": "geopolitics_escalation_risk_off",
       "news_event_partial": false,
@@ -79487,7 +79325,7 @@
         "status": "failed"
       },
       "event_risk_level": "high",
-      "major_event_count": 10,
+      "major_event_count": 9,
       "market_narrative": {
         "affected_scenarios": [
           "bearish_path"
@@ -79506,21 +79344,9 @@
             ],
             "event_type": "geopolitical_risk_easing",
             "expected_market_direction": "risk_on",
-            "headline": "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
+            "headline": "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters",
             "importance_score": 100,
-            "published_at": "2026-08-06T01:12:07+00:00",
-            "source": "Reuters"
-          },
-          {
-            "confidence": "high",
-            "detected_event_conditions": [
-              "geopolitical_risk_easing"
-            ],
-            "event_type": "geopolitical_risk_easing",
-            "expected_market_direction": "risk_on",
-            "headline": "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-            "importance_score": 100,
-            "published_at": "2026-08-06T01:07:41+00:00",
+            "published_at": "2026-08-06T00:51:00+00:00",
             "source": "Reuters"
           }
         ],
@@ -79612,7 +79438,7 @@
         "direction": "supports_risk_expansion",
         "event_risk_level": "high",
         "macro_event_risk_flag": false,
-        "major_event_count": 10,
+        "major_event_count": 9,
         "not_a_trading_signal": true,
         "price_reaction_confirmed": false,
         "symbols": {
@@ -79751,7 +79577,7 @@
       "price_reaction_confirmation": {
         "asset_reaction_summary": {
           "avg_equity_1d_return": -0.0033,
-          "avg_equity_futures_1d_return": 0.0009,
+          "avg_equity_futures_1d_return": 0.0007,
           "confirmed_checks": [
             "股票ETF或股指期货下跌",
             "HYG/LQD 走弱"
@@ -79767,7 +79593,7 @@
             "美元走强"
           ],
           "hyg_lqd_1d_relative_return": -0.0002,
-          "oil_proxy_1d_return": -0.007,
+          "oil_proxy_1d_return": -0.0053,
           "oil_proxy_symbols_used": [
             "USO",
             "CL=F"
@@ -80654,11 +80480,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.3,
             "top_headlines": [
+              "Trump reiterates his positive portrayal of Iran talks - Reuters",
               "Yen and dollar drift on Iran deal concerns, payroll jitters - Reuters",
               "Asia shares ease on tech pullback, oil stable as Iran talks stay in focus - Reuters",
-              "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
-              "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-              "Dow closes at record on Mideast optimism; SpaceX, AMD drag Nasdaq - Reuters"
+              "Oil prices slip as Iran cites progress with Oman on Hormuz agreement - Reuters",
+              "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters"
             ]
           },
           "price": {
@@ -82007,9 +81833,9 @@
             }
           },
           "stress_inputs": {
-            "combined_market_stress": 0.127865139216306,
+            "combined_market_stress": 0.12786514279258468,
             "credit_deterioration_score": 0.0,
-            "liquidity_stress_proxy": 0.11146055686522403,
+            "liquidity_stress_proxy": 0.11146057117033878,
             "oversold_score": 0.0,
             "vix_percentile": 0.2222222222222222
           },
@@ -82073,43 +81899,12 @@
               "event_type": "geopolitical_risk_easing",
               "expected_horizon": "1d-5d",
               "expected_market_direction": "risk_on",
-              "freshness_score": 92,
-              "headline": "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
+              "freshness_score": 87,
+              "headline": "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_easing_risk_on",
               "provider": "finnhub",
-              "published_at": "2026-08-06T01:12:07+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "HYG",
-                "LQD",
-                "USO",
-                "CL=F",
-                "UUP",
-                "ES=F",
-                "NQ=F"
-              ],
-              "confidence": "high",
-              "confidence_score": 98,
-              "detected_event_conditions": [
-                "geopolitical_risk_easing"
-              ],
-              "event_type": "geopolitical_risk_easing",
-              "expected_horizon": "1d-5d",
-              "expected_market_direction": "risk_on",
-              "freshness_score": 92,
-              "headline": "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_easing_risk_on",
-              "provider": "finnhub",
-              "published_at": "2026-08-06T01:07:41+00:00",
+              "published_at": "2026-08-06T00:51:00+00:00",
               "source": "Reuters"
             },
             {
@@ -82124,14 +81919,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 83,
+              "freshness_score": 79,
               "headline": "EXCLUSIVE: Iran threatens to hit Gulf states if US launches new strikes - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -82151,14 +81946,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 94,
+              "confidence_score": 93,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 78,
+              "freshness_score": 74,
               "headline": "Israeli military strikes southern Lebanon after evacuation warning to village - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -82178,14 +81973,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 76,
+              "freshness_score": 72,
               "headline": "Phillips 66 beats quarterly estimates as Iran war boosts US refining margins - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -82205,19 +82000,46 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 76,
+              "freshness_score": 72,
               "headline": "Yemen's Houthis say they attacked Saudi oil tankers in Red Sea, Gulf of Aden - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-08-05T18:34:15+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 75,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 72,
+              "headline": "Gulf oil exports steady in July, still 40% below pre-war mark - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-08-05T18:25:22+00:00",
               "source": "Reuters"
             }
           ],
@@ -82239,21 +82061,9 @@
                 ],
                 "event_type": "geopolitical_risk_easing",
                 "expected_market_direction": "risk_on",
-                "headline": "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
+                "headline": "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters",
                 "importance_score": 100,
-                "published_at": "2026-08-06T01:12:07+00:00",
-                "source": "Reuters"
-              },
-              {
-                "confidence": "high",
-                "detected_event_conditions": [
-                  "geopolitical_risk_easing"
-                ],
-                "event_type": "geopolitical_risk_easing",
-                "expected_market_direction": "risk_on",
-                "headline": "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-                "importance_score": 100,
-                "published_at": "2026-08-06T01:07:41+00:00",
+                "published_at": "2026-08-06T00:51:00+00:00",
                 "source": "Reuters"
               }
             ],
@@ -82375,7 +82185,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": -0.0033,
-              "avg_equity_futures_1d_return": 0.0009,
+              "avg_equity_futures_1d_return": 0.0007,
               "confirmed_checks": [
                 "股票ETF或股指期货下跌",
                 "HYG/LQD 走弱"
@@ -82391,7 +82201,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.0002,
-              "oil_proxy_1d_return": -0.007,
+              "oil_proxy_1d_return": -0.0053,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -84900,11 +84710,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.3,
             "top_headlines": [
+              "Trump reiterates his positive portrayal of Iran talks - Reuters",
               "Yen and dollar drift on Iran deal concerns, payroll jitters - Reuters",
               "Asia shares ease on tech pullback, oil stable as Iran talks stay in focus - Reuters",
-              "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
-              "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-              "Dow closes at record on Mideast optimism; SpaceX, AMD drag Nasdaq - Reuters"
+              "Oil prices slip as Iran cites progress with Oman on Hormuz agreement - Reuters",
+              "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters"
             ]
           },
           "price": {
@@ -86233,9 +86043,9 @@
             }
           },
           "stress_inputs": {
-            "combined_market_stress": 0.127865139216306,
+            "combined_market_stress": 0.12786514279258468,
             "credit_deterioration_score": 0.0,
-            "liquidity_stress_proxy": 0.11146055686522403,
+            "liquidity_stress_proxy": 0.11146057117033878,
             "oversold_score": 0.0,
             "vix_percentile": 0.2222222222222222
           },
@@ -86299,43 +86109,12 @@
               "event_type": "geopolitical_risk_easing",
               "expected_horizon": "1d-5d",
               "expected_market_direction": "risk_on",
-              "freshness_score": 92,
-              "headline": "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
+              "freshness_score": 87,
+              "headline": "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_easing_risk_on",
               "provider": "finnhub",
-              "published_at": "2026-08-06T01:12:07+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "HYG",
-                "LQD",
-                "USO",
-                "CL=F",
-                "UUP",
-                "ES=F",
-                "NQ=F"
-              ],
-              "confidence": "high",
-              "confidence_score": 98,
-              "detected_event_conditions": [
-                "geopolitical_risk_easing"
-              ],
-              "event_type": "geopolitical_risk_easing",
-              "expected_horizon": "1d-5d",
-              "expected_market_direction": "risk_on",
-              "freshness_score": 92,
-              "headline": "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_easing_risk_on",
-              "provider": "finnhub",
-              "published_at": "2026-08-06T01:07:41+00:00",
+              "published_at": "2026-08-06T00:51:00+00:00",
               "source": "Reuters"
             },
             {
@@ -86350,14 +86129,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 83,
+              "freshness_score": 79,
               "headline": "EXCLUSIVE: Iran threatens to hit Gulf states if US launches new strikes - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -86377,14 +86156,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 94,
+              "confidence_score": 93,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 78,
+              "freshness_score": 74,
               "headline": "Israeli military strikes southern Lebanon after evacuation warning to village - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -86404,14 +86183,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 76,
+              "freshness_score": 72,
               "headline": "Phillips 66 beats quarterly estimates as Iran war boosts US refining margins - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -86431,19 +86210,46 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 76,
+              "freshness_score": 72,
               "headline": "Yemen's Houthis say they attacked Saudi oil tankers in Red Sea, Gulf of Aden - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-08-05T18:34:15+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 75,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 72,
+              "headline": "Gulf oil exports steady in July, still 40% below pre-war mark - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-08-05T18:25:22+00:00",
               "source": "Reuters"
             }
           ],
@@ -86465,21 +86271,9 @@
                 ],
                 "event_type": "geopolitical_risk_easing",
                 "expected_market_direction": "risk_on",
-                "headline": "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
+                "headline": "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters",
                 "importance_score": 100,
-                "published_at": "2026-08-06T01:12:07+00:00",
-                "source": "Reuters"
-              },
-              {
-                "confidence": "high",
-                "detected_event_conditions": [
-                  "geopolitical_risk_easing"
-                ],
-                "event_type": "geopolitical_risk_easing",
-                "expected_market_direction": "risk_on",
-                "headline": "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-                "importance_score": 100,
-                "published_at": "2026-08-06T01:07:41+00:00",
+                "published_at": "2026-08-06T00:51:00+00:00",
                 "source": "Reuters"
               }
             ],
@@ -86601,7 +86395,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": -0.0033,
-              "avg_equity_futures_1d_return": 0.0009,
+              "avg_equity_futures_1d_return": 0.0007,
               "confirmed_checks": [
                 "股票ETF或股指期货下跌",
                 "HYG/LQD 走弱"
@@ -86617,7 +86411,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.0002,
-              "oil_proxy_1d_return": -0.007,
+              "oil_proxy_1d_return": -0.0053,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -89131,11 +88925,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.3,
             "top_headlines": [
+              "Trump reiterates his positive portrayal of Iran talks - Reuters",
               "Yen and dollar drift on Iran deal concerns, payroll jitters - Reuters",
               "Asia shares ease on tech pullback, oil stable as Iran talks stay in focus - Reuters",
-              "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
-              "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-              "Dow closes at record on Mideast optimism; SpaceX, AMD drag Nasdaq - Reuters"
+              "Oil prices slip as Iran cites progress with Oman on Hormuz agreement - Reuters",
+              "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters"
             ]
           },
           "price": {
@@ -90487,9 +90281,9 @@
             }
           },
           "stress_inputs": {
-            "combined_market_stress": 0.127865139216306,
+            "combined_market_stress": 0.12786514279258468,
             "credit_deterioration_score": 0.0,
-            "liquidity_stress_proxy": 0.11146055686522403,
+            "liquidity_stress_proxy": 0.11146057117033878,
             "oversold_score": 0.0,
             "vix_percentile": 0.2222222222222222
           },
@@ -90553,43 +90347,12 @@
               "event_type": "geopolitical_risk_easing",
               "expected_horizon": "1d-5d",
               "expected_market_direction": "risk_on",
-              "freshness_score": 92,
-              "headline": "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
+              "freshness_score": 87,
+              "headline": "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_easing_risk_on",
               "provider": "finnhub",
-              "published_at": "2026-08-06T01:12:07+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "HYG",
-                "LQD",
-                "USO",
-                "CL=F",
-                "UUP",
-                "ES=F",
-                "NQ=F"
-              ],
-              "confidence": "high",
-              "confidence_score": 98,
-              "detected_event_conditions": [
-                "geopolitical_risk_easing"
-              ],
-              "event_type": "geopolitical_risk_easing",
-              "expected_horizon": "1d-5d",
-              "expected_market_direction": "risk_on",
-              "freshness_score": 92,
-              "headline": "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_easing_risk_on",
-              "provider": "finnhub",
-              "published_at": "2026-08-06T01:07:41+00:00",
+              "published_at": "2026-08-06T00:51:00+00:00",
               "source": "Reuters"
             },
             {
@@ -90604,14 +90367,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 83,
+              "freshness_score": 79,
               "headline": "EXCLUSIVE: Iran threatens to hit Gulf states if US launches new strikes - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -90631,14 +90394,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 94,
+              "confidence_score": 93,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 78,
+              "freshness_score": 74,
               "headline": "Israeli military strikes southern Lebanon after evacuation warning to village - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -90658,14 +90421,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 76,
+              "freshness_score": 72,
               "headline": "Phillips 66 beats quarterly estimates as Iran war boosts US refining margins - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -90685,19 +90448,46 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 76,
+              "freshness_score": 72,
               "headline": "Yemen's Houthis say they attacked Saudi oil tankers in Red Sea, Gulf of Aden - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-08-05T18:34:15+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 75,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 72,
+              "headline": "Gulf oil exports steady in July, still 40% below pre-war mark - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-08-05T18:25:22+00:00",
               "source": "Reuters"
             }
           ],
@@ -90719,21 +90509,9 @@
                 ],
                 "event_type": "geopolitical_risk_easing",
                 "expected_market_direction": "risk_on",
-                "headline": "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
+                "headline": "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters",
                 "importance_score": 100,
-                "published_at": "2026-08-06T01:12:07+00:00",
-                "source": "Reuters"
-              },
-              {
-                "confidence": "high",
-                "detected_event_conditions": [
-                  "geopolitical_risk_easing"
-                ],
-                "event_type": "geopolitical_risk_easing",
-                "expected_market_direction": "risk_on",
-                "headline": "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-                "importance_score": 100,
-                "published_at": "2026-08-06T01:07:41+00:00",
+                "published_at": "2026-08-06T00:51:00+00:00",
                 "source": "Reuters"
               }
             ],
@@ -90855,7 +90633,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": -0.0033,
-              "avg_equity_futures_1d_return": 0.0009,
+              "avg_equity_futures_1d_return": 0.0007,
               "confirmed_checks": [
                 "股票ETF或股指期货下跌",
                 "HYG/LQD 走弱"
@@ -90871,7 +90649,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.0002,
-              "oil_proxy_1d_return": -0.007,
+              "oil_proxy_1d_return": -0.0053,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -93408,11 +93186,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.3,
             "top_headlines": [
+              "Trump reiterates his positive portrayal of Iran talks - Reuters",
               "Yen and dollar drift on Iran deal concerns, payroll jitters - Reuters",
               "Asia shares ease on tech pullback, oil stable as Iran talks stay in focus - Reuters",
-              "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
-              "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-              "Dow closes at record on Mideast optimism; SpaceX, AMD drag Nasdaq - Reuters"
+              "Oil prices slip as Iran cites progress with Oman on Hormuz agreement - Reuters",
+              "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters"
             ]
           },
           "price": {
@@ -94756,9 +94534,9 @@
             }
           },
           "stress_inputs": {
-            "combined_market_stress": 0.127865139216306,
+            "combined_market_stress": 0.12786514279258468,
             "credit_deterioration_score": 0.0,
-            "liquidity_stress_proxy": 0.11146055686522403,
+            "liquidity_stress_proxy": 0.11146057117033878,
             "oversold_score": 0.0,
             "vix_percentile": 0.2222222222222222
           },
@@ -94822,43 +94600,12 @@
               "event_type": "geopolitical_risk_easing",
               "expected_horizon": "1d-5d",
               "expected_market_direction": "risk_on",
-              "freshness_score": 92,
-              "headline": "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
+              "freshness_score": 87,
+              "headline": "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_easing_risk_on",
               "provider": "finnhub",
-              "published_at": "2026-08-06T01:12:07+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "HYG",
-                "LQD",
-                "USO",
-                "CL=F",
-                "UUP",
-                "ES=F",
-                "NQ=F"
-              ],
-              "confidence": "high",
-              "confidence_score": 98,
-              "detected_event_conditions": [
-                "geopolitical_risk_easing"
-              ],
-              "event_type": "geopolitical_risk_easing",
-              "expected_horizon": "1d-5d",
-              "expected_market_direction": "risk_on",
-              "freshness_score": 92,
-              "headline": "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_easing_risk_on",
-              "provider": "finnhub",
-              "published_at": "2026-08-06T01:07:41+00:00",
+              "published_at": "2026-08-06T00:51:00+00:00",
               "source": "Reuters"
             },
             {
@@ -94873,14 +94620,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 83,
+              "freshness_score": 79,
               "headline": "EXCLUSIVE: Iran threatens to hit Gulf states if US launches new strikes - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -94900,14 +94647,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 94,
+              "confidence_score": 93,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 78,
+              "freshness_score": 74,
               "headline": "Israeli military strikes southern Lebanon after evacuation warning to village - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -94927,14 +94674,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 76,
+              "freshness_score": 72,
               "headline": "Phillips 66 beats quarterly estimates as Iran war boosts US refining margins - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -94954,19 +94701,46 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 76,
+              "freshness_score": 72,
               "headline": "Yemen's Houthis say they attacked Saudi oil tankers in Red Sea, Gulf of Aden - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-08-05T18:34:15+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 75,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 72,
+              "headline": "Gulf oil exports steady in July, still 40% below pre-war mark - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-08-05T18:25:22+00:00",
               "source": "Reuters"
             }
           ],
@@ -94988,21 +94762,9 @@
                 ],
                 "event_type": "geopolitical_risk_easing",
                 "expected_market_direction": "risk_on",
-                "headline": "Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters",
+                "headline": "Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters",
                 "importance_score": 100,
-                "published_at": "2026-08-06T01:12:07+00:00",
-                "source": "Reuters"
-              },
-              {
-                "confidence": "high",
-                "detected_event_conditions": [
-                  "geopolitical_risk_easing"
-                ],
-                "event_type": "geopolitical_risk_easing",
-                "expected_market_direction": "risk_on",
-                "headline": "Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters",
-                "importance_score": 100,
-                "published_at": "2026-08-06T01:07:41+00:00",
+                "published_at": "2026-08-06T00:51:00+00:00",
                 "source": "Reuters"
               }
             ],
@@ -95124,7 +94886,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": -0.0033,
-              "avg_equity_futures_1d_return": 0.0009,
+              "avg_equity_futures_1d_return": 0.0007,
               "confirmed_checks": [
                 "股票ETF或股指期货下跌",
                 "HYG/LQD 走弱"
@@ -95140,7 +94902,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.0002,
-              "oil_proxy_1d_return": -0.007,
+              "oil_proxy_1d_return": -0.0053,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -97297,7 +97059,7 @@
       },
       "version": "stock_data_provider_v1"
     },
-    "generated_at": "2026-08-06T04:33:46.767048+00:00",
+    "generated_at": "2026-08-06T06:16:37.817294+00:00",
     "guardrails": [
       "This is a probabilistic stock forecast module, not a trading system.",
       "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -97386,7 +97148,7 @@
         },
         "question": "high final_radar_score 是否真的对应更大次日 range？"
       },
-      "generated_at": "2026-08-06T04:33:46.773811+00:00",
+      "generated_at": "2026-08-06T06:16:37.823945+00:00",
       "not_validated_warning": "not_enough_forward_samples",
       "pending_records": 153,
       "risk_score_effectiveness": {
@@ -97570,7 +97332,7 @@
             ],
             "major_company_headline": "Montauk Renewables (MNTK) Reports Break-Even Earnings for Q2",
             "news_count_24h": 5,
-            "news_count_72h": 12,
+            "news_count_72h": 11,
             "news_risk_score": 60.0,
             "news_sentiment": "neutral"
           },
@@ -99729,55 +99491,55 @@
             "event_risk_flag": "high",
             "headlines": [
               {
-                "datetime": 1785988237,
-                "headline": "AMAT at $534: Huge Upside With a Huge Hurdle Approaching",
+                "datetime": 1785993600,
+                "headline": "Billionaire Bill Ackman Built a $2.1 Billion Stake in Microsoft After the Stock Slid. Is It Still a Buy?",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=d7890a1b575e8191af6c114b24c8a9df18833076be0a7a9d4cf9f9d24ef415c0"
+                "url": "https://finnhub.io/api/news?id=842a01cc408578ce69f5a26868264bd892eea0453d0fffb3a6de32537c49ba76"
               },
               {
-                "datetime": 1785988040,
-                "headline": "Applied Materials Fell 11% Last Month: A Prominent Wall Street Pro Predicts 70% Gains Moving Forward",
+                "datetime": 1785991481,
+                "headline": "Axon Just Delivered a Huge Beat-and-Raise. So Why Is the Stock Down?",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=c8cb743d60fe325d1d813f43900c2ff420bcb162814ce32bdb1f7547cb6e58bc"
+                "url": "https://finnhub.io/api/news?id=c572a16fd3148922c4f03871ed89640d96e3b97a41cf5654fac0ac200fbe2e21"
               },
               {
-                "datetime": 1785987833,
-                "headline": "SpaceX Falling to $100: A Clear Line in The Sand",
+                "datetime": 1785990504,
+                "headline": "Analysis-Samsung, SK Hynix shareholders call for bigger payouts from AI cash mountain",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=d35516e35490571f74788bea2a2d3c00184ba42071d2ec122f1c82e7075f3c2d"
+                "url": "https://finnhub.io/api/news?id=57230d2134eb1e9a73f24cf45b8ac2354ffe34739cdeb4ec5c8c008d038ad5be"
               },
               {
-                "datetime": 1785986400,
-                "headline": "Alphabet CEO Sundar Pichai Just Made a $200 Billion Infrastructure Move. Nvidia, Micron, and Broadcom Investors Should Rejoice.",
+                "datetime": 1785990188,
+                "headline": "Marvell Is Positioned to Absorb a Disproportionate Amount of This AI Capex Surge, So I Keep Buying",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=7ac664f64f0e20d8cdf5b9a3089e8ca231de11f22fc4a1cfeb6c6688c2b38dac"
+                "url": "https://finnhub.io/api/news?id=179907e3438fb75a938a926573295ddbd996d50582303d5d4dcb7678ec888bd6"
               },
               {
-                "datetime": 1785983540,
-                "headline": "Why AMD Stock Dropped Today",
+                "datetime": 1785989990,
+                "headline": "One Massive AI Hardware Truth Keeps Me Loading Up On AMAT Ahead of Aug. 13 Earnings Print",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=e5c55f483d01ae7a1893065b280ba48815d7fad5d375e17ac1ad3a838a2cf2c4"
+                "url": "https://finnhub.io/api/news?id=167a5b632dab635bef577ac0cae6c15c37dee0862fc2c024b6bcd336ee784865"
               },
               {
-                "datetime": 1785982651,
-                "headline": "From $100 to $2,021 in Five Years: How Daily-Reset Leverage Turns Trends Into Fortunes",
+                "datetime": 1785989801,
+                "headline": "AI Electricity Demand: GE Vernova and Eaton Will Capture This Next Wave of Capex",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=7926c1da78d6d407ffaa0f53d936d9e3d7874266355e4c0326a0f4e5892cea0d"
+                "url": "https://finnhub.io/api/news?id=0c141abac3f9a68191d5d6053240b364848ddcb2fdbd43121650029882bcd08e"
               },
               {
-                "datetime": 1785981240,
-                "headline": "Nvidia Grew Revenue 71% and Still Costs 21 Times Forward Earnings. The Market Is Betting the Growth Stops.",
+                "datetime": 1785989488,
+                "headline": "How Vertiv is Becoming a Pure Play Digital Version of Schneider Electric for an AI-First World",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=f139f72768c26fa11e048ba350910dac10eb259fbc324fff9d881d53d52d240a"
+                "url": "https://finnhub.io/api/news?id=9caf2ebe446a0ff0f79aac8dd0942c067eea1b58a464671129458a133398c980"
               },
               {
-                "datetime": 1785979200,
-                "headline": "This Stock Keeps Raising Its Dividend No Matter What the Market Does -- and Wall Street Thinks It's a Buy Right Now",
+                "datetime": 1785989297,
+                "headline": "Who Will Benefit Most From Amazon and Microsoft’s Hyperscaler Leading AI Capex This Quarter?",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=7483d7b586d5468d6252462a946d27bac340979c4a16c1f9509dc07c879b992b"
+                "url": "https://finnhub.io/api/news?id=b3f5870014bc1d6118f5bb2f6299b2f33001d4f52dcb81c831e3cda211bfbad4"
               }
             ],
-            "major_company_headline": "AMAT at $534: Huge Upside With a Huge Hurdle Approaching",
+            "major_company_headline": "Billionaire Bill Ackman Built a $2.1 Billion Stake in Microsoft After the Stock Slid. Is It Still a Buy?",
             "news_count_24h": 20,
             "news_count_72h": 20,
             "news_risk_score": 100.0,
@@ -101632,7 +101394,7 @@
           "components": {
             "catalyst": {
               "evidence": [
-                "公司新闻已接入: AMAT at $534: Huge Upside With a Huge Hurdle Approaching",
+                "公司新闻已接入: Billionaire Bill Ackman Built a $2.1 Billion Stake in Microsoft After the Stock Slid. Is It Still a Buy?",
                 "新闻情绪偏正",
                 "未来 30 天存在财报催化：2026-08-26",
                 "增长数据具备 EPS 上修叙事基础"
@@ -101754,7 +101516,7 @@
           },
           "thesis": {
             "capital_confirmation": "资金/技术确认较强",
-            "catalyst": "AMAT at $534: Huge Upside With a Huge Hurdle Approaching",
+            "catalyst": "Billionaire Bill Ackman Built a $2.1 Billion Stake in Microsoft After the Stock Slid. Is It Still a Buy?",
             "expectation_gap": [
               "收入增长较强，具备正向预期差基础",
               "EPS 增长较强，可能支持盈利上修叙事",
@@ -101940,16 +101702,22 @@
             "company_news": "available",
             "earnings": "available",
             "earnings_date": null,
-            "earnings_risk_flag": "low",
+            "earnings_risk_flag": "medium",
             "earnings_within_30d": false,
             "earnings_within_7d": false,
-            "event_risk_flag": "low",
+            "event_risk_flag": "medium",
             "headlines": [
               {
                 "datetime": 1785983799,
                 "headline": "NuScale Power (NYSE:SMR) Slips as Revenue Misses Big, EPS Inline",
                 "source": "ChartMill",
                 "url": "https://finnhub.io/api/news?id=f323dc6ac39c099191b4b65b8e55bae0fbc31a2906ec986d7d7ac13030733b36"
+              },
+              {
+                "datetime": 1785976232,
+                "headline": "NuScale Power Corporation 2026 Q2 - Results - Earnings Call Presentation",
+                "source": "SeekingAlpha",
+                "url": "https://finnhub.io/api/news?id=fb86c5ac4a0f3acccf1c88a7eb3888bc2d5204d44e40a4e01ceeb93169129913"
               },
               {
                 "datetime": 1785965408,
@@ -101965,9 +101733,9 @@
               }
             ],
             "major_company_headline": "NuScale Power (NYSE:SMR) Slips as Revenue Misses Big, EPS Inline",
-            "news_count_24h": 2,
-            "news_count_72h": 3,
-            "news_risk_score": 43.0,
+            "news_count_24h": 3,
+            "news_count_72h": 4,
+            "news_risk_score": 51.0,
             "news_sentiment": "neutral"
           },
           "price_trend": {
@@ -104002,7 +103770,7 @@
             "news_event": {
               "evidence": "公司新闻源已接入",
               "reason": "NuScale Power (NYSE:SMR) Slips as Revenue Misses Big, EPS Inline",
-              "score": 55.26,
+              "score": 57.82,
               "status": "neutral"
             },
             "options_volatility": {
@@ -104037,7 +103805,7 @@
             }
           },
           "requires_multi_source_confirmation": true,
-          "stock_confluence_score": 42.61,
+          "stock_confluence_score": 42.8,
           "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
           "supporting_evidence": [
             "个股跑赢所属板块",
@@ -104120,6 +103888,24 @@
             "event_risk_flag": "high",
             "headlines": [
               {
+                "datetime": 1785991020,
+                "headline": "Waymo CEO takes a not-so-subtle shot at Tesla Robotaxi over Lidar",
+                "source": "Yahoo",
+                "url": "https://finnhub.io/api/news?id=24a54a32a1e0b987a9df11a861bd61e4a6df7784c908fe60a6d7455bc3563943"
+              },
+              {
+                "datetime": 1785990732,
+                "headline": "Tesla (TSLA) Targets 1 Million Optimus Robots A Year",
+                "source": "Yahoo",
+                "url": "https://finnhub.io/api/news?id=ac41a49ad2a8d690ec93aa8c707cee303afb205968f0a1a528346df58fd1d653"
+              },
+              {
+                "datetime": 1785988819,
+                "headline": "AI’s Volatile Power Demand Is Damaging Its Own Data Centers",
+                "source": "Yahoo",
+                "url": "https://finnhub.io/api/news?id=abc52c260560dfe85339fde73850c3e602b83dbeb14ac0deb0b2c1ffcbf41ff3"
+              },
+              {
                 "datetime": 1785970226,
                 "headline": "Polymarket Gives 18% Odds to a Tesla-SpaceX Merger Announcement in 2026",
                 "source": "Yahoo",
@@ -104148,27 +103934,9 @@
                 "headline": "Question of the Day: Is Lucid in the Early Stages of Failure?",
                 "source": "Yahoo",
                 "url": "https://finnhub.io/api/news?id=8f15f50d5afa508f22f6fc379fc6750f1640c87ba0674d0dc28d91bc0c8b2c55"
-              },
-              {
-                "datetime": 1785964800,
-                "headline": "Rivian Could Be a Surprise Robotaxi Winner After Scoring a $1.25 Billion Partnership With Uber",
-                "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=dab8c80173f45565a585cdf3e8b5f447f317c00e8d528a0ae91727a32137beed"
-              },
-              {
-                "datetime": 1785960108,
-                "headline": "Musk Says These Tesla Products Will 'Dramatically' Increase Starlink Demand",
-                "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=25c653281b326b3e628466fd067b102d9944d9fa20e9fba7b4b10e68bac290e2"
-              },
-              {
-                "datetime": 1785957716,
-                "headline": "Elon Musk Predicts ‘Money Won’t Matter in 2036.’ Is This His Worst Prediction Yet or Prophetic?",
-                "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=b6cdb61d24fbbf0f2adb11e0f5154ede198b1f92cf408b7020105655d6822201"
               }
             ],
-            "major_company_headline": "Polymarket Gives 18% Odds to a Tesla-SpaceX Merger Announcement in 2026",
+            "major_company_headline": "Waymo CEO takes a not-so-subtle shot at Tesla Robotaxi over Lidar",
             "news_count_24h": 20,
             "news_count_72h": 20,
             "news_risk_score": 100.0,
@@ -106021,7 +105789,7 @@
           "components": {
             "catalyst": {
               "evidence": [
-                "公司新闻已接入: Polymarket Gives 18% Odds to a Tesla-SpaceX Merger Announcement in 2026"
+                "公司新闻已接入: Waymo CEO takes a not-so-subtle shot at Tesla Robotaxi over Lidar"
               ],
               "max_points": 10,
               "missing_fields": [],
@@ -106134,7 +105902,7 @@
           },
           "thesis": {
             "capital_confirmation": "资金确认不足或仍需观察",
-            "catalyst": "Polymarket Gives 18% Odds to a Tesla-SpaceX Merger Announcement in 2026",
+            "catalyst": "Waymo CEO takes a not-so-subtle shot at Tesla Robotaxi over Lidar",
             "expectation_gap": [
               "暂未看到明确正向预期差证据"
             ],
@@ -106268,7 +106036,7 @@
         "top_candidate": "NVDA",
         "validation_status": "not_yet_validated"
       },
-      "generated_at": "2026-08-06T04:33:46.767320+00:00",
+      "generated_at": "2026-08-06T06:16:37.817539+00:00",
       "model_version": "stock_baseline_v1",
       "notes": [
         "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -106464,7 +106232,7 @@
           "candidate_type": "failed_bounce_risk",
           "catalyst_score": 62.99,
           "company_name": "Nuscale Power Corp",
-          "confluence_score": 42.61,
+          "confluence_score": 42.8,
           "data_missing": [
             "single_stock_options"
           ],
@@ -106481,7 +106249,7 @@
             "mid": 9.35,
             "range_pct": 0.0714
           },
-          "final_radar_score": 55.22,
+          "final_radar_score": 55.24,
           "forecast_date": "2026-08-05",
           "invalidation_level": 7.21,
           "last_close": 9.380000114440918,
@@ -106710,7 +106478,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-08-06T04:33:46.773811+00:00",
+    "generated_at": "2026-08-06T06:16:37.823945+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 153,
     "risk_score_effectiveness": {
@@ -106782,7 +106550,7 @@
       "top_candidate": "NVDA",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-08-06T04:33:46.767320+00:00",
+    "generated_at": "2026-08-06T06:16:37.817539+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -106978,7 +106746,7 @@
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 62.99,
         "company_name": "Nuscale Power Corp",
-        "confluence_score": 42.61,
+        "confluence_score": 42.8,
         "data_missing": [
           "single_stock_options"
         ],
@@ -106995,7 +106763,7 @@
           "mid": 9.35,
           "range_pct": 0.0714
         },
-        "final_radar_score": 55.22,
+        "final_radar_score": 55.24,
         "forecast_date": "2026-08-05",
         "invalidation_level": 7.21,
         "last_close": 9.380000114440918,
