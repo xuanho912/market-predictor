@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-08-05T23:45:03.342117+00:00",
+  "generated_at": "2026-08-06T00:10:03.882458+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-08-05T23:45:03.363690+00:00",
+    "generated_at": "2026-08-06T00:10:03.903431+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 153,
     "risk_score_effectiveness": {
@@ -730,7 +730,7 @@
         "benchmark": "SPY",
         "benchmark_edge_status": "MODERATE_EDGE",
         "benchmark_market_state": "failed_bounce_risk",
-        "benchmark_primary_probability": 0.3139,
+        "benchmark_primary_probability": 0.3208,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -4608,8 +4608,7 @@
       "conflicting_signals": [
         "大盘背景对个股路径形成压力。",
         "个股相对强弱弱于基准。",
-        "价格仍在 50d 均线下方。",
-        "公司新闻或财报事件风险较高。"
+        "价格仍在 50d 均线下方。"
       ],
       "current_price": 9.380000114440918,
       "data_quality": {
@@ -4662,23 +4661,17 @@
           "analyst_rating_news": "missing",
           "company_news": "available",
           "earnings": "available",
-          "earnings_date": "2026-08-05",
-          "earnings_risk_flag": "high",
-          "earnings_within_30d": true,
-          "earnings_within_7d": true,
-          "event_risk_flag": "high",
+          "earnings_date": null,
+          "earnings_risk_flag": "low",
+          "earnings_within_30d": false,
+          "earnings_within_7d": false,
+          "event_risk_flag": "low",
           "headlines": [
             {
               "datetime": 1785771216,
               "headline": "Emerson Electric shares are trading higher after the company reported better-than-expected Q1 adjusted EPS results and raised its FY26 EPS guidance.",
               "source": "Benzinga",
               "url": "https://finnhub.io/api/news?id=bd0680fc04d01d6be4b3fbda35d65dcd59de87028f3a1f6d443e7c2618780489"
-            },
-            {
-              "datetime": 1785331092,
-              "headline": "Forgent Power Solutions shares are trading lower after the company announced a secondary offering of 30 million shares.",
-              "source": "Benzinga",
-              "url": "https://finnhub.io/api/news?id=3fb435c2c29de8d6501b29292d0b3554f0edcbc17d39e4506a71ad14f40b95e6"
             }
           ],
           "major_company_headline": "Emerson Electric shares are trading higher after the company reported better-than-expected Q1 adjusted EPS results and raised its FY26 EPS guidance.",
@@ -4738,44 +4731,44 @@
         "forecast_price_table": {
           "10d": {
             "confidence_level": "low",
-            "expected_price": 9.13,
-            "expected_return": -0.0265,
-            "lower_confidence_price": 8.08,
+            "expected_price": 9.14,
+            "expected_return": -0.0255,
+            "lower_confidence_price": 8.09,
             "primary_scenario_price": 8.77,
-            "probability_of_reaching_primary_price": 0.2588,
+            "probability_of_reaching_primary_price": 0.2573,
             "risk_scenario_price": 9.04,
             "secondary_scenario_price": 8.67,
-            "upper_confidence_price": 10.19
+            "upper_confidence_price": 10.2
           },
           "1d": {
             "confidence_level": "low",
             "expected_price": 9.34,
-            "expected_return": -0.0039,
+            "expected_return": -0.0037,
             "lower_confidence_price": 9.01,
             "primary_scenario_price": 9.33,
-            "probability_of_reaching_primary_price": 0.2588,
+            "probability_of_reaching_primary_price": 0.2573,
             "risk_scenario_price": 9.3,
             "secondary_scenario_price": 9.24,
             "upper_confidence_price": 9.68
           },
           "20d": {
             "confidence_level": "low",
-            "expected_price": 9.1,
-            "expected_return": -0.0297,
-            "lower_confidence_price": 7.61,
+            "expected_price": 9.11,
+            "expected_return": -0.0285,
+            "lower_confidence_price": 7.62,
             "primary_scenario_price": 8.67,
-            "probability_of_reaching_primary_price": 0.2588,
+            "probability_of_reaching_primary_price": 0.2573,
             "risk_scenario_price": 9.01,
             "secondary_scenario_price": 8.44,
-            "upper_confidence_price": 10.59
+            "upper_confidence_price": 10.6
           },
           "3d": {
             "confidence_level": "low",
             "expected_price": 9.28,
-            "expected_return": -0.0109,
-            "lower_confidence_price": 8.7,
+            "expected_return": -0.0103,
+            "lower_confidence_price": 8.71,
             "primary_scenario_price": 9.19,
-            "probability_of_reaching_primary_price": 0.2588,
+            "probability_of_reaching_primary_price": 0.2573,
             "risk_scenario_price": 9.18,
             "secondary_scenario_price": 9.05,
             "upper_confidence_price": 9.86
@@ -4783,24 +4776,24 @@
           "5d": {
             "confidence_level": "low",
             "expected_price": 9.22,
-            "expected_return": -0.0174,
-            "lower_confidence_price": 8.47,
+            "expected_return": -0.0166,
+            "lower_confidence_price": 8.48,
             "primary_scenario_price": 9.03,
-            "probability_of_reaching_primary_price": 0.2588,
+            "probability_of_reaching_primary_price": 0.2573,
             "risk_scenario_price": 9.11,
             "secondary_scenario_price": 8.89,
-            "upper_confidence_price": 9.96
+            "upper_confidence_price": 9.97
           },
           "60d": {
             "confidence_level": "low",
-            "expected_price": 9.12,
-            "expected_return": -0.0281,
-            "lower_confidence_price": 6.53,
+            "expected_price": 9.13,
+            "expected_return": -0.027,
+            "lower_confidence_price": 6.54,
             "primary_scenario_price": 8.6,
-            "probability_of_reaching_primary_price": 0.2588,
+            "probability_of_reaching_primary_price": 0.2573,
             "risk_scenario_price": 9.07,
             "secondary_scenario_price": 8.23,
-            "upper_confidence_price": 11.7
+            "upper_confidence_price": 11.71
           }
         },
         "trigger_levels": {
@@ -5139,42 +5132,42 @@
           {
             "confidence": "low",
             "label": "个股失败反抽",
-            "probability": 0.2588,
+            "probability": 0.2573,
             "reason": "反抽缺乏成交量/相对强弱确认或大盘风险上升时，失败反抽权重上升。",
             "scenario": "stock_failed_bounce"
           },
           {
             "confidence": "low",
             "label": "个股下跌延续",
-            "probability": 0.2269,
+            "probability": 0.2393,
             "reason": "价格低于关键均线、相对弱势或大盘 risk-off 时，下跌延续权重上升。",
             "scenario": "stock_downside_continuation"
           },
           {
             "confidence": "low",
-            "label": "个股事件风险",
-            "probability": 0.1697,
-            "reason": "个股新闻、财报、估值或期权数据缺失时，事件风险保持为独立风险路径。",
-            "scenario": "stock_event_risk"
-          },
-          {
-            "confidence": "low",
             "label": "个股震荡",
-            "probability": 0.1331,
+            "probability": 0.1404,
             "reason": "信号分歧较大时，震荡路径权重上升。",
             "scenario": "stock_sideways"
           },
           {
             "confidence": "low",
+            "label": "个股事件风险",
+            "probability": 0.14,
+            "reason": "个股新闻、财报、估值或期权数据缺失时，事件风险保持为独立风险路径。",
+            "scenario": "stock_event_risk"
+          },
+          {
+            "confidence": "low",
             "label": "个股趋势修复",
-            "probability": 0.1103,
+            "probability": 0.1163,
             "reason": "相对强弱和中期趋势修复信号较强时，该路径上升。",
             "scenario": "stock_trend_repair"
           },
           {
             "confidence": "low",
             "label": "个股反抽",
-            "probability": 0.1011,
+            "probability": 0.1066,
             "reason": "结合回撤、成交量和大盘背景，短中期反抽权重较高；当前市场背景为 risk_off_pressure。",
             "scenario": "stock_bounce"
           }
@@ -5183,29 +5176,28 @@
         "conflicting_signals": [
           "大盘背景对个股路径形成压力。",
           "个股相对强弱弱于基准。",
-          "价格仍在 50d 均线下方。",
-          "公司新闻或财报事件风险较高。"
+          "价格仍在 50d 均线下方。"
         ],
         "primary": {
           "confidence": "low",
           "label": "个股失败反抽",
-          "probability": 0.2588,
+          "probability": 0.2573,
           "reason": "反抽缺乏成交量/相对强弱确认或大盘风险上升时，失败反抽权重上升。",
           "scenario": "stock_failed_bounce"
         },
-        "probability_gap": 0.0319,
+        "probability_gap": 0.018,
         "ranking_note": "Stock scenario probabilities follow market -> sector -> stock hierarchy. Market risk sets confidence, sector/industry filters the setup, and stock evidence decides the final path. They are not validated alpha and not execution advice.",
         "risk": {
           "confidence": "low",
           "label": "个股事件风险",
-          "probability": 0.1697,
+          "probability": 0.14,
           "reason": "个股新闻、财报、估值或期权数据缺失时，事件风险保持为独立风险路径。",
           "scenario": "stock_event_risk"
         },
         "secondary": {
           "confidence": "low",
           "label": "个股下跌延续",
-          "probability": 0.2269,
+          "probability": 0.2393,
           "reason": "价格低于关键均线、相对弱势或大盘 risk-off 时，下跌延续权重上升。",
           "scenario": "stock_downside_continuation"
         },
@@ -5468,9 +5460,9 @@
           9.34,
           9.28,
           9.22,
-          9.13,
-          9.1,
-          9.12
+          9.14,
+          9.11,
+          9.13
         ],
         "historical_price": [
           13.99,
@@ -5604,21 +5596,21 @@
           "primary": {
             "confidence": "low",
             "label": "个股失败反抽",
-            "probability": 0.2588,
+            "probability": 0.2573,
             "reason": "反抽缺乏成交量/相对强弱确认或大盘风险上升时，失败反抽权重上升。",
             "scenario": "stock_failed_bounce"
           },
           "risk": {
             "confidence": "low",
             "label": "个股事件风险",
-            "probability": 0.1697,
+            "probability": 0.14,
             "reason": "个股新闻、财报、估值或期权数据缺失时，事件风险保持为独立风险路径。",
             "scenario": "stock_event_risk"
           },
           "secondary": {
             "confidence": "low",
             "label": "个股下跌延续",
-            "probability": 0.2269,
+            "probability": 0.2393,
             "reason": "价格低于关键均线、相对弱势或大盘 risk-off 时，下跌延续权重上升。",
             "scenario": "stock_downside_continuation"
           }
@@ -6070,7 +6062,7 @@
           {
             "affected_ticker": "SMR",
             "alert_level": "NO_ALERT",
-            "alert_score": 26.61,
+            "alert_score": 26.85,
             "alert_type": "Stock Failed Bounce Risk",
             "confirmation_needed": [
               "价格无法站上确认价",
@@ -6128,7 +6120,7 @@
           {
             "affected_ticker": "SMR",
             "alert_level": "NO_ALERT",
-            "alert_score": 22.42,
+            "alert_score": 23.16,
             "alert_type": "Stock Breakdown Warning",
             "confirmation_needed": [
               "跌破 breakdown level",
@@ -6244,7 +6236,7 @@
           {
             "affected_ticker": "SMR",
             "alert_level": "NO_ALERT",
-            "alert_score": 9.33,
+            "alert_score": 7.7,
             "alert_type": "Earnings/Event Risk",
             "confirmation_needed": [
               "接入真实公司新闻/财报日期",
@@ -6301,7 +6293,7 @@
           {
             "affected_ticker": "SMR",
             "alert_level": "NO_ALERT",
-            "alert_score": 5.56,
+            "alert_score": 5.86,
             "alert_type": "Stock Bounce Setup",
             "confirmation_needed": [
               "价格站上主路径确认价",
@@ -6361,7 +6353,7 @@
           {
             "affected_ticker": "SMR",
             "alert_level": "NO_ALERT",
-            "alert_score": 5.51,
+            "alert_score": 5.82,
             "alert_type": "Stock Breakout Watch",
             "confirmation_needed": [
               "站上 breakout level",
@@ -6539,15 +6531,14 @@
           "catalyst": {
             "evidence": [
               "公司新闻已接入: Emerson Electric shares are trading higher after the company reported better-than-expected Q1 adjusted EPS results and raised its FY26 EPS guidance.",
-              "新闻情绪偏正",
-              "未来 30 天存在财报催化：2026-08-05"
+              "新闻情绪偏正"
             ],
             "max_points": 10,
             "missing_fields": [],
             "name": "catalyst",
-            "points": 8.0,
-            "score_pct": 80.0,
-            "status": "supportive"
+            "points": 6.0,
+            "score_pct": 60.0,
+            "status": "neutral"
           },
           "flow": {
             "evidence": [
@@ -6626,13 +6617,13 @@
         "expected_alpha": {
           "benchmark": "IWM",
           "downside_risk_60d": 0.3276,
-          "expected_return_20d": -0.0299,
-          "expected_return_60d": -0.0277,
+          "expected_return_20d": -0.0288,
+          "expected_return_60d": -0.0267,
           "max_drawdown_risk_20d": 0.1591,
           "max_drawdown_risk_60d": 0.3276,
-          "outperformance_probability_20d": 0.4414,
-          "risk_reward_ratio": 0.37,
-          "upside_potential_60d": 0.1223
+          "outperformance_probability_20d": 0.4534,
+          "risk_reward_ratio": 0.39,
+          "upside_potential_60d": 0.1289
         },
         "forecast_grade": "weak_or_no_alpha_edge",
         "missing_data": [
@@ -6645,12 +6636,11 @@
         "purpose": "Estimate whether the stock has positive expectation-gap alpha versus its benchmark over 20d/60d horizons.",
         "risk_penalty": {
           "max_points": 30,
-          "points": 21.5,
+          "points": 16.5,
           "reasons": [
             "收入增长为负",
             "价格低于 200d 均线",
             "大盘风险背景压制",
-            "财报/事件风险偏高",
             "关键个股数据缺失：single_stock_options"
           ]
         },
@@ -6658,7 +6648,7 @@
           "capital_confirmation": "资金确认不足或仍需观察",
           "catalyst": "Emerson Electric shares are trading higher after the company reported better-than-expected Q1 adjusted EPS results and raised its FY26 EPS guidance.",
           "expectation_gap": [
-            "未来 30 天财报可能成为重新定价窗口"
+            "暂未看到明确正向预期差证据"
           ],
           "historical_analog_support": "supportive",
           "invalidation_summary": [
@@ -6673,7 +6663,7 @@
           "primary_path": "stock_failed_bounce",
           "valuation_repricing": "估值扩张证据不足或存在压力"
         },
-        "total_score": 5.5,
+        "total_score": 8.5,
         "validation_status": "not_yet_validated",
         "version": "stock_alpha_score_v1"
       },
@@ -6681,8 +6671,7 @@
         "conflicting_evidence": [
           "大盘风险背景压低个股置信度",
           "个股相对弱于大盘/benchmark",
-          "公司新闻或财报事件风险上升",
-          "财报日期临近",
+          "基础财务指标偏弱",
           "个股 Alpha 评分已接入",
           "主路径和第二路径差距较小"
         ],
@@ -6700,14 +6689,14 @@
         "module_scores": {
           "alpha_quality": {
             "evidence": "个股 Alpha 评分已接入",
-            "reason": "score=5.5; grade=weak_or_no_alpha_edge; benchmark=IWM",
-            "score": 5.5,
+            "reason": "score=8.5; grade=weak_or_no_alpha_edge; benchmark=IWM",
+            "score": 8.5,
             "status": "conflicting"
           },
           "fundamentals_earnings": {
-            "evidence": "财报日期临近",
-            "reason": "earnings_date=2026-08-05",
-            "score": 38,
+            "evidence": "基础财务指标偏弱",
+            "reason": "Finnhub basic metrics available",
+            "score": 0,
             "status": "conflicting"
           },
           "historical_analog": {
@@ -6723,10 +6712,10 @@
             "status": "conflicting"
           },
           "news_event": {
-            "evidence": "公司新闻或财报事件风险上升",
-            "reason": "risk_score=15.0; earnings_date=2026-08-05",
-            "score": 52.3,
-            "status": "conflicting"
+            "evidence": "近期公司新闻偏支持",
+            "reason": "Emerson Electric shares are trading higher after the company reported better-than-expected Q1 adjusted EPS results and raised its FY26 EPS guidance.",
+            "score": 64.3,
+            "status": "supportive"
           },
           "options_volatility": {
             "evidence": "个股期权/隐含波动率未完整接入",
@@ -6760,11 +6749,12 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 42.08,
+        "stock_confluence_score": 43.99,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "个股跑赢所属板块",
           "价格结构支持主路径",
+          "近期公司新闻偏支持",
           "历史相似结构支持主路径"
         ],
         "validation_status": "not_yet_validated"
@@ -8991,7 +8981,7 @@
       "top_candidate": "NVDA",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-08-05T23:45:03.357105+00:00",
+    "generated_at": "2026-08-06T00:10:03.897035+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -9175,19 +9165,19 @@
       },
       {
         "alpha_fields": {
-          "alpha_score": 5.5,
-          "expected_return_60d": -0.0277,
+          "alpha_score": 8.5,
+          "expected_return_60d": -0.0267,
           "forecast_grade": "weak_or_no_alpha_edge",
           "main_logic": "电力/核能/能源基础设施逻辑：政策与订单催化、盈利兑现能力、利率敏感度和资金确认。",
-          "outperformance_probability_20d": 0.4414,
-          "risk_reward_ratio": 0.37
+          "outperformance_probability_20d": 0.4534,
+          "risk_reward_ratio": 0.39
         },
-        "alpha_quality_score": 5.5,
+        "alpha_quality_score": 8.5,
         "as_of": "2026-08-05",
         "candidate_type": "failed_bounce_risk",
-        "catalyst_score": 65.18,
+        "catalyst_score": 63.4,
         "company_name": "Nuscale Power Corp",
-        "confluence_score": 42.08,
+        "confluence_score": 43.99,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9204,7 +9194,7 @@
           "mid": 9.34,
           "range_pct": 0.0714
         },
-        "final_radar_score": 52.68,
+        "final_radar_score": 53.27,
         "forecast_date": "2026-08-05",
         "invalidation_level": 7.21,
         "last_close": 9.380000114440918,
@@ -9212,12 +9202,13 @@
         "main_conflicting_evidence": [
           "大盘风险背景压低个股置信度",
           "个股相对弱于大盘/benchmark",
-          "公司新闻或财报事件风险上升",
-          "财报日期临近"
+          "基础财务指标偏弱",
+          "个股 Alpha 评分已接入"
         ],
         "main_supporting_evidence": [
           "个股跑赢所属板块",
           "价格结构支持主路径",
+          "近期公司新闻偏支持",
           "历史相似结构支持主路径"
         ],
         "market_context": "risk_off_pressure",
@@ -9227,10 +9218,10 @@
           "company_news": "available",
           "earnings": "available"
         },
-        "next_day_move_probability": 0.8341,
-        "one_line_reason": "failed_bounce_risk: Alpha 6 / 弹性 100 / 成交量 62 / 相对强弱 40 / 催化 65 / 大盘 risk_off_pressure / 板块 supportive",
-        "outperformance_probability_20d": 0.4414,
-        "primary_probability": 0.2588,
+        "next_day_move_probability": 0.8306,
+        "one_line_reason": "failed_bounce_risk: Alpha 8 / 弹性 100 / 成交量 62 / 相对强弱 40 / 催化 63 / 大盘 risk_off_pressure / 板块 supportive",
+        "outperformance_probability_20d": 0.4534,
+        "primary_probability": 0.2573,
         "primary_scenario": "stock_failed_bounce",
         "radar_level": "MODERATE_OPPORTUNITY",
         "rank": 3,
@@ -9242,9 +9233,9 @@
           "stock_vs_sector_20d": 0.1083
         },
         "relative_strength_score": 40.08,
-        "risk_reward_ratio": 0.37,
+        "risk_reward_ratio": 0.39,
         "risk_scenario": "stock_event_risk",
-        "risk_score": 59.67,
+        "risk_score": 60.12,
         "secondary_scenario": "stock_downside_continuation",
         "sector_context": "supportive",
         "squeeze_proxy_score": 67.58,

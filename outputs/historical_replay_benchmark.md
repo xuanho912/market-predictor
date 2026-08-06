@@ -1,6 +1,6 @@
 # Historical Replay Benchmark
 
-Generated at: `2026-08-05T23:45:03.065387+00:00`
+Generated at: `2026-08-06T00:10:03.580552+00:00`
 Validation type: `historical_replay`
 Status: `research_evaluation_only_not_forward_validation`
 Sample size: `80`
@@ -28,8 +28,8 @@ Overfit warning: `{'level': 'medium', 'reasons': ['high signal confirmation is m
 - primary_mean_absolute_error: `0.015452`
 - secondary_mean_absolute_error: `0.017249`
 - primary_error_advantage: `0.001797`
-- close_call_sample_size: `80`
-- close_call_primary_closer_rate: `0.5125`
+- close_call_sample_size: `60`
+- close_call_primary_closer_rate: `0.5167`
 
 ### 5d
 - sample_size: `80`
@@ -40,8 +40,8 @@ Overfit warning: `{'level': 'medium', 'reasons': ['high signal confirmation is m
 - primary_mean_absolute_error: `0.018992`
 - secondary_mean_absolute_error: `0.02328`
 - primary_error_advantage: `0.004288`
-- close_call_sample_size: `80`
-- close_call_primary_closer_rate: `0.6`
+- close_call_sample_size: `60`
+- close_call_primary_closer_rate: `0.5667`
 
 ### 10d
 - sample_size: `80`
@@ -52,8 +52,8 @@ Overfit warning: `{'level': 'medium', 'reasons': ['high signal confirmation is m
 - primary_mean_absolute_error: `0.029818`
 - secondary_mean_absolute_error: `0.037317`
 - primary_error_advantage: `0.007499`
-- close_call_sample_size: `80`
-- close_call_primary_closer_rate: `0.575`
+- close_call_sample_size: `60`
+- close_call_primary_closer_rate: `0.6`
 
 ### 20d
 - sample_size: `80`
@@ -64,8 +64,8 @@ Overfit warning: `{'level': 'medium', 'reasons': ['high signal confirmation is m
 - primary_mean_absolute_error: `0.056988`
 - secondary_mean_absolute_error: `0.07221`
 - primary_error_advantage: `0.015222`
-- close_call_sample_size: `80`
-- close_call_primary_closer_rate: `0.6375`
+- close_call_sample_size: `60`
+- close_call_primary_closer_rate: `0.65`
 
 ### 60d
 - sample_size: `80`
@@ -76,8 +76,8 @@ Overfit warning: `{'level': 'medium', 'reasons': ['high signal confirmation is m
 - primary_mean_absolute_error: `0.073745`
 - secondary_mean_absolute_error: `0.074997`
 - primary_error_advantage: `0.001252`
-- close_call_sample_size: `80`
-- close_call_primary_closer_rate: `0.5`
+- close_call_sample_size: `60`
+- close_call_primary_closer_rate: `0.5667`
 
 ## Scenario Type Performance
 

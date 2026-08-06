@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-05T23:44:53.202809+00:00`
+- generated_at: `2026-08-06T00:09:50.781023+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `11`
@@ -27,7 +27,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: EXCLUSIVE: Iran threatens to hit Gulf states if US launches new strikes - reuters.com
+- headline: EXCLUSIVE: Iran threatens to hit Gulf states if US launches new strikes - Reuters
 - source: Reuters
 - published_at: `2026-08-05T21:30:57+00:00`
 - importance_score: `100`
@@ -35,7 +35,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Israeli military strikes southern Lebanon after evacuation warning to village - reuters.com
+- headline: Israeli military strikes southern Lebanon after evacuation warning to village - Reuters
 - source: Reuters
 - published_at: `2026-08-05T19:17:01+00:00`
 - importance_score: `100`
@@ -43,7 +43,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Phillips 66 beats quarterly estimates as Iran war boosts US refining margins - reuters.com
+- headline: Phillips 66 beats quarterly estimates as Iran war boosts US refining margins - Reuters
 - source: Reuters
 - published_at: `2026-08-05T18:38:47+00:00`
 - importance_score: `100`
@@ -51,7 +51,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Yemen's Houthis say they attacked Saudi oil tankers in Red Sea, Gulf of Aden - reuters.com
+- headline: Yemen's Houthis say they attacked Saudi oil tankers in Red Sea, Gulf of Aden - Reuters
 - source: Reuters
 - published_at: `2026-08-05T18:34:15+00:00`
 - importance_score: `100`
@@ -59,7 +59,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Gulf oil exports steady in July, still 40% below pre-war mark - reuters.com
+- headline: Gulf oil exports steady in July, still 40% below pre-war mark - Reuters
 - source: Reuters
 - published_at: `2026-08-05T18:25:22+00:00`
 - importance_score: `100`
@@ -67,7 +67,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: World faces fresh food price surge, FAO warns - reuters.com
+- headline: World faces fresh food price surge, FAO warns - Reuters
 - source: Reuters
 - published_at: `2026-08-05T13:33:25+00:00`
 - importance_score: `100`
@@ -83,7 +83,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Euro zone services revival drives activity in July but outlook clouded by Iran war - reuters.com
+- headline: Euro zone services revival drives activity in July but outlook clouded by Iran war - Reuters
 - source: Reuters
 - published_at: `2026-08-05T09:02:18+00:00`
 - importance_score: `100`
@@ -91,7 +91,7 @@
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: Oil prices mixed as investors ponder Strait of Hormuz reopening hopes - reuters.com
+- headline: Oil prices mixed as investors ponder Strait of Hormuz reopening hopes - Reuters
 - source: Reuters
 - published_at: `2026-08-05T01:26:00+00:00`
 - importance_score: `100`
@@ -99,7 +99,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Qatar says mediators make progress in efforts to end US-Iran war - reuters.com
+- headline: Qatar says mediators make progress in efforts to end US-Iran war - Reuters
 - source: Reuters
 - published_at: `2026-08-05T00:11:03+00:00`
 - importance_score: `100`
