@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-06T00:09:50.781023+00:00`
+- generated_at: `2026-08-06T04:33:34.567276+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `11`
-- event_detection_confidence: `79`
+- major_event_count: `10`
+- event_detection_confidence: `81`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,22 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Gold touches seven-week high on Strait of Hormuz reopening hopes - Reuters
+- source: Reuters
+- published_at: `2026-08-06T01:12:07+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Oil prices slip as Iran-Oman talks fuel hopes for US-Iran peace deal - Reuters
+- source: Reuters
+- published_at: `2026-08-06T01:07:41+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -71,7 +87,7 @@
 - source: Reuters
 - published_at: `2026-08-05T13:33:25+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -79,28 +95,12 @@
 - source: CNBC
 - published_at: `2026-08-05T13:22:20+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Euro zone services revival drives activity in July but outlook clouded by Iran war - Reuters
 - source: Reuters
 - published_at: `2026-08-05T09:02:18+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Oil prices mixed as investors ponder Strait of Hormuz reopening hopes - Reuters
-- source: Reuters
-- published_at: `2026-08-05T01:26:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Qatar says mediators make progress in efforts to end US-Iran war - Reuters
-- source: Reuters
-- published_at: `2026-08-05T00:11:03+00:00`
 - importance_score: `100`
 - confidence: `medium`
