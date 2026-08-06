@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-06T06:16:26.906636+00:00`
+- generated_at: `2026-08-06T14:37:34.801496+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
-- event_detection_confidence: `78`
+- major_event_count: `12`
+- event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -25,19 +25,51 @@
 
 ## Major Events
 
-### geopolitical_risk_easing / risk_on
+### geopolitical_risk_escalation / risk_off
 
-- headline: Gold touches seven-week peak on Strait of Hormuz reopening hopes - Reuters
+- headline: EXCLUSIVE: Iran warns Gulf states: tell Trump to desist or we hit you hard - Reuters
 - source: Reuters
-- published_at: `2026-08-06T00:51:00+00:00`
+- published_at: `2026-08-06T12:31:46+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: EXCLUSIVE: Iran threatens to hit Gulf states if US launches new strikes - Reuters
+- headline: As Iran war drags on, Americans are bracing for more chaos in Middle East, Reuters/Ipsos poll finds - Reuters
 - source: Reuters
-- published_at: `2026-08-05T21:30:57+00:00`
+- published_at: `2026-08-06T10:56:07+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Gulf shipping traffic down after Houthis say they attacked Saudi tanker - Reuters
+- source: Reuters
+- published_at: `2026-08-06T05:37:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Israel strikes south Lebanon after soldiers killed, talks continue in Rome - Reuters
+- source: Reuters
+- published_at: `2026-08-06T03:27:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Dollar ticks up as markets await Iran deal news, look towards payrolls - Reuters
+- source: Reuters
+- published_at: `2026-08-06T02:01:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Oil prices mixed as investors ponder Strait of Hormuz reopening hopes - Reuters
+- source: Reuters
+- published_at: `2026-08-05T20:03:51+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -51,48 +83,24 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: EXCLUSIVE: Iran threatens to hit Gulf states if US launches new strikes - Reuters
+- source: Reuters
+- published_at: `2026-08-05T19:07:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Phillips 66 beats quarterly estimates as Iran war boosts US refining margins - Reuters
 - source: Reuters
 - published_at: `2026-08-05T18:38:47+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Yemen's Houthis say they attacked Saudi oil tankers in Red Sea, Gulf of Aden - Reuters
 - source: Reuters
 - published_at: `2026-08-05T18:34:15+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Gulf oil exports steady in July, still 40% below pre-war mark - Reuters
-- source: Reuters
-- published_at: `2026-08-05T18:25:22+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: World faces fresh food price surge, FAO warns - Reuters
-- source: Reuters
-- published_at: `2026-08-05T13:33:25+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Situational Awareness hedge fund meltdown was a warning shot for leveraged markets, BofA CEO says
-- source: CNBC
-- published_at: `2026-08-05T13:22:20+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Euro zone services revival drives activity in July but outlook clouded by Iran war - Reuters
-- source: Reuters
-- published_at: `2026-08-05T09:02:18+00:00`
 - importance_score: `100`
 - confidence: `medium`
