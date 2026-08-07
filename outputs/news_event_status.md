@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-07T13:42:37.303640+00:00`
+- generated_at: `2026-08-07T21:08:50.578335+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
-- event_detection_confidence: `71`
+- major_event_count: `8`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `50`
+- confirmation_score: `0`
 
 ## Dashboard Note
 
@@ -27,11 +27,51 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Everybody wants energy security post the Iran war, but how? - Reuters
-- source: Reuters
-- published_at: `2026-08-07T06:29:48+00:00`
+- headline: ‘SaaSpocalypse’ debate intensifies as software stocks swing wildly
+- source: CNBC
+- published_at: `2026-08-07T20:22:17+00:00`
 - importance_score: `100`
 - confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Everybody wants energy security post the Iran war, but how? - Reuters
+- source: Reuters
+- published_at: `2026-08-07T16:08:43+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: ADNOC says attacks on vessels, staff significantly impacting operations - Reuters
+- source: Reuters
+- published_at: `2026-08-07T15:07:38+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: What is the Patriot missile system and why are supplies depleted worldwide? - Reuters
+- source: Reuters
+- published_at: `2026-08-07T15:00:03+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Prices in UK housing market flat in July as Iran war weighs - Reuters
+- source: Reuters
+- published_at: `2026-08-07T06:42:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Brent climbs $1 on uncertainty over end to Iran war - Reuters
+- source: Reuters
+- published_at: `2026-08-07T00:47:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -46,29 +86,5 @@
 - headline: Trump says he thinks war with Iran will end 'pretty soon' - Reuters
 - source: Reuters
 - published_at: `2026-08-06T21:11:54+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US is set to import most Middle East crude since Iran war began - Reuters
-- source: Reuters
-- published_at: `2026-08-06T16:41:46+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump's Iran dilemma: He's stuck in war with no exit in sight - Reuters
-- source: Reuters
-- published_at: `2026-08-06T16:35:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Houthi attacks kill at least 30 Yemeni government troops - Reuters
-- source: Reuters
-- published_at: `2026-08-06T15:41:40+00:00`
 - importance_score: `100`
 - confidence: `medium`
