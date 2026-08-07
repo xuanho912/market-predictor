@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-07T21:08:50.578335+00:00`
+- generated_at: `2026-08-07T22:11:18.051424+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `8`
-- event_detection_confidence: `74`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -30,6 +30,14 @@
 - headline: ‘SaaSpocalypse’ debate intensifies as software stocks swing wildly
 - source: CNBC
 - published_at: `2026-08-07T20:22:17+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Brent climbs $1 on uncertainty over end to Iran war - Reuters
+- source: Reuters
+- published_at: `2026-08-07T20:05:14+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -62,14 +70,6 @@
 - headline: Prices in UK housing market flat in July as Iran war weighs - Reuters
 - source: Reuters
 - published_at: `2026-08-07T06:42:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Brent climbs $1 on uncertainty over end to Iran war - Reuters
-- source: Reuters
-- published_at: `2026-08-07T00:47:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
