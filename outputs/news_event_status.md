@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-07T01:06:54.658019+00:00`
+- generated_at: `2026-08-07T01:40:25.369649+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `8`
@@ -27,7 +27,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Houthi attack on Saudi Arabia wounds 11 civilians as kingdom warns of wider threat - reuters.com
+- headline: Houthi attack on Saudi Arabia wounds 11 civilians as kingdom warns of wider threat - Reuters
 - source: Reuters
 - published_at: `2026-08-06T21:43:00+00:00`
 - importance_score: `100`
@@ -35,7 +35,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Trump says he thinks war with Iran will end 'pretty soon' - reuters.com
+- headline: Trump says he thinks war with Iran will end 'pretty soon' - Reuters
 - source: Reuters
 - published_at: `2026-08-06T21:11:54+00:00`
 - importance_score: `100`
@@ -43,7 +43,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Trump's Iran dilemma: He's stuck in war with no exit in sight - reuters.com
+- headline: Trump's Iran dilemma: He's stuck in war with no exit in sight - Reuters
 - source: Reuters
 - published_at: `2026-08-06T16:56:12+00:00`
 - importance_score: `100`
@@ -51,7 +51,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US is set to import most Middle East crude since Iran war began - reuters.com
+- headline: US is set to import most Middle East crude since Iran war began - Reuters
 - source: Reuters
 - published_at: `2026-08-06T16:41:46+00:00`
 - importance_score: `100`
@@ -67,7 +67,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: EXCLUSIVE: Iran warns Gulf states: tell Trump to desist or we hit you hard - reuters.com
+- headline: EXCLUSIVE: Iran warns Gulf states: tell Trump to desist or we hit you hard - Reuters
 - source: Reuters
 - published_at: `2026-08-06T12:31:46+00:00`
 - importance_score: `100`
@@ -83,7 +83,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: As Iran war drags on, Americans are bracing for more chaos in Middle East, Reuters/Ipsos poll finds - reuters.com
+- headline: As Iran war drags on, Americans are bracing for more chaos in Middle East, Reuters/Ipsos poll finds - Reuters
 - source: Reuters
 - published_at: `2026-08-06T10:56:07+00:00`
 - importance_score: `100`
