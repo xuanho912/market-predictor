@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-07T01:40:25.369649+00:00`
+- generated_at: `2026-08-07T01:45:23.098725+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `8`
