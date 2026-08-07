@@ -11,10 +11,10 @@
     "can_append_forecast_record": false,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-08-07",
-    "current_time_us_eastern": "2026-08-07T00:07:09.217279-04:00",
+    "current_time_us_eastern": "2026-08-07T01:25:19.616226-04:00",
     "data_freshness_status": "market_open_unconfirmed",
     "expected_latest_trading_date": "2026-08-06",
-    "generated_at": "2026-08-07T04:07:09.217279+00:00",
+    "generated_at": "2026-08-07T05:25:19.616226+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -1053,15 +1053,15 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "DGS3MO",
+      "HY_OAS",
+      "DGS2",
       "IG_OAS",
       "DGS10",
-      "DGS2",
-      "HY_OAS",
+      "DGS3MO",
       "BAA_SPREAD",
-      "FINANCIAL_STRESS",
       "DFII10",
-      "RECESSION"
+      "RECESSION",
+      "FINANCIAL_STRESS"
     ],
     "freshness_warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-08-06，最近完整收盘交易日为 2026-08-06；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
     "gamma_available": false,
@@ -1092,10 +1092,10 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 80,
+      "event_detection_confidence": 79,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-08-07T04:06:59.114283+00:00",
+      "last_update": "2026-08-07T05:25:08.446265+00:00",
       "major_event_count": 8,
       "missing_reason": null,
       "news_direction": "risk_off",
@@ -1379,7 +1379,7 @@
           "source": "Reuters"
         },
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -1391,7 +1391,7 @@
           "source": "Reuters"
         },
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -1573,7 +1573,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": -0.0047,
-        "avg_equity_futures_1d_return": -0.0051,
+        "avg_equity_futures_1d_return": -0.0002,
         "confirmed_checks": [
           "股票ETF或股指期货下跌",
           "美元走强"
@@ -1589,7 +1589,7 @@
           "HYG/LQD 走弱"
         ],
         "hyg_lqd_1d_relative_return": 0.0028,
-        "oil_proxy_1d_return": 0.0311,
+        "oil_proxy_1d_return": 0.0238,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -4105,7 +4105,7 @@
             "event_type": "geopolitical_risk_easing",
             "expected_horizon": "1d-5d",
             "expected_market_direction": "risk_on",
-            "freshness_score": 99,
+            "freshness_score": 96,
             "headline": "Oil rises on concerns over Strait of Hormuz reopening plans - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_easing_risk_on",
@@ -4125,14 +4125,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 96,
+            "confidence_score": 95,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 85,
+            "freshness_score": 82,
             "headline": "Houthi attack on Saudi Arabia wounds 11 civilians as kingdom warns of wider threat - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4159,66 +4159,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 80,
             "headline": "Trump says he thinks war with Iran will end 'pretty soon' - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-08-06T21:11:54+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 73,
-            "headline": "US is set to import most Middle East crude since Iran war began - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-08-06T16:41:46+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 72,
-            "headline": "Trump's Iran dilemma: He's stuck in war with no exit in sight - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-08-06T16:35:00+00:00",
             "source": "Reuters"
           },
           {
@@ -4240,7 +4186,61 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 69,
+            "headline": "US is set to import most Middle East crude since Iran war began - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-06T16:41:46+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 74,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 69,
+            "headline": "Trump's Iran dilemma: He's stuck in war with no exit in sight - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-06T16:35:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 73,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 67,
             "headline": "Houthi attacks kill at least 30 Yemeni government troops - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4306,7 +4306,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -4318,7 +4318,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -4391,7 +4391,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0047,
-            "avg_equity_futures_1d_return": -0.0051,
+            "avg_equity_futures_1d_return": -0.0002,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "美元走强"
@@ -4407,7 +4407,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0028,
-            "oil_proxy_1d_return": 0.0311,
+            "oil_proxy_1d_return": 0.0238,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -6615,7 +6615,7 @@
             "event_type": "geopolitical_risk_easing",
             "expected_horizon": "1d-5d",
             "expected_market_direction": "risk_on",
-            "freshness_score": 99,
+            "freshness_score": 96,
             "headline": "Oil rises on concerns over Strait of Hormuz reopening plans - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_easing_risk_on",
@@ -6635,14 +6635,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 96,
+            "confidence_score": 95,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 85,
+            "freshness_score": 82,
             "headline": "Houthi attack on Saudi Arabia wounds 11 civilians as kingdom warns of wider threat - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6669,66 +6669,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 80,
             "headline": "Trump says he thinks war with Iran will end 'pretty soon' - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-08-06T21:11:54+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 73,
-            "headline": "US is set to import most Middle East crude since Iran war began - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-08-06T16:41:46+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 72,
-            "headline": "Trump's Iran dilemma: He's stuck in war with no exit in sight - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-08-06T16:35:00+00:00",
             "source": "Reuters"
           },
           {
@@ -6750,7 +6696,61 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 69,
+            "headline": "US is set to import most Middle East crude since Iran war began - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-06T16:41:46+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 74,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 69,
+            "headline": "Trump's Iran dilemma: He's stuck in war with no exit in sight - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-06T16:35:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 73,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 67,
             "headline": "Houthi attacks kill at least 30 Yemeni government troops - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6816,7 +6816,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -6828,7 +6828,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -6901,7 +6901,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0047,
-            "avg_equity_futures_1d_return": -0.0051,
+            "avg_equity_futures_1d_return": -0.0002,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "美元走强"
@@ -6917,7 +6917,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0028,
-            "oil_proxy_1d_return": 0.0311,
+            "oil_proxy_1d_return": 0.0238,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -9140,7 +9140,7 @@
             "event_type": "geopolitical_risk_easing",
             "expected_horizon": "1d-5d",
             "expected_market_direction": "risk_on",
-            "freshness_score": 99,
+            "freshness_score": 96,
             "headline": "Oil rises on concerns over Strait of Hormuz reopening plans - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_easing_risk_on",
@@ -9160,14 +9160,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 96,
+            "confidence_score": 95,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 85,
+            "freshness_score": 82,
             "headline": "Houthi attack on Saudi Arabia wounds 11 civilians as kingdom warns of wider threat - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9194,66 +9194,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 80,
             "headline": "Trump says he thinks war with Iran will end 'pretty soon' - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-08-06T21:11:54+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 73,
-            "headline": "US is set to import most Middle East crude since Iran war began - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-08-06T16:41:46+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 72,
-            "headline": "Trump's Iran dilemma: He's stuck in war with no exit in sight - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-08-06T16:35:00+00:00",
             "source": "Reuters"
           },
           {
@@ -9275,7 +9221,61 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 69,
+            "headline": "US is set to import most Middle East crude since Iran war began - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-06T16:41:46+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 74,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 69,
+            "headline": "Trump's Iran dilemma: He's stuck in war with no exit in sight - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-06T16:35:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 73,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 67,
             "headline": "Houthi attacks kill at least 30 Yemeni government troops - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9341,7 +9341,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -9353,7 +9353,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -9426,7 +9426,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0047,
-            "avg_equity_futures_1d_return": -0.0051,
+            "avg_equity_futures_1d_return": -0.0002,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "美元走强"
@@ -9442,7 +9442,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0028,
-            "oil_proxy_1d_return": 0.0311,
+            "oil_proxy_1d_return": 0.0238,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -11691,7 +11691,7 @@
             "event_type": "geopolitical_risk_easing",
             "expected_horizon": "1d-5d",
             "expected_market_direction": "risk_on",
-            "freshness_score": 99,
+            "freshness_score": 96,
             "headline": "Oil rises on concerns over Strait of Hormuz reopening plans - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_easing_risk_on",
@@ -11711,14 +11711,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 96,
+            "confidence_score": 95,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 85,
+            "freshness_score": 82,
             "headline": "Houthi attack on Saudi Arabia wounds 11 civilians as kingdom warns of wider threat - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11745,66 +11745,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 80,
             "headline": "Trump says he thinks war with Iran will end 'pretty soon' - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-08-06T21:11:54+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 73,
-            "headline": "US is set to import most Middle East crude since Iran war began - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-08-06T16:41:46+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 72,
-            "headline": "Trump's Iran dilemma: He's stuck in war with no exit in sight - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-08-06T16:35:00+00:00",
             "source": "Reuters"
           },
           {
@@ -11826,7 +11772,61 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 69,
+            "headline": "US is set to import most Middle East crude since Iran war began - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-06T16:41:46+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 74,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 69,
+            "headline": "Trump's Iran dilemma: He's stuck in war with no exit in sight - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-06T16:35:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 73,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 67,
             "headline": "Houthi attacks kill at least 30 Yemeni government troops - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11892,7 +11892,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -11904,7 +11904,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -11977,7 +11977,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0047,
-            "avg_equity_futures_1d_return": -0.0051,
+            "avg_equity_futures_1d_return": -0.0002,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "美元走强"
@@ -11993,7 +11993,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0028,
-            "oil_proxy_1d_return": 0.0311,
+            "oil_proxy_1d_return": 0.0238,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
