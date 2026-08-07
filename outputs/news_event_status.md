@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-07T00:58:55.301897+00:00`
+- generated_at: `2026-08-07T01:06:54.658019+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `8`
-- event_detection_confidence: `76`
+- event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,9 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Saudi Arabia expects imminent attacks from north and south, senior official says - reuters.com
+- headline: Houthi attack on Saudi Arabia wounds 11 civilians as kingdom warns of wider threat - reuters.com
 - source: Reuters
-- published_at: `2026-08-06T21:43:07+00:00`
+- published_at: `2026-08-06T21:43:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
