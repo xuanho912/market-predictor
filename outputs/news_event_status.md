@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-07T05:25:08.446265+00:00`
+- generated_at: `2026-08-07T13:42:37.303640+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
-- event_detection_confidence: `79`
+- major_event_count: `6`
+- event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -25,21 +25,21 @@
 
 ## Major Events
 
-### geopolitical_risk_easing / risk_on
+### geopolitical_risk_escalation / risk_off
 
-- headline: Oil rises on concerns over Strait of Hormuz reopening plans - Reuters
+- headline: Everybody wants energy security post the Iran war, but how? - Reuters
 - source: Reuters
-- published_at: `2026-08-07T03:41:34+00:00`
+- published_at: `2026-08-07T06:29:48+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Houthi attack on Saudi Arabia wounds 11 civilians as kingdom warns of wider threat - Reuters
+- headline: Saudi expects imminent two-pronged attack from Iran's allies, official says - Reuters
 - source: Reuters
 - published_at: `2026-08-06T21:43:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +47,7 @@
 - source: Reuters
 - published_at: `2026-08-06T21:11:54+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -70,21 +70,5 @@
 - headline: Houthi attacks kill at least 30 Yemeni government troops - Reuters
 - source: Reuters
 - published_at: `2026-08-06T15:41:40+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: EXCLUSIVE: Iran warns Gulf states: tell Trump to desist or we hit you hard - Reuters
-- source: Reuters
-- published_at: `2026-08-06T12:31:46+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Afghan national handed life sentence for deadly car attack on Munich union rally - Reuters
-- source: Reuters
-- published_at: `2026-08-06T12:17:39+00:00`
 - importance_score: `100`
 - confidence: `medium`
