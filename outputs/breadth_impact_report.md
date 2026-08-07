@@ -1,6 +1,6 @@
 # Breadth Impact Audit
 
-Generated at: `2026-08-07T01:45:33.202951Z`
+Generated at: `2026-08-07T04:07:09.208858Z`
 
 ## Summary
 
@@ -16,7 +16,7 @@ Generated at: `2026-08-07T01:45:33.202951Z`
 
 | symbol | supports primary | conflicts primary | edge before | edge after | primary before | primary after | failed bounce delta | confirmation delta | confidence delta | reason | risk note |
 |---|---:|---:|---|---|---|---|---:|---:|---:|---|---|
-| SPY | True | True | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.1099 | 0 | -2 | SPY breadth supports bounce_path: internal resonance is surface_only, support score 74%, above 20d/50d MA 65%/67%. | SPY index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
+| SPY | True | True | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.11 | 0 | -2 | SPY breadth supports bounce_path: internal resonance is surface_only, support score 74%, above 20d/50d MA 65%/67%. | SPY index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
 | QQQ | False | True | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.1707 | -9 | -6 | QQQ breadth conflicts with bounce_path: conflict score 69%, internal resonance is surface_only. | QQQ index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
 | IWM | False | True | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.1353 | 0 | 0 | IWM breadth is mixed for bounce_path: support score 52%, conflict score 52%, internal resonance is surface_only. | IWM index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
 | DIA | True | False | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.018 | 0 | 8 | DIA breadth supports bounce_path: internal resonance is mixed, support score 99%, above 20d/50d MA 77%/80%. | DIA index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |

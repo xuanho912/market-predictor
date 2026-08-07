@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-07T01:45:23.098725+00:00`
+- generated_at: `2026-08-07T04:06:59.114283+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `8`
-- event_detection_confidence: `78`
+- event_detection_confidence: `80`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -25,6 +25,14 @@
 
 ## Major Events
 
+### geopolitical_risk_easing / risk_on
+
+- headline: Oil rises on concerns over Strait of Hormuz reopening plans - Reuters
+- source: Reuters
+- published_at: `2026-08-07T03:41:34+00:00`
+- importance_score: `100`
+- confidence: `high`
+
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Houthi attack on Saudi Arabia wounds 11 civilians as kingdom warns of wider threat - Reuters
@@ -43,17 +51,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Trump's Iran dilemma: He's stuck in war with no exit in sight - Reuters
+- headline: US is set to import most Middle East crude since Iran war began - Reuters
 - source: Reuters
-- published_at: `2026-08-06T16:56:12+00:00`
+- published_at: `2026-08-06T16:41:46+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US is set to import most Middle East crude since Iran war began - Reuters
+- headline: Trump's Iran dilemma: He's stuck in war with no exit in sight - Reuters
 - source: Reuters
-- published_at: `2026-08-06T16:41:46+00:00`
+- published_at: `2026-08-06T16:35:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -63,7 +71,7 @@
 - source: Reuters
 - published_at: `2026-08-06T15:41:40+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -78,13 +86,5 @@
 - headline: Afghan national handed life sentence for deadly car attack on Munich union rally - Reuters
 - source: Reuters
 - published_at: `2026-08-06T12:17:39+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: As Iran war drags on, Americans are bracing for more chaos in Middle East, Reuters/Ipsos poll finds - Reuters
-- source: Reuters
-- published_at: `2026-08-06T10:56:07+00:00`
 - importance_score: `100`
 - confidence: `medium`

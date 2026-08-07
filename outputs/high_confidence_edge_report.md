@@ -1,6 +1,6 @@
 # High Confidence Edge Report
 
-Generated at: `2026-08-07T01:45:23.094435+00:00`
+Generated at: `2026-08-07T04:06:59.111183+00:00`
 
 Status: `historical_proxy_and_forward_pending`
 Sample size: `80`
@@ -123,12 +123,12 @@ Conclusion: `forward_validation_insufficient_keep_confidence_capped`
 - 60d: sample `20`, hit `0.7`, avg `0.056092`, median `0.079128`, mae `0.086353`
 
 ### breadth_confirmed_reversal_signals
-- sample_size: `20`
-- 3d: sample `20`, hit `0.55`, avg `-0.00276`, median `0.003785`, mae `0.016707`
-- 5d: sample `20`, hit `0.6`, avg `0.001696`, median `0.004014`, mae `0.01568`
-- 10d: sample `20`, hit `0.55`, avg `0.004241`, median `0.011426`, mae `0.02139`
-- 20d: sample `20`, hit `0.7`, avg `0.012723`, median `0.024743`, mae `0.038136`
-- 60d: sample `20`, hit `0.5`, avg `0.01233`, median `0.012092`, mae `0.063431`
+- sample_size: `0`
+- 3d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 5d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 10d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 20d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 60d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
 
 ### breadth_conflicted_reversal_signals
 - sample_size: `0`
@@ -155,12 +155,12 @@ Conclusion: `forward_validation_insufficient_keep_confidence_capped`
 - 60d: sample `40`, hit `0.675`, avg `0.035734`, median `0.061844`, mae `0.087114`
 
 ### trend_reversal_with_breadth_support
-- sample_size: `20`
-- 3d: sample `20`, hit `0.55`, avg `-0.00276`, median `0.003785`, mae `0.016707`
-- 5d: sample `20`, hit `0.6`, avg `0.001696`, median `0.004014`, mae `0.01568`
-- 10d: sample `20`, hit `0.55`, avg `0.004241`, median `0.011426`, mae `0.02139`
-- 20d: sample `20`, hit `0.7`, avg `0.012723`, median `0.024743`, mae `0.038136`
-- 60d: sample `20`, hit `0.5`, avg `0.01233`, median `0.012092`, mae `0.063431`
+- sample_size: `0`
+- 3d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 5d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 10d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 20d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 60d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
 
 ### failed_bounce_risk_with_breadth_conflict
 - sample_size: `0`
@@ -221,12 +221,12 @@ Conclusion: `forward_validation_insufficient_keep_confidence_capped`
 - evidence_note: `Flow / positioning proxy attribution is tracked, but forward-only samples are still below the minimum gate.`
 
 ### flow_confirmed_signals
-- sample_size: `60`
-- 3d: sample `60`, hit `0.6667`, avg `0.004311`, median `0.005642`, mae `0.014191`
-- 5d: sample `60`, hit `0.7333`, avg `0.005835`, median `0.007324`, mae `0.017283`
-- 10d: sample `60`, hit `0.55`, avg `0.005691`, median `0.004462`, mae `0.025275`
-- 20d: sample `60`, hit `0.6667`, avg `0.011811`, median `0.012291`, mae `0.038077`
-- 60d: sample `60`, hit `0.5667`, avg `0.021629`, median `0.032982`, mae `0.073918`
+- sample_size: `80`
+- 3d: sample `80`, hit `0.6375`, avg `0.002543`, median `0.004569`, mae `0.01482`
+- 5d: sample `80`, hit `0.7`, avg `0.0048`, median `0.006133`, mae `0.016883`
+- 10d: sample `80`, hit `0.55`, avg `0.005329`, median `0.004462`, mae `0.024303`
+- 20d: sample `80`, hit `0.675`, avg `0.012039`, median `0.015261`, mae `0.038092`
+- 60d: sample `80`, hit `0.55`, avg `0.019304`, median `0.026715`, mae `0.071296`
 
 ### flow_conflicted_signals
 - sample_size: `0`
@@ -237,12 +237,12 @@ Conclusion: `forward_validation_insufficient_keep_confidence_capped`
 - 60d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
 
 ### bounce_with_flow_support
-- sample_size: `60`
-- 3d: sample `60`, hit `0.6667`, avg `0.004311`, median `0.005642`, mae `0.014191`
-- 5d: sample `60`, hit `0.7333`, avg `0.005835`, median `0.007324`, mae `0.017283`
-- 10d: sample `60`, hit `0.55`, avg `0.005691`, median `0.004462`, mae `0.025275`
-- 20d: sample `60`, hit `0.6667`, avg `0.011811`, median `0.012291`, mae `0.038077`
-- 60d: sample `60`, hit `0.5667`, avg `0.021629`, median `0.032982`, mae `0.073918`
+- sample_size: `80`
+- 3d: sample `80`, hit `0.6375`, avg `0.002543`, median `0.004569`, mae `0.01482`
+- 5d: sample `80`, hit `0.7`, avg `0.0048`, median `0.006133`, mae `0.016883`
+- 10d: sample `80`, hit `0.55`, avg `0.005329`, median `0.004462`, mae `0.024303`
+- 20d: sample `80`, hit `0.675`, avg `0.012039`, median `0.015261`, mae `0.038092`
+- 60d: sample `80`, hit `0.55`, avg `0.019304`, median `0.026715`, mae `0.071296`
 
 ### bounce_with_flow_conflict
 - sample_size: `0`
