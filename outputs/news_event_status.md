@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-07T23:44:47.334462+00:00`
+- generated_at: `2026-08-08T03:02:39.610662+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `8`
-- event_detection_confidence: `74`
+- event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -35,14 +35,6 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Brent climbs $1 on uncertainty over end to Iran war - Reuters
-- source: Reuters
-- published_at: `2026-08-07T20:05:14+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
 - headline: Everybody wants energy security post the Iran war, but how? - Reuters
 - source: Reuters
 - published_at: `2026-08-07T16:08:43+00:00`
@@ -55,7 +47,7 @@
 - source: Reuters
 - published_at: `2026-08-07T15:07:38+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -63,13 +55,21 @@
 - source: Reuters
 - published_at: `2026-08-07T15:00:03+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Prices in UK housing market flat in July as Iran war weighs - Reuters
 - source: Reuters
 - published_at: `2026-08-07T06:42:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Brent climbs $1 on uncertainty over end to Iran war - Reuters
+- source: Reuters
+- published_at: `2026-08-07T00:47:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
