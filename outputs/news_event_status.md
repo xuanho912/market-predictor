@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-08T04:41:33.167575+00:00`
+- generated_at: `2026-08-08T13:14:38.735683+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `8`
-- event_detection_confidence: `70`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,17 +27,25 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: ‘SaaSpocalypse’ debate intensifies as software stocks swing wildly
-- source: CNBC
-- published_at: `2026-08-07T20:22:17+00:00`
+- headline: UAE says Iran attacked ADNOC vessel with missile in Strait of Hormuz - Reuters
+- source: Reuters
+- published_at: `2026-08-08T11:46:57+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Everybody wants energy security post the Iran war, but how? - Reuters
+- headline: Houthis strike Marib again as UN warns Yemen nearing wider conflict - reuters.com
 - source: Reuters
-- published_at: `2026-08-07T16:08:43+00:00`
+- published_at: `2026-08-07T21:14:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: ‘SaaSpocalypse’ debate intensifies as software stocks swing wildly
+- source: CNBC
+- published_at: `2026-08-07T20:22:17+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -67,24 +75,16 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Everybody wants energy security post the Iran war, but how? - Reuters
+- source: Reuters
+- published_at: `2026-08-07T06:00:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Brent climbs $1 on uncertainty over end to Iran war - Reuters
 - source: Reuters
 - published_at: `2026-08-07T00:47:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Saudi expects imminent two-pronged attack from Iran's allies, official says - Reuters
-- source: Reuters
-- published_at: `2026-08-06T21:43:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump says he thinks war with Iran will end 'pretty soon' - Reuters
-- source: Reuters
-- published_at: `2026-08-06T21:11:54+00:00`
-- importance_score: `100`
+- importance_score: `99`
 - confidence: `medium`
