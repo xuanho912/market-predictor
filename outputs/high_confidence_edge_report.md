@@ -1,6 +1,6 @@
 # High Confidence Edge Report
 
-Generated at: `2026-08-08T03:02:39.606773+00:00`
+Generated at: `2026-08-08T04:41:33.165304+00:00`
 
 Status: `historical_proxy_and_forward_pending`
 Sample size: `80`
@@ -131,12 +131,12 @@ Conclusion: `forward_validation_insufficient_keep_confidence_capped`
 - 60d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
 
 ### breadth_conflicted_reversal_signals
-- sample_size: `0`
-- 3d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 5d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 10d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 20d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 60d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- sample_size: `20`
+- 3d: sample `20`, hit `0.75`, avg `0.008277`, median `0.010849`, mae `0.015572`
+- 5d: sample `20`, hit `0.6`, avg `0.005087`, median `0.010281`, mae `0.021714`
+- 10d: sample `20`, hit `0.6`, avg `0.010077`, median `0.01246`, mae `0.030764`
+- 20d: sample `20`, hit `0.65`, avg `0.017854`, median `0.015261`, mae `0.052868`
+- 60d: sample `20`, hit `0.65`, avg `0.042947`, median `0.061844`, mae `0.082147`
 
 ### bounce_with_breadth_support
 - sample_size: `60`
