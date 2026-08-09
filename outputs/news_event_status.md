@@ -1,14 +1,14 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-08T13:14:38.735683+00:00`
+- generated_at: `2026-08-09T13:17:45.336776+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
-- event_detection_confidence: `73`
+- major_event_count: `2`
+- event_detection_confidence: `80`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
-- narrative_strength: `100`
+- narrative_strength: `67`
 - price_reaction_confirmed: `False`
 - confirmation_score: `0`
 
@@ -27,64 +27,16 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Yemen's Houthis attack Saudi refinery after kingdom signs defence pact - Reuters
+- source: Reuters
+- published_at: `2026-08-09T01:48:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: UAE says Iran attacked ADNOC vessel with missile in Strait of Hormuz - Reuters
 - source: Reuters
 - published_at: `2026-08-08T11:46:57+00:00`
 - importance_score: `100`
 - confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Houthis strike Marib again as UN warns Yemen nearing wider conflict - reuters.com
-- source: Reuters
-- published_at: `2026-08-07T21:14:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: ‘SaaSpocalypse’ debate intensifies as software stocks swing wildly
-- source: CNBC
-- published_at: `2026-08-07T20:22:17+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: ADNOC says attacks on vessels, staff significantly impacting operations - Reuters
-- source: Reuters
-- published_at: `2026-08-07T15:07:38+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: What is the Patriot missile system and why are supplies depleted worldwide? - Reuters
-- source: Reuters
-- published_at: `2026-08-07T15:00:03+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Prices in UK housing market flat in July as Iran war weighs - Reuters
-- source: Reuters
-- published_at: `2026-08-07T06:42:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Everybody wants energy security post the Iran war, but how? - Reuters
-- source: Reuters
-- published_at: `2026-08-07T06:00:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Brent climbs $1 on uncertainty over end to Iran war - Reuters
-- source: Reuters
-- published_at: `2026-08-07T00:47:00+00:00`
-- importance_score: `99`
-- confidence: `medium`
