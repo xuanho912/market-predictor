@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-10T21:09:37.932597+00:00`
+- generated_at: `2026-08-10T22:12:54.181770+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `5`
@@ -43,7 +43,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Yemeni military says Houthi attack on Mocha kills 7, wounds 30 - reuters.com
+- headline: Yemeni military says Houthi attack on Mocha kills 7, wounds 30 - Reuters
 - source: Reuters
 - published_at: `2026-08-09T20:18:00+00:00`
 - importance_score: `100`
