@@ -1,6 +1,6 @@
 # Model Leaderboard
 
-Generated at: `2026-08-10T23:24:40.869830+00:00`
+Generated at: `2026-08-10T23:48:56.728384+00:00`
 Active model: `baseline_v1`
 
 > This is forecast model validation, not execution guidance or portfolio accounting.

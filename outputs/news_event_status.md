@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-10T23:24:29.146818+00:00`
+- generated_at: `2026-08-10T23:48:46.107927+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `6`
-- event_detection_confidence: `66`
+- event_detection_confidence: `65`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -30,7 +30,7 @@
 - headline: The Club's top 10 things to watch in the stock market Monday
 - source: CNBC
 - published_at: `2026-08-10T13:19:20+00:00`
-- importance_score: `97`
+- importance_score: `96`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
