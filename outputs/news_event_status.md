@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-10T22:12:54.181770+00:00`
+- generated_at: `2026-08-10T23:24:29.146818+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `5`
-- event_detection_confidence: `67`
+- major_event_count: `6`
+- event_detection_confidence: `66`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -54,6 +54,14 @@
 - headline: Israeli military closes Palestinian Christian village Taybeh, citing settler attacks - Reuters
 - source: Reuters
 - published_at: `2026-08-09T19:40:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: PODCAST: Israel rejects Gaza plan, Yemen Saudi strike and Taylor Swift - Reuters
+- source: Reuters
+- published_at: `2026-08-09T15:20:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
