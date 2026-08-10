@@ -40,7 +40,7 @@
     }
   ],
   "data_completeness_score": 87.0,
-  "data_freshness_status": "market_closed",
+  "data_freshness_status": "market_open_unconfirmed",
   "expected_latest_trading_date": "2026-08-07",
   "forward_completed_samples": {
     "10d": 120,
@@ -50,13 +50,13 @@
     "5d": 140,
     "60d": 0
   },
-  "generated_at": "2026-08-09T13:17:55.407192+00:00",
+  "generated_at": "2026-08-10T13:48:28.224255+00:00",
   "guardrails": [
     "This gate does not modify Alpha v1 threshold, baseline_v1 or historical forecast records.",
     "This is forecast reliability assessment, not trading advice.",
     "A blocked gate means the dashboard can still be used for research, but not as a dependable forecast tool."
   ],
-  "latest_market_date": "2026-08-07",
+  "latest_market_date": "2026-08-10",
   "minimum_reliance_rules": [
     "Fresh or market-closed current data is mandatory.",
     "At least 20 completed 1d, 20 completed 3d, 20 completed 5d, 30 completed 10d and 50 completed 20d forecasts are required before treating the terminal as dependable.",
@@ -70,66 +70,70 @@
     "Route repeated deviation themes into a challenger model rather than editing baseline_v1."
   ],
   "passes": [
-    "data_is_current_or_market_closed",
     "data_completeness_85_plus",
     "forward_sample_gate_passed"
   ],
   "status": "RESEARCH_ONLY_PATH_EDGE_UNPROVEN",
   "symbol_readiness": {
     "DIA": {
-      "confidence_score": 76.0,
+      "confidence_score": 75.0,
       "confluence_score": 56.0,
-      "edge_status": "MODERATE_EDGE",
-      "primary_probability": 0.3883,
+      "edge_status": "RISK_WARNING",
+      "primary_probability": 0.3457,
       "primary_scenario": "bounce_path",
-      "probability_gap": 0.1576,
+      "probability_gap": 0.0868,
       "readiness": "blocked_by_global_gate",
       "reason": "Global trust gate is not ready.",
-      "secondary_probability": 0.2307,
+      "secondary_probability": 0.2589,
       "secondary_scenario": "bearish_path"
     },
     "IWM": {
-      "confidence_score": 72.0,
-      "confluence_score": 54.0,
-      "edge_status": "MODERATE_EDGE",
-      "primary_probability": 0.3237,
-      "primary_scenario": "bounce_path",
-      "probability_gap": 0.0762,
+      "confidence_score": 68.0,
+      "confluence_score": 53.0,
+      "edge_status": "RISK_WARNING",
+      "primary_probability": 0.3514,
+      "primary_scenario": "bearish_path",
+      "probability_gap": 0.0799,
       "readiness": "blocked_by_global_gate",
       "reason": "Global trust gate is not ready.",
-      "secondary_probability": 0.2475,
-      "secondary_scenario": "analog_average_path"
+      "secondary_probability": 0.2715,
+      "secondary_scenario": "bounce_path"
     },
     "QQQ": {
       "confidence_score": 64.0,
-      "confluence_score": 48.0,
-      "edge_status": "MODERATE_EDGE",
-      "primary_probability": 0.2983,
+      "confluence_score": 50.0,
+      "edge_status": "RISK_WARNING",
+      "primary_probability": 0.3187,
       "primary_scenario": "bearish_path",
-      "probability_gap": 0.0384,
+      "probability_gap": 0.0569,
       "readiness": "blocked_by_global_gate",
       "reason": "Global trust gate is not ready.",
-      "secondary_probability": 0.2599,
+      "secondary_probability": 0.2618,
       "secondary_scenario": "analog_average_path"
     },
     "SPY": {
-      "confidence_score": 78.0,
-      "confluence_score": 56.0,
-      "edge_status": "MODERATE_EDGE",
-      "primary_probability": 0.3492,
-      "primary_scenario": "bounce_path",
-      "probability_gap": 0.0698,
+      "confidence_score": 68.0,
+      "confluence_score": 47.0,
+      "edge_status": "RISK_WARNING",
+      "primary_probability": 0.3048,
+      "primary_scenario": "bearish_path",
+      "probability_gap": 0.0003,
       "readiness": "blocked_by_global_gate",
       "reason": "Global trust gate is not ready.",
-      "secondary_probability": 0.2794,
-      "secondary_scenario": "analog_average_path"
+      "secondary_probability": 0.3045,
+      "secondary_scenario": "bounce_path"
     }
   },
-  "trust_score": 57,
+  "trust_score": 45,
   "use_boundary": "Use as a research radar and scenario explainer only; do not treat it as a dependable forecasting edge.",
   "validation_type": "forecast_reliability_gate",
   "version": "forecast_trust_gate_v1",
   "warnings": [
+    {
+      "code": "market_open_unconfirmed",
+      "message": "Current data is an intraday or unconfirmed snapshot; do not freeze it as a validated daily forecast.",
+      "severity": "medium"
+    },
     {
       "code": "high_confidence_not_validated",
       "details": {
