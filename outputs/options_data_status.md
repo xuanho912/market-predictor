@@ -1,6 +1,6 @@
 # Options / Volatility Structure Status
 
-Generated at: `2026-08-10T13:47:58.343174+00:00`
+Generated at: `2026-08-10T21:09:30.764581+00:00`
 
 ## Summary
 
@@ -18,29 +18,29 @@ Generated at: `2026-08-10T13:47:58.343174+00:00`
 
 ## Market Snapshot
 
-- VIX: `15.390000343322754`
-- VIX9D: `13.1899995803833`
-- VIX3M: `18.969999313354492`
-- VIX6M: `21.149999618530273`
-- VVIX: `92.13999938964844`
+- VIX: `15.460000038146973`
+- VIX9D: `12.770000457763672`
+- VIX3M: `18.979999542236328`
+- VIX6M: `21.139999389648438`
+- VVIX: `92.51000213623047`
 - SKEW: `132.57000732421875`
 - term_structure_state: `contango`
-- volatility_reversal_score: `0.7553`
-- panic_release_score: `0.5078`
-- tail_risk_score: `0.1452`
-- option_stress_score: `0.0943`
-- failed_bounce_options_risk: `0.1309`
+- volatility_reversal_score: `0.7367`
+- panic_release_score: `0.4934`
+- tail_risk_score: `0.1528`
+- option_stress_score: `0.1031`
+- failed_bounce_options_risk: `0.1373`
 
 ## Sources
 
 | symbol | status | latest_date | latest_value | source | real_data | stale |
 |---|---|---|---:|---|---:|---:|
 | ^SKEW | available | 2026-08-07 | 132.57000732421875 | yahoo-chart | True | False |
-| ^VIX | available | 2026-08-10 | 15.390000343322754 | yahoo-chart | True | False |
-| ^VIX3M | available | 2026-08-10 | 18.969999313354492 | yahoo-chart | True | False |
-| ^VIX6M | available | 2026-08-10 | 21.149999618530273 | yahoo-chart | True | False |
-| ^VIX9D | available | 2026-08-10 | 13.1899995803833 | yahoo-chart | True | False |
-| ^VVIX | available | 2026-08-10 | 92.13999938964844 | yahoo-chart | True | False |
+| ^VIX | available | 2026-08-10 | 15.460000038146973 | yahoo-chart | True | False |
+| ^VIX3M | available | 2026-08-10 | 18.979999542236328 | yahoo-chart | True | False |
+| ^VIX6M | available | 2026-08-10 | 21.139999389648438 | yahoo-chart | True | False |
+| ^VIX9D | available | 2026-08-10 | 12.770000457763672 | yahoo-chart | True | False |
+| ^VVIX | available | 2026-08-10 | 92.51000213623047 | yahoo-chart | True | False |
 
 ## Guardrails
 
