@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-11T22:23:17.731452+00:00`
+- generated_at: `2026-08-11T23:27:41.520992+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `9`
-- event_detection_confidence: `74`
+- event_detection_confidence: `79`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -25,12 +25,28 @@
 
 ## Major Events
 
+### geopolitical_risk_escalation / risk_off
+
+- headline: New attacks on shipping as Iran war talks hit fresh impasse - Reuters
+- source: Reuters
+- published_at: `2026-08-11T22:52:43+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Zelenskiy: Ukraine has given US negotiators proposals for ending the war with Russia - Reuters
+- source: Reuters
+- published_at: `2026-08-11T20:47:44+00:00`
+- importance_score: `100`
+- confidence: `high`
+
 ### geopolitical_risk_easing / risk_on
 
 - headline: Wall Street ends down as US-Iran peace optimism fades - Reuters
 - source: Reuters
 - published_at: `2026-08-11T20:14:59+00:00`
-- importance_score: `100`
+- importance_score: `99`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -55,7 +71,7 @@
 - source: Reuters
 - published_at: `2026-08-11T11:32:37+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -79,20 +95,4 @@
 - source: Reuters
 - published_at: `2026-08-10T19:48:00+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### oil_shock_risk / risk_off
-
-- headline: Oil hits new one-week high as supply disruptions outweigh Strait of Hormuz talks - Reuters
-- source: Reuters
-- published_at: `2026-08-11T00:38:00+00:00`
-- importance_score: `93`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Energy Watch: A peace deal with strings attached - Reuters
-- source: Reuters
-- published_at: `2026-08-10T16:00:00+00:00`
-- importance_score: `93`
 - confidence: `medium`
