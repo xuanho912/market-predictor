@@ -1,20 +1,20 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-11T13:48:21.129376+00:00`
+- generated_at: `2026-08-11T21:12:49.101228+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
-- event_detection_confidence: `70`
+- major_event_count: `9`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
-- price_reaction_confirmed: `True`
-- confirmation_score: `75`
+- price_reaction_confirmed: `False`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
-当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，已被价格反应初步确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
+当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，尚未被价格反应充分确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
 
 ## Economic Calendar Risk
 
@@ -24,6 +24,30 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Wall Street ends down as US-Iran peace optimism fades - Reuters
+- source: Reuters
+- published_at: `2026-08-11T20:01:37+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Four crew killed in Red Sea attack while missile strike reported in Gulf - Reuters
+- source: Reuters
+- published_at: `2026-08-11T17:43:07+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US fired on Panama-flagged ship that tried to break blockade of Iranian ports, WSJ reports citing US official - Reuters
+- source: Reuters
+- published_at: `2026-08-11T12:43:04+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -39,7 +63,7 @@
 - source: Reuters
 - published_at: `2026-08-11T06:06:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -49,26 +73,26 @@
 - importance_score: `100`
 - confidence: `medium`
 
+### geopolitical_risk_escalation / risk_off
+
+- headline: Firefighters battle Zawiya refinery blaze after drone attacks - Reuters
+- source: Reuters
+- published_at: `2026-08-10T19:48:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### oil_shock_risk / risk_off
+
+- headline: Oil hits new one-week high as supply disruptions outweigh Strait of Hormuz talks - Reuters
+- source: Reuters
+- published_at: `2026-08-11T00:38:00+00:00`
+- importance_score: `93`
+- confidence: `medium`
+
 ### geopolitical_risk_easing / risk_on
 
 - headline: Energy Watch: A peace deal with strings attached - Reuters
 - source: Reuters
 - published_at: `2026-08-10T16:00:00+00:00`
-- importance_score: `95`
-- confidence: `medium`
-
-### credit_stress / risk_off
-
-- headline: The Club's top 10 things to watch in the stock market Monday
-- source: CNBC
-- published_at: `2026-08-10T13:19:20+00:00`
 - importance_score: `93`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Taiwan 'throttles' mobile internet for first time during annual war games - Reuters
-- source: Reuters
-- published_at: `2026-08-10T00:39:00+00:00`
-- importance_score: `99`
 - confidence: `medium`
