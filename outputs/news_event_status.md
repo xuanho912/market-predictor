@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-10T23:48:46.107927+00:00`
+- generated_at: `2026-08-11T03:13:44.799011+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
-- event_detection_confidence: `65`
+- major_event_count: `7`
+- event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,22 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Oil steadies near one-week highs as US-Iran peace deal hopes dim - Reuters
+- source: Reuters
+- published_at: `2026-08-11T00:38:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: North Korea condemns Japan's white paper, calling it 're-invasion paper' - Reuters
+- source: Reuters
+- published_at: `2026-08-10T21:56:00+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### credit_stress / risk_off
 
@@ -62,13 +78,5 @@
 - headline: PODCAST: Israel rejects Gaza plan, Yemen Saudi strike and Taylor Swift - Reuters
 - source: Reuters
 - published_at: `2026-08-09T15:20:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Pope Leo renews call for Ukraine war to end - Reuters
-- source: Reuters
-- published_at: `2026-08-09T12:43:47+00:00`
-- importance_score: `100`
+- importance_score: `99`
 - confidence: `medium`

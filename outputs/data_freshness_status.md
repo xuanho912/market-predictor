@@ -1,11 +1,11 @@
 # Data Freshness Status
 
-Generated at: `2026-08-10T23:48:56.142020+00:00`
+Generated at: `2026-08-11T03:13:55.468404+00:00`
 
 ## Summary
 
 - current_date: `2026-08-10`
-- current_time_us_eastern: `2026-08-10T19:48:56.142020-04:00`
+- current_time_us_eastern: `2026-08-10T23:13:55.468404-04:00`
 - latest_market_date: `2026-08-10`
 - latest_confirmed_market_date: `2026-08-10`
 - expected_latest_trading_date: `2026-08-10`
@@ -64,10 +64,10 @@ Generated at: `2026-08-10T23:48:56.142020+00:00`
 - ^VIX6M: status=`available`, latest_date=`2026-08-10`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - ^VIX9D: status=`available`, latest_date=`2026-08-10`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - ^VVIX: status=`available`, latest_date=`2026-08-10`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- breadth_DIA: status=`available`, latest_date=`2026-08-05`, source=`static-dow30-list`, stale=`False`, fallback=`False`, real_data=`True`
+- breadth_DIA: status=`available`, latest_date=`2026-08-10`, source=`static-dow30-list`, stale=`False`, fallback=`False`, real_data=`True`
 - breadth_IWM: status=`proxy`, latest_date=`2026-08-10`, source=`iwm-spy-relative-strength-proxy`, stale=`False`, fallback=`True`, real_data=`False`
 - breadth_QQQ: status=`missing`, latest_date=`None`, source=`wikipedia-nasdaq100`, stale=`False`, fallback=`True`, real_data=`False`
-- breadth_SPY: status=`available`, latest_date=`2026-08-05`, source=`wikipedia-sp500`, stale=`False`, fallback=`False`, real_data=`True`
+- breadth_SPY: status=`available`, latest_date=`2026-08-10`, source=`wikipedia-sp500`, stale=`False`, fallback=`False`, real_data=`True`
 - breadth_sector_participation_proxy: status=`proxy`, latest_date=`None`, source=`sector-etf-participation-proxy`, stale=`True`, fallback=`True`, real_data=`False`
 - finnhub_alternative_data: status=`missing`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
 - finnhub_candle_DIA: status=`missing`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
