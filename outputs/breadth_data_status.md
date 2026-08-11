@@ -1,6 +1,6 @@
 # Breadth Data Status
 
-Generated at: 2026-08-11T04:54:30.413683+00:00
+Generated at: 2026-08-11T13:47:53.805027+00:00
 
 Provider available: True
 True breadth available: False
@@ -11,14 +11,14 @@ Stale data: True
 
 ## Market Internal Resonance
 
-- resonance_score: 63.06
+- resonance_score: 62.77
 - resonance_state: mixed
 - label: partial_resonance
 - aligned_symbols: DIA
-- surface_only_symbols: QQQ
-- sector_score: 74.0
-- equal_weight_vs_cap_weight_20d: -0.003888
-- small_cap_vs_large_cap_20d: -0.009701
+- surface_only_symbols: none
+- sector_score: 66.0
+- equal_weight_vs_cap_weight_20d: 0.005443
+- small_cap_vs_large_cap_20d: -0.005982
 
 ## Universe Status
 
@@ -38,7 +38,7 @@ Stale data: True
 - new highs/lows 20d: 98 / 48
 - new highs/lows 52w: 22 / 4
 - improvement / deterioration / confirmation / conflict / quality: 74.19 / 36.32 / 78.51 / 27.6 / 100.0
-- internal_resonance: mixed / score 66.36 / SPY 内部信号分歧：成分股/行业有部分支持，但等权、小盘或新高新低没有完全确认。
+- internal_resonance: mixed / score 66.03 / SPY 内部信号分歧：成分股/行业有部分支持，但等权、小盘或新高新低没有完全确认。
 
 ### QQQ
 
@@ -56,7 +56,7 @@ Stale data: True
 - new highs/lows 20d: 0 / 0
 - new highs/lows 52w: 0 / 0
 - improvement / deterioration / confirmation / conflict / quality: 8.67 / 70.67 / 9.39 / 69.07 / 4.0
-- internal_resonance: surface_only / score 10.88 / QQQ 指数表面强但内部没充分跟上：confirmation 9，conflict 69，RSP/SPY -0.39%，IWM/SPY -0.97%。
+- internal_resonance: weak / score 22.55 / QQQ 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
 
 ### DIA
 
@@ -74,13 +74,13 @@ Stale data: True
 - new highs/lows 20d: 5 / 0
 - new highs/lows 52w: 2 / 0
 - improvement / deterioration / confirmation / conflict / quality: 97.81 / 25.37 / 96.39 / 19.28 / 100.0
-- internal_resonance: aligned / score 75.56 / DIA 内部共振：成分股 20d 上方比例 73%，行业参与 70%，confirmation 96 高于 conflict 19。
+- internal_resonance: aligned / score 75.23 / DIA 内部共振：成分股 20d 上方比例 73%，行业参与 70%，confirmation 96 高于 conflict 19。
 
 ### IWM
 
 - status: proxy
 - source: iwm-spy-relative-strength-proxy
-- latest_date: 2026-08-10
+- latest_date: 2026-08-11
 - true_breadth: False
 - proxy: True
 - constituents used / expected: None / None
@@ -91,8 +91,8 @@ Stale data: True
 - advancers / decliners / A-D ratio: None / None / None
 - new highs/lows 20d: None / None
 - new highs/lows 52w: None / None
-- improvement / deterioration / confirmation / conflict / quality: 49.08 / 48.34 / 52.81 / 45.26 / 64
-- internal_resonance: weak / score 47.26 / IWM 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
+- improvement / deterioration / confirmation / conflict / quality: 48.46 / 46.72 / 52.34 / 44.04 / 64
+- internal_resonance: weak / score 47.04 / IWM 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
 
 ## Notes
 

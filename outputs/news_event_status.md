@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-11T04:54:43.477541+00:00`
+- generated_at: `2026-08-11T13:48:21.129376+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
+- major_event_count: `6`
 - event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -25,11 +25,19 @@
 
 ## Major Events
 
-### geopolitical_risk_easing / risk_on
+### geopolitical_risk_escalation / risk_off
 
-- headline: Oil steadies near one-week highs as US-Iran peace deal hopes dim - Reuters
+- headline: Houthi attack on small cargo ship in Red Sea kills three crew members, sources say - Reuters
 - source: Reuters
-- published_at: `2026-08-11T00:40:39+00:00`
+- published_at: `2026-08-11T11:32:37+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: IHG's room revenue growth slows as Iran war offsets US, China growth - Reuters
+- source: Reuters
+- published_at: `2026-08-11T06:06:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -39,14 +47,22 @@
 - source: Reuters
 - published_at: `2026-08-10T21:56:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Energy Watch: A peace deal with strings attached - Reuters
+- source: Reuters
+- published_at: `2026-08-10T16:00:00+00:00`
+- importance_score: `95`
+- confidence: `medium`
 
 ### credit_stress / risk_off
 
 - headline: The Club's top 10 things to watch in the stock market Monday
 - source: CNBC
 - published_at: `2026-08-10T13:19:20+00:00`
-- importance_score: `95`
+- importance_score: `93`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
@@ -54,29 +70,5 @@
 - headline: Taiwan 'throttles' mobile internet for first time during annual war games - Reuters
 - source: Reuters
 - published_at: `2026-08-10T00:39:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Yemeni military says Houthi attack on Mocha kills 7, wounds 30 - Reuters
-- source: Reuters
-- published_at: `2026-08-09T20:18:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Israeli military closes Palestinian Christian village Taybeh, citing settler attacks - Reuters
-- source: Reuters
-- published_at: `2026-08-09T19:40:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: PODCAST: Israel rejects Gaza plan, Yemen Saudi strike and Taylor Swift - Reuters
-- source: Reuters
-- published_at: `2026-08-09T15:20:00+00:00`
 - importance_score: `99`
 - confidence: `medium`
