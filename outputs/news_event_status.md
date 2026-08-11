@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-11T03:13:44.799011+00:00`
+- generated_at: `2026-08-11T04:54:43.477541+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `7`
-- event_detection_confidence: `71`
+- event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -29,7 +29,7 @@
 
 - headline: Oil steadies near one-week highs as US-Iran peace deal hopes dim - Reuters
 - source: Reuters
-- published_at: `2026-08-11T00:38:00+00:00`
+- published_at: `2026-08-11T00:40:39+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -46,7 +46,7 @@
 - headline: The Club's top 10 things to watch in the stock market Monday
 - source: CNBC
 - published_at: `2026-08-10T13:19:20+00:00`
-- importance_score: `96`
+- importance_score: `95`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
