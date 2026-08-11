@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-11T21:12:49.101228+00:00`
+- generated_at: `2026-08-11T22:23:17.731452+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `9`
-- event_detection_confidence: `75`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -29,7 +29,7 @@
 
 - headline: Wall Street ends down as US-Iran peace optimism fades - Reuters
 - source: Reuters
-- published_at: `2026-08-11T20:01:37+00:00`
+- published_at: `2026-08-11T20:14:59+00:00`
 - importance_score: `100`
 - confidence: `high`
 
