@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-11T23:27:41.520992+00:00`
+- generated_at: `2026-08-11T23:55:30.171840+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `9`
@@ -35,6 +35,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Four crew, two rescuers killed in Red Sea attack; missile strike reported in Gulf - Reuters
+- source: Reuters
+- published_at: `2026-08-11T22:38:27+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Zelenskiy: Ukraine has given US negotiators proposals for ending the war with Russia - Reuters
 - source: Reuters
 - published_at: `2026-08-11T20:47:44+00:00`
@@ -47,14 +55,6 @@
 - source: Reuters
 - published_at: `2026-08-11T20:14:59+00:00`
 - importance_score: `99`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Four crew killed in Red Sea attack while missile strike reported in Gulf - Reuters
-- source: Reuters
-- published_at: `2026-08-11T17:43:07+00:00`
-- importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
