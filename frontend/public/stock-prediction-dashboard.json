@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-08-12T23:28:47.294462+00:00",
+  "generated_at": "2026-08-12T23:55:39.436172+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-08-12T23:28:47.308520+00:00",
+    "generated_at": "2026-08-12T23:55:39.460041+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 173,
     "risk_score_effectiveness": {
@@ -331,12 +331,12 @@
           "realized_volatility_20d": 0.3756
         },
         "volume": {
-          "accumulation_distribution_proxy": 0.0027,
+          "accumulation_distribution_proxy": 0.0028,
           "panic_volume_proxy": false,
           "up_volume_down_volume_proxy": 1.0055,
-          "volume_confirmation_score": 56.4,
-          "volume_vs_20d_average": 0.8857,
-          "volume_z_score": -0.4501
+          "volume_confirmation_score": 56.42,
+          "volume_vs_20d_average": 0.8864,
+          "volume_z_score": -0.447
         }
       },
       "forecast_price_levels": {
@@ -526,7 +526,7 @@
               "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.8502,
+            "similarity_score": 0.8501,
             "worst_path_60d": -0.0377
           },
           {
@@ -547,7 +547,7 @@
               "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.8036,
+            "similarity_score": 0.8038,
             "worst_path_60d": -0.3243
           },
           {
@@ -568,7 +568,7 @@
               "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.7939,
+            "similarity_score": 0.7941,
             "worst_path_60d": -0.0155
           },
           {
@@ -588,7 +588,7 @@
               "波动率区间接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.7884,
+            "similarity_score": 0.7887,
             "worst_path_60d": -0.0307
           },
           {
@@ -609,7 +609,7 @@
               "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.7184,
+            "similarity_score": 0.7185,
             "worst_path_60d": 0.0203
           },
           {
@@ -631,7 +631,7 @@
               "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.6554,
+            "similarity_score": 0.6556,
             "worst_path_60d": -0.3474
           },
           {
@@ -651,7 +651,7 @@
               "波动率区间接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.6546,
+            "similarity_score": 0.6548,
             "worst_path_60d": -0.3082
           },
           {
@@ -693,7 +693,7 @@
               "波动率区间接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.6391,
+            "similarity_score": 0.6394,
             "worst_path_60d": -0.0599
           },
           {
@@ -714,7 +714,7 @@
               "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.6345,
+            "similarity_score": 0.6346,
             "worst_path_60d": -0.3176
           }
         ],
@@ -724,7 +724,7 @@
         "benchmark": "SPY",
         "benchmark_edge_status": "STRONG_EDGE",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.3932,
+        "benchmark_primary_probability": 0.3758,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -2352,7 +2352,7 @@
           "volume_structure": {
             "evidence": "成交量结构中性",
             "reason": "量能没有明显共振",
-            "score": 56.4,
+            "score": 56.42,
             "status": "neutral"
           }
         },
@@ -2933,9 +2933,9 @@
       "market_context_for_stock": {
         "benchmark": "QQQ",
         "benchmark_edge_status": "MODERATE_EDGE",
-        "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.2965,
-        "benchmark_primary_scenario": "bearish_path",
+        "benchmark_market_state": "recovery",
+        "benchmark_primary_probability": 0.284,
+        "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
         "risk_alert_level": "WARNING",
@@ -5132,13 +5132,13 @@
       "market_context_for_stock": {
         "benchmark": "IWM",
         "benchmark_edge_status": "STRONG_EDGE",
-        "benchmark_market_state": "risk_on",
-        "benchmark_primary_probability": 0.3625,
+        "benchmark_market_state": "recovery",
+        "benchmark_primary_probability": 0.3489,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
         "risk_alert_level": "WARNING",
-        "risk_alert_type": "Trend Repair Alert",
+        "risk_alert_type": "Bounce Setup Alert",
         "symbol": "SMR"
       },
       "missing_data": [
@@ -6927,7 +6927,7 @@
           "stock_vs_benchmark_20d": -0.178,
           "stock_vs_benchmark_60d": -0.2452,
           "stock_vs_qqq_20d": -0.178,
-          "stock_vs_sector_20d": -0.1857,
+          "stock_vs_sector_20d": -0.1773,
           "stock_vs_spy_20d": -0.1931
         },
         "volatility": {
@@ -7336,9 +7336,9 @@
       "market_context_for_stock": {
         "benchmark": "QQQ",
         "benchmark_edge_status": "MODERATE_EDGE",
-        "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.2965,
-        "benchmark_primary_scenario": "bearish_path",
+        "benchmark_market_state": "recovery",
+        "benchmark_primary_probability": 0.284,
+        "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
         "risk_alert_level": "WARNING",
@@ -8959,7 +8959,7 @@
           },
           "sector_context": {
             "evidence": "个股弱于所属板块",
-            "reason": "TSLA vs XLY: -18.57%",
+            "reason": "TSLA vs XLY: -17.73%",
             "score": 30,
             "status": "conflicting"
           },
@@ -9001,7 +9001,7 @@
       "top_candidate": "SMR",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-08-12T23:28:47.304634+00:00",
+    "generated_at": "2026-08-12T23:55:39.452864+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -9116,7 +9116,7 @@
         "data_quality": 87.5,
         "data_status": "available",
         "downside_risk_level": 244.95,
-        "elasticity_score": 75.14,
+        "elasticity_score": 75.11,
         "expected_next_day_high": 283.53,
         "expected_next_day_low": 273.08,
         "expected_next_day_mid": 278.3,
@@ -9166,19 +9166,19 @@
         "relative_strength_score": 70.06,
         "risk_reward_ratio": 0.57,
         "risk_scenario": "stock_event_risk",
-        "risk_score": 52.67,
+        "risk_score": 52.66,
         "secondary_scenario": "stock_downside_continuation",
         "sector_context": "supportive",
-        "squeeze_proxy_score": 43.75,
+        "squeeze_proxy_score": 43.76,
         "ticker": "CEG",
         "upside_trigger_level": 285.5,
         "validation_status": "not_yet_validated",
-        "volume_anomaly_score": 58.18,
+        "volume_anomaly_score": 58.24,
         "volume_fields": {
           "abnormal_volume_flag": true,
-          "relative_volume_20d": 0.8857,
+          "relative_volume_20d": 0.8864,
           "relative_volume_5d": null,
-          "volume_z_score": -0.4501
+          "volume_z_score": -0.447
         },
         "whether_top10_candidate": true
       },
@@ -9332,7 +9332,7 @@
           "stock_vs_QQQ_20d": -0.178,
           "stock_vs_SPY_20d": -0.1931,
           "stock_vs_benchmark_20d": -0.178,
-          "stock_vs_sector_20d": -0.1857
+          "stock_vs_sector_20d": -0.1773
         },
         "relative_strength_score": 17.96,
         "risk_reward_ratio": 0.25,

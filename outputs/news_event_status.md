@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-12T23:28:35.966383+00:00`
+- generated_at: `2026-08-12T23:55:28.498274+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `12`
@@ -86,7 +86,7 @@
 - headline: US must return to interim deal, no ceasefire extension talks, senior Iranian source says - Reuters
 - source: Reuters
 - published_at: `2026-08-12T13:14:13+00:00`
-- importance_score: `98`
+- importance_score: `97`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
