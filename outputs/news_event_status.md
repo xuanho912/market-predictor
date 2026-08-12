@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-12T05:20:56.327786+00:00`
+- generated_at: `2026-08-12T13:50:03.001836+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `10`
-- event_detection_confidence: `75`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -25,21 +25,45 @@
 
 ## Major Events
 
-### geopolitical_risk_escalation / risk_off
+### geopolitical_risk_easing / risk_on
 
-- headline: Four crew, two rescuers killed in Red Sea attack; US strikes ship in Gulf of Oman - Reuters
+- headline: US must return to interim deal, no ceasefire extension talks, senior Iranian source says - Reuters
 - source: Reuters
-- published_at: `2026-08-11T23:29:07+00:00`
+- published_at: `2026-08-12T13:06:17+00:00`
 - importance_score: `100`
 - confidence: `high`
 
-### geopolitical_risk_easing / risk_on
+### geopolitical_risk_escalation / risk_off
 
-- headline: Wall Street ends down as US-Iran peace optimism fades - Reuters
+- headline: Saudi Arabia bets on defensive alliances to deter slide into war - Reuters
 - source: Reuters
-- published_at: `2026-08-11T23:17:51+00:00`
-- importance_score: `98`
+- published_at: `2026-08-12T12:36:16+00:00`
+- importance_score: `100`
 - confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: TKMS sees increased demand from Middle East following Iran war - Reuters
+- source: Reuters
+- published_at: `2026-08-12T08:23:43+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: TUI avoids another profit warning as Iran war further dents travel bookings - Reuters
+- source: Reuters
+- published_at: `2026-08-12T05:04:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil prices rise after ship attacks, US-Iran talks deadlock - Reuters
+- source: Reuters
+- published_at: `2026-08-12T00:58:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,15 +71,23 @@
 - source: Reuters
 - published_at: `2026-08-11T20:47:44+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Wall Street ends down as US-Iran peace optimism fades - Reuters
+- source: Reuters
+- published_at: `2026-08-11T23:17:51+00:00`
+- importance_score: `96`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Yemen's Houthis attacked Saudi ship in Bab el-Mandeb, Houthi-run news agency says - Reuters
+- headline: Four killed in the Red Sea as Yemen's Houthis claim Tuesday ship attack - Reuters
 - source: Reuters
-- published_at: `2026-08-11T18:22:45+00:00`
+- published_at: `2026-08-11T18:22:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -65,42 +97,10 @@
 - importance_score: `100`
 - confidence: `high`
 
-### geopolitical_risk_escalation / risk_off
+### inflation_cooling / risk_on
 
-- headline: US fired on Panama-flagged ship that tried to break blockade of Iranian ports, WSJ reports citing US official - Reuters
+- headline: US consumer prices likely increased moderately in July as gasoline prices eased - Reuters
 - source: Reuters
-- published_at: `2026-08-11T12:43:04+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Houthi attack on small cargo ship in Red Sea kills three crew members, sources say - Reuters
-- source: Reuters
-- published_at: `2026-08-11T11:32:37+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: IHG's room revenue growth slows as Iran war offsets US, China growth - Reuters
-- source: Reuters
-- published_at: `2026-08-11T06:06:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: North Korea condemns Japan's white paper, calling it 're-invasion paper' - Reuters
-- source: Reuters
-- published_at: `2026-08-10T21:56:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### fed_hawkish / risk_off
-
-- headline: Diesel prices surge on tightening global supply - Reuters
-- source: Reuters
-- published_at: `2026-08-10T20:59:43+00:00`
+- published_at: `2026-08-12T04:02:00+00:00`
 - importance_score: `81`
 - confidence: `medium`
