@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-12T13:50:03.001836+00:00`
+- generated_at: `2026-08-12T21:12:00.409472+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `10`
+- major_event_count: `12`
 - event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -25,11 +25,43 @@
 
 ## Major Events
 
+### geopolitical_risk_escalation / risk_off
+
+- headline: Credible missile threat led to secret aircraft switch for Trump, source says - Reuters
+- source: Reuters
+- published_at: `2026-08-12T19:59:23+00:00`
+- importance_score: `100`
+- confidence: `high`
+
 ### geopolitical_risk_easing / risk_on
 
-- headline: US must return to interim deal, no ceasefire extension talks, senior Iranian source says - Reuters
+- headline: Iran says no progress on reviving interim peace deal with US - Reuters
 - source: Reuters
-- published_at: `2026-08-12T13:06:17+00:00`
+- published_at: `2026-08-12T19:58:02+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Saudi Red Sea oil exports go dark as Houthi attack threat grows - Reuters
+- source: Reuters
+- published_at: `2026-08-12T18:49:34+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Huge oil slick hitting Oman's shoreline as agencies warn of disaster - Reuters
+- source: Reuters
+- published_at: `2026-08-12T16:43:32+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Global 2026 oil supply shortfall to deepen as Hormuz reopening remains elusive, IEA says - Reuters
+- source: Reuters
+- published_at: `2026-08-12T13:45:33+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -41,13 +73,21 @@
 - importance_score: `100`
 - confidence: `high`
 
+### geopolitical_risk_easing / risk_on
+
+- headline: US must return to interim deal, no ceasefire extension talks, senior Iranian source says - Reuters
+- source: Reuters
+- published_at: `2026-08-12T13:14:13+00:00`
+- importance_score: `98`
+- confidence: `high`
+
 ### geopolitical_risk_escalation / risk_off
 
 - headline: TKMS sees increased demand from Middle East following Iran war - Reuters
 - source: Reuters
 - published_at: `2026-08-12T08:23:43+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,52 +95,12 @@
 - source: Reuters
 - published_at: `2026-08-12T05:04:00+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil prices rise after ship attacks, US-Iran talks deadlock - Reuters
-- source: Reuters
-- published_at: `2026-08-12T00:58:00+00:00`
-- importance_score: `100`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Zelenskiy: Ukraine has given US negotiators proposals for ending the war with Russia - Reuters
+- headline: Assad ruled Syria with iron fist before defeat in civil war - Reuters
 - source: Reuters
-- published_at: `2026-08-11T20:47:44+00:00`
+- published_at: `2026-08-11T21:26:09+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Wall Street ends down as US-Iran peace optimism fades - Reuters
-- source: Reuters
-- published_at: `2026-08-11T23:17:51+00:00`
-- importance_score: `96`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Four killed in the Red Sea as Yemen's Houthis claim Tuesday ship attack - Reuters
-- source: Reuters
-- published_at: `2026-08-11T18:22:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: New attacks on shipping as Iran war talks hit fresh impasse - Reuters
-- source: Reuters
-- published_at: `2026-08-11T15:18:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### inflation_cooling / risk_on
-
-- headline: US consumer prices likely increased moderately in July as gasoline prices eased - Reuters
-- source: Reuters
-- published_at: `2026-08-12T04:02:00+00:00`
-- importance_score: `81`
 - confidence: `medium`
