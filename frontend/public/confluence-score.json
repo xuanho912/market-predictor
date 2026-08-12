@@ -1,10 +1,9 @@
 {
   "disclaimer": "Confluence is a forecast-confirmation layer, not a trading signal or execution recommendation.",
-  "generated_at": "2026-08-12T22:23:42.092912+00:00",
+  "generated_at": "2026-08-12T23:28:46.780458+00:00",
   "summary": {
-    "average_confluence_score": 54.0,
+    "average_confluence_score": 54.5,
     "mixed_or_no_edge_symbols": [
-      "DIA",
       "IWM",
       "QQQ",
       "SPY"
@@ -32,19 +31,13 @@
           "name": "新闻事件与主路径冲突",
           "score": 25,
           "source": "news"
-        },
-        {
-          "detail": "Historical analogs conflict across horizons.",
-          "name": "historical analog support",
-          "score": 13,
-          "source": "signal_confirmation"
         }
       ],
-      "confluence_level": "mixed",
-      "confluence_score": 56,
-      "confluence_summary": "DIA 当前多源共振为 mixed（56/100），主导路径为 bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、news；仍缺 options、options、flow。",
+      "confluence_level": "moderate",
+      "confluence_score": 58,
+      "confluence_summary": "DIA 当前多源共振为 moderate（58/100），主导路径为 bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、news、news；仍缺 options、options、flow。",
       "dominant_path": "bounce",
-      "edge_status": "{'market_edge_status': 'MODERATE_EDGE', 'has_usable_prediction_edge_today': True, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': True, 'historical_analog_not_conflicting': False, 'confidence_score_ge_65': True, 'current_regime_identified': True, 'macro_event_risk_not_high': True, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': True, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': True}, 'passed_conditions': 9, 'summary': '有一定预测优势，但仍需观察冲突信号和失效条件。', 'no_edge_note': '', 'risk_warning': False}",
+      "edge_status": "{'market_edge_status': 'STRONG_EDGE', 'has_usable_prediction_edge_today': True, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': True, 'historical_analog_not_conflicting': True, 'confidence_score_ge_65': True, 'current_regime_identified': True, 'macro_event_risk_not_high': True, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': True, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': True}, 'passed_conditions': 10, 'summary': '多源确认较强，可以给出较明确的概率路径，但仍不是下单依据。', 'no_edge_note': '', 'risk_warning': False}",
       "key_conflict_count": 1,
       "missing_evidence": [
         {
@@ -65,9 +58,9 @@
       ],
       "not_trading_advice": "This is forecast confirmation only, not a buy/sell/entry/exit or position-sizing recommendation.",
       "primary_label": "反抽情景",
-      "primary_probability": 0.4149,
+      "primary_probability": 0.4379,
       "primary_scenario": "bounce_path",
-      "probability_gap": 0.1841,
+      "probability_gap": 0.2132,
       "related_price_levels": {
         "primary_confirmation_level": {
           "confidence": "medium_high",
@@ -95,14 +88,14 @@
         },
         "trend_reversal_confirmation_level": {
           "confidence": "medium",
-          "distance_pct": 0.0286,
+          "distance_pct": 0.0105,
           "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
-          "price": 552.52,
+          "price": 542.81,
           "source": "primary_path_20d + recent_20d_high + 20d_or_50d_moving_average",
           "source_type": "price_structure"
         }
       },
-      "secondary_probability": 0.2308,
+      "secondary_probability": 0.2247,
       "secondary_scenario": "analog_average_path",
       "strong_conclusion_allowed": false,
       "supporting_evidence": [
@@ -127,14 +120,8 @@
         {
           "detail": "Proxy flow/positioning supports risk appetite.",
           "name": "risk-on flow proxy",
-          "score": 79,
+          "score": 73,
           "source": "flow"
-        },
-        {
-          "detail": "Volatility structure supports a bounce/recovery path because VIX is repairing and stress is contained.",
-          "name": "波动率修复/恐慌释放",
-          "score": 58,
-          "source": "options"
         },
         {
           "detail": "成交量结构支持当前路径。",
@@ -143,9 +130,9 @@
           "source": "volume"
         },
         {
-          "detail": "primary-secondary gap 18.4%",
+          "detail": "primary-secondary gap 21.3%",
           "name": "主次路径差距可观察",
-          "score": 18.41,
+          "score": 21.32,
           "source": "scenario_gap"
         },
         {
@@ -177,6 +164,12 @@
           "name": "VIX direction",
           "score": 11,
           "source": "signal_confirmation"
+        },
+        {
+          "detail": "VIX term/volatility structure supports panic release or bounce repair.",
+          "name": "options volatility repair",
+          "score": 10,
+          "source": "signal_confirmation"
         }
       ],
       "symbol": "DIA",
@@ -201,12 +194,6 @@
           "name": "新闻事件与主路径冲突",
           "score": 25,
           "source": "news"
-        },
-        {
-          "detail": "路径分歧较大，不宜给强结论。",
-          "name": "主次路径差距小",
-          "score": 5.12,
-          "source": "scenario_gap"
         }
       ],
       "confluence_level": "mixed",
@@ -234,17 +221,17 @@
       ],
       "not_trading_advice": "This is forecast confirmation only, not a buy/sell/entry/exit or position-sizing recommendation.",
       "primary_label": "反抽情景",
-      "primary_probability": 0.3489,
+      "primary_probability": 0.3625,
       "primary_scenario": "bounce_path",
-      "probability_gap": 0.0512,
+      "probability_gap": 0.1322,
       "related_price_levels": {
         "primary_confirmation_level": {
-          "confidence": "medium",
-          "distance_pct": 0.0205,
+          "confidence": "medium_high",
+          "distance_pct": 0.003,
           "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
-          "price": 308.93,
-          "source": "primary_path_5d + recent_5d_high + realized_volatility_band",
-          "source_type": "simulated_path"
+          "price": 303.61,
+          "source": "confluence",
+          "source_type": "confluence"
         },
         "primary_invalidation_level": {
           "confidence": "medium",
@@ -256,22 +243,22 @@
         },
         "risk_scenario_activation_level": {
           "confidence": "medium",
-          "distance_pct": -0.055,
+          "distance_pct": -0.0467,
           "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
-          "price": 286.07,
+          "price": 288.57,
           "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
           "source_type": "simulated_path"
         },
         "trend_reversal_confirmation_level": {
-          "confidence": "medium",
-          "distance_pct": 0.0776,
+          "confidence": "medium_high",
+          "distance_pct": 0.0,
           "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
-          "price": 326.2,
-          "source": "primary_path_20d + recent_20d_high + 20d_or_50d_moving_average",
-          "source_type": "price_structure"
+          "price": 302.71,
+          "source": "confluence",
+          "source_type": "confluence"
         }
       },
-      "secondary_probability": 0.2977,
+      "secondary_probability": 0.2303,
       "secondary_scenario": "analog_average_path",
       "strong_conclusion_allowed": false,
       "supporting_evidence": [
@@ -284,7 +271,7 @@
         {
           "detail": "Proxy flow/positioning supports risk appetite.",
           "name": "risk-on flow proxy",
-          "score": 80,
+          "score": 74,
           "source": "flow"
         },
         {
@@ -292,12 +279,6 @@
           "name": "价格结构支持主路径",
           "score": 64,
           "source": "price"
-        },
-        {
-          "detail": "Volatility structure supports a bounce/recovery path because VIX is repairing and stress is contained.",
-          "name": "波动率修复/恐慌释放",
-          "score": 58,
-          "source": "options"
         },
         {
           "detail": "IWM 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。",
@@ -310,6 +291,12 @@
           "name": "宽度改善",
           "score": 55,
           "source": "breadth"
+        },
+        {
+          "detail": "primary-secondary gap 13.2%",
+          "name": "主次路径差距可观察",
+          "score": 13.22,
+          "source": "scenario_gap"
         },
         {
           "detail": "Frozen Alpha v1 is triggered; this remains research-only.",
@@ -330,12 +317,6 @@
           "source": "signal_confirmation"
         },
         {
-          "detail": "20d/60d analog support is positive.",
-          "name": "historical analog support",
-          "score": 12,
-          "source": "signal_confirmation"
-        },
-        {
           "detail": "VIX 5d/20d direction is not worsening.",
           "name": "VIX direction",
           "score": 11,
@@ -345,6 +326,12 @@
           "detail": "VIX term/volatility structure supports panic release or bounce repair.",
           "name": "options volatility repair",
           "score": 10,
+          "source": "signal_confirmation"
+        },
+        {
+          "detail": "Proxy flow/positioning confirms risk appetite or broad participation.",
+          "name": "flow / positioning proxy",
+          "score": 9,
           "source": "signal_confirmation"
         }
       ],
@@ -404,14 +391,14 @@
         {
           "detail": "路径分歧较大，不宜给强结论。",
           "name": "主次路径差距小",
-          "score": 0.75,
+          "score": 1.22,
           "source": "scenario_gap"
         }
       ],
       "confluence_level": "mixed",
-      "confluence_score": 52,
-      "confluence_summary": "QQQ 当前多源共振为 mixed（52/100），主导路径为 bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
-      "dominant_path": "bounce",
+      "confluence_score": 49,
+      "confluence_summary": "QQQ 当前多源共振为 mixed（49/100），主导路径为 failed_bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
+      "dominant_path": "failed_bounce",
       "edge_status": "{'market_edge_status': 'MODERATE_EDGE', 'has_usable_prediction_edge_today': True, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': True, 'historical_analog_not_conflicting': True, 'confidence_score_ge_65': False, 'current_regime_identified': True, 'macro_event_risk_not_high': True, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': False, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': True}, 'passed_conditions': 8, 'summary': '有一定预测优势，但仍需观察冲突信号和失效条件。', 'no_edge_note': '', 'risk_warning': False}",
       "key_conflict_count": 2,
       "missing_evidence": [
@@ -432,18 +419,18 @@
         }
       ],
       "not_trading_advice": "This is forecast confirmation only, not a buy/sell/entry/exit or position-sizing recommendation.",
-      "primary_label": "反抽情景",
-      "primary_probability": 0.284,
-      "primary_scenario": "bounce_path",
-      "probability_gap": 0.0075,
+      "primary_label": "失败反抽情景",
+      "primary_probability": 0.2965,
+      "primary_scenario": "bearish_path",
+      "probability_gap": 0.0122,
       "related_price_levels": {
         "primary_confirmation_level": {
-          "confidence": "medium",
-          "distance_pct": 0.0389,
+          "confidence": "medium_high",
+          "distance_pct": 0.0043,
           "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
-          "price": 751.85,
-          "source": "primary_path_5d + recent_5d_high + realized_volatility_band",
-          "source_type": "simulated_path"
+          "price": 726.84,
+          "source": "confluence",
+          "source_type": "confluence"
         },
         "primary_invalidation_level": {
           "confidence": "medium",
@@ -462,41 +449,29 @@
           "source_type": "simulated_path"
         },
         "trend_reversal_confirmation_level": {
-          "confidence": "medium",
-          "distance_pct": 0.1116,
+          "confidence": "medium_high",
+          "distance_pct": 0.0002,
           "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
-          "price": 804.49,
-          "source": "primary_path_20d + recent_20d_high + 20d_or_50d_moving_average",
-          "source_type": "price_structure"
+          "price": 723.85,
+          "source": "confluence",
+          "source_type": "confluence"
         }
       },
-      "secondary_probability": 0.2765,
-      "secondary_scenario": "analog_average_path",
+      "secondary_probability": 0.2843,
+      "secondary_scenario": "bounce_path",
       "strong_conclusion_allowed": false,
       "supporting_evidence": [
         {
-          "detail": "Credit stress is contained or improving.",
-          "name": "信用稳定",
-          "score": 99,
-          "source": "credit"
+          "detail": "Breadth deterioration supports downside/failed-bounce risk.",
+          "name": "宽度恶化支持风险路径",
+          "score": 69,
+          "source": "breadth"
         },
         {
-          "detail": "Proxy flow/positioning supports risk appetite.",
-          "name": "risk-on flow proxy",
-          "score": 80,
-          "source": "flow"
-        },
-        {
-          "detail": "QQQ 价格和成交量确认度一般，不能单独支持强判断。",
-          "name": "价格结构支持主路径",
-          "score": 64,
+          "detail": "价格结构更偏风险路径。",
+          "name": "下行结构支持风险路径",
+          "score": 52,
           "source": "price"
-        },
-        {
-          "detail": "Volatility structure supports a bounce/recovery path because VIX is repairing and stress is contained.",
-          "name": "波动率修复/恐慌释放",
-          "score": 58,
-          "source": "options"
         },
         {
           "detail": "Frozen Alpha v1 is triggered; this remains research-only.",
@@ -507,12 +482,6 @@
         {
           "detail": "Credit proxy is stable or improving.",
           "name": "credit stability",
-          "score": 12,
-          "source": "signal_confirmation"
-        },
-        {
-          "detail": "20d/60d analog support is positive.",
-          "name": "historical analog support",
           "score": 12,
           "source": "signal_confirmation"
         },
@@ -545,6 +514,12 @@
           "name": "failed bounce risk",
           "score": 6,
           "source": "signal_confirmation"
+        },
+        {
+          "detail": "No major macro event flag.",
+          "name": "macro event risk",
+          "score": 5,
+          "source": "signal_confirmation"
         }
       ],
       "symbol": "QQQ",
@@ -572,8 +547,8 @@
         }
       ],
       "confluence_level": "mixed",
-      "confluence_score": 54,
-      "confluence_summary": "SPY 当前多源共振为 mixed（54/100），主导路径为 bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、news、news；仍缺 options、options、flow。",
+      "confluence_score": 57,
+      "confluence_summary": "SPY 当前多源共振为 mixed（57/100），主导路径为 bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、news、news；仍缺 options、options、flow。",
       "dominant_path": "bounce",
       "edge_status": "{'market_edge_status': 'STRONG_EDGE', 'has_usable_prediction_edge_today': True, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': True, 'historical_analog_not_conflicting': True, 'confidence_score_ge_65': True, 'current_regime_identified': True, 'macro_event_risk_not_high': True, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': True, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': True}, 'passed_conditions': 10, 'summary': '多源确认较强，可以给出较明确的概率路径，但仍不是下单依据。', 'no_edge_note': '', 'risk_warning': False}",
       "key_conflict_count": 1,
@@ -596,17 +571,17 @@
       ],
       "not_trading_advice": "This is forecast confirmation only, not a buy/sell/entry/exit or position-sizing recommendation.",
       "primary_label": "反抽情景",
-      "primary_probability": 0.3757,
+      "primary_probability": 0.3932,
       "primary_scenario": "bounce_path",
-      "probability_gap": 0.085,
+      "probability_gap": 0.1687,
       "related_price_levels": {
         "primary_confirmation_level": {
-          "confidence": "medium",
-          "distance_pct": 0.0293,
+          "confidence": "medium_high",
+          "distance_pct": 0.0023,
           "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
-          "price": 795.15,
-          "source": "primary_path_5d + recent_5d_high + realized_volatility_band",
-          "source_type": "simulated_path"
+          "price": 774.25,
+          "source": "confluence",
+          "source_type": "confluence"
         },
         "primary_invalidation_level": {
           "confidence": "medium",
@@ -625,15 +600,15 @@
           "source_type": "simulated_path"
         },
         "trend_reversal_confirmation_level": {
-          "confidence": "medium",
-          "distance_pct": 0.0712,
+          "confidence": "medium_high",
+          "distance_pct": 0.001,
           "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
-          "price": 827.51,
-          "source": "primary_path_20d + recent_20d_high + 20d_or_50d_moving_average",
-          "source_type": "price_structure"
+          "price": 773.26,
+          "source": "confluence",
+          "source_type": "confluence"
         }
       },
-      "secondary_probability": 0.2907,
+      "secondary_probability": 0.2245,
       "secondary_scenario": "analog_average_path",
       "strong_conclusion_allowed": false,
       "supporting_evidence": [
@@ -642,12 +617,6 @@
           "name": "信用稳定",
           "score": 99,
           "source": "credit"
-        },
-        {
-          "detail": "Proxy flow/positioning supports risk appetite.",
-          "name": "risk-on flow proxy",
-          "score": 80,
-          "source": "flow"
         },
         {
           "detail": "SPY 内部信号分歧：成分股/行业有部分支持，但等权、小盘或新高新低没有完全确认。",
@@ -668,16 +637,22 @@
           "source": "breadth"
         },
         {
-          "detail": "Volatility structure supports a bounce/recovery path because VIX is repairing and stress is contained.",
-          "name": "波动率修复/恐慌释放",
-          "score": 58,
-          "source": "options"
+          "detail": "Proxy flow/positioning supports risk appetite.",
+          "name": "risk-on flow proxy",
+          "score": 74,
+          "source": "flow"
         },
         {
           "detail": "成交量结构支持当前路径。",
           "name": "成交量确认",
           "score": 55,
           "source": "volume"
+        },
+        {
+          "detail": "primary-secondary gap 16.9%",
+          "name": "主次路径差距可观察",
+          "score": 16.87,
+          "source": "scenario_gap"
         },
         {
           "detail": "Frozen Alpha v1 is triggered; this remains research-only.",
@@ -698,15 +673,15 @@
           "source": "signal_confirmation"
         },
         {
-          "detail": "20d/60d analog support is positive.",
-          "name": "historical analog support",
-          "score": 12,
-          "source": "signal_confirmation"
-        },
-        {
           "detail": "VIX 5d/20d direction is not worsening.",
           "name": "VIX direction",
           "score": 11,
+          "source": "signal_confirmation"
+        },
+        {
+          "detail": "VIX term/volatility structure supports panic release or bounce repair.",
+          "name": "options volatility repair",
+          "score": 10,
           "source": "signal_confirmation"
         }
       ],

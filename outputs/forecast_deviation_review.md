@@ -1,6 +1,6 @@
 # Forecast Deviation Review
 
-Generated at: `2026-08-12T22:23:42.624312+00:00`
+Generated at: `2026-08-12T23:28:47.089299+00:00`
 
 This report reviews forecast-vs-actual deviations after horizons complete. It is not a trading, PnL or execution report.
 
