@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-08-12T03:32:14.791040+00:00`
+Generated at: `2026-08-12T05:21:07.354829+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -25,13 +25,13 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `26.4%`
 - secondary: `stock_downside_continuation` / `19.0%`
 - risk: `stock_event_risk` / `15.6%`
-- stock_confluence_score: `46.04` / `mixed`
+- stock_confluence_score: `44.49` / `weak`
 - stock_alpha_score_v1: `43.5` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `57.7%`
 - 60d_expected_return: `-1.1%`
 - risk_reward_ratio: `0.48`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `28.81`
-- historical_analog_support: `weak` / samples `10`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `28.07`
+- historical_analog_support: `conflicting` / samples `10`
 - validation_status: `not_yet_validated`
 
 - primary_confirmation_level: `224.76`
@@ -42,8 +42,8 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - breakdown_level: `190.01`
 - nearest_support: `211.32`
 - nearest_resistance: `224.76`
-- bounce_target_zone: `{"conservative": 222.13, "base": 222.13, "extended": 230.94, "source": "scenario_path + atr + recent_resistance", "meaning": "概率反抽情景参考区间，不是目标价承诺。", "not_trading_instruction": true}`
-- failed_bounce_warning_zone: `{"first_warning": 214.03, "critical_warning": 190.01, "source": "risk_path + atr + recent_support", "meaning": "跌入该区间说明失败反抽风险上升。", "not_trading_instruction": true}`
+- bounce_target_zone: `{"conservative": 222.14, "base": 222.14, "extended": 230.94, "source": "scenario_path + atr + recent_resistance", "meaning": "概率反抽情景参考区间，不是目标价承诺。", "not_trading_instruction": true}`
+- failed_bounce_warning_zone: `{"first_warning": 214.02, "critical_warning": 190.01, "source": "risk_path + atr + recent_support", "meaning": "跌入该区间说明失败反抽风险上升。", "not_trading_instruction": true}`
 
 ### TSLA
 
@@ -54,7 +54,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_downside_continuation` / `28.4%`
 - secondary: `stock_failed_bounce` / `22.0%`
 - risk: `stock_event_risk` / `13.6%`
-- stock_confluence_score: `36.48` / `weak`
+- stock_confluence_score: `36.19` / `weak`
 - stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `25.3%`
 - 60d_expected_return: `-1.7%`
@@ -83,12 +83,12 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `24.3%`
 - secondary: `stock_downside_continuation` / `19.2%`
 - risk: `stock_event_risk` / `15.0%`
-- stock_confluence_score: `43.03` / `weak`
+- stock_confluence_score: `38.92` / `weak`
 - stock_alpha_score_v1: `9.5` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `52.0%`
 - 60d_expected_return: `-1.4%`
 - risk_reward_ratio: `0.52`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `25.41`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `36.69`
 - historical_analog_support: `supportive` / samples `10`
 - validation_status: `not_yet_validated`
 
@@ -112,13 +112,13 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `25.1%`
 - secondary: `stock_downside_continuation` / `19.9%`
 - risk: `stock_event_risk` / `12.3%`
-- stock_confluence_score: `48.19` / `mixed`
+- stock_confluence_score: `41.57` / `weak`
 - stock_alpha_score_v1: `39.0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `58.5%`
 - 60d_expected_return: `-0.8%`
 - risk_reward_ratio: `0.57`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `25.54`
-- historical_analog_support: `supportive` / samples `10`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `34.02`
+- historical_analog_support: `conflicting` / samples `10`
 - validation_status: `not_yet_validated`
 
 - primary_confirmation_level: `283.11`

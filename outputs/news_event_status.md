@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-12T03:32:02.618488+00:00`
+- generated_at: `2026-08-12T05:20:56.327786+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `10`
-- event_detection_confidence: `76`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -38,7 +38,7 @@
 - headline: Wall Street ends down as US-Iran peace optimism fades - Reuters
 - source: Reuters
 - published_at: `2026-08-11T23:17:51+00:00`
-- importance_score: `99`
+- importance_score: `98`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -97,10 +97,10 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
+### fed_hawkish / risk_off
 
-- headline: Firefighters battle Zawiya refinery blaze after drone attacks - Reuters
+- headline: Diesel prices surge on tightening global supply - Reuters
 - source: Reuters
-- published_at: `2026-08-10T19:48:00+00:00`
-- importance_score: `100`
+- published_at: `2026-08-10T20:59:43+00:00`
+- importance_score: `81`
 - confidence: `medium`
