@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-11T23:55:30.171840+00:00`
+- generated_at: `2026-08-12T03:32:02.618488+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
-- event_detection_confidence: `79`
+- major_event_count: `10`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,18 +27,18 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: New attacks on shipping as Iran war talks hit fresh impasse - Reuters
+- headline: Four crew, two rescuers killed in Red Sea attack; US strikes ship in Gulf of Oman - Reuters
 - source: Reuters
-- published_at: `2026-08-11T22:52:43+00:00`
+- published_at: `2026-08-11T23:29:07+00:00`
 - importance_score: `100`
 - confidence: `high`
 
-### geopolitical_risk_escalation / risk_off
+### geopolitical_risk_easing / risk_on
 
-- headline: Four crew, two rescuers killed in Red Sea attack; missile strike reported in Gulf - Reuters
+- headline: Wall Street ends down as US-Iran peace optimism fades - Reuters
 - source: Reuters
-- published_at: `2026-08-11T22:38:27+00:00`
-- importance_score: `100`
+- published_at: `2026-08-11T23:17:51+00:00`
+- importance_score: `99`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -49,12 +49,20 @@
 - importance_score: `100`
 - confidence: `high`
 
-### geopolitical_risk_easing / risk_on
+### geopolitical_risk_escalation / risk_off
 
-- headline: Wall Street ends down as US-Iran peace optimism fades - Reuters
+- headline: Yemen's Houthis attacked Saudi ship in Bab el-Mandeb, Houthi-run news agency says - Reuters
 - source: Reuters
-- published_at: `2026-08-11T20:14:59+00:00`
-- importance_score: `99`
+- published_at: `2026-08-11T18:22:45+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: New attacks on shipping as Iran war talks hit fresh impasse - Reuters
+- source: Reuters
+- published_at: `2026-08-11T15:18:00+00:00`
+- importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -63,7 +71,7 @@
 - source: Reuters
 - published_at: `2026-08-11T12:43:04+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 

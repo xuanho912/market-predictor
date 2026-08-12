@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-08-11T23:55:43.247746+00:00",
+  "generated_at": "2026-08-12T03:32:14.791040+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-08-11T23:55:43.266443+00:00",
+    "generated_at": "2026-08-12T03:32:14.814898+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 169,
     "risk_score_effectiveness": {
@@ -723,9 +723,9 @@
       },
       "market_context_for_stock": {
         "benchmark": "SPY",
-        "benchmark_edge_status": "MODERATE_EDGE",
+        "benchmark_edge_status": "STRONG_EDGE",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.3494,
+        "benchmark_primary_probability": 0.3697,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -2933,7 +2933,7 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "MODERATE_EDGE",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.2722,
+        "benchmark_primary_probability": 0.293,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -5133,9 +5133,9 @@
       },
       "market_context_for_stock": {
         "benchmark": "IWM",
-        "benchmark_edge_status": "MODERATE_EDGE",
+        "benchmark_edge_status": "STRONG_EDGE",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.3201,
+        "benchmark_primary_probability": 0.3407,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -6850,6 +6850,12 @@
           "event_risk_flag": "high",
           "headlines": [
             {
+              "datetime": 1786488600,
+              "headline": "Two Stock Stories That Bolstered QGRW In July",
+              "source": "SeekingAlpha",
+              "url": "https://finnhub.io/api/news?id=21b84a0552ec6347d5597f26887da0e5f738d5ea42afc573bbaa8d2402033c0e"
+            },
+            {
               "datetime": 1786462709,
               "headline": "Elon Musk's Net Worth Rebounds on SpaceX Bounce — Now Nearly 800,000x the Average American",
               "source": "Benzinga",
@@ -6890,16 +6896,10 @@
               "headline": "Tesla and SpaceX Committed $16.8 Billion to One Chip Plant. Tesla's Entire Annual Profit Is $3.8 Billion.",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=a7a5ec7e5d034008fddc93a91651a3332160197754630148c17fae6c734301bd"
-            },
-            {
-              "datetime": 1786439748,
-              "headline": "Amazon's Zoox Launches Paid Robotaxi Service In Las Vegas and Says 'We Need To Be Regulated'— The Smoke Incident That Prompted a Recall Explains Why",
-              "source": "Benzinga",
-              "url": "https://finnhub.io/api/news?id=0eeae98792cf1e0f96b584693645a6b9358d956818b85ca5e7d69bb010026299"
             }
           ],
-          "major_company_headline": "Elon Musk's Net Worth Rebounds on SpaceX Bounce — Now Nearly 800,000x the Average American",
-          "news_count_24h": 14,
+          "major_company_headline": "Two Stock Stories That Bolstered QGRW In July",
+          "news_count_24h": 11,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
           "news_sentiment": "negative"
@@ -7340,7 +7340,7 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "MODERATE_EDGE",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.2722,
+        "benchmark_primary_probability": 0.293,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -8756,7 +8756,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Elon Musk's Net Worth Rebounds on SpaceX Bounce — Now Nearly 800,000x the Average American"
+              "公司新闻已接入: Two Stock Stories That Bolstered QGRW In July"
             ],
             "max_points": 10,
             "missing_fields": [],
@@ -8869,7 +8869,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "Elon Musk's Net Worth Rebounds on SpaceX Bounce — Now Nearly 800,000x the Average American",
+          "catalyst": "Two Stock Stories That Bolstered QGRW In July",
           "expectation_gap": [
             "暂未看到明确正向预期差证据"
           ],
@@ -8939,7 +8939,7 @@
           "news_event": {
             "evidence": "公司新闻或财报事件风险上升",
             "reason": "risk_score=100.0; earnings_date=None",
-            "score": 93.0,
+            "score": 81.0,
             "status": "conflicting"
           },
           "options_volatility": {
@@ -8974,7 +8974,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 37.35,
+        "stock_confluence_score": 36.48,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "历史相似结构支持主路径"
@@ -9004,7 +9004,7 @@
       "top_candidate": "SMR",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-08-11T23:55:43.260875+00:00",
+    "generated_at": "2026-08-12T03:32:14.807659+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -9286,7 +9286,7 @@
         "candidate_type": "downside_continuation",
         "catalyst_score": 63.13,
         "company_name": "Tesla Inc",
-        "confluence_score": 37.35,
+        "confluence_score": 36.48,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9303,7 +9303,7 @@
           "mid": 332.07,
           "range_pct": 0.0422
         },
-        "final_radar_score": 50.88,
+        "final_radar_score": 50.77,
         "forecast_date": "2026-08-11",
         "invalidation_level": 297.38,
         "last_close": 332.80999755859375,
