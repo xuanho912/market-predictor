@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-12T21:12:00.409472+00:00`
+- generated_at: `2026-08-12T22:23:30.450828+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
+- major_event_count: `13`
 - event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -27,6 +27,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Huge oil slick hitting Oman's shoreline as agencies warn of disaster - Reuters
+- source: Reuters
+- published_at: `2026-08-12T20:14:01+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Credible missile threat led to secret aircraft switch for Trump, source says - Reuters
 - source: Reuters
 - published_at: `2026-08-12T19:59:23+00:00`
@@ -38,7 +46,7 @@
 - headline: Iran says no progress on reviving interim peace deal with US - Reuters
 - source: Reuters
 - published_at: `2026-08-12T19:58:02+00:00`
-- importance_score: `100`
+- importance_score: `99`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -51,9 +59,9 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Huge oil slick hitting Oman's shoreline as agencies warn of disaster - Reuters
+- headline: Israel's military says it targeted a Hamas commander planning attacks in Gaza - Reuters
 - source: Reuters
-- published_at: `2026-08-12T16:43:32+00:00`
+- published_at: `2026-08-12T17:08:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -94,13 +102,5 @@
 - headline: TUI avoids another profit warning as Iran war further dents travel bookings - Reuters
 - source: Reuters
 - published_at: `2026-08-12T05:04:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Assad ruled Syria with iron fist before defeat in civil war - Reuters
-- source: Reuters
-- published_at: `2026-08-11T21:26:09+00:00`
 - importance_score: `100`
 - confidence: `medium`
