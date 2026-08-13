@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-13T23:29:17.465831+00:00`
+- generated_at: `2026-08-13T23:54:10.902216+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `13`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US could not verify Israeli warnings of Iran plots against Trump, sources say - Reuters
+- source: Reuters
+- published_at: `2026-08-13T22:52:42+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -54,14 +62,6 @@
 - headline: NEWSLETTER: Trump reckons with a war that won’t leave him alone - Reuters
 - source: Reuters
 - published_at: `2026-08-13T20:58:27+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US could not verify Israeli warnings of Iran plots against Trump, sources say - Reuters
-- source: Reuters
-- published_at: `2026-08-13T19:53:53+00:00`
 - importance_score: `100`
 - confidence: `high`
 
