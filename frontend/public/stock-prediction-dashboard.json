@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-08-12T23:55:39.436172+00:00",
+  "generated_at": "2026-08-13T03:35:48.076074+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-08-12T23:55:39.460041+00:00",
+    "generated_at": "2026-08-13T03:35:48.099783+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 173,
     "risk_score_effectiveness": {
@@ -724,7 +724,7 @@
         "benchmark": "SPY",
         "benchmark_edge_status": "STRONG_EDGE",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.3758,
+        "benchmark_primary_probability": 0.3757,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -2477,16 +2477,16 @@
               "url": "https://finnhub.io/api/news?id=688c220117eebd0192104bd977f75d290e2a16d439794eab9678ec9ca1390959"
             },
             {
+              "datetime": 1786546046,
+              "headline": "Shares of companies in the broader chip sector are trading higher, rebounding from recent weakness in tech stocks. Investors may also be awaiting NVIDIA's earnings report after the close.",
+              "source": "Benzinga",
+              "url": "https://finnhub.io/api/news?id=c8a6a393fed27987d5b8298fe5788b1081558d3b7335b3ba3a41202a3b63440f"
+            },
+            {
               "datetime": 1786541358,
               "headline": "Credo's Massive Valuation Reflects Detached-From-Reality Expectations",
               "source": "SeekingAlpha",
               "url": "https://finnhub.io/api/news?id=b560ef86ab9d3b30ea7b881e2b89642665a8240f2277f7ef4445a179bb2bc738"
-            },
-            {
-              "datetime": 1786540465,
-              "headline": "Stock Market Today: Nasdaq 100 Rises on Strong AI Earnings, Benign Inflation",
-              "source": "Benzinga",
-              "url": "https://finnhub.io/api/news?id=7cb1bffb27ed49f5557a3674c922ff25f84eb2b4b0bc3a94822ad9cc3d702d0a"
             }
           ],
           "major_company_headline": "Wednesday's session: top gainers and losers in the dow jones index",
@@ -4647,11 +4647,17 @@
           "company_news": "available",
           "earnings": "available",
           "earnings_date": null,
-          "earnings_risk_flag": "medium",
+          "earnings_risk_flag": "low",
           "earnings_within_30d": false,
           "earnings_within_7d": false,
-          "event_risk_flag": "medium",
+          "event_risk_flag": "low",
           "headlines": [
+            {
+              "datetime": 1786466114,
+              "headline": "NuScale Power May Offer Up To $750M Of Class A Common Stock Under At-The-Market Sales Agreement",
+              "source": "Benzinga",
+              "url": "https://finnhub.io/api/news?id=d497de88dbeeb141e5cffaf2b91bdc413dd435291aaeb5ccbce1429b7d35f600"
+            },
             {
               "datetime": 1786447652,
               "headline": "RBC Capital Maintains Sector Perform on NuScale Power, Lowers Price Target to $10",
@@ -4693,18 +4699,12 @@
               "headline": "NuScale Power Corporation 2026 Q2 - Results - Earnings Call Presentation",
               "source": "SeekingAlpha",
               "url": "https://finnhub.io/api/news?id=fb86c5ac4a0f3acccf1c88a7eb3888bc2d5204d44e40a4e01ceeb93169129913"
-            },
-            {
-              "datetime": 1785965408,
-              "headline": "NuScale Power Corporation (SMR) Q2 2026 Earnings Call Transcript",
-              "source": "SeekingAlpha",
-              "url": "https://finnhub.io/api/news?id=c94344e8cb4ef760499bb2ec6006b1f4836bdd6c5396faf2b34b5cb5a0a58ce5"
             }
           ],
-          "major_company_headline": "RBC Capital Maintains Sector Perform on NuScale Power, Lowers Price Target to $10",
+          "major_company_headline": "NuScale Power May Offer Up To $750M Of Class A Common Stock Under At-The-Market Sales Agreement",
           "news_count_24h": 0,
-          "news_count_72h": 1,
-          "news_risk_score": 56.0,
+          "news_count_72h": 2,
+          "news_risk_score": 32.0,
           "news_sentiment": "negative"
         },
         "price_trend": {
@@ -6547,7 +6547,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: RBC Capital Maintains Sector Perform on NuScale Power, Lowers Price Target to $10"
+              "公司新闻已接入: NuScale Power May Offer Up To $750M Of Class A Common Stock Under At-The-Market Sales Agreement"
             ],
             "max_points": 10,
             "missing_fields": [],
@@ -6663,7 +6663,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "RBC Capital Maintains Sector Perform on NuScale Power, Lowers Price Target to $10",
+          "catalyst": "NuScale Power May Offer Up To $750M Of Class A Common Stock Under At-The-Market Sales Agreement",
           "expectation_gap": [
             "暂未看到明确正向预期差证据"
           ],
@@ -6730,8 +6730,8 @@
           },
           "news_event": {
             "evidence": "公司新闻或财报事件风险上升",
-            "reason": "risk_score=56.0; earnings_date=None",
-            "score": 44.92,
+            "reason": "risk_score=32.0; earnings_date=None",
+            "score": 49.24,
             "status": "conflicting"
           },
           "options_volatility": {
@@ -6766,7 +6766,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 40.03,
+        "stock_confluence_score": 40.34,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "个股跑赢所属板块",
@@ -6896,7 +6896,7 @@
             }
           ],
           "major_company_headline": "Which S&P500 stocks are the most active on Wednesday?",
-          "news_count_24h": 11,
+          "news_count_24h": 9,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
           "news_sentiment": "negative"
@@ -8936,7 +8936,7 @@
           "news_event": {
             "evidence": "公司新闻或财报事件风险上升",
             "reason": "risk_score=100.0; earnings_date=None",
-            "score": 81.0,
+            "score": 73.0,
             "status": "conflicting"
           },
           "options_volatility": {
@@ -8971,7 +8971,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 36.43,
+        "stock_confluence_score": 35.85,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "历史相似结构支持主路径"
@@ -9001,7 +9001,7 @@
       "top_candidate": "SMR",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-08-12T23:55:39.452864+00:00",
+    "generated_at": "2026-08-13T03:35:48.092588+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -9023,7 +9023,7 @@
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 63.97,
         "company_name": "Nuscale Power Corp",
-        "confluence_score": 40.03,
+        "confluence_score": 40.34,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9040,7 +9040,7 @@
           "mid": 9.57,
           "range_pct": 0.0719
         },
-        "final_radar_score": 56.89,
+        "final_radar_score": 56.93,
         "forecast_date": "2026-08-12",
         "invalidation_level": 7.21,
         "last_close": 9.59000015258789,
@@ -9282,7 +9282,7 @@
         "candidate_type": "downside_continuation",
         "catalyst_score": 62.67,
         "company_name": "Tesla Inc",
-        "confluence_score": 36.43,
+        "confluence_score": 35.85,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9299,7 +9299,7 @@
           "mid": 326.94,
           "range_pct": 0.0329
         },
-        "final_radar_score": 48.77,
+        "final_radar_score": 48.71,
         "forecast_date": "2026-08-12",
         "invalidation_level": 297.38,
         "last_close": 327.510009765625,

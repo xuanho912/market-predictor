@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-12T23:55:28.498274+00:00`
+- generated_at: `2026-08-13T03:35:37.128791+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
-- event_detection_confidence: `76`
+- major_event_count: `13`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,6 +27,22 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Credible missile threat led to secret aircraft switch for Trump, source says - Reuters
+- source: Reuters
+- published_at: `2026-08-12T23:19:52+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Top US refiners see profits soar, step up investor rewards - Reuters
+- source: Reuters
+- published_at: `2026-08-12T20:24:43+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Huge oil slick hitting Oman's shoreline as agencies warn of disaster - Reuters
 - source: Reuters
 - published_at: `2026-08-12T20:14:01+00:00`
@@ -35,10 +51,18 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Credible missile threat led to secret aircraft switch for Trump, source says - Reuters
+- headline: Saudi Red Sea oil exports go dark as Houthi attack threat grows - Reuters
 - source: Reuters
-- published_at: `2026-08-12T19:59:23+00:00`
+- published_at: `2026-08-12T18:49:34+00:00`
 - importance_score: `100`
+- confidence: `high`
+
+### oil_shock_relief / risk_on
+
+- headline: Oil drops on lower demand forecasts despite deadlock in US-Iran talks - Reuters
+- source: Reuters
+- published_at: `2026-08-13T01:08:00+00:00`
+- importance_score: `93`
 - confidence: `high`
 
 ### geopolitical_risk_easing / risk_on
@@ -46,15 +70,7 @@
 - headline: Iran says no progress on reviving interim peace deal with US - Reuters
 - source: Reuters
 - published_at: `2026-08-12T19:58:02+00:00`
-- importance_score: `99`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Saudi Red Sea oil exports go dark as Houthi attack threat grows - Reuters
-- source: Reuters
-- published_at: `2026-08-12T18:49:34+00:00`
-- importance_score: `100`
+- importance_score: `98`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -79,7 +95,7 @@
 - source: Reuters
 - published_at: `2026-08-12T12:36:16+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_easing / risk_on
 
@@ -87,20 +103,4 @@
 - source: Reuters
 - published_at: `2026-08-12T13:14:13+00:00`
 - importance_score: `97`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: TKMS sees increased demand from Middle East following Iran war - Reuters
-- source: Reuters
-- published_at: `2026-08-12T08:23:43+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: TUI avoids another profit warning as Iran war further dents travel bookings - Reuters
-- source: Reuters
-- published_at: `2026-08-12T05:04:00+00:00`
-- importance_score: `100`
 - confidence: `medium`
