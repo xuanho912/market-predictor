@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-13T22:23:09.525574+00:00`
+- generated_at: `2026-08-13T23:29:17.465831+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `11`
-- event_detection_confidence: `77`
+- major_event_count: `13`
+- event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,25 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: US eyes indefinite Iran naval blockade as oil supply shortfall deepens - Reuters
+- source: Reuters
+- published_at: `2026-08-13T22:01:51+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Are global oil stocks big enough to weather another six months of US-Iran war? - Reuters
 - source: Reuters
 - published_at: `2026-08-13T21:21:16+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: UAE says Iran attacked two ADNOC vessels in Strait of Hormuz; no injuries - Reuters
+- source: Reuters
+- published_at: `2026-08-13T21:19:19+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -65,14 +81,6 @@
 - importance_score: `100`
 - confidence: `high`
 
-### geopolitical_risk_easing / risk_on
-
-- headline: EXCLUSIVE: Ukraine offers Russia truce in Black Sea as food supply fears mount, source says - Reuters
-- source: Reuters
-- published_at: `2026-08-13T17:21:23+00:00`
-- importance_score: `99`
-- confidence: `high`
-
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Yemen's Houthis say they attacked Saudi Aramco refinery in Jazan with two drones - Reuters
@@ -81,26 +89,18 @@
 - importance_score: `100`
 - confidence: `high`
 
-### geopolitical_risk_escalation / risk_off
-
-- headline: The Iran war risks bringing the G7's fastest-growing economy to a halt
-- source: CNBC
-- published_at: `2026-08-13T11:40:22+00:00`
-- importance_score: `100`
-- confidence: `high`
-
 ### geopolitical_risk_easing / risk_on
 
-- headline: UK economy gains from Gulf ceasefire, World Cup and sunshine - Reuters
+- headline: EXCLUSIVE: Ukraine offers Russia truce in Black Sea as food supply fears mount, source says - Reuters
 - source: Reuters
-- published_at: `2026-08-13T12:15:59+00:00`
+- published_at: `2026-08-13T17:21:23+00:00`
 - importance_score: `98`
 - confidence: `high`
 
-### fed_hawkish / risk_off
+### geopolitical_risk_escalation / risk_off
 
-- headline: ECB set to deliver final rate hike next month in shortest tightening drive since 2011 - Reuters
+- headline: ADNOC unbound: War, OPEC exit launch Emirates oil giant on quest for growth - Reuters
 - source: Reuters
-- published_at: `2026-08-13T11:13:22+00:00`
-- importance_score: `86`
-- confidence: `medium`
+- published_at: `2026-08-13T14:26:07+00:00`
+- importance_score: `100`
+- confidence: `high`
