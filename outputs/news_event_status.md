@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-13T05:24:52.369496+00:00`
+- generated_at: `2026-08-13T13:50:48.675297+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `14`
+- major_event_count: `11`
 - event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -27,10 +27,26 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Credible missile threat led to secret aircraft switch for Trump, source says - Reuters
-- source: Reuters
-- published_at: `2026-08-12T23:19:52+00:00`
+- headline: The Iran war risks bringing the G7's fastest-growing economy to a halt
+- source: CNBC
+- published_at: `2026-08-13T11:40:22+00:00`
 - importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Are global oil stocks big enough to weather another six months of US-Iran war? - Reuters
+- source: Reuters
+- published_at: `2026-08-13T11:13:35+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: UK economy gains from Gulf ceasefire, World Cup and sunshine - Reuters
+- source: Reuters
+- published_at: `2026-08-13T06:13:00+00:00`
+- importance_score: `98`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -39,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-08-12T20:24:43+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +63,7 @@
 - source: Reuters
 - published_at: `2026-08-12T20:14:01+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,23 +71,7 @@
 - source: Reuters
 - published_at: `2026-08-12T18:49:34+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### oil_shock_relief / risk_on
-
-- headline: Oil drops on lower demand forecasts despite deadlock in US-Iran talks - Reuters
-- source: Reuters
-- published_at: `2026-08-13T01:08:00+00:00`
-- importance_score: `93`
-- confidence: `high`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Iran says no progress on reviving interim peace deal with US - Reuters
-- source: Reuters
-- published_at: `2026-08-12T19:58:02+00:00`
-- importance_score: `98`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -83,24 +83,24 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Slim gains for Gulf bourses capped by lack of progress to end Iran war - Reuters
+- headline: Credible missile threat led to secret aircraft switch for Trump, source says - Reuters
 - source: Reuters
-- published_at: `2026-08-12T13:48:27+00:00`
+- published_at: `2026-08-12T16:58:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_easing / risk_on
+### oil_shock_relief / risk_on
 
-- headline: Global 2026 oil supply shortfall to deepen as Hormuz reopening remains elusive, IEA says - Reuters
+- headline: Oil falls on weaker demand outlook and higher US stocks - Reuters
 - source: Reuters
-- published_at: `2026-08-12T13:45:33+00:00`
-- importance_score: `100`
-- confidence: `high`
+- published_at: `2026-08-13T01:08:00+00:00`
+- importance_score: `91`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Saudi Arabia bets on defensive alliances to deter slide into war - Reuters
+- headline: Slim gains for Gulf bourses capped by lack of progress to end Iran war - Reuters
 - source: Reuters
-- published_at: `2026-08-12T12:36:16+00:00`
+- published_at: `2026-08-12T13:48:27+00:00`
 - importance_score: `100`
 - confidence: `medium`
