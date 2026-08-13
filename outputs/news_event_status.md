@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-13T03:35:37.128791+00:00`
+- generated_at: `2026-08-13T05:24:52.369496+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `13`
-- event_detection_confidence: `75`
+- major_event_count: `14`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -79,7 +79,15 @@
 - source: Reuters
 - published_at: `2026-08-12T17:08:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Slim gains for Gulf bourses capped by lack of progress to end Iran war - Reuters
+- source: Reuters
+- published_at: `2026-08-12T13:48:27+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_easing / risk_on
 
@@ -95,12 +103,4 @@
 - source: Reuters
 - published_at: `2026-08-12T12:36:16+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: US must return to interim deal, no ceasefire extension talks, senior Iranian source says - Reuters
-- source: Reuters
-- published_at: `2026-08-12T13:14:13+00:00`
-- importance_score: `97`
 - confidence: `medium`
