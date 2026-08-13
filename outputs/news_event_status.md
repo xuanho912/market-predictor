@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-13T21:12:37.187987+00:00`
+- generated_at: `2026-08-13T22:23:09.525574+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `11`
-- event_detection_confidence: `76`
+- event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,9 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US could not verify Israeli warnings of Iran plots against Trump, sources say - Reuters
+- headline: Are global oil stocks big enough to weather another six months of US-Iran war? - Reuters
 - source: Reuters
-- published_at: `2026-08-13T19:53:53+00:00`
+- published_at: `2026-08-13T21:21:16+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -37,15 +37,23 @@
 
 - headline: NEWSLETTER: Trump reckons with a war that won’t leave him alone - Reuters
 - source: Reuters
-- published_at: `2026-08-13T19:15:00+00:00`
+- published_at: `2026-08-13T20:58:27+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Are global oil stocks big enough to weather another six months of US-Iran war? - Reuters
+- headline: US could not verify Israeli warnings of Iran plots against Trump, sources say - Reuters
 - source: Reuters
-- published_at: `2026-08-13T17:15:46+00:00`
+- published_at: `2026-08-13T19:53:53+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Yemen at highest risk of major conflict since 2022 truce, UN warns - Reuters
+- source: Reuters
+- published_at: `2026-08-13T17:25:46+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -94,13 +102,5 @@
 - headline: ECB set to deliver final rate hike next month in shortest tightening drive since 2011 - Reuters
 - source: Reuters
 - published_at: `2026-08-13T11:13:22+00:00`
-- importance_score: `87`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Top US refiners see profits soar, step up investor rewards - Reuters
-- source: Reuters
-- published_at: `2026-08-12T20:24:43+00:00`
-- importance_score: `100`
+- importance_score: `86`
 - confidence: `medium`
