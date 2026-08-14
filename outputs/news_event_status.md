@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-14T05:20:51.034509+00:00`
+- generated_at: `2026-08-14T13:47:08.003973+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `15`
-- event_detection_confidence: `74`
+- major_event_count: `13`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `50`
+- confirmation_score: `0`
 
 ## Dashboard Note
 
@@ -27,19 +27,43 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil steadies after US threatens indefinite blockade of Iran - Reuters
+- headline: Oil set for weekly gains after US threatens indefinite blockade of Iran - Reuters
 - source: Reuters
-- published_at: `2026-08-14T01:36:00+00:00`
+- published_at: `2026-08-14T11:03:44+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iran war a boon for China's e-trucks, fuelling export surge - Reuters
+- headline: US warns Iran it will step up economic pressure; two more ships attacked in Hormuz - Reuters
 - source: Reuters
-- published_at: `2026-08-13T23:18:30+00:00`
+- published_at: `2026-08-14T11:00:43+00:00`
 - importance_score: `100`
 - confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Fire effects cleared up at Russian port of Ust-Luga after drone attack, governor says - Reuters
+- source: Reuters
+- published_at: `2026-08-14T03:46:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil rises after US threatens indefinite blockade of Iran; set for weekly gains - Reuters
+- source: Reuters
+- published_at: `2026-08-14T01:36:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran war a boon for China's e-trucks, fuelling export surge - Reuters
+- source: Reuters
+- published_at: `2026-08-13T23:02:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +71,7 @@
 - source: Reuters
 - published_at: `2026-08-13T21:53:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,7 +79,7 @@
 - source: Reuters
 - published_at: `2026-08-13T21:21:16+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -63,7 +87,7 @@
 - source: Reuters
 - published_at: `2026-08-13T21:19:19+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -71,36 +95,12 @@
 - source: Reuters
 - published_at: `2026-08-13T20:58:27+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: US could not verify Israeli warnings of Iran plots against Trump, sources say - Reuters
 - source: Reuters
 - published_at: `2026-08-13T19:48:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Yemen at highest risk of major conflict since 2022 truce, UN warns - Reuters
-- source: Reuters
-- published_at: `2026-08-13T17:25:46+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US can keep naval blockade on Iranian ports "indefinitely," Pentagon chief says - Reuters
-- source: Reuters
-- published_at: `2026-08-13T16:43:12+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Yemen's Houthis say they attacked Saudi Aramco refinery in Jazan with two drones - Reuters
-- source: Reuters
-- published_at: `2026-08-13T15:28:37+00:00`
 - importance_score: `100`
 - confidence: `medium`
