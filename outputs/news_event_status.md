@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-14T13:47:08.003973+00:00`
+- generated_at: `2026-08-14T20:53:35.105686+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `13`
-- event_detection_confidence: `75`
+- major_event_count: `7`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `0`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
@@ -27,17 +27,25 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil set for weekly gains after US threatens indefinite blockade of Iran - Reuters
+- headline: Oil climbs on tanker attacks, US-Iran claims about Hormuz control - Reuters
 - source: Reuters
-- published_at: `2026-08-14T11:03:44+00:00`
+- published_at: `2026-08-14T16:34:24+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US warns Iran it will step up economic pressure; two more ships attacked in Hormuz - Reuters
+- headline: Housing investors say this is their worst market in at least 3 years
+- source: CNBC
+- published_at: `2026-08-14T14:00:01+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Lebanon's creative talent suffers as Iran war squeezes Gulf economies - Reuters
 - source: Reuters
-- published_at: `2026-08-14T11:00:43+00:00`
+- published_at: `2026-08-14T11:06:44+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -47,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-08-14T03:46:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -70,37 +78,5 @@
 - headline: US says it can keep naval blockade on Iran 'indefinitely,' vows more economic pressure - Reuters
 - source: Reuters
 - published_at: `2026-08-13T21:53:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Are global oil stocks big enough to weather another six months of US-Iran war? - Reuters
-- source: Reuters
-- published_at: `2026-08-13T21:21:16+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: UAE says Iran attacked two ADNOC vessels in Strait of Hormuz; no injuries - Reuters
-- source: Reuters
-- published_at: `2026-08-13T21:19:19+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: NEWSLETTER: Trump reckons with a war that won’t leave him alone - Reuters
-- source: Reuters
-- published_at: `2026-08-13T20:58:27+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US could not verify Israeli warnings of Iran plots against Trump, sources say - Reuters
-- source: Reuters
-- published_at: `2026-08-13T19:48:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
