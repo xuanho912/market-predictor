@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-13T23:54:10.902216+00:00`
+- generated_at: `2026-08-14T03:32:09.370920+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `13`
-- event_detection_confidence: `78`
+- major_event_count: `15`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,6 +27,22 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Oil steadies after US threatens to blockade Iran indefinitely - Reuters
+- source: Reuters
+- published_at: `2026-08-14T01:36:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran war a boon for China's e-trucks, fuelling export surge - Reuters
+- source: Reuters
+- published_at: `2026-08-13T23:18:30+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: US could not verify Israeli warnings of Iran plots against Trump, sources say - Reuters
 - source: Reuters
 - published_at: `2026-08-13T22:52:42+00:00`
@@ -35,9 +51,9 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US eyes indefinite Iran naval blockade as oil supply shortfall deepens - Reuters
+- headline: US says it can keep naval blockade on Iran 'indefinitely,' vows more economic pressure - Reuters
 - source: Reuters
-- published_at: `2026-08-13T22:01:51+00:00`
+- published_at: `2026-08-13T21:53:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -81,26 +97,10 @@
 - importance_score: `100`
 - confidence: `high`
 
-### geopolitical_risk_escalation / risk_off
-
-- headline: Yemen's Houthis say they attacked Saudi Aramco refinery in Jazan with two drones - Reuters
-- source: Reuters
-- published_at: `2026-08-13T15:28:37+00:00`
-- importance_score: `100`
-- confidence: `high`
-
 ### geopolitical_risk_easing / risk_on
 
 - headline: EXCLUSIVE: Ukraine offers Russia truce in Black Sea as food supply fears mount, source says - Reuters
 - source: Reuters
 - published_at: `2026-08-13T17:21:23+00:00`
 - importance_score: `98`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: ADNOC unbound: War, OPEC exit launch Emirates oil giant on quest for growth - Reuters
-- source: Reuters
-- published_at: `2026-08-13T14:26:07+00:00`
-- importance_score: `100`
 - confidence: `high`
