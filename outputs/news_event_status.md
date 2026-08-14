@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-14T21:55:01.133910+00:00`
+- generated_at: `2026-08-14T23:10:36.069895+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `6`
-- event_detection_confidence: `73`
+- event_detection_confidence: `72`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,7 +27,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil climbs over $1 on tanker attacks, no progrees on peace - Reuters
+- headline: Oil climbs over $1 on tanker attacks, no progrees on peace - reuters.com
 - source: Reuters
 - published_at: `2026-08-14T19:21:47+00:00`
 - importance_score: `100`
@@ -43,11 +43,11 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Lebanon's creative talent suffers as Iran war squeezes Gulf economies - Reuters
+- headline: Lebanon's creative talent suffers as Iran war squeezes Gulf economies - reuters.com
 - source: Reuters
 - published_at: `2026-08-14T11:06:44+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -59,7 +59,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil rises after US threatens indefinite blockade of Iran; set for weekly gains - Reuters
+- headline: Oil rises after US threatens indefinite blockade of Iran; set for weekly gains - reuters.com
 - source: Reuters
 - published_at: `2026-08-14T01:36:00+00:00`
 - importance_score: `100`
@@ -67,7 +67,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iran war a boon for China's e-trucks, fuelling export surge - Reuters
+- headline: Iran war a boon for China's e-trucks, fuelling export surge - reuters.com
 - source: Reuters
 - published_at: `2026-08-13T23:02:00+00:00`
 - importance_score: `100`
