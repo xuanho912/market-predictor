@@ -1,6 +1,6 @@
 # Breadth Data Status
 
-Generated at: 2026-08-14T20:53:20.980975+00:00
+Generated at: 2026-08-14T21:54:45.685930+00:00
 
 Provider available: True
 True breadth available: False
@@ -11,13 +11,13 @@ Stale data: True
 
 ## Market Internal Resonance
 
-- resonance_score: 65.07
+- resonance_score: 65.18
 - resonance_state: mixed
 - label: partial_resonance
 - aligned_symbols: DIA
 - surface_only_symbols: QQQ
 - sector_score: 86.0
-- equal_weight_vs_cap_weight_20d: -0.00041
+- equal_weight_vs_cap_weight_20d: 0.001551
 - small_cap_vs_large_cap_20d: -0.006885
 
 ## Universe Status
@@ -38,7 +38,7 @@ Stale data: True
 - new highs/lows 20d: 98 / 48
 - new highs/lows 52w: 22 / 4
 - improvement / deterioration / confirmation / conflict / quality: 74.19 / 36.32 / 78.51 / 27.6 / 100.0
-- internal_resonance: mixed / score 67.94 / SPY 内部信号分歧：成分股/行业有部分支持，但等权、小盘或新高新低没有完全确认。
+- internal_resonance: mixed / score 68.02 / SPY 内部信号分歧：成分股/行业有部分支持，但等权、小盘或新高新低没有完全确认。
 
 ### QQQ
 
@@ -56,7 +56,7 @@ Stale data: True
 - new highs/lows 20d: 0 / 0
 - new highs/lows 52w: 0 / 0
 - improvement / deterioration / confirmation / conflict / quality: 8.67 / 70.67 / 9.39 / 69.07 / 4.0
-- internal_resonance: surface_only / score 12.45 / QQQ 指数表面强但内部没充分跟上：confirmation 9，conflict 69，RSP/SPY -0.04%，IWM/SPY -0.69%。
+- internal_resonance: surface_only / score 12.54 / QQQ 指数表面强但内部没充分跟上：confirmation 9，conflict 69，RSP/SPY 0.16%，IWM/SPY -0.69%。
 
 ### DIA
 
@@ -74,7 +74,7 @@ Stale data: True
 - new highs/lows 20d: 5 / 0
 - new highs/lows 52w: 2 / 0
 - improvement / deterioration / confirmation / conflict / quality: 100.0 / 25.37 / 97.97 / 19.28 / 100.0
-- internal_resonance: aligned / score 77.51 / DIA 内部共振：成分股 20d 上方比例 73%，行业参与 90%，confirmation 98 高于 conflict 19。
+- internal_resonance: aligned / score 77.6 / DIA 内部共振：成分股 20d 上方比例 73%，行业参与 90%，confirmation 98 高于 conflict 19。
 
 ### IWM
 
@@ -91,8 +91,8 @@ Stale data: True
 - advancers / decliners / A-D ratio: None / None / None
 - new highs/lows 20d: None / None
 - new highs/lows 52w: None / None
-- improvement / deterioration / confirmation / conflict / quality: 50.44 / 43.36 / 53.83 / 41.52 / 64
-- internal_resonance: weak / score 49.76 / IWM 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
+- improvement / deterioration / confirmation / conflict / quality: 50.8 / 43.36 / 54.1 / 41.52 / 64
+- internal_resonance: weak / score 49.91 / IWM 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
 
 ## Notes
 
