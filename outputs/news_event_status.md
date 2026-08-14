@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-14T03:32:09.370920+00:00`
+- generated_at: `2026-08-14T05:20:51.034509+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `15`
-- event_detection_confidence: `76`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,7 +27,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil steadies after US threatens to blockade Iran indefinitely - Reuters
+- headline: Oil steadies after US threatens indefinite blockade of Iran - Reuters
 - source: Reuters
 - published_at: `2026-08-14T01:36:00+00:00`
 - importance_score: `100`
@@ -38,14 +38,6 @@
 - headline: Iran war a boon for China's e-trucks, fuelling export surge - Reuters
 - source: Reuters
 - published_at: `2026-08-13T23:18:30+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US could not verify Israeli warnings of Iran plots against Trump, sources say - Reuters
-- source: Reuters
-- published_at: `2026-08-13T22:52:42+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -81,6 +73,14 @@
 - importance_score: `100`
 - confidence: `high`
 
+### geopolitical_risk_escalation / risk_off
+
+- headline: US could not verify Israeli warnings of Iran plots against Trump, sources say - Reuters
+- source: Reuters
+- published_at: `2026-08-13T19:48:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
 ### geopolitical_risk_easing / risk_on
 
 - headline: Yemen at highest risk of major conflict since 2022 truce, UN warns - Reuters
@@ -95,12 +95,12 @@
 - source: Reuters
 - published_at: `2026-08-13T16:43:12+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
-### geopolitical_risk_easing / risk_on
+### geopolitical_risk_escalation / risk_off
 
-- headline: EXCLUSIVE: Ukraine offers Russia truce in Black Sea as food supply fears mount, source says - Reuters
+- headline: Yemen's Houthis say they attacked Saudi Aramco refinery in Jazan with two drones - Reuters
 - source: Reuters
-- published_at: `2026-08-13T17:21:23+00:00`
-- importance_score: `98`
-- confidence: `high`
+- published_at: `2026-08-13T15:28:37+00:00`
+- importance_score: `100`
+- confidence: `medium`
