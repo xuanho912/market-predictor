@@ -71,26 +71,639 @@
     },
     "SPY": {
       "alpha_v1_status": "RESEARCH ALPHA CANDIDATE",
-      "as_of": null,
-      "candidate_count": 0,
-      "current_regime": "unknown",
+      "as_of": "2026-08-14",
+      "candidate_count": 1246,
+      "crisis_sample_warning": false,
+      "current_alpha_v1_triggered": true,
+      "current_bounce_probability": 0.59293002,
+      "current_regime": "sideways",
       "data_source_status": "real_market_data",
+      "data_sources": {
+        "DIA": "yahoo-chart",
+        "HYG": "yahoo-chart",
+        "IWM": "yahoo-chart",
+        "LQD": "yahoo-chart",
+        "QQQ": "yahoo-chart",
+        "SPY": "yahoo-chart",
+        "TLT": "yahoo-chart",
+        "UUP": "yahoo-chart",
+        "^TNX": "yahoo-chart",
+        "^VIX": "yahoo-chart"
+      },
+      "distance_to_threshold": -0.26758690999999996,
       "historical_distribution": {
-        "sample_count": 0
+        "avg_return_10d": 0.009379475340009802,
+        "avg_return_20d": 0.024591045859146073,
+        "avg_return_3d": 0.0021079324478224084,
+        "avg_return_5d": 0.006317571280321316,
+        "avg_return_60d": 0.02962310833616118,
+        "best_case_10d": 0.05074615040432451,
+        "best_case_20d": 0.08559734386679163,
+        "best_case_3d": 0.030141553301827884,
+        "best_case_5d": 0.045153492013715546,
+        "best_case_60d": 0.10289581449189278,
+        "best_path_max_favorable_excursion": 0.11790242657541716,
+        "hit_rate_10d": 0.7,
+        "hit_rate_20d": 0.85,
+        "hit_rate_3d": 0.6,
+        "hit_rate_5d": 0.6,
+        "hit_rate_60d": 0.6,
+        "median_return_10d": 0.011058808223318284,
+        "median_return_20d": 0.02612237036106846,
+        "median_return_3d": 0.007971599432126664,
+        "median_return_5d": 0.004666543526107625,
+        "median_return_60d": 0.03834247354163045,
+        "sample_count": 20,
+        "worst_case_10d": -0.03350699700209825,
+        "worst_case_20d": -0.09554542547144118,
+        "worst_case_3d": -0.05154322188553695,
+        "worst_case_5d": -0.031628410303391474,
+        "worst_case_60d": -0.12629981516017152,
+        "worst_path_max_adverse_excursion": -0.12629981516017152
       },
       "interpretation": {
-        "confidence_note": "Not enough point-in-time historical samples to compute analogs.",
-        "historical_support": "weak_or_conflicting",
+        "confidence_note": "Uses 20 alpha_v1-triggered analogs. This is explanatory support only, not proof of alpha.",
+        "historical_support": "supportive",
         "not_proof_of_alpha": "Historical analogs are not proof of alpha and cannot upgrade alpha_v1 without forward validation.",
-        "risk_note": "Historical analogs are not proof of alpha and cannot upgrade alpha_v1 without forward validation.",
-        "supports_bounce_alpha": false
+        "risk_note": "Historical analogs are not proof of alpha and cannot upgrade alpha_v1 without forward validation. Closest analogs include a 20d loss as bad as -9.55%.",
+        "supports_bounce_alpha": true
       },
-      "low_sample_warning": true,
-      "sample_count": 0,
+      "low_sample_warning": false,
+      "same_regime_candidate_count": 380,
+      "sample_count": 20,
       "signal_name": "bounce_probability_top_decile_v1",
+      "similarity_methods": {
+        "combined": "similarity_score",
+        "cosine": "similarity_score_cosine",
+        "regime_filtered_nearest_neighbors": "same_regime_rank",
+        "zscore_euclidean": "similarity_score_euclidean"
+      },
       "symbol": "SPY",
       "threshold": 0.32534311,
-      "top_similar_cases": []
+      "top_similar_cases": [
+        {
+          "alpha_v1_triggered": true,
+          "bounce_probability": 0.395579,
+          "date": "2026-04-14",
+          "failed_bounce": false,
+          "fell_then_recovered": false,
+          "forward_return_10d": 0.024810615332193198,
+          "forward_return_20d": 0.06295534562081162,
+          "forward_return_3d": 0.022578682976222675,
+          "forward_return_5d": 0.013852482234846697,
+          "forward_return_60d": 0.08710363206012839,
+          "key_differences": [
+            "no large first-order difference across selected analog features"
+          ],
+          "key_shared_features": [
+            "same regime: sideways",
+            "bounce_probability above frozen alpha_v1 threshold",
+            "credit proxy not showing severe spread stress"
+          ],
+          "max_adverse_excursion": 0.007890994867038925,
+          "max_favorable_excursion": 0.09375627579916501,
+          "regime": "sideways",
+          "same_regime_rank": 1,
+          "similarity_score": 0.7317,
+          "similarity_score_cosine": 0.8771,
+          "similarity_score_euclidean": 0.5792,
+          "trend_reversal": true
+        },
+        {
+          "alpha_v1_triggered": true,
+          "bounce_probability": 0.433135,
+          "date": "2007-09-24",
+          "failed_bounce": true,
+          "fell_then_recovered": false,
+          "forward_return_10d": 0.021952678340426468,
+          "forward_return_20d": -0.007581311469209373,
+          "forward_return_3d": 0.00922930894555929,
+          "forward_return_5d": 0.017206147856446474,
+          "forward_return_60d": -0.038301783011955526,
+          "key_differences": [
+            "current credit proxy differs materially"
+          ],
+          "key_shared_features": [
+            "same regime: sideways",
+            "bounce_probability above frozen alpha_v1 threshold",
+            "credit proxy not showing severe spread stress"
+          ],
+          "max_adverse_excursion": -0.07080232922609808,
+          "max_favorable_excursion": 0.03157751472766357,
+          "regime": "sideways",
+          "same_regime_rank": 2,
+          "similarity_score": 0.7189,
+          "similarity_score_cosine": 0.8588,
+          "similarity_score_euclidean": 0.566,
+          "trend_reversal": false
+        },
+        {
+          "alpha_v1_triggered": true,
+          "bounce_probability": 0.403381,
+          "date": "2007-09-21",
+          "failed_bounce": true,
+          "fell_then_recovered": false,
+          "forward_return_10d": 0.025531386797698508,
+          "forward_return_20d": -0.015134585992518157,
+          "forward_return_3d": 0.00144766216316361,
+          "forward_return_5d": 0.004013954105755779,
+          "forward_return_60d": -0.04540365757096787,
+          "key_differences": [
+            "current credit proxy differs materially"
+          ],
+          "key_shared_features": [
+            "same regime: sideways",
+            "bounce_probability above frozen alpha_v1 threshold",
+            "credit proxy not showing severe spread stress"
+          ],
+          "max_adverse_excursion": -0.0725143395666411,
+          "max_favorable_excursion": 0.02967687353167925,
+          "regime": "sideways",
+          "same_regime_rank": 3,
+          "similarity_score": 0.7124,
+          "similarity_score_cosine": 0.8513,
+          "similarity_score_euclidean": 0.5582,
+          "trend_reversal": false
+        },
+        {
+          "alpha_v1_triggered": true,
+          "bounce_probability": 0.399501,
+          "date": "2025-05-13",
+          "failed_bounce": false,
+          "fell_then_recovered": false,
+          "forward_return_10d": 0.001516518254642607,
+          "forward_return_20d": 0.024742617803181766,
+          "forward_return_3d": 0.012541723493198598,
+          "forward_return_5d": 0.010241204511342694,
+          "forward_return_60d": 0.08578141148628671,
+          "key_differences": [
+            "no large first-order difference across selected analog features"
+          ],
+          "key_shared_features": [
+            "same regime: sideways",
+            "bounce_probability above frozen alpha_v1 threshold",
+            "credit proxy not showing severe spread stress"
+          ],
+          "max_adverse_excursion": -0.013172314685702347,
+          "max_favorable_excursion": 0.08578141148628671,
+          "regime": "sideways",
+          "same_regime_rank": 7,
+          "similarity_score": 0.6994,
+          "similarity_score_cosine": 0.8539,
+          "similarity_score_euclidean": 0.5332,
+          "trend_reversal": true
+        },
+        {
+          "alpha_v1_triggered": true,
+          "bounce_probability": 0.380532,
+          "date": "2007-09-20",
+          "failed_bounce": false,
+          "fell_then_recovered": true,
+          "forward_return_10d": 0.01142635610134124,
+          "forward_return_20d": 0.00925928338200821,
+          "forward_return_3d": -0.005844493018011709,
+          "forward_return_5d": 0.0053191329464594705,
+          "forward_return_60d": -0.03355661052872483,
+          "key_differences": [
+            "current credit proxy differs materially"
+          ],
+          "key_shared_features": [
+            "same regime: sideways",
+            "bounce_probability above frozen alpha_v1 threshold",
+            "credit proxy not showing severe spread stress"
+          ],
+          "max_adverse_excursion": -0.0744024292216835,
+          "max_favorable_excursion": 0.027580752442277978,
+          "regime": "sideways",
+          "same_regime_rank": 6,
+          "similarity_score": 0.6964,
+          "similarity_score_cosine": 0.8318,
+          "similarity_score_euclidean": 0.5397,
+          "trend_reversal": false
+        },
+        {
+          "alpha_v1_triggered": true,
+          "bounce_probability": 0.446757,
+          "date": "2007-08-24",
+          "failed_bounce": false,
+          "fell_then_recovered": true,
+          "forward_return_10d": -0.0171240377102867,
+          "forward_return_20d": 0.022652198266528423,
+          "forward_return_3d": -0.012067744372852296,
+          "forward_return_5d": -0.0049889131263337605,
+          "forward_return_60d": -0.03080973011396515,
+          "key_differences": [
+            "no large first-order difference across selected analog features"
+          ],
+          "key_shared_features": [
+            "same regime: sideways",
+            "bounce_probability above frozen alpha_v1 threshold",
+            "credit proxy not showing severe spread stress"
+          ],
+          "max_adverse_excursion": -0.031214217121671717,
+          "max_favorable_excursion": 0.05494501311856714,
+          "regime": "sideways",
+          "same_regime_rank": 4,
+          "similarity_score": 0.6963,
+          "similarity_score_cosine": 0.8238,
+          "similarity_score_euclidean": 0.544,
+          "trend_reversal": false
+        },
+        {
+          "alpha_v1_triggered": true,
+          "bounce_probability": 0.478009,
+          "date": "2021-09-27",
+          "failed_bounce": false,
+          "fell_then_recovered": true,
+          "forward_return_10d": -0.017960446285782528,
+          "forward_return_20d": 0.029165851972928536,
+          "forward_return_3d": -0.030498824221127485,
+          "forward_return_5d": -0.031628410303391474,
+          "forward_return_60d": 0.04613225699076162,
+          "key_differences": [
+            "no large first-order difference across selected analog features"
+          ],
+          "key_shared_features": [
+            "same regime: sideways",
+            "bounce_probability above frozen alpha_v1 threshold",
+            "credit proxy not showing severe spread stress"
+          ],
+          "max_adverse_excursion": -0.031628410303391474,
+          "max_favorable_excursion": 0.06348268266766532,
+          "regime": "sideways",
+          "same_regime_rank": 5,
+          "similarity_score": 0.6936,
+          "similarity_score_cosine": 0.8213,
+          "similarity_score_euclidean": 0.5404,
+          "trend_reversal": true
+        },
+        {
+          "alpha_v1_triggered": true,
+          "bounce_probability": 0.390957,
+          "date": "2007-09-18",
+          "failed_bounce": false,
+          "fell_then_recovered": true,
+          "forward_return_10d": 0.010691260345295328,
+          "forward_return_20d": 0.008657956233119046,
+          "forward_return_3d": -0.0032139936480765074,
+          "forward_return_5d": -0.007018282022162814,
+          "forward_return_60d": -0.020267686347928193,
+          "key_differences": [
+            "current credit proxy differs materially"
+          ],
+          "key_shared_features": [
+            "same regime: sideways",
+            "bounce_probability above frozen alpha_v1 threshold",
+            "credit proxy not showing severe spread stress"
+          ],
+          "max_adverse_excursion": -0.07549527258795596,
+          "max_favorable_excursion": 0.026367498600577077,
+          "regime": "sideways",
+          "same_regime_rank": 11,
+          "similarity_score": 0.6873,
+          "similarity_score_cosine": 0.8255,
+          "similarity_score_euclidean": 0.5267,
+          "trend_reversal": false
+        },
+        {
+          "alpha_v1_triggered": true,
+          "bounce_probability": 0.484585,
+          "date": "2011-10-27",
+          "failed_bounce": true,
+          "fell_then_recovered": false,
+          "forward_return_10d": -0.03350699700209825,
+          "forward_return_20d": -0.09554542547144118,
+          "forward_return_3d": -0.05154322188553695,
+          "forward_return_5d": -0.018502719369254406,
+          "forward_return_60d": 0.03055269009249928,
+          "key_differences": [
+            "current credit proxy differs materially",
+            "current dollar behavior differs",
+            "current VIX level differs"
+          ],
+          "key_shared_features": [
+            "same regime: sideways",
+            "bounce_probability above frozen alpha_v1 threshold",
+            "credit proxy not showing severe spread stress"
+          ],
+          "max_adverse_excursion": -0.09554542547144118,
+          "max_favorable_excursion": 0.03055269009249928,
+          "regime": "sideways",
+          "same_regime_rank": 27,
+          "similarity_score": 0.6872,
+          "similarity_score_cosine": 0.8574,
+          "similarity_score_euclidean": 0.5091,
+          "trend_reversal": false
+        },
+        {
+          "alpha_v1_triggered": true,
+          "bounce_probability": 0.36891,
+          "date": "2025-05-14",
+          "failed_bounce": false,
+          "fell_then_recovered": false,
+          "forward_return_10d": 0.004186526021662917,
+          "forward_return_20d": 0.027502122918955152,
+          "forward_return_3d": 0.012355466224164724,
+          "forward_return_5d": -0.008049900930448772,
+          "forward_return_60d": 0.0822511510505528,
+          "key_differences": [
+            "no large first-order difference across selected analog features"
+          ],
+          "key_shared_features": [
+            "same regime: sideways",
+            "bounce_probability above frozen alpha_v1 threshold",
+            "credit proxy not showing severe spread stress"
+          ],
+          "max_adverse_excursion": -0.014431901693920501,
+          "max_favorable_excursion": 0.08439551992687289,
+          "regime": "sideways",
+          "same_regime_rank": 15,
+          "similarity_score": 0.6864,
+          "similarity_score_cosine": 0.8351,
+          "similarity_score_euclidean": 0.5197,
+          "trend_reversal": true
+        },
+        {
+          "alpha_v1_triggered": true,
+          "bounce_probability": 0.343086,
+          "date": "2026-04-13",
+          "failed_bounce": false,
+          "fell_then_recovered": false,
+          "forward_return_10d": 0.042369929104563164,
+          "forward_return_20d": 0.07753973779345769,
+          "forward_return_3d": 0.022678907028535145,
+          "forward_return_5d": 0.032968949019229754,
+          "forward_return_60d": 0.0956275305660621,
+          "key_differences": [
+            "no large first-order difference across selected analog features"
+          ],
+          "key_shared_features": [
+            "same regime: sideways",
+            "bounce_probability above frozen alpha_v1 threshold",
+            "credit proxy not showing severe spread stress"
+          ],
+          "max_adverse_excursion": 0.01218488075237012,
+          "max_favorable_excursion": 0.10708356559193422,
+          "regime": "sideways",
+          "same_regime_rank": 8,
+          "similarity_score": 0.6844,
+          "similarity_score_cosine": 0.8085,
+          "similarity_score_euclidean": 0.5307,
+          "trend_reversal": true
+        },
+        {
+          "alpha_v1_triggered": true,
+          "bounce_probability": 0.330902,
+          "date": "2008-04-18",
+          "failed_bounce": false,
+          "fell_then_recovered": true,
+          "forward_return_10d": 0.021880407804593105,
+          "forward_return_20d": 0.030184922469195685,
+          "forward_return_3d": -0.005488117636364143,
+          "forward_return_5d": 0.008087885691303809,
+          "forward_return_60d": -0.12629981516017152,
+          "key_differences": [
+            "no large first-order difference across selected analog features"
+          ],
+          "key_shared_features": [
+            "same regime: sideways",
+            "bounce_probability above frozen alpha_v1 threshold",
+            "credit proxy not showing severe spread stress"
+          ],
+          "max_adverse_excursion": -0.12629981516017152,
+          "max_favorable_excursion": 0.03300120930975692,
+          "regime": "sideways",
+          "same_regime_rank": 13,
+          "similarity_score": 0.6832,
+          "similarity_score_cosine": 0.8167,
+          "similarity_score_euclidean": 0.524,
+          "trend_reversal": false
+        },
+        {
+          "alpha_v1_triggered": true,
+          "bounce_probability": 0.336338,
+          "date": "2026-04-10",
+          "failed_bounce": false,
+          "fell_then_recovered": false,
+          "forward_return_10d": 0.05074615040432451,
+          "forward_return_20d": 0.08559734386679163,
+          "forward_return_3d": 0.030141553301827884,
+          "forward_return_5d": 0.045153492013715546,
+          "forward_return_60d": 0.09704765594591502,
+          "key_differences": [
+            "no large first-order difference across selected analog features"
+          ],
+          "key_shared_features": [
+            "same regime: sideways",
+            "bounce_probability above frozen alpha_v1 threshold",
+            "credit proxy not showing severe spread stress"
+          ],
+          "max_adverse_excursion": 0.009772397784351794,
+          "max_favorable_excursion": 0.11790242657541716,
+          "regime": "sideways",
+          "same_regime_rank": 9,
+          "similarity_score": 0.6807,
+          "similarity_score_cosine": 0.8001,
+          "similarity_score_euclidean": 0.5285,
+          "trend_reversal": true
+        },
+        {
+          "alpha_v1_triggered": true,
+          "bounce_probability": 0.346765,
+          "date": "2026-04-09",
+          "failed_bounce": false,
+          "fell_then_recovered": false,
+          "forward_return_10d": 0.04197620301185534,
+          "forward_return_20d": 0.07599541996176717,
+          "forward_return_3d": 0.021399963822904544,
+          "forward_return_5d": 0.03198952928930865,
+          "forward_return_60d": 0.09971915622086702,
+          "key_differences": [
+            "no large first-order difference across selected analog features"
+          ],
+          "key_shared_features": [
+            "same regime: sideways",
+            "bounce_probability above frozen alpha_v1 threshold",
+            "credit proxy not showing severe spread stress"
+          ],
+          "max_adverse_excursion": -0.0006617805145495703,
+          "max_favorable_excursion": 0.11716262053234194,
+          "regime": "sideways",
+          "same_regime_rank": 10,
+          "similarity_score": 0.6784,
+          "similarity_score_cosine": 0.7926,
+          "similarity_score_euclidean": 0.5284,
+          "trend_reversal": true
+        },
+        {
+          "alpha_v1_triggered": true,
+          "bounce_probability": 0.440045,
+          "date": "2007-08-23",
+          "failed_bounce": false,
+          "fell_then_recovered": false,
+          "forward_return_10d": -0.003071232153429304,
+          "forward_return_20d": 0.03719626528339193,
+          "forward_return_3d": -0.019110039381046384,
+          "forward_return_5d": -0.0025253232677260318,
+          "forward_return_60d": -0.004982329818736808,
+          "key_differences": [
+            "current VIX level differs"
+          ],
+          "key_shared_features": [
+            "same regime: sideways",
+            "bounce_probability above frozen alpha_v1 threshold",
+            "credit proxy not showing severe spread stress"
+          ],
+          "max_adverse_excursion": -0.01924656867314045,
+          "max_favorable_excursion": 0.06797700767573711,
+          "regime": "sideways",
+          "same_regime_rank": 12,
+          "similarity_score": 0.6753,
+          "similarity_score_cosine": 0.7878,
+          "similarity_score_euclidean": 0.5254,
+          "trend_reversal": false
+        },
+        {
+          "alpha_v1_triggered": true,
+          "bounce_probability": 0.413241,
+          "date": "2007-09-19",
+          "failed_bounce": false,
+          "fell_then_recovered": true,
+          "forward_return_10d": 0.0027386421966208996,
+          "forward_return_20d": 0.005803334546859329,
+          "forward_return_3d": -0.010889398554374985,
+          "forward_return_5d": -0.007629096011273373,
+          "forward_return_60d": -0.02803862176998173,
+          "key_differences": [
+            "current credit proxy differs materially"
+          ],
+          "key_shared_features": [
+            "same regime: sideways",
+            "bounce_probability above frozen alpha_v1 threshold",
+            "credit proxy not showing severe spread stress"
+          ],
+          "max_adverse_excursion": -0.08092073299895197,
+          "max_favorable_excursion": 0.02034425603006218,
+          "regime": "sideways",
+          "same_regime_rank": 35,
+          "similarity_score": 0.6732,
+          "similarity_score_cosine": 0.8199,
+          "similarity_score_euclidean": 0.504,
+          "trend_reversal": false
+        },
+        {
+          "alpha_v1_triggered": true,
+          "bounce_probability": 0.531171,
+          "date": "2018-02-14",
+          "failed_bounce": false,
+          "fell_then_recovered": true,
+          "forward_return_10d": -0.007010587026717974,
+          "forward_return_20d": 0.02006752377906773,
+          "forward_return_3d": 0.006713889918694038,
+          "forward_return_5d": 0.0030045534685885222,
+          "forward_return_60d": 0.01209247305133343,
+          "key_differences": [
+            "no large first-order difference across selected analog features"
+          ],
+          "key_shared_features": [
+            "same regime: sideways",
+            "bounce_probability above frozen alpha_v1 threshold",
+            "credit proxy not showing severe spread stress"
+          ],
+          "max_adverse_excursion": -0.04495713966328674,
+          "max_favorable_excursion": 0.03442263772898224,
+          "regime": "sideways",
+          "same_regime_rank": 17,
+          "similarity_score": 0.6687,
+          "similarity_score_cosine": 0.7784,
+          "similarity_score_euclidean": 0.5186,
+          "trend_reversal": false
+        },
+        {
+          "alpha_v1_triggered": true,
+          "bounce_probability": 0.429069,
+          "date": "2011-12-01",
+          "failed_bounce": false,
+          "fell_then_recovered": true,
+          "forward_return_10d": -0.022325365193844093,
+          "forward_return_20d": 0.004241008034887361,
+          "forward_return_3d": 0.010322484619722072,
+          "forward_return_5d": -0.00816199297829534,
+          "forward_return_60d": 0.09642316503203774,
+          "key_differences": [
+            "current VIX level differs"
+          ],
+          "key_shared_features": [
+            "same regime: sideways",
+            "bounce_probability above frozen alpha_v1 threshold",
+            "credit proxy not showing severe spread stress"
+          ],
+          "max_adverse_excursion": -0.0374489898332534,
+          "max_favorable_excursion": 0.10074414831489098,
+          "regime": "sideways",
+          "same_regime_rank": 14,
+          "similarity_score": 0.6678,
+          "similarity_score_cosine": 0.7723,
+          "similarity_score_euclidean": 0.5201,
+          "trend_reversal": false
+        },
+        {
+          "alpha_v1_triggered": true,
+          "bounce_probability": 0.420575,
+          "date": "2020-11-06",
+          "failed_bounce": false,
+          "fell_then_recovered": false,
+          "forward_return_10d": 0.014764630043655913,
+          "forward_return_20d": 0.05406097920323294,
+          "forward_return_3d": 0.018591528722700534,
+          "forward_return_5d": 0.02267535514726582,
+          "forward_return_60d": 0.10289581449189278,
+          "key_differences": [
+            "current VIX level differs"
+          ],
+          "key_shared_features": [
+            "same regime: sideways",
+            "bounce_probability above frozen alpha_v1 threshold",
+            "credit proxy not showing severe spread stress"
+          ],
+          "max_adverse_excursion": 0.00871026890870108,
+          "max_favorable_excursion": 0.10289581449189278,
+          "regime": "sideways",
+          "same_regime_rank": 16,
+          "similarity_score": 0.6677,
+          "similarity_score_cosine": 0.774,
+          "similarity_score_euclidean": 0.519,
+          "trend_reversal": true
+        },
+        {
+          "alpha_v1_triggered": true,
+          "bounce_probability": 0.368664,
+          "date": "2025-05-12",
+          "failed_bounce": false,
+          "fell_then_recovered": false,
+          "forward_return_10d": 0.013996868413481689,
+          "forward_return_20d": 0.03446032897990592,
+          "forward_return_3d": 0.01281331045714551,
+          "forward_return_5d": 0.020343377331049073,
+          "forward_return_60d": 0.08449546405731834,
+          "key_differences": [
+            "current dollar behavior differs"
+          ],
+          "key_shared_features": [
+            "same regime: sideways",
+            "bounce_probability above frozen alpha_v1 threshold",
+            "credit proxy not showing severe spread stress"
+          ],
+          "max_adverse_excursion": -0.00665535420471397,
+          "max_favorable_excursion": 0.09281460446655188,
+          "regime": "sideways",
+          "same_regime_rank": 53,
+          "similarity_score": 0.6647,
+          "similarity_score_cosine": 0.8116,
+          "similarity_score_euclidean": 0.4932,
+          "trend_reversal": true
+        }
+      ]
     }
   },
   "generated_by": "scripts/export_static_alpha_v1.py",

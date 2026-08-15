@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-15T04:11:08.870025+00:00`
+- generated_at: `2026-08-15T13:02:56.930380+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `8`
-- event_detection_confidence: `71`
+- event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,11 +27,19 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: UAE's ADNOC says one of its vessels came under attack while transiting Hormuz - Reuters
+- headline: Israeli strike kills seven in south Lebanon, state news reports​ - Reuters
 - source: Reuters
-- published_at: `2026-08-14T23:13:47+00:00`
+- published_at: `2026-08-15T10:41:08+00:00`
 - importance_score: `100`
 - confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: UAE says ADNOC vessel attacked in Hormuz, vows to defend navigation rights - Reuters
+- source: Reuters
+- published_at: `2026-08-14T22:01:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -39,7 +47,7 @@
 - source: Reuters
 - published_at: `2026-08-14T19:21:47+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-08-14T19:17:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -67,24 +75,16 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Fire effects cleared up at Russian port of Ust-Luga after drone attack, governor says - Reuters
-- source: Reuters
-- published_at: `2026-08-14T03:46:00+00:00`
+- headline: Indian refiners buy crude months ahead as Russia, Hormuz supply risks mount
+- source: Bloomberg
+- published_at: `2026-08-14T08:47:27+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil rises after US threatens indefinite blockade of Iran; set for weekly gains - Reuters
-- source: Reuters
-- published_at: `2026-08-14T01:36:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### fed_dovish / risk_on
-
-- headline: India’s urea import prices fall 12% as global fertilizer market tightness eases
+- headline: NATO jets shoot down drone that entered Latvian airspace
 - source: Bloomberg
-- published_at: `2026-08-14T01:01:18+00:00`
-- importance_score: `80`
+- published_at: `2026-08-14T06:28:11+00:00`
+- importance_score: `100`
 - confidence: `medium`
