@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-15T02:22:24.763511+00:00`
+- generated_at: `2026-08-15T04:11:08.870025+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
+- major_event_count: `8`
 - event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -38,6 +38,14 @@
 - headline: Oil climbs over $1 on tanker attacks, no progrees on peace - Reuters
 - source: Reuters
 - published_at: `2026-08-14T19:21:47+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Yemen government says Houthi missiles kill four civilians in port city - Reuters
+- source: Reuters
+- published_at: `2026-08-14T19:17:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -78,5 +86,5 @@
 - headline: India’s urea import prices fall 12% as global fertilizer market tightness eases
 - source: Bloomberg
 - published_at: `2026-08-14T01:01:18+00:00`
-- importance_score: `81`
+- importance_score: `80`
 - confidence: `medium`

@@ -1,11 +1,11 @@
 # Data Freshness Status
 
-Generated at: `2026-08-15T02:22:34.849230+00:00`
+Generated at: `2026-08-15T04:11:20.193230+00:00`
 
 ## Summary
 
-- current_date: `2026-08-14`
-- current_time_us_eastern: `2026-08-14T22:22:34.849230-04:00`
+- current_date: `2026-08-15`
+- current_time_us_eastern: `2026-08-15T00:11:20.193230-04:00`
 - latest_market_date: `2026-08-14`
 - latest_confirmed_market_date: `2026-08-14`
 - expected_latest_trading_date: `2026-08-14`
@@ -14,10 +14,10 @@ Generated at: `2026-08-15T02:22:34.849230+00:00`
 - can_append_forecast_record: `True`
 - can_backfill_completed_outcomes: `True`
 - stale_days: `0`
-- data_freshness_status: `fresh`
+- data_freshness_status: `market_closed`
 - last_successful_core_market_update: `2026-08-14`
 - last_successful_update: `2026-08-14`
-- warning_message: 核心行情已更新至最新应有交易日 2026-08-14。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。
+- warning_message: 美股当前没有新的完整交易日，使用最近完成交易日 2026-08-14 的数据。 当前美东时间 2026-08-15 00:11。
 
 ## Affected Symbols
 
