@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-14T23:33:55.142147+00:00`
+- generated_at: `2026-08-15T02:22:24.763511+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
-- event_detection_confidence: `72`
+- major_event_count: `7`
+- event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,7 +27,15 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil climbs over $1 on tanker attacks, no progrees on peace - reuters.com
+- headline: UAE's ADNOC says one of its vessels came under attack while transiting Hormuz - Reuters
+- source: Reuters
+- published_at: `2026-08-14T23:13:47+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil climbs over $1 on tanker attacks, no progrees on peace - Reuters
 - source: Reuters
 - published_at: `2026-08-14T19:21:47+00:00`
 - importance_score: `100`
@@ -39,11 +47,11 @@
 - source: CNBC
 - published_at: `2026-08-14T14:00:01+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Lebanon's creative talent suffers as Iran war squeezes Gulf economies - reuters.com
+- headline: Lebanon's creative talent suffers as Iran war squeezes Gulf economies - Reuters
 - source: Reuters
 - published_at: `2026-08-14T11:06:44+00:00`
 - importance_score: `100`
@@ -59,16 +67,16 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil rises after US threatens indefinite blockade of Iran; set for weekly gains - reuters.com
+- headline: Oil rises after US threatens indefinite blockade of Iran; set for weekly gains - Reuters
 - source: Reuters
 - published_at: `2026-08-14T01:36:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
+### fed_dovish / risk_on
 
-- headline: Iran war a boon for China's e-trucks, fuelling export surge - reuters.com
-- source: Reuters
-- published_at: `2026-08-13T23:02:00+00:00`
-- importance_score: `100`
+- headline: India’s urea import prices fall 12% as global fertilizer market tightness eases
+- source: Bloomberg
+- published_at: `2026-08-14T01:01:18+00:00`
+- importance_score: `81`
 - confidence: `medium`
