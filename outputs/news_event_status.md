@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-15T13:02:56.930380+00:00`
+- generated_at: `2026-08-16T13:03:53.450263+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `8`
-- event_detection_confidence: `70`
+- event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,64 +27,64 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Israeli strike kills seven in south Lebanon, state news reports​ - Reuters
+- headline: Ukrainian drones strike Moscow region, killing one - Reuters
 - source: Reuters
-- published_at: `2026-08-15T10:41:08+00:00`
+- published_at: `2026-08-16T11:21:14+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: UAE says ADNOC vessel attacked in Hormuz, vows to defend navigation rights - Reuters
+- headline: India sets targets for oil companies to boost cooking gas output amid Middle East war - Reuters
 - source: Reuters
-- published_at: `2026-08-14T22:01:00+00:00`
+- published_at: `2026-08-16T09:51:44+00:00`
 - importance_score: `100`
-- confidence: `medium`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil climbs over $1 on tanker attacks, no progrees on peace - Reuters
+- headline: Lebanon says Israeli strikes in south of the country kill at least 11​​​ - Reuters
 - source: Reuters
-- published_at: `2026-08-14T19:21:47+00:00`
+- published_at: `2026-08-15T18:33:50+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Yemen government says Houthi missiles kill four civilians in port city - Reuters
+- headline: Yemen's Mocha port halts operations after Houthi attacks, port director says - Reuters
 - source: Reuters
-- published_at: `2026-08-14T19:17:00+00:00`
+- published_at: `2026-08-15T17:30:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Housing investors say this is their worst market in at least 3 years
-- source: CNBC
-- published_at: `2026-08-14T14:00:01+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Lebanon's creative talent suffers as Iran war squeezes Gulf economies - Reuters
+- headline: Palestinians in Qusra say they have faced militant settler attacks for months - Reuters
 - source: Reuters
-- published_at: `2026-08-14T11:06:44+00:00`
+- published_at: `2026-08-15T16:18:41+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Indian refiners buy crude months ahead as Russia, Hormuz supply risks mount
-- source: Bloomberg
-- published_at: `2026-08-14T08:47:27+00:00`
+- headline: Taliban mark five years in power as aid groups warn of crisis - Reuters
+- source: Reuters
+- published_at: `2026-08-15T15:26:52+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: NATO jets shoot down drone that entered Latvian airspace
-- source: Bloomberg
-- published_at: `2026-08-14T06:28:11+00:00`
+- headline: Israeli strike kills seven in south Lebanon, state news reports​ - Reuters
+- source: Reuters
+- published_at: `2026-08-15T14:43:31+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US says it can keep naval blockade on Iran 'indefinitely,' vows more economic pressure - Reuters
+- source: Reuters
+- published_at: `2026-08-15T05:59:05+00:00`
 - importance_score: `100`
 - confidence: `medium`
