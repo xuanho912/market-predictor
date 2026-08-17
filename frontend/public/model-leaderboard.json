@@ -47,7 +47,7 @@
       "status": "insufficient_forward_samples"
     }
   },
-  "generated_at": "2026-08-17T13:08:50.746330+00:00",
+  "generated_at": "2026-08-17T20:51:55.161218+00:00",
   "guardrails": [
     "Alpha v1 threshold remains frozen at 0.32534311.",
     "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -60,48 +60,48 @@
       "completed_forecasts": 0,
       "horizon_metrics": {
         "10d": {
-          "completed_count": 136,
-          "primary_closer_than_secondary_rate": 0.2868,
-          "primary_hit_rate": 0.2059,
-          "primary_mean_absolute_error": 0.036404,
+          "completed_count": 140,
+          "primary_closer_than_secondary_rate": 0.2929,
+          "primary_hit_rate": 0.2143,
+          "primary_mean_absolute_error": 0.036587,
           "primary_median_absolute_error": 0.029731,
-          "primary_vs_secondary_accuracy_spread": -0.1838,
+          "primary_vs_secondary_accuracy_spread": -0.1714,
           "sample_gate": "stronger_evidence",
-          "secondary_hit_rate": 0.3897,
-          "secondary_mean_absolute_error": 0.021174
+          "secondary_hit_rate": 0.3857,
+          "secondary_mean_absolute_error": 0.021341
         },
         "20d": {
-          "completed_count": 96,
-          "primary_closer_than_secondary_rate": 0.3021,
-          "primary_hit_rate": 0.1458,
-          "primary_mean_absolute_error": 0.053187,
-          "primary_median_absolute_error": 0.051253,
-          "primary_vs_secondary_accuracy_spread": -0.125,
+          "completed_count": 100,
+          "primary_closer_than_secondary_rate": 0.3,
+          "primary_hit_rate": 0.14,
+          "primary_mean_absolute_error": 0.054172,
+          "primary_median_absolute_error": 0.051919,
+          "primary_vs_secondary_accuracy_spread": -0.13,
           "sample_gate": "moderate_evidence",
-          "secondary_hit_rate": 0.2708,
-          "secondary_mean_absolute_error": 0.034456
+          "secondary_hit_rate": 0.27,
+          "secondary_mean_absolute_error": 0.034761
         },
         "3d": {
-          "completed_count": 164,
-          "primary_closer_than_secondary_rate": 0.4268,
-          "primary_hit_rate": 0.2744,
-          "primary_mean_absolute_error": 0.015909,
-          "primary_median_absolute_error": 0.012757,
-          "primary_vs_secondary_accuracy_spread": -0.061,
+          "completed_count": 168,
+          "primary_closer_than_secondary_rate": 0.4167,
+          "primary_hit_rate": 0.2679,
+          "primary_mean_absolute_error": 0.01582,
+          "primary_median_absolute_error": 0.012544,
+          "primary_vs_secondary_accuracy_spread": -0.0714,
           "sample_gate": "stronger_evidence",
-          "secondary_hit_rate": 0.3354,
-          "secondary_mean_absolute_error": 0.01313
+          "secondary_hit_rate": 0.3393,
+          "secondary_mean_absolute_error": 0.012887
         },
         "5d": {
-          "completed_count": 156,
-          "primary_closer_than_secondary_rate": 0.4295,
-          "primary_hit_rate": 0.2308,
-          "primary_mean_absolute_error": 0.023387,
+          "completed_count": 160,
+          "primary_closer_than_secondary_rate": 0.425,
+          "primary_hit_rate": 0.225,
+          "primary_mean_absolute_error": 0.023207,
           "primary_median_absolute_error": 0.0176,
-          "primary_vs_secondary_accuracy_spread": -0.0769,
+          "primary_vs_secondary_accuracy_spread": -0.0938,
           "sample_gate": "stronger_evidence",
-          "secondary_hit_rate": 0.3077,
-          "secondary_mean_absolute_error": 0.018225
+          "secondary_hit_rate": 0.3187,
+          "secondary_mean_absolute_error": 0.017999
         },
         "60d": {
           "completed_count": 0,
@@ -116,12 +116,12 @@
         }
       },
       "model_version": "baseline_v1",
-      "pending_forecasts": 176,
+      "pending_forecasts": 180,
       "promotion_status": "active_model",
       "reason": "Frozen current production model. Not a claim of high precision or stable alpha.",
       "role": "active_baseline",
       "status": "tracking",
-      "total_forecasts": 176
+      "total_forecasts": 180
     },
     {
       "completed_forecasts": 0,
@@ -183,12 +183,12 @@
         }
       },
       "model_version": "challenger_v2_error_learning",
-      "pending_forecasts": 160,
+      "pending_forecasts": 164,
       "promotion_status": "insufficient_forward_evidence",
       "reason": "Forward samples have not met promotion gates.",
       "role": "shadow_challenger",
       "status": "tracking",
-      "total_forecasts": 160
+      "total_forecasts": 164
     },
     {
       "completed_forecasts": 0,
@@ -250,12 +250,12 @@
         }
       },
       "model_version": "challenger_v2_event_reaction_overlay",
-      "pending_forecasts": 124,
+      "pending_forecasts": 128,
       "promotion_status": "insufficient_forward_evidence",
       "reason": "Forward samples have not met promotion gates.",
       "role": "shadow_challenger",
       "status": "tracking",
-      "total_forecasts": 124
+      "total_forecasts": 128
     },
     {
       "completed_forecasts": 0,
@@ -317,12 +317,12 @@
         }
       },
       "model_version": "challenger_v2_options_flow",
-      "pending_forecasts": 176,
+      "pending_forecasts": 180,
       "promotion_status": "insufficient_forward_evidence",
       "reason": "Forward samples have not met promotion gates.",
       "role": "shadow_challenger",
       "status": "tracking",
-      "total_forecasts": 176
+      "total_forecasts": 180
     },
     {
       "completed_forecasts": 0,
@@ -804,18 +804,16 @@
       "status": "ready_for_shadow_implementation"
     },
     {
-      "blocked_reason": "Missing news_event_overlay_available; cannot generate this shadow forecast without available news/event intelligence and enough forecast-deviation evidence that event reactions need shadow validation.",
+      "blocked_reason": "",
       "description": "Shadow-tests stricter news/event reaction handling using event direction plus market price confirmation.",
       "forbidden_without": "available news/event intelligence and enough forecast-deviation evidence that event reactions need shadow validation",
-      "missing_required_data": [
-        "news_event_overlay_available"
-      ],
+      "missing_required_data": [],
       "model_version": "challenger_v2_event_reaction_overlay",
       "required_data_flags": [
         "news_event_overlay_available",
         "event_reaction_learning_ready"
       ],
-      "status": "blocked_missing_required_data"
+      "status": "ready_for_shadow_implementation"
     },
     {
       "blocked_reason": "Missing put_call_available, gamma_available, true_flow_available, macro_event_quality_available; cannot generate this shadow forecast without all component challengers passing their own shadow validation gates.",
@@ -839,10 +837,10 @@
   ],
   "validation_standards": {
     "forward_completed_samples_by_horizon": {
-      "10d": 136,
-      "20d": 96,
-      "3d": 164,
-      "5d": 156,
+      "10d": 140,
+      "20d": 100,
+      "3d": 168,
+      "5d": 160,
       "60d": 0
     },
     "high_precision_standard": {
