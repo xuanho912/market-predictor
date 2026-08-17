@@ -1,6 +1,6 @@
 # Forecast Deviation Review
 
-Generated at: `2026-08-16T13:04:04.032951+00:00`
+Generated at: `2026-08-17T13:08:50.671128+00:00`
 
 This report reviews forecast-vs-actual deviations after horizons complete. It is not a trading, PnL or execution report.
 
@@ -14,12 +14,12 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - latest_forecast_date: `2026-08-14`
 - latest_reviewed_forecast_date: `2026-08-13`
 - latest_market_date: `2026-08-14`
-- data_freshness_status: `market_closed`
+- data_freshness_status: `market_open_unconfirmed`
 - largest_absolute_error: `0.142911`
 - dominant_error_theme: `news_data_gap_limited_attribution`
 - evidence_level: `stronger_evidence`
 - validation_status: `early_evidence`
-- update_blockers: `[{'reason': 'no_future_market_close_yet', 'detail': 'Latest market date 2026-08-14 is not after latest forecast date 2026-08-14, so no completed 1d/3d/5d outcome can be scored yet.'}]`
+- update_blockers: `[{'reason': 'market_open_unconfirmed', 'detail': '当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-08-14，最近完整收盘交易日为 2026-08-14；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。'}, {'reason': 'no_future_market_close_yet', 'detail': 'Latest market date 2026-08-14 is not after latest forecast date 2026-08-14, so no completed 1d/3d/5d outcome can be scored yet.'}]`
 - correction_policy: `past_forecasts_are_not_rewritten_only_actuals_and_error_fields_are_backfilled`
 - model_learning_status: `lessons_ready_for_shadow_challenger`
 
@@ -36,7 +36,7 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - severity: `moderate`
 - primary_hit: `False`
 - best_matching_scenario: `expected_path`
-- likely_error_drivers: `model_underestimated_downside_or_failed_bounce, news_event_risk_underweighted, breadth_conflict_underweighted, news_data_gap_limited_attribution`
+- likely_error_drivers: `model_underestimated_downside_or_failed_bounce, news_event_risk_underweighted, breadth_conflict_underweighted, news_data_gap_limited_attribution, intraday_snapshot_risk`
 - underweighted_factors: `news_event_risk_underweighted, breadth_conflict_underweighted`
 - overweighted_factors: `bounce_repair_assumption`
 - diagnostic_note: 实际走势弱于预测，优先检查是否低估了新闻/事件风险，或利空是否得到了价格确认。
@@ -52,7 +52,7 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - severity: `large`
 - primary_hit: `False`
 - best_matching_scenario: `expected_path`
-- likely_error_drivers: `model_underestimated_upside_or_repair, risk_off_news_overweighted_or_resolved, news_data_gap_limited_attribution`
+- likely_error_drivers: `model_underestimated_upside_or_repair, risk_off_news_overweighted_or_resolved, news_data_gap_limited_attribution, intraday_snapshot_risk`
 - underweighted_factors: ``
 - overweighted_factors: `risk_off_news_or_macro_risk`
 - diagnostic_note: 实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。
@@ -68,7 +68,7 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - severity: `moderate`
 - primary_hit: `False`
 - best_matching_scenario: `analog_average_path`
-- likely_error_drivers: `model_underestimated_downside_or_failed_bounce, news_event_risk_underweighted, news_data_gap_limited_attribution`
+- likely_error_drivers: `model_underestimated_downside_or_failed_bounce, news_event_risk_underweighted, news_data_gap_limited_attribution, intraday_snapshot_risk`
 - underweighted_factors: `news_event_risk_underweighted`
 - overweighted_factors: `bounce_repair_assumption`
 - diagnostic_note: 实际走势弱于预测，优先检查是否低估了新闻/事件风险，或利空是否得到了价格确认。
@@ -84,7 +84,7 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - severity: `large`
 - primary_hit: `False`
 - best_matching_scenario: `analog_average_path`
-- likely_error_drivers: `model_underestimated_downside_or_failed_bounce, news_event_risk_underweighted, news_data_gap_limited_attribution`
+- likely_error_drivers: `model_underestimated_downside_or_failed_bounce, news_event_risk_underweighted, news_data_gap_limited_attribution, intraday_snapshot_risk`
 - underweighted_factors: `news_event_risk_underweighted`
 - overweighted_factors: `bounce_repair_assumption`
 - diagnostic_note: 实际走势弱于预测，优先检查是否低估了新闻/事件风险，或利空是否得到了价格确认。
@@ -100,7 +100,7 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - severity: `moderate`
 - primary_hit: `False`
 - best_matching_scenario: `bearish_path`
-- likely_error_drivers: `model_underestimated_downside_or_failed_bounce, news_event_risk_underweighted, news_data_gap_limited_attribution`
+- likely_error_drivers: `model_underestimated_downside_or_failed_bounce, news_event_risk_underweighted, news_data_gap_limited_attribution, intraday_snapshot_risk`
 - underweighted_factors: `news_event_risk_underweighted`
 - overweighted_factors: `bounce_repair_assumption`
 - diagnostic_note: 实际走势弱于预测，优先检查是否低估了新闻/事件风险，或利空是否得到了价格确认。
@@ -116,7 +116,7 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - severity: `moderate`
 - primary_hit: `False`
 - best_matching_scenario: `bearish_path`
-- likely_error_drivers: `model_underestimated_downside_or_failed_bounce, news_event_risk_underweighted, news_data_gap_limited_attribution`
+- likely_error_drivers: `model_underestimated_downside_or_failed_bounce, news_event_risk_underweighted, news_data_gap_limited_attribution, intraday_snapshot_risk`
 - underweighted_factors: `news_event_risk_underweighted`
 - overweighted_factors: `bounce_repair_assumption`
 - diagnostic_note: 实际走势弱于预测，优先检查是否低估了新闻/事件风险，或利空是否得到了价格确认。
@@ -132,7 +132,7 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - severity: `large`
 - primary_hit: `False`
 - best_matching_scenario: `expected_path`
-- likely_error_drivers: `model_underestimated_upside_or_repair, risk_off_news_overweighted_or_resolved, volatility_repair_underweighted, news_data_gap_limited_attribution`
+- likely_error_drivers: `model_underestimated_upside_or_repair, risk_off_news_overweighted_or_resolved, volatility_repair_underweighted, news_data_gap_limited_attribution, intraday_snapshot_risk`
 - underweighted_factors: `volatility_repair_underweighted`
 - overweighted_factors: `risk_off_news_or_macro_risk`
 - diagnostic_note: 实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。
@@ -148,7 +148,7 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - severity: `moderate`
 - primary_hit: `False`
 - best_matching_scenario: `bounce_path`
-- likely_error_drivers: `model_underestimated_upside_or_repair, risk_off_news_overweighted_or_resolved, volatility_repair_underweighted, news_data_gap_limited_attribution`
+- likely_error_drivers: `model_underestimated_upside_or_repair, risk_off_news_overweighted_or_resolved, volatility_repair_underweighted, news_data_gap_limited_attribution, intraday_snapshot_risk`
 - underweighted_factors: `volatility_repair_underweighted`
 - overweighted_factors: `risk_off_news_or_macro_risk`
 - diagnostic_note: 实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。
@@ -164,7 +164,7 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - severity: `moderate`
 - primary_hit: `False`
 - best_matching_scenario: `bounce_path`
-- likely_error_drivers: `model_underestimated_upside_or_repair, risk_off_news_overweighted_or_resolved, volatility_repair_underweighted, news_data_gap_limited_attribution`
+- likely_error_drivers: `model_underestimated_upside_or_repair, risk_off_news_overweighted_or_resolved, volatility_repair_underweighted, news_data_gap_limited_attribution, intraday_snapshot_risk`
 - underweighted_factors: `volatility_repair_underweighted`
 - overweighted_factors: `risk_off_news_or_macro_risk`
 - diagnostic_note: 实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。
@@ -180,7 +180,7 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - severity: `moderate`
 - primary_hit: `False`
 - best_matching_scenario: `bounce_path`
-- likely_error_drivers: `model_underestimated_upside_or_repair, risk_off_news_overweighted_or_resolved, volatility_repair_underweighted, news_data_gap_limited_attribution`
+- likely_error_drivers: `model_underestimated_upside_or_repair, risk_off_news_overweighted_or_resolved, volatility_repair_underweighted, news_data_gap_limited_attribution, intraday_snapshot_risk`
 - underweighted_factors: `volatility_repair_underweighted`
 - overweighted_factors: `risk_off_news_or_macro_risk`
 - diagnostic_note: 实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。
@@ -196,7 +196,7 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - severity: `moderate`
 - primary_hit: `False`
 - best_matching_scenario: `analog_average_path`
-- likely_error_drivers: `model_underestimated_upside_or_repair, risk_off_news_overweighted_or_resolved, volatility_repair_underweighted, risk_on_flow_underweighted, news_data_gap_limited_attribution`
+- likely_error_drivers: `model_underestimated_upside_or_repair, risk_off_news_overweighted_or_resolved, volatility_repair_underweighted, risk_on_flow_underweighted, news_data_gap_limited_attribution, intraday_snapshot_risk`
 - underweighted_factors: `volatility_repair_underweighted, risk_on_flow_underweighted`
 - overweighted_factors: `risk_off_news_or_macro_risk`
 - diagnostic_note: 实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。
@@ -212,7 +212,7 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - severity: `moderate`
 - primary_hit: `False`
 - best_matching_scenario: `analog_average_path`
-- likely_error_drivers: `model_underestimated_downside_or_failed_bounce, news_event_risk_underweighted, news_data_gap_limited_attribution`
+- likely_error_drivers: `model_underestimated_downside_or_failed_bounce, news_event_risk_underweighted, news_data_gap_limited_attribution, intraday_snapshot_risk`
 - underweighted_factors: `news_event_risk_underweighted`
 - overweighted_factors: `bounce_repair_assumption`
 - diagnostic_note: 实际走势弱于预测，优先检查是否低估了新闻/事件风险，或利空是否得到了价格确认。
@@ -228,7 +228,7 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - severity: `moderate`
 - primary_hit: `False`
 - best_matching_scenario: `bearish_path`
-- likely_error_drivers: `model_underestimated_downside_or_failed_bounce, news_event_risk_underweighted, news_data_gap_limited_attribution`
+- likely_error_drivers: `model_underestimated_downside_or_failed_bounce, news_event_risk_underweighted, news_data_gap_limited_attribution, intraday_snapshot_risk`
 - underweighted_factors: `news_event_risk_underweighted`
 - overweighted_factors: `bounce_repair_assumption`
 - diagnostic_note: 实际走势弱于预测，优先检查是否低估了新闻/事件风险，或利空是否得到了价格确认。
@@ -244,7 +244,7 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - severity: `moderate`
 - primary_hit: `False`
 - best_matching_scenario: `bearish_path`
-- likely_error_drivers: `model_underestimated_downside_or_failed_bounce, news_event_risk_underweighted, news_data_gap_limited_attribution`
+- likely_error_drivers: `model_underestimated_downside_or_failed_bounce, news_event_risk_underweighted, news_data_gap_limited_attribution, intraday_snapshot_risk`
 - underweighted_factors: `news_event_risk_underweighted`
 - overweighted_factors: `bounce_repair_assumption`
 - diagnostic_note: 实际走势弱于预测，优先检查是否低估了新闻/事件风险，或利空是否得到了价格确认。
@@ -260,7 +260,7 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - severity: `moderate`
 - primary_hit: `False`
 - best_matching_scenario: `bearish_path`
-- likely_error_drivers: `model_underestimated_downside_or_failed_bounce, news_event_risk_underweighted, news_data_gap_limited_attribution`
+- likely_error_drivers: `model_underestimated_downside_or_failed_bounce, news_event_risk_underweighted, news_data_gap_limited_attribution, intraday_snapshot_risk`
 - underweighted_factors: `news_event_risk_underweighted`
 - overweighted_factors: `bounce_repair_assumption`
 - diagnostic_note: 实际走势弱于预测，优先检查是否低估了新闻/事件风险，或利空是否得到了价格确认。
@@ -277,10 +277,11 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 ### Lessons
 
 - `news_data_gap_limited_attribution` count `390`: 新闻数据缺口会限制归因质量，需要标记而不是事后编故事。 Action: keep_observing_until_forward_sample_gate
+- `intraday_snapshot_risk` count `390`: 盘中快照未确认时，不应冻结为正式收盘预测。 Action: keep_observing_until_forward_sample_gate
 - `model_underestimated_upside_or_repair` count `234`: 模型低估了修复/反抽强度，需要检查事件催化、波动率修复和价格确认。 Action: keep_observing_until_forward_sample_gate
 - `risk_off_news_overweighted_or_resolved` count `197`: risk-off 新闻若快速缓和或未被价格确认，不应继续压低主路径。 Action: shadow-test news_decay：未被价格确认或快速缓和的 risk-off 新闻权重衰减。
 - `model_underestimated_downside_or_failed_bounce` count `156`: 模型低估了下跌延续或反抽失败风险，需要检查信用、宽度、波动率和新闻风险。 Action: keep_observing_until_forward_sample_gate
-- `news_event_risk_underweighted` count `156`: 风险新闻如果被价格确认，应提高风险路径权重。 Action: shadow-test risk_event_confirmation：risk-off 新闻得到价格确认才提高风险路径。
+- `news_event_risk_underweighted` count `142`: 风险新闻如果被价格确认，应提高风险路径权重。 Action: shadow-test risk_event_confirmation：risk-off 新闻得到价格确认才提高风险路径。
 - `volatility_repair_underweighted` count `74`: 波动率结构修复会放大短线反抽，需要进入 1d/3d/5d 权重验证。 Action: shadow-test vol_repair_boost：VIX term 修复提高短周期 bounce 权重。
 - `breadth_follow_through_underweighted` count `59`: 宽度改善后的持续承接可能被低估。 Action: shadow-test breadth_follow_through：宽度改善持续两日以上才提高中期修复权重。
 - `breadth_conflict_underweighted` count `44`: 指数上涨但内部参与不足时，失败反抽风险可能被低估。 Action: shadow-test breadth_conflict_penalty：宽度冲突提高 failed_bounce 风险。
