@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-17T21:55:30.676509+00:00`
+- generated_at: `2026-08-17T23:10:53.202493+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `10`
-- event_detection_confidence: `77`
+- major_event_count: `12`
+- event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -25,11 +25,27 @@
 
 ## Major Events
 
+### geopolitical_risk_easing / risk_on
+
+- headline: Iran threatens new offensive while US rules out extending ceasefire deal - Reuters
+- source: Reuters
+- published_at: `2026-08-17T22:43:11+00:00`
+- importance_score: `100`
+- confidence: `high`
+
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US railroad Union Pacific turned charges meant to cover fuel cost spike from Iran war into profit - Reuters
+- headline: US railroad Union Pacific turned charges meant to cover fuel costs from Iran war into profit - Reuters
 - source: Reuters
-- published_at: `2026-08-17T19:30:12+00:00`
+- published_at: `2026-08-17T21:11:55+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Battered by war, Iran’s rulers wary of more economic pain and unrest if US tightens pressure - Reuters
+- source: Reuters
+- published_at: `2026-08-17T20:52:09+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -39,6 +55,14 @@
 - source: CNBC
 - published_at: `2026-08-17T18:42:54+00:00`
 - importance_score: `100`
+- confidence: `high`
+
+### oil_shock_risk / risk_off
+
+- headline: US diesel crack surpasses $100 a barrel for the first time on supply disruptions - Reuters
+- source: Reuters
+- published_at: `2026-08-17T19:13:43+00:00`
+- importance_score: `97`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -80,27 +104,3 @@
 - published_at: `2026-08-17T11:54:35+00:00`
 - importance_score: `100`
 - confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Vietnam aviation body says passenger plane returned to Munich after tail strike, tyre-pressure warnings - Reuters
-- source: Reuters
-- published_at: `2026-08-17T05:40:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil jumps $2 as investors weigh Iran war stalemate, stoking supply concerns - Reuters
-- source: Reuters
-- published_at: `2026-08-17T00:31:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Shipping slows through Strait of Hormuz after tanker attacks, data shows - Reuters
-- source: Reuters
-- published_at: `2026-08-16T23:54:51+00:00`
-- importance_score: `100`
-- confidence: `medium`
