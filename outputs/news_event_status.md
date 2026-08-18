@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-18T02:32:01.034199+00:00`
+- generated_at: `2026-08-18T04:22:40.527611+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `11`
-- event_detection_confidence: `77`
+- major_event_count: `14`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -25,17 +25,33 @@
 
 ## Major Events
 
+### geopolitical_risk_escalation / risk_off
+
+- headline: Dollar feeble as rate hike bets dwindle, Iran war worries grow - Reuters
+- source: Reuters
+- published_at: `2026-08-18T01:51:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
 ### geopolitical_risk_easing / risk_on
 
-- headline: Iran threatens new offensive while US rules out extending ceasefire deal - reuters.com
+- headline: Oil prices climb, bond yields rise as US-Iran ceasefire expires - Reuters
 - source: Reuters
-- published_at: `2026-08-17T22:43:11+00:00`
+- published_at: `2026-08-18T01:16:00+00:00`
+- importance_score: `99`
+- confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Oil climbs as fading US-Iran peace hopes raise supply risks - Reuters
+- source: Reuters
+- published_at: `2026-08-18T01:13:00+00:00`
 - importance_score: `99`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US railroad Union Pacific turned charges meant to cover fuel costs from Iran war into profit - reuters.com
+- headline: US railroad Union Pacific turned charges meant to cover fuel costs from Iran war into profit - Reuters
 - source: Reuters
 - published_at: `2026-08-17T21:11:55+00:00`
 - importance_score: `100`
@@ -43,9 +59,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Battered by war, Iran’s rulers wary of more economic pain and unrest if US tightens pressure - reuters.com
+- headline: Battered by war, Iran’s rulers wary of more economic pain and unrest if US tightens pressure - Reuters
 - source: Reuters
 - published_at: `2026-08-17T20:52:09+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: ExxonMobil awards $1.1 billion in contracts for Mozambique's Rovuma LNG project - Reuters
+- source: Reuters
+- published_at: `2026-08-17T18:58:40+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -59,48 +83,24 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Gold shows early signs of reclaiming safe-haven appeal after Iran war selloff - reuters.com
+- headline: Gold shows early signs of reclaiming safe-haven appeal after Iran war selloff - Reuters
 - source: Reuters
 - published_at: `2026-08-17T15:45:47+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Kushner, Netanyahu agree on path forward for Gaza, Board of Peace official says - reuters.com
+- headline: Kushner, Netanyahu agree on path forward for Gaza, Board of Peace official says - Reuters
 - source: Reuters
 - published_at: `2026-08-17T15:30:09+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### oil_shock_risk / risk_off
 
-- headline: US diesel crack surpasses $100 a barrel for the first time on supply disruptions - reuters.com
+- headline: US diesel crack surpasses $100 a barrel for the first time on supply disruptions - Reuters
 - source: Reuters
 - published_at: `2026-08-17T19:13:43+00:00`
 - importance_score: `96`
 - confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US awards Raytheon $22.9 billion seven-year deal to boost Tomahawk output - reuters.com
-- source: Reuters
-- published_at: `2026-08-17T13:24:08+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Houthis say they attacked Saudi vessels off Yemen’s Mocha - reuters.com
-- source: Reuters
-- published_at: `2026-08-17T12:36:27+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: China's July oil throughput posts first month-on-month rise since Iran war - reuters.com
-- source: Reuters
-- published_at: `2026-08-17T11:54:35+00:00`
-- importance_score: `100`
-- confidence: `medium`
