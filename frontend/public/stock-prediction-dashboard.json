@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-08-18T23:11:26.198513+00:00",
+  "generated_at": "2026-08-18T23:34:01.188328+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-08-18T23:11:26.224480+00:00",
+    "generated_at": "2026-08-18T23:34:01.214484+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 189,
     "risk_score_effectiveness": {
@@ -728,8 +728,8 @@
       "market_context_for_stock": {
         "benchmark": "SPY",
         "benchmark_edge_status": "RISK_WARNING",
-        "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.3014,
+        "benchmark_market_state": "failed_bounce_risk",
+        "benchmark_primary_probability": 0.3567,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -2496,7 +2496,7 @@
           "news_count_24h": 20,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
-          "news_sentiment": "positive"
+          "news_sentiment": "negative"
         },
         "price_trend": {
           "close": 219.74000549316406,
@@ -2937,8 +2937,8 @@
       "market_context_for_stock": {
         "benchmark": "QQQ",
         "benchmark_edge_status": "RISK_WARNING",
-        "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.3428,
+        "benchmark_market_state": "oversold_bounce",
+        "benchmark_primary_probability": 0.3923,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -3026,7 +3026,6 @@
         },
         "supporting_signals": [
           "价格站在 20d 均线上方。",
-          "近期公司新闻偏正面。",
           "基础财务指标已接入且收入增长为正。"
         ]
       },
@@ -4060,7 +4059,7 @@
           {
             "affected_ticker": "NVDA",
             "alert_level": "NO_ALERT",
-            "alert_score": 8.14,
+            "alert_score": 8.06,
             "alert_type": "Stock Bounce Setup",
             "confirmation_needed": [
               "价格站上主路径确认价",
@@ -4356,15 +4355,14 @@
           "catalyst": {
             "evidence": [
               "公司新闻已接入: Explore the top gainers and losers within the dow jones index in today's session.",
-              "新闻情绪偏正",
               "未来 30 天存在财报催化：2026-08-26",
               "增长数据具备 EPS 上修叙事基础"
             ],
             "max_points": 10,
             "missing_fields": [],
             "name": "catalyst",
-            "points": 10.0,
-            "score_pct": 100.0,
+            "points": 8.0,
+            "score_pct": 80.0,
             "status": "supportive"
           },
           "flow": {
@@ -4451,7 +4449,7 @@
           "expected_return_60d": -0.0071,
           "max_drawdown_risk_20d": 0.066,
           "max_drawdown_risk_60d": 0.114,
-          "outperformance_probability_20d": 0.6244,
+          "outperformance_probability_20d": 0.6164,
           "risk_reward_ratio": 0.54,
           "upside_potential_60d": 0.0615
         },
@@ -4492,7 +4490,7 @@
           "primary_path": "stock_failed_bounce",
           "valuation_repricing": "估值有扩张条件"
         },
-        "total_score": 51.5,
+        "total_score": 49.5,
         "validation_status": "not_yet_validated",
         "version": "stock_alpha_score_v1"
       },
@@ -4518,8 +4516,8 @@
         "module_scores": {
           "alpha_quality": {
             "evidence": "个股 Alpha 评分已接入",
-            "reason": "score=51.5; grade=weak_or_no_alpha_edge; benchmark=QQQ",
-            "score": 51.5,
+            "reason": "score=49.5; grade=weak_or_no_alpha_edge; benchmark=QQQ",
+            "score": 49.5,
             "status": "conflicting"
           },
           "fundamentals_earnings": {
@@ -4578,7 +4576,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 48.68,
+        "stock_confluence_score": 48.5,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "个股跑赢所属板块",
@@ -4589,7 +4587,6 @@
       },
       "supporting_signals": [
         "价格站在 20d 均线上方。",
-        "近期公司新闻偏正面。",
         "基础财务指标已接入且收入增长为正。"
       ],
       "symbol": "NVDA",
@@ -5142,13 +5139,13 @@
       "market_context_for_stock": {
         "benchmark": "IWM",
         "benchmark_edge_status": "RISK_WARNING",
-        "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.322,
+        "benchmark_market_state": "oversold_bounce",
+        "benchmark_primary_probability": 0.3623,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
         "risk_alert_level": "WARNING",
-        "risk_alert_type": "Trend Repair Alert",
+        "risk_alert_type": "Bounce Setup Alert",
         "symbol": "SMR"
       },
       "missing_data": [
@@ -7344,8 +7341,8 @@
       "market_context_for_stock": {
         "benchmark": "QQQ",
         "benchmark_edge_status": "RISK_WARNING",
-        "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.3428,
+        "benchmark_market_state": "oversold_bounce",
+        "benchmark_primary_probability": 0.3923,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -9014,7 +9011,7 @@
       "top_candidate": "NVDA",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-08-18T23:11:26.216658+00:00",
+    "generated_at": "2026-08-18T23:34:01.206685+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -9024,19 +9021,19 @@
     "top_candidates": [
       {
         "alpha_fields": {
-          "alpha_score": 51.5,
+          "alpha_score": 49.5,
           "expected_return_60d": -0.0071,
           "forecast_grade": "weak_or_no_alpha_edge",
           "main_logic": "半导体/AI 逻辑：订单、毛利率、资本开支周期、估值重估和资金确认。",
-          "outperformance_probability_20d": 0.6244,
+          "outperformance_probability_20d": 0.6164,
           "risk_reward_ratio": 0.54
         },
-        "alpha_quality_score": 51.5,
+        "alpha_quality_score": 49.5,
         "as_of": "2026-08-18",
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 63.95,
         "company_name": "NVIDIA Corp",
-        "confluence_score": 48.68,
+        "confluence_score": 48.5,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9053,7 +9050,7 @@
           "mid": 219.49,
           "range_pct": 0.0295
         },
-        "final_radar_score": 57.24,
+        "final_radar_score": 56.85,
         "forecast_date": "2026-08-18",
         "invalidation_level": 190.01,
         "last_close": 219.74000549316406,
@@ -9077,8 +9074,8 @@
           "earnings": "available"
         },
         "next_day_move_probability": 0.6613,
-        "one_line_reason": "failed_bounce_risk: Alpha 52 / 弹性 74 / 成交量 52 / 相对强弱 67 / 催化 64 / 大盘 risk_off_pressure / 板块 supportive",
-        "outperformance_probability_20d": 0.6244,
+        "one_line_reason": "failed_bounce_risk: Alpha 50 / 弹性 74 / 成交量 52 / 相对强弱 67 / 催化 64 / 大盘 risk_off_pressure / 板块 supportive",
+        "outperformance_probability_20d": 0.6164,
         "primary_probability": 0.2607,
         "primary_scenario": "stock_failed_bounce",
         "radar_level": "MODERATE_OPPORTUNITY",

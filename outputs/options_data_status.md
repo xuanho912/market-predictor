@@ -1,6 +1,6 @@
 # Options / Volatility Structure Status
 
-Generated at: `2026-08-18T23:11:04.223445+00:00`
+Generated at: `2026-08-18T23:33:39.929654+00:00`
 
 ## Summary
 
@@ -25,11 +25,11 @@ Generated at: `2026-08-18T23:11:04.223445+00:00`
 - VVIX: `92.87000274658203`
 - SKEW: `143.60000610351562`
 - term_structure_state: `contango`
-- volatility_reversal_score: `0.621`
-- panic_release_score: `0.4056`
-- tail_risk_score: `0.2967`
-- option_stress_score: `0.2979`
-- failed_bounce_options_risk: `0.2872`
+- volatility_reversal_score: `0.589`
+- panic_release_score: `0.3856`
+- tail_risk_score: `0.2954`
+- option_stress_score: `0.3033`
+- failed_bounce_options_risk: `0.2899`
 
 ## Sources
 
