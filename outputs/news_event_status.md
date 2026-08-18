@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-18T21:53:45.835960+00:00`
+- generated_at: `2026-08-18T23:11:13.421095+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
+- major_event_count: `6`
 - event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -57,26 +57,18 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### fed_dovish / risk_on
-
-- headline: Dollar range-bound as markets price dovish Fed response - Reuters
-- source: Reuters
-- published_at: `2026-08-18T20:24:26+00:00`
-- importance_score: `87`
-- confidence: `high`
-
 ### geopolitical_risk_easing / risk_on
 
 - headline: PODCAST: US-Iran ceasefire expires, Tupac murder trial and microdramas - Reuters
 - source: Reuters
 - published_at: `2026-08-18T10:12:54+00:00`
 - importance_score: `97`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: China's fuel exports edge back towards levels before Iran war as Beijing eases curbs - Reuters
-- source: Reuters
-- published_at: `2026-08-18T04:31:00+00:00`
-- importance_score: `100`
 - confidence: `medium`
+
+### fed_dovish / risk_on
+
+- headline: Dollar range-bound as markets price dovish Fed response - Reuters
+- source: Reuters
+- published_at: `2026-08-18T20:24:26+00:00`
+- importance_score: `86`
+- confidence: `high`

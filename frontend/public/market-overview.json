@@ -6,10 +6,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-08-18",
-    "current_time_us_eastern": "2026-08-18T17:53:56.911522-04:00",
+    "current_time_us_eastern": "2026-08-18T19:11:25.281678-04:00",
     "data_freshness_status": "fresh",
     "expected_latest_trading_date": "2026-08-18",
-    "generated_at": "2026-08-18T21:53:56.911522+00:00",
+    "generated_at": "2026-08-18T23:11:25.281678+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -993,8 +993,8 @@
           "primary_scenario_with_fred": "bounce_path",
           "primary_scenario_without_fred": "bounce_path",
           "risk_expansion_delta": 0.031,
-          "risk_expansion_with_fred": 0.368,
-          "risk_expansion_without_fred": 0.337
+          "risk_expansion_with_fred": 0.3639,
+          "risk_expansion_without_fred": 0.3329
         },
         "IWM": {
           "edge_status_changed": false,
@@ -1007,8 +1007,8 @@
           "primary_scenario_with_fred": "bounce_path",
           "primary_scenario_without_fred": "bounce_path",
           "risk_expansion_delta": 0.031,
-          "risk_expansion_with_fred": 0.3793,
-          "risk_expansion_without_fred": 0.3483
+          "risk_expansion_with_fred": 0.3751,
+          "risk_expansion_without_fred": 0.3441
         },
         "QQQ": {
           "edge_status_changed": false,
@@ -1021,8 +1021,8 @@
           "primary_scenario_with_fred": "bearish_path",
           "primary_scenario_without_fred": "bearish_path",
           "risk_expansion_delta": 0.031,
-          "risk_expansion_with_fred": 0.402,
-          "risk_expansion_without_fred": 0.371
+          "risk_expansion_with_fred": 0.3979,
+          "risk_expansion_without_fred": 0.3669
         },
         "SPY": {
           "edge_status_changed": false,
@@ -1035,8 +1035,8 @@
           "primary_scenario_with_fred": "bounce_path",
           "primary_scenario_without_fred": "bounce_path",
           "risk_expansion_delta": 0.031,
-          "risk_expansion_with_fred": 0.3604,
-          "risk_expansion_without_fred": 0.3294
+          "risk_expansion_with_fred": 0.3562,
+          "risk_expansion_without_fred": 0.3252
         }
       },
       "target_85_met_with_fred": true
@@ -1048,15 +1048,15 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "BAA_SPREAD",
-      "DGS3MO",
       "IG_OAS",
-      "DGS10",
-      "HY_OAS",
       "DGS2",
-      "DFII10",
+      "BAA_SPREAD",
+      "HY_OAS",
+      "DGS10",
+      "DGS3MO",
       "FINANCIAL_STRESS",
-      "RECESSION"
+      "RECESSION",
+      "DFII10"
     ],
     "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-08-18。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
     "gamma_available": false,
@@ -1090,8 +1090,8 @@
       "event_detection_confidence": 76,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-08-18T21:53:45.835960+00:00",
-      "major_event_count": 7,
+      "last_update": "2026-08-18T23:11:13.421095+00:00",
+      "major_event_count": 6,
       "missing_reason": null,
       "news_direction": "risk_off",
       "news_event_partial": false,
@@ -1102,7 +1102,7 @@
     },
     "news_event_available": true,
     "news_event_event_risk_level": "high",
-    "news_event_major_count": 7,
+    "news_event_major_count": 6,
     "news_event_missing_reason": null,
     "news_event_narrative": "geopolitics_escalation_risk_off",
     "news_event_partial": false,
@@ -1230,7 +1230,7 @@
         "flow_quality": 1.0,
         "internal_resonance": 0.5397,
         "options_quality": 0.92,
-        "predictor_consistency": 0.7321,
+        "predictor_consistency": 0.728,
         "prior_confidence": 0.78,
         "signal_confirmation": 0.7
       },
@@ -1250,7 +1250,7 @@
         "flow_quality": 1.0,
         "internal_resonance": 0.3371,
         "options_quality": 0.92,
-        "predictor_consistency": 0.8047,
+        "predictor_consistency": 0.8005,
         "prior_confidence": 0.79,
         "signal_confirmation": 0.69
       },
@@ -1271,7 +1271,7 @@
         "flow_quality": 1.0,
         "internal_resonance": 0.1038,
         "options_quality": 0.92,
-        "predictor_consistency": 0.9044000000000001,
+        "predictor_consistency": 0.9003,
         "prior_confidence": 0.78,
         "signal_confirmation": 0.52
       },
@@ -1316,7 +1316,7 @@
       "status": "failed"
     },
     "event_risk_level": "high",
-    "major_event_count": 7,
+    "major_event_count": 6,
     "market_narrative": {
       "affected_scenarios": [
         "bearish_path"
@@ -1329,17 +1329,7 @@
       ],
       "conflicting_headlines": [
         {
-          "confidence": "high",
-          "detected_event_conditions": [],
-          "event_type": "fed_dovish",
-          "expected_market_direction": "risk_on",
-          "headline": "Dollar range-bound as markets price dovish Fed response - Reuters",
-          "importance_score": 87,
-          "published_at": "2026-08-18T20:24:26+00:00",
-          "source": "Reuters"
-        },
-        {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_easing"
           ],
@@ -1348,6 +1338,16 @@
           "headline": "PODCAST: US-Iran ceasefire expires, Tupac murder trial and microdramas - Reuters",
           "importance_score": 97,
           "published_at": "2026-08-18T10:12:54+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "high",
+          "detected_event_conditions": [],
+          "event_type": "fed_dovish",
+          "expected_market_direction": "risk_on",
+          "headline": "Dollar range-bound as markets price dovish Fed response - Reuters",
+          "importance_score": 86,
+          "published_at": "2026-08-18T20:24:26+00:00",
           "source": "Reuters"
         }
       ],
@@ -1406,18 +1406,6 @@
           "importance_score": 100,
           "published_at": "2026-08-18T08:18:44+00:00",
           "source": "Reuters"
-        },
-        {
-          "confidence": "medium",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "China's fuel exports edge back towards levels before Iran war as Beijing eases curbs - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-08-18T04:31:00+00:00",
-          "source": "Reuters"
         }
       ]
     },
@@ -1427,14 +1415,14 @@
       "direction": "supports_risk_expansion",
       "event_risk_level": "high",
       "macro_event_risk_flag": false,
-      "major_event_count": 7,
+      "major_event_count": 6,
       "not_a_trading_signal": true,
       "price_reaction_confirmed": true,
       "symbols": {
         "DIA": {
-          "after_primary_probability": 0.3232,
+          "after_primary_probability": 0.3229,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.3165,
+          "before_primary_probability": 0.3166,
           "before_primary_scenario": "bounce_path",
           "confirmation_delta": -8.0,
           "impact": "conflicts_primary",
@@ -1462,15 +1450,15 @@
             "risk_expansion_predictor": 0.039,
             "trend_reversal_predictor": 0.0
           },
-          "primary_probability_delta": 0.0067,
+          "primary_probability_delta": 0.0063,
           "primary_scenario_changed": true,
           "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay",
           "validation_type": "daily"
         },
         "IWM": {
-          "after_primary_probability": 0.3223,
+          "after_primary_probability": 0.322,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.3017,
+          "before_primary_probability": 0.3018,
           "before_primary_scenario": "bounce_path",
           "confirmation_delta": -8.0,
           "impact": "conflicts_primary",
@@ -1498,15 +1486,15 @@
             "risk_expansion_predictor": 0.039,
             "trend_reversal_predictor": 0.0
           },
-          "primary_probability_delta": 0.0206,
+          "primary_probability_delta": 0.0202,
           "primary_scenario_changed": true,
           "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay",
           "validation_type": "daily"
         },
         "QQQ": {
-          "after_primary_probability": 0.343,
+          "after_primary_probability": 0.3428,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.2964,
+          "before_primary_probability": 0.2961,
           "before_primary_scenario": "bearish_path",
           "confirmation_delta": -8.0,
           "impact": "supports_primary",
@@ -1534,15 +1522,15 @@
             "risk_expansion_predictor": 0.039,
             "trend_reversal_predictor": 0.0
           },
-          "primary_probability_delta": 0.0466,
+          "primary_probability_delta": 0.0467,
           "primary_scenario_changed": false,
           "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay",
           "validation_type": "daily"
         },
         "SPY": {
-          "after_primary_probability": 0.3017,
+          "after_primary_probability": 0.3014,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.3275,
+          "before_primary_probability": 0.3276,
           "before_primary_scenario": "bounce_path",
           "confirmation_delta": -8.0,
           "impact": "conflicts_primary",
@@ -1570,7 +1558,7 @@
             "risk_expansion_predictor": 0.039,
             "trend_reversal_predictor": 0.0
           },
-          "primary_probability_delta": -0.0258,
+          "primary_probability_delta": -0.0262,
           "primary_scenario_changed": true,
           "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay",
           "validation_type": "daily"
@@ -1582,7 +1570,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": -0.0097,
-        "avg_equity_futures_1d_return": -0.01,
+        "avg_equity_futures_1d_return": -0.0108,
         "confirmed_checks": [
           "股票ETF或股指期货下跌",
           "VIX 上升",
@@ -1597,7 +1585,7 @@
         ],
         "failed_checks": [],
         "hyg_lqd_1d_relative_return": -0.0023,
-        "oil_proxy_1d_return": 0.0009,
+        "oil_proxy_1d_return": 0.0011,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -2765,11 +2753,11 @@
   "strongest_symbol": "SPY",
   "symbols": {
     "DIA": {
-      "analog_path_weight": 0.2509,
+      "analog_path_weight": 0.251,
       "as_of": "2026-08-18",
-      "base_path_weight": 0.1415,
-      "bearish_path_weight": 0.3232,
-      "bounce_path_weight": 0.2844,
+      "base_path_weight": 0.1416,
+      "bearish_path_weight": 0.3229,
+      "bounce_path_weight": 0.2845,
       "bounce_probability": 0.57070947,
       "confluence": {
         "conflicting_evidence": [
@@ -2806,7 +2794,7 @@
           {
             "detail": "路径分歧较大，不宜给强结论。",
             "name": "主次路径差距小",
-            "score": 3.88,
+            "score": 3.84,
             "source": "scenario_gap"
           }
         ],
@@ -2835,9 +2823,9 @@
         ],
         "not_trading_advice": "This is forecast confirmation only, not a buy/sell/entry/exit or position-sizing recommendation.",
         "primary_label": "失败反抽情景",
-        "primary_probability": 0.3232,
+        "primary_probability": 0.3229,
         "primary_scenario": "bearish_path",
-        "probability_gap": 0.0388,
+        "probability_gap": 0.0384,
         "related_price_levels": {
           "primary_confirmation_level": {
             "confidence": "medium_high",
@@ -2872,7 +2860,7 @@
             "source_type": "price_structure"
           }
         },
-        "secondary_probability": 0.2844,
+        "secondary_probability": 0.2845,
         "secondary_scenario": "bounce_path",
         "strong_conclusion_allowed": false,
         "supporting_evidence": [
@@ -3077,10 +3065,10 @@
           "ig_oas_20d_change": 0.030000000000000027
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote 532.91; news risk 30%; macro event risk flagged; rates pressure 22%.",
+          "brief": "Finnhub quote 532.91; news risk 20%; macro event risk flagged; rates pressure 22%.",
           "finnhub_quote_available": true,
           "macro_event_risk_flag": true,
-          "news_risk_score": 0.3,
+          "news_risk_score": 0.2,
           "rates_pressure_score": 0.21885942219923893,
           "symbol": "DIA"
         },
@@ -3147,13 +3135,13 @@
         "news": {
           "market_news_status": "available",
           "news_item_count": 40,
-          "news_risk_score": 0.3,
+          "news_risk_score": 0.2,
           "top_headlines": [
+            "Trump says no talks planned with Iran, Tehran says Strait of Hormuz still shut - Reuters",
+            "Tech selloff weighs down Wall Street as bond yields climb - Reuters",
             "UAE says two missiles detected earlier were launched from Iran - Reuters",
-            "Dollar range-bound as markets price dovish Fed response - Reuters",
-            "US working on deconfliction mechanism among Turkey, Israel and Syria, US envoy says - Reuters",
-            "Tech selloff pulls Wall Street to two-week lows as bond yields climb - Reuters",
-            "U.S. government debt yields are surging at a bad time. Here's what's behind the move"
+            "US yields edge lower despite Iran worries, broader sell-off - Reuters",
+            "Dollar range-bound as markets price dovish Fed response - Reuters"
           ]
         },
         "price": {
@@ -4029,7 +4017,7 @@
           "flow_quality": 1.0,
           "internal_resonance": 0.5397,
           "options_quality": 0.92,
-          "predictor_consistency": 0.7321,
+          "predictor_consistency": 0.728,
           "prior_confidence": 0.78,
           "signal_confirmation": 0.7
         },
@@ -4074,7 +4062,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 99,
+            "freshness_score": 96,
             "headline": "UAE says two missiles detected earlier were launched from Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4094,14 +4082,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 78,
+            "confidence_score": 77,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
+            "freshness_score": 81,
             "headline": "At a Gaza zoo, war takes its toll on the animals - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4121,14 +4109,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 76,
+            "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 74,
             "headline": "US 30-year yields hit highest level since 2007 as war, oil worries fester - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4155,35 +4143,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 67,
+            "freshness_score": 64,
             "headline": "Eight Israeli airstrikes hit Syria's Abu al-Duhur airbase, no casualties, state TV reports - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-08-18T08:18:44+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "TLT",
-              "UUP"
-            ],
-            "confidence": "high",
-            "confidence_score": 77,
-            "detected_event_conditions": [],
-            "event_type": "fed_dovish",
-            "expected_horizon": "1d-20d",
-            "expected_market_direction": "risk_on",
-            "freshness_score": 96,
-            "headline": "Dollar range-bound as markets price dovish Fed response - Reuters",
-            "importance_score": 87,
-            "narrative": "fed_cut_hopes",
-            "provider": "finnhub",
-            "published_at": "2026-08-18T20:24:26+00:00",
             "source": "Reuters"
           },
           {
@@ -4201,20 +4166,43 @@
               "ES=F",
               "NQ=F"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_easing"
             ],
             "event_type": "geopolitical_risk_easing",
             "expected_horizon": "1d-5d",
             "expected_market_direction": "risk_on",
-            "freshness_score": 72,
+            "freshness_score": 69,
             "headline": "PODCAST: US-Iran ceasefire expires, Tupac murder trial and microdramas - Reuters",
             "importance_score": 97,
             "narrative": "geopolitics_easing_risk_on",
             "provider": "finnhub",
             "published_at": "2026-08-18T10:12:54+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "TLT",
+              "UUP"
+            ],
+            "confidence": "high",
+            "confidence_score": 76,
+            "detected_event_conditions": [],
+            "event_type": "fed_dovish",
+            "expected_horizon": "1d-20d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 93,
+            "headline": "Dollar range-bound as markets price dovish Fed response - Reuters",
+            "importance_score": 86,
+            "narrative": "fed_cut_hopes",
+            "provider": "finnhub",
+            "published_at": "2026-08-18T20:24:26+00:00",
             "source": "Reuters"
           }
         ],
@@ -4230,17 +4218,7 @@
           ],
           "conflicting_headlines": [
             {
-              "confidence": "high",
-              "detected_event_conditions": [],
-              "event_type": "fed_dovish",
-              "expected_market_direction": "risk_on",
-              "headline": "Dollar range-bound as markets price dovish Fed response - Reuters",
-              "importance_score": 87,
-              "published_at": "2026-08-18T20:24:26+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_easing"
               ],
@@ -4249,6 +4227,16 @@
               "headline": "PODCAST: US-Iran ceasefire expires, Tupac murder trial and microdramas - Reuters",
               "importance_score": 97,
               "published_at": "2026-08-18T10:12:54+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [],
+              "event_type": "fed_dovish",
+              "expected_market_direction": "risk_on",
+              "headline": "Dollar range-bound as markets price dovish Fed response - Reuters",
+              "importance_score": 86,
+              "published_at": "2026-08-18T20:24:26+00:00",
               "source": "Reuters"
             }
           ],
@@ -4307,26 +4295,14 @@
               "importance_score": 100,
               "published_at": "2026-08-18T08:18:44+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "China's fuel exports edge back towards levels before Iran war as Beijing eases curbs - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-08-18T04:31:00+00:00",
-              "source": "Reuters"
             }
           ]
         },
         "news_direction": "risk_off",
         "prediction_logic_effect": {
-          "after_primary_probability": 0.3232,
+          "after_primary_probability": 0.3229,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.3165,
+          "before_primary_probability": 0.3166,
           "before_primary_scenario": "bounce_path",
           "confirmation_delta": -8.0,
           "impact": "conflicts_primary",
@@ -4354,7 +4330,7 @@
             "risk_expansion_predictor": 0.039,
             "trend_reversal_predictor": 0.0
           },
-          "primary_probability_delta": 0.0067,
+          "primary_probability_delta": 0.0063,
           "primary_scenario_changed": true,
           "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay",
           "validation_type": "daily"
@@ -4362,7 +4338,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0097,
-            "avg_equity_futures_1d_return": -0.01,
+            "avg_equity_futures_1d_return": -0.0108,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -4377,7 +4353,7 @@
             ],
             "failed_checks": [],
             "hyg_lqd_1d_relative_return": -0.0023,
-            "oil_proxy_1d_return": 0.0009,
+            "oil_proxy_1d_return": 0.0011,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -4411,10 +4387,10 @@
         "validation_type": "daily"
       },
       "path_weight_model": {
-        "analog_path_weight": 0.2509,
-        "base_path_weight": 0.1415,
-        "bearish_path_weight": 0.3232,
-        "bounce_path_weight": 0.2844,
+        "analog_path_weight": 0.251,
+        "base_path_weight": 0.1416,
+        "bearish_path_weight": 0.3229,
+        "bounce_path_weight": 0.2845,
         "low_confidence_simulation": false,
         "news_event_overlay_applied": true,
         "news_event_overlay_note": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay",
@@ -4440,12 +4416,12 @@
           "news_event_direction": "supports_risk_expansion",
           "news_event_macro_risk": 0.0,
           "news_event_price_confirmed": 1.0,
-          "news_risk": 0.3,
+          "news_risk": 0.2,
           "options_quality": 0.92,
           "options_stress": 0.2979,
           "panic_release": 0.4056,
           "rates_pressure": 0.2189,
-          "risk_expansion": 0.368,
+          "risk_expansion": 0.3639,
           "signal_agreement": 0.84,
           "signal_confirmation": 0.7,
           "tail_risk": 0.2967,
@@ -4494,7 +4470,7 @@
           "failed_bounce_risk": 0.4455511258268201,
           "historical_support": "supportive",
           "market_edge_status": "STRONG_EDGE",
-          "risk_expansion_probability": 0.3481,
+          "risk_expansion_probability": 0.3401,
           "trend_reversal_probability": 0.652,
           "up_probability": 0.6209904488360434
         },
@@ -4553,7 +4529,7 @@
           "failed_bounce_risk": 0.4455511258268201,
           "historical_support": "supportive",
           "market_edge_status": "STRONG_EDGE",
-          "risk_expansion_probability": 0.3481,
+          "risk_expansion_probability": 0.3401,
           "trend_reversal_probability": 0.652,
           "up_probability": 0.6322160075883118
         }
@@ -4649,7 +4625,7 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 1.0,
           "breadth_risk": 0.3525,
-          "confidence": 0.6098,
+          "confidence": 0.607,
           "credit_risk": 0.0944,
           "crowding_proxy_score": 0.0204,
           "failed_bounce_options_risk": 0.2872,
@@ -4671,12 +4647,12 @@
             "macro event risk: 1.00",
             "breadth deterioration: 0.46",
             "risk-off rotation: 0.35",
-            "news risk: 0.30",
+            "VIX percentile: 0.24",
             "news_event_overlay:+0.039"
           ],
           "options_quality": 0.92,
-          "probability": 0.407,
-          "risk_expansion_probability": 0.407,
+          "probability": 0.4029,
+          "risk_expansion_probability": 0.4029,
           "tail_risk_score": 0.2967,
           "term_structure_state": "contango",
           "volatility_risk": 0.2979
@@ -4810,7 +4786,7 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 1.0,
           "breadth_risk": 0.3525,
-          "confidence": 0.6098,
+          "confidence": 0.607,
           "credit_risk": 0.0944,
           "crowding_proxy_score": 0.0204,
           "failed_bounce_options_risk": 0.2872,
@@ -4832,12 +4808,12 @@
             "macro event risk: 1.00",
             "breadth deterioration: 0.46",
             "risk-off rotation: 0.35",
-            "news risk: 0.30",
+            "VIX percentile: 0.24",
             "news_event_overlay:+0.039"
           ],
           "options_quality": 0.92,
-          "probability": 0.407,
-          "risk_expansion_probability": 0.407,
+          "probability": 0.4029,
+          "risk_expansion_probability": 0.4029,
           "tail_risk_score": 0.2967,
           "term_structure_state": "contango",
           "volatility_risk": 0.2979
@@ -4886,15 +4862,15 @@
             "confidence": "medium",
             "expected_horizon": "3d-10d",
             "label": "失败反抽情景",
-            "probability": 0.3232,
-            "reason": "Downside/Risk predictors 为 38%/37%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
+            "probability": 0.3229,
+            "reason": "Downside/Risk predictors 为 38%/36%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bearish_path"
           },
           {
             "confidence": "medium",
             "expected_horizon": "10d-20d",
             "label": "反抽情景",
-            "probability": 0.2844,
+            "probability": 0.2845,
             "reason": "Bounce Predictor 53%，多源确认 70/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bounce_path"
           },
@@ -4902,7 +4878,7 @@
             "confidence": "medium",
             "expected_horizon": "20d-60d",
             "label": "历史均值情景",
-            "probability": 0.2509,
+            "probability": 0.251,
             "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "analog_average_path"
           },
@@ -4910,7 +4886,7 @@
             "confidence": "medium",
             "expected_horizon": "3d-20d",
             "label": "综合期望情景",
-            "probability": 0.1415,
+            "probability": 0.1416,
             "reason": "综合期望用于平衡反抽、失败反抽、历史均值和数据不完整带来的不确定性。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "expected_path"
           }
@@ -4922,12 +4898,12 @@
           "confidence": "medium",
           "expected_horizon": "3d-10d",
           "label": "失败反抽情景",
-          "probability": 0.3232,
-          "reason": "Downside/Risk predictors 为 38%/37%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
+          "probability": 0.3229,
+          "reason": "Downside/Risk predictors 为 38%/36%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bearish_path"
         },
         "primary_scenario": "bearish_path",
-        "primary_secondary_gap": 0.0388,
+        "primary_secondary_gap": 0.0384,
         "primary_to_secondary_switch_conditions": [
           "VIX 与新闻方向背离",
           "HYG/LQD 转弱",
@@ -4936,15 +4912,15 @@
           "DIA 重新站上主路径确认价",
           "第二路径 bounce_path 获得多源确认"
         ],
-        "probability_gap": 0.0388,
+        "probability_gap": 0.0384,
         "ranking_note": "Scenario ranking includes a bounded News/Event overlay when a major event or macro calendar risk is detected. It is probabilistic, not deterministic.",
         "risk_scenario": "bearish_path",
-        "scenario_probability": 0.3232,
+        "scenario_probability": 0.3229,
         "secondary": {
           "confidence": "medium",
           "expected_horizon": "10d-20d",
           "label": "反抽情景",
-          "probability": 0.2844,
+          "probability": 0.2845,
           "reason": "Bounce Predictor 53%，多源确认 70/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bounce_path"
         },
@@ -4961,16 +4937,16 @@
           "confidence": "medium",
           "expected_horizon": "20d-60d",
           "label": "历史均值情景",
-          "probability": 0.2509,
+          "probability": 0.251,
           "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "analog_average_path"
         }
       },
       "scenario_weights": {
-        "base_scenario": 0.147,
-        "bearish_scenario": 0.2758,
-        "bounce_scenario": 0.3165,
-        "historical_analog_average": 0.2607
+        "base_scenario": 0.1471,
+        "bearish_scenario": 0.2755,
+        "bounce_scenario": 0.3166,
+        "historical_analog_average": 0.2608
       },
       "shadow_evidence_v1": {
         "alert_status_by_type": {
@@ -5255,11 +5231,11 @@
       "trend_reversal_probability": 0.4493453385513788
     },
     "IWM": {
-      "analog_path_weight": 0.269,
+      "analog_path_weight": 0.2691,
       "as_of": "2026-08-18",
       "base_path_weight": 0.1386,
-      "bearish_path_weight": 0.3223,
-      "bounce_path_weight": 0.2701,
+      "bearish_path_weight": 0.322,
+      "bounce_path_weight": 0.2703,
       "bounce_probability": 0.40434541,
       "confluence": {
         "conflicting_evidence": [
@@ -5302,7 +5278,7 @@
           {
             "detail": "路径分歧较大，不宜给强结论。",
             "name": "主次路径差距小",
-            "score": 5.22,
+            "score": 5.17,
             "source": "scenario_gap"
           }
         ],
@@ -5331,9 +5307,9 @@
         ],
         "not_trading_advice": "This is forecast confirmation only, not a buy/sell/entry/exit or position-sizing recommendation.",
         "primary_label": "失败反抽情景",
-        "primary_probability": 0.3223,
+        "primary_probability": 0.322,
         "primary_scenario": "bearish_path",
-        "probability_gap": 0.0522,
+        "probability_gap": 0.0517,
         "related_price_levels": {
           "primary_confirmation_level": {
             "confidence": "medium",
@@ -5368,7 +5344,7 @@
             "source_type": "price_structure"
           }
         },
-        "secondary_probability": 0.2701,
+        "secondary_probability": 0.2703,
         "secondary_scenario": "bounce_path",
         "strong_conclusion_allowed": false,
         "supporting_evidence": [
@@ -5579,10 +5555,10 @@
           "ig_oas_20d_change": 0.030000000000000027
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote 300.23; news risk 30%; macro event risk flagged; rates pressure 22%.",
+          "brief": "Finnhub quote 300.23; news risk 20%; macro event risk flagged; rates pressure 22%.",
           "finnhub_quote_available": true,
           "macro_event_risk_flag": true,
-          "news_risk_score": 0.3,
+          "news_risk_score": 0.2,
           "rates_pressure_score": 0.21885942219923893,
           "symbol": "IWM"
         },
@@ -5649,13 +5625,13 @@
         "news": {
           "market_news_status": "available",
           "news_item_count": 40,
-          "news_risk_score": 0.3,
+          "news_risk_score": 0.2,
           "top_headlines": [
+            "Trump says no talks planned with Iran, Tehran says Strait of Hormuz still shut - Reuters",
+            "Tech selloff weighs down Wall Street as bond yields climb - Reuters",
             "UAE says two missiles detected earlier were launched from Iran - Reuters",
-            "Dollar range-bound as markets price dovish Fed response - Reuters",
-            "US working on deconfliction mechanism among Turkey, Israel and Syria, US envoy says - Reuters",
-            "Tech selloff pulls Wall Street to two-week lows as bond yields climb - Reuters",
-            "U.S. government debt yields are surging at a bad time. Here's what's behind the move"
+            "US yields edge lower despite Iran worries, broader sell-off - Reuters",
+            "Dollar range-bound as markets price dovish Fed response - Reuters"
           ]
         },
         "price": {
@@ -6515,7 +6491,7 @@
           "flow_quality": 1.0,
           "internal_resonance": 0.3371,
           "options_quality": 0.92,
-          "predictor_consistency": 0.8047,
+          "predictor_consistency": 0.8005,
           "prior_confidence": 0.79,
           "signal_confirmation": 0.69
         },
@@ -6561,7 +6537,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 99,
+            "freshness_score": 96,
             "headline": "UAE says two missiles detected earlier were launched from Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6581,14 +6557,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 78,
+            "confidence_score": 77,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
+            "freshness_score": 81,
             "headline": "At a Gaza zoo, war takes its toll on the animals - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6608,14 +6584,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 76,
+            "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 74,
             "headline": "US 30-year yields hit highest level since 2007 as war, oil worries fester - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6642,35 +6618,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 67,
+            "freshness_score": 64,
             "headline": "Eight Israeli airstrikes hit Syria's Abu al-Duhur airbase, no casualties, state TV reports - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-08-18T08:18:44+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "TLT",
-              "UUP"
-            ],
-            "confidence": "high",
-            "confidence_score": 77,
-            "detected_event_conditions": [],
-            "event_type": "fed_dovish",
-            "expected_horizon": "1d-20d",
-            "expected_market_direction": "risk_on",
-            "freshness_score": 96,
-            "headline": "Dollar range-bound as markets price dovish Fed response - Reuters",
-            "importance_score": 87,
-            "narrative": "fed_cut_hopes",
-            "provider": "finnhub",
-            "published_at": "2026-08-18T20:24:26+00:00",
             "source": "Reuters"
           },
           {
@@ -6688,20 +6641,43 @@
               "ES=F",
               "NQ=F"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_easing"
             ],
             "event_type": "geopolitical_risk_easing",
             "expected_horizon": "1d-5d",
             "expected_market_direction": "risk_on",
-            "freshness_score": 72,
+            "freshness_score": 69,
             "headline": "PODCAST: US-Iran ceasefire expires, Tupac murder trial and microdramas - Reuters",
             "importance_score": 97,
             "narrative": "geopolitics_easing_risk_on",
             "provider": "finnhub",
             "published_at": "2026-08-18T10:12:54+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "TLT",
+              "UUP"
+            ],
+            "confidence": "high",
+            "confidence_score": 76,
+            "detected_event_conditions": [],
+            "event_type": "fed_dovish",
+            "expected_horizon": "1d-20d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 93,
+            "headline": "Dollar range-bound as markets price dovish Fed response - Reuters",
+            "importance_score": 86,
+            "narrative": "fed_cut_hopes",
+            "provider": "finnhub",
+            "published_at": "2026-08-18T20:24:26+00:00",
             "source": "Reuters"
           }
         ],
@@ -6717,17 +6693,7 @@
           ],
           "conflicting_headlines": [
             {
-              "confidence": "high",
-              "detected_event_conditions": [],
-              "event_type": "fed_dovish",
-              "expected_market_direction": "risk_on",
-              "headline": "Dollar range-bound as markets price dovish Fed response - Reuters",
-              "importance_score": 87,
-              "published_at": "2026-08-18T20:24:26+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_easing"
               ],
@@ -6736,6 +6702,16 @@
               "headline": "PODCAST: US-Iran ceasefire expires, Tupac murder trial and microdramas - Reuters",
               "importance_score": 97,
               "published_at": "2026-08-18T10:12:54+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [],
+              "event_type": "fed_dovish",
+              "expected_market_direction": "risk_on",
+              "headline": "Dollar range-bound as markets price dovish Fed response - Reuters",
+              "importance_score": 86,
+              "published_at": "2026-08-18T20:24:26+00:00",
               "source": "Reuters"
             }
           ],
@@ -6794,26 +6770,14 @@
               "importance_score": 100,
               "published_at": "2026-08-18T08:18:44+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "China's fuel exports edge back towards levels before Iran war as Beijing eases curbs - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-08-18T04:31:00+00:00",
-              "source": "Reuters"
             }
           ]
         },
         "news_direction": "risk_off",
         "prediction_logic_effect": {
-          "after_primary_probability": 0.3223,
+          "after_primary_probability": 0.322,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.3017,
+          "before_primary_probability": 0.3018,
           "before_primary_scenario": "bounce_path",
           "confirmation_delta": -8.0,
           "impact": "conflicts_primary",
@@ -6841,7 +6805,7 @@
             "risk_expansion_predictor": 0.039,
             "trend_reversal_predictor": 0.0
           },
-          "primary_probability_delta": 0.0206,
+          "primary_probability_delta": 0.0202,
           "primary_scenario_changed": true,
           "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay",
           "validation_type": "daily"
@@ -6849,7 +6813,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0097,
-            "avg_equity_futures_1d_return": -0.01,
+            "avg_equity_futures_1d_return": -0.0108,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -6864,7 +6828,7 @@
             ],
             "failed_checks": [],
             "hyg_lqd_1d_relative_return": -0.0023,
-            "oil_proxy_1d_return": 0.0009,
+            "oil_proxy_1d_return": 0.0011,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -6898,10 +6862,10 @@
         "validation_type": "daily"
       },
       "path_weight_model": {
-        "analog_path_weight": 0.269,
+        "analog_path_weight": 0.2691,
         "base_path_weight": 0.1386,
-        "bearish_path_weight": 0.3223,
-        "bounce_path_weight": 0.2701,
+        "bearish_path_weight": 0.322,
+        "bounce_path_weight": 0.2703,
         "low_confidence_simulation": false,
         "news_event_overlay_applied": true,
         "news_event_overlay_note": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay",
@@ -6927,12 +6891,12 @@
           "news_event_direction": "supports_risk_expansion",
           "news_event_macro_risk": 0.0,
           "news_event_price_confirmed": 1.0,
-          "news_risk": 0.3,
+          "news_risk": 0.2,
           "options_quality": 0.92,
           "options_stress": 0.2979,
           "panic_release": 0.4056,
           "rates_pressure": 0.2189,
-          "risk_expansion": 0.3793,
+          "risk_expansion": 0.3751,
           "signal_agreement": 0.85,
           "signal_confirmation": 0.69,
           "tail_risk": 0.2967,
@@ -6981,7 +6945,7 @@
           "failed_bounce_risk": 0.575,
           "historical_support": "supportive",
           "market_edge_status": "STRONG_EDGE",
-          "risk_expansion_probability": 0.3555,
+          "risk_expansion_probability": 0.3475,
           "trend_reversal_probability": 0.5872,
           "up_probability": 0.5674162811385084
         },
@@ -7040,7 +7004,7 @@
           "failed_bounce_risk": 0.575,
           "historical_support": "supportive",
           "market_edge_status": "STRONG_EDGE",
-          "risk_expansion_probability": 0.3555,
+          "risk_expansion_probability": 0.3475,
           "trend_reversal_probability": 0.5872,
           "up_probability": 0.585850441483768
         }
@@ -7136,7 +7100,7 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 0.64,
           "breadth_risk": 0.4812,
-          "confidence": 0.6124,
+          "confidence": 0.6096,
           "credit_risk": 0.0944,
           "crowding_proxy_score": 0.0526,
           "failed_bounce_options_risk": 0.2872,
@@ -7158,12 +7122,12 @@
             "macro event risk: 1.00",
             "breadth deterioration: 0.52",
             "risk-off rotation: 0.35",
-            "news risk: 0.30",
+            "VIX percentile: 0.24",
             "news_event_overlay:+0.039"
           ],
           "options_quality": 0.92,
-          "probability": 0.4183,
-          "risk_expansion_probability": 0.4183,
+          "probability": 0.4141,
+          "risk_expansion_probability": 0.4141,
           "tail_risk_score": 0.2967,
           "term_structure_state": "contango",
           "volatility_risk": 0.2979
@@ -7297,7 +7261,7 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 0.64,
           "breadth_risk": 0.4812,
-          "confidence": 0.6124,
+          "confidence": 0.6096,
           "credit_risk": 0.0944,
           "crowding_proxy_score": 0.0526,
           "failed_bounce_options_risk": 0.2872,
@@ -7319,12 +7283,12 @@
             "macro event risk: 1.00",
             "breadth deterioration: 0.52",
             "risk-off rotation: 0.35",
-            "news risk: 0.30",
+            "VIX percentile: 0.24",
             "news_event_overlay:+0.039"
           ],
           "options_quality": 0.92,
-          "probability": 0.4183,
-          "risk_expansion_probability": 0.4183,
+          "probability": 0.4141,
+          "risk_expansion_probability": 0.4141,
           "tail_risk_score": 0.2967,
           "term_structure_state": "contango",
           "volatility_risk": 0.2979
@@ -7373,7 +7337,7 @@
             "confidence": "medium",
             "expected_horizon": "3d-10d",
             "label": "失败反抽情景",
-            "probability": 0.3223,
+            "probability": 0.322,
             "reason": "Downside/Risk predictors 为 39%/38%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bearish_path"
           },
@@ -7381,7 +7345,7 @@
             "confidence": "medium",
             "expected_horizon": "10d-20d",
             "label": "反抽情景",
-            "probability": 0.2701,
+            "probability": 0.2703,
             "reason": "Bounce Predictor 52%，多源确认 69/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bounce_path"
           },
@@ -7389,7 +7353,7 @@
             "confidence": "medium",
             "expected_horizon": "20d-60d",
             "label": "历史均值情景",
-            "probability": 0.269,
+            "probability": 0.2691,
             "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "analog_average_path"
           },
@@ -7409,12 +7373,12 @@
           "confidence": "medium",
           "expected_horizon": "3d-10d",
           "label": "失败反抽情景",
-          "probability": 0.3223,
+          "probability": 0.322,
           "reason": "Downside/Risk predictors 为 39%/38%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bearish_path"
         },
         "primary_scenario": "bearish_path",
-        "primary_secondary_gap": 0.0522,
+        "primary_secondary_gap": 0.0517,
         "primary_to_secondary_switch_conditions": [
           "VIX 与新闻方向背离",
           "HYG/LQD 转弱",
@@ -7423,15 +7387,15 @@
           "IWM 重新站上主路径确认价",
           "第二路径 bounce_path 获得多源确认"
         ],
-        "probability_gap": 0.0522,
+        "probability_gap": 0.0517,
         "ranking_note": "Scenario ranking includes a bounded News/Event overlay when a major event or macro calendar risk is detected. It is probabilistic, not deterministic.",
         "risk_scenario": "bearish_path",
-        "scenario_probability": 0.3223,
+        "scenario_probability": 0.322,
         "secondary": {
           "confidence": "medium",
           "expected_horizon": "10d-20d",
           "label": "反抽情景",
-          "probability": 0.2701,
+          "probability": 0.2703,
           "reason": "Bounce Predictor 52%，多源确认 69/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bounce_path"
         },
@@ -7448,16 +7412,16 @@
           "confidence": "medium",
           "expected_horizon": "20d-60d",
           "label": "历史均值情景",
-          "probability": 0.269,
+          "probability": 0.2691,
           "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "analog_average_path"
         }
       },
       "scenario_weights": {
         "base_scenario": 0.144,
-        "bearish_scenario": 0.2749,
-        "bounce_scenario": 0.3017,
-        "historical_analog_average": 0.2795
+        "bearish_scenario": 0.2746,
+        "bounce_scenario": 0.3018,
+        "historical_analog_average": 0.2796
       },
       "shadow_evidence_v1": {
         "alert_status_by_type": {
@@ -7743,9 +7707,9 @@
     "QQQ": {
       "analog_path_weight": 0.2511,
       "as_of": "2026-08-18",
-      "base_path_weight": 0.1918,
-      "bearish_path_weight": 0.343,
-      "bounce_path_weight": 0.2141,
+      "base_path_weight": 0.1919,
+      "bearish_path_weight": 0.3428,
+      "bounce_path_weight": 0.2142,
       "bounce_probability": 0.38471703,
       "confluence": {
         "conflicting_evidence": [
@@ -7823,9 +7787,9 @@
         ],
         "not_trading_advice": "This is forecast confirmation only, not a buy/sell/entry/exit or position-sizing recommendation.",
         "primary_label": "失败反抽情景",
-        "primary_probability": 0.343,
+        "primary_probability": 0.3428,
         "primary_scenario": "bearish_path",
-        "probability_gap": 0.0919,
+        "probability_gap": 0.0917,
         "related_price_levels": {
           "primary_confirmation_level": {
             "confidence": "medium",
@@ -7903,7 +7867,7 @@
           {
             "detail": "primary-secondary gap 9.2%",
             "name": "主次路径差距可观察",
-            "score": 9.19,
+            "score": 9.17,
             "source": "scenario_gap"
           },
           {
@@ -8083,10 +8047,10 @@
           "ig_oas_20d_change": 0.030000000000000027
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote 717.51; news risk 30%; macro event risk flagged; rates pressure 22%.",
+          "brief": "Finnhub quote 717.51; news risk 20%; macro event risk flagged; rates pressure 22%.",
           "finnhub_quote_available": true,
           "macro_event_risk_flag": true,
-          "news_risk_score": 0.3,
+          "news_risk_score": 0.2,
           "rates_pressure_score": 0.21885942219923893,
           "symbol": "QQQ"
         },
@@ -8153,13 +8117,13 @@
         "news": {
           "market_news_status": "available",
           "news_item_count": 40,
-          "news_risk_score": 0.3,
+          "news_risk_score": 0.2,
           "top_headlines": [
+            "Trump says no talks planned with Iran, Tehran says Strait of Hormuz still shut - Reuters",
+            "Tech selloff weighs down Wall Street as bond yields climb - Reuters",
             "UAE says two missiles detected earlier were launched from Iran - Reuters",
-            "Dollar range-bound as markets price dovish Fed response - Reuters",
-            "US working on deconfliction mechanism among Turkey, Israel and Syria, US envoy says - Reuters",
-            "Tech selloff pulls Wall Street to two-week lows as bond yields climb - Reuters",
-            "U.S. government debt yields are surging at a bad time. Here's what's behind the move"
+            "US yields edge lower despite Iran worries, broader sell-off - Reuters",
+            "Dollar range-bound as markets price dovish Fed response - Reuters"
           ]
         },
         "price": {
@@ -9041,7 +9005,7 @@
           "flow_quality": 1.0,
           "internal_resonance": 0.1038,
           "options_quality": 0.92,
-          "predictor_consistency": 0.9044000000000001,
+          "predictor_consistency": 0.9003,
           "prior_confidence": 0.78,
           "signal_confirmation": 0.52
         },
@@ -9087,7 +9051,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 99,
+            "freshness_score": 96,
             "headline": "UAE says two missiles detected earlier were launched from Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9107,14 +9071,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 78,
+            "confidence_score": 77,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
+            "freshness_score": 81,
             "headline": "At a Gaza zoo, war takes its toll on the animals - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9134,14 +9098,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 76,
+            "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 74,
             "headline": "US 30-year yields hit highest level since 2007 as war, oil worries fester - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9168,35 +9132,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 67,
+            "freshness_score": 64,
             "headline": "Eight Israeli airstrikes hit Syria's Abu al-Duhur airbase, no casualties, state TV reports - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-08-18T08:18:44+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "TLT",
-              "UUP"
-            ],
-            "confidence": "high",
-            "confidence_score": 77,
-            "detected_event_conditions": [],
-            "event_type": "fed_dovish",
-            "expected_horizon": "1d-20d",
-            "expected_market_direction": "risk_on",
-            "freshness_score": 96,
-            "headline": "Dollar range-bound as markets price dovish Fed response - Reuters",
-            "importance_score": 87,
-            "narrative": "fed_cut_hopes",
-            "provider": "finnhub",
-            "published_at": "2026-08-18T20:24:26+00:00",
             "source": "Reuters"
           },
           {
@@ -9214,20 +9155,43 @@
               "ES=F",
               "NQ=F"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_easing"
             ],
             "event_type": "geopolitical_risk_easing",
             "expected_horizon": "1d-5d",
             "expected_market_direction": "risk_on",
-            "freshness_score": 72,
+            "freshness_score": 69,
             "headline": "PODCAST: US-Iran ceasefire expires, Tupac murder trial and microdramas - Reuters",
             "importance_score": 97,
             "narrative": "geopolitics_easing_risk_on",
             "provider": "finnhub",
             "published_at": "2026-08-18T10:12:54+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "TLT",
+              "UUP"
+            ],
+            "confidence": "high",
+            "confidence_score": 76,
+            "detected_event_conditions": [],
+            "event_type": "fed_dovish",
+            "expected_horizon": "1d-20d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 93,
+            "headline": "Dollar range-bound as markets price dovish Fed response - Reuters",
+            "importance_score": 86,
+            "narrative": "fed_cut_hopes",
+            "provider": "finnhub",
+            "published_at": "2026-08-18T20:24:26+00:00",
             "source": "Reuters"
           }
         ],
@@ -9243,17 +9207,7 @@
           ],
           "conflicting_headlines": [
             {
-              "confidence": "high",
-              "detected_event_conditions": [],
-              "event_type": "fed_dovish",
-              "expected_market_direction": "risk_on",
-              "headline": "Dollar range-bound as markets price dovish Fed response - Reuters",
-              "importance_score": 87,
-              "published_at": "2026-08-18T20:24:26+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_easing"
               ],
@@ -9262,6 +9216,16 @@
               "headline": "PODCAST: US-Iran ceasefire expires, Tupac murder trial and microdramas - Reuters",
               "importance_score": 97,
               "published_at": "2026-08-18T10:12:54+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [],
+              "event_type": "fed_dovish",
+              "expected_market_direction": "risk_on",
+              "headline": "Dollar range-bound as markets price dovish Fed response - Reuters",
+              "importance_score": 86,
+              "published_at": "2026-08-18T20:24:26+00:00",
               "source": "Reuters"
             }
           ],
@@ -9320,26 +9284,14 @@
               "importance_score": 100,
               "published_at": "2026-08-18T08:18:44+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "China's fuel exports edge back towards levels before Iran war as Beijing eases curbs - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-08-18T04:31:00+00:00",
-              "source": "Reuters"
             }
           ]
         },
         "news_direction": "risk_off",
         "prediction_logic_effect": {
-          "after_primary_probability": 0.343,
+          "after_primary_probability": 0.3428,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.2964,
+          "before_primary_probability": 0.2961,
           "before_primary_scenario": "bearish_path",
           "confirmation_delta": -8.0,
           "impact": "supports_primary",
@@ -9367,7 +9319,7 @@
             "risk_expansion_predictor": 0.039,
             "trend_reversal_predictor": 0.0
           },
-          "primary_probability_delta": 0.0466,
+          "primary_probability_delta": 0.0467,
           "primary_scenario_changed": false,
           "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay",
           "validation_type": "daily"
@@ -9375,7 +9327,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0097,
-            "avg_equity_futures_1d_return": -0.01,
+            "avg_equity_futures_1d_return": -0.0108,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -9390,7 +9342,7 @@
             ],
             "failed_checks": [],
             "hyg_lqd_1d_relative_return": -0.0023,
-            "oil_proxy_1d_return": 0.0009,
+            "oil_proxy_1d_return": 0.0011,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -9425,9 +9377,9 @@
       },
       "path_weight_model": {
         "analog_path_weight": 0.2511,
-        "base_path_weight": 0.1918,
-        "bearish_path_weight": 0.343,
-        "bounce_path_weight": 0.2141,
+        "base_path_weight": 0.1919,
+        "bearish_path_weight": 0.3428,
+        "bounce_path_weight": 0.2142,
         "low_confidence_simulation": true,
         "news_event_overlay_applied": true,
         "news_event_overlay_note": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay",
@@ -9453,12 +9405,12 @@
           "news_event_direction": "supports_risk_expansion",
           "news_event_macro_risk": 0.0,
           "news_event_price_confirmed": 1.0,
-          "news_risk": 0.3,
+          "news_risk": 0.2,
           "options_quality": 0.92,
           "options_stress": 0.2979,
           "panic_release": 0.4056,
           "rates_pressure": 0.2189,
-          "risk_expansion": 0.402,
+          "risk_expansion": 0.3979,
           "signal_agreement": 0.82,
           "signal_confirmation": 0.52,
           "tail_risk": 0.2967,
@@ -9507,7 +9459,7 @@
           "failed_bounce_risk": 0.55,
           "historical_support": "supportive",
           "market_edge_status": "STRONG_EDGE",
-          "risk_expansion_probability": 0.3764,
+          "risk_expansion_probability": 0.3684,
           "trend_reversal_probability": 0.5314,
           "up_probability": 0.6121600775939798
         },
@@ -9566,7 +9518,7 @@
           "failed_bounce_risk": 0.55,
           "historical_support": "supportive",
           "market_edge_status": "STRONG_EDGE",
-          "risk_expansion_probability": 0.3764,
+          "risk_expansion_probability": 0.3684,
           "trend_reversal_probability": 0.5314,
           "up_probability": 0.6385041026411183
         }
@@ -9667,7 +9619,7 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 0.04,
           "breadth_risk": 0.6907,
-          "confidence": 0.6197,
+          "confidence": 0.6169,
           "credit_risk": 0.0944,
           "crowding_proxy_score": 0.1,
           "failed_bounce_options_risk": 0.2872,
@@ -9689,12 +9641,12 @@
             "macro event risk: 1.00",
             "breadth deterioration: 0.71",
             "risk-off rotation: 0.35",
-            "news risk: 0.30",
+            "VIX percentile: 0.24",
             "news_event_overlay:+0.039"
           ],
           "options_quality": 0.92,
-          "probability": 0.441,
-          "risk_expansion_probability": 0.441,
+          "probability": 0.4369,
+          "risk_expansion_probability": 0.4369,
           "tail_risk_score": 0.2967,
           "term_structure_state": "contango",
           "volatility_risk": 0.2979
@@ -9833,7 +9785,7 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 0.04,
           "breadth_risk": 0.6907,
-          "confidence": 0.6197,
+          "confidence": 0.6169,
           "credit_risk": 0.0944,
           "crowding_proxy_score": 0.1,
           "failed_bounce_options_risk": 0.2872,
@@ -9855,12 +9807,12 @@
             "macro event risk: 1.00",
             "breadth deterioration: 0.71",
             "risk-off rotation: 0.35",
-            "news risk: 0.30",
+            "VIX percentile: 0.24",
             "news_event_overlay:+0.039"
           ],
           "options_quality": 0.92,
-          "probability": 0.441,
-          "risk_expansion_probability": 0.441,
+          "probability": 0.4369,
+          "risk_expansion_probability": 0.4369,
           "tail_risk_score": 0.2967,
           "term_structure_state": "contango",
           "volatility_risk": 0.2979
@@ -9909,7 +9861,7 @@
             "confidence": "low",
             "expected_horizon": "3d-10d",
             "label": "失败反抽情景",
-            "probability": 0.343,
+            "probability": 0.3428,
             "reason": "Downside/Risk predictors 为 43%/40%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bearish_path"
           },
@@ -9925,7 +9877,7 @@
             "confidence": "low",
             "expected_horizon": "10d-20d",
             "label": "反抽情景",
-            "probability": 0.2141,
+            "probability": 0.2142,
             "reason": "Bounce Predictor 42%，多源确认 52/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bounce_path"
           },
@@ -9933,7 +9885,7 @@
             "confidence": "low",
             "expected_horizon": "3d-20d",
             "label": "综合期望情景",
-            "probability": 0.1918,
+            "probability": 0.1919,
             "reason": "综合期望用于平衡反抽、失败反抽、历史均值和数据不完整带来的不确定性。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "expected_path"
           }
@@ -9945,12 +9897,12 @@
           "confidence": "low",
           "expected_horizon": "3d-10d",
           "label": "失败反抽情景",
-          "probability": 0.343,
+          "probability": 0.3428,
           "reason": "Downside/Risk predictors 为 43%/40%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bearish_path"
         },
         "primary_scenario": "bearish_path",
-        "primary_secondary_gap": 0.0919,
+        "primary_secondary_gap": 0.0917,
         "primary_to_secondary_switch_conditions": [
           "VIX 与新闻方向背离",
           "HYG/LQD 转弱",
@@ -9959,10 +9911,10 @@
           "QQQ 重新站上主路径确认价",
           "第二路径 analog_average_path 获得多源确认"
         ],
-        "probability_gap": 0.0919,
+        "probability_gap": 0.0917,
         "ranking_note": "Scenario ranking includes a bounded News/Event overlay when a major event or macro calendar risk is detected. It is probabilistic, not deterministic.",
         "risk_scenario": "bearish_path",
-        "scenario_probability": 0.343,
+        "scenario_probability": 0.3428,
         "secondary": {
           "confidence": "low",
           "expected_horizon": "20d-60d",
@@ -9984,14 +9936,14 @@
           "confidence": "low",
           "expected_horizon": "10d-20d",
           "label": "反抽情景",
-          "probability": 0.2141,
+          "probability": 0.2142,
           "reason": "Bounce Predictor 42%，多源确认 52/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bounce_path"
         }
       },
       "scenario_weights": {
-        "base_scenario": 0.1993,
-        "bearish_scenario": 0.2964,
+        "base_scenario": 0.1994,
+        "bearish_scenario": 0.2961,
         "bounce_scenario": 0.2435,
         "historical_analog_average": 0.2609
       },
@@ -10293,11 +10245,11 @@
       "trend_reversal_probability": 0.5883393954222318
     },
     "SPY": {
-      "analog_path_weight": 0.2684,
+      "analog_path_weight": 0.2685,
       "as_of": "2026-08-18",
       "base_path_weight": 0.135,
-      "bearish_path_weight": 0.3017,
-      "bounce_path_weight": 0.295,
+      "bearish_path_weight": 0.3014,
+      "bounce_path_weight": 0.2951,
       "bounce_probability": 0.59293002,
       "confluence": {
         "conflicting_evidence": [
@@ -10334,7 +10286,7 @@
           {
             "detail": "路径分歧较大，不宜给强结论。",
             "name": "主次路径差距小",
-            "score": 0.67,
+            "score": 0.63,
             "source": "scenario_gap"
           }
         ],
@@ -10363,9 +10315,9 @@
         ],
         "not_trading_advice": "This is forecast confirmation only, not a buy/sell/entry/exit or position-sizing recommendation.",
         "primary_label": "失败反抽情景",
-        "primary_probability": 0.3017,
+        "primary_probability": 0.3014,
         "primary_scenario": "bearish_path",
-        "probability_gap": 0.0067,
+        "probability_gap": 0.0063,
         "related_price_levels": {
           "primary_confirmation_level": {
             "confidence": "medium",
@@ -10400,7 +10352,7 @@
             "source_type": "price_structure"
           }
         },
-        "secondary_probability": 0.295,
+        "secondary_probability": 0.2951,
         "secondary_scenario": "bounce_path",
         "strong_conclusion_allowed": false,
         "supporting_evidence": [
@@ -10611,10 +10563,10 @@
           "ig_oas_20d_change": 0.030000000000000027
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote 767.45; news risk 30%; macro event risk flagged; rates pressure 22%.",
+          "brief": "Finnhub quote 767.45; news risk 20%; macro event risk flagged; rates pressure 22%.",
           "finnhub_quote_available": true,
           "macro_event_risk_flag": true,
-          "news_risk_score": 0.3,
+          "news_risk_score": 0.2,
           "rates_pressure_score": 0.21885942219923893,
           "symbol": "SPY"
         },
@@ -10681,13 +10633,13 @@
         "news": {
           "market_news_status": "available",
           "news_item_count": 40,
-          "news_risk_score": 0.3,
+          "news_risk_score": 0.2,
           "top_headlines": [
+            "Trump says no talks planned with Iran, Tehran says Strait of Hormuz still shut - Reuters",
+            "Tech selloff weighs down Wall Street as bond yields climb - Reuters",
             "UAE says two missiles detected earlier were launched from Iran - Reuters",
-            "Dollar range-bound as markets price dovish Fed response - Reuters",
-            "US working on deconfliction mechanism among Turkey, Israel and Syria, US envoy says - Reuters",
-            "Tech selloff pulls Wall Street to two-week lows as bond yields climb - Reuters",
-            "U.S. government debt yields are surging at a bad time. Here's what's behind the move"
+            "US yields edge lower despite Iran worries, broader sell-off - Reuters",
+            "Dollar range-bound as markets price dovish Fed response - Reuters"
           ]
         },
         "price": {
@@ -11601,7 +11553,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 99,
+            "freshness_score": 96,
             "headline": "UAE says two missiles detected earlier were launched from Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11621,14 +11573,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 78,
+            "confidence_score": 77,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
+            "freshness_score": 81,
             "headline": "At a Gaza zoo, war takes its toll on the animals - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11648,14 +11600,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 76,
+            "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 74,
             "headline": "US 30-year yields hit highest level since 2007 as war, oil worries fester - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11682,35 +11634,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 67,
+            "freshness_score": 64,
             "headline": "Eight Israeli airstrikes hit Syria's Abu al-Duhur airbase, no casualties, state TV reports - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-08-18T08:18:44+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "TLT",
-              "UUP"
-            ],
-            "confidence": "high",
-            "confidence_score": 77,
-            "detected_event_conditions": [],
-            "event_type": "fed_dovish",
-            "expected_horizon": "1d-20d",
-            "expected_market_direction": "risk_on",
-            "freshness_score": 96,
-            "headline": "Dollar range-bound as markets price dovish Fed response - Reuters",
-            "importance_score": 87,
-            "narrative": "fed_cut_hopes",
-            "provider": "finnhub",
-            "published_at": "2026-08-18T20:24:26+00:00",
             "source": "Reuters"
           },
           {
@@ -11728,20 +11657,43 @@
               "ES=F",
               "NQ=F"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_easing"
             ],
             "event_type": "geopolitical_risk_easing",
             "expected_horizon": "1d-5d",
             "expected_market_direction": "risk_on",
-            "freshness_score": 72,
+            "freshness_score": 69,
             "headline": "PODCAST: US-Iran ceasefire expires, Tupac murder trial and microdramas - Reuters",
             "importance_score": 97,
             "narrative": "geopolitics_easing_risk_on",
             "provider": "finnhub",
             "published_at": "2026-08-18T10:12:54+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "TLT",
+              "UUP"
+            ],
+            "confidence": "high",
+            "confidence_score": 76,
+            "detected_event_conditions": [],
+            "event_type": "fed_dovish",
+            "expected_horizon": "1d-20d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 93,
+            "headline": "Dollar range-bound as markets price dovish Fed response - Reuters",
+            "importance_score": 86,
+            "narrative": "fed_cut_hopes",
+            "provider": "finnhub",
+            "published_at": "2026-08-18T20:24:26+00:00",
             "source": "Reuters"
           }
         ],
@@ -11757,17 +11709,7 @@
           ],
           "conflicting_headlines": [
             {
-              "confidence": "high",
-              "detected_event_conditions": [],
-              "event_type": "fed_dovish",
-              "expected_market_direction": "risk_on",
-              "headline": "Dollar range-bound as markets price dovish Fed response - Reuters",
-              "importance_score": 87,
-              "published_at": "2026-08-18T20:24:26+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_easing"
               ],
@@ -11776,6 +11718,16 @@
               "headline": "PODCAST: US-Iran ceasefire expires, Tupac murder trial and microdramas - Reuters",
               "importance_score": 97,
               "published_at": "2026-08-18T10:12:54+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [],
+              "event_type": "fed_dovish",
+              "expected_market_direction": "risk_on",
+              "headline": "Dollar range-bound as markets price dovish Fed response - Reuters",
+              "importance_score": 86,
+              "published_at": "2026-08-18T20:24:26+00:00",
               "source": "Reuters"
             }
           ],
@@ -11834,26 +11786,14 @@
               "importance_score": 100,
               "published_at": "2026-08-18T08:18:44+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "China's fuel exports edge back towards levels before Iran war as Beijing eases curbs - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-08-18T04:31:00+00:00",
-              "source": "Reuters"
             }
           ]
         },
         "news_direction": "risk_off",
         "prediction_logic_effect": {
-          "after_primary_probability": 0.3017,
+          "after_primary_probability": 0.3014,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.3275,
+          "before_primary_probability": 0.3276,
           "before_primary_scenario": "bounce_path",
           "confirmation_delta": -8.0,
           "impact": "conflicts_primary",
@@ -11881,7 +11821,7 @@
             "risk_expansion_predictor": 0.039,
             "trend_reversal_predictor": 0.0
           },
-          "primary_probability_delta": -0.0258,
+          "primary_probability_delta": -0.0262,
           "primary_scenario_changed": true,
           "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay",
           "validation_type": "daily"
@@ -11889,7 +11829,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0097,
-            "avg_equity_futures_1d_return": -0.01,
+            "avg_equity_futures_1d_return": -0.0108,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -11904,7 +11844,7 @@
             ],
             "failed_checks": [],
             "hyg_lqd_1d_relative_return": -0.0023,
-            "oil_proxy_1d_return": 0.0009,
+            "oil_proxy_1d_return": 0.0011,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -11938,10 +11878,10 @@
         "validation_type": "daily"
       },
       "path_weight_model": {
-        "analog_path_weight": 0.2684,
+        "analog_path_weight": 0.2685,
         "base_path_weight": 0.135,
-        "bearish_path_weight": 0.3017,
-        "bounce_path_weight": 0.295,
+        "bearish_path_weight": 0.3014,
+        "bounce_path_weight": 0.2951,
         "low_confidence_simulation": false,
         "news_event_overlay_applied": true,
         "news_event_overlay_note": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay",
@@ -11967,12 +11907,12 @@
           "news_event_direction": "supports_risk_expansion",
           "news_event_macro_risk": 0.0,
           "news_event_price_confirmed": 1.0,
-          "news_risk": 0.3,
+          "news_risk": 0.2,
           "options_quality": 0.92,
           "options_stress": 0.2979,
           "panic_release": 0.4056,
           "rates_pressure": 0.2189,
-          "risk_expansion": 0.3604,
+          "risk_expansion": 0.3562,
           "signal_agreement": 1.0,
           "signal_confirmation": 0.7,
           "tail_risk": 0.2967,
@@ -12021,7 +11961,7 @@
           "failed_bounce_risk": 0.4433181382071617,
           "historical_support": "supportive",
           "market_edge_status": "STRONG_EDGE",
-          "risk_expansion_probability": 0.3394,
+          "risk_expansion_probability": 0.3314,
           "trend_reversal_probability": 0.6424,
           "up_probability": 0.6374728202640152
         },
@@ -12080,7 +12020,7 @@
           "failed_bounce_risk": 0.4433181382071617,
           "historical_support": "supportive",
           "market_edge_status": "STRONG_EDGE",
-          "risk_expansion_probability": 0.3394,
+          "risk_expansion_probability": 0.3314,
           "trend_reversal_probability": 0.6424,
           "up_probability": 0.6386686570467286
         }
@@ -12176,7 +12116,7 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 1.0,
           "breadth_risk": 0.2787,
-          "confidence": 0.6068,
+          "confidence": 0.604,
           "credit_risk": 0.0944,
           "crowding_proxy_score": 0.0397,
           "failed_bounce_options_risk": 0.2872,
@@ -12198,12 +12138,12 @@
             "macro event risk: 1.00",
             "breadth deterioration: 0.37",
             "risk-off rotation: 0.35",
-            "news risk: 0.30",
+            "VIX percentile: 0.24",
             "news_event_overlay:+0.039"
           ],
           "options_quality": 0.92,
-          "probability": 0.3994,
-          "risk_expansion_probability": 0.3994,
+          "probability": 0.3952,
+          "risk_expansion_probability": 0.3952,
           "tail_risk_score": 0.2967,
           "term_structure_state": "contango",
           "volatility_risk": 0.2979
@@ -12337,7 +12277,7 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 1.0,
           "breadth_risk": 0.2787,
-          "confidence": 0.6068,
+          "confidence": 0.604,
           "credit_risk": 0.0944,
           "crowding_proxy_score": 0.0397,
           "failed_bounce_options_risk": 0.2872,
@@ -12359,12 +12299,12 @@
             "macro event risk: 1.00",
             "breadth deterioration: 0.37",
             "risk-off rotation: 0.35",
-            "news risk: 0.30",
+            "VIX percentile: 0.24",
             "news_event_overlay:+0.039"
           ],
           "options_quality": 0.92,
-          "probability": 0.3994,
-          "risk_expansion_probability": 0.3994,
+          "probability": 0.3952,
+          "risk_expansion_probability": 0.3952,
           "tail_risk_score": 0.2967,
           "term_structure_state": "contango",
           "volatility_risk": 0.2979
@@ -12413,7 +12353,7 @@
             "confidence": "medium",
             "expected_horizon": "3d-10d",
             "label": "失败反抽情景",
-            "probability": 0.3017,
+            "probability": 0.3014,
             "reason": "Downside/Risk predictors 为 32%/36%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bearish_path"
           },
@@ -12421,7 +12361,7 @@
             "confidence": "medium",
             "expected_horizon": "10d-20d",
             "label": "反抽情景",
-            "probability": 0.295,
+            "probability": 0.2951,
             "reason": "Bounce Predictor 62%，多源确认 70/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bounce_path"
           },
@@ -12429,7 +12369,7 @@
             "confidence": "medium",
             "expected_horizon": "20d-60d",
             "label": "历史均值情景",
-            "probability": 0.2684,
+            "probability": 0.2685,
             "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "analog_average_path"
           },
@@ -12449,12 +12389,12 @@
           "confidence": "medium",
           "expected_horizon": "3d-10d",
           "label": "失败反抽情景",
-          "probability": 0.3017,
+          "probability": 0.3014,
           "reason": "Downside/Risk predictors 为 32%/36%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bearish_path"
         },
         "primary_scenario": "bearish_path",
-        "primary_secondary_gap": 0.0067,
+        "primary_secondary_gap": 0.0063,
         "primary_to_secondary_switch_conditions": [
           "VIX 与新闻方向背离",
           "HYG/LQD 转弱",
@@ -12463,15 +12403,15 @@
           "SPY 重新站上主路径确认价",
           "第二路径 bounce_path 获得多源确认"
         ],
-        "probability_gap": 0.0067,
+        "probability_gap": 0.0063,
         "ranking_note": "Scenario ranking includes a bounded News/Event overlay when a major event or macro calendar risk is detected. It is probabilistic, not deterministic.",
         "risk_scenario": "bearish_path",
-        "scenario_probability": 0.3017,
+        "scenario_probability": 0.3014,
         "secondary": {
           "confidence": "medium",
           "expected_horizon": "10d-20d",
           "label": "反抽情景",
-          "probability": 0.295,
+          "probability": 0.2951,
           "reason": "Bounce Predictor 62%，多源确认 70/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bounce_path"
         },
@@ -12488,16 +12428,16 @@
           "confidence": "medium",
           "expected_horizon": "20d-60d",
           "label": "历史均值情景",
-          "probability": 0.2684,
+          "probability": 0.2685,
           "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "analog_average_path"
         }
       },
       "scenario_weights": {
-        "base_scenario": 0.1402,
-        "bearish_scenario": 0.2534,
-        "bounce_scenario": 0.3275,
-        "historical_analog_average": 0.2788
+        "base_scenario": 0.1403,
+        "bearish_scenario": 0.2531,
+        "bounce_scenario": 0.3276,
+        "historical_analog_average": 0.2789
       },
       "shadow_evidence_v1": {
         "alert_status_by_type": {
