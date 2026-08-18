@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-18T04:22:40.527611+00:00`
+- generated_at: `2026-08-18T13:11:59.700232+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `14`
-- event_detection_confidence: `76`
+- major_event_count: `13`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -25,45 +25,61 @@
 
 ## Major Events
 
+### geopolitical_risk_easing / risk_on
+
+- headline: US stock futures fall as fading Iran peace prospects drive up oil, yields - Reuters
+- source: Reuters
+- published_at: `2026-08-18T11:06:04+00:00`
+- importance_score: `100`
+- confidence: `high`
+
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Dollar feeble as rate hike bets dwindle, Iran war worries grow - Reuters
+- headline: Eight Israeli airstrikes hit Syria's Abu al-Duhur airbase, no casualties, state TV reports - Reuters
 - source: Reuters
-- published_at: `2026-08-18T01:51:00+00:00`
+- published_at: `2026-08-18T08:18:44+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US 30-year yields hit highest level since 2007 as war, oil worries fester - Reuters
+- source: Reuters
+- published_at: `2026-08-18T07:12:54+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: China's fuel exports edge back towards levels before Iran war as Beijing eases curbs - Reuters
+- source: Reuters
+- published_at: `2026-08-18T04:31:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: Oil prices climb, bond yields rise as US-Iran ceasefire expires - Reuters
+- headline: Indian shares extend losing run on fading hopes of Mideast peace deal - Reuters
 - source: Reuters
-- published_at: `2026-08-18T01:16:00+00:00`
-- importance_score: `99`
+- published_at: `2026-08-18T02:21:00+00:00`
+- importance_score: `97`
 - confidence: `high`
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: Oil climbs as fading US-Iran peace hopes raise supply risks - Reuters
+- headline: Oil prices at near three-week high as US-Iran peace hopes fade - Reuters
 - source: Reuters
 - published_at: `2026-08-18T01:13:00+00:00`
-- importance_score: `99`
-- confidence: `high`
+- importance_score: `97`
+- confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
+### geopolitical_risk_easing / risk_on
 
-- headline: US railroad Union Pacific turned charges meant to cover fuel costs from Iran war into profit - Reuters
+- headline: Gold slips as oil, bond yields climb on waning US-Iran peace hopes - Reuters
 - source: Reuters
-- published_at: `2026-08-17T21:11:55+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Battered by war, Iran’s rulers wary of more economic pain and unrest if US tightens pressure - Reuters
-- source: Reuters
-- published_at: `2026-08-17T20:52:09+00:00`
-- importance_score: `100`
-- confidence: `high`
+- published_at: `2026-08-18T01:05:00+00:00`
+- importance_score: `97`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -71,7 +87,7 @@
 - source: Reuters
 - published_at: `2026-08-17T18:58:40+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -79,7 +95,7 @@
 - source: CNBC
 - published_at: `2026-08-17T18:42:54+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -88,19 +104,3 @@
 - published_at: `2026-08-17T15:45:47+00:00`
 - importance_score: `100`
 - confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Kushner, Netanyahu agree on path forward for Gaza, Board of Peace official says - Reuters
-- source: Reuters
-- published_at: `2026-08-17T15:30:09+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### oil_shock_risk / risk_off
-
-- headline: US diesel crack surpasses $100 a barrel for the first time on supply disruptions - Reuters
-- source: Reuters
-- published_at: `2026-08-17T19:13:43+00:00`
-- importance_score: `96`
-- confidence: `high`
