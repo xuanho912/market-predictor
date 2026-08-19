@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-08-18T23:34:01.188328+00:00`
+Generated at: `2026-08-19T02:35:32.849227+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -22,15 +22,15 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - status: `available`
 - current_price: `219.74`
 - market_context: `risk_off_pressure`
-- primary: `stock_failed_bounce` / `26.1%`
-- secondary: `stock_downside_continuation` / `18.7%`
-- risk: `stock_event_risk` / `14.9%`
-- stock_confluence_score: `48.5` / `mixed`
+- primary: `stock_failed_bounce` / `26.2%`
+- secondary: `stock_event_risk` / `18.0%`
+- risk: `stock_downside_continuation` / `17.7%`
+- stock_confluence_score: `52.86` / `mixed`
 - stock_alpha_score_v1: `49.5` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `61.6%`
-- 60d_expected_return: `-0.7%`
-- risk_reward_ratio: `0.54`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `26.31`
+- 60d_expected_return: `-0.8%`
+- risk_reward_ratio: `0.51`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `26.12`
 - historical_analog_support: `conflicting` / samples `10`
 - validation_status: `not_yet_validated`
 
@@ -43,7 +43,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - nearest_support: `214.47`
 - nearest_resistance: `227.64`
 - bounce_target_zone: `{"conservative": 223.69, "base": 223.69, "extended": 233.19, "source": "scenario_path + atr + recent_resistance", "meaning": "概率反抽情景参考区间，不是目标价承诺。", "not_trading_instruction": true}`
-- failed_bounce_warning_zone: `{"first_warning": 216.78, "critical_warning": 190.01, "source": "risk_path + atr + recent_support", "meaning": "跌入该区间说明失败反抽风险上升。", "not_trading_instruction": true}`
+- failed_bounce_warning_zone: `{"first_warning": 216.58, "critical_warning": 190.01, "source": "risk_path + atr + recent_support", "meaning": "跌入该区间说明失败反抽风险上升。", "not_trading_instruction": true}`
 
 ### TSLA
 
@@ -112,7 +112,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `28.2%`
 - secondary: `stock_downside_continuation` / `21.8%`
 - risk: `stock_event_risk` / `11.3%`
-- stock_confluence_score: `38.08` / `weak`
+- stock_confluence_score: `38.07` / `weak`
 - stock_alpha_score_v1: `38.5` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `52.8%`
 - 60d_expected_return: `-1.5%`

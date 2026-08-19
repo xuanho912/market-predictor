@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-18T23:33:49.125534+00:00`
+- generated_at: `2026-08-19T02:35:21.872867+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
-- event_detection_confidence: `76`
+- major_event_count: `5`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -47,7 +47,7 @@
 - source: Reuters
 - published_at: `2026-08-18T12:17:29+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -62,13 +62,5 @@
 - headline: PODCAST: US-Iran ceasefire expires, Tupac murder trial and microdramas - Reuters
 - source: Reuters
 - published_at: `2026-08-18T10:12:54+00:00`
-- importance_score: `97`
+- importance_score: `96`
 - confidence: `medium`
-
-### fed_dovish / risk_on
-
-- headline: Dollar range-bound as markets price dovish Fed response - Reuters
-- source: Reuters
-- published_at: `2026-08-18T20:24:26+00:00`
-- importance_score: `86`
-- confidence: `high`
