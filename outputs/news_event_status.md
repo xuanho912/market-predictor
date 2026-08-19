@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-19T20:52:38.728729+00:00`
+- generated_at: `2026-08-19T21:56:23.625069+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `7`
@@ -27,17 +27,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: UAE's financial embargo on Iran after missile threat puts rivalry back in spotlight - Reuters
+- headline: US warns Siemens devices can be hacked amid fears Iran is breaching water plants - Reuters
 - source: Reuters
-- published_at: `2026-08-19T18:57:09+00:00`
+- published_at: `2026-08-19T20:03:42+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US warns Siemens devices can be hacked amid fears Iran is breaching water plants - Reuters
+- headline: UAE's financial embargo on Iran after missile threat puts rivalry back in spotlight - Reuters
 - source: Reuters
-- published_at: `2026-08-19T16:41:28+00:00`
+- published_at: `2026-08-19T18:57:09+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -62,7 +62,7 @@
 - headline: PODCAST: US-Iran ceasefire expires, Tupac murder trial and microdramas - Reuters
 - source: Reuters
 - published_at: `2026-08-19T07:11:08+00:00`
-- importance_score: `97`
+- importance_score: `96`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off

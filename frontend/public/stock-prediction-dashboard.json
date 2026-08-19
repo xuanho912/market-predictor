@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-08-19T20:52:50.204467+00:00",
+  "generated_at": "2026-08-19T21:56:35.365575+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-08-19T20:52:50.219254+00:00",
+    "generated_at": "2026-08-19T21:56:35.392778+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 193,
     "risk_score_effectiveness": {
@@ -715,8 +715,8 @@
       "market_context_for_stock": {
         "benchmark": "SPY",
         "benchmark_edge_status": "MODERATE_EDGE",
-        "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.3357,
+        "benchmark_market_state": "recovery",
+        "benchmark_primary_probability": 0.3401,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -2919,14 +2919,14 @@
       },
       "market_context_for_stock": {
         "benchmark": "QQQ",
-        "benchmark_edge_status": "MODERATE_EDGE",
-        "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.2823,
+        "benchmark_edge_status": "WEAK_EDGE",
+        "benchmark_market_state": "oversold_bounce",
+        "benchmark_primary_probability": 0.2987,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
         "risk_alert_level": "WARNING",
-        "risk_alert_type": "Failed Bounce Alert",
+        "risk_alert_type": "Bounce Setup Alert",
         "symbol": "NVDA"
       },
       "missing_data": [
@@ -5084,8 +5084,8 @@
       "market_context_for_stock": {
         "benchmark": "IWM",
         "benchmark_edge_status": "MODERATE_EDGE",
-        "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.304,
+        "benchmark_market_state": "oversold_bounce",
+        "benchmark_primary_probability": 0.3173,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -6885,7 +6885,7 @@
           "stock_vs_benchmark_20d": -0.0764,
           "stock_vs_benchmark_60d": -0.1738,
           "stock_vs_qqq_20d": -0.0764,
-          "stock_vs_sector_20d": -0.1013,
+          "stock_vs_sector_20d": -0.0959,
           "stock_vs_spy_20d": -0.0902
         },
         "volatility": {
@@ -6899,10 +6899,10 @@
         "volume": {
           "accumulation_distribution_proxy": -0.1136,
           "panic_volume_proxy": false,
-          "up_volume_down_volume_proxy": 0.796,
-          "volume_confirmation_score": 42.43,
-          "volume_vs_20d_average": 0.8957,
-          "volume_z_score": -0.1968
+          "up_volume_down_volume_proxy": 0.7959,
+          "volume_confirmation_score": 42.42,
+          "volume_vs_20d_average": 0.8956,
+          "volume_z_score": -0.1971
         }
       },
       "forecast_price_levels": {
@@ -7282,14 +7282,14 @@
       },
       "market_context_for_stock": {
         "benchmark": "QQQ",
-        "benchmark_edge_status": "MODERATE_EDGE",
-        "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.2823,
+        "benchmark_edge_status": "WEAK_EDGE",
+        "benchmark_market_state": "oversold_bounce",
+        "benchmark_primary_probability": 0.2987,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
         "risk_alert_level": "WARNING",
-        "risk_alert_type": "Failed Bounce Alert",
+        "risk_alert_type": "Bounce Setup Alert",
         "symbol": "TSLA"
       },
       "missing_data": [
@@ -8907,14 +8907,14 @@
           },
           "sector_context": {
             "evidence": "个股弱于所属板块",
-            "reason": "TSLA vs XLY: -10.13%",
+            "reason": "TSLA vs XLY: -9.59%",
             "score": 30,
             "status": "conflicting"
           },
           "volume_structure": {
             "evidence": "成交量结构中性",
             "reason": "量能没有明显共振",
-            "score": 42.43,
+            "score": 42.42,
             "status": "neutral"
           }
         },
@@ -8950,7 +8950,7 @@
       "top_candidate": "SMR",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-08-19T20:52:50.214959+00:00",
+    "generated_at": "2026-08-19T21:56:35.384664+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -9278,7 +9278,7 @@
           "stock_vs_QQQ_20d": -0.0764,
           "stock_vs_SPY_20d": -0.0902,
           "stock_vs_benchmark_20d": -0.0764,
-          "stock_vs_sector_20d": -0.1013
+          "stock_vs_sector_20d": -0.0959
         },
         "relative_strength_score": 6.86,
         "risk_reward_ratio": 0.23,
@@ -9290,12 +9290,12 @@
         "ticker": "TSLA",
         "upside_trigger_level": 356.11,
         "validation_status": "not_yet_validated",
-        "volume_anomaly_score": 61.95,
+        "volume_anomaly_score": 61.94,
         "volume_fields": {
           "abnormal_volume_flag": true,
-          "relative_volume_20d": 0.8957,
+          "relative_volume_20d": 0.8956,
           "relative_volume_5d": null,
-          "volume_z_score": -0.1968
+          "volume_z_score": -0.1971
         },
         "whether_top10_candidate": true
       }
