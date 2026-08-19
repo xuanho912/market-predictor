@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-19T02:35:21.872867+00:00`
+- generated_at: `2026-08-19T04:22:49.432525+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `5`
-- event_detection_confidence: `74`
+- event_detection_confidence: `72`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -29,7 +29,7 @@
 
 - headline: UAE says two missiles detected earlier were launched from Iran - Reuters
 - source: Reuters
-- published_at: `2026-08-18T21:21:04+00:00`
+- published_at: `2026-08-18T16:51:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -39,7 +39,7 @@
 - source: Reuters
 - published_at: `2026-08-18T15:05:35+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
