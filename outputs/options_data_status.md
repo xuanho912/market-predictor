@@ -1,6 +1,6 @@
 # Options / Volatility Structure Status
 
-Generated at: `2026-08-19T21:56:14.922954+00:00`
+Generated at: `2026-08-19T23:12:33.453132+00:00`
 
 ## Summary
 
@@ -27,9 +27,9 @@ Generated at: `2026-08-19T21:56:14.922954+00:00`
 - term_structure_state: `contango`
 - volatility_reversal_score: `0.675`
 - panic_release_score: `0.4394`
-- tail_risk_score: `0.1894`
-- option_stress_score: `0.2115`
-- failed_bounce_options_risk: `0.2127`
+- tail_risk_score: `0.1906`
+- option_stress_score: `0.2119`
+- failed_bounce_options_risk: `0.2132`
 
 ## Sources
 

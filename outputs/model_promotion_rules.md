@@ -1,6 +1,6 @@
 # Model Promotion Rules
 
-Generated at: `2026-08-19T21:56:35.119143+00:00`
+Generated at: `2026-08-19T23:12:54.377638+00:00`
 
 ## Minimum Forward Sample Gates
 
