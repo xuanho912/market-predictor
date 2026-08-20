@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-19T23:34:11.650182+00:00`
+- generated_at: `2026-08-20T02:34:10.016454+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
-- event_detection_confidence: `72`
+- major_event_count: `8`
+- event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,17 +27,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US warns Siemens devices can be hacked amid fears Iran is breaching water plants - Reuters
+- headline: Oil prices steady as investors assess US-Iran war outlook - Reuters
 - source: Reuters
-- published_at: `2026-08-19T20:03:42+00:00`
+- published_at: `2026-08-20T01:11:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: UAE's financial embargo on Iran after missile threat puts rivalry back in spotlight - Reuters
+- headline: US warns Siemens devices can be hacked amid fears Iran is breaching water plants - Reuters
 - source: Reuters
-- published_at: `2026-08-19T18:57:09+00:00`
+- published_at: `2026-08-19T20:03:42+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -47,7 +47,15 @@
 - source: Reuters
 - published_at: `2026-08-19T13:16:33+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: UAE's financial embargo on Iran after missile threat puts rivalry back in spotlight - Reuters
+- source: Reuters
+- published_at: `2026-08-19T10:52:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -62,7 +70,7 @@
 - headline: PODCAST: US-Iran ceasefire expires, Tupac murder trial and microdramas - Reuters
 - source: Reuters
 - published_at: `2026-08-19T07:11:08+00:00`
-- importance_score: `96`
+- importance_score: `95`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
