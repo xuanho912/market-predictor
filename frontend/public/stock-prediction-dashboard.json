@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-08-20T04:22:23.321320+00:00",
+  "generated_at": "2026-08-20T13:14:37.407501+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-08-20T04:22:23.329629+00:00",
+    "generated_at": "2026-08-20T13:14:37.415867+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 193,
     "risk_score_effectiveness": {
@@ -168,7 +168,7 @@
       "single_stock_options"
     ],
     "stock_data_quality_score": 100.0,
-    "strongest_stock_symbol": "NVDA",
+    "strongest_stock_symbol": "TSLA",
     "supported_symbols": 4,
     "validation_status": "not_yet_validated",
     "watchlist_size": 4
@@ -278,7 +278,7 @@
           ],
           "major_company_headline": "Nuclear Earnings Season: A Tale of Two Markets – Profitable Operators vs. Speculative Start-Ups",
           "news_count_24h": 0,
-          "news_count_72h": 1,
+          "news_count_72h": 0,
           "news_risk_score": 20.0,
           "news_sentiment": "neutral"
         },
@@ -714,9 +714,9 @@
       },
       "market_context_for_stock": {
         "benchmark": "SPY",
-        "benchmark_edge_status": "MODERATE_EDGE",
-        "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.3204,
+        "benchmark_edge_status": "RISK_WARNING",
+        "benchmark_market_state": "oversold_bounce",
+        "benchmark_primary_probability": 0.3176,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -2431,6 +2431,18 @@
           "event_risk_flag": "high",
           "headlines": [
             {
+              "datetime": 1787215538,
+              "headline": "Nvidia FQ2 Preview: I'm Seeing A 50%+ FCF Discount",
+              "source": "SeekingAlpha",
+              "url": "https://finnhub.io/api/news?id=b77380b3f8123ad2ebbb78612bce447fe5a9fecb805b09a4d0898abf53ad90f8"
+            },
+            {
+              "datetime": 1787192400,
+              "headline": "Investing In The Building Blocks Of The Humanoid Revolution - Part 2 (The Brain)",
+              "source": "SeekingAlpha",
+              "url": "https://finnhub.io/api/news?id=27169b49a8a67e1d061d882987a133367971362d000faef12ba8ecd56b2edb02"
+            },
+            {
               "datetime": 1787166605,
               "headline": "Which dow jones stocks are moving on Wednesday?",
               "source": "ChartMill",
@@ -2465,24 +2477,12 @@
               "headline": "These dow jones stocks are moving in today's session",
               "source": "ChartMill",
               "url": "https://finnhub.io/api/news?id=a53cd1f5883972a76c50bbb639d04690497dfa9d3cc4c64befd2cd557bc9cbf6"
-            },
-            {
-              "datetime": 1787147454,
-              "headline": "Marvell Won Alphabet's Deal; Everything Changes (Upgrade)",
-              "source": "SeekingAlpha",
-              "url": "https://finnhub.io/api/news?id=3d43c746f0dbb97241e734fe4bda17e4e10a8f572faa86b8719fb158727659c3"
-            },
-            {
-              "datetime": 1787146516,
-              "headline": "8 Information Technology Stocks With Whale Alerts In Today’s Session",
-              "source": "Benzinga",
-              "url": "https://finnhub.io/api/news?id=de83141ce2b10055fe3032abde94416522ff165022812de1ec89e1dfbfd67b59"
             }
           ],
-          "major_company_headline": "Which dow jones stocks are moving on Wednesday?",
-          "news_count_24h": 20,
+          "major_company_headline": "Nvidia FQ2 Preview: I'm Seeing A 50%+ FCF Discount",
+          "news_count_24h": 10,
           "news_count_72h": 20,
-          "news_risk_score": 100.0,
+          "news_risk_score": 90.0,
           "news_sentiment": "positive"
         },
         "price_trend": {
@@ -2920,9 +2920,9 @@
       },
       "market_context_for_stock": {
         "benchmark": "QQQ",
-        "benchmark_edge_status": "WEAK_EDGE",
+        "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.2992,
+        "benchmark_primary_probability": 0.3163,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -3986,7 +3986,7 @@
           {
             "affected_ticker": "NVDA",
             "alert_level": "NO_ALERT",
-            "alert_score": 8.59,
+            "alert_score": 7.9,
             "alert_type": "Stock Bounce Setup",
             "confirmation_needed": [
               "价格站上主路径确认价",
@@ -4339,7 +4339,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Which dow jones stocks are moving on Wednesday?",
+              "公司新闻已接入: Nvidia FQ2 Preview: I'm Seeing A 50%+ FCF Discount",
               "新闻情绪偏正",
               "未来 30 天存在财报催化：2026-08-26",
               "增长数据具备 EPS 上修叙事基础"
@@ -4456,7 +4456,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "Which dow jones stocks are moving on Wednesday?",
+          "catalyst": "Nvidia FQ2 Preview: I'm Seeing A 50%+ FCF Discount",
           "expectation_gap": [
             "收入增长较强，具备正向预期差基础",
             "EPS 增长较强，可能支持盈利上修叙事",
@@ -4524,8 +4524,8 @@
           },
           "news_event": {
             "evidence": "公司新闻或财报事件风险上升",
-            "reason": "risk_score=100.0; earnings_date=2026-08-26",
-            "score": 100,
+            "reason": "risk_score=90.0; earnings_date=2026-08-26",
+            "score": 78.8,
             "status": "conflicting"
           },
           "options_volatility": {
@@ -4560,7 +4560,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 50.08,
+        "stock_confluence_score": 48.54,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [],
         "validation_status": "not_yet_validated"
@@ -4660,7 +4660,7 @@
           ],
           "major_company_headline": "Terrestrial Energy shares are trading lower. The company reported Q4 financial results.",
           "news_count_24h": 0,
-          "news_count_72h": 2,
+          "news_count_72h": 1,
           "news_risk_score": 20.0,
           "news_sentiment": "neutral"
         },
@@ -5084,9 +5084,9 @@
       },
       "market_context_for_stock": {
         "benchmark": "IWM",
-        "benchmark_edge_status": "MODERATE_EDGE",
+        "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.3162,
+        "benchmark_primary_probability": 0.314,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -6745,8 +6745,7 @@
       "conflicting_signals": [
         "大盘背景对个股路径形成压力。",
         "个股相对强弱弱于基准。",
-        "价格仍在 50d 均线下方。",
-        "公司新闻或财报事件风险较高。"
+        "价格仍在 50d 均线下方。"
       ],
       "current_price": 351.1199951171875,
       "data_quality": {
@@ -6800,10 +6799,10 @@
           "company_news": "available",
           "earnings": "available",
           "earnings_date": null,
-          "earnings_risk_flag": "high",
+          "earnings_risk_flag": "medium",
           "earnings_within_30d": false,
           "earnings_within_7d": false,
-          "event_risk_flag": "high",
+          "event_risk_flag": "medium",
           "headlines": [
             {
               "datetime": 1787172468,
@@ -6855,9 +6854,9 @@
             }
           ],
           "major_company_headline": "Tracking Cathie Wood's ARK Invest 13F Portfolio - Q2 2026 Update",
-          "news_count_24h": 9,
+          "news_count_24h": 5,
           "news_count_72h": 20,
-          "news_risk_score": 92.0,
+          "news_risk_score": 60.0,
           "news_sentiment": "neutral"
         },
         "price_trend": {
@@ -6886,7 +6885,7 @@
           "stock_vs_benchmark_20d": -0.0764,
           "stock_vs_benchmark_60d": -0.1738,
           "stock_vs_qqq_20d": -0.0764,
-          "stock_vs_sector_20d": -0.0959,
+          "stock_vs_sector_20d": -0.1013,
           "stock_vs_spy_20d": -0.0902
         },
         "volatility": {
@@ -6911,69 +6910,69 @@
         "forecast_price_table": {
           "10d": {
             "confidence_level": "low",
-            "expected_price": 346.46,
-            "expected_return": -0.0133,
-            "lower_confidence_price": 329.2,
-            "primary_scenario_price": 341.13,
-            "probability_of_reaching_primary_price": 0.2718,
+            "expected_price": 346.62,
+            "expected_return": -0.0128,
+            "lower_confidence_price": 329.36,
+            "primary_scenario_price": 339.47,
+            "probability_of_reaching_primary_price": 0.2813,
             "risk_scenario_price": 345.57,
-            "secondary_scenario_price": 339.47,
-            "upper_confidence_price": 363.72
+            "secondary_scenario_price": 341.13,
+            "upper_confidence_price": 363.88
           },
           "1d": {
             "confidence_level": "low",
-            "expected_price": 350.43,
-            "expected_return": -0.002,
-            "lower_confidence_price": 344.97,
-            "primary_scenario_price": 350.23,
-            "probability_of_reaching_primary_price": 0.2718,
+            "expected_price": 350.46,
+            "expected_return": -0.0019,
+            "lower_confidence_price": 345.0,
+            "primary_scenario_price": 348.9,
+            "probability_of_reaching_primary_price": 0.2813,
             "risk_scenario_price": 349.79,
-            "secondary_scenario_price": 348.9,
-            "upper_confidence_price": 355.89
+            "secondary_scenario_price": 350.23,
+            "upper_confidence_price": 355.92
           },
           "20d": {
             "confidence_level": "low",
-            "expected_price": 345.72,
-            "expected_return": -0.0154,
-            "lower_confidence_price": 321.32,
-            "primary_scenario_price": 339.47,
-            "probability_of_reaching_primary_price": 0.2718,
+            "expected_price": 345.9,
+            "expected_return": -0.0149,
+            "lower_confidence_price": 321.49,
+            "primary_scenario_price": 335.81,
+            "probability_of_reaching_primary_price": 0.2813,
             "risk_scenario_price": 345.02,
-            "secondary_scenario_price": 335.81,
-            "upper_confidence_price": 370.13
+            "secondary_scenario_price": 339.47,
+            "upper_confidence_price": 370.31
           },
           "3d": {
             "confidence_level": "low",
-            "expected_price": 349.23,
-            "expected_return": -0.0054,
-            "lower_confidence_price": 339.78,
-            "primary_scenario_price": 348.01,
-            "probability_of_reaching_primary_price": 0.2718,
+            "expected_price": 349.32,
+            "expected_return": -0.0051,
+            "lower_confidence_price": 339.87,
+            "primary_scenario_price": 345.79,
+            "probability_of_reaching_primary_price": 0.2813,
             "risk_scenario_price": 347.79,
-            "secondary_scenario_price": 345.79,
-            "upper_confidence_price": 358.69
+            "secondary_scenario_price": 348.01,
+            "upper_confidence_price": 358.77
           },
           "5d": {
             "confidence_level": "low",
-            "expected_price": 348.09,
-            "expected_return": -0.0086,
-            "lower_confidence_price": 335.88,
-            "primary_scenario_price": 345.35,
-            "probability_of_reaching_primary_price": 0.2718,
+            "expected_price": 348.21,
+            "expected_return": -0.0083,
+            "lower_confidence_price": 336.0,
+            "primary_scenario_price": 343.13,
+            "probability_of_reaching_primary_price": 0.2813,
             "risk_scenario_price": 346.68,
-            "secondary_scenario_price": 343.13,
-            "upper_confidence_price": 360.29
+            "secondary_scenario_price": 345.35,
+            "upper_confidence_price": 360.41
           },
           "60d": {
             "confidence_level": "low",
-            "expected_price": 345.63,
-            "expected_return": -0.0156,
-            "lower_confidence_price": 303.36,
-            "primary_scenario_price": 338.36,
-            "probability_of_reaching_primary_price": 0.2718,
+            "expected_price": 345.79,
+            "expected_return": -0.0152,
+            "lower_confidence_price": 303.51,
+            "primary_scenario_price": 332.26,
+            "probability_of_reaching_primary_price": 0.2813,
             "risk_scenario_price": 346.13,
-            "secondary_scenario_price": 332.26,
-            "upper_confidence_price": 387.91
+            "secondary_scenario_price": 338.36,
+            "upper_confidence_price": 388.07
           }
         },
         "trigger_levels": {
@@ -7284,9 +7283,9 @@
       },
       "market_context_for_stock": {
         "benchmark": "QQQ",
-        "benchmark_edge_status": "WEAK_EDGE",
+        "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.2992,
+        "benchmark_primary_probability": 0.3163,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -7303,43 +7302,43 @@
         "all_scenarios": [
           {
             "confidence": "low",
-            "label": "个股失败反抽",
-            "probability": 0.2718,
-            "reason": "反抽缺乏成交量/相对强弱确认或大盘风险上升时，失败反抽权重上升。",
-            "scenario": "stock_failed_bounce"
-          },
-          {
-            "confidence": "low",
             "label": "个股下跌延续",
-            "probability": 0.2643,
+            "probability": 0.2813,
             "reason": "价格低于关键均线、相对弱势或大盘 risk-off 时，下跌延续权重上升。",
             "scenario": "stock_downside_continuation"
           },
           {
             "confidence": "low",
-            "label": "个股事件风险",
-            "probability": 0.1395,
-            "reason": "个股新闻、财报、估值或期权数据缺失时，事件风险保持为独立风险路径。",
-            "scenario": "stock_event_risk"
+            "label": "个股失败反抽",
+            "probability": 0.2652,
+            "reason": "反抽缺乏成交量/相对强弱确认或大盘风险上升时，失败反抽权重上升。",
+            "scenario": "stock_failed_bounce"
           },
           {
             "confidence": "low",
             "label": "个股震荡",
-            "probability": 0.1359,
+            "probability": 0.1446,
             "reason": "信号分歧较大时，震荡路径权重上升。",
             "scenario": "stock_sideways"
           },
           {
             "confidence": "low",
+            "label": "个股事件风险",
+            "probability": 0.1083,
+            "reason": "个股新闻、财报、估值或期权数据缺失时，事件风险保持为独立风险路径。",
+            "scenario": "stock_event_risk"
+          },
+          {
+            "confidence": "low",
             "label": "个股反抽",
-            "probability": 0.0979,
+            "probability": 0.1041,
             "reason": "结合回撤、成交量和大盘背景，短中期反抽权重较高；当前市场背景为 risk_off_pressure。",
             "scenario": "stock_bounce"
           },
           {
             "confidence": "low",
             "label": "个股趋势修复",
-            "probability": 0.0906,
+            "probability": 0.0964,
             "reason": "相对强弱和中期趋势修复信号较强时，该路径上升。",
             "scenario": "stock_trend_repair"
           }
@@ -7348,31 +7347,30 @@
         "conflicting_signals": [
           "大盘背景对个股路径形成压力。",
           "个股相对强弱弱于基准。",
-          "价格仍在 50d 均线下方。",
-          "公司新闻或财报事件风险较高。"
+          "价格仍在 50d 均线下方。"
         ],
         "primary": {
           "confidence": "low",
-          "label": "个股失败反抽",
-          "probability": 0.2718,
-          "reason": "反抽缺乏成交量/相对强弱确认或大盘风险上升时，失败反抽权重上升。",
-          "scenario": "stock_failed_bounce"
+          "label": "个股下跌延续",
+          "probability": 0.2813,
+          "reason": "价格低于关键均线、相对弱势或大盘 risk-off 时，下跌延续权重上升。",
+          "scenario": "stock_downside_continuation"
         },
-        "probability_gap": 0.0075,
+        "probability_gap": 0.0162,
         "ranking_note": "Stock scenario probabilities follow market -> sector -> stock hierarchy. Market risk sets confidence, sector/industry filters the setup, and stock evidence decides the final path. They are not validated alpha and not execution advice.",
         "risk": {
           "confidence": "low",
           "label": "个股事件风险",
-          "probability": 0.1395,
+          "probability": 0.1083,
           "reason": "个股新闻、财报、估值或期权数据缺失时，事件风险保持为独立风险路径。",
           "scenario": "stock_event_risk"
         },
         "secondary": {
           "confidence": "low",
-          "label": "个股下跌延续",
-          "probability": 0.2643,
-          "reason": "价格低于关键均线、相对弱势或大盘 risk-off 时，下跌延续权重上升。",
-          "scenario": "stock_downside_continuation"
+          "label": "个股失败反抽",
+          "probability": 0.2652,
+          "reason": "反抽缺乏成交量/相对强弱确认或大盘风险上升时，失败反抽权重上升。",
+          "scenario": "stock_failed_bounce"
         },
         "supporting_signals": [
           "价格站在 20d 均线上方。",
@@ -7630,12 +7628,12 @@
           null,
           null,
           351.1199951171875,
-          350.43,
-          349.23,
-          348.09,
-          346.46,
-          345.72,
-          345.63
+          350.46,
+          349.32,
+          348.21,
+          346.62,
+          345.9,
+          345.79
         ],
         "historical_price": [
           402.51,
@@ -7768,24 +7766,24 @@
         "path_ranking": {
           "primary": {
             "confidence": "low",
-            "label": "个股失败反抽",
-            "probability": 0.2718,
-            "reason": "反抽缺乏成交量/相对强弱确认或大盘风险上升时，失败反抽权重上升。",
-            "scenario": "stock_failed_bounce"
+            "label": "个股下跌延续",
+            "probability": 0.2813,
+            "reason": "价格低于关键均线、相对弱势或大盘 risk-off 时，下跌延续权重上升。",
+            "scenario": "stock_downside_continuation"
           },
           "risk": {
             "confidence": "low",
             "label": "个股事件风险",
-            "probability": 0.1395,
+            "probability": 0.1083,
             "reason": "个股新闻、财报、估值或期权数据缺失时，事件风险保持为独立风险路径。",
             "scenario": "stock_event_risk"
           },
           "secondary": {
             "confidence": "low",
-            "label": "个股下跌延续",
-            "probability": 0.2643,
-            "reason": "价格低于关键均线、相对弱势或大盘 risk-off 时，下跌延续权重上升。",
-            "scenario": "stock_downside_continuation"
+            "label": "个股失败反抽",
+            "probability": 0.2652,
+            "reason": "反抽缺乏成交量/相对强弱确认或大盘风险上升时，失败反抽权重上升。",
+            "scenario": "stock_failed_bounce"
           }
         },
         "primary_path": [
@@ -7909,12 +7907,12 @@
           null,
           null,
           351.1199951171875,
-          350.23,
-          348.01,
-          345.35,
-          341.13,
+          348.9,
+          345.79,
+          343.13,
           339.47,
-          338.36
+          335.81,
+          332.26
         ],
         "risk_path": [
           null,
@@ -8165,12 +8163,12 @@
           null,
           null,
           351.1199951171875,
-          348.9,
-          345.79,
-          343.13,
+          350.23,
+          348.01,
+          345.35,
+          341.13,
           339.47,
-          335.81,
-          332.26
+          338.36
         ]
       },
       "stock_alerts": {
@@ -8235,7 +8233,7 @@
           {
             "affected_ticker": "TSLA",
             "alert_level": "NO_ALERT",
-            "alert_score": 31.81,
+            "alert_score": 31.91,
             "alert_type": "Stock Failed Bounce Risk",
             "confirmation_needed": [
               "价格无法站上确认价",
@@ -8293,7 +8291,7 @@
           {
             "affected_ticker": "TSLA",
             "alert_level": "NO_ALERT",
-            "alert_score": 23.78,
+            "alert_score": 24.8,
             "alert_type": "Stock Breakdown Warning",
             "confirmation_needed": [
               "跌破 breakdown level",
@@ -8351,7 +8349,7 @@
           {
             "affected_ticker": "TSLA",
             "alert_level": "NO_ALERT",
-            "alert_score": 7.67,
+            "alert_score": 5.96,
             "alert_type": "Earnings/Event Risk",
             "confirmation_needed": [
               "接入真实公司新闻/财报日期",
@@ -8408,7 +8406,7 @@
           {
             "affected_ticker": "TSLA",
             "alert_level": "NO_ALERT",
-            "alert_score": 5.38,
+            "alert_score": 5.73,
             "alert_type": "Stock Bounce Setup",
             "confirmation_needed": [
               "价格站上主路径确认价",
@@ -8468,7 +8466,7 @@
           {
             "affected_ticker": "TSLA",
             "alert_level": "NO_ALERT",
-            "alert_score": 4.53,
+            "alert_score": 4.82,
             "alert_type": "Stock Breakout Watch",
             "confirmation_needed": [
               "站上 breakout level",
@@ -8787,13 +8785,13 @@
         "expected_alpha": {
           "benchmark": "QQQ",
           "downside_risk_60d": 0.2058,
-          "expected_return_20d": -0.0154,
-          "expected_return_60d": -0.0156,
+          "expected_return_20d": -0.0149,
+          "expected_return_60d": -0.0152,
           "max_drawdown_risk_20d": 0.0695,
           "max_drawdown_risk_60d": 0.2058,
           "outperformance_probability_20d": 0.3189,
-          "risk_reward_ratio": 0.23,
-          "upside_potential_60d": 0.0477
+          "risk_reward_ratio": 0.25,
+          "upside_potential_60d": 0.0507
         },
         "forecast_grade": "weak_or_no_alpha_edge",
         "missing_data": [
@@ -8804,13 +8802,12 @@
         "purpose": "Estimate whether the stock has positive expectation-gap alpha versus its benchmark over 20d/60d horizons.",
         "risk_penalty": {
           "max_points": 30,
-          "points": 26.5,
+          "points": 21.5,
           "reasons": [
             "估值处于高位",
             "EPS 增长为负",
             "价格低于 200d 均线",
             "大盘风险背景压制",
-            "财报/事件风险偏高",
             "关键个股数据缺失：single_stock_options"
           ]
         },
@@ -8830,7 +8827,7 @@
             "估值处于高位"
           ],
           "main_logic": "高 beta 成长股逻辑：交付/毛利率预期、估值扩张、风险偏好和技术资金确认。",
-          "primary_path": "stock_failed_bounce",
+          "primary_path": "stock_downside_continuation",
           "valuation_repricing": "估值扩张证据不足或存在压力"
         },
         "total_score": 0,
@@ -8842,13 +8839,12 @@
           "大盘风险背景压低个股置信度",
           "个股弱于所属板块",
           "个股相对弱于大盘/benchmark",
-          "公司新闻或财报事件风险上升",
           "历史相似结构与主路径冲突",
           "个股 Alpha 评分已接入",
           "主路径和第二路径差距较小"
         ],
         "confluence_level": "weak",
-        "dominant_path": "stock_failed_bounce",
+        "dominant_path": "stock_downside_continuation",
         "hierarchy": {
           "market": "risk_background",
           "sector": "filter",
@@ -8884,10 +8880,10 @@
             "status": "conflicting"
           },
           "news_event": {
-            "evidence": "公司新闻或财报事件风险上升",
-            "reason": "risk_score=92.0; earnings_date=None",
-            "score": 74.44,
-            "status": "conflicting"
+            "evidence": "公司新闻源已接入",
+            "reason": "Tracking Cathie Wood's ARK Invest 13F Portfolio - Q2 2026 Update",
+            "score": 64.2,
+            "status": "neutral"
           },
           "options_volatility": {
             "evidence": "个股期权/隐含波动率未完整接入",
@@ -8909,7 +8905,7 @@
           },
           "sector_context": {
             "evidence": "个股弱于所属板块",
-            "reason": "TSLA vs XLY: -9.59%",
+            "reason": "TSLA vs XLY: -10.13%",
             "score": 30,
             "status": "conflicting"
           },
@@ -8921,7 +8917,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 34.2,
+        "stock_confluence_score": 33.46,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "价格结构支持主路径"
@@ -8952,7 +8948,7 @@
       "top_candidate": "SMR",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-08-20T04:22:23.321603+00:00",
+    "generated_at": "2026-08-20T13:14:37.407834+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -9061,7 +9057,7 @@
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 65.64,
         "company_name": "NVIDIA Corp",
-        "confluence_score": 50.08,
+        "confluence_score": 48.54,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9078,7 +9074,7 @@
           "mid": 217.27,
           "range_pct": 0.0294
         },
-        "final_radar_score": 52.87,
+        "final_radar_score": 52.68,
         "forecast_date": "2026-08-19",
         "invalidation_level": 190.01,
         "last_close": 217.55999755859375,
@@ -9219,18 +9215,18 @@
       {
         "alpha_fields": {
           "alpha_score": 35.0,
-          "expected_return_60d": -0.0156,
+          "expected_return_60d": -0.0152,
           "forecast_grade": "weak_or_no_alpha_edge",
           "main_logic": "高 beta 成长股逻辑：交付/毛利率预期、估值扩张、风险偏好和技术资金确认。",
           "outperformance_probability_20d": 0.3189,
-          "risk_reward_ratio": 0.23
+          "risk_reward_ratio": 0.25
         },
         "alpha_quality_score": 35.0,
         "as_of": "2026-08-19",
-        "candidate_type": "failed_bounce_risk",
-        "catalyst_score": 63.37,
+        "candidate_type": "downside_continuation",
+        "catalyst_score": 61.5,
         "company_name": "Tesla Inc",
-        "confluence_score": 34.2,
+        "confluence_score": 33.46,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9238,16 +9234,16 @@
         "data_status": "available",
         "downside_risk_level": 297.38,
         "elasticity_score": 66.55,
-        "expected_next_day_high": 355.89,
-        "expected_next_day_low": 344.97,
-        "expected_next_day_mid": 350.43,
+        "expected_next_day_high": 355.92,
+        "expected_next_day_low": 345.0,
+        "expected_next_day_mid": 350.46,
         "expected_next_day_range": {
-          "high": 355.89,
-          "low": 344.97,
-          "mid": 350.43,
+          "high": 355.92,
+          "low": 345.0,
+          "mid": 350.46,
           "range_pct": 0.0311
         },
-        "final_radar_score": 44.06,
+        "final_radar_score": 43.79,
         "forecast_date": "2026-08-19",
         "invalidation_level": 297.38,
         "last_close": 351.1199951171875,
@@ -9256,7 +9252,7 @@
           "大盘风险背景压低个股置信度",
           "个股弱于所属板块",
           "个股相对弱于大盘/benchmark",
-          "公司新闻或财报事件风险上升"
+          "历史相似结构与主路径冲突"
         ],
         "main_supporting_evidence": [
           "价格结构支持主路径"
@@ -9268,11 +9264,11 @@
           "company_news": "available",
           "earnings": "available"
         },
-        "next_day_move_probability": 0.6516,
-        "one_line_reason": "failed_bounce_risk: Alpha 35 / 弹性 67 / 成交量 64 / 相对强弱 7 / 催化 63 / 大盘 risk_off_pressure / 板块 conflicting",
+        "next_day_move_probability": 0.6479,
+        "one_line_reason": "downside_continuation: Alpha 35 / 弹性 67 / 成交量 64 / 相对强弱 7 / 催化 61 / 大盘 risk_off_pressure / 板块 conflicting",
         "outperformance_probability_20d": 0.3189,
-        "primary_probability": 0.2718,
-        "primary_scenario": "stock_failed_bounce",
+        "primary_probability": 0.2813,
+        "primary_scenario": "stock_downside_continuation",
         "radar_level": "WATCH",
         "rank": 4,
         "relative_strength_fields": {
@@ -9280,13 +9276,13 @@
           "stock_vs_QQQ_20d": -0.0764,
           "stock_vs_SPY_20d": -0.0902,
           "stock_vs_benchmark_20d": -0.0764,
-          "stock_vs_sector_20d": -0.0959
+          "stock_vs_sector_20d": -0.1013
         },
         "relative_strength_score": 6.86,
-        "risk_reward_ratio": 0.23,
+        "risk_reward_ratio": 0.25,
         "risk_scenario": "stock_event_risk",
-        "risk_score": 54.53,
-        "secondary_scenario": "stock_downside_continuation",
+        "risk_score": 54.91,
+        "secondary_scenario": "stock_failed_bounce",
         "sector_context": "conflicting",
         "squeeze_proxy_score": 61.27,
         "ticker": "TSLA",

@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-08-20T04:22:23.321320+00:00`
+Generated at: `2026-08-20T13:14:37.407501+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -9,7 +9,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 
 - supported_symbols: `4`
 - watchlist_size: `4`
-- strongest_stock_symbol: `NVDA`
+- strongest_stock_symbol: `TSLA`
 - stock_data_quality_score: `100.0`
 - validation_status: `not_yet_validated`
 - missing_high_value_data: `['single_stock_options']`
@@ -25,7 +25,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `27.7%`
 - secondary: `stock_event_risk` / `17.7%`
 - risk: `stock_downside_continuation` / `17.5%`
-- stock_confluence_score: `50.08` / `mixed`
+- stock_confluence_score: `48.54` / `mixed`
 - stock_alpha_score_v1: `45.5` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `57.1%`
 - 60d_expected_return: `-0.9%`
@@ -51,14 +51,14 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - status: `available`
 - current_price: `351.12`
 - market_context: `risk_off_pressure`
-- primary: `stock_failed_bounce` / `27.2%`
-- secondary: `stock_downside_continuation` / `26.4%`
-- risk: `stock_event_risk` / `14.0%`
-- stock_confluence_score: `34.2` / `weak`
+- primary: `stock_downside_continuation` / `28.1%`
+- secondary: `stock_failed_bounce` / `26.5%`
+- risk: `stock_event_risk` / `10.8%`
+- stock_confluence_score: `33.46` / `weak`
 - stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `31.9%`
-- 60d_expected_return: `-1.6%`
-- risk_reward_ratio: `0.23`
+- 60d_expected_return: `-1.5%`
+- risk_reward_ratio: `0.25`
 - strongest_alert: `Relative Weakness Alert` / `WATCH` / `47.02`
 - historical_analog_support: `conflicting` / samples `10`
 - validation_status: `not_yet_validated`
