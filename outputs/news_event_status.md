@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-20T20:54:09.787761+00:00`
+- generated_at: `2026-08-20T21:58:16.614082+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `11`
+- major_event_count: `9`
 - event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -83,24 +83,16 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Trump warns of economic consequences for any country that supports Iran - Reuters
-- source: Reuters
-- published_at: `2026-08-20T02:29:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil hits more than three-week high as Trump threatens Iran-related retaliation - Reuters
-- source: Reuters
-- published_at: `2026-08-20T01:11:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
 - headline: US warns Siemens devices can be hacked amid fears Iran is breaching water plants - Reuters
 - source: Reuters
 - published_at: `2026-08-19T20:03:42+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: UAE stocks fall after missile scare; Qatar at over one-year low - Reuters
+- source: Reuters
+- published_at: `2026-08-19T13:16:33+00:00`
 - importance_score: `100`
 - confidence: `medium`
