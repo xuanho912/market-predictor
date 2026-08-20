@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-20T02:34:10.016454+00:00`
+- generated_at: `2026-08-20T04:22:10.479790+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `8`
-- event_detection_confidence: `71`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -65,6 +65,14 @@
 - importance_score: `100`
 - confidence: `medium`
 
+### geopolitical_risk_escalation / risk_off
+
+- headline: UAE says Iran fired 2 missiles at country as war drags on
+- source: Bloomberg
+- published_at: `2026-08-19T03:53:11+00:00`
+- importance_score: `100`
+- confidence: `high`
+
 ### geopolitical_risk_easing / risk_on
 
 - headline: PODCAST: US-Iran ceasefire expires, Tupac murder trial and microdramas - Reuters
@@ -78,13 +86,5 @@
 - headline: UAE says two missiles detected earlier were launched from Iran - Reuters
 - source: Reuters
 - published_at: `2026-08-18T16:51:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: At a Gaza zoo, war takes its toll on the animals - Reuters
-- source: Reuters
-- published_at: `2026-08-18T15:05:35+00:00`
 - importance_score: `100`
 - confidence: `medium`
