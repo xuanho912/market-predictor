@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-08-20T23:15:21.961260+00:00",
+  "generated_at": "2026-08-20T23:36:56.869857+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-08-20T23:15:21.982967+00:00",
+    "generated_at": "2026-08-20T23:36:56.897090+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 197,
     "risk_score_effectiveness": {
@@ -713,13 +713,13 @@
       "market_context_for_stock": {
         "benchmark": "SPY",
         "benchmark_edge_status": "RISK_WARNING",
-        "benchmark_market_state": "failed_bounce_risk",
-        "benchmark_primary_probability": 0.3646,
+        "benchmark_market_state": "oversold_bounce",
+        "benchmark_primary_probability": 0.3295,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
         "risk_alert_level": "WARNING",
-        "risk_alert_type": "Bounce Setup Alert",
+        "risk_alert_type": "Failed Bounce Alert",
         "symbol": "CEG"
       },
       "missing_data": [
@@ -2920,7 +2920,7 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.352,
+        "benchmark_primary_probability": 0.3332,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -5092,7 +5092,7 @@
         "benchmark": "IWM",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.3106,
+        "benchmark_primary_probability": 0.3105,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -6891,7 +6891,7 @@
           "stock_vs_benchmark_20d": 0.0522,
           "stock_vs_benchmark_60d": -0.1775,
           "stock_vs_qqq_20d": 0.0522,
-          "stock_vs_sector_20d": 0.0068,
+          "stock_vs_sector_20d": 0.0638,
           "stock_vs_spy_20d": 0.0465
         },
         "volatility": {
@@ -7302,7 +7302,7 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.352,
+        "benchmark_primary_probability": 0.3332,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -8743,27 +8743,28 @@
           "growth": {
             "evidence": [
               "收入同比增长为正 11.8%",
-              "EPS 增长为负 -37.7%"
+              "EPS 增长为负 -37.7%",
+              "相对板块走强，行业需求/资金环境偏支持"
             ],
             "max_points": 25,
             "missing_fields": [],
             "name": "growth",
-            "points": 4.0,
-            "score_pct": 16.0,
+            "points": 8.0,
+            "score_pct": 32.0,
             "status": "weak"
           },
           "market_industry": {
             "evidence": [
               "大盘背景压制：risk_off_pressure",
-              "板块过滤中性",
+              "相对板块走强：XLY",
               "20d 跑赢 benchmark"
             ],
             "max_points": 10,
             "missing_fields": [],
             "name": "market_industry",
-            "points": 4.0,
-            "score_pct": 40.0,
-            "status": "weak"
+            "points": 6.0,
+            "score_pct": 60.0,
+            "status": "neutral"
           },
           "quality": {
             "evidence": [
@@ -8809,7 +8810,7 @@
           "expected_return_60d": -0.0098,
           "max_drawdown_risk_20d": 0.0702,
           "max_drawdown_risk_60d": 0.2193,
-          "outperformance_probability_20d": 0.4218,
+          "outperformance_probability_20d": 0.4318,
           "risk_reward_ratio": 0.27,
           "upside_potential_60d": 0.0603
         },
@@ -8851,7 +8852,7 @@
           "primary_path": "stock_failed_bounce",
           "valuation_repricing": "估值扩张证据不足或存在压力"
         },
-        "total_score": 0,
+        "total_score": 2.5,
         "validation_status": "not_yet_validated",
         "version": "stock_alpha_score_v1"
       },
@@ -8876,8 +8877,8 @@
         "module_scores": {
           "alpha_quality": {
             "evidence": "个股 Alpha 评分已接入",
-            "reason": "score=0.0; grade=weak_or_no_alpha_edge; benchmark=QQQ",
-            "score": 0,
+            "reason": "score=2.5; grade=weak_or_no_alpha_edge; benchmark=QQQ",
+            "score": 2.5,
             "status": "conflicting"
           },
           "fundamentals_earnings": {
@@ -8923,10 +8924,10 @@
             "status": "neutral"
           },
           "sector_context": {
-            "evidence": "个股相对板块没有明显优势",
-            "reason": "TSLA vs XLY: 0.68%",
-            "score": 52,
-            "status": "neutral"
+            "evidence": "个股跑赢所属板块",
+            "reason": "TSLA vs XLY: 6.38%",
+            "score": 72,
+            "status": "supportive"
           },
           "volume_structure": {
             "evidence": "成交量结构中性",
@@ -8936,9 +8937,10 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 42.11,
+        "stock_confluence_score": 39.97,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
+          "个股跑赢所属板块",
           "历史相似结构支持主路径"
         ],
         "validation_status": "not_yet_validated"
@@ -8962,12 +8964,12 @@
       "top3_candidates": [
         "SMR",
         "NVDA",
-        "TSLA"
+        "CEG"
       ],
       "top_candidate": "SMR",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-08-20T23:15:21.976460+00:00",
+    "generated_at": "2026-08-20T23:36:56.888926+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -9149,91 +9151,6 @@
       {
         "alpha_fields": {
           "alpha_score": 35.0,
-          "expected_return_60d": -0.0098,
-          "forecast_grade": "weak_or_no_alpha_edge",
-          "main_logic": "高 beta 成长股逻辑：交付/毛利率预期、估值扩张、风险偏好和技术资金确认。",
-          "outperformance_probability_20d": 0.4218,
-          "risk_reward_ratio": 0.27
-        },
-        "alpha_quality_score": 35.0,
-        "as_of": "2026-08-20",
-        "candidate_type": "failed_bounce_risk",
-        "catalyst_score": 63.96,
-        "company_name": "Tesla Inc",
-        "confluence_score": 42.11,
-        "data_missing": [
-          "single_stock_options"
-        ],
-        "data_quality": 87.5,
-        "data_status": "available",
-        "downside_risk_level": 297.38,
-        "elasticity_score": 66.58,
-        "expected_next_day_high": 350.05,
-        "expected_next_day_low": 339.22,
-        "expected_next_day_mid": 344.63,
-        "expected_next_day_range": {
-          "high": 350.05,
-          "low": 339.22,
-          "mid": 344.63,
-          "range_pct": 0.0314
-        },
-        "final_radar_score": 50.58,
-        "forecast_date": "2026-08-20",
-        "invalidation_level": 297.38,
-        "last_close": 345.1300048828125,
-        "logo": null,
-        "main_conflicting_evidence": [
-          "大盘风险背景压低个股置信度",
-          "公司新闻或财报事件风险上升",
-          "个股 Alpha 评分已接入",
-          "主路径和第二路径差距较小"
-        ],
-        "main_supporting_evidence": [
-          "历史相似结构支持主路径"
-        ],
-        "market_context": "risk_off_pressure",
-        "model_version": "stock_baseline_v1",
-        "news_fields": {
-          "catalyst_note": "catalyst data present or event risk proxy elevated",
-          "company_news": "available",
-          "earnings": "available"
-        },
-        "next_day_move_probability": 0.6388,
-        "one_line_reason": "failed_bounce_risk: Alpha 35 / 弹性 67 / 成交量 58 / 相对强弱 53 / 催化 64 / 大盘 risk_off_pressure / 板块 neutral",
-        "outperformance_probability_20d": 0.4218,
-        "primary_probability": 0.2581,
-        "primary_scenario": "stock_failed_bounce",
-        "radar_level": "WATCH",
-        "rank": 3,
-        "relative_strength_fields": {
-          "relative_strength_rank": 52.81,
-          "stock_vs_QQQ_20d": 0.0522,
-          "stock_vs_SPY_20d": 0.0465,
-          "stock_vs_benchmark_20d": 0.0522,
-          "stock_vs_sector_20d": 0.0068
-        },
-        "relative_strength_score": 52.81,
-        "risk_reward_ratio": 0.27,
-        "risk_scenario": "stock_event_risk",
-        "risk_score": 51.62,
-        "secondary_scenario": "stock_downside_continuation",
-        "sector_context": "neutral",
-        "squeeze_proxy_score": 48.57,
-        "ticker": "TSLA",
-        "upside_trigger_level": 351.62,
-        "validation_status": "not_yet_validated",
-        "volume_anomaly_score": 57.86,
-        "volume_fields": {
-          "abnormal_volume_flag": true,
-          "relative_volume_20d": 0.8705,
-          "relative_volume_5d": null,
-          "volume_z_score": -0.4492
-        },
-        "whether_top10_candidate": true
-      },
-      {
-        "alpha_fields": {
-          "alpha_score": 35.0,
           "expected_return_60d": -0.0147,
           "forecast_grade": "weak_or_no_alpha_edge",
           "main_logic": "电力/核能/能源基础设施逻辑：政策与订单催化、盈利兑现能力、利率敏感度和资金确认。",
@@ -9290,7 +9207,7 @@
         "primary_probability": 0.2743,
         "primary_scenario": "stock_failed_bounce",
         "radar_level": "WATCH",
-        "rank": 4,
+        "rank": 3,
         "relative_strength_fields": {
           "relative_strength_rank": 24.6,
           "stock_vs_QQQ_20d": -0.0371,
@@ -9314,6 +9231,92 @@
           "relative_volume_20d": 0.7785,
           "relative_volume_5d": null,
           "volume_z_score": -0.902
+        },
+        "whether_top10_candidate": true
+      },
+      {
+        "alpha_fields": {
+          "alpha_score": 2.5,
+          "expected_return_60d": -0.0098,
+          "forecast_grade": "weak_or_no_alpha_edge",
+          "main_logic": "高 beta 成长股逻辑：交付/毛利率预期、估值扩张、风险偏好和技术资金确认。",
+          "outperformance_probability_20d": 0.4318,
+          "risk_reward_ratio": 0.27
+        },
+        "alpha_quality_score": 2.5,
+        "as_of": "2026-08-20",
+        "candidate_type": "failed_bounce_risk",
+        "catalyst_score": 63.96,
+        "company_name": "Tesla Inc",
+        "confluence_score": 39.97,
+        "data_missing": [
+          "single_stock_options"
+        ],
+        "data_quality": 87.5,
+        "data_status": "available",
+        "downside_risk_level": 297.38,
+        "elasticity_score": 66.58,
+        "expected_next_day_high": 350.05,
+        "expected_next_day_low": 339.22,
+        "expected_next_day_mid": 344.63,
+        "expected_next_day_range": {
+          "high": 350.05,
+          "low": 339.22,
+          "mid": 344.63,
+          "range_pct": 0.0314
+        },
+        "final_radar_score": 45.27,
+        "forecast_date": "2026-08-20",
+        "invalidation_level": 297.38,
+        "last_close": 345.1300048828125,
+        "logo": null,
+        "main_conflicting_evidence": [
+          "大盘风险背景压低个股置信度",
+          "公司新闻或财报事件风险上升",
+          "个股 Alpha 评分已接入",
+          "主路径和第二路径差距较小"
+        ],
+        "main_supporting_evidence": [
+          "个股跑赢所属板块",
+          "历史相似结构支持主路径"
+        ],
+        "market_context": "risk_off_pressure",
+        "model_version": "stock_baseline_v1",
+        "news_fields": {
+          "catalyst_note": "catalyst data present or event risk proxy elevated",
+          "company_news": "available",
+          "earnings": "available"
+        },
+        "next_day_move_probability": 0.6388,
+        "one_line_reason": "failed_bounce_risk: Alpha 2 / 弹性 67 / 成交量 58 / 相对强弱 53 / 催化 64 / 大盘 risk_off_pressure / 板块 supportive",
+        "outperformance_probability_20d": 0.4318,
+        "primary_probability": 0.2581,
+        "primary_scenario": "stock_failed_bounce",
+        "radar_level": "WATCH",
+        "rank": 4,
+        "relative_strength_fields": {
+          "relative_strength_rank": 52.81,
+          "stock_vs_QQQ_20d": 0.0522,
+          "stock_vs_SPY_20d": 0.0465,
+          "stock_vs_benchmark_20d": 0.0522,
+          "stock_vs_sector_20d": 0.0638
+        },
+        "relative_strength_score": 52.81,
+        "risk_reward_ratio": 0.27,
+        "risk_scenario": "stock_event_risk",
+        "risk_score": 51.62,
+        "secondary_scenario": "stock_downside_continuation",
+        "sector_context": "supportive",
+        "squeeze_proxy_score": 48.57,
+        "ticker": "TSLA",
+        "upside_trigger_level": 351.62,
+        "validation_status": "not_yet_validated",
+        "volume_anomaly_score": 57.86,
+        "volume_fields": {
+          "abnormal_volume_flag": true,
+          "relative_volume_20d": 0.8705,
+          "relative_volume_5d": null,
+          "volume_z_score": -0.4492
         },
         "whether_top10_candidate": true
       }
