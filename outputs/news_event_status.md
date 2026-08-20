@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-20T13:14:26.408610+00:00`
+- generated_at: `2026-08-20T20:54:09.787761+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `10`
+- major_event_count: `11`
 - event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -27,11 +27,51 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: The Los Angeles Lakers sold for $12.5 billion. Here’s what every NBA team is now worth
+- source: CNBC
+- published_at: `2026-08-20T20:28:21+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Gatekeeping bots, piles of slop: Welcome to the age of AI weirdness at work
+- source: CNBC
+- published_at: `2026-08-20T16:30:01+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: California AG tells CNBC that settling Paramount-WBD lawsuit would require 'robust structural remedies'
+- source: CNBC
+- published_at: `2026-08-20T14:52:28+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Yemen's Houthis say they attacked Najran airport, Aramco facilities in Saudi Arabia - Reuters
+- source: Reuters
+- published_at: `2026-08-20T14:12:26+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Tanker off Yemen boarded by armed people, diverted towards Somalia, UKMTO says - Reuters
+- source: Reuters
+- published_at: `2026-08-20T10:39:27+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: The Iran war energy crisis is just getting started - Reuters
 - source: Reuters
 - published_at: `2026-08-20T06:00:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -39,7 +79,7 @@
 - source: Reuters
 - published_at: `2026-08-20T03:24:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,11 +87,11 @@
 - source: Reuters
 - published_at: `2026-08-20T02:29:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil hits 3-week high on Middle East supply concerns amid war impasse - Reuters
+- headline: Oil hits more than three-week high as Trump threatens Iran-related retaliation - Reuters
 - source: Reuters
 - published_at: `2026-08-20T01:11:00+00:00`
 - importance_score: `100`
@@ -63,44 +103,4 @@
 - source: Reuters
 - published_at: `2026-08-19T20:03:42+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: UAE stocks fall after missile scare; Qatar at over one-year low - Reuters
-- source: Reuters
-- published_at: `2026-08-19T13:16:33+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: UAE's financial embargo on Iran after missile threat puts rivalry back in spotlight - Reuters
-- source: Reuters
-- published_at: `2026-08-19T10:52:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Turkey slams Israel's 'untenable' claims after strikes on Syrian base - Reuters
-- source: Reuters
-- published_at: `2026-08-19T08:37:09+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: UAE says Iran fired 2 missiles at country as war drags on
-- source: Bloomberg
-- published_at: `2026-08-19T03:53:11+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: PODCAST: US-Iran ceasefire expires, Tupac murder trial and microdramas - Reuters
-- source: Reuters
-- published_at: `2026-08-19T07:11:08+00:00`
-- importance_score: `93`
 - confidence: `medium`
