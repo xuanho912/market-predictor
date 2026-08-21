@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-21T21:56:00.301065+00:00`
+- generated_at: `2026-08-21T23:12:05.860914+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `11`
+- major_event_count: `9`
 - event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -70,14 +70,6 @@
 - headline: Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters
 - source: Reuters
 - published_at: `2026-08-20T23:53:38+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Israel and Turkey step up warnings over Syria after airbase bombing - Reuters
-- source: Reuters
-- published_at: `2026-08-20T23:45:29+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
