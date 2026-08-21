@@ -1,14 +1,19 @@
 {
   "as_of": "2026-08-20",
   "data_freshness_status": {
-    "affected_symbols": [],
-    "can_append_forecast_record": true,
+    "affected_symbols": [
+      "SPY",
+      "QQQ",
+      "IWM",
+      "DIA"
+    ],
+    "can_append_forecast_record": false,
     "can_backfill_completed_outcomes": true,
-    "current_date": "2026-08-20",
-    "current_time_us_eastern": "2026-08-20T22:41:04.809817-04:00",
-    "data_freshness_status": "fresh",
+    "current_date": "2026-08-21",
+    "current_time_us_eastern": "2026-08-21T00:23:55.728880-04:00",
+    "data_freshness_status": "market_open_unconfirmed",
     "expected_latest_trading_date": "2026-08-20",
-    "generated_at": "2026-08-21T02:41:04.809817+00:00",
+    "generated_at": "2026-08-21T04:23:55.728880+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -22,7 +27,7 @@
     "last_successful_update": "2026-08-20",
     "latest_confirmed_market_date": "2026-08-20",
     "latest_market_date": "2026-08-20",
-    "latest_market_session_status": "completed_or_prior_session",
+    "latest_market_session_status": "intraday_unconfirmed",
     "provider_status": {
       "BAA_SPREAD": {
         "fallback_used": false,
@@ -939,7 +944,7 @@
     },
     "stale_days": 0,
     "version": "data_freshness_gate_v3",
-    "warning_message": "核心行情已更新至最新应有交易日 2026-08-20。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。"
+    "warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-08-20，最近完整收盘交易日为 2026-08-20；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。"
   },
   "data_quality_summary": {
     "average_breadth_quality_score": 67.0,
@@ -960,10 +965,10 @@
       "IWM"
     ],
     "breadth_required": true,
-    "can_append_forecast_record": true,
+    "can_append_forecast_record": false,
     "data_completeness_score": 87.0,
     "data_completeness_score_before_news_event": 85.0,
-    "data_freshness_status": "fresh",
+    "data_freshness_status": "market_open_unconfirmed",
     "data_source_status": "real_core_with_proxies",
     "expected_latest_trading_date": "2026-08-20",
     "fallback_used": true,
@@ -991,23 +996,23 @@
           "primary_scenario_changed": false,
           "primary_scenario_with_fred": "bearish_path",
           "primary_scenario_without_fred": "bearish_path",
-          "risk_expansion_delta": 0.022,
-          "risk_expansion_with_fred": 0.3685,
-          "risk_expansion_without_fred": 0.3465
+          "risk_expansion_delta": 0.0221,
+          "risk_expansion_with_fred": 0.3727,
+          "risk_expansion_without_fred": 0.3506
         },
         "IWM": {
           "edge_status_changed": false,
           "edge_status_with_fred": "MODERATE_EDGE",
           "edge_status_without_fred": "MODERATE_EDGE",
-          "failed_bounce_delta": 0.005,
+          "failed_bounce_delta": 0.0049,
           "failed_bounce_with_fred": 0.3715,
-          "failed_bounce_without_fred": 0.3665,
+          "failed_bounce_without_fred": 0.3666,
           "primary_scenario_changed": false,
           "primary_scenario_with_fred": "bounce_path",
           "primary_scenario_without_fred": "bounce_path",
-          "risk_expansion_delta": 0.022,
-          "risk_expansion_with_fred": 0.3683,
-          "risk_expansion_without_fred": 0.3463
+          "risk_expansion_delta": 0.0221,
+          "risk_expansion_with_fred": 0.3726,
+          "risk_expansion_without_fred": 0.3505
         },
         "QQQ": {
           "edge_status_changed": false,
@@ -1019,23 +1024,23 @@
           "primary_scenario_changed": false,
           "primary_scenario_with_fred": "bearish_path",
           "primary_scenario_without_fred": "bearish_path",
-          "risk_expansion_delta": 0.0221,
-          "risk_expansion_with_fred": 0.4067,
-          "risk_expansion_without_fred": 0.3846
+          "risk_expansion_delta": 0.022,
+          "risk_expansion_with_fred": 0.4108,
+          "risk_expansion_without_fred": 0.3888
         },
         "SPY": {
           "edge_status_changed": false,
           "edge_status_with_fred": "MODERATE_EDGE",
           "edge_status_without_fred": "MODERATE_EDGE",
-          "failed_bounce_delta": 0.005,
-          "failed_bounce_with_fred": 0.4164,
+          "failed_bounce_delta": 0.0049,
+          "failed_bounce_with_fred": 0.4163,
           "failed_bounce_without_fred": 0.4114,
           "primary_scenario_changed": false,
           "primary_scenario_with_fred": "bounce_path",
           "primary_scenario_without_fred": "bounce_path",
           "risk_expansion_delta": 0.022,
-          "risk_expansion_with_fred": 0.389,
-          "risk_expansion_without_fred": 0.367
+          "risk_expansion_with_fred": 0.3931,
+          "risk_expansion_without_fred": 0.3711
         }
       },
       "target_85_met_with_fred": true
@@ -1047,17 +1052,17 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "DGS2",
-      "DGS10",
       "IG_OAS",
       "HY_OAS",
-      "DGS3MO",
+      "DGS10",
       "BAA_SPREAD",
+      "DGS3MO",
+      "DGS2",
       "DFII10",
-      "RECESSION",
-      "FINANCIAL_STRESS"
+      "FINANCIAL_STRESS",
+      "RECESSION"
     ],
-    "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-08-20。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
+    "freshness_warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-08-20，最近完整收盘交易日为 2026-08-20；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
     "gamma_available": false,
     "gamma_exposure_available": false,
     "latest_confirmed_market_date": "2026-08-20",
@@ -1086,11 +1091,11 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 73,
+      "event_detection_confidence": 72,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-08-21T02:40:54.694504+00:00",
-      "major_event_count": 9,
+      "last_update": "2026-08-21T04:23:45.551437+00:00",
+      "major_event_count": 10,
       "missing_reason": null,
       "news_direction": "risk_off",
       "news_event_partial": false,
@@ -1101,7 +1106,7 @@
     },
     "news_event_available": true,
     "news_event_event_risk_level": "high",
-    "news_event_major_count": 9,
+    "news_event_major_count": 10,
     "news_event_missing_reason": null,
     "news_event_narrative": "geopolitics_escalation_risk_off",
     "news_event_partial": false,
@@ -1116,7 +1121,7 @@
     "options_source": "market_data_cache/yahoo/stooq",
     "options_stale": false,
     "options_structure_status": "available",
-    "overall_flow_confirmation_score": 75.75,
+    "overall_flow_confirmation_score": 75.77,
     "overall_flow_conflict_score": 20.59,
     "put_call_available": false,
     "quality_note": "V4 score rewards real FRED/Finnhub/market data, gives partial credit to explicitly labeled proxies, and keeps missing options/flow/breadth details visible.",
@@ -1151,7 +1156,7 @@
       "status": "failed"
     },
     "event_risk_level": "high",
-    "major_event_count": 9,
+    "major_event_count": 10,
     "market_narrative": {
       "affected_scenarios": [
         "bearish_path"
@@ -1178,6 +1183,18 @@
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_market_direction": "risk_off",
+          "headline": "Oil set for second weekly rise as unsettled US-Iran war crimps supply - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-08-21T01:50:00+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
           "headline": "Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters",
           "importance_score": 100,
           "published_at": "2026-08-20T23:53:38+00:00",
@@ -1196,7 +1213,7 @@
           "source": "CNBC"
         },
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -1208,7 +1225,7 @@
           "source": "CNBC"
         },
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -1230,18 +1247,6 @@
           "importance_score": 100,
           "published_at": "2026-08-20T14:12:26+00:00",
           "source": "Reuters"
-        },
-        {
-          "confidence": "medium",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Tanker off Yemen boarded by armed people, diverted towards Somalia, UKMTO says - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-08-20T10:39:27+00:00",
-          "source": "Reuters"
         }
       ]
     },
@@ -1251,14 +1256,14 @@
       "direction": "supports_risk_expansion",
       "event_risk_level": "high",
       "macro_event_risk_flag": false,
-      "major_event_count": 9,
+      "major_event_count": 10,
       "not_a_trading_signal": true,
       "price_reaction_confirmed": true,
       "symbols": {
         "DIA": {
-          "after_primary_probability": 0.3595,
+          "after_primary_probability": 0.3597,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.3185,
+          "before_primary_probability": 0.3187,
           "before_primary_scenario": "bearish_path",
           "confirmation_delta": -6.5,
           "impact": "supports_primary",
@@ -1292,9 +1297,9 @@
           "validation_type": "daily"
         },
         "IWM": {
-          "after_primary_probability": 0.3105,
+          "after_primary_probability": 0.3107,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.3137,
+          "before_primary_probability": 0.3136,
           "before_primary_scenario": "bounce_path",
           "confirmation_delta": -6.5,
           "impact": "conflicts_primary",
@@ -1322,15 +1327,15 @@
             "risk_expansion_predictor": 0.0348,
             "trend_reversal_predictor": 0.0
           },
-          "primary_probability_delta": -0.0032,
+          "primary_probability_delta": -0.0029,
           "primary_scenario_changed": true,
           "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay",
           "validation_type": "daily"
         },
         "QQQ": {
-          "after_primary_probability": 0.3332,
+          "after_primary_probability": 0.3334,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.2913,
+          "before_primary_probability": 0.2915,
           "before_primary_scenario": "bearish_path",
           "confirmation_delta": -6.5,
           "impact": "supports_primary",
@@ -1364,9 +1369,9 @@
           "validation_type": "daily"
         },
         "SPY": {
-          "after_primary_probability": 0.3295,
+          "after_primary_probability": 0.3297,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.312,
+          "before_primary_probability": 0.3119,
           "before_primary_scenario": "bounce_path",
           "confirmation_delta": -6.5,
           "impact": "conflicts_primary",
@@ -1394,7 +1399,7 @@
             "risk_expansion_predictor": 0.0348,
             "trend_reversal_predictor": 0.0
           },
-          "primary_probability_delta": 0.0175,
+          "primary_probability_delta": 0.0178,
           "primary_scenario_changed": true,
           "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay",
           "validation_type": "daily"
@@ -1406,7 +1411,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": -0.0104,
-        "avg_equity_futures_1d_return": -0.0087,
+        "avg_equity_futures_1d_return": 0.0016,
         "confirmed_checks": [
           "股票ETF或股指期货下跌",
           "VIX 上升",
@@ -1422,7 +1427,7 @@
           "HYG/LQD 走弱"
         ],
         "hyg_lqd_1d_relative_return": 0.0029,
-        "oil_proxy_1d_return": 0.0192,
+        "oil_proxy_1d_return": 0.0061,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -1948,12 +1953,13 @@
     },
     "version": "shadow_evidence_v1"
   },
+  "status_note": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-08-20，最近完整收盘交易日为 2026-08-20；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
   "symbols": {
     "DIA": {
-      "analog_path_weight": 0.2013,
+      "analog_path_weight": 0.2012,
       "as_of": "2026-08-20",
-      "base_path_weight": 0.1792,
-      "bearish_path_weight": 0.3595,
+      "base_path_weight": 0.1791,
+      "bearish_path_weight": 0.3597,
       "bounce_path_weight": 0.26,
       "bounce_probability": 0.57070947,
       "confluence": {
@@ -2014,9 +2020,9 @@
         ],
         "not_trading_advice": "This is forecast confirmation only, not a buy/sell/entry/exit or position-sizing recommendation.",
         "primary_label": "失败反抽情景",
-        "primary_probability": 0.3595,
+        "primary_probability": 0.3597,
         "primary_scenario": "bearish_path",
-        "probability_gap": 0.0995,
+        "probability_gap": 0.0997,
         "related_price_levels": {
           "primary_confirmation_level": {
             "confidence": "medium",
@@ -2094,7 +2100,7 @@
           {
             "detail": "primary-secondary gap 10.0%",
             "name": "主次路径差距可观察",
-            "score": 9.95,
+            "score": 9.97,
             "source": "scenario_gap"
           },
           {
@@ -2218,10 +2224,10 @@
           "ig_oas_20d_change": 0.030000000000000027
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote 527.51; news risk 45%; macro event risk flagged; rates pressure 16%.",
+          "brief": "Finnhub quote 527.51; news risk 55%; macro event risk flagged; rates pressure 16%.",
           "finnhub_quote_available": true,
           "macro_event_risk_flag": true,
-          "news_risk_score": 0.45,
+          "news_risk_score": 0.55,
           "rates_pressure_score": 0.16297345682489117,
           "symbol": "DIA"
         },
@@ -2237,14 +2243,14 @@
         },
         "flow_positioning_proxy": {
           "credit_risk_appetite_20d": 0.014338,
-          "crowding_proxy_score": 0.0932,
-          "crowding_proxy_score_raw": 9.32,
+          "crowding_proxy_score": 0.09269999999999999,
+          "crowding_proxy_score_raw": 9.27,
           "data_note": "Proxy only: ETF volume, factor rotation, sector rotation, HYG/LQD, TLT and UUP. No true fund-flow or positioning feed.",
           "defensive_vs_cyclical_20d": -0.016071,
           "equal_weight_vs_cap_weight_20d": 0.002264,
-          "etf_relative_volume_20d": 0.7531,
-          "flow_confirmation_score": 0.7376999999999999,
-          "flow_confirmation_score_raw": 73.77,
+          "etf_relative_volume_20d": 0.7545,
+          "flow_confirmation_score": 0.7379000000000001,
+          "flow_confirmation_score_raw": 73.79,
           "flow_conflict_score": 0.2059,
           "flow_conflict_score_raw": 20.59,
           "flow_quality_score": 1.0,
@@ -2261,8 +2267,8 @@
           "source": "market_data_proxy",
           "status": "proxy",
           "true_flow_available": false,
-          "volume_confirmation_score": 0.2839,
-          "volume_zscore_20d": -0.6213
+          "volume_confirmation_score": 0.2845,
+          "volume_zscore_20d": -0.6177
         },
         "macro_event_calendar": {
           "cpi_date": "2026-09-08",
@@ -2288,13 +2294,13 @@
         "news": {
           "market_news_status": "available",
           "news_item_count": 40,
-          "news_risk_score": 0.45,
+          "news_risk_score": 0.55,
           "top_headlines": [
+            "Oil set for second weekly rise as unsettled US-Iran war crimps supply - Reuters",
+            "US says it will impose 'toughest sanctions in history' on Iran - Reuters",
             "Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters",
             "Bessent says US to impose 'toughest' ever sanctions on Iran, urges China to cooperate - Reuters",
-            "Micron CEO pushes back on memory bear case. 3 key takeaways from Cramer's big interview",
-            "China boosts imports of Russian crude, stymieing India's refiners - Reuters",
-            "US envoy Huckabee tells Israeli settlers not to take Palestinian Americans' land - Reuters"
+            "Micron CEO pushes back on memory bear case. 3 key takeaways from Cramer's big interview"
           ]
         },
         "price": {
@@ -2304,7 +2310,7 @@
           "return_20d": 0.0217913450338858,
           "return_60d": 0.04405741665635832,
           "rsi_14": 53.90071663027043,
-          "volume_zscore_20d": -0.621310797100823
+          "volume_zscore_20d": -0.6177079799263622
         },
         "rates_liquidity": {
           "liquidity_stress_proxy": 0.019959164345986435,
@@ -2382,7 +2388,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 511.73,
-            "probability_of_reaching_primary_price": 0.3595,
+            "probability_of_reaching_primary_price": 0.3597,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 511.73,
@@ -2403,7 +2409,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 521.05,
-            "probability_of_reaching_primary_price": 0.3595,
+            "probability_of_reaching_primary_price": 0.3597,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 521.05,
@@ -2424,7 +2430,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 490.56,
-            "probability_of_reaching_primary_price": 0.3595,
+            "probability_of_reaching_primary_price": 0.3597,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 490.56,
@@ -2445,7 +2451,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 520.49,
-            "probability_of_reaching_primary_price": 0.3595,
+            "probability_of_reaching_primary_price": 0.3597,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 520.49,
@@ -2466,7 +2472,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 522.85,
-            "probability_of_reaching_primary_price": 0.3595,
+            "probability_of_reaching_primary_price": 0.3597,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 522.85,
@@ -2487,7 +2493,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 485.47,
-            "probability_of_reaching_primary_price": 0.3595,
+            "probability_of_reaching_primary_price": 0.3597,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 485.47,
@@ -2507,7 +2513,7 @@
             "lower_confidence_price": 511.73,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 511.73,
-            "probability_of_reaching_primary_price": 0.3595,
+            "probability_of_reaching_primary_price": 0.3597,
             "risk_scenario_price": 511.73,
             "secondary_scenario_price": 527.39,
             "source": "simulated_path",
@@ -2521,7 +2527,7 @@
             "lower_confidence_price": 521.05,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 521.05,
-            "probability_of_reaching_primary_price": 0.3595,
+            "probability_of_reaching_primary_price": 0.3597,
             "risk_scenario_price": 521.05,
             "secondary_scenario_price": 526.51,
             "source": "simulated_path",
@@ -2535,7 +2541,7 @@
             "lower_confidence_price": 490.56,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 490.56,
-            "probability_of_reaching_primary_price": 0.3595,
+            "probability_of_reaching_primary_price": 0.3597,
             "risk_scenario_price": 490.56,
             "secondary_scenario_price": 541.77,
             "source": "simulated_path",
@@ -2549,7 +2555,7 @@
             "lower_confidence_price": 520.49,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 520.49,
-            "probability_of_reaching_primary_price": 0.3595,
+            "probability_of_reaching_primary_price": 0.3597,
             "risk_scenario_price": 520.49,
             "secondary_scenario_price": 528.28,
             "source": "simulated_path",
@@ -2563,7 +2569,7 @@
             "lower_confidence_price": 522.85,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 522.85,
-            "probability_of_reaching_primary_price": 0.3595,
+            "probability_of_reaching_primary_price": 0.3597,
             "risk_scenario_price": 522.85,
             "secondary_scenario_price": 527.04,
             "source": "simulated_path",
@@ -2577,7 +2583,7 @@
             "lower_confidence_price": 485.47,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 485.47,
-            "probability_of_reaching_primary_price": 0.3595,
+            "probability_of_reaching_primary_price": 0.3597,
             "risk_scenario_price": 485.47,
             "secondary_scenario_price": 542.53,
             "source": "simulated_path",
@@ -2681,10 +2687,10 @@
             "price": 520.49,
             "source": "price_structure"
           },
-          "primary_probability": 0.3595,
+          "primary_probability": 0.3597,
           "primary_scenario": "bearish_path",
-          "probability_gap": 0.0995,
-          "risk_probability": 0.2013,
+          "probability_gap": 0.0997,
+          "risk_probability": 0.2012,
           "risk_scenario_activation_level": {
             "condition": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
             "distance_from_current": -36.95,
@@ -2731,9 +2737,9 @@
           "source": "price_structure",
           "status": "available"
         },
-        "primary_probability": 0.3595,
+        "primary_probability": 0.3597,
         "primary_scenario": "bearish_path",
-        "risk_probability": 0.2013,
+        "risk_probability": 0.2012,
         "risk_scenario": "analog_average_path",
         "secondary_probability": 0.26,
         "secondary_scenario": "bounce_path",
@@ -3674,7 +3680,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 93,
+            "freshness_score": 94,
+            "headline": "Oil set for second weekly rise as unsettled US-Iran war crimps supply - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-21T01:50:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 79,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 89,
             "headline": "Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3694,73 +3727,19 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 78,
+            "confidence_score": 77,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 85,
+            "freshness_score": 81,
             "headline": "The Los Angeles Lakers sold for $12.5 billion. Here’s what every NBA team is now worth",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-08-20T20:28:21+00:00",
-            "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 76,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 76,
-            "headline": "Gatekeeping bots, piles of slop: Welcome to the age of AI weirdness at work",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-08-20T16:30:01+00:00",
-            "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 72,
-            "headline": "California AG tells CNBC that settling Paramount-WBD lawsuit would require 'robust structural remedies'",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-08-20T14:52:28+00:00",
             "source": "CNBC"
           },
           {
@@ -3782,13 +3761,13 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
-            "headline": "Yemen's Houthis say they attacked Najran airport, Aramco facilities in Saudi Arabia - Reuters",
+            "freshness_score": 71,
+            "headline": "Gatekeeping bots, piles of slop: Welcome to the age of AI weirdness at work",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-08-20T14:12:26+00:00",
-            "source": "Reuters"
+            "published_at": "2026-08-20T16:30:01+00:00",
+            "source": "CNBC"
           },
           {
             "affected_assets": [
@@ -3802,19 +3781,46 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 72,
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 62,
-            "headline": "Tanker off Yemen boarded by armed people, diverted towards Somalia, UKMTO says - Reuters",
+            "freshness_score": 68,
+            "headline": "California AG tells CNBC that settling Paramount-WBD lawsuit would require 'robust structural remedies'",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-08-20T10:39:27+00:00",
+            "published_at": "2026-08-20T14:52:28+00:00",
+            "source": "CNBC"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 73,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 66,
+            "headline": "Yemen's Houthis say they attacked Najran airport, Aramco facilities in Saudi Arabia - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-20T14:12:26+00:00",
             "source": "Reuters"
           }
         ],
@@ -3844,6 +3850,18 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Oil set for second weekly rise as unsettled US-Iran war crimps supply - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-08-21T01:50:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters",
               "importance_score": 100,
               "published_at": "2026-08-20T23:53:38+00:00",
@@ -3862,7 +3880,7 @@
               "source": "CNBC"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -3874,7 +3892,7 @@
               "source": "CNBC"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -3896,26 +3914,14 @@
               "importance_score": 100,
               "published_at": "2026-08-20T14:12:26+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Tanker off Yemen boarded by armed people, diverted towards Somalia, UKMTO says - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-08-20T10:39:27+00:00",
-              "source": "Reuters"
             }
           ]
         },
         "news_direction": "risk_off",
         "prediction_logic_effect": {
-          "after_primary_probability": 0.3595,
+          "after_primary_probability": 0.3597,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.3185,
+          "before_primary_probability": 0.3187,
           "before_primary_scenario": "bearish_path",
           "confirmation_delta": -6.5,
           "impact": "supports_primary",
@@ -3951,7 +3957,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0104,
-            "avg_equity_futures_1d_return": -0.0087,
+            "avg_equity_futures_1d_return": 0.0016,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -3967,7 +3973,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0029,
-            "oil_proxy_1d_return": 0.0192,
+            "oil_proxy_1d_return": 0.0061,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -4018,9 +4024,9 @@
         "基准情景：使用相似样本平均路径；所有路径都是概率情景，不是确定预测。"
       ],
       "path_weight_model": {
-        "analog_path_weight": 0.2013,
-        "base_path_weight": 0.1792,
-        "bearish_path_weight": 0.3595,
+        "analog_path_weight": 0.2012,
+        "base_path_weight": 0.1791,
+        "bearish_path_weight": 0.3597,
         "bounce_path_weight": 0.26,
         "low_confidence_simulation": true,
         "news_event_overlay_applied": true,
@@ -4033,11 +4039,11 @@
           "breadth_quality": 1.0,
           "breadth_support": 0.6969,
           "credit_stability": 0.9393,
-          "crowding_proxy": 0.0932,
+          "crowding_proxy": 0.0927,
           "data_completeness": 0.84,
           "failed_bounce_options_risk": 0.2866,
           "failed_bounce_risk": 0.492,
-          "flow_confirmation": 0.7377,
+          "flow_confirmation": 0.7379,
           "flow_conflict": 0.2059,
           "flow_quality": 1.0,
           "historical_analog_support": 0.15,
@@ -4047,12 +4053,12 @@
           "news_event_direction": "supports_risk_expansion",
           "news_event_macro_risk": 0.0,
           "news_event_price_confirmed": 1.0,
-          "news_risk": 0.45,
+          "news_risk": 0.55,
           "options_quality": 0.92,
           "options_stress": 0.2799,
           "panic_release": 0.495,
           "rates_pressure": 0.163,
-          "risk_expansion": 0.3685,
+          "risk_expansion": 0.3727,
           "signal_agreement": 0.51,
           "signal_confirmation": 0.57,
           "tail_risk": 0.241,
@@ -5320,7 +5326,7 @@
           "failed_bounce_risk": 0.8812931764606763,
           "historical_support": "weak",
           "market_edge_status": "WEAK_EDGE",
-          "risk_expansion_probability": 0.3566,
+          "risk_expansion_probability": 0.3646,
           "trend_reversal_probability": 0.3147,
           "up_probability": 0.4257007968898886
         },
@@ -5379,7 +5385,7 @@
           "failed_bounce_risk": 0.8812931764606763,
           "historical_support": "weak",
           "market_edge_status": "WEAK_EDGE",
-          "risk_expansion_probability": 0.3566,
+          "risk_expansion_probability": 0.3646,
           "trend_reversal_probability": 0.3147,
           "up_probability": 0.42981368697105793
         }
@@ -5387,7 +5393,7 @@
       "predictors": {
         "bounce_predictor": {
           "best_horizon": "3d-10d",
-          "bounce_probability": 0.4734,
+          "bounce_probability": 0.4735,
           "breadth_confirmation": 0.6969,
           "breadth_quality": 1.0,
           "confidence": 0.6465,
@@ -5398,8 +5404,8 @@
               "score": 0.12
             }
           ],
-          "crowding_proxy_score": 0.0932,
-          "flow_confirmation_score": 0.7377,
+          "crowding_proxy_score": 0.0927,
+          "flow_confirmation_score": 0.7379,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "weak",
@@ -5426,7 +5432,7 @@
           ],
           "options_quality": 0.92,
           "panic_release_score": 0.495,
-          "probability": 0.4734,
+          "probability": 0.4735,
           "tail_risk_score": 0.241,
           "term_structure_state": "contango",
           "volatility_reversal_score": 0.764
@@ -5437,10 +5443,10 @@
           "breadth_quality": 1.0,
           "break_level": 515.41,
           "confidence": 0.6595,
-          "crowding_proxy_score": 0.0932,
+          "crowding_proxy_score": 0.0927,
           "downside_continuation_probability": 0.5071,
           "failed_bounce_options_risk": 0.2866,
-          "flow_confirmation_score": 0.7377,
+          "flow_confirmation_score": 0.7379,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "weak",
@@ -5477,9 +5483,9 @@
           "breadth_risk": 0.4143,
           "confidence": 0.6595,
           "credit_risk": 0.1037,
-          "crowding_proxy_score": 0.0932,
+          "crowding_proxy_score": 0.0927,
           "failed_bounce_options_risk": 0.2866,
-          "flow_confirmation_score": 0.7377,
+          "flow_confirmation_score": 0.7379,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "high",
@@ -5495,14 +5501,14 @@
           "macro_event_risk": 1.0,
           "main_drivers": [
             "macro event risk: 1.00",
+            "news risk: 0.55",
             "breadth deterioration: 0.55",
-            "news risk: 0.45",
             "risk-off rotation: 0.35",
             "news_event_overlay:+0.035"
           ],
           "options_quality": 0.92,
-          "probability": 0.4033,
-          "risk_expansion_probability": 0.4033,
+          "probability": 0.4075,
+          "risk_expansion_probability": 0.4075,
           "tail_risk_score": 0.241,
           "term_structure_state": "contango",
           "volatility_risk": 0.2799
@@ -5518,8 +5524,8 @@
             "credit proxy stays stable",
             "price holds above recent low"
           ],
-          "crowding_proxy_score": 0.0932,
-          "flow_confirmation_score": 0.7377,
+          "crowding_proxy_score": 0.0927,
+          "flow_confirmation_score": 0.7379,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "weak",
@@ -5538,17 +5544,17 @@
             "60d trend: 0.26"
           ],
           "options_quality": 0.92,
-          "probability": 0.3494,
+          "probability": 0.3495,
           "regime_support": "weak",
           "term_structure_state": "contango",
-          "trend_reversal_probability": 0.3494,
+          "trend_reversal_probability": 0.3495,
           "volatility_reversal_score": 0.764
         }
       },
       "predictors_v4": {
         "bounce_predictor": {
           "best_horizon": "3d-10d",
-          "bounce_probability": 0.4734,
+          "bounce_probability": 0.4735,
           "breadth_confirmation": 0.6969,
           "breadth_quality": 1.0,
           "confidence": 0.6465,
@@ -5559,8 +5565,8 @@
               "score": 0.12
             }
           ],
-          "crowding_proxy_score": 0.0932,
-          "flow_confirmation_score": 0.7377,
+          "crowding_proxy_score": 0.0927,
+          "flow_confirmation_score": 0.7379,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "weak",
@@ -5587,7 +5593,7 @@
           ],
           "options_quality": 0.92,
           "panic_release_score": 0.495,
-          "probability": 0.4734,
+          "probability": 0.4735,
           "tail_risk_score": 0.241,
           "term_structure_state": "contango",
           "volatility_reversal_score": 0.764
@@ -5598,10 +5604,10 @@
           "breadth_quality": 1.0,
           "break_level": 515.41,
           "confidence": 0.6595,
-          "crowding_proxy_score": 0.0932,
+          "crowding_proxy_score": 0.0927,
           "downside_continuation_probability": 0.5071,
           "failed_bounce_options_risk": 0.2866,
-          "flow_confirmation_score": 0.7377,
+          "flow_confirmation_score": 0.7379,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "weak",
@@ -5638,9 +5644,9 @@
           "breadth_risk": 0.4143,
           "confidence": 0.6595,
           "credit_risk": 0.1037,
-          "crowding_proxy_score": 0.0932,
+          "crowding_proxy_score": 0.0927,
           "failed_bounce_options_risk": 0.2866,
-          "flow_confirmation_score": 0.7377,
+          "flow_confirmation_score": 0.7379,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "high",
@@ -5656,14 +5662,14 @@
           "macro_event_risk": 1.0,
           "main_drivers": [
             "macro event risk: 1.00",
+            "news risk: 0.55",
             "breadth deterioration: 0.55",
-            "news risk: 0.45",
             "risk-off rotation: 0.35",
             "news_event_overlay:+0.035"
           ],
           "options_quality": 0.92,
-          "probability": 0.4033,
-          "risk_expansion_probability": 0.4033,
+          "probability": 0.4075,
+          "risk_expansion_probability": 0.4075,
           "tail_risk_score": 0.241,
           "term_structure_state": "contango",
           "volatility_risk": 0.2799
@@ -5679,8 +5685,8 @@
             "credit proxy stays stable",
             "price holds above recent low"
           ],
-          "crowding_proxy_score": 0.0932,
-          "flow_confirmation_score": 0.7377,
+          "crowding_proxy_score": 0.0927,
+          "flow_confirmation_score": 0.7379,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "weak",
@@ -5699,10 +5705,10 @@
             "60d trend: 0.26"
           ],
           "options_quality": 0.92,
-          "probability": 0.3494,
+          "probability": 0.3495,
           "regime_support": "weak",
           "term_structure_state": "contango",
-          "trend_reversal_probability": 0.3494,
+          "trend_reversal_probability": 0.3495,
           "volatility_reversal_score": 0.764
         }
       },
@@ -5717,7 +5723,7 @@
         {
           "name": "Base case",
           "name_cn": "基准情景",
-          "probability_weight": 0.1792,
+          "probability_weight": 0.1791,
           "return_20d": -0.018988157640903985,
           "summary_cn": "按最相似历史样本的平均路径推演。"
         },
@@ -5731,14 +5737,14 @@
         {
           "name": "Bearish case",
           "name_cn": "失败反弹情景",
-          "probability_weight": 0.3595,
+          "probability_weight": 0.3597,
           "return_20d": -0.07005430860745239,
           "summary_cn": "如果波动和信用代理恶化，路径更接近历史上较差的一组样本。"
         },
         {
           "name": "Historical analog case",
           "name_cn": "历史相似情景",
-          "probability_weight": 0.2013,
+          "probability_weight": 0.2012,
           "return_20d": -0.018988157640903985,
           "summary_cn": "只看最相似历史样本后的实际表现，不做确定性预测。"
         }
@@ -5749,7 +5755,7 @@
             "confidence": "low",
             "expected_horizon": "3d-10d",
             "label": "失败反抽情景",
-            "probability": 0.3595,
+            "probability": 0.3597,
             "reason": "Downside/Risk predictors 为 48%/37%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bearish_path"
           },
@@ -5765,7 +5771,7 @@
             "confidence": "low",
             "expected_horizon": "20d-60d",
             "label": "历史均值情景",
-            "probability": 0.2013,
+            "probability": 0.2012,
             "reason": "历史相似样本质量 high，样本数 20，中期支持 weak。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay.",
             "scenario": "analog_average_path"
           },
@@ -5773,7 +5779,7 @@
             "confidence": "low",
             "expected_horizon": "3d-20d",
             "label": "综合期望情景",
-            "probability": 0.1792,
+            "probability": 0.1791,
             "reason": "综合期望用于平衡反抽、失败反抽、历史均值和数据不完整带来的不确定性。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay.",
             "scenario": "expected_path"
           }
@@ -5785,12 +5791,12 @@
           "confidence": "low",
           "expected_horizon": "3d-10d",
           "label": "失败反抽情景",
-          "probability": 0.3595,
+          "probability": 0.3597,
           "reason": "Downside/Risk predictors 为 48%/37%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bearish_path"
         },
         "primary_scenario": "bearish_path",
-        "primary_secondary_gap": 0.0995,
+        "primary_secondary_gap": 0.0997,
         "primary_to_secondary_switch_conditions": [
           "VIX 与新闻方向背离",
           "HYG/LQD 转弱",
@@ -5799,10 +5805,10 @@
           "DIA 重新站上主路径确认价",
           "第二路径 bounce_path 获得多源确认"
         ],
-        "probability_gap": 0.0995,
+        "probability_gap": 0.0997,
         "ranking_note": "Scenario ranking includes a bounded News/Event overlay when a major event or macro calendar risk is detected. It is probabilistic, not deterministic.",
         "risk_scenario": "bearish_path",
-        "scenario_probability": 0.3595,
+        "scenario_probability": 0.3597,
         "secondary": {
           "confidence": "low",
           "expected_horizon": "10d-20d",
@@ -5824,16 +5830,16 @@
           "confidence": "low",
           "expected_horizon": "20d-60d",
           "label": "历史均值情景",
-          "probability": 0.2013,
+          "probability": 0.2012,
           "reason": "历史相似样本质量 high，样本数 20，中期支持 weak。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay.",
           "scenario": "analog_average_path"
         }
       },
       "scenario_weights": {
-        "base_scenario": 0.1792,
-        "bearish_scenario": 0.3595,
+        "base_scenario": 0.1791,
+        "bearish_scenario": 0.3597,
         "bounce_scenario": 0.26,
-        "historical_analog_average": 0.2013
+        "historical_analog_average": 0.2012
       },
       "shadow_evidence_v1": {
         "alert_status_by_type": {
@@ -6113,11 +6119,11 @@
       "trend_reversal_probability": 0.15027163462792564
     },
     "IWM": {
-      "analog_path_weight": 0.268,
+      "analog_path_weight": 0.2679,
       "as_of": "2026-08-20",
       "base_path_weight": 0.1365,
-      "bearish_path_weight": 0.3105,
-      "bounce_path_weight": 0.2851,
+      "bearish_path_weight": 0.3107,
+      "bounce_path_weight": 0.285,
       "bounce_probability": 0.40434541,
       "confluence": {
         "conflicting_evidence": [
@@ -6160,7 +6166,7 @@
           {
             "detail": "路径分歧较大，不宜给强结论。",
             "name": "主次路径差距小",
-            "score": 2.54,
+            "score": 2.57,
             "source": "scenario_gap"
           }
         ],
@@ -6189,9 +6195,9 @@
         ],
         "not_trading_advice": "This is forecast confirmation only, not a buy/sell/entry/exit or position-sizing recommendation.",
         "primary_label": "失败反抽情景",
-        "primary_probability": 0.3105,
+        "primary_probability": 0.3107,
         "primary_scenario": "bearish_path",
-        "probability_gap": 0.0254,
+        "probability_gap": 0.0257,
         "related_price_levels": {
           "primary_confirmation_level": {
             "confidence": "medium",
@@ -6226,7 +6232,7 @@
             "source_type": "price_structure"
           }
         },
-        "secondary_probability": 0.2851,
+        "secondary_probability": 0.285,
         "secondary_scenario": "bounce_path",
         "strong_conclusion_allowed": false,
         "supporting_evidence": [
@@ -6393,10 +6399,10 @@
           "ig_oas_20d_change": 0.030000000000000027
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote 297.67; news risk 45%; macro event risk flagged; rates pressure 16%.",
+          "brief": "Finnhub quote 297.67; news risk 55%; macro event risk flagged; rates pressure 16%.",
           "finnhub_quote_available": true,
           "macro_event_risk_flag": true,
-          "news_risk_score": 0.45,
+          "news_risk_score": 0.55,
           "rates_pressure_score": 0.16297345682489117,
           "symbol": "IWM"
         },
@@ -6412,14 +6418,14 @@
         },
         "flow_positioning_proxy": {
           "credit_risk_appetite_20d": 0.014338,
-          "crowding_proxy_score": 0.0732,
-          "crowding_proxy_score_raw": 7.32,
+          "crowding_proxy_score": 0.0745,
+          "crowding_proxy_score_raw": 7.45,
           "data_note": "Proxy only: ETF volume, factor rotation, sector rotation, HYG/LQD, TLT and UUP. No true fund-flow or positioning feed.",
           "defensive_vs_cyclical_20d": -0.016071,
           "equal_weight_vs_cap_weight_20d": 0.002264,
-          "etf_relative_volume_20d": 1.1047,
-          "flow_confirmation_score": 0.7857999999999999,
-          "flow_confirmation_score_raw": 78.58,
+          "etf_relative_volume_20d": 1.107,
+          "flow_confirmation_score": 0.7863,
+          "flow_confirmation_score_raw": 78.63,
           "flow_conflict_score": 0.2059,
           "flow_conflict_score_raw": 20.59,
           "flow_quality_score": 1.0,
@@ -6429,15 +6435,15 @@
           "latest_date": "2026-08-20",
           "risk_off_flow_score": 0.3549,
           "risk_off_rotation_score": 0.3549,
-          "risk_on_flow_score": 0.9538,
+          "risk_on_flow_score": 0.9539,
           "risk_on_rotation_20d": 0.035797,
           "sector_participation_proxy": 0.9091,
           "small_cap_vs_large_cap_20d": -0.013978,
           "source": "market_data_proxy",
           "status": "proxy",
           "true_flow_available": false,
-          "volume_confirmation_score": 0.4811,
-          "volume_zscore_20d": 0.4878
+          "volume_confirmation_score": 0.4829,
+          "volume_zscore_20d": 0.4967
         },
         "macro_event_calendar": {
           "cpi_date": "2026-09-08",
@@ -6463,13 +6469,13 @@
         "news": {
           "market_news_status": "available",
           "news_item_count": 40,
-          "news_risk_score": 0.45,
+          "news_risk_score": 0.55,
           "top_headlines": [
+            "Oil set for second weekly rise as unsettled US-Iran war crimps supply - Reuters",
+            "US says it will impose 'toughest sanctions in history' on Iran - Reuters",
             "Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters",
             "Bessent says US to impose 'toughest' ever sanctions on Iran, urges China to cooperate - Reuters",
-            "Micron CEO pushes back on memory bear case. 3 key takeaways from Cramer's big interview",
-            "China boosts imports of Russian crude, stymieing India's refiners - Reuters",
-            "US envoy Huckabee tells Israeli settlers not to take Palestinian Americans' land - Reuters"
+            "Micron CEO pushes back on memory bear case. 3 key takeaways from Cramer's big interview"
           ]
         },
         "price": {
@@ -6479,7 +6485,7 @@
           "return_20d": 0.01910375966244593,
           "return_60d": 0.024646323436104067,
           "rsi_14": 59.41230633447964,
-          "volume_zscore_20d": 0.4877972617331458
+          "volume_zscore_20d": 0.49669384422160867
         },
         "rates_liquidity": {
           "liquidity_stress_proxy": 0.019959164345986435,
@@ -6557,7 +6563,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 286.15,
-            "probability_of_reaching_primary_price": 0.3105,
+            "probability_of_reaching_primary_price": 0.3107,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 286.15,
@@ -6578,7 +6584,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 295.53,
-            "probability_of_reaching_primary_price": 0.3105,
+            "probability_of_reaching_primary_price": 0.3107,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 295.53,
@@ -6599,7 +6605,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 273.95,
-            "probability_of_reaching_primary_price": 0.3105,
+            "probability_of_reaching_primary_price": 0.3107,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 273.95,
@@ -6620,7 +6626,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 298.23,
-            "probability_of_reaching_primary_price": 0.3105,
+            "probability_of_reaching_primary_price": 0.3107,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 298.23,
@@ -6641,7 +6647,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 296.75,
-            "probability_of_reaching_primary_price": 0.3105,
+            "probability_of_reaching_primary_price": 0.3107,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 296.75,
@@ -6662,7 +6668,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 288.52,
-            "probability_of_reaching_primary_price": 0.3105,
+            "probability_of_reaching_primary_price": 0.3107,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 288.52,
@@ -6682,7 +6688,7 @@
             "lower_confidence_price": 286.15,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 286.15,
-            "probability_of_reaching_primary_price": 0.3105,
+            "probability_of_reaching_primary_price": 0.3107,
             "risk_scenario_price": 286.15,
             "secondary_scenario_price": 307.45,
             "source": "simulated_path",
@@ -6696,7 +6702,7 @@
             "lower_confidence_price": 295.53,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 295.53,
-            "probability_of_reaching_primary_price": 0.3105,
+            "probability_of_reaching_primary_price": 0.3107,
             "risk_scenario_price": 295.53,
             "secondary_scenario_price": 298.66,
             "source": "simulated_path",
@@ -6710,7 +6716,7 @@
             "lower_confidence_price": 273.95,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 273.95,
-            "probability_of_reaching_primary_price": 0.3105,
+            "probability_of_reaching_primary_price": 0.3107,
             "risk_scenario_price": 273.95,
             "secondary_scenario_price": 314.59,
             "source": "simulated_path",
@@ -6724,7 +6730,7 @@
             "lower_confidence_price": 298.23,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 298.23,
-            "probability_of_reaching_primary_price": 0.3105,
+            "probability_of_reaching_primary_price": 0.3107,
             "risk_scenario_price": 298.23,
             "secondary_scenario_price": 302.78,
             "source": "simulated_path",
@@ -6738,7 +6744,7 @@
             "lower_confidence_price": 296.75,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 296.75,
-            "probability_of_reaching_primary_price": 0.3105,
+            "probability_of_reaching_primary_price": 0.3107,
             "risk_scenario_price": 296.75,
             "secondary_scenario_price": 304.45,
             "source": "simulated_path",
@@ -6752,7 +6758,7 @@
             "lower_confidence_price": 288.52,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 288.52,
-            "probability_of_reaching_primary_price": 0.3105,
+            "probability_of_reaching_primary_price": 0.3107,
             "risk_scenario_price": 288.52,
             "secondary_scenario_price": 322.09,
             "source": "simulated_path",
@@ -6856,10 +6862,10 @@
             "price": 296.21,
             "source": "price_structure"
           },
-          "primary_probability": 0.3105,
+          "primary_probability": 0.3107,
           "primary_scenario": "bearish_path",
-          "probability_gap": 0.0254,
-          "risk_probability": 0.268,
+          "probability_gap": 0.0257,
+          "risk_probability": 0.2679,
           "risk_scenario_activation_level": {
             "condition": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
             "distance_from_current": -23.72,
@@ -6873,7 +6879,7 @@
             "price": 273.95,
             "source": "simulated_path"
           },
-          "secondary_probability": 0.2851,
+          "secondary_probability": 0.285,
           "trend_reversal_confirmation_level": {
             "condition": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
             "distance_from_current": 7.42,
@@ -6906,11 +6912,11 @@
           "source": "price_structure",
           "status": "available"
         },
-        "primary_probability": 0.3105,
+        "primary_probability": 0.3107,
         "primary_scenario": "bearish_path",
-        "risk_probability": 0.268,
+        "risk_probability": 0.2679,
         "risk_scenario": "analog_average_path",
-        "secondary_probability": 0.2851,
+        "secondary_probability": 0.285,
         "secondary_scenario": "bounce_path",
         "source_note": "Derived from existing simulated paths, recent price structure and realized-volatility bands.",
         "summary": {
@@ -7800,7 +7806,7 @@
           "flow_quality": 1.0,
           "internal_resonance": 0.3003,
           "options_quality": 0.92,
-          "predictor_consistency": 0.8002,
+          "predictor_consistency": 0.8033999999999999,
           "prior_confidence": 0.78,
           "signal_confirmation": 0.7
         },
@@ -7845,7 +7851,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 93,
+            "freshness_score": 94,
+            "headline": "Oil set for second weekly rise as unsettled US-Iran war crimps supply - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-21T01:50:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 79,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 89,
             "headline": "Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7865,73 +7898,19 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 78,
+            "confidence_score": 77,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 85,
+            "freshness_score": 81,
             "headline": "The Los Angeles Lakers sold for $12.5 billion. Here’s what every NBA team is now worth",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-08-20T20:28:21+00:00",
-            "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 76,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 76,
-            "headline": "Gatekeeping bots, piles of slop: Welcome to the age of AI weirdness at work",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-08-20T16:30:01+00:00",
-            "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 72,
-            "headline": "California AG tells CNBC that settling Paramount-WBD lawsuit would require 'robust structural remedies'",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-08-20T14:52:28+00:00",
             "source": "CNBC"
           },
           {
@@ -7953,13 +7932,13 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
-            "headline": "Yemen's Houthis say they attacked Najran airport, Aramco facilities in Saudi Arabia - Reuters",
+            "freshness_score": 71,
+            "headline": "Gatekeeping bots, piles of slop: Welcome to the age of AI weirdness at work",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-08-20T14:12:26+00:00",
-            "source": "Reuters"
+            "published_at": "2026-08-20T16:30:01+00:00",
+            "source": "CNBC"
           },
           {
             "affected_assets": [
@@ -7973,19 +7952,46 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 72,
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 62,
-            "headline": "Tanker off Yemen boarded by armed people, diverted towards Somalia, UKMTO says - Reuters",
+            "freshness_score": 68,
+            "headline": "California AG tells CNBC that settling Paramount-WBD lawsuit would require 'robust structural remedies'",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-08-20T10:39:27+00:00",
+            "published_at": "2026-08-20T14:52:28+00:00",
+            "source": "CNBC"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 73,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 66,
+            "headline": "Yemen's Houthis say they attacked Najran airport, Aramco facilities in Saudi Arabia - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-20T14:12:26+00:00",
             "source": "Reuters"
           }
         ],
@@ -8015,6 +8021,18 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Oil set for second weekly rise as unsettled US-Iran war crimps supply - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-08-21T01:50:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters",
               "importance_score": 100,
               "published_at": "2026-08-20T23:53:38+00:00",
@@ -8033,7 +8051,7 @@
               "source": "CNBC"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -8045,7 +8063,7 @@
               "source": "CNBC"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -8067,26 +8085,14 @@
               "importance_score": 100,
               "published_at": "2026-08-20T14:12:26+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Tanker off Yemen boarded by armed people, diverted towards Somalia, UKMTO says - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-08-20T10:39:27+00:00",
-              "source": "Reuters"
             }
           ]
         },
         "news_direction": "risk_off",
         "prediction_logic_effect": {
-          "after_primary_probability": 0.3105,
+          "after_primary_probability": 0.3107,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.3137,
+          "before_primary_probability": 0.3136,
           "before_primary_scenario": "bounce_path",
           "confirmation_delta": -6.5,
           "impact": "conflicts_primary",
@@ -8114,7 +8120,7 @@
             "risk_expansion_predictor": 0.0348,
             "trend_reversal_predictor": 0.0
           },
-          "primary_probability_delta": -0.0032,
+          "primary_probability_delta": -0.0029,
           "primary_scenario_changed": true,
           "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay",
           "validation_type": "daily"
@@ -8122,7 +8128,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0104,
-            "avg_equity_futures_1d_return": -0.0087,
+            "avg_equity_futures_1d_return": 0.0016,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -8138,7 +8144,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0029,
-            "oil_proxy_1d_return": 0.0192,
+            "oil_proxy_1d_return": 0.0061,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -8189,10 +8195,10 @@
         "基准情景：使用相似样本平均路径；所有路径都是概率情景，不是确定预测。"
       ],
       "path_weight_model": {
-        "analog_path_weight": 0.268,
+        "analog_path_weight": 0.2679,
         "base_path_weight": 0.1365,
-        "bearish_path_weight": 0.3105,
-        "bounce_path_weight": 0.2851,
+        "bearish_path_weight": 0.3107,
+        "bounce_path_weight": 0.285,
         "low_confidence_simulation": false,
         "news_event_overlay_applied": true,
         "news_event_overlay_note": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay",
@@ -8204,11 +8210,11 @@
           "breadth_quality": 0.64,
           "breadth_support": 0.4653,
           "credit_stability": 0.9393,
-          "crowding_proxy": 0.0732,
+          "crowding_proxy": 0.0745,
           "data_completeness": 0.84,
           "failed_bounce_options_risk": 0.2866,
           "failed_bounce_risk": 0.3198,
-          "flow_confirmation": 0.7858,
+          "flow_confirmation": 0.7863,
           "flow_conflict": 0.2059,
           "flow_quality": 1.0,
           "historical_analog_support": 1.0,
@@ -8218,12 +8224,12 @@
           "news_event_direction": "supports_risk_expansion",
           "news_event_macro_risk": 0.0,
           "news_event_price_confirmed": 1.0,
-          "news_risk": 0.45,
+          "news_risk": 0.55,
           "options_quality": 0.92,
           "options_stress": 0.2799,
           "panic_release": 0.495,
           "rates_pressure": 0.163,
-          "risk_expansion": 0.3683,
+          "risk_expansion": 0.3726,
           "signal_agreement": 0.82,
           "signal_confirmation": 0.7,
           "tail_risk": 0.241,
@@ -9491,7 +9497,7 @@
           "failed_bounce_risk": 0.55,
           "historical_support": "supportive",
           "market_edge_status": "STRONG_EDGE",
-          "risk_expansion_probability": 0.3519,
+          "risk_expansion_probability": 0.36,
           "trend_reversal_probability": 0.5567,
           "up_probability": 0.5718980177933175
         },
@@ -9550,7 +9556,7 @@
           "failed_bounce_risk": 0.55,
           "historical_support": "supportive",
           "market_edge_status": "STRONG_EDGE",
-          "risk_expansion_probability": 0.3519,
+          "risk_expansion_probability": 0.36,
           "trend_reversal_probability": 0.5567,
           "up_probability": 0.5988853029022052
         }
@@ -9569,8 +9575,8 @@
               "score": 0.12
             }
           ],
-          "crowding_proxy_score": 0.0732,
-          "flow_confirmation_score": 0.7858,
+          "crowding_proxy_score": 0.0745,
+          "flow_confirmation_score": 0.7863,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "supportive",
@@ -9608,10 +9614,10 @@
           "breadth_quality": 0.64,
           "break_level": 288.57,
           "confidence": 0.551,
-          "crowding_proxy_score": 0.0732,
+          "crowding_proxy_score": 0.0745,
           "downside_continuation_probability": 0.4009,
           "failed_bounce_options_risk": 0.2866,
-          "flow_confirmation_score": 0.7858,
+          "flow_confirmation_score": 0.7863,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "supportive",
@@ -9646,11 +9652,11 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 0.64,
           "breadth_risk": 0.4711,
-          "confidence": 0.6112,
+          "confidence": 0.614,
           "credit_risk": 0.1037,
-          "crowding_proxy_score": 0.0732,
+          "crowding_proxy_score": 0.0745,
           "failed_bounce_options_risk": 0.2866,
-          "flow_confirmation_score": 0.7858,
+          "flow_confirmation_score": 0.7863,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "high",
@@ -9666,14 +9672,14 @@
           "macro_event_risk": 1.0,
           "main_drivers": [
             "macro event risk: 1.00",
+            "news risk: 0.55",
             "breadth deterioration: 0.51",
-            "news risk: 0.45",
             "risk-off rotation: 0.35",
             "news_event_overlay:+0.035"
           ],
           "options_quality": 0.92,
-          "probability": 0.4031,
-          "risk_expansion_probability": 0.4031,
+          "probability": 0.4074,
+          "risk_expansion_probability": 0.4074,
           "tail_risk_score": 0.241,
           "term_structure_state": "contango",
           "volatility_risk": 0.2799
@@ -9689,8 +9695,8 @@
             "credit proxy stays stable",
             "price holds above recent low"
           ],
-          "crowding_proxy_score": 0.0732,
-          "flow_confirmation_score": 0.7858,
+          "crowding_proxy_score": 0.0745,
+          "flow_confirmation_score": 0.7863,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "supportive",
@@ -9730,8 +9736,8 @@
               "score": 0.12
             }
           ],
-          "crowding_proxy_score": 0.0732,
-          "flow_confirmation_score": 0.7858,
+          "crowding_proxy_score": 0.0745,
+          "flow_confirmation_score": 0.7863,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "supportive",
@@ -9769,10 +9775,10 @@
           "breadth_quality": 0.64,
           "break_level": 288.57,
           "confidence": 0.551,
-          "crowding_proxy_score": 0.0732,
+          "crowding_proxy_score": 0.0745,
           "downside_continuation_probability": 0.4009,
           "failed_bounce_options_risk": 0.2866,
-          "flow_confirmation_score": 0.7858,
+          "flow_confirmation_score": 0.7863,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "supportive",
@@ -9807,11 +9813,11 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 0.64,
           "breadth_risk": 0.4711,
-          "confidence": 0.6112,
+          "confidence": 0.614,
           "credit_risk": 0.1037,
-          "crowding_proxy_score": 0.0732,
+          "crowding_proxy_score": 0.0745,
           "failed_bounce_options_risk": 0.2866,
-          "flow_confirmation_score": 0.7858,
+          "flow_confirmation_score": 0.7863,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "high",
@@ -9827,14 +9833,14 @@
           "macro_event_risk": 1.0,
           "main_drivers": [
             "macro event risk: 1.00",
+            "news risk: 0.55",
             "breadth deterioration: 0.51",
-            "news risk: 0.45",
             "risk-off rotation: 0.35",
             "news_event_overlay:+0.035"
           ],
           "options_quality": 0.92,
-          "probability": 0.4031,
-          "risk_expansion_probability": 0.4031,
+          "probability": 0.4074,
+          "risk_expansion_probability": 0.4074,
           "tail_risk_score": 0.241,
           "term_structure_state": "contango",
           "volatility_risk": 0.2799
@@ -9850,8 +9856,8 @@
             "credit proxy stays stable",
             "price holds above recent low"
           ],
-          "crowding_proxy_score": 0.0732,
-          "flow_confirmation_score": 0.7858,
+          "crowding_proxy_score": 0.0745,
+          "flow_confirmation_score": 0.7863,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "supportive",
@@ -9894,21 +9900,21 @@
         {
           "name": "Bounce case",
           "name_cn": "反弹情景",
-          "probability_weight": 0.2851,
+          "probability_weight": 0.285,
           "return_20d": 0.05683775672399882,
           "summary_cn": "如果 Alpha v1 信号继续有效，路径更接近历史上较好的反抽样本。"
         },
         {
           "name": "Bearish case",
           "name_cn": "失败反弹情景",
-          "probability_weight": 0.3105,
+          "probability_weight": 0.3107,
           "return_20d": -0.07969055659398365,
           "summary_cn": "如果波动和信用代理恶化，路径更接近历史上较差的一组样本。"
         },
         {
           "name": "Historical analog case",
           "name_cn": "历史相似情景",
-          "probability_weight": 0.268,
+          "probability_weight": 0.2679,
           "return_20d": 0.0013657698447993027,
           "summary_cn": "只看最相似历史样本后的实际表现，不做确定性预测。"
         }
@@ -9919,7 +9925,7 @@
             "confidence": "medium",
             "expected_horizon": "3d-10d",
             "label": "失败反抽情景",
-            "probability": 0.3105,
+            "probability": 0.3107,
             "reason": "Downside/Risk predictors 为 37%/37%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bearish_path"
           },
@@ -9927,7 +9933,7 @@
             "confidence": "medium",
             "expected_horizon": "10d-20d",
             "label": "反抽情景",
-            "probability": 0.2851,
+            "probability": 0.285,
             "reason": "Bounce Predictor 54%，多源确认 70/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bounce_path"
           },
@@ -9935,7 +9941,7 @@
             "confidence": "medium",
             "expected_horizon": "20d-60d",
             "label": "历史均值情景",
-            "probability": 0.268,
+            "probability": 0.2679,
             "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay.",
             "scenario": "analog_average_path"
           },
@@ -9955,12 +9961,12 @@
           "confidence": "medium",
           "expected_horizon": "3d-10d",
           "label": "失败反抽情景",
-          "probability": 0.3105,
+          "probability": 0.3107,
           "reason": "Downside/Risk predictors 为 37%/37%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bearish_path"
         },
         "primary_scenario": "bearish_path",
-        "primary_secondary_gap": 0.0254,
+        "primary_secondary_gap": 0.0257,
         "primary_to_secondary_switch_conditions": [
           "VIX 与新闻方向背离",
           "HYG/LQD 转弱",
@@ -9969,15 +9975,15 @@
           "IWM 重新站上主路径确认价",
           "第二路径 bounce_path 获得多源确认"
         ],
-        "probability_gap": 0.0254,
+        "probability_gap": 0.0257,
         "ranking_note": "Scenario ranking includes a bounded News/Event overlay when a major event or macro calendar risk is detected. It is probabilistic, not deterministic.",
         "risk_scenario": "bearish_path",
-        "scenario_probability": 0.3105,
+        "scenario_probability": 0.3107,
         "secondary": {
           "confidence": "medium",
           "expected_horizon": "10d-20d",
           "label": "反抽情景",
-          "probability": 0.2851,
+          "probability": 0.285,
           "reason": "Bounce Predictor 54%，多源确认 70/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bounce_path"
         },
@@ -9994,16 +10000,16 @@
           "confidence": "medium",
           "expected_horizon": "20d-60d",
           "label": "历史均值情景",
-          "probability": 0.268,
+          "probability": 0.2679,
           "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay.",
           "scenario": "analog_average_path"
         }
       },
       "scenario_weights": {
         "base_scenario": 0.1365,
-        "bearish_scenario": 0.3105,
-        "bounce_scenario": 0.2851,
-        "historical_analog_average": 0.268
+        "bearish_scenario": 0.3107,
+        "bounce_scenario": 0.285,
+        "historical_analog_average": 0.2679
       },
       "shadow_evidence_v1": {
         "alert_status_by_type": {
@@ -10282,11 +10288,11 @@
       "trend_reversal_probability": 0.41102286763685325
     },
     "QQQ": {
-      "analog_path_weight": 0.2506,
+      "analog_path_weight": 0.2505,
       "as_of": "2026-08-20",
       "base_path_weight": 0.1884,
-      "bearish_path_weight": 0.3332,
-      "bounce_path_weight": 0.2279,
+      "bearish_path_weight": 0.3334,
+      "bounce_path_weight": 0.2278,
       "bounce_probability": 0.38471703,
       "confluence": {
         "conflicting_evidence": [
@@ -10364,9 +10370,9 @@
         ],
         "not_trading_advice": "This is forecast confirmation only, not a buy/sell/entry/exit or position-sizing recommendation.",
         "primary_label": "失败反抽情景",
-        "primary_probability": 0.3332,
+        "primary_probability": 0.3334,
         "primary_scenario": "bearish_path",
-        "probability_gap": 0.0826,
+        "probability_gap": 0.0829,
         "related_price_levels": {
           "primary_confirmation_level": {
             "confidence": "medium",
@@ -10401,7 +10407,7 @@
             "source_type": "price_structure"
           }
         },
-        "secondary_probability": 0.2506,
+        "secondary_probability": 0.2505,
         "secondary_scenario": "analog_average_path",
         "strong_conclusion_allowed": false,
         "supporting_evidence": [
@@ -10450,7 +10456,7 @@
           {
             "detail": "primary-secondary gap 8.3%",
             "name": "主次路径差距可观察",
-            "score": 8.26,
+            "score": 8.29,
             "source": "scenario_gap"
           },
           {
@@ -10574,10 +10580,10 @@
           "ig_oas_20d_change": 0.030000000000000027
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote 710.93; news risk 45%; macro event risk flagged; rates pressure 16%.",
+          "brief": "Finnhub quote 710.93; news risk 55%; macro event risk flagged; rates pressure 16%.",
           "finnhub_quote_available": true,
           "macro_event_risk_flag": true,
-          "news_risk_score": 0.45,
+          "news_risk_score": 0.55,
           "rates_pressure_score": 0.16297345682489117,
           "symbol": "QQQ"
         },
@@ -10593,14 +10599,14 @@
         },
         "flow_positioning_proxy": {
           "credit_risk_appetite_20d": 0.014338,
-          "crowding_proxy_score": 0.0823,
-          "crowding_proxy_score_raw": 8.23,
+          "crowding_proxy_score": 0.0819,
+          "crowding_proxy_score_raw": 8.19,
           "data_note": "Proxy only: ETF volume, factor rotation, sector rotation, HYG/LQD, TLT and UUP. No true fund-flow or positioning feed.",
           "defensive_vs_cyclical_20d": -0.016071,
           "equal_weight_vs_cap_weight_20d": 0.002264,
-          "etf_relative_volume_20d": 0.8224,
-          "flow_confirmation_score": 0.7453,
-          "flow_confirmation_score_raw": 74.53,
+          "etf_relative_volume_20d": 0.8232,
+          "flow_confirmation_score": 0.7454000000000001,
+          "flow_confirmation_score_raw": 74.54,
           "flow_conflict_score": 0.2059,
           "flow_conflict_score_raw": 20.59,
           "flow_quality_score": 1.0,
@@ -10617,8 +10623,8 @@
           "source": "market_data_proxy",
           "status": "proxy",
           "true_flow_available": false,
-          "volume_confirmation_score": 0.3151,
-          "volume_zscore_20d": -0.5484
+          "volume_confirmation_score": 0.3155,
+          "volume_zscore_20d": -0.5457
         },
         "macro_event_calendar": {
           "cpi_date": "2026-09-08",
@@ -10644,13 +10650,13 @@
         "news": {
           "market_news_status": "available",
           "news_item_count": 40,
-          "news_risk_score": 0.45,
+          "news_risk_score": 0.55,
           "top_headlines": [
+            "Oil set for second weekly rise as unsettled US-Iran war crimps supply - Reuters",
+            "US says it will impose 'toughest sanctions in history' on Iran - Reuters",
             "Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters",
             "Bessent says US to impose 'toughest' ever sanctions on Iran, urges China to cooperate - Reuters",
-            "Micron CEO pushes back on memory bear case. 3 key takeaways from Cramer's big interview",
-            "China boosts imports of Russian crude, stymieing India's refiners - Reuters",
-            "US envoy Huckabee tells Israeli settlers not to take Palestinian Americans' land - Reuters"
+            "Micron CEO pushes back on memory bear case. 3 key takeaways from Cramer's big interview"
           ]
         },
         "price": {
@@ -10660,7 +10666,7 @@
           "return_20d": 0.027414836263293108,
           "return_60d": -0.026496735286221984,
           "rsi_14": 62.36258368654312,
-          "volume_zscore_20d": -0.5483747980842179
+          "volume_zscore_20d": -0.5456950845699953
         },
         "rates_liquidity": {
           "liquidity_stress_proxy": 0.019959164345986435,
@@ -10738,7 +10744,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 685.5,
-            "probability_of_reaching_primary_price": 0.3332,
+            "probability_of_reaching_primary_price": 0.3334,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 685.5,
@@ -10759,7 +10765,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 702.92,
-            "probability_of_reaching_primary_price": 0.3332,
+            "probability_of_reaching_primary_price": 0.3334,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 702.92,
@@ -10780,7 +10786,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 670.83,
-            "probability_of_reaching_primary_price": 0.3332,
+            "probability_of_reaching_primary_price": 0.3334,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 670.83,
@@ -10801,7 +10807,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 703.55,
-            "probability_of_reaching_primary_price": 0.3332,
+            "probability_of_reaching_primary_price": 0.3334,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 703.55,
@@ -10822,7 +10828,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 696.3,
-            "probability_of_reaching_primary_price": 0.3332,
+            "probability_of_reaching_primary_price": 0.3334,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 696.3,
@@ -10843,7 +10849,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 714.02,
-            "probability_of_reaching_primary_price": 0.3332,
+            "probability_of_reaching_primary_price": 0.3334,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 714.02,
@@ -10863,7 +10869,7 @@
             "lower_confidence_price": 685.5,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 685.5,
-            "probability_of_reaching_primary_price": 0.3332,
+            "probability_of_reaching_primary_price": 0.3334,
             "risk_scenario_price": 685.5,
             "secondary_scenario_price": 721.13,
             "source": "simulated_path",
@@ -10877,7 +10883,7 @@
             "lower_confidence_price": 702.92,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 702.92,
-            "probability_of_reaching_primary_price": 0.3332,
+            "probability_of_reaching_primary_price": 0.3334,
             "risk_scenario_price": 702.92,
             "secondary_scenario_price": 709.18,
             "source": "simulated_path",
@@ -10891,7 +10897,7 @@
             "lower_confidence_price": 670.83,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 670.83,
-            "probability_of_reaching_primary_price": 0.3332,
+            "probability_of_reaching_primary_price": 0.3334,
             "risk_scenario_price": 670.83,
             "secondary_scenario_price": 733.84,
             "source": "simulated_path",
@@ -10905,7 +10911,7 @@
             "lower_confidence_price": 703.55,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 703.55,
-            "probability_of_reaching_primary_price": 0.3332,
+            "probability_of_reaching_primary_price": 0.3334,
             "risk_scenario_price": 703.55,
             "secondary_scenario_price": 713.66,
             "source": "simulated_path",
@@ -10919,7 +10925,7 @@
             "lower_confidence_price": 696.3,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 696.3,
-            "probability_of_reaching_primary_price": 0.3332,
+            "probability_of_reaching_primary_price": 0.3334,
             "risk_scenario_price": 696.3,
             "secondary_scenario_price": 712.56,
             "source": "simulated_path",
@@ -10933,7 +10939,7 @@
             "lower_confidence_price": 714.02,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 714.02,
-            "probability_of_reaching_primary_price": 0.3332,
+            "probability_of_reaching_primary_price": 0.3334,
             "risk_scenario_price": 714.02,
             "secondary_scenario_price": 761.92,
             "source": "simulated_path",
@@ -11037,10 +11043,10 @@
             "price": 703.55,
             "source": "price_structure"
           },
-          "primary_probability": 0.3332,
+          "primary_probability": 0.3334,
           "primary_scenario": "bearish_path",
-          "probability_gap": 0.0826,
-          "risk_probability": 0.2279,
+          "probability_gap": 0.0829,
+          "risk_probability": 0.2278,
           "risk_scenario_activation_level": {
             "condition": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
             "distance_from_current": -49.2,
@@ -11054,7 +11060,7 @@
             "price": 661.73,
             "source": "simulated_path"
           },
-          "secondary_probability": 0.2506,
+          "secondary_probability": 0.2505,
           "trend_reversal_confirmation_level": {
             "condition": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
             "distance_from_current": 21.14,
@@ -11087,11 +11093,11 @@
           "source": "price_structure",
           "status": "available"
         },
-        "primary_probability": 0.3332,
+        "primary_probability": 0.3334,
         "primary_scenario": "bearish_path",
-        "risk_probability": 0.2279,
+        "risk_probability": 0.2278,
         "risk_scenario": "bounce_path",
-        "secondary_probability": 0.2506,
+        "secondary_probability": 0.2505,
         "secondary_scenario": "analog_average_path",
         "source_note": "Derived from existing simulated paths, recent price structure and realized-volatility bands.",
         "summary": {
@@ -11972,7 +11978,7 @@
           "flow_quality": 1.0,
           "internal_resonance": 0.0748,
           "options_quality": 0.92,
-          "predictor_consistency": 0.9029,
+          "predictor_consistency": 0.907,
           "prior_confidence": 0.75,
           "signal_confirmation": 0.54
         },
@@ -12018,7 +12024,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 93,
+            "freshness_score": 94,
+            "headline": "Oil set for second weekly rise as unsettled US-Iran war crimps supply - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-21T01:50:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 79,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 89,
             "headline": "Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12038,73 +12071,19 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 78,
+            "confidence_score": 77,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 85,
+            "freshness_score": 81,
             "headline": "The Los Angeles Lakers sold for $12.5 billion. Here’s what every NBA team is now worth",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-08-20T20:28:21+00:00",
-            "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 76,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 76,
-            "headline": "Gatekeeping bots, piles of slop: Welcome to the age of AI weirdness at work",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-08-20T16:30:01+00:00",
-            "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 72,
-            "headline": "California AG tells CNBC that settling Paramount-WBD lawsuit would require 'robust structural remedies'",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-08-20T14:52:28+00:00",
             "source": "CNBC"
           },
           {
@@ -12126,13 +12105,13 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
-            "headline": "Yemen's Houthis say they attacked Najran airport, Aramco facilities in Saudi Arabia - Reuters",
+            "freshness_score": 71,
+            "headline": "Gatekeeping bots, piles of slop: Welcome to the age of AI weirdness at work",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-08-20T14:12:26+00:00",
-            "source": "Reuters"
+            "published_at": "2026-08-20T16:30:01+00:00",
+            "source": "CNBC"
           },
           {
             "affected_assets": [
@@ -12146,19 +12125,46 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 72,
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 62,
-            "headline": "Tanker off Yemen boarded by armed people, diverted towards Somalia, UKMTO says - Reuters",
+            "freshness_score": 68,
+            "headline": "California AG tells CNBC that settling Paramount-WBD lawsuit would require 'robust structural remedies'",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-08-20T10:39:27+00:00",
+            "published_at": "2026-08-20T14:52:28+00:00",
+            "source": "CNBC"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 73,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 66,
+            "headline": "Yemen's Houthis say they attacked Najran airport, Aramco facilities in Saudi Arabia - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-20T14:12:26+00:00",
             "source": "Reuters"
           }
         ],
@@ -12188,6 +12194,18 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Oil set for second weekly rise as unsettled US-Iran war crimps supply - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-08-21T01:50:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters",
               "importance_score": 100,
               "published_at": "2026-08-20T23:53:38+00:00",
@@ -12206,7 +12224,7 @@
               "source": "CNBC"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -12218,7 +12236,7 @@
               "source": "CNBC"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -12240,26 +12258,14 @@
               "importance_score": 100,
               "published_at": "2026-08-20T14:12:26+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Tanker off Yemen boarded by armed people, diverted towards Somalia, UKMTO says - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-08-20T10:39:27+00:00",
-              "source": "Reuters"
             }
           ]
         },
         "news_direction": "risk_off",
         "prediction_logic_effect": {
-          "after_primary_probability": 0.3332,
+          "after_primary_probability": 0.3334,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.2913,
+          "before_primary_probability": 0.2915,
           "before_primary_scenario": "bearish_path",
           "confirmation_delta": -6.5,
           "impact": "supports_primary",
@@ -12295,7 +12301,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0104,
-            "avg_equity_futures_1d_return": -0.0087,
+            "avg_equity_futures_1d_return": 0.0016,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -12311,7 +12317,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0029,
-            "oil_proxy_1d_return": 0.0192,
+            "oil_proxy_1d_return": 0.0061,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -12362,10 +12368,10 @@
         "基准情景：使用相似样本平均路径；所有路径都是概率情景，不是确定预测。"
       ],
       "path_weight_model": {
-        "analog_path_weight": 0.2506,
+        "analog_path_weight": 0.2505,
         "base_path_weight": 0.1884,
-        "bearish_path_weight": 0.3332,
-        "bounce_path_weight": 0.2279,
+        "bearish_path_weight": 0.3334,
+        "bounce_path_weight": 0.2278,
         "low_confidence_simulation": true,
         "news_event_overlay_applied": true,
         "news_event_overlay_note": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay",
@@ -12377,11 +12383,11 @@
           "breadth_quality": 0.04,
           "breadth_support": 0.0939,
           "credit_stability": 0.9393,
-          "crowding_proxy": 0.0823,
+          "crowding_proxy": 0.0819,
           "data_completeness": 0.84,
           "failed_bounce_options_risk": 0.2866,
           "failed_bounce_risk": 0.3526,
-          "flow_confirmation": 0.7453,
+          "flow_confirmation": 0.7454,
           "flow_conflict": 0.2059,
           "flow_quality": 1.0,
           "historical_analog_support": 1.0,
@@ -12391,12 +12397,12 @@
           "news_event_direction": "supports_risk_expansion",
           "news_event_macro_risk": 0.0,
           "news_event_price_confirmed": 1.0,
-          "news_risk": 0.45,
+          "news_risk": 0.55,
           "options_quality": 0.92,
           "options_stress": 0.2799,
           "panic_release": 0.495,
           "rates_pressure": 0.163,
-          "risk_expansion": 0.4067,
+          "risk_expansion": 0.4108,
           "signal_agreement": 0.69,
           "signal_confirmation": 0.54,
           "tail_risk": 0.241,
@@ -13664,7 +13670,7 @@
           "failed_bounce_risk": 0.575,
           "historical_support": "supportive",
           "market_edge_status": "STRONG_EDGE",
-          "risk_expansion_probability": 0.404,
+          "risk_expansion_probability": 0.412,
           "trend_reversal_probability": 0.5219,
           "up_probability": 0.6007441447338374
         },
@@ -13723,7 +13729,7 @@
           "failed_bounce_risk": 0.575,
           "historical_support": "supportive",
           "market_edge_status": "STRONG_EDGE",
-          "risk_expansion_probability": 0.404,
+          "risk_expansion_probability": 0.412,
           "trend_reversal_probability": 0.5219,
           "up_probability": 0.639208673363633
         }
@@ -13747,8 +13753,8 @@
               "score": 0.12
             }
           ],
-          "crowding_proxy_score": 0.0823,
-          "flow_confirmation_score": 0.7453,
+          "crowding_proxy_score": 0.0819,
+          "flow_confirmation_score": 0.7454,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "supportive",
@@ -13786,10 +13792,10 @@
           "breadth_quality": 0.04,
           "break_level": 661.73,
           "confidence": 0.5965,
-          "crowding_proxy_score": 0.0823,
+          "crowding_proxy_score": 0.0819,
           "downside_continuation_probability": 0.4569,
           "failed_bounce_options_risk": 0.2866,
-          "flow_confirmation_score": 0.7453,
+          "flow_confirmation_score": 0.7454,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "supportive",
@@ -13824,11 +13830,11 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 0.04,
           "breadth_risk": 0.6907,
-          "confidence": 0.6294,
+          "confidence": 0.6322,
           "credit_risk": 0.1037,
-          "crowding_proxy_score": 0.0823,
+          "crowding_proxy_score": 0.0819,
           "failed_bounce_options_risk": 0.2866,
-          "flow_confirmation_score": 0.7453,
+          "flow_confirmation_score": 0.7454,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "high",
@@ -13845,13 +13851,13 @@
           "main_drivers": [
             "macro event risk: 1.00",
             "breadth deterioration: 0.71",
-            "news risk: 0.45",
+            "news risk: 0.55",
             "risk-off rotation: 0.35",
             "news_event_overlay:+0.035"
           ],
           "options_quality": 0.92,
-          "probability": 0.4415,
-          "risk_expansion_probability": 0.4415,
+          "probability": 0.4456,
+          "risk_expansion_probability": 0.4456,
           "tail_risk_score": 0.241,
           "term_structure_state": "contango",
           "volatility_risk": 0.2799
@@ -13867,8 +13873,8 @@
             "credit proxy stays stable",
             "price holds above recent low"
           ],
-          "crowding_proxy_score": 0.0823,
-          "flow_confirmation_score": 0.7453,
+          "crowding_proxy_score": 0.0819,
+          "flow_confirmation_score": 0.7454,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "supportive",
@@ -13913,8 +13919,8 @@
               "score": 0.12
             }
           ],
-          "crowding_proxy_score": 0.0823,
-          "flow_confirmation_score": 0.7453,
+          "crowding_proxy_score": 0.0819,
+          "flow_confirmation_score": 0.7454,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "supportive",
@@ -13952,10 +13958,10 @@
           "breadth_quality": 0.04,
           "break_level": 661.73,
           "confidence": 0.5965,
-          "crowding_proxy_score": 0.0823,
+          "crowding_proxy_score": 0.0819,
           "downside_continuation_probability": 0.4569,
           "failed_bounce_options_risk": 0.2866,
-          "flow_confirmation_score": 0.7453,
+          "flow_confirmation_score": 0.7454,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "supportive",
@@ -13990,11 +13996,11 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 0.04,
           "breadth_risk": 0.6907,
-          "confidence": 0.6294,
+          "confidence": 0.6322,
           "credit_risk": 0.1037,
-          "crowding_proxy_score": 0.0823,
+          "crowding_proxy_score": 0.0819,
           "failed_bounce_options_risk": 0.2866,
-          "flow_confirmation_score": 0.7453,
+          "flow_confirmation_score": 0.7454,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "high",
@@ -14011,13 +14017,13 @@
           "main_drivers": [
             "macro event risk: 1.00",
             "breadth deterioration: 0.71",
-            "news risk: 0.45",
+            "news risk: 0.55",
             "risk-off rotation: 0.35",
             "news_event_overlay:+0.035"
           ],
           "options_quality": 0.92,
-          "probability": 0.4415,
-          "risk_expansion_probability": 0.4415,
+          "probability": 0.4456,
+          "risk_expansion_probability": 0.4456,
           "tail_risk_score": 0.241,
           "term_structure_state": "contango",
           "volatility_risk": 0.2799
@@ -14033,8 +14039,8 @@
             "credit proxy stays stable",
             "price holds above recent low"
           ],
-          "crowding_proxy_score": 0.0823,
-          "flow_confirmation_score": 0.7453,
+          "crowding_proxy_score": 0.0819,
+          "flow_confirmation_score": 0.7454,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "supportive",
@@ -14077,21 +14083,21 @@
         {
           "name": "Bounce case",
           "name_cn": "反弹情景",
-          "probability_weight": 0.2279,
+          "probability_weight": 0.2278,
           "return_20d": 0.1462399631426276,
           "summary_cn": "如果 Alpha v1 信号继续有效，路径更接近历史上较好的反抽样本。"
         },
         {
           "name": "Bearish case",
           "name_cn": "失败反弹情景",
-          "probability_weight": 0.3332,
+          "probability_weight": 0.3334,
           "return_20d": -0.05640540931951423,
           "summary_cn": "如果波动和信用代理恶化，路径更接近历史上较差的一组样本。"
         },
         {
           "name": "Historical analog case",
           "name_cn": "历史相似情景",
-          "probability_weight": 0.2506,
+          "probability_weight": 0.2505,
           "return_20d": 0.03221868640452511,
           "summary_cn": "只看最相似历史样本后的实际表现，不做确定性预测。"
         }
@@ -14102,7 +14108,7 @@
             "confidence": "low",
             "expected_horizon": "3d-10d",
             "label": "失败反抽情景",
-            "probability": 0.3332,
+            "probability": 0.3334,
             "reason": "Downside/Risk predictors 为 43%/41%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bearish_path"
           },
@@ -14110,7 +14116,7 @@
             "confidence": "low",
             "expected_horizon": "20d-60d",
             "label": "历史均值情景",
-            "probability": 0.2506,
+            "probability": 0.2505,
             "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay.",
             "scenario": "analog_average_path"
           },
@@ -14118,7 +14124,7 @@
             "confidence": "low",
             "expected_horizon": "10d-20d",
             "label": "反抽情景",
-            "probability": 0.2279,
+            "probability": 0.2278,
             "reason": "Bounce Predictor 44%，多源确认 54/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bounce_path"
           },
@@ -14138,12 +14144,12 @@
           "confidence": "low",
           "expected_horizon": "3d-10d",
           "label": "失败反抽情景",
-          "probability": 0.3332,
+          "probability": 0.3334,
           "reason": "Downside/Risk predictors 为 43%/41%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bearish_path"
         },
         "primary_scenario": "bearish_path",
-        "primary_secondary_gap": 0.0826,
+        "primary_secondary_gap": 0.0829,
         "primary_to_secondary_switch_conditions": [
           "VIX 与新闻方向背离",
           "HYG/LQD 转弱",
@@ -14152,15 +14158,15 @@
           "QQQ 重新站上主路径确认价",
           "第二路径 analog_average_path 获得多源确认"
         ],
-        "probability_gap": 0.0826,
+        "probability_gap": 0.0829,
         "ranking_note": "Scenario ranking includes a bounded News/Event overlay when a major event or macro calendar risk is detected. It is probabilistic, not deterministic.",
         "risk_scenario": "bearish_path",
-        "scenario_probability": 0.3332,
+        "scenario_probability": 0.3334,
         "secondary": {
           "confidence": "low",
           "expected_horizon": "20d-60d",
           "label": "历史均值情景",
-          "probability": 0.2506,
+          "probability": 0.2505,
           "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay.",
           "scenario": "analog_average_path"
         },
@@ -14177,16 +14183,16 @@
           "confidence": "low",
           "expected_horizon": "10d-20d",
           "label": "反抽情景",
-          "probability": 0.2279,
+          "probability": 0.2278,
           "reason": "Bounce Predictor 44%，多源确认 54/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bounce_path"
         }
       },
       "scenario_weights": {
         "base_scenario": 0.1884,
-        "bearish_scenario": 0.3332,
-        "bounce_scenario": 0.2279,
-        "historical_analog_average": 0.2506
+        "bearish_scenario": 0.3334,
+        "bounce_scenario": 0.2278,
+        "historical_analog_average": 0.2505
       },
       "shadow_evidence_v1": {
         "alert_status_by_type": {
@@ -14486,11 +14492,11 @@
       "trend_reversal_probability": 0.5567452058038187
     },
     "SPY": {
-      "analog_path_weight": 0.2468,
+      "analog_path_weight": 0.2467,
       "as_of": "2026-08-20",
       "base_path_weight": 0.1402,
-      "bearish_path_weight": 0.3295,
-      "bounce_path_weight": 0.2834,
+      "bearish_path_weight": 0.3297,
+      "bounce_path_weight": 0.2833,
       "bounce_probability": 0.59293002,
       "confluence": {
         "conflicting_evidence": [
@@ -14533,7 +14539,7 @@
           {
             "detail": "路径分歧较大，不宜给强结论。",
             "name": "主次路径差距小",
-            "score": 4.61,
+            "score": 4.64,
             "source": "scenario_gap"
           }
         ],
@@ -14562,9 +14568,9 @@
         ],
         "not_trading_advice": "This is forecast confirmation only, not a buy/sell/entry/exit or position-sizing recommendation.",
         "primary_label": "失败反抽情景",
-        "primary_probability": 0.3295,
+        "primary_probability": 0.3297,
         "primary_scenario": "bearish_path",
-        "probability_gap": 0.0461,
+        "probability_gap": 0.0464,
         "related_price_levels": {
           "primary_confirmation_level": {
             "confidence": "medium",
@@ -14599,7 +14605,7 @@
             "source_type": "price_structure"
           }
         },
-        "secondary_probability": 0.2834,
+        "secondary_probability": 0.2833,
         "secondary_scenario": "bounce_path",
         "strong_conclusion_allowed": false,
         "supporting_evidence": [
@@ -14772,10 +14778,10 @@
           "ig_oas_20d_change": 0.030000000000000027
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote 762.60; news risk 45%; macro event risk flagged; rates pressure 16%.",
+          "brief": "Finnhub quote 762.60; news risk 55%; macro event risk flagged; rates pressure 16%.",
           "finnhub_quote_available": true,
           "macro_event_risk_flag": true,
-          "news_risk_score": 0.45,
+          "news_risk_score": 0.55,
           "rates_pressure_score": 0.16297345682489117,
           "symbol": "SPY"
         },
@@ -14791,14 +14797,14 @@
         },
         "flow_positioning_proxy": {
           "credit_risk_appetite_20d": 0.014338,
-          "crowding_proxy_score": 0.013000000000000001,
-          "crowding_proxy_score_raw": 1.3,
+          "crowding_proxy_score": 0.0124,
+          "crowding_proxy_score_raw": 1.24,
           "data_note": "Proxy only: ETF volume, factor rotation, sector rotation, HYG/LQD, TLT and UUP. No true fund-flow or positioning feed.",
           "defensive_vs_cyclical_20d": -0.016071,
           "equal_weight_vs_cap_weight_20d": 0.002264,
-          "etf_relative_volume_20d": 0.9671,
-          "flow_confirmation_score": 0.7612000000000001,
-          "flow_confirmation_score_raw": 76.12,
+          "etf_relative_volume_20d": 0.9682,
+          "flow_confirmation_score": 0.7613,
+          "flow_confirmation_score_raw": 76.13,
           "flow_conflict_score": 0.2059,
           "flow_conflict_score_raw": 20.59,
           "flow_quality_score": 1.0,
@@ -14815,8 +14821,8 @@
           "source": "market_data_proxy",
           "status": "proxy",
           "true_flow_available": false,
-          "volume_confirmation_score": 0.3802,
-          "volume_zscore_20d": -0.0867
+          "volume_confirmation_score": 0.3807,
+          "volume_zscore_20d": -0.0826
         },
         "macro_event_calendar": {
           "cpi_date": "2026-09-08",
@@ -14842,13 +14848,13 @@
         "news": {
           "market_news_status": "available",
           "news_item_count": 40,
-          "news_risk_score": 0.45,
+          "news_risk_score": 0.55,
           "top_headlines": [
+            "Oil set for second weekly rise as unsettled US-Iran war crimps supply - Reuters",
+            "US says it will impose 'toughest sanctions in history' on Iran - Reuters",
             "Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters",
             "Bessent says US to impose 'toughest' ever sanctions on Iran, urges China to cooperate - Reuters",
-            "Micron CEO pushes back on memory bear case. 3 key takeaways from Cramer's big interview",
-            "China boosts imports of Russian crude, stymieing India's refiners - Reuters",
-            "US envoy Huckabee tells Israeli settlers not to take Palestinian Americans' land - Reuters"
+            "Micron CEO pushes back on memory bear case. 3 key takeaways from Cramer's big interview"
           ]
         },
         "price": {
@@ -14858,7 +14864,7 @@
           "return_20d": 0.033081339446275004,
           "return_60d": 0.016000677201618796,
           "rsi_14": 62.91253624244781,
-          "volume_zscore_20d": -0.08666444631395952
+          "volume_zscore_20d": -0.0825629004324521
         },
         "rates_liquidity": {
           "liquidity_stress_proxy": 0.019959164345986435,
@@ -14936,7 +14942,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 756.29,
-            "probability_of_reaching_primary_price": 0.3295,
+            "probability_of_reaching_primary_price": 0.3297,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 756.29,
@@ -14957,7 +14963,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 750.47,
-            "probability_of_reaching_primary_price": 0.3295,
+            "probability_of_reaching_primary_price": 0.3297,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 750.47,
@@ -14978,7 +14984,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 728.91,
-            "probability_of_reaching_primary_price": 0.3295,
+            "probability_of_reaching_primary_price": 0.3297,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 728.91,
@@ -14999,7 +15005,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 744.01,
-            "probability_of_reaching_primary_price": 0.3295,
+            "probability_of_reaching_primary_price": 0.3297,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 744.01,
@@ -15020,7 +15026,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 754.91,
-            "probability_of_reaching_primary_price": 0.3295,
+            "probability_of_reaching_primary_price": 0.3297,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 754.91,
@@ -15041,7 +15047,7 @@
             "primary_scenario": "bearish_path",
             "primary_scenario_label": "风险路径",
             "primary_scenario_price": 730.7,
-            "probability_of_reaching_primary_price": 0.3295,
+            "probability_of_reaching_primary_price": 0.3297,
             "risk_scenario": "bearish_path",
             "risk_scenario_label": "风险路径",
             "risk_scenario_price": 730.7,
@@ -15061,7 +15067,7 @@
             "lower_confidence_price": 756.29,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 756.29,
-            "probability_of_reaching_primary_price": 0.3295,
+            "probability_of_reaching_primary_price": 0.3297,
             "risk_scenario_price": 756.29,
             "secondary_scenario_price": 789.92,
             "source": "simulated_path",
@@ -15075,7 +15081,7 @@
             "lower_confidence_price": 750.47,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 750.47,
-            "probability_of_reaching_primary_price": 0.3295,
+            "probability_of_reaching_primary_price": 0.3297,
             "risk_scenario_price": 750.47,
             "secondary_scenario_price": 765.56,
             "source": "simulated_path",
@@ -15089,7 +15095,7 @@
             "lower_confidence_price": 728.91,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 728.91,
-            "probability_of_reaching_primary_price": 0.3295,
+            "probability_of_reaching_primary_price": 0.3297,
             "risk_scenario_price": 728.91,
             "secondary_scenario_price": 813.86,
             "source": "simulated_path",
@@ -15103,7 +15109,7 @@
             "lower_confidence_price": 744.01,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 744.01,
-            "probability_of_reaching_primary_price": 0.3295,
+            "probability_of_reaching_primary_price": 0.3297,
             "risk_scenario_price": 744.01,
             "secondary_scenario_price": 776.96,
             "source": "simulated_path",
@@ -15117,7 +15123,7 @@
             "lower_confidence_price": 754.91,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 754.91,
-            "probability_of_reaching_primary_price": 0.3295,
+            "probability_of_reaching_primary_price": 0.3297,
             "risk_scenario_price": 754.91,
             "secondary_scenario_price": 779.06,
             "source": "simulated_path",
@@ -15131,7 +15137,7 @@
             "lower_confidence_price": 730.7,
             "not_guaranteed_forecast": true,
             "primary_scenario_price": 730.7,
-            "probability_of_reaching_primary_price": 0.3295,
+            "probability_of_reaching_primary_price": 0.3297,
             "risk_scenario_price": 730.7,
             "secondary_scenario_price": 835.93,
             "source": "simulated_path",
@@ -15235,10 +15241,10 @@
             "price": 744.01,
             "source": "price_structure"
           },
-          "primary_probability": 0.3295,
+          "primary_probability": 0.3297,
           "primary_scenario": "bearish_path",
-          "probability_gap": 0.0461,
-          "risk_probability": 0.2468,
+          "probability_gap": 0.0464,
+          "risk_probability": 0.2467,
           "risk_scenario_activation_level": {
             "condition": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
             "distance_from_current": -33.69,
@@ -15252,7 +15258,7 @@
             "price": 728.91,
             "source": "simulated_path"
           },
-          "secondary_probability": 0.2834,
+          "secondary_probability": 0.2833,
           "trend_reversal_confirmation_level": {
             "condition": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
             "distance_from_current": 15.28,
@@ -15285,11 +15291,11 @@
           "source": "price_structure",
           "status": "available"
         },
-        "primary_probability": 0.3295,
+        "primary_probability": 0.3297,
         "primary_scenario": "bearish_path",
-        "risk_probability": 0.2468,
+        "risk_probability": 0.2467,
         "risk_scenario": "analog_average_path",
-        "secondary_probability": 0.2834,
+        "secondary_probability": 0.2833,
         "secondary_scenario": "bounce_path",
         "source_note": "Derived from existing simulated paths, recent price structure and realized-volatility bands.",
         "summary": {
@@ -16161,7 +16167,7 @@
           "flow_quality": 1.0,
           "internal_resonance": 0.3857,
           "options_quality": 0.92,
-          "predictor_consistency": 0.8004,
+          "predictor_consistency": 0.8045,
           "prior_confidence": 0.74,
           "signal_confirmation": 0.7
         },
@@ -16206,7 +16212,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 93,
+            "freshness_score": 94,
+            "headline": "Oil set for second weekly rise as unsettled US-Iran war crimps supply - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-21T01:50:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 79,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 89,
             "headline": "Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16226,73 +16259,19 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 78,
+            "confidence_score": 77,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 85,
+            "freshness_score": 81,
             "headline": "The Los Angeles Lakers sold for $12.5 billion. Here’s what every NBA team is now worth",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-08-20T20:28:21+00:00",
-            "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 76,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 76,
-            "headline": "Gatekeeping bots, piles of slop: Welcome to the age of AI weirdness at work",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-08-20T16:30:01+00:00",
-            "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 72,
-            "headline": "California AG tells CNBC that settling Paramount-WBD lawsuit would require 'robust structural remedies'",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-08-20T14:52:28+00:00",
             "source": "CNBC"
           },
           {
@@ -16314,13 +16293,13 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
-            "headline": "Yemen's Houthis say they attacked Najran airport, Aramco facilities in Saudi Arabia - Reuters",
+            "freshness_score": 71,
+            "headline": "Gatekeeping bots, piles of slop: Welcome to the age of AI weirdness at work",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-08-20T14:12:26+00:00",
-            "source": "Reuters"
+            "published_at": "2026-08-20T16:30:01+00:00",
+            "source": "CNBC"
           },
           {
             "affected_assets": [
@@ -16334,19 +16313,46 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 72,
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 62,
-            "headline": "Tanker off Yemen boarded by armed people, diverted towards Somalia, UKMTO says - Reuters",
+            "freshness_score": 68,
+            "headline": "California AG tells CNBC that settling Paramount-WBD lawsuit would require 'robust structural remedies'",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-08-20T10:39:27+00:00",
+            "published_at": "2026-08-20T14:52:28+00:00",
+            "source": "CNBC"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 73,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 66,
+            "headline": "Yemen's Houthis say they attacked Najran airport, Aramco facilities in Saudi Arabia - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-20T14:12:26+00:00",
             "source": "Reuters"
           }
         ],
@@ -16376,6 +16382,18 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Oil set for second weekly rise as unsettled US-Iran war crimps supply - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-08-21T01:50:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters",
               "importance_score": 100,
               "published_at": "2026-08-20T23:53:38+00:00",
@@ -16394,7 +16412,7 @@
               "source": "CNBC"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -16406,7 +16424,7 @@
               "source": "CNBC"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -16428,26 +16446,14 @@
               "importance_score": 100,
               "published_at": "2026-08-20T14:12:26+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Tanker off Yemen boarded by armed people, diverted towards Somalia, UKMTO says - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-08-20T10:39:27+00:00",
-              "source": "Reuters"
             }
           ]
         },
         "news_direction": "risk_off",
         "prediction_logic_effect": {
-          "after_primary_probability": 0.3295,
+          "after_primary_probability": 0.3297,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.312,
+          "before_primary_probability": 0.3119,
           "before_primary_scenario": "bounce_path",
           "confirmation_delta": -6.5,
           "impact": "conflicts_primary",
@@ -16475,7 +16481,7 @@
             "risk_expansion_predictor": 0.0348,
             "trend_reversal_predictor": 0.0
           },
-          "primary_probability_delta": 0.0175,
+          "primary_probability_delta": 0.0178,
           "primary_scenario_changed": true,
           "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay",
           "validation_type": "daily"
@@ -16483,7 +16489,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0104,
-            "avg_equity_futures_1d_return": -0.0087,
+            "avg_equity_futures_1d_return": 0.0016,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -16499,7 +16505,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0029,
-            "oil_proxy_1d_return": 0.0192,
+            "oil_proxy_1d_return": 0.0061,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -16550,10 +16556,10 @@
         "基准情景：使用相似样本平均路径；所有路径都是概率情景，不是确定预测。"
       ],
       "path_weight_model": {
-        "analog_path_weight": 0.2468,
+        "analog_path_weight": 0.2467,
         "base_path_weight": 0.1402,
-        "bearish_path_weight": 0.3295,
-        "bounce_path_weight": 0.2834,
+        "bearish_path_weight": 0.3297,
+        "bounce_path_weight": 0.2833,
         "low_confidence_simulation": false,
         "news_event_overlay_applied": true,
         "news_event_overlay_note": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay",
@@ -16565,11 +16571,11 @@
           "breadth_quality": 1.0,
           "breadth_support": 0.5898,
           "credit_stability": 0.9393,
-          "crowding_proxy": 0.013,
+          "crowding_proxy": 0.0124,
           "data_completeness": 0.84,
           "failed_bounce_options_risk": 0.2866,
           "failed_bounce_risk": 0.3784,
-          "flow_confirmation": 0.7612,
+          "flow_confirmation": 0.7613,
           "flow_conflict": 0.2059,
           "flow_quality": 1.0,
           "historical_analog_support": 0.575,
@@ -16579,12 +16585,12 @@
           "news_event_direction": "supports_risk_expansion",
           "news_event_macro_risk": 0.0,
           "news_event_price_confirmed": 1.0,
-          "news_risk": 0.45,
+          "news_risk": 0.55,
           "options_quality": 0.92,
           "options_stress": 0.2799,
           "panic_release": 0.495,
           "rates_pressure": 0.163,
-          "risk_expansion": 0.389,
+          "risk_expansion": 0.3931,
           "signal_agreement": 0.71,
           "signal_confirmation": 0.7,
           "tail_risk": 0.241,
@@ -17852,7 +17858,7 @@
           "failed_bounce_risk": 0.4683181382071617,
           "historical_support": "supportive",
           "market_edge_status": "STRONG_EDGE",
-          "risk_expansion_probability": 0.3803,
+          "risk_expansion_probability": 0.3883,
           "trend_reversal_probability": 0.5765,
           "up_probability": 0.6246426044773387
         },
@@ -17911,7 +17917,7 @@
           "failed_bounce_risk": 0.4683181382071617,
           "historical_support": "neutral",
           "market_edge_status": "STRONG_EDGE",
-          "risk_expansion_probability": 0.3803,
+          "risk_expansion_probability": 0.3883,
           "trend_reversal_probability": 0.5765,
           "up_probability": 0.5731052503103217
         }
@@ -17930,8 +17936,8 @@
               "score": 0.12
             }
           ],
-          "crowding_proxy_score": 0.013,
-          "flow_confirmation_score": 0.7612,
+          "crowding_proxy_score": 0.0124,
+          "flow_confirmation_score": 0.7613,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "weak",
@@ -17969,10 +17975,10 @@
           "breadth_quality": 1.0,
           "break_level": 729.46,
           "confidence": 0.5895,
-          "crowding_proxy_score": 0.013,
-          "downside_continuation_probability": 0.4458,
+          "crowding_proxy_score": 0.0124,
+          "downside_continuation_probability": 0.4457,
           "failed_bounce_options_risk": 0.2866,
-          "flow_confirmation_score": 0.7612,
+          "flow_confirmation_score": 0.7613,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "weak",
@@ -17992,7 +17998,7 @@
             "news_event_overlay:+0.029"
           ],
           "options_quality": 0.92,
-          "probability": 0.4458,
+          "probability": 0.4457,
           "risk_triggers": [
             "VIX rising",
             "HYG/LQD weakens",
@@ -18007,11 +18013,11 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 1.0,
           "breadth_risk": 0.625,
-          "confidence": 0.6211,
+          "confidence": 0.6239,
           "credit_risk": 0.1037,
-          "crowding_proxy_score": 0.013,
+          "crowding_proxy_score": 0.0124,
           "failed_bounce_options_risk": 0.2866,
-          "flow_confirmation_score": 0.7612,
+          "flow_confirmation_score": 0.7613,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "high",
@@ -18028,13 +18034,13 @@
           "main_drivers": [
             "macro event risk: 1.00",
             "breadth deterioration: 0.82",
-            "news risk: 0.45",
+            "news risk: 0.55",
             "risk-off rotation: 0.35",
             "news_event_overlay:+0.035"
           ],
           "options_quality": 0.92,
-          "probability": 0.4238,
-          "risk_expansion_probability": 0.4238,
+          "probability": 0.4279,
+          "risk_expansion_probability": 0.4279,
           "tail_risk_score": 0.241,
           "term_structure_state": "contango",
           "volatility_risk": 0.2799
@@ -18050,8 +18056,8 @@
             "credit proxy stays stable",
             "price holds above recent low"
           ],
-          "crowding_proxy_score": 0.013,
-          "flow_confirmation_score": 0.7612,
+          "crowding_proxy_score": 0.0124,
+          "flow_confirmation_score": 0.7613,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "supportive",
@@ -18091,8 +18097,8 @@
               "score": 0.12
             }
           ],
-          "crowding_proxy_score": 0.013,
-          "flow_confirmation_score": 0.7612,
+          "crowding_proxy_score": 0.0124,
+          "flow_confirmation_score": 0.7613,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "weak",
@@ -18130,10 +18136,10 @@
           "breadth_quality": 1.0,
           "break_level": 729.46,
           "confidence": 0.5895,
-          "crowding_proxy_score": 0.013,
-          "downside_continuation_probability": 0.4458,
+          "crowding_proxy_score": 0.0124,
+          "downside_continuation_probability": 0.4457,
           "failed_bounce_options_risk": 0.2866,
-          "flow_confirmation_score": 0.7612,
+          "flow_confirmation_score": 0.7613,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "weak",
@@ -18153,7 +18159,7 @@
             "news_event_overlay:+0.029"
           ],
           "options_quality": 0.92,
-          "probability": 0.4458,
+          "probability": 0.4457,
           "risk_triggers": [
             "VIX rising",
             "HYG/LQD weakens",
@@ -18168,11 +18174,11 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 1.0,
           "breadth_risk": 0.625,
-          "confidence": 0.6211,
+          "confidence": 0.6239,
           "credit_risk": 0.1037,
-          "crowding_proxy_score": 0.013,
+          "crowding_proxy_score": 0.0124,
           "failed_bounce_options_risk": 0.2866,
-          "flow_confirmation_score": 0.7612,
+          "flow_confirmation_score": 0.7613,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "high",
@@ -18189,13 +18195,13 @@
           "main_drivers": [
             "macro event risk: 1.00",
             "breadth deterioration: 0.82",
-            "news risk: 0.45",
+            "news risk: 0.55",
             "risk-off rotation: 0.35",
             "news_event_overlay:+0.035"
           ],
           "options_quality": 0.92,
-          "probability": 0.4238,
-          "risk_expansion_probability": 0.4238,
+          "probability": 0.4279,
+          "risk_expansion_probability": 0.4279,
           "tail_risk_score": 0.241,
           "term_structure_state": "contango",
           "volatility_risk": 0.2799
@@ -18211,8 +18217,8 @@
             "credit proxy stays stable",
             "price holds above recent low"
           ],
-          "crowding_proxy_score": 0.013,
-          "flow_confirmation_score": 0.7612,
+          "crowding_proxy_score": 0.0124,
+          "flow_confirmation_score": 0.7613,
           "flow_conflict_score": 0.2059,
           "flow_quality_score": 1.0,
           "historical_analog_support": "supportive",
@@ -18255,21 +18261,21 @@
         {
           "name": "Bounce case",
           "name_cn": "反弹情景",
-          "probability_weight": 0.2834,
+          "probability_weight": 0.2833,
           "return_20d": 0.06721746138195064,
           "summary_cn": "如果 Alpha v1 信号继续有效，路径更接近历史上较好的反抽样本。"
         },
         {
           "name": "Bearish case",
           "name_cn": "失败反弹情景",
-          "probability_weight": 0.3295,
+          "probability_weight": 0.3297,
           "return_20d": -0.044175911553454864,
           "summary_cn": "如果波动和信用代理恶化，路径更接近历史上较差的一组样本。"
         },
         {
           "name": "Historical analog case",
           "name_cn": "历史相似情景",
-          "probability_weight": 0.2468,
+          "probability_weight": 0.2467,
           "return_20d": 0.01462425549173731,
           "summary_cn": "只看最相似历史样本后的实际表现，不做确定性预测。"
         }
@@ -18280,7 +18286,7 @@
             "confidence": "medium",
             "expected_horizon": "3d-10d",
             "label": "失败反抽情景",
-            "probability": 0.3295,
+            "probability": 0.3297,
             "reason": "Downside/Risk predictors 为 42%/39%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bearish_path"
           },
@@ -18288,7 +18294,7 @@
             "confidence": "medium",
             "expected_horizon": "10d-20d",
             "label": "反抽情景",
-            "probability": 0.2834,
+            "probability": 0.2833,
             "reason": "Bounce Predictor 52%，多源确认 70/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bounce_path"
           },
@@ -18296,7 +18302,7 @@
             "confidence": "medium",
             "expected_horizon": "20d-60d",
             "label": "历史均值情景",
-            "probability": 0.2468,
+            "probability": 0.2467,
             "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay.",
             "scenario": "analog_average_path"
           },
@@ -18316,12 +18322,12 @@
           "confidence": "medium",
           "expected_horizon": "3d-10d",
           "label": "失败反抽情景",
-          "probability": 0.3295,
+          "probability": 0.3297,
           "reason": "Downside/Risk predictors 为 42%/39%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bearish_path"
         },
         "primary_scenario": "bearish_path",
-        "primary_secondary_gap": 0.0461,
+        "primary_secondary_gap": 0.0464,
         "primary_to_secondary_switch_conditions": [
           "VIX 与新闻方向背离",
           "HYG/LQD 转弱",
@@ -18330,15 +18336,15 @@
           "SPY 重新站上主路径确认价",
           "第二路径 bounce_path 获得多源确认"
         ],
-        "probability_gap": 0.0461,
+        "probability_gap": 0.0464,
         "ranking_note": "Scenario ranking includes a bounded News/Event overlay when a major event or macro calendar risk is detected. It is probabilistic, not deterministic.",
         "risk_scenario": "bearish_path",
-        "scenario_probability": 0.3295,
+        "scenario_probability": 0.3297,
         "secondary": {
           "confidence": "medium",
           "expected_horizon": "10d-20d",
           "label": "反抽情景",
-          "probability": 0.2834,
+          "probability": 0.2833,
           "reason": "Bounce Predictor 52%，多源确认 70/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bounce_path"
         },
@@ -18355,16 +18361,16 @@
           "confidence": "medium",
           "expected_horizon": "20d-60d",
           "label": "历史均值情景",
-          "probability": 0.2468,
+          "probability": 0.2467,
           "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay.",
           "scenario": "analog_average_path"
         }
       },
       "scenario_weights": {
         "base_scenario": 0.1402,
-        "bearish_scenario": 0.3295,
-        "bounce_scenario": 0.2834,
-        "historical_analog_average": 0.2468
+        "bearish_scenario": 0.3297,
+        "bounce_scenario": 0.2833,
+        "historical_analog_average": 0.2467
       },
       "shadow_evidence_v1": {
         "alert_status_by_type": {
