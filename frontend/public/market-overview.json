@@ -6,10 +6,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-08-20",
-    "current_time_us_eastern": "2026-08-20T19:36:55.978164-04:00",
+    "current_time_us_eastern": "2026-08-20T22:41:04.809817-04:00",
     "data_freshness_status": "fresh",
     "expected_latest_trading_date": "2026-08-20",
-    "generated_at": "2026-08-20T23:36:55.978164+00:00",
+    "generated_at": "2026-08-21T02:41:04.809817+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -1048,15 +1048,15 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "DGS3MO",
-      "IG_OAS",
-      "BAA_SPREAD",
-      "DGS10",
       "DGS2",
+      "DGS10",
+      "IG_OAS",
       "HY_OAS",
+      "DGS3MO",
+      "BAA_SPREAD",
+      "DFII10",
       "RECESSION",
-      "FINANCIAL_STRESS",
-      "DFII10"
+      "FINANCIAL_STRESS"
     ],
     "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-08-20。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
     "gamma_available": false,
@@ -1087,10 +1087,10 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 72,
+      "event_detection_confidence": 73,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-08-20T23:36:45.901998+00:00",
+      "last_update": "2026-08-21T02:40:54.694504+00:00",
       "major_event_count": 9,
       "missing_reason": null,
       "news_direction": "risk_off",
@@ -1344,6 +1344,18 @@
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_market_direction": "risk_off",
+          "headline": "Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-08-20T23:53:38+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
           "headline": "The Los Angeles Lakers sold for $12.5 billion. Here’s what every NBA team is now worth",
           "importance_score": 100,
           "published_at": "2026-08-20T20:28:21+00:00",
@@ -1374,7 +1386,7 @@
           "source": "CNBC"
         },
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -1395,18 +1407,6 @@
           "headline": "Tanker off Yemen boarded by armed people, diverted towards Somalia, UKMTO says - Reuters",
           "importance_score": 100,
           "published_at": "2026-08-20T10:39:27+00:00",
-          "source": "Reuters"
-        },
-        {
-          "confidence": "medium",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "The Iran war energy crisis is just getting started - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-08-20T06:00:00+00:00",
           "source": "Reuters"
         }
       ]
@@ -1572,7 +1572,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": -0.0104,
-        "avg_equity_futures_1d_return": -0.0098,
+        "avg_equity_futures_1d_return": -0.0087,
         "confirmed_checks": [
           "股票ETF或股指期货下跌",
           "VIX 上升",
@@ -1588,7 +1588,7 @@
           "HYG/LQD 走弱"
         ],
         "hyg_lqd_1d_relative_return": 0.0029,
-        "oil_proxy_1d_return": 0.0167,
+        "oil_proxy_1d_return": 0.0192,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -3130,11 +3130,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.45,
           "top_headlines": [
+            "Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters",
+            "Bessent says US to impose 'toughest' ever sanctions on Iran, urges China to cooperate - Reuters",
             "Micron CEO pushes back on memory bear case. 3 key takeaways from Cramer's big interview",
-            "US envoy Huckabee tells Israeli settlers not to take Palestinian Americans' land - Reuters",
-            "Harry and Meghan: Their life together in photos - Reuters",
-            "The Los Angeles Lakers sold for $12.5 billion. Here’s what every NBA team is now worth",
-            "Hyundai to increase U.S. production at new Georgia plant, CEO tells CNBC"
+            "China boosts imports of Russian crude, stymieing India's refiners - Reuters",
+            "US envoy Huckabee tells Israeli settlers not to take Palestinian Americans' land - Reuters"
           ]
         },
         "price": {
@@ -4066,7 +4066,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 92,
+            "freshness_score": 93,
+            "headline": "Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-20T23:53:38+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 78,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 85,
             "headline": "The Los Angeles Lakers sold for $12.5 billion. Here’s what every NBA team is now worth",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4086,14 +4113,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 77,
+            "confidence_score": 76,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 76,
             "headline": "Gatekeeping bots, piles of slop: Welcome to the age of AI weirdness at work",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4113,47 +4140,20 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 76,
+            "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 79,
+            "freshness_score": 72,
             "headline": "California AG tells CNBC that settling Paramount-WBD lawsuit would require 'robust structural remedies'",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-08-20T14:52:28+00:00",
             "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 76,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 77,
-            "headline": "Yemen's Houthis say they attacked Najran airport, Aramco facilities in Saudi Arabia - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-08-20T14:12:26+00:00",
-            "source": "Reuters"
           },
           {
             "affected_assets": [
@@ -4174,12 +4174,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 69,
-            "headline": "Tanker off Yemen boarded by armed people, diverted towards Somalia, UKMTO says - Reuters",
+            "freshness_score": 70,
+            "headline": "Yemen's Houthis say they attacked Najran airport, Aramco facilities in Saudi Arabia - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-08-20T10:39:27+00:00",
+            "published_at": "2026-08-20T14:12:26+00:00",
             "source": "Reuters"
           },
           {
@@ -4194,19 +4194,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 71,
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 58,
-            "headline": "The Iran war energy crisis is just getting started - Reuters",
+            "freshness_score": 62,
+            "headline": "Tanker off Yemen boarded by armed people, diverted towards Somalia, UKMTO says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-08-20T06:00:00+00:00",
+            "published_at": "2026-08-20T10:39:27+00:00",
             "source": "Reuters"
           }
         ],
@@ -4229,6 +4229,18 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-08-20T23:53:38+00:00",
+              "source": "Reuters"
+            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -4266,7 +4278,7 @@
               "source": "CNBC"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -4287,18 +4299,6 @@
               "headline": "Tanker off Yemen boarded by armed people, diverted towards Somalia, UKMTO says - Reuters",
               "importance_score": 100,
               "published_at": "2026-08-20T10:39:27+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "The Iran war energy crisis is just getting started - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-08-20T06:00:00+00:00",
               "source": "Reuters"
             }
           ]
@@ -4343,7 +4343,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0104,
-            "avg_equity_futures_1d_return": -0.0098,
+            "avg_equity_futures_1d_return": -0.0087,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -4359,7 +4359,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0029,
-            "oil_proxy_1d_return": 0.0167,
+            "oil_proxy_1d_return": 0.0192,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -5628,11 +5628,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.45,
           "top_headlines": [
+            "Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters",
+            "Bessent says US to impose 'toughest' ever sanctions on Iran, urges China to cooperate - Reuters",
             "Micron CEO pushes back on memory bear case. 3 key takeaways from Cramer's big interview",
-            "US envoy Huckabee tells Israeli settlers not to take Palestinian Americans' land - Reuters",
-            "Harry and Meghan: Their life together in photos - Reuters",
-            "The Los Angeles Lakers sold for $12.5 billion. Here’s what every NBA team is now worth",
-            "Hyundai to increase U.S. production at new Georgia plant, CEO tells CNBC"
+            "China boosts imports of Russian crude, stymieing India's refiners - Reuters",
+            "US envoy Huckabee tells Israeli settlers not to take Palestinian Americans' land - Reuters"
           ]
         },
         "price": {
@@ -6560,7 +6560,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 92,
+            "freshness_score": 93,
+            "headline": "Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-20T23:53:38+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 78,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 85,
             "headline": "The Los Angeles Lakers sold for $12.5 billion. Here’s what every NBA team is now worth",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6580,14 +6607,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 77,
+            "confidence_score": 76,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 76,
             "headline": "Gatekeeping bots, piles of slop: Welcome to the age of AI weirdness at work",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6607,47 +6634,20 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 76,
+            "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 79,
+            "freshness_score": 72,
             "headline": "California AG tells CNBC that settling Paramount-WBD lawsuit would require 'robust structural remedies'",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-08-20T14:52:28+00:00",
             "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 76,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 77,
-            "headline": "Yemen's Houthis say they attacked Najran airport, Aramco facilities in Saudi Arabia - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-08-20T14:12:26+00:00",
-            "source": "Reuters"
           },
           {
             "affected_assets": [
@@ -6668,12 +6668,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 69,
-            "headline": "Tanker off Yemen boarded by armed people, diverted towards Somalia, UKMTO says - Reuters",
+            "freshness_score": 70,
+            "headline": "Yemen's Houthis say they attacked Najran airport, Aramco facilities in Saudi Arabia - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-08-20T10:39:27+00:00",
+            "published_at": "2026-08-20T14:12:26+00:00",
             "source": "Reuters"
           },
           {
@@ -6688,19 +6688,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 71,
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 58,
-            "headline": "The Iran war energy crisis is just getting started - Reuters",
+            "freshness_score": 62,
+            "headline": "Tanker off Yemen boarded by armed people, diverted towards Somalia, UKMTO says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-08-20T06:00:00+00:00",
+            "published_at": "2026-08-20T10:39:27+00:00",
             "source": "Reuters"
           }
         ],
@@ -6723,6 +6723,18 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-08-20T23:53:38+00:00",
+              "source": "Reuters"
+            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -6760,7 +6772,7 @@
               "source": "CNBC"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -6781,18 +6793,6 @@
               "headline": "Tanker off Yemen boarded by armed people, diverted towards Somalia, UKMTO says - Reuters",
               "importance_score": 100,
               "published_at": "2026-08-20T10:39:27+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "The Iran war energy crisis is just getting started - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-08-20T06:00:00+00:00",
               "source": "Reuters"
             }
           ]
@@ -6837,7 +6837,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0104,
-            "avg_equity_futures_1d_return": -0.0098,
+            "avg_equity_futures_1d_return": -0.0087,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -6853,7 +6853,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0029,
-            "oil_proxy_1d_return": 0.0167,
+            "oil_proxy_1d_return": 0.0192,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -8133,11 +8133,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.45,
           "top_headlines": [
+            "Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters",
+            "Bessent says US to impose 'toughest' ever sanctions on Iran, urges China to cooperate - Reuters",
             "Micron CEO pushes back on memory bear case. 3 key takeaways from Cramer's big interview",
-            "US envoy Huckabee tells Israeli settlers not to take Palestinian Americans' land - Reuters",
-            "Harry and Meghan: Their life together in photos - Reuters",
-            "The Los Angeles Lakers sold for $12.5 billion. Here’s what every NBA team is now worth",
-            "Hyundai to increase U.S. production at new Georgia plant, CEO tells CNBC"
+            "China boosts imports of Russian crude, stymieing India's refiners - Reuters",
+            "US envoy Huckabee tells Israeli settlers not to take Palestinian Americans' land - Reuters"
           ]
         },
         "price": {
@@ -9057,7 +9057,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 92,
+            "freshness_score": 93,
+            "headline": "Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-20T23:53:38+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 78,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 85,
             "headline": "The Los Angeles Lakers sold for $12.5 billion. Here’s what every NBA team is now worth",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9077,14 +9104,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 77,
+            "confidence_score": 76,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 76,
             "headline": "Gatekeeping bots, piles of slop: Welcome to the age of AI weirdness at work",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9104,47 +9131,20 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 76,
+            "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 79,
+            "freshness_score": 72,
             "headline": "California AG tells CNBC that settling Paramount-WBD lawsuit would require 'robust structural remedies'",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-08-20T14:52:28+00:00",
             "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 76,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 77,
-            "headline": "Yemen's Houthis say they attacked Najran airport, Aramco facilities in Saudi Arabia - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-08-20T14:12:26+00:00",
-            "source": "Reuters"
           },
           {
             "affected_assets": [
@@ -9165,12 +9165,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 69,
-            "headline": "Tanker off Yemen boarded by armed people, diverted towards Somalia, UKMTO says - Reuters",
+            "freshness_score": 70,
+            "headline": "Yemen's Houthis say they attacked Najran airport, Aramco facilities in Saudi Arabia - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-08-20T10:39:27+00:00",
+            "published_at": "2026-08-20T14:12:26+00:00",
             "source": "Reuters"
           },
           {
@@ -9185,19 +9185,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 71,
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 58,
-            "headline": "The Iran war energy crisis is just getting started - Reuters",
+            "freshness_score": 62,
+            "headline": "Tanker off Yemen boarded by armed people, diverted towards Somalia, UKMTO says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-08-20T06:00:00+00:00",
+            "published_at": "2026-08-20T10:39:27+00:00",
             "source": "Reuters"
           }
         ],
@@ -9220,6 +9220,18 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-08-20T23:53:38+00:00",
+              "source": "Reuters"
+            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -9257,7 +9269,7 @@
               "source": "CNBC"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -9278,18 +9290,6 @@
               "headline": "Tanker off Yemen boarded by armed people, diverted towards Somalia, UKMTO says - Reuters",
               "importance_score": 100,
               "published_at": "2026-08-20T10:39:27+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "The Iran war energy crisis is just getting started - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-08-20T06:00:00+00:00",
               "source": "Reuters"
             }
           ]
@@ -9334,7 +9334,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0104,
-            "avg_equity_futures_1d_return": -0.0098,
+            "avg_equity_futures_1d_return": -0.0087,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -9350,7 +9350,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0029,
-            "oil_proxy_1d_return": 0.0167,
+            "oil_proxy_1d_return": 0.0192,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -10655,11 +10655,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.45,
           "top_headlines": [
+            "Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters",
+            "Bessent says US to impose 'toughest' ever sanctions on Iran, urges China to cooperate - Reuters",
             "Micron CEO pushes back on memory bear case. 3 key takeaways from Cramer's big interview",
-            "US envoy Huckabee tells Israeli settlers not to take Palestinian Americans' land - Reuters",
-            "Harry and Meghan: Their life together in photos - Reuters",
-            "The Los Angeles Lakers sold for $12.5 billion. Here’s what every NBA team is now worth",
-            "Hyundai to increase U.S. production at new Georgia plant, CEO tells CNBC"
+            "China boosts imports of Russian crude, stymieing India's refiners - Reuters",
+            "US envoy Huckabee tells Israeli settlers not to take Palestinian Americans' land - Reuters"
           ]
         },
         "price": {
@@ -11569,7 +11569,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 92,
+            "freshness_score": 93,
+            "headline": "Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-20T23:53:38+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 78,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 85,
             "headline": "The Los Angeles Lakers sold for $12.5 billion. Here’s what every NBA team is now worth",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11589,14 +11616,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 77,
+            "confidence_score": 76,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 76,
             "headline": "Gatekeeping bots, piles of slop: Welcome to the age of AI weirdness at work",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11616,47 +11643,20 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 76,
+            "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 79,
+            "freshness_score": 72,
             "headline": "California AG tells CNBC that settling Paramount-WBD lawsuit would require 'robust structural remedies'",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-08-20T14:52:28+00:00",
             "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 76,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 77,
-            "headline": "Yemen's Houthis say they attacked Najran airport, Aramco facilities in Saudi Arabia - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-08-20T14:12:26+00:00",
-            "source": "Reuters"
           },
           {
             "affected_assets": [
@@ -11677,12 +11677,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 69,
-            "headline": "Tanker off Yemen boarded by armed people, diverted towards Somalia, UKMTO says - Reuters",
+            "freshness_score": 70,
+            "headline": "Yemen's Houthis say they attacked Najran airport, Aramco facilities in Saudi Arabia - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-08-20T10:39:27+00:00",
+            "published_at": "2026-08-20T14:12:26+00:00",
             "source": "Reuters"
           },
           {
@@ -11697,19 +11697,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 71,
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 58,
-            "headline": "The Iran war energy crisis is just getting started - Reuters",
+            "freshness_score": 62,
+            "headline": "Tanker off Yemen boarded by armed people, diverted towards Somalia, UKMTO says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-08-20T06:00:00+00:00",
+            "published_at": "2026-08-20T10:39:27+00:00",
             "source": "Reuters"
           }
         ],
@@ -11732,6 +11732,18 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-08-20T23:53:38+00:00",
+              "source": "Reuters"
+            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -11769,7 +11781,7 @@
               "source": "CNBC"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -11790,18 +11802,6 @@
               "headline": "Tanker off Yemen boarded by armed people, diverted towards Somalia, UKMTO says - Reuters",
               "importance_score": 100,
               "published_at": "2026-08-20T10:39:27+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "The Iran war energy crisis is just getting started - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-08-20T06:00:00+00:00",
               "source": "Reuters"
             }
           ]
@@ -11846,7 +11846,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0104,
-            "avg_equity_futures_1d_return": -0.0098,
+            "avg_equity_futures_1d_return": -0.0087,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -11862,7 +11862,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0029,
-            "oil_proxy_1d_return": 0.0167,
+            "oil_proxy_1d_return": 0.0192,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"

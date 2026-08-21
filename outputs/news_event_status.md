@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-20T23:36:45.901998+00:00`
+- generated_at: `2026-08-21T02:40:54.694504+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `9`
-- event_detection_confidence: `72`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters
+- source: Reuters
+- published_at: `2026-08-20T23:53:38+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,7 +63,7 @@
 - source: Reuters
 - published_at: `2026-08-20T14:12:26+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -86,13 +94,5 @@
 - headline: US warns Siemens devices can be hacked amid fears Iran is breaching water plants - Reuters
 - source: Reuters
 - published_at: `2026-08-19T20:03:42+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: UAE stocks fall after missile scare; Qatar at over one-year low - Reuters
-- source: Reuters
-- published_at: `2026-08-19T13:16:33+00:00`
 - importance_score: `100`
 - confidence: `medium`
