@@ -1,6 +1,6 @@
 # Breadth Data Status
 
-Generated at: 2026-08-21T13:13:13.243591+00:00
+Generated at: 2026-08-21T20:47:42.692571+00:00
 
 Provider available: True
 True breadth available: False
@@ -11,14 +11,14 @@ Stale data: True
 
 ## Market Internal Resonance
 
-- resonance_score: 38.97
-- resonance_state: surface_only
-- label: index_surface_strength
+- resonance_score: 52.78
+- resonance_state: mixed
+- label: partial_resonance
 - aligned_symbols: none
-- surface_only_symbols: SPY, QQQ, DIA, IWM
-- sector_score: 42.0
-- equal_weight_vs_cap_weight_20d: 0.006368
-- small_cap_vs_large_cap_20d: -0.013978
+- surface_only_symbols: none
+- sector_score: 54.0
+- equal_weight_vs_cap_weight_20d: 0.001672
+- small_cap_vs_large_cap_20d: -0.006067
 
 ## Universe Status
 
@@ -38,7 +38,7 @@ Stale data: True
 - new highs/lows 20d: 83 / 36
 - new highs/lows 52w: 20 / 0
 - improvement / deterioration / confirmation / conflict / quality: 52.16 / 82.24 / 58.98 / 62.5 / 100.0
-- internal_resonance: surface_only / score 38.75 / SPY 指数表面强但内部没充分跟上：confirmation 59，conflict 62，RSP/SPY 0.64%，IWM/SPY -1.40%。
+- internal_resonance: mixed / score 52.15 / SPY 内部信号分歧：成分股/行业有部分支持，但等权、小盘或新高新低没有完全确认。
 
 ### QQQ
 
@@ -56,7 +56,7 @@ Stale data: True
 - new highs/lows 20d: 0 / 0
 - new highs/lows 52w: 0 / 0
 - improvement / deterioration / confirmation / conflict / quality: 8.67 / 70.67 / 9.39 / 69.07 / 4.0
-- internal_resonance: surface_only / score 7.66 / QQQ 指数表面强但内部没充分跟上：confirmation 9，conflict 69，RSP/SPY 0.64%，IWM/SPY -1.40%。
+- internal_resonance: weak / score 21.06 / QQQ 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
 
 ### DIA
 
@@ -74,13 +74,13 @@ Stale data: True
 - new highs/lows 20d: 8 / 4
 - new highs/lows 52w: 4 / 0
 - improvement / deterioration / confirmation / conflict / quality: 63.96 / 54.51 / 69.69 / 41.43 / 100.0
-- internal_resonance: surface_only / score 47.81 / DIA 指数表面强但内部没充分跟上：confirmation 70，conflict 41，RSP/SPY 0.64%，IWM/SPY -1.40%。
+- internal_resonance: mixed / score 61.21 / DIA 内部信号分歧：成分股/行业有部分支持，但等权、小盘或新高新低没有完全确认。
 
 ### IWM
 
 - status: proxy
 - source: iwm-spy-relative-strength-proxy
-- latest_date: 2026-08-20
+- latest_date: 2026-08-21
 - true_breadth: False
 - proxy: True
 - constituents used / expected: None / None
@@ -91,8 +91,8 @@ Stale data: True
 - advancers / decliners / A-D ratio: None / None / None
 - new highs/lows 20d: None / None
 - new highs/lows 52w: None / None
-- improvement / deterioration / confirmation / conflict / quality: 41.45 / 50.82 / 47.09 / 47.11 / 64
-- internal_resonance: surface_only / score 30.35 / IWM 指数表面强但内部没充分跟上：confirmation 47，conflict 47，RSP/SPY 0.64%，IWM/SPY -1.40%。
+- improvement / deterioration / confirmation / conflict / quality: 43.97 / 44.88 / 48.98 / 42.66 / 64
+- internal_resonance: weak / score 44.99 / IWM 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
 
 ## Notes
 

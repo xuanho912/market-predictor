@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-21T13:13:29.656907+00:00`
+- generated_at: `2026-08-21T20:48:00.641260+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `10`
-- event_detection_confidence: `72`
+- major_event_count: `11`
+- event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `50`
+- confirmation_score: `0`
 
 ## Dashboard Note
 
@@ -27,6 +27,22 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Ken Griffin says Citadel unwound more than 80% of risk tied to Situational Awareness portfolio
+- source: CNBC
+- published_at: `2026-08-21T15:08:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: South African rand hits strongest level since start of Iran war - Reuters
+- source: Reuters
+- published_at: `2026-08-21T12:46:36+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Take Five: Six months of war - Reuters
 - source: Reuters
 - published_at: `2026-08-21T11:25:55+00:00`
@@ -39,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-08-21T08:45:59+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,13 +63,21 @@
 - source: Reuters
 - published_at: `2026-08-21T04:01:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters
 - source: Reuters
 - published_at: `2026-08-20T23:53:38+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Israel and Turkey step up warnings over Syria after airbase bombing - Reuters
+- source: Reuters
+- published_at: `2026-08-20T23:45:29+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -78,29 +102,5 @@
 - headline: California AG tells CNBC that settling Paramount-WBD lawsuit would require 'robust structural remedies'
 - source: CNBC
 - published_at: `2026-08-20T14:52:28+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Yemen's Houthis say they attacked Najran airport, Aramco facilities in Saudi Arabia - Reuters
-- source: Reuters
-- published_at: `2026-08-20T14:12:26+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Tanker off Yemen boarded by armed people, diverted towards Somalia, UKMTO says - Reuters
-- source: Reuters
-- published_at: `2026-08-20T10:39:27+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: The Iran war energy crisis is just getting started - Reuters
-- source: Reuters
-- published_at: `2026-08-20T08:26:19+00:00`
 - importance_score: `100`
 - confidence: `medium`
