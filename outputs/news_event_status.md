@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-21T23:36:47.530142+00:00`
+- generated_at: `2026-08-22T02:31:32.144346+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
-- event_detection_confidence: `70`
+- major_event_count: `8`
+- event_detection_confidence: `69`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -39,7 +39,7 @@
 - source: Reuters
 - published_at: `2026-08-21T12:46:36+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -86,13 +86,5 @@
 - headline: Gatekeeping bots, piles of slop: Welcome to the age of AI weirdness at work
 - source: CNBC
 - published_at: `2026-08-20T16:30:01+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: California AG tells CNBC that settling Paramount-WBD lawsuit would require 'robust structural remedies'
-- source: CNBC
-- published_at: `2026-08-20T14:52:28+00:00`
 - importance_score: `100`
 - confidence: `medium`
