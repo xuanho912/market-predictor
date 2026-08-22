@@ -5,10 +5,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-08-22",
-    "current_time_us_eastern": "2026-08-22T00:18:41.008665-04:00",
+    "current_time_us_eastern": "2026-08-22T09:04:18.167224-04:00",
     "data_freshness_status": "market_closed",
     "expected_latest_trading_date": "2026-08-21",
-    "generated_at": "2026-08-22T04:18:41.008665+00:00",
+    "generated_at": "2026-08-22T13:04:18.167224+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -939,7 +939,7 @@
     },
     "stale_days": 0,
     "version": "data_freshness_gate_v3",
-    "warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-08-21 的数据。 当前美东时间 2026-08-22 00:18。"
+    "warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-08-21 的数据。 当前美东时间 2026-08-22 09:04。"
   },
   "data_quality_summary": {
     "average_breadth_quality_score": 67.0,
@@ -1047,17 +1047,17 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "IG_OAS",
-      "DGS2",
-      "HY_OAS",
-      "BAA_SPREAD",
       "DGS3MO",
+      "HY_OAS",
+      "DGS2",
+      "IG_OAS",
       "DGS10",
+      "BAA_SPREAD",
       "RECESSION",
-      "DFII10",
-      "FINANCIAL_STRESS"
+      "FINANCIAL_STRESS",
+      "DFII10"
     ],
-    "freshness_warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-08-21 的数据。 当前美东时间 2026-08-22 00:18。",
+    "freshness_warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-08-21 的数据。 当前美东时间 2026-08-22 09:04。",
     "gamma_available": false,
     "gamma_exposure_available": false,
     "latest_confirmed_market_date": "2026-08-21",
@@ -1086,11 +1086,11 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 69,
+      "event_detection_confidence": 65,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-08-22T04:18:30.921207+00:00",
-      "major_event_count": 8,
+      "last_update": "2026-08-22T13:04:08.071938+00:00",
+      "major_event_count": 9,
       "missing_reason": null,
       "news_direction": "risk_off",
       "news_event_partial": false,
@@ -1101,7 +1101,7 @@
     },
     "news_event_available": true,
     "news_event_event_risk_level": "high",
-    "news_event_major_count": 8,
+    "news_event_major_count": 9,
     "news_event_missing_reason": null,
     "news_event_narrative": "geopolitics_escalation_risk_off",
     "news_event_partial": false,
@@ -1151,7 +1151,7 @@
       "status": "failed"
     },
     "event_risk_level": "high",
-    "major_event_count": 8,
+    "major_event_count": 9,
     "market_narrative": {
       "affected_scenarios": [
         "bearish_path"
@@ -1162,7 +1162,18 @@
         "QQQ",
         "SPY"
       ],
-      "conflicting_headlines": [],
+      "conflicting_headlines": [
+        {
+          "confidence": "high",
+          "detected_event_conditions": [],
+          "event_type": "fed_dovish",
+          "expected_market_direction": "risk_on",
+          "headline": "For young Americans, the workplace is the new phoneless frontier. 'It allows us to hyper focus on the task at hand,' says employer",
+          "importance_score": 87,
+          "published_at": "2026-08-22T12:00:01+00:00",
+          "source": "CNBC"
+        }
+      ],
       "detected_event_conditions": [
         "geopolitical_risk_escalation"
       ],
@@ -1251,7 +1262,7 @@
       "direction": "supports_risk_expansion",
       "event_risk_level": "high",
       "macro_event_risk_flag": false,
-      "major_event_count": 8,
+      "major_event_count": 9,
       "not_a_trading_signal": true,
       "price_reaction_confirmed": false,
       "symbols": {
@@ -1390,10 +1401,8 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": 0.0061,
-        "avg_equity_futures_1d_return": -0.0105,
-        "confirmed_checks": [
-          "股票ETF或股指期货下跌"
-        ],
+        "avg_equity_futures_1d_return": 0.006,
+        "confirmed_checks": [],
         "equity_futures_symbols_used": [
           "ES=F",
           "NQ=F",
@@ -1401,12 +1410,13 @@
           "YM=F"
         ],
         "failed_checks": [
+          "股票ETF或股指期货下跌",
           "VIX 上升",
           "HYG/LQD 走弱",
           "美元走强"
         ],
         "hyg_lqd_1d_relative_return": 0.0019,
-        "oil_proxy_1d_return": 0.012,
+        "oil_proxy_1d_return": -0.004,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -1415,7 +1425,7 @@
         "uup_1d_return": -0.0004,
         "vix_1d_return": -0.055
       },
-      "confirmation_score": 25,
+      "confirmation_score": 0,
       "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
       "price_reaction_confirmed": false
     },
@@ -1456,7 +1466,7 @@
           },
           "Risk Expansion Alert": {
             "alert_level": "WATCH",
-            "alert_score": 44,
+            "alert_score": 43,
             "confidence": "low"
           },
           "Trend Repair Alert": {
@@ -1467,8 +1477,8 @@
         },
         "alpha_v1_threshold_unchanged": 0.32534311,
         "confluence_level": "mixed",
-        "confluence_score": 56,
-        "daily_market_summary_shadow": "DIA shadow evidence: strongest alert is Bounce Setup Alert; confluence is mixed at 56/100. This evidence is for forecast validation and challenger comparison only.",
+        "confluence_score": 55,
+        "daily_market_summary_shadow": "DIA shadow evidence: strongest alert is Bounce Setup Alert; confluence is mixed at 55/100. This evidence is for forecast validation and challenger comparison only.",
         "does_not_override_baseline_v1": true,
         "does_not_rewrite_forecast_records": true,
         "dominant_path_shadow": "bounce",
@@ -1564,7 +1574,7 @@
         "alert_status_by_type": {
           "Bottoming Setup Alert": {
             "alert_level": "WATCH",
-            "alert_score": 56,
+            "alert_score": 55,
             "confidence": "low"
           },
           "Bounce Setup Alert": {
@@ -1590,8 +1600,8 @@
         },
         "alpha_v1_threshold_unchanged": 0.32534311,
         "confluence_level": "mixed",
-        "confluence_score": 55,
-        "daily_market_summary_shadow": "IWM shadow evidence: strongest alert is Bounce Setup Alert; confluence is mixed at 55/100. This evidence is for forecast validation and challenger comparison only.",
+        "confluence_score": 53,
+        "daily_market_summary_shadow": "IWM shadow evidence: strongest alert is Bounce Setup Alert; confluence is mixed at 53/100. This evidence is for forecast validation and challenger comparison only.",
         "does_not_override_baseline_v1": true,
         "does_not_rewrite_forecast_records": true,
         "dominant_path_shadow": "bounce",
@@ -1713,8 +1723,8 @@
         },
         "alpha_v1_threshold_unchanged": 0.32534311,
         "confluence_level": "mixed",
-        "confluence_score": 52,
-        "daily_market_summary_shadow": "QQQ shadow evidence: strongest alert is Failed Bounce Alert; confluence is mixed at 52/100. This evidence is for forecast validation and challenger comparison only.",
+        "confluence_score": 51,
+        "daily_market_summary_shadow": "QQQ shadow evidence: strongest alert is Failed Bounce Alert; confluence is mixed at 51/100. This evidence is for forecast validation and challenger comparison only.",
         "does_not_override_baseline_v1": true,
         "does_not_rewrite_forecast_records": true,
         "dominant_path_shadow": "bounce",
@@ -1815,17 +1825,17 @@
           },
           "Bounce Setup Alert": {
             "alert_level": "WARNING",
-            "alert_score": 59,
+            "alert_score": 58,
             "confidence": "medium"
           },
           "Failed Bounce Alert": {
             "alert_level": "WARNING",
-            "alert_score": 67,
+            "alert_score": 66,
             "confidence": "medium"
           },
           "Risk Expansion Alert": {
             "alert_level": "NO_ALERT",
-            "alert_score": 33,
+            "alert_score": 32,
             "confidence": "low"
           },
           "Trend Repair Alert": {
@@ -1836,8 +1846,8 @@
         },
         "alpha_v1_threshold_unchanged": 0.32534311,
         "confluence_level": "mixed",
-        "confluence_score": 55,
-        "daily_market_summary_shadow": "SPY shadow evidence: strongest alert is Failed Bounce Alert; confluence is mixed at 55/100. This evidence is for forecast validation and challenger comparison only.",
+        "confluence_score": 53,
+        "daily_market_summary_shadow": "SPY shadow evidence: strongest alert is Failed Bounce Alert; confluence is mixed at 53/100. This evidence is for forecast validation and challenger comparison only.",
         "does_not_override_baseline_v1": true,
         "does_not_rewrite_forecast_records": true,
         "dominant_path_shadow": "bounce",
@@ -1922,7 +1932,7 @@
         "role": "challenger_shadow_evidence",
         "strongest_alert": {
           "alert_level": "WARNING",
-          "alert_score": 67,
+          "alert_score": 66,
           "alert_type": "Failed Bounce Alert",
           "confidence": "medium"
         },
@@ -1945,7 +1955,7 @@
           {
             "detail": "News/event direction is not sufficiently confirmed by market reaction.",
             "name": "新闻未获价格确认",
-            "score": 75,
+            "score": 100,
             "source": "news"
           },
           {
@@ -1953,12 +1963,6 @@
             "name": "risk_off_news_event",
             "score": 35,
             "source": "signal_confirmation"
-          },
-          {
-            "detail": "DIA 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-            "name": "新闻事件与主路径冲突",
-            "score": 25,
-            "source": "news"
           },
           {
             "detail": "Historical analogs conflict across horizons.",
@@ -1971,11 +1975,17 @@
             "name": "VIX direction",
             "score": 12,
             "source": "signal_confirmation"
+          },
+          {
+            "detail": "DIA 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+            "name": "新闻事件与主路径冲突",
+            "score": 0,
+            "source": "news"
           }
         ],
         "confluence_level": "mixed",
-        "confluence_score": 56,
-        "confluence_summary": "DIA 当前多源共振为 mixed（56/100），主导路径为 bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
+        "confluence_score": 55,
+        "confluence_summary": "DIA 当前多源共振为 mixed（55/100），主导路径为 bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
         "dominant_path": "bounce",
         "edge_status": "{'market_edge_status': 'MODERATE_EDGE', 'has_usable_prediction_edge_today': True, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': True, 'historical_analog_not_conflicting': False, 'confidence_score_ge_65': True, 'current_regime_identified': True, 'macro_event_risk_not_high': True, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': True, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': True}, 'passed_conditions': 9, 'summary': '有一定预测优势，但仍需观察冲突信号和失效条件。', 'no_edge_note': '', 'risk_warning': False}",
         "key_conflict_count": 1,
@@ -2292,11 +2302,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.4,
           "top_headlines": [
-            "Trump says Iran not ready to make the 'right deal' - Reuters",
-            "Wall St rises on the day but falls for the week; bond yields and Iran in focus - Reuters",
-            "US Treasury Secretary Bessent to hold press conference on Monday - Reuters",
-            "Ray Dalio says Bessent move is sign that a debt crisis is getting closer; recommends gold and bitcoin",
-            "An overlooked AI winner names a new CFO — plus, Nvidia's key earnings loom"
+            "For young Americans, the workplace is the new phoneless frontier. 'It allows us to hyper focus on the task at hand,' says employer",
+            "Iran grants permission for a number of Iraqi oil tankers to pass through Hormuz - Reuters",
+            "Trump heads into midterms short on foreign policy wins - Reuters",
+            "US, Iran keep up hostile rhetoric ahead of new sanctions - Reuters",
+            "Wall St rises on the day but falls for the week; bond yields and Iran in focus - Reuters"
           ]
         },
         "price": {
@@ -3288,7 +3298,7 @@
               "DIA"
             ],
             "alert_level": "WATCH",
-            "alert_score": 44,
+            "alert_score": 43,
             "alert_type": "Risk Expansion Alert",
             "confidence": "low",
             "conflicting_evidence": [
@@ -3673,25 +3683,21 @@
               "QQQ",
               "IWM",
               "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
+              "TLT",
+              "UUP"
             ],
-            "confidence": "medium",
-            "confidence_score": 74,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 68,
-            "headline": "Ken Griffin says Citadel unwound more than 80% of risk tied to Situational Awareness portfolio",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
+            "confidence": "high",
+            "confidence_score": 77,
+            "detected_event_conditions": [],
+            "event_type": "fed_dovish",
+            "expected_horizon": "1d-20d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 97,
+            "headline": "For young Americans, the workplace is the new phoneless frontier. 'It allows us to hyper focus on the task at hand,' says employer",
+            "importance_score": 87,
+            "narrative": "fed_cut_hopes",
             "provider": "finnhub",
-            "published_at": "2026-08-21T15:08:00+00:00",
+            "published_at": "2026-08-22T12:00:01+00:00",
             "source": "CNBC"
           },
           {
@@ -3706,74 +3712,20 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 72,
+            "confidence_score": 68,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 63,
-            "headline": "South African rand hits strongest level since start of Iran war - Reuters",
+            "freshness_score": 47,
+            "headline": "Ken Griffin says Citadel unwound more than 80% of risk tied to Situational Awareness portfolio",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-08-21T12:46:36+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 71,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 59,
-            "headline": "Take Five: Six months of war - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-08-21T11:25:55+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 70,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 53,
-            "headline": "Iranian oil offers to Chinese buyers fall as US blockade bites, sources say - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-08-21T08:45:59+00:00",
-            "source": "Reuters"
+            "published_at": "2026-08-21T15:08:00+00:00",
+            "source": "CNBC"
           },
           {
             "affected_assets": [
@@ -3795,11 +3747,11 @@
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
             "freshness_score": 42,
-            "headline": "War-hit European markets are far from down and out - Reuters",
+            "headline": "South African rand hits strongest level since start of Iran war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-08-21T04:01:00+00:00",
+            "published_at": "2026-08-21T12:46:36+00:00",
             "source": "Reuters"
           },
           {
@@ -3814,20 +3766,74 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 67,
+            "confidence_score": 66,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 41,
-            "headline": "SEBI’s swift ban on JPMorgan unit seen as warning to traders",
+            "freshness_score": 38,
+            "headline": "Take Five: Six months of war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-08-21T03:35:43+00:00",
-            "source": "Bloomberg"
+            "published_at": "2026-08-21T11:25:55+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 65,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 32,
+            "headline": "Iranian oil offers to Chinese buyers fall as US blockade bites, sources say - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-21T08:45:59+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 62,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 21,
+            "headline": "War-hit European markets are far from down and out - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-21T04:01:00+00:00",
+            "source": "Reuters"
           }
         ],
         "market_narrative": {
@@ -3840,7 +3846,18 @@
             "QQQ",
             "SPY"
           ],
-          "conflicting_headlines": [],
+          "conflicting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [],
+              "event_type": "fed_dovish",
+              "expected_market_direction": "risk_on",
+              "headline": "For young Americans, the workplace is the new phoneless frontier. 'It allows us to hyper focus on the task at hand,' says employer",
+              "importance_score": 87,
+              "published_at": "2026-08-22T12:00:01+00:00",
+              "source": "CNBC"
+            }
+          ],
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -3959,10 +3976,8 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0061,
-            "avg_equity_futures_1d_return": -0.0105,
-            "confirmed_checks": [
-              "股票ETF或股指期货下跌"
-            ],
+            "avg_equity_futures_1d_return": 0.006,
+            "confirmed_checks": [],
             "equity_futures_symbols_used": [
               "ES=F",
               "NQ=F",
@@ -3970,12 +3985,13 @@
               "YM=F"
             ],
             "failed_checks": [
+              "股票ETF或股指期货下跌",
               "VIX 上升",
               "HYG/LQD 走弱",
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": 0.0019,
-            "oil_proxy_1d_return": 0.012,
+            "oil_proxy_1d_return": -0.004,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -3984,7 +4000,7 @@
             "uup_1d_return": -0.0004,
             "vix_1d_return": -0.055
           },
-          "confirmation_score": 25,
+          "confirmation_score": 0,
           "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
           "price_reaction_confirmed": false
         },
@@ -5858,7 +5874,7 @@
           },
           "Risk Expansion Alert": {
             "alert_level": "WATCH",
-            "alert_score": 44,
+            "alert_score": 43,
             "confidence": "low"
           },
           "Trend Repair Alert": {
@@ -5869,8 +5885,8 @@
         },
         "alpha_v1_threshold_unchanged": 0.32534311,
         "confluence_level": "mixed",
-        "confluence_score": 56,
-        "daily_market_summary_shadow": "DIA shadow evidence: strongest alert is Bounce Setup Alert; confluence is mixed at 56/100. This evidence is for forecast validation and challenger comparison only.",
+        "confluence_score": 55,
+        "daily_market_summary_shadow": "DIA shadow evidence: strongest alert is Bounce Setup Alert; confluence is mixed at 55/100. This evidence is for forecast validation and challenger comparison only.",
         "does_not_override_baseline_v1": true,
         "does_not_rewrite_forecast_records": true,
         "dominant_path_shadow": "bounce",
@@ -6122,7 +6138,7 @@
           {
             "detail": "News/event direction is not sufficiently confirmed by market reaction.",
             "name": "新闻未获价格确认",
-            "score": 75,
+            "score": 100,
             "source": "news"
           },
           {
@@ -6130,12 +6146,6 @@
             "name": "risk_off_news_event",
             "score": 35,
             "source": "signal_confirmation"
-          },
-          {
-            "detail": "IWM 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-            "name": "新闻事件与主路径冲突",
-            "score": 25,
-            "source": "news"
           },
           {
             "detail": "VIX is rising or not confirming a bounce.",
@@ -6148,11 +6158,17 @@
             "name": "主次路径差距小",
             "score": 3.67,
             "source": "scenario_gap"
+          },
+          {
+            "detail": "IWM 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+            "name": "新闻事件与主路径冲突",
+            "score": 0,
+            "source": "news"
           }
         ],
         "confluence_level": "mixed",
-        "confluence_score": 55,
-        "confluence_summary": "IWM 当前多源共振为 mixed（55/100），主导路径为 bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、news；仍缺 options、options、flow。",
+        "confluence_score": 53,
+        "confluence_summary": "IWM 当前多源共振为 mixed（53/100），主导路径为 bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、news；仍缺 options、options、flow。",
         "dominant_path": "bounce",
         "edge_status": "{'market_edge_status': 'STRONG_EDGE', 'has_usable_prediction_edge_today': True, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': True, 'historical_analog_not_conflicting': True, 'confidence_score_ge_65': True, 'current_regime_identified': True, 'macro_event_risk_not_high': True, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': True, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': True}, 'passed_conditions': 10, 'summary': '多源确认较强，可以给出较明确的概率路径，但仍不是下单依据。', 'no_edge_note': '', 'risk_warning': False}",
         "key_conflict_count": 1,
@@ -6469,11 +6485,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.4,
           "top_headlines": [
-            "Trump says Iran not ready to make the 'right deal' - Reuters",
-            "Wall St rises on the day but falls for the week; bond yields and Iran in focus - Reuters",
-            "US Treasury Secretary Bessent to hold press conference on Monday - Reuters",
-            "Ray Dalio says Bessent move is sign that a debt crisis is getting closer; recommends gold and bitcoin",
-            "An overlooked AI winner names a new CFO — plus, Nvidia's key earnings loom"
+            "For young Americans, the workplace is the new phoneless frontier. 'It allows us to hyper focus on the task at hand,' says employer",
+            "Iran grants permission for a number of Iraqi oil tankers to pass through Hormuz - Reuters",
+            "Trump heads into midterms short on foreign policy wins - Reuters",
+            "US, Iran keep up hostile rhetoric ahead of new sanctions - Reuters",
+            "Wall St rises on the day but falls for the week; bond yields and Iran in focus - Reuters"
           ]
         },
         "price": {
@@ -7366,7 +7382,7 @@
               "IWM"
             ],
             "alert_level": "WATCH",
-            "alert_score": 56,
+            "alert_score": 55,
             "alert_type": "Bottoming Setup Alert",
             "confidence": "low",
             "conflicting_evidence": [
@@ -7831,25 +7847,21 @@
               "QQQ",
               "IWM",
               "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
+              "TLT",
+              "UUP"
             ],
-            "confidence": "medium",
-            "confidence_score": 74,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 68,
-            "headline": "Ken Griffin says Citadel unwound more than 80% of risk tied to Situational Awareness portfolio",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
+            "confidence": "high",
+            "confidence_score": 77,
+            "detected_event_conditions": [],
+            "event_type": "fed_dovish",
+            "expected_horizon": "1d-20d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 97,
+            "headline": "For young Americans, the workplace is the new phoneless frontier. 'It allows us to hyper focus on the task at hand,' says employer",
+            "importance_score": 87,
+            "narrative": "fed_cut_hopes",
             "provider": "finnhub",
-            "published_at": "2026-08-21T15:08:00+00:00",
+            "published_at": "2026-08-22T12:00:01+00:00",
             "source": "CNBC"
           },
           {
@@ -7864,74 +7876,20 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 72,
+            "confidence_score": 68,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 63,
-            "headline": "South African rand hits strongest level since start of Iran war - Reuters",
+            "freshness_score": 47,
+            "headline": "Ken Griffin says Citadel unwound more than 80% of risk tied to Situational Awareness portfolio",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-08-21T12:46:36+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 71,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 59,
-            "headline": "Take Five: Six months of war - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-08-21T11:25:55+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 70,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 53,
-            "headline": "Iranian oil offers to Chinese buyers fall as US blockade bites, sources say - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-08-21T08:45:59+00:00",
-            "source": "Reuters"
+            "published_at": "2026-08-21T15:08:00+00:00",
+            "source": "CNBC"
           },
           {
             "affected_assets": [
@@ -7953,11 +7911,11 @@
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
             "freshness_score": 42,
-            "headline": "War-hit European markets are far from down and out - Reuters",
+            "headline": "South African rand hits strongest level since start of Iran war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-08-21T04:01:00+00:00",
+            "published_at": "2026-08-21T12:46:36+00:00",
             "source": "Reuters"
           },
           {
@@ -7972,20 +7930,74 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 67,
+            "confidence_score": 66,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 41,
-            "headline": "SEBI’s swift ban on JPMorgan unit seen as warning to traders",
+            "freshness_score": 38,
+            "headline": "Take Five: Six months of war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-08-21T03:35:43+00:00",
-            "source": "Bloomberg"
+            "published_at": "2026-08-21T11:25:55+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 65,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 32,
+            "headline": "Iranian oil offers to Chinese buyers fall as US blockade bites, sources say - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-21T08:45:59+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 62,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 21,
+            "headline": "War-hit European markets are far from down and out - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-21T04:01:00+00:00",
+            "source": "Reuters"
           }
         ],
         "market_narrative": {
@@ -7998,7 +8010,18 @@
             "QQQ",
             "SPY"
           ],
-          "conflicting_headlines": [],
+          "conflicting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [],
+              "event_type": "fed_dovish",
+              "expected_market_direction": "risk_on",
+              "headline": "For young Americans, the workplace is the new phoneless frontier. 'It allows us to hyper focus on the task at hand,' says employer",
+              "importance_score": 87,
+              "published_at": "2026-08-22T12:00:01+00:00",
+              "source": "CNBC"
+            }
+          ],
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -8117,10 +8140,8 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0061,
-            "avg_equity_futures_1d_return": -0.0105,
-            "confirmed_checks": [
-              "股票ETF或股指期货下跌"
-            ],
+            "avg_equity_futures_1d_return": 0.006,
+            "confirmed_checks": [],
             "equity_futures_symbols_used": [
               "ES=F",
               "NQ=F",
@@ -8128,12 +8149,13 @@
               "YM=F"
             ],
             "failed_checks": [
+              "股票ETF或股指期货下跌",
               "VIX 上升",
               "HYG/LQD 走弱",
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": 0.0019,
-            "oil_proxy_1d_return": 0.012,
+            "oil_proxy_1d_return": -0.004,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -8142,7 +8164,7 @@
             "uup_1d_return": -0.0004,
             "vix_1d_return": -0.055
           },
-          "confirmation_score": 25,
+          "confirmation_score": 0,
           "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
           "price_reaction_confirmed": false
         },
@@ -10000,7 +10022,7 @@
         "alert_status_by_type": {
           "Bottoming Setup Alert": {
             "alert_level": "WATCH",
-            "alert_score": 56,
+            "alert_score": 55,
             "confidence": "low"
           },
           "Bounce Setup Alert": {
@@ -10026,8 +10048,8 @@
         },
         "alpha_v1_threshold_unchanged": 0.32534311,
         "confluence_level": "mixed",
-        "confluence_score": 55,
-        "daily_market_summary_shadow": "IWM shadow evidence: strongest alert is Bounce Setup Alert; confluence is mixed at 55/100. This evidence is for forecast validation and challenger comparison only.",
+        "confluence_score": 53,
+        "daily_market_summary_shadow": "IWM shadow evidence: strongest alert is Bounce Setup Alert; confluence is mixed at 53/100. This evidence is for forecast validation and challenger comparison only.",
         "does_not_override_baseline_v1": true,
         "does_not_rewrite_forecast_records": true,
         "dominant_path_shadow": "bounce",
@@ -10278,7 +10300,7 @@
           {
             "detail": "News/event direction is not sufficiently confirmed by market reaction.",
             "name": "新闻未获价格确认",
-            "score": 75,
+            "score": 100,
             "source": "news"
           },
           {
@@ -10292,12 +10314,6 @@
             "name": "risk_off_news_event",
             "score": 35,
             "source": "signal_confirmation"
-          },
-          {
-            "detail": "QQQ 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-            "name": "新闻事件与主路径冲突",
-            "score": 25,
-            "source": "news"
           },
           {
             "detail": "VIX is rising or not confirming a bounce.",
@@ -10328,11 +10344,17 @@
             "name": "主次路径差距小",
             "score": 0.8,
             "source": "scenario_gap"
+          },
+          {
+            "detail": "QQQ 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+            "name": "新闻事件与主路径冲突",
+            "score": 0,
+            "source": "news"
           }
         ],
         "confluence_level": "mixed",
-        "confluence_score": 52,
-        "confluence_summary": "QQQ 当前多源共振为 mixed（52/100），主导路径为 bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
+        "confluence_score": 51,
+        "confluence_summary": "QQQ 当前多源共振为 mixed（51/100），主导路径为 bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
         "dominant_path": "bounce",
         "edge_status": "{'market_edge_status': 'MODERATE_EDGE', 'has_usable_prediction_edge_today': True, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': True, 'historical_analog_not_conflicting': True, 'confidence_score_ge_65': False, 'current_regime_identified': True, 'macro_event_risk_not_high': True, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': True, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': True}, 'passed_conditions': 9, 'summary': '有一定预测优势，但仍需观察冲突信号和失效条件。', 'no_edge_note': '', 'risk_warning': False}",
         "key_conflict_count": 2,
@@ -10643,11 +10665,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.4,
           "top_headlines": [
-            "Trump says Iran not ready to make the 'right deal' - Reuters",
-            "Wall St rises on the day but falls for the week; bond yields and Iran in focus - Reuters",
-            "US Treasury Secretary Bessent to hold press conference on Monday - Reuters",
-            "Ray Dalio says Bessent move is sign that a debt crisis is getting closer; recommends gold and bitcoin",
-            "An overlooked AI winner names a new CFO — plus, Nvidia's key earnings loom"
+            "For young Americans, the workplace is the new phoneless frontier. 'It allows us to hyper focus on the task at hand,' says employer",
+            "Iran grants permission for a number of Iraqi oil tankers to pass through Hormuz - Reuters",
+            "Trump heads into midterms short on foreign policy wins - Reuters",
+            "US, Iran keep up hostile rhetoric ahead of new sanctions - Reuters",
+            "Wall St rises on the day but falls for the week; bond yields and Iran in focus - Reuters"
           ]
         },
         "price": {
@@ -11998,25 +12020,21 @@
               "QQQ",
               "IWM",
               "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
+              "TLT",
+              "UUP"
             ],
-            "confidence": "medium",
-            "confidence_score": 74,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 68,
-            "headline": "Ken Griffin says Citadel unwound more than 80% of risk tied to Situational Awareness portfolio",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
+            "confidence": "high",
+            "confidence_score": 77,
+            "detected_event_conditions": [],
+            "event_type": "fed_dovish",
+            "expected_horizon": "1d-20d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 97,
+            "headline": "For young Americans, the workplace is the new phoneless frontier. 'It allows us to hyper focus on the task at hand,' says employer",
+            "importance_score": 87,
+            "narrative": "fed_cut_hopes",
             "provider": "finnhub",
-            "published_at": "2026-08-21T15:08:00+00:00",
+            "published_at": "2026-08-22T12:00:01+00:00",
             "source": "CNBC"
           },
           {
@@ -12031,74 +12049,20 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 72,
+            "confidence_score": 68,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 63,
-            "headline": "South African rand hits strongest level since start of Iran war - Reuters",
+            "freshness_score": 47,
+            "headline": "Ken Griffin says Citadel unwound more than 80% of risk tied to Situational Awareness portfolio",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-08-21T12:46:36+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 71,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 59,
-            "headline": "Take Five: Six months of war - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-08-21T11:25:55+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 70,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 53,
-            "headline": "Iranian oil offers to Chinese buyers fall as US blockade bites, sources say - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-08-21T08:45:59+00:00",
-            "source": "Reuters"
+            "published_at": "2026-08-21T15:08:00+00:00",
+            "source": "CNBC"
           },
           {
             "affected_assets": [
@@ -12120,11 +12084,11 @@
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
             "freshness_score": 42,
-            "headline": "War-hit European markets are far from down and out - Reuters",
+            "headline": "South African rand hits strongest level since start of Iran war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-08-21T04:01:00+00:00",
+            "published_at": "2026-08-21T12:46:36+00:00",
             "source": "Reuters"
           },
           {
@@ -12139,20 +12103,74 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 67,
+            "confidence_score": 66,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 41,
-            "headline": "SEBI’s swift ban on JPMorgan unit seen as warning to traders",
+            "freshness_score": 38,
+            "headline": "Take Five: Six months of war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-08-21T03:35:43+00:00",
-            "source": "Bloomberg"
+            "published_at": "2026-08-21T11:25:55+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 65,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 32,
+            "headline": "Iranian oil offers to Chinese buyers fall as US blockade bites, sources say - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-21T08:45:59+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 62,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 21,
+            "headline": "War-hit European markets are far from down and out - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-21T04:01:00+00:00",
+            "source": "Reuters"
           }
         ],
         "market_narrative": {
@@ -12165,7 +12183,18 @@
             "QQQ",
             "SPY"
           ],
-          "conflicting_headlines": [],
+          "conflicting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [],
+              "event_type": "fed_dovish",
+              "expected_market_direction": "risk_on",
+              "headline": "For young Americans, the workplace is the new phoneless frontier. 'It allows us to hyper focus on the task at hand,' says employer",
+              "importance_score": 87,
+              "published_at": "2026-08-22T12:00:01+00:00",
+              "source": "CNBC"
+            }
+          ],
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -12284,10 +12313,8 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0061,
-            "avg_equity_futures_1d_return": -0.0105,
-            "confirmed_checks": [
-              "股票ETF或股指期货下跌"
-            ],
+            "avg_equity_futures_1d_return": 0.006,
+            "confirmed_checks": [],
             "equity_futures_symbols_used": [
               "ES=F",
               "NQ=F",
@@ -12295,12 +12322,13 @@
               "YM=F"
             ],
             "failed_checks": [
+              "股票ETF或股指期货下跌",
               "VIX 上升",
               "HYG/LQD 走弱",
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": 0.0019,
-            "oil_proxy_1d_return": 0.012,
+            "oil_proxy_1d_return": -0.004,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -12309,7 +12337,7 @@
             "uup_1d_return": -0.0004,
             "vix_1d_return": -0.055
           },
-          "confirmation_score": 25,
+          "confirmation_score": 0,
           "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
           "price_reaction_confirmed": false
         },
@@ -14203,8 +14231,8 @@
         },
         "alpha_v1_threshold_unchanged": 0.32534311,
         "confluence_level": "mixed",
-        "confluence_score": 52,
-        "daily_market_summary_shadow": "QQQ shadow evidence: strongest alert is Failed Bounce Alert; confluence is mixed at 52/100. This evidence is for forecast validation and challenger comparison only.",
+        "confluence_score": 51,
+        "daily_market_summary_shadow": "QQQ shadow evidence: strongest alert is Failed Bounce Alert; confluence is mixed at 51/100. This evidence is for forecast validation and challenger comparison only.",
         "does_not_override_baseline_v1": true,
         "does_not_rewrite_forecast_records": true,
         "dominant_path_shadow": "bounce",
@@ -14471,7 +14499,7 @@
           {
             "detail": "News/event direction is not sufficiently confirmed by market reaction.",
             "name": "新闻未获价格确认",
-            "score": 75,
+            "score": 100,
             "source": "news"
           },
           {
@@ -14487,12 +14515,6 @@
             "source": "signal_confirmation"
           },
           {
-            "detail": "SPY 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-            "name": "新闻事件与主路径冲突",
-            "score": 25,
-            "source": "news"
-          },
-          {
             "detail": "VIX is rising or not confirming a bounce.",
             "name": "VIX direction",
             "score": 12,
@@ -14503,11 +14525,17 @@
             "name": "主次路径差距小",
             "score": 6.93,
             "source": "scenario_gap"
+          },
+          {
+            "detail": "SPY 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+            "name": "新闻事件与主路径冲突",
+            "score": 0,
+            "source": "news"
           }
         ],
         "confluence_level": "mixed",
-        "confluence_score": 55,
-        "confluence_summary": "SPY 当前多源共振为 mixed（55/100），主导路径为 bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、breadth；仍缺 options、options、flow。",
+        "confluence_score": 53,
+        "confluence_summary": "SPY 当前多源共振为 mixed（53/100），主导路径为 bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、breadth；仍缺 options、options、flow。",
         "dominant_path": "bounce",
         "edge_status": "{'market_edge_status': 'STRONG_EDGE', 'has_usable_prediction_edge_today': True, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': True, 'historical_analog_not_conflicting': True, 'confidence_score_ge_65': True, 'current_regime_identified': True, 'macro_event_risk_not_high': True, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': True, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': True}, 'passed_conditions': 10, 'summary': '多源确认较强，可以给出较明确的概率路径，但仍不是下单依据。', 'no_edge_note': '', 'risk_warning': False}",
         "key_conflict_count": 2,
@@ -14824,11 +14852,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.4,
           "top_headlines": [
-            "Trump says Iran not ready to make the 'right deal' - Reuters",
-            "Wall St rises on the day but falls for the week; bond yields and Iran in focus - Reuters",
-            "US Treasury Secretary Bessent to hold press conference on Monday - Reuters",
-            "Ray Dalio says Bessent move is sign that a debt crisis is getting closer; recommends gold and bitcoin",
-            "An overlooked AI winner names a new CFO — plus, Nvidia's key earnings loom"
+            "For young Americans, the workplace is the new phoneless frontier. 'It allows us to hyper focus on the task at hand,' says employer",
+            "Iran grants permission for a number of Iraqi oil tankers to pass through Hormuz - Reuters",
+            "Trump heads into midterms short on foreign policy wins - Reuters",
+            "US, Iran keep up hostile rhetoric ahead of new sanctions - Reuters",
+            "Wall St rises on the day but falls for the week; bond yields and Iran in focus - Reuters"
           ]
         },
         "price": {
@@ -15460,7 +15488,7 @@
               "SPY"
             ],
             "alert_level": "WARNING",
-            "alert_score": 67,
+            "alert_score": 66,
             "alert_type": "Failed Bounce Alert",
             "confidence": "medium",
             "conflicting_evidence": [],
@@ -15637,7 +15665,7 @@
               "SPY"
             ],
             "alert_level": "WARNING",
-            "alert_score": 59,
+            "alert_score": 58,
             "alert_type": "Bounce Setup Alert",
             "confidence": "medium",
             "conflicting_evidence": [
@@ -15815,7 +15843,7 @@
               "SPY"
             ],
             "alert_level": "NO_ALERT",
-            "alert_score": 33,
+            "alert_score": 32,
             "alert_type": "Risk Expansion Alert",
             "confidence": "low",
             "conflicting_evidence": [
@@ -15902,7 +15930,7 @@
             "SPY"
           ],
           "alert_level": "WARNING",
-          "alert_score": 67,
+          "alert_score": 66,
           "alert_type": "Failed Bounce Alert",
           "confidence": "medium",
           "conflicting_evidence": [],
@@ -16179,25 +16207,21 @@
               "QQQ",
               "IWM",
               "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
+              "TLT",
+              "UUP"
             ],
-            "confidence": "medium",
-            "confidence_score": 74,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 68,
-            "headline": "Ken Griffin says Citadel unwound more than 80% of risk tied to Situational Awareness portfolio",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
+            "confidence": "high",
+            "confidence_score": 77,
+            "detected_event_conditions": [],
+            "event_type": "fed_dovish",
+            "expected_horizon": "1d-20d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 97,
+            "headline": "For young Americans, the workplace is the new phoneless frontier. 'It allows us to hyper focus on the task at hand,' says employer",
+            "importance_score": 87,
+            "narrative": "fed_cut_hopes",
             "provider": "finnhub",
-            "published_at": "2026-08-21T15:08:00+00:00",
+            "published_at": "2026-08-22T12:00:01+00:00",
             "source": "CNBC"
           },
           {
@@ -16212,74 +16236,20 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 72,
+            "confidence_score": 68,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 63,
-            "headline": "South African rand hits strongest level since start of Iran war - Reuters",
+            "freshness_score": 47,
+            "headline": "Ken Griffin says Citadel unwound more than 80% of risk tied to Situational Awareness portfolio",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-08-21T12:46:36+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 71,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 59,
-            "headline": "Take Five: Six months of war - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-08-21T11:25:55+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 70,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 53,
-            "headline": "Iranian oil offers to Chinese buyers fall as US blockade bites, sources say - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-08-21T08:45:59+00:00",
-            "source": "Reuters"
+            "published_at": "2026-08-21T15:08:00+00:00",
+            "source": "CNBC"
           },
           {
             "affected_assets": [
@@ -16301,11 +16271,11 @@
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
             "freshness_score": 42,
-            "headline": "War-hit European markets are far from down and out - Reuters",
+            "headline": "South African rand hits strongest level since start of Iran war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-08-21T04:01:00+00:00",
+            "published_at": "2026-08-21T12:46:36+00:00",
             "source": "Reuters"
           },
           {
@@ -16320,20 +16290,74 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 67,
+            "confidence_score": 66,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 41,
-            "headline": "SEBI’s swift ban on JPMorgan unit seen as warning to traders",
+            "freshness_score": 38,
+            "headline": "Take Five: Six months of war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-08-21T03:35:43+00:00",
-            "source": "Bloomberg"
+            "published_at": "2026-08-21T11:25:55+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 65,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 32,
+            "headline": "Iranian oil offers to Chinese buyers fall as US blockade bites, sources say - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-21T08:45:59+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 62,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 21,
+            "headline": "War-hit European markets are far from down and out - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-08-21T04:01:00+00:00",
+            "source": "Reuters"
           }
         ],
         "market_narrative": {
@@ -16346,7 +16370,18 @@
             "QQQ",
             "SPY"
           ],
-          "conflicting_headlines": [],
+          "conflicting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [],
+              "event_type": "fed_dovish",
+              "expected_market_direction": "risk_on",
+              "headline": "For young Americans, the workplace is the new phoneless frontier. 'It allows us to hyper focus on the task at hand,' says employer",
+              "importance_score": 87,
+              "published_at": "2026-08-22T12:00:01+00:00",
+              "source": "CNBC"
+            }
+          ],
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -16465,10 +16500,8 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0061,
-            "avg_equity_futures_1d_return": -0.0105,
-            "confirmed_checks": [
-              "股票ETF或股指期货下跌"
-            ],
+            "avg_equity_futures_1d_return": 0.006,
+            "confirmed_checks": [],
             "equity_futures_symbols_used": [
               "ES=F",
               "NQ=F",
@@ -16476,12 +16509,13 @@
               "YM=F"
             ],
             "failed_checks": [
+              "股票ETF或股指期货下跌",
               "VIX 上升",
               "HYG/LQD 走弱",
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": 0.0019,
-            "oil_proxy_1d_return": 0.012,
+            "oil_proxy_1d_return": -0.004,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -16490,7 +16524,7 @@
             "uup_1d_return": -0.0004,
             "vix_1d_return": -0.055
           },
-          "confirmation_score": 25,
+          "confirmation_score": 0,
           "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
           "price_reaction_confirmed": false
         },
@@ -18353,17 +18387,17 @@
           },
           "Bounce Setup Alert": {
             "alert_level": "WARNING",
-            "alert_score": 59,
+            "alert_score": 58,
             "confidence": "medium"
           },
           "Failed Bounce Alert": {
             "alert_level": "WARNING",
-            "alert_score": 67,
+            "alert_score": 66,
             "confidence": "medium"
           },
           "Risk Expansion Alert": {
             "alert_level": "NO_ALERT",
-            "alert_score": 33,
+            "alert_score": 32,
             "confidence": "low"
           },
           "Trend Repair Alert": {
@@ -18374,8 +18408,8 @@
         },
         "alpha_v1_threshold_unchanged": 0.32534311,
         "confluence_level": "mixed",
-        "confluence_score": 55,
-        "daily_market_summary_shadow": "SPY shadow evidence: strongest alert is Failed Bounce Alert; confluence is mixed at 55/100. This evidence is for forecast validation and challenger comparison only.",
+        "confluence_score": 53,
+        "daily_market_summary_shadow": "SPY shadow evidence: strongest alert is Failed Bounce Alert; confluence is mixed at 53/100. This evidence is for forecast validation and challenger comparison only.",
         "does_not_override_baseline_v1": true,
         "does_not_rewrite_forecast_records": true,
         "dominant_path_shadow": "bounce",
@@ -18460,7 +18494,7 @@
         "role": "challenger_shadow_evidence",
         "strongest_alert": {
           "alert_level": "WARNING",
-          "alert_score": 67,
+          "alert_score": 66,
           "alert_type": "Failed Bounce Alert",
           "confidence": "medium"
         },

@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-22T04:18:30.921207+00:00`
+- generated_at: `2026-08-22T13:04:08.071938+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
-- event_detection_confidence: `69`
+- major_event_count: `9`
+- event_detection_confidence: `65`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `25`
+- confirmation_score: `0`
 
 ## Dashboard Note
 
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### fed_dovish / risk_on
+
+- headline: For young Americans, the workplace is the new phoneless frontier. 'It allows us to hyper focus on the task at hand,' says employer
+- source: CNBC
+- published_at: `2026-08-22T12:00:01+00:00`
+- importance_score: `87`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -78,13 +86,13 @@
 - headline: Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters
 - source: Reuters
 - published_at: `2026-08-20T23:53:38+00:00`
-- importance_score: `100`
+- importance_score: `99`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: The Los Angeles Lakers sold for $12.5 billion. Here’s what every NBA team is now worth
-- source: CNBC
-- published_at: `2026-08-20T20:28:21+00:00`
-- importance_score: `100`
+- headline: Israel and Turkey step up warnings over Syria after airbase bombing - Reuters
+- source: Reuters
+- published_at: `2026-08-20T23:45:29+00:00`
+- importance_score: `99`
 - confidence: `medium`
