@@ -1,6 +1,6 @@
 # Flow / Positioning Proxy Status
 
-Generated at: `2026-08-22T02:31:21.866886+00:00`
+Generated at: `2026-08-22T04:18:22.747595+00:00`
 Latest date: `2026-08-21`
 
 ## Summary
@@ -9,17 +9,17 @@ Latest date: `2026-08-21`
 - flow_proxy_only: `True`
 - true_flow_available: `False`
 - average_flow_quality_score: `100.0`
-- overall_flow_confirmation_score: `74.69`
+- overall_flow_confirmation_score: `74.93`
 - overall_flow_conflict_score: `19.44`
 
 ## Symbol Detail
 
 | symbol | quality | confirmation | conflict | risk-on | risk-off | volume z | rel vol 5d | rel vol 20d | note |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---|
-| SPY | 100.0 | 73.82 | 19.44 | 100.0 | 33.52 | -0.6219 | 0.9869 | 0.8301 | Proxy only: ETF volume, factor rotation, sector rotation, HYG/LQD, TLT and UUP. No true fund-flow or positioning feed. |
-| QQQ | 100.0 | 73.81 | 19.44 | 100.0 | 33.52 | -0.5211 | 0.9821 | 0.8287 | Proxy only: ETF volume, factor rotation, sector rotation, HYG/LQD, TLT and UUP. No true fund-flow or positioning feed. |
-| IWM | 100.0 | 77.72 | 19.44 | 100.0 | 33.52 | 0.5945 | 1.3449 | 1.1572 | Proxy only: ETF volume, factor rotation, sector rotation, HYG/LQD, TLT and UUP. No true fund-flow or positioning feed. |
-| DIA | 100.0 | 73.43 | 19.44 | 100.0 | 33.52 | -0.5542 | 1.0094 | 0.7862 | Proxy only: ETF volume, factor rotation, sector rotation, HYG/LQD, TLT and UUP. No true fund-flow or positioning feed. |
+| SPY | 100.0 | 73.91 | 19.44 | 100.0 | 33.52 | -0.5877 | 0.9984 | 0.8398 | Proxy only: ETF volume, factor rotation, sector rotation, HYG/LQD, TLT and UUP. No true fund-flow or positioning feed. |
+| QQQ | 100.0 | 73.86 | 19.44 | 100.0 | 33.52 | -0.5047 | 0.9884 | 0.834 | Proxy only: ETF volume, factor rotation, sector rotation, HYG/LQD, TLT and UUP. No true fund-flow or positioning feed. |
+| IWM | 100.0 | 78.27 | 19.44 | 100.0 | 33.52 | 0.7302 | 1.3881 | 1.1944 | Proxy only: ETF volume, factor rotation, sector rotation, HYG/LQD, TLT and UUP. No true fund-flow or positioning feed. |
+| DIA | 100.0 | 73.68 | 19.44 | 100.0 | 33.52 | -0.4845 | 1.0453 | 0.8142 | Proxy only: ETF volume, factor rotation, sector rotation, HYG/LQD, TLT and UUP. No true fund-flow or positioning feed. |
 
 ## Guardrail
 

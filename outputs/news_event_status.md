@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-22T02:31:32.144346+00:00`
+- generated_at: `2026-08-22T04:18:30.921207+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `8`
@@ -10,7 +10,7 @@
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `0`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
@@ -31,7 +31,7 @@
 - source: CNBC
 - published_at: `2026-08-21T15:08:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -67,6 +67,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: SEBI’s swift ban on JPMorgan unit seen as warning to traders
+- source: Bloomberg
+- published_at: `2026-08-21T03:35:43+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters
 - source: Reuters
 - published_at: `2026-08-20T23:53:38+00:00`
@@ -78,13 +86,5 @@
 - headline: The Los Angeles Lakers sold for $12.5 billion. Here’s what every NBA team is now worth
 - source: CNBC
 - published_at: `2026-08-20T20:28:21+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Gatekeeping bots, piles of slop: Welcome to the age of AI weirdness at work
-- source: CNBC
-- published_at: `2026-08-20T16:30:01+00:00`
 - importance_score: `100`
 - confidence: `medium`

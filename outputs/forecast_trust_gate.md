@@ -1,6 +1,6 @@
 # Forecast Trust Gate
 
-Generated at: `2026-08-22T02:31:42.918170+00:00`
+Generated at: `2026-08-22T04:18:41.664494+00:00`
 
 This report answers whether the current Market Prediction Dashboard is dependable as a forecasting tool. It is not trading advice.
 
@@ -34,10 +34,10 @@ This report answers whether the current Market Prediction Dashboard is dependabl
 
 ## Symbol Readiness
 
-- SPY: `blocked_by_global_gate` | primary `bounce_path` 0.3341 | reason: Global trust gate is not ready.
+- SPY: `blocked_by_global_gate` | primary `bounce_path` 0.3342 | reason: Global trust gate is not ready.
 - QQQ: `blocked_by_global_gate` | primary `bounce_path` 0.2864 | reason: Global trust gate is not ready.
-- IWM: `blocked_by_global_gate` | primary `bounce_path` 0.3288 | reason: Global trust gate is not ready.
-- DIA: `blocked_by_global_gate` | primary `bounce_path` 0.3371 | reason: Global trust gate is not ready.
+- IWM: `blocked_by_global_gate` | primary `bounce_path` 0.3287 | reason: Global trust gate is not ready.
+- DIA: `blocked_by_global_gate` | primary `bounce_path` 0.3373 | reason: Global trust gate is not ready.
 
 ## Next Actions
 
