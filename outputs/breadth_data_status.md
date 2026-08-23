@@ -1,6 +1,6 @@
 # Breadth Data Status
 
-Generated at: 2026-08-22T13:03:42.438389+00:00
+Generated at: 2026-08-23T13:04:16.006034+00:00
 
 Provider available: True
 True breadth available: False
@@ -11,7 +11,7 @@ Stale data: True
 
 ## Market Internal Resonance
 
-- resonance_score: 52.78
+- resonance_score: 52.83
 - resonance_state: mixed
 - label: partial_resonance
 - aligned_symbols: none
@@ -26,19 +26,19 @@ Stale data: True
 
 - status: available
 - source: wikipedia-sp500
-- latest_date: 2026-08-19
+- latest_date: 2026-08-21
 - true_breadth: True
 - proxy: False
 - constituents used / expected: 503 / 503
 - coverage_ratio: 1.0
 - stale_constituents: False
 - stale_price_data: False
-- percent_above_20d / 50d / 200d: 0.5299 / 0.5948 / 0.716
-- advancers / decliners / A-D ratio: 284 / 217 / 1.3088
+- percent_above_20d / 50d / 200d: 0.5308 / 0.5936 / 0.7166
+- advancers / decliners / A-D ratio: 285 / 217 / 1.3134
 - new highs/lows 20d: 83 / 36
 - new highs/lows 52w: 20 / 0
-- improvement / deterioration / confirmation / conflict / quality: 52.16 / 82.24 / 58.98 / 62.5 / 100.0
-- internal_resonance: mixed / score 52.15 / SPY 内部信号分歧：成分股/行业有部分支持，但等权、小盘或新高新低没有完全确认。
+- improvement / deterioration / confirmation / conflict / quality: 52.18 / 81.46 / 59.05 / 61.91 / 100.0
+- internal_resonance: mixed / score 52.28 / SPY 内部信号分歧：成分股/行业有部分支持，但等权、小盘或新高新低没有完全确认。
 
 ### QQQ
 

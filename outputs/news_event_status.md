@@ -1,14 +1,14 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-22T13:04:08.071938+00:00`
+- generated_at: `2026-08-23T13:04:31.690970+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
-- event_detection_confidence: `65`
+- major_event_count: `2`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
-- narrative_strength: `100`
+- narrative_strength: `33`
 - price_reaction_confirmed: `False`
 - confirmation_score: `0`
 
@@ -25,74 +25,18 @@
 
 ## Major Events
 
+### geopolitical_risk_escalation / risk_off
+
+- headline: Israel strikes southern Syria; Damascus condemns attack - Reuters
+- source: Reuters
+- published_at: `2026-08-22T18:51:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
 ### fed_dovish / risk_on
 
 - headline: For young Americans, the workplace is the new phoneless frontier. 'It allows us to hyper focus on the task at hand,' says employer
 - source: CNBC
 - published_at: `2026-08-22T12:00:01+00:00`
-- importance_score: `87`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Ken Griffin says Citadel unwound more than 80% of risk tied to Situational Awareness portfolio
-- source: CNBC
-- published_at: `2026-08-21T15:08:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: South African rand hits strongest level since start of Iran war - Reuters
-- source: Reuters
-- published_at: `2026-08-21T12:46:36+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Take Five: Six months of war - Reuters
-- source: Reuters
-- published_at: `2026-08-21T11:25:55+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iranian oil offers to Chinese buyers fall as US blockade bites, sources say - Reuters
-- source: Reuters
-- published_at: `2026-08-21T08:45:59+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: War-hit European markets are far from down and out - Reuters
-- source: Reuters
-- published_at: `2026-08-21T04:01:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: SEBI’s swift ban on JPMorgan unit seen as warning to traders
-- source: Bloomberg
-- published_at: `2026-08-21T03:35:43+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Gaza mediators say latest Israeli strikes undermine efforts to end conflict at critical stage - Reuters
-- source: Reuters
-- published_at: `2026-08-20T23:53:38+00:00`
-- importance_score: `99`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Israel and Turkey step up warnings over Syria after airbase bombing - Reuters
-- source: Reuters
-- published_at: `2026-08-20T23:45:29+00:00`
-- importance_score: `99`
+- importance_score: `81`
 - confidence: `medium`
