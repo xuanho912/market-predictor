@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-24T20:57:50.455324+00:00`
+- generated_at: `2026-08-24T21:58:53.965806+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
+- major_event_count: `6`
 - event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -71,12 +71,4 @@
 - source: Reuters
 - published_at: `2026-08-24T09:51:31+00:00`
 - importance_score: `97`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US cancels joint marine drills with South Korea over Iran war-related force constraints - Reuters
-- source: Reuters
-- published_at: `2026-08-24T05:52:00+00:00`
-- importance_score: `100`
 - confidence: `medium`
