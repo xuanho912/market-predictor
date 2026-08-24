@@ -1,20 +1,20 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-24T13:16:11.779776+00:00`
+- generated_at: `2026-08-24T20:57:50.455324+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `7`
-- event_detection_confidence: `75`
+- event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
-- price_reaction_confirmed: `False`
-- confirmation_score: `50`
+- price_reaction_confirmed: `True`
+- confirmation_score: `100`
 
 ## Dashboard Note
 
-当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，尚未被价格反应充分确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
+当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，已被价格反应初步确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
 
 ## Economic Calendar Risk
 
@@ -25,12 +25,36 @@
 
 ## Major Events
 
-### geopolitical_risk_easing / risk_on
+### geopolitical_risk_escalation / risk_off
 
-- headline: Zelenskiy says Russia is 'not ready' for ceasefire on grain ships - Reuters
+- headline: Trump's approval holds at record low as US support for Iran war falls, Reuters Ipsos poll finds - Reuters
 - source: Reuters
-- published_at: `2026-08-24T09:51:31+00:00`
-- importance_score: `99`
+- published_at: `2026-08-24T19:35:39+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Yemen's Houthis say they attacked ship off Saudi Arabia's Yanbu - Reuters
+- source: Reuters
+- published_at: `2026-08-24T15:51:27+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Surge in bond yields is a result of "Trump's war", German minister says - Reuters
+- source: Reuters
+- published_at: `2026-08-24T14:53:45+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Trump says U.S. will hike Canada auto tariffs to 50% as trade war escalates
+- source: CNBC
+- published_at: `2026-08-24T13:59:26+00:00`
+- importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -39,6 +63,14 @@
 - source: Reuters
 - published_at: `2026-08-24T08:35:19+00:00`
 - importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Zelenskiy says Russia is 'not ready' for ceasefire on grain ships - Reuters
+- source: Reuters
+- published_at: `2026-08-24T09:51:31+00:00`
+- importance_score: `97`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -47,36 +79,4 @@
 - source: Reuters
 - published_at: `2026-08-24T05:52:00+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Morning Bid: Mixing economic wars, trade wars and actual wars - Reuters
-- source: Reuters
-- published_at: `2026-08-24T04:34:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Ampol profit surges nearly five-fold as Iran war boosts refining margins - Reuters
-- source: Reuters
-- published_at: `2026-08-23T22:42:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Here are the 2 big things we're watching in the stock market this week
-- source: CNBC
-- published_at: `2026-08-23T16:56:02+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### oil_shock_relief / risk_on
-
-- headline: Oil falls ahead of US announcement of new sanctions on Iran - Reuters
-- source: Reuters
-- published_at: `2026-08-23T23:18:00+00:00`
-- importance_score: `91`
 - confidence: `medium`

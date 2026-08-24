@@ -1,6 +1,6 @@
 # Breadth Impact Audit
 
-Generated at: `2026-08-24T13:16:21.852508Z`
+Generated at: `2026-08-24T20:58:01.216402Z`
 
 ## Summary
 
@@ -8,7 +8,7 @@ Generated at: `2026-08-24T13:16:21.852508Z`
 - data_completeness_with_true_breadth: `85`
 - changed_symbol_count: `4`
 - breadth_supports_primary_count: `1`
-- breadth_conflicts_primary_count: `2`
+- breadth_conflicts_primary_count: `4`
 - forward_validation_status: `not_enough_forward_samples`
 - conclusion: `breadth improves information quality, not proven alpha yet.`
 
@@ -16,10 +16,10 @@ Generated at: `2026-08-24T13:16:21.852508Z`
 
 | symbol | supports primary | conflicts primary | edge before | edge after | primary before | primary after | failed bounce delta | confirmation delta | confidence delta | reason | risk note |
 |---|---:|---:|---|---|---|---|---:|---:|---:|---|---|
-| SPY | False | True | STRONG_EDGE | STRONG_EDGE | bounce_path | bounce_path | 0.0904 | 0 | 7 | SPY breadth conflicts with bounce_path: conflict score 62%, internal resonance is mixed. | SPY breadth conflict or failed-bounce risk is elevated; watch new lows, percent above 20/50d MA and sector participation. |
-| QQQ | False | True | STRONG_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.1009 | 0 | -6 | QQQ breadth conflicts with bounce_path: conflict score 69%, internal resonance is weak. | QQQ breadth conflict or failed-bounce risk is elevated; watch new lows, percent above 20/50d MA and sector participation. |
-| IWM | False | False | STRONG_EDGE | STRONG_EDGE | bounce_path | bounce_path | 0.0623 | 0 | 4 | IWM breadth is mixed for bounce_path: support score 49%, conflict score 43%, internal resonance is weak. | IWM breadth is useful context but not strong enough to validate the primary path by itself. |
-| DIA | True | False | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0595 | 1 | 8 | DIA breadth supports bounce_path: internal resonance is mixed, support score 70%, above 20d/50d MA 67%/67%. | DIA breadth improves confidence in the primary path, but forward validation is still required. |
+| SPY | False | True | STRONG_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.1504 | 0 | -2 | SPY breadth conflicts with bounce_path: conflict score 62%, internal resonance is surface_only. | SPY index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
+| QQQ | False | True | STRONG_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.1675 | -6 | -6 | QQQ breadth conflicts with bounce_path: conflict score 69%, internal resonance is surface_only. | QQQ index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
+| IWM | False | True | STRONG_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.1367 | -6 | 1 | IWM breadth is mixed for bounce_path: support score 45%, conflict score 48%, internal resonance is surface_only. | IWM index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
+| DIA | True | True | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.1227 | -2 | 2 | DIA breadth supports bounce_path: internal resonance is surface_only, support score 70%, above 20d/50d MA 67%/67%. | DIA index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
 
 ## Forward Validation
 
