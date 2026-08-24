@@ -1,6 +1,6 @@
 # Breadth Impact Audit
 
-Generated at: `2026-08-24T21:59:05.246399Z`
+Generated at: `2026-08-24T23:13:00.152365Z`
 
 ## Summary
 
@@ -18,7 +18,7 @@ Generated at: `2026-08-24T21:59:05.246399Z`
 |---|---:|---:|---|---|---|---|---:|---:|---:|---|---|
 | SPY | False | True | STRONG_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.1504 | 0 | -2 | SPY breadth conflicts with bounce_path: conflict score 62%, internal resonance is surface_only. | SPY index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
 | QQQ | False | True | STRONG_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.1675 | -6 | -6 | QQQ breadth conflicts with bounce_path: conflict score 69%, internal resonance is surface_only. | QQQ index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
-| IWM | False | True | STRONG_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.1366 | -6 | 0 | IWM breadth is mixed for bounce_path: support score 45%, conflict score 48%, internal resonance is surface_only. | IWM index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
+| IWM | False | True | STRONG_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.1366 | -6 | 1 | IWM breadth is mixed for bounce_path: support score 45%, conflict score 48%, internal resonance is surface_only. | IWM index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
 | DIA | True | True | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.1227 | -2 | 2 | DIA breadth supports bounce_path: internal resonance is surface_only, support score 70%, above 20d/50d MA 67%/67%. | DIA index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
 
 ## Forward Validation

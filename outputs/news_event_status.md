@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-24T21:58:53.965806+00:00`
+- generated_at: `2026-08-24T23:12:48.461389+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `6`
-- event_detection_confidence: `77`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -29,7 +29,7 @@
 
 - headline: Trump's approval holds at record low as US support for Iran war falls, Reuters Ipsos poll finds - Reuters
 - source: Reuters
-- published_at: `2026-08-24T19:35:39+00:00`
+- published_at: `2026-08-24T20:56:55+00:00`
 - importance_score: `100`
 - confidence: `high`
 
