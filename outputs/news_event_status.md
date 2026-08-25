@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-24T23:32:53.719185+00:00`
+- generated_at: `2026-08-25T02:39:37.920003+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
+- major_event_count: `4`
 - event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -29,7 +29,7 @@
 
 - headline: Trump's approval holds at record low as US support for Iran war falls, Reuters Ipsos poll finds - Reuters
 - source: Reuters
-- published_at: `2026-08-24T20:56:55+00:00`
+- published_at: `2026-08-24T23:12:09+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -55,20 +55,4 @@
 - source: CNBC
 - published_at: `2026-08-24T13:59:26+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: UK briefs energy chiefs after Iran-linked cyber attack reports - Reuters
-- source: Reuters
-- published_at: `2026-08-24T08:35:19+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Zelenskiy says Russia is 'not ready' for ceasefire on grain ships - Reuters
-- source: Reuters
-- published_at: `2026-08-24T09:51:31+00:00`
-- importance_score: `97`
 - confidence: `medium`
