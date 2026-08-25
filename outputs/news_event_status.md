@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-25T20:54:46.923423+00:00`
+- generated_at: `2026-08-25T21:57:39.083631+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
-- event_detection_confidence: `79`
+- major_event_count: `7`
+- event_detection_confidence: `81`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -35,6 +35,22 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Six months into Iran war, almost half of global oil flows from war zones - Reuters
+- source: Reuters
+- published_at: `2026-08-25T20:27:10+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: U.S. Secret Service aware of Iranian video threat against Barron Trump - Reuters
+- source: Reuters
+- published_at: `2026-08-25T19:50:24+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: US starts returning staff to Middle East embassies after Iran war evacuations, sources say - Reuters
 - source: Reuters
 - published_at: `2026-08-25T16:48:57+00:00`
@@ -55,20 +71,12 @@
 - source: CNBC
 - published_at: `2026-08-25T09:26:05+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Iran war makes multibillion-dollar Tanzania LNG more attractive, Equinor says - Reuters
 - source: Reuters
 - published_at: `2026-08-25T09:08:55+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Six months into Iran war, almost half of global oil flows from war zones - Reuters
-- source: Reuters
-- published_at: `2026-08-25T01:28:15+00:00`
 - importance_score: `100`
 - confidence: `medium`
