@@ -1,6 +1,6 @@
 # High Confidence Edge Report
 
-Generated at: `2026-08-25T04:23:56.684216+00:00`
+Generated at: `2026-08-25T13:14:04.000513+00:00`
 
 Status: `historical_proxy_and_forward_pending`
 Sample size: `80`
@@ -163,12 +163,12 @@ Conclusion: `forward_validation_insufficient_keep_confidence_capped`
 - 60d: sample `20`, hit `0.7`, avg `0.033683`, median `0.046132`, mae `0.064469`
 
 ### failed_bounce_risk_with_breadth_conflict
-- sample_size: `20`
-- 3d: sample `20`, hit `0.5`, avg `-0.001757`, median `0.000201`, mae `0.008609`
-- 5d: sample `20`, hit `0.6`, avg `-0.003146`, median `0.000762`, mae `0.009887`
-- 10d: sample `20`, hit `0.25`, avg `-0.011711`, median `-0.013317`, mae `0.02215`
-- 20d: sample `20`, hit `0.35`, avg `-0.020159`, median `-0.003522`, mae `0.037968`
-- 60d: sample `20`, hit `0.35`, avg `-0.006555`, median `-0.017297`, mae `0.05438`
+- sample_size: `0`
+- 3d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 5d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 10d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 20d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 60d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
 
 ## Internal Resonance Forward Validation
 

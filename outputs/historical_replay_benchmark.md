@@ -1,11 +1,11 @@
 # Historical Replay Benchmark
 
-Generated at: `2026-08-25T04:24:09.794744+00:00`
+Generated at: `2026-08-25T13:14:14.887816+00:00`
 Validation type: `historical_replay`
 Status: `research_evaluation_only_not_forward_validation`
 Sample size: `80`
 Historical replay grade: `WEAK`
-Overfit warning: `{'level': 'medium', 'reasons': ['primary path is not closer than secondary path on most horizons'], 'rule': 'If historical replay is mixed and forward samples are insufficient, keep confidence capped and avoid adding new data blindly.'}`
+Overfit warning: `{'level': 'medium', 'reasons': ['primary path is not closer than secondary path on most horizons', 'high signal confirmation is mixed or not better in historical replay'], 'rule': 'If historical replay is mixed and forward samples are insufficient, keep confidence capped and avoid adding new data blindly.'}`
 
 > Historical replay is only a research benchmark. It is not forward validation and does not confirm alpha.
 
@@ -13,7 +13,7 @@ Overfit warning: `{'level': 'medium', 'reasons': ['primary path is not closer th
 
 - primary_scenario_beats_secondary: `not_proven_or_mixed`
 - moderate_or_strong_edge_beats_no_edge: `insufficient_comparison_samples`
-- signal_confirmation_high_samples_more_accurate: `historical_replay_supportive_but_not_forward_validated`
+- signal_confirmation_high_samples_more_accurate: `historical_replay_mixed_or_not_better_keep_confidence_capped`
 - data_enhancement_improves_prediction_quality: `historical_replay_available_compare_bucket_metrics_but_forward_validation_required`
 - forward_validation_required: `yes_daily_forward_validation_remains_decisive`
 
@@ -193,13 +193,13 @@ Overfit warning: `{'level': 'medium', 'reasons': ['primary path is not closer th
 
 ### bottom_20
 - sample_size: `16`
-- 3d: sample `16`, primary_hit `0.4375`, primary_closer `0.4375`, primary_mae `0.020784`, avg `0.006485`, median `0.010157`
-- 5d: sample `16`, primary_hit `0.4375`, primary_closer `0.5`, primary_mae `0.02608`, avg `0.00678`, median `0.004904`
-- 10d: sample `16`, primary_hit `0.375`, primary_closer `0.375`, primary_mae `0.032603`, avg `0.012422`, median `0.017251`
-- 20d: sample `16`, primary_hit `0.1875`, primary_closer `0.3125`, primary_mae `0.035388`, avg `0.026432`, median `0.028152`
-- 60d: sample `16`, primary_hit `0.0`, primary_closer `0.4375`, primary_mae `0.045225`, avg `0.081965`, median `0.071545`
+- 3d: sample `16`, primary_hit `0.5625`, primary_closer `0.625`, primary_mae `0.018391`, avg `-0.002855`, median `0.001949`
+- 5d: sample `16`, primary_hit `0.5`, primary_closer `0.5`, primary_mae `0.025144`, avg `-0.00797`, median `-0.006374`
+- 10d: sample `16`, primary_hit `0.5625`, primary_closer `0.5625`, primary_mae `0.02432`, avg `0.007828`, median `0.009998`
+- 20d: sample `16`, primary_hit `0.8125`, primary_closer `0.75`, primary_mae `0.033535`, avg `0.021419`, median `0.029731`
+- 60d: sample `16`, primary_hit `0.75`, primary_closer `0.75`, primary_mae `0.05011`, avg `0.044031`, median `0.052814`
 
-- effectiveness_question: `historical_replay_supportive_but_not_forward_validated`
+- effectiveness_question: `historical_replay_mixed_or_not_better_keep_confidence_capped`
 
 ## Data Completeness / Evidence Buckets
 
