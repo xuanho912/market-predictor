@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-25T21:57:39.083631+00:00`
+- generated_at: `2026-08-25T23:15:52.548169+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `7`
-- event_detection_confidence: `81`
+- event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -30,14 +30,6 @@
 - headline: 2 of our software stocks face major tests of whether their rallies are for real
 - source: CNBC
 - published_at: `2026-08-25T20:27:12+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Six months into Iran war, almost half of global oil flows from war zones - Reuters
-- source: Reuters
-- published_at: `2026-08-25T20:27:10+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -78,5 +70,13 @@
 - headline: Iran war makes multibillion-dollar Tanzania LNG more attractive, Equinor says - Reuters
 - source: Reuters
 - published_at: `2026-08-25T09:08:55+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Six months into Iran war, almost half of global oil flows from war zones - Reuters
+- source: Reuters
+- published_at: `2026-08-25T00:30:10+00:00`
 - importance_score: `100`
 - confidence: `medium`
