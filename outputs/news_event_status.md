@@ -1,20 +1,20 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-25T13:14:04.004815+00:00`
+- generated_at: `2026-08-25T20:54:46.923423+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `6`
-- event_detection_confidence: `75`
+- event_detection_confidence: `79`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
-- price_reaction_confirmed: `True`
-- confirmation_score: `75`
+- price_reaction_confirmed: `False`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
-当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，已被价格反应初步确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
+当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，尚未被价格反应充分确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
 
 ## Economic Calendar Risk
 
@@ -27,9 +27,25 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US prepares to send diplomats back to Middle East embassies after Iran war evacuations, NYT reports - Reuters
+- headline: 2 of our software stocks face major tests of whether their rallies are for real
+- source: CNBC
+- published_at: `2026-08-25T20:27:12+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US starts returning staff to Middle East embassies after Iran war evacuations, sources say - Reuters
 - source: Reuters
-- published_at: `2026-08-25T10:57:43+00:00`
+- published_at: `2026-08-25T16:48:57+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Trump says Strait of Hormuz has been demined, warns Iran not to plant more - Reuters
+- source: Reuters
+- published_at: `2026-08-25T15:05:43+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -53,22 +69,6 @@
 
 - headline: Six months into Iran war, almost half of global oil flows from war zones - Reuters
 - source: Reuters
-- published_at: `2026-08-25T00:27:02+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump's approval holds at record low as US support for Iran war falls, Reuters Ipsos poll finds - Reuters
-- source: Reuters
-- published_at: `2026-08-24T19:06:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Yemen's Houthis say they attacked ship off Saudi Arabia's Yanbu - Reuters
-- source: Reuters
-- published_at: `2026-08-24T15:51:27+00:00`
+- published_at: `2026-08-25T01:28:15+00:00`
 - importance_score: `100`
 - confidence: `medium`

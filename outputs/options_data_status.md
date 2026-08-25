@@ -1,6 +1,6 @@
 # Options / Volatility Structure Status
 
-Generated at: `2026-08-25T13:13:54.424233+00:00`
+Generated at: `2026-08-25T20:54:31.640292+00:00`
 
 ## Summary
 
@@ -18,29 +18,29 @@ Generated at: `2026-08-25T13:13:54.424233+00:00`
 
 ## Market Snapshot
 
-- VIX: `15.84000015258789`
-- VIX9D: `14.069999694824219`
-- VIX3M: `18.559999465942383`
-- VIX6M: `21.040000915527344`
-- VVIX: `88.63999938964844`
+- VIX: `15.449999809265137`
+- VIX9D: `13.449999809265137`
+- VIX3M: `18.209999084472656`
+- VIX6M: `20.84000015258789`
+- VVIX: `85.66999816894531`
 - SKEW: `145.63999938964844`
 - term_structure_state: `contango`
-- volatility_reversal_score: `0.737`
-- panic_release_score: `0.4781`
-- tail_risk_score: `0.2829`
-- option_stress_score: `0.1652`
-- failed_bounce_options_risk: `0.1975`
+- volatility_reversal_score: `0.841`
+- panic_release_score: `0.5582`
+- tail_risk_score: `0.2557`
+- option_stress_score: `0.1275`
+- failed_bounce_options_risk: `0.1713`
 
 ## Sources
 
 | symbol | status | latest_date | latest_value | source | real_data | stale |
 |---|---|---|---:|---|---:|---:|
 | ^SKEW | available | 2026-08-24 | 145.63999938964844 | yahoo-chart | True | False |
-| ^VIX | available | 2026-08-25 | 15.84000015258789 | yahoo-chart | True | False |
-| ^VIX3M | available | 2026-08-24 | 18.559999465942383 | yahoo-chart | True | False |
-| ^VIX6M | available | 2026-08-24 | 21.040000915527344 | yahoo-chart | True | False |
-| ^VIX9D | available | 2026-08-24 | 14.069999694824219 | yahoo-chart | True | False |
-| ^VVIX | available | 2026-08-24 | 88.63999938964844 | yahoo-chart | True | False |
+| ^VIX | available | 2026-08-25 | 15.449999809265137 | yahoo-chart | True | False |
+| ^VIX3M | available | 2026-08-25 | 18.209999084472656 | yahoo-chart | True | False |
+| ^VIX6M | available | 2026-08-25 | 20.84000015258789 | yahoo-chart | True | False |
+| ^VIX9D | available | 2026-08-25 | 13.449999809265137 | yahoo-chart | True | False |
+| ^VVIX | available | 2026-08-25 | 85.66999816894531 | yahoo-chart | True | False |
 
 ## Guardrails
 
