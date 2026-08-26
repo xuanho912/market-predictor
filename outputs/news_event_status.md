@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-25T23:35:43.112590+00:00`
+- generated_at: `2026-08-26T02:42:13.913672+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `7`
-- event_detection_confidence: `78`
+- event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `25`
+- confirmation_score: `50`
 
 ## Dashboard Note
 
@@ -27,6 +27,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: US starts returning staff to Middle East missions after Iran war evacuations, sources say - Reuters
+- source: Reuters
+- published_at: `2026-08-25T22:41:45+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: 2 of our software stocks face major tests of whether their rallies are for real
 - source: CNBC
 - published_at: `2026-08-25T20:27:12+00:00`
@@ -38,14 +46,6 @@
 - headline: U.S. Secret Service aware of Iranian video threat against Barron Trump - Reuters
 - source: Reuters
 - published_at: `2026-08-25T19:50:24+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US starts returning staff to Middle East embassies after Iran war evacuations, sources say - Reuters
-- source: Reuters
-- published_at: `2026-08-25T16:48:57+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -77,6 +77,6 @@
 
 - headline: Six months into Iran war, almost half of global oil flows from war zones - Reuters
 - source: Reuters
-- published_at: `2026-08-25T00:30:10+00:00`
+- published_at: `2026-08-25T00:26:55+00:00`
 - importance_score: `100`
 - confidence: `medium`
