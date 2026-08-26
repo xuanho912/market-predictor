@@ -1,20 +1,20 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-26T13:20:35.137410+00:00`
+- generated_at: `2026-08-26T23:50:34.536641+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
-- event_detection_confidence: `76`
+- major_event_count: `11`
+- event_detection_confidence: `72`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
-- price_reaction_confirmed: `True`
-- confirmation_score: `75`
+- price_reaction_confirmed: `False`
+- confirmation_score: `50`
 
 ## Dashboard Note
 
-当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，已被价格反应初步确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
+当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，尚未被价格反应充分确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
 
 ## Economic Calendar Risk
 
@@ -27,11 +27,27 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Economists want Warsh to share more on his view of the economy at Jackson Hole, says CNBC survey
+- source: CNBC
+- published_at: `2026-08-26T17:02:24+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Medical device maker Boston Scientific is being hit by a cyberattack. The shares are falling
 - source: CNBC
 - published_at: `2026-08-26T11:56:29+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
+
+### credit_stress / risk_off
+
+- headline: We're buying the dip — again — in a retailer not getting credit for addressing weak sales
+- source: CNBC
+- published_at: `2026-08-26T14:48:53+00:00`
+- importance_score: `97`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -39,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-08-26T08:37:44+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +63,7 @@
 - source: Reuters
 - published_at: `2026-08-26T07:13:29+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,15 +71,7 @@
 - source: Reuters
 - published_at: `2026-08-26T06:09:00+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: As war strands Qatari gas for 6 months, US sales rise and European stocks plummet - Reuters
-- source: Reuters
-- published_at: `2026-08-26T06:00:40+00:00`
-- importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -71,7 +79,15 @@
 - source: Reuters
 - published_at: `2026-08-26T06:00:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: As war strands Qatari gas for 6 months, US sales rise and European stocks plummet - Reuters
+- source: Reuters
+- published_at: `2026-08-26T05:03:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -88,19 +104,3 @@
 - published_at: `2026-08-25T20:27:12+00:00`
 - importance_score: `100`
 - confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: U.S. Secret Service aware of Iranian video threat against Barron Trump - Reuters
-- source: Reuters
-- published_at: `2026-08-25T19:45:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump says Strait of Hormuz has been demined, warns Iran not to plant more - Reuters
-- source: Reuters
-- published_at: `2026-08-25T15:05:43+00:00`
-- importance_score: `100`
-- confidence: `medium`
