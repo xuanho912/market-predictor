@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-26T02:42:13.913672+00:00`
+- generated_at: `2026-08-26T04:24:56.613801+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `7`
-- event_detection_confidence: `77`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -55,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-08-25T15:05:43+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -69,7 +69,7 @@
 
 - headline: Iran war makes multibillion-dollar Tanzania LNG more attractive, Equinor says - Reuters
 - source: Reuters
-- published_at: `2026-08-25T09:08:55+00:00`
+- published_at: `2026-08-25T07:40:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -77,6 +77,6 @@
 
 - headline: Six months into Iran war, almost half of global oil flows from war zones - Reuters
 - source: Reuters
-- published_at: `2026-08-25T00:26:55+00:00`
+- published_at: `2026-08-25T05:05:00+00:00`
 - importance_score: `100`
 - confidence: `medium`

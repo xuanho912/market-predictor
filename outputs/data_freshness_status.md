@@ -1,27 +1,30 @@
 # Data Freshness Status
 
-Generated at: `2026-08-26T02:42:25.269436+00:00`
+Generated at: `2026-08-26T04:25:09.813796+00:00`
 
 ## Summary
 
-- current_date: `2026-08-25`
-- current_time_us_eastern: `2026-08-25T22:42:25.269436-04:00`
+- current_date: `2026-08-26`
+- current_time_us_eastern: `2026-08-26T00:25:09.813796-04:00`
 - latest_market_date: `2026-08-25`
 - latest_confirmed_market_date: `2026-08-25`
 - expected_latest_trading_date: `2026-08-25`
 - is_latest_trading_day: `True`
-- latest_market_session_status: `completed_or_prior_session`
-- can_append_forecast_record: `True`
+- latest_market_session_status: `intraday_unconfirmed`
+- can_append_forecast_record: `False`
 - can_backfill_completed_outcomes: `True`
 - stale_days: `0`
-- data_freshness_status: `fresh`
+- data_freshness_status: `market_open_unconfirmed`
 - last_successful_core_market_update: `2026-08-25`
 - last_successful_update: `2026-08-25`
-- warning_message: 核心行情已更新至最新应有交易日 2026-08-25。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。
+- warning_message: 当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-08-25，最近完整收盘交易日为 2026-08-25；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。
 
 ## Affected Symbols
 
-- none
+- `SPY`
+- `QQQ`
+- `IWM`
+- `DIA`
 
 ## Provider Status
 
