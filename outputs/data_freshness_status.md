@@ -1,11 +1,11 @@
 # Data Freshness Status
 
-Generated at: `2026-08-26T23:50:44.579881+00:00`
+Generated at: `2026-08-27T01:03:51.258667+00:00`
 
 ## Summary
 
 - current_date: `2026-08-26`
-- current_time_us_eastern: `2026-08-26T19:50:44.579881-04:00`
+- current_time_us_eastern: `2026-08-26T21:03:51.258667-04:00`
 - latest_market_date: `2026-08-26`
 - latest_confirmed_market_date: `2026-08-26`
 - expected_latest_trading_date: `2026-08-26`
@@ -67,7 +67,7 @@ Generated at: `2026-08-26T23:50:44.579881+00:00`
 - breadth_DIA: status=`available`, latest_date=`2026-08-24`, source=`static-dow30-list`, stale=`False`, fallback=`False`, real_data=`True`
 - breadth_IWM: status=`proxy`, latest_date=`2026-08-26`, source=`iwm-spy-relative-strength-proxy`, stale=`False`, fallback=`True`, real_data=`False`
 - breadth_QQQ: status=`missing`, latest_date=`None`, source=`wikipedia-nasdaq100`, stale=`False`, fallback=`True`, real_data=`False`
-- breadth_SPY: status=`available`, latest_date=`2026-08-24`, source=`wikipedia-sp500`, stale=`False`, fallback=`False`, real_data=`True`
+- breadth_SPY: status=`available`, latest_date=`2026-08-26`, source=`wikipedia-sp500`, stale=`False`, fallback=`False`, real_data=`True`
 - breadth_sector_participation_proxy: status=`proxy`, latest_date=`None`, source=`sector-etf-participation-proxy`, stale=`True`, fallback=`True`, real_data=`False`
 - finnhub_alternative_data: status=`missing`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
 - finnhub_candle_DIA: status=`missing`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
@@ -83,9 +83,9 @@ Generated at: `2026-08-26T23:50:44.579881+00:00`
 - finnhub_news_sentiment_QQQ: status=`missing`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
 - finnhub_news_sentiment_SPY: status=`missing`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
 - finnhub_quote_DIA: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
-- finnhub_quote_IWM: status=`rate_limited`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
-- finnhub_quote_QQQ: status=`rate_limited`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
-- finnhub_quote_SPY: status=`rate_limited`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
+- finnhub_quote_IWM: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
+- finnhub_quote_QQQ: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
+- finnhub_quote_SPY: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
 - finnhub_rates_data: status=`missing`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
 - flow_DIA: status=`proxy`, latest_date=`2026-08-26`, source=`market_data_proxy`, stale=`False`, fallback=`True`, real_data=`False`
 - flow_IWM: status=`proxy`, latest_date=`2026-08-26`, source=`market_data_proxy`, stale=`False`, fallback=`True`, real_data=`False`

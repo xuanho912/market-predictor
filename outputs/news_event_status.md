@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-26T23:50:34.536641+00:00`
+- generated_at: `2026-08-27T01:03:33.999830+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `11`
@@ -46,7 +46,7 @@
 - headline: We're buying the dip — again — in a retailer not getting credit for addressing weak sales
 - source: CNBC
 - published_at: `2026-08-26T14:48:53+00:00`
-- importance_score: `97`
+- importance_score: `96`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
