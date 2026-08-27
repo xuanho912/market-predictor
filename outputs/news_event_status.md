@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-27T04:31:08.173440+00:00`
+- generated_at: `2026-08-27T11:16:32.366647+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
-- event_detection_confidence: `69`
+- major_event_count: `17`
+- event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,11 +27,51 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: OPEC+ loses oil market sway in Iran war as China gains influence - Reuters
+- source: Reuters
+- published_at: `2026-08-27T07:14:25+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Six months of war: How the Middle East conflict has shaped financial markets - Reuters
+- source: Reuters
+- published_at: `2026-08-27T06:06:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Pernod warns weak US, China will weigh in years to come - Reuters
+- source: Reuters
+- published_at: `2026-08-27T05:35:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Six consequences of six months of war in Iran - Reuters
+- source: Reuters
+- published_at: `2026-08-27T05:06:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Oil gains as traders weigh prospects of Hormuz reopening - Reuters
+- source: Reuters
+- published_at: `2026-08-27T01:20:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Economists want Warsh to share more on his view of the economy at Jackson Hole, says CNBC survey
 - source: CNBC
 - published_at: `2026-08-26T17:02:24+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -41,12 +81,20 @@
 - importance_score: `100`
 - confidence: `medium`
 
+### geopolitical_risk_escalation / risk_off
+
+- headline: AI firms debate putting cyber tests online after model hacks
+- source: Bloomberg
+- published_at: `2026-08-26T09:14:18+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
 ### credit_stress / risk_off
 
 - headline: We're buying the dip — again — in a retailer not getting credit for addressing weak sales
 - source: CNBC
 - published_at: `2026-08-26T14:48:53+00:00`
-- importance_score: `96`
+- importance_score: `94`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
@@ -54,53 +102,5 @@
 - headline: US-Iran war spurs Europe, Asia to boost renewables - Reuters
 - source: Reuters
 - published_at: `2026-08-26T08:37:44+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Dubai's DXB first-half passenger traffic falls more than 30% as Iran war disrupts travel - Reuters
-- source: Reuters
-- published_at: `2026-08-26T07:13:29+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: British energy price cap to rise 4% as Iran war pushes up costs - Reuters
-- source: Reuters
-- published_at: `2026-08-26T06:09:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US-Iran war sinks into energy trench warfare six months on - Reuters
-- source: Reuters
-- published_at: `2026-08-26T06:00:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: As war strands Qatari gas for 6 months, US sales rise and European stocks plummet - Reuters
-- source: Reuters
-- published_at: `2026-08-26T05:03:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US starts returning staff to Middle East missions after Iran war evacuations, sources say - Reuters
-- source: Reuters
-- published_at: `2026-08-25T22:41:45+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump's approval holds at record low as US support for Iran war falls, Reuters Ipsos poll finds - Reuters
-- source: Reuters
-- published_at: `2026-08-25T22:07:03+00:00`
 - importance_score: `100`
 - confidence: `medium`
