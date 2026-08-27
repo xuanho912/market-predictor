@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-27T14:48:27.843631+00:00`
+- generated_at: `2026-08-27T22:19:33.915281+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `13`
+- major_event_count: `14`
 - event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -27,9 +27,33 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: After six months, the Iran war has reached its endgame - a costly stalemate - Reuters
+- headline: Trump to meet refiners, fuel retailers as Iran war boosts gas prices ahead of midterms, sources say - Reuters
 - source: Reuters
-- published_at: `2026-08-27T10:54:17+00:00`
+- published_at: `2026-08-27T18:53:21+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: What Warsh will say and how the market will react, according to prediction markets
+- source: CNBC
+- published_at: `2026-08-27T18:14:57+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: After six months, the Iran war has reached its endgame — a costly stalemate - Reuters
+- source: Reuters
+- published_at: `2026-08-27T18:03:40+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: We went 3 for 3 — what we learned from wins at Nvidia, Salesforce, and CrowdStrike
+- source: CNBC
+- published_at: `2026-08-27T15:17:18+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -39,7 +63,7 @@
 - source: Reuters
 - published_at: `2026-08-27T07:14:25+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +71,7 @@
 - source: Reuters
 - published_at: `2026-08-27T06:06:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,7 +79,7 @@
 - source: Reuters
 - published_at: `2026-08-27T05:35:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -63,44 +87,20 @@
 - source: Reuters
 - published_at: `2026-08-27T05:03:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Six consequences after six months of war in Iran - Reuters
 - source: Reuters
-- published_at: `2026-08-27T01:03:08+00:00`
+- published_at: `2026-08-27T00:34:23+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
-### oil_shock_risk / risk_off
+### geopolitical_risk_escalation / risk_off
 
-- headline: Oil gains as traders weigh prospects of easing Middle East supply disruptions - Reuters
+- headline: Qatar PM pursues mediation in Tehran as US ramps up 'economic war' - Reuters
 - source: Reuters
-- published_at: `2026-08-27T01:20:00+00:00`
-- importance_score: `95`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Economists want Warsh to share more on his view of the economy at Jackson Hole, says CNBC survey
-- source: CNBC
-- published_at: `2026-08-26T17:02:24+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Medical device maker Boston Scientific is being hit by a cyberattack. The shares are falling
-- source: CNBC
-- published_at: `2026-08-26T11:56:29+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: AI firms debate putting cyber tests online after model hacks
-- source: Bloomberg
-- published_at: `2026-08-26T09:14:18+00:00`
+- published_at: `2026-08-26T23:15:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
