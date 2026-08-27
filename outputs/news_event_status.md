@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-27T11:16:32.366647+00:00`
+- generated_at: `2026-08-27T14:48:27.843631+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `17`
-- event_detection_confidence: `70`
+- major_event_count: `13`
+- event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `50`
+- confirmation_score: `0`
 
 ## Dashboard Note
 
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: After six months, the Iran war has reached its endgame - a costly stalemate - Reuters
+- source: Reuters
+- published_at: `2026-08-27T10:54:17+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -51,19 +59,27 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Six consequences of six months of war in Iran - Reuters
+- headline: Bessent, Warsh diverge on who should set the price of money - Reuters
 - source: Reuters
-- published_at: `2026-08-27T05:06:00+00:00`
+- published_at: `2026-08-27T05:03:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
-### geopolitical_risk_easing / risk_on
+### geopolitical_risk_escalation / risk_off
 
-- headline: Oil gains as traders weigh prospects of Hormuz reopening - Reuters
+- headline: Six consequences after six months of war in Iran - Reuters
+- source: Reuters
+- published_at: `2026-08-27T01:03:08+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### oil_shock_risk / risk_off
+
+- headline: Oil gains as traders weigh prospects of easing Middle East supply disruptions - Reuters
 - source: Reuters
 - published_at: `2026-08-27T01:20:00+00:00`
-- importance_score: `100`
-- confidence: `high`
+- importance_score: `95`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -86,21 +102,5 @@
 - headline: AI firms debate putting cyber tests online after model hacks
 - source: Bloomberg
 - published_at: `2026-08-26T09:14:18+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### credit_stress / risk_off
-
-- headline: We're buying the dip — again — in a retailer not getting credit for addressing weak sales
-- source: CNBC
-- published_at: `2026-08-26T14:48:53+00:00`
-- importance_score: `94`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US-Iran war spurs Europe, Asia to boost renewables - Reuters
-- source: Reuters
-- published_at: `2026-08-26T08:37:44+00:00`
 - importance_score: `100`
 - confidence: `medium`

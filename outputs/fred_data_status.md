@@ -1,6 +1,6 @@
 # FRED Data Status
 
-Generated at: `2026-08-27T11:16:43.718910Z`
+Generated at: `2026-08-27T14:48:42.125258Z`
 
 ## Provider
 
@@ -8,7 +8,7 @@ Generated at: `2026-08-27T11:16:43.718910Z`
 - provider available: `True`
 - fallback used: `False`
 - rate limited: `False`
-- successful series: `HY_OAS, BAA_SPREAD, DGS3MO, DGS10, IG_OAS, DGS2, RECESSION, FINANCIAL_STRESS, DFII10`
+- successful series: `DGS2, DGS3MO, HY_OAS, IG_OAS, DGS10, BAA_SPREAD, RECESSION, DFII10, FINANCIAL_STRESS`
 - failed series: `none`
 
 ## Series
@@ -21,8 +21,8 @@ Generated at: `2026-08-27T11:16:43.718910Z`
 | DGS2 | DGS2 | True | 2026-08-25 | 4.17 | fred-api | False |  |
 | DGS3MO | DGS3MO | True | 2026-08-25 | 3.86 | fred-api | False |  |
 | FINANCIAL_STRESS | STLFSI4 | True | 2026-08-21 | -0.8107 | fred-api | False |  |
-| HY_OAS | BAMLH0A0HYM2 | True | 2026-08-25 | 2.7 | fred-api | False |  |
-| IG_OAS | BAMLC0A0CM | True | 2026-08-25 | 0.81 | fred-api | False |  |
+| HY_OAS | BAMLH0A0HYM2 | True | 2026-08-26 | 2.67 | fred-api | False |  |
+| IG_OAS | BAMLC0A0CM | True | 2026-08-26 | 0.8 | fred-api | False |  |
 | RECESSION | USREC | True | 2026-07-01 | 0.0 | fred-api | True |  |
 
 ## Data Completeness Effect
@@ -38,9 +38,9 @@ Generated at: `2026-08-27T11:16:43.718910Z`
 | symbol | edge without | edge with | primary without | primary with | risk expansion delta | failed bounce delta |
 |---|---|---|---|---|---:|---:|
 | SPY | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0015 | -0.0016 |
-| QQQ | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0015 | -0.0016 |
-| IWM | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0015 | -0.0017 |
-| DIA | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0015 | -0.0016 |
+| QQQ | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0015 | -0.0017 |
+| IWM | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0015 | -0.0016 |
+| DIA | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0014 | 0.0005 |
 
 ## Warning
 
