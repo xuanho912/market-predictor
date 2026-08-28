@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-28T04:25:39.282464+00:00`
+- generated_at: `2026-08-28T05:38:46.054228+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `14`
@@ -10,7 +10,7 @@
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `0`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Iran war diplomacy turns toward reopening Strait of Hormuz - Reuters
+- source: Reuters
+- published_at: `2026-08-28T01:34:00+00:00`
+- importance_score: `99`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -94,13 +102,5 @@
 - headline: Six months of war: How the Middle East conflict has shaped financial markets - Reuters
 - source: Reuters
 - published_at: `2026-08-27T06:06:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Pernod warns weak US, China will weigh in years to come - Reuters
-- source: Reuters
-- published_at: `2026-08-27T05:35:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
