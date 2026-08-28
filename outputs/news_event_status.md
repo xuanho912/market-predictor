@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-28T06:25:21.042589+00:00`
+- generated_at: `2026-08-28T06:56:26.826651+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `14`
+- major_event_count: `15`
 - event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `25`
+- confirmation_score: `0`
 
 ## Dashboard Note
 
@@ -47,7 +47,7 @@
 - source: Reuters
 - published_at: `2026-08-27T18:53:21+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-08-27T18:35:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
