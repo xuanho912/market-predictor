@@ -1,6 +1,6 @@
 # FRED Data Status
 
-Generated at: `2026-08-28T12:51:10.378175Z`
+Generated at: `2026-08-28T15:41:57.182047Z`
 
 ## Provider
 
@@ -8,7 +8,7 @@ Generated at: `2026-08-28T12:51:10.378175Z`
 - provider available: `True`
 - fallback used: `False`
 - rate limited: `False`
-- successful series: `DGS2, BAA_SPREAD, IG_OAS, DGS10, DGS3MO, HY_OAS, DFII10, RECESSION, FINANCIAL_STRESS`
+- successful series: `DGS3MO, BAA_SPREAD, DGS2, HY_OAS, DGS10, IG_OAS, DFII10, FINANCIAL_STRESS, RECESSION`
 - failed series: `none`
 
 ## Series
@@ -21,8 +21,8 @@ Generated at: `2026-08-28T12:51:10.378175Z`
 | DGS2 | DGS2 | True | 2026-08-26 | 4.19 | fred-api | False |  |
 | DGS3MO | DGS3MO | True | 2026-08-26 | 3.85 | fred-api | False |  |
 | FINANCIAL_STRESS | STLFSI4 | True | 2026-08-21 | -0.8107 | fred-api | False |  |
-| HY_OAS | BAMLH0A0HYM2 | True | 2026-08-26 | 2.67 | fred-api | False |  |
-| IG_OAS | BAMLC0A0CM | True | 2026-08-26 | 0.8 | fred-api | False |  |
+| HY_OAS | BAMLH0A0HYM2 | True | 2026-08-27 | 2.63 | fred-api | False |  |
+| IG_OAS | BAMLC0A0CM | True | 2026-08-27 | 0.79 | fred-api | False |  |
 | RECESSION | USREC | True | 2026-07-01 | 0.0 | fred-api | True |  |
 
 ## Data Completeness Effect
@@ -37,10 +37,10 @@ Generated at: `2026-08-28T12:51:10.378175Z`
 
 | symbol | edge without | edge with | primary without | primary with | risk expansion delta | failed bounce delta |
 |---|---|---|---|---|---:|---:|
-| SPY | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0013 | -0.0018 |
+| SPY | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0013 | -0.0017 |
 | QQQ | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0013 | -0.0018 |
-| IWM | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0013 | -0.0018 |
-| DIA | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0013 | 0.0004 |
+| IWM | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0013 | -0.0017 |
+| DIA | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0013 | 0.0005 |
 
 ## Warning
 

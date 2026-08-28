@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-28T12:50:58.885550+00:00`
+- generated_at: `2026-08-28T15:41:45.823419+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `17`
-- event_detection_confidence: `72`
+- major_event_count: `15`
+- event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `25`
+- confirmation_score: `50`
 
 ## Dashboard Note
 
@@ -53,25 +53,17 @@
 
 - headline: Iran's disfigured supreme leader remains invisible six months into an existential war - Reuters
 - source: Reuters
-- published_at: `2026-08-28T05:01:00+00:00`
+- published_at: `2026-08-28T08:48:51+00:00`
 - importance_score: `100`
 - confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: After six months, the Iran war has reached its endgame — a costly stalemate - Reuters
-- source: Reuters
-- published_at: `2026-08-27T23:01:30+00:00`
-- importance_score: `100`
-- confidence: `medium`
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: Iran war mediators focus on reopening Strait of Hormuz - Reuters
+- headline: Iran urges other nations not to join new US sanctions, mediators focus on reopening strait - Reuters
 - source: Reuters
 - published_at: `2026-08-28T01:34:00+00:00`
-- importance_score: `97`
-- confidence: `high`
+- importance_score: `94`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -102,5 +94,13 @@
 - headline: What Warsh will say and how the market will react, according to prediction markets
 - source: CNBC
 - published_at: `2026-08-27T18:14:57+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: We went 3 for 3 — what we learned from wins at Nvidia, Salesforce, and CrowdStrike
+- source: CNBC
+- published_at: `2026-08-27T15:17:18+00:00`
 - importance_score: `100`
 - confidence: `medium`

@@ -1,6 +1,6 @@
 # Stock Radar Validation Scorecard
 
-Generated at: `2026-08-28T12:51:10.086158+00:00`
+Generated at: `2026-08-28T15:41:56.874926+00:00`
 
 - total_records: `217`
 - completed_next_day_samples: `0`
