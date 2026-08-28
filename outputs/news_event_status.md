@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-28T05:38:46.054228+00:00`
+- generated_at: `2026-08-28T06:25:21.042589+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `14`
-- event_detection_confidence: `72`
+- event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -63,7 +63,7 @@
 - source: Reuters
 - published_at: `2026-08-27T18:17:43+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -71,7 +71,7 @@
 - source: CNBC
 - published_at: `2026-08-27T18:14:57+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_easing / risk_on
 
