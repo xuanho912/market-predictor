@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-08-28T06:56:40.993192+00:00",
+  "generated_at": "2026-08-28T12:51:10.076828+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-08-28T06:56:41.001017+00:00",
+    "generated_at": "2026-08-28T12:51:10.086158+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 217,
     "risk_score_effectiveness": {
@@ -708,12 +708,12 @@
         "benchmark": "SPY",
         "benchmark_edge_status": "MODERATE_EDGE",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.3245,
+        "benchmark_primary_probability": 0.3122,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
         "risk_alert_level": "WARNING",
-        "risk_alert_type": "Trend Repair Alert",
+        "risk_alert_type": "Bounce Setup Alert",
         "symbol": "CEG"
       },
       "missing_data": [
@@ -2422,6 +2422,12 @@
           "event_risk_flag": "high",
           "headlines": [
             {
+              "datetime": 1787913456,
+              "headline": "Nvidia's Guide Ignites a Broad AI Bid Ahead of Warsh's Jackson Hole Debut",
+              "source": "ChartMill",
+              "url": "https://finnhub.io/api/news?id=457bd7fc29d410106289bf72204c3d054ee7a43a67c755c3ca5fa615916a810e"
+            },
+            {
               "datetime": 1787882278,
               "headline": "Nvidia Is Becoming The AI Nation-State",
               "source": "SeekingAlpha",
@@ -2462,15 +2468,9 @@
               "headline": "Marvell Q2: Not Good Enough",
               "source": "SeekingAlpha",
               "url": "https://finnhub.io/api/news?id=0e41ce09491882242356dc16f075d68cbafb302a6ea2fe9bc854f67b1f464e0b"
-            },
-            {
-              "datetime": 1787854138,
-              "headline": "Nvidia: The 'Coiled Spring' Poised To Jump",
-              "source": "SeekingAlpha",
-              "url": "https://finnhub.io/api/news?id=2cc4a9c1f698b781123b0ae14a5b20f2743779d7e68ec543de2f90442810e647"
             }
           ],
-          "major_company_headline": "Nvidia Is Becoming The AI Nation-State",
+          "major_company_headline": "Nvidia's Guide Ignites a Broad AI Bid Ahead of Warsh's Jackson Hole Debut",
           "news_count_24h": 20,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
@@ -2916,12 +2916,12 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "MODERATE_EDGE",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.2923,
+        "benchmark_primary_probability": 0.2803,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
         "risk_alert_level": "WARNING",
-        "risk_alert_type": "Bounce Setup Alert",
+        "risk_alert_type": "Failed Bounce Alert",
         "symbol": "NVDA"
       },
       "missing_data": [
@@ -4333,7 +4333,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Nvidia Is Becoming The AI Nation-State",
+              "公司新闻已接入: Nvidia's Guide Ignites a Broad AI Bid Ahead of Warsh's Jackson Hole Debut",
               "增长数据具备 EPS 上修叙事基础"
             ],
             "max_points": 10,
@@ -4452,7 +4452,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金/技术确认较强",
-          "catalyst": "Nvidia Is Becoming The AI Nation-State",
+          "catalyst": "Nvidia's Guide Ignites a Broad AI Bid Ahead of Warsh's Jackson Hole Debut",
           "expectation_gap": [
             "收入增长较强，具备正向预期差基础",
             "EPS 增长较强，可能支持盈利上修叙事"
@@ -4641,6 +4641,12 @@
           "event_risk_flag": "low",
           "headlines": [
             {
+              "datetime": 1787899891,
+              "headline": "NuScale Power (SMR) Price Target Decreased by 13.90% to 13.04",
+              "source": "Fintel",
+              "url": "https://finnhub.io/api/news?id=a7c89b35816846b59e60acf2a6d687c346a656154d29b46e4ca0f7c754f76775"
+            },
+            {
               "datetime": 1787725965,
               "headline": "NuScale Stock Ticks Higher as AI Integration Promises 80% Efficiency Gain",
               "source": "Benzinga",
@@ -4671,10 +4677,10 @@
               "url": "https://finnhub.io/api/news?id=78e173c587ac1fcfcfa114ed36aa2c742e009104b03736784be49f132b56274e"
             }
           ],
-          "major_company_headline": "NuScale Stock Ticks Higher as AI Integration Promises 80% Efficiency Gain",
-          "news_count_24h": 0,
+          "major_company_headline": "NuScale Power (SMR) Price Target Decreased by 13.90% to 13.04",
+          "news_count_24h": 1,
           "news_count_72h": 2,
-          "news_risk_score": 20.0,
+          "news_risk_score": 28.0,
           "news_sentiment": "neutral"
         },
         "price_trend": {
@@ -5108,12 +5114,12 @@
         "benchmark": "IWM",
         "benchmark_edge_status": "MODERATE_EDGE",
         "benchmark_market_state": "failed_bounce_risk",
-        "benchmark_primary_probability": 0.3222,
+        "benchmark_primary_probability": 0.3082,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
         "risk_alert_level": "WARNING",
-        "risk_alert_type": "Bounce Setup Alert",
+        "risk_alert_type": "Trend Repair Alert",
         "symbol": "SMR"
       },
       "missing_data": [
@@ -6524,7 +6530,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: NuScale Stock Ticks Higher as AI Integration Promises 80% Efficiency Gain"
+              "公司新闻已接入: NuScale Power (SMR) Price Target Decreased by 13.90% to 13.04"
             ],
             "max_points": 10,
             "missing_fields": [],
@@ -6641,7 +6647,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "NuScale Stock Ticks Higher as AI Integration Promises 80% Efficiency Gain",
+          "catalyst": "NuScale Power (SMR) Price Target Decreased by 13.90% to 13.04",
           "expectation_gap": [
             "暂未看到明确正向预期差证据"
           ],
@@ -6708,8 +6714,8 @@
           },
           "news_event": {
             "evidence": "公司新闻源已接入",
-            "reason": "NuScale Stock Ticks Higher as AI Integration Promises 80% Efficiency Gain",
-            "score": 51.4,
+            "reason": "NuScale Power (SMR) Price Target Decreased by 13.90% to 13.04",
+            "score": 53.96,
             "status": "neutral"
           },
           "options_volatility": {
@@ -6744,7 +6750,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 41.94,
+        "stock_confluence_score": 42.13,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "个股跑赢所属板块",
@@ -6877,9 +6883,9 @@
             }
           ],
           "major_company_headline": "Nvidia: The 'Coiled Spring' Poised To Jump",
-          "news_count_24h": 8,
+          "news_count_24h": 4,
           "news_count_72h": 20,
-          "news_risk_score": 100.0,
+          "news_risk_score": 83.0,
           "news_sentiment": "negative"
         },
         "price_trend": {
@@ -7317,12 +7323,12 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "MODERATE_EDGE",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.2923,
+        "benchmark_primary_probability": 0.2803,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
         "risk_alert_level": "WARNING",
-        "risk_alert_type": "Bounce Setup Alert",
+        "risk_alert_type": "Failed Bounce Alert",
         "symbol": "TSLA"
       },
       "missing_data": [
@@ -8915,8 +8921,8 @@
           },
           "news_event": {
             "evidence": "公司新闻或财报事件风险上升",
-            "reason": "risk_score=100.0; earnings_date=None",
-            "score": 69.0,
+            "reason": "risk_score=83.0; earnings_date=None",
+            "score": 56.06,
             "status": "conflicting"
           },
           "options_volatility": {
@@ -8951,7 +8957,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 41.97,
+        "stock_confluence_score": 41.03,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "个股跑赢所属板块",
@@ -8983,7 +8989,7 @@
       "top_candidate": "NVDA",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-08-28T06:56:40.993447+00:00",
+    "generated_at": "2026-08-28T12:51:10.077107+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -9092,7 +9098,7 @@
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 62.97,
         "company_name": "Nuscale Power Corp",
-        "confluence_score": 41.94,
+        "confluence_score": 42.13,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9109,7 +9115,7 @@
           "mid": 9.71,
           "range_pct": 0.0708
         },
-        "final_radar_score": 58.28,
+        "final_radar_score": 58.31,
         "forecast_date": "2026-08-27",
         "invalidation_level": 8.29,
         "last_close": 9.739999771118164,
@@ -9267,7 +9273,7 @@
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 63.84,
         "company_name": "Tesla Inc",
-        "confluence_score": 41.97,
+        "confluence_score": 41.03,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9284,7 +9290,7 @@
           "mid": 354.37,
           "range_pct": 0.033
         },
-        "final_radar_score": 48.12,
+        "final_radar_score": 48.0,
         "forecast_date": "2026-08-27",
         "invalidation_level": 301.97,
         "last_close": 354.80999755859375,

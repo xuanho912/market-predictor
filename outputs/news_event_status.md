@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-28T06:56:26.826651+00:00`
+- generated_at: `2026-08-28T12:50:58.885550+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `15`
-- event_detection_confidence: `71`
+- major_event_count: `17`
+- event_detection_confidence: `72`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `0`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
@@ -25,12 +25,36 @@
 
 ## Major Events
 
-### geopolitical_risk_easing / risk_on
+### geopolitical_risk_escalation / risk_off
 
-- headline: Iran war diplomacy turns toward reopening Strait of Hormuz - Reuters
+- headline: U.S. Navy blockade slashes Iran oil exports as Trump administration shifts to economic warfare
+- source: CNBC
+- published_at: `2026-08-28T10:55:08+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Pipelines and ports: Iran war spurs Gulf infrastructure investment - Reuters
 - source: Reuters
-- published_at: `2026-08-28T01:34:00+00:00`
-- importance_score: `99`
+- published_at: `2026-08-28T10:35:38+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran war drives US transport fuel surcharges, but also industry profits - Reuters
+- source: Reuters
+- published_at: `2026-08-28T10:32:30+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran's disfigured supreme leader remains invisible six months into an existential war - Reuters
+- source: Reuters
+- published_at: `2026-08-28T05:01:00+00:00`
+- importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -39,6 +63,14 @@
 - source: Reuters
 - published_at: `2026-08-27T23:01:30+00:00`
 - importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Iran war mediators focus on reopening Strait of Hormuz - Reuters
+- source: Reuters
+- published_at: `2026-08-28T01:34:00+00:00`
+- importance_score: `97`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -70,37 +102,5 @@
 - headline: What Warsh will say and how the market will react, according to prediction markets
 - source: CNBC
 - published_at: `2026-08-27T18:14:57+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Iran sets conditions for reopening Strait of Hormuz, top security official Rezaei says - Reuters
-- source: Reuters
-- published_at: `2026-08-27T20:50:57+00:00`
-- importance_score: `95`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: We went 3 for 3 — what we learned from wins at Nvidia, Salesforce, and CrowdStrike
-- source: CNBC
-- published_at: `2026-08-27T15:17:18+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: OPEC+ loses oil market sway in Iran war as China gains influence - Reuters
-- source: Reuters
-- published_at: `2026-08-27T07:14:25+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Six months of war: How the Middle East conflict has shaped financial markets - Reuters
-- source: Reuters
-- published_at: `2026-08-27T06:06:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
