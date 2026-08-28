@@ -1,6 +1,6 @@
 # FRED Data Status
 
-Generated at: `2026-08-28T15:41:57.182047Z`
+Generated at: `2026-08-28T22:23:24.578669Z`
 
 ## Provider
 
@@ -8,18 +8,18 @@ Generated at: `2026-08-28T15:41:57.182047Z`
 - provider available: `True`
 - fallback used: `False`
 - rate limited: `False`
-- successful series: `DGS3MO, BAA_SPREAD, DGS2, HY_OAS, DGS10, IG_OAS, DFII10, FINANCIAL_STRESS, RECESSION`
+- successful series: `DGS2, HY_OAS, IG_OAS, BAA_SPREAD, DGS10, DGS3MO, RECESSION, DFII10, FINANCIAL_STRESS`
 - failed series: `none`
 
 ## Series
 
 | name | series_id | success | latest_date | latest_value | source | stale | error |
 |---|---|---:|---|---:|---|---:|---|
-| BAA_SPREAD | BAA10Y | True | 2026-08-26 | 1.61 | fred-api | False |  |
-| DFII10 | DFII10 | True | 2026-08-26 | 2.34 | fred-api | False |  |
-| DGS10 | DGS10 | True | 2026-08-26 | 4.66 | fred-api | False |  |
-| DGS2 | DGS2 | True | 2026-08-26 | 4.19 | fred-api | False |  |
-| DGS3MO | DGS3MO | True | 2026-08-26 | 3.85 | fred-api | False |  |
+| BAA_SPREAD | BAA10Y | True | 2026-08-27 | 1.6 | fred-api | False |  |
+| DFII10 | DFII10 | True | 2026-08-27 | 2.34 | fred-api | False |  |
+| DGS10 | DGS10 | True | 2026-08-27 | 4.67 | fred-api | False |  |
+| DGS2 | DGS2 | True | 2026-08-27 | 4.2 | fred-api | False |  |
+| DGS3MO | DGS3MO | True | 2026-08-27 | 3.84 | fred-api | False |  |
 | FINANCIAL_STRESS | STLFSI4 | True | 2026-08-21 | -0.8107 | fred-api | False |  |
 | HY_OAS | BAMLH0A0HYM2 | True | 2026-08-27 | 2.63 | fred-api | False |  |
 | IG_OAS | BAMLC0A0CM | True | 2026-08-27 | 0.79 | fred-api | False |  |
@@ -37,10 +37,10 @@ Generated at: `2026-08-28T15:41:57.182047Z`
 
 | symbol | edge without | edge with | primary without | primary with | risk expansion delta | failed bounce delta |
 |---|---|---|---|---|---:|---:|
-| SPY | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0013 | -0.0017 |
-| QQQ | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0013 | -0.0018 |
-| IWM | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0013 | -0.0017 |
-| DIA | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0013 | 0.0005 |
+| SPY | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0 | -0.0022 |
+| QQQ | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0 | -0.0022 |
+| IWM | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0 | -0.0022 |
+| DIA | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0 | 0.0 |
 
 ## Warning
 

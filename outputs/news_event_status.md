@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-28T15:41:45.823419+00:00`
+- generated_at: `2026-08-28T22:23:22.998085+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `15`
-- event_detection_confidence: `71`
+- major_event_count: `18`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,54 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Stock traders warm up to Warsh as volatility index touches year-to-date low
+- source: CNBC
+- published_at: `2026-08-28T19:35:09+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Bessent attacks Warren over yen intervention query, offers ‘Foreign Exchange for Dummies’ lesson
+- source: CNBC
+- published_at: `2026-08-28T19:23:18+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: What we learned from Warsh's Jackson Hole speech, and GE Vernova's CFO to retire
+- source: CNBC
+- published_at: `2026-08-28T18:03:05+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US hits Egyptian bank branches with Iran sanctions as war marks six months - Reuters
+- source: Reuters
+- published_at: `2026-08-28T17:37:19+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Cramer says he's warming back up to the AI trade, but not ready to act yet
+- source: CNBC
+- published_at: `2026-08-28T16:53:53+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: QatarEnergy cancels gas deliveries to Italy's Edison until early November over Iran war - Reuters
+- source: Reuters
+- published_at: `2026-08-28T16:47:22+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -53,54 +101,6 @@
 
 - headline: Iran's disfigured supreme leader remains invisible six months into an existential war - Reuters
 - source: Reuters
-- published_at: `2026-08-28T08:48:51+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Iran urges other nations not to join new US sanctions, mediators focus on reopening strait - Reuters
-- source: Reuters
-- published_at: `2026-08-28T01:34:00+00:00`
-- importance_score: `94`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump to meet refiners, fuel retailers as Iran war boosts gas prices ahead of midterms, sources say - Reuters
-- source: Reuters
-- published_at: `2026-08-27T18:53:21+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: NEWSLETTER: Trump's brief Iran strike morphs into an open-ended conflict - Reuters
-- source: Reuters
-- published_at: `2026-08-27T18:35:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump says the U.S. is not talking with Iran as economic war in focus - Reuters
-- source: Reuters
-- published_at: `2026-08-27T18:17:43+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: What Warsh will say and how the market will react, according to prediction markets
-- source: CNBC
-- published_at: `2026-08-27T18:14:57+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: We went 3 for 3 — what we learned from wins at Nvidia, Salesforce, and CrowdStrike
-- source: CNBC
-- published_at: `2026-08-27T15:17:18+00:00`
+- published_at: `2026-08-28T05:01:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
