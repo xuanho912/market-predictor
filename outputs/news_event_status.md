@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-27T22:19:33.915281+00:00`
+- generated_at: `2026-08-28T04:25:39.282464+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `14`
-- event_detection_confidence: `71`
+- event_detection_confidence: `72`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,33 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: After six months, the Iran war has reached its endgame — a costly stalemate - Reuters
+- source: Reuters
+- published_at: `2026-08-27T23:01:30+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Trump to meet refiners, fuel retailers as Iran war boosts gas prices ahead of midterms, sources say - Reuters
 - source: Reuters
 - published_at: `2026-08-27T18:53:21+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: NEWSLETTER: Trump's brief Iran strike morphs into an open-ended conflict - Reuters
+- source: Reuters
+- published_at: `2026-08-27T18:35:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Trump says the U.S. is not talking with Iran as economic war in focus - Reuters
+- source: Reuters
+- published_at: `2026-08-27T18:17:43+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -41,13 +65,13 @@
 - importance_score: `100`
 - confidence: `high`
 
-### geopolitical_risk_escalation / risk_off
+### geopolitical_risk_easing / risk_on
 
-- headline: After six months, the Iran war has reached its endgame — a costly stalemate - Reuters
+- headline: Iran sets conditions for reopening Strait of Hormuz, top security official Rezaei says - Reuters
 - source: Reuters
-- published_at: `2026-08-27T18:03:40+00:00`
-- importance_score: `100`
-- confidence: `high`
+- published_at: `2026-08-27T20:50:57+00:00`
+- importance_score: `95`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,7 +79,7 @@
 - source: CNBC
 - published_at: `2026-08-27T15:17:18+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -78,29 +102,5 @@
 - headline: Pernod warns weak US, China will weigh in years to come - Reuters
 - source: Reuters
 - published_at: `2026-08-27T05:35:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Bessent, Warsh diverge on who should set the price of money - Reuters
-- source: Reuters
-- published_at: `2026-08-27T05:03:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Six consequences after six months of war in Iran - Reuters
-- source: Reuters
-- published_at: `2026-08-27T00:34:23+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Qatar PM pursues mediation in Tehran as US ramps up 'economic war' - Reuters
-- source: Reuters
-- published_at: `2026-08-26T23:15:00+00:00`
 - importance_score: `100`
 - confidence: `medium`

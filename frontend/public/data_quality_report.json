@@ -112,7 +112,7 @@
       "status": "available"
     }
   },
-  "generated_at": "2026-08-27T22:19:33.910801+00:00",
+  "generated_at": "2026-08-28T04:25:39.274977+00:00",
   "notes": [
     "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
     "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -884,14 +884,14 @@
     "finnhub_quote_QQQ": {
       "fallback_used": false,
       "latest_date": null,
-      "missing_data": false,
-      "point_in_time_safe": true,
-      "rate_limited": false,
-      "real_data": true,
-      "rows": 1,
+      "missing_data": true,
+      "point_in_time_safe": false,
+      "rate_limited": true,
+      "real_data": false,
+      "rows": 0,
       "source": "finnhub",
-      "stale_data": true,
-      "status": "stale",
+      "stale_data": false,
+      "status": "rate_limited",
       "symbol": "finnhub_quote_QQQ"
     },
     "finnhub_quote_SPY": {
@@ -923,7 +923,7 @@
     "flow_DIA": {
       "detail": "Proxy only: ETF volume, factor rotation, sector rotation, HYG/LQD, TLT and UUP. No true fund-flow or positioning feed.",
       "fallback_used": true,
-      "flow_confirmation_score": 75.64,
+      "flow_confirmation_score": 75.92,
       "flow_conflict_score": 20.73,
       "flow_quality_score": 100.0,
       "is_proxy": true,
@@ -941,7 +941,7 @@
     "flow_IWM": {
       "detail": "Proxy only: ETF volume, factor rotation, sector rotation, HYG/LQD, TLT and UUP. No true fund-flow or positioning feed.",
       "fallback_used": true,
-      "flow_confirmation_score": 76.19,
+      "flow_confirmation_score": 76.2,
       "flow_conflict_score": 20.73,
       "flow_quality_score": 100.0,
       "is_proxy": true,
@@ -959,7 +959,7 @@
     "flow_QQQ": {
       "detail": "Proxy only: ETF volume, factor rotation, sector rotation, HYG/LQD, TLT and UUP. No true fund-flow or positioning feed.",
       "fallback_used": true,
-      "flow_confirmation_score": 76.33,
+      "flow_confirmation_score": 76.38,
       "flow_conflict_score": 20.73,
       "flow_quality_score": 100.0,
       "is_proxy": true,
@@ -977,7 +977,7 @@
     "flow_SPY": {
       "detail": "Proxy only: ETF volume, factor rotation, sector rotation, HYG/LQD, TLT and UUP. No true fund-flow or positioning feed.",
       "fallback_used": true,
-      "flow_confirmation_score": 76.39,
+      "flow_confirmation_score": 76.49,
       "flow_conflict_score": 20.73,
       "flow_quality_score": 100.0,
       "is_proxy": true,
@@ -996,7 +996,7 @@
       "average_flow_quality_score": 100.0,
       "detail": "Flow is proxy-only and must be validated against future forecast accuracy.",
       "fallback_used": true,
-      "flow_confirmation_score": 76.14,
+      "flow_confirmation_score": 76.25,
       "flow_conflict_score": 20.73,
       "is_proxy": true,
       "latest_date": "2026-08-27",
@@ -1024,7 +1024,7 @@
       "symbol": "macro_event_calendar"
     },
     "news_event_provider": {
-      "event_detection_confidence": 71,
+      "event_detection_confidence": 72,
       "fallback_used": false,
       "latest_date": "2026-08-27",
       "major_event_count": 14,
@@ -1152,16 +1152,16 @@
       "IWM"
     ],
     "breadth_required": true,
-    "can_append_forecast_record": true,
+    "can_append_forecast_record": false,
     "data_completeness_score": 87.0,
     "data_completeness_score_before_news_event": 85.0,
-    "data_freshness_status": "fresh",
+    "data_freshness_status": "market_open_unconfirmed",
     "data_source_status": "real_core_with_proxies",
     "expected_latest_trading_date": "2026-08-27",
     "fallback_used": true,
     "finnhub_available": true,
     "finnhub_missing": false,
-    "finnhub_rate_limited": false,
+    "finnhub_rate_limited": true,
     "flow_available": true,
     "flow_provider_status": "proxy",
     "flow_proxy_only": true,
@@ -1177,15 +1177,15 @@
           "edge_status_changed": false,
           "edge_status_with_fred": "MODERATE_EDGE",
           "edge_status_without_fred": "MODERATE_EDGE",
-          "failed_bounce_delta": 0.0004,
-          "failed_bounce_with_fred": 0.4512,
-          "failed_bounce_without_fred": 0.4508,
+          "failed_bounce_delta": 0.0005,
+          "failed_bounce_with_fred": 0.4506,
+          "failed_bounce_without_fred": 0.4501,
           "primary_scenario_changed": false,
           "primary_scenario_with_fred": "bounce_path",
           "primary_scenario_without_fred": "bounce_path",
           "risk_expansion_delta": 0.0013,
-          "risk_expansion_with_fred": 0.2776,
-          "risk_expansion_without_fred": 0.2763
+          "risk_expansion_with_fred": 0.2707,
+          "risk_expansion_without_fred": 0.2694
         },
         "IWM": {
           "edge_status_changed": false,
@@ -1198,36 +1198,36 @@
           "primary_scenario_with_fred": "bounce_path",
           "primary_scenario_without_fred": "bounce_path",
           "risk_expansion_delta": 0.0013,
-          "risk_expansion_with_fred": 0.2327,
-          "risk_expansion_without_fred": 0.2314
+          "risk_expansion_with_fred": 0.2264,
+          "risk_expansion_without_fred": 0.2251
         },
         "QQQ": {
           "edge_status_changed": false,
           "edge_status_with_fred": "MODERATE_EDGE",
           "edge_status_without_fred": "MODERATE_EDGE",
           "failed_bounce_delta": -0.0018,
-          "failed_bounce_with_fred": 0.3723,
-          "failed_bounce_without_fred": 0.3741,
+          "failed_bounce_with_fred": 0.3722,
+          "failed_bounce_without_fred": 0.374,
           "primary_scenario_changed": false,
           "primary_scenario_with_fred": "bounce_path",
           "primary_scenario_without_fred": "bounce_path",
-          "risk_expansion_delta": 0.0012,
-          "risk_expansion_with_fred": 0.2736,
-          "risk_expansion_without_fred": 0.2724
+          "risk_expansion_delta": 0.0014,
+          "risk_expansion_with_fred": 0.2673,
+          "risk_expansion_without_fred": 0.2659
         },
         "SPY": {
           "edge_status_changed": false,
           "edge_status_with_fred": "MODERATE_EDGE",
           "edge_status_without_fred": "MODERATE_EDGE",
           "failed_bounce_delta": -0.0018,
-          "failed_bounce_with_fred": 0.3684,
-          "failed_bounce_without_fred": 0.3702,
+          "failed_bounce_with_fred": 0.3681,
+          "failed_bounce_without_fred": 0.3699,
           "primary_scenario_changed": false,
           "primary_scenario_with_fred": "bounce_path",
           "primary_scenario_without_fred": "bounce_path",
-          "risk_expansion_delta": 0.0013,
-          "risk_expansion_with_fred": 0.2495,
-          "risk_expansion_without_fred": 0.2482
+          "risk_expansion_delta": 0.0012,
+          "risk_expansion_with_fred": 0.2429,
+          "risk_expansion_without_fred": 0.2417
         }
       },
       "target_85_met_with_fred": true
@@ -1239,17 +1239,17 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
+      "DGS3MO",
       "IG_OAS",
       "DGS10",
       "HY_OAS",
-      "BAA_SPREAD",
-      "DGS3MO",
       "DGS2",
+      "BAA_SPREAD",
       "RECESSION",
-      "FINANCIAL_STRESS",
-      "DFII10"
+      "DFII10",
+      "FINANCIAL_STRESS"
     ],
-    "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-08-27。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
+    "freshness_warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-08-27，最近完整收盘交易日为 2026-08-27；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
     "gamma_available": false,
     "gamma_exposure_available": false,
     "latest_confirmed_market_date": "2026-08-27",
@@ -1257,6 +1257,7 @@
     "latest_market_date": "2026-08-27",
     "missing_data": true,
     "missing_key_sources": [
+      "finnhub_quote_QQQ",
       "finnhub_candle_SPY",
       "finnhub_candle_QQQ",
       "finnhub_candle_IWM",
@@ -1278,10 +1279,10 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 71,
+      "event_detection_confidence": 72,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-08-27T22:19:33.915281+00:00",
+      "last_update": "2026-08-28T04:25:39.282464+00:00",
       "major_event_count": 14,
       "missing_reason": null,
       "news_direction": "risk_off",
@@ -1308,7 +1309,7 @@
     "options_source": "market_data_cache/yahoo/stooq",
     "options_stale": false,
     "options_structure_status": "available",
-    "overall_flow_confirmation_score": 76.14,
+    "overall_flow_confirmation_score": 76.25,
     "overall_flow_conflict_score": 20.73,
     "put_call_available": false,
     "quality_note": "V4 score rewards real FRED/Finnhub/market data, gives partial credit to explicitly labeled proxies, and keeps missing options/flow/breadth details visible.",
