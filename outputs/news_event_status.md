@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-29T02:54:23.075554+00:00`
+- generated_at: `2026-08-29T03:21:25.255150+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `17`
+- major_event_count: `18`
 - event_detection_confidence: `72`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: War weighs on Iran's economy as US intensifies sanctions - Reuters
+- source: Reuters
+- published_at: `2026-08-29T02:04:00+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -94,13 +102,5 @@
 - headline: Iran war drives US transport fuel surcharges, but also industry profits - Reuters
 - source: Reuters
 - published_at: `2026-08-28T10:32:30+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran's disfigured supreme leader remains invisible six months into an existential war - Reuters
-- source: Reuters
-- published_at: `2026-08-28T05:01:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
