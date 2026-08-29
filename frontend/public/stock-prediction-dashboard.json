@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-08-29T04:11:17.837107+00:00",
+  "generated_at": "2026-08-29T07:56:44.111392+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-08-29T04:11:17.865428+00:00",
+    "generated_at": "2026-08-29T07:56:44.141093+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 221,
     "risk_score_effectiveness": {
@@ -696,7 +696,7 @@
         "benchmark": "SPY",
         "benchmark_edge_status": "MODERATE_EDGE",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.3216,
+        "benchmark_primary_probability": 0.3316,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -2410,6 +2410,12 @@
           "event_risk_flag": "high",
           "headlines": [
             {
+              "datetime": 1787963400,
+              "headline": "Strong Results, Sharper Scrutiny As The AI Trade Gets Tested",
+              "source": "SeekingAlpha",
+              "url": "https://finnhub.io/api/news?id=8d0fa3b9adf4da3a506fe5a4279462d4454672f6f9339e813183a924e63df379"
+            },
+            {
               "datetime": 1787944206,
               "headline": "What's going on in today's session: dow jones movers",
               "source": "ChartMill",
@@ -2450,15 +2456,9 @@
               "headline": "Navitas Semiconductor shares are trading higher. The company announced the launch of two new packages, top-side cooled QDPAK and a low-profile TO-247-4L, to its 5th-gen GeneSiC technology platform.",
               "source": "Benzinga",
               "url": "https://finnhub.io/api/news?id=01f97f936529c1ff02f34e74b6898c81ecf696bcdbf88581f5490b4e3c0f30fe"
-            },
-            {
-              "datetime": 1787924117,
-              "headline": "10 Information Technology Stocks Whale Activity In Today’s Session",
-              "source": "Benzinga",
-              "url": "https://finnhub.io/api/news?id=f74394bfcb1bbb5fca2643d6c0c30e1dac710e27bee11e205ac513551a7f1c20"
             }
           ],
-          "major_company_headline": "What's going on in today's session: dow jones movers",
+          "major_company_headline": "Strong Results, Sharper Scrutiny As The AI Trade Gets Tested",
           "news_count_24h": 20,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
@@ -2887,12 +2887,12 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "MODERATE_EDGE",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.2829,
+        "benchmark_primary_probability": 0.2952,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
         "risk_alert_level": "WARNING",
-        "risk_alert_type": "Failed Bounce Alert",
+        "risk_alert_type": "Bounce Setup Alert",
         "symbol": "NVDA"
       },
       "missing_data": [
@@ -4304,7 +4304,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: What's going on in today's session: dow jones movers",
+              "公司新闻已接入: Strong Results, Sharper Scrutiny As The AI Trade Gets Tested",
               "新闻情绪偏正",
               "增长数据具备 EPS 上修叙事基础"
             ],
@@ -4421,7 +4421,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "What's going on in today's session: dow jones movers",
+          "catalyst": "Strong Results, Sharper Scrutiny As The AI Trade Gets Tested",
           "expectation_gap": [
             "收入增长较强，具备正向预期差基础",
             "EPS 增长较强，可能支持盈利上修叙事"
@@ -4639,9 +4639,9 @@
             }
           ],
           "major_company_headline": "NuScale Power (SMR) Price Target Decreased by 13.90% to 13.04",
-          "news_count_24h": 1,
-          "news_count_72h": 2,
-          "news_risk_score": 28.0,
+          "news_count_24h": 0,
+          "news_count_72h": 1,
+          "news_risk_score": 20.0,
           "news_sentiment": "neutral"
         },
         "price_trend": {
@@ -5077,12 +5077,12 @@
         "benchmark": "IWM",
         "benchmark_edge_status": "MODERATE_EDGE",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.3199,
+        "benchmark_primary_probability": 0.3313,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
         "risk_alert_level": "WARNING",
-        "risk_alert_type": "Failed Bounce Alert",
+        "risk_alert_type": "Bounce Setup Alert",
         "symbol": "SMR"
       },
       "missing_data": [
@@ -6676,7 +6676,7 @@
           "news_event": {
             "evidence": "公司新闻源已接入",
             "reason": "NuScale Power (SMR) Price Target Decreased by 13.90% to 13.04",
-            "score": 53.96,
+            "score": 51.4,
             "status": "neutral"
           },
           "options_volatility": {
@@ -6711,7 +6711,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 34.37,
+        "stock_confluence_score": 34.18,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "个股跑赢所属板块",
@@ -6841,9 +6841,9 @@
             }
           ],
           "major_company_headline": "Most active S&P500 stocks in Friday's session",
-          "news_count_24h": 6,
+          "news_count_24h": 5,
           "news_count_72h": 20,
-          "news_risk_score": 100.0,
+          "news_risk_score": 96.0,
           "news_sentiment": "negative"
         },
         "price_trend": {
@@ -7275,12 +7275,12 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "MODERATE_EDGE",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.2829,
+        "benchmark_primary_probability": 0.2952,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
         "risk_alert_level": "WARNING",
-        "risk_alert_type": "Failed Bounce Alert",
+        "risk_alert_type": "Bounce Setup Alert",
         "symbol": "TSLA"
       },
       "missing_data": [
@@ -8874,8 +8874,8 @@
           },
           "news_event": {
             "evidence": "公司新闻或财报事件风险上升",
-            "reason": "risk_score=100.0; earnings_date=None",
-            "score": 61.0,
+            "reason": "risk_score=96.0; earnings_date=None",
+            "score": 57.72,
             "status": "conflicting"
           },
           "options_volatility": {
@@ -8910,7 +8910,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 35.75,
+        "stock_confluence_score": 35.52,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "个股跑赢所属板块",
@@ -8942,7 +8942,7 @@
       "top_candidate": "NVDA",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-08-29T04:11:17.857032+00:00",
+    "generated_at": "2026-08-29T07:56:44.132138+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -9137,7 +9137,7 @@
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 63.36,
         "company_name": "Nuscale Power Corp",
-        "confluence_score": 34.37,
+        "confluence_score": 34.18,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9154,7 +9154,7 @@
           "mid": 9.26,
           "range_pct": 0.0732
         },
-        "final_radar_score": 44.56,
+        "final_radar_score": 44.54,
         "forecast_date": "2026-08-28",
         "invalidation_level": 8.29,
         "last_close": 9.29,
@@ -9223,7 +9223,7 @@
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 63.75,
         "company_name": "Tesla Inc",
-        "confluence_score": 35.75,
+        "confluence_score": 35.52,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9240,7 +9240,7 @@
           "mid": 348.26,
           "range_pct": 0.035
         },
-        "final_radar_score": 44.38,
+        "final_radar_score": 44.36,
         "forecast_date": "2026-08-28",
         "invalidation_level": 310.43,
         "last_close": 348.75,
