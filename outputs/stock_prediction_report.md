@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-08-29T10:27:52.714279+00:00`
+Generated at: `2026-08-29T16:46:56.354814+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -22,15 +22,15 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - status: `available`
 - current_price: `217.55`
 - market_context: `risk_off_pressure`
-- primary: `stock_failed_bounce` / `25.3%`
-- secondary: `stock_downside_continuation` / `18.2%`
-- risk: `stock_event_risk` / `14.6%`
-- stock_confluence_score: `48.41` / `mixed`
-- stock_alpha_score_v1: `53.5` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `62.8%`
-- 60d_expected_return: `-0.6%`
-- risk_reward_ratio: `0.58`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `30.17`
+- primary: `stock_failed_bounce` / `24.1%`
+- secondary: `stock_downside_continuation` / `17.3%`
+- risk: `stock_event_risk` / `13.9%`
+- stock_confluence_score: `50.83` / `mixed`
+- stock_alpha_score_v1: `59.0` / `wait_for_confirmation`
+- 20d_outperformance_probability: `65.0%`
+- 60d_expected_return: `-0.3%`
+- risk_reward_ratio: `0.66`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `24.36`
 - historical_analog_support: `weak` / samples `10`
 - validation_status: `not_yet_validated`
 
@@ -51,15 +51,15 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - status: `available`
 - current_price: `348.75`
 - market_context: `risk_off_pressure`
-- primary: `stock_failed_bounce` / `27.1%`
-- secondary: `stock_downside_continuation` / `19.1%`
-- risk: `stock_event_risk` / `14.6%`
-- stock_confluence_score: `35.52` / `weak`
-- stock_alpha_score_v1: `5.5` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `46.5%`
-- 60d_expected_return: `-0.9%`
-- risk_reward_ratio: `0.4`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `34.58`
+- primary: `stock_failed_bounce` / `26.4%`
+- secondary: `stock_downside_continuation` / `20.4%`
+- risk: `stock_event_risk` / `11.4%`
+- stock_confluence_score: `38.73` / `weak`
+- stock_alpha_score_v1: `10.5` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `48.5%`
+- 60d_expected_return: `-0.8%`
+- risk_reward_ratio: `0.43`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `26.3`
 - historical_analog_support: `supportive` / samples `10`
 - validation_status: `not_yet_validated`
 
@@ -83,13 +83,13 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `25.9%`
 - secondary: `stock_downside_continuation` / `21.3%`
 - risk: `stock_event_risk` / `13.9%`
-- stock_confluence_score: `34.18` / `weak`
-- stock_alpha_score_v1: `7.5` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `48.0%`
+- stock_confluence_score: `37.1` / `weak`
+- stock_alpha_score_v1: `11.5` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `49.6%`
 - 60d_expected_return: `-2.1%`
 - risk_reward_ratio: `0.53`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `34.33`
-- historical_analog_support: `supportive` / samples `10`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `26.28`
+- historical_analog_support: `weak` / samples `10`
 - validation_status: `not_yet_validated`
 
 - primary_confirmation_level: `10.26`
@@ -112,13 +112,13 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `25.6%`
 - secondary: `stock_downside_continuation` / `20.3%`
 - risk: `stock_event_risk` / `11.7%`
-- stock_confluence_score: `38.47` / `weak`
+- stock_confluence_score: `43.77` / `weak`
 - stock_alpha_score_v1: `37.0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `54.7%`
 - 60d_expected_return: `-0.7%`
 - risk_reward_ratio: `0.56`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `32.52`
-- historical_analog_support: `conflicting` / samples `10`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `26.96`
+- historical_analog_support: `supportive` / samples `10`
 - validation_status: `not_yet_validated`
 
 - primary_confirmation_level: `287.00`

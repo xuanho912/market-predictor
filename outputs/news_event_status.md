@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-29T10:27:34.467244+00:00`
+- generated_at: `2026-08-29T16:46:41.124285+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `13`
-- event_detection_confidence: `73`
+- major_event_count: `15`
+- event_detection_confidence: `72`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,11 +27,27 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: The big lesson from this week's earnings: The AI buildout is not a zero-sum game
+- source: CNBC
+- published_at: `2026-08-29T13:25:55+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US military families ride 'roller coaster of emotions' over six months of Iran war - Reuters
+- source: Reuters
+- published_at: `2026-08-29T13:09:27+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: War weighs on Iran's economy as US intensifies sanctions - Reuters
 - source: Reuters
 - published_at: `2026-08-29T02:04:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -86,21 +102,5 @@
 - headline: QatarEnergy cancels gas deliveries to Italy's Edison until early November over Iran war - Reuters
 - source: Reuters
 - published_at: `2026-08-28T16:47:22+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: U.S. Navy blockade slashes Iran oil exports as Trump administration shifts to economic warfare
-- source: CNBC
-- published_at: `2026-08-28T10:55:08+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Pipelines and ports: Iran war spurs Gulf infrastructure investment - Reuters
-- source: Reuters
-- published_at: `2026-08-28T10:35:38+00:00`
 - importance_score: `100`
 - confidence: `medium`
