@@ -1,6 +1,6 @@
 # High Confidence Edge Report
 
-Generated at: `2026-08-29T16:46:41.120710+00:00`
+Generated at: `2026-08-30T16:43:51.204109+00:00`
 
 Status: `historical_proxy_and_forward_pending`
 Sample size: `80`
@@ -91,12 +91,12 @@ Conclusion: `forward_validation_insufficient_keep_confidence_capped`
 - evidence_note: `Forward-only breadth attribution is still below the minimum sample gate; these buckets are tracked but not proof.`
 
 ### breadth_confirmed_signals
-- sample_size: `0`
-- 3d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 5d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 10d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 20d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 60d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- sample_size: `20`
+- 3d: sample `20`, hit `0.5`, avg `-0.000221`, median `0.000603`, mae `0.007675`
+- 5d: sample `20`, hit `0.5`, avg `-0.004512`, median `0.000688`, mae `0.011202`
+- 10d: sample `20`, hit `0.3`, avg `-0.007188`, median `-0.01051`, mae `0.019388`
+- 20d: sample `20`, hit `0.55`, avg `-0.007323`, median `0.007004`, mae `0.032905`
+- 60d: sample `20`, hit `0.65`, avg `0.023783`, median `0.032982`, mae `0.055836`
 
 ### breadth_conflicted_signals
 - sample_size: `60`
@@ -107,12 +107,12 @@ Conclusion: `forward_validation_insufficient_keep_confidence_capped`
 - 60d: sample `60`, hit `0.7333`, avg `0.046436`, median `0.059948`, mae `0.070087`
 
 ### breadth_confirmed_bounce_signals
-- sample_size: `0`
-- 3d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 5d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 10d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 20d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 60d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- sample_size: `20`
+- 3d: sample `20`, hit `0.5`, avg `-0.000221`, median `0.000603`, mae `0.007675`
+- 5d: sample `20`, hit `0.5`, avg `-0.004512`, median `0.000688`, mae `0.011202`
+- 10d: sample `20`, hit `0.3`, avg `-0.007188`, median `-0.01051`, mae `0.019388`
+- 20d: sample `20`, hit `0.55`, avg `-0.007323`, median `0.007004`, mae `0.032905`
+- 60d: sample `20`, hit `0.65`, avg `0.023783`, median `0.032982`, mae `0.055836`
 
 ### breadth_conflicted_bounce_signals
 - sample_size: `60`
@@ -139,20 +139,20 @@ Conclusion: `forward_validation_insufficient_keep_confidence_capped`
 - 60d: sample `20`, hit `0.7`, avg `0.046338`, median `0.081091`, mae `0.076415`
 
 ### bounce_with_breadth_support
-- sample_size: `0`
-- 3d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 5d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 10d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 20d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 60d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- sample_size: `20`
+- 3d: sample `20`, hit `0.5`, avg `-0.000221`, median `0.000603`, mae `0.007675`
+- 5d: sample `20`, hit `0.5`, avg `-0.004512`, median `0.000688`, mae `0.011202`
+- 10d: sample `20`, hit `0.3`, avg `-0.007188`, median `-0.01051`, mae `0.019388`
+- 20d: sample `20`, hit `0.55`, avg `-0.007323`, median `0.007004`, mae `0.032905`
+- 60d: sample `20`, hit `0.65`, avg `0.023783`, median `0.032982`, mae `0.055836`
 
 ### bounce_without_breadth_support
-- sample_size: `80`
-- 3d: sample `80`, hit `0.525`, avg `-0.001004`, median `0.001558`, mae `0.01599`
-- 5d: sample `80`, hit `0.5125`, avg `-0.001687`, median `0.000415`, mae `0.019302`
-- 10d: sample `80`, hit `0.425`, avg `0.000368`, median `-0.007117`, mae `0.025722`
-- 20d: sample `80`, hit `0.675`, avg `0.008283`, median `0.016175`, mae `0.034607`
-- 60d: sample `80`, hit `0.6875`, avg `0.035709`, median `0.046132`, mae `0.06369`
+- sample_size: `60`
+- 3d: sample `60`, hit `0.5333`, avg `-0.001266`, median `0.002329`, mae `0.018762`
+- 5d: sample `60`, hit `0.5167`, avg `-0.000746`, median `0.000415`, mae `0.022002`
+- 10d: sample `60`, hit `0.4667`, avg `0.002886`, median `-0.001932`, mae `0.027833`
+- 20d: sample `60`, hit `0.7167`, avg `0.013485`, median `0.018868`, mae `0.035175`
+- 60d: sample `60`, hit `0.7`, avg `0.039684`, median `0.049712`, mae `0.066308`
 
 ### trend_reversal_with_breadth_support
 - sample_size: `0`

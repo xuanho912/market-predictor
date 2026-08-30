@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-29T16:46:41.124285+00:00`
+- generated_at: `2026-08-30T16:43:51.207959+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `15`
-- event_detection_confidence: `72`
+- major_event_count: `7`
+- event_detection_confidence: `67`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,80 +27,56 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: The big lesson from this week's earnings: The AI buildout is not a zero-sum game
-- source: CNBC
-- published_at: `2026-08-29T13:25:55+00:00`
+- headline: US Treasury's Bessent faces G20 diplomacy test amid tariffs, Iran war, bond turmoil - Reuters
+- source: Reuters
+- published_at: `2026-08-30T10:32:20+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US military families ride 'roller coaster of emotions' over six months of Iran war - Reuters
+- headline: Israeli settlers stage new attack on home in West Bank's Qusra, witnesses say - Reuters
 - source: Reuters
-- published_at: `2026-08-29T13:09:27+00:00`
+- published_at: `2026-08-29T17:58:32+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Warsh’s inflation warning sets up September showdown for the Fed
+- source: Bloomberg
+- published_at: `2026-08-29T14:17:40+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: War weighs on Iran's economy as US intensifies sanctions - Reuters
 - source: Reuters
-- published_at: `2026-08-29T02:04:00+00:00`
+- published_at: `2026-08-29T14:01:05+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Stock traders warm up to Warsh as volatility index touches year-to-date low
+- headline: The big lesson from this week's earnings: The AI buildout is not a zero-sum game
 - source: CNBC
-- published_at: `2026-08-28T19:35:09+00:00`
+- published_at: `2026-08-29T13:25:55+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Bessent attacks Warren over yen intervention query, offers ‘Foreign Exchange for Dummies’ lesson
-- source: CNBC
-- published_at: `2026-08-28T19:23:18+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: What we learned from Warsh's Jackson Hole speech, and GE Vernova's CFO to retire
-- source: CNBC
-- published_at: `2026-08-28T18:03:05+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Israel kills Hamas operative in rare West Bank air strike, military says - Reuters
+- headline: US military families ride 'roller coaster of emotions' over six months of Iran war - Reuters
 - source: Reuters
-- published_at: `2026-08-28T18:02:44+00:00`
+- published_at: `2026-08-29T10:02:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US hits Egyptian bank branches with Iran sanctions as war marks six months - Reuters
+- headline: Six consequences after six months of war in Iran - Reuters
 - source: Reuters
-- published_at: `2026-08-28T17:37:19+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Cramer says he's warming back up to the AI trade, but not ready to act yet
-- source: CNBC
-- published_at: `2026-08-28T16:53:53+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: QatarEnergy cancels gas deliveries to Italy's Edison until early November over Iran war - Reuters
-- source: Reuters
-- published_at: `2026-08-28T16:47:22+00:00`
-- importance_score: `100`
+- published_at: `2026-08-29T04:26:40+00:00`
+- importance_score: `99`
 - confidence: `medium`
