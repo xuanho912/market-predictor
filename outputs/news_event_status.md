@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-30T16:43:51.207959+00:00`
+- generated_at: `2026-08-31T19:11:00.332627+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
-- event_detection_confidence: `67`
+- major_event_count: `17`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,56 +27,80 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US Treasury's Bessent faces G20 diplomacy test amid tariffs, Iran war, bond turmoil - Reuters
-- source: Reuters
-- published_at: `2026-08-30T10:32:20+00:00`
+- headline: Mortgage rates surge to the highest since June 2025 as new Middle East attacks push oil prices up
+- source: CNBC
+- published_at: `2026-08-31T17:56:01+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Israeli settlers stage new attack on home in West Bank's Qusra, witnesses say - Reuters
-- source: Reuters
-- published_at: `2026-08-29T17:58:32+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Warsh’s inflation warning sets up September showdown for the Fed
-- source: Bloomberg
-- published_at: `2026-08-29T14:17:40+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: War weighs on Iran's economy as US intensifies sanctions - Reuters
-- source: Reuters
-- published_at: `2026-08-29T14:01:05+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: The big lesson from this week's earnings: The AI buildout is not a zero-sum game
+- headline: Why Nvidia and CrowdStrike are up in an otherwise down stock market
 - source: CNBC
-- published_at: `2026-08-29T13:25:55+00:00`
+- published_at: `2026-08-31T16:38:01+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Depleted US oil stash loses potency as Iran war grinds on - Reuters
+- source: Reuters
+- published_at: `2026-08-31T15:33:05+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Jim Cramer's top 10 things to watch in the stock market Monday
+- source: CNBC
+- published_at: `2026-08-31T13:04:05+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: EU aviation safety agency narrows Gulf airspace warning - Reuters
+- source: Reuters
+- published_at: `2026-08-31T12:41:30+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Qatar's first-quarter GDP falls 7% as Iran war weighs on energy production - Reuters
+- source: Reuters
+- published_at: `2026-08-31T10:31:43+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: PODCAST: US-Iran strikes, Meta's AI layoff plan, and bear break-ins - Reuters
+- source: Reuters
+- published_at: `2026-08-31T10:23:48+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: UAE says forces dealt with drone coming from Iran, condemns attack as dangerous escalation - Reuters
+- source: Reuters
+- published_at: `2026-08-31T09:15:13+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: UAE denies Al Minhad Air Base was targeted after Iran says it attacked base - Reuters
+- source: Reuters
+- published_at: `2026-08-31T04:44:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US military families ride 'roller coaster of emotions' over six months of Iran war - Reuters
+- headline: Morning Bid: Oil climbs as missiles fly in the Gulf - Reuters
 - source: Reuters
-- published_at: `2026-08-29T10:02:00+00:00`
+- published_at: `2026-08-31T04:32:00+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Six consequences after six months of war in Iran - Reuters
-- source: Reuters
-- published_at: `2026-08-29T04:26:40+00:00`
-- importance_score: `99`
 - confidence: `medium`
