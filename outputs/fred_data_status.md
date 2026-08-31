@@ -1,6 +1,6 @@
 # FRED Data Status
 
-Generated at: `2026-08-31T19:11:11.713184Z`
+Generated at: `2026-08-31T23:59:46.230990Z`
 
 ## Provider
 
@@ -8,18 +8,18 @@ Generated at: `2026-08-31T19:11:11.713184Z`
 - provider available: `True`
 - fallback used: `False`
 - rate limited: `False`
-- successful series: `DGS3MO, DGS2, HY_OAS, IG_OAS, DGS10, BAA_SPREAD, RECESSION, FINANCIAL_STRESS, DFII10`
+- successful series: `HY_OAS, BAA_SPREAD, DGS3MO, DGS2, IG_OAS, DFII10, DGS10, RECESSION, FINANCIAL_STRESS`
 - failed series: `none`
 
 ## Series
 
 | name | series_id | success | latest_date | latest_value | source | stale | error |
 |---|---|---:|---|---:|---|---:|---|
-| BAA_SPREAD | BAA10Y | True | 2026-08-27 | 1.6 | fred-api | False |  |
-| DFII10 | DFII10 | True | 2026-08-27 | 2.34 | fred-api | False |  |
-| DGS10 | DGS10 | True | 2026-08-27 | 4.67 | fred-api | False |  |
-| DGS2 | DGS2 | True | 2026-08-27 | 4.2 | fred-api | False |  |
-| DGS3MO | DGS3MO | True | 2026-08-27 | 3.84 | fred-api | False |  |
+| BAA_SPREAD | BAA10Y | True | 2026-08-28 | 1.54 | fred-api | False |  |
+| DFII10 | DFII10 | True | 2026-08-28 | 2.42 | fred-api | False |  |
+| DGS10 | DGS10 | True | 2026-08-28 | 4.73 | fred-api | False |  |
+| DGS2 | DGS2 | True | 2026-08-28 | 4.34 | fred-api | False |  |
+| DGS3MO | DGS3MO | True | 2026-08-28 | 3.9 | fred-api | False |  |
 | FINANCIAL_STRESS | STLFSI4 | True | 2026-08-21 | -0.8107 | fred-api | False |  |
 | HY_OAS | BAMLH0A0HYM2 | True | 2026-08-28 | 2.6 | fred-api | False |  |
 | IG_OAS | BAMLC0A0CM | True | 2026-08-28 | 0.79 | fred-api | False |  |

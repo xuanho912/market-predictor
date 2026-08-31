@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-08-31T19:11:00.332627+00:00`
+- generated_at: `2026-08-31T23:59:30.752740+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `17`
-- event_detection_confidence: `76`
+- major_event_count: `18`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Risk-reward outlook for stocks is getting worse as historically tough month kicks off, says Citadel
+- source: CNBC
+- published_at: `2026-08-31T19:09:07+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -71,7 +79,7 @@
 - source: Reuters
 - published_at: `2026-08-31T10:31:43+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -79,7 +87,7 @@
 - source: Reuters
 - published_at: `2026-08-31T10:23:48+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -87,20 +95,12 @@
 - source: Reuters
 - published_at: `2026-08-31T09:15:13+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: UAE denies Al Minhad Air Base was targeted after Iran says it attacked base - Reuters
 - source: Reuters
 - published_at: `2026-08-31T04:44:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Morning Bid: Oil climbs as missiles fly in the Gulf - Reuters
-- source: Reuters
-- published_at: `2026-08-31T04:32:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
