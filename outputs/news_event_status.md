@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-01T22:41:50.445529+00:00`
+- generated_at: `2026-09-01T23:34:41.254003+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `10`
+- major_event_count: `9`
 - event_detection_confidence: `64`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -94,13 +94,5 @@
 - headline: PODCAST: US-Iran strikes, Meta's AI layoff plan, and bear break-ins - Reuters
 - source: Reuters
 - published_at: `2026-08-31T10:23:48+00:00`
-- importance_score: `99`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: UAE says forces dealt with drone coming from Iran, condemns attack as dangerous escalation - Reuters
-- source: Reuters
-- published_at: `2026-08-31T09:15:13+00:00`
 - importance_score: `99`
 - confidence: `medium`

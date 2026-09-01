@@ -1,11 +1,11 @@
 # Data Freshness Status
 
-Generated at: `2026-09-01T22:42:01.566759+00:00`
+Generated at: `2026-09-01T23:34:52.454084+00:00`
 
 ## Summary
 
 - current_date: `2026-09-01`
-- current_time_us_eastern: `2026-09-01T18:42:01.566759-04:00`
+- current_time_us_eastern: `2026-09-01T19:34:52.454084-04:00`
 - latest_market_date: `2026-09-01`
 - latest_confirmed_market_date: `2026-09-01`
 - expected_latest_trading_date: `2026-09-01`
@@ -39,7 +39,7 @@ Generated at: `2026-09-01T22:42:01.566759+00:00`
 - IWM: status=`available`, latest_date=`2026-09-01`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - LQD: status=`available`, latest_date=`2026-09-01`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - QQQ: status=`available`, latest_date=`2026-09-01`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- RECESSION: status=`stale`, latest_date=`2026-07-01`, source=`fred-api`, stale=`True`, fallback=`False`, real_data=`True`
+- RECESSION: status=`stale`, latest_date=`2026-08-01`, source=`fred-api`, stale=`True`, fallback=`False`, real_data=`True`
 - RSP: status=`available`, latest_date=`2026-09-01`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - SPHB: status=`available`, latest_date=`2026-09-01`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - SPLV: status=`available`, latest_date=`2026-09-01`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
@@ -83,9 +83,9 @@ Generated at: `2026-09-01T22:42:01.566759+00:00`
 - finnhub_news_sentiment_QQQ: status=`missing`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
 - finnhub_news_sentiment_SPY: status=`missing`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
 - finnhub_quote_DIA: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
-- finnhub_quote_IWM: status=`rate_limited`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
-- finnhub_quote_QQQ: status=`rate_limited`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
-- finnhub_quote_SPY: status=`rate_limited`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
+- finnhub_quote_IWM: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
+- finnhub_quote_QQQ: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
+- finnhub_quote_SPY: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
 - finnhub_rates_data: status=`missing`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
 - flow_DIA: status=`proxy`, latest_date=`2026-09-01`, source=`market_data_proxy`, stale=`False`, fallback=`True`, real_data=`False`
 - flow_IWM: status=`proxy`, latest_date=`2026-09-01`, source=`market_data_proxy`, stale=`False`, fallback=`True`, real_data=`False`
