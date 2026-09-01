@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-09-01T06:19:26.414900+00:00`
+Generated at: `2026-09-01T08:56:35.832329+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -54,7 +54,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `24.0%`
 - secondary: `stock_trend_repair` / `18.6%`
 - risk: `stock_downside_continuation` / `17.2%`
-- stock_confluence_score: `51.13` / `mixed`
+- stock_confluence_score: `50.84` / `mixed`
 - stock_alpha_score_v1: `23.5` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `56.9%`
 - 60d_expected_return: `-0.3%`
@@ -109,15 +109,15 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - status: `available`
 - current_price: `274.77`
 - market_context: `market_headwind`
-- primary: `stock_failed_bounce` / `25.3%`
-- secondary: `stock_downside_continuation` / `20.1%`
-- risk: `stock_event_risk` / `11.5%`
-- stock_confluence_score: `43.65` / `weak`
-- stock_alpha_score_v1: `35.0` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `51.3%`
-- 60d_expected_return: `-0.8%`
-- risk_reward_ratio: `0.5`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `25.69`
+- primary: `stock_failed_bounce` / `25.4%`
+- secondary: `stock_downside_continuation` / `20.2%`
+- risk: `stock_event_risk` / `11.7%`
+- stock_confluence_score: `44.67` / `weak`
+- stock_alpha_score_v1: `37.0` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `55.5%`
+- 60d_expected_return: `-0.6%`
+- risk_reward_ratio: `0.57`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `25.76`
 - historical_analog_support: `supportive` / samples `10`
 - validation_status: `not_yet_validated`
 
@@ -127,7 +127,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - trend_repair_confirmation_level: `287.00`
 - breakout_level: `287.00`
 - breakdown_level: `260.67`
-- nearest_support: `268.49`
-- nearest_resistance: `284.20`
-- bounce_target_zone: `{"conservative": 279.48, "base": 279.48, "extended": 293.28, "source": "scenario_path + atr + recent_resistance", "meaning": "概率反抽情景参考区间，不是目标价承诺。", "not_trading_instruction": true}`
-- failed_bounce_warning_zone: `{"first_warning": 271.23, "critical_warning": 260.67, "source": "risk_path + atr + recent_support", "meaning": "跌入该区间说明失败反抽风险上升。", "not_trading_instruction": true}`
+- nearest_support: `268.22`
+- nearest_resistance: `284.60`
+- bounce_target_zone: `{"conservative": 279.69, "base": 279.69, "extended": 293.55, "source": "scenario_path + atr + recent_resistance", "meaning": "概率反抽情景参考区间，不是目标价承诺。", "not_trading_instruction": true}`
+- failed_bounce_warning_zone: `{"first_warning": 271.08, "critical_warning": 260.67, "source": "risk_path + atr + recent_support", "meaning": "跌入该区间说明失败反抽风险上升。", "not_trading_instruction": true}`
