@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-01T16:43:19.555985+00:00`
+- generated_at: `2026-09-01T22:41:50.445529+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
-- event_detection_confidence: `65`
+- major_event_count: `10`
+- event_detection_confidence: `64`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `True`
-- confirmation_score: `100`
+- confirmation_score: `75`
 
 ## Dashboard Note
 
@@ -40,6 +40,14 @@
 - published_at: `2026-08-31T17:56:01+00:00`
 - importance_score: `100`
 - confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Modi calls on Putin to end Russia-Ukraine war at SCO summit
+- source: Bloomberg
+- published_at: `2026-08-31T17:53:11+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -78,7 +86,7 @@
 - headline: Qatar's first-quarter GDP falls 7% as Iran war weighs on energy production - Reuters
 - source: Reuters
 - published_at: `2026-08-31T10:31:43+00:00`
-- importance_score: `100`
+- importance_score: `99`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
@@ -86,7 +94,7 @@
 - headline: PODCAST: US-Iran strikes, Meta's AI layoff plan, and bear break-ins - Reuters
 - source: Reuters
 - published_at: `2026-08-31T10:23:48+00:00`
-- importance_score: `100`
+- importance_score: `99`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
@@ -94,13 +102,5 @@
 - headline: UAE says forces dealt with drone coming from Iran, condemns attack as dangerous escalation - Reuters
 - source: Reuters
 - published_at: `2026-08-31T09:15:13+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: UAE denies Al Minhad Air Base was targeted after Iran says it attacked base - Reuters
-- source: Reuters
-- published_at: `2026-08-31T04:44:00+00:00`
 - importance_score: `99`
 - confidence: `medium`
