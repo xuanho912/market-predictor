@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-01T08:56:23.722292+00:00`
+- generated_at: `2026-09-01T16:43:19.555985+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `16`
-- event_detection_confidence: `69`
+- major_event_count: `12`
+- event_detection_confidence: `65`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `True`
-- confirmation_score: `75`
+- confirmation_score: `100`
 
 ## Dashboard Note
 
@@ -102,5 +102,5 @@
 - headline: UAE denies Al Minhad Air Base was targeted after Iran says it attacked base - Reuters
 - source: Reuters
 - published_at: `2026-08-31T04:44:00+00:00`
-- importance_score: `100`
+- importance_score: `99`
 - confidence: `medium`
