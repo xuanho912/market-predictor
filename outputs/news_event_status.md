@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-01T00:47:53.970015+00:00`
+- generated_at: `2026-09-01T01:30:23.929755+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `18`
-- event_detection_confidence: `73`
+- event_detection_confidence: `72`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -63,7 +63,7 @@
 - source: CNBC
 - published_at: `2026-08-31T13:04:05+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
