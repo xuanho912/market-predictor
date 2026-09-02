@@ -1,6 +1,6 @@
 # Forecast Trust Gate
 
-Generated at: `2026-09-02T22:46:03.376612+00:00`
+Generated at: `2026-09-02T23:33:40.376724+00:00`
 
 This report answers whether the current Market Prediction Dashboard is dependable as a forecasting tool. It is not trading advice.
 
@@ -16,11 +16,11 @@ This report answers whether the current Market Prediction Dashboard is dependabl
 
 ## Forward Samples
 
-- 1d: `228`
-- 3d: `220`
-- 5d: `212`
-- 10d: `192`
-- 20d: `152`
+- 1d: `226`
+- 3d: `218`
+- 5d: `210`
+- 10d: `190`
+- 20d: `150`
 - 60d: `0`
 
 ## Blockers
@@ -34,10 +34,10 @@ This report answers whether the current Market Prediction Dashboard is dependabl
 
 ## Symbol Readiness
 
-- SPY: `blocked_by_global_gate` | primary `bearish_path` 0.3172 | reason: Global trust gate is not ready.
-- QQQ: `blocked_by_global_gate` | primary `bearish_path` 0.3135 | reason: Global trust gate is not ready.
-- IWM: `blocked_by_global_gate` | primary `bearish_path` 0.3605 | reason: Global trust gate is not ready.
-- DIA: `blocked_by_global_gate` | primary `bearish_path` 0.343 | reason: Global trust gate is not ready.
+- SPY: `blocked_by_global_gate` | primary `bearish_path` 0.3148 | reason: Global trust gate is not ready.
+- QQQ: `blocked_by_global_gate` | primary `bearish_path` 0.3112 | reason: Global trust gate is not ready.
+- IWM: `blocked_by_global_gate` | primary `bearish_path` 0.3739 | reason: Global trust gate is not ready.
+- DIA: `blocked_by_global_gate` | primary `bearish_path` 0.3417 | reason: Global trust gate is not ready.
 
 ## Next Actions
 

@@ -1,6 +1,6 @@
 # Historical Replay Benchmark
 
-Generated at: `2026-09-02T22:46:03.374116+00:00`
+Generated at: `2026-09-02T23:33:40.374291+00:00`
 Validation type: `historical_replay`
 Status: `research_evaluation_only_not_forward_validation`
 Sample size: `80`
@@ -28,8 +28,8 @@ Overfit warning: `{'level': 'medium', 'reasons': ['primary path is not closer th
 - primary_mean_absolute_error: `0.014997`
 - secondary_mean_absolute_error: `0.013787`
 - primary_error_advantage: `-0.00121`
-- close_call_sample_size: `40`
-- close_call_primary_closer_rate: `0.375`
+- close_call_sample_size: `60`
+- close_call_primary_closer_rate: `0.4167`
 
 ### 5d
 - sample_size: `80`
@@ -40,8 +40,8 @@ Overfit warning: `{'level': 'medium', 'reasons': ['primary path is not closer th
 - primary_mean_absolute_error: `0.019645`
 - secondary_mean_absolute_error: `0.016219`
 - primary_error_advantage: `-0.003426`
-- close_call_sample_size: `40`
-- close_call_primary_closer_rate: `0.475`
+- close_call_sample_size: `60`
+- close_call_primary_closer_rate: `0.4667`
 
 ### 10d
 - sample_size: `80`
@@ -52,8 +52,8 @@ Overfit warning: `{'level': 'medium', 'reasons': ['primary path is not closer th
 - primary_mean_absolute_error: `0.031149`
 - secondary_mean_absolute_error: `0.028467`
 - primary_error_advantage: `-0.002682`
-- close_call_sample_size: `40`
-- close_call_primary_closer_rate: `0.475`
+- close_call_sample_size: `60`
+- close_call_primary_closer_rate: `0.55`
 
 ### 20d
 - sample_size: `80`
@@ -64,8 +64,8 @@ Overfit warning: `{'level': 'medium', 'reasons': ['primary path is not closer th
 - primary_mean_absolute_error: `0.065472`
 - secondary_mean_absolute_error: `0.043423`
 - primary_error_advantage: `-0.022049`
-- close_call_sample_size: `40`
-- close_call_primary_closer_rate: `0.375`
+- close_call_sample_size: `60`
+- close_call_primary_closer_rate: `0.3667`
 
 ### 60d
 - sample_size: `80`
@@ -76,8 +76,8 @@ Overfit warning: `{'level': 'medium', 'reasons': ['primary path is not closer th
 - primary_mean_absolute_error: `0.110793`
 - secondary_mean_absolute_error: `0.076911`
 - primary_error_advantage: `-0.033882`
-- close_call_sample_size: `40`
-- close_call_primary_closer_rate: `0.375`
+- close_call_sample_size: `60`
+- close_call_primary_closer_rate: `0.4`
 
 ## Scenario Type Performance
 
@@ -252,12 +252,12 @@ Overfit warning: `{'level': 'medium', 'reasons': ['primary path is not closer th
 - 60d: sample `40`, primary_hit `0.375`, primary_closer `0.425`, primary_mae `0.092198`, avg `0.031657`, median `0.041779`
 
 ### breadth_conflicted
-- sample_size: `40`
-- 3d: sample `40`, primary_hit `0.475`, primary_closer `0.375`, primary_mae `0.019332`, avg `0.00035`, median `0.001949`
-- 5d: sample `40`, primary_hit `0.5`, primary_closer `0.475`, primary_mae `0.021456`, avg `-0.001507`, median `-0.002115`
-- 10d: sample `40`, primary_hit `0.525`, primary_closer `0.475`, primary_mae `0.02787`, avg `0.00609`, median `-0.000811`
-- 20d: sample `40`, primary_hit `0.275`, primary_closer `0.375`, primary_mae `0.046738`, avg `0.020629`, median `0.027123`
-- 60d: sample `40`, primary_hit `0.225`, primary_closer `0.375`, primary_mae `0.084948`, avg `0.04618`, median `0.0618`
+- sample_size: `60`
+- 3d: sample `60`, primary_hit `0.4167`, primary_closer `0.35`, primary_mae `0.0171`, avg `0.001279`, median `0.001949`
+- 5d: sample `60`, primary_hit `0.45`, primary_closer `0.4167`, primary_mae `0.022389`, avg `0.001878`, median `0.002122`
+- 10d: sample `60`, primary_hit `0.5333`, primary_closer `0.4667`, primary_mae `0.034693`, avg `0.003216`, median `-0.002446`
+- 20d: sample `60`, primary_hit `0.2833`, primary_closer `0.35`, primary_mae `0.066689`, avg `0.013876`, median `0.027123`
+- 60d: sample `60`, primary_hit `0.2833`, primary_closer `0.3667`, primary_mae `0.121202`, avg `0.028541`, median `0.054604`
 
 ### options_confirmed
 - sample_size: `80`

@@ -1,6 +1,6 @@
 # Forecast Price Levels
 
-Generated at: `2026-09-02T22:46:02.678884Z`
+Generated at: `2026-09-02T23:33:39.685997Z`
 
 These are probability-path scenario levels, not execution instructions, risk-control rules, or guaranteed targets.
 
@@ -61,7 +61,7 @@ These are probability-path scenario levels, not execution instructions, risk-con
 - primary confirmation: `535.22`
 - primary invalidation: `526.48`
 - risk activation: `498.95`
-- trend repair confirmation: `539.62`
+- trend repair confirmation: `542.81`
 
 | Horizon | Expected | Primary | Secondary | Risk | Upper | Lower |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |

@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-02T22:45:51.593462+00:00`
+- generated_at: `2026-09-02T23:33:29.626023+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `8`
-- event_detection_confidence: `82`
+- event_detection_confidence: `84`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -35,6 +35,22 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: US-Iran strikes raise fears of renewed war across the Middle East - Reuters
+- source: Reuters
+- published_at: `2026-09-02T21:06:12+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil settles 1% higher, as US-Iran strikes threaten supplies - Reuters
+- source: Reuters
+- published_at: `2026-09-02T19:30:46+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Saudi Arabia says Iran attacked vessel in Hormuz, killing two sailors - Reuters
 - source: Reuters
 - published_at: `2026-09-02T13:12:13+00:00`
@@ -51,25 +67,9 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US-Iran strikes raise fears of renewed war across the Middle East - Reuters
-- source: Reuters
-- published_at: `2026-09-02T02:41:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
 - headline: US military says it completed latest wave of strikes on Iran - Reuters
 - source: Reuters
 - published_at: `2026-09-02T01:56:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil settles 1% higher, as US-Iran strikes threaten supplies - Reuters
-- source: Reuters
-- published_at: `2026-09-02T00:55:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
