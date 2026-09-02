@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-02T00:37:38.634135+00:00`
+- generated_at: `2026-09-02T01:01:10.657606+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `7`
@@ -70,7 +70,7 @@
 - headline: Jim Cramer's top 10 things to watch in the stock market Monday
 - source: CNBC
 - published_at: `2026-08-31T13:04:05+00:00`
-- importance_score: `100`
+- importance_score: `99`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off

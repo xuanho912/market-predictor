@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-09-02T00:37:49.756501+00:00`
+Generated at: `2026-09-02T01:01:21.820654+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -108,7 +108,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - company_name: `Constellation Energy Corp`
 - status: `available`
 - current_price: `280.31`
-- market_context: `market_headwind`
+- market_context: `risk_off_pressure`
 - primary: `stock_failed_bounce` / `25.4%`
 - secondary: `stock_downside_continuation` / `20.1%`
 - risk: `stock_event_risk` / `11.7%`
