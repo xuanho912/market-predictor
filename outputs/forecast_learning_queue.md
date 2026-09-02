@@ -1,6 +1,6 @@
 # Forecast Learning Queue
 
-Generated at: `2026-09-01T23:34:52.880861+00:00`
+Generated at: `2026-09-02T00:37:49.370288+00:00`
 
 This report turns forecast deviations into safe challenger-model hypotheses. It does not alter baseline_v1.
 
@@ -9,7 +9,7 @@ This report turns forecast deviations into safe challenger-model hypotheses. It 
 - active_model: `baseline_v1`
 - global_learning_status: `shadow_challenger_queue_ready`
 - evidence_level: `stronger_evidence`
-- completed_outcomes_reviewed: `984`
+- completed_outcomes_reviewed: `979`
 - material_deviation_count: `535`
 - dominant_error_theme: `news_data_gap_limited_attribution`
 - trust_gate_status: `RESEARCH_ONLY_PATH_EDGE_UNPROVEN`

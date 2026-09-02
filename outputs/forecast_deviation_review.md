@@ -1,6 +1,6 @@
 # Forecast Deviation Review
 
-Generated at: `2026-09-01T23:34:52.866914+00:00`
+Generated at: `2026-09-02T00:37:49.347472+00:00`
 
 This report reviews forecast-vs-actual deviations after horizons complete. It is not a trading, PnL or execution report.
 
@@ -9,7 +9,7 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - total_forecast_records: `228`
 - raw_forecast_rows: `228`
 - deduped_legacy_rows: `0`
-- completed_outcomes_reviewed: `984`
+- completed_outcomes_reviewed: `979`
 - material_deviation_count: `535`
 - latest_forecast_date: `2026-09-01`
 - latest_reviewed_forecast_date: `2026-08-31`

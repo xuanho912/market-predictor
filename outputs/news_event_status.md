@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-01T23:34:41.254003+00:00`
+- generated_at: `2026-09-02T00:37:38.634135+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
-- event_detection_confidence: `64`
+- major_event_count: `7`
+- event_detection_confidence: `65`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -78,21 +78,5 @@
 - headline: EU aviation safety agency narrows Gulf airspace warning - Reuters
 - source: Reuters
 - published_at: `2026-08-31T12:41:30+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Qatar's first-quarter GDP falls 7% as Iran war weighs on energy production - Reuters
-- source: Reuters
-- published_at: `2026-08-31T10:31:43+00:00`
-- importance_score: `99`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: PODCAST: US-Iran strikes, Meta's AI layoff plan, and bear break-ins - Reuters
-- source: Reuters
-- published_at: `2026-08-31T10:23:48+00:00`
 - importance_score: `99`
 - confidence: `medium`

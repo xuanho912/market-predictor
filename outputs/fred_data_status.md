@@ -1,6 +1,6 @@
 # FRED Data Status
 
-Generated at: `2026-09-01T23:34:53.329368Z`
+Generated at: `2026-09-02T00:37:50.096314Z`
 
 ## Provider
 
@@ -8,7 +8,7 @@ Generated at: `2026-09-01T23:34:53.329368Z`
 - provider available: `True`
 - fallback used: `False`
 - rate limited: `False`
-- successful series: `DGS2, DGS3MO, HY_OAS, DGS10, BAA_SPREAD, IG_OAS, RECESSION, DFII10, FINANCIAL_STRESS`
+- successful series: `IG_OAS, HY_OAS, DGS10, DGS2, BAA_SPREAD, DGS3MO, FINANCIAL_STRESS, DFII10, RECESSION`
 - failed series: `none`
 
 ## Series
@@ -37,10 +37,10 @@ Generated at: `2026-09-01T23:34:53.329368Z`
 
 | symbol | edge without | edge with | primary without | primary with | risk expansion delta | failed bounce delta |
 |---|---|---|---|---|---:|---:|
-| SPY | MODERATE_EDGE | MODERATE_EDGE | bearish_path | bearish_path | 0.0083 | 0.0028 |
+| SPY | MODERATE_EDGE | MODERATE_EDGE | bearish_path | bearish_path | 0.0083 | 0.0029 |
 | QQQ | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0083 | 0.0028 |
 | IWM | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0083 | 0.0028 |
-| DIA | MODERATE_EDGE | MODERATE_EDGE | bearish_path | bearish_path | 0.0083 | 0.0028 |
+| DIA | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0083 | 0.0028 |
 
 ## Warning
 
