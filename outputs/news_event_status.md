@@ -1,14 +1,14 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-02T05:53:44.264131+00:00`
+- generated_at: `2026-09-02T08:09:45.433445+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `4`
-- event_detection_confidence: `64`
+- major_event_count: `1`
+- event_detection_confidence: `59`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
-- narrative_strength: `100`
+- narrative_strength: `33`
 - price_reaction_confirmed: `True`
 - confirmation_score: `75`
 
@@ -30,29 +30,5 @@
 - headline: Risk-reward outlook for stocks is getting worse as historically tough month kicks off, says Citadel
 - source: CNBC
 - published_at: `2026-08-31T19:09:07+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Mortgage rates surge to the highest since June 2025 as new Middle East attacks push oil prices up
-- source: CNBC
-- published_at: `2026-08-31T17:56:01+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Modi calls on Putin to end Russia-Ukraine war at SCO summit
-- source: Bloomberg
-- published_at: `2026-08-31T17:53:11+00:00`
-- importance_score: `99`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Why Nvidia and CrowdStrike are up in an otherwise down stock market
-- source: CNBC
-- published_at: `2026-08-31T16:38:01+00:00`
 - importance_score: `99`
 - confidence: `medium`
