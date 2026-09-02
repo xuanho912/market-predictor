@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-02T01:01:10.657606+00:00`
+- generated_at: `2026-09-02T05:53:44.264131+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
-- event_detection_confidence: `65`
+- major_event_count: `4`
+- event_detection_confidence: `64`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -46,7 +46,7 @@
 - headline: Modi calls on Putin to end Russia-Ukraine war at SCO summit
 - source: Bloomberg
 - published_at: `2026-08-31T17:53:11+00:00`
-- importance_score: `100`
+- importance_score: `99`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
@@ -54,29 +54,5 @@
 - headline: Why Nvidia and CrowdStrike are up in an otherwise down stock market
 - source: CNBC
 - published_at: `2026-08-31T16:38:01+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Depleted US oil stash loses potency as Iran war grinds on - Reuters
-- source: Reuters
-- published_at: `2026-08-31T15:33:05+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Jim Cramer's top 10 things to watch in the stock market Monday
-- source: CNBC
-- published_at: `2026-08-31T13:04:05+00:00`
-- importance_score: `99`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: EU aviation safety agency narrows Gulf airspace warning - Reuters
-- source: Reuters
-- published_at: `2026-08-31T12:41:30+00:00`
 - importance_score: `99`
 - confidence: `medium`
