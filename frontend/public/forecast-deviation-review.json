@@ -6,13 +6,13 @@
     "model_underestimated_downside_or_failed_bounce": 232,
     "model_underestimated_upside_or_repair": 298,
     "news_data_gap_limited_attribution": 530,
-    "news_event_risk_underweighted": 232,
+    "news_event_risk_underweighted": 218,
     "risk_off_flow_underweighted": 7,
     "risk_off_news_overweighted_or_resolved": 257,
     "risk_on_flow_underweighted": 47,
     "volatility_repair_underweighted": 108
   },
-  "generated_at": "2026-09-02T08:10:01.510787+00:00",
+  "generated_at": "2026-09-02T16:38:26.342665+00:00",
   "guardrails": [
     "This is forecast error attribution, not a trading or PnL report.",
     "Attribution is diagnostic and probabilistic; it is not proof of causality.",
@@ -3847,7 +3847,7 @@
       },
       {
         "baseline_change_allowed": false,
-        "count": 232,
+        "count": 218,
         "driver": "news_event_risk_underweighted",
         "future_model_action": "shadow-test risk_event_confirmation：risk-off 新闻得到价格确认才提高风险路径。",
         "lesson": "风险新闻如果被价格确认，应提高风险路径权重。"
@@ -3916,7 +3916,7 @@
     "evidence_level": "stronger_evidence",
     "largest_absolute_error": 0.147145,
     "latest_forecast_date": "2026-09-01",
-    "latest_market_date": "2026-09-01",
+    "latest_market_date": "2026-09-02",
     "latest_reviewed_forecast_date": "2026-08-31",
     "material_deviation_count": 530,
     "model_learning_status": "lessons_ready_for_shadow_challenger",
@@ -3924,12 +3924,8 @@
     "total_forecast_records": 228,
     "update_blockers": [
       {
-        "detail": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-09-01，最近完整收盘交易日为 2026-09-01；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
+        "detail": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-09-02，最近完整收盘交易日为 2026-09-01；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
         "reason": "market_open_unconfirmed"
-      },
-      {
-        "detail": "Latest market date 2026-09-01 is not after latest forecast date 2026-09-01, so no completed 1d/3d/5d outcome can be scored yet.",
-        "reason": "no_future_market_close_yet"
       }
     ],
     "validation_status": "early_evidence"

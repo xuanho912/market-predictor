@@ -1,6 +1,6 @@
 # Forecast Deviation Review
 
-Generated at: `2026-09-02T08:10:01.510787+00:00`
+Generated at: `2026-09-02T16:38:26.342665+00:00`
 
 This report reviews forecast-vs-actual deviations after horizons complete. It is not a trading, PnL or execution report.
 
@@ -13,13 +13,13 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - material_deviation_count: `530`
 - latest_forecast_date: `2026-09-01`
 - latest_reviewed_forecast_date: `2026-08-31`
-- latest_market_date: `2026-09-01`
+- latest_market_date: `2026-09-02`
 - data_freshness_status: `market_open_unconfirmed`
 - largest_absolute_error: `0.147145`
 - dominant_error_theme: `news_data_gap_limited_attribution`
 - evidence_level: `stronger_evidence`
 - validation_status: `early_evidence`
-- update_blockers: `[{'reason': 'market_open_unconfirmed', 'detail': '当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-09-01，最近完整收盘交易日为 2026-09-01；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。'}, {'reason': 'no_future_market_close_yet', 'detail': 'Latest market date 2026-09-01 is not after latest forecast date 2026-09-01, so no completed 1d/3d/5d outcome can be scored yet.'}]`
+- update_blockers: `[{'reason': 'market_open_unconfirmed', 'detail': '当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-09-02，最近完整收盘交易日为 2026-09-01；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。'}]`
 - correction_policy: `past_forecasts_are_not_rewritten_only_actuals_and_error_fields_are_backfilled`
 - model_learning_status: `lessons_ready_for_shadow_challenger`
 
@@ -361,7 +361,7 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - `model_underestimated_upside_or_repair` count `298`: 模型低估了修复/反抽强度，需要检查事件催化、波动率修复和价格确认。 Action: keep_observing_until_forward_sample_gate
 - `risk_off_news_overweighted_or_resolved` count `257`: risk-off 新闻若快速缓和或未被价格确认，不应继续压低主路径。 Action: shadow-test news_decay：未被价格确认或快速缓和的 risk-off 新闻权重衰减。
 - `model_underestimated_downside_or_failed_bounce` count `232`: 模型低估了下跌延续或反抽失败风险，需要检查信用、宽度、波动率和新闻风险。 Action: keep_observing_until_forward_sample_gate
-- `news_event_risk_underweighted` count `232`: 风险新闻如果被价格确认，应提高风险路径权重。 Action: shadow-test risk_event_confirmation：risk-off 新闻得到价格确认才提高风险路径。
+- `news_event_risk_underweighted` count `218`: 风险新闻如果被价格确认，应提高风险路径权重。 Action: shadow-test risk_event_confirmation：risk-off 新闻得到价格确认才提高风险路径。
 - `volatility_repair_underweighted` count `108`: 波动率结构修复会放大短线反抽，需要进入 1d/3d/5d 权重验证。 Action: shadow-test vol_repair_boost：VIX term 修复提高短周期 bounce 权重。
 - `breadth_follow_through_underweighted` count `70`: 宽度改善后的持续承接可能被低估。 Action: shadow-test breadth_follow_through：宽度改善持续两日以上才提高中期修复权重。
 - `breadth_conflict_underweighted` count `68`: 指数上涨但内部参与不足时，失败反抽风险可能被低估。 Action: shadow-test breadth_conflict_penalty：宽度冲突提高 failed_bounce 风险。

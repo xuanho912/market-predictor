@@ -1,5 +1,5 @@
 {
-  "dashboard_note": "当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，已被价格反应初步确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
+  "dashboard_note": "当前没有识别到足够清晰的重大新闻叙事，新闻层不应主导路径判断。",
   "economic_calendar_risk": {
     "event_count": 0,
     "high_importance_event_count": 0,
@@ -10,267 +10,72 @@
     "source": "finnhub",
     "status": "failed"
   },
-  "event_detection_confidence": 59,
-  "event_risk_level": "high",
-  "generated_at": "2026-09-02T08:09:45.433445+00:00",
+  "event_detection_confidence": 0,
+  "event_risk_level": "low",
+  "generated_at": "2026-09-02T16:38:15.627599+00:00",
   "limits": [
     "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
     "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
     "The provider never exposes API keys and never lets frontend call Finnhub directly.",
     "Economic calendar items are treated as event-risk context, not automatic directional forecasts."
   ],
-  "major_event_count": 1,
-  "major_events": [
-    {
-      "affected_assets": [
-        "SPY",
-        "QQQ",
-        "IWM",
-        "DIA",
-        "^VIX",
-        "USO",
-        "UUP",
-        "TLT"
-      ],
-      "confidence": "medium",
-      "confidence_score": 59,
-      "detected_event_conditions": [
-        "geopolitical_risk_escalation"
-      ],
-      "event_type": "geopolitical_risk_escalation",
-      "expected_horizon": "intraday-5d",
-      "expected_market_direction": "risk_off",
-      "freshness_score": 11,
-      "headline": "Risk-reward outlook for stocks is getting worse as historically tough month kicks off, says Citadel",
-      "importance_score": 99,
-      "narrative": "geopolitics_escalation_risk_off",
-      "provider": "finnhub",
-      "published_at": "2026-08-31T19:09:07+00:00",
-      "source": "CNBC"
-    }
-  ],
+  "major_event_count": 0,
+  "major_events": [],
   "market_narrative": {
-    "affected_scenarios": [
-      "bearish_path"
-    ],
+    "affected_scenarios": [],
     "affected_symbols": [
-      "DIA",
-      "IWM",
+      "SPY",
       "QQQ",
-      "SPY"
+      "IWM",
+      "DIA"
     ],
     "conflicting_headlines": [],
-    "detected_event_conditions": [
-      "geopolitical_risk_escalation"
-    ],
-    "market_narrative": "geopolitics_escalation_risk_off",
-    "narrative_direction": "supports_risk_expansion",
-    "narrative_strength": 33,
-    "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
-    "supporting_headlines": [
-      {
-        "confidence": "medium",
-        "detected_event_conditions": [
-          "geopolitical_risk_escalation"
-        ],
-        "event_type": "geopolitical_risk_escalation",
-        "expected_market_direction": "risk_off",
-        "headline": "Risk-reward outlook for stocks is getting worse as historically tough month kicks off, says Citadel",
-        "importance_score": 99,
-        "published_at": "2026-08-31T19:09:07+00:00",
-        "source": "CNBC"
-      }
-    ]
+    "detected_event_conditions": [],
+    "market_narrative": "no_clear_narrative",
+    "narrative_direction": "mixed",
+    "narrative_strength": 0,
+    "summary": "当前没有识别到足够清晰的重大新闻叙事。",
+    "supporting_headlines": []
   },
-  "news_direction": "risk_off",
+  "news_direction": "mixed",
   "prediction_logic_effect": {
-    "applied": true,
-    "direction": "supports_risk_expansion",
-    "event_risk_level": "high",
+    "applied": false,
+    "direction": "mixed",
+    "event_risk_level": "low",
     "macro_event_risk_flag": false,
-    "major_event_count": 1,
+    "major_event_count": 0,
     "not_a_trading_signal": true,
-    "price_reaction_confirmed": true,
-    "symbols": {
-      "DIA": {
-        "after_primary_probability": 0.2975,
-        "after_primary_scenario": "bounce_path",
-        "before_primary_probability": 0.3129,
-        "before_primary_scenario": "bounce_path",
-        "confirmation_delta": -3.48,
-        "impact": "conflicts_primary",
-        "not_a_trading_signal": true,
-        "overlay_applied": true,
-        "path_overlay": {
-          "applied": true,
-          "direction": "supports_risk_expansion",
-          "not_a_trading_signal": true,
-          "reason": "Confirmed major event adjusted only the 1d/3d probability path; historical records are not rewritten.",
-          "shock_return_1d": -0.004,
-          "shock_return_3d": -0.0018,
-          "source": "news_event_price_reaction_overlay",
-          "validation_type": "daily"
-        },
-        "path_weight_deltas": {
-          "analog_path_weight": 0.0,
-          "base_path_weight": 0.0,
-          "bearish_path_weight": 0.0284,
-          "bounce_path_weight": -0.0099
-        },
-        "predictor_deltas": {
-          "bounce_predictor": -0.0085,
-          "downside_continuation_predictor": 0.0156,
-          "risk_expansion_predictor": 0.0184,
-          "trend_reversal_predictor": 0.0
-        },
-        "primary_probability_delta": -0.0154,
-        "primary_scenario_changed": false,
-        "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -3.48 points; independent predictors adjusted by news/event overlay",
-        "validation_type": "daily"
-      },
-      "IWM": {
-        "after_primary_probability": 0.2944,
-        "after_primary_scenario": "bearish_path",
-        "before_primary_probability": 0.2742,
-        "before_primary_scenario": "bounce_path",
-        "confirmation_delta": -3.48,
-        "impact": "conflicts_primary",
-        "not_a_trading_signal": true,
-        "overlay_applied": true,
-        "path_overlay": {
-          "applied": true,
-          "direction": "supports_risk_expansion",
-          "not_a_trading_signal": true,
-          "reason": "Confirmed major event adjusted only the 1d/3d probability path; historical records are not rewritten.",
-          "shock_return_1d": -0.004,
-          "shock_return_3d": -0.0018,
-          "source": "news_event_price_reaction_overlay",
-          "validation_type": "daily"
-        },
-        "path_weight_deltas": {
-          "analog_path_weight": 0.0,
-          "base_path_weight": 0.0,
-          "bearish_path_weight": 0.0284,
-          "bounce_path_weight": -0.0099
-        },
-        "predictor_deltas": {
-          "bounce_predictor": -0.0085,
-          "downside_continuation_predictor": 0.0156,
-          "risk_expansion_predictor": 0.0184,
-          "trend_reversal_predictor": 0.0
-        },
-        "primary_probability_delta": 0.0202,
-        "primary_scenario_changed": true,
-        "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -3.48 points; independent predictors adjusted by news/event overlay",
-        "validation_type": "daily"
-      },
-      "QQQ": {
-        "after_primary_probability": 0.2895,
-        "after_primary_scenario": "bearish_path",
-        "before_primary_probability": 0.2665,
-        "before_primary_scenario": "bearish_path",
-        "confirmation_delta": -3.48,
-        "impact": "supports_primary",
-        "not_a_trading_signal": true,
-        "overlay_applied": true,
-        "path_overlay": {
-          "applied": true,
-          "direction": "supports_risk_expansion",
-          "not_a_trading_signal": true,
-          "reason": "Confirmed major event adjusted only the 1d/3d probability path; historical records are not rewritten.",
-          "shock_return_1d": -0.004,
-          "shock_return_3d": -0.0018,
-          "source": "news_event_price_reaction_overlay",
-          "validation_type": "daily"
-        },
-        "path_weight_deltas": {
-          "analog_path_weight": 0.0,
-          "base_path_weight": 0.0,
-          "bearish_path_weight": 0.0284,
-          "bounce_path_weight": -0.0099
-        },
-        "predictor_deltas": {
-          "bounce_predictor": -0.0085,
-          "downside_continuation_predictor": 0.0156,
-          "risk_expansion_predictor": 0.0184,
-          "trend_reversal_predictor": 0.0
-        },
-        "primary_probability_delta": 0.023,
-        "primary_scenario_changed": false,
-        "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -3.48 points; independent predictors adjusted by news/event overlay",
-        "validation_type": "daily"
-      },
-      "SPY": {
-        "after_primary_probability": 0.286,
-        "after_primary_scenario": "bearish_path",
-        "before_primary_probability": 0.2998,
-        "before_primary_scenario": "bounce_path",
-        "confirmation_delta": -3.48,
-        "impact": "conflicts_primary",
-        "not_a_trading_signal": true,
-        "overlay_applied": true,
-        "path_overlay": {
-          "applied": true,
-          "direction": "supports_risk_expansion",
-          "not_a_trading_signal": true,
-          "reason": "Confirmed major event adjusted only the 1d/3d probability path; historical records are not rewritten.",
-          "shock_return_1d": -0.004,
-          "shock_return_3d": -0.0018,
-          "source": "news_event_price_reaction_overlay",
-          "validation_type": "daily"
-        },
-        "path_weight_deltas": {
-          "analog_path_weight": 0.0,
-          "base_path_weight": 0.0,
-          "bearish_path_weight": 0.0284,
-          "bounce_path_weight": -0.0099
-        },
-        "predictor_deltas": {
-          "bounce_predictor": -0.0085,
-          "downside_continuation_predictor": 0.0156,
-          "risk_expansion_predictor": 0.0184,
-          "trend_reversal_predictor": 0.0
-        },
-        "primary_probability_delta": -0.0138,
-        "primary_scenario_changed": true,
-        "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -3.48 points; independent predictors adjusted by news/event overlay",
-        "validation_type": "daily"
-      }
-    },
+    "price_reaction_confirmed": false,
+    "reason": "no_major_event_or_macro_risk",
+    "symbols": {},
     "validation_type": "daily",
     "version": "news_event_overlay_v1"
   },
   "price_reaction_confirmation": {
     "asset_reaction_summary": {
-      "avg_equity_1d_return": -0.0096,
-      "avg_equity_futures_1d_return": -0.0004,
-      "confirmed_checks": [
-        "股票ETF或股指期货下跌",
-        "VIX 上升",
-        "美元走强"
-      ],
+      "avg_equity_1d_return": 0.0046,
+      "avg_equity_futures_1d_return": 0.0044,
+      "confirmed_checks": [],
       "equity_futures_symbols_used": [
         "ES=F",
         "NQ=F",
         "RTY=F",
         "YM=F"
       ],
-      "failed_checks": [
-        "HYG/LQD 走弱"
-      ],
-      "hyg_lqd_1d_relative_return": 0.0004,
-      "oil_proxy_1d_return": 0.0269,
+      "failed_checks": [],
+      "hyg_lqd_1d_relative_return": 0.0006,
+      "oil_proxy_1d_return": 0.0044,
       "oil_proxy_symbols_used": [
         "USO",
         "CL=F"
       ],
-      "tlt_1d_return": -0.0079,
-      "uup_1d_return": 0.0032,
-      "vix_1d_return": 0.0098
+      "tlt_1d_return": -0.0004,
+      "uup_1d_return": -0.0019,
+      "vix_1d_return": -0.0581
     },
-    "confirmation_score": 75,
+    "confirmation_score": 0,
     "contradiction_warning": null,
-    "price_reaction_confirmed": true
+    "price_reaction_confirmed": false
   },
   "provider_failed": false,
   "raw_item_count": 40,
@@ -293,75 +98,59 @@
     }
   },
   "stale": false,
-  "status": "available",
+  "status": "news_event_partial",
   "symbol_impacts": {
     "DIA": {
       "expected_changes": [
-        "bearish_path_weight_higher:price_confirmed",
-        "failed_bounce_risk_higher:price_confirmed",
-        "risk_expansion_higher:price_confirmed"
+        "no_clear_path_change"
       ],
-      "explanation": "DIA 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应已初步确认。",
-      "impact": "conflicts_primary",
-      "news_conflicts_primary_scenario": true,
+      "explanation": "DIA 当前新闻叙事混合，不能单独改变路径判断。",
+      "impact": "neutral",
+      "news_conflicts_primary_scenario": false,
       "news_supports_primary_scenario": false,
-      "primary_scenario": "bounce_path",
+      "primary_scenario": "bearish_path",
       "risk_scenario": "analog_average_path",
-      "scenario_bias": [
-        "bearish_path"
-      ],
-      "secondary_scenario": "bearish_path"
+      "scenario_bias": [],
+      "secondary_scenario": "bounce_path"
     },
     "IWM": {
       "expected_changes": [
-        "bearish_path_weight_higher:price_confirmed",
-        "failed_bounce_risk_higher:price_confirmed",
-        "risk_expansion_higher:price_confirmed"
+        "no_clear_path_change"
       ],
-      "explanation": "IWM 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应已初步确认。",
-      "impact": "conflicts_primary",
-      "news_conflicts_primary_scenario": true,
+      "explanation": "IWM 当前新闻叙事混合，不能单独改变路径判断。",
+      "impact": "neutral",
+      "news_conflicts_primary_scenario": false,
       "news_supports_primary_scenario": false,
-      "primary_scenario": "bounce_path",
+      "primary_scenario": "bearish_path",
       "risk_scenario": "analog_average_path",
-      "scenario_bias": [
-        "bearish_path"
-      ],
-      "secondary_scenario": "bearish_path"
+      "scenario_bias": [],
+      "secondary_scenario": "bounce_path"
     },
     "QQQ": {
       "expected_changes": [
-        "bearish_path_weight_higher:price_confirmed",
-        "failed_bounce_risk_higher:price_confirmed",
-        "risk_expansion_higher:price_confirmed"
+        "no_clear_path_change"
       ],
-      "explanation": "QQQ 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应已初步确认。",
-      "impact": "supports_primary",
+      "explanation": "QQQ 当前新闻叙事混合，不能单独改变路径判断。",
+      "impact": "neutral",
       "news_conflicts_primary_scenario": false,
-      "news_supports_primary_scenario": true,
+      "news_supports_primary_scenario": false,
       "primary_scenario": "bearish_path",
       "risk_scenario": "bounce_path",
-      "scenario_bias": [
-        "bearish_path"
-      ],
+      "scenario_bias": [],
       "secondary_scenario": "analog_average_path"
     },
     "SPY": {
       "expected_changes": [
-        "bearish_path_weight_higher:price_confirmed",
-        "failed_bounce_risk_higher:price_confirmed",
-        "risk_expansion_higher:price_confirmed"
+        "no_clear_path_change"
       ],
-      "explanation": "SPY 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应已初步确认。",
-      "impact": "conflicts_primary",
-      "news_conflicts_primary_scenario": true,
+      "explanation": "SPY 当前新闻叙事混合，不能单独改变路径判断。",
+      "impact": "neutral",
+      "news_conflicts_primary_scenario": false,
       "news_supports_primary_scenario": false,
-      "primary_scenario": "bounce_path",
+      "primary_scenario": "bearish_path",
       "risk_scenario": "analog_average_path",
-      "scenario_bias": [
-        "bearish_path"
-      ],
-      "secondary_scenario": "bearish_path"
+      "scenario_bias": [],
+      "secondary_scenario": "bounce_path"
     }
   },
   "validation_type": "daily",
