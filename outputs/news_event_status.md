@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-03T00:49:25.508566+00:00`
+- generated_at: `2026-09-03T01:07:41.848478+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `8`
-- event_detection_confidence: `83`
+- event_detection_confidence: `79`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -55,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-09-02T13:12:13+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -63,7 +63,7 @@
 - source: Reuters
 - published_at: `2026-09-02T13:09:27+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -73,18 +73,18 @@
 - importance_score: `100`
 - confidence: `medium`
 
+### geopolitical_risk_escalation / risk_off
+
+- headline: Global bonds extend selloff, oil prices surge on renewed US-Iran strikes - Reuters
+- source: Reuters
+- published_at: `2026-09-01T23:36:26+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
 ### growth_positive / risk_on
 
 - headline: Broadcom's stock drops 5% as weak guidance overshadows earnings beat
 - source: CNBC
 - published_at: `2026-09-02T20:27:45+00:00`
 - importance_score: `74`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump says latest strikes on Iran are 'justified,' warns Tehran against retaliation - Reuters
-- source: Reuters
-- published_at: `2026-09-01T17:45:54+00:00`
-- importance_score: `100`
 - confidence: `high`
