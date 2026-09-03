@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-03T16:28:19.384436+00:00`
+- generated_at: `2026-09-03T22:42:30.497459+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
+- major_event_count: `11`
 - event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -27,6 +27,54 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Vance says Iran conflict is not a war, declines to offer timeline for end - Reuters
+- source: Reuters
+- published_at: `2026-09-03T20:53:30+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Vance: US probing airstrike that Iran says hit a wedding party - Reuters
+- source: Reuters
+- published_at: `2026-09-03T20:39:36+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Oil prices mixed as investors weigh Middle East escalation, chance of Russia-Ukraine peace deal - Reuters
+- source: Reuters
+- published_at: `2026-09-03T20:13:57+00:00`
+- importance_score: `99`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Automakers urge Congress to permanently ban Chinese connected vehicles in U.S.
+- source: CNBC
+- published_at: `2026-09-03T16:51:13+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US pressure on Iran starting to tell, as sanctions and blockade bite - Reuters
+- source: Reuters
+- published_at: `2026-09-03T15:04:15+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Number of Iranian military personnel reported killed by US strikes this week rises to 13 - Reuters
+- source: Reuters
+- published_at: `2026-09-03T13:59:28+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Iran warns US against Israeli attack on south Lebanon ridge held by Hezbollah, sources say - Reuters
 - source: Reuters
 - published_at: `2026-09-03T13:41:45+00:00`
@@ -43,7 +91,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iran war escalation raises concern over civilian death toll - Reuters
+- headline: Iran buries victims of reported US wedding attack, fires on Kuwait - Reuters
 - source: Reuters
 - published_at: `2026-09-03T02:03:00+00:00`
 - importance_score: `100`
@@ -51,40 +99,8 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Ali al-Taher ridge emerges as flashpoint in Israel-Hezbollah war - Reuters
+- headline: Explainer: Ali al-Taher ridge emerges as flashpoint in Israel-Hezbollah war - Reuters
 - source: Reuters
 - published_at: `2026-09-03T00:03:00+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US-Iran strikes raise fears of renewed war across the Middle East - Reuters
-- source: Reuters
-- published_at: `2026-09-02T21:06:12+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Saudi Arabia says Iran attacked vessel in Hormuz, killing two sailors - Reuters
-- source: Reuters
-- published_at: `2026-09-02T13:12:13+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Gulf shares slide after US and Iran exchange strikes - Reuters
-- source: Reuters
-- published_at: `2026-09-02T13:09:27+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### growth_positive / risk_on
-
-- headline: Broadcom's stock drops 5% as weak guidance overshadows earnings beat
-- source: CNBC
-- published_at: `2026-09-02T20:27:45+00:00`
-- importance_score: `70`
 - confidence: `medium`
