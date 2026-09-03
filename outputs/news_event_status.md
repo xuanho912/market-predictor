@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-02T23:33:29.626023+00:00`
+- generated_at: `2026-09-03T00:49:25.508566+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `8`
-- event_detection_confidence: `84`
+- event_detection_confidence: `83`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -69,7 +69,7 @@
 
 - headline: US military says it completed latest wave of strikes on Iran - Reuters
 - source: Reuters
-- published_at: `2026-09-02T01:56:00+00:00`
+- published_at: `2026-09-02T04:13:29+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
