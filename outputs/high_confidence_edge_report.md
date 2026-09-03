@@ -1,6 +1,6 @@
 # High Confidence Edge Report
 
-Generated at: `2026-09-03T22:42:30.494062+00:00`
+Generated at: `2026-09-03T23:35:42.890862+00:00`
 
 Status: `historical_proxy_and_forward_pending`
 Sample size: `80`

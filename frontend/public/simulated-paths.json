@@ -5,10 +5,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-09-03",
-    "current_time_us_eastern": "2026-09-03T18:42:40.983089-04:00",
+    "current_time_us_eastern": "2026-09-03T19:35:52.916462-04:00",
     "data_freshness_status": "fresh",
     "expected_latest_trading_date": "2026-09-03",
-    "generated_at": "2026-09-03T22:42:40.983089+00:00",
+    "generated_at": "2026-09-03T23:35:52.916462+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -627,13 +627,13 @@
       "finnhub_market_holiday": {
         "fallback_used": false,
         "latest_date": null,
-        "missing_data": false,
-        "point_in_time_safe": true,
-        "real_data": true,
-        "rows": 1,
+        "missing_data": true,
+        "point_in_time_safe": false,
+        "real_data": false,
+        "rows": 0,
         "source": "finnhub",
-        "stale_data": true,
-        "status": "stale",
+        "stale_data": false,
+        "status": "missing",
         "symbol": "finnhub_market_holiday"
       },
       "finnhub_market_news": {
@@ -711,13 +711,13 @@
       "finnhub_quote_DIA": {
         "fallback_used": false,
         "latest_date": null,
-        "missing_data": false,
-        "point_in_time_safe": true,
-        "real_data": true,
-        "rows": 1,
+        "missing_data": true,
+        "point_in_time_safe": false,
+        "real_data": false,
+        "rows": 0,
         "source": "finnhub",
-        "stale_data": true,
-        "status": "stale",
+        "stale_data": false,
+        "status": "missing",
         "symbol": "finnhub_quote_DIA"
       },
       "finnhub_quote_IWM": {
@@ -747,13 +747,13 @@
       "finnhub_quote_SPY": {
         "fallback_used": false,
         "latest_date": null,
-        "missing_data": false,
-        "point_in_time_safe": true,
-        "real_data": true,
-        "rows": 1,
+        "missing_data": true,
+        "point_in_time_safe": false,
+        "real_data": false,
+        "rows": 0,
         "source": "finnhub",
-        "stale_data": true,
-        "status": "stale",
+        "stale_data": false,
+        "status": "missing",
         "symbol": "finnhub_quote_SPY"
       },
       "finnhub_rates_data": {
@@ -1047,15 +1047,15 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
+      "DGS2",
+      "DGS3MO",
       "IG_OAS",
       "HY_OAS",
-      "DGS3MO",
-      "DGS2",
-      "BAA_SPREAD",
       "DGS10",
+      "BAA_SPREAD",
       "RECESSION",
-      "FINANCIAL_STRESS",
-      "DFII10"
+      "DFII10",
+      "FINANCIAL_STRESS"
     ],
     "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-09-03。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
     "gamma_available": false,
@@ -1065,6 +1065,8 @@
     "latest_market_date": "2026-09-03",
     "missing_data": true,
     "missing_key_sources": [
+      "finnhub_quote_SPY",
+      "finnhub_quote_DIA",
       "finnhub_candle_SPY",
       "finnhub_candle_QQQ",
       "finnhub_candle_IWM",
@@ -1074,6 +1076,7 @@
       "finnhub_news_sentiment_IWM",
       "finnhub_news_sentiment_DIA",
       "finnhub_economic_calendar",
+      "finnhub_market_holiday",
       "finnhub_rates_data",
       "finnhub_alternative_data",
       "breadth_QQQ"
@@ -1086,11 +1089,11 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 76,
+      "event_detection_confidence": 78,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-09-03T22:42:30.497459+00:00",
-      "major_event_count": 11,
+      "last_update": "2026-09-03T23:35:42.893307+00:00",
+      "major_event_count": 12,
       "missing_reason": null,
       "news_direction": "risk_off",
       "news_event_partial": false,
@@ -1101,7 +1104,7 @@
     },
     "news_event_available": true,
     "news_event_event_risk_level": "high",
-    "news_event_major_count": 11,
+    "news_event_major_count": 12,
     "news_event_missing_reason": null,
     "news_event_narrative": "geopolitics_escalation_risk_off",
     "news_event_partial": false,
@@ -1151,7 +1154,7 @@
       "status": "failed"
     },
     "event_risk_level": "high",
-    "major_event_count": 11,
+    "major_event_count": 12,
     "market_narrative": {
       "affected_scenarios": [
         "bearish_path"
@@ -1181,7 +1184,7 @@
           "event_type": "growth_positive",
           "expected_market_direction": "risk_on",
           "headline": "Broadcom's stock drops 5% as weak guidance overshadows earnings beat",
-          "importance_score": 69,
+          "importance_score": 68,
           "published_at": "2026-09-02T20:27:45+00:00",
           "source": "CNBC"
         }
@@ -1201,9 +1204,21 @@
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_market_direction": "risk_off",
+          "headline": "Deadly strike on Iranian wedding was likely a direct hit by a US munition, analysis shows - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-09-03T22:51:09+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
           "headline": "Vance says Iran conflict is not a war, declines to offer timeline for end - Reuters",
           "importance_score": 100,
-          "published_at": "2026-09-03T20:53:30+00:00",
+          "published_at": "2026-09-03T22:10:23+00:00",
           "source": "Reuters"
         },
         {
@@ -1216,6 +1231,18 @@
           "headline": "Vance: US probing airstrike that Iran says hit a wedding party - Reuters",
           "importance_score": 100,
           "published_at": "2026-09-03T20:39:36+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
+          "headline": "Iran buries victims of reported US wedding attack, fires on Kuwait - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-09-03T20:12:07+00:00",
           "source": "Reuters"
         },
         {
@@ -1241,30 +1268,6 @@
           "importance_score": 100,
           "published_at": "2026-09-03T15:04:15+00:00",
           "source": "Reuters"
-        },
-        {
-          "confidence": "high",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Number of Iranian military personnel reported killed by US strikes this week rises to 13 - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-09-03T13:59:28+00:00",
-          "source": "Reuters"
-        },
-        {
-          "confidence": "high",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Iran warns US against Israeli attack on south Lebanon ridge held by Hezbollah, sources say - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-09-03T13:41:45+00:00",
-          "source": "Reuters"
         }
       ]
     },
@@ -1274,7 +1277,7 @@
       "direction": "supports_risk_expansion",
       "event_risk_level": "high",
       "macro_event_risk_flag": false,
-      "major_event_count": 11,
+      "major_event_count": 12,
       "not_a_trading_signal": true,
       "price_reaction_confirmed": false,
       "symbols": {
@@ -1413,7 +1416,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": 0.0096,
-        "avg_equity_futures_1d_return": 0.0087,
+        "avg_equity_futures_1d_return": 0.0089,
         "confirmed_checks": [
           "HYG/LQD 走弱"
         ],
@@ -1429,7 +1432,7 @@
           "美元走强"
         ],
         "hyg_lqd_1d_relative_return": -0.0002,
-        "oil_proxy_1d_return": 0.0073,
+        "oil_proxy_1d_return": 0.0081,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -2249,8 +2252,8 @@
           "ig_oas_20d_change": 0.030000000000000027
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote 536.93; news risk 25%; macro event risk flagged; rates pressure 19%.",
-          "finnhub_quote_available": true,
+          "brief": "Finnhub quote unavailable; news risk 25%; macro event risk flagged; rates pressure 19%.",
+          "finnhub_quote_available": false,
           "macro_event_risk_flag": true,
           "news_risk_score": 0.25,
           "rates_pressure_score": 0.19121414271101098,
@@ -2259,11 +2262,11 @@
         "finnhub": {
           "candle_status": "failed",
           "news_sentiment_status": "failed",
-          "quote_change_percent": 1.1892,
-          "quote_previous_close": 530.62,
-          "quote_price": 536.93,
+          "quote_change_percent": null,
+          "quote_previous_close": null,
+          "quote_price": null,
           "quote_source": "finnhub",
-          "quote_status": "available",
+          "quote_status": "failed",
           "sentiment_score": null
         },
         "flow_positioning_proxy": {
@@ -2321,11 +2324,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
-            "US diesel prices hit record high as conflicts intensify supply crunch - Reuters",
+            "Deadly strike on Iranian wedding was likely a direct hit by a US munition, analysis shows - Reuters",
             "Vance says Iran conflict is not a war, declines to offer timeline for end - Reuters",
+            "US diesel prices hit record high as conflicts intensify supply crunch - Reuters",
             "Vance: US probing airstrike that Iran says hit a wedding party - Reuters",
-            "Adobe names Anil Chakravarthy as CEO, replacing Shantanu Narayen",
-            "Oil prices mixed as investors weigh Middle East escalation, chance of Russia-Ukraine peace deal - Reuters"
+            "Adobe names Anil Chakravarthy as CEO, replacing Shantanu Narayen"
           ]
         },
         "price": {
@@ -3692,12 +3695,39 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 96,
+            "freshness_score": 98,
+            "headline": "Deadly strike on Iranian wedding was likely a direct hit by a US munition, analysis shows - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-03T22:51:09+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 81,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 97,
             "headline": "Vance says Iran conflict is not a war, declines to offer timeline for end - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-09-03T20:53:30+00:00",
+            "published_at": "2026-09-03T22:10:23+00:00",
             "source": "Reuters"
           },
           {
@@ -3719,12 +3749,39 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 95,
+            "freshness_score": 93,
             "headline": "Vance: US probing airstrike that Iran says hit a wedding party - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-03T20:39:36+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 80,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 92,
+            "headline": "Iran buries victims of reported US wedding attack, fires on Kuwait - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-03T20:12:07+00:00",
             "source": "Reuters"
           },
           {
@@ -3750,7 +3807,7 @@
             "event_type": "geopolitical_risk_easing",
             "expected_horizon": "1d-5d",
             "expected_market_direction": "risk_on",
-            "freshness_score": 94,
+            "freshness_score": 92,
             "headline": "Oil prices mixed as investors weigh Middle East escalation, chance of Russia-Ukraine peace deal - Reuters",
             "importance_score": 99,
             "narrative": "geopolitics_easing_risk_on",
@@ -3777,67 +3834,13 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 86,
+            "freshness_score": 84,
             "headline": "Automakers urge Congress to permanently ban Chinese connected vehicles in U.S.",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-03T16:51:13+00:00",
             "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 77,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 82,
-            "headline": "US pressure on Iran starting to tell, as sanctions and blockade bite - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-03T15:04:15+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 76,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 79,
-            "headline": "Number of Iranian military personnel reported killed by US strikes this week rises to 13 - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-03T13:59:28+00:00",
-            "source": "Reuters"
           }
         ],
         "market_narrative": {
@@ -3869,7 +3872,7 @@
               "event_type": "growth_positive",
               "expected_market_direction": "risk_on",
               "headline": "Broadcom's stock drops 5% as weak guidance overshadows earnings beat",
-              "importance_score": 69,
+              "importance_score": 68,
               "published_at": "2026-09-02T20:27:45+00:00",
               "source": "CNBC"
             }
@@ -3889,9 +3892,21 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Deadly strike on Iranian wedding was likely a direct hit by a US munition, analysis shows - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-09-03T22:51:09+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "Vance says Iran conflict is not a war, declines to offer timeline for end - Reuters",
               "importance_score": 100,
-              "published_at": "2026-09-03T20:53:30+00:00",
+              "published_at": "2026-09-03T22:10:23+00:00",
               "source": "Reuters"
             },
             {
@@ -3904,6 +3919,18 @@
               "headline": "Vance: US probing airstrike that Iran says hit a wedding party - Reuters",
               "importance_score": 100,
               "published_at": "2026-09-03T20:39:36+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Iran buries victims of reported US wedding attack, fires on Kuwait - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-09-03T20:12:07+00:00",
               "source": "Reuters"
             },
             {
@@ -3928,30 +3955,6 @@
               "headline": "US pressure on Iran starting to tell, as sanctions and blockade bite - Reuters",
               "importance_score": 100,
               "published_at": "2026-09-03T15:04:15+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Number of Iranian military personnel reported killed by US strikes this week rises to 13 - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-09-03T13:59:28+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Iran warns US against Israeli attack on south Lebanon ridge held by Hezbollah, sources say - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-09-03T13:41:45+00:00",
               "source": "Reuters"
             }
           ]
@@ -3992,7 +3995,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0096,
-            "avg_equity_futures_1d_return": 0.0087,
+            "avg_equity_futures_1d_return": 0.0089,
             "confirmed_checks": [
               "HYG/LQD 走弱"
             ],
@@ -4008,7 +4011,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0002,
-            "oil_proxy_1d_return": 0.0073,
+            "oil_proxy_1d_return": 0.0081,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -6511,11 +6514,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
-            "US diesel prices hit record high as conflicts intensify supply crunch - Reuters",
+            "Deadly strike on Iranian wedding was likely a direct hit by a US munition, analysis shows - Reuters",
             "Vance says Iran conflict is not a war, declines to offer timeline for end - Reuters",
+            "US diesel prices hit record high as conflicts intensify supply crunch - Reuters",
             "Vance: US probing airstrike that Iran says hit a wedding party - Reuters",
-            "Adobe names Anil Chakravarthy as CEO, replacing Shantanu Narayen",
-            "Oil prices mixed as investors weigh Middle East escalation, chance of Russia-Ukraine peace deal - Reuters"
+            "Adobe names Anil Chakravarthy as CEO, replacing Shantanu Narayen"
           ]
         },
         "price": {
@@ -7889,12 +7892,39 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 96,
+            "freshness_score": 98,
+            "headline": "Deadly strike on Iranian wedding was likely a direct hit by a US munition, analysis shows - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-03T22:51:09+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 81,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 97,
             "headline": "Vance says Iran conflict is not a war, declines to offer timeline for end - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-09-03T20:53:30+00:00",
+            "published_at": "2026-09-03T22:10:23+00:00",
             "source": "Reuters"
           },
           {
@@ -7916,12 +7946,39 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 95,
+            "freshness_score": 93,
             "headline": "Vance: US probing airstrike that Iran says hit a wedding party - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-03T20:39:36+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 80,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 92,
+            "headline": "Iran buries victims of reported US wedding attack, fires on Kuwait - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-03T20:12:07+00:00",
             "source": "Reuters"
           },
           {
@@ -7947,7 +8004,7 @@
             "event_type": "geopolitical_risk_easing",
             "expected_horizon": "1d-5d",
             "expected_market_direction": "risk_on",
-            "freshness_score": 94,
+            "freshness_score": 92,
             "headline": "Oil prices mixed as investors weigh Middle East escalation, chance of Russia-Ukraine peace deal - Reuters",
             "importance_score": 99,
             "narrative": "geopolitics_easing_risk_on",
@@ -7974,67 +8031,13 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 86,
+            "freshness_score": 84,
             "headline": "Automakers urge Congress to permanently ban Chinese connected vehicles in U.S.",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-03T16:51:13+00:00",
             "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 77,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 82,
-            "headline": "US pressure on Iran starting to tell, as sanctions and blockade bite - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-03T15:04:15+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 76,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 79,
-            "headline": "Number of Iranian military personnel reported killed by US strikes this week rises to 13 - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-03T13:59:28+00:00",
-            "source": "Reuters"
           }
         ],
         "market_narrative": {
@@ -8066,7 +8069,7 @@
               "event_type": "growth_positive",
               "expected_market_direction": "risk_on",
               "headline": "Broadcom's stock drops 5% as weak guidance overshadows earnings beat",
-              "importance_score": 69,
+              "importance_score": 68,
               "published_at": "2026-09-02T20:27:45+00:00",
               "source": "CNBC"
             }
@@ -8086,9 +8089,21 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Deadly strike on Iranian wedding was likely a direct hit by a US munition, analysis shows - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-09-03T22:51:09+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "Vance says Iran conflict is not a war, declines to offer timeline for end - Reuters",
               "importance_score": 100,
-              "published_at": "2026-09-03T20:53:30+00:00",
+              "published_at": "2026-09-03T22:10:23+00:00",
               "source": "Reuters"
             },
             {
@@ -8101,6 +8116,18 @@
               "headline": "Vance: US probing airstrike that Iran says hit a wedding party - Reuters",
               "importance_score": 100,
               "published_at": "2026-09-03T20:39:36+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Iran buries victims of reported US wedding attack, fires on Kuwait - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-09-03T20:12:07+00:00",
               "source": "Reuters"
             },
             {
@@ -8125,30 +8152,6 @@
               "headline": "US pressure on Iran starting to tell, as sanctions and blockade bite - Reuters",
               "importance_score": 100,
               "published_at": "2026-09-03T15:04:15+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Number of Iranian military personnel reported killed by US strikes this week rises to 13 - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-09-03T13:59:28+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Iran warns US against Israeli attack on south Lebanon ridge held by Hezbollah, sources say - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-09-03T13:41:45+00:00",
               "source": "Reuters"
             }
           ]
@@ -8189,7 +8192,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0096,
-            "avg_equity_futures_1d_return": 0.0087,
+            "avg_equity_futures_1d_return": 0.0089,
             "confirmed_checks": [
               "HYG/LQD 走弱"
             ],
@@ -8205,7 +8208,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0002,
-            "oil_proxy_1d_return": 0.0073,
+            "oil_proxy_1d_return": 0.0081,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -10691,11 +10694,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
-            "US diesel prices hit record high as conflicts intensify supply crunch - Reuters",
+            "Deadly strike on Iranian wedding was likely a direct hit by a US munition, analysis shows - Reuters",
             "Vance says Iran conflict is not a war, declines to offer timeline for end - Reuters",
+            "US diesel prices hit record high as conflicts intensify supply crunch - Reuters",
             "Vance: US probing airstrike that Iran says hit a wedding party - Reuters",
-            "Adobe names Anil Chakravarthy as CEO, replacing Shantanu Narayen",
-            "Oil prices mixed as investors weigh Middle East escalation, chance of Russia-Ukraine peace deal - Reuters"
+            "Adobe names Anil Chakravarthy as CEO, replacing Shantanu Narayen"
           ]
         },
         "price": {
@@ -12029,12 +12032,39 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 96,
+            "freshness_score": 98,
+            "headline": "Deadly strike on Iranian wedding was likely a direct hit by a US munition, analysis shows - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-03T22:51:09+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 81,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 97,
             "headline": "Vance says Iran conflict is not a war, declines to offer timeline for end - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-09-03T20:53:30+00:00",
+            "published_at": "2026-09-03T22:10:23+00:00",
             "source": "Reuters"
           },
           {
@@ -12056,12 +12086,39 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 95,
+            "freshness_score": 93,
             "headline": "Vance: US probing airstrike that Iran says hit a wedding party - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-03T20:39:36+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 80,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 92,
+            "headline": "Iran buries victims of reported US wedding attack, fires on Kuwait - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-03T20:12:07+00:00",
             "source": "Reuters"
           },
           {
@@ -12087,7 +12144,7 @@
             "event_type": "geopolitical_risk_easing",
             "expected_horizon": "1d-5d",
             "expected_market_direction": "risk_on",
-            "freshness_score": 94,
+            "freshness_score": 92,
             "headline": "Oil prices mixed as investors weigh Middle East escalation, chance of Russia-Ukraine peace deal - Reuters",
             "importance_score": 99,
             "narrative": "geopolitics_easing_risk_on",
@@ -12114,67 +12171,13 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 86,
+            "freshness_score": 84,
             "headline": "Automakers urge Congress to permanently ban Chinese connected vehicles in U.S.",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-03T16:51:13+00:00",
             "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 77,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 82,
-            "headline": "US pressure on Iran starting to tell, as sanctions and blockade bite - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-03T15:04:15+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 76,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 79,
-            "headline": "Number of Iranian military personnel reported killed by US strikes this week rises to 13 - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-03T13:59:28+00:00",
-            "source": "Reuters"
           }
         ],
         "market_narrative": {
@@ -12206,7 +12209,7 @@
               "event_type": "growth_positive",
               "expected_market_direction": "risk_on",
               "headline": "Broadcom's stock drops 5% as weak guidance overshadows earnings beat",
-              "importance_score": 69,
+              "importance_score": 68,
               "published_at": "2026-09-02T20:27:45+00:00",
               "source": "CNBC"
             }
@@ -12226,9 +12229,21 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Deadly strike on Iranian wedding was likely a direct hit by a US munition, analysis shows - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-09-03T22:51:09+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "Vance says Iran conflict is not a war, declines to offer timeline for end - Reuters",
               "importance_score": 100,
-              "published_at": "2026-09-03T20:53:30+00:00",
+              "published_at": "2026-09-03T22:10:23+00:00",
               "source": "Reuters"
             },
             {
@@ -12241,6 +12256,18 @@
               "headline": "Vance: US probing airstrike that Iran says hit a wedding party - Reuters",
               "importance_score": 100,
               "published_at": "2026-09-03T20:39:36+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Iran buries victims of reported US wedding attack, fires on Kuwait - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-09-03T20:12:07+00:00",
               "source": "Reuters"
             },
             {
@@ -12265,30 +12292,6 @@
               "headline": "US pressure on Iran starting to tell, as sanctions and blockade bite - Reuters",
               "importance_score": 100,
               "published_at": "2026-09-03T15:04:15+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Number of Iranian military personnel reported killed by US strikes this week rises to 13 - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-09-03T13:59:28+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Iran warns US against Israeli attack on south Lebanon ridge held by Hezbollah, sources say - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-09-03T13:41:45+00:00",
               "source": "Reuters"
             }
           ]
@@ -12329,7 +12332,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0096,
-            "avg_equity_futures_1d_return": 0.0087,
+            "avg_equity_futures_1d_return": 0.0089,
             "confirmed_checks": [
               "HYG/LQD 走弱"
             ],
@@ -12345,7 +12348,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0002,
-            "oil_proxy_1d_return": 0.0073,
+            "oil_proxy_1d_return": 0.0081,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -14792,8 +14795,8 @@
           "ig_oas_20d_change": 0.030000000000000027
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote 773.17; news risk 25%; macro event risk flagged; rates pressure 19%.",
-          "finnhub_quote_available": true,
+          "brief": "Finnhub quote unavailable; news risk 25%; macro event risk flagged; rates pressure 19%.",
+          "finnhub_quote_available": false,
           "macro_event_risk_flag": true,
           "news_risk_score": 0.25,
           "rates_pressure_score": 0.19121414271101098,
@@ -14802,11 +14805,11 @@
         "finnhub": {
           "candle_status": "failed",
           "news_sentiment_status": "failed",
-          "quote_change_percent": 1.0468,
-          "quote_previous_close": 765.16,
-          "quote_price": 773.17,
+          "quote_change_percent": null,
+          "quote_previous_close": null,
+          "quote_price": null,
           "quote_source": "finnhub",
-          "quote_status": "available",
+          "quote_status": "failed",
           "sentiment_score": null
         },
         "flow_positioning_proxy": {
@@ -14864,11 +14867,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
-            "US diesel prices hit record high as conflicts intensify supply crunch - Reuters",
+            "Deadly strike on Iranian wedding was likely a direct hit by a US munition, analysis shows - Reuters",
             "Vance says Iran conflict is not a war, declines to offer timeline for end - Reuters",
+            "US diesel prices hit record high as conflicts intensify supply crunch - Reuters",
             "Vance: US probing airstrike that Iran says hit a wedding party - Reuters",
-            "Adobe names Anil Chakravarthy as CEO, replacing Shantanu Narayen",
-            "Oil prices mixed as investors weigh Middle East escalation, chance of Russia-Ukraine peace deal - Reuters"
+            "Adobe names Anil Chakravarthy as CEO, replacing Shantanu Narayen"
           ]
         },
         "price": {
@@ -16207,12 +16210,39 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 96,
+            "freshness_score": 98,
+            "headline": "Deadly strike on Iranian wedding was likely a direct hit by a US munition, analysis shows - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-03T22:51:09+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 81,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 97,
             "headline": "Vance says Iran conflict is not a war, declines to offer timeline for end - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-09-03T20:53:30+00:00",
+            "published_at": "2026-09-03T22:10:23+00:00",
             "source": "Reuters"
           },
           {
@@ -16234,12 +16264,39 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 95,
+            "freshness_score": 93,
             "headline": "Vance: US probing airstrike that Iran says hit a wedding party - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-03T20:39:36+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 80,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 92,
+            "headline": "Iran buries victims of reported US wedding attack, fires on Kuwait - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-03T20:12:07+00:00",
             "source": "Reuters"
           },
           {
@@ -16265,7 +16322,7 @@
             "event_type": "geopolitical_risk_easing",
             "expected_horizon": "1d-5d",
             "expected_market_direction": "risk_on",
-            "freshness_score": 94,
+            "freshness_score": 92,
             "headline": "Oil prices mixed as investors weigh Middle East escalation, chance of Russia-Ukraine peace deal - Reuters",
             "importance_score": 99,
             "narrative": "geopolitics_easing_risk_on",
@@ -16292,67 +16349,13 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 86,
+            "freshness_score": 84,
             "headline": "Automakers urge Congress to permanently ban Chinese connected vehicles in U.S.",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-03T16:51:13+00:00",
             "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 77,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 82,
-            "headline": "US pressure on Iran starting to tell, as sanctions and blockade bite - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-03T15:04:15+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 76,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 79,
-            "headline": "Number of Iranian military personnel reported killed by US strikes this week rises to 13 - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-03T13:59:28+00:00",
-            "source": "Reuters"
           }
         ],
         "market_narrative": {
@@ -16384,7 +16387,7 @@
               "event_type": "growth_positive",
               "expected_market_direction": "risk_on",
               "headline": "Broadcom's stock drops 5% as weak guidance overshadows earnings beat",
-              "importance_score": 69,
+              "importance_score": 68,
               "published_at": "2026-09-02T20:27:45+00:00",
               "source": "CNBC"
             }
@@ -16404,9 +16407,21 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Deadly strike on Iranian wedding was likely a direct hit by a US munition, analysis shows - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-09-03T22:51:09+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "Vance says Iran conflict is not a war, declines to offer timeline for end - Reuters",
               "importance_score": 100,
-              "published_at": "2026-09-03T20:53:30+00:00",
+              "published_at": "2026-09-03T22:10:23+00:00",
               "source": "Reuters"
             },
             {
@@ -16419,6 +16434,18 @@
               "headline": "Vance: US probing airstrike that Iran says hit a wedding party - Reuters",
               "importance_score": 100,
               "published_at": "2026-09-03T20:39:36+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Iran buries victims of reported US wedding attack, fires on Kuwait - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-09-03T20:12:07+00:00",
               "source": "Reuters"
             },
             {
@@ -16443,30 +16470,6 @@
               "headline": "US pressure on Iran starting to tell, as sanctions and blockade bite - Reuters",
               "importance_score": 100,
               "published_at": "2026-09-03T15:04:15+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Number of Iranian military personnel reported killed by US strikes this week rises to 13 - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-09-03T13:59:28+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Iran warns US against Israeli attack on south Lebanon ridge held by Hezbollah, sources say - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-09-03T13:41:45+00:00",
               "source": "Reuters"
             }
           ]
@@ -16507,7 +16510,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0096,
-            "avg_equity_futures_1d_return": 0.0087,
+            "avg_equity_futures_1d_return": 0.0089,
             "confirmed_checks": [
               "HYG/LQD 走弱"
             ],
@@ -16523,7 +16526,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0002,
-            "oil_proxy_1d_return": 0.0073,
+            "oil_proxy_1d_return": 0.0081,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"

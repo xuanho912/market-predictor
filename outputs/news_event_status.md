@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-03T22:42:30.497459+00:00`
+- generated_at: `2026-09-03T23:35:42.893307+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `11`
-- event_detection_confidence: `76`
+- major_event_count: `12`
+- event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Deadly strike on Iranian wedding was likely a direct hit by a US munition, analysis shows - Reuters
+- source: Reuters
+- published_at: `2026-09-03T22:51:09+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Vance says Iran conflict is not a war, declines to offer timeline for end - Reuters
 - source: Reuters
-- published_at: `2026-09-03T20:53:30+00:00`
+- published_at: `2026-09-03T22:10:23+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -38,6 +46,14 @@
 - headline: Vance: US probing airstrike that Iran says hit a wedding party - Reuters
 - source: Reuters
 - published_at: `2026-09-03T20:39:36+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran buries victims of reported US wedding attack, fires on Kuwait - Reuters
+- source: Reuters
+- published_at: `2026-09-03T20:12:07+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -88,19 +104,3 @@
 - published_at: `2026-09-03T13:36:18+00:00`
 - importance_score: `100`
 - confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran buries victims of reported US wedding attack, fires on Kuwait - Reuters
-- source: Reuters
-- published_at: `2026-09-03T02:03:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Explainer: Ali al-Taher ridge emerges as flashpoint in Israel-Hezbollah war - Reuters
-- source: Reuters
-- published_at: `2026-09-03T00:03:00+00:00`
-- importance_score: `100`
-- confidence: `medium`

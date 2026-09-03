@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-09-03T22:42:42.103769+00:00`
+Generated at: `2026-09-03T23:35:53.740165+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -47,14 +47,14 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 
 ### TSLA
 
-- company_name: `Tesla Inc`
+- company_name: `Tesla`
 - status: `available`
 - current_price: `376.36`
 - market_context: `market_headwind`
 - primary: `stock_failed_bounce` / `23.1%`
 - secondary: `stock_trend_repair` / `21.6%`
 - risk: `stock_downside_continuation` / `16.6%`
-- stock_confluence_score: `50.09` / `mixed`
+- stock_confluence_score: `48.59` / `mixed`
 - stock_alpha_score_v1: `23.5` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `61.3%`
 - 60d_expected_return: `-0.1%`
@@ -83,9 +83,9 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `25.0%`
 - secondary: `stock_downside_continuation` / `19.8%`
 - risk: `stock_event_risk` / `14.8%`
-- stock_confluence_score: `37.61` / `weak`
-- stock_alpha_score_v1: `9.5` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `45.0%`
+- stock_confluence_score: `35.79` / `weak`
+- stock_alpha_score_v1: `6.0` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `43.6%`
 - 60d_expected_return: `-1.7%`
 - risk_reward_ratio: `0.5`
 - strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `25.46`
