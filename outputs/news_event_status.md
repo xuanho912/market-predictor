@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-03T08:19:30.693810+00:00`
+- generated_at: `2026-09-03T16:28:19.384436+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `11`
-- event_detection_confidence: `74`
+- major_event_count: `8`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `50`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
@@ -27,19 +27,27 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iran war escalation raises concern over civilian death toll - Reuters
+- headline: Iran warns US against Israeli attack on south Lebanon ridge held by Hezbollah, sources say - Reuters
 - source: Reuters
-- published_at: `2026-09-03T05:42:52+00:00`
+- published_at: `2026-09-03T13:41:45+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil edges down as investors weigh uncertainty over U.S.-Iran strikes - Reuters
+- headline: Lutnick apologizes for saying no Americans have died in Iran war - Reuters
 - source: Reuters
-- published_at: `2026-09-03T00:46:00+00:00`
+- published_at: `2026-09-03T13:36:18+00:00`
 - importance_score: `100`
 - confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran war escalation raises concern over civilian death toll - Reuters
+- source: Reuters
+- published_at: `2026-09-03T02:03:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,15 +55,15 @@
 - source: Reuters
 - published_at: `2026-09-03T00:03:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil settles 1% higher, as US-Iran strikes threaten supplies - Reuters
+- headline: US-Iran strikes raise fears of renewed war across the Middle East - Reuters
 - source: Reuters
-- published_at: `2026-09-02T19:30:46+00:00`
+- published_at: `2026-09-02T21:06:12+00:00`
 - importance_score: `100`
-- confidence: `medium`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -73,34 +81,10 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
+### growth_positive / risk_on
 
-- headline: Once symbols of war on Islamic State, Kurdish women fighters seek role in new Syria - Reuters
-- source: Reuters
-- published_at: `2026-09-02T10:16:09+00:00`
-- importance_score: `100`
+- headline: Broadcom's stock drops 5% as weak guidance overshadows earnings beat
+- source: CNBC
+- published_at: `2026-09-02T20:27:45+00:00`
+- importance_score: `70`
 - confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump aides seek 'quiet' in Iran war but say attacks may intensify after November elections - Reuters
-- source: Reuters
-- published_at: `2026-09-02T10:04:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US-Iran tensions high after strikes on two tankers in Hormuz
-- source: Bloomberg
-- published_at: `2026-09-02T03:43:25+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US-Iran strikes raise fears of renewed war across the Middle East - Reuters
-- source: Reuters
-- published_at: `2026-09-02T02:41:00+00:00`
-- importance_score: `100`
-- confidence: `high`
