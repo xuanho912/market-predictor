@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-03T05:52:39.218641+00:00`
+- generated_at: `2026-09-03T08:19:30.693810+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `11`
-- event_detection_confidence: `76`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -29,7 +29,7 @@
 
 - headline: Iran war escalation raises concern over civilian death toll - Reuters
 - source: Reuters
-- published_at: `2026-09-03T03:40:11+00:00`
+- published_at: `2026-09-03T05:42:52+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -51,11 +51,11 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US-Iran strikes raise fears of renewed war across the Middle East - Reuters
+- headline: Oil settles 1% higher, as US-Iran strikes threaten supplies - Reuters
 - source: Reuters
-- published_at: `2026-09-02T21:06:12+00:00`
+- published_at: `2026-09-02T19:30:46+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -70,6 +70,14 @@
 - headline: Gulf shares slide after US and Iran exchange strikes - Reuters
 - source: Reuters
 - published_at: `2026-09-02T13:09:27+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Once symbols of war on Islamic State, Kurdish women fighters seek role in new Syria - Reuters
+- source: Reuters
+- published_at: `2026-09-02T10:16:09+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -91,16 +99,8 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US launches new strikes on Iran and Tehran hits back in widening conflict - Reuters
+- headline: US-Iran strikes raise fears of renewed war across the Middle East - Reuters
 - source: Reuters
-- published_at: `2026-09-02T03:39:30+00:00`
+- published_at: `2026-09-02T02:41:00+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US military says it completed latest wave of strikes on Iran - Reuters
-- source: Reuters
-- published_at: `2026-09-02T01:56:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
+- confidence: `high`
