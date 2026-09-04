@@ -11212,7 +11212,7 @@
       "evidence_note": "Forward-only breadth attribution is still below the minimum sample gate; these buckets are tracked but not proof.",
       "status": "not_enough_forward_samples"
     },
-    "generated_at": "2026-09-04T22:27:26.594066Z",
+    "generated_at": "2026-09-04T23:15:53.101854Z",
     "notes": [
       "This audit compares the same run with true breadth provider disabled vs enabled.",
       "The audit does not change Alpha v1 and does not prove tradable alpha.",
@@ -11370,7 +11370,7 @@
   },
   "breadth_status": {
     "cache_root": "data/breadth_cache",
-    "generated_at": "2026-09-04T22:27:02.601612+00:00",
+    "generated_at": "2026-09-04T23:15:28.980472+00:00",
     "provider": "true_breadth_provider",
     "sector_participation_proxy": {
       "data_note": "Sector ETF proxy, not constituent-level sector breadth.",
@@ -11902,7 +11902,7 @@
   },
   "confluence_score": {
     "disclaimer": "Confluence is a forecast-confirmation layer, not a trading signal or execution recommendation.",
-    "generated_at": "2026-09-04T22:27:26.605125+00:00",
+    "generated_at": "2026-09-04T23:15:53.110379+00:00",
     "summary": {
       "average_confluence_score": 47.75,
       "mixed_or_no_edge_symbols": [
@@ -12575,10 +12575,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-09-04",
-    "current_time_us_eastern": "2026-09-04T18:27:26.605812-04:00",
+    "current_time_us_eastern": "2026-09-04T19:15:53.110882-04:00",
     "data_freshness_status": "fresh",
     "expected_latest_trading_date": "2026-09-04",
-    "generated_at": "2026-09-04T22:27:26.605812+00:00",
+    "generated_at": "2026-09-04T23:15:53.110882+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -13317,13 +13317,13 @@
       "finnhub_quote_SPY": {
         "fallback_used": false,
         "latest_date": null,
-        "missing_data": true,
-        "point_in_time_safe": false,
-        "real_data": false,
-        "rows": 0,
+        "missing_data": false,
+        "point_in_time_safe": true,
+        "real_data": true,
+        "rows": 1,
         "source": "finnhub",
-        "stale_data": false,
-        "status": "rate_limited",
+        "stale_data": true,
+        "status": "stale",
         "symbol": "finnhub_quote_SPY"
       },
       "finnhub_rates_data": {
@@ -13625,7 +13625,7 @@
         "status": "available"
       }
     },
-    "generated_at": "2026-09-04T22:27:16.144812+00:00",
+    "generated_at": "2026-09-04T23:15:41.705588+00:00",
     "notes": [
       "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
       "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -14410,14 +14410,14 @@
       "finnhub_quote_SPY": {
         "fallback_used": false,
         "latest_date": null,
-        "missing_data": true,
-        "point_in_time_safe": false,
-        "rate_limited": true,
-        "real_data": false,
-        "rows": 0,
+        "missing_data": false,
+        "point_in_time_safe": true,
+        "rate_limited": false,
+        "real_data": true,
+        "rows": 1,
         "source": "finnhub",
-        "stale_data": false,
-        "status": "rate_limited",
+        "stale_data": true,
+        "status": "stale",
         "symbol": "finnhub_quote_SPY"
       },
       "finnhub_rates_data": {
@@ -14674,7 +14674,7 @@
       "fallback_used": true,
       "finnhub_available": true,
       "finnhub_missing": false,
-      "finnhub_rate_limited": true,
+      "finnhub_rate_limited": false,
       "flow_available": true,
       "flow_provider_status": "proxy",
       "flow_proxy_only": true,
@@ -14752,15 +14752,15 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
-        "HY_OAS",
-        "DGS10",
-        "BAA_SPREAD",
         "DGS2",
-        "FINANCIAL_STRESS",
         "DGS3MO",
-        "RECESSION",
+        "BAA_SPREAD",
         "IG_OAS",
-        "DFII10"
+        "FINANCIAL_STRESS",
+        "RECESSION",
+        "HY_OAS",
+        "DFII10",
+        "DGS10"
       ],
       "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-09-04。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
       "gamma_available": false,
@@ -14770,7 +14770,6 @@
       "latest_market_date": "2026-09-04",
       "missing_data": true,
       "missing_key_sources": [
-        "finnhub_quote_SPY",
         "finnhub_candle_SPY",
         "finnhub_candle_QQQ",
         "finnhub_candle_IWM",
@@ -14795,7 +14794,7 @@
         "event_detection_confidence": 70,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-09-04T22:27:16.151374+00:00",
+        "last_update": "2026-09-04T23:15:41.710523+00:00",
         "major_event_count": 12,
         "missing_reason": null,
         "news_direction": "risk_off",
@@ -14847,7 +14846,7 @@
   },
   "event_refresh": false,
   "feature_snapshot_v2": {
-    "generated_at": "2026-09-04T22:27:16.131561+00:00",
+    "generated_at": "2026-09-04T23:15:41.694870+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -15085,7 +15084,7 @@
     "version": "market_intelligence_engine_v2_features"
   },
   "feature_snapshot_v3": {
-    "generated_at": "2026-09-04T22:27:16.137385+00:00",
+    "generated_at": "2026-09-04T23:15:41.699496+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -15881,8 +15880,8 @@
           "ig_oas_20d_change": 0.030000000000000027
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote unavailable; news risk 30%; macro event risk flagged; rates pressure 17%.",
-          "finnhub_quote_available": false,
+          "brief": "Finnhub quote 770.19; news risk 30%; macro event risk flagged; rates pressure 17%.",
+          "finnhub_quote_available": true,
           "macro_event_risk_flag": true,
           "news_risk_score": 0.3,
           "rates_pressure_score": 0.17256576405638377,
@@ -15891,11 +15890,11 @@
         "finnhub": {
           "candle_status": "failed",
           "news_sentiment_status": "failed",
-          "quote_change_percent": null,
-          "quote_previous_close": null,
-          "quote_price": null,
+          "quote_change_percent": -0.3854,
+          "quote_previous_close": 773.17,
+          "quote_price": 770.19,
           "quote_source": "finnhub",
-          "quote_status": "rate_limited",
+          "quote_status": "available",
           "sentiment_score": null
         },
         "flow_positioning_proxy": {
@@ -16035,7 +16034,7 @@
     "version": "market_intelligence_engine_v3_features"
   },
   "flow_positioning_status": {
-    "generated_at": "2026-09-04T22:27:08.882344+00:00",
+    "generated_at": "2026-09-04T23:15:34.771974+00:00",
     "latest_date": "2026-09-04",
     "provider": "flow_positioning_proxy",
     "sources": {
@@ -16486,7 +16485,7 @@
     ]
   },
   "flow_status": {
-    "generated_at": "2026-09-04T22:27:08.882344+00:00",
+    "generated_at": "2026-09-04T23:15:34.771974+00:00",
     "latest_date": "2026-09-04",
     "provider": "flow_positioning_proxy",
     "sources": {
@@ -18153,7 +18152,7 @@
       "primary_beats_secondary": "primary_path_not_better_than_secondary"
     },
     "current_evidence_level": "stronger_evidence",
-    "generated_at": "2026-09-04T22:27:27.159872+00:00",
+    "generated_at": "2026-09-04T23:15:53.502974+00:00",
     "guardrails": [
       "This scorecard validates probabilistic forecast paths, not trades.",
       "Forecast records are immutable except for future-outcome backfill fields.",
@@ -18268,7 +18267,7 @@
       "risk_on_flow_underweighted": 52,
       "volatility_repair_underweighted": 115
     },
-    "generated_at": "2026-09-04T22:27:27.360849+00:00",
+    "generated_at": "2026-09-04T23:15:53.646776+00:00",
     "guardrails": [
       "This is forecast error attribution, not a trading or PnL report.",
       "Attribution is diagnostic and probabilistic; it is not proof of causality.",
@@ -22188,7 +22187,7 @@
     },
     "dominant_error_theme": "news_data_gap_limited_attribution",
     "evidence_level": "stronger_evidence",
-    "generated_at": "2026-09-04T22:27:27.385280+00:00",
+    "generated_at": "2026-09-04T23:15:53.664778+00:00",
     "global_learning_status": "shadow_challenger_queue_ready",
     "guardrails": [
       "This queue does not change baseline_v1 or Alpha v1.",
@@ -22218,7 +22217,7 @@
       "5d": 220,
       "60d": 0
     },
-    "generated_at": "2026-09-04T22:27:27.099541+00:00",
+    "generated_at": "2026-09-04T23:15:53.458062+00:00",
     "immutability_note": "Forecast fields are write-once by forecast_id. Backfill may update only actual_return, best_matching_scenario, primary_hit, path_error and status fields.",
     "max_confirmed_market_date": "2026-09-04",
     "new_records_considered": 4,
@@ -22232,7 +22231,7 @@
   "forecast_price_levels": {
     "as_of": "2026-09-04",
     "disclaimer": "Forecast price levels are probabilistic scenario points derived from simulated paths, recent price structure and volatility bands. They are not execution instructions, risk-control rules, or guaranteed target prices.",
-    "generated_at": "2026-09-04T22:27:26.599673Z",
+    "generated_at": "2026-09-04T23:15:53.106098Z",
     "symbols": {
       "DIA": {
         "current_price": 534.0800170898438,
@@ -23975,7 +23974,7 @@
     "version": "forecast_price_levels_v1"
   },
   "forecast_records": {
-    "generated_at": "2026-09-04T22:27:27.133120+00:00",
+    "generated_at": "2026-09-04T23:15:53.483026+00:00",
     "records": [
       {
         "actual_return_10d": 0.01680114442,
@@ -57976,7 +57975,7 @@
       "5d": 220,
       "60d": 0
     },
-    "generated_at": "2026-09-04T22:27:27.385183+00:00",
+    "generated_at": "2026-09-04T23:15:53.664703+00:00",
     "guardrails": [
       "This gate does not modify Alpha v1 threshold, baseline_v1 or historical forecast records.",
       "This is forecast reliability assessment, not trading advice.",
@@ -59408,7 +59407,7 @@
     },
     "forward_completed_sample_size": 0,
     "forward_validation_notice": "当前高置信度还没有被前向样本验证，不应当视为稳定预测能力。",
-    "generated_at": "2026-09-04T22:27:16.148403+00:00",
+    "generated_at": "2026-09-04T23:15:41.708243+00:00",
     "internal_resonance_forward_validation": {
       "aligned_internal_resonance": {
         "by_horizon": {
@@ -60309,7 +60308,7 @@
       }
     },
     "conclusion": "confidence_not_yet_validated",
-    "generated_at": "2026-09-04T22:27:16.144102+00:00",
+    "generated_at": "2026-09-04T23:15:41.705018+00:00",
     "high_confidence_better_than_low_confidence": false,
     "high_vs_low_comparison_by_horizon": {
       "10d": false,
@@ -62720,7 +62719,7 @@
       "note": "Historical replay cannot upgrade alpha or confidence until forward validation samples mature.",
       "sample_gate": "stronger_evidence"
     },
-    "generated_at": "2026-09-04T22:27:27.382678+00:00",
+    "generated_at": "2026-09-04T23:15:53.662833+00:00",
     "guardrails": [
       "Historical replay is research evaluation only and cannot replace daily forward validation.",
       "Historical replay results must not be described as confirmed alpha.",
@@ -64250,7 +64249,7 @@
   },
   "market_alerts": {
     "disclaimer": "Market alerts are forecast warnings and scenario-confirmation notes only. They are not trading signals or buy/sell/entry/exit guidance.",
-    "generated_at": "2026-09-04T22:27:26.605724+00:00",
+    "generated_at": "2026-09-04T23:15:53.110811+00:00",
     "summary": {
       "alert_count_by_level": {
         "EXTREME": 0,
@@ -67145,7 +67144,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-09-04T22:27:16.130625+00:00",
+      "generated_at": "2026-09-04T23:15:41.694130+00:00",
       "notes": [
         "price/volatility/credit/rates/liquidity currently use public market proxies.",
         "options breadth macro flow are not treated as available unless real feeds are connected.",
@@ -67281,7 +67280,7 @@
       }
     },
     "feature_snapshot_v2": {
-      "generated_at": "2026-09-04T22:27:16.131561+00:00",
+      "generated_at": "2026-09-04T23:15:41.694870+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -67518,7 +67517,7 @@
       },
       "version": "market_intelligence_engine_v2_features"
     },
-    "generated_at": "2026-09-04T22:27:16.132112+00:00",
+    "generated_at": "2026-09-04T23:15:41.695285+00:00",
     "model_confidence_by_symbol": {
       "DIA": {
         "components": {
@@ -67714,7 +67713,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-09-04T22:27:16.140595+00:00",
+      "generated_at": "2026-09-04T23:15:41.702405+00:00",
       "notes": [
         "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
         "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -68498,14 +68497,14 @@
         "finnhub_quote_SPY": {
           "fallback_used": false,
           "latest_date": null,
-          "missing_data": true,
-          "point_in_time_safe": false,
-          "rate_limited": true,
-          "real_data": false,
-          "rows": 0,
+          "missing_data": false,
+          "point_in_time_safe": true,
+          "rate_limited": false,
+          "real_data": true,
+          "rows": 1,
           "source": "finnhub",
-          "stale_data": false,
-          "status": "rate_limited",
+          "stale_data": true,
+          "status": "stale",
           "symbol": "finnhub_quote_SPY"
         },
         "finnhub_rates_data": {
@@ -68730,7 +68729,7 @@
         "fallback_used": true,
         "finnhub_available": true,
         "finnhub_missing": false,
-        "finnhub_rate_limited": true,
+        "finnhub_rate_limited": false,
         "flow_available": true,
         "flow_proxy_only": true,
         "flow_required": true,
@@ -68739,7 +68738,6 @@
         "latest_date": "2026-09-04",
         "missing_data": true,
         "missing_key_sources": [
-          "finnhub_quote_SPY",
           "finnhub_candle_SPY",
           "finnhub_candle_QQQ",
           "finnhub_candle_IWM",
@@ -68844,7 +68842,7 @@
       }
     },
     "feature_snapshot_v3": {
-      "generated_at": "2026-09-04T22:27:16.137385+00:00",
+      "generated_at": "2026-09-04T23:15:41.699496+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -69640,8 +69638,8 @@
             "ig_oas_20d_change": 0.030000000000000027
           },
           "daily_market_brief": {
-            "brief": "Finnhub quote unavailable; news risk 30%; macro event risk flagged; rates pressure 17%.",
-            "finnhub_quote_available": false,
+            "brief": "Finnhub quote 770.19; news risk 30%; macro event risk flagged; rates pressure 17%.",
+            "finnhub_quote_available": true,
             "macro_event_risk_flag": true,
             "news_risk_score": 0.3,
             "rates_pressure_score": 0.17256576405638377,
@@ -69650,11 +69648,11 @@
           "finnhub": {
             "candle_status": "failed",
             "news_sentiment_status": "failed",
-            "quote_change_percent": null,
-            "quote_previous_close": null,
-            "quote_price": null,
+            "quote_change_percent": -0.3854,
+            "quote_previous_close": 773.17,
+            "quote_price": 770.19,
             "quote_source": "finnhub",
-            "quote_status": "rate_limited",
+            "quote_status": "available",
             "sentiment_score": null
           },
           "flow_positioning_proxy": {
@@ -69798,8 +69796,8 @@
       "finnhub_cache_used": false,
       "finnhub_failed_requests": 9,
       "finnhub_missing": false,
-      "finnhub_rate_limited": true,
-      "finnhub_successful_requests": 6
+      "finnhub_rate_limited": false,
+      "finnhub_successful_requests": 7
     },
     "flow_status": {
       "average_flow_quality_score": 100.0,
@@ -69829,18 +69827,18 @@
       "fred_missing": false,
       "fred_rate_limited": false,
       "fred_successful_series": [
-        "HY_OAS",
-        "DGS10",
-        "BAA_SPREAD",
         "DGS2",
-        "FINANCIAL_STRESS",
         "DGS3MO",
-        "RECESSION",
+        "BAA_SPREAD",
         "IG_OAS",
-        "DFII10"
+        "FINANCIAL_STRESS",
+        "RECESSION",
+        "HY_OAS",
+        "DFII10",
+        "DGS10"
       ]
     },
-    "generated_at": "2026-09-04T22:27:16.144120+00:00",
+    "generated_at": "2026-09-04T23:15:41.705033+00:00",
     "high_confidence_signal_report": {
       "by_bucket": {
         "low_confidence_reference": {
@@ -70454,7 +70452,7 @@
         }
       },
       "conclusion": "confidence_not_yet_validated",
-      "generated_at": "2026-09-04T22:27:16.144102+00:00",
+      "generated_at": "2026-09-04T23:15:41.705018+00:00",
       "high_confidence_better_than_low_confidence": false,
       "high_vs_low_comparison_by_horizon": {
         "10d": false,
@@ -71217,7 +71215,7 @@
         "evidence_note": "Forward-only breadth attribution is still below the minimum sample gate; these buckets are tracked but not proof.",
         "status": "not_enough_forward_samples"
       },
-      "generated_at": "2026-09-04T22:27:26.594066Z",
+      "generated_at": "2026-09-04T23:15:53.101854Z",
       "notes": [
         "This audit compares the same run with true breadth provider disabled vs enabled.",
         "The audit does not change Alpha v1 and does not prove tradable alpha.",
@@ -71487,7 +71485,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-09-04T22:27:16.144812+00:00",
+      "generated_at": "2026-09-04T23:15:41.705588+00:00",
       "notes": [
         "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
         "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -72272,14 +72270,14 @@
         "finnhub_quote_SPY": {
           "fallback_used": false,
           "latest_date": null,
-          "missing_data": true,
-          "point_in_time_safe": false,
-          "rate_limited": true,
-          "real_data": false,
-          "rows": 0,
+          "missing_data": false,
+          "point_in_time_safe": true,
+          "rate_limited": false,
+          "real_data": true,
+          "rows": 1,
           "source": "finnhub",
-          "stale_data": false,
-          "status": "rate_limited",
+          "stale_data": true,
+          "status": "stale",
           "symbol": "finnhub_quote_SPY"
         },
         "finnhub_rates_data": {
@@ -72536,7 +72534,7 @@
         "fallback_used": true,
         "finnhub_available": true,
         "finnhub_missing": false,
-        "finnhub_rate_limited": true,
+        "finnhub_rate_limited": false,
         "flow_available": true,
         "flow_provider_status": "proxy",
         "flow_proxy_only": true,
@@ -72614,15 +72612,15 @@
         "fred_rate_limited": false,
         "fred_required": true,
         "fred_successful_series": [
-          "HY_OAS",
-          "DGS10",
-          "BAA_SPREAD",
           "DGS2",
-          "FINANCIAL_STRESS",
           "DGS3MO",
-          "RECESSION",
+          "BAA_SPREAD",
           "IG_OAS",
-          "DFII10"
+          "FINANCIAL_STRESS",
+          "RECESSION",
+          "HY_OAS",
+          "DFII10",
+          "DGS10"
         ],
         "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-09-04。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
         "gamma_available": false,
@@ -72632,7 +72630,6 @@
         "latest_market_date": "2026-09-04",
         "missing_data": true,
         "missing_key_sources": [
-          "finnhub_quote_SPY",
           "finnhub_candle_SPY",
           "finnhub_candle_QQQ",
           "finnhub_candle_IWM",
@@ -72657,7 +72654,7 @@
           "event_detection_confidence": 70,
           "event_risk_level": "high",
           "headline_count": 40,
-          "last_update": "2026-09-04T22:27:16.151374+00:00",
+          "last_update": "2026-09-04T23:15:41.710523+00:00",
           "major_event_count": 12,
           "missing_reason": null,
           "news_direction": "risk_off",
@@ -72793,7 +72790,7 @@
       "available": true,
       "cache_used": false,
       "configured": true,
-      "rate_limited": true
+      "rate_limited": false
     },
     "fred_effect_summary": {
       "data_completeness_delta": 6,
@@ -72868,18 +72865,18 @@
       "fallback_used": false,
       "rate_limited": false,
       "successful_series": [
-        "HY_OAS",
-        "DGS10",
-        "BAA_SPREAD",
         "DGS2",
-        "FINANCIAL_STRESS",
         "DGS3MO",
-        "RECESSION",
+        "BAA_SPREAD",
         "IG_OAS",
-        "DFII10"
+        "FINANCIAL_STRESS",
+        "RECESSION",
+        "HY_OAS",
+        "DFII10",
+        "DGS10"
       ]
     },
-    "generated_at": "2026-09-04T22:27:16.151360+00:00",
+    "generated_at": "2026-09-04T23:15:41.710511+00:00",
     "high_confidence_edge_report": {
       "breadth_forward_validation": {
         "bounce_with_breadth_support": {
@@ -74150,7 +74147,7 @@
       },
       "forward_completed_sample_size": 0,
       "forward_validation_notice": "当前高置信度还没有被前向样本验证，不应当视为稳定预测能力。",
-      "generated_at": "2026-09-04T22:27:16.148403+00:00",
+      "generated_at": "2026-09-04T23:15:41.708243+00:00",
       "internal_resonance_forward_validation": {
         "aligned_internal_resonance": {
           "by_horizon": {
@@ -74539,7 +74536,7 @@
       },
       "event_detection_confidence": 70,
       "event_risk_level": "high",
-      "generated_at": "2026-09-04T22:27:16.151374+00:00",
+      "generated_at": "2026-09-04T23:15:41.710523+00:00",
       "limits": [
         "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
         "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
@@ -74560,14 +74557,14 @@
             "TLT"
           ],
           "confidence": "high",
-          "confidence_score": 80,
+          "confidence_score": 79,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 92,
+          "freshness_score": 90,
           "headline": "U.S. approves potential sale of Joint Direct Attack Munitions-Extend Range to Saudi Arabia for $5 billion - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -74594,7 +74591,7 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 82,
+          "freshness_score": 80,
           "headline": "Only a quarter of Americans think Iran war is worthwhile, Reuters/Ipsos poll shows - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -74614,14 +74611,14 @@
             "TLT"
           ],
           "confidence": "high",
-          "confidence_score": 76,
+          "confidence_score": 75,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 77,
+          "freshness_score": 75,
           "headline": "Diesel hits record high as Ukraine and Iran wars knock out refineries, fueling inflation worries",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -74648,7 +74645,7 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 75,
+          "freshness_score": 73,
           "headline": "The big business of personal protection: How private security became a $50 billion industry",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -74675,7 +74672,7 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 46,
+          "freshness_score": 44,
           "headline": "US probes Iran wedding strike that analysis shows was likely direct hit by US munition - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -74698,7 +74695,7 @@
           "event_type": "inflation_hot",
           "expected_horizon": "1d-20d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 78,
+          "freshness_score": 76,
           "headline": "2-year yield rises to highest since January 2025 after hot jobs report boosts expectations that the Fed could raise rates",
           "importance_score": 85,
           "narrative": "inflation_fear",
@@ -74725,7 +74722,7 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 42,
+          "freshness_score": 40,
           "headline": "Deadly strike on Iranian wedding was likely a direct hit by a US munition, analysis shows - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -74752,7 +74749,7 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 42,
+          "freshness_score": 40,
           "headline": "Vance says Iran conflict is not a war, declines to offer timeline for end - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -74779,7 +74776,7 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 39,
+          "freshness_score": 37,
           "headline": "Iran buries victims of reported US wedding attack, fires on Kuwait - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -74806,7 +74803,7 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 38,
+          "freshness_score": 36,
           "headline": "Vance: US probing airstrike that Iran says hit a wedding party - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -74826,14 +74823,14 @@
             "TLT"
           ],
           "confidence": "medium",
-          "confidence_score": 64,
+          "confidence_score": 63,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 29,
+          "freshness_score": 27,
           "headline": "Automakers urge Congress to permanently ban Chinese connected vehicles in U.S.",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -74857,14 +74854,14 @@
             "NQ=F"
           ],
           "confidence": "medium",
-          "confidence_score": 66,
+          "confidence_score": 65,
           "detected_event_conditions": [
             "geopolitical_risk_easing"
           ],
           "event_type": "geopolitical_risk_easing",
           "expected_horizon": "1d-5d",
           "expected_market_direction": "risk_on",
-          "freshness_score": 37,
+          "freshness_score": 35,
           "headline": "Oil prices mixed as investors weigh Middle East escalation, chance of Russia-Ukraine peace deal - Reuters",
           "importance_score": 94,
           "narrative": "geopolitics_easing_risk_on",
@@ -77122,7 +77119,7 @@
         "status": "insufficient_forward_samples"
       }
     },
-    "generated_at": "2026-09-04T22:27:27.481484+00:00",
+    "generated_at": "2026-09-04T23:15:53.736799+00:00",
     "guardrails": [
       "Alpha v1 threshold remains frozen at 0.32534311.",
       "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -77949,7 +77946,7 @@
   },
   "model_promotion_status": {
     "active_model_version": "baseline_v1",
-    "generated_at": "2026-09-04T22:27:27.481573+00:00",
+    "generated_at": "2026-09-04T23:15:53.736871+00:00",
     "guardrails": [
       "Alpha v1 threshold remains frozen at 0.32534311.",
       "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -78126,7 +78123,7 @@
     },
     "event_detection_confidence": 70,
     "event_risk_level": "high",
-    "generated_at": "2026-09-04T22:27:16.151374+00:00",
+    "generated_at": "2026-09-04T23:15:41.710523+00:00",
     "limits": [
       "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
       "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
@@ -78147,14 +78144,14 @@
           "TLT"
         ],
         "confidence": "high",
-        "confidence_score": 80,
+        "confidence_score": 79,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 92,
+        "freshness_score": 90,
         "headline": "U.S. approves potential sale of Joint Direct Attack Munitions-Extend Range to Saudi Arabia for $5 billion - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -78181,7 +78178,7 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 82,
+        "freshness_score": 80,
         "headline": "Only a quarter of Americans think Iran war is worthwhile, Reuters/Ipsos poll shows - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -78201,14 +78198,14 @@
           "TLT"
         ],
         "confidence": "high",
-        "confidence_score": 76,
+        "confidence_score": 75,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 77,
+        "freshness_score": 75,
         "headline": "Diesel hits record high as Ukraine and Iran wars knock out refineries, fueling inflation worries",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -78235,7 +78232,7 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 75,
+        "freshness_score": 73,
         "headline": "The big business of personal protection: How private security became a $50 billion industry",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -78262,7 +78259,7 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 46,
+        "freshness_score": 44,
         "headline": "US probes Iran wedding strike that analysis shows was likely direct hit by US munition - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -78285,7 +78282,7 @@
         "event_type": "inflation_hot",
         "expected_horizon": "1d-20d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 78,
+        "freshness_score": 76,
         "headline": "2-year yield rises to highest since January 2025 after hot jobs report boosts expectations that the Fed could raise rates",
         "importance_score": 85,
         "narrative": "inflation_fear",
@@ -78312,7 +78309,7 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 42,
+        "freshness_score": 40,
         "headline": "Deadly strike on Iranian wedding was likely a direct hit by a US munition, analysis shows - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -78339,7 +78336,7 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 42,
+        "freshness_score": 40,
         "headline": "Vance says Iran conflict is not a war, declines to offer timeline for end - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -78366,7 +78363,7 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 39,
+        "freshness_score": 37,
         "headline": "Iran buries victims of reported US wedding attack, fires on Kuwait - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -78393,7 +78390,7 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 38,
+        "freshness_score": 36,
         "headline": "Vance: US probing airstrike that Iran says hit a wedding party - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -78413,14 +78410,14 @@
           "TLT"
         ],
         "confidence": "medium",
-        "confidence_score": 64,
+        "confidence_score": 63,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 29,
+        "freshness_score": 27,
         "headline": "Automakers urge Congress to permanently ban Chinese connected vehicles in U.S.",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -78444,14 +78441,14 @@
           "NQ=F"
         ],
         "confidence": "medium",
-        "confidence_score": 66,
+        "confidence_score": 65,
         "detected_event_conditions": [
           "geopolitical_risk_easing"
         ],
         "event_type": "geopolitical_risk_easing",
         "expected_horizon": "1d-5d",
         "expected_market_direction": "risk_on",
-        "freshness_score": 37,
+        "freshness_score": 35,
         "headline": "Oil prices mixed as investors weigh Middle East escalation, chance of Russia-Ukraine peace deal - Reuters",
         "importance_score": 94,
         "narrative": "geopolitics_easing_risk_on",
@@ -78851,7 +78848,7 @@
     "version": "news_event_intelligence_v1"
   },
   "options_status": {
-    "generated_at": "2026-09-04T22:27:08.876379+00:00",
+    "generated_at": "2026-09-04T23:15:34.766953+00:00",
     "market": {
       "failed_bounce_options_risk": 0.2644,
       "gamma_exposure": null,
@@ -79142,10 +79139,10 @@
       "can_append_forecast_record": true,
       "can_backfill_completed_outcomes": true,
       "current_date": "2026-09-04",
-      "current_time_us_eastern": "2026-09-04T18:27:26.605812-04:00",
+      "current_time_us_eastern": "2026-09-04T19:15:53.110882-04:00",
       "data_freshness_status": "fresh",
       "expected_latest_trading_date": "2026-09-04",
-      "generated_at": "2026-09-04T22:27:26.605812+00:00",
+      "generated_at": "2026-09-04T23:15:53.110882+00:00",
       "guardrails": [
         "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
         "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -79884,13 +79881,13 @@
         "finnhub_quote_SPY": {
           "fallback_used": false,
           "latest_date": null,
-          "missing_data": true,
-          "point_in_time_safe": false,
-          "real_data": false,
-          "rows": 0,
+          "missing_data": false,
+          "point_in_time_safe": true,
+          "real_data": true,
+          "rows": 1,
           "source": "finnhub",
-          "stale_data": false,
-          "status": "rate_limited",
+          "stale_data": true,
+          "status": "stale",
           "symbol": "finnhub_quote_SPY"
         },
         "finnhub_rates_data": {
@@ -80106,7 +80103,7 @@
       "fallback_used": true,
       "finnhub_available": true,
       "finnhub_missing": false,
-      "finnhub_rate_limited": true,
+      "finnhub_rate_limited": false,
       "flow_available": true,
       "flow_provider_status": "proxy",
       "flow_proxy_only": true,
@@ -80184,15 +80181,15 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
-        "HY_OAS",
-        "DGS10",
-        "BAA_SPREAD",
         "DGS2",
-        "FINANCIAL_STRESS",
         "DGS3MO",
-        "RECESSION",
+        "BAA_SPREAD",
         "IG_OAS",
-        "DFII10"
+        "FINANCIAL_STRESS",
+        "RECESSION",
+        "HY_OAS",
+        "DFII10",
+        "DGS10"
       ],
       "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-09-04。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
       "gamma_available": false,
@@ -80202,7 +80199,6 @@
       "latest_market_date": "2026-09-04",
       "missing_data": true,
       "missing_key_sources": [
-        "finnhub_quote_SPY",
         "finnhub_candle_SPY",
         "finnhub_candle_QQQ",
         "finnhub_candle_IWM",
@@ -80227,7 +80223,7 @@
         "event_detection_confidence": 70,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-09-04T22:27:16.151374+00:00",
+        "last_update": "2026-09-04T23:15:41.710523+00:00",
         "major_event_count": 12,
         "missing_reason": null,
         "news_direction": "risk_off",
@@ -83141,14 +83137,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 80,
+              "confidence_score": 79,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 92,
+              "freshness_score": 90,
               "headline": "U.S. approves potential sale of Joint Direct Attack Munitions-Extend Range to Saudi Arabia for $5 billion - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -83175,7 +83171,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 82,
+              "freshness_score": 80,
               "headline": "Only a quarter of Americans think Iran war is worthwhile, Reuters/Ipsos poll shows - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -83195,14 +83191,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 77,
+              "freshness_score": 75,
               "headline": "Diesel hits record high as Ukraine and Iran wars knock out refineries, fueling inflation worries",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -83229,7 +83225,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 73,
               "headline": "The big business of personal protection: How private security became a $50 billion industry",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -83256,7 +83252,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 46,
+              "freshness_score": 44,
               "headline": "US probes Iran wedding strike that analysis shows was likely direct hit by US munition - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -83279,7 +83275,7 @@
               "event_type": "inflation_hot",
               "expected_horizon": "1d-20d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 78,
+              "freshness_score": 76,
               "headline": "2-year yield rises to highest since January 2025 after hot jobs report boosts expectations that the Fed could raise rates",
               "importance_score": 85,
               "narrative": "inflation_fear",
@@ -85618,14 +85614,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 80,
+              "confidence_score": 79,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 92,
+              "freshness_score": 90,
               "headline": "U.S. approves potential sale of Joint Direct Attack Munitions-Extend Range to Saudi Arabia for $5 billion - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -85652,7 +85648,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 82,
+              "freshness_score": 80,
               "headline": "Only a quarter of Americans think Iran war is worthwhile, Reuters/Ipsos poll shows - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -85672,14 +85668,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 77,
+              "freshness_score": 75,
               "headline": "Diesel hits record high as Ukraine and Iran wars knock out refineries, fueling inflation worries",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -85706,7 +85702,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 73,
               "headline": "The big business of personal protection: How private security became a $50 billion industry",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -85733,7 +85729,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 46,
+              "freshness_score": 44,
               "headline": "US probes Iran wedding strike that analysis shows was likely direct hit by US munition - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -85756,7 +85752,7 @@
               "event_type": "inflation_hot",
               "expected_horizon": "1d-20d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 78,
+              "freshness_score": 76,
               "headline": "2-year yield rises to highest since January 2025 after hot jobs report boosts expectations that the Fed could raise rates",
               "importance_score": 85,
               "narrative": "inflation_fear",
@@ -88073,14 +88069,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 80,
+              "confidence_score": 79,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 92,
+              "freshness_score": 90,
               "headline": "U.S. approves potential sale of Joint Direct Attack Munitions-Extend Range to Saudi Arabia for $5 billion - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -88107,7 +88103,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 82,
+              "freshness_score": 80,
               "headline": "Only a quarter of Americans think Iran war is worthwhile, Reuters/Ipsos poll shows - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -88127,14 +88123,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 77,
+              "freshness_score": 75,
               "headline": "Diesel hits record high as Ukraine and Iran wars knock out refineries, fueling inflation worries",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -88161,7 +88157,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 73,
               "headline": "The big business of personal protection: How private security became a $50 billion industry",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -88188,7 +88184,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 46,
+              "freshness_score": 44,
               "headline": "US probes Iran wedding strike that analysis shows was likely direct hit by US munition - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -88211,7 +88207,7 @@
               "event_type": "inflation_hot",
               "expected_horizon": "1d-20d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 78,
+              "freshness_score": 76,
               "headline": "2-year yield rises to highest since January 2025 after hot jobs report boosts expectations that the Fed could raise rates",
               "importance_score": 85,
               "narrative": "inflation_fear",
@@ -89591,8 +89587,8 @@
             "ig_oas_20d_change": 0.030000000000000027
           },
           "daily_market_brief": {
-            "brief": "Finnhub quote unavailable; news risk 30%; macro event risk flagged; rates pressure 17%.",
-            "finnhub_quote_available": false,
+            "brief": "Finnhub quote 770.19; news risk 30%; macro event risk flagged; rates pressure 17%.",
+            "finnhub_quote_available": true,
             "macro_event_risk_flag": true,
             "news_risk_score": 0.3,
             "rates_pressure_score": 0.17256576405638377,
@@ -89601,11 +89597,11 @@
           "finnhub": {
             "candle_status": "failed",
             "news_sentiment_status": "failed",
-            "quote_change_percent": null,
-            "quote_previous_close": null,
-            "quote_price": null,
+            "quote_change_percent": -0.3854,
+            "quote_previous_close": 773.17,
+            "quote_price": 770.19,
             "quote_source": "finnhub",
-            "quote_status": "rate_limited",
+            "quote_status": "available",
             "sentiment_score": null
           },
           "flow_positioning_proxy": {
@@ -90546,14 +90542,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 80,
+              "confidence_score": 79,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 92,
+              "freshness_score": 90,
               "headline": "U.S. approves potential sale of Joint Direct Attack Munitions-Extend Range to Saudi Arabia for $5 billion - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -90580,7 +90576,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 82,
+              "freshness_score": 80,
               "headline": "Only a quarter of Americans think Iran war is worthwhile, Reuters/Ipsos poll shows - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -90600,14 +90596,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 77,
+              "freshness_score": 75,
               "headline": "Diesel hits record high as Ukraine and Iran wars knock out refineries, fueling inflation worries",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -90634,7 +90630,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 73,
               "headline": "The big business of personal protection: How private security became a $50 billion industry",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -90661,7 +90657,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 46,
+              "freshness_score": 44,
               "headline": "US probes Iran wedding strike that analysis shows was likely direct hit by US munition - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -90684,7 +90680,7 @@
               "event_type": "inflation_hot",
               "expected_horizon": "1d-20d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 78,
+              "freshness_score": 76,
               "headline": "2-year yield rises to highest since January 2025 after hot jobs report boosts expectations that the Fed could raise rates",
               "importance_score": 85,
               "narrative": "inflation_fear",
@@ -91734,7 +91730,7 @@
   },
   "price_volume_structure": {
     "disclaimer": "K线和成交量结构只用于预测确认，不是交易信号、买卖建议或仓位建议。",
-    "generated_at": "2026-09-04T22:27:26.599685+00:00",
+    "generated_at": "2026-09-04T23:15:53.106109+00:00",
     "summary": {
       "average_price_structure_score": 64.75,
       "average_volume_confirmation_score": 37.5,
@@ -92514,10 +92510,10 @@
       "can_append_forecast_record": true,
       "can_backfill_completed_outcomes": true,
       "current_date": "2026-09-04",
-      "current_time_us_eastern": "2026-09-04T18:27:26.605812-04:00",
+      "current_time_us_eastern": "2026-09-04T19:15:53.110882-04:00",
       "data_freshness_status": "fresh",
       "expected_latest_trading_date": "2026-09-04",
-      "generated_at": "2026-09-04T22:27:26.605812+00:00",
+      "generated_at": "2026-09-04T23:15:53.110882+00:00",
       "guardrails": [
         "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
         "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -93256,13 +93252,13 @@
         "finnhub_quote_SPY": {
           "fallback_used": false,
           "latest_date": null,
-          "missing_data": true,
-          "point_in_time_safe": false,
-          "real_data": false,
-          "rows": 0,
+          "missing_data": false,
+          "point_in_time_safe": true,
+          "real_data": true,
+          "rows": 1,
           "source": "finnhub",
-          "stale_data": false,
-          "status": "rate_limited",
+          "stale_data": true,
+          "status": "stale",
           "symbol": "finnhub_quote_SPY"
         },
         "finnhub_rates_data": {
@@ -93478,7 +93474,7 @@
       "fallback_used": true,
       "finnhub_available": true,
       "finnhub_missing": false,
-      "finnhub_rate_limited": true,
+      "finnhub_rate_limited": false,
       "flow_available": true,
       "flow_provider_status": "proxy",
       "flow_proxy_only": true,
@@ -93556,15 +93552,15 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
-        "HY_OAS",
-        "DGS10",
-        "BAA_SPREAD",
         "DGS2",
-        "FINANCIAL_STRESS",
         "DGS3MO",
-        "RECESSION",
+        "BAA_SPREAD",
         "IG_OAS",
-        "DFII10"
+        "FINANCIAL_STRESS",
+        "RECESSION",
+        "HY_OAS",
+        "DFII10",
+        "DGS10"
       ],
       "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-09-04。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
       "gamma_available": false,
@@ -93574,7 +93570,6 @@
       "latest_market_date": "2026-09-04",
       "missing_data": true,
       "missing_key_sources": [
-        "finnhub_quote_SPY",
         "finnhub_candle_SPY",
         "finnhub_candle_QQQ",
         "finnhub_candle_IWM",
@@ -93599,7 +93594,7 @@
         "event_detection_confidence": 70,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-09-04T22:27:16.151374+00:00",
+        "last_update": "2026-09-04T23:15:41.710523+00:00",
         "major_event_count": 12,
         "missing_reason": null,
         "news_direction": "risk_off",
@@ -96158,14 +96153,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 80,
+              "confidence_score": 79,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 92,
+              "freshness_score": 90,
               "headline": "U.S. approves potential sale of Joint Direct Attack Munitions-Extend Range to Saudi Arabia for $5 billion - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -96192,7 +96187,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 82,
+              "freshness_score": 80,
               "headline": "Only a quarter of Americans think Iran war is worthwhile, Reuters/Ipsos poll shows - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -96212,14 +96207,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 77,
+              "freshness_score": 75,
               "headline": "Diesel hits record high as Ukraine and Iran wars knock out refineries, fueling inflation worries",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -96246,7 +96241,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 73,
               "headline": "The big business of personal protection: How private security became a $50 billion industry",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -96273,7 +96268,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 46,
+              "freshness_score": 44,
               "headline": "US probes Iran wedding strike that analysis shows was likely direct hit by US munition - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -96296,7 +96291,7 @@
               "event_type": "inflation_hot",
               "expected_horizon": "1d-20d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 78,
+              "freshness_score": 76,
               "headline": "2-year yield rises to highest since January 2025 after hot jobs report boosts expectations that the Fed could raise rates",
               "importance_score": 85,
               "narrative": "inflation_fear",
@@ -100312,14 +100307,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 80,
+              "confidence_score": 79,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 92,
+              "freshness_score": 90,
               "headline": "U.S. approves potential sale of Joint Direct Attack Munitions-Extend Range to Saudi Arabia for $5 billion - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -100346,7 +100341,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 82,
+              "freshness_score": 80,
               "headline": "Only a quarter of Americans think Iran war is worthwhile, Reuters/Ipsos poll shows - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -100366,14 +100361,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 77,
+              "freshness_score": 75,
               "headline": "Diesel hits record high as Ukraine and Iran wars knock out refineries, fueling inflation worries",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -100400,7 +100395,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 73,
               "headline": "The big business of personal protection: How private security became a $50 billion industry",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -100427,7 +100422,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 46,
+              "freshness_score": 44,
               "headline": "US probes Iran wedding strike that analysis shows was likely direct hit by US munition - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -100450,7 +100445,7 @@
               "event_type": "inflation_hot",
               "expected_horizon": "1d-20d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 78,
+              "freshness_score": 76,
               "headline": "2-year yield rises to highest since January 2025 after hot jobs report boosts expectations that the Fed could raise rates",
               "importance_score": 85,
               "narrative": "inflation_fear",
@@ -104443,14 +104438,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 80,
+              "confidence_score": 79,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 92,
+              "freshness_score": 90,
               "headline": "U.S. approves potential sale of Joint Direct Attack Munitions-Extend Range to Saudi Arabia for $5 billion - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -104477,7 +104472,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 82,
+              "freshness_score": 80,
               "headline": "Only a quarter of Americans think Iran war is worthwhile, Reuters/Ipsos poll shows - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -104497,14 +104492,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 77,
+              "freshness_score": 75,
               "headline": "Diesel hits record high as Ukraine and Iran wars knock out refineries, fueling inflation worries",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -104531,7 +104526,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 73,
               "headline": "The big business of personal protection: How private security became a $50 billion industry",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -104558,7 +104553,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 46,
+              "freshness_score": 44,
               "headline": "US probes Iran wedding strike that analysis shows was likely direct hit by US munition - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -104581,7 +104576,7 @@
               "event_type": "inflation_hot",
               "expected_horizon": "1d-20d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 78,
+              "freshness_score": 76,
               "headline": "2-year yield rises to highest since January 2025 after hot jobs report boosts expectations that the Fed could raise rates",
               "importance_score": 85,
               "narrative": "inflation_fear",
@@ -107189,8 +107184,8 @@
             "ig_oas_20d_change": 0.030000000000000027
           },
           "daily_market_brief": {
-            "brief": "Finnhub quote unavailable; news risk 30%; macro event risk flagged; rates pressure 17%.",
-            "finnhub_quote_available": false,
+            "brief": "Finnhub quote 770.19; news risk 30%; macro event risk flagged; rates pressure 17%.",
+            "finnhub_quote_available": true,
             "macro_event_risk_flag": true,
             "news_risk_score": 0.3,
             "rates_pressure_score": 0.17256576405638377,
@@ -107199,11 +107194,11 @@
           "finnhub": {
             "candle_status": "failed",
             "news_sentiment_status": "failed",
-            "quote_change_percent": null,
-            "quote_previous_close": null,
-            "quote_price": null,
+            "quote_change_percent": -0.3854,
+            "quote_previous_close": 773.17,
+            "quote_price": 770.19,
             "quote_source": "finnhub",
-            "quote_status": "rate_limited",
+            "quote_status": "available",
             "sentiment_score": null
           },
           "flow_positioning_proxy": {
@@ -108592,14 +108587,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 80,
+              "confidence_score": 79,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 92,
+              "freshness_score": 90,
               "headline": "U.S. approves potential sale of Joint Direct Attack Munitions-Extend Range to Saudi Arabia for $5 billion - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -108626,7 +108621,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 82,
+              "freshness_score": 80,
               "headline": "Only a quarter of Americans think Iran war is worthwhile, Reuters/Ipsos poll shows - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -108646,14 +108641,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 76,
+              "confidence_score": 75,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 77,
+              "freshness_score": 75,
               "headline": "Diesel hits record high as Ukraine and Iran wars knock out refineries, fueling inflation worries",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -108680,7 +108675,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 73,
               "headline": "The big business of personal protection: How private security became a $50 billion industry",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -108707,7 +108702,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 46,
+              "freshness_score": 44,
               "headline": "US probes Iran wedding strike that analysis shows was likely direct hit by US munition - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -108730,7 +108725,7 @@
               "event_type": "inflation_hot",
               "expected_horizon": "1d-20d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 78,
+              "freshness_score": 76,
               "headline": "2-year yield rises to highest since January 2025 after hot jobs report boosts expectations that the Fed could raise rates",
               "importance_score": 85,
               "narrative": "inflation_fear",
@@ -111072,7 +111067,7 @@
       },
       "version": "stock_data_provider_v1"
     },
-    "generated_at": "2026-09-04T22:27:27.760489+00:00",
+    "generated_at": "2026-09-04T23:15:53.950704+00:00",
     "guardrails": [
       "This is a probabilistic stock forecast module, not a trading system.",
       "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -111161,7 +111156,7 @@
         },
         "question": "high final_radar_score 是否真的对应更大次日 range？"
       },
-      "generated_at": "2026-09-04T22:27:27.793564+00:00",
+      "generated_at": "2026-09-04T23:15:53.975872+00:00",
       "not_validated_warning": "not_enough_forward_samples",
       "pending_records": 241,
       "risk_score_effectiveness": {
@@ -120046,7 +120041,7 @@
         "top_candidate": "CEG",
         "validation_status": "not_yet_validated"
       },
-      "generated_at": "2026-09-04T22:27:27.783743+00:00",
+      "generated_at": "2026-09-04T23:15:53.968482+00:00",
       "model_version": "stock_baseline_v1",
       "notes": [
         "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -120489,7 +120484,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-09-04T22:27:27.793564+00:00",
+    "generated_at": "2026-09-04T23:15:53.975872+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 241,
     "risk_score_effectiveness": {
@@ -120561,7 +120556,7 @@
       "top_candidate": "CEG",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-09-04T22:27:27.783743+00:00",
+    "generated_at": "2026-09-04T23:15:53.968482+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
