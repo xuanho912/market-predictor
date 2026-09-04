@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-04T16:25:31.541344+00:00`
+- generated_at: `2026-09-04T22:27:16.151374+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `13`
-- event_detection_confidence: `72`
+- major_event_count: `12`
+- event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `True`
-- confirmation_score: `75`
+- confirmation_score: `100`
 
 ## Dashboard Note
 
@@ -24,6 +24,22 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: U.S. approves potential sale of Joint Direct Attack Munitions-Extend Range to Saudi Arabia for $5 billion - Reuters
+- source: Reuters
+- published_at: `2026-09-04T19:12:10+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Only a quarter of Americans think Iran war is worthwhile, Reuters/Ipsos poll shows - Reuters
+- source: Reuters
+- published_at: `2026-09-04T14:56:55+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -54,8 +70,8 @@
 - headline: 2-year yield rises to highest since January 2025 after hot jobs report boosts expectations that the Fed could raise rates
 - source: CNBC
 - published_at: `2026-09-04T13:09:26+00:00`
-- importance_score: `86`
-- confidence: `high`
+- importance_score: `85`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -75,32 +91,16 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Iran buries victims of reported US wedding attack, fires on Kuwait - Reuters
+- source: Reuters
+- published_at: `2026-09-03T20:58:53+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Vance: US probing airstrike that Iran says hit a wedding party - Reuters
 - source: Reuters
 - published_at: `2026-09-03T20:39:36+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Automakers urge Congress to permanently ban Chinese connected vehicles in U.S.
-- source: CNBC
-- published_at: `2026-09-03T16:51:13+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Oil prices mixed as investors weigh Middle East escalation, chance of Russia-Ukraine peace deal - Reuters
-- source: Reuters
-- published_at: `2026-09-03T20:13:57+00:00`
-- importance_score: `95`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US pressure on Iran starting to tell, as sanctions and blockade bite - Reuters
-- source: Reuters
-- published_at: `2026-09-03T14:59:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
