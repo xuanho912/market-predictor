@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-04T00:58:06.283432+00:00`
+- generated_at: `2026-09-04T06:00:06.086594+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
-- event_detection_confidence: `77`
+- major_event_count: `13`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: US probes Iran wedding strike that analysis shows was likely direct hit by US munition - Reuters
+- source: Reuters
+- published_at: `2026-09-03T23:57:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Deadly strike on Iranian wedding was likely a direct hit by a US munition, analysis shows - Reuters
 - source: Reuters
-- published_at: `2026-09-03T23:19:31+00:00`
+- published_at: `2026-09-03T22:13:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -38,14 +46,6 @@
 - headline: Vance says Iran conflict is not a war, declines to offer timeline for end - Reuters
 - source: Reuters
 - published_at: `2026-09-03T22:10:23+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran buries victims of reported US wedding attack, fires on Kuwait - Reuters
-- source: Reuters
-- published_at: `2026-09-03T20:58:53+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -62,7 +62,7 @@
 - headline: Oil prices mixed as investors weigh Middle East escalation, chance of Russia-Ukraine peace deal - Reuters
 - source: Reuters
 - published_at: `2026-09-03T20:13:57+00:00`
-- importance_score: `99`
+- importance_score: `98`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -71,7 +71,7 @@
 - source: CNBC
 - published_at: `2026-09-03T16:51:13+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -79,7 +79,7 @@
 - source: Reuters
 - published_at: `2026-09-03T15:04:15+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -87,7 +87,7 @@
 - source: Reuters
 - published_at: `2026-09-03T13:59:28+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -103,4 +103,4 @@
 - source: Reuters
 - published_at: `2026-09-03T13:36:18+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
