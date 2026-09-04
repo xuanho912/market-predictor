@@ -1,6 +1,6 @@
 # Forecast Deviation Review
 
-Generated at: `2026-09-04T08:17:16.214173+00:00`
+Generated at: `2026-09-04T16:25:43.741608+00:00`
 
 This report reviews forecast-vs-actual deviations after horizons complete. It is not a trading, PnL or execution report.
 
@@ -13,13 +13,13 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - material_deviation_count: `559`
 - latest_forecast_date: `2026-09-03`
 - latest_reviewed_forecast_date: `2026-09-02`
-- latest_market_date: `2026-09-03`
+- latest_market_date: `2026-09-04`
 - data_freshness_status: `market_open_unconfirmed`
 - largest_absolute_error: `0.147145`
 - dominant_error_theme: `news_data_gap_limited_attribution`
 - evidence_level: `stronger_evidence`
 - validation_status: `early_evidence`
-- update_blockers: `[{'reason': 'market_open_unconfirmed', 'detail': '当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-09-03，最近完整收盘交易日为 2026-09-03；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。'}, {'reason': 'no_future_market_close_yet', 'detail': 'Latest market date 2026-09-03 is not after latest forecast date 2026-09-03, so no completed 1d/3d/5d outcome can be scored yet.'}]`
+- update_blockers: `[{'reason': 'market_open_unconfirmed', 'detail': '当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-09-04，最近完整收盘交易日为 2026-09-03；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。'}]`
 - correction_policy: `past_forecasts_are_not_rewritten_only_actuals_and_error_fields_are_backfilled`
 - model_learning_status: `lessons_ready_for_shadow_challenger`
 
@@ -208,7 +208,7 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - risk_scenario: `bearish_path`
 - expected_return: `0.032669`
 - actual_return: `-0.00477`
-- forecast_error: `-0.037439`
+- forecast_error: `-0.03744`
 - severity: `large`
 - primary_hit: `False`
 - best_matching_scenario: `bearish_path`
