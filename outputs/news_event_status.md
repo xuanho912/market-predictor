@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-03T23:35:42.893307+00:00`
+- generated_at: `2026-09-04T00:31:15.743943+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `12`
-- event_detection_confidence: `78`
+- event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -29,7 +29,7 @@
 
 - headline: Deadly strike on Iranian wedding was likely a direct hit by a US munition, analysis shows - Reuters
 - source: Reuters
-- published_at: `2026-09-03T22:51:09+00:00`
+- published_at: `2026-09-03T23:19:31+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -43,17 +43,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Vance: US probing airstrike that Iran says hit a wedding party - Reuters
+- headline: Iran buries victims of reported US wedding attack, fires on Kuwait - Reuters
 - source: Reuters
-- published_at: `2026-09-03T20:39:36+00:00`
+- published_at: `2026-09-03T20:58:53+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iran buries victims of reported US wedding attack, fires on Kuwait - Reuters
+- headline: Vance: US probing airstrike that Iran says hit a wedding party - Reuters
 - source: Reuters
-- published_at: `2026-09-03T20:12:07+00:00`
+- published_at: `2026-09-03T20:39:36+00:00`
 - importance_score: `100`
 - confidence: `high`
 

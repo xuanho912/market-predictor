@@ -1,6 +1,6 @@
 # Forecast Deviation Review
 
-Generated at: `2026-09-03T23:35:53.458510+00:00`
+Generated at: `2026-09-04T00:31:26.573865+00:00`
 
 This report reviews forecast-vs-actual deviations after horizons complete. It is not a trading, PnL or execution report.
 
@@ -208,7 +208,7 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - risk_scenario: `bearish_path`
 - expected_return: `0.032669`
 - actual_return: `-0.00477`
-- forecast_error: `-0.03744`
+- forecast_error: `-0.037439`
 - severity: `large`
 - primary_hit: `False`
 - best_matching_scenario: `bearish_path`
