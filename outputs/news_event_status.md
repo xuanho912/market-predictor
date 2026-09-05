@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-05T00:55:28.601014+00:00`
+- generated_at: `2026-09-05T05:48:47.263863+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `13`
-- event_detection_confidence: `70`
+- major_event_count: `14`
+- event_detection_confidence: `66`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,14 +27,6 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil ends week higher on renewed US-Iran strikes, diesel hits record - Reuters
-- source: Reuters
-- published_at: `2026-09-04T20:30:21+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
 - headline: U.S. approves potential sale of Joint Direct Attack Munitions-Extend Range to Saudi Arabia for $5 billion - Reuters
 - source: Reuters
 - published_at: `2026-09-04T19:12:10+00:00`
@@ -47,7 +39,7 @@
 - source: Reuters
 - published_at: `2026-09-04T14:56:55+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -62,6 +54,22 @@
 - headline: The big business of personal protection: How private security became a $50 billion industry
 - source: CNBC
 - published_at: `2026-09-04T11:57:48+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil ends week higher on renewed US-Iran strikes, diesel hits record - Reuters
+- source: Reuters
+- published_at: `2026-09-04T01:28:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: OpenAI unveils GPT-6 Astra model with cyber guardrails
+- source: Bloomberg
+- published_at: `2026-09-04T01:15:14+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -89,18 +97,10 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### inflation_hot / risk_off
-
-- headline: 2-year yield rises to highest since January 2025 after hot jobs report boosts expectations that the Fed could raise rates
-- source: CNBC
-- published_at: `2026-09-04T13:09:26+00:00`
-- importance_score: `84`
-- confidence: `medium`
-
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iran buries victims of reported US wedding attack, fires on Kuwait - Reuters
+- headline: Explainer: Ali al-Taher ridge emerges as flashpoint in Israel-Hezbollah war - Reuters
 - source: Reuters
-- published_at: `2026-09-03T20:58:53+00:00`
+- published_at: `2026-09-03T21:52:43+00:00`
 - importance_score: `100`
 - confidence: `medium`
