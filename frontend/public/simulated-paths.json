@@ -5,10 +5,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-09-05",
-    "current_time_us_eastern": "2026-09-05T01:48:57.404885-04:00",
+    "current_time_us_eastern": "2026-09-05T03:54:40.755506-04:00",
     "data_freshness_status": "market_closed",
     "expected_latest_trading_date": "2026-09-04",
-    "generated_at": "2026-09-05T05:48:57.404885+00:00",
+    "generated_at": "2026-09-05T07:54:40.755506+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -939,7 +939,7 @@
     },
     "stale_days": 0,
     "version": "data_freshness_gate_v3",
-    "warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-09-04 的数据。 当前美东时间 2026-09-05 01:48。"
+    "warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-09-04 的数据。 当前美东时间 2026-09-05 03:54。"
   },
   "data_quality_summary": {
     "average_breadth_quality_score": 67.0,
@@ -1047,17 +1047,17 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "IG_OAS",
-      "DGS3MO",
-      "BAA_SPREAD",
-      "HY_OAS",
       "DGS10",
+      "BAA_SPREAD",
+      "IG_OAS",
       "DGS2",
-      "DFII10",
+      "HY_OAS",
       "FINANCIAL_STRESS",
-      "RECESSION"
+      "DGS3MO",
+      "RECESSION",
+      "DFII10"
     ],
-    "freshness_warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-09-04 的数据。 当前美东时间 2026-09-05 01:48。",
+    "freshness_warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-09-04 的数据。 当前美东时间 2026-09-05 03:54。",
     "gamma_available": false,
     "gamma_exposure_available": false,
     "latest_confirmed_market_date": "2026-09-04",
@@ -1086,10 +1086,10 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 66,
+      "event_detection_confidence": 64,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-09-05T05:48:47.263863+00:00",
+      "last_update": "2026-09-05T07:54:30.118332+00:00",
       "major_event_count": 14,
       "missing_reason": null,
       "news_direction": "risk_off",
@@ -1171,7 +1171,7 @@
           "event_type": "geopolitical_risk_easing",
           "expected_market_direction": "risk_on",
           "headline": "Oil prices mixed as investors weigh Middle East escalation, chance of Russia-Ukraine peace deal - Reuters",
-          "importance_score": 92,
+          "importance_score": 91,
           "published_at": "2026-09-03T20:13:57+00:00",
           "source": "Reuters"
         }
@@ -1185,7 +1185,7 @@
       "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
       "supporting_headlines": [
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -3647,47 +3647,20 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 75,
+            "freshness_score": 70,
             "headline": "U.S. approves potential sale of Joint Direct Attack Munitions-Extend Range to Saudi Arabia for $5 billion - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-04T19:12:10+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 73,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 64,
-            "headline": "Only a quarter of Americans think Iran war is worthwhile, Reuters/Ipsos poll shows - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-04T14:56:55+00:00",
             "source": "Reuters"
           },
           {
@@ -3710,6 +3683,33 @@
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
             "freshness_score": 59,
+            "headline": "Only a quarter of Americans think Iran war is worthwhile, Reuters/Ipsos poll shows - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-04T14:56:55+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 70,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 54,
             "headline": "Diesel hits record high as Ukraine and Iran wars knock out refineries, fueling inflation worries",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3729,14 +3729,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 71,
+            "confidence_score": 70,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 57,
+            "freshness_score": 52,
             "headline": "The big business of personal protection: How private security became a $50 billion industry",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3756,14 +3756,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 65,
+            "confidence_score": 63,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 32,
+            "freshness_score": 27,
             "headline": "Oil ends week higher on renewed US-Iran strikes, diesel hits record - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3783,14 +3783,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 64,
+            "confidence_score": 63,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 31,
+            "freshness_score": 26,
             "headline": "OpenAI unveils GPT-6 Astra model with cyber guardrails",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3818,7 +3818,7 @@
               "event_type": "geopolitical_risk_easing",
               "expected_market_direction": "risk_on",
               "headline": "Oil prices mixed as investors weigh Middle East escalation, chance of Russia-Ukraine peace deal - Reuters",
-              "importance_score": 92,
+              "importance_score": 91,
               "published_at": "2026-09-03T20:13:57+00:00",
               "source": "Reuters"
             }
@@ -3832,7 +3832,7 @@
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -7800,47 +7800,20 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 75,
+            "freshness_score": 70,
             "headline": "U.S. approves potential sale of Joint Direct Attack Munitions-Extend Range to Saudi Arabia for $5 billion - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-04T19:12:10+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 73,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 64,
-            "headline": "Only a quarter of Americans think Iran war is worthwhile, Reuters/Ipsos poll shows - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-04T14:56:55+00:00",
             "source": "Reuters"
           },
           {
@@ -7863,6 +7836,33 @@
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
             "freshness_score": 59,
+            "headline": "Only a quarter of Americans think Iran war is worthwhile, Reuters/Ipsos poll shows - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-04T14:56:55+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 70,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 54,
             "headline": "Diesel hits record high as Ukraine and Iran wars knock out refineries, fueling inflation worries",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7882,14 +7882,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 71,
+            "confidence_score": 70,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 57,
+            "freshness_score": 52,
             "headline": "The big business of personal protection: How private security became a $50 billion industry",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7909,14 +7909,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 65,
+            "confidence_score": 63,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 32,
+            "freshness_score": 27,
             "headline": "Oil ends week higher on renewed US-Iran strikes, diesel hits record - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7936,14 +7936,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 64,
+            "confidence_score": 63,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 31,
+            "freshness_score": 26,
             "headline": "OpenAI unveils GPT-6 Astra model with cyber guardrails",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7971,7 +7971,7 @@
               "event_type": "geopolitical_risk_easing",
               "expected_market_direction": "risk_on",
               "headline": "Oil prices mixed as investors weigh Middle East escalation, chance of Russia-Ukraine peace deal - Reuters",
-              "importance_score": 92,
+              "importance_score": 91,
               "published_at": "2026-09-03T20:13:57+00:00",
               "source": "Reuters"
             }
@@ -7985,7 +7985,7 @@
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -11930,47 +11930,20 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 75,
+            "freshness_score": 70,
             "headline": "U.S. approves potential sale of Joint Direct Attack Munitions-Extend Range to Saudi Arabia for $5 billion - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-04T19:12:10+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 73,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 64,
-            "headline": "Only a quarter of Americans think Iran war is worthwhile, Reuters/Ipsos poll shows - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-04T14:56:55+00:00",
             "source": "Reuters"
           },
           {
@@ -11993,6 +11966,33 @@
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
             "freshness_score": 59,
+            "headline": "Only a quarter of Americans think Iran war is worthwhile, Reuters/Ipsos poll shows - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-04T14:56:55+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 70,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 54,
             "headline": "Diesel hits record high as Ukraine and Iran wars knock out refineries, fueling inflation worries",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12012,14 +12012,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 71,
+            "confidence_score": 70,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 57,
+            "freshness_score": 52,
             "headline": "The big business of personal protection: How private security became a $50 billion industry",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12039,14 +12039,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 65,
+            "confidence_score": 63,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 32,
+            "freshness_score": 27,
             "headline": "Oil ends week higher on renewed US-Iran strikes, diesel hits record - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12066,14 +12066,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 64,
+            "confidence_score": 63,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 31,
+            "freshness_score": 26,
             "headline": "OpenAI unveils GPT-6 Astra model with cyber guardrails",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12101,7 +12101,7 @@
               "event_type": "geopolitical_risk_easing",
               "expected_market_direction": "risk_on",
               "headline": "Oil prices mixed as investors weigh Middle East escalation, chance of Russia-Ukraine peace deal - Reuters",
-              "importance_score": 92,
+              "importance_score": 91,
               "published_at": "2026-09-03T20:13:57+00:00",
               "source": "Reuters"
             }
@@ -12115,7 +12115,7 @@
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -16078,47 +16078,20 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 75,
+            "freshness_score": 70,
             "headline": "U.S. approves potential sale of Joint Direct Attack Munitions-Extend Range to Saudi Arabia for $5 billion - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-04T19:12:10+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 73,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 64,
-            "headline": "Only a quarter of Americans think Iran war is worthwhile, Reuters/Ipsos poll shows - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-04T14:56:55+00:00",
             "source": "Reuters"
           },
           {
@@ -16141,6 +16114,33 @@
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
             "freshness_score": 59,
+            "headline": "Only a quarter of Americans think Iran war is worthwhile, Reuters/Ipsos poll shows - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-04T14:56:55+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 70,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 54,
             "headline": "Diesel hits record high as Ukraine and Iran wars knock out refineries, fueling inflation worries",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16160,14 +16160,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 71,
+            "confidence_score": 70,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 57,
+            "freshness_score": 52,
             "headline": "The big business of personal protection: How private security became a $50 billion industry",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16187,14 +16187,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 65,
+            "confidence_score": 63,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 32,
+            "freshness_score": 27,
             "headline": "Oil ends week higher on renewed US-Iran strikes, diesel hits record - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16214,14 +16214,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 64,
+            "confidence_score": 63,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 31,
+            "freshness_score": 26,
             "headline": "OpenAI unveils GPT-6 Astra model with cyber guardrails",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16249,7 +16249,7 @@
               "event_type": "geopolitical_risk_easing",
               "expected_market_direction": "risk_on",
               "headline": "Oil prices mixed as investors weigh Middle East escalation, chance of Russia-Ukraine peace deal - Reuters",
-              "importance_score": 92,
+              "importance_score": 91,
               "published_at": "2026-09-03T20:13:57+00:00",
               "source": "Reuters"
             }
@@ -16263,7 +16263,7 @@
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
