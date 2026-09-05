@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-05T07:54:30.118332+00:00`
+- generated_at: `2026-09-05T15:19:28.777851+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `14`
-- event_detection_confidence: `64`
+- major_event_count: `8`
+- event_detection_confidence: `68`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,22 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iranian tanker hit by US attack near Iran's Kharg Island, Tasnim says - Reuters
+- source: Reuters
+- published_at: `2026-09-05T08:51:49+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Israel says it strikes southern Lebanon after Hezbollah drone launch - Reuters
+- source: Reuters
+- published_at: `2026-09-04T21:09:03+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -59,48 +75,16 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil ends week higher on renewed US-Iran strikes, diesel hits record - Reuters
-- source: Reuters
-- published_at: `2026-09-04T01:28:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: OpenAI unveils GPT-6 Astra model with cyber guardrails
+- headline: India’s card use to climb on convenience, inclusion, report says
 - source: Bloomberg
-- published_at: `2026-09-04T01:15:14+00:00`
+- published_at: `2026-09-04T10:31:58+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
+### inflation_hot / risk_off
 
-- headline: US probes Iran wedding strike that analysis shows was likely direct hit by US munition - Reuters
-- source: Reuters
-- published_at: `2026-09-03T23:57:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Deadly strike on Iranian wedding was likely a direct hit by a US munition, analysis shows - Reuters
-- source: Reuters
-- published_at: `2026-09-03T22:13:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Vance says Iran conflict is not a war, declines to offer timeline for end - Reuters
-- source: Reuters
-- published_at: `2026-09-03T22:10:23+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Explainer: Ali al-Taher ridge emerges as flashpoint in Israel-Hezbollah war - Reuters
-- source: Reuters
-- published_at: `2026-09-03T21:52:43+00:00`
-- importance_score: `100`
+- headline: 2-year yield rises to highest since January 2025 after hot jobs report boosts expectations that the Fed could raise rates
+- source: CNBC
+- published_at: `2026-09-04T13:09:26+00:00`
+- importance_score: `81`
 - confidence: `medium`

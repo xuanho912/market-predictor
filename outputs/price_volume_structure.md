@@ -3,7 +3,7 @@
 This report is a forecast-confirmation layer only. It is not a trading system and does not provide buy/sell/entry/exit/PnL guidance.
 
 - version: price_volume_structure_v1
-- generated_at: 2026-09-05T07:54:40.751692+00:00
+- generated_at: 2026-09-05T15:19:38.837556+00:00
 
 | Symbol | Candle | Price structure | Volume confirmation | Reversal | Breakdown risk | Breakout confirmation |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |

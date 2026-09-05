@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-09-05T07:54:41.421426+00:00",
+  "generated_at": "2026-09-05T15:19:40.000981+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-09-05T07:54:41.470738+00:00",
+    "generated_at": "2026-09-05T15:19:40.033712+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 241,
     "risk_score_effectiveness": {
@@ -288,9 +288,9 @@
             }
           ],
           "major_company_headline": "Is Constellation Energy Stock Underperforming the Dow?",
-          "news_count_24h": 2,
+          "news_count_24h": 1,
           "news_count_72h": 9,
-          "news_risk_score": 26.0,
+          "news_risk_score": 18.0,
           "news_sentiment": "positive"
         },
         "price_trend": {
@@ -728,7 +728,7 @@
         "benchmark": "SPY",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.3737,
+        "benchmark_primary_probability": 0.3739,
         "benchmark_primary_scenario": "bearish_path",
         "context": "market_headwind",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -1793,20 +1793,18 @@
           {
             "affected_ticker": "CEG",
             "alert_level": "NO_ALERT",
-            "alert_score": 10.63,
-            "alert_type": "Stock Bounce Setup",
+            "alert_score": 10.6,
+            "alert_type": "Stock Breakdown Warning",
             "confirmation_needed": [
-              "价格站上主路径确认价",
-              "成交量继续确认",
-              "benchmark 不转为 risk-off"
+              "跌破 breakdown level",
+              "下跌放量",
+              "相对强弱继续恶化"
             ],
             "invalidation_conditions": [
-              "跌破主路径失效价",
-              "相对强弱转弱",
-              "大盘 risk alert 升级"
+              "重新站回 breakdown level 上方"
             ],
             "not_trading_advice": true,
-            "one_line_reason": "反抽情景、成交量/相对强弱和大盘背景共同支持时触发。",
+            "one_line_reason": "跌破结构风险、均线压力和下跌延续概率共同上升。",
             "related_price_levels": {
               "breakdown_level": {
                 "confidence": "low",
@@ -1853,18 +1851,20 @@
           {
             "affected_ticker": "CEG",
             "alert_level": "NO_ALERT",
-            "alert_score": 10.6,
-            "alert_type": "Stock Breakdown Warning",
+            "alert_score": 10.55,
+            "alert_type": "Stock Bounce Setup",
             "confirmation_needed": [
-              "跌破 breakdown level",
-              "下跌放量",
-              "相对强弱继续恶化"
+              "价格站上主路径确认价",
+              "成交量继续确认",
+              "benchmark 不转为 risk-off"
             ],
             "invalidation_conditions": [
-              "重新站回 breakdown level 上方"
+              "跌破主路径失效价",
+              "相对强弱转弱",
+              "大盘 risk alert 升级"
             ],
             "not_trading_advice": true,
-            "one_line_reason": "跌破结构风险、均线压力和下跌延续概率共同上升。",
+            "one_line_reason": "反抽情景、成交量/相对强弱和大盘背景共同支持时触发。",
             "related_price_levels": {
               "breakdown_level": {
                 "confidence": "low",
@@ -2331,7 +2331,7 @@
           "news_event": {
             "evidence": "近期公司新闻偏支持",
             "reason": "Is Constellation Energy Stock Underperforming the Dow?",
-            "score": 70.32,
+            "score": 67.76,
             "status": "supportive"
           },
           "options_volatility": {
@@ -2366,7 +2366,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 53.08,
+        "stock_confluence_score": 52.9,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "个股跑赢所属板块",
@@ -2454,55 +2454,55 @@
           "event_risk_flag": "high",
           "headlines": [
             {
-              "datetime": 1788585600,
-              "headline": "Berkshire Hathaway Outperformed the S&P 500 Over a 60-Year Period Under Warren Buffett. Here's the Stock That Could Help Continue the Streak Under Greg Abel.",
+              "datetime": 1788616200,
+              "headline": "If You Buy Amazon With $10,000 at a 10% Discount From Its High, Here's What I Predict It Could Be Worth in 10 Years",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=e7bf3bf26d9bc6fe17eeca3cb1b130164c4d8626df9de9e11b9ff55595a7dbcb"
+              "url": "https://finnhub.io/api/news?id=179ce7ea60cb1e3a0b52854075f1d613a6a13b79a04020e734c882047162f692"
             },
             {
-              "datetime": 1788582900,
-              "headline": "Here's the 1 Crypto I'd Buy If I Could Pick Only One",
+              "datetime": 1788615721,
+              "headline": "The Fed Meets in Two Weeks. Here's the ETF I'd Buy Today Regardless of What It Does.",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=8d614b4e5dffde060c1ff21c078e8f7073bfd97fd2ba511d590b4658ecd2952c"
+              "url": "https://finnhub.io/api/news?id=223f7740745ede02d45adcae48651b3291ca9dabef24593aef2e5b3d1a207477"
             },
             {
-              "datetime": 1788580934,
-              "headline": "Japan, U.S. advance $550 billion investment pact with AI, chips in focus",
+              "datetime": 1788614761,
+              "headline": "Are Stocks Going to Plunge if Congress Is Split Under President Donald Trump? Here's What History Says About Stock Market Returns in This Scenario.",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=c7dc97fa535dc090bc63cd128e31c734698c6bec7cc3916e034de36c578b9437"
+              "url": "https://finnhub.io/api/news?id=aa7e223d57028e16a420878908b2c9fb3dae0b36976367758133ff5c881477f5"
             },
             {
-              "datetime": 1788578100,
-              "headline": "NODE Monthly Commentary: August 2026",
-              "source": "SeekingAlpha",
-              "url": "https://finnhub.io/api/news?id=0671638ebe3a7ea4b86b675c5838f567e53c563f98091f3ea1ed7800a8c8be51"
+              "datetime": 1788613920,
+              "headline": "My Top Nuclear Stock to Buy Right Now (and It's Not Even Close)",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=1136a6054fdc97d1b6787e6d8e5d06fa2fb3c33736c733247e3b5615bd98b5a2"
             },
             {
-              "datetime": 1788575700,
-              "headline": "Honeywell Is Now Three Companies. Here's Which Piece I'd Actually Own.",
+              "datetime": 1788613020,
+              "headline": "Why UiPath Rallied in August",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=a27d21fb8fe0749c92fe9fce7a59f4d3f2048d6a70c14eb816b58bf89f026be6"
+              "url": "https://finnhub.io/api/news?id=8cf3e68786f8a59e47875a077121ccef4c8d3c3a6c42019bbb272e05db11c621"
             },
             {
-              "datetime": 1788575251,
-              "headline": "Why UiPath Stock Plunged Today",
+              "datetime": 1788612924,
+              "headline": "Foxconn expects Q3 to beat market expectations as AI demand stays strong",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=523db478ed122e76e113e3e4734de8bd3d109547d2feaa7f6ddfdd79c2b090cb"
+              "url": "https://finnhub.io/api/news?id=81f4d90543a38b80c9779b9ce4819284fd6925410cdacd4d6df8560daf04d528"
             },
             {
-              "datetime": 1788575054,
-              "headline": "Thinking Machines Lab Seeks $40B Valuation as Nvidia Extends Its Capital Allocator Role Into Model-Space",
+              "datetime": 1788612600,
+              "headline": "History Says That Bitcoin Is an Unbelievable Bargain Right Now",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=67a905d722fae62095fd741e3d2986e00ad34ed43109c5c29eff4a95be6294b0"
+              "url": "https://finnhub.io/api/news?id=1d0878e3cd7af9e76bf3022af2ae236b8f32b8b6eb4438b623533f1b808e7cf5"
             },
             {
-              "datetime": 1788573481,
-              "headline": "Spot Memory Prices Are Running 4 Times Contract Prices. That Is Not What a Cycle Peak Looks Like.",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=bdcf1a6e451c63c1ffa73f84186529cab6d2a311f280b3586230b29b917839dc"
+              "datetime": 1788611923,
+              "headline": "Broadcom’s Upcoming Report Is the AI Infrastructure Trade’s Next Pivotal Test",
+              "source": "ChartMill",
+              "url": "https://finnhub.io/api/news?id=cffa32dda303e57d5a442ce8d33048110d6b08d1386d1412d615619881576e89"
             }
           ],
-          "major_company_headline": "Berkshire Hathaway Outperformed the S&P 500 Over a 60-Year Period Under Warren Buffett. Here's the Stock That Could Help Continue the Streak Under Greg Abel.",
+          "major_company_headline": "If You Buy Amazon With $10,000 at a 10% Discount From Its High, Here's What I Predict It Could Be Worth in 10 Years",
           "news_count_24h": 20,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
@@ -2945,7 +2945,7 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.3807,
+        "benchmark_primary_probability": 0.3808,
         "benchmark_primary_scenario": "bearish_path",
         "context": "market_headwind",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -4364,7 +4364,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Berkshire Hathaway Outperformed the S&P 500 Over a 60-Year Period Under Warren Buffett. Here's the Stock That Could Help Continue the Streak Under Greg Abel.",
+              "公司新闻已接入: If You Buy Amazon With $10,000 at a 10% Discount From Its High, Here's What I Predict It Could Be Worth in 10 Years",
               "新闻情绪偏正",
               "增长数据具备 EPS 上修叙事基础"
             ],
@@ -4482,7 +4482,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金/技术确认较强",
-          "catalyst": "Berkshire Hathaway Outperformed the S&P 500 Over a 60-Year Period Under Warren Buffett. Here's the Stock That Could Help Continue the Streak Under Greg Abel.",
+          "catalyst": "If You Buy Amazon With $10,000 at a 10% Discount From Its High, Here's What I Predict It Could Be Worth in 10 Years",
           "expectation_gap": [
             "收入增长较强，具备正向预期差基础",
             "EPS 增长较强，可能支持盈利上修叙事"
@@ -5121,7 +5121,7 @@
         "benchmark": "IWM",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.3344,
+        "benchmark_primary_probability": 0.3346,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -6834,6 +6834,18 @@
           "event_risk_flag": "high",
           "headlines": [
             {
+              "datetime": 1788600796,
+              "headline": "SpaceX Offers Exponential Upside And Extreme Risk",
+              "source": "SeekingAlpha",
+              "url": "https://finnhub.io/api/news?id=339e975b88d11ac6271667e1618bcc0c0700bb92068e34f677ebb50ec802e5e6"
+            },
+            {
+              "datetime": 1788588765,
+              "headline": "Tesla (TSLA) Faces NHTSA Cybercab Safety Probe After Austin Robotaxi Rollout",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=98377910e8434b013b8b7c19f6ce805898b5483b1ed29bbd218d83ee0a037285"
+            },
+            {
               "datetime": 1788573780,
               "headline": "SpaceX is now in your 401(k), and Musk is the risk",
               "source": "Yahoo",
@@ -6868,21 +6880,9 @@
               "headline": "Volkswagen Targets 10% Margin by 2030 With €135B Plan, 50,000 Job Cuts",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=097b64f506ae901b599f98534aeefd8a718bcd48404c3bfdd42675afbf145a89"
-            },
-            {
-              "datetime": 1788558601,
-              "headline": "From Launch Party to Federal Probe: What Went Wrong With Tesla's Cybercab in 24 Hours",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=c60d480af4ed2a78af0d7e2e7e913ee06adfc9a13b5ce57fc4547f9c586cd7fe"
-            },
-            {
-              "datetime": 1788558303,
-              "headline": "Tesla (TSLA) Falls More Steeply Than Broader Market: What Investors Need to Know",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=d08321505de6b22b47457f27ed25b47254cdcf566153031645707b4b37a014b6"
             }
           ],
-          "major_company_headline": "SpaceX is now in your 401(k), and Musk is the risk",
+          "major_company_headline": "SpaceX Offers Exponential Upside And Extreme Risk",
           "news_count_24h": 20,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
@@ -7314,7 +7314,7 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.3807,
+        "benchmark_primary_probability": 0.3808,
         "benchmark_primary_scenario": "bearish_path",
         "context": "market_headwind",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -8732,7 +8732,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: SpaceX is now in your 401(k), and Musk is the risk"
+              "公司新闻已接入: SpaceX Offers Exponential Upside And Extreme Risk"
             ],
             "max_points": 10,
             "missing_fields": [],
@@ -8849,7 +8849,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "SpaceX is now in your 401(k), and Musk is the risk",
+          "catalyst": "SpaceX Offers Exponential Upside And Extreme Risk",
           "expectation_gap": [
             "暂未看到明确正向预期差证据"
           ],
@@ -8985,7 +8985,7 @@
       "top_candidate": "CEG",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-09-05T07:54:41.465404+00:00",
+    "generated_at": "2026-09-05T15:19:40.023906+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -9007,7 +9007,7 @@
         "candidate_type": "event_driven_move",
         "catalyst_score": 61.23,
         "company_name": "Constellation Energy Corp",
-        "confluence_score": 53.08,
+        "confluence_score": 52.9,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9024,7 +9024,7 @@
           "mid": 298.8,
           "range_pct": 0.0316
         },
-        "final_radar_score": 65.97,
+        "final_radar_score": 65.95,
         "forecast_date": "2026-09-04",
         "invalidation_level": 264.82,
         "last_close": 298.9599914550781,
