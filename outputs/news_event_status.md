@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-04T23:15:41.710523+00:00`
+- generated_at: `2026-09-05T00:28:22.261965+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
+- major_event_count: `13`
 - event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil ends week higher on renewed US-Iran strikes, diesel hits record - Reuters
+- source: Reuters
+- published_at: `2026-09-04T20:30:21+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,7 +63,7 @@
 - source: CNBC
 - published_at: `2026-09-04T11:57:48+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -63,14 +71,6 @@
 - source: Reuters
 - published_at: `2026-09-03T23:57:00+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### inflation_hot / risk_off
-
-- headline: 2-year yield rises to highest since January 2025 after hot jobs report boosts expectations that the Fed could raise rates
-- source: CNBC
-- published_at: `2026-09-04T13:09:26+00:00`
-- importance_score: `85`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
@@ -89,18 +89,18 @@
 - importance_score: `100`
 - confidence: `medium`
 
+### inflation_hot / risk_off
+
+- headline: 2-year yield rises to highest since January 2025 after hot jobs report boosts expectations that the Fed could raise rates
+- source: CNBC
+- published_at: `2026-09-04T13:09:26+00:00`
+- importance_score: `84`
+- confidence: `medium`
+
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Iran buries victims of reported US wedding attack, fires on Kuwait - Reuters
 - source: Reuters
 - published_at: `2026-09-03T20:58:53+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Vance: US probing airstrike that Iran says hit a wedding party - Reuters
-- source: Reuters
-- published_at: `2026-09-03T20:39:36+00:00`
 - importance_score: `100`
 - confidence: `medium`
