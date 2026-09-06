@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-09-05T15:19:40.000981+00:00`
+Generated at: `2026-09-06T15:31:46.039812+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -25,9 +25,9 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `25.8%`
 - secondary: `stock_downside_continuation` / `18.5%`
 - risk: `stock_event_risk` / `15.0%`
-- stock_confluence_score: `52.51` / `mixed`
-- stock_alpha_score_v1: `55.5` / `wait_for_confirmation`
-- 20d_outperformance_probability: `62.9%`
+- stock_confluence_score: `52.32` / `mixed`
+- stock_alpha_score_v1: `53.5` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `62.1%`
 - 60d_expected_return: `-0.8%`
 - risk_reward_ratio: `0.53`
 - strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `25.54`
@@ -54,9 +54,9 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `24.0%`
 - secondary: `stock_downside_continuation` / `17.7%`
 - risk: `stock_event_risk` / `14.8%`
-- stock_confluence_score: `46.3` / `mixed`
-- stock_alpha_score_v1: `12.5` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `49.7%`
+- stock_confluence_score: `44.54` / `weak`
+- stock_alpha_score_v1: `14.5` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `50.5%`
 - 60d_expected_return: `-0.5%`
 - risk_reward_ratio: `0.62`
 - strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `24.43`
@@ -83,9 +83,9 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `24.6%`
 - secondary: `stock_downside_continuation` / `20.3%`
 - risk: `stock_event_risk` / `14.5%`
-- stock_confluence_score: `32.77` / `weak`
-- stock_alpha_score_v1: `3.5` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `39.9%`
+- stock_confluence_score: `33.89` / `weak`
+- stock_alpha_score_v1: `5.5` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `40.7%`
 - 60d_expected_return: `-2.0%`
 - risk_reward_ratio: `0.47`
 - strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `32.35`

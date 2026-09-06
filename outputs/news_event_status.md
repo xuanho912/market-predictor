@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-05T15:19:28.777851+00:00`
+- generated_at: `2026-09-06T15:31:34.688943+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
-- event_detection_confidence: `68`
+- major_event_count: `4`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,64 +27,32 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iranian tanker hit by US attack near Iran's Kharg Island, Tasnim says - Reuters
+- headline: Iran to tackle economic issues, says further attacks will be 'more painful' - Reuters
 - source: Reuters
-- published_at: `2026-09-05T08:51:49+00:00`
+- published_at: `2026-09-06T13:10:32+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Israel says it strikes southern Lebanon after Hezbollah drone launch - Reuters
+- headline: Russia's Lavrov calls accusations of Moscow's involvement in Leipzig drone incident 'start of real war', TASS reports - Reuters
 - source: Reuters
-- published_at: `2026-09-04T21:09:03+00:00`
+- published_at: `2026-09-06T11:29:43+00:00`
 - importance_score: `100`
-- confidence: `medium`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: U.S. approves potential sale of Joint Direct Attack Munitions-Extend Range to Saudi Arabia for $5 billion - Reuters
+- headline: Israeli strikes kill four in southern Lebanon - Reuters
 - source: Reuters
-- published_at: `2026-09-04T19:12:10+00:00`
+- published_at: `2026-09-06T04:15:00+00:00`
 - importance_score: `100`
-- confidence: `medium`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Only a quarter of Americans think Iran war is worthwhile, Reuters/Ipsos poll shows - Reuters
+- headline: US military strikes three Iranian crude oil carriers, Central Command says - Reuters
 - source: Reuters
-- published_at: `2026-09-04T14:56:55+00:00`
+- published_at: `2026-09-05T14:16:10+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Diesel hits record high as Ukraine and Iran wars knock out refineries, fueling inflation worries
-- source: CNBC
-- published_at: `2026-09-04T12:40:43+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: The big business of personal protection: How private security became a $50 billion industry
-- source: CNBC
-- published_at: `2026-09-04T11:57:48+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: India’s card use to climb on convenience, inclusion, report says
-- source: Bloomberg
-- published_at: `2026-09-04T10:31:58+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### inflation_hot / risk_off
-
-- headline: 2-year yield rises to highest since January 2025 after hot jobs report boosts expectations that the Fed could raise rates
-- source: CNBC
-- published_at: `2026-09-04T13:09:26+00:00`
-- importance_score: `81`
 - confidence: `medium`

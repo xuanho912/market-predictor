@@ -1,6 +1,6 @@
 # Breadth Data Status
 
-Generated at: 2026-09-05T15:19:15.111712+00:00
+Generated at: 2026-09-06T15:30:39.886558+00:00
 
 Provider available: True
 True breadth available: False
@@ -26,7 +26,7 @@ Stale data: True
 
 - status: available
 - source: wikipedia-sp500
-- latest_date: 2026-09-02
+- latest_date: 2026-09-04
 - true_breadth: True
 - proxy: False
 - constituents used / expected: 503 / 503
@@ -34,11 +34,11 @@ Stale data: True
 - stale_constituents: False
 - stale_price_data: False
 - percent_above_20d / 50d / 200d: 0.3161 / 0.4533 / 0.6208
-- advancers / decliners / A-D ratio: 157 / 343 / 0.4577
+- advancers / decliners / A-D ratio: 158 / 342 / 0.462
 - new highs/lows 20d: 32 / 157
 - new highs/lows 52w: 7 / 13
-- improvement / deterioration / confirmation / conflict / quality: 14.3 / 100.0 / 30.3 / 85.0 / 100.0
-- internal_resonance: surface_only / score 20.14 / SPY 指数表面强但内部没充分跟上：confirmation 30，conflict 85，RSP/SPY -0.10%，IWM/SPY -1.44%。
+- improvement / deterioration / confirmation / conflict / quality: 14.32 / 100.0 / 30.31 / 85.0 / 100.0
+- internal_resonance: surface_only / score 20.15 / SPY 指数表面强但内部没充分跟上：confirmation 30，conflict 85，RSP/SPY -0.10%，IWM/SPY -1.44%。
 
 ### QQQ
 
