@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-06T15:31:34.688943+00:00`
+- generated_at: `2026-09-07T17:47:44.668713+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `4`
-- event_detection_confidence: `75`
+- major_event_count: `12`
+- event_detection_confidence: `69`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,11 +27,67 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iran to tackle economic issues, says further attacks will be 'more painful' - Reuters
+- headline: UAE says its energy exports will not be 'held hostage' by Iran war - Reuters
 - source: Reuters
-- published_at: `2026-09-06T13:10:32+00:00`
+- published_at: `2026-09-07T13:13:23+00:00`
 - importance_score: `100`
 - confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oman says it evacuated 16 crew members of Saudi Sidr vessel attacked by Iran - Reuters
+- source: Reuters
+- published_at: `2026-09-07T11:04:02+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran warns US energy assets in Gulf are vulnerable after latest clashes - Reuters
+- source: Reuters
+- published_at: `2026-09-07T06:57:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Israeli strikes on southern Lebanese town kill 12 as fears of escalation mount - Reuters
+- source: Reuters
+- published_at: `2026-09-07T06:48:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Ship fuel shortage looms as refiners strained by war favour other products - Reuters
+- source: Reuters
+- published_at: `2026-09-07T03:13:31+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Hormuz traffic dips to lowest since May after US, Iranian strikes on ships - Reuters
+- source: Reuters
+- published_at: `2026-09-06T23:29:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Israeli strike kills a man and his daughter in Gaza, medics say - Reuters
+- source: Reuters
+- published_at: `2026-09-06T15:00:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran to tackle economic issues, says further attacks will be 'more painful' - Reuters
+- source: Reuters
+- published_at: `2026-09-06T11:42:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -39,20 +95,12 @@
 - source: Reuters
 - published_at: `2026-09-06T11:29:43+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Israeli strikes kill four in southern Lebanon - Reuters
+- headline: US pressure on Iran starting to tell, as sanctions and blockade bite - Reuters
 - source: Reuters
-- published_at: `2026-09-06T04:15:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US military strikes three Iranian crude oil carriers, Central Command says - Reuters
-- source: Reuters
-- published_at: `2026-09-05T14:16:10+00:00`
+- published_at: `2026-09-06T07:00:00+00:00`
 - importance_score: `100`
 - confidence: `medium`

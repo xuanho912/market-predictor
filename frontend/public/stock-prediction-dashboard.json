@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-09-06T15:31:46.039812+00:00",
+  "generated_at": "2026-09-07T17:47:56.140685+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-09-06T15:31:46.074410+00:00",
+    "generated_at": "2026-09-07T17:47:56.166959+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 241,
     "risk_score_effectiveness": {
@@ -239,6 +239,30 @@
           "event_risk_flag": "low",
           "headlines": [
             {
+              "datetime": 1788796880,
+              "headline": "These 2 AI Power Stocks Jumped While the S&P 500 Fell",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=250e0c202d257b9ae969ff3e79686ead174aa224264208cf7ecf573d7852cd17"
+            },
+            {
+              "datetime": 1788794525,
+              "headline": "XLU’s AI Power Story Crumbles as Texas Freezes Data-Center Demand",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=650db494d369e4ada2a3b3c0599039820dd4e87a726630033faf8231cd6c6279"
+            },
+            {
+              "datetime": 1788747720,
+              "headline": "Nuclear Stock Face-Off: Is Constellation Energy or Vistra the Better Buy Right Now?",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=063c5b4cd2692c2d40433156cbac158ff765447598d80685e6d1045ff7bdff24"
+            },
+            {
+              "datetime": 1788704700,
+              "headline": "BWX Technologies Already Builds Reactors for the Navy. Why Is It Still the Cheapest Nuclear Stock?",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=402bbe95864e0d1b7071f8958707d135faea734d813a65a4837448196b09d760"
+            },
+            {
               "datetime": 1788640981,
               "headline": "3 Nuclear Stocks to Buy With $2,000 After One Fell 83%",
               "source": "Yahoo",
@@ -261,36 +285,12 @@
               "headline": "Our Pick Of The Best Nuclear Stocks In September 2026",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=08d75bfc387357dede48bb156b7d9a3f5fdeccd4a187d632d2402c907031fdb5"
-            },
-            {
-              "datetime": 1788461430,
-              "headline": "Peter Thiel’s Fund Disclosed $59 Million in This Beaten-Down Power Stock",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=547288cf4e72bed9ef95af281bf693624477a86fcae7beccd6750c26b73ba72a"
-            },
-            {
-              "datetime": 1788456900,
-              "headline": "Better Energy Play: NextEra vs. Constellation Energy",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=19c9550975bd4439dae72428ef3ace69f697fd2aa72c93f59dbfc3671f0e2a3f"
-            },
-            {
-              "datetime": 1788450332,
-              "headline": "Trump Warned Towns They’d End Up Poor Without Data Centers but Berkshire’s CEO Sees a Revolt Growing",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=412e5920b22c08467a5d2dfc98e533405254a25205839f9ab8177149a4ea65e3"
-            },
-            {
-              "datetime": 1788444049,
-              "headline": "Microsoft and Meta Signed Multi-Decade Nuclear Power Deals. These 3 Stocks Supply That Power",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=e0bdf4e075bff2eb19523d11ee6ef673d49c496b45db459aaf5d86b32ddf8af3"
             }
           ],
-          "major_company_headline": "3 Nuclear Stocks to Buy With $2,000 After One Fell 83%",
-          "news_count_24h": 1,
-          "news_count_72h": 7,
-          "news_risk_score": 18.0,
+          "major_company_headline": "These 2 AI Power Stocks Jumped While the S&P 500 Fell",
+          "news_count_24h": 3,
+          "news_count_72h": 5,
+          "news_risk_score": 34.0,
           "news_sentiment": "positive"
         },
         "price_trend": {
@@ -728,7 +728,7 @@
         "benchmark": "SPY",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.3731,
+        "benchmark_primary_probability": 0.3751,
         "benchmark_primary_scenario": "bearish_path",
         "context": "market_headwind",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -1793,18 +1793,20 @@
           {
             "affected_ticker": "CEG",
             "alert_level": "NO_ALERT",
-            "alert_score": 10.6,
-            "alert_type": "Stock Breakdown Warning",
+            "alert_score": 10.69,
+            "alert_type": "Stock Bounce Setup",
             "confirmation_needed": [
-              "跌破 breakdown level",
-              "下跌放量",
-              "相对强弱继续恶化"
+              "价格站上主路径确认价",
+              "成交量继续确认",
+              "benchmark 不转为 risk-off"
             ],
             "invalidation_conditions": [
-              "重新站回 breakdown level 上方"
+              "跌破主路径失效价",
+              "相对强弱转弱",
+              "大盘 risk alert 升级"
             ],
             "not_trading_advice": true,
-            "one_line_reason": "跌破结构风险、均线压力和下跌延续概率共同上升。",
+            "one_line_reason": "反抽情景、成交量/相对强弱和大盘背景共同支持时触发。",
             "related_price_levels": {
               "breakdown_level": {
                 "confidence": "low",
@@ -1851,20 +1853,18 @@
           {
             "affected_ticker": "CEG",
             "alert_level": "NO_ALERT",
-            "alert_score": 10.55,
-            "alert_type": "Stock Bounce Setup",
+            "alert_score": 10.6,
+            "alert_type": "Stock Breakdown Warning",
             "confirmation_needed": [
-              "价格站上主路径确认价",
-              "成交量继续确认",
-              "benchmark 不转为 risk-off"
+              "跌破 breakdown level",
+              "下跌放量",
+              "相对强弱继续恶化"
             ],
             "invalidation_conditions": [
-              "跌破主路径失效价",
-              "相对强弱转弱",
-              "大盘 risk alert 升级"
+              "重新站回 breakdown level 上方"
             ],
             "not_trading_advice": true,
-            "one_line_reason": "反抽情景、成交量/相对强弱和大盘背景共同支持时触发。",
+            "one_line_reason": "跌破结构风险、均线压力和下跌延续概率共同上升。",
             "related_price_levels": {
               "breakdown_level": {
                 "confidence": "low",
@@ -2145,7 +2145,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: 3 Nuclear Stocks to Buy With $2,000 After One Fell 83%",
+              "公司新闻已接入: These 2 AI Power Stocks Jumped While the S&P 500 Fell",
               "新闻情绪偏正",
               "增长数据具备 EPS 上修叙事基础"
             ],
@@ -2265,7 +2265,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金/技术确认较强",
-          "catalyst": "3 Nuclear Stocks to Buy With $2,000 After One Fell 83%",
+          "catalyst": "These 2 AI Power Stocks Jumped While the S&P 500 Fell",
           "expectation_gap": [
             "收入增长较强，具备正向预期差基础"
           ],
@@ -2330,8 +2330,8 @@
           },
           "news_event": {
             "evidence": "近期公司新闻偏支持",
-            "reason": "3 Nuclear Stocks to Buy With $2,000 After One Fell 83%",
-            "score": 67.76,
+            "reason": "These 2 AI Power Stocks Jumped While the S&P 500 Fell",
+            "score": 72,
             "status": "supportive"
           },
           "options_volatility": {
@@ -2366,7 +2366,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 52.9,
+        "stock_confluence_score": 53.2,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "个股跑赢所属板块",
@@ -2454,55 +2454,55 @@
           "event_risk_flag": "high",
           "headlines": [
             {
-              "datetime": 1788691800,
-              "headline": "Nvidia: 70% Growth Guidance Makes This A Strong Buy",
-              "source": "SeekingAlpha",
-              "url": "https://finnhub.io/api/news?id=fdf5d51f3a9aae5ead5a1f75b77a161f52b5363e1555c9b2b80d641dfb56e383"
-            },
-            {
-              "datetime": 1788687000,
-              "headline": "It's Not Worth Buying VOO Or QQQ Anymore",
-              "source": "SeekingAlpha",
-              "url": "https://finnhub.io/api/news?id=44f3fe11fe61c2b78958df16f3840894fea030b437964de520df95e3c637730e"
-            },
-            {
-              "datetime": 1788683400,
-              "headline": "What I Found By Analyzing How Seeking Alpha Analysts Rated The Mag 7",
-              "source": "SeekingAlpha",
-              "url": "https://finnhub.io/api/news?id=eba233ff3388800a9f35b66ef6f1f68eff2afea31b642f11a07505e75d4043ea"
-            },
-            {
-              "datetime": 1788676640,
-              "headline": "Wall Street Week Ahead",
-              "source": "SeekingAlpha",
-              "url": "https://finnhub.io/api/news?id=4de66b41d29d7cc8504256e7940888d6e859ba6698d1168700339f11da8722be"
-            },
-            {
-              "datetime": 1788676462,
-              "headline": "Nvidia's $279 Billion Bet Changes Everything",
-              "source": "SeekingAlpha",
-              "url": "https://finnhub.io/api/news?id=7c894a3a8d556b8d736a1e286c9cc55bc7c49c8203ca8ab596d47ff8eb33e2ab"
-            },
-            {
-              "datetime": 1788666361,
-              "headline": "Michael Burry Says Palantir's Books Look More Like a Consultant's Than a Software Company's",
+              "datetime": 1788799140,
+              "headline": "1 Stat That Makes Costco Hard to Ignore this September",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=5714bc35e234c84b1b652560d57698764d9188429e146be68b146a681ea2b14e"
+              "url": "https://finnhub.io/api/news?id=cb18f714fda83bd60a692cbfddf9735cdf2cc14fe004910f1889b74157a4f418"
             },
             {
-              "datetime": 1788663900,
-              "headline": "August Job Gains Blew Past Estimates. Here's What It Means for the Fed.",
+              "datetime": 1788799020,
+              "headline": "Up 26% in 2026, Is Coca-Cola a Buy Near an All-Time High?",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=e330dd4e192533bbf27c638160cf8547e962f868224141a73f6800aa8abd2e5d"
+              "url": "https://finnhub.io/api/news?id=cc58735c2e268622cdb2b60372b4b56194f0e75eaea492afd4473dc018f3cd58"
             },
             {
-              "datetime": 1788659400,
-              "headline": "Elon Musk Says His New Foundry Can Get Gas Turbines Online 18 Months Faster. Here's What This \"Profound Game Changer\" Would Mean for SpaceX and Tesla.",
+              "datetime": 1788798300,
+              "headline": "What If the Clarity Act Doesn't Pass This Year? Here Are 3 Ways to Bulletproof Your Crypto Portfolio.",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=a7ddfa76d72c5e3c87b19596fd4877ebbb7605cf8cac1b7c04c396777e01024d"
+              "url": "https://finnhub.io/api/news?id=04cf90d6658bb59287c971a7ecbdea09a06259ea4b3739333c02f24ba9cf0d35"
+            },
+            {
+              "datetime": 1788798001,
+              "headline": "What's Wrong With PepsiCo Stock?",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=f5605ef5323b02d2ef76dfd77a0ea86515c9486606a9079d3b9e296b5237daec"
+            },
+            {
+              "datetime": 1788797100,
+              "headline": "Caterpillar's Power Generation Backlog Just Hit $72 Billion. The Construction Cycle Barely Matters Anymore.",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=4a729d7e3a6e8ca0e894aec5b980f5438d95f79edfd86290591b737842e5ffd0"
+            },
+            {
+              "datetime": 1788796822,
+              "headline": "Everyone Is Watching Nvidia. But This Memory Stock Could Be the Next AI Winner",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=609fd8dc7ca05cb32273a37e4bf4e411a5b7aaa02536fa011c5e01eb09f77ee1"
+            },
+            {
+              "datetime": 1788796201,
+              "headline": "Has Nike's Stock Bottomed Out?",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=e975fd90f7b798480493cc314dccf3ca1f6659db1ed151380c8712c762c87b12"
+            },
+            {
+              "datetime": 1788796200,
+              "headline": "Most People Asking \"What Should I Invest In?\" Are Overthinking It. Start With Index Funds and These 4 Stocks.",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=93180b1bc757d71d438da8407a077087cc59e9a4c91348a7be90023013e6e996"
             }
           ],
-          "major_company_headline": "Nvidia: 70% Growth Guidance Makes This A Strong Buy",
+          "major_company_headline": "1 Stat That Makes Costco Hard to Ignore this September",
           "news_count_24h": 20,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
@@ -2945,7 +2945,7 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.3802,
+        "benchmark_primary_probability": 0.3828,
         "benchmark_primary_scenario": "bearish_path",
         "context": "market_headwind",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -4363,7 +4363,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Nvidia: 70% Growth Guidance Makes This A Strong Buy",
+              "公司新闻已接入: 1 Stat That Makes Costco Hard to Ignore this September",
               "增长数据具备 EPS 上修叙事基础"
             ],
             "max_points": 10,
@@ -4480,7 +4480,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金/技术确认较强",
-          "catalyst": "Nvidia: 70% Growth Guidance Makes This A Strong Buy",
+          "catalyst": "1 Stat That Makes Costco Hard to Ignore this September",
           "expectation_gap": [
             "收入增长较强，具备正向预期差基础",
             "EPS 增长较强，可能支持盈利上修叙事"
@@ -4668,58 +4668,58 @@
           "event_risk_flag": "low",
           "headlines": [
             {
+              "datetime": 1788728794,
+              "headline": "NuScale Power (SMR) Could Be 90% Undervalued After Commercialization Progress",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=a9139493ad26baceae94cb2c4146672e5b094f6c6294a2d3130d8bd5d64058d8"
+            },
+            {
+              "datetime": 1788725417,
+              "headline": "What Is NuScale Power (SMR) Trying To Gain From Nuclear Specific AI?",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=33e25238ae18b919a50b1775307657036ac71fc597d9fe72980af7f75b396797"
+            },
+            {
+              "datetime": 1788717000,
+              "headline": "NuScale Power Stock Will Spike 23.7% Over the Next 11 Months According to This Wall Street Analyst",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=fcd1b390e04729e0c3b9786cf114fdd867fe681fcddefd515dd2ded725f1e946"
+            },
+            {
+              "datetime": 1788701100,
+              "headline": "BWX Technologies Already Builds Reactors for the Navy. Why Is It Still the Cheapest Nuclear Stock?",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=402bbe95864e0d1b7071f8958707d135faea734d813a65a4837448196b09d760"
+            },
+            {
+              "datetime": 1788695400,
+              "headline": "NuScale Stock Is Down 83% -- Bargain or Trap? The Honest Answer Will Surprise You.",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=452bc822c13a7cb758f88be0f9d14acadc3e71b544bb9ae42b9ed960deffa2e1"
+            },
+            {
+              "datetime": 1788689520,
+              "headline": "I Own Both Oracle and NuScale for Different Reasons. Here's How They Fit Together.",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=b40793938842a642033beb13c69ba7da156ae6298c41f34398889d0733596bf4"
+            },
+            {
+              "datetime": 1788640981,
+              "headline": "3 Nuclear Stocks to Buy With $2,000 After One Fell 83%",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=323ec3cdc74d087d3e70093648775437fadfdd8f0950b7d7bbfffd8787e275b5"
+            },
+            {
               "datetime": 1788544320,
               "headline": "NuScale Just Turned AI on Itself. Here's What That Means for the Stock.",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=799bbffb04b884a240a42fc375fa1bf25527070ed707b0c3d6028c6cee2506f8"
-            },
-            {
-              "datetime": 1788543300,
-              "headline": "Down 84% From Its High, Is NuScale Power a Bargain Hiding in Plain Sight?",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=ae997966ae0fc26b00f5357552f7f02a24e6cb088a5df3eb8b23f096ccea0728"
-            },
-            {
-              "datetime": 1788535837,
-              "headline": "Why Is NuScale Power (SMR) Up 3% Since Last Earnings Report?",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=cfb17c02ceb08dc0dc45cda2637c3b9e06d6fedfeb0252f0ed96fbb2622af102"
-            },
-            {
-              "datetime": 1788519900,
-              "headline": "3 Reasons Wall Street Analysts Remain Bullish on NuScale Power Stock",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=f1b8f5d684a1b0f325629016faa7a26cab447143d86bd4b1c792f9828f635ade"
-            },
-            {
-              "datetime": 1788505668,
-              "headline": "Jim Cramer: This Health Care Stock Is Pure Spec, The Only Neocloud I Like Is...",
-              "source": "Benzinga",
-              "url": "https://finnhub.io/api/news?id=82094f911787e9e67470b01ea3bb72583e29d456c8d250a9c1feb495f6cd9305"
-            },
-            {
-              "datetime": 1788464100,
-              "headline": "Better Small Modular Reactor Stock to Buy After the Sell-Off: Oklo vs. NuScale Power",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=56d015076ec276a2f260f7eb7fbec75d0efee284f2f227db70c0c99806d26d51"
-            },
-            {
-              "datetime": 1788447000,
-              "headline": "Wall Street Loves NuScale Power. Here's the Risk Analysts Are Glossing Over.",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=93325b6858102f38b0becebcf13c90c033e9e6d37b928462cc9d4dcbd1c30ce6"
-            },
-            {
-              "datetime": 1788366600,
-              "headline": "NuScale Advances Key Safety Component Toward SMR Commercialization",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=26160b39f8e70b2b7961c21f2ba0b0f6c080dfe1226e464acf4a574feb7b4a51"
             }
           ],
-          "major_company_headline": "NuScale Just Turned AI on Itself. Here's What That Means for the Stock.",
-          "news_count_24h": 0,
-          "news_count_72h": 6,
-          "news_risk_score": 15.0,
+          "major_company_headline": "NuScale Power (SMR) Could Be 90% Undervalued After Commercialization Progress",
+          "news_count_24h": 3,
+          "news_count_72h": 8,
+          "news_risk_score": 39.0,
           "news_sentiment": "positive"
         },
         "price_trend": {
@@ -5149,7 +5149,7 @@
         "benchmark": "IWM",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.334,
+        "benchmark_primary_probability": 0.3365,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -6564,7 +6564,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: NuScale Just Turned AI on Itself. Here's What That Means for the Stock.",
+              "公司新闻已接入: NuScale Power (SMR) Could Be 90% Undervalued After Commercialization Progress",
               "新闻情绪偏正"
             ],
             "max_points": 10,
@@ -6680,7 +6680,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "NuScale Just Turned AI on Itself. Here's What That Means for the Stock.",
+          "catalyst": "NuScale Power (SMR) Could Be 90% Undervalued After Commercialization Progress",
           "expectation_gap": [
             "暂未看到明确正向预期差证据"
           ],
@@ -6748,8 +6748,8 @@
           },
           "news_event": {
             "evidence": "近期公司新闻偏支持",
-            "reason": "NuScale Just Turned AI on Itself. Here's What That Means for the Stock.",
-            "score": 64.3,
+            "reason": "NuScale Power (SMR) Could Be 90% Undervalued After Commercialization Progress",
+            "score": 71.98,
             "status": "supportive"
           },
           "options_volatility": {
@@ -6784,7 +6784,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 33.89,
+        "stock_confluence_score": 34.45,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "价格结构支持主路径",
@@ -6840,13 +6840,13 @@
           "cash_flow_quality": 2.1644,
           "debt_risk": 0.051,
           "earnings_growth": -37.66,
-          "forward_pe": 391.7953,
+          "forward_pe": 368.5967,
           "profitability": 3.67,
           "raw_metrics": {
             "current_ratio": 2.1644,
             "debt_to_equity": 0.102,
             "eps_growth_ttm_yoy": -37.66,
-            "forward_pe": 391.7953,
+            "forward_pe": 368.5967,
             "gross_margin_ttm": 18.85,
             "net_margin_ttm": 3.67,
             "revenue_growth_ttm_yoy": 11.75
@@ -6866,58 +6866,58 @@
           "event_risk_flag": "high",
           "headlines": [
             {
-              "datetime": 1788683400,
-              "headline": "What I Found By Analyzing How Seeking Alpha Analysts Rated The Mag 7",
-              "source": "SeekingAlpha",
-              "url": "https://finnhub.io/api/news?id=eba233ff3388800a9f35b66ef6f1f68eff2afea31b642f11a07505e75d4043ea"
+              "datetime": 1788799756,
+              "headline": "Tesla Stock Is Tumbling -- Robotaxi Hopes Hit a Major Roadblock",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=9f50f0cbfc447d0a5a1d687539d362dfddecec9c7979cba4e3b41c88925b5f86"
             },
             {
-              "datetime": 1788659400,
-              "headline": "Elon Musk Says His New Foundry Can Get Gas Turbines Online 18 Months Faster. Here's What This \"Profound Game Changer\" Would Mean for SpaceX and Tesla.",
+              "datetime": 1788795806,
+              "headline": "Tesla Says This Time Is Different. Wall Street Is Split on Whether to Believe It",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=a7ddfa76d72c5e3c87b19596fd4877ebbb7605cf8cac1b7c04c396777e01024d"
+              "url": "https://finnhub.io/api/news?id=b00df3789445700e3808c68150d32d8ac532b32ccdddb90f87bb0d2a86857517"
             },
             {
-              "datetime": 1788658223,
-              "headline": "Gene Munster Says Tesla Cybercab's Austin Launch Signals Elon Musk’s ‘Paranoid’ Phase Over Robotaxi Accidents Is Over: ‘That’s Just the Start’",
+              "datetime": 1788789900,
+              "headline": "Cathie Wood Has Stuck With Tesla Through Repeated Missed Robotaxi Deadlines. Here's Why She's Still Buying.",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=cc55dba32f457b2d0524a7ba1d15bc0a02bc3980f79c8a4f4d5fb22f8589364d"
+              "url": "https://finnhub.io/api/news?id=7f9346457affb3e9be8b6ae9a903a5f9ac9400bc521aab7121bd5f8e6a530521"
             },
             {
-              "datetime": 1788647415,
-              "headline": "Elon Musk Says Cybercab Is Gold to Reflect 'Golden Era' of Mobility as Tesla Launches Robotaxi With Starlink",
+              "datetime": 1788788978,
+              "headline": "OpenAI, Anthropic IPOs Could Spark a Selloff in These Struggling Stocks — IBM, Tesla, AppLovin Among Names at Risk",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=126618c40db8f3b747cd88232e8f15cf1440de5249af98aa757123598401b81e"
+              "url": "https://finnhub.io/api/news?id=386aa18e98fb870ea7514f556f06b6384620eb206a018df8e4dbc247126709c4"
             },
             {
-              "datetime": 1788637200,
-              "headline": "Prediction: Amazon Will Join Nvidia, Apple, and Alphabet in the $4 Trillion Club Before 2029",
+              "datetime": 1788781799,
+              "headline": "Tesla vs SpaceX: Elon Musk’s Two Companies Are Chasing the Same AI Prize. Only One Is Positioned to Win It",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=372822162d1d5b0765b427b9a1dbf5610fd5ca95d7e01bdce5489b7ce7060f52"
+              "url": "https://finnhub.io/api/news?id=613dc5dd04d9a6e3bc5a51c2757dfd228be70ec34d8022d9d772e483283aa72c"
             },
             {
-              "datetime": 1788636841,
-              "headline": "Tesla's Cybercab 'Storm' Was More of a 'Drizzle,' WSJ's Tim Higgins Says",
+              "datetime": 1788780558,
+              "headline": "Tesla Wants to Be Seen as an AI Company",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=6e9debe36a2c6bce961f14fecb6e263d30fb26236e23500c612f578e470176c4"
+              "url": "https://finnhub.io/api/news?id=c860b0afd2868019118be6f8007031121b3b486289f41293d3727fe685e06fa3"
             },
             {
-              "datetime": 1788633002,
-              "headline": "Tesla’s Mixed European Sales Send Clear Signal on Regional Demand",
+              "datetime": 1788773700,
+              "headline": "Where Will Tesla Be in 5 Years?",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=b2d90c6348732d7384020c62e2230126ed87be424497bbc0c851106f01f8939b"
+              "url": "https://finnhub.io/api/news?id=683112dbe6e3e42ddc04e3cb5bc1c98aa73aee5d216a080d08c26fcea2c2e043"
             },
             {
-              "datetime": 1788624134,
-              "headline": "‘AI Laggard’ Apple Is Sitting Pretty, But AAPL Stock Might Be Running Out of Room to Outperform",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=ec1f802aa86b804a088ed43f4a5896dc18c37aab22413911251ee4b2fecb5519"
+              "datetime": 1788769378,
+              "headline": "Hot Payrolls Reload the September Hike Bet and Push Wall Street Into a Quiet Labor Day on the Back Foot",
+              "source": "ChartMill",
+              "url": "https://finnhub.io/api/news?id=f18133eba8cfe4de1a0040ef723c5f04e69debc44f0a362604012a2d4d428379"
             }
           ],
-          "major_company_headline": "What I Found By Analyzing How Seeking Alpha Analysts Rated The Mag 7",
-          "news_count_24h": 8,
+          "major_company_headline": "Tesla Stock Is Tumbling -- Robotaxi Hopes Hit a Major Roadblock",
+          "news_count_24h": 13,
           "news_count_72h": 20,
-          "news_risk_score": 76.0,
+          "news_risk_score": 100.0,
           "news_sentiment": "positive"
         },
         "price_trend": {
@@ -7346,7 +7346,7 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.3802,
+        "benchmark_primary_probability": 0.3828,
         "benchmark_primary_scenario": "bearish_path",
         "context": "market_headwind",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -8413,7 +8413,7 @@
           {
             "affected_ticker": "TSLA",
             "alert_level": "NO_ALERT",
-            "alert_score": 8.33,
+            "alert_score": 8.63,
             "alert_type": "Stock Bounce Setup",
             "confirmation_needed": [
               "价格站上主路径确认价",
@@ -8765,7 +8765,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: What I Found By Analyzing How Seeking Alpha Analysts Rated The Mag 7",
+              "公司新闻已接入: Tesla Stock Is Tumbling -- Robotaxi Hopes Hit a Major Roadblock",
               "新闻情绪偏正"
             ],
             "max_points": 10,
@@ -8883,7 +8883,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "What I Found By Analyzing How Seeking Alpha Analysts Rated The Mag 7",
+          "catalyst": "Tesla Stock Is Tumbling -- Robotaxi Hopes Hit a Major Roadblock",
           "expectation_gap": [
             "暂未看到明确正向预期差证据"
           ],
@@ -8911,7 +8911,7 @@
           "个股 Alpha 评分已接入",
           "主路径和第二路径差距较小"
         ],
-        "confluence_level": "weak",
+        "confluence_level": "mixed",
         "dominant_path": "stock_failed_bounce",
         "hierarchy": {
           "market": "risk_background",
@@ -8949,8 +8949,8 @@
           },
           "news_event": {
             "evidence": "公司新闻或财报事件风险上升",
-            "reason": "risk_score=76.0; earnings_date=2026-10-20",
-            "score": 73.32,
+            "reason": "risk_score=100.0; earnings_date=2026-10-20",
+            "score": 89.0,
             "status": "conflicting"
           },
           "options_volatility": {
@@ -8985,7 +8985,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 44.54,
+        "stock_confluence_score": 45.68,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "个股跑赢所属板块",
@@ -9020,7 +9020,7 @@
       "top_candidate": "CEG",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-09-06T15:31:46.064099+00:00",
+    "generated_at": "2026-09-07T17:47:56.159307+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -9042,7 +9042,7 @@
         "candidate_type": "event_driven_move",
         "catalyst_score": 61.23,
         "company_name": "Constellation Energy Corp",
-        "confluence_score": 52.9,
+        "confluence_score": 53.2,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9059,7 +9059,7 @@
           "mid": 298.8,
           "range_pct": 0.0316
         },
-        "final_radar_score": 65.95,
+        "final_radar_score": 65.99,
         "forecast_date": "2026-09-04",
         "invalidation_level": 264.82,
         "last_close": 298.9599914550781,
@@ -9129,7 +9129,7 @@
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 63.89,
         "company_name": "Tesla Inc",
-        "confluence_score": 44.54,
+        "confluence_score": 45.68,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9146,7 +9146,7 @@
           "mid": 353.66,
           "range_pct": 0.0426
         },
-        "final_radar_score": 64.23,
+        "final_radar_score": 64.36,
         "forecast_date": "2026-09-04",
         "invalidation_level": 323.64,
         "last_close": 354.0799865722656,
@@ -9304,7 +9304,7 @@
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 63.71,
         "company_name": "Nuscale Power Corp",
-        "confluence_score": 33.89,
+        "confluence_score": 34.45,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9321,7 +9321,7 @@
           "mid": 9.67,
           "range_pct": 0.0629
         },
-        "final_radar_score": 47.88,
+        "final_radar_score": 47.94,
         "forecast_date": "2026-09-04",
         "invalidation_level": 8.53,
         "last_close": 9.699999809265137,
