@@ -5,10 +5,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-09-07",
-    "current_time_us_eastern": "2026-09-07T13:47:55.292059-04:00",
+    "current_time_us_eastern": "2026-09-07T18:56:16.205228-04:00",
     "data_freshness_status": "market_closed",
     "expected_latest_trading_date": "2026-09-04",
-    "generated_at": "2026-09-07T17:47:55.292059+00:00",
+    "generated_at": "2026-09-07T22:56:16.205228+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -939,7 +939,7 @@
     },
     "stale_days": 0,
     "version": "data_freshness_gate_v3",
-    "warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-09-04 的数据。 当前美东时间 2026-09-07 13:47。"
+    "warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-09-04 的数据。 当前美东时间 2026-09-07 18:56。"
   },
   "data_quality_summary": {
     "average_breadth_quality_score": 67.0,
@@ -1047,17 +1047,17 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "HY_OAS",
-      "IG_OAS",
-      "DGS3MO",
-      "DGS10",
-      "DFII10",
-      "FINANCIAL_STRESS",
       "DGS2",
+      "IG_OAS",
+      "HY_OAS",
+      "DGS10",
+      "BAA_SPREAD",
+      "DGS3MO",
+      "DFII10",
       "RECESSION",
-      "BAA_SPREAD"
+      "FINANCIAL_STRESS"
     ],
-    "freshness_warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-09-04 的数据。 当前美东时间 2026-09-07 13:47。",
+    "freshness_warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-09-04 的数据。 当前美东时间 2026-09-07 18:56。",
     "gamma_available": false,
     "gamma_exposure_available": false,
     "latest_confirmed_market_date": "2026-09-04",
@@ -1086,11 +1086,11 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 69,
+      "event_detection_confidence": 70,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-09-07T17:47:44.668713+00:00",
-      "major_event_count": 12,
+      "last_update": "2026-09-07T22:56:05.275777+00:00",
+      "major_event_count": 11,
       "missing_reason": null,
       "news_direction": "risk_off",
       "news_event_partial": false,
@@ -1101,7 +1101,7 @@
     },
     "news_event_available": true,
     "news_event_event_risk_level": "high",
-    "news_event_major_count": 12,
+    "news_event_major_count": 11,
     "news_event_missing_reason": null,
     "news_event_narrative": "geopolitics_escalation_risk_off",
     "news_event_partial": false,
@@ -1151,7 +1151,7 @@
       "status": "failed"
     },
     "event_risk_level": "high",
-    "major_event_count": 12,
+    "major_event_count": 11,
     "market_narrative": {
       "affected_scenarios": [
         "bearish_path"
@@ -1162,7 +1162,21 @@
         "QQQ",
         "SPY"
       ],
-      "conflicting_headlines": [],
+      "conflicting_headlines": [
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_easing",
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_easing",
+          "expected_market_direction": "risk_on",
+          "headline": "UK's Burnham, Trump discuss working towards Ukraine-Russia ceasefire, Downing Street says - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-09-07T17:11:31+00:00",
+          "source": "Reuters"
+        }
+      ],
       "detected_event_conditions": [
         "geopolitical_risk_escalation"
       ],
@@ -1171,6 +1185,18 @@
       "narrative_strength": 100,
       "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
       "supporting_headlines": [
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
+          "headline": "Iran warns US energy assets in Gulf are vulnerable after latest clashes - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-09-07T18:48:25+00:00",
+          "source": "Reuters"
+        },
         {
           "confidence": "high",
           "detected_event_conditions": [
@@ -1196,19 +1222,7 @@
           "source": "Reuters"
         },
         {
-          "confidence": "high",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Iran warns US energy assets in Gulf are vulnerable after latest clashes - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-09-07T06:57:00+00:00",
-          "source": "Reuters"
-        },
-        {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -1226,9 +1240,9 @@
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_market_direction": "risk_off",
-          "headline": "Ship fuel shortage looms as refiners strained by war favour other products - Reuters",
+          "headline": "Goldman sees $120/bbl oil risk if attacks on Middle East vessels intensify, Bloomberg reports - reuters.com",
           "importance_score": 100,
-          "published_at": "2026-09-07T03:13:31+00:00",
+          "published_at": "2026-09-07T05:49:00+00:00",
           "source": "Reuters"
         },
         {
@@ -1238,9 +1252,9 @@
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_market_direction": "risk_off",
-          "headline": "Hormuz traffic dips to lowest since May after US, Iranian strikes on ships - Reuters",
+          "headline": "Ship fuel shortage looms as refiners strained by war favour other products - Reuters",
           "importance_score": 100,
-          "published_at": "2026-09-06T23:29:00+00:00",
+          "published_at": "2026-09-07T01:02:00+00:00",
           "source": "Reuters"
         }
       ]
@@ -1251,7 +1265,7 @@
       "direction": "supports_risk_expansion",
       "event_risk_level": "high",
       "macro_event_risk_flag": false,
-      "major_event_count": 12,
+      "major_event_count": 11,
       "not_a_trading_signal": true,
       "price_reaction_confirmed": true,
       "symbols": {
@@ -1406,7 +1420,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": -0.0011,
-        "avg_equity_futures_1d_return": 0.0,
+        "avg_equity_futures_1d_return": -0.0028,
         "confirmed_checks": [
           "股票ETF或股指期货下跌",
           "VIX 上升",
@@ -1421,7 +1435,7 @@
         ],
         "failed_checks": [],
         "hyg_lqd_1d_relative_return": -0.0004,
-        "oil_proxy_1d_return": -0.0005,
+        "oil_proxy_1d_return": 0.0057,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -2205,7 +2219,7 @@
           "ig_oas_20d_change": 0.030000000000000027
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote 534.12; news risk 40%; macro event risk flagged; rates pressure 17%.",
+          "brief": "Finnhub quote 534.08; news risk 40%; macro event risk flagged; rates pressure 17%.",
           "finnhub_quote_available": true,
           "macro_event_risk_flag": true,
           "news_risk_score": 0.4,
@@ -2215,9 +2229,9 @@
         "finnhub": {
           "candle_status": "failed",
           "news_sentiment_status": "failed",
-          "quote_change_percent": -0.5233,
+          "quote_change_percent": -0.5308,
           "quote_previous_close": 536.93,
-          "quote_price": 534.12,
+          "quote_price": 534.08,
           "quote_source": "finnhub",
           "quote_status": "available",
           "sentiment_score": null
@@ -2277,11 +2291,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.4,
           "top_headlines": [
+            "Iran warns US energy assets in Gulf are vulnerable after latest clashes - Reuters",
+            "Israeli clearance of Gaza rubble could destroy 'evidence', says UN expert - Reuters",
+            "UK's Burnham, Trump discuss working towards Ukraine-Russia ceasefire, Downing Street says - Reuters",
             "Gulf equities mixed amid US-Iran flare-ups - Reuters",
-            "'Ah! Rejected, yet again': How this 45-year-old turned his 'demoralizing' job search into a one-man show",
-            "UAE says its energy exports will not be 'held hostage' by Iran war - Reuters",
-            "Saudi Arabia preparing to grant IAEA more intrusive powers, Grossi says - Reuters",
-            "COMMENTARY: China's crude oil imports stayed weak in August. Can this continue? - Reuters"
+            "'Ah! Rejected, yet again': How this 45-year-old turned his 'demoralizing' job search into a one-man show"
           ]
         },
         "price": {
@@ -3653,7 +3667,66 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 89,
+            "freshness_score": 90,
+            "headline": "Iran warns US energy assets in Gulf are vulnerable after latest clashes - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-07T18:48:25+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "HYG",
+              "LQD",
+              "USO",
+              "CL=F",
+              "UUP",
+              "ES=F",
+              "NQ=F"
+            ],
+            "confidence": "high",
+            "confidence_score": 82,
+            "detected_event_conditions": [
+              "geopolitical_risk_easing",
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_easing",
+            "expected_horizon": "1d-5d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 86,
+            "headline": "UK's Burnham, Trump discuss working towards Ukraine-Russia ceasefire, Downing Street says - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_easing_risk_on",
+            "provider": "finnhub",
+            "published_at": "2026-09-07T17:11:31+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 76,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 77,
             "headline": "UAE says its energy exports will not be 'held hostage' by Iran war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3673,14 +3746,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 78,
+            "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
+            "freshness_score": 72,
             "headline": "Oman says it evacuated 16 crew members of Saudi Sidr vessel attacked by Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3699,74 +3772,20 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 74,
-            "headline": "Iran warns US energy assets in Gulf are vulnerable after latest clashes - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-07T06:57:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 74,
+            "freshness_score": 61,
             "headline": "Israeli strikes on southern Lebanese town kill 12 as fears of escalation mount - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-07T06:48:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 73,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 65,
-            "headline": "Ship fuel shortage looms as refiners strained by war favour other products - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-07T03:13:31+00:00",
             "source": "Reuters"
           },
           {
@@ -3788,12 +3807,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 56,
-            "headline": "Hormuz traffic dips to lowest since May after US, Iranian strikes on ships - Reuters",
+            "freshness_score": 59,
+            "headline": "Goldman sees $120/bbl oil risk if attacks on Middle East vessels intensify, Bloomberg reports - reuters.com",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-09-06T23:29:00+00:00",
+            "published_at": "2026-09-07T05:49:00+00:00",
             "source": "Reuters"
           }
         ],
@@ -3807,7 +3826,21 @@
             "QQQ",
             "SPY"
           ],
-          "conflicting_headlines": [],
+          "conflicting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_easing",
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_easing",
+              "expected_market_direction": "risk_on",
+              "headline": "UK's Burnham, Trump discuss working towards Ukraine-Russia ceasefire, Downing Street says - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-09-07T17:11:31+00:00",
+              "source": "Reuters"
+            }
+          ],
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -3816,6 +3849,18 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Iran warns US energy assets in Gulf are vulnerable after latest clashes - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-09-07T18:48:25+00:00",
+              "source": "Reuters"
+            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -3841,19 +3886,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Iran warns US energy assets in Gulf are vulnerable after latest clashes - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-09-07T06:57:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -3871,9 +3904,9 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "Ship fuel shortage looms as refiners strained by war favour other products - Reuters",
+              "headline": "Goldman sees $120/bbl oil risk if attacks on Middle East vessels intensify, Bloomberg reports - reuters.com",
               "importance_score": 100,
-              "published_at": "2026-09-07T03:13:31+00:00",
+              "published_at": "2026-09-07T05:49:00+00:00",
               "source": "Reuters"
             },
             {
@@ -3883,9 +3916,9 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "Hormuz traffic dips to lowest since May after US, Iranian strikes on ships - Reuters",
+              "headline": "Ship fuel shortage looms as refiners strained by war favour other products - Reuters",
               "importance_score": 100,
-              "published_at": "2026-09-06T23:29:00+00:00",
+              "published_at": "2026-09-07T01:02:00+00:00",
               "source": "Reuters"
             }
           ]
@@ -3930,7 +3963,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0011,
-            "avg_equity_futures_1d_return": 0.0,
+            "avg_equity_futures_1d_return": -0.0028,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -3945,7 +3978,7 @@
             ],
             "failed_checks": [],
             "hyg_lqd_1d_relative_return": -0.0004,
-            "oil_proxy_1d_return": -0.0005,
+            "oil_proxy_1d_return": 0.0057,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -6348,7 +6381,7 @@
           "ig_oas_20d_change": 0.030000000000000027
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote 296.05; news risk 40%; macro event risk flagged; rates pressure 17%.",
+          "brief": "Finnhub quote 296.01; news risk 40%; macro event risk flagged; rates pressure 17%.",
           "finnhub_quote_available": true,
           "macro_event_risk_flag": true,
           "news_risk_score": 0.4,
@@ -6358,9 +6391,9 @@
         "finnhub": {
           "candle_status": "failed",
           "news_sentiment_status": "failed",
-          "quote_change_percent": 0.2913,
+          "quote_change_percent": 0.2778,
           "quote_previous_close": 295.19,
-          "quote_price": 296.05,
+          "quote_price": 296.01,
           "quote_source": "finnhub",
           "quote_status": "available",
           "sentiment_score": null
@@ -6420,11 +6453,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.4,
           "top_headlines": [
+            "Iran warns US energy assets in Gulf are vulnerable after latest clashes - Reuters",
+            "Israeli clearance of Gaza rubble could destroy 'evidence', says UN expert - Reuters",
+            "UK's Burnham, Trump discuss working towards Ukraine-Russia ceasefire, Downing Street says - Reuters",
             "Gulf equities mixed amid US-Iran flare-ups - Reuters",
-            "'Ah! Rejected, yet again': How this 45-year-old turned his 'demoralizing' job search into a one-man show",
-            "UAE says its energy exports will not be 'held hostage' by Iran war - Reuters",
-            "Saudi Arabia preparing to grant IAEA more intrusive powers, Grossi says - Reuters",
-            "COMMENTARY: China's crude oil imports stayed weak in August. Can this continue? - Reuters"
+            "'Ah! Rejected, yet again': How this 45-year-old turned his 'demoralizing' job search into a one-man show"
           ]
         },
         "price": {
@@ -7783,7 +7816,66 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 89,
+            "freshness_score": 90,
+            "headline": "Iran warns US energy assets in Gulf are vulnerable after latest clashes - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-07T18:48:25+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "HYG",
+              "LQD",
+              "USO",
+              "CL=F",
+              "UUP",
+              "ES=F",
+              "NQ=F"
+            ],
+            "confidence": "high",
+            "confidence_score": 82,
+            "detected_event_conditions": [
+              "geopolitical_risk_easing",
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_easing",
+            "expected_horizon": "1d-5d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 86,
+            "headline": "UK's Burnham, Trump discuss working towards Ukraine-Russia ceasefire, Downing Street says - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_easing_risk_on",
+            "provider": "finnhub",
+            "published_at": "2026-09-07T17:11:31+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 76,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 77,
             "headline": "UAE says its energy exports will not be 'held hostage' by Iran war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7803,14 +7895,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 78,
+            "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
+            "freshness_score": 72,
             "headline": "Oman says it evacuated 16 crew members of Saudi Sidr vessel attacked by Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7829,74 +7921,20 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 74,
-            "headline": "Iran warns US energy assets in Gulf are vulnerable after latest clashes - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-07T06:57:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 74,
+            "freshness_score": 61,
             "headline": "Israeli strikes on southern Lebanese town kill 12 as fears of escalation mount - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-07T06:48:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 73,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 65,
-            "headline": "Ship fuel shortage looms as refiners strained by war favour other products - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-07T03:13:31+00:00",
             "source": "Reuters"
           },
           {
@@ -7918,12 +7956,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 56,
-            "headline": "Hormuz traffic dips to lowest since May after US, Iranian strikes on ships - Reuters",
+            "freshness_score": 59,
+            "headline": "Goldman sees $120/bbl oil risk if attacks on Middle East vessels intensify, Bloomberg reports - reuters.com",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-09-06T23:29:00+00:00",
+            "published_at": "2026-09-07T05:49:00+00:00",
             "source": "Reuters"
           }
         ],
@@ -7937,7 +7975,21 @@
             "QQQ",
             "SPY"
           ],
-          "conflicting_headlines": [],
+          "conflicting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_easing",
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_easing",
+              "expected_market_direction": "risk_on",
+              "headline": "UK's Burnham, Trump discuss working towards Ukraine-Russia ceasefire, Downing Street says - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-09-07T17:11:31+00:00",
+              "source": "Reuters"
+            }
+          ],
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -7946,6 +7998,18 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Iran warns US energy assets in Gulf are vulnerable after latest clashes - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-09-07T18:48:25+00:00",
+              "source": "Reuters"
+            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -7971,19 +8035,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Iran warns US energy assets in Gulf are vulnerable after latest clashes - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-09-07T06:57:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -8001,9 +8053,9 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "Ship fuel shortage looms as refiners strained by war favour other products - Reuters",
+              "headline": "Goldman sees $120/bbl oil risk if attacks on Middle East vessels intensify, Bloomberg reports - reuters.com",
               "importance_score": 100,
-              "published_at": "2026-09-07T03:13:31+00:00",
+              "published_at": "2026-09-07T05:49:00+00:00",
               "source": "Reuters"
             },
             {
@@ -8013,9 +8065,9 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "Hormuz traffic dips to lowest since May after US, Iranian strikes on ships - Reuters",
+              "headline": "Ship fuel shortage looms as refiners strained by war favour other products - Reuters",
               "importance_score": 100,
-              "published_at": "2026-09-06T23:29:00+00:00",
+              "published_at": "2026-09-07T01:02:00+00:00",
               "source": "Reuters"
             }
           ]
@@ -8060,7 +8112,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0011,
-            "avg_equity_futures_1d_return": 0.0,
+            "avg_equity_futures_1d_return": -0.0028,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -8075,7 +8127,7 @@
             ],
             "failed_checks": [],
             "hyg_lqd_1d_relative_return": -0.0004,
-            "oil_proxy_1d_return": -0.0005,
+            "oil_proxy_1d_return": 0.0057,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -10489,7 +10541,7 @@
           "ig_oas_20d_change": 0.030000000000000027
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote 719.00; news risk 40%; macro event risk flagged; rates pressure 17%.",
+          "brief": "Finnhub quote 718.96; news risk 40%; macro event risk flagged; rates pressure 17%.",
           "finnhub_quote_available": true,
           "macro_event_risk_flag": true,
           "news_risk_score": 0.4,
@@ -10499,9 +10551,9 @@
         "finnhub": {
           "candle_status": "failed",
           "news_sentiment_status": "failed",
-          "quote_change_percent": 0.1853,
+          "quote_change_percent": 0.1797,
           "quote_previous_close": 717.67,
-          "quote_price": 719.0,
+          "quote_price": 718.96,
           "quote_source": "finnhub",
           "quote_status": "available",
           "sentiment_score": null
@@ -10561,11 +10613,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.4,
           "top_headlines": [
+            "Iran warns US energy assets in Gulf are vulnerable after latest clashes - Reuters",
+            "Israeli clearance of Gaza rubble could destroy 'evidence', says UN expert - Reuters",
+            "UK's Burnham, Trump discuss working towards Ukraine-Russia ceasefire, Downing Street says - Reuters",
             "Gulf equities mixed amid US-Iran flare-ups - Reuters",
-            "'Ah! Rejected, yet again': How this 45-year-old turned his 'demoralizing' job search into a one-man show",
-            "UAE says its energy exports will not be 'held hostage' by Iran war - Reuters",
-            "Saudi Arabia preparing to grant IAEA more intrusive powers, Grossi says - Reuters",
-            "COMMENTARY: China's crude oil imports stayed weak in August. Can this continue? - Reuters"
+            "'Ah! Rejected, yet again': How this 45-year-old turned his 'demoralizing' job search into a one-man show"
           ]
         },
         "price": {
@@ -11900,7 +11952,66 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 89,
+            "freshness_score": 90,
+            "headline": "Iran warns US energy assets in Gulf are vulnerable after latest clashes - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-07T18:48:25+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "HYG",
+              "LQD",
+              "USO",
+              "CL=F",
+              "UUP",
+              "ES=F",
+              "NQ=F"
+            ],
+            "confidence": "high",
+            "confidence_score": 82,
+            "detected_event_conditions": [
+              "geopolitical_risk_easing",
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_easing",
+            "expected_horizon": "1d-5d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 86,
+            "headline": "UK's Burnham, Trump discuss working towards Ukraine-Russia ceasefire, Downing Street says - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_easing_risk_on",
+            "provider": "finnhub",
+            "published_at": "2026-09-07T17:11:31+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 76,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 77,
             "headline": "UAE says its energy exports will not be 'held hostage' by Iran war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11920,14 +12031,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 78,
+            "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
+            "freshness_score": 72,
             "headline": "Oman says it evacuated 16 crew members of Saudi Sidr vessel attacked by Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11946,74 +12057,20 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 74,
-            "headline": "Iran warns US energy assets in Gulf are vulnerable after latest clashes - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-07T06:57:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 74,
+            "freshness_score": 61,
             "headline": "Israeli strikes on southern Lebanese town kill 12 as fears of escalation mount - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-07T06:48:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 73,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 65,
-            "headline": "Ship fuel shortage looms as refiners strained by war favour other products - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-07T03:13:31+00:00",
             "source": "Reuters"
           },
           {
@@ -12035,12 +12092,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 56,
-            "headline": "Hormuz traffic dips to lowest since May after US, Iranian strikes on ships - Reuters",
+            "freshness_score": 59,
+            "headline": "Goldman sees $120/bbl oil risk if attacks on Middle East vessels intensify, Bloomberg reports - reuters.com",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-09-06T23:29:00+00:00",
+            "published_at": "2026-09-07T05:49:00+00:00",
             "source": "Reuters"
           }
         ],
@@ -12054,7 +12111,21 @@
             "QQQ",
             "SPY"
           ],
-          "conflicting_headlines": [],
+          "conflicting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_easing",
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_easing",
+              "expected_market_direction": "risk_on",
+              "headline": "UK's Burnham, Trump discuss working towards Ukraine-Russia ceasefire, Downing Street says - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-09-07T17:11:31+00:00",
+              "source": "Reuters"
+            }
+          ],
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -12063,6 +12134,18 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Iran warns US energy assets in Gulf are vulnerable after latest clashes - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-09-07T18:48:25+00:00",
+              "source": "Reuters"
+            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -12088,19 +12171,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Iran warns US energy assets in Gulf are vulnerable after latest clashes - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-09-07T06:57:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -12118,9 +12189,9 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "Ship fuel shortage looms as refiners strained by war favour other products - Reuters",
+              "headline": "Goldman sees $120/bbl oil risk if attacks on Middle East vessels intensify, Bloomberg reports - reuters.com",
               "importance_score": 100,
-              "published_at": "2026-09-07T03:13:31+00:00",
+              "published_at": "2026-09-07T05:49:00+00:00",
               "source": "Reuters"
             },
             {
@@ -12130,9 +12201,9 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "Hormuz traffic dips to lowest since May after US, Iranian strikes on ships - Reuters",
+              "headline": "Ship fuel shortage looms as refiners strained by war favour other products - Reuters",
               "importance_score": 100,
-              "published_at": "2026-09-06T23:29:00+00:00",
+              "published_at": "2026-09-07T01:02:00+00:00",
               "source": "Reuters"
             }
           ]
@@ -12177,7 +12248,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0011,
-            "avg_equity_futures_1d_return": 0.0,
+            "avg_equity_futures_1d_return": -0.0028,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -12192,7 +12263,7 @@
             ],
             "failed_checks": [],
             "hyg_lqd_1d_relative_return": -0.0004,
-            "oil_proxy_1d_return": -0.0005,
+            "oil_proxy_1d_return": 0.0057,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -14625,7 +14696,7 @@
           "ig_oas_20d_change": 0.030000000000000027
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote 770.23; news risk 40%; macro event risk flagged; rates pressure 17%.",
+          "brief": "Finnhub quote 770.19; news risk 40%; macro event risk flagged; rates pressure 17%.",
           "finnhub_quote_available": true,
           "macro_event_risk_flag": true,
           "news_risk_score": 0.4,
@@ -14635,9 +14706,9 @@
         "finnhub": {
           "candle_status": "failed",
           "news_sentiment_status": "failed",
-          "quote_change_percent": -0.3803,
+          "quote_change_percent": -0.3854,
           "quote_previous_close": 773.17,
-          "quote_price": 770.23,
+          "quote_price": 770.19,
           "quote_source": "finnhub",
           "quote_status": "available",
           "sentiment_score": null
@@ -14697,11 +14768,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.4,
           "top_headlines": [
+            "Iran warns US energy assets in Gulf are vulnerable after latest clashes - Reuters",
+            "Israeli clearance of Gaza rubble could destroy 'evidence', says UN expert - Reuters",
+            "UK's Burnham, Trump discuss working towards Ukraine-Russia ceasefire, Downing Street says - Reuters",
             "Gulf equities mixed amid US-Iran flare-ups - Reuters",
-            "'Ah! Rejected, yet again': How this 45-year-old turned his 'demoralizing' job search into a one-man show",
-            "UAE says its energy exports will not be 'held hostage' by Iran war - Reuters",
-            "Saudi Arabia preparing to grant IAEA more intrusive powers, Grossi says - Reuters",
-            "COMMENTARY: China's crude oil imports stayed weak in August. Can this continue? - Reuters"
+            "'Ah! Rejected, yet again': How this 45-year-old turned his 'demoralizing' job search into a one-man show"
           ]
         },
         "price": {
@@ -16035,7 +16106,66 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 89,
+            "freshness_score": 90,
+            "headline": "Iran warns US energy assets in Gulf are vulnerable after latest clashes - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-07T18:48:25+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "HYG",
+              "LQD",
+              "USO",
+              "CL=F",
+              "UUP",
+              "ES=F",
+              "NQ=F"
+            ],
+            "confidence": "high",
+            "confidence_score": 82,
+            "detected_event_conditions": [
+              "geopolitical_risk_easing",
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_easing",
+            "expected_horizon": "1d-5d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 86,
+            "headline": "UK's Burnham, Trump discuss working towards Ukraine-Russia ceasefire, Downing Street says - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_easing_risk_on",
+            "provider": "finnhub",
+            "published_at": "2026-09-07T17:11:31+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 76,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 77,
             "headline": "UAE says its energy exports will not be 'held hostage' by Iran war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16055,14 +16185,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 78,
+            "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
+            "freshness_score": 72,
             "headline": "Oman says it evacuated 16 crew members of Saudi Sidr vessel attacked by Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16081,74 +16211,20 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 74,
-            "headline": "Iran warns US energy assets in Gulf are vulnerable after latest clashes - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-07T06:57:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 74,
+            "freshness_score": 61,
             "headline": "Israeli strikes on southern Lebanese town kill 12 as fears of escalation mount - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-07T06:48:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 73,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 65,
-            "headline": "Ship fuel shortage looms as refiners strained by war favour other products - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-07T03:13:31+00:00",
             "source": "Reuters"
           },
           {
@@ -16170,12 +16246,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 56,
-            "headline": "Hormuz traffic dips to lowest since May after US, Iranian strikes on ships - Reuters",
+            "freshness_score": 59,
+            "headline": "Goldman sees $120/bbl oil risk if attacks on Middle East vessels intensify, Bloomberg reports - reuters.com",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-09-06T23:29:00+00:00",
+            "published_at": "2026-09-07T05:49:00+00:00",
             "source": "Reuters"
           }
         ],
@@ -16189,7 +16265,21 @@
             "QQQ",
             "SPY"
           ],
-          "conflicting_headlines": [],
+          "conflicting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_easing",
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_easing",
+              "expected_market_direction": "risk_on",
+              "headline": "UK's Burnham, Trump discuss working towards Ukraine-Russia ceasefire, Downing Street says - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-09-07T17:11:31+00:00",
+              "source": "Reuters"
+            }
+          ],
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -16198,6 +16288,18 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Iran warns US energy assets in Gulf are vulnerable after latest clashes - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-09-07T18:48:25+00:00",
+              "source": "Reuters"
+            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -16223,19 +16325,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Iran warns US energy assets in Gulf are vulnerable after latest clashes - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-09-07T06:57:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -16253,9 +16343,9 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "Ship fuel shortage looms as refiners strained by war favour other products - Reuters",
+              "headline": "Goldman sees $120/bbl oil risk if attacks on Middle East vessels intensify, Bloomberg reports - reuters.com",
               "importance_score": 100,
-              "published_at": "2026-09-07T03:13:31+00:00",
+              "published_at": "2026-09-07T05:49:00+00:00",
               "source": "Reuters"
             },
             {
@@ -16265,9 +16355,9 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "Hormuz traffic dips to lowest since May after US, Iranian strikes on ships - Reuters",
+              "headline": "Ship fuel shortage looms as refiners strained by war favour other products - Reuters",
               "importance_score": 100,
-              "published_at": "2026-09-06T23:29:00+00:00",
+              "published_at": "2026-09-07T01:02:00+00:00",
               "source": "Reuters"
             }
           ]
@@ -16312,7 +16402,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0011,
-            "avg_equity_futures_1d_return": 0.0,
+            "avg_equity_futures_1d_return": -0.0028,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -16327,7 +16417,7 @@
             ],
             "failed_checks": [],
             "hyg_lqd_1d_relative_return": -0.0004,
-            "oil_proxy_1d_return": -0.0005,
+            "oil_proxy_1d_return": 0.0057,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"

@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-07T17:47:44.668713+00:00`
+- generated_at: `2026-09-07T22:56:05.275777+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
-- event_detection_confidence: `69`
+- major_event_count: `11`
+- event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,6 +27,22 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Iran warns US energy assets in Gulf are vulnerable after latest clashes - Reuters
+- source: Reuters
+- published_at: `2026-09-07T18:48:25+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: UK's Burnham, Trump discuss working towards Ukraine-Russia ceasefire, Downing Street says - Reuters
+- source: Reuters
+- published_at: `2026-09-07T17:11:31+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: UAE says its energy exports will not be 'held hostage' by Iran war - Reuters
 - source: Reuters
 - published_at: `2026-09-07T13:13:23+00:00`
@@ -43,25 +59,25 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iran warns US energy assets in Gulf are vulnerable after latest clashes - Reuters
-- source: Reuters
-- published_at: `2026-09-07T06:57:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
 - headline: Israeli strikes on southern Lebanese town kill 12 as fears of escalation mount - Reuters
 - source: Reuters
 - published_at: `2026-09-07T06:48:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Goldman sees $120/bbl oil risk if attacks on Middle East vessels intensify, Bloomberg reports - reuters.com
+- source: Reuters
+- published_at: `2026-09-07T05:49:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Ship fuel shortage looms as refiners strained by war favour other products - Reuters
 - source: Reuters
-- published_at: `2026-09-07T03:13:31+00:00`
+- published_at: `2026-09-07T01:02:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -86,21 +102,5 @@
 - headline: Iran to tackle economic issues, says further attacks will be 'more painful' - Reuters
 - source: Reuters
 - published_at: `2026-09-06T11:42:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Russia's Lavrov calls accusations of Moscow's involvement in Leipzig drone incident 'start of real war', TASS reports - Reuters
-- source: Reuters
-- published_at: `2026-09-06T11:29:43+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US pressure on Iran starting to tell, as sanctions and blockade bite - Reuters
-- source: Reuters
-- published_at: `2026-09-06T07:00:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
