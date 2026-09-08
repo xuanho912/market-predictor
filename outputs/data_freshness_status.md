@@ -1,27 +1,30 @@
 # Data Freshness Status
 
-Generated at: `2026-09-08T01:10:56.452960+00:00`
+Generated at: `2026-09-08T06:02:14.489803+00:00`
 
 ## Summary
 
-- current_date: `2026-09-07`
-- current_time_us_eastern: `2026-09-07T21:10:56.452960-04:00`
+- current_date: `2026-09-08`
+- current_time_us_eastern: `2026-09-08T02:02:14.489803-04:00`
 - latest_market_date: `2026-09-04`
 - latest_confirmed_market_date: `2026-09-04`
 - expected_latest_trading_date: `2026-09-04`
 - is_latest_trading_day: `True`
-- latest_market_session_status: `completed_or_prior_session`
-- can_append_forecast_record: `True`
+- latest_market_session_status: `intraday_unconfirmed`
+- can_append_forecast_record: `False`
 - can_backfill_completed_outcomes: `True`
 - stale_days: `0`
-- data_freshness_status: `market_closed`
+- data_freshness_status: `market_open_unconfirmed`
 - last_successful_core_market_update: `2026-09-04`
 - last_successful_update: `2026-09-07`
-- warning_message: 美股当前没有新的完整交易日，使用最近完成交易日 2026-09-04 的数据。 当前美东时间 2026-09-07 21:10。
+- warning_message: 当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-09-04，最近完整收盘交易日为 2026-09-04；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。
 
 ## Affected Symbols
 
-- none
+- `SPY`
+- `QQQ`
+- `IWM`
+- `DIA`
 
 ## Provider Status
 
@@ -93,7 +96,7 @@ Generated at: `2026-09-08T01:10:56.452960+00:00`
 - flow_SPY: status=`proxy`, latest_date=`2026-09-04`, source=`market_data_proxy`, stale=`False`, fallback=`True`, real_data=`False`
 - flow_provider: status=`proxy`, latest_date=`2026-09-04`, source=`flow_positioning_proxy`, stale=`False`, fallback=`True`, real_data=`False`
 - macro_event_calendar: status=`fallback`, latest_date=`2026-09-07`, source=`deterministic_calendar_fallback`, stale=`False`, fallback=`True`, real_data=`False`
-- news_event_provider: status=`provider_failed`, latest_date=`2026-09-07`, source=`finnhub+gdelt`, stale=`False`, fallback=`False`, real_data=`False`
+- news_event_provider: status=`available`, latest_date=`2026-09-07`, source=`finnhub+gdelt`, stale=`False`, fallback=`False`, real_data=`True`
 - options_SKEW: status=`available`, latest_date=`2026-09-04`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - options_VIX: status=`available`, latest_date=`2026-09-07`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - options_VIX3M: status=`stale`, latest_date=`2026-07-17`, source=`yahoo-chart`, stale=`True`, fallback=`False`, real_data=`True`
