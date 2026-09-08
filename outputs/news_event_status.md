@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-08T22:49:59.085195+00:00`
+- generated_at: `2026-09-08T23:38:58.897892+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `13`
@@ -27,18 +27,10 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iran-backed Houthis attack four Saudi cities in expansion of Middle East war, 73 hurt - Reuters
+- headline: War expands as Houthis attack Saudi cities and US strikes Iranian tankers - Reuters
 - source: Reuters
-- published_at: `2026-09-08T20:21:44+00:00`
+- published_at: `2026-09-08T23:09:18+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### oil_shock_risk / risk_off
-
-- headline: Wall Street slides, oil surges amid worries over inflation, Middle East - Reuters
-- source: Reuters
-- published_at: `2026-09-08T20:17:40+00:00`
-- importance_score: `97`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -78,6 +70,14 @@
 - headline: Cluster bomb casualties near record, driven by war in Ukraine - Reuters
 - source: Reuters
 - published_at: `2026-09-08T13:10:48+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Dangote expects fuel shortages beyond Iran war as it spurs expansion - Reuters
+- source: Reuters
+- published_at: `2026-09-08T13:03:43+00:00`
 - importance_score: `100`
 - confidence: `high`
 
