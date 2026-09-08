@@ -1,11 +1,11 @@
 # Data Freshness Status
 
-Generated at: `2026-09-08T00:47:27.769494+00:00`
+Generated at: `2026-09-08T01:10:56.452960+00:00`
 
 ## Summary
 
 - current_date: `2026-09-07`
-- current_time_us_eastern: `2026-09-07T20:47:27.769494-04:00`
+- current_time_us_eastern: `2026-09-07T21:10:56.452960-04:00`
 - latest_market_date: `2026-09-04`
 - latest_confirmed_market_date: `2026-09-04`
 - expected_latest_trading_date: `2026-09-04`
@@ -17,7 +17,7 @@ Generated at: `2026-09-08T00:47:27.769494+00:00`
 - data_freshness_status: `market_closed`
 - last_successful_core_market_update: `2026-09-04`
 - last_successful_update: `2026-09-07`
-- warning_message: 美股当前没有新的完整交易日，使用最近完成交易日 2026-09-04 的数据。 当前美东时间 2026-09-07 20:47。
+- warning_message: 美股当前没有新的完整交易日，使用最近完成交易日 2026-09-04 的数据。 当前美东时间 2026-09-07 21:10。
 
 ## Affected Symbols
 
@@ -93,7 +93,7 @@ Generated at: `2026-09-08T00:47:27.769494+00:00`
 - flow_SPY: status=`proxy`, latest_date=`2026-09-04`, source=`market_data_proxy`, stale=`False`, fallback=`True`, real_data=`False`
 - flow_provider: status=`proxy`, latest_date=`2026-09-04`, source=`flow_positioning_proxy`, stale=`False`, fallback=`True`, real_data=`False`
 - macro_event_calendar: status=`fallback`, latest_date=`2026-09-07`, source=`deterministic_calendar_fallback`, stale=`False`, fallback=`True`, real_data=`False`
-- news_event_provider: status=`available`, latest_date=`2026-09-07`, source=`finnhub+gdelt`, stale=`False`, fallback=`False`, real_data=`True`
+- news_event_provider: status=`provider_failed`, latest_date=`2026-09-07`, source=`finnhub+gdelt`, stale=`False`, fallback=`False`, real_data=`False`
 - options_SKEW: status=`available`, latest_date=`2026-09-04`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - options_VIX: status=`available`, latest_date=`2026-09-07`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - options_VIX3M: status=`stale`, latest_date=`2026-07-17`, source=`yahoo-chart`, stale=`True`, fallback=`False`, real_data=`True`

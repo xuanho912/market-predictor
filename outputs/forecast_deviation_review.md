@@ -1,6 +1,6 @@
 # Forecast Deviation Review
 
-Generated at: `2026-09-08T00:47:28.533145+00:00`
+Generated at: `2026-09-08T01:10:57.138277+00:00`
 
 This report reviews forecast-vs-actual deviations after horizons complete. It is not a trading, PnL or execution report.
 
@@ -360,7 +360,7 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - `model_underestimated_upside_or_repair` count `318`: 模型低估了修复/反抽强度，需要检查事件催化、波动率修复和价格确认。 Action: keep_observing_until_forward_sample_gate
 - `risk_off_news_overweighted_or_resolved` count `273`: risk-off 新闻若快速缓和或未被价格确认，不应继续压低主路径。 Action: shadow-test news_decay：未被价格确认或快速缓和的 risk-off 新闻权重衰减。
 - `model_underestimated_downside_or_failed_bounce` count `251`: 模型低估了下跌延续或反抽失败风险，需要检查信用、宽度、波动率和新闻风险。 Action: keep_observing_until_forward_sample_gate
-- `news_event_risk_underweighted` count `251`: 风险新闻如果被价格确认，应提高风险路径权重。 Action: shadow-test risk_event_confirmation：risk-off 新闻得到价格确认才提高风险路径。
+- `news_event_risk_underweighted` count `237`: 风险新闻如果被价格确认，应提高风险路径权重。 Action: shadow-test risk_event_confirmation：risk-off 新闻得到价格确认才提高风险路径。
 - `volatility_repair_underweighted` count `115`: 波动率结构修复会放大短线反抽，需要进入 1d/3d/5d 权重验证。 Action: shadow-test vol_repair_boost：VIX term 修复提高短周期 bounce 权重。
 - `breadth_follow_through_underweighted` count `73`: 宽度改善后的持续承接可能被低估。 Action: shadow-test breadth_follow_through：宽度改善持续两日以上才提高中期修复权重。
 - `breadth_conflict_underweighted` count `73`: 指数上涨但内部参与不足时，失败反抽风险可能被低估。 Action: shadow-test breadth_conflict_penalty：宽度冲突提高 failed_bounce 风险。
