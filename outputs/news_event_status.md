@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-08T08:21:50.189998+00:00`
+- generated_at: `2026-09-08T16:41:26.128783+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `13`
-- event_detection_confidence: `76`
+- major_event_count: `10`
+- event_detection_confidence: `80`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `True`
-- confirmation_score: `100`
+- confirmation_score: `75`
 
 ## Dashboard Note
 
@@ -27,10 +27,26 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Hormuz traffic slows after Iran threatens retaliation for US attacks - Reuters
-- source: Reuters
-- published_at: `2026-09-08T04:43:29+00:00`
+- headline: UK announces new Israel sanctions, despite U.S. warning of economic consequences
+- source: CNBC
+- published_at: `2026-09-08T14:12:12+00:00`
 - importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: South African economy shrinks in second quarter, dragged down by Iran war - Reuters
+- source: Reuters
+- published_at: `2026-09-08T10:48:31+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### oil_shock_risk / risk_off
+
+- headline: Why isn't oil above $100 despite supply disruptions? - Reuters
+- source: Reuters
+- published_at: `2026-09-08T10:22:24+00:00`
+- importance_score: `96`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -39,11 +55,27 @@
 - source: Reuters
 - published_at: `2026-09-08T04:19:00+00:00`
 - importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Rupee endures sharpest fall in over a month as Brent oil barrels towards $100 - Reuters
+- source: Reuters
+- published_at: `2026-09-08T02:56:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Hormuz traffic slows after Iran threatens retaliation for US attacks - Reuters
+- source: Reuters
+- published_at: `2026-09-08T02:53:00+00:00`
+- importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iran threatens US with new 'economic warfare' and missiles as Houthis attack Saudi Arabia - Reuters
+- headline: Iran-backed Houthis attack four Saudi cities in expansion of Middle East war, 73 hurt - Reuters
 - source: Reuters
 - published_at: `2026-09-08T01:49:00+00:00`
 - importance_score: `100`
@@ -51,56 +83,24 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Asia stocks fall as yen surges, Iran warns US of retaliation - Reuters
+- headline: Stocks fall as yen firms; Gulf attacks send oil towards $100 a barrel - Reuters
 - source: Reuters
 - published_at: `2026-09-08T01:48:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
-### oil_shock_risk / risk_off
+### geopolitical_risk_escalation / risk_off
 
-- headline: Why isn't oil above $100 despite supply disruptions? - Reuters
+- headline: Oil hits multi-week highs after Houthi attacks on Saudi energy facilities - Reuters
 - source: Reuters
-- published_at: `2026-09-08T02:00:00+00:00`
-- importance_score: `96`
-- confidence: `high`
+- published_at: `2026-09-08T00:50:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_easing / risk_on
 
 - headline: UK's Burnham, Trump discuss working towards Ukraine-Russia ceasefire, Downing Street says - Reuters
 - source: Reuters
 - published_at: `2026-09-07T17:11:31+00:00`
-- importance_score: `99`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: UAE says its energy exports will not be 'held hostage' by Iran war - Reuters
-- source: Reuters
-- published_at: `2026-09-07T13:13:23+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oman says it evacuated 16 crew members of Saudi Sidr vessel attacked by Iran - Reuters
-- source: Reuters
-- published_at: `2026-09-07T11:04:02+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran warns US energy assets in Gulf are vulnerable after latest clashes - Reuters
-- source: Reuters
-- published_at: `2026-09-07T06:57:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Israeli strikes on southern Lebanese town kill 12 as fears of escalation mount - Reuters
-- source: Reuters
-- published_at: `2026-09-07T06:48:00+00:00`
-- importance_score: `100`
+- importance_score: `97`
 - confidence: `medium`

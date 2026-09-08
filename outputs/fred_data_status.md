@@ -1,6 +1,6 @@
 # FRED Data Status
 
-Generated at: `2026-09-08T08:22:02.909227Z`
+Generated at: `2026-09-08T16:41:37.751465Z`
 
 ## Provider
 
@@ -8,7 +8,7 @@ Generated at: `2026-09-08T08:22:02.909227Z`
 - provider available: `True`
 - fallback used: `False`
 - rate limited: `False`
-- successful series: `BAA_SPREAD, HY_OAS, DGS10, DGS3MO, IG_OAS, DGS2, DFII10, RECESSION, FINANCIAL_STRESS`
+- successful series: `DGS2, HY_OAS, DGS10, IG_OAS, BAA_SPREAD, DGS3MO, RECESSION, FINANCIAL_STRESS, DFII10`
 - failed series: `none`
 
 ## Series
@@ -21,8 +21,8 @@ Generated at: `2026-09-08T08:22:02.909227Z`
 | DGS2 | DGS2 | True | 2026-09-03 | 4.34 | fred-api | False |  |
 | DGS3MO | DGS3MO | True | 2026-09-03 | 3.89 | fred-api | False |  |
 | FINANCIAL_STRESS | STLFSI4 | True | 2026-08-28 | -0.8526 | fred-api | True |  |
-| HY_OAS | BAMLH0A0HYM2 | True | 2026-09-03 | 2.65 | fred-api | False |  |
-| IG_OAS | BAMLC0A0CM | True | 2026-09-03 | 0.81 | fred-api | False |  |
+| HY_OAS | BAMLH0A0HYM2 | True | 2026-09-07 | 2.68 | fred-api | False |  |
+| IG_OAS | BAMLC0A0CM | True | 2026-09-07 | 0.81 | fred-api | False |  |
 | RECESSION | USREC | True | 2026-08-01 | 0.0 | fred-api | True |  |
 
 ## Data Completeness Effect
@@ -37,10 +37,10 @@ Generated at: `2026-09-08T08:22:02.909227Z`
 
 | symbol | edge without | edge with | primary without | primary with | risk expansion delta | failed bounce delta |
 |---|---|---|---|---|---:|---:|
-| SPY | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0117 | 0.0039 |
-| QQQ | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0118 | 0.0039 |
-| IWM | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0117 | 0.004 |
-| DIA | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0117 | 0.004 |
+| SPY | WEAK_EDGE | WEAK_EDGE | bounce_path | bounce_path | 0.0117 | 0.0039 |
+| QQQ | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0117 | 0.0039 |
+| IWM | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0118 | 0.004 |
+| DIA | WEAK_EDGE | WEAK_EDGE | bounce_path | bounce_path | 0.0118 | 0.004 |
 
 ## Warning
 
