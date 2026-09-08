@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-08T06:02:03.254304+00:00`
+- generated_at: `2026-09-08T08:21:50.189998+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
+- major_event_count: `13`
 - event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -27,9 +27,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Saudi-led coalition in Yemen says 73 injured in Houthi attacks on the kingdom - Reuters
+- headline: Hormuz traffic slows after Iran threatens retaliation for US attacks - Reuters
 - source: Reuters
-- published_at: `2026-09-08T04:19:43+00:00`
+- published_at: `2026-09-08T04:43:29+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Houthi attacks disrupt Saudi energy facilities, wound 73, authorities say - Reuters
+- source: Reuters
+- published_at: `2026-09-08T04:19:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -43,7 +51,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Asia stocks waver as yen surges, Iran warns of retaliation - Reuters
+- headline: Asia stocks fall as yen surges, Iran warns US of retaliation - Reuters
 - source: Reuters
 - published_at: `2026-09-08T01:48:00+00:00`
 - importance_score: `100`
@@ -54,7 +62,7 @@
 - headline: Why isn't oil above $100 despite supply disruptions? - Reuters
 - source: Reuters
 - published_at: `2026-09-08T02:00:00+00:00`
-- importance_score: `97`
+- importance_score: `96`
 - confidence: `high`
 
 ### geopolitical_risk_easing / risk_on
@@ -62,7 +70,7 @@
 - headline: UK's Burnham, Trump discuss working towards Ukraine-Russia ceasefire, Downing Street says - Reuters
 - source: Reuters
 - published_at: `2026-09-07T17:11:31+00:00`
-- importance_score: `100`
+- importance_score: `99`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -70,14 +78,6 @@
 - headline: UAE says its energy exports will not be 'held hostage' by Iran war - Reuters
 - source: Reuters
 - published_at: `2026-09-07T13:13:23+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Hormuz traffic dips to lowest since May after US, Iranian strikes on ships - Reuters
-- source: Reuters
-- published_at: `2026-09-07T11:23:44+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
