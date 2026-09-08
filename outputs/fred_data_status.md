@@ -1,6 +1,6 @@
 # FRED Data Status
 
-Generated at: `2026-09-07T23:45:22.968072Z`
+Generated at: `2026-09-08T00:47:29.292648Z`
 
 ## Provider
 
@@ -8,7 +8,7 @@ Generated at: `2026-09-07T23:45:22.968072Z`
 - provider available: `True`
 - fallback used: `False`
 - rate limited: `False`
-- successful series: `BAA_SPREAD, DGS10, HY_OAS, DFII10, FINANCIAL_STRESS, RECESSION, DGS2, IG_OAS, DGS3MO`
+- successful series: `DGS3MO, HY_OAS, IG_OAS, BAA_SPREAD, FINANCIAL_STRESS, DGS2, RECESSION, DGS10, DFII10`
 - failed series: `none`
 
 ## Series
@@ -20,7 +20,7 @@ Generated at: `2026-09-07T23:45:22.968072Z`
 | DGS10 | DGS10 | True | 2026-09-03 | 4.77 | fred-api | False |  |
 | DGS2 | DGS2 | True | 2026-09-03 | 4.34 | fred-api | False |  |
 | DGS3MO | DGS3MO | True | 2026-09-03 | 3.89 | fred-api | False |  |
-| FINANCIAL_STRESS | STLFSI4 | True | 2026-08-28 | -0.8526 | fred-api | False |  |
+| FINANCIAL_STRESS | STLFSI4 | True | 2026-08-28 | -0.8526 | fred-api | True |  |
 | HY_OAS | BAMLH0A0HYM2 | True | 2026-09-03 | 2.65 | fred-api | False |  |
 | IG_OAS | BAMLC0A0CM | True | 2026-09-03 | 0.81 | fred-api | False |  |
 | RECESSION | USREC | True | 2026-08-01 | 0.0 | fred-api | True |  |
@@ -39,8 +39,8 @@ Generated at: `2026-09-07T23:45:22.968072Z`
 |---|---|---|---|---|---:|---:|
 | SPY | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0118 | 0.004 |
 | QQQ | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0117 | 0.004 |
-| IWM | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0117 | 0.0039 |
-| DIA | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0118 | 0.004 |
+| IWM | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0118 | 0.0039 |
+| DIA | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0117 | 0.004 |
 
 ## Warning
 
