@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-09-09T00:46:37.868061+00:00`
+Generated at: `2026-09-09T01:14:23.618467+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -9,7 +9,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 
 - supported_symbols: `4`
 - watchlist_size: `4`
-- strongest_stock_symbol: `SMR`
+- strongest_stock_symbol: `NVDA`
 - stock_data_quality_score: `100.0`
 - validation_status: `not_yet_validated`
 - missing_high_value_data: `['single_stock_options']`
@@ -80,14 +80,14 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - status: `available`
 - current_price: `11.18`
 - market_context: `risk_off_pressure`
-- primary: `stock_trend_repair` / `26.5%`
-- secondary: `stock_failed_bounce` / `21.3%`
-- risk: `stock_downside_continuation` / `16.9%`
-- stock_confluence_score: `47.91` / `mixed`
-- stock_alpha_score_v1: `17.5` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `63.8%`
-- 60d_expected_return: `0.4%`
-- risk_reward_ratio: `0.76`
+- primary: `stock_trend_repair` / `25.0%`
+- secondary: `stock_failed_bounce` / `22.2%`
+- risk: `stock_downside_continuation` / `16.0%`
+- stock_confluence_score: `47.08` / `mixed`
+- stock_alpha_score_v1: `10.5` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `61.1%`
+- 60d_expected_return: `0.1%`
+- risk_reward_ratio: `0.72`
 - strongest_alert: `Relative Strength Alert` / `WARNING` / `67.5`
 - historical_analog_support: `conflicting` / samples `10`
 - validation_status: `not_yet_validated`
