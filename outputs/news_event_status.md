@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-08T23:38:58.897892+00:00`
+- generated_at: `2026-09-09T00:46:26.426184+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `13`
@@ -30,6 +30,22 @@
 - headline: War expands as Houthis attack Saudi cities and US strikes Iranian tankers - Reuters
 - source: Reuters
 - published_at: `2026-09-08T23:09:18+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Ukraine contracting around 1,000 Patriot missiles from allies, defence chief says - Reuters
+- source: Reuters
+- published_at: `2026-09-08T21:06:08+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil prices hit six-week high after Houthis attack Saudi sites - Reuters
+- source: Reuters
+- published_at: `2026-09-08T19:43:51+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -88,19 +104,3 @@
 - published_at: `2026-09-08T13:03:12+00:00`
 - importance_score: `100`
 - confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: South African economy shrinks in second quarter, dragged down by Iran war - Reuters
-- source: Reuters
-- published_at: `2026-09-08T10:48:31+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Houthi attacks disrupt Saudi energy facilities, wound 73, authorities say - Reuters
-- source: Reuters
-- published_at: `2026-09-08T04:19:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
