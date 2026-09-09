@@ -11,11 +11,11 @@ Alpha v1 remains a frozen research candidate until enough post-freeze observatio
 
 ## Summary
 
-- signal count: 240
+- signal count: 244
 - pending signals: 240
-- completed signals: 0
+- completed signals: 4
 - forecast signal: true
-- latest checked date: 2026-09-08
+- latest checked date: 2026-09-09
 - data source status: real_market_data
 - signal blocked reason: n/a
 
@@ -32,28 +32,38 @@ Alpha v1 remains a frozen research candidate until enough post-freeze observatio
 
 | Horizon | Count | Average | Median | Hit rate | t-stat |
 | --- | --- | --- | --- | --- | --- |
-| 3d | 0 | n/a | n/a | n/a | n/a |
-| 5d | 0 | n/a | n/a | n/a | n/a |
-| 10d | 0 | n/a | n/a | n/a | n/a |
-| 20d | 0 | n/a | n/a | n/a | n/a |
-| 60d | 0 | n/a | n/a | n/a | n/a |
+| 3d | 4 | -0.090% | 0.028% | 50.000% | -0.255 |
+| 5d | 4 | 1.307% | 1.284% | 100.000% | 2.923 |
+| 10d | 4 | 1.003% | 1.030% | 75.000% | 1.952 |
+| 20d | 4 | 0.982% | 0.946% | 75.000% | 1.829 |
+| 60d | 4 | 0.893% | 0.779% | 50.000% | 0.969 |
 
 ## Max Adverse / Favorable Excursion
 
-- max adverse excursion: n/a
-- max favorable excursion: n/a
+- max adverse excursion: -8.264%
+- max favorable excursion: 5.799%
 
 ## Performance By Symbol
 
-n/a
+| Group | 3d avg | 5d avg | 10d avg | 20d avg | 60d avg |
+| --- | --- | --- | --- | --- | --- |
+| DIA | 0.632% | 0.784% | 1.680% | 2.267% | 2.197% |
+| IWM | -1.048% | 1.785% | 2.055% | 0.533% | -0.638% |
+| QQQ | 0.162% | 2.303% | 0.380% | -0.229% | -0.743% |
+| SPY | -0.107% | 0.356% | -0.101% | 1.359% | 2.758% |
 
 ## Performance By Regime
 
-n/a
+| Group | 3d avg | 5d avg | 10d avg | 20d avg | 60d avg |
+| --- | --- | --- | --- | --- | --- |
+| liquidity_crunch | -0.443% | 2.044% | 1.217% | 0.152% | -0.691% |
+| sideways | 0.263% | 0.570% | 0.790% | 1.813% | 2.477% |
 
 ## Performance By Year/Month
 
-n/a
+| Month | Signals | 20d avg |
+| --- | --- | --- |
+| 2026-06 | 4 | 0.982% |
 
 ## Historical Alpha Character Check
 

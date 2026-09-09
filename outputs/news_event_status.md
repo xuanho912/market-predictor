@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-09T08:26:20.852783+00:00`
+- generated_at: `2026-09-09T16:42:19.810815+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
-- event_detection_confidence: `75`
+- major_event_count: `13`
+- event_detection_confidence: `79`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,65 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iran attacks US base in Jordan, ships near Hormuz after tankers sunk - Reuters
+- headline: Iran and US hit tankers in biggest wave of attacks on shipping since war began - Reuters
 - source: Reuters
-- published_at: `2026-09-09T04:07:00+00:00`
+- published_at: `2026-09-09T15:34:56+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil pushes past $100 as wave of US-Iran attacks exposes dwindling safety net - Reuters
+- source: Reuters
+- published_at: `2026-09-09T13:56:11+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil tanker hit in Iraqi waters, as vessels get caught in US-Iran attacks - Reuters
+- source: Reuters
+- published_at: `2026-09-09T13:35:58+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Saudi Arabia lifts alert in southern city a day after Houthi strikes - Reuters
+- source: Reuters
+- published_at: `2026-09-09T13:24:40+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Bessent bond plan details to be revealed as Treasury secretary warns FX traders he's 'the house now'
+- source: CNBC
+- published_at: `2026-09-09T12:25:50+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Silicon Valley-backed Covenant unveils low-cost, mass-producible cruise missile - Reuters
+- source: Reuters
+- published_at: `2026-09-09T09:12:41+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil nears $100 as fresh Middle East strikes raise supply risks - Reuters
+- source: Reuters
+- published_at: `2026-09-09T08:44:31+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil vessel transit costs through Hormuz escalated after Iran war, ENOC exec says - Reuters
+- source: Reuters
+- published_at: `2026-09-09T06:20:13+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -39,68 +95,12 @@
 - source: Reuters
 - published_at: `2026-09-09T01:59:00+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil nears $100 as fresh Middle East strikes raise supply risks - Reuters
-- source: Reuters
-- published_at: `2026-09-09T00:23:00+00:00`
-- importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: US military says it destroyed five Iranian oil carriers after attempted missile attacks - Reuters
 - source: Reuters
-- published_at: `2026-09-08T23:05:45+00:00`
+- published_at: `2026-09-08T23:03:00+00:00`
 - importance_score: `100`
 - confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Ukraine contracting around 1,000 Patriot missiles from allies, defence chief says - Reuters
-- source: Reuters
-- published_at: `2026-09-08T20:59:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: 25 years after 9/11, Americans fear domestic extremists more than foreign attacks, Reuters/Ipsos poll finds - Reuters
-- source: Reuters
-- published_at: `2026-09-08T15:55:43+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: UK announces new Israel sanctions, despite U.S. warning of economic consequences
-- source: CNBC
-- published_at: `2026-09-08T14:12:12+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Some Israeli actions in Syria may amount to war crimes, UN probe says - Reuters
-- source: Reuters
-- published_at: `2026-09-08T13:53:26+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Hormuz disruptions hitting small businesses hardest, UN trade agency warns - Reuters
-- source: Reuters
-- published_at: `2026-09-08T13:13:06+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Cluster bomb casualties near record, driven by war in Ukraine - Reuters
-- source: Reuters
-- published_at: `2026-09-08T13:10:48+00:00`
-- importance_score: `100`
-- confidence: `medium`
