@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-09T22:41:44.028196+00:00`
+- generated_at: `2026-09-09T23:30:56.102264+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `9`
-- event_detection_confidence: `80`
+- event_detection_confidence: `79`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -59,6 +59,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: US EIA hikes oil price forecasts as Iran war drains global stockpile - Reuters
+- source: Reuters
+- published_at: `2026-09-09T17:45:43+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Oil pushes past $100 as wave of US-Iran attacks exposes dwindling safety net - Reuters
 - source: Reuters
 - published_at: `2026-09-09T13:56:11+00:00`
@@ -88,11 +96,3 @@
 - published_at: `2026-09-09T06:19:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran and US hit tankers in biggest wave of attacks on shipping since war began - Reuters
-- source: Reuters
-- published_at: `2026-09-09T04:07:00+00:00`
-- importance_score: `100`
-- confidence: `high`
