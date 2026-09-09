@@ -1,20 +1,20 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-09T06:02:42.600583+00:00`
+- generated_at: `2026-09-09T08:26:20.852783+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `12`
-- event_detection_confidence: `76`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
-- price_reaction_confirmed: `True`
-- confirmation_score: `75`
+- price_reaction_confirmed: `False`
+- confirmation_score: `50`
 
 ## Dashboard Note
 
-当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，已被价格反应初步确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
+当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，尚未被价格反应充分确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
 
 ## Economic Calendar Risk
 
@@ -35,17 +35,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil nears $100 as fresh Middle East strikes raise supply risks - Reuters
+- headline: Yen stands tall as dollar wobbles, oil's run towards $100 chills sentiment - Reuters
 - source: Reuters
-- published_at: `2026-09-09T02:28:22+00:00`
+- published_at: `2026-09-09T01:59:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Yen stands tall as dollar wobbles, oil's run towards $100 chills sentiment - Reuters
+- headline: Oil nears $100 as fresh Middle East strikes raise supply risks - Reuters
 - source: Reuters
-- published_at: `2026-09-09T01:59:00+00:00`
+- published_at: `2026-09-09T00:23:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 

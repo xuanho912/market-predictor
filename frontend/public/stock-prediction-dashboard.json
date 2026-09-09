@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-09-09T06:02:53.994703+00:00",
+  "generated_at": "2026-09-09T08:26:32.702550+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-09-09T06:02:54.005649+00:00",
+    "generated_at": "2026-09-09T08:26:32.712751+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 245,
     "risk_score_effectiveness": {
@@ -523,7 +523,7 @@
               "相对 benchmark 强弱接近",
               "波动率区间接近"
             ],
-            "market_context": "risk_off_pressure",
+            "market_context": "market_headwind",
             "similarity_score": 0.6618,
             "worst_path_60d": -0.1303
           },
@@ -544,7 +544,7 @@
               "相对 benchmark 强弱接近",
               "波动率区间接近"
             ],
-            "market_context": "risk_off_pressure",
+            "market_context": "market_headwind",
             "similarity_score": 0.6547,
             "worst_path_60d": -0.1231
           },
@@ -565,7 +565,7 @@
               "相对 benchmark 强弱接近",
               "波动率区间接近"
             ],
-            "market_context": "risk_off_pressure",
+            "market_context": "market_headwind",
             "similarity_score": 0.6485,
             "worst_path_60d": -0.095
           },
@@ -585,7 +585,7 @@
               "20d 回撤深度接近",
               "波动率区间接近"
             ],
-            "market_context": "risk_off_pressure",
+            "market_context": "market_headwind",
             "similarity_score": 0.6392,
             "worst_path_60d": -0.1532
           },
@@ -604,7 +604,7 @@
             "key_shared_features": [
               "波动率区间接近"
             ],
-            "market_context": "risk_off_pressure",
+            "market_context": "market_headwind",
             "similarity_score": 0.6106,
             "worst_path_60d": -0.0889
           },
@@ -625,7 +625,7 @@
               "相对 benchmark 强弱接近",
               "波动率区间接近"
             ],
-            "market_context": "risk_off_pressure",
+            "market_context": "market_headwind",
             "similarity_score": 0.5982,
             "worst_path_60d": -0.0432
           },
@@ -646,7 +646,7 @@
               "相对 benchmark 强弱接近",
               "波动率区间接近"
             ],
-            "market_context": "risk_off_pressure",
+            "market_context": "market_headwind",
             "similarity_score": 0.5842,
             "worst_path_60d": -0.158
           },
@@ -667,7 +667,7 @@
               "相对 benchmark 强弱接近",
               "波动率区间接近"
             ],
-            "market_context": "risk_off_pressure",
+            "market_context": "market_headwind",
             "similarity_score": 0.5622,
             "worst_path_60d": -0.0599
           },
@@ -689,7 +689,7 @@
               "20d 回撤深度接近",
               "波动率区间接近"
             ],
-            "market_context": "risk_off_pressure",
+            "market_context": "market_headwind",
             "similarity_score": 0.5561,
             "worst_path_60d": -0.2673
           },
@@ -708,7 +708,7 @@
             "key_shared_features": [
               "波动率区间接近"
             ],
-            "market_context": "risk_off_pressure",
+            "market_context": "market_headwind",
             "similarity_score": 0.546,
             "worst_path_60d": -0.1117
           }
@@ -717,13 +717,13 @@
       },
       "market_context_for_stock": {
         "benchmark": "SPY",
-        "benchmark_edge_status": "RISK_WARNING",
+        "benchmark_edge_status": "WEAK_EDGE",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.3171,
+        "benchmark_primary_probability": 0.3134,
         "benchmark_primary_scenario": "bearish_path",
-        "context": "risk_off_pressure",
+        "context": "market_headwind",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
-        "risk_alert_level": "WARNING",
+        "risk_alert_level": "WATCH",
         "risk_alert_type": "Failed Bounce Alert",
         "symbol": "CEG"
       },
@@ -766,7 +766,7 @@
             "confidence": "low",
             "label": "个股反抽",
             "probability": 0.1272,
-            "reason": "结合回撤、成交量和大盘背景，短中期反抽权重较高；当前市场背景为 risk_off_pressure。",
+            "reason": "结合回撤、成交量和大盘背景，短中期反抽权重较高；当前市场背景为 market_headwind。",
             "scenario": "stock_bounce"
           },
           {
@@ -2176,7 +2176,7 @@
           },
           "market_industry": {
             "evidence": [
-              "大盘背景压制：risk_off_pressure",
+              "大盘背景压制：market_headwind",
               "相对板块走强：XLU",
               "20d 跑赢 benchmark"
             ],
@@ -2315,7 +2315,7 @@
           },
           "market_context": {
             "evidence": "大盘风险背景压低个股置信度",
-            "reason": "benchmark=SPY / risk_off_pressure",
+            "reason": "benchmark=SPY / market_headwind",
             "score": 28,
             "status": "conflicting"
           },
@@ -2445,59 +2445,59 @@
           "event_risk_flag": "high",
           "headlines": [
             {
-              "datetime": 1788924001,
-              "headline": "1 Chart That Destroys The Nvidia Bear Thesis",
+              "datetime": 1788939000,
+              "headline": "Cameco Controls the Uranium Refinery That Canada Cannot Afford to Lose",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=53838cddac5bd160897a546c1768e6aa0cf1db3a62cff141778b7f5f4b092fcf"
+              "url": "https://finnhub.io/api/news?id=78c1ed98c1a205a12fcd08b42d0b0ba6da3da5e52f8eed14e7aa1af1ceda820a"
             },
             {
-              "datetime": 1788922861,
-              "headline": "Rocket Lab's Next Neutron Milestone Is a Pad Delivery, Not a Launch. I'd Hold Off on Buying the Stock.",
+              "datetime": 1788937500,
+              "headline": "The Fed Just Got 1 Big Reason to Raise Rates. This Week Could Deliver Another.",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=3ab34e17eb3397b04bcc5a3ba49803f741de121b0434cd078769caac42de6893"
+              "url": "https://finnhub.io/api/news?id=529723d1388b59ecd537dc0a2e1da8287f2187c23d6fb0488b03b7e356576475"
             },
             {
-              "datetime": 1788921300,
-              "headline": "Fed Chairman Kevin Warsh Called Inflation 'More Concerning' at His First Jackson Hole Speech. Does That Signal a Rate Hike Is Coming?",
+              "datetime": 1788936600,
+              "headline": "NuScale Is Already Down 70%. Here's the Price I'd Actually Start Buying.",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=dfed6f72b61b619403963e19b9fca06683f86aa98de6fc7df0805462ad204b93"
+              "url": "https://finnhub.io/api/news?id=095bf22c04b27b764f473bca1700e9e418a88d2e963c15df8fd53e875bed76c2"
             },
             {
-              "datetime": 1788919508,
-              "headline": "TSLA Stock Slips Overnight Even As Musk Hypes Cybercab Speed And Cathie Wood’s ARK Sees Trillions Ahead",
+              "datetime": 1788935100,
+              "headline": "Archer Aviation Is Buying Boeing's Wisk Aero, Insitu, and SkyGrid. What Does It Mean for Archer Aviation Stock?",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=201d0df4e84abddf20f34b946b134d6b411693a51a5e9b485b85e159085d9f00"
+              "url": "https://finnhub.io/api/news?id=bb112f56ae7517df7690a8182a91ee3d2393b59f949d5df1f6d9c9e23f1cd9c6"
             },
             {
-              "datetime": 1788918600,
-              "headline": "If I Were in My 20s, I'd Buy This Vanguard ETF Warren Buffett Recommended and Hold It Forever",
+              "datetime": 1788933661,
+              "headline": "Prediction: Netflix's Advertising Business Passes $6 Billion in 2027",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=dab6aeadac5c73d5d0d5eb8ffb0361a8a8c6904da7ef36d5aca83cfb3c018619"
+              "url": "https://finnhub.io/api/news?id=c8f1b232ed4487033ca6ddd3bda3d514306b31a02a607d7f46dc58ce4730cdd3"
             },
             {
-              "datetime": 1788916800,
-              "headline": "Why Sept. 11 Could Be a Massive Day for the Stock Market",
+              "datetime": 1788933600,
+              "headline": "How to Profit From Sharp Stock Moves—Up or Down",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=56715a15318028d67437724eb63ebd66a800147a4d5518f002926dfb7547273c"
+              "url": "https://finnhub.io/api/news?id=aee316a2e4ea3b7d7eeed93edcfb5d81217016c50f2f9b7da53db6d63b439f32"
             },
             {
-              "datetime": 1788915721,
-              "headline": "Super Micro Computer Sees AI Demand Driving Growth, Diversification and Cash Flow",
+              "datetime": 1788932700,
+              "headline": "The U.S.-China Worry List: Here’s What Could Rattle the Fragile Detente",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=e3d378dffaa91888566ba915206aa49f018868ad7cce4aca9c992bce67bb3454"
+              "url": "https://finnhub.io/api/news?id=f02c6123e86921a3f4ff08182c9253f370c7838ff9978a124cc912ea8cec4486"
             },
             {
-              "datetime": 1788915628,
-              "headline": "Meta Platforms Settles Major Lawsuit, Pays $18 Billion",
+              "datetime": 1788932637,
+              "headline": "Jim Chanos Questions Nvidia’s AI Chip Economics After Jensen Huang Says Nvidia Chips Are 'Highly Rentable'",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=5f31aa1688ce6739aeaf219c3674b3e7415c138734496e4490764e314dc75f56"
+              "url": "https://finnhub.io/api/news?id=2f15b2ff66d110a233eab0f04e5d75fa95cbf796e3598ba57725f045cda12ae7"
             }
           ],
-          "major_company_headline": "1 Chart That Destroys The Nvidia Bear Thesis",
+          "major_company_headline": "Cameco Controls the Uranium Refinery That Canada Cannot Afford to Lose",
           "news_count_24h": 20,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
-          "news_sentiment": "neutral"
+          "news_sentiment": "positive"
         },
         "price_trend": {
           "close": 225.72999572753906,
@@ -2937,9 +2937,9 @@
       },
       "market_context_for_stock": {
         "benchmark": "QQQ",
-        "benchmark_edge_status": "RISK_WARNING",
+        "benchmark_edge_status": "WEAK_EDGE",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.3293,
+        "benchmark_primary_probability": 0.3257,
         "benchmark_primary_scenario": "bearish_path",
         "context": "market_headwind",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -3028,6 +3028,7 @@
         "supporting_signals": [
           "个股相对强弱优于基准。",
           "价格站在 20d 均线上方。",
+          "近期公司新闻偏正面。",
           "基础财务指标已接入且收入增长为正。"
         ]
       },
@@ -4061,7 +4062,7 @@
           {
             "affected_ticker": "NVDA",
             "alert_level": "NO_ALERT",
-            "alert_score": 8.72,
+            "alert_score": 8.8,
             "alert_type": "Stock Bounce Setup",
             "confirmation_needed": [
               "价格站上主路径确认价",
@@ -4356,15 +4357,16 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: 1 Chart That Destroys The Nvidia Bear Thesis",
+              "公司新闻已接入: Cameco Controls the Uranium Refinery That Canada Cannot Afford to Lose",
+              "新闻情绪偏正",
               "增长数据具备 EPS 上修叙事基础"
             ],
             "max_points": 10,
             "missing_fields": [],
             "name": "catalyst",
-            "points": 6.0,
-            "score_pct": 60.0,
-            "status": "neutral"
+            "points": 8.0,
+            "score_pct": 80.0,
+            "status": "supportive"
           },
           "flow": {
             "evidence": [
@@ -4451,11 +4453,11 @@
           "expected_return_60d": -0.0074,
           "max_drawdown_risk_20d": 0.0761,
           "max_drawdown_risk_60d": 0.1315,
-          "outperformance_probability_20d": 0.6269,
+          "outperformance_probability_20d": 0.6349,
           "risk_reward_ratio": 0.55,
           "upside_potential_60d": 0.0725
         },
-        "forecast_grade": "weak_or_no_alpha_edge",
+        "forecast_grade": "wait_for_confirmation",
         "missing_data": [
           "single_stock_options"
         ],
@@ -4473,7 +4475,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金/技术确认较强",
-          "catalyst": "1 Chart That Destroys The Nvidia Bear Thesis",
+          "catalyst": "Cameco Controls the Uranium Refinery That Canada Cannot Afford to Lose",
           "expectation_gap": [
             "收入增长较强，具备正向预期差基础",
             "EPS 增长较强，可能支持盈利上修叙事"
@@ -4491,7 +4493,7 @@
           "primary_path": "stock_failed_bounce",
           "valuation_repricing": "估值有扩张条件"
         },
-        "total_score": 53.5,
+        "total_score": 55.5,
         "validation_status": "not_yet_validated",
         "version": "stock_alpha_score_v1"
       },
@@ -4500,7 +4502,6 @@
           "大盘风险背景压低个股置信度",
           "公司新闻或财报事件风险上升",
           "历史相似结构与主路径冲突",
-          "个股 Alpha 评分已接入",
           "主路径和第二路径差距较小"
         ],
         "confluence_level": "mixed",
@@ -4517,9 +4518,9 @@
         "module_scores": {
           "alpha_quality": {
             "evidence": "个股 Alpha 评分已接入",
-            "reason": "score=53.5; grade=weak_or_no_alpha_edge; benchmark=QQQ",
-            "score": 53.5,
-            "status": "conflicting"
+            "reason": "score=55.5; grade=wait_for_confirmation; benchmark=QQQ",
+            "score": 55.5,
+            "status": "neutral"
           },
           "fundamentals_earnings": {
             "evidence": "基础财务指标偏支持",
@@ -4577,7 +4578,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 50.48,
+        "stock_confluence_score": 50.66,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "个股跑赢所属板块",
@@ -4590,6 +4591,7 @@
       "supporting_signals": [
         "个股相对强弱优于基准。",
         "价格站在 20d 均线上方。",
+        "近期公司新闻偏正面。",
         "基础财务指标已接入且收入增长为正。"
       ],
       "symbol": "NVDA",
@@ -4661,6 +4663,12 @@
           "event_risk_flag": "high",
           "headlines": [
             {
+              "datetime": 1788917031,
+              "headline": "SMR Stock Clocks Best Day In Over 4 Months: Retail Feels ‘Something Is Cooking’",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=811ae2317c68d6649f88f468121f32d896e4c90f1d3b8664837fd0b5f21218e8"
+            },
+            {
               "datetime": 1788908799,
               "headline": "Jim Cramer Weighs In on GE Vernova (GEV) and NuScale Power (SMR)",
               "source": "Yahoo",
@@ -4701,18 +4709,12 @@
               "headline": "NuScale Power (SMR) Could Be 90% Undervalued After Commercialization Progress",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=a9139493ad26baceae94cb2c4146672e5b094f6c6294a2d3130d8bd5d64058d8"
-            },
-            {
-              "datetime": 1788725417,
-              "headline": "What Is NuScale Power (SMR) Trying To Gain From Nuclear Specific AI?",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=33e25238ae18b919a50b1775307657036ac71fc597d9fe72980af7f75b396797"
             }
           ],
-          "major_company_headline": "Jim Cramer Weighs In on GE Vernova (GEV) and NuScale Power (SMR)",
-          "news_count_24h": 6,
-          "news_count_72h": 12,
-          "news_risk_score": 68.0,
+          "major_company_headline": "SMR Stock Clocks Best Day In Over 4 Months: Retail Feels ‘Something Is Cooking’",
+          "news_count_24h": 7,
+          "news_count_72h": 13,
+          "news_risk_score": 76.0,
           "news_sentiment": "neutral"
         },
         "price_trend": {
@@ -5149,9 +5151,9 @@
       },
       "market_context_for_stock": {
         "benchmark": "IWM",
-        "benchmark_edge_status": "RISK_WARNING",
+        "benchmark_edge_status": "MODERATE_EDGE",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.2901,
+        "benchmark_primary_probability": 0.2861,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -6273,7 +6275,7 @@
           {
             "affected_ticker": "SMR",
             "alert_level": "NO_ALERT",
-            "alert_score": 9.39,
+            "alert_score": 9.48,
             "alert_type": "Stock Bounce Setup",
             "confirmation_needed": [
               "价格站上主路径确认价",
@@ -6567,7 +6569,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Jim Cramer Weighs In on GE Vernova (GEV) and NuScale Power (SMR)"
+              "公司新闻已接入: SMR Stock Clocks Best Day In Over 4 Months: Retail Feels ‘Something Is Cooking’"
             ],
             "max_points": 10,
             "missing_fields": [],
@@ -6687,7 +6689,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金/技术确认较强",
-          "catalyst": "Jim Cramer Weighs In on GE Vernova (GEV) and NuScale Power (SMR)",
+          "catalyst": "SMR Stock Clocks Best Day In Over 4 Months: Retail Feels ‘Something Is Cooking’",
           "expectation_gap": [
             "暂未看到明确正向预期差证据"
           ],
@@ -6755,8 +6757,8 @@
           },
           "news_event": {
             "evidence": "公司新闻或财报事件风险上升",
-            "reason": "risk_score=68.0; earnings_date=None",
-            "score": 66.76,
+            "reason": "risk_score=76.0; earnings_date=None",
+            "score": 69.32,
             "status": "conflicting"
           },
           "options_volatility": {
@@ -6791,7 +6793,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 52.42,
+        "stock_confluence_score": 52.61,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "个股跑赢所属板块",
@@ -7363,9 +7365,9 @@
       },
       "market_context_for_stock": {
         "benchmark": "QQQ",
-        "benchmark_edge_status": "RISK_WARNING",
+        "benchmark_edge_status": "WEAK_EDGE",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.3293,
+        "benchmark_primary_probability": 0.3257,
         "benchmark_primary_scenario": "bearish_path",
         "context": "market_headwind",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -9045,7 +9047,7 @@
       "top_candidate": "CEG",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-09-09T06:02:53.995003+00:00",
+    "generated_at": "2026-09-09T08:26:32.702817+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -9084,7 +9086,7 @@
           "mid": 298.9,
           "range_pct": 0.0303
         },
-        "final_radar_score": 73.38,
+        "final_radar_score": 73.7,
         "forecast_date": "2026-09-08",
         "invalidation_level": 264.82,
         "last_close": 299.04998779296875,
@@ -9100,7 +9102,7 @@
           "成交量确认当前路径",
           "个股相对强于大盘/benchmark"
         ],
-        "market_context": "risk_off_pressure",
+        "market_context": "market_headwind",
         "model_version": "stock_baseline_v1",
         "news_fields": {
           "catalyst_note": "catalyst data present or event risk proxy elevated",
@@ -9108,7 +9110,7 @@
           "earnings": "available"
         },
         "next_day_move_probability": 0.825,
-        "one_line_reason": "event_driven_move: Alpha 63 / 弹性 82 / 成交量 100 / 相对强弱 100 / 催化 61 / 大盘 risk_off_pressure / 板块 supportive",
+        "one_line_reason": "event_driven_move: Alpha 63 / 弹性 82 / 成交量 100 / 相对强弱 100 / 催化 61 / 大盘 market_headwind / 板块 supportive",
         "outperformance_probability_20d": 0.724,
         "primary_probability": 0.2325,
         "primary_scenario": "stock_trend_repair",
@@ -9154,7 +9156,7 @@
         "candidate_type": "event_driven_move",
         "catalyst_score": 63.72,
         "company_name": "Nuscale Power Corp",
-        "confluence_score": 52.42,
+        "confluence_score": 52.61,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9171,7 +9173,7 @@
           "mid": 11.17,
           "range_pct": 0.0617
         },
-        "final_radar_score": 68.98,
+        "final_radar_score": 69.01,
         "forecast_date": "2026-09-08",
         "invalidation_level": 8.53,
         "last_close": 11.180000305175781,
@@ -9318,19 +9320,19 @@
       },
       {
         "alpha_fields": {
-          "alpha_score": 53.5,
+          "alpha_score": 55.5,
           "expected_return_60d": -0.0074,
-          "forecast_grade": "weak_or_no_alpha_edge",
+          "forecast_grade": "wait_for_confirmation",
           "main_logic": "半导体/AI 逻辑：订单、毛利率、资本开支周期、估值重估和资金确认。",
-          "outperformance_probability_20d": 0.6269,
+          "outperformance_probability_20d": 0.6349,
           "risk_reward_ratio": 0.55
         },
-        "alpha_quality_score": 53.5,
+        "alpha_quality_score": 55.5,
         "as_of": "2026-09-08",
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 64.04,
         "company_name": "NVIDIA Corp",
-        "confluence_score": 50.48,
+        "confluence_score": 50.66,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9347,7 +9349,7 @@
           "mid": 225.44,
           "range_pct": 0.034
         },
-        "final_radar_score": 58.73,
+        "final_radar_score": 59.11,
         "forecast_date": "2026-09-08",
         "invalidation_level": 207.25,
         "last_close": 225.72999572753906,
@@ -9356,7 +9358,7 @@
           "大盘风险背景压低个股置信度",
           "公司新闻或财报事件风险上升",
           "历史相似结构与主路径冲突",
-          "个股 Alpha 评分已接入"
+          "主路径和第二路径差距较小"
         ],
         "main_supporting_evidence": [
           "个股跑赢所属板块",
@@ -9372,8 +9374,8 @@
           "earnings": "available"
         },
         "next_day_move_probability": 0.6368,
-        "one_line_reason": "failed_bounce_risk: Alpha 54 / 弹性 63 / 成交量 64 / 相对强弱 74 / 催化 64 / 大盘 market_headwind / 板块 supportive",
-        "outperformance_probability_20d": 0.6269,
+        "one_line_reason": "failed_bounce_risk: Alpha 56 / 弹性 63 / 成交量 64 / 相对强弱 74 / 催化 64 / 大盘 market_headwind / 板块 supportive",
+        "outperformance_probability_20d": 0.6349,
         "primary_probability": 0.2565,
         "primary_scenario": "stock_failed_bounce",
         "radar_level": "MODERATE_OPPORTUNITY",
