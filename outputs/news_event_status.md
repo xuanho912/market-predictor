@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-09T01:14:10.910946+00:00`
+- generated_at: `2026-09-09T06:02:42.600583+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `12`
-- event_detection_confidence: `77`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,33 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: War expands as Houthis attack Saudi cities and US strikes Iranian tankers - Reuters
+- headline: Iran attacks US base in Jordan, ships near Hormuz after tankers sunk - Reuters
 - source: Reuters
-- published_at: `2026-09-08T23:09:18+00:00`
+- published_at: `2026-09-09T04:07:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil nears $100 as fresh Middle East strikes raise supply risks - Reuters
+- source: Reuters
+- published_at: `2026-09-09T02:28:22+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Yen stands tall as dollar wobbles, oil's run towards $100 chills sentiment - Reuters
+- source: Reuters
+- published_at: `2026-09-09T01:59:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US military says it destroyed five Iranian oil carriers after attempted missile attacks - Reuters
+- source: Reuters
+- published_at: `2026-09-08T23:05:45+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -37,15 +61,7 @@
 
 - headline: Ukraine contracting around 1,000 Patriot missiles from allies, defence chief says - Reuters
 - source: Reuters
-- published_at: `2026-09-08T21:06:08+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil prices hit six-week high after Houthis attack Saudi sites - Reuters
-- source: Reuters
-- published_at: `2026-09-08T19:43:51+00:00`
+- published_at: `2026-09-08T20:59:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -55,7 +71,7 @@
 - source: Reuters
 - published_at: `2026-09-08T15:55:43+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -63,7 +79,7 @@
 - source: CNBC
 - published_at: `2026-09-08T14:12:12+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -71,7 +87,7 @@
 - source: Reuters
 - published_at: `2026-09-08T13:53:26+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -86,21 +102,5 @@
 - headline: Cluster bomb casualties near record, driven by war in Ukraine - Reuters
 - source: Reuters
 - published_at: `2026-09-08T13:10:48+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Dangote expects fuel shortages beyond Iran war as it spurs expansion - Reuters
-- source: Reuters
-- published_at: `2026-09-08T13:03:43+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Most Gulf stocks edge up amid caution over US-Iran standoff, Saudi energy strikes - Reuters
-- source: Reuters
-- published_at: `2026-09-08T13:03:12+00:00`
 - importance_score: `100`
 - confidence: `medium`
