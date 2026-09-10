@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-09-10T00:42:58.268784+00:00",
+  "generated_at": "2026-09-10T01:03:40.627441+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-09-10T00:42:58.302640+00:00",
+    "generated_at": "2026-09-10T01:03:40.661314+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 249,
     "risk_score_effectiveness": {
@@ -4579,7 +4579,8 @@
       "benchmark": "IWM",
       "company_name": "Nuscale Power Corp",
       "conflicting_signals": [
-        "大盘背景对个股路径形成压力。"
+        "大盘背景对个股路径形成压力。",
+        "公司新闻或财报事件风险较高。"
       ],
       "current_price": 10.81,
       "data_quality": {
@@ -4633,11 +4634,41 @@
           "company_news": "available",
           "earnings": "available",
           "earnings_date": null,
-          "earnings_risk_flag": "low",
+          "earnings_risk_flag": "high",
           "earnings_within_30d": false,
           "earnings_within_7d": false,
-          "event_risk_flag": "low",
+          "event_risk_flag": "high",
           "headlines": [
+            {
+              "datetime": 1788968580,
+              "headline": "NuScale Power: 1 Catalyst That Will Make or Break This Nuclear Stock",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=a91c1cbfc7904fda7b4e0d0475b774c8fcd984a41a0f34b51cd83827cddcae4c"
+            },
+            {
+              "datetime": 1788962260,
+              "headline": "Bond yields tick higher as oil tops $100: AlphaCheck",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=b8f3a2a0fe76b853094acb266a3c041fa13e5a035115a7245c0386696549e944"
+            },
+            {
+              "datetime": 1788960000,
+              "headline": "Global Uranium Market Projected to Reach $13.59 Billion by 2033 as Washington Becomes the Sector's Largest Counterparty",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=cb742a3d71f454960a63957095c8fe4ac34b0ecc6039e6250c48887e69ac5371"
+            },
+            {
+              "datetime": 1788951000,
+              "headline": "NuScale Stock vs. Oklo Stock: Wall Street Says Buy One and Sell the Other.",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=922e501cd32a01e59d730e22405e79225fd5a0e8915f1fdbe5c201b339a625ac"
+            },
+            {
+              "datetime": 1788936600,
+              "headline": "NuScale Is Already Down 70%. Here's the Price I'd Actually Start Buying.",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=095bf22c04b27b764f473bca1700e9e418a88d2e963c15df8fd53e875bed76c2"
+            },
             {
               "datetime": 1788917031,
               "headline": "SMR Stock Clocks Best Day In Over 4 Months: Retail Feels ‘Something Is Cooking’",
@@ -4655,42 +4686,12 @@
               "headline": "Intel, NuScale Power, Casey's General Stores, Qualcomm and SpaceX: Why These 5 Stocks Are on Investors' Radars Today",
               "source": "Benzinga",
               "url": "https://finnhub.io/api/news?id=e073521a228912706a3a68245f14ac10285cf94d241faf41db08ac6f13a2e6cc"
-            },
-            {
-              "datetime": 1788885598,
-              "headline": "NuScale Power Stock Broke Out in August. Is It a Buy?",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=a51d6436e0cb05baf6d640f3ade1199aab54657afe517f15983bdd51ef6f5489"
-            },
-            {
-              "datetime": 1788884509,
-              "headline": "NuScale And Oklo Heat Up, These Leveraged Nuclear ETFs Are Soaring Past 30%",
-              "source": "Benzinga",
-              "url": "https://finnhub.io/api/news?id=24c5a9b5ca65a372bb803b18a3e67490e20133067c52191479bb588ff270328a"
-            },
-            {
-              "datetime": 1788880429,
-              "headline": "NuScale Power Spikes 13%, Oklo Climbs 7%: Is the Nuclear Selloff Finally Exhausted?",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=fda46fbd53b5d2b634f92a936e0fca64e4dbb4df148c3c44da00adcf5ee35e72"
-            },
-            {
-              "datetime": 1788874307,
-              "headline": "BWX Technologies shares are trading lower after the company announced it will acquire Precision Components Group.",
-              "source": "Benzinga",
-              "url": "https://finnhub.io/api/news?id=04932489db0ab02fec751dd36d2630f8de578f81f92bbbf683beeed295549eb7"
-            },
-            {
-              "datetime": 1788874140,
-              "headline": "Can Hydrogen Become a Key Growth Driver for NuScale Power?",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=7c786014ee08b0ddbd87044b749a5f9247ad48cdc3cf41c8e31835d2c2223063"
             }
           ],
-          "major_company_headline": "SMR Stock Clocks Best Day In Over 4 Months: Retail Feels ‘Something Is Cooking’",
-          "news_count_24h": 1,
-          "news_count_72h": 8,
-          "news_risk_score": 28.0,
+          "major_company_headline": "NuScale Power: 1 Catalyst That Will Make or Break This Nuclear Stock",
+          "news_count_24h": 6,
+          "news_count_72h": 13,
+          "news_risk_score": 68.0,
           "news_sentiment": "neutral"
         },
         "price_trend": {
@@ -4744,69 +4745,69 @@
         "forecast_price_table": {
           "10d": {
             "confidence_level": "low",
-            "expected_price": 10.68,
-            "expected_return": -0.0116,
-            "lower_confidence_price": 9.63,
+            "expected_price": 10.67,
+            "expected_return": -0.0133,
+            "lower_confidence_price": 9.61,
             "primary_scenario_price": 10.2,
-            "probability_of_reaching_primary_price": 0.2278,
+            "probability_of_reaching_primary_price": 0.2365,
             "risk_scenario_price": 10.1,
             "secondary_scenario_price": 11.34,
-            "upper_confidence_price": 11.74
+            "upper_confidence_price": 11.72
           },
           "1d": {
             "confidence_level": "low",
             "expected_price": 10.79,
-            "expected_return": -0.0016,
+            "expected_return": -0.0019,
             "lower_confidence_price": 10.46,
             "primary_scenario_price": 10.76,
-            "probability_of_reaching_primary_price": 0.2278,
+            "probability_of_reaching_primary_price": 0.2365,
             "risk_scenario_price": 10.67,
             "secondary_scenario_price": 10.88,
-            "upper_confidence_price": 11.13
+            "upper_confidence_price": 11.12
           },
           "20d": {
             "confidence_level": "low",
-            "expected_price": 10.7,
-            "expected_return": -0.0103,
-            "lower_confidence_price": 9.21,
+            "expected_price": 10.68,
+            "expected_return": -0.0125,
+            "lower_confidence_price": 9.18,
             "primary_scenario_price": 10.1,
-            "probability_of_reaching_primary_price": 0.2278,
+            "probability_of_reaching_primary_price": 0.2365,
             "risk_scenario_price": 9.87,
             "secondary_scenario_price": 11.62,
-            "upper_confidence_price": 12.19
+            "upper_confidence_price": 12.17
           },
           "3d": {
             "confidence_level": "low",
-            "expected_price": 10.76,
-            "expected_return": -0.0047,
-            "lower_confidence_price": 10.18,
+            "expected_price": 10.75,
+            "expected_return": -0.0056,
+            "lower_confidence_price": 10.17,
             "primary_scenario_price": 10.62,
-            "probability_of_reaching_primary_price": 0.2278,
+            "probability_of_reaching_primary_price": 0.2365,
             "risk_scenario_price": 10.48,
             "secondary_scenario_price": 11.0,
-            "upper_confidence_price": 11.34
+            "upper_confidence_price": 11.33
           },
           "5d": {
             "confidence_level": "low",
-            "expected_price": 10.73,
-            "expected_return": -0.0078,
-            "lower_confidence_price": 9.98,
+            "expected_price": 10.71,
+            "expected_return": -0.009,
+            "lower_confidence_price": 9.97,
             "primary_scenario_price": 10.46,
-            "probability_of_reaching_primary_price": 0.2278,
+            "probability_of_reaching_primary_price": 0.2365,
             "risk_scenario_price": 10.32,
             "secondary_scenario_price": 11.12,
-            "upper_confidence_price": 11.47
+            "upper_confidence_price": 11.46
           },
           "60d": {
             "confidence_level": "low",
-            "expected_price": 10.77,
-            "expected_return": -0.0041,
-            "lower_confidence_price": 8.18,
+            "expected_price": 10.74,
+            "expected_return": -0.0065,
+            "lower_confidence_price": 8.16,
             "primary_scenario_price": 10.03,
-            "probability_of_reaching_primary_price": 0.2278,
+            "probability_of_reaching_primary_price": 0.2365,
             "risk_scenario_price": 9.66,
             "secondary_scenario_price": 12.06,
-            "upper_confidence_price": 13.35
+            "upper_confidence_price": 13.32
           }
         },
         "trigger_levels": {
@@ -5142,70 +5143,71 @@
           {
             "confidence": "low",
             "label": "个股失败反抽",
-            "probability": 0.2278,
+            "probability": 0.2365,
             "reason": "反抽缺乏成交量/相对强弱确认或大盘风险上升时，失败反抽权重上升。",
             "scenario": "stock_failed_bounce"
           },
           {
             "confidence": "low",
             "label": "个股趋势修复",
-            "probability": 0.1998,
+            "probability": 0.188,
             "reason": "相对强弱和中期趋势修复信号较强时，该路径上升。",
             "scenario": "stock_trend_repair"
           },
           {
             "confidence": "low",
             "label": "个股下跌延续",
-            "probability": 0.1806,
+            "probability": 0.17,
             "reason": "价格低于关键均线、相对弱势或大盘 risk-off 时，下跌延续权重上升。",
             "scenario": "stock_downside_continuation"
           },
           {
             "confidence": "low",
-            "label": "个股震荡",
-            "probability": 0.1414,
-            "reason": "信号分歧较大时，震荡路径权重上升。",
-            "scenario": "stock_sideways"
-          },
-          {
-            "confidence": "low",
             "label": "个股事件风险",
-            "probability": 0.1327,
+            "probability": 0.1618,
             "reason": "个股新闻、财报、估值或期权数据缺失时，事件风险保持为独立风险路径。",
             "scenario": "stock_event_risk"
           },
           {
             "confidence": "low",
+            "label": "个股震荡",
+            "probability": 0.133,
+            "reason": "信号分歧较大时，震荡路径权重上升。",
+            "scenario": "stock_sideways"
+          },
+          {
+            "confidence": "low",
             "label": "个股反抽",
-            "probability": 0.1177,
+            "probability": 0.1107,
             "reason": "结合回撤、成交量和大盘背景，短中期反抽权重较高；当前市场背景为 risk_off_pressure。",
             "scenario": "stock_bounce"
           }
         ],
         "close_call": true,
         "conflicting_signals": [
-          "大盘背景对个股路径形成压力。"
+          "大盘背景对个股路径形成压力。",
+          "公司新闻或财报事件风险较高。"
         ],
         "primary": {
           "confidence": "low",
           "label": "个股失败反抽",
-          "probability": 0.2278,
+          "probability": 0.2365,
           "reason": "反抽缺乏成交量/相对强弱确认或大盘风险上升时，失败反抽权重上升。",
           "scenario": "stock_failed_bounce"
         },
-        "probability_gap": 0.0279,
+        "probability_gap": 0.0485,
         "ranking_note": "Stock scenario probabilities follow market -> sector -> stock hierarchy. Market risk sets confidence, sector/industry filters the setup, and stock evidence decides the final path. They are not validated alpha and not execution advice.",
         "risk": {
           "confidence": "low",
           "label": "个股下跌延续",
-          "probability": 0.1806,
+          "probability": 0.17,
           "reason": "价格低于关键均线、相对弱势或大盘 risk-off 时，下跌延续权重上升。",
           "scenario": "stock_downside_continuation"
         },
         "secondary": {
           "confidence": "low",
           "label": "个股趋势修复",
-          "probability": 0.1998,
+          "probability": 0.188,
           "reason": "相对强弱和中期趋势修复信号较强时，该路径上升。",
           "scenario": "stock_trend_repair"
         },
@@ -5466,11 +5468,11 @@
           null,
           10.81,
           10.79,
-          10.76,
-          10.73,
+          10.75,
+          10.71,
+          10.67,
           10.68,
-          10.7,
-          10.77
+          10.74
         ],
         "historical_price": [
           11.99,
@@ -5604,21 +5606,21 @@
           "primary": {
             "confidence": "low",
             "label": "个股失败反抽",
-            "probability": 0.2278,
+            "probability": 0.2365,
             "reason": "反抽缺乏成交量/相对强弱确认或大盘风险上升时，失败反抽权重上升。",
             "scenario": "stock_failed_bounce"
           },
           "risk": {
             "confidence": "low",
             "label": "个股下跌延续",
-            "probability": 0.1806,
+            "probability": 0.17,
             "reason": "价格低于关键均线、相对弱势或大盘 risk-off 时，下跌延续权重上升。",
             "scenario": "stock_downside_continuation"
           },
           "secondary": {
             "confidence": "low",
             "label": "个股趋势修复",
-            "probability": 0.1998,
+            "probability": 0.188,
             "reason": "相对强弱和中期趋势修复信号较强时，该路径上升。",
             "scenario": "stock_trend_repair"
           }
@@ -6070,7 +6072,7 @@
           {
             "affected_ticker": "SMR",
             "alert_level": "NO_ALERT",
-            "alert_score": 30.09,
+            "alert_score": 30.26,
             "alert_type": "Stock Failed Bounce Risk",
             "confirmation_needed": [
               "价格无法站上确认价",
@@ -6128,7 +6130,7 @@
           {
             "affected_ticker": "SMR",
             "alert_level": "NO_ALERT",
-            "alert_score": 28.9,
+            "alert_score": 28.31,
             "alert_type": "Stock Breakout Watch",
             "confirmation_needed": [
               "站上 breakout level",
@@ -6244,7 +6246,7 @@
           {
             "affected_ticker": "SMR",
             "alert_level": "NO_ALERT",
-            "alert_score": 10.84,
+            "alert_score": 10.2,
             "alert_type": "Stock Breakdown Warning",
             "confirmation_needed": [
               "跌破 breakdown level",
@@ -6302,7 +6304,7 @@
           {
             "affected_ticker": "SMR",
             "alert_level": "NO_ALERT",
-            "alert_score": 7.3,
+            "alert_score": 8.9,
             "alert_type": "Earnings/Event Risk",
             "confirmation_needed": [
               "接入真实公司新闻/财报日期",
@@ -6359,7 +6361,7 @@
           {
             "affected_ticker": "SMR",
             "alert_level": "NO_ALERT",
-            "alert_score": 6.47,
+            "alert_score": 6.09,
             "alert_type": "Stock Bounce Setup",
             "confirmation_needed": [
               "价格站上主路径确认价",
@@ -6538,7 +6540,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: SMR Stock Clocks Best Day In Over 4 Months: Retail Feels ‘Something Is Cooking’"
+              "公司新闻已接入: NuScale Power: 1 Catalyst That Will Make or Break This Nuclear Stock"
             ],
             "max_points": 10,
             "missing_fields": [],
@@ -6626,13 +6628,13 @@
         "expected_alpha": {
           "benchmark": "IWM",
           "downside_risk_60d": 0.2383,
-          "expected_return_20d": -0.0102,
-          "expected_return_60d": -0.0037,
+          "expected_return_20d": -0.012,
+          "expected_return_60d": -0.0065,
           "max_drawdown_risk_20d": 0.1379,
           "max_drawdown_risk_60d": 0.2383,
-          "outperformance_probability_20d": 0.5439,
-          "risk_reward_ratio": 0.67,
-          "upside_potential_60d": 0.1593
+          "outperformance_probability_20d": 0.5239,
+          "risk_reward_ratio": 0.63,
+          "upside_potential_60d": 0.1498
         },
         "forecast_grade": "weak_or_no_alpha_edge",
         "missing_data": [
@@ -6645,17 +6647,18 @@
         "purpose": "Estimate whether the stock has positive expectation-gap alpha versus its benchmark over 20d/60d horizons.",
         "risk_penalty": {
           "max_points": 30,
-          "points": 16.5,
+          "points": 21.5,
           "reasons": [
             "收入增长为负",
             "价格低于 200d 均线",
             "大盘风险背景压制",
+            "财报/事件风险偏高",
             "关键个股数据缺失：single_stock_options"
           ]
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "SMR Stock Clocks Best Day In Over 4 Months: Retail Feels ‘Something Is Cooking’",
+          "catalyst": "NuScale Power: 1 Catalyst That Will Make or Break This Nuclear Stock",
           "expectation_gap": [
             "暂未看到明确正向预期差证据"
           ],
@@ -6672,7 +6675,7 @@
           "primary_path": "stock_failed_bounce",
           "valuation_repricing": "估值扩张证据不足或存在压力"
         },
-        "total_score": 15.5,
+        "total_score": 10.5,
         "validation_status": "not_yet_validated",
         "version": "stock_alpha_score_v1"
       },
@@ -6680,12 +6683,13 @@
         "conflicting_evidence": [
           "大盘风险背景压低个股置信度",
           "成交量不确认当前路径",
+          "公司新闻或财报事件风险上升",
           "基础财务指标偏弱",
           "历史相似结构与主路径冲突",
           "个股 Alpha 评分已接入",
           "主路径和第二路径差距较小"
         ],
-        "confluence_level": "weak",
+        "confluence_level": "mixed",
         "dominant_path": "stock_failed_bounce",
         "hierarchy": {
           "market": "risk_background",
@@ -6699,8 +6703,8 @@
         "module_scores": {
           "alpha_quality": {
             "evidence": "个股 Alpha 评分已接入",
-            "reason": "score=15.5; grade=weak_or_no_alpha_edge; benchmark=IWM",
-            "score": 15.5,
+            "reason": "score=10.5; grade=weak_or_no_alpha_edge; benchmark=IWM",
+            "score": 10.5,
             "status": "conflicting"
           },
           "fundamentals_earnings": {
@@ -6722,10 +6726,10 @@
             "status": "conflicting"
           },
           "news_event": {
-            "evidence": "公司新闻源已接入",
-            "reason": "SMR Stock Clocks Best Day In Over 4 Months: Retail Feels ‘Something Is Cooking’",
-            "score": 53.96,
-            "status": "neutral"
+            "evidence": "公司新闻或财报事件风险上升",
+            "reason": "risk_score=68.0; earnings_date=None",
+            "score": 66.76,
+            "status": "conflicting"
           },
           "options_volatility": {
             "evidence": "个股期权/隐含波动率未完整接入",
@@ -6759,7 +6763,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 44.53,
+        "stock_confluence_score": 45.01,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "个股跑赢所属板块",
@@ -8994,7 +8998,7 @@
       "top_candidate": "CEG",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-09-10T00:42:58.292505+00:00",
+    "generated_at": "2026-09-10T01:03:40.650921+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -9092,19 +9096,19 @@
       },
       {
         "alpha_fields": {
-          "alpha_score": 15.5,
-          "expected_return_60d": -0.0037,
+          "alpha_score": 10.5,
+          "expected_return_60d": -0.0065,
           "forecast_grade": "weak_or_no_alpha_edge",
           "main_logic": "电力/核能/能源基础设施逻辑：政策与订单催化、盈利兑现能力、利率敏感度和资金确认。",
-          "outperformance_probability_20d": 0.5439,
-          "risk_reward_ratio": 0.67
+          "outperformance_probability_20d": 0.5239,
+          "risk_reward_ratio": 0.63
         },
-        "alpha_quality_score": 15.5,
+        "alpha_quality_score": 10.5,
         "as_of": "2026-09-09",
         "candidate_type": "failed_bounce_risk",
-        "catalyst_score": 62.96,
+        "catalyst_score": 64.71,
         "company_name": "Nuscale Power Corp",
-        "confluence_score": 44.53,
+        "confluence_score": 45.01,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9112,16 +9116,16 @@
         "data_status": "available",
         "downside_risk_level": 8.53,
         "elasticity_score": 100,
-        "expected_next_day_high": 11.13,
+        "expected_next_day_high": 11.12,
         "expected_next_day_low": 10.46,
         "expected_next_day_mid": 10.79,
         "expected_next_day_range": {
-          "high": 11.13,
+          "high": 11.12,
           "low": 10.46,
           "mid": 10.79,
-          "range_pct": 0.062
+          "range_pct": 0.0611
         },
-        "final_radar_score": 52.28,
+        "final_radar_score": 51.61,
         "forecast_date": "2026-09-09",
         "invalidation_level": 8.53,
         "last_close": 10.81,
@@ -9129,8 +9133,8 @@
         "main_conflicting_evidence": [
           "大盘风险背景压低个股置信度",
           "成交量不确认当前路径",
-          "基础财务指标偏弱",
-          "历史相似结构与主路径冲突"
+          "公司新闻或财报事件风险上升",
+          "基础财务指标偏弱"
         ],
         "main_supporting_evidence": [
           "个股跑赢所属板块",
@@ -9144,12 +9148,12 @@
           "company_news": "available",
           "earnings": "available"
         },
-        "next_day_move_probability": 0.6764,
-        "one_line_reason": "failed_bounce_risk: Alpha 16 / 弹性 100 / 成交量 0 / 相对强弱 100 / 催化 63 / 大盘 risk_off_pressure / 板块 supportive",
-        "outperformance_probability_20d": 0.5439,
-        "primary_probability": 0.2278,
+        "next_day_move_probability": 0.6798,
+        "one_line_reason": "failed_bounce_risk: Alpha 10 / 弹性 100 / 成交量 0 / 相对强弱 100 / 催化 65 / 大盘 risk_off_pressure / 板块 supportive",
+        "outperformance_probability_20d": 0.5239,
+        "primary_probability": 0.2365,
         "primary_scenario": "stock_failed_bounce",
-        "radar_level": "MODERATE_OPPORTUNITY",
+        "radar_level": "WATCH",
         "rank": 2,
         "relative_strength_fields": {
           "relative_strength_rank": 100,
@@ -9159,9 +9163,9 @@
           "stock_vs_sector_20d": 0.1088
         },
         "relative_strength_score": 100,
-        "risk_reward_ratio": 0.67,
+        "risk_reward_ratio": 0.63,
         "risk_scenario": "stock_downside_continuation",
-        "risk_score": 56.18,
+        "risk_score": 56.17,
         "secondary_scenario": "stock_trend_repair",
         "sector_context": "supportive",
         "squeeze_proxy_score": 38.03,
