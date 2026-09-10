@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-10T16:27:27.480447+00:00`
+- generated_at: `2026-09-10T22:43:16.497692+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `11`
-- event_detection_confidence: `77`
+- major_event_count: `7`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran is producing new missiles in limited quantities from existing components, WSJ reports - Reuters
+- source: Reuters
+- published_at: `2026-09-10T16:50:00+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-09-10T10:46:08+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,7 +63,7 @@
 - source: Reuters
 - published_at: `2026-09-10T09:15:10+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -63,44 +71,12 @@
 - source: Reuters
 - published_at: `2026-09-10T09:07:43+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Trump's Iran campaign echoes the post-9/11 'forever wars' - Reuters
 - source: Reuters
 - published_at: `2026-09-10T05:04:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US military says it destroyed five Iranian oil carriers after attempted missile attacks - Reuters
-- source: Reuters
-- published_at: `2026-09-10T02:21:34+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Multiple US military aircraft suffered damage in overnight strikes on Jordan air base, CBS says - Reuters
-- source: Reuters
-- published_at: `2026-09-10T01:42:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil jumps to $105 a barrel after Middle East tanker attacks escalate - Reuters
-- source: Reuters
-- published_at: `2026-09-10T01:24:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump advisers warn Iran conflict may last through end of his term, WSJ reports - Reuters
-- source: Reuters
-- published_at: `2026-09-09T23:41:43+00:00`
 - importance_score: `100`
 - confidence: `medium`
