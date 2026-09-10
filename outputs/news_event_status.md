@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-10T06:02:38.330873+00:00`
+- generated_at: `2026-09-10T08:25:35.679918+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `11`
@@ -9,12 +9,12 @@
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
-- price_reaction_confirmed: `True`
-- confirmation_score: `75`
+- price_reaction_confirmed: `False`
+- confirmation_score: `50`
 
 ## Dashboard Note
 
-当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，已被价格反应初步确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
+当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，尚未被价格反应充分确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
 
 ## Economic Calendar Risk
 
@@ -27,6 +27,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Trump's Iran campaign echoes the post-9/11 'forever wars' - Reuters
+- source: Reuters
+- published_at: `2026-09-10T05:04:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Multiple US military aircraft suffered damage in overnight strikes on Jordan air base, CBS says - Reuters
 - source: Reuters
 - published_at: `2026-09-10T01:42:00+00:00`
@@ -35,7 +43,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Brent holds above $100 as tanker attacks deepen supply fear - Reuters
+- headline: Brent holds above $100 as tanker attacks deepen supply fears - Reuters
 - source: Reuters
 - published_at: `2026-09-10T01:24:00+00:00`
 - importance_score: `100`
@@ -51,17 +59,9 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: ECB set to hike as Iran war fuels fresh inflation fears - Reuters
+- headline: ECB to hike rates as Iran war fuels fresh inflation fears - Reuters
 - source: Reuters
-- published_at: `2026-09-09T22:17:28+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: EXCLUSIVE: Pakistan warns Iran to rein in Houthis as Riyadh strikes back - Reuters
-- source: Reuters
-- published_at: `2026-09-09T21:05:31+00:00`
+- published_at: `2026-09-09T22:02:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -71,13 +71,21 @@
 - source: Reuters
 - published_at: `2026-09-09T20:06:33+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Houthis attack southern Saudi cities for second day, Saudi-led coalition says - Reuters
 - source: Reuters
 - published_at: `2026-09-09T19:15:29+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: EXCLUSIVE: Pakistan warns Iran to rein in Houthis as Riyadh strikes back - Reuters
+- source: Reuters
+- published_at: `2026-09-09T18:12:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -94,13 +102,5 @@
 - headline: US EIA hikes oil price forecasts as Iran war drains global stockpile - Reuters
 - source: Reuters
 - published_at: `2026-09-09T17:45:43+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil pushes past $100 as wave of US-Iran attacks exposes dwindling safety net - Reuters
-- source: Reuters
-- published_at: `2026-09-09T13:56:11+00:00`
 - importance_score: `100`
 - confidence: `medium`
