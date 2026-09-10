@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-10T08:25:35.679918+00:00`
+- generated_at: `2026-09-10T16:27:27.480447+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `11`
@@ -9,12 +9,12 @@
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
-- price_reaction_confirmed: `False`
-- confirmation_score: `50`
+- price_reaction_confirmed: `True`
+- confirmation_score: `75`
 
 ## Dashboard Note
 
-当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，尚未被价格反应充分确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
+当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，已被价格反应初步确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
 
 ## Economic Calendar Risk
 
@@ -27,9 +27,57 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: ECB hikes rates as Iran war adds to inflation angst - Reuters
+- source: Reuters
+- published_at: `2026-09-10T15:18:26+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: India hosts BRICS summit as Iran war tests bloc unity - Reuters
+- source: Reuters
+- published_at: `2026-09-10T11:44:53+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: COMMENTARY: Morning Bid: Forever war? - Reuters
+- source: Reuters
+- published_at: `2026-09-10T10:46:08+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Pakistan says no military response discussed under Mecca pact over Houthi attacks on Saudi Arabia - Reuters
+- source: Reuters
+- published_at: `2026-09-10T09:15:10+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Israeli strike kills parents and two children in Gaza, medics say - reuters.com
+- source: Reuters
+- published_at: `2026-09-10T09:07:43+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Trump's Iran campaign echoes the post-9/11 'forever wars' - Reuters
 - source: Reuters
 - published_at: `2026-09-10T05:04:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US military says it destroyed five Iranian oil carriers after attempted missile attacks - Reuters
+- source: Reuters
+- published_at: `2026-09-10T02:21:34+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -39,68 +87,20 @@
 - source: Reuters
 - published_at: `2026-09-10T01:42:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Brent holds above $100 as tanker attacks deepen supply fears - Reuters
+- headline: Oil jumps to $105 a barrel after Middle East tanker attacks escalate - Reuters
 - source: Reuters
 - published_at: `2026-09-10T01:24:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Trump advisers warn Iran conflict may last through end of his term, WSJ reports - Reuters
 - source: Reuters
 - published_at: `2026-09-09T23:41:43+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: ECB to hike rates as Iran war fuels fresh inflation fears - Reuters
-- source: Reuters
-- published_at: `2026-09-09T22:02:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump says Iran war will end right after U.S. midterm elections - Reuters
-- source: Reuters
-- published_at: `2026-09-09T20:06:33+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Houthis attack southern Saudi cities for second day, Saudi-led coalition says - Reuters
-- source: Reuters
-- published_at: `2026-09-09T19:15:29+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: EXCLUSIVE: Pakistan warns Iran to rein in Houthis as Riyadh strikes back - Reuters
-- source: Reuters
-- published_at: `2026-09-09T18:12:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil tanker hit in Iraqi waters, as vessels get caught in US-Iran attacks - Reuters
-- source: Reuters
-- published_at: `2026-09-09T18:10:03+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US EIA hikes oil price forecasts as Iran war drains global stockpile - Reuters
-- source: Reuters
-- published_at: `2026-09-09T17:45:43+00:00`
 - importance_score: `100`
 - confidence: `medium`
