@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-09-09T23:31:07.312395+00:00`
+Generated at: `2026-09-10T00:42:58.268784+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -25,12 +25,12 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `25.5%`
 - secondary: `stock_downside_continuation` / `18.4%`
 - risk: `stock_event_risk` / `14.9%`
-- stock_confluence_score: `46.41` / `mixed`
-- stock_alpha_score_v1: `47.5` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `59.5%`
+- stock_confluence_score: `45.17` / `mixed`
+- stock_alpha_score_v1: `49.5` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `60.3%`
 - 60d_expected_return: `-0.7%`
 - risk_reward_ratio: `0.54`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `26.32`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `30.23`
 - historical_analog_support: `conflicting` / samples `10`
 - validation_status: `not_yet_validated`
 
@@ -54,12 +54,12 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `25.2%`
 - secondary: `stock_downside_continuation` / `18.1%`
 - risk: `stock_event_risk` / `15.4%`
-- stock_confluence_score: `46.18` / `mixed`
-- stock_alpha_score_v1: `13.5` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `52.0%`
+- stock_confluence_score: `44.31` / `weak`
+- stock_alpha_score_v1: `16.5` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `53.2%`
 - 60d_expected_return: `-0.8%`
 - risk_reward_ratio: `0.57`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `25.16`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `30.82`
 - historical_analog_support: `supportive` / samples `10`
 - validation_status: `not_yet_validated`
 
@@ -69,10 +69,10 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - trend_repair_confirmation_level: `384.04`
 - breakout_level: `384.04`
 - breakdown_level: `323.64`
-- nearest_support: `355.61`
+- nearest_support: `355.54`
 - nearest_resistance: `384.04`
-- bounce_target_zone: `{"conservative": 376.96, "base": 376.96, "extended": 396.24, "source": "scenario_path + atr + recent_resistance", "meaning": "概率反抽情景参考区间，不是目标价承诺。", "not_trading_instruction": true}`
-- failed_bounce_warning_zone: `{"first_warning": 360.95, "critical_warning": 323.64, "source": "risk_path + atr + recent_support", "meaning": "跌入该区间说明失败反抽风险上升。", "not_trading_instruction": true}`
+- bounce_target_zone: `{"conservative": 377.01, "base": 377.01, "extended": 396.31, "source": "scenario_path + atr + recent_resistance", "meaning": "概率反抽情景参考区间，不是目标价承诺。", "not_trading_instruction": true}`
+- failed_bounce_warning_zone: `{"first_warning": 360.91, "critical_warning": 323.64, "source": "risk_path + atr + recent_support", "meaning": "跌入该区间说明失败反抽风险上升。", "not_trading_instruction": true}`
 
 ### SMR
 
@@ -83,7 +83,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `22.8%`
 - secondary: `stock_trend_repair` / `20.0%`
 - risk: `stock_downside_continuation` / `18.1%`
-- stock_confluence_score: `46.38` / `mixed`
+- stock_confluence_score: `44.53` / `weak`
 - stock_alpha_score_v1: `15.5` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `54.4%`
 - 60d_expected_return: `-0.4%`
@@ -112,12 +112,12 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `24.4%`
 - secondary: `stock_downside_continuation` / `19.4%`
 - risk: `stock_event_risk` / `11.3%`
-- stock_confluence_score: `46.13` / `mixed`
-- stock_alpha_score_v1: `43.0` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `60.5%`
+- stock_confluence_score: `42.64` / `weak`
+- stock_alpha_score_v1: `46.0` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `61.7%`
 - 60d_expected_return: `-0.4%`
 - risk_reward_ratio: `0.63`
-- strongest_alert: `Relative Strength Alert` / `NO_ALERT` / `28.03`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `34.36`
 - historical_analog_support: `conflicting` / samples `10`
 - validation_status: `not_yet_validated`
 
