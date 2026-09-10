@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-10T01:03:29.116769+00:00`
+- generated_at: `2026-09-10T06:02:38.330873+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
-- event_detection_confidence: `78`
+- major_event_count: `11`
+- event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,38 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Multiple US military aircraft suffered damage in overnight strikes on Jordan air base, CBS says - Reuters
+- source: Reuters
+- published_at: `2026-09-10T01:42:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Brent holds above $100 as tanker attacks deepen supply fear - Reuters
+- source: Reuters
+- published_at: `2026-09-10T01:24:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Trump advisers warn Iran conflict may last through end of his term, WSJ reports - Reuters
+- source: Reuters
+- published_at: `2026-09-09T23:41:43+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: ECB set to hike as Iran war fuels fresh inflation fears - Reuters
+- source: Reuters
+- published_at: `2026-09-09T22:17:28+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,7 +87,7 @@
 - source: Reuters
 - published_at: `2026-09-09T18:10:03+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -63,36 +95,12 @@
 - source: Reuters
 - published_at: `2026-09-09T17:45:43+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Oil pushes past $100 as wave of US-Iran attacks exposes dwindling safety net - Reuters
 - source: Reuters
 - published_at: `2026-09-09T13:56:11+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Bessent bond plan details to be revealed as Treasury secretary warns FX traders he's 'the house now'
-- source: CNBC
-- published_at: `2026-09-09T12:25:50+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Silicon Valley-backed Covenant unveils low-cost, mass-producible cruise missile - Reuters
-- source: Reuters
-- published_at: `2026-09-09T09:12:41+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil vessel transit costs through Hormuz escalated after Iran war, ENOC exec says - Reuters
-- source: Reuters
-- published_at: `2026-09-09T06:19:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
