@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-11T16:31:46.573246+00:00`
+- generated_at: `2026-09-11T22:42:32.095346+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
+- major_event_count: `12`
 - event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `50`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
@@ -24,6 +24,30 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Saudi Arabia says drones launched from Iraq hit East-West pipeline, holds off on retaliation - Reuters
+- source: Reuters
+- published_at: `2026-09-11T20:55:59+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Twenty-five years after September 11, Americans reflect on attack that changed a nation - Reuters
+- source: Reuters
+- published_at: `2026-09-11T18:40:36+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Bonds are going on tilt. How to play them, says Mike Khouw
+- source: CNBC
+- published_at: `2026-09-11T16:26:14+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,7 +79,7 @@
 - source: Reuters
 - published_at: `2026-09-11T10:49:59+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -63,7 +87,7 @@
 - source: Reuters
 - published_at: `2026-09-11T09:49:16+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -71,28 +95,12 @@
 - source: Reuters
 - published_at: `2026-09-11T08:31:27+00:00`
 - importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: EXCLUSIVE: Pakistan warns Iran to rein in Houthis as Riyadh strikes back - Reuters
+- source: Reuters
+- published_at: `2026-09-11T00:30:09+00:00`
+- importance_score: `100`
 - confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump says he does not regret Iran war despite impact it may have on midterm elections - Reuters
-- source: Reuters
-- published_at: `2026-09-11T00:16:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran is producing new missiles in limited quantities from existing components, WSJ reports - Reuters
-- source: Reuters
-- published_at: `2026-09-10T16:50:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### oil_shock_relief / risk_on
-
-- headline: Oil falls but on track for 8% weekly gain on supply concerns; US diesel hits record high - Reuters
-- source: Reuters
-- published_at: `2026-09-11T01:13:00+00:00`
-- importance_score: `90`
-- confidence: `medium`
