@@ -1,6 +1,6 @@
 # FRED Data Status
 
-Generated at: `2026-09-11T22:42:44.402312Z`
+Generated at: `2026-09-11T23:33:49.200411Z`
 
 ## Provider
 
@@ -8,7 +8,7 @@ Generated at: `2026-09-11T22:42:44.402312Z`
 - provider available: `True`
 - fallback used: `False`
 - rate limited: `False`
-- successful series: `IG_OAS, DGS3MO, DGS2, BAA_SPREAD, HY_OAS, DGS10, RECESSION, FINANCIAL_STRESS, DFII10`
+- successful series: `DGS2, DGS3MO, BAA_SPREAD, HY_OAS, DGS10, RECESSION, DFII10, IG_OAS, FINANCIAL_STRESS`
 - failed series: `none`
 
 ## Series

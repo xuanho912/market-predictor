@@ -6,10 +6,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-09-11",
-    "current_time_us_eastern": "2026-09-11T18:42:42.844225-04:00",
+    "current_time_us_eastern": "2026-09-11T19:33:47.624355-04:00",
     "data_freshness_status": "fresh",
     "expected_latest_trading_date": "2026-09-11",
-    "generated_at": "2026-09-11T22:42:42.844225+00:00",
+    "generated_at": "2026-09-11T23:33:47.624355+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -724,37 +724,37 @@
       "finnhub_quote_IWM": {
         "fallback_used": false,
         "latest_date": null,
-        "missing_data": true,
-        "point_in_time_safe": false,
-        "real_data": false,
-        "rows": 0,
+        "missing_data": false,
+        "point_in_time_safe": true,
+        "real_data": true,
+        "rows": 1,
         "source": "finnhub",
-        "stale_data": false,
-        "status": "rate_limited",
+        "stale_data": true,
+        "status": "stale",
         "symbol": "finnhub_quote_IWM"
       },
       "finnhub_quote_QQQ": {
         "fallback_used": false,
         "latest_date": null,
-        "missing_data": true,
-        "point_in_time_safe": false,
-        "real_data": false,
-        "rows": 0,
+        "missing_data": false,
+        "point_in_time_safe": true,
+        "real_data": true,
+        "rows": 1,
         "source": "finnhub",
-        "stale_data": false,
-        "status": "rate_limited",
+        "stale_data": true,
+        "status": "stale",
         "symbol": "finnhub_quote_QQQ"
       },
       "finnhub_quote_SPY": {
         "fallback_used": false,
         "latest_date": null,
-        "missing_data": true,
-        "point_in_time_safe": false,
-        "real_data": false,
-        "rows": 0,
+        "missing_data": false,
+        "point_in_time_safe": true,
+        "real_data": true,
+        "rows": 1,
         "source": "finnhub",
-        "stale_data": false,
-        "status": "rate_limited",
+        "stale_data": true,
+        "status": "stale",
         "symbol": "finnhub_quote_SPY"
       },
       "finnhub_rates_data": {
@@ -970,7 +970,7 @@
     "fallback_used": true,
     "finnhub_available": true,
     "finnhub_missing": false,
-    "finnhub_rate_limited": true,
+    "finnhub_rate_limited": false,
     "flow_available": true,
     "flow_provider_status": "proxy",
     "flow_proxy_only": true,
@@ -1048,15 +1048,15 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "IG_OAS",
-      "DGS3MO",
       "DGS2",
+      "DGS3MO",
       "BAA_SPREAD",
       "HY_OAS",
       "DGS10",
       "RECESSION",
-      "FINANCIAL_STRESS",
-      "DFII10"
+      "DFII10",
+      "IG_OAS",
+      "FINANCIAL_STRESS"
     ],
     "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-09-11。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
     "gamma_available": false,
@@ -1066,9 +1066,6 @@
     "latest_market_date": "2026-09-11",
     "missing_data": true,
     "missing_key_sources": [
-      "finnhub_quote_SPY",
-      "finnhub_quote_QQQ",
-      "finnhub_quote_IWM",
       "finnhub_candle_SPY",
       "finnhub_candle_QQQ",
       "finnhub_candle_IWM",
@@ -1090,10 +1087,10 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 76,
+      "event_detection_confidence": 75,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-09-11T22:42:32.095346+00:00",
+      "last_update": "2026-09-11T23:33:36.370580+00:00",
       "major_event_count": 12,
       "missing_reason": null,
       "news_direction": "risk_off",
@@ -3969,14 +3966,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 81,
+            "confidence_score": 80,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 96,
+            "freshness_score": 94,
             "headline": "Saudi Arabia says drones launched from Iraq hit East-West pipeline, holds off on retaliation - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4003,40 +4000,13 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 90,
+            "freshness_score": 88,
             "headline": "Twenty-five years after September 11, Americans reflect on attack that changed a nation - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-11T18:40:36+00:00",
             "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 78,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 85,
-            "headline": "Bonds are going on tilt. How to play them, says Mike Khouw",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-11T16:26:14+00:00",
-            "source": "CNBC"
           },
           {
             "affected_assets": [
@@ -4057,7 +4027,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 81,
+            "freshness_score": 83,
+            "headline": "Bonds are going on tilt. How to play them, says Mike Khouw",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-11T16:26:14+00:00",
+            "source": "CNBC"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 76,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 79,
             "headline": "Oil tanker rates hit record highs following Iran, US shipping attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4084,7 +4081,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 79,
+            "freshness_score": 77,
             "headline": "Leopold Aschenbrenner's Situational Awareness is active in options market, sources say",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4111,7 +4108,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 74,
+            "freshness_score": 72,
             "headline": "Wealthy investors are pouring billions into this new tax strategy despite risks",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -5490,8 +5487,8 @@
           "ig_oas_20d_change": 0.010000000000000009
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote unavailable; news risk 40%; no major macro event flag; rates pressure 10%.",
-          "finnhub_quote_available": false,
+          "brief": "Finnhub quote 288.89; news risk 40%; no major macro event flag; rates pressure 10%.",
+          "finnhub_quote_available": true,
           "macro_event_risk_flag": false,
           "news_risk_score": 0.4,
           "rates_pressure_score": 0.09735464590564136,
@@ -5500,11 +5497,11 @@
         "finnhub": {
           "candle_status": "failed",
           "news_sentiment_status": "failed",
-          "quote_change_percent": null,
-          "quote_previous_close": null,
-          "quote_price": null,
+          "quote_change_percent": 0.4136,
+          "quote_previous_close": 287.7,
+          "quote_price": 288.89,
           "quote_source": "finnhub",
-          "quote_status": "rate_limited",
+          "quote_status": "available",
           "sentiment_score": null
         },
         "flow_positioning_proxy": {
@@ -6494,14 +6491,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 81,
+            "confidence_score": 80,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 96,
+            "freshness_score": 94,
             "headline": "Saudi Arabia says drones launched from Iraq hit East-West pipeline, holds off on retaliation - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6528,40 +6525,13 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 90,
+            "freshness_score": 88,
             "headline": "Twenty-five years after September 11, Americans reflect on attack that changed a nation - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-11T18:40:36+00:00",
             "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 78,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 85,
-            "headline": "Bonds are going on tilt. How to play them, says Mike Khouw",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-11T16:26:14+00:00",
-            "source": "CNBC"
           },
           {
             "affected_assets": [
@@ -6582,7 +6552,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 81,
+            "freshness_score": 83,
+            "headline": "Bonds are going on tilt. How to play them, says Mike Khouw",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-11T16:26:14+00:00",
+            "source": "CNBC"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 76,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 79,
             "headline": "Oil tanker rates hit record highs following Iran, US shipping attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6609,7 +6606,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 79,
+            "freshness_score": 77,
             "headline": "Leopold Aschenbrenner's Situational Awareness is active in options market, sources say",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6636,7 +6633,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 74,
+            "freshness_score": 72,
             "headline": "Wealthy investors are pouring billions into this new tax strategy despite risks",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -8021,8 +8018,8 @@
           "ig_oas_20d_change": 0.010000000000000009
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote unavailable; news risk 40%; no major macro event flag; rates pressure 10%.",
-          "finnhub_quote_available": false,
+          "brief": "Finnhub quote 714.88; news risk 40%; no major macro event flag; rates pressure 10%.",
+          "finnhub_quote_available": true,
           "macro_event_risk_flag": false,
           "news_risk_score": 0.4,
           "rates_pressure_score": 0.09735464590564136,
@@ -8031,11 +8028,11 @@
         "finnhub": {
           "candle_status": "failed",
           "news_sentiment_status": "failed",
-          "quote_change_percent": null,
-          "quote_previous_close": null,
-          "quote_price": null,
+          "quote_change_percent": 0.8734,
+          "quote_previous_close": 708.69,
+          "quote_price": 714.88,
           "quote_source": "finnhub",
-          "quote_status": "rate_limited",
+          "quote_status": "available",
           "sentiment_score": null
         },
         "flow_positioning_proxy": {
@@ -8952,14 +8949,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 81,
+            "confidence_score": 80,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 96,
+            "freshness_score": 94,
             "headline": "Saudi Arabia says drones launched from Iraq hit East-West pipeline, holds off on retaliation - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -8986,40 +8983,13 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 90,
+            "freshness_score": 88,
             "headline": "Twenty-five years after September 11, Americans reflect on attack that changed a nation - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-11T18:40:36+00:00",
             "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 78,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 85,
-            "headline": "Bonds are going on tilt. How to play them, says Mike Khouw",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-11T16:26:14+00:00",
-            "source": "CNBC"
           },
           {
             "affected_assets": [
@@ -9040,7 +9010,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 81,
+            "freshness_score": 83,
+            "headline": "Bonds are going on tilt. How to play them, says Mike Khouw",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-11T16:26:14+00:00",
+            "source": "CNBC"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 76,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 79,
             "headline": "Oil tanker rates hit record highs following Iran, US shipping attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9067,7 +9064,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 79,
+            "freshness_score": 77,
             "headline": "Leopold Aschenbrenner's Situational Awareness is active in options market, sources say",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9094,7 +9091,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 74,
+            "freshness_score": 72,
             "headline": "Wealthy investors are pouring billions into this new tax strategy despite risks",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -10467,8 +10464,8 @@
           "ig_oas_20d_change": 0.010000000000000009
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote unavailable; news risk 40%; no major macro event flag; rates pressure 10%.",
-          "finnhub_quote_available": false,
+          "brief": "Finnhub quote 764.29; news risk 40%; no major macro event flag; rates pressure 10%.",
+          "finnhub_quote_available": true,
           "macro_event_risk_flag": false,
           "news_risk_score": 0.4,
           "rates_pressure_score": 0.09735464590564136,
@@ -10477,11 +10474,11 @@
         "finnhub": {
           "candle_status": "failed",
           "news_sentiment_status": "failed",
-          "quote_change_percent": null,
-          "quote_previous_close": null,
-          "quote_price": null,
+          "quote_change_percent": 0.8524,
+          "quote_previous_close": 757.83,
+          "quote_price": 764.29,
           "quote_source": "finnhub",
-          "quote_status": "rate_limited",
+          "quote_status": "available",
           "sentiment_score": null
         },
         "flow_positioning_proxy": {
@@ -11440,14 +11437,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 81,
+            "confidence_score": 80,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 96,
+            "freshness_score": 94,
             "headline": "Saudi Arabia says drones launched from Iraq hit East-West pipeline, holds off on retaliation - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11474,40 +11471,13 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 90,
+            "freshness_score": 88,
             "headline": "Twenty-five years after September 11, Americans reflect on attack that changed a nation - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-11T18:40:36+00:00",
             "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 78,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 85,
-            "headline": "Bonds are going on tilt. How to play them, says Mike Khouw",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-11T16:26:14+00:00",
-            "source": "CNBC"
           },
           {
             "affected_assets": [
@@ -11528,7 +11498,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 81,
+            "freshness_score": 83,
+            "headline": "Bonds are going on tilt. How to play them, says Mike Khouw",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-11T16:26:14+00:00",
+            "source": "CNBC"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 76,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 79,
             "headline": "Oil tanker rates hit record highs following Iran, US shipping attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11555,7 +11552,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 79,
+            "freshness_score": 77,
             "headline": "Leopold Aschenbrenner's Situational Awareness is active in options market, sources say",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11582,7 +11579,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 74,
+            "freshness_score": 72,
             "headline": "Wealthy investors are pouring billions into this new tax strategy despite risks",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
