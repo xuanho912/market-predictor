@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-11T01:02:19.004786+00:00`
+- generated_at: `2026-09-11T06:04:35.013069+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `7`
-- event_detection_confidence: `73`
+- event_detection_confidence: `72`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,11 +27,19 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Trump says he does not regret Iran war despite impact it may have on midterm elections - Reuters
+- source: Reuters
+- published_at: `2026-09-11T00:16:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Iran is producing new missiles in limited quantities from existing components, WSJ reports - Reuters
 - source: Reuters
 - published_at: `2026-09-10T16:50:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -39,7 +47,7 @@
 - source: Reuters
 - published_at: `2026-09-10T15:18:26+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -70,13 +78,5 @@
 - headline: Israeli strike kills parents and two children in Gaza, medics say - reuters.com
 - source: Reuters
 - published_at: `2026-09-10T09:07:43+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump's Iran campaign echoes the post-9/11 'forever wars' - Reuters
-- source: Reuters
-- published_at: `2026-09-10T05:04:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
