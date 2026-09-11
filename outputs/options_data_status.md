@@ -1,6 +1,6 @@
 # Options / Volatility Structure Status
 
-Generated at: `2026-09-11T08:19:55.271519+00:00`
+Generated at: `2026-09-11T16:31:37.697946+00:00`
 
 ## Summary
 
@@ -18,29 +18,29 @@ Generated at: `2026-09-11T08:19:55.271519+00:00`
 
 ## Market Snapshot
 
-- VIX: `17.670000076293945`
-- VIX9D: `16.850000381469727`
-- VIX3M: `20.540000915527344`
-- VIX6M: `22.280000686645508`
-- VVIX: `102.66000366210938`
+- VIX: `15.710000038146973`
+- VIX9D: `14.020000457763672`
+- VIX3M: `18.65999984741211`
+- VIX6M: `20.479999542236328`
+- VVIX: `91.83999633789062`
 - SKEW: `147.02000427246094`
 - term_structure_state: `contango`
-- volatility_reversal_score: `0.5095`
-- panic_release_score: `0.277`
-- tail_risk_score: `0.5504`
-- option_stress_score: `0.4948`
-- failed_bounce_options_risk: `0.5107`
+- volatility_reversal_score: `0.5`
+- panic_release_score: `0.33`
+- tail_risk_score: `0.383`
+- option_stress_score: `0.3136`
+- failed_bounce_options_risk: `0.3286`
 
 ## Sources
 
 | symbol | status | latest_date | latest_value | source | real_data | stale |
 |---|---|---|---:|---|---:|---:|
 | ^SKEW | available | 2026-09-10 | 147.02000427246094 | yahoo-chart | True | False |
-| ^VIX | available | 2026-09-11 | 17.670000076293945 | yahoo-chart | True | False |
-| ^VIX3M | available | 2026-07-17 | 20.540000915527344 | yahoo-chart | True | False |
-| ^VIX6M | available | 2026-07-17 | 22.280000686645508 | yahoo-chart | True | False |
-| ^VIX9D | available | 2026-07-17 | 16.850000381469727 | yahoo-chart | True | False |
-| ^VVIX | available | 2026-09-10 | 102.66000366210938 | yahoo-chart | True | False |
+| ^VIX | available | 2026-09-11 | 15.710000038146973 | yahoo-chart | True | False |
+| ^VIX3M | available | 2026-09-11 | 18.65999984741211 | yahoo-chart | True | False |
+| ^VIX6M | available | 2026-09-11 | 20.479999542236328 | yahoo-chart | True | False |
+| ^VIX9D | available | 2026-09-11 | 14.020000457763672 | yahoo-chart | True | False |
+| ^VVIX | available | 2026-09-11 | 91.83999633789062 | yahoo-chart | True | False |
 
 ## Guardrails
 

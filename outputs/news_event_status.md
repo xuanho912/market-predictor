@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-11T08:20:01.957540+00:00`
+- generated_at: `2026-09-11T16:31:46.573246+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
-- event_detection_confidence: `71`
+- major_event_count: `9`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,11 +27,59 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Oil tanker rates hit record highs following Iran, US shipping attacks - Reuters
+- source: Reuters
+- published_at: `2026-09-11T14:37:33+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Leopold Aschenbrenner's Situational Awareness is active in options market, sources say
+- source: CNBC
+- published_at: `2026-09-11T13:56:54+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Wealthy investors are pouring billions into this new tax strategy despite risks
+- source: CNBC
+- published_at: `2026-09-11T12:00:01+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Saudi oil supply hits more than three-decade low after Houthi attacks, IEA says - Reuters
+- source: Reuters
+- published_at: `2026-09-11T10:49:59+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: EXCLUSIVE: UAE revises AI data center plan after Iranian attacks, sources say - Reuters
+- source: Reuters
+- published_at: `2026-09-11T09:49:16+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: China limits fuel price increases for third time since Iran war began - Reuters
+- source: Reuters
+- published_at: `2026-09-11T08:31:27+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Trump says he does not regret Iran war despite impact it may have on midterm elections - Reuters
 - source: Reuters
 - published_at: `2026-09-11T00:16:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -41,34 +89,10 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
+### oil_shock_relief / risk_on
 
-- headline: ECB hikes rates as Iran war adds to inflation angst - Reuters
+- headline: Oil falls but on track for 8% weekly gain on supply concerns; US diesel hits record high - Reuters
 - source: Reuters
-- published_at: `2026-09-10T15:18:26+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: India hosts BRICS summit as Iran war tests bloc unity - Reuters
-- source: Reuters
-- published_at: `2026-09-10T11:44:53+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: COMMENTARY: Morning Bid: Forever war? - Reuters
-- source: Reuters
-- published_at: `2026-09-10T10:46:08+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Pakistan says no military response discussed under Mecca pact over Houthi attacks on Saudi Arabia - Reuters
-- source: Reuters
-- published_at: `2026-09-10T09:15:10+00:00`
-- importance_score: `100`
+- published_at: `2026-09-11T01:13:00+00:00`
+- importance_score: `90`
 - confidence: `medium`
