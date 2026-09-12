@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-12T08:09:51.030220+00:00`
+- generated_at: `2026-09-12T15:34:46.784789+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `11`
-- event_detection_confidence: `71`
+- event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,11 +27,27 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Iran and UAE back joint BRICS statement urging restraint in war - Reuters
+- source: Reuters
+- published_at: `2026-09-12T15:08:58+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Trump says Iran probably responsible for attack on Saudi pipeline - Reuters
+- source: Reuters
+- published_at: `2026-09-12T10:19:56+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Iraqi military commander dismissed after drone attacks against Saudi Arabia, prime minister's office says - Reuters
 - source: Reuters
 - published_at: `2026-09-11T22:07:39+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -39,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-09-11T20:55:59+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -86,21 +102,5 @@
 - headline: Wealthy investors are pouring billions into this new tax strategy despite risks
 - source: CNBC
 - published_at: `2026-09-11T12:00:01+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Saudi oil supply hits more than three-decade low after Houthi attacks, IEA says - Reuters
-- source: Reuters
-- published_at: `2026-09-11T10:49:59+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: EXCLUSIVE: UAE revises AI data center plan after Iranian attacks, sources say - Reuters
-- source: Reuters
-- published_at: `2026-09-11T09:49:16+00:00`
 - importance_score: `100`
 - confidence: `medium`
