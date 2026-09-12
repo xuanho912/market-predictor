@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-12T01:05:38.094448+00:00`
+- generated_at: `2026-09-12T05:51:53.130449+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
-- event_detection_confidence: `74`
+- major_event_count: `11`
+- event_detection_confidence: `72`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iraqi military commander dismissed after drone attacks against Saudi Arabia, prime minister's office says - Reuters
+- source: Reuters
+- published_at: `2026-09-11T22:07:39+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +55,7 @@
 - source: CNBC
 - published_at: `2026-09-11T16:26:14+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,7 +63,7 @@
 - source: Reuters
 - published_at: `2026-09-11T14:37:33+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -63,7 +71,15 @@
 - source: CNBC
 - published_at: `2026-09-11T13:56:54+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Germany charges seven suspected Hamas members over planned attack - Reuters
+- source: Reuters
+- published_at: `2026-09-11T12:43:36+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -88,19 +104,3 @@
 - published_at: `2026-09-11T09:49:16+00:00`
 - importance_score: `100`
 - confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: China limits fuel price increases for third time since Iran war began - Reuters
-- source: Reuters
-- published_at: `2026-09-11T08:31:27+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: EXCLUSIVE: Pakistan warns Iran to rein in Houthis as Riyadh strikes back - Reuters
-- source: Reuters
-- published_at: `2026-09-11T00:30:09+00:00`
-- importance_score: `100`
-- confidence: `high`

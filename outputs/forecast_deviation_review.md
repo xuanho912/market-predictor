@@ -1,6 +1,6 @@
 # Forecast Deviation Review
 
-Generated at: `2026-09-12T01:05:48.847200+00:00`
+Generated at: `2026-09-12T05:52:04.643429+00:00`
 
 This report reviews forecast-vs-actual deviations after horizons complete. It is not a trading, PnL or execution report.
 
@@ -14,7 +14,7 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - latest_forecast_date: `2026-09-11`
 - latest_reviewed_forecast_date: `2026-09-10`
 - latest_market_date: `2026-09-11`
-- data_freshness_status: `fresh`
+- data_freshness_status: `market_closed`
 - largest_absolute_error: `0.149785`
 - dominant_error_theme: `news_data_gap_limited_attribution`
 - evidence_level: `stronger_evidence`
