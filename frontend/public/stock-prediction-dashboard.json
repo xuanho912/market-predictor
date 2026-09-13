@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-09-12T15:34:58.044404+00:00",
+  "generated_at": "2026-09-13T16:20:29.195520+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-09-12T15:34:58.081405+00:00",
+    "generated_at": "2026-09-13T16:20:29.222210+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 257,
     "risk_score_effectiveness": {
@@ -233,10 +233,10 @@
           "company_news": "available",
           "earnings": "available",
           "earnings_date": null,
-          "earnings_risk_flag": "medium",
+          "earnings_risk_flag": "low",
           "earnings_within_30d": false,
           "earnings_within_7d": false,
-          "event_risk_flag": "medium",
+          "event_risk_flag": "low",
           "headlines": [
             {
               "datetime": 1789207971,
@@ -288,9 +288,9 @@
             }
           ],
           "major_company_headline": "Shell Just Sold a $715 Million Stake in a Major New England Asset to Constellation Energy. Here's What Investors Need to Know.",
-          "news_count_24h": 2,
-          "news_count_72h": 10,
-          "news_risk_score": 60.0,
+          "news_count_24h": 0,
+          "news_count_72h": 5,
+          "news_risk_score": 44.0,
           "news_sentiment": "negative"
         },
         "price_trend": {
@@ -730,7 +730,7 @@
         "benchmark": "SPY",
         "benchmark_edge_status": "WEAK_EDGE",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.3359,
+        "benchmark_primary_probability": 0.3756,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -2329,8 +2329,8 @@
           },
           "news_event": {
             "evidence": "公司新闻或财报事件风险上升",
-            "reason": "risk_score=60.0; earnings_date=None",
-            "score": 52.2,
+            "reason": "risk_score=44.0; earnings_date=None",
+            "score": 47.08,
             "status": "conflicting"
           },
           "options_volatility": {
@@ -2365,7 +2365,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 41.2,
+        "stock_confluence_score": 40.83,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "个股跑赢所属板块",
@@ -2421,20 +2421,20 @@
           "cash_flow_quality": 3.9053,
           "debt_risk": 0.0269,
           "earnings_growth": 125.15,
-          "forward_pe": 44.1386,
+          "forward_pe": 43.8154,
           "profitability": 63.66,
           "raw_metrics": {
             "current_ratio": 3.9053,
             "debt_to_equity": 0.0538,
             "eps_growth_ttm_yoy": 125.15,
-            "forward_pe": 44.1386,
+            "forward_pe": 43.8154,
             "gross_margin_ttm": 74.67,
             "net_margin_ttm": 63.66,
             "revenue_growth_ttm_yoy": 83.38
           },
           "revenue_growth": 83.38,
           "status": "available",
-          "valuation_percentile": 0.5517325
+          "valuation_percentile": 0.5476924999999999
         },
         "news_event": {
           "analyst_rating_news": "missing",
@@ -2447,59 +2447,59 @@
           "event_risk_flag": "high",
           "headlines": [
             {
-              "datetime": 1789220640,
-              "headline": "Apple and Taiwan Semiconductor Manufacturing Just Announced a Cutting-Edge Chip. 1 Stock Offers Far Greater Upside.",
+              "datetime": 1789314603,
+              "headline": "Central Bank of AI: Analyst Says NVIDIA Could Sit on $1.4 Trillion — Dwarfing Hyperscalers and Wall Street",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=4b6449707f953acd9b5a6928bd1f587d4e7019e018c0d2db66479e4ef5f28ebe"
+              "url": "https://finnhub.io/api/news?id=6fbf76f89c4f698f181b4987466b78ff8f2c6ec5bd687db34d22dcc06dba16ec"
             },
             {
-              "datetime": 1789220229,
-              "headline": "Qualcomm Lost Apple’s Modem Business. Amazon Just Offered a $60 Billion Escape Route.",
+              "datetime": 1789314600,
+              "headline": "The Ultimate Growth Stock to Buy With $1,000 Right Now",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=332503480b1329d0e654a007d8e1251b42257f9052784264d67932caede0c951"
+              "url": "https://finnhub.io/api/news?id=9ddaca1287e66862989fbd0924ab61354a2bb584db01a9ee224eeb75c4b0b8ee"
             },
             {
-              "datetime": 1789219561,
-              "headline": "Will Midterm Elections Cause the Stock Market to Plunge? 75 Years of History Offer an Unexpected Answer.",
+              "datetime": 1789313769,
+              "headline": "Anthropic Locks Down $517 Billion in Compute Ahead of IPO — and It’s Still Not Enough",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=e407c76ed20c4fac5803edeb054be263c7318f719b321a222803ccffc70cb575"
+              "url": "https://finnhub.io/api/news?id=26ebbb3d0826ee8d4122ec51c0cb942fd44407a09ce9117eedde57e2ab6bf3a8"
             },
             {
-              "datetime": 1789219200,
-              "headline": "If a Stock Market Crash Is Coming, History Says This 1 Move Protects Investors Every Single Time",
+              "datetime": 1789313700,
+              "headline": "Rivian vs. Lucid: This Stock Is Clearly the Better Buy",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=13a01554742df60a29143fa450deef0b941a7c586d7f5456b9f2dbc29adfd1e2"
+              "url": "https://finnhub.io/api/news?id=5d46e7ab1246d0e89a901bd355d266c8108b467e8fc3e31ce786c66de029d3d9"
             },
             {
-              "datetime": 1789218731,
-              "headline": "NVIDIA and Digital Realty’s Flexible AI Factory Faces a Test That More Funding Alone Can’t Solve",
+              "datetime": 1789312920,
+              "headline": "Berkshire Hathaway Has Nearly 14% of Its $359 Billion Portfolio Invested in This Winning Stock That's Doubled in 5 Years",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=04208b6277742890ee6d53f1131a73648bef05ed57126664d4750b6688a4b669"
+              "url": "https://finnhub.io/api/news?id=5ee33038b3d868a9016392d2ddcff7a96897b5ef37922c688741b6e53e387f85"
             },
             {
-              "datetime": 1789218300,
-              "headline": "Some Dividend Growth ETFs Are Beating the Broad Market -- Is It Sustainable?",
+              "datetime": 1789312800,
+              "headline": "Retiring in 2027? 3 Essential Financial Moves to Make",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=82771449ea4924334a4700f5196b1e4567f40136feb465b1c95ecd1d574c3a97"
+              "url": "https://finnhub.io/api/news?id=429f748d1091667c509221988a30dfb446c93dc2efacacca5bd2296ffbc20925"
             },
             {
-              "datetime": 1789217400,
-              "headline": "3 Agentic AI Stocks to Own Before AI Changes the World as We Know It",
+              "datetime": 1789312631,
+              "headline": "Robots Everywhere: Goldman Sachs Now Sees 6.5 Million Humanoid Robots by 2035",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=bf0c945b857e166448d74b5b1ef05bcaf14ddd652de3d8558d833219adf5587d"
+              "url": "https://finnhub.io/api/news?id=22f4a830e839b259ddc3d13080195397b050d382ba253f927c2c4e56fd6dd661"
             },
             {
-              "datetime": 1789216741,
-              "headline": "AMD Just Raised the Top of the Company's 2030 Market to $3 Trillion",
+              "datetime": 1789312500,
+              "headline": "Prediction: 2 AI Semiconductor Stocks That Will Join Micron and Broadcom in the $1 Trillion Club by 2028",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=6e850fb0a698a0be4d7f00e4fc24e196d14098bb7c53cdf0b6e70c65552569c1"
+              "url": "https://finnhub.io/api/news?id=884fefe5f365171d25ba6a7054198c8c02e5a31986449f1f9774937dfc1b4d51"
             }
           ],
-          "major_company_headline": "Apple and Taiwan Semiconductor Manufacturing Just Announced a Cutting-Edge Chip. 1 Stock Offers Far Greater Upside.",
+          "major_company_headline": "Central Bank of AI: Analyst Says NVIDIA Could Sit on $1.4 Trillion — Dwarfing Hyperscalers and Wall Street",
           "news_count_24h": 20,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
-          "news_sentiment": "positive"
+          "news_sentiment": "negative"
         },
         "price_trend": {
           "close": 218.2899932861328,
@@ -2941,7 +2941,7 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "WEAK_EDGE",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.3213,
+        "benchmark_primary_probability": 0.3599,
         "benchmark_primary_scenario": "bearish_path",
         "context": "market_headwind",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -3028,7 +3028,6 @@
           "scenario": "stock_downside_continuation"
         },
         "supporting_signals": [
-          "近期公司新闻偏正面。",
           "基础财务指标已接入且收入增长为正。"
         ]
       },
@@ -4357,16 +4356,15 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Apple and Taiwan Semiconductor Manufacturing Just Announced a Cutting-Edge Chip. 1 Stock Offers Far Greater Upside.",
-              "新闻情绪偏正",
+              "公司新闻已接入: Central Bank of AI: Analyst Says NVIDIA Could Sit on $1.4 Trillion — Dwarfing Hyperscalers and Wall Street",
               "增长数据具备 EPS 上修叙事基础"
             ],
             "max_points": 10,
             "missing_fields": [],
             "name": "catalyst",
-            "points": 8.0,
-            "score_pct": 80.0,
-            "status": "supportive"
+            "points": 6.0,
+            "score_pct": 60.0,
+            "status": "neutral"
           },
           "flow": {
             "evidence": [
@@ -4449,7 +4447,7 @@
           "expected_return_60d": -0.0112,
           "max_drawdown_risk_20d": 0.0774,
           "max_drawdown_risk_60d": 0.1338,
-          "outperformance_probability_20d": 0.5319,
+          "outperformance_probability_20d": 0.5239,
           "risk_reward_ratio": 0.49,
           "upside_potential_60d": 0.0651
         },
@@ -4471,7 +4469,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "Apple and Taiwan Semiconductor Manufacturing Just Announced a Cutting-Edge Chip. 1 Stock Offers Far Greater Upside.",
+          "catalyst": "Central Bank of AI: Analyst Says NVIDIA Could Sit on $1.4 Trillion — Dwarfing Hyperscalers and Wall Street",
           "expectation_gap": [
             "收入增长较强，具备正向预期差基础",
             "EPS 增长较强，可能支持盈利上修叙事"
@@ -4489,7 +4487,7 @@
           "primary_path": "stock_failed_bounce",
           "valuation_repricing": "估值扩张证据不足或存在压力"
         },
-        "total_score": 39.5,
+        "total_score": 37.5,
         "validation_status": "not_yet_validated",
         "version": "stock_alpha_score_v1"
       },
@@ -4515,8 +4513,8 @@
         "module_scores": {
           "alpha_quality": {
             "evidence": "个股 Alpha 评分已接入",
-            "reason": "score=39.5; grade=weak_or_no_alpha_edge; benchmark=QQQ",
-            "score": 39.5,
+            "reason": "score=37.5; grade=weak_or_no_alpha_edge; benchmark=QQQ",
+            "score": 37.5,
             "status": "conflicting"
           },
           "fundamentals_earnings": {
@@ -4575,7 +4573,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 42.55,
+        "stock_confluence_score": 42.37,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "基础财务指标偏支持"
@@ -4583,7 +4581,6 @@
         "validation_status": "not_yet_validated"
       },
       "supporting_signals": [
-        "近期公司新闻偏正面。",
         "基础财务指标已接入且收入增长为正。"
       ],
       "symbol": "NVDA",
@@ -4657,6 +4654,42 @@
           "event_risk_flag": "high",
           "headlines": [
             {
+              "datetime": 1789306500,
+              "headline": "Oklo vs. NuScale vs. TMC: 3 Speculative Bets, Ranked By Which One Pays Off First.",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=a6efbf43a998b349a9dc5feccf1430ac84df70c24346b2b09e72f03e8fdeff48"
+            },
+            {
+              "datetime": 1789291741,
+              "headline": "Prediction: NuScale Power Stock Doesn't Get Halfway Back to Its Old High Before 2029",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=c777f0fc2053eb6866181fe19901bf80c496aa29c53ebc5b7b1ed3bf86a8b3b9"
+            },
+            {
+              "datetime": 1789280700,
+              "headline": "Prediction: $1,000 in NuScale Power Today Could Be Worth This Much by 2030",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=15aa809b4e80a28a9041dc71e72c91c232cf2c0811edd4b398052def99ab3e01"
+            },
+            {
+              "datetime": 1789279001,
+              "headline": "NuScale Power's CFO Sells 20,000 Company Shares Amid a 74% Stock Decline Over the Trailing 12 Months",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=a8d091254c94a2ba6771e14ddf1543be9c0482fbf8ef64409ed8dcd198ecf59e"
+            },
+            {
+              "datetime": 1789251900,
+              "headline": "Is NuScale Power a Millionaire Maker?",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=c9051380086be86c9cdd24ece03cae3f1d88406d41cb5e373518451761ed1622"
+            },
+            {
+              "datetime": 1789226100,
+              "headline": "NuScale Power Stock Jumps 15% in 1 Day. Here's How Nuclear Energy Investors Should Respond.",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=70892c751a33ab684aff24f51726faba9956edadf4641e6b146f221b03e26c7c"
+            },
+            {
               "datetime": 1789156503,
               "headline": "NuScale Stock Falls 14% as UBS Sees a $95 Million EBITDA Gap",
               "source": "Yahoo",
@@ -4667,47 +4700,11 @@
               "headline": "Why NuScale Power Stock Just Crashed",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=a2bd7e23af2f0056eb62752722cdafc69deaae808735f1c64d4943da4893d411"
-            },
-            {
-              "datetime": 1789149600,
-              "headline": "These stocks are the most active in today's session",
-              "source": "ChartMill",
-              "url": "https://finnhub.io/api/news?id=0419247d2a477b92084aca4454634fa51efe70bbe4b6ca34d55b01ce8d98268c"
-            },
-            {
-              "datetime": 1789144500,
-              "headline": "Forget NuScale: This Nuclear Energy Stock Is the Smarter Bet Right Now",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=9ccd11682da34c07bf24a9505710ccebdb1dc8b98700175e27169890a2b03092"
-            },
-            {
-              "datetime": 1789141151,
-              "headline": "SMR Stock Slides After UBS Downgrade — Analyst Flags Concerns Around Build Timeline, Lack Of Firm Customer Commitments",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=4580d69784a73b4c237eccf4caa2b9ec6765971f56d4cd9bfc5dc5434808dfa5"
-            },
-            {
-              "datetime": 1789133656,
-              "headline": "Crude Oil Down 3%; Kroger Shares Gain After Upbeat Q2 Earnings",
-              "source": "Benzinga",
-              "url": "https://finnhub.io/api/news?id=de7cd278026035e2b9f7a624a519cb15eea8ba9f58e9fba409d3068a2ee24555"
-            },
-            {
-              "datetime": 1789133137,
-              "headline": "NuScale Power Drops 5% as UBS Cuts to Sell on Timeline and Cash Burn, Oklo Slips",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=243ab61b450c93436718b8b2dc5e5f139aa72a72eda643bbabba919ec4c1470b"
-            },
-            {
-              "datetime": 1789132000,
-              "headline": "12 Industrials Stocks Moving In Friday's Intraday Session",
-              "source": "Benzinga",
-              "url": "https://finnhub.io/api/news?id=46bc69ebc1618dc761ef31851bc7c3a3579e77a0ff042e8f1fd303ff77162d2e"
             }
           ],
-          "major_company_headline": "NuScale Stock Falls 14% as UBS Sees a $95 Million EBITDA Gap",
+          "major_company_headline": "Oklo vs. NuScale vs. TMC: 3 Speculative Bets, Ranked By Which One Pays Off First.",
           "news_count_24h": 5,
-          "news_count_72h": 15,
+          "news_count_72h": 20,
           "news_risk_score": 100.0,
           "news_sentiment": "negative"
         },
@@ -5142,7 +5139,7 @@
         "benchmark": "IWM",
         "benchmark_edge_status": "WEAK_EDGE",
         "benchmark_market_state": "downside_continuation",
-        "benchmark_primary_probability": 0.4256,
+        "benchmark_primary_probability": 0.468,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -6559,7 +6556,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: NuScale Stock Falls 14% as UBS Sees a $95 Million EBITDA Gap"
+              "公司新闻已接入: Oklo vs. NuScale vs. TMC: 3 Speculative Bets, Ranked By Which One Pays Off First."
             ],
             "max_points": 10,
             "missing_fields": [],
@@ -6674,7 +6671,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "NuScale Stock Falls 14% as UBS Sees a $95 Million EBITDA Gap",
+          "catalyst": "Oklo vs. NuScale vs. TMC: 3 Speculative Bets, Ranked By Which One Pays Off First.",
           "expectation_gap": [
             "暂未看到明确正向预期差证据"
           ],
@@ -6860,56 +6857,56 @@
           "event_risk_flag": "high",
           "headlines": [
             {
-              "datetime": 1789211700,
-              "headline": "Tim Cook warns of US crisis: ‘I’ve never seen anything like it’ and Musk agrees. Shockproof your hard cash today",
+              "datetime": 1789314093,
+              "headline": "The Tesla Network Is Dead: JPMorgan’s Bombshell Note Reveals Nearly All Robotaxi Billions Flow to TSLA, Not You",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=a56c4adb0fa43adbb1e53a7c3cd7546bcd9cddc19734141be5cdd64279576856"
+              "url": "https://finnhub.io/api/news?id=fea943af624d97a648f988107802bf2a3077832175fce3409300a938c059a946"
             },
             {
-              "datetime": 1789210732,
-              "headline": "Jim Cramer Couldn’t Blame Anyone Who Held These Two Elon Musk Stocks",
+              "datetime": 1789313700,
+              "headline": "Rivian vs. Lucid: This Stock Is Clearly the Better Buy",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=7f0635e03f5633704436e5f0b110d40c42b02d2a689d1b6fe103de55b65004ba"
+              "url": "https://finnhub.io/api/news?id=5d46e7ab1246d0e89a901bd355d266c8108b467e8fc3e31ce786c66de029d3d9"
             },
             {
-              "datetime": 1789192200,
-              "headline": "Michael Burry Is Staying Short Nvidia, Palantir, and Tesla, Warning of a Possible \"1987-Type Fall\" for AI Stocks. Should Investors Take the Bet Seriously?",
+              "datetime": 1789312631,
+              "headline": "Robots Everywhere: Goldman Sachs Now Sees 6.5 Million Humanoid Robots by 2035",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=8684d6d6991c450552622d4b3ad43a48707665f98c6cbf28c139e264b45a02e0"
+              "url": "https://finnhub.io/api/news?id=22f4a830e839b259ddc3d13080195397b050d382ba253f927c2c4e56fd6dd661"
             },
             {
-              "datetime": 1789183200,
-              "headline": "How The Rise Of Frontier Tech Baskets Could Impact Equities",
-              "source": "SeekingAlpha",
-              "url": "https://finnhub.io/api/news?id=5bb8a2eae53ced08753007af4c3eb01a575bcf307807411b040ceed083b2c599"
+              "datetime": 1789298758,
+              "headline": "Amazon’s Zoox Enters San Francisco’s Crowded Robotaxi Market, Taking Direct Aim at Waymo and Tesla",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=b272ecf70bd060047588146b95771cdc643bea2ba38d400fa4607aa47ca6e332"
             },
             {
-              "datetime": 1789175437,
-              "headline": "Tesla (TSLA)’s China Growth Streak Hits Double Digits, But Barely",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=5128ed3192c28dca361fd64260c8dc77e85a3fae8803d30b844411d18e814934"
+              "datetime": 1789292930,
+              "headline": "Little-Known Vy Capital Discloses $41 Billion SpaceX Holding, Also Backs Boring, Neuralink",
+              "source": "Benzinga",
+              "url": "https://finnhub.io/api/news?id=db556eec00693fedd28b93cf3c218e8bf49f806336297498f0b7f2f56f56dd89"
             },
             {
-              "datetime": 1789171385,
-              "headline": "3 Unpopular Stocks with Open Questions",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=9d5d0c4f352dcecc7b8c950922425052130b224f33d5f2a00740608b3a27e759"
+              "datetime": 1789292508,
+              "headline": "Cybersecurity Stocks May See Upside Even As AI Industry’s ‘Pace The Frontier’ Push Triggers Chipmaker Sell-Off Risks",
+              "source": "Benzinga",
+              "url": "https://finnhub.io/api/news?id=651f99229b6ad5a9d06698034f6cf11385b66a408fe121ed85153bb2d75d4aa3"
             },
             {
-              "datetime": 1789161138,
-              "headline": "Tesla Gains as Semi Opens a $17 Billion Software Door",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=e8dfa4f241cd6fec0c207ced86357dae489f4878f482b06161a2e3c92657bca0"
+              "datetime": 1789291135,
+              "headline": "Obama Warns AI Could be ‘Dangerous’ If Not Managed Properly, Calls for Democrats to Prioritize Oversight: Report",
+              "source": "Benzinga",
+              "url": "https://finnhub.io/api/news?id=1f128209eaa9826fc74dd13bbfa9aa6476731cb65f8d9b99a30dd154275ef956"
             },
             {
-              "datetime": 1789158655,
-              "headline": "Jason Calacanis Warns Chinese EVs Could End US Auto Industry: ‘Consumers Will Love to Buy These Cars’",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=8b2fa4403511b693ca90cbc20ff882fbc65f8b343849bfccdd1e674b650e2921"
+              "datetime": 1789289322,
+              "headline": "Elon Musk Renews AI Risk Warning Amid Calls From Sam Altman, Dario Amodei to ‘Pace The Frontier’ — ‘Sounding The Alarm on AI…’",
+              "source": "Benzinga",
+              "url": "https://finnhub.io/api/news?id=d06902f742ece0204cf9b324ecdeef1080636b0b934a9c34018c16d938485d26"
             }
           ],
-          "major_company_headline": "Tim Cook warns of US crisis: ‘I’ve never seen anything like it’ and Musk agrees. Shockproof your hard cash today",
-          "news_count_24h": 19,
+          "major_company_headline": "The Tesla Network Is Dead: JPMorgan’s Bombshell Note Reveals Nearly All Robotaxi Billions Flow to TSLA, Not You",
+          "news_count_24h": 16,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
           "news_sentiment": "neutral"
@@ -7343,7 +7340,7 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "WEAK_EDGE",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.3213,
+        "benchmark_primary_probability": 0.3599,
         "benchmark_primary_scenario": "bearish_path",
         "context": "market_headwind",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -8760,7 +8757,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Tim Cook warns of US crisis: ‘I’ve never seen anything like it’ and Musk agrees. Shockproof your hard cash today"
+              "公司新闻已接入: The Tesla Network Is Dead: JPMorgan’s Bombshell Note Reveals Nearly All Robotaxi Billions Flow to TSLA, Not You"
             ],
             "max_points": 10,
             "missing_fields": [],
@@ -8877,7 +8874,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "Tim Cook warns of US crisis: ‘I’ve never seen anything like it’ and Musk agrees. Shockproof your hard cash today",
+          "catalyst": "The Tesla Network Is Dead: JPMorgan’s Bombshell Note Reveals Nearly All Robotaxi Billions Flow to TSLA, Not You",
           "expectation_gap": [
             "暂未看到明确正向预期差证据"
           ],
@@ -9011,7 +9008,7 @@
       "top_candidate": "SMR",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-09-12T15:34:58.070440+00:00",
+    "generated_at": "2026-09-13T16:20:29.214235+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -9118,7 +9115,7 @@
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 61.91,
         "company_name": "Constellation Energy Corp",
-        "confluence_score": 41.2,
+        "confluence_score": 40.83,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9135,7 +9132,7 @@
           "mid": 284.46,
           "range_pct": 0.032
         },
-        "final_radar_score": 53.21,
+        "final_radar_score": 53.16,
         "forecast_date": "2026-09-11",
         "invalidation_level": 264.82,
         "last_close": 284.75,
@@ -9277,19 +9274,19 @@
       },
       {
         "alpha_fields": {
-          "alpha_score": 39.5,
+          "alpha_score": 37.5,
           "expected_return_60d": -0.0112,
           "forecast_grade": "weak_or_no_alpha_edge",
           "main_logic": "半导体/AI 逻辑：订单、毛利率、资本开支周期、估值重估和资金确认。",
-          "outperformance_probability_20d": 0.5319,
+          "outperformance_probability_20d": 0.5239,
           "risk_reward_ratio": 0.49
         },
-        "alpha_quality_score": 39.5,
+        "alpha_quality_score": 37.5,
         "as_of": "2026-09-11",
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 63.81,
         "company_name": "NVIDIA Corp",
-        "confluence_score": 42.55,
+        "confluence_score": 42.37,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9306,7 +9303,7 @@
           "mid": 217.96,
           "range_pct": 0.0346
         },
-        "final_radar_score": 51.16,
+        "final_radar_score": 50.78,
         "forecast_date": "2026-09-11",
         "invalidation_level": 207.25,
         "last_close": 218.2899932861328,
@@ -9328,8 +9325,8 @@
           "earnings": "available"
         },
         "next_day_move_probability": 0.6368,
-        "one_line_reason": "failed_bounce_risk: Alpha 40 / 弹性 70 / 成交量 49 / 相对强弱 54 / 催化 64 / 大盘 market_headwind / 板块 neutral",
-        "outperformance_probability_20d": 0.5319,
+        "one_line_reason": "failed_bounce_risk: Alpha 38 / 弹性 70 / 成交量 49 / 相对强弱 54 / 催化 64 / 大盘 market_headwind / 板块 neutral",
+        "outperformance_probability_20d": 0.5239,
         "primary_probability": 0.2766,
         "primary_scenario": "stock_failed_bounce",
         "radar_level": "WATCH",
