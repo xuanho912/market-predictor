@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-14T23:17:01.103491+00:00`
+- generated_at: `2026-09-14T23:59:46.717292+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `13`
-- event_detection_confidence: `71`
+- event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -43,7 +43,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Etihad Airways says passenger numbers have rebounded from Iran war impact - reuters.com
+- headline: Etihad Airways says passenger numbers have rebounded from Iran war impact - Reuters
 - source: Reuters
 - published_at: `2026-09-14T14:15:11+00:00`
 - importance_score: `100`
@@ -67,7 +67,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: AirBaltic files for Chapter 11 bankruptcy as Iran war costs bite - reuters.com
+- headline: AirBaltic files for Chapter 11 bankruptcy as Iran war costs bite - Reuters
 - source: Reuters
 - published_at: `2026-09-14T06:47:00+00:00`
 - importance_score: `100`
@@ -75,7 +75,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Trump downplays report China entities helped Iran before attack that killed US troops - reuters.com
+- headline: Trump downplays report China entities helped Iran before attack that killed US troops - Reuters
 - source: Reuters
 - published_at: `2026-09-14T00:50:00+00:00`
 - importance_score: `100`
@@ -83,7 +83,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Saudi Civil Defense lifts warnings of potential danger in four cities - reuters.com
+- headline: Saudi Civil Defense lifts warnings of potential danger in four cities - Reuters
 - source: Reuters
 - published_at: `2026-09-14T00:17:00+00:00`
 - importance_score: `100`
@@ -91,7 +91,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: COMMENTARY: Oil markets survived the Iran war sprint. Now comes the marathon - reuters.com
+- headline: COMMENTARY: Oil markets survived the Iran war sprint. Now comes the marathon - Reuters
 - source: Reuters
 - published_at: `2026-09-14T00:01:00+00:00`
 - importance_score: `100`
@@ -99,7 +99,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Houthis attack Saudi Arabia as Gulf-Iran talks are postponed - reuters.com
+- headline: Houthis attack Saudi Arabia as Gulf-Iran talks are postponed - Reuters
 - source: Reuters
 - published_at: `2026-09-13T23:02:00+00:00`
 - importance_score: `100`
