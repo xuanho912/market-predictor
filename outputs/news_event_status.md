@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-14T18:07:26.573423+00:00`
+- generated_at: `2026-09-14T23:17:01.103491+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
-- event_detection_confidence: `70`
+- major_event_count: `13`
+- event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,25 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: AirBaltic files for Chapter 11 bankruptcy as Iran war costs bite - Reuters
+- headline: Counting the votes: Warsh faces a tough battle as the Fed girds for expected interest rate hike
+- source: CNBC
+- published_at: `2026-09-14T18:50:32+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Is a 'SaaSpocalypse'-like sell-off coming for AI hardware stocks? Not so fast
+- source: CNBC
+- published_at: `2026-09-14T18:43:44+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Etihad Airways says passenger numbers have rebounded from Iran war impact - reuters.com
 - source: Reuters
-- published_at: `2026-09-14T14:58:30+00:00`
+- published_at: `2026-09-14T14:15:11+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -43,7 +59,23 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Trump downplays report China entities helped Iran before attack that killed US troops - Reuters
+- headline: Asia's oil traders, seeing no quick end to Middle East war, stay bullish on prices - Reuters
+- source: Reuters
+- published_at: `2026-09-14T10:46:10+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: AirBaltic files for Chapter 11 bankruptcy as Iran war costs bite - reuters.com
+- source: Reuters
+- published_at: `2026-09-14T06:47:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Trump downplays report China entities helped Iran before attack that killed US troops - reuters.com
 - source: Reuters
 - published_at: `2026-09-14T00:50:00+00:00`
 - importance_score: `100`
@@ -51,7 +83,15 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: COMMENTARY: Oil markets survived the Iran war sprint. Now comes the marathon - Reuters
+- headline: Saudi Civil Defense lifts warnings of potential danger in four cities - reuters.com
+- source: Reuters
+- published_at: `2026-09-14T00:17:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: COMMENTARY: Oil markets survived the Iran war sprint. Now comes the marathon - reuters.com
 - source: Reuters
 - published_at: `2026-09-14T00:01:00+00:00`
 - importance_score: `100`
@@ -59,40 +99,8 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Trump says Iran wants deal as Gulf talks delayed, Houthis strike Saudi Arabia - Reuters
+- headline: Houthis attack Saudi Arabia as Gulf-Iran talks are postponed - reuters.com
 - source: Reuters
 - published_at: `2026-09-13T23:02:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil prices climb over 2% after strikes on Saudi pipeline and ships in Middle East - Reuters
-- source: Reuters
-- published_at: `2026-09-13T22:23:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Here are the 2 big things we're watching in this week's stock market
-- source: CNBC
-- published_at: `2026-09-13T16:57:43+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Anthropic’s AI warning may weigh on chips, but trade seen intact
-- source: Bloomberg
-- published_at: `2026-09-13T08:37:03+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: All eyes on Warsh as rate-hike fever spreads across G7 central banks
-- source: Bloomberg
-- published_at: `2026-09-13T08:25:01+00:00`
 - importance_score: `100`
 - confidence: `medium`
