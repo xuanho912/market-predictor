@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-15T23:02:02.706062+00:00`
+- generated_at: `2026-09-15T23:41:31.549620+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `17`
+- major_event_count: `16`
 - event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -27,17 +27,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iran war cost hits $38 billion, forecast to rise $3 billion a month, CBO says - Reuters
+- headline: Best of the Emmy Awards - Reuters
 - source: Reuters
-- published_at: `2026-09-15T21:21:13+00:00`
+- published_at: `2026-09-15T22:38:08+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Best of the Emmy Awards - Reuters
+- headline: Iran war cost hits $38 billion, forecast to rise $3 billion a month, CBO says - Reuters
 - source: Reuters
-- published_at: `2026-09-15T19:36:13+00:00`
+- published_at: `2026-09-15T22:13:35+00:00`
 - importance_score: `100`
 - confidence: `high`
 
