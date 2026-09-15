@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-09-15T06:13:15.981337+00:00`
+Generated at: `2026-09-15T09:00:09.761131+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -79,15 +79,15 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - company_name: `Nuscale Power Corp`
 - status: `available`
 - current_price: `8.51`
-- market_context: `market_headwind`
-- primary: `stock_failed_bounce` / `27.5%`
-- secondary: `stock_downside_continuation` / `23.1%`
-- risk: `stock_event_risk` / `14.9%`
-- stock_confluence_score: `25.02` / `weak`
+- market_context: `risk_off_pressure`
+- primary: `stock_failed_bounce` / `27.0%`
+- secondary: `stock_downside_continuation` / `24.3%`
+- risk: `stock_event_risk` / `12.5%`
+- stock_confluence_score: `25.36` / `weak`
 - stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `35.0%`
-- 60d_expected_return: `-3.4%`
-- risk_reward_ratio: `0.5`
+- 60d_expected_return: `-3.3%`
+- risk_reward_ratio: `0.52`
 - strongest_alert: `Liquidity / Gap Risk Alert` / `NO_ALERT` / `37.6`
 - historical_analog_support: `conflicting` / samples `10`
 - validation_status: `not_yet_validated`
@@ -108,7 +108,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - company_name: `Constellation Energy Corp`
 - status: `available`
 - current_price: `264.57`
-- market_context: `market_headwind`
+- market_context: `risk_off_pressure`
 - primary: `stock_failed_bounce` / `30.5%`
 - secondary: `stock_downside_continuation` / `22.8%`
 - risk: `stock_event_risk` / `13.0%`

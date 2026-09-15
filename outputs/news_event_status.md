@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-15T06:13:04.596563+00:00`
+- generated_at: `2026-09-15T08:59:58.946781+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `15`
-- event_detection_confidence: `69`
+- major_event_count: `18`
+- event_detection_confidence: `68`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: China's August oil throughput rises as fuel exports rebound amid Iran war - Reuters
+- source: Reuters
+- published_at: `2026-09-15T05:12:00+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +55,7 @@
 - source: CNBC
 - published_at: `2026-09-14T18:50:32+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,7 +63,15 @@
 - source: CNBC
 - published_at: `2026-09-14T18:43:44+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: AirBaltic files for Chapter 11 bankruptcy as Iran war costs bite - Reuters
+- source: Reuters
+- published_at: `2026-09-14T14:58:30+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -83,24 +99,8 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: AirBaltic files for Chapter 11 bankruptcy as Iran war costs bite - Reuters
-- source: Reuters
-- published_at: `2026-09-14T06:47:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump downplays report China entities helped Iran before attack that killed US troops - Reuters
-- source: Reuters
-- published_at: `2026-09-14T00:50:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Saudi Civil Defense lifts warnings of potential danger in four cities - Reuters
-- source: Reuters
-- published_at: `2026-09-14T00:17:00+00:00`
+- headline: Oman calls for alternative LNG routes that can bypass Hormuz
+- source: Bloomberg
+- published_at: `2026-09-14T07:54:15+00:00`
 - importance_score: `100`
 - confidence: `medium`
