@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-15T08:59:58.946781+00:00`
+- generated_at: `2026-09-15T17:02:52.849211+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `18`
-- event_detection_confidence: `68`
+- major_event_count: `14`
+- event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,6 +27,22 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Most Gulf bourses in red on Houthi attack and Hormuz shipping slump - Reuters
+- source: Reuters
+- published_at: `2026-09-15T13:16:59+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Amazon's AWS is unable to restore access to Bahrain, one UAE cloud data zone after war damage - Reuters
+- source: Reuters
+- published_at: `2026-09-15T11:58:52+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: China's August oil throughput rises as fuel exports rebound amid Iran war - Reuters
 - source: Reuters
 - published_at: `2026-09-15T05:12:00+00:00`
@@ -39,15 +55,31 @@
 - source: Reuters
 - published_at: `2026-09-15T02:59:00+00:00`
 - importance_score: `100`
+- confidence: `medium`
+
+### fed_hawkish / risk_off
+
+- headline: What to expect from stocks and bonds if interest rates remain higher for longer, according to investing pros
+- source: CNBC
+- published_at: `2026-09-15T14:00:02+00:00`
+- importance_score: `88`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Houthis strike Saudi targets anew as talks over Strait of Hormuz stall - Reuters
+- headline: LNG demand in China, India and Pakistan expected to rebound after US-Iran war ends - Reuters
+- source: Reuters
+- published_at: `2026-09-15T02:17:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Saudi Arabia reports wide-ranging security alerts after week of strikes - Reuters
 - source: Reuters
 - published_at: `2026-09-15T00:04:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -67,40 +99,8 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: AirBaltic files for Chapter 11 bankruptcy as Iran war costs bite - Reuters
-- source: Reuters
-- published_at: `2026-09-14T14:58:30+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Etihad Airways says passenger numbers have rebounded from Iran war impact - Reuters
-- source: Reuters
-- published_at: `2026-09-14T14:15:11+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: AI stocks tumble on safety warnings. How to proceed — including 2 names on our shopping list
-- source: CNBC
-- published_at: `2026-09-14T12:59:41+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Asia's oil traders, seeing no quick end to Middle East war, stay bullish on prices - Reuters
-- source: Reuters
-- published_at: `2026-09-14T10:46:10+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oman calls for alternative LNG routes that can bypass Hormuz
+- headline: Trump attacks Anthropic CEO over call to slow AI development
 - source: Bloomberg
-- published_at: `2026-09-14T07:54:15+00:00`
+- published_at: `2026-09-14T16:03:38+00:00`
 - importance_score: `100`
 - confidence: `medium`
