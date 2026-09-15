@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-15T01:25:40.454144+00:00`
+- generated_at: `2026-09-15T06:13:04.596563+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `13`
+- major_event_count: `15`
 - event_detection_confidence: `69`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -27,6 +27,22 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Hormuz traffic dwindles after Middle East attacks intensify - Reuters
+- source: Reuters
+- published_at: `2026-09-15T02:59:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Houthis strike Saudi targets anew as talks over Strait of Hormuz stall - Reuters
+- source: Reuters
+- published_at: `2026-09-15T00:04:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Counting the votes: Warsh faces a tough battle as the Fed girds for expected interest rate hike
 - source: CNBC
 - published_at: `2026-09-14T18:50:32+00:00`
@@ -47,7 +63,7 @@
 - source: Reuters
 - published_at: `2026-09-14T14:15:11+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -86,21 +102,5 @@
 - headline: Saudi Civil Defense lifts warnings of potential danger in four cities - Reuters
 - source: Reuters
 - published_at: `2026-09-14T00:17:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: COMMENTARY: Oil markets survived the Iran war sprint. Now comes the marathon - Reuters
-- source: Reuters
-- published_at: `2026-09-14T00:01:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Houthis attack Saudi Arabia as Gulf-Iran talks are postponed - Reuters
-- source: Reuters
-- published_at: `2026-09-13T23:02:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
