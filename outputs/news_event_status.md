@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-15T17:02:52.849211+00:00`
+- generated_at: `2026-09-15T23:02:02.706062+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `14`
+- major_event_count: `17`
 - event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -27,6 +27,38 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Iran war cost hits $38 billion, forecast to rise $3 billion a month, CBO says - Reuters
+- source: Reuters
+- published_at: `2026-09-15T21:21:13+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Best of the Emmy Awards - Reuters
+- source: Reuters
+- published_at: `2026-09-15T19:36:13+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: UK, US and Netherlands issue advisory on Iran-linked spyware - Reuters
+- source: Reuters
+- published_at: `2026-09-15T16:35:20+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Cramer says these 2 stocks are still buys, warns against playing Fed rate 'parlor game'
+- source: CNBC
+- published_at: `2026-09-15T16:12:59+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Most Gulf bourses in red on Houthi attack and Hormuz shipping slump - Reuters
 - source: Reuters
 - published_at: `2026-09-15T13:16:59+00:00`
@@ -47,7 +79,7 @@
 - source: Reuters
 - published_at: `2026-09-15T05:12:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -57,14 +89,6 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### fed_hawkish / risk_off
-
-- headline: What to expect from stocks and bonds if interest rates remain higher for longer, according to investing pros
-- source: CNBC
-- published_at: `2026-09-15T14:00:02+00:00`
-- importance_score: `88`
-- confidence: `high`
-
 ### geopolitical_risk_escalation / risk_off
 
 - headline: LNG demand in China, India and Pakistan expected to rebound after US-Iran war ends - Reuters
@@ -73,34 +97,10 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
+### fed_hawkish / risk_off
 
-- headline: Saudi Arabia reports wide-ranging security alerts after week of strikes - Reuters
-- source: Reuters
-- published_at: `2026-09-15T00:04:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Counting the votes: Warsh faces a tough battle as the Fed girds for expected interest rate hike
+- headline: What to expect from stocks and bonds if interest rates remain higher for longer, according to investing pros
 - source: CNBC
-- published_at: `2026-09-14T18:50:32+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Is a 'SaaSpocalypse'-like sell-off coming for AI hardware stocks? Not so fast
-- source: CNBC
-- published_at: `2026-09-14T18:43:44+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump attacks Anthropic CEO over call to slow AI development
-- source: Bloomberg
-- published_at: `2026-09-14T16:03:38+00:00`
-- importance_score: `100`
+- published_at: `2026-09-15T14:00:02+00:00`
+- importance_score: `87`
 - confidence: `medium`

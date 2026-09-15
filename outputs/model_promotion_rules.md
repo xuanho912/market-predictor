@@ -1,6 +1,6 @@
 # Model Promotion Rules
 
-Generated at: `2026-09-15T17:03:03.811829+00:00`
+Generated at: `2026-09-15T23:02:13.678618+00:00`
 
 ## Minimum Forward Sample Gates
 
@@ -83,13 +83,10 @@ Generated at: `2026-09-15T17:03:03.811829+00:00`
 ## Validation Standards
 
 - high_precision_standard: `not_yet_validated`
-  - forward completed samples are below the minimum validation gate
-  - MODERATE_EDGE / STRONG_EDGE samples are not yet proven better than NO_EDGE
   - 5d / 20d primary-path advantage is not yet forward validated
 - stable_alpha_standard: `not_yet_validated`
   - Alpha v1 remains RESEARCH ALPHA CANDIDATE and cannot be upgraded by historical replay
 - validated_forecasting_system_standard: `not_yet_validated`
-  - forecast accuracy ledger has insufficient completed forward samples
   - no challenger has qualified for promotion against baseline_v1
 ## Non-Negotiable Rules
 

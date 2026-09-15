@@ -1,6 +1,6 @@
 {
   "active_model_version": "baseline_v1",
-  "generated_at": "2026-09-15T17:03:03.811829+00:00",
+  "generated_at": "2026-09-15T23:02:13.678618+00:00",
   "guardrails": [
     "Alpha v1 threshold remains frozen at 0.32534311.",
     "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -128,17 +128,15 @@
   ],
   "validation_standards": {
     "forward_completed_samples_by_horizon": {
-      "10d": 216,
-      "20d": 176,
-      "3d": 244,
-      "5d": 236,
-      "60d": 16
+      "10d": 220,
+      "20d": 180,
+      "3d": 248,
+      "5d": 240,
+      "60d": 20
     },
     "high_precision_standard": {
       "definition_doc": "docs/forecast_accuracy_definition.md",
       "reasons": [
-        "forward completed samples are below the minimum validation gate",
-        "MODERATE_EDGE / STRONG_EDGE samples are not yet proven better than NO_EDGE",
         "5d / 20d primary-path advantage is not yet forward validated"
       ],
       "status": "not_yet_validated"
@@ -154,7 +152,6 @@
     "summary": "Current system is an auditable baseline and challenger framework, not yet a high-precision or stable-alpha system.",
     "validated_forecasting_system_standard": {
       "reasons": [
-        "forecast accuracy ledger has insufficient completed forward samples",
         "no challenger has qualified for promotion against baseline_v1"
       ],
       "requires_forward_validation": true,
