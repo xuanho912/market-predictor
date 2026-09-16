@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-16T06:07:15.630716+00:00`
+- generated_at: `2026-09-16T08:53:25.971311+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `13`
-- event_detection_confidence: `70`
+- major_event_count: `12`
+- event_detection_confidence: `68`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `True`
-- confirmation_score: `100`
+- confirmation_score: `75`
 
 ## Dashboard Note
 
@@ -27,7 +27,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Best of the Emmy Awards - reuters.com
+- headline: Best of the Emmy Awards - Reuters
 - source: Reuters
 - published_at: `2026-09-15T22:38:08+00:00`
 - importance_score: `100`
@@ -35,7 +35,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iran war cost hits $38 billion, forecast to rise $3 billion a month, CBO says - reuters.com
+- headline: Iran war cost hits $38 billion, forecast to rise $3 billion a month, CBO says - Reuters
 - source: Reuters
 - published_at: `2026-09-15T18:02:00+00:00`
 - importance_score: `100`
@@ -43,7 +43,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: UK, US and Netherlands issue advisory on Iran-linked spyware - reuters.com
+- headline: UK, US and Netherlands issue advisory on Iran-linked spyware - Reuters
 - source: Reuters
 - published_at: `2026-09-15T16:35:20+00:00`
 - importance_score: `100`
@@ -59,7 +59,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Alarmed Yemenis flee south as Houthis keep up attacks - reuters.com
+- headline: Alarmed Yemenis flee south as Houthis keep up attacks - Reuters
 - source: Reuters
 - published_at: `2026-09-15T14:30:16+00:00`
 - importance_score: `100`
@@ -67,7 +67,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Most Gulf bourses in red on Houthi attack and Hormuz shipping slump - reuters.com
+- headline: Most Gulf bourses in red on Houthi attack and Hormuz shipping slump - Reuters
 - source: Reuters
 - published_at: `2026-09-15T13:16:59+00:00`
 - importance_score: `100`
@@ -75,7 +75,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Amazon's AWS is unable to restore access to Bahrain, one UAE cloud data zone after war damage - reuters.com
+- headline: Amazon's AWS is unable to restore access to Bahrain, one UAE cloud data zone after war damage - Reuters
 - source: Reuters
 - published_at: `2026-09-15T11:58:52+00:00`
 - importance_score: `100`
@@ -83,7 +83,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: China's August oil throughput rises as fuel exports rebound amid Iran war - reuters.com
+- headline: China's August oil throughput rises as fuel exports rebound amid Iran war - Reuters
 - source: Reuters
 - published_at: `2026-09-15T05:12:00+00:00`
 - importance_score: `100`
@@ -91,7 +91,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Hormuz traffic dwindles after Middle East attacks intensify - reuters.com
+- headline: Hormuz traffic dwindles after Middle East attacks intensify - Reuters
 - source: Reuters
 - published_at: `2026-09-15T02:59:00+00:00`
 - importance_score: `100`
