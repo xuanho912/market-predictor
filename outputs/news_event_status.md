@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-15T23:41:31.549620+00:00`
+- generated_at: `2026-09-16T00:54:23.828580+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `16`
+- major_event_count: `15`
 - event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -71,7 +71,7 @@
 - source: Reuters
 - published_at: `2026-09-15T11:58:52+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -102,5 +102,5 @@
 - headline: What to expect from stocks and bonds if interest rates remain higher for longer, according to investing pros
 - source: CNBC
 - published_at: `2026-09-15T14:00:02+00:00`
-- importance_score: `87`
+- importance_score: `86`
 - confidence: `medium`
