@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-16T00:54:23.828580+00:00`
+- generated_at: `2026-09-16T01:24:24.627467+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `15`
-- event_detection_confidence: `71`
+- event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -37,7 +37,7 @@
 
 - headline: Iran war cost hits $38 billion, forecast to rise $3 billion a month, CBO says - Reuters
 - source: Reuters
-- published_at: `2026-09-15T22:13:35+00:00`
+- published_at: `2026-09-15T18:02:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -63,7 +63,7 @@
 - source: Reuters
 - published_at: `2026-09-15T13:16:59+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
