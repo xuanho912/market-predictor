@@ -1,6 +1,6 @@
 # FRED Data Status
 
-Generated at: `2026-09-16T08:53:37.509954Z`
+Generated at: `2026-09-16T16:59:37.602803Z`
 
 ## Provider
 
@@ -8,7 +8,7 @@ Generated at: `2026-09-16T08:53:37.509954Z`
 - provider available: `True`
 - fallback used: `False`
 - rate limited: `False`
-- successful series: `HY_OAS, IG_OAS, DGS2, DGS10, BAA_SPREAD, DGS3MO, RECESSION, DFII10, FINANCIAL_STRESS`
+- successful series: `DGS10, IG_OAS, DGS3MO, DGS2, HY_OAS, BAA_SPREAD, DFII10, FINANCIAL_STRESS, RECESSION`
 - failed series: `none`
 
 ## Series
@@ -21,8 +21,8 @@ Generated at: `2026-09-16T08:53:37.509954Z`
 | DGS2 | DGS2 | True | 2026-09-14 | 4.65 | fred-api | False |  |
 | DGS3MO | DGS3MO | True | 2026-09-14 | 4.11 | fred-api | False |  |
 | FINANCIAL_STRESS | STLFSI4 | True | 2026-09-04 | -0.7884 | fred-api | True |  |
-| HY_OAS | BAMLH0A0HYM2 | True | 2026-09-14 | 2.71 | fred-api | False |  |
-| IG_OAS | BAMLC0A0CM | True | 2026-09-14 | 0.8 | fred-api | False |  |
+| HY_OAS | BAMLH0A0HYM2 | True | 2026-09-15 | 2.76 | fred-api | False |  |
+| IG_OAS | BAMLC0A0CM | True | 2026-09-15 | 0.8 | fred-api | False |  |
 | RECESSION | USREC | True | 2026-08-01 | 0.0 | fred-api | True |  |
 
 ## Data Completeness Effect
@@ -37,10 +37,10 @@ Generated at: `2026-09-16T08:53:37.509954Z`
 
 | symbol | edge without | edge with | primary without | primary with | risk expansion delta | failed bounce delta |
 |---|---|---|---|---|---:|---:|
-| SPY | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0274 | 0.01 |
-| QQQ | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0274 | 0.01 |
-| IWM | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0274 | 0.0101 |
-| DIA | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0273 | 0.0099 |
+| SPY | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0273 | 0.0101 |
+| QQQ | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0274 | 0.0101 |
+| IWM | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0274 | 0.01 |
+| DIA | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0274 | 0.01 |
 
 ## Warning
 
