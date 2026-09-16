@@ -5,10 +5,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-09-16",
-    "current_time_us_eastern": "2026-09-16T19:06:08.395031-04:00",
+    "current_time_us_eastern": "2026-09-16T19:48:58.005070-04:00",
     "data_freshness_status": "fresh",
     "expected_latest_trading_date": "2026-09-16",
-    "generated_at": "2026-09-16T23:06:08.395031+00:00",
+    "generated_at": "2026-09-16T23:48:58.005070+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -747,13 +747,13 @@
       "finnhub_quote_SPY": {
         "fallback_used": false,
         "latest_date": null,
-        "missing_data": true,
-        "point_in_time_safe": false,
-        "real_data": false,
-        "rows": 0,
+        "missing_data": false,
+        "point_in_time_safe": true,
+        "real_data": true,
+        "rows": 1,
         "source": "finnhub",
-        "stale_data": false,
-        "status": "rate_limited",
+        "stale_data": true,
+        "status": "stale",
         "symbol": "finnhub_quote_SPY"
       },
       "finnhub_rates_data": {
@@ -969,7 +969,7 @@
     "fallback_used": true,
     "finnhub_available": true,
     "finnhub_missing": false,
-    "finnhub_rate_limited": true,
+    "finnhub_rate_limited": false,
     "flow_available": true,
     "flow_provider_status": "proxy",
     "flow_proxy_only": true,
@@ -1047,15 +1047,15 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "DGS10",
-      "BAA_SPREAD",
-      "IG_OAS",
       "DGS3MO",
-      "RECESSION",
       "DGS2",
-      "FINANCIAL_STRESS",
+      "DGS10",
+      "RECESSION",
+      "IG_OAS",
       "DFII10",
-      "HY_OAS"
+      "HY_OAS",
+      "BAA_SPREAD",
+      "FINANCIAL_STRESS"
     ],
     "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-09-16。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
     "gamma_available": false,
@@ -1065,7 +1065,6 @@
     "latest_market_date": "2026-09-16",
     "missing_data": true,
     "missing_key_sources": [
-      "finnhub_quote_SPY",
       "finnhub_candle_SPY",
       "finnhub_candle_QQQ",
       "finnhub_candle_IWM",
@@ -1090,7 +1089,7 @@
       "event_detection_confidence": 66,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-09-16T23:05:58.205199+00:00",
+      "last_update": "2026-09-16T23:48:47.344951+00:00",
       "major_event_count": 6,
       "missing_reason": null,
       "news_direction": "risk_off",
@@ -1407,7 +1406,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": -0.005,
-        "avg_equity_futures_1d_return": 0.0053,
+        "avg_equity_futures_1d_return": 0.0069,
         "confirmed_checks": [
           "股票ETF或股指期货下跌",
           "VIX 上升",
@@ -1422,7 +1421,7 @@
         ],
         "failed_checks": [],
         "hyg_lqd_1d_relative_return": -0.0011,
-        "oil_proxy_1d_return": -0.0359,
+        "oil_proxy_1d_return": -0.0361,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -2296,11 +2295,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
+            "US officials met Iran-backed Houthis in Oman over the weekend, sources say - Reuters",
+            "US House passes Russia sanctions bill championed by late Senator Graham - Reuters",
             "Israel, Morocco agree to upgrade diplomatic ties, Israeli government says - Reuters",
             "Top Democrat on US House committee will not support Israel bomb sale - Reuters",
-            "Boeing CEO: 737 Max production taking 'a little bit longer' to stabilize than expected",
-            "Fed delivers its first hike in 3 years. Plus, what's moving Starbucks and GE Vernova",
-            "US House expected to pass Russia sanctions bill backed by late Senator Graham - Reuters"
+            "Boeing CEO: 737 Max production taking 'a little bit longer' to stabilize than expected"
           ]
         },
         "price": {
@@ -3685,7 +3684,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 81,
             "headline": "Jim Cramer says this enterprise software stock is 'way too cheap'",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3712,7 +3711,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 50,
+            "freshness_score": 48,
             "headline": "Saudis pound Yemen, Houthis fire at Saudi, as Middle East war spreads - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3739,7 +3738,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 30,
+            "freshness_score": 29,
             "headline": "Iran war cost hits $38 billion, forecast to rise $3 billion a month, CBO says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3766,7 +3765,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 27,
+            "freshness_score": 25,
             "headline": "UK, US and Netherlands issue advisory on Iran-linked spyware - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3793,7 +3792,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 26,
+            "freshness_score": 24,
             "headline": "Cramer says these 2 stocks are still buys, warns against playing Fed rate 'parlor game'",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3820,7 +3819,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 22,
+            "freshness_score": 20,
             "headline": "Alarmed Yemenis flee south as Houthis keep up attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3962,7 +3961,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.005,
-            "avg_equity_futures_1d_return": 0.0053,
+            "avg_equity_futures_1d_return": 0.0069,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -3977,7 +3976,7 @@
             ],
             "failed_checks": [],
             "hyg_lqd_1d_relative_return": -0.0011,
-            "oil_proxy_1d_return": -0.0359,
+            "oil_proxy_1d_return": -0.0361,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -6477,11 +6476,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
+            "US officials met Iran-backed Houthis in Oman over the weekend, sources say - Reuters",
+            "US House passes Russia sanctions bill championed by late Senator Graham - Reuters",
             "Israel, Morocco agree to upgrade diplomatic ties, Israeli government says - Reuters",
             "Top Democrat on US House committee will not support Israel bomb sale - Reuters",
-            "Boeing CEO: 737 Max production taking 'a little bit longer' to stabilize than expected",
-            "Fed delivers its first hike in 3 years. Plus, what's moving Starbucks and GE Vernova",
-            "US House expected to pass Russia sanctions bill backed by late Senator Graham - Reuters"
+            "Boeing CEO: 737 Max production taking 'a little bit longer' to stabilize than expected"
           ]
         },
         "price": {
@@ -7840,7 +7839,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 81,
             "headline": "Jim Cramer says this enterprise software stock is 'way too cheap'",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7867,7 +7866,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 50,
+            "freshness_score": 48,
             "headline": "Saudis pound Yemen, Houthis fire at Saudi, as Middle East war spreads - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7894,7 +7893,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 30,
+            "freshness_score": 29,
             "headline": "Iran war cost hits $38 billion, forecast to rise $3 billion a month, CBO says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7921,7 +7920,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 27,
+            "freshness_score": 25,
             "headline": "UK, US and Netherlands issue advisory on Iran-linked spyware - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7948,7 +7947,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 26,
+            "freshness_score": 24,
             "headline": "Cramer says these 2 stocks are still buys, warns against playing Fed rate 'parlor game'",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7975,7 +7974,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 22,
+            "freshness_score": 20,
             "headline": "Alarmed Yemenis flee south as Houthis keep up attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -8117,7 +8116,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.005,
-            "avg_equity_futures_1d_return": 0.0053,
+            "avg_equity_futures_1d_return": 0.0069,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -8132,7 +8131,7 @@
             ],
             "failed_checks": [],
             "hyg_lqd_1d_relative_return": -0.0011,
-            "oil_proxy_1d_return": -0.0359,
+            "oil_proxy_1d_return": -0.0361,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -10653,11 +10652,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
+            "US officials met Iran-backed Houthis in Oman over the weekend, sources say - Reuters",
+            "US House passes Russia sanctions bill championed by late Senator Graham - Reuters",
             "Israel, Morocco agree to upgrade diplomatic ties, Israeli government says - Reuters",
             "Top Democrat on US House committee will not support Israel bomb sale - Reuters",
-            "Boeing CEO: 737 Max production taking 'a little bit longer' to stabilize than expected",
-            "Fed delivers its first hike in 3 years. Plus, what's moving Starbucks and GE Vernova",
-            "US House expected to pass Russia sanctions bill backed by late Senator Graham - Reuters"
+            "Boeing CEO: 737 Max production taking 'a little bit longer' to stabilize than expected"
           ]
         },
         "price": {
@@ -11992,7 +11991,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 81,
             "headline": "Jim Cramer says this enterprise software stock is 'way too cheap'",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12019,7 +12018,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 50,
+            "freshness_score": 48,
             "headline": "Saudis pound Yemen, Houthis fire at Saudi, as Middle East war spreads - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12046,7 +12045,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 30,
+            "freshness_score": 29,
             "headline": "Iran war cost hits $38 billion, forecast to rise $3 billion a month, CBO says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12073,7 +12072,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 27,
+            "freshness_score": 25,
             "headline": "UK, US and Netherlands issue advisory on Iran-linked spyware - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12100,7 +12099,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 26,
+            "freshness_score": 24,
             "headline": "Cramer says these 2 stocks are still buys, warns against playing Fed rate 'parlor game'",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12127,7 +12126,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 22,
+            "freshness_score": 20,
             "headline": "Alarmed Yemenis flee south as Houthis keep up attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12269,7 +12268,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.005,
-            "avg_equity_futures_1d_return": 0.0053,
+            "avg_equity_futures_1d_return": 0.0069,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -12284,7 +12283,7 @@
             ],
             "failed_checks": [],
             "hyg_lqd_1d_relative_return": -0.0011,
-            "oil_proxy_1d_return": -0.0359,
+            "oil_proxy_1d_return": -0.0361,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -14721,8 +14720,8 @@
           "ig_oas_20d_change": -0.019999999999999907
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote unavailable; news risk 25%; macro event risk flagged; rates pressure 27%.",
-          "finnhub_quote_available": false,
+          "brief": "Finnhub quote 754.05; news risk 25%; macro event risk flagged; rates pressure 27%.",
+          "finnhub_quote_available": true,
           "macro_event_risk_flag": true,
           "news_risk_score": 0.25,
           "rates_pressure_score": 0.2685027067527518,
@@ -14731,11 +14730,11 @@
         "finnhub": {
           "candle_status": "failed",
           "news_sentiment_status": "failed",
-          "quote_change_percent": null,
-          "quote_previous_close": null,
-          "quote_price": null,
+          "quote_change_percent": -0.441,
+          "quote_previous_close": 757.39,
+          "quote_price": 754.05,
           "quote_source": "finnhub",
-          "quote_status": "rate_limited",
+          "quote_status": "available",
           "sentiment_score": null
         },
         "flow_positioning_proxy": {
@@ -14793,11 +14792,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
+            "US officials met Iran-backed Houthis in Oman over the weekend, sources say - Reuters",
+            "US House passes Russia sanctions bill championed by late Senator Graham - Reuters",
             "Israel, Morocco agree to upgrade diplomatic ties, Israeli government says - Reuters",
             "Top Democrat on US House committee will not support Israel bomb sale - Reuters",
-            "Boeing CEO: 737 Max production taking 'a little bit longer' to stabilize than expected",
-            "Fed delivers its first hike in 3 years. Plus, what's moving Starbucks and GE Vernova",
-            "US House expected to pass Russia sanctions bill backed by late Senator Graham - Reuters"
+            "Boeing CEO: 737 Max production taking 'a little bit longer' to stabilize than expected"
           ]
         },
         "price": {
@@ -16143,7 +16142,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 81,
             "headline": "Jim Cramer says this enterprise software stock is 'way too cheap'",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16170,7 +16169,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 50,
+            "freshness_score": 48,
             "headline": "Saudis pound Yemen, Houthis fire at Saudi, as Middle East war spreads - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16197,7 +16196,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 30,
+            "freshness_score": 29,
             "headline": "Iran war cost hits $38 billion, forecast to rise $3 billion a month, CBO says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16224,7 +16223,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 27,
+            "freshness_score": 25,
             "headline": "UK, US and Netherlands issue advisory on Iran-linked spyware - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16251,7 +16250,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 26,
+            "freshness_score": 24,
             "headline": "Cramer says these 2 stocks are still buys, warns against playing Fed rate 'parlor game'",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16278,7 +16277,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 22,
+            "freshness_score": 20,
             "headline": "Alarmed Yemenis flee south as Houthis keep up attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16420,7 +16419,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.005,
-            "avg_equity_futures_1d_return": 0.0053,
+            "avg_equity_futures_1d_return": 0.0069,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -16435,7 +16434,7 @@
             ],
             "failed_checks": [],
             "hyg_lqd_1d_relative_return": -0.0011,
-            "oil_proxy_1d_return": -0.0359,
+            "oil_proxy_1d_return": -0.0361,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
