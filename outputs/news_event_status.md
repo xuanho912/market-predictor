@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-17T17:03:05.151614+00:00`
+- generated_at: `2026-09-17T22:57:59.563174+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
-- event_detection_confidence: `75`
+- major_event_count: `10`
+- event_detection_confidence: `72`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,31 +27,47 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters
+- headline: Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com
 - source: Reuters
-- published_at: `2026-09-17T14:05:08+00:00`
+- published_at: `2026-09-17T20:05:38+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - Reuters
-- source: Reuters
-- published_at: `2026-09-17T12:17:52+00:00`
+- headline: Stephen Curry says his Li-Ning signature shoe will debut early next year
+- source: CNBC
+- published_at: `2026-09-17T17:27:15+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Saudis and Houthis exchange strikes, Yemenis take to boats to flee as Middle East war spreads - Reuters
+- headline: UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - reuters.com
+- source: Reuters
+- published_at: `2026-09-17T15:41:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Lockheed Martin reveals new secret missile, fast tracks production - Reuters
+- source: Reuters
+- published_at: `2026-09-17T12:39:46+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Yemenis take to boats to flee as Middle East war spreads - reuters.com
 - source: Reuters
 - published_at: `2026-09-17T04:23:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Trump says 'hopefully we are towards end' of Iran war - Reuters
+- headline: Trump says 'hopefully we are towards end' of Iran war - reuters.com
 - source: Reuters
 - published_at: `2026-09-16T23:54:00+00:00`
 - importance_score: `100`
@@ -62,7 +78,15 @@
 - headline: Charities say gifts by deceased donors are getting held up at financial firms
 - source: CNBC
 - published_at: `2026-09-17T11:31:34+00:00`
-- importance_score: `86`
+- importance_score: `84`
+- confidence: `medium`
+
+### oil_shock_relief / risk_on
+
+- headline: Oil falls 1% as investors watch Middle East supply disruptions - reuters.com
+- source: Reuters
+- published_at: `2026-09-17T01:00:00+00:00`
+- importance_score: `92`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
@@ -73,18 +97,10 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
-
-- headline: India, Pakistan warships collide at sea, adding to tensions
-- source: Bloomberg
-- published_at: `2026-09-16T11:52:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
 ### market_microstructure_event / mixed
 
-- headline: Turkey approves liquidation of US-sanctioned Golden Global's funds - Reuters
+- headline: Turkey approves liquidation of US-sanctioned Golden Global's funds - reuters.com
 - source: Reuters
 - published_at: `2026-09-17T04:22:00+00:00`
-- importance_score: `70`
+- importance_score: `68`
 - confidence: `medium`

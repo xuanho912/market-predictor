@@ -1,6 +1,6 @@
 # FRED Data Status
 
-Generated at: `2026-09-17T17:03:16.913244Z`
+Generated at: `2026-09-17T22:58:10.527360Z`
 
 ## Provider
 
@@ -8,18 +8,18 @@ Generated at: `2026-09-17T17:03:16.913244Z`
 - provider available: `True`
 - fallback used: `False`
 - rate limited: `False`
-- successful series: `DGS10, DGS2, DGS3MO, BAA_SPREAD, IG_OAS, HY_OAS, RECESSION, DFII10, FINANCIAL_STRESS`
+- successful series: `HY_OAS, DGS10, DGS2, DFII10, IG_OAS, BAA_SPREAD, DGS3MO, FINANCIAL_STRESS, RECESSION`
 - failed series: `none`
 
 ## Series
 
 | name | series_id | success | latest_date | latest_value | source | stale | error |
 |---|---|---:|---|---:|---|---:|---|
-| BAA_SPREAD | BAA10Y | True | 2026-09-15 | 1.48 | fred-api | False |  |
-| DFII10 | DFII10 | True | 2026-09-15 | 2.62 | fred-api | False |  |
-| DGS10 | DGS10 | True | 2026-09-15 | 5.0 | fred-api | False |  |
-| DGS2 | DGS2 | True | 2026-09-15 | 4.67 | fred-api | False |  |
-| DGS3MO | DGS3MO | True | 2026-09-15 | 4.11 | fred-api | False |  |
+| BAA_SPREAD | BAA10Y | True | 2026-09-16 | 1.43 | fred-api | False |  |
+| DFII10 | DFII10 | True | 2026-09-16 | 2.68 | fred-api | False |  |
+| DGS10 | DGS10 | True | 2026-09-16 | 5.01 | fred-api | False |  |
+| DGS2 | DGS2 | True | 2026-09-16 | 4.74 | fred-api | False |  |
+| DGS3MO | DGS3MO | True | 2026-09-16 | 4.14 | fred-api | False |  |
 | FINANCIAL_STRESS | STLFSI4 | True | 2026-09-11 | -0.8477 | fred-api | False |  |
 | HY_OAS | BAMLH0A0HYM2 | True | 2026-09-16 | 2.7 | fred-api | False |  |
 | IG_OAS | BAMLC0A0CM | True | 2026-09-16 | 0.78 | fred-api | False |  |
@@ -37,10 +37,10 @@ Generated at: `2026-09-17T17:03:16.913244Z`
 
 | symbol | edge without | edge with | primary without | primary with | risk expansion delta | failed bounce delta |
 |---|---|---|---|---|---:|---:|
-| SPY | MODERATE_EDGE | MODERATE_EDGE | bearish_path | bearish_path | 0.025 | 0.0092 |
-| QQQ | MODERATE_EDGE | MODERATE_EDGE | bearish_path | bearish_path | 0.025 | 0.0092 |
-| IWM | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0249 | 0.0092 |
-| DIA | MODERATE_EDGE | MODERATE_EDGE | bearish_path | bearish_path | 0.0249 | 0.0092 |
+| SPY | MODERATE_EDGE | MODERATE_EDGE | bearish_path | bearish_path | 0.0315 | 0.0116 |
+| QQQ | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0315 | 0.0116 |
+| IWM | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0315 | 0.0116 |
+| DIA | MODERATE_EDGE | MODERATE_EDGE | bearish_path | bearish_path | 0.0315 | 0.0116 |
 
 ## Warning
 
