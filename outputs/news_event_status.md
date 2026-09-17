@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-16T23:48:47.344951+00:00`
+- generated_at: `2026-09-17T00:58:43.832192+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `6`
-- event_detection_confidence: `66`
+- event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -35,11 +35,11 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Saudis pound Yemen, Houthis fire at Saudi, as Middle East war spreads - Reuters
+- headline: Saudi strikes and Houthi attacks widen Middle East war - Reuters
 - source: Reuters
 - published_at: `2026-09-16T02:04:00+00:00`
 - importance_score: `100`
-- confidence: `medium`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
