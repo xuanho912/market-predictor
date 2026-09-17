@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-17T01:21:28.189800+00:00`
+- generated_at: `2026-09-17T06:13:02.636862+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
-- event_detection_confidence: `71`
+- major_event_count: `8`
+- event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,15 +27,47 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Jim Cramer says this enterprise software stock is 'way too cheap'
-- source: CNBC
-- published_at: `2026-09-16T16:04:44+00:00`
+- headline: Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com
+- source: Reuters
+- published_at: `2026-09-17T05:13:17+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Saudi strikes and Houthi attacks widen Middle East war - Reuters
+- headline: Trump hopes Iran war nearing end as Houthi-Saudi fighting escalates - reuters.com
+- source: Reuters
+- published_at: `2026-09-17T04:23:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Trump says 'hopefully we are towards end' of Iran war - reuters.com
+- source: Reuters
+- published_at: `2026-09-16T23:54:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Jim Cramer says this enterprise software stock is 'way too cheap'
+- source: CNBC
+- published_at: `2026-09-16T16:04:44+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### fed_hawkish / risk_off
+
+- headline: Wall St ends lower after Fed hikes interest rates, sees more tightening ahead - reuters.com
+- source: Reuters
+- published_at: `2026-09-16T22:55:29+00:00`
+- importance_score: `87`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Saudi strikes and Houthi attacks widen Middle East war - reuters.com
 - source: Reuters
 - published_at: `2026-09-16T02:04:00+00:00`
 - importance_score: `100`
@@ -43,32 +75,16 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iran war cost hits $38 billion, forecast to rise $3 billion a month, CBO says - Reuters
+- headline: Saudi Arabia issues wide-ranging security alerts after week of strikes - reuters.com
 - source: Reuters
-- published_at: `2026-09-15T18:02:00+00:00`
+- published_at: `2026-09-16T00:25:20+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
+### oil_shock_risk / risk_off
 
-- headline: UK, US and Netherlands issue advisory on Iran-linked spyware - Reuters
-- source: Reuters
-- published_at: `2026-09-15T16:35:20+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Cramer says these 2 stocks are still buys, warns against playing Fed rate 'parlor game'
-- source: CNBC
-- published_at: `2026-09-15T16:12:59+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Alarmed Yemenis flee south as Houthis keep up attacks - Reuters
-- source: Reuters
-- published_at: `2026-09-15T14:30:16+00:00`
-- importance_score: `100`
+- headline: Stocks, bonds hold ground before Fed; oil slips: Markets wrap
+- source: Bloomberg
+- published_at: `2026-09-16T03:52:48+00:00`
+- importance_score: `92`
 - confidence: `medium`

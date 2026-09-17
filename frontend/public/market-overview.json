@@ -1,15 +1,20 @@
 {
   "as_of": "2026-09-16",
-  "dashboard_status": "forecast_validation",
+  "dashboard_status": "market_open_unconfirmed",
   "data_freshness_status": {
-    "affected_symbols": [],
-    "can_append_forecast_record": true,
+    "affected_symbols": [
+      "SPY",
+      "QQQ",
+      "IWM",
+      "DIA"
+    ],
+    "can_append_forecast_record": false,
     "can_backfill_completed_outcomes": true,
-    "current_date": "2026-09-16",
-    "current_time_us_eastern": "2026-09-16T21:21:39.149888-04:00",
-    "data_freshness_status": "fresh",
+    "current_date": "2026-09-17",
+    "current_time_us_eastern": "2026-09-17T02:13:13.287315-04:00",
+    "data_freshness_status": "market_open_unconfirmed",
     "expected_latest_trading_date": "2026-09-16",
-    "generated_at": "2026-09-17T01:21:39.149888+00:00",
+    "generated_at": "2026-09-17T06:13:13.287315+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -23,7 +28,7 @@
     "last_successful_update": "2026-09-16",
     "latest_confirmed_market_date": "2026-09-16",
     "latest_market_date": "2026-09-16",
-    "latest_market_session_status": "completed_or_prior_session",
+    "latest_market_session_status": "intraday_unconfirmed",
     "provider_status": {
       "BAA_SPREAD": {
         "fallback_used": false,
@@ -296,7 +301,7 @@
         "point_in_time_safe": true,
         "real_data": true,
         "rows": 520,
-        "source": "finnhub-quote-patch",
+        "source": "yahoo-chart",
         "stale_data": false,
         "status": "available",
         "symbol": "XLC"
@@ -368,7 +373,7 @@
         "point_in_time_safe": true,
         "real_data": true,
         "rows": 520,
-        "source": "finnhub-quote-patch",
+        "source": "yahoo-chart",
         "stale_data": false,
         "status": "available",
         "symbol": "XLRE"
@@ -940,7 +945,7 @@
     },
     "stale_days": 0,
     "version": "data_freshness_gate_v3",
-    "warning_message": "核心行情已更新至最新应有交易日 2026-09-16。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。"
+    "warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-09-16，最近完整收盘交易日为 2026-09-16；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。"
   },
   "data_quality_summary": {
     "average_breadth_quality_score": 67.0,
@@ -961,10 +966,10 @@
       "IWM"
     ],
     "breadth_required": true,
-    "can_append_forecast_record": true,
+    "can_append_forecast_record": false,
     "data_completeness_score": 87.0,
     "data_completeness_score_before_news_event": 85.0,
-    "data_freshness_status": "fresh",
+    "data_freshness_status": "market_open_unconfirmed",
     "data_source_status": "real_core_with_proxies",
     "expected_latest_trading_date": "2026-09-16",
     "fallback_used": true,
@@ -993,8 +998,8 @@
           "primary_scenario_with_fred": "bearish_path",
           "primary_scenario_without_fred": "bearish_path",
           "risk_expansion_delta": 0.0263,
-          "risk_expansion_with_fred": 0.5398,
-          "risk_expansion_without_fred": 0.5135
+          "risk_expansion_with_fred": 0.5419,
+          "risk_expansion_without_fred": 0.5156
         },
         "IWM": {
           "edge_status_changed": false,
@@ -1007,8 +1012,8 @@
           "primary_scenario_with_fred": "bearish_path",
           "primary_scenario_without_fred": "bearish_path",
           "risk_expansion_delta": 0.0263,
-          "risk_expansion_with_fred": 0.538,
-          "risk_expansion_without_fred": 0.5117
+          "risk_expansion_with_fred": 0.5401,
+          "risk_expansion_without_fred": 0.5138
         },
         "QQQ": {
           "edge_status_changed": false,
@@ -1020,9 +1025,9 @@
           "primary_scenario_changed": false,
           "primary_scenario_with_fred": "bearish_path",
           "primary_scenario_without_fred": "bearish_path",
-          "risk_expansion_delta": 0.0262,
-          "risk_expansion_with_fred": 0.5255,
-          "risk_expansion_without_fred": 0.4993
+          "risk_expansion_delta": 0.0263,
+          "risk_expansion_with_fred": 0.5276,
+          "risk_expansion_without_fred": 0.5013
         },
         "SPY": {
           "edge_status_changed": false,
@@ -1035,8 +1040,8 @@
           "primary_scenario_with_fred": "bearish_path",
           "primary_scenario_without_fred": "bearish_path",
           "risk_expansion_delta": 0.0263,
-          "risk_expansion_with_fred": 0.5352,
-          "risk_expansion_without_fred": 0.5089
+          "risk_expansion_with_fred": 0.5373,
+          "risk_expansion_without_fred": 0.511
         }
       },
       "target_85_met_with_fred": true
@@ -1048,17 +1053,17 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "DGS2",
-      "HY_OAS",
       "DGS10",
-      "IG_OAS",
-      "DGS3MO",
-      "DFII10",
-      "RECESSION",
+      "DGS2",
       "BAA_SPREAD",
-      "FINANCIAL_STRESS"
+      "DGS3MO",
+      "IG_OAS",
+      "HY_OAS",
+      "DFII10",
+      "FINANCIAL_STRESS",
+      "RECESSION"
     ],
-    "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-09-16。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
+    "freshness_warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-09-16，最近完整收盘交易日为 2026-09-16；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
     "gamma_available": false,
     "gamma_exposure_available": false,
     "latest_confirmed_market_date": "2026-09-16",
@@ -1087,11 +1092,11 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 71,
+      "event_detection_confidence": 77,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-09-17T01:21:28.189800+00:00",
-      "major_event_count": 6,
+      "last_update": "2026-09-17T06:13:02.636862+00:00",
+      "major_event_count": 8,
       "missing_reason": null,
       "news_direction": "risk_off",
       "news_event_partial": false,
@@ -1102,7 +1107,7 @@
     },
     "news_event_available": true,
     "news_event_event_risk_level": "high",
-    "news_event_major_count": 6,
+    "news_event_major_count": 8,
     "news_event_missing_reason": null,
     "news_event_narrative": "geopolitics_escalation_risk_off",
     "news_event_partial": false,
@@ -1321,7 +1326,7 @@
       "status": "failed"
     },
     "event_risk_level": "high",
-    "major_event_count": 6,
+    "major_event_count": 8,
     "market_narrative": {
       "affected_scenarios": [
         "bearish_path"
@@ -1348,6 +1353,42 @@
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_market_direction": "risk_off",
+          "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+          "importance_score": 100,
+          "published_at": "2026-09-17T05:13:17+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
+          "headline": "Trump hopes Iran war nearing end as Houthi-Saudi fighting escalates - reuters.com",
+          "importance_score": 100,
+          "published_at": "2026-09-17T04:23:00+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
+          "headline": "Trump says 'hopefully we are towards end' of Iran war - reuters.com",
+          "importance_score": 100,
+          "published_at": "2026-09-16T23:54:00+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "medium",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
           "headline": "Jim Cramer says this enterprise software stock is 'way too cheap'",
           "importance_score": 100,
           "published_at": "2026-09-16T16:04:44+00:00",
@@ -1360,7 +1401,7 @@
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_market_direction": "risk_off",
-          "headline": "Saudi strikes and Houthi attacks widen Middle East war - Reuters",
+          "headline": "Saudi strikes and Houthi attacks widen Middle East war - reuters.com",
           "importance_score": 100,
           "published_at": "2026-09-16T02:04:00+00:00",
           "source": "Reuters"
@@ -1372,45 +1413,9 @@
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_market_direction": "risk_off",
-          "headline": "Iran war cost hits $38 billion, forecast to rise $3 billion a month, CBO says - Reuters",
+          "headline": "Saudi Arabia issues wide-ranging security alerts after week of strikes - reuters.com",
           "importance_score": 100,
-          "published_at": "2026-09-15T18:02:00+00:00",
-          "source": "Reuters"
-        },
-        {
-          "confidence": "medium",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "UK, US and Netherlands issue advisory on Iran-linked spyware - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-09-15T16:35:20+00:00",
-          "source": "Reuters"
-        },
-        {
-          "confidence": "medium",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Cramer says these 2 stocks are still buys, warns against playing Fed rate 'parlor game'",
-          "importance_score": 100,
-          "published_at": "2026-09-15T16:12:59+00:00",
-          "source": "CNBC"
-        },
-        {
-          "confidence": "medium",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Alarmed Yemenis flee south as Houthis keep up attacks - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-09-15T14:30:16+00:00",
+          "published_at": "2026-09-16T00:25:20+00:00",
           "source": "Reuters"
         }
       ]
@@ -1421,14 +1426,14 @@
       "direction": "supports_risk_expansion",
       "event_risk_level": "high",
       "macro_event_risk_flag": false,
-      "major_event_count": 6,
+      "major_event_count": 8,
       "not_a_trading_signal": true,
       "price_reaction_confirmed": true,
       "symbols": {
         "DIA": {
-          "after_primary_probability": 0.4163,
+          "after_primary_probability": 0.4164,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.3725,
+          "before_primary_probability": 0.3726,
           "before_primary_scenario": "bearish_path",
           "confirmation_delta": -8.0,
           "impact": "supports_primary",
@@ -1464,7 +1469,7 @@
         "IWM": {
           "after_primary_probability": 0.5055,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.4651,
+          "before_primary_probability": 0.4652,
           "before_primary_scenario": "bearish_path",
           "confirmation_delta": -8.0,
           "impact": "supports_primary",
@@ -1492,15 +1497,15 @@
             "risk_expansion_predictor": 0.039,
             "trend_reversal_predictor": 0.0
           },
-          "primary_probability_delta": 0.0404,
+          "primary_probability_delta": 0.0403,
           "primary_scenario_changed": false,
           "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay",
           "validation_type": "daily"
         },
         "QQQ": {
-          "after_primary_probability": 0.4239,
+          "after_primary_probability": 0.424,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.3804,
+          "before_primary_probability": 0.3805,
           "before_primary_scenario": "bearish_path",
           "confirmation_delta": -8.0,
           "impact": "supports_primary",
@@ -1534,9 +1539,9 @@
           "validation_type": "daily"
         },
         "SPY": {
-          "after_primary_probability": 0.415,
+          "after_primary_probability": 0.4151,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.3712,
+          "before_primary_probability": 0.3713,
           "before_primary_scenario": "bearish_path",
           "confirmation_delta": -8.0,
           "impact": "supports_primary",
@@ -1576,7 +1581,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": -0.005,
-        "avg_equity_futures_1d_return": 0.0095,
+        "avg_equity_futures_1d_return": 0.0135,
         "confirmed_checks": [
           "股票ETF或股指期货下跌",
           "VIX 上升",
@@ -1591,7 +1596,7 @@
         ],
         "failed_checks": [],
         "hyg_lqd_1d_relative_return": -0.0011,
-        "oil_proxy_1d_return": -0.0371,
+        "oil_proxy_1d_return": -0.0227,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -2718,15 +2723,15 @@
       ]
     }
   },
-  "status_note": "Alpha v1 is still a research candidate and only a bounce scenario input. The dashboard is for probability-path forecasting, not execution recommendations.",
+  "status_note": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-09-16，最近完整收盘交易日为 2026-09-16；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
   "strongest_symbol": "SPY",
   "symbols": {
     "DIA": {
       "analog_path_weight": 0.2322,
       "as_of": "2026-09-16",
       "base_path_weight": 0.1538,
-      "bearish_path_weight": 0.4163,
-      "bounce_path_weight": 0.1977,
+      "bearish_path_weight": 0.4164,
+      "bounce_path_weight": 0.1976,
       "bounce_probability": 0.57070947,
       "confluence": {
         "conflicting_evidence": [
@@ -2798,9 +2803,9 @@
         ],
         "not_trading_advice": "This is forecast confirmation only, not a buy/sell/entry/exit or position-sizing recommendation.",
         "primary_label": "失败反抽情景",
-        "primary_probability": 0.4163,
+        "primary_probability": 0.4164,
         "primary_scenario": "bearish_path",
-        "probability_gap": 0.1841,
+        "probability_gap": 0.1842,
         "related_price_levels": {
           "primary_confirmation_level": {
             "confidence": "medium",
@@ -2866,7 +2871,7 @@
           {
             "detail": "primary-secondary gap 18.4%",
             "name": "主次路径差距可观察",
-            "score": 18.41,
+            "score": 18.42,
             "source": "scenario_gap"
           },
           {
@@ -3040,10 +3045,10 @@
           "ig_oas_20d_change": -0.019999999999999907
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote 515.22; news risk 25%; macro event risk flagged; rates pressure 27%.",
+          "brief": "Finnhub quote 515.22; news risk 30%; macro event risk flagged; rates pressure 27%.",
           "finnhub_quote_available": true,
           "macro_event_risk_flag": true,
-          "news_risk_score": 0.25,
+          "news_risk_score": 0.3,
           "rates_pressure_score": 0.2685027067527518,
           "symbol": "DIA"
         },
@@ -3110,13 +3115,13 @@
         "news": {
           "market_news_status": "available",
           "news_item_count": 40,
-          "news_risk_score": 0.25,
+          "news_risk_score": 0.3,
           "top_headlines": [
-            "US officials met Iran-backed Houthis in Oman over the weekend, sources say - Reuters",
-            "US House passes Russia sanctions bill championed by late Senator Graham - Reuters",
-            "Netanyahu steps up threats against directors of Gaza documentary 'NAZA' - Reuters",
-            "Israel, Morocco agree to upgrade diplomatic ties, Israeli government says - Reuters",
-            "Top Democrat on US House committee will not support Israel bomb sale - Reuters"
+            "Bank of England set to defy Fed’s rate-hike lead, despite rising inflation",
+            "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+            "Trump hopes Iran war nearing end as Houthi-Saudi fighting escalates - reuters.com",
+            "US allies fret over how Trump might play his Taiwan hand with Xi - reuters.com",
+            "Trump says 'hopefully we are towards end' of Iran war - reuters.com"
           ]
         },
         "price": {
@@ -4046,20 +4051,124 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 76,
+            "confidence_score": 81,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 78,
+            "freshness_score": 98,
+            "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-17T05:13:17+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 81,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 96,
+            "headline": "Trump hopes Iran war nearing end as Houthi-Saudi fighting escalates - reuters.com",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-17T04:23:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 78,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 85,
+            "headline": "Trump says 'hopefully we are towards end' of Iran war - reuters.com",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-16T23:54:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 73,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 66,
             "headline": "Jim Cramer says this enterprise software stock is 'way too cheap'",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-16T16:04:44+00:00",
             "source": "CNBC"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "TLT",
+              "UUP"
+            ],
+            "confidence": "medium",
+            "confidence_score": 73,
+            "detected_event_conditions": [],
+            "event_type": "fed_hawkish",
+            "expected_horizon": "1d-20d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 82,
+            "headline": "Wall St ends lower after Fed hikes interest rates, sees more tightening ahead - reuters.com",
+            "importance_score": 87,
+            "narrative": "fed_hawkish_risk",
+            "provider": "finnhub",
+            "published_at": "2026-09-16T22:55:29+00:00",
+            "source": "Reuters"
           },
           {
             "affected_assets": [
@@ -4080,120 +4189,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 44,
-            "headline": "Saudi strikes and Houthi attacks widen Middle East war - Reuters",
+            "freshness_score": 32,
+            "headline": "Saudi strikes and Houthi attacks widen Middle East war - reuters.com",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-16T02:04:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 63,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 25,
-            "headline": "Iran war cost hits $38 billion, forecast to rise $3 billion a month, CBO says - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-15T18:02:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 62,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 21,
-            "headline": "UK, US and Netherlands issue advisory on Iran-linked spyware - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-15T16:35:20+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 62,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 20,
-            "headline": "Cramer says these 2 stocks are still buys, warns against playing Fed rate 'parlor game'",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-15T16:12:59+00:00",
-            "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 61,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 16,
-            "headline": "Alarmed Yemenis flee south as Houthis keep up attacks - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-15T14:30:16+00:00",
             "source": "Reuters"
           }
         ],
@@ -4223,6 +4224,42 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+              "importance_score": 100,
+              "published_at": "2026-09-17T05:13:17+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Trump hopes Iran war nearing end as Houthi-Saudi fighting escalates - reuters.com",
+              "importance_score": 100,
+              "published_at": "2026-09-17T04:23:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Trump says 'hopefully we are towards end' of Iran war - reuters.com",
+              "importance_score": 100,
+              "published_at": "2026-09-16T23:54:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "Jim Cramer says this enterprise software stock is 'way too cheap'",
               "importance_score": 100,
               "published_at": "2026-09-16T16:04:44+00:00",
@@ -4235,7 +4272,7 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "Saudi strikes and Houthi attacks widen Middle East war - Reuters",
+              "headline": "Saudi strikes and Houthi attacks widen Middle East war - reuters.com",
               "importance_score": 100,
               "published_at": "2026-09-16T02:04:00+00:00",
               "source": "Reuters"
@@ -4247,54 +4284,18 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "Iran war cost hits $38 billion, forecast to rise $3 billion a month, CBO says - Reuters",
+              "headline": "Saudi Arabia issues wide-ranging security alerts after week of strikes - reuters.com",
               "importance_score": 100,
-              "published_at": "2026-09-15T18:02:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "UK, US and Netherlands issue advisory on Iran-linked spyware - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-09-15T16:35:20+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Cramer says these 2 stocks are still buys, warns against playing Fed rate 'parlor game'",
-              "importance_score": 100,
-              "published_at": "2026-09-15T16:12:59+00:00",
-              "source": "CNBC"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Alarmed Yemenis flee south as Houthis keep up attacks - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-09-15T14:30:16+00:00",
+              "published_at": "2026-09-16T00:25:20+00:00",
               "source": "Reuters"
             }
           ]
         },
         "news_direction": "risk_off",
         "prediction_logic_effect": {
-          "after_primary_probability": 0.4163,
+          "after_primary_probability": 0.4164,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.3725,
+          "before_primary_probability": 0.3726,
           "before_primary_scenario": "bearish_path",
           "confirmation_delta": -8.0,
           "impact": "supports_primary",
@@ -4330,7 +4331,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.005,
-            "avg_equity_futures_1d_return": 0.0095,
+            "avg_equity_futures_1d_return": 0.0135,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -4345,7 +4346,7 @@
             ],
             "failed_checks": [],
             "hyg_lqd_1d_relative_return": -0.0011,
-            "oil_proxy_1d_return": -0.0371,
+            "oil_proxy_1d_return": -0.0227,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -4381,8 +4382,8 @@
       "path_weight_model": {
         "analog_path_weight": 0.2322,
         "base_path_weight": 0.1538,
-        "bearish_path_weight": 0.4163,
-        "bounce_path_weight": 0.1977,
+        "bearish_path_weight": 0.4164,
+        "bounce_path_weight": 0.1976,
         "low_confidence_simulation": true,
         "news_event_overlay_applied": true,
         "news_event_overlay_note": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay",
@@ -4408,12 +4409,12 @@
           "news_event_direction": "supports_risk_expansion",
           "news_event_macro_risk": 0.0,
           "news_event_price_confirmed": 1.0,
-          "news_risk": 0.25,
+          "news_risk": 0.3,
           "options_quality": 0.92,
           "options_stress": 0.4583,
           "panic_release": 0.28,
           "rates_pressure": 0.2685,
-          "risk_expansion": 0.5398,
+          "risk_expansion": 0.5419,
           "signal_agreement": 0.48,
           "signal_confirmation": 0.35,
           "tail_risk": 0.4256,
@@ -4462,7 +4463,7 @@
           "failed_bounce_risk": 0.543237316016,
           "historical_support": "supportive",
           "market_edge_status": "WEAK_EDGE",
-          "risk_expansion_probability": 0.5397,
+          "risk_expansion_probability": 0.5437,
           "trend_reversal_probability": 0.5111,
           "up_probability": 0.6034036359412539
         },
@@ -4521,7 +4522,7 @@
           "failed_bounce_risk": 0.543237316016,
           "historical_support": "supportive",
           "market_edge_status": "WEAK_EDGE",
-          "risk_expansion_probability": 0.5397,
+          "risk_expansion_probability": 0.5437,
           "trend_reversal_probability": 0.5111,
           "up_probability": 0.6269683034847321
         }
@@ -4622,7 +4623,7 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 1.0,
           "breadth_risk": 0.76,
-          "confidence": 0.6769,
+          "confidence": 0.6783,
           "credit_risk": 0.0489,
           "crowding_proxy_score": 0.538,
           "failed_bounce_options_risk": 0.4184,
@@ -4648,8 +4649,8 @@
             "news_event_overlay:+0.039"
           ],
           "options_quality": 0.92,
-          "probability": 0.5788,
-          "risk_expansion_probability": 0.5788,
+          "probability": 0.5809,
+          "risk_expansion_probability": 0.5809,
           "tail_risk_score": 0.4256,
           "term_structure_state": "contango",
           "volatility_risk": 0.4583
@@ -4788,7 +4789,7 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 1.0,
           "breadth_risk": 0.76,
-          "confidence": 0.6769,
+          "confidence": 0.6783,
           "credit_risk": 0.0489,
           "crowding_proxy_score": 0.538,
           "failed_bounce_options_risk": 0.4184,
@@ -4814,8 +4815,8 @@
             "news_event_overlay:+0.039"
           ],
           "options_quality": 0.92,
-          "probability": 0.5788,
-          "risk_expansion_probability": 0.5788,
+          "probability": 0.5809,
+          "risk_expansion_probability": 0.5809,
           "tail_risk_score": 0.4256,
           "term_structure_state": "contango",
           "volatility_risk": 0.4583
@@ -4864,7 +4865,7 @@
             "confidence": "low",
             "expected_horizon": "3d-10d",
             "label": "失败反抽情景",
-            "probability": 0.4163,
+            "probability": 0.4164,
             "reason": "Downside/Risk predictors 为 61%/54%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bearish_path"
           },
@@ -4880,7 +4881,7 @@
             "confidence": "low",
             "expected_horizon": "10d-20d",
             "label": "反抽情景",
-            "probability": 0.1977,
+            "probability": 0.1976,
             "reason": "Bounce Predictor 36%，多源确认 35/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bounce_path"
           },
@@ -4900,12 +4901,12 @@
           "confidence": "low",
           "expected_horizon": "3d-10d",
           "label": "失败反抽情景",
-          "probability": 0.4163,
+          "probability": 0.4164,
           "reason": "Downside/Risk predictors 为 61%/54%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bearish_path"
         },
         "primary_scenario": "bearish_path",
-        "primary_secondary_gap": 0.1841,
+        "primary_secondary_gap": 0.1842,
         "primary_to_secondary_switch_conditions": [
           "VIX 与新闻方向背离",
           "HYG/LQD 转弱",
@@ -4914,10 +4915,10 @@
           "DIA 重新站上主路径确认价",
           "第二路径 analog_average_path 获得多源确认"
         ],
-        "probability_gap": 0.1841,
+        "probability_gap": 0.1842,
         "ranking_note": "Scenario ranking includes a bounded News/Event overlay when a major event or macro calendar risk is detected. It is probabilistic, not deterministic.",
         "risk_scenario": "bearish_path",
-        "scenario_probability": 0.4163,
+        "scenario_probability": 0.4164,
         "secondary": {
           "confidence": "low",
           "expected_horizon": "20d-60d",
@@ -4939,15 +4940,15 @@
           "confidence": "low",
           "expected_horizon": "10d-20d",
           "label": "反抽情景",
-          "probability": 0.1977,
+          "probability": 0.1976,
           "reason": "Bounce Predictor 36%，多源确认 35/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bounce_path"
         }
       },
       "scenario_weights": {
         "base_scenario": 0.1598,
-        "bearish_scenario": 0.3725,
-        "bounce_scenario": 0.2264,
+        "bearish_scenario": 0.3726,
+        "bounce_scenario": 0.2263,
         "historical_analog_average": 0.2413
       },
       "shadow_evidence_v1": {
@@ -5224,7 +5225,7 @@
       "analog_path_weight": 0.2026,
       "as_of": "2026-09-16",
       "base_path_weight": 0.1437,
-      "bearish_path_weight": 0.5054,
+      "bearish_path_weight": 0.5055,
       "bounce_path_weight": 0.1482,
       "bounce_probability": 0.40434541,
       "confluence": {
@@ -5545,10 +5546,10 @@
           "ig_oas_20d_change": -0.019999999999999907
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote 283.92; news risk 25%; macro event risk flagged; rates pressure 27%.",
+          "brief": "Finnhub quote 283.92; news risk 30%; macro event risk flagged; rates pressure 27%.",
           "finnhub_quote_available": true,
           "macro_event_risk_flag": true,
-          "news_risk_score": 0.25,
+          "news_risk_score": 0.3,
           "rates_pressure_score": 0.2685027067527518,
           "symbol": "IWM"
         },
@@ -5615,13 +5616,13 @@
         "news": {
           "market_news_status": "available",
           "news_item_count": 40,
-          "news_risk_score": 0.25,
+          "news_risk_score": 0.3,
           "top_headlines": [
-            "US officials met Iran-backed Houthis in Oman over the weekend, sources say - Reuters",
-            "US House passes Russia sanctions bill championed by late Senator Graham - Reuters",
-            "Netanyahu steps up threats against directors of Gaza documentary 'NAZA' - Reuters",
-            "Israel, Morocco agree to upgrade diplomatic ties, Israeli government says - Reuters",
-            "Top Democrat on US House committee will not support Israel bomb sale - Reuters"
+            "Bank of England set to defy Fed’s rate-hike lead, despite rising inflation",
+            "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+            "Trump hopes Iran war nearing end as Houthi-Saudi fighting escalates - reuters.com",
+            "US allies fret over how Trump might play his Taiwan hand with Xi - reuters.com",
+            "Trump says 'hopefully we are towards end' of Iran war - reuters.com"
           ]
         },
         "price": {
@@ -6525,20 +6526,124 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 76,
+            "confidence_score": 81,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 78,
+            "freshness_score": 98,
+            "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-17T05:13:17+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 81,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 96,
+            "headline": "Trump hopes Iran war nearing end as Houthi-Saudi fighting escalates - reuters.com",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-17T04:23:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 78,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 85,
+            "headline": "Trump says 'hopefully we are towards end' of Iran war - reuters.com",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-16T23:54:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 73,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 66,
             "headline": "Jim Cramer says this enterprise software stock is 'way too cheap'",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-16T16:04:44+00:00",
             "source": "CNBC"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "TLT",
+              "UUP"
+            ],
+            "confidence": "medium",
+            "confidence_score": 73,
+            "detected_event_conditions": [],
+            "event_type": "fed_hawkish",
+            "expected_horizon": "1d-20d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 82,
+            "headline": "Wall St ends lower after Fed hikes interest rates, sees more tightening ahead - reuters.com",
+            "importance_score": 87,
+            "narrative": "fed_hawkish_risk",
+            "provider": "finnhub",
+            "published_at": "2026-09-16T22:55:29+00:00",
+            "source": "Reuters"
           },
           {
             "affected_assets": [
@@ -6559,120 +6664,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 44,
-            "headline": "Saudi strikes and Houthi attacks widen Middle East war - Reuters",
+            "freshness_score": 32,
+            "headline": "Saudi strikes and Houthi attacks widen Middle East war - reuters.com",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-16T02:04:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 63,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 25,
-            "headline": "Iran war cost hits $38 billion, forecast to rise $3 billion a month, CBO says - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-15T18:02:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 62,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 21,
-            "headline": "UK, US and Netherlands issue advisory on Iran-linked spyware - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-15T16:35:20+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 62,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 20,
-            "headline": "Cramer says these 2 stocks are still buys, warns against playing Fed rate 'parlor game'",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-15T16:12:59+00:00",
-            "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 61,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 16,
-            "headline": "Alarmed Yemenis flee south as Houthis keep up attacks - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-15T14:30:16+00:00",
             "source": "Reuters"
           }
         ],
@@ -6702,6 +6699,42 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+              "importance_score": 100,
+              "published_at": "2026-09-17T05:13:17+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Trump hopes Iran war nearing end as Houthi-Saudi fighting escalates - reuters.com",
+              "importance_score": 100,
+              "published_at": "2026-09-17T04:23:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Trump says 'hopefully we are towards end' of Iran war - reuters.com",
+              "importance_score": 100,
+              "published_at": "2026-09-16T23:54:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "Jim Cramer says this enterprise software stock is 'way too cheap'",
               "importance_score": 100,
               "published_at": "2026-09-16T16:04:44+00:00",
@@ -6714,7 +6747,7 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "Saudi strikes and Houthi attacks widen Middle East war - Reuters",
+              "headline": "Saudi strikes and Houthi attacks widen Middle East war - reuters.com",
               "importance_score": 100,
               "published_at": "2026-09-16T02:04:00+00:00",
               "source": "Reuters"
@@ -6726,45 +6759,9 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "Iran war cost hits $38 billion, forecast to rise $3 billion a month, CBO says - Reuters",
+              "headline": "Saudi Arabia issues wide-ranging security alerts after week of strikes - reuters.com",
               "importance_score": 100,
-              "published_at": "2026-09-15T18:02:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "UK, US and Netherlands issue advisory on Iran-linked spyware - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-09-15T16:35:20+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Cramer says these 2 stocks are still buys, warns against playing Fed rate 'parlor game'",
-              "importance_score": 100,
-              "published_at": "2026-09-15T16:12:59+00:00",
-              "source": "CNBC"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Alarmed Yemenis flee south as Houthis keep up attacks - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-09-15T14:30:16+00:00",
+              "published_at": "2026-09-16T00:25:20+00:00",
               "source": "Reuters"
             }
           ]
@@ -6773,7 +6770,7 @@
         "prediction_logic_effect": {
           "after_primary_probability": 0.5055,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.4651,
+          "before_primary_probability": 0.4652,
           "before_primary_scenario": "bearish_path",
           "confirmation_delta": -8.0,
           "impact": "supports_primary",
@@ -6801,7 +6798,7 @@
             "risk_expansion_predictor": 0.039,
             "trend_reversal_predictor": 0.0
           },
-          "primary_probability_delta": 0.0404,
+          "primary_probability_delta": 0.0403,
           "primary_scenario_changed": false,
           "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay",
           "validation_type": "daily"
@@ -6809,7 +6806,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.005,
-            "avg_equity_futures_1d_return": 0.0095,
+            "avg_equity_futures_1d_return": 0.0135,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -6824,7 +6821,7 @@
             ],
             "failed_checks": [],
             "hyg_lqd_1d_relative_return": -0.0011,
-            "oil_proxy_1d_return": -0.0371,
+            "oil_proxy_1d_return": -0.0227,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -6860,7 +6857,7 @@
       "path_weight_model": {
         "analog_path_weight": 0.2026,
         "base_path_weight": 0.1437,
-        "bearish_path_weight": 0.5054,
+        "bearish_path_weight": 0.5055,
         "bounce_path_weight": 0.1482,
         "low_confidence_simulation": true,
         "news_event_overlay_applied": true,
@@ -6887,12 +6884,12 @@
           "news_event_direction": "supports_risk_expansion",
           "news_event_macro_risk": 0.0,
           "news_event_price_confirmed": 1.0,
-          "news_risk": 0.25,
+          "news_risk": 0.3,
           "options_quality": 0.92,
           "options_stress": 0.4583,
           "panic_release": 0.28,
           "rates_pressure": 0.2685,
-          "risk_expansion": 0.538,
+          "risk_expansion": 0.5401,
           "signal_agreement": 0.19,
           "signal_confirmation": 0.08,
           "tail_risk": 0.4256,
@@ -6941,7 +6938,7 @@
           "failed_bounce_risk": 0.9051077494519771,
           "historical_support": "weak",
           "market_edge_status": "NO_EDGE",
-          "risk_expansion_probability": 0.5586,
+          "risk_expansion_probability": 0.5626,
           "trend_reversal_probability": 0.2079,
           "up_probability": 0.40619140474613963
         },
@@ -7000,7 +6997,7 @@
           "failed_bounce_risk": 0.8051077494519772,
           "historical_support": "supportive",
           "market_edge_status": "NO_EDGE",
-          "risk_expansion_probability": 0.5586,
+          "risk_expansion_probability": 0.5626,
           "trend_reversal_probability": 0.2079,
           "up_probability": 0.5469300957618548
         }
@@ -7132,8 +7129,8 @@
             "news_event_overlay:+0.039"
           ],
           "options_quality": 0.92,
-          "probability": 0.577,
-          "risk_expansion_probability": 0.577,
+          "probability": 0.5791,
+          "risk_expansion_probability": 0.5791,
           "tail_risk_score": 0.4256,
           "term_structure_state": "contango",
           "volatility_risk": 0.4583
@@ -7303,8 +7300,8 @@
             "news_event_overlay:+0.039"
           ],
           "options_quality": 0.92,
-          "probability": 0.577,
-          "risk_expansion_probability": 0.577,
+          "probability": 0.5791,
+          "risk_expansion_probability": 0.5791,
           "tail_risk_score": 0.4256,
           "term_structure_state": "contango",
           "volatility_risk": 0.4583
@@ -7435,7 +7432,7 @@
       },
       "scenario_weights": {
         "base_scenario": 0.1493,
-        "bearish_scenario": 0.4651,
+        "bearish_scenario": 0.4652,
         "bounce_scenario": 0.175,
         "historical_analog_average": 0.2105
       },
@@ -7720,10 +7717,10 @@
       "trend_reversal_probability": 0.19034459679904406
     },
     "QQQ": {
-      "analog_path_weight": 0.2365,
+      "analog_path_weight": 0.2364,
       "as_of": "2026-09-16",
-      "base_path_weight": 0.1776,
-      "bearish_path_weight": 0.4239,
+      "base_path_weight": 0.1775,
+      "bearish_path_weight": 0.424,
       "bounce_path_weight": 0.1621,
       "bounce_probability": 0.38471703,
       "confluence": {
@@ -7808,9 +7805,9 @@
         ],
         "not_trading_advice": "This is forecast confirmation only, not a buy/sell/entry/exit or position-sizing recommendation.",
         "primary_label": "失败反抽情景",
-        "primary_probability": 0.4239,
+        "primary_probability": 0.424,
         "primary_scenario": "bearish_path",
-        "probability_gap": 0.1874,
+        "probability_gap": 0.1876,
         "related_price_levels": {
           "primary_confirmation_level": {
             "confidence": "medium",
@@ -7845,7 +7842,7 @@
             "source_type": "price_structure"
           }
         },
-        "secondary_probability": 0.2365,
+        "secondary_probability": 0.2364,
         "secondary_scenario": "analog_average_path",
         "strong_conclusion_allowed": false,
         "supporting_evidence": [
@@ -7868,9 +7865,9 @@
             "source": "flow"
           },
           {
-            "detail": "primary-secondary gap 18.7%",
+            "detail": "primary-secondary gap 18.8%",
             "name": "主次路径差距可观察",
-            "score": 18.74,
+            "score": 18.76,
             "source": "scenario_gap"
           },
           {
@@ -8044,10 +8041,10 @@
           "ig_oas_20d_change": -0.019999999999999907
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote 704.72; news risk 25%; macro event risk flagged; rates pressure 27%.",
+          "brief": "Finnhub quote 704.72; news risk 30%; macro event risk flagged; rates pressure 27%.",
           "finnhub_quote_available": true,
           "macro_event_risk_flag": true,
-          "news_risk_score": 0.25,
+          "news_risk_score": 0.3,
           "rates_pressure_score": 0.2685027067527518,
           "symbol": "QQQ"
         },
@@ -8114,13 +8111,13 @@
         "news": {
           "market_news_status": "available",
           "news_item_count": 40,
-          "news_risk_score": 0.25,
+          "news_risk_score": 0.3,
           "top_headlines": [
-            "US officials met Iran-backed Houthis in Oman over the weekend, sources say - Reuters",
-            "US House passes Russia sanctions bill championed by late Senator Graham - Reuters",
-            "Netanyahu steps up threats against directors of Gaza documentary 'NAZA' - Reuters",
-            "Israel, Morocco agree to upgrade diplomatic ties, Israeli government says - Reuters",
-            "Top Democrat on US House committee will not support Israel bomb sale - Reuters"
+            "Bank of England set to defy Fed’s rate-hike lead, despite rising inflation",
+            "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+            "Trump hopes Iran war nearing end as Houthi-Saudi fighting escalates - reuters.com",
+            "US allies fret over how Trump might play his Taiwan hand with Xi - reuters.com",
+            "Trump says 'hopefully we are towards end' of Iran war - reuters.com"
           ]
         },
         "price": {
@@ -9000,20 +8997,124 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 76,
+            "confidence_score": 81,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 78,
+            "freshness_score": 98,
+            "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-17T05:13:17+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 81,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 96,
+            "headline": "Trump hopes Iran war nearing end as Houthi-Saudi fighting escalates - reuters.com",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-17T04:23:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 78,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 85,
+            "headline": "Trump says 'hopefully we are towards end' of Iran war - reuters.com",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-16T23:54:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 73,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 66,
             "headline": "Jim Cramer says this enterprise software stock is 'way too cheap'",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-16T16:04:44+00:00",
             "source": "CNBC"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "TLT",
+              "UUP"
+            ],
+            "confidence": "medium",
+            "confidence_score": 73,
+            "detected_event_conditions": [],
+            "event_type": "fed_hawkish",
+            "expected_horizon": "1d-20d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 82,
+            "headline": "Wall St ends lower after Fed hikes interest rates, sees more tightening ahead - reuters.com",
+            "importance_score": 87,
+            "narrative": "fed_hawkish_risk",
+            "provider": "finnhub",
+            "published_at": "2026-09-16T22:55:29+00:00",
+            "source": "Reuters"
           },
           {
             "affected_assets": [
@@ -9034,120 +9135,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 44,
-            "headline": "Saudi strikes and Houthi attacks widen Middle East war - Reuters",
+            "freshness_score": 32,
+            "headline": "Saudi strikes and Houthi attacks widen Middle East war - reuters.com",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-16T02:04:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 63,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 25,
-            "headline": "Iran war cost hits $38 billion, forecast to rise $3 billion a month, CBO says - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-15T18:02:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 62,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 21,
-            "headline": "UK, US and Netherlands issue advisory on Iran-linked spyware - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-15T16:35:20+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 62,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 20,
-            "headline": "Cramer says these 2 stocks are still buys, warns against playing Fed rate 'parlor game'",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-15T16:12:59+00:00",
-            "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 61,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 16,
-            "headline": "Alarmed Yemenis flee south as Houthis keep up attacks - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-15T14:30:16+00:00",
             "source": "Reuters"
           }
         ],
@@ -9177,6 +9170,42 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+              "importance_score": 100,
+              "published_at": "2026-09-17T05:13:17+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Trump hopes Iran war nearing end as Houthi-Saudi fighting escalates - reuters.com",
+              "importance_score": 100,
+              "published_at": "2026-09-17T04:23:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Trump says 'hopefully we are towards end' of Iran war - reuters.com",
+              "importance_score": 100,
+              "published_at": "2026-09-16T23:54:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "Jim Cramer says this enterprise software stock is 'way too cheap'",
               "importance_score": 100,
               "published_at": "2026-09-16T16:04:44+00:00",
@@ -9189,7 +9218,7 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "Saudi strikes and Houthi attacks widen Middle East war - Reuters",
+              "headline": "Saudi strikes and Houthi attacks widen Middle East war - reuters.com",
               "importance_score": 100,
               "published_at": "2026-09-16T02:04:00+00:00",
               "source": "Reuters"
@@ -9201,54 +9230,18 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "Iran war cost hits $38 billion, forecast to rise $3 billion a month, CBO says - Reuters",
+              "headline": "Saudi Arabia issues wide-ranging security alerts after week of strikes - reuters.com",
               "importance_score": 100,
-              "published_at": "2026-09-15T18:02:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "UK, US and Netherlands issue advisory on Iran-linked spyware - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-09-15T16:35:20+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Cramer says these 2 stocks are still buys, warns against playing Fed rate 'parlor game'",
-              "importance_score": 100,
-              "published_at": "2026-09-15T16:12:59+00:00",
-              "source": "CNBC"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Alarmed Yemenis flee south as Houthis keep up attacks - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-09-15T14:30:16+00:00",
+              "published_at": "2026-09-16T00:25:20+00:00",
               "source": "Reuters"
             }
           ]
         },
         "news_direction": "risk_off",
         "prediction_logic_effect": {
-          "after_primary_probability": 0.4239,
+          "after_primary_probability": 0.424,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.3804,
+          "before_primary_probability": 0.3805,
           "before_primary_scenario": "bearish_path",
           "confirmation_delta": -8.0,
           "impact": "supports_primary",
@@ -9284,7 +9277,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.005,
-            "avg_equity_futures_1d_return": 0.0095,
+            "avg_equity_futures_1d_return": 0.0135,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -9299,7 +9292,7 @@
             ],
             "failed_checks": [],
             "hyg_lqd_1d_relative_return": -0.0011,
-            "oil_proxy_1d_return": -0.0371,
+            "oil_proxy_1d_return": -0.0227,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -9333,9 +9326,9 @@
         "validation_type": "daily"
       },
       "path_weight_model": {
-        "analog_path_weight": 0.2365,
-        "base_path_weight": 0.1776,
-        "bearish_path_weight": 0.4239,
+        "analog_path_weight": 0.2364,
+        "base_path_weight": 0.1775,
+        "bearish_path_weight": 0.424,
         "bounce_path_weight": 0.1621,
         "low_confidence_simulation": true,
         "news_event_overlay_applied": true,
@@ -9362,12 +9355,12 @@
           "news_event_direction": "supports_risk_expansion",
           "news_event_macro_risk": 0.0,
           "news_event_price_confirmed": 1.0,
-          "news_risk": 0.25,
+          "news_risk": 0.3,
           "options_quality": 0.92,
           "options_stress": 0.4583,
           "panic_release": 0.28,
           "rates_pressure": 0.2685,
-          "risk_expansion": 0.5255,
+          "risk_expansion": 0.5276,
           "signal_agreement": 0.44,
           "signal_confirmation": 0.27,
           "tail_risk": 0.4256,
@@ -9416,7 +9409,7 @@
           "failed_bounce_risk": 0.45952942892416976,
           "historical_support": "supportive",
           "market_edge_status": "WEAK_EDGE",
-          "risk_expansion_probability": 0.541,
+          "risk_expansion_probability": 0.545,
           "trend_reversal_probability": 0.4954,
           "up_probability": 0.6099951128244689
         },
@@ -9475,7 +9468,7 @@
           "failed_bounce_risk": 0.45952942892416976,
           "historical_support": "supportive",
           "market_edge_status": "WEAK_EDGE",
-          "risk_expansion_probability": 0.541,
+          "risk_expansion_probability": 0.545,
           "trend_reversal_probability": 0.4954,
           "up_probability": 0.658026575031517
         }
@@ -9602,8 +9595,8 @@
             "news_event_overlay:+0.039"
           ],
           "options_quality": 0.92,
-          "probability": 0.5645,
-          "risk_expansion_probability": 0.5645,
+          "probability": 0.5666,
+          "risk_expansion_probability": 0.5666,
           "tail_risk_score": 0.4256,
           "term_structure_state": "contango",
           "volatility_risk": 0.4583
@@ -9768,8 +9761,8 @@
             "news_event_overlay:+0.039"
           ],
           "options_quality": 0.92,
-          "probability": 0.5645,
-          "risk_expansion_probability": 0.5645,
+          "probability": 0.5666,
+          "risk_expansion_probability": 0.5666,
           "tail_risk_score": 0.4256,
           "term_structure_state": "contango",
           "volatility_risk": 0.4583
@@ -9818,7 +9811,7 @@
             "confidence": "low",
             "expected_horizon": "3d-10d",
             "label": "失败反抽情景",
-            "probability": 0.4239,
+            "probability": 0.424,
             "reason": "Downside/Risk predictors 为 55%/53%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bearish_path"
           },
@@ -9826,7 +9819,7 @@
             "confidence": "low",
             "expected_horizon": "20d-60d",
             "label": "历史均值情景",
-            "probability": 0.2365,
+            "probability": 0.2364,
             "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "analog_average_path"
           },
@@ -9834,7 +9827,7 @@
             "confidence": "low",
             "expected_horizon": "3d-20d",
             "label": "综合期望情景",
-            "probability": 0.1776,
+            "probability": 0.1775,
             "reason": "综合期望用于平衡反抽、失败反抽、历史均值和数据不完整带来的不确定性。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "expected_path"
           },
@@ -9854,12 +9847,12 @@
           "confidence": "low",
           "expected_horizon": "3d-10d",
           "label": "失败反抽情景",
-          "probability": 0.4239,
+          "probability": 0.424,
           "reason": "Downside/Risk predictors 为 55%/53%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bearish_path"
         },
         "primary_scenario": "bearish_path",
-        "primary_secondary_gap": 0.1874,
+        "primary_secondary_gap": 0.1876,
         "primary_to_secondary_switch_conditions": [
           "VIX 与新闻方向背离",
           "HYG/LQD 转弱",
@@ -9868,15 +9861,15 @@
           "QQQ 重新站上主路径确认价",
           "第二路径 analog_average_path 获得多源确认"
         ],
-        "probability_gap": 0.1874,
+        "probability_gap": 0.1876,
         "ranking_note": "Scenario ranking includes a bounded News/Event overlay when a major event or macro calendar risk is detected. It is probabilistic, not deterministic.",
         "risk_scenario": "bearish_path",
-        "scenario_probability": 0.4239,
+        "scenario_probability": 0.424,
         "secondary": {
           "confidence": "low",
           "expected_horizon": "20d-60d",
           "label": "历史均值情景",
-          "probability": 0.2365,
+          "probability": 0.2364,
           "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "analog_average_path"
         },
@@ -9893,16 +9886,16 @@
           "confidence": "low",
           "expected_horizon": "3d-20d",
           "label": "综合期望情景",
-          "probability": 0.1776,
+          "probability": 0.1775,
           "reason": "综合期望用于平衡反抽、失败反抽、历史均值和数据不完整带来的不确定性。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "expected_path"
         }
       },
       "scenario_weights": {
-        "base_scenario": 0.1845,
-        "bearish_scenario": 0.3804,
+        "base_scenario": 0.1844,
+        "bearish_scenario": 0.3805,
         "bounce_scenario": 0.1894,
-        "historical_analog_average": 0.2457
+        "historical_analog_average": 0.2456
       },
       "shadow_evidence_v1": {
         "alert_status_by_type": {
@@ -10193,7 +10186,7 @@
       "analog_path_weight": 0.234,
       "as_of": "2026-09-16",
       "base_path_weight": 0.1556,
-      "bearish_path_weight": 0.415,
+      "bearish_path_weight": 0.4151,
       "bounce_path_weight": 0.1954,
       "bounce_probability": 0.59293002,
       "confluence": {
@@ -10266,9 +10259,9 @@
         ],
         "not_trading_advice": "This is forecast confirmation only, not a buy/sell/entry/exit or position-sizing recommendation.",
         "primary_label": "失败反抽情景",
-        "primary_probability": 0.415,
+        "primary_probability": 0.4151,
         "primary_scenario": "bearish_path",
-        "probability_gap": 0.181,
+        "probability_gap": 0.1811,
         "related_price_levels": {
           "primary_confirmation_level": {
             "confidence": "medium",
@@ -10334,7 +10327,7 @@
           {
             "detail": "primary-secondary gap 18.1%",
             "name": "主次路径差距可观察",
-            "score": 18.1,
+            "score": 18.11,
             "source": "scenario_gap"
           },
           {
@@ -10508,10 +10501,10 @@
           "ig_oas_20d_change": -0.019999999999999907
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote 754.05; news risk 25%; macro event risk flagged; rates pressure 27%.",
+          "brief": "Finnhub quote 754.05; news risk 30%; macro event risk flagged; rates pressure 27%.",
           "finnhub_quote_available": true,
           "macro_event_risk_flag": true,
-          "news_risk_score": 0.25,
+          "news_risk_score": 0.3,
           "rates_pressure_score": 0.2685027067527518,
           "symbol": "SPY"
         },
@@ -10578,13 +10571,13 @@
         "news": {
           "market_news_status": "available",
           "news_item_count": 40,
-          "news_risk_score": 0.25,
+          "news_risk_score": 0.3,
           "top_headlines": [
-            "US officials met Iran-backed Houthis in Oman over the weekend, sources say - Reuters",
-            "US House passes Russia sanctions bill championed by late Senator Graham - Reuters",
-            "Netanyahu steps up threats against directors of Gaza documentary 'NAZA' - Reuters",
-            "Israel, Morocco agree to upgrade diplomatic ties, Israeli government says - Reuters",
-            "Top Democrat on US House committee will not support Israel bomb sale - Reuters"
+            "Bank of England set to defy Fed’s rate-hike lead, despite rising inflation",
+            "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+            "Trump hopes Iran war nearing end as Houthi-Saudi fighting escalates - reuters.com",
+            "US allies fret over how Trump might play his Taiwan hand with Xi - reuters.com",
+            "Trump says 'hopefully we are towards end' of Iran war - reuters.com"
           ]
         },
         "price": {
@@ -11475,20 +11468,124 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 76,
+            "confidence_score": 81,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 78,
+            "freshness_score": 98,
+            "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-17T05:13:17+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 81,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 96,
+            "headline": "Trump hopes Iran war nearing end as Houthi-Saudi fighting escalates - reuters.com",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-17T04:23:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 78,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 85,
+            "headline": "Trump says 'hopefully we are towards end' of Iran war - reuters.com",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-16T23:54:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 73,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 66,
             "headline": "Jim Cramer says this enterprise software stock is 'way too cheap'",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-16T16:04:44+00:00",
             "source": "CNBC"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "TLT",
+              "UUP"
+            ],
+            "confidence": "medium",
+            "confidence_score": 73,
+            "detected_event_conditions": [],
+            "event_type": "fed_hawkish",
+            "expected_horizon": "1d-20d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 82,
+            "headline": "Wall St ends lower after Fed hikes interest rates, sees more tightening ahead - reuters.com",
+            "importance_score": 87,
+            "narrative": "fed_hawkish_risk",
+            "provider": "finnhub",
+            "published_at": "2026-09-16T22:55:29+00:00",
+            "source": "Reuters"
           },
           {
             "affected_assets": [
@@ -11509,120 +11606,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 44,
-            "headline": "Saudi strikes and Houthi attacks widen Middle East war - Reuters",
+            "freshness_score": 32,
+            "headline": "Saudi strikes and Houthi attacks widen Middle East war - reuters.com",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-16T02:04:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 63,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 25,
-            "headline": "Iran war cost hits $38 billion, forecast to rise $3 billion a month, CBO says - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-15T18:02:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 62,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 21,
-            "headline": "UK, US and Netherlands issue advisory on Iran-linked spyware - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-15T16:35:20+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 62,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 20,
-            "headline": "Cramer says these 2 stocks are still buys, warns against playing Fed rate 'parlor game'",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-15T16:12:59+00:00",
-            "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 61,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 16,
-            "headline": "Alarmed Yemenis flee south as Houthis keep up attacks - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-15T14:30:16+00:00",
             "source": "Reuters"
           }
         ],
@@ -11652,6 +11641,42 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+              "importance_score": 100,
+              "published_at": "2026-09-17T05:13:17+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Trump hopes Iran war nearing end as Houthi-Saudi fighting escalates - reuters.com",
+              "importance_score": 100,
+              "published_at": "2026-09-17T04:23:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Trump says 'hopefully we are towards end' of Iran war - reuters.com",
+              "importance_score": 100,
+              "published_at": "2026-09-16T23:54:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "Jim Cramer says this enterprise software stock is 'way too cheap'",
               "importance_score": 100,
               "published_at": "2026-09-16T16:04:44+00:00",
@@ -11664,7 +11689,7 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "Saudi strikes and Houthi attacks widen Middle East war - Reuters",
+              "headline": "Saudi strikes and Houthi attacks widen Middle East war - reuters.com",
               "importance_score": 100,
               "published_at": "2026-09-16T02:04:00+00:00",
               "source": "Reuters"
@@ -11676,54 +11701,18 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "Iran war cost hits $38 billion, forecast to rise $3 billion a month, CBO says - Reuters",
+              "headline": "Saudi Arabia issues wide-ranging security alerts after week of strikes - reuters.com",
               "importance_score": 100,
-              "published_at": "2026-09-15T18:02:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "UK, US and Netherlands issue advisory on Iran-linked spyware - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-09-15T16:35:20+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Cramer says these 2 stocks are still buys, warns against playing Fed rate 'parlor game'",
-              "importance_score": 100,
-              "published_at": "2026-09-15T16:12:59+00:00",
-              "source": "CNBC"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Alarmed Yemenis flee south as Houthis keep up attacks - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-09-15T14:30:16+00:00",
+              "published_at": "2026-09-16T00:25:20+00:00",
               "source": "Reuters"
             }
           ]
         },
         "news_direction": "risk_off",
         "prediction_logic_effect": {
-          "after_primary_probability": 0.415,
+          "after_primary_probability": 0.4151,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.3712,
+          "before_primary_probability": 0.3713,
           "before_primary_scenario": "bearish_path",
           "confirmation_delta": -8.0,
           "impact": "supports_primary",
@@ -11759,7 +11748,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.005,
-            "avg_equity_futures_1d_return": 0.0095,
+            "avg_equity_futures_1d_return": 0.0135,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -11774,7 +11763,7 @@
             ],
             "failed_checks": [],
             "hyg_lqd_1d_relative_return": -0.0011,
-            "oil_proxy_1d_return": -0.0371,
+            "oil_proxy_1d_return": -0.0227,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -11810,7 +11799,7 @@
       "path_weight_model": {
         "analog_path_weight": 0.234,
         "base_path_weight": 0.1556,
-        "bearish_path_weight": 0.415,
+        "bearish_path_weight": 0.4151,
         "bounce_path_weight": 0.1954,
         "low_confidence_simulation": true,
         "news_event_overlay_applied": true,
@@ -11837,12 +11826,12 @@
           "news_event_direction": "supports_risk_expansion",
           "news_event_macro_risk": 0.0,
           "news_event_price_confirmed": 1.0,
-          "news_risk": 0.25,
+          "news_risk": 0.3,
           "options_quality": 0.92,
           "options_stress": 0.4583,
           "panic_release": 0.28,
           "rates_pressure": 0.2685,
-          "risk_expansion": 0.5352,
+          "risk_expansion": 0.5373,
           "signal_agreement": 0.48,
           "signal_confirmation": 0.35,
           "tail_risk": 0.4256,
@@ -11891,7 +11880,7 @@
           "failed_bounce_risk": 0.47169405438570094,
           "historical_support": "supportive",
           "market_edge_status": "WEAK_EDGE",
-          "risk_expansion_probability": 0.5333,
+          "risk_expansion_probability": 0.5373,
           "trend_reversal_probability": 0.5278,
           "up_probability": 0.62626150214575
         },
@@ -11950,7 +11939,7 @@
           "failed_bounce_risk": 0.47169405438570094,
           "historical_support": "supportive",
           "market_edge_status": "WEAK_EDGE",
-          "risk_expansion_probability": 0.5333,
+          "risk_expansion_probability": 0.5373,
           "trend_reversal_probability": 0.5278,
           "up_probability": 0.6466340086892916
         }
@@ -12051,7 +12040,7 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 1.0,
           "breadth_risk": 0.76,
-          "confidence": 0.6747,
+          "confidence": 0.6761,
           "credit_risk": 0.0489,
           "crowding_proxy_score": 0.4956,
           "failed_bounce_options_risk": 0.4184,
@@ -12077,8 +12066,8 @@
             "news_event_overlay:+0.039"
           ],
           "options_quality": 0.92,
-          "probability": 0.5742,
-          "risk_expansion_probability": 0.5742,
+          "probability": 0.5763,
+          "risk_expansion_probability": 0.5763,
           "tail_risk_score": 0.4256,
           "term_structure_state": "contango",
           "volatility_risk": 0.4583
@@ -12217,7 +12206,7 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 1.0,
           "breadth_risk": 0.76,
-          "confidence": 0.6747,
+          "confidence": 0.6761,
           "credit_risk": 0.0489,
           "crowding_proxy_score": 0.4956,
           "failed_bounce_options_risk": 0.4184,
@@ -12243,8 +12232,8 @@
             "news_event_overlay:+0.039"
           ],
           "options_quality": 0.92,
-          "probability": 0.5742,
-          "risk_expansion_probability": 0.5742,
+          "probability": 0.5763,
+          "risk_expansion_probability": 0.5763,
           "tail_risk_score": 0.4256,
           "term_structure_state": "contango",
           "volatility_risk": 0.4583
@@ -12293,7 +12282,7 @@
             "confidence": "low",
             "expected_horizon": "3d-10d",
             "label": "失败反抽情景",
-            "probability": 0.415,
+            "probability": 0.4151,
             "reason": "Downside/Risk predictors 为 58%/54%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bearish_path"
           },
@@ -12329,12 +12318,12 @@
           "confidence": "low",
           "expected_horizon": "3d-10d",
           "label": "失败反抽情景",
-          "probability": 0.415,
+          "probability": 0.4151,
           "reason": "Downside/Risk predictors 为 58%/54%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bearish_path"
         },
         "primary_scenario": "bearish_path",
-        "primary_secondary_gap": 0.181,
+        "primary_secondary_gap": 0.1811,
         "primary_to_secondary_switch_conditions": [
           "VIX 与新闻方向背离",
           "HYG/LQD 转弱",
@@ -12343,10 +12332,10 @@
           "SPY 重新站上主路径确认价",
           "第二路径 analog_average_path 获得多源确认"
         ],
-        "probability_gap": 0.181,
+        "probability_gap": 0.1811,
         "ranking_note": "Scenario ranking includes a bounded News/Event overlay when a major event or macro calendar risk is detected. It is probabilistic, not deterministic.",
         "risk_scenario": "bearish_path",
-        "scenario_probability": 0.415,
+        "scenario_probability": 0.4151,
         "secondary": {
           "confidence": "low",
           "expected_horizon": "20d-60d",
@@ -12375,7 +12364,7 @@
       },
       "scenario_weights": {
         "base_scenario": 0.1617,
-        "bearish_scenario": 0.3712,
+        "bearish_scenario": 0.3713,
         "bounce_scenario": 0.224,
         "historical_analog_average": 0.2431
       },
