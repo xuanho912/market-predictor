@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-17T22:57:59.563174+00:00`
+- generated_at: `2026-09-17T23:40:12.704072+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `10`
-- event_detection_confidence: `72`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,7 +27,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com
+- headline: Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters
 - source: Reuters
 - published_at: `2026-09-17T20:05:38+00:00`
 - importance_score: `100`
@@ -43,7 +43,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - reuters.com
+- headline: UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - Reuters
 - source: Reuters
 - published_at: `2026-09-17T15:41:00+00:00`
 - importance_score: `100`
@@ -59,15 +59,23 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Yemenis take to boats to flee as Middle East war spreads - reuters.com
+- headline: Asian LNG demand set to fall for second year as war shrinks supply - Reuters
 - source: Reuters
-- published_at: `2026-09-17T04:23:00+00:00`
+- published_at: `2026-09-17T04:29:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Trump says 'hopefully we are towards end' of Iran war - reuters.com
+- headline: Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters
+- source: Reuters
+- published_at: `2026-09-17T04:23:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Trump says 'hopefully we are towards end' of Iran war - Reuters
 - source: Reuters
 - published_at: `2026-09-16T23:54:00+00:00`
 - importance_score: `100`
@@ -83,23 +91,15 @@
 
 ### oil_shock_relief / risk_on
 
-- headline: Oil falls 1% as investors watch Middle East supply disruptions - reuters.com
+- headline: Oil falls 1% as investors watch Middle East supply disruptions - Reuters
 - source: Reuters
 - published_at: `2026-09-17T01:00:00+00:00`
 - importance_score: `92`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
-
-- headline: Jim Cramer says this enterprise software stock is 'way too cheap'
-- source: CNBC
-- published_at: `2026-09-16T16:04:44+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
 ### market_microstructure_event / mixed
 
-- headline: Turkey approves liquidation of US-sanctioned Golden Global's funds - reuters.com
+- headline: Turkey approves liquidation of US-sanctioned Golden Global's funds - Reuters
 - source: Reuters
 - published_at: `2026-09-17T04:22:00+00:00`
 - importance_score: `68`

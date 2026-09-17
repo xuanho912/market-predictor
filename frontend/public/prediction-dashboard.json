@@ -11437,7 +11437,7 @@
       "evidence_note": "Forward-only sample gate has opened; compare breadth-supported buckets against conflicted buckets before raising confidence.",
       "status": "forward_ready"
     },
-    "generated_at": "2026-09-17T22:58:08.842255Z",
+    "generated_at": "2026-09-17T23:40:24.517053Z",
     "notes": [
       "This audit compares the same run with true breadth provider disabled vs enabled.",
       "The audit does not change Alpha v1 and does not prove tradable alpha.",
@@ -11595,7 +11595,7 @@
   },
   "breadth_status": {
     "cache_root": "data/breadth_cache",
-    "generated_at": "2026-09-17T22:57:46.482246+00:00",
+    "generated_at": "2026-09-17T23:39:59.329670+00:00",
     "provider": "true_breadth_provider",
     "sector_participation_proxy": {
       "data_note": "Sector ETF proxy, not constituent-level sector breadth.",
@@ -12127,7 +12127,7 @@
   },
   "confluence_score": {
     "disclaimer": "Confluence is a forecast-confirmation layer, not a trading signal or execution recommendation.",
-    "generated_at": "2026-09-17T22:58:08.851783+00:00",
+    "generated_at": "2026-09-17T23:40:24.525084+00:00",
     "summary": {
       "average_confluence_score": 47.75,
       "mixed_or_no_edge_symbols": [
@@ -12836,10 +12836,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-09-17",
-    "current_time_us_eastern": "2026-09-17T18:58:08.852513-04:00",
+    "current_time_us_eastern": "2026-09-17T19:40:24.525681-04:00",
     "data_freshness_status": "fresh",
     "expected_latest_trading_date": "2026-09-17",
-    "generated_at": "2026-09-17T22:58:08.852513+00:00",
+    "generated_at": "2026-09-17T23:40:24.525681+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -13578,13 +13578,13 @@
       "finnhub_quote_SPY": {
         "fallback_used": false,
         "latest_date": null,
-        "missing_data": true,
-        "point_in_time_safe": false,
-        "real_data": false,
-        "rows": 0,
+        "missing_data": false,
+        "point_in_time_safe": true,
+        "real_data": true,
+        "rows": 1,
         "source": "finnhub",
-        "stale_data": false,
-        "status": "rate_limited",
+        "stale_data": true,
+        "status": "stale",
         "symbol": "finnhub_quote_SPY"
       },
       "finnhub_rates_data": {
@@ -13886,7 +13886,7 @@
         "status": "available"
       }
     },
-    "generated_at": "2026-09-17T22:57:59.556021+00:00",
+    "generated_at": "2026-09-17T23:40:12.698361+00:00",
     "notes": [
       "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
       "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -14671,14 +14671,14 @@
       "finnhub_quote_SPY": {
         "fallback_used": false,
         "latest_date": null,
-        "missing_data": true,
-        "point_in_time_safe": false,
-        "rate_limited": true,
-        "real_data": false,
-        "rows": 0,
+        "missing_data": false,
+        "point_in_time_safe": true,
+        "rate_limited": false,
+        "real_data": true,
+        "rows": 1,
         "source": "finnhub",
-        "stale_data": false,
-        "status": "rate_limited",
+        "stale_data": true,
+        "status": "stale",
         "symbol": "finnhub_quote_SPY"
       },
       "finnhub_rates_data": {
@@ -14798,7 +14798,7 @@
         "symbol": "macro_event_calendar"
       },
       "news_event_provider": {
-        "event_detection_confidence": 72,
+        "event_detection_confidence": 74,
         "fallback_used": false,
         "latest_date": "2026-09-17",
         "major_event_count": 10,
@@ -14935,7 +14935,7 @@
       "fallback_used": true,
       "finnhub_available": true,
       "finnhub_missing": false,
-      "finnhub_rate_limited": true,
+      "finnhub_rate_limited": false,
       "flow_available": true,
       "flow_provider_status": "proxy",
       "flow_proxy_only": true,
@@ -15013,15 +15013,15 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
+        "IG_OAS",
+        "DGS2",
         "HY_OAS",
         "DGS10",
-        "DGS2",
-        "DFII10",
-        "IG_OAS",
         "BAA_SPREAD",
         "DGS3MO",
         "FINANCIAL_STRESS",
-        "RECESSION"
+        "RECESSION",
+        "DFII10"
       ],
       "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-09-17。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
       "gamma_available": false,
@@ -15031,7 +15031,6 @@
       "latest_market_date": "2026-09-17",
       "missing_data": true,
       "missing_key_sources": [
-        "finnhub_quote_SPY",
         "finnhub_candle_SPY",
         "finnhub_candle_QQQ",
         "finnhub_candle_IWM",
@@ -15053,10 +15052,10 @@
       ],
       "news_event": {
         "available": true,
-        "event_detection_confidence": 72,
+        "event_detection_confidence": 74,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-09-17T22:57:59.563174+00:00",
+        "last_update": "2026-09-17T23:40:12.704072+00:00",
         "major_event_count": 10,
         "missing_reason": null,
         "news_direction": "risk_off",
@@ -15108,7 +15107,7 @@
   },
   "event_refresh": false,
   "feature_snapshot_v2": {
-    "generated_at": "2026-09-17T22:57:59.543135+00:00",
+    "generated_at": "2026-09-17T23:40:12.687669+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -15346,7 +15345,7 @@
     "version": "market_intelligence_engine_v2_features"
   },
   "feature_snapshot_v3": {
-    "generated_at": "2026-09-17T22:57:59.548599+00:00",
+    "generated_at": "2026-09-17T23:40:12.692113+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -15506,11 +15505,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.35,
           "top_headlines": [
-            "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - reuters.com",
-            "US allies fret over how Trump might play his Taiwan hand with Xi - reuters.com",
-            "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
-            "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it",
-            "Iranian delegation will be able to attend UN General Assembly, US says - reuters.com"
+            "US to allow Iranian leaders to attend UN General Assembly - Reuters",
+            "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - Reuters",
+            "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
+            "JP Morgan says it has no clear oil market endgame as Iran conflict drags on - Reuters",
+            "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it"
           ]
         },
         "price": {
@@ -15742,11 +15741,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.35,
           "top_headlines": [
-            "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - reuters.com",
-            "US allies fret over how Trump might play his Taiwan hand with Xi - reuters.com",
-            "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
-            "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it",
-            "Iranian delegation will be able to attend UN General Assembly, US says - reuters.com"
+            "US to allow Iranian leaders to attend UN General Assembly - Reuters",
+            "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - Reuters",
+            "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
+            "JP Morgan says it has no clear oil market endgame as Iran conflict drags on - Reuters",
+            "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it"
           ]
         },
         "price": {
@@ -15978,11 +15977,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.35,
           "top_headlines": [
-            "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - reuters.com",
-            "US allies fret over how Trump might play his Taiwan hand with Xi - reuters.com",
-            "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
-            "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it",
-            "Iranian delegation will be able to attend UN General Assembly, US says - reuters.com"
+            "US to allow Iranian leaders to attend UN General Assembly - Reuters",
+            "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - Reuters",
+            "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
+            "JP Morgan says it has no clear oil market endgame as Iran conflict drags on - Reuters",
+            "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it"
           ]
         },
         "price": {
@@ -16142,8 +16141,8 @@
           "ig_oas_20d_change": -0.030000000000000027
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote unavailable; news risk 35%; macro event risk flagged; rates pressure 32%.",
-          "finnhub_quote_available": false,
+          "brief": "Finnhub quote 762.60; news risk 35%; macro event risk flagged; rates pressure 32%.",
+          "finnhub_quote_available": true,
           "macro_event_risk_flag": true,
           "news_risk_score": 0.35,
           "rates_pressure_score": 0.3196391341481869,
@@ -16152,11 +16151,11 @@
         "finnhub": {
           "candle_status": "failed",
           "news_sentiment_status": "failed",
-          "quote_change_percent": null,
-          "quote_previous_close": null,
-          "quote_price": null,
+          "quote_change_percent": 1.1339,
+          "quote_previous_close": 754.05,
+          "quote_price": 762.6,
           "quote_source": "finnhub",
-          "quote_status": "rate_limited",
+          "quote_status": "available",
           "sentiment_score": null
         },
         "flow_positioning_proxy": {
@@ -16214,11 +16213,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.35,
           "top_headlines": [
-            "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - reuters.com",
-            "US allies fret over how Trump might play his Taiwan hand with Xi - reuters.com",
-            "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
-            "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it",
-            "Iranian delegation will be able to attend UN General Assembly, US says - reuters.com"
+            "US to allow Iranian leaders to attend UN General Assembly - Reuters",
+            "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - Reuters",
+            "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
+            "JP Morgan says it has no clear oil market endgame as Iran conflict drags on - Reuters",
+            "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it"
           ]
         },
         "price": {
@@ -16296,7 +16295,7 @@
     "version": "market_intelligence_engine_v3_features"
   },
   "flow_positioning_status": {
-    "generated_at": "2026-09-17T22:57:52.575911+00:00",
+    "generated_at": "2026-09-17T23:40:05.436958+00:00",
     "latest_date": "2026-09-17",
     "provider": "flow_positioning_proxy",
     "sources": {
@@ -16747,7 +16746,7 @@
     ]
   },
   "flow_status": {
-    "generated_at": "2026-09-17T22:57:52.575911+00:00",
+    "generated_at": "2026-09-17T23:40:05.436958+00:00",
     "latest_date": "2026-09-17",
     "provider": "flow_positioning_proxy",
     "sources": {
@@ -18414,7 +18413,7 @@
       "primary_beats_secondary": "primary_path_not_better_than_secondary"
     },
     "current_evidence_level": "stronger_evidence",
-    "generated_at": "2026-09-17T22:58:09.485276+00:00",
+    "generated_at": "2026-09-17T23:40:25.005979+00:00",
     "guardrails": [
       "This scorecard validates probabilistic forecast paths, not trades.",
       "Forecast records are immutable except for future-outcome backfill fields.",
@@ -18529,7 +18528,7 @@
       "risk_on_flow_underweighted": 55,
       "volatility_repair_underweighted": 117
     },
-    "generated_at": "2026-09-17T22:58:09.717038+00:00",
+    "generated_at": "2026-09-17T23:40:25.178614+00:00",
     "guardrails": [
       "This is forecast error attribution, not a trading or PnL report.",
       "Attribution is diagnostic and probabilistic; it is not proof of causality.",
@@ -22299,7 +22298,7 @@
     },
     "dominant_error_theme": "news_data_gap_limited_attribution",
     "evidence_level": "stronger_evidence",
-    "generated_at": "2026-09-17T22:58:09.743755+00:00",
+    "generated_at": "2026-09-17T23:40:25.198822+00:00",
     "global_learning_status": "shadow_challenger_queue_ready",
     "guardrails": [
       "This queue does not change baseline_v1 or Alpha v1.",
@@ -22329,7 +22328,7 @@
       "5d": 252,
       "60d": 32
     },
-    "generated_at": "2026-09-17T22:58:09.414439+00:00",
+    "generated_at": "2026-09-17T23:40:24.949131+00:00",
     "immutability_note": "Forecast fields are write-once by forecast_id. Backfill may update only actual_return, best_matching_scenario, primary_hit, path_error and status fields.",
     "max_confirmed_market_date": "2026-09-17",
     "new_records_considered": 4,
@@ -22343,7 +22342,7 @@
   "forecast_price_levels": {
     "as_of": "2026-09-17",
     "disclaimer": "Forecast price levels are probabilistic scenario points derived from simulated paths, recent price structure and volatility bands. They are not execution instructions, risk-control rules, or guaranteed target prices.",
-    "generated_at": "2026-09-17T22:58:08.846984Z",
+    "generated_at": "2026-09-17T23:40:24.520985Z",
     "symbols": {
       "DIA": {
         "current_price": 518.3499755859375,
@@ -24086,7 +24085,7 @@
     "version": "forecast_price_levels_v1"
   },
   "forecast_records": {
-    "generated_at": "2026-09-17T22:58:09.454298+00:00",
+    "generated_at": "2026-09-17T23:40:24.980567+00:00",
     "records": [
       {
         "actual_return_10d": 0.01680114442,
@@ -62627,7 +62626,7 @@
       "5d": 252,
       "60d": 32
     },
-    "generated_at": "2026-09-17T22:58:09.743683+00:00",
+    "generated_at": "2026-09-17T23:40:25.198757+00:00",
     "guardrails": [
       "This gate does not modify Alpha v1 threshold, baseline_v1 or historical forecast records.",
       "This is forecast reliability assessment, not trading advice.",
@@ -64464,7 +64463,7 @@
     },
     "forward_completed_sample_size": 28,
     "forward_validation_notice": "Forward samples have started to mature, but alpha status remains research-only until stability is proven.",
-    "generated_at": "2026-09-17T22:57:59.559726+00:00",
+    "generated_at": "2026-09-17T23:40:12.701281+00:00",
     "internal_resonance_forward_validation": {
       "aligned_internal_resonance": {
         "by_horizon": {
@@ -65450,7 +65449,7 @@
       }
     },
     "conclusion": "confidence_not_yet_validated",
-    "generated_at": "2026-09-17T22:57:59.555268+00:00",
+    "generated_at": "2026-09-17T23:40:12.697724+00:00",
     "high_confidence_better_than_low_confidence": false,
     "high_vs_low_comparison_by_horizon": {
       "10d": false,
@@ -68068,7 +68067,7 @@
       "note": "Historical replay cannot upgrade alpha or confidence until forward validation samples mature.",
       "sample_gate": "stronger_evidence"
     },
-    "generated_at": "2026-09-17T22:58:09.741168+00:00",
+    "generated_at": "2026-09-17T23:40:25.196807+00:00",
     "guardrails": [
       "Historical replay is research evaluation only and cannot replace daily forward validation.",
       "Historical replay results must not be described as confirmed alpha.",
@@ -69597,7 +69596,7 @@
   },
   "market_alerts": {
     "disclaimer": "Market alerts are forecast warnings and scenario-confirmation notes only. They are not trading signals or buy/sell/entry/exit guidance.",
-    "generated_at": "2026-09-17T22:58:08.852425+00:00",
+    "generated_at": "2026-09-17T23:40:24.525597+00:00",
     "summary": {
       "alert_count_by_level": {
         "EXTREME": 0,
@@ -72698,7 +72697,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-09-17T22:57:59.542190+00:00",
+      "generated_at": "2026-09-17T23:40:12.686906+00:00",
       "notes": [
         "price/volatility/credit/rates/liquidity currently use public market proxies.",
         "options breadth macro flow are not treated as available unless real feeds are connected.",
@@ -72834,7 +72833,7 @@
       }
     },
     "feature_snapshot_v2": {
-      "generated_at": "2026-09-17T22:57:59.543135+00:00",
+      "generated_at": "2026-09-17T23:40:12.687669+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -73071,7 +73070,7 @@
       },
       "version": "market_intelligence_engine_v2_features"
     },
-    "generated_at": "2026-09-17T22:57:59.543705+00:00",
+    "generated_at": "2026-09-17T23:40:12.688097+00:00",
     "model_confidence_by_symbol": {
       "DIA": {
         "components": {
@@ -73268,7 +73267,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-09-17T22:57:59.551604+00:00",
+      "generated_at": "2026-09-17T23:40:12.694921+00:00",
       "notes": [
         "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
         "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -74052,14 +74051,14 @@
         "finnhub_quote_SPY": {
           "fallback_used": false,
           "latest_date": null,
-          "missing_data": true,
-          "point_in_time_safe": false,
-          "rate_limited": true,
-          "real_data": false,
-          "rows": 0,
+          "missing_data": false,
+          "point_in_time_safe": true,
+          "rate_limited": false,
+          "real_data": true,
+          "rows": 1,
           "source": "finnhub",
-          "stale_data": false,
-          "status": "rate_limited",
+          "stale_data": true,
+          "status": "stale",
           "symbol": "finnhub_quote_SPY"
         },
         "finnhub_rates_data": {
@@ -74284,7 +74283,7 @@
         "fallback_used": true,
         "finnhub_available": true,
         "finnhub_missing": false,
-        "finnhub_rate_limited": true,
+        "finnhub_rate_limited": false,
         "flow_available": true,
         "flow_proxy_only": true,
         "flow_required": true,
@@ -74293,7 +74292,6 @@
         "latest_date": "2026-09-17",
         "missing_data": true,
         "missing_key_sources": [
-          "finnhub_quote_SPY",
           "finnhub_candle_SPY",
           "finnhub_candle_QQQ",
           "finnhub_candle_IWM",
@@ -74398,7 +74396,7 @@
       }
     },
     "feature_snapshot_v3": {
-      "generated_at": "2026-09-17T22:57:59.548599+00:00",
+      "generated_at": "2026-09-17T23:40:12.692113+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -74558,11 +74556,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.35,
             "top_headlines": [
-              "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - reuters.com",
-              "US allies fret over how Trump might play his Taiwan hand with Xi - reuters.com",
-              "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
-              "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it",
-              "Iranian delegation will be able to attend UN General Assembly, US says - reuters.com"
+              "US to allow Iranian leaders to attend UN General Assembly - Reuters",
+              "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - Reuters",
+              "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
+              "JP Morgan says it has no clear oil market endgame as Iran conflict drags on - Reuters",
+              "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it"
             ]
           },
           "price": {
@@ -74794,11 +74792,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.35,
             "top_headlines": [
-              "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - reuters.com",
-              "US allies fret over how Trump might play his Taiwan hand with Xi - reuters.com",
-              "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
-              "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it",
-              "Iranian delegation will be able to attend UN General Assembly, US says - reuters.com"
+              "US to allow Iranian leaders to attend UN General Assembly - Reuters",
+              "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - Reuters",
+              "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
+              "JP Morgan says it has no clear oil market endgame as Iran conflict drags on - Reuters",
+              "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it"
             ]
           },
           "price": {
@@ -75030,11 +75028,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.35,
             "top_headlines": [
-              "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - reuters.com",
-              "US allies fret over how Trump might play his Taiwan hand with Xi - reuters.com",
-              "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
-              "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it",
-              "Iranian delegation will be able to attend UN General Assembly, US says - reuters.com"
+              "US to allow Iranian leaders to attend UN General Assembly - Reuters",
+              "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - Reuters",
+              "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
+              "JP Morgan says it has no clear oil market endgame as Iran conflict drags on - Reuters",
+              "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it"
             ]
           },
           "price": {
@@ -75194,8 +75192,8 @@
             "ig_oas_20d_change": -0.030000000000000027
           },
           "daily_market_brief": {
-            "brief": "Finnhub quote unavailable; news risk 35%; macro event risk flagged; rates pressure 32%.",
-            "finnhub_quote_available": false,
+            "brief": "Finnhub quote 762.60; news risk 35%; macro event risk flagged; rates pressure 32%.",
+            "finnhub_quote_available": true,
             "macro_event_risk_flag": true,
             "news_risk_score": 0.35,
             "rates_pressure_score": 0.3196391341481869,
@@ -75204,11 +75202,11 @@
           "finnhub": {
             "candle_status": "failed",
             "news_sentiment_status": "failed",
-            "quote_change_percent": null,
-            "quote_previous_close": null,
-            "quote_price": null,
+            "quote_change_percent": 1.1339,
+            "quote_previous_close": 754.05,
+            "quote_price": 762.6,
             "quote_source": "finnhub",
-            "quote_status": "rate_limited",
+            "quote_status": "available",
             "sentiment_score": null
           },
           "flow_positioning_proxy": {
@@ -75266,11 +75264,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.35,
             "top_headlines": [
-              "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - reuters.com",
-              "US allies fret over how Trump might play his Taiwan hand with Xi - reuters.com",
-              "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
-              "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it",
-              "Iranian delegation will be able to attend UN General Assembly, US says - reuters.com"
+              "US to allow Iranian leaders to attend UN General Assembly - Reuters",
+              "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - Reuters",
+              "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
+              "JP Morgan says it has no clear oil market endgame as Iran conflict drags on - Reuters",
+              "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it"
             ]
           },
           "price": {
@@ -75352,8 +75350,8 @@
       "finnhub_cache_used": false,
       "finnhub_failed_requests": 9,
       "finnhub_missing": false,
-      "finnhub_rate_limited": true,
-      "finnhub_successful_requests": 6
+      "finnhub_rate_limited": false,
+      "finnhub_successful_requests": 7
     },
     "flow_status": {
       "average_flow_quality_score": 100.0,
@@ -75383,18 +75381,18 @@
       "fred_missing": false,
       "fred_rate_limited": false,
       "fred_successful_series": [
+        "IG_OAS",
+        "DGS2",
         "HY_OAS",
         "DGS10",
-        "DGS2",
-        "DFII10",
-        "IG_OAS",
         "BAA_SPREAD",
         "DGS3MO",
         "FINANCIAL_STRESS",
-        "RECESSION"
+        "RECESSION",
+        "DFII10"
       ]
     },
-    "generated_at": "2026-09-17T22:57:59.555300+00:00",
+    "generated_at": "2026-09-17T23:40:12.697741+00:00",
     "high_confidence_signal_report": {
       "by_bucket": {
         "low_confidence_reference": {
@@ -76063,7 +76061,7 @@
         }
       },
       "conclusion": "confidence_not_yet_validated",
-      "generated_at": "2026-09-17T22:57:59.555268+00:00",
+      "generated_at": "2026-09-17T23:40:12.697724+00:00",
       "high_confidence_better_than_low_confidence": false,
       "high_vs_low_comparison_by_horizon": {
         "10d": false,
@@ -76851,7 +76849,7 @@
         "evidence_note": "Forward-only sample gate has opened; compare breadth-supported buckets against conflicted buckets before raising confidence.",
         "status": "forward_ready"
       },
-      "generated_at": "2026-09-17T22:58:08.842255Z",
+      "generated_at": "2026-09-17T23:40:24.517053Z",
       "notes": [
         "This audit compares the same run with true breadth provider disabled vs enabled.",
         "The audit does not change Alpha v1 and does not prove tradable alpha.",
@@ -77121,7 +77119,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-09-17T22:57:59.556021+00:00",
+      "generated_at": "2026-09-17T23:40:12.698361+00:00",
       "notes": [
         "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
         "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -77906,14 +77904,14 @@
         "finnhub_quote_SPY": {
           "fallback_used": false,
           "latest_date": null,
-          "missing_data": true,
-          "point_in_time_safe": false,
-          "rate_limited": true,
-          "real_data": false,
-          "rows": 0,
+          "missing_data": false,
+          "point_in_time_safe": true,
+          "rate_limited": false,
+          "real_data": true,
+          "rows": 1,
           "source": "finnhub",
-          "stale_data": false,
-          "status": "rate_limited",
+          "stale_data": true,
+          "status": "stale",
           "symbol": "finnhub_quote_SPY"
         },
         "finnhub_rates_data": {
@@ -78033,7 +78031,7 @@
           "symbol": "macro_event_calendar"
         },
         "news_event_provider": {
-          "event_detection_confidence": 72,
+          "event_detection_confidence": 74,
           "fallback_used": false,
           "latest_date": "2026-09-17",
           "major_event_count": 10,
@@ -78170,7 +78168,7 @@
         "fallback_used": true,
         "finnhub_available": true,
         "finnhub_missing": false,
-        "finnhub_rate_limited": true,
+        "finnhub_rate_limited": false,
         "flow_available": true,
         "flow_provider_status": "proxy",
         "flow_proxy_only": true,
@@ -78248,15 +78246,15 @@
         "fred_rate_limited": false,
         "fred_required": true,
         "fred_successful_series": [
+          "IG_OAS",
+          "DGS2",
           "HY_OAS",
           "DGS10",
-          "DGS2",
-          "DFII10",
-          "IG_OAS",
           "BAA_SPREAD",
           "DGS3MO",
           "FINANCIAL_STRESS",
-          "RECESSION"
+          "RECESSION",
+          "DFII10"
         ],
         "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-09-17。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
         "gamma_available": false,
@@ -78266,7 +78264,6 @@
         "latest_market_date": "2026-09-17",
         "missing_data": true,
         "missing_key_sources": [
-          "finnhub_quote_SPY",
           "finnhub_candle_SPY",
           "finnhub_candle_QQQ",
           "finnhub_candle_IWM",
@@ -78288,10 +78285,10 @@
         ],
         "news_event": {
           "available": true,
-          "event_detection_confidence": 72,
+          "event_detection_confidence": 74,
           "event_risk_level": "high",
           "headline_count": 40,
-          "last_update": "2026-09-17T22:57:59.563174+00:00",
+          "last_update": "2026-09-17T23:40:12.704072+00:00",
           "major_event_count": 10,
           "missing_reason": null,
           "news_direction": "risk_off",
@@ -78427,7 +78424,7 @@
       "available": true,
       "cache_used": false,
       "configured": true,
-      "rate_limited": true
+      "rate_limited": false
     },
     "fred_effect_summary": {
       "data_completeness_delta": 6,
@@ -78502,18 +78499,18 @@
       "fallback_used": false,
       "rate_limited": false,
       "successful_series": [
+        "IG_OAS",
+        "DGS2",
         "HY_OAS",
         "DGS10",
-        "DGS2",
-        "DFII10",
-        "IG_OAS",
         "BAA_SPREAD",
         "DGS3MO",
         "FINANCIAL_STRESS",
-        "RECESSION"
+        "RECESSION",
+        "DFII10"
       ]
     },
-    "generated_at": "2026-09-17T22:57:59.563160+00:00",
+    "generated_at": "2026-09-17T23:40:12.704060+00:00",
     "high_confidence_edge_report": {
       "breadth_forward_validation": {
         "bounce_with_breadth_support": {
@@ -79954,7 +79951,7 @@
       },
       "forward_completed_sample_size": 28,
       "forward_validation_notice": "Forward samples have started to mature, but alpha status remains research-only until stability is proven.",
-      "generated_at": "2026-09-17T22:57:59.559726+00:00",
+      "generated_at": "2026-09-17T23:40:12.701281+00:00",
       "internal_resonance_forward_validation": {
         "aligned_internal_resonance": {
           "by_horizon": {
@@ -80371,9 +80368,9 @@
         "source": "finnhub",
         "status": "failed"
       },
-      "event_detection_confidence": 72,
+      "event_detection_confidence": 74,
       "event_risk_level": "high",
-      "generated_at": "2026-09-17T22:57:59.563174+00:00",
+      "generated_at": "2026-09-17T23:40:12.704072+00:00",
       "limits": [
         "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
         "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
@@ -80394,15 +80391,15 @@
             "TLT"
           ],
           "confidence": "high",
-          "confidence_score": 80,
+          "confidence_score": 79,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 93,
-          "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+          "freshness_score": 91,
+          "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
           "provider": "finnhub",
@@ -80428,7 +80425,7 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 87,
+          "freshness_score": 85,
           "headline": "Stephen Curry says his Li-Ning signature shoe will debut early next year",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -80455,8 +80452,8 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 83,
-          "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - reuters.com",
+          "freshness_score": 81,
+          "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
           "provider": "finnhub",
@@ -80482,7 +80479,7 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 75,
+          "freshness_score": 74,
           "headline": "Lockheed Martin reveals new secret missile, fast tracks production - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -80509,8 +80506,35 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 55,
-          "headline": "Yemenis take to boats to flee as Middle East war spreads - reuters.com",
+          "freshness_score": 54,
+          "headline": "Asian LNG demand set to fall for second year as war shrinks supply - Reuters",
+          "importance_score": 100,
+          "narrative": "geopolitics_escalation_risk_off",
+          "provider": "finnhub",
+          "published_at": "2026-09-17T04:29:00+00:00",
+          "source": "Reuters"
+        },
+        {
+          "affected_assets": [
+            "SPY",
+            "QQQ",
+            "IWM",
+            "DIA",
+            "^VIX",
+            "USO",
+            "UUP",
+            "TLT"
+          ],
+          "confidence": "high",
+          "confidence_score": 88,
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_horizon": "intraday-5d",
+          "expected_market_direction": "risk_off",
+          "freshness_score": 54,
+          "headline": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
           "provider": "finnhub",
@@ -80529,15 +80553,15 @@
             "TLT"
           ],
           "confidence": "medium",
-          "confidence_score": 68,
+          "confidence_score": 67,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 45,
-          "headline": "Trump says 'hopefully we are towards end' of Iran war - reuters.com",
+          "freshness_score": 43,
+          "headline": "Trump says 'hopefully we are towards end' of Iran war - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
           "provider": "finnhub",
@@ -80554,12 +80578,12 @@
             "UUP"
           ],
           "confidence": "medium",
-          "confidence_score": 71,
+          "confidence_score": 70,
           "detected_event_conditions": [],
           "event_type": "fed_dovish",
           "expected_horizon": "1d-20d",
           "expected_market_direction": "risk_on",
-          "freshness_score": 73,
+          "freshness_score": 71,
           "headline": "Charities say gifts by deceased donors are getting held up at financial firms",
           "importance_score": 84,
           "narrative": "fed_cut_hopes",
@@ -80587,40 +80611,13 @@
           "event_type": "oil_shock_relief",
           "expected_horizon": "1d-5d",
           "expected_market_direction": "risk_on",
-          "freshness_score": 47,
-          "headline": "Oil falls 1% as investors watch Middle East supply disruptions - reuters.com",
+          "freshness_score": 46,
+          "headline": "Oil falls 1% as investors watch Middle East supply disruptions - Reuters",
           "importance_score": 92,
           "narrative": "oil_relief_rally",
           "provider": "finnhub",
           "published_at": "2026-09-17T01:00:00+00:00",
           "source": "Reuters"
-        },
-        {
-          "affected_assets": [
-            "SPY",
-            "QQQ",
-            "IWM",
-            "DIA",
-            "^VIX",
-            "USO",
-            "UUP",
-            "TLT"
-          ],
-          "confidence": "medium",
-          "confidence_score": 63,
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_horizon": "intraday-5d",
-          "expected_market_direction": "risk_off",
-          "freshness_score": 26,
-          "headline": "Jim Cramer says this enterprise software stock is 'way too cheap'",
-          "importance_score": 100,
-          "narrative": "geopolitics_escalation_risk_off",
-          "provider": "finnhub",
-          "published_at": "2026-09-16T16:04:44+00:00",
-          "source": "CNBC"
         },
         {
           "affected_assets": [
@@ -80636,8 +80633,8 @@
           "event_type": "market_microstructure_event",
           "expected_horizon": "intraday-3d",
           "expected_market_direction": "mixed",
-          "freshness_score": 55,
-          "headline": "Turkey approves liquidation of US-sanctioned Golden Global's funds - reuters.com",
+          "freshness_score": 54,
+          "headline": "Turkey approves liquidation of US-sanctioned Golden Global's funds - Reuters",
           "importance_score": 68,
           "narrative": "market_microstructure_event",
           "provider": "finnhub",
@@ -80674,7 +80671,7 @@
             ],
             "event_type": "oil_shock_relief",
             "expected_market_direction": "risk_on",
-            "headline": "Oil falls 1% as investors watch Middle East supply disruptions - reuters.com",
+            "headline": "Oil falls 1% as investors watch Middle East supply disruptions - Reuters",
             "importance_score": 92,
             "published_at": "2026-09-17T01:00:00+00:00",
             "source": "Reuters"
@@ -80684,7 +80681,7 @@
             "detected_event_conditions": [],
             "event_type": "market_microstructure_event",
             "expected_market_direction": "mixed",
-            "headline": "Turkey approves liquidation of US-sanctioned Golden Global's funds - reuters.com",
+            "headline": "Turkey approves liquidation of US-sanctioned Golden Global's funds - Reuters",
             "importance_score": 68,
             "published_at": "2026-09-17T04:22:00+00:00",
             "source": "Reuters"
@@ -80705,7 +80702,7 @@
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_market_direction": "risk_off",
-            "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+            "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
             "importance_score": 100,
             "published_at": "2026-09-17T20:05:38+00:00",
             "source": "Reuters"
@@ -80729,7 +80726,7 @@
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_market_direction": "risk_off",
-            "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - reuters.com",
+            "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - Reuters",
             "importance_score": 100,
             "published_at": "2026-09-17T15:41:00+00:00",
             "source": "Reuters"
@@ -80753,21 +80750,21 @@
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_market_direction": "risk_off",
-            "headline": "Yemenis take to boats to flee as Middle East war spreads - reuters.com",
+            "headline": "Asian LNG demand set to fall for second year as war shrinks supply - Reuters",
             "importance_score": 100,
-            "published_at": "2026-09-17T04:23:00+00:00",
+            "published_at": "2026-09-17T04:29:00+00:00",
             "source": "Reuters"
           },
           {
-            "confidence": "medium",
+            "confidence": "high",
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_market_direction": "risk_off",
-            "headline": "Trump says 'hopefully we are towards end' of Iran war - reuters.com",
+            "headline": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
             "importance_score": 100,
-            "published_at": "2026-09-16T23:54:00+00:00",
+            "published_at": "2026-09-17T04:23:00+00:00",
             "source": "Reuters"
           }
         ]
@@ -80917,7 +80914,7 @@
       "price_reaction_confirmation": {
         "asset_reaction_summary": {
           "avg_equity_1d_return": 0.01,
-          "avg_equity_futures_1d_return": 0.0167,
+          "avg_equity_futures_1d_return": 0.0169,
           "confirmed_checks": [
             "HYG/LQD 走弱"
           ],
@@ -80933,7 +80930,7 @@
             "美元走强"
           ],
           "hyg_lqd_1d_relative_return": -0.003,
-          "oil_proxy_1d_return": -0.0087,
+          "oil_proxy_1d_return": -0.0093,
           "oil_proxy_symbols_used": [
             "USO",
             "CL=F"
@@ -80960,7 +80957,7 @@
           "status": "available"
         },
         "gdelt_public_news": {
-          "error_type": "HTTPError",
+          "error_type": "JSONDecodeError",
           "source": "gdelt",
           "stale": false,
           "status": "failed"
@@ -82871,7 +82868,7 @@
         "primary_mean_absolute_error": 0.041192
       }
     },
-    "generated_at": "2026-09-17T22:58:09.851159+00:00",
+    "generated_at": "2026-09-17T23:40:25.288743+00:00",
     "guardrails": [
       "Alpha v1 threshold remains frozen at 0.32534311.",
       "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -83695,7 +83692,7 @@
   },
   "model_promotion_status": {
     "active_model_version": "baseline_v1",
-    "generated_at": "2026-09-17T22:58:09.851239+00:00",
+    "generated_at": "2026-09-17T23:40:25.288823+00:00",
     "guardrails": [
       "Alpha v1 threshold remains frozen at 0.32534311.",
       "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -83867,9 +83864,9 @@
       "source": "finnhub",
       "status": "failed"
     },
-    "event_detection_confidence": 72,
+    "event_detection_confidence": 74,
     "event_risk_level": "high",
-    "generated_at": "2026-09-17T22:57:59.563174+00:00",
+    "generated_at": "2026-09-17T23:40:12.704072+00:00",
     "limits": [
       "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
       "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
@@ -83890,15 +83887,15 @@
           "TLT"
         ],
         "confidence": "high",
-        "confidence_score": 80,
+        "confidence_score": 79,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 93,
-        "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+        "freshness_score": 91,
+        "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
         "provider": "finnhub",
@@ -83924,7 +83921,7 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 87,
+        "freshness_score": 85,
         "headline": "Stephen Curry says his Li-Ning signature shoe will debut early next year",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -83951,8 +83948,8 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 83,
-        "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - reuters.com",
+        "freshness_score": 81,
+        "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
         "provider": "finnhub",
@@ -83978,7 +83975,7 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 75,
+        "freshness_score": 74,
         "headline": "Lockheed Martin reveals new secret missile, fast tracks production - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -84005,8 +84002,35 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 55,
-        "headline": "Yemenis take to boats to flee as Middle East war spreads - reuters.com",
+        "freshness_score": 54,
+        "headline": "Asian LNG demand set to fall for second year as war shrinks supply - Reuters",
+        "importance_score": 100,
+        "narrative": "geopolitics_escalation_risk_off",
+        "provider": "finnhub",
+        "published_at": "2026-09-17T04:29:00+00:00",
+        "source": "Reuters"
+      },
+      {
+        "affected_assets": [
+          "SPY",
+          "QQQ",
+          "IWM",
+          "DIA",
+          "^VIX",
+          "USO",
+          "UUP",
+          "TLT"
+        ],
+        "confidence": "high",
+        "confidence_score": 88,
+        "detected_event_conditions": [
+          "geopolitical_risk_escalation"
+        ],
+        "event_type": "geopolitical_risk_escalation",
+        "expected_horizon": "intraday-5d",
+        "expected_market_direction": "risk_off",
+        "freshness_score": 54,
+        "headline": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
         "provider": "finnhub",
@@ -84025,15 +84049,15 @@
           "TLT"
         ],
         "confidence": "medium",
-        "confidence_score": 68,
+        "confidence_score": 67,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 45,
-        "headline": "Trump says 'hopefully we are towards end' of Iran war - reuters.com",
+        "freshness_score": 43,
+        "headline": "Trump says 'hopefully we are towards end' of Iran war - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
         "provider": "finnhub",
@@ -84050,12 +84074,12 @@
           "UUP"
         ],
         "confidence": "medium",
-        "confidence_score": 71,
+        "confidence_score": 70,
         "detected_event_conditions": [],
         "event_type": "fed_dovish",
         "expected_horizon": "1d-20d",
         "expected_market_direction": "risk_on",
-        "freshness_score": 73,
+        "freshness_score": 71,
         "headline": "Charities say gifts by deceased donors are getting held up at financial firms",
         "importance_score": 84,
         "narrative": "fed_cut_hopes",
@@ -84083,40 +84107,13 @@
         "event_type": "oil_shock_relief",
         "expected_horizon": "1d-5d",
         "expected_market_direction": "risk_on",
-        "freshness_score": 47,
-        "headline": "Oil falls 1% as investors watch Middle East supply disruptions - reuters.com",
+        "freshness_score": 46,
+        "headline": "Oil falls 1% as investors watch Middle East supply disruptions - Reuters",
         "importance_score": 92,
         "narrative": "oil_relief_rally",
         "provider": "finnhub",
         "published_at": "2026-09-17T01:00:00+00:00",
         "source": "Reuters"
-      },
-      {
-        "affected_assets": [
-          "SPY",
-          "QQQ",
-          "IWM",
-          "DIA",
-          "^VIX",
-          "USO",
-          "UUP",
-          "TLT"
-        ],
-        "confidence": "medium",
-        "confidence_score": 63,
-        "detected_event_conditions": [
-          "geopolitical_risk_escalation"
-        ],
-        "event_type": "geopolitical_risk_escalation",
-        "expected_horizon": "intraday-5d",
-        "expected_market_direction": "risk_off",
-        "freshness_score": 26,
-        "headline": "Jim Cramer says this enterprise software stock is 'way too cheap'",
-        "importance_score": 100,
-        "narrative": "geopolitics_escalation_risk_off",
-        "provider": "finnhub",
-        "published_at": "2026-09-16T16:04:44+00:00",
-        "source": "CNBC"
       },
       {
         "affected_assets": [
@@ -84132,8 +84129,8 @@
         "event_type": "market_microstructure_event",
         "expected_horizon": "intraday-3d",
         "expected_market_direction": "mixed",
-        "freshness_score": 55,
-        "headline": "Turkey approves liquidation of US-sanctioned Golden Global's funds - reuters.com",
+        "freshness_score": 54,
+        "headline": "Turkey approves liquidation of US-sanctioned Golden Global's funds - Reuters",
         "importance_score": 68,
         "narrative": "market_microstructure_event",
         "provider": "finnhub",
@@ -84170,7 +84167,7 @@
           ],
           "event_type": "oil_shock_relief",
           "expected_market_direction": "risk_on",
-          "headline": "Oil falls 1% as investors watch Middle East supply disruptions - reuters.com",
+          "headline": "Oil falls 1% as investors watch Middle East supply disruptions - Reuters",
           "importance_score": 92,
           "published_at": "2026-09-17T01:00:00+00:00",
           "source": "Reuters"
@@ -84180,7 +84177,7 @@
           "detected_event_conditions": [],
           "event_type": "market_microstructure_event",
           "expected_market_direction": "mixed",
-          "headline": "Turkey approves liquidation of US-sanctioned Golden Global's funds - reuters.com",
+          "headline": "Turkey approves liquidation of US-sanctioned Golden Global's funds - Reuters",
           "importance_score": 68,
           "published_at": "2026-09-17T04:22:00+00:00",
           "source": "Reuters"
@@ -84201,7 +84198,7 @@
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_market_direction": "risk_off",
-          "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+          "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
           "importance_score": 100,
           "published_at": "2026-09-17T20:05:38+00:00",
           "source": "Reuters"
@@ -84225,7 +84222,7 @@
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_market_direction": "risk_off",
-          "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - reuters.com",
+          "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - Reuters",
           "importance_score": 100,
           "published_at": "2026-09-17T15:41:00+00:00",
           "source": "Reuters"
@@ -84249,21 +84246,21 @@
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_market_direction": "risk_off",
-          "headline": "Yemenis take to boats to flee as Middle East war spreads - reuters.com",
+          "headline": "Asian LNG demand set to fall for second year as war shrinks supply - Reuters",
           "importance_score": 100,
-          "published_at": "2026-09-17T04:23:00+00:00",
+          "published_at": "2026-09-17T04:29:00+00:00",
           "source": "Reuters"
         },
         {
-          "confidence": "medium",
+          "confidence": "high",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_market_direction": "risk_off",
-          "headline": "Trump says 'hopefully we are towards end' of Iran war - reuters.com",
+          "headline": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
           "importance_score": 100,
-          "published_at": "2026-09-16T23:54:00+00:00",
+          "published_at": "2026-09-17T04:23:00+00:00",
           "source": "Reuters"
         }
       ]
@@ -84413,7 +84410,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": 0.01,
-        "avg_equity_futures_1d_return": 0.0167,
+        "avg_equity_futures_1d_return": 0.0169,
         "confirmed_checks": [
           "HYG/LQD 走弱"
         ],
@@ -84429,7 +84426,7 @@
           "美元走强"
         ],
         "hyg_lqd_1d_relative_return": -0.003,
-        "oil_proxy_1d_return": -0.0087,
+        "oil_proxy_1d_return": -0.0093,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -84456,7 +84453,7 @@
         "status": "available"
       },
       "gdelt_public_news": {
-        "error_type": "HTTPError",
+        "error_type": "JSONDecodeError",
         "source": "gdelt",
         "stale": false,
         "status": "failed"
@@ -84538,7 +84535,7 @@
     "version": "news_event_intelligence_v1"
   },
   "options_status": {
-    "generated_at": "2026-09-17T22:57:52.569797+00:00",
+    "generated_at": "2026-09-17T23:40:05.426025+00:00",
     "market": {
       "failed_bounce_options_risk": 0.1744,
       "gamma_exposure": null,
@@ -84829,10 +84826,10 @@
       "can_append_forecast_record": true,
       "can_backfill_completed_outcomes": true,
       "current_date": "2026-09-17",
-      "current_time_us_eastern": "2026-09-17T18:58:08.852513-04:00",
+      "current_time_us_eastern": "2026-09-17T19:40:24.525681-04:00",
       "data_freshness_status": "fresh",
       "expected_latest_trading_date": "2026-09-17",
-      "generated_at": "2026-09-17T22:58:08.852513+00:00",
+      "generated_at": "2026-09-17T23:40:24.525681+00:00",
       "guardrails": [
         "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
         "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -85571,13 +85568,13 @@
         "finnhub_quote_SPY": {
           "fallback_used": false,
           "latest_date": null,
-          "missing_data": true,
-          "point_in_time_safe": false,
-          "real_data": false,
-          "rows": 0,
+          "missing_data": false,
+          "point_in_time_safe": true,
+          "real_data": true,
+          "rows": 1,
           "source": "finnhub",
-          "stale_data": false,
-          "status": "rate_limited",
+          "stale_data": true,
+          "status": "stale",
           "symbol": "finnhub_quote_SPY"
         },
         "finnhub_rates_data": {
@@ -85793,7 +85790,7 @@
       "fallback_used": true,
       "finnhub_available": true,
       "finnhub_missing": false,
-      "finnhub_rate_limited": true,
+      "finnhub_rate_limited": false,
       "flow_available": true,
       "flow_provider_status": "proxy",
       "flow_proxy_only": true,
@@ -85871,15 +85868,15 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
+        "IG_OAS",
+        "DGS2",
         "HY_OAS",
         "DGS10",
-        "DGS2",
-        "DFII10",
-        "IG_OAS",
         "BAA_SPREAD",
         "DGS3MO",
         "FINANCIAL_STRESS",
-        "RECESSION"
+        "RECESSION",
+        "DFII10"
       ],
       "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-09-17。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
       "gamma_available": false,
@@ -85889,7 +85886,6 @@
       "latest_market_date": "2026-09-17",
       "missing_data": true,
       "missing_key_sources": [
-        "finnhub_quote_SPY",
         "finnhub_candle_SPY",
         "finnhub_candle_QQQ",
         "finnhub_candle_IWM",
@@ -85911,10 +85907,10 @@
       ],
       "news_event": {
         "available": true,
-        "event_detection_confidence": 72,
+        "event_detection_confidence": 74,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-09-17T22:57:59.563174+00:00",
+        "last_update": "2026-09-17T23:40:12.704072+00:00",
         "major_event_count": 10,
         "missing_reason": null,
         "news_direction": "risk_off",
@@ -86174,7 +86170,7 @@
             ],
             "event_type": "oil_shock_relief",
             "expected_market_direction": "risk_on",
-            "headline": "Oil falls 1% as investors watch Middle East supply disruptions - reuters.com",
+            "headline": "Oil falls 1% as investors watch Middle East supply disruptions - Reuters",
             "importance_score": 92,
             "published_at": "2026-09-17T01:00:00+00:00",
             "source": "Reuters"
@@ -86184,7 +86180,7 @@
             "detected_event_conditions": [],
             "event_type": "market_microstructure_event",
             "expected_market_direction": "mixed",
-            "headline": "Turkey approves liquidation of US-sanctioned Golden Global's funds - reuters.com",
+            "headline": "Turkey approves liquidation of US-sanctioned Golden Global's funds - Reuters",
             "importance_score": 68,
             "published_at": "2026-09-17T04:22:00+00:00",
             "source": "Reuters"
@@ -86205,7 +86201,7 @@
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_market_direction": "risk_off",
-            "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+            "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
             "importance_score": 100,
             "published_at": "2026-09-17T20:05:38+00:00",
             "source": "Reuters"
@@ -86229,7 +86225,7 @@
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_market_direction": "risk_off",
-            "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - reuters.com",
+            "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - Reuters",
             "importance_score": 100,
             "published_at": "2026-09-17T15:41:00+00:00",
             "source": "Reuters"
@@ -86253,21 +86249,21 @@
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_market_direction": "risk_off",
-            "headline": "Yemenis take to boats to flee as Middle East war spreads - reuters.com",
+            "headline": "Asian LNG demand set to fall for second year as war shrinks supply - Reuters",
             "importance_score": 100,
-            "published_at": "2026-09-17T04:23:00+00:00",
+            "published_at": "2026-09-17T04:29:00+00:00",
             "source": "Reuters"
           },
           {
-            "confidence": "medium",
+            "confidence": "high",
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_market_direction": "risk_off",
-            "headline": "Trump says 'hopefully we are towards end' of Iran war - reuters.com",
+            "headline": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
             "importance_score": 100,
-            "published_at": "2026-09-16T23:54:00+00:00",
+            "published_at": "2026-09-17T04:23:00+00:00",
             "source": "Reuters"
           }
         ]
@@ -86417,7 +86413,7 @@
       "price_reaction_confirmation": {
         "asset_reaction_summary": {
           "avg_equity_1d_return": 0.01,
-          "avg_equity_futures_1d_return": 0.0167,
+          "avg_equity_futures_1d_return": 0.0169,
           "confirmed_checks": [
             "HYG/LQD 走弱"
           ],
@@ -86433,7 +86429,7 @@
             "美元走强"
           ],
           "hyg_lqd_1d_relative_return": -0.003,
-          "oil_proxy_1d_return": -0.0087,
+          "oil_proxy_1d_return": -0.0093,
           "oil_proxy_symbols_used": [
             "USO",
             "CL=F"
@@ -87933,11 +87929,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.35,
             "top_headlines": [
-              "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - reuters.com",
-              "US allies fret over how Trump might play his Taiwan hand with Xi - reuters.com",
-              "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
-              "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it",
-              "Iranian delegation will be able to attend UN General Assembly, US says - reuters.com"
+              "US to allow Iranian leaders to attend UN General Assembly - Reuters",
+              "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - Reuters",
+              "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
+              "JP Morgan says it has no clear oil market endgame as Iran conflict drags on - Reuters",
+              "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it"
             ]
           },
           "price": {
@@ -88856,15 +88852,15 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 80,
+              "confidence_score": 79,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 93,
-              "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+              "freshness_score": 91,
+              "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
@@ -88890,7 +88886,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 85,
               "headline": "Stephen Curry says his Li-Ning signature shoe will debut early next year",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -88917,8 +88913,8 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 83,
-              "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - reuters.com",
+              "freshness_score": 81,
+              "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
@@ -88944,7 +88940,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 74,
               "headline": "Lockheed Martin reveals new secret missile, fast tracks production - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -88971,12 +88967,12 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 55,
-              "headline": "Yemenis take to boats to flee as Middle East war spreads - reuters.com",
+              "freshness_score": 54,
+              "headline": "Asian LNG demand set to fall for second year as war shrinks supply - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-09-17T04:23:00+00:00",
+              "published_at": "2026-09-17T04:29:00+00:00",
               "source": "Reuters"
             },
             {
@@ -88990,20 +88986,20 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "medium",
-              "confidence_score": 68,
+              "confidence": "high",
+              "confidence_score": 88,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 45,
-              "headline": "Trump says 'hopefully we are towards end' of Iran war - reuters.com",
+              "freshness_score": 54,
+              "headline": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-09-16T23:54:00+00:00",
+              "published_at": "2026-09-17T04:23:00+00:00",
               "source": "Reuters"
             }
           ],
@@ -89036,7 +89032,7 @@
                 ],
                 "event_type": "oil_shock_relief",
                 "expected_market_direction": "risk_on",
-                "headline": "Oil falls 1% as investors watch Middle East supply disruptions - reuters.com",
+                "headline": "Oil falls 1% as investors watch Middle East supply disruptions - Reuters",
                 "importance_score": 92,
                 "published_at": "2026-09-17T01:00:00+00:00",
                 "source": "Reuters"
@@ -89046,7 +89042,7 @@
                 "detected_event_conditions": [],
                 "event_type": "market_microstructure_event",
                 "expected_market_direction": "mixed",
-                "headline": "Turkey approves liquidation of US-sanctioned Golden Global's funds - reuters.com",
+                "headline": "Turkey approves liquidation of US-sanctioned Golden Global's funds - Reuters",
                 "importance_score": 68,
                 "published_at": "2026-09-17T04:22:00+00:00",
                 "source": "Reuters"
@@ -89067,7 +89063,7 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+                "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-09-17T20:05:38+00:00",
                 "source": "Reuters"
@@ -89091,7 +89087,7 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - reuters.com",
+                "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-09-17T15:41:00+00:00",
                 "source": "Reuters"
@@ -89115,21 +89111,21 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "Yemenis take to boats to flee as Middle East war spreads - reuters.com",
+                "headline": "Asian LNG demand set to fall for second year as war shrinks supply - Reuters",
                 "importance_score": 100,
-                "published_at": "2026-09-17T04:23:00+00:00",
+                "published_at": "2026-09-17T04:29:00+00:00",
                 "source": "Reuters"
               },
               {
-                "confidence": "medium",
+                "confidence": "high",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "Trump says 'hopefully we are towards end' of Iran war - reuters.com",
+                "headline": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
                 "importance_score": 100,
-                "published_at": "2026-09-16T23:54:00+00:00",
+                "published_at": "2026-09-17T04:23:00+00:00",
                 "source": "Reuters"
               }
             ]
@@ -89170,7 +89166,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.01,
-              "avg_equity_futures_1d_return": 0.0167,
+              "avg_equity_futures_1d_return": 0.0169,
               "confirmed_checks": [
                 "HYG/LQD 走弱"
               ],
@@ -89186,7 +89182,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.003,
-              "oil_proxy_1d_return": -0.0087,
+              "oil_proxy_1d_return": -0.0093,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -90445,11 +90441,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.35,
             "top_headlines": [
-              "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - reuters.com",
-              "US allies fret over how Trump might play his Taiwan hand with Xi - reuters.com",
-              "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
-              "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it",
-              "Iranian delegation will be able to attend UN General Assembly, US says - reuters.com"
+              "US to allow Iranian leaders to attend UN General Assembly - Reuters",
+              "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - Reuters",
+              "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
+              "JP Morgan says it has no clear oil market endgame as Iran conflict drags on - Reuters",
+              "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it"
             ]
           },
           "price": {
@@ -91402,15 +91398,15 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 80,
+              "confidence_score": 79,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 93,
-              "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+              "freshness_score": 91,
+              "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
@@ -91436,7 +91432,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 85,
               "headline": "Stephen Curry says his Li-Ning signature shoe will debut early next year",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -91463,8 +91459,8 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 83,
-              "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - reuters.com",
+              "freshness_score": 81,
+              "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
@@ -91490,7 +91486,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 74,
               "headline": "Lockheed Martin reveals new secret missile, fast tracks production - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -91517,12 +91513,12 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 55,
-              "headline": "Yemenis take to boats to flee as Middle East war spreads - reuters.com",
+              "freshness_score": 54,
+              "headline": "Asian LNG demand set to fall for second year as war shrinks supply - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-09-17T04:23:00+00:00",
+              "published_at": "2026-09-17T04:29:00+00:00",
               "source": "Reuters"
             },
             {
@@ -91536,20 +91532,20 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "medium",
-              "confidence_score": 68,
+              "confidence": "high",
+              "confidence_score": 88,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 45,
-              "headline": "Trump says 'hopefully we are towards end' of Iran war - reuters.com",
+              "freshness_score": 54,
+              "headline": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-09-16T23:54:00+00:00",
+              "published_at": "2026-09-17T04:23:00+00:00",
               "source": "Reuters"
             }
           ],
@@ -91582,7 +91578,7 @@
                 ],
                 "event_type": "oil_shock_relief",
                 "expected_market_direction": "risk_on",
-                "headline": "Oil falls 1% as investors watch Middle East supply disruptions - reuters.com",
+                "headline": "Oil falls 1% as investors watch Middle East supply disruptions - Reuters",
                 "importance_score": 92,
                 "published_at": "2026-09-17T01:00:00+00:00",
                 "source": "Reuters"
@@ -91592,7 +91588,7 @@
                 "detected_event_conditions": [],
                 "event_type": "market_microstructure_event",
                 "expected_market_direction": "mixed",
-                "headline": "Turkey approves liquidation of US-sanctioned Golden Global's funds - reuters.com",
+                "headline": "Turkey approves liquidation of US-sanctioned Golden Global's funds - Reuters",
                 "importance_score": 68,
                 "published_at": "2026-09-17T04:22:00+00:00",
                 "source": "Reuters"
@@ -91613,7 +91609,7 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+                "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-09-17T20:05:38+00:00",
                 "source": "Reuters"
@@ -91637,7 +91633,7 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - reuters.com",
+                "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-09-17T15:41:00+00:00",
                 "source": "Reuters"
@@ -91661,21 +91657,21 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "Yemenis take to boats to flee as Middle East war spreads - reuters.com",
+                "headline": "Asian LNG demand set to fall for second year as war shrinks supply - Reuters",
                 "importance_score": 100,
-                "published_at": "2026-09-17T04:23:00+00:00",
+                "published_at": "2026-09-17T04:29:00+00:00",
                 "source": "Reuters"
               },
               {
-                "confidence": "medium",
+                "confidence": "high",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "Trump says 'hopefully we are towards end' of Iran war - reuters.com",
+                "headline": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
                 "importance_score": 100,
-                "published_at": "2026-09-16T23:54:00+00:00",
+                "published_at": "2026-09-17T04:23:00+00:00",
                 "source": "Reuters"
               }
             ]
@@ -91716,7 +91712,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.01,
-              "avg_equity_futures_1d_return": 0.0167,
+              "avg_equity_futures_1d_return": 0.0169,
               "confirmed_checks": [
                 "HYG/LQD 走弱"
               ],
@@ -91732,7 +91728,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.003,
-              "oil_proxy_1d_return": -0.0087,
+              "oil_proxy_1d_return": -0.0093,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -93023,11 +93019,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.35,
             "top_headlines": [
-              "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - reuters.com",
-              "US allies fret over how Trump might play his Taiwan hand with Xi - reuters.com",
-              "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
-              "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it",
-              "Iranian delegation will be able to attend UN General Assembly, US says - reuters.com"
+              "US to allow Iranian leaders to attend UN General Assembly - Reuters",
+              "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - Reuters",
+              "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
+              "JP Morgan says it has no clear oil market endgame as Iran conflict drags on - Reuters",
+              "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it"
             ]
           },
           "price": {
@@ -93957,15 +93953,15 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 80,
+              "confidence_score": 79,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 93,
-              "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+              "freshness_score": 91,
+              "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
@@ -93991,7 +93987,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 85,
               "headline": "Stephen Curry says his Li-Ning signature shoe will debut early next year",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -94018,8 +94014,8 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 83,
-              "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - reuters.com",
+              "freshness_score": 81,
+              "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
@@ -94045,7 +94041,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 74,
               "headline": "Lockheed Martin reveals new secret missile, fast tracks production - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -94072,12 +94068,12 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 55,
-              "headline": "Yemenis take to boats to flee as Middle East war spreads - reuters.com",
+              "freshness_score": 54,
+              "headline": "Asian LNG demand set to fall for second year as war shrinks supply - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-09-17T04:23:00+00:00",
+              "published_at": "2026-09-17T04:29:00+00:00",
               "source": "Reuters"
             },
             {
@@ -94091,20 +94087,20 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "medium",
-              "confidence_score": 68,
+              "confidence": "high",
+              "confidence_score": 88,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 45,
-              "headline": "Trump says 'hopefully we are towards end' of Iran war - reuters.com",
+              "freshness_score": 54,
+              "headline": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-09-16T23:54:00+00:00",
+              "published_at": "2026-09-17T04:23:00+00:00",
               "source": "Reuters"
             }
           ],
@@ -94137,7 +94133,7 @@
                 ],
                 "event_type": "oil_shock_relief",
                 "expected_market_direction": "risk_on",
-                "headline": "Oil falls 1% as investors watch Middle East supply disruptions - reuters.com",
+                "headline": "Oil falls 1% as investors watch Middle East supply disruptions - Reuters",
                 "importance_score": 92,
                 "published_at": "2026-09-17T01:00:00+00:00",
                 "source": "Reuters"
@@ -94147,7 +94143,7 @@
                 "detected_event_conditions": [],
                 "event_type": "market_microstructure_event",
                 "expected_market_direction": "mixed",
-                "headline": "Turkey approves liquidation of US-sanctioned Golden Global's funds - reuters.com",
+                "headline": "Turkey approves liquidation of US-sanctioned Golden Global's funds - Reuters",
                 "importance_score": 68,
                 "published_at": "2026-09-17T04:22:00+00:00",
                 "source": "Reuters"
@@ -94168,7 +94164,7 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+                "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-09-17T20:05:38+00:00",
                 "source": "Reuters"
@@ -94192,7 +94188,7 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - reuters.com",
+                "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-09-17T15:41:00+00:00",
                 "source": "Reuters"
@@ -94216,21 +94212,21 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "Yemenis take to boats to flee as Middle East war spreads - reuters.com",
+                "headline": "Asian LNG demand set to fall for second year as war shrinks supply - Reuters",
                 "importance_score": 100,
-                "published_at": "2026-09-17T04:23:00+00:00",
+                "published_at": "2026-09-17T04:29:00+00:00",
                 "source": "Reuters"
               },
               {
-                "confidence": "medium",
+                "confidence": "high",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "Trump says 'hopefully we are towards end' of Iran war - reuters.com",
+                "headline": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
                 "importance_score": 100,
-                "published_at": "2026-09-16T23:54:00+00:00",
+                "published_at": "2026-09-17T04:23:00+00:00",
                 "source": "Reuters"
               }
             ]
@@ -94271,7 +94267,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.01,
-              "avg_equity_futures_1d_return": 0.0167,
+              "avg_equity_futures_1d_return": 0.0169,
               "confirmed_checks": [
                 "HYG/LQD 走弱"
               ],
@@ -94287,7 +94283,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.003,
-              "oil_proxy_1d_return": -0.0087,
+              "oil_proxy_1d_return": -0.0093,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -95487,8 +95483,8 @@
             "ig_oas_20d_change": -0.030000000000000027
           },
           "daily_market_brief": {
-            "brief": "Finnhub quote unavailable; news risk 35%; macro event risk flagged; rates pressure 32%.",
-            "finnhub_quote_available": false,
+            "brief": "Finnhub quote 762.60; news risk 35%; macro event risk flagged; rates pressure 32%.",
+            "finnhub_quote_available": true,
             "macro_event_risk_flag": true,
             "news_risk_score": 0.35,
             "rates_pressure_score": 0.3196391341481869,
@@ -95497,11 +95493,11 @@
           "finnhub": {
             "candle_status": "failed",
             "news_sentiment_status": "failed",
-            "quote_change_percent": null,
-            "quote_previous_close": null,
-            "quote_price": null,
+            "quote_change_percent": 1.1339,
+            "quote_previous_close": 754.05,
+            "quote_price": 762.6,
             "quote_source": "finnhub",
-            "quote_status": "rate_limited",
+            "quote_status": "available",
             "sentiment_score": null
           },
           "flow_positioning_proxy": {
@@ -95559,11 +95555,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.35,
             "top_headlines": [
-              "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - reuters.com",
-              "US allies fret over how Trump might play his Taiwan hand with Xi - reuters.com",
-              "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
-              "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it",
-              "Iranian delegation will be able to attend UN General Assembly, US says - reuters.com"
+              "US to allow Iranian leaders to attend UN General Assembly - Reuters",
+              "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - Reuters",
+              "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
+              "JP Morgan says it has no clear oil market endgame as Iran conflict drags on - Reuters",
+              "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it"
             ]
           },
           "price": {
@@ -96476,15 +96472,15 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 80,
+              "confidence_score": 79,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 93,
-              "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+              "freshness_score": 91,
+              "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
@@ -96510,7 +96506,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 85,
               "headline": "Stephen Curry says his Li-Ning signature shoe will debut early next year",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -96537,8 +96533,8 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 83,
-              "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - reuters.com",
+              "freshness_score": 81,
+              "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
@@ -96564,7 +96560,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 74,
               "headline": "Lockheed Martin reveals new secret missile, fast tracks production - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -96591,12 +96587,12 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 55,
-              "headline": "Yemenis take to boats to flee as Middle East war spreads - reuters.com",
+              "freshness_score": 54,
+              "headline": "Asian LNG demand set to fall for second year as war shrinks supply - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-09-17T04:23:00+00:00",
+              "published_at": "2026-09-17T04:29:00+00:00",
               "source": "Reuters"
             },
             {
@@ -96610,20 +96606,20 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "medium",
-              "confidence_score": 68,
+              "confidence": "high",
+              "confidence_score": 88,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 45,
-              "headline": "Trump says 'hopefully we are towards end' of Iran war - reuters.com",
+              "freshness_score": 54,
+              "headline": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-09-16T23:54:00+00:00",
+              "published_at": "2026-09-17T04:23:00+00:00",
               "source": "Reuters"
             }
           ],
@@ -96656,7 +96652,7 @@
                 ],
                 "event_type": "oil_shock_relief",
                 "expected_market_direction": "risk_on",
-                "headline": "Oil falls 1% as investors watch Middle East supply disruptions - reuters.com",
+                "headline": "Oil falls 1% as investors watch Middle East supply disruptions - Reuters",
                 "importance_score": 92,
                 "published_at": "2026-09-17T01:00:00+00:00",
                 "source": "Reuters"
@@ -96666,7 +96662,7 @@
                 "detected_event_conditions": [],
                 "event_type": "market_microstructure_event",
                 "expected_market_direction": "mixed",
-                "headline": "Turkey approves liquidation of US-sanctioned Golden Global's funds - reuters.com",
+                "headline": "Turkey approves liquidation of US-sanctioned Golden Global's funds - Reuters",
                 "importance_score": 68,
                 "published_at": "2026-09-17T04:22:00+00:00",
                 "source": "Reuters"
@@ -96687,7 +96683,7 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+                "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-09-17T20:05:38+00:00",
                 "source": "Reuters"
@@ -96711,7 +96707,7 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - reuters.com",
+                "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-09-17T15:41:00+00:00",
                 "source": "Reuters"
@@ -96735,21 +96731,21 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "Yemenis take to boats to flee as Middle East war spreads - reuters.com",
+                "headline": "Asian LNG demand set to fall for second year as war shrinks supply - Reuters",
                 "importance_score": 100,
-                "published_at": "2026-09-17T04:23:00+00:00",
+                "published_at": "2026-09-17T04:29:00+00:00",
                 "source": "Reuters"
               },
               {
-                "confidence": "medium",
+                "confidence": "high",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "Trump says 'hopefully we are towards end' of Iran war - reuters.com",
+                "headline": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
                 "importance_score": 100,
-                "published_at": "2026-09-16T23:54:00+00:00",
+                "published_at": "2026-09-17T04:23:00+00:00",
                 "source": "Reuters"
               }
             ]
@@ -96790,7 +96786,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.01,
-              "avg_equity_futures_1d_return": 0.0167,
+              "avg_equity_futures_1d_return": 0.0169,
               "confirmed_checks": [
                 "HYG/LQD 走弱"
               ],
@@ -96806,7 +96802,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.003,
-              "oil_proxy_1d_return": -0.0087,
+              "oil_proxy_1d_return": -0.0093,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -97671,7 +97667,7 @@
   },
   "price_volume_structure": {
     "disclaimer": "K线和成交量结构只用于预测确认，不是交易信号、买卖建议或仓位建议。",
-    "generated_at": "2026-09-17T22:58:08.846996+00:00",
+    "generated_at": "2026-09-17T23:40:24.520997+00:00",
     "summary": {
       "average_price_structure_score": 53.0,
       "average_volume_confirmation_score": 40.5,
@@ -98455,10 +98451,10 @@
       "can_append_forecast_record": true,
       "can_backfill_completed_outcomes": true,
       "current_date": "2026-09-17",
-      "current_time_us_eastern": "2026-09-17T18:58:08.852513-04:00",
+      "current_time_us_eastern": "2026-09-17T19:40:24.525681-04:00",
       "data_freshness_status": "fresh",
       "expected_latest_trading_date": "2026-09-17",
-      "generated_at": "2026-09-17T22:58:08.852513+00:00",
+      "generated_at": "2026-09-17T23:40:24.525681+00:00",
       "guardrails": [
         "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
         "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -99197,13 +99193,13 @@
         "finnhub_quote_SPY": {
           "fallback_used": false,
           "latest_date": null,
-          "missing_data": true,
-          "point_in_time_safe": false,
-          "real_data": false,
-          "rows": 0,
+          "missing_data": false,
+          "point_in_time_safe": true,
+          "real_data": true,
+          "rows": 1,
           "source": "finnhub",
-          "stale_data": false,
-          "status": "rate_limited",
+          "stale_data": true,
+          "status": "stale",
           "symbol": "finnhub_quote_SPY"
         },
         "finnhub_rates_data": {
@@ -99419,7 +99415,7 @@
       "fallback_used": true,
       "finnhub_available": true,
       "finnhub_missing": false,
-      "finnhub_rate_limited": true,
+      "finnhub_rate_limited": false,
       "flow_available": true,
       "flow_provider_status": "proxy",
       "flow_proxy_only": true,
@@ -99497,15 +99493,15 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
+        "IG_OAS",
+        "DGS2",
         "HY_OAS",
         "DGS10",
-        "DGS2",
-        "DFII10",
-        "IG_OAS",
         "BAA_SPREAD",
         "DGS3MO",
         "FINANCIAL_STRESS",
-        "RECESSION"
+        "RECESSION",
+        "DFII10"
       ],
       "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-09-17。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
       "gamma_available": false,
@@ -99515,7 +99511,6 @@
       "latest_market_date": "2026-09-17",
       "missing_data": true,
       "missing_key_sources": [
-        "finnhub_quote_SPY",
         "finnhub_candle_SPY",
         "finnhub_candle_QQQ",
         "finnhub_candle_IWM",
@@ -99537,10 +99532,10 @@
       ],
       "news_event": {
         "available": true,
-        "event_detection_confidence": 72,
+        "event_detection_confidence": 74,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-09-17T22:57:59.563174+00:00",
+        "last_update": "2026-09-17T23:40:12.704072+00:00",
         "major_event_count": 10,
         "missing_reason": null,
         "news_direction": "risk_off",
@@ -99632,7 +99627,7 @@
             ],
             "event_type": "oil_shock_relief",
             "expected_market_direction": "risk_on",
-            "headline": "Oil falls 1% as investors watch Middle East supply disruptions - reuters.com",
+            "headline": "Oil falls 1% as investors watch Middle East supply disruptions - Reuters",
             "importance_score": 92,
             "published_at": "2026-09-17T01:00:00+00:00",
             "source": "Reuters"
@@ -99642,7 +99637,7 @@
             "detected_event_conditions": [],
             "event_type": "market_microstructure_event",
             "expected_market_direction": "mixed",
-            "headline": "Turkey approves liquidation of US-sanctioned Golden Global's funds - reuters.com",
+            "headline": "Turkey approves liquidation of US-sanctioned Golden Global's funds - Reuters",
             "importance_score": 68,
             "published_at": "2026-09-17T04:22:00+00:00",
             "source": "Reuters"
@@ -99663,7 +99658,7 @@
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_market_direction": "risk_off",
-            "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+            "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
             "importance_score": 100,
             "published_at": "2026-09-17T20:05:38+00:00",
             "source": "Reuters"
@@ -99687,7 +99682,7 @@
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_market_direction": "risk_off",
-            "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - reuters.com",
+            "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - Reuters",
             "importance_score": 100,
             "published_at": "2026-09-17T15:41:00+00:00",
             "source": "Reuters"
@@ -99711,21 +99706,21 @@
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_market_direction": "risk_off",
-            "headline": "Yemenis take to boats to flee as Middle East war spreads - reuters.com",
+            "headline": "Asian LNG demand set to fall for second year as war shrinks supply - Reuters",
             "importance_score": 100,
-            "published_at": "2026-09-17T04:23:00+00:00",
+            "published_at": "2026-09-17T04:29:00+00:00",
             "source": "Reuters"
           },
           {
-            "confidence": "medium",
+            "confidence": "high",
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_market_direction": "risk_off",
-            "headline": "Trump says 'hopefully we are towards end' of Iran war - reuters.com",
+            "headline": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
             "importance_score": 100,
-            "published_at": "2026-09-16T23:54:00+00:00",
+            "published_at": "2026-09-17T04:23:00+00:00",
             "source": "Reuters"
           }
         ]
@@ -99875,7 +99870,7 @@
       "price_reaction_confirmation": {
         "asset_reaction_summary": {
           "avg_equity_1d_return": 0.01,
-          "avg_equity_futures_1d_return": 0.0167,
+          "avg_equity_futures_1d_return": 0.0169,
           "confirmed_checks": [
             "HYG/LQD 走弱"
           ],
@@ -99891,7 +99886,7 @@
             "美元走强"
           ],
           "hyg_lqd_1d_relative_return": -0.003,
-          "oil_proxy_1d_return": -0.0087,
+          "oil_proxy_1d_return": -0.0093,
           "oil_proxy_symbols_used": [
             "USO",
             "CL=F"
@@ -100765,11 +100760,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.35,
             "top_headlines": [
-              "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - reuters.com",
-              "US allies fret over how Trump might play his Taiwan hand with Xi - reuters.com",
-              "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
-              "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it",
-              "Iranian delegation will be able to attend UN General Assembly, US says - reuters.com"
+              "US to allow Iranian leaders to attend UN General Assembly - Reuters",
+              "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - Reuters",
+              "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
+              "JP Morgan says it has no clear oil market endgame as Iran conflict drags on - Reuters",
+              "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it"
             ]
           },
           "price": {
@@ -102136,15 +102131,15 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 80,
+              "confidence_score": 79,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 93,
-              "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+              "freshness_score": 91,
+              "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
@@ -102170,7 +102165,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 85,
               "headline": "Stephen Curry says his Li-Ning signature shoe will debut early next year",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -102197,8 +102192,8 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 83,
-              "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - reuters.com",
+              "freshness_score": 81,
+              "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
@@ -102224,7 +102219,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 74,
               "headline": "Lockheed Martin reveals new secret missile, fast tracks production - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -102251,12 +102246,12 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 55,
-              "headline": "Yemenis take to boats to flee as Middle East war spreads - reuters.com",
+              "freshness_score": 54,
+              "headline": "Asian LNG demand set to fall for second year as war shrinks supply - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-09-17T04:23:00+00:00",
+              "published_at": "2026-09-17T04:29:00+00:00",
               "source": "Reuters"
             },
             {
@@ -102270,20 +102265,20 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "medium",
-              "confidence_score": 68,
+              "confidence": "high",
+              "confidence_score": 88,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 45,
-              "headline": "Trump says 'hopefully we are towards end' of Iran war - reuters.com",
+              "freshness_score": 54,
+              "headline": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-09-16T23:54:00+00:00",
+              "published_at": "2026-09-17T04:23:00+00:00",
               "source": "Reuters"
             }
           ],
@@ -102316,7 +102311,7 @@
                 ],
                 "event_type": "oil_shock_relief",
                 "expected_market_direction": "risk_on",
-                "headline": "Oil falls 1% as investors watch Middle East supply disruptions - reuters.com",
+                "headline": "Oil falls 1% as investors watch Middle East supply disruptions - Reuters",
                 "importance_score": 92,
                 "published_at": "2026-09-17T01:00:00+00:00",
                 "source": "Reuters"
@@ -102326,7 +102321,7 @@
                 "detected_event_conditions": [],
                 "event_type": "market_microstructure_event",
                 "expected_market_direction": "mixed",
-                "headline": "Turkey approves liquidation of US-sanctioned Golden Global's funds - reuters.com",
+                "headline": "Turkey approves liquidation of US-sanctioned Golden Global's funds - Reuters",
                 "importance_score": 68,
                 "published_at": "2026-09-17T04:22:00+00:00",
                 "source": "Reuters"
@@ -102347,7 +102342,7 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+                "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-09-17T20:05:38+00:00",
                 "source": "Reuters"
@@ -102371,7 +102366,7 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - reuters.com",
+                "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-09-17T15:41:00+00:00",
                 "source": "Reuters"
@@ -102395,21 +102390,21 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "Yemenis take to boats to flee as Middle East war spreads - reuters.com",
+                "headline": "Asian LNG demand set to fall for second year as war shrinks supply - Reuters",
                 "importance_score": 100,
-                "published_at": "2026-09-17T04:23:00+00:00",
+                "published_at": "2026-09-17T04:29:00+00:00",
                 "source": "Reuters"
               },
               {
-                "confidence": "medium",
+                "confidence": "high",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "Trump says 'hopefully we are towards end' of Iran war - reuters.com",
+                "headline": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
                 "importance_score": 100,
-                "published_at": "2026-09-16T23:54:00+00:00",
+                "published_at": "2026-09-17T04:23:00+00:00",
                 "source": "Reuters"
               }
             ]
@@ -102450,7 +102445,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.01,
-              "avg_equity_futures_1d_return": 0.0167,
+              "avg_equity_futures_1d_return": 0.0169,
               "confirmed_checks": [
                 "HYG/LQD 走弱"
               ],
@@ -102466,7 +102461,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.003,
-              "oil_proxy_1d_return": -0.0087,
+              "oil_proxy_1d_return": -0.0093,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -104949,11 +104944,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.35,
             "top_headlines": [
-              "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - reuters.com",
-              "US allies fret over how Trump might play his Taiwan hand with Xi - reuters.com",
-              "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
-              "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it",
-              "Iranian delegation will be able to attend UN General Assembly, US says - reuters.com"
+              "US to allow Iranian leaders to attend UN General Assembly - Reuters",
+              "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - Reuters",
+              "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
+              "JP Morgan says it has no clear oil market endgame as Iran conflict drags on - Reuters",
+              "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it"
             ]
           },
           "price": {
@@ -106354,15 +106349,15 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 80,
+              "confidence_score": 79,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 93,
-              "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+              "freshness_score": 91,
+              "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
@@ -106388,7 +106383,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 85,
               "headline": "Stephen Curry says his Li-Ning signature shoe will debut early next year",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -106415,8 +106410,8 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 83,
-              "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - reuters.com",
+              "freshness_score": 81,
+              "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
@@ -106442,7 +106437,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 74,
               "headline": "Lockheed Martin reveals new secret missile, fast tracks production - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -106469,12 +106464,12 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 55,
-              "headline": "Yemenis take to boats to flee as Middle East war spreads - reuters.com",
+              "freshness_score": 54,
+              "headline": "Asian LNG demand set to fall for second year as war shrinks supply - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-09-17T04:23:00+00:00",
+              "published_at": "2026-09-17T04:29:00+00:00",
               "source": "Reuters"
             },
             {
@@ -106488,20 +106483,20 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "medium",
-              "confidence_score": 68,
+              "confidence": "high",
+              "confidence_score": 88,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 45,
-              "headline": "Trump says 'hopefully we are towards end' of Iran war - reuters.com",
+              "freshness_score": 54,
+              "headline": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-09-16T23:54:00+00:00",
+              "published_at": "2026-09-17T04:23:00+00:00",
               "source": "Reuters"
             }
           ],
@@ -106534,7 +106529,7 @@
                 ],
                 "event_type": "oil_shock_relief",
                 "expected_market_direction": "risk_on",
-                "headline": "Oil falls 1% as investors watch Middle East supply disruptions - reuters.com",
+                "headline": "Oil falls 1% as investors watch Middle East supply disruptions - Reuters",
                 "importance_score": 92,
                 "published_at": "2026-09-17T01:00:00+00:00",
                 "source": "Reuters"
@@ -106544,7 +106539,7 @@
                 "detected_event_conditions": [],
                 "event_type": "market_microstructure_event",
                 "expected_market_direction": "mixed",
-                "headline": "Turkey approves liquidation of US-sanctioned Golden Global's funds - reuters.com",
+                "headline": "Turkey approves liquidation of US-sanctioned Golden Global's funds - Reuters",
                 "importance_score": 68,
                 "published_at": "2026-09-17T04:22:00+00:00",
                 "source": "Reuters"
@@ -106565,7 +106560,7 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+                "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-09-17T20:05:38+00:00",
                 "source": "Reuters"
@@ -106589,7 +106584,7 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - reuters.com",
+                "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-09-17T15:41:00+00:00",
                 "source": "Reuters"
@@ -106613,21 +106608,21 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "Yemenis take to boats to flee as Middle East war spreads - reuters.com",
+                "headline": "Asian LNG demand set to fall for second year as war shrinks supply - Reuters",
                 "importance_score": 100,
-                "published_at": "2026-09-17T04:23:00+00:00",
+                "published_at": "2026-09-17T04:29:00+00:00",
                 "source": "Reuters"
               },
               {
-                "confidence": "medium",
+                "confidence": "high",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "Trump says 'hopefully we are towards end' of Iran war - reuters.com",
+                "headline": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
                 "importance_score": 100,
-                "published_at": "2026-09-16T23:54:00+00:00",
+                "published_at": "2026-09-17T04:23:00+00:00",
                 "source": "Reuters"
               }
             ]
@@ -106668,7 +106663,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.01,
-              "avg_equity_futures_1d_return": 0.0167,
+              "avg_equity_futures_1d_return": 0.0169,
               "confirmed_checks": [
                 "HYG/LQD 走弱"
               ],
@@ -106684,7 +106679,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.003,
-              "oil_proxy_1d_return": -0.0087,
+              "oil_proxy_1d_return": -0.0093,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -109200,11 +109195,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.35,
             "top_headlines": [
-              "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - reuters.com",
-              "US allies fret over how Trump might play his Taiwan hand with Xi - reuters.com",
-              "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
-              "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it",
-              "Iranian delegation will be able to attend UN General Assembly, US says - reuters.com"
+              "US to allow Iranian leaders to attend UN General Assembly - Reuters",
+              "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - Reuters",
+              "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
+              "JP Morgan says it has no clear oil market endgame as Iran conflict drags on - Reuters",
+              "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it"
             ]
           },
           "price": {
@@ -110582,15 +110577,15 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 80,
+              "confidence_score": 79,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 93,
-              "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+              "freshness_score": 91,
+              "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
@@ -110616,7 +110611,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 85,
               "headline": "Stephen Curry says his Li-Ning signature shoe will debut early next year",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -110643,8 +110638,8 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 83,
-              "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - reuters.com",
+              "freshness_score": 81,
+              "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
@@ -110670,7 +110665,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 74,
               "headline": "Lockheed Martin reveals new secret missile, fast tracks production - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -110697,12 +110692,12 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 55,
-              "headline": "Yemenis take to boats to flee as Middle East war spreads - reuters.com",
+              "freshness_score": 54,
+              "headline": "Asian LNG demand set to fall for second year as war shrinks supply - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-09-17T04:23:00+00:00",
+              "published_at": "2026-09-17T04:29:00+00:00",
               "source": "Reuters"
             },
             {
@@ -110716,20 +110711,20 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "medium",
-              "confidence_score": 68,
+              "confidence": "high",
+              "confidence_score": 88,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 45,
-              "headline": "Trump says 'hopefully we are towards end' of Iran war - reuters.com",
+              "freshness_score": 54,
+              "headline": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-09-16T23:54:00+00:00",
+              "published_at": "2026-09-17T04:23:00+00:00",
               "source": "Reuters"
             }
           ],
@@ -110762,7 +110757,7 @@
                 ],
                 "event_type": "oil_shock_relief",
                 "expected_market_direction": "risk_on",
-                "headline": "Oil falls 1% as investors watch Middle East supply disruptions - reuters.com",
+                "headline": "Oil falls 1% as investors watch Middle East supply disruptions - Reuters",
                 "importance_score": 92,
                 "published_at": "2026-09-17T01:00:00+00:00",
                 "source": "Reuters"
@@ -110772,7 +110767,7 @@
                 "detected_event_conditions": [],
                 "event_type": "market_microstructure_event",
                 "expected_market_direction": "mixed",
-                "headline": "Turkey approves liquidation of US-sanctioned Golden Global's funds - reuters.com",
+                "headline": "Turkey approves liquidation of US-sanctioned Golden Global's funds - Reuters",
                 "importance_score": 68,
                 "published_at": "2026-09-17T04:22:00+00:00",
                 "source": "Reuters"
@@ -110793,7 +110788,7 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+                "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-09-17T20:05:38+00:00",
                 "source": "Reuters"
@@ -110817,7 +110812,7 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - reuters.com",
+                "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-09-17T15:41:00+00:00",
                 "source": "Reuters"
@@ -110841,21 +110836,21 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "Yemenis take to boats to flee as Middle East war spreads - reuters.com",
+                "headline": "Asian LNG demand set to fall for second year as war shrinks supply - Reuters",
                 "importance_score": 100,
-                "published_at": "2026-09-17T04:23:00+00:00",
+                "published_at": "2026-09-17T04:29:00+00:00",
                 "source": "Reuters"
               },
               {
-                "confidence": "medium",
+                "confidence": "high",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "Trump says 'hopefully we are towards end' of Iran war - reuters.com",
+                "headline": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
                 "importance_score": 100,
-                "published_at": "2026-09-16T23:54:00+00:00",
+                "published_at": "2026-09-17T04:23:00+00:00",
                 "source": "Reuters"
               }
             ]
@@ -110896,7 +110891,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.01,
-              "avg_equity_futures_1d_return": 0.0167,
+              "avg_equity_futures_1d_return": 0.0169,
               "confirmed_checks": [
                 "HYG/LQD 走弱"
               ],
@@ -110912,7 +110907,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.003,
-              "oil_proxy_1d_return": -0.0087,
+              "oil_proxy_1d_return": -0.0093,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -113336,8 +113331,8 @@
             "ig_oas_20d_change": -0.030000000000000027
           },
           "daily_market_brief": {
-            "brief": "Finnhub quote unavailable; news risk 35%; macro event risk flagged; rates pressure 32%.",
-            "finnhub_quote_available": false,
+            "brief": "Finnhub quote 762.60; news risk 35%; macro event risk flagged; rates pressure 32%.",
+            "finnhub_quote_available": true,
             "macro_event_risk_flag": true,
             "news_risk_score": 0.35,
             "rates_pressure_score": 0.3196391341481869,
@@ -113346,11 +113341,11 @@
           "finnhub": {
             "candle_status": "failed",
             "news_sentiment_status": "failed",
-            "quote_change_percent": null,
-            "quote_previous_close": null,
-            "quote_price": null,
+            "quote_change_percent": 1.1339,
+            "quote_previous_close": 754.05,
+            "quote_price": 762.6,
             "quote_source": "finnhub",
-            "quote_status": "rate_limited",
+            "quote_status": "available",
             "sentiment_score": null
           },
           "flow_positioning_proxy": {
@@ -113408,11 +113403,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.35,
             "top_headlines": [
-              "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - reuters.com",
-              "US allies fret over how Trump might play his Taiwan hand with Xi - reuters.com",
-              "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
-              "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it",
-              "Iranian delegation will be able to attend UN General Assembly, US says - reuters.com"
+              "US to allow Iranian leaders to attend UN General Assembly - Reuters",
+              "EXCLUSIVE: China presses Iran to help rein in Houthis after Saudi appeal, sources say - Reuters",
+              "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
+              "JP Morgan says it has no clear oil market endgame as Iran conflict drags on - Reuters",
+              "Intel and Micron lead our portfolio higher, and J&J's strengthens our case for owning it"
             ]
           },
           "price": {
@@ -114773,15 +114768,15 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 80,
+              "confidence_score": 79,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 93,
-              "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+              "freshness_score": 91,
+              "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
@@ -114807,7 +114802,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 85,
               "headline": "Stephen Curry says his Li-Ning signature shoe will debut early next year",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -114834,8 +114829,8 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 83,
-              "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - reuters.com",
+              "freshness_score": 81,
+              "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
@@ -114861,7 +114856,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 74,
               "headline": "Lockheed Martin reveals new secret missile, fast tracks production - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -114888,12 +114883,12 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 55,
-              "headline": "Yemenis take to boats to flee as Middle East war spreads - reuters.com",
+              "freshness_score": 54,
+              "headline": "Asian LNG demand set to fall for second year as war shrinks supply - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-09-17T04:23:00+00:00",
+              "published_at": "2026-09-17T04:29:00+00:00",
               "source": "Reuters"
             },
             {
@@ -114907,20 +114902,20 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "medium",
-              "confidence_score": 68,
+              "confidence": "high",
+              "confidence_score": 88,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 45,
-              "headline": "Trump says 'hopefully we are towards end' of Iran war - reuters.com",
+              "freshness_score": 54,
+              "headline": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-09-16T23:54:00+00:00",
+              "published_at": "2026-09-17T04:23:00+00:00",
               "source": "Reuters"
             }
           ],
@@ -114953,7 +114948,7 @@
                 ],
                 "event_type": "oil_shock_relief",
                 "expected_market_direction": "risk_on",
-                "headline": "Oil falls 1% as investors watch Middle East supply disruptions - reuters.com",
+                "headline": "Oil falls 1% as investors watch Middle East supply disruptions - Reuters",
                 "importance_score": 92,
                 "published_at": "2026-09-17T01:00:00+00:00",
                 "source": "Reuters"
@@ -114963,7 +114958,7 @@
                 "detected_event_conditions": [],
                 "event_type": "market_microstructure_event",
                 "expected_market_direction": "mixed",
-                "headline": "Turkey approves liquidation of US-sanctioned Golden Global's funds - reuters.com",
+                "headline": "Turkey approves liquidation of US-sanctioned Golden Global's funds - Reuters",
                 "importance_score": 68,
                 "published_at": "2026-09-17T04:22:00+00:00",
                 "source": "Reuters"
@@ -114984,7 +114979,7 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com",
+                "headline": "Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-09-17T20:05:38+00:00",
                 "source": "Reuters"
@@ -115008,7 +115003,7 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - reuters.com",
+                "headline": "UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-09-17T15:41:00+00:00",
                 "source": "Reuters"
@@ -115032,21 +115027,21 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "Yemenis take to boats to flee as Middle East war spreads - reuters.com",
+                "headline": "Asian LNG demand set to fall for second year as war shrinks supply - Reuters",
                 "importance_score": 100,
-                "published_at": "2026-09-17T04:23:00+00:00",
+                "published_at": "2026-09-17T04:29:00+00:00",
                 "source": "Reuters"
               },
               {
-                "confidence": "medium",
+                "confidence": "high",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "Trump says 'hopefully we are towards end' of Iran war - reuters.com",
+                "headline": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
                 "importance_score": 100,
-                "published_at": "2026-09-16T23:54:00+00:00",
+                "published_at": "2026-09-17T04:23:00+00:00",
                 "source": "Reuters"
               }
             ]
@@ -115087,7 +115082,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.01,
-              "avg_equity_futures_1d_return": 0.0167,
+              "avg_equity_futures_1d_return": 0.0169,
               "confirmed_checks": [
                 "HYG/LQD 走弱"
               ],
@@ -115103,7 +115098,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": -0.003,
-              "oil_proxy_1d_return": -0.0087,
+              "oil_proxy_1d_return": -0.0093,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -117256,7 +117251,7 @@
       },
       "version": "stock_data_provider_v1"
     },
-    "generated_at": "2026-09-17T22:58:10.151524+00:00",
+    "generated_at": "2026-09-17T23:40:25.545107+00:00",
     "guardrails": [
       "This is a probabilistic stock forecast module, not a trading system.",
       "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -117345,7 +117340,7 @@
         },
         "question": "high final_radar_score 是否真的对应更大次日 range？"
       },
-      "generated_at": "2026-09-17T22:58:10.189080+00:00",
+      "generated_at": "2026-09-17T23:40:25.576731+00:00",
       "not_validated_warning": "not_enough_forward_samples",
       "pending_records": 273,
       "risk_score_effectiveness": {
@@ -117529,7 +117524,7 @@
             ],
             "major_company_headline": "Latest News In Energy Transition - Lake Energy Bridges Real-World Assets With Digital Finance",
             "news_count_24h": 2,
-            "news_count_72h": 15,
+            "news_count_72h": 14,
             "news_risk_score": 36.0,
             "news_sentiment": "neutral"
           },
@@ -126239,7 +126234,7 @@
         "top_candidate": "CEG",
         "validation_status": "not_yet_validated"
       },
-      "generated_at": "2026-09-17T22:58:10.177900+00:00",
+      "generated_at": "2026-09-17T23:40:25.567144+00:00",
       "model_version": "stock_baseline_v1",
       "notes": [
         "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -126676,7 +126671,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-09-17T22:58:10.189080+00:00",
+    "generated_at": "2026-09-17T23:40:25.576731+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 273,
     "risk_score_effectiveness": {
@@ -126748,7 +126743,7 @@
       "top_candidate": "CEG",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-09-17T22:58:10.177900+00:00",
+    "generated_at": "2026-09-17T23:40:25.567144+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
