@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-18T00:54:01.612979+00:00`
+- generated_at: `2026-09-18T01:16:30.029816+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `11`
-- event_detection_confidence: `74`
+- major_event_count: `12`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,7 +27,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Impoverished by war in Iran, Afghan migrants return to Taliban rule - reuters.com
+- headline: Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters
 - source: Reuters
 - published_at: `2026-09-17T23:33:52+00:00`
 - importance_score: `100`
@@ -35,7 +35,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - reuters.com
+- headline: UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - Reuters
 - source: Reuters
 - published_at: `2026-09-17T21:20:28+00:00`
 - importance_score: `100`
@@ -43,7 +43,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Ocean container shipping rates could test record highs as Iran war fuel spike drives rise, analysts say - reuters.com
+- headline: Ocean container shipping rates could test record highs as Iran war fuel spike drives rise, analysts say - Reuters
 - source: Reuters
 - published_at: `2026-09-17T20:49:44+00:00`
 - importance_score: `100`
@@ -67,7 +67,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Asian LNG demand set to fall for second year as war shrinks supply - reuters.com
+- headline: Asian LNG demand set to fall for second year as war shrinks supply - Reuters
 - source: Reuters
 - published_at: `2026-09-17T04:29:00+00:00`
 - importance_score: `100`
@@ -75,7 +75,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - reuters.com
+- headline: Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters
 - source: Reuters
 - published_at: `2026-09-17T04:23:00+00:00`
 - importance_score: `100`
@@ -83,11 +83,19 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Trump says 'hopefully we are towards end' of Iran war - reuters.com
+- headline: Trump says 'hopefully we are towards end' of Iran war - Reuters
 - source: Reuters
 - published_at: `2026-09-16T23:54:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Saudi strikes and Houthi attacks widen Middle East war - Reuters
+- source: Reuters
+- published_at: `2026-09-16T23:05:10+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### fed_dovish / risk_on
 
@@ -95,12 +103,4 @@
 - source: CNBC
 - published_at: `2026-09-17T11:31:34+00:00`
 - importance_score: `84`
-- confidence: `medium`
-
-### oil_shock_relief / risk_on
-
-- headline: Oil falls 1% as investors watch Middle East supply disruptions - reuters.com
-- source: Reuters
-- published_at: `2026-09-17T01:00:00+00:00`
-- importance_score: `91`
 - confidence: `medium`
