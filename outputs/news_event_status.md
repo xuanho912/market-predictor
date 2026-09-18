@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-18T06:01:03.626578+00:00`
+- generated_at: `2026-09-18T08:31:20.567440+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `13`
+- major_event_count: `15`
 - event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -25,12 +25,20 @@
 
 ## Major Events
 
-### oil_shock_relief / risk_on
+### geopolitical_risk_escalation / risk_off
 
-- headline: Oil prices fall for third day on hopes of limited Saudi supply disruptions - Reuters
+- headline: As Iran war grinds on, Trump to face skeptical world leaders at UN - Reuters
 - source: Reuters
-- published_at: `2026-09-18T01:01:00+00:00`
-- importance_score: `96`
+- published_at: `2026-09-18T05:03:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: China's August refined fuel exports exceed pre-Iran war levels, jet fuel exports hit record high - Reuters
+- source: Reuters
+- published_at: `2026-09-18T04:14:00+00:00`
+- importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -39,6 +47,14 @@
 - source: Reuters
 - published_at: `2026-09-17T20:49:44+00:00`
 - importance_score: `100`
+- confidence: `high`
+
+### oil_shock_relief / risk_on
+
+- headline: Oil prices fall 2% on hopes of limited Saudi supply disruptions - Reuters
+- source: Reuters
+- published_at: `2026-09-18T01:01:00+00:00`
+- importance_score: `95`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -88,19 +104,3 @@
 - published_at: `2026-09-17T04:23:00+00:00`
 - importance_score: `100`
 - confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters
-- source: Reuters
-- published_at: `2026-09-17T02:04:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump says 'hopefully we are towards end' of Iran war - Reuters
-- source: Reuters
-- published_at: `2026-09-16T23:54:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
