@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-18T01:16:30.029816+00:00`
+- generated_at: `2026-09-18T06:01:03.626578+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
-- event_detection_confidence: `76`
+- major_event_count: `13`
+- event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -25,20 +25,12 @@
 
 ## Major Events
 
-### geopolitical_risk_escalation / risk_off
+### oil_shock_relief / risk_on
 
-- headline: Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters
+- headline: Oil prices fall for third day on hopes of limited Saudi supply disruptions - Reuters
 - source: Reuters
-- published_at: `2026-09-17T23:33:52+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - Reuters
-- source: Reuters
-- published_at: `2026-09-17T21:20:28+00:00`
-- importance_score: `100`
+- published_at: `2026-09-18T01:01:00+00:00`
+- importance_score: `96`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -55,13 +47,29 @@
 - source: CNBC
 - published_at: `2026-09-17T17:27:15+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Lockheed Martin reveals new secret missile, fast tracks production - Reuters
 - source: Reuters
 - published_at: `2026-09-17T12:39:46+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - Reuters
+- source: Reuters
+- published_at: `2026-09-17T08:04:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Tata Board may ask Chandrasekaran to stay on amid RBI’s IPO push
+- source: Bloomberg
+- published_at: `2026-09-17T04:30:04+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -83,24 +91,16 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Trump says 'hopefully we are towards end' of Iran war - Reuters
+- headline: Impoverished by war in Iran, Afghan migrants return to Taliban rule - Reuters
 - source: Reuters
-- published_at: `2026-09-16T23:54:00+00:00`
+- published_at: `2026-09-17T02:04:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Saudi strikes and Houthi attacks widen Middle East war - Reuters
+- headline: Trump says 'hopefully we are towards end' of Iran war - Reuters
 - source: Reuters
-- published_at: `2026-09-16T23:05:10+00:00`
+- published_at: `2026-09-16T23:54:00+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### fed_dovish / risk_on
-
-- headline: Charities say gifts by deceased donors are getting held up at financial firms
-- source: CNBC
-- published_at: `2026-09-17T11:31:34+00:00`
-- importance_score: `84`
 - confidence: `medium`
