@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-18T16:27:39.660692+00:00`
+- generated_at: `2026-09-18T22:43:11.209223+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `8`
-- event_detection_confidence: `71`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: US troop deaths in Iran war exceed Pentagon count by at least four, Washington Post reports - Reuters
+- source: Reuters
+- published_at: `2026-09-18T18:36:03+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Caviar and champagne: Air France's luxury shift helps ride out Iran war impact - Reuters
 - source: Reuters
-- published_at: `2026-09-18T14:03:43+00:00`
+- published_at: `2026-09-18T17:55:36+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -39,7 +47,7 @@
 - source: Reuters
 - published_at: `2026-09-18T09:20:23+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-09-18T05:03:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -59,32 +67,24 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Oil slides after China asks Iran to limit Houthi attacks on Saudi oil facilities - Reuters
+- source: Reuters
+- published_at: `2026-09-18T01:01:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Ocean container shipping rates could test record highs as Iran war fuel spike drives rise, analysts say - Reuters
 - source: Reuters
 - published_at: `2026-09-17T20:49:44+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
+### oil_shock_relief / risk_on
 
-- headline: Stephen Curry says his Li-Ning signature shoe will debut early next year
-- source: CNBC
-- published_at: `2026-09-17T17:27:15+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Lockheed Martin reveals new secret missile, fast tracks production - Reuters
+- headline: Oil falls 1% as investors watch Middle East supply disruptions - Reuters
 - source: Reuters
-- published_at: `2026-09-17T12:39:46+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### fed_dovish / risk_on
-
-- headline: Charities say gifts by deceased donors are getting held up at financial firms
-- source: CNBC
-- published_at: `2026-09-17T11:31:34+00:00`
-- importance_score: `80`
+- published_at: `2026-09-18T01:58:43+00:00`
+- importance_score: `92`
 - confidence: `medium`
