@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-18T22:43:11.209223+00:00`
+- generated_at: `2026-09-18T23:35:55.768224+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
-- event_detection_confidence: `73`
+- major_event_count: `7`
+- event_detection_confidence: `72`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,9 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US troop deaths in Iran war exceed Pentagon count by at least four, Washington Post reports - Reuters
+- headline: US troop deaths during Iran war exceed Pentagon count by at least four, Washington Post reports - Reuters
 - source: Reuters
-- published_at: `2026-09-18T18:36:03+00:00`
+- published_at: `2026-09-18T22:08:49+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -79,12 +79,4 @@
 - source: Reuters
 - published_at: `2026-09-17T20:49:44+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### oil_shock_relief / risk_on
-
-- headline: Oil falls 1% as investors watch Middle East supply disruptions - Reuters
-- source: Reuters
-- published_at: `2026-09-18T01:58:43+00:00`
-- importance_score: `92`
 - confidence: `medium`
