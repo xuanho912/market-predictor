@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-18T08:31:20.567440+00:00`
+- generated_at: `2026-09-18T16:27:39.660692+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `15`
-- event_detection_confidence: `70`
+- major_event_count: `8`
+- event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `25`
+- confirmation_score: `50`
 
 ## Dashboard Note
 
@@ -27,6 +27,22 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Caviar and champagne: Air France's luxury shift helps ride out Iran war impact - Reuters
+- source: Reuters
+- published_at: `2026-09-18T14:03:43+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Jet financiers fret as Iran war pumps up fuel and borrowing costs - Reuters
+- source: Reuters
+- published_at: `2026-09-18T09:20:23+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: As Iran war grinds on, Trump to face skeptical world leaders at UN - Reuters
 - source: Reuters
 - published_at: `2026-09-18T05:03:00+00:00`
@@ -39,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-09-18T04:14:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,15 +63,7 @@
 - source: Reuters
 - published_at: `2026-09-17T20:49:44+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### oil_shock_relief / risk_on
-
-- headline: Oil prices fall 2% on hopes of limited Saudi supply disruptions - Reuters
-- source: Reuters
-- published_at: `2026-09-18T01:01:00+00:00`
-- importance_score: `95`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -73,34 +81,10 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
+### fed_dovish / risk_on
 
-- headline: UN mission finds grounds to believe US committed war crimes in Iran, and Tehran crimes against humanity - Reuters
-- source: Reuters
-- published_at: `2026-09-17T08:04:00+00:00`
-- importance_score: `100`
+- headline: Charities say gifts by deceased donors are getting held up at financial firms
+- source: CNBC
+- published_at: `2026-09-17T11:31:34+00:00`
+- importance_score: `80`
 - confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Tata Board may ask Chandrasekaran to stay on amid RBI’s IPO push
-- source: Bloomberg
-- published_at: `2026-09-17T04:30:04+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Asian LNG demand set to fall for second year as war shrinks supply - Reuters
-- source: Reuters
-- published_at: `2026-09-17T04:29:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters
-- source: Reuters
-- published_at: `2026-09-17T04:23:00+00:00`
-- importance_score: `100`
-- confidence: `high`
