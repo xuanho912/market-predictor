@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-19T00:45:34.874408+00:00`
+- generated_at: `2026-09-19T01:09:37.765406+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `9`
@@ -27,7 +27,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US troop deaths during Iran war exceed Pentagon count by at least four, Washington Post reports - reuters.com
+- headline: US troop deaths during Iran war exceed Pentagon count by at least four, Washington Post reports - Reuters
 - source: Reuters
 - published_at: `2026-09-18T22:08:49+00:00`
 - importance_score: `100`
@@ -35,7 +35,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Saudi Civil Defense lifts warnings of potential danger in several areas - reuters.com
+- headline: Saudi Civil Defense lifts warnings of potential danger in several areas - Reuters
 - source: Reuters
 - published_at: `2026-09-18T20:48:09+00:00`
 - importance_score: `100`
@@ -43,7 +43,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Caviar and champagne: Air France's luxury shift helps ride out Iran war impact - reuters.com
+- headline: Caviar and champagne: Air France's luxury shift helps ride out Iran war impact - Reuters
 - source: Reuters
 - published_at: `2026-09-18T17:55:36+00:00`
 - importance_score: `100`
@@ -51,7 +51,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Jet financiers fret as Iran war pumps up fuel and borrowing costs - reuters.com
+- headline: Jet financiers fret as Iran war pumps up fuel and borrowing costs - Reuters
 - source: Reuters
 - published_at: `2026-09-18T09:20:23+00:00`
 - importance_score: `100`
@@ -59,7 +59,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: As Iran war grinds on, Trump to face skeptical world leaders at UN - reuters.com
+- headline: As Iran war grinds on, Trump to face skeptical world leaders at UN - Reuters
 - source: Reuters
 - published_at: `2026-09-18T05:03:00+00:00`
 - importance_score: `100`
@@ -67,7 +67,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: China's August refined fuel exports exceed pre-Iran war levels, jet fuel exports hit record high - reuters.com
+- headline: China's August refined fuel exports exceed pre-Iran war levels, jet fuel exports hit record high - Reuters
 - source: Reuters
 - published_at: `2026-09-18T04:14:00+00:00`
 - importance_score: `100`
@@ -75,7 +75,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil slides after China asks Iran to limit Houthi attacks on Saudi oil facilities - reuters.com
+- headline: Oil slides after China asks Iran to limit Houthi attacks on Saudi oil facilities - Reuters
 - source: Reuters
 - published_at: `2026-09-18T01:01:00+00:00`
 - importance_score: `100`
@@ -83,7 +83,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Ocean container shipping rates could test record highs as Iran war fuel spike drives rise, analysts say - reuters.com
+- headline: Ocean container shipping rates could test record highs as Iran war fuel spike drives rise, analysts say - Reuters
 - source: Reuters
 - published_at: `2026-09-17T20:49:44+00:00`
 - importance_score: `100`
@@ -91,8 +91,8 @@
 
 ### oil_shock_relief / risk_on
 
-- headline: Oil falls 1% as investors watch Middle East supply disruptions - reuters.com
+- headline: Oil falls 1% as investors watch Middle East supply disruptions - Reuters
 - source: Reuters
 - published_at: `2026-09-18T01:58:43+00:00`
-- importance_score: `92`
+- importance_score: `91`
 - confidence: `medium`
