@@ -1,11 +1,11 @@
 # Data Freshness Status
 
-Generated at: `2026-09-19T01:09:47.943199+00:00`
+Generated at: `2026-09-19T05:59:06.341125+00:00`
 
 ## Summary
 
-- current_date: `2026-09-18`
-- current_time_us_eastern: `2026-09-18T21:09:47.943199-04:00`
+- current_date: `2026-09-19`
+- current_time_us_eastern: `2026-09-19T01:59:06.341125-04:00`
 - latest_market_date: `2026-09-18`
 - latest_confirmed_market_date: `2026-09-18`
 - expected_latest_trading_date: `2026-09-18`
@@ -14,10 +14,10 @@ Generated at: `2026-09-19T01:09:47.943199+00:00`
 - can_append_forecast_record: `True`
 - can_backfill_completed_outcomes: `True`
 - stale_days: `0`
-- data_freshness_status: `fresh`
+- data_freshness_status: `market_closed`
 - last_successful_core_market_update: `2026-09-18`
 - last_successful_update: `2026-09-18`
-- warning_message: 核心行情已更新至最新应有交易日 2026-09-18。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。
+- warning_message: 美股当前没有新的完整交易日，使用最近完成交易日 2026-09-18 的数据。 当前美东时间 2026-09-19 01:59。
 
 ## Affected Symbols
 
@@ -30,33 +30,33 @@ Generated at: `2026-09-19T01:09:47.943199+00:00`
 - DGS10: status=`available`, latest_date=`2026-09-17`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
 - DGS2: status=`available`, latest_date=`2026-09-17`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
 - DGS3MO: status=`available`, latest_date=`2026-09-17`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
-- DIA: status=`available`, latest_date=`2026-09-18`, source=`local-cache-finnhub-quote-patch`, stale=`False`, fallback=`True`, real_data=`True`
+- DIA: status=`available`, latest_date=`2026-09-18`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - FINANCIAL_STRESS: status=`available`, latest_date=`2026-09-11`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
 - FINNHUB_API: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
-- HYG: status=`available`, latest_date=`2026-09-18`, source=`local-cache-finnhub-quote-patch`, stale=`False`, fallback=`True`, real_data=`True`
+- HYG: status=`available`, latest_date=`2026-09-18`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - HY_OAS: status=`available`, latest_date=`2026-09-17`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
 - IG_OAS: status=`available`, latest_date=`2026-09-17`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
-- IWM: status=`available`, latest_date=`2026-09-18`, source=`local-cache-finnhub-quote-patch`, stale=`False`, fallback=`True`, real_data=`True`
-- LQD: status=`available`, latest_date=`2026-09-18`, source=`local-cache-finnhub-quote-patch`, stale=`False`, fallback=`True`, real_data=`True`
-- QQQ: status=`available`, latest_date=`2026-09-18`, source=`local-cache-finnhub-quote-patch`, stale=`False`, fallback=`True`, real_data=`True`
+- IWM: status=`available`, latest_date=`2026-09-18`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- LQD: status=`available`, latest_date=`2026-09-18`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- QQQ: status=`available`, latest_date=`2026-09-18`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - RECESSION: status=`stale`, latest_date=`2026-08-01`, source=`fred-api`, stale=`True`, fallback=`False`, real_data=`True`
-- RSP: status=`available`, latest_date=`2026-09-18`, source=`finnhub-quote-patch`, stale=`False`, fallback=`False`, real_data=`True`
-- SPHB: status=`available`, latest_date=`2026-09-18`, source=`finnhub-quote-patch`, stale=`False`, fallback=`False`, real_data=`True`
-- SPLV: status=`available`, latest_date=`2026-09-18`, source=`finnhub-quote-patch`, stale=`False`, fallback=`False`, real_data=`True`
-- SPY: status=`available`, latest_date=`2026-09-18`, source=`local-cache-finnhub-quote-patch`, stale=`False`, fallback=`True`, real_data=`True`
-- TLT: status=`available`, latest_date=`2026-09-18`, source=`local-cache-finnhub-quote-patch`, stale=`False`, fallback=`True`, real_data=`True`
-- UUP: status=`available`, latest_date=`2026-09-18`, source=`local-cache-finnhub-quote-patch`, stale=`False`, fallback=`True`, real_data=`True`
-- XLB: status=`available`, latest_date=`2026-09-18`, source=`finnhub-quote-patch`, stale=`False`, fallback=`False`, real_data=`True`
-- XLC: status=`available`, latest_date=`2026-09-18`, source=`finnhub-quote-patch`, stale=`False`, fallback=`False`, real_data=`True`
-- XLE: status=`available`, latest_date=`2026-09-18`, source=`finnhub-quote-patch`, stale=`False`, fallback=`False`, real_data=`True`
-- XLF: status=`available`, latest_date=`2026-09-18`, source=`finnhub-quote-patch`, stale=`False`, fallback=`False`, real_data=`True`
-- XLI: status=`available`, latest_date=`2026-09-18`, source=`finnhub-quote-patch`, stale=`False`, fallback=`False`, real_data=`True`
-- XLK: status=`available`, latest_date=`2026-09-18`, source=`finnhub-quote-patch`, stale=`False`, fallback=`False`, real_data=`True`
-- XLP: status=`available`, latest_date=`2026-09-18`, source=`finnhub-quote-patch`, stale=`False`, fallback=`False`, real_data=`True`
-- XLRE: status=`available`, latest_date=`2026-09-18`, source=`finnhub-quote-patch`, stale=`False`, fallback=`False`, real_data=`True`
-- XLU: status=`available`, latest_date=`2026-09-18`, source=`finnhub-quote-patch`, stale=`False`, fallback=`False`, real_data=`True`
-- XLV: status=`available`, latest_date=`2026-09-18`, source=`finnhub-quote-patch`, stale=`False`, fallback=`False`, real_data=`True`
-- XLY: status=`available`, latest_date=`2026-09-18`, source=`finnhub-quote-patch`, stale=`False`, fallback=`False`, real_data=`True`
+- RSP: status=`available`, latest_date=`2026-09-18`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- SPHB: status=`available`, latest_date=`2026-09-18`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- SPLV: status=`available`, latest_date=`2026-09-18`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- SPY: status=`available`, latest_date=`2026-09-18`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- TLT: status=`available`, latest_date=`2026-09-18`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- UUP: status=`available`, latest_date=`2026-09-18`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- XLB: status=`available`, latest_date=`2026-09-18`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- XLC: status=`available`, latest_date=`2026-09-18`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- XLE: status=`available`, latest_date=`2026-09-18`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- XLF: status=`available`, latest_date=`2026-09-18`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- XLI: status=`available`, latest_date=`2026-09-18`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- XLK: status=`available`, latest_date=`2026-09-18`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- XLP: status=`available`, latest_date=`2026-09-18`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- XLRE: status=`available`, latest_date=`2026-09-18`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- XLU: status=`available`, latest_date=`2026-09-18`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- XLV: status=`available`, latest_date=`2026-09-18`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- XLY: status=`available`, latest_date=`2026-09-18`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - ^SKEW: status=`available`, latest_date=`2026-09-18`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - ^TNX: status=`available`, latest_date=`2026-09-18`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - ^VIX: status=`available`, latest_date=`2026-09-18`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`

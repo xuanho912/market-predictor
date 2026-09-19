@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-19T01:09:37.765406+00:00`
+- generated_at: `2026-09-19T05:58:58.596774+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
-- event_detection_confidence: `72`
+- major_event_count: `10`
+- event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -47,7 +47,7 @@
 - source: Reuters
 - published_at: `2026-09-18T17:55:36+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -64,6 +64,14 @@
 - published_at: `2026-09-18T05:03:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters
+- source: Reuters
+- published_at: `2026-09-18T04:46:22+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -94,5 +102,5 @@
 - headline: Oil falls 1% as investors watch Middle East supply disruptions - Reuters
 - source: Reuters
 - published_at: `2026-09-18T01:58:43+00:00`
-- importance_score: `91`
+- importance_score: `90`
 - confidence: `medium`
