@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-19T08:19:51.000286+00:00`
+- generated_at: `2026-09-19T15:55:47.715386+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `10`
-- event_detection_confidence: `70`
+- major_event_count: `8`
+- event_detection_confidence: `67`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,19 +27,19 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US troop deaths during Iran war exceed Pentagon count by at least four, Washington Post reports - Reuters
-- source: Reuters
-- published_at: `2026-09-18T22:08:49+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
 - headline: Saudi Civil Defense lifts warnings of potential danger in several areas - Reuters
 - source: Reuters
 - published_at: `2026-09-18T20:48:09+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US troop deaths during Iran war exceed Pentagon count by at least four, Washington Post reports - Reuters
+- source: Reuters
+- published_at: `2026-09-18T18:35:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -59,6 +59,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: India’s ‘sugar high’ warrants caution on RBI hikes: JP Morgan Chase
+- source: Bloomberg
+- published_at: `2026-09-18T08:26:51+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: US strike on Iran school may be war crime: UN report
 - source: Bloomberg
 - published_at: `2026-09-18T06:27:13+00:00`
@@ -69,7 +77,7 @@
 
 - headline: As Iran war grinds on, Trump to face skeptical world leaders at UN - Reuters
 - source: Reuters
-- published_at: `2026-09-18T05:03:00+00:00`
+- published_at: `2026-09-18T05:11:40+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -78,29 +86,5 @@
 - headline: China's August refined fuel exports exceed pre-Iran war levels, jet fuel exports hit record high - Reuters
 - source: Reuters
 - published_at: `2026-09-18T04:14:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil slides after China asks Iran to limit Houthi attacks on Saudi oil facilities - Reuters
-- source: Reuters
-- published_at: `2026-09-18T01:01:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Ocean container shipping rates could test record highs as Iran war fuel spike drives rise, analysts say - Reuters
-- source: Reuters
-- published_at: `2026-09-17T20:49:44+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### oil_shock_relief / risk_on
-
-- headline: Oil falls 1% as investors watch Middle East supply disruptions - Reuters
-- source: Reuters
-- published_at: `2026-09-18T01:58:43+00:00`
-- importance_score: `90`
+- importance_score: `99`
 - confidence: `medium`
