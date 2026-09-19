@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-19T05:58:58.596774+00:00`
+- generated_at: `2026-09-19T08:19:51.000286+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `10`
-- event_detection_confidence: `71`
+- event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -59,19 +59,19 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: US strike on Iran school may be war crime: UN report
+- source: Bloomberg
+- published_at: `2026-09-18T06:27:13+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: As Iran war grinds on, Trump to face skeptical world leaders at UN - Reuters
 - source: Reuters
 - published_at: `2026-09-18T05:03:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters
-- source: Reuters
-- published_at: `2026-09-18T04:46:22+00:00`
-- importance_score: `100`
-- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 

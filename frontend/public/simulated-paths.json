@@ -5,10 +5,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-09-19",
-    "current_time_us_eastern": "2026-09-19T01:59:06.341125-04:00",
+    "current_time_us_eastern": "2026-09-19T04:20:01.265391-04:00",
     "data_freshness_status": "market_closed",
     "expected_latest_trading_date": "2026-09-18",
-    "generated_at": "2026-09-19T05:59:06.341125+00:00",
+    "generated_at": "2026-09-19T08:20:01.265391+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -939,7 +939,7 @@
     },
     "stale_days": 0,
     "version": "data_freshness_gate_v3",
-    "warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-09-18 的数据。 当前美东时间 2026-09-19 01:59。"
+    "warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-09-18 的数据。 当前美东时间 2026-09-19 04:20。"
   },
   "data_quality_summary": {
     "average_breadth_quality_score": 67.0,
@@ -1047,17 +1047,17 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "IG_OAS",
+      "DGS2",
       "DGS10",
+      "IG_OAS",
+      "BAA_SPREAD",
       "DGS3MO",
       "HY_OAS",
-      "BAA_SPREAD",
-      "DGS2",
       "DFII10",
-      "FINANCIAL_STRESS",
-      "RECESSION"
+      "RECESSION",
+      "FINANCIAL_STRESS"
     ],
-    "freshness_warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-09-18 的数据。 当前美东时间 2026-09-19 01:59。",
+    "freshness_warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-09-18 的数据。 当前美东时间 2026-09-19 04:20。",
     "gamma_available": false,
     "gamma_exposure_available": false,
     "latest_confirmed_market_date": "2026-09-18",
@@ -1086,10 +1086,10 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 71,
+      "event_detection_confidence": 70,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-09-19T05:58:58.596774+00:00",
+      "last_update": "2026-09-19T08:19:51.000286+00:00",
       "major_event_count": 10,
       "missing_reason": null,
       "news_direction": "risk_off",
@@ -1234,6 +1234,18 @@
           "source": "Reuters"
         },
         {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
+          "headline": "US strike on Iran school may be war crime: UN report",
+          "importance_score": 100,
+          "published_at": "2026-09-18T06:27:13+00:00",
+          "source": "Bloomberg"
+        },
+        {
           "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
@@ -1243,18 +1255,6 @@
           "headline": "As Iran war grinds on, Trump to face skeptical world leaders at UN - Reuters",
           "importance_score": 100,
           "published_at": "2026-09-18T05:03:00+00:00",
-          "source": "Reuters"
-        },
-        {
-          "confidence": "high",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-09-18T04:46:22+00:00",
           "source": "Reuters"
         }
       ]
@@ -3659,14 +3659,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 77,
+            "confidence_score": 76,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 81,
+            "freshness_score": 76,
             "headline": "US troop deaths during Iran war exceed Pentagon count by at least four, Washington Post reports - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3686,14 +3686,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 76,
+            "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 78,
+            "freshness_score": 72,
             "headline": "Saudi Civil Defense lifts warnings of potential danger in several areas - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3713,14 +3713,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 71,
+            "freshness_score": 65,
             "headline": "Caviar and champagne: Air France's luxury shift helps ride out Iran war impact - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3740,46 +3740,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 69,
+            "confidence_score": 68,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 50,
+            "freshness_score": 45,
             "headline": "Jet financiers fret as Iran war pumps up fuel and borrowing costs - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-18T09:20:23+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 67,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 40,
-            "headline": "As Iran war grinds on, Trump to face skeptical world leaders at UN - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-18T05:03:00+00:00",
             "source": "Reuters"
           },
           {
@@ -3801,12 +3774,39 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 39,
-            "headline": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
+            "freshness_score": 38,
+            "headline": "US strike on Iran school may be war crime: UN report",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-09-18T04:46:22+00:00",
+            "published_at": "2026-09-18T06:27:13+00:00",
+            "source": "Bloomberg"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 65,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 35,
+            "headline": "As Iran war grinds on, Trump to face skeptical world leaders at UN - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-18T05:03:00+00:00",
             "source": "Reuters"
           }
         ],
@@ -3892,6 +3892,18 @@
               "source": "Reuters"
             },
             {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "US strike on Iran school may be war crime: UN report",
+              "importance_score": 100,
+              "published_at": "2026-09-18T06:27:13+00:00",
+              "source": "Bloomberg"
+            },
+            {
               "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
@@ -3901,18 +3913,6 @@
               "headline": "As Iran war grinds on, Trump to face skeptical world leaders at UN - Reuters",
               "importance_score": 100,
               "published_at": "2026-09-18T05:03:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-09-18T04:46:22+00:00",
               "source": "Reuters"
             }
           ]
@@ -7809,14 +7809,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 77,
+            "confidence_score": 76,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 81,
+            "freshness_score": 76,
             "headline": "US troop deaths during Iran war exceed Pentagon count by at least four, Washington Post reports - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7836,14 +7836,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 76,
+            "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 78,
+            "freshness_score": 72,
             "headline": "Saudi Civil Defense lifts warnings of potential danger in several areas - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7863,14 +7863,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 71,
+            "freshness_score": 65,
             "headline": "Caviar and champagne: Air France's luxury shift helps ride out Iran war impact - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7890,46 +7890,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 69,
+            "confidence_score": 68,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 50,
+            "freshness_score": 45,
             "headline": "Jet financiers fret as Iran war pumps up fuel and borrowing costs - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-18T09:20:23+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 67,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 40,
-            "headline": "As Iran war grinds on, Trump to face skeptical world leaders at UN - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-18T05:03:00+00:00",
             "source": "Reuters"
           },
           {
@@ -7951,12 +7924,39 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 39,
-            "headline": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
+            "freshness_score": 38,
+            "headline": "US strike on Iran school may be war crime: UN report",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-09-18T04:46:22+00:00",
+            "published_at": "2026-09-18T06:27:13+00:00",
+            "source": "Bloomberg"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 65,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 35,
+            "headline": "As Iran war grinds on, Trump to face skeptical world leaders at UN - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-18T05:03:00+00:00",
             "source": "Reuters"
           }
         ],
@@ -8042,6 +8042,18 @@
               "source": "Reuters"
             },
             {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "US strike on Iran school may be war crime: UN report",
+              "importance_score": 100,
+              "published_at": "2026-09-18T06:27:13+00:00",
+              "source": "Bloomberg"
+            },
+            {
               "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
@@ -8051,18 +8063,6 @@
               "headline": "As Iran war grinds on, Trump to face skeptical world leaders at UN - Reuters",
               "importance_score": 100,
               "published_at": "2026-09-18T05:03:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-09-18T04:46:22+00:00",
               "source": "Reuters"
             }
           ]
@@ -11997,14 +11997,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 77,
+            "confidence_score": 76,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 81,
+            "freshness_score": 76,
             "headline": "US troop deaths during Iran war exceed Pentagon count by at least four, Washington Post reports - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12024,14 +12024,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 76,
+            "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 78,
+            "freshness_score": 72,
             "headline": "Saudi Civil Defense lifts warnings of potential danger in several areas - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12051,14 +12051,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 71,
+            "freshness_score": 65,
             "headline": "Caviar and champagne: Air France's luxury shift helps ride out Iran war impact - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12078,46 +12078,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 69,
+            "confidence_score": 68,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 50,
+            "freshness_score": 45,
             "headline": "Jet financiers fret as Iran war pumps up fuel and borrowing costs - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-18T09:20:23+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 67,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 40,
-            "headline": "As Iran war grinds on, Trump to face skeptical world leaders at UN - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-18T05:03:00+00:00",
             "source": "Reuters"
           },
           {
@@ -12139,12 +12112,39 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 39,
-            "headline": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
+            "freshness_score": 38,
+            "headline": "US strike on Iran school may be war crime: UN report",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-09-18T04:46:22+00:00",
+            "published_at": "2026-09-18T06:27:13+00:00",
+            "source": "Bloomberg"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 65,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 35,
+            "headline": "As Iran war grinds on, Trump to face skeptical world leaders at UN - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-18T05:03:00+00:00",
             "source": "Reuters"
           }
         ],
@@ -12230,6 +12230,18 @@
               "source": "Reuters"
             },
             {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "US strike on Iran school may be war crime: UN report",
+              "importance_score": 100,
+              "published_at": "2026-09-18T06:27:13+00:00",
+              "source": "Bloomberg"
+            },
+            {
               "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
@@ -12239,18 +12251,6 @@
               "headline": "As Iran war grinds on, Trump to face skeptical world leaders at UN - Reuters",
               "importance_score": 100,
               "published_at": "2026-09-18T05:03:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-09-18T04:46:22+00:00",
               "source": "Reuters"
             }
           ]
@@ -16199,14 +16199,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 77,
+            "confidence_score": 76,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 81,
+            "freshness_score": 76,
             "headline": "US troop deaths during Iran war exceed Pentagon count by at least four, Washington Post reports - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16226,14 +16226,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 76,
+            "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 78,
+            "freshness_score": 72,
             "headline": "Saudi Civil Defense lifts warnings of potential danger in several areas - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16253,14 +16253,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 71,
+            "freshness_score": 65,
             "headline": "Caviar and champagne: Air France's luxury shift helps ride out Iran war impact - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16280,46 +16280,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 69,
+            "confidence_score": 68,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 50,
+            "freshness_score": 45,
             "headline": "Jet financiers fret as Iran war pumps up fuel and borrowing costs - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-18T09:20:23+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 67,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 40,
-            "headline": "As Iran war grinds on, Trump to face skeptical world leaders at UN - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-18T05:03:00+00:00",
             "source": "Reuters"
           },
           {
@@ -16341,12 +16314,39 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 39,
-            "headline": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
+            "freshness_score": 38,
+            "headline": "US strike on Iran school may be war crime: UN report",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-09-18T04:46:22+00:00",
+            "published_at": "2026-09-18T06:27:13+00:00",
+            "source": "Bloomberg"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 65,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 35,
+            "headline": "As Iran war grinds on, Trump to face skeptical world leaders at UN - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-18T05:03:00+00:00",
             "source": "Reuters"
           }
         ],
@@ -16432,6 +16432,18 @@
               "source": "Reuters"
             },
             {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "US strike on Iran school may be war crime: UN report",
+              "importance_score": 100,
+              "published_at": "2026-09-18T06:27:13+00:00",
+              "source": "Bloomberg"
+            },
+            {
               "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
@@ -16441,18 +16453,6 @@
               "headline": "As Iran war grinds on, Trump to face skeptical world leaders at UN - Reuters",
               "importance_score": 100,
               "published_at": "2026-09-18T05:03:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Saudis and Houthis exchange strikes, Yemenis flee by boat as Middle East war spreads - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-09-18T04:46:22+00:00",
               "source": "Reuters"
             }
           ]
