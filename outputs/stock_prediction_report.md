@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-09-19T15:56:00.660996+00:00`
+Generated at: `2026-09-20T16:10:05.998768+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -54,9 +54,9 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `26.3%`
 - secondary: `stock_downside_continuation` / `18.7%`
 - risk: `stock_event_risk` / `15.7%`
-- stock_confluence_score: `45.14` / `mixed`
-- stock_alpha_score_v1: `13.0` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `46.5%`
+- stock_confluence_score: `44.81` / `weak`
+- stock_alpha_score_v1: `15.0` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `47.3%`
 - 60d_expected_return: `-1.0%`
 - risk_reward_ratio: `0.52`
 - strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `25.82`
@@ -83,7 +83,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_downside_continuation` / `25.6%`
 - secondary: `stock_failed_bounce` / `23.6%`
 - risk: `stock_event_risk` / `12.9%`
-- stock_confluence_score: `29.99` / `weak`
+- stock_confluence_score: `29.8` / `weak`
 - stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `34.6%`
 - 60d_expected_return: `-2.9%`
@@ -112,9 +112,9 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `28.7%`
 - secondary: `stock_downside_continuation` / `25.2%`
 - risk: `stock_event_risk` / `10.1%`
-- stock_confluence_score: `36.96` / `weak`
-- stock_alpha_score_v1: `33.0` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `46.0%`
+- stock_confluence_score: `36.58` / `weak`
+- stock_alpha_score_v1: `35.0` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `46.8%`
 - 60d_expected_return: `-1.7%`
 - risk_reward_ratio: `0.5`
 - strongest_alert: `Relative Weakness Alert` / `NO_ALERT` / `31.58`

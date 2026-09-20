@@ -1,6 +1,6 @@
 # Forecast Price Levels
 
-Generated at: `2026-09-19T15:55:59.705015Z`
+Generated at: `2026-09-20T16:10:04.640536Z`
 
 These are probability-path scenario levels, not execution instructions, risk-control rules, or guaranteed targets.
 
@@ -61,14 +61,14 @@ These are probability-path scenario levels, not execution instructions, risk-con
 - primary confirmation: `524.49`
 - primary invalidation: `513.62`
 - risk activation: `507.06`
-- trend repair confirmation: `536.93`
+- trend repair confirmation: `542.65`
 
 | Horizon | Expected | Primary | Secondary | Risk | Upper | Lower |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| 1d | 517.18 | 516.65 | 517.62 | 516.65 | 517.62 | 515.62 |
-| 3d | 519.79 | 518.20 | 521.09 | 518.20 | 521.09 | 515.09 |
-| 5d | 519.14 | 512.25 | 522.62 | 512.25 | 522.62 | 512.25 |
-| 10d | 516.87 | 507.06 | 521.18 | 507.06 | 521.18 | 507.06 |
-| 20d | 532.82 | 510.92 | 542.65 | 510.92 | 542.65 | 510.92 |
-| 60d | 545.65 | 532.84 | 551.76 | 532.84 | 551.76 | 532.84 |
+| 1d | 517.18 | 517.62 | 516.65 | 516.65 | 517.62 | 515.62 |
+| 3d | 519.79 | 521.09 | 518.20 | 518.20 | 521.09 | 515.09 |
+| 5d | 519.14 | 522.62 | 512.25 | 512.25 | 522.62 | 512.25 |
+| 10d | 516.87 | 521.18 | 507.06 | 507.06 | 521.18 | 507.06 |
+| 20d | 532.82 | 542.65 | 510.92 | 510.92 | 542.65 | 510.92 |
+| 60d | 545.65 | 551.76 | 532.84 | 532.84 | 551.76 | 532.84 |
 

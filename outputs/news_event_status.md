@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-19T15:55:47.715386+00:00`
+- generated_at: `2026-09-20T16:09:54.560831+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
-- event_detection_confidence: `67`
+- major_event_count: `7`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,64 +27,56 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Saudi Civil Defense lifts warnings of potential danger in several areas - Reuters
+- headline: Iran warns against new escalation by US and allies - Reuters
 - source: Reuters
-- published_at: `2026-09-18T20:48:09+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US troop deaths during Iran war exceed Pentagon count by at least four, Washington Post reports - Reuters
-- source: Reuters
-- published_at: `2026-09-18T18:35:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Caviar and champagne: Air France's luxury shift helps ride out Iran war impact - Reuters
-- source: Reuters
-- published_at: `2026-09-18T17:55:36+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Jet financiers fret as Iran war pumps up fuel and borrowing costs - Reuters
-- source: Reuters
-- published_at: `2026-09-18T09:20:23+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: India’s ‘sugar high’ warrants caution on RBI hikes: JP Morgan Chase
-- source: Bloomberg
-- published_at: `2026-09-18T08:26:51+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US strike on Iran school may be war crime: UN report
-- source: Bloomberg
-- published_at: `2026-09-18T06:27:13+00:00`
+- published_at: `2026-09-20T13:24:48+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: As Iran war grinds on, Trump to face skeptical world leaders at UN - Reuters
+- headline: Saudi, Gulf stocks fall after Houthis claim Riyadh attacks - Reuters
 - source: Reuters
-- published_at: `2026-09-18T05:11:40+00:00`
+- published_at: `2026-09-20T12:59:36+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Budget airline king Bill Franke warms to first-class seats and premium upgrades
+- source: CNBC
+- published_at: `2026-09-20T12:00:01+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: North Korea fires two ballistic missiles off east coast in three hours - Reuters
+- source: Reuters
+- published_at: `2026-09-20T06:18:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: World leaders return to UN amid wars in Middle East and Ukraine - Reuters
+- source: Reuters
+- published_at: `2026-09-20T05:05:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Israeli strikes kill three people in Gaza, medics say - Reuters
+- source: Reuters
+- published_at: `2026-09-19T14:44:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: China's August refined fuel exports exceed pre-Iran war levels, jet fuel exports hit record high - Reuters
+- headline: Oil slides after China asks Iran to limit Houthi attacks on Saudi oil facilities - Reuters
 - source: Reuters
-- published_at: `2026-09-18T04:14:00+00:00`
-- importance_score: `99`
+- published_at: `2026-09-19T08:20:38+00:00`
+- importance_score: `100`
 - confidence: `medium`
