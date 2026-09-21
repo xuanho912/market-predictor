@@ -1,6 +1,6 @@
 # Breadth Impact Audit
 
-Generated at: `2026-09-21T18:16:04.981910Z`
+Generated at: `2026-09-21T23:25:55.762713Z`
 
 ## Summary
 
@@ -18,8 +18,8 @@ Generated at: `2026-09-21T18:16:04.981910Z`
 |---|---:|---:|---|---|---|---|---:|---:|---:|---|---|
 | SPY | False | True | STRONG_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.1841 | 0 | -2 | SPY breadth conflicts with bounce_path: conflict score 85%, internal resonance is surface_only. | SPY index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
 | QQQ | False | True | STRONG_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.1608 | 0 | -7 | QQQ breadth conflicts with bounce_path: conflict score 69%, internal resonance is surface_only. | QQQ index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
-| IWM | False | True | WEAK_EDGE | WEAK_EDGE | bounce_path | bearish_path | 0.1764 | -10 | -7 | IWM breadth conflicts with bearish_path: conflict score 72%, internal resonance is surface_only. | IWM index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
-| DIA | False | True | STRONG_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.1603 | 0 | -2 | DIA breadth conflicts with bounce_path: conflict score 69%, internal resonance is surface_only. | DIA index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
+| IWM | False | True | WEAK_EDGE | WEAK_EDGE | bounce_path | bearish_path | 0.1774 | -10 | -7 | IWM breadth conflicts with bearish_path: conflict score 73%, internal resonance is surface_only. | IWM index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
+| DIA | False | True | STRONG_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.1604 | 0 | -2 | DIA breadth conflicts with bounce_path: conflict score 69%, internal resonance is surface_only. | DIA index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
 
 ## Forward Validation
 

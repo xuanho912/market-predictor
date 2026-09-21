@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-21T18:15:54.908255+00:00`
+- generated_at: `2026-09-21T23:25:44.897460+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
+- major_event_count: `5`
 - event_detection_confidence: `67`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -39,7 +39,7 @@
 - source: Reuters
 - published_at: `2026-09-21T10:36:04+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -63,20 +63,4 @@
 - source: CNBC
 - published_at: `2026-09-20T12:00:01+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: North Korea fires two ballistic missiles off east coast in three hours - Reuters
-- source: Reuters
-- published_at: `2026-09-20T06:18:00+00:00`
-- importance_score: `99`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: World leaders return to UN amid wars in Middle East and Ukraine - Reuters
-- source: Reuters
-- published_at: `2026-09-20T05:05:00+00:00`
-- importance_score: `99`
 - confidence: `medium`
