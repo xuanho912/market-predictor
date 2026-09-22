@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-22T01:36:24.535105+00:00`
+- generated_at: `2026-09-22T06:19:49.543968+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
-- event_detection_confidence: `70`
+- major_event_count: `9`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,19 +27,51 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Oil rises amid worries of growing Iran-U.S. tensions after Bessent issues Iranian airline shutdown warning
+- source: CNBC
+- published_at: `2026-09-22T04:22:20+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Two Republican Senate candidates call for swift end to Iran war, diverging from Trump - Reuters
 - source: Reuters
-- published_at: `2026-09-21T23:25:43+00:00`
+- published_at: `2026-09-21T23:23:00+00:00`
 - importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Lockheed wins US Army missile contract worth up to $1.2 billion - Reuters
+- source: Reuters
+- published_at: `2026-09-21T22:33:30+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: EU's Kallas says Red Sea mission needs more than 10 warships - Reuters
+- source: Reuters
+- published_at: `2026-09-21T21:56:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### fed_dovish / risk_on
+
+- headline: Indian shares open higher on easing oil prices, bond yields - Reuters
+- source: Reuters
+- published_at: `2026-09-22T02:27:00+00:00`
+- importance_score: `86`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Houthis push for control of Yemen highlands as Trump is said to have called off strikes - Reuters
 - source: Reuters
-- published_at: `2026-09-21T15:26:41+00:00`
+- published_at: `2026-09-21T11:06:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -51,24 +83,16 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Rupee ends marginally higher in subdued trade, forward premiums ease - Reuters
-- source: Reuters
-- published_at: `2026-09-21T02:37:00+00:00`
+- headline: US diesel tops $6.50 a gallon as wars worsen global crunch
+- source: Bloomberg
+- published_at: `2026-09-21T05:03:57+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iran and US trade threats after Houthi attacks escalate regional conflict - Reuters
+- headline: Rupee ends marginally higher in subdued trade, forward premiums ease - Reuters
 - source: Reuters
-- published_at: `2026-09-20T13:19:00+00:00`
-- importance_score: `99`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Saudi, Gulf stocks fall after Houthis claim Riyadh attacks - Reuters
-- source: Reuters
-- published_at: `2026-09-20T12:59:36+00:00`
-- importance_score: `99`
+- published_at: `2026-09-21T02:37:00+00:00`
+- importance_score: `100`
 - confidence: `medium`
