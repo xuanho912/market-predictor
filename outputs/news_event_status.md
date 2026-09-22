@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-22T00:26:01.824575+00:00`
+- generated_at: `2026-09-22T01:27:00.774304+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `5`
-- event_detection_confidence: `66`
+- major_event_count: `7`
+- event_detection_confidence: `68`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,6 +27,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Two Republican Senate candidates call for swift end to Iran war, diverging from Trump - Reuters
+- source: Reuters
+- published_at: `2026-09-21T23:25:43+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Houthis push for control of Yemen highlands as Trump is said to have called off strikes - Reuters
 - source: Reuters
 - published_at: `2026-09-21T15:26:41+00:00`
@@ -43,10 +51,18 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Rupee ends marginally higher in subdued trade, forward premiums ease - Reuters
+- source: Reuters
+- published_at: `2026-09-21T02:37:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Iran and US trade threats after Houthi attacks escalate regional conflict - Reuters
 - source: Reuters
 - published_at: `2026-09-20T13:19:00+00:00`
-- importance_score: `100`
+- importance_score: `99`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
@@ -54,7 +70,7 @@
 - headline: Saudi, Gulf stocks fall after Houthis claim Riyadh attacks - Reuters
 - source: Reuters
 - published_at: `2026-09-20T12:59:36+00:00`
-- importance_score: `100`
+- importance_score: `99`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
