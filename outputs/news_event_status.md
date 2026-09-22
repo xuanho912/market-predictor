@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-22T23:05:41.518355+00:00`
+- generated_at: `2026-09-22T23:47:56.199633+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
-- event_detection_confidence: `76`
+- major_event_count: `5`
+- event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -55,20 +55,12 @@
 - source: CNBC
 - published_at: `2026-09-22T11:40:23+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Iran ready to reopen Strait of Hormuz if US eases military pressure and lifts blockade - Reuters
 - source: Reuters
 - published_at: `2026-09-22T10:29:43+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Russia says Ukrainian drone attack kills one in its Samara region - Reuters
-- source: Reuters
-- published_at: `2026-09-22T08:55:43+00:00`
 - importance_score: `100`
 - confidence: `medium`
