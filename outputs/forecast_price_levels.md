@@ -1,6 +1,6 @@
 # Forecast Price Levels
 
-Generated at: `2026-09-22T06:20:02.349623Z`
+Generated at: `2026-09-22T08:50:08.864075Z`
 
 These are probability-path scenario levels, not execution instructions, risk-control rules, or guaranteed targets.
 
@@ -58,17 +58,17 @@ These are probability-path scenario levels, not execution instructions, risk-con
 ## DIA
 
 - current price: `519.78`
-- primary confirmation: `524.74`
+- primary confirmation: `521.23`
 - primary invalidation: `515.22`
 - risk activation: `510.76`
-- trend repair confirmation: `544.63`
+- trend repair confirmation: `536.93`
 
 | Horizon | Expected | Primary | Secondary | Risk | Upper | Lower |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| 1d | 516.88 | 520.27 | 515.40 | 515.40 | 520.27 | 515.40 |
-| 3d | 521.69 | 524.98 | 518.84 | 518.84 | 524.98 | 515.94 |
-| 5d | 521.87 | 524.74 | 517.37 | 517.37 | 524.74 | 515.84 |
-| 10d | 521.12 | 525.08 | 513.65 | 513.65 | 525.08 | 513.65 |
-| 20d | 533.50 | 544.63 | 510.76 | 510.76 | 544.63 | 510.76 |
-| 60d | 541.90 | 549.63 | 525.70 | 525.70 | 549.63 | 525.70 |
+| 1d | 516.88 | 515.40 | 520.27 | 515.40 | 520.27 | 515.40 |
+| 3d | 521.69 | 518.84 | 524.98 | 518.84 | 524.98 | 515.94 |
+| 5d | 521.87 | 517.37 | 524.74 | 517.37 | 524.74 | 515.84 |
+| 10d | 521.12 | 513.65 | 525.08 | 513.65 | 525.08 | 513.65 |
+| 20d | 533.50 | 510.76 | 544.63 | 510.76 | 544.63 | 510.76 |
+| 60d | 541.90 | 525.70 | 549.63 | 525.70 | 549.63 | 525.70 |
 

@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-22T06:19:49.543968+00:00`
+- generated_at: `2026-09-22T08:49:58.444944+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
-- event_detection_confidence: `73`
+- major_event_count: `8`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `True`
-- confirmation_score: `75`
+- confirmation_score: `100`
 
 ## Dashboard Note
 
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Trump set for whirlwind UN meetings with wars in Iran, Ukraine on agenda - Reuters
+- source: Reuters
+- published_at: `2026-09-22T05:04:00+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -59,11 +67,11 @@
 
 ### fed_dovish / risk_on
 
-- headline: Indian shares open higher on easing oil prices, bond yields - Reuters
+- headline: Indian shares edge higher on easing oil prices, bond yields; IT caps gains - Reuters
 - source: Reuters
 - published_at: `2026-09-22T02:27:00+00:00`
 - importance_score: `86`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -78,21 +86,5 @@
 - headline: LNG buyers and sellers seek greater supply diversity amid Iran war - Reuters
 - source: Reuters
 - published_at: `2026-09-21T10:36:04+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US diesel tops $6.50 a gallon as wars worsen global crunch
-- source: Bloomberg
-- published_at: `2026-09-21T05:03:57+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Rupee ends marginally higher in subdued trade, forward premiums ease - Reuters
-- source: Reuters
-- published_at: `2026-09-21T02:37:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
