@@ -1,20 +1,20 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-22T08:49:58.444944+00:00`
+- generated_at: `2026-09-22T17:00:21.633031+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
-- event_detection_confidence: `74`
+- major_event_count: `10`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
-- price_reaction_confirmed: `True`
-- confirmation_score: `100`
+- price_reaction_confirmed: `False`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
-当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，已被价格反应初步确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
+当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，尚未被价格反应充分确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
 
 ## Economic Calendar Risk
 
@@ -25,11 +25,35 @@
 
 ## Major Events
 
+### geopolitical_risk_easing / risk_on
+
+- headline: Trump warns in UN speech he could 'annihilate' Iran without peace deal - Reuters
+- source: Reuters
+- published_at: `2026-09-22T15:15:54+00:00`
+- importance_score: `100`
+- confidence: `high`
+
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Trump set for whirlwind UN meetings with wars in Iran, Ukraine on agenda - Reuters
+- headline: Flight disruptions ease at Newark, Philadelphia following equipment outage
+- source: CNBC
+- published_at: `2026-09-22T11:40:23+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran ready to reopen Strait of Hormuz if US eases military pressure and lifts blockade - Reuters
 - source: Reuters
-- published_at: `2026-09-22T05:04:00+00:00`
+- published_at: `2026-09-22T10:29:43+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Russia says Ukrainian drone attack kills one in its Samara region - Reuters
+- source: Reuters
+- published_at: `2026-09-22T08:55:43+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -39,6 +63,14 @@
 - source: CNBC
 - published_at: `2026-09-22T04:22:20+00:00`
 - importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Oil prices rise on Trump timeline for Iran peace deal: after US elections - Reuters
+- source: Reuters
+- published_at: `2026-09-22T00:34:00+00:00`
+- importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -47,44 +79,28 @@
 - source: Reuters
 - published_at: `2026-09-21T23:23:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Lockheed wins US Army missile contract worth up to $1.2 billion - Reuters
+- headline: Five dead in Russian attacks across Ukrainian regions, officials say - Reuters
 - source: Reuters
-- published_at: `2026-09-21T22:33:30+00:00`
+- published_at: `2026-09-21T23:18:31+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
+### geopolitical_risk_easing / risk_on
 
-- headline: EU's Kallas says Red Sea mission needs more than 10 warships - Reuters
+- headline: Macron says he discussed Ukraine-Russia energy truce ideas with Trump - Reuters
 - source: Reuters
-- published_at: `2026-09-21T21:56:00+00:00`
-- importance_score: `100`
-- confidence: `high`
+- published_at: `2026-09-22T00:36:00+00:00`
+- importance_score: `96`
+- confidence: `medium`
 
-### fed_dovish / risk_on
+### fed_hawkish / risk_off
 
-- headline: Indian shares edge higher on easing oil prices, bond yields; IT caps gains - Reuters
+- headline: Gold slips as Fed officials signal rate hikes - Reuters
 - source: Reuters
-- published_at: `2026-09-22T02:27:00+00:00`
+- published_at: `2026-09-22T02:19:00+00:00`
 - importance_score: `86`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Houthis push for control of Yemen highlands as Trump is said to have called off strikes - Reuters
-- source: Reuters
-- published_at: `2026-09-21T11:06:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: LNG buyers and sellers seek greater supply diversity amid Iran war - Reuters
-- source: Reuters
-- published_at: `2026-09-21T10:36:04+00:00`
-- importance_score: `100`
 - confidence: `medium`
