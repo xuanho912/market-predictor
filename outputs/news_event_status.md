@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-22T17:00:21.633031+00:00`
+- generated_at: `2026-09-22T23:05:41.518355+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `10`
+- major_event_count: `6`
 - event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -29,7 +29,23 @@
 
 - headline: Trump warns in UN speech he could 'annihilate' Iran without peace deal - Reuters
 - source: Reuters
-- published_at: `2026-09-22T15:15:54+00:00`
+- published_at: `2026-09-22T20:20:18+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Iran submits conditions for reopening of Hormuz to U.S. representative, state media says - Reuters
+- source: Reuters
+- published_at: `2026-09-22T19:46:20+00:00`
+- importance_score: `96`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Czech man gets fine and 13 days' custody for anti-war protest on Red Square - Reuters
+- source: Reuters
+- published_at: `2026-09-22T15:23:44+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -47,7 +63,7 @@
 - source: Reuters
 - published_at: `2026-09-22T10:29:43+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,52 +71,4 @@
 - source: Reuters
 - published_at: `2026-09-22T08:55:43+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil rises amid worries of growing Iran-U.S. tensions after Bessent issues Iranian airline shutdown warning
-- source: CNBC
-- published_at: `2026-09-22T04:22:20+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Oil prices rise on Trump timeline for Iran peace deal: after US elections - Reuters
-- source: Reuters
-- published_at: `2026-09-22T00:34:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Two Republican Senate candidates call for swift end to Iran war, diverging from Trump - Reuters
-- source: Reuters
-- published_at: `2026-09-21T23:23:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Five dead in Russian attacks across Ukrainian regions, officials say - Reuters
-- source: Reuters
-- published_at: `2026-09-21T23:18:31+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Macron says he discussed Ukraine-Russia energy truce ideas with Trump - Reuters
-- source: Reuters
-- published_at: `2026-09-22T00:36:00+00:00`
-- importance_score: `96`
-- confidence: `medium`
-
-### fed_hawkish / risk_off
-
-- headline: Gold slips as Fed officials signal rate hikes - Reuters
-- source: Reuters
-- published_at: `2026-09-22T02:19:00+00:00`
-- importance_score: `86`
 - confidence: `medium`
