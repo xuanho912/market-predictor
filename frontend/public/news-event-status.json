@@ -10,16 +10,16 @@
     "source": "finnhub",
     "status": "failed"
   },
-  "event_detection_confidence": 68,
+  "event_detection_confidence": 70,
   "event_risk_level": "high",
-  "generated_at": "2026-09-22T01:27:00.774304+00:00",
+  "generated_at": "2026-09-22T01:36:24.535105+00:00",
   "limits": [
     "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
     "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
     "The provider never exposes API keys and never lets frontend call Finnhub directly.",
     "Economic calendar items are treated as event-risk context, not automatic directional forecasts."
   ],
-  "major_event_count": 7,
+  "major_event_count": 6,
   "major_events": [
     {
       "affected_assets": [
@@ -175,40 +175,13 @@
       "event_type": "geopolitical_risk_escalation",
       "expected_horizon": "intraday-5d",
       "expected_market_direction": "risk_off",
-      "freshness_score": 13,
+      "freshness_score": 12,
       "headline": "Saudi, Gulf stocks fall after Houthis claim Riyadh attacks - Reuters",
       "importance_score": 99,
       "narrative": "geopolitics_escalation_risk_off",
       "provider": "finnhub",
       "published_at": "2026-09-20T12:59:36+00:00",
       "source": "Reuters"
-    },
-    {
-      "affected_assets": [
-        "SPY",
-        "QQQ",
-        "IWM",
-        "DIA",
-        "^VIX",
-        "USO",
-        "UUP",
-        "TLT"
-      ],
-      "confidence": "medium",
-      "confidence_score": 59,
-      "detected_event_conditions": [
-        "geopolitical_risk_escalation"
-      ],
-      "event_type": "geopolitical_risk_escalation",
-      "expected_horizon": "intraday-5d",
-      "expected_market_direction": "risk_off",
-      "freshness_score": 10,
-      "headline": "Budget airline king Bill Franke warms to first-class seats and premium upgrades",
-      "importance_score": 99,
-      "narrative": "geopolitics_escalation_risk_off",
-      "provider": "finnhub",
-      "published_at": "2026-09-20T12:00:01+00:00",
-      "source": "CNBC"
     }
   ],
   "market_narrative": {
@@ -310,14 +283,14 @@
     "direction": "supports_risk_expansion",
     "event_risk_level": "high",
     "macro_event_risk_flag": false,
-    "major_event_count": 7,
+    "major_event_count": 6,
     "not_a_trading_signal": true,
     "price_reaction_confirmed": true,
     "symbols": {
       "DIA": {
-        "after_primary_probability": 0.3066,
+        "after_primary_probability": 0.3073,
         "after_primary_scenario": "bounce_path",
-        "before_primary_probability": 0.336,
+        "before_primary_probability": 0.3367,
         "before_primary_scenario": "bounce_path",
         "confirmation_delta": -6.5,
         "impact": "conflicts_primary",
@@ -351,12 +324,12 @@
         "validation_type": "daily"
       },
       "IWM": {
-        "after_primary_probability": 0.3249,
+        "after_primary_probability": 0.3702,
         "after_primary_scenario": "bearish_path",
-        "before_primary_probability": 0.29,
-        "before_primary_scenario": "bounce_path",
+        "before_primary_probability": 0.3296,
+        "before_primary_scenario": "bearish_path",
         "confirmation_delta": -6.5,
-        "impact": "conflicts_primary",
+        "impact": "supports_primary",
         "not_a_trading_signal": true,
         "overlay_applied": true,
         "path_overlay": {
@@ -381,15 +354,15 @@
           "risk_expansion_predictor": 0.0348,
           "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": 0.0349,
-        "primary_scenario_changed": true,
+        "primary_probability_delta": 0.0406,
+        "primary_scenario_changed": false,
         "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
       },
       "QQQ": {
-        "after_primary_probability": 0.2858,
+        "after_primary_probability": 0.2888,
         "after_primary_scenario": "bearish_path",
-        "before_primary_probability": 0.3037,
+        "before_primary_probability": 0.3012,
         "before_primary_scenario": "bounce_path",
         "confirmation_delta": -6.5,
         "impact": "conflicts_primary",
@@ -417,15 +390,15 @@
           "risk_expansion_predictor": 0.0348,
           "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": -0.0179,
+        "primary_probability_delta": -0.0124,
         "primary_scenario_changed": true,
         "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
       },
       "SPY": {
-        "after_primary_probability": 0.3055,
-        "after_primary_scenario": "bounce_path",
-        "before_primary_probability": 0.3349,
+        "after_primary_probability": 0.3106,
+        "after_primary_scenario": "bearish_path",
+        "before_primary_probability": 0.3251,
         "before_primary_scenario": "bounce_path",
         "confirmation_delta": -6.5,
         "impact": "conflicts_primary",
@@ -453,8 +426,8 @@
           "risk_expansion_predictor": 0.0348,
           "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": -0.0294,
-        "primary_scenario_changed": false,
+        "primary_probability_delta": -0.0145,
+        "primary_scenario_changed": true,
         "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
       }
@@ -465,7 +438,7 @@
   "price_reaction_confirmation": {
     "asset_reaction_summary": {
       "avg_equity_1d_return": 0.014,
-      "avg_equity_futures_1d_return": 0.0217,
+      "avg_equity_futures_1d_return": 0.0214,
       "confirmed_checks": [
         "VIX 上升",
         "HYG/LQD 走弱",
@@ -481,7 +454,7 @@
         "股票ETF或股指期货下跌"
       ],
       "hyg_lqd_1d_relative_return": -0.0018,
-      "oil_proxy_1d_return": -0.0557,
+      "oil_proxy_1d_return": -0.0559,
       "oil_proxy_symbols_used": [
         "USO",
         "CL=F"
@@ -508,7 +481,7 @@
       "status": "available"
     },
     "gdelt_public_news": {
-      "error_type": "HTTPError",
+      "error_type": "URLError",
       "source": "gdelt",
       "stale": false,
       "status": "failed"
@@ -540,16 +513,16 @@
         "failed_bounce_risk_higher:price_confirmed",
         "risk_expansion_higher:price_confirmed"
       ],
-      "explanation": "IWM 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应已初步确认。",
-      "impact": "conflicts_primary",
-      "news_conflicts_primary_scenario": true,
-      "news_supports_primary_scenario": false,
-      "primary_scenario": "bounce_path",
+      "explanation": "IWM 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应已初步确认。",
+      "impact": "supports_primary",
+      "news_conflicts_primary_scenario": false,
+      "news_supports_primary_scenario": true,
+      "primary_scenario": "bearish_path",
       "risk_scenario": "analog_average_path",
       "scenario_bias": [
         "bearish_path"
       ],
-      "secondary_scenario": "bearish_path"
+      "secondary_scenario": "bounce_path"
     },
     "QQQ": {
       "expected_changes": [
@@ -579,11 +552,11 @@
       "news_conflicts_primary_scenario": true,
       "news_supports_primary_scenario": false,
       "primary_scenario": "bounce_path",
-      "risk_scenario": "bearish_path",
+      "risk_scenario": "analog_average_path",
       "scenario_bias": [
         "bearish_path"
       ],
-      "secondary_scenario": "analog_average_path"
+      "secondary_scenario": "bearish_path"
     }
   },
   "validation_type": "daily",

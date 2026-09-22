@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-22T01:27:00.774304+00:00`
+- generated_at: `2026-09-22T01:36:24.535105+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
-- event_detection_confidence: `68`
+- major_event_count: `6`
+- event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -70,13 +70,5 @@
 - headline: Saudi, Gulf stocks fall after Houthis claim Riyadh attacks - Reuters
 - source: Reuters
 - published_at: `2026-09-20T12:59:36+00:00`
-- importance_score: `99`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Budget airline king Bill Franke warms to first-class seats and premium upgrades
-- source: CNBC
-- published_at: `2026-09-20T12:00:01+00:00`
 - importance_score: `99`
 - confidence: `medium`
