@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-21T23:25:44.897460+00:00`
+- generated_at: `2026-09-22T00:26:01.824575+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `5`
-- event_detection_confidence: `67`
+- event_detection_confidence: `66`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -62,5 +62,5 @@
 - headline: Budget airline king Bill Franke warms to first-class seats and premium upgrades
 - source: CNBC
 - published_at: `2026-09-20T12:00:01+00:00`
-- importance_score: `100`
+- importance_score: `99`
 - confidence: `medium`

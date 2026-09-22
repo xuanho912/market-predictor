@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-09-21T23:25:57.130424+00:00`
+Generated at: `2026-09-22T00:26:13.476945+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -25,12 +25,12 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `25.9%`
 - secondary: `stock_downside_continuation` / `18.6%`
 - risk: `stock_event_risk` / `14.5%`
-- stock_confluence_score: `51.75` / `mixed`
-- stock_alpha_score_v1: `47.5` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `58.6%`
+- stock_confluence_score: `50.01` / `mixed`
+- stock_alpha_score_v1: `49.5` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `59.4%`
 - 60d_expected_return: `-0.6%`
 - risk_reward_ratio: `0.56`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `25.6`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `30.6`
 - historical_analog_support: `supportive` / samples `10`
 - validation_status: `not_yet_validated`
 
@@ -54,12 +54,12 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `26.8%`
 - secondary: `stock_downside_continuation` / `19.3%`
 - risk: `stock_event_risk` / `15.9%`
-- stock_confluence_score: `44.54` / `weak`
+- stock_confluence_score: `42.03` / `weak`
 - stock_alpha_score_v1: `5.5` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `39.8%`
 - 60d_expected_return: `-1.1%`
 - risk_reward_ratio: `0.47`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `26.24`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `32.44`
 - historical_analog_support: `supportive` / samples `10`
 - validation_status: `not_yet_validated`
 
@@ -79,16 +79,16 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - company_name: `Nuscale Power Corp`
 - status: `available`
 - current_price: `8.79`
-- market_context: `risk_off_pressure`
+- market_context: `market_headwind`
 - primary: `stock_downside_continuation` / `24.0%`
 - secondary: `stock_failed_bounce` / `23.1%`
 - risk: `stock_event_risk` / `13.6%`
-- stock_confluence_score: `33.08` / `weak`
+- stock_confluence_score: `31.33` / `weak`
 - stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `36.6%`
 - 60d_expected_return: `-2.5%`
 - risk_reward_ratio: `0.56`
-- strongest_alert: `Liquidity / Gap Risk Alert` / `NO_ALERT` / `34.03`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `34.32`
 - historical_analog_support: `conflicting` / samples `10`
 - validation_status: `not_yet_validated`
 
@@ -108,17 +108,17 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - company_name: `Constellation Energy Corp`
 - status: `available`
 - current_price: `262.11`
-- market_context: `market_headwind`
-- primary: `stock_failed_bounce` / `26.2%`
-- secondary: `stock_downside_continuation` / `23.5%`
-- risk: `stock_event_risk` / `14.2%`
-- stock_confluence_score: `34.72` / `weak`
-- stock_alpha_score_v1: `23.0` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `43.2%`
-- 60d_expected_return: `-1.6%`
-- risk_reward_ratio: `0.49`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `29.23`
-- historical_analog_support: `weak` / samples `10`
+- market_context: `neutral`
+- primary: `stock_bounce` / `21.9%`
+- secondary: `stock_downside_continuation` / `19.9%`
+- risk: `stock_failed_bounce` / `16.7%`
+- stock_confluence_score: `37.83` / `weak`
+- stock_alpha_score_v1: `28.0` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `45.2%`
+- 60d_expected_return: `-0.1%`
+- risk_reward_ratio: `0.72`
+- strongest_alert: `Relative Weakness Alert` / `NO_ALERT` / `25.5`
+- historical_analog_support: `supportive` / samples `10`
 - validation_status: `not_yet_validated`
 
 - primary_confirmation_level: `305.80`
@@ -129,5 +129,5 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - breakdown_level: `249.47`
 - nearest_support: `252.92`
 - nearest_resistance: `275.89`
-- bounce_target_zone: `{"conservative": 269.0, "base": 269.0, "extended": 314.99, "source": "scenario_path + atr + recent_resistance", "meaning": "概率反抽情景参考区间，不是目标价承诺。", "not_trading_instruction": true}`
+- bounce_target_zone: `{"conservative": 269.92, "base": 276.46, "extended": 314.99, "source": "scenario_path + atr + recent_resistance", "meaning": "概率反抽情景参考区间，不是目标价承诺。", "not_trading_instruction": true}`
 - failed_bounce_warning_zone: `{"first_warning": 256.94, "critical_warning": 250.55, "source": "risk_path + atr + recent_support", "meaning": "跌入该区间说明失败反抽风险上升。", "not_trading_instruction": true}`
