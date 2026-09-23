@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-09-23T01:10:54.420882+00:00",
+  "generated_at": "2026-09-23T01:35:13.741387+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-09-23T01:10:54.459550+00:00",
+    "generated_at": "2026-09-23T01:35:13.780114+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 285,
     "risk_score_effectiveness": {
@@ -2438,6 +2438,24 @@
           "event_risk_flag": "high",
           "headlines": [
             {
+              "datetime": 1790124600,
+              "headline": "If You Buy Monster Beverage With $10,000 Today, Could You Become a Millionaire in 25 Years?",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=6a8a655f93169fef7933ad0f27f3a12ac817cd0a74b8a51ad81a2a9a79c36e6e"
+            },
+            {
+              "datetime": 1790123100,
+              "headline": "Why This Top Automaker's Gamble on V-8 Engines During a Hybrid Boom Actually Makes Sense",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=e546e51c2556d435ce77608d5abe0a1a03e1bd5402520f1648465c76b5eb0c03"
+            },
+            {
+              "datetime": 1790122363,
+              "headline": "Why Marathon Petroleum Stock Slipped Today",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=2a3d8529f97b72ae139c890b7b7e6b5d92d2d532b9ab74e9f6edea54dc1e6811"
+            },
+            {
               "datetime": 1790120101,
               "headline": "Google Goes Nuclear With Power Upgrade Agreement in Georgia",
               "source": "Yahoo",
@@ -2466,31 +2484,13 @@
               "headline": "Nvidia’s Cooling Stock Valuations Are Being Looked At As A Warning Signal",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=5ea26352c48b17d12d2da37ae38a4d027236533062f7510208363d3860c9bfac"
-            },
-            {
-              "datetime": 1790115900,
-              "headline": "Detroit Automakers Turn Back the Clock on the Arsenal of Democracy -- Investors Should Cheer",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=365e8f2227e5c089b356c18cb976aa690ed3b395c46a5f57229900b876c5834f"
-            },
-            {
-              "datetime": 1790115456,
-              "headline": "Nvidia Backed SB Energy’s $50 Billion Valuation Push. Wall Street Just Hit the Brakes",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=1b632a31e83a56abe9f3c5fa54b544ce3de559ce62225ea389ee13e82c9a2b4e"
-            },
-            {
-              "datetime": 1790115304,
-              "headline": "VGT Holders Bought ‘Tech’ and Own No Google, Meta, or Amazon: The Sector Rule That Decides What’s Inside",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=5689ddb9b57259262486fbc4b3848e155e2ba4172ad5fcb0556ec7c43f2d295c"
             }
           ],
-          "major_company_headline": "Google Goes Nuclear With Power Upgrade Agreement in Georgia",
+          "major_company_headline": "If You Buy Monster Beverage With $10,000 Today, Could You Become a Millionaire in 25 Years?",
           "news_count_24h": 20,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
-          "news_sentiment": "neutral"
+          "news_sentiment": "positive"
         },
         "price_trend": {
           "close": 228.87,
@@ -3011,6 +3011,7 @@
         "supporting_signals": [
           "个股相对强弱优于基准。",
           "价格站在 20d 均线上方。",
+          "近期公司新闻偏正面。",
           "基础财务指标已接入且收入增长为正。"
         ]
       },
@@ -4044,7 +4045,7 @@
           {
             "affected_ticker": "NVDA",
             "alert_level": "NO_ALERT",
-            "alert_score": 8.39,
+            "alert_score": 8.47,
             "alert_type": "Stock Bounce Setup",
             "confirmation_needed": [
               "价格站上主路径确认价",
@@ -4339,15 +4340,16 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Google Goes Nuclear With Power Upgrade Agreement in Georgia",
+              "公司新闻已接入: If You Buy Monster Beverage With $10,000 Today, Could You Become a Millionaire in 25 Years?",
+              "新闻情绪偏正",
               "增长数据具备 EPS 上修叙事基础"
             ],
             "max_points": 10,
             "missing_fields": [],
             "name": "catalyst",
-            "points": 6.0,
-            "score_pct": 60.0,
-            "status": "neutral"
+            "points": 8.0,
+            "score_pct": 80.0,
+            "status": "supportive"
           },
           "flow": {
             "evidence": [
@@ -4434,7 +4436,7 @@
           "expected_return_60d": -0.0044,
           "max_drawdown_risk_20d": 0.0568,
           "max_drawdown_risk_60d": 0.098,
-          "outperformance_probability_20d": 0.6137,
+          "outperformance_probability_20d": 0.6217,
           "risk_reward_ratio": 0.59,
           "upside_potential_60d": 0.0575
         },
@@ -4456,7 +4458,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金/技术确认较强",
-          "catalyst": "Google Goes Nuclear With Power Upgrade Agreement in Georgia",
+          "catalyst": "If You Buy Monster Beverage With $10,000 Today, Could You Become a Millionaire in 25 Years?",
           "expectation_gap": [
             "收入增长较强，具备正向预期差基础",
             "EPS 增长较强，可能支持盈利上修叙事"
@@ -4474,7 +4476,7 @@
           "primary_path": "stock_failed_bounce",
           "valuation_repricing": "估值扩张证据不足或存在压力"
         },
-        "total_score": 50.5,
+        "total_score": 52.5,
         "validation_status": "not_yet_validated",
         "version": "stock_alpha_score_v1"
       },
@@ -4500,8 +4502,8 @@
         "module_scores": {
           "alpha_quality": {
             "evidence": "个股 Alpha 评分已接入",
-            "reason": "score=50.5; grade=weak_or_no_alpha_edge; benchmark=QQQ",
-            "score": 50.5,
+            "reason": "score=52.5; grade=weak_or_no_alpha_edge; benchmark=QQQ",
+            "score": 52.5,
             "status": "conflicting"
           },
           "fundamentals_earnings": {
@@ -4560,7 +4562,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 50.67,
+        "stock_confluence_score": 50.85,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "价格结构支持主路径",
@@ -4573,6 +4575,7 @@
       "supporting_signals": [
         "个股相对强弱优于基准。",
         "价格站在 20d 均线上方。",
+        "近期公司新闻偏正面。",
         "基础财务指标已接入且收入增长为正。"
       ],
       "symbol": "NVDA",
@@ -8994,7 +8997,7 @@
       "top_candidate": "CEG",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-09-23T01:10:54.447984+00:00",
+    "generated_at": "2026-09-23T01:35:13.768393+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -9092,19 +9095,19 @@
       },
       {
         "alpha_fields": {
-          "alpha_score": 50.5,
+          "alpha_score": 52.5,
           "expected_return_60d": -0.0044,
           "forecast_grade": "weak_or_no_alpha_edge",
           "main_logic": "半导体/AI 逻辑：订单、毛利率、资本开支周期、估值重估和资金确认。",
-          "outperformance_probability_20d": 0.6137,
+          "outperformance_probability_20d": 0.6217,
           "risk_reward_ratio": 0.59
         },
-        "alpha_quality_score": 50.5,
+        "alpha_quality_score": 52.5,
         "as_of": "2026-09-22",
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 63.5,
         "company_name": "NVIDIA Corp",
-        "confluence_score": 50.67,
+        "confluence_score": 50.85,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9121,7 +9124,7 @@
           "mid": 228.67,
           "range_pct": 0.0254
         },
-        "final_radar_score": 50.04,
+        "final_radar_score": 50.42,
         "forecast_date": "2026-09-22",
         "invalidation_level": 208.93,
         "last_close": 228.87,
@@ -9146,8 +9149,8 @@
           "earnings": "available"
         },
         "next_day_move_probability": 0.5344,
-        "one_line_reason": "failed_bounce_risk: Alpha 50 / 弹性 71 / 成交量 7 / 相对强弱 76 / 催化 64 / 大盘 risk_off_pressure / 板块 neutral",
-        "outperformance_probability_20d": 0.6137,
+        "one_line_reason": "failed_bounce_risk: Alpha 52 / 弹性 71 / 成交量 7 / 相对强弱 76 / 催化 64 / 大盘 risk_off_pressure / 板块 neutral",
+        "outperformance_probability_20d": 0.6217,
         "primary_probability": 0.2542,
         "primary_scenario": "stock_failed_bounce",
         "radar_level": "WATCH",
