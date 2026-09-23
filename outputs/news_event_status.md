@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-22T23:47:56.199633+00:00`
+- generated_at: `2026-09-23T01:10:42.752294+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `5`
-- event_detection_confidence: `77`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `25`
+- confirmation_score: `50`
 
 ## Dashboard Note
 
@@ -29,7 +29,7 @@
 
 - headline: Trump warns in UN speech he could 'annihilate' Iran without peace deal - Reuters
 - source: Reuters
-- published_at: `2026-09-22T20:20:18+00:00`
+- published_at: `2026-09-22T21:07:29+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -39,7 +39,7 @@
 - source: Reuters
 - published_at: `2026-09-22T19:46:20+00:00`
 - importance_score: `96`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
