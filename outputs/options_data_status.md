@@ -1,6 +1,6 @@
 # Options / Volatility Structure Status
 
-Generated at: `2026-09-23T09:01:55.289397+00:00`
+Generated at: `2026-09-23T17:02:54.442007+00:00`
 
 ## Summary
 
@@ -18,29 +18,29 @@ Generated at: `2026-09-23T09:01:55.289397+00:00`
 
 ## Market Snapshot
 
-- VIX: `14.130000114440918`
-- VIX9D: `13.140000343322754`
-- VIX3M: `18.079999923706055`
-- VIX6M: `20.15999984741211`
-- VVIX: `85.7699966430664`
+- VIX: `14.930000305175781`
+- VIX9D: `13.210000038146973`
+- VIX3M: `17.969999313354492`
+- VIX6M: `19.979999542236328`
+- VVIX: `86.37000274658203`
 - SKEW: `142.19000244140625`
 - term_structure_state: `contango`
-- volatility_reversal_score: `1.0`
-- panic_release_score: `0.78`
-- tail_risk_score: `0.1771`
-- option_stress_score: `0.0335`
-- failed_bounce_options_risk: `0.1038`
+- volatility_reversal_score: `0.9303`
+- panic_release_score: `0.6868`
+- tail_risk_score: `0.1877`
+- option_stress_score: `0.0714`
+- failed_bounce_options_risk: `0.1268`
 
 ## Sources
 
 | symbol | status | latest_date | latest_value | source | real_data | stale |
 |---|---|---|---:|---|---:|---:|
 | ^SKEW | available | 2026-09-21 | 142.19000244140625 | yahoo-chart | True | False |
-| ^VIX | available | 2026-09-23 | 14.130000114440918 | yahoo-chart | True | False |
-| ^VIX3M | available | 2026-09-21 | 18.079999923706055 | yahoo-chart | True | False |
-| ^VIX6M | available | 2026-09-21 | 20.15999984741211 | yahoo-chart | True | False |
-| ^VIX9D | available | 2026-09-21 | 13.140000343322754 | yahoo-chart | True | False |
-| ^VVIX | available | 2026-09-21 | 85.7699966430664 | yahoo-chart | True | False |
+| ^VIX | available | 2026-09-23 | 14.930000305175781 | yahoo-chart | True | False |
+| ^VIX3M | available | 2026-09-23 | 17.969999313354492 | yahoo-chart | True | False |
+| ^VIX6M | available | 2026-09-23 | 19.979999542236328 | yahoo-chart | True | False |
+| ^VIX9D | available | 2026-09-23 | 13.210000038146973 | yahoo-chart | True | False |
+| ^VVIX | available | 2026-09-23 | 86.37000274658203 | yahoo-chart | True | False |
 
 ## Guardrails
 

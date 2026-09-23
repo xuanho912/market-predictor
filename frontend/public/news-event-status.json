@@ -1,5 +1,5 @@
 {
-  "dashboard_note": "当前新闻叙事为 geopolitics_easing_risk_on，方向为 supports_bounce，已被价格反应初步确认。地缘风险缓和通常支持风险资产反抽，并降低短线风险扩散概率。",
+  "dashboard_note": "当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，已被价格反应初步确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
   "economic_calendar_risk": {
     "event_count": 0,
     "high_importance_event_count": 0,
@@ -10,17 +10,71 @@
     "source": "finnhub",
     "status": "failed"
   },
-  "event_detection_confidence": 73,
-  "event_risk_level": "medium",
-  "generated_at": "2026-09-23T09:08:45.713714+00:00",
+  "event_detection_confidence": 74,
+  "event_risk_level": "high",
+  "generated_at": "2026-09-23T17:03:03.184529+00:00",
   "limits": [
     "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
     "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
     "The provider never exposes API keys and never lets frontend call Finnhub directly.",
     "Economic calendar items are treated as event-risk context, not automatic directional forecasts."
   ],
-  "major_event_count": 6,
+  "major_event_count": 4,
   "major_events": [
+    {
+      "affected_assets": [
+        "SPY",
+        "QQQ",
+        "IWM",
+        "DIA",
+        "^VIX",
+        "USO",
+        "UUP",
+        "TLT"
+      ],
+      "confidence": "high",
+      "confidence_score": 79,
+      "detected_event_conditions": [
+        "geopolitical_risk_escalation"
+      ],
+      "event_type": "geopolitical_risk_escalation",
+      "expected_horizon": "intraday-5d",
+      "expected_market_direction": "risk_off",
+      "freshness_score": 89,
+      "headline": "Four killed in Gaza in strikes, Israel says it killed a Hamas finance chief - Reuters",
+      "importance_score": 100,
+      "narrative": "geopolitics_escalation_risk_off",
+      "provider": "finnhub",
+      "published_at": "2026-09-23T12:15:59+00:00",
+      "source": "Reuters"
+    },
+    {
+      "affected_assets": [
+        "SPY",
+        "QQQ",
+        "IWM",
+        "DIA",
+        "^VIX",
+        "USO",
+        "UUP",
+        "TLT"
+      ],
+      "confidence": "high",
+      "confidence_score": 78,
+      "detected_event_conditions": [
+        "geopolitical_risk_escalation"
+      ],
+      "event_type": "geopolitical_risk_escalation",
+      "expected_horizon": "intraday-5d",
+      "expected_market_direction": "risk_off",
+      "freshness_score": 87,
+      "headline": "Global gas market pricing prolonged tightness due to Iran war, IGU executive says - reuters.com",
+      "importance_score": 100,
+      "narrative": "geopolitics_escalation_risk_off",
+      "provider": "finnhub",
+      "published_at": "2026-09-23T11:47:45+00:00",
+      "source": "Reuters"
+    },
     {
       "affected_assets": [
         "SPY",
@@ -36,8 +90,8 @@
         "ES=F",
         "NQ=F"
       ],
-      "confidence": "high",
-      "confidence_score": 78,
+      "confidence": "medium",
+      "confidence_score": 74,
       "detected_event_conditions": [
         "geopolitical_risk_easing",
         "geopolitical_risk_escalation"
@@ -45,9 +99,9 @@
       "event_type": "geopolitical_risk_easing",
       "expected_horizon": "1d-5d",
       "expected_market_direction": "risk_on",
-      "freshness_score": 71,
-      "headline": "Trump warns in UN speech he could 'annihilate' Iran without peace deal - Reuters",
-      "importance_score": 100,
+      "freshness_score": 52,
+      "headline": "Trump warns in UN speech he could 'annihilate' Iran without peace deal - reuters.com",
+      "importance_score": 98,
       "narrative": "geopolitics_easing_risk_on",
       "provider": "finnhub",
       "published_at": "2026-09-22T21:07:29+00:00",
@@ -59,60 +113,6 @@
         "QQQ",
         "IWM",
         "DIA",
-        "USO",
-        "CL=F",
-        "XLE",
-        "^VIX"
-      ],
-      "confidence": "high",
-      "confidence_score": 77,
-      "detected_event_conditions": [
-        "oil_shock_relief"
-      ],
-      "event_type": "oil_shock_relief",
-      "expected_horizon": "1d-5d",
-      "expected_market_direction": "risk_on",
-      "freshness_score": 82,
-      "headline": "Oil falls on better supply outlook, hopes for US-Iran talks - Reuters",
-      "importance_score": 92,
-      "narrative": "oil_relief_rally",
-      "provider": "finnhub",
-      "published_at": "2026-09-23T01:44:00+00:00",
-      "source": "Reuters"
-    },
-    {
-      "affected_assets": [
-        "SPY",
-        "QQQ",
-        "IWM",
-        "DIA",
-        "^VIX",
-        "USO",
-        "UUP",
-        "TLT"
-      ],
-      "confidence": "medium",
-      "confidence_score": 71,
-      "detected_event_conditions": [
-        "geopolitical_risk_escalation"
-      ],
-      "event_type": "geopolitical_risk_escalation",
-      "expected_horizon": "intraday-5d",
-      "expected_market_direction": "risk_off",
-      "freshness_score": 57,
-      "headline": "Czech man gets fine and 13 days' custody for anti-war protest on Red Square - Reuters",
-      "importance_score": 100,
-      "narrative": "geopolitics_escalation_risk_off",
-      "provider": "finnhub",
-      "published_at": "2026-09-22T15:23:44+00:00",
-      "source": "Reuters"
-    },
-    {
-      "affected_assets": [
-        "SPY",
-        "QQQ",
-        "IWM",
-        "DIA",
         "^VIX",
         "HYG",
         "LQD",
@@ -123,75 +123,23 @@
         "NQ=F"
       ],
       "confidence": "medium",
-      "confidence_score": 70,
+      "confidence_score": 65,
       "detected_event_conditions": [],
       "event_type": "geopolitical_risk_easing",
       "expected_horizon": "1d-5d",
       "expected_market_direction": "risk_on",
-      "freshness_score": 68,
-      "headline": "Iran submits conditions for reopening of Hormuz to U.S. representative, state media says - Reuters",
-      "importance_score": 94,
+      "freshness_score": 49,
+      "headline": "Iran submits conditions for reopening of Hormuz to U.S. representative, state media says - reuters.com",
+      "importance_score": 92,
       "narrative": "geopolitics_easing_risk_on",
       "provider": "finnhub",
       "published_at": "2026-09-22T19:46:20+00:00",
       "source": "Reuters"
-    },
-    {
-      "affected_assets": [
-        "SPY",
-        "QQQ",
-        "IWM",
-        "DIA",
-        "TLT",
-        "UUP"
-      ],
-      "confidence": "medium",
-      "confidence_score": 73,
-      "detected_event_conditions": [],
-      "event_type": "fed_hawkish",
-      "expected_horizon": "1d-20d",
-      "expected_market_direction": "risk_off",
-      "freshness_score": 82,
-      "headline": "Dollar at 2-month highs as markets weigh rate hikes, Iran diplomacy - Reuters",
-      "importance_score": 87,
-      "narrative": "fed_hawkish_risk",
-      "provider": "finnhub",
-      "published_at": "2026-09-23T01:43:00+00:00",
-      "source": "Reuters"
-    },
-    {
-      "affected_assets": [
-        "SPY",
-        "QQQ",
-        "IWM",
-        "DIA",
-        "^VIX",
-        "USO",
-        "UUP",
-        "TLT"
-      ],
-      "confidence": "medium",
-      "confidence_score": 69,
-      "detected_event_conditions": [
-        "geopolitical_risk_escalation"
-      ],
-      "event_type": "geopolitical_risk_escalation",
-      "expected_horizon": "intraday-5d",
-      "expected_market_direction": "risk_off",
-      "freshness_score": 48,
-      "headline": "Flight disruptions ease at Newark, Philadelphia following equipment outage",
-      "importance_score": 100,
-      "narrative": "geopolitics_escalation_risk_off",
-      "provider": "finnhub",
-      "published_at": "2026-09-22T11:40:23+00:00",
-      "source": "CNBC"
     }
   ],
   "market_narrative": {
     "affected_scenarios": [
-      "bounce_path",
-      "expected_path",
-      "analog_average_path"
+      "bearish_path"
     ],
     "affected_symbols": [
       "DIA",
@@ -203,57 +151,13 @@
       {
         "confidence": "medium",
         "detected_event_conditions": [
-          "geopolitical_risk_escalation"
-        ],
-        "event_type": "geopolitical_risk_escalation",
-        "expected_market_direction": "risk_off",
-        "headline": "Czech man gets fine and 13 days' custody for anti-war protest on Red Square - Reuters",
-        "importance_score": 100,
-        "published_at": "2026-09-22T15:23:44+00:00",
-        "source": "Reuters"
-      },
-      {
-        "confidence": "medium",
-        "detected_event_conditions": [],
-        "event_type": "fed_hawkish",
-        "expected_market_direction": "risk_off",
-        "headline": "Dollar at 2-month highs as markets weigh rate hikes, Iran diplomacy - Reuters",
-        "importance_score": 87,
-        "published_at": "2026-09-23T01:43:00+00:00",
-        "source": "Reuters"
-      },
-      {
-        "confidence": "medium",
-        "detected_event_conditions": [
-          "geopolitical_risk_escalation"
-        ],
-        "event_type": "geopolitical_risk_escalation",
-        "expected_market_direction": "risk_off",
-        "headline": "Flight disruptions ease at Newark, Philadelphia following equipment outage",
-        "importance_score": 100,
-        "published_at": "2026-09-22T11:40:23+00:00",
-        "source": "CNBC"
-      }
-    ],
-    "detected_event_conditions": [
-      "geopolitical_risk_easing",
-      "geopolitical_risk_escalation"
-    ],
-    "market_narrative": "geopolitics_easing_risk_on",
-    "narrative_direction": "supports_bounce",
-    "narrative_strength": 65,
-    "summary": "地缘风险缓和通常支持风险资产反抽，并降低短线风险扩散概率。",
-    "supporting_headlines": [
-      {
-        "confidence": "high",
-        "detected_event_conditions": [
           "geopolitical_risk_easing",
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_easing",
         "expected_market_direction": "risk_on",
-        "headline": "Trump warns in UN speech he could 'annihilate' Iran without peace deal - Reuters",
-        "importance_score": 100,
+        "headline": "Trump warns in UN speech he could 'annihilate' Iran without peace deal - reuters.com",
+        "importance_score": 98,
         "published_at": "2026-09-22T21:07:29+00:00",
         "source": "Reuters"
       },
@@ -262,165 +166,198 @@
         "detected_event_conditions": [],
         "event_type": "geopolitical_risk_easing",
         "expected_market_direction": "risk_on",
-        "headline": "Iran submits conditions for reopening of Hormuz to U.S. representative, state media says - Reuters",
-        "importance_score": 94,
+        "headline": "Iran submits conditions for reopening of Hormuz to U.S. representative, state media says - reuters.com",
+        "importance_score": 92,
         "published_at": "2026-09-22T19:46:20+00:00",
+        "source": "Reuters"
+      }
+    ],
+    "detected_event_conditions": [
+      "geopolitical_risk_escalation"
+    ],
+    "market_narrative": "geopolitics_escalation_risk_off",
+    "narrative_direction": "supports_risk_expansion",
+    "narrative_strength": 67,
+    "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
+    "supporting_headlines": [
+      {
+        "confidence": "high",
+        "detected_event_conditions": [
+          "geopolitical_risk_escalation"
+        ],
+        "event_type": "geopolitical_risk_escalation",
+        "expected_market_direction": "risk_off",
+        "headline": "Four killed in Gaza in strikes, Israel says it killed a Hamas finance chief - Reuters",
+        "importance_score": 100,
+        "published_at": "2026-09-23T12:15:59+00:00",
+        "source": "Reuters"
+      },
+      {
+        "confidence": "high",
+        "detected_event_conditions": [
+          "geopolitical_risk_escalation"
+        ],
+        "event_type": "geopolitical_risk_escalation",
+        "expected_market_direction": "risk_off",
+        "headline": "Global gas market pricing prolonged tightness due to Iran war, IGU executive says - reuters.com",
+        "importance_score": 100,
+        "published_at": "2026-09-23T11:47:45+00:00",
         "source": "Reuters"
       }
     ]
   },
-  "news_direction": "risk_on",
+  "news_direction": "risk_off",
   "prediction_logic_effect": {
     "applied": true,
-    "direction": "supports_bounce",
-    "event_risk_level": "medium",
+    "direction": "supports_risk_expansion",
+    "event_risk_level": "high",
     "macro_event_risk_flag": false,
-    "major_event_count": 6,
+    "major_event_count": 4,
     "not_a_trading_signal": true,
     "price_reaction_confirmed": true,
     "symbols": {
       "DIA": {
-        "after_primary_probability": 0.3785,
+        "after_primary_probability": 0.312,
         "after_primary_scenario": "bounce_path",
-        "before_primary_probability": 0.3451,
+        "before_primary_probability": 0.3347,
         "before_primary_scenario": "bounce_path",
-        "confirmation_delta": 5.25,
-        "impact": "supports_primary",
+        "confirmation_delta": -5.02,
+        "impact": "conflicts_primary",
         "not_a_trading_signal": true,
         "overlay_applied": true,
         "path_overlay": {
           "applied": true,
-          "direction": "supports_bounce",
+          "direction": "supports_risk_expansion",
           "not_a_trading_signal": true,
           "reason": "Confirmed major event adjusted only the 1d/3d probability path; historical records are not rewritten.",
-          "shock_return_1d": 0.0072,
-          "shock_return_3d": 0.0032,
+          "shock_return_1d": -0.006,
+          "shock_return_3d": -0.0027,
           "source": "news_event_price_reaction_overlay",
           "validation_type": "daily"
         },
         "path_weight_deltas": {
           "analog_path_weight": 0.0,
           "base_path_weight": 0.0,
-          "bearish_path_weight": -0.0155,
-          "bounce_path_weight": 0.0442
+          "bearish_path_weight": 0.0411,
+          "bounce_path_weight": -0.0144
         },
         "predictor_deltas": {
-          "bounce_predictor": 0.0349,
-          "downside_continuation_predictor": 0.0,
-          "risk_expansion_predictor": -0.0155,
-          "trend_reversal_predictor": 0.0133
+          "bounce_predictor": -0.0123,
+          "downside_continuation_predictor": 0.0226,
+          "risk_expansion_predictor": 0.0267,
+          "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": 0.0334,
+        "primary_probability_delta": -0.0227,
         "primary_scenario_changed": false,
-        "reason": "risk-on news with price confirmation raised bounce path weight; signal confirmation adjusted +5.25 points; independent predictors adjusted by news/event overlay",
+        "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.02 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
       },
       "IWM": {
-        "after_primary_probability": 0.3584,
-        "after_primary_scenario": "bounce_path",
-        "before_primary_probability": 0.3244,
-        "before_primary_scenario": "bounce_path",
-        "confirmation_delta": 5.25,
+        "after_primary_probability": 0.3643,
+        "after_primary_scenario": "bearish_path",
+        "before_primary_probability": 0.3329,
+        "before_primary_scenario": "bearish_path",
+        "confirmation_delta": -5.02,
         "impact": "supports_primary",
         "not_a_trading_signal": true,
         "overlay_applied": true,
         "path_overlay": {
           "applied": true,
-          "direction": "supports_bounce",
+          "direction": "supports_risk_expansion",
           "not_a_trading_signal": true,
           "reason": "Confirmed major event adjusted only the 1d/3d probability path; historical records are not rewritten.",
-          "shock_return_1d": 0.0072,
-          "shock_return_3d": 0.0032,
+          "shock_return_1d": -0.006,
+          "shock_return_3d": -0.0027,
           "source": "news_event_price_reaction_overlay",
           "validation_type": "daily"
         },
         "path_weight_deltas": {
           "analog_path_weight": 0.0,
           "base_path_weight": 0.0,
-          "bearish_path_weight": -0.0155,
-          "bounce_path_weight": 0.0442
+          "bearish_path_weight": 0.0411,
+          "bounce_path_weight": -0.0144
         },
         "predictor_deltas": {
-          "bounce_predictor": 0.0349,
-          "downside_continuation_predictor": 0.0,
-          "risk_expansion_predictor": -0.0155,
-          "trend_reversal_predictor": 0.0133
+          "bounce_predictor": -0.0123,
+          "downside_continuation_predictor": 0.0226,
+          "risk_expansion_predictor": 0.0267,
+          "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": 0.034,
+        "primary_probability_delta": 0.0314,
         "primary_scenario_changed": false,
-        "reason": "risk-on news with price confirmation raised bounce path weight; signal confirmation adjusted +5.25 points; independent predictors adjusted by news/event overlay",
+        "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.02 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
       },
       "QQQ": {
-        "after_primary_probability": 0.3517,
-        "after_primary_scenario": "bounce_path",
-        "before_primary_probability": 0.3176,
+        "after_primary_probability": 0.295,
+        "after_primary_scenario": "bearish_path",
+        "before_primary_probability": 0.2901,
         "before_primary_scenario": "bounce_path",
-        "confirmation_delta": 5.25,
-        "impact": "supports_primary",
+        "confirmation_delta": -5.02,
+        "impact": "conflicts_primary",
         "not_a_trading_signal": true,
         "overlay_applied": true,
         "path_overlay": {
           "applied": true,
-          "direction": "supports_bounce",
+          "direction": "supports_risk_expansion",
           "not_a_trading_signal": true,
           "reason": "Confirmed major event adjusted only the 1d/3d probability path; historical records are not rewritten.",
-          "shock_return_1d": 0.0072,
-          "shock_return_3d": 0.0032,
+          "shock_return_1d": -0.006,
+          "shock_return_3d": -0.0027,
           "source": "news_event_price_reaction_overlay",
           "validation_type": "daily"
         },
         "path_weight_deltas": {
           "analog_path_weight": 0.0,
           "base_path_weight": 0.0,
-          "bearish_path_weight": -0.0155,
-          "bounce_path_weight": 0.0442
+          "bearish_path_weight": 0.0411,
+          "bounce_path_weight": -0.0144
         },
         "predictor_deltas": {
-          "bounce_predictor": 0.0349,
-          "downside_continuation_predictor": 0.0,
-          "risk_expansion_predictor": -0.0155,
-          "trend_reversal_predictor": 0.0133
+          "bounce_predictor": -0.0123,
+          "downside_continuation_predictor": 0.0226,
+          "risk_expansion_predictor": 0.0267,
+          "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": 0.0341,
-        "primary_scenario_changed": false,
-        "reason": "risk-on news with price confirmation raised bounce path weight; signal confirmation adjusted +5.25 points; independent predictors adjusted by news/event overlay",
+        "primary_probability_delta": 0.0049,
+        "primary_scenario_changed": true,
+        "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.02 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
       },
       "SPY": {
-        "after_primary_probability": 0.3792,
-        "after_primary_scenario": "bounce_path",
-        "before_primary_probability": 0.3459,
+        "after_primary_probability": 0.306,
+        "after_primary_scenario": "bearish_path",
+        "before_primary_probability": 0.3217,
         "before_primary_scenario": "bounce_path",
-        "confirmation_delta": 5.25,
-        "impact": "supports_primary",
+        "confirmation_delta": -5.02,
+        "impact": "conflicts_primary",
         "not_a_trading_signal": true,
         "overlay_applied": true,
         "path_overlay": {
           "applied": true,
-          "direction": "supports_bounce",
+          "direction": "supports_risk_expansion",
           "not_a_trading_signal": true,
           "reason": "Confirmed major event adjusted only the 1d/3d probability path; historical records are not rewritten.",
-          "shock_return_1d": 0.0072,
-          "shock_return_3d": 0.0032,
+          "shock_return_1d": -0.006,
+          "shock_return_3d": -0.0027,
           "source": "news_event_price_reaction_overlay",
           "validation_type": "daily"
         },
         "path_weight_deltas": {
           "analog_path_weight": 0.0,
           "base_path_weight": 0.0,
-          "bearish_path_weight": -0.0155,
-          "bounce_path_weight": 0.0442
+          "bearish_path_weight": 0.0411,
+          "bounce_path_weight": -0.0144
         },
         "predictor_deltas": {
-          "bounce_predictor": 0.0349,
-          "downside_continuation_predictor": 0.0,
-          "risk_expansion_predictor": -0.0155,
-          "trend_reversal_predictor": 0.0133
+          "bounce_predictor": -0.0123,
+          "downside_continuation_predictor": 0.0226,
+          "risk_expansion_predictor": 0.0267,
+          "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": 0.0333,
-        "primary_scenario_changed": false,
-        "reason": "risk-on news with price confirmation raised bounce path weight; signal confirmation adjusted +5.25 points; independent predictors adjusted by news/event overlay",
+        "primary_probability_delta": -0.0157,
+        "primary_scenario_changed": true,
+        "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.02 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
       }
     },
@@ -429,13 +366,12 @@
   },
   "price_reaction_confirmation": {
     "asset_reaction_summary": {
-      "avg_equity_1d_return": 0.0026,
-      "avg_equity_futures_1d_return": -0.0004,
+      "avg_equity_1d_return": -0.0076,
+      "avg_equity_futures_1d_return": -0.0111,
       "confirmed_checks": [
-        "股票ETF或股指期货上涨",
-        "VIX 下跌",
-        "HYG/LQD 稳定或走强",
-        "美元没有明显走强"
+        "股票ETF或股指期货下跌",
+        "VIX 上升",
+        "美元走强"
       ],
       "equity_futures_symbols_used": [
         "ES=F",
@@ -443,18 +379,20 @@
         "RTY=F",
         "YM=F"
       ],
-      "failed_checks": [],
-      "hyg_lqd_1d_relative_return": -0.0001,
-      "oil_proxy_1d_return": -0.0376,
+      "failed_checks": [
+        "HYG/LQD 走弱"
+      ],
+      "hyg_lqd_1d_relative_return": 0.0049,
+      "oil_proxy_1d_return": -0.0188,
       "oil_proxy_symbols_used": [
         "USO",
         "CL=F"
       ],
-      "tlt_1d_return": -0.0006,
-      "uup_1d_return": 0.0,
-      "vix_1d_return": -0.0498
+      "tlt_1d_return": -0.015,
+      "uup_1d_return": 0.0063,
+      "vix_1d_return": 0.004
     },
-    "confirmation_score": 100,
+    "confirmation_score": 75,
     "contradiction_warning": null,
     "price_reaction_confirmed": true
   },
@@ -472,7 +410,7 @@
       "status": "available"
     },
     "gdelt_public_news": {
-      "error_type": "HTTPError",
+      "error_type": "URLError",
       "source": "gdelt",
       "stale": false,
       "status": "failed"
@@ -483,79 +421,71 @@
   "symbol_impacts": {
     "DIA": {
       "expected_changes": [
-        "bounce_path_support_higher:price_confirmed",
-        "failed_bounce_risk_lower:price_confirmed",
-        "risk_expansion_lower:price_confirmed"
+        "bearish_path_weight_higher:price_confirmed",
+        "failed_bounce_risk_higher:price_confirmed",
+        "risk_expansion_higher:price_confirmed"
       ],
-      "explanation": "DIA 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应已初步确认。",
-      "impact": "supports_primary",
-      "news_conflicts_primary_scenario": false,
-      "news_supports_primary_scenario": true,
+      "explanation": "DIA 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应已初步确认。",
+      "impact": "conflicts_primary",
+      "news_conflicts_primary_scenario": true,
+      "news_supports_primary_scenario": false,
       "primary_scenario": "bounce_path",
       "risk_scenario": "bearish_path",
       "scenario_bias": [
-        "bounce_path",
-        "expected_path",
-        "analog_average_path"
+        "bearish_path"
       ],
       "secondary_scenario": "analog_average_path"
     },
     "IWM": {
       "expected_changes": [
-        "bounce_path_support_higher:price_confirmed",
-        "failed_bounce_risk_lower:price_confirmed",
-        "risk_expansion_lower:price_confirmed"
+        "bearish_path_weight_higher:price_confirmed",
+        "failed_bounce_risk_higher:price_confirmed",
+        "risk_expansion_higher:price_confirmed"
       ],
       "explanation": "IWM 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应已初步确认。",
       "impact": "supports_primary",
       "news_conflicts_primary_scenario": false,
       "news_supports_primary_scenario": true,
-      "primary_scenario": "bounce_path",
-      "risk_scenario": "bearish_path",
+      "primary_scenario": "bearish_path",
+      "risk_scenario": "analog_average_path",
       "scenario_bias": [
-        "bounce_path",
-        "expected_path",
-        "analog_average_path"
+        "bearish_path"
       ],
-      "secondary_scenario": "analog_average_path"
+      "secondary_scenario": "bounce_path"
     },
     "QQQ": {
       "expected_changes": [
-        "bounce_path_support_higher:price_confirmed",
-        "failed_bounce_risk_lower:price_confirmed",
-        "risk_expansion_lower:price_confirmed"
+        "bearish_path_weight_higher:price_confirmed",
+        "failed_bounce_risk_higher:price_confirmed",
+        "risk_expansion_higher:price_confirmed"
       ],
-      "explanation": "QQQ 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应已初步确认。",
-      "impact": "supports_primary",
-      "news_conflicts_primary_scenario": false,
-      "news_supports_primary_scenario": true,
+      "explanation": "QQQ 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应已初步确认。",
+      "impact": "conflicts_primary",
+      "news_conflicts_primary_scenario": true,
+      "news_supports_primary_scenario": false,
       "primary_scenario": "bounce_path",
       "risk_scenario": "bearish_path",
       "scenario_bias": [
-        "bounce_path",
-        "expected_path",
-        "analog_average_path"
+        "bearish_path"
       ],
       "secondary_scenario": "analog_average_path"
     },
     "SPY": {
       "expected_changes": [
-        "bounce_path_support_higher:price_confirmed",
-        "failed_bounce_risk_lower:price_confirmed",
-        "risk_expansion_lower:price_confirmed"
+        "bearish_path_weight_higher:price_confirmed",
+        "failed_bounce_risk_higher:price_confirmed",
+        "risk_expansion_higher:price_confirmed"
       ],
-      "explanation": "SPY 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应已初步确认。",
-      "impact": "supports_primary",
-      "news_conflicts_primary_scenario": false,
-      "news_supports_primary_scenario": true,
+      "explanation": "SPY 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应已初步确认。",
+      "impact": "conflicts_primary",
+      "news_conflicts_primary_scenario": true,
+      "news_supports_primary_scenario": false,
       "primary_scenario": "bounce_path",
-      "risk_scenario": "bearish_path",
+      "risk_scenario": "analog_average_path",
       "scenario_bias": [
-        "bounce_path",
-        "expected_path",
-        "analog_average_path"
+        "bearish_path"
       ],
-      "secondary_scenario": "analog_average_path"
+      "secondary_scenario": "bearish_path"
     }
   },
   "validation_type": "daily",
