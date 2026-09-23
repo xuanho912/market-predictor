@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-23T06:21:00.402589+00:00`
+- generated_at: `2026-09-23T09:08:45.713714+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `6`
-- event_detection_confidence: `75`
+- event_detection_confidence: `73`
 - event_risk_level: `medium`
 - narrative: `geopolitics_easing_risk_on`
 - narrative_direction: `supports_bounce`
 - narrative_strength: `65`
 - price_reaction_confirmed: `True`
-- confirmation_score: `75`
+- confirmation_score: `100`
 
 ## Dashboard Note
 
@@ -35,10 +35,10 @@
 
 ### oil_shock_relief / risk_on
 
-- headline: Oil falls $1 on better supply outlook, hopes for US-Iran talks - Reuters
+- headline: Oil falls on better supply outlook, hopes for US-Iran talks - Reuters
 - source: Reuters
 - published_at: `2026-09-23T01:44:00+00:00`
-- importance_score: `93`
+- importance_score: `92`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -49,20 +49,20 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### fed_hawkish / risk_off
-
-- headline: Dollar holds near 2-month high as markets weigh rate hikes, Iran diplomacy - Reuters
-- source: Reuters
-- published_at: `2026-09-23T01:43:00+00:00`
-- importance_score: `88`
-- confidence: `high`
-
 ### geopolitical_risk_easing / risk_on
 
 - headline: Iran submits conditions for reopening of Hormuz to U.S. representative, state media says - Reuters
 - source: Reuters
 - published_at: `2026-09-22T19:46:20+00:00`
 - importance_score: `94`
+- confidence: `medium`
+
+### fed_hawkish / risk_off
+
+- headline: Dollar at 2-month highs as markets weigh rate hikes, Iran diplomacy - Reuters
+- source: Reuters
+- published_at: `2026-09-23T01:43:00+00:00`
+- importance_score: `87`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
