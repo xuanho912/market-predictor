@@ -1,20 +1,20 @@
 # High Confidence Edge Report
 
-Generated at: `2026-09-23T17:03:03.180313+00:00`
+Generated at: `2026-09-23T23:03:23.943155+00:00`
 
 Status: `historical_proxy_and_forward_pending`
 Sample size: `80`
-Forward completed sample size: `40`
+Forward completed sample size: `43`
 Forward validation notice: `Forward samples have started to mature, but alpha status remains research-only until stability is proven.`
 Conclusion: `not_enough_strong_edge_samples`
 
 ## Forward Sample Gates
 
-- 3d: completed `40`, gate `early_evidence`
-- 5d: completed `40`, gate `early_evidence`
-- 10d: completed `40`, gate `early_evidence`
-- 20d: completed `40`, gate `early_evidence`
-- 60d: completed `40`, gate `early_evidence`
+- 3d: completed `43`, gate `early_evidence`
+- 5d: completed `43`, gate `early_evidence`
+- 10d: completed `43`, gate `early_evidence`
+- 20d: completed `43`, gate `early_evidence`
+- 60d: completed `43`, gate `early_evidence`
 
 ## By Edge Status
 
@@ -28,11 +28,11 @@ Conclusion: `not_enough_strong_edge_samples`
 
 ### MODERATE_EDGE
 - sample_size: `60`
-- 3d: sample `60`, hit `0.4833`, avg `-0.004481`, median `-0.001227`, mae `0.016053`
-- 5d: sample `60`, hit `0.4667`, avg `-0.008664`, median `-0.001562`, mae `0.01744`
-- 10d: sample `60`, hit `0.4`, avg `-0.00584`, median `-0.007011`, mae `0.020133`
-- 20d: sample `60`, hit `0.6`, avg `0.009906`, median `0.016745`, mae `0.033123`
-- 60d: sample `60`, hit `0.7`, avg `0.022049`, median `0.037425`, mae `0.056714`
+- 3d: sample `60`, hit `0.4833`, avg `-0.00412`, median `-0.001227`, mae `0.016414`
+- 5d: sample `60`, hit `0.4833`, avg `-0.008167`, median `-0.000423`, mae `0.017402`
+- 10d: sample `60`, hit `0.4`, avg `-0.005897`, median `-0.007011`, mae `0.020076`
+- 20d: sample `60`, hit `0.6`, avg `0.009363`, median `0.016027`, mae `0.03258`
+- 60d: sample `60`, hit `0.6833`, avg `0.019239`, median `0.031273`, mae `0.055719`
 
 ### WEAK_EDGE
 - sample_size: `20`
@@ -62,28 +62,28 @@ Conclusion: `not_enough_strong_edge_samples`
 
 ### signal_confirmation_score top 10%
 - sample_size: `8`
-- 3d: sample `8`, hit `0.25`, avg `-0.016807`, median `-0.030499`, mae `0.024878`
-- 5d: sample `8`, hit `0.375`, avg `-0.01718`, median `-0.016421`, mae `0.022862`
-- 10d: sample `8`, hit `0.25`, avg `-0.012488`, median `-0.011432`, mae `0.015647`
-- 20d: sample `8`, hit `0.75`, avg `0.014597`, median `0.029166`, mae `0.044724`
-- 60d: sample `8`, hit `0.875`, avg `0.053341`, median `0.072696`, mae `0.088622`
+- 3d: sample `8`, hit `0.25`, avg `-0.015931`, median `-0.024029`, mae `0.024002`
+- 5d: sample `8`, hit `0.375`, avg `-0.020884`, median `-0.024165`, mae `0.026566`
+- 10d: sample `8`, hit `0.125`, avg `-0.02023`, median `-0.017071`, mae `0.022988`
+- 20d: sample `8`, hit `0.625`, avg `0.003485`, median `0.029166`, mae `0.049309`
+- 60d: sample `8`, hit `0.75`, avg `0.032624`, median `0.072696`, mae `0.094557`
 
 ### confidence_score top 10%
 - sample_size: `8`
-- 3d: sample `8`, hit `0.25`, avg `-0.016807`, median `-0.030499`, mae `0.024878`
-- 5d: sample `8`, hit `0.375`, avg `-0.01718`, median `-0.016421`, mae `0.022862`
-- 10d: sample `8`, hit `0.25`, avg `-0.012488`, median `-0.011432`, mae `0.015647`
-- 20d: sample `8`, hit `0.75`, avg `0.014597`, median `0.029166`, mae `0.044724`
-- 60d: sample `8`, hit `0.875`, avg `0.053341`, median `0.072696`, mae `0.088622`
+- 3d: sample `8`, hit `0.25`, avg `-0.015931`, median `-0.024029`, mae `0.024002`
+- 5d: sample `8`, hit `0.375`, avg `-0.020884`, median `-0.024165`, mae `0.026566`
+- 10d: sample `8`, hit `0.125`, avg `-0.02023`, median `-0.017071`, mae `0.022988`
+- 20d: sample `8`, hit `0.625`, avg `0.003485`, median `0.029166`, mae `0.049309`
+- 60d: sample `8`, hit `0.75`, avg `0.032624`, median `0.072696`, mae `0.094557`
 
 ### confidence validation
-- `{'strong_edge': {'sample_size': 0, 'by_horizon': {'3d': {'sample_size': 0}, '5d': {'sample_size': 0}, '10d': {'sample_size': 0}, '20d': {'sample_size': 0}, '60d': {'sample_size': 0}}}, 'moderate_edge': {'sample_size': 60, 'by_horizon': {'3d': {'sample_size': 60, 'hit_rate': 0.4833, 'avg_return': -0.004481, 'median_return': -0.001227, 'mean_absolute_return': 0.016053, 'max_adverse_excursion': -0.039566, 'max_favorable_excursion': 0.024649}, '5d': {'sample_size': 60, 'hit_rate': 0.4667, 'avg_return': -0.008664, 'median_return': -0.001562, 'mean_absolute_return': 0.01744, 'max_adverse_excursion': -0.061703, 'max_favorable_excursion': 0.031487}, '10d': {'sample_size': 60, 'hit_rate': 0.4, 'avg_return': -0.00584, 'median_return': -0.007011, 'mean_absolute_return': 0.020133, 'max_adverse_excursion': -0.06798, 'max_favorable_excursion': 0.051845}, '20d': {'sample_size': 60, 'hit_rate': 0.6, 'avg_return': 0.009906, 'median_return': 0.016745, 'mean_absolute_return': 0.033123, 'max_adverse_excursion': -0.118842, 'max_favorable_excursion': 0.076296}, '60d': {'sample_size': 60, 'hit_rate': 0.7, 'avg_return': 0.022049, 'median_return': 0.037425, 'mean_absolute_return': 0.056714, 'max_adverse_excursion': -0.141126, 'max_favorable_excursion': 0.144029}}}, 'confidence_top_10': {'sample_size': 8, 'by_horizon': {'3d': {'sample_size': 8, 'hit_rate': 0.25, 'avg_return': -0.016807, 'median_return': -0.030499, 'mean_absolute_return': 0.024878, 'max_adverse_excursion': -0.036428, 'max_favorable_excursion': 0.020012}, '5d': {'sample_size': 8, 'hit_rate': 0.375, 'avg_return': -0.01718, 'median_return': -0.016421, 'mean_absolute_return': 0.022862, 'max_adverse_excursion': -0.061703, 'max_favorable_excursion': 0.009709}, '10d': {'sample_size': 8, 'hit_rate': 0.25, 'avg_return': -0.012488, 'median_return': -0.011432, 'mean_absolute_return': 0.015647, 'max_adverse_excursion': -0.035191, 'max_favorable_excursion': 0.011031}, '20d': {'sample_size': 8, 'hit_rate': 0.75, 'avg_return': 0.014597, 'median_return': 0.029166, 'mean_absolute_return': 0.044724, 'max_adverse_excursion': -0.118842, 'max_favorable_excursion': 0.058396}, '60d': {'sample_size': 8, 'hit_rate': 0.875, 'avg_return': 0.053341, 'median_return': 0.072696, 'mean_absolute_return': 0.088622, 'max_adverse_excursion': -0.141126, 'max_favorable_excursion': 0.130806}}}, 'ordinary_confidence': {'sample_size': 72, 'by_horizon': {'3d': {'sample_size': 72, 'hit_rate': 0.4167, 'avg_return': -0.005451, 'median_return': -0.003649, 'mean_absolute_return': 0.015846, 'max_adverse_excursion': -0.071222, 'max_favorable_excursion': 0.041771}, '5d': {'sample_size': 72, 'hit_rate': 0.3889, 'avg_return': -0.011022, 'median_return': -0.011925, 'mean_absolute_return': 0.020056, 'max_adverse_excursion': -0.069614, 'max_favorable_excursion': 0.038052}, '10d': {'sample_size': 72, 'hit_rate': 0.3889, 'avg_return': -0.009604, 'median_return': -0.007491, 'mean_absolute_return': 0.027399, 'max_adverse_excursion': -0.080172, 'max_favorable_excursion': 0.066884}, '20d': {'sample_size': 72, 'hit_rate': 0.5417, 'avg_return': 0.007674, 'median_return': 0.013156, 'mean_absolute_return': 0.038831, 'max_adverse_excursion': -0.118199, 'max_favorable_excursion': 0.11977}, '60d': {'sample_size': 72, 'hit_rate': 0.6944, 'avg_return': 0.024143, 'median_return': 0.041902, 'mean_absolute_return': 0.062533, 'max_adverse_excursion': -0.203511, 'max_favorable_excursion': 0.145995}}}, 'validation_question': 'Does high confidence beat ordinary confidence in hit rate, average return, and lower mean absolute error?', 'status': 'forward_validation_required'}`
+- `{'strong_edge': {'sample_size': 0, 'by_horizon': {'3d': {'sample_size': 0}, '5d': {'sample_size': 0}, '10d': {'sample_size': 0}, '20d': {'sample_size': 0}, '60d': {'sample_size': 0}}}, 'moderate_edge': {'sample_size': 60, 'by_horizon': {'3d': {'sample_size': 60, 'hit_rate': 0.4833, 'avg_return': -0.00412, 'median_return': -0.001227, 'mean_absolute_return': 0.016414, 'max_adverse_excursion': -0.039566, 'max_favorable_excursion': 0.029069}, '5d': {'sample_size': 60, 'hit_rate': 0.4833, 'avg_return': -0.008167, 'median_return': -0.000423, 'mean_absolute_return': 0.017402, 'max_adverse_excursion': -0.061703, 'max_favorable_excursion': 0.031487}, '10d': {'sample_size': 60, 'hit_rate': 0.4, 'avg_return': -0.005897, 'median_return': -0.007011, 'mean_absolute_return': 0.020076, 'max_adverse_excursion': -0.06798, 'max_favorable_excursion': 0.051845}, '20d': {'sample_size': 60, 'hit_rate': 0.6, 'avg_return': 0.009363, 'median_return': 0.016027, 'mean_absolute_return': 0.03258, 'max_adverse_excursion': -0.118842, 'max_favorable_excursion': 0.076296}, '60d': {'sample_size': 60, 'hit_rate': 0.6833, 'avg_return': 0.019239, 'median_return': 0.031273, 'mean_absolute_return': 0.055719, 'max_adverse_excursion': -0.141126, 'max_favorable_excursion': 0.144029}}}, 'confidence_top_10': {'sample_size': 8, 'by_horizon': {'3d': {'sample_size': 8, 'hit_rate': 0.25, 'avg_return': -0.015931, 'median_return': -0.024029, 'mean_absolute_return': 0.024002, 'max_adverse_excursion': -0.036428, 'max_favorable_excursion': 0.020012}, '5d': {'sample_size': 8, 'hit_rate': 0.375, 'avg_return': -0.020884, 'median_return': -0.024165, 'mean_absolute_return': 0.026566, 'max_adverse_excursion': -0.061703, 'max_favorable_excursion': 0.009709}, '10d': {'sample_size': 8, 'hit_rate': 0.125, 'avg_return': -0.02023, 'median_return': -0.017071, 'mean_absolute_return': 0.022988, 'max_adverse_excursion': -0.060333, 'max_favorable_excursion': 0.011031}, '20d': {'sample_size': 8, 'hit_rate': 0.625, 'avg_return': 0.003485, 'median_return': 0.029166, 'mean_absolute_return': 0.049309, 'max_adverse_excursion': -0.118842, 'max_favorable_excursion': 0.058396}, '60d': {'sample_size': 8, 'hit_rate': 0.75, 'avg_return': 0.032624, 'median_return': 0.072696, 'mean_absolute_return': 0.094557, 'max_adverse_excursion': -0.141126, 'max_favorable_excursion': 0.130806}}}, 'ordinary_confidence': {'sample_size': 72, 'by_horizon': {'3d': {'sample_size': 72, 'hit_rate': 0.4167, 'avg_return': -0.005247, 'median_return': -0.003649, 'mean_absolute_return': 0.016244, 'max_adverse_excursion': -0.071222, 'max_favorable_excursion': 0.041771}, '5d': {'sample_size': 72, 'hit_rate': 0.4028, 'avg_return': -0.010197, 'median_return': -0.011684, 'mean_absolute_return': 0.019612, 'max_adverse_excursion': -0.069614, 'max_favorable_excursion': 0.038052}, '10d': {'sample_size': 72, 'hit_rate': 0.4028, 'avg_return': -0.008791, 'median_return': -0.007314, 'mean_absolute_return': 0.026536, 'max_adverse_excursion': -0.080172, 'max_favorable_excursion': 0.066884}, '20d': {'sample_size': 72, 'hit_rate': 0.5556, 'avg_return': 0.008457, 'median_return': 0.013156, 'mean_absolute_return': 0.037869, 'max_adverse_excursion': -0.118199, 'max_favorable_excursion': 0.11977}, '60d': {'sample_size': 72, 'hit_rate': 0.6944, 'avg_return': 0.024103, 'median_return': 0.041902, 'mean_absolute_return': 0.061044, 'max_adverse_excursion': -0.203511, 'max_favorable_excursion': 0.145995}}}, 'validation_question': 'Does high confidence beat ordinary confidence in hit rate, average return, and lower mean absolute error?', 'status': 'forward_validation_required'}`
 
 ## Scenario Checks
 
-- primary_scenario_hit_rate: `{'3d': {'sample_size': 80, 'hit_rate': 0.575}, '5d': {'sample_size': 80, 'hit_rate': 0.5625}, '10d': {'sample_size': 80, 'hit_rate': 0.475}, '20d': {'sample_size': 80, 'hit_rate': 0.5875}, '60d': {'sample_size': 80, 'hit_rate': 0.5875}}`
-- primary_vs_secondary: `{'status': 'forward_ready', 'by_horizon': {'3d': {'sample_size': 80, 'primary_hit_rate': 0.575, 'secondary_hit_rate': 0.5, 'primary_minus_secondary': 0.075, 'both_hit': 23, 'both_miss': 17}, '5d': {'sample_size': 80, 'primary_hit_rate': 0.5625, 'secondary_hit_rate': 0.4875, 'primary_minus_secondary': 0.075, 'both_hit': 22, 'both_miss': 18}, '10d': {'sample_size': 80, 'primary_hit_rate': 0.475, 'secondary_hit_rate': 0.525, 'primary_minus_secondary': -0.05, 'both_hit': 20, 'both_miss': 20}, '20d': {'sample_size': 80, 'primary_hit_rate': 0.5875, 'secondary_hit_rate': 0.5375, 'primary_minus_secondary': 0.05, 'both_hit': 25, 'both_miss': 15}, '60d': {'sample_size': 80, 'primary_hit_rate': 0.5875, 'secondary_hit_rate': 0.6625, 'primary_minus_secondary': -0.075, 'both_hit': 30, 'both_miss': 10}}, 'note': 'Forward sample gate has opened, but alpha status still requires stable performance over time.'}`
-- close_call_samples: `{'close_call_sample_size': 80, 'non_close_call_sample_size': 0, 'close_call_metrics': {'sample_size': 80, 'by_horizon': {'3d': {'sample_size': 80, 'hit_rate': 0.4, 'avg_return': -0.006587, 'median_return': -0.003676, 'mean_absolute_return': 0.016749, 'max_adverse_excursion': -0.071222, 'max_favorable_excursion': 0.041771}, '5d': {'sample_size': 80, 'hit_rate': 0.3875, 'avg_return': -0.011638, 'median_return': -0.013229, 'mean_absolute_return': 0.020337, 'max_adverse_excursion': -0.069614, 'max_favorable_excursion': 0.038052}, '10d': {'sample_size': 80, 'hit_rate': 0.375, 'avg_return': -0.009892, 'median_return': -0.009882, 'mean_absolute_return': 0.026224, 'max_adverse_excursion': -0.080172, 'max_favorable_excursion': 0.066884}, '20d': {'sample_size': 80, 'hit_rate': 0.5625, 'avg_return': 0.008367, 'median_return': 0.016027, 'mean_absolute_return': 0.03942, 'max_adverse_excursion': -0.118842, 'max_favorable_excursion': 0.11977}, '60d': {'sample_size': 80, 'hit_rate': 0.7125, 'avg_return': 0.027063, 'median_return': 0.044683, 'mean_absolute_return': 0.065142, 'max_adverse_excursion': -0.203511, 'max_favorable_excursion': 0.145995}}}, 'non_close_call_metrics': {'sample_size': 0, 'by_horizon': {'3d': {'sample_size': 0}, '5d': {'sample_size': 0}, '10d': {'sample_size': 0}, '20d': {'sample_size': 0}, '60d': {'sample_size': 0}}}, 'note': 'close_call rows are tracked separately because path probabilities differ by less than eight percentage points.'}`
+- primary_scenario_hit_rate: `{'3d': {'sample_size': 80, 'hit_rate': 0.575}, '5d': {'sample_size': 80, 'hit_rate': 0.575}, '10d': {'sample_size': 80, 'hit_rate': 0.475}, '20d': {'sample_size': 80, 'hit_rate': 0.5875}, '60d': {'sample_size': 80, 'hit_rate': 0.575}}`
+- primary_vs_secondary: `{'status': 'forward_ready', 'by_horizon': {'3d': {'sample_size': 80, 'primary_hit_rate': 0.575, 'secondary_hit_rate': 0.425, 'primary_minus_secondary': 0.15, 'both_hit': 0, 'both_miss': 0}, '5d': {'sample_size': 80, 'primary_hit_rate': 0.575, 'secondary_hit_rate': 0.425, 'primary_minus_secondary': 0.15, 'both_hit': 0, 'both_miss': 0}, '10d': {'sample_size': 80, 'primary_hit_rate': 0.475, 'secondary_hit_rate': 0.525, 'primary_minus_secondary': -0.05, 'both_hit': 0, 'both_miss': 0}, '20d': {'sample_size': 80, 'primary_hit_rate': 0.5875, 'secondary_hit_rate': 0.4125, 'primary_minus_secondary': 0.175, 'both_hit': 0, 'both_miss': 0}, '60d': {'sample_size': 80, 'primary_hit_rate': 0.575, 'secondary_hit_rate': 0.425, 'primary_minus_secondary': 0.15, 'both_hit': 0, 'both_miss': 0}}, 'note': 'Forward sample gate has opened, but alpha status still requires stable performance over time.'}`
+- close_call_samples: `{'close_call_sample_size': 80, 'non_close_call_sample_size': 0, 'close_call_metrics': {'sample_size': 80, 'by_horizon': {'3d': {'sample_size': 80, 'hit_rate': 0.4, 'avg_return': -0.006316, 'median_return': -0.003676, 'mean_absolute_return': 0.01702, 'max_adverse_excursion': -0.071222, 'max_favorable_excursion': 0.041771}, '5d': {'sample_size': 80, 'hit_rate': 0.4, 'avg_return': -0.011265, 'median_return': -0.011925, 'mean_absolute_return': 0.020308, 'max_adverse_excursion': -0.069614, 'max_favorable_excursion': 0.038052}, '10d': {'sample_size': 80, 'hit_rate': 0.375, 'avg_return': -0.009935, 'median_return': -0.009882, 'mean_absolute_return': 0.026182, 'max_adverse_excursion': -0.080172, 'max_favorable_excursion': 0.066884}, '20d': {'sample_size': 80, 'hit_rate': 0.5625, 'avg_return': 0.007959, 'median_return': 0.015416, 'mean_absolute_return': 0.039013, 'max_adverse_excursion': -0.118842, 'max_favorable_excursion': 0.11977}, '60d': {'sample_size': 80, 'hit_rate': 0.7, 'avg_return': 0.024955, 'median_return': 0.04207, 'mean_absolute_return': 0.064395, 'max_adverse_excursion': -0.203511, 'max_favorable_excursion': 0.145995}}}, 'non_close_call_metrics': {'sample_size': 0, 'by_horizon': {'3d': {'sample_size': 0}, '5d': {'sample_size': 0}, '10d': {'sample_size': 0}, '20d': {'sample_size': 0}, '60d': {'sample_size': 0}}}, 'note': 'close_call rows are tracked separately because path probabilities differ by less than eight percentage points.'}`
 
 ## Breadth Forward Validation
 
@@ -100,11 +100,11 @@ Conclusion: `not_enough_strong_edge_samples`
 
 ### breadth_conflicted_signals
 - sample_size: `80`
-- 3d: sample `80`, hit `0.4`, avg `-0.006587`, median `-0.003676`, mae `0.016749`
-- 5d: sample `80`, hit `0.3875`, avg `-0.011638`, median `-0.013229`, mae `0.020337`
-- 10d: sample `80`, hit `0.375`, avg `-0.009892`, median `-0.009882`, mae `0.026224`
-- 20d: sample `80`, hit `0.5625`, avg `0.008367`, median `0.016027`, mae `0.03942`
-- 60d: sample `80`, hit `0.7125`, avg `0.027063`, median `0.044683`, mae `0.065142`
+- 3d: sample `80`, hit `0.4`, avg `-0.006316`, median `-0.003676`, mae `0.01702`
+- 5d: sample `80`, hit `0.4`, avg `-0.011265`, median `-0.011925`, mae `0.020308`
+- 10d: sample `80`, hit `0.375`, avg `-0.009935`, median `-0.009882`, mae `0.026182`
+- 20d: sample `80`, hit `0.5625`, avg `0.007959`, median `0.015416`, mae `0.039013`
+- 60d: sample `80`, hit `0.7`, avg `0.024955`, median `0.04207`, mae `0.064395`
 
 ### breadth_confirmed_bounce_signals
 - sample_size: `20`
@@ -116,11 +116,11 @@ Conclusion: `not_enough_strong_edge_samples`
 
 ### breadth_conflicted_bounce_signals
 - sample_size: `60`
-- 3d: sample `60`, hit `0.4833`, avg `-0.004481`, median `-0.001227`, mae `0.016053`
-- 5d: sample `60`, hit `0.4667`, avg `-0.008664`, median `-0.001562`, mae `0.01744`
-- 10d: sample `60`, hit `0.4`, avg `-0.00584`, median `-0.007011`, mae `0.020133`
-- 20d: sample `60`, hit `0.6`, avg `0.009906`, median `0.016745`, mae `0.033123`
-- 60d: sample `60`, hit `0.7`, avg `0.022049`, median `0.037425`, mae `0.056714`
+- 3d: sample `60`, hit `0.4833`, avg `-0.00412`, median `-0.001227`, mae `0.016414`
+- 5d: sample `60`, hit `0.4833`, avg `-0.008167`, median `-0.000423`, mae `0.017402`
+- 10d: sample `60`, hit `0.4`, avg `-0.005897`, median `-0.007011`, mae `0.020076`
+- 20d: sample `60`, hit `0.6`, avg `0.009363`, median `0.016027`, mae `0.03258`
+- 60d: sample `60`, hit `0.6833`, avg `0.019239`, median `0.031273`, mae `0.055719`
 
 ### breadth_confirmed_reversal_signals
 - sample_size: `0`
@@ -132,11 +132,11 @@ Conclusion: `not_enough_strong_edge_samples`
 
 ### breadth_conflicted_reversal_signals
 - sample_size: `40`
-- 3d: sample `40`, hit `0.45`, avg `-0.004746`, median `-0.001658`, mae `0.015923`
-- 5d: sample `40`, hit `0.45`, avg `-0.009711`, median `-0.001562`, mae `0.017355`
-- 10d: sample `40`, hit `0.4`, avg `-0.003248`, median `-0.006017`, mae `0.020066`
-- 20d: sample `40`, hit `0.6`, avg `0.007909`, median `0.016745`, mae `0.035435`
-- 60d: sample `40`, hit `0.7`, avg `0.022299`, median `0.037425`, mae `0.060883`
+- 3d: sample `40`, hit `0.45`, avg `-0.004204`, median `-0.001658`, mae `0.016465`
+- 5d: sample `40`, hit `0.475`, avg `-0.008965`, median `-0.000423`, mae `0.017297`
+- 10d: sample `40`, hit `0.4`, avg `-0.003333`, median `-0.006017`, mae `0.019981`
+- 20d: sample `40`, hit `0.6`, avg `0.007095`, median `0.016027`, mae `0.03462`
+- 60d: sample `40`, hit `0.675`, avg `0.018083`, median `0.031273`, mae `0.05939`
 
 ### bounce_with_breadth_support
 - sample_size: `20`
@@ -148,11 +148,11 @@ Conclusion: `not_enough_strong_edge_samples`
 
 ### bounce_without_breadth_support
 - sample_size: `40`
-- 3d: sample `40`, hit `0.45`, avg `-0.004746`, median `-0.001658`, mae `0.015923`
-- 5d: sample `40`, hit `0.45`, avg `-0.009711`, median `-0.001562`, mae `0.017355`
-- 10d: sample `40`, hit `0.4`, avg `-0.003248`, median `-0.006017`, mae `0.020066`
-- 20d: sample `40`, hit `0.6`, avg `0.007909`, median `0.016745`, mae `0.035435`
-- 60d: sample `40`, hit `0.7`, avg `0.022299`, median `0.037425`, mae `0.060883`
+- 3d: sample `40`, hit `0.45`, avg `-0.004204`, median `-0.001658`, mae `0.016465`
+- 5d: sample `40`, hit `0.475`, avg `-0.008965`, median `-0.000423`, mae `0.017297`
+- 10d: sample `40`, hit `0.4`, avg `-0.003333`, median `-0.006017`, mae `0.019981`
+- 20d: sample `40`, hit `0.6`, avg `0.007095`, median `0.016027`, mae `0.03462`
+- 60d: sample `40`, hit `0.675`, avg `0.018083`, median `0.031273`, mae `0.05939`
 
 ### trend_reversal_with_breadth_support
 - sample_size: `0`
@@ -193,11 +193,11 @@ Conclusion: `not_enough_strong_edge_samples`
 
 ### surface_only_strength
 - sample_size: `80`
-- 3d: sample `80`, hit `0.4`, avg `-0.006587`, median `-0.003676`, mae `0.016749`
-- 5d: sample `80`, hit `0.3875`, avg `-0.011638`, median `-0.013229`, mae `0.020337`
-- 10d: sample `80`, hit `0.375`, avg `-0.009892`, median `-0.009882`, mae `0.026224`
-- 20d: sample `80`, hit `0.5625`, avg `0.008367`, median `0.016027`, mae `0.03942`
-- 60d: sample `80`, hit `0.7125`, avg `0.027063`, median `0.044683`, mae `0.065142`
+- 3d: sample `80`, hit `0.4`, avg `-0.006316`, median `-0.003676`, mae `0.01702`
+- 5d: sample `80`, hit `0.4`, avg `-0.011265`, median `-0.011925`, mae `0.020308`
+- 10d: sample `80`, hit `0.375`, avg `-0.009935`, median `-0.009882`, mae `0.026182`
+- 20d: sample `80`, hit `0.5625`, avg `0.007959`, median `0.015416`, mae `0.039013`
+- 60d: sample `80`, hit `0.7`, avg `0.024955`, median `0.04207`, mae `0.064395`
 
 ### bounce_with_internal_resonance
 - sample_size: `0`
@@ -209,11 +209,11 @@ Conclusion: `not_enough_strong_edge_samples`
 
 ### bounce_surface_only
 - sample_size: `60`
-- 3d: sample `60`, hit `0.4833`, avg `-0.004481`, median `-0.001227`, mae `0.016053`
-- 5d: sample `60`, hit `0.4667`, avg `-0.008664`, median `-0.001562`, mae `0.01744`
-- 10d: sample `60`, hit `0.4`, avg `-0.00584`, median `-0.007011`, mae `0.020133`
-- 20d: sample `60`, hit `0.6`, avg `0.009906`, median `0.016745`, mae `0.033123`
-- 60d: sample `60`, hit `0.7`, avg `0.022049`, median `0.037425`, mae `0.056714`
+- 3d: sample `60`, hit `0.4833`, avg `-0.00412`, median `-0.001227`, mae `0.016414`
+- 5d: sample `60`, hit `0.4833`, avg `-0.008167`, median `-0.000423`, mae `0.017402`
+- 10d: sample `60`, hit `0.4`, avg `-0.005897`, median `-0.007011`, mae `0.020076`
+- 20d: sample `60`, hit `0.6`, avg `0.009363`, median `0.016027`, mae `0.03258`
+- 60d: sample `60`, hit `0.6833`, avg `0.019239`, median `0.031273`, mae `0.055719`
 
 ## Flow / Positioning Proxy Forward Validation
 
@@ -221,12 +221,12 @@ Conclusion: `not_enough_strong_edge_samples`
 - evidence_note: `Forward sample gate has opened; compare flow-confirmed and flow-conflicted buckets before raising confidence.`
 
 ### flow_confirmed_signals
-- sample_size: `40`
-- 3d: sample `40`, hit `0.45`, avg `-0.004746`, median `-0.001658`, mae `0.015923`
-- 5d: sample `40`, hit `0.45`, avg `-0.009711`, median `-0.001562`, mae `0.017355`
-- 10d: sample `40`, hit `0.4`, avg `-0.003248`, median `-0.006017`, mae `0.020066`
-- 20d: sample `40`, hit `0.6`, avg `0.007909`, median `0.016745`, mae `0.035435`
-- 60d: sample `40`, hit `0.7`, avg `0.022299`, median `0.037425`, mae `0.060883`
+- sample_size: `80`
+- 3d: sample `80`, hit `0.4`, avg `-0.006316`, median `-0.003676`, mae `0.01702`
+- 5d: sample `80`, hit `0.4`, avg `-0.011265`, median `-0.011925`, mae `0.020308`
+- 10d: sample `80`, hit `0.375`, avg `-0.009935`, median `-0.009882`, mae `0.026182`
+- 20d: sample `80`, hit `0.5625`, avg `0.007959`, median `0.015416`, mae `0.039013`
+- 60d: sample `80`, hit `0.7`, avg `0.024955`, median `0.04207`, mae `0.064395`
 
 ### flow_conflicted_signals
 - sample_size: `0`
@@ -237,12 +237,12 @@ Conclusion: `not_enough_strong_edge_samples`
 - 60d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
 
 ### bounce_with_flow_support
-- sample_size: `40`
-- 3d: sample `40`, hit `0.45`, avg `-0.004746`, median `-0.001658`, mae `0.015923`
-- 5d: sample `40`, hit `0.45`, avg `-0.009711`, median `-0.001562`, mae `0.017355`
-- 10d: sample `40`, hit `0.4`, avg `-0.003248`, median `-0.006017`, mae `0.020066`
-- 20d: sample `40`, hit `0.6`, avg `0.007909`, median `0.016745`, mae `0.035435`
-- 60d: sample `40`, hit `0.7`, avg `0.022299`, median `0.037425`, mae `0.060883`
+- sample_size: `60`
+- 3d: sample `60`, hit `0.4833`, avg `-0.00412`, median `-0.001227`, mae `0.016414`
+- 5d: sample `60`, hit `0.4833`, avg `-0.008167`, median `-0.000423`, mae `0.017402`
+- 10d: sample `60`, hit `0.4`, avg `-0.005897`, median `-0.007011`, mae `0.020076`
+- 20d: sample `60`, hit `0.6`, avg `0.009363`, median `0.016027`, mae `0.03258`
+- 60d: sample `60`, hit `0.6833`, avg `0.019239`, median `0.031273`, mae `0.055719`
 
 ### bounce_with_flow_conflict
 - sample_size: `0`

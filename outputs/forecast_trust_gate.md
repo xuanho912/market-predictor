@@ -1,27 +1,27 @@
 # Forecast Trust Gate
 
-Generated at: `2026-09-23T17:03:15.245873+00:00`
+Generated at: `2026-09-23T23:03:34.590274+00:00`
 
 This report answers whether the current Market Prediction Dashboard is dependable as a forecasting tool. It is not trading advice.
 
 ## Current Status
 
 - status: `RESEARCH_ONLY_PATH_EDGE_UNPROVEN`
-- trust_score: `45`
+- trust_score: `57`
 - would_rely_for_real_money: `False`
 - use_boundary: Use as a research radar and scenario explainer only; do not treat it as a dependable forecasting edge.
 - latest_market_date: `2026-09-23`
-- expected_latest_trading_date: `2026-09-22`
+- expected_latest_trading_date: `2026-09-23`
 - data_completeness_score: `87.0`
 
 ## Forward Samples
 
-- 1d: `276`
-- 3d: `268`
-- 5d: `260`
-- 10d: `240`
-- 20d: `200`
-- 60d: `40`
+- 1d: `282`
+- 3d: `275`
+- 5d: `267`
+- 10d: `247`
+- 20d: `207`
+- 60d: `47`
 
 ## Blockers
 
@@ -29,16 +29,15 @@ This report answers whether the current Market Prediction Dashboard is dependabl
 
 ## Warnings
 
-- `market_open_unconfirmed` (medium): Current data is an intraday or unconfirmed snapshot; do not freeze it as a validated daily forecast.
 - `high_confidence_not_validated` (medium): High-confidence forecasts have not proven they are more accurate than ordinary forecasts.
 - `deviation_learning_needed` (medium): Material deviation rate is too high; confidence must remain capped.
 
 ## Symbol Readiness
 
-- SPY: `blocked_by_global_gate` | primary `bearish_path` 0.306 | reason: Global trust gate is not ready.
-- QQQ: `blocked_by_global_gate` | primary `bearish_path` 0.295 | reason: Global trust gate is not ready.
-- IWM: `blocked_by_global_gate` | primary `bearish_path` 0.3643 | reason: Global trust gate is not ready.
-- DIA: `blocked_by_global_gate` | primary `bounce_path` 0.312 | reason: Global trust gate is not ready.
+- SPY: `blocked_by_global_gate` | primary `bounce_path` 0.3056 | reason: Global trust gate is not ready.
+- QQQ: `blocked_by_global_gate` | primary `bearish_path` 0.2778 | reason: Global trust gate is not ready.
+- IWM: `blocked_by_global_gate` | primary `bearish_path` 0.327 | reason: Global trust gate is not ready.
+- DIA: `blocked_by_global_gate` | primary `bounce_path` 0.3179 | reason: Global trust gate is not ready.
 
 ## Next Actions
 
