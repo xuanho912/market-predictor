@@ -2,17 +2,17 @@
   "driver_counts": {
     "breadth_conflict_underweighted": 94,
     "breadth_follow_through_underweighted": 74,
+    "intraday_snapshot_risk": 711,
     "model_underestimated_downside_or_failed_bounce": 316,
     "model_underestimated_upside_or_repair": 395,
     "news_data_gap_limited_attribution": 711,
-    "news_event_driver_underweighted": 395,
-    "news_event_risk_underweighted": 299,
+    "news_event_risk_underweighted": 316,
     "risk_off_flow_underweighted": 7,
     "risk_off_news_overweighted_or_resolved": 324,
     "risk_on_flow_underweighted": 60,
     "volatility_repair_underweighted": 129
   },
-  "generated_at": "2026-09-24T01:33:49.913972+00:00",
+  "generated_at": "2026-09-24T06:14:47.864998+00:00",
   "guardrails": [
     "This is forecast error attribution, not a trading or PnL report.",
     "Attribution is diagnostic and probabilistic; it is not proof of causality.",
@@ -45,7 +45,8 @@
         "model_underestimated_downside_or_failed_bounce",
         "news_event_risk_underweighted",
         "breadth_conflict_underweighted",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -65,7 +66,7 @@
       "model_version": "baseline_v1",
       "not_causal_proof": true,
       "overweighted_factors": [],
-      "path_error": 0.01531037085,
+      "path_error": 0.0153103241,
       "primary_hit": true,
       "primary_scenario": "bearish_path",
       "risk_scenario": "bearish_path",
@@ -108,7 +109,8 @@
         "model_underestimated_downside_or_failed_bounce",
         "news_event_risk_underweighted",
         "breadth_conflict_underweighted",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -130,7 +132,7 @@
       "overweighted_factors": [
         "bounce_repair_assumption"
       ],
-      "path_error": 0.01142298155,
+      "path_error": 0.01142295215,
       "primary_hit": false,
       "primary_scenario": "bounce_path",
       "risk_scenario": "bearish_path",
@@ -191,7 +193,7 @@
       "model_version": "baseline_v1",
       "not_causal_proof": true,
       "overweighted_factors": [],
-      "path_error": 0.006537801401,
+      "path_error": 0.006537804558,
       "primary_hit": false,
       "primary_scenario": "bounce_path",
       "risk_scenario": "bearish_path",
@@ -222,7 +224,7 @@
         "failed bounce risk",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.013568,
       "expected_return_source": "stored_scenario_path",
@@ -232,10 +234,10 @@
       "horizon": "1d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "risk_off_news_overweighted_or_resolved",
         "volatility_repair_underweighted",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -275,7 +277,6 @@
       ],
       "symbol": "IWM",
       "underweighted_factors": [
-        "news_event_driver_underweighted",
         "volatility_repair_underweighted"
       ]
     },
@@ -288,7 +289,7 @@
         "index surface strength",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，可能低估了波动率回落和恐慌释放后的修复力度。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.016455,
       "expected_return_source": "stored_scenario_path",
@@ -298,9 +299,9 @@
       "horizon": "1d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "volatility_repair_underweighted",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -341,7 +342,6 @@
       ],
       "symbol": "SPY",
       "underweighted_factors": [
-        "news_event_driver_underweighted",
         "volatility_repair_underweighted"
       ]
     },
@@ -356,7 +356,7 @@
         "internal resonance quality",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.004756,
       "expected_return_source": "stored_scenario_path",
@@ -366,10 +366,10 @@
       "horizon": "1d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "risk_off_news_overweighted_or_resolved",
         "volatility_repair_underweighted",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -413,7 +413,6 @@
       ],
       "symbol": "QQQ",
       "underweighted_factors": [
-        "news_event_driver_underweighted",
         "volatility_repair_underweighted"
       ]
     },
@@ -428,7 +427,7 @@
         "price trend",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.025287,
       "expected_return_source": "stored_scenario_path",
@@ -438,9 +437,9 @@
       "horizon": "3d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -462,7 +461,7 @@
       "overweighted_factors": [
         "risk_off_news_or_macro_risk"
       ],
-      "path_error": 0.03332182061,
+      "path_error": 0.0333218174,
       "primary_hit": false,
       "primary_scenario": "bearish_path",
       "risk_scenario": "bearish_path",
@@ -476,9 +475,7 @@
         "historical analog support"
       ],
       "symbol": "SPY",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.028037,
@@ -492,7 +489,7 @@
         "macro event risk",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.000648,
       "expected_return_source": "stored_scenario_path",
@@ -502,9 +499,9 @@
       "horizon": "3d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -526,7 +523,7 @@
       "overweighted_factors": [
         "risk_off_news_or_macro_risk"
       ],
-      "path_error": 0.02803685281,
+      "path_error": 0.02803688326,
       "primary_hit": false,
       "primary_scenario": "bearish_path",
       "risk_scenario": "bearish_path",
@@ -542,9 +539,7 @@
         "failed bounce risk"
       ],
       "symbol": "QQQ",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.021109,
@@ -559,7 +554,7 @@
         "failed bounce risk",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "出现实质偏差，需要复盘当时支持/冲突证据的权重是否合理；该归因是诊断，不是因果证明。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.028783,
       "expected_return_source": "stored_scenario_path",
@@ -569,8 +564,8 @@
       "horizon": "3d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -590,7 +585,7 @@
       "model_version": "baseline_v1",
       "not_causal_proof": true,
       "overweighted_factors": [],
-      "path_error": 0.02110944718,
+      "path_error": 0.02110949444,
       "primary_hit": false,
       "primary_scenario": "bearish_path",
       "risk_scenario": "bearish_path",
@@ -603,9 +598,7 @@
         "options volatility repair"
       ],
       "symbol": "IWM",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.007559,
@@ -647,7 +640,7 @@
       "model_version": "baseline_v1",
       "not_causal_proof": true,
       "overweighted_factors": [],
-      "path_error": 0.007558937869,
+      "path_error": 0.007558961532,
       "primary_hit": false,
       "primary_scenario": "bearish_path",
       "risk_scenario": "bearish_path",
@@ -675,7 +668,7 @@
         "macro event risk",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.000216,
       "expected_return_source": "stored_scenario_path",
@@ -685,9 +678,9 @@
       "horizon": "1d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -725,9 +718,7 @@
         "failed bounce risk"
       ],
       "symbol": "QQQ",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.023934,
@@ -740,7 +731,7 @@
         "price trend",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.008429,
       "expected_return_source": "stored_scenario_path",
@@ -750,9 +741,9 @@
       "horizon": "1d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -788,9 +779,7 @@
         "historical analog support"
       ],
       "symbol": "SPY",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.014804,
@@ -805,7 +794,7 @@
         "failed bounce risk",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.009594,
       "expected_return_source": "stored_scenario_path",
@@ -815,9 +804,9 @@
       "horizon": "1d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -852,9 +841,7 @@
         "options volatility repair"
       ],
       "symbol": "IWM",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.006061,
@@ -923,7 +910,7 @@
         "price trend",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.021725,
       "expected_return_source": "stored_scenario_path",
@@ -933,10 +920,10 @@
       "horizon": "3d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "risk_off_news_overweighted_or_resolved",
         "volatility_repair_underweighted",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -974,7 +961,6 @@
       ],
       "symbol": "SPY",
       "underweighted_factors": [
-        "news_event_driver_underweighted",
         "volatility_repair_underweighted"
       ]
     },
@@ -991,7 +977,7 @@
         "failed bounce risk",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.028783,
       "expected_return_source": "stored_scenario_path",
@@ -1001,10 +987,10 @@
       "horizon": "3d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "risk_off_news_overweighted_or_resolved",
         "volatility_repair_underweighted",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -1041,7 +1027,6 @@
       ],
       "symbol": "IWM",
       "underweighted_factors": [
-        "news_event_driver_underweighted",
         "volatility_repair_underweighted"
       ]
     },
@@ -1057,7 +1042,7 @@
         "macro event risk",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": 0.014282,
       "expected_return_source": "stored_scenario_path",
@@ -1067,10 +1052,10 @@
       "horizon": "3d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "risk_off_news_overweighted_or_resolved",
         "volatility_repair_underweighted",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -1110,7 +1095,6 @@
       ],
       "symbol": "QQQ",
       "underweighted_factors": [
-        "news_event_driver_underweighted",
         "volatility_repair_underweighted"
       ]
     },
@@ -1348,7 +1332,7 @@
     },
     {
       "absolute_error": 0.061208,
-      "actual_return": 0.051779,
+      "actual_return": 0.05178,
       "best_matching_scenario": "bounce_path",
       "conflicting_signals_at_forecast": [
         "VIX direction",
@@ -1360,7 +1344,7 @@
         "price trend",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.009428,
       "expected_return_source": "stored_scenario_path",
@@ -1370,9 +1354,9 @@
       "horizon": "5d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -1395,7 +1379,7 @@
       "overweighted_factors": [
         "risk_off_news_or_macro_risk"
       ],
-      "path_error": 0.06120775743,
+      "path_error": 0.06120778861,
       "primary_hit": false,
       "primary_scenario": "bearish_path",
       "risk_scenario": "bearish_path",
@@ -1407,9 +1391,7 @@
         "historical analog support"
       ],
       "symbol": "QQQ",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.044629,
@@ -1423,7 +1405,7 @@
         "price trend",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.026381,
       "expected_return_source": "stored_scenario_path",
@@ -1433,9 +1415,9 @@
       "horizon": "5d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -1458,7 +1440,7 @@
       "overweighted_factors": [
         "risk_off_news_or_macro_risk"
       ],
-      "path_error": 0.04462901987,
+      "path_error": 0.04462901663,
       "primary_hit": false,
       "primary_scenario": "bearish_path",
       "risk_scenario": "bearish_path",
@@ -1470,9 +1452,7 @@
         "historical analog support"
       ],
       "symbol": "SPY",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.034104,
@@ -1488,7 +1468,7 @@
         "failed bounce risk",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "出现实质偏差，需要复盘当时支持/冲突证据的权重是否合理；该归因是诊断，不是因果证明。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.041148,
       "expected_return_source": "stored_scenario_path",
@@ -1498,8 +1478,8 @@
       "horizon": "5d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -1520,7 +1500,7 @@
       "model_version": "baseline_v1",
       "not_causal_proof": true,
       "overweighted_factors": [],
-      "path_error": 0.03410357378,
+      "path_error": 0.03410362107,
       "primary_hit": false,
       "primary_scenario": "bearish_path",
       "risk_scenario": "bearish_path",
@@ -1531,9 +1511,7 @@
         "credit stability"
       ],
       "symbol": "IWM",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.00969,
@@ -1577,7 +1555,7 @@
       "model_version": "baseline_v1",
       "not_causal_proof": true,
       "overweighted_factors": [],
-      "path_error": 0.009689703902,
+      "path_error": 0.009689680209,
       "primary_hit": false,
       "primary_scenario": "bearish_path",
       "risk_scenario": "bearish_path",
@@ -1605,7 +1583,7 @@
         "price trend",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.016606,
       "expected_return_source": "stored_scenario_path",
@@ -1615,9 +1593,9 @@
       "horizon": "3d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -1652,9 +1630,7 @@
         "historical analog support"
       ],
       "symbol": "QQQ",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.049199,
@@ -1668,7 +1644,7 @@
         "price trend",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.023405,
       "expected_return_source": "stored_scenario_path",
@@ -1678,9 +1654,9 @@
       "horizon": "3d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -1715,9 +1691,7 @@
         "historical analog support"
       ],
       "symbol": "SPY",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.032566,
@@ -1733,7 +1707,7 @@
         "failed bounce risk",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.026719,
       "expected_return_source": "stored_scenario_path",
@@ -1743,9 +1717,9 @@
       "horizon": "3d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -1779,9 +1753,7 @@
         "credit stability"
       ],
       "symbol": "IWM",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.02235,
@@ -1795,7 +1767,7 @@
         "price trend",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.0135,
       "expected_return_source": "stored_scenario_path",
@@ -1805,9 +1777,9 @@
       "horizon": "3d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -1842,9 +1814,7 @@
         "historical analog support"
       ],
       "symbol": "DIA",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.030646,
@@ -1860,7 +1830,7 @@
         "price trend",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.013334,
       "expected_return_source": "stored_scenario_path",
@@ -1870,9 +1840,9 @@
       "horizon": "1d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -1907,9 +1877,7 @@
         "historical analog support"
       ],
       "symbol": "QQQ",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.026928,
@@ -1923,7 +1891,7 @@
         "price trend",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.015589,
       "expected_return_source": "stored_scenario_path",
@@ -1933,9 +1901,9 @@
       "horizon": "1d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -1970,9 +1938,7 @@
         "historical analog support"
       ],
       "symbol": "SPY",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.022006,
@@ -1988,7 +1954,7 @@
         "failed bounce risk",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.016688,
       "expected_return_source": "stored_scenario_path",
@@ -1998,9 +1964,9 @@
       "horizon": "1d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -2034,9 +2000,7 @@
         "credit stability"
       ],
       "symbol": "IWM",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.018379,
@@ -2050,7 +2014,7 @@
         "price trend",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.012304,
       "expected_return_source": "stored_scenario_path",
@@ -2060,9 +2024,9 @@
       "horizon": "1d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -2097,9 +2061,7 @@
         "historical analog support"
       ],
       "symbol": "DIA",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.076211,
@@ -2116,7 +2078,7 @@
         "price trend",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.015291,
       "expected_return_source": "stored_scenario_path",
@@ -2126,9 +2088,9 @@
       "horizon": "5d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -2164,9 +2126,7 @@
         "failed bounce risk"
       ],
       "symbol": "QQQ",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.05113,
@@ -2181,7 +2141,7 @@
         "price trend",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.030018,
       "expected_return_source": "stored_scenario_path",
@@ -2191,9 +2151,9 @@
       "horizon": "5d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -2228,9 +2188,7 @@
         "historical analog support"
       ],
       "symbol": "SPY",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.033473,
@@ -2247,7 +2205,7 @@
         "failed bounce risk",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.026214,
       "expected_return_source": "stored_scenario_path",
@@ -2257,9 +2215,9 @@
       "horizon": "5d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -2293,9 +2251,7 @@
         "options stress"
       ],
       "symbol": "IWM",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.037568,
@@ -2312,7 +2268,7 @@
         "price trend",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.013566,
       "expected_return_source": "stored_scenario_path",
@@ -2322,9 +2278,9 @@
       "horizon": "3d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -2360,9 +2316,7 @@
         "failed bounce risk"
       ],
       "symbol": "QQQ",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.030935,
@@ -2377,7 +2331,7 @@
         "price trend",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.025257,
       "expected_return_source": "stored_scenario_path",
@@ -2387,9 +2341,9 @@
       "horizon": "3d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -2424,9 +2378,7 @@
         "historical analog support"
       ],
       "symbol": "SPY",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.017795,
@@ -2443,7 +2395,7 @@
         "failed bounce risk",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "出现实质偏差，需要复盘当时支持/冲突证据的权重是否合理；该归因是诊断，不是因果证明。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.021443,
       "expected_return_source": "stored_scenario_path",
@@ -2453,8 +2405,8 @@
       "horizon": "3d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -2486,9 +2438,7 @@
         "options stress"
       ],
       "symbol": "IWM",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.002499,
@@ -2562,7 +2512,7 @@
         "price trend",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.012326,
       "expected_return_source": "stored_scenario_path",
@@ -2572,9 +2522,9 @@
       "horizon": "1d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -2610,9 +2560,7 @@
         "failed bounce risk"
       ],
       "symbol": "QQQ",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.011793,
@@ -2627,7 +2575,7 @@
         "price trend",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "出现实质偏差，需要复盘当时支持/冲突证据的权重是否合理；该归因是诊断，不是因果证明。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.016203,
       "expected_return_source": "stored_scenario_path",
@@ -2637,8 +2585,8 @@
       "horizon": "1d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -2671,9 +2619,7 @@
         "historical analog support"
       ],
       "symbol": "SPY",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.01066,
@@ -2690,7 +2636,7 @@
         "failed bounce risk",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "出现实质偏差，需要复盘当时支持/冲突证据的权重是否合理；该归因是诊断，不是因果证明。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.014938,
       "expected_return_source": "stored_scenario_path",
@@ -2700,8 +2646,8 @@
       "horizon": "1d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -2733,9 +2679,7 @@
         "options stress"
       ],
       "symbol": "IWM",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.000529,
@@ -2809,7 +2753,7 @@
         "price trend",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.01334,
       "expected_return_source": "stored_scenario_path",
@@ -2819,9 +2763,9 @@
       "horizon": "5d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -2857,9 +2801,7 @@
         "failed bounce risk"
       ],
       "symbol": "QQQ",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.048769,
@@ -2874,7 +2816,7 @@
         "price trend",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.032183,
       "expected_return_source": "stored_scenario_path",
@@ -2884,9 +2826,9 @@
       "horizon": "5d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -2921,9 +2863,7 @@
         "historical analog support"
       ],
       "symbol": "SPY",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.010016,
@@ -3053,7 +2993,7 @@
         "price trend",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.027172,
       "expected_return_source": "stored_scenario_path",
@@ -3063,9 +3003,9 @@
       "horizon": "3d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -3100,9 +3040,7 @@
         "historical analog support"
       ],
       "symbol": "SPY",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.022867,
@@ -3119,7 +3057,7 @@
         "price trend",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.011953,
       "expected_return_source": "stored_scenario_path",
@@ -3129,9 +3067,9 @@
       "horizon": "3d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -3167,9 +3105,7 @@
         "failed bounce risk"
       ],
       "symbol": "QQQ",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.007966,
@@ -3299,7 +3235,7 @@
         "price trend",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "出现实质偏差，需要复盘当时支持/冲突证据的权重是否合理；该归因是诊断，不是因果证明。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.016838,
       "expected_return_source": "stored_scenario_path",
@@ -3309,8 +3245,8 @@
       "horizon": "1d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -3343,9 +3279,7 @@
         "historical analog support"
       ],
       "symbol": "SPY",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.0061,
@@ -3533,7 +3467,7 @@
         "price trend",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "出现实质偏差，需要复盘当时支持/冲突证据的权重是否合理；该归因是诊断，不是因果证明。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.037484,
       "expected_return_source": "stored_scenario_path",
@@ -3543,8 +3477,8 @@
       "horizon": "5d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -3581,9 +3515,7 @@
         "historical analog support"
       ],
       "symbol": "SPY",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.02552,
@@ -3598,7 +3530,7 @@
         "price trend",
         "risk_off_news_event"
       ],
-      "diagnostic_note": "实际走势强于预测，优先检查是否低估了新闻/事件催化，例如地缘风险缓和、油价回落、政策或期货风险偏好改善。",
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
       "error_direction": "actual_stronger_than_forecast",
       "expected_return": -0.016329,
       "expected_return_source": "stored_scenario_path",
@@ -3608,9 +3540,9 @@
       "horizon": "5d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_event_driver_underweighted",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution"
+        "news_data_gap_limited_attribution",
+        "intraday_snapshot_risk"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -3650,9 +3582,7 @@
         "failed bounce risk"
       ],
       "symbol": "QQQ",
-      "underweighted_factors": [
-        "news_event_driver_underweighted"
-      ]
+      "underweighted_factors": []
     },
     {
       "absolute_error": 0.013722,
@@ -3787,17 +3717,17 @@
       },
       {
         "baseline_change_allowed": false,
-        "count": 395,
-        "driver": "model_underestimated_upside_or_repair",
+        "count": 711,
+        "driver": "intraday_snapshot_risk",
         "future_model_action": "keep_observing_until_forward_sample_gate",
-        "lesson": "模型低估了修复/反抽强度，需要检查事件催化、波动率修复和价格确认。"
+        "lesson": "盘中快照未确认时，不应冻结为正式收盘预测。"
       },
       {
         "baseline_change_allowed": false,
         "count": 395,
-        "driver": "news_event_driver_underweighted",
-        "future_model_action": "shadow-test event_reaction_overlay：新闻方向必须与 SPY/QQQ、VIX、HYG/LQD 价格反应一致。",
-        "lesson": "重大新闻如果被价格确认，短周期影响可能大于历史相似样本。"
+        "driver": "model_underestimated_upside_or_repair",
+        "future_model_action": "keep_observing_until_forward_sample_gate",
+        "lesson": "模型低估了修复/反抽强度，需要检查事件催化、波动率修复和价格确认。"
       },
       {
         "baseline_change_allowed": false,
@@ -3815,7 +3745,7 @@
       },
       {
         "baseline_change_allowed": false,
-        "count": 299,
+        "count": 316,
         "driver": "news_event_risk_underweighted",
         "future_model_action": "shadow-test risk_event_confirmation：risk-off 新闻得到价格确认才提高风险路径。",
         "lesson": "风险新闻如果被价格确认，应提高风险路径权重。"
@@ -3864,7 +3794,6 @@
   "model_upgrade_plan": [
     "不改写旧预测；只允许回填 actual_return、best_matching_scenario、primary_hit、path_error。",
     "baseline_v1 保持冻结；经验先进入 challenger_v2_error_learning 的 shadow 评估。",
-    "在 challenger 中提高“重大新闻 + 价格反应确认”的短周期权重。",
     "在 challenger 中要求 risk-off 新闻必须得到价格确认，否则降低风险路径权重。",
     "在 challenger 中提高 VIX/VVIX/SKEW 修复对 1d/3d/5d 反抽路径的影响。",
     "在 challenger 中提高 breadth 冲突对失败反抽风险的惩罚。",
@@ -3879,7 +3808,7 @@
   "summary": {
     "completed_outcomes_reviewed": 1325,
     "correction_policy": "past_forecasts_are_not_rewritten_only_actuals_and_error_fields_are_backfilled",
-    "data_freshness_status": "fresh",
+    "data_freshness_status": "market_open_unconfirmed",
     "deduped_legacy_rows": 0,
     "dominant_error_theme": "news_data_gap_limited_attribution",
     "evidence_level": "stronger_evidence",
@@ -3892,6 +3821,10 @@
     "raw_forecast_rows": 288,
     "total_forecast_records": 288,
     "update_blockers": [
+      {
+        "detail": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-09-23，最近完整收盘交易日为 2026-09-23；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
+        "reason": "market_open_unconfirmed"
+      },
       {
         "detail": "Latest market date 2026-09-23 is not after latest forecast date 2026-09-23, so no completed 1d/3d/5d outcome can be scored yet.",
         "reason": "no_future_market_close_yet"

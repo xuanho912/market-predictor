@@ -40,7 +40,7 @@
     }
   ],
   "data_completeness_score": 87.0,
-  "data_freshness_status": "fresh",
+  "data_freshness_status": "market_open_unconfirmed",
   "expected_latest_trading_date": "2026-09-23",
   "forward_completed_samples": {
     "10d": 247,
@@ -50,7 +50,7 @@
     "5d": 267,
     "60d": 47
   },
-  "generated_at": "2026-09-24T01:33:49.935541+00:00",
+  "generated_at": "2026-09-24T06:14:47.886221+00:00",
   "guardrails": [
     "This gate does not modify Alpha v1 threshold, baseline_v1 or historical forecast records.",
     "This is forecast reliability assessment, not trading advice.",
@@ -70,7 +70,6 @@
     "Route repeated deviation themes into a challenger model rather than editing baseline_v1."
   ],
   "passes": [
-    "data_is_current_or_market_closed",
     "data_completeness_85_plus",
     "forward_sample_gate_passed"
   ],
@@ -78,58 +77,63 @@
   "symbol_readiness": {
     "DIA": {
       "confidence_score": 68.0,
-      "confluence_score": 52.0,
-      "edge_status": "MODERATE_EDGE",
-      "primary_probability": 0.3077,
-      "primary_scenario": "bounce_path",
-      "probability_gap": 0.0414,
+      "confluence_score": 50.0,
+      "edge_status": "RISK_WARNING",
+      "primary_probability": 0.3172,
+      "primary_scenario": "bearish_path",
+      "probability_gap": 0.027,
       "readiness": "blocked_by_global_gate",
       "reason": "Global trust gate is not ready.",
-      "secondary_probability": 0.2663,
-      "secondary_scenario": "bearish_path"
+      "secondary_probability": 0.2902,
+      "secondary_scenario": "bounce_path"
     },
     "IWM": {
-      "confidence_score": 68.0,
-      "confluence_score": 50.0,
-      "edge_status": "MODERATE_EDGE",
-      "primary_probability": 0.2858,
+      "confidence_score": 62.0,
+      "confluence_score": 49.0,
+      "edge_status": "RISK_WARNING",
+      "primary_probability": 0.3708,
       "primary_scenario": "bearish_path",
-      "probability_gap": 0.0031,
+      "probability_gap": 0.1386,
       "readiness": "blocked_by_global_gate",
       "reason": "Global trust gate is not ready.",
-      "secondary_probability": 0.2827,
+      "secondary_probability": 0.2322,
       "secondary_scenario": "bounce_path"
     },
     "QQQ": {
       "confidence_score": 64.0,
-      "confluence_score": 54.0,
-      "edge_status": "MODERATE_EDGE",
-      "primary_probability": 0.2885,
-      "primary_scenario": "bounce_path",
-      "probability_gap": 0.0144,
+      "confluence_score": 53.0,
+      "edge_status": "RISK_WARNING",
+      "primary_probability": 0.3283,
+      "primary_scenario": "bearish_path",
+      "probability_gap": 0.0761,
       "readiness": "blocked_by_global_gate",
       "reason": "Global trust gate is not ready.",
-      "secondary_probability": 0.2741,
+      "secondary_probability": 0.2522,
       "secondary_scenario": "analog_average_path"
     },
     "SPY": {
       "confidence_score": 68.0,
-      "confluence_score": 54.0,
-      "edge_status": "MODERATE_EDGE",
-      "primary_probability": 0.3308,
-      "primary_scenario": "bounce_path",
-      "probability_gap": 0.0617,
+      "confluence_score": 48.0,
+      "edge_status": "RISK_WARNING",
+      "primary_probability": 0.3063,
+      "primary_scenario": "bearish_path",
+      "probability_gap": 0.003,
       "readiness": "blocked_by_global_gate",
       "reason": "Global trust gate is not ready.",
-      "secondary_probability": 0.2691,
-      "secondary_scenario": "analog_average_path"
+      "secondary_probability": 0.3033,
+      "secondary_scenario": "bounce_path"
     }
   },
-  "trust_score": 57,
+  "trust_score": 45,
   "use_boundary": "Use as a research radar and scenario explainer only; do not treat it as a dependable forecasting edge.",
   "validation_type": "forecast_reliability_gate",
   "version": "forecast_trust_gate_v1",
   "warnings": [
+    {
+      "code": "market_open_unconfirmed",
+      "message": "Current data is an intraday or unconfirmed snapshot; do not freeze it as a validated daily forecast.",
+      "severity": "medium"
+    },
     {
       "code": "high_confidence_not_validated",
       "details": {

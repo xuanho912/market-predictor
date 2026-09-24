@@ -1,20 +1,20 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-24T01:33:38.957100+00:00`
+- generated_at: `2026-09-24T06:14:35.808583+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
-- event_detection_confidence: `76`
-- event_risk_level: `medium`
-- narrative: `geopolitics_easing_risk_on`
-- narrative_direction: `supports_bounce`
-- narrative_strength: `98`
-- price_reaction_confirmed: `False`
-- confirmation_score: `25`
+- major_event_count: `10`
+- event_detection_confidence: `74`
+- event_risk_level: `high`
+- narrative: `geopolitics_escalation_risk_off`
+- narrative_direction: `supports_risk_expansion`
+- narrative_strength: `100`
+- price_reaction_confirmed: `True`
+- confirmation_score: `75`
 
 ## Dashboard Note
 
-当前新闻叙事为 geopolitics_easing_risk_on，方向为 supports_bounce，尚未被价格反应充分确认。地缘风险缓和通常支持风险资产反抽，并降低短线风险扩散概率。
+当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，已被价格反应初步确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
 
 ## Economic Calendar Risk
 
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil prices fall as Iran says it is open to diplomacy to end the war - Reuters
+- source: Reuters
+- published_at: `2026-09-24T01:17:00+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -41,12 +49,28 @@
 - importance_score: `100`
 - confidence: `high`
 
+### geopolitical_risk_escalation / risk_off
+
+- headline: NEWSLETTER: UNGA week could bend the war — or miss again - Reuters
+- source: Reuters
+- published_at: `2026-09-23T17:27:12+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
 ### geopolitical_risk_easing / risk_on
 
 - headline: Iran, US still far apart in peace talks, Iranian official says; Pezeshkian vows no surrender - Reuters
 - source: Reuters
 - published_at: `2026-09-23T20:59:43+00:00`
-- importance_score: `96`
+- importance_score: `95`
+- confidence: `medium`
+
+### fed_hawkish / risk_off
+
+- headline: Gold muted as Fed policy tightening prospects weigh - Reuters
+- source: Reuters
+- published_at: `2026-09-24T02:23:00+00:00`
+- importance_score: `88`
 - confidence: `high`
 
 ### geopolitical_risk_easing / risk_on
@@ -54,8 +78,8 @@
 - headline: European stocks slip as lack of progress on US-Iran peace lifts oil, yields - Reuters
 - source: Reuters
 - published_at: `2026-09-23T16:25:37+00:00`
-- importance_score: `98`
-- confidence: `high`
+- importance_score: `97`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -71,4 +95,12 @@
 - source: Reuters
 - published_at: `2026-09-23T11:47:45+00:00`
 - importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: US says China trade truce extended as Trump welcomes Xi - Reuters
+- source: Reuters
+- published_at: `2026-09-23T10:01:00+00:00`
+- importance_score: `95`
 - confidence: `medium`
