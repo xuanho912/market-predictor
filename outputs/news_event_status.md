@@ -1,14 +1,14 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-23T23:56:49.913941+00:00`
+- generated_at: `2026-09-24T01:06:34.392031+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
+- major_event_count: `6`
 - event_detection_confidence: `76`
 - event_risk_level: `medium`
 - narrative: `geopolitics_easing_risk_on`
 - narrative_direction: `supports_bounce`
-- narrative_strength: `100`
+- narrative_strength: `98`
 - price_reaction_confirmed: `False`
 - confirmation_score: `25`
 
@@ -43,7 +43,7 @@
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: Iran, US still far apart in peace talks, Iranian official says; Pezeshkian vows no surrender - Reuters
+- headline: Iran, US still far apart in peace talks, Iranian official says; Pezeshkian vows no surrender - reuters.com
 - source: Reuters
 - published_at: `2026-09-23T20:59:43+00:00`
 - importance_score: `96`
@@ -51,7 +51,7 @@
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: European stocks slip as lack of progress on US-Iran peace lifts oil, yields - Reuters
+- headline: European stocks slip as lack of progress on US-Iran peace lifts oil, yields - reuters.com
 - source: Reuters
 - published_at: `2026-09-23T16:25:37+00:00`
 - importance_score: `98`
@@ -59,24 +59,16 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Four killed in Gaza in strikes, Israel says it killed a Hamas finance chief - Reuters
+- headline: Four killed in Gaza in strikes, Israel says it killed a Hamas finance chief - reuters.com
 - source: Reuters
 - published_at: `2026-09-23T12:15:59+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Global gas market pricing prolonged tightness due to Iran war, IGU executive says - Reuters
+- headline: Global gas market pricing prolonged tightness due to Iran war, IGU executive says - reuters.com
 - source: Reuters
 - published_at: `2026-09-23T11:47:45+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Trump warns in UN speech he could 'annihilate' Iran without peace deal - Reuters
-- source: Reuters
-- published_at: `2026-09-22T21:07:29+00:00`
-- importance_score: `97`
 - confidence: `medium`
