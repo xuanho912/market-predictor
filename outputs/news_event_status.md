@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-24T08:48:24.793147+00:00`
+- generated_at: `2026-09-24T17:17:05.144901+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
-- event_detection_confidence: `72`
+- major_event_count: `12`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,6 +27,70 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Insight: US and Iran discuss phased deal to reopen Hormuz and end US blockade, sources say - Reuters
+- source: Reuters
+- published_at: `2026-09-24T16:28:41+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Saudi Arabia thwarts Houthi ballistic missiles, Yemen's Saudi-led coalition says - Reuters
+- source: Reuters
+- published_at: `2026-09-24T15:42:16+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US Democrats tee up pre-election war powers vote as some Republicans break with Trump on Iran - Reuters
+- source: Reuters
+- published_at: `2026-09-24T15:21:23+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: France says ICC warrant posed no obstacle to Netanyahu overflight - Reuters
+- source: Reuters
+- published_at: `2026-09-24T14:38:09+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Our top 10 things to watch in the stock market Thursday
+- source: CNBC
+- published_at: `2026-09-24T13:24:44+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### fed_hawkish / risk_off
+
+- headline: Cat owners are spending more and boosting pet retailers
+- source: CNBC
+- published_at: `2026-09-24T15:58:08+00:00`
+- importance_score: `89`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Turkey's Erdogan tells Ukraine's Zelenskiy that Black Sea attacks are inexplicable - Reuters
+- source: Reuters
+- published_at: `2026-09-24T04:45:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil prices jump 4% as Houthis fire missiles at Saudi Arabia - Reuters
+- source: Reuters
+- published_at: `2026-09-24T01:17:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: A rare Microsoft bear warms up to the stock. Here's what changed their mind
 - source: CNBC
 - published_at: `2026-09-23T19:53:16+00:00`
@@ -38,61 +102,5 @@
 - headline: Zelenskiy warns of painful winter for Russia if energy truce talks fail - Reuters
 - source: Reuters
 - published_at: `2026-09-23T19:43:44+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: NEWSLETTER: UNGA week could bend the war — or miss again - Reuters
-- source: Reuters
-- published_at: `2026-09-23T17:27:12+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Iran, US still far apart in peace talks, Iranian official says; Pezeshkian vows no surrender - Reuters
-- source: Reuters
-- published_at: `2026-09-23T20:59:43+00:00`
-- importance_score: `94`
-- confidence: `medium`
-
-### fed_hawkish / risk_off
-
-- headline: Gold muted on Fed policy tightening bets, decline in oil - Reuters
-- source: Reuters
-- published_at: `2026-09-24T02:23:00+00:00`
-- importance_score: `88`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: European stocks slip as lack of progress on US-Iran peace lifts oil, yields - Reuters
-- source: Reuters
-- published_at: `2026-09-23T16:25:37+00:00`
-- importance_score: `96`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Four killed in Gaza in strikes, Israel says it killed a Hamas finance chief - Reuters
-- source: Reuters
-- published_at: `2026-09-23T12:15:59+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Global gas market pricing prolonged tightness due to Iran war, IGU executive says - Reuters
-- source: Reuters
-- published_at: `2026-09-23T11:47:45+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: US says China trade truce extended as Trump welcomes Xi - Reuters
-- source: Reuters
-- published_at: `2026-09-23T10:01:00+00:00`
-- importance_score: `94`
+- importance_score: `98`
 - confidence: `medium`
