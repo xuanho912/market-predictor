@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-24T01:06:34.392031+00:00`
+- generated_at: `2026-09-24T01:33:38.957100+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `6`
@@ -43,7 +43,7 @@
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: Iran, US still far apart in peace talks, Iranian official says; Pezeshkian vows no surrender - reuters.com
+- headline: Iran, US still far apart in peace talks, Iranian official says; Pezeshkian vows no surrender - Reuters
 - source: Reuters
 - published_at: `2026-09-23T20:59:43+00:00`
 - importance_score: `96`
@@ -51,7 +51,7 @@
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: European stocks slip as lack of progress on US-Iran peace lifts oil, yields - reuters.com
+- headline: European stocks slip as lack of progress on US-Iran peace lifts oil, yields - Reuters
 - source: Reuters
 - published_at: `2026-09-23T16:25:37+00:00`
 - importance_score: `98`
@@ -59,7 +59,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Four killed in Gaza in strikes, Israel says it killed a Hamas finance chief - reuters.com
+- headline: Four killed in Gaza in strikes, Israel says it killed a Hamas finance chief - Reuters
 - source: Reuters
 - published_at: `2026-09-23T12:15:59+00:00`
 - importance_score: `100`
@@ -67,7 +67,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Global gas market pricing prolonged tightness due to Iran war, IGU executive says - reuters.com
+- headline: Global gas market pricing prolonged tightness due to Iran war, IGU executive says - Reuters
 - source: Reuters
 - published_at: `2026-09-23T11:47:45+00:00`
 - importance_score: `100`
