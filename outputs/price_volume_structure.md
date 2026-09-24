@@ -3,11 +3,11 @@
 This report is a forecast-confirmation layer only. It is not a trading system and does not provide buy/sell/entry/exit/PnL guidance.
 
 - version: price_volume_structure_v1
-- generated_at: 2026-09-24T17:17:15.265450+00:00
+- generated_at: 2026-09-24T23:18:08.964593+00:00
 
 | Symbol | Candle | Price structure | Volume confirmation | Reversal | Breakdown risk | Breakout confirmation |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| DIA | bullish | 47/100 | 33/100 | 83/100 | 34/100 | 42/100 |
-| IWM | bullish | 47/100 | 33/100 | 83/100 | 44/100 | 42/100 |
-| QQQ | bullish | 82/100 | 55/100 | 33/100 | 28/100 | 58/100 |
-| SPY | bullish | 70/100 | 33/100 | 33/100 | 36/100 | 58/100 |
+| DIA | bearish | 39/100 | 39/100 | 50/100 | 44/100 | 30/100 |
+| IWM | bullish | 47/100 | 47/100 | 83/100 | 44/100 | 54/100 |
+| QQQ | bullish | 82/100 | 59/100 | 33/100 | 28/100 | 58/100 |
+| SPY | bullish | 62/100 | 43/100 | 25/100 | 36/100 | 46/100 |
