@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-25T17:15:36.085691+00:00`
+- generated_at: `2026-09-25T23:23:56.625546+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `13`
-- event_detection_confidence: `71`
+- major_event_count: `12`
+- event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `0`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
@@ -24,6 +24,22 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil prices slide about 2% as US, Iran explore path out of war - Reuters
+- source: Reuters
+- published_at: `2026-09-25T19:28:52+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Trump warns Xi over Chinese support for Iran, receives assurances, US envoy says - Reuters
+- source: Reuters
+- published_at: `2026-09-25T18:59:13+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -51,9 +67,9 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil prices drop about 3% as US, Iran explore path out of war - Reuters
+- headline: Trump, Xi discuss Middle East war as Iran presses 7-day plan to end fighting - Reuters
 - source: Reuters
-- published_at: `2026-09-25T01:11:00+00:00`
+- published_at: `2026-09-25T01:54:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -86,21 +102,5 @@
 - headline: US Senate rejects Democratic-led resolution to curb Trump's Iran war powers - Reuters
 - source: Reuters
 - published_at: `2026-09-24T20:34:36+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Houthis say they attacked Riyadh and Aramco facilities in Yanbu - Reuters
-- source: Reuters
-- published_at: `2026-09-24T19:24:40+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US Senate rejects resolution curbing Trump's Iran war powers - Reuters
-- source: Reuters
-- published_at: `2026-09-24T18:51:47+00:00`
 - importance_score: `100`
 - confidence: `medium`
