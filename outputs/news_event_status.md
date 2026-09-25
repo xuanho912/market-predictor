@@ -1,20 +1,20 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-25T06:12:16.097407+00:00`
+- generated_at: `2026-09-25T09:07:26.586154+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `16`
-- event_detection_confidence: `77`
+- major_event_count: `17`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
-- price_reaction_confirmed: `True`
-- confirmation_score: `75`
+- price_reaction_confirmed: `False`
+- confirmation_score: `50`
 
 ## Dashboard Note
 
-当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，已被价格反应初步确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
+当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，尚未被价格反应充分确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
 
 ## Economic Calendar Risk
 
@@ -27,15 +27,23 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Rupee treads water; forward premiums extend rally on RBI swaps, stop-losses - Reuters
+- source: Reuters
+- published_at: `2026-09-25T02:33:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Allies unite behind Saudi Arabia as Houthis step up attacks - Reuters
 - source: Reuters
 - published_at: `2026-09-25T01:54:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
-### geopolitical_risk_escalation / risk_off
+### geopolitical_risk_easing / risk_on
 
-- headline: Oil prices fall as markets look to Iran truce, but remain wary of attacks on oil facilities - Reuters
+- headline: Oil slides as US-Iran truce hopes outweigh Houthi attacks on Saudi Arabia - Reuters
 - source: Reuters
 - published_at: `2026-09-25T01:11:00+00:00`
 - importance_score: `100`
@@ -71,7 +79,7 @@
 - source: Reuters
 - published_at: `2026-09-24T20:34:36+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -87,20 +95,12 @@
 - source: Reuters
 - published_at: `2026-09-24T19:24:40+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: US Senate rejects resolution curbing Trump's Iran war powers - Reuters
 - source: Reuters
 - published_at: `2026-09-24T18:51:47+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US and Iran discuss phased deal to reopen Hormuz and end US blockade, sources say - Reuters
-- source: Reuters
-- published_at: `2026-09-24T17:52:33+00:00`
 - importance_score: `100`
 - confidence: `medium`
