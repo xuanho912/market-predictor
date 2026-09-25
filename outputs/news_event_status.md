@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-25T00:00:57.383603+00:00`
+- generated_at: `2026-09-25T01:13:05.745981+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `13`
-- event_detection_confidence: `76`
+- event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran's president says it is up to US to choose if it wants to end Iran war - Reuters
+- source: Reuters
+- published_at: `2026-09-24T23:42:35+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -96,11 +104,3 @@
 - published_at: `2026-09-24T13:24:44+00:00`
 - importance_score: `100`
 - confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Turkey's Erdogan tells Ukraine's Zelenskiy that Black Sea attacks are inexplicable - Reuters
-- source: Reuters
-- published_at: `2026-09-24T04:45:00+00:00`
-- importance_score: `100`
-- confidence: `medium`

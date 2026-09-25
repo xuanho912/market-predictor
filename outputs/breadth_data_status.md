@@ -1,6 +1,6 @@
 # Breadth Data Status
 
-Generated at: 2026-09-25T00:00:39.533802+00:00
+Generated at: 2026-09-25T01:06:08.361776+00:00
 
 Provider available: True
 True breadth available: False
@@ -17,7 +17,7 @@ Stale data: True
 - aligned_symbols: none
 - surface_only_symbols: SPY, QQQ, DIA, IWM
 - sector_score: 28.0
-- equal_weight_vs_cap_weight_20d: -0.053337
+- equal_weight_vs_cap_weight_20d: -0.053336
 - small_cap_vs_large_cap_20d: -0.059209
 
 ## Universe Status
