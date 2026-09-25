@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-24T23:17:58.791359+00:00`
+- generated_at: `2026-09-25T00:00:57.383603+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `13`
-- event_detection_confidence: `77`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,7 +27,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: S&P 500 ends marginally lower as investors focus on US-Iran war - reuters.com
+- headline: S&P 500 ends marginally lower as investors focus on US-Iran war - Reuters
 - source: Reuters
 - published_at: `2026-09-24T21:13:32+00:00`
 - importance_score: `100`
@@ -35,7 +35,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US Senate rejects Democratic-led resolution to curb Trump's Iran war powers - reuters.com
+- headline: US Senate rejects Democratic-led resolution to curb Trump's Iran war powers - Reuters
 - source: Reuters
 - published_at: `2026-09-24T20:34:36+00:00`
 - importance_score: `100`
@@ -43,7 +43,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Saudi Arabia says it intercepted Houthi missiles; group claims strikes on Riyadh, Aramco - reuters.com
+- headline: Saudi Arabia says it intercepted Houthi missiles; group claims strikes on Riyadh, Aramco - Reuters
 - source: Reuters
 - published_at: `2026-09-24T20:33:57+00:00`
 - importance_score: `100`
@@ -51,7 +51,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Houthis say they attacked Riyadh and Aramco facilities in Yanbu - reuters.com
+- headline: Houthis say they attacked Riyadh and Aramco facilities in Yanbu - Reuters
 - source: Reuters
 - published_at: `2026-09-24T19:24:40+00:00`
 - importance_score: `100`
@@ -59,7 +59,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US Senate rejects resolution curbing Trump's Iran war powers - reuters.com
+- headline: US Senate rejects resolution curbing Trump's Iran war powers - Reuters
 - source: Reuters
 - published_at: `2026-09-24T18:51:47+00:00`
 - importance_score: `100`
@@ -67,7 +67,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US and Iran discuss phased deal to reopen Hormuz and end US blockade, sources say - reuters.com
+- headline: US and Iran discuss phased deal to reopen Hormuz and end US blockade, sources say - Reuters
 - source: Reuters
 - published_at: `2026-09-24T17:52:33+00:00`
 - importance_score: `100`
@@ -75,7 +75,7 @@
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: At UN, 80 countries demand reopening of Hormuz, condemn Iran, Houthi attacks - reuters.com
+- headline: At UN, 80 countries demand reopening of Hormuz, condemn Iran, Houthi attacks - Reuters
 - source: Reuters
 - published_at: `2026-09-24T16:50:04+00:00`
 - importance_score: `98`
@@ -83,7 +83,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: France says ICC warrant posed no obstacle to Netanyahu overflight - reuters.com
+- headline: France says ICC warrant posed no obstacle to Netanyahu overflight - Reuters
 - source: Reuters
 - published_at: `2026-09-24T14:38:09+00:00`
 - importance_score: `100`
