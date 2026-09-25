@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-25T01:34:22.884661+00:00`
+- generated_at: `2026-09-25T06:12:16.097407+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `13`
-- event_detection_confidence: `78`
+- major_event_count: `16`
+- event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,6 +27,22 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Allies unite behind Saudi Arabia as Houthis step up attacks - Reuters
+- source: Reuters
+- published_at: `2026-09-25T01:54:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil prices fall as markets look to Iran truce, but remain wary of attacks on oil facilities - Reuters
+- source: Reuters
+- published_at: `2026-09-25T01:11:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Iran's president says it is up to US to choose if it wants to end Iran war - Reuters
 - source: Reuters
 - published_at: `2026-09-24T23:42:35+00:00`
@@ -37,7 +53,15 @@
 
 - headline: S&P 500 ends marginally lower as investors focus on US-Iran war - Reuters
 - source: Reuters
-- published_at: `2026-09-24T21:13:32+00:00`
+- published_at: `2026-09-24T23:30:37+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Britain warns Iran it will not tolerate hostile activity on UK soil, Sky News reports - Reuters
+- source: Reuters
+- published_at: `2026-09-24T23:02:12+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -78,29 +102,5 @@
 - headline: US and Iran discuss phased deal to reopen Hormuz and end US blockade, sources say - Reuters
 - source: Reuters
 - published_at: `2026-09-24T17:52:33+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: At UN, 80 countries demand reopening of Hormuz, condemn Iran, Houthi attacks - Reuters
-- source: Reuters
-- published_at: `2026-09-24T16:50:04+00:00`
-- importance_score: `98`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: France says ICC warrant posed no obstacle to Netanyahu overflight - Reuters
-- source: Reuters
-- published_at: `2026-09-24T14:38:09+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Our top 10 things to watch in the stock market Thursday
-- source: CNBC
-- published_at: `2026-09-24T13:24:44+00:00`
 - importance_score: `100`
 - confidence: `medium`
