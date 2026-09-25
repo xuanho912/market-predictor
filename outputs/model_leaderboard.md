@@ -1,6 +1,6 @@
 # Model Leaderboard
 
-Generated at: `2026-09-25T09:07:37.789440+00:00`
+Generated at: `2026-09-25T17:15:46.937510+00:00`
 Active model: `baseline_v1`
 
 > This is forecast model validation, not execution guidance or portfolio accounting.
@@ -35,15 +35,15 @@ Active model: `baseline_v1`
 - role: `active_baseline`
 - status: `tracking`
 - total_forecasts: `288`
-- pending_forecasts: `241`
+- pending_forecasts: `240`
 - promotion_status: `active_model`
 - reason: `Frozen current production model. Not a claim of high precision or stable alpha.`
 - horizon_metrics:
-  - 3d: `{'completed_count': 275, 'sample_gate': 'stronger_evidence', 'primary_hit_rate': 0.2582, 'secondary_hit_rate': 0.3236, 'primary_vs_secondary_accuracy_spread': -0.0655, 'primary_closer_than_secondary_rate': 0.3891, 'primary_mean_absolute_error': 0.016479, 'primary_median_absolute_error': 0.012787, 'secondary_mean_absolute_error': 0.012548}`
-  - 5d: `{'completed_count': 267, 'sample_gate': 'stronger_evidence', 'primary_hit_rate': 0.2772, 'secondary_hit_rate': 0.2846, 'primary_vs_secondary_accuracy_spread': -0.0075, 'primary_closer_than_secondary_rate': 0.412, 'primary_mean_absolute_error': 0.022122, 'primary_median_absolute_error': 0.01671, 'secondary_mean_absolute_error': 0.016691}`
-  - 10d: `{'completed_count': 247, 'sample_gate': 'stronger_evidence', 'primary_hit_rate': 0.2389, 'secondary_hit_rate': 0.332, 'primary_vs_secondary_accuracy_spread': -0.0931, 'primary_closer_than_secondary_rate': 0.3279, 'primary_mean_absolute_error': 0.033542, 'primary_median_absolute_error': 0.027685, 'secondary_mean_absolute_error': 0.022277}`
-  - 20d: `{'completed_count': 207, 'sample_gate': 'stronger_evidence', 'primary_hit_rate': 0.1208, 'secondary_hit_rate': 0.2947, 'primary_vs_secondary_accuracy_spread': -0.1739, 'primary_closer_than_secondary_rate': 0.256, 'primary_mean_absolute_error': 0.061786, 'primary_median_absolute_error': 0.059038, 'secondary_mean_absolute_error': 0.037644}`
-  - 60d: `{'completed_count': 47, 'sample_gate': 'early_evidence', 'primary_hit_rate': 0.1277, 'secondary_hit_rate': 0.2128, 'primary_vs_secondary_accuracy_spread': -0.0851, 'primary_closer_than_secondary_rate': 0.383, 'primary_mean_absolute_error': 0.074407, 'primary_median_absolute_error': 0.051247, 'secondary_mean_absolute_error': 0.050031}`
+  - 3d: `{'completed_count': 276, 'sample_gate': 'stronger_evidence', 'primary_hit_rate': 0.2609, 'secondary_hit_rate': 0.3225, 'primary_vs_secondary_accuracy_spread': -0.0616, 'primary_closer_than_secondary_rate': 0.3913, 'primary_mean_absolute_error': 0.01642, 'primary_median_absolute_error': 0.01278, 'secondary_mean_absolute_error': 0.012542}`
+  - 5d: `{'completed_count': 268, 'sample_gate': 'stronger_evidence', 'primary_hit_rate': 0.2761, 'secondary_hit_rate': 0.2873, 'primary_vs_secondary_accuracy_spread': -0.0112, 'primary_closer_than_secondary_rate': 0.4104, 'primary_mean_absolute_error': 0.022069, 'primary_median_absolute_error': 0.016576, 'secondary_mean_absolute_error': 0.016634}`
+  - 10d: `{'completed_count': 248, 'sample_gate': 'stronger_evidence', 'primary_hit_rate': 0.2379, 'secondary_hit_rate': 0.3306, 'primary_vs_secondary_accuracy_spread': -0.0927, 'primary_closer_than_secondary_rate': 0.3306, 'primary_mean_absolute_error': 0.033448, 'primary_median_absolute_error': 0.027676, 'secondary_mean_absolute_error': 0.022335}`
+  - 20d: `{'completed_count': 208, 'sample_gate': 'stronger_evidence', 'primary_hit_rate': 0.1202, 'secondary_hit_rate': 0.2933, 'primary_vs_secondary_accuracy_spread': -0.1731, 'primary_closer_than_secondary_rate': 0.2596, 'primary_mean_absolute_error': 0.061749, 'primary_median_absolute_error': 0.058866, 'secondary_mean_absolute_error': 0.037753}`
+  - 60d: `{'completed_count': 48, 'sample_gate': 'early_evidence', 'primary_hit_rate': 0.125, 'secondary_hit_rate': 0.2083, 'primary_vs_secondary_accuracy_spread': -0.0833, 'primary_closer_than_secondary_rate': 0.3958, 'primary_mean_absolute_error': 0.073199, 'primary_median_absolute_error': 0.050587, 'secondary_mean_absolute_error': 0.049845}`
 
 ### challenger_v2_error_learning
 - role: `shadow_challenger`

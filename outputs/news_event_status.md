@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-25T09:07:26.586154+00:00`
+- generated_at: `2026-09-25T17:15:36.085691+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `17`
-- event_detection_confidence: `75`
+- major_event_count: `13`
+- event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `50`
+- confirmation_score: `0`
 
 ## Dashboard Note
 
@@ -27,27 +27,35 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Rupee treads water; forward premiums extend rally on RBI swaps, stop-losses - Reuters
+- headline: EXCLUSIVE: Qatar Airways retires idle A330s and sends pilots to RwandAir as Iran war drags - Reuters
 - source: Reuters
-- published_at: `2026-09-25T02:33:00+00:00`
+- published_at: `2026-09-25T13:33:43+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Allies unite behind Saudi Arabia as Houthis step up attacks - Reuters
+- headline: UAE markets decline after warning on regional air travel - Reuters
 - source: Reuters
-- published_at: `2026-09-25T01:54:00+00:00`
+- published_at: `2026-09-25T12:17:43+00:00`
 - importance_score: `100`
 - confidence: `high`
 
-### geopolitical_risk_easing / risk_on
+### geopolitical_risk_escalation / risk_off
 
-- headline: Oil slides as US-Iran truce hopes outweigh Houthi attacks on Saudi Arabia - Reuters
+- headline: Rupee soothed by intervention, surge in forward premiums tipped to cool - Reuters
+- source: Reuters
+- published_at: `2026-09-25T02:33:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil prices drop about 3% as US, Iran explore path out of war - Reuters
 - source: Reuters
 - published_at: `2026-09-25T01:11:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,7 +63,7 @@
 - source: Reuters
 - published_at: `2026-09-24T23:42:35+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -63,15 +71,15 @@
 - source: Reuters
 - published_at: `2026-09-24T23:30:37+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Britain warns Iran it will not tolerate hostile activity on UK soil, Sky News reports - Reuters
+- headline: Britain warns Iran it will not tolerate hostile activity on UK soil - Reuters
 - source: Reuters
-- published_at: `2026-09-24T23:02:12+00:00`
+- published_at: `2026-09-24T23:01:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -80,14 +88,6 @@
 - published_at: `2026-09-24T20:34:36+00:00`
 - importance_score: `100`
 - confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Saudi Arabia says it intercepted Houthi missiles; group claims strikes on Riyadh, Aramco - Reuters
-- source: Reuters
-- published_at: `2026-09-24T20:33:57+00:00`
-- importance_score: `100`
-- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
