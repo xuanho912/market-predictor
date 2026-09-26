@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-26T08:51:32.208819+00:00`
+- generated_at: `2026-09-26T16:27:20.109285+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `11`
-- event_detection_confidence: `67`
+- major_event_count: `7`
+- event_detection_confidence: `68`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,11 +27,19 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Apple faces $5.7 billion patent infringement verdict over iPhone and Apple Watch haptics
+- source: CNBC
+- published_at: `2026-09-26T14:55:59+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Saudi coalition says it intercepts Houthi missiles, drones - Reuters
 - source: Reuters
 - published_at: `2026-09-26T01:25:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -43,17 +51,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Trump warns Xi over Chinese support for Iran, receives assurances, US envoy says - Reuters
+- headline: EXCLUSIVE: Qatar Airways retires idle A330s and sends pilots to RwandAir as Iran war drags - Reuters
 - source: Reuters
-- published_at: `2026-09-25T18:59:13+00:00`
+- published_at: `2026-09-25T13:33:43+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: EXCLUSIVE: Qatar Airways retires idle A330s and sends pilots to RwandAir as Iran war drags - Reuters
+- headline: Trump warns Xi over Chinese support for Iran, receives assurances, US envoy says - Reuters
 - source: Reuters
-- published_at: `2026-09-25T13:33:43+00:00`
+- published_at: `2026-09-25T13:08:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -70,37 +78,5 @@
 - headline: India Economic Adviser says ties with US in ‘uneasy equilibrium’
 - source: Bloomberg
 - published_at: `2026-09-25T04:28:52+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Rupee soothed by intervention, surge in forward premiums tipped to cool - Reuters
-- source: Reuters
-- published_at: `2026-09-25T02:33:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil prices slide about 2% as US, Iran explore path out of war - Reuters
-- source: Reuters
-- published_at: `2026-09-25T01:11:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran's president says it is up to US to choose if it wants to end Iran war - Reuters
-- source: Reuters
-- published_at: `2026-09-24T23:42:35+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: S&P 500 ends marginally lower as investors focus on US-Iran war - Reuters
-- source: Reuters
-- published_at: `2026-09-24T23:30:37+00:00`
-- importance_score: `100`
+- importance_score: `99`
 - confidence: `medium`
