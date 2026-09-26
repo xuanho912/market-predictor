@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-26T01:34:32.605592+00:00`
+- generated_at: `2026-09-26T06:12:32.657676+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `13`
-- event_detection_confidence: `71`
+- major_event_count: `12`
+- event_detection_confidence: `68`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,9 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Trump, Xi discuss Middle East war as Iran presses 7-day plan to end fighting - Reuters
+- headline: Saudi coalition says it intercepts Houthi missiles, drones - Reuters
 - source: Reuters
-- published_at: `2026-09-25T22:16:51+00:00`
+- published_at: `2026-09-26T01:57:02+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -38,14 +38,6 @@
 - headline: EU warns of energy price crisis, asks countries to consider curbing demand, letter shows - Reuters
 - source: Reuters
 - published_at: `2026-09-25T20:16:26+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil prices slide about 2% as US, Iran explore path out of war - Reuters
-- source: Reuters
-- published_at: `2026-09-25T19:28:52+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -75,9 +67,25 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: India Economic Adviser says ties with US in ‘uneasy equilibrium’
+- source: Bloomberg
+- published_at: `2026-09-25T04:28:52+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Rupee soothed by intervention, surge in forward premiums tipped to cool - Reuters
 - source: Reuters
-- published_at: `2026-09-25T10:13:34+00:00`
+- published_at: `2026-09-25T02:33:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil prices slide about 2% as US, Iran explore path out of war - Reuters
+- source: Reuters
+- published_at: `2026-09-25T01:11:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -94,13 +102,5 @@
 - headline: S&P 500 ends marginally lower as investors focus on US-Iran war - Reuters
 - source: Reuters
 - published_at: `2026-09-24T23:30:37+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Britain warns Iran it will not tolerate hostile activity on UK soil - Reuters
-- source: Reuters
-- published_at: `2026-09-24T23:01:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
