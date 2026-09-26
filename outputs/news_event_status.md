@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-25T23:23:56.625546+00:00`
+- generated_at: `2026-09-26T00:21:34.006218+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
-- event_detection_confidence: `70`
+- major_event_count: `13`
+- event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,22 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Trump, Xi discuss Middle East war as Iran presses 7-day plan to end fighting - Reuters
+- source: Reuters
+- published_at: `2026-09-25T22:16:51+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: EU warns of energy price crisis, asks countries to consider curbing demand, letter shows - Reuters
+- source: Reuters
+- published_at: `2026-09-25T20:16:26+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,21 +71,13 @@
 - source: Reuters
 - published_at: `2026-09-25T12:17:43+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Rupee soothed by intervention, surge in forward premiums tipped to cool - Reuters
 - source: Reuters
 - published_at: `2026-09-25T02:33:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump, Xi discuss Middle East war as Iran presses 7-day plan to end fighting - Reuters
-- source: Reuters
-- published_at: `2026-09-25T01:54:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -94,13 +102,5 @@
 - headline: Britain warns Iran it will not tolerate hostile activity on UK soil - Reuters
 - source: Reuters
 - published_at: `2026-09-24T23:01:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US Senate rejects Democratic-led resolution to curb Trump's Iran war powers - Reuters
-- source: Reuters
-- published_at: `2026-09-24T20:34:36+00:00`
 - importance_score: `100`
 - confidence: `medium`

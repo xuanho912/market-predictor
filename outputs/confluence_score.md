@@ -3,12 +3,12 @@
 This report explains whether current forecast paths have multi-source confirmation. It is not a trading system.
 
 - version: confluence_engine_v1
-- generated_at: 2026-09-25T23:24:07.401447+00:00
-- strongest_confluence_symbol: SPY
+- generated_at: 2026-09-26T00:21:44.947239+00:00
+- strongest_confluence_symbol: QQQ
 
 | Symbol | Dominant path | Confluence | Level | Main supports | Main conflicts |
 | --- | --- | ---: | --- | --- | --- |
-| DIA | failed_bounce | 45/100 | mixed | breadth, news, signal_confirmation, signal_confirmation | breadth, news, signal_confirmation, signal_confirmation |
-| IWM | no_edge | 41/100 | weak | breadth, news, scenario_gap, signal_confirmation | signal_confirmation, breadth, news, signal_confirmation |
-| QQQ | failed_bounce | 47/100 | mixed | breadth, news, signal_confirmation, signal_confirmation | news, breadth, price, signal_confirmation |
+| DIA | failed_bounce | 47/100 | mixed | breadth, news, signal_confirmation, signal_confirmation | breadth, news, signal_confirmation, signal_confirmation |
+| IWM | no_edge | 42/100 | weak | breadth, news, scenario_gap, signal_confirmation | signal_confirmation, breadth, news, signal_confirmation |
+| QQQ | failed_bounce | 48/100 | mixed | breadth, news, signal_confirmation, signal_confirmation | news, breadth, price, signal_confirmation |
 | SPY | failed_bounce | 48/100 | mixed | breadth, signal_confirmation, signal_confirmation, signal_confirmation | news, breadth, price, signal_confirmation |
