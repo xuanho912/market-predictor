@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-26T06:12:32.657676+00:00`
+- generated_at: `2026-09-26T08:51:32.208819+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
-- event_detection_confidence: `68`
+- major_event_count: `11`
+- event_detection_confidence: `67`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -29,7 +29,7 @@
 
 - headline: Saudi coalition says it intercepts Houthi missiles, drones - Reuters
 - source: Reuters
-- published_at: `2026-09-26T01:57:02+00:00`
+- published_at: `2026-09-26T01:25:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -39,7 +39,7 @@
 - source: Reuters
 - published_at: `2026-09-25T20:16:26+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +47,7 @@
 - source: Reuters
 - published_at: `2026-09-25T18:59:13+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
