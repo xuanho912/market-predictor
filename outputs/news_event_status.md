@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-26T00:21:34.006218+00:00`
+- generated_at: `2026-09-26T01:11:02.052161+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `13`
@@ -77,7 +77,7 @@
 
 - headline: Rupee soothed by intervention, surge in forward premiums tipped to cool - Reuters
 - source: Reuters
-- published_at: `2026-09-25T02:33:00+00:00`
+- published_at: `2026-09-25T10:13:34+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
