@@ -1,6 +1,6 @@
 # High Confidence Signal Report
 
-Generated at: `2026-09-26T16:27:20.101044+00:00`
+Generated at: `2026-09-27T17:02:37.615223+00:00`
 
 This report does not confirm alpha. It checks whether higher-confidence historical analog candidates look better than lower-confidence candidates.
 
@@ -27,12 +27,12 @@ Conclusion: `confidence_useful_proxy`
 - 60d: hit_rate `0.8750`, avg `0.0541`, median `0.0565`, brier `0.1081`, calibration_gap `-0.0568`
 
 ### strong_signal_only
-- sample_size: `40`
-- 3d: hit_rate `0.5750`, avg `0.0012`, median `0.0030`, brier `0.2634`, calibration_gap `0.1632`
-- 5d: hit_rate `0.6250`, avg `-0.0021`, median `0.0016`, brier `0.2461`, calibration_gap `0.1132`
-- 10d: hit_rate `0.5750`, avg `-0.0030`, median `0.0049`, brier `0.2729`, calibration_gap `0.1632`
-- 20d: hit_rate `0.6750`, avg `0.0077`, median `0.0143`, brier `0.2360`, calibration_gap `0.0632`
-- 60d: hit_rate `0.8500`, avg `0.0376`, median `0.0434`, brier `0.1432`, calibration_gap `-0.1118`
+- sample_size: `60`
+- 3d: hit_rate `0.5167`, avg `-0.0029`, median `0.0010`, brier `0.2959`, calibration_gap `0.2242`
+- 5d: hit_rate `0.5333`, avg `-0.0071`, median `0.0009`, brier `0.2911`, calibration_gap `0.2075`
+- 10d: hit_rate `0.4667`, avg `-0.0072`, median `-0.0026`, brier `0.3269`, calibration_gap `0.2742`
+- 20d: hit_rate `0.6667`, avg `0.0069`, median `0.0159`, brier `0.2363`, calibration_gap `0.0742`
+- 60d: hit_rate `0.8167`, avg `0.0371`, median `0.0463`, brier `0.1579`, calibration_gap `-0.0758`
 
 ### low_confidence_reference
 - sample_size: `16`

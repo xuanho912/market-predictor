@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-26T16:27:20.109285+00:00`
+- generated_at: `2026-09-27T17:02:37.620351+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
-- event_detection_confidence: `68`
+- major_event_count: `5`
+- event_detection_confidence: `72`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,56 +27,40 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Apple faces $5.7 billion patent infringement verdict over iPhone and Apple Watch haptics
-- source: CNBC
-- published_at: `2026-09-26T14:55:59+00:00`
+- headline: Seven people killed in strike on market in Yemen, Houthi-run health ministry says - reuters.com
+- source: Reuters
+- published_at: `2026-09-27T11:04:46+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Saudi coalition says it intercepts Houthi missiles, drones - Reuters
+- headline: Iran's army voices readiness for potential renewed US attack - reuters.com
 - source: Reuters
-- published_at: `2026-09-26T01:25:00+00:00`
+- published_at: `2026-09-27T09:40:11+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Apple faces $5.7 billion patent infringement verdict over iPhone and Apple Watch haptics
+- source: CNBC
+- published_at: `2026-09-26T14:55:59+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: EU warns of energy price crisis, asks countries to consider curbing demand, letter shows - Reuters
-- source: Reuters
-- published_at: `2026-09-25T20:16:26+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: EXCLUSIVE: Qatar Airways retires idle A330s and sends pilots to RwandAir as Iran war drags - Reuters
-- source: Reuters
-- published_at: `2026-09-25T13:33:43+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump warns Xi over Chinese support for Iran, receives assurances, US envoy says - Reuters
-- source: Reuters
-- published_at: `2026-09-25T13:08:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: UAE markets decline after warning on regional air travel - Reuters
-- source: Reuters
-- published_at: `2026-09-25T12:17:43+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: India Economic Adviser says ties with US in ‘uneasy equilibrium’
+- headline: How Trump’s diesel ban threat is making US exports more profitable
 - source: Bloomberg
-- published_at: `2026-09-25T04:28:52+00:00`
+- published_at: `2026-09-26T04:13:15+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Britain warns Iran it will not tolerate hostile activity on UK soil - reuters.com
+- source: Reuters
+- published_at: `2026-09-26T03:45:47+00:00`
 - importance_score: `99`
 - confidence: `medium`
