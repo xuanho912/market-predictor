@@ -1,20 +1,20 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-27T17:02:37.620351+00:00`
+- generated_at: `2026-09-28T19:43:15.336045+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `5`
-- event_detection_confidence: `72`
+- major_event_count: `7`
+- event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
-- price_reaction_confirmed: `False`
-- confirmation_score: `25`
+- price_reaction_confirmed: `True`
+- confirmation_score: `75`
 
 ## Dashboard Note
 
-当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，尚未被价格反应充分确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
+当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，已被价格反应初步确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
 
 ## Economic Calendar Risk
 
@@ -27,40 +27,56 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Seven people killed in strike on market in Yemen, Houthi-run health ministry says - reuters.com
-- source: Reuters
-- published_at: `2026-09-27T11:04:46+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran's army voices readiness for potential renewed US attack - reuters.com
-- source: Reuters
-- published_at: `2026-09-27T09:40:11+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Apple faces $5.7 billion patent infringement verdict over iPhone and Apple Watch haptics
+- headline: What the market needs to branch out beyond AI stocks. Plus, a win for CrowdStrike
 - source: CNBC
-- published_at: `2026-09-26T14:55:59+00:00`
+- published_at: `2026-09-28T18:54:06+00:00`
 - importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Feds can't withhold counterterrorism funds from states to force election admin changes, judge rules
+- source: CNBC
+- published_at: `2026-09-28T18:41:51+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Suspected plot to attack UK's Fairford airbase, used by US: What do we know? - Reuters
+- source: Reuters
+- published_at: `2026-09-28T17:02:30+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: UK diesel prices hit record highs due to impact of Iran war - Reuters
+- source: Reuters
+- published_at: `2026-09-28T15:56:39+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### fed_dovish / risk_on
+
+- headline: New grads say employers set the bar too high for entry-level roles: 'No job is willing to give you that first experience'
+- source: CNBC
+- published_at: `2026-09-28T14:26:51+00:00`
+- importance_score: `86`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
+### geopolitical_risk_easing / risk_on
 
-- headline: How Trump’s diesel ban threat is making US exports more profitable
-- source: Bloomberg
-- published_at: `2026-09-26T04:13:15+00:00`
+- headline: Oil prices rise 2% after Trump rejects Iran peace deal - Reuters
+- source: Reuters
+- published_at: `2026-09-27T22:13:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
-### geopolitical_risk_escalation / risk_off
+### fed_hawkish / risk_off
 
-- headline: Britain warns Iran it will not tolerate hostile activity on UK soil - reuters.com
+- headline: Stocks fall; bond market flips to 'higher for longer' mode - Reuters
 - source: Reuters
-- published_at: `2026-09-26T03:45:47+00:00`
-- importance_score: `99`
+- published_at: `2026-09-28T00:50:00+00:00`
+- importance_score: `84`
 - confidence: `medium`
