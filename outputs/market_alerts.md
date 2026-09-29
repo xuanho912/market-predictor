@@ -3,7 +3,7 @@
 These alerts are forecast-validation and scenario-confirmation warnings only. They are not trading recommendations.
 
 - version: market_alert_engine_v1
-- generated_at: 2026-09-29T02:23:56.384662+00:00
+- generated_at: 2026-09-29T02:35:18.158277+00:00
 
 | Alert | Level | Score | Symbols | Top evidence | Validation |
 | --- | --- | ---: | --- | --- | --- |

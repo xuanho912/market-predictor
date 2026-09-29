@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-29T02:23:45.457996+00:00`
+- generated_at: `2026-09-29T02:35:08.078209+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
-- event_detection_confidence: `76`
+- major_event_count: `9`
+- event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -30,6 +30,14 @@
 - headline: US, Iran separately talk with mediators in latest bid to end war - Reuters
 - source: Reuters
 - published_at: `2026-09-28T22:42:23+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: No strikes confirmed after explosion-like sounds heard near Iran's Qeshm - Reuters
+- source: Reuters
+- published_at: `2026-09-28T21:01:07+00:00`
 - importance_score: `100`
 - confidence: `high`
 

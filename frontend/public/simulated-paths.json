@@ -5,10 +5,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-09-28",
-    "current_time_us_eastern": "2026-09-28T22:23:56.384826-04:00",
+    "current_time_us_eastern": "2026-09-28T22:35:18.158362-04:00",
     "data_freshness_status": "fresh",
     "expected_latest_trading_date": "2026-09-28",
-    "generated_at": "2026-09-29T02:23:56.384826+00:00",
+    "generated_at": "2026-09-29T02:35:18.158362+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -1047,15 +1047,15 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
+      "BAA_SPREAD",
+      "HY_OAS",
       "DGS10",
-      "DGS3MO",
       "IG_OAS",
       "DGS2",
-      "HY_OAS",
-      "BAA_SPREAD",
+      "RECESSION",
       "DFII10",
       "FINANCIAL_STRESS",
-      "RECESSION"
+      "DGS3MO"
     ],
     "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-09-28。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
     "gamma_available": false,
@@ -1086,11 +1086,11 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 76,
+      "event_detection_confidence": 77,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-09-29T02:23:45.457996+00:00",
-      "major_event_count": 8,
+      "last_update": "2026-09-29T02:35:08.078209+00:00",
+      "major_event_count": 9,
       "missing_reason": null,
       "news_direction": "risk_off",
       "news_event_partial": false,
@@ -1101,7 +1101,7 @@
     },
     "news_event_available": true,
     "news_event_event_risk_level": "high",
-    "news_event_major_count": 8,
+    "news_event_major_count": 9,
     "news_event_missing_reason": null,
     "news_event_narrative": "geopolitics_escalation_risk_off",
     "news_event_partial": false,
@@ -1151,7 +1151,7 @@
       "status": "failed"
     },
     "event_risk_level": "high",
-    "major_event_count": 8,
+    "major_event_count": 9,
     "market_narrative": {
       "affected_scenarios": [
         "bearish_path"
@@ -1201,6 +1201,18 @@
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_market_direction": "risk_off",
+          "headline": "No strikes confirmed after explosion-like sounds heard near Iran's Qeshm - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-09-28T21:01:07+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
           "headline": "Trump says US will win Iran war 'very soon' - Reuters",
           "importance_score": 100,
           "published_at": "2026-09-28T20:26:33+00:00",
@@ -1241,18 +1253,6 @@
           "importance_score": 100,
           "published_at": "2026-09-28T18:54:06+00:00",
           "source": "CNBC"
-        },
-        {
-          "confidence": "high",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Feds can't withhold counterterrorism funds from states to force election admin changes, judge rules",
-          "importance_score": 100,
-          "published_at": "2026-09-28T18:41:51+00:00",
-          "source": "CNBC"
         }
       ]
     },
@@ -1262,7 +1262,7 @@
       "direction": "supports_risk_expansion",
       "event_risk_level": "high",
       "macro_event_risk_flag": false,
-      "major_event_count": 8,
+      "major_event_count": 9,
       "not_a_trading_signal": true,
       "price_reaction_confirmed": true,
       "symbols": {
@@ -1417,7 +1417,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": -0.0079,
-        "avg_equity_futures_1d_return": -0.0034,
+        "avg_equity_futures_1d_return": -0.0029,
         "confirmed_checks": [
           "股票ETF或股指期货下跌",
           "VIX 上升",
@@ -1433,7 +1433,7 @@
           "HYG/LQD 走弱"
         ],
         "hyg_lqd_1d_relative_return": 0.0031,
-        "oil_proxy_1d_return": 0.0113,
+        "oil_proxy_1d_return": 0.0104,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -2299,7 +2299,7 @@
             "Stocks fall as higher oil prices, Treasury yields weigh - Reuters",
             "US, Iran separately talk with mediators in latest bid to end war - Reuters",
             "UAE president discussed bilateral relations with Israel's Netanyahu, state news agency says - Reuters",
-            "Michael Burry believes the AI bubble 'may burst' sooner than he first believed"
+            "No strikes confirmed after explosion-like sounds heard near Iran's Qeshm - Reuters"
           ]
         },
         "price": {
@@ -3721,7 +3721,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 86,
+            "freshness_score": 87,
+            "headline": "No strikes confirmed after explosion-like sounds heard near Iran's Qeshm - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-28T21:01:07+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 78,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 85,
             "headline": "Trump says US will win Iran war 'very soon' - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3775,7 +3802,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 82,
             "headline": "Suspected plot to attack UK's Fairford airbase, used by US: What do we know? - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3808,33 +3835,6 @@
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-28T18:54:06+00:00",
-            "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 77,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 82,
-            "headline": "Feds can't withhold counterterrorism funds from states to force election admin changes, judge rules",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-28T18:41:51+00:00",
             "source": "CNBC"
           }
         ],
@@ -3887,6 +3887,18 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "No strikes confirmed after explosion-like sounds heard near Iran's Qeshm - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-09-28T21:01:07+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "Trump says US will win Iran war 'very soon' - Reuters",
               "importance_score": 100,
               "published_at": "2026-09-28T20:26:33+00:00",
@@ -3926,18 +3938,6 @@
               "headline": "What the market needs to branch out beyond AI stocks. Plus, a win for CrowdStrike",
               "importance_score": 100,
               "published_at": "2026-09-28T18:54:06+00:00",
-              "source": "CNBC"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Feds can't withhold counterterrorism funds from states to force election admin changes, judge rules",
-              "importance_score": 100,
-              "published_at": "2026-09-28T18:41:51+00:00",
               "source": "CNBC"
             }
           ]
@@ -3982,7 +3982,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0079,
-            "avg_equity_futures_1d_return": -0.0034,
+            "avg_equity_futures_1d_return": -0.0029,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -3998,7 +3998,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0031,
-            "oil_proxy_1d_return": 0.0113,
+            "oil_proxy_1d_return": 0.0104,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -6483,7 +6483,7 @@
             "Stocks fall as higher oil prices, Treasury yields weigh - Reuters",
             "US, Iran separately talk with mediators in latest bid to end war - Reuters",
             "UAE president discussed bilateral relations with Israel's Netanyahu, state news agency says - Reuters",
-            "Michael Burry believes the AI bubble 'may burst' sooner than he first believed"
+            "No strikes confirmed after explosion-like sounds heard near Iran's Qeshm - Reuters"
           ]
         },
         "price": {
@@ -7878,7 +7878,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 86,
+            "freshness_score": 87,
+            "headline": "No strikes confirmed after explosion-like sounds heard near Iran's Qeshm - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-28T21:01:07+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 78,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 85,
             "headline": "Trump says US will win Iran war 'very soon' - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7932,7 +7959,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 82,
             "headline": "Suspected plot to attack UK's Fairford airbase, used by US: What do we know? - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7965,33 +7992,6 @@
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-28T18:54:06+00:00",
-            "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 77,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 82,
-            "headline": "Feds can't withhold counterterrorism funds from states to force election admin changes, judge rules",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-28T18:41:51+00:00",
             "source": "CNBC"
           }
         ],
@@ -8044,6 +8044,18 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "No strikes confirmed after explosion-like sounds heard near Iran's Qeshm - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-09-28T21:01:07+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "Trump says US will win Iran war 'very soon' - Reuters",
               "importance_score": 100,
               "published_at": "2026-09-28T20:26:33+00:00",
@@ -8083,18 +8095,6 @@
               "headline": "What the market needs to branch out beyond AI stocks. Plus, a win for CrowdStrike",
               "importance_score": 100,
               "published_at": "2026-09-28T18:54:06+00:00",
-              "source": "CNBC"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Feds can't withhold counterterrorism funds from states to force election admin changes, judge rules",
-              "importance_score": 100,
-              "published_at": "2026-09-28T18:41:51+00:00",
               "source": "CNBC"
             }
           ]
@@ -8139,7 +8139,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0079,
-            "avg_equity_futures_1d_return": -0.0034,
+            "avg_equity_futures_1d_return": -0.0029,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -8155,7 +8155,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0031,
-            "oil_proxy_1d_return": 0.0113,
+            "oil_proxy_1d_return": 0.0104,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -10682,7 +10682,7 @@
             "Stocks fall as higher oil prices, Treasury yields weigh - Reuters",
             "US, Iran separately talk with mediators in latest bid to end war - Reuters",
             "UAE president discussed bilateral relations with Israel's Netanyahu, state news agency says - Reuters",
-            "Michael Burry believes the AI bubble 'may burst' sooner than he first believed"
+            "No strikes confirmed after explosion-like sounds heard near Iran's Qeshm - Reuters"
           ]
         },
         "price": {
@@ -12053,7 +12053,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 86,
+            "freshness_score": 87,
+            "headline": "No strikes confirmed after explosion-like sounds heard near Iran's Qeshm - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-28T21:01:07+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 78,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 85,
             "headline": "Trump says US will win Iran war 'very soon' - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12107,7 +12134,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 82,
             "headline": "Suspected plot to attack UK's Fairford airbase, used by US: What do we know? - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12140,33 +12167,6 @@
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-28T18:54:06+00:00",
-            "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 77,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 82,
-            "headline": "Feds can't withhold counterterrorism funds from states to force election admin changes, judge rules",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-28T18:41:51+00:00",
             "source": "CNBC"
           }
         ],
@@ -12219,6 +12219,18 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "No strikes confirmed after explosion-like sounds heard near Iran's Qeshm - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-09-28T21:01:07+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "Trump says US will win Iran war 'very soon' - Reuters",
               "importance_score": 100,
               "published_at": "2026-09-28T20:26:33+00:00",
@@ -12258,18 +12270,6 @@
               "headline": "What the market needs to branch out beyond AI stocks. Plus, a win for CrowdStrike",
               "importance_score": 100,
               "published_at": "2026-09-28T18:54:06+00:00",
-              "source": "CNBC"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Feds can't withhold counterterrorism funds from states to force election admin changes, judge rules",
-              "importance_score": 100,
-              "published_at": "2026-09-28T18:41:51+00:00",
               "source": "CNBC"
             }
           ]
@@ -12314,7 +12314,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0079,
-            "avg_equity_futures_1d_return": -0.0034,
+            "avg_equity_futures_1d_return": -0.0029,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -12330,7 +12330,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0031,
-            "oil_proxy_1d_return": 0.0113,
+            "oil_proxy_1d_return": 0.0104,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -14845,7 +14845,7 @@
             "Stocks fall as higher oil prices, Treasury yields weigh - Reuters",
             "US, Iran separately talk with mediators in latest bid to end war - Reuters",
             "UAE president discussed bilateral relations with Israel's Netanyahu, state news agency says - Reuters",
-            "Michael Burry believes the AI bubble 'may burst' sooner than he first believed"
+            "No strikes confirmed after explosion-like sounds heard near Iran's Qeshm - Reuters"
           ]
         },
         "price": {
@@ -16280,7 +16280,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 86,
+            "freshness_score": 87,
+            "headline": "No strikes confirmed after explosion-like sounds heard near Iran's Qeshm - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-28T21:01:07+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 78,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 85,
             "headline": "Trump says US will win Iran war 'very soon' - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16334,7 +16361,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 82,
             "headline": "Suspected plot to attack UK's Fairford airbase, used by US: What do we know? - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16367,33 +16394,6 @@
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-09-28T18:54:06+00:00",
-            "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 77,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 82,
-            "headline": "Feds can't withhold counterterrorism funds from states to force election admin changes, judge rules",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-28T18:41:51+00:00",
             "source": "CNBC"
           }
         ],
@@ -16446,6 +16446,18 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "No strikes confirmed after explosion-like sounds heard near Iran's Qeshm - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-09-28T21:01:07+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "Trump says US will win Iran war 'very soon' - Reuters",
               "importance_score": 100,
               "published_at": "2026-09-28T20:26:33+00:00",
@@ -16485,18 +16497,6 @@
               "headline": "What the market needs to branch out beyond AI stocks. Plus, a win for CrowdStrike",
               "importance_score": 100,
               "published_at": "2026-09-28T18:54:06+00:00",
-              "source": "CNBC"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Feds can't withhold counterterrorism funds from states to force election admin changes, judge rules",
-              "importance_score": 100,
-              "published_at": "2026-09-28T18:41:51+00:00",
               "source": "CNBC"
             }
           ]
@@ -16541,7 +16541,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0079,
-            "avg_equity_futures_1d_return": -0.0034,
+            "avg_equity_futures_1d_return": -0.0029,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -16557,7 +16557,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0031,
-            "oil_proxy_1d_return": 0.0113,
+            "oil_proxy_1d_return": 0.0104,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
