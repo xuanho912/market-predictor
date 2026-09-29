@@ -1,38 +1,35 @@
 # Data Freshness Status
 
-Generated at: `2026-09-29T18:07:53.886038+00:00`
+Generated at: `2026-09-29T23:50:28.225199+00:00`
 
 ## Summary
 
 - current_date: `2026-09-29`
-- current_time_us_eastern: `2026-09-29T14:07:53.886038-04:00`
+- current_time_us_eastern: `2026-09-29T19:50:28.225199-04:00`
 - latest_market_date: `2026-09-29`
-- latest_confirmed_market_date: `2026-09-28`
-- expected_latest_trading_date: `2026-09-28`
+- latest_confirmed_market_date: `2026-09-29`
+- expected_latest_trading_date: `2026-09-29`
 - is_latest_trading_day: `True`
-- latest_market_session_status: `intraday_unconfirmed`
-- can_append_forecast_record: `False`
+- latest_market_session_status: `completed_or_prior_session`
+- can_append_forecast_record: `True`
 - can_backfill_completed_outcomes: `True`
 - stale_days: `0`
-- data_freshness_status: `market_open_unconfirmed`
+- data_freshness_status: `fresh`
 - last_successful_core_market_update: `2026-09-29`
 - last_successful_update: `2026-09-29`
-- warning_message: 当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-09-29，最近完整收盘交易日为 2026-09-28；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。
+- warning_message: 核心行情已更新至最新应有交易日 2026-09-29。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。
 
 ## Affected Symbols
 
-- `SPY`
-- `QQQ`
-- `IWM`
-- `DIA`
+- none
 
 ## Provider Status
 
-- BAA_SPREAD: status=`available`, latest_date=`2026-09-25`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
-- DFII10: status=`available`, latest_date=`2026-09-25`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
-- DGS10: status=`available`, latest_date=`2026-09-25`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
-- DGS2: status=`available`, latest_date=`2026-09-25`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
-- DGS3MO: status=`available`, latest_date=`2026-09-25`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
+- BAA_SPREAD: status=`available`, latest_date=`2026-09-28`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
+- DFII10: status=`available`, latest_date=`2026-09-28`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
+- DGS10: status=`available`, latest_date=`2026-09-28`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
+- DGS2: status=`available`, latest_date=`2026-09-28`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
+- DGS3MO: status=`available`, latest_date=`2026-09-28`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
 - DIA: status=`available`, latest_date=`2026-09-29`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - FINANCIAL_STRESS: status=`stale`, latest_date=`2026-09-18`, source=`fred-api`, stale=`True`, fallback=`False`, real_data=`True`
 - FINNHUB_API: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
@@ -60,7 +57,7 @@ Generated at: `2026-09-29T18:07:53.886038+00:00`
 - XLU: status=`available`, latest_date=`2026-09-29`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - XLV: status=`available`, latest_date=`2026-09-29`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - XLY: status=`available`, latest_date=`2026-09-29`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- ^SKEW: status=`available`, latest_date=`2026-09-28`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- ^SKEW: status=`available`, latest_date=`2026-09-29`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - ^TNX: status=`available`, latest_date=`2026-09-29`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - ^VIX: status=`available`, latest_date=`2026-09-29`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - ^VIX3M: status=`available`, latest_date=`2026-09-29`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
@@ -78,15 +75,15 @@ Generated at: `2026-09-29T18:07:53.886038+00:00`
 - finnhub_candle_QQQ: status=`missing`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
 - finnhub_candle_SPY: status=`missing`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
 - finnhub_economic_calendar: status=`missing`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
-- finnhub_market_holiday: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
+- finnhub_market_holiday: status=`rate_limited`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
 - finnhub_market_news: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
-- finnhub_market_status: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
+- finnhub_market_status: status=`rate_limited`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
 - finnhub_news_sentiment_DIA: status=`missing`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
 - finnhub_news_sentiment_IWM: status=`missing`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
 - finnhub_news_sentiment_QQQ: status=`missing`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
 - finnhub_news_sentiment_SPY: status=`missing`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
-- finnhub_quote_DIA: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
-- finnhub_quote_IWM: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
+- finnhub_quote_DIA: status=`rate_limited`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
+- finnhub_quote_IWM: status=`rate_limited`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
 - finnhub_quote_QQQ: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
 - finnhub_quote_SPY: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
 - finnhub_rates_data: status=`missing`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
@@ -97,7 +94,7 @@ Generated at: `2026-09-29T18:07:53.886038+00:00`
 - flow_provider: status=`proxy`, latest_date=`2026-09-29`, source=`flow_positioning_proxy`, stale=`False`, fallback=`True`, real_data=`False`
 - macro_event_calendar: status=`fallback`, latest_date=`2026-09-29`, source=`deterministic_calendar_fallback`, stale=`False`, fallback=`True`, real_data=`False`
 - news_event_provider: status=`available`, latest_date=`2026-09-29`, source=`finnhub+gdelt`, stale=`False`, fallback=`False`, real_data=`True`
-- options_SKEW: status=`available`, latest_date=`2026-09-28`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- options_SKEW: status=`available`, latest_date=`2026-09-29`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - options_VIX: status=`available`, latest_date=`2026-09-29`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - options_VIX3M: status=`available`, latest_date=`2026-09-29`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - options_VIX6M: status=`available`, latest_date=`2026-09-29`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
