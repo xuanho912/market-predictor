@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-09-29T01:23:42.945177+00:00`
+Generated at: `2026-09-29T02:23:57.689808+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -22,16 +22,16 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - status: `available`
 - current_price: `228.86`
 - market_context: `market_headwind`
-- primary: `stock_failed_bounce` / `26.0%`
-- secondary: `stock_downside_continuation` / `18.7%`
-- risk: `stock_event_risk` / `14.2%`
-- stock_confluence_score: `48.25` / `mixed`
-- stock_alpha_score_v1: `52.5` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `60.9%`
-- 60d_expected_return: `-0.5%`
-- risk_reward_ratio: `0.56`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `32.67`
-- historical_analog_support: `supportive` / samples `10`
+- primary: `stock_failed_bounce` / `24.7%`
+- secondary: `stock_downside_continuation` / `17.7%`
+- risk: `stock_event_risk` / `13.5%`
+- stock_confluence_score: `50.89` / `mixed`
+- stock_alpha_score_v1: `56.0` / `wait_for_confirmation`
+- 20d_outperformance_probability: `62.3%`
+- 60d_expected_return: `-0.3%`
+- risk_reward_ratio: `0.64`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `24.77`
+- historical_analog_support: `weak` / samples `10`
 - validation_status: `not_yet_validated`
 
 - primary_confirmation_level: `234.76`
@@ -54,12 +54,12 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `29.3%`
 - secondary: `stock_downside_continuation` / `20.6%`
 - risk: `stock_event_risk` / `13.6%`
-- stock_confluence_score: `41.85` / `weak`
+- stock_confluence_score: `44.69` / `weak`
 - stock_alpha_score_v1: `3.5` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `39.1%`
 - 60d_expected_return: `-1.2%`
 - risk_reward_ratio: `0.37`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `34.22`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `27.83`
 - historical_analog_support: `supportive` / samples `10`
 - validation_status: `not_yet_validated`
 
