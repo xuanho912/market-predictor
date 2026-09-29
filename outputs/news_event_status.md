@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-29T06:59:07.242219+00:00`
+- generated_at: `2026-09-29T10:09:42.068007+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `11`
-- event_detection_confidence: `75`
+- major_event_count: `12`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,6 +27,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Israel kills senior Hamas commander in Gaza strike - reuters.com
+- source: Reuters
+- published_at: `2026-09-29T06:39:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Pentagon awards RTX's Raytheon $20.7 billion contract for AMRAAM missiles amid stockpile concerns - Reuters
 - source: Reuters
 - published_at: `2026-09-28T22:03:59+00:00`
@@ -35,19 +43,19 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: No strikes confirmed after explosion-like sounds heard near Iran's Qeshm - Reuters
+- headline: No strikes confirmed after explosion-like sounds heard near Iran's Qeshm - reuters.com
 - source: Reuters
 - published_at: `2026-09-28T21:01:07+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Trump says US will win Iran war 'very soon' - Reuters
+- headline: Trump says US will win Iran war 'very soon' - reuters.com
 - source: Reuters
 - published_at: `2026-09-28T20:26:33+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,15 +63,15 @@
 - source: CNBC
 - published_at: `2026-09-28T19:46:42+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Suspected plot to attack UK's Fairford airbase, used by US: What do we know? - Reuters
+- headline: Suspected plot to attack UK's Fairford airbase, used by US: What do we know? - reuters.com
 - source: Reuters
 - published_at: `2026-09-28T19:12:34+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -83,7 +91,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: UK diesel prices hit record highs due to impact of Iran war - Reuters
+- headline: UK diesel prices hit record highs due to impact of Iran war - reuters.com
 - source: Reuters
 - published_at: `2026-09-28T15:56:39+00:00`
 - importance_score: `100`
@@ -94,13 +102,5 @@
 - headline: Israeli strikes kill at least two people in Gaza, officials say - Reuters
 - source: Reuters
 - published_at: `2026-09-28T13:50:01+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US, Iran separately talk with mediators in latest bid to end war - Reuters
-- source: Reuters
-- published_at: `2026-09-28T13:39:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
