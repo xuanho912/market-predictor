@@ -1,6 +1,6 @@
 # Breadth Data Status
 
-Generated at: 2026-09-28T19:42:57.072401+00:00
+Generated at: 2026-09-29T00:33:14.553908+00:00
 
 Provider available: True
 True breadth available: False
@@ -11,14 +11,14 @@ Stale data: True
 
 ## Market Internal Resonance
 
-- resonance_score: 29.01
+- resonance_score: 28.77
 - resonance_state: surface_only
 - label: index_surface_strength
 - aligned_symbols: none
 - surface_only_symbols: SPY, QQQ, DIA, IWM
 - sector_score: 20.0
-- equal_weight_vs_cap_weight_20d: -0.044094
-- small_cap_vs_large_cap_20d: -0.047136
+- equal_weight_vs_cap_weight_20d: -0.044756
+- small_cap_vs_large_cap_20d: -0.048326
 
 ## Universe Status
 
@@ -34,11 +34,11 @@ Stale data: True
 - stale_constituents: False
 - stale_price_data: False
 - percent_above_20d / 50d / 200d: 0.2922 / 0.2624 / 0.4531
-- advancers / decliners / A-D ratio: 304 / 197 / 1.5431
+- advancers / decliners / A-D ratio: 303 / 198 / 1.5303
 - new highs/lows 20d: 37 / 83
 - new highs/lows 52w: 6 / 15
-- improvement / deterioration / confirmation / conflict / quality: 68.02 / 70.81 / 71.31 / 53.82 / 100.0
-- internal_resonance: surface_only / score 33.05 / SPY 指数表面强但内部没充分跟上：confirmation 71，conflict 54，RSP/SPY -4.41%，IWM/SPY -4.71%。
+- improvement / deterioration / confirmation / conflict / quality: 67.05 / 70.86 / 70.61 / 53.85 / 100.0
+- internal_resonance: surface_only / score 32.7 / SPY 指数表面强但内部没充分跟上：confirmation 71，conflict 54，RSP/SPY -4.48%，IWM/SPY -4.83%。
 
 ### QQQ
 
@@ -56,7 +56,7 @@ Stale data: True
 - new highs/lows 20d: 0 / 0
 - new highs/lows 52w: 0 / 0
 - improvement / deterioration / confirmation / conflict / quality: 8.67 / 70.67 / 9.39 / 69.07 / 4.0
-- internal_resonance: surface_only / score 1.78 / QQQ 指数表面强但内部没充分跟上：confirmation 9，conflict 69，RSP/SPY -4.41%，IWM/SPY -4.71%。
+- internal_resonance: surface_only / score 1.71 / QQQ 指数表面强但内部没充分跟上：confirmation 9，conflict 69，RSP/SPY -4.48%，IWM/SPY -4.83%。
 
 ### DIA
 
@@ -74,7 +74,7 @@ Stale data: True
 - new highs/lows 20d: 0 / 4
 - new highs/lows 52w: 0 / 1
 - improvement / deterioration / confirmation / conflict / quality: 64.47 / 52.33 / 70.23 / 39.77 / 100.0
-- internal_resonance: surface_only / score 37.41 / DIA 指数表面强但内部没充分跟上：confirmation 70，conflict 40，RSP/SPY -4.41%，IWM/SPY -4.71%。
+- internal_resonance: surface_only / score 37.34 / DIA 指数表面强但内部没充分跟上：confirmation 70，conflict 40，RSP/SPY -4.48%，IWM/SPY -4.83%。
 
 ### IWM
 
@@ -91,8 +91,8 @@ Stale data: True
 - advancers / decliners / A-D ratio: None / None / None
 - new highs/lows 20d: None / None
 - new highs/lows 52w: None / None
-- improvement / deterioration / confirmation / conflict / quality: 20.92 / 81.94 / 31.69 / 70.45 / 64
-- internal_resonance: surface_only / score 16.56 / IWM 指数表面强但内部没充分跟上：confirmation 32，conflict 70，RSP/SPY -4.41%，IWM/SPY -4.71%。
+- improvement / deterioration / confirmation / conflict / quality: 20.16 / 82.63 / 31.12 / 70.97 / 64
+- internal_resonance: surface_only / score 16.26 / IWM 指数表面强但内部没充分跟上：confirmation 31，conflict 71，RSP/SPY -4.48%，IWM/SPY -4.83%。
 
 ## Notes
 

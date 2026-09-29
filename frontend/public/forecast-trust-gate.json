@@ -6,29 +6,29 @@
         "checked_horizons": 5,
         "details": {
           "10d": {
-            "completed_count": 256,
-            "primary_closer_rate": 0.332,
-            "primary_vs_secondary_spread": -0.0977
+            "completed_count": 260,
+            "primary_closer_rate": 0.3308,
+            "primary_vs_secondary_spread": -0.0962
           },
           "1d": {
-            "completed_count": 292,
-            "primary_closer_rate": 0.387,
-            "primary_vs_secondary_spread": -0.0753
+            "completed_count": 296,
+            "primary_closer_rate": 0.3885,
+            "primary_vs_secondary_spread": -0.0709
           },
           "20d": {
-            "completed_count": 216,
-            "primary_closer_rate": 0.2639,
-            "primary_vs_secondary_spread": -0.1759
+            "completed_count": 220,
+            "primary_closer_rate": 0.2636,
+            "primary_vs_secondary_spread": -0.1727
           },
           "3d": {
-            "completed_count": 284,
-            "primary_closer_rate": 0.3944,
-            "primary_vs_secondary_spread": -0.0563
+            "completed_count": 288,
+            "primary_closer_rate": 0.3924,
+            "primary_vs_secondary_spread": -0.0625
           },
           "5d": {
-            "completed_count": 276,
-            "primary_closer_rate": 0.4094,
-            "primary_vs_secondary_spread": -0.0072
+            "completed_count": 280,
+            "primary_closer_rate": 0.4036,
+            "primary_vs_secondary_spread": -0.0107
           }
         },
         "message": "Primary-vs-secondary path advantage is not yet proven on enough forward samples.",
@@ -40,17 +40,17 @@
     }
   ],
   "data_completeness_score": 87.0,
-  "data_freshness_status": "market_open_unconfirmed",
-  "expected_latest_trading_date": "2026-09-25",
+  "data_freshness_status": "fresh",
+  "expected_latest_trading_date": "2026-09-28",
   "forward_completed_samples": {
-    "10d": 256,
-    "1d": 292,
-    "20d": 216,
-    "3d": 284,
-    "5d": 276,
-    "60d": 56
+    "10d": 260,
+    "1d": 296,
+    "20d": 220,
+    "3d": 288,
+    "5d": 280,
+    "60d": 60
   },
-  "generated_at": "2026-09-28T19:43:26.695503+00:00",
+  "generated_at": "2026-09-29T00:40:35.258124+00:00",
   "guardrails": [
     "This gate does not modify Alpha v1 threshold, baseline_v1 or historical forecast records.",
     "This is forecast reliability assessment, not trading advice.",
@@ -70,6 +70,7 @@
     "Route repeated deviation themes into a challenger model rather than editing baseline_v1."
   ],
   "passes": [
+    "data_is_current_or_market_closed",
     "data_completeness_85_plus",
     "forward_sample_gate_passed"
   ],
@@ -77,63 +78,58 @@
   "symbol_readiness": {
     "DIA": {
       "confidence_score": 68.0,
-      "confluence_score": 50.0,
+      "confluence_score": 53.0,
       "edge_status": "RISK_WARNING",
-      "primary_probability": 0.3277,
+      "primary_probability": 0.3536,
       "primary_scenario": "bearish_path",
-      "probability_gap": 0.059,
+      "probability_gap": 0.1076,
       "readiness": "blocked_by_global_gate",
       "reason": "Global trust gate is not ready.",
-      "secondary_probability": 0.2687,
+      "secondary_probability": 0.246,
       "secondary_scenario": "bounce_path"
     },
     "IWM": {
-      "confidence_score": 54.0,
-      "confluence_score": 44.0,
+      "confidence_score": 51.0,
+      "confluence_score": 45.0,
       "edge_status": "RISK_WARNING",
-      "primary_probability": 0.442,
+      "primary_probability": 0.4917,
       "primary_scenario": "bearish_path",
-      "probability_gap": 0.2298,
+      "probability_gap": 0.2963,
       "readiness": "blocked_by_global_gate",
       "reason": "Global trust gate is not ready.",
-      "secondary_probability": 0.2122,
+      "secondary_probability": 0.1954,
       "secondary_scenario": "analog_average_path"
     },
     "QQQ": {
       "confidence_score": 62.0,
       "confluence_score": 50.0,
       "edge_status": "RISK_WARNING",
-      "primary_probability": 0.3626,
+      "primary_probability": 0.3765,
       "primary_scenario": "bearish_path",
-      "probability_gap": 0.1254,
+      "probability_gap": 0.1447,
       "readiness": "blocked_by_global_gate",
       "reason": "Global trust gate is not ready.",
-      "secondary_probability": 0.2372,
+      "secondary_probability": 0.2318,
       "secondary_scenario": "analog_average_path"
     },
     "SPY": {
-      "confidence_score": 66.0,
-      "confluence_score": 50.0,
+      "confidence_score": 68.0,
+      "confluence_score": 52.0,
       "edge_status": "RISK_WARNING",
-      "primary_probability": 0.3702,
+      "primary_probability": 0.3349,
       "primary_scenario": "bearish_path",
-      "probability_gap": 0.1379,
+      "probability_gap": 0.0726,
       "readiness": "blocked_by_global_gate",
       "reason": "Global trust gate is not ready.",
-      "secondary_probability": 0.2323,
+      "secondary_probability": 0.2623,
       "secondary_scenario": "bounce_path"
     }
   },
-  "trust_score": 45,
+  "trust_score": 57,
   "use_boundary": "Use as a research radar and scenario explainer only; do not treat it as a dependable forecasting edge.",
   "validation_type": "forecast_reliability_gate",
   "version": "forecast_trust_gate_v1",
   "warnings": [
-    {
-      "code": "market_open_unconfirmed",
-      "message": "Current data is an intraday or unconfirmed snapshot; do not freeze it as a validated daily forecast.",
-      "severity": "medium"
-    },
     {
       "code": "high_confidence_not_validated",
       "details": {
@@ -147,11 +143,11 @@
     {
       "code": "deviation_learning_needed",
       "details": {
-        "material": 743,
-        "material_rate": 0.5384,
+        "material": 753,
+        "material_rate": 0.5363,
         "message": "Material deviation rate is too high; confidence must remain capped.",
         "passed": false,
-        "reviewed": 1380
+        "reviewed": 1404
       },
       "message": "Material deviation rate is too high; confidence must remain capped.",
       "severity": "medium"
