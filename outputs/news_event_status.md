@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-29T02:35:08.078209+00:00`
+- generated_at: `2026-09-29T06:59:07.242219+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
-- event_detection_confidence: `77`
+- major_event_count: `11`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,9 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US, Iran separately talk with mediators in latest bid to end war - Reuters
+- headline: Pentagon awards RTX's Raytheon $20.7 billion contract for AMRAAM missiles amid stockpile concerns - Reuters
 - source: Reuters
-- published_at: `2026-09-28T22:42:23+00:00`
+- published_at: `2026-09-28T22:03:59+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -71,7 +71,7 @@
 - source: CNBC
 - published_at: `2026-09-28T18:54:06+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -79,7 +79,7 @@
 - source: CNBC
 - published_at: `2026-09-28T18:41:51+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -87,12 +87,20 @@
 - source: Reuters
 - published_at: `2026-09-28T15:56:39+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
-### fed_dovish / risk_on
+### geopolitical_risk_escalation / risk_off
 
-- headline: New grads say employers set the bar too high for entry-level roles: 'No job is willing to give you that first experience'
-- source: CNBC
-- published_at: `2026-09-28T14:26:51+00:00`
-- importance_score: `84`
+- headline: Israeli strikes kill at least two people in Gaza, officials say - Reuters
+- source: Reuters
+- published_at: `2026-09-28T13:50:01+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US, Iran separately talk with mediators in latest bid to end war - Reuters
+- source: Reuters
+- published_at: `2026-09-28T13:39:00+00:00`
+- importance_score: `100`
 - confidence: `medium`
