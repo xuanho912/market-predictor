@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-29T10:09:42.068007+00:00`
+- generated_at: `2026-09-29T18:07:43.150628+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
-- event_detection_confidence: `74`
+- major_event_count: `11`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `True`
-- confirmation_score: `75`
+- confirmation_score: `100`
 
 ## Dashboard Note
 
@@ -27,7 +27,23 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Israel kills senior Hamas commander in Gaza strike - reuters.com
+- headline: Iranians stagger under soaring costs of seven months of war - Reuters
+- source: Reuters
+- published_at: `2026-09-29T15:10:18+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Using old election playbook, Netanyahu projects image as Israel's protector despite Hamas attack - Reuters
+- source: Reuters
+- published_at: `2026-09-29T12:54:46+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Israel kills senior Hamas commander in Gaza strike - Reuters
 - source: Reuters
 - published_at: `2026-09-29T06:39:00+00:00`
 - importance_score: `100`
@@ -43,7 +59,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: No strikes confirmed after explosion-like sounds heard near Iran's Qeshm - reuters.com
+- headline: No strikes confirmed after explosion-like sounds heard near Iran's Qeshm - Reuters
 - source: Reuters
 - published_at: `2026-09-28T21:01:07+00:00`
 - importance_score: `100`
@@ -51,7 +67,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Trump says US will win Iran war 'very soon' - reuters.com
+- headline: Trump says US will win Iran war 'very soon' - Reuters
 - source: Reuters
 - published_at: `2026-09-28T20:26:33+00:00`
 - importance_score: `100`
@@ -67,7 +83,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Suspected plot to attack UK's Fairford airbase, used by US: What do we know? - reuters.com
+- headline: Suspected plot to attack UK's Fairford airbase, used by US: What do we know? - Reuters
 - source: Reuters
 - published_at: `2026-09-28T19:12:34+00:00`
 - importance_score: `100`
@@ -86,21 +102,5 @@
 - headline: Feds can't withhold counterterrorism funds from states to force election admin changes, judge rules
 - source: CNBC
 - published_at: `2026-09-28T18:41:51+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: UK diesel prices hit record highs due to impact of Iran war - reuters.com
-- source: Reuters
-- published_at: `2026-09-28T15:56:39+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Israeli strikes kill at least two people in Gaza, officials say - Reuters
-- source: Reuters
-- published_at: `2026-09-28T13:50:01+00:00`
 - importance_score: `100`
 - confidence: `medium`
