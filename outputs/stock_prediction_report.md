@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-09-29T23:50:29.813099+00:00`
+Generated at: `2026-09-30T00:55:46.182744+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -25,12 +25,12 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `26.4%`
 - secondary: `stock_downside_continuation` / `18.7%`
 - risk: `stock_event_risk` / `14.3%`
-- stock_confluence_score: `49.37` / `mixed`
+- stock_confluence_score: `46.32` / `mixed`
 - stock_alpha_score_v1: `48.5` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `57.4%`
 - 60d_expected_return: `-0.6%`
 - risk_reward_ratio: `0.53`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `25.88`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `34.07`
 - historical_analog_support: `supportive` / samples `10`
 - validation_status: `not_yet_validated`
 
@@ -54,7 +54,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `30.0%`
 - secondary: `stock_downside_continuation` / `22.5%`
 - risk: `stock_event_risk` / `13.3%`
-- stock_confluence_score: `31.23` / `weak`
+- stock_confluence_score: `28.92` / `weak`
 - stock_alpha_score_v1: `3.5` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `33.8%`
 - 60d_expected_return: `-1.3%`
@@ -83,7 +83,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_downside_continuation` / `28.5%`
 - secondary: `stock_failed_bounce` / `25.6%`
 - risk: `stock_event_risk` / `11.3%`
-- stock_confluence_score: `29.43` / `weak`
+- stock_confluence_score: `29.24` / `weak`
 - stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `29.0%`
 - 60d_expected_return: `-3.6%`
@@ -112,12 +112,12 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `24.9%`
 - secondary: `stock_downside_continuation` / `21.3%`
 - risk: `stock_event_risk` / `14.6%`
-- stock_confluence_score: `39.0` / `weak`
+- stock_confluence_score: `37.41` / `weak`
 - stock_alpha_score_v1: `25.0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `45.3%`
 - 60d_expected_return: `-1.0%`
 - risk_reward_ratio: `0.52`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `31.5`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `35.87`
 - historical_analog_support: `supportive` / samples `10`
 - validation_status: `not_yet_validated`
 
