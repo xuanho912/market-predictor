@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-30T06:49:02.964650+00:00`
+- generated_at: `2026-09-30T10:02:35.490816+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
-- event_detection_confidence: `69`
+- major_event_count: `5`
+- event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Qatari mediators press peace deal between US and Iran - Reuters
+- source: Reuters
+- published_at: `2026-09-29T22:19:14+00:00`
+- importance_score: `97`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,20 +63,4 @@
 - source: Reuters
 - published_at: `2026-09-29T06:39:00+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US aviation regulator to delay approval for Boeing 737 Max 10 amid software issue
-- source: Bloomberg
-- published_at: `2026-09-29T04:50:09+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Qatari mediators press peace deal between US and Iran - Reuters
-- source: Reuters
-- published_at: `2026-09-29T06:45:00+00:00`
-- importance_score: `94`
 - confidence: `medium`
