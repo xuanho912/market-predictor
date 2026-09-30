@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-30T00:55:33.245364+00:00`
+- generated_at: `2026-09-30T01:41:26.831092+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `7`
-- event_detection_confidence: `74`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Qatari mediators press peace deal between US and Iran - Reuters
+- source: Reuters
+- published_at: `2026-09-29T22:19:14+00:00`
+- importance_score: `99`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -70,13 +78,5 @@
 - headline: No strikes confirmed after explosion-like sounds heard near Iran's Qeshm - Reuters
 - source: Reuters
 - published_at: `2026-09-28T21:01:07+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump says US will win Iran war 'very soon' - Reuters
-- source: Reuters
-- published_at: `2026-09-28T20:26:33+00:00`
 - importance_score: `100`
 - confidence: `medium`
