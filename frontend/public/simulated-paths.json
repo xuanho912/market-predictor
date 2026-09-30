@@ -1,14 +1,19 @@
 {
   "as_of": "2026-09-29",
   "data_freshness_status": {
-    "affected_symbols": [],
-    "can_append_forecast_record": true,
+    "affected_symbols": [
+      "SPY",
+      "QQQ",
+      "IWM",
+      "DIA"
+    ],
+    "can_append_forecast_record": false,
     "can_backfill_completed_outcomes": true,
-    "current_date": "2026-09-29",
-    "current_time_us_eastern": "2026-09-29T22:03:38.403251-04:00",
-    "data_freshness_status": "fresh",
+    "current_date": "2026-09-30",
+    "current_time_us_eastern": "2026-09-30T02:49:13.179888-04:00",
+    "data_freshness_status": "market_open_unconfirmed",
     "expected_latest_trading_date": "2026-09-29",
-    "generated_at": "2026-09-30T02:03:38.403251+00:00",
+    "generated_at": "2026-09-30T06:49:13.179888+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -22,7 +27,7 @@
     "last_successful_update": "2026-09-29",
     "latest_confirmed_market_date": "2026-09-29",
     "latest_market_date": "2026-09-29",
-    "latest_market_session_status": "completed_or_prior_session",
+    "latest_market_session_status": "intraday_unconfirmed",
     "provider_status": {
       "BAA_SPREAD": {
         "fallback_used": false,
@@ -939,7 +944,7 @@
     },
     "stale_days": 0,
     "version": "data_freshness_gate_v3",
-    "warning_message": "核心行情已更新至最新应有交易日 2026-09-29。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。"
+    "warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-09-29，最近完整收盘交易日为 2026-09-29；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。"
   },
   "data_quality_summary": {
     "average_breadth_quality_score": 67.0,
@@ -960,10 +965,10 @@
       "IWM"
     ],
     "breadth_required": true,
-    "can_append_forecast_record": true,
+    "can_append_forecast_record": false,
     "data_completeness_score": 87.0,
     "data_completeness_score_before_news_event": 85.0,
-    "data_freshness_status": "fresh",
+    "data_freshness_status": "market_open_unconfirmed",
     "data_source_status": "real_core_with_proxies",
     "expected_latest_trading_date": "2026-09-29",
     "fallback_used": true,
@@ -1048,16 +1053,16 @@
     "fred_required": true,
     "fred_successful_series": [
       "IG_OAS",
-      "DGS3MO",
-      "DGS2",
-      "BAA_SPREAD",
       "HY_OAS",
       "DGS10",
+      "BAA_SPREAD",
+      "DGS3MO",
+      "DGS2",
+      "RECESSION",
       "FINANCIAL_STRESS",
-      "DFII10",
-      "RECESSION"
+      "DFII10"
     ],
-    "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-09-29。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
+    "freshness_warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-09-29，最近完整收盘交易日为 2026-09-29；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
     "gamma_available": false,
     "gamma_exposure_available": false,
     "latest_confirmed_market_date": "2026-09-29",
@@ -1086,11 +1091,11 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 75,
+      "event_detection_confidence": 69,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-09-30T02:03:28.307927+00:00",
-      "major_event_count": 7,
+      "last_update": "2026-09-30T06:49:02.964650+00:00",
+      "major_event_count": 6,
       "missing_reason": null,
       "news_direction": "risk_off",
       "news_event_partial": false,
@@ -1101,7 +1106,7 @@
     },
     "news_event_available": true,
     "news_event_event_risk_level": "high",
-    "news_event_major_count": 7,
+    "news_event_major_count": 6,
     "news_event_missing_reason": null,
     "news_event_narrative": "geopolitics_escalation_risk_off",
     "news_event_partial": false,
@@ -1151,7 +1156,7 @@
       "status": "failed"
     },
     "event_risk_level": "high",
-    "major_event_count": 7,
+    "major_event_count": 6,
     "market_narrative": {
       "affected_scenarios": [
         "bearish_path"
@@ -1164,15 +1169,15 @@
       ],
       "conflicting_headlines": [
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_easing"
           ],
           "event_type": "geopolitical_risk_easing",
           "expected_market_direction": "risk_on",
           "headline": "Qatari mediators press peace deal between US and Iran - Reuters",
-          "importance_score": 99,
-          "published_at": "2026-09-29T22:19:14+00:00",
+          "importance_score": 94,
+          "published_at": "2026-09-29T06:45:00+00:00",
           "source": "Reuters"
         }
       ],
@@ -1185,7 +1190,7 @@
       "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
       "supporting_headlines": [
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -1197,7 +1202,7 @@
           "source": "Reuters"
         },
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -1205,11 +1210,11 @@
           "expected_market_direction": "risk_off",
           "headline": "Israeli settlers attack West Bank village, blocking family's return home - Reuters",
           "importance_score": 100,
-          "published_at": "2026-09-29T17:06:16+00:00",
+          "published_at": "2026-09-29T14:40:00+00:00",
           "source": "Reuters"
         },
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -1217,7 +1222,7 @@
           "expected_market_direction": "risk_off",
           "headline": "Iranians stagger under soaring costs of seven months of war - Reuters",
           "importance_score": 100,
-          "published_at": "2026-09-29T15:10:18+00:00",
+          "published_at": "2026-09-29T10:15:00+00:00",
           "source": "Reuters"
         },
         {
@@ -1233,28 +1238,16 @@
           "source": "Reuters"
         },
         {
-          "confidence": "high",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Pentagon awards RTX's Raytheon $20.7 billion contract for AMRAAM missiles amid stockpile concerns - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-09-28T22:03:59+00:00",
-          "source": "Reuters"
-        },
-        {
           "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_market_direction": "risk_off",
-          "headline": "No strikes confirmed after explosion-like sounds heard near Iran's Qeshm - Reuters",
+          "headline": "US aviation regulator to delay approval for Boeing 737 Max 10 amid software issue",
           "importance_score": 100,
-          "published_at": "2026-09-28T21:01:07+00:00",
-          "source": "Reuters"
+          "published_at": "2026-09-29T04:50:09+00:00",
+          "source": "Bloomberg"
         }
       ]
     },
@@ -1264,7 +1257,7 @@
       "direction": "supports_risk_expansion",
       "event_risk_level": "high",
       "macro_event_risk_flag": false,
-      "major_event_count": 7,
+      "major_event_count": 6,
       "not_a_trading_signal": true,
       "price_reaction_confirmed": true,
       "symbols": {
@@ -1419,7 +1412,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": -0.0014,
-        "avg_equity_futures_1d_return": 0.0001,
+        "avg_equity_futures_1d_return": 0.001,
         "confirmed_checks": [
           "股票ETF或股指期货下跌",
           "HYG/LQD 走弱",
@@ -1435,7 +1428,7 @@
           "VIX 上升"
         ],
         "hyg_lqd_1d_relative_return": -0.0017,
-        "oil_proxy_1d_return": -0.0385,
+        "oil_proxy_1d_return": -0.0205,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -1961,6 +1954,7 @@
     },
     "version": "shadow_evidence_v1"
   },
+  "status_note": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-09-29，最近完整收盘交易日为 2026-09-29；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
   "symbols": {
     "DIA": {
       "analog_path_weight": 0.2379,
@@ -2291,11 +2285,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.1,
           "top_headlines": [
-            "US forces exit Iraq, emboldening Iran's proxies and Islamic State - Reuters",
-            "Qatari mediators press peace deal between US and Iran - Reuters",
-            "Trump says he does not know if Iran is going to 'give up yet' - Reuters",
-            "Rubio says UK airbase incident involved a foreign state - Reuters",
-            "US imposes sanctions on 13 tied to Iran weapons procurement - Reuters"
+            "Iran appeals to US voters as American troops leave Iraq - Reuters",
+            "Indian shares open flat after foreign outflows - Reuters",
+            "Oil gains after Trump denies he is willing to ease sanctions on Iran - Reuters",
+            "US Senate blocks measure demanding report on rights violations in West Bank - Reuters",
+            "US forces exit Iraq, emboldening Iran's proxies and Islamic State - Reuters"
           ]
         },
         "price": {
@@ -3666,50 +3660,19 @@
               "IWM",
               "DIA",
               "^VIX",
-              "HYG",
-              "LQD",
-              "USO",
-              "CL=F",
-              "UUP",
-              "ES=F",
-              "NQ=F"
-            ],
-            "confidence": "high",
-            "confidence_score": 79,
-            "detected_event_conditions": [
-              "geopolitical_risk_easing"
-            ],
-            "event_type": "geopolitical_risk_easing",
-            "expected_horizon": "1d-5d",
-            "expected_market_direction": "risk_on",
-            "freshness_score": 91,
-            "headline": "Qatari mediators press peace deal between US and Iran - Reuters",
-            "importance_score": 99,
-            "narrative": "geopolitics_easing_risk_on",
-            "provider": "finnhub",
-            "published_at": "2026-09-29T22:19:14+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
               "USO",
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 77,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 82,
+            "freshness_score": 71,
             "headline": "Using old election playbook, Netanyahu projects image as Israel's protector despite Hamas attack - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3728,47 +3691,20 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 76,
+            "confidence": "medium",
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 79,
+            "freshness_score": 61,
             "headline": "Israeli settlers attack West Bank village, blocking family's return home - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-09-29T17:06:16+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 74,
-            "headline": "Iranians stagger under soaring costs of seven months of war - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-29T15:10:18+00:00",
+            "published_at": "2026-09-29T14:40:00+00:00",
             "source": "Reuters"
           },
           {
@@ -3783,14 +3719,41 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 70,
+            "confidence_score": 69,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 53,
+            "freshness_score": 51,
+            "headline": "Iranians stagger under soaring costs of seven months of war - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-29T10:15:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 67,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 42,
             "headline": "Israel kills senior Hamas commander in Gaza strike - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3809,20 +3772,51 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 83,
+            "confidence": "medium",
+            "confidence_score": 66,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 33,
-            "headline": "Pentagon awards RTX's Raytheon $20.7 billion contract for AMRAAM missiles amid stockpile concerns - Reuters",
+            "freshness_score": 38,
+            "headline": "US aviation regulator to delay approval for Boeing 737 Max 10 amid software issue",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-09-28T22:03:59+00:00",
+            "published_at": "2026-09-29T04:50:09+00:00",
+            "source": "Bloomberg"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "HYG",
+              "LQD",
+              "USO",
+              "CL=F",
+              "UUP",
+              "ES=F",
+              "NQ=F"
+            ],
+            "confidence": "medium",
+            "confidence_score": 67,
+            "detected_event_conditions": [
+              "geopolitical_risk_easing"
+            ],
+            "event_type": "geopolitical_risk_easing",
+            "expected_horizon": "1d-5d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 42,
+            "headline": "Qatari mediators press peace deal between US and Iran - Reuters",
+            "importance_score": 94,
+            "narrative": "geopolitics_easing_risk_on",
+            "provider": "finnhub",
+            "published_at": "2026-09-29T06:45:00+00:00",
             "source": "Reuters"
           }
         ],
@@ -3838,15 +3832,15 @@
           ],
           "conflicting_headlines": [
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_easing"
               ],
               "event_type": "geopolitical_risk_easing",
               "expected_market_direction": "risk_on",
               "headline": "Qatari mediators press peace deal between US and Iran - Reuters",
-              "importance_score": 99,
-              "published_at": "2026-09-29T22:19:14+00:00",
+              "importance_score": 94,
+              "published_at": "2026-09-29T06:45:00+00:00",
               "source": "Reuters"
             }
           ],
@@ -3859,7 +3853,7 @@
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -3871,7 +3865,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -3879,11 +3873,11 @@
               "expected_market_direction": "risk_off",
               "headline": "Israeli settlers attack West Bank village, blocking family's return home - Reuters",
               "importance_score": 100,
-              "published_at": "2026-09-29T17:06:16+00:00",
+              "published_at": "2026-09-29T14:40:00+00:00",
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -3891,7 +3885,7 @@
               "expected_market_direction": "risk_off",
               "headline": "Iranians stagger under soaring costs of seven months of war - Reuters",
               "importance_score": 100,
-              "published_at": "2026-09-29T15:10:18+00:00",
+              "published_at": "2026-09-29T10:15:00+00:00",
               "source": "Reuters"
             },
             {
@@ -3907,28 +3901,16 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Pentagon awards RTX's Raytheon $20.7 billion contract for AMRAAM missiles amid stockpile concerns - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-09-28T22:03:59+00:00",
-              "source": "Reuters"
-            },
-            {
               "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "No strikes confirmed after explosion-like sounds heard near Iran's Qeshm - Reuters",
+              "headline": "US aviation regulator to delay approval for Boeing 737 Max 10 amid software issue",
               "importance_score": 100,
-              "published_at": "2026-09-28T21:01:07+00:00",
-              "source": "Reuters"
+              "published_at": "2026-09-29T04:50:09+00:00",
+              "source": "Bloomberg"
             }
           ]
         },
@@ -3972,7 +3954,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0014,
-            "avg_equity_futures_1d_return": 0.0001,
+            "avg_equity_futures_1d_return": 0.001,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "HYG/LQD 走弱",
@@ -3988,7 +3970,7 @@
               "VIX 上升"
             ],
             "hyg_lqd_1d_relative_return": -0.0017,
-            "oil_proxy_1d_return": -0.0385,
+            "oil_proxy_1d_return": -0.0205,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -6469,11 +6451,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.1,
           "top_headlines": [
-            "US forces exit Iraq, emboldening Iran's proxies and Islamic State - Reuters",
-            "Qatari mediators press peace deal between US and Iran - Reuters",
-            "Trump says he does not know if Iran is going to 'give up yet' - Reuters",
-            "Rubio says UK airbase incident involved a foreign state - Reuters",
-            "US imposes sanctions on 13 tied to Iran weapons procurement - Reuters"
+            "Iran appeals to US voters as American troops leave Iraq - Reuters",
+            "Indian shares open flat after foreign outflows - Reuters",
+            "Oil gains after Trump denies he is willing to ease sanctions on Iran - Reuters",
+            "US Senate blocks measure demanding report on rights violations in West Bank - Reuters",
+            "US forces exit Iraq, emboldening Iran's proxies and Islamic State - Reuters"
           ]
         },
         "price": {
@@ -7826,50 +7808,19 @@
               "IWM",
               "DIA",
               "^VIX",
-              "HYG",
-              "LQD",
-              "USO",
-              "CL=F",
-              "UUP",
-              "ES=F",
-              "NQ=F"
-            ],
-            "confidence": "high",
-            "confidence_score": 79,
-            "detected_event_conditions": [
-              "geopolitical_risk_easing"
-            ],
-            "event_type": "geopolitical_risk_easing",
-            "expected_horizon": "1d-5d",
-            "expected_market_direction": "risk_on",
-            "freshness_score": 91,
-            "headline": "Qatari mediators press peace deal between US and Iran - Reuters",
-            "importance_score": 99,
-            "narrative": "geopolitics_easing_risk_on",
-            "provider": "finnhub",
-            "published_at": "2026-09-29T22:19:14+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
               "USO",
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 77,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 82,
+            "freshness_score": 71,
             "headline": "Using old election playbook, Netanyahu projects image as Israel's protector despite Hamas attack - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7888,47 +7839,20 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 76,
+            "confidence": "medium",
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 79,
+            "freshness_score": 61,
             "headline": "Israeli settlers attack West Bank village, blocking family's return home - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-09-29T17:06:16+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 74,
-            "headline": "Iranians stagger under soaring costs of seven months of war - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-29T15:10:18+00:00",
+            "published_at": "2026-09-29T14:40:00+00:00",
             "source": "Reuters"
           },
           {
@@ -7943,14 +7867,41 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 70,
+            "confidence_score": 69,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 53,
+            "freshness_score": 51,
+            "headline": "Iranians stagger under soaring costs of seven months of war - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-29T10:15:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 67,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 42,
             "headline": "Israel kills senior Hamas commander in Gaza strike - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7969,20 +7920,51 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 83,
+            "confidence": "medium",
+            "confidence_score": 66,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 33,
-            "headline": "Pentagon awards RTX's Raytheon $20.7 billion contract for AMRAAM missiles amid stockpile concerns - Reuters",
+            "freshness_score": 38,
+            "headline": "US aviation regulator to delay approval for Boeing 737 Max 10 amid software issue",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-09-28T22:03:59+00:00",
+            "published_at": "2026-09-29T04:50:09+00:00",
+            "source": "Bloomberg"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "HYG",
+              "LQD",
+              "USO",
+              "CL=F",
+              "UUP",
+              "ES=F",
+              "NQ=F"
+            ],
+            "confidence": "medium",
+            "confidence_score": 67,
+            "detected_event_conditions": [
+              "geopolitical_risk_easing"
+            ],
+            "event_type": "geopolitical_risk_easing",
+            "expected_horizon": "1d-5d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 42,
+            "headline": "Qatari mediators press peace deal between US and Iran - Reuters",
+            "importance_score": 94,
+            "narrative": "geopolitics_easing_risk_on",
+            "provider": "finnhub",
+            "published_at": "2026-09-29T06:45:00+00:00",
             "source": "Reuters"
           }
         ],
@@ -7998,15 +7980,15 @@
           ],
           "conflicting_headlines": [
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_easing"
               ],
               "event_type": "geopolitical_risk_easing",
               "expected_market_direction": "risk_on",
               "headline": "Qatari mediators press peace deal between US and Iran - Reuters",
-              "importance_score": 99,
-              "published_at": "2026-09-29T22:19:14+00:00",
+              "importance_score": 94,
+              "published_at": "2026-09-29T06:45:00+00:00",
               "source": "Reuters"
             }
           ],
@@ -8019,7 +8001,7 @@
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -8031,7 +8013,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -8039,11 +8021,11 @@
               "expected_market_direction": "risk_off",
               "headline": "Israeli settlers attack West Bank village, blocking family's return home - Reuters",
               "importance_score": 100,
-              "published_at": "2026-09-29T17:06:16+00:00",
+              "published_at": "2026-09-29T14:40:00+00:00",
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -8051,7 +8033,7 @@
               "expected_market_direction": "risk_off",
               "headline": "Iranians stagger under soaring costs of seven months of war - Reuters",
               "importance_score": 100,
-              "published_at": "2026-09-29T15:10:18+00:00",
+              "published_at": "2026-09-29T10:15:00+00:00",
               "source": "Reuters"
             },
             {
@@ -8067,28 +8049,16 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Pentagon awards RTX's Raytheon $20.7 billion contract for AMRAAM missiles amid stockpile concerns - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-09-28T22:03:59+00:00",
-              "source": "Reuters"
-            },
-            {
               "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "No strikes confirmed after explosion-like sounds heard near Iran's Qeshm - Reuters",
+              "headline": "US aviation regulator to delay approval for Boeing 737 Max 10 amid software issue",
               "importance_score": 100,
-              "published_at": "2026-09-28T21:01:07+00:00",
-              "source": "Reuters"
+              "published_at": "2026-09-29T04:50:09+00:00",
+              "source": "Bloomberg"
             }
           ]
         },
@@ -8132,7 +8102,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0014,
-            "avg_equity_futures_1d_return": 0.0001,
+            "avg_equity_futures_1d_return": 0.001,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "HYG/LQD 走弱",
@@ -8148,7 +8118,7 @@
               "VIX 上升"
             ],
             "hyg_lqd_1d_relative_return": -0.0017,
-            "oil_proxy_1d_return": -0.0385,
+            "oil_proxy_1d_return": -0.0205,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -10671,11 +10641,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.1,
           "top_headlines": [
-            "US forces exit Iraq, emboldening Iran's proxies and Islamic State - Reuters",
-            "Qatari mediators press peace deal between US and Iran - Reuters",
-            "Trump says he does not know if Iran is going to 'give up yet' - Reuters",
-            "Rubio says UK airbase incident involved a foreign state - Reuters",
-            "US imposes sanctions on 13 tied to Iran weapons procurement - Reuters"
+            "Iran appeals to US voters as American troops leave Iraq - Reuters",
+            "Indian shares open flat after foreign outflows - Reuters",
+            "Oil gains after Trump denies he is willing to ease sanctions on Iran - Reuters",
+            "US Senate blocks measure demanding report on rights violations in West Bank - Reuters",
+            "US forces exit Iraq, emboldening Iran's proxies and Islamic State - Reuters"
           ]
         },
         "price": {
@@ -11998,50 +11968,19 @@
               "IWM",
               "DIA",
               "^VIX",
-              "HYG",
-              "LQD",
-              "USO",
-              "CL=F",
-              "UUP",
-              "ES=F",
-              "NQ=F"
-            ],
-            "confidence": "high",
-            "confidence_score": 79,
-            "detected_event_conditions": [
-              "geopolitical_risk_easing"
-            ],
-            "event_type": "geopolitical_risk_easing",
-            "expected_horizon": "1d-5d",
-            "expected_market_direction": "risk_on",
-            "freshness_score": 91,
-            "headline": "Qatari mediators press peace deal between US and Iran - Reuters",
-            "importance_score": 99,
-            "narrative": "geopolitics_easing_risk_on",
-            "provider": "finnhub",
-            "published_at": "2026-09-29T22:19:14+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
               "USO",
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 77,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 82,
+            "freshness_score": 71,
             "headline": "Using old election playbook, Netanyahu projects image as Israel's protector despite Hamas attack - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12060,47 +11999,20 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 76,
+            "confidence": "medium",
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 79,
+            "freshness_score": 61,
             "headline": "Israeli settlers attack West Bank village, blocking family's return home - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-09-29T17:06:16+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 74,
-            "headline": "Iranians stagger under soaring costs of seven months of war - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-29T15:10:18+00:00",
+            "published_at": "2026-09-29T14:40:00+00:00",
             "source": "Reuters"
           },
           {
@@ -12115,14 +12027,41 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 70,
+            "confidence_score": 69,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 53,
+            "freshness_score": 51,
+            "headline": "Iranians stagger under soaring costs of seven months of war - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-29T10:15:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 67,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 42,
             "headline": "Israel kills senior Hamas commander in Gaza strike - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12141,20 +12080,51 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 83,
+            "confidence": "medium",
+            "confidence_score": 66,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 33,
-            "headline": "Pentagon awards RTX's Raytheon $20.7 billion contract for AMRAAM missiles amid stockpile concerns - Reuters",
+            "freshness_score": 38,
+            "headline": "US aviation regulator to delay approval for Boeing 737 Max 10 amid software issue",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-09-28T22:03:59+00:00",
+            "published_at": "2026-09-29T04:50:09+00:00",
+            "source": "Bloomberg"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "HYG",
+              "LQD",
+              "USO",
+              "CL=F",
+              "UUP",
+              "ES=F",
+              "NQ=F"
+            ],
+            "confidence": "medium",
+            "confidence_score": 67,
+            "detected_event_conditions": [
+              "geopolitical_risk_easing"
+            ],
+            "event_type": "geopolitical_risk_easing",
+            "expected_horizon": "1d-5d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 42,
+            "headline": "Qatari mediators press peace deal between US and Iran - Reuters",
+            "importance_score": 94,
+            "narrative": "geopolitics_easing_risk_on",
+            "provider": "finnhub",
+            "published_at": "2026-09-29T06:45:00+00:00",
             "source": "Reuters"
           }
         ],
@@ -12170,15 +12140,15 @@
           ],
           "conflicting_headlines": [
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_easing"
               ],
               "event_type": "geopolitical_risk_easing",
               "expected_market_direction": "risk_on",
               "headline": "Qatari mediators press peace deal between US and Iran - Reuters",
-              "importance_score": 99,
-              "published_at": "2026-09-29T22:19:14+00:00",
+              "importance_score": 94,
+              "published_at": "2026-09-29T06:45:00+00:00",
               "source": "Reuters"
             }
           ],
@@ -12191,7 +12161,7 @@
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -12203,7 +12173,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -12211,11 +12181,11 @@
               "expected_market_direction": "risk_off",
               "headline": "Israeli settlers attack West Bank village, blocking family's return home - Reuters",
               "importance_score": 100,
-              "published_at": "2026-09-29T17:06:16+00:00",
+              "published_at": "2026-09-29T14:40:00+00:00",
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -12223,7 +12193,7 @@
               "expected_market_direction": "risk_off",
               "headline": "Iranians stagger under soaring costs of seven months of war - Reuters",
               "importance_score": 100,
-              "published_at": "2026-09-29T15:10:18+00:00",
+              "published_at": "2026-09-29T10:15:00+00:00",
               "source": "Reuters"
             },
             {
@@ -12239,28 +12209,16 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Pentagon awards RTX's Raytheon $20.7 billion contract for AMRAAM missiles amid stockpile concerns - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-09-28T22:03:59+00:00",
-              "source": "Reuters"
-            },
-            {
               "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "No strikes confirmed after explosion-like sounds heard near Iran's Qeshm - Reuters",
+              "headline": "US aviation regulator to delay approval for Boeing 737 Max 10 amid software issue",
               "importance_score": 100,
-              "published_at": "2026-09-28T21:01:07+00:00",
-              "source": "Reuters"
+              "published_at": "2026-09-29T04:50:09+00:00",
+              "source": "Bloomberg"
             }
           ]
         },
@@ -12304,7 +12262,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0014,
-            "avg_equity_futures_1d_return": 0.0001,
+            "avg_equity_futures_1d_return": 0.001,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "HYG/LQD 走弱",
@@ -12320,7 +12278,7 @@
               "VIX 上升"
             ],
             "hyg_lqd_1d_relative_return": -0.0017,
-            "oil_proxy_1d_return": -0.0385,
+            "oil_proxy_1d_return": -0.0205,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -14831,11 +14789,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.1,
           "top_headlines": [
-            "US forces exit Iraq, emboldening Iran's proxies and Islamic State - Reuters",
-            "Qatari mediators press peace deal between US and Iran - Reuters",
-            "Trump says he does not know if Iran is going to 'give up yet' - Reuters",
-            "Rubio says UK airbase incident involved a foreign state - Reuters",
-            "US imposes sanctions on 13 tied to Iran weapons procurement - Reuters"
+            "Iran appeals to US voters as American troops leave Iraq - Reuters",
+            "Indian shares open flat after foreign outflows - Reuters",
+            "Oil gains after Trump denies he is willing to ease sanctions on Iran - Reuters",
+            "US Senate blocks measure demanding report on rights violations in West Bank - Reuters",
+            "US forces exit Iraq, emboldening Iran's proxies and Islamic State - Reuters"
           ]
         },
         "price": {
@@ -16228,50 +16186,19 @@
               "IWM",
               "DIA",
               "^VIX",
-              "HYG",
-              "LQD",
-              "USO",
-              "CL=F",
-              "UUP",
-              "ES=F",
-              "NQ=F"
-            ],
-            "confidence": "high",
-            "confidence_score": 79,
-            "detected_event_conditions": [
-              "geopolitical_risk_easing"
-            ],
-            "event_type": "geopolitical_risk_easing",
-            "expected_horizon": "1d-5d",
-            "expected_market_direction": "risk_on",
-            "freshness_score": 91,
-            "headline": "Qatari mediators press peace deal between US and Iran - Reuters",
-            "importance_score": 99,
-            "narrative": "geopolitics_easing_risk_on",
-            "provider": "finnhub",
-            "published_at": "2026-09-29T22:19:14+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
               "USO",
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 77,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 82,
+            "freshness_score": 71,
             "headline": "Using old election playbook, Netanyahu projects image as Israel's protector despite Hamas attack - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16290,47 +16217,20 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 76,
+            "confidence": "medium",
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 79,
+            "freshness_score": 61,
             "headline": "Israeli settlers attack West Bank village, blocking family's return home - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-09-29T17:06:16+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 74,
-            "headline": "Iranians stagger under soaring costs of seven months of war - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-09-29T15:10:18+00:00",
+            "published_at": "2026-09-29T14:40:00+00:00",
             "source": "Reuters"
           },
           {
@@ -16345,14 +16245,41 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 70,
+            "confidence_score": 69,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 53,
+            "freshness_score": 51,
+            "headline": "Iranians stagger under soaring costs of seven months of war - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-09-29T10:15:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 67,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 42,
             "headline": "Israel kills senior Hamas commander in Gaza strike - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16371,20 +16298,51 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 83,
+            "confidence": "medium",
+            "confidence_score": 66,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 33,
-            "headline": "Pentagon awards RTX's Raytheon $20.7 billion contract for AMRAAM missiles amid stockpile concerns - Reuters",
+            "freshness_score": 38,
+            "headline": "US aviation regulator to delay approval for Boeing 737 Max 10 amid software issue",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-09-28T22:03:59+00:00",
+            "published_at": "2026-09-29T04:50:09+00:00",
+            "source": "Bloomberg"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "HYG",
+              "LQD",
+              "USO",
+              "CL=F",
+              "UUP",
+              "ES=F",
+              "NQ=F"
+            ],
+            "confidence": "medium",
+            "confidence_score": 67,
+            "detected_event_conditions": [
+              "geopolitical_risk_easing"
+            ],
+            "event_type": "geopolitical_risk_easing",
+            "expected_horizon": "1d-5d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 42,
+            "headline": "Qatari mediators press peace deal between US and Iran - Reuters",
+            "importance_score": 94,
+            "narrative": "geopolitics_easing_risk_on",
+            "provider": "finnhub",
+            "published_at": "2026-09-29T06:45:00+00:00",
             "source": "Reuters"
           }
         ],
@@ -16400,15 +16358,15 @@
           ],
           "conflicting_headlines": [
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_easing"
               ],
               "event_type": "geopolitical_risk_easing",
               "expected_market_direction": "risk_on",
               "headline": "Qatari mediators press peace deal between US and Iran - Reuters",
-              "importance_score": 99,
-              "published_at": "2026-09-29T22:19:14+00:00",
+              "importance_score": 94,
+              "published_at": "2026-09-29T06:45:00+00:00",
               "source": "Reuters"
             }
           ],
@@ -16421,7 +16379,7 @@
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -16433,7 +16391,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -16441,11 +16399,11 @@
               "expected_market_direction": "risk_off",
               "headline": "Israeli settlers attack West Bank village, blocking family's return home - Reuters",
               "importance_score": 100,
-              "published_at": "2026-09-29T17:06:16+00:00",
+              "published_at": "2026-09-29T14:40:00+00:00",
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -16453,7 +16411,7 @@
               "expected_market_direction": "risk_off",
               "headline": "Iranians stagger under soaring costs of seven months of war - Reuters",
               "importance_score": 100,
-              "published_at": "2026-09-29T15:10:18+00:00",
+              "published_at": "2026-09-29T10:15:00+00:00",
               "source": "Reuters"
             },
             {
@@ -16469,28 +16427,16 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Pentagon awards RTX's Raytheon $20.7 billion contract for AMRAAM missiles amid stockpile concerns - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-09-28T22:03:59+00:00",
-              "source": "Reuters"
-            },
-            {
               "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "No strikes confirmed after explosion-like sounds heard near Iran's Qeshm - Reuters",
+              "headline": "US aviation regulator to delay approval for Boeing 737 Max 10 amid software issue",
               "importance_score": 100,
-              "published_at": "2026-09-28T21:01:07+00:00",
-              "source": "Reuters"
+              "published_at": "2026-09-29T04:50:09+00:00",
+              "source": "Bloomberg"
             }
           ]
         },
@@ -16534,7 +16480,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0014,
-            "avg_equity_futures_1d_return": 0.0001,
+            "avg_equity_futures_1d_return": 0.001,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "HYG/LQD 走弱",
@@ -16550,7 +16496,7 @@
               "VIX 上升"
             ],
             "hyg_lqd_1d_relative_return": -0.0017,
-            "oil_proxy_1d_return": -0.0385,
+            "oil_proxy_1d_return": -0.0205,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"

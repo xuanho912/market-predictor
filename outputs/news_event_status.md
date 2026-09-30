@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-09-30T02:03:28.307927+00:00`
+- generated_at: `2026-09-30T06:49:02.964650+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
-- event_detection_confidence: `75`
+- major_event_count: `6`
+- event_detection_confidence: `69`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -25,37 +25,29 @@
 
 ## Major Events
 
-### geopolitical_risk_easing / risk_on
-
-- headline: Qatari mediators press peace deal between US and Iran - Reuters
-- source: Reuters
-- published_at: `2026-09-29T22:19:14+00:00`
-- importance_score: `99`
-- confidence: `high`
-
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Using old election playbook, Netanyahu projects image as Israel's protector despite Hamas attack - Reuters
 - source: Reuters
 - published_at: `2026-09-29T18:40:53+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Israeli settlers attack West Bank village, blocking family's return home - Reuters
 - source: Reuters
-- published_at: `2026-09-29T17:06:16+00:00`
+- published_at: `2026-09-29T14:40:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Iranians stagger under soaring costs of seven months of war - Reuters
 - source: Reuters
-- published_at: `2026-09-29T15:10:18+00:00`
+- published_at: `2026-09-29T10:15:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -67,16 +59,16 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Pentagon awards RTX's Raytheon $20.7 billion contract for AMRAAM missiles amid stockpile concerns - Reuters
-- source: Reuters
-- published_at: `2026-09-28T22:03:59+00:00`
+- headline: US aviation regulator to delay approval for Boeing 737 Max 10 amid software issue
+- source: Bloomberg
+- published_at: `2026-09-29T04:50:09+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
+### geopolitical_risk_easing / risk_on
 
-- headline: No strikes confirmed after explosion-like sounds heard near Iran's Qeshm - Reuters
+- headline: Qatari mediators press peace deal between US and Iran - Reuters
 - source: Reuters
-- published_at: `2026-09-28T21:01:07+00:00`
-- importance_score: `100`
+- published_at: `2026-09-29T06:45:00+00:00`
+- importance_score: `94`
 - confidence: `medium`
