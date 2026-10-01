@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-01T10:29:22.227243+00:00`
+- generated_at: `2026-10-01T18:27:23.431233+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
-- event_detection_confidence: `70`
+- major_event_count: `6`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,25 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Israel vows to get to 'root' of flydubai attack, UAE launches investigation - Reuters
+- headline: Next OpenAIs and Anthropics may come straight to retail market. Here's what to know before investing
+- source: CNBC
+- published_at: `2026-10-01T16:50:28+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran readies harder retaliation if attacked as diplomacy faces long odds - Reuters
 - source: Reuters
-- published_at: `2026-10-01T09:42:12+00:00`
+- published_at: `2026-10-01T11:22:08+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: SpaceX set to launch Google AI chips into orbit in push toward space-based data centers
+- source: CNBC
+- published_at: `2026-10-01T11:20:15+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -55,28 +71,4 @@
 - source: Reuters
 - published_at: `2026-09-30T16:09:10+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Apple will sell 6 million iPhone duos in 2026, Counterpoint says
-- source: Bloomberg
-- published_at: `2026-09-30T06:20:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### fed_dovish / risk_on
-
-- headline: Most Gulf stocks in red as Trump rebuffs Iran sanctions easing - Reuters
-- source: Reuters
-- published_at: `2026-09-30T13:47:25+00:00`
-- importance_score: `82`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Qatari mediators press peace deal between US and Iran - Reuters
-- source: Reuters
-- published_at: `2026-09-30T02:55:59+00:00`
-- importance_score: `92`
 - confidence: `medium`
