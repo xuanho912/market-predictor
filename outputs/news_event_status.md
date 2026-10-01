@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-01T01:39:07.649886+00:00`
+- generated_at: `2026-10-01T02:04:24.205538+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `5`
-- event_detection_confidence: `73`
+- major_event_count: `7`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Oil prices barely changed as investors assess US-Iran peace talks and Gulf exports - Reuters
+- source: Reuters
+- published_at: `2026-10-01T01:10:00+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -53,7 +61,7 @@
 
 - headline: US, Iran separately talk with mediators in latest bid to end war - Reuters
 - source: Reuters
-- published_at: `2026-09-30T01:45:59+00:00`
+- published_at: `2026-09-30T01:45:43+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -63,4 +71,12 @@
 - source: Reuters
 - published_at: `2026-09-30T13:47:25+00:00`
 - importance_score: `84`
+- confidence: `medium`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Qatari mediators press peace deal between US and Iran - Reuters
+- source: Reuters
+- published_at: `2026-09-30T02:55:59+00:00`
+- importance_score: `94`
 - confidence: `medium`

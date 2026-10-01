@@ -5,10 +5,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-09-30",
-    "current_time_us_eastern": "2026-09-30T21:39:17.813004-04:00",
+    "current_time_us_eastern": "2026-09-30T22:04:37.304786-04:00",
     "data_freshness_status": "fresh",
     "expected_latest_trading_date": "2026-09-30",
-    "generated_at": "2026-10-01T01:39:17.813004+00:00",
+    "generated_at": "2026-10-01T02:04:37.304786+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -1047,15 +1047,15 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "BAA_SPREAD",
-      "DGS2",
-      "IG_OAS",
       "DGS10",
-      "FINANCIAL_STRESS",
-      "RECESSION",
-      "HY_OAS",
+      "IG_OAS",
+      "DGS2",
+      "BAA_SPREAD",
       "DGS3MO",
-      "DFII10"
+      "HY_OAS",
+      "FINANCIAL_STRESS",
+      "DFII10",
+      "RECESSION"
     ],
     "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-09-30。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
     "gamma_available": false,
@@ -1086,11 +1086,11 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 73,
+      "event_detection_confidence": 76,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-10-01T01:39:07.649886+00:00",
-      "major_event_count": 5,
+      "last_update": "2026-10-01T02:04:24.205538+00:00",
+      "major_event_count": 7,
       "missing_reason": null,
       "news_direction": "risk_off",
       "news_event_partial": false,
@@ -1101,7 +1101,7 @@
     },
     "news_event_available": true,
     "news_event_event_risk_level": "high",
-    "news_event_major_count": 5,
+    "news_event_major_count": 7,
     "news_event_missing_reason": null,
     "news_event_narrative": "geopolitics_escalation_risk_off",
     "news_event_partial": false,
@@ -1151,7 +1151,7 @@
       "status": "failed"
     },
     "event_risk_level": "high",
-    "major_event_count": 5,
+    "major_event_count": 7,
     "market_narrative": {
       "affected_scenarios": [
         "bearish_path"
@@ -1164,6 +1164,18 @@
       ],
       "conflicting_headlines": [
         {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_easing"
+          ],
+          "event_type": "geopolitical_risk_easing",
+          "expected_market_direction": "risk_on",
+          "headline": "Oil prices barely changed as investors assess US-Iran peace talks and Gulf exports - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-10-01T01:10:00+00:00",
+          "source": "Reuters"
+        },
+        {
           "confidence": "medium",
           "detected_event_conditions": [],
           "event_type": "fed_dovish",
@@ -1171,6 +1183,18 @@
           "headline": "Most Gulf stocks in red as Trump rebuffs Iran sanctions easing - Reuters",
           "importance_score": 84,
           "published_at": "2026-09-30T13:47:25+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "medium",
+          "detected_event_conditions": [
+            "geopolitical_risk_easing"
+          ],
+          "event_type": "geopolitical_risk_easing",
+          "expected_market_direction": "risk_on",
+          "headline": "Qatari mediators press peace deal between US and Iran - Reuters",
+          "importance_score": 94,
+          "published_at": "2026-09-30T02:55:59+00:00",
           "source": "Reuters"
         }
       ],
@@ -1227,7 +1251,7 @@
           "expected_market_direction": "risk_off",
           "headline": "US, Iran separately talk with mediators in latest bid to end war - Reuters",
           "importance_score": 100,
-          "published_at": "2026-09-30T01:45:59+00:00",
+          "published_at": "2026-09-30T01:45:43+00:00",
           "source": "Reuters"
         }
       ]
@@ -1238,7 +1262,7 @@
       "direction": "supports_risk_expansion",
       "event_risk_level": "high",
       "macro_event_risk_flag": false,
-      "major_event_count": 5,
+      "major_event_count": 7,
       "not_a_trading_signal": true,
       "price_reaction_confirmed": true,
       "symbols": {
@@ -1393,7 +1417,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": -0.003,
-        "avg_equity_futures_1d_return": -0.0,
+        "avg_equity_futures_1d_return": -0.0006,
         "confirmed_checks": [
           "股票ETF或股指期货下跌",
           "VIX 上升",
@@ -1409,7 +1433,7 @@
           "HYG/LQD 走弱"
         ],
         "hyg_lqd_1d_relative_return": 0.0003,
-        "oil_proxy_1d_return": 0.0116,
+        "oil_proxy_1d_return": 0.0127,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -2289,11 +2313,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.15,
           "top_headlines": [
+            "Oil prices barely changed as investors assess US-Iran peace talks and Gulf exports - Reuters",
             "Passengers foil bid to crash Dubai-Tel Aviv flight, Israel says, after co-pilot stabs pilot - Reuters",
             "Israel to ramp up pilot checks after flydubai scare - Reuters",
             "Why Jim Cramer isn't buying more Boeing despite its huge Navy contract win",
-            "Wall Street is closing out a strong quarter. Plus, Lilly's mixed obesity drug trial data",
-            "Two trades that just happened in 'Magnificent Seven' stocks point to big gains ahead"
+            "Wall Street is closing out a strong quarter. Plus, Lilly's mixed obesity drug trial data"
           ]
         },
         "price": {
@@ -3663,6 +3687,37 @@
               "IWM",
               "DIA",
               "^VIX",
+              "HYG",
+              "LQD",
+              "USO",
+              "CL=F",
+              "UUP",
+              "ES=F",
+              "NQ=F"
+            ],
+            "confidence": "high",
+            "confidence_score": 99,
+            "detected_event_conditions": [
+              "geopolitical_risk_easing"
+            ],
+            "event_type": "geopolitical_risk_easing",
+            "expected_horizon": "1d-5d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 98,
+            "headline": "Oil prices barely changed as investors assess US-Iran peace talks and Gulf exports - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_easing_risk_on",
+            "provider": "finnhub",
+            "published_at": "2026-10-01T01:10:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
               "USO",
               "UUP",
               "TLT"
@@ -3675,7 +3730,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 81,
+            "freshness_score": 80,
             "headline": "Israeli strikes kill seven people in Gaza, medics say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3702,7 +3757,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 78,
+            "freshness_score": 77,
             "headline": "US oil, gas output up in Q3, producers wary of price outlook, Dallas Fed says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3729,7 +3784,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 76,
             "headline": "EU aviation agency issues Saudi airspace advisory after Houthi attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3756,12 +3811,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 43,
+            "freshness_score": 42,
             "headline": "US, Iran separately talk with mediators in latest bid to end war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-09-30T01:45:59+00:00",
+            "published_at": "2026-09-30T01:45:43+00:00",
             "source": "Reuters"
           },
           {
@@ -3774,12 +3829,12 @@
               "UUP"
             ],
             "confidence": "medium",
-            "confidence_score": 71,
+            "confidence_score": 70,
             "detected_event_conditions": [],
             "event_type": "fed_dovish",
             "expected_horizon": "1d-20d",
             "expected_market_direction": "risk_on",
-            "freshness_score": 72,
+            "freshness_score": 71,
             "headline": "Most Gulf stocks in red as Trump rebuffs Iran sanctions easing - Reuters",
             "importance_score": 84,
             "narrative": "fed_cut_hopes",
@@ -3800,6 +3855,18 @@
           ],
           "conflicting_headlines": [
             {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_easing"
+              ],
+              "event_type": "geopolitical_risk_easing",
+              "expected_market_direction": "risk_on",
+              "headline": "Oil prices barely changed as investors assess US-Iran peace talks and Gulf exports - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-01T01:10:00+00:00",
+              "source": "Reuters"
+            },
+            {
               "confidence": "medium",
               "detected_event_conditions": [],
               "event_type": "fed_dovish",
@@ -3807,6 +3874,18 @@
               "headline": "Most Gulf stocks in red as Trump rebuffs Iran sanctions easing - Reuters",
               "importance_score": 84,
               "published_at": "2026-09-30T13:47:25+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_easing"
+              ],
+              "event_type": "geopolitical_risk_easing",
+              "expected_market_direction": "risk_on",
+              "headline": "Qatari mediators press peace deal between US and Iran - Reuters",
+              "importance_score": 94,
+              "published_at": "2026-09-30T02:55:59+00:00",
               "source": "Reuters"
             }
           ],
@@ -3863,7 +3942,7 @@
               "expected_market_direction": "risk_off",
               "headline": "US, Iran separately talk with mediators in latest bid to end war - Reuters",
               "importance_score": 100,
-              "published_at": "2026-09-30T01:45:59+00:00",
+              "published_at": "2026-09-30T01:45:43+00:00",
               "source": "Reuters"
             }
           ]
@@ -3908,7 +3987,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.003,
-            "avg_equity_futures_1d_return": -0.0,
+            "avg_equity_futures_1d_return": -0.0006,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -3924,7 +4003,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0003,
-            "oil_proxy_1d_return": 0.0116,
+            "oil_proxy_1d_return": 0.0127,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -6427,11 +6506,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.15,
           "top_headlines": [
+            "Oil prices barely changed as investors assess US-Iran peace talks and Gulf exports - Reuters",
             "Passengers foil bid to crash Dubai-Tel Aviv flight, Israel says, after co-pilot stabs pilot - Reuters",
             "Israel to ramp up pilot checks after flydubai scare - Reuters",
             "Why Jim Cramer isn't buying more Boeing despite its huge Navy contract win",
-            "Wall Street is closing out a strong quarter. Plus, Lilly's mixed obesity drug trial data",
-            "Two trades that just happened in 'Magnificent Seven' stocks point to big gains ahead"
+            "Wall Street is closing out a strong quarter. Plus, Lilly's mixed obesity drug trial data"
           ]
         },
         "price": {
@@ -7817,6 +7896,37 @@
               "IWM",
               "DIA",
               "^VIX",
+              "HYG",
+              "LQD",
+              "USO",
+              "CL=F",
+              "UUP",
+              "ES=F",
+              "NQ=F"
+            ],
+            "confidence": "high",
+            "confidence_score": 99,
+            "detected_event_conditions": [
+              "geopolitical_risk_easing"
+            ],
+            "event_type": "geopolitical_risk_easing",
+            "expected_horizon": "1d-5d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 98,
+            "headline": "Oil prices barely changed as investors assess US-Iran peace talks and Gulf exports - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_easing_risk_on",
+            "provider": "finnhub",
+            "published_at": "2026-10-01T01:10:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
               "USO",
               "UUP",
               "TLT"
@@ -7829,7 +7939,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 81,
+            "freshness_score": 80,
             "headline": "Israeli strikes kill seven people in Gaza, medics say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7856,7 +7966,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 78,
+            "freshness_score": 77,
             "headline": "US oil, gas output up in Q3, producers wary of price outlook, Dallas Fed says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7883,7 +7993,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 76,
             "headline": "EU aviation agency issues Saudi airspace advisory after Houthi attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7910,12 +8020,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 43,
+            "freshness_score": 42,
             "headline": "US, Iran separately talk with mediators in latest bid to end war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-09-30T01:45:59+00:00",
+            "published_at": "2026-09-30T01:45:43+00:00",
             "source": "Reuters"
           },
           {
@@ -7928,12 +8038,12 @@
               "UUP"
             ],
             "confidence": "medium",
-            "confidence_score": 71,
+            "confidence_score": 70,
             "detected_event_conditions": [],
             "event_type": "fed_dovish",
             "expected_horizon": "1d-20d",
             "expected_market_direction": "risk_on",
-            "freshness_score": 72,
+            "freshness_score": 71,
             "headline": "Most Gulf stocks in red as Trump rebuffs Iran sanctions easing - Reuters",
             "importance_score": 84,
             "narrative": "fed_cut_hopes",
@@ -7954,6 +8064,18 @@
           ],
           "conflicting_headlines": [
             {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_easing"
+              ],
+              "event_type": "geopolitical_risk_easing",
+              "expected_market_direction": "risk_on",
+              "headline": "Oil prices barely changed as investors assess US-Iran peace talks and Gulf exports - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-01T01:10:00+00:00",
+              "source": "Reuters"
+            },
+            {
               "confidence": "medium",
               "detected_event_conditions": [],
               "event_type": "fed_dovish",
@@ -7961,6 +8083,18 @@
               "headline": "Most Gulf stocks in red as Trump rebuffs Iran sanctions easing - Reuters",
               "importance_score": 84,
               "published_at": "2026-09-30T13:47:25+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_easing"
+              ],
+              "event_type": "geopolitical_risk_easing",
+              "expected_market_direction": "risk_on",
+              "headline": "Qatari mediators press peace deal between US and Iran - Reuters",
+              "importance_score": 94,
+              "published_at": "2026-09-30T02:55:59+00:00",
               "source": "Reuters"
             }
           ],
@@ -8017,7 +8151,7 @@
               "expected_market_direction": "risk_off",
               "headline": "US, Iran separately talk with mediators in latest bid to end war - Reuters",
               "importance_score": 100,
-              "published_at": "2026-09-30T01:45:59+00:00",
+              "published_at": "2026-09-30T01:45:43+00:00",
               "source": "Reuters"
             }
           ]
@@ -8062,7 +8196,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.003,
-            "avg_equity_futures_1d_return": -0.0,
+            "avg_equity_futures_1d_return": -0.0006,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -8078,7 +8212,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0003,
-            "oil_proxy_1d_return": 0.0116,
+            "oil_proxy_1d_return": 0.0127,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -10601,11 +10735,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.15,
           "top_headlines": [
+            "Oil prices barely changed as investors assess US-Iran peace talks and Gulf exports - Reuters",
             "Passengers foil bid to crash Dubai-Tel Aviv flight, Israel says, after co-pilot stabs pilot - Reuters",
             "Israel to ramp up pilot checks after flydubai scare - Reuters",
             "Why Jim Cramer isn't buying more Boeing despite its huge Navy contract win",
-            "Wall Street is closing out a strong quarter. Plus, Lilly's mixed obesity drug trial data",
-            "Two trades that just happened in 'Magnificent Seven' stocks point to big gains ahead"
+            "Wall Street is closing out a strong quarter. Plus, Lilly's mixed obesity drug trial data"
           ]
         },
         "price": {
@@ -11931,6 +12065,37 @@
               "IWM",
               "DIA",
               "^VIX",
+              "HYG",
+              "LQD",
+              "USO",
+              "CL=F",
+              "UUP",
+              "ES=F",
+              "NQ=F"
+            ],
+            "confidence": "high",
+            "confidence_score": 99,
+            "detected_event_conditions": [
+              "geopolitical_risk_easing"
+            ],
+            "event_type": "geopolitical_risk_easing",
+            "expected_horizon": "1d-5d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 98,
+            "headline": "Oil prices barely changed as investors assess US-Iran peace talks and Gulf exports - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_easing_risk_on",
+            "provider": "finnhub",
+            "published_at": "2026-10-01T01:10:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
               "USO",
               "UUP",
               "TLT"
@@ -11943,7 +12108,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 81,
+            "freshness_score": 80,
             "headline": "Israeli strikes kill seven people in Gaza, medics say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11970,7 +12135,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 78,
+            "freshness_score": 77,
             "headline": "US oil, gas output up in Q3, producers wary of price outlook, Dallas Fed says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11997,7 +12162,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 76,
             "headline": "EU aviation agency issues Saudi airspace advisory after Houthi attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12024,12 +12189,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 43,
+            "freshness_score": 42,
             "headline": "US, Iran separately talk with mediators in latest bid to end war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-09-30T01:45:59+00:00",
+            "published_at": "2026-09-30T01:45:43+00:00",
             "source": "Reuters"
           },
           {
@@ -12042,12 +12207,12 @@
               "UUP"
             ],
             "confidence": "medium",
-            "confidence_score": 71,
+            "confidence_score": 70,
             "detected_event_conditions": [],
             "event_type": "fed_dovish",
             "expected_horizon": "1d-20d",
             "expected_market_direction": "risk_on",
-            "freshness_score": 72,
+            "freshness_score": 71,
             "headline": "Most Gulf stocks in red as Trump rebuffs Iran sanctions easing - Reuters",
             "importance_score": 84,
             "narrative": "fed_cut_hopes",
@@ -12068,6 +12233,18 @@
           ],
           "conflicting_headlines": [
             {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_easing"
+              ],
+              "event_type": "geopolitical_risk_easing",
+              "expected_market_direction": "risk_on",
+              "headline": "Oil prices barely changed as investors assess US-Iran peace talks and Gulf exports - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-01T01:10:00+00:00",
+              "source": "Reuters"
+            },
+            {
               "confidence": "medium",
               "detected_event_conditions": [],
               "event_type": "fed_dovish",
@@ -12075,6 +12252,18 @@
               "headline": "Most Gulf stocks in red as Trump rebuffs Iran sanctions easing - Reuters",
               "importance_score": 84,
               "published_at": "2026-09-30T13:47:25+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_easing"
+              ],
+              "event_type": "geopolitical_risk_easing",
+              "expected_market_direction": "risk_on",
+              "headline": "Qatari mediators press peace deal between US and Iran - Reuters",
+              "importance_score": 94,
+              "published_at": "2026-09-30T02:55:59+00:00",
               "source": "Reuters"
             }
           ],
@@ -12131,7 +12320,7 @@
               "expected_market_direction": "risk_off",
               "headline": "US, Iran separately talk with mediators in latest bid to end war - Reuters",
               "importance_score": 100,
-              "published_at": "2026-09-30T01:45:59+00:00",
+              "published_at": "2026-09-30T01:45:43+00:00",
               "source": "Reuters"
             }
           ]
@@ -12176,7 +12365,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.003,
-            "avg_equity_futures_1d_return": -0.0,
+            "avg_equity_futures_1d_return": -0.0006,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -12192,7 +12381,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0003,
-            "oil_proxy_1d_return": 0.0116,
+            "oil_proxy_1d_return": 0.0127,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -14715,11 +14904,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.15,
           "top_headlines": [
+            "Oil prices barely changed as investors assess US-Iran peace talks and Gulf exports - Reuters",
             "Passengers foil bid to crash Dubai-Tel Aviv flight, Israel says, after co-pilot stabs pilot - Reuters",
             "Israel to ramp up pilot checks after flydubai scare - Reuters",
             "Why Jim Cramer isn't buying more Boeing despite its huge Navy contract win",
-            "Wall Street is closing out a strong quarter. Plus, Lilly's mixed obesity drug trial data",
-            "Two trades that just happened in 'Magnificent Seven' stocks point to big gains ahead"
+            "Wall Street is closing out a strong quarter. Plus, Lilly's mixed obesity drug trial data"
           ]
         },
         "price": {
@@ -16089,6 +16278,37 @@
               "IWM",
               "DIA",
               "^VIX",
+              "HYG",
+              "LQD",
+              "USO",
+              "CL=F",
+              "UUP",
+              "ES=F",
+              "NQ=F"
+            ],
+            "confidence": "high",
+            "confidence_score": 99,
+            "detected_event_conditions": [
+              "geopolitical_risk_easing"
+            ],
+            "event_type": "geopolitical_risk_easing",
+            "expected_horizon": "1d-5d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 98,
+            "headline": "Oil prices barely changed as investors assess US-Iran peace talks and Gulf exports - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_easing_risk_on",
+            "provider": "finnhub",
+            "published_at": "2026-10-01T01:10:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
               "USO",
               "UUP",
               "TLT"
@@ -16101,7 +16321,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 81,
+            "freshness_score": 80,
             "headline": "Israeli strikes kill seven people in Gaza, medics say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16128,7 +16348,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 78,
+            "freshness_score": 77,
             "headline": "US oil, gas output up in Q3, producers wary of price outlook, Dallas Fed says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16155,7 +16375,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 76,
             "headline": "EU aviation agency issues Saudi airspace advisory after Houthi attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16182,12 +16402,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 43,
+            "freshness_score": 42,
             "headline": "US, Iran separately talk with mediators in latest bid to end war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-09-30T01:45:59+00:00",
+            "published_at": "2026-09-30T01:45:43+00:00",
             "source": "Reuters"
           },
           {
@@ -16200,12 +16420,12 @@
               "UUP"
             ],
             "confidence": "medium",
-            "confidence_score": 71,
+            "confidence_score": 70,
             "detected_event_conditions": [],
             "event_type": "fed_dovish",
             "expected_horizon": "1d-20d",
             "expected_market_direction": "risk_on",
-            "freshness_score": 72,
+            "freshness_score": 71,
             "headline": "Most Gulf stocks in red as Trump rebuffs Iran sanctions easing - Reuters",
             "importance_score": 84,
             "narrative": "fed_cut_hopes",
@@ -16226,6 +16446,18 @@
           ],
           "conflicting_headlines": [
             {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_easing"
+              ],
+              "event_type": "geopolitical_risk_easing",
+              "expected_market_direction": "risk_on",
+              "headline": "Oil prices barely changed as investors assess US-Iran peace talks and Gulf exports - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-01T01:10:00+00:00",
+              "source": "Reuters"
+            },
+            {
               "confidence": "medium",
               "detected_event_conditions": [],
               "event_type": "fed_dovish",
@@ -16233,6 +16465,18 @@
               "headline": "Most Gulf stocks in red as Trump rebuffs Iran sanctions easing - Reuters",
               "importance_score": 84,
               "published_at": "2026-09-30T13:47:25+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_easing"
+              ],
+              "event_type": "geopolitical_risk_easing",
+              "expected_market_direction": "risk_on",
+              "headline": "Qatari mediators press peace deal between US and Iran - Reuters",
+              "importance_score": 94,
+              "published_at": "2026-09-30T02:55:59+00:00",
               "source": "Reuters"
             }
           ],
@@ -16289,7 +16533,7 @@
               "expected_market_direction": "risk_off",
               "headline": "US, Iran separately talk with mediators in latest bid to end war - Reuters",
               "importance_score": 100,
-              "published_at": "2026-09-30T01:45:59+00:00",
+              "published_at": "2026-09-30T01:45:43+00:00",
               "source": "Reuters"
             }
           ]
@@ -16334,7 +16578,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.003,
-            "avg_equity_futures_1d_return": -0.0,
+            "avg_equity_futures_1d_return": -0.0006,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -16350,7 +16594,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0003,
-            "oil_proxy_1d_return": 0.0116,
+            "oil_proxy_1d_return": 0.0127,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
