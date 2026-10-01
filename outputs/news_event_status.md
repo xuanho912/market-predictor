@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-01T02:04:24.205538+00:00`
+- generated_at: `2026-10-01T07:14:40.267863+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `7`
-- event_detection_confidence: `76`
+- event_detection_confidence: `69`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -25,21 +25,13 @@
 
 ## Major Events
 
-### geopolitical_risk_easing / risk_on
-
-- headline: Oil prices barely changed as investors assess US-Iran peace talks and Gulf exports - Reuters
-- source: Reuters
-- published_at: `2026-10-01T01:10:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Israeli strikes kill seven people in Gaza, medics say - Reuters
 - source: Reuters
 - published_at: `2026-09-30T17:56:22+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +39,7 @@
 - source: Reuters
 - published_at: `2026-09-30T16:34:02+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,7 +47,15 @@
 - source: Reuters
 - published_at: `2026-09-30T16:09:10+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Apple will sell 6 million iPhone duos in 2026, Counterpoint says
+- source: Bloomberg
+- published_at: `2026-09-30T06:20:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -70,7 +70,7 @@
 - headline: Most Gulf stocks in red as Trump rebuffs Iran sanctions easing - Reuters
 - source: Reuters
 - published_at: `2026-09-30T13:47:25+00:00`
-- importance_score: `84`
+- importance_score: `83`
 - confidence: `medium`
 
 ### geopolitical_risk_easing / risk_on
@@ -78,5 +78,5 @@
 - headline: Qatari mediators press peace deal between US and Iran - Reuters
 - source: Reuters
 - published_at: `2026-09-30T02:55:59+00:00`
-- importance_score: `94`
+- importance_score: `93`
 - confidence: `medium`
