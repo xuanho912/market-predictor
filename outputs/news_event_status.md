@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-01T00:56:23.621564+00:00`
+- generated_at: `2026-10-01T01:39:07.649886+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `4`
+- major_event_count: `5`
 - event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -30,6 +30,14 @@
 - headline: Israeli strikes kill seven people in Gaza, medics say - Reuters
 - source: Reuters
 - published_at: `2026-09-30T17:56:22+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US oil, gas output up in Q3, producers wary of price outlook, Dallas Fed says - Reuters
+- source: Reuters
+- published_at: `2026-09-30T16:34:02+00:00`
 - importance_score: `100`
 - confidence: `high`
 
