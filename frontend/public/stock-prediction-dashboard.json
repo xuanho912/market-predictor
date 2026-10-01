@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-10-01T00:11:12.045432+00:00",
+  "generated_at": "2026-10-01T00:56:36.063288+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-10-01T00:11:12.086874+00:00",
+    "generated_at": "2026-10-01T00:56:36.106044+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 309,
     "risk_score_effectiveness": {
@@ -526,7 +526,7 @@
               "20d 回撤深度接近",
               "波动率区间接近"
             ],
-            "market_context": "risk_off_pressure",
+            "market_context": "market_headwind",
             "similarity_score": 0.7054,
             "worst_path_60d": -0.2975
           },
@@ -546,7 +546,7 @@
               "相对 benchmark 强弱接近",
               "波动率区间接近"
             ],
-            "market_context": "risk_off_pressure",
+            "market_context": "market_headwind",
             "similarity_score": 0.6798,
             "worst_path_60d": -0.0542
           },
@@ -567,7 +567,7 @@
               "相对 benchmark 强弱接近",
               "波动率区间接近"
             ],
-            "market_context": "risk_off_pressure",
+            "market_context": "market_headwind",
             "similarity_score": 0.6784,
             "worst_path_60d": -0.2705
           },
@@ -587,7 +587,7 @@
               "20d 回撤深度接近",
               "波动率区间接近"
             ],
-            "market_context": "risk_off_pressure",
+            "market_context": "market_headwind",
             "similarity_score": 0.6702,
             "worst_path_60d": -0.0382
           },
@@ -608,7 +608,7 @@
               "相对 benchmark 强弱接近",
               "波动率区间接近"
             ],
-            "market_context": "risk_off_pressure",
+            "market_context": "market_headwind",
             "similarity_score": 0.6449,
             "worst_path_60d": -0.2973
           },
@@ -627,7 +627,7 @@
             "key_shared_features": [
               "波动率区间接近"
             ],
-            "market_context": "risk_off_pressure",
+            "market_context": "market_headwind",
             "similarity_score": 0.5887,
             "worst_path_60d": -0.0313
           },
@@ -648,7 +648,7 @@
               "相对 benchmark 强弱接近",
               "波动率区间接近"
             ],
-            "market_context": "risk_off_pressure",
+            "market_context": "market_headwind",
             "similarity_score": 0.5867,
             "worst_path_60d": -0.0366
           },
@@ -668,7 +668,7 @@
               "相对 benchmark 强弱接近",
               "波动率区间接近"
             ],
-            "market_context": "risk_off_pressure",
+            "market_context": "market_headwind",
             "similarity_score": 0.58,
             "worst_path_60d": -0.0649
           },
@@ -687,7 +687,7 @@
             "key_shared_features": [
               "波动率区间接近"
             ],
-            "market_context": "risk_off_pressure",
+            "market_context": "market_headwind",
             "similarity_score": 0.5557,
             "worst_path_60d": -0.3021
           },
@@ -707,7 +707,7 @@
               "相对 benchmark 强弱接近",
               "波动率区间接近"
             ],
-            "market_context": "risk_off_pressure",
+            "market_context": "market_headwind",
             "similarity_score": 0.5554,
             "worst_path_60d": -0.3023
           }
@@ -716,14 +716,14 @@
       },
       "market_context_for_stock": {
         "benchmark": "SPY",
-        "benchmark_edge_status": "MODERATE_EDGE",
+        "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.3012,
+        "benchmark_primary_probability": 0.3428,
         "benchmark_primary_scenario": "bearish_path",
-        "context": "risk_off_pressure",
+        "context": "market_headwind",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
-        "risk_alert_level": "WARNING",
-        "risk_alert_type": "Bounce Setup Alert",
+        "risk_alert_level": "WATCH",
+        "risk_alert_type": "Failed Bounce Alert",
         "symbol": "CEG"
       },
       "missing_data": [
@@ -751,7 +751,7 @@
             "confidence": "low",
             "label": "个股反抽",
             "probability": 0.1488,
-            "reason": "结合回撤、成交量和大盘背景，短中期反抽权重较高；当前市场背景为 risk_off_pressure。",
+            "reason": "结合回撤、成交量和大盘背景，短中期反抽权重较高；当前市场背景为 market_headwind。",
             "scenario": "stock_bounce"
           },
           {
@@ -2171,7 +2171,7 @@
           },
           "market_industry": {
             "evidence": [
-              "大盘背景压制：risk_off_pressure",
+              "大盘背景压制：market_headwind",
               "相对板块走弱"
             ],
             "max_points": 10,
@@ -2311,7 +2311,7 @@
           },
           "market_context": {
             "evidence": "大盘风险背景压低个股置信度",
-            "reason": "benchmark=SPY / risk_off_pressure",
+            "reason": "benchmark=SPY / market_headwind",
             "score": 28,
             "status": "conflicting"
           },
@@ -2433,59 +2433,59 @@
           "event_risk_flag": "high",
           "headlines": [
             {
-              "datetime": 1790805000,
-              "headline": "Rivian Stock Is Going to $19 According to This Wall Street Analyst. Here's Why They May Be Right.",
+              "datetime": 1790814180,
+              "headline": "Nvidia Could Have a Monster October. Here's Why.",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=045c60443fe3b8f884485ad1e8d11c5564f1e11aaabbae519d1b9fa8ea8f1113"
+              "url": "https://finnhub.io/api/news?id=098f9eddad33e548b6ace72d5b5df9d3bca0678e963281149902cb7192461575"
             },
             {
-              "datetime": 1790804495,
-              "headline": "Why Celcuity Stock Was a Winner on Wednesday",
+              "datetime": 1790813678,
+              "headline": "Trend vs. Hype",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=23ed0e5f27ccccbbdfc78b83c146e8e4830a97a281a0740bc213e1d7284445a4"
+              "url": "https://finnhub.io/api/news?id=d7c4a53bcaa40d5f5cfd919bc15bd033ad552f7889f0e5fc52405e163383713f"
             },
             {
-              "datetime": 1790804401,
-              "headline": "Stock Market Today, Sept. 30: Nvidia Authorizes $150B Buyback, Lifting Total to $235B",
+              "datetime": 1790812200,
+              "headline": "Warren Buffett's Record: $1,000 Became About $61 Million. Can Greg Abel Keep Compounding It?",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=896f4a4e19435f89e701a78564b104ce85f21479fba1841fe468e3a7db5e1394"
+              "url": "https://finnhub.io/api/news?id=f64cf8d0bfe65ab93a4ead735ee19ec12352ebade3499f14b6d76e7e942b0c07"
             },
             {
-              "datetime": 1790803980,
-              "headline": "JPMorgan sends a strong message to Mag-7 stock investors",
+              "datetime": 1790811000,
+              "headline": "Novo Is Open to Acquisitions. Here Are 2 Companies That Would Be Great Candidates to Buy",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=5d3c1a924a076dd4a318800346bb7a073aa74b0c7fb9e2beed62fe6dc73e49f5"
+              "url": "https://finnhub.io/api/news?id=88b7df9c9d61e720043af10293f6dff5981ba23098b746adcd33aa8c361ae5f2"
             },
             {
-              "datetime": 1790803923,
-              "headline": "NVIDIA Is World's Largest Stock Yet Still Undervalued",
+              "datetime": 1790810350,
+              "headline": "Why Synopsys Stock Soared Nearly 5% Higher Today",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=c85317ba82e5a7559eafed079255445fb4f6fccb74453227dfb85414759aac24"
+              "url": "https://finnhub.io/api/news?id=1b2bd181aec3441518397bd1259c3041b6cbdc56fb2a4d6b3dc4ae8db09b6cc6"
             },
             {
-              "datetime": 1790803513,
-              "headline": "FormFactor (FORM) Shares Skyrocket, What You Need To Know",
+              "datetime": 1790810041,
+              "headline": "Micron’s Revenue More Than Quadrupled. Here’s What Comes Next for the AI Chipmaker.",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=1db6d561a5b371190771a7223ca91e37ddbeeb18c5643287b72ee06ec4ab1534"
+              "url": "https://finnhub.io/api/news?id=f44b47335c1166f97f5a80826ad4aee231198581f39f1c005d754e956aa4f302"
             },
             {
-              "datetime": 1790803200,
-              "headline": "Viking Therapeutics Stock Soars 36% on Weight-Loss Drug Data. Why It's Not Too Late to Buy the Stock.",
+              "datetime": 1790809589,
+              "headline": "Forget Waiting Three Months for SPY’s Dividend. Invesco’s High-Dividend Fund Pays Every Month",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=c681ecd51bebed5e433958435348512ebe4ab762fa43fe4f97f4feed2da35df2"
+              "url": "https://finnhub.io/api/news?id=ff7223554078df0ced7983593f33c82ca9484f684de84a872f948b0a1901ab86"
             },
             {
-              "datetime": 1790802996,
-              "headline": "Robinhood Wants Your AI Agent to Trade 24/7",
+              "datetime": 1790809440,
+              "headline": "Nvidia, Broadcom, and AMD Investors Need to Have Oct. 15 Circled on Their Calendars",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=4bf6bec6e1a06755490854b99333d5db50db7c851519827c006d62a54ccb0046"
+              "url": "https://finnhub.io/api/news?id=4a438b5d0e95cb6bd7403fa88539f5348b58651232f9615f1d3f5d35a122dbaa"
             }
           ],
-          "major_company_headline": "Rivian Stock Is Going to $19 According to This Wall Street Analyst. Here's Why They May Be Right.",
+          "major_company_headline": "Nvidia Could Have a Monster October. Here's Why.",
           "news_count_24h": 20,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
-          "news_sentiment": "neutral"
+          "news_sentiment": "negative"
         },
         "price_trend": {
           "close": 228.38,
@@ -2910,9 +2910,9 @@
       },
       "market_context_for_stock": {
         "benchmark": "QQQ",
-        "benchmark_edge_status": "WEAK_EDGE",
+        "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.3307,
+        "benchmark_primary_probability": 0.3713,
         "benchmark_primary_scenario": "bearish_path",
         "context": "market_headwind",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -4329,7 +4329,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Rivian Stock Is Going to $19 According to This Wall Street Analyst. Here's Why They May Be Right.",
+              "公司新闻已接入: Nvidia Could Have a Monster October. Here's Why.",
               "增长数据具备 EPS 上修叙事基础"
             ],
             "max_points": 10,
@@ -4446,7 +4446,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金/技术确认较强",
-          "catalyst": "Rivian Stock Is Going to $19 According to This Wall Street Analyst. Here's Why They May Be Right.",
+          "catalyst": "Nvidia Could Have a Monster October. Here's Why.",
           "expectation_gap": [
             "收入增长较强，具备正向预期差基础",
             "EPS 增长较强，可能支持盈利上修叙事"
@@ -5113,9 +5113,9 @@
       },
       "market_context_for_stock": {
         "benchmark": "IWM",
-        "benchmark_edge_status": "WEAK_EDGE",
+        "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.427,
+        "benchmark_primary_probability": 0.4644,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -6832,6 +6832,12 @@
           "event_risk_flag": "high",
           "headlines": [
             {
+              "datetime": 1790807353,
+              "headline": "Why ChargePoint (CHPT) Stock Is Up Today",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=c81388f4eac4ee70315b600cc1cf566e4f669b118498c73f9c1449f2daddf07d"
+            },
+            {
               "datetime": 1790803980,
               "headline": "JPMorgan sends a strong message to Mag-7 stock investors",
               "source": "Yahoo",
@@ -6872,15 +6878,9 @@
               "headline": "Musk vs Altman sparring continues, now their AI agents are joining the fight",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=acc9f97de395d977c64b411fefe18bc0084af76f5a76c59c38082356c8f27c35"
-            },
-            {
-              "datetime": 1790787805,
-              "headline": "Wall Street Expects A 7% Drop In Tesla Q3 Deliveries; The Stock Keeps Falling",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=efe988c9db822e48c97bb05fa94c7c095428ef6af56177a86132111452c523c0"
             }
           ],
-          "major_company_headline": "JPMorgan sends a strong message to Mag-7 stock investors",
+          "major_company_headline": "Why ChargePoint (CHPT) Stock Is Up Today",
           "news_count_24h": 20,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
@@ -7309,9 +7309,9 @@
       },
       "market_context_for_stock": {
         "benchmark": "QQQ",
-        "benchmark_edge_status": "WEAK_EDGE",
+        "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.3307,
+        "benchmark_primary_probability": 0.3713,
         "benchmark_primary_scenario": "bearish_path",
         "context": "market_headwind",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -8727,7 +8727,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: JPMorgan sends a strong message to Mag-7 stock investors",
+              "公司新闻已接入: Why ChargePoint (CHPT) Stock Is Up Today",
               "未来 30 天存在财报催化：2026-10-20"
             ],
             "max_points": 10,
@@ -8842,7 +8842,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "JPMorgan sends a strong message to Mag-7 stock investors",
+          "catalyst": "Why ChargePoint (CHPT) Stock Is Up Today",
           "expectation_gap": [
             "未来 30 天财报可能成为重新定价窗口"
           ],
@@ -8976,7 +8976,7 @@
       "top_candidate": "NVDA",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-10-01T00:11:12.074673+00:00",
+    "generated_at": "2026-10-01T00:56:36.093363+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -9186,7 +9186,7 @@
           "mid": 253.53,
           "range_pct": 0.0371
         },
-        "final_radar_score": 41.97,
+        "final_radar_score": 42.29,
         "forecast_date": "2026-09-30",
         "invalidation_level": 247.2,
         "last_close": 254.02,
@@ -9201,7 +9201,7 @@
           "基础财务指标偏支持",
           "历史相似结构支持主路径"
         ],
-        "market_context": "risk_off_pressure",
+        "market_context": "market_headwind",
         "model_version": "stock_baseline_v1",
         "news_fields": {
           "catalyst_note": "catalyst data present or event risk proxy elevated",
@@ -9209,7 +9209,7 @@
           "earnings": "available"
         },
         "next_day_move_probability": 0.6872,
-        "one_line_reason": "failed_bounce_risk: Alpha 19 / 弹性 99 / 成交量 7 / 相对强弱 19 / 催化 63 / 大盘 risk_off_pressure / 板块 neutral",
+        "one_line_reason": "failed_bounce_risk: Alpha 19 / 弹性 99 / 成交量 7 / 相对强弱 19 / 催化 63 / 大盘 market_headwind / 板块 neutral",
         "outperformance_probability_20d": 0.3801,
         "primary_probability": 0.2617,
         "primary_scenario": "stock_failed_bounce",

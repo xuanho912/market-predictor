@@ -56,24 +56,24 @@
       "status": "proxy"
     },
     "news": {
-      "available_items": 0,
+      "available_items": 4,
       "detail": "News/Event Intelligence: Finnhub/GDELT headlines. Full availability requires major event recognition and price-reaction confirmation.",
       "expected_items": 4,
       "fallback_used": false,
       "proxy_used": false,
-      "real_data": false,
-      "status": "provider_failed"
+      "real_data": true,
+      "status": "available"
     },
     "news_event": {
-      "available_items": 0,
+      "available_items": 5,
       "detail": "Event classification, narrative detection, economic calendar risk and market price-reaction confirmation.",
       "expected_items": 5,
       "fallback_used": false,
-      "headline_count": 0,
-      "major_event_count": 0,
+      "headline_count": 40,
+      "major_event_count": 4,
       "proxy_used": false,
-      "real_data": false,
-      "status": "provider_failed"
+      "real_data": true,
+      "status": "available"
     },
     "options": {
       "available_items": 6,
@@ -112,7 +112,7 @@
       "status": "available"
     }
   },
-  "generated_at": "2026-10-01T00:11:00.570887+00:00",
+  "generated_at": "2026-10-01T00:56:23.614175+00:00",
   "notes": [
     "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
     "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -784,7 +784,7 @@
       "point_in_time_safe": true,
       "rate_limited": false,
       "real_data": true,
-      "rows": 0,
+      "rows": 40,
       "source": "finnhub",
       "stale_data": true,
       "status": "stale",
@@ -1024,20 +1024,20 @@
       "symbol": "macro_event_calendar"
     },
     "news_event_provider": {
-      "event_detection_confidence": 0,
+      "event_detection_confidence": 73,
       "fallback_used": false,
       "latest_date": "2026-09-30",
-      "major_event_count": 0,
-      "missing_data": true,
-      "missing_reason": "provider_failed",
-      "narrative": "no_clear_narrative",
+      "major_event_count": 4,
+      "missing_data": false,
+      "missing_reason": null,
+      "narrative": "geopolitics_escalation_risk_off",
       "point_in_time_safe": true,
-      "price_reaction_confirmed": false,
-      "real_data": false,
-      "rows": 0,
+      "price_reaction_confirmed": true,
+      "real_data": true,
+      "rows": 40,
       "source": "finnhub+gdelt",
       "stale_data": false,
-      "status": "provider_failed",
+      "status": "available",
       "symbol": "news_event_provider"
     },
     "options_SKEW": {
@@ -1153,7 +1153,8 @@
     ],
     "breadth_required": true,
     "can_append_forecast_record": true,
-    "data_completeness_score": 85,
+    "data_completeness_score": 87.0,
+    "data_completeness_score_before_news_event": 85.0,
     "data_freshness_status": "fresh",
     "data_source_status": "real_core_with_proxies",
     "expected_latest_trading_date": "2026-09-30",
@@ -1183,8 +1184,8 @@
           "primary_scenario_with_fred": "bearish_path",
           "primary_scenario_without_fred": "bearish_path",
           "risk_expansion_delta": 0.1131,
-          "risk_expansion_with_fred": 0.5242,
-          "risk_expansion_without_fred": 0.4111
+          "risk_expansion_with_fred": 0.5284,
+          "risk_expansion_without_fred": 0.4153
         },
         "IWM": {
           "edge_status_changed": false,
@@ -1197,8 +1198,8 @@
           "primary_scenario_with_fred": "bearish_path",
           "primary_scenario_without_fred": "bearish_path",
           "risk_expansion_delta": 0.113,
-          "risk_expansion_with_fred": 0.5737,
-          "risk_expansion_without_fred": 0.4607
+          "risk_expansion_with_fred": 0.5779,
+          "risk_expansion_without_fred": 0.4649
         },
         "QQQ": {
           "edge_status_changed": false,
@@ -1210,9 +1211,9 @@
           "primary_scenario_changed": false,
           "primary_scenario_with_fred": "bearish_path",
           "primary_scenario_without_fred": "bearish_path",
-          "risk_expansion_delta": 0.113,
-          "risk_expansion_with_fred": 0.5359,
-          "risk_expansion_without_fred": 0.4229
+          "risk_expansion_delta": 0.1131,
+          "risk_expansion_with_fred": 0.5401,
+          "risk_expansion_without_fred": 0.427
         },
         "SPY": {
           "edge_status_changed": false,
@@ -1224,9 +1225,9 @@
           "primary_scenario_changed": false,
           "primary_scenario_with_fred": "bearish_path",
           "primary_scenario_without_fred": "bearish_path",
-          "risk_expansion_delta": 0.113,
-          "risk_expansion_with_fred": 0.5018,
-          "risk_expansion_without_fred": 0.3888
+          "risk_expansion_delta": 0.1131,
+          "risk_expansion_with_fred": 0.506,
+          "risk_expansion_without_fred": 0.3929
         }
       },
       "target_85_met_with_fred": true
@@ -1238,13 +1239,13 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "DGS10",
-      "DGS2",
-      "HY_OAS",
-      "IG_OAS",
-      "DGS3MO",
       "BAA_SPREAD",
+      "IG_OAS",
+      "HY_OAS",
+      "DGS2",
+      "DGS10",
       "DFII10",
+      "DGS3MO",
       "RECESSION",
       "FINANCIAL_STRESS"
     ],
@@ -1276,28 +1277,28 @@
       "dealer gamma/option flow"
     ],
     "news_event": {
-      "available": false,
-      "event_detection_confidence": 0,
-      "event_risk_level": "low",
-      "headline_count": 0,
-      "last_update": "2026-10-01T00:11:00.577953+00:00",
-      "major_event_count": 0,
-      "missing_reason": "provider_failed",
-      "news_direction": "mixed",
+      "available": true,
+      "event_detection_confidence": 73,
+      "event_risk_level": "high",
+      "headline_count": 40,
+      "last_update": "2026-10-01T00:56:23.621564+00:00",
+      "major_event_count": 4,
+      "missing_reason": null,
+      "news_direction": "risk_off",
       "news_event_partial": false,
-      "price_reaction_confirmed": false,
+      "price_reaction_confirmed": true,
       "provider": "finnhub+gdelt",
       "stale": false,
-      "status": "provider_failed"
+      "status": "available"
     },
-    "news_event_available": false,
-    "news_event_event_risk_level": "low",
-    "news_event_major_count": 0,
-    "news_event_missing_reason": "provider_failed",
-    "news_event_narrative": "no_clear_narrative",
+    "news_event_available": true,
+    "news_event_event_risk_level": "high",
+    "news_event_major_count": 4,
+    "news_event_missing_reason": null,
+    "news_event_narrative": "geopolitics_escalation_risk_off",
     "news_event_partial": false,
-    "news_event_price_confirmed": false,
-    "news_event_provider_failed": true,
+    "news_event_price_confirmed": true,
+    "news_event_provider_failed": false,
     "options_available": true,
     "options_missing": false,
     "options_partial": false,
@@ -1322,9 +1323,7 @@
       "DIA"
     ],
     "true_flow_available": false,
-    "unavailable_categories": [
-      "news"
-    ],
+    "unavailable_categories": [],
     "v4_target_met": true,
     "vix_term_available": true,
     "vvix_available": true,

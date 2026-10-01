@@ -1,6 +1,6 @@
 # Forecast Deviation Review
 
-Generated at: `2026-10-01T00:11:11.567739+00:00`
+Generated at: `2026-10-01T00:56:35.579961+00:00`
 
 This report reviews forecast-vs-actual deviations after horizons complete. It is not a trading, PnL or execution report.
 
@@ -292,10 +292,10 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - severity: `moderate`
 - primary_hit: `False`
 - best_matching_scenario: `analog_average_path`
-- likely_error_drivers: `model_underestimated_downside_or_failed_bounce, breadth_conflict_underweighted, news_data_gap_limited_attribution`
-- underweighted_factors: `breadth_conflict_underweighted`
+- likely_error_drivers: `model_underestimated_downside_or_failed_bounce, news_event_risk_underweighted, breadth_conflict_underweighted, news_data_gap_limited_attribution`
+- underweighted_factors: `news_event_risk_underweighted, breadth_conflict_underweighted`
 - overweighted_factors: `bounce_repair_assumption`
-- diagnostic_note: 实际走势弱于预测，可能低估了市场内部参与不足对主路径的拖累。
+- diagnostic_note: 实际走势弱于预测，优先检查是否低估了新闻/事件风险，或利空是否得到了价格确认。
 
 ### IWM 3d from 2026-09-23
 
@@ -324,10 +324,10 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - severity: `moderate`
 - primary_hit: `False`
 - best_matching_scenario: `bounce_path`
-- likely_error_drivers: `model_underestimated_downside_or_failed_bounce, breadth_conflict_underweighted, news_data_gap_limited_attribution`
-- underweighted_factors: `breadth_conflict_underweighted`
+- likely_error_drivers: `model_underestimated_downside_or_failed_bounce, news_event_risk_underweighted, breadth_conflict_underweighted, news_data_gap_limited_attribution`
+- underweighted_factors: `news_event_risk_underweighted, breadth_conflict_underweighted`
 - overweighted_factors: ``
-- diagnostic_note: 实际走势弱于预测，可能低估了市场内部参与不足对主路径的拖累。
+- diagnostic_note: 实际走势弱于预测，优先检查是否低估了新闻/事件风险，或利空是否得到了价格确认。
 
 ### IWM 1d from 2026-09-23
 
@@ -359,8 +359,8 @@ This report reviews forecast-vs-actual deviations after horizons complete. It is
 - `news_data_gap_limited_attribution` count `781`: 新闻数据缺口会限制归因质量，需要标记而不是事后编故事。 Action: keep_observing_until_forward_sample_gate
 - `model_underestimated_upside_or_repair` count `436`: 模型低估了修复/反抽强度，需要检查事件催化、波动率修复和价格确认。 Action: keep_observing_until_forward_sample_gate
 - `model_underestimated_downside_or_failed_bounce` count `345`: 模型低估了下跌延续或反抽失败风险，需要检查信用、宽度、波动率和新闻风险。 Action: keep_observing_until_forward_sample_gate
+- `news_event_risk_underweighted` count `345`: 风险新闻如果被价格确认，应提高风险路径权重。 Action: shadow-test risk_event_confirmation：risk-off 新闻得到价格确认才提高风险路径。
 - `risk_off_news_overweighted_or_resolved` count `344`: risk-off 新闻若快速缓和或未被价格确认，不应继续压低主路径。 Action: shadow-test news_decay：未被价格确认或快速缓和的 risk-off 新闻权重衰减。
-- `news_event_risk_underweighted` count `326`: 风险新闻如果被价格确认，应提高风险路径权重。 Action: shadow-test risk_event_confirmation：risk-off 新闻得到价格确认才提高风险路径。
 - `volatility_repair_underweighted` count `146`: 波动率结构修复会放大短线反抽，需要进入 1d/3d/5d 权重验证。 Action: shadow-test vol_repair_boost：VIX term 修复提高短周期 bounce 权重。
 - `breadth_conflict_underweighted` count `109`: 指数上涨但内部参与不足时，失败反抽风险可能被低估。 Action: shadow-test breadth_conflict_penalty：宽度冲突提高 failed_bounce 风险。
 - `breadth_follow_through_underweighted` count `76`: 宽度改善后的持续承接可能被低估。 Action: shadow-test breadth_follow_through：宽度改善持续两日以上才提高中期修复权重。

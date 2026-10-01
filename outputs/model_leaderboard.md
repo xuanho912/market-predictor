@@ -1,6 +1,6 @@
 # Model Leaderboard
 
-Generated at: `2026-10-01T00:11:11.719043+00:00`
+Generated at: `2026-10-01T00:56:35.736370+00:00`
 Active model: `baseline_v1`
 
 > This is forecast model validation, not execution guidance or portfolio accounting.
@@ -62,8 +62,8 @@ Active model: `baseline_v1`
 ### challenger_v2_event_reaction_overlay
 - role: `shadow_challenger`
 - status: `tracking`
-- total_forecasts: `248`
-- pending_forecasts: `248`
+- total_forecasts: `252`
+- pending_forecasts: `252`
 - promotion_status: `insufficient_forward_evidence`
 - reason: `Forward samples have not met promotion gates.`
 - horizon_metrics:
