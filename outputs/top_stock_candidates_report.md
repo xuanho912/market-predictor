@@ -1,6 +1,6 @@
 # Next-Day Stock Radar v1
 
-Generated at: `2026-09-30T18:04:14.961365+00:00`
+Generated at: `2026-10-01T00:11:12.074673+00:00`
 As of: `None`
 
 This report ranks next-day high-elasticity stock forecast candidates. It is not a trading report and does not contain buy/sell instructions.
@@ -19,9 +19,9 @@ This report ranks next-day high-elasticity stock forecast candidates. It is not 
 
 | Rank | Ticker | Type | Radar | Alpha | Elasticity | Confluence | Catalyst | Risk | Range | Trigger | Invalidation | Reason |
 | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- | ---: | ---: | --- |
-| 1 | NVDA | failed_bounce_risk | 49.7 | 50.5 | 60.43 | 49.26 | 63.65 | 49.58 | 227.52-232.73 | 234.76 | 208.93 | failed_bounce_risk: Alpha 50 / 弹性 60 / 成交量 29 / 相对强弱 64 / 催化 64 / 大盘 market_headwind / 板块 neutral |
-| 2 | SMR | downside_continuation | 48.34 | 35.0 | 100 | 25.04 | 61.93 | 61.16 | 7.62-8.23 | 11.37 | 7.55 | downside_continuation: Alpha 35 / 弹性 100 / 成交量 40 / 相对强弱 10 / 催化 62 / 大盘 market_headwind / 板块 conflicting |
-| 3 | CEG | downside_continuation | 46.05 | 22.0 | 79.5 | 33.17 | 61.06 | 56.9 | 249.85-259.28 | 305.8 | 247.24 | downside_continuation: Alpha 22 / 弹性 80 / 成交量 58 / 相对强弱 18 / 催化 61 / 大盘 risk_off_pressure / 板块 neutral |
-| 4 | TSLA | failed_bounce_risk | 38.01 | 3.5 | 61.65 | 38.14 | 62.88 | 52.24 | 347.71-358.32 | 386.83 | 345.88 | failed_bounce_risk: Alpha 4 / 弹性 62 / 成交量 45 / 相对强弱 14 / 催化 63 / 大盘 market_headwind / 板块 supportive |
+| 1 | NVDA | failed_bounce_risk | 48.48 | 50.5 | 77.31 | 46.89 | 63.66 | 53.32 | 225.57-230.78 | 234.76 | 208.93 | failed_bounce_risk: Alpha 50 / 弹性 77 / 成交量 0 / 相对强弱 62 / 催化 64 / 大盘 market_headwind / 板块 neutral |
+| 2 | SMR | downside_continuation | 43.73 | 35.0 | 100 | 23.5 | 61.89 | 61.32 | 7.56-8.18 | 11.37 | 7.49 | downside_continuation: Alpha 35 / 弹性 100 / 成交量 14 / 相对强弱 9 / 催化 62 / 大盘 risk_off_pressure / 板块 conflicting |
+| 3 | CEG | failed_bounce_risk | 41.97 | 19.0 | 99.12 | 32.13 | 62.71 | 61.0 | 248.82-258.24 | 305.8 | 247.2 | failed_bounce_risk: Alpha 19 / 弹性 99 / 成交量 7 / 相对强弱 19 / 催化 63 / 大盘 risk_off_pressure / 板块 neutral |
+| 4 | TSLA | failed_bounce_risk | 35.42 | 3.5 | 80.4 | 36.52 | 62.9 | 56.24 | 348.99-359.63 | 386.83 | 345.88 | failed_bounce_risk: Alpha 4 / 弹性 80 / 成交量 0 / 相对强弱 18 / 催化 63 / 大盘 market_headwind / 板块 supportive |
 
 Validation status: `not_yet_validated` until enough forward samples complete.
