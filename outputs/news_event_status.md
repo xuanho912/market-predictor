@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-01T07:14:40.267863+00:00`
+- generated_at: `2026-10-01T10:29:22.227243+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `7`
-- event_detection_confidence: `69`
+- event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Israel vows to get to 'root' of flydubai attack, UAE launches investigation - Reuters
+- source: Reuters
+- published_at: `2026-10-01T09:42:12+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -57,20 +65,12 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
-
-- headline: US, Iran separately talk with mediators in latest bid to end war - Reuters
-- source: Reuters
-- published_at: `2026-09-30T01:45:43+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
 ### fed_dovish / risk_on
 
 - headline: Most Gulf stocks in red as Trump rebuffs Iran sanctions easing - Reuters
 - source: Reuters
 - published_at: `2026-09-30T13:47:25+00:00`
-- importance_score: `83`
+- importance_score: `82`
 - confidence: `medium`
 
 ### geopolitical_risk_easing / risk_on
@@ -78,5 +78,5 @@
 - headline: Qatari mediators press peace deal between US and Iran - Reuters
 - source: Reuters
 - published_at: `2026-09-30T02:55:59+00:00`
-- importance_score: `93`
+- importance_score: `92`
 - confidence: `medium`
