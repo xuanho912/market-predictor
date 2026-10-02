@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-10-02T01:37:34.391261+00:00",
+  "generated_at": "2026-10-02T01:53:04.572637+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-10-02T01:37:34.433644+00:00",
+    "generated_at": "2026-10-02T01:53:04.601749+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 313,
     "risk_score_effectiveness": {
@@ -242,6 +242,12 @@
           "event_risk_flag": "high",
           "headlines": [
             {
+              "datetime": 1790899860,
+              "headline": "Can This Number Push Constellation Energy Stock Higher?",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=d102b527043245215d108f026511fa763ab64bf6b516888563668d986b0dbf5c"
+            },
+            {
               "datetime": 1790897604,
               "headline": "Forget URA’s Concentration. This Nuclear Fund Spreads the Bet Across Utilities, Miners and Reactor Builders",
               "source": "Yahoo",
@@ -282,16 +288,10 @@
               "headline": "Wall Street Lunch: All About AI",
               "source": "SeekingAlpha",
               "url": "https://finnhub.io/api/news?id=db58c796b35a6006df0cd273f755633fed3a0d316ff99b89a5839ee7b7d4264b"
-            },
-            {
-              "datetime": 1790858102,
-              "headline": "These S&P500 stocks that are showing activity before the opening bell on Thursday.",
-              "source": "ChartMill",
-              "url": "https://finnhub.io/api/news?id=ace4b2f3f3fd668409306a2215d72dda895057955977573c5dc20756d2777d51"
             }
           ],
-          "major_company_headline": "Forget URA’s Concentration. This Nuclear Fund Spreads the Bet Across Utilities, Miners and Reactor Builders",
-          "news_count_24h": 19,
+          "major_company_headline": "Can This Number Push Constellation Energy Stock Higher?",
+          "news_count_24h": 20,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
           "news_sentiment": "neutral"
@@ -726,8 +726,8 @@
       "market_context_for_stock": {
         "benchmark": "SPY",
         "benchmark_edge_status": "RISK_WARNING",
-        "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.3547,
+        "benchmark_market_state": "failed_bounce_risk",
+        "benchmark_primary_probability": 0.4602,
         "benchmark_primary_scenario": "bearish_path",
         "context": "market_headwind",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -2144,7 +2144,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Forget URA’s Concentration. This Nuclear Fund Spreads the Bet Across Utilities, Miners and Reactor Builders",
+              "公司新闻已接入: Can This Number Push Constellation Energy Stock Higher?",
               "增长数据具备 EPS 上修叙事基础"
             ],
             "max_points": 10,
@@ -2257,7 +2257,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "Forget URA’s Concentration. This Nuclear Fund Spreads the Bet Across Utilities, Miners and Reactor Builders",
+          "catalyst": "Can This Number Push Constellation Energy Stock Higher?",
           "expectation_gap": [
             "收入增长较强，具备正向预期差基础"
           ],
@@ -2932,8 +2932,8 @@
       "market_context_for_stock": {
         "benchmark": "QQQ",
         "benchmark_edge_status": "RISK_WARNING",
-        "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.379,
+        "benchmark_market_state": "failed_bounce_risk",
+        "benchmark_primary_probability": 0.3828,
         "benchmark_primary_scenario": "bearish_path",
         "context": "market_headwind",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -5141,7 +5141,7 @@
         "benchmark": "IWM",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.4067,
+        "benchmark_primary_probability": 0.4114,
         "benchmark_primary_scenario": "bearish_path",
         "context": "market_headwind",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -7344,8 +7344,8 @@
       "market_context_for_stock": {
         "benchmark": "QQQ",
         "benchmark_edge_status": "RISK_WARNING",
-        "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.379,
+        "benchmark_market_state": "failed_bounce_risk",
+        "benchmark_primary_probability": 0.3828,
         "benchmark_primary_scenario": "bearish_path",
         "context": "market_headwind",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -9012,7 +9012,7 @@
       "top_candidate": "CEG",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-10-02T01:37:34.421132+00:00",
+    "generated_at": "2026-10-02T01:53:04.593361+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
