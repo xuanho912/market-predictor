@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-01T18:27:23.431233+00:00`
+- generated_at: `2026-10-02T00:00:47.250391+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
-- event_detection_confidence: `75`
+- major_event_count: `5`
+- event_detection_confidence: `80`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,6 +27,22 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: US sanctions target Iran's auto, rail sectors as blockade chokes ship lanes - Reuters
+- source: Reuters
+- published_at: `2026-10-01T20:52:13+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Boeing engineers and technical workers approve new contract, avoiding strike
+- source: CNBC
+- published_at: `2026-10-01T19:36:58+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Next OpenAIs and Anthropics may come straight to retail market. Here's what to know before investing
 - source: CNBC
 - published_at: `2026-10-01T16:50:28+00:00`
@@ -46,29 +62,5 @@
 - headline: SpaceX set to launch Google AI chips into orbit in push toward space-based data centers
 - source: CNBC
 - published_at: `2026-10-01T11:20:15+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Israeli strikes kill seven people in Gaza, medics say - Reuters
-- source: Reuters
-- published_at: `2026-09-30T17:56:22+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US oil, gas output up in Q3, producers wary of price outlook, Dallas Fed says - Reuters
-- source: Reuters
-- published_at: `2026-09-30T16:34:02+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: EU aviation agency issues Saudi airspace advisory after Houthi attacks - Reuters
-- source: Reuters
-- published_at: `2026-09-30T16:09:10+00:00`
 - importance_score: `100`
 - confidence: `medium`
