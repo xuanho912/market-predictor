@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-02T00:00:47.250391+00:00`
+- generated_at: `2026-10-02T01:37:23.616253+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `5`
-- event_detection_confidence: `80`
+- major_event_count: `6`
+- event_detection_confidence: `79`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -46,6 +46,14 @@
 - headline: Next OpenAIs and Anthropics may come straight to retail market. Here's what to know before investing
 - source: CNBC
 - published_at: `2026-10-01T16:50:28+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: EXCLUSIVE: Citing Iran war, US waives rights condition on Egypt military aid - Reuters
+- source: Reuters
+- published_at: `2026-10-01T14:25:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
