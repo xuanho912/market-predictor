@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-02T10:06:07.005791+00:00`
+- generated_at: `2026-10-02T17:54:46.224942+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `11`
-- event_detection_confidence: `74`
+- major_event_count: `10`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `50`
+- confirmation_score: `0`
 
 ## Dashboard Note
 
@@ -24,6 +24,30 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: The sector in the cross hairs of the bond sell-off looks poised for a bounce, says Mike Khouw
+- source: CNBC
+- published_at: `2026-10-02T15:34:28+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran readies harder retaliation if attacked as diplomacy faces long odds - Reuters
+- source: Reuters
+- published_at: `2026-10-02T14:32:10+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: EXCLUSIVE: OPEC+ delays oil capacity review after Iran war disrupts expansion plans, sources say - Reuters
+- source: Reuters
+- published_at: `2026-10-02T12:54:06+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +71,7 @@
 - source: Reuters
 - published_at: `2026-10-02T05:01:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -80,27 +104,3 @@
 - published_at: `2026-10-01T16:50:28+00:00`
 - importance_score: `100`
 - confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: EXCLUSIVE: Citing Iran war, US waives rights condition on Egypt military aid - Reuters
-- source: Reuters
-- published_at: `2026-10-01T14:25:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: SpaceX set to launch Google AI chips into orbit in push toward space-based data centers
-- source: CNBC
-- published_at: `2026-10-01T11:20:15+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran readies harder retaliation if attacked as diplomacy faces long odds - Reuters
-- source: Reuters
-- published_at: `2026-10-01T11:16:00+00:00`
-- importance_score: `100`
-- confidence: `high`
