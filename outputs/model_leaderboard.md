@@ -1,6 +1,6 @@
 # Model Leaderboard
 
-Generated at: `2026-10-02T17:54:57.005130+00:00`
+Generated at: `2026-10-02T23:55:05.027505+00:00`
 Active model: `baseline_v1`
 
 > This is forecast model validation, not execution guidance or portfolio accounting.
@@ -34,22 +34,22 @@ Active model: `baseline_v1`
 ### baseline_v1
 - role: `active_baseline`
 - status: `tracking`
-- total_forecasts: `308`
+- total_forecasts: `312`
 - pending_forecasts: `240`
 - promotion_status: `active_model`
 - reason: `Frozen current production model. Not a claim of high precision or stable alpha.`
 - horizon_metrics:
-  - 3d: `{'completed_count': 296, 'sample_gate': 'stronger_evidence', 'primary_hit_rate': 0.2601, 'secondary_hit_rate': 0.3108, 'primary_vs_secondary_accuracy_spread': -0.0507, 'primary_closer_than_secondary_rate': 0.3885, 'primary_mean_absolute_error': 0.016199, 'primary_median_absolute_error': 0.012624, 'secondary_mean_absolute_error': 0.012394}`
-  - 5d: `{'completed_count': 288, 'sample_gate': 'stronger_evidence', 'primary_hit_rate': 0.2639, 'secondary_hit_rate': 0.2847, 'primary_vs_secondary_accuracy_spread': -0.0208, 'primary_closer_than_secondary_rate': 0.3993, 'primary_mean_absolute_error': 0.021967, 'primary_median_absolute_error': 0.016712, 'secondary_mean_absolute_error': 0.016333}`
-  - 10d: `{'completed_count': 268, 'sample_gate': 'stronger_evidence', 'primary_hit_rate': 0.2313, 'secondary_hit_rate': 0.3284, 'primary_vs_secondary_accuracy_spread': -0.097, 'primary_closer_than_secondary_rate': 0.3172, 'primary_mean_absolute_error': 0.033256, 'primary_median_absolute_error': 0.027639, 'secondary_mean_absolute_error': 0.021867}`
-  - 20d: `{'completed_count': 228, 'sample_gate': 'stronger_evidence', 'primary_hit_rate': 0.136, 'secondary_hit_rate': 0.2807, 'primary_vs_secondary_accuracy_spread': -0.1447, 'primary_closer_than_secondary_rate': 0.2763, 'primary_mean_absolute_error': 0.060393, 'primary_median_absolute_error': 0.05661, 'secondary_mean_absolute_error': 0.03866}`
-  - 60d: `{'completed_count': 68, 'sample_gate': 'moderate_evidence', 'primary_hit_rate': 0.1176, 'secondary_hit_rate': 0.2794, 'primary_vs_secondary_accuracy_spread': -0.1618, 'primary_closer_than_secondary_rate': 0.3971, 'primary_mean_absolute_error': 0.073271, 'primary_median_absolute_error': 0.050587, 'secondary_mean_absolute_error': 0.047355}`
+  - 3d: `{'completed_count': 300, 'sample_gate': 'stronger_evidence', 'primary_hit_rate': 0.26, 'secondary_hit_rate': 0.31, 'primary_vs_secondary_accuracy_spread': -0.05, 'primary_closer_than_secondary_rate': 0.39, 'primary_mean_absolute_error': 0.016262, 'primary_median_absolute_error': 0.012757, 'secondary_mean_absolute_error': 0.012423}`
+  - 5d: `{'completed_count': 292, 'sample_gate': 'stronger_evidence', 'primary_hit_rate': 0.2637, 'secondary_hit_rate': 0.2842, 'primary_vs_secondary_accuracy_spread': -0.0205, 'primary_closer_than_secondary_rate': 0.3973, 'primary_mean_absolute_error': 0.02205, 'primary_median_absolute_error': 0.016989, 'secondary_mean_absolute_error': 0.016282}`
+  - 10d: `{'completed_count': 272, 'sample_gate': 'stronger_evidence', 'primary_hit_rate': 0.2316, 'secondary_hit_rate': 0.3309, 'primary_vs_secondary_accuracy_spread': -0.0993, 'primary_closer_than_secondary_rate': 0.3162, 'primary_mean_absolute_error': 0.03332, 'primary_median_absolute_error': 0.027676, 'secondary_mean_absolute_error': 0.021778}`
+  - 20d: `{'completed_count': 232, 'sample_gate': 'stronger_evidence', 'primary_hit_rate': 0.1379, 'secondary_hit_rate': 0.2759, 'primary_vs_secondary_accuracy_spread': -0.1379, 'primary_closer_than_secondary_rate': 0.2845, 'primary_mean_absolute_error': 0.059922, 'primary_median_absolute_error': 0.055559, 'secondary_mean_absolute_error': 0.039082}`
+  - 60d: `{'completed_count': 72, 'sample_gate': 'moderate_evidence', 'primary_hit_rate': 0.125, 'secondary_hit_rate': 0.2778, 'primary_vs_secondary_accuracy_spread': -0.1528, 'primary_closer_than_secondary_rate': 0.3889, 'primary_mean_absolute_error': 0.072418, 'primary_median_absolute_error': 0.050587, 'secondary_mean_absolute_error': 0.047311}`
 
 ### challenger_v2_error_learning
 - role: `shadow_challenger`
 - status: `tracking`
-- total_forecasts: `292`
-- pending_forecasts: `292`
+- total_forecasts: `296`
+- pending_forecasts: `296`
 - promotion_status: `insufficient_forward_evidence`
 - reason: `Forward samples have not met promotion gates.`
 - horizon_metrics:
@@ -62,8 +62,8 @@ Active model: `baseline_v1`
 ### challenger_v2_event_reaction_overlay
 - role: `shadow_challenger`
 - status: `tracking`
-- total_forecasts: `256`
-- pending_forecasts: `256`
+- total_forecasts: `260`
+- pending_forecasts: `260`
 - promotion_status: `insufficient_forward_evidence`
 - reason: `Forward samples have not met promotion gates.`
 - horizon_metrics:
@@ -76,8 +76,8 @@ Active model: `baseline_v1`
 ### challenger_v2_options_flow
 - role: `shadow_challenger`
 - status: `tracking`
-- total_forecasts: `308`
-- pending_forecasts: `308`
+- total_forecasts: `312`
+- pending_forecasts: `312`
 - promotion_status: `insufficient_forward_evidence`
 - reason: `Forward samples have not met promotion gates.`
 - horizon_metrics:
