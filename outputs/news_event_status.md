@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-02T02:10:43.681315+00:00`
+- generated_at: `2026-10-02T07:04:24.977143+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
-- event_detection_confidence: `78`
+- major_event_count: `10`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,6 +27,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Foiled flydubai attack clouds regional airline revival - Reuters
+- source: Reuters
+- published_at: `2026-10-02T05:01:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: US sanctions target Iran's auto, rail sectors as blockade chokes ship lanes - Reuters
 - source: Reuters
 - published_at: `2026-10-01T20:52:13+00:00`
@@ -43,11 +51,19 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Saudi-led coalition says Houthis attacked power station for Prophet's Mosque in Medina - Reuters
+- source: Reuters
+- published_at: `2026-10-01T16:58:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Next OpenAIs and Anthropics may come straight to retail market. Here's what to know before investing
 - source: CNBC
 - published_at: `2026-10-01T16:50:28+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,15 +71,7 @@
 - source: Reuters
 - published_at: `2026-10-01T14:25:00+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran readies harder retaliation if attacked as diplomacy faces long odds - Reuters
-- source: Reuters
-- published_at: `2026-10-01T11:22:08+00:00`
-- importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -71,4 +79,28 @@
 - source: CNBC
 - published_at: `2026-10-01T11:20:15+00:00`
 - importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran readies harder retaliation if attacked as diplomacy faces long odds - Reuters
+- source: Reuters
+- published_at: `2026-10-01T11:16:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Paramount wraps up $52-billion debt sale to fund Warner buy-out
+- source: Bloomberg
+- published_at: `2026-10-01T03:46:21+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### fed_hawkish / risk_off
+
+- headline: India’s $133-billion cash deluge puts RBI on hawkish path
+- source: Bloomberg
+- published_at: `2026-10-01T06:41:12+00:00`
+- importance_score: `83`
 - confidence: `medium`
