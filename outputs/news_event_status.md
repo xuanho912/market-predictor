@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-03T09:27:36.740473+00:00`
+- generated_at: `2026-10-03T16:21:07.708833+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
-- event_detection_confidence: `69`
+- major_event_count: `9`
+- event_detection_confidence: `68`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,22 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Aboard the USS George Washington, young sailors adjust to war with Iran - Reuters
+- source: Reuters
+- published_at: `2026-10-03T10:31:43+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### fed_dovish / risk_on
+
+- headline: Private capital is reshaping Hollywood moviemaking
+- source: CNBC
+- published_at: `2026-10-03T12:00:01+00:00`
+- importance_score: `86`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -51,6 +67,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Why renewed fighting in Ethiopia's Tigray risks a regional war - Reuters
+- source: Reuters
+- published_at: `2026-10-02T08:02:33+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: September LNG shipments through Hormuz hit highest since start of US-Iran war - Reuters
 - source: Reuters
 - published_at: `2026-10-02T07:47:58+00:00`
@@ -71,12 +95,4 @@
 - source: Reuters
 - published_at: `2026-10-02T05:01:00+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US sanctions target Iran's auto, rail sectors as blockade chokes ship lanes - Reuters
-- source: Reuters
-- published_at: `2026-10-01T20:52:13+00:00`
-- importance_score: `99`
 - confidence: `medium`
