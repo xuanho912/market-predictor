@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-03T01:55:16.956469+00:00`
+- generated_at: `2026-10-03T06:37:03.481770+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `10`
-- event_detection_confidence: `70`
+- major_event_count: `9`
+- event_detection_confidence: `68`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -31,7 +31,7 @@
 - source: CNBC
 - published_at: `2026-10-02T15:34:28+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -94,13 +94,5 @@
 - headline: Saudi-led coalition says Houthis attacked power station for Prophet's Mosque in Medina - Reuters
 - source: Reuters
 - published_at: `2026-10-01T16:58:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Next OpenAIs and Anthropics may come straight to retail market. Here's what to know before investing
-- source: CNBC
-- published_at: `2026-10-01T16:50:28+00:00`
-- importance_score: `100`
+- importance_score: `99`
 - confidence: `medium`

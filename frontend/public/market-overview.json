@@ -5,11 +5,11 @@
     "affected_symbols": [],
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
-    "current_date": "2026-10-02",
-    "current_time_us_eastern": "2026-10-02T21:55:26.445267-04:00",
-    "data_freshness_status": "fresh",
+    "current_date": "2026-10-03",
+    "current_time_us_eastern": "2026-10-03T02:37:13.932023-04:00",
+    "data_freshness_status": "market_closed",
     "expected_latest_trading_date": "2026-10-02",
-    "generated_at": "2026-10-03T01:55:26.445267+00:00",
+    "generated_at": "2026-10-03T06:37:13.932023+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -18,7 +18,7 @@
       "Synthetic data is never allowed to create a live forecast signal."
     ],
     "is_latest_trading_day": true,
-    "is_today_us_market_trading_day": true,
+    "is_today_us_market_trading_day": false,
     "last_successful_core_market_update": "2026-10-02",
     "last_successful_update": "2026-10-02",
     "latest_confirmed_market_date": "2026-10-02",
@@ -940,7 +940,7 @@
     },
     "stale_days": 0,
     "version": "data_freshness_gate_v3",
-    "warning_message": "核心行情已更新至最新应有交易日 2026-10-02。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。"
+    "warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-10-02 的数据。 当前美东时间 2026-10-03 02:37。"
   },
   "data_quality_summary": {
     "average_breadth_quality_score": 67.0,
@@ -964,7 +964,7 @@
     "can_append_forecast_record": true,
     "data_completeness_score": 87.0,
     "data_completeness_score_before_news_event": 85.0,
-    "data_freshness_status": "fresh",
+    "data_freshness_status": "market_closed",
     "data_source_status": "real_core_with_proxies",
     "expected_latest_trading_date": "2026-10-02",
     "fallback_used": true,
@@ -1048,17 +1048,17 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "HY_OAS",
       "IG_OAS",
       "DGS10",
+      "DGS3MO",
+      "HY_OAS",
       "DGS2",
       "BAA_SPREAD",
-      "DGS3MO",
-      "DFII10",
       "RECESSION",
+      "DFII10",
       "FINANCIAL_STRESS"
     ],
-    "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-10-02。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
+    "freshness_warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-10-02 的数据。 当前美东时间 2026-10-03 02:37。",
     "gamma_available": false,
     "gamma_exposure_available": false,
     "latest_confirmed_market_date": "2026-10-02",
@@ -1087,11 +1087,11 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 70,
+      "event_detection_confidence": 68,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-10-03T01:55:16.956469+00:00",
-      "major_event_count": 10,
+      "last_update": "2026-10-03T06:37:03.481770+00:00",
+      "major_event_count": 9,
       "missing_reason": null,
       "news_direction": "risk_off",
       "news_event_partial": false,
@@ -1102,7 +1102,7 @@
     },
     "news_event_available": true,
     "news_event_event_risk_level": "high",
-    "news_event_major_count": 10,
+    "news_event_major_count": 9,
     "news_event_missing_reason": null,
     "news_event_narrative": "geopolitics_escalation_risk_off",
     "news_event_partial": false,
@@ -1321,7 +1321,7 @@
       "status": "failed"
     },
     "event_risk_level": "high",
-    "major_event_count": 10,
+    "major_event_count": 9,
     "market_narrative": {
       "affected_scenarios": [
         "bearish_path"
@@ -1342,7 +1342,7 @@
       "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
       "supporting_headlines": [
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -1421,7 +1421,7 @@
       "direction": "supports_risk_expansion",
       "event_risk_level": "high",
       "macro_event_risk_flag": false,
-      "major_event_count": 10,
+      "major_event_count": 9,
       "not_a_trading_signal": true,
       "price_reaction_confirmed": false,
       "symbols": {
@@ -1575,7 +1575,7 @@
           "美元走强"
         ],
         "hyg_lqd_1d_relative_return": 0.0021,
-        "oil_proxy_1d_return": -0.0175,
+        "oil_proxy_1d_return": -0.0183,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -3092,10 +3092,10 @@
           "news_risk_score": 0.25,
           "top_headlines": [
             "Photos of the week - Reuters",
+            "G7 countries agree on release of diesel and oil stocks after US pressure - Reuters",
             "Two Iranians charged in UK over alleged terrorism plot targeting Jewish community - Reuters",
             "What do we know about flydubai flight 1073? - Reuters",
-            "Israeli officials to question co-pilot of flydubai flight, source says - Reuters",
-            "EXCLUSIVE: G7 countries agree on release of diesel and oil stocks after US pressure - reuters.com"
+            "Israeli officials to question co-pilot of flydubai flight, source says - Reuters"
           ]
         },
         "price": {
@@ -3984,15 +3984,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 75,
+            "freshness_score": 64,
             "headline": "The sector in the cross hairs of the bond sell-off looks poised for a bounce, says Mike Khouw",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4012,46 +4012,19 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 93,
+            "confidence_score": 90,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 73,
+            "freshness_score": 61,
             "headline": "Iran readies harder retaliation if attacked as diplomacy faces long odds - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-10-02T14:32:10+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 74,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 69,
-            "headline": "EXCLUSIVE: OPEC+ delays oil capacity review after Iran war disrupts expansion plans, sources say - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-02T12:54:06+00:00",
             "source": "Reuters"
           },
           {
@@ -4074,6 +4047,33 @@
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
             "freshness_score": 57,
+            "headline": "EXCLUSIVE: OPEC+ delays oil capacity review after Iran war disrupts expansion plans, sources say - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-02T12:54:06+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 68,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 45,
             "headline": "September LNG shipments through Hormuz hit highest since start of US-Iran war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4093,14 +4093,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 70,
+            "confidence_score": 67,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 53,
+            "freshness_score": 42,
             "headline": "Yemen carried out 20 strikes on Houthi targets in Taiz province, spokesperson says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4120,14 +4120,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 69,
+            "confidence_score": 66,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 50,
+            "freshness_score": 39,
             "headline": "Foiled flydubai attack clouds regional airline revival - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4156,7 +4156,7 @@
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -4280,7 +4280,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": 0.0021,
-            "oil_proxy_1d_return": -0.0175,
+            "oil_proxy_1d_return": -0.0183,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -5572,10 +5572,10 @@
           "news_risk_score": 0.25,
           "top_headlines": [
             "Photos of the week - Reuters",
+            "G7 countries agree on release of diesel and oil stocks after US pressure - Reuters",
             "Two Iranians charged in UK over alleged terrorism plot targeting Jewish community - Reuters",
             "What do we know about flydubai flight 1073? - Reuters",
-            "Israeli officials to question co-pilot of flydubai flight, source says - Reuters",
-            "EXCLUSIVE: G7 countries agree on release of diesel and oil stocks after US pressure - reuters.com"
+            "Israeli officials to question co-pilot of flydubai flight, source says - Reuters"
           ]
         },
         "price": {
@@ -6495,15 +6495,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 75,
+            "freshness_score": 64,
             "headline": "The sector in the cross hairs of the bond sell-off looks poised for a bounce, says Mike Khouw",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6523,46 +6523,19 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 93,
+            "confidence_score": 90,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 73,
+            "freshness_score": 61,
             "headline": "Iran readies harder retaliation if attacked as diplomacy faces long odds - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-10-02T14:32:10+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 74,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 69,
-            "headline": "EXCLUSIVE: OPEC+ delays oil capacity review after Iran war disrupts expansion plans, sources say - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-02T12:54:06+00:00",
             "source": "Reuters"
           },
           {
@@ -6585,6 +6558,33 @@
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
             "freshness_score": 57,
+            "headline": "EXCLUSIVE: OPEC+ delays oil capacity review after Iran war disrupts expansion plans, sources say - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-02T12:54:06+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 68,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 45,
             "headline": "September LNG shipments through Hormuz hit highest since start of US-Iran war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6604,14 +6604,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 70,
+            "confidence_score": 67,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 53,
+            "freshness_score": 42,
             "headline": "Yemen carried out 20 strikes on Houthi targets in Taiz province, spokesperson says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6631,14 +6631,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 69,
+            "confidence_score": 66,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 50,
+            "freshness_score": 39,
             "headline": "Foiled flydubai attack clouds regional airline revival - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6667,7 +6667,7 @@
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -6791,7 +6791,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": 0.0021,
-            "oil_proxy_1d_return": -0.0175,
+            "oil_proxy_1d_return": -0.0183,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -8089,10 +8089,10 @@
           "news_risk_score": 0.25,
           "top_headlines": [
             "Photos of the week - Reuters",
+            "G7 countries agree on release of diesel and oil stocks after US pressure - Reuters",
             "Two Iranians charged in UK over alleged terrorism plot targeting Jewish community - Reuters",
             "What do we know about flydubai flight 1073? - Reuters",
-            "Israeli officials to question co-pilot of flydubai flight, source says - Reuters",
-            "EXCLUSIVE: G7 countries agree on release of diesel and oil stocks after US pressure - reuters.com"
+            "Israeli officials to question co-pilot of flydubai flight, source says - Reuters"
           ]
         },
         "price": {
@@ -8967,15 +8967,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 75,
+            "freshness_score": 64,
             "headline": "The sector in the cross hairs of the bond sell-off looks poised for a bounce, says Mike Khouw",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -8995,46 +8995,19 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 93,
+            "confidence_score": 90,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 73,
+            "freshness_score": 61,
             "headline": "Iran readies harder retaliation if attacked as diplomacy faces long odds - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-10-02T14:32:10+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 74,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 69,
-            "headline": "EXCLUSIVE: OPEC+ delays oil capacity review after Iran war disrupts expansion plans, sources say - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-02T12:54:06+00:00",
             "source": "Reuters"
           },
           {
@@ -9057,6 +9030,33 @@
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
             "freshness_score": 57,
+            "headline": "EXCLUSIVE: OPEC+ delays oil capacity review after Iran war disrupts expansion plans, sources say - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-02T12:54:06+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 68,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 45,
             "headline": "September LNG shipments through Hormuz hit highest since start of US-Iran war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9076,14 +9076,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 70,
+            "confidence_score": 67,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 53,
+            "freshness_score": 42,
             "headline": "Yemen carried out 20 strikes on Houthi targets in Taiz province, spokesperson says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9103,14 +9103,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 69,
+            "confidence_score": 66,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 50,
+            "freshness_score": 39,
             "headline": "Foiled flydubai attack clouds regional airline revival - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9139,7 +9139,7 @@
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -9263,7 +9263,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": 0.0021,
-            "oil_proxy_1d_return": -0.0175,
+            "oil_proxy_1d_return": -0.0183,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -10554,10 +10554,10 @@
           "news_risk_score": 0.25,
           "top_headlines": [
             "Photos of the week - Reuters",
+            "G7 countries agree on release of diesel and oil stocks after US pressure - Reuters",
             "Two Iranians charged in UK over alleged terrorism plot targeting Jewish community - Reuters",
             "What do we know about flydubai flight 1073? - Reuters",
-            "Israeli officials to question co-pilot of flydubai flight, source says - Reuters",
-            "EXCLUSIVE: G7 countries agree on release of diesel and oil stocks after US pressure - reuters.com"
+            "Israeli officials to question co-pilot of flydubai flight, source says - Reuters"
           ]
         },
         "price": {
@@ -11446,15 +11446,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 75,
+            "freshness_score": 64,
             "headline": "The sector in the cross hairs of the bond sell-off looks poised for a bounce, says Mike Khouw",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11474,46 +11474,19 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 93,
+            "confidence_score": 90,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 73,
+            "freshness_score": 61,
             "headline": "Iran readies harder retaliation if attacked as diplomacy faces long odds - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-10-02T14:32:10+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 74,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 69,
-            "headline": "EXCLUSIVE: OPEC+ delays oil capacity review after Iran war disrupts expansion plans, sources say - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-02T12:54:06+00:00",
             "source": "Reuters"
           },
           {
@@ -11536,6 +11509,33 @@
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
             "freshness_score": 57,
+            "headline": "EXCLUSIVE: OPEC+ delays oil capacity review after Iran war disrupts expansion plans, sources say - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-02T12:54:06+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 68,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 45,
             "headline": "September LNG shipments through Hormuz hit highest since start of US-Iran war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11555,14 +11555,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 70,
+            "confidence_score": 67,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 53,
+            "freshness_score": 42,
             "headline": "Yemen carried out 20 strikes on Houthi targets in Taiz province, spokesperson says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11582,14 +11582,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 69,
+            "confidence_score": 66,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 50,
+            "freshness_score": 39,
             "headline": "Foiled flydubai attack clouds regional airline revival - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11618,7 +11618,7 @@
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -11742,7 +11742,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": 0.0021,
-            "oil_proxy_1d_return": -0.0175,
+            "oil_proxy_1d_return": -0.0183,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
