@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-10-03T01:35:20.629089+00:00`
+Generated at: `2026-10-03T01:55:27.313316+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -22,16 +22,16 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - status: `available`
 - current_price: `233.95`
 - market_context: `risk_off_pressure`
-- primary: `stock_failed_bounce` / `26.6%`
-- secondary: `stock_downside_continuation` / `19.1%`
-- risk: `stock_event_risk` / `14.5%`
-- stock_confluence_score: `44.24` / `weak`
-- stock_alpha_score_v1: `40.5` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `52.6%`
-- 60d_expected_return: `-0.6%`
-- risk_reward_ratio: `0.49`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `34.57`
-- historical_analog_support: `supportive` / samples `10`
+- primary: `stock_failed_bounce` / `25.2%`
+- secondary: `stock_downside_continuation` / `18.1%`
+- risk: `stock_event_risk` / `13.7%`
+- stock_confluence_score: `47.75` / `mixed`
+- stock_alpha_score_v1: `46.0` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `54.8%`
+- 60d_expected_return: `-0.4%`
+- risk_reward_ratio: `0.57`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `25.14`
+- historical_analog_support: `weak` / samples `10`
 - validation_status: `not_yet_validated`
 
 - primary_confirmation_level: `237.88`
@@ -54,13 +54,13 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `27.7%`
 - secondary: `stock_downside_continuation` / `22.2%`
 - risk: `stock_event_risk` / `14.0%`
-- stock_confluence_score: `36.4` / `weak`
-- stock_alpha_score_v1: `7.5` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `36.2%`
+- stock_confluence_score: `39.59` / `weak`
+- stock_alpha_score_v1: `10.5` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `37.4%`
 - 60d_expected_return: `-1.2%`
 - risk_reward_ratio: `0.42`
-- strongest_alert: `Stock Failed Bounce Risk` / `WATCH` / `39.06`
-- historical_analog_support: `supportive` / samples `10`
+- strongest_alert: `Relative Weakness Alert` / `NO_ALERT` / `35.2`
+- historical_analog_support: `weak` / samples `10`
 - validation_status: `not_yet_validated`
 
 - primary_confirmation_level: `386.83`
