@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-03T06:37:03.481770+00:00`
+- generated_at: `2026-10-03T09:27:36.740473+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
-- event_detection_confidence: `68`
+- major_event_count: `7`
+- event_detection_confidence: `69`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -78,21 +78,5 @@
 - headline: US sanctions target Iran's auto, rail sectors as blockade chokes ship lanes - Reuters
 - source: Reuters
 - published_at: `2026-10-01T20:52:13+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Boeing engineers and technical workers approve new contract, avoiding strike
-- source: CNBC
-- published_at: `2026-10-01T19:36:58+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Saudi-led coalition says Houthis attacked power station for Prophet's Mosque in Medina - Reuters
-- source: Reuters
-- published_at: `2026-10-01T16:58:00+00:00`
 - importance_score: `99`
 - confidence: `medium`
