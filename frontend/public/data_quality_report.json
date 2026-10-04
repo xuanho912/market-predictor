@@ -70,7 +70,7 @@
       "expected_items": 5,
       "fallback_used": false,
       "headline_count": 40,
-      "major_event_count": 9,
+      "major_event_count": 3,
       "proxy_used": false,
       "real_data": true,
       "status": "available"
@@ -112,7 +112,7 @@
       "status": "available"
     }
   },
-  "generated_at": "2026-10-03T16:21:07.704680+00:00",
+  "generated_at": "2026-10-04T16:53:12.224825+00:00",
   "notes": [
     "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
     "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -614,7 +614,7 @@
       "detail": "True constituent breadth when status is available/stale/partial; stale flags must be respected.",
       "fallback_used": false,
       "is_proxy": false,
-      "latest_date": "2026-09-29",
+      "latest_date": "2026-10-02",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -662,7 +662,7 @@
       "detail": "True constituent breadth when status is available/stale/partial; stale flags must be respected.",
       "fallback_used": false,
       "is_proxy": false,
-      "latest_date": "2026-09-29",
+      "latest_date": "2026-10-02",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -1024,10 +1024,10 @@
       "symbol": "macro_event_calendar"
     },
     "news_event_provider": {
-      "event_detection_confidence": 68,
+      "event_detection_confidence": 63,
       "fallback_used": false,
       "latest_date": "2026-10-02",
-      "major_event_count": 9,
+      "major_event_count": 3,
       "missing_data": false,
       "missing_reason": null,
       "narrative": "geopolitics_escalation_risk_off",
@@ -1138,7 +1138,7 @@
     "average_flow_quality_score": 100.0,
     "breadth_impact_summary": {
       "breadth_conflicts_primary_count": 4,
-      "breadth_supports_primary_count": 0,
+      "breadth_supports_primary_count": 1,
       "changed_symbol_count": 4,
       "conclusion": "breadth improves information quality, not proven alpha yet.",
       "data_completeness_with_true_breadth": 85,
@@ -1175,17 +1175,17 @@
       "symbols": {
         "DIA": {
           "edge_status_changed": false,
-          "edge_status_with_fred": "WEAK_EDGE",
-          "edge_status_without_fred": "WEAK_EDGE",
-          "failed_bounce_delta": 0.0579,
-          "failed_bounce_with_fred": 0.586,
-          "failed_bounce_without_fred": 0.5281,
-          "primary_scenario_changed": false,
+          "edge_status_with_fred": "MODERATE_EDGE",
+          "edge_status_without_fred": "MODERATE_EDGE",
+          "failed_bounce_delta": 0.0513,
+          "failed_bounce_with_fred": 0.5421,
+          "failed_bounce_without_fred": 0.4908,
+          "primary_scenario_changed": true,
           "primary_scenario_with_fred": "bearish_path",
-          "primary_scenario_without_fred": "bearish_path",
+          "primary_scenario_without_fred": "bounce_path",
           "risk_expansion_delta": 0.1384,
-          "risk_expansion_with_fred": 0.515,
-          "risk_expansion_without_fred": 0.3766
+          "risk_expansion_with_fred": 0.4934,
+          "risk_expansion_without_fred": 0.355
         },
         "IWM": {
           "edge_status_changed": false,
@@ -1198,8 +1198,8 @@
           "primary_scenario_with_fred": "bearish_path",
           "primary_scenario_without_fred": "bearish_path",
           "risk_expansion_delta": 0.1384,
-          "risk_expansion_with_fred": 0.5344,
-          "risk_expansion_without_fred": 0.396
+          "risk_expansion_with_fred": 0.5323,
+          "risk_expansion_without_fred": 0.3939
         },
         "QQQ": {
           "edge_status_changed": false,
@@ -1212,22 +1212,22 @@
           "primary_scenario_with_fred": "bearish_path",
           "primary_scenario_without_fred": "bearish_path",
           "risk_expansion_delta": 0.1384,
-          "risk_expansion_with_fred": 0.4891,
-          "risk_expansion_without_fred": 0.3507
+          "risk_expansion_with_fred": 0.487,
+          "risk_expansion_without_fred": 0.3486
         },
         "SPY": {
           "edge_status_changed": false,
           "edge_status_with_fred": "WEAK_EDGE",
           "edge_status_without_fred": "WEAK_EDGE",
-          "failed_bounce_delta": 0.058,
-          "failed_bounce_with_fred": 0.6256,
-          "failed_bounce_without_fred": 0.5676,
+          "failed_bounce_delta": 0.0579,
+          "failed_bounce_with_fred": 0.6191,
+          "failed_bounce_without_fred": 0.5612,
           "primary_scenario_changed": false,
           "primary_scenario_with_fred": "bearish_path",
           "primary_scenario_without_fred": "bearish_path",
           "risk_expansion_delta": 0.1384,
-          "risk_expansion_with_fred": 0.5215,
-          "risk_expansion_without_fred": 0.3831
+          "risk_expansion_with_fred": 0.5142,
+          "risk_expansion_without_fred": 0.3758
         }
       },
       "target_85_met_with_fred": true
@@ -1239,17 +1239,17 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "IG_OAS",
-      "DGS3MO",
       "HY_OAS",
-      "DGS10",
-      "BAA_SPREAD",
-      "DGS2",
-      "FINANCIAL_STRESS",
       "DFII10",
+      "DGS2",
+      "BAA_SPREAD",
+      "IG_OAS",
+      "DGS10",
+      "DGS3MO",
+      "FINANCIAL_STRESS",
       "RECESSION"
     ],
-    "freshness_warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-10-02 的数据。 当前美东时间 2026-10-03 12:21。",
+    "freshness_warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-10-02 的数据。 当前美东时间 2026-10-04 12:53。",
     "gamma_available": false,
     "gamma_exposure_available": false,
     "latest_confirmed_market_date": "2026-10-02",
@@ -1278,11 +1278,11 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 68,
+      "event_detection_confidence": 63,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-10-03T16:21:07.708833+00:00",
-      "major_event_count": 9,
+      "last_update": "2026-10-04T16:53:12.232098+00:00",
+      "major_event_count": 3,
       "missing_reason": null,
       "news_direction": "risk_off",
       "news_event_partial": false,
@@ -1293,7 +1293,7 @@
     },
     "news_event_available": true,
     "news_event_event_risk_level": "high",
-    "news_event_major_count": 9,
+    "news_event_major_count": 3,
     "news_event_missing_reason": null,
     "news_event_narrative": "geopolitics_escalation_risk_off",
     "news_event_partial": false,

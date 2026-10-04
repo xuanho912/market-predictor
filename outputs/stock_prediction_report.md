@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-10-03T16:21:18.761623+00:00`
+Generated at: `2026-10-04T16:53:22.632642+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -25,9 +25,9 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `25.2%`
 - secondary: `stock_downside_continuation` / `18.1%`
 - risk: `stock_event_risk` / `13.7%`
-- stock_confluence_score: `47.93` / `mixed`
-- stock_alpha_score_v1: `48.0` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `55.6%`
+- stock_confluence_score: `47.75` / `mixed`
+- stock_alpha_score_v1: `46.0` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `54.8%`
 - 60d_expected_return: `-0.4%`
 - risk_reward_ratio: `0.57`
 - strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `25.14`
@@ -54,7 +54,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `27.7%`
 - secondary: `stock_downside_continuation` / `22.2%`
 - risk: `stock_event_risk` / `14.0%`
-- stock_confluence_score: `39.59` / `weak`
+- stock_confluence_score: `37.65` / `weak`
 - stock_alpha_score_v1: `10.5` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `37.4%`
 - 60d_expected_return: `-1.2%`
@@ -83,7 +83,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_downside_continuation` / `30.8%`
 - secondary: `stock_failed_bounce` / `23.7%`
 - risk: `stock_event_risk` / `10.5%`
-- stock_confluence_score: `23.31` / `weak`
+- stock_confluence_score: `23.13` / `weak`
 - stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `25.3%`
 - 60d_expected_return: `-3.0%`
@@ -112,7 +112,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_downside_continuation` / `27.5%`
 - secondary: `stock_failed_bounce` / `25.1%`
 - risk: `stock_event_risk` / `10.3%`
-- stock_confluence_score: `34.38` / `weak`
+- stock_confluence_score: `34.19` / `weak`
 - stock_alpha_score_v1: `23.5` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `40.0%`
 - 60d_expected_return: `-1.5%`
