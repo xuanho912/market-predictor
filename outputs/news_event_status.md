@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-04T16:53:12.232098+00:00`
+- generated_at: `2026-10-05T20:42:54.030800+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `3`
-- event_detection_confidence: `63`
+- major_event_count: `1`
+- event_detection_confidence: `80`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
-- narrative_strength: `67`
+- narrative_strength: `33`
 - price_reaction_confirmed: `False`
-- confirmation_score: `0`
+- confirmation_score: `50`
 
 ## Dashboard Note
 
@@ -27,24 +27,8 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Portugal prosecutors probe legality of US use of Lajes base in Iran war - Reuters
-- source: Reuters
-- published_at: `2026-10-03T13:55:15+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Aboard the USS George Washington, young sailors adjust to war with Iran - Reuters
-- source: Reuters
-- published_at: `2026-10-03T10:31:43+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### fed_dovish / risk_on
-
-- headline: Private capital is reshaping Hollywood moviemaking
+- headline: Wall Street rewards Microsoft's AI pivot. A longtime skeptic says it's just the beginning
 - source: CNBC
-- published_at: `2026-10-03T12:00:01+00:00`
-- importance_score: `80`
-- confidence: `medium`
+- published_at: `2026-10-05T18:43:12+00:00`
+- importance_score: `100`
+- confidence: `high`

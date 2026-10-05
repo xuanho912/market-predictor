@@ -1,6 +1,6 @@
 # Options / Volatility Structure Status
 
-Generated at: `2026-10-04T16:53:04.260575+00:00`
+Generated at: `2026-10-05T20:42:37.793730+00:00`
 
 ## Summary
 
@@ -18,29 +18,29 @@ Generated at: `2026-10-04T16:53:04.260575+00:00`
 
 ## Market Snapshot
 
-- VIX: `15.3100004196167`
-- VIX9D: `12.0600004196167`
-- VIX3M: `18.010000228881836`
-- VIX6M: `20.149999618530273`
-- VVIX: `87.0199966430664`
+- VIX: `15.520000457763672`
+- VIX9D: `12.850000381469727`
+- VIX3M: `18.0`
+- VIX6M: `20.06999969482422`
+- VVIX: `85.45999908447266`
 - SKEW: `144.8800048828125`
 - term_structure_state: `contango`
-- volatility_reversal_score: `0.5`
-- panic_release_score: `0.33`
-- tail_risk_score: `0.2674`
-- option_stress_score: `0.2675`
-- failed_bounce_options_risk: `0.2616`
+- volatility_reversal_score: `0.5917`
+- panic_release_score: `0.4086`
+- tail_risk_score: `0.2493`
+- option_stress_score: `0.1456`
+- failed_bounce_options_risk: `0.1799`
 
 ## Sources
 
 | symbol | status | latest_date | latest_value | source | real_data | stale |
 |---|---|---|---:|---|---:|---:|
 | ^SKEW | available | 2026-10-02 | 144.8800048828125 | yahoo-chart | True | False |
-| ^VIX | available | 2026-10-02 | 15.3100004196167 | yahoo-chart | True | False |
-| ^VIX3M | available | 2026-10-02 | 18.010000228881836 | yahoo-chart | True | False |
-| ^VIX6M | available | 2026-10-02 | 20.149999618530273 | yahoo-chart | True | False |
-| ^VIX9D | available | 2026-10-02 | 12.0600004196167 | yahoo-chart | True | False |
-| ^VVIX | available | 2026-10-02 | 87.0199966430664 | yahoo-chart | True | False |
+| ^VIX | available | 2026-10-05 | 15.520000457763672 | yahoo-chart | True | False |
+| ^VIX3M | available | 2026-10-05 | 18.0 | yahoo-chart | True | False |
+| ^VIX6M | available | 2026-10-05 | 20.06999969482422 | yahoo-chart | True | False |
+| ^VIX9D | available | 2026-10-05 | 12.850000381469727 | yahoo-chart | True | False |
+| ^VVIX | available | 2026-10-05 | 85.45999908447266 | yahoo-chart | True | False |
 
 ## Guardrails
 
