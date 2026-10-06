@@ -1,14 +1,14 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-06T10:48:36.175071+00:00`
+- generated_at: `2026-10-06T18:25:45.659517+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `2`
-- event_detection_confidence: `69`
+- major_event_count: `5`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
-- narrative_strength: `67`
+- narrative_strength: `100`
 - price_reaction_confirmed: `False`
 - confirmation_score: `25`
 
@@ -27,16 +27,40 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Israeli strikes kill two people in Gaza, medics say - Reuters
+- source: Reuters
+- published_at: `2026-10-06T10:12:27+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: European shippers, forwarders to deliver strong Q3 on resilient demand for pricey freight - Reuters
+- source: Reuters
+- published_at: `2026-10-06T07:16:09+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Gulf oil flows rise to average 81% of pre-war rate in September, data shows - Reuters
+- source: Reuters
+- published_at: `2026-10-06T03:03:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Wall Street rewards Microsoft's AI pivot. A longtime skeptic says it's just the beginning
 - source: CNBC
 - published_at: `2026-10-05T18:43:12+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
+### market_microstructure_event / mixed
 
-- headline: Schneider Electric expands in AI with $22.6 billion PTC purchase
-- source: Bloomberg
-- published_at: `2026-10-05T08:19:24+00:00`
-- importance_score: `100`
+- headline: This startup wants to reduce liquidation risk from margin calls on prediction markets
+- source: CNBC
+- published_at: `2026-10-06T13:01:20+00:00`
+- importance_score: `72`
 - confidence: `medium`
