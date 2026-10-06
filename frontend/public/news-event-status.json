@@ -10,9 +10,9 @@
     "source": "finnhub",
     "status": "failed"
   },
-  "event_detection_confidence": 78,
+  "event_detection_confidence": 77,
   "event_risk_level": "high",
-  "generated_at": "2026-10-06T01:31:01.696495+00:00",
+  "generated_at": "2026-10-06T01:53:22.054613+00:00",
   "limits": [
     "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
     "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
@@ -33,14 +33,14 @@
         "TLT"
       ],
       "confidence": "high",
-      "confidence_score": 78,
+      "confidence_score": 77,
       "detected_event_conditions": [
         "geopolitical_risk_escalation"
       ],
       "event_type": "geopolitical_risk_escalation",
       "expected_horizon": "intraday-5d",
       "expected_market_direction": "risk_off",
-      "freshness_score": 84,
+      "freshness_score": 83,
       "headline": "Wall Street rewards Microsoft's AI pivot. A longtime skeptic says it's just the beginning",
       "importance_score": 100,
       "narrative": "geopolitics_escalation_risk_off",
@@ -93,9 +93,9 @@
     "price_reaction_confirmed": false,
     "symbols": {
       "DIA": {
-        "after_primary_probability": 0.3147,
+        "after_primary_probability": 0.3795,
         "after_primary_scenario": "bearish_path",
-        "before_primary_probability": 0.2992,
+        "before_primary_probability": 0.3656,
         "before_primary_scenario": "bearish_path",
         "confirmation_delta": -2.99,
         "impact": "text_support_unconfirmed",
@@ -119,15 +119,15 @@
           "risk_expansion_predictor": 0.0152,
           "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": 0.0155,
+        "primary_probability_delta": 0.0139,
         "primary_scenario_changed": false,
         "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -2.99 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
       },
       "IWM": {
-        "after_primary_probability": 0.3835,
+        "after_primary_probability": 0.3852,
         "after_primary_scenario": "bearish_path",
-        "before_primary_probability": 0.3697,
+        "before_primary_probability": 0.3715,
         "before_primary_scenario": "bearish_path",
         "confirmation_delta": -2.99,
         "impact": "text_support_unconfirmed",
@@ -151,15 +151,15 @@
           "risk_expansion_predictor": 0.0152,
           "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": 0.0138,
+        "primary_probability_delta": 0.0137,
         "primary_scenario_changed": false,
         "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -2.99 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
       },
       "QQQ": {
-        "after_primary_probability": 0.3022,
+        "after_primary_probability": 0.3119,
         "after_primary_scenario": "bearish_path",
-        "before_primary_probability": 0.2864,
+        "before_primary_probability": 0.2963,
         "before_primary_scenario": "bearish_path",
         "confirmation_delta": -2.99,
         "impact": "text_support_unconfirmed",
@@ -183,18 +183,18 @@
           "risk_expansion_predictor": 0.0152,
           "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": 0.0158,
+        "primary_probability_delta": 0.0156,
         "primary_scenario_changed": false,
         "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -2.99 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
       },
       "SPY": {
-        "after_primary_probability": 0.3117,
-        "after_primary_scenario": "bounce_path",
-        "before_primary_probability": 0.3278,
-        "before_primary_scenario": "bounce_path",
+        "after_primary_probability": 0.3259,
+        "after_primary_scenario": "bearish_path",
+        "before_primary_probability": 0.3107,
+        "before_primary_scenario": "bearish_path",
         "confirmation_delta": -2.99,
-        "impact": "potential_conflict_unconfirmed",
+        "impact": "text_support_unconfirmed",
         "not_a_trading_signal": true,
         "overlay_applied": true,
         "path_overlay": {
@@ -215,7 +215,7 @@
           "risk_expansion_predictor": 0.0152,
           "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": -0.0161,
+        "primary_probability_delta": 0.0152,
         "primary_scenario_changed": false,
         "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -2.99 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
@@ -227,7 +227,7 @@
   "price_reaction_confirmation": {
     "asset_reaction_summary": {
       "avg_equity_1d_return": 0.006,
-      "avg_equity_futures_1d_return": 0.0069,
+      "avg_equity_futures_1d_return": 0.0062,
       "confirmed_checks": [
         "VIX 上升",
         "美元走强"
@@ -243,7 +243,7 @@
         "HYG/LQD 走弱"
       ],
       "hyg_lqd_1d_relative_return": 0.0009,
-      "oil_proxy_1d_return": -0.0197,
+      "oil_proxy_1d_return": -0.0205,
       "oil_proxy_symbols_used": [
         "USO",
         "CL=F"
@@ -270,7 +270,7 @@
       "status": "available"
     },
     "gdelt_public_news": {
-      "error_type": "URLError",
+      "error_type": "HTTPError",
       "source": "gdelt",
       "stale": false,
       "status": "failed"
@@ -336,16 +336,16 @@
         "failed_bounce_risk_higher:needs_price_confirmation",
         "risk_expansion_higher:needs_price_confirmation"
       ],
-      "explanation": "SPY 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-      "impact": "potential_conflict_unconfirmed",
-      "news_conflicts_primary_scenario": true,
-      "news_supports_primary_scenario": false,
-      "primary_scenario": "bounce_path",
-      "risk_scenario": "bearish_path",
+      "explanation": "SPY 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+      "impact": "text_support_unconfirmed",
+      "news_conflicts_primary_scenario": false,
+      "news_supports_primary_scenario": true,
+      "primary_scenario": "bearish_path",
+      "risk_scenario": "analog_average_path",
       "scenario_bias": [
         "bearish_path"
       ],
-      "secondary_scenario": "analog_average_path"
+      "secondary_scenario": "bounce_path"
     }
   },
   "validation_type": "daily",
