@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-06T02:56:36.018866+00:00`
+- generated_at: `2026-10-06T07:38:12.494177+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `1`
-- event_detection_confidence: `77`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `33`
 - price_reaction_confirmed: `False`
-- confirmation_score: `50`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
@@ -31,4 +31,4 @@
 - source: CNBC
 - published_at: `2026-10-05T18:43:12+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`

@@ -1,6 +1,6 @@
 # Historical Replay Benchmark
 
-Generated at: `2026-10-06T02:56:47.190874+00:00`
+Generated at: `2026-10-06T07:38:23.642112+00:00`
 Validation type: `historical_replay`
 Status: `research_evaluation_only_not_forward_validation`
 Sample size: `80`
@@ -115,13 +115,21 @@ Overfit warning: `{'level': 'medium', 'reasons': ['primary path is not closer th
 
 ## Edge Status Performance
 
+### MODERATE_EDGE
+- sample_size: `40`
+- 3d: sample `40`, primary_hit `0.575`, primary_closer `0.475`, primary_mae `0.015765`, avg `-0.005382`, median `-0.003662`
+- 5d: sample `40`, primary_hit `0.525`, primary_closer `0.475`, primary_mae `0.023726`, avg `-0.008607`, median `-0.000992`
+- 10d: sample `40`, primary_hit `0.625`, primary_closer `0.275`, primary_mae `0.036863`, avg `-0.010819`, median `-0.008269`
+- 20d: sample `40`, primary_hit `0.425`, primary_closer `0.275`, primary_mae `0.079428`, avg `-0.003057`, median `0.013981`
+- 60d: sample `40`, primary_hit `0.25`, primary_closer `0.25`, primary_mae `0.092977`, avg `0.009723`, median `0.037427`
+
 ### WEAK_EDGE
-- sample_size: `80`
-- 3d: sample `80`, primary_hit `0.6`, primary_closer `0.45`, primary_mae `0.017592`, avg `-0.007025`, median `-0.004066`
-- 5d: sample `80`, primary_hit `0.575`, primary_closer `0.4875`, primary_mae `0.025991`, avg `-0.011012`, median `-0.007554`
-- 10d: sample `80`, primary_hit `0.5875`, primary_closer `0.3625`, primary_mae `0.043271`, avg `-0.013625`, median `-0.010657`
-- 20d: sample `80`, primary_hit `0.45`, primary_closer `0.375`, primary_mae `0.07577`, avg `-0.003616`, median `0.007967`
-- 60d: sample `80`, primary_hit `0.25`, primary_closer `0.3`, primary_mae `0.087551`, avg `0.030122`, median `0.045479`
+- sample_size: `40`
+- 3d: sample `40`, primary_hit `0.625`, primary_closer `0.425`, primary_mae `0.019419`, avg `-0.008668`, median `-0.010058`
+- 5d: sample `40`, primary_hit `0.625`, primary_closer `0.5`, primary_mae `0.028257`, avg `-0.013418`, median `-0.013341`
+- 10d: sample `40`, primary_hit `0.55`, primary_closer `0.45`, primary_mae `0.04968`, avg `-0.01643`, median `-0.018113`
+- 20d: sample `40`, primary_hit `0.475`, primary_closer `0.475`, primary_mae `0.072113`, avg `-0.004176`, median `0.00088`
+- 60d: sample `40`, primary_hit `0.25`, primary_closer `0.35`, primary_mae `0.082125`, avg `0.050521`, median `0.083743`
 
 ## Predictor Performance
 
