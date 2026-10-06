@@ -10,16 +10,16 @@
     "source": "finnhub",
     "status": "failed"
   },
-  "event_detection_confidence": 74,
+  "event_detection_confidence": 69,
   "event_risk_level": "high",
-  "generated_at": "2026-10-06T07:38:12.494177+00:00",
+  "generated_at": "2026-10-06T10:48:36.175071+00:00",
   "limits": [
     "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
     "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
     "The provider never exposes API keys and never lets frontend call Finnhub directly.",
     "Economic calendar items are treated as event-risk context, not automatic directional forecasts."
   ],
-  "major_event_count": 1,
+  "major_event_count": 2,
   "major_events": [
     {
       "affected_assets": [
@@ -33,20 +33,47 @@
         "TLT"
       ],
       "confidence": "medium",
-      "confidence_score": 74,
+      "confidence_score": 72,
       "detected_event_conditions": [
         "geopolitical_risk_escalation"
       ],
       "event_type": "geopolitical_risk_escalation",
       "expected_horizon": "intraday-5d",
       "expected_market_direction": "risk_off",
-      "freshness_score": 69,
+      "freshness_score": 61,
       "headline": "Wall Street rewards Microsoft's AI pivot. A longtime skeptic says it's just the beginning",
       "importance_score": 100,
       "narrative": "geopolitics_escalation_risk_off",
       "provider": "finnhub",
       "published_at": "2026-10-05T18:43:12+00:00",
       "source": "CNBC"
+    },
+    {
+      "affected_assets": [
+        "SPY",
+        "QQQ",
+        "IWM",
+        "DIA",
+        "^VIX",
+        "USO",
+        "UUP",
+        "TLT"
+      ],
+      "confidence": "medium",
+      "confidence_score": 66,
+      "detected_event_conditions": [
+        "geopolitical_risk_escalation"
+      ],
+      "event_type": "geopolitical_risk_escalation",
+      "expected_horizon": "intraday-5d",
+      "expected_market_direction": "risk_off",
+      "freshness_score": 36,
+      "headline": "Schneider Electric expands in AI with $22.6 billion PTC purchase",
+      "importance_score": 100,
+      "narrative": "geopolitics_escalation_risk_off",
+      "provider": "finnhub",
+      "published_at": "2026-10-05T08:19:24+00:00",
+      "source": "Bloomberg"
     }
   ],
   "market_narrative": {
@@ -65,7 +92,7 @@
     ],
     "market_narrative": "geopolitics_escalation_risk_off",
     "narrative_direction": "supports_risk_expansion",
-    "narrative_strength": 33,
+    "narrative_strength": 67,
     "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
     "supporting_headlines": [
       {
@@ -79,6 +106,18 @@
         "importance_score": 100,
         "published_at": "2026-10-05T18:43:12+00:00",
         "source": "CNBC"
+      },
+      {
+        "confidence": "medium",
+        "detected_event_conditions": [
+          "geopolitical_risk_escalation"
+        ],
+        "event_type": "geopolitical_risk_escalation",
+        "expected_market_direction": "risk_off",
+        "headline": "Schneider Electric expands in AI with $22.6 billion PTC purchase",
+        "importance_score": 100,
+        "published_at": "2026-10-05T08:19:24+00:00",
+        "source": "Bloomberg"
       }
     ]
   },
@@ -88,16 +127,16 @@
     "direction": "supports_risk_expansion",
     "event_risk_level": "high",
     "macro_event_risk_flag": false,
-    "major_event_count": 1,
+    "major_event_count": 2,
     "not_a_trading_signal": true,
     "price_reaction_confirmed": false,
     "symbols": {
       "DIA": {
-        "after_primary_probability": 0.352,
+        "after_primary_probability": 0.3565,
         "after_primary_scenario": "bearish_path",
-        "before_primary_probability": 0.3375,
+        "before_primary_probability": 0.3362,
         "before_primary_scenario": "bearish_path",
-        "confirmation_delta": -2.99,
+        "confirmation_delta": -4.01,
         "impact": "text_support_unconfirmed",
         "not_a_trading_signal": true,
         "overlay_applied": true,
@@ -110,26 +149,26 @@
         "path_weight_deltas": {
           "analog_path_weight": 0.0,
           "base_path_weight": 0.01,
-          "bearish_path_weight": 0.0234,
-          "bounce_path_weight": -0.0082
+          "bearish_path_weight": 0.0311,
+          "bounce_path_weight": -0.0109
         },
         "predictor_deltas": {
-          "bounce_predictor": -0.007,
-          "downside_continuation_predictor": 0.0129,
-          "risk_expansion_predictor": 0.0152,
+          "bounce_predictor": -0.0093,
+          "downside_continuation_predictor": 0.0171,
+          "risk_expansion_predictor": 0.0202,
           "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": 0.0145,
+        "primary_probability_delta": 0.0203,
         "primary_scenario_changed": false,
-        "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -2.99 points; independent predictors adjusted by news/event overlay",
+        "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
       },
       "IWM": {
-        "after_primary_probability": 0.3574,
+        "after_primary_probability": 0.3618,
         "after_primary_scenario": "bearish_path",
-        "before_primary_probability": 0.343,
+        "before_primary_probability": 0.3416,
         "before_primary_scenario": "bearish_path",
-        "confirmation_delta": -2.99,
+        "confirmation_delta": -4.01,
         "impact": "text_support_unconfirmed",
         "not_a_trading_signal": true,
         "overlay_applied": true,
@@ -142,26 +181,26 @@
         "path_weight_deltas": {
           "analog_path_weight": 0.0,
           "base_path_weight": 0.01,
-          "bearish_path_weight": 0.0234,
-          "bounce_path_weight": -0.0082
+          "bearish_path_weight": 0.0311,
+          "bounce_path_weight": -0.0109
         },
         "predictor_deltas": {
-          "bounce_predictor": -0.007,
-          "downside_continuation_predictor": 0.0129,
-          "risk_expansion_predictor": 0.0152,
+          "bounce_predictor": -0.0093,
+          "downside_continuation_predictor": 0.0171,
+          "risk_expansion_predictor": 0.0202,
           "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": 0.0144,
+        "primary_probability_delta": 0.0202,
         "primary_scenario_changed": false,
-        "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -2.99 points; independent predictors adjusted by news/event overlay",
+        "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
       },
       "QQQ": {
-        "after_primary_probability": 0.3061,
+        "after_primary_probability": 0.3108,
         "after_primary_scenario": "bearish_path",
-        "before_primary_probability": 0.2904,
+        "before_primary_probability": 0.2891,
         "before_primary_scenario": "bearish_path",
-        "confirmation_delta": -2.99,
+        "confirmation_delta": -4.01,
         "impact": "text_support_unconfirmed",
         "not_a_trading_signal": true,
         "overlay_applied": true,
@@ -174,26 +213,26 @@
         "path_weight_deltas": {
           "analog_path_weight": 0.0,
           "base_path_weight": 0.01,
-          "bearish_path_weight": 0.0234,
-          "bounce_path_weight": -0.0082
+          "bearish_path_weight": 0.0311,
+          "bounce_path_weight": -0.0109
         },
         "predictor_deltas": {
-          "bounce_predictor": -0.007,
-          "downside_continuation_predictor": 0.0129,
-          "risk_expansion_predictor": 0.0152,
+          "bounce_predictor": -0.0093,
+          "downside_continuation_predictor": 0.0171,
+          "risk_expansion_predictor": 0.0202,
           "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": 0.0157,
+        "primary_probability_delta": 0.0217,
         "primary_scenario_changed": false,
-        "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -2.99 points; independent predictors adjusted by news/event overlay",
+        "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
       },
       "SPY": {
-        "after_primary_probability": 0.3156,
+        "after_primary_probability": 0.3201,
         "after_primary_scenario": "bearish_path",
-        "before_primary_probability": 0.3001,
+        "before_primary_probability": 0.2987,
         "before_primary_scenario": "bearish_path",
-        "confirmation_delta": -2.99,
+        "confirmation_delta": -4.01,
         "impact": "text_support_unconfirmed",
         "not_a_trading_signal": true,
         "overlay_applied": true,
@@ -206,18 +245,18 @@
         "path_weight_deltas": {
           "analog_path_weight": 0.0,
           "base_path_weight": 0.01,
-          "bearish_path_weight": 0.0234,
-          "bounce_path_weight": -0.0082
+          "bearish_path_weight": 0.0311,
+          "bounce_path_weight": -0.0109
         },
         "predictor_deltas": {
-          "bounce_predictor": -0.007,
-          "downside_continuation_predictor": 0.0129,
-          "risk_expansion_predictor": 0.0152,
+          "bounce_predictor": -0.0093,
+          "downside_continuation_predictor": 0.0171,
+          "risk_expansion_predictor": 0.0202,
           "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": 0.0155,
+        "primary_probability_delta": 0.0214,
         "primary_scenario_changed": false,
-        "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -2.99 points; independent predictors adjusted by news/event overlay",
+        "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -4.01 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
       }
     },
@@ -227,7 +266,7 @@
   "price_reaction_confirmation": {
     "asset_reaction_summary": {
       "avg_equity_1d_return": 0.006,
-      "avg_equity_futures_1d_return": 0.0027,
+      "avg_equity_futures_1d_return": 0.0029,
       "confirmed_checks": [
         "美元走强"
       ],
@@ -243,14 +282,14 @@
         "HYG/LQD 走弱"
       ],
       "hyg_lqd_1d_relative_return": 0.0009,
-      "oil_proxy_1d_return": -0.0178,
+      "oil_proxy_1d_return": -0.0223,
       "oil_proxy_symbols_used": [
         "USO",
         "CL=F"
       ],
       "tlt_1d_return": -0.0048,
       "uup_1d_return": 0.0035,
-      "vix_1d_return": -0.0013
+      "vix_1d_return": -0.009
     },
     "confirmation_score": 25,
     "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",

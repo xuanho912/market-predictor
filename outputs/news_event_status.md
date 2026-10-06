@@ -1,14 +1,14 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-06T07:38:12.494177+00:00`
+- generated_at: `2026-10-06T10:48:36.175071+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `1`
-- event_detection_confidence: `74`
+- major_event_count: `2`
+- event_detection_confidence: `69`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
-- narrative_strength: `33`
+- narrative_strength: `67`
 - price_reaction_confirmed: `False`
 - confirmation_score: `25`
 
@@ -30,5 +30,13 @@
 - headline: Wall Street rewards Microsoft's AI pivot. A longtime skeptic says it's just the beginning
 - source: CNBC
 - published_at: `2026-10-05T18:43:12+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Schneider Electric expands in AI with $22.6 billion PTC purchase
+- source: Bloomberg
+- published_at: `2026-10-05T08:19:24+00:00`
 - importance_score: `100`
 - confidence: `medium`
