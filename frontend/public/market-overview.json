@@ -6,10 +6,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-10-06",
-    "current_time_us_eastern": "2026-10-06T21:02:20.050941-04:00",
+    "current_time_us_eastern": "2026-10-06T21:54:23.710362-04:00",
     "data_freshness_status": "fresh",
     "expected_latest_trading_date": "2026-10-06",
-    "generated_at": "2026-10-07T01:02:20.050941+00:00",
+    "generated_at": "2026-10-07T01:54:23.710362+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -296,7 +296,7 @@
         "point_in_time_safe": true,
         "real_data": true,
         "rows": 520,
-        "source": "finnhub-quote-patch",
+        "source": "yahoo-chart",
         "stale_data": false,
         "status": "available",
         "symbol": "XLC"
@@ -368,7 +368,7 @@
         "point_in_time_safe": true,
         "real_data": true,
         "rows": 520,
-        "source": "finnhub-quote-patch",
+        "source": "yahoo-chart",
         "stale_data": false,
         "status": "available",
         "symbol": "XLRE"
@@ -1048,14 +1048,14 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "IG_OAS",
+      "DGS10",
       "HY_OAS",
-      "DGS2",
+      "IG_OAS",
+      "BAA_SPREAD",
       "DGS3MO",
+      "DGS2",
       "DFII10",
       "RECESSION",
-      "DGS10",
-      "BAA_SPREAD",
       "FINANCIAL_STRESS"
     ],
     "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-10-06。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
@@ -1090,7 +1090,7 @@
       "event_detection_confidence": 76,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-10-07T01:02:09.993934+00:00",
+      "last_update": "2026-10-07T01:54:14.357417+00:00",
       "major_event_count": 6,
       "missing_reason": null,
       "news_direction": "risk_off",
@@ -1573,7 +1573,7 @@
           "美元走强"
         ],
         "hyg_lqd_1d_relative_return": 0.0007,
-        "oil_proxy_1d_return": 0.0063,
+        "oil_proxy_1d_return": 0.008,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -3106,9 +3106,9 @@
           "top_headlines": [
             "'I'm getting fed up': early US midterm voters line up before dawn in Ohio - Reuters",
             "Transcript of US Vice President Vance interview in Alaska - Reuters",
+            "Californians blast Trump remark that Iran could 'take out' Los Angeles, San Diego - Reuters",
             "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
-            "Trump says nobody knows who is running Iran - Reuters",
-            "Yemeni government fighters shown driving vehicles over Houthi opponents - Reuters"
+            "Trump says nobody knows who is running Iran - Reuters"
           ]
         },
         "price": {
@@ -4021,7 +4021,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 94,
+            "freshness_score": 92,
             "headline": "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4048,7 +4048,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 81,
             "headline": "Ukraine's Zelenskiy says intelligence shows Russia is preparing massive attack - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4075,7 +4075,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 82,
+            "freshness_score": 80,
             "headline": "US EIA hikes oil price forecasts again as Iran war drains global stockpile - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4102,7 +4102,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 79,
+            "freshness_score": 77,
             "headline": "Russia drops war posts case against children’s hospice founder Moniava - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4129,7 +4129,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 66,
+            "freshness_score": 64,
             "headline": "Attacks on civilian shipping in Black Sea are unacceptable, EU's von der Leyen says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4151,7 +4151,7 @@
             "event_type": "market_microstructure_event",
             "expected_horizon": "intraday-3d",
             "expected_market_direction": "mixed",
-            "freshness_score": 71,
+            "freshness_score": 69,
             "headline": "This startup wants to reduce liquidation risk from margin calls on prediction markets",
             "importance_score": 70,
             "narrative": "market_microstructure_event",
@@ -4303,7 +4303,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": 0.0007,
-            "oil_proxy_1d_return": 0.0063,
+            "oil_proxy_1d_return": 0.008,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -5597,9 +5597,9 @@
           "top_headlines": [
             "'I'm getting fed up': early US midterm voters line up before dawn in Ohio - Reuters",
             "Transcript of US Vice President Vance interview in Alaska - Reuters",
+            "Californians blast Trump remark that Iran could 'take out' Los Angeles, San Diego - Reuters",
             "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
-            "Trump says nobody knows who is running Iran - Reuters",
-            "Yemeni government fighters shown driving vehicles over Houthi opponents - Reuters"
+            "Trump says nobody knows who is running Iran - Reuters"
           ]
         },
         "price": {
@@ -6549,7 +6549,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 94,
+            "freshness_score": 92,
             "headline": "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6576,7 +6576,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 81,
             "headline": "Ukraine's Zelenskiy says intelligence shows Russia is preparing massive attack - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6603,7 +6603,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 82,
+            "freshness_score": 80,
             "headline": "US EIA hikes oil price forecasts again as Iran war drains global stockpile - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6630,7 +6630,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 79,
+            "freshness_score": 77,
             "headline": "Russia drops war posts case against children’s hospice founder Moniava - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6657,7 +6657,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 66,
+            "freshness_score": 64,
             "headline": "Attacks on civilian shipping in Black Sea are unacceptable, EU's von der Leyen says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6679,7 +6679,7 @@
             "event_type": "market_microstructure_event",
             "expected_horizon": "intraday-3d",
             "expected_market_direction": "mixed",
-            "freshness_score": 71,
+            "freshness_score": 69,
             "headline": "This startup wants to reduce liquidation risk from margin calls on prediction markets",
             "importance_score": 70,
             "narrative": "market_microstructure_event",
@@ -6831,7 +6831,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": 0.0007,
-            "oil_proxy_1d_return": 0.0063,
+            "oil_proxy_1d_return": 0.008,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -8131,9 +8131,9 @@
           "top_headlines": [
             "'I'm getting fed up': early US midterm voters line up before dawn in Ohio - Reuters",
             "Transcript of US Vice President Vance interview in Alaska - Reuters",
+            "Californians blast Trump remark that Iran could 'take out' Los Angeles, San Diego - Reuters",
             "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
-            "Trump says nobody knows who is running Iran - Reuters",
-            "Yemeni government fighters shown driving vehicles over Houthi opponents - Reuters"
+            "Trump says nobody knows who is running Iran - Reuters"
           ]
         },
         "price": {
@@ -9056,7 +9056,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 94,
+            "freshness_score": 92,
             "headline": "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9083,7 +9083,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 81,
             "headline": "Ukraine's Zelenskiy says intelligence shows Russia is preparing massive attack - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9110,7 +9110,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 82,
+            "freshness_score": 80,
             "headline": "US EIA hikes oil price forecasts again as Iran war drains global stockpile - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9137,7 +9137,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 79,
+            "freshness_score": 77,
             "headline": "Russia drops war posts case against children’s hospice founder Moniava - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9164,7 +9164,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 66,
+            "freshness_score": 64,
             "headline": "Attacks on civilian shipping in Black Sea are unacceptable, EU's von der Leyen says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9186,7 +9186,7 @@
             "event_type": "market_microstructure_event",
             "expected_horizon": "intraday-3d",
             "expected_market_direction": "mixed",
-            "freshness_score": 71,
+            "freshness_score": 69,
             "headline": "This startup wants to reduce liquidation risk from margin calls on prediction markets",
             "importance_score": 70,
             "narrative": "market_microstructure_event",
@@ -9338,7 +9338,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": 0.0007,
-            "oil_proxy_1d_return": 0.0063,
+            "oil_proxy_1d_return": 0.008,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -10614,9 +10614,9 @@
           "top_headlines": [
             "'I'm getting fed up': early US midterm voters line up before dawn in Ohio - Reuters",
             "Transcript of US Vice President Vance interview in Alaska - Reuters",
+            "Californians blast Trump remark that Iran could 'take out' Los Angeles, San Diego - Reuters",
             "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
-            "Trump says nobody knows who is running Iran - Reuters",
-            "Yemeni government fighters shown driving vehicles over Houthi opponents - Reuters"
+            "Trump says nobody knows who is running Iran - Reuters"
           ]
         },
         "price": {
@@ -11534,7 +11534,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 94,
+            "freshness_score": 92,
             "headline": "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11561,7 +11561,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 81,
             "headline": "Ukraine's Zelenskiy says intelligence shows Russia is preparing massive attack - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11588,7 +11588,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 82,
+            "freshness_score": 80,
             "headline": "US EIA hikes oil price forecasts again as Iran war drains global stockpile - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11615,7 +11615,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 79,
+            "freshness_score": 77,
             "headline": "Russia drops war posts case against children’s hospice founder Moniava - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11642,7 +11642,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 66,
+            "freshness_score": 64,
             "headline": "Attacks on civilian shipping in Black Sea are unacceptable, EU's von der Leyen says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11664,7 +11664,7 @@
             "event_type": "market_microstructure_event",
             "expected_horizon": "intraday-3d",
             "expected_market_direction": "mixed",
-            "freshness_score": 71,
+            "freshness_score": 69,
             "headline": "This startup wants to reduce liquidation risk from margin calls on prediction markets",
             "importance_score": 70,
             "narrative": "market_microstructure_event",
@@ -11816,7 +11816,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": 0.0007,
-            "oil_proxy_1d_return": 0.0063,
+            "oil_proxy_1d_return": 0.008,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
