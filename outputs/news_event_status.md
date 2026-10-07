@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-06T23:57:26.663095+00:00`
+- generated_at: `2026-10-07T01:02:09.993934+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `4`
-- event_detection_confidence: `74`
+- major_event_count: `6`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,6 +27,22 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters
+- source: Reuters
+- published_at: `2026-10-06T22:40:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Ukraine's Zelenskiy says intelligence shows Russia is preparing massive attack - Reuters
+- source: Reuters
+- published_at: `2026-10-06T17:53:45+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: US EIA hikes oil price forecasts again as Iran war drains global stockpile - Reuters
 - source: Reuters
 - published_at: `2026-10-06T17:39:05+00:00`
@@ -35,17 +51,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Attacks on civilian shipping in Black Sea are unacceptable, EU's von der Leyen says - Reuters
+- headline: Russia drops war posts case against children’s hospice founder Moniava - Reuters
 - source: Reuters
-- published_at: `2026-10-06T11:01:43+00:00`
+- published_at: `2026-10-06T16:23:37+00:00`
 - importance_score: `100`
-- confidence: `medium`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Israeli strikes kill two people in Gaza, medics say - Reuters
+- headline: Attacks on civilian shipping in Black Sea are unacceptable, EU's von der Leyen says - Reuters
 - source: Reuters
-- published_at: `2026-10-06T10:12:27+00:00`
+- published_at: `2026-10-06T11:01:43+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
