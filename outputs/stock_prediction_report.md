@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-10-07T07:19:48.305869+00:00`
+Generated at: `2026-10-07T10:36:55.688559+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -21,13 +21,13 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - company_name: `NVIDIA Corp`
 - status: `available`
 - current_price: `239.24`
-- market_context: `risk_off_pressure`
+- market_context: `market_headwind`
 - primary: `stock_failed_bounce` / `26.5%`
 - secondary: `stock_downside_continuation` / `19.0%`
 - risk: `stock_event_risk` / `14.4%`
-- stock_confluence_score: `52.4` / `mixed`
-- stock_alpha_score_v1: `52.5` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `59.2%`
+- stock_confluence_score: `52.22` / `mixed`
+- stock_alpha_score_v1: `50.5` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `58.4%`
 - 60d_expected_return: `-0.5%`
 - risk_reward_ratio: `0.53`
 - strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `25.98`
@@ -50,7 +50,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - company_name: `Tesla Inc`
 - status: `available`
 - current_price: `380.68`
-- market_context: `risk_off_pressure`
+- market_context: `market_headwind`
 - primary: `stock_failed_bounce` / `28.2%`
 - secondary: `stock_downside_continuation` / `22.0%`
 - risk: `stock_event_risk` / `14.4%`
@@ -83,7 +83,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_downside_continuation` / `32.1%`
 - secondary: `stock_failed_bounce` / `21.0%`
 - risk: `stock_event_risk` / `12.9%`
-- stock_confluence_score: `32.44` / `weak`
+- stock_confluence_score: `32.25` / `weak`
 - stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `19.0%`
 - 60d_expected_return: `-2.9%`

@@ -1,6 +1,6 @@
 # Breadth Impact Audit
 
-Generated at: `2026-10-07T07:19:46.731186Z`
+Generated at: `2026-10-07T10:36:54.737677Z`
 
 ## Summary
 
@@ -17,7 +17,7 @@ Generated at: `2026-10-07T07:19:46.731186Z`
 | symbol | supports primary | conflicts primary | edge before | edge after | primary before | primary after | failed bounce delta | confirmation delta | confidence delta | reason | risk note |
 |---|---:|---:|---|---|---|---|---:|---:|---:|---|---|
 | SPY | False | True | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.1236 | -1 | 1 | SPY breadth is mixed for bounce_path: support score 54%, conflict score 43%, internal resonance is surface_only. | SPY index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
-| QQQ | False | True | STRONG_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.1608 | 0 | -7 | QQQ breadth conflicts with bounce_path: conflict score 69%, internal resonance is surface_only. | QQQ index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
+| QQQ | False | True | STRONG_EDGE | MODERATE_EDGE | bounce_path | bearish_path | 0.1608 | 0 | -7 | QQQ breadth conflicts with bearish_path: conflict score 69%, internal resonance is surface_only. | QQQ index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
 | IWM | False | True | STRONG_EDGE | MODERATE_EDGE | bounce_path | bearish_path | 0.1731 | -5 | -3 | IWM breadth conflicts with bearish_path: conflict score 74%, internal resonance is surface_only. | IWM index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
 | DIA | False | True | MODERATE_EDGE | WEAK_EDGE | bounce_path | bearish_path | 0.2061 | -20 | -2 | DIA breadth conflicts with bearish_path: conflict score 85%, internal resonance is surface_only. | DIA index strength may be surface-only; failed-bounce risk should remain capped higher until participation broadens. |
 

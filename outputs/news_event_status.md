@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-07T07:19:36.394098+00:00`
+- generated_at: `2026-10-07T10:36:42.980127+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `8`
@@ -10,7 +10,7 @@
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `25`
+- confirmation_score: `50`
 
 ## Dashboard Note
 
@@ -27,17 +27,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Houthis attack Aden airport as fighting intensifies in Yemen - Reuters
+- headline: Shell expects record refining margins as Iran war boosts fuel markets - Reuters
 - source: Reuters
-- published_at: `2026-10-07T01:21:00+00:00`
+- published_at: `2026-10-07T06:07:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil gains as US storm and Houthi air strikes threaten supply - Reuters
+- headline: Houthis attack Aden airport as fighting intensifies in Yemen - Reuters
 - source: Reuters
-- published_at: `2026-10-07T00:48:00+00:00`
+- published_at: `2026-10-07T01:21:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -47,7 +47,7 @@
 - source: Reuters
 - published_at: `2026-10-06T22:40:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -65,6 +65,14 @@
 - importance_score: `100`
 - confidence: `medium`
 
+### fed_hawkish / risk_off
+
+- headline: India joins global rate-tightening wave with first hike in nearly 4 years - Reuters
+- source: Reuters
+- published_at: `2026-10-07T04:33:00+00:00`
+- importance_score: `88`
+- confidence: `medium`
+
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Catalan separatist Puigdemont set to return home after court lifts arrest warrant - Reuters
@@ -79,12 +87,4 @@
 - source: Reuters
 - published_at: `2026-10-06T16:23:37+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### market_microstructure_event / mixed
-
-- headline: This startup wants to reduce liquidation risk from margin calls on prediction markets
-- source: CNBC
-- published_at: `2026-10-06T13:01:20+00:00`
-- importance_score: `69`
 - confidence: `medium`
