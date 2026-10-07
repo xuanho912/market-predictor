@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-07T02:19:56.551447+00:00`
+- generated_at: `2026-10-07T07:19:36.394098+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
-- event_detection_confidence: `75`
+- major_event_count: `8`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,6 +27,22 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Houthis attack Aden airport as fighting intensifies in Yemen - Reuters
+- source: Reuters
+- published_at: `2026-10-07T01:21:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil gains as US storm and Houthi air strikes threaten supply - Reuters
+- source: Reuters
+- published_at: `2026-10-07T00:48:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters
 - source: Reuters
 - published_at: `2026-10-06T22:40:00+00:00`
@@ -39,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-10-06T17:53:45+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +63,7 @@
 - source: Reuters
 - published_at: `2026-10-06T17:39:05+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,21 +71,13 @@
 - source: Reuters
 - published_at: `2026-10-06T16:48:22+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Russia drops war posts case against children’s hospice founder Moniava - Reuters
 - source: Reuters
 - published_at: `2026-10-06T16:23:37+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Attacks on civilian shipping in Black Sea are unacceptable, EU's von der Leyen says - Reuters
-- source: Reuters
-- published_at: `2026-10-06T11:01:43+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -78,5 +86,5 @@
 - headline: This startup wants to reduce liquidation risk from margin calls on prediction markets
 - source: CNBC
 - published_at: `2026-10-06T13:01:20+00:00`
-- importance_score: `70`
+- importance_score: `69`
 - confidence: `medium`
