@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-07T01:54:14.357417+00:00`
+- generated_at: `2026-10-07T02:19:56.551447+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
-- event_detection_confidence: `76`
+- major_event_count: `7`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `0`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
@@ -27,7 +27,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters
+- headline: EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters
 - source: Reuters
 - published_at: `2026-10-06T22:40:00+00:00`
 - importance_score: `100`
@@ -46,6 +46,14 @@
 - headline: US EIA hikes oil price forecasts again as Iran war drains global stockpile - Reuters
 - source: Reuters
 - published_at: `2026-10-06T17:39:05+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Catalan separatist Puigdemont set to return home after court lifts arrest warrant - Reuters
+- source: Reuters
+- published_at: `2026-10-06T16:48:22+00:00`
 - importance_score: `100`
 - confidence: `high`
 

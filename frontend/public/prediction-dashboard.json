@@ -11404,7 +11404,7 @@
       "evidence_note": "Forward-only sample gate has opened; compare breadth-supported buckets against conflicted buckets before raising confidence.",
       "status": "forward_ready"
     },
-    "generated_at": "2026-10-07T01:54:23.701735Z",
+    "generated_at": "2026-10-07T02:20:07.079117Z",
     "notes": [
       "This audit compares the same run with true breadth provider disabled vs enabled.",
       "The audit does not change Alpha v1 and does not prove tradable alpha.",
@@ -11562,7 +11562,7 @@
   },
   "breadth_status": {
     "cache_root": "data/breadth_cache",
-    "generated_at": "2026-10-07T01:53:51.365027+00:00",
+    "generated_at": "2026-10-07T02:19:27.513928+00:00",
     "provider": "true_breadth_provider",
     "sector_participation_proxy": {
       "data_note": "Sector ETF proxy, not constituent-level sector breadth.",
@@ -12094,9 +12094,9 @@
   },
   "confluence_score": {
     "disclaimer": "Confluence is a forecast-confirmation layer, not a trading signal or execution recommendation.",
-    "generated_at": "2026-10-07T01:54:23.709636+00:00",
+    "generated_at": "2026-10-07T02:20:07.089276+00:00",
     "summary": {
-      "average_confluence_score": 48.5,
+      "average_confluence_score": 49.0,
       "mixed_or_no_edge_symbols": [
         "DIA",
         "IWM",
@@ -12110,16 +12110,16 @@
       "DIA": {
         "conflicting_evidence": [
           {
-            "detail": "News/event direction is not sufficiently confirmed by market reaction.",
-            "name": "新闻未获价格确认",
-            "score": 100,
-            "source": "news"
-          },
-          {
             "detail": "指数路径与内部参与度存在冲突。",
             "name": "宽度冲突",
             "score": 85,
             "source": "breadth"
+          },
+          {
+            "detail": "News/event direction is not sufficiently confirmed by market reaction.",
+            "name": "新闻未获价格确认",
+            "score": 75,
+            "source": "news"
           },
           {
             "detail": "重大 risk-off 新闻提高风险路径权重。",
@@ -12237,6 +12237,12 @@
             "source": "flow"
           },
           {
+            "detail": "DIA 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+            "name": "新闻事件支持主路径",
+            "score": 25,
+            "source": "news"
+          },
+          {
             "detail": "primary-secondary gap 12.8%",
             "name": "主次路径差距可观察",
             "score": 12.83,
@@ -12277,12 +12283,6 @@
             "name": "macro event risk",
             "score": 5,
             "source": "signal_confirmation"
-          },
-          {
-            "detail": "DIA 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-            "name": "新闻事件支持主路径",
-            "score": 0,
-            "source": "news"
           }
         ],
         "symbol": "DIA",
@@ -12293,7 +12293,7 @@
           {
             "detail": "News/event direction is not sufficiently confirmed by market reaction.",
             "name": "新闻未获价格确认",
-            "score": 100,
+            "score": 75,
             "source": "news"
           },
           {
@@ -12424,6 +12424,12 @@
             "source": "flow"
           },
           {
+            "detail": "IWM 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+            "name": "新闻事件支持主路径",
+            "score": 25,
+            "source": "news"
+          },
+          {
             "detail": "Frozen Alpha v1 is triggered; this remains research-only.",
             "name": "Alpha v1 bounce signal",
             "score": 12,
@@ -12464,12 +12470,6 @@
             "name": "macro event risk",
             "score": 5,
             "source": "signal_confirmation"
-          },
-          {
-            "detail": "IWM 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-            "name": "新闻事件支持主路径",
-            "score": 0,
-            "source": "news"
           }
         ],
         "symbol": "IWM",
@@ -12480,7 +12480,7 @@
           {
             "detail": "News/event direction is not sufficiently confirmed by market reaction.",
             "name": "新闻未获价格确认",
-            "score": 100,
+            "score": 75,
             "source": "news"
           },
           {
@@ -12500,6 +12500,12 @@
             "name": "risk_off_news_event",
             "score": 35,
             "source": "signal_confirmation"
+          },
+          {
+            "detail": "QQQ 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+            "name": "新闻事件与主路径冲突",
+            "score": 25,
+            "source": "news"
           },
           {
             "detail": "Index strength is not broadly confirmed by internals; this raises failed-bounce risk.",
@@ -12530,17 +12536,11 @@
             "name": "主次路径差距小",
             "score": 4.68,
             "source": "scenario_gap"
-          },
-          {
-            "detail": "QQQ 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-            "name": "新闻事件与主路径冲突",
-            "score": 0,
-            "source": "news"
           }
         ],
         "confluence_level": "mixed",
-        "confluence_score": 49,
-        "confluence_summary": "QQQ 当前多源共振为 mixed（49/100），主导路径为 failed_bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
+        "confluence_score": 50,
+        "confluence_summary": "QQQ 当前多源共振为 mixed（50/100），主导路径为 failed_bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
         "dominant_path": "failed_bounce",
         "edge_status": "{'market_edge_status': 'MODERATE_EDGE', 'has_usable_prediction_edge_today': True, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': True, 'historical_analog_not_conflicting': True, 'confidence_score_ge_65': False, 'current_regime_identified': True, 'macro_event_risk_not_high': True, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': False, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': True}, 'passed_conditions': 8, 'summary': '有一定预测优势，但仍需观察冲突信号和失效条件。', 'no_edge_note': '', 'risk_warning': False}",
         "key_conflict_count": 3,
@@ -12673,7 +12673,7 @@
           {
             "detail": "News/event direction is not sufficiently confirmed by market reaction.",
             "name": "新闻未获价格确认",
-            "score": 100,
+            "score": 75,
             "source": "news"
           },
           {
@@ -12687,6 +12687,12 @@
             "name": "risk_off_news_event",
             "score": 39,
             "source": "signal_confirmation"
+          },
+          {
+            "detail": "SPY 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+            "name": "新闻事件与主路径冲突",
+            "score": 25,
+            "source": "news"
           },
           {
             "detail": "Index strength is not broadly confirmed by internals; this raises failed-bounce risk.",
@@ -12711,17 +12717,11 @@
             "name": "主次路径差距小",
             "score": 3.74,
             "source": "scenario_gap"
-          },
-          {
-            "detail": "SPY 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-            "name": "新闻事件与主路径冲突",
-            "score": 0,
-            "source": "news"
           }
         ],
         "confluence_level": "mixed",
-        "confluence_score": 47,
-        "confluence_summary": "SPY 当前多源共振为 mixed（47/100），主导路径为 failed_bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
+        "confluence_score": 48,
+        "confluence_summary": "SPY 当前多源共振为 mixed（48/100），主导路径为 failed_bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
         "dominant_path": "failed_bounce",
         "edge_status": "{'market_edge_status': 'MODERATE_EDGE', 'has_usable_prediction_edge_today': True, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': False, 'historical_analog_not_conflicting': False, 'confidence_score_ge_65': True, 'current_regime_identified': True, 'macro_event_risk_not_high': True, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': False, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': True}, 'passed_conditions': 7, 'summary': '有一定预测优势，但仍需观察冲突信号和失效条件。', 'no_edge_note': '', 'risk_warning': False}",
         "key_conflict_count": 2,
@@ -12845,10 +12845,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-10-06",
-    "current_time_us_eastern": "2026-10-06T21:54:23.710362-04:00",
+    "current_time_us_eastern": "2026-10-06T22:20:07.089987-04:00",
     "data_freshness_status": "fresh",
     "expected_latest_trading_date": "2026-10-06",
-    "generated_at": "2026-10-07T01:54:23.710362+00:00",
+    "generated_at": "2026-10-07T02:20:07.089987+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -13853,7 +13853,7 @@
         "expected_items": 5,
         "fallback_used": false,
         "headline_count": 40,
-        "major_event_count": 6,
+        "major_event_count": 7,
         "proxy_used": false,
         "real_data": true,
         "status": "available"
@@ -13895,7 +13895,7 @@
         "status": "available"
       }
     },
-    "generated_at": "2026-10-07T01:54:14.350204+00:00",
+    "generated_at": "2026-10-07T02:19:56.543582+00:00",
     "notes": [
       "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
       "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -14807,10 +14807,10 @@
         "symbol": "macro_event_calendar"
       },
       "news_event_provider": {
-        "event_detection_confidence": 76,
+        "event_detection_confidence": 75,
         "fallback_used": false,
         "latest_date": "2026-10-06",
-        "major_event_count": 6,
+        "major_event_count": 7,
         "missing_data": false,
         "missing_reason": null,
         "narrative": "geopolitics_escalation_risk_off",
@@ -15022,15 +15022,15 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
-        "DGS10",
-        "HY_OAS",
         "IG_OAS",
+        "HY_OAS",
         "BAA_SPREAD",
         "DGS3MO",
         "DGS2",
+        "DGS10",
         "DFII10",
-        "RECESSION",
-        "FINANCIAL_STRESS"
+        "FINANCIAL_STRESS",
+        "RECESSION"
       ],
       "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-10-06。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
       "gamma_available": false,
@@ -15061,11 +15061,11 @@
       ],
       "news_event": {
         "available": true,
-        "event_detection_confidence": 76,
+        "event_detection_confidence": 75,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-10-07T01:54:14.357417+00:00",
-        "major_event_count": 6,
+        "last_update": "2026-10-07T02:19:56.551447+00:00",
+        "major_event_count": 7,
         "missing_reason": null,
         "news_direction": "risk_off",
         "news_event_partial": false,
@@ -15076,7 +15076,7 @@
       },
       "news_event_available": true,
       "news_event_event_risk_level": "high",
-      "news_event_major_count": 6,
+      "news_event_major_count": 7,
       "news_event_missing_reason": null,
       "news_event_narrative": "geopolitics_escalation_risk_off",
       "news_event_partial": false,
@@ -15116,7 +15116,7 @@
   },
   "event_refresh": false,
   "feature_snapshot_v2": {
-    "generated_at": "2026-10-07T01:54:14.338107+00:00",
+    "generated_at": "2026-10-07T02:19:56.528489+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -15354,7 +15354,7 @@
     "version": "market_intelligence_engine_v2_features"
   },
   "feature_snapshot_v3": {
-    "generated_at": "2026-10-07T01:54:14.343527+00:00",
+    "generated_at": "2026-10-07T02:19:56.535525+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -15517,7 +15517,7 @@
             "'I'm getting fed up': early US midterm voters line up before dawn in Ohio - Reuters",
             "Transcript of US Vice President Vance interview in Alaska - Reuters",
             "Californians blast Trump remark that Iran could 'take out' Los Angeles, San Diego - Reuters",
-            "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+            "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
             "Trump says nobody knows who is running Iran - Reuters"
           ]
         },
@@ -15753,7 +15753,7 @@
             "'I'm getting fed up': early US midterm voters line up before dawn in Ohio - Reuters",
             "Transcript of US Vice President Vance interview in Alaska - Reuters",
             "Californians blast Trump remark that Iran could 'take out' Los Angeles, San Diego - Reuters",
-            "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+            "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
             "Trump says nobody knows who is running Iran - Reuters"
           ]
         },
@@ -15989,7 +15989,7 @@
             "'I'm getting fed up': early US midterm voters line up before dawn in Ohio - Reuters",
             "Transcript of US Vice President Vance interview in Alaska - Reuters",
             "Californians blast Trump remark that Iran could 'take out' Los Angeles, San Diego - Reuters",
-            "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+            "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
             "Trump says nobody knows who is running Iran - Reuters"
           ]
         },
@@ -16225,7 +16225,7 @@
             "'I'm getting fed up': early US midterm voters line up before dawn in Ohio - Reuters",
             "Transcript of US Vice President Vance interview in Alaska - Reuters",
             "Californians blast Trump remark that Iran could 'take out' Los Angeles, San Diego - Reuters",
-            "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+            "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
             "Trump says nobody knows who is running Iran - Reuters"
           ]
         },
@@ -16304,7 +16304,7 @@
     "version": "market_intelligence_engine_v3_features"
   },
   "flow_positioning_status": {
-    "generated_at": "2026-10-07T01:54:00.806751+00:00",
+    "generated_at": "2026-10-07T02:19:39.852349+00:00",
     "latest_date": "2026-10-06",
     "provider": "flow_positioning_proxy",
     "sources": {
@@ -16755,7 +16755,7 @@
     ]
   },
   "flow_status": {
-    "generated_at": "2026-10-07T01:54:00.806751+00:00",
+    "generated_at": "2026-10-07T02:19:39.852349+00:00",
     "latest_date": "2026-10-06",
     "provider": "flow_positioning_proxy",
     "sources": {
@@ -18422,7 +18422,7 @@
       "primary_beats_secondary": "primary_path_not_better_than_secondary"
     },
     "current_evidence_level": "stronger_evidence",
-    "generated_at": "2026-10-07T01:54:24.340374+00:00",
+    "generated_at": "2026-10-07T02:20:07.846833+00:00",
     "guardrails": [
       "This scorecard validates probabilistic forecast paths, not trades.",
       "Forecast records are immutable except for future-outcome backfill fields.",
@@ -18537,7 +18537,7 @@
       "risk_on_flow_underweighted": 81,
       "volatility_repair_underweighted": 155
     },
-    "generated_at": "2026-10-07T01:54:24.581864+00:00",
+    "generated_at": "2026-10-07T02:20:08.142038+00:00",
     "guardrails": [
       "This is forecast error attribution, not a trading or PnL report.",
       "Attribution is diagnostic and probabilistic; it is not proof of causality.",
@@ -22440,7 +22440,7 @@
     },
     "dominant_error_theme": "news_data_gap_limited_attribution",
     "evidence_level": "stronger_evidence",
-    "generated_at": "2026-10-07T01:54:24.607248+00:00",
+    "generated_at": "2026-10-07T02:20:08.173016+00:00",
     "global_learning_status": "shadow_challenger_queue_ready",
     "guardrails": [
       "This queue does not change baseline_v1 or Alpha v1.",
@@ -22470,7 +22470,7 @@
       "5d": 304,
       "60d": 84
     },
-    "generated_at": "2026-10-07T01:54:24.267607+00:00",
+    "generated_at": "2026-10-07T02:20:07.761352+00:00",
     "immutability_note": "Forecast fields are write-once by forecast_id. Backfill may update only actual_return, best_matching_scenario, primary_hit, path_error and status fields.",
     "max_confirmed_market_date": "2026-10-06",
     "new_records_considered": 4,
@@ -22484,7 +22484,7 @@
   "forecast_price_levels": {
     "as_of": "2026-10-06",
     "disclaimer": "Forecast price levels are probabilistic scenario points derived from simulated paths, recent price structure and volatility bands. They are not execution instructions, risk-control rules, or guaranteed target prices.",
-    "generated_at": "2026-10-07T01:54:23.705711Z",
+    "generated_at": "2026-10-07T02:20:07.083712Z",
     "symbols": {
       "DIA": {
         "current_price": 514.5599975585938,
@@ -24227,7 +24227,7 @@
     "version": "forecast_price_levels_v1"
   },
   "forecast_records": {
-    "generated_at": "2026-10-07T01:54:24.307368+00:00",
+    "generated_at": "2026-10-07T02:20:07.808116+00:00",
     "records": [
       {
         "actual_return_10d": 0.01680114442,
@@ -70177,7 +70177,7 @@
       "5d": 304,
       "60d": 84
     },
-    "generated_at": "2026-10-07T01:54:24.607164+00:00",
+    "generated_at": "2026-10-07T02:20:08.172940+00:00",
     "guardrails": [
       "This gate does not modify Alpha v1 threshold, baseline_v1 or historical forecast records.",
       "This is forecast reliability assessment, not trading advice.",
@@ -70229,7 +70229,7 @@
       },
       "QQQ": {
         "confidence_score": 64.0,
-        "confluence_score": 49.0,
+        "confluence_score": 50.0,
         "edge_status": "MODERATE_EDGE",
         "primary_probability": 0.3053,
         "primary_scenario": "bearish_path",
@@ -70241,7 +70241,7 @@
       },
       "SPY": {
         "confidence_score": 68.0,
-        "confluence_score": 47.0,
+        "confluence_score": 48.0,
         "edge_status": "MODERATE_EDGE",
         "primary_probability": 0.322,
         "primary_scenario": "bearish_path",
@@ -72084,7 +72084,7 @@
     },
     "forward_completed_sample_size": 80,
     "forward_validation_notice": "Forward samples have started to mature, but alpha status remains research-only until stability is proven.",
-    "generated_at": "2026-10-07T01:54:14.354117+00:00",
+    "generated_at": "2026-10-07T02:19:56.547710+00:00",
     "internal_resonance_forward_validation": {
       "aligned_internal_resonance": {
         "by_horizon": {
@@ -73070,7 +73070,7 @@
       }
     },
     "conclusion": "confidence_not_yet_validated",
-    "generated_at": "2026-10-07T01:54:14.349495+00:00",
+    "generated_at": "2026-10-07T02:19:56.542810+00:00",
     "high_confidence_better_than_low_confidence": false,
     "high_vs_low_comparison_by_horizon": {
       "10d": false,
@@ -75688,7 +75688,7 @@
       "note": "Historical replay cannot upgrade alpha or confidence until forward validation samples mature.",
       "sample_gate": "stronger_evidence"
     },
-    "generated_at": "2026-10-07T01:54:24.605057+00:00",
+    "generated_at": "2026-10-07T02:20:08.170326+00:00",
     "guardrails": [
       "Historical replay is research evaluation only and cannot replace daily forward validation.",
       "Historical replay results must not be described as confirmed alpha.",
@@ -77218,7 +77218,7 @@
   },
   "market_alerts": {
     "disclaimer": "Market alerts are forecast warnings and scenario-confirmation notes only. They are not trading signals or buy/sell/entry/exit guidance.",
-    "generated_at": "2026-10-07T01:54:23.710253+00:00",
+    "generated_at": "2026-10-07T02:20:07.089899+00:00",
     "summary": {
       "alert_count_by_level": {
         "EXTREME": 0,
@@ -77599,7 +77599,7 @@
             "QQQ"
           ],
           "alert_level": "WARNING",
-          "alert_score": 65,
+          "alert_score": 66,
           "alert_type": "Failed Bounce Alert",
           "confidence": "medium",
           "conflicting_evidence": [],
@@ -79099,7 +79099,7 @@
               "QQQ"
             ],
             "alert_level": "WARNING",
-            "alert_score": 65,
+            "alert_score": 66,
             "alert_type": "Failed Bounce Alert",
             "confidence": "medium",
             "conflicting_evidence": [],
@@ -79184,7 +79184,7 @@
               "QQQ"
             ],
             "alert_level": "WATCH",
-            "alert_score": 53,
+            "alert_score": 54,
             "alert_type": "Bounce Setup Alert",
             "confidence": "medium",
             "conflicting_evidence": [
@@ -79356,7 +79356,7 @@
               "QQQ"
             ],
             "alert_level": "WATCH",
-            "alert_score": 47,
+            "alert_score": 48,
             "alert_type": "Trend Repair Alert",
             "confidence": "low",
             "conflicting_evidence": [
@@ -79547,7 +79547,7 @@
             "QQQ"
           ],
           "alert_level": "WARNING",
-          "alert_score": 65,
+          "alert_score": 66,
           "alert_type": "Failed Bounce Alert",
           "confidence": "medium",
           "conflicting_evidence": [],
@@ -80248,7 +80248,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-10-07T01:54:14.337407+00:00",
+      "generated_at": "2026-10-07T02:19:56.527504+00:00",
       "notes": [
         "price/volatility/credit/rates/liquidity currently use public market proxies.",
         "options breadth macro flow are not treated as available unless real feeds are connected.",
@@ -80384,7 +80384,7 @@
       }
     },
     "feature_snapshot_v2": {
-      "generated_at": "2026-10-07T01:54:14.338107+00:00",
+      "generated_at": "2026-10-07T02:19:56.528489+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -80621,7 +80621,7 @@
       },
       "version": "market_intelligence_engine_v2_features"
     },
-    "generated_at": "2026-10-07T01:54:14.339040+00:00",
+    "generated_at": "2026-10-07T02:19:56.529480+00:00",
     "model_confidence_by_symbol": {
       "DIA": {
         "components": {
@@ -80818,7 +80818,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-10-07T01:54:14.346277+00:00",
+      "generated_at": "2026-10-07T02:19:56.539084+00:00",
       "notes": [
         "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
         "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -81947,7 +81947,7 @@
       }
     },
     "feature_snapshot_v3": {
-      "generated_at": "2026-10-07T01:54:14.343527+00:00",
+      "generated_at": "2026-10-07T02:19:56.535525+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -82110,7 +82110,7 @@
               "'I'm getting fed up': early US midterm voters line up before dawn in Ohio - Reuters",
               "Transcript of US Vice President Vance interview in Alaska - Reuters",
               "Californians blast Trump remark that Iran could 'take out' Los Angeles, San Diego - Reuters",
-              "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+              "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
               "Trump says nobody knows who is running Iran - Reuters"
             ]
           },
@@ -82346,7 +82346,7 @@
               "'I'm getting fed up': early US midterm voters line up before dawn in Ohio - Reuters",
               "Transcript of US Vice President Vance interview in Alaska - Reuters",
               "Californians blast Trump remark that Iran could 'take out' Los Angeles, San Diego - Reuters",
-              "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+              "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
               "Trump says nobody knows who is running Iran - Reuters"
             ]
           },
@@ -82582,7 +82582,7 @@
               "'I'm getting fed up': early US midterm voters line up before dawn in Ohio - Reuters",
               "Transcript of US Vice President Vance interview in Alaska - Reuters",
               "Californians blast Trump remark that Iran could 'take out' Los Angeles, San Diego - Reuters",
-              "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+              "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
               "Trump says nobody knows who is running Iran - Reuters"
             ]
           },
@@ -82818,7 +82818,7 @@
               "'I'm getting fed up': early US midterm voters line up before dawn in Ohio - Reuters",
               "Transcript of US Vice President Vance interview in Alaska - Reuters",
               "Californians blast Trump remark that Iran could 'take out' Los Angeles, San Diego - Reuters",
-              "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+              "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
               "Trump says nobody knows who is running Iran - Reuters"
             ]
           },
@@ -82932,18 +82932,18 @@
       "fred_missing": false,
       "fred_rate_limited": false,
       "fred_successful_series": [
-        "DGS10",
-        "HY_OAS",
         "IG_OAS",
+        "HY_OAS",
         "BAA_SPREAD",
         "DGS3MO",
         "DGS2",
+        "DGS10",
         "DFII10",
-        "RECESSION",
-        "FINANCIAL_STRESS"
+        "FINANCIAL_STRESS",
+        "RECESSION"
       ]
     },
-    "generated_at": "2026-10-07T01:54:14.349509+00:00",
+    "generated_at": "2026-10-07T02:19:56.542830+00:00",
     "high_confidence_signal_report": {
       "by_bucket": {
         "low_confidence_reference": {
@@ -83612,7 +83612,7 @@
         }
       },
       "conclusion": "confidence_not_yet_validated",
-      "generated_at": "2026-10-07T01:54:14.349495+00:00",
+      "generated_at": "2026-10-07T02:19:56.542810+00:00",
       "high_confidence_better_than_low_confidence": false,
       "high_vs_low_comparison_by_horizon": {
         "10d": false,
@@ -84406,7 +84406,7 @@
         "evidence_note": "Forward-only sample gate has opened; compare breadth-supported buckets against conflicted buckets before raising confidence.",
         "status": "forward_ready"
       },
-      "generated_at": "2026-10-07T01:54:23.701735Z",
+      "generated_at": "2026-10-07T02:20:07.079117Z",
       "notes": [
         "This audit compares the same run with true breadth provider disabled vs enabled.",
         "The audit does not change Alpha v1 and does not prove tradable alpha.",
@@ -84634,7 +84634,7 @@
           "expected_items": 5,
           "fallback_used": false,
           "headline_count": 40,
-          "major_event_count": 6,
+          "major_event_count": 7,
           "proxy_used": false,
           "real_data": true,
           "status": "available"
@@ -84676,7 +84676,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-10-07T01:54:14.350204+00:00",
+      "generated_at": "2026-10-07T02:19:56.543582+00:00",
       "notes": [
         "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
         "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -85588,10 +85588,10 @@
           "symbol": "macro_event_calendar"
         },
         "news_event_provider": {
-          "event_detection_confidence": 76,
+          "event_detection_confidence": 75,
           "fallback_used": false,
           "latest_date": "2026-10-06",
-          "major_event_count": 6,
+          "major_event_count": 7,
           "missing_data": false,
           "missing_reason": null,
           "narrative": "geopolitics_escalation_risk_off",
@@ -85803,15 +85803,15 @@
         "fred_rate_limited": false,
         "fred_required": true,
         "fred_successful_series": [
-          "DGS10",
-          "HY_OAS",
           "IG_OAS",
+          "HY_OAS",
           "BAA_SPREAD",
           "DGS3MO",
           "DGS2",
+          "DGS10",
           "DFII10",
-          "RECESSION",
-          "FINANCIAL_STRESS"
+          "FINANCIAL_STRESS",
+          "RECESSION"
         ],
         "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-10-06。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
         "gamma_available": false,
@@ -85842,11 +85842,11 @@
         ],
         "news_event": {
           "available": true,
-          "event_detection_confidence": 76,
+          "event_detection_confidence": 75,
           "event_risk_level": "high",
           "headline_count": 40,
-          "last_update": "2026-10-07T01:54:14.357417+00:00",
-          "major_event_count": 6,
+          "last_update": "2026-10-07T02:19:56.551447+00:00",
+          "major_event_count": 7,
           "missing_reason": null,
           "news_direction": "risk_off",
           "news_event_partial": false,
@@ -85857,7 +85857,7 @@
         },
         "news_event_available": true,
         "news_event_event_risk_level": "high",
-        "news_event_major_count": 6,
+        "news_event_major_count": 7,
         "news_event_missing_reason": null,
         "news_event_narrative": "geopolitics_escalation_risk_off",
         "news_event_partial": false,
@@ -86056,18 +86056,18 @@
       "fallback_used": false,
       "rate_limited": false,
       "successful_series": [
-        "DGS10",
-        "HY_OAS",
         "IG_OAS",
+        "HY_OAS",
         "BAA_SPREAD",
         "DGS3MO",
         "DGS2",
+        "DGS10",
         "DFII10",
-        "RECESSION",
-        "FINANCIAL_STRESS"
+        "FINANCIAL_STRESS",
+        "RECESSION"
       ]
     },
-    "generated_at": "2026-10-07T01:54:14.357403+00:00",
+    "generated_at": "2026-10-07T02:19:56.551432+00:00",
     "high_confidence_edge_report": {
       "breadth_forward_validation": {
         "bounce_with_breadth_support": {
@@ -87568,7 +87568,7 @@
       },
       "forward_completed_sample_size": 80,
       "forward_validation_notice": "Forward samples have started to mature, but alpha status remains research-only until stability is proven.",
-      "generated_at": "2026-10-07T01:54:14.354117+00:00",
+      "generated_at": "2026-10-07T02:19:56.547710+00:00",
       "internal_resonance_forward_validation": {
         "aligned_internal_resonance": {
           "by_horizon": {
@@ -87985,16 +87985,16 @@
         "source": "finnhub",
         "status": "failed"
       },
-      "event_detection_confidence": 76,
+      "event_detection_confidence": 75,
       "event_risk_level": "high",
-      "generated_at": "2026-10-07T01:54:14.357417+00:00",
+      "generated_at": "2026-10-07T02:19:56.551447+00:00",
       "limits": [
         "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
         "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
         "The provider never exposes API keys and never lets frontend call Finnhub directly.",
         "Economic calendar items are treated as event-risk context, not automatic directional forecasts."
       ],
-      "major_event_count": 6,
+      "major_event_count": 7,
       "major_events": [
         {
           "affected_assets": [
@@ -88008,15 +88008,15 @@
             "TLT"
           ],
           "confidence": "high",
-          "confidence_score": 80,
+          "confidence_score": 79,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 92,
-          "headline": "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+          "freshness_score": 91,
+          "headline": "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
           "provider": "finnhub",
@@ -88042,7 +88042,7 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 81,
+          "freshness_score": 80,
           "headline": "Ukraine's Zelenskiy says intelligence shows Russia is preparing massive attack - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -88062,14 +88062,14 @@
             "TLT"
           ],
           "confidence": "high",
-          "confidence_score": 77,
+          "confidence_score": 76,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 80,
+          "freshness_score": 79,
           "headline": "US EIA hikes oil price forecasts again as Iran war drains global stockpile - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -88097,6 +88097,33 @@
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
           "freshness_score": 77,
+          "headline": "Catalan separatist Puigdemont set to return home after court lifts arrest warrant - Reuters",
+          "importance_score": 100,
+          "narrative": "geopolitics_escalation_risk_off",
+          "provider": "finnhub",
+          "published_at": "2026-10-06T16:48:22+00:00",
+          "source": "Reuters"
+        },
+        {
+          "affected_assets": [
+            "SPY",
+            "QQQ",
+            "IWM",
+            "DIA",
+            "^VIX",
+            "USO",
+            "UUP",
+            "TLT"
+          ],
+          "confidence": "high",
+          "confidence_score": 76,
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_horizon": "intraday-5d",
+          "expected_market_direction": "risk_off",
+          "freshness_score": 76,
           "headline": "Russia drops war posts case against children’s hospice founder Moniava - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -88116,14 +88143,14 @@
             "TLT"
           ],
           "confidence": "medium",
-          "confidence_score": 73,
+          "confidence_score": 72,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 64,
+          "freshness_score": 63,
           "headline": "Attacks on civilian shipping in Black Sea are unacceptable, EU's von der Leyen says - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -88145,7 +88172,7 @@
           "event_type": "market_microstructure_event",
           "expected_horizon": "intraday-3d",
           "expected_market_direction": "mixed",
-          "freshness_score": 69,
+          "freshness_score": 68,
           "headline": "This startup wants to reduce liquidation risk from margin calls on prediction markets",
           "importance_score": 70,
           "narrative": "market_microstructure_event",
@@ -88191,7 +88218,7 @@
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_market_direction": "risk_off",
-            "headline": "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+            "headline": "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
             "importance_score": 100,
             "published_at": "2026-10-06T22:40:00+00:00",
             "source": "Reuters"
@@ -88227,6 +88254,18 @@
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_market_direction": "risk_off",
+            "headline": "Catalan separatist Puigdemont set to return home after court lifts arrest warrant - Reuters",
+            "importance_score": 100,
+            "published_at": "2026-10-06T16:48:22+00:00",
+            "source": "Reuters"
+          },
+          {
+            "confidence": "high",
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_market_direction": "risk_off",
             "headline": "Russia drops war posts case against children’s hospice founder Moniava - Reuters",
             "importance_score": 100,
             "published_at": "2026-10-06T16:23:37+00:00",
@@ -88252,7 +88291,7 @@
         "direction": "supports_risk_expansion",
         "event_risk_level": "high",
         "macro_event_risk_flag": false,
-        "major_event_count": 6,
+        "major_event_count": 7,
         "not_a_trading_signal": true,
         "price_reaction_confirmed": false,
         "symbols": {
@@ -88391,8 +88430,10 @@
       "price_reaction_confirmation": {
         "asset_reaction_summary": {
           "avg_equity_1d_return": 0.0019,
-          "avg_equity_futures_1d_return": 0.0025,
-          "confirmed_checks": [],
+          "avg_equity_futures_1d_return": -0.0009,
+          "confirmed_checks": [
+            "股票ETF或股指期货下跌"
+          ],
           "equity_futures_symbols_used": [
             "ES=F",
             "NQ=F",
@@ -88400,13 +88441,12 @@
             "YM=F"
           ],
           "failed_checks": [
-            "股票ETF或股指期货下跌",
             "VIX 上升",
             "HYG/LQD 走弱",
             "美元走强"
           ],
           "hyg_lqd_1d_relative_return": 0.0007,
-          "oil_proxy_1d_return": 0.008,
+          "oil_proxy_1d_return": 0.0077,
           "oil_proxy_symbols_used": [
             "USO",
             "CL=F"
@@ -88415,7 +88455,7 @@
           "uup_1d_return": -0.0031,
           "vix_1d_return": -0.0329
         },
-        "confirmation_score": 0,
+        "confirmation_score": 25,
         "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
         "price_reaction_confirmed": false
       },
@@ -88519,7 +88559,7 @@
       "direction": "supports_risk_expansion",
       "event_risk_level": "high",
       "macro_event_risk_flag": false,
-      "major_event_count": 6,
+      "major_event_count": 7,
       "not_a_trading_signal": true,
       "price_reaction_confirmed": false,
       "symbols": {
@@ -89602,12 +89642,12 @@
             },
             "Bounce Setup Alert": {
               "alert_level": "WATCH",
-              "alert_score": 53,
+              "alert_score": 54,
               "confidence": "medium"
             },
             "Failed Bounce Alert": {
               "alert_level": "WARNING",
-              "alert_score": 65,
+              "alert_score": 66,
               "confidence": "medium"
             },
             "Risk Expansion Alert": {
@@ -89617,14 +89657,14 @@
             },
             "Trend Repair Alert": {
               "alert_level": "WATCH",
-              "alert_score": 47,
+              "alert_score": 48,
               "confidence": "low"
             }
           },
           "alpha_v1_threshold_unchanged": 0.32534311,
           "confluence_level": "mixed",
-          "confluence_score": 49,
-          "daily_market_summary_shadow": "QQQ shadow evidence: strongest alert is Failed Bounce Alert; confluence is mixed at 49/100. This evidence is for forecast validation and challenger comparison only.",
+          "confluence_score": 50,
+          "daily_market_summary_shadow": "QQQ shadow evidence: strongest alert is Failed Bounce Alert; confluence is mixed at 50/100. This evidence is for forecast validation and challenger comparison only.",
           "does_not_override_baseline_v1": true,
           "does_not_rewrite_forecast_records": true,
           "dominant_path_shadow": "failed_bounce",
@@ -89709,7 +89749,7 @@
           "role": "challenger_shadow_evidence",
           "strongest_alert": {
             "alert_level": "WARNING",
-            "alert_score": 65,
+            "alert_score": 66,
             "alert_type": "Failed Bounce Alert",
             "confidence": "medium"
           },
@@ -89746,8 +89786,8 @@
           },
           "alpha_v1_threshold_unchanged": 0.32534311,
           "confluence_level": "mixed",
-          "confluence_score": 47,
-          "daily_market_summary_shadow": "SPY shadow evidence: strongest alert is Bounce Setup Alert; confluence is mixed at 47/100. This evidence is for forecast validation and challenger comparison only.",
+          "confluence_score": 48,
+          "daily_market_summary_shadow": "SPY shadow evidence: strongest alert is Bounce Setup Alert; confluence is mixed at 48/100. This evidence is for forecast validation and challenger comparison only.",
           "does_not_override_baseline_v1": true,
           "does_not_rewrite_forecast_records": true,
           "dominant_path_shadow": "failed_bounce",
@@ -90357,7 +90397,7 @@
         "primary_mean_absolute_error": 0.041192
       }
     },
-    "generated_at": "2026-10-07T01:54:24.725198+00:00",
+    "generated_at": "2026-10-07T02:20:08.314694+00:00",
     "guardrails": [
       "Alpha v1 threshold remains frozen at 0.32534311.",
       "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -91181,7 +91221,7 @@
   },
   "model_promotion_status": {
     "active_model_version": "baseline_v1",
-    "generated_at": "2026-10-07T01:54:24.725284+00:00",
+    "generated_at": "2026-10-07T02:20:08.314785+00:00",
     "guardrails": [
       "Alpha v1 threshold remains frozen at 0.32534311.",
       "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -91353,16 +91393,16 @@
       "source": "finnhub",
       "status": "failed"
     },
-    "event_detection_confidence": 76,
+    "event_detection_confidence": 75,
     "event_risk_level": "high",
-    "generated_at": "2026-10-07T01:54:14.357417+00:00",
+    "generated_at": "2026-10-07T02:19:56.551447+00:00",
     "limits": [
       "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
       "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
       "The provider never exposes API keys and never lets frontend call Finnhub directly.",
       "Economic calendar items are treated as event-risk context, not automatic directional forecasts."
     ],
-    "major_event_count": 6,
+    "major_event_count": 7,
     "major_events": [
       {
         "affected_assets": [
@@ -91376,15 +91416,15 @@
           "TLT"
         ],
         "confidence": "high",
-        "confidence_score": 80,
+        "confidence_score": 79,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 92,
-        "headline": "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+        "freshness_score": 91,
+        "headline": "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
         "provider": "finnhub",
@@ -91410,7 +91450,7 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 81,
+        "freshness_score": 80,
         "headline": "Ukraine's Zelenskiy says intelligence shows Russia is preparing massive attack - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -91430,14 +91470,14 @@
           "TLT"
         ],
         "confidence": "high",
-        "confidence_score": 77,
+        "confidence_score": 76,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 80,
+        "freshness_score": 79,
         "headline": "US EIA hikes oil price forecasts again as Iran war drains global stockpile - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -91465,6 +91505,33 @@
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
         "freshness_score": 77,
+        "headline": "Catalan separatist Puigdemont set to return home after court lifts arrest warrant - Reuters",
+        "importance_score": 100,
+        "narrative": "geopolitics_escalation_risk_off",
+        "provider": "finnhub",
+        "published_at": "2026-10-06T16:48:22+00:00",
+        "source": "Reuters"
+      },
+      {
+        "affected_assets": [
+          "SPY",
+          "QQQ",
+          "IWM",
+          "DIA",
+          "^VIX",
+          "USO",
+          "UUP",
+          "TLT"
+        ],
+        "confidence": "high",
+        "confidence_score": 76,
+        "detected_event_conditions": [
+          "geopolitical_risk_escalation"
+        ],
+        "event_type": "geopolitical_risk_escalation",
+        "expected_horizon": "intraday-5d",
+        "expected_market_direction": "risk_off",
+        "freshness_score": 76,
         "headline": "Russia drops war posts case against children’s hospice founder Moniava - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -91484,14 +91551,14 @@
           "TLT"
         ],
         "confidence": "medium",
-        "confidence_score": 73,
+        "confidence_score": 72,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 64,
+        "freshness_score": 63,
         "headline": "Attacks on civilian shipping in Black Sea are unacceptable, EU's von der Leyen says - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -91513,7 +91580,7 @@
         "event_type": "market_microstructure_event",
         "expected_horizon": "intraday-3d",
         "expected_market_direction": "mixed",
-        "freshness_score": 69,
+        "freshness_score": 68,
         "headline": "This startup wants to reduce liquidation risk from margin calls on prediction markets",
         "importance_score": 70,
         "narrative": "market_microstructure_event",
@@ -91559,7 +91626,7 @@
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_market_direction": "risk_off",
-          "headline": "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+          "headline": "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
           "importance_score": 100,
           "published_at": "2026-10-06T22:40:00+00:00",
           "source": "Reuters"
@@ -91595,6 +91662,18 @@
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_market_direction": "risk_off",
+          "headline": "Catalan separatist Puigdemont set to return home after court lifts arrest warrant - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-10-06T16:48:22+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
           "headline": "Russia drops war posts case against children’s hospice founder Moniava - Reuters",
           "importance_score": 100,
           "published_at": "2026-10-06T16:23:37+00:00",
@@ -91620,7 +91699,7 @@
       "direction": "supports_risk_expansion",
       "event_risk_level": "high",
       "macro_event_risk_flag": false,
-      "major_event_count": 6,
+      "major_event_count": 7,
       "not_a_trading_signal": true,
       "price_reaction_confirmed": false,
       "symbols": {
@@ -91759,8 +91838,10 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": 0.0019,
-        "avg_equity_futures_1d_return": 0.0025,
-        "confirmed_checks": [],
+        "avg_equity_futures_1d_return": -0.0009,
+        "confirmed_checks": [
+          "股票ETF或股指期货下跌"
+        ],
         "equity_futures_symbols_used": [
           "ES=F",
           "NQ=F",
@@ -91768,13 +91849,12 @@
           "YM=F"
         ],
         "failed_checks": [
-          "股票ETF或股指期货下跌",
           "VIX 上升",
           "HYG/LQD 走弱",
           "美元走强"
         ],
         "hyg_lqd_1d_relative_return": 0.0007,
-        "oil_proxy_1d_return": 0.008,
+        "oil_proxy_1d_return": 0.0077,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -91783,7 +91863,7 @@
         "uup_1d_return": -0.0031,
         "vix_1d_return": -0.0329
       },
-      "confirmation_score": 0,
+      "confirmation_score": 25,
       "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
       "price_reaction_confirmed": false
     },
@@ -91883,7 +91963,7 @@
     "version": "news_event_intelligence_v1"
   },
   "options_status": {
-    "generated_at": "2026-10-07T01:54:00.802026+00:00",
+    "generated_at": "2026-10-07T02:19:39.845833+00:00",
     "market": {
       "failed_bounce_options_risk": 0.1198,
       "gamma_exposure": null,
@@ -92174,10 +92254,10 @@
       "can_append_forecast_record": true,
       "can_backfill_completed_outcomes": true,
       "current_date": "2026-10-06",
-      "current_time_us_eastern": "2026-10-06T21:54:23.710362-04:00",
+      "current_time_us_eastern": "2026-10-06T22:20:07.089987-04:00",
       "data_freshness_status": "fresh",
       "expected_latest_trading_date": "2026-10-06",
-      "generated_at": "2026-10-07T01:54:23.710362+00:00",
+      "generated_at": "2026-10-07T02:20:07.089987+00:00",
       "guardrails": [
         "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
         "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -93216,15 +93296,15 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
-        "DGS10",
-        "HY_OAS",
         "IG_OAS",
+        "HY_OAS",
         "BAA_SPREAD",
         "DGS3MO",
         "DGS2",
+        "DGS10",
         "DFII10",
-        "RECESSION",
-        "FINANCIAL_STRESS"
+        "FINANCIAL_STRESS",
+        "RECESSION"
       ],
       "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-10-06。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
       "gamma_available": false,
@@ -93255,11 +93335,11 @@
       ],
       "news_event": {
         "available": true,
-        "event_detection_confidence": 76,
+        "event_detection_confidence": 75,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-10-07T01:54:14.357417+00:00",
-        "major_event_count": 6,
+        "last_update": "2026-10-07T02:19:56.551447+00:00",
+        "major_event_count": 7,
         "missing_reason": null,
         "news_direction": "risk_off",
         "news_event_partial": false,
@@ -93270,7 +93350,7 @@
       },
       "news_event_available": true,
       "news_event_event_risk_level": "high",
-      "news_event_major_count": 6,
+      "news_event_major_count": 7,
       "news_event_missing_reason": null,
       "news_event_narrative": "geopolitics_escalation_risk_off",
       "news_event_partial": false,
@@ -93488,7 +93568,7 @@
         "status": "failed"
       },
       "event_risk_level": "high",
-      "major_event_count": 6,
+      "major_event_count": 7,
       "market_narrative": {
         "affected_scenarios": [
           "bearish_path"
@@ -93526,7 +93606,7 @@
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_market_direction": "risk_off",
-            "headline": "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+            "headline": "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
             "importance_score": 100,
             "published_at": "2026-10-06T22:40:00+00:00",
             "source": "Reuters"
@@ -93562,6 +93642,18 @@
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_market_direction": "risk_off",
+            "headline": "Catalan separatist Puigdemont set to return home after court lifts arrest warrant - Reuters",
+            "importance_score": 100,
+            "published_at": "2026-10-06T16:48:22+00:00",
+            "source": "Reuters"
+          },
+          {
+            "confidence": "high",
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_market_direction": "risk_off",
             "headline": "Russia drops war posts case against children’s hospice founder Moniava - Reuters",
             "importance_score": 100,
             "published_at": "2026-10-06T16:23:37+00:00",
@@ -93587,7 +93679,7 @@
         "direction": "supports_risk_expansion",
         "event_risk_level": "high",
         "macro_event_risk_flag": false,
-        "major_event_count": 6,
+        "major_event_count": 7,
         "not_a_trading_signal": true,
         "price_reaction_confirmed": false,
         "symbols": {
@@ -93726,8 +93818,10 @@
       "price_reaction_confirmation": {
         "asset_reaction_summary": {
           "avg_equity_1d_return": 0.0019,
-          "avg_equity_futures_1d_return": 0.0025,
-          "confirmed_checks": [],
+          "avg_equity_futures_1d_return": -0.0009,
+          "confirmed_checks": [
+            "股票ETF或股指期货下跌"
+          ],
           "equity_futures_symbols_used": [
             "ES=F",
             "NQ=F",
@@ -93735,13 +93829,12 @@
             "YM=F"
           ],
           "failed_checks": [
-            "股票ETF或股指期货下跌",
             "VIX 上升",
             "HYG/LQD 走弱",
             "美元走强"
           ],
           "hyg_lqd_1d_relative_return": 0.0007,
-          "oil_proxy_1d_return": 0.008,
+          "oil_proxy_1d_return": 0.0077,
           "oil_proxy_symbols_used": [
             "USO",
             "CL=F"
@@ -93750,7 +93843,7 @@
           "uup_1d_return": -0.0031,
           "vix_1d_return": -0.0329
         },
-        "confirmation_score": 0,
+        "confirmation_score": 25,
         "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
         "price_reaction_confirmed": false
       },
@@ -94027,12 +94120,12 @@
             },
             "Bounce Setup Alert": {
               "alert_level": "WATCH",
-              "alert_score": 53,
+              "alert_score": 54,
               "confidence": "medium"
             },
             "Failed Bounce Alert": {
               "alert_level": "WARNING",
-              "alert_score": 65,
+              "alert_score": 66,
               "confidence": "medium"
             },
             "Risk Expansion Alert": {
@@ -94042,14 +94135,14 @@
             },
             "Trend Repair Alert": {
               "alert_level": "WATCH",
-              "alert_score": 47,
+              "alert_score": 48,
               "confidence": "low"
             }
           },
           "alpha_v1_threshold_unchanged": 0.32534311,
           "confluence_level": "mixed",
-          "confluence_score": 49,
-          "daily_market_summary_shadow": "QQQ shadow evidence: strongest alert is Failed Bounce Alert; confluence is mixed at 49/100. This evidence is for forecast validation and challenger comparison only.",
+          "confluence_score": 50,
+          "daily_market_summary_shadow": "QQQ shadow evidence: strongest alert is Failed Bounce Alert; confluence is mixed at 50/100. This evidence is for forecast validation and challenger comparison only.",
           "does_not_override_baseline_v1": true,
           "does_not_rewrite_forecast_records": true,
           "dominant_path_shadow": "failed_bounce",
@@ -94134,7 +94227,7 @@
           "role": "challenger_shadow_evidence",
           "strongest_alert": {
             "alert_level": "WARNING",
-            "alert_score": 65,
+            "alert_score": 66,
             "alert_type": "Failed Bounce Alert",
             "confidence": "medium"
           },
@@ -94171,8 +94264,8 @@
           },
           "alpha_v1_threshold_unchanged": 0.32534311,
           "confluence_level": "mixed",
-          "confluence_score": 47,
-          "daily_market_summary_shadow": "SPY shadow evidence: strongest alert is Bounce Setup Alert; confluence is mixed at 47/100. This evidence is for forecast validation and challenger comparison only.",
+          "confluence_score": 48,
+          "daily_market_summary_shadow": "SPY shadow evidence: strongest alert is Bounce Setup Alert; confluence is mixed at 48/100. This evidence is for forecast validation and challenger comparison only.",
           "does_not_override_baseline_v1": true,
           "does_not_rewrite_forecast_records": true,
           "dominant_path_shadow": "failed_bounce",
@@ -94873,16 +94966,16 @@
         "confluence": {
           "conflicting_evidence": [
             {
-              "detail": "News/event direction is not sufficiently confirmed by market reaction.",
-              "name": "新闻未获价格确认",
-              "score": 100,
-              "source": "news"
-            },
-            {
               "detail": "指数路径与内部参与度存在冲突。",
               "name": "宽度冲突",
               "score": 85,
               "source": "breadth"
+            },
+            {
+              "detail": "News/event direction is not sufficiently confirmed by market reaction.",
+              "name": "新闻未获价格确认",
+              "score": 75,
+              "source": "news"
             },
             {
               "detail": "重大 risk-off 新闻提高风险路径权重。",
@@ -95000,6 +95093,12 @@
               "source": "flow"
             },
             {
+              "detail": "DIA 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+              "name": "新闻事件支持主路径",
+              "score": 25,
+              "source": "news"
+            },
+            {
               "detail": "primary-secondary gap 12.8%",
               "name": "主次路径差距可观察",
               "score": 12.83,
@@ -95040,12 +95139,6 @@
               "name": "macro event risk",
               "score": 5,
               "source": "signal_confirmation"
-            },
-            {
-              "detail": "DIA 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-              "name": "新闻事件支持主路径",
-              "score": 0,
-              "source": "news"
             }
           ],
           "symbol": "DIA",
@@ -95275,7 +95368,7 @@
               "'I'm getting fed up': early US midterm voters line up before dawn in Ohio - Reuters",
               "Transcript of US Vice President Vance interview in Alaska - Reuters",
               "Californians blast Trump remark that Iran could 'take out' Los Angeles, San Diego - Reuters",
-              "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+              "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
               "Trump says nobody knows who is running Iran - Reuters"
             ]
           },
@@ -96182,15 +96275,15 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 80,
+              "confidence_score": 79,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 92,
-              "headline": "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+              "freshness_score": 91,
+              "headline": "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
@@ -96216,7 +96309,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 81,
+              "freshness_score": 80,
               "headline": "Ukraine's Zelenskiy says intelligence shows Russia is preparing massive attack - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -96236,14 +96329,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 80,
+              "freshness_score": 79,
               "headline": "US EIA hikes oil price forecasts again as Iran war drains global stockpile - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -96271,6 +96364,33 @@
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
               "freshness_score": 77,
+              "headline": "Catalan separatist Puigdemont set to return home after court lifts arrest warrant - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-10-06T16:48:22+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 76,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 76,
               "headline": "Russia drops war posts case against children’s hospice founder Moniava - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -96290,42 +96410,20 @@
                 "TLT"
               ],
               "confidence": "medium",
-              "confidence_score": 73,
+              "confidence_score": 72,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 64,
+              "freshness_score": 63,
               "headline": "Attacks on civilian shipping in Black Sea are unacceptable, EU's von der Leyen says - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-10-06T11:01:43+00:00",
               "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX"
-              ],
-              "confidence": "medium",
-              "confidence_score": 70,
-              "detected_event_conditions": [],
-              "event_type": "market_microstructure_event",
-              "expected_horizon": "intraday-3d",
-              "expected_market_direction": "mixed",
-              "freshness_score": 69,
-              "headline": "This startup wants to reduce liquidation risk from margin calls on prediction markets",
-              "importance_score": 70,
-              "narrative": "market_microstructure_event",
-              "provider": "finnhub",
-              "published_at": "2026-10-06T13:01:20+00:00",
-              "source": "CNBC"
             }
           ],
           "market_narrative": {
@@ -96365,7 +96463,7 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+                "headline": "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-10-06T22:40:00+00:00",
                 "source": "Reuters"
@@ -96392,6 +96490,18 @@
                 "headline": "US EIA hikes oil price forecasts again as Iran war drains global stockpile - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-10-06T17:39:05+00:00",
+                "source": "Reuters"
+              },
+              {
+                "confidence": "high",
+                "detected_event_conditions": [
+                  "geopolitical_risk_escalation"
+                ],
+                "event_type": "geopolitical_risk_escalation",
+                "expected_market_direction": "risk_off",
+                "headline": "Catalan separatist Puigdemont set to return home after court lifts arrest warrant - Reuters",
+                "importance_score": 100,
+                "published_at": "2026-10-06T16:48:22+00:00",
                 "source": "Reuters"
               },
               {
@@ -96456,8 +96566,10 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0019,
-              "avg_equity_futures_1d_return": 0.0025,
-              "confirmed_checks": [],
+              "avg_equity_futures_1d_return": -0.0009,
+              "confirmed_checks": [
+                "股票ETF或股指期货下跌"
+              ],
               "equity_futures_symbols_used": [
                 "ES=F",
                 "NQ=F",
@@ -96465,13 +96577,12 @@
                 "YM=F"
               ],
               "failed_checks": [
-                "股票ETF或股指期货下跌",
                 "VIX 上升",
                 "HYG/LQD 走弱",
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": 0.0007,
-              "oil_proxy_1d_return": 0.008,
+              "oil_proxy_1d_return": 0.0077,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -96480,7 +96591,7 @@
               "uup_1d_return": -0.0031,
               "vix_1d_return": -0.0329
             },
-            "confirmation_score": 0,
+            "confirmation_score": 25,
             "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
             "price_reaction_confirmed": false
           },
@@ -97360,7 +97471,7 @@
             {
               "detail": "News/event direction is not sufficiently confirmed by market reaction.",
               "name": "新闻未获价格确认",
-              "score": 100,
+              "score": 75,
               "source": "news"
             },
             {
@@ -97491,6 +97602,12 @@
               "source": "flow"
             },
             {
+              "detail": "IWM 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+              "name": "新闻事件支持主路径",
+              "score": 25,
+              "source": "news"
+            },
+            {
               "detail": "Frozen Alpha v1 is triggered; this remains research-only.",
               "name": "Alpha v1 bounce signal",
               "score": 12,
@@ -97531,12 +97648,6 @@
               "name": "macro event risk",
               "score": 5,
               "source": "signal_confirmation"
-            },
-            {
-              "detail": "IWM 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-              "name": "新闻事件支持主路径",
-              "score": 0,
-              "source": "news"
             }
           ],
           "symbol": "IWM",
@@ -97766,7 +97877,7 @@
               "'I'm getting fed up': early US midterm voters line up before dawn in Ohio - Reuters",
               "Transcript of US Vice President Vance interview in Alaska - Reuters",
               "Californians blast Trump remark that Iran could 'take out' Los Angeles, San Diego - Reuters",
-              "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+              "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
               "Trump says nobody knows who is running Iran - Reuters"
             ]
           },
@@ -98710,15 +98821,15 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 80,
+              "confidence_score": 79,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 92,
-              "headline": "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+              "freshness_score": 91,
+              "headline": "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
@@ -98744,7 +98855,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 81,
+              "freshness_score": 80,
               "headline": "Ukraine's Zelenskiy says intelligence shows Russia is preparing massive attack - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -98764,14 +98875,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 80,
+              "freshness_score": 79,
               "headline": "US EIA hikes oil price forecasts again as Iran war drains global stockpile - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -98799,6 +98910,33 @@
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
               "freshness_score": 77,
+              "headline": "Catalan separatist Puigdemont set to return home after court lifts arrest warrant - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-10-06T16:48:22+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 76,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 76,
               "headline": "Russia drops war posts case against children’s hospice founder Moniava - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -98818,42 +98956,20 @@
                 "TLT"
               ],
               "confidence": "medium",
-              "confidence_score": 73,
+              "confidence_score": 72,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 64,
+              "freshness_score": 63,
               "headline": "Attacks on civilian shipping in Black Sea are unacceptable, EU's von der Leyen says - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-10-06T11:01:43+00:00",
               "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX"
-              ],
-              "confidence": "medium",
-              "confidence_score": 70,
-              "detected_event_conditions": [],
-              "event_type": "market_microstructure_event",
-              "expected_horizon": "intraday-3d",
-              "expected_market_direction": "mixed",
-              "freshness_score": 69,
-              "headline": "This startup wants to reduce liquidation risk from margin calls on prediction markets",
-              "importance_score": 70,
-              "narrative": "market_microstructure_event",
-              "provider": "finnhub",
-              "published_at": "2026-10-06T13:01:20+00:00",
-              "source": "CNBC"
             }
           ],
           "market_narrative": {
@@ -98893,7 +99009,7 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+                "headline": "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-10-06T22:40:00+00:00",
                 "source": "Reuters"
@@ -98920,6 +99036,18 @@
                 "headline": "US EIA hikes oil price forecasts again as Iran war drains global stockpile - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-10-06T17:39:05+00:00",
+                "source": "Reuters"
+              },
+              {
+                "confidence": "high",
+                "detected_event_conditions": [
+                  "geopolitical_risk_escalation"
+                ],
+                "event_type": "geopolitical_risk_escalation",
+                "expected_market_direction": "risk_off",
+                "headline": "Catalan separatist Puigdemont set to return home after court lifts arrest warrant - Reuters",
+                "importance_score": 100,
+                "published_at": "2026-10-06T16:48:22+00:00",
                 "source": "Reuters"
               },
               {
@@ -98984,8 +99112,10 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0019,
-              "avg_equity_futures_1d_return": 0.0025,
-              "confirmed_checks": [],
+              "avg_equity_futures_1d_return": -0.0009,
+              "confirmed_checks": [
+                "股票ETF或股指期货下跌"
+              ],
               "equity_futures_symbols_used": [
                 "ES=F",
                 "NQ=F",
@@ -98993,13 +99123,12 @@
                 "YM=F"
               ],
               "failed_checks": [
-                "股票ETF或股指期货下跌",
                 "VIX 上升",
                 "HYG/LQD 走弱",
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": 0.0007,
-              "oil_proxy_1d_return": 0.008,
+              "oil_proxy_1d_return": 0.0077,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -99008,7 +99137,7 @@
               "uup_1d_return": -0.0031,
               "vix_1d_return": -0.0329
             },
-            "confirmation_score": 0,
+            "confirmation_score": 25,
             "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
             "price_reaction_confirmed": false
           },
@@ -99888,7 +100017,7 @@
             {
               "detail": "News/event direction is not sufficiently confirmed by market reaction.",
               "name": "新闻未获价格确认",
-              "score": 100,
+              "score": 75,
               "source": "news"
             },
             {
@@ -99908,6 +100037,12 @@
               "name": "risk_off_news_event",
               "score": 35,
               "source": "signal_confirmation"
+            },
+            {
+              "detail": "QQQ 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+              "name": "新闻事件与主路径冲突",
+              "score": 25,
+              "source": "news"
             },
             {
               "detail": "Index strength is not broadly confirmed by internals; this raises failed-bounce risk.",
@@ -99938,17 +100073,11 @@
               "name": "主次路径差距小",
               "score": 4.68,
               "source": "scenario_gap"
-            },
-            {
-              "detail": "QQQ 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-              "name": "新闻事件与主路径冲突",
-              "score": 0,
-              "source": "news"
             }
           ],
           "confluence_level": "mixed",
-          "confluence_score": 49,
-          "confluence_summary": "QQQ 当前多源共振为 mixed（49/100），主导路径为 failed_bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
+          "confluence_score": 50,
+          "confluence_summary": "QQQ 当前多源共振为 mixed（50/100），主导路径为 failed_bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
           "dominant_path": "failed_bounce",
           "edge_status": "{'market_edge_status': 'MODERATE_EDGE', 'has_usable_prediction_edge_today': True, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': True, 'historical_analog_not_conflicting': True, 'confidence_score_ge_65': False, 'current_regime_identified': True, 'macro_event_risk_not_high': True, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': False, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': True}, 'passed_conditions': 8, 'summary': '有一定预测优势，但仍需观察冲突信号和失效条件。', 'no_edge_note': '', 'risk_warning': False}",
           "key_conflict_count": 3,
@@ -100300,7 +100429,7 @@
               "'I'm getting fed up': early US midterm voters line up before dawn in Ohio - Reuters",
               "Transcript of US Vice President Vance interview in Alaska - Reuters",
               "Californians blast Trump remark that Iran could 'take out' Los Angeles, San Diego - Reuters",
-              "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+              "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
               "Trump says nobody knows who is running Iran - Reuters"
             ]
           },
@@ -100485,7 +100614,7 @@
                 "QQQ"
               ],
               "alert_level": "WARNING",
-              "alert_score": 65,
+              "alert_score": 66,
               "alert_type": "Failed Bounce Alert",
               "confidence": "medium",
               "conflicting_evidence": [],
@@ -100570,7 +100699,7 @@
                 "QQQ"
               ],
               "alert_level": "WATCH",
-              "alert_score": 53,
+              "alert_score": 54,
               "alert_type": "Bounce Setup Alert",
               "confidence": "medium",
               "conflicting_evidence": [
@@ -100742,7 +100871,7 @@
                 "QQQ"
               ],
               "alert_level": "WATCH",
-              "alert_score": 47,
+              "alert_score": 48,
               "alert_type": "Trend Repair Alert",
               "confidence": "low",
               "conflicting_evidence": [
@@ -100933,7 +101062,7 @@
               "QQQ"
             ],
             "alert_level": "WARNING",
-            "alert_score": 65,
+            "alert_score": 66,
             "alert_type": "Failed Bounce Alert",
             "confidence": "medium",
             "conflicting_evidence": [],
@@ -101217,15 +101346,15 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 80,
+              "confidence_score": 79,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 92,
-              "headline": "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+              "freshness_score": 91,
+              "headline": "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
@@ -101251,7 +101380,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 81,
+              "freshness_score": 80,
               "headline": "Ukraine's Zelenskiy says intelligence shows Russia is preparing massive attack - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -101271,14 +101400,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 80,
+              "freshness_score": 79,
               "headline": "US EIA hikes oil price forecasts again as Iran war drains global stockpile - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -101306,6 +101435,33 @@
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
               "freshness_score": 77,
+              "headline": "Catalan separatist Puigdemont set to return home after court lifts arrest warrant - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-10-06T16:48:22+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 76,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 76,
               "headline": "Russia drops war posts case against children’s hospice founder Moniava - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -101325,42 +101481,20 @@
                 "TLT"
               ],
               "confidence": "medium",
-              "confidence_score": 73,
+              "confidence_score": 72,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 64,
+              "freshness_score": 63,
               "headline": "Attacks on civilian shipping in Black Sea are unacceptable, EU's von der Leyen says - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-10-06T11:01:43+00:00",
               "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX"
-              ],
-              "confidence": "medium",
-              "confidence_score": 70,
-              "detected_event_conditions": [],
-              "event_type": "market_microstructure_event",
-              "expected_horizon": "intraday-3d",
-              "expected_market_direction": "mixed",
-              "freshness_score": 69,
-              "headline": "This startup wants to reduce liquidation risk from margin calls on prediction markets",
-              "importance_score": 70,
-              "narrative": "market_microstructure_event",
-              "provider": "finnhub",
-              "published_at": "2026-10-06T13:01:20+00:00",
-              "source": "CNBC"
             }
           ],
           "market_narrative": {
@@ -101400,7 +101534,7 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+                "headline": "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-10-06T22:40:00+00:00",
                 "source": "Reuters"
@@ -101427,6 +101561,18 @@
                 "headline": "US EIA hikes oil price forecasts again as Iran war drains global stockpile - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-10-06T17:39:05+00:00",
+                "source": "Reuters"
+              },
+              {
+                "confidence": "high",
+                "detected_event_conditions": [
+                  "geopolitical_risk_escalation"
+                ],
+                "event_type": "geopolitical_risk_escalation",
+                "expected_market_direction": "risk_off",
+                "headline": "Catalan separatist Puigdemont set to return home after court lifts arrest warrant - Reuters",
+                "importance_score": 100,
+                "published_at": "2026-10-06T16:48:22+00:00",
                 "source": "Reuters"
               },
               {
@@ -101491,8 +101637,10 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0019,
-              "avg_equity_futures_1d_return": 0.0025,
-              "confirmed_checks": [],
+              "avg_equity_futures_1d_return": -0.0009,
+              "confirmed_checks": [
+                "股票ETF或股指期货下跌"
+              ],
               "equity_futures_symbols_used": [
                 "ES=F",
                 "NQ=F",
@@ -101500,13 +101648,12 @@
                 "YM=F"
               ],
               "failed_checks": [
-                "股票ETF或股指期货下跌",
                 "VIX 上升",
                 "HYG/LQD 走弱",
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": 0.0007,
-              "oil_proxy_1d_return": 0.008,
+              "oil_proxy_1d_return": 0.0077,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -101515,7 +101662,7 @@
               "uup_1d_return": -0.0031,
               "vix_1d_return": -0.0329
             },
-            "confirmation_score": 0,
+            "confirmation_score": 25,
             "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
             "price_reaction_confirmed": false
           },
@@ -102110,12 +102257,12 @@
             },
             "Bounce Setup Alert": {
               "alert_level": "WATCH",
-              "alert_score": 53,
+              "alert_score": 54,
               "confidence": "medium"
             },
             "Failed Bounce Alert": {
               "alert_level": "WARNING",
-              "alert_score": 65,
+              "alert_score": 66,
               "confidence": "medium"
             },
             "Risk Expansion Alert": {
@@ -102125,14 +102272,14 @@
             },
             "Trend Repair Alert": {
               "alert_level": "WATCH",
-              "alert_score": 47,
+              "alert_score": 48,
               "confidence": "low"
             }
           },
           "alpha_v1_threshold_unchanged": 0.32534311,
           "confluence_level": "mixed",
-          "confluence_score": 49,
-          "daily_market_summary_shadow": "QQQ shadow evidence: strongest alert is Failed Bounce Alert; confluence is mixed at 49/100. This evidence is for forecast validation and challenger comparison only.",
+          "confluence_score": 50,
+          "daily_market_summary_shadow": "QQQ shadow evidence: strongest alert is Failed Bounce Alert; confluence is mixed at 50/100. This evidence is for forecast validation and challenger comparison only.",
           "does_not_override_baseline_v1": true,
           "does_not_rewrite_forecast_records": true,
           "dominant_path_shadow": "failed_bounce",
@@ -102217,7 +102364,7 @@
           "role": "challenger_shadow_evidence",
           "strongest_alert": {
             "alert_level": "WARNING",
-            "alert_score": 65,
+            "alert_score": 66,
             "alert_type": "Failed Bounce Alert",
             "confidence": "medium"
           },
@@ -102395,7 +102542,7 @@
             {
               "detail": "News/event direction is not sufficiently confirmed by market reaction.",
               "name": "新闻未获价格确认",
-              "score": 100,
+              "score": 75,
               "source": "news"
             },
             {
@@ -102409,6 +102556,12 @@
               "name": "risk_off_news_event",
               "score": 39,
               "source": "signal_confirmation"
+            },
+            {
+              "detail": "SPY 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+              "name": "新闻事件与主路径冲突",
+              "score": 25,
+              "source": "news"
             },
             {
               "detail": "Index strength is not broadly confirmed by internals; this raises failed-bounce risk.",
@@ -102433,17 +102586,11 @@
               "name": "主次路径差距小",
               "score": 3.74,
               "source": "scenario_gap"
-            },
-            {
-              "detail": "SPY 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-              "name": "新闻事件与主路径冲突",
-              "score": 0,
-              "source": "news"
             }
           ],
           "confluence_level": "mixed",
-          "confluence_score": 47,
-          "confluence_summary": "SPY 当前多源共振为 mixed（47/100），主导路径为 failed_bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
+          "confluence_score": 48,
+          "confluence_summary": "SPY 当前多源共振为 mixed（48/100），主导路径为 failed_bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
           "dominant_path": "failed_bounce",
           "edge_status": "{'market_edge_status': 'MODERATE_EDGE', 'has_usable_prediction_edge_today': True, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': False, 'historical_analog_not_conflicting': False, 'confidence_score_ge_65': True, 'current_regime_identified': True, 'macro_event_risk_not_high': True, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': False, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': True}, 'passed_conditions': 7, 'summary': '有一定预测优势，但仍需观察冲突信号和失效条件。', 'no_edge_note': '', 'risk_warning': False}",
           "key_conflict_count": 2,
@@ -102783,7 +102930,7 @@
               "'I'm getting fed up': early US midterm voters line up before dawn in Ohio - Reuters",
               "Transcript of US Vice President Vance interview in Alaska - Reuters",
               "Californians blast Trump remark that Iran could 'take out' Los Angeles, San Diego - Reuters",
-              "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+              "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
               "Trump says nobody knows who is running Iran - Reuters"
             ]
           },
@@ -103695,15 +103842,15 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 80,
+              "confidence_score": 79,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 92,
-              "headline": "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+              "freshness_score": 91,
+              "headline": "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
@@ -103729,7 +103876,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 81,
+              "freshness_score": 80,
               "headline": "Ukraine's Zelenskiy says intelligence shows Russia is preparing massive attack - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -103749,14 +103896,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 80,
+              "freshness_score": 79,
               "headline": "US EIA hikes oil price forecasts again as Iran war drains global stockpile - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -103784,6 +103931,33 @@
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
               "freshness_score": 77,
+              "headline": "Catalan separatist Puigdemont set to return home after court lifts arrest warrant - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-10-06T16:48:22+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 76,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 76,
               "headline": "Russia drops war posts case against children’s hospice founder Moniava - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -103803,42 +103977,20 @@
                 "TLT"
               ],
               "confidence": "medium",
-              "confidence_score": 73,
+              "confidence_score": 72,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 64,
+              "freshness_score": 63,
               "headline": "Attacks on civilian shipping in Black Sea are unacceptable, EU's von der Leyen says - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-10-06T11:01:43+00:00",
               "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX"
-              ],
-              "confidence": "medium",
-              "confidence_score": 70,
-              "detected_event_conditions": [],
-              "event_type": "market_microstructure_event",
-              "expected_horizon": "intraday-3d",
-              "expected_market_direction": "mixed",
-              "freshness_score": 69,
-              "headline": "This startup wants to reduce liquidation risk from margin calls on prediction markets",
-              "importance_score": 70,
-              "narrative": "market_microstructure_event",
-              "provider": "finnhub",
-              "published_at": "2026-10-06T13:01:20+00:00",
-              "source": "CNBC"
             }
           ],
           "market_narrative": {
@@ -103878,7 +104030,7 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+                "headline": "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-10-06T22:40:00+00:00",
                 "source": "Reuters"
@@ -103905,6 +104057,18 @@
                 "headline": "US EIA hikes oil price forecasts again as Iran war drains global stockpile - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-10-06T17:39:05+00:00",
+                "source": "Reuters"
+              },
+              {
+                "confidence": "high",
+                "detected_event_conditions": [
+                  "geopolitical_risk_escalation"
+                ],
+                "event_type": "geopolitical_risk_escalation",
+                "expected_market_direction": "risk_off",
+                "headline": "Catalan separatist Puigdemont set to return home after court lifts arrest warrant - Reuters",
+                "importance_score": 100,
+                "published_at": "2026-10-06T16:48:22+00:00",
                 "source": "Reuters"
               },
               {
@@ -103969,8 +104133,10 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0019,
-              "avg_equity_futures_1d_return": 0.0025,
-              "confirmed_checks": [],
+              "avg_equity_futures_1d_return": -0.0009,
+              "confirmed_checks": [
+                "股票ETF或股指期货下跌"
+              ],
               "equity_futures_symbols_used": [
                 "ES=F",
                 "NQ=F",
@@ -103978,13 +104144,12 @@
                 "YM=F"
               ],
               "failed_checks": [
-                "股票ETF或股指期货下跌",
                 "VIX 上升",
                 "HYG/LQD 走弱",
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": 0.0007,
-              "oil_proxy_1d_return": 0.008,
+              "oil_proxy_1d_return": 0.0077,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -103993,7 +104158,7 @@
               "uup_1d_return": -0.0031,
               "vix_1d_return": -0.0329
             },
-            "confirmation_score": 0,
+            "confirmation_score": 25,
             "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
             "price_reaction_confirmed": false
           },
@@ -104609,8 +104774,8 @@
           },
           "alpha_v1_threshold_unchanged": 0.32534311,
           "confluence_level": "mixed",
-          "confluence_score": 47,
-          "daily_market_summary_shadow": "SPY shadow evidence: strongest alert is Bounce Setup Alert; confluence is mixed at 47/100. This evidence is for forecast validation and challenger comparison only.",
+          "confluence_score": 48,
+          "daily_market_summary_shadow": "SPY shadow evidence: strongest alert is Bounce Setup Alert; confluence is mixed at 48/100. This evidence is for forecast validation and challenger comparison only.",
           "does_not_override_baseline_v1": true,
           "does_not_rewrite_forecast_records": true,
           "dominant_path_shadow": "failed_bounce",
@@ -104854,7 +105019,7 @@
   },
   "price_volume_structure": {
     "disclaimer": "K线和成交量结构只用于预测确认，不是交易信号、买卖建议或仓位建议。",
-    "generated_at": "2026-10-07T01:54:23.705725+00:00",
+    "generated_at": "2026-10-07T02:20:07.083725+00:00",
     "summary": {
       "average_price_structure_score": 54.5,
       "average_volume_confirmation_score": 40.0,
@@ -105389,12 +105554,12 @@
           },
           "Bounce Setup Alert": {
             "alert_level": "WATCH",
-            "alert_score": 53,
+            "alert_score": 54,
             "confidence": "medium"
           },
           "Failed Bounce Alert": {
             "alert_level": "WARNING",
-            "alert_score": 65,
+            "alert_score": 66,
             "confidence": "medium"
           },
           "Risk Expansion Alert": {
@@ -105404,14 +105569,14 @@
           },
           "Trend Repair Alert": {
             "alert_level": "WATCH",
-            "alert_score": 47,
+            "alert_score": 48,
             "confidence": "low"
           }
         },
         "alpha_v1_threshold_unchanged": 0.32534311,
         "confluence_level": "mixed",
-        "confluence_score": 49,
-        "daily_market_summary_shadow": "QQQ shadow evidence: strongest alert is Failed Bounce Alert; confluence is mixed at 49/100. This evidence is for forecast validation and challenger comparison only.",
+        "confluence_score": 50,
+        "daily_market_summary_shadow": "QQQ shadow evidence: strongest alert is Failed Bounce Alert; confluence is mixed at 50/100. This evidence is for forecast validation and challenger comparison only.",
         "does_not_override_baseline_v1": true,
         "does_not_rewrite_forecast_records": true,
         "dominant_path_shadow": "failed_bounce",
@@ -105496,7 +105661,7 @@
         "role": "challenger_shadow_evidence",
         "strongest_alert": {
           "alert_level": "WARNING",
-          "alert_score": 65,
+          "alert_score": 66,
           "alert_type": "Failed Bounce Alert",
           "confidence": "medium"
         },
@@ -105533,8 +105698,8 @@
         },
         "alpha_v1_threshold_unchanged": 0.32534311,
         "confluence_level": "mixed",
-        "confluence_score": 47,
-        "daily_market_summary_shadow": "SPY shadow evidence: strongest alert is Bounce Setup Alert; confluence is mixed at 47/100. This evidence is for forecast validation and challenger comparison only.",
+        "confluence_score": 48,
+        "daily_market_summary_shadow": "SPY shadow evidence: strongest alert is Bounce Setup Alert; confluence is mixed at 48/100. This evidence is for forecast validation and challenger comparison only.",
         "does_not_override_baseline_v1": true,
         "does_not_rewrite_forecast_records": true,
         "dominant_path_shadow": "failed_bounce",
@@ -105636,10 +105801,10 @@
       "can_append_forecast_record": true,
       "can_backfill_completed_outcomes": true,
       "current_date": "2026-10-06",
-      "current_time_us_eastern": "2026-10-06T21:54:23.710362-04:00",
+      "current_time_us_eastern": "2026-10-06T22:20:07.089987-04:00",
       "data_freshness_status": "fresh",
       "expected_latest_trading_date": "2026-10-06",
-      "generated_at": "2026-10-07T01:54:23.710362+00:00",
+      "generated_at": "2026-10-07T02:20:07.089987+00:00",
       "guardrails": [
         "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
         "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -106678,15 +106843,15 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
-        "DGS10",
-        "HY_OAS",
         "IG_OAS",
+        "HY_OAS",
         "BAA_SPREAD",
         "DGS3MO",
         "DGS2",
+        "DGS10",
         "DFII10",
-        "RECESSION",
-        "FINANCIAL_STRESS"
+        "FINANCIAL_STRESS",
+        "RECESSION"
       ],
       "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-10-06。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
       "gamma_available": false,
@@ -106717,11 +106882,11 @@
       ],
       "news_event": {
         "available": true,
-        "event_detection_confidence": 76,
+        "event_detection_confidence": 75,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-10-07T01:54:14.357417+00:00",
-        "major_event_count": 6,
+        "last_update": "2026-10-07T02:19:56.551447+00:00",
+        "major_event_count": 7,
         "missing_reason": null,
         "news_direction": "risk_off",
         "news_event_partial": false,
@@ -106732,7 +106897,7 @@
       },
       "news_event_available": true,
       "news_event_event_risk_level": "high",
-      "news_event_major_count": 6,
+      "news_event_major_count": 7,
       "news_event_missing_reason": null,
       "news_event_narrative": "geopolitics_escalation_risk_off",
       "news_event_partial": false,
@@ -106782,7 +106947,7 @@
         "status": "failed"
       },
       "event_risk_level": "high",
-      "major_event_count": 6,
+      "major_event_count": 7,
       "market_narrative": {
         "affected_scenarios": [
           "bearish_path"
@@ -106820,7 +106985,7 @@
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_market_direction": "risk_off",
-            "headline": "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+            "headline": "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
             "importance_score": 100,
             "published_at": "2026-10-06T22:40:00+00:00",
             "source": "Reuters"
@@ -106856,6 +107021,18 @@
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_market_direction": "risk_off",
+            "headline": "Catalan separatist Puigdemont set to return home after court lifts arrest warrant - Reuters",
+            "importance_score": 100,
+            "published_at": "2026-10-06T16:48:22+00:00",
+            "source": "Reuters"
+          },
+          {
+            "confidence": "high",
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_market_direction": "risk_off",
             "headline": "Russia drops war posts case against children’s hospice founder Moniava - Reuters",
             "importance_score": 100,
             "published_at": "2026-10-06T16:23:37+00:00",
@@ -106881,7 +107058,7 @@
         "direction": "supports_risk_expansion",
         "event_risk_level": "high",
         "macro_event_risk_flag": false,
-        "major_event_count": 6,
+        "major_event_count": 7,
         "not_a_trading_signal": true,
         "price_reaction_confirmed": false,
         "symbols": {
@@ -107020,8 +107197,10 @@
       "price_reaction_confirmation": {
         "asset_reaction_summary": {
           "avg_equity_1d_return": 0.0019,
-          "avg_equity_futures_1d_return": 0.0025,
-          "confirmed_checks": [],
+          "avg_equity_futures_1d_return": -0.0009,
+          "confirmed_checks": [
+            "股票ETF或股指期货下跌"
+          ],
           "equity_futures_symbols_used": [
             "ES=F",
             "NQ=F",
@@ -107029,13 +107208,12 @@
             "YM=F"
           ],
           "failed_checks": [
-            "股票ETF或股指期货下跌",
             "VIX 上升",
             "HYG/LQD 走弱",
             "美元走强"
           ],
           "hyg_lqd_1d_relative_return": 0.0007,
-          "oil_proxy_1d_return": 0.008,
+          "oil_proxy_1d_return": 0.0077,
           "oil_proxy_symbols_used": [
             "USO",
             "CL=F"
@@ -107044,7 +107222,7 @@
           "uup_1d_return": -0.0031,
           "vix_1d_return": -0.0329
         },
-        "confirmation_score": 0,
+        "confirmation_score": 25,
         "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
         "price_reaction_confirmed": false
       },
@@ -107321,12 +107499,12 @@
             },
             "Bounce Setup Alert": {
               "alert_level": "WATCH",
-              "alert_score": 53,
+              "alert_score": 54,
               "confidence": "medium"
             },
             "Failed Bounce Alert": {
               "alert_level": "WARNING",
-              "alert_score": 65,
+              "alert_score": 66,
               "confidence": "medium"
             },
             "Risk Expansion Alert": {
@@ -107336,14 +107514,14 @@
             },
             "Trend Repair Alert": {
               "alert_level": "WATCH",
-              "alert_score": 47,
+              "alert_score": 48,
               "confidence": "low"
             }
           },
           "alpha_v1_threshold_unchanged": 0.32534311,
           "confluence_level": "mixed",
-          "confluence_score": 49,
-          "daily_market_summary_shadow": "QQQ shadow evidence: strongest alert is Failed Bounce Alert; confluence is mixed at 49/100. This evidence is for forecast validation and challenger comparison only.",
+          "confluence_score": 50,
+          "daily_market_summary_shadow": "QQQ shadow evidence: strongest alert is Failed Bounce Alert; confluence is mixed at 50/100. This evidence is for forecast validation and challenger comparison only.",
           "does_not_override_baseline_v1": true,
           "does_not_rewrite_forecast_records": true,
           "dominant_path_shadow": "failed_bounce",
@@ -107428,7 +107606,7 @@
           "role": "challenger_shadow_evidence",
           "strongest_alert": {
             "alert_level": "WARNING",
-            "alert_score": 65,
+            "alert_score": 66,
             "alert_type": "Failed Bounce Alert",
             "confidence": "medium"
           },
@@ -107465,8 +107643,8 @@
           },
           "alpha_v1_threshold_unchanged": 0.32534311,
           "confluence_level": "mixed",
-          "confluence_score": 47,
-          "daily_market_summary_shadow": "SPY shadow evidence: strongest alert is Bounce Setup Alert; confluence is mixed at 47/100. This evidence is for forecast validation and challenger comparison only.",
+          "confluence_score": 48,
+          "daily_market_summary_shadow": "SPY shadow evidence: strongest alert is Bounce Setup Alert; confluence is mixed at 48/100. This evidence is for forecast validation and challenger comparison only.",
           "does_not_override_baseline_v1": true,
           "does_not_rewrite_forecast_records": true,
           "dominant_path_shadow": "failed_bounce",
@@ -107572,16 +107750,16 @@
         "confluence": {
           "conflicting_evidence": [
             {
-              "detail": "News/event direction is not sufficiently confirmed by market reaction.",
-              "name": "新闻未获价格确认",
-              "score": 100,
-              "source": "news"
-            },
-            {
               "detail": "指数路径与内部参与度存在冲突。",
               "name": "宽度冲突",
               "score": 85,
               "source": "breadth"
+            },
+            {
+              "detail": "News/event direction is not sufficiently confirmed by market reaction.",
+              "name": "新闻未获价格确认",
+              "score": 75,
+              "source": "news"
             },
             {
               "detail": "重大 risk-off 新闻提高风险路径权重。",
@@ -107699,6 +107877,12 @@
               "source": "flow"
             },
             {
+              "detail": "DIA 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+              "name": "新闻事件支持主路径",
+              "score": 25,
+              "source": "news"
+            },
+            {
               "detail": "primary-secondary gap 12.8%",
               "name": "主次路径差距可观察",
               "score": 12.83,
@@ -107739,12 +107923,6 @@
               "name": "macro event risk",
               "score": 5,
               "source": "signal_confirmation"
-            },
-            {
-              "detail": "DIA 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-              "name": "新闻事件支持主路径",
-              "score": 0,
-              "source": "news"
             }
           ],
           "symbol": "DIA",
@@ -107930,7 +108108,7 @@
               "'I'm getting fed up': early US midterm voters line up before dawn in Ohio - Reuters",
               "Transcript of US Vice President Vance interview in Alaska - Reuters",
               "Californians blast Trump remark that Iran could 'take out' Los Angeles, San Diego - Reuters",
-              "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+              "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
               "Trump says nobody knows who is running Iran - Reuters"
             ]
           },
@@ -109285,15 +109463,15 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 80,
+              "confidence_score": 79,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 92,
-              "headline": "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+              "freshness_score": 91,
+              "headline": "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
@@ -109319,7 +109497,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 81,
+              "freshness_score": 80,
               "headline": "Ukraine's Zelenskiy says intelligence shows Russia is preparing massive attack - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -109339,14 +109517,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 80,
+              "freshness_score": 79,
               "headline": "US EIA hikes oil price forecasts again as Iran war drains global stockpile - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -109374,6 +109552,33 @@
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
               "freshness_score": 77,
+              "headline": "Catalan separatist Puigdemont set to return home after court lifts arrest warrant - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-10-06T16:48:22+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 76,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 76,
               "headline": "Russia drops war posts case against children’s hospice founder Moniava - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -109393,42 +109598,20 @@
                 "TLT"
               ],
               "confidence": "medium",
-              "confidence_score": 73,
+              "confidence_score": 72,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 64,
+              "freshness_score": 63,
               "headline": "Attacks on civilian shipping in Black Sea are unacceptable, EU's von der Leyen says - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-10-06T11:01:43+00:00",
               "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX"
-              ],
-              "confidence": "medium",
-              "confidence_score": 70,
-              "detected_event_conditions": [],
-              "event_type": "market_microstructure_event",
-              "expected_horizon": "intraday-3d",
-              "expected_market_direction": "mixed",
-              "freshness_score": 69,
-              "headline": "This startup wants to reduce liquidation risk from margin calls on prediction markets",
-              "importance_score": 70,
-              "narrative": "market_microstructure_event",
-              "provider": "finnhub",
-              "published_at": "2026-10-06T13:01:20+00:00",
-              "source": "CNBC"
             }
           ],
           "market_narrative": {
@@ -109468,7 +109651,7 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+                "headline": "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-10-06T22:40:00+00:00",
                 "source": "Reuters"
@@ -109495,6 +109678,18 @@
                 "headline": "US EIA hikes oil price forecasts again as Iran war drains global stockpile - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-10-06T17:39:05+00:00",
+                "source": "Reuters"
+              },
+              {
+                "confidence": "high",
+                "detected_event_conditions": [
+                  "geopolitical_risk_escalation"
+                ],
+                "event_type": "geopolitical_risk_escalation",
+                "expected_market_direction": "risk_off",
+                "headline": "Catalan separatist Puigdemont set to return home after court lifts arrest warrant - Reuters",
+                "importance_score": 100,
+                "published_at": "2026-10-06T16:48:22+00:00",
                 "source": "Reuters"
               },
               {
@@ -109559,8 +109754,10 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0019,
-              "avg_equity_futures_1d_return": 0.0025,
-              "confirmed_checks": [],
+              "avg_equity_futures_1d_return": -0.0009,
+              "confirmed_checks": [
+                "股票ETF或股指期货下跌"
+              ],
               "equity_futures_symbols_used": [
                 "ES=F",
                 "NQ=F",
@@ -109568,13 +109765,12 @@
                 "YM=F"
               ],
               "failed_checks": [
-                "股票ETF或股指期货下跌",
                 "VIX 上升",
                 "HYG/LQD 走弱",
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": 0.0007,
-              "oil_proxy_1d_return": 0.008,
+              "oil_proxy_1d_return": 0.0077,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -109583,7 +109779,7 @@
               "uup_1d_return": -0.0031,
               "vix_1d_return": -0.0329
             },
-            "confirmation_score": 0,
+            "confirmation_score": 25,
             "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
             "price_reaction_confirmed": false
           },
@@ -111731,7 +111927,7 @@
             {
               "detail": "News/event direction is not sufficiently confirmed by market reaction.",
               "name": "新闻未获价格确认",
-              "score": 100,
+              "score": 75,
               "source": "news"
             },
             {
@@ -111862,6 +112058,12 @@
               "source": "flow"
             },
             {
+              "detail": "IWM 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+              "name": "新闻事件支持主路径",
+              "score": 25,
+              "source": "news"
+            },
+            {
               "detail": "Frozen Alpha v1 is triggered; this remains research-only.",
               "name": "Alpha v1 bounce signal",
               "score": 12,
@@ -111902,12 +112104,6 @@
               "name": "macro event risk",
               "score": 5,
               "source": "signal_confirmation"
-            },
-            {
-              "detail": "IWM 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-              "name": "新闻事件支持主路径",
-              "score": 0,
-              "source": "news"
             }
           ],
           "symbol": "IWM",
@@ -112093,7 +112289,7 @@
               "'I'm getting fed up': early US midterm voters line up before dawn in Ohio - Reuters",
               "Transcript of US Vice President Vance interview in Alaska - Reuters",
               "Californians blast Trump remark that Iran could 'take out' Los Angeles, San Diego - Reuters",
-              "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+              "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
               "Trump says nobody knows who is running Iran - Reuters"
             ]
           },
@@ -113485,15 +113681,15 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 80,
+              "confidence_score": 79,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 92,
-              "headline": "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+              "freshness_score": 91,
+              "headline": "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
@@ -113519,7 +113715,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 81,
+              "freshness_score": 80,
               "headline": "Ukraine's Zelenskiy says intelligence shows Russia is preparing massive attack - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -113539,14 +113735,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 80,
+              "freshness_score": 79,
               "headline": "US EIA hikes oil price forecasts again as Iran war drains global stockpile - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -113574,6 +113770,33 @@
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
               "freshness_score": 77,
+              "headline": "Catalan separatist Puigdemont set to return home after court lifts arrest warrant - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-10-06T16:48:22+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 76,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 76,
               "headline": "Russia drops war posts case against children’s hospice founder Moniava - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -113593,42 +113816,20 @@
                 "TLT"
               ],
               "confidence": "medium",
-              "confidence_score": 73,
+              "confidence_score": 72,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 64,
+              "freshness_score": 63,
               "headline": "Attacks on civilian shipping in Black Sea are unacceptable, EU's von der Leyen says - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-10-06T11:01:43+00:00",
               "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX"
-              ],
-              "confidence": "medium",
-              "confidence_score": 70,
-              "detected_event_conditions": [],
-              "event_type": "market_microstructure_event",
-              "expected_horizon": "intraday-3d",
-              "expected_market_direction": "mixed",
-              "freshness_score": 69,
-              "headline": "This startup wants to reduce liquidation risk from margin calls on prediction markets",
-              "importance_score": 70,
-              "narrative": "market_microstructure_event",
-              "provider": "finnhub",
-              "published_at": "2026-10-06T13:01:20+00:00",
-              "source": "CNBC"
             }
           ],
           "market_narrative": {
@@ -113668,7 +113869,7 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+                "headline": "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-10-06T22:40:00+00:00",
                 "source": "Reuters"
@@ -113695,6 +113896,18 @@
                 "headline": "US EIA hikes oil price forecasts again as Iran war drains global stockpile - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-10-06T17:39:05+00:00",
+                "source": "Reuters"
+              },
+              {
+                "confidence": "high",
+                "detected_event_conditions": [
+                  "geopolitical_risk_escalation"
+                ],
+                "event_type": "geopolitical_risk_escalation",
+                "expected_market_direction": "risk_off",
+                "headline": "Catalan separatist Puigdemont set to return home after court lifts arrest warrant - Reuters",
+                "importance_score": 100,
+                "published_at": "2026-10-06T16:48:22+00:00",
                 "source": "Reuters"
               },
               {
@@ -113759,8 +113972,10 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0019,
-              "avg_equity_futures_1d_return": 0.0025,
-              "confirmed_checks": [],
+              "avg_equity_futures_1d_return": -0.0009,
+              "confirmed_checks": [
+                "股票ETF或股指期货下跌"
+              ],
               "equity_futures_symbols_used": [
                 "ES=F",
                 "NQ=F",
@@ -113768,13 +113983,12 @@
                 "YM=F"
               ],
               "failed_checks": [
-                "股票ETF或股指期货下跌",
                 "VIX 上升",
                 "HYG/LQD 走弱",
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": 0.0007,
-              "oil_proxy_1d_return": 0.008,
+              "oil_proxy_1d_return": 0.0077,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -113783,7 +113997,7 @@
               "uup_1d_return": -0.0031,
               "vix_1d_return": -0.0329
             },
-            "confirmation_score": 0,
+            "confirmation_score": 25,
             "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
             "price_reaction_confirmed": false
           },
@@ -115931,7 +116145,7 @@
             {
               "detail": "News/event direction is not sufficiently confirmed by market reaction.",
               "name": "新闻未获价格确认",
-              "score": 100,
+              "score": 75,
               "source": "news"
             },
             {
@@ -115951,6 +116165,12 @@
               "name": "risk_off_news_event",
               "score": 35,
               "source": "signal_confirmation"
+            },
+            {
+              "detail": "QQQ 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+              "name": "新闻事件与主路径冲突",
+              "score": 25,
+              "source": "news"
             },
             {
               "detail": "Index strength is not broadly confirmed by internals; this raises failed-bounce risk.",
@@ -115981,17 +116201,11 @@
               "name": "主次路径差距小",
               "score": 4.68,
               "source": "scenario_gap"
-            },
-            {
-              "detail": "QQQ 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-              "name": "新闻事件与主路径冲突",
-              "score": 0,
-              "source": "news"
             }
           ],
           "confluence_level": "mixed",
-          "confluence_score": 49,
-          "confluence_summary": "QQQ 当前多源共振为 mixed（49/100），主导路径为 failed_bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
+          "confluence_score": 50,
+          "confluence_summary": "QQQ 当前多源共振为 mixed（50/100），主导路径为 failed_bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
           "dominant_path": "failed_bounce",
           "edge_status": "{'market_edge_status': 'MODERATE_EDGE', 'has_usable_prediction_edge_today': True, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': True, 'historical_analog_not_conflicting': True, 'confidence_score_ge_65': False, 'current_regime_identified': True, 'macro_event_risk_not_high': True, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': False, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': True}, 'passed_conditions': 8, 'summary': '有一定预测优势，但仍需观察冲突信号和失效条件。', 'no_edge_note': '', 'risk_warning': False}",
           "key_conflict_count": 3,
@@ -116299,7 +116513,7 @@
               "'I'm getting fed up': early US midterm voters line up before dawn in Ohio - Reuters",
               "Transcript of US Vice President Vance interview in Alaska - Reuters",
               "Californians blast Trump remark that Iran could 'take out' Los Angeles, San Diego - Reuters",
-              "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+              "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
               "Trump says nobody knows who is running Iran - Reuters"
             ]
           },
@@ -116932,7 +117146,7 @@
                 "QQQ"
               ],
               "alert_level": "WARNING",
-              "alert_score": 65,
+              "alert_score": 66,
               "alert_type": "Failed Bounce Alert",
               "confidence": "medium",
               "conflicting_evidence": [],
@@ -117017,7 +117231,7 @@
                 "QQQ"
               ],
               "alert_level": "WATCH",
-              "alert_score": 53,
+              "alert_score": 54,
               "alert_type": "Bounce Setup Alert",
               "confidence": "medium",
               "conflicting_evidence": [
@@ -117189,7 +117403,7 @@
                 "QQQ"
               ],
               "alert_level": "WATCH",
-              "alert_score": 47,
+              "alert_score": 48,
               "alert_type": "Trend Repair Alert",
               "confidence": "low",
               "conflicting_evidence": [
@@ -117380,7 +117594,7 @@
               "QQQ"
             ],
             "alert_level": "WARNING",
-            "alert_score": 65,
+            "alert_score": 66,
             "alert_type": "Failed Bounce Alert",
             "confidence": "medium",
             "conflicting_evidence": [],
@@ -117664,15 +117878,15 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 80,
+              "confidence_score": 79,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 92,
-              "headline": "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+              "freshness_score": 91,
+              "headline": "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
@@ -117698,7 +117912,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 81,
+              "freshness_score": 80,
               "headline": "Ukraine's Zelenskiy says intelligence shows Russia is preparing massive attack - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -117718,14 +117932,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 80,
+              "freshness_score": 79,
               "headline": "US EIA hikes oil price forecasts again as Iran war drains global stockpile - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -117753,6 +117967,33 @@
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
               "freshness_score": 77,
+              "headline": "Catalan separatist Puigdemont set to return home after court lifts arrest warrant - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-10-06T16:48:22+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 76,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 76,
               "headline": "Russia drops war posts case against children’s hospice founder Moniava - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -117772,42 +118013,20 @@
                 "TLT"
               ],
               "confidence": "medium",
-              "confidence_score": 73,
+              "confidence_score": 72,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 64,
+              "freshness_score": 63,
               "headline": "Attacks on civilian shipping in Black Sea are unacceptable, EU's von der Leyen says - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-10-06T11:01:43+00:00",
               "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX"
-              ],
-              "confidence": "medium",
-              "confidence_score": 70,
-              "detected_event_conditions": [],
-              "event_type": "market_microstructure_event",
-              "expected_horizon": "intraday-3d",
-              "expected_market_direction": "mixed",
-              "freshness_score": 69,
-              "headline": "This startup wants to reduce liquidation risk from margin calls on prediction markets",
-              "importance_score": 70,
-              "narrative": "market_microstructure_event",
-              "provider": "finnhub",
-              "published_at": "2026-10-06T13:01:20+00:00",
-              "source": "CNBC"
             }
           ],
           "market_narrative": {
@@ -117847,7 +118066,7 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+                "headline": "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-10-06T22:40:00+00:00",
                 "source": "Reuters"
@@ -117874,6 +118093,18 @@
                 "headline": "US EIA hikes oil price forecasts again as Iran war drains global stockpile - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-10-06T17:39:05+00:00",
+                "source": "Reuters"
+              },
+              {
+                "confidence": "high",
+                "detected_event_conditions": [
+                  "geopolitical_risk_escalation"
+                ],
+                "event_type": "geopolitical_risk_escalation",
+                "expected_market_direction": "risk_off",
+                "headline": "Catalan separatist Puigdemont set to return home after court lifts arrest warrant - Reuters",
+                "importance_score": 100,
+                "published_at": "2026-10-06T16:48:22+00:00",
                 "source": "Reuters"
               },
               {
@@ -117938,8 +118169,10 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0019,
-              "avg_equity_futures_1d_return": 0.0025,
-              "confirmed_checks": [],
+              "avg_equity_futures_1d_return": -0.0009,
+              "confirmed_checks": [
+                "股票ETF或股指期货下跌"
+              ],
               "equity_futures_symbols_used": [
                 "ES=F",
                 "NQ=F",
@@ -117947,13 +118180,12 @@
                 "YM=F"
               ],
               "failed_checks": [
-                "股票ETF或股指期货下跌",
                 "VIX 上升",
                 "HYG/LQD 走弱",
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": 0.0007,
-              "oil_proxy_1d_return": 0.008,
+              "oil_proxy_1d_return": 0.0077,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -117962,7 +118194,7 @@
               "uup_1d_return": -0.0031,
               "vix_1d_return": -0.0329
             },
-            "confirmation_score": 0,
+            "confirmation_score": 25,
             "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
             "price_reaction_confirmed": false
           },
@@ -119825,12 +120057,12 @@
             },
             "Bounce Setup Alert": {
               "alert_level": "WATCH",
-              "alert_score": 53,
+              "alert_score": 54,
               "confidence": "medium"
             },
             "Failed Bounce Alert": {
               "alert_level": "WARNING",
-              "alert_score": 65,
+              "alert_score": 66,
               "confidence": "medium"
             },
             "Risk Expansion Alert": {
@@ -119840,14 +120072,14 @@
             },
             "Trend Repair Alert": {
               "alert_level": "WATCH",
-              "alert_score": 47,
+              "alert_score": 48,
               "confidence": "low"
             }
           },
           "alpha_v1_threshold_unchanged": 0.32534311,
           "confluence_level": "mixed",
-          "confluence_score": 49,
-          "daily_market_summary_shadow": "QQQ shadow evidence: strongest alert is Failed Bounce Alert; confluence is mixed at 49/100. This evidence is for forecast validation and challenger comparison only.",
+          "confluence_score": 50,
+          "daily_market_summary_shadow": "QQQ shadow evidence: strongest alert is Failed Bounce Alert; confluence is mixed at 50/100. This evidence is for forecast validation and challenger comparison only.",
           "does_not_override_baseline_v1": true,
           "does_not_rewrite_forecast_records": true,
           "dominant_path_shadow": "failed_bounce",
@@ -119932,7 +120164,7 @@
           "role": "challenger_shadow_evidence",
           "strongest_alert": {
             "alert_level": "WARNING",
-            "alert_score": 65,
+            "alert_score": 66,
             "alert_type": "Failed Bounce Alert",
             "confidence": "medium"
           },
@@ -120110,7 +120342,7 @@
             {
               "detail": "News/event direction is not sufficiently confirmed by market reaction.",
               "name": "新闻未获价格确认",
-              "score": 100,
+              "score": 75,
               "source": "news"
             },
             {
@@ -120124,6 +120356,12 @@
               "name": "risk_off_news_event",
               "score": 39,
               "source": "signal_confirmation"
+            },
+            {
+              "detail": "SPY 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+              "name": "新闻事件与主路径冲突",
+              "score": 25,
+              "source": "news"
             },
             {
               "detail": "Index strength is not broadly confirmed by internals; this raises failed-bounce risk.",
@@ -120148,17 +120386,11 @@
               "name": "主次路径差距小",
               "score": 3.74,
               "source": "scenario_gap"
-            },
-            {
-              "detail": "SPY 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-              "name": "新闻事件与主路径冲突",
-              "score": 0,
-              "source": "news"
             }
           ],
           "confluence_level": "mixed",
-          "confluence_score": 47,
-          "confluence_summary": "SPY 当前多源共振为 mixed（47/100），主导路径为 failed_bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
+          "confluence_score": 48,
+          "confluence_summary": "SPY 当前多源共振为 mixed（48/100），主导路径为 failed_bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
           "dominant_path": "failed_bounce",
           "edge_status": "{'market_edge_status': 'MODERATE_EDGE', 'has_usable_prediction_edge_today': True, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': False, 'historical_analog_not_conflicting': False, 'confidence_score_ge_65': True, 'current_regime_identified': True, 'macro_event_risk_not_high': True, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': False, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': True}, 'passed_conditions': 7, 'summary': '有一定预测优势，但仍需观察冲突信号和失效条件。', 'no_edge_note': '', 'risk_warning': False}",
           "key_conflict_count": 2,
@@ -120454,7 +120686,7 @@
               "'I'm getting fed up': early US midterm voters line up before dawn in Ohio - Reuters",
               "Transcript of US Vice President Vance interview in Alaska - Reuters",
               "Californians blast Trump remark that Iran could 'take out' Los Angeles, San Diego - Reuters",
-              "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+              "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
               "Trump says nobody knows who is running Iran - Reuters"
             ]
           },
@@ -121814,15 +122046,15 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 80,
+              "confidence_score": 79,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 92,
-              "headline": "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+              "freshness_score": 91,
+              "headline": "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
@@ -121848,7 +122080,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 81,
+              "freshness_score": 80,
               "headline": "Ukraine's Zelenskiy says intelligence shows Russia is preparing massive attack - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -121868,14 +122100,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 80,
+              "freshness_score": 79,
               "headline": "US EIA hikes oil price forecasts again as Iran war drains global stockpile - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -121903,6 +122135,33 @@
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
               "freshness_score": 77,
+              "headline": "Catalan separatist Puigdemont set to return home after court lifts arrest warrant - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-10-06T16:48:22+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 76,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 76,
               "headline": "Russia drops war posts case against children’s hospice founder Moniava - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -121922,42 +122181,20 @@
                 "TLT"
               ],
               "confidence": "medium",
-              "confidence_score": 73,
+              "confidence_score": 72,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 64,
+              "freshness_score": 63,
               "headline": "Attacks on civilian shipping in Black Sea are unacceptable, EU's von der Leyen says - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-10-06T11:01:43+00:00",
               "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX"
-              ],
-              "confidence": "medium",
-              "confidence_score": 70,
-              "detected_event_conditions": [],
-              "event_type": "market_microstructure_event",
-              "expected_horizon": "intraday-3d",
-              "expected_market_direction": "mixed",
-              "freshness_score": 69,
-              "headline": "This startup wants to reduce liquidation risk from margin calls on prediction markets",
-              "importance_score": 70,
-              "narrative": "market_microstructure_event",
-              "provider": "finnhub",
-              "published_at": "2026-10-06T13:01:20+00:00",
-              "source": "CNBC"
             }
           ],
           "market_narrative": {
@@ -121997,7 +122234,7 @@
                 ],
                 "event_type": "geopolitical_risk_escalation",
                 "expected_market_direction": "risk_off",
-                "headline": "EXCLUSIVE: In interview, US Vice President Vance says Iran must cut nuclear enrichment to end war - Reuters",
+                "headline": "EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-10-06T22:40:00+00:00",
                 "source": "Reuters"
@@ -122024,6 +122261,18 @@
                 "headline": "US EIA hikes oil price forecasts again as Iran war drains global stockpile - Reuters",
                 "importance_score": 100,
                 "published_at": "2026-10-06T17:39:05+00:00",
+                "source": "Reuters"
+              },
+              {
+                "confidence": "high",
+                "detected_event_conditions": [
+                  "geopolitical_risk_escalation"
+                ],
+                "event_type": "geopolitical_risk_escalation",
+                "expected_market_direction": "risk_off",
+                "headline": "Catalan separatist Puigdemont set to return home after court lifts arrest warrant - Reuters",
+                "importance_score": 100,
+                "published_at": "2026-10-06T16:48:22+00:00",
                 "source": "Reuters"
               },
               {
@@ -122088,8 +122337,10 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0019,
-              "avg_equity_futures_1d_return": 0.0025,
-              "confirmed_checks": [],
+              "avg_equity_futures_1d_return": -0.0009,
+              "confirmed_checks": [
+                "股票ETF或股指期货下跌"
+              ],
               "equity_futures_symbols_used": [
                 "ES=F",
                 "NQ=F",
@@ -122097,13 +122348,12 @@
                 "YM=F"
               ],
               "failed_checks": [
-                "股票ETF或股指期货下跌",
                 "VIX 上升",
                 "HYG/LQD 走弱",
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": 0.0007,
-              "oil_proxy_1d_return": 0.008,
+              "oil_proxy_1d_return": 0.0077,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -122112,7 +122362,7 @@
               "uup_1d_return": -0.0031,
               "vix_1d_return": -0.0329
             },
-            "confirmation_score": 0,
+            "confirmation_score": 25,
             "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
             "price_reaction_confirmed": false
           },
@@ -123997,8 +124247,8 @@
           },
           "alpha_v1_threshold_unchanged": 0.32534311,
           "confluence_level": "mixed",
-          "confluence_score": 47,
-          "daily_market_summary_shadow": "SPY shadow evidence: strongest alert is Bounce Setup Alert; confluence is mixed at 47/100. This evidence is for forecast validation and challenger comparison only.",
+          "confluence_score": 48,
+          "daily_market_summary_shadow": "SPY shadow evidence: strongest alert is Bounce Setup Alert; confluence is mixed at 48/100. This evidence is for forecast validation and challenger comparison only.",
           "does_not_override_baseline_v1": true,
           "does_not_rewrite_forecast_records": true,
           "dominant_path_shadow": "failed_bounce",
@@ -124262,7 +124512,7 @@
       },
       "version": "stock_data_provider_v1"
     },
-    "generated_at": "2026-10-07T01:54:25.046888+00:00",
+    "generated_at": "2026-10-07T02:20:08.694983+00:00",
     "guardrails": [
       "This is a probabilistic stock forecast module, not a trading system.",
       "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -124351,7 +124601,7 @@
         },
         "question": "high final_radar_score 是否真的对应更大次日 range？"
       },
-      "generated_at": "2026-10-07T01:54:25.089816+00:00",
+      "generated_at": "2026-10-07T02:20:08.740735+00:00",
       "not_validated_warning": "not_enough_forward_samples",
       "pending_records": 325,
       "risk_score_effectiveness": {
@@ -124484,6 +124734,24 @@
             "event_risk_flag": "high",
             "headlines": [
               {
+                "datetime": 1791336834,
+                "headline": "Has Nuclear Energy Trade Seen Its Bottom? What Jan Van Eck Sees In The Constellation-Google Deal",
+                "source": "Yahoo",
+                "url": "https://finnhub.io/api/news?id=01fcf0da6b91e7d306f8b7d7bd1b00c046868352f17b8e75be3557bedf43387d"
+              },
+              {
+                "datetime": 1791335391,
+                "headline": "Is NuScale Power (SMR) Undervalued After Google Fueled Fresh Interest In NRC Certified SMRs?",
+                "source": "Yahoo",
+                "url": "https://finnhub.io/api/news?id=845f834f728c5fd6740806288e720e71528f1750aeeed0a50007d690942fe616"
+              },
+              {
+                "datetime": 1791330900,
+                "headline": "Review & Preview: Rally Time",
+                "source": "Yahoo",
+                "url": "https://finnhub.io/api/news?id=3ce4f84ae54f88f72fcac8176e0f2da64e2e262927f89e273d2039cd4c45b0d2"
+              },
+              {
                 "datetime": 1791326129,
                 "headline": "S&P 500 And Nasdaq 100 Soar To Record Highs Amid Rising Bets Of Strong Quarterly Earnings — CEG, LCID, SPCX, MRVL In Focus",
                 "source": "Yahoo",
@@ -124512,27 +124780,9 @@
                 "headline": "Constellation Energy Surges 12% on Google Nuclear Power Deal | Closing Bell",
                 "source": "Yahoo",
                 "url": "https://finnhub.io/api/news?id=61d67e58385854d15b3609a1110db516d715884f22b42805531a8d8e97deb2cb"
-              },
-              {
-                "datetime": 1791318790,
-                "headline": "Google Joins Microsoft, Amazon, and Meta on Constellation’s Energy Roster",
-                "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=f206aafb473d886268e6c4b6c97cd2605ca995e0dee3b0bf2de7013e2939b798"
-              },
-              {
-                "datetime": 1791318600,
-                "headline": "Power Stocks Just Broke Out of a Long Slump. Here’s Why.",
-                "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=9750004f50c82b125a5c431cf2ae6baf2447025707324996bf45741676bf8fd6"
-              },
-              {
-                "datetime": 1791318366,
-                "headline": "US Equity Markets End Higher as Big Tech Gains, Government Bond Yields Fall",
-                "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=37fde2aeb596728cee7e73351c8fc3402395926c60d0cc1eaafd8d661257a678"
               }
             ],
-            "major_company_headline": "S&P 500 And Nasdaq 100 Soar To Record Highs Amid Rising Bets Of Strong Quarterly Earnings — CEG, LCID, SPCX, MRVL In Focus",
+            "major_company_headline": "Has Nuclear Energy Trade Seen Its Bottom? What Jan Van Eck Sees In The Constellation-Google Deal",
             "news_count_24h": 20,
             "news_count_72h": 20,
             "news_risk_score": 100.0,
@@ -126383,7 +126633,7 @@
           "components": {
             "catalyst": {
               "evidence": [
-                "公司新闻已接入: S&P 500 And Nasdaq 100 Soar To Record Highs Amid Rising Bets Of Strong Quarterly Earnings — CEG, LCID, SPCX, MRVL In Focus",
+                "公司新闻已接入: Has Nuclear Energy Trade Seen Its Bottom? What Jan Van Eck Sees In The Constellation-Google Deal",
                 "新闻情绪偏正",
                 "未来 30 天存在财报催化：2026-11-04",
                 "增长数据具备 EPS 上修叙事基础"
@@ -126501,7 +126751,7 @@
           },
           "thesis": {
             "capital_confirmation": "资金确认不足或仍需观察",
-            "catalyst": "S&P 500 And Nasdaq 100 Soar To Record Highs Amid Rising Bets Of Strong Quarterly Earnings — CEG, LCID, SPCX, MRVL In Focus",
+            "catalyst": "Has Nuclear Energy Trade Seen Its Bottom? What Jan Van Eck Sees In The Constellation-Google Deal",
             "expectation_gap": [
               "收入增长较强，具备正向预期差基础",
               "未来 30 天财报可能成为重新定价窗口"
@@ -126690,6 +126940,18 @@
             "event_risk_flag": "high",
             "headlines": [
               {
+                "datetime": 1791336902,
+                "headline": "Nvidia Hits a New All-Time High. Is the AI Stock a Buy?",
+                "source": "Yahoo",
+                "url": "https://finnhub.io/api/news?id=823c15a3b779d341bfa3c92b04d1d0f888a834b83e3f352f6ad7a406c0969de1"
+              },
+              {
+                "datetime": 1791333300,
+                "headline": "Novo Stock Is Down More Than 70% From Its Peak. Value Trap or Generational Buying Opportunity?",
+                "source": "Yahoo",
+                "url": "https://finnhub.io/api/news?id=583aa02218e551da31b0ece71b29249f3a48f28d00a99ea07957afb3945aa941"
+              },
+              {
                 "datetime": 1791331633,
                 "headline": "Why Boost Run Stock Popped by Nearly 6% Today",
                 "source": "Yahoo",
@@ -126724,21 +126986,9 @@
                 "headline": "Is Nvidia’s (NVDA) Free Cash Flow Keeping Pace With Its Reported Earnings?",
                 "source": "Yahoo",
                 "url": "https://finnhub.io/api/news?id=9048cae72df8cac6c22c8e5326f8b6b607372c11bd052fe1c634b4196b276fb9"
-              },
-              {
-                "datetime": 1791328920,
-                "headline": "1 No-Brainer Artificial Intelligence (AI) ETF to Buy With $100 and Hold Forever",
-                "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=c968fb3a0d4025592f1cb9e4da5304ddbb5ae203605ce7449bb1d38a446a0298"
-              },
-              {
-                "datetime": 1791328914,
-                "headline": "Why Amphenol Stock Topped the Market on Tuesday",
-                "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=30fbd26fea26024278e6dbdf4ae76c75c02c4beb7954dce6fb9ca286166a0403"
               }
             ],
-            "major_company_headline": "Why Boost Run Stock Popped by Nearly 6% Today",
+            "major_company_headline": "Nvidia Hits a New All-Time High. Is the AI Stock a Buy?",
             "news_count_24h": 20,
             "news_count_72h": 20,
             "news_risk_score": 100.0,
@@ -128595,7 +128845,7 @@
           "components": {
             "catalyst": {
               "evidence": [
-                "公司新闻已接入: Why Boost Run Stock Popped by Nearly 6% Today",
+                "公司新闻已接入: Nvidia Hits a New All-Time High. Is the AI Stock a Buy?",
                 "增长数据具备 EPS 上修叙事基础"
               ],
               "max_points": 10,
@@ -128712,7 +128962,7 @@
           },
           "thesis": {
             "capital_confirmation": "资金/技术确认较强",
-            "catalyst": "Why Boost Run Stock Popped by Nearly 6% Today",
+            "catalyst": "Nvidia Hits a New All-Time High. Is the AI Stock a Buy?",
             "expectation_gap": [
               "收入增长较强，具备正向预期差基础",
               "EPS 增长较强，可能支持盈利上修叙事"
@@ -133262,7 +133512,7 @@
         "top_candidate": "CEG",
         "validation_status": "not_yet_validated"
       },
-      "generated_at": "2026-10-07T01:54:25.077284+00:00",
+      "generated_at": "2026-10-07T02:20:08.727112+00:00",
       "model_version": "stock_baseline_v1",
       "notes": [
         "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -133703,7 +133953,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-10-07T01:54:25.089816+00:00",
+    "generated_at": "2026-10-07T02:20:08.740735+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 325,
     "risk_score_effectiveness": {
@@ -133775,7 +134025,7 @@
       "top_candidate": "CEG",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-10-07T01:54:25.077284+00:00",
+    "generated_at": "2026-10-07T02:20:08.727112+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
