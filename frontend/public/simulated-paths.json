@@ -1,14 +1,19 @@
 {
   "as_of": "2026-10-07",
   "data_freshness_status": {
-    "affected_symbols": [],
-    "can_append_forecast_record": true,
+    "affected_symbols": [
+      "SPY",
+      "QQQ",
+      "IWM",
+      "DIA"
+    ],
+    "can_append_forecast_record": false,
     "can_backfill_completed_outcomes": true,
-    "current_date": "2026-10-07",
-    "current_time_us_eastern": "2026-10-07T22:42:38.268842-04:00",
-    "data_freshness_status": "fresh",
+    "current_date": "2026-10-08",
+    "current_time_us_eastern": "2026-10-08T03:30:30.020155-04:00",
+    "data_freshness_status": "market_open_unconfirmed",
     "expected_latest_trading_date": "2026-10-07",
-    "generated_at": "2026-10-08T02:42:38.268842+00:00",
+    "generated_at": "2026-10-08T07:30:30.020155+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -22,7 +27,7 @@
     "last_successful_update": "2026-10-07",
     "latest_confirmed_market_date": "2026-10-07",
     "latest_market_date": "2026-10-07",
-    "latest_market_session_status": "completed_or_prior_session",
+    "latest_market_session_status": "intraday_unconfirmed",
     "provider_status": {
       "BAA_SPREAD": {
         "fallback_used": false,
@@ -530,7 +535,7 @@
       },
       "breadth_SPY": {
         "fallback_used": false,
-        "latest_date": "2026-10-06",
+        "latest_date": "2026-10-07",
         "missing_data": false,
         "point_in_time_safe": true,
         "real_data": true,
@@ -939,7 +944,7 @@
     },
     "stale_days": 0,
     "version": "data_freshness_gate_v3",
-    "warning_message": "核心行情已更新至最新应有交易日 2026-10-07。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。"
+    "warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-10-07，最近完整收盘交易日为 2026-10-07；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。"
   },
   "data_quality_summary": {
     "average_breadth_quality_score": 67.0,
@@ -960,10 +965,10 @@
       "IWM"
     ],
     "breadth_required": true,
-    "can_append_forecast_record": true,
+    "can_append_forecast_record": false,
     "data_completeness_score": 87.0,
     "data_completeness_score_before_news_event": 85.0,
-    "data_freshness_status": "fresh",
+    "data_freshness_status": "market_open_unconfirmed",
     "data_source_status": "real_core_with_proxies",
     "expected_latest_trading_date": "2026-10-07",
     "fallback_used": true,
@@ -1027,15 +1032,15 @@
           "edge_status_changed": false,
           "edge_status_with_fred": "MODERATE_EDGE",
           "edge_status_without_fred": "MODERATE_EDGE",
-          "failed_bounce_delta": 0.0442,
-          "failed_bounce_with_fred": 0.5116,
-          "failed_bounce_without_fred": 0.4674,
+          "failed_bounce_delta": 0.0441,
+          "failed_bounce_with_fred": 0.5117,
+          "failed_bounce_without_fred": 0.4676,
           "primary_scenario_changed": false,
           "primary_scenario_with_fred": "bounce_path",
           "primary_scenario_without_fred": "bounce_path",
           "risk_expansion_delta": 0.1366,
-          "risk_expansion_with_fred": 0.4456,
-          "risk_expansion_without_fred": 0.309
+          "risk_expansion_with_fred": 0.4457,
+          "risk_expansion_without_fred": 0.3091
         }
       },
       "target_85_met_with_fred": true
@@ -1049,15 +1054,15 @@
     "fred_successful_series": [
       "HY_OAS",
       "IG_OAS",
-      "DGS3MO",
-      "BAA_SPREAD",
-      "DGS10",
-      "DFII10",
       "DGS2",
-      "FINANCIAL_STRESS",
-      "RECESSION"
+      "BAA_SPREAD",
+      "DGS3MO",
+      "DGS10",
+      "RECESSION",
+      "DFII10",
+      "FINANCIAL_STRESS"
     ],
-    "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-10-07。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
+    "freshness_warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-10-07，最近完整收盘交易日为 2026-10-07；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
     "gamma_available": false,
     "gamma_exposure_available": false,
     "latest_confirmed_market_date": "2026-10-07",
@@ -1086,11 +1091,11 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 73,
+      "event_detection_confidence": 76,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-10-08T02:42:29.097061+00:00",
-      "major_event_count": 8,
+      "last_update": "2026-10-08T07:30:15.662924+00:00",
+      "major_event_count": 9,
       "missing_reason": null,
       "news_direction": "risk_off",
       "news_event_partial": false,
@@ -1101,7 +1106,7 @@
     },
     "news_event_available": true,
     "news_event_event_risk_level": "high",
-    "news_event_major_count": 8,
+    "news_event_major_count": 9,
     "news_event_missing_reason": null,
     "news_event_narrative": "geopolitics_escalation_risk_off",
     "news_event_partial": false,
@@ -1151,7 +1156,7 @@
       "status": "failed"
     },
     "event_risk_level": "high",
-    "major_event_count": 8,
+    "major_event_count": 9,
     "market_narrative": {
       "affected_scenarios": [
         "bearish_path"
@@ -1178,13 +1183,49 @@
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_market_direction": "risk_off",
+          "headline": "Hormuz transits at lowest in over two months after attacks, data shows - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-10-08T03:39:00+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
+          "headline": "Yemen's Houthis say they attacked Riyadh airport with ballistic missile - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-10-08T03:03:00+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
+          "headline": "Oil rises as Middle East supply concerns persist amid shipping attacks - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-10-08T01:25:00+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "medium",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
           "headline": "Syria weighs military aid for Saudi Arabia amid Yemen war, sources say - Reuters",
           "importance_score": 100,
           "published_at": "2026-10-07T18:21:26+00:00",
           "source": "Reuters"
         },
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -1206,42 +1247,6 @@
           "importance_score": 100,
           "published_at": "2026-10-07T14:24:00+00:00",
           "source": "Reuters"
-        },
-        {
-          "confidence": "medium",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Palestinian killed in Israeli settler attack during olive harvest, officials say - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-10-07T13:08:03+00:00",
-          "source": "Reuters"
-        },
-        {
-          "confidence": "medium",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Shell expects record refining margins as Iran war boosts fuel markets - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-10-07T06:07:00+00:00",
-          "source": "Reuters"
-        },
-        {
-          "confidence": "medium",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Attacks on Saudi airports kill three people, as fighting escalates in Yemen - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-10-07T01:21:00+00:00",
-          "source": "Reuters"
         }
       ]
     },
@@ -1251,7 +1256,7 @@
       "direction": "supports_risk_expansion",
       "event_risk_level": "high",
       "macro_event_risk_flag": false,
-      "major_event_count": 8,
+      "major_event_count": 9,
       "not_a_trading_signal": true,
       "price_reaction_confirmed": true,
       "symbols": {
@@ -1366,7 +1371,7 @@
         "SPY": {
           "after_primary_probability": 0.341,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.3195,
+          "before_primary_probability": 0.3194,
           "before_primary_scenario": "bounce_path",
           "confirmation_delta": -8.0,
           "impact": "conflicts_primary",
@@ -1394,7 +1399,7 @@
             "risk_expansion_predictor": 0.039,
             "trend_reversal_predictor": 0.0
           },
-          "primary_probability_delta": 0.0215,
+          "primary_probability_delta": 0.0216,
           "primary_scenario_changed": true,
           "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay",
           "validation_type": "daily"
@@ -1406,7 +1411,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": -0.0062,
-        "avg_equity_futures_1d_return": 0.0001,
+        "avg_equity_futures_1d_return": -0.0058,
         "confirmed_checks": [
           "股票ETF或股指期货下跌",
           "VIX 上升",
@@ -1421,7 +1426,7 @@
         ],
         "failed_checks": [],
         "hyg_lqd_1d_relative_return": -0.0008,
-        "oil_proxy_1d_return": 0.0043,
+        "oil_proxy_1d_return": 0.0138,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -1947,6 +1952,7 @@
     },
     "version": "shadow_evidence_v1"
   },
+  "status_note": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-10-07，最近完整收盘交易日为 2026-10-07；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
   "symbols": {
     "DIA": {
       "analog_path_weight": 0.2504,
@@ -2307,11 +2313,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
-            "Samsung forecasts record third-quarter profit of $80 billion on the back of AI boom",
-            "Trump says he deserves Nobel Peace Prize but has doubts he will get it - Reuters",
-            "SpaceX’s plans to buy more Nvidia GPUs is keeping Jim Cramer bullish on the chip stock",
-            "Explainer: The status of Iran's uranium enrichment programme - Reuters",
-            "IEA to accelerate oil reserve release, says 100 million barrels still to come - Reuters"
+            "Britain removes East Jerusalem consulate signage as Israeli shutdown order expires - Reuters",
+            "Hormuz transits at lowest in over two months after attacks, data shows - Reuters",
+            "Yemen's Houthis say they attacked Riyadh airport with ballistic missile - Reuters",
+            "Oil rises as Middle East supply concerns persist amid shipping attacks - Reuters",
+            "Oil price volatility tops list of earnings risks for Japan firms: Reuters poll - Reuters"
           ]
         },
         "price": {
@@ -3697,14 +3703,95 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 77,
+            "confidence_score": 79,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 80,
+            "freshness_score": 91,
+            "headline": "Hormuz transits at lowest in over two months after attacks, data shows - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-08T03:39:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 97,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 89,
+            "headline": "Yemen's Houthis say they attacked Riyadh airport with ballistic missile - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-08T03:03:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 78,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 85,
+            "headline": "Oil rises as Middle East supply concerns persist amid shipping attacks - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-08T01:25:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 74,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 68,
             "headline": "Syria weighs military aid for Saudi Arabia amid Yemen war, sources say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3723,15 +3810,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 74,
+            "freshness_score": 63,
             "headline": "NEWSLETTER: The war's explosive new front - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3751,100 +3838,19 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 92,
+            "confidence_score": 89,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 59,
             "headline": "Attacks on tankers in Hormuz hit highest of any week since start of Iran war, sources say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-10-07T14:24:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 73,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 67,
-            "headline": "Palestinian killed in Israeli settler attack during olive harvest, officials say - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-07T13:08:03+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 69,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 51,
-            "headline": "Shell expects record refining margins as Iran war boosts fuel markets - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-07T06:07:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 66,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 39,
-            "headline": "Attacks on Saudi airports kill three people, as fighting escalates in Yemen - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-07T01:21:00+00:00",
             "source": "Reuters"
           }
         ],
@@ -3874,13 +3880,49 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Hormuz transits at lowest in over two months after attacks, data shows - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-08T03:39:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Yemen's Houthis say they attacked Riyadh airport with ballistic missile - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-08T03:03:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Oil rises as Middle East supply concerns persist amid shipping attacks - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-08T01:25:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "Syria weighs military aid for Saudi Arabia amid Yemen war, sources say - Reuters",
               "importance_score": 100,
               "published_at": "2026-10-07T18:21:26+00:00",
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -3901,42 +3943,6 @@
               "headline": "Attacks on tankers in Hormuz hit highest of any week since start of Iran war, sources say - Reuters",
               "importance_score": 100,
               "published_at": "2026-10-07T14:24:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Palestinian killed in Israeli settler attack during olive harvest, officials say - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-10-07T13:08:03+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Shell expects record refining margins as Iran war boosts fuel markets - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-10-07T06:07:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Attacks on Saudi airports kill three people, as fighting escalates in Yemen - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-10-07T01:21:00+00:00",
               "source": "Reuters"
             }
           ]
@@ -3981,7 +3987,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0062,
-            "avg_equity_futures_1d_return": 0.0001,
+            "avg_equity_futures_1d_return": -0.0058,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -3996,7 +4002,7 @@
             ],
             "failed_checks": [],
             "hyg_lqd_1d_relative_return": -0.0008,
-            "oil_proxy_1d_return": 0.0043,
+            "oil_proxy_1d_return": 0.0138,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -6488,11 +6494,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
-            "Samsung forecasts record third-quarter profit of $80 billion on the back of AI boom",
-            "Trump says he deserves Nobel Peace Prize but has doubts he will get it - Reuters",
-            "SpaceX’s plans to buy more Nvidia GPUs is keeping Jim Cramer bullish on the chip stock",
-            "Explainer: The status of Iran's uranium enrichment programme - Reuters",
-            "IEA to accelerate oil reserve release, says 100 million barrels still to come - Reuters"
+            "Britain removes East Jerusalem consulate signage as Israeli shutdown order expires - Reuters",
+            "Hormuz transits at lowest in over two months after attacks, data shows - Reuters",
+            "Yemen's Houthis say they attacked Riyadh airport with ballistic missile - Reuters",
+            "Oil rises as Middle East supply concerns persist amid shipping attacks - Reuters",
+            "Oil price volatility tops list of earnings risks for Japan firms: Reuters poll - Reuters"
           ]
         },
         "price": {
@@ -7873,14 +7879,95 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 77,
+            "confidence_score": 79,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 80,
+            "freshness_score": 91,
+            "headline": "Hormuz transits at lowest in over two months after attacks, data shows - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-08T03:39:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 97,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 89,
+            "headline": "Yemen's Houthis say they attacked Riyadh airport with ballistic missile - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-08T03:03:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 78,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 85,
+            "headline": "Oil rises as Middle East supply concerns persist amid shipping attacks - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-08T01:25:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 74,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 68,
             "headline": "Syria weighs military aid for Saudi Arabia amid Yemen war, sources say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7899,15 +7986,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 74,
+            "freshness_score": 63,
             "headline": "NEWSLETTER: The war's explosive new front - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7927,100 +8014,19 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 92,
+            "confidence_score": 89,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 59,
             "headline": "Attacks on tankers in Hormuz hit highest of any week since start of Iran war, sources say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-10-07T14:24:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 73,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 67,
-            "headline": "Palestinian killed in Israeli settler attack during olive harvest, officials say - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-07T13:08:03+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 69,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 51,
-            "headline": "Shell expects record refining margins as Iran war boosts fuel markets - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-07T06:07:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 66,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 39,
-            "headline": "Attacks on Saudi airports kill three people, as fighting escalates in Yemen - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-07T01:21:00+00:00",
             "source": "Reuters"
           }
         ],
@@ -8050,13 +8056,49 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Hormuz transits at lowest in over two months after attacks, data shows - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-08T03:39:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Yemen's Houthis say they attacked Riyadh airport with ballistic missile - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-08T03:03:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Oil rises as Middle East supply concerns persist amid shipping attacks - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-08T01:25:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "Syria weighs military aid for Saudi Arabia amid Yemen war, sources say - Reuters",
               "importance_score": 100,
               "published_at": "2026-10-07T18:21:26+00:00",
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -8077,42 +8119,6 @@
               "headline": "Attacks on tankers in Hormuz hit highest of any week since start of Iran war, sources say - Reuters",
               "importance_score": 100,
               "published_at": "2026-10-07T14:24:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Palestinian killed in Israeli settler attack during olive harvest, officials say - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-10-07T13:08:03+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Shell expects record refining margins as Iran war boosts fuel markets - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-10-07T06:07:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Attacks on Saudi airports kill three people, as fighting escalates in Yemen - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-10-07T01:21:00+00:00",
               "source": "Reuters"
             }
           ]
@@ -8157,7 +8163,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0062,
-            "avg_equity_futures_1d_return": 0.0001,
+            "avg_equity_futures_1d_return": -0.0058,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -8172,7 +8178,7 @@
             ],
             "failed_checks": [],
             "hyg_lqd_1d_relative_return": -0.0008,
-            "oil_proxy_1d_return": 0.0043,
+            "oil_proxy_1d_return": 0.0138,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -10703,11 +10709,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
-            "Samsung forecasts record third-quarter profit of $80 billion on the back of AI boom",
-            "Trump says he deserves Nobel Peace Prize but has doubts he will get it - Reuters",
-            "SpaceX’s plans to buy more Nvidia GPUs is keeping Jim Cramer bullish on the chip stock",
-            "Explainer: The status of Iran's uranium enrichment programme - Reuters",
-            "IEA to accelerate oil reserve release, says 100 million barrels still to come - Reuters"
+            "Britain removes East Jerusalem consulate signage as Israeli shutdown order expires - Reuters",
+            "Hormuz transits at lowest in over two months after attacks, data shows - Reuters",
+            "Yemen's Houthis say they attacked Riyadh airport with ballistic missile - Reuters",
+            "Oil rises as Middle East supply concerns persist amid shipping attacks - Reuters",
+            "Oil price volatility tops list of earnings risks for Japan firms: Reuters poll - Reuters"
           ]
         },
         "price": {
@@ -12079,14 +12085,95 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 77,
+            "confidence_score": 79,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 80,
+            "freshness_score": 91,
+            "headline": "Hormuz transits at lowest in over two months after attacks, data shows - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-08T03:39:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 97,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 89,
+            "headline": "Yemen's Houthis say they attacked Riyadh airport with ballistic missile - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-08T03:03:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 78,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 85,
+            "headline": "Oil rises as Middle East supply concerns persist amid shipping attacks - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-08T01:25:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 74,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 68,
             "headline": "Syria weighs military aid for Saudi Arabia amid Yemen war, sources say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12105,15 +12192,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 74,
+            "freshness_score": 63,
             "headline": "NEWSLETTER: The war's explosive new front - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12133,100 +12220,19 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 92,
+            "confidence_score": 89,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 59,
             "headline": "Attacks on tankers in Hormuz hit highest of any week since start of Iran war, sources say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-10-07T14:24:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 73,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 67,
-            "headline": "Palestinian killed in Israeli settler attack during olive harvest, officials say - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-07T13:08:03+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 69,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 51,
-            "headline": "Shell expects record refining margins as Iran war boosts fuel markets - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-07T06:07:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 66,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 39,
-            "headline": "Attacks on Saudi airports kill three people, as fighting escalates in Yemen - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-07T01:21:00+00:00",
             "source": "Reuters"
           }
         ],
@@ -12256,13 +12262,49 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Hormuz transits at lowest in over two months after attacks, data shows - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-08T03:39:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Yemen's Houthis say they attacked Riyadh airport with ballistic missile - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-08T03:03:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Oil rises as Middle East supply concerns persist amid shipping attacks - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-08T01:25:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "Syria weighs military aid for Saudi Arabia amid Yemen war, sources say - Reuters",
               "importance_score": 100,
               "published_at": "2026-10-07T18:21:26+00:00",
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -12283,42 +12325,6 @@
               "headline": "Attacks on tankers in Hormuz hit highest of any week since start of Iran war, sources say - Reuters",
               "importance_score": 100,
               "published_at": "2026-10-07T14:24:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Palestinian killed in Israeli settler attack during olive harvest, officials say - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-10-07T13:08:03+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Shell expects record refining margins as Iran war boosts fuel markets - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-10-07T06:07:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Attacks on Saudi airports kill three people, as fighting escalates in Yemen - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-10-07T01:21:00+00:00",
               "source": "Reuters"
             }
           ]
@@ -12363,7 +12369,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0062,
-            "avg_equity_futures_1d_return": 0.0001,
+            "avg_equity_futures_1d_return": -0.0058,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -12378,7 +12384,7 @@
             ],
             "failed_checks": [],
             "hyg_lqd_1d_relative_return": -0.0008,
-            "oil_proxy_1d_return": 0.0043,
+            "oil_proxy_1d_return": 0.0138,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -14557,7 +14563,7 @@
       "as_of": "2026-10-07",
       "base_path_weight": 0.159,
       "bearish_path_weight": 0.341,
-      "bounce_path_weight": 0.2873,
+      "bounce_path_weight": 0.2872,
       "bounce_probability": 0.59293002,
       "confluence": {
         "conflicting_evidence": [
@@ -14594,7 +14600,7 @@
           {
             "detail": "路径分歧较大，不宜给强结论。",
             "name": "主次路径差距小",
-            "score": 5.37,
+            "score": 5.38,
             "source": "scenario_gap"
           }
         ],
@@ -14625,7 +14631,7 @@
         "primary_label": "失败反抽情景",
         "primary_probability": 0.341,
         "primary_scenario": "bearish_path",
-        "probability_gap": 0.0537,
+        "probability_gap": 0.0538,
         "related_price_levels": {
           "primary_confirmation_level": {
             "confidence": "medium",
@@ -14660,7 +14666,7 @@
             "source_type": "price_structure"
           }
         },
-        "secondary_probability": 0.2873,
+        "secondary_probability": 0.2872,
         "secondary_scenario": "bounce_path",
         "strong_conclusion_allowed": false,
         "supporting_evidence": [
@@ -14743,16 +14749,16 @@
       "downside_continuation_probability": 0.7229617433033256,
       "feature_snapshot_v3": {
         "breadth": {
-          "advance_decline_ratio": 1.8202,
-          "advancers": 324,
-          "breadth_confirmation_score": 0.5811,
-          "breadth_confirmation_score_raw": 58.11,
-          "breadth_conflict_score": 0.3985,
-          "breadth_conflict_score_raw": 39.85,
-          "breadth_deterioration_score": 0.5244,
-          "breadth_deterioration_score_raw": 52.44,
-          "breadth_improvement_score": 0.4765,
-          "breadth_improvement_score_raw": 47.65,
+          "advance_decline_ratio": 1.8045,
+          "advancers": 323,
+          "breadth_confirmation_score": 0.5805,
+          "breadth_confirmation_score_raw": 58.05,
+          "breadth_conflict_score": 0.3996,
+          "breadth_conflict_score_raw": 39.96,
+          "breadth_deterioration_score": 0.5257000000000001,
+          "breadth_deterioration_score_raw": 52.57,
+          "breadth_improvement_score": 0.4758,
+          "breadth_improvement_score_raw": 47.58,
           "breadth_quality_score": 1.0,
           "breadth_quality_score_raw": 100.0,
           "broad_participation": false,
@@ -14760,13 +14766,13 @@
           "constituents_used": 503,
           "coverage_ratio": 1.0,
           "data_note": "True constituent breadth when status is available/stale/partial; stale flags must be respected.",
-          "decliners": 178,
+          "decliners": 179,
           "equal_weight_vs_cap_weight_20d": null,
-          "improvement_acceleration": 0.0099,
+          "improvement_acceleration": 0.01,
           "internal_resonance_components": {
-            "confirmation_score": 58.11,
-            "conflict_score": 39.85,
-            "constituent_participation_score": 39.12,
+            "confirmation_score": 58.05,
+            "conflict_score": 39.96,
+            "constituent_participation_score": 39.0,
             "equal_weight_score": 15.57,
             "equal_weight_vs_cap_weight_20d": -0.038261,
             "participation_score": 40.19,
@@ -14781,25 +14787,25 @@
           "internal_resonance_quality_score": 1.0,
           "internal_resonance_quality_score_raw": 100.0,
           "internal_resonance_reason": "SPY 指数表面强但内部没充分跟上：confirmation 58，conflict 40，RSP/SPY -3.83%，IWM/SPY -6.40%。",
-          "internal_resonance_score_raw": 37.96,
+          "internal_resonance_score_raw": 37.89,
           "internal_resonance_state": "surface_only",
           "is_proxy": false,
           "is_true_breadth": true,
           "iwm_spy_relative_strength_20d": null,
-          "latest_date": "2026-10-06",
-          "market_internal_resonance_score": 0.3796,
-          "new_highs_20d": 58,
-          "new_highs_52w": 17,
-          "new_lows_20d": 54,
+          "latest_date": "2026-10-07",
+          "market_internal_resonance_score": 0.3789,
+          "new_highs_20d": 57,
+          "new_highs_52w": 16,
+          "new_lows_20d": 55,
           "new_lows_52w": 12,
-          "percent_above_200d": 0.4371,
-          "percent_above_200d_ma_proxy": 0.4371,
-          "percent_above_20d": 0.3479,
-          "percent_above_20d_change_5d": 0.0517,
-          "percent_above_20d_ma_proxy": 0.3479,
-          "percent_above_50d": 0.2744,
-          "percent_above_50d_change_10d": -0.0278,
-          "percent_above_50d_ma_proxy": 0.2744,
+          "percent_above_200d": 0.438,
+          "percent_above_200d_ma_proxy": 0.438,
+          "percent_above_20d": 0.3486,
+          "percent_above_20d_change_5d": 0.0518,
+          "percent_above_20d_ma_proxy": 0.3486,
+          "percent_above_50d": 0.2749,
+          "percent_above_50d_change_10d": -0.0279,
+          "percent_above_50d_ma_proxy": 0.2749,
           "price_falling_breadth_improving": false,
           "price_rising_breadth_weakening": false,
           "source": "wikipedia-sp500",
@@ -14809,7 +14815,7 @@
           "supports_bounce_or_repair": false,
           "supports_downside_or_failed_bounce": true,
           "surface_strength_without_participation": true,
-          "up_volume_down_volume_ratio": 2.5686
+          "up_volume_down_volume_ratio": 1.8939
         },
         "credit": {
           "baa_spread_20d_change": -0.1100000000000001,
@@ -14899,11 +14905,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
-            "Samsung forecasts record third-quarter profit of $80 billion on the back of AI boom",
-            "Trump says he deserves Nobel Peace Prize but has doubts he will get it - Reuters",
-            "SpaceX’s plans to buy more Nvidia GPUs is keeping Jim Cramer bullish on the chip stock",
-            "Explainer: The status of Iran's uranium enrichment programme - Reuters",
-            "IEA to accelerate oil reserve release, says 100 million barrels still to come - Reuters"
+            "Britain removes East Jerusalem consulate signage as Israeli shutdown order expires - Reuters",
+            "Hormuz transits at lowest in over two months after attacks, data shows - Reuters",
+            "Yemen's Houthis say they attacked Riyadh airport with ballistic missile - Reuters",
+            "Oil rises as Middle East supply concerns persist amid shipping attacks - Reuters",
+            "Oil price volatility tops list of earnings risks for Japan firms: Reuters poll - Reuters"
           ]
         },
         "price": {
@@ -15292,7 +15298,7 @@
           },
           "primary_probability": 0.341,
           "primary_scenario": "bearish_path",
-          "probability_gap": 0.0537,
+          "probability_gap": 0.0538,
           "risk_probability": 0.2128,
           "risk_scenario_activation_level": {
             "condition": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
@@ -15307,7 +15313,7 @@
             "price": 703.79,
             "source": "simulated_path"
           },
-          "secondary_probability": 0.2873,
+          "secondary_probability": 0.2872,
           "trend_reversal_confirmation_level": {
             "condition": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
             "distance_from_current": 1.87,
@@ -15344,7 +15350,7 @@
         "primary_scenario": "bearish_path",
         "risk_probability": 0.2128,
         "risk_scenario": "analog_average_path",
-        "secondary_probability": 0.2873,
+        "secondary_probability": 0.2872,
         "secondary_scenario": "bounce_path",
         "source_note": "Derived from existing simulated paths, recent price structure and realized-volatility bands.",
         "summary": {
@@ -15503,9 +15509,9 @@
       "internal_resonance": {
         "broad_participation": false,
         "components": {
-          "confirmation_score": 58.11,
-          "conflict_score": 39.85,
-          "constituent_participation_score": 39.12,
+          "confirmation_score": 58.05,
+          "conflict_score": 39.96,
+          "constituent_participation_score": 39.0,
           "equal_weight_score": 15.57,
           "equal_weight_vs_cap_weight_20d": -0.038261,
           "participation_score": 40.19,
@@ -15520,7 +15526,7 @@
         "reason": "SPY 指数表面强但内部没充分跟上：confirmation 58，conflict 40，RSP/SPY -3.83%，IWM/SPY -6.40%。",
         "resonance_label": "指数表面强",
         "resonance_quality_score": 100.0,
-        "resonance_score": 37.96,
+        "resonance_score": 37.89,
         "resonance_state": "surface_only",
         "supports_bounce_or_repair": false,
         "supports_downside_or_failed_bounce": true,
@@ -16214,9 +16220,9 @@
           "data_completeness": 0.85,
           "flow_conflict": 0.397,
           "flow_quality": 1.0,
-          "internal_resonance": 0.3796,
+          "internal_resonance": 0.3789,
           "options_quality": 0.92,
-          "predictor_consistency": 0.7861,
+          "predictor_consistency": 0.786,
           "prior_confidence": 0.67,
           "signal_confirmation": 0.7
         },
@@ -16254,14 +16260,95 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 77,
+            "confidence_score": 79,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 80,
+            "freshness_score": 91,
+            "headline": "Hormuz transits at lowest in over two months after attacks, data shows - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-08T03:39:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 97,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 89,
+            "headline": "Yemen's Houthis say they attacked Riyadh airport with ballistic missile - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-08T03:03:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 78,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 85,
+            "headline": "Oil rises as Middle East supply concerns persist amid shipping attacks - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-08T01:25:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 74,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 68,
             "headline": "Syria weighs military aid for Saudi Arabia amid Yemen war, sources say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16280,15 +16367,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 74,
+            "freshness_score": 63,
             "headline": "NEWSLETTER: The war's explosive new front - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16308,100 +16395,19 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 92,
+            "confidence_score": 89,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 59,
             "headline": "Attacks on tankers in Hormuz hit highest of any week since start of Iran war, sources say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-10-07T14:24:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 73,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 67,
-            "headline": "Palestinian killed in Israeli settler attack during olive harvest, officials say - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-07T13:08:03+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 69,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 51,
-            "headline": "Shell expects record refining margins as Iran war boosts fuel markets - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-07T06:07:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 66,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 39,
-            "headline": "Attacks on Saudi airports kill three people, as fighting escalates in Yemen - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-07T01:21:00+00:00",
             "source": "Reuters"
           }
         ],
@@ -16431,13 +16437,49 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Hormuz transits at lowest in over two months after attacks, data shows - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-08T03:39:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Yemen's Houthis say they attacked Riyadh airport with ballistic missile - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-08T03:03:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Oil rises as Middle East supply concerns persist amid shipping attacks - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-08T01:25:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "Syria weighs military aid for Saudi Arabia amid Yemen war, sources say - Reuters",
               "importance_score": 100,
               "published_at": "2026-10-07T18:21:26+00:00",
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -16459,42 +16501,6 @@
               "importance_score": 100,
               "published_at": "2026-10-07T14:24:00+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Palestinian killed in Israeli settler attack during olive harvest, officials say - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-10-07T13:08:03+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Shell expects record refining margins as Iran war boosts fuel markets - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-10-07T06:07:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Attacks on Saudi airports kill three people, as fighting escalates in Yemen - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-10-07T01:21:00+00:00",
-              "source": "Reuters"
             }
           ]
         },
@@ -16502,7 +16508,7 @@
         "prediction_logic_effect": {
           "after_primary_probability": 0.341,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.3195,
+          "before_primary_probability": 0.3194,
           "before_primary_scenario": "bounce_path",
           "confirmation_delta": -8.0,
           "impact": "conflicts_primary",
@@ -16530,7 +16536,7 @@
             "risk_expansion_predictor": 0.039,
             "trend_reversal_predictor": 0.0
           },
-          "primary_probability_delta": 0.0215,
+          "primary_probability_delta": 0.0216,
           "primary_scenario_changed": true,
           "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay",
           "validation_type": "daily"
@@ -16538,7 +16544,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0062,
-            "avg_equity_futures_1d_return": 0.0001,
+            "avg_equity_futures_1d_return": -0.0058,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -16553,7 +16559,7 @@
             ],
             "failed_checks": [],
             "hyg_lqd_1d_relative_return": -0.0008,
-            "oil_proxy_1d_return": 0.0043,
+            "oil_proxy_1d_return": 0.0138,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -16607,27 +16613,27 @@
         "analog_path_weight": 0.2128,
         "base_path_weight": 0.159,
         "bearish_path_weight": 0.341,
-        "bounce_path_weight": 0.2873,
+        "bounce_path_weight": 0.2872,
         "low_confidence_simulation": false,
         "news_event_overlay_applied": true,
         "news_event_overlay_note": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay",
         "simulation_confidence_level": "medium",
         "weight_factors": {
           "bounce_probability": 0.5929,
-          "breadth_confirmation": 0.5811,
-          "breadth_conflict": 0.3985,
+          "breadth_confirmation": 0.5805,
+          "breadth_conflict": 0.3996,
           "breadth_quality": 1.0,
-          "breadth_support": 0.5811,
+          "breadth_support": 0.5805,
           "credit_stability": 0.6188,
           "crowding_proxy": 0.255,
           "data_completeness": 0.84,
           "failed_bounce_options_risk": 0.1234,
-          "failed_bounce_risk": 0.6008,
+          "failed_bounce_risk": 0.6009,
           "flow_confirmation": 0.6385,
           "flow_conflict": 0.397,
           "flow_quality": 1.0,
           "historical_analog_support": 0.15,
-          "internal_resonance": 0.3796,
+          "internal_resonance": 0.3789,
           "internal_resonance_state": "surface_only",
           "macro_event_risk": 0.0,
           "news_event_direction": "supports_risk_expansion",
@@ -16638,7 +16644,7 @@
           "options_stress": 0.077,
           "panic_release": 0.5962,
           "rates_pressure": 0.3338,
-          "risk_expansion": 0.4456,
+          "risk_expansion": 0.4457,
           "signal_agreement": 0.63,
           "signal_confirmation": 0.7,
           "tail_risk": 0.1552,
@@ -17884,7 +17890,7 @@
             -0.09505655021226078,
             0.027925859572585088
           ],
-          "failed_bounce_risk": 0.7007727844864966,
+          "failed_bounce_risk": 0.7008277844864965,
           "historical_support": "weak",
           "market_edge_status": "WEAK_EDGE",
           "up_probability": 0.42655561203363457
@@ -17906,8 +17912,8 @@
           "failed_bounce_risk": 0.8229617433033256,
           "historical_support": "weak",
           "market_edge_status": "WEAK_EDGE",
-          "risk_expansion_probability": 0.476,
-          "trend_reversal_probability": 0.2625,
+          "risk_expansion_probability": 0.4762,
+          "trend_reversal_probability": 0.2624,
           "up_probability": 0.4377119623376727
         },
         "3d": {
@@ -17924,7 +17930,7 @@
             -0.042692790839460315,
             0.033159038870439916
           ],
-          "failed_bounce_risk": 0.7007727844864966,
+          "failed_bounce_risk": 0.7008277844864965,
           "historical_support": "weak",
           "market_edge_status": "WEAK_EDGE",
           "up_probability": 0.4443623282171273
@@ -17943,7 +17949,7 @@
             -0.0650278669012857,
             0.02660199638002969
           ],
-          "failed_bounce_risk": 0.7007727844864966,
+          "failed_bounce_risk": 0.7008277844864965,
           "historical_support": "weak",
           "market_edge_status": "WEAK_EDGE",
           "up_probability": 0.43850525162742965
@@ -17965,8 +17971,8 @@
           "failed_bounce_risk": 0.8229617433033256,
           "historical_support": "weak",
           "market_edge_status": "WEAK_EDGE",
-          "risk_expansion_probability": 0.476,
-          "trend_reversal_probability": 0.2625,
+          "risk_expansion_probability": 0.4762,
+          "trend_reversal_probability": 0.2624,
           "up_probability": 0.45578709341346196
         }
       },
@@ -17974,7 +17980,7 @@
         "bounce_predictor": {
           "best_horizon": "3d-10d",
           "bounce_probability": 0.5156,
-          "breadth_confirmation": 0.5811,
+          "breadth_confirmation": 0.5805,
           "breadth_quality": 1.0,
           "confidence": 0.6885,
           "conflicting_evidence": [
@@ -17989,7 +17995,7 @@
           "flow_conflict_score": 0.397,
           "flow_quality_score": 1.0,
           "historical_analog_support": "weak",
-          "internal_resonance_score": 0.3796,
+          "internal_resonance_score": 0.3789,
           "internal_resonance_state": "surface_only",
           "invalidation_conditions": [
             "VIX turns higher again",
@@ -18019,18 +18025,18 @@
         },
         "downside_continuation_predictor": {
           "best_horizon": "5d-20d",
-          "breadth_conflict": 0.3985,
+          "breadth_conflict": 0.3996,
           "breadth_quality": 1.0,
           "break_level": 754.05,
           "confidence": 0.6475,
           "crowding_proxy_score": 0.255,
-          "downside_continuation_probability": 0.5446,
+          "downside_continuation_probability": 0.5447,
           "failed_bounce_options_risk": 0.1234,
           "flow_confirmation_score": 0.6385,
           "flow_conflict_score": 0.397,
           "flow_quality_score": 1.0,
           "historical_analog_support": "weak",
-          "internal_resonance_score": 0.3796,
+          "internal_resonance_score": 0.3789,
           "internal_resonance_state": "surface_only",
           "invalidation_conditions": [
             "VIX falls and stays lower",
@@ -18046,7 +18052,7 @@
             "news_event_overlay:+0.033"
           ],
           "options_quality": 0.92,
-          "probability": 0.5446,
+          "probability": 0.5447,
           "risk_triggers": [
             "VIX rising",
             "HYG/LQD weakens",
@@ -18060,8 +18066,8 @@
         "risk_expansion_predictor": {
           "best_horizon": "20d-60d",
           "breadth_quality": 1.0,
-          "breadth_risk": 0.3985,
-          "confidence": 0.6546,
+          "breadth_risk": 0.3996,
+          "confidence": 0.6547,
           "credit_risk": 0.4043,
           "crowding_proxy_score": 0.255,
           "failed_bounce_options_risk": 0.1234,
@@ -18069,7 +18075,7 @@
           "flow_conflict_score": 0.397,
           "flow_quality_score": 1.0,
           "historical_analog_support": "high",
-          "internal_resonance_score": 0.3796,
+          "internal_resonance_score": 0.3789,
           "internal_resonance_state": "surface_only",
           "invalidation_conditions": [
             "credit proxy stabilizes",
@@ -18081,21 +18087,21 @@
           "macro_event_risk": 0.0,
           "main_drivers": [
             "risk-off rotation: 0.58",
-            "breadth deterioration: 0.52",
+            "breadth deterioration: 0.53",
             "liquidity stress proxy: 0.51",
             "credit deterioration: 0.40",
             "news_event_overlay:+0.039"
           ],
           "options_quality": 0.92,
-          "probability": 0.4846,
-          "risk_expansion_probability": 0.4846,
+          "probability": 0.4847,
+          "risk_expansion_probability": 0.4847,
           "tail_risk_score": 0.1552,
           "term_structure_state": "contango",
           "volatility_risk": 0.077
         },
         "trend_reversal_predictor": {
           "best_horizon": "20d-60d",
-          "breadth_confirmation": 0.5811,
+          "breadth_confirmation": 0.5805,
           "breadth_quality": 1.0,
           "confidence": 0.6885,
           "confirmation_requirements": [
@@ -18109,7 +18115,7 @@
           "flow_conflict_score": 0.397,
           "flow_quality_score": 1.0,
           "historical_analog_support": "weak",
-          "internal_resonance_score": 0.3796,
+          "internal_resonance_score": 0.3789,
           "internal_resonance_state": "surface_only",
           "invalidation_conditions": [
             "20d/60d analogs turn weak",
@@ -18124,10 +18130,10 @@
             "60d trend: 0.20"
           ],
           "options_quality": 0.92,
-          "probability": 0.3197,
+          "probability": 0.3196,
           "regime_support": "weak",
           "term_structure_state": "contango",
-          "trend_reversal_probability": 0.3197,
+          "trend_reversal_probability": 0.3196,
           "volatility_reversal_score": 0.848
         }
       },
@@ -18135,7 +18141,7 @@
         "bounce_predictor": {
           "best_horizon": "3d-10d",
           "bounce_probability": 0.5156,
-          "breadth_confirmation": 0.5811,
+          "breadth_confirmation": 0.5805,
           "breadth_quality": 1.0,
           "confidence": 0.6885,
           "conflicting_evidence": [
@@ -18150,7 +18156,7 @@
           "flow_conflict_score": 0.397,
           "flow_quality_score": 1.0,
           "historical_analog_support": "weak",
-          "internal_resonance_score": 0.3796,
+          "internal_resonance_score": 0.3789,
           "internal_resonance_state": "surface_only",
           "invalidation_conditions": [
             "VIX turns higher again",
@@ -18180,18 +18186,18 @@
         },
         "downside_continuation_predictor": {
           "best_horizon": "5d-20d",
-          "breadth_conflict": 0.3985,
+          "breadth_conflict": 0.3996,
           "breadth_quality": 1.0,
           "break_level": 754.05,
           "confidence": 0.6475,
           "crowding_proxy_score": 0.255,
-          "downside_continuation_probability": 0.5446,
+          "downside_continuation_probability": 0.5447,
           "failed_bounce_options_risk": 0.1234,
           "flow_confirmation_score": 0.6385,
           "flow_conflict_score": 0.397,
           "flow_quality_score": 1.0,
           "historical_analog_support": "weak",
-          "internal_resonance_score": 0.3796,
+          "internal_resonance_score": 0.3789,
           "internal_resonance_state": "surface_only",
           "invalidation_conditions": [
             "VIX falls and stays lower",
@@ -18207,7 +18213,7 @@
             "news_event_overlay:+0.033"
           ],
           "options_quality": 0.92,
-          "probability": 0.5446,
+          "probability": 0.5447,
           "risk_triggers": [
             "VIX rising",
             "HYG/LQD weakens",
@@ -18221,8 +18227,8 @@
         "risk_expansion_predictor": {
           "best_horizon": "20d-60d",
           "breadth_quality": 1.0,
-          "breadth_risk": 0.3985,
-          "confidence": 0.6546,
+          "breadth_risk": 0.3996,
+          "confidence": 0.6547,
           "credit_risk": 0.4043,
           "crowding_proxy_score": 0.255,
           "failed_bounce_options_risk": 0.1234,
@@ -18230,7 +18236,7 @@
           "flow_conflict_score": 0.397,
           "flow_quality_score": 1.0,
           "historical_analog_support": "high",
-          "internal_resonance_score": 0.3796,
+          "internal_resonance_score": 0.3789,
           "internal_resonance_state": "surface_only",
           "invalidation_conditions": [
             "credit proxy stabilizes",
@@ -18242,21 +18248,21 @@
           "macro_event_risk": 0.0,
           "main_drivers": [
             "risk-off rotation: 0.58",
-            "breadth deterioration: 0.52",
+            "breadth deterioration: 0.53",
             "liquidity stress proxy: 0.51",
             "credit deterioration: 0.40",
             "news_event_overlay:+0.039"
           ],
           "options_quality": 0.92,
-          "probability": 0.4846,
-          "risk_expansion_probability": 0.4846,
+          "probability": 0.4847,
+          "risk_expansion_probability": 0.4847,
           "tail_risk_score": 0.1552,
           "term_structure_state": "contango",
           "volatility_risk": 0.077
         },
         "trend_reversal_predictor": {
           "best_horizon": "20d-60d",
-          "breadth_confirmation": 0.5811,
+          "breadth_confirmation": 0.5805,
           "breadth_quality": 1.0,
           "confidence": 0.6885,
           "confirmation_requirements": [
@@ -18270,7 +18276,7 @@
           "flow_conflict_score": 0.397,
           "flow_quality_score": 1.0,
           "historical_analog_support": "weak",
-          "internal_resonance_score": 0.3796,
+          "internal_resonance_score": 0.3789,
           "internal_resonance_state": "surface_only",
           "invalidation_conditions": [
             "20d/60d analogs turn weak",
@@ -18285,10 +18291,10 @@
             "60d trend: 0.20"
           ],
           "options_quality": 0.92,
-          "probability": 0.3197,
+          "probability": 0.3196,
           "regime_support": "weak",
           "term_structure_state": "contango",
-          "trend_reversal_probability": 0.3197,
+          "trend_reversal_probability": 0.3196,
           "volatility_reversal_score": 0.848
         }
       },
@@ -18310,7 +18316,7 @@
         {
           "name": "Bounce case",
           "name_cn": "反弹情景",
-          "probability_weight": 0.2873,
+          "probability_weight": 0.2872,
           "return_20d": 0.04310541018279941,
           "summary_cn": "如果 Alpha v1 信号继续有效，路径更接近历史上较好的反抽样本。"
         },
@@ -18343,7 +18349,7 @@
             "confidence": "medium",
             "expected_horizon": "10d-20d",
             "label": "反抽情景",
-            "probability": 0.2873,
+            "probability": 0.2872,
             "reason": "Bounce Predictor 53%，多源确认 70/100，20d/60d historical support 为 weak。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bounce_path"
           },
@@ -18376,7 +18382,7 @@
           "scenario": "bearish_path"
         },
         "primary_scenario": "bearish_path",
-        "primary_secondary_gap": 0.0537,
+        "primary_secondary_gap": 0.0538,
         "primary_to_secondary_switch_conditions": [
           "VIX 与新闻方向背离",
           "HYG/LQD 转弱",
@@ -18385,7 +18391,7 @@
           "SPY 重新站上主路径确认价",
           "第二路径 bounce_path 获得多源确认"
         ],
-        "probability_gap": 0.0537,
+        "probability_gap": 0.0538,
         "ranking_note": "Scenario ranking includes a bounded News/Event overlay when a major event or macro calendar risk is detected. It is probabilistic, not deterministic.",
         "risk_scenario": "bearish_path",
         "scenario_probability": 0.341,
@@ -18393,7 +18399,7 @@
           "confidence": "medium",
           "expected_horizon": "10d-20d",
           "label": "反抽情景",
-          "probability": 0.2873,
+          "probability": 0.2872,
           "reason": "Bounce Predictor 53%，多源确认 70/100，20d/60d historical support 为 weak。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -8.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bounce_path"
         },
@@ -18418,7 +18424,7 @@
       "scenario_weights": {
         "base_scenario": 0.159,
         "bearish_scenario": 0.341,
-        "bounce_scenario": 0.2873,
+        "bounce_scenario": 0.2872,
         "historical_analog_average": 0.2128
       },
       "shadow_evidence_v1": {

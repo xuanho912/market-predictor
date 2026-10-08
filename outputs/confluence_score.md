@@ -3,7 +3,7 @@
 This report explains whether current forecast paths have multi-source confirmation. It is not a trading system.
 
 - version: confluence_engine_v1
-- generated_at: 2026-10-08T02:42:38.268244+00:00
+- generated_at: 2026-10-08T07:30:30.019511+00:00
 - strongest_confluence_symbol: IWM
 
 | Symbol | Dominant path | Confluence | Level | Main supports | Main conflicts |

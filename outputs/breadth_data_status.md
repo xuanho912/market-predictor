@@ -1,6 +1,6 @@
 # Breadth Data Status
 
-Generated at: 2026-10-08T02:42:02.326510+00:00
+Generated at: 2026-10-08T07:29:53.274637+00:00
 
 Provider available: True
 True breadth available: False
@@ -11,7 +11,7 @@ Stale data: True
 
 ## Market Internal Resonance
 
-- resonance_score: 31.03
+- resonance_score: 31.01
 - resonance_state: surface_only
 - label: index_surface_strength
 - aligned_symbols: none
@@ -26,19 +26,19 @@ Stale data: True
 
 - status: available
 - source: wikipedia-sp500
-- latest_date: 2026-10-06
+- latest_date: 2026-10-07
 - true_breadth: True
 - proxy: False
 - constituents used / expected: 503 / 503
 - coverage_ratio: 1.0
 - stale_constituents: False
 - stale_price_data: False
-- percent_above_20d / 50d / 200d: 0.3479 / 0.2744 / 0.4371
-- advancers / decliners / A-D ratio: 324 / 178 / 1.8202
-- new highs/lows 20d: 58 / 54
-- new highs/lows 52w: 17 / 12
-- improvement / deterioration / confirmation / conflict / quality: 47.65 / 52.44 / 58.11 / 39.85 / 100.0
-- internal_resonance: surface_only / score 37.96 / SPY 指数表面强但内部没充分跟上：confirmation 58，conflict 40，RSP/SPY -3.83%，IWM/SPY -6.40%。
+- percent_above_20d / 50d / 200d: 0.3486 / 0.2749 / 0.438
+- advancers / decliners / A-D ratio: 323 / 179 / 1.8045
+- new highs/lows 20d: 57 / 55
+- new highs/lows 52w: 16 / 12
+- improvement / deterioration / confirmation / conflict / quality: 47.58 / 52.57 / 58.05 / 39.96 / 100.0
+- internal_resonance: surface_only / score 37.89 / SPY 指数表面强但内部没充分跟上：confirmation 58，conflict 40，RSP/SPY -3.83%，IWM/SPY -6.40%。
 
 ### QQQ
 

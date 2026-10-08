@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-08T02:42:29.097061+00:00`
+- generated_at: `2026-10-08T07:30:15.662924+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
-- event_detection_confidence: `73`
+- major_event_count: `9`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,11 +27,35 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Hormuz transits at lowest in over two months after attacks, data shows - Reuters
+- source: Reuters
+- published_at: `2026-10-08T03:39:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Yemen's Houthis say they attacked Riyadh airport with ballistic missile - Reuters
+- source: Reuters
+- published_at: `2026-10-08T03:03:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil rises as Middle East supply concerns persist amid shipping attacks - Reuters
+- source: Reuters
+- published_at: `2026-10-08T01:25:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Syria weighs military aid for Saudi Arabia amid Yemen war, sources say - Reuters
 - source: Reuters
 - published_at: `2026-10-07T18:21:26+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -39,7 +63,7 @@
 - source: Reuters
 - published_at: `2026-10-07T15:54:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -65,26 +89,10 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
-
-- headline: Attacks on Saudi airports kill three people, as fighting escalates in Yemen - Reuters
-- source: Reuters
-- published_at: `2026-10-07T01:21:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: EXCLUSIVE: Vance says Iran must cut enrichment to end war - Reuters
-- source: Reuters
-- published_at: `2026-10-06T22:40:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
 ### fed_hawkish / risk_off
 
 - headline: India joins global rate-tightening wave with first hike in nearly 4 years - Reuters
 - source: Reuters
 - published_at: `2026-10-07T04:33:00+00:00`
-- importance_score: `84`
+- importance_score: `82`
 - confidence: `medium`
