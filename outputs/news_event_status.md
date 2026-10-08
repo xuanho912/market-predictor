@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-07T18:59:35.619658+00:00`
+- generated_at: `2026-10-08T00:32:47.286764+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
-- event_detection_confidence: `72`
+- major_event_count: `8`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,33 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Syria weighs military aid for Saudi Arabia amid Yemen war, sources say - Reuters
+- source: Reuters
+- published_at: `2026-10-07T18:21:26+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: NEWSLETTER: The war's explosive new front - Reuters
+- source: Reuters
+- published_at: `2026-10-07T15:54:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Attacks on tankers in Hormuz hit highest of any week since start of Iran war, sources say - Reuters
 - source: Reuters
 - published_at: `2026-10-07T15:24:09+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Palestinian killed in Israeli settler attack during olive harvest, officials say - Reuters
+- source: Reuters
+- published_at: `2026-10-07T13:08:03+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -43,7 +67,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Houthis attack Aden airport as fighting intensifies in Yemen - Reuters
+- headline: Attacks on Saudi airports kill three people, as fighting escalates in Yemen - Reuters
 - source: Reuters
 - published_at: `2026-10-07T01:21:00+00:00`
 - importance_score: `100`
@@ -57,42 +81,10 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
-
-- headline: Ukraine's Zelenskiy says intelligence shows Russia is preparing massive attack - Reuters
-- source: Reuters
-- published_at: `2026-10-06T17:53:45+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US EIA hikes oil price forecasts again as Iran war drains global stockpile - Reuters
-- source: Reuters
-- published_at: `2026-10-06T17:39:05+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Catalan separatist Puigdemont set to return home after court lifts arrest warrant - Reuters
-- source: Reuters
-- published_at: `2026-10-06T16:48:22+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### oil_shock_relief / risk_on
-
-- headline: Oil prices fall as IEA agrees to accelerate oil stock release - Reuters
-- source: Reuters
-- published_at: `2026-10-07T00:48:00+00:00`
-- importance_score: `90`
-- confidence: `medium`
-
 ### fed_hawkish / risk_off
 
 - headline: India joins global rate-tightening wave with first hike in nearly 4 years - Reuters
 - source: Reuters
 - published_at: `2026-10-07T04:33:00+00:00`
-- importance_score: `86`
+- importance_score: `84`
 - confidence: `medium`
