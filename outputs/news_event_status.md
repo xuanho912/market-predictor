@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-08T02:20:15.018209+00:00`
+- generated_at: `2026-10-08T02:42:29.097061+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `8`
@@ -45,7 +45,7 @@
 
 - headline: Attacks on tankers in Hormuz hit highest of any week since start of Iran war, sources say - Reuters
 - source: Reuters
-- published_at: `2026-10-07T15:24:09+00:00`
+- published_at: `2026-10-07T14:24:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
