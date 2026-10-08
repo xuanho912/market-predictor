@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-08T10:58:01.410180+00:00`
+- generated_at: `2026-10-08T18:54:14.009722+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
-- event_detection_confidence: `78`
+- major_event_count: `14`
+- event_detection_confidence: `79`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `True`
-- confirmation_score: `100`
+- confirmation_score: `75`
 
 ## Dashboard Note
 
@@ -27,64 +27,80 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Syria considers help in Yemen war after Saudi airports come under Houthi fire - Reuters
+- headline: Trump says US will not attack Iran before midterm elections in November - Reuters
 - source: Reuters
-- published_at: `2026-10-08T09:24:57+00:00`
+- published_at: `2026-10-08T17:22:39+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Hormuz transits at lowest in over two months after attacks, data shows - Reuters
+- headline: Lufthansa, Indian airlines suspend flights to Riyadh after Houthi attacks - Reuters
 - source: Reuters
-- published_at: `2026-10-08T03:39:00+00:00`
+- published_at: `2026-10-08T16:51:58+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Yemen's Houthis say they attacked Riyadh airport with ballistic missile - Reuters
+- headline: Plane billows smoke at Riyadh airport as Houthis escalate attacks - Reuters
 - source: Reuters
-- published_at: `2026-10-08T03:03:00+00:00`
+- published_at: `2026-10-08T15:55:20+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil rises as Middle East supply concerns persist amid shipping attacks - Reuters
+- headline: Asia races to stockpile oil, speed up renewables in response to Iran war - Reuters
 - source: Reuters
-- published_at: `2026-10-08T01:25:00+00:00`
+- published_at: `2026-10-08T14:56:09+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Syria weighs military aid for Saudi Arabia amid Yemen war, sources say - Reuters
+- headline: Most Gulf bourses end lower as Hormuz attacks hit wartime peak - Reuters
 - source: Reuters
-- published_at: `2026-10-07T18:21:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: NEWSLETTER: The war's explosive new front - Reuters
-- source: Reuters
-- published_at: `2026-10-07T15:54:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Attacks on tankers in Hormuz hit highest of any week since start of Iran war, sources say - Reuters
-- source: Reuters
-- published_at: `2026-10-07T14:24:00+00:00`
+- published_at: `2026-10-08T13:23:29+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Palestinian killed in Israeli settler attack during olive harvest, officials say - Reuters
+- headline: Attack risks rise for tankers as Iran vows to block more Hormuz routes - Reuters
 - source: Reuters
-- published_at: `2026-10-07T13:08:03+00:00`
+- published_at: `2026-10-08T13:17:53+00:00`
 - importance_score: `100`
-- confidence: `medium`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Trump's former defense secretary sees no end in sight for Iran war — to the benefit of America's 'greatest adversary'
+- source: CNBC
+- published_at: `2026-10-08T12:50:51+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Airline chiefs say can't fully guard against rogue pilots after flydubai attack - Reuters
+- source: Reuters
+- published_at: `2026-10-08T12:39:40+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Russia, China hypersonic missile threats fuel need for space defense, satellite CEO says
+- source: CNBC
+- published_at: `2026-10-08T11:04:39+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran’s wartime hunt for protesters at home and abroad ushers in a new era of repression - Reuters
+- source: Reuters
+- published_at: `2026-10-08T11:00:00+00:00`
+- importance_score: `100`
+- confidence: `high`
