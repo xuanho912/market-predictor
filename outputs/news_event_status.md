@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-08T07:30:15.662924+00:00`
+- generated_at: `2026-10-08T10:58:01.410180+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
-- event_detection_confidence: `76`
+- major_event_count: `8`
+- event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Syria considers help in Yemen war after Saudi airports come under Houthi fire - Reuters
+- source: Reuters
+- published_at: `2026-10-08T09:24:57+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -53,7 +61,7 @@
 
 - headline: Syria weighs military aid for Saudi Arabia amid Yemen war, sources say - Reuters
 - source: Reuters
-- published_at: `2026-10-07T18:21:26+00:00`
+- published_at: `2026-10-07T18:21:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -79,20 +87,4 @@
 - source: Reuters
 - published_at: `2026-10-07T13:08:03+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Shell expects record refining margins as Iran war boosts fuel markets - Reuters
-- source: Reuters
-- published_at: `2026-10-07T06:07:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### fed_hawkish / risk_off
-
-- headline: India joins global rate-tightening wave with first hike in nearly 4 years - Reuters
-- source: Reuters
-- published_at: `2026-10-07T04:33:00+00:00`
-- importance_score: `82`
 - confidence: `medium`
