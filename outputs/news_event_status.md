@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-08T18:54:14.009722+00:00`
+- generated_at: `2026-10-09T00:42:55.311307+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `14`
-- event_detection_confidence: `79`
+- major_event_count: `12`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,6 +27,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Plane damaged at Riyadh airport as Houthis escalate attacks, sources say - Reuters
+- source: Reuters
+- published_at: `2026-10-08T18:42:35+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Trump says US will not attack Iran before midterm elections in November - Reuters
 - source: Reuters
 - published_at: `2026-10-08T17:22:39+00:00`
@@ -43,17 +51,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Plane billows smoke at Riyadh airport as Houthis escalate attacks - Reuters
+- headline: Asia races to stockpile oil, speed up renewables in response to Iran war - Reuters
 - source: Reuters
-- published_at: `2026-10-08T15:55:20+00:00`
+- published_at: `2026-10-08T14:56:09+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Asia races to stockpile oil, speed up renewables in response to Iran war - Reuters
+- headline: Turkey says Russia, Ukraine increasing attacks in Black Sea ahead of winter - Reuters
 - source: Reuters
-- published_at: `2026-10-08T14:56:09+00:00`
+- published_at: `2026-10-08T13:33:44+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -87,7 +95,7 @@
 - source: Reuters
 - published_at: `2026-10-08T12:39:40+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -95,12 +103,4 @@
 - source: CNBC
 - published_at: `2026-10-08T11:04:39+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran’s wartime hunt for protesters at home and abroad ushers in a new era of repression - Reuters
-- source: Reuters
-- published_at: `2026-10-08T11:00:00+00:00`
-- importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
