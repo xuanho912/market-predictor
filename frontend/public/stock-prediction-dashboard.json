@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-10-09T00:43:06.231587+00:00",
+  "generated_at": "2026-10-09T01:25:59.234070+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-10-09T00:43:06.279593+00:00",
+    "generated_at": "2026-10-09T01:25:59.279659+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 333,
     "risk_score_effectiveness": {
@@ -182,7 +182,7 @@
         "大盘背景对个股路径形成压力。",
         "公司新闻或财报事件风险较高。"
       ],
-      "current_price": 285.07,
+      "current_price": 285.07000732421875,
       "data_quality": {
         "available_fields": [
           "price",
@@ -295,23 +295,23 @@
           "news_sentiment": "neutral"
         },
         "price_trend": {
-          "close": 285.07,
+          "close": 285.07000732421875,
           "distance_to_200d_ma": -0.0048,
           "distance_to_20d_ma": 0.0659,
           "distance_to_50d_ma": 0.0431,
           "distance_to_5d_ma": 0.0108,
-          "drawdown_20d": -0.051031938109049976,
-          "drawdown_60d": -0.051031938109049976,
+          "drawdown_20d": -0.0510319137274957,
+          "drawdown_60d": -0.0510319137274957,
           "gap_up_down": -0.0046,
           "recent_swing_high": 309.79998779296875,
           "recent_swing_low": 247.1999969482422,
           "returns": {
-            "10d": 0.08963384038100194,
-            "1d": -0.048466225559528855,
-            "20d": -0.0031471875261787955,
-            "3d": 0.06520441372540699,
-            "5d": 0.10099638968064624,
-            "60d": 0.10443023762838864
+            "10d": 0.08963386837664025,
+            "1d": -0.04846620111205449,
+            "20d": -0.0031471619143358556,
+            "3d": 0.0652044410933873,
+            "5d": 0.10099641796821915,
+            "60d": 0.10443026600418638
           },
           "trend_slope": 0.0134
         },
@@ -332,12 +332,12 @@
           "realized_volatility_20d": 0.6171
         },
         "volume": {
-          "accumulation_distribution_proxy": 0.0044,
+          "accumulation_distribution_proxy": -0.0765,
           "panic_volume_proxy": false,
-          "up_volume_down_volume_proxy": 1.0088,
-          "volume_confirmation_score": 32.42,
-          "volume_vs_20d_average": 0.0,
-          "volume_z_score": -1.447
+          "up_volume_down_volume_proxy": 0.8579,
+          "volume_confirmation_score": 52.07,
+          "volume_vs_20d_average": 1.61,
+          "volume_z_score": 1.0089
         }
       },
       "forecast_price_levels": {
@@ -493,31 +493,31 @@
         }
       },
       "historical_analogs": {
-        "analog_support": "conflicting",
+        "analog_support": "weak",
         "distribution": {
-          "avg_return_10d": -0.0283,
-          "avg_return_20d": -0.0677,
-          "avg_return_3d": -0.0015,
-          "avg_return_5d": -0.0051,
-          "avg_return_60d": -0.0448,
-          "best_path": 0.2536,
-          "hit_rate_20d": 0.3,
-          "worst_path": -0.3212
+          "avg_return_10d": 0.0076,
+          "avg_return_20d": 0.0191,
+          "avg_return_3d": 0.0067,
+          "avg_return_5d": 0.0007,
+          "avg_return_60d": -0.0548,
+          "best_path": 0.2703,
+          "hit_rate_20d": 0.5,
+          "worst_path": -0.3162
         },
         "low_sample_warning": false,
         "note": "Historical analogs are explanatory and require forward validation; they are not proof of alpha.",
         "sample_count": 10,
         "top_similar_dates": [
           {
-            "best_path_60d": 0.0136,
-            "date": "2025-12-23",
+            "best_path_60d": 0.0144,
+            "date": "2025-12-18",
             "forward_returns": {
-              "10d": -0.10735333204786698,
-              "1d": 0.007251060615312708,
-              "20d": -0.20001104724038163,
-              "3d": -0.008302659927174362,
-              "5d": -0.022306472914286505,
-              "60d": -0.1980737261404312
+              "10d": -0.016922823869657776,
+              "1d": -0.015648785729149954,
+              "20d": -0.18183076060406633,
+              "3d": 0.0007755125017686757,
+              "5d": -0.0016341126099938754,
+              "60d": -0.12139589545533615
             },
             "key_differences": [],
             "key_shared_features": [
@@ -527,8 +527,138 @@
               "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.7949,
-            "worst_path_60d": -0.3162
+            "similarity_score": 0.8137,
+            "worst_path_60d": -0.3157
+          },
+          {
+            "best_path_60d": 0.251,
+            "date": "2025-09-16",
+            "forward_returns": {
+              "10d": 0.019076533994763313,
+              "1d": -0.00506336052485962,
+              "20d": 0.20640424000684238,
+              "3d": 0.024743706121708346,
+              "5d": 0.04255052515732038,
+              "60d": 0.12127219106871062
+            },
+            "key_differences": [],
+            "key_shared_features": [
+              "20d 回撤深度接近",
+              "相对 benchmark 强弱接近",
+              "波动率区间接近",
+              "成交量异常程度接近"
+            ],
+            "market_context": "risk_off_pressure",
+            "similarity_score": 0.7577,
+            "worst_path_60d": -0.0051
+          },
+          {
+            "best_path_60d": 0.0423,
+            "date": "2025-11-05",
+            "forward_returns": {
+              "10d": -0.015884346906185478,
+              "1d": -0.032897487149432206,
+              "20d": 0.014783193715588437,
+              "3d": -0.006386806123107364,
+              "5d": -0.025409527835727804,
+              "60d": -0.26097725476385064
+            },
+            "key_differences": [],
+            "key_shared_features": [
+              "相对 benchmark 强弱接近",
+              "波动率区间接近",
+              "成交量异常程度接近"
+            ],
+            "market_context": "risk_off_pressure",
+            "similarity_score": 0.7177,
+            "worst_path_60d": -0.261
+          },
+          {
+            "best_path_60d": 0.0435,
+            "date": "2025-11-04",
+            "forward_returns": {
+              "10d": -0.0646877259988867,
+              "1d": 0.0011851404748939472,
+              "20d": -0.0042996459045868555,
+              "3d": -0.012209890817356647,
+              "5d": -0.03073147475718078,
+              "60d": -0.25340389335047875
+            },
+            "key_differences": [],
+            "key_shared_features": [
+              "相对 benchmark 强弱接近",
+              "波动率区间接近",
+              "成交量异常程度接近"
+            ],
+            "market_context": "risk_off_pressure",
+            "similarity_score": 0.6929,
+            "worst_path_60d": -0.2534
+          },
+          {
+            "best_path_60d": -0.0068,
+            "date": "2026-05-08",
+            "forward_returns": {
+              "10d": -0.0314856812727829,
+              "1d": -0.012976327695040922,
+              "20d": -0.17442283655170168,
+              "3d": -0.09465464470636668,
+              "5d": -0.11998153044802534,
+              "60d": -0.12683202959631124
+            },
+            "key_differences": [
+              "20d 动量差异较大"
+            ],
+            "key_shared_features": [
+              "20d 回撤深度接近",
+              "相对 benchmark 强弱接近",
+              "波动率区间接近",
+              "成交量异常程度接近"
+            ],
+            "market_context": "risk_off_pressure",
+            "similarity_score": 0.6849,
+            "worst_path_60d": -0.2211
+          },
+          {
+            "best_path_60d": 0.2573,
+            "date": "2025-09-17",
+            "forward_returns": {
+              "10d": 0.09221072465274173,
+              "1d": 0.004466570962121347,
+              "20d": 0.25733412148841245,
+              "3d": 0.08044510687635543,
+              "5d": 0.05557547685171245,
+              "60d": 0.1784297355725778
+            },
+            "key_differences": [],
+            "key_shared_features": [
+              "20d 回撤深度接近",
+              "相对 benchmark 强弱接近",
+              "波动率区间接近"
+            ],
+            "market_context": "risk_off_pressure",
+            "similarity_score": 0.6848,
+            "worst_path_60d": 0.0045
+          },
+          {
+            "best_path_60d": 0.2379,
+            "date": "2025-09-25",
+            "forward_returns": {
+              "10d": 0.17436345648689572,
+              "1d": 0.015107478307904822,
+              "20d": 0.1209511931014728,
+              "3d": 0.008396472480920318,
+              "5d": 0.09539425171985773,
+              "60d": 0.08908163062048609
+            },
+            "key_differences": [],
+            "key_shared_features": [
+              "20d 回撤深度接近",
+              "波动率区间接近",
+              "成交量异常程度接近"
+            ],
+            "market_context": "risk_off_pressure",
+            "similarity_score": 0.6814,
+            "worst_path_60d": 0.0084
           },
           {
             "best_path_60d": 0.0585,
@@ -545,23 +675,22 @@
             "key_shared_features": [
               "20d 回撤深度接近",
               "相对 benchmark 强弱接近",
-              "波动率区间接近",
-              "成交量异常程度接近"
+              "波动率区间接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.7924,
+            "similarity_score": 0.6686,
             "worst_path_60d": -0.3093
           },
           {
-            "best_path_60d": 0.0542,
-            "date": "2025-12-09",
+            "best_path_60d": 0.2703,
+            "date": "2025-09-11",
             "forward_returns": {
-              "10d": 0.006069866943697001,
-              "1d": 0.0081303451965977,
-              "20d": -0.10193508554566307,
-              "3d": -0.019963756179884027,
-              "5d": 0.018028696125724778,
-              "60d": -0.10068217813343902
+              "10d": 0.026194926327879325,
+              "1d": 0.017232738950717374,
+              "20d": 0.20512582071172367,
+              "3d": 0.015440263088394262,
+              "5d": 0.014811293883893475,
+              "60d": 0.1315094569943986
             },
             "key_differences": [],
             "key_shared_features": [
@@ -571,147 +700,19 @@
               "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.7857,
-            "worst_path_60d": -0.3121
+            "similarity_score": 0.6575,
+            "worst_path_60d": 0.0103
           },
           {
-            "best_path_60d": 0.2186,
-            "date": "2025-08-11",
+            "best_path_60d": 0.0136,
+            "date": "2025-12-23",
             "forward_returns": {
-              "10d": -0.06277715216643602,
-              "1d": 0.021358162534072085,
-              "20d": -0.09252159586620248,
-              "3d": -0.01592807908185623,
-              "5d": -0.026305473702351555,
-              "60d": 0.09451270932100343
-            },
-            "key_differences": [],
-            "key_shared_features": [
-              "20d 回撤深度接近",
-              "相对 benchmark 强弱接近",
-              "波动率区间接近",
-              "成交量异常程度接近"
-            ],
-            "market_context": "risk_off_pressure",
-            "similarity_score": 0.7847,
-            "worst_path_60d": -0.0986
-          },
-          {
-            "best_path_60d": 0.2536,
-            "date": "2025-08-15",
-            "forward_returns": {
-              "10d": -0.04422306896983786,
-              "1d": 0.0016757533716083965,
-              "20d": 0.02541663458452274,
-              "3d": -0.024889114166309855,
-              "5d": -0.037457737990552555,
-              "60d": 0.12010048837783494
-            },
-            "key_differences": [],
-            "key_shared_features": [
-              "相对 benchmark 强弱接近",
-              "波动率区间接近",
-              "成交量异常程度接近"
-            ],
-            "market_context": "risk_off_pressure",
-            "similarity_score": 0.7719,
-            "worst_path_60d": -0.0726
-          },
-          {
-            "best_path_60d": 0.0161,
-            "date": "2025-12-26",
-            "forward_returns": {
-              "10d": -0.06824614849546033,
-              "1d": -0.005909129815528915,
-              "20d": -0.19891245461117602,
-              "3d": -0.01994674197372691,
-              "5d": -0.01531373562815999,
-              "60d": -0.15851962904454647
-            },
-            "key_differences": [],
-            "key_shared_features": [
-              "20d 回撤深度接近",
-              "相对 benchmark 强弱接近",
-              "波动率区间接近",
-              "成交量异常程度接近"
-            ],
-            "market_context": "risk_off_pressure",
-            "similarity_score": 0.7681,
-            "worst_path_60d": -0.3146
-          },
-          {
-            "best_path_60d": 0.2515,
-            "date": "2025-08-18",
-            "forward_returns": {
-              "10d": -0.048269625747657995,
-              "1d": -0.017148445798890317,
-              "20d": 0.0004337907897365553,
-              "3d": -0.03175636009816833,
-              "5d": -0.03745700266259425,
-              "60d": 0.08953752020866584
-            },
-            "key_differences": [],
-            "key_shared_features": [
-              "相对 benchmark 强弱接近",
-              "波动率区间接近",
-              "成交量异常程度接近"
-            ],
-            "market_context": "risk_off_pressure",
-            "similarity_score": 0.7346,
-            "worst_path_60d": -0.0742
-          },
-          {
-            "best_path_60d": 0.0063,
-            "date": "2025-12-24",
-            "forward_returns": {
-              "10d": -0.058881776273080624,
-              "1d": -0.009589285986801515,
-              "20d": -0.2161835981711758,
-              "3d": -0.018766360381267215,
-              "5d": 0.006319515636285823,
-              "60d": -0.18986125507864637
-            },
-            "key_differences": [],
-            "key_shared_features": [
-              "20d 回撤深度接近",
-              "波动率区间接近",
-              "成交量异常程度接近"
-            ],
-            "market_context": "risk_off_pressure",
-            "similarity_score": 0.7222,
-            "worst_path_60d": -0.3212
-          },
-          {
-            "best_path_60d": 0.2194,
-            "date": "2025-09-26",
-            "forward_returns": {
-              "10d": 0.112388997679168,
-              "1d": 0.00907143873158314,
-              "20d": 0.17487771227431953,
-              "3d": 0.059288726534649235,
-              "5d": 0.0867596129539128,
-              "60d": 0.08014848460504952
-            },
-            "key_differences": [],
-            "key_shared_features": [
-              "20d 回撤深度接近",
-              "波动率区间接近",
-              "成交量异常程度接近"
-            ],
-            "market_context": "risk_off_pressure",
-            "similarity_score": 0.6999,
-            "worst_path_60d": -0.0066
-          },
-          {
-            "best_path_60d": 0.0522,
-            "date": "2025-12-05",
-            "forward_returns": {
-              "10d": -0.012283956805524953,
-              "1d": -0.0059751927428179545,
-              "20d": -0.014562894350762329,
-              "3d": 0.0062531264359978155,
-              "5d": -0.021788661492706637,
-              "60d": -0.07712189271063973
+              "10d": -0.10735333204786698,
+              "1d": 0.007251060615312708,
+              "20d": -0.20001104724038163,
+              "3d": -0.008302659927174362,
+              "5d": -0.022306472914286505,
+              "60d": -0.1980737261404312
             },
             "key_differences": [],
             "key_shared_features": [
@@ -720,8 +721,8 @@
               "波动率区间接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.6981,
-            "worst_path_60d": -0.3134
+            "similarity_score": 0.6573,
+            "worst_path_60d": -0.3162
           }
         ],
         "validation_type": "historical_analog_explanation_only"
@@ -730,7 +731,7 @@
         "benchmark": "SPY",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.3161,
+        "benchmark_primary_probability": 0.3182,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -1071,7 +1072,7 @@
           null,
           null,
           null,
-          285.07,
+          285.07000732421875,
           284.49,
           283.41,
           282.36,
@@ -1350,7 +1351,7 @@
           null,
           null,
           null,
-          285.07,
+          285.07000732421875,
           283.91,
           281.02,
           277.54,
@@ -1478,7 +1479,7 @@
           null,
           null,
           null,
-          285.07,
+          285.07000732421875,
           283.33,
           280.73,
           279.28,
@@ -1606,7 +1607,7 @@
           null,
           null,
           null,
-          285.07,
+          285.07000732421875,
           282.17,
           278.12,
           274.64,
@@ -1620,7 +1621,7 @@
           {
             "affected_ticker": "CEG",
             "alert_level": "NO_ALERT",
-            "alert_score": 31.93,
+            "alert_score": 26.03,
             "alert_type": "Stock Failed Bounce Risk",
             "confirmation_needed": [
               "价格无法站上确认价",
@@ -1851,7 +1852,7 @@
           {
             "affected_ticker": "CEG",
             "alert_level": "NO_ALERT",
-            "alert_score": 6.96,
+            "alert_score": 7.34,
             "alert_type": "Stock Bounce Setup",
             "confirmation_needed": [
               "价格站上主路径确认价",
@@ -2085,7 +2086,7 @@
         "strongest_alert": {
           "affected_ticker": "CEG",
           "alert_level": "NO_ALERT",
-          "alert_score": 31.93,
+          "alert_score": 26.03,
           "alert_type": "Stock Failed Bounce Risk",
           "confirmation_needed": [
             "价格无法站上确认价",
@@ -2159,13 +2160,13 @@
           },
           "flow": {
             "evidence": [
-              "资金确认不足"
+              "成交量温和放大 z=1.01"
             ],
             "max_points": 10,
             "missing_fields": [],
             "name": "flow",
-            "points": 0.0,
-            "score_pct": 0.0,
+            "points": 1.5,
+            "score_pct": 15.0,
             "status": "weak"
           },
           "growth": {
@@ -2239,7 +2240,7 @@
           "expected_return_60d": -0.014,
           "max_drawdown_risk_20d": 0.1118,
           "max_drawdown_risk_60d": 0.193,
-          "outperformance_probability_20d": 0.4885,
+          "outperformance_probability_20d": 0.4945,
           "risk_reward_ratio": 0.48,
           "upside_potential_60d": 0.0924
         },
@@ -2267,7 +2268,7 @@
             "收入增长较强，具备正向预期差基础",
             "未来 30 天财报可能成为重新定价窗口"
           ],
-          "historical_analog_support": "conflicting",
+          "historical_analog_support": "weak",
           "invalidation_summary": [
             "跌破 recent swing low 或主路径失效价",
             "相对 benchmark 强弱转弱",
@@ -2280,20 +2281,18 @@
           "primary_path": "stock_failed_bounce",
           "valuation_repricing": "估值扩张证据不足或存在压力"
         },
-        "total_score": 32.0,
+        "total_score": 33.5,
         "validation_status": "not_yet_validated",
         "version": "stock_alpha_score_v1"
       },
       "stock_confluence": {
         "conflicting_evidence": [
           "大盘风险背景压低个股置信度",
-          "成交量不确认当前路径",
           "公司新闻或财报事件风险上升",
-          "历史相似结构与主路径冲突",
           "个股 Alpha 评分已接入",
           "主路径和第二路径差距较小"
         ],
-        "confluence_level": "weak",
+        "confluence_level": "mixed",
         "dominant_path": "stock_failed_bounce",
         "hierarchy": {
           "market": "risk_background",
@@ -2307,8 +2306,8 @@
         "module_scores": {
           "alpha_quality": {
             "evidence": "个股 Alpha 评分已接入",
-            "reason": "score=32.0; grade=weak_or_no_alpha_edge; benchmark=SPY",
-            "score": 32.0,
+            "reason": "score=33.5; grade=weak_or_no_alpha_edge; benchmark=SPY",
+            "score": 33.5,
             "status": "conflicting"
           },
           "fundamentals_earnings": {
@@ -2318,10 +2317,10 @@
             "status": "supportive"
           },
           "historical_analog": {
-            "evidence": "历史相似结构与主路径冲突",
+            "evidence": "历史相似结构中性",
             "reason": "samples=10",
-            "score": 32,
-            "status": "conflicting"
+            "score": 52,
+            "status": "neutral"
           },
           "market_context": {
             "evidence": "大盘风险背景压低个股置信度",
@@ -2360,14 +2359,14 @@
             "status": "supportive"
           },
           "volume_structure": {
-            "evidence": "成交量不确认当前路径",
-            "reason": "缩量反抽或下跌量能压力",
-            "score": 32.42,
-            "status": "conflicting"
+            "evidence": "成交量结构中性",
+            "reason": "量能没有明显共振",
+            "score": 52.07,
+            "status": "neutral"
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 41.76,
+        "stock_confluence_score": 45.86,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "个股跑赢所属板块",
@@ -2391,7 +2390,7 @@
         "大盘背景对个股路径形成压力。",
         "公司新闻或财报事件风险较高。"
       ],
-      "current_price": 230.48,
+      "current_price": 230.47999572753906,
       "data_quality": {
         "available_fields": [
           "price",
@@ -2449,6 +2448,12 @@
           "event_risk_flag": "high",
           "headlines": [
             {
+              "datetime": 1791504180,
+              "headline": "TSMC's $46.7 billion quarter leaves 1 question for investors",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=8b6bcbe59f25de334e8fbb3fe8176075c3a7ef1ae1abc56ba9095760db78df40"
+            },
+            {
               "datetime": 1791502020,
               "headline": "Prediction: This Will Happen to Intel Stock in 2027",
               "source": "Yahoo",
@@ -2489,38 +2494,32 @@
               "headline": "Bitdeer AI Expands Southeast Asia Footprint with A901, a New 67MW AI Data Center Campus in Malaysia; Active AI Cloud Pipeline Exceeds $10 Billion",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=68ad2f80bce0cf35085a3d3b2f60a1cc88a82d5d091b2de067f7fc2e9e7437ce"
-            },
-            {
-              "datetime": 1791498242,
-              "headline": "PepsiCo Maintains Food and Beverage Volume Growth. Here’s Why Earnings Are Under Pressure Anyway.",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=0d2b368e7a54568bce0ed2549fad3ef6959054829cb1b3d23b699ed66932724d"
             }
           ],
-          "major_company_headline": "Prediction: This Will Happen to Intel Stock in 2027",
+          "major_company_headline": "TSMC's $46.7 billion quarter leaves 1 question for investors",
           "news_count_24h": 20,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
           "news_sentiment": "neutral"
         },
         "price_trend": {
-          "close": 230.48,
+          "close": 230.47999572753906,
           "distance_to_200d_ma": 0.1414,
           "distance_to_20d_ma": 0.019,
           "distance_to_50d_ma": 0.041,
           "distance_to_5d_ma": -0.0234,
-          "drawdown_20d": -0.03661597263010587,
-          "drawdown_60d": -0.03661597263010587,
+          "drawdown_20d": -0.03661599048857782,
+          "drawdown_60d": -0.03661599048857782,
           "gap_up_down": -0.0107,
           "recent_swing_high": 243.3699951171875,
           "recent_swing_low": 208.92999267578125,
           "returns": {
-            "10d": 0.026271253543686885,
-            "1d": -0.029435302079299997,
-            "20d": 0.055504668234892224,
-            "3d": -0.0352448476835574,
-            "5d": -0.0016460218719003756,
-            "60d": 0.0846117647058823
+            "10d": 0.026271234519459917,
+            "1d": -0.02943532007088169,
+            "20d": 0.055504648668758705,
+            "3d": -0.035244865567446215,
+            "5d": -0.0016460403786183692,
+            "60d": 0.08461174460018382
           },
           "trend_slope": 0.0432
         },
@@ -2541,12 +2540,12 @@
           "realized_volatility_20d": 0.2505
         },
         "volume": {
-          "accumulation_distribution_proxy": 0.4458,
+          "accumulation_distribution_proxy": 0.3674,
           "panic_volume_proxy": false,
-          "up_volume_down_volume_proxy": 2.609,
-          "volume_confirmation_score": 26.64,
-          "volume_vs_20d_average": 0.0,
-          "volume_z_score": -4.1701
+          "up_volume_down_volume_proxy": 2.1616,
+          "volume_confirmation_score": 63.04,
+          "volume_vs_20d_average": 1.0848,
+          "volume_z_score": 0.3798
         }
       },
       "forecast_price_levels": {
@@ -2702,121 +2701,173 @@
         }
       },
       "historical_analogs": {
-        "analog_support": "supportive",
+        "analog_support": "weak",
         "distribution": {
-          "avg_return_10d": 0.044,
-          "avg_return_20d": 0.0249,
-          "avg_return_3d": 0.0343,
-          "avg_return_5d": 0.0437,
-          "avg_return_60d": 0.025,
-          "best_path": 0.3271,
-          "hit_rate_20d": 0.6,
-          "worst_path": -0.121
+          "avg_return_10d": 0.0215,
+          "avg_return_20d": -0.0076,
+          "avg_return_3d": 0.0138,
+          "avg_return_5d": 0.0033,
+          "avg_return_60d": -0.0,
+          "best_path": 0.15,
+          "hit_rate_20d": 0.5,
+          "worst_path": -0.1558
         },
         "low_sample_warning": false,
         "note": "Historical analogs are explanatory and require forward validation; they are not proof of alpha.",
         "sample_count": 10,
         "top_similar_dates": [
           {
-            "best_path_60d": 0.0368,
-            "date": "2025-12-24",
+            "best_path_60d": -0.0264,
+            "date": "2025-11-10",
             "forward_returns": {
-              "10d": -0.01988229673858655,
-              "1d": 0.010179726222003608,
-              "20d": -0.011346160769435823,
-              "3d": -0.005673120835354179,
-              "5d": 0.0012724961157276524,
-              "60d": -0.07109911255349091
-            },
-            "key_differences": [],
-            "key_shared_features": [
-              "波动率区间接近"
-            ],
-            "market_context": "risk_off_pressure",
-            "similarity_score": 0.5816,
-            "worst_path_60d": -0.0887
-          },
-          {
-            "best_path_60d": 0.1366,
-            "date": "2025-10-23",
-            "forward_returns": {
-              "10d": 0.03249889135886483,
-              "1d": 0.02250763483915866,
-              "20d": -0.008344335978826672,
-              "3d": 0.1035902214417478,
-              "5d": 0.11380102827617067,
-              "60d": 0.006368048082942943
+              "10d": -0.0828937440192332,
+              "1d": -0.029590551616906508,
+              "20d": -0.07073600409538074,
+              "3d": -0.061240905574045906,
+              "5d": -0.06254708242835287,
+              "60d": -0.06852549198957665
             },
             "key_differences": [],
             "key_shared_features": [
               "20d 回撤深度接近",
               "相对 benchmark 强弱接近",
-              "波动率区间接近"
+              "波动率区间接近",
+              "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.5435,
-            "worst_path_60d": -0.0616
+            "similarity_score": 0.8261,
+            "worst_path_60d": -0.1412
           },
           {
-            "best_path_60d": 0.2546,
-            "date": "2026-02-19",
+            "best_path_60d": 0.0197,
+            "date": "2025-11-05",
             "forward_returns": {
-              "10d": -0.024268215575919017,
-              "1d": 0.01021827296488432,
-              "20d": -0.0497072732372525,
-              "3d": 0.02634386571485602,
-              "5d": -0.016019130413033263,
-              "60d": 0.19914856116679472
-            },
-            "key_differences": [],
-            "key_shared_features": [
-              "20d 回撤深度接近",
-              "波动率区间接近"
-            ],
-            "market_context": "risk_off_pressure",
-            "similarity_score": 0.5,
-            "worst_path_60d": -0.121
-          },
-          {
-            "best_path_60d": 0.0948,
-            "date": "2025-10-08",
-            "forward_returns": {
-              "10d": -0.04669241077973614,
-              "1d": 0.018296265150970513,
-              "20d": 0.0322563909038543,
-              "3d": -0.004177427336381541,
-              "5d": -0.049071962082098915,
-              "60d": -0.005235077415096107
-            },
-            "key_differences": [],
-            "key_shared_features": [
-              "相对 benchmark 强弱接近",
-              "波动率区间接近"
-            ],
-            "market_context": "risk_off_pressure",
-            "similarity_score": 0.4978,
-            "worst_path_60d": -0.0961
-          },
-          {
-            "best_path_60d": 0.1429,
-            "date": "2025-10-21",
-            "forward_returns": {
-              "10d": 0.0967652816567224,
-              "1d": -0.004857611310572952,
-              "20d": 0.0011039795992453822,
-              "3d": 0.028151858807857012,
-              "5d": 0.1096820198472066,
-              "60d": 0.027986266079382423
+              "10d": -0.04451617305737706,
+              "1d": -0.036524791955278406,
+              "20d": -0.06060141091227326,
+              "3d": 0.01967110396916882,
+              "5d": -0.0072230091369041086,
+              "60d": -0.07617442684571271
             },
             "key_differences": [],
             "key_shared_features": [
               "20d 回撤深度接近",
               "相对 benchmark 强弱接近",
-              "波动率区间接近"
+              "波动率区间接近",
+              "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.4962,
-            "worst_path_60d": -0.0564
+            "similarity_score": 0.7927,
+            "worst_path_60d": -0.1243
+          },
+          {
+            "best_path_60d": 0.0812,
+            "date": "2025-10-27",
+            "forward_returns": {
+              "10d": 0.039479854518379195,
+              "1d": 0.04981979744354531,
+              "20d": -0.0466865224552171,
+              "3d": 0.05953310130794967,
+              "5d": 0.08036972660799177,
+              "60d": -0.019948860069123133
+            },
+            "key_differences": [],
+            "key_shared_features": [
+              "相对 benchmark 强弱接近",
+              "波动率区间接近",
+              "成交量异常程度接近"
+            ],
+            "market_context": "risk_off_pressure",
+            "similarity_score": 0.7925,
+            "worst_path_60d": -0.1073
+          },
+          {
+            "best_path_60d": 0.1385,
+            "date": "2025-09-29",
+            "forward_returns": {
+              "10d": 0.0355787792331454,
+              "1d": 0.026010423804146462,
+              "20d": 0.053010717987883926,
+              "3d": 0.038713186966435366,
+              "5d": 0.020291377832105835,
+              "60d": 0.040472919237418026
+            },
+            "key_differences": [],
+            "key_shared_features": [
+              "20d 回撤深度接近",
+              "相对 benchmark 强弱接近",
+              "波动率区间接近",
+              "成交量异常程度接近"
+            ],
+            "market_context": "risk_off_pressure",
+            "similarity_score": 0.7875,
+            "worst_path_60d": -0.06
+          },
+          {
+            "best_path_60d": 0.1388,
+            "date": "2025-10-16",
+            "forward_returns": {
+              "10d": 0.11594522916299485,
+              "1d": 0.007755369237354282,
+              "20d": 0.02777626708965934,
+              "3d": -0.003575127359401096,
+              "5d": 0.0019251202255960924,
+              "60d": 0.022000990339988754
+            },
+            "key_differences": [],
+            "key_shared_features": [
+              "20d 回撤深度接近",
+              "相对 benchmark 强弱接近",
+              "波动率区间接近",
+              "成交量异常程度接近"
+            ],
+            "market_context": "risk_off_pressure",
+            "similarity_score": 0.7791,
+            "worst_path_60d": -0.0598
+          },
+          {
+            "best_path_60d": 0.1324,
+            "date": "2026-07-10",
+            "forward_returns": {
+              "10d": -0.019529817239552348,
+              "1d": -0.035219983400208675,
+              "20d": 0.06162305454242983,
+              "3d": 0.007299930020487542,
+              "5d": -0.03863295836128596,
+              "60d": 0.13244210415916993
+            },
+            "key_differences": [],
+            "key_shared_features": [
+              "20d 回撤深度接近",
+              "相对 benchmark 强弱接近",
+              "波动率区间接近",
+              "成交量异常程度接近"
+            ],
+            "market_context": "risk_off_pressure",
+            "similarity_score": 0.7778,
+            "worst_path_60d": -0.0993
+          },
+          {
+            "best_path_60d": 0.13,
+            "date": "2025-10-17",
+            "forward_returns": {
+              "10d": 0.10517413024819643,
+              "1d": -0.0031656032485013956,
+              "20d": 0.03793252320673419,
+              "3d": -0.0160462963749508,
+              "5d": 0.01659203834668082,
+              "60d": -0.00043664354612856323
+            },
+            "key_differences": [],
+            "key_shared_features": [
+              "20d 回撤深度接近",
+              "相对 benchmark 强弱接近",
+              "波动率区间接近",
+              "成交量异常程度接近"
+            ],
+            "market_context": "risk_off_pressure",
+            "similarity_score": 0.777,
+            "worst_path_60d": -0.067
           },
           {
             "best_path_60d": 0.1116,
@@ -2836,92 +2887,51 @@
               "波动率区间接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.4938,
+            "similarity_score": 0.7642,
             "worst_path_60d": -0.0823
           },
           {
-            "best_path_60d": 0.3271,
-            "date": "2026-04-06",
+            "best_path_60d": 0.15,
+            "date": "2025-10-14",
             "forward_returns": {
-              "10d": 0.1374690286694987,
-              "1d": 0.002589544671513849,
-              "20d": 0.1173158996256168,
-              "3d": 0.03529612865347886,
-              "5d": 0.06569465328215575,
-              "60d": 0.11224950748659036
+              "10d": 0.11664722625335573,
+              "1d": -0.0011109090129327202,
+              "20d": 0.0729323166796712,
+              "3d": 0.01771928269197486,
+              "5d": 0.006276758820610782,
+              "60d": 0.02682887220910279
             },
             "key_differences": [],
             "key_shared_features": [
               "20d 回撤深度接近",
               "相对 benchmark 强弱接近",
-              "波动率区间接近"
+              "波动率区间接近",
+              "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.4926,
-            "worst_path_60d": 0.0026
+            "similarity_score": 0.7603,
+            "worst_path_60d": -0.0505
           },
           {
-            "best_path_60d": 0.0428,
-            "date": "2025-12-30",
+            "best_path_60d": 0.0217,
+            "date": "2025-10-31",
             "forward_returns": {
-              "10d": -0.0234616298069886,
-              "1d": -0.005545448029029615,
-              "20d": 0.026501020574957117,
-              "3d": 0.0030926834372323416,
-              "5d": 0.008371586757089003,
-              "60d": -0.10675050512093734
+              "10d": -0.06084254526149769,
+              "1d": 0.021680079364690626,
+              "20d": -0.11146232758130227,
+              "3d": -0.035952385706970826,
+              "5d": -0.07081836736462431,
+              "60d": -0.04928643743192078
             },
             "key_differences": [],
             "key_shared_features": [
               "20d 回撤深度接近",
-              "波动率区间接近"
+              "波动率区间接近",
+              "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.4848,
-            "worst_path_60d": -0.1068
-          },
-          {
-            "best_path_60d": 0.2453,
-            "date": "2026-04-13",
-            "forward_returns": {
-              "10d": 0.14420793092719855,
-              "1d": 0.03803284053190958,
-              "20d": 0.15915696620030273,
-              "3d": 0.047752409600680924,
-              "5d": 0.0673498503218443,
-              "60d": 0.07115314243524828
-            },
-            "key_differences": [],
-            "key_shared_features": [
-              "相对 benchmark 强弱接近",
-              "波动率区间接近"
-            ],
-            "market_context": "risk_off_pressure",
-            "similarity_score": 0.4838,
-            "worst_path_60d": 0.017
-          },
-          {
-            "best_path_60d": 0.1336,
-            "date": "2025-10-20",
-            "forward_returns": {
-              "10d": 0.13272013564482044,
-              "1d": -0.008103349389427039,
-              "20d": 0.021682034204450563,
-              "3d": -0.0026280975095440535,
-              "5d": 0.048456012555249825,
-              "60d": 0.024145880841255206
-            },
-            "key_differences": [
-              "20d 动量差异较大"
-            ],
-            "key_shared_features": [
-              "20d 回撤深度接近",
-              "相对 benchmark 强弱接近",
-              "波动率区间接近"
-            ],
-            "market_context": "risk_off_pressure",
-            "similarity_score": 0.4562,
-            "worst_path_60d": -0.0641
+            "similarity_score": 0.7568,
+            "worst_path_60d": -0.1558
           }
         ],
         "validation_type": "historical_analog_explanation_only"
@@ -2930,7 +2940,7 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.3223,
+        "benchmark_primary_probability": 0.3256,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -3017,6 +3027,7 @@
           "scenario": "stock_downside_continuation"
         },
         "supporting_signals": [
+          "成交量结构支持当前路径。",
           "价格站在 20d 均线上方。",
           "基础财务指标已接入且收入增长为正。"
         ]
@@ -3271,7 +3282,7 @@
           null,
           null,
           null,
-          230.48,
+          230.47999572753906,
           230.28,
           229.89,
           229.51,
@@ -3550,7 +3561,7 @@
           null,
           null,
           null,
-          230.48,
+          230.47999572753906,
           230.05,
           228.98,
           227.7,
@@ -3678,7 +3689,7 @@
           null,
           null,
           null,
-          230.48,
+          230.47999572753906,
           229.84,
           228.88,
           228.34,
@@ -3806,7 +3817,7 @@
           null,
           null,
           null,
-          230.48,
+          230.47999572753906,
           229.41,
           227.91,
           226.63,
@@ -3820,7 +3831,7 @@
           {
             "affected_ticker": "NVDA",
             "alert_level": "NO_ALERT",
-            "alert_score": 34.48,
+            "alert_score": 25.97,
             "alert_type": "Stock Failed Bounce Risk",
             "confirmation_needed": [
               "价格无法站上确认价",
@@ -3936,17 +3947,20 @@
           {
             "affected_ticker": "NVDA",
             "alert_level": "NO_ALERT",
-            "alert_score": 7.95,
-            "alert_type": "Earnings/Event Risk",
+            "alert_score": 8.1,
+            "alert_type": "Stock Bounce Setup",
             "confirmation_needed": [
-              "接入真实公司新闻/财报日期",
-              "价格反应确认"
+              "价格站上主路径确认价",
+              "成交量继续确认",
+              "benchmark 不转为 risk-off"
             ],
             "invalidation_conditions": [
-              "事件风险消退且价格结构确认"
+              "跌破主路径失效价",
+              "相对强弱转弱",
+              "大盘 risk alert 升级"
             ],
             "not_trading_advice": true,
-            "one_line_reason": "公司新闻、财报或个股期权信息缺失时，事件风险保持独立预警。",
+            "one_line_reason": "反抽情景、成交量/相对强弱和大盘背景共同支持时触发。",
             "related_price_levels": {
               "breakdown_level": {
                 "confidence": "low",
@@ -3993,20 +4007,17 @@
           {
             "affected_ticker": "NVDA",
             "alert_level": "NO_ALERT",
-            "alert_score": 6.89,
-            "alert_type": "Stock Bounce Setup",
+            "alert_score": 7.95,
+            "alert_type": "Earnings/Event Risk",
             "confirmation_needed": [
-              "价格站上主路径确认价",
-              "成交量继续确认",
-              "benchmark 不转为 risk-off"
+              "接入真实公司新闻/财报日期",
+              "价格反应确认"
             ],
             "invalidation_conditions": [
-              "跌破主路径失效价",
-              "相对强弱转弱",
-              "大盘 risk alert 升级"
+              "事件风险消退且价格结构确认"
             ],
             "not_trading_advice": true,
-            "one_line_reason": "反抽情景、成交量/相对强弱和大盘背景共同支持时触发。",
+            "one_line_reason": "公司新闻、财报或个股期权信息缺失时，事件风险保持独立预警。",
             "related_price_levels": {
               "breakdown_level": {
                 "confidence": "low",
@@ -4285,7 +4296,7 @@
         "strongest_alert": {
           "affected_ticker": "NVDA",
           "alert_level": "NO_ALERT",
-          "alert_score": 34.48,
+          "alert_score": 25.97,
           "alert_type": "Stock Failed Bounce Risk",
           "confirmation_needed": [
             "价格无法站上确认价",
@@ -4346,7 +4357,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Prediction: This Will Happen to Intel Stock in 2027",
+              "公司新闻已接入: TSMC's $46.7 billion quarter leaves 1 question for investors",
               "增长数据具备 EPS 上修叙事基础"
             ],
             "max_points": 10,
@@ -4410,14 +4421,15 @@
             "evidence": [
               "价格站上 200d 均线",
               "价格站上 50d 均线",
-              "价格站上 20d 均线"
+              "价格站上 20d 均线",
+              "成交量确认技术路径"
             ],
             "max_points": 15,
             "missing_fields": [],
             "name": "technical",
-            "points": 8.0,
-            "score_pct": 53.33,
-            "status": "neutral"
+            "points": 12.0,
+            "score_pct": 80.0,
+            "status": "supportive"
           },
           "valuation": {
             "evidence": [
@@ -4439,7 +4451,7 @@
           "expected_return_60d": -0.0058,
           "max_drawdown_risk_20d": 0.051,
           "max_drawdown_risk_60d": 0.0882,
-          "outperformance_probability_20d": 0.5585,
+          "outperformance_probability_20d": 0.5745,
           "risk_reward_ratio": 0.53,
           "upside_potential_60d": 0.0469
         },
@@ -4461,12 +4473,12 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "Prediction: This Will Happen to Intel Stock in 2027",
+          "catalyst": "TSMC's $46.7 billion quarter leaves 1 question for investors",
           "expectation_gap": [
             "收入增长较强，具备正向预期差基础",
             "EPS 增长较强，可能支持盈利上修叙事"
           ],
-          "historical_analog_support": "supportive",
+          "historical_analog_support": "weak",
           "invalidation_summary": [
             "跌破 recent swing low 或主路径失效价",
             "相对 benchmark 强弱转弱",
@@ -4479,19 +4491,18 @@
           "primary_path": "stock_failed_bounce",
           "valuation_repricing": "估值扩张证据不足或存在压力"
         },
-        "total_score": 44.5,
+        "total_score": 48.5,
         "validation_status": "not_yet_validated",
         "version": "stock_alpha_score_v1"
       },
       "stock_confluence": {
         "conflicting_evidence": [
           "大盘风险背景压低个股置信度",
-          "成交量不确认当前路径",
           "公司新闻或财报事件风险上升",
           "个股 Alpha 评分已接入",
           "主路径和第二路径差距较小"
         ],
-        "confluence_level": "weak",
+        "confluence_level": "mixed",
         "dominant_path": "stock_failed_bounce",
         "hierarchy": {
           "market": "risk_background",
@@ -4505,8 +4516,8 @@
         "module_scores": {
           "alpha_quality": {
             "evidence": "个股 Alpha 评分已接入",
-            "reason": "score=44.5; grade=weak_or_no_alpha_edge; benchmark=QQQ",
-            "score": 44.5,
+            "reason": "score=48.5; grade=weak_or_no_alpha_edge; benchmark=QQQ",
+            "score": 48.5,
             "status": "conflicting"
           },
           "fundamentals_earnings": {
@@ -4516,10 +4527,10 @@
             "status": "supportive"
           },
           "historical_analog": {
-            "evidence": "历史相似结构支持主路径",
+            "evidence": "历史相似结构中性",
             "reason": "samples=10",
-            "score": 68,
-            "status": "supportive"
+            "score": 52,
+            "status": "neutral"
           },
           "market_context": {
             "evidence": "大盘风险背景压低个股置信度",
@@ -4558,22 +4569,23 @@
             "status": "neutral"
           },
           "volume_structure": {
-            "evidence": "成交量不确认当前路径",
-            "reason": "缩量反抽或下跌量能压力",
-            "score": 26.64,
-            "status": "conflicting"
+            "evidence": "成交量确认当前路径",
+            "reason": "量能改善或放量上涨代理成立",
+            "score": 63.04,
+            "status": "supportive"
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 44.81,
+        "stock_confluence_score": 47.69,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
-          "基础财务指标偏支持",
-          "历史相似结构支持主路径"
+          "成交量确认当前路径",
+          "基础财务指标偏支持"
         ],
         "validation_status": "not_yet_validated"
       },
       "supporting_signals": [
+        "成交量结构支持当前路径。",
         "价格站在 20d 均线上方。",
         "基础财务指标已接入且收入增长为正。"
       ],
@@ -4588,7 +4600,7 @@
         "大盘背景对个股路径形成压力。",
         "价格仍在 50d 均线下方。"
       ],
-      "current_price": 7.32,
+      "current_price": 7.320000171661377,
       "data_quality": {
         "available_fields": [
           "price",
@@ -4646,6 +4658,18 @@
           "event_risk_flag": "low",
           "headlines": [
             {
+              "datetime": 1791487500,
+              "headline": "3 Nuclear Energy Stocks Down 40% or More From Their Highs -- Only 1 Is a Real Opportunity Right Now.",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=2d15fc2911badd8f8a73ca44d6b9dee5b2d284e885d9698fc379ea8b8823b9df"
+            },
+            {
+              "datetime": 1791471453,
+              "headline": "Is NuScale Power Stock a Buy After September Slump?",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=a8ceb3bbe41d41eab165c16d3ce4dc4a780ab6d5668e91a67ae1d22f97ecec91"
+            },
+            {
               "datetime": 1791391511,
               "headline": "OKLO Nearly Halved in 2026: 240% Returns to Materialize in 12 Months Says One Wall Street Pro",
               "source": "Yahoo",
@@ -4680,44 +4704,32 @@
               "headline": "Nuclear Stocks Rally as Google’s Reactor Deal Lifts the Sector: NANO Nuclear Energy and Oklo Jump 8%, NuScale Power Gains 7%",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=3153299fca6b08d71d2bfc85e40e6510055f843b2fc4af717c219d8c32036d87"
-            },
-            {
-              "datetime": 1791288356,
-              "headline": "IsoEnergy Commences 2026 Winter Drilling Program At Larocque East Project, Targeting Hurricane Deposit Resource Expansion With 5,200 M Of Drilling",
-              "source": "Benzinga",
-              "url": "https://finnhub.io/api/news?id=745c0997985c477c94c33dec52f274b9869a363943f6e9c6d4feaa49fd979119"
-            },
-            {
-              "datetime": 1791285320,
-              "headline": "Prediction: This Stock Could Be One of the Biggest Nuclear Energy Stories of the Decade With 100% Upside",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=f3ebc6f991be76f1666b24bdf1bcbbd85c96dbcacc7d1fed5aa597f107d2080b"
             }
           ],
-          "major_company_headline": "OKLO Nearly Halved in 2026: 240% Returns to Materialize in 12 Months Says One Wall Street Pro",
-          "news_count_24h": 0,
-          "news_count_72h": 11,
-          "news_risk_score": 20.0,
+          "major_company_headline": "3 Nuclear Energy Stocks Down 40% or More From Their Highs -- Only 1 Is a Real Opportunity Right Now.",
+          "news_count_24h": 2,
+          "news_count_72h": 12,
+          "news_risk_score": 36.0,
           "news_sentiment": "neutral"
         },
         "price_trend": {
-          "close": 7.32,
+          "close": 7.320000171661377,
           "distance_to_200d_ma": -0.3784,
           "distance_to_20d_ma": -0.1085,
           "distance_to_50d_ma": -0.1844,
           "distance_to_5d_ma": -0.0479,
-          "drawdown_20d": -0.1902654833087477,
-          "drawdown_60d": -0.34525940964319957,
+          "drawdown_20d": -0.1902654643196573,
+          "drawdown_60d": -0.34525939428887287,
           "gap_up_down": -0.0222,
           "recent_swing_high": 9.770000457763672,
-          "recent_swing_low": 7.17,
+          "recent_swing_low": 7.170000076293945,
           "returns": {
-            "10d": -0.13577334483747505,
-            "1d": -0.045632343261078685,
-            "20d": -0.2830558302986532,
-            "3d": -0.04687497869599559,
-            "5d": -0.06033375663088283,
-            "60d": -0.12440187791713411
+            "10d": -0.13577332457048907,
+            "1d": -0.04563232088019538,
+            "20d": -0.28305581348558995,
+            "3d": -0.046874956344253337,
+            "5d": -0.06033373459476248,
+            "60d": -0.12440185738347577
           },
           "trend_slope": -0.3093
         },
@@ -4738,12 +4750,12 @@
           "realized_volatility_20d": 0.8264
         },
         "volume": {
-          "accumulation_distribution_proxy": -0.4817,
+          "accumulation_distribution_proxy": -0.5103,
           "panic_volume_proxy": false,
-          "up_volume_down_volume_proxy": 0.3498,
-          "volume_confirmation_score": 24.67,
-          "volume_vs_20d_average": 0.0,
-          "volume_z_score": -2.4163
+          "up_volume_down_volume_proxy": 0.3242,
+          "volume_confirmation_score": 46.56,
+          "volume_vs_20d_average": 1.1035,
+          "volume_z_score": 0.3204
         }
       },
       "forecast_price_levels": {
@@ -4901,14 +4913,14 @@
       "historical_analogs": {
         "analog_support": "conflicting",
         "distribution": {
-          "avg_return_10d": -0.0803,
-          "avg_return_20d": -0.0682,
-          "avg_return_3d": -0.0189,
-          "avg_return_5d": -0.0243,
-          "avg_return_60d": 0.0693,
-          "best_path": 1.3636,
+          "avg_return_10d": -0.0434,
+          "avg_return_20d": -0.0654,
+          "avg_return_3d": -0.0191,
+          "avg_return_5d": -0.0284,
+          "avg_return_60d": -0.0872,
+          "best_path": 1.0286,
           "hit_rate_20d": 0.3,
-          "worst_path": -0.4764
+          "worst_path": -0.4838
         },
         "low_sample_warning": false,
         "note": "Historical analogs are explanatory and require forward validation; they are not proof of alpha.",
@@ -4930,29 +4942,50 @@
               "20d 回撤深度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.5039,
+            "similarity_score": 0.4976,
             "worst_path_60d": -0.2522
           },
           {
-            "best_path_60d": 1.0286,
-            "date": "2025-03-14",
+            "best_path_60d": 0.4829,
+            "date": "2025-09-04",
             "forward_returns": {
-              "10d": -0.14505996165913404,
-              "1d": 0.005139928692830057,
-              "20d": -0.13478015873802585,
-              "3d": 0.058252452566004774,
-              "5d": 0.0354082766293806,
-              "60d": 0.9731581259531977
+              "10d": 0.05800722240903381,
+              "1d": -0.041631974766036126,
+              "20d": 0.0965861687521334,
+              "3d": -0.019150670277165348,
+              "5d": -0.023591410017185725,
+              "60d": -0.4449070031195183
             },
             "key_differences": [
-              "波动率状态差异较大"
+              "20d 动量差异较大"
             ],
             "key_shared_features": [
-              "价格路径结构相似"
+              "20d 回撤深度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.434,
-            "worst_path_60d": -0.2804
+            "similarity_score": 0.4464,
+            "worst_path_60d": -0.4838
+          },
+          {
+            "best_path_60d": 0.5474,
+            "date": "2025-09-05",
+            "forward_returns": {
+              "10d": 0.3544744312532535,
+              "1d": -0.016796931273138964,
+              "20d": 0.16188822329004782,
+              "3d": -0.006371196460561795,
+              "5d": 0.052418228707735624,
+              "60d": -0.4763973193492765
+            },
+            "key_differences": [
+              "相对 benchmark 强弱差异较大"
+            ],
+            "key_shared_features": [
+              "成交量异常程度接近"
+            ],
+            "market_context": "risk_off_pressure",
+            "similarity_score": 0.4263,
+            "worst_path_60d": -0.4764
           },
           {
             "best_path_60d": 0.3426,
@@ -4970,7 +5003,7 @@
               "相对 benchmark 强弱接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.4241,
+            "similarity_score": 0.4249,
             "worst_path_60d": -0.2695
           },
           {
@@ -4992,115 +5025,51 @@
               "相对 benchmark 强弱接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.4205,
+            "similarity_score": 0.4238,
             "worst_path_60d": -0.2102
           },
           {
-            "best_path_60d": 1.3636,
-            "date": "2025-03-17",
+            "best_path_60d": 1.0286,
+            "date": "2025-03-14",
             "forward_returns": {
-              "10d": -0.1954545715623645,
-              "1d": -0.05795457020771351,
-              "20d": -0.13352274605311598,
-              "3d": 0.03409093002642436,
-              "5d": 0.07272720179282098,
-              "60d": 1.363636225708263
+              "10d": -0.14505996165913404,
+              "1d": 0.005139928692830057,
+              "20d": -0.13478015873802585,
+              "3d": 0.058252452566004774,
+              "5d": 0.0354082766293806,
+              "60d": 0.9731581259531977
             },
             "key_differences": [
-              "相对 benchmark 强弱差异较大",
               "波动率状态差异较大"
-            ],
-            "key_shared_features": [
-              "20d 回撤深度接近",
-              "成交量异常程度接近"
-            ],
-            "market_context": "risk_off_pressure",
-            "similarity_score": 0.3459,
-            "worst_path_60d": -0.2841
-          },
-          {
-            "best_path_60d": 0.1147,
-            "date": "2026-06-30",
-            "forward_returns": {
-              "10d": -0.1665005105438064,
-              "1d": 0.011964096585627167,
-              "20d": -0.24327015407212763,
-              "3d": -0.0418743855907889,
-              "5d": -0.12662009350952824,
-              "60d": -0.1555333506953408
-            },
-            "key_differences": [
-              "20d 动量差异较大"
-            ],
-            "key_shared_features": [
-              "相对 benchmark 强弱接近"
-            ],
-            "market_context": "risk_off_pressure",
-            "similarity_score": 0.3381,
-            "worst_path_60d": -0.2433
-          },
-          {
-            "best_path_60d": 0.2763,
-            "date": "2026-07-08",
-            "forward_returns": {
-              "10d": -0.009132411143357496,
-              "1d": 0.030821860392099484,
-              "20d": 0.07077624079448472,
-              "3d": -0.04680363432643923,
-              "5d": -0.04566216458371573,
-              "60d": -0.11073062119686994
-            },
-            "key_differences": [
-              "20d 动量差异较大"
-            ],
-            "key_shared_features": [
-              "相对 benchmark 强弱接近"
-            ],
-            "market_context": "risk_off_pressure",
-            "similarity_score": 0.3305,
-            "worst_path_60d": -0.1336
-          },
-          {
-            "best_path_60d": 0.5474,
-            "date": "2025-09-05",
-            "forward_returns": {
-              "10d": 0.3544744312532535,
-              "1d": -0.016796931273138964,
-              "20d": 0.16188822329004782,
-              "3d": -0.006371196460561795,
-              "5d": 0.052418228707735624,
-              "60d": -0.4763973193492765
-            },
-            "key_differences": [
-              "相对 benchmark 强弱差异较大"
             ],
             "key_shared_features": [
               "价格路径结构相似"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.3264,
-            "worst_path_60d": -0.4764
+            "similarity_score": 0.3871,
+            "worst_path_60d": -0.2804
           },
           {
-            "best_path_60d": -0.0731,
-            "date": "2026-02-19",
+            "best_path_60d": 0.174,
+            "date": "2026-06-09",
             "forward_returns": {
-              "10d": -0.16803278555037526,
-              "1d": -0.0819672633058898,
-              "20d": -0.1810109638018721,
-              "3d": -0.08265027389147903,
-              "5d": -0.08948090088086542,
-              "60d": -0.23292354652448582
+              "10d": 0.021000003814697264,
+              "1d": -0.07100000381469726,
+              "20d": -0.09700002670288085,
+              "3d": -0.010999965667724609,
+              "5d": -0.010999965667724609,
+              "60d": -0.025
             },
             "key_differences": [
               "波动率状态差异较大"
             ],
             "key_shared_features": [
-              "相对 benchmark 强弱接近"
+              "相对 benchmark 强弱接近",
+              "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.3174,
-            "worst_path_60d": -0.3743
+            "similarity_score": 0.3492,
+            "worst_path_60d": -0.241
           },
           {
             "best_path_60d": 0.1455,
@@ -5121,8 +5090,49 @@
               "相对 benchmark 强弱接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.3071,
+            "similarity_score": 0.3462,
             "worst_path_60d": -0.2223
+          },
+          {
+            "best_path_60d": 0.0398,
+            "date": "2026-03-02",
+            "forward_returns": {
+              "10d": -0.08275861363380091,
+              "1d": -0.03984677779030668,
+              "20d": -0.21455939845294297,
+              "3d": -0.06666665692286791,
+              "5d": -0.0681992590279523,
+              "60d": -0.07509582234385082
+            },
+            "key_differences": [],
+            "key_shared_features": [
+              "相对 benchmark 强弱接近",
+              "成交量异常程度接近"
+            ],
+            "market_context": "risk_off_pressure",
+            "similarity_score": 0.3259,
+            "worst_path_60d": -0.2981
+          },
+          {
+            "best_path_60d": 0.1147,
+            "date": "2026-06-30",
+            "forward_returns": {
+              "10d": -0.1665005105438064,
+              "1d": 0.011964096585627167,
+              "20d": -0.24327015407212763,
+              "3d": -0.0418743855907889,
+              "5d": -0.12662009350952824,
+              "60d": -0.1555333506953408
+            },
+            "key_differences": [
+              "20d 动量差异较大"
+            ],
+            "key_shared_features": [
+              "相对 benchmark 强弱接近"
+            ],
+            "market_context": "risk_off_pressure",
+            "similarity_score": 0.3252,
+            "worst_path_60d": -0.2433
           }
         ],
         "validation_type": "historical_analog_explanation_only"
@@ -5131,7 +5141,7 @@
         "benchmark": "IWM",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.3767,
+        "benchmark_primary_probability": 0.3433,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -5471,7 +5481,7 @@
           null,
           null,
           null,
-          7.32,
+          7.320000171661377,
           7.29,
           7.25,
           7.2,
@@ -5750,7 +5760,7 @@
           null,
           null,
           null,
-          7.32,
+          7.320000171661377,
           7.23,
           7.1,
           6.99,
@@ -5878,7 +5888,7 @@
           null,
           null,
           null,
-          7.32,
+          7.320000171661377,
           7.26,
           7.18,
           7.14,
@@ -6006,7 +6016,7 @@
           null,
           null,
           null,
-          7.32,
+          7.320000171661377,
           7.28,
           7.19,
           7.08,
@@ -6078,7 +6088,7 @@
           {
             "affected_ticker": "SMR",
             "alert_level": "NO_ALERT",
-            "alert_score": 36.2,
+            "alert_score": 29.63,
             "alert_type": "Stock Failed Bounce Risk",
             "confirmation_needed": [
               "价格无法站上确认价",
@@ -6546,7 +6556,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: OKLO Nearly Halved in 2026: 240% Returns to Materialize in 12 Months Says One Wall Street Pro",
+              "公司新闻已接入: 3 Nuclear Energy Stocks Down 40% or More From Their Highs -- Only 1 Is a Real Opportunity Right Now.",
               "未来 30 天存在财报催化：2026-11-05"
             ],
             "max_points": 10,
@@ -6660,7 +6670,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "OKLO Nearly Halved in 2026: 240% Returns to Materialize in 12 Months Says One Wall Street Pro",
+          "catalyst": "3 Nuclear Energy Stocks Down 40% or More From Their Highs -- Only 1 Is a Real Opportunity Right Now.",
           "expectation_gap": [
             "未来 30 天财报可能成为重新定价窗口"
           ],
@@ -6686,7 +6696,6 @@
           "大盘风险背景压低个股置信度",
           "个股弱于所属板块",
           "价格结构与主路径冲突",
-          "成交量不确认当前路径",
           "基础财务指标偏弱",
           "历史相似结构与主路径冲突",
           "个股 Alpha 评分已接入"
@@ -6729,8 +6738,8 @@
           },
           "news_event": {
             "evidence": "公司新闻源已接入",
-            "reason": "OKLO Nearly Halved in 2026: 240% Returns to Materialize in 12 Months Says One Wall Street Pro",
-            "score": 51.4,
+            "reason": "3 Nuclear Energy Stocks Down 40% or More From Their Highs -- Only 1 Is a Real Opportunity Right Now.",
+            "score": 56.52,
             "status": "neutral"
           },
           "options_volatility": {
@@ -6758,14 +6767,14 @@
             "status": "conflicting"
           },
           "volume_structure": {
-            "evidence": "成交量不确认当前路径",
-            "reason": "缩量反抽或下跌量能压力",
-            "score": 24.67,
-            "status": "conflicting"
+            "evidence": "成交量结构中性",
+            "reason": "量能没有明显共振",
+            "score": 46.56,
+            "status": "neutral"
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 32.91,
+        "stock_confluence_score": 35.67,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "主路径概率相对领先"
@@ -6845,6 +6854,18 @@
           "event_risk_flag": "high",
           "headlines": [
             {
+              "datetime": 1791505825,
+              "headline": "Why Should General Motors Stock Holders Watch This Number?",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=bedb23aa60c2fe19d2b61e8a17d173c16071b9be359c9a4d59be34e49eb5aade"
+            },
+            {
+              "datetime": 1791502219,
+              "headline": "Intel CEO Lip-Bu Tan Says Company Will Keep Working on Terafab — Elon Musk Confirms TSMC May Only Sublease Part of the Fab, Not Own It",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=3f70d28b25c16753650c7a678e13c97982c72ae6ce99d5f25f0ef9d9bc5f47c2"
+            },
+            {
               "datetime": 1791499934,
               "headline": "Jim Cramer On SpaceX (SPCX): Buy Tesla (TSLA) If You Like It As An Earnings Explosion Might Be Coming",
               "source": "Yahoo",
@@ -6879,21 +6900,9 @@
               "headline": "Simplify Announces Five ETF Closures",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=0b9144ed5e21ca82a8d482efc19afe21917737c371e75af3fba6761845b2e872"
-            },
-            {
-              "datetime": 1791489815,
-              "headline": "Cathie Wood dumps tumbling crypto stock to buy NVIDIA-linked AI stock",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=786b41953702c7da7f22a814b7f754eae40951a7ccc3f1b95a0c6fb07e89aad9"
-            },
-            {
-              "datetime": 1791488573,
-              "headline": "Why there's a spotlight on Trump's relationship with Big Tech and corporate America",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=d78c8fbf5f06e6c5fa4a4719862b408f5d1e6919ccf19e784aacb9d470650dbb"
             }
           ],
-          "major_company_headline": "Jim Cramer On SpaceX (SPCX): Buy Tesla (TSLA) If You Like It As An Earnings Explosion Might Be Coming",
+          "major_company_headline": "Why Should General Motors Stock Holders Watch This Number?",
           "news_count_24h": 20,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
@@ -6937,12 +6946,12 @@
           "realized_volatility_20d": 0.2985
         },
         "volume": {
-          "accumulation_distribution_proxy": 0.0716,
+          "accumulation_distribution_proxy": 0.0287,
           "panic_volume_proxy": false,
-          "up_volume_down_volume_proxy": 1.1542,
-          "volume_confirmation_score": 24.83,
-          "volume_vs_20d_average": 0.0,
-          "volume_z_score": -4.3964
+          "up_volume_down_volume_proxy": 1.0591,
+          "volume_confirmation_score": 52.91,
+          "volume_vs_20d_average": 0.7999,
+          "volume_z_score": -0.8866
         }
       },
       "forecast_price_levels": {
@@ -7100,140 +7109,19 @@
       "historical_analogs": {
         "analog_support": "supportive",
         "distribution": {
-          "avg_return_10d": -0.0135,
-          "avg_return_20d": 0.071,
-          "avg_return_3d": -0.0086,
-          "avg_return_5d": 0.0139,
-          "avg_return_60d": 0.116,
+          "avg_return_10d": 0.0035,
+          "avg_return_20d": 0.1219,
+          "avg_return_3d": -0.0088,
+          "avg_return_5d": 0.0011,
+          "avg_return_60d": 0.2049,
           "best_path": 0.4321,
-          "hit_rate_20d": 0.7,
-          "worst_path": -0.296
+          "hit_rate_20d": 0.9,
+          "worst_path": -0.2935
         },
         "low_sample_warning": false,
         "note": "Historical analogs are explanatory and require forward validation; they are not proof of alpha.",
         "sample_count": 10,
         "top_similar_dates": [
-          {
-            "best_path_60d": 0.3975,
-            "date": "2025-08-18",
-            "forward_returns": {
-              "10d": -0.017305222124278728,
-              "1d": -0.01745436818115473,
-              "20d": 0.2579663161188008,
-              "3d": -0.04490398062448856,
-              "5d": 0.03413295833753319,
-              "60d": 0.3116720083354253
-            },
-            "key_differences": [],
-            "key_shared_features": [
-              "20d 回撤深度接近",
-              "相对 benchmark 强弱接近",
-              "波动率区间接近"
-            ],
-            "market_context": "risk_off_pressure",
-            "similarity_score": 0.5005,
-            "worst_path_60d": -0.0449
-          },
-          {
-            "best_path_60d": 0.0164,
-            "date": "2026-06-04",
-            "forward_returns": {
-              "10d": -0.04292035236880432,
-              "1d": -0.06559926253138727,
-              "20d": 0.003154443226512697,
-              "3d": -0.05202537673837878,
-              "5d": -0.04612263770468729,
-              "60d": -0.12068347120758298
-            },
-            "key_differences": [],
-            "key_shared_features": [
-              "相对 benchmark 强弱接近",
-              "波动率区间接近"
-            ],
-            "market_context": "risk_off_pressure",
-            "similarity_score": 0.4403,
-            "worst_path_60d": -0.2871
-          },
-          {
-            "best_path_60d": 0.3801,
-            "date": "2025-08-13",
-            "forward_returns": {
-              "10d": 0.030113739977792972,
-              "1d": -0.011196942235471465,
-              "20d": 0.08671693161753413,
-              "3d": -0.012434442689575323,
-              "5d": -0.04561261937536171,
-              "60d": 0.3138959197554421
-            },
-            "key_differences": [],
-            "key_shared_features": [
-              "20d 回撤深度接近",
-              "波动率区间接近"
-            ],
-            "market_context": "risk_off_pressure",
-            "similarity_score": 0.4383,
-            "worst_path_60d": -0.0568
-          },
-          {
-            "best_path_60d": 0.3499,
-            "date": "2025-09-09",
-            "forward_returns": {
-              "10d": 0.22733955271435108,
-              "1d": 0.0023633378140295014,
-              "20d": 0.2482058818174534,
-              "3d": 0.14113612430013492,
-              "5d": 0.21514826536545584,
-              "60d": 0.28754644108327243
-            },
-            "key_differences": [],
-            "key_shared_features": [
-              "20d 回撤深度接近",
-              "波动率区间接近"
-            ],
-            "market_context": "risk_off_pressure",
-            "similarity_score": 0.4373,
-            "worst_path_60d": 0.0024
-          },
-          {
-            "best_path_60d": -0.0043,
-            "date": "2026-07-14",
-            "forward_returns": {
-              "10d": -0.22398907535695892,
-              "1d": -0.00434146411353667,
-              "20d": -0.15995253745447743,
-              "3d": -0.038719765312440445,
-              "5d": -0.04354081558610343,
-              "60d": -0.04636780114290327
-            },
-            "key_differences": [],
-            "key_shared_features": [
-              "相对 benchmark 强弱接近",
-              "波动率区间接近"
-            ],
-            "market_context": "risk_off_pressure",
-            "similarity_score": 0.4235,
-            "worst_path_60d": -0.247
-          },
-          {
-            "best_path_60d": 0.4321,
-            "date": "2025-08-07",
-            "forward_returns": {
-              "10d": -0.0067024660556206485,
-              "1d": 0.022900068682782042,
-              "20d": 0.08865239798362579,
-              "3d": 0.0576225151496528,
-              "5d": 0.041300766476363056,
-              "60d": 0.4167003230922157
-            },
-            "key_differences": [],
-            "key_shared_features": [
-              "20d 回撤深度接近",
-              "波动率区间接近"
-            ],
-            "market_context": "risk_off_pressure",
-            "similarity_score": 0.4122,
-            "worst_path_60d": -0.0067
-          },
           {
             "best_path_60d": 0.4169,
             "date": "2025-08-15",
@@ -7249,72 +7137,203 @@
             "key_shared_features": [
               "20d 回撤深度接近",
               "相对 benchmark 强弱接近",
-              "波动率区间接近"
+              "波动率区间接近",
+              "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.4039,
+            "similarity_score": 0.807,
             "worst_path_60d": -0.0316
           },
           {
-            "best_path_60d": 0.1152,
-            "date": "2026-03-17",
+            "best_path_60d": 0.3975,
+            "date": "2025-08-18",
             "forward_returns": {
-              "10d": -0.06892576394648467,
-              "1d": -0.016254640751756498,
-              "20d": -0.01833340097692635,
-              "3d": -0.0784181090994085,
-              "5d": -0.04067420713110222,
-              "60d": -0.0003005362799341052
+              "10d": -0.017305222124278728,
+              "1d": -0.01745436818115473,
+              "20d": 0.2579663161188008,
+              "3d": -0.04490398062448856,
+              "5d": 0.03413295833753319,
+              "60d": 0.3116720083354253
             },
             "key_differences": [],
             "key_shared_features": [
               "20d 回撤深度接近",
               "相对 benchmark 强弱接近",
-              "波动率区间接近"
+              "波动率区间接近",
+              "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.3968,
-            "worst_path_60d": -0.1403
+            "similarity_score": 0.8052,
+            "worst_path_60d": -0.0449
           },
           {
-            "best_path_60d": 0.0037,
-            "date": "2026-06-02",
+            "best_path_60d": 0.3801,
+            "date": "2025-08-13",
             "forward_returns": {
-              "10d": -0.04502758062016352,
-              "1d": -9.434565598030465e-05,
-              "20d": 0.00368149713160398,
-              "3d": -0.07726433895527814,
-              "5d": -0.06385990980843366,
-              "60d": -0.16267049196290242
+              "10d": 0.030113739977792972,
+              "1d": -0.011196942235471465,
+              "20d": 0.08671693161753413,
+              "3d": -0.012434442689575323,
+              "5d": -0.04561261937536171,
+              "60d": 0.3138959197554421
+            },
+            "key_differences": [],
+            "key_shared_features": [
+              "20d 回撤深度接近",
+              "波动率区间接近",
+              "成交量异常程度接近"
+            ],
+            "market_context": "risk_off_pressure",
+            "similarity_score": 0.7699,
+            "worst_path_60d": -0.0568
+          },
+          {
+            "best_path_60d": 0.3957,
+            "date": "2025-08-14",
+            "forward_returns": {
+              "10d": 0.030991193844102805,
+              "1d": -0.014959143019665277,
+              "20d": 0.1798677462433904,
+              "3d": -0.018684037381715733,
+              "5d": -0.046099296262328594,
+              "60d": 0.27993326837200017
+            },
+            "key_differences": [],
+            "key_shared_features": [
+              "20d 回撤深度接近",
+              "波动率区间接近",
+              "成交量异常程度接近"
+            ],
+            "market_context": "risk_off_pressure",
+            "similarity_score": 0.7538,
+            "worst_path_60d": -0.0461
+          },
+          {
+            "best_path_60d": 0.4223,
+            "date": "2025-08-19",
+            "forward_returns": {
+              "10d": 0.014515194845994239,
+              "1d": -0.016428300696053964,
+              "20d": 0.2931887537844633,
+              "3d": 0.03249221792948272,
+              "5d": 0.06789959623124449,
+              "60d": 0.3075825492571007
+            },
+            "key_differences": [],
+            "key_shared_features": [
+              "20d 回撤深度接近",
+              "相对 benchmark 强弱接近",
+              "波动率区间接近",
+              "成交量异常程度接近"
+            ],
+            "market_context": "risk_off_pressure",
+            "similarity_score": 0.7521,
+            "worst_path_60d": -0.0279
+          },
+          {
+            "best_path_60d": 0.047,
+            "date": "2026-05-15",
+            "forward_returns": {
+              "10d": -0.015062489339373632,
+              "1d": -0.02901193701051463,
+              "20d": -0.02626467552667108,
+              "3d": -0.011794194259017806,
+              "5d": 0.008928617891349787,
+              "60d": -0.22435103888707397
             },
             "key_differences": [],
             "key_shared_features": [
               "相对 benchmark 强弱接近",
+              "波动率区间接近",
+              "成交量异常程度接近"
+            ],
+            "market_context": "risk_off_pressure",
+            "similarity_score": 0.7052,
+            "worst_path_60d": -0.2935
+          },
+          {
+            "best_path_60d": 0.4208,
+            "date": "2025-08-08",
+            "forward_returns": {
+              "10d": 0.03142732006964285,
+              "1d": 0.028454436694932805,
+              "20d": 0.050811467647895,
+              "3d": 0.02951618736987907,
+              "5d": 0.0027605147245812825,
+              "60d": 0.42080996144129623
+            },
+            "key_differences": [],
+            "key_shared_features": [
+              "20d 回撤深度接近",
               "波动率区间接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.3916,
-            "worst_path_60d": -0.296
+            "similarity_score": 0.7034,
+            "worst_path_60d": -0.0289
           },
           {
-            "best_path_60d": 0.0595,
-            "date": "2026-05-20",
+            "best_path_60d": 0.4321,
+            "date": "2025-08-07",
             "forward_returns": {
-              "10d": 0.002851944623388842,
-              "1d": 0.0014139776735902058,
-              "20d": -0.040190814213587646,
-              "3d": 0.03913623685490057,
-              "5d": 0.05953121736215089,
-              "60d": -0.1868379910560957
+              "10d": -0.0067024660556206485,
+              "1d": 0.022900068682782042,
+              "20d": 0.08865239798362579,
+              "3d": 0.0576225151496528,
+              "5d": 0.041300766476363056,
+              "60d": 0.4167003230922157
+            },
+            "key_differences": [],
+            "key_shared_features": [
+              "20d 回撤深度接近",
+              "波动率区间接近",
+              "成交量异常程度接近"
+            ],
+            "market_context": "risk_off_pressure",
+            "similarity_score": 0.6981,
+            "worst_path_60d": -0.0067
+          },
+          {
+            "best_path_60d": 0.0164,
+            "date": "2026-06-04",
+            "forward_returns": {
+              "10d": -0.04292035236880432,
+              "1d": -0.06559926253138727,
+              "20d": 0.003154443226512697,
+              "3d": -0.05202537673837878,
+              "5d": -0.04612263770468729,
+              "60d": -0.12068347120758298
             },
             "key_differences": [],
             "key_shared_features": [
               "相对 benchmark 强弱接近",
-              "波动率区间接近"
+              "波动率区间接近",
+              "成交量异常程度接近"
             ],
             "market_context": "risk_off_pressure",
-            "similarity_score": 0.3837,
-            "worst_path_60d": -0.2851
+            "similarity_score": 0.6586,
+            "worst_path_60d": -0.2871
+          },
+          {
+            "best_path_60d": 0.1344,
+            "date": "2026-04-20",
+            "forward_returns": {
+              "10d": 2.5502587579617836e-05,
+              "1d": -0.015490411649084395,
+              "20d": 0.04456048467356688,
+              "3d": -0.047847130647890125,
+              "5d": -0.0352356345790207,
+              "60d": -0.0036687960290605094
+            },
+            "key_differences": [],
+            "key_shared_features": [
+              "20d 回撤深度接近",
+              "相对 benchmark 强弱接近",
+              "波动率区间接近",
+              "成交量异常程度接近"
+            ],
+            "market_context": "risk_off_pressure",
+            "similarity_score": 0.6524,
+            "worst_path_60d": -0.0502
           }
         ],
         "validation_type": "historical_analog_explanation_only"
@@ -7323,7 +7342,7 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.3223,
+        "benchmark_primary_probability": 0.3256,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -8215,7 +8234,7 @@
           {
             "affected_ticker": "TSLA",
             "alert_level": "NO_ALERT",
-            "alert_score": 36.52,
+            "alert_score": 28.09,
             "alert_type": "Stock Failed Bounce Risk",
             "confirmation_needed": [
               "价格无法站上确认价",
@@ -8680,7 +8699,7 @@
         "strongest_alert": {
           "affected_ticker": "TSLA",
           "alert_level": "NO_ALERT",
-          "alert_score": 36.52,
+          "alert_score": 28.09,
           "alert_type": "Stock Failed Bounce Risk",
           "confirmation_needed": [
             "价格无法站上确认价",
@@ -8741,7 +8760,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Jim Cramer On SpaceX (SPCX): Buy Tesla (TSLA) If You Like It As An Earnings Explosion Might Be Coming",
+              "公司新闻已接入: Why Should General Motors Stock Holders Watch This Number?",
               "新闻情绪偏正",
               "未来 30 天存在财报催化：2026-10-20"
             ],
@@ -8858,7 +8877,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "Jim Cramer On SpaceX (SPCX): Buy Tesla (TSLA) If You Like It As An Earnings Explosion Might Be Coming",
+          "catalyst": "Why Should General Motors Stock Holders Watch This Number?",
           "expectation_gap": [
             "未来 30 天财报可能成为重新定价窗口"
           ],
@@ -8882,7 +8901,6 @@
       "stock_confluence": {
         "conflicting_evidence": [
           "大盘风险背景压低个股置信度",
-          "成交量不确认当前路径",
           "个股相对弱于大盘/benchmark",
           "公司新闻或财报事件风险上升",
           "个股 Alpha 评分已接入",
@@ -8955,14 +8973,14 @@
             "status": "supportive"
           },
           "volume_structure": {
-            "evidence": "成交量不确认当前路径",
-            "reason": "缩量反抽或下跌量能压力",
-            "score": 24.83,
-            "status": "conflicting"
+            "evidence": "成交量结构中性",
+            "reason": "量能没有明显共振",
+            "score": 52.91,
+            "status": "neutral"
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 39.73,
+        "stock_confluence_score": 42.79,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "个股跑赢所属板块",
@@ -8985,7 +9003,7 @@
     "command_center": {
       "data_freshness_note": "as_of=None",
       "market_context_note": "market risk pressure is high for many candidates",
-      "radar_status": "NO_STRONG_RADAR_EDGE",
+      "radar_status": "MODERATE_OPPORTUNITY",
       "risk_note": "High elasticity means larger forecast movement potential, not a buy/sell recommendation.",
       "top10_count": 4,
       "top3_candidates": [
@@ -8996,7 +9014,7 @@
       "top_candidate": "CEG",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-10-09T00:43:06.265301+00:00",
+    "generated_at": "2026-10-09T01:25:59.266088+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -9006,26 +9024,26 @@
     "top_candidates": [
       {
         "alpha_fields": {
-          "alpha_score": 32.0,
+          "alpha_score": 33.5,
           "expected_return_60d": -0.014,
           "forecast_grade": "weak_or_no_alpha_edge",
           "main_logic": "电力/核能/能源基础设施逻辑：政策与订单催化、盈利兑现能力、利率敏感度和资金确认。",
-          "outperformance_probability_20d": 0.4885,
+          "outperformance_probability_20d": 0.4945,
           "risk_reward_ratio": 0.48
         },
-        "alpha_quality_score": 32.0,
+        "alpha_quality_score": 33.5,
         "as_of": "2026-10-08",
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 64.71,
         "company_name": "Constellation Energy Corp",
-        "confluence_score": 41.76,
+        "confluence_score": 45.86,
         "data_missing": [
           "single_stock_options"
         ],
         "data_quality": 87.5,
         "data_status": "available",
         "downside_risk_level": 247.2,
-        "elasticity_score": 100,
+        "elasticity_score": 97.64,
         "expected_next_day_high": 291.62,
         "expected_next_day_low": 277.37,
         "expected_next_day_mid": 284.49,
@@ -9035,16 +9053,16 @@
           "mid": 284.49,
           "range_pct": 0.05
         },
-        "final_radar_score": 52.32,
+        "final_radar_score": 63.39,
         "forecast_date": "2026-10-08",
         "invalidation_level": 247.2,
-        "last_close": 285.07,
+        "last_close": 285.07000732421875,
         "logo": null,
         "main_conflicting_evidence": [
           "大盘风险背景压低个股置信度",
-          "成交量不确认当前路径",
           "公司新闻或财报事件风险上升",
-          "历史相似结构与主路径冲突"
+          "个股 Alpha 评分已接入",
+          "主路径和第二路径差距较小"
         ],
         "main_supporting_evidence": [
           "个股跑赢所属板块",
@@ -9058,9 +9076,9 @@
           "company_news": "available",
           "earnings": "available"
         },
-        "next_day_move_probability": 0.7413,
-        "one_line_reason": "failed_bounce_risk: Alpha 32 / 弹性 100 / 成交量 25 / 相对强弱 48 / 催化 65 / 大盘 risk_off_pressure / 板块 supportive",
-        "outperformance_probability_20d": 0.4885,
+        "next_day_move_probability": 0.9028,
+        "one_line_reason": "failed_bounce_risk: Alpha 34 / 弹性 98 / 成交量 95 / 相对强弱 48 / 催化 65 / 大盘 risk_off_pressure / 板块 supportive",
+        "outperformance_probability_20d": 0.4945,
         "primary_probability": 0.2517,
         "primary_scenario": "stock_failed_bounce",
         "radar_level": "MODERATE_OPPORTUNITY",
@@ -9075,44 +9093,44 @@
         "relative_strength_score": 48.34,
         "risk_reward_ratio": 0.48,
         "risk_scenario": "stock_event_risk",
-        "risk_score": 57.46,
+        "risk_score": 56.94,
         "secondary_scenario": "stock_downside_continuation",
         "sector_context": "supportive",
-        "squeeze_proxy_score": 48.26,
+        "squeeze_proxy_score": 68.38,
         "ticker": "CEG",
         "upside_trigger_level": 309.8,
         "validation_status": "not_yet_validated",
-        "volume_anomaly_score": 24.74,
+        "volume_anomaly_score": 94.54,
         "volume_fields": {
-          "abnormal_volume_flag": false,
-          "relative_volume_20d": 0.0,
+          "abnormal_volume_flag": true,
+          "relative_volume_20d": 1.61,
           "relative_volume_5d": null,
-          "volume_z_score": -1.447
+          "volume_z_score": 1.0089
         },
         "whether_top10_candidate": true
       },
       {
         "alpha_fields": {
-          "alpha_score": 44.5,
+          "alpha_score": 48.5,
           "expected_return_60d": -0.0058,
           "forecast_grade": "weak_or_no_alpha_edge",
           "main_logic": "半导体/AI 逻辑：订单、毛利率、资本开支周期、估值重估和资金确认。",
-          "outperformance_probability_20d": 0.5585,
+          "outperformance_probability_20d": 0.5745,
           "risk_reward_ratio": 0.53
         },
-        "alpha_quality_score": 44.5,
+        "alpha_quality_score": 48.5,
         "as_of": "2026-10-08",
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 63.68,
         "company_name": "NVIDIA Corp",
-        "confluence_score": 44.81,
+        "confluence_score": 47.69,
         "data_missing": [
           "single_stock_options"
         ],
         "data_quality": 87.5,
         "data_status": "available",
         "downside_risk_level": 208.93,
-        "elasticity_score": 83.25,
+        "elasticity_score": 52.92,
         "expected_next_day_high": 232.91,
         "expected_next_day_low": 227.65,
         "expected_next_day_mid": 230.28,
@@ -9122,20 +9140,20 @@
           "mid": 230.28,
           "range_pct": 0.0228
         },
-        "final_radar_score": 47.21,
+        "final_radar_score": 53.17,
         "forecast_date": "2026-10-08",
         "invalidation_level": 208.93,
-        "last_close": 230.48,
+        "last_close": 230.47999572753906,
         "logo": null,
         "main_conflicting_evidence": [
           "大盘风险背景压低个股置信度",
-          "成交量不确认当前路径",
           "公司新闻或财报事件风险上升",
-          "个股 Alpha 评分已接入"
+          "个股 Alpha 评分已接入",
+          "主路径和第二路径差距较小"
         ],
         "main_supporting_evidence": [
-          "基础财务指标偏支持",
-          "历史相似结构支持主路径"
+          "成交量确认当前路径",
+          "基础财务指标偏支持"
         ],
         "market_context": "risk_off_pressure",
         "model_version": "stock_baseline_v1",
@@ -9144,12 +9162,12 @@
           "company_news": "available",
           "earnings": "available"
         },
-        "next_day_move_probability": 0.5852,
-        "one_line_reason": "failed_bounce_risk: Alpha 44 / 弹性 83 / 成交量 0 / 相对强弱 54 / 催化 64 / 大盘 risk_off_pressure / 板块 neutral",
-        "outperformance_probability_20d": 0.5585,
+        "next_day_move_probability": 0.6039,
+        "one_line_reason": "failed_bounce_risk: Alpha 48 / 弹性 53 / 成交量 74 / 相对强弱 54 / 催化 64 / 大盘 risk_off_pressure / 板块 neutral",
+        "outperformance_probability_20d": 0.5745,
         "primary_probability": 0.2647,
         "primary_scenario": "stock_failed_bounce",
-        "radar_level": "WATCH",
+        "radar_level": "MODERATE_OPPORTUNITY",
         "rank": 2,
         "relative_strength_fields": {
           "relative_strength_rank": 54.1,
@@ -9161,19 +9179,19 @@
         "relative_strength_score": 54.1,
         "risk_reward_ratio": 0.53,
         "risk_scenario": "stock_event_risk",
-        "risk_score": 54.71,
+        "risk_score": 48.04,
         "secondary_scenario": "stock_downside_continuation",
         "sector_context": "neutral",
-        "squeeze_proxy_score": 32.99,
+        "squeeze_proxy_score": 44.63,
         "ticker": "NVDA",
         "upside_trigger_level": 243.37,
         "validation_status": "not_yet_validated",
-        "volume_anomaly_score": 0,
+        "volume_anomaly_score": 74.18,
         "volume_fields": {
-          "abnormal_volume_flag": false,
-          "relative_volume_20d": 0.0,
+          "abnormal_volume_flag": true,
+          "relative_volume_20d": 1.0848,
           "relative_volume_5d": null,
-          "volume_z_score": -4.1701
+          "volume_z_score": 0.3798
         },
         "whether_top10_candidate": true
       },
@@ -9191,7 +9209,7 @@
         "candidate_type": "downside_continuation",
         "catalyst_score": 61.35,
         "company_name": "Nuscale Power Corp",
-        "confluence_score": 32.91,
+        "confluence_score": 35.67,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9208,16 +9226,16 @@
           "mid": 7.29,
           "range_pct": 0.0615
         },
-        "final_radar_score": 42.72,
+        "final_radar_score": 52.75,
         "forecast_date": "2026-10-08",
         "invalidation_level": 7.02,
-        "last_close": 7.32,
+        "last_close": 7.320000171661377,
         "logo": null,
         "main_conflicting_evidence": [
           "大盘风险背景压低个股置信度",
           "个股弱于所属板块",
           "价格结构与主路径冲突",
-          "成交量不确认当前路径"
+          "基础财务指标偏弱"
         ],
         "main_supporting_evidence": [
           "主路径概率相对领先"
@@ -9229,12 +9247,12 @@
           "company_news": "available",
           "earnings": "available"
         },
-        "next_day_move_probability": 0.7006,
-        "one_line_reason": "downside_continuation: Alpha 35 / 弹性 100 / 成交量 11 / 相对强弱 5 / 催化 61 / 大盘 risk_off_pressure / 板块 conflicting",
+        "next_day_move_probability": 0.8571,
+        "one_line_reason": "downside_continuation: Alpha 35 / 弹性 100 / 成交量 74 / 相对强弱 5 / 催化 61 / 大盘 risk_off_pressure / 板块 conflicting",
         "outperformance_probability_20d": 0.1818,
         "primary_probability": 0.3405,
         "primary_scenario": "stock_downside_continuation",
-        "radar_level": "WATCH",
+        "radar_level": "MODERATE_OPPORTUNITY",
         "rank": 3,
         "relative_strength_fields": {
           "relative_strength_rank": 5.4,
@@ -9249,16 +9267,16 @@
         "risk_score": 62.09,
         "secondary_scenario": "stock_failed_bounce",
         "sector_context": "conflicting",
-        "squeeze_proxy_score": 58.23,
+        "squeeze_proxy_score": 77.0,
         "ticker": "SMR",
         "upside_trigger_level": 9.77,
         "validation_status": "not_yet_validated",
-        "volume_anomaly_score": 11.17,
+        "volume_anomaly_score": 73.76,
         "volume_fields": {
-          "abnormal_volume_flag": false,
-          "relative_volume_20d": 0.0,
+          "abnormal_volume_flag": true,
+          "relative_volume_20d": 1.1035,
           "relative_volume_5d": null,
-          "volume_z_score": -2.4163
+          "volume_z_score": 0.3204
         },
         "whether_top10_candidate": true
       },
@@ -9276,14 +9294,14 @@
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 63.53,
         "company_name": "Tesla Inc",
-        "confluence_score": 39.73,
+        "confluence_score": 42.79,
         "data_missing": [
           "single_stock_options"
         ],
         "data_quality": 87.5,
         "data_status": "available",
         "downside_risk_level": 345.88,
-        "elasticity_score": 86.7,
+        "elasticity_score": 58.62,
         "expected_next_day_high": 379.89,
         "expected_next_day_low": 369.0,
         "expected_next_day_mid": 374.44,
@@ -9293,16 +9311,16 @@
           "mid": 374.44,
           "range_pct": 0.029
         },
-        "final_radar_score": 39.13,
+        "final_radar_score": 41.17,
         "forecast_date": "2026-10-08",
         "invalidation_level": 345.88,
         "last_close": 375.0,
         "logo": null,
         "main_conflicting_evidence": [
           "大盘风险背景压低个股置信度",
-          "成交量不确认当前路径",
           "个股相对弱于大盘/benchmark",
-          "公司新闻或财报事件风险上升"
+          "公司新闻或财报事件风险上升",
+          "个股 Alpha 评分已接入"
         ],
         "main_supporting_evidence": [
           "个股跑赢所属板块",
@@ -9316,8 +9334,8 @@
           "company_news": "available",
           "earnings": "available"
         },
-        "next_day_move_probability": 0.6039,
-        "one_line_reason": "failed_bounce_risk: Alpha 8 / 弹性 87 / 成交量 0 / 相对强弱 33 / 催化 64 / 大盘 risk_off_pressure / 板块 supportive",
+        "next_day_move_probability": 0.5749,
+        "one_line_reason": "failed_bounce_risk: Alpha 8 / 弹性 59 / 成交量 50 / 相对强弱 33 / 催化 64 / 大盘 risk_off_pressure / 板块 supportive",
         "outperformance_probability_20d": 0.3913,
         "primary_probability": 0.2803,
         "primary_scenario": "stock_failed_bounce",
@@ -9333,19 +9351,19 @@
         "relative_strength_score": 33.39,
         "risk_reward_ratio": 0.45,
         "risk_scenario": "stock_event_risk",
-        "risk_score": 57.44,
+        "risk_score": 51.27,
         "secondary_scenario": "stock_downside_continuation",
         "sector_context": "supportive",
-        "squeeze_proxy_score": 41.26,
+        "squeeze_proxy_score": 46.49,
         "ticker": "TSLA",
         "upside_trigger_level": 386.83,
         "validation_status": "not_yet_validated",
-        "volume_anomaly_score": 0,
+        "volume_anomaly_score": 50.19,
         "volume_fields": {
-          "abnormal_volume_flag": false,
-          "relative_volume_20d": 0.0,
+          "abnormal_volume_flag": true,
+          "relative_volume_20d": 0.7999,
           "relative_volume_5d": null,
-          "volume_z_score": -4.3964
+          "volume_z_score": -0.8866
         },
         "whether_top10_candidate": true
       }
