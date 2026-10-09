@@ -1,20 +1,20 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-09T07:28:26.475669+00:00`
+- generated_at: `2026-10-09T10:57:18.902046+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
-- event_detection_confidence: `73`
+- major_event_count: `14`
+- event_detection_confidence: `72`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
-- price_reaction_confirmed: `True`
-- confirmation_score: `75`
+- price_reaction_confirmed: `False`
+- confirmation_score: `50`
 
 ## Dashboard Note
 
-当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，已被价格反应初步确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
+当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，尚未被价格反应充分确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
 
 ## Economic Calendar Risk
 
@@ -25,27 +25,51 @@
 
 ## Major Events
 
+### geopolitical_risk_escalation / risk_off
+
+- headline: Three Saudi nationals killed in attacks on Riyadh airport, aviation authority says - Reuters
+- source: Reuters
+- published_at: `2026-10-09T08:39:54+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Treasury yields steady as Trump strikes diplomatic tone on Iran ahead of midterms
+- source: CNBC
+- published_at: `2026-10-09T08:24:50+00:00`
+- importance_score: `100`
+- confidence: `high`
+
 ### oil_shock_relief / risk_on
 
 - headline: Oil falls as Trump comments on Iran talks ease supply concerns - Reuters
 - source: Reuters
 - published_at: `2026-10-09T02:28:00+00:00`
-- importance_score: `93`
+- importance_score: `92`
 - confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump says US will not attack Iran before midterm elections in November - Reuters
-- source: Reuters
-- published_at: `2026-10-08T17:22:39+00:00`
-- importance_score: `100`
-- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Lufthansa, Indian airlines suspend flights to Riyadh after Houthi attacks - Reuters
 - source: Reuters
 - published_at: `2026-10-08T16:51:58+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Trump says US will not attack Iran before midterm elections in November - Reuters
+- source: Reuters
+- published_at: `2026-10-08T16:23:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: COMMENTARY: Energy Watch: War within a war - Reuters
+- source: Reuters
+- published_at: `2026-10-08T16:16:20+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -78,29 +102,5 @@
 - headline: Attack risks rise for tankers as Iran vows to block more Hormuz routes - Reuters
 - source: Reuters
 - published_at: `2026-10-08T13:17:53+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump's former defense secretary sees no end in sight for Iran war — to the benefit of America's 'greatest adversary'
-- source: CNBC
-- published_at: `2026-10-08T12:50:51+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Airline chiefs say can't fully guard against rogue pilots after flydubai attack - Reuters
-- source: Reuters
-- published_at: `2026-10-08T12:39:40+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Russia, China hypersonic missile threats fuel need for space defense, satellite CEO says
-- source: CNBC
-- published_at: `2026-10-08T11:04:39+00:00`
 - importance_score: `100`
 - confidence: `medium`
