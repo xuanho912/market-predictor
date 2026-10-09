@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-09T10:57:18.902046+00:00`
+- generated_at: `2026-10-09T18:24:08.693469+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `14`
-- event_detection_confidence: `72`
+- major_event_count: `10`
+- event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `50`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
@@ -24,6 +24,22 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: EU aviation body widens Saudi airspace warning after Houthi strikes - Reuters
+- source: Reuters
+- published_at: `2026-10-09T16:25:01+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Houthi strikes on Riyadh airport killed three Saudis as war escalates - Reuters
+- source: Reuters
+- published_at: `2026-10-09T14:56:54+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -41,13 +57,21 @@
 - importance_score: `100`
 - confidence: `high`
 
-### oil_shock_relief / risk_on
+### geopolitical_risk_escalation / risk_off
 
-- headline: Oil falls as Trump comments on Iran talks ease supply concerns - Reuters
+- headline: Attacks on tankers in Hormuz hit highest of any week since start of Iran war, sources say - Reuters
 - source: Reuters
-- published_at: `2026-10-09T02:28:00+00:00`
-- importance_score: `92`
+- published_at: `2026-10-08T23:44:35+00:00`
+- importance_score: `100`
 - confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: PODCAST: Trump pauses Iran strikes, Microsoft visa suspension, French mayor (Updated) - Reuters
+- source: Reuters
+- published_at: `2026-10-08T20:20:21+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,6 +79,14 @@
 - source: Reuters
 - published_at: `2026-10-08T16:51:58+00:00`
 - importance_score: `100`
+- confidence: `medium`
+
+### oil_shock_relief / risk_on
+
+- headline: Oil falls as Trump comments on Iran talks ease supply fears - Reuters
+- source: Reuters
+- published_at: `2026-10-09T02:28:00+00:00`
+- importance_score: `90`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
@@ -70,37 +102,5 @@
 - headline: COMMENTARY: Energy Watch: War within a war - Reuters
 - source: Reuters
 - published_at: `2026-10-08T16:16:20+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Asia races to stockpile oil, speed up renewables in response to Iran war - Reuters
-- source: Reuters
-- published_at: `2026-10-08T14:36:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Turkey says Russia, Ukraine increasing attacks in Black Sea ahead of winter - Reuters
-- source: Reuters
-- published_at: `2026-10-08T13:33:44+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Most Gulf bourses end lower as Hormuz attacks hit wartime peak - Reuters
-- source: Reuters
-- published_at: `2026-10-08T13:23:29+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Attack risks rise for tankers as Iran vows to block more Hormuz routes - Reuters
-- source: Reuters
-- published_at: `2026-10-08T13:17:53+00:00`
 - importance_score: `100`
 - confidence: `medium`
