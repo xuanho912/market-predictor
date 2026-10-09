@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-09T02:57:19.761176+00:00`
+- generated_at: `2026-10-09T07:28:26.475669+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `12`
-- event_detection_confidence: `75`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -25,12 +25,12 @@
 
 ## Major Events
 
-### geopolitical_risk_escalation / risk_off
+### oil_shock_relief / risk_on
 
-- headline: Plane damaged at Riyadh airport as Houthis escalate attacks, sources say - Reuters
+- headline: Oil falls as Trump comments on Iran talks ease supply concerns - Reuters
 - source: Reuters
-- published_at: `2026-10-08T18:42:35+00:00`
-- importance_score: `100`
+- published_at: `2026-10-09T02:28:00+00:00`
+- importance_score: `93`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -39,7 +39,7 @@
 - source: Reuters
 - published_at: `2026-10-08T17:22:39+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,13 +47,13 @@
 - source: Reuters
 - published_at: `2026-10-08T16:51:58+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Asia races to stockpile oil, speed up renewables in response to Iran war - Reuters
 - source: Reuters
-- published_at: `2026-10-08T14:56:09+00:00`
+- published_at: `2026-10-08T14:36:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 

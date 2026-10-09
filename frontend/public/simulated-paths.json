@@ -1,14 +1,19 @@
 {
   "as_of": "2026-10-08",
   "data_freshness_status": {
-    "affected_symbols": [],
-    "can_append_forecast_record": true,
+    "affected_symbols": [
+      "SPY",
+      "QQQ",
+      "IWM",
+      "DIA"
+    ],
+    "can_append_forecast_record": false,
     "can_backfill_completed_outcomes": true,
-    "current_date": "2026-10-08",
-    "current_time_us_eastern": "2026-10-08T22:57:28.950168-04:00",
-    "data_freshness_status": "fresh",
+    "current_date": "2026-10-09",
+    "current_time_us_eastern": "2026-10-09T03:28:35.591094-04:00",
+    "data_freshness_status": "market_open_unconfirmed",
     "expected_latest_trading_date": "2026-10-08",
-    "generated_at": "2026-10-09T02:57:28.950168+00:00",
+    "generated_at": "2026-10-09T07:28:35.591094+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -22,7 +27,7 @@
     "last_successful_update": "2026-10-08",
     "latest_confirmed_market_date": "2026-10-08",
     "latest_market_date": "2026-10-08",
-    "latest_market_session_status": "completed_or_prior_session",
+    "latest_market_session_status": "intraday_unconfirmed",
     "provider_status": {
       "BAA_SPREAD": {
         "fallback_used": false,
@@ -939,7 +944,7 @@
     },
     "stale_days": 0,
     "version": "data_freshness_gate_v3",
-    "warning_message": "核心行情已更新至最新应有交易日 2026-10-08。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。"
+    "warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-10-08，最近完整收盘交易日为 2026-10-08；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。"
   },
   "data_quality_summary": {
     "average_breadth_quality_score": 67.0,
@@ -960,10 +965,10 @@
       "IWM"
     ],
     "breadth_required": true,
-    "can_append_forecast_record": true,
+    "can_append_forecast_record": false,
     "data_completeness_score": 87.0,
     "data_completeness_score_before_news_event": 85.0,
-    "data_freshness_status": "fresh",
+    "data_freshness_status": "market_open_unconfirmed",
     "data_source_status": "real_core_with_proxies",
     "expected_latest_trading_date": "2026-10-08",
     "fallback_used": true,
@@ -1047,17 +1052,17 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "HY_OAS",
+      "DGS3MO",
+      "DGS10",
+      "IG_OAS",
       "BAA_SPREAD",
       "DGS2",
-      "DGS10",
-      "DGS3MO",
-      "IG_OAS",
-      "RECESSION",
+      "HY_OAS",
+      "FINANCIAL_STRESS",
       "DFII10",
-      "FINANCIAL_STRESS"
+      "RECESSION"
     ],
-    "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-10-08。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
+    "freshness_warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-10-08，最近完整收盘交易日为 2026-10-08；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
     "gamma_available": false,
     "gamma_exposure_available": false,
     "latest_confirmed_market_date": "2026-10-08",
@@ -1086,10 +1091,10 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 75,
+      "event_detection_confidence": 73,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-10-09T02:57:19.761176+00:00",
+      "last_update": "2026-10-09T07:28:26.475669+00:00",
       "major_event_count": 12,
       "missing_reason": null,
       "news_direction": "risk_off",
@@ -1164,12 +1169,24 @@
       ],
       "conflicting_headlines": [
         {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "oil_shock_relief"
+          ],
+          "event_type": "oil_shock_relief",
+          "expected_market_direction": "risk_on",
+          "headline": "Oil falls as Trump comments on Iran talks ease supply concerns - Reuters",
+          "importance_score": 93,
+          "published_at": "2026-10-09T02:28:00+00:00",
+          "source": "Reuters"
+        },
+        {
           "confidence": "medium",
           "detected_event_conditions": [],
           "event_type": "fed_dovish",
           "expected_market_direction": "risk_on",
           "headline": "Options traders start calling bottom on bond rout after 'bullet bid' 10-year auction",
-          "importance_score": 84,
+          "importance_score": 83,
           "published_at": "2026-10-08T13:29:52+00:00",
           "source": "CNBC"
         }
@@ -1183,19 +1200,7 @@
       "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
       "supporting_headlines": [
         {
-          "confidence": "high",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Plane damaged at Riyadh airport as Houthis escalate attacks, sources say - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-10-08T18:42:35+00:00",
-          "source": "Reuters"
-        },
-        {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -1207,7 +1212,7 @@
           "source": "Reuters"
         },
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -1227,7 +1232,7 @@
           "expected_market_direction": "risk_off",
           "headline": "Asia races to stockpile oil, speed up renewables in response to Iran war - Reuters",
           "importance_score": 100,
-          "published_at": "2026-10-08T14:56:09+00:00",
+          "published_at": "2026-10-08T14:36:00+00:00",
           "source": "Reuters"
         },
         {
@@ -1252,6 +1257,18 @@
           "headline": "Most Gulf bourses end lower as Hormuz attacks hit wartime peak - Reuters",
           "importance_score": 100,
           "published_at": "2026-10-08T13:23:29+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "medium",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
+          "headline": "Attack risks rise for tankers as Iran vows to block more Hormuz routes - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-10-08T13:17:53+00:00",
           "source": "Reuters"
         }
       ]
@@ -1417,7 +1434,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": -0.0042,
-        "avg_equity_futures_1d_return": 0.0029,
+        "avg_equity_futures_1d_return": 0.0036,
         "confirmed_checks": [
           "股票ETF或股指期货下跌",
           "VIX 上升",
@@ -1433,7 +1450,7 @@
           "美元走强"
         ],
         "hyg_lqd_1d_relative_return": -0.0041,
-        "oil_proxy_1d_return": 0.0093,
+        "oil_proxy_1d_return": 0.0101,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -1959,6 +1976,7 @@
     },
     "version": "shadow_evidence_v1"
   },
+  "status_note": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-10-08，最近完整收盘交易日为 2026-10-08；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
   "symbols": {
     "DIA": {
       "analog_path_weight": 0.2483,
@@ -2307,11 +2325,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.2,
           "top_headlines": [
-            "Trump says comment that Iran could 'take out' Los Angeles was misinterpreted - Reuters",
-            "Treasury yields are 'really, really high,' but can come down soon, Bessent's new adviser says",
-            "New data shows Starbucks turnaround is working, but Chipotle takeover report slams shares",
-            "We're buying the dip in a stock being punished for something it's actually insulated from",
-            "Plane damaged at Riyadh airport as Houthis escalate attacks, sources say - Reuters"
+            "Scenes from across France as student protests spread - Reuters",
+            "China to resume October fuel exports after a brief halt, four trade sources say - Reuters",
+            "Oil falls as Trump comments on Iran talks ease supply concerns - Reuters",
+            "Gold rises more than 1%, Fed outlook in focus - Reuters",
+            "Trump says comment that Iran could 'take out' Los Angeles was misinterpreted - Reuters"
           ]
         },
         "price": {
@@ -3649,25 +3667,25 @@
               "QQQ",
               "IWM",
               "DIA",
-              "^VIX",
               "USO",
-              "UUP",
-              "TLT"
+              "CL=F",
+              "XLE",
+              "^VIX"
             ],
             "confidence": "high",
-            "confidence_score": 77,
+            "confidence_score": 79,
             "detected_event_conditions": [
-              "geopolitical_risk_escalation"
+              "oil_shock_relief"
             ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 80,
-            "headline": "Plane damaged at Riyadh airport as Houthis escalate attacks, sources say - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
+            "event_type": "oil_shock_relief",
+            "expected_horizon": "1d-5d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 88,
+            "headline": "Oil falls as Trump comments on Iran talks ease supply concerns - Reuters",
+            "importance_score": 93,
+            "narrative": "oil_relief_rally",
             "provider": "finnhub",
-            "published_at": "2026-10-08T18:42:35+00:00",
+            "published_at": "2026-10-09T02:28:00+00:00",
             "source": "Reuters"
           },
           {
@@ -3681,15 +3699,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 76,
+            "confidence": "medium",
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 66,
             "headline": "Trump says US will not attack Iran before midterm elections in November - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3708,15 +3726,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 76,
+            "confidence": "medium",
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 76,
+            "freshness_score": 65,
             "headline": "Lufthansa, Indian airlines suspend flights to Riyadh after Houthi attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3736,19 +3754,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 71,
+            "freshness_score": 60,
             "headline": "Asia races to stockpile oil, speed up renewables in response to Iran war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-08T14:56:09+00:00",
+            "published_at": "2026-10-08T14:36:00+00:00",
             "source": "Reuters"
           },
           {
@@ -3763,14 +3781,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 71,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 68,
+            "freshness_score": 57,
             "headline": "Turkey says Russia, Ukraine increasing attacks in Black Sea ahead of winter - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3790,14 +3808,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 91,
+            "confidence_score": 89,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 67,
+            "freshness_score": 57,
             "headline": "Most Gulf bourses end lower as Hormuz attacks hit wartime peak - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3818,12 +3836,24 @@
           ],
           "conflicting_headlines": [
             {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "oil_shock_relief"
+              ],
+              "event_type": "oil_shock_relief",
+              "expected_market_direction": "risk_on",
+              "headline": "Oil falls as Trump comments on Iran talks ease supply concerns - Reuters",
+              "importance_score": 93,
+              "published_at": "2026-10-09T02:28:00+00:00",
+              "source": "Reuters"
+            },
+            {
               "confidence": "medium",
               "detected_event_conditions": [],
               "event_type": "fed_dovish",
               "expected_market_direction": "risk_on",
               "headline": "Options traders start calling bottom on bond rout after 'bullet bid' 10-year auction",
-              "importance_score": 84,
+              "importance_score": 83,
               "published_at": "2026-10-08T13:29:52+00:00",
               "source": "CNBC"
             }
@@ -3837,19 +3867,7 @@
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
             {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Plane damaged at Riyadh airport as Houthis escalate attacks, sources say - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-10-08T18:42:35+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -3861,7 +3879,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -3881,7 +3899,7 @@
               "expected_market_direction": "risk_off",
               "headline": "Asia races to stockpile oil, speed up renewables in response to Iran war - Reuters",
               "importance_score": 100,
-              "published_at": "2026-10-08T14:56:09+00:00",
+              "published_at": "2026-10-08T14:36:00+00:00",
               "source": "Reuters"
             },
             {
@@ -3906,6 +3924,18 @@
               "headline": "Most Gulf bourses end lower as Hormuz attacks hit wartime peak - Reuters",
               "importance_score": 100,
               "published_at": "2026-10-08T13:23:29+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Attack risks rise for tankers as Iran vows to block more Hormuz routes - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-08T13:17:53+00:00",
               "source": "Reuters"
             }
           ]
@@ -3950,7 +3980,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0042,
-            "avg_equity_futures_1d_return": 0.0029,
+            "avg_equity_futures_1d_return": 0.0036,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -3966,7 +3996,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0041,
-            "oil_proxy_1d_return": 0.0093,
+            "oil_proxy_1d_return": 0.0101,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -6447,11 +6477,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.2,
           "top_headlines": [
-            "Trump says comment that Iran could 'take out' Los Angeles was misinterpreted - Reuters",
-            "Treasury yields are 'really, really high,' but can come down soon, Bessent's new adviser says",
-            "New data shows Starbucks turnaround is working, but Chipotle takeover report slams shares",
-            "We're buying the dip in a stock being punished for something it's actually insulated from",
-            "Plane damaged at Riyadh airport as Houthis escalate attacks, sources say - Reuters"
+            "Scenes from across France as student protests spread - Reuters",
+            "China to resume October fuel exports after a brief halt, four trade sources say - Reuters",
+            "Oil falls as Trump comments on Iran talks ease supply concerns - Reuters",
+            "Gold rises more than 1%, Fed outlook in focus - Reuters",
+            "Trump says comment that Iran could 'take out' Los Angeles was misinterpreted - Reuters"
           ]
         },
         "price": {
@@ -7796,25 +7826,25 @@
               "QQQ",
               "IWM",
               "DIA",
-              "^VIX",
               "USO",
-              "UUP",
-              "TLT"
+              "CL=F",
+              "XLE",
+              "^VIX"
             ],
             "confidence": "high",
-            "confidence_score": 77,
+            "confidence_score": 79,
             "detected_event_conditions": [
-              "geopolitical_risk_escalation"
+              "oil_shock_relief"
             ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 80,
-            "headline": "Plane damaged at Riyadh airport as Houthis escalate attacks, sources say - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
+            "event_type": "oil_shock_relief",
+            "expected_horizon": "1d-5d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 88,
+            "headline": "Oil falls as Trump comments on Iran talks ease supply concerns - Reuters",
+            "importance_score": 93,
+            "narrative": "oil_relief_rally",
             "provider": "finnhub",
-            "published_at": "2026-10-08T18:42:35+00:00",
+            "published_at": "2026-10-09T02:28:00+00:00",
             "source": "Reuters"
           },
           {
@@ -7828,15 +7858,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 76,
+            "confidence": "medium",
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 66,
             "headline": "Trump says US will not attack Iran before midterm elections in November - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7855,15 +7885,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 76,
+            "confidence": "medium",
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 76,
+            "freshness_score": 65,
             "headline": "Lufthansa, Indian airlines suspend flights to Riyadh after Houthi attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7883,19 +7913,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 71,
+            "freshness_score": 60,
             "headline": "Asia races to stockpile oil, speed up renewables in response to Iran war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-08T14:56:09+00:00",
+            "published_at": "2026-10-08T14:36:00+00:00",
             "source": "Reuters"
           },
           {
@@ -7910,14 +7940,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 71,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 68,
+            "freshness_score": 57,
             "headline": "Turkey says Russia, Ukraine increasing attacks in Black Sea ahead of winter - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7937,14 +7967,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 91,
+            "confidence_score": 89,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 67,
+            "freshness_score": 57,
             "headline": "Most Gulf bourses end lower as Hormuz attacks hit wartime peak - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7965,12 +7995,24 @@
           ],
           "conflicting_headlines": [
             {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "oil_shock_relief"
+              ],
+              "event_type": "oil_shock_relief",
+              "expected_market_direction": "risk_on",
+              "headline": "Oil falls as Trump comments on Iran talks ease supply concerns - Reuters",
+              "importance_score": 93,
+              "published_at": "2026-10-09T02:28:00+00:00",
+              "source": "Reuters"
+            },
+            {
               "confidence": "medium",
               "detected_event_conditions": [],
               "event_type": "fed_dovish",
               "expected_market_direction": "risk_on",
               "headline": "Options traders start calling bottom on bond rout after 'bullet bid' 10-year auction",
-              "importance_score": 84,
+              "importance_score": 83,
               "published_at": "2026-10-08T13:29:52+00:00",
               "source": "CNBC"
             }
@@ -7984,19 +8026,7 @@
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
             {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Plane damaged at Riyadh airport as Houthis escalate attacks, sources say - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-10-08T18:42:35+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -8008,7 +8038,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -8028,7 +8058,7 @@
               "expected_market_direction": "risk_off",
               "headline": "Asia races to stockpile oil, speed up renewables in response to Iran war - Reuters",
               "importance_score": 100,
-              "published_at": "2026-10-08T14:56:09+00:00",
+              "published_at": "2026-10-08T14:36:00+00:00",
               "source": "Reuters"
             },
             {
@@ -8053,6 +8083,18 @@
               "headline": "Most Gulf bourses end lower as Hormuz attacks hit wartime peak - Reuters",
               "importance_score": 100,
               "published_at": "2026-10-08T13:23:29+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Attack risks rise for tankers as Iran vows to block more Hormuz routes - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-08T13:17:53+00:00",
               "source": "Reuters"
             }
           ]
@@ -8097,7 +8139,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0042,
-            "avg_equity_futures_1d_return": 0.0029,
+            "avg_equity_futures_1d_return": 0.0036,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -8113,7 +8155,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0041,
-            "oil_proxy_1d_return": 0.0093,
+            "oil_proxy_1d_return": 0.0101,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -10627,11 +10669,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.2,
           "top_headlines": [
-            "Trump says comment that Iran could 'take out' Los Angeles was misinterpreted - Reuters",
-            "Treasury yields are 'really, really high,' but can come down soon, Bessent's new adviser says",
-            "New data shows Starbucks turnaround is working, but Chipotle takeover report slams shares",
-            "We're buying the dip in a stock being punished for something it's actually insulated from",
-            "Plane damaged at Riyadh airport as Houthis escalate attacks, sources say - Reuters"
+            "Scenes from across France as student protests spread - Reuters",
+            "China to resume October fuel exports after a brief halt, four trade sources say - Reuters",
+            "Oil falls as Trump comments on Iran talks ease supply concerns - Reuters",
+            "Gold rises more than 1%, Fed outlook in focus - Reuters",
+            "Trump says comment that Iran could 'take out' Los Angeles was misinterpreted - Reuters"
           ]
         },
         "price": {
@@ -11955,25 +11997,25 @@
               "QQQ",
               "IWM",
               "DIA",
-              "^VIX",
               "USO",
-              "UUP",
-              "TLT"
+              "CL=F",
+              "XLE",
+              "^VIX"
             ],
             "confidence": "high",
-            "confidence_score": 77,
+            "confidence_score": 79,
             "detected_event_conditions": [
-              "geopolitical_risk_escalation"
+              "oil_shock_relief"
             ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 80,
-            "headline": "Plane damaged at Riyadh airport as Houthis escalate attacks, sources say - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
+            "event_type": "oil_shock_relief",
+            "expected_horizon": "1d-5d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 88,
+            "headline": "Oil falls as Trump comments on Iran talks ease supply concerns - Reuters",
+            "importance_score": 93,
+            "narrative": "oil_relief_rally",
             "provider": "finnhub",
-            "published_at": "2026-10-08T18:42:35+00:00",
+            "published_at": "2026-10-09T02:28:00+00:00",
             "source": "Reuters"
           },
           {
@@ -11987,15 +12029,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 76,
+            "confidence": "medium",
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 66,
             "headline": "Trump says US will not attack Iran before midterm elections in November - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12014,15 +12056,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 76,
+            "confidence": "medium",
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 76,
+            "freshness_score": 65,
             "headline": "Lufthansa, Indian airlines suspend flights to Riyadh after Houthi attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12042,19 +12084,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 71,
+            "freshness_score": 60,
             "headline": "Asia races to stockpile oil, speed up renewables in response to Iran war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-08T14:56:09+00:00",
+            "published_at": "2026-10-08T14:36:00+00:00",
             "source": "Reuters"
           },
           {
@@ -12069,14 +12111,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 71,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 68,
+            "freshness_score": 57,
             "headline": "Turkey says Russia, Ukraine increasing attacks in Black Sea ahead of winter - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12096,14 +12138,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 91,
+            "confidence_score": 89,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 67,
+            "freshness_score": 57,
             "headline": "Most Gulf bourses end lower as Hormuz attacks hit wartime peak - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12124,12 +12166,24 @@
           ],
           "conflicting_headlines": [
             {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "oil_shock_relief"
+              ],
+              "event_type": "oil_shock_relief",
+              "expected_market_direction": "risk_on",
+              "headline": "Oil falls as Trump comments on Iran talks ease supply concerns - Reuters",
+              "importance_score": 93,
+              "published_at": "2026-10-09T02:28:00+00:00",
+              "source": "Reuters"
+            },
+            {
               "confidence": "medium",
               "detected_event_conditions": [],
               "event_type": "fed_dovish",
               "expected_market_direction": "risk_on",
               "headline": "Options traders start calling bottom on bond rout after 'bullet bid' 10-year auction",
-              "importance_score": 84,
+              "importance_score": 83,
               "published_at": "2026-10-08T13:29:52+00:00",
               "source": "CNBC"
             }
@@ -12143,19 +12197,7 @@
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
             {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Plane damaged at Riyadh airport as Houthis escalate attacks, sources say - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-10-08T18:42:35+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -12167,7 +12209,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -12187,7 +12229,7 @@
               "expected_market_direction": "risk_off",
               "headline": "Asia races to stockpile oil, speed up renewables in response to Iran war - Reuters",
               "importance_score": 100,
-              "published_at": "2026-10-08T14:56:09+00:00",
+              "published_at": "2026-10-08T14:36:00+00:00",
               "source": "Reuters"
             },
             {
@@ -12212,6 +12254,18 @@
               "headline": "Most Gulf bourses end lower as Hormuz attacks hit wartime peak - Reuters",
               "importance_score": 100,
               "published_at": "2026-10-08T13:23:29+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Attack risks rise for tankers as Iran vows to block more Hormuz routes - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-08T13:17:53+00:00",
               "source": "Reuters"
             }
           ]
@@ -12256,7 +12310,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0042,
-            "avg_equity_futures_1d_return": 0.0029,
+            "avg_equity_futures_1d_return": 0.0036,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -12272,7 +12326,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0041,
-            "oil_proxy_1d_return": 0.0093,
+            "oil_proxy_1d_return": 0.0101,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -14776,11 +14830,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.2,
           "top_headlines": [
-            "Trump says comment that Iran could 'take out' Los Angeles was misinterpreted - Reuters",
-            "Treasury yields are 'really, really high,' but can come down soon, Bessent's new adviser says",
-            "New data shows Starbucks turnaround is working, but Chipotle takeover report slams shares",
-            "We're buying the dip in a stock being punished for something it's actually insulated from",
-            "Plane damaged at Riyadh airport as Houthis escalate attacks, sources say - Reuters"
+            "Scenes from across France as student protests spread - Reuters",
+            "China to resume October fuel exports after a brief halt, four trade sources say - Reuters",
+            "Oil falls as Trump comments on Iran talks ease supply concerns - Reuters",
+            "Gold rises more than 1%, Fed outlook in focus - Reuters",
+            "Trump says comment that Iran could 'take out' Los Angeles was misinterpreted - Reuters"
           ]
         },
         "price": {
@@ -16095,25 +16149,25 @@
               "QQQ",
               "IWM",
               "DIA",
-              "^VIX",
               "USO",
-              "UUP",
-              "TLT"
+              "CL=F",
+              "XLE",
+              "^VIX"
             ],
             "confidence": "high",
-            "confidence_score": 77,
+            "confidence_score": 79,
             "detected_event_conditions": [
-              "geopolitical_risk_escalation"
+              "oil_shock_relief"
             ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 80,
-            "headline": "Plane damaged at Riyadh airport as Houthis escalate attacks, sources say - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
+            "event_type": "oil_shock_relief",
+            "expected_horizon": "1d-5d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 88,
+            "headline": "Oil falls as Trump comments on Iran talks ease supply concerns - Reuters",
+            "importance_score": 93,
+            "narrative": "oil_relief_rally",
             "provider": "finnhub",
-            "published_at": "2026-10-08T18:42:35+00:00",
+            "published_at": "2026-10-09T02:28:00+00:00",
             "source": "Reuters"
           },
           {
@@ -16127,15 +16181,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 76,
+            "confidence": "medium",
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 66,
             "headline": "Trump says US will not attack Iran before midterm elections in November - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16154,15 +16208,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 76,
+            "confidence": "medium",
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 76,
+            "freshness_score": 65,
             "headline": "Lufthansa, Indian airlines suspend flights to Riyadh after Houthi attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16182,19 +16236,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 71,
+            "freshness_score": 60,
             "headline": "Asia races to stockpile oil, speed up renewables in response to Iran war - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-08T14:56:09+00:00",
+            "published_at": "2026-10-08T14:36:00+00:00",
             "source": "Reuters"
           },
           {
@@ -16209,14 +16263,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 71,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 68,
+            "freshness_score": 57,
             "headline": "Turkey says Russia, Ukraine increasing attacks in Black Sea ahead of winter - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16236,14 +16290,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 91,
+            "confidence_score": 89,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 67,
+            "freshness_score": 57,
             "headline": "Most Gulf bourses end lower as Hormuz attacks hit wartime peak - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16264,12 +16318,24 @@
           ],
           "conflicting_headlines": [
             {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "oil_shock_relief"
+              ],
+              "event_type": "oil_shock_relief",
+              "expected_market_direction": "risk_on",
+              "headline": "Oil falls as Trump comments on Iran talks ease supply concerns - Reuters",
+              "importance_score": 93,
+              "published_at": "2026-10-09T02:28:00+00:00",
+              "source": "Reuters"
+            },
+            {
               "confidence": "medium",
               "detected_event_conditions": [],
               "event_type": "fed_dovish",
               "expected_market_direction": "risk_on",
               "headline": "Options traders start calling bottom on bond rout after 'bullet bid' 10-year auction",
-              "importance_score": 84,
+              "importance_score": 83,
               "published_at": "2026-10-08T13:29:52+00:00",
               "source": "CNBC"
             }
@@ -16283,19 +16349,7 @@
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
             {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Plane damaged at Riyadh airport as Houthis escalate attacks, sources say - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-10-08T18:42:35+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -16307,7 +16361,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -16327,7 +16381,7 @@
               "expected_market_direction": "risk_off",
               "headline": "Asia races to stockpile oil, speed up renewables in response to Iran war - Reuters",
               "importance_score": 100,
-              "published_at": "2026-10-08T14:56:09+00:00",
+              "published_at": "2026-10-08T14:36:00+00:00",
               "source": "Reuters"
             },
             {
@@ -16352,6 +16406,18 @@
               "headline": "Most Gulf bourses end lower as Hormuz attacks hit wartime peak - Reuters",
               "importance_score": 100,
               "published_at": "2026-10-08T13:23:29+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Attack risks rise for tankers as Iran vows to block more Hormuz routes - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-08T13:17:53+00:00",
               "source": "Reuters"
             }
           ]
@@ -16396,7 +16462,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0042,
-            "avg_equity_futures_1d_return": 0.0029,
+            "avg_equity_futures_1d_return": 0.0036,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -16412,7 +16478,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0041,
-            "oil_proxy_1d_return": 0.0093,
+            "oil_proxy_1d_return": 0.0101,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
