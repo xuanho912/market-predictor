@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-10-09T01:25:59.234070+00:00",
+  "generated_at": "2026-10-09T02:38:19.226441+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-10-09T01:25:59.279659+00:00",
+    "generated_at": "2026-10-09T02:38:19.272736+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 333,
     "risk_score_effectiveness": {
@@ -289,9 +289,9 @@
             }
           ],
           "major_company_headline": "Constellation Energy (CEG): Is the Google Nuclear Deal a Game Changer?",
-          "news_count_24h": 7,
+          "news_count_24h": 6,
           "news_count_72h": 20,
-          "news_risk_score": 76.0,
+          "news_risk_score": 68.0,
           "news_sentiment": "neutral"
         },
         "price_trend": {
@@ -730,13 +730,13 @@
       "market_context_for_stock": {
         "benchmark": "SPY",
         "benchmark_edge_status": "RISK_WARNING",
-        "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.3182,
-        "benchmark_primary_scenario": "bounce_path",
+        "benchmark_market_state": "failed_bounce_risk",
+        "benchmark_primary_probability": 0.3341,
+        "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
         "risk_alert_level": "WARNING",
-        "risk_alert_type": "Trend Repair Alert",
+        "risk_alert_type": "Bounce Setup Alert",
         "symbol": "CEG"
       },
       "missing_data": [
@@ -1852,7 +1852,7 @@
           {
             "affected_ticker": "CEG",
             "alert_level": "NO_ALERT",
-            "alert_score": 7.34,
+            "alert_score": 7.26,
             "alert_type": "Stock Bounce Setup",
             "confirmation_needed": [
               "价格站上主路径确认价",
@@ -2330,8 +2330,8 @@
           },
           "news_event": {
             "evidence": "公司新闻或财报事件风险上升",
-            "reason": "risk_score=76.0; earnings_date=2026-11-04",
-            "score": 69.32,
+            "reason": "risk_score=68.0; earnings_date=2026-11-04",
+            "score": 66.76,
             "status": "conflicting"
           },
           "options_volatility": {
@@ -2366,7 +2366,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 45.86,
+        "stock_confluence_score": 45.67,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "个股跑赢所属板块",
@@ -2448,10 +2448,34 @@
           "event_risk_flag": "high",
           "headlines": [
             {
+              "datetime": 1791508021,
+              "headline": "Is a Berkshire Hathaway Class A Stock Split Finally Coming?",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=3f8de2b3bafa23713f462efc835daeb27fef7a222b63b09ad67461b58a012929"
+            },
+            {
+              "datetime": 1791507780,
+              "headline": "AMD CEO delivers stark warning on chip market’s future",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=dd4e4eee517fc2d9be85a0f25db35c688051272177d74e18221311d5363a8be8"
+            },
+            {
+              "datetime": 1791505816,
+              "headline": "Ray Dalio Says AI Bubble Is ‘Close’ to Bursting as Debt and Rising Rates Raise Red Flags",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=a1804afae340575bf6db246ba9d603271ad7bda69c028364f9adaea74f7ef83d"
+            },
+            {
               "datetime": 1791504180,
               "headline": "TSMC's $46.7 billion quarter leaves 1 question for investors",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=8b6bcbe59f25de334e8fbb3fe8176075c3a7ef1ae1abc56ba9095760db78df40"
+            },
+            {
+              "datetime": 1791504009,
+              "headline": "Why Nvidia (NVDA) Stock Is Trading Lower Today",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=ad3d16e6ca9dedbf051f0b742165674b8425001b85c5ee41a6d5d48b7f6ffa4e"
             },
             {
               "datetime": 1791502020,
@@ -2470,33 +2494,9 @@
               "headline": "History Says Every S&P 500 Bull Market That Reached Its 4th Birthday Kept Going",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=a0e17342368a11b6ec54a38e23a786b4ec7a7b33285b9f8a8e9186dfdc3b15f4"
-            },
-            {
-              "datetime": 1791500119,
-              "headline": "Nasdaq 100 Ends Lower As Report Of Weaker-Than-Expected OpenAI Revenue Drags Chipmakers — NVDA, DIS, ORCL, SBUX In Focus",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=dc1918cd0feb30add5eacf5d2b3e01797f856a03f979aebef0e228fc128111a6"
-            },
-            {
-              "datetime": 1791498826,
-              "headline": "Amazon (AMZN) Is Spending Billions on AI and Driver Pay. Will the Investments Pay Off?",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=480d0278e9415f67fb08a7d9aba8ba0ac1c14e9325a7def6614f556a719e3876"
-            },
-            {
-              "datetime": 1791498627,
-              "headline": "Hyperliquid Won Perpetuals. After $536 Million of Options Traded in September, Can It Win Options Too?",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=1b961ef91b71ee677cdc0fbfec6d4e4599d1e748603729505738cfca96546692"
-            },
-            {
-              "datetime": 1791498420,
-              "headline": "Bitdeer AI Expands Southeast Asia Footprint with A901, a New 67MW AI Data Center Campus in Malaysia; Active AI Cloud Pipeline Exceeds $10 Billion",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=68ad2f80bce0cf35085a3d3b2f60a1cc88a82d5d091b2de067f7fc2e9e7437ce"
             }
           ],
-          "major_company_headline": "TSMC's $46.7 billion quarter leaves 1 question for investors",
+          "major_company_headline": "Is a Berkshire Hathaway Class A Stock Split Finally Coming?",
           "news_count_24h": 20,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
@@ -2939,8 +2939,8 @@
       "market_context_for_stock": {
         "benchmark": "QQQ",
         "benchmark_edge_status": "RISK_WARNING",
-        "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.3256,
+        "benchmark_market_state": "failed_bounce_risk",
+        "benchmark_primary_probability": 0.3368,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -4357,7 +4357,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: TSMC's $46.7 billion quarter leaves 1 question for investors",
+              "公司新闻已接入: Is a Berkshire Hathaway Class A Stock Split Finally Coming?",
               "增长数据具备 EPS 上修叙事基础"
             ],
             "max_points": 10,
@@ -4473,7 +4473,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "TSMC's $46.7 billion quarter leaves 1 question for investors",
+          "catalyst": "Is a Berkshire Hathaway Class A Stock Split Finally Coming?",
           "expectation_gap": [
             "收入增长较强，具备正向预期差基础",
             "EPS 增长较强，可能支持盈利上修叙事"
@@ -7341,8 +7341,8 @@
       "market_context_for_stock": {
         "benchmark": "QQQ",
         "benchmark_edge_status": "RISK_WARNING",
-        "benchmark_market_state": "recovery",
-        "benchmark_primary_probability": 0.3256,
+        "benchmark_market_state": "failed_bounce_risk",
+        "benchmark_primary_probability": 0.3368,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -9014,7 +9014,7 @@
       "top_candidate": "CEG",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-10-09T01:25:59.266088+00:00",
+    "generated_at": "2026-10-09T02:38:19.258922+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -9036,7 +9036,7 @@
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 64.71,
         "company_name": "Constellation Energy Corp",
-        "confluence_score": 45.86,
+        "confluence_score": 45.67,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9053,7 +9053,7 @@
           "mid": 284.49,
           "range_pct": 0.05
         },
-        "final_radar_score": 63.39,
+        "final_radar_score": 63.37,
         "forecast_date": "2026-10-08",
         "invalidation_level": 247.2,
         "last_close": 285.07000732421875,
