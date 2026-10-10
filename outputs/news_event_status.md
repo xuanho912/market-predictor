@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-10T02:17:50.376242+00:00`
+- generated_at: `2026-10-10T07:13:28.065973+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
-- event_detection_confidence: `77`
+- major_event_count: `8`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -47,7 +47,7 @@
 - source: Reuters
 - published_at: `2026-10-09T14:40:22+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -65,18 +65,26 @@
 - importance_score: `100`
 - confidence: `medium`
 
+### geopolitical_risk_escalation / risk_off
+
+- headline: IRDAI may roll out insurance commission caps as early as January
+- source: Bloomberg
+- published_at: `2026-10-09T02:55:23+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
 ### fed_dovish / risk_on
 
 - headline: UAE stocks end mixed as easing Iran tensions lift Dubai - Reuters
 - source: Reuters
 - published_at: `2026-10-09T12:28:09+00:00`
-- importance_score: `84`
+- importance_score: `82`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
+### fed_dovish / risk_on
 
-- headline: PODCAST: Trump pauses Iran strikes, Microsoft visa suspension, French mayor (Updated) - Reuters
-- source: Reuters
-- published_at: `2026-10-08T20:20:21+00:00`
-- importance_score: `100`
+- headline: Netflix, streaming rivals dominate $6 billion Asia sports arena
+- source: Bloomberg
+- published_at: `2026-10-09T05:03:28+00:00`
+- importance_score: `81`
 - confidence: `medium`
