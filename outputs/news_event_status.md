@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-10T10:09:21.941897+00:00`
+- generated_at: `2026-10-10T17:23:59.269059+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
+- major_event_count: `8`
 - event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Major Saudi conferences to proceed, organisers say, despite deadly airport attack - Reuters
+- source: Reuters
+- published_at: `2026-10-10T11:33:43+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -73,26 +81,10 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
-
-- headline: IRDAI may roll out insurance commission caps as early as January
-- source: Bloomberg
-- published_at: `2026-10-09T02:55:23+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
 ### fed_dovish / risk_on
 
 - headline: UAE stocks end mixed as easing Iran tensions lift Dubai - Reuters
 - source: Reuters
 - published_at: `2026-10-09T12:28:09+00:00`
-- importance_score: `82`
-- confidence: `medium`
-
-### fed_dovish / risk_on
-
-- headline: Netflix, streaming rivals dominate $6 billion Asia sports arena
-- source: Bloomberg
-- published_at: `2026-10-09T05:03:28+00:00`
 - importance_score: `80`
 - confidence: `medium`

@@ -3,7 +3,7 @@
 This report explains whether current forecast paths have multi-source confirmation. It is not a trading system.
 
 - version: confluence_engine_v1
-- generated_at: 2026-10-10T10:09:31.926702+00:00
+- generated_at: 2026-10-10T17:24:07.589524+00:00
 - strongest_confluence_symbol: QQQ
 
 | Symbol | Dominant path | Confluence | Level | Main supports | Main conflicts |
