@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-10T01:22:50.925300+00:00`
+- generated_at: `2026-10-10T01:58:36.195103+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
+- major_event_count: `7`
 - event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -38,6 +38,14 @@
 - headline: Houthi strikes on Riyadh airport killed three Saudis as war escalates - Reuters
 - source: Reuters
 - published_at: `2026-10-09T14:56:54+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Vessel struck by unknown projectile off UAE coast amid surge in attacks, UKMTO says - Reuters
+- source: Reuters
+- published_at: `2026-10-09T14:40:22+00:00`
 - importance_score: `100`
 - confidence: `high`
 
