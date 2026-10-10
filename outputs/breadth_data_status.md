@@ -1,6 +1,6 @@
 # Breadth Data Status
 
-Generated at: 2026-10-10T00:17:32.287687+00:00
+Generated at: 2026-10-10T01:15:54.543791+00:00
 
 Provider available: True
 True breadth available: False
