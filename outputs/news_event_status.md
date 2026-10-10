@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-10T07:13:28.065973+00:00`
+- generated_at: `2026-10-10T10:09:21.941897+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
-- event_detection_confidence: `73`
+- major_event_count: `9`
+- event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -51,6 +51,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Nobel Peace Prize awarded to international jurist Navi Pillay
+- source: Bloomberg
+- published_at: `2026-10-09T09:40:39+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Three Saudi nationals killed in attacks on Riyadh airport, aviation authority says - Reuters
 - source: Reuters
 - published_at: `2026-10-09T08:39:54+00:00`
@@ -86,5 +94,5 @@
 - headline: Netflix, streaming rivals dominate $6 billion Asia sports arena
 - source: Bloomberg
 - published_at: `2026-10-09T05:03:28+00:00`
-- importance_score: `81`
+- importance_score: `80`
 - confidence: `medium`
