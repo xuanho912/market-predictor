@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-09T18:24:08.693469+00:00`
+- generated_at: `2026-10-10T00:24:42.402205+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `10`
-- event_detection_confidence: `77`
+- major_event_count: `6`
+- event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -47,7 +47,7 @@
 - source: Reuters
 - published_at: `2026-10-09T08:39:54+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,52 +55,20 @@
 - source: CNBC
 - published_at: `2026-10-09T08:24:50+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
+### fed_dovish / risk_on
 
-- headline: Attacks on tankers in Hormuz hit highest of any week since start of Iran war, sources say - Reuters
+- headline: UAE stocks end mixed as easing Iran tensions lift Dubai - Reuters
 - source: Reuters
-- published_at: `2026-10-08T23:44:35+00:00`
-- importance_score: `100`
-- confidence: `high`
+- published_at: `2026-10-09T12:28:09+00:00`
+- importance_score: `84`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: PODCAST: Trump pauses Iran strikes, Microsoft visa suspension, French mayor (Updated) - Reuters
 - source: Reuters
 - published_at: `2026-10-08T20:20:21+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Lufthansa, Indian airlines suspend flights to Riyadh after Houthi attacks - Reuters
-- source: Reuters
-- published_at: `2026-10-08T16:51:58+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### oil_shock_relief / risk_on
-
-- headline: Oil falls as Trump comments on Iran talks ease supply fears - Reuters
-- source: Reuters
-- published_at: `2026-10-09T02:28:00+00:00`
-- importance_score: `90`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump says US will not attack Iran before midterm elections in November - Reuters
-- source: Reuters
-- published_at: `2026-10-08T16:23:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: COMMENTARY: Energy Watch: War within a war - Reuters
-- source: Reuters
-- published_at: `2026-10-08T16:16:20+00:00`
 - importance_score: `100`
 - confidence: `medium`
