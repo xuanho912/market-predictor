@@ -112,7 +112,7 @@
       "status": "available"
     }
   },
-  "generated_at": "2026-10-10T17:23:59.262188+00:00",
+  "generated_at": "2026-10-11T17:43:47.690789+00:00",
   "notes": [
     "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
     "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -614,7 +614,7 @@
       "detail": "True constituent breadth when status is available/stale/partial; stale flags must be respected.",
       "fallback_used": false,
       "is_proxy": false,
-      "latest_date": "2026-10-06",
+      "latest_date": "2026-10-09",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -662,7 +662,7 @@
       "detail": "True constituent breadth when status is available/stale/partial; stale flags must be respected.",
       "fallback_used": false,
       "is_proxy": false,
-      "latest_date": "2026-10-07",
+      "latest_date": "2026-10-09",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -1024,7 +1024,7 @@
       "symbol": "macro_event_calendar"
     },
     "news_event_provider": {
-      "event_detection_confidence": 70,
+      "event_detection_confidence": 77,
       "fallback_used": false,
       "latest_date": "2026-10-09",
       "major_event_count": 8,
@@ -1137,8 +1137,8 @@
     "average_breadth_quality_score": 67.0,
     "average_flow_quality_score": 100.0,
     "breadth_impact_summary": {
-      "breadth_conflicts_primary_count": 4,
-      "breadth_supports_primary_count": 1,
+      "breadth_conflicts_primary_count": 3,
+      "breadth_supports_primary_count": 2,
       "changed_symbol_count": 4,
       "conclusion": "breadth improves information quality, not proven alpha yet.",
       "data_completeness_with_true_breadth": 85,
@@ -1177,15 +1177,15 @@
           "edge_status_changed": false,
           "edge_status_with_fred": "MODERATE_EDGE",
           "edge_status_without_fred": "MODERATE_EDGE",
-          "failed_bounce_delta": 0.0552,
-          "failed_bounce_with_fred": 0.5224,
-          "failed_bounce_without_fred": 0.4672,
+          "failed_bounce_delta": 0.0419,
+          "failed_bounce_with_fred": 0.4078,
+          "failed_bounce_without_fred": 0.3659,
           "primary_scenario_changed": false,
-          "primary_scenario_with_fred": "bearish_path",
-          "primary_scenario_without_fred": "bearish_path",
+          "primary_scenario_with_fred": "bounce_path",
+          "primary_scenario_without_fred": "bounce_path",
           "risk_expansion_delta": 0.132,
-          "risk_expansion_with_fred": 0.5433,
-          "risk_expansion_without_fred": 0.4113
+          "risk_expansion_with_fred": 0.4677,
+          "risk_expansion_without_fred": 0.3357
         },
         "IWM": {
           "edge_status_changed": true,
@@ -1197,9 +1197,9 @@
           "primary_scenario_changed": false,
           "primary_scenario_with_fred": "bearish_path",
           "primary_scenario_without_fred": "bearish_path",
-          "risk_expansion_delta": 0.132,
-          "risk_expansion_with_fred": 0.5852,
-          "risk_expansion_without_fred": 0.4532
+          "risk_expansion_delta": 0.1319,
+          "risk_expansion_with_fred": 0.5831,
+          "risk_expansion_without_fred": 0.4512
         },
         "QQQ": {
           "edge_status_changed": false,
@@ -1212,22 +1212,22 @@
           "primary_scenario_with_fred": "bearish_path",
           "primary_scenario_without_fred": "bearish_path",
           "risk_expansion_delta": 0.132,
-          "risk_expansion_with_fred": 0.5466,
-          "risk_expansion_without_fred": 0.4146
+          "risk_expansion_with_fred": 0.5445,
+          "risk_expansion_without_fred": 0.4125
         },
         "SPY": {
           "edge_status_changed": false,
           "edge_status_with_fred": "MODERATE_EDGE",
           "edge_status_without_fred": "MODERATE_EDGE",
           "failed_bounce_delta": 0.042,
-          "failed_bounce_with_fred": 0.4858,
-          "failed_bounce_without_fred": 0.4438,
-          "primary_scenario_changed": true,
-          "primary_scenario_with_fred": "bearish_path",
+          "failed_bounce_with_fred": 0.4705,
+          "failed_bounce_without_fred": 0.4285,
+          "primary_scenario_changed": false,
+          "primary_scenario_with_fred": "bounce_path",
           "primary_scenario_without_fred": "bounce_path",
-          "risk_expansion_delta": 0.132,
-          "risk_expansion_with_fred": 0.5271,
-          "risk_expansion_without_fred": 0.3951
+          "risk_expansion_delta": 0.1319,
+          "risk_expansion_with_fred": 0.5126,
+          "risk_expansion_without_fred": 0.3807
         }
       },
       "target_85_met_with_fred": true
@@ -1239,17 +1239,17 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
+      "IG_OAS",
       "BAA_SPREAD",
+      "DGS3MO",
+      "HY_OAS",
       "DGS2",
       "DGS10",
-      "HY_OAS",
-      "DGS3MO",
-      "IG_OAS",
       "RECESSION",
-      "DFII10",
-      "FINANCIAL_STRESS"
+      "FINANCIAL_STRESS",
+      "DFII10"
     ],
-    "freshness_warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-10-09 的数据。 当前美东时间 2026-10-10 13:24。",
+    "freshness_warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-10-09 的数据。 当前美东时间 2026-10-11 13:43。",
     "gamma_available": false,
     "gamma_exposure_available": false,
     "latest_confirmed_market_date": "2026-10-09",
@@ -1278,10 +1278,10 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 70,
+      "event_detection_confidence": 77,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-10-10T17:23:59.269059+00:00",
+      "last_update": "2026-10-11T17:43:47.698658+00:00",
       "major_event_count": 8,
       "missing_reason": null,
       "news_direction": "risk_off",

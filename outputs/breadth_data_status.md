@@ -1,6 +1,6 @@
 # Breadth Data Status
 
-Generated at: 2026-10-10T17:23:33.138800+00:00
+Generated at: 2026-10-11T17:43:23.268460+00:00
 
 Provider available: True
 True breadth available: False
@@ -11,11 +11,11 @@ Stale data: True
 
 ## Market Internal Resonance
 
-- resonance_score: 32.34
+- resonance_score: 50.68
 - resonance_state: surface_only
 - label: index_surface_strength
 - aligned_symbols: none
-- surface_only_symbols: SPY, QQQ, DIA, IWM
+- surface_only_symbols: SPY, QQQ, IWM
 - sector_score: 68.0
 - equal_weight_vs_cap_weight_20d: -0.027201
 - small_cap_vs_large_cap_20d: -0.053126
@@ -26,19 +26,19 @@ Stale data: True
 
 - status: available
 - source: wikipedia-sp500
-- latest_date: 2026-10-07
+- latest_date: 2026-10-09
 - true_breadth: True
 - proxy: False
 - constituents used / expected: 503 / 503
 - coverage_ratio: 1.0
 - stale_constituents: False
 - stale_price_data: False
-- percent_above_20d / 50d / 200d: 0.3486 / 0.2749 / 0.438
-- advancers / decliners / A-D ratio: 323 / 179 / 1.8045
-- new highs/lows 20d: 57 / 55
-- new highs/lows 52w: 16 / 12
-- improvement / deterioration / confirmation / conflict / quality: 47.58 / 52.57 / 58.05 / 39.96 / 100.0
-- internal_resonance: surface_only / score 38.7 / SPY 指数表面强但内部没充分跟上：confirmation 58，conflict 40，RSP/SPY -2.72%，IWM/SPY -5.31%。
+- percent_above_20d / 50d / 200d: 0.5478 / 0.3526 / 0.482
+- advancers / decliners / A-D ratio: 321 / 182 / 1.7637
+- new highs/lows 20d: 72 / 29
+- new highs/lows 52w: 16 / 7
+- improvement / deterioration / confirmation / conflict / quality: 100.0 / 38.8 / 96.9 / 29.49 / 100.0
+- internal_resonance: surface_only / score 63.18 / SPY 指数表面强但内部没充分跟上：confirmation 97，conflict 29，RSP/SPY -2.72%，IWM/SPY -5.31%。
 
 ### QQQ
 
@@ -62,19 +62,19 @@ Stale data: True
 
 - status: available
 - source: static-dow30-list
-- latest_date: 2026-10-06
+- latest_date: 2026-10-09
 - true_breadth: True
 - proxy: False
 - constituents used / expected: 30 / 30
 - coverage_ratio: 1.0
 - stale_constituents: False
 - stale_price_data: False
-- percent_above_20d / 50d / 200d: 0.3667 / 0.3 / 0.5667
-- advancers / decliners / A-D ratio: 18 / 12 / 1.5
-- new highs/lows 20d: 5 / 4
-- new highs/lows 52w: 1 / 1
-- improvement / deterioration / confirmation / conflict / quality: 44.32 / 71.65 / 54.17 / 54.46 / 100.0
-- internal_resonance: surface_only / score 35.07 / DIA 指数表面强但内部没充分跟上：confirmation 54，conflict 54，RSP/SPY -2.72%，IWM/SPY -5.31%。
+- percent_above_20d / 50d / 200d: 0.4667 / 0.4 / 0.5667
+- advancers / decliners / A-D ratio: 23 / 7 / 3.2857
+- new highs/lows 20d: 5 / 1
+- new highs/lows 52w: 2 / 0
+- improvement / deterioration / confirmation / conflict / quality: 100.0 / 34.4 / 97.25 / 26.14 / 100.0
+- internal_resonance: mixed / score 65.6 / DIA 内部信号分歧：成分股/行业有部分支持，但等权、小盘或新高新低没有完全确认。
 
 ### IWM
 

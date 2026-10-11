@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-10T17:23:59.269059+00:00`
+- generated_at: `2026-10-11T17:43:47.698658+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `8`
-- event_detection_confidence: `70`
+- event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,64 +27,64 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Saudi-led coalition says new attack at Riyadh airport causes fire, day after strike kills 12 - Reuters
+- source: Reuters
+- published_at: `2026-10-11T15:32:16+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Strike reported on Yemeni Sanaa airport, Houthi-run TV says - Reuters
+- source: Reuters
+- published_at: `2026-10-11T13:43:15+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Most Gulf stocks in red after attack on Riyadh airport - Reuters
+- source: Reuters
+- published_at: `2026-10-11T13:19:13+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Yemen's Houthis renew warning to airlines, travellers against using Saudi airports - Reuters
+- source: Reuters
+- published_at: `2026-10-11T07:34:22+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US military says it disabled cargo vessel trying to run Iran blockade - Reuters
+- source: Reuters
+- published_at: `2026-10-11T01:35:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Israeli strikes kill five people in Gaza, medics say - Reuters
+- source: Reuters
+- published_at: `2026-10-10T15:24:12+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Houthi strike on Saudi airport kills 12, worst attack on kingdom in a decade - Reuters
+- source: Reuters
+- published_at: `2026-10-10T14:13:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Major Saudi conferences to proceed, organisers say, despite deadly airport attack - Reuters
 - source: Reuters
-- published_at: `2026-10-10T11:33:43+00:00`
+- published_at: `2026-10-10T11:32:00+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: EU aviation body widens Saudi airspace warning after Houthi strikes - Reuters
-- source: Reuters
-- published_at: `2026-10-09T16:25:01+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Houthi strikes on Riyadh airport killed three Saudis as war escalates - Reuters
-- source: Reuters
-- published_at: `2026-10-09T14:56:54+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Vessel struck by unknown projectile off UAE coast amid surge in attacks, UKMTO says - Reuters
-- source: Reuters
-- published_at: `2026-10-09T14:40:22+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Nobel Peace Prize awarded to international jurist Navi Pillay
-- source: Bloomberg
-- published_at: `2026-10-09T09:40:39+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Three Saudi nationals killed in attacks on Riyadh airport, aviation authority says - Reuters
-- source: Reuters
-- published_at: `2026-10-09T08:39:54+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Treasury yields steady as Trump strikes diplomatic tone on Iran ahead of midterms
-- source: CNBC
-- published_at: `2026-10-09T08:24:50+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### fed_dovish / risk_on
-
-- headline: UAE stocks end mixed as easing Iran tensions lift Dubai - Reuters
-- source: Reuters
-- published_at: `2026-10-09T12:28:09+00:00`
-- importance_score: `80`
 - confidence: `medium`
