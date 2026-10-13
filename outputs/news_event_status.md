@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-12T21:19:51.753254+00:00`
+- generated_at: `2026-10-13T02:10:24.547196+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `17`
-- event_detection_confidence: `74`
+- event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -25,12 +25,36 @@
 
 ## Major Events
 
+### geopolitical_risk_escalation / risk_off
+
+- headline: Saudi warning system stayed silent before deadly airport attacks - Reuters
+- source: Reuters
+- published_at: `2026-10-12T23:54:54+00:00`
+- importance_score: `100`
+- confidence: `high`
+
 ### geopolitical_risk_easing / risk_on
 
 - headline: US hopes diesel deal can 'soften' Moscow on peace talks, sources say - Reuters
 - source: Reuters
-- published_at: `2026-10-12T19:45:16+00:00`
-- importance_score: `97`
+- published_at: `2026-10-12T22:58:15+00:00`
+- importance_score: `96`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Saudi-led coalition says it destroyed Houthi ballistic missile fired towards Riyadh - Reuters
+- source: Reuters
+- published_at: `2026-10-12T18:25:53+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Delta pushes back Atlanta-Riyadh service after Riyadh airport attacks - Reuters
+- source: Reuters
+- published_at: `2026-10-12T14:51:42+00:00`
+- importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -43,25 +67,25 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Saudi Arabia faces new missile and drone fire after major attacks on airports - Reuters
-- source: Reuters
-- published_at: `2026-10-12T14:28:45+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
 - headline: Breakingviews - COMMENTARY: Riyadh attacks hit core of Saudi's economic pivot - Reuters
 - source: Reuters
 - published_at: `2026-10-12T14:07:26+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Saudi shares fall after second airport attack as Gulf trade stays cautious - Reuters
 - source: Reuters
 - published_at: `2026-10-12T13:44:30+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Saudi Arabia faces new missile and drone fire after major attacks on airports - Reuters
+- source: Reuters
+- published_at: `2026-10-12T13:17:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -78,29 +102,5 @@
 - headline: Top oil executives dropped from event schedule after Riyadh attacks - Reuters
 - source: Reuters
 - published_at: `2026-10-12T09:19:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Israeli strike kills two people in Gaza, medics say - Reuters
-- source: Reuters
-- published_at: `2026-10-12T06:43:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: COMMENTARY: Middle East LNG industry remains hostage of Iran war: Bousso - Reuters
-- source: Reuters
-- published_at: `2026-10-12T06:00:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Turkey, Pakistan, Egypt, Saudi Arabia condemn Houthi attacks on Riyadh airport - Reuters
-- source: Reuters
-- published_at: `2026-10-12T05:11:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
