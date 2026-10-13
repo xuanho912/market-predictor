@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-13T03:33:31.794862+00:00`
+- generated_at: `2026-10-13T07:47:54.026765+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `17`
-- event_detection_confidence: `76`
+- major_event_count: `16`
+- event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,6 +27,22 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: AI investment props up global growth, but war and debt threaten outlook, IMF says - Reuters
+- source: Reuters
+- published_at: `2026-10-13T02:05:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Qatar Airways suspends Riyadh, Dammam flights as airport attacks disrupt air travel - Reuters
+- source: Reuters
+- published_at: `2026-10-13T00:26:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Saudi warning system stayed silent before deadly airport attacks - Reuters
 - source: Reuters
 - published_at: `2026-10-12T23:39:00+00:00`
@@ -39,6 +55,14 @@
 - source: Reuters
 - published_at: `2026-10-12T18:25:53+00:00`
 - importance_score: `100`
+- confidence: `high`
+
+### oil_shock_relief / risk_on
+
+- headline: Oil falls as Russian diesel supply prospects counter Gulf supply risks - Reuters
+- source: Reuters
+- published_at: `2026-10-13T00:25:00+00:00`
+- importance_score: `92`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -57,14 +81,6 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_easing / risk_on
-
-- headline: US hopes diesel deal can 'soften' Moscow on peace talks, sources say - Reuters
-- source: Reuters
-- published_at: `2026-10-12T19:21:00+00:00`
-- importance_score: `95`
-- confidence: `medium`
-
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Breakingviews - COMMENTARY: Riyadh attacks hit core of Saudi's economic pivot - Reuters
@@ -81,26 +97,10 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
+### geopolitical_risk_easing / risk_on
 
-- headline: Saudi Arabia faces new missile and drone fire after major attacks on airports - Reuters
+- headline: US hopes diesel deal can 'soften' Moscow on peace talks, sources say - Reuters
 - source: Reuters
-- published_at: `2026-10-12T13:17:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: FAA warns U.S. airlines of safety risks over Saudi Arabia after attacks
-- source: CNBC
-- published_at: `2026-10-12T12:31:05+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Top oil executives dropped from event schedule after Riyadh attacks - Reuters
-- source: Reuters
-- published_at: `2026-10-12T09:19:00+00:00`
-- importance_score: `100`
+- published_at: `2026-10-12T19:21:00+00:00`
+- importance_score: `94`
 - confidence: `medium`
