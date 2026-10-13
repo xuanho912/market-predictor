@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-13T19:21:34.647184+00:00`
+- generated_at: `2026-10-13T23:50:22.130009+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `11`
+- major_event_count: `10`
 - event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -27,6 +27,22 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Saudi Aramco administrative building attacked, limited fire reported - Reuters
+- source: Reuters
+- published_at: `2026-10-13T22:27:19+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: EXCLUSIVE: Saudi Arabia plans hybrid format for marquee FII conference after attacks, sources say - Reuters
+- source: Reuters
+- published_at: `2026-10-13T20:38:09+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Airport attacks put aviation in crosshairs of geopolitical conflicts
 - source: CNBC
 - published_at: `2026-10-13T18:33:42+00:00`
@@ -35,17 +51,9 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: EXCLUSIVE: Saudi Arabia plans hybrid format for marquee FII conference after attacks, sources say - Reuters
+- headline: US blockade keeps Iranian crude exports at zero in October, report says - Reuters
 - source: Reuters
-- published_at: `2026-10-13T17:47:25+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Saudi Arabia strikes Yemen capital as Houthis vow to retaliate - Reuters
-- source: Reuters
-- published_at: `2026-10-13T16:17:11+00:00`
+- published_at: `2026-10-13T16:53:43+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -63,6 +71,14 @@
 - source: CNBC
 - published_at: `2026-10-13T11:53:45+00:00`
 - importance_score: `100`
+- confidence: `high`
+
+### fed_dovish / risk_on
+
+- headline: United Airlines is making it harder to reach its top frequent flyer status in 2027
+- source: CNBC
+- published_at: `2026-10-13T21:02:43+00:00`
+- importance_score: `86`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -88,19 +104,3 @@
 - published_at: `2026-10-13T00:26:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil prices ease as US-Russia diesel deal hopes offset Middle East attacks - Reuters
-- source: Reuters
-- published_at: `2026-10-13T00:25:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Saudi warning system stayed silent before deadly airport attacks - Reuters
-- source: Reuters
-- published_at: `2026-10-12T23:39:00+00:00`
-- importance_score: `100`
-- confidence: `high`
