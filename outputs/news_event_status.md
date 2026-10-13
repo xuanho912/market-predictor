@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-13T07:47:54.026765+00:00`
+- generated_at: `2026-10-13T11:07:56.746843+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `16`
-- event_detection_confidence: `77`
+- major_event_count: `14`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -37,7 +37,7 @@
 
 - headline: Qatar Airways suspends Riyadh, Dammam flights as airport attacks disrupt air travel - Reuters
 - source: Reuters
-- published_at: `2026-10-13T00:26:00+00:00`
+- published_at: `2026-10-13T00:26:06+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -57,27 +57,11 @@
 - importance_score: `100`
 - confidence: `high`
 
-### oil_shock_relief / risk_on
-
-- headline: Oil falls as Russian diesel supply prospects counter Gulf supply risks - Reuters
-- source: Reuters
-- published_at: `2026-10-13T00:25:00+00:00`
-- importance_score: `92`
-- confidence: `high`
-
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Delta pushes back Atlanta-Riyadh service after Riyadh airport attacks - Reuters
 - source: Reuters
 - published_at: `2026-10-12T14:51:42+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Airlines cancel flights to Saudi Arabia after Riyadh airport attacks - Reuters
-- source: Reuters
-- published_at: `2026-10-12T14:48:05+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -97,10 +81,26 @@
 - importance_score: `100`
 - confidence: `medium`
 
+### geopolitical_risk_escalation / risk_off
+
+- headline: Saudi Arabia faces new missile and drone fire after major attacks on airports - Reuters
+- source: Reuters
+- published_at: `2026-10-12T13:17:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: FAA warns U.S. airlines of safety risks over Saudi Arabia after attacks
+- source: CNBC
+- published_at: `2026-10-12T12:31:05+00:00`
+- importance_score: `100`
+- confidence: `high`
+
 ### geopolitical_risk_easing / risk_on
 
 - headline: US hopes diesel deal can 'soften' Moscow on peace talks, sources say - Reuters
 - source: Reuters
 - published_at: `2026-10-12T19:21:00+00:00`
-- importance_score: `94`
+- importance_score: `93`
 - confidence: `medium`
