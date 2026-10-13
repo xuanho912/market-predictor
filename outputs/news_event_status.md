@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-13T02:44:16.908975+00:00`
+- generated_at: `2026-10-13T03:17:10.471735+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `17`
@@ -29,7 +29,7 @@
 
 - headline: Saudi warning system stayed silent before deadly airport attacks - Reuters
 - source: Reuters
-- published_at: `2026-10-12T23:54:54+00:00`
+- published_at: `2026-10-12T23:39:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
