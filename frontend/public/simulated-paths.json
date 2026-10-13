@@ -5,10 +5,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-10-12",
-    "current_time_us_eastern": "2026-10-12T22:10:36.547611-04:00",
+    "current_time_us_eastern": "2026-10-12T22:44:26.128111-04:00",
     "data_freshness_status": "fresh",
     "expected_latest_trading_date": "2026-10-12",
-    "generated_at": "2026-10-13T02:10:36.547611+00:00",
+    "generated_at": "2026-10-13T02:44:26.128111+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -1047,15 +1047,15 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "DGS2",
-      "DGS3MO",
       "HY_OAS",
-      "IG_OAS",
       "BAA_SPREAD",
+      "IG_OAS",
+      "DGS2",
       "DGS10",
+      "DGS3MO",
       "DFII10",
-      "FINANCIAL_STRESS",
-      "RECESSION"
+      "RECESSION",
+      "FINANCIAL_STRESS"
     ],
     "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-10-12。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
     "gamma_available": false,
@@ -1086,10 +1086,10 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 77,
+      "event_detection_confidence": 76,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-10-13T02:10:24.547196+00:00",
+      "last_update": "2026-10-13T02:44:16.908975+00:00",
       "major_event_count": 17,
       "missing_reason": null,
       "news_direction": "risk_off",
@@ -1207,7 +1207,7 @@
           "source": "Reuters"
         },
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -1219,7 +1219,7 @@
           "source": "Reuters"
         },
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -1417,7 +1417,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": -0.002,
-        "avg_equity_futures_1d_return": -0.0023,
+        "avg_equity_futures_1d_return": -0.0027,
         "confirmed_checks": [
           "股票ETF或股指期货下跌",
           "VIX 上升",
@@ -1432,7 +1432,7 @@
         ],
         "failed_checks": [],
         "hyg_lqd_1d_relative_return": -0.0009,
-        "oil_proxy_1d_return": 0.003,
+        "oil_proxy_1d_return": 0.0035,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -2301,10 +2301,10 @@
           "news_risk_score": 0.4,
           "top_headlines": [
             "Saudi warning system stayed silent before deadly airport attacks - Reuters",
-            "Trump defends Russia diesel deal as lawmakers from both parties complain - Reuters",
             "US hopes diesel deal can 'soften' Moscow on peace talks, sources say - Reuters",
             "Here's a calculator to explain why Cramer always stays invested. Plug in your own numbers, too",
-            "Bear to bull: A double upgrade of Salesforce illustrates the folly of the 'SaaSpocalypse'"
+            "Bear to bull: A double upgrade of Salesforce illustrates the folly of the 'SaaSpocalypse'",
+            "Saudi capital's airport to remain shut this week as airlines cancel services - Reuters"
           ]
         },
         "price": {
@@ -3655,7 +3655,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 95,
+            "freshness_score": 93,
             "headline": "Saudi warning system stayed silent before deadly airport attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3679,12 +3679,12 @@
               "NQ=F"
             ],
             "confidence": "high",
-            "confidence_score": 76,
+            "confidence_score": 75,
             "detected_event_conditions": [],
             "event_type": "geopolitical_risk_easing",
             "expected_horizon": "1d-5d",
             "expected_market_direction": "risk_on",
-            "freshness_score": 92,
+            "freshness_score": 91,
             "headline": "US hopes diesel deal can 'soften' Moscow on peace talks, sources say - Reuters",
             "importance_score": 96,
             "narrative": "geopolitics_easing_risk_on",
@@ -3711,7 +3711,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 81,
+            "freshness_score": 80,
             "headline": "Saudi-led coalition says it destroyed Houthi ballistic missile fired towards Riyadh - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3730,15 +3730,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 73,
+            "freshness_score": 71,
             "headline": "Delta pushes back Atlanta-Riyadh service after Riyadh airport attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3757,15 +3757,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 73,
+            "freshness_score": 71,
             "headline": "Airlines cancel flights to Saudi Arabia after Riyadh airport attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3792,7 +3792,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 71,
+            "freshness_score": 70,
             "headline": "Breakingviews - COMMENTARY: Riyadh attacks hit core of Saudi's economic pivot - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3856,7 +3856,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -3868,7 +3868,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -3945,7 +3945,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.002,
-            "avg_equity_futures_1d_return": -0.0023,
+            "avg_equity_futures_1d_return": -0.0027,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -3960,7 +3960,7 @@
             ],
             "failed_checks": [],
             "hyg_lqd_1d_relative_return": -0.0009,
-            "oil_proxy_1d_return": 0.003,
+            "oil_proxy_1d_return": 0.0035,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -6447,10 +6447,10 @@
           "news_risk_score": 0.4,
           "top_headlines": [
             "Saudi warning system stayed silent before deadly airport attacks - Reuters",
-            "Trump defends Russia diesel deal as lawmakers from both parties complain - Reuters",
             "US hopes diesel deal can 'soften' Moscow on peace talks, sources say - Reuters",
             "Here's a calculator to explain why Cramer always stays invested. Plug in your own numbers, too",
-            "Bear to bull: A double upgrade of Salesforce illustrates the folly of the 'SaaSpocalypse'"
+            "Bear to bull: A double upgrade of Salesforce illustrates the folly of the 'SaaSpocalypse'",
+            "Saudi capital's airport to remain shut this week as airlines cancel services - Reuters"
           ]
         },
         "price": {
@@ -7829,7 +7829,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 95,
+            "freshness_score": 93,
             "headline": "Saudi warning system stayed silent before deadly airport attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7853,12 +7853,12 @@
               "NQ=F"
             ],
             "confidence": "high",
-            "confidence_score": 76,
+            "confidence_score": 75,
             "detected_event_conditions": [],
             "event_type": "geopolitical_risk_easing",
             "expected_horizon": "1d-5d",
             "expected_market_direction": "risk_on",
-            "freshness_score": 92,
+            "freshness_score": 91,
             "headline": "US hopes diesel deal can 'soften' Moscow on peace talks, sources say - Reuters",
             "importance_score": 96,
             "narrative": "geopolitics_easing_risk_on",
@@ -7885,7 +7885,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 81,
+            "freshness_score": 80,
             "headline": "Saudi-led coalition says it destroyed Houthi ballistic missile fired towards Riyadh - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7904,15 +7904,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 73,
+            "freshness_score": 71,
             "headline": "Delta pushes back Atlanta-Riyadh service after Riyadh airport attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7931,15 +7931,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 73,
+            "freshness_score": 71,
             "headline": "Airlines cancel flights to Saudi Arabia after Riyadh airport attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7966,7 +7966,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 71,
+            "freshness_score": 70,
             "headline": "Breakingviews - COMMENTARY: Riyadh attacks hit core of Saudi's economic pivot - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -8030,7 +8030,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -8042,7 +8042,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -8119,7 +8119,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.002,
-            "avg_equity_futures_1d_return": -0.0023,
+            "avg_equity_futures_1d_return": -0.0027,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -8134,7 +8134,7 @@
             ],
             "failed_checks": [],
             "hyg_lqd_1d_relative_return": -0.0009,
-            "oil_proxy_1d_return": 0.003,
+            "oil_proxy_1d_return": 0.0035,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -10648,10 +10648,10 @@
           "news_risk_score": 0.4,
           "top_headlines": [
             "Saudi warning system stayed silent before deadly airport attacks - Reuters",
-            "Trump defends Russia diesel deal as lawmakers from both parties complain - Reuters",
             "US hopes diesel deal can 'soften' Moscow on peace talks, sources say - Reuters",
             "Here's a calculator to explain why Cramer always stays invested. Plug in your own numbers, too",
-            "Bear to bull: A double upgrade of Salesforce illustrates the folly of the 'SaaSpocalypse'"
+            "Bear to bull: A double upgrade of Salesforce illustrates the folly of the 'SaaSpocalypse'",
+            "Saudi capital's airport to remain shut this week as airlines cancel services - Reuters"
           ]
         },
         "price": {
@@ -11984,7 +11984,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 95,
+            "freshness_score": 93,
             "headline": "Saudi warning system stayed silent before deadly airport attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12008,12 +12008,12 @@
               "NQ=F"
             ],
             "confidence": "high",
-            "confidence_score": 76,
+            "confidence_score": 75,
             "detected_event_conditions": [],
             "event_type": "geopolitical_risk_easing",
             "expected_horizon": "1d-5d",
             "expected_market_direction": "risk_on",
-            "freshness_score": 92,
+            "freshness_score": 91,
             "headline": "US hopes diesel deal can 'soften' Moscow on peace talks, sources say - Reuters",
             "importance_score": 96,
             "narrative": "geopolitics_easing_risk_on",
@@ -12040,7 +12040,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 81,
+            "freshness_score": 80,
             "headline": "Saudi-led coalition says it destroyed Houthi ballistic missile fired towards Riyadh - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12059,15 +12059,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 73,
+            "freshness_score": 71,
             "headline": "Delta pushes back Atlanta-Riyadh service after Riyadh airport attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12086,15 +12086,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 73,
+            "freshness_score": 71,
             "headline": "Airlines cancel flights to Saudi Arabia after Riyadh airport attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12121,7 +12121,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 71,
+            "freshness_score": 70,
             "headline": "Breakingviews - COMMENTARY: Riyadh attacks hit core of Saudi's economic pivot - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12185,7 +12185,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -12197,7 +12197,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -12274,7 +12274,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.002,
-            "avg_equity_futures_1d_return": -0.0023,
+            "avg_equity_futures_1d_return": -0.0027,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -12289,7 +12289,7 @@
             ],
             "failed_checks": [],
             "hyg_lqd_1d_relative_return": -0.0009,
-            "oil_proxy_1d_return": 0.003,
+            "oil_proxy_1d_return": 0.0035,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -14778,10 +14778,10 @@
           "news_risk_score": 0.4,
           "top_headlines": [
             "Saudi warning system stayed silent before deadly airport attacks - Reuters",
-            "Trump defends Russia diesel deal as lawmakers from both parties complain - Reuters",
             "US hopes diesel deal can 'soften' Moscow on peace talks, sources say - Reuters",
             "Here's a calculator to explain why Cramer always stays invested. Plug in your own numbers, too",
-            "Bear to bull: A double upgrade of Salesforce illustrates the folly of the 'SaaSpocalypse'"
+            "Bear to bull: A double upgrade of Salesforce illustrates the folly of the 'SaaSpocalypse'",
+            "Saudi capital's airport to remain shut this week as airlines cancel services - Reuters"
           ]
         },
         "price": {
@@ -16147,7 +16147,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 95,
+            "freshness_score": 93,
             "headline": "Saudi warning system stayed silent before deadly airport attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16171,12 +16171,12 @@
               "NQ=F"
             ],
             "confidence": "high",
-            "confidence_score": 76,
+            "confidence_score": 75,
             "detected_event_conditions": [],
             "event_type": "geopolitical_risk_easing",
             "expected_horizon": "1d-5d",
             "expected_market_direction": "risk_on",
-            "freshness_score": 92,
+            "freshness_score": 91,
             "headline": "US hopes diesel deal can 'soften' Moscow on peace talks, sources say - Reuters",
             "importance_score": 96,
             "narrative": "geopolitics_easing_risk_on",
@@ -16203,7 +16203,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 81,
+            "freshness_score": 80,
             "headline": "Saudi-led coalition says it destroyed Houthi ballistic missile fired towards Riyadh - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16222,15 +16222,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 73,
+            "freshness_score": 71,
             "headline": "Delta pushes back Atlanta-Riyadh service after Riyadh airport attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16249,15 +16249,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 73,
+            "freshness_score": 71,
             "headline": "Airlines cancel flights to Saudi Arabia after Riyadh airport attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16284,7 +16284,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 71,
+            "freshness_score": 70,
             "headline": "Breakingviews - COMMENTARY: Riyadh attacks hit core of Saudi's economic pivot - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16348,7 +16348,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -16360,7 +16360,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -16437,7 +16437,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.002,
-            "avg_equity_futures_1d_return": -0.0023,
+            "avg_equity_futures_1d_return": -0.0027,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -16452,7 +16452,7 @@
             ],
             "failed_checks": [],
             "hyg_lqd_1d_relative_return": -0.0009,
-            "oil_proxy_1d_return": 0.003,
+            "oil_proxy_1d_return": 0.0035,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
