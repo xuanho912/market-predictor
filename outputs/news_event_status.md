@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-13T03:17:10.471735+00:00`
+- generated_at: `2026-10-13T03:33:31.794862+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `17`
@@ -33,14 +33,6 @@
 - importance_score: `100`
 - confidence: `high`
 
-### geopolitical_risk_easing / risk_on
-
-- headline: US hopes diesel deal can 'soften' Moscow on peace talks, sources say - Reuters
-- source: Reuters
-- published_at: `2026-10-12T22:58:15+00:00`
-- importance_score: `96`
-- confidence: `high`
-
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Saudi-led coalition says it destroyed Houthi ballistic missile fired towards Riyadh - Reuters
@@ -63,6 +55,14 @@
 - source: Reuters
 - published_at: `2026-10-12T14:48:05+00:00`
 - importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: US hopes diesel deal can 'soften' Moscow on peace talks, sources say - Reuters
+- source: Reuters
+- published_at: `2026-10-12T19:21:00+00:00`
+- importance_score: `95`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
