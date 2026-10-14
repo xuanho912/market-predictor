@@ -1,20 +1,20 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-14T09:04:06.601635+00:00`
+- generated_at: `2026-10-14T17:14:59.829811+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `10`
+- major_event_count: `12`
 - event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
-- price_reaction_confirmed: `False`
-- confirmation_score: `50`
+- price_reaction_confirmed: `True`
+- confirmation_score: `100`
 
 ## Dashboard Note
 
-当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，尚未被价格反应充分确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
+当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，已被价格反应初步确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
 
 ## Economic Calendar Risk
 
@@ -24,6 +24,46 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Yemen's Houthis vow more attacks on Saudi airports, oil facilities after Aramco HQ hit - Reuters
+- source: Reuters
+- published_at: `2026-10-14T15:09:46+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Gulf markets mixed; Saudi stocks hardest hit on Aramco attack - Reuters
+- source: Reuters
+- published_at: `2026-10-14T13:23:39+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Netanyahu says he is not seeking to attack Iran again before Israel election - Reuters
+- source: Reuters
+- published_at: `2026-10-14T13:05:43+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Saudi Aramco headquarters suffered extensive damage in Houthi attack, sources say - Reuters
+- source: Reuters
+- published_at: `2026-10-14T11:43:12+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran's central bank governor dismisses claims of economic collapse amid US blockade - Reuters
+- source: Reuters
+- published_at: `2026-10-14T11:26:01+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -39,7 +79,7 @@
 - source: Reuters
 - published_at: `2026-10-14T04:14:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +87,7 @@
 - source: Reuters
 - published_at: `2026-10-14T00:06:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -63,44 +103,4 @@
 - source: CNBC
 - published_at: `2026-10-13T18:33:42+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: EXCLUSIVE: Saudi Arabia plans hybrid format for marquee FII conference after attacks, sources say - Reuters
-- source: Reuters
-- published_at: `2026-10-13T17:47:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US blockade keeps Iranian crude exports at zero in October, report says - Reuters
-- source: Reuters
-- published_at: `2026-10-13T16:53:43+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Saudi leads jump in OPEC+ oil output in September, despite Iran war disruption - Reuters
-- source: Reuters
-- published_at: `2026-10-13T13:58:40+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Saudi Aramco administrative building attacked, limited fire reported - Reuters
-- source: Reuters
-- published_at: `2026-10-13T13:12:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### fed_dovish / risk_on
-
-- headline: United Airlines is making it harder to reach its top frequent flyer status in 2027
-- source: CNBC
-- published_at: `2026-10-13T21:02:43+00:00`
-- importance_score: `84`
 - confidence: `medium`
