@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-13T23:50:22.130009+00:00`
+- generated_at: `2026-10-14T00:46:21.410027+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `10`
-- event_detection_confidence: `77`
+- major_event_count: `9`
+- event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -38,6 +38,14 @@
 - headline: EXCLUSIVE: Saudi Arabia plans hybrid format for marquee FII conference after attacks, sources say - Reuters
 - source: Reuters
 - published_at: `2026-10-13T20:38:09+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Zelenskiy seeks new talks with US envoys on ending Russia war - Reuters
+- source: Reuters
+- published_at: `2026-10-13T19:35:49+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -86,21 +94,5 @@
 - headline: COMMENTARY: Trump's oil jawboning loses punch as wars spiral - Reuters
 - source: Reuters
 - published_at: `2026-10-13T06:00:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: AI investment props up global growth, but war and debt threaten outlook, IMF says - Reuters
-- source: Reuters
-- published_at: `2026-10-13T02:05:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Qatar Airways suspends Riyadh, Dammam flights as airport attacks disrupt air travel - Reuters
-- source: Reuters
-- published_at: `2026-10-13T00:26:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
