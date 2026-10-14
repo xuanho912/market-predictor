@@ -3,7 +3,7 @@
 This report explains whether current forecast paths have multi-source confirmation. It is not a trading system.
 
 - version: confluence_engine_v1
-- generated_at: 2026-10-14T01:51:20.552676+00:00
+- generated_at: 2026-10-14T06:13:55.639516+00:00
 - strongest_confluence_symbol: DIA
 
 | Symbol | Dominant path | Confluence | Level | Main supports | Main conflicts |

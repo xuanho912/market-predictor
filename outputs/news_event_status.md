@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-14T01:51:10.594813+00:00`
+- generated_at: `2026-10-14T06:13:45.193766+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `10`
-- event_detection_confidence: `78`
+- major_event_count: `9`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -35,22 +35,6 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Saudi Aramco administrative building attacked, limited fire reported - Reuters
-- source: Reuters
-- published_at: `2026-10-13T22:27:19+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: EXCLUSIVE: Saudi Arabia plans hybrid format for marquee FII conference after attacks, sources say - Reuters
-- source: Reuters
-- published_at: `2026-10-13T20:38:09+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
 - headline: Zelenskiy seeks new talks with US envoys on ending Russia war - Reuters
 - source: Reuters
 - published_at: `2026-10-13T19:35:49+00:00`
@@ -67,17 +51,33 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: EXCLUSIVE: Saudi Arabia plans hybrid format for marquee FII conference after attacks, sources say - Reuters
+- source: Reuters
+- published_at: `2026-10-13T17:47:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: US blockade keeps Iranian crude exports at zero in October, report says - Reuters
 - source: Reuters
 - published_at: `2026-10-13T16:53:43+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Saudi leads jump in OPEC+ oil output in September, despite Iran war disruption - Reuters
 - source: Reuters
 - published_at: `2026-10-13T13:58:40+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Saudi Aramco administrative building attacked, limited fire reported - Reuters
+- source: Reuters
+- published_at: `2026-10-13T13:12:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -94,13 +94,5 @@
 - headline: United Airlines is making it harder to reach its top frequent flyer status in 2027
 - source: CNBC
 - published_at: `2026-10-13T21:02:43+00:00`
-- importance_score: `86`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: COMMENTARY: Trump's oil jawboning loses punch as wars spiral - Reuters
-- source: Reuters
-- published_at: `2026-10-13T06:00:00+00:00`
-- importance_score: `100`
+- importance_score: `85`
 - confidence: `medium`
