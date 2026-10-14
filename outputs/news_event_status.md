@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-14T00:46:21.410027+00:00`
+- generated_at: `2026-10-14T01:33:17.340197+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
+- major_event_count: `10`
 - event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran shifting tactics to step up attacks on shipping before US vote, officials say - Reuters
+- source: Reuters
+- published_at: `2026-10-14T00:06:00+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
