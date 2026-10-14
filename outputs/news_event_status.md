@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-14T17:14:59.829811+00:00`
+- generated_at: `2026-10-14T23:21:45.334713+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
-- event_detection_confidence: `75`
+- major_event_count: `13`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -29,7 +29,15 @@
 
 - headline: Yemen's Houthis vow more attacks on Saudi airports, oil facilities after Aramco HQ hit - Reuters
 - source: Reuters
-- published_at: `2026-10-14T15:09:46+00:00`
+- published_at: `2026-10-14T21:12:59+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Two ships sink near Hormuz after being hit by projectiles amid surge in attacks - Reuters
+- source: Reuters
+- published_at: `2026-10-14T17:22:06+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -63,7 +71,15 @@
 - source: Reuters
 - published_at: `2026-10-14T11:26:01+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: South Korea police identify more victims in Incheon stabbing attack, total rises to 10, reports say - Reuters
+- source: Reuters
+- published_at: `2026-10-14T06:31:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -83,24 +99,8 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iran shifting tactics to step up attacks on shipping before US vote, officials say - Reuters
+- headline: Oil prices gain on attacks in Saudi Arabia, Iran's new tactics to target tankers - Reuters
 - source: Reuters
-- published_at: `2026-10-14T00:06:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Zelenskiy seeks new talks with US envoys on ending Russia war - Reuters
-- source: Reuters
-- published_at: `2026-10-13T19:35:49+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Airport attacks put aviation in crosshairs of geopolitical conflicts
-- source: CNBC
-- published_at: `2026-10-13T18:33:42+00:00`
+- published_at: `2026-10-14T01:27:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
