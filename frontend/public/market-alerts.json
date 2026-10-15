@@ -1,13 +1,13 @@
 {
   "disclaimer": "Market alerts are forecast warnings and scenario-confirmation notes only. They are not trading signals or buy/sell/entry/exit guidance.",
-  "generated_at": "2026-10-14T23:21:54.249736+00:00",
+  "generated_at": "2026-10-15T00:14:27.502717+00:00",
   "summary": {
     "alert_count_by_level": {
       "EXTREME": 0,
-      "HIGH_CONVICTION": 1,
+      "HIGH_CONVICTION": 0,
       "NO_ALERT": 2,
-      "WARNING": 2,
-      "WATCH": 15
+      "WARNING": 5,
+      "WATCH": 13
     },
     "alert_count_by_type": {
       "Bottoming Setup Alert": 4,
@@ -16,15 +16,15 @@
       "Risk Expansion Alert": 4,
       "Trend Repair Alert": 4
     },
-    "has_high_alert": true,
+    "has_high_alert": false,
     "strongest_alert": {
       "affected_symbols": [
-        "DIA"
+        "SPY"
       ],
-      "alert_level": "HIGH_CONVICTION",
-      "alert_score": 75,
+      "alert_level": "WARNING",
+      "alert_score": 78,
       "alert_type": "Bounce Setup Alert",
-      "confidence": "high",
+      "confidence": "medium",
       "conflicting_evidence": [],
       "invalidation_conditions": [
         "跌破主路径失效价",
@@ -34,45 +34,45 @@
       "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
       "related_price_levels": {
         "bounce_target_zone": {
-          "base": 539.0,
-          "conservative": 520.02,
-          "extended": 543.99
+          "base": 831.32,
+          "conservative": 788.57,
+          "extended": 853.91
         },
         "failed_bounce_warning_zone": {
-          "critical_warning": 505.54,
-          "first_warning": 511.65
+          "critical_warning": 761.69,
+          "first_warning": 768.06
         },
         "primary_confirmation_level": {
-          "confidence": "medium",
-          "distance_pct": 0.0044,
-          "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
-          "price": 517.91,
-          "source": "primary_path_5d + recent_5d_high + realized_volatility_band",
-          "source_type": "simulated_path"
-        },
-        "primary_invalidation_level": {
-          "confidence": "medium",
-          "distance_pct": -0.0136,
-          "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
-          "price": 508.62,
-          "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
-          "source_type": "price_structure"
-        },
-        "risk_scenario_activation_level": {
           "confidence": "medium_high",
-          "distance_pct": -0.0196,
-          "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
-          "price": 505.54,
+          "distance_pct": 0.0117,
+          "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
+          "price": 778.57,
           "source": "confluence",
           "source_type": "confluence"
         },
-        "trend_reversal_confirmation_level": {
+        "primary_invalidation_level": {
+          "confidence": "medium_high",
+          "distance_pct": -0.0073,
+          "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
+          "price": 763.99,
+          "source": "confluence",
+          "source_type": "confluence"
+        },
+        "risk_scenario_activation_level": {
           "confidence": "medium",
-          "distance_pct": 0.0182,
+          "distance_pct": -0.0103,
+          "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
+          "price": 761.69,
+          "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
+          "source_type": "simulated_path"
+        },
+        "trend_reversal_confirmation_level": {
+          "confidence": "medium_high",
+          "distance_pct": 0.0123,
           "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
-          "price": 525.01,
-          "source": "primary_path_20d + recent_20d_high + 20d_or_50d_moving_average",
-          "source_type": "price_structure"
+          "price": 779.09,
+          "source": "confluence",
+          "source_type": "confluence"
         }
       },
       "required_confirmation": [
@@ -94,21 +94,9 @@
           "source": "credit"
         },
         {
-          "detail": "risk-on flow proxy 改善",
-          "name": "risk-on flow proxy 改善",
-          "score": 60,
-          "source": "flow"
-        },
-        {
-          "detail": "DIA 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应已初步确认。",
-          "name": "新闻事件支持反抽路径",
-          "score": 60,
-          "source": "news"
-        },
-        {
           "detail": "反抽概率偏高",
           "name": "反抽概率偏高",
-          "score": 57,
+          "score": 59,
           "source": "bounce_probability"
         }
       ],
@@ -117,12 +105,12 @@
     "top_alerts": [
       {
         "affected_symbols": [
-          "DIA"
+          "SPY"
         ],
-        "alert_level": "HIGH_CONVICTION",
-        "alert_score": 75,
+        "alert_level": "WARNING",
+        "alert_score": 78,
         "alert_type": "Bounce Setup Alert",
-        "confidence": "high",
+        "confidence": "medium",
         "conflicting_evidence": [],
         "invalidation_conditions": [
           "跌破主路径失效价",
@@ -132,12 +120,97 @@
         "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
         "related_price_levels": {
           "bounce_target_zone": {
-            "base": 539.0,
-            "conservative": 520.02,
-            "extended": 543.99
+            "base": 831.32,
+            "conservative": 788.57,
+            "extended": 853.91
           },
           "failed_bounce_warning_zone": {
-            "critical_warning": 505.54,
+            "critical_warning": 761.69,
+            "first_warning": 768.06
+          },
+          "primary_confirmation_level": {
+            "confidence": "medium_high",
+            "distance_pct": 0.0117,
+            "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
+            "price": 778.57,
+            "source": "confluence",
+            "source_type": "confluence"
+          },
+          "primary_invalidation_level": {
+            "confidence": "medium_high",
+            "distance_pct": -0.0073,
+            "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
+            "price": 763.99,
+            "source": "confluence",
+            "source_type": "confluence"
+          },
+          "risk_scenario_activation_level": {
+            "confidence": "medium",
+            "distance_pct": -0.0103,
+            "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
+            "price": 761.69,
+            "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
+            "source_type": "simulated_path"
+          },
+          "trend_reversal_confirmation_level": {
+            "confidence": "medium_high",
+            "distance_pct": 0.0123,
+            "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
+            "price": 779.09,
+            "source": "confluence",
+            "source_type": "confluence"
+          }
+        },
+        "required_confirmation": [
+          "价格站上主路径确认价",
+          "成交量放大且收盘靠近高位",
+          "VIX 继续回落，HYG/LQD 保持稳定"
+        ],
+        "supporting_evidence": [
+          {
+            "detail": "宽度改善支持反抽",
+            "name": "宽度改善支持反抽",
+            "score": 97,
+            "source": "breadth"
+          },
+          {
+            "detail": "信用压力未继续恶化",
+            "name": "信用压力未继续恶化",
+            "score": 66,
+            "source": "credit"
+          },
+          {
+            "detail": "反抽概率偏高",
+            "name": "反抽概率偏高",
+            "score": 59,
+            "source": "bounce_probability"
+          }
+        ],
+        "validation_status": "not_yet_forward_validated"
+      },
+      {
+        "affected_symbols": [
+          "DIA"
+        ],
+        "alert_level": "WARNING",
+        "alert_score": 77,
+        "alert_type": "Bounce Setup Alert",
+        "confidence": "medium",
+        "conflicting_evidence": [],
+        "invalidation_conditions": [
+          "跌破主路径失效价",
+          "VIX 重新上升",
+          "宽度确认转弱"
+        ],
+        "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
+        "related_price_levels": {
+          "bounce_target_zone": {
+            "base": 542.74,
+            "conservative": 524.38,
+            "extended": 558.23
+          },
+          "failed_bounce_warning_zone": {
+            "critical_warning": 508.55,
             "first_warning": 511.65
           },
           "primary_confirmation_level": {
@@ -157,12 +230,12 @@
             "source_type": "price_structure"
           },
           "risk_scenario_activation_level": {
-            "confidence": "medium_high",
-            "distance_pct": -0.0196,
+            "confidence": "medium",
+            "distance_pct": -0.0137,
             "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
-            "price": 505.54,
-            "source": "confluence",
-            "source_type": "confluence"
+            "price": 508.55,
+            "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
+            "source_type": "simulated_path"
           },
           "trend_reversal_confirmation_level": {
             "confidence": "medium",
@@ -192,18 +265,6 @@
             "source": "credit"
           },
           {
-            "detail": "risk-on flow proxy 改善",
-            "name": "risk-on flow proxy 改善",
-            "score": 60,
-            "source": "flow"
-          },
-          {
-            "detail": "DIA 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应已初步确认。",
-            "name": "新闻事件支持反抽路径",
-            "score": 60,
-            "source": "news"
-          },
-          {
             "detail": "反抽概率偏高",
             "name": "反抽概率偏高",
             "score": 57,
@@ -217,7 +278,7 @@
           "IWM"
         ],
         "alert_level": "WARNING",
-        "alert_score": 73,
+        "alert_score": 71,
         "alert_type": "Failed Bounce Alert",
         "confidence": "medium",
         "conflicting_evidence": [],
@@ -229,13 +290,13 @@
         "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
         "related_price_levels": {
           "bounce_target_zone": {
-            "base": 297.74,
-            "conservative": 278.94,
-            "extended": 307.15
+            "base": 296.36,
+            "conservative": 282.17,
+            "extended": 324.12
           },
           "failed_bounce_warning_zone": {
-            "critical_warning": 256.72,
-            "first_warning": 265.09
+            "critical_warning": 257.26,
+            "first_warning": 267.04
           },
           "primary_confirmation_level": {
             "confidence": "medium",
@@ -247,17 +308,17 @@
           },
           "primary_invalidation_level": {
             "confidence": "medium",
-            "distance_pct": -0.0231,
+            "distance_pct": -0.016,
             "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
-            "price": 265.09,
+            "price": 267.04,
             "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
             "source_type": "price_structure"
           },
           "risk_scenario_activation_level": {
             "confidence": "medium",
-            "distance_pct": -0.054,
+            "distance_pct": -0.052,
             "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
-            "price": 256.72,
+            "price": 257.26,
             "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
             "source_type": "simulated_path"
           },
@@ -277,22 +338,113 @@
         ],
         "supporting_evidence": [
           {
-            "detail": "K线结构存在失败反抽风险",
-            "name": "K线结构存在失败反抽风险",
-            "score": 78,
-            "source": "price_volume"
-          },
-          {
             "detail": "反抽缺少内部参与确认",
             "name": "反抽缺少内部参与确认",
             "score": 74,
             "source": "breadth"
           },
           {
+            "detail": "K线结构存在失败反抽风险",
+            "name": "K线结构存在失败反抽风险",
+            "score": 70,
+            "source": "price_volume"
+          },
+          {
             "detail": "下跌延续/失败反抽风险偏高",
             "name": "下跌延续/失败反抽风险偏高",
-            "score": 59,
+            "score": 53,
             "source": "downside_predictor"
+          }
+        ],
+        "validation_status": "not_yet_forward_validated"
+      },
+      {
+        "affected_symbols": [
+          "SPY"
+        ],
+        "alert_level": "WARNING",
+        "alert_score": 71,
+        "alert_type": "Trend Repair Alert",
+        "confidence": "medium",
+        "conflicting_evidence": [],
+        "invalidation_conditions": [
+          "回落跌破主路径确认价",
+          "宽度和信用确认消失",
+          "VIX 重新上行"
+        ],
+        "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
+        "related_price_levels": {
+          "bounce_target_zone": {
+            "base": 831.32,
+            "conservative": 788.57,
+            "extended": 853.91
+          },
+          "failed_bounce_warning_zone": {
+            "critical_warning": 761.69,
+            "first_warning": 768.06
+          },
+          "primary_confirmation_level": {
+            "confidence": "medium_high",
+            "distance_pct": 0.0117,
+            "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
+            "price": 778.57,
+            "source": "confluence",
+            "source_type": "confluence"
+          },
+          "primary_invalidation_level": {
+            "confidence": "medium_high",
+            "distance_pct": -0.0073,
+            "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
+            "price": 763.99,
+            "source": "confluence",
+            "source_type": "confluence"
+          },
+          "risk_scenario_activation_level": {
+            "confidence": "medium",
+            "distance_pct": -0.0103,
+            "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
+            "price": 761.69,
+            "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
+            "source_type": "simulated_path"
+          },
+          "trend_reversal_confirmation_level": {
+            "confidence": "medium_high",
+            "distance_pct": 0.0123,
+            "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
+            "price": 779.09,
+            "source": "confluence",
+            "source_type": "confluence"
+          }
+        },
+        "required_confirmation": [
+          "价格站上趋势修复确认价",
+          "50d/200d 宽度继续改善",
+          "主路径概率相对次路径继续拉开"
+        ],
+        "supporting_evidence": [
+          {
+            "detail": "50d/200d 宽度与内部参与修复",
+            "name": "50d/200d 宽度与内部参与修复",
+            "score": 97,
+            "source": "breadth"
+          },
+          {
+            "detail": "趋势修复概率偏高",
+            "name": "趋势修复概率偏高",
+            "score": 70,
+            "source": "trend_reversal_probability"
+          },
+          {
+            "detail": "信用稳定支持修复",
+            "name": "信用稳定支持修复",
+            "score": 66,
+            "source": "credit"
+          },
+          {
+            "detail": "波动率结构修复",
+            "name": "波动率结构修复",
+            "score": 58,
+            "source": "options"
           }
         ],
         "validation_status": "not_yet_forward_validated"
@@ -314,12 +466,12 @@
         "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
         "related_price_levels": {
           "bounce_target_zone": {
-            "base": 539.0,
-            "conservative": 520.02,
-            "extended": 543.99
+            "base": 542.74,
+            "conservative": 524.38,
+            "extended": 558.23
           },
           "failed_bounce_warning_zone": {
-            "critical_warning": 505.54,
+            "critical_warning": 508.55,
             "first_warning": 511.65
           },
           "primary_confirmation_level": {
@@ -339,12 +491,12 @@
             "source_type": "price_structure"
           },
           "risk_scenario_activation_level": {
-            "confidence": "medium_high",
-            "distance_pct": -0.0196,
+            "confidence": "medium",
+            "distance_pct": -0.0137,
             "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
-            "price": 505.54,
-            "source": "confluence",
-            "source_type": "confluence"
+            "price": 508.55,
+            "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
+            "source_type": "simulated_path"
           },
           "trend_reversal_confirmation_level": {
             "confidence": "medium",
@@ -374,95 +526,16 @@
             "source": "credit"
           },
           {
-            "detail": "risk-on rotation 扩散",
-            "name": "risk-on rotation 扩散",
-            "score": 60,
-            "source": "flow"
+            "detail": "趋势修复概率偏高",
+            "name": "趋势修复概率偏高",
+            "score": 65,
+            "source": "trend_reversal_probability"
           },
           {
             "detail": "波动率结构修复",
             "name": "波动率结构修复",
             "score": 58,
             "source": "options"
-          }
-        ],
-        "validation_status": "not_yet_forward_validated"
-      },
-      {
-        "affected_symbols": [
-          "DIA"
-        ],
-        "alert_level": "WATCH",
-        "alert_score": 58,
-        "alert_type": "Bottoming Setup Alert",
-        "confidence": "low",
-        "conflicting_evidence": [],
-        "invalidation_conditions": [
-          "信用重新恶化",
-          "跌破风险路径接管价",
-          "VIX/VVIX 再度上行"
-        ],
-        "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
-        "related_price_levels": {
-          "bounce_target_zone": {
-            "base": 539.0,
-            "conservative": 520.02,
-            "extended": 543.99
-          },
-          "failed_bounce_warning_zone": {
-            "critical_warning": 505.54,
-            "first_warning": 511.65
-          },
-          "primary_confirmation_level": {
-            "confidence": "medium",
-            "distance_pct": 0.0044,
-            "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
-            "price": 517.91,
-            "source": "primary_path_5d + recent_5d_high + realized_volatility_band",
-            "source_type": "simulated_path"
-          },
-          "primary_invalidation_level": {
-            "confidence": "medium",
-            "distance_pct": -0.0136,
-            "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
-            "price": 508.62,
-            "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
-            "source_type": "price_structure"
-          },
-          "risk_scenario_activation_level": {
-            "confidence": "medium_high",
-            "distance_pct": -0.0196,
-            "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
-            "price": 505.54,
-            "source": "confluence",
-            "source_type": "confluence"
-          },
-          "trend_reversal_confirmation_level": {
-            "confidence": "medium",
-            "distance_pct": 0.0182,
-            "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
-            "price": 525.01,
-            "source": "primary_path_20d + recent_20d_high + 20d_or_50d_moving_average",
-            "source_type": "price_structure"
-          }
-        },
-        "required_confirmation": [
-          "坏消息不再打出新低",
-          "宽度继续改善",
-          "价格收复短期关键位"
-        ],
-        "supporting_evidence": [
-          {
-            "detail": "内部宽度改善",
-            "name": "内部宽度改善",
-            "score": 100,
-            "source": "breadth"
-          },
-          {
-            "detail": "信用压力停止恶化",
-            "name": "信用压力停止恶化",
-            "score": 66,
-            "source": "credit"
           }
         ],
         "validation_status": "not_yet_forward_validated"
@@ -484,13 +557,13 @@
         "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
         "related_price_levels": {
           "bounce_target_zone": {
-            "base": 297.74,
-            "conservative": 278.94,
-            "extended": 307.15
+            "base": 296.36,
+            "conservative": 282.17,
+            "extended": 324.12
           },
           "failed_bounce_warning_zone": {
-            "critical_warning": 256.72,
-            "first_warning": 265.09
+            "critical_warning": 257.26,
+            "first_warning": 267.04
           },
           "primary_confirmation_level": {
             "confidence": "medium",
@@ -502,17 +575,17 @@
           },
           "primary_invalidation_level": {
             "confidence": "medium",
-            "distance_pct": -0.0231,
+            "distance_pct": -0.016,
             "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
-            "price": 265.09,
+            "price": 267.04,
             "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
             "source_type": "price_structure"
           },
           "risk_scenario_activation_level": {
             "confidence": "medium",
-            "distance_pct": -0.054,
+            "distance_pct": -0.052,
             "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
-            "price": 256.72,
+            "price": 257.26,
             "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
             "source_type": "simulated_path"
           },
@@ -563,13 +636,13 @@
         "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
         "related_price_levels": {
           "bounce_target_zone": {
-            "base": 773.02,
+            "base": 778.26,
             "conservative": 751.27,
-            "extended": 843.46
+            "extended": 844.7
           },
           "failed_bounce_warning_zone": {
             "critical_warning": 716.92,
-            "first_warning": 719.28
+            "first_warning": 726.38
           },
           "primary_confirmation_level": {
             "confidence": "medium",
@@ -580,20 +653,20 @@
             "source_type": "simulated_path"
           },
           "primary_invalidation_level": {
-            "confidence": "medium",
-            "distance_pct": -0.0133,
+            "confidence": "medium_high",
+            "distance_pct": -0.0042,
             "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
-            "price": 719.28,
-            "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
-            "source_type": "price_structure"
+            "price": 725.91,
+            "source": "confluence",
+            "source_type": "confluence"
           },
           "risk_scenario_activation_level": {
-            "confidence": "medium_high",
+            "confidence": "medium",
             "distance_pct": -0.0165,
             "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
             "price": 716.92,
-            "source": "confluence",
-            "source_type": "confluence"
+            "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
+            "source_type": "simulated_path"
           },
           "trend_reversal_confirmation_level": {
             "confidence": "medium",
@@ -611,95 +684,16 @@
         ],
         "supporting_evidence": [
           {
-            "detail": "K线结构存在失败反抽风险",
-            "name": "K线结构存在失败反抽风险",
-            "score": 70,
-            "source": "price_volume"
-          },
-          {
             "detail": "反抽缺少内部参与确认",
             "name": "反抽缺少内部参与确认",
             "score": 69,
             "source": "breadth"
-          }
-        ],
-        "validation_status": "not_yet_forward_validated"
-      },
-      {
-        "affected_symbols": [
-          "SPY"
-        ],
-        "alert_level": "WATCH",
-        "alert_score": 58,
-        "alert_type": "Bottoming Setup Alert",
-        "confidence": "low",
-        "conflicting_evidence": [],
-        "invalidation_conditions": [
-          "信用重新恶化",
-          "跌破风险路径接管价",
-          "VIX/VVIX 再度上行"
-        ],
-        "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
-        "related_price_levels": {
-          "bounce_target_zone": {
-            "base": 818.57,
-            "conservative": 778.57,
-            "extended": 868.45
-          },
-          "failed_bounce_warning_zone": {
-            "critical_warning": 735.05,
-            "first_warning": 746.79
-          },
-          "primary_confirmation_level": {
-            "confidence": "medium",
-            "distance_pct": 0.0117,
-            "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
-            "price": 778.57,
-            "source": "primary_path_5d + recent_5d_high + realized_volatility_band",
-            "source_type": "simulated_path"
-          },
-          "primary_invalidation_level": {
-            "confidence": "medium",
-            "distance_pct": -0.0296,
-            "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
-            "price": 746.79,
-            "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
-            "source_type": "price_structure"
-          },
-          "risk_scenario_activation_level": {
-            "confidence": "medium",
-            "distance_pct": -0.0449,
-            "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
-            "price": 735.05,
-            "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
-            "source_type": "simulated_path"
-          },
-          "trend_reversal_confirmation_level": {
-            "confidence": "medium",
-            "distance_pct": 0.0123,
-            "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
-            "price": 779.09,
-            "source": "primary_path_20d + recent_20d_high + 20d_or_50d_moving_average",
-            "source_type": "price_structure"
-          }
-        },
-        "required_confirmation": [
-          "坏消息不再打出新低",
-          "宽度继续改善",
-          "价格收复短期关键位"
-        ],
-        "supporting_evidence": [
-          {
-            "detail": "内部宽度改善",
-            "name": "内部宽度改善",
-            "score": 100,
-            "source": "breadth"
           },
           {
-            "detail": "信用压力停止恶化",
-            "name": "信用压力停止恶化",
-            "score": 66,
-            "source": "credit"
+            "detail": "K线结构存在失败反抽风险",
+            "name": "K线结构存在失败反抽风险",
+            "score": 62,
+            "source": "price_volume"
           }
         ],
         "validation_status": "not_yet_forward_validated"
@@ -721,13 +715,13 @@
         "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
         "related_price_levels": {
           "bounce_target_zone": {
-            "base": 773.02,
+            "base": 778.26,
             "conservative": 751.27,
-            "extended": 843.46
+            "extended": 844.7
           },
           "failed_bounce_warning_zone": {
             "critical_warning": 716.92,
-            "first_warning": 719.28
+            "first_warning": 726.38
           },
           "primary_confirmation_level": {
             "confidence": "medium",
@@ -738,20 +732,20 @@
             "source_type": "simulated_path"
           },
           "primary_invalidation_level": {
-            "confidence": "medium",
-            "distance_pct": -0.0133,
+            "confidence": "medium_high",
+            "distance_pct": -0.0042,
             "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
-            "price": 719.28,
-            "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
-            "source_type": "price_structure"
+            "price": 725.91,
+            "source": "confluence",
+            "source_type": "confluence"
           },
           "risk_scenario_activation_level": {
-            "confidence": "medium_high",
+            "confidence": "medium",
             "distance_pct": -0.0165,
             "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
             "price": 716.92,
-            "source": "confluence",
-            "source_type": "confluence"
+            "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
+            "source_type": "simulated_path"
           },
           "trend_reversal_confirmation_level": {
             "confidence": "medium",
@@ -792,10 +786,10 @@
           "affected_symbols": [
             "DIA"
           ],
-          "alert_level": "HIGH_CONVICTION",
-          "alert_score": 75,
+          "alert_level": "WARNING",
+          "alert_score": 77,
           "alert_type": "Bounce Setup Alert",
-          "confidence": "high",
+          "confidence": "medium",
           "conflicting_evidence": [],
           "invalidation_conditions": [
             "跌破主路径失效价",
@@ -805,12 +799,12 @@
           "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
           "related_price_levels": {
             "bounce_target_zone": {
-              "base": 539.0,
-              "conservative": 520.02,
-              "extended": 543.99
+              "base": 542.74,
+              "conservative": 524.38,
+              "extended": 558.23
             },
             "failed_bounce_warning_zone": {
-              "critical_warning": 505.54,
+              "critical_warning": 508.55,
               "first_warning": 511.65
             },
             "primary_confirmation_level": {
@@ -830,12 +824,12 @@
               "source_type": "price_structure"
             },
             "risk_scenario_activation_level": {
-              "confidence": "medium_high",
-              "distance_pct": -0.0196,
+              "confidence": "medium",
+              "distance_pct": -0.0137,
               "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
-              "price": 505.54,
-              "source": "confluence",
-              "source_type": "confluence"
+              "price": 508.55,
+              "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
+              "source_type": "simulated_path"
             },
             "trend_reversal_confirmation_level": {
               "confidence": "medium",
@@ -865,18 +859,6 @@
               "source": "credit"
             },
             {
-              "detail": "risk-on flow proxy 改善",
-              "name": "risk-on flow proxy 改善",
-              "score": 60,
-              "source": "flow"
-            },
-            {
-              "detail": "DIA 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应已初步确认。",
-              "name": "新闻事件支持反抽路径",
-              "score": 60,
-              "source": "news"
-            },
-            {
               "detail": "反抽概率偏高",
               "name": "反抽概率偏高",
               "score": 57,
@@ -902,12 +884,12 @@
           "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
           "related_price_levels": {
             "bounce_target_zone": {
-              "base": 539.0,
-              "conservative": 520.02,
-              "extended": 543.99
+              "base": 542.74,
+              "conservative": 524.38,
+              "extended": 558.23
             },
             "failed_bounce_warning_zone": {
-              "critical_warning": 505.54,
+              "critical_warning": 508.55,
               "first_warning": 511.65
             },
             "primary_confirmation_level": {
@@ -927,12 +909,12 @@
               "source_type": "price_structure"
             },
             "risk_scenario_activation_level": {
-              "confidence": "medium_high",
-              "distance_pct": -0.0196,
+              "confidence": "medium",
+              "distance_pct": -0.0137,
               "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
-              "price": 505.54,
-              "source": "confluence",
-              "source_type": "confluence"
+              "price": 508.55,
+              "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
+              "source_type": "simulated_path"
             },
             "trend_reversal_confirmation_level": {
               "confidence": "medium",
@@ -962,10 +944,10 @@
               "source": "credit"
             },
             {
-              "detail": "risk-on rotation 扩散",
-              "name": "risk-on rotation 扩散",
-              "score": 60,
-              "source": "flow"
+              "detail": "趋势修复概率偏高",
+              "name": "趋势修复概率偏高",
+              "score": 65,
+              "source": "trend_reversal_probability"
             },
             {
               "detail": "波动率结构修复",
@@ -981,10 +963,17 @@
             "DIA"
           ],
           "alert_level": "WATCH",
-          "alert_score": 58,
+          "alert_score": 55,
           "alert_type": "Bottoming Setup Alert",
           "confidence": "low",
-          "conflicting_evidence": [],
+          "conflicting_evidence": [
+            {
+              "detail": "DIA 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应已初步确认。",
+              "name": "新闻仍偏风险",
+              "score": 55,
+              "source": "news"
+            }
+          ],
           "invalidation_conditions": [
             "信用重新恶化",
             "跌破风险路径接管价",
@@ -993,12 +982,12 @@
           "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
           "related_price_levels": {
             "bounce_target_zone": {
-              "base": 539.0,
-              "conservative": 520.02,
-              "extended": 543.99
+              "base": 542.74,
+              "conservative": 524.38,
+              "extended": 558.23
             },
             "failed_bounce_warning_zone": {
-              "critical_warning": 505.54,
+              "critical_warning": 508.55,
               "first_warning": 511.65
             },
             "primary_confirmation_level": {
@@ -1018,12 +1007,12 @@
               "source_type": "price_structure"
             },
             "risk_scenario_activation_level": {
-              "confidence": "medium_high",
-              "distance_pct": -0.0196,
+              "confidence": "medium",
+              "distance_pct": -0.0137,
               "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
-              "price": 505.54,
-              "source": "confluence",
-              "source_type": "confluence"
+              "price": 508.55,
+              "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
+              "source_type": "simulated_path"
             },
             "trend_reversal_confirmation_level": {
               "confidence": "medium",
@@ -1085,12 +1074,12 @@
           "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
           "related_price_levels": {
             "bounce_target_zone": {
-              "base": 539.0,
-              "conservative": 520.02,
-              "extended": 543.99
+              "base": 542.74,
+              "conservative": 524.38,
+              "extended": 558.23
             },
             "failed_bounce_warning_zone": {
-              "critical_warning": 505.54,
+              "critical_warning": 508.55,
               "first_warning": 511.65
             },
             "primary_confirmation_level": {
@@ -1110,12 +1099,12 @@
               "source_type": "price_structure"
             },
             "risk_scenario_activation_level": {
-              "confidence": "medium_high",
-              "distance_pct": -0.0196,
+              "confidence": "medium",
+              "distance_pct": -0.0137,
               "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
-              "price": 505.54,
-              "source": "confluence",
-              "source_type": "confluence"
+              "price": 508.55,
+              "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
+              "source_type": "simulated_path"
             },
             "trend_reversal_confirmation_level": {
               "confidence": "medium",
@@ -1133,6 +1122,12 @@
           ],
           "supporting_evidence": [
             {
+              "detail": "DIA 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应已初步确认。",
+              "name": "新闻事件偏风险路径",
+              "score": 60,
+              "source": "news"
+            },
+            {
               "detail": "risk-off flow proxy 增强",
               "name": "risk-off flow proxy 增强",
               "score": 57,
@@ -1146,7 +1141,7 @@
             "DIA"
           ],
           "alert_level": "NO_ALERT",
-          "alert_score": 26,
+          "alert_score": 30,
           "alert_type": "Failed Bounce Alert",
           "confidence": "low",
           "conflicting_evidence": [
@@ -1165,12 +1160,12 @@
           "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
           "related_price_levels": {
             "bounce_target_zone": {
-              "base": 539.0,
-              "conservative": 520.02,
-              "extended": 543.99
+              "base": 542.74,
+              "conservative": 524.38,
+              "extended": 558.23
             },
             "failed_bounce_warning_zone": {
-              "critical_warning": 505.54,
+              "critical_warning": 508.55,
               "first_warning": 511.65
             },
             "primary_confirmation_level": {
@@ -1190,12 +1185,12 @@
               "source_type": "price_structure"
             },
             "risk_scenario_activation_level": {
-              "confidence": "medium_high",
-              "distance_pct": -0.0196,
+              "confidence": "medium",
+              "distance_pct": -0.0137,
               "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
-              "price": 505.54,
-              "source": "confluence",
-              "source_type": "confluence"
+              "price": 508.55,
+              "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
+              "source_type": "simulated_path"
             },
             "trend_reversal_confirmation_level": {
               "confidence": "medium",
@@ -1213,10 +1208,10 @@
           ],
           "supporting_evidence": [
             {
-              "detail": "下跌延续/失败反抽风险偏高",
-              "name": "下跌延续/失败反抽风险偏高",
-              "score": 47,
-              "source": "downside_predictor"
+              "detail": "DIA 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应已初步确认。",
+              "name": "新闻事件削弱主路径",
+              "score": 55,
+              "source": "news"
             }
           ],
           "validation_status": "not_yet_forward_validated"
@@ -1226,10 +1221,10 @@
         "affected_symbols": [
           "DIA"
         ],
-        "alert_level": "HIGH_CONVICTION",
-        "alert_score": 75,
+        "alert_level": "WARNING",
+        "alert_score": 77,
         "alert_type": "Bounce Setup Alert",
-        "confidence": "high",
+        "confidence": "medium",
         "conflicting_evidence": [],
         "invalidation_conditions": [
           "跌破主路径失效价",
@@ -1239,12 +1234,12 @@
         "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
         "related_price_levels": {
           "bounce_target_zone": {
-            "base": 539.0,
-            "conservative": 520.02,
-            "extended": 543.99
+            "base": 542.74,
+            "conservative": 524.38,
+            "extended": 558.23
           },
           "failed_bounce_warning_zone": {
-            "critical_warning": 505.54,
+            "critical_warning": 508.55,
             "first_warning": 511.65
           },
           "primary_confirmation_level": {
@@ -1264,12 +1259,12 @@
             "source_type": "price_structure"
           },
           "risk_scenario_activation_level": {
-            "confidence": "medium_high",
-            "distance_pct": -0.0196,
+            "confidence": "medium",
+            "distance_pct": -0.0137,
             "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
-            "price": 505.54,
-            "source": "confluence",
-            "source_type": "confluence"
+            "price": 508.55,
+            "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
+            "source_type": "simulated_path"
           },
           "trend_reversal_confirmation_level": {
             "confidence": "medium",
@@ -1297,18 +1292,6 @@
             "name": "信用压力未继续恶化",
             "score": 66,
             "source": "credit"
-          },
-          {
-            "detail": "risk-on flow proxy 改善",
-            "name": "risk-on flow proxy 改善",
-            "score": 60,
-            "source": "flow"
-          },
-          {
-            "detail": "DIA 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应已初步确认。",
-            "name": "新闻事件支持反抽路径",
-            "score": 60,
-            "source": "news"
           },
           {
             "detail": "反抽概率偏高",
@@ -1339,7 +1322,7 @@
             "IWM"
           ],
           "alert_level": "WARNING",
-          "alert_score": 73,
+          "alert_score": 71,
           "alert_type": "Failed Bounce Alert",
           "confidence": "medium",
           "conflicting_evidence": [],
@@ -1351,13 +1334,13 @@
           "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
           "related_price_levels": {
             "bounce_target_zone": {
-              "base": 297.74,
-              "conservative": 278.94,
-              "extended": 307.15
+              "base": 296.36,
+              "conservative": 282.17,
+              "extended": 324.12
             },
             "failed_bounce_warning_zone": {
-              "critical_warning": 256.72,
-              "first_warning": 265.09
+              "critical_warning": 257.26,
+              "first_warning": 267.04
             },
             "primary_confirmation_level": {
               "confidence": "medium",
@@ -1369,17 +1352,17 @@
             },
             "primary_invalidation_level": {
               "confidence": "medium",
-              "distance_pct": -0.0231,
+              "distance_pct": -0.016,
               "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
-              "price": 265.09,
+              "price": 267.04,
               "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
               "source_type": "price_structure"
             },
             "risk_scenario_activation_level": {
               "confidence": "medium",
-              "distance_pct": -0.054,
+              "distance_pct": -0.052,
               "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
-              "price": 256.72,
+              "price": 257.26,
               "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
               "source_type": "simulated_path"
             },
@@ -1399,21 +1382,21 @@
           ],
           "supporting_evidence": [
             {
-              "detail": "K线结构存在失败反抽风险",
-              "name": "K线结构存在失败反抽风险",
-              "score": 78,
-              "source": "price_volume"
-            },
-            {
               "detail": "反抽缺少内部参与确认",
               "name": "反抽缺少内部参与确认",
               "score": 74,
               "source": "breadth"
             },
             {
+              "detail": "K线结构存在失败反抽风险",
+              "name": "K线结构存在失败反抽风险",
+              "score": 70,
+              "source": "price_volume"
+            },
+            {
               "detail": "下跌延续/失败反抽风险偏高",
               "name": "下跌延续/失败反抽风险偏高",
-              "score": 59,
+              "score": 53,
               "source": "downside_predictor"
             }
           ],
@@ -1436,13 +1419,13 @@
           "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
           "related_price_levels": {
             "bounce_target_zone": {
-              "base": 297.74,
-              "conservative": 278.94,
-              "extended": 307.15
+              "base": 296.36,
+              "conservative": 282.17,
+              "extended": 324.12
             },
             "failed_bounce_warning_zone": {
-              "critical_warning": 256.72,
-              "first_warning": 265.09
+              "critical_warning": 257.26,
+              "first_warning": 267.04
             },
             "primary_confirmation_level": {
               "confidence": "medium",
@@ -1454,17 +1437,17 @@
             },
             "primary_invalidation_level": {
               "confidence": "medium",
-              "distance_pct": -0.0231,
+              "distance_pct": -0.016,
               "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
-              "price": 265.09,
+              "price": 267.04,
               "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
               "source_type": "price_structure"
             },
             "risk_scenario_activation_level": {
               "confidence": "medium",
-              "distance_pct": -0.054,
+              "distance_pct": -0.052,
               "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
-              "price": 256.72,
+              "price": 257.26,
               "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
               "source_type": "simulated_path"
             },
@@ -1503,119 +1486,21 @@
             "IWM"
           ],
           "alert_level": "WATCH",
-          "alert_score": 46,
-          "alert_type": "Risk Expansion Alert",
-          "confidence": "low",
-          "conflicting_evidence": [
-            {
-              "detail": "信用仍稳定",
-              "name": "信用仍稳定",
-              "score": 66,
-              "source": "credit"
-            }
-          ],
-          "invalidation_conditions": [
-            "VIX 回落且信用稳定",
-            "市场宽度重新改善",
-            "价格重新站回主路径确认价"
-          ],
-          "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
-          "related_price_levels": {
-            "bounce_target_zone": {
-              "base": 297.74,
-              "conservative": 278.94,
-              "extended": 307.15
-            },
-            "failed_bounce_warning_zone": {
-              "critical_warning": 256.72,
-              "first_warning": 265.09
-            },
-            "primary_confirmation_level": {
-              "confidence": "medium",
-              "distance_pct": 0.0279,
-              "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
-              "price": 278.94,
-              "source": "primary_path_5d + recent_5d_high + realized_volatility_band",
-              "source_type": "simulated_path"
-            },
-            "primary_invalidation_level": {
-              "confidence": "medium",
-              "distance_pct": -0.0231,
-              "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
-              "price": 265.09,
-              "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
-              "source_type": "price_structure"
-            },
-            "risk_scenario_activation_level": {
-              "confidence": "medium",
-              "distance_pct": -0.054,
-              "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
-              "price": 256.72,
-              "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
-              "source_type": "simulated_path"
-            },
-            "trend_reversal_confirmation_level": {
-              "confidence": "medium",
-              "distance_pct": 0.0691,
-              "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
-              "price": 290.12,
-              "source": "primary_path_20d + recent_20d_high + 20d_or_50d_moving_average",
-              "source_type": "price_structure"
-            }
-          },
-          "required_confirmation": [
-            "VIX/VVIX/SKEW 继续上升",
-            "HYG/LQD 明显转弱",
-            "IWM 跌破近期低点或风险路径接管价"
-          ],
-          "supporting_evidence": [
-            {
-              "detail": "价格/成交量跌破风险",
-              "name": "价格/成交量跌破风险",
-              "score": 78,
-              "source": "price_volume"
-            },
-            {
-              "detail": "市场宽度恶化或冲突",
-              "name": "市场宽度恶化或冲突",
-              "score": 74,
-              "source": "breadth"
-            },
-            {
-              "detail": "下跌延续概率升高",
-              "name": "下跌延续概率升高",
-              "score": 59,
-              "source": "downside_predictor"
-            },
-            {
-              "detail": "risk-off flow proxy 增强",
-              "name": "risk-off flow proxy 增强",
-              "score": 57,
-              "source": "flow"
-            }
-          ],
-          "validation_status": "not_yet_forward_validated"
-        },
-        {
-          "affected_symbols": [
-            "IWM"
-          ],
-          "alert_level": "WATCH",
-          "alert_score": 45,
+          "alert_score": 47,
           "alert_type": "Bounce Setup Alert",
           "confidence": "low",
           "conflicting_evidence": [
-            {
-              "detail": "价格结构仍有跌破风险",
-              "name": "价格结构仍有跌破风险",
-              "score": 78,
-              "source": "price_volume"
-            },
             {
               "detail": "宽度冲突削弱反抽",
               "name": "宽度冲突削弱反抽",
               "score": 74,
               "source": "breadth"
+            },
+            {
+              "detail": "价格结构仍有跌破风险",
+              "name": "价格结构仍有跌破风险",
+              "score": 70,
+              "source": "price_volume"
             }
           ],
           "invalidation_conditions": [
@@ -1626,13 +1511,13 @@
           "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
           "related_price_levels": {
             "bounce_target_zone": {
-              "base": 297.74,
-              "conservative": 278.94,
-              "extended": 307.15
+              "base": 296.36,
+              "conservative": 282.17,
+              "extended": 324.12
             },
             "failed_bounce_warning_zone": {
-              "critical_warning": 256.72,
-              "first_warning": 265.09
+              "critical_warning": 257.26,
+              "first_warning": 267.04
             },
             "primary_confirmation_level": {
               "confidence": "medium",
@@ -1644,17 +1529,17 @@
             },
             "primary_invalidation_level": {
               "confidence": "medium",
-              "distance_pct": -0.0231,
+              "distance_pct": -0.016,
               "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
-              "price": 265.09,
+              "price": 267.04,
               "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
               "source_type": "price_structure"
             },
             "risk_scenario_activation_level": {
               "confidence": "medium",
-              "distance_pct": -0.054,
+              "distance_pct": -0.052,
               "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
-              "price": 256.72,
+              "price": 257.26,
               "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
               "source_type": "simulated_path"
             },
@@ -1699,38 +1584,32 @@
             "IWM"
           ],
           "alert_level": "WATCH",
-          "alert_score": 43,
-          "alert_type": "Trend Repair Alert",
+          "alert_score": 46,
+          "alert_type": "Risk Expansion Alert",
           "confidence": "low",
           "conflicting_evidence": [
             {
-              "detail": "跌破风险仍在",
-              "name": "跌破风险仍在",
-              "score": 78,
-              "source": "price_volume"
-            },
-            {
-              "detail": "宽度冲突",
-              "name": "宽度冲突",
-              "score": 74,
-              "source": "breadth"
+              "detail": "信用仍稳定",
+              "name": "信用仍稳定",
+              "score": 66,
+              "source": "credit"
             }
           ],
           "invalidation_conditions": [
-            "回落跌破主路径确认价",
-            "宽度和信用确认消失",
-            "VIX 重新上行"
+            "VIX 回落且信用稳定",
+            "市场宽度重新改善",
+            "价格重新站回主路径确认价"
           ],
           "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
           "related_price_levels": {
             "bounce_target_zone": {
-              "base": 297.74,
-              "conservative": 278.94,
-              "extended": 307.15
+              "base": 296.36,
+              "conservative": 282.17,
+              "extended": 324.12
             },
             "failed_bounce_warning_zone": {
-              "critical_warning": 256.72,
-              "first_warning": 265.09
+              "critical_warning": 257.26,
+              "first_warning": 267.04
             },
             "primary_confirmation_level": {
               "confidence": "medium",
@@ -1742,17 +1621,115 @@
             },
             "primary_invalidation_level": {
               "confidence": "medium",
-              "distance_pct": -0.0231,
+              "distance_pct": -0.016,
               "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
-              "price": 265.09,
+              "price": 267.04,
               "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
               "source_type": "price_structure"
             },
             "risk_scenario_activation_level": {
               "confidence": "medium",
-              "distance_pct": -0.054,
+              "distance_pct": -0.052,
               "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
-              "price": 256.72,
+              "price": 257.26,
+              "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
+              "source_type": "simulated_path"
+            },
+            "trend_reversal_confirmation_level": {
+              "confidence": "medium",
+              "distance_pct": 0.0691,
+              "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
+              "price": 290.12,
+              "source": "primary_path_20d + recent_20d_high + 20d_or_50d_moving_average",
+              "source_type": "price_structure"
+            }
+          },
+          "required_confirmation": [
+            "VIX/VVIX/SKEW 继续上升",
+            "HYG/LQD 明显转弱",
+            "IWM 跌破近期低点或风险路径接管价"
+          ],
+          "supporting_evidence": [
+            {
+              "detail": "市场宽度恶化或冲突",
+              "name": "市场宽度恶化或冲突",
+              "score": 74,
+              "source": "breadth"
+            },
+            {
+              "detail": "价格/成交量跌破风险",
+              "name": "价格/成交量跌破风险",
+              "score": 70,
+              "source": "price_volume"
+            },
+            {
+              "detail": "risk-off flow proxy 增强",
+              "name": "risk-off flow proxy 增强",
+              "score": 57,
+              "source": "flow"
+            }
+          ],
+          "validation_status": "not_yet_forward_validated"
+        },
+        {
+          "affected_symbols": [
+            "IWM"
+          ],
+          "alert_level": "WATCH",
+          "alert_score": 36,
+          "alert_type": "Trend Repair Alert",
+          "confidence": "low",
+          "conflicting_evidence": [
+            {
+              "detail": "宽度冲突",
+              "name": "宽度冲突",
+              "score": 74,
+              "source": "breadth"
+            },
+            {
+              "detail": "跌破风险仍在",
+              "name": "跌破风险仍在",
+              "score": 70,
+              "source": "price_volume"
+            }
+          ],
+          "invalidation_conditions": [
+            "回落跌破主路径确认价",
+            "宽度和信用确认消失",
+            "VIX 重新上行"
+          ],
+          "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
+          "related_price_levels": {
+            "bounce_target_zone": {
+              "base": 296.36,
+              "conservative": 282.17,
+              "extended": 324.12
+            },
+            "failed_bounce_warning_zone": {
+              "critical_warning": 257.26,
+              "first_warning": 267.04
+            },
+            "primary_confirmation_level": {
+              "confidence": "medium",
+              "distance_pct": 0.0279,
+              "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
+              "price": 278.94,
+              "source": "primary_path_5d + recent_5d_high + realized_volatility_band",
+              "source_type": "simulated_path"
+            },
+            "primary_invalidation_level": {
+              "confidence": "medium",
+              "distance_pct": -0.016,
+              "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
+              "price": 267.04,
+              "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
+              "source_type": "price_structure"
+            },
+            "risk_scenario_activation_level": {
+              "confidence": "medium",
+              "distance_pct": -0.052,
+              "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
+              "price": 257.26,
               "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
               "source_type": "simulated_path"
             },
@@ -1772,22 +1749,28 @@
           ],
           "supporting_evidence": [
             {
-              "detail": "主次路径差距扩大",
-              "name": "主次路径差距扩大",
-              "score": 93,
-              "source": "scenario_ranking"
-            },
-            {
               "detail": "信用稳定支持修复",
               "name": "信用稳定支持修复",
               "score": 66,
               "source": "credit"
             },
             {
+              "detail": "趋势修复概率偏高",
+              "name": "趋势修复概率偏高",
+              "score": 59,
+              "source": "trend_reversal_probability"
+            },
+            {
               "detail": "波动率结构修复",
               "name": "波动率结构修复",
               "score": 58,
               "source": "options"
+            },
+            {
+              "detail": "主次路径差距扩大",
+              "name": "主次路径差距扩大",
+              "score": 44,
+              "source": "scenario_ranking"
             }
           ],
           "validation_status": "not_yet_forward_validated"
@@ -1798,7 +1781,7 @@
           "IWM"
         ],
         "alert_level": "WARNING",
-        "alert_score": 73,
+        "alert_score": 71,
         "alert_type": "Failed Bounce Alert",
         "confidence": "medium",
         "conflicting_evidence": [],
@@ -1810,13 +1793,13 @@
         "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
         "related_price_levels": {
           "bounce_target_zone": {
-            "base": 297.74,
-            "conservative": 278.94,
-            "extended": 307.15
+            "base": 296.36,
+            "conservative": 282.17,
+            "extended": 324.12
           },
           "failed_bounce_warning_zone": {
-            "critical_warning": 256.72,
-            "first_warning": 265.09
+            "critical_warning": 257.26,
+            "first_warning": 267.04
           },
           "primary_confirmation_level": {
             "confidence": "medium",
@@ -1828,17 +1811,17 @@
           },
           "primary_invalidation_level": {
             "confidence": "medium",
-            "distance_pct": -0.0231,
+            "distance_pct": -0.016,
             "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
-            "price": 265.09,
+            "price": 267.04,
             "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
             "source_type": "price_structure"
           },
           "risk_scenario_activation_level": {
             "confidence": "medium",
-            "distance_pct": -0.054,
+            "distance_pct": -0.052,
             "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
-            "price": 256.72,
+            "price": 257.26,
             "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
             "source_type": "simulated_path"
           },
@@ -1858,21 +1841,21 @@
         ],
         "supporting_evidence": [
           {
-            "detail": "K线结构存在失败反抽风险",
-            "name": "K线结构存在失败反抽风险",
-            "score": 78,
-            "source": "price_volume"
-          },
-          {
             "detail": "反抽缺少内部参与确认",
             "name": "反抽缺少内部参与确认",
             "score": 74,
             "source": "breadth"
           },
           {
+            "detail": "K线结构存在失败反抽风险",
+            "name": "K线结构存在失败反抽风险",
+            "score": 70,
+            "source": "price_volume"
+          },
+          {
             "detail": "下跌延续/失败反抽风险偏高",
             "name": "下跌延续/失败反抽风险偏高",
-            "score": 59,
+            "score": 53,
             "source": "downside_predictor"
           }
         ],
@@ -1910,13 +1893,13 @@
           "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
           "related_price_levels": {
             "bounce_target_zone": {
-              "base": 773.02,
+              "base": 778.26,
               "conservative": 751.27,
-              "extended": 843.46
+              "extended": 844.7
             },
             "failed_bounce_warning_zone": {
               "critical_warning": 716.92,
-              "first_warning": 719.28
+              "first_warning": 726.38
             },
             "primary_confirmation_level": {
               "confidence": "medium",
@@ -1927,20 +1910,20 @@
               "source_type": "simulated_path"
             },
             "primary_invalidation_level": {
-              "confidence": "medium",
-              "distance_pct": -0.0133,
+              "confidence": "medium_high",
+              "distance_pct": -0.0042,
               "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
-              "price": 719.28,
-              "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
-              "source_type": "price_structure"
+              "price": 725.91,
+              "source": "confluence",
+              "source_type": "confluence"
             },
             "risk_scenario_activation_level": {
-              "confidence": "medium_high",
+              "confidence": "medium",
               "distance_pct": -0.0165,
               "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
               "price": 716.92,
-              "source": "confluence",
-              "source_type": "confluence"
+              "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
+              "source_type": "simulated_path"
             },
             "trend_reversal_confirmation_level": {
               "confidence": "medium",
@@ -1958,16 +1941,16 @@
           ],
           "supporting_evidence": [
             {
-              "detail": "K线结构存在失败反抽风险",
-              "name": "K线结构存在失败反抽风险",
-              "score": 70,
-              "source": "price_volume"
-            },
-            {
               "detail": "反抽缺少内部参与确认",
               "name": "反抽缺少内部参与确认",
               "score": 69,
               "source": "breadth"
+            },
+            {
+              "detail": "K线结构存在失败反抽风险",
+              "name": "K线结构存在失败反抽风险",
+              "score": 62,
+              "source": "price_volume"
             }
           ],
           "validation_status": "not_yet_forward_validated"
@@ -1989,13 +1972,13 @@
           "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
           "related_price_levels": {
             "bounce_target_zone": {
-              "base": 773.02,
+              "base": 778.26,
               "conservative": 751.27,
-              "extended": 843.46
+              "extended": 844.7
             },
             "failed_bounce_warning_zone": {
               "critical_warning": 716.92,
-              "first_warning": 719.28
+              "first_warning": 726.38
             },
             "primary_confirmation_level": {
               "confidence": "medium",
@@ -2006,20 +1989,20 @@
               "source_type": "simulated_path"
             },
             "primary_invalidation_level": {
-              "confidence": "medium",
-              "distance_pct": -0.0133,
+              "confidence": "medium_high",
+              "distance_pct": -0.0042,
               "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
-              "price": 719.28,
-              "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
-              "source_type": "price_structure"
+              "price": 725.91,
+              "source": "confluence",
+              "source_type": "confluence"
             },
             "risk_scenario_activation_level": {
-              "confidence": "medium_high",
+              "confidence": "medium",
               "distance_pct": -0.0165,
               "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
               "price": 716.92,
-              "source": "confluence",
-              "source_type": "confluence"
+              "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
+              "source_type": "simulated_path"
             },
             "trend_reversal_confirmation_level": {
               "confidence": "medium",
@@ -2056,21 +2039,21 @@
             "QQQ"
           ],
           "alert_level": "WATCH",
-          "alert_score": 46,
+          "alert_score": 47,
           "alert_type": "Bounce Setup Alert",
           "confidence": "low",
           "conflicting_evidence": [
-            {
-              "detail": "价格结构仍有跌破风险",
-              "name": "价格结构仍有跌破风险",
-              "score": 70,
-              "source": "price_volume"
-            },
             {
               "detail": "宽度冲突削弱反抽",
               "name": "宽度冲突削弱反抽",
               "score": 69,
               "source": "breadth"
+            },
+            {
+              "detail": "价格结构仍有跌破风险",
+              "name": "价格结构仍有跌破风险",
+              "score": 62,
+              "source": "price_volume"
             }
           ],
           "invalidation_conditions": [
@@ -2081,13 +2064,13 @@
           "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
           "related_price_levels": {
             "bounce_target_zone": {
-              "base": 773.02,
+              "base": 778.26,
               "conservative": 751.27,
-              "extended": 843.46
+              "extended": 844.7
             },
             "failed_bounce_warning_zone": {
               "critical_warning": 716.92,
-              "first_warning": 719.28
+              "first_warning": 726.38
             },
             "primary_confirmation_level": {
               "confidence": "medium",
@@ -2098,20 +2081,20 @@
               "source_type": "simulated_path"
             },
             "primary_invalidation_level": {
-              "confidence": "medium",
-              "distance_pct": -0.0133,
+              "confidence": "medium_high",
+              "distance_pct": -0.0042,
               "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
-              "price": 719.28,
-              "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
-              "source_type": "price_structure"
+              "price": 725.91,
+              "source": "confluence",
+              "source_type": "confluence"
             },
             "risk_scenario_activation_level": {
-              "confidence": "medium_high",
+              "confidence": "medium",
               "distance_pct": -0.0165,
               "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
               "price": 716.92,
-              "source": "confluence",
-              "source_type": "confluence"
+              "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
+              "source_type": "simulated_path"
             },
             "trend_reversal_confirmation_level": {
               "confidence": "medium",
@@ -2154,7 +2137,7 @@
             "QQQ"
           ],
           "alert_level": "WATCH",
-          "alert_score": 45,
+          "alert_score": 44,
           "alert_type": "Risk Expansion Alert",
           "confidence": "low",
           "conflicting_evidence": [
@@ -2173,13 +2156,13 @@
           "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
           "related_price_levels": {
             "bounce_target_zone": {
-              "base": 773.02,
+              "base": 778.26,
               "conservative": 751.27,
-              "extended": 843.46
+              "extended": 844.7
             },
             "failed_bounce_warning_zone": {
               "critical_warning": 716.92,
-              "first_warning": 719.28
+              "first_warning": 726.38
             },
             "primary_confirmation_level": {
               "confidence": "medium",
@@ -2190,20 +2173,20 @@
               "source_type": "simulated_path"
             },
             "primary_invalidation_level": {
-              "confidence": "medium",
-              "distance_pct": -0.0133,
+              "confidence": "medium_high",
+              "distance_pct": -0.0042,
               "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
-              "price": 719.28,
-              "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
-              "source_type": "price_structure"
+              "price": 725.91,
+              "source": "confluence",
+              "source_type": "confluence"
             },
             "risk_scenario_activation_level": {
-              "confidence": "medium_high",
+              "confidence": "medium",
               "distance_pct": -0.0165,
               "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
               "price": 716.92,
-              "source": "confluence",
-              "source_type": "confluence"
+              "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
+              "source_type": "simulated_path"
             },
             "trend_reversal_confirmation_level": {
               "confidence": "medium",
@@ -2221,16 +2204,16 @@
           ],
           "supporting_evidence": [
             {
-              "detail": "价格/成交量跌破风险",
-              "name": "价格/成交量跌破风险",
-              "score": 70,
-              "source": "price_volume"
-            },
-            {
               "detail": "市场宽度恶化或冲突",
               "name": "市场宽度恶化或冲突",
               "score": 69,
               "source": "breadth"
+            },
+            {
+              "detail": "价格/成交量跌破风险",
+              "name": "价格/成交量跌破风险",
+              "score": 62,
+              "source": "price_volume"
             },
             {
               "detail": "risk-off flow proxy 增强",
@@ -2246,21 +2229,21 @@
             "QQQ"
           ],
           "alert_level": "WATCH",
-          "alert_score": 38,
+          "alert_score": 40,
           "alert_type": "Trend Repair Alert",
           "confidence": "low",
           "conflicting_evidence": [
-            {
-              "detail": "跌破风险仍在",
-              "name": "跌破风险仍在",
-              "score": 70,
-              "source": "price_volume"
-            },
             {
               "detail": "宽度冲突",
               "name": "宽度冲突",
               "score": 69,
               "source": "breadth"
+            },
+            {
+              "detail": "跌破风险仍在",
+              "name": "跌破风险仍在",
+              "score": 62,
+              "source": "price_volume"
             }
           ],
           "invalidation_conditions": [
@@ -2271,13 +2254,13 @@
           "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
           "related_price_levels": {
             "bounce_target_zone": {
-              "base": 773.02,
+              "base": 778.26,
               "conservative": 751.27,
-              "extended": 843.46
+              "extended": 844.7
             },
             "failed_bounce_warning_zone": {
               "critical_warning": 716.92,
-              "first_warning": 719.28
+              "first_warning": 726.38
             },
             "primary_confirmation_level": {
               "confidence": "medium",
@@ -2288,20 +2271,20 @@
               "source_type": "simulated_path"
             },
             "primary_invalidation_level": {
-              "confidence": "medium",
-              "distance_pct": -0.0133,
+              "confidence": "medium_high",
+              "distance_pct": -0.0042,
               "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
-              "price": 719.28,
-              "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
-              "source_type": "price_structure"
+              "price": 725.91,
+              "source": "confluence",
+              "source_type": "confluence"
             },
             "risk_scenario_activation_level": {
-              "confidence": "medium_high",
+              "confidence": "medium",
               "distance_pct": -0.0165,
               "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
               "price": 716.92,
-              "source": "confluence",
-              "source_type": "confluence"
+              "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
+              "source_type": "simulated_path"
             },
             "trend_reversal_confirmation_level": {
               "confidence": "medium",
@@ -2325,21 +2308,21 @@
               "source": "credit"
             },
             {
+              "detail": "趋势修复概率偏高",
+              "name": "趋势修复概率偏高",
+              "score": 61,
+              "source": "trend_reversal_probability"
+            },
+            {
               "detail": "波动率结构修复",
               "name": "波动率结构修复",
               "score": 58,
               "source": "options"
             },
             {
-              "detail": "趋势修复概率偏高",
-              "name": "趋势修复概率偏高",
-              "score": 57,
-              "source": "trend_reversal_probability"
-            },
-            {
               "detail": "主次路径差距扩大",
               "name": "主次路径差距扩大",
-              "score": 54,
+              "score": 50,
               "source": "scenario_ranking"
             }
           ],
@@ -2363,13 +2346,13 @@
         "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
         "related_price_levels": {
           "bounce_target_zone": {
-            "base": 773.02,
+            "base": 778.26,
             "conservative": 751.27,
-            "extended": 843.46
+            "extended": 844.7
           },
           "failed_bounce_warning_zone": {
             "critical_warning": 716.92,
-            "first_warning": 719.28
+            "first_warning": 726.38
           },
           "primary_confirmation_level": {
             "confidence": "medium",
@@ -2380,20 +2363,20 @@
             "source_type": "simulated_path"
           },
           "primary_invalidation_level": {
-            "confidence": "medium",
-            "distance_pct": -0.0133,
+            "confidence": "medium_high",
+            "distance_pct": -0.0042,
             "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
-            "price": 719.28,
-            "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
-            "source_type": "price_structure"
+            "price": 725.91,
+            "source": "confluence",
+            "source_type": "confluence"
           },
           "risk_scenario_activation_level": {
-            "confidence": "medium_high",
+            "confidence": "medium",
             "distance_pct": -0.0165,
             "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
             "price": 716.92,
-            "source": "confluence",
-            "source_type": "confluence"
+            "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
+            "source_type": "simulated_path"
           },
           "trend_reversal_confirmation_level": {
             "confidence": "medium",
@@ -2411,16 +2394,16 @@
         ],
         "supporting_evidence": [
           {
-            "detail": "K线结构存在失败反抽风险",
-            "name": "K线结构存在失败反抽风险",
-            "score": 70,
-            "source": "price_volume"
-          },
-          {
             "detail": "反抽缺少内部参与确认",
             "name": "反抽缺少内部参与确认",
             "score": 69,
             "source": "breadth"
+          },
+          {
+            "detail": "K线结构存在失败反抽风险",
+            "name": "K线结构存在失败反抽风险",
+            "score": 62,
+            "source": "price_volume"
           }
         ],
         "validation_status": "not_yet_forward_validated"
@@ -2444,11 +2427,194 @@
           "affected_symbols": [
             "SPY"
           ],
+          "alert_level": "WARNING",
+          "alert_score": 78,
+          "alert_type": "Bounce Setup Alert",
+          "confidence": "medium",
+          "conflicting_evidence": [],
+          "invalidation_conditions": [
+            "跌破主路径失效价",
+            "VIX 重新上升",
+            "宽度确认转弱"
+          ],
+          "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
+          "related_price_levels": {
+            "bounce_target_zone": {
+              "base": 831.32,
+              "conservative": 788.57,
+              "extended": 853.91
+            },
+            "failed_bounce_warning_zone": {
+              "critical_warning": 761.69,
+              "first_warning": 768.06
+            },
+            "primary_confirmation_level": {
+              "confidence": "medium_high",
+              "distance_pct": 0.0117,
+              "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
+              "price": 778.57,
+              "source": "confluence",
+              "source_type": "confluence"
+            },
+            "primary_invalidation_level": {
+              "confidence": "medium_high",
+              "distance_pct": -0.0073,
+              "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
+              "price": 763.99,
+              "source": "confluence",
+              "source_type": "confluence"
+            },
+            "risk_scenario_activation_level": {
+              "confidence": "medium",
+              "distance_pct": -0.0103,
+              "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
+              "price": 761.69,
+              "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
+              "source_type": "simulated_path"
+            },
+            "trend_reversal_confirmation_level": {
+              "confidence": "medium_high",
+              "distance_pct": 0.0123,
+              "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
+              "price": 779.09,
+              "source": "confluence",
+              "source_type": "confluence"
+            }
+          },
+          "required_confirmation": [
+            "价格站上主路径确认价",
+            "成交量放大且收盘靠近高位",
+            "VIX 继续回落，HYG/LQD 保持稳定"
+          ],
+          "supporting_evidence": [
+            {
+              "detail": "宽度改善支持反抽",
+              "name": "宽度改善支持反抽",
+              "score": 97,
+              "source": "breadth"
+            },
+            {
+              "detail": "信用压力未继续恶化",
+              "name": "信用压力未继续恶化",
+              "score": 66,
+              "source": "credit"
+            },
+            {
+              "detail": "反抽概率偏高",
+              "name": "反抽概率偏高",
+              "score": 59,
+              "source": "bounce_probability"
+            }
+          ],
+          "validation_status": "not_yet_forward_validated"
+        },
+        {
+          "affected_symbols": [
+            "SPY"
+          ],
+          "alert_level": "WARNING",
+          "alert_score": 71,
+          "alert_type": "Trend Repair Alert",
+          "confidence": "medium",
+          "conflicting_evidence": [],
+          "invalidation_conditions": [
+            "回落跌破主路径确认价",
+            "宽度和信用确认消失",
+            "VIX 重新上行"
+          ],
+          "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
+          "related_price_levels": {
+            "bounce_target_zone": {
+              "base": 831.32,
+              "conservative": 788.57,
+              "extended": 853.91
+            },
+            "failed_bounce_warning_zone": {
+              "critical_warning": 761.69,
+              "first_warning": 768.06
+            },
+            "primary_confirmation_level": {
+              "confidence": "medium_high",
+              "distance_pct": 0.0117,
+              "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
+              "price": 778.57,
+              "source": "confluence",
+              "source_type": "confluence"
+            },
+            "primary_invalidation_level": {
+              "confidence": "medium_high",
+              "distance_pct": -0.0073,
+              "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
+              "price": 763.99,
+              "source": "confluence",
+              "source_type": "confluence"
+            },
+            "risk_scenario_activation_level": {
+              "confidence": "medium",
+              "distance_pct": -0.0103,
+              "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
+              "price": 761.69,
+              "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
+              "source_type": "simulated_path"
+            },
+            "trend_reversal_confirmation_level": {
+              "confidence": "medium_high",
+              "distance_pct": 0.0123,
+              "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
+              "price": 779.09,
+              "source": "confluence",
+              "source_type": "confluence"
+            }
+          },
+          "required_confirmation": [
+            "价格站上趋势修复确认价",
+            "50d/200d 宽度继续改善",
+            "主路径概率相对次路径继续拉开"
+          ],
+          "supporting_evidence": [
+            {
+              "detail": "50d/200d 宽度与内部参与修复",
+              "name": "50d/200d 宽度与内部参与修复",
+              "score": 97,
+              "source": "breadth"
+            },
+            {
+              "detail": "趋势修复概率偏高",
+              "name": "趋势修复概率偏高",
+              "score": 70,
+              "source": "trend_reversal_probability"
+            },
+            {
+              "detail": "信用稳定支持修复",
+              "name": "信用稳定支持修复",
+              "score": 66,
+              "source": "credit"
+            },
+            {
+              "detail": "波动率结构修复",
+              "name": "波动率结构修复",
+              "score": 58,
+              "source": "options"
+            }
+          ],
+          "validation_status": "not_yet_forward_validated"
+        },
+        {
+          "affected_symbols": [
+            "SPY"
+          ],
           "alert_level": "WATCH",
-          "alert_score": 58,
+          "alert_score": 55,
           "alert_type": "Bottoming Setup Alert",
           "confidence": "low",
-          "conflicting_evidence": [],
+          "conflicting_evidence": [
+            {
+              "detail": "SPY 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应已初步确认。",
+              "name": "新闻仍偏风险",
+              "score": 55,
+              "source": "news"
+            }
+          ],
           "invalidation_conditions": [
             "信用重新恶化",
             "跌破风险路径接管价",
@@ -2457,45 +2623,45 @@
           "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
           "related_price_levels": {
             "bounce_target_zone": {
-              "base": 818.57,
-              "conservative": 778.57,
-              "extended": 868.45
+              "base": 831.32,
+              "conservative": 788.57,
+              "extended": 853.91
             },
             "failed_bounce_warning_zone": {
-              "critical_warning": 735.05,
-              "first_warning": 746.79
+              "critical_warning": 761.69,
+              "first_warning": 768.06
             },
             "primary_confirmation_level": {
-              "confidence": "medium",
+              "confidence": "medium_high",
               "distance_pct": 0.0117,
               "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
               "price": 778.57,
-              "source": "primary_path_5d + recent_5d_high + realized_volatility_band",
-              "source_type": "simulated_path"
+              "source": "confluence",
+              "source_type": "confluence"
             },
             "primary_invalidation_level": {
-              "confidence": "medium",
-              "distance_pct": -0.0296,
+              "confidence": "medium_high",
+              "distance_pct": -0.0073,
               "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
-              "price": 746.79,
-              "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
-              "source_type": "price_structure"
+              "price": 763.99,
+              "source": "confluence",
+              "source_type": "confluence"
             },
             "risk_scenario_activation_level": {
               "confidence": "medium",
-              "distance_pct": -0.0449,
+              "distance_pct": -0.0103,
               "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
-              "price": 735.05,
+              "price": 761.69,
               "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
               "source_type": "simulated_path"
             },
             "trend_reversal_confirmation_level": {
-              "confidence": "medium",
+              "confidence": "medium_high",
               "distance_pct": 0.0123,
               "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
               "price": 779.09,
-              "source": "primary_path_20d + recent_20d_high + 20d_or_50d_moving_average",
-              "source_type": "price_structure"
+              "source": "confluence",
+              "source_type": "confluence"
             }
           },
           "required_confirmation": [
@@ -2524,197 +2690,7 @@
             "SPY"
           ],
           "alert_level": "WATCH",
-          "alert_score": 54,
-          "alert_type": "Bounce Setup Alert",
-          "confidence": "medium",
-          "conflicting_evidence": [
-            {
-              "detail": "价格结构仍有跌破风险",
-              "name": "价格结构仍有跌破风险",
-              "score": 62,
-              "source": "price_volume"
-            }
-          ],
-          "invalidation_conditions": [
-            "跌破主路径失效价",
-            "VIX 重新上升",
-            "宽度确认转弱"
-          ],
-          "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
-          "related_price_levels": {
-            "bounce_target_zone": {
-              "base": 818.57,
-              "conservative": 778.57,
-              "extended": 868.45
-            },
-            "failed_bounce_warning_zone": {
-              "critical_warning": 735.05,
-              "first_warning": 746.79
-            },
-            "primary_confirmation_level": {
-              "confidence": "medium",
-              "distance_pct": 0.0117,
-              "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
-              "price": 778.57,
-              "source": "primary_path_5d + recent_5d_high + realized_volatility_band",
-              "source_type": "simulated_path"
-            },
-            "primary_invalidation_level": {
-              "confidence": "medium",
-              "distance_pct": -0.0296,
-              "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
-              "price": 746.79,
-              "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
-              "source_type": "price_structure"
-            },
-            "risk_scenario_activation_level": {
-              "confidence": "medium",
-              "distance_pct": -0.0449,
-              "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
-              "price": 735.05,
-              "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
-              "source_type": "simulated_path"
-            },
-            "trend_reversal_confirmation_level": {
-              "confidence": "medium",
-              "distance_pct": 0.0123,
-              "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
-              "price": 779.09,
-              "source": "primary_path_20d + recent_20d_high + 20d_or_50d_moving_average",
-              "source_type": "price_structure"
-            }
-          },
-          "required_confirmation": [
-            "价格站上主路径确认价",
-            "成交量放大且收盘靠近高位",
-            "VIX 继续回落，HYG/LQD 保持稳定"
-          ],
-          "supporting_evidence": [
-            {
-              "detail": "宽度改善支持反抽",
-              "name": "宽度改善支持反抽",
-              "score": 97,
-              "source": "breadth"
-            },
-            {
-              "detail": "信用压力未继续恶化",
-              "name": "信用压力未继续恶化",
-              "score": 66,
-              "source": "credit"
-            },
-            {
-              "detail": "SPY 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应已初步确认。",
-              "name": "新闻事件支持反抽路径",
-              "score": 60,
-              "source": "news"
-            },
-            {
-              "detail": "反抽概率偏高",
-              "name": "反抽概率偏高",
-              "score": 59,
-              "source": "bounce_probability"
-            }
-          ],
-          "validation_status": "not_yet_forward_validated"
-        },
-        {
-          "affected_symbols": [
-            "SPY"
-          ],
-          "alert_level": "WATCH",
-          "alert_score": 50,
-          "alert_type": "Trend Repair Alert",
-          "confidence": "medium",
-          "conflicting_evidence": [
-            {
-              "detail": "跌破风险仍在",
-              "name": "跌破风险仍在",
-              "score": 62,
-              "source": "price_volume"
-            }
-          ],
-          "invalidation_conditions": [
-            "回落跌破主路径确认价",
-            "宽度和信用确认消失",
-            "VIX 重新上行"
-          ],
-          "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
-          "related_price_levels": {
-            "bounce_target_zone": {
-              "base": 818.57,
-              "conservative": 778.57,
-              "extended": 868.45
-            },
-            "failed_bounce_warning_zone": {
-              "critical_warning": 735.05,
-              "first_warning": 746.79
-            },
-            "primary_confirmation_level": {
-              "confidence": "medium",
-              "distance_pct": 0.0117,
-              "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
-              "price": 778.57,
-              "source": "primary_path_5d + recent_5d_high + realized_volatility_band",
-              "source_type": "simulated_path"
-            },
-            "primary_invalidation_level": {
-              "confidence": "medium",
-              "distance_pct": -0.0296,
-              "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
-              "price": 746.79,
-              "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
-              "source_type": "price_structure"
-            },
-            "risk_scenario_activation_level": {
-              "confidence": "medium",
-              "distance_pct": -0.0449,
-              "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
-              "price": 735.05,
-              "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
-              "source_type": "simulated_path"
-            },
-            "trend_reversal_confirmation_level": {
-              "confidence": "medium",
-              "distance_pct": 0.0123,
-              "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
-              "price": 779.09,
-              "source": "primary_path_20d + recent_20d_high + 20d_or_50d_moving_average",
-              "source_type": "price_structure"
-            }
-          },
-          "required_confirmation": [
-            "价格站上趋势修复确认价",
-            "50d/200d 宽度继续改善",
-            "主路径概率相对次路径继续拉开"
-          ],
-          "supporting_evidence": [
-            {
-              "detail": "50d/200d 宽度与内部参与修复",
-              "name": "50d/200d 宽度与内部参与修复",
-              "score": 97,
-              "source": "breadth"
-            },
-            {
-              "detail": "信用稳定支持修复",
-              "name": "信用稳定支持修复",
-              "score": 66,
-              "source": "credit"
-            },
-            {
-              "detail": "波动率结构修复",
-              "name": "波动率结构修复",
-              "score": 58,
-              "source": "options"
-            }
-          ],
-          "validation_status": "not_yet_forward_validated"
-        },
-        {
-          "affected_symbols": [
-            "SPY"
-          ],
-          "alert_level": "WATCH",
-          "alert_score": 36,
+          "alert_score": 35,
           "alert_type": "Risk Expansion Alert",
           "confidence": "low",
           "conflicting_evidence": [
@@ -2739,45 +2715,45 @@
           "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
           "related_price_levels": {
             "bounce_target_zone": {
-              "base": 818.57,
-              "conservative": 778.57,
-              "extended": 868.45
+              "base": 831.32,
+              "conservative": 788.57,
+              "extended": 853.91
             },
             "failed_bounce_warning_zone": {
-              "critical_warning": 735.05,
-              "first_warning": 746.79
+              "critical_warning": 761.69,
+              "first_warning": 768.06
             },
             "primary_confirmation_level": {
-              "confidence": "medium",
+              "confidence": "medium_high",
               "distance_pct": 0.0117,
               "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
               "price": 778.57,
-              "source": "primary_path_5d + recent_5d_high + realized_volatility_band",
-              "source_type": "simulated_path"
+              "source": "confluence",
+              "source_type": "confluence"
             },
             "primary_invalidation_level": {
-              "confidence": "medium",
-              "distance_pct": -0.0296,
+              "confidence": "medium_high",
+              "distance_pct": -0.0073,
               "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
-              "price": 746.79,
-              "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
-              "source_type": "price_structure"
+              "price": 763.99,
+              "source": "confluence",
+              "source_type": "confluence"
             },
             "risk_scenario_activation_level": {
               "confidence": "medium",
-              "distance_pct": -0.0449,
+              "distance_pct": -0.0103,
               "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
-              "price": 735.05,
+              "price": 761.69,
               "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
               "source_type": "simulated_path"
             },
             "trend_reversal_confirmation_level": {
-              "confidence": "medium",
+              "confidence": "medium_high",
               "distance_pct": 0.0123,
               "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
               "price": 779.09,
-              "source": "primary_path_20d + recent_20d_high + 20d_or_50d_moving_average",
-              "source_type": "price_structure"
+              "source": "confluence",
+              "source_type": "confluence"
             }
           },
           "required_confirmation": [
@@ -2787,22 +2763,16 @@
           ],
           "supporting_evidence": [
             {
-              "detail": "价格/成交量跌破风险",
-              "name": "价格/成交量跌破风险",
-              "score": 62,
-              "source": "price_volume"
+              "detail": "SPY 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应已初步确认。",
+              "name": "新闻事件偏风险路径",
+              "score": 60,
+              "source": "news"
             },
             {
               "detail": "risk-off flow proxy 增强",
               "name": "risk-off flow proxy 增强",
               "score": 57,
               "source": "flow"
-            },
-            {
-              "detail": "下跌延续概率升高",
-              "name": "下跌延续概率升高",
-              "score": 55,
-              "source": "downside_predictor"
             }
           ],
           "validation_status": "not_yet_forward_validated"
@@ -2812,7 +2782,7 @@
             "SPY"
           ],
           "alert_level": "NO_ALERT",
-          "alert_score": 33,
+          "alert_score": 30,
           "alert_type": "Failed Bounce Alert",
           "confidence": "low",
           "conflicting_evidence": [
@@ -2831,45 +2801,45 @@
           "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
           "related_price_levels": {
             "bounce_target_zone": {
-              "base": 818.57,
-              "conservative": 778.57,
-              "extended": 868.45
+              "base": 831.32,
+              "conservative": 788.57,
+              "extended": 853.91
             },
             "failed_bounce_warning_zone": {
-              "critical_warning": 735.05,
-              "first_warning": 746.79
+              "critical_warning": 761.69,
+              "first_warning": 768.06
             },
             "primary_confirmation_level": {
-              "confidence": "medium",
+              "confidence": "medium_high",
               "distance_pct": 0.0117,
               "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
               "price": 778.57,
-              "source": "primary_path_5d + recent_5d_high + realized_volatility_band",
-              "source_type": "simulated_path"
+              "source": "confluence",
+              "source_type": "confluence"
             },
             "primary_invalidation_level": {
-              "confidence": "medium",
-              "distance_pct": -0.0296,
+              "confidence": "medium_high",
+              "distance_pct": -0.0073,
               "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
-              "price": 746.79,
-              "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
-              "source_type": "price_structure"
+              "price": 763.99,
+              "source": "confluence",
+              "source_type": "confluence"
             },
             "risk_scenario_activation_level": {
               "confidence": "medium",
-              "distance_pct": -0.0449,
+              "distance_pct": -0.0103,
               "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
-              "price": 735.05,
+              "price": 761.69,
               "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
               "source_type": "simulated_path"
             },
             "trend_reversal_confirmation_level": {
-              "confidence": "medium",
+              "confidence": "medium_high",
               "distance_pct": 0.0123,
               "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
               "price": 779.09,
-              "source": "primary_path_20d + recent_20d_high + 20d_or_50d_moving_average",
-              "source_type": "price_structure"
+              "source": "confluence",
+              "source_type": "confluence"
             }
           },
           "required_confirmation": [
@@ -2879,16 +2849,10 @@
           ],
           "supporting_evidence": [
             {
-              "detail": "K线结构存在失败反抽风险",
-              "name": "K线结构存在失败反抽风险",
-              "score": 62,
-              "source": "price_volume"
-            },
-            {
-              "detail": "下跌延续/失败反抽风险偏高",
-              "name": "下跌延续/失败反抽风险偏高",
+              "detail": "SPY 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应已初步确认。",
+              "name": "新闻事件削弱主路径",
               "score": 55,
-              "source": "downside_predictor"
+              "source": "news"
             }
           ],
           "validation_status": "not_yet_forward_validated"
@@ -2898,91 +2862,97 @@
         "affected_symbols": [
           "SPY"
         ],
-        "alert_level": "WATCH",
-        "alert_score": 58,
-        "alert_type": "Bottoming Setup Alert",
-        "confidence": "low",
+        "alert_level": "WARNING",
+        "alert_score": 78,
+        "alert_type": "Bounce Setup Alert",
+        "confidence": "medium",
         "conflicting_evidence": [],
         "invalidation_conditions": [
-          "信用重新恶化",
-          "跌破风险路径接管价",
-          "VIX/VVIX 再度上行"
+          "跌破主路径失效价",
+          "VIX 重新上升",
+          "宽度确认转弱"
         ],
         "not_trading_advice": "Forecast alert only; not a trade signal, buy/sell instruction, or position recommendation.",
         "related_price_levels": {
           "bounce_target_zone": {
-            "base": 818.57,
-            "conservative": 778.57,
-            "extended": 868.45
+            "base": 831.32,
+            "conservative": 788.57,
+            "extended": 853.91
           },
           "failed_bounce_warning_zone": {
-            "critical_warning": 735.05,
-            "first_warning": 746.79
+            "critical_warning": 761.69,
+            "first_warning": 768.06
           },
           "primary_confirmation_level": {
-            "confidence": "medium",
+            "confidence": "medium_high",
             "distance_pct": 0.0117,
             "meaning": "若价格突破或收在该价位上方，说明主路径正在兑现；这不是操作建议。",
             "price": 778.57,
-            "source": "primary_path_5d + recent_5d_high + realized_volatility_band",
-            "source_type": "simulated_path"
+            "source": "confluence",
+            "source_type": "confluence"
           },
           "primary_invalidation_level": {
-            "confidence": "medium",
-            "distance_pct": -0.0296,
+            "confidence": "medium_high",
+            "distance_pct": -0.0073,
             "meaning": "若价格跌破或收在该价位下方，主路径可信度下降，风险路径权重上升。",
-            "price": 746.79,
-            "source": "recent_10d_low + lower_confidence_band_3d + realized_volatility_band",
-            "source_type": "price_structure"
+            "price": 763.99,
+            "source": "confluence",
+            "source_type": "confluence"
           },
           "risk_scenario_activation_level": {
             "confidence": "medium",
-            "distance_pct": -0.0449,
+            "distance_pct": -0.0103,
             "meaning": "若价格跌破该价位，失败反抽 / 下跌延续路径开始接管。",
-            "price": 735.05,
+            "price": 761.69,
             "source": "risk_path_10d + recent_20d_low + lower_confidence_band_20d",
             "source_type": "simulated_path"
           },
           "trend_reversal_confirmation_level": {
-            "confidence": "medium",
+            "confidence": "medium_high",
             "distance_pct": 0.0123,
             "meaning": "若价格突破该价位，趋势修复概率上升；仍需后续前向验证。",
             "price": 779.09,
-            "source": "primary_path_20d + recent_20d_high + 20d_or_50d_moving_average",
-            "source_type": "price_structure"
+            "source": "confluence",
+            "source_type": "confluence"
           }
         },
         "required_confirmation": [
-          "坏消息不再打出新低",
-          "宽度继续改善",
-          "价格收复短期关键位"
+          "价格站上主路径确认价",
+          "成交量放大且收盘靠近高位",
+          "VIX 继续回落，HYG/LQD 保持稳定"
         ],
         "supporting_evidence": [
           {
-            "detail": "内部宽度改善",
-            "name": "内部宽度改善",
-            "score": 100,
+            "detail": "宽度改善支持反抽",
+            "name": "宽度改善支持反抽",
+            "score": 97,
             "source": "breadth"
           },
           {
-            "detail": "信用压力停止恶化",
-            "name": "信用压力停止恶化",
+            "detail": "信用压力未继续恶化",
+            "name": "信用压力未继续恶化",
             "score": 66,
             "source": "credit"
+          },
+          {
+            "detail": "反抽概率偏高",
+            "name": "反抽概率偏高",
+            "score": 59,
+            "source": "bounce_probability"
           }
         ],
         "validation_status": "not_yet_forward_validated"
       },
       "symbol": "SPY",
       "top_invalidation_conditions": [
-        "信用重新恶化",
-        "跌破风险路径接管价",
-        "VIX/VVIX 再度上行"
+        "跌破主路径失效价",
+        "VIX 重新上升",
+        "宽度确认转弱"
       ],
       "top_required_confirmation": [
-        "坏消息不再打出新低",
-        "宽度继续改善",
-        "价格收复短期关键位"
+        "价格站上主路径确认价",
+        "成交量放大且收盘靠近高位",
+        "VIX 继续回落，HYG/LQD 保持稳定"
       ],
       "version": "market_alert_engine_v1"
     }

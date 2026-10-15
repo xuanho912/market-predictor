@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-14T23:21:45.334713+00:00`
+- generated_at: `2026-10-15T00:14:16.876240+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `13`
-- event_detection_confidence: `73`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -30,6 +30,14 @@
 - headline: Yemen's Houthis vow more attacks on Saudi airports, oil facilities after Aramco HQ hit - Reuters
 - source: Reuters
 - published_at: `2026-10-14T21:12:59+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: NEWSLETTER: Houthis bring the war to Riyadh - Reuters
+- source: Reuters
+- published_at: `2026-10-14T18:48:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -63,7 +71,7 @@
 - source: Reuters
 - published_at: `2026-10-14T11:43:12+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -94,13 +102,5 @@
 - headline: Russian strikes kill one, hit energy facilities in Kyiv, mayor says - Reuters
 - source: Reuters
 - published_at: `2026-10-14T04:14:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil prices gain on attacks in Saudi Arabia, Iran's new tactics to target tankers - Reuters
-- source: Reuters
-- published_at: `2026-10-14T01:27:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
