@@ -1,15 +1,20 @@
 {
   "as_of": "2026-10-14",
-  "dashboard_status": "forecast_validation",
+  "dashboard_status": "market_open_unconfirmed",
   "data_freshness_status": {
-    "affected_symbols": [],
-    "can_append_forecast_record": true,
+    "affected_symbols": [
+      "SPY",
+      "QQQ",
+      "IWM",
+      "DIA"
+    ],
+    "can_append_forecast_record": false,
     "can_backfill_completed_outcomes": true,
-    "current_date": "2026-10-14",
-    "current_time_us_eastern": "2026-10-14T21:27:17.397086-04:00",
-    "data_freshness_status": "fresh",
+    "current_date": "2026-10-15",
+    "current_time_us_eastern": "2026-10-15T01:58:25.557155-04:00",
+    "data_freshness_status": "market_open_unconfirmed",
     "expected_latest_trading_date": "2026-10-14",
-    "generated_at": "2026-10-15T01:27:17.397086+00:00",
+    "generated_at": "2026-10-15T05:58:25.557155+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -23,7 +28,7 @@
     "last_successful_update": "2026-10-14",
     "latest_confirmed_market_date": "2026-10-14",
     "latest_market_date": "2026-10-14",
-    "latest_market_session_status": "completed_or_prior_session",
+    "latest_market_session_status": "intraday_unconfirmed",
     "provider_status": {
       "BAA_SPREAD": {
         "fallback_used": false,
@@ -296,7 +301,7 @@
         "point_in_time_safe": true,
         "real_data": true,
         "rows": 520,
-        "source": "finnhub-quote-patch",
+        "source": "yahoo-chart",
         "stale_data": false,
         "status": "available",
         "symbol": "XLC"
@@ -368,7 +373,7 @@
         "point_in_time_safe": true,
         "real_data": true,
         "rows": 520,
-        "source": "finnhub-quote-patch",
+        "source": "yahoo-chart",
         "stale_data": false,
         "status": "available",
         "symbol": "XLRE"
@@ -940,7 +945,7 @@
     },
     "stale_days": 0,
     "version": "data_freshness_gate_v3",
-    "warning_message": "核心行情已更新至最新应有交易日 2026-10-14。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。"
+    "warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-10-14，最近完整收盘交易日为 2026-10-14；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。"
   },
   "data_quality_summary": {
     "average_breadth_quality_score": 67.0,
@@ -961,10 +966,10 @@
       "IWM"
     ],
     "breadth_required": true,
-    "can_append_forecast_record": true,
+    "can_append_forecast_record": false,
     "data_completeness_score": 87.0,
     "data_completeness_score_before_news_event": 85.0,
-    "data_freshness_status": "fresh",
+    "data_freshness_status": "market_open_unconfirmed",
     "data_source_status": "real_core_with_proxies",
     "expected_latest_trading_date": "2026-10-14",
     "fallback_used": true,
@@ -1048,17 +1053,17 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "HY_OAS",
-      "DGS3MO",
       "BAA_SPREAD",
-      "IG_OAS",
-      "RECESSION",
-      "FINANCIAL_STRESS",
-      "DFII10",
       "DGS2",
-      "DGS10"
+      "DGS3MO",
+      "FINANCIAL_STRESS",
+      "RECESSION",
+      "DGS10",
+      "IG_OAS",
+      "HY_OAS",
+      "DFII10"
     ],
-    "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-10-14。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
+    "freshness_warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-10-14，最近完整收盘交易日为 2026-10-14；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
     "gamma_available": false,
     "gamma_exposure_available": false,
     "latest_confirmed_market_date": "2026-10-14",
@@ -1087,10 +1092,10 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 73,
+      "event_detection_confidence": 72,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-10-15T01:27:06.990703+00:00",
+      "last_update": "2026-10-15T05:58:16.381045+00:00",
       "major_event_count": 13,
       "missing_reason": null,
       "news_direction": "risk_off",
@@ -1332,7 +1337,18 @@
         "QQQ",
         "SPY"
       ],
-      "conflicting_headlines": [],
+      "conflicting_headlines": [
+        {
+          "confidence": "medium",
+          "detected_event_conditions": [],
+          "event_type": "fed_dovish",
+          "expected_market_direction": "risk_on",
+          "headline": "US considers easing sanctions on shadow fleet vessels to cut freight rates, official says - Reuters",
+          "importance_score": 86,
+          "published_at": "2026-10-15T00:06:00+00:00",
+          "source": "Reuters"
+        }
+      ],
       "detected_event_conditions": [
         "geopolitical_risk_escalation"
       ],
@@ -1348,9 +1364,9 @@
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_market_direction": "risk_off",
-          "headline": "Yemen's Houthis vow more attacks on Saudi airports, oil facilities after Aramco HQ hit - Reuters",
+          "headline": "US military weighs use of ‘mother of all bombs’ in potential future strikes on Iran, CNN says - Reuters",
           "importance_score": 100,
-          "published_at": "2026-10-14T21:12:59+00:00",
+          "published_at": "2026-10-15T04:23:00+00:00",
           "source": "Reuters"
         },
         {
@@ -1363,18 +1379,6 @@
           "headline": "NEWSLETTER: Houthis bring the war to Riyadh - Reuters",
           "importance_score": 100,
           "published_at": "2026-10-14T18:48:00+00:00",
-          "source": "Reuters"
-        },
-        {
-          "confidence": "high",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Two ships sink near Hormuz after being hit by projectiles amid surge in attacks - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-10-14T17:22:06+00:00",
           "source": "Reuters"
         },
         {
@@ -1399,6 +1403,18 @@
           "headline": "Netanyahu says he is not seeking to attack Iran again before Israel election - Reuters",
           "importance_score": 100,
           "published_at": "2026-10-14T13:05:43+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "medium",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
+          "headline": "Two ships sink near Hormuz after being hit by projectiles amid surge in attacks - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-10-14T12:49:00+00:00",
           "source": "Reuters"
         },
         {
@@ -1576,7 +1592,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": -0.0127,
-        "avg_equity_futures_1d_return": -0.0154,
+        "avg_equity_futures_1d_return": -0.0035,
         "confirmed_checks": [
           "股票ETF或股指期货下跌",
           "VIX 上升",
@@ -1591,7 +1607,7 @@
         ],
         "failed_checks": [],
         "hyg_lqd_1d_relative_return": -0.0047,
-        "oil_proxy_1d_return": 0.0012,
+        "oil_proxy_1d_return": -0.0021,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -2742,7 +2758,7 @@
       ]
     }
   },
-  "status_note": "Alpha v1 is still a research candidate and only a bounce scenario input. The dashboard is for probability-path forecasting, not execution recommendations.",
+  "status_note": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-10-14，最近完整收盘交易日为 2026-10-14；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
   "strongest_symbol": "SPY",
   "symbols": {
     "DIA": {
@@ -3124,11 +3140,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
+            "US military weighs use of ‘mother of all bombs’ in potential future strikes on Iran, CNN says - Reuters",
+            "Oil prices retreat as investors weigh supply outlook, Middle East tensions - Reuters",
+            "US considers easing sanctions on shadow fleet vessels to cut freight rates, official says - Reuters",
             "Russia's Lavrov, China's Wang discuss cooperation, Ukraine, Iran at Asia security meeting - Reuters",
-            "US inflation heats up in September; Fed rate hike this month back on table - Reuters",
-            "Ohio's working-class voters rethink support for Trump and the Republican Party - Reuters",
-            "Yemen's Houthis vow more attacks on Saudi airports, oil facilities after Aramco HQ hit - Reuters",
-            "NEWSLETTER: Houthis bring the war to Riyadh - Reuters"
+            "US inflation heats up in September; Fed rate hike this month back on table - Reuters"
           ]
         },
         "price": {
@@ -4042,19 +4058,19 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 79,
+            "confidence_score": 81,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 90,
-            "headline": "Yemen's Houthis vow more attacks on Saudi airports, oil facilities after Aramco HQ hit - Reuters",
+            "freshness_score": 96,
+            "headline": "US military weighs use of ‘mother of all bombs’ in potential future strikes on Iran, CNN says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-14T21:12:59+00:00",
+            "published_at": "2026-10-15T04:23:00+00:00",
             "source": "Reuters"
           },
           {
@@ -4069,14 +4085,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 78,
+            "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
+            "freshness_score": 73,
             "headline": "NEWSLETTER: Houthis bring the war to Riyadh - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4095,42 +4111,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 77,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 81,
-            "headline": "Two ships sink near Hormuz after being hit by projectiles amid surge in attacks - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-14T17:22:06+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 71,
+            "freshness_score": 60,
             "headline": "Gulf markets mixed; Saudi stocks hardest hit on Aramco attack - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4150,14 +4139,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 71,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 59,
             "headline": "Netanyahu says he is not seeking to attack Iran again before Israel election - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4177,14 +4166,41 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 73,
+            "confidence_score": 71,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 67,
+            "freshness_score": 59,
+            "headline": "Two ships sink near Hormuz after being hit by projectiles amid surge in attacks - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-14T12:49:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 71,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 56,
             "headline": "Saudi Aramco headquarters suffered extensive damage in Houthi attack, sources say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4203,7 +4219,18 @@
             "QQQ",
             "SPY"
           ],
-          "conflicting_headlines": [],
+          "conflicting_headlines": [
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [],
+              "event_type": "fed_dovish",
+              "expected_market_direction": "risk_on",
+              "headline": "US considers easing sanctions on shadow fleet vessels to cut freight rates, official says - Reuters",
+              "importance_score": 86,
+              "published_at": "2026-10-15T00:06:00+00:00",
+              "source": "Reuters"
+            }
+          ],
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -4219,9 +4246,9 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "Yemen's Houthis vow more attacks on Saudi airports, oil facilities after Aramco HQ hit - Reuters",
+              "headline": "US military weighs use of ‘mother of all bombs’ in potential future strikes on Iran, CNN says - Reuters",
               "importance_score": 100,
-              "published_at": "2026-10-14T21:12:59+00:00",
+              "published_at": "2026-10-15T04:23:00+00:00",
               "source": "Reuters"
             },
             {
@@ -4234,18 +4261,6 @@
               "headline": "NEWSLETTER: Houthis bring the war to Riyadh - Reuters",
               "importance_score": 100,
               "published_at": "2026-10-14T18:48:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Two ships sink near Hormuz after being hit by projectiles amid surge in attacks - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-10-14T17:22:06+00:00",
               "source": "Reuters"
             },
             {
@@ -4270,6 +4285,18 @@
               "headline": "Netanyahu says he is not seeking to attack Iran again before Israel election - Reuters",
               "importance_score": 100,
               "published_at": "2026-10-14T13:05:43+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Two ships sink near Hormuz after being hit by projectiles amid surge in attacks - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-14T12:49:00+00:00",
               "source": "Reuters"
             },
             {
@@ -4326,7 +4353,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0127,
-            "avg_equity_futures_1d_return": -0.0154,
+            "avg_equity_futures_1d_return": -0.0035,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -4341,7 +4368,7 @@
             ],
             "failed_checks": [],
             "hyg_lqd_1d_relative_return": -0.0047,
-            "oil_proxy_1d_return": 0.0012,
+            "oil_proxy_1d_return": -0.0021,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -5615,11 +5642,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
+            "US military weighs use of ‘mother of all bombs’ in potential future strikes on Iran, CNN says - Reuters",
+            "Oil prices retreat as investors weigh supply outlook, Middle East tensions - Reuters",
+            "US considers easing sanctions on shadow fleet vessels to cut freight rates, official says - Reuters",
             "Russia's Lavrov, China's Wang discuss cooperation, Ukraine, Iran at Asia security meeting - Reuters",
-            "US inflation heats up in September; Fed rate hike this month back on table - Reuters",
-            "Ohio's working-class voters rethink support for Trump and the Republican Party - Reuters",
-            "Yemen's Houthis vow more attacks on Saudi airports, oil facilities after Aramco HQ hit - Reuters",
-            "NEWSLETTER: Houthis bring the war to Riyadh - Reuters"
+            "US inflation heats up in September; Fed rate hike this month back on table - Reuters"
           ]
         },
         "price": {
@@ -6559,19 +6586,19 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 79,
+            "confidence_score": 81,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 90,
-            "headline": "Yemen's Houthis vow more attacks on Saudi airports, oil facilities after Aramco HQ hit - Reuters",
+            "freshness_score": 96,
+            "headline": "US military weighs use of ‘mother of all bombs’ in potential future strikes on Iran, CNN says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-14T21:12:59+00:00",
+            "published_at": "2026-10-15T04:23:00+00:00",
             "source": "Reuters"
           },
           {
@@ -6586,14 +6613,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 78,
+            "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
+            "freshness_score": 73,
             "headline": "NEWSLETTER: Houthis bring the war to Riyadh - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6612,42 +6639,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 77,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 81,
-            "headline": "Two ships sink near Hormuz after being hit by projectiles amid surge in attacks - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-14T17:22:06+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 71,
+            "freshness_score": 60,
             "headline": "Gulf markets mixed; Saudi stocks hardest hit on Aramco attack - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6667,14 +6667,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 71,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 59,
             "headline": "Netanyahu says he is not seeking to attack Iran again before Israel election - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6694,14 +6694,41 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 73,
+            "confidence_score": 71,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 67,
+            "freshness_score": 59,
+            "headline": "Two ships sink near Hormuz after being hit by projectiles amid surge in attacks - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-14T12:49:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 71,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 56,
             "headline": "Saudi Aramco headquarters suffered extensive damage in Houthi attack, sources say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6720,7 +6747,18 @@
             "QQQ",
             "SPY"
           ],
-          "conflicting_headlines": [],
+          "conflicting_headlines": [
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [],
+              "event_type": "fed_dovish",
+              "expected_market_direction": "risk_on",
+              "headline": "US considers easing sanctions on shadow fleet vessels to cut freight rates, official says - Reuters",
+              "importance_score": 86,
+              "published_at": "2026-10-15T00:06:00+00:00",
+              "source": "Reuters"
+            }
+          ],
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -6736,9 +6774,9 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "Yemen's Houthis vow more attacks on Saudi airports, oil facilities after Aramco HQ hit - Reuters",
+              "headline": "US military weighs use of ‘mother of all bombs’ in potential future strikes on Iran, CNN says - Reuters",
               "importance_score": 100,
-              "published_at": "2026-10-14T21:12:59+00:00",
+              "published_at": "2026-10-15T04:23:00+00:00",
               "source": "Reuters"
             },
             {
@@ -6751,18 +6789,6 @@
               "headline": "NEWSLETTER: Houthis bring the war to Riyadh - Reuters",
               "importance_score": 100,
               "published_at": "2026-10-14T18:48:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Two ships sink near Hormuz after being hit by projectiles amid surge in attacks - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-10-14T17:22:06+00:00",
               "source": "Reuters"
             },
             {
@@ -6787,6 +6813,18 @@
               "headline": "Netanyahu says he is not seeking to attack Iran again before Israel election - Reuters",
               "importance_score": 100,
               "published_at": "2026-10-14T13:05:43+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Two ships sink near Hormuz after being hit by projectiles amid surge in attacks - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-14T12:49:00+00:00",
               "source": "Reuters"
             },
             {
@@ -6843,7 +6881,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0127,
-            "avg_equity_futures_1d_return": -0.0154,
+            "avg_equity_futures_1d_return": -0.0035,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -6858,7 +6896,7 @@
             ],
             "failed_checks": [],
             "hyg_lqd_1d_relative_return": -0.0047,
-            "oil_proxy_1d_return": 0.0012,
+            "oil_proxy_1d_return": -0.0021,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -8163,11 +8201,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
+            "US military weighs use of ‘mother of all bombs’ in potential future strikes on Iran, CNN says - Reuters",
+            "Oil prices retreat as investors weigh supply outlook, Middle East tensions - Reuters",
+            "US considers easing sanctions on shadow fleet vessels to cut freight rates, official says - Reuters",
             "Russia's Lavrov, China's Wang discuss cooperation, Ukraine, Iran at Asia security meeting - Reuters",
-            "US inflation heats up in September; Fed rate hike this month back on table - Reuters",
-            "Ohio's working-class voters rethink support for Trump and the Republican Party - Reuters",
-            "Yemen's Houthis vow more attacks on Saudi airports, oil facilities after Aramco HQ hit - Reuters",
-            "NEWSLETTER: Houthis bring the war to Riyadh - Reuters"
+            "US inflation heats up in September; Fed rate hike this month back on table - Reuters"
           ]
         },
         "price": {
@@ -9083,19 +9121,19 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 79,
+            "confidence_score": 81,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 90,
-            "headline": "Yemen's Houthis vow more attacks on Saudi airports, oil facilities after Aramco HQ hit - Reuters",
+            "freshness_score": 96,
+            "headline": "US military weighs use of ‘mother of all bombs’ in potential future strikes on Iran, CNN says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-14T21:12:59+00:00",
+            "published_at": "2026-10-15T04:23:00+00:00",
             "source": "Reuters"
           },
           {
@@ -9110,14 +9148,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 78,
+            "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
+            "freshness_score": 73,
             "headline": "NEWSLETTER: Houthis bring the war to Riyadh - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9136,42 +9174,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 77,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 81,
-            "headline": "Two ships sink near Hormuz after being hit by projectiles amid surge in attacks - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-14T17:22:06+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 71,
+            "freshness_score": 60,
             "headline": "Gulf markets mixed; Saudi stocks hardest hit on Aramco attack - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9191,14 +9202,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 71,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 59,
             "headline": "Netanyahu says he is not seeking to attack Iran again before Israel election - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9218,14 +9229,41 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 73,
+            "confidence_score": 71,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 67,
+            "freshness_score": 59,
+            "headline": "Two ships sink near Hormuz after being hit by projectiles amid surge in attacks - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-14T12:49:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 71,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 56,
             "headline": "Saudi Aramco headquarters suffered extensive damage in Houthi attack, sources say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9244,7 +9282,18 @@
             "QQQ",
             "SPY"
           ],
-          "conflicting_headlines": [],
+          "conflicting_headlines": [
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [],
+              "event_type": "fed_dovish",
+              "expected_market_direction": "risk_on",
+              "headline": "US considers easing sanctions on shadow fleet vessels to cut freight rates, official says - Reuters",
+              "importance_score": 86,
+              "published_at": "2026-10-15T00:06:00+00:00",
+              "source": "Reuters"
+            }
+          ],
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -9260,9 +9309,9 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "Yemen's Houthis vow more attacks on Saudi airports, oil facilities after Aramco HQ hit - Reuters",
+              "headline": "US military weighs use of ‘mother of all bombs’ in potential future strikes on Iran, CNN says - Reuters",
               "importance_score": 100,
-              "published_at": "2026-10-14T21:12:59+00:00",
+              "published_at": "2026-10-15T04:23:00+00:00",
               "source": "Reuters"
             },
             {
@@ -9275,18 +9324,6 @@
               "headline": "NEWSLETTER: Houthis bring the war to Riyadh - Reuters",
               "importance_score": 100,
               "published_at": "2026-10-14T18:48:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Two ships sink near Hormuz after being hit by projectiles amid surge in attacks - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-10-14T17:22:06+00:00",
               "source": "Reuters"
             },
             {
@@ -9311,6 +9348,18 @@
               "headline": "Netanyahu says he is not seeking to attack Iran again before Israel election - Reuters",
               "importance_score": 100,
               "published_at": "2026-10-14T13:05:43+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Two ships sink near Hormuz after being hit by projectiles amid surge in attacks - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-14T12:49:00+00:00",
               "source": "Reuters"
             },
             {
@@ -9367,7 +9416,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0127,
-            "avg_equity_futures_1d_return": -0.0154,
+            "avg_equity_futures_1d_return": -0.0035,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -9382,7 +9431,7 @@
             ],
             "failed_checks": [],
             "hyg_lqd_1d_relative_return": -0.0047,
-            "oil_proxy_1d_return": 0.0012,
+            "oil_proxy_1d_return": -0.0021,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -10663,11 +10712,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
+            "US military weighs use of ‘mother of all bombs’ in potential future strikes on Iran, CNN says - Reuters",
+            "Oil prices retreat as investors weigh supply outlook, Middle East tensions - Reuters",
+            "US considers easing sanctions on shadow fleet vessels to cut freight rates, official says - Reuters",
             "Russia's Lavrov, China's Wang discuss cooperation, Ukraine, Iran at Asia security meeting - Reuters",
-            "US inflation heats up in September; Fed rate hike this month back on table - Reuters",
-            "Ohio's working-class voters rethink support for Trump and the Republican Party - Reuters",
-            "Yemen's Houthis vow more attacks on Saudi airports, oil facilities after Aramco HQ hit - Reuters",
-            "NEWSLETTER: Houthis bring the war to Riyadh - Reuters"
+            "US inflation heats up in September; Fed rate hike this month back on table - Reuters"
           ]
         },
         "price": {
@@ -11592,19 +11641,19 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 79,
+            "confidence_score": 81,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 90,
-            "headline": "Yemen's Houthis vow more attacks on Saudi airports, oil facilities after Aramco HQ hit - Reuters",
+            "freshness_score": 96,
+            "headline": "US military weighs use of ‘mother of all bombs’ in potential future strikes on Iran, CNN says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-14T21:12:59+00:00",
+            "published_at": "2026-10-15T04:23:00+00:00",
             "source": "Reuters"
           },
           {
@@ -11619,14 +11668,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 78,
+            "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
+            "freshness_score": 73,
             "headline": "NEWSLETTER: Houthis bring the war to Riyadh - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11645,42 +11694,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 77,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 81,
-            "headline": "Two ships sink near Hormuz after being hit by projectiles amid surge in attacks - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-14T17:22:06+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 71,
+            "freshness_score": 60,
             "headline": "Gulf markets mixed; Saudi stocks hardest hit on Aramco attack - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11700,14 +11722,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 71,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 59,
             "headline": "Netanyahu says he is not seeking to attack Iran again before Israel election - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11727,14 +11749,41 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 73,
+            "confidence_score": 71,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 67,
+            "freshness_score": 59,
+            "headline": "Two ships sink near Hormuz after being hit by projectiles amid surge in attacks - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-14T12:49:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 71,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 56,
             "headline": "Saudi Aramco headquarters suffered extensive damage in Houthi attack, sources say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11753,7 +11802,18 @@
             "QQQ",
             "SPY"
           ],
-          "conflicting_headlines": [],
+          "conflicting_headlines": [
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [],
+              "event_type": "fed_dovish",
+              "expected_market_direction": "risk_on",
+              "headline": "US considers easing sanctions on shadow fleet vessels to cut freight rates, official says - Reuters",
+              "importance_score": 86,
+              "published_at": "2026-10-15T00:06:00+00:00",
+              "source": "Reuters"
+            }
+          ],
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -11769,9 +11829,9 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "Yemen's Houthis vow more attacks on Saudi airports, oil facilities after Aramco HQ hit - Reuters",
+              "headline": "US military weighs use of ‘mother of all bombs’ in potential future strikes on Iran, CNN says - Reuters",
               "importance_score": 100,
-              "published_at": "2026-10-14T21:12:59+00:00",
+              "published_at": "2026-10-15T04:23:00+00:00",
               "source": "Reuters"
             },
             {
@@ -11784,18 +11844,6 @@
               "headline": "NEWSLETTER: Houthis bring the war to Riyadh - Reuters",
               "importance_score": 100,
               "published_at": "2026-10-14T18:48:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Two ships sink near Hormuz after being hit by projectiles amid surge in attacks - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-10-14T17:22:06+00:00",
               "source": "Reuters"
             },
             {
@@ -11820,6 +11868,18 @@
               "headline": "Netanyahu says he is not seeking to attack Iran again before Israel election - Reuters",
               "importance_score": 100,
               "published_at": "2026-10-14T13:05:43+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Two ships sink near Hormuz after being hit by projectiles amid surge in attacks - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-14T12:49:00+00:00",
               "source": "Reuters"
             },
             {
@@ -11876,7 +11936,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0127,
-            "avg_equity_futures_1d_return": -0.0154,
+            "avg_equity_futures_1d_return": -0.0035,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -11891,7 +11951,7 @@
             ],
             "failed_checks": [],
             "hyg_lqd_1d_relative_return": -0.0047,
-            "oil_proxy_1d_return": 0.0012,
+            "oil_proxy_1d_return": -0.0021,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"

@@ -3,7 +3,7 @@
 This report explains whether current forecast paths have multi-source confirmation. It is not a trading system.
 
 - version: confluence_engine_v1
-- generated_at: 2026-10-15T01:27:17.396654+00:00
+- generated_at: 2026-10-15T05:58:25.556531+00:00
 - strongest_confluence_symbol: SPY
 
 | Symbol | Dominant path | Confluence | Level | Main supports | Main conflicts |
