@@ -1,6 +1,6 @@
 # High Confidence Edge Report
 
-Generated at: `2026-10-15T05:58:16.378194+00:00`
+Generated at: `2026-10-15T08:37:05.632961+00:00`
 
 Status: `historical_proxy_and_forward_pending`
 Sample size: `80`
@@ -35,12 +35,12 @@ Conclusion: `not_enough_strong_edge_samples`
 - 60d: sample `40`, hit `0.75`, avg `0.036857`, median `0.053855`, mae `0.067104`
 
 ### WEAK_EDGE
-- sample_size: `20`
-- 3d: sample `20`, hit `0.4`, avg `-0.009173`, median `-0.013524`, mae `0.018949`
-- 5d: sample `20`, hit `0.4`, avg `-0.006805`, median `-0.009879`, mae `0.018402`
-- 10d: sample `20`, hit `0.55`, avg `0.000736`, median `0.003262`, mae `0.02036`
-- 20d: sample `20`, hit `0.75`, avg `0.023116`, median `0.02093`, mae `0.029945`
-- 60d: sample `20`, hit `0.8`, avg `0.077188`, median `0.0765`, mae `0.096541`
+- sample_size: `0`
+- 3d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 5d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 10d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 20d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 60d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
 
 ### NO_EDGE
 - sample_size: `0`
@@ -51,12 +51,12 @@ Conclusion: `not_enough_strong_edge_samples`
 - 60d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
 
 ### RISK_WARNING
-- sample_size: `20`
-- 3d: sample `20`, hit `0.2`, avg `-0.011745`, median `-0.010273`, mae `0.01435`
-- 5d: sample `20`, hit `0.2`, avg `-0.018067`, median `-0.021517`, mae `0.022421`
-- 10d: sample `20`, hit `0.25`, avg `-0.020527`, median `-0.034842`, mae `0.040017`
-- 20d: sample `20`, hit `0.45`, avg `0.013366`, median `-0.00018`, mae `0.04779`
-- 60d: sample `20`, hit `0.9`, avg `0.079642`, median `0.092689`, mae `0.090342`
+- sample_size: `40`
+- 3d: sample `40`, hit `0.3`, avg `-0.010459`, median `-0.011068`, mae `0.016649`
+- 5d: sample `40`, hit `0.3`, avg `-0.012436`, median `-0.014596`, mae `0.020412`
+- 10d: sample `40`, hit `0.4`, avg `-0.009896`, median `-0.014015`, mae `0.030189`
+- 20d: sample `40`, hit `0.6`, avg `0.018241`, median `0.015713`, mae `0.038867`
+- 60d: sample `40`, hit `0.85`, avg `0.078415`, median `0.079633`, mae `0.093442`
 
 ## Top Confirmation / Confidence Buckets
 

@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-15T05:58:16.381045+00:00`
+- generated_at: `2026-10-15T08:37:05.636275+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `13`
-- event_detection_confidence: `72`
+- major_event_count: `15`
+- event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,6 +27,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: COMMENTARY: Oil's long view darkens as Iran war refuses to end - Reuters
+- source: Reuters
+- published_at: `2026-10-15T06:00:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: US military weighs use of ‘mother of all bombs’ in potential future strikes on Iran, CNN says - Reuters
 - source: Reuters
 - published_at: `2026-10-15T04:23:00+00:00`
@@ -39,7 +47,7 @@
 - source: Reuters
 - published_at: `2026-10-14T18:48:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -86,7 +94,7 @@
 - headline: US considers easing sanctions on shadow fleet vessels to cut freight rates, official says - Reuters
 - source: Reuters
 - published_at: `2026-10-15T00:06:00+00:00`
-- importance_score: `86`
+- importance_score: `85`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
@@ -94,13 +102,5 @@
 - headline: Yemen's Houthis vow more attacks on Saudi airports, oil facilities after Aramco HQ hit - Reuters
 - source: Reuters
 - published_at: `2026-10-14T09:51:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: South Korea police identify more victims in Incheon stabbing attack, total rises to 10, reports say - Reuters
-- source: Reuters
-- published_at: `2026-10-14T06:31:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
