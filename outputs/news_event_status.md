@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-15T17:04:55.251466+00:00`
+- generated_at: `2026-10-15T23:11:10.749779+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `13`
-- event_detection_confidence: `76`
+- major_event_count: `9`
+- event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,17 +27,9 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Houthis attack presidential palace complex in Yemen's Aden, PM unharmed, officials say - Reuters
+- headline: Yemen's Houthis hit palace in Aden, coalition details attacks on Saudi infrastructure - Reuters
 - source: Reuters
-- published_at: `2026-10-15T15:36:55+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Saudi-led coalition says Houthis attempted to attack dozens of Saudi facilities - Reuters
-- source: Reuters
-- published_at: `2026-10-15T14:43:43+00:00`
+- published_at: `2026-10-15T22:13:21+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -45,7 +37,23 @@
 
 - headline: Hezbollah says it owned confiscated explosives, meant to attack Israel - Reuters
 - source: Reuters
-- published_at: `2026-10-15T12:45:28+00:00`
+- published_at: `2026-10-15T17:45:34+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: How are Yemen’s Houthis attacking Saudi Arabia so effectively? - Reuters
+- source: Reuters
+- published_at: `2026-10-15T16:13:44+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Houthis attack presidential palace complex in Yemen's Aden, PM unharmed, officials say - Reuters
+- source: Reuters
+- published_at: `2026-10-15T15:36:55+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -55,7 +63,7 @@
 - source: Reuters
 - published_at: `2026-10-15T10:18:56+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -67,40 +75,24 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Drone attack causes fire at Russia's Ryazan refinery, regional governor says - Reuters
+- source: Reuters
+- published_at: `2026-10-15T07:07:42+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: TotalEnergies flags quarterly profit surge as Iran war continues to drive energy prices - Reuters
 - source: Reuters
 - published_at: `2026-10-15T06:06:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: COMMENTARY: Oil's long view darkens as Iran war refuses to end - Reuters
 - source: Reuters
 - published_at: `2026-10-15T06:00:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US military weighs use of ‘mother of all bombs’ in potential future strikes on Iran, CNN says - Reuters
-- source: Reuters
-- published_at: `2026-10-15T04:23:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Sports-FIFA postpones FIFAe Finals in Saudi Arabia following attacks - Reuters
-- source: Reuters
-- published_at: `2026-10-15T03:30:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: IMF warns of slowing Asian growth, spillover from rising yields - Reuters
-- source: Reuters
-- published_at: `2026-10-15T02:04:00+00:00`
 - importance_score: `100`
 - confidence: `medium`

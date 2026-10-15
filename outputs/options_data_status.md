@@ -1,6 +1,6 @@
 # Options / Volatility Structure Status
 
-Generated at: `2026-10-15T17:04:42.743447+00:00`
+Generated at: `2026-10-15T23:10:56.104385+00:00`
 
 ## Summary
 
@@ -18,29 +18,29 @@ Generated at: `2026-10-15T17:04:42.743447+00:00`
 
 ## Market Snapshot
 
-- VIX: `16.829999923706055`
-- VIX9D: `14.6899995803833`
-- VIX3M: `18.700000762939453`
-- VIX6M: `20.459999084472656`
-- VVIX: `93.44999694824219`
-- SKEW: `157.3000030517578`
+- VIX: `16.459999084472656`
+- VIX9D: `13.970000267028809`
+- VIX3M: `18.489999771118164`
+- VIX6M: `20.239999771118164`
+- VVIX: `92.56999969482422`
+- SKEW: `160.4499969482422`
 - term_structure_state: `contango`
 - volatility_reversal_score: `0.5`
 - panic_release_score: `0.33`
-- tail_risk_score: `0.5229`
-- option_stress_score: `0.4394`
-- failed_bounce_options_risk: `0.4317`
+- tail_risk_score: `0.5179`
+- option_stress_score: `0.4214`
+- failed_bounce_options_risk: `0.4116`
 
 ## Sources
 
 | symbol | status | latest_date | latest_value | source | real_data | stale |
 |---|---|---|---:|---|---:|---:|
-| ^SKEW | available | 2026-10-14 | 157.3000030517578 | yahoo-chart | True | False |
-| ^VIX | available | 2026-10-15 | 16.829999923706055 | yahoo-chart | True | False |
-| ^VIX3M | available | 2026-10-15 | 18.700000762939453 | yahoo-chart | True | False |
-| ^VIX6M | available | 2026-10-15 | 20.459999084472656 | yahoo-chart | True | False |
-| ^VIX9D | available | 2026-10-15 | 14.6899995803833 | yahoo-chart | True | False |
-| ^VVIX | available | 2026-10-15 | 93.44999694824219 | yahoo-chart | True | False |
+| ^SKEW | available | 2026-10-15 | 160.4499969482422 | yahoo-chart | True | False |
+| ^VIX | available | 2026-10-15 | 16.459999084472656 | yahoo-chart | True | False |
+| ^VIX3M | available | 2026-10-15 | 18.489999771118164 | yahoo-chart | True | False |
+| ^VIX6M | available | 2026-10-15 | 20.239999771118164 | yahoo-chart | True | False |
+| ^VIX9D | available | 2026-10-15 | 13.970000267028809 | yahoo-chart | True | False |
+| ^VVIX | available | 2026-10-15 | 92.56999969482422 | yahoo-chart | True | False |
 
 ## Guardrails
 
