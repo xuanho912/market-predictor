@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-16T05:55:09.713235+00:00`
+- generated_at: `2026-10-16T08:31:28.519452+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
-- event_detection_confidence: `75`
+- major_event_count: `7`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -30,6 +30,14 @@
 - headline: Fed's Warsh says AI path will be 'very bumpy' but ultimately 'very good' for wealth
 - source: CNBC
 - published_at: `2026-10-16T04:08:27+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Mideast war alters global bunker buying patterns, industry execs say - Reuters
+- source: Reuters
+- published_at: `2026-10-16T03:19:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -70,21 +78,5 @@
 - headline: US toy prices surge ahead of holiday shopping season as tariffs, Iran war bite - Reuters
 - source: Reuters
 - published_at: `2026-10-15T10:18:56+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran’s precision strikes picked apart Gulf infrastructure, blunting US war plans - Reuters
-- source: Reuters
-- published_at: `2026-10-15T10:00:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Drone attack causes fire at Russia's Ryazan refinery, regional governor says - Reuters
-- source: Reuters
-- published_at: `2026-10-15T07:07:42+00:00`
 - importance_score: `100`
 - confidence: `medium`
