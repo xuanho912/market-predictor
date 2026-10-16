@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-16T16:42:32.873374+00:00`
+- generated_at: `2026-10-16T22:56:38.084235+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
+- major_event_count: `11`
 - event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -24,6 +24,30 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Israeli settlers attack Palestinians during West Bank olive harvest - Reuters
+- source: Reuters
+- published_at: `2026-10-16T21:41:15+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### credit_stress / risk_off
+
+- headline: Why did CoreWeave stock get crushed this week? Look to this corner of the debt market for clues
+- source: CNBC
+- published_at: `2026-10-16T20:33:55+00:00`
+- importance_score: `98`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Schwab to create 'tax-aware' strategy that's been attracting billions from wealthy investors
+- source: CNBC
+- published_at: `2026-10-16T16:21:14+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -57,42 +81,26 @@
 - importance_score: `100`
 - confidence: `high`
 
+### fed_hawkish / risk_off
+
+- headline: NBA tightens betting rules, develops AI to flag suspicious wagers
+- source: CNBC
+- published_at: `2026-10-16T17:50:50+00:00`
+- importance_score: `88`
+- confidence: `high`
+
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Asian Tour postpone Saudi International after Riyadh attacks - Reuters
 - source: Reuters
 - published_at: `2026-10-16T05:46:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Fed's Warsh says AI path will be 'very bumpy' but ultimately 'very good' for wealth
 - source: CNBC
 - published_at: `2026-10-16T04:08:27+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Mideast war alters global bunker buying patterns, industry execs say - Reuters
-- source: Reuters
-- published_at: `2026-10-16T03:19:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Hezbollah says it owned confiscated explosives, meant to attack Israel - Reuters
-- source: Reuters
-- published_at: `2026-10-15T17:45:34+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: How are Yemen’s Houthis attacking Saudi Arabia so effectively? - Reuters
-- source: Reuters
-- published_at: `2026-10-15T16:02:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
