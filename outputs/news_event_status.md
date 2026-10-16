@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-16T22:56:38.084235+00:00`
+- generated_at: `2026-10-16T23:51:25.840198+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `11`
+- major_event_count: `12`
 - event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -29,7 +29,15 @@
 
 - headline: Israeli settlers attack Palestinians during West Bank olive harvest - Reuters
 - source: Reuters
-- published_at: `2026-10-16T21:41:15+00:00`
+- published_at: `2026-10-16T23:11:15+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Missiles hit Aden airport as Saudi-led coalition intercepts missile headed for Yanbu - Reuters
+- source: Reuters
+- published_at: `2026-10-16T21:51:53+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -87,20 +95,12 @@
 - source: CNBC
 - published_at: `2026-10-16T17:50:50+00:00`
 - importance_score: `88`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Asian Tour postpone Saudi International after Riyadh attacks - Reuters
 - source: Reuters
 - published_at: `2026-10-16T05:46:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Fed's Warsh says AI path will be 'very bumpy' but ultimately 'very good' for wealth
-- source: CNBC
-- published_at: `2026-10-16T04:08:27+00:00`
 - importance_score: `100`
 - confidence: `medium`

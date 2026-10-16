@@ -5,10 +5,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-10-16",
-    "current_time_us_eastern": "2026-10-16T18:56:44.534328-04:00",
+    "current_time_us_eastern": "2026-10-16T19:51:36.653134-04:00",
     "data_freshness_status": "fresh",
     "expected_latest_trading_date": "2026-10-16",
-    "generated_at": "2026-10-16T22:56:44.534328+00:00",
+    "generated_at": "2026-10-16T23:51:36.653134+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -1047,15 +1047,15 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "DGS2",
-      "HY_OAS",
       "IG_OAS",
       "BAA_SPREAD",
       "DGS10",
-      "DGS3MO",
-      "FINANCIAL_STRESS",
       "DFII10",
-      "RECESSION"
+      "RECESSION",
+      "FINANCIAL_STRESS",
+      "HY_OAS",
+      "DGS3MO",
+      "DGS2"
     ],
     "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-10-16。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
     "gamma_available": false,
@@ -1089,8 +1089,8 @@
       "event_detection_confidence": 75,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-10-16T22:56:38.084235+00:00",
-      "major_event_count": 11,
+      "last_update": "2026-10-16T23:51:25.840198+00:00",
+      "major_event_count": 12,
       "missing_reason": null,
       "news_direction": "risk_off",
       "news_event_partial": false,
@@ -1101,7 +1101,7 @@
     },
     "news_event_available": true,
     "news_event_event_risk_level": "high",
-    "news_event_major_count": 11,
+    "news_event_major_count": 12,
     "news_event_missing_reason": null,
     "news_event_narrative": "geopolitics_escalation_risk_off",
     "news_event_partial": false,
@@ -1151,7 +1151,7 @@
       "status": "failed"
     },
     "event_risk_level": "high",
-    "major_event_count": 11,
+    "major_event_count": 12,
     "market_narrative": {
       "affected_scenarios": [
         "bearish_path"
@@ -1180,7 +1180,19 @@
           "expected_market_direction": "risk_off",
           "headline": "Israeli settlers attack Palestinians during West Bank olive harvest - Reuters",
           "importance_score": 100,
-          "published_at": "2026-10-16T21:41:15+00:00",
+          "published_at": "2026-10-16T23:11:15+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
+          "headline": "Missiles hit Aden airport as Saudi-led coalition intercepts missile headed for Yanbu - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-10-16T21:51:53+00:00",
           "source": "Reuters"
         },
         {
@@ -1230,18 +1242,6 @@
           "importance_score": 100,
           "published_at": "2026-10-16T12:12:01+00:00",
           "source": "Reuters"
-        },
-        {
-          "confidence": "high",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "EXCLUSIVE: Iran ships some LPG, jet fuel despite US blockade, data shows - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-10-16T12:03:27+00:00",
-          "source": "Reuters"
         }
       ]
     },
@@ -1251,7 +1251,7 @@
       "direction": "supports_risk_expansion",
       "event_risk_level": "high",
       "macro_event_risk_flag": false,
-      "major_event_count": 11,
+      "major_event_count": 12,
       "not_a_trading_signal": true,
       "price_reaction_confirmed": true,
       "symbols": {
@@ -2303,10 +2303,10 @@
           "news_risk_score": 0.3,
           "top_headlines": [
             "Israeli settlers attack Palestinians during West Bank olive harvest - Reuters",
+            "Missiles hit Aden airport as Saudi-led coalition intercepts missile headed for Yanbu - Reuters",
             "US solicits exchange of up to 17 million barrels of oil from strategic reserve - Reuters",
             "Why did CoreWeave stock get crushed this week? Look to this corner of the debt market for clues",
-            "EXCLUSIVE: Trump move to restart direct US flights with Lebanon hits roadblock - Reuters",
-            "Wall Street's fear gauge is ripping. Traders see it going even higher"
+            "EXCLUSIVE: Trump move to restart direct US flights with Lebanon hits roadblock - Reuters"
           ]
         },
         "price": {
@@ -3671,12 +3671,39 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 97,
+            "freshness_score": 98,
             "headline": "Israeli settlers attack Palestinians during West Bank olive harvest - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-16T21:41:15+00:00",
+            "published_at": "2026-10-16T23:11:15+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 80,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 95,
+            "headline": "Missiles hit Aden airport as Saudi-led coalition intercepts missile headed for Yanbu - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-16T21:51:53+00:00",
             "source": "Reuters"
           },
           {
@@ -3695,7 +3722,7 @@
             "event_type": "credit_stress",
             "expected_horizon": "3d-60d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 94,
+            "freshness_score": 92,
             "headline": "Why did CoreWeave stock get crushed this week? Look to this corner of the debt market for clues",
             "importance_score": 98,
             "narrative": "credit_stress",
@@ -3715,14 +3742,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 78,
+            "confidence_score": 77,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
+            "freshness_score": 82,
             "headline": "Schwab to create 'tax-aware' strategy that's been attracting billions from wealthy investors",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3749,40 +3776,13 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 78,
+            "freshness_score": 76,
             "headline": "AI 'espionage' is a reality that companies need to be 'wary of,' Jay Clayton says",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-10-16T13:55:56+00:00",
             "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 76,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 76,
-            "headline": "Trump says US may need to strike Iran's Pickaxe Mountain - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-16T12:54:29+00:00",
-            "source": "Reuters"
           },
           {
             "affected_assets": [
@@ -3804,11 +3804,11 @@
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
             "freshness_score": 74,
-            "headline": "Israeli settlers burn olive trees, injure journalist in West Bank attack - Reuters",
+            "headline": "Trump says US may need to strike Iran's Pickaxe Mountain - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-16T12:12:01+00:00",
+            "published_at": "2026-10-16T12:54:29+00:00",
             "source": "Reuters"
           }
         ],
@@ -3840,7 +3840,19 @@
               "expected_market_direction": "risk_off",
               "headline": "Israeli settlers attack Palestinians during West Bank olive harvest - Reuters",
               "importance_score": 100,
-              "published_at": "2026-10-16T21:41:15+00:00",
+              "published_at": "2026-10-16T23:11:15+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Missiles hit Aden airport as Saudi-led coalition intercepts missile headed for Yanbu - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-16T21:51:53+00:00",
               "source": "Reuters"
             },
             {
@@ -3889,18 +3901,6 @@
               "headline": "Israeli settlers burn olive trees, injure journalist in West Bank attack - Reuters",
               "importance_score": 100,
               "published_at": "2026-10-16T12:12:01+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "EXCLUSIVE: Iran ships some LPG, jet fuel despite US blockade, data shows - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-10-16T12:03:27+00:00",
               "source": "Reuters"
             }
           ]
@@ -6496,10 +6496,10 @@
           "news_risk_score": 0.3,
           "top_headlines": [
             "Israeli settlers attack Palestinians during West Bank olive harvest - Reuters",
+            "Missiles hit Aden airport as Saudi-led coalition intercepts missile headed for Yanbu - Reuters",
             "US solicits exchange of up to 17 million barrels of oil from strategic reserve - Reuters",
             "Why did CoreWeave stock get crushed this week? Look to this corner of the debt market for clues",
-            "EXCLUSIVE: Trump move to restart direct US flights with Lebanon hits roadblock - Reuters",
-            "Wall Street's fear gauge is ripping. Traders see it going even higher"
+            "EXCLUSIVE: Trump move to restart direct US flights with Lebanon hits roadblock - Reuters"
           ]
         },
         "price": {
@@ -7895,12 +7895,39 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 97,
+            "freshness_score": 98,
             "headline": "Israeli settlers attack Palestinians during West Bank olive harvest - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-16T21:41:15+00:00",
+            "published_at": "2026-10-16T23:11:15+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 80,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 95,
+            "headline": "Missiles hit Aden airport as Saudi-led coalition intercepts missile headed for Yanbu - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-16T21:51:53+00:00",
             "source": "Reuters"
           },
           {
@@ -7919,7 +7946,7 @@
             "event_type": "credit_stress",
             "expected_horizon": "3d-60d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 94,
+            "freshness_score": 92,
             "headline": "Why did CoreWeave stock get crushed this week? Look to this corner of the debt market for clues",
             "importance_score": 98,
             "narrative": "credit_stress",
@@ -7939,14 +7966,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 78,
+            "confidence_score": 77,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
+            "freshness_score": 82,
             "headline": "Schwab to create 'tax-aware' strategy that's been attracting billions from wealthy investors",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7973,40 +8000,13 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 78,
+            "freshness_score": 76,
             "headline": "AI 'espionage' is a reality that companies need to be 'wary of,' Jay Clayton says",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-10-16T13:55:56+00:00",
             "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 76,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 76,
-            "headline": "Trump says US may need to strike Iran's Pickaxe Mountain - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-16T12:54:29+00:00",
-            "source": "Reuters"
           },
           {
             "affected_assets": [
@@ -8028,11 +8028,11 @@
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
             "freshness_score": 74,
-            "headline": "Israeli settlers burn olive trees, injure journalist in West Bank attack - Reuters",
+            "headline": "Trump says US may need to strike Iran's Pickaxe Mountain - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-16T12:12:01+00:00",
+            "published_at": "2026-10-16T12:54:29+00:00",
             "source": "Reuters"
           }
         ],
@@ -8064,7 +8064,19 @@
               "expected_market_direction": "risk_off",
               "headline": "Israeli settlers attack Palestinians during West Bank olive harvest - Reuters",
               "importance_score": 100,
-              "published_at": "2026-10-16T21:41:15+00:00",
+              "published_at": "2026-10-16T23:11:15+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Missiles hit Aden airport as Saudi-led coalition intercepts missile headed for Yanbu - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-16T21:51:53+00:00",
               "source": "Reuters"
             },
             {
@@ -8113,18 +8125,6 @@
               "headline": "Israeli settlers burn olive trees, injure journalist in West Bank attack - Reuters",
               "importance_score": 100,
               "published_at": "2026-10-16T12:12:01+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "EXCLUSIVE: Iran ships some LPG, jet fuel despite US blockade, data shows - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-10-16T12:03:27+00:00",
               "source": "Reuters"
             }
           ]
@@ -10727,10 +10727,10 @@
           "news_risk_score": 0.3,
           "top_headlines": [
             "Israeli settlers attack Palestinians during West Bank olive harvest - Reuters",
+            "Missiles hit Aden airport as Saudi-led coalition intercepts missile headed for Yanbu - Reuters",
             "US solicits exchange of up to 17 million barrels of oil from strategic reserve - Reuters",
             "Why did CoreWeave stock get crushed this week? Look to this corner of the debt market for clues",
-            "EXCLUSIVE: Trump move to restart direct US flights with Lebanon hits roadblock - Reuters",
-            "Wall Street's fear gauge is ripping. Traders see it going even higher"
+            "EXCLUSIVE: Trump move to restart direct US flights with Lebanon hits roadblock - Reuters"
           ]
         },
         "price": {
@@ -12120,12 +12120,39 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 97,
+            "freshness_score": 98,
             "headline": "Israeli settlers attack Palestinians during West Bank olive harvest - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-16T21:41:15+00:00",
+            "published_at": "2026-10-16T23:11:15+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 80,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 95,
+            "headline": "Missiles hit Aden airport as Saudi-led coalition intercepts missile headed for Yanbu - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-16T21:51:53+00:00",
             "source": "Reuters"
           },
           {
@@ -12144,7 +12171,7 @@
             "event_type": "credit_stress",
             "expected_horizon": "3d-60d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 94,
+            "freshness_score": 92,
             "headline": "Why did CoreWeave stock get crushed this week? Look to this corner of the debt market for clues",
             "importance_score": 98,
             "narrative": "credit_stress",
@@ -12164,14 +12191,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 78,
+            "confidence_score": 77,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
+            "freshness_score": 82,
             "headline": "Schwab to create 'tax-aware' strategy that's been attracting billions from wealthy investors",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12198,40 +12225,13 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 78,
+            "freshness_score": 76,
             "headline": "AI 'espionage' is a reality that companies need to be 'wary of,' Jay Clayton says",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-10-16T13:55:56+00:00",
             "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 76,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 76,
-            "headline": "Trump says US may need to strike Iran's Pickaxe Mountain - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-16T12:54:29+00:00",
-            "source": "Reuters"
           },
           {
             "affected_assets": [
@@ -12253,11 +12253,11 @@
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
             "freshness_score": 74,
-            "headline": "Israeli settlers burn olive trees, injure journalist in West Bank attack - Reuters",
+            "headline": "Trump says US may need to strike Iran's Pickaxe Mountain - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-16T12:12:01+00:00",
+            "published_at": "2026-10-16T12:54:29+00:00",
             "source": "Reuters"
           }
         ],
@@ -12289,7 +12289,19 @@
               "expected_market_direction": "risk_off",
               "headline": "Israeli settlers attack Palestinians during West Bank olive harvest - Reuters",
               "importance_score": 100,
-              "published_at": "2026-10-16T21:41:15+00:00",
+              "published_at": "2026-10-16T23:11:15+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Missiles hit Aden airport as Saudi-led coalition intercepts missile headed for Yanbu - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-16T21:51:53+00:00",
               "source": "Reuters"
             },
             {
@@ -12338,18 +12350,6 @@
               "headline": "Israeli settlers burn olive trees, injure journalist in West Bank attack - Reuters",
               "importance_score": 100,
               "published_at": "2026-10-16T12:12:01+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "EXCLUSIVE: Iran ships some LPG, jet fuel despite US blockade, data shows - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-10-16T12:03:27+00:00",
               "source": "Reuters"
             }
           ]
@@ -14954,10 +14954,10 @@
           "news_risk_score": 0.3,
           "top_headlines": [
             "Israeli settlers attack Palestinians during West Bank olive harvest - Reuters",
+            "Missiles hit Aden airport as Saudi-led coalition intercepts missile headed for Yanbu - Reuters",
             "US solicits exchange of up to 17 million barrels of oil from strategic reserve - Reuters",
             "Why did CoreWeave stock get crushed this week? Look to this corner of the debt market for clues",
-            "EXCLUSIVE: Trump move to restart direct US flights with Lebanon hits roadblock - Reuters",
-            "Wall Street's fear gauge is ripping. Traders see it going even higher"
+            "EXCLUSIVE: Trump move to restart direct US flights with Lebanon hits roadblock - Reuters"
           ]
         },
         "price": {
@@ -16310,12 +16310,39 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 97,
+            "freshness_score": 98,
             "headline": "Israeli settlers attack Palestinians during West Bank olive harvest - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-16T21:41:15+00:00",
+            "published_at": "2026-10-16T23:11:15+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 80,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 95,
+            "headline": "Missiles hit Aden airport as Saudi-led coalition intercepts missile headed for Yanbu - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-16T21:51:53+00:00",
             "source": "Reuters"
           },
           {
@@ -16334,7 +16361,7 @@
             "event_type": "credit_stress",
             "expected_horizon": "3d-60d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 94,
+            "freshness_score": 92,
             "headline": "Why did CoreWeave stock get crushed this week? Look to this corner of the debt market for clues",
             "importance_score": 98,
             "narrative": "credit_stress",
@@ -16354,14 +16381,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 78,
+            "confidence_score": 77,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
+            "freshness_score": 82,
             "headline": "Schwab to create 'tax-aware' strategy that's been attracting billions from wealthy investors",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16388,40 +16415,13 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 78,
+            "freshness_score": 76,
             "headline": "AI 'espionage' is a reality that companies need to be 'wary of,' Jay Clayton says",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-10-16T13:55:56+00:00",
             "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 76,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 76,
-            "headline": "Trump says US may need to strike Iran's Pickaxe Mountain - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-16T12:54:29+00:00",
-            "source": "Reuters"
           },
           {
             "affected_assets": [
@@ -16443,11 +16443,11 @@
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
             "freshness_score": 74,
-            "headline": "Israeli settlers burn olive trees, injure journalist in West Bank attack - Reuters",
+            "headline": "Trump says US may need to strike Iran's Pickaxe Mountain - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-16T12:12:01+00:00",
+            "published_at": "2026-10-16T12:54:29+00:00",
             "source": "Reuters"
           }
         ],
@@ -16479,7 +16479,19 @@
               "expected_market_direction": "risk_off",
               "headline": "Israeli settlers attack Palestinians during West Bank olive harvest - Reuters",
               "importance_score": 100,
-              "published_at": "2026-10-16T21:41:15+00:00",
+              "published_at": "2026-10-16T23:11:15+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Missiles hit Aden airport as Saudi-led coalition intercepts missile headed for Yanbu - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-16T21:51:53+00:00",
               "source": "Reuters"
             },
             {
@@ -16528,18 +16540,6 @@
               "headline": "Israeli settlers burn olive trees, injure journalist in West Bank attack - Reuters",
               "importance_score": 100,
               "published_at": "2026-10-16T12:12:01+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "EXCLUSIVE: Iran ships some LPG, jet fuel despite US blockade, data shows - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-10-16T12:03:27+00:00",
               "source": "Reuters"
             }
           ]
