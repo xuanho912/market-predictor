@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-16T01:14:54.065049+00:00`
+- generated_at: `2026-10-16T05:55:09.713235+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
-- event_detection_confidence: `76`
+- major_event_count: `8`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,9 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Yemen's Houthis hit palace in Aden, coalition details attacks on Saudi infrastructure - Reuters
-- source: Reuters
-- published_at: `2026-10-15T22:13:21+00:00`
+- headline: Fed's Warsh says AI path will be 'very bumpy' but ultimately 'very good' for wealth
+- source: CNBC
+- published_at: `2026-10-16T04:08:27+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -39,7 +39,7 @@
 - source: Reuters
 - published_at: `2026-10-15T17:45:34+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +47,7 @@
 - source: Reuters
 - published_at: `2026-10-15T16:13:44+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,7 +55,15 @@
 - source: Reuters
 - published_at: `2026-10-15T15:36:55+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Yemen's Houthis hit palace in Aden, coalition details attacks on Saudi infrastructure - Reuters
+- source: Reuters
+- published_at: `2026-10-15T14:42:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -78,21 +86,5 @@
 - headline: Drone attack causes fire at Russia's Ryazan refinery, regional governor says - Reuters
 - source: Reuters
 - published_at: `2026-10-15T07:07:42+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: TotalEnergies flags quarterly profit surge as Iran war continues to drive energy prices - Reuters
-- source: Reuters
-- published_at: `2026-10-15T06:06:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: COMMENTARY: Oil's long view darkens as Iran war refuses to end - Reuters
-- source: Reuters
-- published_at: `2026-10-15T06:00:00+00:00`
 - importance_score: `100`
 - confidence: `medium`

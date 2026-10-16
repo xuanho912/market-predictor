@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-10-16T01:15:05.827609+00:00`
+Generated at: `2026-10-16T05:55:23.025835+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -25,9 +25,9 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `27.7%`
 - secondary: `stock_downside_continuation` / `19.1%`
 - risk: `stock_event_risk` / `13.6%`
-- stock_confluence_score: `45.63` / `mixed`
-- stock_alpha_score_v1: `39.0` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `51.6%`
+- stock_confluence_score: `45.81` / `mixed`
+- stock_alpha_score_v1: `41.0` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `52.4%`
 - 60d_expected_return: `-0.8%`
 - risk_reward_ratio: `0.49`
 - strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `28.15`
@@ -83,7 +83,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_downside_continuation` / `34.7%`
 - secondary: `stock_failed_bounce` / `22.9%`
 - risk: `stock_event_risk` / `10.3%`
-- stock_confluence_score: `37.92` / `weak`
+- stock_confluence_score: `41.03` / `weak`
 - stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `15.3%`
 - 60d_expected_return: `-4.2%`
@@ -112,12 +112,12 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `26.7%`
 - secondary: `stock_downside_continuation` / `17.7%`
 - risk: `stock_event_risk` / `16.6%`
-- stock_confluence_score: `43.47` / `weak`
+- stock_confluence_score: `44.91` / `weak`
 - stock_alpha_score_v1: `31.0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `53.1%`
 - 60d_expected_return: `-1.5%`
 - risk_reward_ratio: `0.53`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `27.96`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `25.75`
 - historical_analog_support: `conflicting` / samples `10`
 - validation_status: `not_yet_validated`
 
