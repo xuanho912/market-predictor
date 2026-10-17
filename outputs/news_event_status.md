@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-17T01:05:44.693570+00:00`
+- generated_at: `2026-10-17T01:25:27.156904+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `12`
@@ -29,7 +29,7 @@
 
 - headline: Israeli settlers attack Palestinians during West Bank olive harvest - Reuters
 - source: Reuters
-- published_at: `2026-10-16T23:41:16+00:00`
+- published_at: `2026-10-17T00:41:15+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -37,7 +37,7 @@
 
 - headline: Missiles hit Aden airport as Saudi-led coalition intercepts missile headed for Yanbu - Reuters
 - source: Reuters
-- published_at: `2026-10-16T21:51:53+00:00`
+- published_at: `2026-10-16T21:51:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
