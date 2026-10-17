@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-17T08:04:41.086259+00:00`
+- generated_at: `2026-10-17T15:39:22.250010+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `12`
-- event_detection_confidence: `70`
+- event_detection_confidence: `65`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,26 +27,10 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Israeli settlers attack Palestinians during West Bank olive harvest - Reuters
-- source: Reuters
-- published_at: `2026-10-17T05:40:19+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
 - headline: Missiles hit Aden airport as Saudi-led coalition intercepts missile headed for Yanbu - Reuters
 - source: Reuters
 - published_at: `2026-10-16T21:51:00+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### credit_stress / risk_off
-
-- headline: Why did CoreWeave stock get crushed this week? Look to this corner of the debt market for clues
-- source: CNBC
-- published_at: `2026-10-16T20:33:55+00:00`
-- importance_score: `96`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
@@ -55,6 +39,14 @@
 - source: CNBC
 - published_at: `2026-10-16T16:21:14+00:00`
 - importance_score: `100`
+- confidence: `medium`
+
+### credit_stress / risk_off
+
+- headline: Why did CoreWeave stock get crushed this week? Look to this corner of the debt market for clues
+- source: CNBC
+- published_at: `2026-10-16T20:33:55+00:00`
+- importance_score: `94`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
@@ -91,16 +83,24 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Asian Tour postpone Saudi International after Riyadh attacks - Reuters
+- headline: Two ships sink near Hormuz after being hit by projectiles amid surge in attacks - Reuters
 - source: Reuters
-- published_at: `2026-10-16T05:46:00+00:00`
+- published_at: `2026-10-16T11:13:21+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
-### fed_hawkish / risk_off
+### geopolitical_risk_escalation / risk_off
 
-- headline: NBA tightens betting rules, develops AI to flag suspicious wagers
-- source: CNBC
-- published_at: `2026-10-16T17:50:50+00:00`
-- importance_score: `86`
+- headline: EXCLUSIVE: PetroChina set for record trading profit as war upends market, sources say - Reuters
+- source: Reuters
+- published_at: `2026-10-16T08:19:55+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Israeli settlers attack Palestinians during West Bank olive harvest - Reuters
+- source: Reuters
+- published_at: `2026-10-16T07:00:00+00:00`
+- importance_score: `100`
 - confidence: `medium`

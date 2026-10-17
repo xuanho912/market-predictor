@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-10-17T08:04:52.715529+00:00`
+Generated at: `2026-10-17T15:39:32.163573+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -54,9 +54,9 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `28.5%`
 - secondary: `stock_downside_continuation` / `18.4%`
 - risk: `stock_event_risk` / `16.7%`
-- stock_confluence_score: `37.42` / `weak`
-- stock_alpha_score_v1: `1.5` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `37.8%`
+- stock_confluence_score: `41.83` / `weak`
+- stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `37.2%`
 - 60d_expected_return: `-1.0%`
 - risk_reward_ratio: `0.47`
 - strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `26.86`
@@ -109,15 +109,15 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - status: `available`
 - current_price: `271.37`
 - market_context: `market_headwind`
-- primary: `stock_failed_bounce` / `28.3%`
-- secondary: `stock_downside_continuation` / `17.2%`
-- risk: `stock_event_risk` / `15.7%`
-- stock_confluence_score: `43.33` / `weak`
-- stock_alpha_score_v1: `29.0` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `54.7%`
-- 60d_expected_return: `-1.5%`
-- risk_reward_ratio: `0.54`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `26.45`
+- primary: `stock_failed_bounce` / `27.7%`
+- secondary: `stock_downside_continuation` / `18.3%`
+- risk: `stock_event_risk` / `12.8%`
+- stock_confluence_score: `43.41` / `weak`
+- stock_alpha_score_v1: `34.0` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `56.7%`
+- 60d_expected_return: `-1.3%`
+- risk_reward_ratio: `0.58`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `26.43`
 - historical_analog_support: `conflicting` / samples `10`
 - validation_status: `not_yet_validated`
 
