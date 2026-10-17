@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-16T23:51:25.840198+00:00`
+- generated_at: `2026-10-17T01:05:44.693570+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `12`
-- event_detection_confidence: `75`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -29,7 +29,7 @@
 
 - headline: Israeli settlers attack Palestinians during West Bank olive harvest - Reuters
 - source: Reuters
-- published_at: `2026-10-16T23:11:15+00:00`
+- published_at: `2026-10-16T23:41:16+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -71,7 +71,7 @@
 - source: Reuters
 - published_at: `2026-10-16T12:54:29+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -79,7 +79,7 @@
 - source: Reuters
 - published_at: `2026-10-16T12:12:01+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -87,14 +87,6 @@
 - source: Reuters
 - published_at: `2026-10-16T12:03:27+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### fed_hawkish / risk_off
-
-- headline: NBA tightens betting rules, develops AI to flag suspicious wagers
-- source: CNBC
-- published_at: `2026-10-16T17:50:50+00:00`
-- importance_score: `88`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
@@ -103,4 +95,12 @@
 - source: Reuters
 - published_at: `2026-10-16T05:46:00+00:00`
 - importance_score: `100`
+- confidence: `medium`
+
+### fed_hawkish / risk_off
+
+- headline: NBA tightens betting rules, develops AI to flag suspicious wagers
+- source: CNBC
+- published_at: `2026-10-16T17:50:50+00:00`
+- importance_score: `87`
 - confidence: `medium`

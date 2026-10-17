@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-10-16T23:51:38.376884+00:00`
+Generated at: `2026-10-17T01:05:57.525698+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -25,12 +25,12 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `28.0%`
 - secondary: `stock_downside_continuation` / `21.0%`
 - risk: `stock_event_risk` / `13.5%`
-- stock_confluence_score: `41.13` / `weak`
-- stock_alpha_score_v1: `36.5` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `51.0%`
+- stock_confluence_score: `37.11` / `weak`
+- stock_alpha_score_v1: `34.5` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `50.2%`
 - 60d_expected_return: `-0.9%`
 - risk_reward_ratio: `0.48`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `29.52`
+- strongest_alert: `Stock Failed Bounce Risk` / `WATCH` / `40.08`
 - historical_analog_support: `supportive` / samples `10`
 - validation_status: `not_yet_validated`
 
@@ -51,28 +51,28 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - status: `available`
 - current_price: `354.72`
 - market_context: `risk_off_pressure`
-- primary: `stock_failed_bounce` / `28.5%`
+- primary: `stock_failed_bounce` / `28.4%`
 - secondary: `stock_downside_continuation` / `18.4%`
-- risk: `stock_event_risk` / `16.7%`
-- stock_confluence_score: `37.41` / `weak`
-- stock_alpha_score_v1: `1.5` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `37.8%`
-- 60d_expected_return: `-1.0%`
+- risk: `stock_event_risk` / `16.9%`
+- stock_confluence_score: `36.17` / `weak`
+- stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `37.2%`
+- 60d_expected_return: `-1.1%`
 - risk_reward_ratio: `0.47`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `26.86`
+- strongest_alert: `Stock Failed Bounce Risk` / `WATCH` / `38.66`
 - historical_analog_support: `conflicting` / samples `10`
 - validation_status: `not_yet_validated`
 
 - primary_confirmation_level: `388.56`
 - primary_invalidation_level: `345.88`
-- risk_scenario_activation_level: `342.78`
+- risk_scenario_activation_level: `341.60`
 - trend_repair_confirmation_level: `388.56`
 - breakout_level: `388.56`
-- breakdown_level: `342.78`
-- nearest_support: `346.03`
-- nearest_resistance: `367.75`
-- bounce_target_zone: `{"conservative": 361.23, "base": 361.23, "extended": 397.25, "source": "scenario_path + atr + recent_resistance", "meaning": "概率反抽情景参考区间，不是目标价承诺。", "not_trading_instruction": true}`
-- failed_bounce_warning_zone: `{"first_warning": 349.83, "critical_warning": 345.88, "source": "risk_path + atr + recent_support", "meaning": "跌入该区间说明失败反抽风险上升。", "not_trading_instruction": true}`
+- breakdown_level: `341.60`
+- nearest_support: `345.88`
+- nearest_resistance: `369.03`
+- bounce_target_zone: `{"conservative": 361.88, "base": 361.88, "extended": 398.1, "source": "scenario_path + atr + recent_resistance", "meaning": "概率反抽情景参考区间，不是目标价承诺。", "not_trading_instruction": true}`
+- failed_bounce_warning_zone: `{"first_warning": 349.35, "critical_warning": 345.88, "source": "risk_path + atr + recent_support", "meaning": "跌入该区间说明失败反抽风险上升。", "not_trading_instruction": true}`
 
 ### SMR
 
@@ -83,7 +83,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_downside_continuation` / `34.1%`
 - secondary: `stock_failed_bounce` / `23.9%`
 - risk: `stock_event_risk` / `10.4%`
-- stock_confluence_score: `40.05` / `weak`
+- stock_confluence_score: `37.82` / `weak`
 - stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `18.2%`
 - 60d_expected_return: `-4.5%`
@@ -109,15 +109,15 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - status: `available`
 - current_price: `271.37`
 - market_context: `market_headwind`
-- primary: `stock_failed_bounce` / `27.7%`
-- secondary: `stock_downside_continuation` / `18.3%`
-- risk: `stock_event_risk` / `12.8%`
-- stock_confluence_score: `43.38` / `weak`
-- stock_alpha_score_v1: `34.0` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `56.7%`
-- 60d_expected_return: `-1.3%`
-- risk_reward_ratio: `0.58`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `26.43`
+- primary: `stock_failed_bounce` / `28.3%`
+- secondary: `stock_downside_continuation` / `17.2%`
+- risk: `stock_event_risk` / `15.7%`
+- stock_confluence_score: `41.83` / `weak`
+- stock_alpha_score_v1: `29.0` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `54.7%`
+- 60d_expected_return: `-1.5%`
+- risk_reward_ratio: `0.54`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `28.72`
 - historical_analog_support: `conflicting` / samples `10`
 - validation_status: `not_yet_validated`
 
