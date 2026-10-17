@@ -1,6 +1,6 @@
 # High Confidence Signal Report
 
-Generated at: `2026-10-17T01:25:27.148362+00:00`
+Generated at: `2026-10-17T05:40:03.782476+00:00`
 
 This report does not confirm alpha. It checks whether higher-confidence historical analog candidates look better than lower-confidence candidates.
 
@@ -12,35 +12,35 @@ Conclusion: `confidence_not_yet_validated`
 
 ### top_10_confidence_signals
 - sample_size: `8`
-- 3d: hit_rate `0.6250`, avg `0.0036`, median `0.0116`, brier `0.2348`, calibration_gap `0.0438`
-- 5d: hit_rate `0.6250`, avg `0.0021`, median `0.0088`, brier `0.2233`, calibration_gap `0.0438`
-- 10d: hit_rate `0.5000`, avg `0.0042`, median `0.0053`, brier `0.2727`, calibration_gap `0.1688`
-- 20d: hit_rate `0.8750`, avg `0.0311`, median `0.0370`, brier `0.1479`, calibration_gap `-0.2062`
-- 60d: hit_rate `0.7500`, avg `0.0592`, median `0.0666`, brier `0.1964`, calibration_gap `-0.0812`
+- 3d: hit_rate `0.7500`, avg `0.0135`, median `0.0143`, brier `0.1888`, calibration_gap `-0.0010`
+- 5d: hit_rate `1.0000`, avg `0.0128`, median `0.0088`, brier `0.0630`, calibration_gap `-0.2510`
+- 10d: hit_rate `0.5000`, avg `0.0069`, median `0.0053`, brier `0.3141`, calibration_gap `0.2490`
+- 20d: hit_rate `0.8750`, avg `0.0340`, median `0.0411`, brier `0.1246`, calibration_gap `-0.1260`
+- 60d: hit_rate `0.7500`, avg `0.0530`, median `0.0671`, brier `0.1870`, calibration_gap `-0.0010`
 
 ### top_20_confidence_signals
 - sample_size: `16`
-- 3d: hit_rate `0.4375`, avg `0.0009`, median `-0.0016`, brier `0.2877`, calibration_gap `0.2176`
-- 5d: hit_rate `0.5000`, avg `-0.0004`, median `0.0007`, brier `0.2649`, calibration_gap `0.1551`
-- 10d: hit_rate `0.4375`, avg `-0.0024`, median `-0.0032`, brier `0.2895`, calibration_gap `0.2176`
-- 20d: hit_rate `0.6875`, avg `0.0170`, median `0.0338`, brier `0.2097`, calibration_gap `-0.0324`
-- 60d: hit_rate `0.8125`, avg `0.0603`, median `0.0525`, brier `0.1793`, calibration_gap `-0.1574`
+- 3d: hit_rate `0.5625`, avg `0.0013`, median `0.0048`, brier `0.2770`, calibration_gap `0.1807`
+- 5d: hit_rate `0.6875`, avg `0.0001`, median `0.0030`, brier `0.2141`, calibration_gap `0.0557`
+- 10d: hit_rate `0.3750`, avg `0.0002`, median `-0.0036`, brier `0.3690`, calibration_gap `0.3682`
+- 20d: hit_rate `0.7500`, avg `0.0266`, median `0.0348`, brier `0.1854`, calibration_gap `-0.0068`
+- 60d: hit_rate `0.6875`, avg `0.0501`, median `0.0635`, brier `0.2166`, calibration_gap `0.0557`
 
 ### strong_signal_only
-- sample_size: `20`
-- 3d: hit_rate `0.5500`, avg `0.0037`, median `0.0054`, brier `0.2540`, calibration_gap `0.0840`
-- 5d: hit_rate `0.5500`, avg `0.0028`, median `0.0050`, brier `0.2404`, calibration_gap `0.0840`
-- 10d: hit_rate `0.5500`, avg `0.0042`, median `0.0104`, brier `0.2505`, calibration_gap `0.0840`
-- 20d: hit_rate `0.8000`, avg `0.0280`, median `0.0331`, brier `0.1787`, calibration_gap `-0.1660`
-- 60d: hit_rate `0.8000`, avg `0.0608`, median `0.0578`, brier `0.1912`, calibration_gap `-0.1660`
+- sample_size: `0`
+- 3d: hit_rate `n/a`, avg `n/a`, median `n/a`, brier `n/a`, calibration_gap `n/a`
+- 5d: hit_rate `n/a`, avg `n/a`, median `n/a`, brier `n/a`, calibration_gap `n/a`
+- 10d: hit_rate `n/a`, avg `n/a`, median `n/a`, brier `n/a`, calibration_gap `n/a`
+- 20d: hit_rate `n/a`, avg `n/a`, median `n/a`, brier `n/a`, calibration_gap `n/a`
+- 60d: hit_rate `n/a`, avg `n/a`, median `n/a`, brier `n/a`, calibration_gap `n/a`
 
 ### low_confidence_reference
 - sample_size: `16`
-- 3d: hit_rate `0.5000`, avg `0.0032`, median `-0.0027`, brier `0.2507`, calibration_gap `0.0157`
-- 5d: hit_rate `0.3750`, avg `-0.0032`, median `-0.0132`, brier `0.2573`, calibration_gap `0.1407`
-- 10d: hit_rate `0.5625`, avg `-0.0075`, median `0.0036`, brier `0.2518`, calibration_gap `-0.0468`
-- 20d: hit_rate `0.5000`, avg `0.0072`, median `0.0044`, brier `0.2527`, calibration_gap `0.0157`
-- 60d: hit_rate `0.8125`, avg `0.0903`, median `0.0955`, brier `0.2390`, calibration_gap `-0.2968`
+- 3d: hit_rate `0.5625`, avg `0.0015`, median `0.0045`, brier `0.2591`, calibration_gap `0.0973`
+- 5d: hit_rate `0.5000`, avg `-0.0007`, median `-0.0034`, brier `0.2813`, calibration_gap `0.1598`
+- 10d: hit_rate `0.5000`, avg `0.0157`, median `0.0007`, brier `0.2813`, calibration_gap `0.1598`
+- 20d: hit_rate `0.6250`, avg `0.0302`, median `0.0359`, brier `0.2403`, calibration_gap `0.0348`
+- 60d: hit_rate `0.7500`, avg `0.0669`, median `0.1146`, brier `0.2030`, calibration_gap `-0.0902`
 
 ## Interpretation
 
