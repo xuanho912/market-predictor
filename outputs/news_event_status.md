@@ -1,14 +1,14 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-17T15:39:22.250010+00:00`
+- generated_at: `2026-10-18T15:55:06.322806+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
-- event_detection_confidence: `65`
+- major_event_count: `2`
+- event_detection_confidence: `68`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
-- narrative_strength: `100`
+- narrative_strength: `67`
 - price_reaction_confirmed: `True`
 - confirmation_score: `75`
 
@@ -27,80 +27,16 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Missiles hit Aden airport as Saudi-led coalition intercepts missile headed for Yanbu - Reuters
+- headline: Lebanon says military delegation will press for halt to Israeli attacks at US talks - Reuters
 - source: Reuters
-- published_at: `2026-10-16T21:51:00+00:00`
+- published_at: `2026-10-17T20:31:43+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Schwab to create 'tax-aware' strategy that's been attracting billions from wealthy investors
-- source: CNBC
-- published_at: `2026-10-16T16:21:14+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### credit_stress / risk_off
-
-- headline: Why did CoreWeave stock get crushed this week? Look to this corner of the debt market for clues
-- source: CNBC
-- published_at: `2026-10-16T20:33:55+00:00`
-- importance_score: `94`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: AI 'espionage' is a reality that companies need to be 'wary of,' Jay Clayton says
-- source: CNBC
-- published_at: `2026-10-16T13:55:56+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump says US may need to strike Iran's Pickaxe Mountain - Reuters
+- headline: Israeli settlers attack Palestinians, European diplomats in West Bank, Belgium says - Reuters
 - source: Reuters
-- published_at: `2026-10-16T12:54:29+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Israeli settlers burn olive trees, injure journalist in West Bank attack - Reuters
-- source: Reuters
-- published_at: `2026-10-16T12:12:01+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: EXCLUSIVE: Iran ships some LPG, jet fuel despite US blockade, data shows - Reuters
-- source: Reuters
-- published_at: `2026-10-16T12:03:27+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Two ships sink near Hormuz after being hit by projectiles amid surge in attacks - Reuters
-- source: Reuters
-- published_at: `2026-10-16T11:13:21+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: EXCLUSIVE: PetroChina set for record trading profit as war upends market, sources say - Reuters
-- source: Reuters
-- published_at: `2026-10-16T08:19:55+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Israeli settlers attack Palestinians during West Bank olive harvest - Reuters
-- source: Reuters
-- published_at: `2026-10-16T07:00:00+00:00`
+- published_at: `2026-10-17T15:51:00+00:00`
 - importance_score: `100`
 - confidence: `medium`

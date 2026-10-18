@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-10-17T15:39:32.163573+00:00",
+  "generated_at": "2026-10-18T15:55:18.298697+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-10-17T15:39:32.193125+00:00",
+    "generated_at": "2026-10-18T15:55:18.351903+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 357,
     "risk_score_effectiveness": {
@@ -214,31 +214,37 @@
           "cash_flow_quality": 1.5256,
           "debt_risk": 0.3097,
           "earnings_growth": 7.2,
-          "forward_pe": 42.0158,
+          "forward_pe": 41.4611,
           "profitability": 11.08,
           "raw_metrics": {
             "current_ratio": 1.5256,
             "debt_to_equity": 0.6194,
             "eps_growth_ttm_yoy": 7.2,
-            "forward_pe": 42.0158,
+            "forward_pe": 41.4611,
             "gross_margin_ttm": 43.91,
             "net_margin_ttm": 11.08,
             "revenue_growth_ttm_yoy": 25.98
           },
           "revenue_growth": 25.98,
           "status": "available",
-          "valuation_percentile": 0.5251975
+          "valuation_percentile": 0.51826375
         },
         "news_event": {
           "analyst_rating_news": "missing",
           "company_news": "available",
           "earnings": "available",
           "earnings_date": "2026-11-09",
-          "earnings_risk_flag": "medium",
+          "earnings_risk_flag": "low",
           "earnings_within_30d": true,
           "earnings_within_7d": false,
-          "event_risk_flag": "medium",
+          "event_risk_flag": "low",
           "headlines": [
+            {
+              "datetime": 1792275900,
+              "headline": "Should You Buy NuScale at $6 After the Google Rally? Here's the Next Catalyst That Could Send It Higher.",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=c00c5b128a85d4a8bba1c6d76255c6653cbf0226bed4cbd96c8a5b6fc67a8001"
+            },
             {
               "datetime": 1792202365,
               "headline": "Should You Sell Your NuScale Power Stock Now?",
@@ -280,18 +286,12 @@
               "headline": "Why Is Constellation Energy (CEG) Selling Brazos Valley Important For Its Future?",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=6f53fe30417060bf06fa4f61f66f0eefb0775509bf2aa617b0c85a0870b94f55"
-            },
-            {
-              "datetime": 1792097551,
-              "headline": "Did The Market Read Vistra Stock Right?",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=b9e0fa5faf9809fc44a9361d958d9085cf4ae51546b933390676606ce475230f"
             }
           ],
-          "major_company_headline": "Should You Sell Your NuScale Power Stock Now?",
-          "news_count_24h": 4,
-          "news_count_72h": 16,
-          "news_risk_score": 64.0,
+          "major_company_headline": "Should You Buy NuScale at $6 After the Google Rally? Here's the Next Catalyst That Could Send It Higher.",
+          "news_count_24h": 1,
+          "news_count_72h": 10,
+          "news_risk_score": 40.0,
           "news_sentiment": "negative"
         },
         "price_trend": {
@@ -720,7 +720,7 @@
         "benchmark": "SPY",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "failed_bounce_risk",
-        "benchmark_primary_probability": 0.3892,
+        "benchmark_primary_probability": 0.3808,
         "benchmark_primary_scenario": "bearish_path",
         "context": "market_headwind",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -2135,7 +2135,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Should You Sell Your NuScale Power Stock Now?",
+              "公司新闻已接入: Should You Buy NuScale at $6 After the Google Rally? Here's the Next Catalyst That Could Send It Higher.",
               "未来 30 天存在财报催化：2026-11-09",
               "增长数据具备 EPS 上修叙事基础"
             ],
@@ -2211,7 +2211,7 @@
           "valuation": {
             "evidence": [
               "估值处于中等偏高区间",
-              "增长与估值大致匹配，PEG proxy 1.62"
+              "增长与估值大致匹配，PEG proxy 1.60"
             ],
             "max_points": 15,
             "missing_fields": [],
@@ -2250,7 +2250,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "Should You Sell Your NuScale Power Stock Now?",
+          "catalyst": "Should You Buy NuScale at $6 After the Google Rally? Here's the Next Catalyst That Could Send It Higher.",
           "expectation_gap": [
             "收入增长较强，具备正向预期差基础",
             "未来 30 天财报可能成为重新定价窗口"
@@ -2318,8 +2318,8 @@
           },
           "news_event": {
             "evidence": "公司新闻或财报事件风险上升",
-            "reason": "risk_score=64.0; earnings_date=2026-11-09",
-            "score": 59.48,
+            "reason": "risk_score=40.0; earnings_date=2026-11-09",
+            "score": 51.8,
             "status": "conflicting"
           },
           "options_volatility": {
@@ -2354,7 +2354,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 43.41,
+        "stock_confluence_score": 42.85,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "个股跑赢所属板块",
@@ -2409,20 +2409,20 @@
           "cash_flow_quality": 3.9053,
           "debt_risk": 0.0269,
           "earnings_growth": 125.15,
-          "forward_pe": 43.1852,
+          "forward_pe": 42.9804,
           "profitability": 63.66,
           "raw_metrics": {
             "current_ratio": 3.9053,
             "debt_to_equity": 0.0538,
             "eps_growth_ttm_yoy": 125.15,
-            "forward_pe": 43.1852,
+            "forward_pe": 42.9804,
             "gross_margin_ttm": 74.67,
             "net_margin_ttm": 63.66,
             "revenue_growth_ttm_yoy": 83.38
           },
           "revenue_growth": 83.38,
           "status": "available",
-          "valuation_percentile": 0.539815
+          "valuation_percentile": 0.537255
         },
         "news_event": {
           "analyst_rating_news": "missing",
@@ -2430,64 +2430,64 @@
           "earnings": "available",
           "earnings_date": "2026-11-17",
           "earnings_risk_flag": "high",
-          "earnings_within_30d": false,
+          "earnings_within_30d": true,
           "earnings_within_7d": false,
           "event_risk_flag": "high",
           "headlines": [
             {
-              "datetime": 1792245000,
-              "headline": "Here's What History Says Q4 Will Bring for American Express (AXP) Stock",
+              "datetime": 1792331100,
+              "headline": "Dutch Bros (BROS) Is 52% Below Its All-Time High: Here's 1 Reason to Buy and 1 Reason to Pause.",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=db70461a9eccb93a59bd6619218cba1494ff8bf711aa7be4c763e92317a81b40"
+              "url": "https://finnhub.io/api/news?id=2eaa3fb1b58bb473f603abd0bba8412ff8a770afa980d6e53d89c8609367b084"
             },
             {
-              "datetime": 1792244526,
-              "headline": "Which company has the world’s highest earnings? The answer may surprise you",
+              "datetime": 1792330080,
+              "headline": "Own VGT? Here's How Much of It Is Really Nvidia, Apple, Microsoft, and Broadcom.",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=5a5fb02e669d79e7cbd57c7f1f5cf52251df160d9d41cb9bbae5c74da953fd07"
+              "url": "https://finnhub.io/api/news?id=997c82bec29b639e1cac57a3bdc3156b75a04e58d14b2b935bca4a0e3da0bab0"
             },
             {
-              "datetime": 1792244100,
-              "headline": "Apple's New Home Collection Gives Investors Another Reason to Remain Bullish",
+              "datetime": 1792328700,
+              "headline": "Moderna Just Joined the Nasdaq-100. Here's What That Means for Investors.",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=291b467d16a547c748b48477a99782431713c2480489a92322aa14c774e9671e"
+              "url": "https://finnhub.io/api/news?id=df82a56df15e90495c351ce929d7cbf38d5fb8c6da4a97e9263335a6b8ff7f6a"
             },
             {
-              "datetime": 1792243740,
-              "headline": "USAF Doesn't Want Northrop Grumman's Stealth Drone",
+              "datetime": 1792327381,
+              "headline": "The Best Growth Stock to Invest $10,000 in Right Now",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=0d84e15c1eedb9f962a1e871b5d2220fa672020e5b44c4d07883c10b068102a1"
+              "url": "https://finnhub.io/api/news?id=b7fcc2b45f4052e82a401295febec0036b949bf21668ec4ca201cb45bf953ccb"
             },
             {
-              "datetime": 1792243562,
-              "headline": "Former Fed Chair Jerome Powell's 6-Word Warning Echoes Louder Than Ever -- and It Should Rightly Terrify Wall Street",
+              "datetime": 1792326900,
+              "headline": "Ken Griffin Increased His Position in This Dividend King by a Whopping 546% in Q2. Here's Why It's Still a Buy.",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=8869380cb2db4e5442b9a06f87dcd76cef7d2715401464e22470fcbe355d7cb2"
+              "url": "https://finnhub.io/api/news?id=570856080f30dedc6a30108c52b103de2d2d80bcd2821912f4052624a5a5ac89"
             },
             {
-              "datetime": 1792243020,
-              "headline": "Should You Buy Ford Stock Under $15 in October? Here's Why Investors Should Pump the Brakes.",
+              "datetime": 1792326300,
+              "headline": "Archer Aviation Stock Is Down Roughly 50% This Year. Here's Why I'm Still Buying.",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=1143657b14009320b21315b5931a6dc2a96897a00e467e3f06b44982f3380384"
+              "url": "https://finnhub.io/api/news?id=220cabcb26125d5b98b1a362fe0592c7a99ced4db4bee915734a52ae5cc3e96c"
             },
             {
-              "datetime": 1792242300,
-              "headline": "The Nasdaq-100's 6 Best Stocks This Year, and Whether They Can Keep Going",
+              "datetime": 1792326000,
+              "headline": "Tech Sell-Off: 2 Growth Stocks Investors Might Regret Not Buying on the Dip",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=c1f98b01367483e9a8140f90137077ae1fb7a0ab7da2093bae4df8425a2ff0b9"
+              "url": "https://finnhub.io/api/news?id=a306dd203d7384182a08a71f68ea874ee77a27b9f1ffbae3a977bcb7912f3912"
             },
             {
-              "datetime": 1792240800,
-              "headline": "If I Had to Pick 1 Tech Stock to Hold Through the Next Recession, It Would Be This One",
+              "datetime": 1792325580,
+              "headline": "Prediction: IonQ Could 10x by 2035",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=ee78841c57d363c9074db70d031f634aa6a047089fbc540a1d7813dead78547b"
+              "url": "https://finnhub.io/api/news?id=c2312d85d1949c83509b4ee32e9c49846b18b4b4bb20fdefa4ecaeab885de7a0"
             }
           ],
-          "major_company_headline": "Here's What History Says Q4 Will Bring for American Express (AXP) Stock",
+          "major_company_headline": "Dutch Bros (BROS) Is 52% Below Its All-Time High: Here's 1 Reason to Buy and 1 Reason to Pause.",
           "news_count_24h": 20,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
-          "news_sentiment": "negative"
+          "news_sentiment": "positive"
         },
         "price_trend": {
           "close": 214.1300048828125,
@@ -2921,7 +2921,7 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.4511,
+        "benchmark_primary_probability": 0.4423,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -3009,6 +3009,7 @@
           "scenario": "stock_downside_continuation"
         },
         "supporting_signals": [
+          "近期公司新闻偏正面。",
           "基础财务指标已接入且收入增长为正。"
         ]
       },
@@ -4337,15 +4338,17 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Here's What History Says Q4 Will Bring for American Express (AXP) Stock",
+              "公司新闻已接入: Dutch Bros (BROS) Is 52% Below Its All-Time High: Here's 1 Reason to Buy and 1 Reason to Pause.",
+              "新闻情绪偏正",
+              "未来 30 天存在财报催化：2026-11-17",
               "增长数据具备 EPS 上修叙事基础"
             ],
             "max_points": 10,
             "missing_fields": [],
             "name": "catalyst",
-            "points": 6.0,
-            "score_pct": 60.0,
-            "status": "neutral"
+            "points": 10.0,
+            "score_pct": 100.0,
+            "status": "supportive"
           },
           "flow": {
             "evidence": [
@@ -4410,7 +4413,7 @@
           "valuation": {
             "evidence": [
               "估值处于中等偏高区间",
-              "增长可部分解释估值，PEG proxy 0.35"
+              "增长可部分解释估值，PEG proxy 0.34"
             ],
             "max_points": 15,
             "missing_fields": [],
@@ -4427,7 +4430,7 @@
           "expected_return_60d": -0.0091,
           "max_drawdown_risk_20d": 0.105,
           "max_drawdown_risk_60d": 0.105,
-          "outperformance_probability_20d": 0.5016,
+          "outperformance_probability_20d": 0.5176,
           "risk_reward_ratio": 0.48,
           "upside_potential_60d": 0.0508
         },
@@ -4449,10 +4452,11 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "Here's What History Says Q4 Will Bring for American Express (AXP) Stock",
+          "catalyst": "Dutch Bros (BROS) Is 52% Below Its All-Time High: Here's 1 Reason to Buy and 1 Reason to Pause.",
           "expectation_gap": [
             "收入增长较强，具备正向预期差基础",
-            "EPS 增长较强，可能支持盈利上修叙事"
+            "EPS 增长较强，可能支持盈利上修叙事",
+            "未来 30 天财报可能成为重新定价窗口"
           ],
           "historical_analog_support": "supportive",
           "invalidation_summary": [
@@ -4467,7 +4471,7 @@
           "primary_path": "stock_failed_bounce",
           "valuation_repricing": "估值扩张证据不足或存在压力"
         },
-        "total_score": 34.5,
+        "total_score": 38.5,
         "validation_status": "not_yet_validated",
         "version": "stock_alpha_score_v1"
       },
@@ -4493,8 +4497,8 @@
         "module_scores": {
           "alpha_quality": {
             "evidence": "个股 Alpha 评分已接入",
-            "reason": "score=34.5; grade=weak_or_no_alpha_edge; benchmark=QQQ",
-            "score": 34.5,
+            "reason": "score=38.5; grade=weak_or_no_alpha_edge; benchmark=QQQ",
+            "score": 38.5,
             "status": "conflicting"
           },
           "fundamentals_earnings": {
@@ -4553,7 +4557,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 40.97,
+        "stock_confluence_score": 41.33,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "基础财务指标偏支持",
@@ -4562,6 +4566,7 @@
         "validation_status": "not_yet_validated"
       },
       "supporting_signals": [
+        "近期公司新闻偏正面。",
         "基础财务指标已接入且收入增长为正。"
       ],
       "symbol": "NVDA",
@@ -4633,6 +4638,18 @@
           "event_risk_flag": "low",
           "headlines": [
             {
+              "datetime": 1792275900,
+              "headline": "Should You Buy NuScale at $6 After the Google Rally? Here's the Next Catalyst That Could Send It Higher.",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=c00c5b128a85d4a8bba1c6d76255c6653cbf0226bed4cbd96c8a5b6fc67a8001"
+            },
+            {
+              "datetime": 1792202365,
+              "headline": "Should You Sell Your NuScale Power Stock Now?",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=3e2de53449c3695f4ad9a2d1399cf150699e5d15f8742a8e31878c6837654e87"
+            },
+            {
               "datetime": 1792161256,
               "headline": "Research Frontiers shares are trading higher after the company reported a year-over-year increase in Q3 sales results.",
               "source": "Benzinga",
@@ -4667,24 +4684,12 @@
               "headline": "Google Signed a Deal for Existing Reactors. So Why Did Oklo and NuScale Jump on the Constellation Energy News? The Read-Through Investors Are Missing.",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=7a118eaff971fca81634c2b06dbb4c14f3fe0ea1c742f8c2976b45ec78a2bec4"
-            },
-            {
-              "datetime": 1791932460,
-              "headline": "Should This One Number Scare You About NuScale Power Stock?",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=14b22d454b1e25f1d5aa0cacdbf2ada28a9197d35f37c50b1315bc1e0d651a0d"
-            },
-            {
-              "datetime": 1791915205,
-              "headline": "3 Nuclear Stocks With Revenue Growth Up To 68%",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=458b6f884042b3a358cde4dccaefcd1a2e3547845a00c7abfb41a2d03c0d447a"
             }
           ],
-          "major_company_headline": "Research Frontiers shares are trading higher after the company reported a year-over-year increase in Q3 sales results.",
-          "news_count_24h": 0,
-          "news_count_72h": 1,
-          "news_risk_score": 32.0,
+          "major_company_headline": "Should You Buy NuScale at $6 After the Google Rally? Here's the Next Catalyst That Could Send It Higher.",
+          "news_count_24h": 1,
+          "news_count_72h": 3,
+          "news_risk_score": 40.0,
           "news_sentiment": "negative"
         },
         "price_trend": {
@@ -5118,7 +5123,7 @@
         "benchmark": "IWM",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.4558,
+        "benchmark_primary_probability": 0.4471,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -6533,7 +6538,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Research Frontiers shares are trading higher after the company reported a year-over-year increase in Q3 sales results.",
+              "公司新闻已接入: Should You Buy NuScale at $6 After the Google Rally? Here's the Next Catalyst That Could Send It Higher.",
               "未来 30 天存在财报催化：2026-11-05"
             ],
             "max_points": 10,
@@ -6648,7 +6653,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "Research Frontiers shares are trading higher after the company reported a year-over-year increase in Q3 sales results.",
+          "catalyst": "Should You Buy NuScale at $6 After the Google Rally? Here's the Next Catalyst That Could Send It Higher.",
           "expectation_gap": [
             "未来 30 天财报可能成为重新定价窗口"
           ],
@@ -6718,8 +6723,8 @@
           },
           "news_event": {
             "evidence": "公司新闻或财报事件风险上升",
-            "reason": "risk_score=32.0; earnings_date=2026-11-05",
-            "score": 49.24,
+            "reason": "risk_score=40.0; earnings_date=2026-11-05",
+            "score": 51.8,
             "status": "conflicting"
           },
           "options_volatility": {
@@ -6754,7 +6759,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 40.06,
+        "stock_confluence_score": 40.24,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "主路径概率相对领先"
@@ -6808,13 +6813,13 @@
           "cash_flow_quality": 2.1644,
           "debt_risk": 0.051,
           "earnings_growth": -37.66,
-          "forward_pe": 377.2994,
+          "forward_pe": 369.2629,
           "profitability": 3.67,
           "raw_metrics": {
             "current_ratio": 2.1644,
             "debt_to_equity": 0.102,
             "eps_growth_ttm_yoy": -37.66,
-            "forward_pe": 377.2994,
+            "forward_pe": 369.2629,
             "gross_margin_ttm": 18.85,
             "net_margin_ttm": 3.67,
             "revenue_growth_ttm_yoy": 11.75
@@ -6834,56 +6839,56 @@
           "event_risk_flag": "high",
           "headlines": [
             {
-              "datetime": 1792242031,
-              "headline": "Dow Jones Futures: What To Do After S&P 500, Nasdaq Break Key Levels; Will Meta, SpaceX Earnings Save AI?",
+              "datetime": 1792328102,
+              "headline": "US Appeals Court Overturns Class Action Lawsuit Over Tesla Self-Driving Claims",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=686d644d0adbe7ef949d5b9c024965e24572acc9fbe93595fcc792281a93851b"
+              "url": "https://finnhub.io/api/news?id=c1ba5c18726c68dff6b17dfcfa67e62c474e17b682835d5f8f1abbff0a7e872b"
             },
             {
-              "datetime": 1792241725,
-              "headline": "By The Way: Headlines You May Have Missed",
+              "datetime": 1792321777,
+              "headline": "CoreWeave Heads These 3 High Growth Insider Stocks To Watch",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=7494067719eeb592f4c09eef7d01789cd4da615ea076d76c94f7fb6d6336b98d"
+              "url": "https://finnhub.io/api/news?id=237af556abe923b261264e64611bf37836e6b579190d5e3616f561eb04b7d170"
             },
             {
-              "datetime": 1792234800,
-              "headline": "Meta, Tesla Headline Earnings In Busy Week For Markets",
+              "datetime": 1792318581,
+              "headline": "TSLA, CSIQ Stocks In Focus As China Tightens Solar Manufacturing Technology Exports",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=9d5c976d51356ee0a515d470c7e2a799a285f10f97e13c1bcb5b2b5deccd9d9a"
+            },
+            {
+              "datetime": 1792314900,
+              "headline": "2 Covered Call ETFs To Shield Your Income From An AI Crash",
               "source": "SeekingAlpha",
-              "url": "https://finnhub.io/api/news?id=3dcbe5a8689c76a628f51ae4c5084970467aab6b7f0f374e353ded8fe09592d4"
+              "url": "https://finnhub.io/api/news?id=490ecfb77e80f0b6a9fc7e90750ee8ce6a540d8f986965fa546a38279b896807"
             },
             {
-              "datetime": 1792234800,
-              "headline": "China Is Paying People to Shop. It’s a Boom for Tech.",
+              "datetime": 1792314000,
+              "headline": "What to Expect in Markets This Week: Meta, Tesla Report; Airlines, Streaming Giants’ Results Due",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=63fec9375b0a635f7dcf1046a08d8a10256492baa433e15b3027be571bc3f162"
+              "url": "https://finnhub.io/api/news?id=8522880567ed0bba6d5d8b0f3acb9b39a3e40fb07418a5a1d7341721efa72a22"
             },
             {
-              "datetime": 1792229400,
-              "headline": "Tesla: Musk Proves He Can Deliver (Earnings Preview)",
+              "datetime": 1792313462,
+              "headline": "This Week in TSLA: Roadster's Flying Debut, Cybercab Speeding in School Zones, SpaceX Merger and More",
+              "source": "Benzinga",
+              "url": "https://finnhub.io/api/news?id=f8420dee808f25a0dcb0e6efd0b997e3748f59a6c3c2b0159dbf8a07b5430d7d"
+            },
+            {
+              "datetime": 1792313100,
+              "headline": "Tesla Earnings Preview: Grounded Margins And Flying Cars",
               "source": "SeekingAlpha",
-              "url": "https://finnhub.io/api/news?id=e49ce208d933af3ac3c87627cec3a1b6ff5fbebfc66def3d708c2327927f8388"
+              "url": "https://finnhub.io/api/news?id=2651243811383653f2bf4be5a89a435f14aa753a7863370459374894064e031d"
             },
             {
-              "datetime": 1792226941,
-              "headline": "History Says Tesla Stock Swings Hard on Earnings. It Has Moved 8% or More After 10 of Its Last 15 Reports.",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=a8538de607a60eed91dc0151d58c5abca1421b9eedc78594fbfddb864cd9c81c"
-            },
-            {
-              "datetime": 1792225773,
-              "headline": "Cathie Wood-Led Ark Invest's Biggest Q3 Winners And Losers — PLTR, NVDA, TXG Led While TSLA, RKLB Dragged",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=7e54566e336417dca1bb4cc41e90b7b0d73f38e161c17548f99dafe7f67cb646"
-            },
-            {
-              "datetime": 1792225500,
-              "headline": "Tesla: Who Needs Federal Incentives With Gas Above $4? (Earnings Preview)",
-              "source": "SeekingAlpha",
-              "url": "https://finnhub.io/api/news?id=5bf095be955bfd6df8b803db05838ead025298d4d5bd1c4556397f05482df618"
+              "datetime": 1792312220,
+              "headline": "Tesla Promises Its Flying Roadster For 2028, but MKBHD Has One Question: ‘This Is A Prank, Right?’",
+              "source": "Benzinga",
+              "url": "https://finnhub.io/api/news?id=2335824692f7cf9f9e7bbd3e154913a5eb317c2174c2c9e02d927cc716cb6be7"
             }
           ],
-          "major_company_headline": "Dow Jones Futures: What To Do After S&P 500, Nasdaq Break Key Levels; Will Meta, SpaceX Earnings Save AI?",
-          "news_count_24h": 20,
+          "major_company_headline": "US Appeals Court Overturns Class Action Lawsuit Over Tesla Self-Driving Claims",
+          "news_count_24h": 17,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
           "news_sentiment": "negative"
@@ -7318,7 +7323,7 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.4511,
+        "benchmark_primary_probability": 0.4423,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -8735,7 +8740,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Dow Jones Futures: What To Do After S&P 500, Nasdaq Break Key Levels; Will Meta, SpaceX Earnings Save AI?",
+              "公司新闻已接入: US Appeals Court Overturns Class Action Lawsuit Over Tesla Self-Driving Claims",
               "未来 30 天存在财报催化：2026-10-21"
             ],
             "max_points": 10,
@@ -8849,7 +8854,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "Dow Jones Futures: What To Do After S&P 500, Nasdaq Break Key Levels; Will Meta, SpaceX Earnings Save AI?",
+          "catalyst": "US Appeals Court Overturns Class Action Lawsuit Over Tesla Self-Driving Claims",
           "expectation_gap": [
             "未来 30 天财报可能成为重新定价窗口"
           ],
@@ -8985,7 +8990,7 @@
       "top_candidate": "CEG",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-10-17T15:39:32.184507+00:00",
+    "generated_at": "2026-10-18T15:55:18.336137+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -9007,7 +9012,7 @@
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 62.71,
         "company_name": "Constellation Energy Corp",
-        "confluence_score": 43.41,
+        "confluence_score": 42.85,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9024,7 +9029,7 @@
           "mid": 270.83,
           "range_pct": 0.0605
         },
-        "final_radar_score": 61.9,
+        "final_radar_score": 61.83,
         "forecast_date": "2026-10-16",
         "invalidation_level": 247.2,
         "last_close": 271.3699951171875,
@@ -9166,19 +9171,19 @@
       },
       {
         "alpha_fields": {
-          "alpha_score": 34.5,
+          "alpha_score": 38.5,
           "expected_return_60d": -0.0091,
           "forecast_grade": "weak_or_no_alpha_edge",
           "main_logic": "半导体/AI 逻辑：订单、毛利率、资本开支周期、估值重估和资金确认。",
-          "outperformance_probability_20d": 0.5016,
+          "outperformance_probability_20d": 0.5176,
           "risk_reward_ratio": 0.48
         },
-        "alpha_quality_score": 34.5,
+        "alpha_quality_score": 38.5,
         "as_of": "2026-10-16",
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 63.1,
         "company_name": "NVIDIA Corp",
-        "confluence_score": 40.97,
+        "confluence_score": 41.33,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9195,7 +9200,7 @@
           "mid": 213.88,
           "range_pct": 0.0265
         },
-        "final_radar_score": 49.14,
+        "final_radar_score": 49.9,
         "forecast_date": "2026-10-16",
         "invalidation_level": 210.39,
         "last_close": 214.1300048828125,
@@ -9218,8 +9223,8 @@
           "earnings": "available"
         },
         "next_day_move_probability": 0.6071,
-        "one_line_reason": "failed_bounce_risk: Alpha 34 / 弹性 53 / 成交量 77 / 相对强弱 43 / 催化 63 / 大盘 risk_off_pressure / 板块 neutral",
-        "outperformance_probability_20d": 0.5016,
+        "one_line_reason": "failed_bounce_risk: Alpha 38 / 弹性 53 / 成交量 77 / 相对强弱 43 / 催化 63 / 大盘 risk_off_pressure / 板块 neutral",
+        "outperformance_probability_20d": 0.5176,
         "primary_probability": 0.2804,
         "primary_scenario": "stock_failed_bounce",
         "radar_level": "WATCH",
@@ -9264,7 +9269,7 @@
         "candidate_type": "downside_continuation",
         "catalyst_score": 61.23,
         "company_name": "Nuscale Power Corp",
-        "confluence_score": 40.06,
+        "confluence_score": 40.24,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9281,7 +9286,7 @@
           "mid": 5.8,
           "range_pct": 0.0823
         },
-        "final_radar_score": 49.1,
+        "final_radar_score": 49.12,
         "forecast_date": "2026-10-16",
         "invalidation_level": 5.44,
         "last_close": 5.829999923706055,
