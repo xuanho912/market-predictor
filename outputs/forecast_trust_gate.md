@@ -1,16 +1,16 @@
 # Forecast Trust Gate
 
-Generated at: `2026-10-18T15:55:17.729806+00:00`
+Generated at: `2026-10-19T18:47:03.558467+00:00`
 
 This report answers whether the current Market Prediction Dashboard is dependable as a forecasting tool. It is not trading advice.
 
 ## Current Status
 
 - status: `RESEARCH_ONLY_PATH_EDGE_UNPROVEN`
-- trust_score: `57`
+- trust_score: `45`
 - would_rely_for_real_money: `False`
 - use_boundary: Use as a research radar and scenario explainer only; do not treat it as a dependable forecasting edge.
-- latest_market_date: `2026-10-16`
+- latest_market_date: `2026-10-19`
 - expected_latest_trading_date: `2026-10-16`
 - data_completeness_score: `87.0`
 
@@ -29,15 +29,16 @@ This report answers whether the current Market Prediction Dashboard is dependabl
 
 ## Warnings
 
+- `market_open_unconfirmed` (medium): Current data is an intraday or unconfirmed snapshot; do not freeze it as a validated daily forecast.
 - `high_confidence_not_validated` (medium): High-confidence forecasts have not proven they are more accurate than ordinary forecasts.
 - `deviation_learning_needed` (medium): Material deviation rate is too high; confidence must remain capped.
 
 ## Symbol Readiness
 
-- SPY: `blocked_by_global_gate` | primary `bearish_path` 0.3808 | reason: Global trust gate is not ready.
-- QQQ: `blocked_by_global_gate` | primary `bearish_path` 0.4423 | reason: Global trust gate is not ready.
-- IWM: `blocked_by_global_gate` | primary `bearish_path` 0.4471 | reason: Global trust gate is not ready.
-- DIA: `blocked_by_global_gate` | primary `bearish_path` 0.3231 | reason: Global trust gate is not ready.
+- SPY: `blocked_by_global_gate` | primary `bearish_path` 0.377 | reason: Global trust gate is not ready.
+- QQQ: `blocked_by_global_gate` | primary `bearish_path` 0.4496 | reason: Global trust gate is not ready.
+- IWM: `blocked_by_global_gate` | primary `bearish_path` 0.4503 | reason: Global trust gate is not ready.
+- DIA: `blocked_by_global_gate` | primary `bearish_path` 0.3706 | reason: Global trust gate is not ready.
 
 ## Next Actions
 

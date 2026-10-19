@@ -1,20 +1,20 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-18T15:55:06.322806+00:00`
+- generated_at: `2026-10-19T18:46:46.487098+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `2`
-- event_detection_confidence: `68`
+- major_event_count: `6`
+- event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
-- narrative_strength: `67`
-- price_reaction_confirmed: `True`
-- confirmation_score: `75`
+- narrative_strength: `100`
+- price_reaction_confirmed: `False`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
-当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，已被价格反应初步确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
+当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，尚未被价格反应充分确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
 
 ## Economic Calendar Risk
 
@@ -27,16 +27,48 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Lebanon says military delegation will press for halt to Israeli attacks at US talks - Reuters
+- headline: Saudi Arabia postpones its 'Davos in the Desert' conference after attacks - Reuters
 - source: Reuters
-- published_at: `2026-10-17T20:31:43+00:00`
+- published_at: `2026-10-19T17:06:08+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Explainer: What's behind Egypt's move towards possible military involvement in Saudi-Yemen conflict? - Reuters
+- source: Reuters
+- published_at: `2026-10-19T15:53:14+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Houthi attack kills 53 at Yemen government training camp, officials say - Reuters
+- source: Reuters
+- published_at: `2026-10-19T15:03:03+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### credit_stress / risk_off
+
+- headline: Credit stress is threatening to unwind the AI bull. All eyes are on Oracle to hold the line
+- source: CNBC
+- published_at: `2026-10-19T11:57:07+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Egypt says ready to back Saudi Arabia in war against Iran-allied Houthis - Reuters
+- source: Reuters
+- published_at: `2026-10-18T21:04:38+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Israeli settlers attack Palestinians, European diplomats in West Bank, Belgium says - Reuters
+- headline: EU condemns attacks by violent settlers, including on diplomats, spokesperson says - Reuters
 - source: Reuters
-- published_at: `2026-10-17T15:51:00+00:00`
+- published_at: `2026-10-18T10:52:10+00:00`
 - importance_score: `100`
 - confidence: `medium`
