@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-19T18:46:46.487098+00:00`
+- generated_at: `2026-10-19T23:51:12.365970+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
-- event_detection_confidence: `77`
+- major_event_count: `7`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -29,7 +29,7 @@
 
 - headline: Saudi Arabia postpones its 'Davos in the Desert' conference after attacks - Reuters
 - source: Reuters
-- published_at: `2026-10-19T17:06:08+00:00`
+- published_at: `2026-10-19T17:34:43+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -59,16 +59,24 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Egypt says ready to back Saudi Arabia in war against Iran-allied Houthis - Reuters
+- headline: Brent crude edges lower, even after Houthi attacks on Saudi infrastructure - Reuters
 - source: Reuters
-- published_at: `2026-10-18T21:04:38+00:00`
+- published_at: `2026-10-18T22:23:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: EU condemns attacks by violent settlers, including on diplomats, spokesperson says - Reuters
+- headline: Gurman on HomeView: ‘Finished Units Have Been Sitting Boxed Up in Warehouses for the Better Part of a Year’
+- source: Bloomberg
+- published_at: `2026-10-18T21:58:33+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Egypt says ready to back Saudi Arabia in war against Iran-allied Houthis - Reuters
 - source: Reuters
-- published_at: `2026-10-18T10:52:10+00:00`
+- published_at: `2026-10-18T21:04:38+00:00`
 - importance_score: `100`
 - confidence: `medium`
