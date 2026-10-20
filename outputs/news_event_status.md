@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-20T06:06:05.681919+00:00`
+- generated_at: `2026-10-20T08:54:11.114656+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
-- event_detection_confidence: `71`
+- major_event_count: `5`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `50`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil majors face spending test from Iran war windfall cash - Reuters
+- source: Reuters
+- published_at: `2026-10-20T06:04:00+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -56,27 +64,3 @@
 - published_at: `2026-10-19T11:57:07+00:00`
 - importance_score: `100`
 - confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Brent crude edges lower, even after Houthi attacks on Saudi infrastructure - Reuters
-- source: Reuters
-- published_at: `2026-10-18T22:23:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Gurman on HomeView: ‘Finished Units Have Been Sitting Boxed Up in Warehouses for the Better Part of a Year’
-- source: Bloomberg
-- published_at: `2026-10-18T21:58:33+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Egypt says ready to back Saudi Arabia in war against Iran-allied Houthis - Reuters
-- source: Reuters
-- published_at: `2026-10-18T21:04:38+00:00`
-- importance_score: `100`
-- confidence: `medium`

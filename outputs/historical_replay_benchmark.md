@@ -1,6 +1,6 @@
 # Historical Replay Benchmark
 
-Generated at: `2026-10-20T06:06:16.885200+00:00`
+Generated at: `2026-10-20T08:54:21.796452+00:00`
 Validation type: `historical_replay`
 Status: `research_evaluation_only_not_forward_validation`
 Sample size: `80`
@@ -116,20 +116,20 @@ Overfit warning: `{'level': 'medium', 'reasons': ['primary path is not closer th
 ## Edge Status Performance
 
 ### RISK_WARNING
-- sample_size: `60`
-- 3d: sample `60`, primary_hit `0.6667`, primary_closer `0.4833`, primary_mae `0.018476`, avg `-0.00811`, median `-0.011656`
-- 5d: sample `60`, primary_hit `0.5667`, primary_closer `0.4333`, primary_mae `0.024928`, avg `-0.00605`, median `-0.007502`
-- 10d: sample `60`, primary_hit `0.5333`, primary_closer `0.3833`, primary_mae `0.03476`, avg `-0.001357`, median `-0.002237`
-- 20d: sample `60`, primary_hit `0.3667`, primary_closer `0.3`, primary_mae `0.056442`, avg `0.021872`, median `0.016431`
-- 60d: sample `60`, primary_hit `0.25`, primary_closer `0.25`, primary_mae `0.110558`, avg `0.061207`, median `0.075201`
+- sample_size: `40`
+- 3d: sample `40`, primary_hit `0.7`, primary_closer `0.525`, primary_mae `0.017122`, avg `-0.00829`, median `-0.014891`
+- 5d: sample `40`, primary_hit `0.6`, primary_closer `0.45`, primary_mae `0.023698`, avg `-0.004539`, median `-0.010588`
+- 10d: sample `40`, primary_hit `0.45`, primary_closer `0.375`, primary_mae `0.041572`, avg `0.001172`, median `0.003591`
+- 20d: sample `40`, primary_hit `0.375`, primary_closer `0.3`, primary_mae `0.059591`, avg `0.023835`, median `0.014557`
+- 60d: sample `40`, primary_hit `0.2`, primary_closer `0.2`, primary_mae `0.117546`, avg `0.074414`, median `0.079581`
 
 ### WEAK_EDGE
-- sample_size: `20`
-- 3d: sample `20`, primary_hit `0.45`, primary_closer `0.3`, primary_mae `0.013698`, avg `-0.001781`, median `0.001086`
-- 5d: sample `20`, primary_hit `0.45`, primary_closer `0.35`, primary_mae `0.016263`, avg `-0.00337`, median `0.000607`
-- 10d: sample `20`, primary_hit `0.55`, primary_closer `0.45`, primary_mae `0.015793`, avg `-0.002427`, median `-0.007123`
-- 20d: sample `20`, primary_hit `0.45`, primary_closer `0.35`, primary_mae `0.038455`, avg `0.011007`, median `0.011433`
-- 60d: sample `20`, primary_hit `0.4`, primary_closer `0.5`, primary_mae `0.046914`, avg `0.016362`, median `0.017729`
+- sample_size: `40`
+- 3d: sample `40`, primary_hit `0.525`, primary_closer `0.35`, primary_mae `0.017441`, avg `-0.004765`, median `-0.000938`
+- 5d: sample `40`, primary_hit `0.475`, primary_closer `0.375`, primary_mae `0.021826`, avg `-0.00622`, median `0.000607`
+- 10d: sample `40`, primary_hit `0.625`, primary_closer `0.425`, primary_mae `0.018464`, avg `-0.004422`, median `-0.007123`
+- 20d: sample `40`, primary_hit `0.4`, primary_closer `0.325`, primary_mae `0.044299`, avg `0.014476`, median `0.016283`
+- 60d: sample `40`, primary_hit `0.375`, primary_closer `0.425`, primary_mae `0.071748`, avg `0.025578`, median `0.03596`
 
 ## Predictor Performance
 
