@@ -1,6 +1,6 @@
 # FRED Data Status
 
-Generated at: `2026-10-19T23:51:23.707094Z`
+Generated at: `2026-10-20T00:56:07.969949Z`
 
 ## Provider
 
@@ -8,7 +8,7 @@ Generated at: `2026-10-19T23:51:23.707094Z`
 - provider available: `True`
 - fallback used: `False`
 - rate limited: `False`
-- successful series: `IG_OAS, DGS3MO, DGS2, BAA_SPREAD, DGS10, DFII10, RECESSION, FINANCIAL_STRESS, HY_OAS`
+- successful series: `DGS10, HY_OAS, IG_OAS, BAA_SPREAD, DGS3MO, DFII10, RECESSION, FINANCIAL_STRESS, DGS2`
 - failed series: `none`
 
 ## Series
@@ -20,7 +20,7 @@ Generated at: `2026-10-19T23:51:23.707094Z`
 | DGS10 | DGS10 | True | 2026-10-16 | 5.09 | fred-api | False |  |
 | DGS2 | DGS2 | True | 2026-10-16 | 4.74 | fred-api | False |  |
 | DGS3MO | DGS3MO | True | 2026-10-16 | 4.26 | fred-api | False |  |
-| FINANCIAL_STRESS | STLFSI4 | True | 2026-10-09 | -0.7206 | fred-api | False |  |
+| FINANCIAL_STRESS | STLFSI4 | True | 2026-10-09 | -0.7206 | fred-api | True |  |
 | HY_OAS | BAMLH0A0HYM2 | True | 2026-10-16 | 3.31 | fred-api | False |  |
 | IG_OAS | BAMLC0A0CM | True | 2026-10-16 | 0.85 | fred-api | False |  |
 | RECESSION | USREC | True | 2026-09-01 | 0.0 | fred-api | True |  |
@@ -37,10 +37,10 @@ Generated at: `2026-10-19T23:51:23.707094Z`
 
 | symbol | edge without | edge with | primary without | primary with | risk expansion delta | failed bounce delta |
 |---|---|---|---|---|---:|---:|
-| SPY | WEAK_EDGE | RISK_WARNING | bearish_path | bearish_path | 0.1258 | 0.0623 |
-| QQQ | WEAK_EDGE | RISK_WARNING | bearish_path | bearish_path | 0.1257 | 0.0667 |
-| IWM | WEAK_EDGE | RISK_WARNING | bearish_path | bearish_path | 0.1257 | 0.0623 |
-| DIA | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.1258 | 0.0623 |
+| SPY | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.1258 | 0.0623 |
+| QQQ | WEAK_EDGE | RISK_WARNING | bearish_path | bearish_path | 0.1258 | 0.0623 |
+| IWM | WEAK_EDGE | RISK_WARNING | bearish_path | bearish_path | 0.1258 | 0.0623 |
+| DIA | WEAK_EDGE | WEAK_EDGE | bounce_path | bearish_path | 0.1258 | 0.0623 |
 
 ## Warning
 
