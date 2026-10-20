@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-20T01:30:49.257222+00:00`
+- generated_at: `2026-10-20T01:45:59.952967+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `7`
@@ -27,6 +27,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Houthi attack kills 58 at Yemen government training camp, governor says - Reuters
+- source: Reuters
+- published_at: `2026-10-19T22:26:26+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Saudi Arabia postpones its 'Davos in the Desert' conference after attacks - Reuters
 - source: Reuters
 - published_at: `2026-10-19T17:34:43+00:00`
@@ -38,14 +46,6 @@
 - headline: Explainer: What's behind Egypt's move towards possible military involvement in Saudi-Yemen conflict? - Reuters
 - source: Reuters
 - published_at: `2026-10-19T15:53:14+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Houthi attack kills 53 at Yemen government training camp, officials say - Reuters
-- source: Reuters
-- published_at: `2026-10-19T15:03:03+00:00`
 - importance_score: `100`
 - confidence: `high`
 
