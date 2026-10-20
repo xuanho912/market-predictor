@@ -1,6 +1,6 @@
 # Options / Volatility Structure Status
 
-Generated at: `2026-10-20T08:54:02.983258+00:00`
+Generated at: `2026-10-20T17:10:34.315408+00:00`
 
 ## Summary
 
@@ -18,29 +18,29 @@ Generated at: `2026-10-20T08:54:02.983258+00:00`
 
 ## Market Snapshot
 
-- VIX: `18.3799991607666`
-- VIX9D: `17.93000030517578`
-- VIX3M: `19.600000381469727`
-- VIX6M: `21.1200008392334`
-- VVIX: `106.93000030517578`
+- VIX: `17.729999542236328`
+- VIX9D: `17.040000915527344`
+- VIX3M: `19.200000762939453`
+- VIX6M: `20.940000534057617`
+- VVIX: `98.81999969482422`
 - SKEW: `161.86000061035156`
 - term_structure_state: `contango`
-- volatility_reversal_score: `0.521`
-- panic_release_score: `0.3485`
-- tail_risk_score: `0.6818`
-- option_stress_score: `0.5576`
-- failed_bounce_options_risk: `0.5708`
+- volatility_reversal_score: `0.5129`
+- panic_release_score: `0.2979`
+- tail_risk_score: `0.6094`
+- option_stress_score: `0.5193`
+- failed_bounce_options_risk: `0.519`
 
 ## Sources
 
 | symbol | status | latest_date | latest_value | source | real_data | stale |
 |---|---|---|---:|---|---:|---:|
 | ^SKEW | available | 2026-10-19 | 161.86000061035156 | yahoo-chart | True | False |
-| ^VIX | available | 2026-10-20 | 18.3799991607666 | yahoo-chart | True | False |
-| ^VIX3M | available | 2026-10-19 | 19.600000381469727 | yahoo-chart | True | False |
-| ^VIX6M | available | 2026-10-19 | 21.1200008392334 | yahoo-chart | True | False |
-| ^VIX9D | available | 2026-10-19 | 17.93000030517578 | yahoo-chart | True | False |
-| ^VVIX | available | 2026-10-19 | 106.93000030517578 | yahoo-chart | True | False |
+| ^VIX | available | 2026-10-20 | 17.729999542236328 | yahoo-chart | True | False |
+| ^VIX3M | available | 2026-10-20 | 19.200000762939453 | yahoo-chart | True | False |
+| ^VIX6M | available | 2026-10-20 | 20.940000534057617 | yahoo-chart | True | False |
+| ^VIX9D | available | 2026-10-20 | 17.040000915527344 | yahoo-chart | True | False |
+| ^VVIX | available | 2026-10-20 | 98.81999969482422 | yahoo-chart | True | False |
 
 ## Guardrails
 

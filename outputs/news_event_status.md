@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-20T08:54:11.114656+00:00`
+- generated_at: `2026-10-20T17:10:44.192481+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `5`
-- event_detection_confidence: `76`
+- major_event_count: `7`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,6 +27,30 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Most Gulf bourses in red after Houthis claim attacks on Saudi energy, airport sites - Reuters
+- source: Reuters
+- published_at: `2026-10-20T13:34:55+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Death toll from Houthi attack on Yemen training camp rises to 73 - Reuters
+- source: Reuters
+- published_at: `2026-10-20T12:53:43+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Draymond Green says he's 'not Steph Curry,' wants to play another year even if he leaves Golden State Warriors
+- source: CNBC
+- published_at: `2026-10-20T12:00:02+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Oil majors face spending test from Iran war windfall cash - Reuters
 - source: Reuters
 - published_at: `2026-10-20T06:04:00+00:00`
@@ -35,11 +59,11 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Houthi attack kills 58 at Yemen government training camp, governor says - Reuters
+- headline: Brent slips in choppy session as investors weigh attacks on ships, Saudi infrastructure - Reuters
 - source: Reuters
-- published_at: `2026-10-19T22:26:26+00:00`
+- published_at: `2026-10-20T00:58:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -51,16 +75,8 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Explainer: What's behind Egypt's move towards possible military involvement in Saudi-Yemen conflict? - Reuters
+- headline: Governments warn citizens over security in France after riots - Reuters
 - source: Reuters
-- published_at: `2026-10-19T15:53:14+00:00`
+- published_at: `2026-10-19T16:32:12+00:00`
 - importance_score: `100`
 - confidence: `medium`
-
-### credit_stress / risk_off
-
-- headline: Credit stress is threatening to unwind the AI bull. All eyes are on Oracle to hold the line
-- source: CNBC
-- published_at: `2026-10-19T11:57:07+00:00`
-- importance_score: `100`
-- confidence: `high`
