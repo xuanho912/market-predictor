@@ -1,14 +1,19 @@
 {
   "as_of": "2026-10-19",
   "data_freshness_status": {
-    "affected_symbols": [],
-    "can_append_forecast_record": true,
+    "affected_symbols": [
+      "SPY",
+      "QQQ",
+      "IWM",
+      "DIA"
+    ],
+    "can_append_forecast_record": false,
     "can_backfill_completed_outcomes": true,
-    "current_date": "2026-10-19",
-    "current_time_us_eastern": "2026-10-19T21:46:10.940342-04:00",
-    "data_freshness_status": "fresh",
+    "current_date": "2026-10-20",
+    "current_time_us_eastern": "2026-10-20T02:06:16.043401-04:00",
+    "data_freshness_status": "market_open_unconfirmed",
     "expected_latest_trading_date": "2026-10-19",
-    "generated_at": "2026-10-20T01:46:10.940342+00:00",
+    "generated_at": "2026-10-20T06:06:16.043401+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -22,7 +27,7 @@
     "last_successful_update": "2026-10-19",
     "latest_confirmed_market_date": "2026-10-19",
     "latest_market_date": "2026-10-19",
-    "latest_market_session_status": "completed_or_prior_session",
+    "latest_market_session_status": "intraday_unconfirmed",
     "provider_status": {
       "BAA_SPREAD": {
         "fallback_used": false,
@@ -939,7 +944,7 @@
     },
     "stale_days": 0,
     "version": "data_freshness_gate_v3",
-    "warning_message": "核心行情已更新至最新应有交易日 2026-10-19。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。"
+    "warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-10-19，最近完整收盘交易日为 2026-10-19；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。"
   },
   "data_quality_summary": {
     "average_breadth_quality_score": 67.0,
@@ -960,10 +965,10 @@
       "IWM"
     ],
     "breadth_required": true,
-    "can_append_forecast_record": true,
+    "can_append_forecast_record": false,
     "data_completeness_score": 87.0,
     "data_completeness_score_before_news_event": 85.0,
-    "data_freshness_status": "fresh",
+    "data_freshness_status": "market_open_unconfirmed",
     "data_source_status": "real_core_with_proxies",
     "expected_latest_trading_date": "2026-10-19",
     "fallback_used": true,
@@ -1047,17 +1052,17 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
+      "DGS10",
       "BAA_SPREAD",
+      "HY_OAS",
       "DGS3MO",
       "DGS2",
-      "DFII10",
-      "DGS10",
       "IG_OAS",
-      "HY_OAS",
+      "DFII10",
       "FINANCIAL_STRESS",
       "RECESSION"
     ],
-    "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-10-19。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
+    "freshness_warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-10-19，最近完整收盘交易日为 2026-10-19；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
     "gamma_available": false,
     "gamma_exposure_available": false,
     "latest_confirmed_market_date": "2026-10-19",
@@ -1086,10 +1091,10 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 73,
+      "event_detection_confidence": 71,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-10-20T01:45:59.952967+00:00",
+      "last_update": "2026-10-20T06:06:05.681919+00:00",
       "major_event_count": 7,
       "missing_reason": null,
       "news_direction": "risk_off",
@@ -1184,7 +1189,7 @@
           "source": "Reuters"
         },
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -1196,7 +1201,7 @@
           "source": "Reuters"
         },
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -1390,8 +1395,9 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": 0.0048,
-        "avg_equity_futures_1d_return": 0.0046,
+        "avg_equity_futures_1d_return": -0.0005,
         "confirmed_checks": [
+          "股票ETF或股指期货下跌",
           "美元走强"
         ],
         "equity_futures_symbols_used": [
@@ -1401,12 +1407,11 @@
           "YM=F"
         ],
         "failed_checks": [
-          "股票ETF或股指期货下跌",
           "VIX 上升",
           "HYG/LQD 走弱"
         ],
         "hyg_lqd_1d_relative_return": 0.0046,
-        "oil_proxy_1d_return": -0.0154,
+        "oil_proxy_1d_return": -0.0251,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -1415,7 +1420,7 @@
         "uup_1d_return": 0.0028,
         "vix_1d_return": -0.0775
       },
-      "confirmation_score": 25,
+      "confirmation_score": 50,
       "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
       "price_reaction_confirmed": false
     },
@@ -1466,12 +1471,12 @@
           }
         },
         "alpha_v1_threshold_unchanged": 0.32534311,
-        "confluence_level": "weak",
-        "confluence_score": 44,
-        "daily_market_summary_shadow": "DIA shadow evidence: strongest alert is Bounce Setup Alert; confluence is weak at 44/100. This evidence is for forecast validation and challenger comparison only.",
+        "confluence_level": "mixed",
+        "confluence_score": 45,
+        "daily_market_summary_shadow": "DIA shadow evidence: strongest alert is Bounce Setup Alert; confluence is mixed at 45/100. This evidence is for forecast validation and challenger comparison only.",
         "does_not_override_baseline_v1": true,
         "does_not_rewrite_forecast_records": true,
-        "dominant_path_shadow": "no_edge",
+        "dominant_path_shadow": "failed_bounce",
         "enters_as_shadow_evidence": [
           "signal_confirmation",
           "scenario_ranking",
@@ -1564,7 +1569,7 @@
         "alert_status_by_type": {
           "Bottoming Setup Alert": {
             "alert_level": "WATCH",
-            "alert_score": 53,
+            "alert_score": 54,
             "confidence": "low"
           },
           "Bounce Setup Alert": {
@@ -1574,24 +1579,24 @@
           },
           "Failed Bounce Alert": {
             "alert_level": "WARNING",
-            "alert_score": 65,
+            "alert_score": 66,
             "confidence": "medium"
           },
           "Risk Expansion Alert": {
             "alert_level": "WARNING",
-            "alert_score": 70,
+            "alert_score": 71,
             "confidence": "medium"
           },
           "Trend Repair Alert": {
             "alert_level": "WATCH",
-            "alert_score": 37,
+            "alert_score": 38,
             "confidence": "low"
           }
         },
         "alpha_v1_threshold_unchanged": 0.32534311,
         "confluence_level": "weak",
-        "confluence_score": 40,
-        "daily_market_summary_shadow": "IWM shadow evidence: strongest alert is Risk Expansion Alert; confluence is weak at 40/100. This evidence is for forecast validation and challenger comparison only.",
+        "confluence_score": 42,
+        "daily_market_summary_shadow": "IWM shadow evidence: strongest alert is Risk Expansion Alert; confluence is weak at 42/100. This evidence is for forecast validation and challenger comparison only.",
         "does_not_override_baseline_v1": true,
         "does_not_rewrite_forecast_records": true,
         "dominant_path_shadow": "no_edge",
@@ -1676,7 +1681,7 @@
         "role": "challenger_shadow_evidence",
         "strongest_alert": {
           "alert_level": "WARNING",
-          "alert_score": 70,
+          "alert_score": 71,
           "alert_type": "Risk Expansion Alert",
           "confidence": "medium"
         },
@@ -1687,7 +1692,7 @@
         "alert_status_by_type": {
           "Bottoming Setup Alert": {
             "alert_level": "WATCH",
-            "alert_score": 35,
+            "alert_score": 36,
             "confidence": "low"
           },
           "Bounce Setup Alert": {
@@ -1697,7 +1702,7 @@
           },
           "Failed Bounce Alert": {
             "alert_level": "WARNING",
-            "alert_score": 65,
+            "alert_score": 66,
             "confidence": "medium"
           },
           "Risk Expansion Alert": {
@@ -1713,8 +1718,8 @@
         },
         "alpha_v1_threshold_unchanged": 0.32534311,
         "confluence_level": "weak",
-        "confluence_score": 41,
-        "daily_market_summary_shadow": "QQQ shadow evidence: strongest alert is Risk Expansion Alert; confluence is weak at 41/100. This evidence is for forecast validation and challenger comparison only.",
+        "confluence_score": 42,
+        "daily_market_summary_shadow": "QQQ shadow evidence: strongest alert is Risk Expansion Alert; confluence is weak at 42/100. This evidence is for forecast validation and challenger comparison only.",
         "does_not_override_baseline_v1": true,
         "does_not_rewrite_forecast_records": true,
         "dominant_path_shadow": "no_edge",
@@ -1824,8 +1829,8 @@
             "confidence": "low"
           },
           "Risk Expansion Alert": {
-            "alert_level": "NO_ALERT",
-            "alert_score": 34,
+            "alert_level": "WATCH",
+            "alert_score": 35,
             "confidence": "low"
           },
           "Trend Repair Alert": {
@@ -1836,8 +1841,8 @@
         },
         "alpha_v1_threshold_unchanged": 0.32534311,
         "confluence_level": "mixed",
-        "confluence_score": 45,
-        "daily_market_summary_shadow": "SPY shadow evidence: strongest alert is Bottoming Setup Alert; confluence is mixed at 45/100. This evidence is for forecast validation and challenger comparison only.",
+        "confluence_score": 46,
+        "daily_market_summary_shadow": "SPY shadow evidence: strongest alert is Bottoming Setup Alert; confluence is mixed at 46/100. This evidence is for forecast validation and challenger comparison only.",
         "does_not_override_baseline_v1": true,
         "does_not_rewrite_forecast_records": true,
         "dominant_path_shadow": "failed_bounce",
@@ -1864,7 +1869,7 @@
           },
           "risk_expansion_predictor": {
             "notes": "Risk expansion alerts require multi-source stress confirmation before becoming high-conviction evidence.",
-            "support": "NO_ALERT"
+            "support": "WATCH"
           },
           "trend_repair_predictor": {
             "notes": "Trend repair alerts require price, breadth, credit and volatility confirmation.",
@@ -1932,6 +1937,7 @@
     },
     "version": "shadow_evidence_v1"
   },
+  "status_note": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-10-19，最近完整收盘交易日为 2026-10-19；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
   "symbols": {
     "DIA": {
       "analog_path_weight": 0.2371,
@@ -1951,7 +1957,7 @@
           {
             "detail": "News/event direction is not sufficiently confirmed by market reaction.",
             "name": "新闻未获价格确认",
-            "score": 75,
+            "score": 50,
             "source": "news"
           },
           {
@@ -1991,10 +1997,10 @@
             "source": "signal_confirmation"
           }
         ],
-        "confluence_level": "weak",
-        "confluence_score": 44,
-        "confluence_summary": "DIA 当前多源共振为 weak（44/100），主导路径为 no_edge。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
-        "dominant_path": "no_edge",
+        "confluence_level": "mixed",
+        "confluence_score": 45,
+        "confluence_summary": "DIA 当前多源共振为 mixed（45/100），主导路径为 failed_bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
+        "dominant_path": "failed_bounce",
         "edge_status": "{'market_edge_status': 'WEAK_EDGE', 'has_usable_prediction_edge_today': False, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': False, 'historical_analog_not_conflicting': True, 'confidence_score_ge_65': False, 'current_regime_identified': True, 'macro_event_risk_not_high': True, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': False, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': True}, 'passed_conditions': 7, 'summary': '预测优势偏弱，应以观察为主。', 'no_edge_note': '今天没有足够 edge，不应过度解读预测路径。', 'risk_warning': False}",
         "key_conflict_count": 2,
         "missing_evidence": [
@@ -2072,7 +2078,7 @@
           {
             "detail": "DIA 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
             "name": "新闻事件支持主路径",
-            "score": 25,
+            "score": 50,
             "source": "news"
           },
           {
@@ -2287,10 +2293,10 @@
           "news_risk_score": 0.35,
           "top_headlines": [
             "Every look from the Victoria's Secret Fashion Show - Reuters",
-            "Hegseth meets Netanyahu in unannounced visit to Israel, reports Axios - Reuters",
+            "How safe havens stack up as tech, energy and France fears grip markets - Reuters",
+            "Hegseth meets Netanyahu in unannounced visit to Israel, Axios reports - Reuters",
             "Houthi attack kills 58 at Yemen government training camp, governor says - Reuters",
-            "Kremlin says Putin, Trump and Xi could hold a three-way meeting in China next month - Reuters",
-            "Tech stocks had a nice oversold bounce on Monday. Earnings this week will determine if it's for real"
+            "Kremlin says Putin, Trump and Xi could hold a three-way meeting in China next month - Reuters"
           ]
         },
         "price": {
@@ -3635,14 +3641,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 80,
+            "confidence_score": 77,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 92,
+            "freshness_score": 82,
             "headline": "Houthi attack kills 58 at Yemen government training camp, governor says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3661,15 +3667,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 77,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 80,
+            "freshness_score": 70,
             "headline": "Saudi Arabia postpones its 'Davos in the Desert' conference after attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3688,15 +3694,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 76,
+            "confidence": "medium",
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 76,
+            "freshness_score": 66,
             "headline": "Explainer: What's behind Egypt's move towards possible military involvement in Saudi-Yemen conflict? - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3715,12 +3721,12 @@
               "^VIX"
             ],
             "confidence": "high",
-            "confidence_score": 87,
+            "confidence_score": 85,
             "detected_event_conditions": [],
             "event_type": "credit_stress",
             "expected_horizon": "3d-60d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 67,
+            "freshness_score": 56,
             "headline": "Credit stress is threatening to unwind the AI bull. All eyes are on Oracle to hold the line",
             "importance_score": 100,
             "narrative": "credit_stress",
@@ -3740,14 +3746,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 65,
+            "confidence_score": 63,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 34,
+            "freshness_score": 24,
             "headline": "Brent crude edges lower, even after Houthi attacks on Saudi infrastructure - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3767,14 +3773,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 65,
+            "confidence_score": 62,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 33,
+            "freshness_score": 23,
             "headline": "Gurman on HomeView: ‘Finished Units Have Been Sitting Boxed Up in Warehouses for the Better Part of a Year’",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3815,7 +3821,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -3827,7 +3833,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -3912,8 +3918,9 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0048,
-            "avg_equity_futures_1d_return": 0.0046,
+            "avg_equity_futures_1d_return": -0.0005,
             "confirmed_checks": [
+              "股票ETF或股指期货下跌",
               "美元走强"
             ],
             "equity_futures_symbols_used": [
@@ -3923,12 +3930,11 @@
               "YM=F"
             ],
             "failed_checks": [
-              "股票ETF或股指期货下跌",
               "VIX 上升",
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0046,
-            "oil_proxy_1d_return": -0.0154,
+            "oil_proxy_1d_return": -0.0251,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -3937,7 +3943,7 @@
             "uup_1d_return": 0.0028,
             "vix_1d_return": -0.0775
           },
-          "confirmation_score": 25,
+          "confirmation_score": 50,
           "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
           "price_reaction_confirmed": false
         },
@@ -5830,12 +5836,12 @@
           }
         },
         "alpha_v1_threshold_unchanged": 0.32534311,
-        "confluence_level": "weak",
-        "confluence_score": 44,
-        "daily_market_summary_shadow": "DIA shadow evidence: strongest alert is Bounce Setup Alert; confluence is weak at 44/100. This evidence is for forecast validation and challenger comparison only.",
+        "confluence_level": "mixed",
+        "confluence_score": 45,
+        "daily_market_summary_shadow": "DIA shadow evidence: strongest alert is Bounce Setup Alert; confluence is mixed at 45/100. This evidence is for forecast validation and challenger comparison only.",
         "does_not_override_baseline_v1": true,
         "does_not_rewrite_forecast_records": true,
-        "dominant_path_shadow": "no_edge",
+        "dominant_path_shadow": "failed_bounce",
         "enters_as_shadow_evidence": [
           "signal_confirmation",
           "scenario_ranking",
@@ -6088,16 +6094,16 @@
             "source": "signal_confirmation"
           },
           {
-            "detail": "News/event direction is not sufficiently confirmed by market reaction.",
-            "name": "新闻未获价格确认",
-            "score": 75,
-            "source": "news"
-          },
-          {
             "detail": "指数路径与内部参与度存在冲突。",
             "name": "宽度冲突",
             "score": 68,
             "source": "breadth"
+          },
+          {
+            "detail": "News/event direction is not sufficiently confirmed by market reaction.",
+            "name": "新闻未获价格确认",
+            "score": 50,
+            "source": "news"
           },
           {
             "detail": "Credit proxy is deteriorating.",
@@ -6149,8 +6155,8 @@
           }
         ],
         "confluence_level": "weak",
-        "confluence_score": 40,
-        "confluence_summary": "IWM 当前多源共振为 weak（40/100），主导路径为 no_edge。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、breadth；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
+        "confluence_score": 42,
+        "confluence_summary": "IWM 当前多源共振为 weak（42/100），主导路径为 no_edge。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、breadth；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
         "dominant_path": "no_edge",
         "edge_status": "{'market_edge_status': 'RISK_WARNING', 'has_usable_prediction_edge_today': True, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': False, 'historical_analog_not_conflicting': True, 'confidence_score_ge_65': False, 'current_regime_identified': True, 'macro_event_risk_not_high': True, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': False, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': True}, 'passed_conditions': 7, 'summary': '风险扩散条件升高，重点不是追逐反抽，而是防止路径切换到风险情景。', 'no_edge_note': '', 'risk_warning': True}",
         "key_conflict_count": 3,
@@ -6235,7 +6241,7 @@
           {
             "detail": "IWM 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
             "name": "新闻事件支持主路径",
-            "score": 25,
+            "score": 50,
             "source": "news"
           },
           {
@@ -6444,10 +6450,10 @@
           "news_risk_score": 0.35,
           "top_headlines": [
             "Every look from the Victoria's Secret Fashion Show - Reuters",
-            "Hegseth meets Netanyahu in unannounced visit to Israel, reports Axios - Reuters",
+            "How safe havens stack up as tech, energy and France fears grip markets - Reuters",
+            "Hegseth meets Netanyahu in unannounced visit to Israel, Axios reports - Reuters",
             "Houthi attack kills 58 at Yemen government training camp, governor says - Reuters",
-            "Kremlin says Putin, Trump and Xi could hold a three-way meeting in China next month - Reuters",
-            "Tech stocks had a nice oversold bounce on Monday. Earnings this week will determine if it's for real"
+            "Kremlin says Putin, Trump and Xi could hold a three-way meeting in China next month - Reuters"
           ]
         },
         "price": {
@@ -7079,7 +7085,7 @@
               "IWM"
             ],
             "alert_level": "WARNING",
-            "alert_score": 70,
+            "alert_score": 71,
             "alert_type": "Risk Expansion Alert",
             "confidence": "medium",
             "conflicting_evidence": [],
@@ -7170,7 +7176,7 @@
               "IWM"
             ],
             "alert_level": "WARNING",
-            "alert_score": 65,
+            "alert_score": 66,
             "alert_type": "Failed Bounce Alert",
             "confidence": "medium",
             "conflicting_evidence": [],
@@ -7261,7 +7267,7 @@
               "IWM"
             ],
             "alert_level": "WATCH",
-            "alert_score": 53,
+            "alert_score": 54,
             "alert_type": "Bottoming Setup Alert",
             "confidence": "low",
             "conflicting_evidence": [
@@ -7427,7 +7433,7 @@
               "IWM"
             ],
             "alert_level": "WATCH",
-            "alert_score": 37,
+            "alert_score": 38,
             "alert_type": "Trend Repair Alert",
             "confidence": "low",
             "conflicting_evidence": [
@@ -7514,7 +7520,7 @@
             "IWM"
           ],
           "alert_level": "WARNING",
-          "alert_score": 70,
+          "alert_score": 71,
           "alert_type": "Risk Expansion Alert",
           "confidence": "medium",
           "conflicting_evidence": [],
@@ -7814,14 +7820,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 80,
+            "confidence_score": 77,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 92,
+            "freshness_score": 82,
             "headline": "Houthi attack kills 58 at Yemen government training camp, governor says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7840,15 +7846,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 77,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 80,
+            "freshness_score": 70,
             "headline": "Saudi Arabia postpones its 'Davos in the Desert' conference after attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7867,15 +7873,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 76,
+            "confidence": "medium",
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 76,
+            "freshness_score": 66,
             "headline": "Explainer: What's behind Egypt's move towards possible military involvement in Saudi-Yemen conflict? - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7894,12 +7900,12 @@
               "^VIX"
             ],
             "confidence": "high",
-            "confidence_score": 87,
+            "confidence_score": 85,
             "detected_event_conditions": [],
             "event_type": "credit_stress",
             "expected_horizon": "3d-60d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 67,
+            "freshness_score": 56,
             "headline": "Credit stress is threatening to unwind the AI bull. All eyes are on Oracle to hold the line",
             "importance_score": 100,
             "narrative": "credit_stress",
@@ -7919,14 +7925,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 65,
+            "confidence_score": 63,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 34,
+            "freshness_score": 24,
             "headline": "Brent crude edges lower, even after Houthi attacks on Saudi infrastructure - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7946,14 +7952,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 65,
+            "confidence_score": 62,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 33,
+            "freshness_score": 23,
             "headline": "Gurman on HomeView: ‘Finished Units Have Been Sitting Boxed Up in Warehouses for the Better Part of a Year’",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7994,7 +8000,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -8006,7 +8012,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -8091,8 +8097,9 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0048,
-            "avg_equity_futures_1d_return": 0.0046,
+            "avg_equity_futures_1d_return": -0.0005,
             "confirmed_checks": [
+              "股票ETF或股指期货下跌",
               "美元走强"
             ],
             "equity_futures_symbols_used": [
@@ -8102,12 +8109,11 @@
               "YM=F"
             ],
             "failed_checks": [
-              "股票ETF或股指期货下跌",
               "VIX 上升",
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0046,
-            "oil_proxy_1d_return": -0.0154,
+            "oil_proxy_1d_return": -0.0251,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -8116,7 +8122,7 @@
             "uup_1d_return": 0.0028,
             "vix_1d_return": -0.0775
           },
-          "confirmation_score": 25,
+          "confirmation_score": 50,
           "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
           "price_reaction_confirmed": false
         },
@@ -10004,7 +10010,7 @@
         "alert_status_by_type": {
           "Bottoming Setup Alert": {
             "alert_level": "WATCH",
-            "alert_score": 53,
+            "alert_score": 54,
             "confidence": "low"
           },
           "Bounce Setup Alert": {
@@ -10014,24 +10020,24 @@
           },
           "Failed Bounce Alert": {
             "alert_level": "WARNING",
-            "alert_score": 65,
+            "alert_score": 66,
             "confidence": "medium"
           },
           "Risk Expansion Alert": {
             "alert_level": "WARNING",
-            "alert_score": 70,
+            "alert_score": 71,
             "confidence": "medium"
           },
           "Trend Repair Alert": {
             "alert_level": "WATCH",
-            "alert_score": 37,
+            "alert_score": 38,
             "confidence": "low"
           }
         },
         "alpha_v1_threshold_unchanged": 0.32534311,
         "confluence_level": "weak",
-        "confluence_score": 40,
-        "daily_market_summary_shadow": "IWM shadow evidence: strongest alert is Risk Expansion Alert; confluence is weak at 40/100. This evidence is for forecast validation and challenger comparison only.",
+        "confluence_score": 42,
+        "daily_market_summary_shadow": "IWM shadow evidence: strongest alert is Risk Expansion Alert; confluence is weak at 42/100. This evidence is for forecast validation and challenger comparison only.",
         "does_not_override_baseline_v1": true,
         "does_not_rewrite_forecast_records": true,
         "dominant_path_shadow": "no_edge",
@@ -10116,7 +10122,7 @@
         "role": "challenger_shadow_evidence",
         "strongest_alert": {
           "alert_level": "WARNING",
-          "alert_score": 70,
+          "alert_score": 71,
           "alert_type": "Risk Expansion Alert",
           "confidence": "medium"
         },
@@ -10292,16 +10298,16 @@
             "source": "signal_confirmation"
           },
           {
-            "detail": "News/event direction is not sufficiently confirmed by market reaction.",
-            "name": "新闻未获价格确认",
-            "score": 75,
-            "source": "news"
-          },
-          {
             "detail": "指数路径与内部参与度存在冲突。",
             "name": "宽度冲突",
             "score": 69,
             "source": "breadth"
+          },
+          {
+            "detail": "News/event direction is not sufficiently confirmed by market reaction.",
+            "name": "新闻未获价格确认",
+            "score": 50,
+            "source": "news"
           },
           {
             "detail": "Credit proxy is deteriorating.",
@@ -10359,8 +10365,8 @@
           }
         ],
         "confluence_level": "weak",
-        "confluence_score": 41,
-        "confluence_summary": "QQQ 当前多源共振为 weak（41/100），主导路径为 no_edge。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、price；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
+        "confluence_score": 42,
+        "confluence_summary": "QQQ 当前多源共振为 weak（42/100），主导路径为 no_edge。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、price；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
         "dominant_path": "no_edge",
         "edge_status": "{'market_edge_status': 'RISK_WARNING', 'has_usable_prediction_edge_today': True, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': False, 'historical_analog_not_conflicting': True, 'confidence_score_ge_65': False, 'current_regime_identified': True, 'macro_event_risk_not_high': True, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': False, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': True}, 'passed_conditions': 7, 'summary': '风险扩散条件升高，重点不是追逐反抽，而是防止路径切换到风险情景。', 'no_edge_note': '', 'risk_warning': True}",
         "key_conflict_count": 3,
@@ -10451,7 +10457,7 @@
           {
             "detail": "QQQ 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
             "name": "新闻事件支持主路径",
-            "score": 25,
+            "score": 50,
             "source": "news"
           },
           {
@@ -10660,10 +10666,10 @@
           "news_risk_score": 0.35,
           "top_headlines": [
             "Every look from the Victoria's Secret Fashion Show - Reuters",
-            "Hegseth meets Netanyahu in unannounced visit to Israel, reports Axios - Reuters",
+            "How safe havens stack up as tech, energy and France fears grip markets - Reuters",
+            "Hegseth meets Netanyahu in unannounced visit to Israel, Axios reports - Reuters",
             "Houthi attack kills 58 at Yemen government training camp, governor says - Reuters",
-            "Kremlin says Putin, Trump and Xi could hold a three-way meeting in China next month - Reuters",
-            "Tech stocks had a nice oversold bounce on Monday. Earnings this week will determine if it's for real"
+            "Kremlin says Putin, Trump and Xi could hold a three-way meeting in China next month - Reuters"
           ]
         },
         "price": {
@@ -11392,7 +11398,7 @@
               "QQQ"
             ],
             "alert_level": "WARNING",
-            "alert_score": 65,
+            "alert_score": 66,
             "alert_type": "Failed Bounce Alert",
             "confidence": "medium",
             "conflicting_evidence": [],
@@ -11667,7 +11673,7 @@
               "QQQ"
             ],
             "alert_level": "WATCH",
-            "alert_score": 35,
+            "alert_score": 36,
             "alert_type": "Bottoming Setup Alert",
             "confidence": "low",
             "conflicting_evidence": [
@@ -12045,14 +12051,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 80,
+            "confidence_score": 77,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 92,
+            "freshness_score": 82,
             "headline": "Houthi attack kills 58 at Yemen government training camp, governor says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12071,15 +12077,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 77,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 80,
+            "freshness_score": 70,
             "headline": "Saudi Arabia postpones its 'Davos in the Desert' conference after attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12098,15 +12104,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 76,
+            "confidence": "medium",
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 76,
+            "freshness_score": 66,
             "headline": "Explainer: What's behind Egypt's move towards possible military involvement in Saudi-Yemen conflict? - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12125,12 +12131,12 @@
               "^VIX"
             ],
             "confidence": "high",
-            "confidence_score": 87,
+            "confidence_score": 85,
             "detected_event_conditions": [],
             "event_type": "credit_stress",
             "expected_horizon": "3d-60d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 67,
+            "freshness_score": 56,
             "headline": "Credit stress is threatening to unwind the AI bull. All eyes are on Oracle to hold the line",
             "importance_score": 100,
             "narrative": "credit_stress",
@@ -12150,14 +12156,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 65,
+            "confidence_score": 63,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 34,
+            "freshness_score": 24,
             "headline": "Brent crude edges lower, even after Houthi attacks on Saudi infrastructure - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12177,14 +12183,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 65,
+            "confidence_score": 62,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 33,
+            "freshness_score": 23,
             "headline": "Gurman on HomeView: ‘Finished Units Have Been Sitting Boxed Up in Warehouses for the Better Part of a Year’",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12225,7 +12231,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -12237,7 +12243,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -12322,8 +12328,9 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0048,
-            "avg_equity_futures_1d_return": 0.0046,
+            "avg_equity_futures_1d_return": -0.0005,
             "confirmed_checks": [
+              "股票ETF或股指期货下跌",
               "美元走强"
             ],
             "equity_futures_symbols_used": [
@@ -12333,12 +12340,11 @@
               "YM=F"
             ],
             "failed_checks": [
-              "股票ETF或股指期货下跌",
               "VIX 上升",
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0046,
-            "oil_proxy_1d_return": -0.0154,
+            "oil_proxy_1d_return": -0.0251,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -12347,7 +12353,7 @@
             "uup_1d_return": 0.0028,
             "vix_1d_return": -0.0775
           },
-          "confirmation_score": 25,
+          "confirmation_score": 50,
           "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
           "price_reaction_confirmed": false
         },
@@ -14235,7 +14241,7 @@
         "alert_status_by_type": {
           "Bottoming Setup Alert": {
             "alert_level": "WATCH",
-            "alert_score": 35,
+            "alert_score": 36,
             "confidence": "low"
           },
           "Bounce Setup Alert": {
@@ -14245,7 +14251,7 @@
           },
           "Failed Bounce Alert": {
             "alert_level": "WARNING",
-            "alert_score": 65,
+            "alert_score": 66,
             "confidence": "medium"
           },
           "Risk Expansion Alert": {
@@ -14261,8 +14267,8 @@
         },
         "alpha_v1_threshold_unchanged": 0.32534311,
         "confluence_level": "weak",
-        "confluence_score": 41,
-        "daily_market_summary_shadow": "QQQ shadow evidence: strongest alert is Risk Expansion Alert; confluence is weak at 41/100. This evidence is for forecast validation and challenger comparison only.",
+        "confluence_score": 42,
+        "daily_market_summary_shadow": "QQQ shadow evidence: strongest alert is Risk Expansion Alert; confluence is weak at 42/100. This evidence is for forecast validation and challenger comparison only.",
         "does_not_override_baseline_v1": true,
         "does_not_rewrite_forecast_records": true,
         "dominant_path_shadow": "no_edge",
@@ -14540,7 +14546,7 @@
           {
             "detail": "News/event direction is not sufficiently confirmed by market reaction.",
             "name": "新闻未获价格确认",
-            "score": 75,
+            "score": 50,
             "source": "news"
           },
           {
@@ -14587,8 +14593,8 @@
           }
         ],
         "confluence_level": "mixed",
-        "confluence_score": 45,
-        "confluence_summary": "SPY 当前多源共振为 mixed（45/100），主导路径为 failed_bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
+        "confluence_score": 46,
+        "confluence_summary": "SPY 当前多源共振为 mixed（46/100），主导路径为 failed_bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
         "dominant_path": "failed_bounce",
         "edge_status": "{'market_edge_status': 'RISK_WARNING', 'has_usable_prediction_edge_today': True, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': False, 'historical_analog_not_conflicting': True, 'confidence_score_ge_65': False, 'current_regime_identified': True, 'macro_event_risk_not_high': True, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': False, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': True}, 'passed_conditions': 7, 'summary': '风险扩散条件升高，重点不是追逐反抽，而是防止路径切换到风险情景。', 'no_edge_note': '', 'risk_warning': True}",
         "key_conflict_count": 3,
@@ -14671,16 +14677,16 @@
             "source": "options"
           },
           {
+            "detail": "SPY 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+            "name": "新闻事件支持主路径",
+            "score": 50,
+            "source": "news"
+          },
+          {
             "detail": "Breadth deterioration supports downside/failed-bounce risk.",
             "name": "宽度恶化支持风险路径",
             "score": 45,
             "source": "breadth"
-          },
-          {
-            "detail": "SPY 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-            "name": "新闻事件支持主路径",
-            "score": 25,
-            "source": "news"
           },
           {
             "detail": "primary-secondary gap 13.8%",
@@ -14894,10 +14900,10 @@
           "news_risk_score": 0.35,
           "top_headlines": [
             "Every look from the Victoria's Secret Fashion Show - Reuters",
-            "Hegseth meets Netanyahu in unannounced visit to Israel, reports Axios - Reuters",
+            "How safe havens stack up as tech, energy and France fears grip markets - Reuters",
+            "Hegseth meets Netanyahu in unannounced visit to Israel, Axios reports - Reuters",
             "Houthi attack kills 58 at Yemen government training camp, governor says - Reuters",
-            "Kremlin says Putin, Trump and Xi could hold a three-way meeting in China next month - Reuters",
-            "Tech stocks had a nice oversold bounce on Monday. Earnings this week will determine if it's for real"
+            "Kremlin says Putin, Trump and Xi could hold a three-way meeting in China next month - Reuters"
           ]
         },
         "price": {
@@ -15786,8 +15792,8 @@
             "affected_symbols": [
               "SPY"
             ],
-            "alert_level": "NO_ALERT",
-            "alert_score": 34,
+            "alert_level": "WATCH",
+            "alert_score": 35,
             "alert_type": "Risk Expansion Alert",
             "confidence": "low",
             "conflicting_evidence": [
@@ -16275,14 +16281,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 80,
+            "confidence_score": 77,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 92,
+            "freshness_score": 82,
             "headline": "Houthi attack kills 58 at Yemen government training camp, governor says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16301,15 +16307,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 77,
+            "confidence": "medium",
+            "confidence_score": 74,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 80,
+            "freshness_score": 70,
             "headline": "Saudi Arabia postpones its 'Davos in the Desert' conference after attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16328,15 +16334,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 76,
+            "confidence": "medium",
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 76,
+            "freshness_score": 66,
             "headline": "Explainer: What's behind Egypt's move towards possible military involvement in Saudi-Yemen conflict? - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16355,12 +16361,12 @@
               "^VIX"
             ],
             "confidence": "high",
-            "confidence_score": 87,
+            "confidence_score": 85,
             "detected_event_conditions": [],
             "event_type": "credit_stress",
             "expected_horizon": "3d-60d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 67,
+            "freshness_score": 56,
             "headline": "Credit stress is threatening to unwind the AI bull. All eyes are on Oracle to hold the line",
             "importance_score": 100,
             "narrative": "credit_stress",
@@ -16380,14 +16386,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 65,
+            "confidence_score": 63,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 34,
+            "freshness_score": 24,
             "headline": "Brent crude edges lower, even after Houthi attacks on Saudi infrastructure - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16407,14 +16413,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 65,
+            "confidence_score": 62,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 33,
+            "freshness_score": 23,
             "headline": "Gurman on HomeView: ‘Finished Units Have Been Sitting Boxed Up in Warehouses for the Better Part of a Year’",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16455,7 +16461,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -16467,7 +16473,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -16552,8 +16558,9 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0048,
-            "avg_equity_futures_1d_return": 0.0046,
+            "avg_equity_futures_1d_return": -0.0005,
             "confirmed_checks": [
+              "股票ETF或股指期货下跌",
               "美元走强"
             ],
             "equity_futures_symbols_used": [
@@ -16563,12 +16570,11 @@
               "YM=F"
             ],
             "failed_checks": [
-              "股票ETF或股指期货下跌",
               "VIX 上升",
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0046,
-            "oil_proxy_1d_return": -0.0154,
+            "oil_proxy_1d_return": -0.0251,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -16577,7 +16583,7 @@
             "uup_1d_return": 0.0028,
             "vix_1d_return": -0.0775
           },
-          "confirmation_score": 25,
+          "confirmation_score": 50,
           "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
           "price_reaction_confirmed": false
         },
@@ -18459,8 +18465,8 @@
             "confidence": "low"
           },
           "Risk Expansion Alert": {
-            "alert_level": "NO_ALERT",
-            "alert_score": 34,
+            "alert_level": "WATCH",
+            "alert_score": 35,
             "confidence": "low"
           },
           "Trend Repair Alert": {
@@ -18471,8 +18477,8 @@
         },
         "alpha_v1_threshold_unchanged": 0.32534311,
         "confluence_level": "mixed",
-        "confluence_score": 45,
-        "daily_market_summary_shadow": "SPY shadow evidence: strongest alert is Bottoming Setup Alert; confluence is mixed at 45/100. This evidence is for forecast validation and challenger comparison only.",
+        "confluence_score": 46,
+        "daily_market_summary_shadow": "SPY shadow evidence: strongest alert is Bottoming Setup Alert; confluence is mixed at 46/100. This evidence is for forecast validation and challenger comparison only.",
         "does_not_override_baseline_v1": true,
         "does_not_rewrite_forecast_records": true,
         "dominant_path_shadow": "failed_bounce",
@@ -18499,7 +18505,7 @@
           },
           "risk_expansion_predictor": {
             "notes": "Risk expansion alerts require multi-source stress confirmation before becoming high-conviction evidence.",
-            "support": "NO_ALERT"
+            "support": "WATCH"
           },
           "trend_repair_predictor": {
             "notes": "Trend repair alerts require price, breadth, credit and volatility confirmation.",
