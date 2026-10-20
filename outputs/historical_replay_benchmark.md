@@ -1,6 +1,6 @@
 # Historical Replay Benchmark
 
-Generated at: `2026-10-20T00:56:07.041737+00:00`
+Generated at: `2026-10-20T01:31:00.411175+00:00`
 Validation type: `historical_replay`
 Status: `research_evaluation_only_not_forward_validation`
 Sample size: `80`
