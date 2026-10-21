@@ -1,6 +1,6 @@
 # Historical Replay Benchmark
 
-Generated at: `2026-10-21T06:06:05.243200+00:00`
+Generated at: `2026-10-21T08:54:28.200491+00:00`
 Validation type: `historical_replay`
 Status: `research_evaluation_only_not_forward_validation`
 Sample size: `80`
@@ -115,14 +115,6 @@ Overfit warning: `{'level': 'medium', 'reasons': ['primary path is not closer th
 
 ## Edge Status Performance
 
-### NO_EDGE
-- sample_size: `20`
-- 3d: sample `20`, primary_hit `0.5`, primary_closer `0.5`, primary_mae `0.017858`, avg `-0.0`, median `0.000371`
-- 5d: sample `20`, primary_hit `0.5`, primary_closer `0.5`, primary_mae `0.022799`, avg `0.001017`, median `-0.000601`
-- 10d: sample `20`, primary_hit `0.35`, primary_closer `0.35`, primary_mae `0.030644`, avg `0.00778`, median `0.007808`
-- 20d: sample `20`, primary_hit `0.3`, primary_closer `0.35`, primary_mae `0.043668`, avg `0.024637`, median `0.013284`
-- 60d: sample `20`, primary_hit `0.2`, primary_closer `0.4`, primary_mae `0.062104`, avg `0.060023`, median `0.054719`
-
 ### RISK_WARNING
 - sample_size: `20`
 - 3d: sample `20`, primary_hit `0.5`, primary_closer `0.3`, primary_mae `0.016695`, avg `4.2e-05`, median `-0.00065`
@@ -132,12 +124,12 @@ Overfit warning: `{'level': 'medium', 'reasons': ['primary path is not closer th
 - 60d: sample `20`, primary_hit `0.25`, primary_closer `0.25`, primary_mae `0.103056`, avg `0.050935`, median `0.061971`
 
 ### WEAK_EDGE
-- sample_size: `40`
-- 3d: sample `40`, primary_hit `0.475`, primary_closer `0.35`, primary_mae `0.015671`, avg `-0.001975`, median `0.001174`
-- 5d: sample `40`, primary_hit `0.425`, primary_closer `0.425`, primary_mae `0.018857`, avg `-0.002855`, median `0.002614`
-- 10d: sample `40`, primary_hit `0.55`, primary_closer `0.475`, primary_mae `0.017119`, avg `1.4e-05`, median `-0.000315`
-- 20d: sample `40`, primary_hit `0.275`, primary_closer `0.3`, primary_mae `0.045049`, avg `0.017104`, median `0.020913`
-- 60d: sample `40`, primary_hit `0.4`, primary_closer `0.4`, primary_mae `0.093417`, avg `0.013832`, median `0.028478`
+- sample_size: `60`
+- 3d: sample `60`, primary_hit `0.4833`, primary_closer `0.4`, primary_mae `0.0164`, avg `-0.001317`, median `0.001174`
+- 5d: sample `60`, primary_hit `0.45`, primary_closer `0.45`, primary_mae `0.020171`, avg `-0.001564`, median `0.001959`
+- 10d: sample `60`, primary_hit `0.4833`, primary_closer `0.4333`, primary_mae `0.021627`, avg `0.002602`, median `0.001909`
+- 20d: sample `60`, primary_hit `0.2833`, primary_closer `0.3167`, primary_mae `0.044589`, avg `0.019615`, median `0.016987`
+- 60d: sample `60`, primary_hit `0.3333`, primary_closer `0.4`, primary_mae `0.082979`, avg `0.029229`, median `0.040583`
 
 ## Predictor Performance
 

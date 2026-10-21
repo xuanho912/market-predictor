@@ -1,6 +1,6 @@
 # High Confidence Edge Report
 
-Generated at: `2026-10-21T06:05:53.954942+00:00`
+Generated at: `2026-10-21T08:54:19.145604+00:00`
 
 Status: `historical_proxy_and_forward_pending`
 Sample size: `80`
@@ -35,20 +35,20 @@ Conclusion: `not_enough_strong_edge_samples`
 - 60d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
 
 ### WEAK_EDGE
-- sample_size: `40`
-- 3d: sample `40`, hit `0.525`, avg `-0.001975`, median `0.001199`, mae `0.012709`
-- 5d: sample `40`, hit `0.575`, avg `-0.002855`, median `0.003005`, mae `0.015067`
-- 10d: sample `40`, hit `0.45`, avg `1.4e-05`, median `-0.000231`, mae `0.017085`
-- 20d: sample `40`, hit `0.725`, avg `0.017104`, median `0.021759`, mae `0.029605`
-- 60d: sample `40`, hit `0.6`, avg `0.013832`, median `0.032628`, mae `0.074274`
+- sample_size: `60`
+- 3d: sample `60`, hit `0.5167`, avg `-0.001317`, median `0.001199`, mae `0.014426`
+- 5d: sample `60`, hit `0.55`, avg `-0.001564`, median `0.002223`, mae `0.017644`
+- 10d: sample `60`, hit `0.5167`, avg `0.002602`, median `0.002362`, mae `0.020549`
+- 20d: sample `60`, hit `0.7167`, avg `0.019615`, median `0.019193`, mae `0.030623`
+- 60d: sample `60`, hit `0.6667`, avg `0.029229`, median `0.043741`, mae `0.075278`
 
 ### NO_EDGE
-- sample_size: `20`
-- 3d: sample `20`, hit `0.5`, avg `-0.0`, median `0.006632`, mae `0.017858`
-- 5d: sample `20`, hit `0.5`, avg `0.001017`, median `0.001573`, mae `0.022799`
-- 10d: sample `20`, hit `0.65`, avg `0.00778`, median `0.009854`, mae `0.027477`
-- 20d: sample `20`, hit `0.7`, avg `0.024637`, median `0.014522`, mae `0.032658`
-- 60d: sample `20`, hit `0.8`, avg `0.060023`, median `0.055167`, mae `0.077284`
+- sample_size: `0`
+- 3d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 5d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 10d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 20d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 60d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
 
 ### RISK_WARNING
 - sample_size: `20`
