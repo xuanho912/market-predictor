@@ -1,6 +1,6 @@
 # Forecast Learning Queue
 
-Generated at: `2026-10-21T08:54:28.203361+00:00`
+Generated at: `2026-10-21T17:21:26.164479+00:00`
 
 This report turns forecast deviations into safe challenger-model hypotheses. It does not alter baseline_v1.
 
@@ -85,6 +85,7 @@ This report turns forecast deviations into safe challenger-model hypotheses. It 
 
 ## Blocked Reasons
 
+- `data_completeness_below_gate`: Data completeness is 81.0, below the 85/100 reliance gate.
 - `primary_path_not_validated`: Primary-vs-secondary path advantage is not yet proven on enough forward samples.
 
 ## Next Best Actions

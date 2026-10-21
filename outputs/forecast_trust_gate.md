@@ -1,18 +1,18 @@
 # Forecast Trust Gate
 
-Generated at: `2026-10-21T08:54:28.203282+00:00`
+Generated at: `2026-10-21T17:21:26.164417+00:00`
 
 This report answers whether the current Market Prediction Dashboard is dependable as a forecasting tool. It is not trading advice.
 
 ## Current Status
 
 - status: `RESEARCH_ONLY_PATH_EDGE_UNPROVEN`
-- trust_score: `45`
+- trust_score: `33`
 - would_rely_for_real_money: `False`
 - use_boundary: Use as a research radar and scenario explainer only; do not treat it as a dependable forecasting edge.
-- latest_market_date: `2026-10-20`
+- latest_market_date: `2026-10-21`
 - expected_latest_trading_date: `2026-10-20`
-- data_completeness_score: `87.0`
+- data_completeness_score: `81.0`
 
 ## Forward Samples
 
@@ -25,6 +25,7 @@ This report answers whether the current Market Prediction Dashboard is dependabl
 
 ## Blockers
 
+- `data_completeness_below_gate` (high): Data completeness is 81.0, below the 85/100 reliance gate.
 - `primary_path_not_validated` (high): Primary-vs-secondary path advantage is not yet proven on enough forward samples.
 
 ## Warnings
@@ -35,10 +36,10 @@ This report answers whether the current Market Prediction Dashboard is dependabl
 
 ## Symbol Readiness
 
-- SPY: `blocked_by_global_gate` | primary `bearish_path` 0.3528 | reason: Global trust gate is not ready.
-- QQQ: `blocked_by_global_gate` | primary `bearish_path` 0.4345 | reason: Global trust gate is not ready.
-- IWM: `blocked_by_global_gate` | primary `bearish_path` 0.4876 | reason: Global trust gate is not ready.
-- DIA: `blocked_by_global_gate` | primary `bearish_path` 0.3423 | reason: Global trust gate is not ready.
+- SPY: `blocked_by_global_gate` | primary `bearish_path` 0.3102 | reason: Global trust gate is not ready.
+- QQQ: `blocked_by_global_gate` | primary `bearish_path` 0.3673 | reason: Global trust gate is not ready.
+- IWM: `blocked_by_global_gate` | primary `bearish_path` 0.3235 | reason: Global trust gate is not ready.
+- DIA: `blocked_by_global_gate` | primary `bounce_path` 0.3032 | reason: Global trust gate is not ready.
 
 ## Next Actions
 
