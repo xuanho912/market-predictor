@@ -1,14 +1,14 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-21T01:32:18.873465+00:00`
+- generated_at: `2026-10-21T06:05:53.958955+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `4`
-- event_detection_confidence: `73`
+- major_event_count: `3`
+- event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
-- narrative_strength: `100`
+- narrative_strength: `67`
 - price_reaction_confirmed: `False`
 - confirmation_score: `25`
 
@@ -41,18 +41,10 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
-
-- headline: Draymond Green says he's 'not Steph Curry,' wants to play another year even if he leaves Golden State Warriors
-- source: CNBC
-- published_at: `2026-10-20T12:00:02+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
 ### fed_dovish / risk_on
 
 - headline: Bank of Israel to pause rate cuts ahead of October 27 election - Reuters
 - source: Reuters
 - published_at: `2026-10-20T12:23:47+00:00`
-- importance_score: `84`
+- importance_score: `83`
 - confidence: `medium`
