@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-21T17:21:15.099345+00:00`
+- generated_at: `2026-10-21T23:36:04.130811+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
+- major_event_count: `10`
 - event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -24,6 +24,30 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: EXCLUSIVE: US orders diplomats to depart Saudi Arabia amid Houthi strikes - Reuters
+- source: Reuters
+- published_at: `2026-10-21T21:19:07+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Sisi says Egypt would defend Saudi territory but rules out attack on Yemen - Reuters
+- source: Reuters
+- published_at: `2026-10-21T17:54:17+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Putin agrees to resume 3-way peace talks with Ukraine and US - Reuters
+- source: Reuters
+- published_at: `2026-10-21T21:06:57+00:00`
+- importance_score: `96`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -49,21 +73,13 @@
 - importance_score: `100`
 - confidence: `high`
 
-### geopolitical_risk_easing / risk_on
-
-- headline: Putin agrees to resume 3-way peace talks with Ukraine and US - Reuters
-- source: Reuters
-- published_at: `2026-10-21T15:44:38+00:00`
-- importance_score: `97`
-- confidence: `high`
-
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Yemen's Houthis deny launching drones towards Saudi Arabia's Medina - Reuters
 - source: Reuters
 - published_at: `2026-10-21T11:27:24+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -71,20 +87,20 @@
 - source: Reuters
 - published_at: `2026-10-21T08:46:50+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### inflation_hot / risk_off
-
-- headline: UK's FTSE 100 pauses as hot inflation report outweighs energy boost - Reuters
-- source: Reuters
-- published_at: `2026-10-21T10:40:09+00:00`
-- importance_score: `85`
 - confidence: `medium`
 
 ### growth_negative / risk_off
 
-- headline: Musk ordered slowdown of Starlink service used by Ukraine's military, WSJ reports - Reuters
+- headline: SpaceX gives the AI trade a shot in the arm. What it means for our stocks
+- source: CNBC
+- published_at: `2026-10-21T19:01:23+00:00`
+- importance_score: `84`
+- confidence: `high`
+
+### inflation_hot / risk_off
+
+- headline: UK's FTSE 100 ticks higher on energy boost; hot inflation report limits gains - Reuters
 - source: Reuters
-- published_at: `2026-10-20T21:09:00+00:00`
-- importance_score: `80`
+- published_at: `2026-10-21T16:28:42+00:00`
+- importance_score: `85`
 - confidence: `medium`
