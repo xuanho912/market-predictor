@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-20T23:17:41.799545+00:00`
+- generated_at: `2026-10-21T01:12:27.767885+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `3`
-- event_detection_confidence: `75`
+- major_event_count: `4`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -39,7 +39,7 @@
 - source: Reuters
 - published_at: `2026-10-20T12:53:43+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,4 +47,12 @@
 - source: CNBC
 - published_at: `2026-10-20T12:00:02+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
+
+### fed_dovish / risk_on
+
+- headline: Bank of Israel to pause rate cuts ahead of October 27 election - Reuters
+- source: Reuters
+- published_at: `2026-10-20T12:23:47+00:00`
+- importance_score: `84`
+- confidence: `medium`

@@ -10,16 +10,16 @@
     "source": "finnhub",
     "status": "failed"
   },
-  "event_detection_confidence": 75,
+  "event_detection_confidence": 73,
   "event_risk_level": "high",
-  "generated_at": "2026-10-20T23:17:41.799545+00:00",
+  "generated_at": "2026-10-21T01:12:27.767885+00:00",
   "limits": [
     "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
     "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
     "The provider never exposes API keys and never lets frontend call Finnhub directly.",
     "Economic calendar items are treated as event-risk context, not automatic directional forecasts."
   ],
-  "major_event_count": 3,
+  "major_event_count": 4,
   "major_events": [
     {
       "affected_assets": [
@@ -33,14 +33,14 @@
         "TLT"
       ],
       "confidence": "high",
-      "confidence_score": 76,
+      "confidence_score": 75,
       "detected_event_conditions": [
         "geopolitical_risk_escalation"
       ],
       "event_type": "geopolitical_risk_escalation",
       "expected_horizon": "intraday-5d",
       "expected_market_direction": "risk_off",
-      "freshness_score": 77,
+      "freshness_score": 72,
       "headline": "Most Gulf bourses in red after Houthis claim attacks on Saudi energy, airport sites - Reuters",
       "importance_score": 100,
       "narrative": "geopolitics_escalation_risk_off",
@@ -59,15 +59,15 @@
         "UUP",
         "TLT"
       ],
-      "confidence": "high",
-      "confidence_score": 75,
+      "confidence": "medium",
+      "confidence_score": 74,
       "detected_event_conditions": [
         "geopolitical_risk_escalation"
       ],
       "event_type": "geopolitical_risk_escalation",
       "expected_horizon": "intraday-5d",
       "expected_market_direction": "risk_off",
-      "freshness_score": 75,
+      "freshness_score": 70,
       "headline": "Death toll from Houthi attack on Yemen training camp rises to 73 - Reuters",
       "importance_score": 100,
       "narrative": "geopolitics_escalation_risk_off",
@@ -86,21 +86,44 @@
         "UUP",
         "TLT"
       ],
-      "confidence": "high",
-      "confidence_score": 75,
+      "confidence": "medium",
+      "confidence_score": 74,
       "detected_event_conditions": [
         "geopolitical_risk_escalation"
       ],
       "event_type": "geopolitical_risk_escalation",
       "expected_horizon": "intraday-5d",
       "expected_market_direction": "risk_off",
-      "freshness_score": 73,
+      "freshness_score": 68,
       "headline": "Draymond Green says he's 'not Steph Curry,' wants to play another year even if he leaves Golden State Warriors",
       "importance_score": 100,
       "narrative": "geopolitics_escalation_risk_off",
       "provider": "finnhub",
       "published_at": "2026-10-20T12:00:02+00:00",
       "source": "CNBC"
+    },
+    {
+      "affected_assets": [
+        "SPY",
+        "QQQ",
+        "IWM",
+        "DIA",
+        "TLT",
+        "UUP"
+      ],
+      "confidence": "medium",
+      "confidence_score": 70,
+      "detected_event_conditions": [],
+      "event_type": "fed_dovish",
+      "expected_horizon": "1d-20d",
+      "expected_market_direction": "risk_on",
+      "freshness_score": 69,
+      "headline": "Bank of Israel to pause rate cuts ahead of October 27 election - Reuters",
+      "importance_score": 84,
+      "narrative": "fed_cut_hopes",
+      "provider": "finnhub",
+      "published_at": "2026-10-20T12:23:47+00:00",
+      "source": "Reuters"
     }
   ],
   "market_narrative": {
@@ -113,7 +136,18 @@
       "QQQ",
       "SPY"
     ],
-    "conflicting_headlines": [],
+    "conflicting_headlines": [
+      {
+        "confidence": "medium",
+        "detected_event_conditions": [],
+        "event_type": "fed_dovish",
+        "expected_market_direction": "risk_on",
+        "headline": "Bank of Israel to pause rate cuts ahead of October 27 election - Reuters",
+        "importance_score": 84,
+        "published_at": "2026-10-20T12:23:47+00:00",
+        "source": "Reuters"
+      }
+    ],
     "detected_event_conditions": [
       "geopolitical_risk_escalation"
     ],
@@ -135,7 +169,7 @@
         "source": "Reuters"
       },
       {
-        "confidence": "high",
+        "confidence": "medium",
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
@@ -147,7 +181,7 @@
         "source": "Reuters"
       },
       {
-        "confidence": "high",
+        "confidence": "medium",
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
@@ -166,14 +200,14 @@
     "direction": "supports_risk_expansion",
     "event_risk_level": "high",
     "macro_event_risk_flag": false,
-    "major_event_count": 3,
+    "major_event_count": 4,
     "not_a_trading_signal": true,
     "price_reaction_confirmed": false,
     "symbols": {
       "DIA": {
-        "after_primary_probability": 0.35,
+        "after_primary_probability": 0.3161,
         "after_primary_scenario": "bearish_path",
-        "before_primary_probability": 0.3238,
+        "before_primary_probability": 0.2887,
         "before_primary_scenario": "bearish_path",
         "confirmation_delta": -5.0,
         "impact": "text_support_unconfirmed",
@@ -197,15 +231,15 @@
           "risk_expansion_predictor": 0.025,
           "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": 0.0262,
+        "primary_probability_delta": 0.0274,
         "primary_scenario_changed": false,
         "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
       },
       "IWM": {
-        "after_primary_probability": 0.4909,
+        "after_primary_probability": 0.4318,
         "after_primary_scenario": "bearish_path",
-        "before_primary_probability": 0.4696,
+        "before_primary_probability": 0.4085,
         "before_primary_scenario": "bearish_path",
         "confirmation_delta": -5.0,
         "impact": "text_support_unconfirmed",
@@ -229,15 +263,15 @@
           "risk_expansion_predictor": 0.025,
           "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": 0.0213,
+        "primary_probability_delta": 0.0233,
         "primary_scenario_changed": false,
         "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
       },
       "QQQ": {
-        "after_primary_probability": 0.4423,
+        "after_primary_probability": 0.3993,
         "after_primary_scenario": "bearish_path",
-        "before_primary_probability": 0.4193,
+        "before_primary_probability": 0.3748,
         "before_primary_scenario": "bearish_path",
         "confirmation_delta": -5.0,
         "impact": "text_support_unconfirmed",
@@ -261,15 +295,15 @@
           "risk_expansion_predictor": 0.025,
           "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": 0.023,
+        "primary_probability_delta": 0.0245,
         "primary_scenario_changed": false,
         "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
       },
       "SPY": {
-        "after_primary_probability": 0.3607,
+        "after_primary_probability": 0.332,
         "after_primary_scenario": "bearish_path",
-        "before_primary_probability": 0.3348,
+        "before_primary_probability": 0.3051,
         "before_primary_scenario": "bearish_path",
         "confirmation_delta": -5.0,
         "impact": "text_support_unconfirmed",
@@ -293,7 +327,7 @@
           "risk_expansion_predictor": 0.025,
           "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": 0.0259,
+        "primary_probability_delta": 0.0269,
         "primary_scenario_changed": false,
         "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
@@ -305,7 +339,7 @@
   "price_reaction_confirmation": {
     "asset_reaction_summary": {
       "avg_equity_1d_return": 0.0074,
-      "avg_equity_futures_1d_return": 0.0099,
+      "avg_equity_futures_1d_return": 0.0106,
       "confirmed_checks": [
         "HYG/LQD 走弱"
       ],
@@ -321,7 +355,7 @@
         "美元走强"
       ],
       "hyg_lqd_1d_relative_return": -0.0033,
-      "oil_proxy_1d_return": -0.0273,
+      "oil_proxy_1d_return": -0.0258,
       "oil_proxy_symbols_used": [
         "USO",
         "CL=F"
