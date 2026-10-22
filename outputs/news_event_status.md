@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-21T23:36:04.130811+00:00`
+- generated_at: `2026-10-22T00:27:10.500803+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `10`
@@ -29,7 +29,7 @@
 
 - headline: EXCLUSIVE: US orders diplomats to depart Saudi Arabia amid Houthi strikes - Reuters
 - source: Reuters
-- published_at: `2026-10-21T21:19:07+00:00`
+- published_at: `2026-10-21T23:12:29+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -95,7 +95,7 @@
 - source: CNBC
 - published_at: `2026-10-21T19:01:23+00:00`
 - importance_score: `84`
-- confidence: `high`
+- confidence: `medium`
 
 ### inflation_hot / risk_off
 

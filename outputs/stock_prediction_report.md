@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-10-21T23:36:15.918059+00:00`
+Generated at: `2026-10-22T00:27:22.318805+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -25,12 +25,12 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `25.3%`
 - secondary: `stock_downside_continuation` / `19.3%`
 - risk: `stock_event_risk` / `14.2%`
-- stock_confluence_score: `44.3` / `weak`
+- stock_confluence_score: `40.7` / `weak`
 - stock_alpha_score_v1: `40.5` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `54.7%`
 - 60d_expected_return: `-0.7%`
 - risk_reward_ratio: `0.52`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `30.8`
+- strongest_alert: `Stock Failed Bounce Risk` / `WATCH` / `40.7`
 - historical_analog_support: `supportive` / samples `10`
 - validation_status: `not_yet_validated`
 
@@ -51,15 +51,15 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - status: `available`
 - current_price: `386.47`
 - market_context: `market_headwind`
-- primary: `stock_failed_bounce` / `24.2%`
-- secondary: `stock_event_risk` / `16.7%`
-- risk: `stock_downside_continuation` / `16.4%`
-- stock_confluence_score: `43.59` / `weak`
-- stock_alpha_score_v1: `13.0` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `46.3%`
-- 60d_expected_return: `-0.4%`
-- risk_reward_ratio: `0.59`
-- strongest_alert: `Relative Strength Alert` / `NO_ALERT` / `27.61`
+- primary: `stock_failed_bounce` / `25.2%`
+- secondary: `stock_downside_continuation` / `18.1%`
+- risk: `stock_event_risk` / `14.6%`
+- stock_confluence_score: `39.87` / `weak`
+- stock_alpha_score_v1: `5.5` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `43.3%`
+- 60d_expected_return: `-0.7%`
+- risk_reward_ratio: `0.54`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `31.48`
 - historical_analog_support: `conflicting` / samples `10`
 - validation_status: `not_yet_validated`
 
@@ -72,18 +72,18 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - nearest_support: `376.54`
 - nearest_resistance: `388.84`
 - bounce_target_zone: `{"conservative": 393.92, "base": 393.92, "extended": 398.77, "source": "scenario_path + atr + recent_resistance", "meaning": "概率反抽情景参考区间，不是目标价承诺。", "not_trading_instruction": true}`
-- failed_bounce_warning_zone: `{"first_warning": 380.52, "critical_warning": 345.88, "source": "risk_path + atr + recent_support", "meaning": "跌入该区间说明失败反抽风险上升。", "not_trading_instruction": true}`
+- failed_bounce_warning_zone: `{"first_warning": 380.88, "critical_warning": 345.88, "source": "risk_path + atr + recent_support", "meaning": "跌入该区间说明失败反抽风险上升。", "not_trading_instruction": true}`
 
 ### SMR
 
 - company_name: `Nuscale Power Corp`
 - status: `available`
 - current_price: `5.50`
-- market_context: `market_headwind`
+- market_context: `risk_off_pressure`
 - primary: `stock_downside_continuation` / `36.8%`
 - secondary: `stock_failed_bounce` / `19.3%`
 - risk: `stock_event_risk` / `13.1%`
-- stock_confluence_score: `40.56` / `weak`
+- stock_confluence_score: `37.38` / `weak`
 - stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `10.2%`
 - 60d_expected_return: `-4.9%`
@@ -112,12 +112,12 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `25.3%`
 - secondary: `stock_downside_continuation` / `19.1%`
 - risk: `stock_event_risk` / `13.3%`
-- stock_confluence_score: `32.75` / `weak`
+- stock_confluence_score: `31.81` / `weak`
 - stock_alpha_score_v1: `26.0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `49.9%`
 - 60d_expected_return: `-1.3%`
 - risk_reward_ratio: `0.56`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `25.43`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `27.74`
 - historical_analog_support: `conflicting` / samples `10`
 - validation_status: `not_yet_validated`
 
