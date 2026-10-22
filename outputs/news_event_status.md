@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-22T01:33:06.581826+00:00`
+- generated_at: `2026-10-22T06:10:36.527719+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `11`
-- event_detection_confidence: `75`
+- major_event_count: `13`
+- event_detection_confidence: `72`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `25`
+- confirmation_score: `50`
 
 ## Dashboard Note
 
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran's IRGC Navy says seven vessels hit, warns US of wider response - Reuters
+- source: Reuters
+- published_at: `2026-10-22T04:40:00+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -41,12 +49,12 @@
 - importance_score: `100`
 - confidence: `high`
 
-### geopolitical_risk_easing / risk_on
+### geopolitical_risk_escalation / risk_off
 
-- headline: Putin agrees to resume 3-way peace talks with Ukraine and US - Reuters
+- headline: Canadian publisher says Thelyson Orelien used AI to write award-winning book, ends relationship - Reuters
 - source: Reuters
-- published_at: `2026-10-21T22:25:11+00:00`
-- importance_score: `96`
+- published_at: `2026-10-21T18:30:40+00:00`
+- importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -55,7 +63,7 @@
 - source: Reuters
 - published_at: `2026-10-21T17:54:17+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -63,7 +71,7 @@
 - source: CNBC
 - published_at: `2026-10-21T15:27:03+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -71,13 +79,13 @@
 - source: CNBC
 - published_at: `2026-10-21T14:40:02+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Israel's election may change its leader, but not Iran war policy - Reuters
 - source: Reuters
-- published_at: `2026-10-21T13:23:03+00:00`
+- published_at: `2026-10-21T12:47:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -95,12 +103,4 @@
 - source: Reuters
 - published_at: `2026-10-21T08:46:50+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### growth_negative / risk_off
-
-- headline: SpaceX gives the AI trade a shot in the arm. What it means for our stocks
-- source: CNBC
-- published_at: `2026-10-21T19:01:23+00:00`
-- importance_score: `83`
 - confidence: `medium`

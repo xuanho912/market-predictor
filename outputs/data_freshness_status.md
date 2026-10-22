@@ -1,45 +1,48 @@
 # Data Freshness Status
 
-Generated at: `2026-10-22T01:33:16.676466+00:00`
+Generated at: `2026-10-22T06:10:46.696442+00:00`
 
 ## Summary
 
-- current_date: `2026-10-21`
-- current_time_us_eastern: `2026-10-21T21:33:16.676466-04:00`
+- current_date: `2026-10-22`
+- current_time_us_eastern: `2026-10-22T02:10:46.696442-04:00`
 - latest_market_date: `2026-10-21`
 - latest_confirmed_market_date: `2026-10-21`
 - expected_latest_trading_date: `2026-10-21`
 - is_latest_trading_day: `True`
-- latest_market_session_status: `completed_or_prior_session`
-- can_append_forecast_record: `True`
+- latest_market_session_status: `intraday_unconfirmed`
+- can_append_forecast_record: `False`
 - can_backfill_completed_outcomes: `True`
 - stale_days: `0`
-- data_freshness_status: `fresh`
+- data_freshness_status: `market_open_unconfirmed`
 - last_successful_core_market_update: `2026-10-21`
 - last_successful_update: `2026-10-21`
-- warning_message: 核心行情已更新至最新应有交易日 2026-10-21。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。
+- warning_message: 当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-10-21，最近完整收盘交易日为 2026-10-21；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。
 
 ## Affected Symbols
 
-- none
+- `SPY`
+- `QQQ`
+- `IWM`
+- `DIA`
 
 ## Provider Status
 
-- BAA_SPREAD: status=`missing`, latest_date=`None`, source=`fred`, stale=`False`, fallback=`False`, real_data=`False`
-- DFII10: status=`missing`, latest_date=`None`, source=`fred`, stale=`False`, fallback=`False`, real_data=`False`
-- DGS10: status=`missing`, latest_date=`None`, source=`fred`, stale=`False`, fallback=`False`, real_data=`False`
-- DGS2: status=`missing`, latest_date=`None`, source=`fred`, stale=`False`, fallback=`False`, real_data=`False`
-- DGS3MO: status=`missing`, latest_date=`None`, source=`fred`, stale=`False`, fallback=`False`, real_data=`False`
+- BAA_SPREAD: status=`available`, latest_date=`2026-10-20`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
+- DFII10: status=`available`, latest_date=`2026-10-20`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
+- DGS10: status=`available`, latest_date=`2026-10-20`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
+- DGS2: status=`available`, latest_date=`2026-10-20`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
+- DGS3MO: status=`available`, latest_date=`2026-10-20`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
 - DIA: status=`available`, latest_date=`2026-10-21`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- FINANCIAL_STRESS: status=`missing`, latest_date=`None`, source=`fred`, stale=`False`, fallback=`False`, real_data=`False`
+- FINANCIAL_STRESS: status=`stale`, latest_date=`2026-10-09`, source=`fred-api`, stale=`True`, fallback=`False`, real_data=`True`
 - FINNHUB_API: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
 - HYG: status=`available`, latest_date=`2026-10-21`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- HY_OAS: status=`missing`, latest_date=`None`, source=`fred`, stale=`False`, fallback=`False`, real_data=`False`
-- IG_OAS: status=`missing`, latest_date=`None`, source=`fred`, stale=`False`, fallback=`False`, real_data=`False`
+- HY_OAS: status=`available`, latest_date=`2026-10-20`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
+- IG_OAS: status=`available`, latest_date=`2026-10-20`, source=`fred-api`, stale=`False`, fallback=`False`, real_data=`True`
 - IWM: status=`available`, latest_date=`2026-10-21`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - LQD: status=`available`, latest_date=`2026-10-21`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - QQQ: status=`available`, latest_date=`2026-10-21`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- RECESSION: status=`missing`, latest_date=`None`, source=`fred`, stale=`False`, fallback=`False`, real_data=`False`
+- RECESSION: status=`stale`, latest_date=`2026-09-01`, source=`fred-api`, stale=`True`, fallback=`False`, real_data=`True`
 - RSP: status=`available`, latest_date=`2026-10-21`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - SPHB: status=`available`, latest_date=`2026-10-21`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - SPLV: status=`available`, latest_date=`2026-10-21`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
