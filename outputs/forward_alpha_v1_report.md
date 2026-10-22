@@ -11,11 +11,11 @@ Alpha v1 remains a frozen research candidate until enough post-freeze observatio
 
 ## Summary
 
-- signal count: 364
+- signal count: 368
 - pending signals: 240
-- completed signals: 124
+- completed signals: 128
 - forecast signal: true
-- latest checked date: 2026-10-21
+- latest checked date: 2026-10-22
 - data source status: real_market_data
 - signal blocked reason: n/a
 
@@ -32,39 +32,39 @@ Alpha v1 remains a frozen research candidate until enough post-freeze observatio
 
 | Horizon | Count | Average | Median | Hit rate | t-stat |
 | --- | --- | --- | --- | --- | --- |
-| 3d | 124 | -0.238% | -0.166% | 42.742% | -2.062 |
-| 5d | 124 | -0.132% | -0.282% | 45.161% | -0.746 |
-| 10d | 124 | 0.280% | 0.223% | 54.839% | 1.263 |
-| 20d | 124 | 0.752% | 1.356% | 68.548% | 3.192 |
-| 60d | 124 | 0.038% | 0.423% | 55.645% | 0.107 |
+| 3d | 128 | -0.134% | -0.142% | 44.531% | -1.084 |
+| 5d | 128 | 0.028% | -0.252% | 46.875% | 0.150 |
+| 10d | 128 | 0.437% | 0.291% | 56.250% | 1.900 |
+| 20d | 128 | 0.858% | 1.410% | 69.531% | 3.649 |
+| 60d | 128 | 0.082% | 0.543% | 56.250% | 0.234 |
 
 ## Max Adverse / Favorable Excursion
 
 - max adverse excursion: -10.819%
-- max favorable excursion: 13.189%
+- max favorable excursion: 13.677%
 
 ## Performance By Symbol
 
 | Group | 3d avg | 5d avg | 10d avg | 20d avg | 60d avg |
 | --- | --- | --- | --- | --- | --- |
-| DIA | 0.049% | 0.297% | 0.968% | 1.525% | -0.823% |
-| IWM | -0.144% | -0.002% | 0.129% | 0.573% | -4.954% |
-| QQQ | -0.746% | -0.898% | -0.839% | -0.871% | 2.697% |
-| SPY | -0.109% | 0.076% | 0.862% | 1.780% | 3.230% |
+| DIA | 0.122% | 0.432% | 1.047% | 1.570% | -0.751% |
+| IWM | -0.074% | 0.102% | 0.260% | 0.650% | -4.955% |
+| QQQ | -0.574% | -0.640% | -0.554% | -0.642% | 2.787% |
+| SPY | -0.010% | 0.221% | 0.993% | 1.855% | 3.246% |
 
 ## Performance By Regime
 
 | Group | 3d avg | 5d avg | 10d avg | 20d avg | 60d avg |
 | --- | --- | --- | --- | --- | --- |
-| liquidity_crunch | -0.445% | -0.450% | -0.355% | -0.149% | -1.129% |
-| sideways | -0.030% | 0.187% | 0.915% | 1.653% | 1.204% |
+| liquidity_crunch | -0.324% | -0.269% | -0.147% | 0.004% | -1.084% |
+| sideways | 0.056% | 0.326% | 1.020% | 1.712% | 1.247% |
 
 ## Performance By Year/Month
 
 | Month | Signals | 20d avg |
 | --- | --- | --- |
 | 2026-06 | 48 | -1.098% |
-| 2026-07 | 76 | 1.920% |
+| 2026-07 | 80 | 2.032% |
 
 ## Historical Alpha Character Check
 

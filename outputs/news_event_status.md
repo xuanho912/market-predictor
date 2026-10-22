@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-22T08:56:52.792231+00:00`
+- generated_at: `2026-10-22T17:14:05.184420+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
+- major_event_count: `11`
 - event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -27,6 +27,30 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Gulf markets fall as fresh Houthi strikes on Saudi Arabia raise regional risk - Reuters
+- source: Reuters
+- published_at: `2026-10-22T13:44:22+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: American Express brings Airbnb bookings and rewards to Amex Travel platform
+- source: CNBC
+- published_at: `2026-10-22T12:00:02+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Israeli settlers steal Palestinians' olives as attacks on harvest grow more violent - Reuters
+- source: Reuters
+- published_at: `2026-10-22T11:49:14+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: India's Mideast oil imports return to pre-war levels in September - Reuters
 - source: Reuters
 - published_at: `2026-10-22T06:02:00+00:00`
@@ -39,15 +63,15 @@
 - source: Reuters
 - published_at: `2026-10-22T04:40:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Two killed, 8 injured in attack on airport in Saudi oil city Dammam - Reuters
+- headline: Oil hits five-month high as Houthi attacks stoke supply fears - Reuters
 - source: Reuters
-- published_at: `2026-10-21T22:21:00+00:00`
+- published_at: `2026-10-22T00:46:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -73,34 +97,10 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
+### growth_positive / risk_on
 
-- headline: Salesforce goes back to the M&A well to fortify a weaker business. Why it's a smart move
+- headline: Procter & Gamble earnings beat as sales rise 4%, boosted by laundry and home products
 - source: CNBC
-- published_at: `2026-10-21T15:27:03+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: The political ad wars are still being fought over the airwaves even as digital gains share
-- source: CNBC
-- published_at: `2026-10-21T14:40:02+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Israel's election may change its leader, but not Iran war policy - Reuters
-- source: Reuters
-- published_at: `2026-10-21T12:47:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Yemen's Houthis deny launching drones towards Saudi Arabia's Medina - Reuters
-- source: Reuters
-- published_at: `2026-10-21T11:27:24+00:00`
-- importance_score: `100`
+- published_at: `2026-10-22T11:21:27+00:00`
+- importance_score: `74`
 - confidence: `medium`
