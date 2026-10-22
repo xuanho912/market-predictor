@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-22T17:14:05.184420+00:00`
+- generated_at: `2026-10-22T23:30:20.141442+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `11`
-- event_detection_confidence: `73`
+- major_event_count: `7`
+- event_detection_confidence: `72`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -55,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-10-22T06:02:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -67,33 +67,9 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil hits five-month high as Houthi attacks stoke supply fears - Reuters
+- headline: Oil prices hit five-month high as Houthi attacks stoke Middle East supply fears - Reuters
 - source: Reuters
 - published_at: `2026-10-22T00:46:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: EXCLUSIVE: US orders diplomats to depart Saudi Arabia amid Houthi strikes - Reuters
-- source: Reuters
-- published_at: `2026-10-21T18:58:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Canadian publisher says Thelyson Orelien used AI to write award-winning book, ends relationship - Reuters
-- source: Reuters
-- published_at: `2026-10-21T18:30:40+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Sisi says Egypt would defend Saudi territory but rules out attack on Yemen - Reuters
-- source: Reuters
-- published_at: `2026-10-21T17:54:17+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -102,5 +78,5 @@
 - headline: Procter & Gamble earnings beat as sales rise 4%, boosted by laundry and home products
 - source: CNBC
 - published_at: `2026-10-22T11:21:27+00:00`
-- importance_score: `74`
+- importance_score: `72`
 - confidence: `medium`
