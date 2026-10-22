@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-22T00:27:10.500803+00:00`
+- generated_at: `2026-10-22T01:22:17.376532+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `10`
-- event_detection_confidence: `76`
+- major_event_count: `11`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,10 +27,26 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Saudi civil aviation says one killed, eight injured in attack on King Fahd airport - Reuters
+- source: Reuters
+- published_at: `2026-10-21T22:21:44+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: EXCLUSIVE: US orders diplomats to depart Saudi Arabia amid Houthi strikes - Reuters
 - source: Reuters
-- published_at: `2026-10-21T23:12:29+00:00`
+- published_at: `2026-10-21T18:58:00+00:00`
 - importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Putin agrees to resume 3-way peace talks with Ukraine and US - Reuters
+- source: Reuters
+- published_at: `2026-10-21T22:25:11+00:00`
+- importance_score: `96`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -39,14 +55,6 @@
 - source: Reuters
 - published_at: `2026-10-21T17:54:17+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Putin agrees to resume 3-way peace talks with Ukraine and US - Reuters
-- source: Reuters
-- published_at: `2026-10-21T21:06:57+00:00`
-- importance_score: `96`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -71,7 +79,7 @@
 - source: Reuters
 - published_at: `2026-10-21T13:23:03+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -95,12 +103,4 @@
 - source: CNBC
 - published_at: `2026-10-21T19:01:23+00:00`
 - importance_score: `84`
-- confidence: `medium`
-
-### inflation_hot / risk_off
-
-- headline: UK's FTSE 100 ticks higher on energy boost; hot inflation report limits gains - Reuters
-- source: Reuters
-- published_at: `2026-10-21T16:28:42+00:00`
-- importance_score: `85`
 - confidence: `medium`
