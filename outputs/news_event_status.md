@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-22T01:22:17.376532+00:00`
+- generated_at: `2026-10-22T01:33:06.581826+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `11`
@@ -102,5 +102,5 @@
 - headline: SpaceX gives the AI trade a shot in the arm. What it means for our stocks
 - source: CNBC
 - published_at: `2026-10-21T19:01:23+00:00`
-- importance_score: `84`
+- importance_score: `83`
 - confidence: `medium`
