@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-22T23:30:20.141442+00:00`
+- generated_at: `2026-10-23T00:21:33.315976+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
+- major_event_count: `8`
 - event_detection_confidence: `72`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -39,7 +39,7 @@
 - source: CNBC
 - published_at: `2026-10-22T12:00:02+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +47,15 @@
 - source: Reuters
 - published_at: `2026-10-22T11:49:14+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: How would a Netanyahu election loss change Israel's policies toward the Palestinians? - Reuters
+- source: Reuters
+- published_at: `2026-10-22T11:31:44+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
