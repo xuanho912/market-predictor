@@ -1,20 +1,20 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-23T06:05:18.962883+00:00`
+- generated_at: `2026-10-23T08:52:45.290020+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
-- event_detection_confidence: `69`
+- major_event_count: `8`
+- event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
-- price_reaction_confirmed: `True`
-- confirmation_score: `75`
+- price_reaction_confirmed: `False`
+- confirmation_score: `50`
 
 ## Dashboard Note
 
-当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，已被价格反应初步确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
+当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，尚未被价格反应充分确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
 
 ## Economic Calendar Risk
 
@@ -27,11 +27,19 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil little changed as supply concern lingers amid Houthi attacks on Saudi Arabia - Reuters
+- headline: Israel military: two suspected attackers killed after shooting attack near Judea junction - Reuters
 - source: Reuters
-- published_at: `2026-10-23T01:04:00+00:00`
+- published_at: `2026-10-23T05:01:00+00:00`
 - importance_score: `100`
 - confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Putin agrees to resume 3-way peace talks with Ukraine and US - Reuters
+- source: Reuters
+- published_at: `2026-10-22T20:06:43+00:00`
+- importance_score: `94`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -71,22 +79,6 @@
 - source: Reuters
 - published_at: `2026-10-22T06:02:00+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran's IRGC Navy says seven vessels hit, warns US of wider response - Reuters
-- source: Reuters
-- published_at: `2026-10-22T04:40:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### fed_hawkish / risk_off
-
-- headline: RBI minutes reveal split over rate hikes, with inflation risks mounting
-- source: Bloomberg
-- published_at: `2026-10-22T04:22:38+00:00`
-- importance_score: `83`
 - confidence: `medium`
 
 ### growth_positive / risk_on
