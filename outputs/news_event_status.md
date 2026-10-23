@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-23T17:12:06.778783+00:00`
+- generated_at: `2026-10-23T23:18:02.966964+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
-- event_detection_confidence: `75`
+- major_event_count: `9`
+- event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,25 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Ship attacks in Strait of Hormuz hit record high in October - Reuters
+- headline: Seven killed as gunmen open fire at church in Jordan in 'terrorist' attack, authorities say - Reuters
 - source: Reuters
-- published_at: `2026-10-23T14:59:43+00:00`
+- published_at: `2026-10-23T21:43:02+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran has detailed plans to hit Gulf undersea cables if war resumes, officials say - Reuters
+- source: Reuters
+- published_at: `2026-10-23T20:04:09+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: CrowdStrike CEO's alarming prediction — plus, the sell-off spreads beyond tech
+- source: CNBC
+- published_at: `2026-10-23T18:49:56+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -37,7 +53,31 @@
 
 - headline: EXCLUSIVE: Saudi missile plant expansion may produce more powerful missiles, study says - Reuters
 - source: Reuters
-- published_at: `2026-10-23T10:27:13+00:00`
+- published_at: `2026-10-23T17:08:44+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Turkey says renewed attack on Iran would expand conflict, diplomacy only way - Reuters
+- source: Reuters
+- published_at: `2026-10-23T16:09:37+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Trump weighs quick end to Iran war against letting conflict ‘wither’ - Reuters
+- source: Reuters
+- published_at: `2026-10-23T15:53:34+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Ship attacks in Strait of Hormuz hit record high in October - Reuters
+- source: Reuters
+- published_at: `2026-10-23T14:59:43+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -46,23 +86,7 @@
 - headline: Russia and Ukraine trade fresh strikes despite renewed push for U.S.-brokered peace talks
 - source: CNBC
 - published_at: `2026-10-23T09:28:29+00:00`
-- importance_score: `98`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Israel military: two suspected attackers killed after shooting attack near Judea junction - Reuters
-- source: Reuters
-- published_at: `2026-10-23T05:01:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Brent crude hits more than five-month high on Houthi-Saudi attacks, UAE oil spill - Reuters
-- source: Reuters
-- published_at: `2026-10-23T01:04:00+00:00`
-- importance_score: `100`
+- importance_score: `97`
 - confidence: `medium`
 
 ### fed_hawkish / risk_off
@@ -70,13 +94,5 @@
 - headline: Eisenkot offers hawkish alternative to Netanyahu for Israeli PM - Reuters
 - source: Reuters
 - published_at: `2026-10-23T11:25:44+00:00`
-- importance_score: `88`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump invokes Cold War-era Defense Production Act for oil production, refining - Reuters
-- source: Reuters
-- published_at: `2026-10-22T21:14:00+00:00`
-- importance_score: `100`
+- importance_score: `86`
 - confidence: `medium`
