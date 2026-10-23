@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-23T23:18:02.966964+00:00`
+- generated_at: `2026-10-23T23:59:42.118538+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `9`
@@ -86,7 +86,7 @@
 - headline: Russia and Ukraine trade fresh strikes despite renewed push for U.S.-brokered peace talks
 - source: CNBC
 - published_at: `2026-10-23T09:28:29+00:00`
-- importance_score: `97`
+- importance_score: `96`
 - confidence: `medium`
 
 ### fed_hawkish / risk_off
