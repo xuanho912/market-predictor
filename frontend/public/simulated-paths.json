@@ -5,10 +5,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-10-22",
-    "current_time_us_eastern": "2026-10-22T20:21:43.550747-04:00",
+    "current_time_us_eastern": "2026-10-22T21:16:55.227095-04:00",
     "data_freshness_status": "fresh",
     "expected_latest_trading_date": "2026-10-22",
-    "generated_at": "2026-10-23T00:21:43.550747+00:00",
+    "generated_at": "2026-10-23T01:16:55.227095+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -1049,13 +1049,13 @@
     "fred_successful_series": [
       "IG_OAS",
       "HY_OAS",
-      "DGS10",
-      "DGS3MO",
-      "BAA_SPREAD",
       "DGS2",
+      "BAA_SPREAD",
+      "DGS3MO",
+      "DGS10",
       "RECESSION",
-      "DFII10",
-      "FINANCIAL_STRESS"
+      "FINANCIAL_STRESS",
+      "DFII10"
     ],
     "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-10-22。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
     "gamma_available": false,
@@ -1086,10 +1086,10 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 72,
+      "event_detection_confidence": 71,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-10-23T00:21:33.315976+00:00",
+      "last_update": "2026-10-23T01:16:45.165466+00:00",
       "major_event_count": 8,
       "missing_reason": null,
       "news_direction": "risk_off",
@@ -1417,7 +1417,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": -0.0098,
-        "avg_equity_futures_1d_return": -0.011,
+        "avg_equity_futures_1d_return": -0.0093,
         "confirmed_checks": [
           "股票ETF或股指期货下跌",
           "VIX 上升",
@@ -1433,7 +1433,7 @@
           "美元走强"
         ],
         "hyg_lqd_1d_relative_return": -0.0088,
-        "oil_proxy_1d_return": 0.02,
+        "oil_proxy_1d_return": 0.0195,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -3721,7 +3721,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 75,
+            "freshness_score": 72,
             "headline": "Gulf markets fall as fresh Houthi strikes on Saudi Arabia raise regional risk - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3748,7 +3748,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 68,
             "headline": "American Express brings Airbnb bookings and rewards to Amex Travel platform",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3775,7 +3775,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 68,
             "headline": "Israeli settlers steal Palestinians' olives as attacks on harvest grow more violent - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3795,46 +3795,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 69,
+            "freshness_score": 67,
             "headline": "How would a Netanyahu election loss change Israel's policies toward the Palestinians? - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-10-22T11:31:44+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 71,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 56,
-            "headline": "India's Mideast oil imports return to pre-war levels in September - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-22T06:02:00+00:00",
             "source": "Reuters"
           },
           {
@@ -3856,7 +3829,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 53,
+            "freshness_score": 54,
+            "headline": "India's Mideast oil imports return to pre-war levels in September - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-22T06:02:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 69,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 51,
             "headline": "Iran's IRGC Navy says seven vessels hit, warns US of wider response - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4009,7 +4009,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0098,
-            "avg_equity_futures_1d_return": -0.011,
+            "avg_equity_futures_1d_return": -0.0093,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -4025,7 +4025,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0088,
-            "oil_proxy_1d_return": 0.02,
+            "oil_proxy_1d_return": 0.0195,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -7960,7 +7960,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 75,
+            "freshness_score": 72,
             "headline": "Gulf markets fall as fresh Houthi strikes on Saudi Arabia raise regional risk - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7987,7 +7987,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 68,
             "headline": "American Express brings Airbnb bookings and rewards to Amex Travel platform",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -8014,7 +8014,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 68,
             "headline": "Israeli settlers steal Palestinians' olives as attacks on harvest grow more violent - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -8034,46 +8034,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 69,
+            "freshness_score": 67,
             "headline": "How would a Netanyahu election loss change Israel's policies toward the Palestinians? - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-10-22T11:31:44+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 71,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 56,
-            "headline": "India's Mideast oil imports return to pre-war levels in September - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-22T06:02:00+00:00",
             "source": "Reuters"
           },
           {
@@ -8095,7 +8068,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 53,
+            "freshness_score": 54,
+            "headline": "India's Mideast oil imports return to pre-war levels in September - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-22T06:02:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 69,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 51,
             "headline": "Iran's IRGC Navy says seven vessels hit, warns US of wider response - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -8248,7 +8248,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0098,
-            "avg_equity_futures_1d_return": -0.011,
+            "avg_equity_futures_1d_return": -0.0093,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -8264,7 +8264,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0088,
-            "oil_proxy_1d_return": 0.02,
+            "oil_proxy_1d_return": 0.0195,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -12237,7 +12237,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 75,
+            "freshness_score": 72,
             "headline": "Gulf markets fall as fresh Houthi strikes on Saudi Arabia raise regional risk - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12264,7 +12264,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 68,
             "headline": "American Express brings Airbnb bookings and rewards to Amex Travel platform",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12291,7 +12291,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 68,
             "headline": "Israeli settlers steal Palestinians' olives as attacks on harvest grow more violent - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12311,46 +12311,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 69,
+            "freshness_score": 67,
             "headline": "How would a Netanyahu election loss change Israel's policies toward the Palestinians? - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-10-22T11:31:44+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 71,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 56,
-            "headline": "India's Mideast oil imports return to pre-war levels in September - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-22T06:02:00+00:00",
             "source": "Reuters"
           },
           {
@@ -12372,7 +12345,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 53,
+            "freshness_score": 54,
+            "headline": "India's Mideast oil imports return to pre-war levels in September - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-22T06:02:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 69,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 51,
             "headline": "Iran's IRGC Navy says seven vessels hit, warns US of wider response - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12525,7 +12525,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0098,
-            "avg_equity_futures_1d_return": -0.011,
+            "avg_equity_futures_1d_return": -0.0093,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -12541,7 +12541,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0088,
-            "oil_proxy_1d_return": 0.02,
+            "oil_proxy_1d_return": 0.0195,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -16465,7 +16465,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 75,
+            "freshness_score": 72,
             "headline": "Gulf markets fall as fresh Houthi strikes on Saudi Arabia raise regional risk - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16492,7 +16492,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 68,
             "headline": "American Express brings Airbnb bookings and rewards to Amex Travel platform",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16519,7 +16519,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 68,
             "headline": "Israeli settlers steal Palestinians' olives as attacks on harvest grow more violent - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16539,46 +16539,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 69,
+            "freshness_score": 67,
             "headline": "How would a Netanyahu election loss change Israel's policies toward the Palestinians? - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-10-22T11:31:44+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 71,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 56,
-            "headline": "India's Mideast oil imports return to pre-war levels in September - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-22T06:02:00+00:00",
             "source": "Reuters"
           },
           {
@@ -16600,7 +16573,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 53,
+            "freshness_score": 54,
+            "headline": "India's Mideast oil imports return to pre-war levels in September - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-22T06:02:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 69,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 51,
             "headline": "Iran's IRGC Navy says seven vessels hit, warns US of wider response - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16753,7 +16753,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0098,
-            "avg_equity_futures_1d_return": -0.011,
+            "avg_equity_futures_1d_return": -0.0093,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -16769,7 +16769,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0088,
-            "oil_proxy_1d_return": 0.02,
+            "oil_proxy_1d_return": 0.0195,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
