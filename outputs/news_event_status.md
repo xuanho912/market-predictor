@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-23T01:28:27.037035+00:00`
+- generated_at: `2026-10-23T06:05:18.962883+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
-- event_detection_confidence: `71`
+- major_event_count: `9`
+- event_detection_confidence: `69`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,11 +27,19 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Oil little changed as supply concern lingers amid Houthi attacks on Saudi Arabia - Reuters
+- source: Reuters
+- published_at: `2026-10-23T01:04:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Gulf markets fall as fresh Houthi strikes on Saudi Arabia raise regional risk - Reuters
 - source: Reuters
 - published_at: `2026-10-22T13:44:22+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -73,12 +81,12 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
+### fed_hawkish / risk_off
 
-- headline: Oil prices hit five-month high as Houthi attacks stoke Middle East supply fears - Reuters
-- source: Reuters
-- published_at: `2026-10-22T00:46:00+00:00`
-- importance_score: `100`
+- headline: RBI minutes reveal split over rate hikes, with inflation risks mounting
+- source: Bloomberg
+- published_at: `2026-10-22T04:22:38+00:00`
+- importance_score: `83`
 - confidence: `medium`
 
 ### growth_positive / risk_on
@@ -86,5 +94,5 @@
 - headline: Procter & Gamble earnings beat as sales rise 4%, boosted by laundry and home products
 - source: CNBC
 - published_at: `2026-10-22T11:21:27+00:00`
-- importance_score: `72`
+- importance_score: `70`
 - confidence: `medium`
