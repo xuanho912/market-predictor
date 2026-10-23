@@ -1,20 +1,20 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-23T08:52:45.290020+00:00`
+- generated_at: `2026-10-23T17:12:06.778783+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
-- event_detection_confidence: `70`
+- major_event_count: `7`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
-- price_reaction_confirmed: `False`
-- confirmation_score: `50`
+- price_reaction_confirmed: `True`
+- confirmation_score: `75`
 
 ## Dashboard Note
 
-当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，尚未被价格反应充分确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
+当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，已被价格反应初步确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
 
 ## Economic Calendar Risk
 
@@ -27,64 +27,56 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Israel military: two suspected attackers killed after shooting attack near Judea junction - Reuters
+- headline: Ship attacks in Strait of Hormuz hit record high in October - Reuters
 - source: Reuters
-- published_at: `2026-10-23T05:01:00+00:00`
+- published_at: `2026-10-23T14:59:43+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: EXCLUSIVE: Saudi missile plant expansion may produce more powerful missiles, study says - Reuters
+- source: Reuters
+- published_at: `2026-10-23T10:27:13+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: Putin agrees to resume 3-way peace talks with Ukraine and US - Reuters
-- source: Reuters
-- published_at: `2026-10-22T20:06:43+00:00`
-- importance_score: `94`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Gulf markets fall as fresh Houthi strikes on Saudi Arabia raise regional risk - Reuters
-- source: Reuters
-- published_at: `2026-10-22T13:44:22+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: American Express brings Airbnb bookings and rewards to Amex Travel platform
+- headline: Russia and Ukraine trade fresh strikes despite renewed push for U.S.-brokered peace talks
 - source: CNBC
-- published_at: `2026-10-22T12:00:02+00:00`
+- published_at: `2026-10-23T09:28:29+00:00`
+- importance_score: `98`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Israel military: two suspected attackers killed after shooting attack near Judea junction - Reuters
+- source: Reuters
+- published_at: `2026-10-23T05:01:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Israeli settlers steal Palestinians' olives as attacks on harvest grow more violent - Reuters
+- headline: Brent crude hits more than five-month high on Houthi-Saudi attacks, UAE oil spill - Reuters
 - source: Reuters
-- published_at: `2026-10-22T11:49:14+00:00`
+- published_at: `2026-10-23T01:04:00+00:00`
 - importance_score: `100`
+- confidence: `medium`
+
+### fed_hawkish / risk_off
+
+- headline: Eisenkot offers hawkish alternative to Netanyahu for Israeli PM - Reuters
+- source: Reuters
+- published_at: `2026-10-23T11:25:44+00:00`
+- importance_score: `88`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: How would a Netanyahu election loss change Israel's policies toward the Palestinians? - Reuters
+- headline: Trump invokes Cold War-era Defense Production Act for oil production, refining - Reuters
 - source: Reuters
-- published_at: `2026-10-22T11:31:44+00:00`
+- published_at: `2026-10-22T21:14:00+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: India's Mideast oil imports return to pre-war levels in September - Reuters
-- source: Reuters
-- published_at: `2026-10-22T06:02:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### growth_positive / risk_on
-
-- headline: Procter & Gamble earnings beat as sales rise 4%, boosted by laundry and home products
-- source: CNBC
-- published_at: `2026-10-22T11:21:27+00:00`
-- importance_score: `70`
 - confidence: `medium`
