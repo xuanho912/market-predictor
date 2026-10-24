@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-23T23:59:42.118538+00:00`
+- generated_at: `2026-10-24T01:22:25.634990+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
-- event_detection_confidence: `77`
+- major_event_count: `10`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -95,4 +95,12 @@
 - source: Reuters
 - published_at: `2026-10-23T11:25:44+00:00`
 - importance_score: `86`
+- confidence: `medium`
+
+### market_microstructure_event / mixed
+
+- headline: Turkey passes fund liquidation law as many savers still await access to money - Reuters
+- source: Reuters
+- published_at: `2026-10-23T07:34:36+00:00`
+- importance_score: `69`
 - confidence: `medium`
