@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-24T01:33:14.488195+00:00`
+- generated_at: `2026-10-24T05:59:09.996103+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `10`
-- event_detection_confidence: `75`
+- major_event_count: `9`
+- event_detection_confidence: `72`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,14 +24,6 @@
 - high_importance_event_count: `0`
 
 ## Major Events
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Seven killed as gunmen open fire at church in Jordan in 'terrorist' attack, authorities say - Reuters
-- source: Reuters
-- published_at: `2026-10-23T21:43:02+00:00`
-- importance_score: `100`
-- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,7 +47,7 @@
 - source: Reuters
 - published_at: `2026-10-23T17:08:44+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -63,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-10-23T16:09:37+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -71,7 +63,7 @@
 - source: Reuters
 - published_at: `2026-10-23T15:53:34+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -79,14 +71,22 @@
 - source: Reuters
 - published_at: `2026-10-23T14:59:43+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Seven killed as gunmen open fire at church in Jordan in 'terrorist' attack, authorities say - Reuters
+- source: Reuters
+- published_at: `2026-10-23T12:04:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_easing / risk_on
 
 - headline: Russia and Ukraine trade fresh strikes despite renewed push for U.S.-brokered peace talks
 - source: CNBC
 - published_at: `2026-10-23T09:28:29+00:00`
-- importance_score: `96`
+- importance_score: `95`
 - confidence: `medium`
 
 ### fed_hawkish / risk_off
@@ -94,13 +94,5 @@
 - headline: Eisenkot offers hawkish alternative to Netanyahu for Israeli PM - Reuters
 - source: Reuters
 - published_at: `2026-10-23T11:25:44+00:00`
-- importance_score: `86`
-- confidence: `medium`
-
-### market_microstructure_event / mixed
-
-- headline: Turkey passes fund liquidation law as many savers still await access to money - Reuters
-- source: Reuters
-- published_at: `2026-10-23T07:34:36+00:00`
-- importance_score: `69`
+- importance_score: `84`
 - confidence: `medium`
