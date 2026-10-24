@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-24T05:59:09.996103+00:00`
+- generated_at: `2026-10-24T08:26:18.874594+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `9`
-- event_detection_confidence: `72`
+- event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -31,7 +31,7 @@
 - source: Reuters
 - published_at: `2026-10-23T20:04:09+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -39,7 +39,7 @@
 - source: CNBC
 - published_at: `2026-10-23T18:49:56+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -86,7 +86,7 @@
 - headline: Russia and Ukraine trade fresh strikes despite renewed push for U.S.-brokered peace talks
 - source: CNBC
 - published_at: `2026-10-23T09:28:29+00:00`
-- importance_score: `95`
+- importance_score: `94`
 - confidence: `medium`
 
 ### fed_hawkish / risk_off
