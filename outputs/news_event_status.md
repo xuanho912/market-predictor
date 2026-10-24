@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-24T08:26:18.874594+00:00`
+- generated_at: `2026-10-24T16:00:05.628754+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `9`
@@ -24,6 +24,30 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Jordan church attack survivor says assailant pointed handgun at him - Reuters
+- source: Reuters
+- published_at: `2026-10-24T14:10:20+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Saudi-led coalition says it intercepted Houthi ballistic missiles targeting Saudi cities - Reuters
+- source: Reuters
+- published_at: `2026-10-24T10:07:59+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Jordan tightens security after deadly church attack kills eight - Reuters
+- source: Reuters
+- published_at: `2026-10-24T06:17:00+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -71,28 +95,4 @@
 - source: Reuters
 - published_at: `2026-10-23T14:59:43+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Seven killed as gunmen open fire at church in Jordan in 'terrorist' attack, authorities say - Reuters
-- source: Reuters
-- published_at: `2026-10-23T12:04:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Russia and Ukraine trade fresh strikes despite renewed push for U.S.-brokered peace talks
-- source: CNBC
-- published_at: `2026-10-23T09:28:29+00:00`
-- importance_score: `94`
-- confidence: `medium`
-
-### fed_hawkish / risk_off
-
-- headline: Eisenkot offers hawkish alternative to Netanyahu for Israeli PM - Reuters
-- source: Reuters
-- published_at: `2026-10-23T11:25:44+00:00`
-- importance_score: `84`
 - confidence: `medium`
