@@ -12,7 +12,7 @@
   },
   "event_detection_confidence": 75,
   "event_risk_level": "high",
-  "generated_at": "2026-10-24T01:22:25.634990+00:00",
+  "generated_at": "2026-10-24T01:33:14.488195+00:00",
   "limits": [
     "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
     "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
@@ -148,7 +148,7 @@
       "event_type": "geopolitical_risk_escalation",
       "expected_horizon": "intraday-5d",
       "expected_market_direction": "risk_off",
-      "freshness_score": 78,
+      "freshness_score": 77,
       "headline": "Turkey says renewed attack on Iran would expand conflict, diplomacy only way - Reuters",
       "importance_score": 100,
       "narrative": "geopolitics_escalation_risk_off",
@@ -233,7 +233,7 @@
       "event_type": "geopolitical_risk_easing",
       "expected_horizon": "1d-5d",
       "expected_market_direction": "risk_on",
-      "freshness_score": 62,
+      "freshness_score": 61,
       "headline": "Russia and Ukraine trade fresh strikes despite renewed push for U.S.-brokered peace talks",
       "importance_score": 96,
       "narrative": "geopolitics_easing_risk_on",
@@ -256,7 +256,7 @@
       "event_type": "fed_hawkish",
       "expected_horizon": "1d-20d",
       "expected_market_direction": "risk_off",
-      "freshness_score": 67,
+      "freshness_score": 66,
       "headline": "Eisenkot offers hawkish alternative to Netanyahu for Israeli PM - Reuters",
       "importance_score": 86,
       "narrative": "fed_hawkish_risk",
@@ -414,9 +414,9 @@
     "price_reaction_confirmed": true,
     "symbols": {
       "DIA": {
-        "after_primary_probability": 0.3351,
-        "after_primary_scenario": "bearish_path",
-        "before_primary_probability": 0.294,
+        "after_primary_probability": 0.3117,
+        "after_primary_scenario": "bounce_path",
+        "before_primary_probability": 0.3413,
         "before_primary_scenario": "bounce_path",
         "confirmation_delta": -6.5,
         "impact": "conflicts_primary",
@@ -444,51 +444,51 @@
           "risk_expansion_predictor": 0.0348,
           "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": 0.0411,
-        "primary_scenario_changed": true,
-        "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay",
-        "validation_type": "daily"
-      },
-      "IWM": {
-        "after_primary_probability": 0.377,
-        "after_primary_scenario": "bearish_path",
-        "before_primary_probability": 0.3366,
-        "before_primary_scenario": "bearish_path",
-        "confirmation_delta": -6.5,
-        "impact": "supports_primary",
-        "not_a_trading_signal": true,
-        "overlay_applied": true,
-        "path_overlay": {
-          "applied": true,
-          "direction": "supports_risk_expansion",
-          "not_a_trading_signal": true,
-          "reason": "Confirmed major event adjusted only the 1d/3d probability path; historical records are not rewritten.",
-          "shock_return_1d": -0.008,
-          "shock_return_3d": -0.0036,
-          "source": "news_event_price_reaction_overlay",
-          "validation_type": "daily"
-        },
-        "path_weight_deltas": {
-          "analog_path_weight": 0.0,
-          "base_path_weight": 0.0,
-          "bearish_path_weight": 0.0535,
-          "bounce_path_weight": -0.0187
-        },
-        "predictor_deltas": {
-          "bounce_predictor": -0.0161,
-          "downside_continuation_predictor": 0.0294,
-          "risk_expansion_predictor": 0.0348,
-          "trend_reversal_predictor": 0.0
-        },
-        "primary_probability_delta": 0.0404,
+        "primary_probability_delta": -0.0296,
         "primary_scenario_changed": false,
         "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
       },
-      "QQQ": {
-        "after_primary_probability": 0.3808,
+      "IWM": {
+        "after_primary_probability": 0.3002,
         "after_primary_scenario": "bearish_path",
-        "before_primary_probability": 0.3405,
+        "before_primary_probability": 0.3016,
+        "before_primary_scenario": "bounce_path",
+        "confirmation_delta": -6.5,
+        "impact": "conflicts_primary",
+        "not_a_trading_signal": true,
+        "overlay_applied": true,
+        "path_overlay": {
+          "applied": true,
+          "direction": "supports_risk_expansion",
+          "not_a_trading_signal": true,
+          "reason": "Confirmed major event adjusted only the 1d/3d probability path; historical records are not rewritten.",
+          "shock_return_1d": -0.008,
+          "shock_return_3d": -0.0036,
+          "source": "news_event_price_reaction_overlay",
+          "validation_type": "daily"
+        },
+        "path_weight_deltas": {
+          "analog_path_weight": 0.0,
+          "base_path_weight": 0.0,
+          "bearish_path_weight": 0.0535,
+          "bounce_path_weight": -0.0187
+        },
+        "predictor_deltas": {
+          "bounce_predictor": -0.0161,
+          "downside_continuation_predictor": 0.0294,
+          "risk_expansion_predictor": 0.0348,
+          "trend_reversal_predictor": 0.0
+        },
+        "primary_probability_delta": -0.0014,
+        "primary_scenario_changed": true,
+        "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay",
+        "validation_type": "daily"
+      },
+      "QQQ": {
+        "after_primary_probability": 0.3907,
+        "after_primary_scenario": "bearish_path",
+        "before_primary_probability": 0.3507,
         "before_primary_scenario": "bearish_path",
         "confirmation_delta": -6.5,
         "impact": "supports_primary",
@@ -516,18 +516,18 @@
           "risk_expansion_predictor": 0.0348,
           "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": 0.0403,
+        "primary_probability_delta": 0.04,
         "primary_scenario_changed": false,
         "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
       },
       "SPY": {
-        "after_primary_probability": 0.3574,
+        "after_primary_probability": 0.3061,
         "after_primary_scenario": "bearish_path",
-        "before_primary_probability": 0.3163,
-        "before_primary_scenario": "bearish_path",
+        "before_primary_probability": 0.3001,
+        "before_primary_scenario": "bounce_path",
         "confirmation_delta": -6.5,
-        "impact": "supports_primary",
+        "impact": "conflicts_primary",
         "not_a_trading_signal": true,
         "overlay_applied": true,
         "path_overlay": {
@@ -552,8 +552,8 @@
           "risk_expansion_predictor": 0.0348,
           "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": 0.0411,
-        "primary_scenario_changed": false,
+        "primary_probability_delta": 0.006,
+        "primary_scenario_changed": true,
         "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
       }
@@ -627,11 +627,11 @@
       "news_conflicts_primary_scenario": true,
       "news_supports_primary_scenario": false,
       "primary_scenario": "bounce_path",
-      "risk_scenario": "expected_path",
+      "risk_scenario": "bearish_path",
       "scenario_bias": [
         "bearish_path"
       ],
-      "secondary_scenario": "bearish_path"
+      "secondary_scenario": "analog_average_path"
     },
     "IWM": {
       "expected_changes": [
@@ -639,16 +639,16 @@
         "failed_bounce_risk_higher:price_confirmed",
         "risk_expansion_higher:price_confirmed"
       ],
-      "explanation": "IWM 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应已初步确认。",
-      "impact": "supports_primary",
-      "news_conflicts_primary_scenario": false,
-      "news_supports_primary_scenario": true,
-      "primary_scenario": "bearish_path",
-      "risk_scenario": "expected_path",
+      "explanation": "IWM 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应已初步确认。",
+      "impact": "conflicts_primary",
+      "news_conflicts_primary_scenario": true,
+      "news_supports_primary_scenario": false,
+      "primary_scenario": "bounce_path",
+      "risk_scenario": "bearish_path",
       "scenario_bias": [
         "bearish_path"
       ],
-      "secondary_scenario": "bounce_path"
+      "secondary_scenario": "analog_average_path"
     },
     "QQQ": {
       "expected_changes": [
@@ -661,7 +661,7 @@
       "news_conflicts_primary_scenario": false,
       "news_supports_primary_scenario": true,
       "primary_scenario": "bearish_path",
-      "risk_scenario": "expected_path",
+      "risk_scenario": "bounce_path",
       "scenario_bias": [
         "bearish_path"
       ],
@@ -673,16 +673,16 @@
         "failed_bounce_risk_higher:price_confirmed",
         "risk_expansion_higher:price_confirmed"
       ],
-      "explanation": "SPY 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应已初步确认。",
-      "impact": "supports_primary",
-      "news_conflicts_primary_scenario": false,
-      "news_supports_primary_scenario": true,
-      "primary_scenario": "bearish_path",
-      "risk_scenario": "expected_path",
+      "explanation": "SPY 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应已初步确认。",
+      "impact": "conflicts_primary",
+      "news_conflicts_primary_scenario": true,
+      "news_supports_primary_scenario": false,
+      "primary_scenario": "bounce_path",
+      "risk_scenario": "analog_average_path",
       "scenario_bias": [
         "bearish_path"
       ],
-      "secondary_scenario": "bounce_path"
+      "secondary_scenario": "bearish_path"
     }
   },
   "validation_type": "daily",
