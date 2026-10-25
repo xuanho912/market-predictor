@@ -1,6 +1,6 @@
 # High Confidence Edge Report
 
-Generated at: `2026-10-24T16:00:05.625076+00:00`
+Generated at: `2026-10-25T16:24:20.090978+00:00`
 
 Status: `historical_proxy_and_forward_pending`
 Sample size: `80`
@@ -176,20 +176,20 @@ Conclusion: `not_enough_strong_edge_samples`
 - evidence_note: `Forward sample gate has opened; compare aligned internals against surface-only cases before raising confidence.`
 
 ### aligned_internal_resonance
-- sample_size: `0`
-- 3d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 5d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 10d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 20d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 60d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- sample_size: `20`
+- 3d: sample `20`, hit `0.6`, avg `0.002724`, median `0.004391`, mae `0.011375`
+- 5d: sample `20`, hit `0.55`, avg `-0.000846`, median `0.003026`, mae `0.014084`
+- 10d: sample `20`, hit `0.55`, avg `-0.001107`, median `0.003491`, mae `0.020992`
+- 20d: sample `20`, hit `0.7`, avg `0.01019`, median `0.011728`, mae `0.02536`
+- 60d: sample `20`, hit `0.65`, avg `0.012832`, median `0.014662`, mae `0.049118`
 
 ### mixed_internal_resonance
-- sample_size: `60`
-- 3d: sample `60`, hit `0.5333`, avg `0.002221`, median `0.001558`, mae `0.015575`
-- 5d: sample `60`, hit `0.55`, avg `0.001434`, median `0.003402`, mae `0.017202`
-- 10d: sample `60`, hit `0.6167`, avg `0.007432`, median `0.007467`, mae `0.020451`
-- 20d: sample `60`, hit `0.7333`, avg `0.015849`, median `0.016838`, mae `0.028649`
-- 60d: sample `60`, hit `0.7667`, avg `0.035644`, median `0.052632`, mae `0.057379`
+- sample_size: `40`
+- 3d: sample `40`, hit `0.5`, avg `0.00197`, median `0.000732`, mae `0.017674`
+- 5d: sample `40`, hit `0.55`, avg `0.002574`, median `0.006832`, mae `0.018761`
+- 10d: sample `40`, hit `0.65`, avg `0.011701`, median `0.011431`, mae `0.02018`
+- 20d: sample `40`, hit `0.75`, avg `0.018678`, median `0.024811`, mae `0.030293`
+- 60d: sample `40`, hit `0.825`, avg `0.04705`, median `0.060303`, mae `0.061509`
 
 ### surface_only_strength
 - sample_size: `0`
@@ -200,12 +200,12 @@ Conclusion: `not_enough_strong_edge_samples`
 - 60d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
 
 ### bounce_with_internal_resonance
-- sample_size: `0`
-- 3d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 5d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 10d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 20d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
-- 60d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- sample_size: `20`
+- 3d: sample `20`, hit `0.6`, avg `0.002724`, median `0.004391`, mae `0.011375`
+- 5d: sample `20`, hit `0.55`, avg `-0.000846`, median `0.003026`, mae `0.014084`
+- 10d: sample `20`, hit `0.55`, avg `-0.001107`, median `0.003491`, mae `0.020992`
+- 20d: sample `20`, hit `0.7`, avg `0.01019`, median `0.011728`, mae `0.02536`
+- 60d: sample `20`, hit `0.65`, avg `0.012832`, median `0.014662`, mae `0.049118`
 
 ### bounce_surface_only
 - sample_size: `0`
