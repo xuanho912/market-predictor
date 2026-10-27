@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-27T02:01:43.054515+00:00`
+- generated_at: `2026-10-27T06:21:26.409882+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `17`
+- major_event_count: `16`
 - event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -24,6 +24,22 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Saudi-led coalition says it intercepted Houthi missiles, drones attacking kingdom - Reuters
+- source: Reuters
+- published_at: `2026-10-27T02:17:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil eases on Middle East diplomacy hopes, Saudi attacks keep supply worries alive - Reuters
+- source: Reuters
+- published_at: `2026-10-27T00:37:00+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -51,26 +67,10 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Egypt approves military support for Saudi Arabia after Houthi attacks escalate - Reuters
-- source: Reuters
-- published_at: `2026-10-26T19:18:06+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
 - headline: Russian missile strikes on Ukraine's Kharkiv kill two, injure four, mayor says - Reuters
 - source: Reuters
 - published_at: `2026-10-26T18:01:43+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: UN inquiry says Israel kept committing genocide in Gaza after truce - Reuters
-- source: Reuters
-- published_at: `2026-10-26T18:27:44+00:00`
-- importance_score: `98`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -79,7 +79,15 @@
 - source: Reuters
 - published_at: `2026-10-26T15:51:19+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: UN inquiry says Israel kept committing genocide in Gaza after truce - Reuters
+- source: Reuters
+- published_at: `2026-10-26T18:27:44+00:00`
+- importance_score: `97`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -87,20 +95,12 @@
 - source: Reuters
 - published_at: `2026-10-26T14:53:43+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Netanyahu faces reckoning for October 7 in Israel's first vote since attack - Reuters
-- source: Reuters
-- published_at: `2026-10-26T12:59:58+00:00`
-- importance_score: `100`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Cracking AI trade has Wall Street looking for a hedge. An ex-Citadel quant may have the answer
-- source: CNBC
-- published_at: `2026-10-26T12:08:13+00:00`
+- headline: Egypt approves military support for Saudi Arabia after Houthi attacks escalate - Reuters
+- source: Reuters
+- published_at: `2026-10-26T13:08:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
