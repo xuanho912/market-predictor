@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-27T00:00:39.605943+00:00`
+- generated_at: `2026-10-27T00:58:20.154050+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `18`
+- major_event_count: `17`
 - event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -27,17 +27,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US consumers paying the most for fuel price spikes from Iran war, study says - Reuters
+- headline: Netanyahu touts Trump endorsement on eve of vote, suggests they may restart war on Iran - Reuters
 - source: Reuters
-- published_at: `2026-10-26T20:20:15+00:00`
+- published_at: `2026-10-26T23:06:29+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Netanyahu touts Trump endorsement on eve of vote, suggests they may restart war on Iran - Reuters
+- headline: US consumers paying the most for fuel price spikes from Iran war, study says - Reuters
 - source: Reuters
-- published_at: `2026-10-26T20:00:12+00:00`
+- published_at: `2026-10-26T20:20:15+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -70,7 +70,7 @@
 - headline: UN inquiry says Israel kept committing genocide in Gaza after truce - Reuters
 - source: Reuters
 - published_at: `2026-10-26T18:27:44+00:00`
-- importance_score: `99`
+- importance_score: `98`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -95,7 +95,7 @@
 - source: Reuters
 - published_at: `2026-10-26T12:59:58+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -103,4 +103,4 @@
 - source: CNBC
 - published_at: `2026-10-26T12:08:13+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
