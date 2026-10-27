@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-27T06:21:26.409882+00:00`
+- generated_at: `2026-10-27T09:22:03.646113+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `16`
-- event_detection_confidence: `75`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -35,7 +35,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil eases on Middle East diplomacy hopes, Saudi attacks keep supply worries alive - Reuters
+- headline: Oil rises slightly as diplomacy hopes counter renewed Houthi attacks - Reuters
 - source: Reuters
 - published_at: `2026-10-27T00:37:00+00:00`
 - importance_score: `100`
@@ -55,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-10-26T20:20:15+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -63,7 +63,7 @@
 - source: Reuters
 - published_at: `2026-10-26T19:42:20+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -81,20 +81,20 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_easing / risk_on
-
-- headline: UN inquiry says Israel kept committing genocide in Gaza after truce - Reuters
-- source: Reuters
-- published_at: `2026-10-26T18:27:44+00:00`
-- importance_score: `97`
-- confidence: `medium`
-
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Hezbollah readies for new regional war with funds from Iran, sources say - Reuters
 - source: Reuters
 - published_at: `2026-10-26T14:53:43+00:00`
 - importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: UN inquiry says Israel kept committing genocide in Gaza after truce - Reuters
+- source: Reuters
+- published_at: `2026-10-26T18:27:44+00:00`
+- importance_score: `96`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
