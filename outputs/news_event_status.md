@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-26T18:44:10.988100+00:00`
+- generated_at: `2026-10-27T00:00:39.605943+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `18`
-- event_detection_confidence: `76`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,9 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Egypt approves military support for Saudi Arabia after Houthi attacks escalate - Reuters
+- headline: US consumers paying the most for fuel price spikes from Iran war, study says - Reuters
 - source: Reuters
-- published_at: `2026-10-26T16:53:53+00:00`
+- published_at: `2026-10-26T20:20:15+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -37,8 +37,40 @@
 
 - headline: Netanyahu touts Trump endorsement on eve of vote, suggests they may restart war on Iran - Reuters
 - source: Reuters
-- published_at: `2026-10-26T16:29:55+00:00`
+- published_at: `2026-10-26T20:00:12+00:00`
 - importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: 'No fuel to keep babies warm': shortages push hospitals in Yemen's Taiz to brink - Reuters
+- source: Reuters
+- published_at: `2026-10-26T19:42:20+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Egypt approves military support for Saudi Arabia after Houthi attacks escalate - Reuters
+- source: Reuters
+- published_at: `2026-10-26T19:18:06+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Russian missile strikes on Ukraine's Kharkiv kill two, injure four, mayor says - Reuters
+- source: Reuters
+- published_at: `2026-10-26T18:01:43+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: UN inquiry says Israel kept committing genocide in Gaza after truce - Reuters
+- source: Reuters
+- published_at: `2026-10-26T18:27:44+00:00`
+- importance_score: `99`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -72,35 +104,3 @@
 - published_at: `2026-10-26T12:08:13+00:00`
 - importance_score: `100`
 - confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: How Houthi attacks have grounded flights across Saudi Arabia - Reuters
-- source: Reuters
-- published_at: `2026-10-26T11:35:25+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: UK sanctions 15 commanders from rival Sudan factions over wartime rape - Reuters
-- source: Reuters
-- published_at: `2026-10-26T10:31:19+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Russia says Ukraine has repeatedly struck Oleshky with artillery and drones ahead of local ceasefire - Reuters
-- source: Reuters
-- published_at: `2026-10-26T11:14:33+00:00`
-- importance_score: `98`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Houthis say they attacked Saudi oil pumping stations, Riyadh airport as fighting intensifies - Reuters
-- source: Reuters
-- published_at: `2026-10-26T03:48:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
