@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-28T01:51:33.329304+00:00`
+- generated_at: `2026-10-28T02:09:06.462745+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
+- major_event_count: `7`
 - event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `25`
+- confirmation_score: `50`
 
 ## Dashboard Note
 
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US costs of Iran war rise to over $47 billion, according to Pentagon estimate - Reuters
+- source: Reuters
+- published_at: `2026-10-28T01:01:00+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 

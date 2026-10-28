@@ -6,10 +6,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-10-27",
-    "current_time_us_eastern": "2026-10-27T21:51:41.442954-04:00",
+    "current_time_us_eastern": "2026-10-27T22:09:19.308744-04:00",
     "data_freshness_status": "fresh",
     "expected_latest_trading_date": "2026-10-27",
-    "generated_at": "2026-10-28T01:51:41.442954+00:00",
+    "generated_at": "2026-10-28T02:09:19.308744+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -993,8 +993,8 @@
           "primary_scenario_with_fred": "bounce_path",
           "primary_scenario_without_fred": "bounce_path",
           "risk_expansion_delta": 0.0596,
-          "risk_expansion_with_fred": 0.472,
-          "risk_expansion_without_fred": 0.4124
+          "risk_expansion_with_fred": 0.4741,
+          "risk_expansion_without_fred": 0.4145
         },
         "IWM": {
           "edge_status_changed": false,
@@ -1007,8 +1007,8 @@
           "primary_scenario_with_fred": "bounce_path",
           "primary_scenario_without_fred": "bounce_path",
           "risk_expansion_delta": 0.0596,
-          "risk_expansion_with_fred": 0.4952,
-          "risk_expansion_without_fred": 0.4356
+          "risk_expansion_with_fred": 0.4973,
+          "risk_expansion_without_fred": 0.4377
         },
         "QQQ": {
           "edge_status_changed": false,
@@ -1021,8 +1021,8 @@
           "primary_scenario_with_fred": "bearish_path",
           "primary_scenario_without_fred": "bearish_path",
           "risk_expansion_delta": 0.0596,
-          "risk_expansion_with_fred": 0.5195,
-          "risk_expansion_without_fred": 0.4599
+          "risk_expansion_with_fred": 0.5216,
+          "risk_expansion_without_fred": 0.462
         },
         "SPY": {
           "edge_status_changed": false,
@@ -1035,8 +1035,8 @@
           "primary_scenario_with_fred": "bounce_path",
           "primary_scenario_without_fred": "bounce_path",
           "risk_expansion_delta": 0.0596,
-          "risk_expansion_with_fred": 0.4549,
-          "risk_expansion_without_fred": 0.3953
+          "risk_expansion_with_fred": 0.457,
+          "risk_expansion_without_fred": 0.3974
         }
       },
       "target_85_met_with_fred": true
@@ -1048,15 +1048,15 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "HY_OAS",
-      "BAA_SPREAD",
-      "DGS10",
-      "IG_OAS",
-      "DGS2",
       "DGS3MO",
-      "RECESSION",
+      "HY_OAS",
+      "IG_OAS",
+      "DGS10",
+      "BAA_SPREAD",
+      "DGS2",
       "FINANCIAL_STRESS",
-      "DFII10"
+      "DFII10",
+      "RECESSION"
     ],
     "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-10-27。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
     "gamma_available": false,
@@ -1090,8 +1090,8 @@
       "event_detection_confidence": 77,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-10-28T01:51:33.329304+00:00",
-      "major_event_count": 6,
+      "last_update": "2026-10-28T02:09:06.462745+00:00",
+      "major_event_count": 7,
       "missing_reason": null,
       "news_direction": "risk_off",
       "news_event_partial": false,
@@ -1102,7 +1102,7 @@
     },
     "news_event_available": true,
     "news_event_event_risk_level": "high",
-    "news_event_major_count": 6,
+    "news_event_major_count": 7,
     "news_event_missing_reason": null,
     "news_event_narrative": "geopolitics_escalation_risk_off",
     "news_event_partial": false,
@@ -1314,7 +1314,7 @@
       "status": "failed"
     },
     "event_risk_level": "high",
-    "major_event_count": 6,
+    "major_event_count": 7,
     "market_narrative": {
       "affected_scenarios": [
         "bearish_path"
@@ -1334,6 +1334,18 @@
       "narrative_strength": 100,
       "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
       "supporting_headlines": [
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
+          "headline": "US costs of Iran war rise to over $47 billion, according to Pentagon estimate - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-10-28T01:01:00+00:00",
+          "source": "Reuters"
+        },
         {
           "confidence": "high",
           "detected_event_conditions": [
@@ -1393,18 +1405,6 @@
           "importance_score": 100,
           "published_at": "2026-10-27T15:39:51+00:00",
           "source": "CNBC"
-        },
-        {
-          "confidence": "medium",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Germany's Merz: Russia, US cannot settle Ukraine war without Kyiv, Europe - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-10-27T12:36:01+00:00",
-          "source": "Reuters"
         }
       ]
     },
@@ -1414,7 +1414,7 @@
       "direction": "supports_risk_expansion",
       "event_risk_level": "high",
       "macro_event_risk_flag": false,
-      "major_event_count": 6,
+      "major_event_count": 7,
       "not_a_trading_signal": true,
       "price_reaction_confirmed": false,
       "symbols": {
@@ -1451,9 +1451,9 @@
           "validation_type": "daily"
         },
         "IWM": {
-          "after_primary_probability": 0.2897,
+          "after_primary_probability": 0.2896,
           "after_primary_scenario": "bounce_path",
-          "before_primary_probability": 0.3133,
+          "before_primary_probability": 0.3132,
           "before_primary_scenario": "bounce_path",
           "confirmation_delta": -5.0,
           "impact": "potential_conflict_unconfirmed",
@@ -1483,9 +1483,9 @@
           "validation_type": "daily"
         },
         "QQQ": {
-          "after_primary_probability": 0.369,
+          "after_primary_probability": 0.3691,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.3434,
+          "before_primary_probability": 0.3435,
           "before_primary_scenario": "bearish_path",
           "confirmation_delta": -5.0,
           "impact": "text_support_unconfirmed",
@@ -1515,9 +1515,9 @@
           "validation_type": "daily"
         },
         "SPY": {
-          "after_primary_probability": 0.3184,
+          "after_primary_probability": 0.3183,
           "after_primary_scenario": "bounce_path",
-          "before_primary_probability": 0.343,
+          "before_primary_probability": 0.3429,
           "before_primary_scenario": "bounce_path",
           "confirmation_delta": -5.0,
           "impact": "potential_conflict_unconfirmed",
@@ -1553,8 +1553,9 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": 0.0076,
-        "avg_equity_futures_1d_return": 0.0073,
+        "avg_equity_futures_1d_return": -0.0009,
         "confirmed_checks": [
+          "股票ETF或股指期货下跌",
           "美元走强"
         ],
         "equity_futures_symbols_used": [
@@ -1564,12 +1565,11 @@
           "YM=F"
         ],
         "failed_checks": [
-          "股票ETF或股指期货下跌",
           "VIX 上升",
           "HYG/LQD 走弱"
         ],
         "hyg_lqd_1d_relative_return": 0.0025,
-        "oil_proxy_1d_return": -0.0108,
+        "oil_proxy_1d_return": -0.0001,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -1578,7 +1578,7 @@
         "uup_1d_return": 0.0038,
         "vix_1d_return": -0.0473
       },
-      "confirmation_score": 25,
+      "confirmation_score": 50,
       "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
       "price_reaction_confirmed": false
     },
@@ -1876,8 +1876,8 @@
         },
         "alpha_v1_threshold_unchanged": 0.32534311,
         "confluence_level": "weak",
-        "confluence_score": 43,
-        "daily_market_summary_shadow": "QQQ shadow evidence: strongest alert is Failed Bounce Alert; confluence is weak at 43/100. This evidence is for forecast validation and challenger comparison only.",
+        "confluence_score": 44,
+        "daily_market_summary_shadow": "QQQ shadow evidence: strongest alert is Failed Bounce Alert; confluence is weak at 44/100. This evidence is for forecast validation and challenger comparison only.",
         "does_not_override_baseline_v1": true,
         "does_not_rewrite_forecast_records": true,
         "dominant_path_shadow": "no_edge",
@@ -2682,10 +2682,10 @@
   "strongest_symbol": "SPY",
   "symbols": {
     "DIA": {
-      "analog_path_weight": 0.2662,
+      "analog_path_weight": 0.2661,
       "as_of": "2026-10-27",
       "base_path_weight": 0.1377,
-      "bearish_path_weight": 0.2584,
+      "bearish_path_weight": 0.2585,
       "bounce_path_weight": 0.3377,
       "bounce_probability": 0.57070947,
       "confluence": {
@@ -2697,9 +2697,15 @@
             "source": "flow"
           },
           {
+            "detail": "DIA 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+            "name": "新闻事件与主路径冲突",
+            "score": 50,
+            "source": "news"
+          },
+          {
             "detail": "News/event direction is not sufficiently confirmed by market reaction.",
             "name": "新闻未获价格确认",
-            "score": 75,
+            "score": 50,
             "source": "news"
           },
           {
@@ -2707,12 +2713,6 @@
             "name": "risk_off_news_event",
             "score": 35,
             "source": "signal_confirmation"
-          },
-          {
-            "detail": "DIA 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-            "name": "新闻事件与主路径冲突",
-            "score": 25,
-            "source": "news"
           },
           {
             "detail": "VIX is rising or not confirming a bounce.",
@@ -2729,7 +2729,7 @@
           {
             "detail": "路径分歧较大，不宜给强结论。",
             "name": "主次路径差距小",
-            "score": 7.15,
+            "score": 7.16,
             "source": "scenario_gap"
           }
         ],
@@ -2738,7 +2738,7 @@
         "confluence_summary": "DIA 当前多源共振为 mixed（56/100），主导路径为 bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
         "dominant_path": "bounce",
         "edge_status": "{'market_edge_status': 'MODERATE_EDGE', 'has_usable_prediction_edge_today': True, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': True, 'historical_analog_not_conflicting': True, 'confidence_score_ge_65': True, 'current_regime_identified': True, 'macro_event_risk_not_high': True, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': True, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': False}, 'passed_conditions': 9, 'summary': '有一定预测优势，但仍需观察冲突信号和失效条件。', 'no_edge_note': '', 'risk_warning': False}",
-        "key_conflict_count": 2,
+        "key_conflict_count": 3,
         "missing_evidence": [
           {
             "detail": "Put/call ratio is not connected.",
@@ -2760,7 +2760,7 @@
         "primary_label": "反抽情景",
         "primary_probability": 0.3377,
         "primary_scenario": "bounce_path",
-        "probability_gap": 0.0715,
+        "probability_gap": 0.0716,
         "related_price_levels": {
           "primary_confirmation_level": {
             "confidence": "medium_high",
@@ -2795,7 +2795,7 @@
             "source_type": "price_structure"
           }
         },
-        "secondary_probability": 0.2662,
+        "secondary_probability": 0.2661,
         "secondary_scenario": "analog_average_path",
         "strong_conclusion_allowed": false,
         "supporting_evidence": [
@@ -3024,10 +3024,10 @@
           "ig_oas_20d_change": 0.07000000000000006
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote 523.28; news risk 35%; no major macro event flag; rates pressure 3%.",
+          "brief": "Finnhub quote 523.28; news risk 40%; no major macro event flag; rates pressure 3%.",
           "finnhub_quote_available": true,
           "macro_event_risk_flag": false,
-          "news_risk_score": 0.35,
+          "news_risk_score": 0.4,
           "rates_pressure_score": 0.03346094546110758,
           "symbol": "DIA"
         },
@@ -3094,13 +3094,13 @@
         "news": {
           "market_news_status": "available",
           "news_item_count": 40,
-          "news_risk_score": 0.35,
+          "news_risk_score": 0.4,
           "top_headlines": [
+            "US costs of Iran war rise to over $47 billion, according to Pentagon estimate - Reuters",
             "Hegseth likely to face questions on US role in Indo-Pacific at ASEAN summit - Reuters",
             "Rights monitors raise concerns over senior UAE diplomat bid for next UN boss - Reuters",
             "Jordan, Syria to form security committee after deadly strikes on Islamic State sites - Reuters",
-            "Robinhood quarterly revenue rises 12% as event contracts, options offset crypto slump",
-            "AI debt fears ease ahead of Oracle, Alphabet and Amazon updates. Here's what to watch."
+            "Robinhood quarterly revenue rises 12% as event contracts, options offset crypto slump"
           ]
         },
         "price": {
@@ -4025,6 +4025,33 @@
               "TLT"
             ],
             "confidence": "high",
+            "confidence_score": 81,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 97,
+            "headline": "US costs of Iran war rise to over $47 billion, according to Pentagon estimate - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-28T01:01:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
             "confidence_score": 79,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
@@ -4032,7 +4059,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 90,
+            "freshness_score": 89,
             "headline": "Jordan, Syria to form security committee after deadly strikes on Islamic State sites - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4133,47 +4160,20 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 76,
+            "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 76,
+            "freshness_score": 75,
             "headline": "American Airlines hikes annual fees on rewards cards for first time since 2018",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-10-27T15:39:51+00:00",
             "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 74,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 68,
-            "headline": "Germany's Merz: Russia, US cannot settle Ukraine war without Kyiv, Europe - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-27T12:36:01+00:00",
-            "source": "Reuters"
           }
         ],
         "market_narrative": {
@@ -4195,6 +4195,18 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "US costs of Iran war rise to over $47 billion, according to Pentagon estimate - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-28T01:01:00+00:00",
+              "source": "Reuters"
+            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -4254,18 +4266,6 @@
               "importance_score": 100,
               "published_at": "2026-10-27T15:39:51+00:00",
               "source": "CNBC"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Germany's Merz: Russia, US cannot settle Ukraine war without Kyiv, Europe - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-10-27T12:36:01+00:00",
-              "source": "Reuters"
             }
           ]
         },
@@ -4305,8 +4305,9 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0076,
-            "avg_equity_futures_1d_return": 0.0073,
+            "avg_equity_futures_1d_return": -0.0009,
             "confirmed_checks": [
+              "股票ETF或股指期货下跌",
               "美元走强"
             ],
             "equity_futures_symbols_used": [
@@ -4316,12 +4317,11 @@
               "YM=F"
             ],
             "failed_checks": [
-              "股票ETF或股指期货下跌",
               "VIX 上升",
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0025,
-            "oil_proxy_1d_return": -0.0108,
+            "oil_proxy_1d_return": -0.0001,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -4330,7 +4330,7 @@
             "uup_1d_return": 0.0038,
             "vix_1d_return": -0.0473
           },
-          "confirmation_score": 25,
+          "confirmation_score": 50,
           "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
           "price_reaction_confirmed": false
         },
@@ -4355,9 +4355,9 @@
         "validation_type": "daily"
       },
       "path_weight_model": {
-        "analog_path_weight": 0.2662,
+        "analog_path_weight": 0.2661,
         "base_path_weight": 0.1377,
-        "bearish_path_weight": 0.2584,
+        "bearish_path_weight": 0.2585,
         "bounce_path_weight": 0.3377,
         "low_confidence_simulation": false,
         "news_event_overlay_applied": true,
@@ -4384,12 +4384,12 @@
           "news_event_direction": "supports_risk_expansion",
           "news_event_macro_risk": 0.0,
           "news_event_price_confirmed": 0.0,
-          "news_risk": 0.35,
+          "news_risk": 0.4,
           "options_quality": 0.92,
           "options_stress": 0.4907,
           "panic_release": 0.274,
           "rates_pressure": 0.0335,
-          "risk_expansion": 0.472,
+          "risk_expansion": 0.4741,
           "signal_agreement": 0.9,
           "signal_confirmation": 0.7,
           "tail_risk": 0.5401,
@@ -4438,7 +4438,7 @@
           "failed_bounce_risk": 0.4276849832186733,
           "historical_support": "supportive",
           "market_edge_status": "STRONG_EDGE",
-          "risk_expansion_probability": 0.5032,
+          "risk_expansion_probability": 0.5072,
           "trend_reversal_probability": 0.5484,
           "up_probability": 0.62727458912231
         },
@@ -4497,7 +4497,7 @@
           "failed_bounce_risk": 0.4276849832186733,
           "historical_support": "supportive",
           "market_edge_status": "STRONG_EDGE",
-          "risk_expansion_probability": 0.5032,
+          "risk_expansion_probability": 0.5072,
           "trend_reversal_probability": 0.5484,
           "up_probability": 0.6209071422211607
         }
@@ -4593,7 +4593,7 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 1.0,
           "breadth_risk": 0.4333,
-          "confidence": 0.6641,
+          "confidence": 0.6655,
           "credit_risk": 0.3644,
           "crowding_proxy_score": 0.1251,
           "failed_bounce_options_risk": 0.4332,
@@ -4619,8 +4619,8 @@
             "news_event_overlay:+0.025"
           ],
           "options_quality": 0.92,
-          "probability": 0.497,
-          "risk_expansion_probability": 0.497,
+          "probability": 0.4991,
+          "risk_expansion_probability": 0.4991,
           "tail_risk_score": 0.5401,
           "term_structure_state": "contango",
           "volatility_risk": 0.4907
@@ -4754,7 +4754,7 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 1.0,
           "breadth_risk": 0.4333,
-          "confidence": 0.6641,
+          "confidence": 0.6655,
           "credit_risk": 0.3644,
           "crowding_proxy_score": 0.1251,
           "failed_bounce_options_risk": 0.4332,
@@ -4780,8 +4780,8 @@
             "news_event_overlay:+0.025"
           ],
           "options_quality": 0.92,
-          "probability": 0.497,
-          "risk_expansion_probability": 0.497,
+          "probability": 0.4991,
+          "risk_expansion_probability": 0.4991,
           "tail_risk_score": 0.5401,
           "term_structure_state": "contango",
           "volatility_risk": 0.4907
@@ -4838,7 +4838,7 @@
             "confidence": "medium",
             "expected_horizon": "20d-60d",
             "label": "历史均值情景",
-            "probability": 0.2662,
+            "probability": 0.2661,
             "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "analog_average_path"
           },
@@ -4846,7 +4846,7 @@
             "confidence": "medium",
             "expected_horizon": "3d-10d",
             "label": "失败反抽情景",
-            "probability": 0.2584,
+            "probability": 0.2585,
             "reason": "Downside/Risk predictors 为 38%/47%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bearish_path"
           },
@@ -4871,7 +4871,7 @@
           "scenario": "bounce_path"
         },
         "primary_scenario": "bounce_path",
-        "primary_secondary_gap": 0.0715,
+        "primary_secondary_gap": 0.0716,
         "primary_to_secondary_switch_conditions": [
           "VIX 与新闻方向背离",
           "HYG/LQD 转弱",
@@ -4880,7 +4880,7 @@
           "油价或美元重新走强",
           "第二路径 analog_average_path 获得多源确认"
         ],
-        "probability_gap": 0.0715,
+        "probability_gap": 0.0716,
         "ranking_note": "Scenario ranking includes a bounded News/Event overlay when a major event or macro calendar risk is detected. It is probabilistic, not deterministic.",
         "risk_scenario": "bearish_path",
         "scenario_probability": 0.3377,
@@ -4888,7 +4888,7 @@
           "confidence": "medium",
           "expected_horizon": "20d-60d",
           "label": "历史均值情景",
-          "probability": 0.2662,
+          "probability": 0.2661,
           "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "analog_average_path"
         },
@@ -4905,16 +4905,16 @@
           "confidence": "medium",
           "expected_horizon": "3d-10d",
           "label": "失败反抽情景",
-          "probability": 0.2584,
+          "probability": 0.2585,
           "reason": "Downside/Risk predictors 为 38%/47%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bearish_path"
         }
       },
       "scenario_weights": {
         "base_scenario": 0.1325,
-        "bearish_scenario": 0.229,
+        "bearish_scenario": 0.2291,
         "bounce_scenario": 0.363,
-        "historical_analog_average": 0.2755
+        "historical_analog_average": 0.2754
       },
       "shadow_evidence_v1": {
         "alert_status_by_type": {
@@ -5190,9 +5190,9 @@
     "IWM": {
       "analog_path_weight": 0.2698,
       "as_of": "2026-10-27",
-      "base_path_weight": 0.1677,
-      "bearish_path_weight": 0.2728,
-      "bounce_path_weight": 0.2897,
+      "base_path_weight": 0.1676,
+      "bearish_path_weight": 0.273,
+      "bounce_path_weight": 0.2896,
       "bounce_probability": 0.40434541,
       "confluence": {
         "conflicting_evidence": [
@@ -5203,9 +5203,15 @@
             "source": "flow"
           },
           {
+            "detail": "IWM 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+            "name": "新闻事件与主路径冲突",
+            "score": 50,
+            "source": "news"
+          },
+          {
             "detail": "News/event direction is not sufficiently confirmed by market reaction.",
             "name": "新闻未获价格确认",
-            "score": 75,
+            "score": 50,
             "source": "news"
           },
           {
@@ -5219,12 +5225,6 @@
             "name": "risk_off_news_event",
             "score": 35,
             "source": "signal_confirmation"
-          },
-          {
-            "detail": "IWM 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-            "name": "新闻事件与主路径冲突",
-            "score": 25,
-            "source": "news"
           },
           {
             "detail": "VIX is rising or not confirming a bounce.",
@@ -5241,7 +5241,7 @@
           {
             "detail": "路径分歧较大，不宜给强结论。",
             "name": "主次路径差距小",
-            "score": 1.69,
+            "score": 1.66,
             "source": "scenario_gap"
           }
         ],
@@ -5250,7 +5250,7 @@
         "confluence_summary": "IWM 当前多源共振为 mixed（53/100），主导路径为 bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
         "dominant_path": "bounce",
         "edge_status": "{'market_edge_status': 'MODERATE_EDGE', 'has_usable_prediction_edge_today': True, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': True, 'historical_analog_not_conflicting': True, 'confidence_score_ge_65': True, 'current_regime_identified': True, 'macro_event_risk_not_high': True, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': True, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': False}, 'passed_conditions': 9, 'summary': '有一定预测优势，但仍需观察冲突信号和失效条件。', 'no_edge_note': '', 'risk_warning': False}",
-        "key_conflict_count": 3,
+        "key_conflict_count": 4,
         "missing_evidence": [
           {
             "detail": "Put/call ratio is not connected.",
@@ -5270,9 +5270,9 @@
         ],
         "not_trading_advice": "This is forecast confirmation only, not a buy/sell/entry/exit or position-sizing recommendation.",
         "primary_label": "反抽情景",
-        "primary_probability": 0.2897,
+        "primary_probability": 0.2896,
         "primary_scenario": "bounce_path",
-        "probability_gap": 0.0169,
+        "probability_gap": 0.0166,
         "related_price_levels": {
           "primary_confirmation_level": {
             "confidence": "medium",
@@ -5307,7 +5307,7 @@
             "source_type": "price_structure"
           }
         },
-        "secondary_probability": 0.2728,
+        "secondary_probability": 0.273,
         "secondary_scenario": "bearish_path",
         "strong_conclusion_allowed": false,
         "supporting_evidence": [
@@ -5530,10 +5530,10 @@
           "ig_oas_20d_change": 0.07000000000000006
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote 280.18; news risk 35%; no major macro event flag; rates pressure 3%.",
+          "brief": "Finnhub quote 280.18; news risk 40%; no major macro event flag; rates pressure 3%.",
           "finnhub_quote_available": true,
           "macro_event_risk_flag": false,
-          "news_risk_score": 0.35,
+          "news_risk_score": 0.4,
           "rates_pressure_score": 0.03346094546110758,
           "symbol": "IWM"
         },
@@ -5600,13 +5600,13 @@
         "news": {
           "market_news_status": "available",
           "news_item_count": 40,
-          "news_risk_score": 0.35,
+          "news_risk_score": 0.4,
           "top_headlines": [
+            "US costs of Iran war rise to over $47 billion, according to Pentagon estimate - Reuters",
             "Hegseth likely to face questions on US role in Indo-Pacific at ASEAN summit - Reuters",
             "Rights monitors raise concerns over senior UAE diplomat bid for next UN boss - Reuters",
             "Jordan, Syria to form security committee after deadly strikes on Islamic State sites - Reuters",
-            "Robinhood quarterly revenue rises 12% as event contracts, options offset crypto slump",
-            "AI debt fears ease ahead of Oracle, Alphabet and Amazon updates. Here's what to watch."
+            "Robinhood quarterly revenue rises 12% as event contracts, options offset crypto slump"
           ]
         },
         "price": {
@@ -6515,6 +6515,33 @@
               "TLT"
             ],
             "confidence": "high",
+            "confidence_score": 81,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 97,
+            "headline": "US costs of Iran war rise to over $47 billion, according to Pentagon estimate - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-28T01:01:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
             "confidence_score": 79,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
@@ -6522,7 +6549,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 90,
+            "freshness_score": 89,
             "headline": "Jordan, Syria to form security committee after deadly strikes on Islamic State sites - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6623,47 +6650,20 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 76,
+            "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 76,
+            "freshness_score": 75,
             "headline": "American Airlines hikes annual fees on rewards cards for first time since 2018",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-10-27T15:39:51+00:00",
             "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 74,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 68,
-            "headline": "Germany's Merz: Russia, US cannot settle Ukraine war without Kyiv, Europe - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-27T12:36:01+00:00",
-            "source": "Reuters"
           }
         ],
         "market_narrative": {
@@ -6685,6 +6685,18 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "US costs of Iran war rise to over $47 billion, according to Pentagon estimate - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-28T01:01:00+00:00",
+              "source": "Reuters"
+            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -6744,26 +6756,14 @@
               "importance_score": 100,
               "published_at": "2026-10-27T15:39:51+00:00",
               "source": "CNBC"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Germany's Merz: Russia, US cannot settle Ukraine war without Kyiv, Europe - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-10-27T12:36:01+00:00",
-              "source": "Reuters"
             }
           ]
         },
         "news_direction": "risk_off",
         "prediction_logic_effect": {
-          "after_primary_probability": 0.2897,
+          "after_primary_probability": 0.2896,
           "after_primary_scenario": "bounce_path",
-          "before_primary_probability": 0.3133,
+          "before_primary_probability": 0.3132,
           "before_primary_scenario": "bounce_path",
           "confirmation_delta": -5.0,
           "impact": "potential_conflict_unconfirmed",
@@ -6795,8 +6795,9 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0076,
-            "avg_equity_futures_1d_return": 0.0073,
+            "avg_equity_futures_1d_return": -0.0009,
             "confirmed_checks": [
+              "股票ETF或股指期货下跌",
               "美元走强"
             ],
             "equity_futures_symbols_used": [
@@ -6806,12 +6807,11 @@
               "YM=F"
             ],
             "failed_checks": [
-              "股票ETF或股指期货下跌",
               "VIX 上升",
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0025,
-            "oil_proxy_1d_return": -0.0108,
+            "oil_proxy_1d_return": -0.0001,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -6820,7 +6820,7 @@
             "uup_1d_return": 0.0038,
             "vix_1d_return": -0.0473
           },
-          "confirmation_score": 25,
+          "confirmation_score": 50,
           "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
           "price_reaction_confirmed": false
         },
@@ -6846,9 +6846,9 @@
       },
       "path_weight_model": {
         "analog_path_weight": 0.2698,
-        "base_path_weight": 0.1677,
-        "bearish_path_weight": 0.2728,
-        "bounce_path_weight": 0.2897,
+        "base_path_weight": 0.1676,
+        "bearish_path_weight": 0.273,
+        "bounce_path_weight": 0.2896,
         "low_confidence_simulation": false,
         "news_event_overlay_applied": true,
         "news_event_overlay_note": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay",
@@ -6874,12 +6874,12 @@
           "news_event_direction": "supports_risk_expansion",
           "news_event_macro_risk": 0.0,
           "news_event_price_confirmed": 0.0,
-          "news_risk": 0.35,
+          "news_risk": 0.4,
           "options_quality": 0.92,
           "options_stress": 0.4907,
           "panic_release": 0.274,
           "rates_pressure": 0.0335,
-          "risk_expansion": 0.4952,
+          "risk_expansion": 0.4973,
           "signal_agreement": 0.81,
           "signal_confirmation": 0.7,
           "tail_risk": 0.5401,
@@ -6928,7 +6928,7 @@
           "failed_bounce_risk": 0.6000000000000001,
           "historical_support": "supportive",
           "market_edge_status": "STRONG_EDGE",
-          "risk_expansion_probability": 0.5439,
+          "risk_expansion_probability": 0.5479,
           "trend_reversal_probability": 0.491,
           "up_probability": 0.5807353439223424
         },
@@ -6987,7 +6987,7 @@
           "failed_bounce_risk": 0.6000000000000001,
           "historical_support": "supportive",
           "market_edge_status": "STRONG_EDGE",
-          "risk_expansion_probability": 0.5439,
+          "risk_expansion_probability": 0.5479,
           "trend_reversal_probability": 0.491,
           "up_probability": 0.5902508334002523
         }
@@ -7083,7 +7083,7 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 0.64,
           "breadth_risk": 0.466,
-          "confidence": 0.6784,
+          "confidence": 0.6798,
           "credit_risk": 0.3644,
           "crowding_proxy_score": 0.136,
           "failed_bounce_options_risk": 0.4332,
@@ -7109,8 +7109,8 @@
             "news_event_overlay:+0.025"
           ],
           "options_quality": 0.92,
-          "probability": 0.5202,
-          "risk_expansion_probability": 0.5202,
+          "probability": 0.5223,
+          "risk_expansion_probability": 0.5223,
           "tail_risk_score": 0.5401,
           "term_structure_state": "contango",
           "volatility_risk": 0.4907
@@ -7244,7 +7244,7 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 0.64,
           "breadth_risk": 0.466,
-          "confidence": 0.6784,
+          "confidence": 0.6798,
           "credit_risk": 0.3644,
           "crowding_proxy_score": 0.136,
           "failed_bounce_options_risk": 0.4332,
@@ -7270,8 +7270,8 @@
             "news_event_overlay:+0.025"
           ],
           "options_quality": 0.92,
-          "probability": 0.5202,
-          "risk_expansion_probability": 0.5202,
+          "probability": 0.5223,
+          "risk_expansion_probability": 0.5223,
           "tail_risk_score": 0.5401,
           "term_structure_state": "contango",
           "volatility_risk": 0.4907
@@ -7320,7 +7320,7 @@
             "confidence": "medium",
             "expected_horizon": "10d-20d",
             "label": "反抽情景",
-            "probability": 0.2897,
+            "probability": 0.2896,
             "reason": "Bounce Predictor 55%，多源确认 70/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bounce_path"
           },
@@ -7328,7 +7328,7 @@
             "confidence": "medium",
             "expected_horizon": "3d-10d",
             "label": "失败反抽情景",
-            "probability": 0.2728,
+            "probability": 0.273,
             "reason": "Downside/Risk predictors 为 43%/50%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bearish_path"
           },
@@ -7344,7 +7344,7 @@
             "confidence": "medium",
             "expected_horizon": "3d-20d",
             "label": "综合期望情景",
-            "probability": 0.1677,
+            "probability": 0.1676,
             "reason": "综合期望用于平衡反抽、失败反抽、历史均值和数据不完整带来的不确定性。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "expected_path"
           }
@@ -7356,12 +7356,12 @@
           "confidence": "medium",
           "expected_horizon": "10d-20d",
           "label": "反抽情景",
-          "probability": 0.2897,
+          "probability": 0.2896,
           "reason": "Bounce Predictor 55%，多源确认 70/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bounce_path"
         },
         "primary_scenario": "bounce_path",
-        "primary_secondary_gap": 0.0169,
+        "primary_secondary_gap": 0.0166,
         "primary_to_secondary_switch_conditions": [
           "VIX 与新闻方向背离",
           "HYG/LQD 转弱",
@@ -7370,15 +7370,15 @@
           "油价或美元重新走强",
           "第二路径 bearish_path 获得多源确认"
         ],
-        "probability_gap": 0.0169,
+        "probability_gap": 0.0166,
         "ranking_note": "Scenario ranking includes a bounded News/Event overlay when a major event or macro calendar risk is detected. It is probabilistic, not deterministic.",
         "risk_scenario": "bearish_path",
-        "scenario_probability": 0.2897,
+        "scenario_probability": 0.2896,
         "secondary": {
           "confidence": "medium",
           "expected_horizon": "3d-10d",
           "label": "失败反抽情景",
-          "probability": 0.2728,
+          "probability": 0.273,
           "reason": "Downside/Risk predictors 为 43%/50%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bearish_path"
         },
@@ -7401,10 +7401,10 @@
         }
       },
       "scenario_weights": {
-        "base_scenario": 0.1636,
-        "bearish_scenario": 0.2439,
-        "bounce_scenario": 0.3133,
-        "historical_analog_average": 0.2793
+        "base_scenario": 0.1635,
+        "bearish_scenario": 0.244,
+        "bounce_scenario": 0.3132,
+        "historical_analog_average": 0.2792
       },
       "shadow_evidence_v1": {
         "alert_status_by_type": {
@@ -7680,8 +7680,8 @@
       "analog_path_weight": 0.2574,
       "as_of": "2026-10-27",
       "base_path_weight": 0.1842,
-      "bearish_path_weight": 0.369,
-      "bounce_path_weight": 0.1895,
+      "bearish_path_weight": 0.3691,
+      "bounce_path_weight": 0.1894,
       "bounce_probability": 0.38471703,
       "confluence": {
         "conflicting_evidence": [
@@ -7692,16 +7692,16 @@
             "source": "signal_confirmation"
           },
           {
-            "detail": "News/event direction is not sufficiently confirmed by market reaction.",
-            "name": "新闻未获价格确认",
-            "score": 75,
-            "source": "news"
-          },
-          {
             "detail": "指数路径与内部参与度存在冲突。",
             "name": "宽度冲突",
             "score": 69,
             "source": "breadth"
+          },
+          {
+            "detail": "News/event direction is not sufficiently confirmed by market reaction.",
+            "name": "新闻未获价格确认",
+            "score": 50,
+            "source": "news"
           },
           {
             "detail": "Index strength is not broadly confirmed by internals; this raises failed-bounce risk.",
@@ -7747,8 +7747,8 @@
           }
         ],
         "confluence_level": "weak",
-        "confluence_score": 43,
-        "confluence_summary": "QQQ 当前多源共振为 weak（43/100），主导路径为 no_edge。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
+        "confluence_score": 44,
+        "confluence_summary": "QQQ 当前多源共振为 weak（44/100），主导路径为 no_edge。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
         "dominant_path": "no_edge",
         "edge_status": "{'market_edge_status': 'WEAK_EDGE', 'has_usable_prediction_edge_today': False, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': False, 'historical_analog_not_conflicting': True, 'confidence_score_ge_65': False, 'current_regime_identified': True, 'macro_event_risk_not_high': True, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': False, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': False}, 'passed_conditions': 6, 'summary': '预测优势偏弱，应以观察为主。', 'no_edge_note': '今天没有足够 edge，不应过度解读预测路径。', 'risk_warning': False}",
         "key_conflict_count": 3,
@@ -7771,9 +7771,9 @@
         ],
         "not_trading_advice": "This is forecast confirmation only, not a buy/sell/entry/exit or position-sizing recommendation.",
         "primary_label": "失败反抽情景",
-        "primary_probability": 0.369,
+        "primary_probability": 0.3691,
         "primary_scenario": "bearish_path",
-        "probability_gap": 0.1116,
+        "probability_gap": 0.1117,
         "related_price_levels": {
           "primary_confirmation_level": {
             "confidence": "medium",
@@ -7827,7 +7827,7 @@
           {
             "detail": "QQQ 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
             "name": "新闻事件支持主路径",
-            "score": 25,
+            "score": 50,
             "source": "news"
           },
           {
@@ -7851,7 +7851,7 @@
           {
             "detail": "primary-secondary gap 11.2%",
             "name": "主次路径差距可观察",
-            "score": 11.16,
+            "score": 11.17,
             "source": "scenario_gap"
           },
           {
@@ -8013,10 +8013,10 @@
           "ig_oas_20d_change": 0.07000000000000006
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote 721.25; news risk 35%; no major macro event flag; rates pressure 3%.",
+          "brief": "Finnhub quote 721.25; news risk 40%; no major macro event flag; rates pressure 3%.",
           "finnhub_quote_available": true,
           "macro_event_risk_flag": false,
-          "news_risk_score": 0.35,
+          "news_risk_score": 0.4,
           "rates_pressure_score": 0.03346094546110758,
           "symbol": "QQQ"
         },
@@ -8083,13 +8083,13 @@
         "news": {
           "market_news_status": "available",
           "news_item_count": 40,
-          "news_risk_score": 0.35,
+          "news_risk_score": 0.4,
           "top_headlines": [
+            "US costs of Iran war rise to over $47 billion, according to Pentagon estimate - Reuters",
             "Hegseth likely to face questions on US role in Indo-Pacific at ASEAN summit - Reuters",
             "Rights monitors raise concerns over senior UAE diplomat bid for next UN boss - Reuters",
             "Jordan, Syria to form security committee after deadly strikes on Islamic State sites - Reuters",
-            "Robinhood quarterly revenue rises 12% as event contracts, options offset crypto slump",
-            "AI debt fears ease ahead of Oracle, Alphabet and Amazon updates. Here's what to watch."
+            "Robinhood quarterly revenue rises 12% as event contracts, options offset crypto slump"
           ]
         },
         "price": {
@@ -8994,6 +8994,33 @@
               "TLT"
             ],
             "confidence": "high",
+            "confidence_score": 81,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 97,
+            "headline": "US costs of Iran war rise to over $47 billion, according to Pentagon estimate - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-28T01:01:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
             "confidence_score": 79,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
@@ -9001,7 +9028,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 90,
+            "freshness_score": 89,
             "headline": "Jordan, Syria to form security committee after deadly strikes on Islamic State sites - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9102,47 +9129,20 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 76,
+            "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 76,
+            "freshness_score": 75,
             "headline": "American Airlines hikes annual fees on rewards cards for first time since 2018",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-10-27T15:39:51+00:00",
             "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 74,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 68,
-            "headline": "Germany's Merz: Russia, US cannot settle Ukraine war without Kyiv, Europe - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-27T12:36:01+00:00",
-            "source": "Reuters"
           }
         ],
         "market_narrative": {
@@ -9164,6 +9164,18 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "US costs of Iran war rise to over $47 billion, according to Pentagon estimate - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-28T01:01:00+00:00",
+              "source": "Reuters"
+            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -9223,26 +9235,14 @@
               "importance_score": 100,
               "published_at": "2026-10-27T15:39:51+00:00",
               "source": "CNBC"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Germany's Merz: Russia, US cannot settle Ukraine war without Kyiv, Europe - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-10-27T12:36:01+00:00",
-              "source": "Reuters"
             }
           ]
         },
         "news_direction": "risk_off",
         "prediction_logic_effect": {
-          "after_primary_probability": 0.369,
+          "after_primary_probability": 0.3691,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.3434,
+          "before_primary_probability": 0.3435,
           "before_primary_scenario": "bearish_path",
           "confirmation_delta": -5.0,
           "impact": "text_support_unconfirmed",
@@ -9274,8 +9274,9 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0076,
-            "avg_equity_futures_1d_return": 0.0073,
+            "avg_equity_futures_1d_return": -0.0009,
             "confirmed_checks": [
+              "股票ETF或股指期货下跌",
               "美元走强"
             ],
             "equity_futures_symbols_used": [
@@ -9285,12 +9286,11 @@
               "YM=F"
             ],
             "failed_checks": [
-              "股票ETF或股指期货下跌",
               "VIX 上升",
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0025,
-            "oil_proxy_1d_return": -0.0108,
+            "oil_proxy_1d_return": -0.0001,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -9299,7 +9299,7 @@
             "uup_1d_return": 0.0038,
             "vix_1d_return": -0.0473
           },
-          "confirmation_score": 25,
+          "confirmation_score": 50,
           "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
           "price_reaction_confirmed": false
         },
@@ -9326,8 +9326,8 @@
       "path_weight_model": {
         "analog_path_weight": 0.2574,
         "base_path_weight": 0.1842,
-        "bearish_path_weight": 0.369,
-        "bounce_path_weight": 0.1895,
+        "bearish_path_weight": 0.3691,
+        "bounce_path_weight": 0.1894,
         "low_confidence_simulation": true,
         "news_event_overlay_applied": true,
         "news_event_overlay_note": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay",
@@ -9353,12 +9353,12 @@
           "news_event_direction": "supports_risk_expansion",
           "news_event_macro_risk": 0.0,
           "news_event_price_confirmed": 0.0,
-          "news_risk": 0.35,
+          "news_risk": 0.4,
           "options_quality": 0.92,
           "options_stress": 0.4907,
           "panic_release": 0.274,
           "rates_pressure": 0.0335,
-          "risk_expansion": 0.5195,
+          "risk_expansion": 0.5216,
           "signal_agreement": 0.64,
           "signal_confirmation": 0.29,
           "tail_risk": 0.5401,
@@ -9407,7 +9407,7 @@
           "failed_bounce_risk": 0.4842348671760902,
           "historical_support": "supportive",
           "market_edge_status": "MODERATE_EDGE",
-          "risk_expansion_probability": 0.4961,
+          "risk_expansion_probability": 0.5001,
           "trend_reversal_probability": 0.4507,
           "up_probability": 0.5901413483830465
         },
@@ -9466,7 +9466,7 @@
           "failed_bounce_risk": 0.4842348671760902,
           "historical_support": "supportive",
           "market_edge_status": "MODERATE_EDGE",
-          "risk_expansion_probability": 0.4961,
+          "risk_expansion_probability": 0.5001,
           "trend_reversal_probability": 0.4507,
           "up_probability": 0.6213565144208385
         }
@@ -9567,7 +9567,7 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 0.04,
           "breadth_risk": 0.6907,
-          "confidence": 0.6616,
+          "confidence": 0.663,
           "credit_risk": 0.3644,
           "crowding_proxy_score": 0.0673,
           "failed_bounce_options_risk": 0.4332,
@@ -9593,8 +9593,8 @@
             "news_event_overlay:+0.025"
           ],
           "options_quality": 0.92,
-          "probability": 0.5445,
-          "risk_expansion_probability": 0.5445,
+          "probability": 0.5466,
+          "risk_expansion_probability": 0.5466,
           "tail_risk_score": 0.5401,
           "term_structure_state": "contango",
           "volatility_risk": 0.4907
@@ -9733,7 +9733,7 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 0.04,
           "breadth_risk": 0.6907,
-          "confidence": 0.6616,
+          "confidence": 0.663,
           "credit_risk": 0.3644,
           "crowding_proxy_score": 0.0673,
           "failed_bounce_options_risk": 0.4332,
@@ -9759,8 +9759,8 @@
             "news_event_overlay:+0.025"
           ],
           "options_quality": 0.92,
-          "probability": 0.5445,
-          "risk_expansion_probability": 0.5445,
+          "probability": 0.5466,
+          "risk_expansion_probability": 0.5466,
           "tail_risk_score": 0.5401,
           "term_structure_state": "contango",
           "volatility_risk": 0.4907
@@ -9809,7 +9809,7 @@
             "confidence": "low",
             "expected_horizon": "3d-10d",
             "label": "失败反抽情景",
-            "probability": 0.369,
+            "probability": 0.3691,
             "reason": "Downside/Risk predictors 为 56%/52%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bearish_path"
           },
@@ -9825,7 +9825,7 @@
             "confidence": "low",
             "expected_horizon": "10d-20d",
             "label": "反抽情景",
-            "probability": 0.1895,
+            "probability": 0.1894,
             "reason": "Bounce Predictor 31%，多源确认 29/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bounce_path"
           },
@@ -9845,12 +9845,12 @@
           "confidence": "low",
           "expected_horizon": "3d-10d",
           "label": "失败反抽情景",
-          "probability": 0.369,
+          "probability": 0.3691,
           "reason": "Downside/Risk predictors 为 56%/52%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bearish_path"
         },
         "primary_scenario": "bearish_path",
-        "primary_secondary_gap": 0.1116,
+        "primary_secondary_gap": 0.1117,
         "primary_to_secondary_switch_conditions": [
           "VIX 与新闻方向背离",
           "HYG/LQD 转弱",
@@ -9859,10 +9859,10 @@
           "QQQ 重新站上主路径确认价",
           "第二路径 analog_average_path 获得多源确认"
         ],
-        "probability_gap": 0.1116,
+        "probability_gap": 0.1117,
         "ranking_note": "Scenario ranking includes a bounded News/Event overlay when a major event or macro calendar risk is detected. It is probabilistic, not deterministic.",
         "risk_scenario": "bearish_path",
-        "scenario_probability": 0.369,
+        "scenario_probability": 0.3691,
         "secondary": {
           "confidence": "low",
           "expected_horizon": "20d-60d",
@@ -9884,15 +9884,15 @@
           "confidence": "low",
           "expected_horizon": "10d-20d",
           "label": "反抽情景",
-          "probability": 0.1895,
+          "probability": 0.1894,
           "reason": "Bounce Predictor 31%，多源确认 29/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bounce_path"
         }
       },
       "scenario_weights": {
         "base_scenario": 0.1806,
-        "bearish_scenario": 0.3434,
-        "bounce_scenario": 0.2096,
+        "bearish_scenario": 0.3435,
+        "bounce_scenario": 0.2095,
         "historical_analog_average": 0.2664
       },
       "shadow_evidence_v1": {
@@ -9925,8 +9925,8 @@
         },
         "alpha_v1_threshold_unchanged": 0.32534311,
         "confluence_level": "weak",
-        "confluence_score": 43,
-        "daily_market_summary_shadow": "QQQ shadow evidence: strongest alert is Failed Bounce Alert; confluence is weak at 43/100. This evidence is for forecast validation and challenger comparison only.",
+        "confluence_score": 44,
+        "daily_market_summary_shadow": "QQQ shadow evidence: strongest alert is Failed Bounce Alert; confluence is weak at 44/100. This evidence is for forecast validation and challenger comparison only.",
         "does_not_override_baseline_v1": true,
         "does_not_rewrite_forecast_records": true,
         "dominant_path_shadow": "no_edge",
@@ -10172,11 +10172,11 @@
       "trend_reversal_probability": 0.40481403022433826
     },
     "SPY": {
-      "analog_path_weight": 0.2666,
+      "analog_path_weight": 0.2665,
       "as_of": "2026-10-27",
       "base_path_weight": 0.1641,
-      "bearish_path_weight": 0.251,
-      "bounce_path_weight": 0.3184,
+      "bearish_path_weight": 0.2512,
+      "bounce_path_weight": 0.3183,
       "bounce_probability": 0.59293002,
       "confluence": {
         "conflicting_evidence": [
@@ -10187,9 +10187,15 @@
             "source": "flow"
           },
           {
+            "detail": "SPY 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+            "name": "新闻事件与主路径冲突",
+            "score": 50,
+            "source": "news"
+          },
+          {
             "detail": "News/event direction is not sufficiently confirmed by market reaction.",
             "name": "新闻未获价格确认",
-            "score": 75,
+            "score": 50,
             "source": "news"
           },
           {
@@ -10197,12 +10203,6 @@
             "name": "risk_off_news_event",
             "score": 35,
             "source": "signal_confirmation"
-          },
-          {
-            "detail": "SPY 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-            "name": "新闻事件与主路径冲突",
-            "score": 25,
-            "source": "news"
           },
           {
             "detail": "VIX is rising or not confirming a bounce.",
@@ -10228,7 +10228,7 @@
         "confluence_summary": "SPY 当前多源共振为 mixed（56/100），主导路径为 bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
         "dominant_path": "bounce",
         "edge_status": "{'market_edge_status': 'MODERATE_EDGE', 'has_usable_prediction_edge_today': True, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': True, 'historical_analog_not_conflicting': True, 'confidence_score_ge_65': True, 'current_regime_identified': True, 'macro_event_risk_not_high': True, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': True, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': False}, 'passed_conditions': 9, 'summary': '有一定预测优势，但仍需观察冲突信号和失效条件。', 'no_edge_note': '', 'risk_warning': False}",
-        "key_conflict_count": 2,
+        "key_conflict_count": 3,
         "missing_evidence": [
           {
             "detail": "Put/call ratio is not connected.",
@@ -10248,7 +10248,7 @@
         ],
         "not_trading_advice": "This is forecast confirmation only, not a buy/sell/entry/exit or position-sizing recommendation.",
         "primary_label": "反抽情景",
-        "primary_probability": 0.3184,
+        "primary_probability": 0.3183,
         "primary_scenario": "bounce_path",
         "probability_gap": 0.0518,
         "related_price_levels": {
@@ -10285,7 +10285,7 @@
             "source_type": "price_structure"
           }
         },
-        "secondary_probability": 0.2666,
+        "secondary_probability": 0.2665,
         "secondary_scenario": "analog_average_path",
         "strong_conclusion_allowed": false,
         "supporting_evidence": [
@@ -10514,10 +10514,10 @@
           "ig_oas_20d_change": 0.07000000000000006
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote 769.66; news risk 35%; no major macro event flag; rates pressure 3%.",
+          "brief": "Finnhub quote 769.66; news risk 40%; no major macro event flag; rates pressure 3%.",
           "finnhub_quote_available": true,
           "macro_event_risk_flag": false,
-          "news_risk_score": 0.35,
+          "news_risk_score": 0.4,
           "rates_pressure_score": 0.03346094546110758,
           "symbol": "SPY"
         },
@@ -10584,13 +10584,13 @@
         "news": {
           "market_news_status": "available",
           "news_item_count": 40,
-          "news_risk_score": 0.35,
+          "news_risk_score": 0.4,
           "top_headlines": [
+            "US costs of Iran war rise to over $47 billion, according to Pentagon estimate - Reuters",
             "Hegseth likely to face questions on US role in Indo-Pacific at ASEAN summit - Reuters",
             "Rights monitors raise concerns over senior UAE diplomat bid for next UN boss - Reuters",
             "Jordan, Syria to form security committee after deadly strikes on Islamic State sites - Reuters",
-            "Robinhood quarterly revenue rises 12% as event contracts, options offset crypto slump",
-            "AI debt fears ease ahead of Oracle, Alphabet and Amazon updates. Here's what to watch."
+            "Robinhood quarterly revenue rises 12% as event contracts, options offset crypto slump"
           ]
         },
         "price": {
@@ -11515,6 +11515,33 @@
               "TLT"
             ],
             "confidence": "high",
+            "confidence_score": 81,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 97,
+            "headline": "US costs of Iran war rise to over $47 billion, according to Pentagon estimate - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-28T01:01:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
             "confidence_score": 79,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
@@ -11522,7 +11549,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 90,
+            "freshness_score": 89,
             "headline": "Jordan, Syria to form security committee after deadly strikes on Islamic State sites - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11623,47 +11650,20 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 76,
+            "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 76,
+            "freshness_score": 75,
             "headline": "American Airlines hikes annual fees on rewards cards for first time since 2018",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-10-27T15:39:51+00:00",
             "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 74,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 68,
-            "headline": "Germany's Merz: Russia, US cannot settle Ukraine war without Kyiv, Europe - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-27T12:36:01+00:00",
-            "source": "Reuters"
           }
         ],
         "market_narrative": {
@@ -11685,6 +11685,18 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "US costs of Iran war rise to over $47 billion, according to Pentagon estimate - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-28T01:01:00+00:00",
+              "source": "Reuters"
+            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -11744,26 +11756,14 @@
               "importance_score": 100,
               "published_at": "2026-10-27T15:39:51+00:00",
               "source": "CNBC"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Germany's Merz: Russia, US cannot settle Ukraine war without Kyiv, Europe - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-10-27T12:36:01+00:00",
-              "source": "Reuters"
             }
           ]
         },
         "news_direction": "risk_off",
         "prediction_logic_effect": {
-          "after_primary_probability": 0.3184,
+          "after_primary_probability": 0.3183,
           "after_primary_scenario": "bounce_path",
-          "before_primary_probability": 0.343,
+          "before_primary_probability": 0.3429,
           "before_primary_scenario": "bounce_path",
           "confirmation_delta": -5.0,
           "impact": "potential_conflict_unconfirmed",
@@ -11795,8 +11795,9 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0076,
-            "avg_equity_futures_1d_return": 0.0073,
+            "avg_equity_futures_1d_return": -0.0009,
             "confirmed_checks": [
+              "股票ETF或股指期货下跌",
               "美元走强"
             ],
             "equity_futures_symbols_used": [
@@ -11806,12 +11807,11 @@
               "YM=F"
             ],
             "failed_checks": [
-              "股票ETF或股指期货下跌",
               "VIX 上升",
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0025,
-            "oil_proxy_1d_return": -0.0108,
+            "oil_proxy_1d_return": -0.0001,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -11820,7 +11820,7 @@
             "uup_1d_return": 0.0038,
             "vix_1d_return": -0.0473
           },
-          "confirmation_score": 25,
+          "confirmation_score": 50,
           "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
           "price_reaction_confirmed": false
         },
@@ -11845,10 +11845,10 @@
         "validation_type": "daily"
       },
       "path_weight_model": {
-        "analog_path_weight": 0.2666,
+        "analog_path_weight": 0.2665,
         "base_path_weight": 0.1641,
-        "bearish_path_weight": 0.251,
-        "bounce_path_weight": 0.3184,
+        "bearish_path_weight": 0.2512,
+        "bounce_path_weight": 0.3183,
         "low_confidence_simulation": false,
         "news_event_overlay_applied": true,
         "news_event_overlay_note": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay",
@@ -11874,12 +11874,12 @@
           "news_event_direction": "supports_risk_expansion",
           "news_event_macro_risk": 0.0,
           "news_event_price_confirmed": 0.0,
-          "news_risk": 0.35,
+          "news_risk": 0.4,
           "options_quality": 0.92,
           "options_stress": 0.4907,
           "panic_release": 0.274,
           "rates_pressure": 0.0335,
-          "risk_expansion": 0.4549,
+          "risk_expansion": 0.457,
           "signal_agreement": 0.9,
           "signal_confirmation": 0.7,
           "tail_risk": 0.5401,
@@ -11928,7 +11928,7 @@
           "failed_bounce_risk": 0.31428666246308035,
           "historical_support": "supportive",
           "market_edge_status": "STRONG_EDGE",
-          "risk_expansion_probability": 0.4765,
+          "risk_expansion_probability": 0.4805,
           "trend_reversal_probability": 0.6553,
           "up_probability": 0.6725987939841792
         },
@@ -11987,7 +11987,7 @@
           "failed_bounce_risk": 0.31428666246308035,
           "historical_support": "supportive",
           "market_edge_status": "STRONG_EDGE",
-          "risk_expansion_probability": 0.4765,
+          "risk_expansion_probability": 0.4805,
           "trend_reversal_probability": 0.6553,
           "up_probability": 0.696555470212842
         }
@@ -12083,7 +12083,7 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 1.0,
           "breadth_risk": 0.3628,
-          "confidence": 0.6548,
+          "confidence": 0.6562,
           "credit_risk": 0.3644,
           "crowding_proxy_score": 0.1348,
           "failed_bounce_options_risk": 0.4332,
@@ -12109,8 +12109,8 @@
             "news_event_overlay:+0.025"
           ],
           "options_quality": 0.92,
-          "probability": 0.4799,
-          "risk_expansion_probability": 0.4799,
+          "probability": 0.482,
+          "risk_expansion_probability": 0.482,
           "tail_risk_score": 0.5401,
           "term_structure_state": "contango",
           "volatility_risk": 0.4907
@@ -12244,7 +12244,7 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 1.0,
           "breadth_risk": 0.3628,
-          "confidence": 0.6548,
+          "confidence": 0.6562,
           "credit_risk": 0.3644,
           "crowding_proxy_score": 0.1348,
           "failed_bounce_options_risk": 0.4332,
@@ -12270,8 +12270,8 @@
             "news_event_overlay:+0.025"
           ],
           "options_quality": 0.92,
-          "probability": 0.4799,
-          "risk_expansion_probability": 0.4799,
+          "probability": 0.482,
+          "risk_expansion_probability": 0.482,
           "tail_risk_score": 0.5401,
           "term_structure_state": "contango",
           "volatility_risk": 0.4907
@@ -12320,7 +12320,7 @@
             "confidence": "medium",
             "expected_horizon": "10d-20d",
             "label": "反抽情景",
-            "probability": 0.3184,
+            "probability": 0.3183,
             "reason": "Bounce Predictor 66%，多源确认 70/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bounce_path"
           },
@@ -12328,7 +12328,7 @@
             "confidence": "medium",
             "expected_horizon": "20d-60d",
             "label": "历史均值情景",
-            "probability": 0.2666,
+            "probability": 0.2665,
             "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "analog_average_path"
           },
@@ -12336,8 +12336,8 @@
             "confidence": "medium",
             "expected_horizon": "3d-10d",
             "label": "失败反抽情景",
-            "probability": 0.251,
-            "reason": "Downside/Risk predictors 为 35%/45%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
+            "probability": 0.2512,
+            "reason": "Downside/Risk predictors 为 35%/46%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bearish_path"
           },
           {
@@ -12356,7 +12356,7 @@
           "confidence": "medium",
           "expected_horizon": "10d-20d",
           "label": "反抽情景",
-          "probability": 0.3184,
+          "probability": 0.3183,
           "reason": "Bounce Predictor 66%，多源确认 70/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bounce_path"
         },
@@ -12373,12 +12373,12 @@
         "probability_gap": 0.0518,
         "ranking_note": "Scenario ranking includes a bounded News/Event overlay when a major event or macro calendar risk is detected. It is probabilistic, not deterministic.",
         "risk_scenario": "bearish_path",
-        "scenario_probability": 0.3184,
+        "scenario_probability": 0.3183,
         "secondary": {
           "confidence": "medium",
           "expected_horizon": "20d-60d",
           "label": "历史均值情景",
-          "probability": 0.2666,
+          "probability": 0.2665,
           "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "analog_average_path"
         },
@@ -12395,16 +12395,16 @@
           "confidence": "medium",
           "expected_horizon": "3d-10d",
           "label": "失败反抽情景",
-          "probability": 0.251,
-          "reason": "Downside/Risk predictors 为 35%/45%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
+          "probability": 0.2512,
+          "reason": "Downside/Risk predictors 为 35%/46%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bearish_path"
         }
       },
       "scenario_weights": {
         "base_scenario": 0.1598,
-        "bearish_scenario": 0.2213,
-        "bounce_scenario": 0.343,
-        "historical_analog_average": 0.2759
+        "bearish_scenario": 0.2215,
+        "bounce_scenario": 0.3429,
+        "historical_analog_average": 0.2758
       },
       "shadow_evidence_v1": {
         "alert_status_by_type": {

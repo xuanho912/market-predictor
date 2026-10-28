@@ -1,8 +1,8 @@
 {
   "disclaimer": "Confluence is a forecast-confirmation layer, not a trading signal or execution recommendation.",
-  "generated_at": "2026-10-28T01:51:41.442206+00:00",
+  "generated_at": "2026-10-28T02:09:19.308043+00:00",
   "summary": {
-    "average_confluence_score": 52.0,
+    "average_confluence_score": 52.25,
     "mixed_or_no_edge_symbols": [
       "DIA",
       "IWM",
@@ -22,9 +22,15 @@
           "source": "flow"
         },
         {
+          "detail": "DIA 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+          "name": "新闻事件与主路径冲突",
+          "score": 50,
+          "source": "news"
+        },
+        {
           "detail": "News/event direction is not sufficiently confirmed by market reaction.",
           "name": "新闻未获价格确认",
-          "score": 75,
+          "score": 50,
           "source": "news"
         },
         {
@@ -32,12 +38,6 @@
           "name": "risk_off_news_event",
           "score": 35,
           "source": "signal_confirmation"
-        },
-        {
-          "detail": "DIA 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-          "name": "新闻事件与主路径冲突",
-          "score": 25,
-          "source": "news"
         },
         {
           "detail": "VIX is rising or not confirming a bounce.",
@@ -54,7 +54,7 @@
         {
           "detail": "路径分歧较大，不宜给强结论。",
           "name": "主次路径差距小",
-          "score": 7.15,
+          "score": 7.16,
           "source": "scenario_gap"
         }
       ],
@@ -63,7 +63,7 @@
       "confluence_summary": "DIA 当前多源共振为 mixed（56/100），主导路径为 bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
       "dominant_path": "bounce",
       "edge_status": "{'market_edge_status': 'MODERATE_EDGE', 'has_usable_prediction_edge_today': True, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': True, 'historical_analog_not_conflicting': True, 'confidence_score_ge_65': True, 'current_regime_identified': True, 'macro_event_risk_not_high': True, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': True, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': False}, 'passed_conditions': 9, 'summary': '有一定预测优势，但仍需观察冲突信号和失效条件。', 'no_edge_note': '', 'risk_warning': False}",
-      "key_conflict_count": 2,
+      "key_conflict_count": 3,
       "missing_evidence": [
         {
           "detail": "Put/call ratio is not connected.",
@@ -85,7 +85,7 @@
       "primary_label": "反抽情景",
       "primary_probability": 0.3377,
       "primary_scenario": "bounce_path",
-      "probability_gap": 0.0715,
+      "probability_gap": 0.0716,
       "related_price_levels": {
         "primary_confirmation_level": {
           "confidence": "medium_high",
@@ -120,7 +120,7 @@
           "source_type": "price_structure"
         }
       },
-      "secondary_probability": 0.2662,
+      "secondary_probability": 0.2661,
       "secondary_scenario": "analog_average_path",
       "strong_conclusion_allowed": false,
       "supporting_evidence": [
@@ -209,9 +209,15 @@
           "source": "flow"
         },
         {
+          "detail": "IWM 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+          "name": "新闻事件与主路径冲突",
+          "score": 50,
+          "source": "news"
+        },
+        {
           "detail": "News/event direction is not sufficiently confirmed by market reaction.",
           "name": "新闻未获价格确认",
-          "score": 75,
+          "score": 50,
           "source": "news"
         },
         {
@@ -225,12 +231,6 @@
           "name": "risk_off_news_event",
           "score": 35,
           "source": "signal_confirmation"
-        },
-        {
-          "detail": "IWM 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-          "name": "新闻事件与主路径冲突",
-          "score": 25,
-          "source": "news"
         },
         {
           "detail": "VIX is rising or not confirming a bounce.",
@@ -247,7 +247,7 @@
         {
           "detail": "路径分歧较大，不宜给强结论。",
           "name": "主次路径差距小",
-          "score": 1.69,
+          "score": 1.66,
           "source": "scenario_gap"
         }
       ],
@@ -256,7 +256,7 @@
       "confluence_summary": "IWM 当前多源共振为 mixed（53/100），主导路径为 bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
       "dominant_path": "bounce",
       "edge_status": "{'market_edge_status': 'MODERATE_EDGE', 'has_usable_prediction_edge_today': True, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': True, 'historical_analog_not_conflicting': True, 'confidence_score_ge_65': True, 'current_regime_identified': True, 'macro_event_risk_not_high': True, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': True, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': False}, 'passed_conditions': 9, 'summary': '有一定预测优势，但仍需观察冲突信号和失效条件。', 'no_edge_note': '', 'risk_warning': False}",
-      "key_conflict_count": 3,
+      "key_conflict_count": 4,
       "missing_evidence": [
         {
           "detail": "Put/call ratio is not connected.",
@@ -276,9 +276,9 @@
       ],
       "not_trading_advice": "This is forecast confirmation only, not a buy/sell/entry/exit or position-sizing recommendation.",
       "primary_label": "反抽情景",
-      "primary_probability": 0.2897,
+      "primary_probability": 0.2896,
       "primary_scenario": "bounce_path",
-      "probability_gap": 0.0169,
+      "probability_gap": 0.0166,
       "related_price_levels": {
         "primary_confirmation_level": {
           "confidence": "medium",
@@ -313,7 +313,7 @@
           "source_type": "price_structure"
         }
       },
-      "secondary_probability": 0.2728,
+      "secondary_probability": 0.273,
       "secondary_scenario": "bearish_path",
       "strong_conclusion_allowed": false,
       "supporting_evidence": [
@@ -396,16 +396,16 @@
           "source": "signal_confirmation"
         },
         {
-          "detail": "News/event direction is not sufficiently confirmed by market reaction.",
-          "name": "新闻未获价格确认",
-          "score": 75,
-          "source": "news"
-        },
-        {
           "detail": "指数路径与内部参与度存在冲突。",
           "name": "宽度冲突",
           "score": 69,
           "source": "breadth"
+        },
+        {
+          "detail": "News/event direction is not sufficiently confirmed by market reaction.",
+          "name": "新闻未获价格确认",
+          "score": 50,
+          "source": "news"
         },
         {
           "detail": "Index strength is not broadly confirmed by internals; this raises failed-bounce risk.",
@@ -451,8 +451,8 @@
         }
       ],
       "confluence_level": "weak",
-      "confluence_score": 43,
-      "confluence_summary": "QQQ 当前多源共振为 weak（43/100），主导路径为 no_edge。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
+      "confluence_score": 44,
+      "confluence_summary": "QQQ 当前多源共振为 weak（44/100），主导路径为 no_edge。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
       "dominant_path": "no_edge",
       "edge_status": "{'market_edge_status': 'WEAK_EDGE', 'has_usable_prediction_edge_today': False, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': False, 'historical_analog_not_conflicting': True, 'confidence_score_ge_65': False, 'current_regime_identified': True, 'macro_event_risk_not_high': True, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': False, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': False}, 'passed_conditions': 6, 'summary': '预测优势偏弱，应以观察为主。', 'no_edge_note': '今天没有足够 edge，不应过度解读预测路径。', 'risk_warning': False}",
       "key_conflict_count": 3,
@@ -475,9 +475,9 @@
       ],
       "not_trading_advice": "This is forecast confirmation only, not a buy/sell/entry/exit or position-sizing recommendation.",
       "primary_label": "失败反抽情景",
-      "primary_probability": 0.369,
+      "primary_probability": 0.3691,
       "primary_scenario": "bearish_path",
-      "probability_gap": 0.1116,
+      "probability_gap": 0.1117,
       "related_price_levels": {
         "primary_confirmation_level": {
           "confidence": "medium",
@@ -531,7 +531,7 @@
         {
           "detail": "QQQ 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
           "name": "新闻事件支持主路径",
-          "score": 25,
+          "score": 50,
           "source": "news"
         },
         {
@@ -555,7 +555,7 @@
         {
           "detail": "primary-secondary gap 11.2%",
           "name": "主次路径差距可观察",
-          "score": 11.16,
+          "score": 11.17,
           "source": "scenario_gap"
         },
         {
@@ -577,9 +577,15 @@
           "source": "flow"
         },
         {
+          "detail": "SPY 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+          "name": "新闻事件与主路径冲突",
+          "score": 50,
+          "source": "news"
+        },
+        {
           "detail": "News/event direction is not sufficiently confirmed by market reaction.",
           "name": "新闻未获价格确认",
-          "score": 75,
+          "score": 50,
           "source": "news"
         },
         {
@@ -587,12 +593,6 @@
           "name": "risk_off_news_event",
           "score": 35,
           "source": "signal_confirmation"
-        },
-        {
-          "detail": "SPY 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-          "name": "新闻事件与主路径冲突",
-          "score": 25,
-          "source": "news"
         },
         {
           "detail": "VIX is rising or not confirming a bounce.",
@@ -618,7 +618,7 @@
       "confluence_summary": "SPY 当前多源共振为 mixed（56/100），主导路径为 bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
       "dominant_path": "bounce",
       "edge_status": "{'market_edge_status': 'MODERATE_EDGE', 'has_usable_prediction_edge_today': True, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': True, 'historical_analog_not_conflicting': True, 'confidence_score_ge_65': True, 'current_regime_identified': True, 'macro_event_risk_not_high': True, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': True, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': False}, 'passed_conditions': 9, 'summary': '有一定预测优势，但仍需观察冲突信号和失效条件。', 'no_edge_note': '', 'risk_warning': False}",
-      "key_conflict_count": 2,
+      "key_conflict_count": 3,
       "missing_evidence": [
         {
           "detail": "Put/call ratio is not connected.",
@@ -638,7 +638,7 @@
       ],
       "not_trading_advice": "This is forecast confirmation only, not a buy/sell/entry/exit or position-sizing recommendation.",
       "primary_label": "反抽情景",
-      "primary_probability": 0.3184,
+      "primary_probability": 0.3183,
       "primary_scenario": "bounce_path",
       "probability_gap": 0.0518,
       "related_price_levels": {
@@ -675,7 +675,7 @@
           "source_type": "price_structure"
         }
       },
-      "secondary_probability": 0.2666,
+      "secondary_probability": 0.2665,
       "secondary_scenario": "analog_average_path",
       "strong_conclusion_allowed": false,
       "supporting_evidence": [
