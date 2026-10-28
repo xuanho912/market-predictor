@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-28T10:02:29.907594+00:00`
+- generated_at: `2026-10-28T18:23:50.111738+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `10`
-- event_detection_confidence: `73`
+- major_event_count: `12`
+- event_detection_confidence: `80`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,80 +27,80 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Qatari mediators present Iran with new deal to end the war, official says - Reuters
+- headline: Houthis strike Yemen's Aden airport after evacuation warning - Reuters
 - source: Reuters
-- published_at: `2026-10-28T09:07:52+00:00`
+- published_at: `2026-10-28T16:51:33+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil up over 1% as Saudi Arabian refinery attack reignites supply risk concerns - Reuters
+- headline: Iran sees only unacceptable ideas in latest mediation to end war, official says - Reuters
 - source: Reuters
-- published_at: `2026-10-28T01:49:00+00:00`
+- published_at: `2026-10-28T16:02:29+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US costs of Iran war rise to over $47 billion, according to Pentagon estimate - Reuters
+- headline: Caretaker role could limit Netanyahu but not rule out war with Iran - Reuters
 - source: Reuters
-- published_at: `2026-10-28T01:01:00+00:00`
+- published_at: `2026-10-28T15:49:37+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Jordan, Syria to form security committee after deadly strikes on Islamic State sites - Reuters
-- source: Reuters
-- published_at: `2026-10-27T21:30:08+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Yemen's Houthis say they hit Saudi Ras Tanura oil refinery with missile - Reuters
-- source: Reuters
-- published_at: `2026-10-27T19:17:53+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Food and household brands warn of more price hikes as Iran war costs bite - Reuters
-- source: Reuters
-- published_at: `2026-10-27T18:28:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Netanyahu warns of Arab voter surge in Israel's election; Arab leaders call tactic racist - Reuters
-- source: Reuters
-- published_at: `2026-10-27T15:57:46+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: American Airlines hikes annual fees on rewards cards for first time since 2018
+- headline: Bearista cups are returning at Starbucks. Can the viral sensation boost holiday sales again?
 - source: CNBC
-- published_at: `2026-10-27T15:39:51+00:00`
+- published_at: `2026-10-28T14:04:13+00:00`
 - importance_score: `100`
-- confidence: `medium`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Critics attack 'anti-democratic' French bill making rioters pay - Reuters
+- headline: Turkey warns against further attacks by Russia, Ukraine on Black Sea vessels - Reuters
 - source: Reuters
-- published_at: `2026-10-27T14:37:00+00:00`
+- published_at: `2026-10-28T13:28:52+00:00`
 - importance_score: `100`
-- confidence: `medium`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Germany's Merz: Russia, US cannot settle Ukraine war without Kyiv, Europe - Reuters
+- headline: Iranians cut essentials and put dreams on hold as war-hit economy bites - Reuters
 - source: Reuters
-- published_at: `2026-10-27T12:36:01+00:00`
+- published_at: `2026-10-28T12:49:43+00:00`
 - importance_score: `100`
-- confidence: `medium`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Brazil Supreme Court says no search warrant issued against Senator Flavio Bolsonaro - Reuters
+- source: Reuters
+- published_at: `2026-10-28T11:09:43+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: As Iran war drags on, airlines pull back on fuel hedges and warn on fares - Reuters
+- source: Reuters
+- published_at: `2026-10-28T11:08:27+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Unilever flags price hikes as Iran war costs stack up - Reuters
+- source: Reuters
+- published_at: `2026-10-28T10:14:23+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### fed_hawkish / risk_off
+
+- headline: PODCAST: A hawkish hold? - Reuters
+- source: Reuters
+- published_at: `2026-10-28T13:35:29+00:00`
+- importance_score: `88`
+- confidence: `high`
