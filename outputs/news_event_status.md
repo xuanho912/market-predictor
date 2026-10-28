@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-28T06:55:29.650073+00:00`
+- generated_at: `2026-10-28T10:02:29.907594+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
-- event_detection_confidence: `75`
+- major_event_count: `10`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,7 +27,15 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil rises over 1% after Saudi Arabian refinery attack reignites supply risk - Reuters
+- headline: Qatari mediators present Iran with new deal to end the war, official says - Reuters
+- source: Reuters
+- published_at: `2026-10-28T09:07:52+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil up over 1% as Saudi Arabian refinery attack reignites supply risk concerns - Reuters
 - source: Reuters
 - published_at: `2026-10-28T01:49:00+00:00`
 - importance_score: `100`
@@ -47,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-10-27T21:30:08+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,7 +63,7 @@
 - source: Reuters
 - published_at: `2026-10-27T19:17:53+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -78,6 +86,14 @@
 - headline: American Airlines hikes annual fees on rewards cards for first time since 2018
 - source: CNBC
 - published_at: `2026-10-27T15:39:51+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Critics attack 'anti-democratic' French bill making rioters pay - Reuters
+- source: Reuters
+- published_at: `2026-10-27T14:37:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
