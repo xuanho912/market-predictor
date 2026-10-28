@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-28T02:09:06.462745+00:00`
+- generated_at: `2026-10-28T06:55:29.650073+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
-- event_detection_confidence: `77`
+- major_event_count: `8`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil rises over 1% after Saudi Arabian refinery attack reignites supply risk - Reuters
+- source: Reuters
+- published_at: `2026-10-28T01:49:00+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -53,9 +61,9 @@
 
 - headline: Food and household brands warn of more price hikes as Iran war costs bite - Reuters
 - source: Reuters
-- published_at: `2026-10-27T18:29:43+00:00`
+- published_at: `2026-10-27T18:28:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -63,7 +71,7 @@
 - source: Reuters
 - published_at: `2026-10-27T15:57:46+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -71,7 +79,7 @@
 - source: CNBC
 - published_at: `2026-10-27T15:39:51+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 

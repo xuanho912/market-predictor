@@ -1,14 +1,19 @@
 {
   "as_of": "2026-10-27",
   "data_freshness_status": {
-    "affected_symbols": [],
-    "can_append_forecast_record": true,
+    "affected_symbols": [
+      "SPY",
+      "QQQ",
+      "IWM",
+      "DIA"
+    ],
+    "can_append_forecast_record": false,
     "can_backfill_completed_outcomes": true,
-    "current_date": "2026-10-27",
-    "current_time_us_eastern": "2026-10-27T22:09:19.308744-04:00",
-    "data_freshness_status": "fresh",
+    "current_date": "2026-10-28",
+    "current_time_us_eastern": "2026-10-28T02:55:41.059634-04:00",
+    "data_freshness_status": "market_open_unconfirmed",
     "expected_latest_trading_date": "2026-10-27",
-    "generated_at": "2026-10-28T02:09:19.308744+00:00",
+    "generated_at": "2026-10-28T06:55:41.059634+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -22,7 +27,7 @@
     "last_successful_update": "2026-10-27",
     "latest_confirmed_market_date": "2026-10-27",
     "latest_market_date": "2026-10-27",
-    "latest_market_session_status": "completed_or_prior_session",
+    "latest_market_session_status": "intraday_unconfirmed",
     "provider_status": {
       "BAA_SPREAD": {
         "fallback_used": false,
@@ -939,7 +944,7 @@
     },
     "stale_days": 0,
     "version": "data_freshness_gate_v3",
-    "warning_message": "核心行情已更新至最新应有交易日 2026-10-27。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。"
+    "warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-10-27，最近完整收盘交易日为 2026-10-27；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。"
   },
   "data_quality_summary": {
     "average_breadth_quality_score": 67.0,
@@ -960,10 +965,10 @@
       "IWM"
     ],
     "breadth_required": true,
-    "can_append_forecast_record": true,
+    "can_append_forecast_record": false,
     "data_completeness_score": 87.0,
     "data_completeness_score_before_news_event": 85.0,
-    "data_freshness_status": "fresh",
+    "data_freshness_status": "market_open_unconfirmed",
     "data_source_status": "real_core_with_proxies",
     "expected_latest_trading_date": "2026-10-27",
     "fallback_used": true,
@@ -1047,17 +1052,17 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "DGS3MO",
       "HY_OAS",
+      "DGS2",
+      "DGS3MO",
       "IG_OAS",
       "DGS10",
       "BAA_SPREAD",
-      "DGS2",
-      "FINANCIAL_STRESS",
+      "RECESSION",
       "DFII10",
-      "RECESSION"
+      "FINANCIAL_STRESS"
     ],
-    "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-10-27。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
+    "freshness_warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-10-27，最近完整收盘交易日为 2026-10-27；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
     "gamma_available": false,
     "gamma_exposure_available": false,
     "latest_confirmed_market_date": "2026-10-27",
@@ -1086,11 +1091,11 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 77,
+      "event_detection_confidence": 75,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-10-28T02:09:06.462745+00:00",
-      "major_event_count": 7,
+      "last_update": "2026-10-28T06:55:29.650073+00:00",
+      "major_event_count": 8,
       "missing_reason": null,
       "news_direction": "risk_off",
       "news_event_partial": false,
@@ -1101,7 +1106,7 @@
     },
     "news_event_available": true,
     "news_event_event_risk_level": "high",
-    "news_event_major_count": 7,
+    "news_event_major_count": 8,
     "news_event_missing_reason": null,
     "news_event_narrative": "geopolitics_escalation_risk_off",
     "news_event_partial": false,
@@ -1151,7 +1156,7 @@
       "status": "failed"
     },
     "event_risk_level": "high",
-    "major_event_count": 7,
+    "major_event_count": 8,
     "market_narrative": {
       "affected_scenarios": [
         "bearish_path"
@@ -1171,6 +1176,18 @@
       "narrative_strength": 100,
       "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
       "supporting_headlines": [
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
+          "headline": "Oil rises over 1% after Saudi Arabian refinery attack reignites supply risk - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-10-28T01:49:00+00:00",
+          "source": "Reuters"
+        },
         {
           "confidence": "high",
           "detected_event_conditions": [
@@ -1208,7 +1225,7 @@
           "source": "Reuters"
         },
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -1216,11 +1233,11 @@
           "expected_market_direction": "risk_off",
           "headline": "Food and household brands warn of more price hikes as Iran war costs bite - Reuters",
           "importance_score": 100,
-          "published_at": "2026-10-27T18:29:43+00:00",
+          "published_at": "2026-10-27T18:28:00+00:00",
           "source": "Reuters"
         },
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -1230,18 +1247,6 @@
           "importance_score": 100,
           "published_at": "2026-10-27T15:57:46+00:00",
           "source": "Reuters"
-        },
-        {
-          "confidence": "high",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "American Airlines hikes annual fees on rewards cards for first time since 2018",
-          "importance_score": 100,
-          "published_at": "2026-10-27T15:39:51+00:00",
-          "source": "CNBC"
         }
       ]
     },
@@ -1251,7 +1256,7 @@
       "direction": "supports_risk_expansion",
       "event_risk_level": "high",
       "macro_event_risk_flag": false,
-      "major_event_count": 7,
+      "major_event_count": 8,
       "not_a_trading_signal": true,
       "price_reaction_confirmed": false,
       "symbols": {
@@ -1390,7 +1395,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": 0.0076,
-        "avg_equity_futures_1d_return": -0.0009,
+        "avg_equity_futures_1d_return": -0.0001,
         "confirmed_checks": [
           "股票ETF或股指期货下跌",
           "美元走强"
@@ -1406,7 +1411,7 @@
           "HYG/LQD 走弱"
         ],
         "hyg_lqd_1d_relative_return": 0.0025,
-        "oil_proxy_1d_return": -0.0001,
+        "oil_proxy_1d_return": 0.0012,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -1932,6 +1937,7 @@
     },
     "version": "shadow_evidence_v1"
   },
+  "status_note": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-10-27，最近完整收盘交易日为 2026-10-27；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
   "symbols": {
     "DIA": {
       "analog_path_weight": 0.2661,
@@ -2304,11 +2310,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.4,
           "top_headlines": [
+            "Netanyahu, Eisenkot stake rival claims to lead Israel after deadlocked vote - Reuters",
+            "Oil rises over 1% after Saudi Arabian refinery attack reignites supply risk - Reuters",
+            "ASEAN envoy to lead humanitarian mission to Myanmar - Reuters",
             "US costs of Iran war rise to over $47 billion, according to Pentagon estimate - Reuters",
-            "Hegseth likely to face questions on US role in Indo-Pacific at ASEAN summit - Reuters",
-            "Rights monitors raise concerns over senior UAE diplomat bid for next UN boss - Reuters",
-            "Jordan, Syria to form security committee after deadly strikes on Islamic State sites - Reuters",
-            "Robinhood quarterly revenue rises 12% as event contracts, options offset crypto slump"
+            "Healey seeks to steer UK through 'difficult moment' with low-key budget - Reuters"
           ]
         },
         "price": {
@@ -3681,33 +3687,6 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 81,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 97,
-            "headline": "US costs of Iran war rise to over $47 billion, according to Pentagon estimate - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-28T01:01:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
             "confidence_score": 79,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
@@ -3715,12 +3694,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 89,
-            "headline": "Jordan, Syria to form security committee after deadly strikes on Islamic State sites - Reuters",
+            "freshness_score": 88,
+            "headline": "Oil rises over 1% after Saudi Arabian refinery attack reignites supply risk - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-27T21:30:08+00:00",
+            "published_at": "2026-10-28T01:49:00+00:00",
             "source": "Reuters"
           },
           {
@@ -3742,39 +3721,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
-            "headline": "Yemen's Houthis say they hit Saudi Ras Tanura oil refinery with missile - Reuters",
+            "freshness_score": 86,
+            "headline": "US costs of Iran war rise to over $47 billion, according to Pentagon estimate - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-27T19:17:53+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 77,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 82,
-            "headline": "Food and household brands warn of more price hikes as Iran war costs bite - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-27T18:29:43+00:00",
+            "published_at": "2026-10-28T01:01:00+00:00",
             "source": "Reuters"
           },
           {
@@ -3796,12 +3748,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 76,
-            "headline": "Netanyahu warns of Arab voter surge in Israel's election; Arab leaders call tactic racist - Reuters",
+            "freshness_score": 77,
+            "headline": "Jordan, Syria to form security committee after deadly strikes on Islamic State sites - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-27T15:57:46+00:00",
+            "published_at": "2026-10-27T21:30:08+00:00",
             "source": "Reuters"
           },
           {
@@ -3823,13 +3775,67 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 75,
-            "headline": "American Airlines hikes annual fees on rewards cards for first time since 2018",
+            "freshness_score": 72,
+            "headline": "Yemen's Houthis say they hit Saudi Ras Tanura oil refinery with missile - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-27T15:39:51+00:00",
-            "source": "CNBC"
+            "published_at": "2026-10-27T19:17:53+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 74,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 70,
+            "headline": "Food and household brands warn of more price hikes as Iran war costs bite - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-27T18:28:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 73,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 64,
+            "headline": "Netanyahu warns of Arab voter surge in Israel's election; Arab leaders call tactic racist - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-27T15:57:46+00:00",
+            "source": "Reuters"
           }
         ],
         "market_narrative": {
@@ -3851,6 +3857,18 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Oil rises over 1% after Saudi Arabian refinery attack reignites supply risk - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-28T01:49:00+00:00",
+              "source": "Reuters"
+            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -3888,7 +3906,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -3896,11 +3914,11 @@
               "expected_market_direction": "risk_off",
               "headline": "Food and household brands warn of more price hikes as Iran war costs bite - Reuters",
               "importance_score": 100,
-              "published_at": "2026-10-27T18:29:43+00:00",
+              "published_at": "2026-10-27T18:28:00+00:00",
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -3910,18 +3928,6 @@
               "importance_score": 100,
               "published_at": "2026-10-27T15:57:46+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "American Airlines hikes annual fees on rewards cards for first time since 2018",
-              "importance_score": 100,
-              "published_at": "2026-10-27T15:39:51+00:00",
-              "source": "CNBC"
             }
           ]
         },
@@ -3961,7 +3967,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0076,
-            "avg_equity_futures_1d_return": -0.0009,
+            "avg_equity_futures_1d_return": -0.0001,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "美元走强"
@@ -3977,7 +3983,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0025,
-            "oil_proxy_1d_return": -0.0001,
+            "oil_proxy_1d_return": 0.0012,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -6482,11 +6488,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.4,
           "top_headlines": [
+            "Netanyahu, Eisenkot stake rival claims to lead Israel after deadlocked vote - Reuters",
+            "Oil rises over 1% after Saudi Arabian refinery attack reignites supply risk - Reuters",
+            "ASEAN envoy to lead humanitarian mission to Myanmar - Reuters",
             "US costs of Iran war rise to over $47 billion, according to Pentagon estimate - Reuters",
-            "Hegseth likely to face questions on US role in Indo-Pacific at ASEAN summit - Reuters",
-            "Rights monitors raise concerns over senior UAE diplomat bid for next UN boss - Reuters",
-            "Jordan, Syria to form security committee after deadly strikes on Islamic State sites - Reuters",
-            "Robinhood quarterly revenue rises 12% as event contracts, options offset crypto slump"
+            "Healey seeks to steer UK through 'difficult moment' with low-key budget - Reuters"
           ]
         },
         "price": {
@@ -7843,33 +7849,6 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 81,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 97,
-            "headline": "US costs of Iran war rise to over $47 billion, according to Pentagon estimate - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-28T01:01:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
             "confidence_score": 79,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
@@ -7877,12 +7856,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 89,
-            "headline": "Jordan, Syria to form security committee after deadly strikes on Islamic State sites - Reuters",
+            "freshness_score": 88,
+            "headline": "Oil rises over 1% after Saudi Arabian refinery attack reignites supply risk - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-27T21:30:08+00:00",
+            "published_at": "2026-10-28T01:49:00+00:00",
             "source": "Reuters"
           },
           {
@@ -7904,39 +7883,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
-            "headline": "Yemen's Houthis say they hit Saudi Ras Tanura oil refinery with missile - Reuters",
+            "freshness_score": 86,
+            "headline": "US costs of Iran war rise to over $47 billion, according to Pentagon estimate - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-27T19:17:53+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 77,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 82,
-            "headline": "Food and household brands warn of more price hikes as Iran war costs bite - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-27T18:29:43+00:00",
+            "published_at": "2026-10-28T01:01:00+00:00",
             "source": "Reuters"
           },
           {
@@ -7958,12 +7910,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 76,
-            "headline": "Netanyahu warns of Arab voter surge in Israel's election; Arab leaders call tactic racist - Reuters",
+            "freshness_score": 77,
+            "headline": "Jordan, Syria to form security committee after deadly strikes on Islamic State sites - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-27T15:57:46+00:00",
+            "published_at": "2026-10-27T21:30:08+00:00",
             "source": "Reuters"
           },
           {
@@ -7985,13 +7937,67 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 75,
-            "headline": "American Airlines hikes annual fees on rewards cards for first time since 2018",
+            "freshness_score": 72,
+            "headline": "Yemen's Houthis say they hit Saudi Ras Tanura oil refinery with missile - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-27T15:39:51+00:00",
-            "source": "CNBC"
+            "published_at": "2026-10-27T19:17:53+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 74,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 70,
+            "headline": "Food and household brands warn of more price hikes as Iran war costs bite - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-27T18:28:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 73,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 64,
+            "headline": "Netanyahu warns of Arab voter surge in Israel's election; Arab leaders call tactic racist - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-27T15:57:46+00:00",
+            "source": "Reuters"
           }
         ],
         "market_narrative": {
@@ -8013,6 +8019,18 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Oil rises over 1% after Saudi Arabian refinery attack reignites supply risk - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-28T01:49:00+00:00",
+              "source": "Reuters"
+            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -8050,7 +8068,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -8058,11 +8076,11 @@
               "expected_market_direction": "risk_off",
               "headline": "Food and household brands warn of more price hikes as Iran war costs bite - Reuters",
               "importance_score": 100,
-              "published_at": "2026-10-27T18:29:43+00:00",
+              "published_at": "2026-10-27T18:28:00+00:00",
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -8072,18 +8090,6 @@
               "importance_score": 100,
               "published_at": "2026-10-27T15:57:46+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "American Airlines hikes annual fees on rewards cards for first time since 2018",
-              "importance_score": 100,
-              "published_at": "2026-10-27T15:39:51+00:00",
-              "source": "CNBC"
             }
           ]
         },
@@ -8123,7 +8129,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0076,
-            "avg_equity_futures_1d_return": -0.0009,
+            "avg_equity_futures_1d_return": -0.0001,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "美元走强"
@@ -8139,7 +8145,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0025,
-            "oil_proxy_1d_return": -0.0001,
+            "oil_proxy_1d_return": 0.0012,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -10637,11 +10643,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.4,
           "top_headlines": [
+            "Netanyahu, Eisenkot stake rival claims to lead Israel after deadlocked vote - Reuters",
+            "Oil rises over 1% after Saudi Arabian refinery attack reignites supply risk - Reuters",
+            "ASEAN envoy to lead humanitarian mission to Myanmar - Reuters",
             "US costs of Iran war rise to over $47 billion, according to Pentagon estimate - Reuters",
-            "Hegseth likely to face questions on US role in Indo-Pacific at ASEAN summit - Reuters",
-            "Rights monitors raise concerns over senior UAE diplomat bid for next UN boss - Reuters",
-            "Jordan, Syria to form security committee after deadly strikes on Islamic State sites - Reuters",
-            "Robinhood quarterly revenue rises 12% as event contracts, options offset crypto slump"
+            "Healey seeks to steer UK through 'difficult moment' with low-key budget - Reuters"
           ]
         },
         "price": {
@@ -11994,33 +12000,6 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 81,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 97,
-            "headline": "US costs of Iran war rise to over $47 billion, according to Pentagon estimate - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-28T01:01:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
             "confidence_score": 79,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
@@ -12028,12 +12007,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 89,
-            "headline": "Jordan, Syria to form security committee after deadly strikes on Islamic State sites - Reuters",
+            "freshness_score": 88,
+            "headline": "Oil rises over 1% after Saudi Arabian refinery attack reignites supply risk - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-27T21:30:08+00:00",
+            "published_at": "2026-10-28T01:49:00+00:00",
             "source": "Reuters"
           },
           {
@@ -12055,39 +12034,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
-            "headline": "Yemen's Houthis say they hit Saudi Ras Tanura oil refinery with missile - Reuters",
+            "freshness_score": 86,
+            "headline": "US costs of Iran war rise to over $47 billion, according to Pentagon estimate - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-27T19:17:53+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 77,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 82,
-            "headline": "Food and household brands warn of more price hikes as Iran war costs bite - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-27T18:29:43+00:00",
+            "published_at": "2026-10-28T01:01:00+00:00",
             "source": "Reuters"
           },
           {
@@ -12109,12 +12061,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 76,
-            "headline": "Netanyahu warns of Arab voter surge in Israel's election; Arab leaders call tactic racist - Reuters",
+            "freshness_score": 77,
+            "headline": "Jordan, Syria to form security committee after deadly strikes on Islamic State sites - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-27T15:57:46+00:00",
+            "published_at": "2026-10-27T21:30:08+00:00",
             "source": "Reuters"
           },
           {
@@ -12136,13 +12088,67 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 75,
-            "headline": "American Airlines hikes annual fees on rewards cards for first time since 2018",
+            "freshness_score": 72,
+            "headline": "Yemen's Houthis say they hit Saudi Ras Tanura oil refinery with missile - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-27T15:39:51+00:00",
-            "source": "CNBC"
+            "published_at": "2026-10-27T19:17:53+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 74,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 70,
+            "headline": "Food and household brands warn of more price hikes as Iran war costs bite - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-27T18:28:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 73,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 64,
+            "headline": "Netanyahu warns of Arab voter surge in Israel's election; Arab leaders call tactic racist - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-27T15:57:46+00:00",
+            "source": "Reuters"
           }
         ],
         "market_narrative": {
@@ -12164,6 +12170,18 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Oil rises over 1% after Saudi Arabian refinery attack reignites supply risk - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-28T01:49:00+00:00",
+              "source": "Reuters"
+            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -12201,7 +12219,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -12209,11 +12227,11 @@
               "expected_market_direction": "risk_off",
               "headline": "Food and household brands warn of more price hikes as Iran war costs bite - Reuters",
               "importance_score": 100,
-              "published_at": "2026-10-27T18:29:43+00:00",
+              "published_at": "2026-10-27T18:28:00+00:00",
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -12223,18 +12241,6 @@
               "importance_score": 100,
               "published_at": "2026-10-27T15:57:46+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "American Airlines hikes annual fees on rewards cards for first time since 2018",
-              "importance_score": 100,
-              "published_at": "2026-10-27T15:39:51+00:00",
-              "source": "CNBC"
             }
           ]
         },
@@ -12274,7 +12280,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0076,
-            "avg_equity_futures_1d_return": -0.0009,
+            "avg_equity_futures_1d_return": -0.0001,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "美元走强"
@@ -12290,7 +12296,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0025,
-            "oil_proxy_1d_return": -0.0001,
+            "oil_proxy_1d_return": 0.0012,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -14810,11 +14816,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.4,
           "top_headlines": [
+            "Netanyahu, Eisenkot stake rival claims to lead Israel after deadlocked vote - Reuters",
+            "Oil rises over 1% after Saudi Arabian refinery attack reignites supply risk - Reuters",
+            "ASEAN envoy to lead humanitarian mission to Myanmar - Reuters",
             "US costs of Iran war rise to over $47 billion, according to Pentagon estimate - Reuters",
-            "Hegseth likely to face questions on US role in Indo-Pacific at ASEAN summit - Reuters",
-            "Rights monitors raise concerns over senior UAE diplomat bid for next UN boss - Reuters",
-            "Jordan, Syria to form security committee after deadly strikes on Islamic State sites - Reuters",
-            "Robinhood quarterly revenue rises 12% as event contracts, options offset crypto slump"
+            "Healey seeks to steer UK through 'difficult moment' with low-key budget - Reuters"
           ]
         },
         "price": {
@@ -16187,33 +16193,6 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 81,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 97,
-            "headline": "US costs of Iran war rise to over $47 billion, according to Pentagon estimate - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-28T01:01:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
             "confidence_score": 79,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
@@ -16221,12 +16200,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 89,
-            "headline": "Jordan, Syria to form security committee after deadly strikes on Islamic State sites - Reuters",
+            "freshness_score": 88,
+            "headline": "Oil rises over 1% after Saudi Arabian refinery attack reignites supply risk - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-27T21:30:08+00:00",
+            "published_at": "2026-10-28T01:49:00+00:00",
             "source": "Reuters"
           },
           {
@@ -16248,39 +16227,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
-            "headline": "Yemen's Houthis say they hit Saudi Ras Tanura oil refinery with missile - Reuters",
+            "freshness_score": 86,
+            "headline": "US costs of Iran war rise to over $47 billion, according to Pentagon estimate - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-27T19:17:53+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 77,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 82,
-            "headline": "Food and household brands warn of more price hikes as Iran war costs bite - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-27T18:29:43+00:00",
+            "published_at": "2026-10-28T01:01:00+00:00",
             "source": "Reuters"
           },
           {
@@ -16302,12 +16254,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 76,
-            "headline": "Netanyahu warns of Arab voter surge in Israel's election; Arab leaders call tactic racist - Reuters",
+            "freshness_score": 77,
+            "headline": "Jordan, Syria to form security committee after deadly strikes on Islamic State sites - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-27T15:57:46+00:00",
+            "published_at": "2026-10-27T21:30:08+00:00",
             "source": "Reuters"
           },
           {
@@ -16329,13 +16281,67 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 75,
-            "headline": "American Airlines hikes annual fees on rewards cards for first time since 2018",
+            "freshness_score": 72,
+            "headline": "Yemen's Houthis say they hit Saudi Ras Tanura oil refinery with missile - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-10-27T15:39:51+00:00",
-            "source": "CNBC"
+            "published_at": "2026-10-27T19:17:53+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 74,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 70,
+            "headline": "Food and household brands warn of more price hikes as Iran war costs bite - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-27T18:28:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 73,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 64,
+            "headline": "Netanyahu warns of Arab voter surge in Israel's election; Arab leaders call tactic racist - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-27T15:57:46+00:00",
+            "source": "Reuters"
           }
         ],
         "market_narrative": {
@@ -16357,6 +16363,18 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Oil rises over 1% after Saudi Arabian refinery attack reignites supply risk - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-10-28T01:49:00+00:00",
+              "source": "Reuters"
+            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -16394,7 +16412,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -16402,11 +16420,11 @@
               "expected_market_direction": "risk_off",
               "headline": "Food and household brands warn of more price hikes as Iran war costs bite - Reuters",
               "importance_score": 100,
-              "published_at": "2026-10-27T18:29:43+00:00",
+              "published_at": "2026-10-27T18:28:00+00:00",
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -16416,18 +16434,6 @@
               "importance_score": 100,
               "published_at": "2026-10-27T15:57:46+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "American Airlines hikes annual fees on rewards cards for first time since 2018",
-              "importance_score": 100,
-              "published_at": "2026-10-27T15:39:51+00:00",
-              "source": "CNBC"
             }
           ]
         },
@@ -16467,7 +16473,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0076,
-            "avg_equity_futures_1d_return": -0.0009,
+            "avg_equity_futures_1d_return": -0.0001,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "美元走强"
@@ -16483,7 +16489,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0025,
-            "oil_proxy_1d_return": -0.0001,
+            "oil_proxy_1d_return": 0.0012,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
