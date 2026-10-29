@@ -1,11 +1,11 @@
 # Data Freshness Status
 
-Generated at: `2026-10-29T02:00:51.633888+00:00`
+Generated at: `2026-10-29T02:23:52.566691+00:00`
 
 ## Summary
 
 - current_date: `2026-10-28`
-- current_time_us_eastern: `2026-10-28T22:00:51.633888-04:00`
+- current_time_us_eastern: `2026-10-28T22:23:52.566691-04:00`
 - latest_market_date: `2026-10-28`
 - latest_confirmed_market_date: `2026-10-28`
 - expected_latest_trading_date: `2026-10-28`
@@ -93,7 +93,7 @@ Generated at: `2026-10-29T02:00:51.633888+00:00`
 - flow_SPY: status=`proxy`, latest_date=`2026-10-28`, source=`market_data_proxy`, stale=`False`, fallback=`True`, real_data=`False`
 - flow_provider: status=`proxy`, latest_date=`2026-10-28`, source=`flow_positioning_proxy`, stale=`False`, fallback=`True`, real_data=`False`
 - macro_event_calendar: status=`fallback`, latest_date=`2026-10-28`, source=`deterministic_calendar_fallback`, stale=`False`, fallback=`True`, real_data=`False`
-- news_event_provider: status=`available`, latest_date=`2026-10-28`, source=`finnhub+gdelt`, stale=`False`, fallback=`False`, real_data=`True`
+- news_event_provider: status=`provider_failed`, latest_date=`2026-10-28`, source=`finnhub+gdelt`, stale=`False`, fallback=`False`, real_data=`False`
 - options_SKEW: status=`available`, latest_date=`2026-10-28`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - options_VIX: status=`available`, latest_date=`2026-10-28`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - options_VIX3M: status=`available`, latest_date=`2026-10-28`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`

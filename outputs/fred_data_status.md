@@ -1,6 +1,6 @@
 # FRED Data Status
 
-Generated at: `2026-10-29T02:00:53.388976Z`
+Generated at: `2026-10-29T02:23:53.767299Z`
 
 ## Provider
 
@@ -8,7 +8,7 @@ Generated at: `2026-10-29T02:00:53.388976Z`
 - provider available: `True`
 - fallback used: `False`
 - rate limited: `False`
-- successful series: `IG_OAS, DGS3MO, HY_OAS, DGS10, DGS2, BAA_SPREAD, DFII10, FINANCIAL_STRESS, RECESSION`
+- successful series: `HY_OAS, DGS3MO, IG_OAS, DGS10, BAA_SPREAD, DGS2, RECESSION, FINANCIAL_STRESS, DFII10`
 - failed series: `none`
 
 ## Series
@@ -31,7 +31,7 @@ Generated at: `2026-10-29T02:00:53.388976Z`
 - with current FRED status: `85`
 - delta: `6`
 - target 85 met: `True`
-- current report score: `87.0`
+- current report score: `85`
 
 ## Risk Expansion / Failed Bounce Effect
 
