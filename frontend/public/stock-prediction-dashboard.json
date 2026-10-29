@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-10-29T07:11:02.226302+00:00",
+  "generated_at": "2026-10-29T10:26:47.727132+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-10-29T07:11:02.243401+00:00",
+    "generated_at": "2026-10-29T10:26:47.744341+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 389,
     "risk_score_effectiveness": {
@@ -241,6 +241,24 @@
           "event_risk_flag": "high",
           "headlines": [
             {
+              "datetime": 1793265211,
+              "headline": "Constellation Energy (CEG) Stock Still Looks Discounted On Its 129% Three Year Run",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=ae7e0b675ad7b3078bb63a784f8535c0efe8f1599c06522acd27299ada1ec6b9"
+            },
+            {
+              "datetime": 1793264040,
+              "headline": "Got $3,000? 2 No-Brainer Energy Stocks to Buy as Data Centers Scramble for Electricity.",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=ac42dea0c1efdeebd031171f36dcfa015dd690129ca6caf0faee35bff6d8f091"
+            },
+            {
+              "datetime": 1793254800,
+              "headline": "Nuclear Power Is Back, But Only a Few Stocks Have Customers Signed",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=f28a1555764c80961c3c484bbaba68869c791bdecc50c4d11af62bdfd0f60998"
+            },
+            {
               "datetime": 1793237829,
               "headline": "Is Vistra Stock Engineered To Make You Money?",
               "source": "Yahoo",
@@ -269,30 +287,12 @@
               "headline": "Cameco's Raised Revenue Outlook Faces a Crucial Execution Test Ahead",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=c644828d68f146861ab673654534d0b7f9ed22c367e4021773f03c3453dd7005"
-            },
-            {
-              "datetime": 1793205900,
-              "headline": "Is Cameco Worth Buying as Premium Valuation Meets Execution Risk?",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=0ede6d2ab65cb262b8cfc31a414c2baac5775f7715de3adf9581fede3cfa1ceb"
-            },
-            {
-              "datetime": 1793202801,
-              "headline": "Trump DOE loans $5B to nuclear plants that will power data centers",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=76bdb1fded11e198ae701820ccd38c81b909b1253d68330b9d8d5b532370eb25"
-            },
-            {
-              "datetime": 1793191860,
-              "headline": "DOE announces $10.1B in loans to Constellation, Alliant, for 3.7 GW",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=b9ff0c1db6262c831337d5ce11881040cf434fa828dd90309e078f133b397b67"
             }
           ],
-          "major_company_headline": "Is Vistra Stock Engineered To Make You Money?",
-          "news_count_24h": 9,
+          "major_company_headline": "Constellation Energy (CEG) Stock Still Looks Discounted On Its 129% Three Year Run",
+          "news_count_24h": 12,
           "news_count_72h": 20,
-          "news_risk_score": 82.0,
+          "news_risk_score": 100.0,
           "news_sentiment": "positive"
         },
         "price_trend": {
@@ -727,7 +727,7 @@
         "benchmark": "SPY",
         "benchmark_edge_status": "STRONG_EDGE",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.3451,
+        "benchmark_primary_probability": 0.3665,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -2144,7 +2144,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Is Vistra Stock Engineered To Make You Money?",
+              "公司新闻已接入: Constellation Energy (CEG) Stock Still Looks Discounted On Its 129% Three Year Run",
               "新闻情绪偏正",
               "未来 30 天存在财报催化：2026-11-09",
               "增长数据具备 EPS 上修叙事基础"
@@ -2260,7 +2260,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "Is Vistra Stock Engineered To Make You Money?",
+          "catalyst": "Constellation Energy (CEG) Stock Still Looks Discounted On Its 129% Three Year Run",
           "expectation_gap": [
             "收入增长较强，具备正向预期差基础",
             "未来 30 天财报可能成为重新定价窗口"
@@ -2329,8 +2329,8 @@
           },
           "news_event": {
             "evidence": "公司新闻或财报事件风险上升",
-            "reason": "risk_score=82.0; earnings_date=2026-11-09",
-            "score": 76.24,
+            "reason": "risk_score=100.0; earnings_date=2026-11-09",
+            "score": 85.0,
             "status": "conflicting"
           },
           "options_volatility": {
@@ -2365,7 +2365,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 33.32,
+        "stock_confluence_score": 33.96,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "基础财务指标偏支持"
@@ -2447,59 +2447,59 @@
           "event_risk_flag": "high",
           "headlines": [
             {
-              "datetime": 1793253000,
-              "headline": "Tesla Is Flying in Europe, and We Aren't Talking About the Roadster -- 1 Big Concern Remains",
+              "datetime": 1793266471,
+              "headline": "AMD Regaining Its $1 Trillion Valuation Faces the Ultimate Test on Nov. 3",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=e3ff1eb9e1676dda855ab6f5bc4c610b782ec315f028a4ae1a08bf9a9a940d23"
+              "url": "https://finnhub.io/api/news?id=e0408bde85b1a500e252ab9c3d832b31e090709eeb5f5f1a40eecd721287487d"
             },
             {
-              "datetime": 1793247600,
-              "headline": "Nvidia Shareholders Have a Major Reason to Be Bullish After Jensen Huang's Latest Announcement",
+              "datetime": 1793266380,
+              "headline": "Prediction: This Cryptocurrency Will Outperform Bitcoin in 2027",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=20230b58bbc47115d271b801debe2ba32f3a928bce9509546ba181475c1b1387"
+              "url": "https://finnhub.io/api/news?id=27c25f5436c7c046e7b64819390de3ce735a85fa7a7fe89fb097bc4f7e812d80"
             },
             {
-              "datetime": 1793243522,
-              "headline": "Broadcom Stock Is 29% Below Its Record. After Its New Anthropic Deal, I'd Consider Buying It a Little at a Time.",
+              "datetime": 1793265962,
+              "headline": "Opinion: While the Odds of a SpaceX-Tesla Merger Are Climbing, Combining 2 Wrongs Won't Make a Right on Wall Street",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=8e504641b1ec2e83d9afdb148b7fae5b41da3a32b99b4bdd80ebfd8c060c4943"
+              "url": "https://finnhub.io/api/news?id=79c8248e2ae4ff19eea3bd12e6d43a011f65b0dc07797bd92f1cd17b96182e4f"
             },
             {
-              "datetime": 1793242461,
-              "headline": "Stealth Bear Market Hits Crypto Stocks as Coinbase, Circle, Robinhood Fall 40-56%",
+              "datetime": 1793265600,
+              "headline": "Prediction: Bitcoin Will Surpass Gold in Market Cap Within the Next Decade",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=0c0e0d4d31c5756e8c5266cabd2db5be5d31667b0efbb15d457f685e26a27c24"
+              "url": "https://finnhub.io/api/news?id=1a63f8db5585259351bd1387b1d5d13112f2451a5c7e4c8538fd29d70cbb3978"
             },
             {
-              "datetime": 1793241782,
-              "headline": "A Simple Rule for the Semiconductor ETF: Buy After a 15% Drop. Here's How It Has Done Since 2012.",
+              "datetime": 1793264880,
+              "headline": "5 Quantum Computing Stocks Investors Should Be Watching in 2027",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=41d676fd07a8801c621dfc658bd5427314351f0908fffa9a07353773873be3a6"
+              "url": "https://finnhub.io/api/news?id=e2d53ddecf2cace85f59936bdd98218b3a4d979cb73728341abfeac5766b8164"
             },
             {
-              "datetime": 1793241300,
-              "headline": "Small-Cap Stocks Just Did Something They Haven't Done Since 2018. Is It Finally Time to Buy?",
+              "datetime": 1793264880,
+              "headline": "Nvidia Looks Cheap. Here's 1 Reason I'd Still Be Cautious.",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=5e7d41e25d50c6099041bcff954ae76c34fdcb407c7b6447ae31c08bdc787c9f"
+              "url": "https://finnhub.io/api/news?id=2bd350dc5da44a264b5249c19b1864ef784b6c819656ef378def12f3c828b708"
             },
             {
-              "datetime": 1793240871,
-              "headline": "Why Vertiv Stock Soared Today",
+              "datetime": 1793264640,
+              "headline": "Could Revolution Medicines Be a Millionaire-Maker Stock?",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=2aa29b5532d018a86c41bf7b7674eeb94ae16a98e954121dcf246295daadcd6c"
+              "url": "https://finnhub.io/api/news?id=d250d064e8dff364474eb231966a3374b881aa7af74524e6b8e0a8186a626f91"
             },
             {
-              "datetime": 1793239380,
-              "headline": "Nvidia's $3 billion Meta bet reveals a 30-fold shift",
+              "datetime": 1793264040,
+              "headline": "Got $3,000? 2 No-Brainer Energy Stocks to Buy as Data Centers Scramble for Electricity.",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=d3f7192f17a93bf04dd9fffc5e5cc8f432da32ba400b130fc4b9b832d194e99e"
+              "url": "https://finnhub.io/api/news?id=ac42dea0c1efdeebd031171f36dcfa015dd690129ca6caf0faee35bff6d8f091"
             }
           ],
-          "major_company_headline": "Tesla Is Flying in Europe, and We Aren't Talking About the Roadster -- 1 Big Concern Remains",
+          "major_company_headline": "AMD Regaining Its $1 Trillion Valuation Faces the Ultimate Test on Nov. 3",
           "news_count_24h": 20,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
-          "news_sentiment": "neutral"
+          "news_sentiment": "negative"
         },
         "price_trend": {
           "close": 215.3800048828125,
@@ -2939,7 +2939,7 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "WEAK_EDGE",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.3596,
+        "benchmark_primary_probability": 0.3409,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -4356,7 +4356,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Tesla Is Flying in Europe, and We Aren't Talking About the Roadster -- 1 Big Concern Remains",
+              "公司新闻已接入: AMD Regaining Its $1 Trillion Valuation Faces the Ultimate Test on Nov. 3",
               "未来 30 天存在财报催化：2026-11-17",
               "增长数据具备 EPS 上修叙事基础"
             ],
@@ -4469,7 +4469,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "Tesla Is Flying in Europe, and We Aren't Talking About the Roadster -- 1 Big Concern Remains",
+          "catalyst": "AMD Regaining Its $1 Trillion Valuation Faces the Ultimate Test on Nov. 3",
           "expectation_gap": [
             "收入增长较强，具备正向预期差基础",
             "EPS 增长较强，可能支持盈利上修叙事",
@@ -4706,9 +4706,9 @@
             }
           ],
           "major_company_headline": "The One Number NuScale Power Stock Investors Should Watch",
-          "news_count_24h": 3,
-          "news_count_72h": 7,
-          "news_risk_score": 39.0,
+          "news_count_24h": 2,
+          "news_count_72h": 6,
+          "news_risk_score": 31.0,
           "news_sentiment": "positive"
         },
         "price_trend": {
@@ -5140,12 +5140,12 @@
         "benchmark": "IWM",
         "benchmark_edge_status": "STRONG_EDGE",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.2984,
+        "benchmark_primary_probability": 0.321,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
-        "risk_alert_level": "WARNING",
-        "risk_alert_type": "Risk Expansion Alert",
+        "risk_alert_level": "HIGH_CONVICTION",
+        "risk_alert_type": "Bounce Setup Alert",
         "symbol": "SMR"
       },
       "missing_data": [
@@ -6742,8 +6742,8 @@
           },
           "news_event": {
             "evidence": "公司新闻或财报事件风险上升",
-            "reason": "risk_score=39.0; earnings_date=2026-11-05",
-            "score": 59.98,
+            "reason": "risk_score=31.0; earnings_date=2026-11-05",
+            "score": 57.42,
             "status": "conflicting"
           },
           "options_volatility": {
@@ -6778,7 +6778,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 33.4,
+        "stock_confluence_score": 33.22,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "主路径概率相对领先"
@@ -6857,10 +6857,40 @@
           "event_risk_flag": "high",
           "headlines": [
             {
+              "datetime": 1793265962,
+              "headline": "Opinion: While the Odds of a SpaceX-Tesla Merger Are Climbing, Combining 2 Wrongs Won't Make a Right on Wall Street",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=79c8248e2ae4ff19eea3bd12e6d43a011f65b0dc07797bd92f1cd17b96182e4f"
+            },
+            {
+              "datetime": 1793264671,
+              "headline": "Stellantis Q3 Earnings Call Highlights",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=3ed5b6b731d909105f80bd221ba1f06b35fec0079d96970fc1b8a80a703d1b81"
+            },
+            {
+              "datetime": 1793259180,
+              "headline": "Jensen Huang Foresees Booming AI Demand, but Elon Musk's Warning Highlights a Different Risk",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=55b976ca49ae0ce085da03c21e5605804c1730a373f173fb35ac575b0d4ea939"
+            },
+            {
               "datetime": 1793253000,
               "headline": "Tesla Is Flying in Europe, and We Aren't Talking About the Roadster -- 1 Big Concern Remains",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=e3ff1eb9e1676dda855ab6f5bc4c610b782ec315f028a4ae1a08bf9a9a940d23"
+            },
+            {
+              "datetime": 1793249269,
+              "headline": "Undercovered Dozen: Micron, i-80 Gold, Hercules Capital, And More",
+              "source": "SeekingAlpha",
+              "url": "https://finnhub.io/api/news?id=3b343baed84ef797cf865ff0f70af43b45b14e2a22e2068dec3754ec73081374"
+            },
+            {
+              "datetime": 1793248380,
+              "headline": "Is Tech Oversold Following Trend Reversals?",
+              "source": "SeekingAlpha",
+              "url": "https://finnhub.io/api/news?id=fff11d148ab03745e2a23352b74fe74b151077360d1205639a060d203ae165bd"
             },
             {
               "datetime": 1793235849,
@@ -6873,43 +6903,13 @@
               "headline": "Mega-Cap Default Risk",
               "source": "SeekingAlpha",
               "url": "https://finnhub.io/api/news?id=2c4f906088ea5fc69e7cdd717bf477ffc6b70acf8256db7ce28844cb73306618"
-            },
-            {
-              "datetime": 1793232494,
-              "headline": "33 Wall Street Giants Block Tokenized Stocks, But Apple and Tesla Stay Silent",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=c4f447693fbcd86007472bb0a78cf130df77ec1eb48e250983461d1d4230e355"
-            },
-            {
-              "datetime": 1793218500,
-              "headline": "Elon Musk Says Neoclouds Face a \"Guppy Level\" Death. IREN Is Down 64% From Its High. Is He Talking About This Stock?",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=4c3ce8d0bf65abd4bea30df0cd1be8b8f71350ef745a29aac7f65d3ecb3f9e67"
-            },
-            {
-              "datetime": 1793217420,
-              "headline": "2 AI Stocks to Buy if the Market Sells Off Before Year-End",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=308738c0f6299313b65947307257862ec0170ccad9b4e5df81be613684f0032d"
-            },
-            {
-              "datetime": 1793214480,
-              "headline": "Top Stock Reports for Tesla, Netflix & American Express",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=f2e75d7d71f4fe0eb71c971275a15af34ae26fb0e6f479d8d7099a33d1596d8e"
-            },
-            {
-              "datetime": 1793214359,
-              "headline": "S&P 500 Most Active Stocks for October 28, 2026",
-              "source": "ChartMill",
-              "url": "https://finnhub.io/api/news?id=3bad6005d5f06ce4a41dd4c36043b94dfe3b7ab2e58b7cfc068ee44edf4725ae"
             }
           ],
-          "major_company_headline": "Tesla Is Flying in Europe, and We Aren't Talking About the Roadster -- 1 Big Concern Remains",
+          "major_company_headline": "Opinion: While the Odds of a SpaceX-Tesla Merger Are Climbing, Combining 2 Wrongs Won't Make a Right on Wall Street",
           "news_count_24h": 20,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
-          "news_sentiment": "neutral"
+          "news_sentiment": "negative"
         },
         "price_trend": {
           "close": 404.2200012207031,
@@ -7341,7 +7341,7 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "WEAK_EDGE",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.3596,
+        "benchmark_primary_probability": 0.3409,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -8757,7 +8757,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Tesla Is Flying in Europe, and We Aren't Talking About the Roadster -- 1 Big Concern Remains"
+              "公司新闻已接入: Opinion: While the Odds of a SpaceX-Tesla Merger Are Climbing, Combining 2 Wrongs Won't Make a Right on Wall Street"
             ],
             "max_points": 10,
             "missing_fields": [],
@@ -8874,7 +8874,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金/技术确认较强",
-          "catalyst": "Tesla Is Flying in Europe, and We Aren't Talking About the Roadster -- 1 Big Concern Remains",
+          "catalyst": "Opinion: While the Odds of a SpaceX-Tesla Merger Are Climbing, Combining 2 Wrongs Won't Make a Right on Wall Street",
           "expectation_gap": [
             "暂未看到明确正向预期差证据"
           ],
@@ -9011,7 +9011,7 @@
       "top_candidate": "TSLA",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-10-29T07:11:02.226587+00:00",
+    "generated_at": "2026-10-29T10:26:47.727410+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -9120,7 +9120,7 @@
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 63.79,
         "company_name": "Constellation Energy Corp",
-        "confluence_score": 33.32,
+        "confluence_score": 33.96,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9137,7 +9137,7 @@
           "mid": 257.65,
           "range_pct": 0.0453
         },
-        "final_radar_score": 51.17,
+        "final_radar_score": 51.25,
         "forecast_date": "2026-10-28",
         "invalidation_level": 247.2,
         "last_close": 258.0799865722656,
@@ -9205,7 +9205,7 @@
         "candidate_type": "downside_continuation",
         "catalyst_score": 63.0,
         "company_name": "Nuscale Power Corp",
-        "confluence_score": 33.4,
+        "confluence_score": 33.22,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9222,7 +9222,7 @@
           "mid": 5.64,
           "range_pct": 0.0723
         },
-        "final_radar_score": 46.21,
+        "final_radar_score": 46.19,
         "forecast_date": "2026-10-28",
         "invalidation_level": 5.2,
         "last_close": 5.670000076293945,
