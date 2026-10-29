@@ -11395,7 +11395,7 @@
       "evidence_note": "Forward-only sample gate has opened; compare breadth-supported buckets against conflicted buckets before raising confidence.",
       "status": "forward_ready"
     },
-    "generated_at": "2026-10-29T00:24:32.402585Z",
+    "generated_at": "2026-10-29T01:22:47.567125Z",
     "notes": [
       "This audit compares the same run with true breadth provider disabled vs enabled.",
       "The audit does not change Alpha v1 and does not prove tradable alpha.",
@@ -11553,7 +11553,7 @@
   },
   "breadth_status": {
     "cache_root": "data/breadth_cache",
-    "generated_at": "2026-10-29T00:17:08.142754+00:00",
+    "generated_at": "2026-10-29T01:15:31.771867+00:00",
     "provider": "true_breadth_provider",
     "sector_participation_proxy": {
       "data_note": "Sector ETF proxy, not constituent-level sector breadth.",
@@ -12056,7 +12056,7 @@
         },
         "missing_ratio": 0.0,
         "name": "S&P 500",
-        "price_source": "yfinance-incremental-cache",
+        "price_source": "local-cache-prices",
         "sample_limited": false,
         "scores": {
           "breadth_confirmation_score": 90.25,
@@ -12084,7 +12084,7 @@
   },
   "confluence_score": {
     "disclaimer": "Confluence is a forecast-confirmation layer, not a trading signal or execution recommendation.",
-    "generated_at": "2026-10-29T00:24:32.412403+00:00",
+    "generated_at": "2026-10-29T01:22:47.576698+00:00",
     "summary": {
       "average_confluence_score": 49.5,
       "mixed_or_no_edge_symbols": [
@@ -12829,10 +12829,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-10-28",
-    "current_time_us_eastern": "2026-10-28T20:24:32.413046-04:00",
+    "current_time_us_eastern": "2026-10-28T21:22:47.577415-04:00",
     "data_freshness_status": "fresh",
     "expected_latest_trading_date": "2026-10-28",
-    "generated_at": "2026-10-29T00:24:32.413046+00:00",
+    "generated_at": "2026-10-29T01:22:47.577415+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -13879,7 +13879,7 @@
         "status": "available"
       }
     },
-    "generated_at": "2026-10-29T00:24:22.747087+00:00",
+    "generated_at": "2026-10-29T01:22:38.277316+00:00",
     "notes": [
       "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
       "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -14791,7 +14791,7 @@
         "symbol": "macro_event_calendar"
       },
       "news_event_provider": {
-        "event_detection_confidence": 78,
+        "event_detection_confidence": 77,
         "fallback_used": false,
         "latest_date": "2026-10-28",
         "major_event_count": 13,
@@ -15006,15 +15006,15 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
+        "IG_OAS",
         "HY_OAS",
         "DGS10",
-        "IG_OAS",
-        "DGS3MO",
-        "DGS2",
         "BAA_SPREAD",
+        "DGS2",
+        "DGS3MO",
+        "FINANCIAL_STRESS",
         "DFII10",
-        "RECESSION",
-        "FINANCIAL_STRESS"
+        "RECESSION"
       ],
       "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-10-28。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
       "gamma_available": false,
@@ -15045,10 +15045,10 @@
       ],
       "news_event": {
         "available": true,
-        "event_detection_confidence": 78,
+        "event_detection_confidence": 77,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-10-29T00:24:22.755623+00:00",
+        "last_update": "2026-10-29T01:22:38.286594+00:00",
         "major_event_count": 13,
         "missing_reason": null,
         "news_direction": "risk_off",
@@ -15100,7 +15100,7 @@
   },
   "event_refresh": false,
   "feature_snapshot_v2": {
-    "generated_at": "2026-10-29T00:24:22.732918+00:00",
+    "generated_at": "2026-10-29T01:22:38.263174+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -15338,7 +15338,7 @@
     "version": "market_intelligence_engine_v2_features"
   },
   "feature_snapshot_v3": {
-    "generated_at": "2026-10-29T00:24:22.739119+00:00",
+    "generated_at": "2026-10-29T01:22:38.269422+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -16288,7 +16288,7 @@
     "version": "market_intelligence_engine_v3_features"
   },
   "flow_positioning_status": {
-    "generated_at": "2026-10-29T00:17:25.564231+00:00",
+    "generated_at": "2026-10-29T01:15:41.534882+00:00",
     "latest_date": "2026-10-28",
     "provider": "flow_positioning_proxy",
     "sources": {
@@ -16739,7 +16739,7 @@
     ]
   },
   "flow_status": {
-    "generated_at": "2026-10-29T00:17:25.564231+00:00",
+    "generated_at": "2026-10-29T01:15:41.534882+00:00",
     "latest_date": "2026-10-28",
     "provider": "flow_positioning_proxy",
     "sources": {
@@ -18480,7 +18480,7 @@
       "primary_beats_secondary": "primary_path_not_better_than_secondary"
     },
     "current_evidence_level": "stronger_evidence",
-    "generated_at": "2026-10-29T00:24:33.176232+00:00",
+    "generated_at": "2026-10-29T01:22:48.431482+00:00",
     "guardrails": [
       "This scorecard validates probabilistic forecast paths, not trades.",
       "Forecast records are immutable except for future-outcome backfill fields.",
@@ -18596,7 +18596,7 @@
       "volatility_or_tail_risk_underweighted": 4,
       "volatility_repair_underweighted": 183
     },
-    "generated_at": "2026-10-29T00:24:33.539071+00:00",
+    "generated_at": "2026-10-29T01:22:48.830708+00:00",
     "guardrails": [
       "This is forecast error attribution, not a trading or PnL report.",
       "Attribution is diagnostic and probabilistic; it is not proof of causality.",
@@ -22565,7 +22565,7 @@
     },
     "dominant_error_theme": "news_data_gap_limited_attribution",
     "evidence_level": "stronger_evidence",
-    "generated_at": "2026-10-29T00:24:33.568188+00:00",
+    "generated_at": "2026-10-29T01:22:48.864291+00:00",
     "global_learning_status": "shadow_challenger_queue_ready",
     "guardrails": [
       "This queue does not change baseline_v1 or Alpha v1.",
@@ -22595,7 +22595,7 @@
       "5d": 368,
       "60d": 148
     },
-    "generated_at": "2026-10-29T00:24:33.083044+00:00",
+    "generated_at": "2026-10-29T01:22:48.326822+00:00",
     "immutability_note": "Forecast fields are write-once by forecast_id. Backfill may update only actual_return, best_matching_scenario, primary_hit, path_error and status fields.",
     "max_confirmed_market_date": "2026-10-28",
     "new_records_considered": 4,
@@ -22609,7 +22609,7 @@
   "forecast_price_levels": {
     "as_of": "2026-10-28",
     "disclaimer": "Forecast price levels are probabilistic scenario points derived from simulated paths, recent price structure and volatility bands. They are not execution instructions, risk-control rules, or guaranteed target prices.",
-    "generated_at": "2026-10-29T00:24:32.407828Z",
+    "generated_at": "2026-10-29T01:22:47.571802Z",
     "symbols": {
       "DIA": {
         "current_price": 524.68,
@@ -24352,7 +24352,7 @@
     "version": "forecast_price_levels_v1"
   },
   "forecast_records": {
-    "generated_at": "2026-10-29T00:24:33.132890+00:00",
+    "generated_at": "2026-10-29T01:22:48.383009+00:00",
     "records": [
       {
         "actual_return_10d": 0.01680114442,
@@ -79397,7 +79397,7 @@
       "5d": 368,
       "60d": 148
     },
-    "generated_at": "2026-10-29T00:24:33.568117+00:00",
+    "generated_at": "2026-10-29T01:22:48.864214+00:00",
     "guardrails": [
       "This gate does not modify Alpha v1 threshold, baseline_v1 or historical forecast records.",
       "This is forecast reliability assessment, not trading advice.",
@@ -81464,7 +81464,7 @@
     },
     "forward_completed_sample_size": 144,
     "forward_validation_notice": "Forward samples have started to mature, but alpha status remains research-only until stability is proven.",
-    "generated_at": "2026-10-29T00:24:22.751329+00:00",
+    "generated_at": "2026-10-29T01:22:38.281910+00:00",
     "internal_resonance_forward_validation": {
       "aligned_internal_resonance": {
         "by_horizon": {
@@ -82510,7 +82510,7 @@
       }
     },
     "conclusion": "confidence_not_yet_validated",
-    "generated_at": "2026-10-29T00:24:22.746365+00:00",
+    "generated_at": "2026-10-29T01:22:38.276577+00:00",
     "high_confidence_better_than_low_confidence": false,
     "high_vs_low_comparison_by_horizon": {
       "10d": true,
@@ -85128,7 +85128,7 @@
       "note": "Historical replay cannot upgrade alpha or confidence until forward validation samples mature.",
       "sample_gate": "stronger_evidence"
     },
-    "generated_at": "2026-10-29T00:24:33.565632+00:00",
+    "generated_at": "2026-10-29T01:22:48.861450+00:00",
     "guardrails": [
       "Historical replay is research evaluation only and cannot replace daily forward validation.",
       "Historical replay results must not be described as confirmed alpha.",
@@ -86658,7 +86658,7 @@
   },
   "market_alerts": {
     "disclaimer": "Market alerts are forecast warnings and scenario-confirmation notes only. They are not trading signals or buy/sell/entry/exit guidance.",
-    "generated_at": "2026-10-29T00:24:32.412966+00:00",
+    "generated_at": "2026-10-29T01:22:47.577329+00:00",
     "summary": {
       "alert_count_by_level": {
         "EXTREME": 0,
@@ -89739,7 +89739,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-10-29T00:24:22.731812+00:00",
+      "generated_at": "2026-10-29T01:22:38.262068+00:00",
       "notes": [
         "price/volatility/credit/rates/liquidity currently use public market proxies.",
         "options breadth macro flow are not treated as available unless real feeds are connected.",
@@ -89875,7 +89875,7 @@
       }
     },
     "feature_snapshot_v2": {
-      "generated_at": "2026-10-29T00:24:22.732918+00:00",
+      "generated_at": "2026-10-29T01:22:38.263174+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -90112,7 +90112,7 @@
       },
       "version": "market_intelligence_engine_v2_features"
     },
-    "generated_at": "2026-10-29T00:24:22.733483+00:00",
+    "generated_at": "2026-10-29T01:22:38.263746+00:00",
     "model_confidence_by_symbol": {
       "DIA": {
         "components": {
@@ -90308,7 +90308,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-10-29T00:24:22.742734+00:00",
+      "generated_at": "2026-10-29T01:22:38.272815+00:00",
       "notes": [
         "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
         "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -91437,7 +91437,7 @@
       }
     },
     "feature_snapshot_v3": {
-      "generated_at": "2026-10-29T00:24:22.739119+00:00",
+      "generated_at": "2026-10-29T01:22:38.269422+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -92422,18 +92422,18 @@
       "fred_missing": false,
       "fred_rate_limited": false,
       "fred_successful_series": [
+        "IG_OAS",
         "HY_OAS",
         "DGS10",
-        "IG_OAS",
-        "DGS3MO",
-        "DGS2",
         "BAA_SPREAD",
+        "DGS2",
+        "DGS3MO",
+        "FINANCIAL_STRESS",
         "DFII10",
-        "RECESSION",
-        "FINANCIAL_STRESS"
+        "RECESSION"
       ]
     },
-    "generated_at": "2026-10-29T00:24:22.746388+00:00",
+    "generated_at": "2026-10-29T01:22:38.276596+00:00",
     "high_confidence_signal_report": {
       "by_bucket": {
         "low_confidence_reference": {
@@ -93102,7 +93102,7 @@
         }
       },
       "conclusion": "confidence_not_yet_validated",
-      "generated_at": "2026-10-29T00:24:22.746365+00:00",
+      "generated_at": "2026-10-29T01:22:38.276577+00:00",
       "high_confidence_better_than_low_confidence": false,
       "high_vs_low_comparison_by_horizon": {
         "10d": true,
@@ -93929,7 +93929,7 @@
         "evidence_note": "Forward-only sample gate has opened; compare breadth-supported buckets against conflicted buckets before raising confidence.",
         "status": "forward_ready"
       },
-      "generated_at": "2026-10-29T00:24:32.402585Z",
+      "generated_at": "2026-10-29T01:22:47.567125Z",
       "notes": [
         "This audit compares the same run with true breadth provider disabled vs enabled.",
         "The audit does not change Alpha v1 and does not prove tradable alpha.",
@@ -94199,7 +94199,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-10-29T00:24:22.747087+00:00",
+      "generated_at": "2026-10-29T01:22:38.277316+00:00",
       "notes": [
         "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
         "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -95111,7 +95111,7 @@
           "symbol": "macro_event_calendar"
         },
         "news_event_provider": {
-          "event_detection_confidence": 78,
+          "event_detection_confidence": 77,
           "fallback_used": false,
           "latest_date": "2026-10-28",
           "major_event_count": 13,
@@ -95326,15 +95326,15 @@
         "fred_rate_limited": false,
         "fred_required": true,
         "fred_successful_series": [
+          "IG_OAS",
           "HY_OAS",
           "DGS10",
-          "IG_OAS",
-          "DGS3MO",
-          "DGS2",
           "BAA_SPREAD",
+          "DGS2",
+          "DGS3MO",
+          "FINANCIAL_STRESS",
           "DFII10",
-          "RECESSION",
-          "FINANCIAL_STRESS"
+          "RECESSION"
         ],
         "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-10-28。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
         "gamma_available": false,
@@ -95365,10 +95365,10 @@
         ],
         "news_event": {
           "available": true,
-          "event_detection_confidence": 78,
+          "event_detection_confidence": 77,
           "event_risk_level": "high",
           "headline_count": 40,
-          "last_update": "2026-10-29T00:24:22.755623+00:00",
+          "last_update": "2026-10-29T01:22:38.286594+00:00",
           "major_event_count": 13,
           "missing_reason": null,
           "news_direction": "risk_off",
@@ -95579,18 +95579,18 @@
       "fallback_used": false,
       "rate_limited": false,
       "successful_series": [
+        "IG_OAS",
         "HY_OAS",
         "DGS10",
-        "IG_OAS",
-        "DGS3MO",
-        "DGS2",
         "BAA_SPREAD",
+        "DGS2",
+        "DGS3MO",
+        "FINANCIAL_STRESS",
         "DFII10",
-        "RECESSION",
-        "FINANCIAL_STRESS"
+        "RECESSION"
       ]
     },
-    "generated_at": "2026-10-29T00:24:22.755606+00:00",
+    "generated_at": "2026-10-29T01:22:38.286572+00:00",
     "high_confidence_edge_report": {
       "breadth_forward_validation": {
         "bounce_with_breadth_support": {
@@ -97241,7 +97241,7 @@
       },
       "forward_completed_sample_size": 144,
       "forward_validation_notice": "Forward samples have started to mature, but alpha status remains research-only until stability is proven.",
-      "generated_at": "2026-10-29T00:24:22.751329+00:00",
+      "generated_at": "2026-10-29T01:22:38.281910+00:00",
       "internal_resonance_forward_validation": {
         "aligned_internal_resonance": {
           "by_horizon": {
@@ -97715,9 +97715,9 @@
         "source": "finnhub",
         "status": "failed"
       },
-      "event_detection_confidence": 78,
+      "event_detection_confidence": 77,
       "event_risk_level": "high",
-      "generated_at": "2026-10-29T00:24:22.755623+00:00",
+      "generated_at": "2026-10-29T01:22:38.286594+00:00",
       "limits": [
         "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
         "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
@@ -97745,7 +97745,7 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 91,
+          "freshness_score": 89,
           "headline": "Iran sees only unacceptable ideas in latest mediation to end war, official says - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -97772,7 +97772,7 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 87,
+          "freshness_score": 85,
           "headline": "Bond investor Jeff Gundlach talks to CNBC about Fed's rate pause, Warsh reducing vote-setting meetings",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -97799,7 +97799,7 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 83,
+          "freshness_score": 81,
           "headline": "Caretaker role could limit Netanyahu but not rule out war with Iran - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -97826,7 +97826,7 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 82,
+          "freshness_score": 80,
           "headline": "Houthis strike Yemen's Aden airport after evacuation warning - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -97853,7 +97853,7 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 75,
+          "freshness_score": 73,
           "headline": "Bearista cups are returning at Starbucks. Can the viral sensation boost holiday sales again?",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -97873,14 +97873,14 @@
             "TLT"
           ],
           "confidence": "high",
-          "confidence_score": 93,
+          "confidence_score": 92,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 74,
+          "freshness_score": 71,
           "headline": "Turkey warns against further attacks by Russia, Ukraine on Black Sea vessels - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -97899,15 +97899,15 @@
             "UUP",
             "TLT"
           ],
-          "confidence": "high",
-          "confidence_score": 75,
+          "confidence": "medium",
+          "confidence_score": 74,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 74,
+          "freshness_score": 71,
           "headline": "Equinor warns Europe is vulnerable to winter gas price spike if cold weather hits - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -97926,15 +97926,15 @@
             "UUP",
             "TLT"
           ],
-          "confidence": "high",
-          "confidence_score": 75,
+          "confidence": "medium",
+          "confidence_score": 74,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 72,
+          "freshness_score": 70,
           "headline": "Iranians cut essentials and put dreams on hold as war-hit economy bites - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -97954,14 +97954,14 @@
             "TLT"
           ],
           "confidence": "medium",
-          "confidence_score": 74,
+          "confidence_score": 73,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 68,
+          "freshness_score": 66,
           "headline": "Brazil Supreme Court says no search warrant issued against Senator Flavio Bolsonaro - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -97981,14 +97981,14 @@
             "TLT"
           ],
           "confidence": "medium",
-          "confidence_score": 74,
+          "confidence_score": 73,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 68,
+          "freshness_score": 66,
           "headline": "As Iran war drags on, airlines pull back on fuel hedges and warn on fares - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -98015,7 +98015,7 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 66,
+          "freshness_score": 64,
           "headline": "Unilever flags price hikes as Iran war costs stack up - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -98034,12 +98034,12 @@
             "^VIX"
           ],
           "confidence": "medium",
-          "confidence_score": 71,
+          "confidence_score": 70,
           "detected_event_conditions": [],
           "event_type": "credit_stress",
           "expected_horizon": "3d-60d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 72,
+          "freshness_score": 70,
           "headline": "UK economic growth downgraded to 1% in 2027, Healey says in first budget - Reuters",
           "importance_score": 96,
           "narrative": "credit_stress",
@@ -98062,7 +98062,7 @@
           "event_type": "fed_hawkish",
           "expected_horizon": "1d-20d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 74,
+          "freshness_score": 72,
           "headline": "PODCAST: A hawkish hold? - Reuters",
           "importance_score": 86,
           "narrative": "fed_hawkish_risk",
@@ -98309,7 +98309,7 @@
       "price_reaction_confirmation": {
         "asset_reaction_summary": {
           "avg_equity_1d_return": 0.004,
-          "avg_equity_futures_1d_return": 0.0009,
+          "avg_equity_futures_1d_return": 0.0027,
           "confirmed_checks": [],
           "equity_futures_symbols_used": [
             "ES=F",
@@ -98324,7 +98324,7 @@
             "美元走强"
           ],
           "hyg_lqd_1d_relative_return": 0.0021,
-          "oil_proxy_1d_return": 0.0185,
+          "oil_proxy_1d_return": 0.0184,
           "oil_proxy_symbols_used": [
             "USO",
             "CL=F"
@@ -98351,7 +98351,7 @@
           "status": "available"
         },
         "gdelt_public_news": {
-          "error_type": "JSONDecodeError",
+          "error_type": "HTTPError",
           "source": "gdelt",
           "stale": false,
           "status": "failed"
@@ -100260,7 +100260,7 @@
         "primary_mean_absolute_error": 0.041192
       }
     },
-    "generated_at": "2026-10-29T00:24:33.707537+00:00",
+    "generated_at": "2026-10-29T01:22:49.034462+00:00",
     "guardrails": [
       "Alpha v1 threshold remains frozen at 0.32534311.",
       "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -101084,7 +101084,7 @@
   },
   "model_promotion_status": {
     "active_model_version": "baseline_v1",
-    "generated_at": "2026-10-29T00:24:33.707630+00:00",
+    "generated_at": "2026-10-29T01:22:49.034561+00:00",
     "guardrails": [
       "Alpha v1 threshold remains frozen at 0.32534311.",
       "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -101256,9 +101256,9 @@
       "source": "finnhub",
       "status": "failed"
     },
-    "event_detection_confidence": 78,
+    "event_detection_confidence": 77,
     "event_risk_level": "high",
-    "generated_at": "2026-10-29T00:24:22.755623+00:00",
+    "generated_at": "2026-10-29T01:22:38.286594+00:00",
     "limits": [
       "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
       "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
@@ -101286,7 +101286,7 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 91,
+        "freshness_score": 89,
         "headline": "Iran sees only unacceptable ideas in latest mediation to end war, official says - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -101313,7 +101313,7 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 87,
+        "freshness_score": 85,
         "headline": "Bond investor Jeff Gundlach talks to CNBC about Fed's rate pause, Warsh reducing vote-setting meetings",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -101340,7 +101340,7 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 83,
+        "freshness_score": 81,
         "headline": "Caretaker role could limit Netanyahu but not rule out war with Iran - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -101367,7 +101367,7 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 82,
+        "freshness_score": 80,
         "headline": "Houthis strike Yemen's Aden airport after evacuation warning - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -101394,7 +101394,7 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 75,
+        "freshness_score": 73,
         "headline": "Bearista cups are returning at Starbucks. Can the viral sensation boost holiday sales again?",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -101414,14 +101414,14 @@
           "TLT"
         ],
         "confidence": "high",
-        "confidence_score": 93,
+        "confidence_score": 92,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 74,
+        "freshness_score": 71,
         "headline": "Turkey warns against further attacks by Russia, Ukraine on Black Sea vessels - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -101440,15 +101440,15 @@
           "UUP",
           "TLT"
         ],
-        "confidence": "high",
-        "confidence_score": 75,
+        "confidence": "medium",
+        "confidence_score": 74,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 74,
+        "freshness_score": 71,
         "headline": "Equinor warns Europe is vulnerable to winter gas price spike if cold weather hits - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -101467,15 +101467,15 @@
           "UUP",
           "TLT"
         ],
-        "confidence": "high",
-        "confidence_score": 75,
+        "confidence": "medium",
+        "confidence_score": 74,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 72,
+        "freshness_score": 70,
         "headline": "Iranians cut essentials and put dreams on hold as war-hit economy bites - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -101495,14 +101495,14 @@
           "TLT"
         ],
         "confidence": "medium",
-        "confidence_score": 74,
+        "confidence_score": 73,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 68,
+        "freshness_score": 66,
         "headline": "Brazil Supreme Court says no search warrant issued against Senator Flavio Bolsonaro - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -101522,14 +101522,14 @@
           "TLT"
         ],
         "confidence": "medium",
-        "confidence_score": 74,
+        "confidence_score": 73,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 68,
+        "freshness_score": 66,
         "headline": "As Iran war drags on, airlines pull back on fuel hedges and warn on fares - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -101556,7 +101556,7 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 66,
+        "freshness_score": 64,
         "headline": "Unilever flags price hikes as Iran war costs stack up - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -101575,12 +101575,12 @@
           "^VIX"
         ],
         "confidence": "medium",
-        "confidence_score": 71,
+        "confidence_score": 70,
         "detected_event_conditions": [],
         "event_type": "credit_stress",
         "expected_horizon": "3d-60d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 72,
+        "freshness_score": 70,
         "headline": "UK economic growth downgraded to 1% in 2027, Healey says in first budget - Reuters",
         "importance_score": 96,
         "narrative": "credit_stress",
@@ -101603,7 +101603,7 @@
         "event_type": "fed_hawkish",
         "expected_horizon": "1d-20d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 74,
+        "freshness_score": 72,
         "headline": "PODCAST: A hawkish hold? - Reuters",
         "importance_score": 86,
         "narrative": "fed_hawkish_risk",
@@ -101850,7 +101850,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": 0.004,
-        "avg_equity_futures_1d_return": 0.0009,
+        "avg_equity_futures_1d_return": 0.0027,
         "confirmed_checks": [],
         "equity_futures_symbols_used": [
           "ES=F",
@@ -101865,7 +101865,7 @@
           "美元走强"
         ],
         "hyg_lqd_1d_relative_return": 0.0021,
-        "oil_proxy_1d_return": 0.0185,
+        "oil_proxy_1d_return": 0.0184,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -101892,7 +101892,7 @@
         "status": "available"
       },
       "gdelt_public_news": {
-        "error_type": "JSONDecodeError",
+        "error_type": "HTTPError",
         "source": "gdelt",
         "stale": false,
         "status": "failed"
@@ -101974,7 +101974,7 @@
     "version": "news_event_intelligence_v1"
   },
   "options_status": {
-    "generated_at": "2026-10-29T00:17:25.557807+00:00",
+    "generated_at": "2026-10-29T01:15:41.528908+00:00",
     "market": {
       "failed_bounce_options_risk": 0.3969,
       "gamma_exposure": null,
@@ -102265,10 +102265,10 @@
       "can_append_forecast_record": true,
       "can_backfill_completed_outcomes": true,
       "current_date": "2026-10-28",
-      "current_time_us_eastern": "2026-10-28T20:24:32.413046-04:00",
+      "current_time_us_eastern": "2026-10-28T21:22:47.577415-04:00",
       "data_freshness_status": "fresh",
       "expected_latest_trading_date": "2026-10-28",
-      "generated_at": "2026-10-29T00:24:32.413046+00:00",
+      "generated_at": "2026-10-29T01:22:47.577415+00:00",
       "guardrails": [
         "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
         "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -103307,15 +103307,15 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
+        "IG_OAS",
         "HY_OAS",
         "DGS10",
-        "IG_OAS",
-        "DGS3MO",
-        "DGS2",
         "BAA_SPREAD",
+        "DGS2",
+        "DGS3MO",
+        "FINANCIAL_STRESS",
         "DFII10",
-        "RECESSION",
-        "FINANCIAL_STRESS"
+        "RECESSION"
       ],
       "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-10-28。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
       "gamma_available": false,
@@ -103346,10 +103346,10 @@
       ],
       "news_event": {
         "available": true,
-        "event_detection_confidence": 78,
+        "event_detection_confidence": 77,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-10-29T00:24:22.755623+00:00",
+        "last_update": "2026-10-29T01:22:38.286594+00:00",
         "major_event_count": 13,
         "missing_reason": null,
         "news_direction": "risk_off",
@@ -103815,7 +103815,7 @@
       "price_reaction_confirmation": {
         "asset_reaction_summary": {
           "avg_equity_1d_return": 0.004,
-          "avg_equity_futures_1d_return": 0.0009,
+          "avg_equity_futures_1d_return": 0.0027,
           "confirmed_checks": [],
           "equity_futures_symbols_used": [
             "ES=F",
@@ -103830,7 +103830,7 @@
             "美元走强"
           ],
           "hyg_lqd_1d_relative_return": 0.0021,
-          "oil_proxy_1d_return": 0.0185,
+          "oil_proxy_1d_return": 0.0184,
           "oil_proxy_symbols_used": [
             "USO",
             "CL=F"
@@ -106301,7 +106301,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 91,
+              "freshness_score": 89,
               "headline": "Iran sees only unacceptable ideas in latest mediation to end war, official says - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -106328,7 +106328,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 85,
               "headline": "Bond investor Jeff Gundlach talks to CNBC about Fed's rate pause, Warsh reducing vote-setting meetings",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -106355,7 +106355,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 83,
+              "freshness_score": 81,
               "headline": "Caretaker role could limit Netanyahu but not rule out war with Iran - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -106382,7 +106382,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 82,
+              "freshness_score": 80,
               "headline": "Houthis strike Yemen's Aden airport after evacuation warning - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -106409,7 +106409,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 73,
               "headline": "Bearista cups are returning at Starbucks. Can the viral sensation boost holiday sales again?",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -106429,14 +106429,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 93,
+              "confidence_score": 92,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 74,
+              "freshness_score": 71,
               "headline": "Turkey warns against further attacks by Russia, Ukraine on Black Sea vessels - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -106574,7 +106574,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.004,
-              "avg_equity_futures_1d_return": 0.0009,
+              "avg_equity_futures_1d_return": 0.0027,
               "confirmed_checks": [],
               "equity_futures_symbols_used": [
                 "ES=F",
@@ -106589,7 +106589,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": 0.0021,
-              "oil_proxy_1d_return": 0.0185,
+              "oil_proxy_1d_return": 0.0184,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -108784,7 +108784,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 91,
+              "freshness_score": 89,
               "headline": "Iran sees only unacceptable ideas in latest mediation to end war, official says - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -108811,7 +108811,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 85,
               "headline": "Bond investor Jeff Gundlach talks to CNBC about Fed's rate pause, Warsh reducing vote-setting meetings",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -108838,7 +108838,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 83,
+              "freshness_score": 81,
               "headline": "Caretaker role could limit Netanyahu but not rule out war with Iran - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -108865,7 +108865,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 82,
+              "freshness_score": 80,
               "headline": "Houthis strike Yemen's Aden airport after evacuation warning - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -108892,7 +108892,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 73,
               "headline": "Bearista cups are returning at Starbucks. Can the viral sensation boost holiday sales again?",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -108912,14 +108912,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 93,
+              "confidence_score": 92,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 74,
+              "freshness_score": 71,
               "headline": "Turkey warns against further attacks by Russia, Ukraine on Black Sea vessels - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -109057,7 +109057,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.004,
-              "avg_equity_futures_1d_return": 0.0009,
+              "avg_equity_futures_1d_return": 0.0027,
               "confirmed_checks": [],
               "equity_futures_symbols_used": [
                 "ES=F",
@@ -109072,7 +109072,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": 0.0021,
-              "oil_proxy_1d_return": 0.0185,
+              "oil_proxy_1d_return": 0.0184,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -111283,7 +111283,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 91,
+              "freshness_score": 89,
               "headline": "Iran sees only unacceptable ideas in latest mediation to end war, official says - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -111310,7 +111310,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 85,
               "headline": "Bond investor Jeff Gundlach talks to CNBC about Fed's rate pause, Warsh reducing vote-setting meetings",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -111337,7 +111337,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 83,
+              "freshness_score": 81,
               "headline": "Caretaker role could limit Netanyahu but not rule out war with Iran - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -111364,7 +111364,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 82,
+              "freshness_score": 80,
               "headline": "Houthis strike Yemen's Aden airport after evacuation warning - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -111391,7 +111391,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 73,
               "headline": "Bearista cups are returning at Starbucks. Can the viral sensation boost holiday sales again?",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -111411,14 +111411,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 93,
+              "confidence_score": 92,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 74,
+              "freshness_score": 71,
               "headline": "Turkey warns against further attacks by Russia, Ukraine on Black Sea vessels - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -111556,7 +111556,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.004,
-              "avg_equity_futures_1d_return": 0.0009,
+              "avg_equity_futures_1d_return": 0.0027,
               "confirmed_checks": [],
               "equity_futures_symbols_used": [
                 "ES=F",
@@ -111571,7 +111571,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": 0.0021,
-              "oil_proxy_1d_return": 0.0185,
+              "oil_proxy_1d_return": 0.0184,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -113841,7 +113841,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 91,
+              "freshness_score": 89,
               "headline": "Iran sees only unacceptable ideas in latest mediation to end war, official says - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -113868,7 +113868,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 85,
               "headline": "Bond investor Jeff Gundlach talks to CNBC about Fed's rate pause, Warsh reducing vote-setting meetings",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -113895,7 +113895,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 83,
+              "freshness_score": 81,
               "headline": "Caretaker role could limit Netanyahu but not rule out war with Iran - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -113922,7 +113922,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 82,
+              "freshness_score": 80,
               "headline": "Houthis strike Yemen's Aden airport after evacuation warning - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -113949,7 +113949,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 73,
               "headline": "Bearista cups are returning at Starbucks. Can the viral sensation boost holiday sales again?",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -113969,14 +113969,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 93,
+              "confidence_score": 92,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 74,
+              "freshness_score": 71,
               "headline": "Turkey warns against further attacks by Russia, Ukraine on Black Sea vessels - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -114114,7 +114114,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.004,
-              "avg_equity_futures_1d_return": 0.0009,
+              "avg_equity_futures_1d_return": 0.0027,
               "confirmed_checks": [],
               "equity_futures_symbols_used": [
                 "ES=F",
@@ -114129,7 +114129,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": 0.0021,
-              "oil_proxy_1d_return": 0.0185,
+              "oil_proxy_1d_return": 0.0184,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -115004,7 +115004,7 @@
   },
   "price_volume_structure": {
     "disclaimer": "K线和成交量结构只用于预测确认，不是交易信号、买卖建议或仓位建议。",
-    "generated_at": "2026-10-29T00:24:32.407842+00:00",
+    "generated_at": "2026-10-29T01:22:47.571814+00:00",
     "summary": {
       "average_price_structure_score": 74.75,
       "average_volume_confirmation_score": 41.0,
@@ -115787,10 +115787,10 @@
       "can_append_forecast_record": true,
       "can_backfill_completed_outcomes": true,
       "current_date": "2026-10-28",
-      "current_time_us_eastern": "2026-10-28T20:24:32.413046-04:00",
+      "current_time_us_eastern": "2026-10-28T21:22:47.577415-04:00",
       "data_freshness_status": "fresh",
       "expected_latest_trading_date": "2026-10-28",
-      "generated_at": "2026-10-29T00:24:32.413046+00:00",
+      "generated_at": "2026-10-29T01:22:47.577415+00:00",
       "guardrails": [
         "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
         "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -116829,15 +116829,15 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
+        "IG_OAS",
         "HY_OAS",
         "DGS10",
-        "IG_OAS",
-        "DGS3MO",
-        "DGS2",
         "BAA_SPREAD",
+        "DGS2",
+        "DGS3MO",
+        "FINANCIAL_STRESS",
         "DFII10",
-        "RECESSION",
-        "FINANCIAL_STRESS"
+        "RECESSION"
       ],
       "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-10-28。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
       "gamma_available": false,
@@ -116868,10 +116868,10 @@
       ],
       "news_event": {
         "available": true,
-        "event_detection_confidence": 78,
+        "event_detection_confidence": 77,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-10-29T00:24:22.755623+00:00",
+        "last_update": "2026-10-29T01:22:38.286594+00:00",
         "major_event_count": 13,
         "missing_reason": null,
         "news_direction": "risk_off",
@@ -117172,7 +117172,7 @@
       "price_reaction_confirmation": {
         "asset_reaction_summary": {
           "avg_equity_1d_return": 0.004,
-          "avg_equity_futures_1d_return": 0.0009,
+          "avg_equity_futures_1d_return": 0.0027,
           "confirmed_checks": [],
           "equity_futures_symbols_used": [
             "ES=F",
@@ -117187,7 +117187,7 @@
             "美元走强"
           ],
           "hyg_lqd_1d_relative_return": 0.0021,
-          "oil_proxy_1d_return": 0.0185,
+          "oil_proxy_1d_return": 0.0184,
           "oil_proxy_symbols_used": [
             "USO",
             "CL=F"
@@ -119444,7 +119444,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 91,
+              "freshness_score": 89,
               "headline": "Iran sees only unacceptable ideas in latest mediation to end war, official says - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -119471,7 +119471,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 85,
               "headline": "Bond investor Jeff Gundlach talks to CNBC about Fed's rate pause, Warsh reducing vote-setting meetings",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -119498,7 +119498,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 83,
+              "freshness_score": 81,
               "headline": "Caretaker role could limit Netanyahu but not rule out war with Iran - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -119525,7 +119525,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 82,
+              "freshness_score": 80,
               "headline": "Houthis strike Yemen's Aden airport after evacuation warning - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -119552,7 +119552,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 73,
               "headline": "Bearista cups are returning at Starbucks. Can the viral sensation boost holiday sales again?",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -119572,14 +119572,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 93,
+              "confidence_score": 92,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 74,
+              "freshness_score": 71,
               "headline": "Turkey warns against further attacks by Russia, Ukraine on Black Sea vessels - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -119717,7 +119717,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.004,
-              "avg_equity_futures_1d_return": 0.0009,
+              "avg_equity_futures_1d_return": 0.0027,
               "confirmed_checks": [],
               "equity_futures_symbols_used": [
                 "ES=F",
@@ -119732,7 +119732,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": 0.0021,
-              "oil_proxy_1d_return": 0.0185,
+              "oil_proxy_1d_return": 0.0184,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -123600,7 +123600,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 91,
+              "freshness_score": 89,
               "headline": "Iran sees only unacceptable ideas in latest mediation to end war, official says - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -123627,7 +123627,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 85,
               "headline": "Bond investor Jeff Gundlach talks to CNBC about Fed's rate pause, Warsh reducing vote-setting meetings",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -123654,7 +123654,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 83,
+              "freshness_score": 81,
               "headline": "Caretaker role could limit Netanyahu but not rule out war with Iran - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -123681,7 +123681,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 82,
+              "freshness_score": 80,
               "headline": "Houthis strike Yemen's Aden airport after evacuation warning - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -123708,7 +123708,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 73,
               "headline": "Bearista cups are returning at Starbucks. Can the viral sensation boost holiday sales again?",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -123728,14 +123728,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 93,
+              "confidence_score": 92,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 74,
+              "freshness_score": 71,
               "headline": "Turkey warns against further attacks by Russia, Ukraine on Black Sea vessels - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -123873,7 +123873,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.004,
-              "avg_equity_futures_1d_return": 0.0009,
+              "avg_equity_futures_1d_return": 0.0027,
               "confirmed_checks": [],
               "equity_futures_symbols_used": [
                 "ES=F",
@@ -123888,7 +123888,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": 0.0021,
-              "oil_proxy_1d_return": 0.0185,
+              "oil_proxy_1d_return": 0.0184,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -127771,7 +127771,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 91,
+              "freshness_score": 89,
               "headline": "Iran sees only unacceptable ideas in latest mediation to end war, official says - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -127798,7 +127798,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 85,
               "headline": "Bond investor Jeff Gundlach talks to CNBC about Fed's rate pause, Warsh reducing vote-setting meetings",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -127825,7 +127825,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 83,
+              "freshness_score": 81,
               "headline": "Caretaker role could limit Netanyahu but not rule out war with Iran - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -127852,7 +127852,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 82,
+              "freshness_score": 80,
               "headline": "Houthis strike Yemen's Aden airport after evacuation warning - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -127879,7 +127879,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 73,
               "headline": "Bearista cups are returning at Starbucks. Can the viral sensation boost holiday sales again?",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -127899,14 +127899,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 93,
+              "confidence_score": 92,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 74,
+              "freshness_score": 71,
               "headline": "Turkey warns against further attacks by Russia, Ukraine on Black Sea vessels - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -128044,7 +128044,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.004,
-              "avg_equity_futures_1d_return": 0.0009,
+              "avg_equity_futures_1d_return": 0.0027,
               "confirmed_checks": [],
               "equity_futures_symbols_used": [
                 "ES=F",
@@ -128059,7 +128059,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": 0.0021,
-              "oil_proxy_1d_return": 0.0185,
+              "oil_proxy_1d_return": 0.0184,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -132001,7 +132001,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 91,
+              "freshness_score": 89,
               "headline": "Iran sees only unacceptable ideas in latest mediation to end war, official says - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -132028,7 +132028,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 85,
               "headline": "Bond investor Jeff Gundlach talks to CNBC about Fed's rate pause, Warsh reducing vote-setting meetings",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -132055,7 +132055,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 83,
+              "freshness_score": 81,
               "headline": "Caretaker role could limit Netanyahu but not rule out war with Iran - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -132082,7 +132082,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 82,
+              "freshness_score": 80,
               "headline": "Houthis strike Yemen's Aden airport after evacuation warning - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -132109,7 +132109,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 75,
+              "freshness_score": 73,
               "headline": "Bearista cups are returning at Starbucks. Can the viral sensation boost holiday sales again?",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -132129,14 +132129,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 93,
+              "confidence_score": 92,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 74,
+              "freshness_score": 71,
               "headline": "Turkey warns against further attacks by Russia, Ukraine on Black Sea vessels - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -132274,7 +132274,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.004,
-              "avg_equity_futures_1d_return": 0.0009,
+              "avg_equity_futures_1d_return": 0.0027,
               "confirmed_checks": [],
               "equity_futures_symbols_used": [
                 "ES=F",
@@ -132289,7 +132289,7 @@
                 "美元走强"
               ],
               "hyg_lqd_1d_relative_return": 0.0021,
-              "oil_proxy_1d_return": 0.0185,
+              "oil_proxy_1d_return": 0.0184,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -134452,7 +134452,7 @@
       },
       "version": "stock_data_provider_v1"
     },
-    "generated_at": "2026-10-29T00:24:34.041263+00:00",
+    "generated_at": "2026-10-29T01:22:49.412891+00:00",
     "guardrails": [
       "This is a probabilistic stock forecast module, not a trading system.",
       "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -134541,7 +134541,7 @@
         },
         "question": "high final_radar_score 是否真的对应更大次日 range？"
       },
-      "generated_at": "2026-10-29T00:24:34.090922+00:00",
+      "generated_at": "2026-10-29T01:22:49.468076+00:00",
       "not_validated_warning": "not_enough_forward_samples",
       "pending_records": 389,
       "risk_score_effectiveness": {
@@ -136875,59 +136875,59 @@
             "event_risk_flag": "high",
             "headlines": [
               {
-                "datetime": 1793223600,
-                "headline": "AI Spending Is Nearing $1 Trillion Annually. These 2 Stocks Are Most at Risk If It Slows.",
+                "datetime": 1793231067,
+                "headline": "Marvell Wants Lumentum. Here’s Why Coherent Could Win.",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=457a2dce64698a4d8cc92750d597e4910d68705c663cb61206d833e571f4d710"
+                "url": "https://finnhub.io/api/news?id=28044f1bdfed35192cda6393769ee1ca83652198a992d1c55b755fdbcf57fb74"
               },
               {
-                "datetime": 1793222924,
-                "headline": "Frontier Group Holdings, Inc. Q3 2026 Earnings Call Summary",
+                "datetime": 1793230140,
+                "headline": "3 Reasons Why Bitcoin Is Worth Buying Right Now",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=efa1cea09397c87e4c35a08f8059341d49a99690136b208c44a507ee0842d38e"
+                "url": "https://finnhub.io/api/news?id=fe586aa3fa939164651b2c5ea6362b99f329a6268d5f148ba92ab9cd13e738b8"
               },
               {
-                "datetime": 1793222735,
-                "headline": "Smurfit Westrock Plc Q3 2026 Earnings Call Summary",
+                "datetime": 1793229786,
+                "headline": "Google Cloud Revenue Just Grew 103%, so Why Is the Stock Falling?",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=e42efb7c4aa82fde53c52e4855ab75ceb2bebaa947cb005c9ec69cd07ba4886b"
+                "url": "https://finnhub.io/api/news?id=728fc330d2336f04348b32dfd7a2d46a2f0a979d14a7369fc2cf2a6758ae17ea"
               },
               {
-                "datetime": 1793222731,
-                "headline": "Scorpio Tankers Inc. Q3 2026 Earnings Call Summary",
+                "datetime": 1793229600,
+                "headline": "History Shows IPO Stocks Plunge Up to 48% Within 1 Year of Going Public. Here's Why SpaceX Could Defy the Odds in 2027.",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=7a5385a3e5e59fb3b05367438fa157eac4b5c054c3e24a12953023f46dc81755"
+                "url": "https://finnhub.io/api/news?id=cdfac88b32976f8b9b6d522eea9999cef0d4262c9fa73e3ff1f02b3020b8c962"
               },
               {
-                "datetime": 1793222721,
-                "headline": "Phillips 66 Q3 2026 Earnings Call Summary",
+                "datetime": 1793229600,
+                "headline": "2 Millionaire-Maker Custom Silicon Stocks Powering the AI Infrastructure Supercycle",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=bb9fc174612e0cd5682a6f34df8c032437a41df956c88661b24a92943478ccb2"
+                "url": "https://finnhub.io/api/news?id=ba6cf10c180f704658858f83391d6bdfbfe208d6ffdd39d364723689d95cfa64"
               },
               {
-                "datetime": 1793222459,
-                "headline": "ProPetro Holding Corp. Q3 2026 Earnings Call Summary",
+                "datetime": 1793229060,
+                "headline": "Prediction: This Will Be SpaceX's Stock Price in 3 Years",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=113b2fcc50fc603fc4442c6f5aa4792d657dd387f60063b4fe84ec79f4c5452b"
+                "url": "https://finnhub.io/api/news?id=56d20183c17f90fa40b56d1d2e56b7d451556ab478ec2a60d888614c22a18b08"
               },
               {
-                "datetime": 1793222232,
-                "headline": "Parsons Corporation Q3 2026 Earnings Call Summary",
+                "datetime": 1793227843,
+                "headline": "Lumentum Jumps On Marvell Buyout Report",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=0bbc39690a40cb36d1a1785f2aacb850231114a84013846305f40f5ff7a599aa"
+                "url": "https://finnhub.io/api/news?id=bd180d1634547737ff0efcacfefc99d512b1f19629413a8ef9d010380376d41d"
               },
               {
-                "datetime": 1793222139,
-                "headline": "GE Vernova Inc. Q3 2026 Earnings Call Summary",
+                "datetime": 1793226399,
+                "headline": "NVDA Stock Edges Down On DOJ Interest In $12.9 Billion Hugging Face Acquisition",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=7420b106a2bb385fad64b5d475b266e5469c1e5c37e6fc6916401bf0923c3d77"
+                "url": "https://finnhub.io/api/news?id=29c29bdca33dac3ae0146381132c02f6897d6530703224f2e537087756f61e6f"
               }
             ],
-            "major_company_headline": "AI Spending Is Nearing $1 Trillion Annually. These 2 Stocks Are Most at Risk If It Slows.",
+            "major_company_headline": "Marvell Wants Lumentum. Here’s Why Coherent Could Win.",
             "news_count_24h": 20,
             "news_count_72h": 20,
             "news_risk_score": 100.0,
-            "news_sentiment": "negative"
+            "news_sentiment": "positive"
           },
           "price_trend": {
             "close": 215.38,
@@ -137443,6 +137443,7 @@
             "scenario": "stock_downside_continuation"
           },
           "supporting_signals": [
+            "近期公司新闻偏正面。",
             "基础财务指标已接入且收入增长为正。"
           ]
         },
@@ -138771,15 +138772,16 @@
           "components": {
             "catalyst": {
               "evidence": [
-                "公司新闻已接入: AI Spending Is Nearing $1 Trillion Annually. These 2 Stocks Are Most at Risk If It Slows.",
+                "公司新闻已接入: Marvell Wants Lumentum. Here’s Why Coherent Could Win.",
+                "新闻情绪偏正",
                 "未来 30 天存在财报催化：2026-11-17",
                 "增长数据具备 EPS 上修叙事基础"
               ],
               "max_points": 10,
               "missing_fields": [],
               "name": "catalyst",
-              "points": 8.0,
-              "score_pct": 80.0,
+              "points": 10.0,
+              "score_pct": 100.0,
               "status": "supportive"
             },
             "flow": {
@@ -138862,7 +138864,7 @@
             "expected_return_60d": -0.0094,
             "max_drawdown_risk_20d": 0.0997,
             "max_drawdown_risk_60d": 0.1068,
-            "outperformance_probability_20d": 0.4878,
+            "outperformance_probability_20d": 0.4958,
             "risk_reward_ratio": 0.5,
             "upside_potential_60d": 0.0535
           },
@@ -138884,7 +138886,7 @@
           },
           "thesis": {
             "capital_confirmation": "资金确认不足或仍需观察",
-            "catalyst": "AI Spending Is Nearing $1 Trillion Annually. These 2 Stocks Are Most at Risk If It Slows.",
+            "catalyst": "Marvell Wants Lumentum. Here’s Why Coherent Could Win.",
             "expectation_gap": [
               "收入增长较强，具备正向预期差基础",
               "EPS 增长较强，可能支持盈利上修叙事",
@@ -138903,7 +138905,7 @@
             "primary_path": "stock_failed_bounce",
             "valuation_repricing": "估值扩张证据不足或存在压力"
           },
-          "total_score": 34.5,
+          "total_score": 36.5,
           "validation_status": "not_yet_validated",
           "version": "stock_alpha_score_v1"
         },
@@ -138931,8 +138933,8 @@
           "module_scores": {
             "alpha_quality": {
               "evidence": "个股 Alpha 评分已接入",
-              "reason": "score=34.5; grade=weak_or_no_alpha_edge; benchmark=QQQ",
-              "score": 34.5,
+              "reason": "score=36.5; grade=weak_or_no_alpha_edge; benchmark=QQQ",
+              "score": 36.5,
               "status": "conflicting"
             },
             "fundamentals_earnings": {
@@ -138991,7 +138993,7 @@
             }
           },
           "requires_multi_source_confirmation": true,
-          "stock_confluence_score": 34.89,
+          "stock_confluence_score": 35.07,
           "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
           "supporting_evidence": [
             "基础财务指标偏支持",
@@ -139000,6 +139002,7 @@
           "validation_status": "not_yet_validated"
         },
         "supporting_signals": [
+          "近期公司新闻偏正面。",
           "基础财务指标已接入且收入增长为正。"
         ],
         "symbol": "NVDA",
@@ -143430,7 +143433,7 @@
         "top_candidate": "TSLA",
         "validation_status": "not_yet_validated"
       },
-      "generated_at": "2026-10-29T00:24:34.076742+00:00",
+      "generated_at": "2026-10-29T01:22:49.451311+00:00",
       "model_version": "stock_baseline_v1",
       "notes": [
         "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -143612,19 +143615,19 @@
         },
         {
           "alpha_fields": {
-            "alpha_score": 34.5,
+            "alpha_score": 36.5,
             "expected_return_60d": -0.0094,
             "forecast_grade": "weak_or_no_alpha_edge",
             "main_logic": "半导体/AI 逻辑：订单、毛利率、资本开支周期、估值重估和资金确认。",
-            "outperformance_probability_20d": 0.4878,
+            "outperformance_probability_20d": 0.4958,
             "risk_reward_ratio": 0.5
           },
-          "alpha_quality_score": 34.5,
+          "alpha_quality_score": 36.5,
           "as_of": "2026-10-28",
           "candidate_type": "failed_bounce_risk",
           "catalyst_score": 63.32,
           "company_name": "NVIDIA Corporation",
-          "confluence_score": 34.89,
+          "confluence_score": 35.07,
           "data_missing": [
             "single_stock_options"
           ],
@@ -143641,7 +143644,7 @@
             "mid": 215.11,
             "range_pct": 0.0276
           },
-          "final_radar_score": 44.51,
+          "final_radar_score": 44.89,
           "forecast_date": "2026-10-28",
           "invalidation_level": 210.18,
           "last_close": 215.38,
@@ -143664,8 +143667,8 @@
             "earnings": "available"
           },
           "next_day_move_probability": 0.6575,
-          "one_line_reason": "failed_bounce_risk: Alpha 34 / 弹性 97 / 成交量 0 / 相对强弱 38 / 催化 63 / 大盘 risk_off_pressure / 板块 conflicting",
-          "outperformance_probability_20d": 0.4878,
+          "one_line_reason": "failed_bounce_risk: Alpha 36 / 弹性 97 / 成交量 0 / 相对强弱 38 / 催化 63 / 大盘 risk_off_pressure / 板块 conflicting",
+          "outperformance_probability_20d": 0.4958,
           "primary_probability": 0.2635,
           "primary_scenario": "stock_failed_bounce",
           "radar_level": "WATCH",
@@ -143869,7 +143872,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-10-29T00:24:34.090922+00:00",
+    "generated_at": "2026-10-29T01:22:49.468076+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 389,
     "risk_score_effectiveness": {
@@ -143941,7 +143944,7 @@
       "top_candidate": "TSLA",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-10-29T00:24:34.076742+00:00",
+    "generated_at": "2026-10-29T01:22:49.451311+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -144123,19 +144126,19 @@
       },
       {
         "alpha_fields": {
-          "alpha_score": 34.5,
+          "alpha_score": 36.5,
           "expected_return_60d": -0.0094,
           "forecast_grade": "weak_or_no_alpha_edge",
           "main_logic": "半导体/AI 逻辑：订单、毛利率、资本开支周期、估值重估和资金确认。",
-          "outperformance_probability_20d": 0.4878,
+          "outperformance_probability_20d": 0.4958,
           "risk_reward_ratio": 0.5
         },
-        "alpha_quality_score": 34.5,
+        "alpha_quality_score": 36.5,
         "as_of": "2026-10-28",
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 63.32,
         "company_name": "NVIDIA Corporation",
-        "confluence_score": 34.89,
+        "confluence_score": 35.07,
         "data_missing": [
           "single_stock_options"
         ],
@@ -144152,7 +144155,7 @@
           "mid": 215.11,
           "range_pct": 0.0276
         },
-        "final_radar_score": 44.51,
+        "final_radar_score": 44.89,
         "forecast_date": "2026-10-28",
         "invalidation_level": 210.18,
         "last_close": 215.38,
@@ -144175,8 +144178,8 @@
           "earnings": "available"
         },
         "next_day_move_probability": 0.6575,
-        "one_line_reason": "failed_bounce_risk: Alpha 34 / 弹性 97 / 成交量 0 / 相对强弱 38 / 催化 63 / 大盘 risk_off_pressure / 板块 conflicting",
-        "outperformance_probability_20d": 0.4878,
+        "one_line_reason": "failed_bounce_risk: Alpha 36 / 弹性 97 / 成交量 0 / 相对强弱 38 / 催化 63 / 大盘 risk_off_pressure / 板块 conflicting",
+        "outperformance_probability_20d": 0.4958,
         "primary_probability": 0.2635,
         "primary_scenario": "stock_failed_bounce",
         "radar_level": "WATCH",
