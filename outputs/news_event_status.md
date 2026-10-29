@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-28T18:23:50.111738+00:00`
+- generated_at: `2026-10-29T00:24:22.755623+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
-- event_detection_confidence: `80`
+- major_event_count: `13`
+- event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `50`
+- confirmation_score: `0`
 
 ## Dashboard Note
 
@@ -27,17 +27,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Houthis strike Yemen's Aden airport after evacuation warning - Reuters
+- headline: Iran sees only unacceptable ideas in latest mediation to end war, official says - Reuters
 - source: Reuters
-- published_at: `2026-10-28T16:51:33+00:00`
+- published_at: `2026-10-28T20:37:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iran sees only unacceptable ideas in latest mediation to end war, official says - Reuters
-- source: Reuters
-- published_at: `2026-10-28T16:02:29+00:00`
+- headline: Bond investor Jeff Gundlach talks to CNBC about Fed's rate pause, Warsh reducing vote-setting meetings
+- source: CNBC
+- published_at: `2026-10-28T19:05:30+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -45,7 +45,15 @@
 
 - headline: Caretaker role could limit Netanyahu but not rule out war with Iran - Reuters
 - source: Reuters
-- published_at: `2026-10-28T15:49:37+00:00`
+- published_at: `2026-10-28T17:22:50+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Houthis strike Yemen's Aden airport after evacuation warning - Reuters
+- source: Reuters
+- published_at: `2026-10-28T16:51:33+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -67,6 +75,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Equinor warns Europe is vulnerable to winter gas price spike if cold weather hits - Reuters
+- source: Reuters
+- published_at: `2026-10-28T13:26:09+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Iranians cut essentials and put dreams on hold as war-hit economy bites - Reuters
 - source: Reuters
 - published_at: `2026-10-28T12:49:43+00:00`
@@ -79,7 +95,7 @@
 - source: Reuters
 - published_at: `2026-10-28T11:09:43+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -87,20 +103,4 @@
 - source: Reuters
 - published_at: `2026-10-28T11:08:27+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Unilever flags price hikes as Iran war costs stack up - Reuters
-- source: Reuters
-- published_at: `2026-10-28T10:14:23+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### fed_hawkish / risk_off
-
-- headline: PODCAST: A hawkish hold? - Reuters
-- source: Reuters
-- published_at: `2026-10-28T13:35:29+00:00`
-- importance_score: `88`
-- confidence: `high`
+- confidence: `medium`
