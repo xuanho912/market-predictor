@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-29T10:26:36.146327+00:00`
+- generated_at: `2026-10-29T18:31:31.162561+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `13`
-- event_detection_confidence: `72`
+- major_event_count: `12`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,46 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Netanyahu, at risk of losing power, steps up attacks on Israel's Arab parties - Reuters
+- source: Reuters
+- published_at: `2026-10-29T17:09:53+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Aon CEO warns AI data center insurance risks could threaten financing
+- source: CNBC
+- published_at: `2026-10-29T17:03:23+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Farmer-funded attack ads targeting Republicans air across rural America - Reuters
+- source: Reuters
+- published_at: `2026-10-29T16:53:09+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran’s hidden web of military agencies is slipping hardware past the US blockade - Reuters
+- source: Reuters
+- published_at: `2026-10-29T15:04:32+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Brewers start to feel the costs of prolonged war in Iran - Reuters
+- source: Reuters
+- published_at: `2026-10-29T06:13:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -59,48 +99,8 @@
 
 ### oil_shock_relief / risk_on
 
-- headline: Oil prices fall as peace hopes offset fears of growing Middle East conflict - Reuters
+- headline: Oil falls as diplomacy hopes outweigh Middle East escalation fears - Reuters
 - source: Reuters
 - published_at: `2026-10-29T00:28:00+00:00`
-- importance_score: `92`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Bearista cups are returning at Starbucks. Can the viral sensation boost holiday sales again?
-- source: CNBC
-- published_at: `2026-10-28T14:04:13+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Turkey warns against further attacks by Russia, Ukraine on Black Sea vessels - Reuters
-- source: Reuters
-- published_at: `2026-10-28T13:28:52+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Equinor warns Europe is vulnerable to winter gas price spike if cold weather hits - Reuters
-- source: Reuters
-- published_at: `2026-10-28T13:26:09+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Gulf equities mixed as Ras Tanura strike unnerves investors - Reuters
-- source: Reuters
-- published_at: `2026-10-28T13:04:50+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iranians cut essentials and put dreams on hold as war-hit economy bites - Reuters
-- source: Reuters
-- published_at: `2026-10-28T12:49:43+00:00`
-- importance_score: `100`
+- importance_score: `90`
 - confidence: `medium`
