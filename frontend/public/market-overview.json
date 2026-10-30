@@ -6,10 +6,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-10-29",
-    "current_time_us_eastern": "2026-10-29T20:18:26.629744-04:00",
+    "current_time_us_eastern": "2026-10-29T21:27:50.893051-04:00",
     "data_freshness_status": "fresh",
     "expected_latest_trading_date": "2026-10-29",
-    "generated_at": "2026-10-30T00:18:26.629744+00:00",
+    "generated_at": "2026-10-30T01:27:50.893051+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -1048,15 +1048,15 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "HY_OAS",
-      "DGS2",
-      "DGS10",
-      "IG_OAS",
-      "BAA_SPREAD",
       "DGS3MO",
+      "DGS10",
+      "HY_OAS",
       "RECESSION",
       "DFII10",
-      "FINANCIAL_STRESS"
+      "FINANCIAL_STRESS",
+      "DGS2",
+      "BAA_SPREAD",
+      "IG_OAS"
     ],
     "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-10-29。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
     "gamma_available": false,
@@ -1087,10 +1087,10 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 74,
+      "event_detection_confidence": 73,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-10-30T00:18:15.098202+00:00",
+      "last_update": "2026-10-30T01:27:41.421573+00:00",
       "major_event_count": 8,
       "missing_reason": null,
       "news_direction": "risk_off",
@@ -1576,7 +1576,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": -0.003,
-        "avg_equity_futures_1d_return": -0.0082,
+        "avg_equity_futures_1d_return": -0.0126,
         "confirmed_checks": [
           "股票ETF或股指期货下跌",
           "VIX 上升",
@@ -1592,7 +1592,7 @@
           "美元走强"
         ],
         "hyg_lqd_1d_relative_return": -0.0016,
-        "oil_proxy_1d_return": 0.0053,
+        "oil_proxy_1d_return": 0.0046,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -4120,7 +4120,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 80,
             "headline": "Netanyahu, at risk of losing power, steps up attacks on Israel's Arab parties - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4147,7 +4147,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 80,
             "headline": "Aon CEO warns AI data center insurance risks could threaten financing",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4167,14 +4167,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 94,
+            "confidence_score": 93,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 78,
+            "freshness_score": 75,
             "headline": "Iran’s hidden web of military agencies is slipping hardware past the US blockade - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4194,46 +4194,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 71,
+            "confidence_score": 70,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 57,
+            "freshness_score": 54,
             "headline": "Brewers start to feel the costs of prolonged war in Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-10-29T06:13:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 65,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 34,
-            "headline": "Iran sees only unacceptable ideas in latest mediation to end war, official says - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-28T20:37:00+00:00",
             "source": "Reuters"
           },
           {
@@ -4255,7 +4228,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 30,
+            "freshness_score": 31,
+            "headline": "Iran sees only unacceptable ideas in latest mediation to end war, official says - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-28T20:37:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 63,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 27,
             "headline": "Bond investor Jeff Gundlach talks to CNBC about Fed's rate pause, Warsh reducing vote-setting meetings",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4397,7 +4397,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.003,
-            "avg_equity_futures_1d_return": -0.0082,
+            "avg_equity_futures_1d_return": -0.0126,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -4413,7 +4413,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0016,
-            "oil_proxy_1d_return": 0.0053,
+            "oil_proxy_1d_return": 0.0046,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -6621,7 +6621,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 80,
             "headline": "Netanyahu, at risk of losing power, steps up attacks on Israel's Arab parties - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6648,7 +6648,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 80,
             "headline": "Aon CEO warns AI data center insurance risks could threaten financing",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6668,14 +6668,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 94,
+            "confidence_score": 93,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 78,
+            "freshness_score": 75,
             "headline": "Iran’s hidden web of military agencies is slipping hardware past the US blockade - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6695,46 +6695,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 71,
+            "confidence_score": 70,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 57,
+            "freshness_score": 54,
             "headline": "Brewers start to feel the costs of prolonged war in Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-10-29T06:13:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 65,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 34,
-            "headline": "Iran sees only unacceptable ideas in latest mediation to end war, official says - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-28T20:37:00+00:00",
             "source": "Reuters"
           },
           {
@@ -6756,7 +6729,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 30,
+            "freshness_score": 31,
+            "headline": "Iran sees only unacceptable ideas in latest mediation to end war, official says - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-28T20:37:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 63,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 27,
             "headline": "Bond investor Jeff Gundlach talks to CNBC about Fed's rate pause, Warsh reducing vote-setting meetings",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6898,7 +6898,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.003,
-            "avg_equity_futures_1d_return": -0.0082,
+            "avg_equity_futures_1d_return": -0.0126,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -6914,7 +6914,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0016,
-            "oil_proxy_1d_return": 0.0053,
+            "oil_proxy_1d_return": 0.0046,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -9138,7 +9138,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 80,
             "headline": "Netanyahu, at risk of losing power, steps up attacks on Israel's Arab parties - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9165,7 +9165,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 80,
             "headline": "Aon CEO warns AI data center insurance risks could threaten financing",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9185,14 +9185,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 94,
+            "confidence_score": 93,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 78,
+            "freshness_score": 75,
             "headline": "Iran’s hidden web of military agencies is slipping hardware past the US blockade - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9212,46 +9212,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 71,
+            "confidence_score": 70,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 57,
+            "freshness_score": 54,
             "headline": "Brewers start to feel the costs of prolonged war in Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-10-29T06:13:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 65,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 34,
-            "headline": "Iran sees only unacceptable ideas in latest mediation to end war, official says - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-28T20:37:00+00:00",
             "source": "Reuters"
           },
           {
@@ -9273,7 +9246,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 30,
+            "freshness_score": 31,
+            "headline": "Iran sees only unacceptable ideas in latest mediation to end war, official says - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-28T20:37:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 63,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 27,
             "headline": "Bond investor Jeff Gundlach talks to CNBC about Fed's rate pause, Warsh reducing vote-setting meetings",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9415,7 +9415,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.003,
-            "avg_equity_futures_1d_return": -0.0082,
+            "avg_equity_futures_1d_return": -0.0126,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -9431,7 +9431,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0016,
-            "oil_proxy_1d_return": 0.0053,
+            "oil_proxy_1d_return": 0.0046,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -11706,7 +11706,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 80,
             "headline": "Netanyahu, at risk of losing power, steps up attacks on Israel's Arab parties - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11733,7 +11733,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 80,
             "headline": "Aon CEO warns AI data center insurance risks could threaten financing",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11753,14 +11753,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 94,
+            "confidence_score": 93,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 78,
+            "freshness_score": 75,
             "headline": "Iran’s hidden web of military agencies is slipping hardware past the US blockade - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11780,46 +11780,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 71,
+            "confidence_score": 70,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 57,
+            "freshness_score": 54,
             "headline": "Brewers start to feel the costs of prolonged war in Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-10-29T06:13:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 65,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 34,
-            "headline": "Iran sees only unacceptable ideas in latest mediation to end war, official says - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-10-28T20:37:00+00:00",
             "source": "Reuters"
           },
           {
@@ -11841,7 +11814,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 30,
+            "freshness_score": 31,
+            "headline": "Iran sees only unacceptable ideas in latest mediation to end war, official says - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-10-28T20:37:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 63,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 27,
             "headline": "Bond investor Jeff Gundlach talks to CNBC about Fed's rate pause, Warsh reducing vote-setting meetings",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11983,7 +11983,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.003,
-            "avg_equity_futures_1d_return": -0.0082,
+            "avg_equity_futures_1d_return": -0.0126,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -11999,7 +11999,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0016,
-            "oil_proxy_1d_return": 0.0053,
+            "oil_proxy_1d_return": 0.0046,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
