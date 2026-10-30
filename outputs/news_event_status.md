@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-30T18:09:39.512325+00:00`
+- generated_at: `2026-10-30T23:56:58.263653+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
-- event_detection_confidence: `72`
+- major_event_count: `3`
+- event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -35,9 +35,9 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil set for fourth monthly gain as Hormuz tanker attack highlights supply risks - Reuters
+- headline: COMMENTARY: AI’s rewiring of US warfare may be only the beginning - Reuters
 - source: Reuters
-- published_at: `2026-10-30T02:27:00+00:00`
+- published_at: `2026-10-30T09:11:13+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -46,29 +46,5 @@
 - headline: Netanyahu, at risk of losing power, steps up attacks on Israel's Arab parties - Reuters
 - source: Reuters
 - published_at: `2026-10-29T17:09:53+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Aon CEO warns AI data center insurance risks could threaten financing
-- source: CNBC
-- published_at: `2026-10-29T17:03:23+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran’s hidden web of military agencies is slipping hardware past the US blockade - Reuters
-- source: Reuters
-- published_at: `2026-10-29T15:04:32+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Brewers start to feel the costs of prolonged war in Iran - Reuters
-- source: Reuters
-- published_at: `2026-10-29T12:20:22+00:00`
 - importance_score: `100`
 - confidence: `medium`
