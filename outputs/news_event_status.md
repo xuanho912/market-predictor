@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-30T07:13:39.787512+00:00`
+- generated_at: `2026-10-30T10:29:44.467608+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
-- event_detection_confidence: `73`
+- major_event_count: `5`
+- event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -63,28 +63,4 @@
 - source: Reuters
 - published_at: `2026-10-29T06:13:00+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran sees only unacceptable ideas in latest mediation to end war, official says - Reuters
-- source: Reuters
-- published_at: `2026-10-28T20:37:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Bond investor Jeff Gundlach talks to CNBC about Fed's rate pause, Warsh reducing vote-setting meetings
-- source: CNBC
-- published_at: `2026-10-28T19:05:30+00:00`
-- importance_score: `99`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil prices rise on Yemen fighting, Saudi refinery attack - Reuters
-- source: Reuters
-- published_at: `2026-10-28T18:24:00+00:00`
-- importance_score: `99`
 - confidence: `medium`
