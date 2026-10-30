@@ -112,7 +112,7 @@
       "status": "available"
     }
   },
-  "generated_at": "2026-10-30T02:34:23.930131+00:00",
+  "generated_at": "2026-10-30T07:13:39.780368+00:00",
   "notes": [
     "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
     "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -1152,10 +1152,10 @@
       "IWM"
     ],
     "breadth_required": true,
-    "can_append_forecast_record": true,
+    "can_append_forecast_record": false,
     "data_completeness_score": 87.0,
     "data_completeness_score_before_news_event": 85.0,
-    "data_freshness_status": "fresh",
+    "data_freshness_status": "market_open_unconfirmed",
     "data_source_status": "real_core_with_proxies",
     "expected_latest_trading_date": "2026-10-29",
     "fallback_used": true,
@@ -1184,8 +1184,8 @@
           "primary_scenario_with_fred": "bounce_path",
           "primary_scenario_without_fred": "bounce_path",
           "risk_expansion_delta": 0.044,
-          "risk_expansion_with_fred": 0.436,
-          "risk_expansion_without_fred": 0.392
+          "risk_expansion_with_fred": 0.4339,
+          "risk_expansion_without_fred": 0.3899
         },
         "IWM": {
           "edge_status_changed": false,
@@ -1197,9 +1197,9 @@
           "primary_scenario_changed": false,
           "primary_scenario_with_fred": "bounce_path",
           "primary_scenario_without_fred": "bounce_path",
-          "risk_expansion_delta": 0.044,
-          "risk_expansion_with_fred": 0.4364,
-          "risk_expansion_without_fred": 0.3924
+          "risk_expansion_delta": 0.0441,
+          "risk_expansion_with_fred": 0.4344,
+          "risk_expansion_without_fred": 0.3903
         },
         "QQQ": {
           "edge_status_changed": false,
@@ -1212,8 +1212,8 @@
           "primary_scenario_with_fred": "bearish_path",
           "primary_scenario_without_fred": "bearish_path",
           "risk_expansion_delta": 0.044,
-          "risk_expansion_with_fred": 0.4725,
-          "risk_expansion_without_fred": 0.4285
+          "risk_expansion_with_fred": 0.4704,
+          "risk_expansion_without_fred": 0.4264
         },
         "SPY": {
           "edge_status_changed": false,
@@ -1226,8 +1226,8 @@
           "primary_scenario_with_fred": "bounce_path",
           "primary_scenario_without_fred": "bounce_path",
           "risk_expansion_delta": 0.044,
-          "risk_expansion_with_fred": 0.3969,
-          "risk_expansion_without_fred": 0.3529
+          "risk_expansion_with_fred": 0.3948,
+          "risk_expansion_without_fred": 0.3508
         }
       },
       "target_85_met_with_fred": true
@@ -1239,17 +1239,17 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "IG_OAS",
-      "HY_OAS",
-      "DGS2",
-      "DGS3MO",
-      "BAA_SPREAD",
-      "DFII10",
       "DGS10",
+      "BAA_SPREAD",
+      "IG_OAS",
+      "DGS2",
+      "HY_OAS",
+      "DGS3MO",
       "RECESSION",
-      "FINANCIAL_STRESS"
+      "FINANCIAL_STRESS",
+      "DFII10"
     ],
-    "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-10-29。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
+    "freshness_warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-10-29，最近完整收盘交易日为 2026-10-29；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
     "gamma_available": false,
     "gamma_exposure_available": false,
     "latest_confirmed_market_date": "2026-10-29",
@@ -1281,7 +1281,7 @@
       "event_detection_confidence": 73,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-10-30T02:34:23.939330+00:00",
+      "last_update": "2026-10-30T07:13:39.787512+00:00",
       "major_event_count": 8,
       "missing_reason": null,
       "news_direction": "risk_off",

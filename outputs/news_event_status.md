@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-30T02:34:23.939330+00:00`
+- generated_at: `2026-10-30T07:13:39.787512+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `8`
@@ -27,11 +27,19 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Oil set for fourth monthly gain as Hormuz tanker attack highlights supply risks from war - Reuters
+- source: Reuters
+- published_at: `2026-10-30T02:27:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Netanyahu, at risk of losing power, steps up attacks on Israel's Arab parties - Reuters
 - source: Reuters
 - published_at: `2026-10-29T17:09:53+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -39,7 +47,7 @@
 - source: CNBC
 - published_at: `2026-10-29T17:03:23+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -70,21 +78,13 @@
 - headline: Bond investor Jeff Gundlach talks to CNBC about Fed's rate pause, Warsh reducing vote-setting meetings
 - source: CNBC
 - published_at: `2026-10-28T19:05:30+00:00`
-- importance_score: `100`
+- importance_score: `99`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Caretaker role could limit Netanyahu but not rule out war with Iran - Reuters
+- headline: Oil prices rise on Yemen fighting, Saudi refinery attack - Reuters
 - source: Reuters
-- published_at: `2026-10-28T17:22:50+00:00`
-- importance_score: `100`
+- published_at: `2026-10-28T18:24:00+00:00`
+- importance_score: `99`
 - confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Houthis strike Yemen's Aden airport after evacuation warning - Reuters
-- source: Reuters
-- published_at: `2026-10-28T16:51:33+00:00`
-- importance_score: `100`
-- confidence: `high`
