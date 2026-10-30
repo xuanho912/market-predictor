@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-30T10:29:44.467608+00:00`
+- generated_at: `2026-10-30T18:09:39.512325+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `5`
-- event_detection_confidence: `78`
+- major_event_count: `6`
+- event_detection_confidence: `72`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,11 +27,19 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil set for fourth monthly gain as Hormuz tanker attack highlights supply risks from war - Reuters
+- headline: Trump on Iran war: It's going to get wrapped up soon - Reuters
+- source: Reuters
+- published_at: `2026-10-30T12:10:11+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil set for fourth monthly gain as Hormuz tanker attack highlights supply risks - Reuters
 - source: Reuters
 - published_at: `2026-10-30T02:27:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -61,6 +69,6 @@
 
 - headline: Brewers start to feel the costs of prolonged war in Iran - Reuters
 - source: Reuters
-- published_at: `2026-10-29T06:13:00+00:00`
+- published_at: `2026-10-29T12:20:22+00:00`
 - importance_score: `100`
 - confidence: `medium`
