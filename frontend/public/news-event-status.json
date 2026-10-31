@@ -10,16 +10,16 @@
     "source": "finnhub",
     "status": "failed"
   },
-  "event_detection_confidence": 70,
+  "event_detection_confidence": 72,
   "event_risk_level": "high",
-  "generated_at": "2026-10-30T23:56:58.263653+00:00",
+  "generated_at": "2026-10-31T01:18:15.646459+00:00",
   "limits": [
     "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
     "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
     "The provider never exposes API keys and never lets frontend call Finnhub directly.",
     "Economic calendar items are treated as event-risk context, not automatic directional forecasts."
   ],
-  "major_event_count": 3,
+  "major_event_count": 4,
   "major_events": [
     {
       "affected_assets": [
@@ -33,14 +33,41 @@
         "TLT"
       ],
       "confidence": "high",
-      "confidence_score": 75,
+      "confidence_score": 79,
       "detected_event_conditions": [
         "geopolitical_risk_escalation"
       ],
       "event_type": "geopolitical_risk_escalation",
       "expected_horizon": "intraday-5d",
       "expected_market_direction": "risk_off",
-      "freshness_score": 72,
+      "freshness_score": 89,
+      "headline": "Saudi-led coalition says it downs Houthi drone over Medina; Houthis deny attack - Reuters",
+      "importance_score": 100,
+      "narrative": "geopolitics_escalation_risk_off",
+      "provider": "finnhub",
+      "published_at": "2026-10-30T20:34:20+00:00",
+      "source": "Reuters"
+    },
+    {
+      "affected_assets": [
+        "SPY",
+        "QQQ",
+        "IWM",
+        "DIA",
+        "^VIX",
+        "USO",
+        "UUP",
+        "TLT"
+      ],
+      "confidence": "medium",
+      "confidence_score": 74,
+      "detected_event_conditions": [
+        "geopolitical_risk_escalation"
+      ],
+      "event_type": "geopolitical_risk_escalation",
+      "expected_horizon": "intraday-5d",
+      "expected_market_direction": "risk_off",
+      "freshness_score": 68,
       "headline": "Trump on Iran war: It's going to get wrapped up soon - Reuters",
       "importance_score": 100,
       "narrative": "geopolitics_escalation_risk_off",
@@ -60,14 +87,14 @@
         "TLT"
       ],
       "confidence": "medium",
-      "confidence_score": 73,
+      "confidence_score": 72,
       "detected_event_conditions": [
         "geopolitical_risk_escalation"
       ],
       "event_type": "geopolitical_risk_escalation",
       "expected_horizon": "intraday-5d",
       "expected_market_direction": "risk_off",
-      "freshness_score": 65,
+      "freshness_score": 61,
       "headline": "COMMENTARY: AI’s rewiring of US warfare may be only the beginning - Reuters",
       "importance_score": 100,
       "narrative": "geopolitics_escalation_risk_off",
@@ -87,14 +114,14 @@
         "TLT"
       ],
       "confidence": "medium",
-      "confidence_score": 63,
+      "confidence_score": 62,
       "detected_event_conditions": [
         "geopolitical_risk_escalation"
       ],
       "event_type": "geopolitical_risk_escalation",
       "expected_horizon": "intraday-5d",
       "expected_market_direction": "risk_off",
-      "freshness_score": 26,
+      "freshness_score": 23,
       "headline": "Netanyahu, at risk of losing power, steps up attacks on Israel's Arab parties - Reuters",
       "importance_score": 100,
       "narrative": "geopolitics_escalation_risk_off",
@@ -124,6 +151,18 @@
     "supporting_headlines": [
       {
         "confidence": "high",
+        "detected_event_conditions": [
+          "geopolitical_risk_escalation"
+        ],
+        "event_type": "geopolitical_risk_escalation",
+        "expected_market_direction": "risk_off",
+        "headline": "Saudi-led coalition says it downs Houthi drone over Medina; Houthis deny attack - Reuters",
+        "importance_score": 100,
+        "published_at": "2026-10-30T20:34:20+00:00",
+        "source": "Reuters"
+      },
+      {
+        "confidence": "medium",
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
@@ -166,14 +205,14 @@
     "direction": "supports_risk_expansion",
     "event_risk_level": "high",
     "macro_event_risk_flag": false,
-    "major_event_count": 3,
+    "major_event_count": 4,
     "not_a_trading_signal": true,
     "price_reaction_confirmed": true,
     "symbols": {
       "DIA": {
-        "after_primary_probability": 0.3365,
-        "after_primary_scenario": "bounce_path",
-        "before_primary_probability": 0.3669,
+        "after_primary_probability": 0.3301,
+        "after_primary_scenario": "bearish_path",
+        "before_primary_probability": 0.333,
         "before_primary_scenario": "bounce_path",
         "confirmation_delta": -6.5,
         "impact": "conflicts_primary",
@@ -201,51 +240,15 @@
           "risk_expansion_predictor": 0.0348,
           "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": -0.0304,
-        "primary_scenario_changed": false,
+        "primary_probability_delta": -0.0029,
+        "primary_scenario_changed": true,
         "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
       },
       "IWM": {
-        "after_primary_probability": 0.2988,
-        "after_primary_scenario": "bounce_path",
-        "before_primary_probability": 0.3279,
-        "before_primary_scenario": "bounce_path",
-        "confirmation_delta": -6.5,
-        "impact": "conflicts_primary",
-        "not_a_trading_signal": true,
-        "overlay_applied": true,
-        "path_overlay": {
-          "applied": true,
-          "direction": "supports_risk_expansion",
-          "not_a_trading_signal": true,
-          "reason": "Confirmed major event adjusted only the 1d/3d probability path; historical records are not rewritten.",
-          "shock_return_1d": -0.008,
-          "shock_return_3d": -0.0036,
-          "source": "news_event_price_reaction_overlay",
-          "validation_type": "daily"
-        },
-        "path_weight_deltas": {
-          "analog_path_weight": 0.0,
-          "base_path_weight": 0.0,
-          "bearish_path_weight": 0.0535,
-          "bounce_path_weight": -0.0187
-        },
-        "predictor_deltas": {
-          "bounce_predictor": -0.0161,
-          "downside_continuation_predictor": 0.0294,
-          "risk_expansion_predictor": 0.0348,
-          "trend_reversal_predictor": 0.0
-        },
-        "primary_probability_delta": -0.0291,
-        "primary_scenario_changed": false,
-        "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay",
-        "validation_type": "daily"
-      },
-      "QQQ": {
-        "after_primary_probability": 0.3271,
+        "after_primary_probability": 0.3359,
         "after_primary_scenario": "bearish_path",
-        "before_primary_probability": 0.2849,
+        "before_primary_probability": 0.2941,
         "before_primary_scenario": "bearish_path",
         "confirmation_delta": -6.5,
         "impact": "supports_primary",
@@ -273,15 +276,51 @@
           "risk_expansion_predictor": 0.0348,
           "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": 0.0422,
+        "primary_probability_delta": 0.0418,
+        "primary_scenario_changed": false,
+        "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay",
+        "validation_type": "daily"
+      },
+      "QQQ": {
+        "after_primary_probability": 0.3626,
+        "after_primary_scenario": "bearish_path",
+        "before_primary_probability": 0.3217,
+        "before_primary_scenario": "bearish_path",
+        "confirmation_delta": -6.5,
+        "impact": "supports_primary",
+        "not_a_trading_signal": true,
+        "overlay_applied": true,
+        "path_overlay": {
+          "applied": true,
+          "direction": "supports_risk_expansion",
+          "not_a_trading_signal": true,
+          "reason": "Confirmed major event adjusted only the 1d/3d probability path; historical records are not rewritten.",
+          "shock_return_1d": -0.008,
+          "shock_return_3d": -0.0036,
+          "source": "news_event_price_reaction_overlay",
+          "validation_type": "daily"
+        },
+        "path_weight_deltas": {
+          "analog_path_weight": 0.0,
+          "base_path_weight": 0.0,
+          "bearish_path_weight": 0.0535,
+          "bounce_path_weight": -0.0187
+        },
+        "predictor_deltas": {
+          "bounce_predictor": -0.0161,
+          "downside_continuation_predictor": 0.0294,
+          "risk_expansion_predictor": 0.0348,
+          "trend_reversal_predictor": 0.0
+        },
+        "primary_probability_delta": 0.0409,
         "primary_scenario_changed": false,
         "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
       },
       "SPY": {
-        "after_primary_probability": 0.3333,
+        "after_primary_probability": 0.3184,
         "after_primary_scenario": "bounce_path",
-        "before_primary_probability": 0.3636,
+        "before_primary_probability": 0.3482,
         "before_primary_scenario": "bounce_path",
         "confirmation_delta": -6.5,
         "impact": "conflicts_primary",
@@ -309,7 +348,7 @@
           "risk_expansion_predictor": 0.0348,
           "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": -0.0303,
+        "primary_probability_delta": -0.0298,
         "primary_scenario_changed": false,
         "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -6.50 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
@@ -364,7 +403,7 @@
       "status": "available"
     },
     "gdelt_public_news": {
-      "error_type": "JSONDecodeError",
+      "error_type": "HTTPError",
       "source": "gdelt",
       "stale": false,
       "status": "failed"
@@ -384,11 +423,11 @@
       "news_conflicts_primary_scenario": true,
       "news_supports_primary_scenario": false,
       "primary_scenario": "bounce_path",
-      "risk_scenario": "bearish_path",
+      "risk_scenario": "analog_average_path",
       "scenario_bias": [
         "bearish_path"
       ],
-      "secondary_scenario": "analog_average_path"
+      "secondary_scenario": "bearish_path"
     },
     "IWM": {
       "expected_changes": [
@@ -396,16 +435,16 @@
         "failed_bounce_risk_higher:price_confirmed",
         "risk_expansion_higher:price_confirmed"
       ],
-      "explanation": "IWM 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应已初步确认。",
-      "impact": "conflicts_primary",
-      "news_conflicts_primary_scenario": true,
-      "news_supports_primary_scenario": false,
-      "primary_scenario": "bounce_path",
-      "risk_scenario": "bearish_path",
+      "explanation": "IWM 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应已初步确认。",
+      "impact": "supports_primary",
+      "news_conflicts_primary_scenario": false,
+      "news_supports_primary_scenario": true,
+      "primary_scenario": "bearish_path",
+      "risk_scenario": "expected_path",
       "scenario_bias": [
         "bearish_path"
       ],
-      "secondary_scenario": "analog_average_path"
+      "secondary_scenario": "bounce_path"
     },
     "QQQ": {
       "expected_changes": [
@@ -418,11 +457,11 @@
       "news_conflicts_primary_scenario": false,
       "news_supports_primary_scenario": true,
       "primary_scenario": "bearish_path",
-      "risk_scenario": "bounce_path",
+      "risk_scenario": "analog_average_path",
       "scenario_bias": [
         "bearish_path"
       ],
-      "secondary_scenario": "analog_average_path"
+      "secondary_scenario": "expected_path"
     },
     "SPY": {
       "expected_changes": [
@@ -435,11 +474,11 @@
       "news_conflicts_primary_scenario": true,
       "news_supports_primary_scenario": false,
       "primary_scenario": "bounce_path",
-      "risk_scenario": "bearish_path",
+      "risk_scenario": "analog_average_path",
       "scenario_bias": [
         "bearish_path"
       ],
-      "secondary_scenario": "analog_average_path"
+      "secondary_scenario": "bearish_path"
     }
   },
   "validation_type": "daily",

@@ -1,6 +1,6 @@
 # Forecast Accuracy Scorecard
 
-Generated at: `2026-10-30T23:57:07.498145+00:00`
+Generated at: `2026-10-31T01:18:28.352938+00:00`
 
 ## Sample Counts
 

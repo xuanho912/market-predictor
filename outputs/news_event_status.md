@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-30T23:56:58.263653+00:00`
+- generated_at: `2026-10-31T01:18:15.646459+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `3`
-- event_detection_confidence: `70`
+- major_event_count: `4`
+- event_detection_confidence: `72`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,11 +27,19 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Saudi-led coalition says it downs Houthi drone over Medina; Houthis deny attack - Reuters
+- source: Reuters
+- published_at: `2026-10-30T20:34:20+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Trump on Iran war: It's going to get wrapped up soon - Reuters
 - source: Reuters
 - published_at: `2026-10-30T12:10:11+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
