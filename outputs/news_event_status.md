@@ -1,14 +1,14 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-31T09:58:59.749325+00:00`
+- generated_at: `2026-10-31T17:18:38.092235+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `2`
-- event_detection_confidence: `68`
+- major_event_count: `5`
+- event_detection_confidence: `72`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
-- narrative_strength: `67`
+- narrative_strength: `100`
 - price_reaction_confirmed: `True`
 - confirmation_score: `75`
 
@@ -24,6 +24,30 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iranian envoys meet Qatari mediators as threat looms of US strikes after midterms - Reuters
+- source: Reuters
+- published_at: `2026-10-31T14:57:43+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iranian official says US attacked fishing boats off Qeshm Island, state media reports - Reuters
+- source: Reuters
+- published_at: `2026-10-31T12:12:26+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Egypt fears escalation in Iran war would be more destructive, foreign minister says - Reuters
+- source: Reuters
+- published_at: `2026-10-31T08:21:43+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 

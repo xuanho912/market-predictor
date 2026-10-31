@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-10-31T09:59:08.261703+00:00",
+  "generated_at": "2026-10-31T17:18:50.914999+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-10-31T09:59:08.318111+00:00",
+    "generated_at": "2026-10-31T17:18:50.974160+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 397,
     "risk_score_effectiveness": {
@@ -240,10 +240,28 @@
           "event_risk_flag": "low",
           "headlines": [
             {
+              "datetime": 1793458232,
+              "headline": "Are You Overpaying For Constellation Energy Stock Versus Its Rivals?",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=c64a5fedc8724660469cfbf7cdc2b7c45e875702ecdec802b13cdf7943a000bb"
+            },
+            {
+              "datetime": 1793454793,
+              "headline": "Is American Electric Power Still The Business You Bought?",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=a3db68d03ffb50b5f40bd34ac43ccba7e94b6023d54ecf777613a3fa18d994c9"
+            },
+            {
               "datetime": 1793372400,
               "headline": "Constellation Energy Corporation Declares Dividend",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=2ec2fef207cb1ea1983ab228fa4ea569e3062ad01a8dc93d73309d29295c74cc"
+            },
+            {
+              "datetime": 1793368849,
+              "headline": "Morgan Stanley Maintains Overweight on Constellation Energy, Raises Price Target to $391",
+              "source": "Benzinga",
+              "url": "https://finnhub.io/api/news?id=0a6220829b7c4ea68e18b39b9b1af784a4cc1486f8094b2e8d0630421e3ff787"
             },
             {
               "datetime": 1793366598,
@@ -268,30 +286,12 @@
               "headline": "CEG vs. DUK: Which Utility Stock Offers Better Growth Potential?",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=260a360883ab80d8b66c129e061bd2e6a208b1ae2a87953bdd0c7e7d9dca5f29"
-            },
-            {
-              "datetime": 1793274060,
-              "headline": "This Under-the-Radar Utility Just Signed a Massive Data Center Deal Without Anyone Noticing",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=1b6e0d5216c5363381a2480773752efef47ebcd1576d677b890dac097e40238a"
-            },
-            {
-              "datetime": 1793273259,
-              "headline": "Can Vistra Stock Rally 50% After This Dip?",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=3631f0a283df585028cf280d3d5378631134f623c04f260b5d65c5bb5b579b5c"
-            },
-            {
-              "datetime": 1793265211,
-              "headline": "Constellation Energy (CEG) Stock Still Looks Discounted On Its 129% Three Year Run",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=ae7e0b675ad7b3078bb63a784f8535c0efe8f1599c06522acd27299ada1ec6b9"
             }
           ],
-          "major_company_headline": "Constellation Energy Corporation Declares Dividend",
+          "major_company_headline": "Are You Overpaying For Constellation Energy Stock Versus Its Rivals?",
           "news_count_24h": 2,
-          "news_count_72h": 20,
-          "news_risk_score": 31.0,
+          "news_count_72h": 17,
+          "news_risk_score": 26.0,
           "news_sentiment": "positive"
         },
         "price_trend": {
@@ -726,7 +726,7 @@
         "benchmark": "SPY",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.3401,
+        "benchmark_primary_probability": 0.3332,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -2142,7 +2142,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Constellation Energy Corporation Declares Dividend",
+              "公司新闻已接入: Are You Overpaying For Constellation Energy Stock Versus Its Rivals?",
               "新闻情绪偏正",
               "未来 30 天存在财报催化：2026-11-09",
               "增长数据具备 EPS 上修叙事基础"
@@ -2257,7 +2257,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "Constellation Energy Corporation Declares Dividend",
+          "catalyst": "Are You Overpaying For Constellation Energy Stock Versus Its Rivals?",
           "expectation_gap": [
             "收入增长较强，具备正向预期差基础",
             "未来 30 天财报可能成为重新定价窗口"
@@ -2325,8 +2325,8 @@
           },
           "news_event": {
             "evidence": "近期公司新闻偏支持",
-            "reason": "Constellation Energy Corporation Declares Dividend",
-            "score": 69.42,
+            "reason": "Are You Overpaying For Constellation Energy Stock Versus Its Rivals?",
+            "score": 70.32,
             "status": "supportive"
           },
           "options_volatility": {
@@ -2361,7 +2361,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 35.24,
+        "stock_confluence_score": 35.31,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "近期公司新闻偏支持",
@@ -2444,59 +2444,59 @@
           "event_risk_flag": "high",
           "headlines": [
             {
-              "datetime": 1793430742,
-              "headline": "Nvidia Drew DOJ Questions and Weighed Backing Debt for an Anthropic Data Center in One Week. Here’s Why Its Cash Flow Matters More",
+              "datetime": 1793461321,
+              "headline": "Intel Has a Massive Warning for AMD Stock Investors. Is It Time to Book Profits Before Nov. 3?",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=f3b58bd128f9a2e0cc0c76bc7dea053d2e176f2b2807aeea5a39abf953d90daf"
+              "url": "https://finnhub.io/api/news?id=83aad663f6eaa937cae162578455c434bf35bcd03a7f792250bcb6d0d89c5056"
             },
             {
-              "datetime": 1793429400,
-              "headline": "A SpaceX and Tesla Merger Will Only Be Successful If This One Thing Happens",
+              "datetime": 1793461140,
+              "headline": "Why Is Robinhood Stock Down 40% From Its Record High?",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=0321a7621bf1542528247f2d86b8ed42807a515b6961828be90f27d97011f313"
+              "url": "https://finnhub.io/api/news?id=d39c263566f774561ed6cde4e88c270410c7c0eae6b9b9f669f5dcbe603f2dd3"
             },
             {
-              "datetime": 1793428767,
-              "headline": "AMD Stock Fell 11% in a Day Ahead of Its November 3 Report. Here’s Why Intel’s 78% Data Center Jump Matters More to AMD Than Its PC Warning",
+              "datetime": 1793460900,
+              "headline": "Prediction: A Bear Market Is Coming. Here's Warren Buffett's Best Advice to Prepare for Volatility",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=bc82042f1903b08727b8dc9a6447f717638be02f6f172710b950a60879d26b5c"
+              "url": "https://finnhub.io/api/news?id=2f34fb9e1cb8c89aabe5843f53cd0c09ec19288f9cec9c14e8332228305960ae"
             },
             {
-              "datetime": 1793427600,
-              "headline": "Prediction: 2 Under $1 Trillion Stocks That Will Be Worth More Than Micron 5 Years From Now",
+              "datetime": 1793460780,
+              "headline": "The Dogecoin Foundation Just Delivered Fantastic News to DOGE Investors. Is This Popular Meme Coin Now Worth a Closer Look?",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=405dc2a27de91c5f465d59f03738be19d5e1cf52cd3f05e7742167f7ae98d157"
+              "url": "https://finnhub.io/api/news?id=9257a50838c74b5fe0690fb7e65985fc76def908f303419b688c6b5478c1e295"
             },
             {
-              "datetime": 1793425800,
-              "headline": "Netflix's Problem Isn't Profits. It's Viewing Time.",
+              "datetime": 1793460000,
+              "headline": "Here's the Real Winner of the AI Build-Out",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=a574b334e69806b795f8ebfa563d29213c2e4470fe7da357b94c931ced17968f"
+              "url": "https://finnhub.io/api/news?id=42a1430cf3539d5a834fd79121d333a42e0425c1968f14439c6e753d56c01baa"
             },
             {
-              "datetime": 1793424000,
-              "headline": "Betting on Archer Aviation or Joby Aviation Being the Tesla of eVTOLs? They Could End Up More Like Lucid.",
+              "datetime": 1793459821,
+              "headline": "Here’s What a $1,000 Investment in Oracle Stock Will Be Worth by 2030",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=3818f908cf9ae50aef6aabbb46df9a56cf5be678e862ea64e4b8d86884f8d903"
+              "url": "https://finnhub.io/api/news?id=110b7a55e8f24bf48f8b600b7440d9cf4f08a2e201df771209bb8a9bfc20c0db"
             },
             {
-              "datetime": 1793421000,
-              "headline": "R&D: A Long-Term Investment",
-              "source": "SeekingAlpha",
-              "url": "https://finnhub.io/api/news?id=24e3659649b4a7fd51b08369fda705ecf87bd285f25ae16785f389217999f0f6"
+              "datetime": 1793459641,
+              "headline": "Elon Musk Has Incredible News for Micron Stock Investors",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=9c810dd6eccf1ac38b92822a48b641ca0ac773e8ccba6bb737e7b0c3afcf10b3"
             },
             {
-              "datetime": 1793420400,
-              "headline": "Is SpaceX Stock a Buy After Plummeting 28%?",
+              "datetime": 1793459100,
+              "headline": "Why SpaceX Stock Is Worth Buying and Holding for 10 Years",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=dfb1801eb4c538954773796a2b9369d24a76a5206176e862748a3ece3c194f2b"
+              "url": "https://finnhub.io/api/news?id=0c31e553b72a95a8af7168e31e3c6e186a1434e555ff96833da5758145d826db"
             }
           ],
-          "major_company_headline": "Nvidia Drew DOJ Questions and Weighed Backing Debt for an Anthropic Data Center in One Week. Here’s Why Its Cash Flow Matters More",
+          "major_company_headline": "Intel Has a Massive Warning for AMD Stock Investors. Is It Time to Book Profits Before Nov. 3?",
           "news_count_24h": 20,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
-          "news_sentiment": "neutral"
+          "news_sentiment": "negative"
         },
         "price_trend": {
           "close": 204.63999938964844,
@@ -2924,7 +2924,7 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.3176,
+        "benchmark_primary_probability": 0.3271,
         "benchmark_primary_scenario": "bearish_path",
         "context": "market_headwind",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -4342,7 +4342,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Nvidia Drew DOJ Questions and Weighed Backing Debt for an Anthropic Data Center in One Week. Here’s Why Its Cash Flow Matters More",
+              "公司新闻已接入: Intel Has a Massive Warning for AMD Stock Investors. Is It Time to Book Profits Before Nov. 3?",
               "未来 30 天存在财报催化：2026-11-17",
               "增长数据具备 EPS 上修叙事基础"
             ],
@@ -4456,7 +4456,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "Nvidia Drew DOJ Questions and Weighed Backing Debt for an Anthropic Data Center in One Week. Here’s Why Its Cash Flow Matters More",
+          "catalyst": "Intel Has a Massive Warning for AMD Stock Investors. Is It Time to Book Profits Before Nov. 3?",
           "expectation_gap": [
             "收入增长较强，具备正向预期差基础",
             "EPS 增长较强，可能支持盈利上修叙事",
@@ -4657,6 +4657,12 @@
               "url": "https://finnhub.io/api/news?id=4ba1e502425dd80802a6461460a4ec565f82e595603ac4377f5166283b567ff9"
             },
             {
+              "datetime": 1793363387,
+              "headline": "Frontier Nuclear And Minerals Launches 2026 Drill Program At Pine Ridge Uranium Project In Wyoming’s Powder River Basin",
+              "source": "Benzinga",
+              "url": "https://finnhub.io/api/news?id=3058d84f046784073f01d312bfd993a817dc683bf2fd435ed099fc93f3fe753e"
+            },
+            {
               "datetime": 1793351487,
               "headline": "Is NuScale Power (SMR) Undervalued Following Its Doosan Manufacturing Deal?",
               "source": "Yahoo",
@@ -4685,18 +4691,12 @@
               "headline": "NuScale Power and Doosan Enerbility Sign Agreement for Manufacturing of NuScale Power Module™",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=1710f73f685ee05bf95ae80a93595abbcad3c448ac4a679d21325787b239305b"
-            },
-            {
-              "datetime": 1793257890,
-              "headline": "NuScale Power Enters Contract With Doosan Enerbility; Korean Engineering Firm To Supply The Company's Upper Reactor Coolant System",
-              "source": "Benzinga",
-              "url": "https://finnhub.io/api/news?id=40d2c09c024615271851f3a411c0188ea35441f87db6d63d69b6660e65775c1b"
             }
           ],
           "major_company_headline": "Not Oklo. Not NuScale. The Army Picked This Nuclear Stock to Power Fort Campbell.",
           "news_count_24h": 2,
           "news_count_72h": 11,
-          "news_risk_score": 21.0,
+          "news_risk_score": 16.0,
           "news_sentiment": "positive"
         },
         "price_trend": {
@@ -5126,7 +5126,7 @@
         "benchmark": "IWM",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.3054,
+        "benchmark_primary_probability": 0.2989,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -6726,8 +6726,8 @@
           },
           "news_event": {
             "evidence": "公司新闻或财报事件风险上升",
-            "reason": "risk_score=21.0; earnings_date=2026-11-05",
-            "score": 59.22,
+            "reason": "risk_score=16.0; earnings_date=2026-11-05",
+            "score": 60.12,
             "status": "conflicting"
           },
           "options_volatility": {
@@ -6762,7 +6762,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 38.31,
+        "stock_confluence_score": 38.37,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "主路径概率相对领先"
@@ -6841,6 +6841,24 @@
           "event_risk_flag": "high",
           "headlines": [
             {
+              "datetime": 1793459641,
+              "headline": "Elon Musk Has Incredible News for Micron Stock Investors",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=9c810dd6eccf1ac38b92822a48b641ca0ac773e8ccba6bb737e7b0c3afcf10b3"
+            },
+            {
+              "datetime": 1793438400,
+              "headline": "SpaceX Is Considering a Merger With Tesla. Here's Why That Would Be a Bad Move.",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=cc5ef083e6b21327a33ead4e0b20e5662aba9c5eb9faefc6410eb47a20fa969f"
+            },
+            {
+              "datetime": 1793433439,
+              "headline": "BYD: Short-Term Challenges, But Long-Term Buy",
+              "source": "SeekingAlpha",
+              "url": "https://finnhub.io/api/news?id=f2999f29c5e604a8c7aaf7eaf7cb50f16bae7838b217f698631d2d34d13c7843"
+            },
+            {
               "datetime": 1793429400,
               "headline": "A SpaceX and Tesla Merger Will Only Be Successful If This One Thing Happens",
               "source": "Yahoo",
@@ -6869,31 +6887,13 @@
               "headline": "Coinbase and Kraken Ramp Up Security After Massive Binance Hack",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=c0718d0d5a77a7f6a2b332dacf9ef82a365dabbb80c22e947a752a2a01357c6e"
-            },
-            {
-              "datetime": 1793405418,
-              "headline": "Stocktwits Zero To Sixty: Rivian Raises Delivery Guidance On R2 Demand, Tesla Expands Robotaxi Fleet,  And Ford Advances Low-Cost EV Plans",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=27960df40610237bb2503f7f065da20aeb34767dbadf01c036c8c8b822f3edef"
-            },
-            {
-              "datetime": 1793398519,
-              "headline": "See how Tesla stocks performed for week ending Oct. 30",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=8cc7d83596a92f485272377fb8a21cae9e80f16823f76bd66f9f4b912fa59623"
-            },
-            {
-              "datetime": 1793394143,
-              "headline": "Elon Musk vs. Tesla? His Midterm Money Could Work Against His Own Cars",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=7f34fc9533cba3c15e97ae9bb977eb23ae50098ce48614d51c630916bc84efa4"
             }
           ],
-          "major_company_headline": "A SpaceX and Tesla Merger Will Only Be Successful If This One Thing Happens",
-          "news_count_24h": 20,
+          "major_company_headline": "Elon Musk Has Incredible News for Micron Stock Investors",
+          "news_count_24h": 15,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
-          "news_sentiment": "neutral"
+          "news_sentiment": "positive"
         },
         "price_trend": {
           "close": 399.80999755859375,
@@ -7340,7 +7340,7 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.3176,
+        "benchmark_primary_probability": 0.3271,
         "benchmark_primary_scenario": "bearish_path",
         "context": "market_headwind",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -7430,6 +7430,7 @@
           "个股相对强弱优于基准。",
           "成交量结构支持当前路径。",
           "价格站在 20d 均线上方。",
+          "近期公司新闻偏正面。",
           "基础财务指标已接入且收入增长为正。"
         ]
       },
@@ -8405,7 +8406,7 @@
           {
             "affected_ticker": "TSLA",
             "alert_level": "NO_ALERT",
-            "alert_score": 10.1,
+            "alert_score": 10.09,
             "alert_type": "Stock Bounce Setup",
             "confirmation_needed": [
               "价格站上主路径确认价",
@@ -8757,14 +8758,15 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: A SpaceX and Tesla Merger Will Only Be Successful If This One Thing Happens"
+              "公司新闻已接入: Elon Musk Has Incredible News for Micron Stock Investors",
+              "新闻情绪偏正"
             ],
             "max_points": 10,
             "missing_fields": [],
             "name": "catalyst",
-            "points": 4.0,
-            "score_pct": 40.0,
-            "status": "weak"
+            "points": 6.0,
+            "score_pct": 60.0,
+            "status": "neutral"
           },
           "flow": {
             "evidence": [
@@ -8851,7 +8853,7 @@
           "expected_return_60d": 0.0015,
           "max_drawdown_risk_20d": 0.0792,
           "max_drawdown_risk_60d": 0.1368,
-          "outperformance_probability_20d": 0.5922,
+          "outperformance_probability_20d": 0.6002,
           "risk_reward_ratio": 0.75,
           "upside_potential_60d": 0.1027
         },
@@ -8875,7 +8877,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金/技术确认较强",
-          "catalyst": "A SpaceX and Tesla Merger Will Only Be Successful If This One Thing Happens",
+          "catalyst": "Elon Musk Has Incredible News for Micron Stock Investors",
           "expectation_gap": [
             "暂未看到明确正向预期差证据"
           ],
@@ -8892,7 +8894,7 @@
           "primary_path": "stock_trend_repair",
           "valuation_repricing": "估值扩张证据不足或存在压力"
         },
-        "total_score": 21.5,
+        "total_score": 23.5,
         "validation_status": "not_yet_validated",
         "version": "stock_alpha_score_v1"
       },
@@ -8917,8 +8919,8 @@
         "module_scores": {
           "alpha_quality": {
             "evidence": "个股 Alpha 评分已接入",
-            "reason": "score=21.5; grade=weak_or_no_alpha_edge; benchmark=QQQ",
-            "score": 21.5,
+            "reason": "score=23.5; grade=weak_or_no_alpha_edge; benchmark=QQQ",
+            "score": 23.5,
             "status": "conflicting"
           },
           "fundamentals_earnings": {
@@ -8942,7 +8944,7 @@
           "news_event": {
             "evidence": "公司新闻或财报事件风险上升",
             "reason": "risk_score=100.0; earnings_date=None",
-            "score": 100,
+            "score": 97.0,
             "status": "conflicting"
           },
           "options_volatility": {
@@ -8977,7 +8979,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 52.3,
+        "stock_confluence_score": 52.27,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "个股跑赢所属板块",
@@ -8991,6 +8993,7 @@
         "个股相对强弱优于基准。",
         "成交量结构支持当前路径。",
         "价格站在 20d 均线上方。",
+        "近期公司新闻偏正面。",
         "基础财务指标已接入且收入增长为正。"
       ],
       "symbol": "TSLA",
@@ -9013,7 +9016,7 @@
       "top_candidate": "NVDA",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-10-31T09:59:08.301270+00:00",
+    "generated_at": "2026-10-31T17:18:50.956239+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -9110,19 +9113,19 @@
       },
       {
         "alpha_fields": {
-          "alpha_score": 21.5,
+          "alpha_score": 23.5,
           "expected_return_60d": 0.0015,
           "forecast_grade": "weak_or_no_alpha_edge",
           "main_logic": "高 beta 成长股逻辑：交付/毛利率预期、估值扩张、风险偏好和技术资金确认。",
-          "outperformance_probability_20d": 0.5922,
+          "outperformance_probability_20d": 0.6002,
           "risk_reward_ratio": 0.75
         },
-        "alpha_quality_score": 21.5,
+        "alpha_quality_score": 23.5,
         "as_of": "2026-10-30",
         "candidate_type": "event_driven_move",
         "catalyst_score": 62.96,
         "company_name": "Tesla Inc",
-        "confluence_score": 52.3,
+        "confluence_score": 52.27,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9139,7 +9142,7 @@
           "mid": 399.55,
           "range_pct": 0.0354
         },
-        "final_radar_score": 60.67,
+        "final_radar_score": 61.02,
         "forecast_date": "2026-10-30",
         "invalidation_level": 349.33,
         "last_close": 399.80999755859375,
@@ -9164,8 +9167,8 @@
           "earnings": "available"
         },
         "next_day_move_probability": 0.7242,
-        "one_line_reason": "event_driven_move: Alpha 22 / 弹性 74 / 成交量 76 / 相对强弱 100 / 催化 63 / 大盘 market_headwind / 板块 supportive",
-        "outperformance_probability_20d": 0.5922,
+        "one_line_reason": "event_driven_move: Alpha 24 / 弹性 74 / 成交量 76 / 相对强弱 100 / 催化 63 / 大盘 market_headwind / 板块 supportive",
+        "outperformance_probability_20d": 0.6002,
         "primary_probability": 0.2327,
         "primary_scenario": "stock_trend_repair",
         "radar_level": "MODERATE_OPPORTUNITY",
@@ -9210,7 +9213,7 @@
         "candidate_type": "downside_continuation",
         "catalyst_score": 63.12,
         "company_name": "Nuscale Power Corp",
-        "confluence_score": 38.31,
+        "confluence_score": 38.37,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9227,7 +9230,7 @@
           "mid": 5.59,
           "range_pct": 0.073
         },
-        "final_radar_score": 55.03,
+        "final_radar_score": 55.04,
         "forecast_date": "2026-10-30",
         "invalidation_level": 5.2,
         "last_close": 5.619999885559082,
@@ -9295,7 +9298,7 @@
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 62.04,
         "company_name": "Constellation Energy Corp",
-        "confluence_score": 35.24,
+        "confluence_score": 35.31,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9312,7 +9315,7 @@
           "mid": 262.07,
           "range_pct": 0.0421
         },
-        "final_radar_score": 55.02,
+        "final_radar_score": 55.03,
         "forecast_date": "2026-10-30",
         "invalidation_level": 247.2,
         "last_close": 262.3800048828125,
