@@ -1,14 +1,14 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-31T02:17:58.633456+00:00`
+- generated_at: `2026-10-31T07:02:55.612797+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `4`
-- event_detection_confidence: `71`
+- major_event_count: `2`
+- event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
-- narrative_strength: `100`
+- narrative_strength: `67`
 - price_reaction_confirmed: `True`
 - confirmation_score: `75`
 
@@ -27,14 +27,6 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Saudi-led coalition says it downs Houthi drone over Medina; Houthis deny attack - Reuters
-- source: Reuters
-- published_at: `2026-10-30T20:34:20+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
 - headline: Trump on Iran war: It's going to get wrapped up soon - Reuters
 - source: Reuters
 - published_at: `2026-10-30T12:10:11+00:00`
@@ -46,13 +38,5 @@
 - headline: COMMENTARY: AI’s rewiring of US warfare may be only the beginning - Reuters
 - source: Reuters
 - published_at: `2026-10-30T09:11:13+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Netanyahu, at risk of losing power, steps up attacks on Israel's Arab parties - Reuters
-- source: Reuters
-- published_at: `2026-10-29T17:09:53+00:00`
 - importance_score: `100`
 - confidence: `medium`

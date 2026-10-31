@@ -1,6 +1,6 @@
 # Forecast Price Levels
 
-Generated at: `2026-10-31T02:18:11.208046Z`
+Generated at: `2026-10-31T07:03:07.370681Z`
 
 These are probability-path scenario levels, not execution instructions, risk-control rules, or guaranteed targets.
 
@@ -8,14 +8,14 @@ These are probability-path scenario levels, not execution instructions, risk-con
 
 - current price: `755.72`
 - primary confirmation: `783.61`
-- primary invalidation: `742.15`
+- primary invalidation: `742.91`
 - risk activation: `744.85`
 - trend repair confirmation: `809.81`
 
 | Horizon | Expected | Primary | Secondary | Risk | Upper | Lower |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| 1d | 752.92 | 759.82 | 745.30 | 745.30 | 759.82 | 745.30 |
-| 3d | 762.78 | 773.43 | 742.15 | 742.15 | 773.43 | 742.15 |
+| 1d | 754.42 | 760.34 | 747.02 | 747.02 | 760.34 | 747.02 |
+| 3d | 763.46 | 773.67 | 742.91 | 742.91 | 773.67 | 742.91 |
 | 5d | 772.42 | 783.61 | 748.58 | 748.58 | 783.61 | 748.58 |
 | 10d | 779.91 | 795.59 | 744.85 | 744.85 | 795.59 | 744.85 |
 | 20d | 790.52 | 809.81 | 746.39 | 746.39 | 809.81 | 746.39 |
@@ -25,14 +25,14 @@ These are probability-path scenario levels, not execution instructions, risk-con
 
 - current price: `690.49`
 - primary confirmation: `725.61`
-- primary invalidation: `680.81`
+- primary invalidation: `681.51`
 - risk activation: `681.60`
 - trend repair confirmation: `759.66`
 
 | Horizon | Expected | Primary | Secondary | Risk | Upper | Lower |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| 1d | 689.32 | 681.88 | 688.92 | 681.88 | 696.12 | 681.88 |
-| 3d | 701.12 | 680.81 | 693.54 | 680.81 | 712.34 | 680.81 |
+| 1d | 690.69 | 683.44 | 689.67 | 683.44 | 696.60 | 683.44 |
+| 3d | 701.75 | 681.51 | 693.88 | 681.51 | 712.56 | 681.51 |
 | 5d | 711.93 | 691.22 | 699.86 | 691.22 | 722.29 | 691.22 |
 | 10d | 730.13 | 713.36 | 717.90 | 713.36 | 738.86 | 713.36 |
 | 20d | 743.89 | 713.90 | 734.21 | 713.90 | 757.78 | 713.90 |
@@ -48,8 +48,8 @@ These are probability-path scenario levels, not execution instructions, risk-con
 
 | Horizon | Expected | Primary | Secondary | Risk | Upper | Lower |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| 1d | 277.96 | 279.71 | 277.14 | 277.14 | 279.71 | 277.14 |
-| 3d | 280.92 | 282.46 | 279.33 | 279.33 | 282.46 | 279.33 |
+| 1d | 278.51 | 279.90 | 277.78 | 277.78 | 279.90 | 277.78 |
+| 3d | 281.17 | 282.54 | 279.61 | 279.61 | 282.54 | 279.61 |
 | 5d | 285.39 | 286.80 | 283.27 | 283.27 | 286.80 | 283.27 |
 | 10d | 289.53 | 295.11 | 280.44 | 280.44 | 295.11 | 280.44 |
 | 20d | 286.64 | 298.24 | 265.56 | 265.56 | 298.24 | 265.56 |
@@ -59,14 +59,14 @@ These are probability-path scenario levels, not execution instructions, risk-con
 
 - current price: `517.13`
 - primary confirmation: `527.90`
-- primary invalidation: `508.93`
+- primary invalidation: `509.45`
 - risk activation: `502.54`
 - trend repair confirmation: `550.96`
 
 | Horizon | Expected | Primary | Secondary | Risk | Upper | Lower |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| 1d | 513.55 | 517.47 | 510.36 | 510.36 | 517.47 | 510.36 |
-| 3d | 516.96 | 521.87 | 508.93 | 508.93 | 521.87 | 508.93 |
+| 1d | 514.58 | 517.83 | 511.54 | 511.54 | 517.83 | 511.54 |
+| 3d | 517.42 | 522.03 | 509.45 | 509.45 | 522.03 | 509.45 |
 | 5d | 522.45 | 527.90 | 511.02 | 511.02 | 527.90 | 511.02 |
 | 10d | 527.27 | 538.89 | 502.54 | 502.54 | 538.89 | 502.54 |
 | 20d | 536.40 | 550.96 | 504.61 | 504.61 | 550.96 | 504.61 |
