@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-10-31T17:18:38.092235+00:00`
+- generated_at: `2026-11-01T17:59:08.786605+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `5`
-- event_detection_confidence: `72`
+- major_event_count: `9`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,57 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Israeli strikes kill eight people in Gaza - medics say - Reuters
+- source: Reuters
+- published_at: `2026-11-01T16:41:43+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Russia's FSB says minor detained over park attack threat after US tip-off - Reuters
+- source: Reuters
+- published_at: `2026-11-01T15:32:23+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran, Qatari mediators hold third day of talks to end US-Iran war - Reuters
+- source: Reuters
+- published_at: `2026-11-01T14:43:10+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Qatar surges, bucking Gulf market slide on Iran war concerns - Reuters
+- source: Reuters
+- published_at: `2026-11-01T13:53:09+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Pope Leo says he hopes Oleshky truce could spur Ukraine-Russia peace efforts - Reuters
+- source: Reuters
+- published_at: `2026-11-01T12:20:22+00:00`
+- importance_score: `99`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Iranian envoys meet Qatari mediators as threat looms of US strikes after midterms - Reuters
 - source: Reuters
-- published_at: `2026-10-31T14:57:43+00:00`
+- published_at: `2026-10-31T20:00:36+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: FSB says US warned Russia of possible Moscow attack - Reuters
+- source: Reuters
+- published_at: `2026-10-31T16:37:08+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -39,28 +87,12 @@
 - source: Reuters
 - published_at: `2026-10-31T12:12:26+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Egypt fears escalation in Iran war would be more destructive, foreign minister says - Reuters
 - source: Reuters
 - published_at: `2026-10-31T08:21:43+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump on Iran war: It's going to get wrapped up soon - Reuters
-- source: Reuters
-- published_at: `2026-10-30T12:10:11+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: COMMENTARY: AI’s rewiring of US warfare may be only the beginning - Reuters
-- source: Reuters
-- published_at: `2026-10-30T09:11:13+00:00`
 - importance_score: `100`
 - confidence: `medium`
