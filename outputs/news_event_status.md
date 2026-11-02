@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-01T17:59:08.786605+00:00`
+- generated_at: `2026-11-02T21:45:12.327347+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `9`
-- event_detection_confidence: `75`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,72 +27,72 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Israeli strikes kill eight people in Gaza - medics say - Reuters
+- headline: TotalEnergies says Iran war could accelerate energy transition - Reuters
 - source: Reuters
-- published_at: `2026-11-01T16:41:43+00:00`
+- published_at: `2026-11-02T17:16:12+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Russia's FSB says minor detained over park attack threat after US tip-off - Reuters
-- source: Reuters
-- published_at: `2026-11-01T15:32:23+00:00`
+- headline: CrowdStrike lands an upgrade, and Jim Cramer's advice on Apple ahead of earnings
+- source: CNBC
+- published_at: `2026-11-02T17:04:34+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iran, Qatari mediators hold third day of talks to end US-Iran war - Reuters
+- headline: Yemen's Houthis say they launched drones towards Saudi Arabia's Dammam airport - Reuters
 - source: Reuters
-- published_at: `2026-11-01T14:43:10+00:00`
+- published_at: `2026-11-02T16:16:54+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Qatar surges, bucking Gulf market slide on Iran war concerns - Reuters
+- headline: Iran says contacts over ending war continue after talks finish with no breakthrough - Reuters
 - source: Reuters
-- published_at: `2026-11-01T13:53:09+00:00`
+- published_at: `2026-11-02T15:15:24+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Pope Leo says he hopes Oleshky truce could spur Ukraine-Russia peace efforts - Reuters
-- source: Reuters
-- published_at: `2026-11-01T12:20:22+00:00`
-- importance_score: `99`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iranian envoys meet Qatari mediators as threat looms of US strikes after midterms - Reuters
+- headline: COMMENTARY: Asia's crude oil imports back to pre-war levels but refined fuels lag - Reuters
 - source: Reuters
-- published_at: `2026-10-31T20:00:36+00:00`
+- published_at: `2026-11-02T14:50:28+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Trump's Iran threat renews Gulf fears of a war it didn't choose - Reuters
+- source: Reuters
+- published_at: `2026-11-02T12:42:02+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Israeli strikes kill four people in Gaza, medics say - Reuters
+- source: Reuters
+- published_at: `2026-11-02T07:18:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
+### oil_shock_relief / risk_on
 
-- headline: FSB says US warned Russia of possible Moscow attack - Reuters
+- headline: SNAPSHOT US stock index futures jump as oil falls about 6% - Reuters
 - source: Reuters
-- published_at: `2026-10-31T16:37:08+00:00`
-- importance_score: `100`
+- published_at: `2026-11-02T14:00:28+00:00`
+- importance_score: `92`
 - confidence: `high`
 
-### geopolitical_risk_escalation / risk_off
+### oil_shock_relief / risk_on
 
-- headline: Iranian official says US attacked fishing boats off Qeshm Island, state media reports - Reuters
+- headline: Dollar declines ahead of US midterms as oil falls; bitcoin steadies after crypto theft - Reuters
 - source: Reuters
-- published_at: `2026-10-31T12:12:26+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Egypt fears escalation in Iran war would be more destructive, foreign minister says - Reuters
-- source: Reuters
-- published_at: `2026-10-31T08:21:43+00:00`
-- importance_score: `100`
+- published_at: `2026-11-02T00:57:00+00:00`
+- importance_score: `89`
 - confidence: `medium`
