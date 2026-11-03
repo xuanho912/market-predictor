@@ -1,20 +1,20 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-03T11:22:52.691531+00:00`
+- generated_at: `2026-11-03T19:31:43.060749+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `11`
-- event_detection_confidence: `71`
+- major_event_count: `10`
+- event_detection_confidence: `68`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
-- price_reaction_confirmed: `True`
-- confirmation_score: `75`
+- price_reaction_confirmed: `False`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
-当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，已被价格反应初步确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
+当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，尚未被价格反应充分确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
 
 ## Economic Calendar Risk
 
@@ -27,11 +27,19 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Supermarket fridges are under attack in Europe — here's what's happening
+- source: CNBC
+- published_at: `2026-11-03T12:11:01+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Oil edges up after report of US strike on Iran's Qeshm Island - Reuters
 - source: Reuters
 - published_at: `2026-11-03T01:27:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -39,7 +47,7 @@
 - source: Reuters
 - published_at: `2026-11-03T01:05:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-11-02T23:57:41+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -89,18 +97,10 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
+### oil_shock_relief / risk_on
 
-- headline: India's IndiGo may fast-track some overseas growth as westward flights disrupted - Reuters
+- headline: SNAPSHOT US stock index futures jump as oil falls about 6% - Reuters
 - source: Reuters
-- published_at: `2026-11-02T10:47:08+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Israeli strikes kill four people in Gaza, medics say - Reuters
-- source: Reuters
-- published_at: `2026-11-02T07:18:00+00:00`
-- importance_score: `100`
+- published_at: `2026-11-02T14:00:28+00:00`
+- importance_score: `87`
 - confidence: `medium`

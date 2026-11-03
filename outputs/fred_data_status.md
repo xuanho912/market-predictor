@@ -1,6 +1,6 @@
 # FRED Data Status
 
-Generated at: `2026-11-03T11:23:04.642919Z`
+Generated at: `2026-11-03T19:31:54.570761Z`
 
 ## Provider
 
@@ -8,7 +8,7 @@ Generated at: `2026-11-03T11:23:04.642919Z`
 - provider available: `True`
 - fallback used: `False`
 - rate limited: `False`
-- successful series: `DGS2, IG_OAS, DGS10, FINANCIAL_STRESS, RECESSION, DFII10, DGS3MO, HY_OAS, BAA_SPREAD`
+- successful series: `HY_OAS, IG_OAS, BAA_SPREAD, DGS2, DGS10, DGS3MO, DFII10, RECESSION, FINANCIAL_STRESS`
 - failed series: `none`
 
 ## Series
@@ -21,8 +21,8 @@ Generated at: `2026-11-03T11:23:04.642919Z`
 | DGS2 | DGS2 | True | 2026-10-30 | 4.56 | fred-api | False |  |
 | DGS3MO | DGS3MO | True | 2026-10-30 | 4.16 | fred-api | False |  |
 | FINANCIAL_STRESS | STLFSI4 | True | 2026-10-23 | -0.5837 | fred-api | True |  |
-| HY_OAS | BAMLH0A0HYM2 | True | 2026-10-30 | 3.44 | fred-api | False |  |
-| IG_OAS | BAMLC0A0CM | True | 2026-10-30 | 0.94 | fred-api | False |  |
+| HY_OAS | BAMLH0A0HYM2 | True | 2026-11-02 | 3.43 | fred-api | False |  |
+| IG_OAS | BAMLC0A0CM | True | 2026-11-02 | 0.94 | fred-api | False |  |
 | RECESSION | USREC | True | 2026-10-01 | 0.0 | fred-api | True |  |
 
 ## Data Completeness Effect
@@ -37,10 +37,10 @@ Generated at: `2026-11-03T11:23:04.642919Z`
 
 | symbol | edge without | edge with | primary without | primary with | risk expansion delta | failed bounce delta |
 |---|---|---|---|---|---:|---:|
-| SPY | RISK_WARNING | RISK_WARNING | bounce_path | bearish_path | 0.1089 | 0.0561 |
-| QQQ | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.1089 | 0.0562 |
-| IWM | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.1089 | 0.0671 |
-| DIA | RISK_WARNING | RISK_WARNING | bounce_path | bounce_path | 0.1089 | 0.0462 |
+| SPY | MODERATE_EDGE | RISK_WARNING | bounce_path | bounce_path | 0.1076 | 0.0558 |
+| QQQ | WEAK_EDGE | RISK_WARNING | bearish_path | bearish_path | 0.1076 | 0.0558 |
+| IWM | MODERATE_EDGE | RISK_WARNING | bounce_path | bearish_path | 0.1076 | 0.0601 |
+| DIA | MODERATE_EDGE | RISK_WARNING | bounce_path | bounce_path | 0.1076 | 0.0501 |
 
 ## Warning
 
