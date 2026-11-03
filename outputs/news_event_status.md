@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-02T21:45:12.327347+00:00`
+- generated_at: `2026-11-03T02:31:54.199690+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
-- event_detection_confidence: `76`
+- major_event_count: `8`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -71,7 +71,7 @@
 - source: Reuters
 - published_at: `2026-11-02T12:42:02+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -86,13 +86,5 @@
 - headline: SNAPSHOT US stock index futures jump as oil falls about 6% - Reuters
 - source: Reuters
 - published_at: `2026-11-02T14:00:28+00:00`
-- importance_score: `92`
-- confidence: `high`
-
-### oil_shock_relief / risk_on
-
-- headline: Dollar declines ahead of US midterms as oil falls; bitcoin steadies after crypto theft - Reuters
-- source: Reuters
-- published_at: `2026-11-02T00:57:00+00:00`
-- importance_score: `89`
+- importance_score: `91`
 - confidence: `medium`

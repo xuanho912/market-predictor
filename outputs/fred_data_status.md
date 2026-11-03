@@ -1,6 +1,6 @@
 # FRED Data Status
 
-Generated at: `2026-11-02T21:45:24.375933Z`
+Generated at: `2026-11-03T02:32:05.593284Z`
 
 ## Provider
 
@@ -8,22 +8,22 @@ Generated at: `2026-11-02T21:45:24.375933Z`
 - provider available: `True`
 - fallback used: `False`
 - rate limited: `False`
-- successful series: `IG_OAS, DGS2, DGS3MO, HY_OAS, DGS10, BAA_SPREAD, RECESSION, DFII10, FINANCIAL_STRESS`
+- successful series: `DGS10, BAA_SPREAD, DGS2, IG_OAS, HY_OAS, DGS3MO, RECESSION, FINANCIAL_STRESS, DFII10`
 - failed series: `none`
 
 ## Series
 
 | name | series_id | success | latest_date | latest_value | source | stale | error |
 |---|---|---:|---|---:|---|---:|---|
-| BAA_SPREAD | BAA10Y | True | 2026-10-29 | 1.49 | fred-api | False |  |
+| BAA_SPREAD | BAA10Y | True | 2026-10-30 | 1.53 | fred-api | False |  |
 | DFII10 | DFII10 | True | 2026-10-30 | 2.6 | fred-api | False |  |
 | DGS10 | DGS10 | True | 2026-10-30 | 4.94 | fred-api | False |  |
 | DGS2 | DGS2 | True | 2026-10-30 | 4.56 | fred-api | False |  |
 | DGS3MO | DGS3MO | True | 2026-10-30 | 4.16 | fred-api | False |  |
-| FINANCIAL_STRESS | STLFSI4 | True | 2026-10-23 | -0.5837 | fred-api | False |  |
+| FINANCIAL_STRESS | STLFSI4 | True | 2026-10-23 | -0.5837 | fred-api | True |  |
 | HY_OAS | BAMLH0A0HYM2 | True | 2026-10-30 | 3.44 | fred-api | False |  |
 | IG_OAS | BAMLC0A0CM | True | 2026-10-30 | 0.94 | fred-api | False |  |
-| RECESSION | USREC | True | 2026-09-01 | 0.0 | fred-api | True |  |
+| RECESSION | USREC | True | 2026-10-01 | 0.0 | fred-api | True |  |
 
 ## Data Completeness Effect
 
@@ -37,10 +37,10 @@ Generated at: `2026-11-02T21:45:24.375933Z`
 
 | symbol | edge without | edge with | primary without | primary with | risk expansion delta | failed bounce delta |
 |---|---|---|---|---|---:|---:|
-| SPY | RISK_WARNING | RISK_WARNING | bounce_path | bounce_path | 0.1063 | 0.0443 |
-| QQQ | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.1063 | 0.0553 |
-| IWM | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.1064 | 0.0652 |
-| DIA | RISK_WARNING | RISK_WARNING | bounce_path | bounce_path | 0.1063 | 0.0344 |
+| SPY | RISK_WARNING | RISK_WARNING | bounce_path | bearish_path | 0.1089 | 0.0561 |
+| QQQ | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.1089 | 0.0561 |
+| IWM | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.1089 | 0.0671 |
+| DIA | RISK_WARNING | RISK_WARNING | bounce_path | bounce_path | 0.1089 | 0.0463 |
 
 ## Warning
 
