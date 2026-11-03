@@ -1,6 +1,6 @@
 # Breadth Impact Audit
 
-Generated at: `2026-11-03T07:59:23.256571Z`
+Generated at: `2026-11-03T11:23:02.417399Z`
 
 ## Summary
 
@@ -17,7 +17,7 @@ Generated at: `2026-11-03T07:59:23.256571Z`
 | symbol | supports primary | conflicts primary | edge before | edge after | primary before | primary after | failed bounce delta | confirmation delta | confidence delta | reason | risk note |
 |---|---:|---:|---|---|---|---|---:|---:|---:|---|---|
 | SPY | True | False | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.0227 | 9 | 13 | SPY breadth supports bearish_path: internal resonance is aligned, support score 98%, above 20d/50d MA 72%/67%. | SPY breadth improves confidence in the primary path, but forward validation is still required. |
-| QQQ | False | True | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.1404 | -36 | -8 | QQQ breadth conflicts with bearish_path: conflict score 69%, internal resonance is weak. | QQQ breadth conflict or failed-bounce risk is elevated; watch new lows, percent above 20/50d MA and sector participation. |
+| QQQ | False | True | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.1405 | -36 | -8 | QQQ breadth conflicts with bearish_path: conflict score 69%, internal resonance is weak. | QQQ breadth conflict or failed-bounce risk is elevated; watch new lows, percent above 20/50d MA and sector participation. |
 | IWM | True | False | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.0657 | 0 | 0 | IWM breadth supports bearish_path: internal resonance is mixed, support score 68%. | IWM breadth conflict or failed-bounce risk is elevated; watch new lows, percent above 20/50d MA and sector participation. |
 | DIA | True | False | RISK_WARNING | RISK_WARNING | bearish_path | bounce_path | 0.0187 | 9 | 3 | DIA breadth supports bounce_path: internal resonance is aligned, support score 98%, above 20d/50d MA 77%/70%. | DIA breadth improves confidence in the primary path, but forward validation is still required. |
 
