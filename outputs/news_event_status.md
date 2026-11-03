@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-03T02:31:54.199690+00:00`
+- generated_at: `2026-11-03T03:05:43.642444+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `8`
@@ -63,7 +63,7 @@
 - source: Reuters
 - published_at: `2026-11-02T14:50:28+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
