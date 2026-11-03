@@ -1,14 +1,19 @@
 {
   "as_of": "2026-11-02",
   "data_freshness_status": {
-    "affected_symbols": [],
-    "can_append_forecast_record": true,
+    "affected_symbols": [
+      "SPY",
+      "QQQ",
+      "IWM",
+      "DIA"
+    ],
+    "can_append_forecast_record": false,
     "can_backfill_completed_outcomes": true,
-    "current_date": "2026-11-02",
-    "current_time_us_eastern": "2026-11-02T22:56:13.989326-05:00",
-    "data_freshness_status": "fresh",
+    "current_date": "2026-11-03",
+    "current_time_us_eastern": "2026-11-03T02:59:23.262735-05:00",
+    "data_freshness_status": "market_open_unconfirmed",
     "expected_latest_trading_date": "2026-11-02",
-    "generated_at": "2026-11-03T03:56:13.989326+00:00",
+    "generated_at": "2026-11-03T07:59:23.262735+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -22,7 +27,7 @@
     "last_successful_update": "2026-11-02",
     "latest_confirmed_market_date": "2026-11-02",
     "latest_market_date": "2026-11-02",
-    "latest_market_session_status": "completed_or_prior_session",
+    "latest_market_session_status": "intraday_unconfirmed",
     "provider_status": {
       "BAA_SPREAD": {
         "fallback_used": false,
@@ -939,7 +944,7 @@
     },
     "stale_days": 0,
     "version": "data_freshness_gate_v3",
-    "warning_message": "核心行情已更新至最新应有交易日 2026-11-02。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。"
+    "warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-11-02，最近完整收盘交易日为 2026-11-02；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。"
   },
   "data_quality_summary": {
     "average_breadth_quality_score": 67.0,
@@ -960,10 +965,10 @@
       "IWM"
     ],
     "breadth_required": true,
-    "can_append_forecast_record": true,
+    "can_append_forecast_record": false,
     "data_completeness_score": 87.0,
     "data_completeness_score_before_news_event": 85.0,
-    "data_freshness_status": "fresh",
+    "data_freshness_status": "market_open_unconfirmed",
     "data_source_status": "real_core_with_proxies",
     "expected_latest_trading_date": "2026-11-02",
     "fallback_used": true,
@@ -1048,16 +1053,16 @@
     "fred_required": true,
     "fred_successful_series": [
       "BAA_SPREAD",
-      "HY_OAS",
       "DGS3MO",
-      "IG_OAS",
       "DGS10",
       "DGS2",
-      "DFII10",
+      "HY_OAS",
+      "IG_OAS",
       "RECESSION",
-      "FINANCIAL_STRESS"
+      "FINANCIAL_STRESS",
+      "DFII10"
     ],
-    "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-11-02。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
+    "freshness_warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-11-02，最近完整收盘交易日为 2026-11-02；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
     "gamma_available": false,
     "gamma_exposure_available": false,
     "latest_confirmed_market_date": "2026-11-02",
@@ -1089,8 +1094,8 @@
       "event_detection_confidence": 73,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-11-03T03:56:04.323965+00:00",
-      "major_event_count": 8,
+      "last_update": "2026-11-03T07:59:12.845126+00:00",
+      "major_event_count": 11,
       "missing_reason": null,
       "news_direction": "risk_off",
       "news_event_partial": false,
@@ -1101,7 +1106,7 @@
     },
     "news_event_available": true,
     "news_event_event_risk_level": "high",
-    "news_event_major_count": 8,
+    "news_event_major_count": 11,
     "news_event_missing_reason": null,
     "news_event_narrative": "geopolitics_escalation_risk_off",
     "news_event_partial": false,
@@ -1151,7 +1156,7 @@
       "status": "failed"
     },
     "event_risk_level": "high",
-    "major_event_count": 8,
+    "major_event_count": 11,
     "market_narrative": {
       "affected_scenarios": [
         "bearish_path"
@@ -1171,7 +1176,7 @@
           "event_type": "oil_shock_relief",
           "expected_market_direction": "risk_on",
           "headline": "SNAPSHOT US stock index futures jump as oil falls about 6% - Reuters",
-          "importance_score": 91,
+          "importance_score": 90,
           "published_at": "2026-11-02T14:00:28+00:00",
           "source": "Reuters"
         }
@@ -1191,13 +1196,61 @@
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_market_direction": "risk_off",
+          "headline": "Oil edges up after report of US strike on Iran's Qeshm Island - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-11-03T01:27:00+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
+          "headline": "US carries out 'defensive' strikes on Iran's Qeshm Island, officials say - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-11-03T01:05:00+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
+          "headline": "Iran says contacts over ending war continue after talks finish with no breakthrough - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-11-02T23:57:41+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
+          "headline": "Trump raises doubts about renewed attacks on Iran - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-11-02T20:57:44+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "medium",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
           "headline": "TotalEnergies says Iran war could accelerate energy transition - Reuters",
           "importance_score": 100,
           "published_at": "2026-11-02T17:16:12+00:00",
           "source": "Reuters"
         },
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -1207,54 +1260,6 @@
           "importance_score": 100,
           "published_at": "2026-11-02T17:04:34+00:00",
           "source": "CNBC"
-        },
-        {
-          "confidence": "high",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Yemen's Houthis say they launched drones towards Saudi Arabia's Dammam airport - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-11-02T16:16:54+00:00",
-          "source": "Reuters"
-        },
-        {
-          "confidence": "medium",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Iran says contacts over ending war continue after talks finish with no breakthrough - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-11-02T15:15:24+00:00",
-          "source": "Reuters"
-        },
-        {
-          "confidence": "medium",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "COMMENTARY: Asia's crude oil imports back to pre-war levels but refined fuels lag - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-11-02T14:50:28+00:00",
-          "source": "Reuters"
-        },
-        {
-          "confidence": "medium",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Trump's Iran threat renews Gulf fears of a war it didn't choose - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-11-02T12:42:02+00:00",
-          "source": "Reuters"
         }
       ]
     },
@@ -1264,7 +1269,7 @@
       "direction": "supports_risk_expansion",
       "event_risk_level": "high",
       "macro_event_risk_flag": false,
-      "major_event_count": 8,
+      "major_event_count": 11,
       "not_a_trading_signal": true,
       "price_reaction_confirmed": true,
       "symbols": {
@@ -1419,7 +1424,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": -0.0037,
-        "avg_equity_futures_1d_return": -0.001,
+        "avg_equity_futures_1d_return": -0.0025,
         "confirmed_checks": [
           "股票ETF或股指期货下跌",
           "VIX 上升",
@@ -1435,7 +1440,7 @@
           "美元走强"
         ],
         "hyg_lqd_1d_relative_return": -0.0016,
-        "oil_proxy_1d_return": -0.0343,
+        "oil_proxy_1d_return": -0.0285,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -1961,6 +1966,7 @@
     },
     "version": "shadow_evidence_v1"
   },
+  "status_note": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-11-02，最近完整收盘交易日为 2026-11-02；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
   "symbols": {
     "DIA": {
       "analog_path_weight": 0.2362,
@@ -2333,11 +2339,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
-            "Kimberly-Clark closes its acquisition of Tylenol maker Kenvue. What to expect next",
-            "Trump focuses on Reflecting Pool in final public speech before midterms",
-            "2 of our banks are at the heart of this week's biggest tech deals",
-            "Prediction market traders now see nearly 75% chance of Democrats winning the Senate",
-            "Texas governor race tightens in prediction markets, but Abbott remains favored"
+            "Indian shares extend gains on softer oil, strong earnings - Reuters",
+            "Oil edges up after report of US strike on Iran's Qeshm Island - Reuters",
+            "Dollar drifts on Mideast, midterm risks; Aussie dips after expected RBA hike - Reuters",
+            "US carries out 'defensive' strikes on Iran's Qeshm Island, officials say - Reuters",
+            "Iran says contacts over ending war continue after talks finish with no breakthrough - Reuters"
           ]
         },
         "price": {
@@ -3700,6 +3706,87 @@
               "TLT"
             ],
             "confidence": "high",
+            "confidence_score": 78,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 84,
+            "headline": "Oil edges up after report of US strike on Iran's Qeshm Island - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-03T01:27:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 77,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 83,
+            "headline": "US carries out 'defensive' strikes on Iran's Qeshm Island, officials say - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-03T01:05:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 77,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 81,
+            "headline": "Iran says contacts over ending war continue after talks finish with no breakthrough - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-02T23:57:41+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
             "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
@@ -3708,6 +3795,33 @@
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
             "freshness_score": 74,
+            "headline": "Trump raises doubts about renewed attacks on Iran - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-02T20:57:44+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 73,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 65,
             "headline": "TotalEnergies says Iran war could accelerate energy transition - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3726,129 +3840,21 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 74,
+            "freshness_score": 64,
             "headline": "CrowdStrike lands an upgrade, and Jim Cramer's advice on Apple ahead of earnings",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-11-02T17:04:34+00:00",
             "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 72,
-            "headline": "Yemen's Houthis say they launched drones towards Saudi Arabia's Dammam airport - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-02T16:16:54+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 74,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 70,
-            "headline": "Iran says contacts over ending war continue after talks finish with no breakthrough - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-02T15:15:24+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 74,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 69,
-            "headline": "COMMENTARY: Asia's crude oil imports back to pre-war levels but refined fuels lag - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-02T14:50:28+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 72,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 63,
-            "headline": "Trump's Iran threat renews Gulf fears of a war it didn't choose - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-02T12:42:02+00:00",
-            "source": "Reuters"
           }
         ],
         "market_narrative": {
@@ -3870,7 +3876,7 @@
               "event_type": "oil_shock_relief",
               "expected_market_direction": "risk_on",
               "headline": "SNAPSHOT US stock index futures jump as oil falls about 6% - Reuters",
-              "importance_score": 91,
+              "importance_score": 90,
               "published_at": "2026-11-02T14:00:28+00:00",
               "source": "Reuters"
             }
@@ -3890,13 +3896,61 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Oil edges up after report of US strike on Iran's Qeshm Island - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-03T01:27:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "US carries out 'defensive' strikes on Iran's Qeshm Island, officials say - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-03T01:05:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Iran says contacts over ending war continue after talks finish with no breakthrough - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-02T23:57:41+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Trump raises doubts about renewed attacks on Iran - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-02T20:57:44+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "TotalEnergies says Iran war could accelerate energy transition - Reuters",
               "importance_score": 100,
               "published_at": "2026-11-02T17:16:12+00:00",
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -3906,54 +3960,6 @@
               "importance_score": 100,
               "published_at": "2026-11-02T17:04:34+00:00",
               "source": "CNBC"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Yemen's Houthis say they launched drones towards Saudi Arabia's Dammam airport - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-02T16:16:54+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Iran says contacts over ending war continue after talks finish with no breakthrough - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-02T15:15:24+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "COMMENTARY: Asia's crude oil imports back to pre-war levels but refined fuels lag - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-02T14:50:28+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Trump's Iran threat renews Gulf fears of a war it didn't choose - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-02T12:42:02+00:00",
-              "source": "Reuters"
             }
           ]
         },
@@ -3997,7 +4003,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0037,
-            "avg_equity_futures_1d_return": -0.001,
+            "avg_equity_futures_1d_return": -0.0025,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -4013,7 +4019,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0016,
-            "oil_proxy_1d_return": -0.0343,
+            "oil_proxy_1d_return": -0.0285,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -6553,11 +6559,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
-            "Kimberly-Clark closes its acquisition of Tylenol maker Kenvue. What to expect next",
-            "Trump focuses on Reflecting Pool in final public speech before midterms",
-            "2 of our banks are at the heart of this week's biggest tech deals",
-            "Prediction market traders now see nearly 75% chance of Democrats winning the Senate",
-            "Texas governor race tightens in prediction markets, but Abbott remains favored"
+            "Indian shares extend gains on softer oil, strong earnings - Reuters",
+            "Oil edges up after report of US strike on Iran's Qeshm Island - Reuters",
+            "Dollar drifts on Mideast, midterm risks; Aussie dips after expected RBA hike - Reuters",
+            "US carries out 'defensive' strikes on Iran's Qeshm Island, officials say - Reuters",
+            "Iran says contacts over ending war continue after talks finish with no breakthrough - Reuters"
           ]
         },
         "price": {
@@ -7942,6 +7948,87 @@
               "TLT"
             ],
             "confidence": "high",
+            "confidence_score": 78,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 84,
+            "headline": "Oil edges up after report of US strike on Iran's Qeshm Island - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-03T01:27:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 77,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 83,
+            "headline": "US carries out 'defensive' strikes on Iran's Qeshm Island, officials say - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-03T01:05:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 77,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 81,
+            "headline": "Iran says contacts over ending war continue after talks finish with no breakthrough - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-02T23:57:41+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
             "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
@@ -7950,6 +8037,33 @@
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
             "freshness_score": 74,
+            "headline": "Trump raises doubts about renewed attacks on Iran - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-02T20:57:44+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 73,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 65,
             "headline": "TotalEnergies says Iran war could accelerate energy transition - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7968,129 +8082,21 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 74,
+            "freshness_score": 64,
             "headline": "CrowdStrike lands an upgrade, and Jim Cramer's advice on Apple ahead of earnings",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-11-02T17:04:34+00:00",
             "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 72,
-            "headline": "Yemen's Houthis say they launched drones towards Saudi Arabia's Dammam airport - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-02T16:16:54+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 74,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 70,
-            "headline": "Iran says contacts over ending war continue after talks finish with no breakthrough - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-02T15:15:24+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 74,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 69,
-            "headline": "COMMENTARY: Asia's crude oil imports back to pre-war levels but refined fuels lag - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-02T14:50:28+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 72,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 63,
-            "headline": "Trump's Iran threat renews Gulf fears of a war it didn't choose - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-02T12:42:02+00:00",
-            "source": "Reuters"
           }
         ],
         "market_narrative": {
@@ -8112,7 +8118,7 @@
               "event_type": "oil_shock_relief",
               "expected_market_direction": "risk_on",
               "headline": "SNAPSHOT US stock index futures jump as oil falls about 6% - Reuters",
-              "importance_score": 91,
+              "importance_score": 90,
               "published_at": "2026-11-02T14:00:28+00:00",
               "source": "Reuters"
             }
@@ -8132,13 +8138,61 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Oil edges up after report of US strike on Iran's Qeshm Island - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-03T01:27:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "US carries out 'defensive' strikes on Iran's Qeshm Island, officials say - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-03T01:05:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Iran says contacts over ending war continue after talks finish with no breakthrough - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-02T23:57:41+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Trump raises doubts about renewed attacks on Iran - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-02T20:57:44+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "TotalEnergies says Iran war could accelerate energy transition - Reuters",
               "importance_score": 100,
               "published_at": "2026-11-02T17:16:12+00:00",
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -8148,54 +8202,6 @@
               "importance_score": 100,
               "published_at": "2026-11-02T17:04:34+00:00",
               "source": "CNBC"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Yemen's Houthis say they launched drones towards Saudi Arabia's Dammam airport - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-02T16:16:54+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Iran says contacts over ending war continue after talks finish with no breakthrough - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-02T15:15:24+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "COMMENTARY: Asia's crude oil imports back to pre-war levels but refined fuels lag - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-02T14:50:28+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Trump's Iran threat renews Gulf fears of a war it didn't choose - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-02T12:42:02+00:00",
-              "source": "Reuters"
             }
           ]
         },
@@ -8239,7 +8245,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0037,
-            "avg_equity_futures_1d_return": -0.001,
+            "avg_equity_futures_1d_return": -0.0025,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -8255,7 +8261,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0016,
-            "oil_proxy_1d_return": -0.0343,
+            "oil_proxy_1d_return": -0.0285,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -10822,11 +10828,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
-            "Kimberly-Clark closes its acquisition of Tylenol maker Kenvue. What to expect next",
-            "Trump focuses on Reflecting Pool in final public speech before midterms",
-            "2 of our banks are at the heart of this week's biggest tech deals",
-            "Prediction market traders now see nearly 75% chance of Democrats winning the Senate",
-            "Texas governor race tightens in prediction markets, but Abbott remains favored"
+            "Indian shares extend gains on softer oil, strong earnings - Reuters",
+            "Oil edges up after report of US strike on Iran's Qeshm Island - Reuters",
+            "Dollar drifts on Mideast, midterm risks; Aussie dips after expected RBA hike - Reuters",
+            "US carries out 'defensive' strikes on Iran's Qeshm Island, officials say - Reuters",
+            "Iran says contacts over ending war continue after talks finish with no breakthrough - Reuters"
           ]
         },
         "price": {
@@ -12223,6 +12229,87 @@
               "TLT"
             ],
             "confidence": "high",
+            "confidence_score": 78,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 84,
+            "headline": "Oil edges up after report of US strike on Iran's Qeshm Island - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-03T01:27:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 77,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 83,
+            "headline": "US carries out 'defensive' strikes on Iran's Qeshm Island, officials say - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-03T01:05:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 77,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 81,
+            "headline": "Iran says contacts over ending war continue after talks finish with no breakthrough - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-02T23:57:41+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
             "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
@@ -12231,6 +12318,33 @@
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
             "freshness_score": 74,
+            "headline": "Trump raises doubts about renewed attacks on Iran - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-02T20:57:44+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 73,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 65,
             "headline": "TotalEnergies says Iran war could accelerate energy transition - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12249,129 +12363,21 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 74,
+            "freshness_score": 64,
             "headline": "CrowdStrike lands an upgrade, and Jim Cramer's advice on Apple ahead of earnings",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-11-02T17:04:34+00:00",
             "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 72,
-            "headline": "Yemen's Houthis say they launched drones towards Saudi Arabia's Dammam airport - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-02T16:16:54+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 74,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 70,
-            "headline": "Iran says contacts over ending war continue after talks finish with no breakthrough - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-02T15:15:24+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 74,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 69,
-            "headline": "COMMENTARY: Asia's crude oil imports back to pre-war levels but refined fuels lag - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-02T14:50:28+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 72,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 63,
-            "headline": "Trump's Iran threat renews Gulf fears of a war it didn't choose - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-02T12:42:02+00:00",
-            "source": "Reuters"
           }
         ],
         "market_narrative": {
@@ -12393,7 +12399,7 @@
               "event_type": "oil_shock_relief",
               "expected_market_direction": "risk_on",
               "headline": "SNAPSHOT US stock index futures jump as oil falls about 6% - Reuters",
-              "importance_score": 91,
+              "importance_score": 90,
               "published_at": "2026-11-02T14:00:28+00:00",
               "source": "Reuters"
             }
@@ -12413,13 +12419,61 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Oil edges up after report of US strike on Iran's Qeshm Island - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-03T01:27:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "US carries out 'defensive' strikes on Iran's Qeshm Island, officials say - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-03T01:05:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Iran says contacts over ending war continue after talks finish with no breakthrough - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-02T23:57:41+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Trump raises doubts about renewed attacks on Iran - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-02T20:57:44+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "TotalEnergies says Iran war could accelerate energy transition - Reuters",
               "importance_score": 100,
               "published_at": "2026-11-02T17:16:12+00:00",
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -12429,54 +12483,6 @@
               "importance_score": 100,
               "published_at": "2026-11-02T17:04:34+00:00",
               "source": "CNBC"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Yemen's Houthis say they launched drones towards Saudi Arabia's Dammam airport - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-02T16:16:54+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Iran says contacts over ending war continue after talks finish with no breakthrough - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-02T15:15:24+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "COMMENTARY: Asia's crude oil imports back to pre-war levels but refined fuels lag - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-02T14:50:28+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Trump's Iran threat renews Gulf fears of a war it didn't choose - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-02T12:42:02+00:00",
-              "source": "Reuters"
             }
           ]
         },
@@ -12520,7 +12526,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0037,
-            "avg_equity_futures_1d_return": -0.001,
+            "avg_equity_futures_1d_return": -0.0025,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -12536,7 +12542,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0016,
-            "oil_proxy_1d_return": -0.0343,
+            "oil_proxy_1d_return": -0.0285,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -15105,11 +15111,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
-            "Kimberly-Clark closes its acquisition of Tylenol maker Kenvue. What to expect next",
-            "Trump focuses on Reflecting Pool in final public speech before midterms",
-            "2 of our banks are at the heart of this week's biggest tech deals",
-            "Prediction market traders now see nearly 75% chance of Democrats winning the Senate",
-            "Texas governor race tightens in prediction markets, but Abbott remains favored"
+            "Indian shares extend gains on softer oil, strong earnings - Reuters",
+            "Oil edges up after report of US strike on Iran's Qeshm Island - Reuters",
+            "Dollar drifts on Mideast, midterm risks; Aussie dips after expected RBA hike - Reuters",
+            "US carries out 'defensive' strikes on Iran's Qeshm Island, officials say - Reuters",
+            "Iran says contacts over ending war continue after talks finish with no breakthrough - Reuters"
           ]
         },
         "price": {
@@ -16526,6 +16532,87 @@
               "TLT"
             ],
             "confidence": "high",
+            "confidence_score": 78,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 84,
+            "headline": "Oil edges up after report of US strike on Iran's Qeshm Island - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-03T01:27:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 77,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 83,
+            "headline": "US carries out 'defensive' strikes on Iran's Qeshm Island, officials say - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-03T01:05:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 77,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 81,
+            "headline": "Iran says contacts over ending war continue after talks finish with no breakthrough - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-02T23:57:41+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
             "confidence_score": 75,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
@@ -16534,6 +16621,33 @@
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
             "freshness_score": 74,
+            "headline": "Trump raises doubts about renewed attacks on Iran - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-02T20:57:44+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 73,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 65,
             "headline": "TotalEnergies says Iran war could accelerate energy transition - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16552,129 +16666,21 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 75,
+            "confidence": "medium",
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 74,
+            "freshness_score": 64,
             "headline": "CrowdStrike lands an upgrade, and Jim Cramer's advice on Apple ahead of earnings",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-11-02T17:04:34+00:00",
             "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 72,
-            "headline": "Yemen's Houthis say they launched drones towards Saudi Arabia's Dammam airport - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-02T16:16:54+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 74,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 70,
-            "headline": "Iran says contacts over ending war continue after talks finish with no breakthrough - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-02T15:15:24+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 74,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 69,
-            "headline": "COMMENTARY: Asia's crude oil imports back to pre-war levels but refined fuels lag - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-02T14:50:28+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 72,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 63,
-            "headline": "Trump's Iran threat renews Gulf fears of a war it didn't choose - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-02T12:42:02+00:00",
-            "source": "Reuters"
           }
         ],
         "market_narrative": {
@@ -16696,7 +16702,7 @@
               "event_type": "oil_shock_relief",
               "expected_market_direction": "risk_on",
               "headline": "SNAPSHOT US stock index futures jump as oil falls about 6% - Reuters",
-              "importance_score": 91,
+              "importance_score": 90,
               "published_at": "2026-11-02T14:00:28+00:00",
               "source": "Reuters"
             }
@@ -16716,13 +16722,61 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Oil edges up after report of US strike on Iran's Qeshm Island - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-03T01:27:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "US carries out 'defensive' strikes on Iran's Qeshm Island, officials say - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-03T01:05:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Iran says contacts over ending war continue after talks finish with no breakthrough - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-02T23:57:41+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Trump raises doubts about renewed attacks on Iran - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-02T20:57:44+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "TotalEnergies says Iran war could accelerate energy transition - Reuters",
               "importance_score": 100,
               "published_at": "2026-11-02T17:16:12+00:00",
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -16732,54 +16786,6 @@
               "importance_score": 100,
               "published_at": "2026-11-02T17:04:34+00:00",
               "source": "CNBC"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Yemen's Houthis say they launched drones towards Saudi Arabia's Dammam airport - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-02T16:16:54+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Iran says contacts over ending war continue after talks finish with no breakthrough - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-02T15:15:24+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "COMMENTARY: Asia's crude oil imports back to pre-war levels but refined fuels lag - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-02T14:50:28+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Trump's Iran threat renews Gulf fears of a war it didn't choose - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-02T12:42:02+00:00",
-              "source": "Reuters"
             }
           ]
         },
@@ -16823,7 +16829,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0037,
-            "avg_equity_futures_1d_return": -0.001,
+            "avg_equity_futures_1d_return": -0.0025,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -16839,7 +16845,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0016,
-            "oil_proxy_1d_return": -0.0343,
+            "oil_proxy_1d_return": -0.0285,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
