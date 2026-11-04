@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-04T03:01:52.826105+00:00`
+- generated_at: `2026-11-04T07:32:37.641251+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
-- event_detection_confidence: `71`
+- major_event_count: `11`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,6 +27,30 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: COMMENTARY: Asia hopes Democrats can provide relief from Trump's Iran war, tariffs - Reuters
+- source: Reuters
+- published_at: `2026-11-04T05:02:34+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: One Indian killed in attack on ship near Oman, Indian foreign ministry says - Reuters
+- source: Reuters
+- published_at: `2026-11-04T04:23:34+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil rises on Iran war uncertainty after Trump's Republicans face election rout - Reuters
+- source: Reuters
+- published_at: `2026-11-04T02:10:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: US has no immediate plan to strike Iran, Trump tells FT - Reuters
 - source: Reuters
 - published_at: `2026-11-03T23:48:00+00:00`
@@ -39,7 +63,7 @@
 - source: Reuters
 - published_at: `2026-11-03T18:26:15+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +71,7 @@
 - source: Reuters
 - published_at: `2026-11-03T15:39:52+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -67,17 +91,9 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iran, US still far apart on deal to end war as Qatar pushes mediation - Reuters
+- headline: Iran, US still far apart on deal; Trump says ready but in no hurry for strikes - Reuters
 - source: Reuters
 - published_at: `2026-11-03T06:58:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Asian Cup postponed until late 2027 due to attacks on Saudi Arabia - Reuters
-- source: Reuters
-- published_at: `2026-11-03T06:13:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -86,21 +102,5 @@
 - headline: Oil drops 7% as Iran signals openness to peace talks - Reuters
 - source: Reuters
 - published_at: `2026-11-03T08:58:12+00:00`
-- importance_score: `96`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Rupee nudges higher, forward premiums dip with focus on US midterm, oil moves - Reuters
-- source: Reuters
-- published_at: `2026-11-03T03:03:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Kremlin confirms trilateral Ukraine peace talks in Abu Dhabi next week - Reuters
-- source: Reuters
-- published_at: `2026-11-03T09:40:50+00:00`
-- importance_score: `93`
+- importance_score: `95`
 - confidence: `medium`

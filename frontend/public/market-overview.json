@@ -1,15 +1,20 @@
 {
   "as_of": "2026-11-03",
-  "dashboard_status": "forecast_validation",
+  "dashboard_status": "market_open_unconfirmed",
   "data_freshness_status": {
-    "affected_symbols": [],
-    "can_append_forecast_record": true,
+    "affected_symbols": [
+      "SPY",
+      "QQQ",
+      "IWM",
+      "DIA"
+    ],
+    "can_append_forecast_record": false,
     "can_backfill_completed_outcomes": true,
-    "current_date": "2026-11-03",
-    "current_time_us_eastern": "2026-11-03T22:02:03.025145-05:00",
-    "data_freshness_status": "fresh",
+    "current_date": "2026-11-04",
+    "current_time_us_eastern": "2026-11-04T02:32:47.813279-05:00",
+    "data_freshness_status": "market_open_unconfirmed",
     "expected_latest_trading_date": "2026-11-03",
-    "generated_at": "2026-11-04T03:02:03.025145+00:00",
+    "generated_at": "2026-11-04T07:32:47.813279+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -23,7 +28,7 @@
     "last_successful_update": "2026-11-03",
     "latest_confirmed_market_date": "2026-11-03",
     "latest_market_date": "2026-11-03",
-    "latest_market_session_status": "completed_or_prior_session",
+    "latest_market_session_status": "intraday_unconfirmed",
     "provider_status": {
       "BAA_SPREAD": {
         "fallback_used": false,
@@ -940,7 +945,7 @@
     },
     "stale_days": 0,
     "version": "data_freshness_gate_v3",
-    "warning_message": "核心行情已更新至最新应有交易日 2026-11-03。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。"
+    "warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-11-03，最近完整收盘交易日为 2026-11-03；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。"
   },
   "data_quality_summary": {
     "average_breadth_quality_score": 67.0,
@@ -961,10 +966,10 @@
       "IWM"
     ],
     "breadth_required": true,
-    "can_append_forecast_record": true,
+    "can_append_forecast_record": false,
     "data_completeness_score": 87.0,
     "data_completeness_score_before_news_event": 85.0,
-    "data_freshness_status": "fresh",
+    "data_freshness_status": "market_open_unconfirmed",
     "data_source_status": "real_core_with_proxies",
     "expected_latest_trading_date": "2026-11-03",
     "fallback_used": true,
@@ -993,8 +998,8 @@
           "primary_scenario_with_fred": "bearish_path",
           "primary_scenario_without_fred": "bounce_path",
           "risk_expansion_delta": 0.1102,
-          "risk_expansion_with_fred": 0.6918,
-          "risk_expansion_without_fred": 0.5816
+          "risk_expansion_with_fred": 0.6939,
+          "risk_expansion_without_fred": 0.5837
         },
         "IWM": {
           "edge_status_changed": false,
@@ -1007,8 +1012,8 @@
           "primary_scenario_with_fred": "bearish_path",
           "primary_scenario_without_fred": "bearish_path",
           "risk_expansion_delta": 0.1102,
-          "risk_expansion_with_fred": 0.7323,
-          "risk_expansion_without_fred": 0.6221
+          "risk_expansion_with_fred": 0.7344,
+          "risk_expansion_without_fred": 0.6242
         },
         "QQQ": {
           "edge_status_changed": false,
@@ -1020,9 +1025,9 @@
           "primary_scenario_changed": false,
           "primary_scenario_with_fred": "bearish_path",
           "primary_scenario_without_fred": "bearish_path",
-          "risk_expansion_delta": 0.1102,
-          "risk_expansion_with_fred": 0.7457,
-          "risk_expansion_without_fred": 0.6355
+          "risk_expansion_delta": 0.1103,
+          "risk_expansion_with_fred": 0.7478,
+          "risk_expansion_without_fred": 0.6375
         },
         "SPY": {
           "edge_status_changed": false,
@@ -1035,8 +1040,8 @@
           "primary_scenario_with_fred": "bearish_path",
           "primary_scenario_without_fred": "bounce_path",
           "risk_expansion_delta": 0.1102,
-          "risk_expansion_with_fred": 0.6865,
-          "risk_expansion_without_fred": 0.5763
+          "risk_expansion_with_fred": 0.6886,
+          "risk_expansion_without_fred": 0.5784
         }
       },
       "target_85_met_with_fred": true
@@ -1048,17 +1053,17 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "HY_OAS",
-      "IG_OAS",
-      "DGS2",
-      "DGS10",
-      "DGS3MO",
-      "DFII10",
       "BAA_SPREAD",
-      "FINANCIAL_STRESS",
-      "RECESSION"
+      "HY_OAS",
+      "DGS3MO",
+      "DGS10",
+      "RECESSION",
+      "DGS2",
+      "IG_OAS",
+      "DFII10",
+      "FINANCIAL_STRESS"
     ],
-    "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-11-03。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
+    "freshness_warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-11-03，最近完整收盘交易日为 2026-11-03；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
     "gamma_available": false,
     "gamma_exposure_available": false,
     "latest_confirmed_market_date": "2026-11-03",
@@ -1087,11 +1092,11 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 71,
+      "event_detection_confidence": 73,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-11-04T03:01:52.826105+00:00",
-      "major_event_count": 12,
+      "last_update": "2026-11-04T07:32:37.641251+00:00",
+      "major_event_count": 11,
       "missing_reason": null,
       "news_direction": "risk_off",
       "news_event_partial": false,
@@ -1102,7 +1107,7 @@
     },
     "news_event_available": true,
     "news_event_event_risk_level": "high",
-    "news_event_major_count": 12,
+    "news_event_major_count": 11,
     "news_event_missing_reason": null,
     "news_event_narrative": "geopolitics_escalation_risk_off",
     "news_event_partial": false,
@@ -1230,7 +1235,7 @@
         "flow_quality": 1.0,
         "internal_resonance": 0.7907,
         "options_quality": 0.92,
-        "predictor_consistency": 0.8398,
+        "predictor_consistency": 0.8377,
         "prior_confidence": 0.71,
         "signal_confirmation": 0.54
       },
@@ -1252,7 +1257,7 @@
         "flow_quality": 1.0,
         "internal_resonance": 0.5674,
         "options_quality": 0.92,
-        "predictor_consistency": 0.623,
+        "predictor_consistency": 0.6209,
         "prior_confidence": 0.66,
         "signal_confirmation": 0.36
       },
@@ -1324,7 +1329,7 @@
       "status": "failed"
     },
     "event_risk_level": "high",
-    "major_event_count": 12,
+    "major_event_count": 11,
     "market_narrative": {
       "affected_scenarios": [
         "bearish_path"
@@ -1344,7 +1349,7 @@
           "event_type": "geopolitical_risk_easing",
           "expected_market_direction": "risk_on",
           "headline": "Oil drops 7% as Iran signals openness to peace talks - Reuters",
-          "importance_score": 96,
+          "importance_score": 95,
           "published_at": "2026-11-03T08:58:12+00:00",
           "source": "Reuters"
         },
@@ -1354,20 +1359,8 @@
           "event_type": "geopolitical_risk_easing",
           "expected_market_direction": "risk_on",
           "headline": "Kremlin confirms trilateral Ukraine peace talks in Abu Dhabi next week - Reuters",
-          "importance_score": 93,
+          "importance_score": 92,
           "published_at": "2026-11-03T09:40:50+00:00",
-          "source": "Reuters"
-        },
-        {
-          "confidence": "medium",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_easing",
-          "expected_market_direction": "risk_on",
-          "headline": "Oil prices ease to settle near 4-week low on hopes peace talks will end wars - Reuters",
-          "importance_score": 94,
-          "published_at": "2026-11-03T01:27:00+00:00",
           "source": "Reuters"
         }
       ],
@@ -1386,13 +1379,49 @@
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_market_direction": "risk_off",
+          "headline": "COMMENTARY: Asia hopes Democrats can provide relief from Trump's Iran war, tariffs - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-11-04T05:02:34+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
+          "headline": "One Indian killed in attack on ship near Oman, Indian foreign ministry says - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-11-04T04:23:34+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
+          "headline": "Oil rises on Iran war uncertainty after Trump's Republicans face election rout - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-11-04T02:10:00+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
           "headline": "US has no immediate plan to strike Iran, Trump tells FT - Reuters",
           "importance_score": 100,
           "published_at": "2026-11-03T23:48:00+00:00",
           "source": "Reuters"
         },
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -1404,7 +1433,7 @@
           "source": "Reuters"
         },
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -1413,42 +1442,6 @@
           "headline": "Gulf oil flows dip in October from post-Iran war high, data shows - Reuters",
           "importance_score": 100,
           "published_at": "2026-11-03T15:39:52+00:00",
-          "source": "Reuters"
-        },
-        {
-          "confidence": "medium",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Syria says it foiled Hezbollah plot to attack Homs oil refinery - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-11-03T14:30:46+00:00",
-          "source": "Reuters"
-        },
-        {
-          "confidence": "medium",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Supermarket fridges are under attack in Europe — here's what's happening",
-          "importance_score": 100,
-          "published_at": "2026-11-03T12:11:01+00:00",
-          "source": "CNBC"
-        },
-        {
-          "confidence": "medium",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Iran, US still far apart on deal to end war as Qatar pushes mediation - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-11-03T06:58:00+00:00",
           "source": "Reuters"
         }
       ]
@@ -1459,14 +1452,14 @@
       "direction": "supports_risk_expansion",
       "event_risk_level": "high",
       "macro_event_risk_flag": false,
-      "major_event_count": 12,
+      "major_event_count": 11,
       "not_a_trading_signal": true,
       "price_reaction_confirmed": false,
       "symbols": {
         "DIA": {
-          "after_primary_probability": 0.3423,
+          "after_primary_probability": 0.3424,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.3158,
+          "before_primary_probability": 0.3159,
           "before_primary_scenario": "bearish_path",
           "confirmation_delta": -5.0,
           "impact": "text_support_unconfirmed",
@@ -1496,9 +1489,9 @@
           "validation_type": "daily"
         },
         "IWM": {
-          "after_primary_probability": 0.3843,
+          "after_primary_probability": 0.3845,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.3593,
+          "before_primary_probability": 0.3594,
           "before_primary_scenario": "bearish_path",
           "confirmation_delta": -5.0,
           "impact": "text_support_unconfirmed",
@@ -1522,15 +1515,15 @@
             "risk_expansion_predictor": 0.025,
             "trend_reversal_predictor": 0.0
           },
-          "primary_probability_delta": 0.025,
+          "primary_probability_delta": 0.0251,
           "primary_scenario_changed": false,
           "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay",
           "validation_type": "daily"
         },
         "QQQ": {
-          "after_primary_probability": 0.4617,
+          "after_primary_probability": 0.4618,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.4394,
+          "before_primary_probability": 0.4395,
           "before_primary_scenario": "bearish_path",
           "confirmation_delta": -5.0,
           "impact": "text_support_unconfirmed",
@@ -1560,9 +1553,9 @@
           "validation_type": "daily"
         },
         "SPY": {
-          "after_primary_probability": 0.3302,
+          "after_primary_probability": 0.3304,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.3033,
+          "before_primary_probability": 0.3034,
           "before_primary_scenario": "bearish_path",
           "confirmation_delta": -5.0,
           "impact": "text_support_unconfirmed",
@@ -1586,7 +1579,7 @@
             "risk_expansion_predictor": 0.025,
             "trend_reversal_predictor": 0.0
           },
-          "primary_probability_delta": 0.0269,
+          "primary_probability_delta": 0.027,
           "primary_scenario_changed": false,
           "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay",
           "validation_type": "daily"
@@ -1598,7 +1591,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": 0.0018,
-        "avg_equity_futures_1d_return": -0.0117,
+        "avg_equity_futures_1d_return": -0.0003,
         "confirmed_checks": [
           "股票ETF或股指期货下跌",
           "美元走强"
@@ -1614,7 +1607,7 @@
           "HYG/LQD 走弱"
         ],
         "hyg_lqd_1d_relative_return": 0.0011,
-        "oil_proxy_1d_return": -0.0015,
+        "oil_proxy_1d_return": 0.0053,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -2797,14 +2790,14 @@
       ]
     }
   },
-  "status_note": "Alpha v1 is still a research candidate and only a bounce scenario input. The dashboard is for probability-path forecasting, not execution recommendations.",
+  "status_note": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-11-03，最近完整收盘交易日为 2026-11-03；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
   "strongest_symbol": "SPY",
   "symbols": {
     "DIA": {
       "analog_path_weight": 0.22,
       "as_of": "2026-11-03",
       "base_path_weight": 0.1675,
-      "bearish_path_weight": 0.3423,
+      "bearish_path_weight": 0.3424,
       "bounce_path_weight": 0.2701,
       "bounce_probability": 0.57070947,
       "confluence": {
@@ -2860,7 +2853,7 @@
           {
             "detail": "路径分歧较大，不宜给强结论。",
             "name": "主次路径差距小",
-            "score": 7.22,
+            "score": 7.23,
             "source": "scenario_gap"
           }
         ],
@@ -2889,9 +2882,9 @@
         ],
         "not_trading_advice": "This is forecast confirmation only, not a buy/sell/entry/exit or position-sizing recommendation.",
         "primary_label": "失败反抽情景",
-        "primary_probability": 0.3423,
+        "primary_probability": 0.3424,
         "primary_scenario": "bearish_path",
-        "probability_gap": 0.0722,
+        "probability_gap": 0.0723,
         "related_price_levels": {
           "primary_confirmation_level": {
             "confidence": "medium",
@@ -3143,10 +3136,10 @@
           "ig_oas_20d_change": 0.09999999999999998
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote 517.06; news risk 25%; macro event risk flagged; rates pressure 16%.",
+          "brief": "Finnhub quote 517.06; news risk 30%; macro event risk flagged; rates pressure 16%.",
           "finnhub_quote_available": true,
           "macro_event_risk_flag": true,
-          "news_risk_score": 0.25,
+          "news_risk_score": 0.3,
           "rates_pressure_score": 0.15989624881277456,
           "symbol": "DIA"
         },
@@ -3213,13 +3206,13 @@
         "news": {
           "market_news_status": "available",
           "news_item_count": 40,
-          "news_risk_score": 0.25,
+          "news_risk_score": 0.3,
           "top_headlines": [
-            "Gold firms on softer oil prices, US midterm results awaited - Reuters",
-            "US has no immediate plan to strike Iran, Trump tells FT - Reuters",
-            "As Americans vote, Trump says US will stop $4 billion in aid to Israel - Reuters",
-            "Election Day: Here is the No. 1 issue we're watching as a signal for stocks",
-            "Ex-Amex CEO shares when business leaders need to speak up about politics: 'You should care about what happens in our society'"
+            "Trump acknowledges Iran role in Democratic sweep - Reuters",
+            "COMMENTARY: Asia hopes Democrats can provide relief from Trump's Iran war, tariffs - Reuters",
+            "One Indian killed in attack on ship near Oman, Indian foreign ministry says - Reuters",
+            "Iran's IRGC says four tankers ablaze after hitting mines near Strait of Hormuz - Reuters",
+            "Market analysts react to US midterm election results - Reuters"
           ]
         },
         "price": {
@@ -4101,7 +4094,7 @@
           "flow_quality": 1.0,
           "internal_resonance": 0.7907,
           "options_quality": 0.92,
-          "predictor_consistency": 0.8398,
+          "predictor_consistency": 0.8377,
           "prior_confidence": 0.71,
           "signal_confirmation": 0.54
         },
@@ -4148,66 +4141,93 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
+            "freshness_score": 94,
+            "headline": "COMMENTARY: Asia hopes Democrats can provide relief from Trump's Iran war, tariffs - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-04T05:02:34+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 80,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
             "freshness_score": 92,
+            "headline": "One Indian killed in attack on ship near Oman, Indian foreign ministry says - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-04T04:23:34+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 78,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 87,
+            "headline": "Oil rises on Iran war uncertainty after Trump's Republicans face election rout - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-04T02:10:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 77,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 81,
             "headline": "US has no immediate plan to strike Iran, Trump tells FT - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-11-03T23:48:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 76,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 79,
-            "headline": "Marathon profit beats estimates on soaring margins; strikes $4.2 billion refinery deal with CVR - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-03T18:26:15+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 73,
-            "headline": "Gulf oil flows dip in October from post-Iran war high, data shows - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-03T15:39:52+00:00",
             "source": "Reuters"
           },
           {
@@ -4229,12 +4249,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
-            "headline": "Syria says it foiled Hezbollah plot to attack Homs oil refinery - Reuters",
+            "freshness_score": 69,
+            "headline": "Marathon profit beats estimates on soaring margins; strikes $4.2 billion refinery deal with CVR - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-11-03T14:30:46+00:00",
+            "published_at": "2026-11-03T18:26:15+00:00",
             "source": "Reuters"
           },
           {
@@ -4249,46 +4269,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 73,
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 64,
-            "headline": "Supermarket fridges are under attack in Europe — here's what's happening",
+            "freshness_score": 62,
+            "headline": "Gulf oil flows dip in October from post-Iran war high, data shows - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-11-03T12:11:01+00:00",
-            "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 70,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 52,
-            "headline": "Iran, US still far apart on deal to end war as Qatar pushes mediation - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-03T06:58:00+00:00",
+            "published_at": "2026-11-03T15:39:52+00:00",
             "source": "Reuters"
           }
         ],
@@ -4311,7 +4304,7 @@
               "event_type": "geopolitical_risk_easing",
               "expected_market_direction": "risk_on",
               "headline": "Oil drops 7% as Iran signals openness to peace talks - Reuters",
-              "importance_score": 96,
+              "importance_score": 95,
               "published_at": "2026-11-03T08:58:12+00:00",
               "source": "Reuters"
             },
@@ -4321,20 +4314,8 @@
               "event_type": "geopolitical_risk_easing",
               "expected_market_direction": "risk_on",
               "headline": "Kremlin confirms trilateral Ukraine peace talks in Abu Dhabi next week - Reuters",
-              "importance_score": 93,
+              "importance_score": 92,
               "published_at": "2026-11-03T09:40:50+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_easing",
-              "expected_market_direction": "risk_on",
-              "headline": "Oil prices ease to settle near 4-week low on hopes peace talks will end wars - Reuters",
-              "importance_score": 94,
-              "published_at": "2026-11-03T01:27:00+00:00",
               "source": "Reuters"
             }
           ],
@@ -4353,13 +4334,49 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "COMMENTARY: Asia hopes Democrats can provide relief from Trump's Iran war, tariffs - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-04T05:02:34+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "One Indian killed in attack on ship near Oman, Indian foreign ministry says - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-04T04:23:34+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Oil rises on Iran war uncertainty after Trump's Republicans face election rout - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-04T02:10:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "US has no immediate plan to strike Iran, Trump tells FT - Reuters",
               "importance_score": 100,
               "published_at": "2026-11-03T23:48:00+00:00",
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -4371,7 +4388,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -4381,50 +4398,14 @@
               "importance_score": 100,
               "published_at": "2026-11-03T15:39:52+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Syria says it foiled Hezbollah plot to attack Homs oil refinery - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-03T14:30:46+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Supermarket fridges are under attack in Europe — here's what's happening",
-              "importance_score": 100,
-              "published_at": "2026-11-03T12:11:01+00:00",
-              "source": "CNBC"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Iran, US still far apart on deal to end war as Qatar pushes mediation - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-03T06:58:00+00:00",
-              "source": "Reuters"
             }
           ]
         },
         "news_direction": "risk_off",
         "prediction_logic_effect": {
-          "after_primary_probability": 0.3423,
+          "after_primary_probability": 0.3424,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.3158,
+          "before_primary_probability": 0.3159,
           "before_primary_scenario": "bearish_path",
           "confirmation_delta": -5.0,
           "impact": "text_support_unconfirmed",
@@ -4456,7 +4437,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0018,
-            "avg_equity_futures_1d_return": -0.0117,
+            "avg_equity_futures_1d_return": -0.0003,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "美元走强"
@@ -4472,7 +4453,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0011,
-            "oil_proxy_1d_return": -0.0015,
+            "oil_proxy_1d_return": 0.0053,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -4508,7 +4489,7 @@
       "path_weight_model": {
         "analog_path_weight": 0.22,
         "base_path_weight": 0.1675,
-        "bearish_path_weight": 0.3423,
+        "bearish_path_weight": 0.3424,
         "bounce_path_weight": 0.2701,
         "low_confidence_simulation": true,
         "news_event_overlay_applied": true,
@@ -4535,12 +4516,12 @@
           "news_event_direction": "supports_risk_expansion",
           "news_event_macro_risk": 0.0,
           "news_event_price_confirmed": 0.0,
-          "news_risk": 0.25,
+          "news_risk": 0.3,
           "options_quality": 0.92,
           "options_stress": 0.8532,
           "panic_release": 0.3224,
           "rates_pressure": 0.1599,
-          "risk_expansion": 0.6918,
+          "risk_expansion": 0.6939,
           "signal_agreement": 0.6,
           "signal_confirmation": 0.54,
           "tail_risk": 0.837,
@@ -4589,7 +4570,7 @@
           "failed_bounce_risk": 0.4189878493498137,
           "historical_support": "supportive",
           "market_edge_status": "WEAK_EDGE",
-          "risk_expansion_probability": 0.6679,
+          "risk_expansion_probability": 0.6719,
           "trend_reversal_probability": 0.5519,
           "up_probability": 0.6392624110508001
         },
@@ -4648,7 +4629,7 @@
           "failed_bounce_risk": 0.4189878493498137,
           "historical_support": "supportive",
           "market_edge_status": "WEAK_EDGE",
-          "risk_expansion_probability": 0.6679,
+          "risk_expansion_probability": 0.6719,
           "trend_reversal_probability": 0.5519,
           "up_probability": 0.6567713927160787
         }
@@ -4749,7 +4730,7 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 1.0,
           "breadth_risk": 0.1957,
-          "confidence": 0.7518,
+          "confidence": 0.7532,
           "credit_risk": 0.5942,
           "crowding_proxy_score": 0.0401,
           "failed_bounce_options_risk": 0.9515,
@@ -4775,8 +4756,8 @@
             "news_event_overlay:+0.025"
           ],
           "options_quality": 0.92,
-          "probability": 0.7168,
-          "risk_expansion_probability": 0.7168,
+          "probability": 0.7189,
+          "risk_expansion_probability": 0.7189,
           "tail_risk_score": 0.837,
           "term_structure_state": "stress",
           "volatility_risk": 0.8532
@@ -4915,7 +4896,7 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 1.0,
           "breadth_risk": 0.1957,
-          "confidence": 0.7518,
+          "confidence": 0.7532,
           "credit_risk": 0.5942,
           "crowding_proxy_score": 0.0401,
           "failed_bounce_options_risk": 0.9515,
@@ -4941,8 +4922,8 @@
             "news_event_overlay:+0.025"
           ],
           "options_quality": 0.92,
-          "probability": 0.7168,
-          "risk_expansion_probability": 0.7168,
+          "probability": 0.7189,
+          "risk_expansion_probability": 0.7189,
           "tail_risk_score": 0.837,
           "term_structure_state": "stress",
           "volatility_risk": 0.8532
@@ -4991,7 +4972,7 @@
             "confidence": "low",
             "expected_horizon": "3d-10d",
             "label": "失败反抽情景",
-            "probability": 0.3423,
+            "probability": 0.3424,
             "reason": "Downside/Risk predictors 为 53%/69%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bearish_path"
           },
@@ -5027,12 +5008,12 @@
           "confidence": "low",
           "expected_horizon": "3d-10d",
           "label": "失败反抽情景",
-          "probability": 0.3423,
+          "probability": 0.3424,
           "reason": "Downside/Risk predictors 为 53%/69%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bearish_path"
         },
         "primary_scenario": "bearish_path",
-        "primary_secondary_gap": 0.0722,
+        "primary_secondary_gap": 0.0723,
         "primary_to_secondary_switch_conditions": [
           "VIX 与新闻方向背离",
           "HYG/LQD 转弱",
@@ -5041,10 +5022,10 @@
           "DIA 重新站上主路径确认价",
           "第二路径 bounce_path 获得多源确认"
         ],
-        "probability_gap": 0.0722,
+        "probability_gap": 0.0723,
         "ranking_note": "Scenario ranking includes a bounded News/Event overlay when a major event or macro calendar risk is detected. It is probabilistic, not deterministic.",
         "risk_scenario": "bearish_path",
-        "scenario_probability": 0.3423,
+        "scenario_probability": 0.3424,
         "secondary": {
           "confidence": "low",
           "expected_horizon": "10d-20d",
@@ -5073,7 +5054,7 @@
       },
       "scenario_weights": {
         "base_scenario": 0.1634,
-        "bearish_scenario": 0.3158,
+        "bearish_scenario": 0.3159,
         "bounce_scenario": 0.293,
         "historical_analog_average": 0.2277
       },
@@ -5368,8 +5349,8 @@
       "analog_path_weight": 0.2223,
       "as_of": "2026-11-03",
       "base_path_weight": 0.187,
-      "bearish_path_weight": 0.3843,
-      "bounce_path_weight": 0.2063,
+      "bearish_path_weight": 0.3845,
+      "bounce_path_weight": 0.2062,
       "bounce_probability": 0.40434541,
       "confluence": {
         "conflicting_evidence": [
@@ -5447,9 +5428,9 @@
         ],
         "not_trading_advice": "This is forecast confirmation only, not a buy/sell/entry/exit or position-sizing recommendation.",
         "primary_label": "失败反抽情景",
-        "primary_probability": 0.3843,
+        "primary_probability": 0.3845,
         "primary_scenario": "bearish_path",
-        "probability_gap": 0.162,
+        "probability_gap": 0.1622,
         "related_price_levels": {
           "primary_confirmation_level": {
             "confidence": "medium",
@@ -5515,7 +5496,7 @@
           {
             "detail": "primary-secondary gap 16.2%",
             "name": "主次路径差距可观察",
-            "score": 16.2,
+            "score": 16.22,
             "source": "scenario_gap"
           },
           {
@@ -5695,10 +5676,10 @@
           "ig_oas_20d_change": 0.09999999999999998
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote 279.79; news risk 25%; macro event risk flagged; rates pressure 16%.",
+          "brief": "Finnhub quote 279.79; news risk 30%; macro event risk flagged; rates pressure 16%.",
           "finnhub_quote_available": true,
           "macro_event_risk_flag": true,
-          "news_risk_score": 0.25,
+          "news_risk_score": 0.3,
           "rates_pressure_score": 0.15989624881277456,
           "symbol": "IWM"
         },
@@ -5765,13 +5746,13 @@
         "news": {
           "market_news_status": "available",
           "news_item_count": 40,
-          "news_risk_score": 0.25,
+          "news_risk_score": 0.3,
           "top_headlines": [
-            "Gold firms on softer oil prices, US midterm results awaited - Reuters",
-            "US has no immediate plan to strike Iran, Trump tells FT - Reuters",
-            "As Americans vote, Trump says US will stop $4 billion in aid to Israel - Reuters",
-            "Election Day: Here is the No. 1 issue we're watching as a signal for stocks",
-            "Ex-Amex CEO shares when business leaders need to speak up about politics: 'You should care about what happens in our society'"
+            "Trump acknowledges Iran role in Democratic sweep - Reuters",
+            "COMMENTARY: Asia hopes Democrats can provide relief from Trump's Iran war, tariffs - Reuters",
+            "One Indian killed in attack on ship near Oman, Indian foreign ministry says - Reuters",
+            "Iran's IRGC says four tankers ablaze after hitting mines near Strait of Hormuz - Reuters",
+            "Market analysts react to US midterm election results - Reuters"
           ]
         },
         "price": {
@@ -6649,7 +6630,7 @@
           "flow_quality": 1.0,
           "internal_resonance": 0.5674,
           "options_quality": 0.92,
-          "predictor_consistency": 0.623,
+          "predictor_consistency": 0.6209,
           "prior_confidence": 0.66,
           "signal_confirmation": 0.36
         },
@@ -6697,66 +6678,93 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
+            "freshness_score": 94,
+            "headline": "COMMENTARY: Asia hopes Democrats can provide relief from Trump's Iran war, tariffs - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-04T05:02:34+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 80,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
             "freshness_score": 92,
+            "headline": "One Indian killed in attack on ship near Oman, Indian foreign ministry says - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-04T04:23:34+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 78,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 87,
+            "headline": "Oil rises on Iran war uncertainty after Trump's Republicans face election rout - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-04T02:10:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 77,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 81,
             "headline": "US has no immediate plan to strike Iran, Trump tells FT - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-11-03T23:48:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 76,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 79,
-            "headline": "Marathon profit beats estimates on soaring margins; strikes $4.2 billion refinery deal with CVR - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-03T18:26:15+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 73,
-            "headline": "Gulf oil flows dip in October from post-Iran war high, data shows - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-03T15:39:52+00:00",
             "source": "Reuters"
           },
           {
@@ -6778,12 +6786,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
-            "headline": "Syria says it foiled Hezbollah plot to attack Homs oil refinery - Reuters",
+            "freshness_score": 69,
+            "headline": "Marathon profit beats estimates on soaring margins; strikes $4.2 billion refinery deal with CVR - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-11-03T14:30:46+00:00",
+            "published_at": "2026-11-03T18:26:15+00:00",
             "source": "Reuters"
           },
           {
@@ -6798,46 +6806,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 73,
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 64,
-            "headline": "Supermarket fridges are under attack in Europe — here's what's happening",
+            "freshness_score": 62,
+            "headline": "Gulf oil flows dip in October from post-Iran war high, data shows - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-11-03T12:11:01+00:00",
-            "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 70,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 52,
-            "headline": "Iran, US still far apart on deal to end war as Qatar pushes mediation - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-03T06:58:00+00:00",
+            "published_at": "2026-11-03T15:39:52+00:00",
             "source": "Reuters"
           }
         ],
@@ -6860,7 +6841,7 @@
               "event_type": "geopolitical_risk_easing",
               "expected_market_direction": "risk_on",
               "headline": "Oil drops 7% as Iran signals openness to peace talks - Reuters",
-              "importance_score": 96,
+              "importance_score": 95,
               "published_at": "2026-11-03T08:58:12+00:00",
               "source": "Reuters"
             },
@@ -6870,20 +6851,8 @@
               "event_type": "geopolitical_risk_easing",
               "expected_market_direction": "risk_on",
               "headline": "Kremlin confirms trilateral Ukraine peace talks in Abu Dhabi next week - Reuters",
-              "importance_score": 93,
+              "importance_score": 92,
               "published_at": "2026-11-03T09:40:50+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_easing",
-              "expected_market_direction": "risk_on",
-              "headline": "Oil prices ease to settle near 4-week low on hopes peace talks will end wars - Reuters",
-              "importance_score": 94,
-              "published_at": "2026-11-03T01:27:00+00:00",
               "source": "Reuters"
             }
           ],
@@ -6902,13 +6871,49 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "COMMENTARY: Asia hopes Democrats can provide relief from Trump's Iran war, tariffs - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-04T05:02:34+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "One Indian killed in attack on ship near Oman, Indian foreign ministry says - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-04T04:23:34+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Oil rises on Iran war uncertainty after Trump's Republicans face election rout - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-04T02:10:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "US has no immediate plan to strike Iran, Trump tells FT - Reuters",
               "importance_score": 100,
               "published_at": "2026-11-03T23:48:00+00:00",
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -6920,7 +6925,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -6930,50 +6935,14 @@
               "importance_score": 100,
               "published_at": "2026-11-03T15:39:52+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Syria says it foiled Hezbollah plot to attack Homs oil refinery - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-03T14:30:46+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Supermarket fridges are under attack in Europe — here's what's happening",
-              "importance_score": 100,
-              "published_at": "2026-11-03T12:11:01+00:00",
-              "source": "CNBC"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Iran, US still far apart on deal to end war as Qatar pushes mediation - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-03T06:58:00+00:00",
-              "source": "Reuters"
             }
           ]
         },
         "news_direction": "risk_off",
         "prediction_logic_effect": {
-          "after_primary_probability": 0.3843,
+          "after_primary_probability": 0.3845,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.3593,
+          "before_primary_probability": 0.3594,
           "before_primary_scenario": "bearish_path",
           "confirmation_delta": -5.0,
           "impact": "text_support_unconfirmed",
@@ -6997,7 +6966,7 @@
             "risk_expansion_predictor": 0.025,
             "trend_reversal_predictor": 0.0
           },
-          "primary_probability_delta": 0.025,
+          "primary_probability_delta": 0.0251,
           "primary_scenario_changed": false,
           "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay",
           "validation_type": "daily"
@@ -7005,7 +6974,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0018,
-            "avg_equity_futures_1d_return": -0.0117,
+            "avg_equity_futures_1d_return": -0.0003,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "美元走强"
@@ -7021,7 +6990,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0011,
-            "oil_proxy_1d_return": -0.0015,
+            "oil_proxy_1d_return": 0.0053,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -7057,8 +7026,8 @@
       "path_weight_model": {
         "analog_path_weight": 0.2223,
         "base_path_weight": 0.187,
-        "bearish_path_weight": 0.3843,
-        "bounce_path_weight": 0.2063,
+        "bearish_path_weight": 0.3845,
+        "bounce_path_weight": 0.2062,
         "low_confidence_simulation": true,
         "news_event_overlay_applied": true,
         "news_event_overlay_note": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay",
@@ -7084,12 +7053,12 @@
           "news_event_direction": "supports_risk_expansion",
           "news_event_macro_risk": 0.0,
           "news_event_price_confirmed": 0.0,
-          "news_risk": 0.25,
+          "news_risk": 0.3,
           "options_quality": 0.92,
           "options_stress": 0.8532,
           "panic_release": 0.3224,
           "rates_pressure": 0.1599,
-          "risk_expansion": 0.7323,
+          "risk_expansion": 0.7344,
           "signal_agreement": 0.45,
           "signal_confirmation": 0.36,
           "tail_risk": 0.837,
@@ -7138,7 +7107,7 @@
           "failed_bounce_risk": 0.5545128224290713,
           "historical_support": "supportive",
           "market_edge_status": "WEAK_EDGE",
-          "risk_expansion_probability": 0.7203,
+          "risk_expansion_probability": 0.7243,
           "trend_reversal_probability": 0.4648,
           "up_probability": 0.5860610875595159
         },
@@ -7197,7 +7166,7 @@
           "failed_bounce_risk": 0.5545128224290713,
           "historical_support": "supportive",
           "market_edge_status": "WEAK_EDGE",
-          "risk_expansion_probability": 0.7203,
+          "risk_expansion_probability": 0.7243,
           "trend_reversal_probability": 0.4648,
           "up_probability": 0.5966119929401065
         }
@@ -7298,7 +7267,7 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 0.64,
           "breadth_risk": 0.3966,
-          "confidence": 0.7701,
+          "confidence": 0.7715,
           "credit_risk": 0.5942,
           "crowding_proxy_score": 0.1473,
           "failed_bounce_options_risk": 0.9515,
@@ -7324,8 +7293,8 @@
             "news_event_overlay:+0.025"
           ],
           "options_quality": 0.92,
-          "probability": 0.7573,
-          "risk_expansion_probability": 0.7573,
+          "probability": 0.7594,
+          "risk_expansion_probability": 0.7594,
           "tail_risk_score": 0.837,
           "term_structure_state": "stress",
           "volatility_risk": 0.8532
@@ -7464,7 +7433,7 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 0.64,
           "breadth_risk": 0.3966,
-          "confidence": 0.7701,
+          "confidence": 0.7715,
           "credit_risk": 0.5942,
           "crowding_proxy_score": 0.1473,
           "failed_bounce_options_risk": 0.9515,
@@ -7490,8 +7459,8 @@
             "news_event_overlay:+0.025"
           ],
           "options_quality": 0.92,
-          "probability": 0.7573,
-          "risk_expansion_probability": 0.7573,
+          "probability": 0.7594,
+          "risk_expansion_probability": 0.7594,
           "tail_risk_score": 0.837,
           "term_structure_state": "stress",
           "volatility_risk": 0.8532
@@ -7540,7 +7509,7 @@
             "confidence": "low",
             "expected_horizon": "3d-10d",
             "label": "失败反抽情景",
-            "probability": 0.3843,
+            "probability": 0.3845,
             "reason": "Downside/Risk predictors 为 62%/73%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bearish_path"
           },
@@ -7556,7 +7525,7 @@
             "confidence": "low",
             "expected_horizon": "10d-20d",
             "label": "反抽情景",
-            "probability": 0.2063,
+            "probability": 0.2062,
             "reason": "Bounce Predictor 36%，多源确认 36/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bounce_path"
           },
@@ -7576,12 +7545,12 @@
           "confidence": "low",
           "expected_horizon": "3d-10d",
           "label": "失败反抽情景",
-          "probability": 0.3843,
+          "probability": 0.3845,
           "reason": "Downside/Risk predictors 为 62%/73%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bearish_path"
         },
         "primary_scenario": "bearish_path",
-        "primary_secondary_gap": 0.162,
+        "primary_secondary_gap": 0.1622,
         "primary_to_secondary_switch_conditions": [
           "VIX 与新闻方向背离",
           "HYG/LQD 转弱",
@@ -7590,10 +7559,10 @@
           "IWM 重新站上主路径确认价",
           "第二路径 analog_average_path 获得多源确认"
         ],
-        "probability_gap": 0.162,
+        "probability_gap": 0.1622,
         "ranking_note": "Scenario ranking includes a bounded News/Event overlay when a major event or macro calendar risk is detected. It is probabilistic, not deterministic.",
         "risk_scenario": "bearish_path",
-        "scenario_probability": 0.3843,
+        "scenario_probability": 0.3845,
         "secondary": {
           "confidence": "low",
           "expected_horizon": "20d-60d",
@@ -7615,15 +7584,15 @@
           "confidence": "low",
           "expected_horizon": "10d-20d",
           "label": "反抽情景",
-          "probability": 0.2063,
+          "probability": 0.2062,
           "reason": "Bounce Predictor 36%，多源确认 36/100，20d/60d historical support 为 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bounce_path"
         }
       },
       "scenario_weights": {
-        "base_scenario": 0.1836,
-        "bearish_scenario": 0.3593,
-        "bounce_scenario": 0.227,
+        "base_scenario": 0.1835,
+        "bearish_scenario": 0.3594,
+        "bounce_scenario": 0.2269,
         "historical_analog_average": 0.2301
       },
       "shadow_evidence_v1": {
@@ -7913,10 +7882,10 @@
       "trend_reversal_probability": 0.39378939791589945
     },
     "QQQ": {
-      "analog_path_weight": 0.2323,
+      "analog_path_weight": 0.2322,
       "as_of": "2026-11-03",
       "base_path_weight": 0.1724,
-      "bearish_path_weight": 0.4617,
+      "bearish_path_weight": 0.4618,
       "bounce_path_weight": 0.1336,
       "bounce_probability": 0.38471703,
       "confluence": {
@@ -8019,9 +7988,9 @@
         ],
         "not_trading_advice": "This is forecast confirmation only, not a buy/sell/entry/exit or position-sizing recommendation.",
         "primary_label": "失败反抽情景",
-        "primary_probability": 0.4617,
+        "primary_probability": 0.4618,
         "primary_scenario": "bearish_path",
-        "probability_gap": 0.2294,
+        "probability_gap": 0.2296,
         "related_price_levels": {
           "primary_confirmation_level": {
             "confidence": "medium",
@@ -8056,7 +8025,7 @@
             "source_type": "price_structure"
           }
         },
-        "secondary_probability": 0.2323,
+        "secondary_probability": 0.2322,
         "secondary_scenario": "analog_average_path",
         "strong_conclusion_allowed": false,
         "supporting_evidence": [
@@ -8091,9 +8060,9 @@
             "source": "news"
           },
           {
-            "detail": "primary-secondary gap 22.9%",
+            "detail": "primary-secondary gap 23.0%",
             "name": "主次路径差距可观察",
-            "score": 22.94,
+            "score": 22.96,
             "source": "scenario_gap"
           },
           {
@@ -8267,10 +8236,10 @@
           "ig_oas_20d_change": 0.09999999999999998
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote 685.28; news risk 25%; macro event risk flagged; rates pressure 16%.",
+          "brief": "Finnhub quote 685.28; news risk 30%; macro event risk flagged; rates pressure 16%.",
           "finnhub_quote_available": true,
           "macro_event_risk_flag": true,
-          "news_risk_score": 0.25,
+          "news_risk_score": 0.3,
           "rates_pressure_score": 0.15989624881277456,
           "symbol": "QQQ"
         },
@@ -8337,13 +8306,13 @@
         "news": {
           "market_news_status": "available",
           "news_item_count": 40,
-          "news_risk_score": 0.25,
+          "news_risk_score": 0.3,
           "top_headlines": [
-            "Gold firms on softer oil prices, US midterm results awaited - Reuters",
-            "US has no immediate plan to strike Iran, Trump tells FT - Reuters",
-            "As Americans vote, Trump says US will stop $4 billion in aid to Israel - Reuters",
-            "Election Day: Here is the No. 1 issue we're watching as a signal for stocks",
-            "Ex-Amex CEO shares when business leaders need to speak up about politics: 'You should care about what happens in our society'"
+            "Trump acknowledges Iran role in Democratic sweep - Reuters",
+            "COMMENTARY: Asia hopes Democrats can provide relief from Trump's Iran war, tariffs - Reuters",
+            "One Indian killed in attack on ship near Oman, Indian foreign ministry says - Reuters",
+            "Iran's IRGC says four tankers ablaze after hitting mines near Strait of Hormuz - Reuters",
+            "Market analysts react to US midterm election results - Reuters"
           ]
         },
         "price": {
@@ -9276,66 +9245,93 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
+            "freshness_score": 94,
+            "headline": "COMMENTARY: Asia hopes Democrats can provide relief from Trump's Iran war, tariffs - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-04T05:02:34+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 80,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
             "freshness_score": 92,
+            "headline": "One Indian killed in attack on ship near Oman, Indian foreign ministry says - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-04T04:23:34+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 78,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 87,
+            "headline": "Oil rises on Iran war uncertainty after Trump's Republicans face election rout - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-04T02:10:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 77,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 81,
             "headline": "US has no immediate plan to strike Iran, Trump tells FT - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-11-03T23:48:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 76,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 79,
-            "headline": "Marathon profit beats estimates on soaring margins; strikes $4.2 billion refinery deal with CVR - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-03T18:26:15+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 73,
-            "headline": "Gulf oil flows dip in October from post-Iran war high, data shows - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-03T15:39:52+00:00",
             "source": "Reuters"
           },
           {
@@ -9357,12 +9353,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
-            "headline": "Syria says it foiled Hezbollah plot to attack Homs oil refinery - Reuters",
+            "freshness_score": 69,
+            "headline": "Marathon profit beats estimates on soaring margins; strikes $4.2 billion refinery deal with CVR - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-11-03T14:30:46+00:00",
+            "published_at": "2026-11-03T18:26:15+00:00",
             "source": "Reuters"
           },
           {
@@ -9377,46 +9373,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 73,
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 64,
-            "headline": "Supermarket fridges are under attack in Europe — here's what's happening",
+            "freshness_score": 62,
+            "headline": "Gulf oil flows dip in October from post-Iran war high, data shows - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-11-03T12:11:01+00:00",
-            "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 70,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 52,
-            "headline": "Iran, US still far apart on deal to end war as Qatar pushes mediation - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-03T06:58:00+00:00",
+            "published_at": "2026-11-03T15:39:52+00:00",
             "source": "Reuters"
           }
         ],
@@ -9439,7 +9408,7 @@
               "event_type": "geopolitical_risk_easing",
               "expected_market_direction": "risk_on",
               "headline": "Oil drops 7% as Iran signals openness to peace talks - Reuters",
-              "importance_score": 96,
+              "importance_score": 95,
               "published_at": "2026-11-03T08:58:12+00:00",
               "source": "Reuters"
             },
@@ -9449,20 +9418,8 @@
               "event_type": "geopolitical_risk_easing",
               "expected_market_direction": "risk_on",
               "headline": "Kremlin confirms trilateral Ukraine peace talks in Abu Dhabi next week - Reuters",
-              "importance_score": 93,
+              "importance_score": 92,
               "published_at": "2026-11-03T09:40:50+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_easing",
-              "expected_market_direction": "risk_on",
-              "headline": "Oil prices ease to settle near 4-week low on hopes peace talks will end wars - Reuters",
-              "importance_score": 94,
-              "published_at": "2026-11-03T01:27:00+00:00",
               "source": "Reuters"
             }
           ],
@@ -9481,13 +9438,49 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "COMMENTARY: Asia hopes Democrats can provide relief from Trump's Iran war, tariffs - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-04T05:02:34+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "One Indian killed in attack on ship near Oman, Indian foreign ministry says - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-04T04:23:34+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Oil rises on Iran war uncertainty after Trump's Republicans face election rout - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-04T02:10:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "US has no immediate plan to strike Iran, Trump tells FT - Reuters",
               "importance_score": 100,
               "published_at": "2026-11-03T23:48:00+00:00",
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -9499,7 +9492,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -9509,50 +9502,14 @@
               "importance_score": 100,
               "published_at": "2026-11-03T15:39:52+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Syria says it foiled Hezbollah plot to attack Homs oil refinery - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-03T14:30:46+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Supermarket fridges are under attack in Europe — here's what's happening",
-              "importance_score": 100,
-              "published_at": "2026-11-03T12:11:01+00:00",
-              "source": "CNBC"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Iran, US still far apart on deal to end war as Qatar pushes mediation - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-03T06:58:00+00:00",
-              "source": "Reuters"
             }
           ]
         },
         "news_direction": "risk_off",
         "prediction_logic_effect": {
-          "after_primary_probability": 0.4617,
+          "after_primary_probability": 0.4618,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.4394,
+          "before_primary_probability": 0.4395,
           "before_primary_scenario": "bearish_path",
           "confirmation_delta": -5.0,
           "impact": "text_support_unconfirmed",
@@ -9584,7 +9541,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0018,
-            "avg_equity_futures_1d_return": -0.0117,
+            "avg_equity_futures_1d_return": -0.0003,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "美元走强"
@@ -9600,7 +9557,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0011,
-            "oil_proxy_1d_return": -0.0015,
+            "oil_proxy_1d_return": 0.0053,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -9634,9 +9591,9 @@
         "validation_type": "daily"
       },
       "path_weight_model": {
-        "analog_path_weight": 0.2323,
+        "analog_path_weight": 0.2322,
         "base_path_weight": 0.1724,
-        "bearish_path_weight": 0.4617,
+        "bearish_path_weight": 0.4618,
         "bounce_path_weight": 0.1336,
         "low_confidence_simulation": true,
         "news_event_overlay_applied": true,
@@ -9663,12 +9620,12 @@
           "news_event_direction": "supports_risk_expansion",
           "news_event_macro_risk": 0.0,
           "news_event_price_confirmed": 0.0,
-          "news_risk": 0.25,
+          "news_risk": 0.3,
           "options_quality": 0.92,
           "options_stress": 0.8532,
           "panic_release": 0.3224,
           "rates_pressure": 0.1599,
-          "risk_expansion": 0.7457,
+          "risk_expansion": 0.7478,
           "signal_agreement": 0.34,
           "signal_confirmation": 0.0,
           "tail_risk": 0.837,
@@ -9717,7 +9674,7 @@
           "failed_bounce_risk": 0.3848907807748032,
           "historical_support": "supportive",
           "market_edge_status": "WEAK_EDGE",
-          "risk_expansion_probability": 0.7236,
+          "risk_expansion_probability": 0.7276,
           "trend_reversal_probability": 0.4616,
           "up_probability": 0.6427200373015014
         },
@@ -9776,7 +9733,7 @@
           "failed_bounce_risk": 0.3848907807748032,
           "historical_support": "supportive",
           "market_edge_status": "WEAK_EDGE",
-          "risk_expansion_probability": 0.7236,
+          "risk_expansion_probability": 0.7276,
           "trend_reversal_probability": 0.4616,
           "up_probability": 0.6545313303138013
         }
@@ -9887,7 +9844,7 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 0.04,
           "breadth_risk": 0.6907,
-          "confidence": 0.7712,
+          "confidence": 0.7726,
           "credit_risk": 0.5942,
           "crowding_proxy_score": 0.0463,
           "failed_bounce_options_risk": 0.9515,
@@ -9913,8 +9870,8 @@
             "news_event_overlay:+0.025"
           ],
           "options_quality": 0.92,
-          "probability": 0.7707,
-          "risk_expansion_probability": 0.7707,
+          "probability": 0.7728,
+          "risk_expansion_probability": 0.7728,
           "tail_risk_score": 0.837,
           "term_structure_state": "stress",
           "volatility_risk": 0.8532
@@ -10063,7 +10020,7 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 0.04,
           "breadth_risk": 0.6907,
-          "confidence": 0.7712,
+          "confidence": 0.7726,
           "credit_risk": 0.5942,
           "crowding_proxy_score": 0.0463,
           "failed_bounce_options_risk": 0.9515,
@@ -10089,8 +10046,8 @@
             "news_event_overlay:+0.025"
           ],
           "options_quality": 0.92,
-          "probability": 0.7707,
-          "risk_expansion_probability": 0.7707,
+          "probability": 0.7728,
+          "risk_expansion_probability": 0.7728,
           "tail_risk_score": 0.837,
           "term_structure_state": "stress",
           "volatility_risk": 0.8532
@@ -10139,7 +10096,7 @@
             "confidence": "low",
             "expected_horizon": "3d-10d",
             "label": "失败反抽情景",
-            "probability": 0.4617,
+            "probability": 0.4618,
             "reason": "Downside/Risk predictors 为 78%/75%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bearish_path"
           },
@@ -10147,7 +10104,7 @@
             "confidence": "low",
             "expected_horizon": "20d-60d",
             "label": "历史均值情景",
-            "probability": 0.2323,
+            "probability": 0.2322,
             "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "analog_average_path"
           },
@@ -10175,12 +10132,12 @@
           "confidence": "low",
           "expected_horizon": "3d-10d",
           "label": "失败反抽情景",
-          "probability": 0.4617,
+          "probability": 0.4618,
           "reason": "Downside/Risk predictors 为 78%/75%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bearish_path"
         },
         "primary_scenario": "bearish_path",
-        "primary_secondary_gap": 0.2294,
+        "primary_secondary_gap": 0.2296,
         "primary_to_secondary_switch_conditions": [
           "VIX 与新闻方向背离",
           "HYG/LQD 转弱",
@@ -10189,15 +10146,15 @@
           "QQQ 重新站上主路径确认价",
           "第二路径 analog_average_path 获得多源确认"
         ],
-        "probability_gap": 0.2294,
+        "probability_gap": 0.2296,
         "ranking_note": "Scenario ranking includes a bounded News/Event overlay when a major event or macro calendar risk is detected. It is probabilistic, not deterministic.",
         "risk_scenario": "bearish_path",
-        "scenario_probability": 0.4617,
+        "scenario_probability": 0.4618,
         "secondary": {
           "confidence": "low",
           "expected_horizon": "20d-60d",
           "label": "历史均值情景",
-          "probability": 0.2323,
+          "probability": 0.2322,
           "reason": "历史相似样本质量 high，样本数 20，中期支持 supportive。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "analog_average_path"
         },
@@ -10221,9 +10178,9 @@
       },
       "scenario_weights": {
         "base_scenario": 0.1684,
-        "bearish_scenario": 0.4394,
+        "bearish_scenario": 0.4395,
         "bounce_scenario": 0.1518,
-        "historical_analog_average": 0.2404
+        "historical_analog_average": 0.2403
       },
       "shadow_evidence_v1": {
         "alert_status_by_type": {
@@ -10529,8 +10486,8 @@
     "SPY": {
       "analog_path_weight": 0.232,
       "as_of": "2026-11-03",
-      "base_path_weight": 0.1677,
-      "bearish_path_weight": 0.3302,
+      "base_path_weight": 0.1676,
+      "bearish_path_weight": 0.3304,
       "bounce_path_weight": 0.27,
       "bounce_probability": 0.59293002,
       "confluence": {
@@ -10586,7 +10543,7 @@
           {
             "detail": "路径分歧较大，不宜给强结论。",
             "name": "主次路径差距小",
-            "score": 6.02,
+            "score": 6.04,
             "source": "scenario_gap"
           }
         ],
@@ -10615,9 +10572,9 @@
         ],
         "not_trading_advice": "This is forecast confirmation only, not a buy/sell/entry/exit or position-sizing recommendation.",
         "primary_label": "失败反抽情景",
-        "primary_probability": 0.3302,
+        "primary_probability": 0.3304,
         "primary_scenario": "bearish_path",
-        "probability_gap": 0.0602,
+        "probability_gap": 0.0604,
         "related_price_levels": {
           "primary_confirmation_level": {
             "confidence": "medium",
@@ -10869,10 +10826,10 @@
           "ig_oas_20d_change": 0.09999999999999998
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote 754.35; news risk 25%; macro event risk flagged; rates pressure 16%.",
+          "brief": "Finnhub quote 754.35; news risk 30%; macro event risk flagged; rates pressure 16%.",
           "finnhub_quote_available": true,
           "macro_event_risk_flag": true,
-          "news_risk_score": 0.25,
+          "news_risk_score": 0.3,
           "rates_pressure_score": 0.15989624881277456,
           "symbol": "SPY"
         },
@@ -10939,13 +10896,13 @@
         "news": {
           "market_news_status": "available",
           "news_item_count": 40,
-          "news_risk_score": 0.25,
+          "news_risk_score": 0.3,
           "top_headlines": [
-            "Gold firms on softer oil prices, US midterm results awaited - Reuters",
-            "US has no immediate plan to strike Iran, Trump tells FT - Reuters",
-            "As Americans vote, Trump says US will stop $4 billion in aid to Israel - Reuters",
-            "Election Day: Here is the No. 1 issue we're watching as a signal for stocks",
-            "Ex-Amex CEO shares when business leaders need to speak up about politics: 'You should care about what happens in our society'"
+            "Trump acknowledges Iran role in Democratic sweep - Reuters",
+            "COMMENTARY: Asia hopes Democrats can provide relief from Trump's Iran war, tariffs - Reuters",
+            "One Indian killed in attack on ship near Oman, Indian foreign ministry says - Reuters",
+            "Iran's IRGC says four tankers ablaze after hitting mines near Strait of Hormuz - Reuters",
+            "Market analysts react to US midterm election results - Reuters"
           ]
         },
         "price": {
@@ -11879,66 +11836,93 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
+            "freshness_score": 94,
+            "headline": "COMMENTARY: Asia hopes Democrats can provide relief from Trump's Iran war, tariffs - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-04T05:02:34+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 80,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
             "freshness_score": 92,
+            "headline": "One Indian killed in attack on ship near Oman, Indian foreign ministry says - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-04T04:23:34+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 78,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 87,
+            "headline": "Oil rises on Iran war uncertainty after Trump's Republicans face election rout - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-04T02:10:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 77,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 81,
             "headline": "US has no immediate plan to strike Iran, Trump tells FT - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-11-03T23:48:00+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 76,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 79,
-            "headline": "Marathon profit beats estimates on soaring margins; strikes $4.2 billion refinery deal with CVR - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-03T18:26:15+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 75,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 73,
-            "headline": "Gulf oil flows dip in October from post-Iran war high, data shows - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-03T15:39:52+00:00",
             "source": "Reuters"
           },
           {
@@ -11960,12 +11944,12 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
-            "headline": "Syria says it foiled Hezbollah plot to attack Homs oil refinery - Reuters",
+            "freshness_score": 69,
+            "headline": "Marathon profit beats estimates on soaring margins; strikes $4.2 billion refinery deal with CVR - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-11-03T14:30:46+00:00",
+            "published_at": "2026-11-03T18:26:15+00:00",
             "source": "Reuters"
           },
           {
@@ -11980,46 +11964,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 73,
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 64,
-            "headline": "Supermarket fridges are under attack in Europe — here's what's happening",
+            "freshness_score": 62,
+            "headline": "Gulf oil flows dip in October from post-Iran war high, data shows - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-11-03T12:11:01+00:00",
-            "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 70,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 52,
-            "headline": "Iran, US still far apart on deal to end war as Qatar pushes mediation - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-03T06:58:00+00:00",
+            "published_at": "2026-11-03T15:39:52+00:00",
             "source": "Reuters"
           }
         ],
@@ -12042,7 +11999,7 @@
               "event_type": "geopolitical_risk_easing",
               "expected_market_direction": "risk_on",
               "headline": "Oil drops 7% as Iran signals openness to peace talks - Reuters",
-              "importance_score": 96,
+              "importance_score": 95,
               "published_at": "2026-11-03T08:58:12+00:00",
               "source": "Reuters"
             },
@@ -12052,20 +12009,8 @@
               "event_type": "geopolitical_risk_easing",
               "expected_market_direction": "risk_on",
               "headline": "Kremlin confirms trilateral Ukraine peace talks in Abu Dhabi next week - Reuters",
-              "importance_score": 93,
+              "importance_score": 92,
               "published_at": "2026-11-03T09:40:50+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_easing",
-              "expected_market_direction": "risk_on",
-              "headline": "Oil prices ease to settle near 4-week low on hopes peace talks will end wars - Reuters",
-              "importance_score": 94,
-              "published_at": "2026-11-03T01:27:00+00:00",
               "source": "Reuters"
             }
           ],
@@ -12084,13 +12029,49 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "COMMENTARY: Asia hopes Democrats can provide relief from Trump's Iran war, tariffs - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-04T05:02:34+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "One Indian killed in attack on ship near Oman, Indian foreign ministry says - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-04T04:23:34+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Oil rises on Iran war uncertainty after Trump's Republicans face election rout - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-04T02:10:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "US has no immediate plan to strike Iran, Trump tells FT - Reuters",
               "importance_score": 100,
               "published_at": "2026-11-03T23:48:00+00:00",
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -12102,7 +12083,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -12112,50 +12093,14 @@
               "importance_score": 100,
               "published_at": "2026-11-03T15:39:52+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Syria says it foiled Hezbollah plot to attack Homs oil refinery - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-03T14:30:46+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Supermarket fridges are under attack in Europe — here's what's happening",
-              "importance_score": 100,
-              "published_at": "2026-11-03T12:11:01+00:00",
-              "source": "CNBC"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Iran, US still far apart on deal to end war as Qatar pushes mediation - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-03T06:58:00+00:00",
-              "source": "Reuters"
             }
           ]
         },
         "news_direction": "risk_off",
         "prediction_logic_effect": {
-          "after_primary_probability": 0.3302,
+          "after_primary_probability": 0.3304,
           "after_primary_scenario": "bearish_path",
-          "before_primary_probability": 0.3033,
+          "before_primary_probability": 0.3034,
           "before_primary_scenario": "bearish_path",
           "confirmation_delta": -5.0,
           "impact": "text_support_unconfirmed",
@@ -12179,7 +12124,7 @@
             "risk_expansion_predictor": 0.025,
             "trend_reversal_predictor": 0.0
           },
-          "primary_probability_delta": 0.0269,
+          "primary_probability_delta": 0.027,
           "primary_scenario_changed": false,
           "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay",
           "validation_type": "daily"
@@ -12187,7 +12132,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0018,
-            "avg_equity_futures_1d_return": -0.0117,
+            "avg_equity_futures_1d_return": -0.0003,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "美元走强"
@@ -12203,7 +12148,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0011,
-            "oil_proxy_1d_return": -0.0015,
+            "oil_proxy_1d_return": 0.0053,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -12238,8 +12183,8 @@
       },
       "path_weight_model": {
         "analog_path_weight": 0.232,
-        "base_path_weight": 0.1677,
-        "bearish_path_weight": 0.3302,
+        "base_path_weight": 0.1676,
+        "bearish_path_weight": 0.3304,
         "bounce_path_weight": 0.27,
         "low_confidence_simulation": true,
         "news_event_overlay_applied": true,
@@ -12266,12 +12211,12 @@
           "news_event_direction": "supports_risk_expansion",
           "news_event_macro_risk": 0.0,
           "news_event_price_confirmed": 0.0,
-          "news_risk": 0.25,
+          "news_risk": 0.3,
           "options_quality": 0.92,
           "options_stress": 0.8532,
           "panic_release": 0.3224,
           "rates_pressure": 0.1599,
-          "risk_expansion": 0.6865,
+          "risk_expansion": 0.6886,
           "signal_agreement": 0.73,
           "signal_confirmation": 0.49,
           "tail_risk": 0.837,
@@ -12320,7 +12265,7 @@
           "failed_bounce_risk": 0.34607291106247495,
           "historical_support": "supportive",
           "market_edge_status": "MODERATE_EDGE",
-          "risk_expansion_probability": 0.6533,
+          "risk_expansion_probability": 0.6573,
           "trend_reversal_probability": 0.6001,
           "up_probability": 0.6636043217530333
         },
@@ -12379,7 +12324,7 @@
           "failed_bounce_risk": 0.34607291106247495,
           "historical_support": "supportive",
           "market_edge_status": "MODERATE_EDGE",
-          "risk_expansion_probability": 0.6533,
+          "risk_expansion_probability": 0.6573,
           "trend_reversal_probability": 0.6001,
           "up_probability": 0.6971054227348643
         }
@@ -12480,7 +12425,7 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 1.0,
           "breadth_risk": 0.2234,
-          "confidence": 0.7466,
+          "confidence": 0.748,
           "credit_risk": 0.5942,
           "crowding_proxy_score": 0.0714,
           "failed_bounce_options_risk": 0.9515,
@@ -12506,8 +12451,8 @@
             "news_event_overlay:+0.025"
           ],
           "options_quality": 0.92,
-          "probability": 0.7115,
-          "risk_expansion_probability": 0.7115,
+          "probability": 0.7136,
+          "risk_expansion_probability": 0.7136,
           "tail_risk_score": 0.837,
           "term_structure_state": "stress",
           "volatility_risk": 0.8532
@@ -12646,7 +12591,7 @@
           "best_horizon": "20d-60d",
           "breadth_quality": 1.0,
           "breadth_risk": 0.2234,
-          "confidence": 0.7466,
+          "confidence": 0.748,
           "credit_risk": 0.5942,
           "crowding_proxy_score": 0.0714,
           "failed_bounce_options_risk": 0.9515,
@@ -12672,8 +12617,8 @@
             "news_event_overlay:+0.025"
           ],
           "options_quality": 0.92,
-          "probability": 0.7115,
-          "risk_expansion_probability": 0.7115,
+          "probability": 0.7136,
+          "risk_expansion_probability": 0.7136,
           "tail_risk_score": 0.837,
           "term_structure_state": "stress",
           "volatility_risk": 0.8532
@@ -12722,7 +12667,7 @@
             "confidence": "low",
             "expected_horizon": "3d-10d",
             "label": "失败反抽情景",
-            "probability": 0.3302,
+            "probability": 0.3304,
             "reason": "Downside/Risk predictors 为 52%/69%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "bearish_path"
           },
@@ -12746,7 +12691,7 @@
             "confidence": "low",
             "expected_horizon": "3d-20d",
             "label": "综合期望情景",
-            "probability": 0.1677,
+            "probability": 0.1676,
             "reason": "综合期望用于平衡反抽、失败反抽、历史均值和数据不完整带来的不确定性。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
             "scenario": "expected_path"
           }
@@ -12758,12 +12703,12 @@
           "confidence": "low",
           "expected_horizon": "3d-10d",
           "label": "失败反抽情景",
-          "probability": 0.3302,
+          "probability": 0.3304,
           "reason": "Downside/Risk predictors 为 52%/69%，若波动率、信用或价格低点恶化，反抽会失败。 News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay. News/Event overlay: risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay.",
           "scenario": "bearish_path"
         },
         "primary_scenario": "bearish_path",
-        "primary_secondary_gap": 0.0602,
+        "primary_secondary_gap": 0.0604,
         "primary_to_secondary_switch_conditions": [
           "VIX 与新闻方向背离",
           "HYG/LQD 转弱",
@@ -12772,10 +12717,10 @@
           "SPY 重新站上主路径确认价",
           "第二路径 bounce_path 获得多源确认"
         ],
-        "probability_gap": 0.0602,
+        "probability_gap": 0.0604,
         "ranking_note": "Scenario ranking includes a bounded News/Event overlay when a major event or macro calendar risk is detected. It is probabilistic, not deterministic.",
         "risk_scenario": "bearish_path",
-        "scenario_probability": 0.3302,
+        "scenario_probability": 0.3304,
         "secondary": {
           "confidence": "low",
           "expected_horizon": "10d-20d",
@@ -12803,10 +12748,10 @@
         }
       },
       "scenario_weights": {
-        "base_scenario": 0.1636,
-        "bearish_scenario": 0.3033,
-        "bounce_scenario": 0.293,
-        "historical_analog_average": 0.2402
+        "base_scenario": 0.1635,
+        "bearish_scenario": 0.3034,
+        "bounce_scenario": 0.2929,
+        "historical_analog_average": 0.2401
       },
       "shadow_evidence_v1": {
         "alert_status_by_type": {
