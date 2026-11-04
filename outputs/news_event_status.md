@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-04T11:35:45.880121+00:00`
+- generated_at: `2026-11-04T19:50:11.175794+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `11`
-- event_detection_confidence: `74`
+- major_event_count: `8`
+- event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,80 +27,64 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Trump acknowledges role of Iran war in Democratic sweep in midterm elections - Reuters
+- headline: Trump says Republicans harmed by Iran war, inability to 'transfer the love' for him - Reuters
 - source: Reuters
-- published_at: `2026-11-04T05:17:00+00:00`
+- published_at: `2026-11-04T18:37:19+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: COMMENTARY: Asia hopes Democrats can provide relief from Trump's Iran war, tariffs - Reuters
+- headline: Vance repudiates Iran war after US electoral defeat - Reuters
 - source: Reuters
-- published_at: `2026-11-04T04:50:06+00:00`
+- published_at: `2026-11-04T17:51:52+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: One Indian killed in attack on ship near Oman, Indian foreign ministry says - Reuters
+- headline: European far right distances itself from Trump, blaming Iran war for Republicans' defeat - Reuters
 - source: Reuters
-- published_at: `2026-11-04T04:23:34+00:00`
+- published_at: `2026-11-04T17:16:41+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil falls on Iran war uncertainty, US Democrats' midterm sweep - Reuters
+- headline: Turkey's parliament set to ratify defence pact with Saudi Arabia, Pakistan as Houthi attacks mount - Reuters
 - source: Reuters
-- published_at: `2026-11-04T02:10:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### market_futures_risk_on / risk_on
-
-- headline: US stock futures rise as investors assess Democrats' midterm sweep - Reuters
-- source: Reuters
-- published_at: `2026-11-04T10:02:44+00:00`
-- importance_score: `90`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US has no immediate plan to strike Iran, Trump tells FT - Reuters
-- source: Reuters
-- published_at: `2026-11-03T23:48:00+00:00`
+- published_at: `2026-11-04T14:09:44+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Marathon profit beats estimates on soaring margins; strikes $4.2 billion refinery deal with CVR - Reuters
+- headline: Ukrainian drone strike sets fire to hub of e-retailer Ozon in southern Russia - Reuters
 - source: Reuters
-- published_at: `2026-11-03T18:26:15+00:00`
+- published_at: `2026-11-04T13:44:23+00:00`
 - importance_score: `100`
-- confidence: `medium`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Gulf oil flows dip in October from post-Iran war high, data shows - Reuters
+- headline: Hungary opens communist-era informer files in belated reckoning with Cold War past - Reuters
 - source: Reuters
-- published_at: `2026-11-03T15:36:00+00:00`
+- published_at: `2026-11-04T11:53:43+00:00`
 - importance_score: `100`
-- confidence: `medium`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Syria says it foiled Hezbollah plot to attack Homs oil refinery - Reuters
+- headline: India's IndiGo may fast-track some overseas growth as westward flights disrupted - Reuters
 - source: Reuters
-- published_at: `2026-11-03T14:30:46+00:00`
+- published_at: `2026-11-04T11:31:04+00:00`
 - importance_score: `100`
-- confidence: `medium`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Supermarket fridges are under attack in Europe — here's what's happening
-- source: CNBC
-- published_at: `2026-11-03T12:11:01+00:00`
+- headline: Drones attack Iranian Kurdish opposition in Iraq's Sulaymaniyah and east Erbil, sources say - Reuters
+- source: Reuters
+- published_at: `2026-11-04T07:56:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
