@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-04T00:44:39.213645+00:00`
+- generated_at: `2026-11-04T02:48:20.200793+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `11`
+- major_event_count: `12`
 - event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -27,6 +27,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: US has no immediate plan to strike Iran, Trump tells FT - Reuters
+- source: Reuters
+- published_at: `2026-11-03T23:48:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Marathon profit beats estimates on soaring margins; strikes $4.2 billion refinery deal with CVR - Reuters
 - source: Reuters
 - published_at: `2026-11-03T18:26:15+00:00`
@@ -47,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-11-03T14:30:46+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -89,18 +97,10 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
+### geopolitical_risk_easing / risk_on
 
-- headline: US carries out 'defensive' strikes on Iran's Qeshm Island, officials say - Reuters
+- headline: Kremlin confirms trilateral Ukraine peace talks in Abu Dhabi next week - Reuters
 - source: Reuters
-- published_at: `2026-11-03T01:05:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump raises doubts about renewed attacks on Iran - Reuters
-- source: Reuters
-- published_at: `2026-11-02T20:56:00+00:00`
-- importance_score: `100`
+- published_at: `2026-11-03T09:40:50+00:00`
+- importance_score: `93`
 - confidence: `medium`
