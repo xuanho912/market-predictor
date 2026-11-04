@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-04T07:32:37.641251+00:00`
+- generated_at: `2026-11-04T11:35:45.880121+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `11`
-- event_detection_confidence: `73`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `50`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
@@ -27,9 +27,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Trump acknowledges role of Iran war in Democratic sweep in midterm elections - Reuters
+- source: Reuters
+- published_at: `2026-11-04T05:17:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: COMMENTARY: Asia hopes Democrats can provide relief from Trump's Iran war, tariffs - Reuters
 - source: Reuters
-- published_at: `2026-11-04T05:02:34+00:00`
+- published_at: `2026-11-04T04:50:06+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -43,10 +51,18 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil rises on Iran war uncertainty after Trump's Republicans face election rout - Reuters
+- headline: Oil falls on Iran war uncertainty, US Democrats' midterm sweep - Reuters
 - source: Reuters
 - published_at: `2026-11-04T02:10:00+00:00`
 - importance_score: `100`
+- confidence: `high`
+
+### market_futures_risk_on / risk_on
+
+- headline: US stock futures rise as investors assess Democrats' midterm sweep - Reuters
+- source: Reuters
+- published_at: `2026-11-04T10:02:44+00:00`
+- importance_score: `90`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -69,7 +85,7 @@
 
 - headline: Gulf oil flows dip in October from post-Iran war high, data shows - Reuters
 - source: Reuters
-- published_at: `2026-11-03T15:39:52+00:00`
+- published_at: `2026-11-03T15:36:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -87,20 +103,4 @@
 - source: CNBC
 - published_at: `2026-11-03T12:11:01+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran, US still far apart on deal; Trump says ready but in no hurry for strikes - Reuters
-- source: Reuters
-- published_at: `2026-11-03T06:58:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Oil drops 7% as Iran signals openness to peace talks - Reuters
-- source: Reuters
-- published_at: `2026-11-03T08:58:12+00:00`
-- importance_score: `95`
 - confidence: `medium`

@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-11-04T07:32:49.122741+00:00`
+Generated at: `2026-11-04T11:35:58.065666+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -54,9 +54,9 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `24.7%`
 - secondary: `stock_trend_repair` / `20.9%`
 - risk: `stock_downside_continuation` / `16.8%`
-- stock_confluence_score: `47.43` / `mixed`
-- stock_alpha_score_v1: `13.5` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `55.0%`
+- stock_confluence_score: `47.25` / `mixed`
+- stock_alpha_score_v1: `11.5` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `54.2%`
 - 60d_expected_return: `-0.3%`
 - risk_reward_ratio: `0.66`
 - strongest_alert: `Relative Strength Alert` / `WARNING` / `65.84`
@@ -80,15 +80,15 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - status: `available`
 - current_price: `5.37`
 - market_context: `risk_off_pressure`
-- primary: `stock_downside_continuation` / `34.0%`
-- secondary: `stock_failed_bounce` / `20.4%`
-- risk: `stock_event_risk` / `14.9%`
-- stock_confluence_score: `40.68` / `weak`
+- primary: `stock_downside_continuation` / `35.5%`
+- secondary: `stock_failed_bounce` / `19.6%`
+- risk: `stock_event_risk` / `12.8%`
+- stock_confluence_score: `40.43` / `weak`
 - stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `12.0%`
 - 60d_expected_return: `-3.9%`
-- risk_reward_ratio: `0.25`
-- strongest_alert: `Stock Breakdown Warning` / `HIGH_CONVICTION` / `75.43`
+- risk_reward_ratio: `0.26`
+- strongest_alert: `Stock Breakdown Warning` / `HIGH_CONVICTION` / `76.33`
 - historical_analog_support: `conflicting` / samples `10`
 - validation_status: `not_yet_validated`
 
