@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-05T02:57:45.262623+00:00`
+- generated_at: `2026-11-05T03:28:51.796490+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `4`
@@ -10,7 +10,7 @@
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `25`
+- confirmation_score: `50`
 
 ## Dashboard Note
 
@@ -27,14 +27,6 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Vance repudiates Iran war after US electoral defeat - Reuters
-- source: Reuters
-- published_at: `2026-11-04T21:25:25+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
 - headline: Oil slumps after midterm election rebuke to Trump raises bets on Iran war exit - Reuters
 - source: Reuters
 - published_at: `2026-11-04T20:22:06+00:00`
@@ -46,6 +38,14 @@
 - headline: Trump says Republicans harmed by Iran war, inability to 'transfer the love' for him - Reuters
 - source: Reuters
 - published_at: `2026-11-04T19:46:21+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Vance repudiates Iran war after US electoral defeat - Reuters
+- source: Reuters
+- published_at: `2026-11-04T17:26:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 

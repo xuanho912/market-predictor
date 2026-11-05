@@ -6,10 +6,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-11-04",
-    "current_time_us_eastern": "2026-11-04T21:57:54.621308-05:00",
+    "current_time_us_eastern": "2026-11-04T22:29:01.883666-05:00",
     "data_freshness_status": "fresh",
     "expected_latest_trading_date": "2026-11-04",
-    "generated_at": "2026-11-05T02:57:54.621308+00:00",
+    "generated_at": "2026-11-05T03:29:01.883666+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -1048,15 +1048,15 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "BAA_SPREAD",
-      "DGS3MO",
       "IG_OAS",
-      "DGS2",
-      "HY_OAS",
       "DGS10",
+      "HY_OAS",
+      "BAA_SPREAD",
+      "DGS2",
+      "DGS3MO",
       "RECESSION",
-      "FINANCIAL_STRESS",
-      "DFII10"
+      "DFII10",
+      "FINANCIAL_STRESS"
     ],
     "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-11-04。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
     "gamma_available": false,
@@ -1090,7 +1090,7 @@
       "event_detection_confidence": 78,
       "event_risk_level": "high",
       "headline_count": 39,
-      "last_update": "2026-11-05T02:57:45.262623+00:00",
+      "last_update": "2026-11-05T03:28:51.796490+00:00",
       "major_event_count": 4,
       "missing_reason": null,
       "news_direction": "risk_off",
@@ -1344,18 +1344,6 @@
         {
           "confidence": "high",
           "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Vance repudiates Iran war after US electoral defeat - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-11-04T21:25:25+00:00",
-          "source": "Reuters"
-        },
-        {
-          "confidence": "high",
-          "detected_event_conditions": [
             "oil_shock_relief",
             "geopolitical_risk_escalation"
           ],
@@ -1376,6 +1364,18 @@
           "headline": "Trump says Republicans harmed by Iran war, inability to 'transfer the love' for him - Reuters",
           "importance_score": 100,
           "published_at": "2026-11-04T19:46:21+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
+          "headline": "Vance repudiates Iran war after US electoral defeat - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-11-04T17:26:00+00:00",
           "source": "Reuters"
         },
         {
@@ -1537,8 +1537,9 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": 0.0181,
-        "avg_equity_futures_1d_return": 0.014,
+        "avg_equity_futures_1d_return": -0.0006,
         "confirmed_checks": [
+          "股票ETF或股指期货下跌",
           "HYG/LQD 走弱"
         ],
         "equity_futures_symbols_used": [
@@ -1548,12 +1549,11 @@
           "YM=F"
         ],
         "failed_checks": [
-          "股票ETF或股指期货下跌",
           "VIX 上升",
           "美元走强"
         ],
         "hyg_lqd_1d_relative_return": -0.0005,
-        "oil_proxy_1d_return": -0.0449,
+        "oil_proxy_1d_return": -0.0456,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -1562,7 +1562,7 @@
         "uup_1d_return": -0.0038,
         "vix_1d_return": -0.2026
       },
-      "confirmation_score": 25,
+      "confirmation_score": 50,
       "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
       "price_reaction_confirmed": false
     },
@@ -1860,8 +1860,8 @@
         },
         "alpha_v1_threshold_unchanged": 0.32534311,
         "confluence_level": "weak",
-        "confluence_score": 42,
-        "daily_market_summary_shadow": "QQQ shadow evidence: strongest alert is Risk Expansion Alert; confluence is weak at 42/100. This evidence is for forecast validation and challenger comparison only.",
+        "confluence_score": 43,
+        "daily_market_summary_shadow": "QQQ shadow evidence: strongest alert is Risk Expansion Alert; confluence is weak at 43/100. This evidence is for forecast validation and challenger comparison only.",
         "does_not_override_baseline_v1": true,
         "does_not_rewrite_forecast_records": true,
         "dominant_path_shadow": "no_edge",
@@ -2745,28 +2745,28 @@
             "source": "flow"
           },
           {
-            "detail": "News/event direction is not sufficiently confirmed by market reaction.",
-            "name": "新闻未获价格确认",
-            "score": 75,
-            "source": "news"
-          },
-          {
             "detail": "Credit stress raises risk-expansion probability.",
             "name": "信用压力",
             "score": 60,
             "source": "credit"
           },
           {
+            "detail": "DIA 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+            "name": "新闻事件与主路径冲突",
+            "score": 50,
+            "source": "news"
+          },
+          {
+            "detail": "News/event direction is not sufficiently confirmed by market reaction.",
+            "name": "新闻未获价格确认",
+            "score": 50,
+            "source": "news"
+          },
+          {
             "detail": "重大 risk-off 新闻提高风险路径权重。",
             "name": "risk_off_news_event",
             "score": 35,
             "source": "signal_confirmation"
-          },
-          {
-            "detail": "DIA 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-            "name": "新闻事件与主路径冲突",
-            "score": 25,
-            "source": "news"
           },
           {
             "detail": "Credit proxy is deteriorating.",
@@ -2798,7 +2798,7 @@
         "confluence_summary": "DIA 当前多源共振为 mixed（55/100），主导路径为 bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
         "dominant_path": "bounce",
         "edge_status": "{'market_edge_status': 'MODERATE_EDGE', 'has_usable_prediction_edge_today': True, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': True, 'historical_analog_not_conflicting': True, 'confidence_score_ge_65': True, 'current_regime_identified': True, 'macro_event_risk_not_high': False, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': True, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': False}, 'passed_conditions': 8, 'summary': '有一定预测优势，但仍需观察冲突信号和失效条件。', 'no_edge_note': '', 'risk_warning': False}",
-        "key_conflict_count": 3,
+        "key_conflict_count": 4,
         "missing_evidence": [
           {
             "detail": "Put/call ratio is not connected.",
@@ -4080,34 +4080,7 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 78,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 87,
-            "headline": "Vance repudiates Iran war after US electoral defeat - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-04T21:25:25+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 82,
+            "confidence_score": 81,
             "detected_event_conditions": [
               "oil_shock_relief",
               "geopolitical_risk_escalation"
@@ -4115,7 +4088,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
+            "freshness_score": 83,
             "headline": "Oil slumps after midterm election rebuke to Trump raises bets on Iran war exit - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4142,7 +4115,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 81,
             "headline": "Trump says Republicans harmed by Iran war, inability to 'transfer the love' for him - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4169,7 +4142,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 76,
+            "headline": "Vance repudiates Iran war after US electoral defeat - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-04T17:26:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 76,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 76,
             "headline": "European far right distances itself from Trump, blaming Iran war for Republicans' defeat - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4201,18 +4201,6 @@
             {
               "confidence": "high",
               "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Vance repudiates Iran war after US electoral defeat - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-04T21:25:25+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
                 "oil_shock_relief",
                 "geopolitical_risk_escalation"
               ],
@@ -4233,6 +4221,18 @@
               "headline": "Trump says Republicans harmed by Iran war, inability to 'transfer the love' for him - Reuters",
               "importance_score": 100,
               "published_at": "2026-11-04T19:46:21+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Vance repudiates Iran war after US electoral defeat - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-04T17:26:00+00:00",
               "source": "Reuters"
             },
             {
@@ -4285,8 +4285,9 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0181,
-            "avg_equity_futures_1d_return": 0.014,
+            "avg_equity_futures_1d_return": -0.0006,
             "confirmed_checks": [
+              "股票ETF或股指期货下跌",
               "HYG/LQD 走弱"
             ],
             "equity_futures_symbols_used": [
@@ -4296,12 +4297,11 @@
               "YM=F"
             ],
             "failed_checks": [
-              "股票ETF或股指期货下跌",
               "VIX 上升",
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0005,
-            "oil_proxy_1d_return": -0.0449,
+            "oil_proxy_1d_return": -0.0456,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -4310,7 +4310,7 @@
             "uup_1d_return": -0.0038,
             "vix_1d_return": -0.2026
           },
-          "confirmation_score": 25,
+          "confirmation_score": 50,
           "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
           "price_reaction_confirmed": false
         },
@@ -5209,28 +5209,28 @@
             "source": "flow"
           },
           {
-            "detail": "News/event direction is not sufficiently confirmed by market reaction.",
-            "name": "新闻未获价格确认",
-            "score": 75,
-            "source": "news"
-          },
-          {
             "detail": "Credit stress raises risk-expansion probability.",
             "name": "信用压力",
             "score": 60,
             "source": "credit"
           },
           {
+            "detail": "IWM 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+            "name": "新闻事件与主路径冲突",
+            "score": 50,
+            "source": "news"
+          },
+          {
+            "detail": "News/event direction is not sufficiently confirmed by market reaction.",
+            "name": "新闻未获价格确认",
+            "score": 50,
+            "source": "news"
+          },
+          {
             "detail": "重大 risk-off 新闻提高风险路径权重。",
             "name": "risk_off_news_event",
             "score": 36,
             "source": "signal_confirmation"
-          },
-          {
-            "detail": "IWM 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-            "name": "新闻事件与主路径冲突",
-            "score": 25,
-            "source": "news"
           },
           {
             "detail": "Credit proxy is deteriorating.",
@@ -5262,7 +5262,7 @@
         "confluence_summary": "IWM 当前多源共振为 mixed（52/100），主导路径为 bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
         "dominant_path": "bounce",
         "edge_status": "{'market_edge_status': 'MODERATE_EDGE', 'has_usable_prediction_edge_today': True, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': False, 'historical_analog_not_conflicting': True, 'confidence_score_ge_65': True, 'current_regime_identified': True, 'macro_event_risk_not_high': False, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': True, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': False}, 'passed_conditions': 7, 'summary': '有一定预测优势，但仍需观察冲突信号和失效条件。', 'no_edge_note': '', 'risk_warning': False}",
-        "key_conflict_count": 3,
+        "key_conflict_count": 4,
         "missing_evidence": [
           {
             "detail": "Put/call ratio is not connected.",
@@ -6528,34 +6528,7 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 78,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 87,
-            "headline": "Vance repudiates Iran war after US electoral defeat - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-04T21:25:25+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 82,
+            "confidence_score": 81,
             "detected_event_conditions": [
               "oil_shock_relief",
               "geopolitical_risk_escalation"
@@ -6563,7 +6536,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
+            "freshness_score": 83,
             "headline": "Oil slumps after midterm election rebuke to Trump raises bets on Iran war exit - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6590,7 +6563,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 81,
             "headline": "Trump says Republicans harmed by Iran war, inability to 'transfer the love' for him - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6617,7 +6590,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 76,
+            "headline": "Vance repudiates Iran war after US electoral defeat - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-04T17:26:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 76,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 76,
             "headline": "European far right distances itself from Trump, blaming Iran war for Republicans' defeat - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6649,18 +6649,6 @@
             {
               "confidence": "high",
               "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Vance repudiates Iran war after US electoral defeat - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-04T21:25:25+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
                 "oil_shock_relief",
                 "geopolitical_risk_escalation"
               ],
@@ -6681,6 +6669,18 @@
               "headline": "Trump says Republicans harmed by Iran war, inability to 'transfer the love' for him - Reuters",
               "importance_score": 100,
               "published_at": "2026-11-04T19:46:21+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Vance repudiates Iran war after US electoral defeat - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-04T17:26:00+00:00",
               "source": "Reuters"
             },
             {
@@ -6733,8 +6733,9 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0181,
-            "avg_equity_futures_1d_return": 0.014,
+            "avg_equity_futures_1d_return": -0.0006,
             "confirmed_checks": [
+              "股票ETF或股指期货下跌",
               "HYG/LQD 走弱"
             ],
             "equity_futures_symbols_used": [
@@ -6744,12 +6745,11 @@
               "YM=F"
             ],
             "failed_checks": [
-              "股票ETF或股指期货下跌",
               "VIX 上升",
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0005,
-            "oil_proxy_1d_return": -0.0449,
+            "oil_proxy_1d_return": -0.0456,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -6758,7 +6758,7 @@
             "uup_1d_return": -0.0038,
             "vix_1d_return": -0.2026
           },
-          "confirmation_score": 25,
+          "confirmation_score": 50,
           "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
           "price_reaction_confirmed": false
         },
@@ -7656,16 +7656,16 @@
             "source": "signal_confirmation"
           },
           {
-            "detail": "News/event direction is not sufficiently confirmed by market reaction.",
-            "name": "新闻未获价格确认",
-            "score": 75,
-            "source": "news"
-          },
-          {
             "detail": "指数路径与内部参与度存在冲突。",
             "name": "宽度冲突",
             "score": 69,
             "source": "breadth"
+          },
+          {
+            "detail": "News/event direction is not sufficiently confirmed by market reaction.",
+            "name": "新闻未获价格确认",
+            "score": 50,
+            "source": "news"
           },
           {
             "detail": "Credit proxy is deteriorating.",
@@ -7717,8 +7717,8 @@
           }
         ],
         "confluence_level": "weak",
-        "confluence_score": 42,
-        "confluence_summary": "QQQ 当前多源共振为 weak（42/100），主导路径为 no_edge。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
+        "confluence_score": 43,
+        "confluence_summary": "QQQ 当前多源共振为 weak（43/100），主导路径为 no_edge。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
         "dominant_path": "no_edge",
         "edge_status": "{'market_edge_status': 'WEAK_EDGE', 'has_usable_prediction_edge_today': False, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': False, 'historical_analog_not_conflicting': True, 'confidence_score_ge_65': False, 'current_regime_identified': True, 'macro_event_risk_not_high': False, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': True, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': False}, 'passed_conditions': 6, 'summary': '预测优势偏弱，应以观察为主。', 'no_edge_note': '今天没有足够 edge，不应过度解读预测路径。', 'risk_warning': False}",
         "key_conflict_count": 3,
@@ -7803,7 +7803,7 @@
           {
             "detail": "QQQ 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
             "name": "新闻事件支持主路径",
-            "score": 25,
+            "score": 50,
             "source": "news"
           },
           {
@@ -8972,34 +8972,7 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 78,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 87,
-            "headline": "Vance repudiates Iran war after US electoral defeat - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-04T21:25:25+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 82,
+            "confidence_score": 81,
             "detected_event_conditions": [
               "oil_shock_relief",
               "geopolitical_risk_escalation"
@@ -9007,7 +8980,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
+            "freshness_score": 83,
             "headline": "Oil slumps after midterm election rebuke to Trump raises bets on Iran war exit - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9034,7 +9007,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 81,
             "headline": "Trump says Republicans harmed by Iran war, inability to 'transfer the love' for him - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9061,7 +9034,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 76,
+            "headline": "Vance repudiates Iran war after US electoral defeat - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-04T17:26:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 76,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 76,
             "headline": "European far right distances itself from Trump, blaming Iran war for Republicans' defeat - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9093,18 +9093,6 @@
             {
               "confidence": "high",
               "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Vance repudiates Iran war after US electoral defeat - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-04T21:25:25+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
                 "oil_shock_relief",
                 "geopolitical_risk_escalation"
               ],
@@ -9125,6 +9113,18 @@
               "headline": "Trump says Republicans harmed by Iran war, inability to 'transfer the love' for him - Reuters",
               "importance_score": 100,
               "published_at": "2026-11-04T19:46:21+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Vance repudiates Iran war after US electoral defeat - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-04T17:26:00+00:00",
               "source": "Reuters"
             },
             {
@@ -9177,8 +9177,9 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0181,
-            "avg_equity_futures_1d_return": 0.014,
+            "avg_equity_futures_1d_return": -0.0006,
             "confirmed_checks": [
+              "股票ETF或股指期货下跌",
               "HYG/LQD 走弱"
             ],
             "equity_futures_symbols_used": [
@@ -9188,12 +9189,11 @@
               "YM=F"
             ],
             "failed_checks": [
-              "股票ETF或股指期货下跌",
               "VIX 上升",
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0005,
-            "oil_proxy_1d_return": -0.0449,
+            "oil_proxy_1d_return": -0.0456,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -9202,7 +9202,7 @@
             "uup_1d_return": -0.0038,
             "vix_1d_return": -0.2026
           },
-          "confirmation_score": 25,
+          "confirmation_score": 50,
           "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
           "price_reaction_confirmed": false
         },
@@ -9848,8 +9848,8 @@
         },
         "alpha_v1_threshold_unchanged": 0.32534311,
         "confluence_level": "weak",
-        "confluence_score": 42,
-        "daily_market_summary_shadow": "QQQ shadow evidence: strongest alert is Risk Expansion Alert; confluence is weak at 42/100. This evidence is for forecast validation and challenger comparison only.",
+        "confluence_score": 43,
+        "daily_market_summary_shadow": "QQQ shadow evidence: strongest alert is Risk Expansion Alert; confluence is weak at 43/100. This evidence is for forecast validation and challenger comparison only.",
         "does_not_override_baseline_v1": true,
         "does_not_rewrite_forecast_records": true,
         "dominant_path_shadow": "no_edge",
@@ -10130,28 +10130,28 @@
             "source": "flow"
           },
           {
-            "detail": "News/event direction is not sufficiently confirmed by market reaction.",
-            "name": "新闻未获价格确认",
-            "score": 75,
-            "source": "news"
-          },
-          {
             "detail": "Credit stress raises risk-expansion probability.",
             "name": "信用压力",
             "score": 60,
             "source": "credit"
           },
           {
+            "detail": "SPY 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+            "name": "新闻事件与主路径冲突",
+            "score": 50,
+            "source": "news"
+          },
+          {
+            "detail": "News/event direction is not sufficiently confirmed by market reaction.",
+            "name": "新闻未获价格确认",
+            "score": 50,
+            "source": "news"
+          },
+          {
             "detail": "重大 risk-off 新闻提高风险路径权重。",
             "name": "risk_off_news_event",
             "score": 36,
             "source": "signal_confirmation"
-          },
-          {
-            "detail": "SPY 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-            "name": "新闻事件与主路径冲突",
-            "score": 25,
-            "source": "news"
           },
           {
             "detail": "Credit proxy is deteriorating.",
@@ -10189,7 +10189,7 @@
         "confluence_summary": "SPY 当前多源共振为 mixed（55/100），主导路径为 bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
         "dominant_path": "bounce",
         "edge_status": "{'market_edge_status': 'MODERATE_EDGE', 'has_usable_prediction_edge_today': True, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': False, 'historical_analog_not_conflicting': True, 'confidence_score_ge_65': True, 'current_regime_identified': True, 'macro_event_risk_not_high': False, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': True, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': False}, 'passed_conditions': 7, 'summary': '有一定预测优势，但仍需观察冲突信号和失效条件。', 'no_edge_note': '', 'risk_warning': False}",
-        "key_conflict_count": 3,
+        "key_conflict_count": 4,
         "missing_evidence": [
           {
             "detail": "Put/call ratio is not connected.",
@@ -11460,34 +11460,7 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 78,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 87,
-            "headline": "Vance repudiates Iran war after US electoral defeat - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-04T21:25:25+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 82,
+            "confidence_score": 81,
             "detected_event_conditions": [
               "oil_shock_relief",
               "geopolitical_risk_escalation"
@@ -11495,7 +11468,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 84,
+            "freshness_score": 83,
             "headline": "Oil slumps after midterm election rebuke to Trump raises bets on Iran war exit - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11522,7 +11495,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
+            "freshness_score": 81,
             "headline": "Trump says Republicans harmed by Iran war, inability to 'transfer the love' for him - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11549,7 +11522,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 76,
+            "headline": "Vance repudiates Iran war after US electoral defeat - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-04T17:26:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 76,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 76,
             "headline": "European far right distances itself from Trump, blaming Iran war for Republicans' defeat - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11581,18 +11581,6 @@
             {
               "confidence": "high",
               "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Vance repudiates Iran war after US electoral defeat - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-04T21:25:25+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "high",
-              "detected_event_conditions": [
                 "oil_shock_relief",
                 "geopolitical_risk_escalation"
               ],
@@ -11613,6 +11601,18 @@
               "headline": "Trump says Republicans harmed by Iran war, inability to 'transfer the love' for him - Reuters",
               "importance_score": 100,
               "published_at": "2026-11-04T19:46:21+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "Vance repudiates Iran war after US electoral defeat - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-04T17:26:00+00:00",
               "source": "Reuters"
             },
             {
@@ -11665,8 +11665,9 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0181,
-            "avg_equity_futures_1d_return": 0.014,
+            "avg_equity_futures_1d_return": -0.0006,
             "confirmed_checks": [
+              "股票ETF或股指期货下跌",
               "HYG/LQD 走弱"
             ],
             "equity_futures_symbols_used": [
@@ -11676,12 +11677,11 @@
               "YM=F"
             ],
             "failed_checks": [
-              "股票ETF或股指期货下跌",
               "VIX 上升",
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0005,
-            "oil_proxy_1d_return": -0.0449,
+            "oil_proxy_1d_return": -0.0456,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -11690,7 +11690,7 @@
             "uup_1d_return": -0.0038,
             "vix_1d_return": -0.2026
           },
-          "confirmation_score": 25,
+          "confirmation_score": 50,
           "contradiction_warning": "新闻方向尚未被价格反应确认，可能已经被定价或市场不认可。",
           "price_reaction_confirmed": false
         },
