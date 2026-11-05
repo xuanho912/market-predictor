@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-05T03:28:51.796490+00:00`
+- generated_at: `2026-11-05T07:57:30.005810+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `4`
-- event_detection_confidence: `78`
+- major_event_count: `5`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil slumps after midterm election rebuke to Trump raises bets on Iran war exit - Reuters
+- headline: Oil falls for a fourth day on expectations for lower risk of Iran war escalation - Reuters
 - source: Reuters
-- published_at: `2026-11-04T20:22:06+00:00`
+- published_at: `2026-11-05T02:20:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Rupee to rally after US midterm fallout sinks oil on Iran war-exit hopes - Reuters
+- source: Reuters
+- published_at: `2026-11-05T02:19:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -39,7 +47,7 @@
 - source: Reuters
 - published_at: `2026-11-04T19:46:21+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-11-04T17:26:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,4 +63,4 @@
 - source: Reuters
 - published_at: `2026-11-04T17:16:41+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
