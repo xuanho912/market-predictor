@@ -1,6 +1,6 @@
 # Breadth Impact Audit
 
-Generated at: `2026-11-05T00:58:48.946394Z`
+Generated at: `2026-11-05T01:56:16.502940Z`
 
 ## Summary
 
@@ -16,10 +16,10 @@ Generated at: `2026-11-05T00:58:48.946394Z`
 
 | symbol | supports primary | conflicts primary | edge before | edge after | primary before | primary after | failed bounce delta | confirmation delta | confidence delta | reason | risk note |
 |---|---:|---:|---|---|---|---|---:|---:|---:|---|---|
-| SPY | True | False | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0228 | 9 | 0 | SPY breadth supports bounce_path: internal resonance is aligned, support score 98%, above 20d/50d MA 73%/68%. | SPY breadth improves confidence in the primary path, but forward validation is still required. |
-| QQQ | False | True | WEAK_EDGE | WEAK_EDGE | bounce_path | bearish_path | 0.1404 | -36 | -12 | QQQ breadth conflicts with bearish_path: conflict score 69%, internal resonance is weak. | QQQ breadth conflict or failed-bounce risk is elevated; watch new lows, percent above 20/50d MA and sector participation. |
-| IWM | True | False | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0459 | 0 | 0 | IWM breadth supports bounce_path: internal resonance is mixed, support score 75%. | IWM breadth improves confidence in the primary path, but forward validation is still required. |
-| DIA | True | False | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0171 | 1 | 0 | DIA breadth supports bounce_path: internal resonance is aligned, support score 99%, above 20d/50d MA 83%/77%. | DIA breadth improves confidence in the primary path, but forward validation is still required. |
+| SPY | True | False | WEAK_EDGE | WEAK_EDGE | bounce_path | bounce_path | 0.0227 | 9 | 7 | SPY breadth supports bounce_path: internal resonance is aligned, support score 98%, above 20d/50d MA 73%/68%. | SPY breadth improves confidence in the primary path, but forward validation is still required. |
+| QQQ | False | True | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.1295 | -26 | -8 | QQQ breadth conflicts with bearish_path: conflict score 69%, internal resonance is weak. | QQQ breadth conflict or failed-bounce risk is elevated; watch new lows, percent above 20/50d MA and sector participation. |
+| IWM | True | False | WEAK_EDGE | WEAK_EDGE | bearish_path | bearish_path | 0.0458 | 0 | 5 | IWM breadth supports bearish_path: internal resonance is mixed, support score 75%. | IWM breadth improves confidence in the primary path, but forward validation is still required. |
+| DIA | True | False | WEAK_EDGE | WEAK_EDGE | bearish_path | bounce_path | 0.0083 | 9 | 13 | DIA breadth supports bounce_path: internal resonance is aligned, support score 99%, above 20d/50d MA 83%/77%. | DIA breadth improves confidence in the primary path, but forward validation is still required. |
 
 ## Forward Validation
 
