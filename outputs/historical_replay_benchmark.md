@@ -1,6 +1,6 @@
 # Historical Replay Benchmark
 
-Generated at: `2026-11-04T19:50:22.241594+00:00`
+Generated at: `2026-11-05T00:58:49.862129+00:00`
 Validation type: `historical_replay`
 Status: `research_evaluation_only_not_forward_validation`
 Sample size: `80`
@@ -197,15 +197,15 @@ Overfit warning: `{'level': 'low', 'reasons': [], 'rule': 'If historical replay 
 - 5d: sample `16`, primary_hit `0.5625`, primary_closer `0.375`, primary_mae `0.019869`, avg `0.003706`, median `0.006642`
 - 10d: sample `16`, primary_hit `0.5`, primary_closer `0.5`, primary_mae `0.041856`, avg `0.000853`, median `0.002861`
 - 20d: sample `16`, primary_hit `0.6875`, primary_closer `0.625`, primary_mae `0.044551`, avg `0.01513`, median `0.022803`
-- 60d: sample `16`, primary_hit `0.75`, primary_closer `0.625`, primary_mae `0.053814`, avg `0.028357`, median `0.041934`
+- 60d: sample `16`, primary_hit `0.75`, primary_closer `0.625`, primary_mae `0.053813`, avg `0.028357`, median `0.041934`
 
 ### bottom_20
 - sample_size: `16`
-- 3d: sample `16`, primary_hit `0.5`, primary_closer `0.5`, primary_mae `0.022813`, avg `0.003524`, median `-0.002931`
-- 5d: sample `16`, primary_hit `0.4375`, primary_closer `0.4375`, primary_mae `0.029115`, avg `0.008046`, median `0.002887`
-- 10d: sample `16`, primary_hit `0.1875`, primary_closer `0.1875`, primary_mae `0.030691`, avg `0.035031`, median `0.034572`
-- 20d: sample `16`, primary_hit `0.0`, primary_closer `0.125`, primary_mae `0.052623`, avg `0.062703`, median `0.058445`
-- 60d: sample `16`, primary_hit `0.125`, primary_closer `0.375`, primary_mae `0.036965`, avg `0.0659`, median `0.067284`
+- 3d: sample `16`, primary_hit `0.5`, primary_closer `0.5`, primary_mae `0.024049`, avg `0.00476`, median `0.002018`
+- 5d: sample `16`, primary_hit `0.375`, primary_closer `0.375`, primary_mae `0.030074`, avg `0.009005`, median `0.006005`
+- 10d: sample `16`, primary_hit `0.25`, primary_closer `0.25`, primary_mae `0.031433`, avg `0.03293`, median `0.034572`
+- 20d: sample `16`, primary_hit `0.0625`, primary_closer `0.1875`, primary_mae `0.0561`, avg `0.055377`, median `0.058445`
+- 60d: sample `16`, primary_hit `0.125`, primary_closer `0.4375`, primary_mae `0.03636`, avg `0.067536`, median `0.067284`
 
 - effectiveness_question: `historical_replay_supportive_but_not_forward_validated`
 
@@ -260,12 +260,12 @@ Overfit warning: `{'level': 'low', 'reasons': [], 'rule': 'If historical replay 
 - 60d: sample `20`, primary_hit `0.1`, primary_closer `0.4`, primary_mae `0.035983`, avg `0.064645`, median `0.067284`
 
 ### options_confirmed
-- sample_size: `0`
-- 3d: sample `0`, primary_hit `None`, primary_closer `None`, primary_mae `None`, avg `None`, median `None`
-- 5d: sample `0`, primary_hit `None`, primary_closer `None`, primary_mae `None`, avg `None`, median `None`
-- 10d: sample `0`, primary_hit `None`, primary_closer `None`, primary_mae `None`, avg `None`, median `None`
-- 20d: sample `0`, primary_hit `None`, primary_closer `None`, primary_mae `None`, avg `None`, median `None`
-- 60d: sample `0`, primary_hit `None`, primary_closer `None`, primary_mae `None`, avg `None`, median `None`
+- sample_size: `80`
+- 3d: sample `80`, primary_hit `0.5875`, primary_closer `0.5125`, primary_mae `0.018179`, avg `0.003479`, median `0.005557`
+- 5d: sample `80`, primary_hit `0.575`, primary_closer `0.5`, primary_mae `0.024984`, avg `0.008199`, median `0.007368`
+- 10d: sample `80`, primary_hit `0.575`, primary_closer `0.525`, primary_mae `0.033208`, avg `0.020219`, median `0.02383`
+- 20d: sample `80`, primary_hit `0.575`, primary_closer `0.55`, primary_mae `0.044968`, avg `0.032802`, median `0.041393`
+- 60d: sample `80`, primary_hit `0.5625`, primary_closer `0.5625`, primary_mae `0.049042`, avg `0.045025`, median `0.057306`
 
 ### options_conflicted
 - sample_size: `0`

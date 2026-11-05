@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-04T19:50:11.175794+00:00`
+- generated_at: `2026-11-05T00:58:39.308866+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
+- major_event_count: `6`
 - event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -27,17 +27,25 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Trump says Republicans harmed by Iran war, inability to 'transfer the love' for him - Reuters
+- headline: Vance repudiates Iran war after US electoral defeat - Reuters
 - source: Reuters
-- published_at: `2026-11-04T18:37:19+00:00`
+- published_at: `2026-11-04T21:25:25+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Vance repudiates Iran war after US electoral defeat - Reuters
+- headline: Oil slumps after midterm election rebuke to Trump raises bets on Iran war exit - Reuters
 - source: Reuters
-- published_at: `2026-11-04T17:51:52+00:00`
+- published_at: `2026-11-04T20:22:06+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Trump says Republicans harmed by Iran war, inability to 'transfer the love' for him - Reuters
+- source: Reuters
+- published_at: `2026-11-04T19:46:21+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -64,27 +72,3 @@
 - published_at: `2026-11-04T13:44:23+00:00`
 - importance_score: `100`
 - confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Hungary opens communist-era informer files in belated reckoning with Cold War past - Reuters
-- source: Reuters
-- published_at: `2026-11-04T11:53:43+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: India's IndiGo may fast-track some overseas growth as westward flights disrupted - Reuters
-- source: Reuters
-- published_at: `2026-11-04T11:31:04+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Drones attack Iranian Kurdish opposition in Iraq's Sulaymaniyah and east Erbil, sources say - Reuters
-- source: Reuters
-- published_at: `2026-11-04T07:56:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
