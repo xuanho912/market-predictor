@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-05T01:56:06.797729+00:00`
+- generated_at: `2026-11-05T02:57:45.262623+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
-- event_detection_confidence: `77`
+- major_event_count: `4`
+- event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -56,19 +56,3 @@
 - published_at: `2026-11-04T17:16:41+00:00`
 - importance_score: `100`
 - confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Turkey's parliament set to ratify defence pact with Saudi Arabia, Pakistan as Houthi attacks mount - Reuters
-- source: Reuters
-- published_at: `2026-11-04T14:09:44+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Ukrainian drone strike sets fire to hub of e-retailer Ozon in southern Russia - Reuters
-- source: Reuters
-- published_at: `2026-11-04T13:44:23+00:00`
-- importance_score: `100`
-- confidence: `medium`
