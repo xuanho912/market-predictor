@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-05T20:01:18.024375+00:00`
+- generated_at: `2026-11-06T01:03:52.135908+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `5`
+- major_event_count: `6`
 - event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -33,12 +33,20 @@
 - importance_score: `100`
 - confidence: `high`
 
+### geopolitical_risk_escalation / risk_off
+
+- headline: Saudi Arabia warns of potential danger in Yanbu oil hub as Houthi attacks continue - Reuters
+- source: Reuters
+- published_at: `2026-11-05T11:33:52+00:00`
+- importance_score: `100`
+- confidence: `high`
+
 ### geopolitical_risk_easing / risk_on
 
 - headline: Asia fuel oil benchmarks slump as market prices in potential Iran war de-escalation - Reuters
 - source: Reuters
 - published_at: `2026-11-05T10:13:02+00:00`
-- importance_score: `100`
+- importance_score: `99`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -59,7 +67,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil rises over $2 as investors assess Iran war future - Reuters
+- headline: Brent crude jumps, settles up over $3 after tanker attacks - Reuters
 - source: Reuters
 - published_at: `2026-11-05T02:20:00+00:00`
 - importance_score: `100`
