@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-06T07:58:50.437038+00:00`
+- generated_at: `2026-11-06T11:31:36.442841+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `6`
-- event_detection_confidence: `74`
+- event_detection_confidence: `72`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `True`
-- confirmation_score: `100`
+- confirmation_score: `75`
 
 ## Dashboard Note
 
@@ -31,7 +31,7 @@
 - source: Reuters
 - published_at: `2026-11-05T23:20:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -54,7 +54,7 @@
 - headline: Asia fuel oil benchmarks slump as market prices in potential Iran war de-escalation - Reuters
 - source: Reuters
 - published_at: `2026-11-05T10:12:00+00:00`
-- importance_score: `98`
+- importance_score: `97`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
