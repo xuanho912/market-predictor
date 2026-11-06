@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-11-06T01:04:03.890743+00:00`
+Generated at: `2026-11-06T02:06:23.446680+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -80,15 +80,15 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - status: `available`
 - current_price: `4.37`
 - market_context: `risk_off_pressure`
-- primary: `stock_downside_continuation` / `37.2%`
-- secondary: `stock_failed_bounce` / `24.3%`
-- risk: `stock_event_risk` / `10.1%`
-- stock_confluence_score: `38.05` / `weak`
+- primary: `stock_downside_continuation` / `35.8%`
+- secondary: `stock_failed_bounce` / `24.8%`
+- risk: `stock_event_risk` / `12.1%`
+- stock_confluence_score: `38.98` / `weak`
 - stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `7.7%`
 - 60d_expected_return: `-6.2%`
-- risk_reward_ratio: `0.25`
-- strongest_alert: `Stock Breakdown Warning` / `EXTREME` / `98.0`
+- risk_reward_ratio: `0.24`
+- strongest_alert: `Stock Breakdown Warning` / `EXTREME` / `97.17`
 - historical_analog_support: `conflicting` / samples `10`
 - validation_status: `not_yet_validated`
 
@@ -108,11 +108,11 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - company_name: `Constellation Energy Corp`
 - status: `available`
 - current_price: `239.65`
-- market_context: `market_headwind`
+- market_context: `risk_off_pressure`
 - primary: `stock_downside_continuation` / `26.8%`
 - secondary: `stock_failed_bounce` / `26.4%`
 - risk: `stock_event_risk` / `14.8%`
-- stock_confluence_score: `24.14` / `weak`
+- stock_confluence_score: `24.22` / `weak`
 - stock_alpha_score_v1: `21.0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `37.9%`
 - 60d_expected_return: `-2.4%`
