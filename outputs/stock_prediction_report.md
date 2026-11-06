@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-11-06T03:23:54.157273+00:00`
+Generated at: `2026-11-06T07:59:01.960739+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -22,15 +22,15 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - status: `available`
 - current_price: `181.60`
 - market_context: `risk_off_pressure`
-- primary: `stock_downside_continuation` / `30.3%`
-- secondary: `stock_failed_bounce` / `27.1%`
-- risk: `stock_event_risk` / `11.0%`
-- stock_confluence_score: `42.31` / `weak`
-- stock_alpha_score_v1: `35.5` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `46.0%`
+- primary: `stock_downside_continuation` / `31.8%`
+- secondary: `stock_failed_bounce` / `26.7%`
+- risk: `stock_event_risk` / `8.6%`
+- stock_confluence_score: `39.05` / `weak`
+- stock_alpha_score_v1: `38.5` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `47.2%`
 - 60d_expected_return: `-2.1%`
-- risk_reward_ratio: `0.29`
-- strongest_alert: `Stock Breakdown Warning` / `WATCH` / `50.04`
+- risk_reward_ratio: `0.3`
+- strongest_alert: `Stock Breakdown Warning` / `WATCH` / `50.9`
 - historical_analog_support: `conflicting` / samples `10`
 - validation_status: `not_yet_validated`
 
@@ -51,15 +51,15 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - status: `available`
 - current_price: `343.69`
 - market_context: `risk_off_pressure`
-- primary: `stock_failed_bounce` / `27.8%`
-- secondary: `stock_downside_continuation` / `21.3%`
-- risk: `stock_event_risk` / `13.1%`
-- stock_confluence_score: `33.92` / `weak`
-- stock_alpha_score_v1: `3.5` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `43.5%`
-- 60d_expected_return: `-1.5%`
-- risk_reward_ratio: `0.55`
-- strongest_alert: `Relative Strength Alert` / `NO_ALERT` / `27.24`
+- primary: `stock_failed_bounce` / `27.3%`
+- secondary: `stock_downside_continuation` / `22.4%`
+- risk: `stock_event_risk` / `10.5%`
+- stock_confluence_score: `30.84` / `weak`
+- stock_alpha_score_v1: `8.5` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `45.5%`
+- 60d_expected_return: `-1.4%`
+- risk_reward_ratio: `0.58`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `27.26`
 - historical_analog_support: `weak` / samples `10`
 - validation_status: `not_yet_validated`
 
@@ -80,15 +80,15 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - status: `available`
 - current_price: `4.37`
 - market_context: `risk_off_pressure`
-- primary: `stock_downside_continuation` / `35.8%`
-- secondary: `stock_failed_bounce` / `24.8%`
-- risk: `stock_event_risk` / `12.1%`
-- stock_confluence_score: `43.72` / `weak`
+- primary: `stock_downside_continuation` / `37.2%`
+- secondary: `stock_failed_bounce` / `24.3%`
+- risk: `stock_event_risk` / `10.1%`
+- stock_confluence_score: `42.69` / `weak`
 - stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `7.7%`
 - 60d_expected_return: `-6.2%`
-- risk_reward_ratio: `0.24`
-- strongest_alert: `Stock Breakdown Warning` / `EXTREME` / `97.17`
+- risk_reward_ratio: `0.25`
+- strongest_alert: `Stock Breakdown Warning` / `EXTREME` / `98.0`
 - historical_analog_support: `conflicting` / samples `10`
 - validation_status: `not_yet_validated`
 
@@ -109,14 +109,14 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - status: `available`
 - current_price: `239.65`
 - market_context: `market_headwind`
-- primary: `stock_downside_continuation` / `26.8%`
-- secondary: `stock_failed_bounce` / `26.4%`
-- risk: `stock_event_risk` / `14.8%`
-- stock_confluence_score: `28.95` / `weak`
+- primary: `stock_downside_continuation` / `28.1%`
+- secondary: `stock_failed_bounce` / `25.9%`
+- risk: `stock_event_risk` / `12.5%`
+- stock_confluence_score: `27.38` / `weak`
 - stock_alpha_score_v1: `28.0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `40.7%`
-- 60d_expected_return: `-2.4%`
-- risk_reward_ratio: `0.43`
+- 60d_expected_return: `-2.3%`
+- risk_reward_ratio: `0.45`
 - strongest_alert: `Relative Weakness Alert` / `WATCH` / `43.46`
 - historical_analog_support: `weak` / samples `10`
 - validation_status: `not_yet_validated`

@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-06T03:23:41.281928+00:00`
+- generated_at: `2026-11-06T07:58:50.437038+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
-- event_detection_confidence: `75`
+- major_event_count: `6`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -39,7 +39,7 @@
 - source: Reuters
 - published_at: `2026-11-05T17:11:41+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -53,9 +53,9 @@
 
 - headline: Asia fuel oil benchmarks slump as market prices in potential Iran war de-escalation - Reuters
 - source: Reuters
-- published_at: `2026-11-05T10:13:02+00:00`
-- importance_score: `99`
-- confidence: `high`
+- published_at: `2026-11-05T10:12:00+00:00`
+- importance_score: `98`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -70,13 +70,5 @@
 - headline: Emirates profit plunges as Iran war rattles Middle East aviation - Reuters
 - source: Reuters
 - published_at: `2026-11-05T06:03:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Brent crude jumps, settles up over $3 after tanker attacks - Reuters
-- source: Reuters
-- published_at: `2026-11-05T02:20:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
