@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-11-06T02:06:23.446680+00:00`
+Generated at: `2026-11-06T02:56:11.739217+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -25,13 +25,13 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_downside_continuation` / `30.3%`
 - secondary: `stock_failed_bounce` / `27.1%`
 - risk: `stock_event_risk` / `11.0%`
-- stock_confluence_score: `33.84` / `weak`
-- stock_alpha_score_v1: `28.5` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `43.2%`
+- stock_confluence_score: `42.31` / `weak`
+- stock_alpha_score_v1: `35.5` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `46.0%`
 - 60d_expected_return: `-2.1%`
 - risk_reward_ratio: `0.29`
 - strongest_alert: `Stock Breakdown Warning` / `WATCH` / `50.04`
-- historical_analog_support: `weak` / samples `10`
+- historical_analog_support: `conflicting` / samples `10`
 - validation_status: `not_yet_validated`
 
 - primary_confirmation_level: `233.92`
@@ -54,13 +54,13 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `27.8%`
 - secondary: `stock_downside_continuation` / `21.3%`
 - risk: `stock_event_risk` / `13.1%`
-- stock_confluence_score: `30.35` / `weak`
-- stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `42.1%`
+- stock_confluence_score: `33.92` / `weak`
+- stock_alpha_score_v1: `3.5` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `43.5%`
 - 60d_expected_return: `-1.5%`
 - risk_reward_ratio: `0.55`
-- strongest_alert: `Stock Failed Bounce Risk` / `WATCH` / `38.3`
-- historical_analog_support: `conflicting` / samples `10`
+- strongest_alert: `Relative Strength Alert` / `NO_ALERT` / `27.24`
+- historical_analog_support: `weak` / samples `10`
 - validation_status: `not_yet_validated`
 
 - primary_confirmation_level: `414.23`
@@ -71,7 +71,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - breakdown_level: `324.30`
 - nearest_support: `338.15`
 - nearest_resistance: `364.84`
-- bounce_target_zone: `{"conservative": 354.26, "base": 354.26, "extended": 428.33, "source": "scenario_path + atr + recent_resistance", "meaning": "概率反抽情景参考区间，不是目标价承诺。", "not_trading_instruction": true}`
+- bounce_target_zone: `{"conservative": 354.27, "base": 354.27, "extended": 428.33, "source": "scenario_path + atr + recent_resistance", "meaning": "概率反抽情景参考区间，不是目标价承诺。", "not_trading_instruction": true}`
 - failed_bounce_warning_zone: `{"first_warning": 335.76, "critical_warning": 332.23, "source": "risk_path + atr + recent_support", "meaning": "跌入该区间说明失败反抽风险上升。", "not_trading_instruction": true}`
 
 ### SMR
@@ -83,7 +83,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_downside_continuation` / `35.8%`
 - secondary: `stock_failed_bounce` / `24.8%`
 - risk: `stock_event_risk` / `12.1%`
-- stock_confluence_score: `38.98` / `weak`
+- stock_confluence_score: `43.72` / `weak`
 - stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `7.7%`
 - 60d_expected_return: `-6.2%`
@@ -108,17 +108,17 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - company_name: `Constellation Energy Corp`
 - status: `available`
 - current_price: `239.65`
-- market_context: `risk_off_pressure`
+- market_context: `market_headwind`
 - primary: `stock_downside_continuation` / `26.8%`
 - secondary: `stock_failed_bounce` / `26.4%`
 - risk: `stock_event_risk` / `14.8%`
-- stock_confluence_score: `24.22` / `weak`
-- stock_alpha_score_v1: `21.0` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `37.9%`
+- stock_confluence_score: `28.95` / `weak`
+- stock_alpha_score_v1: `28.0` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `40.7%`
 - 60d_expected_return: `-2.4%`
 - risk_reward_ratio: `0.43`
 - strongest_alert: `Relative Weakness Alert` / `WATCH` / `43.46`
-- historical_analog_support: `supportive` / samples `10`
+- historical_analog_support: `weak` / samples `10`
 - validation_status: `not_yet_validated`
 
 - primary_confirmation_level: `301.77`

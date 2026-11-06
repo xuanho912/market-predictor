@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-06T02:06:10.451319+00:00`
+- generated_at: `2026-11-06T02:55:59.632416+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
+- major_event_count: `7`
 - event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Hegseth vows to keep fighting from Pentagon, defends Iran war - Reuters
+- source: Reuters
+- published_at: `2026-11-05T23:20:00+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
