@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-07T00:12:08.614582+00:00`
+- generated_at: `2026-11-07T01:26:32.679134+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
-- event_detection_confidence: `78`
+- major_event_count: `7`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -62,6 +62,14 @@
 - headline: Outside groups urge congressional Dems to target corporate interests over Trump
 - source: CNBC
 - published_at: `2026-11-06T11:30:01+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Crude gains on worries about renewed US attacks on Iran - Reuters
+- source: Reuters
+- published_at: `2026-11-06T02:49:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
