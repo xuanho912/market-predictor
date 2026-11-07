@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-07T10:42:54.034933+00:00`
+- generated_at: `2026-11-07T17:47:16.441541+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `9`
-- event_detection_confidence: `72`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,30 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: EXCLUSIVE: Expanding on naval blockade, US military looks to restrict Iranian land commerce - Reuters
+- source: Reuters
+- published_at: `2026-11-07T16:09:58+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran executes Baluch militant over armed attack on police station - Reuters
+- source: Reuters
+- published_at: `2026-11-07T08:50:11+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### fed_dovish / risk_on
+
+- headline: World’s No. 1 restaurant crowned as contest comes under increasing scrutiny
+- source: CNBC
+- published_at: `2026-11-07T13:38:44+00:00`
+- importance_score: `86`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -70,29 +94,5 @@
 - headline: Outside groups urge congressional Dems to target corporate interests over Trump
 - source: CNBC
 - published_at: `2026-11-06T11:30:01+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Brent crude jumps, settles up over $3 after tanker attacks - Reuters
-- source: Reuters
-- published_at: `2026-11-06T02:54:46+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Crude gains on worries about renewed US attacks on Iran - Reuters
-- source: Reuters
-- published_at: `2026-11-06T02:49:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Hegseth vows to keep fighting from Pentagon, defends Iran war - Reuters
-- source: Reuters
-- published_at: `2026-11-05T23:20:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
