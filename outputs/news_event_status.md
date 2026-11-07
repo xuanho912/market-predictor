@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-06T19:27:59.556838+00:00`
+- generated_at: `2026-11-07T00:12:08.614582+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `4`
-- event_detection_confidence: `73`
+- major_event_count: `6`
+- event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,33 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Top House Oversight Democrat warns Trump family to 'lawyer up'
+- source: CNBC
+- published_at: `2026-11-06T19:42:36+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Syria aids Saudi Arabia with military advice and training amid Houthi attacks, sources say - Reuters
+- source: Reuters
+- published_at: `2026-11-06T16:19:44+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Iran war spurs crackdown on clerics in tiny Gulf state Bahrain - Reuters
 - source: Reuters
-- published_at: `2026-11-06T13:57:49+00:00`
+- published_at: `2026-11-06T14:21:44+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Seafarer killed in suspected missile attack on tanker in Gulf - Reuters
+- source: Reuters
+- published_at: `2026-11-06T14:17:12+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -39,20 +63,12 @@
 - source: CNBC
 - published_at: `2026-11-06T11:30:01+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Hegseth vows to keep fighting from Pentagon, defends Iran war - Reuters
 - source: Reuters
 - published_at: `2026-11-05T23:20:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Bank of England raises rates for first time since 2023, warns more likely - Reuters
-- source: Reuters
-- published_at: `2026-11-05T17:11:41+00:00`
 - importance_score: `100`
 - confidence: `medium`

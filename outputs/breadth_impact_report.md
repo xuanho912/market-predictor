@@ -1,6 +1,6 @@
 # Breadth Impact Audit
 
-Generated at: `2026-11-06T19:28:09.723426Z`
+Generated at: `2026-11-07T00:12:20.601099Z`
 
 ## Summary
 
@@ -16,10 +16,10 @@ Generated at: `2026-11-06T19:28:09.723426Z`
 
 | symbol | supports primary | conflicts primary | edge before | edge after | primary before | primary after | failed bounce delta | confirmation delta | confidence delta | reason | risk note |
 |---|---:|---:|---|---|---|---|---:|---:|---:|---|---|
-| SPY | True | False | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.0228 | 9 | 13 | SPY breadth supports bearish_path: internal resonance is aligned, support score 98%, above 20d/50d MA 73%/68%. | SPY breadth conflict or failed-bounce risk is elevated; watch new lows, percent above 20/50d MA and sector participation. |
-| QQQ | False | True | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.1294 | -26 | -8 | QQQ breadth conflicts with bearish_path: conflict score 69%, internal resonance is weak. | QQQ breadth conflict or failed-bounce risk is elevated; watch new lows, percent above 20/50d MA and sector participation. |
-| IWM | True | False | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.0578 | 0 | 4 | IWM breadth supports bearish_path: internal resonance is mixed, support score 68%. | IWM breadth conflict or failed-bounce risk is elevated; watch new lows, percent above 20/50d MA and sector participation. |
-| DIA | True | False | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.0082 | 9 | 13 | DIA breadth supports bearish_path: internal resonance is aligned, support score 99%, above 20d/50d MA 83%/77%. | DIA breadth improves confidence in the primary path, but forward validation is still required. |
+| SPY | True | False | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.0227 | 9 | 13 | SPY breadth supports bearish_path: internal resonance is aligned, support score 98%, above 20d/50d MA 73%/68%. | SPY breadth conflict or failed-bounce risk is elevated; watch new lows, percent above 20/50d MA and sector participation. |
+| QQQ | False | True | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.1295 | -26 | -8 | QQQ breadth conflicts with bearish_path: conflict score 69%, internal resonance is weak. | QQQ breadth conflict or failed-bounce risk is elevated; watch new lows, percent above 20/50d MA and sector participation. |
+| IWM | True | False | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.0569 | 0 | 4 | IWM breadth supports bearish_path: internal resonance is mixed, support score 69%. | IWM breadth conflict or failed-bounce risk is elevated; watch new lows, percent above 20/50d MA and sector participation. |
+| DIA | True | False | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.0082 | 9 | 0 | DIA breadth supports bearish_path: internal resonance is aligned, support score 99%, above 20d/50d MA 83%/77%. | DIA breadth conflict or failed-bounce risk is elevated; watch new lows, percent above 20/50d MA and sector participation. |
 
 ## Forward Validation
 
