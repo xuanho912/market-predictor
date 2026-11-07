@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-11-07T01:26:45.204917+00:00`
+Generated at: `2026-11-07T02:27:52.921135+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -25,9 +25,9 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_downside_continuation` / `30.0%`
 - secondary: `stock_failed_bounce` / `25.7%`
 - risk: `stock_event_risk` / `11.8%`
-- stock_confluence_score: `30.15` / `weak`
-- stock_alpha_score_v1: `30.5` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `45.5%`
+- stock_confluence_score: `33.36` / `weak`
+- stock_alpha_score_v1: `32.0` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `46.1%`
 - 60d_expected_return: `-2.1%`
 - risk_reward_ratio: `0.34`
 - strongest_alert: `Stock Breakdown Warning` / `WATCH` / `45.19`
@@ -54,12 +54,12 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `27.1%`
 - secondary: `stock_downside_continuation` / `20.1%`
 - risk: `stock_event_risk` / `13.8%`
-- stock_confluence_score: `33.43` / `weak`
+- stock_confluence_score: `35.62` / `weak`
 - stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `43.0%`
 - 60d_expected_return: `-1.2%`
 - risk_reward_ratio: `0.57`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `36.47`
+- strongest_alert: `Relative Strength Alert` / `NO_ALERT` / `30.69`
 - historical_analog_support: `conflicting` / samples `10`
 - validation_status: `not_yet_validated`
 
@@ -112,7 +112,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_downside_continuation` / `27.0%`
 - secondary: `stock_failed_bounce` / `25.5%`
 - risk: `stock_event_risk` / `15.4%`
-- stock_confluence_score: `25.16` / `weak`
+- stock_confluence_score: `25.35` / `weak`
 - stock_alpha_score_v1: `21.0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `37.9%`
 - 60d_expected_return: `-2.2%`
