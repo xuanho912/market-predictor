@@ -5,11 +5,11 @@
     "affected_symbols": [],
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
-    "current_date": "2026-11-06",
-    "current_time_us_eastern": "2026-11-06T21:44:55.255697-05:00",
-    "data_freshness_status": "fresh",
+    "current_date": "2026-11-07",
+    "current_time_us_eastern": "2026-11-07T02:15:55.536469-05:00",
+    "data_freshness_status": "market_closed",
     "expected_latest_trading_date": "2026-11-06",
-    "generated_at": "2026-11-07T02:44:55.255697+00:00",
+    "generated_at": "2026-11-07T07:15:55.536469+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -18,7 +18,7 @@
       "Synthetic data is never allowed to create a live forecast signal."
     ],
     "is_latest_trading_day": true,
-    "is_today_us_market_trading_day": true,
+    "is_today_us_market_trading_day": false,
     "last_successful_core_market_update": "2026-11-06",
     "last_successful_update": "2026-11-06",
     "latest_confirmed_market_date": "2026-11-06",
@@ -940,7 +940,7 @@
     },
     "stale_days": 0,
     "version": "data_freshness_gate_v3",
-    "warning_message": "核心行情已更新至最新应有交易日 2026-11-06。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。"
+    "warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-11-06 的数据。 当前美东时间 2026-11-07 02:15。"
   },
   "data_quality_summary": {
     "average_breadth_quality_score": 67.0,
@@ -964,7 +964,7 @@
     "can_append_forecast_record": true,
     "data_completeness_score": 87.0,
     "data_completeness_score_before_news_event": 85.0,
-    "data_freshness_status": "fresh",
+    "data_freshness_status": "market_closed",
     "data_source_status": "real_core_with_proxies",
     "expected_latest_trading_date": "2026-11-06",
     "fallback_used": true,
@@ -1048,17 +1048,17 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "DGS3MO",
-      "BAA_SPREAD",
-      "HY_OAS",
       "DGS2",
-      "IG_OAS",
       "DGS10",
+      "IG_OAS",
+      "HY_OAS",
+      "BAA_SPREAD",
+      "DGS3MO",
       "RECESSION",
-      "FINANCIAL_STRESS",
-      "DFII10"
+      "DFII10",
+      "FINANCIAL_STRESS"
     ],
-    "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-11-06。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
+    "freshness_warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-11-06 的数据。 当前美东时间 2026-11-07 02:15。",
     "gamma_available": false,
     "gamma_exposure_available": false,
     "latest_confirmed_market_date": "2026-11-06",
@@ -1087,11 +1087,11 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 77,
+      "event_detection_confidence": 75,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-11-07T02:44:43.257988+00:00",
-      "major_event_count": 8,
+      "last_update": "2026-11-07T07:15:45.454907+00:00",
+      "major_event_count": 9,
       "missing_reason": null,
       "news_direction": "risk_off",
       "news_event_partial": false,
@@ -1102,7 +1102,7 @@
     },
     "news_event_available": true,
     "news_event_event_risk_level": "high",
-    "news_event_major_count": 8,
+    "news_event_major_count": 9,
     "news_event_missing_reason": null,
     "news_event_narrative": "geopolitics_escalation_risk_off",
     "news_event_partial": false,
@@ -1322,7 +1322,7 @@
       "status": "failed"
     },
     "event_risk_level": "high",
-    "major_event_count": 8,
+    "major_event_count": 9,
     "market_narrative": {
       "affected_scenarios": [
         "bearish_path"
@@ -1361,13 +1361,25 @@
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_market_direction": "risk_off",
+          "headline": "Crude gains on worries about renewed US attacks on Iran - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-11-06T21:47:47+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
           "headline": "Top House Oversight Democrat warns Trump family to 'lawyer up'",
           "importance_score": 100,
           "published_at": "2026-11-06T19:42:36+00:00",
           "source": "CNBC"
         },
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -1401,18 +1413,6 @@
           "importance_score": 100,
           "published_at": "2026-11-06T14:17:12+00:00",
           "source": "Reuters"
-        },
-        {
-          "confidence": "medium",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Outside groups urge congressional Dems to target corporate interests over Trump",
-          "importance_score": 100,
-          "published_at": "2026-11-06T11:30:01+00:00",
-          "source": "CNBC"
         }
       ]
     },
@@ -1422,7 +1422,7 @@
       "direction": "supports_risk_expansion",
       "event_risk_level": "high",
       "macro_event_risk_flag": false,
-      "major_event_count": 8,
+      "major_event_count": 9,
       "not_a_trading_signal": true,
       "price_reaction_confirmed": false,
       "symbols": {
@@ -1561,7 +1561,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": 0.0058,
-        "avg_equity_futures_1d_return": 0.0053,
+        "avg_equity_futures_1d_return": 0.0049,
         "confirmed_checks": [
           "美元走强"
         ],
@@ -1577,7 +1577,7 @@
           "HYG/LQD 走弱"
         ],
         "hyg_lqd_1d_relative_return": 0.0006,
-        "oil_proxy_1d_return": -0.0003,
+        "oil_proxy_1d_return": 0.0024,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -3172,11 +3172,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
-            "Two missiles strike Iran's Qeshm Island, Tasnim news agency says - Reuters",
+            "Qatar says its mediation efforts between US and Iran continue to prevent escalation - Reuters",
             "Trump makes hardliner Stephen Miller his chief of staff after midterm defeat - Reuters",
+            "Two missiles strike Iran's Qeshm Island, Tasnim news agency says - Reuters",
             "US Treasury sanctions Canadian money services firms over Iran-related transactions - Reuters",
-            "'We have nothing': Displaced mothers in Yemen's Taiz collect plastic to survive - Reuters",
-            "Soaring freight rates give US refiners edge as crude discounts widen - Reuters"
+            "Before his promotion, Stephen Miller designed Trump's immigration crackdown - Reuters"
           ]
         },
         "price": {
@@ -4109,14 +4109,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 97,
+            "confidence_score": 95,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 91,
+            "freshness_score": 80,
             "headline": "Two missiles strike Iran's Qeshm Island, Tasnim news agency says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4136,20 +4136,20 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 77,
+            "confidence_score": 76,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
-            "headline": "Top House Oversight Democrat warns Trump family to 'lawyer up'",
+            "freshness_score": 77,
+            "headline": "Crude gains on worries about renewed US attacks on Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-11-06T19:42:36+00:00",
-            "source": "CNBC"
+            "published_at": "2026-11-06T21:47:47+00:00",
+            "source": "Reuters"
           },
           {
             "affected_assets": [
@@ -4170,7 +4170,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 75,
+            "freshness_score": 72,
+            "headline": "Top House Oversight Democrat warns Trump family to 'lawyer up'",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-06T19:42:36+00:00",
+            "source": "CNBC"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 73,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 64,
             "headline": "Syria aids Saudi Arabia with military advice and training amid Houthi attacks, sources say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4190,14 +4217,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 71,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 59,
             "headline": "Iran war spurs crackdown on clerics in tiny Gulf state Bahrain - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4217,47 +4244,20 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 92,
+            "confidence_score": 89,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 59,
             "headline": "Seafarer killed in suspected missile attack on tanker in Gulf - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-11-06T14:17:12+00:00",
             "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 72,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 63,
-            "headline": "Outside groups urge congressional Dems to target corporate interests over Trump",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-06T11:30:01+00:00",
-            "source": "CNBC"
           }
         ],
         "market_narrative": {
@@ -4298,13 +4298,25 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Crude gains on worries about renewed US attacks on Iran - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-06T21:47:47+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "Top House Oversight Democrat warns Trump family to 'lawyer up'",
               "importance_score": 100,
               "published_at": "2026-11-06T19:42:36+00:00",
               "source": "CNBC"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -4338,18 +4350,6 @@
               "importance_score": 100,
               "published_at": "2026-11-06T14:17:12+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Outside groups urge congressional Dems to target corporate interests over Trump",
-              "importance_score": 100,
-              "published_at": "2026-11-06T11:30:01+00:00",
-              "source": "CNBC"
             }
           ]
         },
@@ -4389,7 +4389,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0058,
-            "avg_equity_futures_1d_return": 0.0053,
+            "avg_equity_futures_1d_return": 0.0049,
             "confirmed_checks": [
               "美元走强"
             ],
@@ -4405,7 +4405,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0006,
-            "oil_proxy_1d_return": -0.0003,
+            "oil_proxy_1d_return": 0.0024,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -5706,11 +5706,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
-            "Two missiles strike Iran's Qeshm Island, Tasnim news agency says - Reuters",
+            "Qatar says its mediation efforts between US and Iran continue to prevent escalation - Reuters",
             "Trump makes hardliner Stephen Miller his chief of staff after midterm defeat - Reuters",
+            "Two missiles strike Iran's Qeshm Island, Tasnim news agency says - Reuters",
             "US Treasury sanctions Canadian money services firms over Iran-related transactions - Reuters",
-            "'We have nothing': Displaced mothers in Yemen's Taiz collect plastic to survive - Reuters",
-            "Soaring freight rates give US refiners edge as crude discounts widen - Reuters"
+            "Before his promotion, Stephen Miller designed Trump's immigration crackdown - Reuters"
           ]
         },
         "price": {
@@ -6632,14 +6632,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 97,
+            "confidence_score": 95,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 91,
+            "freshness_score": 80,
             "headline": "Two missiles strike Iran's Qeshm Island, Tasnim news agency says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6659,20 +6659,20 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 77,
+            "confidence_score": 76,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
-            "headline": "Top House Oversight Democrat warns Trump family to 'lawyer up'",
+            "freshness_score": 77,
+            "headline": "Crude gains on worries about renewed US attacks on Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-11-06T19:42:36+00:00",
-            "source": "CNBC"
+            "published_at": "2026-11-06T21:47:47+00:00",
+            "source": "Reuters"
           },
           {
             "affected_assets": [
@@ -6693,7 +6693,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 75,
+            "freshness_score": 72,
+            "headline": "Top House Oversight Democrat warns Trump family to 'lawyer up'",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-06T19:42:36+00:00",
+            "source": "CNBC"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 73,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 64,
             "headline": "Syria aids Saudi Arabia with military advice and training amid Houthi attacks, sources say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6713,14 +6740,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 71,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 59,
             "headline": "Iran war spurs crackdown on clerics in tiny Gulf state Bahrain - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6740,47 +6767,20 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 92,
+            "confidence_score": 89,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 59,
             "headline": "Seafarer killed in suspected missile attack on tanker in Gulf - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-11-06T14:17:12+00:00",
             "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 72,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 63,
-            "headline": "Outside groups urge congressional Dems to target corporate interests over Trump",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-06T11:30:01+00:00",
-            "source": "CNBC"
           }
         ],
         "market_narrative": {
@@ -6821,13 +6821,25 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Crude gains on worries about renewed US attacks on Iran - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-06T21:47:47+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "Top House Oversight Democrat warns Trump family to 'lawyer up'",
               "importance_score": 100,
               "published_at": "2026-11-06T19:42:36+00:00",
               "source": "CNBC"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -6861,18 +6873,6 @@
               "importance_score": 100,
               "published_at": "2026-11-06T14:17:12+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Outside groups urge congressional Dems to target corporate interests over Trump",
-              "importance_score": 100,
-              "published_at": "2026-11-06T11:30:01+00:00",
-              "source": "CNBC"
             }
           ]
         },
@@ -6912,7 +6912,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0058,
-            "avg_equity_futures_1d_return": 0.0053,
+            "avg_equity_futures_1d_return": 0.0049,
             "confirmed_checks": [
               "美元走强"
             ],
@@ -6928,7 +6928,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0006,
-            "oil_proxy_1d_return": -0.0003,
+            "oil_proxy_1d_return": 0.0024,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -8267,11 +8267,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
-            "Two missiles strike Iran's Qeshm Island, Tasnim news agency says - Reuters",
+            "Qatar says its mediation efforts between US and Iran continue to prevent escalation - Reuters",
             "Trump makes hardliner Stephen Miller his chief of staff after midterm defeat - Reuters",
+            "Two missiles strike Iran's Qeshm Island, Tasnim news agency says - Reuters",
             "US Treasury sanctions Canadian money services firms over Iran-related transactions - Reuters",
-            "'We have nothing': Displaced mothers in Yemen's Taiz collect plastic to survive - Reuters",
-            "Soaring freight rates give US refiners edge as crude discounts widen - Reuters"
+            "Before his promotion, Stephen Miller designed Trump's immigration crackdown - Reuters"
           ]
         },
         "price": {
@@ -9229,14 +9229,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 97,
+            "confidence_score": 95,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 91,
+            "freshness_score": 80,
             "headline": "Two missiles strike Iran's Qeshm Island, Tasnim news agency says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9256,20 +9256,20 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 77,
+            "confidence_score": 76,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
-            "headline": "Top House Oversight Democrat warns Trump family to 'lawyer up'",
+            "freshness_score": 77,
+            "headline": "Crude gains on worries about renewed US attacks on Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-11-06T19:42:36+00:00",
-            "source": "CNBC"
+            "published_at": "2026-11-06T21:47:47+00:00",
+            "source": "Reuters"
           },
           {
             "affected_assets": [
@@ -9290,7 +9290,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 75,
+            "freshness_score": 72,
+            "headline": "Top House Oversight Democrat warns Trump family to 'lawyer up'",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-06T19:42:36+00:00",
+            "source": "CNBC"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 73,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 64,
             "headline": "Syria aids Saudi Arabia with military advice and training amid Houthi attacks, sources say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9310,14 +9337,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 71,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 59,
             "headline": "Iran war spurs crackdown on clerics in tiny Gulf state Bahrain - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9337,47 +9364,20 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 92,
+            "confidence_score": 89,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 59,
             "headline": "Seafarer killed in suspected missile attack on tanker in Gulf - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-11-06T14:17:12+00:00",
             "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 72,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 63,
-            "headline": "Outside groups urge congressional Dems to target corporate interests over Trump",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-06T11:30:01+00:00",
-            "source": "CNBC"
           }
         ],
         "market_narrative": {
@@ -9418,13 +9418,25 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Crude gains on worries about renewed US attacks on Iran - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-06T21:47:47+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "Top House Oversight Democrat warns Trump family to 'lawyer up'",
               "importance_score": 100,
               "published_at": "2026-11-06T19:42:36+00:00",
               "source": "CNBC"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -9458,18 +9470,6 @@
               "importance_score": 100,
               "published_at": "2026-11-06T14:17:12+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Outside groups urge congressional Dems to target corporate interests over Trump",
-              "importance_score": 100,
-              "published_at": "2026-11-06T11:30:01+00:00",
-              "source": "CNBC"
             }
           ]
         },
@@ -9509,7 +9509,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0058,
-            "avg_equity_futures_1d_return": 0.0053,
+            "avg_equity_futures_1d_return": 0.0049,
             "confirmed_checks": [
               "美元走强"
             ],
@@ -9525,7 +9525,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0006,
-            "oil_proxy_1d_return": -0.0003,
+            "oil_proxy_1d_return": 0.0024,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -10866,11 +10866,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.25,
           "top_headlines": [
-            "Two missiles strike Iran's Qeshm Island, Tasnim news agency says - Reuters",
+            "Qatar says its mediation efforts between US and Iran continue to prevent escalation - Reuters",
             "Trump makes hardliner Stephen Miller his chief of staff after midterm defeat - Reuters",
+            "Two missiles strike Iran's Qeshm Island, Tasnim news agency says - Reuters",
             "US Treasury sanctions Canadian money services firms over Iran-related transactions - Reuters",
-            "'We have nothing': Displaced mothers in Yemen's Taiz collect plastic to survive - Reuters",
-            "Soaring freight rates give US refiners edge as crude discounts widen - Reuters"
+            "Before his promotion, Stephen Miller designed Trump's immigration crackdown - Reuters"
           ]
         },
         "price": {
@@ -11821,14 +11821,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 97,
+            "confidence_score": 95,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 91,
+            "freshness_score": 80,
             "headline": "Two missiles strike Iran's Qeshm Island, Tasnim news agency says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11848,20 +11848,20 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 77,
+            "confidence_score": 76,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 83,
-            "headline": "Top House Oversight Democrat warns Trump family to 'lawyer up'",
+            "freshness_score": 77,
+            "headline": "Crude gains on worries about renewed US attacks on Iran - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-11-06T19:42:36+00:00",
-            "source": "CNBC"
+            "published_at": "2026-11-06T21:47:47+00:00",
+            "source": "Reuters"
           },
           {
             "affected_assets": [
@@ -11882,7 +11882,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 75,
+            "freshness_score": 72,
+            "headline": "Top House Oversight Democrat warns Trump family to 'lawyer up'",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-06T19:42:36+00:00",
+            "source": "CNBC"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 73,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 64,
             "headline": "Syria aids Saudi Arabia with military advice and training amid Houthi attacks, sources say - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11902,14 +11929,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 71,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 59,
             "headline": "Iran war spurs crackdown on clerics in tiny Gulf state Bahrain - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11929,47 +11956,20 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 92,
+            "confidence_score": 89,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 59,
             "headline": "Seafarer killed in suspected missile attack on tanker in Gulf - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-11-06T14:17:12+00:00",
             "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 72,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 63,
-            "headline": "Outside groups urge congressional Dems to target corporate interests over Trump",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-06T11:30:01+00:00",
-            "source": "CNBC"
           }
         ],
         "market_narrative": {
@@ -12010,13 +12010,25 @@
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
+              "headline": "Crude gains on worries about renewed US attacks on Iran - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-06T21:47:47+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
               "headline": "Top House Oversight Democrat warns Trump family to 'lawyer up'",
               "importance_score": 100,
               "published_at": "2026-11-06T19:42:36+00:00",
               "source": "CNBC"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -12050,18 +12062,6 @@
               "importance_score": 100,
               "published_at": "2026-11-06T14:17:12+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Outside groups urge congressional Dems to target corporate interests over Trump",
-              "importance_score": 100,
-              "published_at": "2026-11-06T11:30:01+00:00",
-              "source": "CNBC"
             }
           ]
         },
@@ -12101,7 +12101,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0058,
-            "avg_equity_futures_1d_return": 0.0053,
+            "avg_equity_futures_1d_return": 0.0049,
             "confirmed_checks": [
               "美元走强"
             ],
@@ -12117,7 +12117,7 @@
               "HYG/LQD 走弱"
             ],
             "hyg_lqd_1d_relative_return": 0.0006,
-            "oil_proxy_1d_return": -0.0003,
+            "oil_proxy_1d_return": 0.0024,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
