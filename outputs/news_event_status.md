@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-07T17:47:16.441541+00:00`
+- generated_at: `2026-11-08T17:58:26.673903+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
-- event_detection_confidence: `74`
+- major_event_count: `6`
+- event_detection_confidence: `68`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,11 +27,35 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: EXCLUSIVE: Expanding on naval blockade, US military looks to restrict Iranian land commerce - Reuters
+- headline: Iran suggests blasts are not US attacks as both sides report ships hit - Reuters
 - source: Reuters
-- published_at: `2026-11-07T16:09:58+00:00`
+- published_at: `2026-11-08T14:21:43+00:00`
 - importance_score: `100`
 - confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Houthi attack damages Aramco building in Riyadh's financial district - Reuters
+- source: Reuters
+- published_at: `2026-11-08T05:24:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Houthi-run health ministry says airstrikes kill 33 near Yemen capital - Reuters
+- source: Reuters
+- published_at: `2026-11-07T19:13:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: EXCLUSIVE: Expanding on naval blockade, US military looks to restrict Iranian land commerce - Reuters
+- source: Reuters
+- published_at: `2026-11-07T13:36:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -39,60 +63,12 @@
 - source: Reuters
 - published_at: `2026-11-07T08:50:11+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### fed_dovish / risk_on
 
 - headline: World’s No. 1 restaurant crowned as contest comes under increasing scrutiny
 - source: CNBC
 - published_at: `2026-11-07T13:38:44+00:00`
-- importance_score: `86`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Two missiles strike Iran's Qeshm Island, Tasnim news agency says - Reuters
-- source: Reuters
-- published_at: `2026-11-06T23:04:12+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Top House Oversight Democrat warns Trump family to 'lawyer up'
-- source: CNBC
-- published_at: `2026-11-06T19:42:36+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Syria aids Saudi Arabia with military advice and training amid Houthi attacks, sources say - Reuters
-- source: Reuters
-- published_at: `2026-11-06T16:19:44+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran war spurs crackdown on clerics in tiny Gulf state Bahrain - Reuters
-- source: Reuters
-- published_at: `2026-11-06T14:21:44+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Seafarer killed in suspected missile attack on tanker in Gulf - Reuters
-- source: Reuters
-- published_at: `2026-11-06T14:17:12+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Outside groups urge congressional Dems to target corporate interests over Trump
-- source: CNBC
-- published_at: `2026-11-06T11:30:01+00:00`
-- importance_score: `100`
+- importance_score: `80`
 - confidence: `medium`
