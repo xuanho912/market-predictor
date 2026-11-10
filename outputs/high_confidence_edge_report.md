@@ -1,6 +1,6 @@
 # High Confidence Edge Report
 
-Generated at: `2026-11-09T22:24:38.098781+00:00`
+Generated at: `2026-11-10T02:50:34.157384+00:00`
 
 Status: `historical_proxy_and_forward_pending`
 Sample size: `80`
@@ -99,12 +99,12 @@ Conclusion: `not_enough_strong_edge_samples`
 - 60d: sample `40`, hit `0.75`, avg `0.038068`, median `0.044733`, mae `0.054294`
 
 ### breadth_conflicted_signals
-- sample_size: `60`
-- 3d: sample `60`, hit `0.6333`, avg `0.005806`, median `0.006372`, mae `0.017264`
-- 5d: sample `60`, hit `0.5833`, avg `0.008751`, median `0.006571`, mae `0.020499`
-- 10d: sample `60`, hit `0.6667`, avg `0.014799`, median `0.021836`, mae `0.035634`
-- 20d: sample `60`, hit `0.75`, avg `0.028059`, median `0.031658`, mae `0.047006`
-- 60d: sample `60`, hit `0.8333`, avg `0.051977`, median `0.065766`, mae `0.067185`
+- sample_size: `40`
+- 3d: sample `40`, hit `0.7`, avg `0.009099`, median `0.010441`, mae `0.019845`
+- 5d: sample `40`, hit `0.6`, avg `0.011407`, median `0.004924`, mae `0.022547`
+- 10d: sample `40`, hit `0.725`, avg `0.020291`, median `0.033298`, mae `0.041436`
+- 20d: sample `40`, hit `0.8`, avg `0.035156`, median `0.052608`, mae `0.053454`
+- 60d: sample `40`, hit `0.875`, avg `0.063034`, median `0.072891`, mae `0.076597`
 
 ### breadth_confirmed_bounce_signals
 - sample_size: `20`
@@ -163,12 +163,12 @@ Conclusion: `not_enough_strong_edge_samples`
 - 60d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
 
 ### failed_bounce_risk_with_breadth_conflict
-- sample_size: `60`
-- 3d: sample `60`, hit `0.6333`, avg `0.005806`, median `0.006372`, mae `0.017264`
-- 5d: sample `60`, hit `0.5833`, avg `0.008751`, median `0.006571`, mae `0.020499`
-- 10d: sample `60`, hit `0.6667`, avg `0.014799`, median `0.021836`, mae `0.035634`
-- 20d: sample `60`, hit `0.75`, avg `0.028059`, median `0.031658`, mae `0.047006`
-- 60d: sample `60`, hit `0.8333`, avg `0.051977`, median `0.065766`, mae `0.067185`
+- sample_size: `40`
+- 3d: sample `40`, hit `0.7`, avg `0.009099`, median `0.010441`, mae `0.019845`
+- 5d: sample `40`, hit `0.6`, avg `0.011407`, median `0.004924`, mae `0.022547`
+- 10d: sample `40`, hit `0.725`, avg `0.020291`, median `0.033298`, mae `0.041436`
+- 20d: sample `40`, hit `0.8`, avg `0.035156`, median `0.052608`, mae `0.053454`
+- 60d: sample `40`, hit `0.875`, avg `0.063034`, median `0.072891`, mae `0.076597`
 
 ## Internal Resonance Forward Validation
 

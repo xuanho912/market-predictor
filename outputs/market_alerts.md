@@ -3,15 +3,15 @@
 These alerts are forecast-validation and scenario-confirmation warnings only. They are not trading recommendations.
 
 - version: market_alert_engine_v1
-- generated_at: 2026-11-09T22:24:48.035467+00:00
+- generated_at: 2026-11-10T02:50:45.011012+00:00
 
 | Alert | Level | Score | Symbols | Top evidence | Validation |
 | --- | --- | ---: | --- | --- | --- |
 | Bounce Setup Alert | HIGH_CONVICTION | 76/100 | IWM | risk-on flow proxy 改善 | not_yet_forward_validated |
 | Trend Repair Alert | HIGH_CONVICTION | 72/100 | IWM | risk-on rotation 扩散 | not_yet_forward_validated |
-| Risk Expansion Alert | HIGH_CONVICTION | 72/100 | SPY | risk-off flow proxy 增强 | not_yet_forward_validated |
 | Risk Expansion Alert | WARNING | 71/100 | QQQ | risk-off flow proxy 增强 | not_yet_forward_validated |
+| Risk Expansion Alert | WARNING | 71/100 | SPY | risk-off flow proxy 增强 | not_yet_forward_validated |
 | Risk Expansion Alert | WARNING | 70/100 | DIA | risk-off flow proxy 增强 | not_yet_forward_validated |
-| Failed Bounce Alert | WARNING | 69/100 | SPY | 反抽缺少内部参与确认 | not_yet_forward_validated |
+| Failed Bounce Alert | WARNING | 69/100 | SPY | flow proxy 与反抽路径冲突 | not_yet_forward_validated |
 | Failed Bounce Alert | WARNING | 65/100 | DIA | flow proxy 与反抽路径冲突 | not_yet_forward_validated |
 | Failed Bounce Alert | WARNING | 65/100 | QQQ | flow proxy 与反抽路径冲突 | not_yet_forward_validated |

@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-09T22:24:38.102748+00:00`
+- generated_at: `2026-11-10T02:50:34.160281+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `13`
-- event_detection_confidence: `71`
+- event_detection_confidence: `68`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -39,7 +39,7 @@
 - source: CNBC
 - published_at: `2026-11-09T14:29:35+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +47,7 @@
 - source: Reuters
 - published_at: `2026-11-09T11:46:13+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -70,7 +70,7 @@
 - headline: Iran defends two-day proposal for peace talks after US rejects conditions - Reuters
 - source: Reuters
 - published_at: `2026-11-09T09:19:43+00:00`
-- importance_score: `94`
+- importance_score: `93`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
