@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-10T04:36:44.119534+00:00`
+- generated_at: `2026-11-10T08:29:13.562078+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `15`
-- event_detection_confidence: `72`
+- event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -55,15 +55,7 @@
 - source: CNBC
 - published_at: `2026-11-09T19:23:57+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### oil_shock_relief / risk_on
-
-- headline: Oil falls as Trump downplays prospect of escalation with Iran - Reuters
-- source: Reuters
-- published_at: `2026-11-10T01:43:00+00:00`
-- importance_score: `93`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -71,6 +63,14 @@
 - source: Reuters
 - published_at: `2026-11-09T18:28:46+00:00`
 - importance_score: `100`
+- confidence: `medium`
+
+### oil_shock_relief / risk_on
+
+- headline: Oil falls as Trump downplays prospect of escalation with Iran - Reuters
+- source: Reuters
+- published_at: `2026-11-10T01:43:00+00:00`
+- importance_score: `92`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -78,6 +78,14 @@
 - headline: Goodyear Tire CEO Mark Stewart steps down as company continues turnaround plan
 - source: CNBC
 - published_at: `2026-11-09T14:29:35+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: COMMENTARY: Middle East oil price war heralds post-conflict glut - Reuters
+- source: Reuters
+- published_at: `2026-11-09T12:01:48+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -94,13 +102,5 @@
 - headline: UAE's Gargash warns of prolonged regional uncertainty, says US-Iran settlement appears difficult - Reuters
 - source: Reuters
 - published_at: `2026-11-09T07:01:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: COMMENTARY: Middle East oil price war heralds post-conflict glut - Reuters
-- source: Reuters
-- published_at: `2026-11-09T07:00:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
