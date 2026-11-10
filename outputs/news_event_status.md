@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-10T04:24:29.058285+00:00`
+- generated_at: `2026-11-10T04:36:44.119534+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
-- event_detection_confidence: `68`
+- major_event_count: `15`
+- event_detection_confidence: `72`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `25`
+- confirmation_score: `0`
 
 ## Dashboard Note
 
@@ -27,9 +27,49 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Saudi-led coalition says it intercepts two Houthi missiles fired towards Riyadh - Reuters
+- source: Reuters
+- published_at: `2026-11-10T01:53:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: EXCLUSIVE: French officials blame Iran for refrigerator hacks, vow retaliation - Reuters
+- source: Reuters
+- published_at: `2026-11-09T21:23:10+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Trump tells Reuters that Qatar, Saudi Arabia want peaceful Iran deal, US ready for strikes if needed - Reuters
+- source: Reuters
+- published_at: `2026-11-09T20:42:43+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: This beaten-down data center stock could be worth a look, says Mike Khouw
 - source: CNBC
 - published_at: `2026-11-09T19:23:57+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### oil_shock_relief / risk_on
+
+- headline: Oil falls as Trump downplays prospect of escalation with Iran - Reuters
+- source: Reuters
+- published_at: `2026-11-10T01:43:00+00:00`
+- importance_score: `93`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: OPEC oil output rises in October to 90% of pre-war rate, Reuters survey shows - Reuters
+- source: Reuters
+- published_at: `2026-11-09T18:28:46+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -38,14 +78,6 @@
 - headline: Goodyear Tire CEO Mark Stewart steps down as company continues turnaround plan
 - source: CNBC
 - published_at: `2026-11-09T14:29:35+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump to meet Iran war mediator Qatar, no imminent deal seen to end the war - Reuters
-- source: Reuters
-- published_at: `2026-11-09T11:46:13+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -65,42 +97,10 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_easing / risk_on
-
-- headline: Iran defends two-day proposal for peace talks after US rejects conditions - Reuters
-- source: Reuters
-- published_at: `2026-11-09T09:19:43+00:00`
-- importance_score: `92`
-- confidence: `medium`
-
 ### geopolitical_risk_escalation / risk_off
 
-- headline: COP31 to open in Turkey, with climate goals under pressure from war and AI - Reuters
+- headline: COMMENTARY: Middle East oil price war heralds post-conflict glut - Reuters
 - source: Reuters
-- published_at: `2026-11-09T01:04:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil falls as Trump signals restraint on Iran despite fresh shipping attacks - Reuters
-- source: Reuters
-- published_at: `2026-11-08T23:50:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iraq's Khor Mor gas field suspends output after drone attack, operator says - Reuters
-- source: Reuters
-- published_at: `2026-11-08T20:47:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump says he is unlikely to order Iran attack if talks progress, CNN reports - Reuters
-- source: Reuters
-- published_at: `2026-11-08T18:00:09+00:00`
+- published_at: `2026-11-09T07:00:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
