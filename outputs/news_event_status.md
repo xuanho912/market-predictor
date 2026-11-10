@@ -1,20 +1,20 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-10T11:48:02.651350+00:00`
+- generated_at: `2026-11-10T19:47:04.334539+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `13`
-- event_detection_confidence: `73`
+- major_event_count: `12`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
-- price_reaction_confirmed: `False`
-- confirmation_score: `25`
+- price_reaction_confirmed: `True`
+- confirmation_score: `75`
 
 ## Dashboard Note
 
-当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，尚未被价格反应充分确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
+当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，已被价格反应初步确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
 
 ## Economic Calendar Risk
 
@@ -27,9 +27,41 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Vanishing vessels and missing sailors: The Iran war's human cost at sea - Reuters
+- source: Reuters
+- published_at: `2026-11-10T16:54:28+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Most Americans want new Democratic Congress to end Trump's Iran war, Reuters/Ipsos poll finds - Reuters
+- source: Reuters
+- published_at: `2026-11-10T16:27:13+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: France summons Iran envoy over supermarket fridge hack, warns of response - Reuters
 - source: Reuters
-- published_at: `2026-11-10T09:52:02+00:00`
+- published_at: `2026-11-10T13:26:53+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Gulf stocks close higher as Trump dials back Iran strike talk - Reuters
+- source: Reuters
+- published_at: `2026-11-10T13:14:10+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: UAE selling Saudi oil from supertanker attacked in Gulf - Reuters
+- source: Reuters
+- published_at: `2026-11-10T11:54:11+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -39,68 +71,36 @@
 - source: Reuters
 - published_at: `2026-11-10T04:26:00+00:00`
 - importance_score: `100`
+- confidence: `medium`
+
+### fed_hawkish / risk_off
+
+- headline: Fed's Logan calls for two more rate hikes, possibly rapidly - Reuters
+- source: Reuters
+- published_at: `2026-11-10T15:55:43+00:00`
+- importance_score: `88`
+- confidence: `high`
+
+### inflation_hot / risk_off
+
+- headline: Wall St falls as hot inflation data fuels rate-hike jitters - Reuters
+- source: Reuters
+- published_at: `2026-11-10T17:20:50+00:00`
+- importance_score: `86`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Saudi-led coalition reports Houthi missile, drone interceptions; Saba reports Saudi strikes on Sanaa - Reuters
+- headline: Saudi-led coalition says it shot down Houthi missiles aimed at Riyadh - Reuters
 - source: Reuters
 - published_at: `2026-11-10T01:53:00+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump tells Reuters that Qatar, Saudi Arabia want peaceful Iran deal, US ready for strikes if needed - Reuters
-- source: Reuters
-- published_at: `2026-11-09T20:42:43+00:00`
-- importance_score: `100`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: This beaten-down data center stock could be worth a look, says Mike Khouw
-- source: CNBC
-- published_at: `2026-11-09T19:23:57+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: OPEC oil output rises in October to 90% of pre-war rate, Reuters survey shows - Reuters
-- source: Reuters
-- published_at: `2026-11-09T18:28:46+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### oil_shock_relief / risk_on
-
-- headline: Oil falls as Trump downplays prospect of escalation with Iran - Reuters
+- headline: Oil prices hit two-month lows as US downplays further Iran strikes - Reuters
 - source: Reuters
 - published_at: `2026-11-10T01:43:00+00:00`
-- importance_score: `92`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: French officials blame Iran for refrigerator hacks, vow retaliation - Reuters
-- source: Reuters
-- published_at: `2026-11-09T15:56:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Goodyear Tire CEO Mark Stewart steps down as company continues turnaround plan
-- source: CNBC
-- published_at: `2026-11-09T14:29:35+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump says he will hold off on fresh Iran strikes for now - Reuters
-- source: Reuters
-- published_at: `2026-11-09T11:16:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
