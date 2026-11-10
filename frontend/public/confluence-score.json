@@ -1,8 +1,8 @@
 {
   "disclaimer": "Confluence is a forecast-confirmation layer, not a trading signal or execution recommendation.",
-  "generated_at": "2026-11-10T03:47:54.385794+00:00",
+  "generated_at": "2026-11-10T04:24:39.724197+00:00",
   "summary": {
-    "average_confluence_score": 47.75,
+    "average_confluence_score": 48.0,
     "mixed_or_no_edge_symbols": [
       "DIA",
       "IWM",
@@ -18,7 +18,7 @@
         {
           "detail": "News/event direction is not sufficiently confirmed by market reaction.",
           "name": "新闻未获价格确认",
-          "score": 100,
+          "score": 75,
           "source": "news"
         },
         {
@@ -149,6 +149,12 @@
           "source": "breadth"
         },
         {
+          "detail": "DIA 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+          "name": "新闻事件支持主路径",
+          "score": 25,
+          "source": "news"
+        },
+        {
           "detail": "primary-secondary gap 12.1%",
           "name": "主次路径差距可观察",
           "score": 12.12,
@@ -189,12 +195,6 @@
           "name": "price trend",
           "score": 6,
           "source": "signal_confirmation"
-        },
-        {
-          "detail": "DIA 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-          "name": "新闻事件支持主路径",
-          "score": 0,
-          "source": "news"
         }
       ],
       "symbol": "DIA",
@@ -211,7 +211,7 @@
         {
           "detail": "News/event direction is not sufficiently confirmed by market reaction.",
           "name": "新闻未获价格确认",
-          "score": 100,
+          "score": 75,
           "source": "news"
         },
         {
@@ -225,6 +225,12 @@
           "name": "risk_off_news_event",
           "score": 35,
           "source": "signal_confirmation"
+        },
+        {
+          "detail": "IWM 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+          "name": "新闻事件与主路径冲突",
+          "score": 25,
+          "source": "news"
         },
         {
           "detail": "Credit proxy is deteriorating.",
@@ -249,17 +255,11 @@
           "name": "主次路径差距小",
           "score": 1.67,
           "source": "scenario_gap"
-        },
-        {
-          "detail": "IWM 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-          "name": "新闻事件与主路径冲突",
-          "score": 0,
-          "source": "news"
         }
       ],
       "confluence_level": "mixed",
-      "confluence_score": 52,
-      "confluence_summary": "IWM 当前多源共振为 mixed（52/100），主导路径为 bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
+      "confluence_score": 53,
+      "confluence_summary": "IWM 当前多源共振为 mixed（53/100），主导路径为 bounce。支持来自 signal_confirmation、signal_confirmation、signal_confirmation、signal_confirmation；冲突来自 signal_confirmation、signal_confirmation、signal_confirmation；仍缺 options、options、flow。",
       "dominant_path": "bounce",
       "edge_status": "{'market_edge_status': 'RISK_WARNING', 'has_usable_prediction_edge_today': True, 'conditions': {'data_completeness_ge_80': True, 'signal_confirmation_ge_70': True, 'historical_analog_not_conflicting': True, 'confidence_score_ge_65': True, 'current_regime_identified': True, 'macro_event_risk_not_high': False, 'credit_volatility_no_strong_conflict': True, 'market_internals_not_surface_only': True, 'options_structure_not_missing': True, 'flow_proxy_not_conflicting': False}, 'passed_conditions': 8, 'summary': '风险扩散条件升高，重点不是追逐反抽，而是防止路径切换到风险情景。', 'no_edge_note': '', 'risk_warning': True}",
       "key_conflict_count": 3,
@@ -402,16 +402,16 @@
     "QQQ": {
       "conflicting_evidence": [
         {
-          "detail": "News/event direction is not sufficiently confirmed by market reaction.",
-          "name": "新闻未获价格确认",
-          "score": 100,
-          "source": "news"
-        },
-        {
           "detail": "重大 risk-off 新闻提高风险路径权重。",
           "name": "risk_off_news_event",
           "score": 83,
           "source": "signal_confirmation"
+        },
+        {
+          "detail": "News/event direction is not sufficiently confirmed by market reaction.",
+          "name": "新闻未获价格确认",
+          "score": 75,
+          "source": "news"
         },
         {
           "detail": "指数路径与内部参与度存在冲突。",
@@ -553,6 +553,12 @@
           "source": "credit"
         },
         {
+          "detail": "QQQ 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+          "name": "新闻事件支持主路径",
+          "score": 25,
+          "source": "news"
+        },
+        {
           "detail": "primary-secondary gap 12.5%",
           "name": "主次路径差距可观察",
           "score": 12.5,
@@ -581,12 +587,6 @@
           "name": "flow / positioning proxy",
           "score": 9,
           "source": "signal_confirmation"
-        },
-        {
-          "detail": "QQQ 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-          "name": "新闻事件支持主路径",
-          "score": 0,
-          "source": "news"
         }
       ],
       "symbol": "QQQ",
@@ -595,16 +595,16 @@
     "SPY": {
       "conflicting_evidence": [
         {
-          "detail": "News/event direction is not sufficiently confirmed by market reaction.",
-          "name": "新闻未获价格确认",
-          "score": 100,
-          "source": "news"
-        },
-        {
           "detail": "重大 risk-off 新闻提高风险路径权重。",
           "name": "risk_off_news_event",
           "score": 79,
           "source": "signal_confirmation"
+        },
+        {
+          "detail": "News/event direction is not sufficiently confirmed by market reaction.",
+          "name": "新闻未获价格确认",
+          "score": 75,
+          "source": "news"
         },
         {
           "detail": "指数路径与内部参与度存在冲突。",
@@ -740,6 +740,12 @@
           "source": "credit"
         },
         {
+          "detail": "SPY 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+          "name": "新闻事件支持主路径",
+          "score": 25,
+          "source": "news"
+        },
+        {
           "detail": "primary-secondary gap 16.9%",
           "name": "主次路径差距可观察",
           "score": 16.92,
@@ -768,12 +774,6 @@
           "name": "flow / positioning proxy",
           "score": 9,
           "source": "signal_confirmation"
-        },
-        {
-          "detail": "SPY 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-          "name": "新闻事件支持主路径",
-          "score": 0,
-          "source": "news"
         }
       ],
       "symbol": "SPY",
