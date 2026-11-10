@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-10T08:29:13.562078+00:00`
+- generated_at: `2026-11-10T11:48:02.651350+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `15`
-- event_detection_confidence: `70`
+- major_event_count: `13`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `0`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
@@ -27,17 +27,25 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Saudi-led coalition says it intercepts two Houthi missiles fired towards Riyadh - Reuters
+- headline: France summons Iran envoy over supermarket fridge hack, warns of response - Reuters
 - source: Reuters
-- published_at: `2026-11-10T01:53:00+00:00`
+- published_at: `2026-11-10T09:52:02+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: EXCLUSIVE: French officials blame Iran for refrigerator hacks, vow retaliation - Reuters
+- headline: Hormuz LNG traffic hits highest in October since Iran war began - Reuters
 - source: Reuters
-- published_at: `2026-11-09T21:23:10+00:00`
+- published_at: `2026-11-10T04:26:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Saudi-led coalition reports Houthi missile, drone interceptions; Saba reports Saudi strikes on Sanaa - Reuters
+- source: Reuters
+- published_at: `2026-11-10T01:53:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -47,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-11-09T20:42:43+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -75,6 +83,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: French officials blame Iran for refrigerator hacks, vow retaliation - Reuters
+- source: Reuters
+- published_at: `2026-11-09T15:56:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Goodyear Tire CEO Mark Stewart steps down as company continues turnaround plan
 - source: CNBC
 - published_at: `2026-11-09T14:29:35+00:00`
@@ -83,24 +99,8 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: COMMENTARY: Middle East oil price war heralds post-conflict glut - Reuters
+- headline: Trump says he will hold off on fresh Iran strikes for now - Reuters
 - source: Reuters
-- published_at: `2026-11-09T12:01:48+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Saudi Arabia says danger passed in Riyadh after alert, day after Houthi attack - Reuters
-- source: Reuters
-- published_at: `2026-11-09T07:15:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: UAE's Gargash warns of prolonged regional uncertainty, says US-Iran settlement appears difficult - Reuters
-- source: Reuters
-- published_at: `2026-11-09T07:01:00+00:00`
+- published_at: `2026-11-09T11:16:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
