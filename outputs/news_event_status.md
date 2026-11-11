@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-11T07:48:03.309469+00:00`
+- generated_at: `2026-11-11T11:29:15.877770+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `9`
-- event_detection_confidence: `73`
+- event_detection_confidence: `70`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,9 @@
 
 ### geopolitical_risk_easing / risk_on
 
-- headline: Oil rebounds as Hormuz shipping attacks blunt hopes for Iran truce - Reuters
+- headline: Oil steadies as Hormuz attacks blunt hopes for Iran truce - Reuters
 - source: Reuters
-- published_at: `2026-11-11T04:55:28+00:00`
+- published_at: `2026-11-11T02:10:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -39,15 +39,7 @@
 - source: Reuters
 - published_at: `2026-11-10T21:24:41+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Tankers continue to burn in the Middle East despite hopes for de-escalation - Reuters
-- source: Reuters
-- published_at: `2026-11-10T22:27:38+00:00`
-- importance_score: `98`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,6 +47,14 @@
 - source: Reuters
 - published_at: `2026-11-10T16:27:13+00:00`
 - importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Tankers continue to burn in the Middle East despite hopes for de-escalation - Reuters
+- source: Reuters
+- published_at: `2026-11-10T19:14:00+00:00`
+- importance_score: `96`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
@@ -94,5 +94,5 @@
 - headline: Fed's Logan calls for two more rate hikes, possibly rapidly - Reuters
 - source: Reuters
 - published_at: `2026-11-10T15:55:43+00:00`
-- importance_score: `85`
+- importance_score: `84`
 - confidence: `medium`

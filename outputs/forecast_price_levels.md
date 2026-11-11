@@ -1,25 +1,25 @@
 # Forecast Price Levels
 
-Generated at: `2026-11-11T07:48:16.064351Z`
+Generated at: `2026-11-11T11:29:25.748022Z`
 
 These are probability-path scenario levels, not execution instructions, risk-control rules, or guaranteed targets.
 
 ## SPY
 
 - current price: `749.92`
-- primary confirmation: `769.11`
+- primary confirmation: `766.81`
 - primary invalidation: `733.00`
 - risk activation: `726.08`
-- trend repair confirmation: `798.69`
+- trend repair confirmation: `773.09`
 
 | Horizon | Expected | Primary | Secondary | Risk | Upper | Lower |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| 1d | 752.92 | 756.71 | 744.95 | 744.95 | 756.71 | 744.95 |
-| 3d | 758.92 | 770.29 | 735.02 | 735.02 | 770.29 | 735.02 |
-| 5d | 758.37 | 769.11 | 736.57 | 736.57 | 769.11 | 736.57 |
-| 10d | 768.91 | 784.64 | 736.44 | 736.44 | 784.64 | 736.44 |
-| 20d | 775.50 | 798.69 | 726.08 | 726.08 | 798.69 | 726.08 |
-| 60d | 796.66 | 814.28 | 759.22 | 759.22 | 814.28 | 759.22 |
+| 1d | 752.92 | 744.95 | 756.71 | 744.95 | 756.71 | 744.95 |
+| 3d | 758.92 | 735.02 | 770.29 | 735.02 | 770.29 | 735.02 |
+| 5d | 758.37 | 736.57 | 769.11 | 736.57 | 769.11 | 736.57 |
+| 10d | 768.91 | 736.44 | 784.64 | 736.44 | 784.64 | 736.44 |
+| 20d | 775.50 | 726.08 | 798.69 | 726.08 | 798.69 | 726.08 |
+| 60d | 796.66 | 759.22 | 814.28 | 759.22 | 814.28 | 759.22 |
 
 ## QQQ
 
