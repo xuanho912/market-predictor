@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-11T01:32:27.776202+00:00`
+- generated_at: `2026-11-11T02:19:57.283735+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
+- major_event_count: `9`
 - event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran-backed militant helped plot attack on UK's Fairford base from US jail, Justice Department says - Reuters
+- source: Reuters
+- published_at: `2026-11-10T21:24:41+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -86,5 +94,5 @@
 - headline: Fed's Logan calls for two more rate hikes, possibly rapidly - Reuters
 - source: Reuters
 - published_at: `2026-11-10T15:55:43+00:00`
-- importance_score: `87`
+- importance_score: `86`
 - confidence: `medium`

@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-11-11T01:32:39.986746+00:00`
+Generated at: `2026-11-11T02:20:10.199822+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -25,9 +25,9 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_downside_continuation` / `30.6%`
 - secondary: `stock_failed_bounce` / `26.8%`
 - risk: `stock_event_risk` / `13.3%`
-- stock_confluence_score: `32.54` / `weak`
-- stock_alpha_score_v1: `28.5` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `35.9%`
+- stock_confluence_score: `37.28` / `weak`
+- stock_alpha_score_v1: `35.5` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `38.7%`
 - 60d_expected_return: `-3.0%`
 - risk_reward_ratio: `0.3`
 - strongest_alert: `Relative Weakness Alert` / `HIGH_CONVICTION` / `73.54`
@@ -54,13 +54,13 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `25.4%`
 - secondary: `stock_trend_repair` / `16.6%`
 - risk: `stock_downside_continuation` / `16.3%`
-- stock_confluence_score: `41.94` / `weak`
+- stock_confluence_score: `44.89` / `weak`
 - stock_alpha_score_v1: `1.5` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `47.0%`
 - 60d_expected_return: `-0.6%`
 - risk_reward_ratio: `0.61`
 - strongest_alert: `Relative Strength Alert` / `WATCH` / `47.06`
-- historical_analog_support: `weak` / samples `10`
+- historical_analog_support: `supportive` / samples `10`
 - validation_status: `not_yet_validated`
 
 - primary_confirmation_level: `414.23`
@@ -112,7 +112,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `26.2%`
 - secondary: `stock_downside_continuation` / `25.8%`
 - risk: `stock_event_risk` / `15.0%`
-- stock_confluence_score: `34.6` / `weak`
+- stock_confluence_score: `34.67` / `weak`
 - stock_alpha_score_v1: `21.0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `41.7%`
 - 60d_expected_return: `-2.3%`
