@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-11T02:19:57.283735+00:00`
+- generated_at: `2026-11-11T02:45:15.503023+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
+- major_event_count: `8`
 - event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -79,14 +79,6 @@
 - source: Reuters
 - published_at: `2026-11-10T21:27:01+00:00`
 - importance_score: `86`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Hormuz LNG traffic hits highest in October since Iran war began - Reuters
-- source: Reuters
-- published_at: `2026-11-10T04:26:00+00:00`
-- importance_score: `100`
 - confidence: `medium`
 
 ### fed_hawkish / risk_off
