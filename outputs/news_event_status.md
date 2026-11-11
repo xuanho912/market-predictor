@@ -1,20 +1,20 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-10T19:47:04.334539+00:00`
+- generated_at: `2026-11-11T00:45:10.747901+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
-- event_detection_confidence: `75`
+- major_event_count: `9`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
-- price_reaction_confirmed: `True`
-- confirmation_score: `75`
+- price_reaction_confirmed: `False`
+- confirmation_score: `50`
 
 ## Dashboard Note
 
-当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，已被价格反应初步确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
+当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，尚未被价格反应充分确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
 
 ## Economic Calendar Risk
 
@@ -63,6 +63,14 @@
 - source: Reuters
 - published_at: `2026-11-10T11:54:11+00:00`
 - importance_score: `100`
+- confidence: `medium`
+
+### inflation_hot / risk_off
+
+- headline: Wall St ends lower as hot inflation data, Fed comments heighten rate worries - Reuters
+- source: Reuters
+- published_at: `2026-11-10T21:27:01+00:00`
+- importance_score: `86`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -78,29 +86,13 @@
 - headline: Fed's Logan calls for two more rate hikes, possibly rapidly - Reuters
 - source: Reuters
 - published_at: `2026-11-10T15:55:43+00:00`
-- importance_score: `88`
-- confidence: `high`
-
-### inflation_hot / risk_off
-
-- headline: Wall St falls as hot inflation data fuels rate-hike jitters - Reuters
-- source: Reuters
-- published_at: `2026-11-10T17:20:50+00:00`
-- importance_score: `86`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Saudi-led coalition says it shot down Houthi missiles aimed at Riyadh - Reuters
-- source: Reuters
-- published_at: `2026-11-10T01:53:00+00:00`
-- importance_score: `100`
+- importance_score: `87`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
+### inflation_cooling / risk_on
 
-- headline: Oil prices hit two-month lows as US downplays further Iran strikes - Reuters
+- headline: Gold prices ease as focus shifts to US inflation data - Reuters
 - source: Reuters
-- published_at: `2026-11-10T01:43:00+00:00`
-- importance_score: `100`
+- published_at: `2026-11-10T03:31:00+00:00`
+- importance_score: `78`
 - confidence: `medium`
