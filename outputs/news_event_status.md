@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-11T02:45:15.503023+00:00`
+- generated_at: `2026-11-11T07:48:03.309469+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
-- event_detection_confidence: `74`
+- major_event_count: `9`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -25,6 +25,14 @@
 
 ## Major Events
 
+### geopolitical_risk_easing / risk_on
+
+- headline: Oil rebounds as Hormuz shipping attacks blunt hopes for Iran truce - Reuters
+- source: Reuters
+- published_at: `2026-11-11T04:55:28+00:00`
+- importance_score: `100`
+- confidence: `high`
+
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Iran-backed militant helped plot attack on UK's Fairford base from US jail, Justice Department says - Reuters
@@ -33,12 +41,12 @@
 - importance_score: `100`
 - confidence: `high`
 
-### geopolitical_risk_escalation / risk_off
+### geopolitical_risk_easing / risk_on
 
-- headline: Vanishing vessels and missing sailors: The Iran war's human cost at sea - Reuters
+- headline: Tankers continue to burn in the Middle East despite hopes for de-escalation - Reuters
 - source: Reuters
-- published_at: `2026-11-10T16:54:28+00:00`
-- importance_score: `100`
+- published_at: `2026-11-10T22:27:38+00:00`
+- importance_score: `98`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -47,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-11-10T16:27:13+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -78,7 +86,7 @@
 - headline: Wall St ends lower as hot inflation data, Fed comments heighten rate worries - Reuters
 - source: Reuters
 - published_at: `2026-11-10T21:27:01+00:00`
-- importance_score: `86`
+- importance_score: `84`
 - confidence: `medium`
 
 ### fed_hawkish / risk_off
@@ -86,5 +94,5 @@
 - headline: Fed's Logan calls for two more rate hikes, possibly rapidly - Reuters
 - source: Reuters
 - published_at: `2026-11-10T15:55:43+00:00`
-- importance_score: `86`
+- importance_score: `85`
 - confidence: `medium`
