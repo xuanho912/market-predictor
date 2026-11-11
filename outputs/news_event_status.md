@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-11T11:29:15.877770+00:00`
+- generated_at: `2026-11-11T19:38:46.242162+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
-- event_detection_confidence: `70`
+- major_event_count: `10`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `50`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
@@ -25,13 +25,61 @@
 
 ## Major Events
 
-### geopolitical_risk_easing / risk_on
+### geopolitical_risk_escalation / risk_off
 
-- headline: Oil steadies as Hormuz attacks blunt hopes for Iran truce - Reuters
+- headline: OPEC+ oil output in October nears pre-Iran war rate, led by Saudi Arabia - Reuters
 - source: Reuters
-- published_at: `2026-11-11T02:10:00+00:00`
+- published_at: `2026-11-11T14:14:31+00:00`
 - importance_score: `100`
 - confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Gulf markets rise as investors assess Iran war, shipping risks - Reuters
+- source: Reuters
+- published_at: `2026-11-11T13:27:41+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Israeli strikes kill three people including two brothers in Gaza, medics say - Reuters
+- source: Reuters
+- published_at: `2026-11-11T13:00:28+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran warns of domestic gas shortages from war this winter - Reuters
+- source: Reuters
+- published_at: `2026-11-11T11:21:43+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: COMMENTARY: Trump’s Iran war pause is as costly as new strikes - Reuters
+- source: Reuters
+- published_at: `2026-11-11T07:00:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Conflict must not distract from climate action, leaders warn COP31 - Reuters
+- source: Reuters
+- published_at: `2026-11-11T03:02:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### fed_dovish / risk_on
+
+- headline: Mortgage rates jump sharply higher, after easing for four straight weeks. Here's why
+- source: CNBC
+- published_at: `2026-11-11T12:38:32+00:00`
+- importance_score: `85`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -41,44 +89,12 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
-
-- headline: Most Americans want new Democratic Congress to end Trump's Iran war, Reuters/Ipsos poll finds - Reuters
-- source: Reuters
-- published_at: `2026-11-10T16:27:13+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
 ### geopolitical_risk_easing / risk_on
 
 - headline: Tankers continue to burn in the Middle East despite hopes for de-escalation - Reuters
 - source: Reuters
 - published_at: `2026-11-10T19:14:00+00:00`
-- importance_score: `96`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: France summons Iran envoy over supermarket fridge hack, warns of response - Reuters
-- source: Reuters
-- published_at: `2026-11-10T13:26:53+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Gulf stocks close higher as Trump dials back Iran strike talk - Reuters
-- source: Reuters
-- published_at: `2026-11-10T13:14:10+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: UAE selling Saudi oil from supertanker attacked in Gulf - Reuters
-- source: Reuters
-- published_at: `2026-11-10T11:54:11+00:00`
-- importance_score: `100`
+- importance_score: `94`
 - confidence: `medium`
 
 ### inflation_hot / risk_off
@@ -86,13 +102,5 @@
 - headline: Wall St ends lower as hot inflation data, Fed comments heighten rate worries - Reuters
 - source: Reuters
 - published_at: `2026-11-10T21:27:01+00:00`
-- importance_score: `84`
-- confidence: `medium`
-
-### fed_hawkish / risk_off
-
-- headline: Fed's Logan calls for two more rate hikes, possibly rapidly - Reuters
-- source: Reuters
-- published_at: `2026-11-10T15:55:43+00:00`
-- importance_score: `84`
+- importance_score: `82`
 - confidence: `medium`
