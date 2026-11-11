@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-11T00:45:10.747901+00:00`
+- generated_at: `2026-11-11T01:32:27.776202+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
-- event_detection_confidence: `73`
+- major_event_count: `8`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -47,7 +47,7 @@
 - source: Reuters
 - published_at: `2026-11-10T13:26:53+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-11-10T13:14:10+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -87,12 +87,4 @@
 - source: Reuters
 - published_at: `2026-11-10T15:55:43+00:00`
 - importance_score: `87`
-- confidence: `medium`
-
-### inflation_cooling / risk_on
-
-- headline: Gold prices ease as focus shifts to US inflation data - Reuters
-- source: Reuters
-- published_at: `2026-11-10T03:31:00+00:00`
-- importance_score: `78`
 - confidence: `medium`

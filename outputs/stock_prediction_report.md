@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-11-11T00:45:22.633388+00:00`
+Generated at: `2026-11-11T01:32:39.986746+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -25,9 +25,9 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_downside_continuation` / `30.6%`
 - secondary: `stock_failed_bounce` / `26.8%`
 - risk: `stock_event_risk` / `13.3%`
-- stock_confluence_score: `37.29` / `weak`
-- stock_alpha_score_v1: `35.5` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `38.7%`
+- stock_confluence_score: `32.54` / `weak`
+- stock_alpha_score_v1: `28.5` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `35.9%`
 - 60d_expected_return: `-3.0%`
 - risk_reward_ratio: `0.3`
 - strongest_alert: `Relative Weakness Alert` / `HIGH_CONVICTION` / `73.54`
@@ -54,13 +54,13 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `25.4%`
 - secondary: `stock_trend_repair` / `16.6%`
 - risk: `stock_downside_continuation` / `16.3%`
-- stock_confluence_score: `44.9` / `weak`
+- stock_confluence_score: `41.94` / `weak`
 - stock_alpha_score_v1: `1.5` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `47.0%`
 - 60d_expected_return: `-0.6%`
 - risk_reward_ratio: `0.61`
 - strongest_alert: `Relative Strength Alert` / `WATCH` / `47.06`
-- historical_analog_support: `supportive` / samples `10`
+- historical_analog_support: `weak` / samples `10`
 - validation_status: `not_yet_validated`
 
 - primary_confirmation_level: `414.23`
@@ -69,9 +69,9 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - trend_repair_confirmation_level: `414.23`
 - breakout_level: `414.23`
 - breakdown_level: `338.15`
-- nearest_support: `365.14`
+- nearest_support: `365.13`
 - nearest_resistance: `401.75`
-- bounce_target_zone: `{"conservative": 390.76, "base": 390.76, "extended": 428.87, "source": "scenario_path + atr + recent_resistance", "meaning": "概率反抽情景参考区间，不是目标价承诺。", "not_trading_instruction": true}`
+- bounce_target_zone: `{"conservative": 390.76, "base": 390.76, "extended": 428.88, "source": "scenario_path + atr + recent_resistance", "meaning": "概率反抽情景参考区间，不是目标价承诺。", "not_trading_instruction": true}`
 - failed_bounce_warning_zone: `{"first_warning": 370.99, "critical_warning": 338.15, "source": "risk_path + atr + recent_support", "meaning": "跌入该区间说明失败反抽风险上升。", "not_trading_instruction": true}`
 
 ### SMR
@@ -83,13 +83,13 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_downside_continuation` / `34.0%`
 - secondary: `stock_failed_bounce` / `19.9%`
 - risk: `stock_event_risk` / `12.8%`
-- stock_confluence_score: `40.67` / `weak`
+- stock_confluence_score: `32.78` / `weak`
 - stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `21.2%`
 - 60d_expected_return: `-4.4%`
 - risk_reward_ratio: `0.3`
 - strongest_alert: `Stock Breakdown Warning` / `WARNING` / `71.53`
-- historical_analog_support: `supportive` / samples `10`
+- historical_analog_support: `conflicting` / samples `10`
 - validation_status: `not_yet_validated`
 
 - primary_confirmation_level: `6.32`
@@ -112,13 +112,13 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `26.2%`
 - secondary: `stock_downside_continuation` / `25.8%`
 - risk: `stock_event_risk` / `15.0%`
-- stock_confluence_score: `34.98` / `weak`
+- stock_confluence_score: `34.6` / `weak`
 - stock_alpha_score_v1: `21.0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `41.7%`
 - 60d_expected_return: `-2.3%`
 - risk_reward_ratio: `0.42`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `31.91`
-- historical_analog_support: `weak` / samples `10`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `36.94`
+- historical_analog_support: `supportive` / samples `10`
 - validation_status: `not_yet_validated`
 
 - primary_confirmation_level: `294.50`
