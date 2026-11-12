@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-12T03:28:35.669665+00:00`
+- generated_at: `2026-11-12T03:47:08.408507+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
+- major_event_count: `13`
 - event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -33,20 +33,20 @@
 - importance_score: `100`
 - confidence: `high`
 
-### geopolitical_risk_easing / risk_on
-
-- headline: Oil prices drop more than $1 as hopes for Iran, Ukraine peace talks pressure markets - Reuters
-- source: Reuters
-- published_at: `2026-11-12T01:52:00+00:00`
-- importance_score: `97`
-- confidence: `high`
-
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Iran tells COP31 it wants compensation for environmental damage from US-Israeli strikes - Reuters
 - source: Reuters
 - published_at: `2026-11-11T22:13:11+00:00`
 - importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Oil prices drop more than $1 as hopes for Iran, Ukraine peace talks pressure markets - Reuters
+- source: Reuters
+- published_at: `2026-11-12T01:52:00+00:00`
+- importance_score: `96`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -62,6 +62,14 @@
 - headline: Iran attacks shipping navigation systems on Oman's Didamar island, sources say - Reuters
 - source: Reuters
 - published_at: `2026-11-11T17:59:02+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: NEWSLETTER: Hormuz traffic is up. So are the attacks - Reuters
+- source: Reuters
+- published_at: `2026-11-11T16:12:11+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -96,11 +104,3 @@
 - published_at: `2026-11-11T11:21:43+00:00`
 - importance_score: `100`
 - confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: COMMENTARY: Trump’s Iran war pause is as costly as new strikes - Reuters
-- source: Reuters
-- published_at: `2026-11-11T07:00:00+00:00`
-- importance_score: `100`
-- confidence: `high`
