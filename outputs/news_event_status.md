@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-11T19:38:46.242162+00:00`
+- generated_at: `2026-11-12T02:35:24.166504+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `10`
+- major_event_count: `11`
 - event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -27,11 +27,43 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Saudi Arabia says debris from intercepted missiles falls in Mecca region - Reuters
+- source: Reuters
+- published_at: `2026-11-12T00:21:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran tells COP31 it wants compensation for environmental damage from US-Israeli strikes - Reuters
+- source: Reuters
+- published_at: `2026-11-11T22:13:11+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Saudi Arabia intercepts Houthi missiles, drones; group denies targeting Mecca - Reuters
+- source: Reuters
+- published_at: `2026-11-11T20:57:51+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran attacks shipping navigation systems on Oman's Didamar island, sources say - Reuters
+- source: Reuters
+- published_at: `2026-11-11T17:59:02+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: OPEC+ oil output in October nears pre-Iran war rate, led by Saudi Arabia - Reuters
 - source: Reuters
 - published_at: `2026-11-11T14:14:31+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -39,7 +71,7 @@
 - source: Reuters
 - published_at: `2026-11-11T13:27:41+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +79,7 @@
 - source: Reuters
 - published_at: `2026-11-11T13:00:28+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,7 +87,7 @@
 - source: Reuters
 - published_at: `2026-11-11T11:21:43+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -71,36 +103,4 @@
 - source: Reuters
 - published_at: `2026-11-11T03:02:00+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### fed_dovish / risk_on
-
-- headline: Mortgage rates jump sharply higher, after easing for four straight weeks. Here's why
-- source: CNBC
-- published_at: `2026-11-11T12:38:32+00:00`
-- importance_score: `85`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran-backed militant helped plot attack on UK's Fairford base from US jail, Justice Department says - Reuters
-- source: Reuters
-- published_at: `2026-11-10T21:24:41+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Tankers continue to burn in the Middle East despite hopes for de-escalation - Reuters
-- source: Reuters
-- published_at: `2026-11-10T19:14:00+00:00`
-- importance_score: `94`
-- confidence: `medium`
-
-### inflation_hot / risk_off
-
-- headline: Wall St ends lower as hot inflation data, Fed comments heighten rate worries - Reuters
-- source: Reuters
-- published_at: `2026-11-10T21:27:01+00:00`
-- importance_score: `82`
 - confidence: `medium`
