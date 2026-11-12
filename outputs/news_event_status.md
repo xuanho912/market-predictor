@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-12T11:52:15.403816+00:00`
+- generated_at: `2026-11-12T19:57:13.985159+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `12`
-- event_detection_confidence: `70`
+- major_event_count: `11`
+- event_detection_confidence: `72`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,11 +27,59 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: In a policy switch, the Fed says its October 2027 meeting will not see a vote on interest rates
+- source: CNBC
+- published_at: `2026-11-12T18:11:32+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Disney's 'Star Wars' is coming to Cosm domes ahead of 50th anniversary as part of multiyear film deal
+- source: CNBC
+- published_at: `2026-11-12T14:00:01+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Can a new US Congress mean an end to the Iran war? - Reuters
+- source: Reuters
+- published_at: `2026-11-12T11:42:53+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: South Africa's citrus exports fall on Iran war disruption, bad weather - Reuters
+- source: Reuters
+- published_at: `2026-11-12T08:54:10+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: COMMENTARY: Just like the US, Iran has squandered its good options to end the war - Reuters
+- source: Reuters
+- published_at: `2026-11-12T01:51:30+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Saudi Arabia says debris from intercepted missiles falls in Mecca region - Reuters
 - source: Reuters
 - published_at: `2026-11-12T00:21:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Israeli strike on southern Gaza hospital kills six, Gaza civil defence says - Reuters
+- source: Reuters
+- published_at: `2026-11-11T23:26:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -56,51 +104,3 @@
 - published_at: `2026-11-11T17:59:02+00:00`
 - importance_score: `100`
 - confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: NEWSLETTER: Hormuz traffic is up. So are the attacks - Reuters
-- source: Reuters
-- published_at: `2026-11-11T16:12:11+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: OPEC+ oil output in October nears pre-Iran war rate, led by Saudi Arabia - Reuters
-- source: Reuters
-- published_at: `2026-11-11T14:14:31+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Gulf markets rise as investors assess Iran war, shipping risks - Reuters
-- source: Reuters
-- published_at: `2026-11-11T13:27:41+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Israeli strikes kill three people including two brothers in Gaza, medics say - Reuters
-- source: Reuters
-- published_at: `2026-11-11T13:00:28+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran warns of domestic gas shortages from war this winter - Reuters
-- source: Reuters
-- published_at: `2026-11-11T11:21:43+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: COMMENTARY: Trump’s Iran war pause is as costly as new strikes - Reuters
-- source: Reuters
-- published_at: `2026-11-11T07:00:00+00:00`
-- importance_score: `100`
-- confidence: `high`
