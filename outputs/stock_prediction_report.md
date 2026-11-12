@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-11-12T03:47:21.942678+00:00`
+Generated at: `2026-11-12T08:24:13.086263+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -9,7 +9,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 
 - supported_symbols: `4`
 - watchlist_size: `4`
-- strongest_stock_symbol: `NVDA`
+- strongest_stock_symbol: `SMR`
 - stock_data_quality_score: `100.0`
 - validation_status: `not_yet_validated`
 - missing_high_value_data: `['single_stock_options']`
@@ -80,15 +80,15 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - status: `available`
 - current_price: `5.23`
 - market_context: `risk_off_pressure`
-- primary: `stock_downside_continuation` / `29.6%`
-- secondary: `stock_failed_bounce` / `20.6%`
-- risk: `stock_event_risk` / `16.2%`
-- stock_confluence_score: `38.8` / `weak`
+- primary: `stock_downside_continuation` / `31.2%`
+- secondary: `stock_failed_bounce` / `19.7%`
+- risk: `stock_event_risk` / `13.7%`
+- stock_confluence_score: `38.43` / `weak`
 - stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `26.3%`
-- 60d_expected_return: `-4.0%`
-- risk_reward_ratio: `0.3`
-- strongest_alert: `Stock Breakdown Warning` / `WARNING` / `67.18`
+- 60d_expected_return: `-3.8%`
+- risk_reward_ratio: `0.32`
+- strongest_alert: `Stock Breakdown Warning` / `WARNING` / `68.15`
 - historical_analog_support: `supportive` / samples `10`
 - validation_status: `not_yet_validated`
 
@@ -112,7 +112,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `25.9%`
 - secondary: `stock_downside_continuation` / `19.7%`
 - risk: `stock_event_risk` / `16.4%`
-- stock_confluence_score: `40.75` / `weak`
+- stock_confluence_score: `41.06` / `weak`
 - stock_alpha_score_v1: `29.5` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `49.4%`
 - 60d_expected_return: `-1.6%`
