@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-12T02:35:24.166504+00:00`
+- generated_at: `2026-11-12T03:28:35.669665+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `11`
+- major_event_count: `12`
 - event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `25`
+- confirmation_score: `50`
 
 ## Dashboard Note
 
@@ -31,6 +31,14 @@
 - source: Reuters
 - published_at: `2026-11-12T00:21:00+00:00`
 - importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_easing / risk_on
+
+- headline: Oil prices drop more than $1 as hopes for Iran, Ukraine peace talks pressure markets - Reuters
+- source: Reuters
+- published_at: `2026-11-12T01:52:00+00:00`
+- importance_score: `97`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -96,11 +104,3 @@
 - published_at: `2026-11-11T07:00:00+00:00`
 - importance_score: `100`
 - confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Conflict must not distract from climate action, leaders warn COP31 - Reuters
-- source: Reuters
-- published_at: `2026-11-11T03:02:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
