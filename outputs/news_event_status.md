@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-13T03:24:03.364473+00:00`
+- generated_at: `2026-11-13T08:03:47.952983+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `10`
-- event_detection_confidence: `71`
+- major_event_count: `8`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,25 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Oil prices set for second weekly decline as Trump sticks with Iran blockade - Reuters
+- source: Reuters
+- published_at: `2026-11-13T03:01:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran's Guards say they targeted a US early-warning radar in Bahrain - Reuters
+- source: Reuters
+- published_at: `2026-11-13T02:51:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: COMMENTARY: Just like the US, Iran has squandered its good options to end the war - Reuters
 - source: Reuters
-- published_at: `2026-11-12T23:27:19+00:00`
+- published_at: `2026-11-12T22:02:38+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -47,7 +63,7 @@
 - source: CNBC
 - published_at: `2026-11-12T18:11:32+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -71,36 +87,4 @@
 - source: Reuters
 - published_at: `2026-11-12T08:54:10+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil settles $3 higher on attacks on Saudi energy sites, Strait of Hormuz disruptions - Reuters
-- source: Reuters
-- published_at: `2026-11-12T01:52:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Saudi Arabia says debris from intercepted missiles falls in Mecca region - Reuters
-- source: Reuters
-- published_at: `2026-11-12T00:21:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Israeli strike on southern Gaza hospital kills six, Gaza civil defence says - Reuters
-- source: Reuters
-- published_at: `2026-11-11T23:26:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_easing / risk_on
-
-- headline: Tankers burn in the Middle East despite hopes for de-escalation - Reuters
-- source: Reuters
-- published_at: `2026-11-11T23:39:28+00:00`
-- importance_score: `93`
 - confidence: `medium`

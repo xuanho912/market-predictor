@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-11-13T03:24:16.229634+00:00",
+  "generated_at": "2026-11-13T08:03:59.313737+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-11-13T03:24:16.282383+00:00",
+    "generated_at": "2026-11-13T08:03:59.325290+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 433,
     "risk_score_effectiveness": {
@@ -289,9 +289,9 @@
             }
           ],
           "major_company_headline": "Do You Like Cash? Consider Vistra Stock",
-          "news_count_24h": 13,
+          "news_count_24h": 11,
           "news_count_72h": 20,
-          "news_risk_score": 94.0,
+          "news_risk_score": 78.0,
           "news_sentiment": "positive"
         },
         "price_trend": {
@@ -1852,19 +1852,16 @@
             "affected_ticker": "CEG",
             "alert_level": "NO_ALERT",
             "alert_score": 8.93,
-            "alert_type": "Stock Bounce Setup",
+            "alert_type": "Earnings/Event Risk",
             "confirmation_needed": [
-              "价格站上主路径确认价",
-              "成交量继续确认",
-              "benchmark 不转为 risk-off"
+              "接入真实公司新闻/财报日期",
+              "价格反应确认"
             ],
             "invalidation_conditions": [
-              "跌破主路径失效价",
-              "相对强弱转弱",
-              "大盘 risk alert 升级"
+              "事件风险消退且价格结构确认"
             ],
             "not_trading_advice": true,
-            "one_line_reason": "反抽情景、成交量/相对强弱和大盘背景共同支持时触发。",
+            "one_line_reason": "公司新闻、财报或个股期权信息缺失时，事件风险保持独立预警。",
             "related_price_levels": {
               "breakdown_level": {
                 "confidence": "low",
@@ -1911,17 +1908,20 @@
           {
             "affected_ticker": "CEG",
             "alert_level": "NO_ALERT",
-            "alert_score": 8.93,
-            "alert_type": "Earnings/Event Risk",
+            "alert_score": 8.77,
+            "alert_type": "Stock Bounce Setup",
             "confirmation_needed": [
-              "接入真实公司新闻/财报日期",
-              "价格反应确认"
+              "价格站上主路径确认价",
+              "成交量继续确认",
+              "benchmark 不转为 risk-off"
             ],
             "invalidation_conditions": [
-              "事件风险消退且价格结构确认"
+              "跌破主路径失效价",
+              "相对强弱转弱",
+              "大盘 risk alert 升级"
             ],
             "not_trading_advice": true,
-            "one_line_reason": "公司新闻、财报或个股期权信息缺失时，事件风险保持独立预警。",
+            "one_line_reason": "反抽情景、成交量/相对强弱和大盘背景共同支持时触发。",
             "related_price_levels": {
               "breakdown_level": {
                 "confidence": "low",
@@ -2330,8 +2330,8 @@
           },
           "news_event": {
             "evidence": "公司新闻或财报事件风险上升",
-            "reason": "risk_score=94.0; earnings_date=None",
-            "score": 90.08,
+            "reason": "risk_score=78.0; earnings_date=None",
+            "score": 84.96,
             "status": "conflicting"
           },
           "options_volatility": {
@@ -2366,7 +2366,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 52.14,
+        "stock_confluence_score": 51.77,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "价格结构支持主路径",
@@ -2452,59 +2452,59 @@
           "event_risk_flag": "high",
           "headlines": [
             {
-              "datetime": 1794533754,
-              "headline": "Why Mobility Global Stock Gained Today",
+              "datetime": 1794548228,
+              "headline": "Asian shares are mixed as investors assess impact of Nvidia's fallout on global AI development",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=8e316bceb3794ec57dbcabcc912081736edf32e32e5830784c23e89e79755943"
+              "url": "https://finnhub.io/api/news?id=aff654f62e35d6bd39b8b080ac6c9f5ba4d6b7a174072580e53834aa4b906e8f"
             },
             {
-              "datetime": 1794532921,
-              "headline": "CoreWeave stock sinks nearly 7% after Nvidia CEO Jensen Huang resigns",
+              "datetime": 1794547723,
+              "headline": "What's the Value of a Founder? Nvidia Offers the Greatest Test Yet",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=41a043507ab7d4e9442f8cf98a6a546567c2dd70652bb129f757b5420719a4a4"
+              "url": "https://finnhub.io/api/news?id=eaea629426aeb59071f6c3eb3ff72c33209e1e1a62729d437591076105a55dda"
             },
             {
-              "datetime": 1794532593,
-              "headline": "Sansan And 2 High Growth Insider Stocks To Watch",
+              "datetime": 1794547146,
+              "headline": "‘Still Early In Networking Super Cycle’: Cisco Delivers Beat And Raise Quarter But Shares Drop Amid Nvidia-Linked Volatility",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=cb713edb6fd788e09fd03f347f922de5eb73d163a09cd20cf0a50660797e1842"
+              "url": "https://finnhub.io/api/news?id=90f7ee8683be280ac632ae9c56700367dfaa6faf6772f2a7fea45ad031799f7e"
             },
             {
-              "datetime": 1794532353,
-              "headline": "Nebius Group (NBIS) Takes a Beating — This Tech Giant Is to Blame",
+              "datetime": 1794546173,
+              "headline": "Cathie Wood Sees Nvidia’s CAGR Slowing To 25% From 50% Over The Next Five Years: ‘You’ve Got Powerful Forces Like Elon Musk’",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=09bb6734fba77e1e03820a00e018ab9eb7ad0b8dcc568841046e80d411f91fa9"
+              "url": "https://finnhub.io/api/news?id=1253f1154ac610cf98f97c8803f5e8c84183a6fa8459097f5f74af3a9cb7e56d"
             },
             {
-              "datetime": 1794532038,
-              "headline": "Super Micro (SMCI) Takes Another Hit as Fresh Probe Weighs on Shares",
+              "datetime": 1794546109,
+              "headline": "Fallout from the Nvidia scandal may dampen the exuberance around the AI boom",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=df17b29f07df532b069a62d20c39cba211ee0bb8621b0139662b011a408a7805"
+              "url": "https://finnhub.io/api/news?id=3d58428e1a28ec8ac2fb55aa3a8a652fb52bd15c96823da00c74f74bab10db19"
             },
             {
-              "datetime": 1794531770,
-              "headline": "Is Nvidia a buy after its CEO-resignation pullback?",
+              "datetime": 1794544907,
+              "headline": "Cathie Wood Boosts Bets On 2 AI Firms Amid Nvidia’s Huang Upheaval — Here’s How Her Trading Week Unfolded",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=f4678290edeb857cd059583be891b174a93be6df53c89ef0b379dbdb5e32d420"
+              "url": "https://finnhub.io/api/news?id=2ceaa673498a0b0e177e5e9565441a00c84636d2320c5488df93b3fc76f4fe9a"
             },
             {
-              "datetime": 1794531465,
-              "headline": "Why Pessimism For This Tech Giant Spilled Over to IonQ Inc. (IONQ) Shares",
+              "datetime": 1794544696,
+              "headline": "Despite NVDA Rout, Investors Have Poured In $37.5B In US Stock ETFs In 5 Days – Here’s Where The Money Went",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=ece113e3063d15e096c192837fd9b88cb3cb6f82ff4e410efcc0eb2f53394b12"
+              "url": "https://finnhub.io/api/news?id=0f158c46e3f4b146dc1b20f094301f16ecf2f3c45e51ea889a8d2ed6f6824e63"
             },
             {
-              "datetime": 1794531002,
-              "headline": "Chipotle Mexican Grill vs. Coca-Cola: Which Stock Is a Buy After the Nvidia Sell-Off?",
+              "datetime": 1794544677,
+              "headline": "3 Brokerage Stocks Riding The Nvidia Options Volume Surge",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=03e62a76460f1a1ba308cbd5a28c7a76bc0a9af898fd8a8c61d174ba7c5ad087"
+              "url": "https://finnhub.io/api/news?id=4bcd556f45ce9ded5ad090abe0323bf438b0806bba2b6db0fe7502c378c6594b"
             }
           ],
-          "major_company_headline": "Why Mobility Global Stock Gained Today",
+          "major_company_headline": "Asian shares are mixed as investors assess impact of Nvidia's fallout on global AI development",
           "news_count_24h": 20,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
-          "news_sentiment": "neutral"
+          "news_sentiment": "positive"
         },
         "price_trend": {
           "close": 166.19000244140625,
@@ -3038,6 +3038,7 @@
         },
         "supporting_signals": [
           "成交量结构支持当前路径。",
+          "近期公司新闻偏正面。",
           "基础财务指标已接入且收入增长为正。"
         ]
       },
@@ -4366,15 +4367,16 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Why Mobility Global Stock Gained Today",
+              "公司新闻已接入: Asian shares are mixed as investors assess impact of Nvidia's fallout on global AI development",
+              "新闻情绪偏正",
               "未来 30 天存在财报催化：2026-11-17",
               "增长数据具备 EPS 上修叙事基础"
             ],
             "max_points": 10,
             "missing_fields": [],
             "name": "catalyst",
-            "points": 8.0,
-            "score_pct": 80.0,
+            "points": 10.0,
+            "score_pct": 100.0,
             "status": "supportive"
           },
           "flow": {
@@ -4457,7 +4459,7 @@
           "expected_return_60d": -0.0294,
           "max_drawdown_risk_20d": 0.2513,
           "max_drawdown_risk_60d": 0.3053,
-          "outperformance_probability_20d": 0.3778,
+          "outperformance_probability_20d": 0.3858,
           "risk_reward_ratio": 0.38,
           "upside_potential_60d": 0.1151
         },
@@ -4480,7 +4482,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "Why Mobility Global Stock Gained Today",
+          "catalyst": "Asian shares are mixed as investors assess impact of Nvidia's fallout on global AI development",
           "expectation_gap": [
             "收入增长较强，具备正向预期差基础",
             "EPS 增长较强，可能支持盈利上修叙事",
@@ -4499,7 +4501,7 @@
           "primary_path": "stock_downside_continuation",
           "valuation_repricing": "估值扩张证据不足或存在压力"
         },
-        "total_score": 35.5,
+        "total_score": 37.5,
         "validation_status": "not_yet_validated",
         "version": "stock_alpha_score_v1"
       },
@@ -4528,8 +4530,8 @@
         "module_scores": {
           "alpha_quality": {
             "evidence": "个股 Alpha 评分已接入",
-            "reason": "score=35.5; grade=weak_or_no_alpha_edge; benchmark=QQQ",
-            "score": 35.5,
+            "reason": "score=37.5; grade=weak_or_no_alpha_edge; benchmark=QQQ",
+            "score": 37.5,
             "status": "conflicting"
           },
           "fundamentals_earnings": {
@@ -4588,7 +4590,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 42.43,
+        "stock_confluence_score": 42.62,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "成交量确认当前路径"
@@ -4597,6 +4599,7 @@
       },
       "supporting_signals": [
         "成交量结构支持当前路径。",
+        "近期公司新闻偏正面。",
         "基础财务指标已接入且收入增长为正。"
       ],
       "symbol": "NVDA",
@@ -6853,6 +6856,30 @@
           "event_risk_flag": "high",
           "headlines": [
             {
+              "datetime": 1794546277,
+              "headline": "VerifyMe Inc (VRME) Q3 2026 Earnings Call Highlights: RWA Platform Drives 86% of Revenue as ...",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=608157cb1781c4a6b9f02311dd2ab0632ebe7bd130d3955a91981c22b2e732e0"
+            },
+            {
+              "datetime": 1794546173,
+              "headline": "Cathie Wood Sees Nvidia’s CAGR Slowing To 25% From 50% Over The Next Five Years: ‘You’ve Got Powerful Forces Like Elon Musk’",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=1253f1154ac610cf98f97c8803f5e8c84183a6fa8459097f5f74af3a9cb7e56d"
+            },
+            {
+              "datetime": 1794543194,
+              "headline": "Michael Burry Sees A ‘Mechanical Bid’ Under NVDA Stock – Even As He Questions Nvidia’s Succession Plan And Asia Sales",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=e28594a89803a55647afd3535b8ec5fc6b2c786a4149348ecf57d62f7a78957b"
+            },
+            {
+              "datetime": 1794537017,
+              "headline": "Cathie Wood Calls Humanoid Robots a '$26 Trillion Opportunity' Over the Next 15 Years: 'Embodied AI' Could Eventually Equal '20% of Global GDP'",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=121236996a63f20c4d6cce9b68192771a6b5bdd699109a56994abc7e044df84b"
+            },
+            {
               "datetime": 1794531780,
               "headline": "Musk gives Cybertruck a reprieve, but many will still get refunds",
               "source": "Yahoo",
@@ -6875,37 +6902,13 @@
               "headline": "Dow Jones Futures Rise After Market Weathers Nvidia CEO Huang's Exit, Surging Yields; SpaceX-Tesla Merger Deal Close",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=29a78bd2ce9f098216b8703032bc86519f8cb074a568e6fa2a4b610c7d8d0c9f"
-            },
-            {
-              "datetime": 1794524414,
-              "headline": "Elon Musk Makes Bold $10 Trillion Net Worth Remark as He Predicts Tesla Cybercab Will Dominate Ride-Hailing: ‘Obvious to Anyone With Eyes and a Brain’",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=fcee69300a13dddbd26e69ba1654b6b2fc9bad6ce9d18987d06eac7086693d24"
-            },
-            {
-              "datetime": 1794521969,
-              "headline": "Musk: It Takes “20 to 30 Million Robots” to Match America’s Output. That’s Optimus’ Market",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=71cf25436cbe3f78fb09e6af4bcc6b89e64d378924b59616da7f3b84c2a35da7"
-            },
-            {
-              "datetime": 1794521700,
-              "headline": "Automotive Properties REIT Reports 2026 Third Quarter Financial Results",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=5ab3a8114cbe8908ff03ea94a7dfceb12a66833e21a85e3af56d5926af2d8029"
-            },
-            {
-              "datetime": 1794521677,
-              "headline": "Why Retail Investors Are Watching AI Infrastructure Stocks After Tesla SpaceX Merger Talk",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=45a49beacb7fd1ade515bf12b038b3e0ae6124ab3e3f9ff9d4533820c9af6fef"
             }
           ],
-          "major_company_headline": "Musk gives Cybertruck a reprieve, but many will still get refunds",
+          "major_company_headline": "VerifyMe Inc (VRME) Q3 2026 Earnings Call Highlights: RWA Platform Drives 86% of Revenue as ...",
           "news_count_24h": 20,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
-          "news_sentiment": "negative"
+          "news_sentiment": "neutral"
         },
         "price_trend": {
           "close": 397.45001220703125,
@@ -8768,7 +8771,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Musk gives Cybertruck a reprieve, but many will still get refunds"
+              "公司新闻已接入: VerifyMe Inc (VRME) Q3 2026 Earnings Call Highlights: RWA Platform Drives 86% of Revenue as ..."
             ],
             "max_points": 10,
             "missing_fields": [],
@@ -8885,7 +8888,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金/技术确认较强",
-          "catalyst": "Musk gives Cybertruck a reprieve, but many will still get refunds",
+          "catalyst": "VerifyMe Inc (VRME) Q3 2026 Earnings Call Highlights: RWA Platform Drives 86% of Revenue as ...",
           "expectation_gap": [
             "暂未看到明确正向预期差证据"
           ],
@@ -9021,7 +9024,7 @@
       "top_candidate": "CEG",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-11-13T03:24:16.267273+00:00",
+    "generated_at": "2026-11-13T08:03:59.313965+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -9043,7 +9046,7 @@
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 64.74,
         "company_name": "Constellation Energy Corp",
-        "confluence_score": 52.14,
+        "confluence_score": 51.77,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9060,7 +9063,7 @@
           "mid": 281.84,
           "range_pct": 0.0466
         },
-        "final_radar_score": 60.94,
+        "final_radar_score": 60.9,
         "forecast_date": "2026-11-12",
         "invalidation_level": 231.3,
         "last_close": 282.3999938964844,
@@ -9119,19 +9122,19 @@
       },
       {
         "alpha_fields": {
-          "alpha_score": 35.5,
+          "alpha_score": 37.5,
           "expected_return_60d": -0.0294,
           "forecast_grade": "weak_or_no_alpha_edge",
           "main_logic": "半导体/AI 逻辑：订单、毛利率、资本开支周期、估值重估和资金确认。",
-          "outperformance_probability_20d": 0.3778,
+          "outperformance_probability_20d": 0.3858,
           "risk_reward_ratio": 0.38
         },
-        "alpha_quality_score": 35.5,
+        "alpha_quality_score": 37.5,
         "as_of": "2026-11-12",
         "candidate_type": "downside_continuation",
         "catalyst_score": 64.05,
         "company_name": "NVIDIA Corporation",
-        "confluence_score": 42.43,
+        "confluence_score": 42.62,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9148,7 +9151,7 @@
           "mid": 165.57,
           "range_pct": 0.0631
         },
-        "final_radar_score": 59.85,
+        "final_radar_score": 60.23,
         "forecast_date": "2026-11-12",
         "invalidation_level": 148.8,
         "last_close": 166.19000244140625,
@@ -9170,8 +9173,8 @@
           "earnings": "available"
         },
         "next_day_move_probability": 0.9281,
-        "one_line_reason": "downside_continuation: Alpha 36 / 弹性 100 / 成交量 100 / 相对强弱 18 / 催化 64 / 大盘 risk_off_pressure / 板块 conflicting",
-        "outperformance_probability_20d": 0.3778,
+        "one_line_reason": "downside_continuation: Alpha 38 / 弹性 100 / 成交量 100 / 相对强弱 18 / 催化 64 / 大盘 risk_off_pressure / 板块 conflicting",
+        "outperformance_probability_20d": 0.3858,
         "primary_probability": 0.2971,
         "primary_scenario": "stock_downside_continuation",
         "radar_level": "MODERATE_OPPORTUNITY",
