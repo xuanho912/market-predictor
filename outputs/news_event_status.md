@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-13T03:00:34.101325+00:00`
+- generated_at: `2026-11-13T03:24:03.364473+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `11`
+- major_event_count: `10`
 - event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -97,10 +97,10 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
+### geopolitical_risk_easing / risk_on
 
-- headline: Iran tells COP31 it wants compensation for environmental damage from US-Israeli strikes - Reuters
+- headline: Tankers burn in the Middle East despite hopes for de-escalation - Reuters
 - source: Reuters
-- published_at: `2026-11-11T22:13:11+00:00`
-- importance_score: `100`
+- published_at: `2026-11-11T23:39:28+00:00`
+- importance_score: `93`
 - confidence: `medium`
