@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-12T19:57:13.985159+00:00`
+- generated_at: `2026-11-13T01:29:36.623133+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `11`
-- event_detection_confidence: `72`
+- event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,22 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: COMMENTARY: Just like the US, Iran has squandered its good options to end the war - Reuters
+- source: Reuters
+- published_at: `2026-11-12T23:27:19+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Yemen's Houthis say they attacked pumping station on Saudi Arabia's East-West oil pipeline - Reuters
+- source: Reuters
+- published_at: `2026-11-12T20:18:21+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +63,7 @@
 - source: Reuters
 - published_at: `2026-11-12T11:42:53+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,13 +71,13 @@
 - source: Reuters
 - published_at: `2026-11-12T08:54:10+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: COMMENTARY: Just like the US, Iran has squandered its good options to end the war - Reuters
+- headline: Oil settles $3 higher on attacks on Saudi energy sites, Strait of Hormuz disruptions - Reuters
 - source: Reuters
-- published_at: `2026-11-12T01:51:30+00:00`
+- published_at: `2026-11-12T01:52:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -86,21 +102,5 @@
 - headline: Iran tells COP31 it wants compensation for environmental damage from US-Israeli strikes - Reuters
 - source: Reuters
 - published_at: `2026-11-11T22:13:11+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Saudi Arabia intercepts Houthi missiles, drones; group denies targeting Mecca - Reuters
-- source: Reuters
-- published_at: `2026-11-11T20:57:51+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran attacks shipping navigation systems on Oman's Didamar island, sources say - Reuters
-- source: Reuters
-- published_at: `2026-11-11T17:59:02+00:00`
 - importance_score: `100`
 - confidence: `medium`
