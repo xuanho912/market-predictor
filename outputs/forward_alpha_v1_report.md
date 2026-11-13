@@ -11,11 +11,11 @@ Alpha v1 remains a frozen research candidate until enough post-freeze observatio
 
 ## Summary
 
-- signal count: 428
+- signal count: 432
 - pending signals: 240
-- completed signals: 188
+- completed signals: 192
 - forecast signal: true
-- latest checked date: 2026-11-12
+- latest checked date: 2026-11-13
 - data source status: real_market_data
 - signal blocked reason: n/a
 
@@ -32,11 +32,11 @@ Alpha v1 remains a frozen research candidate until enough post-freeze observatio
 
 | Horizon | Count | Average | Median | Hit rate | t-stat |
 | --- | --- | --- | --- | --- | --- |
-| 3d | 188 | 0.044% | -0.098% | 45.213% | 0.386 |
-| 5d | 188 | 0.116% | -0.192% | 45.213% | 0.760 |
-| 10d | 188 | 0.275% | -0.294% | 46.277% | 1.477 |
-| 20d | 188 | 0.194% | 0.358% | 54.255% | 0.952 |
-| 60d | 188 | -1.060% | -1.271% | 43.617% | -3.511 |
+| 3d | 192 | 0.056% | -0.079% | 45.833% | 0.495 |
+| 5d | 192 | 0.138% | -0.132% | 46.354% | 0.922 |
+| 10d | 192 | 0.286% | -0.244% | 46.875% | 1.568 |
+| 20d | 192 | 0.162% | 0.333% | 53.646% | 0.803 |
+| 60d | 192 | -1.109% | -1.271% | 42.708% | -3.724 |
 
 ## Max Adverse / Favorable Excursion
 
@@ -47,17 +47,17 @@ Alpha v1 remains a frozen research candidate until enough post-freeze observatio
 
 | Group | 3d avg | 5d avg | 10d avg | 20d avg | 60d avg |
 | --- | --- | --- | --- | --- | --- |
-| DIA | 0.148% | 0.304% | 0.600% | 0.598% | -1.322% |
-| IWM | 0.080% | 0.177% | 0.080% | -0.455% | -5.567% |
-| QQQ | -0.200% | -0.300% | -0.324% | -0.534% | 0.818% |
-| SPY | 0.149% | 0.282% | 0.744% | 1.169% | 1.830% |
+| DIA | 0.175% | 0.328% | 0.625% | 0.540% | -1.314% |
+| IWM | 0.090% | 0.188% | 0.061% | -0.541% | -5.594% |
+| QQQ | -0.196% | -0.264% | -0.298% | -0.492% | 0.708% |
+| SPY | 0.155% | 0.300% | 0.758% | 1.142% | 1.766% |
 
 ## Performance By Regime
 
 | Group | 3d avg | 5d avg | 10d avg | 20d avg | 60d avg |
 | --- | --- | --- | --- | --- | --- |
-| liquidity_crunch | -0.060% | -0.062% | -0.122% | -0.495% | -2.375% |
-| sideways | 0.149% | 0.293% | 0.672% | 0.883% | 0.254% |
+| liquidity_crunch | -0.053% | -0.038% | -0.119% | -0.516% | -2.443% |
+| sideways | 0.165% | 0.314% | 0.691% | 0.841% | 0.226% |
 
 ## Performance By Year/Month
 
@@ -65,7 +65,7 @@ Alpha v1 remains a frozen research candidate until enough post-freeze observatio
 | --- | --- | --- |
 | 2026-06 | 48 | -1.098% |
 | 2026-07 | 88 | 2.181% |
-| 2026-08 | 52 | -1.975% |
+| 2026-08 | 56 | -1.930% |
 
 ## Historical Alpha Character Check
 
