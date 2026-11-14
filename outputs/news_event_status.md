@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-13T19:45:58.489592+00:00`
+- generated_at: `2026-11-14T00:58:22.475580+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
-- event_detection_confidence: `75`
+- major_event_count: `9`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -25,12 +25,36 @@
 
 ## Major Events
 
-### credit_stress / risk_off
+### geopolitical_risk_escalation / risk_off
 
-- headline: We're making 3 trades to adjust our consumer exposure after an analyst downgrade
+- headline: Latin Grammy Awards: The fashion, moments, winners and performances - Reuters
+- source: Reuters
+- published_at: `2026-11-13T23:15:44+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: They train people to avoid 'honeypot' scams—here are the common red flags they spot: 'It feels so good to be wanted'
 - source: CNBC
-- published_at: `2026-11-13T14:59:57+00:00`
-- importance_score: `98`
+- published_at: `2026-11-13T21:06:25+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Yemen's Houthis say they fired missiles at Saudi forces in Jazan - Reuters
+- source: Reuters
+- published_at: `2026-11-13T20:54:19+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Turkey, Qatar sign mutual defence agreement, pledge unified stance against attack - Reuters
+- source: Reuters
+- published_at: `2026-11-13T18:58:37+00:00`
+- importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -39,7 +63,15 @@
 - source: Reuters
 - published_at: `2026-11-13T12:08:14+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
+
+### credit_stress / risk_off
+
+- headline: We're making 3 trades to adjust our consumer exposure after an analyst downgrade
+- source: CNBC
+- published_at: `2026-11-13T14:59:57+00:00`
+- importance_score: `97`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -54,7 +86,7 @@
 - headline: IAEA increasingly concerned about Iranian enrichment plant, its report says - Reuters
 - source: Reuters
 - published_at: `2026-11-13T12:47:28+00:00`
-- importance_score: `85`
+- importance_score: `84`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
@@ -62,13 +94,5 @@
 - headline: Yemen's Houthis say they attacked pumping station on Saudi Arabia's East-West oil pipeline - Reuters
 - source: Reuters
 - published_at: `2026-11-12T20:18:21+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: In a policy switch, the Fed says its October 2027 meeting will not see a vote on interest rates
-- source: CNBC
-- published_at: `2026-11-12T18:11:32+00:00`
 - importance_score: `100`
 - confidence: `medium`
