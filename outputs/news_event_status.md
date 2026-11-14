@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-14T01:43:15.001363+00:00`
+- generated_at: `2026-11-14T02:47:54.133437+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `9`
-- event_detection_confidence: `76`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -29,7 +29,7 @@
 
 - headline: Latin Grammy Awards: The fashion, moments, winners and performances - Reuters
 - source: Reuters
-- published_at: `2026-11-14T00:45:44+00:00`
+- published_at: `2026-11-14T02:15:44+00:00`
 - importance_score: `100`
 - confidence: `high`
 

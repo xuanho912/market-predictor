@@ -1,6 +1,6 @@
 # Forecast Trust Gate
 
-Generated at: `2026-11-14T01:43:24.952747+00:00`
+Generated at: `2026-11-14T02:48:05.325520+00:00`
 
 This report answers whether the current Market Prediction Dashboard is dependable as a forecasting tool. It is not trading advice.
 
