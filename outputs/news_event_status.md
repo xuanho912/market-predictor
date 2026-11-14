@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-14T03:06:53.108934+00:00`
+- generated_at: `2026-11-14T07:39:39.920462+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
-- event_detection_confidence: `75`
+- major_event_count: `8`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -55,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-11-13T18:58:37+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -70,7 +70,7 @@
 - headline: We're making 3 trades to adjust our consumer exposure after an analyst downgrade
 - source: CNBC
 - published_at: `2026-11-13T14:59:57+00:00`
-- importance_score: `96`
+- importance_score: `95`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
@@ -86,13 +86,5 @@
 - headline: IAEA increasingly concerned about Iranian enrichment plant, its report says - Reuters
 - source: Reuters
 - published_at: `2026-11-13T12:47:28+00:00`
-- importance_score: `84`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Yemen's Houthis say they attacked pumping station on Saudi Arabia's East-West oil pipeline - Reuters
-- source: Reuters
-- published_at: `2026-11-12T20:18:21+00:00`
-- importance_score: `100`
+- importance_score: `82`
 - confidence: `medium`

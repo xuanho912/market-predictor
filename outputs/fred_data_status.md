@@ -1,6 +1,6 @@
 # FRED Data Status
 
-Generated at: `2026-11-14T03:07:05.589363Z`
+Generated at: `2026-11-14T07:39:51.634477Z`
 
 ## Provider
 
@@ -8,7 +8,7 @@ Generated at: `2026-11-14T03:07:05.589363Z`
 - provider available: `True`
 - fallback used: `False`
 - rate limited: `False`
-- successful series: `DGS3MO, DGS10, BAA_SPREAD, HY_OAS, IG_OAS, DFII10, RECESSION, DGS2, FINANCIAL_STRESS`
+- successful series: `IG_OAS, DGS10, DGS2, DGS3MO, FINANCIAL_STRESS, HY_OAS, BAA_SPREAD, RECESSION, DFII10`
 - failed series: `none`
 
 ## Series
@@ -39,8 +39,8 @@ Generated at: `2026-11-14T03:07:05.589363Z`
 |---|---|---|---|---|---:|---:|
 | SPY | MODERATE_EDGE | STRONG_EDGE | bounce_path | bounce_path | 0.0786 | 0.0233 |
 | QQQ | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bearish_path | 0.0786 | 0.0255 |
-| IWM | MODERATE_EDGE | STRONG_EDGE | bounce_path | bounce_path | 0.0786 | 0.0233 |
-| DIA | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0786 | 0.0233 |
+| IWM | MODERATE_EDGE | STRONG_EDGE | bounce_path | bounce_path | 0.0786 | 0.0232 |
+| DIA | MODERATE_EDGE | MODERATE_EDGE | bounce_path | bounce_path | 0.0786 | 0.0232 |
 
 ## Warning
 
