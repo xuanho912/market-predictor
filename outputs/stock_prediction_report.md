@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-11-14T00:58:33.527178+00:00`
+Generated at: `2026-11-14T01:43:25.416902+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -25,7 +25,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_downside_continuation` / `29.4%`
 - secondary: `stock_failed_bounce` / `24.0%`
 - risk: `stock_event_risk` / `14.9%`
-- stock_confluence_score: `40.45` / `weak`
+- stock_confluence_score: `40.46` / `weak`
 - stock_alpha_score_v1: `32.0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `35.0%`
 - 60d_expected_return: `-3.2%`
@@ -54,7 +54,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `23.3%`
 - secondary: `stock_trend_repair` / `20.8%`
 - risk: `stock_downside_continuation` / `16.8%`
-- stock_confluence_score: `49.0` / `mixed`
+- stock_confluence_score: `49.02` / `mixed`
 - stock_alpha_score_v1: `19.5` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `57.2%`
 - 60d_expected_return: `-0.2%`
@@ -83,13 +83,13 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_downside_continuation` / `33.4%`
 - secondary: `stock_failed_bounce` / `21.1%`
 - risk: `stock_event_risk` / `12.4%`
-- stock_confluence_score: `40.83` / `weak`
+- stock_confluence_score: `36.53` / `weak`
 - stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `19.9%`
 - 60d_expected_return: `-5.1%`
 - risk_reward_ratio: `0.33`
 - strongest_alert: `Stock Breakdown Warning` / `HIGH_CONVICTION` / `80.46`
-- historical_analog_support: `supportive` / samples `10`
+- historical_analog_support: `weak` / samples `10`
 - validation_status: `not_yet_validated`
 
 - primary_confirmation_level: `6.11`
@@ -112,13 +112,13 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `24.9%`
 - secondary: `stock_downside_continuation` / `19.8%`
 - risk: `stock_event_risk` / `13.2%`
-- stock_confluence_score: `49.2` / `mixed`
+- stock_confluence_score: `44.61` / `weak`
 - stock_alpha_score_v1: `52.5` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `62.5%`
 - 60d_expected_return: `-1.1%`
 - risk_reward_ratio: `0.55`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `26.46`
-- historical_analog_support: `supportive` / samples `10`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `30.09`
+- historical_analog_support: `conflicting` / samples `10`
 - validation_status: `not_yet_validated`
 
 - primary_confirmation_level: `286.32`

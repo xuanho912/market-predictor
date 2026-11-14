@@ -1,11 +1,11 @@
 # Data Freshness Status
 
-Generated at: `2026-11-14T00:58:32.382978+00:00`
+Generated at: `2026-11-14T01:43:23.977086+00:00`
 
 ## Summary
 
 - current_date: `2026-11-13`
-- current_time_us_eastern: `2026-11-13T19:58:32.382978-05:00`
+- current_time_us_eastern: `2026-11-13T20:43:23.977086-05:00`
 - latest_market_date: `2026-11-13`
 - latest_confirmed_market_date: `2026-11-13`
 - expected_latest_trading_date: `2026-11-13`
@@ -47,13 +47,13 @@ Generated at: `2026-11-14T00:58:32.382978+00:00`
 - TLT: status=`available`, latest_date=`2026-11-13`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - UUP: status=`available`, latest_date=`2026-11-13`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - XLB: status=`available`, latest_date=`2026-11-13`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- XLC: status=`available`, latest_date=`2026-11-13`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- XLC: status=`available`, latest_date=`2026-11-13`, source=`finnhub-quote-patch`, stale=`False`, fallback=`False`, real_data=`True`
 - XLE: status=`available`, latest_date=`2026-11-13`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - XLF: status=`available`, latest_date=`2026-11-13`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - XLI: status=`available`, latest_date=`2026-11-13`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - XLK: status=`available`, latest_date=`2026-11-13`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - XLP: status=`available`, latest_date=`2026-11-13`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- XLRE: status=`available`, latest_date=`2026-11-13`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- XLRE: status=`available`, latest_date=`2026-11-13`, source=`finnhub-quote-patch`, stale=`False`, fallback=`False`, real_data=`True`
 - XLU: status=`available`, latest_date=`2026-11-13`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - XLV: status=`available`, latest_date=`2026-11-13`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - XLY: status=`available`, latest_date=`2026-11-13`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`

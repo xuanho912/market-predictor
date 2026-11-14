@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-14T00:58:22.475580+00:00`
+- generated_at: `2026-11-14T01:43:15.001363+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `9`
@@ -29,7 +29,7 @@
 
 - headline: Latin Grammy Awards: The fashion, moments, winners and performances - Reuters
 - source: Reuters
-- published_at: `2026-11-13T23:15:44+00:00`
+- published_at: `2026-11-14T00:45:44+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -70,7 +70,7 @@
 - headline: We're making 3 trades to adjust our consumer exposure after an analyst downgrade
 - source: CNBC
 - published_at: `2026-11-13T14:59:57+00:00`
-- importance_score: `97`
+- importance_score: `96`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
