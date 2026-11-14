@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-14T07:39:39.920462+00:00`
+- generated_at: `2026-11-14T10:58:01.534127+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `8`
-- event_detection_confidence: `74`
+- event_detection_confidence: `72`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -29,7 +29,7 @@
 
 - headline: Latin Grammy Awards: The fashion, moments, winners and performances - Reuters
 - source: Reuters
-- published_at: `2026-11-14T02:15:44+00:00`
+- published_at: `2026-11-14T09:45:45+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -39,7 +39,7 @@
 - source: CNBC
 - published_at: `2026-11-13T21:06:25+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +47,7 @@
 - source: Reuters
 - published_at: `2026-11-13T20:54:19+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -70,7 +70,7 @@
 - headline: We're making 3 trades to adjust our consumer exposure after an analyst downgrade
 - source: CNBC
 - published_at: `2026-11-13T14:59:57+00:00`
-- importance_score: `95`
+- importance_score: `94`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
