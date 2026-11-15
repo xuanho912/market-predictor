@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-11-14T18:05:26.247697+00:00",
+  "generated_at": "2026-11-15T18:54:01.586301+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-11-14T18:05:26.308070+00:00",
+    "generated_at": "2026-11-15T18:54:01.623778+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 437,
     "risk_score_effectiveness": {
@@ -239,6 +239,12 @@
           "event_risk_flag": "low",
           "headlines": [
             {
+              "datetime": 1794747214,
+              "headline": "A $6.5 Billion Fund Bought These 3 Stocks",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=68cccd533e16c93a285aa289afc2346cfcd7c85b30108c676c0d12551a0f7564"
+            },
+            {
               "datetime": 1794601995,
               "headline": "Earnings week scorecard: beats rewarded selectively as AI-infrastructure names pull back",
               "source": "Yahoo",
@@ -279,18 +285,12 @@
               "headline": "Bloom Energy vs. Constellation Energy: On-Site Power or Grid Power, Which Wins the Data Center?",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=e48c7d6925da7bb9567ab69d7d9f433d8b2ffd7471290df3f302752656f1b6d1"
-            },
-            {
-              "datetime": 1794553096,
-              "headline": "NVIDIA’s Shakeup Clouds Copper’s AI Boom",
-              "source": "Benzinga",
-              "url": "https://finnhub.io/api/news?id=371ee4be922f6794ff91d352e5f9b564362f3fe82e9aceafc6c3fd817b424946"
             }
           ],
-          "major_company_headline": "Earnings week scorecard: beats rewarded selectively as AI-infrastructure names pull back",
-          "news_count_24h": 2,
-          "news_count_72h": 20,
-          "news_risk_score": 11.0,
+          "major_company_headline": "A $6.5 Billion Fund Bought These 3 Stocks",
+          "news_count_24h": 1,
+          "news_count_72h": 12,
+          "news_risk_score": 13.0,
           "news_sentiment": "positive"
         },
         "price_trend": {
@@ -724,7 +724,7 @@
         "benchmark": "SPY",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "failed_bounce_risk",
-        "benchmark_primary_probability": 0.3714,
+        "benchmark_primary_probability": 0.3518,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -1846,7 +1846,7 @@
           {
             "affected_ticker": "CEG",
             "alert_level": "NO_ALERT",
-            "alert_score": 8.24,
+            "alert_score": 8.13,
             "alert_type": "Stock Bounce Setup",
             "confirmation_needed": [
               "价格站上主路径确认价",
@@ -2141,7 +2141,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Earnings week scorecard: beats rewarded selectively as AI-infrastructure names pull back",
+              "公司新闻已接入: A $6.5 Billion Fund Bought These 3 Stocks",
               "新闻情绪偏正",
               "增长数据具备 EPS 上修叙事基础"
             ],
@@ -2257,7 +2257,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金/技术确认较强",
-          "catalyst": "Earnings week scorecard: beats rewarded selectively as AI-infrastructure names pull back",
+          "catalyst": "A $6.5 Billion Fund Bought These 3 Stocks",
           "expectation_gap": [
             "收入增长较强，具备正向预期差基础",
             "EPS 增长较强，可能支持盈利上修叙事"
@@ -2323,8 +2323,8 @@
           },
           "news_event": {
             "evidence": "近期公司新闻偏支持",
-            "reason": "Earnings week scorecard: beats rewarded selectively as AI-infrastructure names pull back",
-            "score": 72,
+            "reason": "A $6.5 Billion Fund Bought These 3 Stocks",
+            "score": 68.66,
             "status": "supportive"
           },
           "options_volatility": {
@@ -2359,7 +2359,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 49.2,
+        "stock_confluence_score": 48.96,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "价格结构支持主路径",
@@ -2419,20 +2419,20 @@
           "cash_flow_quality": 3.9053,
           "debt_risk": 0.0269,
           "earnings_growth": 125.15,
-          "forward_pe": 33.3579,
+          "forward_pe": 32.6875,
           "profitability": 63.66,
           "raw_metrics": {
             "current_ratio": 3.9053,
             "debt_to_equity": 0.0538,
             "eps_growth_ttm_yoy": 125.15,
-            "forward_pe": 33.3579,
+            "forward_pe": 32.6875,
             "gross_margin_ttm": 74.67,
             "net_margin_ttm": 63.66,
             "revenue_growth_ttm_yoy": 83.38
           },
           "revenue_growth": 83.38,
           "status": "available",
-          "valuation_percentile": 0.41697375000000003
+          "valuation_percentile": 0.40859375
         },
         "news_event": {
           "analyst_rating_news": "missing",
@@ -2445,59 +2445,59 @@
           "event_risk_flag": "high",
           "headlines": [
             {
-              "datetime": 1794671400,
-              "headline": "Prediction: This Small-Cap Value ETF Will Beat the S&P 500 Over the Next 10 Years",
+              "datetime": 1794764102,
+              "headline": "U.S. Bancorp Pays Out 40% of Its Profit as Dividends. Here's How Much Room It Has to Raise Them.",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=be5b89814e3fd440cb01d38be931e77ce2dce8778b44dfb7778d2c7f51067aff"
+              "url": "https://finnhub.io/api/news?id=91c7e47049cdbcabea8957ab9c4fbf38318e1edec5fb978c165bbc1d47111b4b"
             },
             {
-              "datetime": 1794671100,
-              "headline": "Nvidia lost $1.6 trillion after Jensen Huang's exit, but Apple's and Uber's CEO transitions offer a blueprint",
+              "datetime": 1794763761,
+              "headline": "Bessent questions did Nvidia \"goose\" earnings with suspect China chip sales",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=f805c1ce4cdf8d4934b4d9aa7b97a4cf2698e32b227d5bbb411fad59da0a8f66"
+              "url": "https://finnhub.io/api/news?id=6fcbbce8c79d3f2db538779e06bfac6dbc0635dafeb742a97122913210c954f3"
             },
             {
-              "datetime": 1794670911,
-              "headline": "AMD Just Crushed Nvidia by 32 Points After Scandal. Here’s How NVDA Can Come Back",
+              "datetime": 1794763284,
+              "headline": "Neoclouds Are “Nearly Half of Nvidia’s Own Revenue.” Its New CEO May Stop Funding Them",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=3bb6036af34d4d5a9fb62b76f7673e8546d4ce893be5390bb5a2c1d1aaa3276b"
+              "url": "https://finnhub.io/api/news?id=1a9c7387538fb756aa1876b46b3d352b05f872a9f961dae68740da58ae330127"
             },
             {
-              "datetime": 1794669903,
-              "headline": "Warren Buffett Said This 1 Mistake Cost Berkshire About $10 Billion. Here’s How Investors Can Avoid It.",
+              "datetime": 1794763202,
+              "headline": "3 Beaten-Down Stocks Under $10 to Buy in November",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=83792bfe2891c861199d8e51d10949d30b4ddfc7f9349a74311af65ec0712218"
+              "url": "https://finnhub.io/api/news?id=306628195a801f57c1474b5bc0102d4e9a5583669e1fdf58b5c33308301a406b"
             },
             {
-              "datetime": 1794669602,
-              "headline": "Warren Buffett Issued His Starkest Warning About the Stock Market in Years. Here's What History Says Comes Next.",
+              "datetime": 1794763000,
+              "headline": "AMD vs. Broadcom: With NVDA’s Jensen Huang Gone, Which AI Stock Wins the Most?",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=fac809db25d0f6a34aed2a6820beb1109ddb45b90005efc113e9c4e45758de00"
+              "url": "https://finnhub.io/api/news?id=9fe2dcbd344c4381109bacba2a8ea9704dfaba0bde12aa56faf92e2537d407c0"
             },
             {
-              "datetime": 1794668869,
-              "headline": "AMD Just Beat Nvidia by the Widest Margin Since 1999",
+              "datetime": 1794762628,
+              "headline": "3 Mega Cap Tech Stocks for AI Infrastructure After Nvidia’s Leadership Shock",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=710af67290595198117a8ecffe16cbd172e6d557c721cf6073c755cb6692621c"
+              "url": "https://finnhub.io/api/news?id=2435380756f8d2b23476b76efdd506b6c9c1aef1bcd4ee8d99cf4310e273a212"
             },
             {
-              "datetime": 1794668280,
-              "headline": "Why the Microsoft Outage Came at the Worst Possible Time for the Stock",
+              "datetime": 1794762563,
+              "headline": "Forget Jensen Huang’s Resignation. AMD May Be Nvidia’s Biggest Threat in 2027",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=10452ff38f95ffa45395e9d96aa6108ee305a9320bbbc77b80985dddc3c197fc"
+              "url": "https://finnhub.io/api/news?id=2a7c62c96483659de4d14d1cca2defbe536415f3bea363d88188e05cb184b0a3"
             },
             {
-              "datetime": 1794668160,
-              "headline": "Should You Invest in the Stock Market Now or Wait for a Pullback? History Offers a Clear Answer.",
+              "datetime": 1794762336,
+              "headline": "Bitcoin vs. Stocks: Is Crypto Really the Best Investment. The Results May Surprise You",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=34c8473b1702824fe94206bd546aae99151095f1903e4a2fc65fcb7a50718c18"
+              "url": "https://finnhub.io/api/news?id=5505b5af5b78625c1424628ddde45410687b340c69f626737a1667218cb11ffb"
             }
           ],
-          "major_company_headline": "Prediction: This Small-Cap Value ETF Will Beat the S&P 500 Over the Next 10 Years",
+          "major_company_headline": "U.S. Bancorp Pays Out 40% of Its Profit as Dividends. Here's How Much Room It Has to Raise Them.",
           "news_count_24h": 20,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
-          "news_sentiment": "positive"
+          "news_sentiment": "neutral"
         },
         "price_trend": {
           "close": 162.85000610351562,
@@ -2943,7 +2943,7 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.3329,
+        "benchmark_primary_probability": 0.3605,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -3031,7 +3031,6 @@
           "scenario": "stock_failed_bounce"
         },
         "supporting_signals": [
-          "近期公司新闻偏正面。",
           "基础财务指标已接入且收入增长为正。"
         ]
       },
@@ -4360,16 +4359,15 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Prediction: This Small-Cap Value ETF Will Beat the S&P 500 Over the Next 10 Years",
-              "新闻情绪偏正",
+              "公司新闻已接入: U.S. Bancorp Pays Out 40% of Its Profit as Dividends. Here's How Much Room It Has to Raise Them.",
               "未来 30 天存在财报催化：2026-11-17",
               "增长数据具备 EPS 上修叙事基础"
             ],
             "max_points": 10,
             "missing_fields": [],
             "name": "catalyst",
-            "points": 10.0,
-            "score_pct": 100.0,
+            "points": 8.0,
+            "score_pct": 80.0,
             "status": "supportive"
           },
           "flow": {
@@ -4435,7 +4433,7 @@
           "valuation": {
             "evidence": [
               "估值没有明显过热",
-              "增长可部分解释估值，PEG proxy 0.27"
+              "增长可部分解释估值，PEG proxy 0.26"
             ],
             "max_points": 15,
             "missing_fields": [],
@@ -4452,7 +4450,7 @@
           "expected_return_60d": -0.0322,
           "max_drawdown_risk_20d": 0.2663,
           "max_drawdown_risk_60d": 0.3193,
-          "outperformance_probability_20d": 0.3502,
+          "outperformance_probability_20d": 0.3422,
           "risk_reward_ratio": 0.37,
           "upside_potential_60d": 0.1183
         },
@@ -4475,7 +4473,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "Prediction: This Small-Cap Value ETF Will Beat the S&P 500 Over the Next 10 Years",
+          "catalyst": "U.S. Bancorp Pays Out 40% of Its Profit as Dividends. Here's How Much Room It Has to Raise Them.",
           "expectation_gap": [
             "收入增长较强，具备正向预期差基础",
             "EPS 增长较强，可能支持盈利上修叙事",
@@ -4494,7 +4492,7 @@
           "primary_path": "stock_downside_continuation",
           "valuation_repricing": "估值扩张证据不足或存在压力"
         },
-        "total_score": 32.0,
+        "total_score": 30.0,
         "validation_status": "not_yet_validated",
         "version": "stock_alpha_score_v1"
       },
@@ -4522,8 +4520,8 @@
         "module_scores": {
           "alpha_quality": {
             "evidence": "个股 Alpha 评分已接入",
-            "reason": "score=32.0; grade=weak_or_no_alpha_edge; benchmark=QQQ",
-            "score": 32.0,
+            "reason": "score=30.0; grade=weak_or_no_alpha_edge; benchmark=QQQ",
+            "score": 30.0,
             "status": "conflicting"
           },
           "fundamentals_earnings": {
@@ -4582,13 +4580,12 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 40.46,
+        "stock_confluence_score": 40.28,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [],
         "validation_status": "not_yet_validated"
       },
       "supporting_signals": [
-        "近期公司新闻偏正面。",
         "基础财务指标已接入且收入增长为正。"
       ],
       "symbol": "NVDA",
@@ -4660,6 +4657,24 @@
           "event_risk_flag": "low",
           "headlines": [
             {
+              "datetime": 1794615620,
+              "headline": "NuScale Power (SMR) As Lawsuit And Earnings Put Its Valuation Story To The Test",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=f6b4b90ca613c61c6b167f8c713bb18652e9a99412c5d1af9ae4004372fd6b26"
+            },
+            {
+              "datetime": 1794611479,
+              "headline": "NuScale Power (SMR) Is Facing A Securities Fraud Class Action",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=8d7144e118fa95c1e067ac0b2b45e6b6fc7a6f029e01efe02b15b944f5145a42"
+            },
+            {
+              "datetime": 1794570516,
+              "headline": "NuScale Rose 10% in a Week as Its First Reactor Module Moved Into Production",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=510fbb7b773c4136117a983bb95f00987bdf11d0739627295d017c709d96c891"
+            },
+            {
               "datetime": 1794514861,
               "headline": "Will NuScale Power Stock's Jump After Earnings Last?",
               "source": "Yahoo",
@@ -4688,31 +4703,13 @@
               "headline": "Bad News for Nuclear: A Landmark Reactor Just Got Delayed",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=29709ce42511189ecad0212afbdb8a3a02d7b1d15f5e59728fdb4df9a0f1dded"
-            },
-            {
-              "datetime": 1794414540,
-              "headline": "OKLO Stock After Q3 Earnings: Buy, Sell or Hold for Now?",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=18a73634a44af7e30ae2aa597b0c1f3ad0b3f5ca1c263535bae04d350d0705d6"
-            },
-            {
-              "datetime": 1794407844,
-              "headline": "Oklo Rises 4% as DOE Clears Groves-1 Reactor for Unrestricted Operations: “Reset the Nuclear Industry’s Expectations”",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=1b35f96246ea8193cf714d7fcfd80ed2e13df3b3341339088b6408555d0bbcb4"
-            },
-            {
-              "datetime": 1794383400,
-              "headline": "Here's the 1 Thing I'd Wait to See Before Buying NuScale Stock",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=62ee6f0d057b0d66af63938a20587b6aa771088e1f3e363d9c3d30f0fd51d065"
             }
           ],
-          "major_company_headline": "Will NuScale Power Stock's Jump After Earnings Last?",
+          "major_company_headline": "NuScale Power (SMR) As Lawsuit And Earnings Put Its Valuation Story To The Test",
           "news_count_24h": 0,
           "news_count_72h": 5,
-          "news_risk_score": 27.0,
-          "news_sentiment": "neutral"
+          "news_risk_score": 39.0,
+          "news_sentiment": "negative"
         },
         "price_trend": {
           "close": 4.659999847412109,
@@ -5136,7 +5133,7 @@
         "benchmark": "IWM",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "risk_off",
-        "benchmark_primary_probability": 0.3394,
+        "benchmark_primary_probability": 0.3206,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -6551,7 +6548,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Will NuScale Power Stock's Jump After Earnings Last?"
+              "公司新闻已接入: NuScale Power (SMR) As Lawsuit And Earnings Put Its Valuation Story To The Test"
             ],
             "max_points": 10,
             "missing_fields": [],
@@ -6665,7 +6662,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "Will NuScale Power Stock's Jump After Earnings Last?",
+          "catalyst": "NuScale Power (SMR) As Lawsuit And Earnings Put Its Valuation Story To The Test",
           "expectation_gap": [
             "暂未看到明确正向预期差证据"
           ],
@@ -6692,6 +6689,7 @@
           "个股弱于所属板块",
           "价格结构与主路径冲突",
           "成交量不确认当前路径",
+          "公司新闻或财报事件风险上升",
           "基础财务指标偏弱",
           "个股 Alpha 评分已接入"
         ],
@@ -6732,10 +6730,10 @@
             "status": "conflicting"
           },
           "news_event": {
-            "evidence": "公司新闻源已接入",
-            "reason": "Will NuScale Power Stock's Jump After Earnings Last?",
-            "score": 50.14,
-            "status": "neutral"
+            "evidence": "公司新闻或财报事件风险上升",
+            "reason": "risk_score=39.0; earnings_date=None",
+            "score": 47.98,
+            "status": "conflicting"
           },
           "options_volatility": {
             "evidence": "个股期权/隐含波动率未完整接入",
@@ -6769,7 +6767,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 40.84,
+        "stock_confluence_score": 40.68,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "历史相似结构支持主路径"
@@ -6822,13 +6820,13 @@
           "cash_flow_quality": 2.1644,
           "debt_risk": 0.051,
           "earnings_growth": -39.17,
-          "forward_pe": 396.4765,
+          "forward_pe": 389.2443,
           "profitability": 3.11,
           "raw_metrics": {
             "current_ratio": 2.1644,
             "debt_to_equity": 0.102,
             "eps_growth_ttm_yoy": -39.17,
-            "forward_pe": 396.4765,
+            "forward_pe": 389.2443,
             "gross_margin_ttm": 19.29,
             "net_margin_ttm": 3.11,
             "revenue_growth_ttm_yoy": 8.3
@@ -6848,59 +6846,59 @@
           "event_risk_flag": "high",
           "headlines": [
             {
-              "datetime": 1794670191,
-              "headline": "Here’s Why Tesla (TSLA) Is One of the Top High P/E Stocks Under the 200-Day SMA",
+              "datetime": 1794760502,
+              "headline": "Why Dec. 9 Could Be a Huge Day for Rivian Investors",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=1dbeb972da25d7db8caa9920d693a5a987cde846db879b491228e481538589fc"
+              "url": "https://finnhub.io/api/news?id=38ab1ef25864ad4d32abfffe3fb50fdc101fae3ceabe27aba224e24236239b4a"
             },
             {
-              "datetime": 1794668400,
-              "headline": "Why Tesla Is Pulling the Plug on Cybertruck",
+              "datetime": 1794760500,
+              "headline": "‘No further investment without Jensen’: Billionaire stops buying Nvidia as Musk and top funds rally behind Huang",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=100632ffab8e09680a150fb5393233b4be1cf2e2b9d1269b1bea5381d7f881a4"
+              "url": "https://finnhub.io/api/news?id=d569d565d2c99a108b930f26e3cfcf73e26cb030803bf9e2cbf44f8bdb964a15"
             },
             {
-              "datetime": 1794664800,
-              "headline": "SpaceX’s S&P 500 Bid Gets New Life as Musk Pitches Tesla Merger",
+              "datetime": 1794752102,
+              "headline": "Tesla Is Down 13% in 2026 While the S&P 500 Is Up. Here’s the 1 Catalyst Left This Year That Could Flip That.",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=c012a09bea4ee048b47e467ed3eca86b6df86b6d197e32687eea63b766700239"
+              "url": "https://finnhub.io/api/news?id=172f9229c30ad2e88799f58ef01c51cd4b7633aa1e88b2b95df75b694dab996e"
             },
             {
-              "datetime": 1794659400,
-              "headline": "Elon Musk, Trump, Kress, Nvidia’s Board On Jensen Huang’s Exit: Mag 7 Voices This Week",
+              "datetime": 1794741038,
+              "headline": "3 Growth Stocks With Revenue Growth Over 18%",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=4f587023fad29ea6a0cfd3823956dc28c5a8a50a6bbf1cf9fd7e127b2263b470"
+              "url": "https://finnhub.io/api/news?id=03c256afc4b77507719bba0f815cc6e6a894eed2f3ed8051ec65aa9e74395c2b"
             },
             {
-              "datetime": 1794657900,
-              "headline": "Forget Elon Musk’s Tesla Roadster ‘Rocket’ — a Chinese rival has 7,000+ orders for its nearly $300K flying car, due 2027",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=49240877a84e8c2201178a3177647a9acba6938894f43e9367763fa50ead0b06"
-            },
-            {
-              "datetime": 1794656700,
-              "headline": "The Unexpected American Automaker More Profitable Than Ford Or GM",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=f4cc134b716d4aade9fdb7d63bf8c00f5313bc826823d90bd5bad39c7c84f941"
-            },
-            {
-              "datetime": 1794651618,
-              "headline": "Tesla Cybercab’s Monthly Subscription Is ‘Too High,’ Elon Musk Admits To MKBHD: ‘Should Match The Cost Of…’",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=130d104302bf926672c28ce08d36ba2986608b3f34a8d88d2226072c6018d845"
-            },
-            {
-              "datetime": 1794644278,
-              "headline": "NVDA, AMD, CRWV and More: 5 Stocks Investors Couldn’t Stop Buzzing About This Week",
+              "datetime": 1794736755,
+              "headline": "This Week in TSLA: 24/7 Robotaxis, Cybertruck-Based SUV, $10 Billion Solar Bet and More",
               "source": "Benzinga",
-              "url": "https://finnhub.io/api/news?id=c7c330d8dae70de6d9e45f461994920b9e1ac84f9aaa7e7e55ed603e87f94699"
+              "url": "https://finnhub.io/api/news?id=ca8329334eddb57be756137561b2eb7fab2d51a7155690f3d2a55aa7179f7797"
+            },
+            {
+              "datetime": 1794729900,
+              "headline": "Son of ex-Alamo Rent a Car owner went from hip hop label founder to lithium leader. He’s even eyeing the White House",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=574a92ea5892bdf0341a4e8a3a61ea18b017fe8c492f25f0822bcaab3e908b8c"
+            },
+            {
+              "datetime": 1794726000,
+              "headline": "‘Tesla of China’ could make cars in Britain as Burnham considers tariffs",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=a8043e4806f892a1b5ae43b199e5303cec6df49f77240f099c3a9ee71e390bf2"
+            },
+            {
+              "datetime": 1794713438,
+              "headline": "Google Could Buy Uber to Win the Robotaxi Wars, Reuters Columnist Argues",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=928cc090be6e7173e47fbce046ee83a59fef5534dcc5e978df97418e315fcf12"
             }
           ],
-          "major_company_headline": "Here’s Why Tesla (TSLA) Is One of the Top High P/E Stocks Under the 200-Day SMA",
-          "news_count_24h": 20,
+          "major_company_headline": "Why Dec. 9 Could Be a Huge Day for Rivian Investors",
+          "news_count_24h": 15,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
-          "news_sentiment": "neutral"
+          "news_sentiment": "negative"
         },
         "price_trend": {
           "close": 390.2200012207031,
@@ -7340,7 +7338,7 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "oversold_bounce",
-        "benchmark_primary_probability": 0.3329,
+        "benchmark_primary_probability": 0.3605,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -8519,7 +8517,7 @@
           {
             "affected_ticker": "TSLA",
             "alert_level": "NO_ALERT",
-            "alert_score": 7.97,
+            "alert_score": 7.87,
             "alert_type": "Stock Bounce Setup",
             "confirmation_needed": [
               "价格站上主路径确认价",
@@ -8756,7 +8754,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Here’s Why Tesla (TSLA) Is One of the Top High P/E Stocks Under the 200-Day SMA"
+              "公司新闻已接入: Why Dec. 9 Could Be a Huge Day for Rivian Investors"
             ],
             "max_points": 10,
             "missing_fields": [],
@@ -8873,7 +8871,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金/技术确认较强",
-          "catalyst": "Here’s Why Tesla (TSLA) Is One of the Top High P/E Stocks Under the 200-Day SMA",
+          "catalyst": "Why Dec. 9 Could Be a Huge Day for Rivian Investors",
           "expectation_gap": [
             "暂未看到明确正向预期差证据"
           ],
@@ -8940,7 +8938,7 @@
           "news_event": {
             "evidence": "公司新闻或财报事件风险上升",
             "reason": "risk_score=100.0; earnings_date=None",
-            "score": 100,
+            "score": 97.0,
             "status": "conflicting"
           },
           "options_volatility": {
@@ -8975,7 +8973,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 48.84,
+        "stock_confluence_score": 48.62,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "个股跑赢所属板块",
@@ -9009,7 +9007,7 @@
       "top_candidate": "CEG",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-11-14T18:05:26.289331+00:00",
+    "generated_at": "2026-11-15T18:54:01.612776+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -9031,7 +9029,7 @@
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 62.9,
         "company_name": "Constellation Energy Corp",
-        "confluence_score": 49.2,
+        "confluence_score": 48.96,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9048,7 +9046,7 @@
           "mid": 279.7,
           "range_pct": 0.0477
         },
-        "final_radar_score": 60.07,
+        "final_radar_score": 60.04,
         "forecast_date": "2026-11-13",
         "invalidation_level": 231.3,
         "last_close": 280.20001220703125,
@@ -9118,7 +9116,7 @@
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 63.8,
         "company_name": "Tesla Inc",
-        "confluence_score": 48.84,
+        "confluence_score": 48.62,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9135,7 +9133,7 @@
           "mid": 389.75,
           "range_pct": 0.0458
         },
-        "final_radar_score": 59.48,
+        "final_radar_score": 59.45,
         "forecast_date": "2026-11-13",
         "invalidation_level": 338.15,
         "last_close": 390.2200012207031,
@@ -9193,19 +9191,19 @@
       },
       {
         "alpha_fields": {
-          "alpha_score": 32.0,
+          "alpha_score": 30.0,
           "expected_return_60d": -0.0322,
           "forecast_grade": "weak_or_no_alpha_edge",
           "main_logic": "半导体/AI 逻辑：订单、毛利率、资本开支周期、估值重估和资金确认。",
-          "outperformance_probability_20d": 0.3502,
+          "outperformance_probability_20d": 0.3422,
           "risk_reward_ratio": 0.37
         },
-        "alpha_quality_score": 32.0,
+        "alpha_quality_score": 30.0,
         "as_of": "2026-11-13",
         "candidate_type": "downside_continuation",
         "catalyst_score": 63.94,
         "company_name": "NVIDIA Corporation",
-        "confluence_score": 40.46,
+        "confluence_score": 40.28,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9222,7 +9220,7 @@
           "mid": 162.19,
           "range_pct": 0.0665
         },
-        "final_radar_score": 58.17,
+        "final_radar_score": 57.79,
         "forecast_date": "2026-11-13",
         "invalidation_level": 148.8,
         "last_close": 162.85000610351562,
@@ -9242,8 +9240,8 @@
           "earnings": "available"
         },
         "next_day_move_probability": 0.9203,
-        "one_line_reason": "downside_continuation: Alpha 32 / 弹性 100 / 成交量 97 / 相对强弱 14 / 催化 64 / 大盘 risk_off_pressure / 板块 conflicting",
-        "outperformance_probability_20d": 0.3502,
+        "one_line_reason": "downside_continuation: Alpha 30 / 弹性 100 / 成交量 97 / 相对强弱 14 / 催化 64 / 大盘 risk_off_pressure / 板块 conflicting",
+        "outperformance_probability_20d": 0.3422,
         "primary_probability": 0.2945,
         "primary_scenario": "stock_downside_continuation",
         "radar_level": "MODERATE_OPPORTUNITY",
@@ -9288,7 +9286,7 @@
         "candidate_type": "downside_continuation",
         "catalyst_score": 62.45,
         "company_name": "Nuscale Power Corp",
-        "confluence_score": 40.84,
+        "confluence_score": 40.68,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9305,7 +9303,7 @@
           "mid": 4.63,
           "range_pct": 0.1052
         },
-        "final_radar_score": 50.65,
+        "final_radar_score": 50.63,
         "forecast_date": "2026-11-13",
         "invalidation_level": 4.28,
         "last_close": 4.659999847412109,
