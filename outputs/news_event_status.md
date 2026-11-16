@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-15T18:53:51.199545+00:00`
+- generated_at: `2026-11-16T22:06:09.226977+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
-- event_detection_confidence: `73`
+- major_event_count: `5`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `True`
-- confirmation_score: `75`
+- confirmation_score: `100`
 
 ## Dashboard Note
 
@@ -27,56 +27,40 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Yemeni government force retreats from strait in major setback in war against Houthis - Reuters
-- source: Reuters
-- published_at: `2026-11-15T13:24:58+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Jordan sentences three men to death over deadly church attack - Reuters
-- source: Reuters
-- published_at: `2026-11-15T10:51:43+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Bahrain intercepts Iranian aerial attacks as Tehran says it attacked US base - Reuters
-- source: Reuters
-- published_at: `2026-11-15T04:25:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Saudi-led coalition intercepts missiles towards Riyadh, drones in Eastern Province - Reuters
-- source: Reuters
-- published_at: `2026-11-15T02:58:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Senior Hamas commander killed in Israeli strike in Gaza - Reuters
-- source: Reuters
-- published_at: `2026-11-14T22:31:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Trump tells advisers he may hold off on Iran attacks barring new provocations, sources say - Reuters
-- source: Reuters
-- published_at: `2026-11-14T11:04:10+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### fed_dovish / risk_on
-
-- headline: Retailers are turning to entertainment to win shoppers’ attention
+- headline: JPMorgan Chase says temporary software bug is affecting consumer banking
 - source: CNBC
-- published_at: `2026-11-14T13:00:01+00:00`
-- importance_score: `80`
+- published_at: `2026-11-16T21:42:50+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iranian leaders fret over public mood as gas shortages add to war ills - Reuters
+- source: Reuters
+- published_at: `2026-11-16T14:42:59+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: COMMENTARY: War-torn present clouds Saudi Arabia's post-oil future - Reuters
+- source: Reuters
+- published_at: `2026-11-16T07:00:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### oil_shock_relief / risk_on
+
+- headline: Oil falls as recovering Middle East exports bolster surplus outlook - Reuters
+- source: Reuters
+- published_at: `2026-11-16T02:00:00+00:00`
+- importance_score: `89`
+- confidence: `medium`
+
+### market_microstructure_event / mixed
+
+- headline: Bitcoin slides to $62,000 following liquidation cascade, then rebounds slightly
+- source: CNBC
+- published_at: `2026-11-16T14:29:19+00:00`
+- importance_score: `71`
 - confidence: `medium`
