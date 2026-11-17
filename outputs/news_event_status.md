@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-17T09:16:19.922038+00:00`
+- generated_at: `2026-11-17T12:28:39.719767+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
-- event_detection_confidence: `75`
+- major_event_count: `8`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `True`
-- confirmation_score: `100`
+- confirmation_score: `75`
 
 ## Dashboard Note
 
@@ -29,15 +29,31 @@
 
 - headline: Celebrity style at the Governors Awards - Reuters
 - source: Reuters
-- published_at: `2026-11-17T08:50:01+00:00`
+- published_at: `2026-11-17T11:57:05+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oman, Iran discuss safeguarding maritime corridors, as attacks in Hormuz increase - Reuters
+- headline: Bahrain says it intercepts Iranian air attacks, IRGC says it targets US radar - Reuters
+- source: Reuters
+- published_at: `2026-11-17T07:47:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran attacks US military radar system in Bahrain with drones - Reuters
 - source: Reuters
 - published_at: `2026-11-17T05:45:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil prices caught between rising Mideast exports and tanker attacks - Reuters
+- source: Reuters
+- published_at: `2026-11-17T01:37:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -47,7 +63,7 @@
 - source: Reuters
 - published_at: `2026-11-16T23:32:45+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,7 +71,7 @@
 - source: CNBC
 - published_at: `2026-11-16T21:42:50+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
