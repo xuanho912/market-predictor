@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-17T05:03:36.871928+00:00`
+- generated_at: `2026-11-17T09:16:19.922038+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `5`
+- major_event_count: `6`
 - event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -29,7 +29,15 @@
 
 - headline: Celebrity style at the Governors Awards - Reuters
 - source: Reuters
-- published_at: `2026-11-17T03:04:12+00:00`
+- published_at: `2026-11-17T08:50:01+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oman, Iran discuss safeguarding maritime corridors, as attacks in Hormuz increase - Reuters
+- source: Reuters
+- published_at: `2026-11-17T05:45:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -53,7 +61,7 @@
 
 - headline: Iranian leaders fret over public mood as gas shortages add to war ills - Reuters
 - source: Reuters
-- published_at: `2026-11-16T14:42:59+00:00`
+- published_at: `2026-11-16T14:32:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
@@ -62,5 +70,5 @@
 - headline: Bitcoin slides to $62,000 following liquidation cascade, then rebounds slightly
 - source: CNBC
 - published_at: `2026-11-16T14:29:19+00:00`
-- importance_score: `70`
+- importance_score: `68`
 - confidence: `medium`
