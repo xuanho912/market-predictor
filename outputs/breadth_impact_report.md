@@ -1,6 +1,6 @@
 # Breadth Impact Audit
 
-Generated at: `2026-11-16T22:06:19.285752Z`
+Generated at: `2026-11-17T03:02:43.623449Z`
 
 ## Summary
 
@@ -16,10 +16,10 @@ Generated at: `2026-11-16T22:06:19.285752Z`
 
 | symbol | supports primary | conflicts primary | edge before | edge after | primary before | primary after | failed bounce delta | confirmation delta | confidence delta | reason | risk note |
 |---|---:|---:|---|---|---|---|---:|---:|---:|---|---|
-| SPY | True | False | MODERATE_EDGE | RISK_WARNING | bounce_path | bounce_path | 0.0261 | 6 | 0 | SPY breadth supports bounce_path: internal resonance is aligned, support score 89%, above 20d/50d MA 72%/72%. | SPY breadth improves confidence in the primary path, but forward validation is still required. |
+| SPY | True | False | MODERATE_EDGE | RISK_WARNING | bounce_path | bearish_path | 0.088 | -10 | 0 | SPY breadth is mixed for bearish_path: support score 59%, conflict score 53%, internal resonance is mixed. | SPY breadth conflict or failed-bounce risk is elevated; watch new lows, percent above 20/50d MA and sector participation. |
 | QQQ | False | True | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.1294 | -26 | -12 | QQQ breadth conflicts with bearish_path: conflict score 69%, internal resonance is weak. | QQQ breadth conflict or failed-bounce risk is elevated; watch new lows, percent above 20/50d MA and sector participation. |
 | IWM | True | False | RISK_WARNING | RISK_WARNING | bounce_path | bounce_path | 0.0483 | 0 | 0 | IWM breadth supports bounce_path: internal resonance is mixed, support score 66%. | IWM breadth improves confidence in the primary path, but forward validation is still required. |
-| DIA | True | False | MODERATE_EDGE | RISK_WARNING | bounce_path | bounce_path | 0.0263 | 2 | 0 | DIA breadth supports bounce_path: internal resonance is aligned, support score 88%, above 20d/50d MA 70%/80%. | DIA breadth improves confidence in the primary path, but forward validation is still required. |
+| DIA | True | False | MODERATE_EDGE | RISK_WARNING | bounce_path | bearish_path | 0.0574 | -4 | 0 | DIA breadth supports bearish_path: internal resonance is mixed, support score 76%, above 20d/50d MA 57%/77%. | DIA breadth improves confidence in the primary path, but forward validation is still required. |
 
 ## Forward Validation
 

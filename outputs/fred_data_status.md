@@ -1,6 +1,6 @@
 # FRED Data Status
 
-Generated at: `2026-11-16T22:06:20.842298Z`
+Generated at: `2026-11-17T03:02:45.980155Z`
 
 ## Provider
 
@@ -8,7 +8,7 @@ Generated at: `2026-11-16T22:06:20.842298Z`
 - provider available: `True`
 - fallback used: `False`
 - rate limited: `False`
-- successful series: `DGS10, BAA_SPREAD, HY_OAS, IG_OAS, DGS2, DGS3MO, FINANCIAL_STRESS, DFII10, RECESSION`
+- successful series: `DGS3MO, DGS10, BAA_SPREAD, DGS2, IG_OAS, DFII10, HY_OAS, RECESSION, FINANCIAL_STRESS`
 - failed series: `none`
 
 ## Series
@@ -20,7 +20,7 @@ Generated at: `2026-11-16T22:06:20.842298Z`
 | DGS10 | DGS10 | True | 2026-11-13 | 5.15 | fred-api | False |  |
 | DGS2 | DGS2 | True | 2026-11-13 | 4.88 | fred-api | False |  |
 | DGS3MO | DGS3MO | True | 2026-11-13 | 4.32 | fred-api | False |  |
-| FINANCIAL_STRESS | STLFSI4 | True | 2026-11-06 | -0.4918 | fred-api | False |  |
+| FINANCIAL_STRESS | STLFSI4 | True | 2026-11-06 | -0.4918 | fred-api | True |  |
 | HY_OAS | BAMLH0A0HYM2 | True | 2026-11-13 | 3.23 | fred-api | False |  |
 | IG_OAS | BAMLC0A0CM | True | 2026-11-13 | 0.89 | fred-api | False |  |
 | RECESSION | USREC | True | 2026-10-01 | 0.0 | fred-api | True |  |
@@ -37,10 +37,10 @@ Generated at: `2026-11-16T22:06:20.842298Z`
 
 | symbol | edge without | edge with | primary without | primary with | risk expansion delta | failed bounce delta |
 |---|---|---|---|---|---:|---:|
-| SPY | MODERATE_EDGE | RISK_WARNING | bounce_path | bounce_path | 0.084 | 0.0254 |
-| QQQ | WEAK_EDGE | RISK_WARNING | bearish_path | bearish_path | 0.0839 | 0.0276 |
-| IWM | MODERATE_EDGE | RISK_WARNING | bounce_path | bounce_path | 0.084 | 0.0254 |
-| DIA | MODERATE_EDGE | RISK_WARNING | bounce_path | bounce_path | 0.084 | 0.0254 |
+| SPY | MODERATE_EDGE | RISK_WARNING | bearish_path | bearish_path | 0.0839 | 0.0387 |
+| QQQ | WEAK_EDGE | RISK_WARNING | bearish_path | bearish_path | 0.084 | 0.0276 |
+| IWM | MODERATE_EDGE | RISK_WARNING | bounce_path | bounce_path | 0.084 | 0.0255 |
+| DIA | MODERATE_EDGE | RISK_WARNING | bounce_path | bearish_path | 0.084 | 0.0321 |
 
 ## Warning
 

@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-16T22:06:09.226977+00:00`
+- generated_at: `2026-11-17T03:02:33.513372+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `5`
-- event_detection_confidence: `75`
+- event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,6 +27,22 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Celebrity style at the Governors Awards - Reuters
+- source: Reuters
+- published_at: `2026-11-17T01:32:30+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US condemns Iranian strikes in Bahrain as Rubio holds call with Bahraini counterpart - Reuters
+- source: Reuters
+- published_at: `2026-11-16T23:32:45+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: JPMorgan Chase says temporary software bug is affecting consumer banking
 - source: CNBC
 - published_at: `2026-11-16T21:42:50+00:00`
@@ -39,22 +55,6 @@
 - source: Reuters
 - published_at: `2026-11-16T14:42:59+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: COMMENTARY: War-torn present clouds Saudi Arabia's post-oil future - Reuters
-- source: Reuters
-- published_at: `2026-11-16T07:00:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### oil_shock_relief / risk_on
-
-- headline: Oil falls as recovering Middle East exports bolster surplus outlook - Reuters
-- source: Reuters
-- published_at: `2026-11-16T02:00:00+00:00`
-- importance_score: `89`
 - confidence: `medium`
 
 ### market_microstructure_event / mixed
@@ -62,5 +62,5 @@
 - headline: Bitcoin slides to $62,000 following liquidation cascade, then rebounds slightly
 - source: CNBC
 - published_at: `2026-11-16T14:29:19+00:00`
-- importance_score: `71`
+- importance_score: `70`
 - confidence: `medium`
