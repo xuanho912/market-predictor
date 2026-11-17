@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-17T12:28:39.719767+00:00`
+- generated_at: `2026-11-17T20:58:31.441622+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
-- event_detection_confidence: `74`
+- major_event_count: `11`
+- event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,64 +27,80 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Celebrity style at the Governors Awards - Reuters
+- headline: Yemen's Houthis say they launched drones towards Saudi East-West pipeline - Reuters
 - source: Reuters
-- published_at: `2026-11-17T11:57:05+00:00`
+- published_at: `2026-11-17T18:20:54+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Bahrain says it intercepts Iranian air attacks, IRGC says it targets US radar - Reuters
+- headline: Trump and Tehran gamble on time as Iran war stalemate deepens - Reuters
+- source: Reuters
+- published_at: `2026-11-17T16:23:42+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Kalshi takes down controversial Trump 'mention' markets at CFTC's request
+- source: CNBC
+- published_at: `2026-11-17T16:00:50+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Britain to supply Ukraine with more than 1,000 short-range missiles - Reuters
+- source: Reuters
+- published_at: `2026-11-17T15:06:09+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Railway traffic between Hungary and Ukraine suspended after Russian drone attack on western Ukraine - Reuters
+- source: Reuters
+- published_at: `2026-11-17T11:56:48+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Crew of tanker unaccounted for after second attack north of Oman's Khasab, UKMTO says - Reuters
+- source: Reuters
+- published_at: `2026-11-17T09:47:48+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Bahrain says it intercepts Iranian air attacks, IRGC says it targeted US radar - Reuters
 - source: Reuters
 - published_at: `2026-11-17T07:47:00+00:00`
 - importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Russia says Ukraine struck its bridge to Crimea for second day in biggest drone attack of war - Reuters
+- source: Reuters
+- published_at: `2026-11-17T06:52:00+00:00`
+- importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iran attacks US military radar system in Bahrain with drones - Reuters
+- headline: Iran attacks US military radar system in Bahrain despite talks with mediators - Reuters
 - source: Reuters
 - published_at: `2026-11-17T05:45:00+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil prices caught between rising Mideast exports and tanker attacks - Reuters
-- source: Reuters
-- published_at: `2026-11-17T01:37:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US condemns Iranian strikes in Bahrain as Rubio holds call with Bahraini counterpart - Reuters
-- source: Reuters
-- published_at: `2026-11-16T23:32:45+00:00`
-- importance_score: `100`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: JPMorgan Chase says temporary software bug is affecting consumer banking
-- source: CNBC
-- published_at: `2026-11-16T21:42:50+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iranian leaders fret over public mood as gas shortages add to war ills - Reuters
+- headline: Dubai airport traffic falls amid regional war, but shows signs of recovery - Reuters
 - source: Reuters
-- published_at: `2026-11-16T14:32:00+00:00`
+- published_at: `2026-11-17T03:42:00+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### market_microstructure_event / mixed
-
-- headline: Bitcoin slides to $62,000 following liquidation cascade, then rebounds slightly
-- source: CNBC
-- published_at: `2026-11-16T14:29:19+00:00`
-- importance_score: `68`
 - confidence: `medium`
