@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-17T03:02:33.513372+00:00`
+- generated_at: `2026-11-17T04:10:33.278051+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `5`
-- event_detection_confidence: `77`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -29,7 +29,7 @@
 
 - headline: Celebrity style at the Governors Awards - Reuters
 - source: Reuters
-- published_at: `2026-11-17T01:32:30+00:00`
+- published_at: `2026-11-17T03:04:12+00:00`
 - importance_score: `100`
 - confidence: `high`
 
