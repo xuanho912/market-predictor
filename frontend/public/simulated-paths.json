@@ -5,10 +5,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-11-17",
-    "current_time_us_eastern": "2026-11-17T22:57:32.794875-05:00",
+    "current_time_us_eastern": "2026-11-17T23:11:45.823545-05:00",
     "data_freshness_status": "fresh",
     "expected_latest_trading_date": "2026-11-17",
-    "generated_at": "2026-11-18T03:57:32.794875+00:00",
+    "generated_at": "2026-11-18T04:11:45.823545+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -1047,12 +1047,12 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "IG_OAS",
-      "HY_OAS",
       "BAA_SPREAD",
+      "HY_OAS",
+      "DGS3MO",
+      "IG_OAS",
       "DGS10",
       "DGS2",
-      "DGS3MO",
       "RECESSION",
       "FINANCIAL_STRESS",
       "DFII10"
@@ -1086,11 +1086,11 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 77,
+      "event_detection_confidence": 78,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-11-18T03:57:22.650307+00:00",
-      "major_event_count": 8,
+      "last_update": "2026-11-18T04:11:34.282761+00:00",
+      "major_event_count": 9,
       "missing_reason": null,
       "news_direction": "risk_off",
       "news_event_partial": false,
@@ -1101,7 +1101,7 @@
     },
     "news_event_available": true,
     "news_event_event_risk_level": "high",
-    "news_event_major_count": 8,
+    "news_event_major_count": 9,
     "news_event_missing_reason": null,
     "news_event_narrative": "geopolitics_escalation_risk_off",
     "news_event_partial": false,
@@ -1151,7 +1151,7 @@
       "status": "failed"
     },
     "event_risk_level": "high",
-    "major_event_count": 8,
+    "major_event_count": 9,
     "market_narrative": {
       "affected_scenarios": [
         "bearish_path"
@@ -1162,7 +1162,20 @@
         "QQQ",
         "SPY"
       ],
-      "conflicting_headlines": [],
+      "conflicting_headlines": [
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "oil_shock_relief"
+          ],
+          "event_type": "oil_shock_relief",
+          "expected_market_direction": "risk_on",
+          "headline": "Oil prices fall as higher US crude stocks temper supply risks - Reuters",
+          "importance_score": 94,
+          "published_at": "2026-11-18T02:16:00+00:00",
+          "source": "Reuters"
+        }
+      ],
       "detected_event_conditions": [
         "geopolitical_risk_escalation"
       ],
@@ -1251,7 +1264,7 @@
       "direction": "supports_risk_expansion",
       "event_risk_level": "high",
       "macro_event_risk_flag": false,
-      "major_event_count": 8,
+      "major_event_count": 9,
       "not_a_trading_signal": true,
       "price_reaction_confirmed": true,
       "symbols": {
@@ -1406,7 +1419,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": -0.012,
-        "avg_equity_futures_1d_return": 0.0024,
+        "avg_equity_futures_1d_return": 0.0016,
         "confirmed_checks": [
           "股票ETF或股指期货下跌",
           "VIX 上升",
@@ -1422,7 +1435,7 @@
           "美元走强"
         ],
         "hyg_lqd_1d_relative_return": -0.0007,
-        "oil_proxy_1d_return": -0.0056,
+        "oil_proxy_1d_return": -0.0062,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -2308,11 +2321,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.3,
           "top_headlines": [
+            "Oil prices fall as higher US crude stocks temper supply risks - Reuters",
             "Eisenkot-led bloc replaces Netanyahu ally as Knesset speaker - Reuters",
             "Bahrain says air defences intercepted Iranian attacks - Reuters",
             "Trump to meet Marcos in Manila before China talks - Reuters",
-            "Wall Street ends lower ahead of Nvidia results, focus turns to Anthropic debut - Reuters",
-            "A generational flight from tech to defensive stocks is underway. How we’re capitalizing"
+            "Wall Street ends lower ahead of Nvidia results, focus turns to Anthropic debut - Reuters"
           ]
         },
         "price": {
@@ -3722,12 +3735,39 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 89,
+            "freshness_score": 88,
             "headline": "Bahrain says air defences intercepted Iranian attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-11-17T23:15:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "USO",
+              "CL=F",
+              "XLE",
+              "^VIX"
+            ],
+            "confidence": "high",
+            "confidence_score": 80,
+            "detected_event_conditions": [
+              "oil_shock_relief"
+            ],
+            "event_type": "oil_shock_relief",
+            "expected_horizon": "1d-5d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 95,
+            "headline": "Oil prices fall as higher US crude stocks temper supply risks - Reuters",
+            "importance_score": 94,
+            "narrative": "oil_relief_rally",
+            "provider": "finnhub",
+            "published_at": "2026-11-18T02:16:00+00:00",
             "source": "Reuters"
           },
           {
@@ -3776,7 +3816,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 76,
             "headline": "Yemen's Houthis say they launched drones towards Saudi East-West pipeline - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3837,33 +3877,6 @@
             "provider": "finnhub",
             "published_at": "2026-11-17T16:00:50+00:00",
             "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 74,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 69,
-            "headline": "UN agency warns of Gaza hypothermia deaths without more supplies - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-17T15:11:45+00:00",
-            "source": "Reuters"
           }
         ],
         "market_narrative": {
@@ -3876,7 +3889,20 @@
             "QQQ",
             "SPY"
           ],
-          "conflicting_headlines": [],
+          "conflicting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "oil_shock_relief"
+              ],
+              "event_type": "oil_shock_relief",
+              "expected_market_direction": "risk_on",
+              "headline": "Oil prices fall as higher US crude stocks temper supply risks - Reuters",
+              "importance_score": 94,
+              "published_at": "2026-11-18T02:16:00+00:00",
+              "source": "Reuters"
+            }
+          ],
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -3999,7 +4025,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.012,
-            "avg_equity_futures_1d_return": 0.0024,
+            "avg_equity_futures_1d_return": 0.0016,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -4015,7 +4041,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0007,
-            "oil_proxy_1d_return": -0.0056,
+            "oil_proxy_1d_return": -0.0062,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -6522,11 +6548,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.3,
           "top_headlines": [
+            "Oil prices fall as higher US crude stocks temper supply risks - Reuters",
             "Eisenkot-led bloc replaces Netanyahu ally as Knesset speaker - Reuters",
             "Bahrain says air defences intercepted Iranian attacks - Reuters",
             "Trump to meet Marcos in Manila before China talks - Reuters",
-            "Wall Street ends lower ahead of Nvidia results, focus turns to Anthropic debut - Reuters",
-            "A generational flight from tech to defensive stocks is underway. How we’re capitalizing"
+            "Wall Street ends lower ahead of Nvidia results, focus turns to Anthropic debut - Reuters"
           ]
         },
         "price": {
@@ -7914,12 +7940,39 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 89,
+            "freshness_score": 88,
             "headline": "Bahrain says air defences intercepted Iranian attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-11-17T23:15:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "USO",
+              "CL=F",
+              "XLE",
+              "^VIX"
+            ],
+            "confidence": "high",
+            "confidence_score": 80,
+            "detected_event_conditions": [
+              "oil_shock_relief"
+            ],
+            "event_type": "oil_shock_relief",
+            "expected_horizon": "1d-5d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 95,
+            "headline": "Oil prices fall as higher US crude stocks temper supply risks - Reuters",
+            "importance_score": 94,
+            "narrative": "oil_relief_rally",
+            "provider": "finnhub",
+            "published_at": "2026-11-18T02:16:00+00:00",
             "source": "Reuters"
           },
           {
@@ -7968,7 +8021,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 76,
             "headline": "Yemen's Houthis say they launched drones towards Saudi East-West pipeline - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -8029,33 +8082,6 @@
             "provider": "finnhub",
             "published_at": "2026-11-17T16:00:50+00:00",
             "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 74,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 69,
-            "headline": "UN agency warns of Gaza hypothermia deaths without more supplies - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-17T15:11:45+00:00",
-            "source": "Reuters"
           }
         ],
         "market_narrative": {
@@ -8068,7 +8094,20 @@
             "QQQ",
             "SPY"
           ],
-          "conflicting_headlines": [],
+          "conflicting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "oil_shock_relief"
+              ],
+              "event_type": "oil_shock_relief",
+              "expected_market_direction": "risk_on",
+              "headline": "Oil prices fall as higher US crude stocks temper supply risks - Reuters",
+              "importance_score": 94,
+              "published_at": "2026-11-18T02:16:00+00:00",
+              "source": "Reuters"
+            }
+          ],
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -8191,7 +8230,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.012,
-            "avg_equity_futures_1d_return": 0.0024,
+            "avg_equity_futures_1d_return": 0.0016,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -8207,7 +8246,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0007,
-            "oil_proxy_1d_return": -0.0056,
+            "oil_proxy_1d_return": -0.0062,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -10737,11 +10776,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.3,
           "top_headlines": [
+            "Oil prices fall as higher US crude stocks temper supply risks - Reuters",
             "Eisenkot-led bloc replaces Netanyahu ally as Knesset speaker - Reuters",
             "Bahrain says air defences intercepted Iranian attacks - Reuters",
             "Trump to meet Marcos in Manila before China talks - Reuters",
-            "Wall Street ends lower ahead of Nvidia results, focus turns to Anthropic debut - Reuters",
-            "A generational flight from tech to defensive stocks is underway. How we’re capitalizing"
+            "Wall Street ends lower ahead of Nvidia results, focus turns to Anthropic debut - Reuters"
           ]
         },
         "price": {
@@ -12145,12 +12184,39 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 89,
+            "freshness_score": 88,
             "headline": "Bahrain says air defences intercepted Iranian attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-11-17T23:15:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "USO",
+              "CL=F",
+              "XLE",
+              "^VIX"
+            ],
+            "confidence": "high",
+            "confidence_score": 80,
+            "detected_event_conditions": [
+              "oil_shock_relief"
+            ],
+            "event_type": "oil_shock_relief",
+            "expected_horizon": "1d-5d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 95,
+            "headline": "Oil prices fall as higher US crude stocks temper supply risks - Reuters",
+            "importance_score": 94,
+            "narrative": "oil_relief_rally",
+            "provider": "finnhub",
+            "published_at": "2026-11-18T02:16:00+00:00",
             "source": "Reuters"
           },
           {
@@ -12199,7 +12265,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 76,
             "headline": "Yemen's Houthis say they launched drones towards Saudi East-West pipeline - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12260,33 +12326,6 @@
             "provider": "finnhub",
             "published_at": "2026-11-17T16:00:50+00:00",
             "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 74,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 69,
-            "headline": "UN agency warns of Gaza hypothermia deaths without more supplies - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-17T15:11:45+00:00",
-            "source": "Reuters"
           }
         ],
         "market_narrative": {
@@ -12299,7 +12338,20 @@
             "QQQ",
             "SPY"
           ],
-          "conflicting_headlines": [],
+          "conflicting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "oil_shock_relief"
+              ],
+              "event_type": "oil_shock_relief",
+              "expected_market_direction": "risk_on",
+              "headline": "Oil prices fall as higher US crude stocks temper supply risks - Reuters",
+              "importance_score": 94,
+              "published_at": "2026-11-18T02:16:00+00:00",
+              "source": "Reuters"
+            }
+          ],
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -12422,7 +12474,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.012,
-            "avg_equity_futures_1d_return": 0.0024,
+            "avg_equity_futures_1d_return": 0.0016,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -12438,7 +12490,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0007,
-            "oil_proxy_1d_return": -0.0056,
+            "oil_proxy_1d_return": -0.0062,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -14991,11 +15043,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.3,
           "top_headlines": [
+            "Oil prices fall as higher US crude stocks temper supply risks - Reuters",
             "Eisenkot-led bloc replaces Netanyahu ally as Knesset speaker - Reuters",
             "Bahrain says air defences intercepted Iranian attacks - Reuters",
             "Trump to meet Marcos in Manila before China talks - Reuters",
-            "Wall Street ends lower ahead of Nvidia results, focus turns to Anthropic debut - Reuters",
-            "A generational flight from tech to defensive stocks is underway. How we’re capitalizing"
+            "Wall Street ends lower ahead of Nvidia results, focus turns to Anthropic debut - Reuters"
           ]
         },
         "price": {
@@ -16383,12 +16435,39 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 89,
+            "freshness_score": 88,
             "headline": "Bahrain says air defences intercepted Iranian attacks - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-11-17T23:15:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "USO",
+              "CL=F",
+              "XLE",
+              "^VIX"
+            ],
+            "confidence": "high",
+            "confidence_score": 80,
+            "detected_event_conditions": [
+              "oil_shock_relief"
+            ],
+            "event_type": "oil_shock_relief",
+            "expected_horizon": "1d-5d",
+            "expected_market_direction": "risk_on",
+            "freshness_score": 95,
+            "headline": "Oil prices fall as higher US crude stocks temper supply risks - Reuters",
+            "importance_score": 94,
+            "narrative": "oil_relief_rally",
+            "provider": "finnhub",
+            "published_at": "2026-11-18T02:16:00+00:00",
             "source": "Reuters"
           },
           {
@@ -16437,7 +16516,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 76,
             "headline": "Yemen's Houthis say they launched drones towards Saudi East-West pipeline - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16498,33 +16577,6 @@
             "provider": "finnhub",
             "published_at": "2026-11-17T16:00:50+00:00",
             "source": "CNBC"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 74,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 69,
-            "headline": "UN agency warns of Gaza hypothermia deaths without more supplies - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-17T15:11:45+00:00",
-            "source": "Reuters"
           }
         ],
         "market_narrative": {
@@ -16537,7 +16589,20 @@
             "QQQ",
             "SPY"
           ],
-          "conflicting_headlines": [],
+          "conflicting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "oil_shock_relief"
+              ],
+              "event_type": "oil_shock_relief",
+              "expected_market_direction": "risk_on",
+              "headline": "Oil prices fall as higher US crude stocks temper supply risks - Reuters",
+              "importance_score": 94,
+              "published_at": "2026-11-18T02:16:00+00:00",
+              "source": "Reuters"
+            }
+          ],
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -16660,7 +16725,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.012,
-            "avg_equity_futures_1d_return": 0.0024,
+            "avg_equity_futures_1d_return": 0.0016,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -16676,7 +16741,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0007,
-            "oil_proxy_1d_return": -0.0056,
+            "oil_proxy_1d_return": -0.0062,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"

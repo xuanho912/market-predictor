@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-18T03:57:22.650307+00:00`
+- generated_at: `2026-11-18T04:11:34.282761+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
-- event_detection_confidence: `77`
+- major_event_count: `9`
+- event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -31,6 +31,14 @@
 - source: Reuters
 - published_at: `2026-11-17T23:15:00+00:00`
 - importance_score: `100`
+- confidence: `high`
+
+### oil_shock_relief / risk_on
+
+- headline: Oil prices fall as higher US crude stocks temper supply risks - Reuters
+- source: Reuters
+- published_at: `2026-11-18T02:16:00+00:00`
+- importance_score: `94`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
