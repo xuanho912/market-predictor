@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-18T08:37:14.419019+00:00`
+- generated_at: `2026-11-18T12:15:53.348991+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `11`
-- event_detection_confidence: `76`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -35,11 +35,11 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iran attacks US bases in Gulf countries despite diplomatic efforts - Reuters
+- headline: Iran fires at Kuwait after US strike on Iranian island - Reuters
 - source: Reuters
 - published_at: `2026-11-17T23:15:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +47,7 @@
 - source: Reuters
 - published_at: `2026-11-17T21:31:43+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -75,14 +75,6 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Trump and Tehran gamble on time as Iran war stalemate deepens - Reuters
-- source: Reuters
-- published_at: `2026-11-17T16:23:42+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
 - headline: Can COP31's proposed 'age of electricity' slow global warming? - Reuters
 - source: Reuters
 - published_at: `2026-11-17T16:16:09+00:00`
@@ -94,6 +86,14 @@
 - headline: Kalshi takes down controversial Trump 'mention' markets at CFTC's request
 - source: CNBC
 - published_at: `2026-11-17T16:00:50+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Trump and Tehran gamble on time as Iran war stalemate deepens - Reuters
+- source: Reuters
+- published_at: `2026-11-17T15:57:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
