@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-18T03:08:32.625333+00:00`
+- generated_at: `2026-11-18T03:57:22.650307+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
+- major_event_count: `8`
 - event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -63,7 +63,7 @@
 - source: CNBC
 - published_at: `2026-11-17T16:00:50+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -86,13 +86,5 @@
 - headline: Railway traffic between Hungary and Ukraine suspended after Russian drone attack on western Ukraine - Reuters
 - source: Reuters
 - published_at: `2026-11-17T11:56:48+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Crew of tanker unaccounted for after second attack north of Oman's Khasab, UKMTO says - Reuters
-- source: Reuters
-- published_at: `2026-11-17T09:47:48+00:00`
 - importance_score: `100`
 - confidence: `medium`
