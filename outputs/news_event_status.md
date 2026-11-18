@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-17T20:58:31.441622+00:00`
+- generated_at: `2026-11-18T03:08:32.625333+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `11`
+- major_event_count: `9`
 - event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -24,6 +24,22 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Bahrain says air defences intercepted Iranian attacks - Reuters
+- source: Reuters
+- published_at: `2026-11-17T23:15:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US strikes Iranian missile launch site on Qeshm Island, US official says - Reuters
+- source: Reuters
+- published_at: `2026-11-17T19:40:13+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -51,11 +67,19 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: UN agency warns of Gaza hypothermia deaths without more supplies - Reuters
+- source: Reuters
+- published_at: `2026-11-17T15:11:45+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Britain to supply Ukraine with more than 1,000 short-range missiles - Reuters
 - source: Reuters
 - published_at: `2026-11-17T15:06:09+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -63,44 +87,12 @@
 - source: Reuters
 - published_at: `2026-11-17T11:56:48+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Crew of tanker unaccounted for after second attack north of Oman's Khasab, UKMTO says - Reuters
 - source: Reuters
 - published_at: `2026-11-17T09:47:48+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Bahrain says it intercepts Iranian air attacks, IRGC says it targeted US radar - Reuters
-- source: Reuters
-- published_at: `2026-11-17T07:47:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Russia says Ukraine struck its bridge to Crimea for second day in biggest drone attack of war - Reuters
-- source: Reuters
-- published_at: `2026-11-17T06:52:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran attacks US military radar system in Bahrain despite talks with mediators - Reuters
-- source: Reuters
-- published_at: `2026-11-17T05:45:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Dubai airport traffic falls amid regional war, but shows signs of recovery - Reuters
-- source: Reuters
-- published_at: `2026-11-17T03:42:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
