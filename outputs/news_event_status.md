@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-19T08:52:39.446036+00:00`
+- generated_at: `2026-11-19T12:11:21.926930+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
-- event_detection_confidence: `76`
+- major_event_count: `7`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,6 +27,14 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Energy-security response to Iran war could cut oil demand by 4% by 2035, IEA says - Reuters
+- source: Reuters
+- published_at: `2026-11-19T05:05:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Houthi missile threat towards Riyadh causes damage, Saudi-led coalition says - Reuters
 - source: Reuters
 - published_at: `2026-11-19T03:19:00+00:00`
@@ -35,17 +43,9 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil prices steady as Middle East shipping attacks counter supply surplus outlook - Reuters
+- headline: Oil prices rise as Middle East shipping attacks counter supply surplus outlook - Reuters
 - source: Reuters
 - published_at: `2026-11-19T02:47:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US, China can help end Ukraine war, Trump tells Xi before trilateral with Putin - Reuters
-- source: Reuters
-- published_at: `2026-11-18T23:05:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -73,18 +73,10 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
-
-- headline: Explainer: Untangling Yemen's complex civil war - Reuters
-- source: Reuters
-- published_at: `2026-11-18T14:35:53+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
 ### fed_hawkish / risk_off
 
 - headline: Fed officials expect more rate hikes, worry about AI impact on inflation, minutes show
 - source: CNBC
 - published_at: `2026-11-18T19:08:44+00:00`
-- importance_score: `86`
+- importance_score: `85`
 - confidence: `medium`
