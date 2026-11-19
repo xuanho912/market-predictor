@@ -1,6 +1,6 @@
 # Forecast Price Levels
 
-Generated at: `2026-11-19T02:47:31.088033Z`
+Generated at: `2026-11-19T03:55:04.687937Z`
 
 These are probability-path scenario levels, not execution instructions, risk-control rules, or guaranteed targets.
 

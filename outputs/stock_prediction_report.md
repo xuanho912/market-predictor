@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-11-19T02:47:32.531153+00:00`
+Generated at: `2026-11-19T03:55:06.592485+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -9,7 +9,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 
 - supported_symbols: `4`
 - watchlist_size: `4`
-- strongest_stock_symbol: `NVDA`
+- strongest_stock_symbol: `SMR`
 - stock_data_quality_score: `100.0`
 - validation_status: `not_yet_validated`
 - missing_high_value_data: `['single_stock_options']`
@@ -80,15 +80,15 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - status: `available`
 - current_price: `3.91`
 - market_context: `risk_off_pressure`
-- primary: `stock_downside_continuation` / `33.0%`
-- secondary: `stock_failed_bounce` / `25.6%`
-- risk: `stock_event_risk` / `12.8%`
-- stock_confluence_score: `38.25` / `weak`
+- primary: `stock_downside_continuation` / `34.4%`
+- secondary: `stock_failed_bounce` / `25.1%`
+- risk: `stock_event_risk` / `10.7%`
+- stock_confluence_score: `45.88` / `mixed`
 - stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `16.7%`
 - 60d_expected_return: `-7.4%`
-- risk_reward_ratio: `0.31`
-- strongest_alert: `Stock Breakdown Warning` / `EXTREME` / `93.56`
+- risk_reward_ratio: `0.32`
+- strongest_alert: `Stock Breakdown Warning` / `EXTREME` / `94.37`
 - historical_analog_support: `supportive` / samples `10`
 - validation_status: `not_yet_validated`
 
