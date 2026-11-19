@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-19T04:07:15.539098+00:00`
+- generated_at: `2026-11-19T08:52:39.446036+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
-- event_detection_confidence: `74`
+- major_event_count: `8`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,11 +27,35 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Houthi missile threat towards Riyadh causes damage, Saudi-led coalition says - Reuters
+- source: Reuters
+- published_at: `2026-11-19T03:19:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil prices steady as Middle East shipping attacks counter supply surplus outlook - Reuters
+- source: Reuters
+- published_at: `2026-11-19T02:47:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US, China can help end Ukraine war, Trump tells Xi before trilateral with Putin - Reuters
+- source: Reuters
+- published_at: `2026-11-18T23:05:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: US tightens Iran blockade with curbs on oil transfers at sea, advisory shows - Reuters
 - source: Reuters
 - published_at: `2026-11-18T19:32:18+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -39,7 +63,7 @@
 - source: CNBC
 - published_at: `2026-11-18T19:09:48+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -57,18 +81,10 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
-
-- headline: Bahrain's Bapco refinery to reach full capacity by year-end after attacks, CEO says - Reuters
-- source: Reuters
-- published_at: `2026-11-18T13:47:22+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
 ### fed_hawkish / risk_off
 
 - headline: Fed officials expect more rate hikes, worry about AI impact on inflation, minutes show
 - source: CNBC
 - published_at: `2026-11-18T19:08:44+00:00`
-- importance_score: `87`
+- importance_score: `86`
 - confidence: `medium`
