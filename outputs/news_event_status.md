@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-18T20:34:52.106669+00:00`
+- generated_at: `2026-11-19T02:06:16.433404+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `7`
-- event_detection_confidence: `78`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -51,32 +51,32 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Bahrain's Bapco refinery to reach full capacity by year-end after attacks, CEO says - Reuters
+- headline: Explainer: Untangling Yemen's complex civil war - Reuters
 - source: Reuters
-- published_at: `2026-11-18T13:47:22+00:00`
+- published_at: `2026-11-18T14:35:53+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Trump's Board of Peace faults Israel and Hamas for failure to end Gaza war - Reuters
+- headline: Bahrain's Bapco refinery to reach full capacity by year-end after attacks, CEO says - Reuters
 - source: Reuters
-- published_at: `2026-11-18T12:36:03+00:00`
+- published_at: `2026-11-18T13:47:22+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### fed_hawkish / risk_off
 
 - headline: Fed officials expect more rate hikes, worry about AI impact on inflation, minutes show
 - source: CNBC
 - published_at: `2026-11-18T19:08:44+00:00`
-- importance_score: `89`
-- confidence: `high`
+- importance_score: `87`
+- confidence: `medium`
 
 ### fed_dovish / risk_on
 
 - headline: Booking Holdings creates new enterprise division as AI reshapes travel planning
 - source: CNBC
 - published_at: `2026-11-18T12:55:01+00:00`
-- importance_score: `85`
+- importance_score: `84`
 - confidence: `medium`

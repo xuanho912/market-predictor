@@ -1,6 +1,6 @@
 # Breadth Data Status
 
-Generated at: 2026-11-18T20:34:38.807724+00:00
+Generated at: 2026-11-19T01:59:14.208707+00:00
 
 Provider available: True
 True breadth available: False
@@ -11,14 +11,14 @@ Stale data: True
 
 ## Market Internal Resonance
 
-- resonance_score: 54.54
+- resonance_score: 47.02
 - resonance_state: mixed
 - label: partial_resonance
 - aligned_symbols: none
 - surface_only_symbols: none
-- sector_score: 24.0
-- equal_weight_vs_cap_weight_20d: 0.051387
-- small_cap_vs_large_cap_20d: 0.033085
+- sector_score: 18.0
+- equal_weight_vs_cap_weight_20d: 0.049893
+- small_cap_vs_large_cap_20d: 0.032475
 
 ## Universe Status
 
@@ -26,19 +26,19 @@ Stale data: True
 
 - status: available
 - source: wikipedia-sp500
-- latest_date: 2026-11-16
+- latest_date: 2026-11-17
 - true_breadth: True
 - proxy: False
 - constituents used / expected: 503 / 503
 - coverage_ratio: 1.0
 - stale_constituents: False
 - stale_price_data: False
-- percent_above_20d / 50d / 200d: 0.5686 / 0.6534 / 0.604
-- advancers / decliners / A-D ratio: 158 / 342 / 0.462
-- new highs/lows 20d: 54 / 27
-- new highs/lows 52w: 28 / 7
-- improvement / deterioration / confirmation / conflict / quality: 50.1 / 69.41 / 58.52 / 52.75 / 100.0
-- internal_resonance: mixed / score 53.38 / SPY 内部信号分歧：成分股/行业有部分支持，但等权、小盘或新高新低没有完全确认。
+- percent_above_20d / 50d / 200d: 0.5467 / 0.6394 / 0.592
+- advancers / decliners / A-D ratio: 146 / 355 / 0.4113
+- new highs/lows 20d: 52 / 40
+- new highs/lows 52w: 27 / 9
+- improvement / deterioration / confirmation / conflict / quality: 47.73 / 88.96 / 55.25 / 67.61 / 100.0
+- internal_resonance: weak / score 48.31 / SPY 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
 
 ### QQQ
 
@@ -56,25 +56,25 @@ Stale data: True
 - new highs/lows 20d: 0 / 0
 - new highs/lows 52w: 0 / 0
 - improvement / deterioration / confirmation / conflict / quality: 8.67 / 70.67 / 9.39 / 69.07 / 4.0
-- internal_resonance: weak / score 21.4 / QQQ 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
+- internal_resonance: weak / score 20.66 / QQQ 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
 
 ### DIA
 
 - status: available
 - source: static-dow30-list
-- latest_date: 2026-11-16
+- latest_date: 2026-11-17
 - true_breadth: True
 - proxy: False
 - constituents used / expected: 30 / 30
 - coverage_ratio: 1.0
 - stale_constituents: False
 - stale_price_data: False
-- percent_above_20d / 50d / 200d: 0.5667 / 0.7667 / 0.6333
-- advancers / decliners / A-D ratio: 10 / 20 / 0.5
-- new highs/lows 20d: 3 / 1
-- new highs/lows 52w: 3 / 1
-- improvement / deterioration / confirmation / conflict / quality: 72.08 / 47.74 / 76.08 / 36.28 / 100.0
-- internal_resonance: mixed / score 61.74 / DIA 内部信号分歧：成分股/行业有部分支持，但等权、小盘或新高新低没有完全确认。
+- percent_above_20d / 50d / 200d: 0.5333 / 0.6333 / 0.6333
+- advancers / decliners / A-D ratio: 8 / 22 / 0.3636
+- new highs/lows 20d: 2 / 5
+- new highs/lows 52w: 2 / 2
+- improvement / deterioration / confirmation / conflict / quality: 45.16 / 100.0 / 52.52 / 76.0 / 100.0
+- internal_resonance: weak / score 45.18 / DIA 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
 
 ### IWM
 
@@ -91,8 +91,8 @@ Stale data: True
 - advancers / decliners / A-D ratio: None / None / None
 - new highs/lows 20d: None / None
 - new highs/lows 52w: None / None
-- improvement / deterioration / confirmation / conflict / quality: 59.57 / 42.32 / 60.67 / 40.74 / 64
-- internal_resonance: weak / score 48.49 / IWM 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
+- improvement / deterioration / confirmation / conflict / quality: 58.89 / 42.76 / 60.17 / 41.07 / 64
+- internal_resonance: weak / score 47.56 / IWM 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
 
 ## Notes
 
