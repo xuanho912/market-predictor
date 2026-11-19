@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-19T12:11:21.926930+00:00`
+- generated_at: `2026-11-19T20:40:57.734750+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
-- event_detection_confidence: `75`
+- major_event_count: `8`
+- event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,56 +27,64 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Iraqi forces strike compromise with powerful pro-Iran militia, security officials say - Reuters
+- source: Reuters
+- published_at: `2026-11-19T18:39:18+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Somalia orders UAE ambassador to leave, citing 'invasion' - Reuters
+- source: Reuters
+- published_at: `2026-11-19T18:36:40+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Russia repels Ukrainian drones attack on oil facility in Tatarstan region, local authorities say - Reuters
+- source: Reuters
+- published_at: `2026-11-19T18:08:24+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Houthi attacks on Saudi Arabia - Reuters
+- source: Reuters
+- published_at: `2026-11-19T16:20:38+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Putin defends his 'Yalta', as 3-way summit draws parallels to post-war carve-up - Reuters
+- source: Reuters
+- published_at: `2026-11-19T15:25:08+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Inside an Iranian woman's life under protests and war: a graphic memoir - Reuters
+- source: Reuters
+- published_at: `2026-11-19T10:00:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Energy-security response to Iran war could cut oil demand by 4% by 2035, IEA says - Reuters
 - source: Reuters
 - published_at: `2026-11-19T05:05:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Houthi missile threat towards Riyadh causes damage, Saudi-led coalition says - Reuters
+- headline: Riyadh’s tallest skyscraper hit in Houthi strike on Saudi wealth fund HQ - Reuters
 - source: Reuters
 - published_at: `2026-11-19T03:19:00+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Oil prices rise as Middle East shipping attacks counter supply surplus outlook - Reuters
-- source: Reuters
-- published_at: `2026-11-19T02:47:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US tightens Iran blockade with curbs on oil transfers at sea, advisory shows - Reuters
-- source: Reuters
-- published_at: `2026-11-18T19:32:18+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Nvidia interim CEO Kress tells employees ‘let’s move forward’ at first all-hands meeting since Jensen Huang exit
-- source: CNBC
-- published_at: `2026-11-18T19:09:48+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Israeli spy chief lobbied for joint Iran strikes on US visit, sources say - Reuters
-- source: Reuters
-- published_at: `2026-11-18T15:46:19+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### fed_hawkish / risk_off
-
-- headline: Fed officials expect more rate hikes, worry about AI impact on inflation, minutes show
-- source: CNBC
-- published_at: `2026-11-18T19:08:44+00:00`
-- importance_score: `85`
 - confidence: `medium`
