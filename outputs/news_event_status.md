@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-19T02:06:16.433404+00:00`
+- generated_at: `2026-11-19T02:47:19.373419+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
+- major_event_count: `6`
 - event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -55,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-11-18T14:35:53+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -71,12 +71,4 @@
 - source: CNBC
 - published_at: `2026-11-18T19:08:44+00:00`
 - importance_score: `87`
-- confidence: `medium`
-
-### fed_dovish / risk_on
-
-- headline: Booking Holdings creates new enterprise division as AI reshapes travel planning
-- source: CNBC
-- published_at: `2026-11-18T12:55:01+00:00`
-- importance_score: `84`
 - confidence: `medium`
