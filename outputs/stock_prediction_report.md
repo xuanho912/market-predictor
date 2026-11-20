@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-11-20T08:37:40.783176+00:00`
+Generated at: `2026-11-20T12:12:53.036441+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -25,9 +25,9 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_downside_continuation` / `33.7%`
 - secondary: `stock_failed_bounce` / `22.3%`
 - risk: `stock_event_risk` / `12.8%`
-- stock_confluence_score: `43.01` / `weak`
-- stock_alpha_score_v1: `23.5` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `29.2%`
+- stock_confluence_score: `43.19` / `weak`
+- stock_alpha_score_v1: `25.5` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `30.0%`
 - 60d_expected_return: `-4.3%`
 - risk_reward_ratio: `0.36`
 - strongest_alert: `Stock Breakdown Warning` / `HIGH_CONVICTION` / `74.39`
@@ -80,15 +80,15 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - status: `available`
 - current_price: `3.81`
 - market_context: `risk_off_pressure`
-- primary: `stock_downside_continuation` / `35.1%`
-- secondary: `stock_failed_bounce` / `23.8%`
-- risk: `stock_event_risk` / `10.9%`
-- stock_confluence_score: `46.21` / `mixed`
+- primary: `stock_downside_continuation` / `33.7%`
+- secondary: `stock_failed_bounce` / `24.3%`
+- risk: `stock_event_risk` / `13.0%`
+- stock_confluence_score: `43.59` / `weak`
 - stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `18.3%`
 - 60d_expected_return: `-7.3%`
-- risk_reward_ratio: `0.33`
-- strongest_alert: `Stock Breakdown Warning` / `EXTREME` / `95.51`
+- risk_reward_ratio: `0.31`
+- strongest_alert: `Stock Breakdown Warning` / `EXTREME` / `94.67`
 - historical_analog_support: `supportive` / samples `10`
 - validation_status: `not_yet_validated`
 
@@ -109,15 +109,15 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - status: `available`
 - current_price: `252.03`
 - market_context: `risk_off_pressure`
-- primary: `stock_failed_bounce` / `28.3%`
-- secondary: `stock_downside_continuation` / `18.8%`
-- risk: `stock_event_risk` / `14.8%`
-- stock_confluence_score: `39.17` / `weak`
-- stock_alpha_score_v1: `28.5` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `53.4%`
-- 60d_expected_return: `-1.8%`
-- risk_reward_ratio: `0.49`
-- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `30.37`
+- primary: `stock_failed_bounce` / `27.7%`
+- secondary: `stock_downside_continuation` / `20.0%`
+- risk: `stock_event_risk` / `12.0%`
+- stock_confluence_score: `34.32` / `weak`
+- stock_alpha_score_v1: `33.5` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `55.4%`
+- 60d_expected_return: `-1.6%`
+- risk_reward_ratio: `0.52`
+- strongest_alert: `Stock Failed Bounce Risk` / `NO_ALERT` / `30.38`
 - historical_analog_support: `conflicting` / samples `10`
 - validation_status: `not_yet_validated`
 
