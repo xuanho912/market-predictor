@@ -1,6 +1,6 @@
 # Next-Day Stock Radar v1
 
-Generated at: `2026-11-19T20:41:08.960073+00:00`
+Generated at: `2026-11-20T02:02:00.223112+00:00`
 As of: `None`
 
 This report ranks next-day high-elasticity stock forecast candidates. It is not a trading report and does not contain buy/sell instructions.
@@ -9,7 +9,7 @@ This report ranks next-day high-elasticity stock forecast candidates. It is not 
 
 - radar_status: `MODERATE_OPPORTUNITY`
 - top_candidate: `TSLA`
-- top3_candidates: `['TSLA', 'CEG', 'SMR']`
+- top3_candidates: `['TSLA', 'CEG', 'NVDA']`
 - market_context_note: `market risk pressure is high for many candidates`
 - data_freshness_note: `as_of=None`
 - validation_status: `not_yet_validated`
@@ -19,9 +19,9 @@ This report ranks next-day high-elasticity stock forecast candidates. It is not 
 
 | Rank | Ticker | Type | Radar | Alpha | Elasticity | Confluence | Catalyst | Risk | Range | Trigger | Invalidation | Reason |
 | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- | ---: | ---: | --- |
-| 1 | TSLA | failed_bounce_risk | 61.43 | 35.0 | 100 | 48.51 | 63.63 | 56.91 | 365.7-383.79 | 414.23 | 338.15 | failed_bounce_risk: Alpha 35 / 弹性 100 / 成交量 40 / 相对强弱 97 / 催化 64 / 大盘 risk_off_pressure / 板块 neutral |
-| 2 | CEG | failed_bounce_risk | 56.61 | 28.5 | 100 | 40.18 | 63.86 | 59.19 | 244.89-258.82 | 284.97 | 231.3 | failed_bounce_risk: Alpha 28 / 弹性 100 / 成交量 48 / 相对强弱 66 / 催化 64 / 大盘 risk_off_pressure / 板块 neutral |
-| 3 | SMR | downside_continuation | 54.86 | 35.0 | 100 | 44.85 | 61.55 | 63.8 | 3.54-4.02 | 6.11 | 3.5 | downside_continuation: Alpha 35 / 弹性 100 / 成交量 75 / 相对强弱 5 / 催化 62 / 大盘 risk_off_pressure / 板块 conflicting |
-| 4 | NVDA | downside_continuation | 51.87 | 23.5 | 100 | 42.69 | 62.72 | 62.38 | 140.64-152.29 | 219.99 | 139.54 | downside_continuation: Alpha 24 / 弹性 100 / 成交量 67 / 相对强弱 10 / 催化 63 / 大盘 risk_off_pressure / 板块 conflicting |
+| 1 | TSLA | failed_bounce_risk | 55.69 | 35.0 | 100 | 45.26 | 63.6 | 56.95 | 364.82-382.91 | 414.23 | 338.15 | failed_bounce_risk: Alpha 35 / 弹性 100 / 成交量 6 / 相对强弱 96 / 催化 64 / 大盘 risk_off_pressure / 板块 neutral |
+| 2 | CEG | failed_bounce_risk | 50.56 | 28.5 | 100 | 37.33 | 63.87 | 59.25 | 244.44-258.45 | 284.97 | 231.3 | failed_bounce_risk: Alpha 28 / 弹性 100 / 成交量 11 / 相对强弱 65 / 催化 64 / 大盘 risk_off_pressure / 板块 neutral |
+| 3 | NVDA | downside_continuation | 45.03 | 23.5 | 100 | 41.4 | 62.69 | 62.51 | 139.35-151.06 | 219.99 | 138.24 | downside_continuation: Alpha 24 / 弹性 100 / 成交量 25 / 相对强弱 9 / 催化 63 / 大盘 risk_off_pressure / 板块 conflicting |
+| 4 | SMR | downside_continuation | 42.77 | 35.0 | 100 | 41.15 | 61.54 | 63.82 | 3.53-4.02 | 6.11 | 3.49 | downside_continuation: Alpha 35 / 弹性 100 / 成交量 0 / 相对强弱 6 / 催化 62 / 大盘 risk_off_pressure / 板块 conflicting |
 
 Validation status: `not_yet_validated` until enough forward samples complete.

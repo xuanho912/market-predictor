@@ -1,6 +1,6 @@
 # Breadth Data Status
 
-Generated at: 2026-11-19T20:40:39.979936+00:00
+Generated at: 2026-11-20T01:54:51.033070+00:00
 
 Provider available: True
 True breadth available: False
@@ -11,14 +11,14 @@ Stale data: True
 
 ## Market Internal Resonance
 
-- resonance_score: 42.76
+- resonance_score: 42.66
 - resonance_state: weak
 - label: no_internal_resonance
 - aligned_symbols: none
 - surface_only_symbols: none
 - sector_score: 0.0
-- equal_weight_vs_cap_weight_20d: 0.032331
-- small_cap_vs_large_cap_20d: 0.01886
+- equal_weight_vs_cap_weight_20d: 0.032749
+- small_cap_vs_large_cap_20d: 0.017949
 
 ## Universe Status
 
@@ -38,7 +38,7 @@ Stale data: True
 - new highs/lows 20d: 52 / 40
 - new highs/lows 52w: 27 / 9
 - improvement / deterioration / confirmation / conflict / quality: 47.73 / 88.96 / 55.25 / 67.61 / 100.0
-- internal_resonance: weak / score 45.04 / SPY 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
+- internal_resonance: weak / score 45.03 / SPY 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
 
 ### QQQ
 
@@ -56,7 +56,7 @@ Stale data: True
 - new highs/lows 20d: 0 / 0
 - new highs/lows 52w: 0 / 0
 - improvement / deterioration / confirmation / conflict / quality: 8.67 / 70.67 / 9.39 / 69.07 / 4.0
-- internal_resonance: weak / score 17.39 / QQQ 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
+- internal_resonance: weak / score 17.38 / QQQ 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
 
 ### DIA
 
@@ -74,7 +74,7 @@ Stale data: True
 - new highs/lows 20d: 2 / 5
 - new highs/lows 52w: 2 / 2
 - improvement / deterioration / confirmation / conflict / quality: 45.16 / 100.0 / 52.52 / 76.0 / 100.0
-- internal_resonance: weak / score 41.92 / DIA 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
+- internal_resonance: weak / score 41.9 / DIA 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
 
 ### IWM
 
@@ -91,8 +91,8 @@ Stale data: True
 - advancers / decliners / A-D ratio: None / None / None
 - new highs/lows 20d: None / None
 - new highs/lows 52w: None / None
-- improvement / deterioration / confirmation / conflict / quality: 50.12 / 53.24 / 53.59 / 48.93 / 64
-- internal_resonance: weak / score 41.31 / IWM 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
+- improvement / deterioration / confirmation / conflict / quality: 49.41 / 54.07 / 53.06 / 49.55 / 64
+- internal_resonance: weak / score 41.06 / IWM 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
 
 ## Notes
 

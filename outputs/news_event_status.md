@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-19T20:40:57.734750+00:00`
+- generated_at: `2026-11-20T02:01:48.411948+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `8`
@@ -10,7 +10,7 @@
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `True`
-- confirmation_score: `75`
+- confirmation_score: `100`
 
 ## Dashboard Note
 
@@ -27,9 +27,17 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Iraqi forces strike compromise with powerful pro-Iran militia, security officials say - Reuters
+- headline: Backing Trump, US Senate Republicans block Iran war resolution - Reuters
 - source: Reuters
-- published_at: `2026-11-19T18:39:18+00:00`
+- published_at: `2026-11-19T21:56:09+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Houthi strike damages Riyadh’s tallest skyscraper - Reuters
+- source: Reuters
+- published_at: `2026-11-19T21:43:38+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -37,7 +45,15 @@
 
 - headline: Somalia orders UAE ambassador to leave, citing 'invasion' - Reuters
 - source: Reuters
-- published_at: `2026-11-19T18:36:40+00:00`
+- published_at: `2026-11-19T20:09:48+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iraqi forces strike compromise with powerful pro-Iran militia, security officials say - Reuters
+- source: Reuters
+- published_at: `2026-11-19T18:39:18+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -70,21 +86,5 @@
 - headline: Inside an Iranian woman's life under protests and war: a graphic memoir - Reuters
 - source: Reuters
 - published_at: `2026-11-19T10:00:00+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Energy-security response to Iran war could cut oil demand by 4% by 2035, IEA says - Reuters
-- source: Reuters
-- published_at: `2026-11-19T05:05:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Riyadh’s tallest skyscraper hit in Houthi strike on Saudi wealth fund HQ - Reuters
-- source: Reuters
-- published_at: `2026-11-19T03:19:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
