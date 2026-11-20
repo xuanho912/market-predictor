@@ -1,11 +1,11 @@
 # Data Freshness Status
 
-Generated at: `2026-11-20T02:34:16.418511+00:00`
+Generated at: `2026-11-20T03:48:18.677635+00:00`
 
 ## Summary
 
 - current_date: `2026-11-19`
-- current_time_us_eastern: `2026-11-19T21:34:16.418511-05:00`
+- current_time_us_eastern: `2026-11-19T22:48:18.677635-05:00`
 - latest_market_date: `2026-11-19`
 - latest_confirmed_market_date: `2026-11-19`
 - expected_latest_trading_date: `2026-11-19`

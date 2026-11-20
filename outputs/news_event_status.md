@@ -1,9 +1,9 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-20T02:34:06.310813+00:00`
+- generated_at: `2026-11-20T03:48:06.665552+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
+- major_event_count: `9`
 - event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
@@ -27,9 +27,9 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Backing Trump, US Senate Republicans block Iran war resolution - Reuters
+- headline: Oil prices edge higher as Houthi attacks on Riyadh raise supply concerns - Reuters
 - source: Reuters
-- published_at: `2026-11-19T21:56:09+00:00`
+- published_at: `2026-11-20T02:00:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -46,6 +46,14 @@
 - headline: Somalia orders UAE ambassador to leave, citing 'invasion' - Reuters
 - source: Reuters
 - published_at: `2026-11-19T20:09:48+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Backing Trump, US Senate Republicans block Iran war resolution - Reuters
+- source: Reuters
+- published_at: `2026-11-19T19:51:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -79,7 +87,7 @@
 - source: Reuters
 - published_at: `2026-11-19T15:25:08+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
