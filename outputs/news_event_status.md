@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-20T03:58:15.556664+00:00`
+- generated_at: `2026-11-20T08:37:28.278333+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `9`
-- event_detection_confidence: `76`
+- major_event_count: `10`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,7 +27,15 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil prices edge higher as Houthi attacks on Riyadh raise supply concerns - Reuters
+- headline: Saudi-led coalition says it intercepted Houthi missile targeting southern region - Reuters
+- source: Reuters
+- published_at: `2026-11-20T03:33:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil prices gain as Houthi attacks on Riyadh raise supply concerns - Reuters
 - source: Reuters
 - published_at: `2026-11-20T02:00:00+00:00`
 - importance_score: `100`
@@ -47,7 +55,7 @@
 - source: Reuters
 - published_at: `2026-11-19T20:09:48+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,15 +63,7 @@
 - source: Reuters
 - published_at: `2026-11-19T19:51:00+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iraqi forces strike compromise with powerful pro-Iran militia, security officials say - Reuters
-- source: Reuters
-- published_at: `2026-11-19T18:39:18+00:00`
-- importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -71,7 +71,7 @@
 - source: Reuters
 - published_at: `2026-11-19T18:08:24+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -79,13 +79,21 @@
 - source: Reuters
 - published_at: `2026-11-19T16:20:38+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Putin defends his 'Yalta', as 3-way summit draws parallels to post-war carve-up - Reuters
 - source: Reuters
 - published_at: `2026-11-19T15:25:08+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iraqi forces strike compromise with powerful pro-Iran militia, security officials say - Reuters
+- source: Reuters
+- published_at: `2026-11-19T12:45:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
