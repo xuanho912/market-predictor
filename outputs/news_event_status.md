@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-20T12:12:41.804861+00:00`
+- generated_at: `2026-11-20T20:25:23.521534+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `10`
-- event_detection_confidence: `71`
+- major_event_count: `7`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,19 +27,27 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Saudi-led coalition says it intercepted Houthi missile targeting southern region - Reuters
+- headline: Saudi-led forces strike Yemen port as Houthis warn airlines off the kingdom - Reuters
 - source: Reuters
-- published_at: `2026-11-20T03:33:00+00:00`
+- published_at: `2026-11-20T19:16:53+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil prices gain as Houthi attacks on Riyadh raise supply concerns - Reuters
+- headline: Congress struggles to avert US shutdown as Iran war divides lawmakers - Reuters
 - source: Reuters
-- published_at: `2026-11-20T02:00:00+00:00`
+- published_at: `2026-11-20T18:01:41+00:00`
 - importance_score: `100`
 - confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Saudi-led coalition says it intercepted Houthi missile targeting southern region - Reuters
+- source: Reuters
+- published_at: `2026-11-20T03:33:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -65,42 +73,10 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
+### growth_positive / risk_on
 
-- headline: Russia repels Ukrainian drones attack on oil facility in Tatarstan region, local authorities say - Reuters
+- headline: UK retail sales beat forecasts after government tells households to stock up - Reuters
 - source: Reuters
-- published_at: `2026-11-19T18:08:24+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Houthi attacks on Saudi Arabia - Reuters
-- source: Reuters
-- published_at: `2026-11-19T16:20:38+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Putin defends his 'Yalta', as 3-way summit draws parallels to post-war carve-up - Reuters
-- source: Reuters
-- published_at: `2026-11-19T15:25:08+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iraqi forces strike compromise with powerful pro-Iran militia, security officials say - Reuters
-- source: Reuters
-- published_at: `2026-11-19T12:45:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Inside an Iranian woman's life under protests and war: a graphic memoir - Reuters
-- source: Reuters
-- published_at: `2026-11-19T10:00:00+00:00`
-- importance_score: `100`
+- published_at: `2026-11-20T07:05:00+00:00`
+- importance_score: `72`
 - confidence: `medium`

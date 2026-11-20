@@ -1,6 +1,6 @@
 # Options / Volatility Structure Status
 
-Generated at: `2026-11-20T12:12:33.443463+00:00`
+Generated at: `2026-11-20T20:25:08.568456+00:00`
 
 ## Summary
 
@@ -18,17 +18,17 @@ Generated at: `2026-11-20T12:12:33.443463+00:00`
 
 ## Market Snapshot
 
-- VIX: `29.799999237060547`
-- VIX9D: `29.260000228881836`
-- VIX3M: `27.030000686645508`
-- VIX6M: `26.850000381469727`
-- VVIX: `127.0999984741211`
+- VIX: `35.189998626708984`
+- VIX9D: `37.72999954223633`
+- VIX3M: `30.670000076293945`
+- VIX6M: `29.639999389648438`
+- VVIX: `135.3699951171875`
 - SKEW: `140.86000061035156`
 - term_structure_state: `stress`
-- volatility_reversal_score: `0.199`
-- panic_release_score: `0.4265`
-- tail_risk_score: `0.7266`
-- option_stress_score: `0.8684`
+- volatility_reversal_score: `0.2`
+- panic_release_score: `0.4325`
+- tail_risk_score: `0.7407`
+- option_stress_score: `0.879`
 - failed_bounce_options_risk: `1.0`
 
 ## Sources
@@ -36,11 +36,11 @@ Generated at: `2026-11-20T12:12:33.443463+00:00`
 | symbol | status | latest_date | latest_value | source | real_data | stale |
 |---|---|---|---:|---|---:|---:|
 | ^SKEW | available | 2026-11-19 | 140.86000061035156 | yahoo-chart | True | False |
-| ^VIX | available | 2026-11-20 | 29.799999237060547 | yahoo-chart | True | False |
-| ^VIX3M | available | 2026-11-19 | 27.030000686645508 | yahoo-chart | True | False |
-| ^VIX6M | available | 2026-11-19 | 26.850000381469727 | yahoo-chart | True | False |
-| ^VIX9D | available | 2026-11-19 | 29.260000228881836 | yahoo-chart | True | False |
-| ^VVIX | available | 2026-11-19 | 127.0999984741211 | yahoo-chart | True | False |
+| ^VIX | available | 2026-11-20 | 35.189998626708984 | yahoo-chart | True | False |
+| ^VIX3M | available | 2026-11-20 | 30.670000076293945 | yahoo-chart | True | False |
+| ^VIX6M | available | 2026-11-20 | 29.639999389648438 | yahoo-chart | True | False |
+| ^VIX9D | available | 2026-11-20 | 37.72999954223633 | yahoo-chart | True | False |
+| ^VVIX | available | 2026-11-20 | 135.3699951171875 | yahoo-chart | True | False |
 
 ## Guardrails
 
