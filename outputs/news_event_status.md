@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-21T02:47:15.639482+00:00`
+- generated_at: `2026-11-21T03:35:22.916158+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `8`
-- event_detection_confidence: `78`
+- event_detection_confidence: `79`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -38,6 +38,14 @@
 - headline: Saudi Arabia says it intercepts three Houthi missiles targeting Riyadh - Reuters
 - source: Reuters
 - published_at: `2026-11-20T23:36:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Araqchi says Iran wants diplomacy to end war, Trump says terms unacceptable - Reuters
+- source: Reuters
+- published_at: `2026-11-20T23:11:00+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -80,11 +88,3 @@
 - published_at: `2026-11-20T17:05:12+00:00`
 - importance_score: `100`
 - confidence: `high`
-
-### growth_positive / risk_on
-
-- headline: UK retail sales beat forecasts after government tells households to stock up - Reuters
-- source: Reuters
-- published_at: `2026-11-20T07:05:00+00:00`
-- importance_score: `70`
-- confidence: `medium`
