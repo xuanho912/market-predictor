@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-20T20:25:23.521534+00:00`
+- generated_at: `2026-11-21T02:47:15.639482+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
-- event_detection_confidence: `75`
+- major_event_count: `8`
+- event_detection_confidence: `78`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `True`
-- confirmation_score: `100`
+- confirmation_score: `75`
 
 ## Dashboard Note
 
@@ -27,9 +27,33 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: US Vice President Vance declines to say he would have ordered Iran strikes - Reuters
+- source: Reuters
+- published_at: `2026-11-20T23:45:19+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Saudi Arabia says it intercepts three Houthi missiles targeting Riyadh - Reuters
+- source: Reuters
+- published_at: `2026-11-20T23:36:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Saudi-led forces strike Yemen port as Houthis warn airlines off the kingdom - Reuters
 - source: Reuters
 - published_at: `2026-11-20T19:16:53+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Houthi attacks add to worries over Trump Saudi nuclear power pact - Reuters
+- source: Reuters
+- published_at: `2026-11-20T18:29:31+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -43,40 +67,24 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Saudi-led coalition says it intercepted Houthi missile targeting southern region - Reuters
+- headline: India cyber agency warns of unauthorised payment transactions - Reuters
 - source: Reuters
-- published_at: `2026-11-20T03:33:00+00:00`
+- published_at: `2026-11-20T17:42:59+00:00`
 - importance_score: `100`
-- confidence: `medium`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Houthi strike damages Riyadh’s tallest skyscraper - Reuters
+- headline: Tanker catches fire after projectile strike near Strait of Hormuz, UKMTO says - Reuters
 - source: Reuters
-- published_at: `2026-11-19T21:43:38+00:00`
+- published_at: `2026-11-20T17:05:12+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Somalia orders UAE ambassador to leave, citing 'invasion' - Reuters
-- source: Reuters
-- published_at: `2026-11-19T20:09:48+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Backing Trump, US Senate Republicans block Iran war resolution - Reuters
-- source: Reuters
-- published_at: `2026-11-19T19:51:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
+- confidence: `high`
 
 ### growth_positive / risk_on
 
 - headline: UK retail sales beat forecasts after government tells households to stock up - Reuters
 - source: Reuters
 - published_at: `2026-11-20T07:05:00+00:00`
-- importance_score: `72`
+- importance_score: `70`
 - confidence: `medium`
