@@ -6,10 +6,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-11-21",
-    "current_time_us_eastern": "2026-11-21T06:48:06.965824-05:00",
+    "current_time_us_eastern": "2026-11-21T14:19:15.964495-05:00",
     "data_freshness_status": "market_closed",
     "expected_latest_trading_date": "2026-11-20",
-    "generated_at": "2026-11-21T11:48:06.965824+00:00",
+    "generated_at": "2026-11-21T19:19:15.964495+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -940,7 +940,7 @@
     },
     "stale_days": 0,
     "version": "data_freshness_gate_v3",
-    "warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-11-20 的数据。 当前美东时间 2026-11-21 06:48。"
+    "warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-11-20 的数据。 当前美东时间 2026-11-21 14:19。"
   },
   "data_quality_summary": {
     "average_breadth_quality_score": 67.0,
@@ -1048,17 +1048,17 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
+      "IG_OAS",
       "HY_OAS",
-      "DGS2",
       "DGS3MO",
       "BAA_SPREAD",
+      "FINANCIAL_STRESS",
       "DGS10",
       "DFII10",
-      "RECESSION",
-      "FINANCIAL_STRESS",
-      "IG_OAS"
+      "DGS2",
+      "RECESSION"
     ],
-    "freshness_warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-11-20 的数据。 当前美东时间 2026-11-21 06:48。",
+    "freshness_warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-11-20 的数据。 当前美东时间 2026-11-21 14:19。",
     "gamma_available": false,
     "gamma_exposure_available": false,
     "latest_confirmed_market_date": "2026-11-20",
@@ -1087,11 +1087,11 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 74,
+      "event_detection_confidence": 72,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-11-21T11:47:54.922017+00:00",
-      "major_event_count": 8,
+      "last_update": "2026-11-21T19:19:05.174242+00:00",
+      "major_event_count": 10,
       "missing_reason": null,
       "news_direction": "risk_off",
       "news_event_partial": false,
@@ -1102,7 +1102,7 @@
     },
     "news_event_available": true,
     "news_event_event_risk_level": "high",
-    "news_event_major_count": 8,
+    "news_event_major_count": 10,
     "news_event_missing_reason": null,
     "news_event_narrative": "geopolitics_escalation_risk_off",
     "news_event_partial": false,
@@ -1323,7 +1323,7 @@
       "status": "failed"
     },
     "event_risk_level": "high",
-    "major_event_count": 8,
+    "major_event_count": 10,
     "market_narrative": {
       "affected_scenarios": [
         "bearish_path"
@@ -1344,15 +1344,27 @@
       "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
       "supporting_headlines": [
         {
-          "confidence": "medium",
+          "confidence": "high",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_market_direction": "risk_off",
-          "headline": "US Vice President Vance declines to say he would have ordered Iran strikes - Reuters",
+          "headline": "Israeli strike on vehicle in Gaza kills three, Gaza Health Ministry says - Reuters",
           "importance_score": 100,
-          "published_at": "2026-11-20T23:45:19+00:00",
+          "published_at": "2026-11-21T18:21:58+00:00",
+          "source": "Reuters"
+        },
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
+          "headline": "US denies Iranian account that missile damaged F-16 over Gulf - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-11-21T16:23:46+00:00",
           "source": "Reuters"
         },
         {
@@ -1380,6 +1392,18 @@
           "source": "Reuters"
         },
         {
+          "confidence": "medium",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
+          "headline": "US Vice President Vance declines to say he would have ordered Iran strikes - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-11-20T20:45:00+00:00",
+          "source": "Reuters"
+        },
+        {
           "confidence": "high",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
@@ -1390,30 +1414,6 @@
           "importance_score": 100,
           "published_at": "2026-11-20T19:16:53+00:00",
           "source": "Reuters"
-        },
-        {
-          "confidence": "medium",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Houthi attacks add to worries over Trump Saudi nuclear power pact - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-11-20T18:29:31+00:00",
-          "source": "Reuters"
-        },
-        {
-          "confidence": "medium",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Congress struggles to avert US shutdown as Iran war divides lawmakers - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-11-20T18:01:41+00:00",
-          "source": "Reuters"
         }
       ]
     },
@@ -1423,7 +1423,7 @@
       "direction": "supports_risk_expansion",
       "event_risk_level": "high",
       "macro_event_risk_flag": false,
-      "major_event_count": 8,
+      "major_event_count": 10,
       "not_a_trading_signal": true,
       "price_reaction_confirmed": true,
       "symbols": {
@@ -3172,11 +3172,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.3,
           "top_headlines": [
-            "S&P 500 correction: Five forces behind the market sell-off",
-            "US Vice President Vance declines to say he would have ordered Iran strikes - Reuters",
-            "Saudi Arabia says it intercepts three Houthi missiles targeting Riyadh - Reuters",
-            "Araqchi says Iran wants diplomacy to end war, Trump says terms unacceptable - Reuters",
-            "US Treasury sanctions Iranian 'trustees' collecting oil revenues - Reuters"
+            "Israeli strike on vehicle in Gaza kills three, Gaza Health Ministry says - Reuters",
+            "Trump says there could be a 'positive spin' from the latest FBI database hack",
+            "US denies Iranian account that missile damaged F-16 over Gulf - Reuters",
+            "Qatari delegation visits Tehran for talks, Iranian official says - Reuters",
+            "I never wanted the American Dream and I felt like something was wrong with me—until I moved abroad"
           ]
         },
         "price": {
@@ -4162,20 +4162,47 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "medium",
-            "confidence_score": 74,
+            "confidence": "high",
+            "confidence_score": 81,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 71,
-            "headline": "US Vice President Vance declines to say he would have ordered Iran strikes - Reuters",
+            "freshness_score": 98,
+            "headline": "Israeli strike on vehicle in Gaza kills three, Gaza Health Ministry says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-11-20T23:45:19+00:00",
+            "published_at": "2026-11-21T18:21:58+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 80,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 93,
+            "headline": "US denies Iranian account that missile damaged F-16 over Gulf - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-21T16:23:46+00:00",
             "source": "Reuters"
           },
           {
@@ -4190,14 +4217,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 70,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 71,
+            "freshness_score": 53,
             "headline": "Saudi Arabia says it intercepts three Houthi missiles targeting Riyadh - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4217,14 +4244,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 70,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 52,
             "headline": "Araqchi says Iran wants diplomacy to end war, Trump says terms unacceptable - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4243,74 +4270,47 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 90,
+            "confidence": "medium",
+            "confidence_score": 68,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 60,
+            "freshness_score": 46,
+            "headline": "US Vice President Vance declines to say he would have ordered Iran strikes - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-20T20:45:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 85,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 42,
             "headline": "Saudi-led forces strike Yemen port as Houthis warn airlines off the kingdom - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-11-20T19:16:53+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 71,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 58,
-            "headline": "Houthi attacks add to worries over Trump Saudi nuclear power pact - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-20T18:29:31+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 71,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 57,
-            "headline": "Congress struggles to avert US shutdown as Iran war divides lawmakers - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-20T18:01:41+00:00",
             "source": "Reuters"
           }
         ],
@@ -4334,15 +4334,27 @@
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
             {
-              "confidence": "medium",
+              "confidence": "high",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "US Vice President Vance declines to say he would have ordered Iran strikes - Reuters",
+              "headline": "Israeli strike on vehicle in Gaza kills three, Gaza Health Ministry says - Reuters",
               "importance_score": 100,
-              "published_at": "2026-11-20T23:45:19+00:00",
+              "published_at": "2026-11-21T18:21:58+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "US denies Iranian account that missile damaged F-16 over Gulf - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-21T16:23:46+00:00",
               "source": "Reuters"
             },
             {
@@ -4370,6 +4382,18 @@
               "source": "Reuters"
             },
             {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "US Vice President Vance declines to say he would have ordered Iran strikes - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-20T20:45:00+00:00",
+              "source": "Reuters"
+            },
+            {
               "confidence": "high",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
@@ -4379,30 +4403,6 @@
               "headline": "Saudi-led forces strike Yemen port as Houthis warn airlines off the kingdom - Reuters",
               "importance_score": 100,
               "published_at": "2026-11-20T19:16:53+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Houthi attacks add to worries over Trump Saudi nuclear power pact - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-20T18:29:31+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Congress struggles to avert US shutdown as Iran war divides lawmakers - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-20T18:01:41+00:00",
               "source": "Reuters"
             }
           ]
@@ -5769,11 +5769,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.3,
           "top_headlines": [
-            "S&P 500 correction: Five forces behind the market sell-off",
-            "US Vice President Vance declines to say he would have ordered Iran strikes - Reuters",
-            "Saudi Arabia says it intercepts three Houthi missiles targeting Riyadh - Reuters",
-            "Araqchi says Iran wants diplomacy to end war, Trump says terms unacceptable - Reuters",
-            "US Treasury sanctions Iranian 'trustees' collecting oil revenues - Reuters"
+            "Israeli strike on vehicle in Gaza kills three, Gaza Health Ministry says - Reuters",
+            "Trump says there could be a 'positive spin' from the latest FBI database hack",
+            "US denies Iranian account that missile damaged F-16 over Gulf - Reuters",
+            "Qatari delegation visits Tehran for talks, Iranian official says - Reuters",
+            "I never wanted the American Dream and I felt like something was wrong with me—until I moved abroad"
           ]
         },
         "price": {
@@ -6761,20 +6761,47 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "medium",
-            "confidence_score": 74,
+            "confidence": "high",
+            "confidence_score": 81,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 71,
-            "headline": "US Vice President Vance declines to say he would have ordered Iran strikes - Reuters",
+            "freshness_score": 98,
+            "headline": "Israeli strike on vehicle in Gaza kills three, Gaza Health Ministry says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-11-20T23:45:19+00:00",
+            "published_at": "2026-11-21T18:21:58+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 80,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 93,
+            "headline": "US denies Iranian account that missile damaged F-16 over Gulf - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-21T16:23:46+00:00",
             "source": "Reuters"
           },
           {
@@ -6789,14 +6816,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 70,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 71,
+            "freshness_score": 53,
             "headline": "Saudi Arabia says it intercepts three Houthi missiles targeting Riyadh - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6816,14 +6843,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 70,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 52,
             "headline": "Araqchi says Iran wants diplomacy to end war, Trump says terms unacceptable - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6842,74 +6869,47 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 90,
+            "confidence": "medium",
+            "confidence_score": 68,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 60,
+            "freshness_score": 46,
+            "headline": "US Vice President Vance declines to say he would have ordered Iran strikes - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-20T20:45:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 85,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 42,
             "headline": "Saudi-led forces strike Yemen port as Houthis warn airlines off the kingdom - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-11-20T19:16:53+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 71,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 58,
-            "headline": "Houthi attacks add to worries over Trump Saudi nuclear power pact - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-20T18:29:31+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 71,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 57,
-            "headline": "Congress struggles to avert US shutdown as Iran war divides lawmakers - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-20T18:01:41+00:00",
             "source": "Reuters"
           }
         ],
@@ -6933,15 +6933,27 @@
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
             {
-              "confidence": "medium",
+              "confidence": "high",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "US Vice President Vance declines to say he would have ordered Iran strikes - Reuters",
+              "headline": "Israeli strike on vehicle in Gaza kills three, Gaza Health Ministry says - Reuters",
               "importance_score": 100,
-              "published_at": "2026-11-20T23:45:19+00:00",
+              "published_at": "2026-11-21T18:21:58+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "US denies Iranian account that missile damaged F-16 over Gulf - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-21T16:23:46+00:00",
               "source": "Reuters"
             },
             {
@@ -6969,6 +6981,18 @@
               "source": "Reuters"
             },
             {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "US Vice President Vance declines to say he would have ordered Iran strikes - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-20T20:45:00+00:00",
+              "source": "Reuters"
+            },
+            {
               "confidence": "high",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
@@ -6978,30 +7002,6 @@
               "headline": "Saudi-led forces strike Yemen port as Houthis warn airlines off the kingdom - Reuters",
               "importance_score": 100,
               "published_at": "2026-11-20T19:16:53+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Houthi attacks add to worries over Trump Saudi nuclear power pact - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-20T18:29:31+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Congress struggles to avert US shutdown as Iran war divides lawmakers - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-20T18:01:41+00:00",
               "source": "Reuters"
             }
           ]
@@ -8380,11 +8380,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.3,
           "top_headlines": [
-            "S&P 500 correction: Five forces behind the market sell-off",
-            "US Vice President Vance declines to say he would have ordered Iran strikes - Reuters",
-            "Saudi Arabia says it intercepts three Houthi missiles targeting Riyadh - Reuters",
-            "Araqchi says Iran wants diplomacy to end war, Trump says terms unacceptable - Reuters",
-            "US Treasury sanctions Iranian 'trustees' collecting oil revenues - Reuters"
+            "Israeli strike on vehicle in Gaza kills three, Gaza Health Ministry says - Reuters",
+            "Trump says there could be a 'positive spin' from the latest FBI database hack",
+            "US denies Iranian account that missile damaged F-16 over Gulf - Reuters",
+            "Qatari delegation visits Tehran for talks, Iranian official says - Reuters",
+            "I never wanted the American Dream and I felt like something was wrong with me—until I moved abroad"
           ]
         },
         "price": {
@@ -9369,20 +9369,47 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "medium",
-            "confidence_score": 74,
+            "confidence": "high",
+            "confidence_score": 81,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 71,
-            "headline": "US Vice President Vance declines to say he would have ordered Iran strikes - Reuters",
+            "freshness_score": 98,
+            "headline": "Israeli strike on vehicle in Gaza kills three, Gaza Health Ministry says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-11-20T23:45:19+00:00",
+            "published_at": "2026-11-21T18:21:58+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 80,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 93,
+            "headline": "US denies Iranian account that missile damaged F-16 over Gulf - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-21T16:23:46+00:00",
             "source": "Reuters"
           },
           {
@@ -9397,14 +9424,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 70,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 71,
+            "freshness_score": 53,
             "headline": "Saudi Arabia says it intercepts three Houthi missiles targeting Riyadh - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9424,14 +9451,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 70,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 52,
             "headline": "Araqchi says Iran wants diplomacy to end war, Trump says terms unacceptable - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9450,74 +9477,47 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 90,
+            "confidence": "medium",
+            "confidence_score": 68,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 60,
+            "freshness_score": 46,
+            "headline": "US Vice President Vance declines to say he would have ordered Iran strikes - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-20T20:45:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 85,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 42,
             "headline": "Saudi-led forces strike Yemen port as Houthis warn airlines off the kingdom - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-11-20T19:16:53+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 71,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 58,
-            "headline": "Houthi attacks add to worries over Trump Saudi nuclear power pact - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-20T18:29:31+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 71,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 57,
-            "headline": "Congress struggles to avert US shutdown as Iran war divides lawmakers - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-20T18:01:41+00:00",
             "source": "Reuters"
           }
         ],
@@ -9541,15 +9541,27 @@
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
             {
-              "confidence": "medium",
+              "confidence": "high",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "US Vice President Vance declines to say he would have ordered Iran strikes - Reuters",
+              "headline": "Israeli strike on vehicle in Gaza kills three, Gaza Health Ministry says - Reuters",
               "importance_score": 100,
-              "published_at": "2026-11-20T23:45:19+00:00",
+              "published_at": "2026-11-21T18:21:58+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "US denies Iranian account that missile damaged F-16 over Gulf - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-21T16:23:46+00:00",
               "source": "Reuters"
             },
             {
@@ -9577,6 +9589,18 @@
               "source": "Reuters"
             },
             {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "US Vice President Vance declines to say he would have ordered Iran strikes - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-20T20:45:00+00:00",
+              "source": "Reuters"
+            },
+            {
               "confidence": "high",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
@@ -9586,30 +9610,6 @@
               "headline": "Saudi-led forces strike Yemen port as Houthis warn airlines off the kingdom - Reuters",
               "importance_score": 100,
               "published_at": "2026-11-20T19:16:53+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Houthi attacks add to worries over Trump Saudi nuclear power pact - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-20T18:29:31+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Congress struggles to avert US shutdown as Iran war divides lawmakers - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-20T18:01:41+00:00",
               "source": "Reuters"
             }
           ]
@@ -11002,11 +11002,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.3,
           "top_headlines": [
-            "S&P 500 correction: Five forces behind the market sell-off",
-            "US Vice President Vance declines to say he would have ordered Iran strikes - Reuters",
-            "Saudi Arabia says it intercepts three Houthi missiles targeting Riyadh - Reuters",
-            "Araqchi says Iran wants diplomacy to end war, Trump says terms unacceptable - Reuters",
-            "US Treasury sanctions Iranian 'trustees' collecting oil revenues - Reuters"
+            "Israeli strike on vehicle in Gaza kills three, Gaza Health Ministry says - Reuters",
+            "Trump says there could be a 'positive spin' from the latest FBI database hack",
+            "US denies Iranian account that missile damaged F-16 over Gulf - Reuters",
+            "Qatari delegation visits Tehran for talks, Iranian official says - Reuters",
+            "I never wanted the American Dream and I felt like something was wrong with me—until I moved abroad"
           ]
         },
         "price": {
@@ -11992,20 +11992,47 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "medium",
-            "confidence_score": 74,
+            "confidence": "high",
+            "confidence_score": 81,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 71,
-            "headline": "US Vice President Vance declines to say he would have ordered Iran strikes - Reuters",
+            "freshness_score": 98,
+            "headline": "Israeli strike on vehicle in Gaza kills three, Gaza Health Ministry says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
-            "published_at": "2026-11-20T23:45:19+00:00",
+            "published_at": "2026-11-21T18:21:58+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 80,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 93,
+            "headline": "US denies Iranian account that missile damaged F-16 over Gulf - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-21T16:23:46+00:00",
             "source": "Reuters"
           },
           {
@@ -12020,14 +12047,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 70,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 71,
+            "freshness_score": 53,
             "headline": "Saudi Arabia says it intercepts three Houthi missiles targeting Riyadh - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12047,14 +12074,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 74,
+            "confidence_score": 70,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 52,
             "headline": "Araqchi says Iran wants diplomacy to end war, Trump says terms unacceptable - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12073,74 +12100,47 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 90,
+            "confidence": "medium",
+            "confidence_score": 68,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 60,
+            "freshness_score": 46,
+            "headline": "US Vice President Vance declines to say he would have ordered Iran strikes - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-20T20:45:00+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 85,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 42,
             "headline": "Saudi-led forces strike Yemen port as Houthis warn airlines off the kingdom - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-11-20T19:16:53+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 71,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 58,
-            "headline": "Houthi attacks add to worries over Trump Saudi nuclear power pact - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-20T18:29:31+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 71,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 57,
-            "headline": "Congress struggles to avert US shutdown as Iran war divides lawmakers - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-20T18:01:41+00:00",
             "source": "Reuters"
           }
         ],
@@ -12164,15 +12164,27 @@
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
             {
-              "confidence": "medium",
+              "confidence": "high",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_market_direction": "risk_off",
-              "headline": "US Vice President Vance declines to say he would have ordered Iran strikes - Reuters",
+              "headline": "Israeli strike on vehicle in Gaza kills three, Gaza Health Ministry says - Reuters",
               "importance_score": 100,
-              "published_at": "2026-11-20T23:45:19+00:00",
+              "published_at": "2026-11-21T18:21:58+00:00",
+              "source": "Reuters"
+            },
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "US denies Iranian account that missile damaged F-16 over Gulf - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-21T16:23:46+00:00",
               "source": "Reuters"
             },
             {
@@ -12200,6 +12212,18 @@
               "source": "Reuters"
             },
             {
+              "confidence": "medium",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "US Vice President Vance declines to say he would have ordered Iran strikes - Reuters",
+              "importance_score": 100,
+              "published_at": "2026-11-20T20:45:00+00:00",
+              "source": "Reuters"
+            },
+            {
               "confidence": "high",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
@@ -12209,30 +12233,6 @@
               "headline": "Saudi-led forces strike Yemen port as Houthis warn airlines off the kingdom - Reuters",
               "importance_score": 100,
               "published_at": "2026-11-20T19:16:53+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Houthi attacks add to worries over Trump Saudi nuclear power pact - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-20T18:29:31+00:00",
-              "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Congress struggles to avert US shutdown as Iran war divides lawmakers - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-20T18:01:41+00:00",
               "source": "Reuters"
             }
           ]

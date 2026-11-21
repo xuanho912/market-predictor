@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-21T11:47:54.922017+00:00`
+- generated_at: `2026-11-21T19:19:05.174242+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
-- event_detection_confidence: `74`
+- major_event_count: `10`
+- event_detection_confidence: `72`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,11 +27,19 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: US Vice President Vance declines to say he would have ordered Iran strikes - Reuters
+- headline: Israeli strike on vehicle in Gaza kills three, Gaza Health Ministry says - Reuters
 - source: Reuters
-- published_at: `2026-11-20T23:45:19+00:00`
+- published_at: `2026-11-21T18:21:58+00:00`
 - importance_score: `100`
-- confidence: `medium`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US denies Iranian account that missile damaged F-16 over Gulf - Reuters
+- source: Reuters
+- published_at: `2026-11-21T16:23:46+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -46,6 +54,14 @@
 - headline: Araqchi says Iran wants diplomacy to end war, Trump says terms unacceptable - Reuters
 - source: Reuters
 - published_at: `2026-11-20T23:11:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US Vice President Vance declines to say he would have ordered Iran strikes - Reuters
+- source: Reuters
+- published_at: `2026-11-20T20:45:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
