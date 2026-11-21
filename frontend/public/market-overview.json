@@ -5,11 +5,11 @@
     "affected_symbols": [],
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
-    "current_date": "2026-11-20",
-    "current_time_us_eastern": "2026-11-20T22:57:16.046894-05:00",
-    "data_freshness_status": "fresh",
+    "current_date": "2026-11-21",
+    "current_time_us_eastern": "2026-11-21T03:20:29.429575-05:00",
+    "data_freshness_status": "market_closed",
     "expected_latest_trading_date": "2026-11-20",
-    "generated_at": "2026-11-21T03:57:16.046894+00:00",
+    "generated_at": "2026-11-21T08:20:29.429575+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -18,7 +18,7 @@
       "Synthetic data is never allowed to create a live forecast signal."
     ],
     "is_latest_trading_day": true,
-    "is_today_us_market_trading_day": true,
+    "is_today_us_market_trading_day": false,
     "last_successful_core_market_update": "2026-11-20",
     "last_successful_update": "2026-11-20",
     "latest_confirmed_market_date": "2026-11-20",
@@ -940,7 +940,7 @@
     },
     "stale_days": 0,
     "version": "data_freshness_gate_v3",
-    "warning_message": "核心行情已更新至最新应有交易日 2026-11-20。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。"
+    "warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-11-20 的数据。 当前美东时间 2026-11-21 03:20。"
   },
   "data_quality_summary": {
     "average_breadth_quality_score": 67.0,
@@ -964,7 +964,7 @@
     "can_append_forecast_record": true,
     "data_completeness_score": 87.0,
     "data_completeness_score_before_news_event": 85.0,
-    "data_freshness_status": "fresh",
+    "data_freshness_status": "market_closed",
     "data_source_status": "real_core_with_proxies",
     "expected_latest_trading_date": "2026-11-20",
     "fallback_used": true,
@@ -1049,16 +1049,16 @@
     "fred_required": true,
     "fred_successful_series": [
       "DGS10",
-      "DGS2",
-      "HY_OAS",
-      "DGS3MO",
       "IG_OAS",
-      "DFII10",
-      "FINANCIAL_STRESS",
+      "DGS2",
+      "DGS3MO",
+      "HY_OAS",
       "BAA_SPREAD",
-      "RECESSION"
+      "RECESSION",
+      "DFII10",
+      "FINANCIAL_STRESS"
     ],
-    "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-11-20。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
+    "freshness_warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-11-20 的数据。 当前美东时间 2026-11-21 03:20。",
     "gamma_available": false,
     "gamma_exposure_available": false,
     "latest_confirmed_market_date": "2026-11-20",
@@ -1087,10 +1087,10 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 79,
+      "event_detection_confidence": 76,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-11-21T03:57:05.950824+00:00",
+      "last_update": "2026-11-21T08:20:17.525877+00:00",
       "major_event_count": 8,
       "missing_reason": null,
       "news_direction": "risk_off",
@@ -1392,7 +1392,7 @@
           "source": "Reuters"
         },
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -1404,7 +1404,7 @@
           "source": "Reuters"
         },
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -1578,7 +1578,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": -0.0354,
-        "avg_equity_futures_1d_return": -0.0303,
+        "avg_equity_futures_1d_return": -0.035,
         "confirmed_checks": [
           "股票ETF或股指期货下跌",
           "VIX 上升",
@@ -1594,7 +1594,7 @@
           "美元走强"
         ],
         "hyg_lqd_1d_relative_return": -0.0085,
-        "oil_proxy_1d_return": 0.008,
+        "oil_proxy_1d_return": 0.0102,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -2977,9 +2977,9 @@
           "real_yield_proxy": "not_available",
           "ten_year_minus_three_month": "not_available",
           "ten_year_minus_two_year": "not_available",
-          "ten_year_yield_proxy": 4.911999702453613,
+          "ten_year_yield_proxy": 4.9120001792907715,
           "tlt_return_20d": 0.001352355732776367,
-          "tnx_change_20d": -0.07600021362304688,
+          "tnx_change_20d": -0.07599973678588867,
           "two_year_yield": "not_available",
           "uup_return_20d": 0.022790116561661522
         },
@@ -4143,14 +4143,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 79,
+            "confidence_score": 76,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 90,
+            "freshness_score": 79,
             "headline": "US Vice President Vance declines to say he would have ordered Iran strikes - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4170,14 +4170,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 79,
+            "confidence_score": 76,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 90,
+            "freshness_score": 79,
             "headline": "Saudi Arabia says it intercepts three Houthi missiles targeting Riyadh - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4197,14 +4197,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 79,
+            "confidence_score": 76,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 89,
+            "freshness_score": 78,
             "headline": "Araqchi says Iran wants diplomacy to end war, Trump says terms unacceptable - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4224,14 +4224,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 94,
+            "confidence_score": 92,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 79,
+            "freshness_score": 69,
             "headline": "Saudi-led forces strike Yemen port as Houthis warn airlines off the kingdom - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4250,15 +4250,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 76,
+            "confidence": "medium",
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 67,
             "headline": "Houthi attacks add to worries over Trump Saudi nuclear power pact - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4277,15 +4277,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 76,
+            "confidence": "medium",
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 76,
+            "freshness_score": 66,
             "headline": "Congress struggles to avert US shutdown as Iran war divides lawmakers - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -4362,7 +4362,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -4374,7 +4374,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -4427,7 +4427,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0354,
-            "avg_equity_futures_1d_return": -0.0303,
+            "avg_equity_futures_1d_return": -0.035,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -4443,7 +4443,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0085,
-            "oil_proxy_1d_return": 0.008,
+            "oil_proxy_1d_return": 0.0102,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -5569,9 +5569,9 @@
           "real_yield_proxy": "not_available",
           "ten_year_minus_three_month": "not_available",
           "ten_year_minus_two_year": "not_available",
-          "ten_year_yield_proxy": 4.911999702453613,
+          "ten_year_yield_proxy": 4.9120001792907715,
           "tlt_return_20d": 0.001352355732776367,
-          "tnx_change_20d": -0.07600021362304688,
+          "tnx_change_20d": -0.07599973678588867,
           "two_year_yield": "not_available",
           "uup_return_20d": 0.022790116561661522
         },
@@ -6737,14 +6737,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 79,
+            "confidence_score": 76,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 90,
+            "freshness_score": 79,
             "headline": "US Vice President Vance declines to say he would have ordered Iran strikes - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6764,14 +6764,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 79,
+            "confidence_score": 76,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 90,
+            "freshness_score": 79,
             "headline": "Saudi Arabia says it intercepts three Houthi missiles targeting Riyadh - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6791,14 +6791,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 79,
+            "confidence_score": 76,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 89,
+            "freshness_score": 78,
             "headline": "Araqchi says Iran wants diplomacy to end war, Trump says terms unacceptable - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6818,14 +6818,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 94,
+            "confidence_score": 92,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 79,
+            "freshness_score": 69,
             "headline": "Saudi-led forces strike Yemen port as Houthis warn airlines off the kingdom - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6844,15 +6844,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 76,
+            "confidence": "medium",
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 67,
             "headline": "Houthi attacks add to worries over Trump Saudi nuclear power pact - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6871,15 +6871,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 76,
+            "confidence": "medium",
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 76,
+            "freshness_score": 66,
             "headline": "Congress struggles to avert US shutdown as Iran war divides lawmakers - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -6956,7 +6956,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -6968,7 +6968,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -7021,7 +7021,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0354,
-            "avg_equity_futures_1d_return": -0.0303,
+            "avg_equity_futures_1d_return": -0.035,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -7037,7 +7037,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0085,
-            "oil_proxy_1d_return": 0.008,
+            "oil_proxy_1d_return": 0.0102,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -8175,9 +8175,9 @@
           "real_yield_proxy": "not_available",
           "ten_year_minus_three_month": "not_available",
           "ten_year_minus_two_year": "not_available",
-          "ten_year_yield_proxy": 4.911999702453613,
+          "ten_year_yield_proxy": 4.9120001792907715,
           "tlt_return_20d": 0.001352355732776367,
-          "tnx_change_20d": -0.07600021362304688,
+          "tnx_change_20d": -0.07599973678588867,
           "two_year_yield": "not_available",
           "uup_return_20d": 0.022790116561661522
         },
@@ -9340,14 +9340,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 79,
+            "confidence_score": 76,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 90,
+            "freshness_score": 79,
             "headline": "US Vice President Vance declines to say he would have ordered Iran strikes - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9367,14 +9367,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 79,
+            "confidence_score": 76,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 90,
+            "freshness_score": 79,
             "headline": "Saudi Arabia says it intercepts three Houthi missiles targeting Riyadh - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9394,14 +9394,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 79,
+            "confidence_score": 76,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 89,
+            "freshness_score": 78,
             "headline": "Araqchi says Iran wants diplomacy to end war, Trump says terms unacceptable - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9421,14 +9421,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 94,
+            "confidence_score": 92,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 79,
+            "freshness_score": 69,
             "headline": "Saudi-led forces strike Yemen port as Houthis warn airlines off the kingdom - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9447,15 +9447,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 76,
+            "confidence": "medium",
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 67,
             "headline": "Houthi attacks add to worries over Trump Saudi nuclear power pact - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9474,15 +9474,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 76,
+            "confidence": "medium",
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 76,
+            "freshness_score": 66,
             "headline": "Congress struggles to avert US shutdown as Iran war divides lawmakers - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -9559,7 +9559,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -9571,7 +9571,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -9624,7 +9624,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0354,
-            "avg_equity_futures_1d_return": -0.0303,
+            "avg_equity_futures_1d_return": -0.035,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -9640,7 +9640,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0085,
-            "oil_proxy_1d_return": 0.008,
+            "oil_proxy_1d_return": 0.0102,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -10792,9 +10792,9 @@
           "real_yield_proxy": "not_available",
           "ten_year_minus_three_month": "not_available",
           "ten_year_minus_two_year": "not_available",
-          "ten_year_yield_proxy": 4.911999702453613,
+          "ten_year_yield_proxy": 4.9120001792907715,
           "tlt_return_20d": 0.001352355732776367,
-          "tnx_change_20d": -0.07600021362304688,
+          "tnx_change_20d": -0.07599973678588867,
           "two_year_yield": "not_available",
           "uup_return_20d": 0.022790116561661522
         },
@@ -11958,14 +11958,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 79,
+            "confidence_score": 76,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 90,
+            "freshness_score": 79,
             "headline": "US Vice President Vance declines to say he would have ordered Iran strikes - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -11985,14 +11985,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 79,
+            "confidence_score": 76,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 90,
+            "freshness_score": 79,
             "headline": "Saudi Arabia says it intercepts three Houthi missiles targeting Riyadh - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12012,14 +12012,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 79,
+            "confidence_score": 76,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 89,
+            "freshness_score": 78,
             "headline": "Araqchi says Iran wants diplomacy to end war, Trump says terms unacceptable - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12039,14 +12039,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 94,
+            "confidence_score": 92,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 79,
+            "freshness_score": 69,
             "headline": "Saudi-led forces strike Yemen port as Houthis warn airlines off the kingdom - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12065,15 +12065,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 76,
+            "confidence": "medium",
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 77,
+            "freshness_score": 67,
             "headline": "Houthi attacks add to worries over Trump Saudi nuclear power pact - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12092,15 +12092,15 @@
               "UUP",
               "TLT"
             ],
-            "confidence": "high",
-            "confidence_score": 76,
+            "confidence": "medium",
+            "confidence_score": 73,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 76,
+            "freshness_score": 66,
             "headline": "Congress struggles to avert US shutdown as Iran war divides lawmakers - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12177,7 +12177,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -12189,7 +12189,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -12242,7 +12242,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": -0.0354,
-            "avg_equity_futures_1d_return": -0.0303,
+            "avg_equity_futures_1d_return": -0.035,
             "confirmed_checks": [
               "股票ETF或股指期货下跌",
               "VIX 上升",
@@ -12258,7 +12258,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0085,
-            "oil_proxy_1d_return": 0.008,
+            "oil_proxy_1d_return": 0.0102,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"

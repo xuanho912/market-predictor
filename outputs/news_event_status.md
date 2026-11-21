@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-21T03:57:05.950824+00:00`
+- generated_at: `2026-11-21T08:20:17.525877+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `8`
-- event_detection_confidence: `79`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -63,7 +63,7 @@
 - source: Reuters
 - published_at: `2026-11-20T18:29:31+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -71,7 +71,7 @@
 - source: Reuters
 - published_at: `2026-11-20T18:01:41+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -79,7 +79,7 @@
 - source: Reuters
 - published_at: `2026-11-20T17:42:59+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -87,4 +87,4 @@
 - source: Reuters
 - published_at: `2026-11-20T17:05:12+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
