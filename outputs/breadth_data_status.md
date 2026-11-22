@@ -1,6 +1,6 @@
 # Breadth Data Status
 
-Generated at: 2026-11-21T19:18:51.375696+00:00
+Generated at: 2026-11-22T19:43:43.087352+00:00
 
 Provider available: True
 True breadth available: False
@@ -11,7 +11,7 @@ Stale data: True
 
 ## Market Internal Resonance
 
-- resonance_score: 44.03
+- resonance_score: 36.71
 - resonance_state: weak
 - label: no_internal_resonance
 - aligned_symbols: none
@@ -26,19 +26,19 @@ Stale data: True
 
 - status: available
 - source: wikipedia-sp500
-- latest_date: 2026-11-17
+- latest_date: 2026-11-20
 - true_breadth: True
 - proxy: False
 - constituents used / expected: 503 / 503
 - coverage_ratio: 1.0
 - stale_constituents: False
 - stale_price_data: False
-- percent_above_20d / 50d / 200d: 0.5467 / 0.6394 / 0.592
-- advancers / decliners / A-D ratio: 146 / 355 / 0.4113
-- new highs/lows 20d: 52 / 40
-- new highs/lows 52w: 27 / 9
-- improvement / deterioration / confirmation / conflict / quality: 47.73 / 88.96 / 55.25 / 67.61 / 100.0
-- internal_resonance: weak / score 46.66 / SPY 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
+- percent_above_20d / 50d / 200d: 0.2048 / 0.4323 / 0.464
+- advancers / decliners / A-D ratio: 127 / 373 / 0.3405
+- new highs/lows 20d: 2 / 190
+- new highs/lows 52w: 0 / 23
+- improvement / deterioration / confirmation / conflict / quality: 24.33 / 100.0 / 37.52 / 76.0 / 100.0
+- internal_resonance: weak / score 32.55 / SPY 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
 
 ### QQQ
 
@@ -62,19 +62,19 @@ Stale data: True
 
 - status: available
 - source: static-dow30-list
-- latest_date: 2026-11-17
+- latest_date: 2026-11-20
 - true_breadth: True
 - proxy: False
 - constituents used / expected: 30 / 30
 - coverage_ratio: 1.0
 - stale_constituents: False
 - stale_price_data: False
-- percent_above_20d / 50d / 200d: 0.5333 / 0.6333 / 0.6333
-- advancers / decliners / A-D ratio: 8 / 22 / 0.3636
-- new highs/lows 20d: 2 / 5
-- new highs/lows 52w: 2 / 2
-- improvement / deterioration / confirmation / conflict / quality: 45.16 / 100.0 / 52.52 / 76.0 / 100.0
-- internal_resonance: weak / score 43.53 / DIA 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
+- percent_above_20d / 50d / 200d: 0.2667 / 0.4667 / 0.5667
+- advancers / decliners / A-D ratio: 12 / 18 / 0.6667
+- new highs/lows 20d: 0 / 11
+- new highs/lows 52w: 0 / 3
+- improvement / deterioration / confirmation / conflict / quality: 30.22 / 100.0 / 41.76 / 76.0 / 100.0
+- internal_resonance: weak / score 35.66 / DIA 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
 
 ### IWM
 

@@ -1,6 +1,6 @@
 # Breadth Impact Audit
 
-Generated at: `2026-11-21T19:19:15.957627Z`
+Generated at: `2026-11-22T19:44:09.676288Z`
 
 ## Summary
 
@@ -16,7 +16,7 @@ Generated at: `2026-11-21T19:19:15.957627Z`
 
 | symbol | supports primary | conflicts primary | edge before | edge after | primary before | primary after | failed bounce delta | confirmation delta | confidence delta | reason | risk note |
 |---|---:|---:|---|---|---|---|---:|---:|---:|---|---|
-| SPY | False | True | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.0888 | 9 | 0 | SPY breadth conflicts with bearish_path: conflict score 68%, internal resonance is weak. | SPY breadth conflict or failed-bounce risk is elevated; watch new lows, percent above 20/50d MA and sector participation. |
+| SPY | False | True | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.1208 | -9 | 0 | SPY breadth conflicts with bearish_path: conflict score 76%, internal resonance is weak. | SPY breadth conflict or failed-bounce risk is elevated; watch new lows, percent above 20/50d MA and sector participation. |
 | QQQ | False | True | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.1195 | -17 | -7 | QQQ breadth conflicts with bearish_path: conflict score 69%, internal resonance is weak. | QQQ breadth conflict or failed-bounce risk is elevated; watch new lows, percent above 20/50d MA and sector participation. |
 | IWM | False | False | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.0768 | 0 | 3 | IWM breadth is mixed for bearish_path: support score 52%, conflict score 53%, internal resonance is weak. | IWM breadth conflict or failed-bounce risk is elevated; watch new lows, percent above 20/50d MA and sector participation. |
 | DIA | False | True | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.1318 | -19 | 0 | DIA breadth conflicts with bearish_path: conflict score 76%, internal resonance is weak. | DIA breadth conflict or failed-bounce risk is elevated; watch new lows, percent above 20/50d MA and sector participation. |

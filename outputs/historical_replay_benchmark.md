@@ -1,6 +1,6 @@
 # Historical Replay Benchmark
 
-Generated at: `2026-11-21T19:19:16.824666+00:00`
+Generated at: `2026-11-22T19:44:10.541682+00:00`
 Validation type: `historical_replay`
 Status: `research_evaluation_only_not_forward_validation`
 Sample size: `80`
@@ -177,19 +177,19 @@ Overfit warning: `{'level': 'medium', 'reasons': ['primary path is not closer th
 
 ### top_10
 - sample_size: `8`
-- 3d: sample `8`, primary_hit `0.625`, primary_closer `0.25`, primary_mae `0.024442`, avg `-0.004738`, median `-0.003756`
-- 5d: sample `8`, primary_hit `0.5`, primary_closer `0.5`, primary_mae `0.0178`, avg `-0.002973`, median `0.001059`
-- 10d: sample `8`, primary_hit `0.625`, primary_closer `0.5`, primary_mae `0.050442`, avg `-0.018604`, median `-0.012935`
-- 20d: sample `8`, primary_hit `0.625`, primary_closer `0.25`, primary_mae `0.113141`, avg `-0.046429`, median `-0.016283`
-- 60d: sample `8`, primary_hit `0.5`, primary_closer `0.5`, primary_mae `0.058448`, avg `0.017696`, median `0.022528`
+- 3d: sample `8`, primary_hit `0.5`, primary_closer `0.375`, primary_mae `0.028388`, avg `-0.00248`, median `-0.000439`
+- 5d: sample `8`, primary_hit `0.25`, primary_closer `0.25`, primary_mae `0.028847`, avg `0.00833`, median `0.012765`
+- 10d: sample `8`, primary_hit `0.375`, primary_closer `0.375`, primary_mae `0.060949`, avg `-0.007933`, median `0.013247`
+- 20d: sample `8`, primary_hit `0.5`, primary_closer `0.25`, primary_mae `0.121002`, avg `-0.04067`, median `0.004182`
+- 60d: sample `8`, primary_hit `0.5`, primary_closer `0.75`, primary_mae `0.042862`, avg `-0.008509`, median `-0.004316`
 
 ### top_20
 - sample_size: `16`
-- 3d: sample `16`, primary_hit `0.4375`, primary_closer `0.1875`, primary_mae `0.030781`, avg `0.005474`, median `0.007815`
-- 5d: sample `16`, primary_hit `0.25`, primary_closer `0.25`, primary_mae `0.026796`, avg `0.010912`, median `0.012731`
-- 10d: sample `16`, primary_hit `0.5`, primary_closer `0.375`, primary_mae `0.055786`, avg `0.000535`, median `0.001876`
-- 20d: sample `16`, primary_hit `0.375`, primary_closer `0.125`, primary_mae `0.124472`, avg `-0.007375`, median `0.024723`
-- 60d: sample `16`, primary_hit `0.375`, primary_closer `0.375`, primary_mae `0.065431`, avg `0.032362`, median `0.059939`
+- 3d: sample `16`, primary_hit `0.375`, primary_closer `0.25`, primary_mae `0.031311`, avg `0.005235`, median `0.007977`
+- 5d: sample `16`, primary_hit `0.25`, primary_closer `0.25`, primary_mae `0.023552`, avg `0.008174`, median `0.006663`
+- 10d: sample `16`, primary_hit `0.375`, primary_closer `0.3125`, primary_mae `0.057152`, avg `0.003931`, median `0.018028`
+- 20d: sample `16`, primary_hit `0.375`, primary_closer `0.125`, primary_mae `0.125592`, avg `-0.004297`, median `0.02099`
+- 60d: sample `16`, primary_hit `0.375`, primary_closer `0.5625`, primary_mae `0.052794`, avg `0.01493`, median `0.003033`
 
 ### bottom_20
 - sample_size: `16`
@@ -236,12 +236,12 @@ Overfit warning: `{'level': 'medium', 'reasons': ['primary path is not closer th
 - 60d: sample `0`, primary_hit `None`, primary_closer `None`, primary_mae `None`, avg `None`, median `None`
 
 ### breadth_confirmed
-- sample_size: `20`
-- 3d: sample `20`, primary_hit `0.4`, primary_closer `0.2`, primary_mae `0.031477`, avg `0.006166`, median `0.009486`
-- 5d: sample `20`, primary_hit `0.25`, primary_closer `0.25`, primary_mae `0.026464`, avg `0.011558`, median `0.012731`
-- 10d: sample `20`, primary_hit `0.45`, primary_closer `0.35`, primary_mae `0.057342`, avg `0.005195`, median `0.018465`
-- 20d: sample `20`, primary_hit `0.3`, primary_closer `0.1`, primary_mae `0.131091`, avg `0.004788`, median `0.027835`
-- 60d: sample `20`, primary_hit `0.35`, primary_closer `0.35`, primary_mae `0.073484`, avg `0.040843`, median `0.06797`
+- sample_size: `0`
+- 3d: sample `0`, primary_hit `None`, primary_closer `None`, primary_mae `None`, avg `None`, median `None`
+- 5d: sample `0`, primary_hit `None`, primary_closer `None`, primary_mae `None`, avg `None`, median `None`
+- 10d: sample `0`, primary_hit `None`, primary_closer `None`, primary_mae `None`, avg `None`, median `None`
+- 20d: sample `0`, primary_hit `None`, primary_closer `None`, primary_mae `None`, avg `None`, median `None`
+- 60d: sample `0`, primary_hit `None`, primary_closer `None`, primary_mae `None`, avg `None`, median `None`
 
 ### breadth_conflicted
 - sample_size: `60`

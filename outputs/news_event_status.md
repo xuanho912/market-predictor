@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-21T19:19:05.174242+00:00`
+- generated_at: `2026-11-22T19:44:01.666628+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `10`
-- event_detection_confidence: `72`
+- major_event_count: `6`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,80 +27,48 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Director of National Intelligence Jay Clayton warns Americans of 'bumps in the road' after tech outages
+- source: CNBC
+- published_at: `2026-11-22T16:18:09+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Israel's Eisenkot condemns arson attacks by Jewish settlers in West Bank - Reuters
+- source: Reuters
+- published_at: `2026-11-22T13:33:09+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Saudi Arabia, Bahrain report new attacks as Iran says it remains open to a deal with U.S.
+- source: CNBC
+- published_at: `2026-11-22T13:25:47+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Bahrain says Iran strikes industrial facility as air defences intercept attacks - Reuters
+- source: Reuters
+- published_at: `2026-11-21T19:15:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Israeli strike on vehicle in Gaza kills three, Gaza Health Ministry says - Reuters
 - source: Reuters
 - published_at: `2026-11-21T18:21:58+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: US denies Iranian account that missile damaged F-16 over Gulf - Reuters
 - source: Reuters
 - published_at: `2026-11-21T16:23:46+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Saudi Arabia says it intercepts three Houthi missiles targeting Riyadh - Reuters
-- source: Reuters
-- published_at: `2026-11-20T23:36:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Araqchi says Iran wants diplomacy to end war, Trump says terms unacceptable - Reuters
-- source: Reuters
-- published_at: `2026-11-20T23:11:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US Vice President Vance declines to say he would have ordered Iran strikes - Reuters
-- source: Reuters
-- published_at: `2026-11-20T20:45:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Saudi-led forces strike Yemen port as Houthis warn airlines off the kingdom - Reuters
-- source: Reuters
-- published_at: `2026-11-20T19:16:53+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Houthi attacks add to worries over Trump Saudi nuclear power pact - Reuters
-- source: Reuters
-- published_at: `2026-11-20T18:29:31+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Congress struggles to avert US shutdown as Iran war divides lawmakers - Reuters
-- source: Reuters
-- published_at: `2026-11-20T18:01:41+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: India cyber agency warns of unauthorised payment transactions - Reuters
-- source: Reuters
-- published_at: `2026-11-20T17:42:59+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Tanker catches fire after projectile strike near Strait of Hormuz, UKMTO says - Reuters
-- source: Reuters
-- published_at: `2026-11-20T17:05:12+00:00`
 - importance_score: `100`
 - confidence: `medium`

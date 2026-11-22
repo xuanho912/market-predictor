@@ -1,11 +1,11 @@
 # Data Freshness Status
 
-Generated at: `2026-11-21T19:19:15.964495+00:00`
+Generated at: `2026-11-22T19:44:09.683208+00:00`
 
 ## Summary
 
-- current_date: `2026-11-21`
-- current_time_us_eastern: `2026-11-21T14:19:15.964495-05:00`
+- current_date: `2026-11-22`
+- current_time_us_eastern: `2026-11-22T14:44:09.683208-05:00`
 - latest_market_date: `2026-11-20`
 - latest_confirmed_market_date: `2026-11-20`
 - expected_latest_trading_date: `2026-11-20`
@@ -17,7 +17,7 @@ Generated at: `2026-11-21T19:19:15.964495+00:00`
 - data_freshness_status: `market_closed`
 - last_successful_core_market_update: `2026-11-20`
 - last_successful_update: `2026-11-20`
-- warning_message: 美股当前没有新的完整交易日，使用最近完成交易日 2026-11-20 的数据。 当前美东时间 2026-11-21 14:19。
+- warning_message: 美股当前没有新的完整交易日，使用最近完成交易日 2026-11-20 的数据。 当前美东时间 2026-11-22 14:44。
 
 ## Affected Symbols
 
@@ -64,10 +64,10 @@ Generated at: `2026-11-21T19:19:15.964495+00:00`
 - ^VIX6M: status=`available`, latest_date=`2026-11-20`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - ^VIX9D: status=`available`, latest_date=`2026-11-20`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - ^VVIX: status=`available`, latest_date=`2026-11-20`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- breadth_DIA: status=`available`, latest_date=`2026-11-17`, source=`static-dow30-list`, stale=`False`, fallback=`False`, real_data=`True`
+- breadth_DIA: status=`available`, latest_date=`2026-11-20`, source=`static-dow30-list`, stale=`False`, fallback=`False`, real_data=`True`
 - breadth_IWM: status=`proxy`, latest_date=`2026-11-20`, source=`iwm-spy-relative-strength-proxy`, stale=`False`, fallback=`True`, real_data=`False`
 - breadth_QQQ: status=`missing`, latest_date=`None`, source=`wikipedia-nasdaq100`, stale=`False`, fallback=`True`, real_data=`False`
-- breadth_SPY: status=`available`, latest_date=`2026-11-17`, source=`wikipedia-sp500`, stale=`False`, fallback=`False`, real_data=`True`
+- breadth_SPY: status=`available`, latest_date=`2026-11-20`, source=`wikipedia-sp500`, stale=`False`, fallback=`False`, real_data=`True`
 - breadth_sector_participation_proxy: status=`proxy`, latest_date=`None`, source=`sector-etf-participation-proxy`, stale=`True`, fallback=`True`, real_data=`False`
 - finnhub_alternative_data: status=`missing`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
 - finnhub_candle_DIA: status=`missing`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`

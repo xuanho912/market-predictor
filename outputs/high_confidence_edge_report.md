@@ -1,6 +1,6 @@
 # High Confidence Edge Report
 
-Generated at: `2026-11-21T19:19:05.172202+00:00`
+Generated at: `2026-11-22T19:44:01.664563+00:00`
 
 Status: `historical_proxy_and_forward_pending`
 Sample size: `80`
@@ -62,11 +62,11 @@ Conclusion: `not_enough_strong_edge_samples`
 
 ### signal_confirmation_score top 10%
 - sample_size: `8`
-- 3d: sample `8`, hit `0.375`, avg `-0.004738`, median `-0.00201`, mae `0.016205`
-- 5d: sample `8`, hit `0.5`, avg `-0.002973`, median `0.004366`, mae `0.015597`
-- 10d: sample `8`, hit `0.375`, avg `-0.018604`, median `-0.007679`, mae `0.042621`
-- 20d: sample `8`, hit `0.375`, avg `-0.046429`, median `-0.001131`, mae `0.077688`
-- 60d: sample `8`, hit `0.5`, avg `0.017696`, median `0.052255`, mae `0.058448`
+- 3d: sample `8`, hit `0.5`, avg `-0.00248`, median `0.003885`, mae `0.019022`
+- 5d: sample `8`, hit `0.75`, avg `0.00833`, median `0.021192`, mae `0.02431`
+- 10d: sample `8`, hit `0.625`, avg `-0.007933`, median `0.019564`, mae `0.049122`
+- 20d: sample `8`, hit `0.5`, avg `-0.04067`, median `0.012394`, mae `0.077384`
+- 60d: sample `8`, hit `0.5`, avg `-0.008509`, median `0.000326`, mae `0.042862`
 
 ### confidence_score top 10%
 - sample_size: `8`
@@ -91,12 +91,12 @@ Conclusion: `not_enough_strong_edge_samples`
 - evidence_note: `Forward-only sample gate has opened; compare breadth-supported buckets against conflicted buckets before raising confidence.`
 
 ### breadth_confirmed_signals
-- sample_size: `20`
-- 3d: sample `20`, hit `0.6`, avg `0.006166`, median `0.01024`, mae `0.019723`
-- 5d: sample `20`, hit `0.75`, avg `0.011558`, median `0.012762`, mae `0.019421`
-- 10d: sample `20`, hit `0.55`, avg `0.005195`, median `0.025498`, mae `0.041525`
-- 20d: sample `20`, hit `0.7`, avg `0.004788`, median `0.030606`, mae `0.056964`
-- 60d: sample `20`, hit `0.65`, avg `0.040843`, median `0.068318`, mae `0.073484`
+- sample_size: `0`
+- 3d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 5d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 10d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 20d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
+- 60d: sample `0`, hit `None`, avg `None`, median `None`, mae `None`
 
 ### breadth_conflicted_signals
 - sample_size: `60`
