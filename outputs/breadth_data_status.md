@@ -1,6 +1,6 @@
 # Breadth Data Status
 
-Generated at: 2026-11-22T19:43:43.087352+00:00
+Generated at: 2026-11-23T23:56:29.762936+00:00
 
 Provider available: True
 True breadth available: False
@@ -11,14 +11,14 @@ Stale data: True
 
 ## Market Internal Resonance
 
-- resonance_score: 36.71
+- resonance_score: 37.36
 - resonance_state: weak
 - label: no_internal_resonance
 - aligned_symbols: none
 - surface_only_symbols: none
 - sector_score: 6.0
-- equal_weight_vs_cap_weight_20d: 0.050295
-- small_cap_vs_large_cap_20d: 0.022909
+- equal_weight_vs_cap_weight_20d: 0.035715
+- small_cap_vs_large_cap_20d: 0.015671
 
 ## Universe Status
 
@@ -26,19 +26,19 @@ Stale data: True
 
 - status: available
 - source: wikipedia-sp500
-- latest_date: 2026-11-20
+- latest_date: 2026-11-23
 - true_breadth: True
 - proxy: False
 - constituents used / expected: 503 / 503
 - coverage_ratio: 1.0
 - stale_constituents: False
 - stale_price_data: False
-- percent_above_20d / 50d / 200d: 0.2048 / 0.4323 / 0.464
-- advancers / decliners / A-D ratio: 127 / 373 / 0.3405
-- new highs/lows 20d: 2 / 190
-- new highs/lows 52w: 0 / 23
-- improvement / deterioration / confirmation / conflict / quality: 24.33 / 100.0 / 37.52 / 76.0 / 100.0
-- internal_resonance: weak / score 32.55 / SPY 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
+- percent_above_20d / 50d / 200d: 0.1988 / 0.4343 / 0.462
+- advancers / decliners / A-D ratio: 171 / 329 / 0.5198
+- new highs/lows 20d: 4 / 174
+- new highs/lows 52w: 0 / 20
+- improvement / deterioration / confirmation / conflict / quality: 24.95 / 100.0 / 37.96 / 76.0 / 100.0
+- internal_resonance: weak / score 31.96 / SPY 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
 
 ### QQQ
 
@@ -56,31 +56,31 @@ Stale data: True
 - new highs/lows 20d: 0 / 0
 - new highs/lows 52w: 0 / 0
 - improvement / deterioration / confirmation / conflict / quality: 8.67 / 70.67 / 9.39 / 69.07 / 4.0
-- internal_resonance: weak / score 19.01 / QQQ 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
+- internal_resonance: weak / score 18.09 / QQQ 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
 
 ### DIA
 
 - status: available
 - source: static-dow30-list
-- latest_date: 2026-11-20
+- latest_date: 2026-11-23
 - true_breadth: True
 - proxy: False
 - constituents used / expected: 30 / 30
 - coverage_ratio: 1.0
 - stale_constituents: False
 - stale_price_data: False
-- percent_above_20d / 50d / 200d: 0.2667 / 0.4667 / 0.5667
-- advancers / decliners / A-D ratio: 12 / 18 / 0.6667
-- new highs/lows 20d: 0 / 11
-- new highs/lows 52w: 0 / 3
-- improvement / deterioration / confirmation / conflict / quality: 30.22 / 100.0 / 41.76 / 76.0 / 100.0
-- internal_resonance: weak / score 35.66 / DIA 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
+- percent_above_20d / 50d / 200d: 0.2333 / 0.5 / 0.5333
+- advancers / decliners / A-D ratio: 19 / 11 / 1.7273
+- new highs/lows 20d: 1 / 6
+- new highs/lows 52w: 0 / 1
+- improvement / deterioration / confirmation / conflict / quality: 34.92 / 100.0 / 45.14 / 76.0 / 100.0
+- internal_resonance: weak / score 37.26 / DIA 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
 
 ### IWM
 
 - status: proxy
 - source: iwm-spy-relative-strength-proxy
-- latest_date: 2026-11-20
+- latest_date: 2026-11-23
 - true_breadth: False
 - proxy: True
 - constituents used / expected: None / None
@@ -91,8 +91,8 @@ Stale data: True
 - advancers / decliners / A-D ratio: None / None / None
 - new highs/lows 20d: None / None
 - new highs/lows 52w: None / None
-- improvement / deterioration / confirmation / conflict / quality: 48.22 / 58.19 / 52.16 / 52.64 / 64
-- internal_resonance: weak / score 41.91 / IWM 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
+- improvement / deterioration / confirmation / conflict / quality: 55.32 / 53.89 / 57.49 / 49.41 / 64
+- internal_resonance: weak / score 42.86 / IWM 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
 
 ## Notes
 
