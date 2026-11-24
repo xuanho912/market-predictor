@@ -1,6 +1,6 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-24T05:30:44.059923+00:00`
+- generated_at: `2026-11-24T06:33:43.280799+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `7`
@@ -33,14 +33,6 @@
 - importance_score: `100`
 - confidence: `high`
 
-### oil_shock_risk / risk_off
-
-- headline: Oil holds near three-month low as rising supply offsets Hormuz threat - Reuters
-- source: Reuters
-- published_at: `2026-11-24T02:56:00+00:00`
-- importance_score: `97`
-- confidence: `high`
-
 ### geopolitical_risk_escalation / risk_off
 
 - headline: US eyes Iran as possible culprit in dozens of new cyberattacks against ships, WSJ reports - Reuters
@@ -55,6 +47,14 @@
 - source: CNBC
 - published_at: `2026-11-23T23:53:20+00:00`
 - importance_score: `100`
+- confidence: `high`
+
+### oil_shock_risk / risk_off
+
+- headline: Oil prices near three-month lows as rising supply offsets Hormuz threat - Reuters
+- source: Reuters
+- published_at: `2026-11-24T02:56:00+00:00`
+- importance_score: `97`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
