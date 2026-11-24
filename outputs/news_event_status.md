@@ -1,14 +1,14 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-23T23:56:46.111290+00:00`
+- generated_at: `2026-11-24T04:53:59.713254+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `2`
+- major_event_count: `6`
 - event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
-- narrative_strength: `67`
+- narrative_strength: `100`
 - price_reaction_confirmed: `False`
 - confirmation_score: `25`
 
@@ -27,11 +27,43 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: US eyes Iran as possible culprit in dozens of new cyberattacks against ships, WSJ reports - Reuters
+- source: Reuters
+- published_at: `2026-11-24T00:18:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: CrowdStrike CEO defends Zscaler acquisition, calls it a 'winning combination'
+- source: CNBC
+- published_at: `2026-11-23T23:53:20+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters
+- source: Reuters
+- published_at: `2026-11-23T23:25:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Belgian PM sets December 31 budget talks deadline amid national strike - Reuters
+- source: Reuters
+- published_at: `2026-11-23T20:53:47+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Israeli strikes kill at least three in Gaza, including worker with UN Palestinian agency - Reuters
 - source: Reuters
 - published_at: `2026-11-23T14:58:37+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -39,4 +71,4 @@
 - source: Reuters
 - published_at: `2026-11-23T12:15:43+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
