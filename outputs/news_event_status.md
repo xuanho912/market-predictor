@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-24T11:00:41.519994+00:00`
+- generated_at: `2026-11-24T14:17:44.726049+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
-- event_detection_confidence: `74`
+- major_event_count: `6`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,11 +27,11 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Israeli airstrikes kill at least six Palestinians in Gaza, medics say - Reuters
+- headline: Israel kills senior Hamas security official in airstrike on Gaza - Reuters
 - source: Reuters
 - published_at: `2026-11-24T00:20:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -39,7 +39,7 @@
 - source: Reuters
 - published_at: `2026-11-24T00:18:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,7 +47,7 @@
 - source: CNBC
 - published_at: `2026-11-23T23:53:20+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -55,14 +55,14 @@
 - source: Reuters
 - published_at: `2026-11-23T23:25:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### oil_shock_risk / risk_off
 
-- headline: Oil prices near three-month lows as rising supply offsets Hormuz threat - Reuters
+- headline: Oil touches three-month lows before recovering on Hormuz threat - Reuters
 - source: Reuters
 - published_at: `2026-11-24T02:56:00+00:00`
-- importance_score: `96`
+- importance_score: `95`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
@@ -70,13 +70,5 @@
 - headline: Belgian PM sets December 31 budget talks deadline amid national strike - Reuters
 - source: Reuters
 - published_at: `2026-11-23T20:53:47+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Israeli strikes kill at least three in Gaza, including worker with UN Palestinian agency - Reuters
-- source: Reuters
-- published_at: `2026-11-23T14:58:37+00:00`
 - importance_score: `100`
 - confidence: `medium`

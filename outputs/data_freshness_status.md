@@ -1,11 +1,11 @@
 # Data Freshness Status
 
-Generated at: `2026-11-24T11:00:51.590128+00:00`
+Generated at: `2026-11-24T14:17:56.776097+00:00`
 
 ## Summary
 
 - current_date: `2026-11-24`
-- current_time_us_eastern: `2026-11-24T06:00:51.590128-05:00`
+- current_time_us_eastern: `2026-11-24T09:17:56.776097-05:00`
 - latest_market_date: `2026-11-23`
 - latest_confirmed_market_date: `2026-11-23`
 - expected_latest_trading_date: `2026-11-23`
@@ -61,7 +61,7 @@ Generated at: `2026-11-24T11:00:51.590128+00:00`
 - XLV: status=`available`, latest_date=`2026-11-23`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - XLY: status=`available`, latest_date=`2026-11-23`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - ^SKEW: status=`available`, latest_date=`2026-11-23`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
-- ^TNX: status=`available`, latest_date=`2026-11-23`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
+- ^TNX: status=`available`, latest_date=`2026-11-24`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - ^VIX: status=`available`, latest_date=`2026-11-24`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - ^VIX3M: status=`available`, latest_date=`2026-11-23`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
 - ^VIX6M: status=`available`, latest_date=`2026-11-23`, source=`yahoo-chart`, stale=`False`, fallback=`False`, real_data=`True`
