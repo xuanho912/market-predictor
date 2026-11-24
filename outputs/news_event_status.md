@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-24T04:53:59.713254+00:00`
+- generated_at: `2026-11-24T05:30:44.059923+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
-- event_detection_confidence: `76`
+- major_event_count: `7`
+- event_detection_confidence: `77`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,22 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters
+- source: Reuters
+- published_at: `2026-11-24T00:20:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### oil_shock_risk / risk_off
+
+- headline: Oil holds near three-month low as rising supply offsets Hormuz threat - Reuters
+- source: Reuters
+- published_at: `2026-11-24T02:56:00+00:00`
+- importance_score: `97`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -62,13 +78,5 @@
 - headline: Israeli strikes kill at least three in Gaza, including worker with UN Palestinian agency - Reuters
 - source: Reuters
 - published_at: `2026-11-23T14:58:37+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: EU academy platform disabled after cyber attack on Commission, spokesperson says - Reuters
-- source: Reuters
-- published_at: `2026-11-23T12:15:43+00:00`
 - importance_score: `100`
 - confidence: `medium`

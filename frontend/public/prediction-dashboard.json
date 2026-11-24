@@ -11485,7 +11485,7 @@
       "evidence_note": "Forward-only sample gate has opened; compare breadth-supported buckets against conflicted buckets before raising confidence.",
       "status": "forward_ready"
     },
-    "generated_at": "2026-11-24T04:54:11.509262Z",
+    "generated_at": "2026-11-24T05:30:57.214366Z",
     "notes": [
       "This audit compares the same run with true breadth provider disabled vs enabled.",
       "The audit does not change Alpha v1 and does not prove tradable alpha.",
@@ -11643,7 +11643,7 @@
   },
   "breadth_status": {
     "cache_root": "data/breadth_cache",
-    "generated_at": "2026-11-24T04:53:47.573461+00:00",
+    "generated_at": "2026-11-24T05:30:29.015753+00:00",
     "provider": "true_breadth_provider",
     "sector_participation_proxy": {
       "data_note": "Sector ETF proxy, not constituent-level sector breadth.",
@@ -12170,7 +12170,7 @@
   },
   "confluence_score": {
     "disclaimer": "Confluence is a forecast-confirmation layer, not a trading signal or execution recommendation.",
-    "generated_at": "2026-11-24T04:54:11.518955+00:00",
+    "generated_at": "2026-11-24T05:30:57.219738+00:00",
     "summary": {
       "average_confluence_score": 43.25,
       "mixed_or_no_edge_symbols": [
@@ -12941,14 +12941,19 @@
     "version": "confluence_engine_v1"
   },
   "data_freshness_status": {
-    "affected_symbols": [],
-    "can_append_forecast_record": true,
+    "affected_symbols": [
+      "SPY",
+      "QQQ",
+      "IWM",
+      "DIA"
+    ],
+    "can_append_forecast_record": false,
     "can_backfill_completed_outcomes": true,
-    "current_date": "2026-11-23",
-    "current_time_us_eastern": "2026-11-23T23:54:11.519641-05:00",
-    "data_freshness_status": "fresh",
+    "current_date": "2026-11-24",
+    "current_time_us_eastern": "2026-11-24T00:30:57.220112-05:00",
+    "data_freshness_status": "market_open_unconfirmed",
     "expected_latest_trading_date": "2026-11-23",
-    "generated_at": "2026-11-24T04:54:11.519641+00:00",
+    "generated_at": "2026-11-24T05:30:57.220112+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -12962,7 +12967,7 @@
     "last_successful_update": "2026-11-23",
     "latest_confirmed_market_date": "2026-11-23",
     "latest_market_date": "2026-11-23",
-    "latest_market_session_status": "completed_or_prior_session",
+    "latest_market_session_status": "intraday_unconfirmed",
     "provider_status": {
       "BAA_SPREAD": {
         "fallback_used": false,
@@ -13675,25 +13680,25 @@
       "finnhub_quote_QQQ": {
         "fallback_used": false,
         "latest_date": null,
-        "missing_data": true,
-        "point_in_time_safe": false,
-        "real_data": false,
-        "rows": 0,
+        "missing_data": false,
+        "point_in_time_safe": true,
+        "real_data": true,
+        "rows": 1,
         "source": "finnhub",
-        "stale_data": false,
-        "status": "rate_limited",
+        "stale_data": true,
+        "status": "stale",
         "symbol": "finnhub_quote_QQQ"
       },
       "finnhub_quote_SPY": {
         "fallback_used": false,
         "latest_date": null,
-        "missing_data": true,
-        "point_in_time_safe": false,
-        "real_data": false,
-        "rows": 0,
+        "missing_data": false,
+        "point_in_time_safe": true,
+        "real_data": true,
+        "rows": 1,
         "source": "finnhub",
-        "stale_data": false,
-        "status": "rate_limited",
+        "stale_data": true,
+        "status": "stale",
         "symbol": "finnhub_quote_SPY"
       },
       "finnhub_rates_data": {
@@ -13879,7 +13884,7 @@
     },
     "stale_days": 0,
     "version": "data_freshness_gate_v3",
-    "warning_message": "核心行情已更新至最新应有交易日 2026-11-23。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。"
+    "warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-11-23，最近完整收盘交易日为 2026-11-23；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。"
   },
   "data_quality_report": {
     "as_of": "2026-11-23",
@@ -13953,7 +13958,7 @@
         "expected_items": 5,
         "fallback_used": false,
         "headline_count": 40,
-        "major_event_count": 6,
+        "major_event_count": 7,
         "proxy_used": false,
         "real_data": true,
         "status": "available"
@@ -13995,7 +14000,7 @@
         "status": "available"
       }
     },
-    "generated_at": "2026-11-24T04:53:59.704699+00:00",
+    "generated_at": "2026-11-24T05:30:44.055274+00:00",
     "notes": [
       "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
       "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -14767,27 +14772,27 @@
       "finnhub_quote_QQQ": {
         "fallback_used": false,
         "latest_date": null,
-        "missing_data": true,
-        "point_in_time_safe": false,
-        "rate_limited": true,
-        "real_data": false,
-        "rows": 0,
+        "missing_data": false,
+        "point_in_time_safe": true,
+        "rate_limited": false,
+        "real_data": true,
+        "rows": 1,
         "source": "finnhub",
-        "stale_data": false,
-        "status": "rate_limited",
+        "stale_data": true,
+        "status": "stale",
         "symbol": "finnhub_quote_QQQ"
       },
       "finnhub_quote_SPY": {
         "fallback_used": false,
         "latest_date": null,
-        "missing_data": true,
-        "point_in_time_safe": false,
-        "rate_limited": true,
-        "real_data": false,
-        "rows": 0,
+        "missing_data": false,
+        "point_in_time_safe": true,
+        "rate_limited": false,
+        "real_data": true,
+        "rows": 1,
         "source": "finnhub",
-        "stale_data": false,
-        "status": "rate_limited",
+        "stale_data": true,
+        "status": "stale",
         "symbol": "finnhub_quote_SPY"
       },
       "finnhub_rates_data": {
@@ -14907,10 +14912,10 @@
         "symbol": "macro_event_calendar"
       },
       "news_event_provider": {
-        "event_detection_confidence": 76,
+        "event_detection_confidence": 77,
         "fallback_used": false,
         "latest_date": "2026-11-23",
-        "major_event_count": 6,
+        "major_event_count": 7,
         "missing_data": false,
         "missing_reason": null,
         "narrative": "geopolitics_escalation_risk_off",
@@ -15035,16 +15040,16 @@
         "IWM"
       ],
       "breadth_required": true,
-      "can_append_forecast_record": true,
+      "can_append_forecast_record": false,
       "data_completeness_score": 87.0,
       "data_completeness_score_before_news_event": 85.0,
-      "data_freshness_status": "fresh",
+      "data_freshness_status": "market_open_unconfirmed",
       "data_source_status": "real_core_with_proxies",
       "expected_latest_trading_date": "2026-11-23",
       "fallback_used": true,
       "finnhub_available": true,
       "finnhub_missing": false,
-      "finnhub_rate_limited": true,
+      "finnhub_rate_limited": false,
       "flow_available": true,
       "flow_provider_status": "proxy",
       "flow_proxy_only": true,
@@ -15123,16 +15128,16 @@
       "fred_required": true,
       "fred_successful_series": [
         "IG_OAS",
-        "BAA_SPREAD",
+        "HY_OAS",
         "DGS2",
+        "BAA_SPREAD",
+        "DFII10",
+        "RECESSION",
         "DGS10",
         "FINANCIAL_STRESS",
-        "HY_OAS",
-        "DGS3MO",
-        "RECESSION",
-        "DFII10"
+        "DGS3MO"
       ],
-      "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-11-23。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
+      "freshness_warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-11-23，最近完整收盘交易日为 2026-11-23；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
       "gamma_available": false,
       "gamma_exposure_available": false,
       "latest_confirmed_market_date": "2026-11-23",
@@ -15140,8 +15145,6 @@
       "latest_market_date": "2026-11-23",
       "missing_data": true,
       "missing_key_sources": [
-        "finnhub_quote_SPY",
-        "finnhub_quote_QQQ",
         "finnhub_candle_SPY",
         "finnhub_candle_QQQ",
         "finnhub_candle_IWM",
@@ -15163,11 +15166,11 @@
       ],
       "news_event": {
         "available": true,
-        "event_detection_confidence": 76,
+        "event_detection_confidence": 77,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-11-24T04:53:59.713254+00:00",
-        "major_event_count": 6,
+        "last_update": "2026-11-24T05:30:44.059923+00:00",
+        "major_event_count": 7,
         "missing_reason": null,
         "news_direction": "risk_off",
         "news_event_partial": false,
@@ -15178,7 +15181,7 @@
       },
       "news_event_available": true,
       "news_event_event_risk_level": "high",
-      "news_event_major_count": 6,
+      "news_event_major_count": 7,
       "news_event_missing_reason": null,
       "news_event_narrative": "geopolitics_escalation_risk_off",
       "news_event_partial": false,
@@ -15218,7 +15221,7 @@
   },
   "event_refresh": false,
   "feature_snapshot_v2": {
-    "generated_at": "2026-11-24T04:53:59.689419+00:00",
+    "generated_at": "2026-11-24T05:30:44.048612+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -15456,7 +15459,7 @@
     "version": "market_intelligence_engine_v2_features"
   },
   "feature_snapshot_v3": {
-    "generated_at": "2026-11-24T04:53:59.695977+00:00",
+    "generated_at": "2026-11-24T05:30:44.051450+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -15616,11 +15619,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.1,
           "top_headlines": [
+            "Oil holds near three-month low as rising supply offsets Hormuz threat - Reuters",
+            "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
             "US eyes Iran as possible culprit in dozens of new cyberattacks against ships, WSJ reports - Reuters",
             "CrowdStrike CEO defends Zscaler acquisition, calls it a 'winning combination'",
-            "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters",
-            "Nvidia sets options-trading record after CEO comeback. Here are the big trades",
-            "Jim Cramer sees more upside for Nvidia stock with Jensen Huang back as CEO"
+            "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters"
           ]
         },
         "price": {
@@ -15852,11 +15855,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.1,
           "top_headlines": [
+            "Oil holds near three-month low as rising supply offsets Hormuz threat - Reuters",
+            "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
             "US eyes Iran as possible culprit in dozens of new cyberattacks against ships, WSJ reports - Reuters",
             "CrowdStrike CEO defends Zscaler acquisition, calls it a 'winning combination'",
-            "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters",
-            "Nvidia sets options-trading record after CEO comeback. Here are the big trades",
-            "Jim Cramer sees more upside for Nvidia stock with Jensen Huang back as CEO"
+            "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters"
           ]
         },
         "price": {
@@ -16016,8 +16019,8 @@
           "ig_oas_20d_change": 0.06999999999999995
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote unavailable; news risk 10%; no major macro event flag; rates pressure 10%.",
-          "finnhub_quote_available": false,
+          "brief": "Finnhub quote 651.03; news risk 10%; no major macro event flag; rates pressure 10%.",
+          "finnhub_quote_available": true,
           "macro_event_risk_flag": false,
           "news_risk_score": 0.1,
           "rates_pressure_score": 0.09541697645261095,
@@ -16026,11 +16029,11 @@
         "finnhub": {
           "candle_status": "failed",
           "news_sentiment_status": "failed",
-          "quote_change_percent": null,
-          "quote_previous_close": null,
-          "quote_price": null,
+          "quote_change_percent": 6.9981,
+          "quote_previous_close": 608.45,
+          "quote_price": 651.03,
           "quote_source": "finnhub",
-          "quote_status": "rate_limited",
+          "quote_status": "available",
           "sentiment_score": null
         },
         "flow_positioning_proxy": {
@@ -16088,11 +16091,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.1,
           "top_headlines": [
+            "Oil holds near three-month low as rising supply offsets Hormuz threat - Reuters",
+            "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
             "US eyes Iran as possible culprit in dozens of new cyberattacks against ships, WSJ reports - Reuters",
             "CrowdStrike CEO defends Zscaler acquisition, calls it a 'winning combination'",
-            "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters",
-            "Nvidia sets options-trading record after CEO comeback. Here are the big trades",
-            "Jim Cramer sees more upside for Nvidia stock with Jensen Huang back as CEO"
+            "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters"
           ]
         },
         "price": {
@@ -16252,8 +16255,8 @@
           "ig_oas_20d_change": 0.06999999999999995
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote unavailable; news risk 10%; no major macro event flag; rates pressure 10%.",
-          "finnhub_quote_available": false,
+          "brief": "Finnhub quote 722.29; news risk 10%; no major macro event flag; rates pressure 10%.",
+          "finnhub_quote_available": true,
           "macro_event_risk_flag": false,
           "news_risk_score": 0.1,
           "rates_pressure_score": 0.09541697645261095,
@@ -16262,11 +16265,11 @@
         "finnhub": {
           "candle_status": "failed",
           "news_sentiment_status": "failed",
-          "quote_change_percent": null,
-          "quote_previous_close": null,
-          "quote_price": null,
+          "quote_change_percent": 4.7085,
+          "quote_previous_close": 689.81,
+          "quote_price": 722.29,
           "quote_source": "finnhub",
-          "quote_status": "rate_limited",
+          "quote_status": "available",
           "sentiment_score": null
         },
         "flow_positioning_proxy": {
@@ -16324,11 +16327,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.1,
           "top_headlines": [
+            "Oil holds near three-month low as rising supply offsets Hormuz threat - Reuters",
+            "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
             "US eyes Iran as possible culprit in dozens of new cyberattacks against ships, WSJ reports - Reuters",
             "CrowdStrike CEO defends Zscaler acquisition, calls it a 'winning combination'",
-            "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters",
-            "Nvidia sets options-trading record after CEO comeback. Here are the big trades",
-            "Jim Cramer sees more upside for Nvidia stock with Jensen Huang back as CEO"
+            "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters"
           ]
         },
         "price": {
@@ -16406,7 +16409,7 @@
     "version": "market_intelligence_engine_v3_features"
   },
   "flow_positioning_status": {
-    "generated_at": "2026-11-24T04:53:53.093709+00:00",
+    "generated_at": "2026-11-24T05:30:35.232396+00:00",
     "latest_date": "2026-11-23",
     "provider": "flow_positioning_proxy",
     "sources": {
@@ -16857,7 +16860,7 @@
     ]
   },
   "flow_status": {
-    "generated_at": "2026-11-24T04:53:53.093709+00:00",
+    "generated_at": "2026-11-24T05:30:35.232396+00:00",
     "latest_date": "2026-11-23",
     "provider": "flow_positioning_proxy",
     "sources": {
@@ -18598,7 +18601,7 @@
       "primary_beats_secondary": "primary_path_not_better_than_secondary"
     },
     "current_evidence_level": "stronger_evidence",
-    "generated_at": "2026-11-24T04:54:12.363313+00:00",
+    "generated_at": "2026-11-24T05:30:57.658497+00:00",
     "guardrails": [
       "This scorecard validates probabilistic forecast paths, not trades.",
       "Forecast records are immutable except for future-outcome backfill fields.",
@@ -18704,6 +18707,7 @@
     "driver_counts": {
       "breadth_conflict_underweighted": 213,
       "breadth_follow_through_underweighted": 151,
+      "intraday_snapshot_risk": 1347,
       "model_underestimated_downside_or_failed_bounce": 602,
       "model_underestimated_upside_or_repair": 745,
       "news_data_gap_limited_attribution": 1347,
@@ -18714,7 +18718,7 @@
       "volatility_or_tail_risk_underweighted": 62,
       "volatility_repair_underweighted": 187
     },
-    "generated_at": "2026-11-24T04:54:12.845984+00:00",
+    "generated_at": "2026-11-24T05:30:57.926142+00:00",
     "guardrails": [
       "This is forecast error attribution, not a trading or PnL report.",
       "Attribution is diagnostic and probabilistic; it is not proof of causality.",
@@ -18751,7 +18755,8 @@
         "likely_error_drivers": [
           "model_underestimated_upside_or_repair",
           "risk_off_news_overweighted_or_resolved",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -18813,7 +18818,8 @@
         "likely_error_drivers": [
           "model_underestimated_upside_or_repair",
           "risk_off_news_overweighted_or_resolved",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -18877,7 +18883,8 @@
         "likely_error_drivers": [
           "model_underestimated_upside_or_repair",
           "risk_off_news_overweighted_or_resolved",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -18938,7 +18945,8 @@
         "likely_error_drivers": [
           "model_underestimated_upside_or_repair",
           "risk_off_news_overweighted_or_resolved",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -19005,7 +19013,8 @@
           "volatility_or_tail_risk_underweighted",
           "breadth_conflict_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -19071,7 +19080,8 @@
           "volatility_or_tail_risk_underweighted",
           "breadth_conflict_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -19137,7 +19147,8 @@
           "news_event_risk_underweighted",
           "volatility_or_tail_risk_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -19264,7 +19275,8 @@
           "volatility_or_tail_risk_underweighted",
           "breadth_conflict_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -19508,7 +19520,8 @@
           "volatility_or_tail_risk_underweighted",
           "breadth_conflict_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -19573,7 +19586,8 @@
           "news_event_risk_underweighted",
           "volatility_or_tail_risk_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -19762,7 +19776,8 @@
           "volatility_or_tail_risk_underweighted",
           "breadth_conflict_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -19826,7 +19841,8 @@
           "news_event_risk_underweighted",
           "volatility_or_tail_risk_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -19891,7 +19907,8 @@
           "news_event_risk_underweighted",
           "volatility_or_tail_risk_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -19958,7 +19975,8 @@
           "news_event_risk_underweighted",
           "volatility_or_tail_risk_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -20027,7 +20045,8 @@
         "likely_error_drivers": [
           "model_underestimated_upside_or_repair",
           "risk_off_news_overweighted_or_resolved",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -20085,7 +20104,8 @@
         "likely_error_drivers": [
           "model_underestimated_upside_or_repair",
           "risk_off_news_overweighted_or_resolved",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -20147,7 +20167,8 @@
         "horizon": "1d",
         "likely_error_drivers": [
           "model_underestimated_upside_or_repair",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -20265,7 +20286,8 @@
           "news_event_risk_underweighted",
           "volatility_or_tail_risk_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -20336,7 +20358,8 @@
           "volatility_or_tail_risk_underweighted",
           "breadth_conflict_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -20513,7 +20536,8 @@
           "news_event_risk_underweighted",
           "volatility_or_tail_risk_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -20584,7 +20608,8 @@
           "volatility_or_tail_risk_underweighted",
           "breadth_conflict_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -20986,7 +21011,8 @@
           "model_underestimated_downside_or_failed_bounce",
           "news_event_risk_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -21056,7 +21082,8 @@
           "news_event_risk_underweighted",
           "breadth_conflict_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -21118,7 +21145,8 @@
           "model_underestimated_downside_or_failed_bounce",
           "news_event_risk_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -21183,7 +21211,8 @@
           "model_underestimated_downside_or_failed_bounce",
           "news_event_risk_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -21247,7 +21276,8 @@
           "model_underestimated_downside_or_failed_bounce",
           "news_event_risk_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -21317,7 +21347,8 @@
           "news_event_risk_underweighted",
           "breadth_conflict_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -21379,7 +21410,8 @@
           "model_underestimated_downside_or_failed_bounce",
           "news_event_risk_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -21444,7 +21476,8 @@
           "model_underestimated_downside_or_failed_bounce",
           "news_event_risk_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -21514,7 +21547,8 @@
           "news_event_risk_underweighted",
           "breadth_conflict_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -21575,7 +21609,8 @@
           "model_underestimated_downside_or_failed_bounce",
           "news_event_risk_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -21640,7 +21675,8 @@
           "model_underestimated_downside_or_failed_bounce",
           "news_event_risk_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -21705,7 +21741,8 @@
           "model_underestimated_downside_or_failed_bounce",
           "news_event_risk_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -21771,7 +21808,8 @@
           "model_underestimated_downside_or_failed_bounce",
           "news_event_risk_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -21836,7 +21874,8 @@
           "model_underestimated_downside_or_failed_bounce",
           "news_event_risk_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -21903,7 +21942,8 @@
           "model_underestimated_downside_or_failed_bounce",
           "news_event_risk_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -21974,7 +22014,8 @@
           "news_event_risk_underweighted",
           "breadth_conflict_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -22035,7 +22076,8 @@
           "model_underestimated_downside_or_failed_bounce",
           "news_event_risk_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -22101,7 +22143,8 @@
           "model_underestimated_downside_or_failed_bounce",
           "news_event_risk_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -22166,7 +22209,8 @@
           "model_underestimated_downside_or_failed_bounce",
           "news_event_risk_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -22238,7 +22282,8 @@
           "news_event_risk_underweighted",
           "breadth_conflict_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -22299,7 +22344,8 @@
           "model_underestimated_downside_or_failed_bounce",
           "news_event_risk_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -22365,7 +22411,8 @@
           "model_underestimated_downside_or_failed_bounce",
           "news_event_risk_underweighted",
           "risk_off_flow_underweighted",
-          "news_data_gap_limited_attribution"
+          "news_data_gap_limited_attribution",
+          "intraday_snapshot_risk"
         ],
         "material_deviation": true,
         "missing_data_at_forecast": [
@@ -22539,6 +22586,13 @@
         },
         {
           "baseline_change_allowed": false,
+          "count": 1347,
+          "driver": "intraday_snapshot_risk",
+          "future_model_action": "keep_observing_until_forward_sample_gate",
+          "lesson": "盘中快照未确认时，不应冻结为正式收盘预测。"
+        },
+        {
+          "baseline_change_allowed": false,
           "count": 745,
           "driver": "model_underestimated_upside_or_repair",
           "future_model_action": "keep_observing_until_forward_sample_gate",
@@ -22630,7 +22684,7 @@
     "summary": {
       "completed_outcomes_reviewed": 2364,
       "correction_policy": "past_forecasts_are_not_rewritten_only_actuals_and_error_fields_are_backfilled",
-      "data_freshness_status": "fresh",
+      "data_freshness_status": "market_open_unconfirmed",
       "deduped_legacy_rows": 0,
       "dominant_error_theme": "news_data_gap_limited_attribution",
       "evidence_level": "stronger_evidence",
@@ -22643,6 +22697,10 @@
       "raw_forecast_rows": 460,
       "total_forecast_records": 460,
       "update_blockers": [
+        {
+          "detail": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-11-23，最近完整收盘交易日为 2026-11-23；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
+          "reason": "market_open_unconfirmed"
+        },
         {
           "detail": "Latest market date 2026-11-23 is not after latest forecast date 2026-11-23, so no completed 1d/3d/5d outcome can be scored yet.",
           "reason": "no_future_market_close_yet"
@@ -22762,7 +22820,7 @@
     },
     "dominant_error_theme": "news_data_gap_limited_attribution",
     "evidence_level": "stronger_evidence",
-    "generated_at": "2026-11-24T04:54:12.883211+00:00",
+    "generated_at": "2026-11-24T05:30:57.945741+00:00",
     "global_learning_status": "shadow_challenger_queue_ready",
     "guardrails": [
       "This queue does not change baseline_v1 or Alpha v1.",
@@ -22782,8 +22840,9 @@
   },
   "forecast_ledger_summary": {
     "active_model_version": "baseline_v1",
-    "append_current_forecast": true,
-    "backfill_only": false,
+    "append_current_forecast": false,
+    "backfill_attempted": true,
+    "backfill_only": true,
     "completed_by_horizon": {
       "10d": 420,
       "1d": 456,
@@ -22792,21 +22851,27 @@
       "5d": 440,
       "60d": 220
     },
-    "generated_at": "2026-11-24T04:54:12.238445+00:00",
-    "immutability_note": "Forecast fields are write-once by forecast_id. Backfill may update only actual_return, best_matching_scenario, primary_hit, path_error and status fields.",
+    "data_freshness_status": "market_open_unconfirmed",
+    "expected_latest_trading_date": "2026-11-23",
+    "generated_at": "2026-11-24T05:30:57.594753Z",
+    "immutability_note": "The dashboard may refresh a snapshot, but baseline_v1 forecast records are appended only after data freshness is confirmed.",
+    "latest_market_date": "2026-11-23",
+    "ledger_append_skipped": true,
     "max_confirmed_market_date": "2026-11-23",
-    "new_records_considered": 4,
-    "not_trading_note": "This is a forecast accuracy ledger, not a paper-trading, execution or PnL ledger.",
+    "new_records_considered": 0,
+    "not_trading_note": "This is a forecast accuracy ledger, not a trading, execution or PnL ledger.",
     "pending_records": 240,
+    "reason": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-11-23，最近完整收盘交易日为 2026-11-23；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
     "records_path": "/home/runner/work/market-predictor/market-predictor/outputs/forecast_records.csv",
     "total_records": 460,
     "unique_validation_records": 460,
+    "validation_type": "freshness_blocked",
     "version": "forecast_accuracy_ledger_v1"
   },
   "forecast_price_levels": {
     "as_of": "2026-11-23",
     "disclaimer": "Forecast price levels are probabilistic scenario points derived from simulated paths, recent price structure and volatility bands. They are not execution instructions, risk-control rules, or guaranteed target prices.",
-    "generated_at": "2026-11-24T04:54:11.514056Z",
+    "generated_at": "2026-11-24T05:30:57.217149Z",
     "symbols": {
       "DIA": {
         "current_price": 495.79998779296875,
@@ -24549,7 +24614,7 @@
     "version": "forecast_price_levels_v1"
   },
   "forecast_records": {
-    "generated_at": "2026-11-24T04:54:12.305710+00:00",
+    "generated_at": "2026-11-24T05:30:57.628118+00:00",
     "records": [
       {
         "actual_return_10d": 0.01680114442,
@@ -89840,7 +89905,7 @@
       }
     ],
     "data_completeness_score": 87.0,
-    "data_freshness_status": "fresh",
+    "data_freshness_status": "market_open_unconfirmed",
     "expected_latest_trading_date": "2026-11-23",
     "forward_completed_samples": {
       "10d": 420,
@@ -89850,7 +89915,7 @@
       "5d": 440,
       "60d": 220
     },
-    "generated_at": "2026-11-24T04:54:12.883137+00:00",
+    "generated_at": "2026-11-24T05:30:57.945691+00:00",
     "guardrails": [
       "This gate does not modify Alpha v1 threshold, baseline_v1 or historical forecast records.",
       "This is forecast reliability assessment, not trading advice.",
@@ -89870,7 +89935,6 @@
       "Route repeated deviation themes into a challenger model rather than editing baseline_v1."
     ],
     "passes": [
-      "data_is_current_or_market_closed",
       "data_completeness_85_plus",
       "forward_sample_gate_passed"
     ],
@@ -89925,11 +89989,16 @@
         "secondary_scenario": "analog_average_path"
       }
     },
-    "trust_score": 57,
+    "trust_score": 45,
     "use_boundary": "Use as a research radar and scenario explainer only; do not treat it as a dependable forecasting edge.",
     "validation_type": "forecast_reliability_gate",
     "version": "forecast_trust_gate_v1",
     "warnings": [
+      {
+        "code": "market_open_unconfirmed",
+        "message": "Current data is an intraday or unconfirmed snapshot; do not freeze it as a validated daily forecast.",
+        "severity": "medium"
+      },
       {
         "code": "high_confidence_not_validated",
         "details": {
@@ -91647,7 +91716,7 @@
     },
     "forward_completed_sample_size": 216,
     "forward_validation_notice": "Forward samples have started to mature, but alpha status remains research-only until stability is proven.",
-    "generated_at": "2026-11-24T04:53:59.709871+00:00",
+    "generated_at": "2026-11-24T05:30:44.058084+00:00",
     "internal_resonance_forward_validation": {
       "aligned_internal_resonance": {
         "by_horizon": {
@@ -92573,7 +92642,7 @@
       }
     },
     "conclusion": "confidence_not_yet_validated",
-    "generated_at": "2026-11-24T04:53:59.703917+00:00",
+    "generated_at": "2026-11-24T05:30:44.054889+00:00",
     "high_confidence_better_than_low_confidence": false,
     "high_vs_low_comparison_by_horizon": {
       "10d": false,
@@ -95084,7 +95153,7 @@
       "note": "Historical replay cannot upgrade alpha or confidence until forward validation samples mature.",
       "sample_gate": "stronger_evidence"
     },
-    "generated_at": "2026-11-24T04:54:12.880472+00:00",
+    "generated_at": "2026-11-24T05:30:57.944334+00:00",
     "guardrails": [
       "Historical replay is research evaluation only and cannot replace daily forward validation.",
       "Historical replay results must not be described as confirmed alpha.",
@@ -96614,7 +96683,7 @@
   },
   "market_alerts": {
     "disclaimer": "Market alerts are forecast warnings and scenario-confirmation notes only. They are not trading signals or buy/sell/entry/exit guidance.",
-    "generated_at": "2026-11-24T04:54:11.519551+00:00",
+    "generated_at": "2026-11-24T05:30:57.220057+00:00",
     "summary": {
       "alert_count_by_level": {
         "EXTREME": 0,
@@ -99704,7 +99773,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-11-24T04:53:59.688449+00:00",
+      "generated_at": "2026-11-24T05:30:44.048144+00:00",
       "notes": [
         "price/volatility/credit/rates/liquidity currently use public market proxies.",
         "options breadth macro flow are not treated as available unless real feeds are connected.",
@@ -99840,7 +99909,7 @@
       }
     },
     "feature_snapshot_v2": {
-      "generated_at": "2026-11-24T04:53:59.689419+00:00",
+      "generated_at": "2026-11-24T05:30:44.048612+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -100077,7 +100146,7 @@
       },
       "version": "market_intelligence_engine_v2_features"
     },
-    "generated_at": "2026-11-24T04:53:59.689994+00:00",
+    "generated_at": "2026-11-24T05:30:44.048924+00:00",
     "model_confidence_by_symbol": {
       "DIA": {
         "components": {
@@ -100273,7 +100342,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-11-24T04:53:59.700144+00:00",
+      "generated_at": "2026-11-24T05:30:44.053024+00:00",
       "notes": [
         "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
         "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -101044,27 +101113,27 @@
         "finnhub_quote_QQQ": {
           "fallback_used": false,
           "latest_date": null,
-          "missing_data": true,
-          "point_in_time_safe": false,
-          "rate_limited": true,
-          "real_data": false,
-          "rows": 0,
+          "missing_data": false,
+          "point_in_time_safe": true,
+          "rate_limited": false,
+          "real_data": true,
+          "rows": 1,
           "source": "finnhub",
-          "stale_data": false,
-          "status": "rate_limited",
+          "stale_data": true,
+          "status": "stale",
           "symbol": "finnhub_quote_QQQ"
         },
         "finnhub_quote_SPY": {
           "fallback_used": false,
           "latest_date": null,
-          "missing_data": true,
-          "point_in_time_safe": false,
-          "rate_limited": true,
-          "real_data": false,
-          "rows": 0,
+          "missing_data": false,
+          "point_in_time_safe": true,
+          "rate_limited": false,
+          "real_data": true,
+          "rows": 1,
           "source": "finnhub",
-          "stale_data": false,
-          "status": "rate_limited",
+          "stale_data": true,
+          "status": "stale",
           "symbol": "finnhub_quote_SPY"
         },
         "finnhub_rates_data": {
@@ -101289,7 +101358,7 @@
         "fallback_used": true,
         "finnhub_available": true,
         "finnhub_missing": false,
-        "finnhub_rate_limited": true,
+        "finnhub_rate_limited": false,
         "flow_available": true,
         "flow_proxy_only": true,
         "flow_required": true,
@@ -101298,8 +101367,6 @@
         "latest_date": "2026-11-23",
         "missing_data": true,
         "missing_key_sources": [
-          "finnhub_quote_SPY",
-          "finnhub_quote_QQQ",
           "finnhub_candle_SPY",
           "finnhub_candle_QQQ",
           "finnhub_candle_IWM",
@@ -101404,7 +101471,7 @@
       }
     },
     "feature_snapshot_v3": {
-      "generated_at": "2026-11-24T04:53:59.695977+00:00",
+      "generated_at": "2026-11-24T05:30:44.051450+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -101564,11 +101631,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.1,
             "top_headlines": [
+              "Oil holds near three-month low as rising supply offsets Hormuz threat - Reuters",
+              "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
               "US eyes Iran as possible culprit in dozens of new cyberattacks against ships, WSJ reports - Reuters",
               "CrowdStrike CEO defends Zscaler acquisition, calls it a 'winning combination'",
-              "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters",
-              "Nvidia sets options-trading record after CEO comeback. Here are the big trades",
-              "Jim Cramer sees more upside for Nvidia stock with Jensen Huang back as CEO"
+              "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters"
             ]
           },
           "price": {
@@ -101800,11 +101867,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.1,
             "top_headlines": [
+              "Oil holds near three-month low as rising supply offsets Hormuz threat - Reuters",
+              "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
               "US eyes Iran as possible culprit in dozens of new cyberattacks against ships, WSJ reports - Reuters",
               "CrowdStrike CEO defends Zscaler acquisition, calls it a 'winning combination'",
-              "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters",
-              "Nvidia sets options-trading record after CEO comeback. Here are the big trades",
-              "Jim Cramer sees more upside for Nvidia stock with Jensen Huang back as CEO"
+              "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters"
             ]
           },
           "price": {
@@ -101964,8 +102031,8 @@
             "ig_oas_20d_change": 0.06999999999999995
           },
           "daily_market_brief": {
-            "brief": "Finnhub quote unavailable; news risk 10%; no major macro event flag; rates pressure 10%.",
-            "finnhub_quote_available": false,
+            "brief": "Finnhub quote 651.03; news risk 10%; no major macro event flag; rates pressure 10%.",
+            "finnhub_quote_available": true,
             "macro_event_risk_flag": false,
             "news_risk_score": 0.1,
             "rates_pressure_score": 0.09541697645261095,
@@ -101974,11 +102041,11 @@
           "finnhub": {
             "candle_status": "failed",
             "news_sentiment_status": "failed",
-            "quote_change_percent": null,
-            "quote_previous_close": null,
-            "quote_price": null,
+            "quote_change_percent": 6.9981,
+            "quote_previous_close": 608.45,
+            "quote_price": 651.03,
             "quote_source": "finnhub",
-            "quote_status": "rate_limited",
+            "quote_status": "available",
             "sentiment_score": null
           },
           "flow_positioning_proxy": {
@@ -102036,11 +102103,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.1,
             "top_headlines": [
+              "Oil holds near three-month low as rising supply offsets Hormuz threat - Reuters",
+              "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
               "US eyes Iran as possible culprit in dozens of new cyberattacks against ships, WSJ reports - Reuters",
               "CrowdStrike CEO defends Zscaler acquisition, calls it a 'winning combination'",
-              "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters",
-              "Nvidia sets options-trading record after CEO comeback. Here are the big trades",
-              "Jim Cramer sees more upside for Nvidia stock with Jensen Huang back as CEO"
+              "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters"
             ]
           },
           "price": {
@@ -102200,8 +102267,8 @@
             "ig_oas_20d_change": 0.06999999999999995
           },
           "daily_market_brief": {
-            "brief": "Finnhub quote unavailable; news risk 10%; no major macro event flag; rates pressure 10%.",
-            "finnhub_quote_available": false,
+            "brief": "Finnhub quote 722.29; news risk 10%; no major macro event flag; rates pressure 10%.",
+            "finnhub_quote_available": true,
             "macro_event_risk_flag": false,
             "news_risk_score": 0.1,
             "rates_pressure_score": 0.09541697645261095,
@@ -102210,11 +102277,11 @@
           "finnhub": {
             "candle_status": "failed",
             "news_sentiment_status": "failed",
-            "quote_change_percent": null,
-            "quote_previous_close": null,
-            "quote_price": null,
+            "quote_change_percent": 4.7085,
+            "quote_previous_close": 689.81,
+            "quote_price": 722.29,
             "quote_source": "finnhub",
-            "quote_status": "rate_limited",
+            "quote_status": "available",
             "sentiment_score": null
           },
           "flow_positioning_proxy": {
@@ -102272,11 +102339,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.1,
             "top_headlines": [
+              "Oil holds near three-month low as rising supply offsets Hormuz threat - Reuters",
+              "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
               "US eyes Iran as possible culprit in dozens of new cyberattacks against ships, WSJ reports - Reuters",
               "CrowdStrike CEO defends Zscaler acquisition, calls it a 'winning combination'",
-              "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters",
-              "Nvidia sets options-trading record after CEO comeback. Here are the big trades",
-              "Jim Cramer sees more upside for Nvidia stock with Jensen Huang back as CEO"
+              "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters"
             ]
           },
           "price": {
@@ -102358,8 +102425,8 @@
       "finnhub_cache_used": false,
       "finnhub_failed_requests": 9,
       "finnhub_missing": false,
-      "finnhub_rate_limited": true,
-      "finnhub_successful_requests": 5
+      "finnhub_rate_limited": false,
+      "finnhub_successful_requests": 7
     },
     "flow_status": {
       "average_flow_quality_score": 100.0,
@@ -102390,17 +102457,17 @@
       "fred_rate_limited": false,
       "fred_successful_series": [
         "IG_OAS",
-        "BAA_SPREAD",
+        "HY_OAS",
         "DGS2",
+        "BAA_SPREAD",
+        "DFII10",
+        "RECESSION",
         "DGS10",
         "FINANCIAL_STRESS",
-        "HY_OAS",
-        "DGS3MO",
-        "RECESSION",
-        "DFII10"
+        "DGS3MO"
       ]
     },
-    "generated_at": "2026-11-24T04:53:59.703949+00:00",
+    "generated_at": "2026-11-24T05:30:44.054898+00:00",
     "high_confidence_signal_report": {
       "by_bucket": {
         "low_confidence_reference": {
@@ -103069,7 +103136,7 @@
         }
       },
       "conclusion": "confidence_not_yet_validated",
-      "generated_at": "2026-11-24T04:53:59.703917+00:00",
+      "generated_at": "2026-11-24T05:30:44.054889+00:00",
       "high_confidence_better_than_low_confidence": false,
       "high_vs_low_comparison_by_horizon": {
         "10d": false,
@@ -103831,7 +103898,7 @@
         "evidence_note": "Forward-only sample gate has opened; compare breadth-supported buckets against conflicted buckets before raising confidence.",
         "status": "forward_ready"
       },
-      "generated_at": "2026-11-24T04:54:11.509262Z",
+      "generated_at": "2026-11-24T05:30:57.214366Z",
       "notes": [
         "This audit compares the same run with true breadth provider disabled vs enabled.",
         "The audit does not change Alpha v1 and does not prove tradable alpha.",
@@ -104059,7 +104126,7 @@
           "expected_items": 5,
           "fallback_used": false,
           "headline_count": 40,
-          "major_event_count": 6,
+          "major_event_count": 7,
           "proxy_used": false,
           "real_data": true,
           "status": "available"
@@ -104101,7 +104168,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-11-24T04:53:59.704699+00:00",
+      "generated_at": "2026-11-24T05:30:44.055274+00:00",
       "notes": [
         "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
         "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -104873,27 +104940,27 @@
         "finnhub_quote_QQQ": {
           "fallback_used": false,
           "latest_date": null,
-          "missing_data": true,
-          "point_in_time_safe": false,
-          "rate_limited": true,
-          "real_data": false,
-          "rows": 0,
+          "missing_data": false,
+          "point_in_time_safe": true,
+          "rate_limited": false,
+          "real_data": true,
+          "rows": 1,
           "source": "finnhub",
-          "stale_data": false,
-          "status": "rate_limited",
+          "stale_data": true,
+          "status": "stale",
           "symbol": "finnhub_quote_QQQ"
         },
         "finnhub_quote_SPY": {
           "fallback_used": false,
           "latest_date": null,
-          "missing_data": true,
-          "point_in_time_safe": false,
-          "rate_limited": true,
-          "real_data": false,
-          "rows": 0,
+          "missing_data": false,
+          "point_in_time_safe": true,
+          "rate_limited": false,
+          "real_data": true,
+          "rows": 1,
           "source": "finnhub",
-          "stale_data": false,
-          "status": "rate_limited",
+          "stale_data": true,
+          "status": "stale",
           "symbol": "finnhub_quote_SPY"
         },
         "finnhub_rates_data": {
@@ -105013,10 +105080,10 @@
           "symbol": "macro_event_calendar"
         },
         "news_event_provider": {
-          "event_detection_confidence": 76,
+          "event_detection_confidence": 77,
           "fallback_used": false,
           "latest_date": "2026-11-23",
-          "major_event_count": 6,
+          "major_event_count": 7,
           "missing_data": false,
           "missing_reason": null,
           "narrative": "geopolitics_escalation_risk_off",
@@ -105141,16 +105208,16 @@
           "IWM"
         ],
         "breadth_required": true,
-        "can_append_forecast_record": true,
+        "can_append_forecast_record": false,
         "data_completeness_score": 87.0,
         "data_completeness_score_before_news_event": 85.0,
-        "data_freshness_status": "fresh",
+        "data_freshness_status": "market_open_unconfirmed",
         "data_source_status": "real_core_with_proxies",
         "expected_latest_trading_date": "2026-11-23",
         "fallback_used": true,
         "finnhub_available": true,
         "finnhub_missing": false,
-        "finnhub_rate_limited": true,
+        "finnhub_rate_limited": false,
         "flow_available": true,
         "flow_provider_status": "proxy",
         "flow_proxy_only": true,
@@ -105229,16 +105296,16 @@
         "fred_required": true,
         "fred_successful_series": [
           "IG_OAS",
-          "BAA_SPREAD",
+          "HY_OAS",
           "DGS2",
+          "BAA_SPREAD",
+          "DFII10",
+          "RECESSION",
           "DGS10",
           "FINANCIAL_STRESS",
-          "HY_OAS",
-          "DGS3MO",
-          "RECESSION",
-          "DFII10"
+          "DGS3MO"
         ],
-        "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-11-23。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
+        "freshness_warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-11-23，最近完整收盘交易日为 2026-11-23；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
         "gamma_available": false,
         "gamma_exposure_available": false,
         "latest_confirmed_market_date": "2026-11-23",
@@ -105246,8 +105313,6 @@
         "latest_market_date": "2026-11-23",
         "missing_data": true,
         "missing_key_sources": [
-          "finnhub_quote_SPY",
-          "finnhub_quote_QQQ",
           "finnhub_candle_SPY",
           "finnhub_candle_QQQ",
           "finnhub_candle_IWM",
@@ -105269,11 +105334,11 @@
         ],
         "news_event": {
           "available": true,
-          "event_detection_confidence": 76,
+          "event_detection_confidence": 77,
           "event_risk_level": "high",
           "headline_count": 40,
-          "last_update": "2026-11-24T04:53:59.713254+00:00",
-          "major_event_count": 6,
+          "last_update": "2026-11-24T05:30:44.059923+00:00",
+          "major_event_count": 7,
           "missing_reason": null,
           "news_direction": "risk_off",
           "news_event_partial": false,
@@ -105284,7 +105349,7 @@
         },
         "news_event_available": true,
         "news_event_event_risk_level": "high",
-        "news_event_major_count": 6,
+        "news_event_major_count": 7,
         "news_event_missing_reason": null,
         "news_event_narrative": "geopolitics_escalation_risk_off",
         "news_event_partial": false,
@@ -105408,7 +105473,7 @@
       "available": true,
       "cache_used": false,
       "configured": true,
-      "rate_limited": true
+      "rate_limited": false
     },
     "fred_effect_summary": {
       "data_completeness_delta": 6,
@@ -105484,17 +105549,17 @@
       "rate_limited": false,
       "successful_series": [
         "IG_OAS",
-        "BAA_SPREAD",
+        "HY_OAS",
         "DGS2",
+        "BAA_SPREAD",
+        "DFII10",
+        "RECESSION",
         "DGS10",
         "FINANCIAL_STRESS",
-        "HY_OAS",
-        "DGS3MO",
-        "RECESSION",
-        "DFII10"
+        "DGS3MO"
       ]
     },
-    "generated_at": "2026-11-24T04:53:59.713231+00:00",
+    "generated_at": "2026-11-24T05:30:44.059914+00:00",
     "high_confidence_edge_report": {
       "breadth_forward_validation": {
         "bounce_with_breadth_support": {
@@ -106875,7 +106940,7 @@
       },
       "forward_completed_sample_size": 216,
       "forward_validation_notice": "Forward samples have started to mature, but alpha status remains research-only until stability is proven.",
-      "generated_at": "2026-11-24T04:53:59.709871+00:00",
+      "generated_at": "2026-11-24T05:30:44.058084+00:00",
       "internal_resonance_forward_validation": {
         "aligned_internal_resonance": {
           "by_horizon": {
@@ -107235,16 +107300,16 @@
         "source": "finnhub",
         "status": "failed"
       },
-      "event_detection_confidence": 76,
+      "event_detection_confidence": 77,
       "event_risk_level": "high",
-      "generated_at": "2026-11-24T04:53:59.713254+00:00",
+      "generated_at": "2026-11-24T05:30:44.059923+00:00",
       "limits": [
         "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
         "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
         "The provider never exposes API keys and never lets frontend call Finnhub directly.",
         "Economic calendar items are treated as event-risk context, not automatic directional forecasts."
       ],
-      "major_event_count": 6,
+      "major_event_count": 7,
       "major_events": [
         {
           "affected_assets": [
@@ -107265,7 +107330,60 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 89,
+          "freshness_score": 88,
+          "headline": "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
+          "importance_score": 100,
+          "narrative": "geopolitics_escalation_risk_off",
+          "provider": "finnhub",
+          "published_at": "2026-11-24T00:20:00+00:00",
+          "source": "Reuters"
+        },
+        {
+          "affected_assets": [
+            "SPY",
+            "QQQ",
+            "IWM",
+            "DIA",
+            "USO",
+            "XLE",
+            "^VIX"
+          ],
+          "confidence": "high",
+          "confidence_score": 80,
+          "detected_event_conditions": [
+            "oil_shock_risk"
+          ],
+          "event_type": "oil_shock_risk",
+          "expected_horizon": "intraday-10d",
+          "expected_market_direction": "risk_off",
+          "freshness_score": 94,
+          "headline": "Oil holds near three-month low as rising supply offsets Hormuz threat - Reuters",
+          "importance_score": 97,
+          "narrative": "oil_shock_risk",
+          "provider": "finnhub",
+          "published_at": "2026-11-24T02:56:00+00:00",
+          "source": "Reuters"
+        },
+        {
+          "affected_assets": [
+            "SPY",
+            "QQQ",
+            "IWM",
+            "DIA",
+            "^VIX",
+            "USO",
+            "UUP",
+            "TLT"
+          ],
+          "confidence": "high",
+          "confidence_score": 78,
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_horizon": "intraday-5d",
+          "expected_market_direction": "risk_off",
+          "freshness_score": 87,
           "headline": "US eyes Iran as possible culprit in dozens of new cyberattacks against ships, WSJ reports - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -107285,14 +107403,14 @@
             "TLT"
           ],
           "confidence": "high",
-          "confidence_score": 79,
+          "confidence_score": 78,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 88,
+          "freshness_score": 87,
           "headline": "CrowdStrike CEO defends Zscaler acquisition, calls it a 'winning combination'",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -107319,7 +107437,7 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 87,
+          "freshness_score": 85,
           "headline": "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -107339,14 +107457,14 @@
             "TLT"
           ],
           "confidence": "high",
-          "confidence_score": 77,
+          "confidence_score": 76,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 81,
+          "freshness_score": 79,
           "headline": "Belgian PM sets December 31 budget talks deadline amid national strike - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -107373,39 +107491,12 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 67,
+          "freshness_score": 65,
           "headline": "Israeli strikes kill at least three in Gaza, including worker with UN Palestinian agency - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
           "provider": "finnhub",
           "published_at": "2026-11-23T14:58:37+00:00",
-          "source": "Reuters"
-        },
-        {
-          "affected_assets": [
-            "SPY",
-            "QQQ",
-            "IWM",
-            "DIA",
-            "^VIX",
-            "USO",
-            "UUP",
-            "TLT"
-          ],
-          "confidence": "medium",
-          "confidence_score": 72,
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_horizon": "intraday-5d",
-          "expected_market_direction": "risk_off",
-          "freshness_score": 60,
-          "headline": "EU academy platform disabled after cyber attack on Commission, spokesperson says - Reuters",
-          "importance_score": 100,
-          "narrative": "geopolitics_escalation_risk_off",
-          "provider": "finnhub",
-          "published_at": "2026-11-23T12:15:43+00:00",
           "source": "Reuters"
         }
       ],
@@ -107428,6 +107519,18 @@
         "narrative_strength": 100,
         "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
         "supporting_headlines": [
+          {
+            "confidence": "high",
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_market_direction": "risk_off",
+            "headline": "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
+            "importance_score": 100,
+            "published_at": "2026-11-24T00:20:00+00:00",
+            "source": "Reuters"
+          },
           {
             "confidence": "high",
             "detected_event_conditions": [
@@ -107487,18 +107590,6 @@
             "importance_score": 100,
             "published_at": "2026-11-23T14:58:37+00:00",
             "source": "Reuters"
-          },
-          {
-            "confidence": "medium",
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_market_direction": "risk_off",
-            "headline": "EU academy platform disabled after cyber attack on Commission, spokesperson says - Reuters",
-            "importance_score": 100,
-            "published_at": "2026-11-23T12:15:43+00:00",
-            "source": "Reuters"
           }
         ]
       },
@@ -107508,7 +107599,7 @@
         "direction": "supports_risk_expansion",
         "event_risk_level": "high",
         "macro_event_risk_flag": false,
-        "major_event_count": 6,
+        "major_event_count": 7,
         "not_a_trading_signal": true,
         "price_reaction_confirmed": false,
         "symbols": {
@@ -107647,7 +107738,7 @@
       "price_reaction_confirmation": {
         "asset_reaction_summary": {
           "avg_equity_1d_return": 0.0458,
-          "avg_equity_futures_1d_return": 0.0017,
+          "avg_equity_futures_1d_return": 0.0026,
           "confirmed_checks": [
             "美元走强"
           ],
@@ -107663,7 +107754,7 @@
             "HYG/LQD 走弱"
           ],
           "hyg_lqd_1d_relative_return": 0.0002,
-          "oil_proxy_1d_return": -0.0257,
+          "oil_proxy_1d_return": -0.0272,
           "oil_proxy_symbols_used": [
             "USO",
             "CL=F"
@@ -107690,7 +107781,7 @@
           "status": "available"
         },
         "gdelt_public_news": {
-          "error_type": "HTTPError",
+          "error_type": "URLError",
           "source": "gdelt",
           "stale": false,
           "status": "failed"
@@ -107776,7 +107867,7 @@
       "direction": "supports_risk_expansion",
       "event_risk_level": "high",
       "macro_event_risk_flag": false,
-      "major_event_count": 6,
+      "major_event_count": 7,
       "not_a_trading_signal": true,
       "price_reaction_confirmed": false,
       "symbols": {
@@ -109674,7 +109765,7 @@
         "primary_mean_absolute_error": 0.041192
       }
     },
-    "generated_at": "2026-11-24T04:54:13.087994+00:00",
+    "generated_at": "2026-11-24T05:30:58.048080+00:00",
     "guardrails": [
       "Alpha v1 threshold remains frozen at 0.32534311.",
       "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -110498,7 +110589,7 @@
   },
   "model_promotion_status": {
     "active_model_version": "baseline_v1",
-    "generated_at": "2026-11-24T04:54:13.088086+00:00",
+    "generated_at": "2026-11-24T05:30:58.048128+00:00",
     "guardrails": [
       "Alpha v1 threshold remains frozen at 0.32534311.",
       "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -110670,16 +110761,16 @@
       "source": "finnhub",
       "status": "failed"
     },
-    "event_detection_confidence": 76,
+    "event_detection_confidence": 77,
     "event_risk_level": "high",
-    "generated_at": "2026-11-24T04:53:59.713254+00:00",
+    "generated_at": "2026-11-24T05:30:44.059923+00:00",
     "limits": [
       "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
       "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
       "The provider never exposes API keys and never lets frontend call Finnhub directly.",
       "Economic calendar items are treated as event-risk context, not automatic directional forecasts."
     ],
-    "major_event_count": 6,
+    "major_event_count": 7,
     "major_events": [
       {
         "affected_assets": [
@@ -110700,7 +110791,60 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 89,
+        "freshness_score": 88,
+        "headline": "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
+        "importance_score": 100,
+        "narrative": "geopolitics_escalation_risk_off",
+        "provider": "finnhub",
+        "published_at": "2026-11-24T00:20:00+00:00",
+        "source": "Reuters"
+      },
+      {
+        "affected_assets": [
+          "SPY",
+          "QQQ",
+          "IWM",
+          "DIA",
+          "USO",
+          "XLE",
+          "^VIX"
+        ],
+        "confidence": "high",
+        "confidence_score": 80,
+        "detected_event_conditions": [
+          "oil_shock_risk"
+        ],
+        "event_type": "oil_shock_risk",
+        "expected_horizon": "intraday-10d",
+        "expected_market_direction": "risk_off",
+        "freshness_score": 94,
+        "headline": "Oil holds near three-month low as rising supply offsets Hormuz threat - Reuters",
+        "importance_score": 97,
+        "narrative": "oil_shock_risk",
+        "provider": "finnhub",
+        "published_at": "2026-11-24T02:56:00+00:00",
+        "source": "Reuters"
+      },
+      {
+        "affected_assets": [
+          "SPY",
+          "QQQ",
+          "IWM",
+          "DIA",
+          "^VIX",
+          "USO",
+          "UUP",
+          "TLT"
+        ],
+        "confidence": "high",
+        "confidence_score": 78,
+        "detected_event_conditions": [
+          "geopolitical_risk_escalation"
+        ],
+        "event_type": "geopolitical_risk_escalation",
+        "expected_horizon": "intraday-5d",
+        "expected_market_direction": "risk_off",
+        "freshness_score": 87,
         "headline": "US eyes Iran as possible culprit in dozens of new cyberattacks against ships, WSJ reports - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -110720,14 +110864,14 @@
           "TLT"
         ],
         "confidence": "high",
-        "confidence_score": 79,
+        "confidence_score": 78,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 88,
+        "freshness_score": 87,
         "headline": "CrowdStrike CEO defends Zscaler acquisition, calls it a 'winning combination'",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -110754,7 +110898,7 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 87,
+        "freshness_score": 85,
         "headline": "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -110774,14 +110918,14 @@
           "TLT"
         ],
         "confidence": "high",
-        "confidence_score": 77,
+        "confidence_score": 76,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 81,
+        "freshness_score": 79,
         "headline": "Belgian PM sets December 31 budget talks deadline amid national strike - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -110808,39 +110952,12 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 67,
+        "freshness_score": 65,
         "headline": "Israeli strikes kill at least three in Gaza, including worker with UN Palestinian agency - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
         "provider": "finnhub",
         "published_at": "2026-11-23T14:58:37+00:00",
-        "source": "Reuters"
-      },
-      {
-        "affected_assets": [
-          "SPY",
-          "QQQ",
-          "IWM",
-          "DIA",
-          "^VIX",
-          "USO",
-          "UUP",
-          "TLT"
-        ],
-        "confidence": "medium",
-        "confidence_score": 72,
-        "detected_event_conditions": [
-          "geopolitical_risk_escalation"
-        ],
-        "event_type": "geopolitical_risk_escalation",
-        "expected_horizon": "intraday-5d",
-        "expected_market_direction": "risk_off",
-        "freshness_score": 60,
-        "headline": "EU academy platform disabled after cyber attack on Commission, spokesperson says - Reuters",
-        "importance_score": 100,
-        "narrative": "geopolitics_escalation_risk_off",
-        "provider": "finnhub",
-        "published_at": "2026-11-23T12:15:43+00:00",
         "source": "Reuters"
       }
     ],
@@ -110863,6 +110980,18 @@
       "narrative_strength": 100,
       "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
       "supporting_headlines": [
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
+          "headline": "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
+          "importance_score": 100,
+          "published_at": "2026-11-24T00:20:00+00:00",
+          "source": "Reuters"
+        },
         {
           "confidence": "high",
           "detected_event_conditions": [
@@ -110922,18 +111051,6 @@
           "importance_score": 100,
           "published_at": "2026-11-23T14:58:37+00:00",
           "source": "Reuters"
-        },
-        {
-          "confidence": "medium",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "EU academy platform disabled after cyber attack on Commission, spokesperson says - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-11-23T12:15:43+00:00",
-          "source": "Reuters"
         }
       ]
     },
@@ -110943,7 +111060,7 @@
       "direction": "supports_risk_expansion",
       "event_risk_level": "high",
       "macro_event_risk_flag": false,
-      "major_event_count": 6,
+      "major_event_count": 7,
       "not_a_trading_signal": true,
       "price_reaction_confirmed": false,
       "symbols": {
@@ -111082,7 +111199,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": 0.0458,
-        "avg_equity_futures_1d_return": 0.0017,
+        "avg_equity_futures_1d_return": 0.0026,
         "confirmed_checks": [
           "美元走强"
         ],
@@ -111098,7 +111215,7 @@
           "HYG/LQD 走弱"
         ],
         "hyg_lqd_1d_relative_return": 0.0002,
-        "oil_proxy_1d_return": -0.0257,
+        "oil_proxy_1d_return": -0.0272,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -111125,7 +111242,7 @@
         "status": "available"
       },
       "gdelt_public_news": {
-        "error_type": "HTTPError",
+        "error_type": "URLError",
         "source": "gdelt",
         "stale": false,
         "status": "failed"
@@ -111207,7 +111324,7 @@
     "version": "news_event_intelligence_v1"
   },
   "options_status": {
-    "generated_at": "2026-11-24T04:53:53.087892+00:00",
+    "generated_at": "2026-11-24T05:30:35.229097+00:00",
     "market": {
       "failed_bounce_options_risk": 0.9374,
       "gamma_exposure": null,
@@ -111492,16 +111609,21 @@
   },
   "overview": {
     "as_of": "2026-11-23",
-    "dashboard_status": "forecast_validation",
+    "dashboard_status": "market_open_unconfirmed",
     "data_freshness_status": {
-      "affected_symbols": [],
-      "can_append_forecast_record": true,
+      "affected_symbols": [
+        "SPY",
+        "QQQ",
+        "IWM",
+        "DIA"
+      ],
+      "can_append_forecast_record": false,
       "can_backfill_completed_outcomes": true,
-      "current_date": "2026-11-23",
-      "current_time_us_eastern": "2026-11-23T23:54:11.519641-05:00",
-      "data_freshness_status": "fresh",
+      "current_date": "2026-11-24",
+      "current_time_us_eastern": "2026-11-24T00:30:57.220112-05:00",
+      "data_freshness_status": "market_open_unconfirmed",
       "expected_latest_trading_date": "2026-11-23",
-      "generated_at": "2026-11-24T04:54:11.519641+00:00",
+      "generated_at": "2026-11-24T05:30:57.220112+00:00",
       "guardrails": [
         "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
         "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -111515,7 +111637,7 @@
       "last_successful_update": "2026-11-23",
       "latest_confirmed_market_date": "2026-11-23",
       "latest_market_date": "2026-11-23",
-      "latest_market_session_status": "completed_or_prior_session",
+      "latest_market_session_status": "intraday_unconfirmed",
       "provider_status": {
         "BAA_SPREAD": {
           "fallback_used": false,
@@ -112228,25 +112350,25 @@
         "finnhub_quote_QQQ": {
           "fallback_used": false,
           "latest_date": null,
-          "missing_data": true,
-          "point_in_time_safe": false,
-          "real_data": false,
-          "rows": 0,
+          "missing_data": false,
+          "point_in_time_safe": true,
+          "real_data": true,
+          "rows": 1,
           "source": "finnhub",
-          "stale_data": false,
-          "status": "rate_limited",
+          "stale_data": true,
+          "status": "stale",
           "symbol": "finnhub_quote_QQQ"
         },
         "finnhub_quote_SPY": {
           "fallback_used": false,
           "latest_date": null,
-          "missing_data": true,
-          "point_in_time_safe": false,
-          "real_data": false,
-          "rows": 0,
+          "missing_data": false,
+          "point_in_time_safe": true,
+          "real_data": true,
+          "rows": 1,
           "source": "finnhub",
-          "stale_data": false,
-          "status": "rate_limited",
+          "stale_data": true,
+          "status": "stale",
           "symbol": "finnhub_quote_SPY"
         },
         "finnhub_rates_data": {
@@ -112432,7 +112554,7 @@
       },
       "stale_days": 0,
       "version": "data_freshness_gate_v3",
-      "warning_message": "核心行情已更新至最新应有交易日 2026-11-23。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。"
+      "warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-11-23，最近完整收盘交易日为 2026-11-23；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。"
     },
     "data_quality_summary": {
       "average_breadth_quality_score": 67.0,
@@ -112453,16 +112575,16 @@
         "IWM"
       ],
       "breadth_required": true,
-      "can_append_forecast_record": true,
+      "can_append_forecast_record": false,
       "data_completeness_score": 87.0,
       "data_completeness_score_before_news_event": 85.0,
-      "data_freshness_status": "fresh",
+      "data_freshness_status": "market_open_unconfirmed",
       "data_source_status": "real_core_with_proxies",
       "expected_latest_trading_date": "2026-11-23",
       "fallback_used": true,
       "finnhub_available": true,
       "finnhub_missing": false,
-      "finnhub_rate_limited": true,
+      "finnhub_rate_limited": false,
       "flow_available": true,
       "flow_provider_status": "proxy",
       "flow_proxy_only": true,
@@ -112541,16 +112663,16 @@
       "fred_required": true,
       "fred_successful_series": [
         "IG_OAS",
-        "BAA_SPREAD",
+        "HY_OAS",
         "DGS2",
+        "BAA_SPREAD",
+        "DFII10",
+        "RECESSION",
         "DGS10",
         "FINANCIAL_STRESS",
-        "HY_OAS",
-        "DGS3MO",
-        "RECESSION",
-        "DFII10"
+        "DGS3MO"
       ],
-      "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-11-23。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
+      "freshness_warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-11-23，最近完整收盘交易日为 2026-11-23；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
       "gamma_available": false,
       "gamma_exposure_available": false,
       "latest_confirmed_market_date": "2026-11-23",
@@ -112558,8 +112680,6 @@
       "latest_market_date": "2026-11-23",
       "missing_data": true,
       "missing_key_sources": [
-        "finnhub_quote_SPY",
-        "finnhub_quote_QQQ",
         "finnhub_candle_SPY",
         "finnhub_candle_QQQ",
         "finnhub_candle_IWM",
@@ -112581,11 +112701,11 @@
       ],
       "news_event": {
         "available": true,
-        "event_detection_confidence": 76,
+        "event_detection_confidence": 77,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-11-24T04:53:59.713254+00:00",
-        "major_event_count": 6,
+        "last_update": "2026-11-24T05:30:44.059923+00:00",
+        "major_event_count": 7,
         "missing_reason": null,
         "news_direction": "risk_off",
         "news_event_partial": false,
@@ -112596,7 +112716,7 @@
       },
       "news_event_available": true,
       "news_event_event_risk_level": "high",
-      "news_event_major_count": 6,
+      "news_event_major_count": 7,
       "news_event_missing_reason": null,
       "news_event_narrative": "geopolitics_escalation_risk_off",
       "news_event_partial": false,
@@ -112817,7 +112937,7 @@
         "status": "failed"
       },
       "event_risk_level": "high",
-      "major_event_count": 6,
+      "major_event_count": 7,
       "market_narrative": {
         "affected_scenarios": [
           "bearish_path"
@@ -112837,6 +112957,18 @@
         "narrative_strength": 100,
         "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
         "supporting_headlines": [
+          {
+            "confidence": "high",
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_market_direction": "risk_off",
+            "headline": "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
+            "importance_score": 100,
+            "published_at": "2026-11-24T00:20:00+00:00",
+            "source": "Reuters"
+          },
           {
             "confidence": "high",
             "detected_event_conditions": [
@@ -112896,18 +113028,6 @@
             "importance_score": 100,
             "published_at": "2026-11-23T14:58:37+00:00",
             "source": "Reuters"
-          },
-          {
-            "confidence": "medium",
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_market_direction": "risk_off",
-            "headline": "EU academy platform disabled after cyber attack on Commission, spokesperson says - Reuters",
-            "importance_score": 100,
-            "published_at": "2026-11-23T12:15:43+00:00",
-            "source": "Reuters"
           }
         ]
       },
@@ -112917,7 +113037,7 @@
         "direction": "supports_risk_expansion",
         "event_risk_level": "high",
         "macro_event_risk_flag": false,
-        "major_event_count": 6,
+        "major_event_count": 7,
         "not_a_trading_signal": true,
         "price_reaction_confirmed": false,
         "symbols": {
@@ -113056,7 +113176,7 @@
       "price_reaction_confirmation": {
         "asset_reaction_summary": {
           "avg_equity_1d_return": 0.0458,
-          "avg_equity_futures_1d_return": 0.0017,
+          "avg_equity_futures_1d_return": 0.0026,
           "confirmed_checks": [
             "美元走强"
           ],
@@ -113072,7 +113192,7 @@
             "HYG/LQD 走弱"
           ],
           "hyg_lqd_1d_relative_return": 0.0002,
-          "oil_proxy_1d_return": -0.0257,
+          "oil_proxy_1d_return": -0.0272,
           "oil_proxy_symbols_used": [
             "USO",
             "CL=F"
@@ -114238,7 +114358,7 @@
         ]
       }
     },
-    "status_note": "Alpha v1 is still a research candidate and only a bounce scenario input. The dashboard is for probability-path forecasting, not execution recommendations.",
+    "status_note": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-11-23，最近完整收盘交易日为 2026-11-23；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
     "strongest_symbol": "SPY",
     "symbols": {
       "DIA": {
@@ -114662,11 +114782,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.1,
             "top_headlines": [
+              "Oil holds near three-month low as rising supply offsets Hormuz threat - Reuters",
+              "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
               "US eyes Iran as possible culprit in dozens of new cyberattacks against ships, WSJ reports - Reuters",
               "CrowdStrike CEO defends Zscaler acquisition, calls it a 'winning combination'",
-              "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters",
-              "Nvidia sets options-trading record after CEO comeback. Here are the big trades",
-              "Jim Cramer sees more upside for Nvidia stock with Jensen Huang back as CEO"
+              "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters"
             ]
           },
           "price": {
@@ -115603,7 +115723,60 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 89,
+              "freshness_score": 88,
+              "headline": "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-11-24T00:20:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "USO",
+                "XLE",
+                "^VIX"
+              ],
+              "confidence": "high",
+              "confidence_score": 80,
+              "detected_event_conditions": [
+                "oil_shock_risk"
+              ],
+              "event_type": "oil_shock_risk",
+              "expected_horizon": "intraday-10d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 94,
+              "headline": "Oil holds near three-month low as rising supply offsets Hormuz threat - Reuters",
+              "importance_score": 97,
+              "narrative": "oil_shock_risk",
+              "provider": "finnhub",
+              "published_at": "2026-11-24T02:56:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 78,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 87,
               "headline": "US eyes Iran as possible culprit in dozens of new cyberattacks against ships, WSJ reports - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -115623,14 +115796,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 79,
+              "confidence_score": 78,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 88,
+              "freshness_score": 87,
               "headline": "CrowdStrike CEO defends Zscaler acquisition, calls it a 'winning combination'",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -115657,7 +115830,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 85,
               "headline": "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -115677,73 +115850,19 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 81,
+              "freshness_score": 79,
               "headline": "Belgian PM sets December 31 budget talks deadline amid national strike - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-11-23T20:53:47+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 73,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 67,
-              "headline": "Israeli strikes kill at least three in Gaza, including worker with UN Palestinian agency - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-23T14:58:37+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 72,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 60,
-              "headline": "EU academy platform disabled after cyber attack on Commission, spokesperson says - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-23T12:15:43+00:00",
               "source": "Reuters"
             }
           ],
@@ -115766,6 +115885,18 @@
             "narrative_strength": 100,
             "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
             "supporting_headlines": [
+              {
+                "confidence": "high",
+                "detected_event_conditions": [
+                  "geopolitical_risk_escalation"
+                ],
+                "event_type": "geopolitical_risk_escalation",
+                "expected_market_direction": "risk_off",
+                "headline": "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
+                "importance_score": 100,
+                "published_at": "2026-11-24T00:20:00+00:00",
+                "source": "Reuters"
+              },
               {
                 "confidence": "high",
                 "detected_event_conditions": [
@@ -115825,18 +115956,6 @@
                 "importance_score": 100,
                 "published_at": "2026-11-23T14:58:37+00:00",
                 "source": "Reuters"
-              },
-              {
-                "confidence": "medium",
-                "detected_event_conditions": [
-                  "geopolitical_risk_escalation"
-                ],
-                "event_type": "geopolitical_risk_escalation",
-                "expected_market_direction": "risk_off",
-                "headline": "EU academy platform disabled after cyber attack on Commission, spokesperson says - Reuters",
-                "importance_score": 100,
-                "published_at": "2026-11-23T12:15:43+00:00",
-                "source": "Reuters"
               }
             ]
           },
@@ -115876,7 +115995,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0458,
-              "avg_equity_futures_1d_return": 0.0017,
+              "avg_equity_futures_1d_return": 0.0026,
               "confirmed_checks": [
                 "美元走强"
               ],
@@ -115892,7 +116011,7 @@
                 "HYG/LQD 走弱"
               ],
               "hyg_lqd_1d_relative_return": 0.0002,
-              "oil_proxy_1d_return": -0.0257,
+              "oil_proxy_1d_return": -0.0272,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -117207,11 +117326,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.1,
             "top_headlines": [
+              "Oil holds near three-month low as rising supply offsets Hormuz threat - Reuters",
+              "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
               "US eyes Iran as possible culprit in dozens of new cyberattacks against ships, WSJ reports - Reuters",
               "CrowdStrike CEO defends Zscaler acquisition, calls it a 'winning combination'",
-              "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters",
-              "Nvidia sets options-trading record after CEO comeback. Here are the big trades",
-              "Jim Cramer sees more upside for Nvidia stock with Jensen Huang back as CEO"
+              "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters"
             ]
           },
           "price": {
@@ -118131,7 +118250,60 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 89,
+              "freshness_score": 88,
+              "headline": "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-11-24T00:20:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "USO",
+                "XLE",
+                "^VIX"
+              ],
+              "confidence": "high",
+              "confidence_score": 80,
+              "detected_event_conditions": [
+                "oil_shock_risk"
+              ],
+              "event_type": "oil_shock_risk",
+              "expected_horizon": "intraday-10d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 94,
+              "headline": "Oil holds near three-month low as rising supply offsets Hormuz threat - Reuters",
+              "importance_score": 97,
+              "narrative": "oil_shock_risk",
+              "provider": "finnhub",
+              "published_at": "2026-11-24T02:56:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 78,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 87,
               "headline": "US eyes Iran as possible culprit in dozens of new cyberattacks against ships, WSJ reports - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -118151,14 +118323,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 79,
+              "confidence_score": 78,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 88,
+              "freshness_score": 87,
               "headline": "CrowdStrike CEO defends Zscaler acquisition, calls it a 'winning combination'",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -118185,7 +118357,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 85,
               "headline": "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -118205,73 +118377,19 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 81,
+              "freshness_score": 79,
               "headline": "Belgian PM sets December 31 budget talks deadline amid national strike - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-11-23T20:53:47+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 73,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 67,
-              "headline": "Israeli strikes kill at least three in Gaza, including worker with UN Palestinian agency - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-23T14:58:37+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 72,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 60,
-              "headline": "EU academy platform disabled after cyber attack on Commission, spokesperson says - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-23T12:15:43+00:00",
               "source": "Reuters"
             }
           ],
@@ -118294,6 +118412,18 @@
             "narrative_strength": 100,
             "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
             "supporting_headlines": [
+              {
+                "confidence": "high",
+                "detected_event_conditions": [
+                  "geopolitical_risk_escalation"
+                ],
+                "event_type": "geopolitical_risk_escalation",
+                "expected_market_direction": "risk_off",
+                "headline": "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
+                "importance_score": 100,
+                "published_at": "2026-11-24T00:20:00+00:00",
+                "source": "Reuters"
+              },
               {
                 "confidence": "high",
                 "detected_event_conditions": [
@@ -118353,18 +118483,6 @@
                 "importance_score": 100,
                 "published_at": "2026-11-23T14:58:37+00:00",
                 "source": "Reuters"
-              },
-              {
-                "confidence": "medium",
-                "detected_event_conditions": [
-                  "geopolitical_risk_escalation"
-                ],
-                "event_type": "geopolitical_risk_escalation",
-                "expected_market_direction": "risk_off",
-                "headline": "EU academy platform disabled after cyber attack on Commission, spokesperson says - Reuters",
-                "importance_score": 100,
-                "published_at": "2026-11-23T12:15:43+00:00",
-                "source": "Reuters"
               }
             ]
           },
@@ -118404,7 +118522,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0458,
-              "avg_equity_futures_1d_return": 0.0017,
+              "avg_equity_futures_1d_return": 0.0026,
               "confirmed_checks": [
                 "美元走强"
               ],
@@ -118420,7 +118538,7 @@
                 "HYG/LQD 走弱"
               ],
               "hyg_lqd_1d_relative_return": 0.0002,
-              "oil_proxy_1d_return": -0.0257,
+              "oil_proxy_1d_return": -0.0272,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -119650,8 +119768,8 @@
             "ig_oas_20d_change": 0.06999999999999995
           },
           "daily_market_brief": {
-            "brief": "Finnhub quote unavailable; news risk 10%; no major macro event flag; rates pressure 10%.",
-            "finnhub_quote_available": false,
+            "brief": "Finnhub quote 651.03; news risk 10%; no major macro event flag; rates pressure 10%.",
+            "finnhub_quote_available": true,
             "macro_event_risk_flag": false,
             "news_risk_score": 0.1,
             "rates_pressure_score": 0.09541697645261095,
@@ -119660,11 +119778,11 @@
           "finnhub": {
             "candle_status": "failed",
             "news_sentiment_status": "failed",
-            "quote_change_percent": null,
-            "quote_previous_close": null,
-            "quote_price": null,
+            "quote_change_percent": 6.9981,
+            "quote_previous_close": 608.45,
+            "quote_price": 651.03,
             "quote_source": "finnhub",
-            "quote_status": "rate_limited",
+            "quote_status": "available",
             "sentiment_score": null
           },
           "flow_positioning_proxy": {
@@ -119722,11 +119840,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.1,
             "top_headlines": [
+              "Oil holds near three-month low as rising supply offsets Hormuz threat - Reuters",
+              "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
               "US eyes Iran as possible culprit in dozens of new cyberattacks against ships, WSJ reports - Reuters",
               "CrowdStrike CEO defends Zscaler acquisition, calls it a 'winning combination'",
-              "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters",
-              "Nvidia sets options-trading record after CEO comeback. Here are the big trades",
-              "Jim Cramer sees more upside for Nvidia stock with Jensen Huang back as CEO"
+              "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters"
             ]
           },
           "price": {
@@ -120666,7 +120784,60 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 89,
+              "freshness_score": 88,
+              "headline": "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-11-24T00:20:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "USO",
+                "XLE",
+                "^VIX"
+              ],
+              "confidence": "high",
+              "confidence_score": 80,
+              "detected_event_conditions": [
+                "oil_shock_risk"
+              ],
+              "event_type": "oil_shock_risk",
+              "expected_horizon": "intraday-10d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 94,
+              "headline": "Oil holds near three-month low as rising supply offsets Hormuz threat - Reuters",
+              "importance_score": 97,
+              "narrative": "oil_shock_risk",
+              "provider": "finnhub",
+              "published_at": "2026-11-24T02:56:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 78,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 87,
               "headline": "US eyes Iran as possible culprit in dozens of new cyberattacks against ships, WSJ reports - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -120686,14 +120857,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 79,
+              "confidence_score": 78,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 88,
+              "freshness_score": 87,
               "headline": "CrowdStrike CEO defends Zscaler acquisition, calls it a 'winning combination'",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -120720,7 +120891,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 85,
               "headline": "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -120740,73 +120911,19 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 81,
+              "freshness_score": 79,
               "headline": "Belgian PM sets December 31 budget talks deadline amid national strike - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-11-23T20:53:47+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 73,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 67,
-              "headline": "Israeli strikes kill at least three in Gaza, including worker with UN Palestinian agency - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-23T14:58:37+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 72,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 60,
-              "headline": "EU academy platform disabled after cyber attack on Commission, spokesperson says - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-23T12:15:43+00:00",
               "source": "Reuters"
             }
           ],
@@ -120829,6 +120946,18 @@
             "narrative_strength": 100,
             "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
             "supporting_headlines": [
+              {
+                "confidence": "high",
+                "detected_event_conditions": [
+                  "geopolitical_risk_escalation"
+                ],
+                "event_type": "geopolitical_risk_escalation",
+                "expected_market_direction": "risk_off",
+                "headline": "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
+                "importance_score": 100,
+                "published_at": "2026-11-24T00:20:00+00:00",
+                "source": "Reuters"
+              },
               {
                 "confidence": "high",
                 "detected_event_conditions": [
@@ -120888,18 +121017,6 @@
                 "importance_score": 100,
                 "published_at": "2026-11-23T14:58:37+00:00",
                 "source": "Reuters"
-              },
-              {
-                "confidence": "medium",
-                "detected_event_conditions": [
-                  "geopolitical_risk_escalation"
-                ],
-                "event_type": "geopolitical_risk_escalation",
-                "expected_market_direction": "risk_off",
-                "headline": "EU academy platform disabled after cyber attack on Commission, spokesperson says - Reuters",
-                "importance_score": 100,
-                "published_at": "2026-11-23T12:15:43+00:00",
-                "source": "Reuters"
               }
             ]
           },
@@ -120939,7 +121056,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0458,
-              "avg_equity_futures_1d_return": 0.0017,
+              "avg_equity_futures_1d_return": 0.0026,
               "confirmed_checks": [
                 "美元走强"
               ],
@@ -120955,7 +121072,7 @@
                 "HYG/LQD 走弱"
               ],
               "hyg_lqd_1d_relative_return": 0.0002,
-              "oil_proxy_1d_return": -0.0257,
+              "oil_proxy_1d_return": -0.0272,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -122224,8 +122341,8 @@
             "ig_oas_20d_change": 0.06999999999999995
           },
           "daily_market_brief": {
-            "brief": "Finnhub quote unavailable; news risk 10%; no major macro event flag; rates pressure 10%.",
-            "finnhub_quote_available": false,
+            "brief": "Finnhub quote 722.29; news risk 10%; no major macro event flag; rates pressure 10%.",
+            "finnhub_quote_available": true,
             "macro_event_risk_flag": false,
             "news_risk_score": 0.1,
             "rates_pressure_score": 0.09541697645261095,
@@ -122234,11 +122351,11 @@
           "finnhub": {
             "candle_status": "failed",
             "news_sentiment_status": "failed",
-            "quote_change_percent": null,
-            "quote_previous_close": null,
-            "quote_price": null,
+            "quote_change_percent": 4.7085,
+            "quote_previous_close": 689.81,
+            "quote_price": 722.29,
             "quote_source": "finnhub",
-            "quote_status": "rate_limited",
+            "quote_status": "available",
             "sentiment_score": null
           },
           "flow_positioning_proxy": {
@@ -122296,11 +122413,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.1,
             "top_headlines": [
+              "Oil holds near three-month low as rising supply offsets Hormuz threat - Reuters",
+              "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
               "US eyes Iran as possible culprit in dozens of new cyberattacks against ships, WSJ reports - Reuters",
               "CrowdStrike CEO defends Zscaler acquisition, calls it a 'winning combination'",
-              "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters",
-              "Nvidia sets options-trading record after CEO comeback. Here are the big trades",
-              "Jim Cramer sees more upside for Nvidia stock with Jensen Huang back as CEO"
+              "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters"
             ]
           },
           "price": {
@@ -123240,7 +123357,60 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 89,
+              "freshness_score": 88,
+              "headline": "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-11-24T00:20:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "USO",
+                "XLE",
+                "^VIX"
+              ],
+              "confidence": "high",
+              "confidence_score": 80,
+              "detected_event_conditions": [
+                "oil_shock_risk"
+              ],
+              "event_type": "oil_shock_risk",
+              "expected_horizon": "intraday-10d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 94,
+              "headline": "Oil holds near three-month low as rising supply offsets Hormuz threat - Reuters",
+              "importance_score": 97,
+              "narrative": "oil_shock_risk",
+              "provider": "finnhub",
+              "published_at": "2026-11-24T02:56:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 78,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 87,
               "headline": "US eyes Iran as possible culprit in dozens of new cyberattacks against ships, WSJ reports - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -123260,14 +123430,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 79,
+              "confidence_score": 78,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 88,
+              "freshness_score": 87,
               "headline": "CrowdStrike CEO defends Zscaler acquisition, calls it a 'winning combination'",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -123294,7 +123464,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 85,
               "headline": "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -123314,73 +123484,19 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 81,
+              "freshness_score": 79,
               "headline": "Belgian PM sets December 31 budget talks deadline amid national strike - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-11-23T20:53:47+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 73,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 67,
-              "headline": "Israeli strikes kill at least three in Gaza, including worker with UN Palestinian agency - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-23T14:58:37+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 72,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 60,
-              "headline": "EU academy platform disabled after cyber attack on Commission, spokesperson says - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-23T12:15:43+00:00",
               "source": "Reuters"
             }
           ],
@@ -123403,6 +123519,18 @@
             "narrative_strength": 100,
             "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
             "supporting_headlines": [
+              {
+                "confidence": "high",
+                "detected_event_conditions": [
+                  "geopolitical_risk_escalation"
+                ],
+                "event_type": "geopolitical_risk_escalation",
+                "expected_market_direction": "risk_off",
+                "headline": "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
+                "importance_score": 100,
+                "published_at": "2026-11-24T00:20:00+00:00",
+                "source": "Reuters"
+              },
               {
                 "confidence": "high",
                 "detected_event_conditions": [
@@ -123462,18 +123590,6 @@
                 "importance_score": 100,
                 "published_at": "2026-11-23T14:58:37+00:00",
                 "source": "Reuters"
-              },
-              {
-                "confidence": "medium",
-                "detected_event_conditions": [
-                  "geopolitical_risk_escalation"
-                ],
-                "event_type": "geopolitical_risk_escalation",
-                "expected_market_direction": "risk_off",
-                "headline": "EU academy platform disabled after cyber attack on Commission, spokesperson says - Reuters",
-                "importance_score": 100,
-                "published_at": "2026-11-23T12:15:43+00:00",
-                "source": "Reuters"
               }
             ]
           },
@@ -123513,7 +123629,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0458,
-              "avg_equity_futures_1d_return": 0.0017,
+              "avg_equity_futures_1d_return": 0.0026,
               "confirmed_checks": [
                 "美元走强"
               ],
@@ -123529,7 +123645,7 @@
                 "HYG/LQD 走弱"
               ],
               "hyg_lqd_1d_relative_return": 0.0002,
-              "oil_proxy_1d_return": -0.0257,
+              "oil_proxy_1d_return": -0.0272,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -124444,7 +124560,7 @@
   },
   "price_volume_structure": {
     "disclaimer": "K线和成交量结构只用于预测确认，不是交易信号、买卖建议或仓位建议。",
-    "generated_at": "2026-11-24T04:54:11.514068+00:00",
+    "generated_at": "2026-11-24T05:30:57.217157+00:00",
     "summary": {
       "average_price_structure_score": 39.0,
       "average_volume_confirmation_score": 37.0,
@@ -125222,14 +125338,19 @@
   "simulated_paths": {
     "as_of": "2026-11-23",
     "data_freshness_status": {
-      "affected_symbols": [],
-      "can_append_forecast_record": true,
+      "affected_symbols": [
+        "SPY",
+        "QQQ",
+        "IWM",
+        "DIA"
+      ],
+      "can_append_forecast_record": false,
       "can_backfill_completed_outcomes": true,
-      "current_date": "2026-11-23",
-      "current_time_us_eastern": "2026-11-23T23:54:11.519641-05:00",
-      "data_freshness_status": "fresh",
+      "current_date": "2026-11-24",
+      "current_time_us_eastern": "2026-11-24T00:30:57.220112-05:00",
+      "data_freshness_status": "market_open_unconfirmed",
       "expected_latest_trading_date": "2026-11-23",
-      "generated_at": "2026-11-24T04:54:11.519641+00:00",
+      "generated_at": "2026-11-24T05:30:57.220112+00:00",
       "guardrails": [
         "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
         "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -125243,7 +125364,7 @@
       "last_successful_update": "2026-11-23",
       "latest_confirmed_market_date": "2026-11-23",
       "latest_market_date": "2026-11-23",
-      "latest_market_session_status": "completed_or_prior_session",
+      "latest_market_session_status": "intraday_unconfirmed",
       "provider_status": {
         "BAA_SPREAD": {
           "fallback_used": false,
@@ -125956,25 +126077,25 @@
         "finnhub_quote_QQQ": {
           "fallback_used": false,
           "latest_date": null,
-          "missing_data": true,
-          "point_in_time_safe": false,
-          "real_data": false,
-          "rows": 0,
+          "missing_data": false,
+          "point_in_time_safe": true,
+          "real_data": true,
+          "rows": 1,
           "source": "finnhub",
-          "stale_data": false,
-          "status": "rate_limited",
+          "stale_data": true,
+          "status": "stale",
           "symbol": "finnhub_quote_QQQ"
         },
         "finnhub_quote_SPY": {
           "fallback_used": false,
           "latest_date": null,
-          "missing_data": true,
-          "point_in_time_safe": false,
-          "real_data": false,
-          "rows": 0,
+          "missing_data": false,
+          "point_in_time_safe": true,
+          "real_data": true,
+          "rows": 1,
           "source": "finnhub",
-          "stale_data": false,
-          "status": "rate_limited",
+          "stale_data": true,
+          "status": "stale",
           "symbol": "finnhub_quote_SPY"
         },
         "finnhub_rates_data": {
@@ -126160,7 +126281,7 @@
       },
       "stale_days": 0,
       "version": "data_freshness_gate_v3",
-      "warning_message": "核心行情已更新至最新应有交易日 2026-11-23。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。"
+      "warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-11-23，最近完整收盘交易日为 2026-11-23；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。"
     },
     "data_quality_summary": {
       "average_breadth_quality_score": 67.0,
@@ -126181,16 +126302,16 @@
         "IWM"
       ],
       "breadth_required": true,
-      "can_append_forecast_record": true,
+      "can_append_forecast_record": false,
       "data_completeness_score": 87.0,
       "data_completeness_score_before_news_event": 85.0,
-      "data_freshness_status": "fresh",
+      "data_freshness_status": "market_open_unconfirmed",
       "data_source_status": "real_core_with_proxies",
       "expected_latest_trading_date": "2026-11-23",
       "fallback_used": true,
       "finnhub_available": true,
       "finnhub_missing": false,
-      "finnhub_rate_limited": true,
+      "finnhub_rate_limited": false,
       "flow_available": true,
       "flow_provider_status": "proxy",
       "flow_proxy_only": true,
@@ -126269,16 +126390,16 @@
       "fred_required": true,
       "fred_successful_series": [
         "IG_OAS",
-        "BAA_SPREAD",
+        "HY_OAS",
         "DGS2",
+        "BAA_SPREAD",
+        "DFII10",
+        "RECESSION",
         "DGS10",
         "FINANCIAL_STRESS",
-        "HY_OAS",
-        "DGS3MO",
-        "RECESSION",
-        "DFII10"
+        "DGS3MO"
       ],
-      "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-11-23。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
+      "freshness_warning_message": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-11-23，最近完整收盘交易日为 2026-11-23；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
       "gamma_available": false,
       "gamma_exposure_available": false,
       "latest_confirmed_market_date": "2026-11-23",
@@ -126286,8 +126407,6 @@
       "latest_market_date": "2026-11-23",
       "missing_data": true,
       "missing_key_sources": [
-        "finnhub_quote_SPY",
-        "finnhub_quote_QQQ",
         "finnhub_candle_SPY",
         "finnhub_candle_QQQ",
         "finnhub_candle_IWM",
@@ -126309,11 +126428,11 @@
       ],
       "news_event": {
         "available": true,
-        "event_detection_confidence": 76,
+        "event_detection_confidence": 77,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-11-24T04:53:59.713254+00:00",
-        "major_event_count": 6,
+        "last_update": "2026-11-24T05:30:44.059923+00:00",
+        "major_event_count": 7,
         "missing_reason": null,
         "news_direction": "risk_off",
         "news_event_partial": false,
@@ -126324,7 +126443,7 @@
       },
       "news_event_available": true,
       "news_event_event_risk_level": "high",
-      "news_event_major_count": 6,
+      "news_event_major_count": 7,
       "news_event_missing_reason": null,
       "news_event_narrative": "geopolitics_escalation_risk_off",
       "news_event_partial": false,
@@ -126374,7 +126493,7 @@
         "status": "failed"
       },
       "event_risk_level": "high",
-      "major_event_count": 6,
+      "major_event_count": 7,
       "market_narrative": {
         "affected_scenarios": [
           "bearish_path"
@@ -126394,6 +126513,18 @@
         "narrative_strength": 100,
         "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
         "supporting_headlines": [
+          {
+            "confidence": "high",
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_market_direction": "risk_off",
+            "headline": "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
+            "importance_score": 100,
+            "published_at": "2026-11-24T00:20:00+00:00",
+            "source": "Reuters"
+          },
           {
             "confidence": "high",
             "detected_event_conditions": [
@@ -126453,18 +126584,6 @@
             "importance_score": 100,
             "published_at": "2026-11-23T14:58:37+00:00",
             "source": "Reuters"
-          },
-          {
-            "confidence": "medium",
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_market_direction": "risk_off",
-            "headline": "EU academy platform disabled after cyber attack on Commission, spokesperson says - Reuters",
-            "importance_score": 100,
-            "published_at": "2026-11-23T12:15:43+00:00",
-            "source": "Reuters"
           }
         ]
       },
@@ -126474,7 +126593,7 @@
         "direction": "supports_risk_expansion",
         "event_risk_level": "high",
         "macro_event_risk_flag": false,
-        "major_event_count": 6,
+        "major_event_count": 7,
         "not_a_trading_signal": true,
         "price_reaction_confirmed": false,
         "symbols": {
@@ -126613,7 +126732,7 @@
       "price_reaction_confirmation": {
         "asset_reaction_summary": {
           "avg_equity_1d_return": 0.0458,
-          "avg_equity_futures_1d_return": 0.0017,
+          "avg_equity_futures_1d_return": 0.0026,
           "confirmed_checks": [
             "美元走强"
           ],
@@ -126629,7 +126748,7 @@
             "HYG/LQD 走弱"
           ],
           "hyg_lqd_1d_relative_return": 0.0002,
-          "oil_proxy_1d_return": -0.0257,
+          "oil_proxy_1d_return": -0.0272,
           "oil_proxy_symbols_used": [
             "USO",
             "CL=F"
@@ -127155,6 +127274,7 @@
       },
       "version": "shadow_evidence_v1"
     },
+    "status_note": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-11-23，最近完整收盘交易日为 2026-11-23；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
     "symbols": {
       "DIA": {
         "analog_path_weight": 0.2389,
@@ -127533,11 +127653,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.1,
             "top_headlines": [
+              "Oil holds near three-month low as rising supply offsets Hormuz threat - Reuters",
+              "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
               "US eyes Iran as possible culprit in dozens of new cyberattacks against ships, WSJ reports - Reuters",
               "CrowdStrike CEO defends Zscaler acquisition, calls it a 'winning combination'",
-              "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters",
-              "Nvidia sets options-trading record after CEO comeback. Here are the big trades",
-              "Jim Cramer sees more upside for Nvidia stock with Jensen Huang back as CEO"
+              "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters"
             ]
           },
           "price": {
@@ -128922,7 +129042,60 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 89,
+              "freshness_score": 88,
+              "headline": "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-11-24T00:20:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "USO",
+                "XLE",
+                "^VIX"
+              ],
+              "confidence": "high",
+              "confidence_score": 80,
+              "detected_event_conditions": [
+                "oil_shock_risk"
+              ],
+              "event_type": "oil_shock_risk",
+              "expected_horizon": "intraday-10d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 94,
+              "headline": "Oil holds near three-month low as rising supply offsets Hormuz threat - Reuters",
+              "importance_score": 97,
+              "narrative": "oil_shock_risk",
+              "provider": "finnhub",
+              "published_at": "2026-11-24T02:56:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 78,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 87,
               "headline": "US eyes Iran as possible culprit in dozens of new cyberattacks against ships, WSJ reports - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -128942,14 +129115,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 79,
+              "confidence_score": 78,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 88,
+              "freshness_score": 87,
               "headline": "CrowdStrike CEO defends Zscaler acquisition, calls it a 'winning combination'",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -128976,7 +129149,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 85,
               "headline": "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -128996,73 +129169,19 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 81,
+              "freshness_score": 79,
               "headline": "Belgian PM sets December 31 budget talks deadline amid national strike - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-11-23T20:53:47+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 73,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 67,
-              "headline": "Israeli strikes kill at least three in Gaza, including worker with UN Palestinian agency - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-23T14:58:37+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 72,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 60,
-              "headline": "EU academy platform disabled after cyber attack on Commission, spokesperson says - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-23T12:15:43+00:00",
               "source": "Reuters"
             }
           ],
@@ -129085,6 +129204,18 @@
             "narrative_strength": 100,
             "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
             "supporting_headlines": [
+              {
+                "confidence": "high",
+                "detected_event_conditions": [
+                  "geopolitical_risk_escalation"
+                ],
+                "event_type": "geopolitical_risk_escalation",
+                "expected_market_direction": "risk_off",
+                "headline": "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
+                "importance_score": 100,
+                "published_at": "2026-11-24T00:20:00+00:00",
+                "source": "Reuters"
+              },
               {
                 "confidence": "high",
                 "detected_event_conditions": [
@@ -129144,18 +129275,6 @@
                 "importance_score": 100,
                 "published_at": "2026-11-23T14:58:37+00:00",
                 "source": "Reuters"
-              },
-              {
-                "confidence": "medium",
-                "detected_event_conditions": [
-                  "geopolitical_risk_escalation"
-                ],
-                "event_type": "geopolitical_risk_escalation",
-                "expected_market_direction": "risk_off",
-                "headline": "EU academy platform disabled after cyber attack on Commission, spokesperson says - Reuters",
-                "importance_score": 100,
-                "published_at": "2026-11-23T12:15:43+00:00",
-                "source": "Reuters"
               }
             ]
           },
@@ -129195,7 +129314,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0458,
-              "avg_equity_futures_1d_return": 0.0017,
+              "avg_equity_futures_1d_return": 0.0026,
               "confirmed_checks": [
                 "美元走强"
               ],
@@ -129211,7 +129330,7 @@
                 "HYG/LQD 走弱"
               ],
               "hyg_lqd_1d_relative_return": 0.0002,
-              "oil_proxy_1d_return": -0.0257,
+              "oil_proxy_1d_return": -0.0272,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -131750,11 +131869,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.1,
             "top_headlines": [
+              "Oil holds near three-month low as rising supply offsets Hormuz threat - Reuters",
+              "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
               "US eyes Iran as possible culprit in dozens of new cyberattacks against ships, WSJ reports - Reuters",
               "CrowdStrike CEO defends Zscaler acquisition, calls it a 'winning combination'",
-              "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters",
-              "Nvidia sets options-trading record after CEO comeback. Here are the big trades",
-              "Jim Cramer sees more upside for Nvidia stock with Jensen Huang back as CEO"
+              "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters"
             ]
           },
           "price": {
@@ -133122,7 +133241,60 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 89,
+              "freshness_score": 88,
+              "headline": "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-11-24T00:20:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "USO",
+                "XLE",
+                "^VIX"
+              ],
+              "confidence": "high",
+              "confidence_score": 80,
+              "detected_event_conditions": [
+                "oil_shock_risk"
+              ],
+              "event_type": "oil_shock_risk",
+              "expected_horizon": "intraday-10d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 94,
+              "headline": "Oil holds near three-month low as rising supply offsets Hormuz threat - Reuters",
+              "importance_score": 97,
+              "narrative": "oil_shock_risk",
+              "provider": "finnhub",
+              "published_at": "2026-11-24T02:56:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 78,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 87,
               "headline": "US eyes Iran as possible culprit in dozens of new cyberattacks against ships, WSJ reports - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -133142,14 +133314,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 79,
+              "confidence_score": 78,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 88,
+              "freshness_score": 87,
               "headline": "CrowdStrike CEO defends Zscaler acquisition, calls it a 'winning combination'",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -133176,7 +133348,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 85,
               "headline": "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -133196,73 +133368,19 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 81,
+              "freshness_score": 79,
               "headline": "Belgian PM sets December 31 budget talks deadline amid national strike - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-11-23T20:53:47+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 73,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 67,
-              "headline": "Israeli strikes kill at least three in Gaza, including worker with UN Palestinian agency - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-23T14:58:37+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 72,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 60,
-              "headline": "EU academy platform disabled after cyber attack on Commission, spokesperson says - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-23T12:15:43+00:00",
               "source": "Reuters"
             }
           ],
@@ -133285,6 +133403,18 @@
             "narrative_strength": 100,
             "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
             "supporting_headlines": [
+              {
+                "confidence": "high",
+                "detected_event_conditions": [
+                  "geopolitical_risk_escalation"
+                ],
+                "event_type": "geopolitical_risk_escalation",
+                "expected_market_direction": "risk_off",
+                "headline": "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
+                "importance_score": 100,
+                "published_at": "2026-11-24T00:20:00+00:00",
+                "source": "Reuters"
+              },
               {
                 "confidence": "high",
                 "detected_event_conditions": [
@@ -133344,18 +133474,6 @@
                 "importance_score": 100,
                 "published_at": "2026-11-23T14:58:37+00:00",
                 "source": "Reuters"
-              },
-              {
-                "confidence": "medium",
-                "detected_event_conditions": [
-                  "geopolitical_risk_escalation"
-                ],
-                "event_type": "geopolitical_risk_escalation",
-                "expected_market_direction": "risk_off",
-                "headline": "EU academy platform disabled after cyber attack on Commission, spokesperson says - Reuters",
-                "importance_score": 100,
-                "published_at": "2026-11-23T12:15:43+00:00",
-                "source": "Reuters"
               }
             ]
           },
@@ -133395,7 +133513,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0458,
-              "avg_equity_futures_1d_return": 0.0017,
+              "avg_equity_futures_1d_return": 0.0026,
               "confirmed_checks": [
                 "美元走强"
               ],
@@ -133411,7 +133529,7 @@
                 "HYG/LQD 走弱"
               ],
               "hyg_lqd_1d_relative_return": 0.0002,
-              "oil_proxy_1d_return": -0.0257,
+              "oil_proxy_1d_return": -0.0272,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -135865,8 +135983,8 @@
             "ig_oas_20d_change": 0.06999999999999995
           },
           "daily_market_brief": {
-            "brief": "Finnhub quote unavailable; news risk 10%; no major macro event flag; rates pressure 10%.",
-            "finnhub_quote_available": false,
+            "brief": "Finnhub quote 651.03; news risk 10%; no major macro event flag; rates pressure 10%.",
+            "finnhub_quote_available": true,
             "macro_event_risk_flag": false,
             "news_risk_score": 0.1,
             "rates_pressure_score": 0.09541697645261095,
@@ -135875,11 +135993,11 @@
           "finnhub": {
             "candle_status": "failed",
             "news_sentiment_status": "failed",
-            "quote_change_percent": null,
-            "quote_previous_close": null,
-            "quote_price": null,
+            "quote_change_percent": 6.9981,
+            "quote_previous_close": 608.45,
+            "quote_price": 651.03,
             "quote_source": "finnhub",
-            "quote_status": "rate_limited",
+            "quote_status": "available",
             "sentiment_score": null
           },
           "flow_positioning_proxy": {
@@ -135937,11 +136055,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.1,
             "top_headlines": [
+              "Oil holds near three-month low as rising supply offsets Hormuz threat - Reuters",
+              "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
               "US eyes Iran as possible culprit in dozens of new cyberattacks against ships, WSJ reports - Reuters",
               "CrowdStrike CEO defends Zscaler acquisition, calls it a 'winning combination'",
-              "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters",
-              "Nvidia sets options-trading record after CEO comeback. Here are the big trades",
-              "Jim Cramer sees more upside for Nvidia stock with Jensen Huang back as CEO"
+              "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters"
             ]
           },
           "price": {
@@ -137329,7 +137447,60 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 89,
+              "freshness_score": 88,
+              "headline": "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-11-24T00:20:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "USO",
+                "XLE",
+                "^VIX"
+              ],
+              "confidence": "high",
+              "confidence_score": 80,
+              "detected_event_conditions": [
+                "oil_shock_risk"
+              ],
+              "event_type": "oil_shock_risk",
+              "expected_horizon": "intraday-10d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 94,
+              "headline": "Oil holds near three-month low as rising supply offsets Hormuz threat - Reuters",
+              "importance_score": 97,
+              "narrative": "oil_shock_risk",
+              "provider": "finnhub",
+              "published_at": "2026-11-24T02:56:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 78,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 87,
               "headline": "US eyes Iran as possible culprit in dozens of new cyberattacks against ships, WSJ reports - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -137349,14 +137520,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 79,
+              "confidence_score": 78,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 88,
+              "freshness_score": 87,
               "headline": "CrowdStrike CEO defends Zscaler acquisition, calls it a 'winning combination'",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -137383,7 +137554,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 85,
               "headline": "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -137403,73 +137574,19 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 81,
+              "freshness_score": 79,
               "headline": "Belgian PM sets December 31 budget talks deadline amid national strike - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-11-23T20:53:47+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 73,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 67,
-              "headline": "Israeli strikes kill at least three in Gaza, including worker with UN Palestinian agency - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-23T14:58:37+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 72,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 60,
-              "headline": "EU academy platform disabled after cyber attack on Commission, spokesperson says - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-23T12:15:43+00:00",
               "source": "Reuters"
             }
           ],
@@ -137492,6 +137609,18 @@
             "narrative_strength": 100,
             "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
             "supporting_headlines": [
+              {
+                "confidence": "high",
+                "detected_event_conditions": [
+                  "geopolitical_risk_escalation"
+                ],
+                "event_type": "geopolitical_risk_escalation",
+                "expected_market_direction": "risk_off",
+                "headline": "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
+                "importance_score": 100,
+                "published_at": "2026-11-24T00:20:00+00:00",
+                "source": "Reuters"
+              },
               {
                 "confidence": "high",
                 "detected_event_conditions": [
@@ -137551,18 +137680,6 @@
                 "importance_score": 100,
                 "published_at": "2026-11-23T14:58:37+00:00",
                 "source": "Reuters"
-              },
-              {
-                "confidence": "medium",
-                "detected_event_conditions": [
-                  "geopolitical_risk_escalation"
-                ],
-                "event_type": "geopolitical_risk_escalation",
-                "expected_market_direction": "risk_off",
-                "headline": "EU academy platform disabled after cyber attack on Commission, spokesperson says - Reuters",
-                "importance_score": 100,
-                "published_at": "2026-11-23T12:15:43+00:00",
-                "source": "Reuters"
               }
             ]
           },
@@ -137602,7 +137719,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0458,
-              "avg_equity_futures_1d_return": 0.0017,
+              "avg_equity_futures_1d_return": 0.0026,
               "confirmed_checks": [
                 "美元走强"
               ],
@@ -137618,7 +137735,7 @@
                 "HYG/LQD 走弱"
               ],
               "hyg_lqd_1d_relative_return": 0.0002,
-              "oil_proxy_1d_return": -0.0257,
+              "oil_proxy_1d_return": -0.0272,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -140111,8 +140228,8 @@
             "ig_oas_20d_change": 0.06999999999999995
           },
           "daily_market_brief": {
-            "brief": "Finnhub quote unavailable; news risk 10%; no major macro event flag; rates pressure 10%.",
-            "finnhub_quote_available": false,
+            "brief": "Finnhub quote 722.29; news risk 10%; no major macro event flag; rates pressure 10%.",
+            "finnhub_quote_available": true,
             "macro_event_risk_flag": false,
             "news_risk_score": 0.1,
             "rates_pressure_score": 0.09541697645261095,
@@ -140121,11 +140238,11 @@
           "finnhub": {
             "candle_status": "failed",
             "news_sentiment_status": "failed",
-            "quote_change_percent": null,
-            "quote_previous_close": null,
-            "quote_price": null,
+            "quote_change_percent": 4.7085,
+            "quote_previous_close": 689.81,
+            "quote_price": 722.29,
             "quote_source": "finnhub",
-            "quote_status": "rate_limited",
+            "quote_status": "available",
             "sentiment_score": null
           },
           "flow_positioning_proxy": {
@@ -140183,11 +140300,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.1,
             "top_headlines": [
+              "Oil holds near three-month low as rising supply offsets Hormuz threat - Reuters",
+              "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
               "US eyes Iran as possible culprit in dozens of new cyberattacks against ships, WSJ reports - Reuters",
               "CrowdStrike CEO defends Zscaler acquisition, calls it a 'winning combination'",
-              "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters",
-              "Nvidia sets options-trading record after CEO comeback. Here are the big trades",
-              "Jim Cramer sees more upside for Nvidia stock with Jensen Huang back as CEO"
+              "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters"
             ]
           },
           "price": {
@@ -141575,7 +141692,60 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 89,
+              "freshness_score": 88,
+              "headline": "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-11-24T00:20:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "USO",
+                "XLE",
+                "^VIX"
+              ],
+              "confidence": "high",
+              "confidence_score": 80,
+              "detected_event_conditions": [
+                "oil_shock_risk"
+              ],
+              "event_type": "oil_shock_risk",
+              "expected_horizon": "intraday-10d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 94,
+              "headline": "Oil holds near three-month low as rising supply offsets Hormuz threat - Reuters",
+              "importance_score": 97,
+              "narrative": "oil_shock_risk",
+              "provider": "finnhub",
+              "published_at": "2026-11-24T02:56:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "high",
+              "confidence_score": 78,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 87,
               "headline": "US eyes Iran as possible culprit in dozens of new cyberattacks against ships, WSJ reports - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -141595,14 +141765,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 79,
+              "confidence_score": 78,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 88,
+              "freshness_score": 87,
               "headline": "CrowdStrike CEO defends Zscaler acquisition, calls it a 'winning combination'",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -141629,7 +141799,7 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 85,
               "headline": "South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -141649,73 +141819,19 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 77,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 81,
+              "freshness_score": 79,
               "headline": "Belgian PM sets December 31 budget talks deadline amid national strike - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-11-23T20:53:47+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 73,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 67,
-              "headline": "Israeli strikes kill at least three in Gaza, including worker with UN Palestinian agency - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-23T14:58:37+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 72,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 60,
-              "headline": "EU academy platform disabled after cyber attack on Commission, spokesperson says - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-23T12:15:43+00:00",
               "source": "Reuters"
             }
           ],
@@ -141738,6 +141854,18 @@
             "narrative_strength": 100,
             "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
             "supporting_headlines": [
+              {
+                "confidence": "high",
+                "detected_event_conditions": [
+                  "geopolitical_risk_escalation"
+                ],
+                "event_type": "geopolitical_risk_escalation",
+                "expected_market_direction": "risk_off",
+                "headline": "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters",
+                "importance_score": 100,
+                "published_at": "2026-11-24T00:20:00+00:00",
+                "source": "Reuters"
+              },
               {
                 "confidence": "high",
                 "detected_event_conditions": [
@@ -141797,18 +141925,6 @@
                 "importance_score": 100,
                 "published_at": "2026-11-23T14:58:37+00:00",
                 "source": "Reuters"
-              },
-              {
-                "confidence": "medium",
-                "detected_event_conditions": [
-                  "geopolitical_risk_escalation"
-                ],
-                "event_type": "geopolitical_risk_escalation",
-                "expected_market_direction": "risk_off",
-                "headline": "EU academy platform disabled after cyber attack on Commission, spokesperson says - Reuters",
-                "importance_score": 100,
-                "published_at": "2026-11-23T12:15:43+00:00",
-                "source": "Reuters"
               }
             ]
           },
@@ -141848,7 +141964,7 @@
           "price_reaction_confirmation": {
             "asset_reaction_summary": {
               "avg_equity_1d_return": 0.0458,
-              "avg_equity_futures_1d_return": 0.0017,
+              "avg_equity_futures_1d_return": 0.0026,
               "confirmed_checks": [
                 "美元走强"
               ],
@@ -141864,7 +141980,7 @@
                 "HYG/LQD 走弱"
               ],
               "hyg_lqd_1d_relative_return": 0.0002,
-              "oil_proxy_1d_return": -0.0257,
+              "oil_proxy_1d_return": -0.0272,
               "oil_proxy_symbols_used": [
                 "USO",
                 "CL=F"
@@ -144046,7 +144162,7 @@
     }
   },
   "source": "github_actions_forward_tracker_outputs",
-  "status_note": "Alpha v1 remains a research candidate. Simulated paths are probabilistic scenarios, not guaranteed forecasts.",
+  "status_note": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-11-23，最近完整收盘交易日为 2026-11-23；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
   "stock_prediction_dashboard": {
     "data_provider": {
       "provider": "stock_data_provider",
@@ -144067,7 +144183,7 @@
       },
       "version": "stock_data_provider_v1"
     },
-    "generated_at": "2026-11-24T04:54:13.470491+00:00",
+    "generated_at": "2026-11-24T05:30:58.220471+00:00",
     "guardrails": [
       "This is a probabilistic stock forecast module, not a trading system.",
       "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -144156,7 +144272,7 @@
         },
         "question": "high final_radar_score 是否真的对应更大次日 range？"
       },
-      "generated_at": "2026-11-24T04:54:13.537842+00:00",
+      "generated_at": "2026-11-24T05:30:58.231388+00:00",
       "not_validated_warning": "not_enough_forward_samples",
       "pending_records": 461,
       "risk_score_effectiveness": {
@@ -153055,7 +153171,7 @@
         "top_candidate": "CEG",
         "validation_status": "not_yet_validated"
       },
-      "generated_at": "2026-11-24T04:54:13.517293+00:00",
+      "generated_at": "2026-11-24T05:30:58.220647+00:00",
       "model_version": "stock_baseline_v1",
       "notes": [
         "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -153495,7 +153611,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-11-24T04:54:13.537842+00:00",
+    "generated_at": "2026-11-24T05:30:58.231388+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 461,
     "risk_score_effectiveness": {
@@ -153567,7 +153683,7 @@
       "top_candidate": "CEG",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-11-24T04:54:13.517293+00:00",
+    "generated_at": "2026-11-24T05:30:58.220647+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",

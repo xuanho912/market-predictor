@@ -1,27 +1,30 @@
 # Data Freshness Status
 
-Generated at: `2026-11-24T04:54:11.519641+00:00`
+Generated at: `2026-11-24T05:30:57.220112+00:00`
 
 ## Summary
 
-- current_date: `2026-11-23`
-- current_time_us_eastern: `2026-11-23T23:54:11.519641-05:00`
+- current_date: `2026-11-24`
+- current_time_us_eastern: `2026-11-24T00:30:57.220112-05:00`
 - latest_market_date: `2026-11-23`
 - latest_confirmed_market_date: `2026-11-23`
 - expected_latest_trading_date: `2026-11-23`
 - is_latest_trading_day: `True`
-- latest_market_session_status: `completed_or_prior_session`
-- can_append_forecast_record: `True`
+- latest_market_session_status: `intraday_unconfirmed`
+- can_append_forecast_record: `False`
 - can_backfill_completed_outcomes: `True`
 - stale_days: `0`
-- data_freshness_status: `fresh`
+- data_freshness_status: `market_open_unconfirmed`
 - last_successful_core_market_update: `2026-11-23`
 - last_successful_update: `2026-11-23`
-- warning_message: 核心行情已更新至最新应有交易日 2026-11-23。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。
+- warning_message: 当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-11-23，最近完整收盘交易日为 2026-11-23；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。
 
 ## Affected Symbols
 
-- none
+- `SPY`
+- `QQQ`
+- `IWM`
+- `DIA`
 
 ## Provider Status
 
@@ -84,8 +87,8 @@ Generated at: `2026-11-24T04:54:11.519641+00:00`
 - finnhub_news_sentiment_SPY: status=`missing`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
 - finnhub_quote_DIA: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
 - finnhub_quote_IWM: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
-- finnhub_quote_QQQ: status=`rate_limited`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
-- finnhub_quote_SPY: status=`rate_limited`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
+- finnhub_quote_QQQ: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
+- finnhub_quote_SPY: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
 - finnhub_rates_data: status=`missing`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
 - flow_DIA: status=`proxy`, latest_date=`2026-11-23`, source=`market_data_proxy`, stale=`False`, fallback=`True`, real_data=`False`
 - flow_IWM: status=`proxy`, latest_date=`2026-11-23`, source=`market_data_proxy`, stale=`False`, fallback=`True`, real_data=`False`
