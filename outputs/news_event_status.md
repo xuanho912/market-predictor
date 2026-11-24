@@ -1,20 +1,20 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-24T14:17:44.726049+00:00`
+- generated_at: `2026-11-24T22:30:44.355890+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
-- event_detection_confidence: `73`
+- major_event_count: `3`
+- event_detection_confidence: `80`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
-- price_reaction_confirmed: `True`
-- confirmation_score: `75`
+- price_reaction_confirmed: `False`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
-当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，已被价格反应初步确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
+当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，尚未被价格反应充分确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
 
 ## Economic Calendar Risk
 
@@ -27,48 +27,24 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Israel kills senior Hamas security official in airstrike on Gaza - Reuters
+- headline: UK warns of Russian sabotage threat to companies that supply Ukraine - Reuters
 - source: Reuters
-- published_at: `2026-11-24T00:20:00+00:00`
+- published_at: `2026-11-24T21:32:51+00:00`
 - importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: US eyes Iran as possible culprit in dozens of new cyberattacks against ships, WSJ reports - Reuters
-- source: Reuters
-- published_at: `2026-11-24T00:18:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: CrowdStrike CEO defends Zscaler acquisition, calls it a 'winning combination'
-- source: CNBC
-- published_at: `2026-11-23T23:53:20+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters
-- source: Reuters
-- published_at: `2026-11-23T23:25:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### oil_shock_risk / risk_off
-
-- headline: Oil touches three-month lows before recovering on Hormuz threat - Reuters
-- source: Reuters
-- published_at: `2026-11-24T02:56:00+00:00`
-- importance_score: `95`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Belgian PM sets December 31 budget talks deadline amid national strike - Reuters
+- headline: Trump awards Rudy Giuliani the Medal of Freedom - Reuters
 - source: Reuters
-- published_at: `2026-11-23T20:53:47+00:00`
+- published_at: `2026-11-24T18:51:43+00:00`
 - importance_score: `100`
-- confidence: `medium`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Venezuela moves toward possible debt restructuring with release of economic framework - Reuters
+- source: Reuters
+- published_at: `2026-11-24T18:46:35+00:00`
+- importance_score: `100`
+- confidence: `high`

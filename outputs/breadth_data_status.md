@@ -1,6 +1,6 @@
 # Breadth Data Status
 
-Generated at: 2026-11-24T14:17:29.992612+00:00
+Generated at: 2026-11-24T22:30:19.716545+00:00
 
 Provider available: True
 True breadth available: False
@@ -11,14 +11,14 @@ Stale data: True
 
 ## Market Internal Resonance
 
-- resonance_score: 37.36
+- resonance_score: 40.19
 - resonance_state: weak
 - label: no_internal_resonance
 - aligned_symbols: none
 - surface_only_symbols: none
-- sector_score: 6.0
-- equal_weight_vs_cap_weight_20d: 0.035715
-- small_cap_vs_large_cap_20d: 0.015671
+- sector_score: 20.0
+- equal_weight_vs_cap_weight_20d: 0.049741
+- small_cap_vs_large_cap_20d: 0.019566
 
 ## Universe Status
 
@@ -38,7 +38,7 @@ Stale data: True
 - new highs/lows 20d: 4 / 174
 - new highs/lows 52w: 0 / 20
 - improvement / deterioration / confirmation / conflict / quality: 24.95 / 100.0 / 37.96 / 76.0 / 100.0
-- internal_resonance: weak / score 31.96 / SPY 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
+- internal_resonance: weak / score 34.27 / SPY 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
 
 ### QQQ
 
@@ -56,7 +56,7 @@ Stale data: True
 - new highs/lows 20d: 0 / 0
 - new highs/lows 52w: 0 / 0
 - improvement / deterioration / confirmation / conflict / quality: 8.67 / 70.67 / 9.39 / 69.07 / 4.0
-- internal_resonance: weak / score 18.09 / QQQ 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
+- internal_resonance: weak / score 20.4 / QQQ 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
 
 ### DIA
 
@@ -74,13 +74,13 @@ Stale data: True
 - new highs/lows 20d: 1 / 6
 - new highs/lows 52w: 0 / 1
 - improvement / deterioration / confirmation / conflict / quality: 34.92 / 100.0 / 45.14 / 76.0 / 100.0
-- internal_resonance: weak / score 37.26 / DIA 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
+- internal_resonance: weak / score 39.57 / DIA 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
 
 ### IWM
 
 - status: proxy
 - source: iwm-spy-relative-strength-proxy
-- latest_date: 2026-11-23
+- latest_date: 2026-11-24
 - true_breadth: False
 - proxy: True
 - constituents used / expected: None / None
@@ -91,8 +91,8 @@ Stale data: True
 - advancers / decliners / A-D ratio: None / None / None
 - new highs/lows 20d: None / None
 - new highs/lows 52w: None / None
-- improvement / deterioration / confirmation / conflict / quality: 55.32 / 53.89 / 57.49 / 49.41 / 64
-- internal_resonance: weak / score 42.86 / IWM 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
+- improvement / deterioration / confirmation / conflict / quality: 64.03 / 53.81 / 64.02 / 49.36 / 64
+- internal_resonance: weak / score 46.74 / IWM 暂无内部共振：成分股参与度、行业参与或等权/小盘代理不足。
 
 ## Notes
 
