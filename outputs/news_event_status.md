@@ -1,20 +1,20 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-24T06:55:59.693386+00:00`
+- generated_at: `2026-11-24T11:00:41.519994+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `7`
-- event_detection_confidence: `77`
+- event_detection_confidence: `74`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
-- price_reaction_confirmed: `False`
-- confirmation_score: `25`
+- price_reaction_confirmed: `True`
+- confirmation_score: `75`
 
 ## Dashboard Note
 
-当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，尚未被价格反应充分确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
+当前新闻叙事为 geopolitics_escalation_risk_off，方向为 supports_risk_expansion，已被价格反应初步确认。地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。
 
 ## Economic Calendar Risk
 
@@ -27,7 +27,7 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Israeli airstrike kills at least three Palestinians in southern Gaza, medics say - Reuters
+- headline: Israeli airstrikes kill at least six Palestinians in Gaza, medics say - Reuters
 - source: Reuters
 - published_at: `2026-11-24T00:20:00+00:00`
 - importance_score: `100`
@@ -49,14 +49,6 @@
 - importance_score: `100`
 - confidence: `high`
 
-### oil_shock_risk / risk_off
-
-- headline: Oil prices near three-month lows as rising supply offsets Hormuz threat - Reuters
-- source: Reuters
-- published_at: `2026-11-24T02:56:00+00:00`
-- importance_score: `97`
-- confidence: `high`
-
 ### geopolitical_risk_escalation / risk_off
 
 - headline: South Korea briefly scrambles fighter jets, issues warning after Russia aircraft fly off coast - Reuters
@@ -65,13 +57,21 @@
 - importance_score: `100`
 - confidence: `high`
 
+### oil_shock_risk / risk_off
+
+- headline: Oil prices near three-month lows as rising supply offsets Hormuz threat - Reuters
+- source: Reuters
+- published_at: `2026-11-24T02:56:00+00:00`
+- importance_score: `96`
+- confidence: `high`
+
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Belgian PM sets December 31 budget talks deadline amid national strike - Reuters
 - source: Reuters
 - published_at: `2026-11-23T20:53:47+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
