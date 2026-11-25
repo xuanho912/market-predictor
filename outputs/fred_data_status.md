@@ -1,6 +1,6 @@
 # FRED Data Status
 
-Generated at: `2026-11-24T22:30:56.944734Z`
+Generated at: `2026-11-25T03:38:12.880170Z`
 
 ## Provider
 
@@ -8,7 +8,7 @@ Generated at: `2026-11-24T22:30:56.944734Z`
 - provider available: `True`
 - fallback used: `False`
 - rate limited: `False`
-- successful series: `DGS2, HY_OAS, IG_OAS, DGS10, DFII10, FINANCIAL_STRESS, BAA_SPREAD, DGS3MO, RECESSION`
+- successful series: `HY_OAS, DGS3MO, DGS10, DGS2, BAA_SPREAD, IG_OAS, RECESSION, DFII10, FINANCIAL_STRESS`
 - failed series: `none`
 
 ## Series
@@ -37,10 +37,10 @@ Generated at: `2026-11-24T22:30:56.944734Z`
 
 | symbol | edge without | edge with | primary without | primary with | risk expansion delta | failed bounce delta |
 |---|---|---|---|---|---:|---:|
-| SPY | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.0846 | 0.0277 |
-| QQQ | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.0846 | 0.0277 |
-| IWM | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.0846 | 0.0277 |
-| DIA | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.0847 | 0.0387 |
+| SPY | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.0847 | 0.0278 |
+| QQQ | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.0846 | 0.0278 |
+| IWM | RISK_WARNING | RISK_WARNING | bounce_path | bounce_path | 0.0846 | 0.0255 |
+| DIA | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.0846 | 0.0387 |
 
 ## Warning
 

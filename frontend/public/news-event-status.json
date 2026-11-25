@@ -10,16 +10,16 @@
     "source": "finnhub",
     "status": "failed"
   },
-  "event_detection_confidence": 80,
+  "event_detection_confidence": 77,
   "event_risk_level": "high",
-  "generated_at": "2026-11-24T22:30:44.355890+00:00",
+  "generated_at": "2026-11-25T03:37:59.460745+00:00",
   "limits": [
     "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
     "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
     "The provider never exposes API keys and never lets frontend call Finnhub directly.",
     "Economic calendar items are treated as event-risk context, not automatic directional forecasts."
   ],
-  "major_event_count": 3,
+  "major_event_count": 4,
   "major_events": [
     {
       "affected_assets": [
@@ -33,14 +33,41 @@
         "TLT"
       ],
       "confidence": "high",
-      "confidence_score": 81,
+      "confidence_score": 78,
       "detected_event_conditions": [
         "geopolitical_risk_escalation"
       ],
       "event_type": "geopolitical_risk_escalation",
       "expected_horizon": "intraday-5d",
       "expected_market_direction": "risk_off",
-      "freshness_score": 98,
+      "freshness_score": 87,
+      "headline": "Saudi-led coalition issues evacuation warning for Yemen's Hodeidah port - Reuters",
+      "importance_score": 100,
+      "narrative": "geopolitics_escalation_risk_off",
+      "provider": "finnhub",
+      "published_at": "2026-11-24T22:11:43+00:00",
+      "source": "Reuters"
+    },
+    {
+      "affected_assets": [
+        "SPY",
+        "QQQ",
+        "IWM",
+        "DIA",
+        "^VIX",
+        "USO",
+        "UUP",
+        "TLT"
+      ],
+      "confidence": "high",
+      "confidence_score": 78,
+      "detected_event_conditions": [
+        "geopolitical_risk_escalation"
+      ],
+      "event_type": "geopolitical_risk_escalation",
+      "expected_horizon": "intraday-5d",
+      "expected_market_direction": "risk_off",
+      "freshness_score": 85,
       "headline": "UK warns of Russian sabotage threat to companies that supply Ukraine - Reuters",
       "importance_score": 100,
       "narrative": "geopolitics_escalation_risk_off",
@@ -60,14 +87,14 @@
         "TLT"
       ],
       "confidence": "high",
-      "confidence_score": 79,
+      "confidence_score": 76,
       "detected_event_conditions": [
         "geopolitical_risk_escalation"
       ],
       "event_type": "geopolitical_risk_escalation",
       "expected_horizon": "intraday-5d",
       "expected_market_direction": "risk_off",
-      "freshness_score": 91,
+      "freshness_score": 79,
       "headline": "Trump awards Rudy Giuliani the Medal of Freedom - Reuters",
       "importance_score": 100,
       "narrative": "geopolitics_escalation_risk_off",
@@ -87,14 +114,14 @@
         "TLT"
       ],
       "confidence": "high",
-      "confidence_score": 79,
+      "confidence_score": 76,
       "detected_event_conditions": [
         "geopolitical_risk_escalation"
       ],
       "event_type": "geopolitical_risk_escalation",
       "expected_horizon": "intraday-5d",
       "expected_market_direction": "risk_off",
-      "freshness_score": 91,
+      "freshness_score": 79,
       "headline": "Venezuela moves toward possible debt restructuring with release of economic framework - Reuters",
       "importance_score": 100,
       "narrative": "geopolitics_escalation_risk_off",
@@ -122,6 +149,18 @@
     "narrative_strength": 100,
     "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
     "supporting_headlines": [
+      {
+        "confidence": "high",
+        "detected_event_conditions": [
+          "geopolitical_risk_escalation"
+        ],
+        "event_type": "geopolitical_risk_escalation",
+        "expected_market_direction": "risk_off",
+        "headline": "Saudi-led coalition issues evacuation warning for Yemen's Hodeidah port - Reuters",
+        "importance_score": 100,
+        "published_at": "2026-11-24T22:11:43+00:00",
+        "source": "Reuters"
+      },
       {
         "confidence": "high",
         "detected_event_conditions": [
@@ -166,14 +205,14 @@
     "direction": "supports_risk_expansion",
     "event_risk_level": "high",
     "macro_event_risk_flag": false,
-    "major_event_count": 3,
+    "major_event_count": 4,
     "not_a_trading_signal": true,
     "price_reaction_confirmed": false,
     "symbols": {
       "DIA": {
-        "after_primary_probability": 0.3768,
+        "after_primary_probability": 0.3952,
         "after_primary_scenario": "bearish_path",
-        "before_primary_probability": 0.3515,
+        "before_primary_probability": 0.3705,
         "before_primary_scenario": "bearish_path",
         "confirmation_delta": -5.0,
         "impact": "text_support_unconfirmed",
@@ -197,18 +236,18 @@
           "risk_expansion_predictor": 0.025,
           "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": 0.0253,
+        "primary_probability_delta": 0.0247,
         "primary_scenario_changed": false,
         "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
       },
       "IWM": {
-        "after_primary_probability": 0.3164,
+        "after_primary_probability": 0.3118,
         "after_primary_scenario": "bearish_path",
-        "before_primary_probability": 0.289,
-        "before_primary_scenario": "bearish_path",
+        "before_primary_probability": 0.2845,
+        "before_primary_scenario": "bounce_path",
         "confirmation_delta": -5.0,
-        "impact": "text_support_unconfirmed",
+        "impact": "potential_conflict_unconfirmed",
         "not_a_trading_signal": true,
         "overlay_applied": true,
         "path_overlay": {
@@ -229,13 +268,13 @@
           "risk_expansion_predictor": 0.025,
           "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": 0.0274,
-        "primary_scenario_changed": false,
+        "primary_probability_delta": 0.0273,
+        "primary_scenario_changed": true,
         "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
       },
       "QQQ": {
-        "after_primary_probability": 0.4298,
+        "after_primary_probability": 0.4299,
         "after_primary_scenario": "bearish_path",
         "before_primary_probability": 0.4064,
         "before_primary_scenario": "bearish_path",
@@ -261,15 +300,15 @@
           "risk_expansion_predictor": 0.025,
           "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": 0.0234,
+        "primary_probability_delta": 0.0235,
         "primary_scenario_changed": false,
         "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
       },
       "SPY": {
-        "after_primary_probability": 0.4524,
+        "after_primary_probability": 0.4593,
         "after_primary_scenario": "bearish_path",
-        "before_primary_probability": 0.4297,
+        "before_primary_probability": 0.4369,
         "before_primary_scenario": "bearish_path",
         "confirmation_delta": -5.0,
         "impact": "text_support_unconfirmed",
@@ -293,7 +332,7 @@
           "risk_expansion_predictor": 0.025,
           "trend_reversal_predictor": 0.0
         },
-        "primary_probability_delta": 0.0227,
+        "primary_probability_delta": 0.0224,
         "primary_scenario_changed": false,
         "reason": "risk-off news raised failed-bounce / risk-expansion path weight; signal confirmation adjusted -5.00 points; independent predictors adjusted by news/event overlay",
         "validation_type": "daily"
@@ -305,7 +344,7 @@
   "price_reaction_confirmation": {
     "asset_reaction_summary": {
       "avg_equity_1d_return": -0.0029,
-      "avg_equity_futures_1d_return": -0.0034,
+      "avg_equity_futures_1d_return": -0.0059,
       "confirmed_checks": [
         "股票ETF或股指期货下跌"
       ],
@@ -321,7 +360,7 @@
         "美元走强"
       ],
       "hyg_lqd_1d_relative_return": 0.0002,
-      "oil_proxy_1d_return": 0.0172,
+      "oil_proxy_1d_return": 0.0009,
       "oil_proxy_symbols_used": [
         "USO",
         "CL=F"
@@ -348,7 +387,7 @@
       "status": "available"
     },
     "gdelt_public_news": {
-      "error_type": "URLError",
+      "error_type": "HTTPError",
       "source": "gdelt",
       "stale": false,
       "status": "failed"
@@ -380,16 +419,16 @@
         "failed_bounce_risk_higher:needs_price_confirmation",
         "risk_expansion_higher:needs_price_confirmation"
       ],
-      "explanation": "IWM 新闻层支持当前主路径，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
-      "impact": "text_support_unconfirmed",
-      "news_conflicts_primary_scenario": false,
-      "news_supports_primary_scenario": true,
-      "primary_scenario": "bearish_path",
+      "explanation": "IWM 新闻层与当前主路径冲突，但仍需结合 VIX、HYG/LQD 和价格触发位；价格反应尚未充分确认。",
+      "impact": "potential_conflict_unconfirmed",
+      "news_conflicts_primary_scenario": true,
+      "news_supports_primary_scenario": false,
+      "primary_scenario": "bounce_path",
       "risk_scenario": "analog_average_path",
       "scenario_bias": [
         "bearish_path"
       ],
-      "secondary_scenario": "bounce_path"
+      "secondary_scenario": "bearish_path"
     },
     "QQQ": {
       "expected_changes": [
