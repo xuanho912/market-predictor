@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-25T05:25:28.838254+00:00`
+- generated_at: `2026-11-25T13:31:31.811357+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `4`
-- event_detection_confidence: `76`
+- major_event_count: `10`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `25`
+- confirmation_score: `50`
 
 ## Dashboard Note
 
@@ -27,11 +27,67 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Liesman: Nvidia whiplash tests Kevin Warsh’s push to read market signals
+- source: CNBC
+- published_at: `2026-11-25T12:26:41+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Israeli strike kills Hamas official, his wife and children - Reuters
+- source: Reuters
+- published_at: `2026-11-25T09:09:44+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran says it is prepared to withstand US blockade, seeks to curb price rises - Reuters
+- source: Reuters
+- published_at: `2026-11-25T08:29:22+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Yemen's Houthis say they attacked Saudi Arabia's Ras Tanura refinery - Reuters
+- source: Reuters
+- published_at: `2026-11-25T07:24:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: India's Chartered Speed targets December IPO after Iran war disruption - Reuters
+- source: Reuters
+- published_at: `2026-11-25T06:12:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Russian strike kills two people in Ukraine's Odesa region, governor says - Reuters
+- source: Reuters
+- published_at: `2026-11-25T01:26:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Saudi-led coalition issues evacuation warning for Yemen's Hodeidah port - Reuters
 - source: Reuters
 - published_at: `2026-11-24T22:11:43+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: UK financial watchdog delivers AI warning as Meta launches adapted Muse - Reuters
+- source: Reuters
+- published_at: `2026-11-24T21:43:35+00:00`
+- importance_score: `100`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -39,7 +95,7 @@
 - source: Reuters
 - published_at: `2026-11-24T21:32:51+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,12 +103,4 @@
 - source: Reuters
 - published_at: `2026-11-24T18:51:43+00:00`
 - importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Venezuela moves toward possible debt restructuring with release of economic framework - Reuters
-- source: Reuters
-- published_at: `2026-11-24T18:46:35+00:00`
-- importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
