@@ -1,19 +1,18 @@
 {
   "driver_counts": {
-    "breadth_conflict_underweighted": 218,
+    "breadth_conflict_underweighted": 222,
     "breadth_follow_through_underweighted": 151,
-    "intraday_snapshot_risk": 1363,
-    "model_underestimated_downside_or_failed_bounce": 614,
-    "model_underestimated_upside_or_repair": 749,
-    "news_data_gap_limited_attribution": 1363,
-    "news_event_risk_underweighted": 614,
-    "risk_off_flow_underweighted": 168,
-    "risk_off_news_overweighted_or_resolved": 559,
+    "model_underestimated_downside_or_failed_bounce": 623,
+    "model_underestimated_upside_or_repair": 756,
+    "news_data_gap_limited_attribution": 1379,
+    "news_event_risk_underweighted": 623,
+    "risk_off_flow_underweighted": 176,
+    "risk_off_news_overweighted_or_resolved": 564,
     "risk_on_flow_underweighted": 138,
-    "volatility_or_tail_risk_underweighted": 65,
+    "volatility_or_tail_risk_underweighted": 66,
     "volatility_repair_underweighted": 187
   },
-  "generated_at": "2026-11-25T13:31:43.189342+00:00",
+  "generated_at": "2026-11-25T21:45:50.384661+00:00",
   "guardrails": [
     "This is forecast error attribution, not a trading or PnL report.",
     "Attribution is diagnostic and probabilistic; it is not proof of causality.",
@@ -22,6 +21,238 @@
     "Baseline v1 is not changed by this review. Lessons must enter a challenger first."
   ],
   "latest_deviations": [
+    {
+      "absolute_error": 0.013213,
+      "actual_return": 0.006476,
+      "best_matching_scenario": "expected_path",
+      "conflicting_signals_at_forecast": [
+        "VIX direction",
+        "options stress",
+        "flow / positioning proxy",
+        "price trend",
+        "risk_off_news_event"
+      ],
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
+      "error_direction": "actual_stronger_than_forecast",
+      "expected_return": -0.006737,
+      "expected_return_source": "stored_scenario_path",
+      "forecast_date": "2026-11-24",
+      "forecast_error": 0.013213,
+      "forecast_id": "0a1245f69dad62385b",
+      "horizon": "1d",
+      "likely_error_drivers": [
+        "model_underestimated_upside_or_repair",
+        "risk_off_news_overweighted_or_resolved",
+        "news_data_gap_limited_attribution"
+      ],
+      "material_deviation": true,
+      "missing_data_at_forecast": [
+        "finnhub_candle_SPY",
+        "finnhub_candle_QQQ",
+        "finnhub_candle_IWM",
+        "finnhub_candle_DIA",
+        "finnhub_news_sentiment_SPY",
+        "finnhub_news_sentiment_QQQ",
+        "finnhub_news_sentiment_IWM",
+        "finnhub_news_sentiment_DIA",
+        "finnhub_economic_calendar",
+        "finnhub_rates_data",
+        "finnhub_alternative_data",
+        "breadth_QQQ"
+      ],
+      "model_version": "baseline_v1",
+      "not_causal_proof": true,
+      "overweighted_factors": [
+        "risk_off_news_or_macro_risk"
+      ],
+      "path_error": 0.0132128486,
+      "primary_hit": false,
+      "primary_scenario": "bearish_path",
+      "risk_scenario": "bearish_path",
+      "secondary_scenario": "analog_average_path",
+      "severity": "moderate",
+      "supporting_signals_at_forecast": [
+        "Alpha v1 bounce signal",
+        "credit stability",
+        "breadth confirmation",
+        "macro event risk",
+        "historical analog support"
+      ],
+      "symbol": "IWM",
+      "underweighted_factors": []
+    },
+    {
+      "absolute_error": 0.005581,
+      "actual_return": -0.006535,
+      "best_matching_scenario": "bounce_path",
+      "conflicting_signals_at_forecast": [
+        "VIX direction",
+        "breadth weak",
+        "breadth data quality",
+        "internal resonance quality",
+        "options stress",
+        "flow / positioning proxy",
+        "price trend",
+        "failed bounce risk",
+        "risk_off_news_event"
+      ],
+      "diagnostic_note": "实际结果与预测路径偏差不大，暂不做强归因。",
+      "error_direction": "within_expected_noise",
+      "expected_return": -0.000954,
+      "expected_return_source": "stored_scenario_path",
+      "forecast_date": "2026-11-24",
+      "forecast_error": -0.005581,
+      "forecast_id": "f0d3b526499d983f6b",
+      "horizon": "1d",
+      "likely_error_drivers": [
+        "normal_forecast_noise"
+      ],
+      "material_deviation": false,
+      "missing_data_at_forecast": [
+        "finnhub_candle_SPY",
+        "finnhub_candle_QQQ",
+        "finnhub_candle_IWM",
+        "finnhub_candle_DIA",
+        "finnhub_news_sentiment_SPY",
+        "finnhub_news_sentiment_QQQ",
+        "finnhub_news_sentiment_IWM",
+        "finnhub_news_sentiment_DIA",
+        "finnhub_economic_calendar",
+        "finnhub_rates_data",
+        "finnhub_alternative_data",
+        "breadth_QQQ"
+      ],
+      "model_version": "baseline_v1",
+      "not_causal_proof": true,
+      "overweighted_factors": [],
+      "path_error": 0.005581387039,
+      "primary_hit": false,
+      "primary_scenario": "bearish_path",
+      "risk_scenario": "bearish_path",
+      "secondary_scenario": "analog_average_path",
+      "severity": "normal",
+      "supporting_signals_at_forecast": [
+        "Alpha v1 bounce signal",
+        "credit stability",
+        "macro event risk"
+      ],
+      "symbol": "QQQ",
+      "underweighted_factors": []
+    },
+    {
+      "absolute_error": 0.00511,
+      "actual_return": -0.002894,
+      "best_matching_scenario": "analog_average_path",
+      "conflicting_signals_at_forecast": [
+        "VIX direction",
+        "breadth weak",
+        "options stress",
+        "flow / positioning proxy",
+        "historical analog support",
+        "price trend",
+        "failed bounce risk",
+        "risk_off_news_event"
+      ],
+      "diagnostic_note": "实际结果与预测路径偏差不大，暂不做强归因。",
+      "error_direction": "within_expected_noise",
+      "expected_return": -0.008004,
+      "expected_return_source": "stored_scenario_path",
+      "forecast_date": "2026-11-24",
+      "forecast_error": 0.00511,
+      "forecast_id": "98ca52f12541290bbe",
+      "horizon": "1d",
+      "likely_error_drivers": [
+        "normal_forecast_noise"
+      ],
+      "material_deviation": false,
+      "missing_data_at_forecast": [
+        "finnhub_candle_SPY",
+        "finnhub_candle_QQQ",
+        "finnhub_candle_IWM",
+        "finnhub_candle_DIA",
+        "finnhub_news_sentiment_SPY",
+        "finnhub_news_sentiment_QQQ",
+        "finnhub_news_sentiment_IWM",
+        "finnhub_news_sentiment_DIA",
+        "finnhub_economic_calendar",
+        "finnhub_rates_data",
+        "finnhub_alternative_data",
+        "breadth_QQQ"
+      ],
+      "model_version": "baseline_v1",
+      "not_causal_proof": true,
+      "overweighted_factors": [],
+      "path_error": 0.005110163047,
+      "primary_hit": false,
+      "primary_scenario": "bearish_path",
+      "risk_scenario": "bearish_path",
+      "secondary_scenario": "analog_average_path",
+      "severity": "normal",
+      "supporting_signals_at_forecast": [
+        "Alpha v1 bounce signal",
+        "credit stability",
+        "macro event risk"
+      ],
+      "symbol": "SPY",
+      "underweighted_factors": []
+    },
+    {
+      "absolute_error": 0.002847,
+      "actual_return": 0.003062,
+      "best_matching_scenario": "bounce_path",
+      "conflicting_signals_at_forecast": [
+        "VIX direction",
+        "breadth weak",
+        "options stress",
+        "flow / positioning proxy",
+        "price trend",
+        "failed bounce risk",
+        "risk_off_news_event"
+      ],
+      "diagnostic_note": "实际结果与预测路径偏差不大，暂不做强归因。",
+      "error_direction": "within_expected_noise",
+      "expected_return": 0.000215,
+      "expected_return_source": "stored_scenario_path",
+      "forecast_date": "2026-11-24",
+      "forecast_error": 0.002847,
+      "forecast_id": "d5eb18f577b8804540",
+      "horizon": "1d",
+      "likely_error_drivers": [
+        "normal_forecast_noise"
+      ],
+      "material_deviation": false,
+      "missing_data_at_forecast": [
+        "finnhub_candle_SPY",
+        "finnhub_candle_QQQ",
+        "finnhub_candle_IWM",
+        "finnhub_candle_DIA",
+        "finnhub_news_sentiment_SPY",
+        "finnhub_news_sentiment_QQQ",
+        "finnhub_news_sentiment_IWM",
+        "finnhub_news_sentiment_DIA",
+        "finnhub_economic_calendar",
+        "finnhub_rates_data",
+        "finnhub_alternative_data",
+        "breadth_QQQ"
+      ],
+      "model_version": "baseline_v1",
+      "not_causal_proof": true,
+      "overweighted_factors": [],
+      "path_error": 0.002846877995,
+      "primary_hit": false,
+      "primary_scenario": "bearish_path",
+      "risk_scenario": "bearish_path",
+      "secondary_scenario": "analog_average_path",
+      "severity": "normal",
+      "supporting_signals_at_forecast": [
+        "Alpha v1 bounce signal",
+        "credit stability",
+        "macro event risk",
+        "historical analog support"
+      ],
+      "symbol": "DIA",
+      "underweighted_factors": []
+    },
     {
       "absolute_error": 0.018068,
       "actual_return": -0.019861,
@@ -53,8 +284,7 @@
         "volatility_or_tail_risk_underweighted",
         "breadth_conflict_underweighted",
         "risk_off_flow_underweighted",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
+        "news_data_gap_limited_attribution"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -117,8 +347,7 @@
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
+        "news_data_gap_limited_attribution"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -181,8 +410,7 @@
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
+        "news_data_gap_limited_attribution"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -277,6 +505,258 @@
       "underweighted_factors": []
     },
     {
+      "absolute_error": 0.116516,
+      "actual_return": 0.041877,
+      "best_matching_scenario": "bounce_path",
+      "conflicting_signals_at_forecast": [
+        "VIX direction",
+        "breadth weak",
+        "breadth data quality",
+        "internal resonance quality",
+        "options stress",
+        "tail risk",
+        "flow / positioning proxy",
+        "crowding proxy",
+        "price trend",
+        "failed bounce risk",
+        "risk_off_news_event"
+      ],
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
+      "error_direction": "actual_stronger_than_forecast",
+      "expected_return": -0.074639,
+      "expected_return_source": "stored_scenario_path",
+      "forecast_date": "2026-11-20",
+      "forecast_error": 0.116516,
+      "forecast_id": "8d89a76c6c89416275",
+      "horizon": "3d",
+      "likely_error_drivers": [
+        "model_underestimated_upside_or_repair",
+        "risk_off_news_overweighted_or_resolved",
+        "news_data_gap_limited_attribution"
+      ],
+      "material_deviation": true,
+      "missing_data_at_forecast": [
+        "finnhub_candle_SPY",
+        "finnhub_candle_QQQ",
+        "finnhub_candle_IWM",
+        "finnhub_candle_DIA",
+        "finnhub_news_sentiment_SPY",
+        "finnhub_news_sentiment_QQQ",
+        "finnhub_news_sentiment_IWM",
+        "finnhub_news_sentiment_DIA",
+        "finnhub_economic_calendar",
+        "finnhub_rates_data",
+        "finnhub_alternative_data",
+        "breadth_QQQ"
+      ],
+      "model_version": "baseline_v1",
+      "not_causal_proof": true,
+      "overweighted_factors": [
+        "risk_off_news_or_macro_risk"
+      ],
+      "path_error": 0.1165161968,
+      "primary_hit": false,
+      "primary_scenario": "bearish_path",
+      "risk_scenario": "bearish_path",
+      "secondary_scenario": "analog_average_path",
+      "severity": "extreme",
+      "supporting_signals_at_forecast": [
+        "Alpha v1 bounce signal",
+        "credit stability",
+        "macro event risk",
+        "historical analog support"
+      ],
+      "symbol": "QQQ",
+      "underweighted_factors": []
+    },
+    {
+      "absolute_error": 0.073655,
+      "actual_return": 0.047777,
+      "best_matching_scenario": "bounce_path",
+      "conflicting_signals_at_forecast": [
+        "VIX direction",
+        "options stress",
+        "tail risk",
+        "flow / positioning proxy",
+        "crowding proxy",
+        "historical analog support",
+        "price trend",
+        "failed bounce risk",
+        "risk_off_news_event"
+      ],
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
+      "error_direction": "actual_stronger_than_forecast",
+      "expected_return": -0.025878,
+      "expected_return_source": "stored_scenario_path",
+      "forecast_date": "2026-11-20",
+      "forecast_error": 0.073655,
+      "forecast_id": "2fa39ef7cc22612bf2",
+      "horizon": "3d",
+      "likely_error_drivers": [
+        "model_underestimated_upside_or_repair",
+        "risk_off_news_overweighted_or_resolved",
+        "news_data_gap_limited_attribution"
+      ],
+      "material_deviation": true,
+      "missing_data_at_forecast": [
+        "finnhub_candle_SPY",
+        "finnhub_candle_QQQ",
+        "finnhub_candle_IWM",
+        "finnhub_candle_DIA",
+        "finnhub_news_sentiment_SPY",
+        "finnhub_news_sentiment_QQQ",
+        "finnhub_news_sentiment_IWM",
+        "finnhub_news_sentiment_DIA",
+        "finnhub_economic_calendar",
+        "finnhub_rates_data",
+        "finnhub_alternative_data",
+        "breadth_QQQ"
+      ],
+      "model_version": "baseline_v1",
+      "not_causal_proof": true,
+      "overweighted_factors": [
+        "risk_off_news_or_macro_risk"
+      ],
+      "path_error": 0.07365461387,
+      "primary_hit": false,
+      "primary_scenario": "bearish_path",
+      "risk_scenario": "bearish_path",
+      "secondary_scenario": "analog_average_path",
+      "severity": "extreme",
+      "supporting_signals_at_forecast": [
+        "Alpha v1 bounce signal",
+        "credit stability",
+        "macro event risk"
+      ],
+      "symbol": "IWM",
+      "underweighted_factors": []
+    },
+    {
+      "absolute_error": 0.063251,
+      "actual_return": 0.041968,
+      "best_matching_scenario": "analog_average_path",
+      "conflicting_signals_at_forecast": [
+        "VIX direction",
+        "breadth weak",
+        "options stress",
+        "tail risk",
+        "flow / positioning proxy",
+        "price trend",
+        "failed bounce risk",
+        "risk_off_news_event"
+      ],
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
+      "error_direction": "actual_stronger_than_forecast",
+      "expected_return": -0.021283,
+      "expected_return_source": "stored_scenario_path",
+      "forecast_date": "2026-11-20",
+      "forecast_error": 0.063251,
+      "forecast_id": "02a4223911f3ecdcc3",
+      "horizon": "3d",
+      "likely_error_drivers": [
+        "model_underestimated_upside_or_repair",
+        "risk_off_news_overweighted_or_resolved",
+        "news_data_gap_limited_attribution"
+      ],
+      "material_deviation": true,
+      "missing_data_at_forecast": [
+        "finnhub_candle_SPY",
+        "finnhub_candle_QQQ",
+        "finnhub_candle_IWM",
+        "finnhub_candle_DIA",
+        "finnhub_news_sentiment_SPY",
+        "finnhub_news_sentiment_QQQ",
+        "finnhub_news_sentiment_IWM",
+        "finnhub_news_sentiment_DIA",
+        "finnhub_economic_calendar",
+        "finnhub_rates_data",
+        "finnhub_alternative_data",
+        "breadth_QQQ"
+      ],
+      "model_version": "baseline_v1",
+      "not_causal_proof": true,
+      "overweighted_factors": [
+        "risk_off_news_or_macro_risk"
+      ],
+      "path_error": 0.06325123265,
+      "primary_hit": false,
+      "primary_scenario": "bearish_path",
+      "risk_scenario": "bearish_path",
+      "secondary_scenario": "analog_average_path",
+      "severity": "extreme",
+      "supporting_signals_at_forecast": [
+        "Alpha v1 bounce signal",
+        "credit stability",
+        "macro event risk",
+        "historical analog support"
+      ],
+      "symbol": "DIA",
+      "underweighted_factors": []
+    },
+    {
+      "absolute_error": 0.060414,
+      "actual_return": 0.038982,
+      "best_matching_scenario": "bounce_path",
+      "conflicting_signals_at_forecast": [
+        "VIX direction",
+        "options stress",
+        "tail risk",
+        "flow / positioning proxy",
+        "crowding proxy",
+        "price trend",
+        "failed bounce risk",
+        "risk_off_news_event"
+      ],
+      "diagnostic_note": "实际走势强于预测，说明 risk-off 新闻可能未被价格确认、已被市场消化，或风险快速缓和。",
+      "error_direction": "actual_stronger_than_forecast",
+      "expected_return": -0.021433,
+      "expected_return_source": "stored_scenario_path",
+      "forecast_date": "2026-11-20",
+      "forecast_error": 0.060414,
+      "forecast_id": "430e041f59563868a7",
+      "horizon": "3d",
+      "likely_error_drivers": [
+        "model_underestimated_upside_or_repair",
+        "risk_off_news_overweighted_or_resolved",
+        "news_data_gap_limited_attribution"
+      ],
+      "material_deviation": true,
+      "missing_data_at_forecast": [
+        "finnhub_candle_SPY",
+        "finnhub_candle_QQQ",
+        "finnhub_candle_IWM",
+        "finnhub_candle_DIA",
+        "finnhub_news_sentiment_SPY",
+        "finnhub_news_sentiment_QQQ",
+        "finnhub_news_sentiment_IWM",
+        "finnhub_news_sentiment_DIA",
+        "finnhub_economic_calendar",
+        "finnhub_rates_data",
+        "finnhub_alternative_data",
+        "breadth_QQQ"
+      ],
+      "model_version": "baseline_v1",
+      "not_causal_proof": true,
+      "overweighted_factors": [
+        "risk_off_news_or_macro_risk"
+      ],
+      "path_error": 0.06041433836,
+      "primary_hit": false,
+      "primary_scenario": "bearish_path",
+      "risk_scenario": "bearish_path",
+      "secondary_scenario": "analog_average_path",
+      "severity": "extreme",
+      "supporting_signals_at_forecast": [
+        "Alpha v1 bounce signal",
+        "credit stability",
+        "breadth confirmation",
+        "macro event risk",
+        "historical analog support"
+      ],
+      "symbol": "SPY",
+      "underweighted_factors": []
+    },
+    {
       "absolute_error": 0.102561,
       "actual_return": 0.069981,
       "best_matching_scenario": "bounce_path",
@@ -304,8 +784,7 @@
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
+        "news_data_gap_limited_attribution"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -367,8 +846,7 @@
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
+        "news_data_gap_limited_attribution"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -432,8 +910,7 @@
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
+        "news_data_gap_limited_attribution"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -494,8 +971,7 @@
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
+        "news_data_gap_limited_attribution"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -558,8 +1034,7 @@
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
+        "news_data_gap_limited_attribution"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -625,8 +1100,7 @@
         "volatility_or_tail_risk_underweighted",
         "breadth_conflict_underweighted",
         "risk_off_flow_underweighted",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
+        "news_data_gap_limited_attribution"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -689,8 +1163,7 @@
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
+        "news_data_gap_limited_attribution"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -814,8 +1287,7 @@
         "volatility_or_tail_risk_underweighted",
         "breadth_conflict_underweighted",
         "risk_off_flow_underweighted",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
+        "news_data_gap_limited_attribution"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -881,8 +1353,7 @@
         "volatility_or_tail_risk_underweighted",
         "breadth_conflict_underweighted",
         "risk_off_flow_underweighted",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
+        "news_data_gap_limited_attribution"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -948,8 +1419,7 @@
         "news_event_risk_underweighted",
         "volatility_or_tail_risk_underweighted",
         "risk_off_flow_underweighted",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
+        "news_data_gap_limited_attribution"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -1047,6 +1517,252 @@
       "underweighted_factors": []
     },
     {
+      "absolute_error": 0.043486,
+      "actual_return": -0.038786,
+      "best_matching_scenario": "bearish_path",
+      "conflicting_signals_at_forecast": [
+        "VIX direction",
+        "breadth weak",
+        "breadth data quality",
+        "internal resonance quality",
+        "options stress",
+        "tail risk",
+        "macro event risk",
+        "price trend",
+        "failed bounce risk",
+        "risk_off_news_event"
+      ],
+      "diagnostic_note": "实际走势弱于预测，优先检查是否低估了新闻/事件风险，或利空是否得到了价格确认。",
+      "error_direction": "actual_weaker_than_forecast",
+      "expected_return": 0.0047,
+      "expected_return_source": "stored_scenario_path",
+      "forecast_date": "2026-11-18",
+      "forecast_error": -0.043486,
+      "forecast_id": "88f4f1028ac08c259a",
+      "horizon": "5d",
+      "likely_error_drivers": [
+        "model_underestimated_downside_or_failed_bounce",
+        "news_event_risk_underweighted",
+        "volatility_or_tail_risk_underweighted",
+        "breadth_conflict_underweighted",
+        "risk_off_flow_underweighted",
+        "news_data_gap_limited_attribution"
+      ],
+      "material_deviation": true,
+      "missing_data_at_forecast": [
+        "finnhub_candle_SPY",
+        "finnhub_candle_QQQ",
+        "finnhub_candle_IWM",
+        "finnhub_candle_DIA",
+        "finnhub_news_sentiment_SPY",
+        "finnhub_news_sentiment_QQQ",
+        "finnhub_news_sentiment_IWM",
+        "finnhub_news_sentiment_DIA",
+        "finnhub_economic_calendar",
+        "finnhub_rates_data",
+        "finnhub_alternative_data",
+        "breadth_QQQ"
+      ],
+      "model_version": "baseline_v1",
+      "not_causal_proof": true,
+      "overweighted_factors": [],
+      "path_error": 0.04348640159,
+      "primary_hit": true,
+      "primary_scenario": "bearish_path",
+      "risk_scenario": "bearish_path",
+      "secondary_scenario": "analog_average_path",
+      "severity": "large",
+      "supporting_signals_at_forecast": [
+        "Alpha v1 bounce signal",
+        "credit stability",
+        "flow / positioning proxy",
+        "historical analog support"
+      ],
+      "symbol": "QQQ",
+      "underweighted_factors": [
+        "news_event_risk_underweighted",
+        "volatility_or_tail_risk_underweighted",
+        "breadth_conflict_underweighted",
+        "risk_off_flow_underweighted"
+      ]
+    },
+    {
+      "absolute_error": 0.018708,
+      "actual_return": -0.004628,
+      "best_matching_scenario": "analog_average_path",
+      "conflicting_signals_at_forecast": [
+        "VIX direction",
+        "options stress",
+        "tail risk",
+        "macro event risk",
+        "price trend",
+        "risk_off_news_event"
+      ],
+      "diagnostic_note": "出现实质偏差，需要复盘当时支持/冲突证据的权重是否合理；该归因是诊断，不是因果证明。",
+      "error_direction": "actual_stronger_than_forecast",
+      "expected_return": -0.023336,
+      "expected_return_source": "stored_scenario_path",
+      "forecast_date": "2026-11-18",
+      "forecast_error": 0.018708,
+      "forecast_id": "e3fa0c82a35c1ff253",
+      "horizon": "5d",
+      "likely_error_drivers": [
+        "model_underestimated_upside_or_repair",
+        "news_data_gap_limited_attribution"
+      ],
+      "material_deviation": true,
+      "missing_data_at_forecast": [
+        "finnhub_candle_SPY",
+        "finnhub_candle_QQQ",
+        "finnhub_candle_IWM",
+        "finnhub_candle_DIA",
+        "finnhub_news_sentiment_SPY",
+        "finnhub_news_sentiment_QQQ",
+        "finnhub_news_sentiment_IWM",
+        "finnhub_news_sentiment_DIA",
+        "finnhub_economic_calendar",
+        "finnhub_rates_data",
+        "finnhub_alternative_data",
+        "breadth_QQQ"
+      ],
+      "model_version": "baseline_v1",
+      "not_causal_proof": true,
+      "overweighted_factors": [],
+      "path_error": 0.01870835176,
+      "primary_hit": false,
+      "primary_scenario": "bearish_path",
+      "risk_scenario": "bearish_path",
+      "secondary_scenario": "analog_average_path",
+      "severity": "moderate",
+      "supporting_signals_at_forecast": [
+        "Alpha v1 bounce signal",
+        "credit stability",
+        "breadth confirmation",
+        "flow / positioning proxy",
+        "historical analog support",
+        "failed bounce risk"
+      ],
+      "symbol": "IWM",
+      "underweighted_factors": []
+    },
+    {
+      "absolute_error": 0.018564,
+      "actual_return": -0.000917,
+      "best_matching_scenario": "analog_average_path",
+      "conflicting_signals_at_forecast": [
+        "VIX direction",
+        "breadth weak",
+        "options stress",
+        "tail risk",
+        "macro event risk",
+        "flow / positioning proxy",
+        "price trend",
+        "failed bounce risk",
+        "risk_off_news_event"
+      ],
+      "diagnostic_note": "出现实质偏差，需要复盘当时支持/冲突证据的权重是否合理；该归因是诊断，不是因果证明。",
+      "error_direction": "actual_stronger_than_forecast",
+      "expected_return": -0.019481,
+      "expected_return_source": "stored_scenario_path",
+      "forecast_date": "2026-11-18",
+      "forecast_error": 0.018564,
+      "forecast_id": "a8ce2b629b92f68d29",
+      "horizon": "5d",
+      "likely_error_drivers": [
+        "model_underestimated_upside_or_repair",
+        "news_data_gap_limited_attribution"
+      ],
+      "material_deviation": true,
+      "missing_data_at_forecast": [
+        "finnhub_candle_SPY",
+        "finnhub_candle_QQQ",
+        "finnhub_candle_IWM",
+        "finnhub_candle_DIA",
+        "finnhub_news_sentiment_SPY",
+        "finnhub_news_sentiment_QQQ",
+        "finnhub_news_sentiment_IWM",
+        "finnhub_news_sentiment_DIA",
+        "finnhub_economic_calendar",
+        "finnhub_rates_data",
+        "finnhub_alternative_data",
+        "breadth_QQQ"
+      ],
+      "model_version": "baseline_v1",
+      "not_causal_proof": true,
+      "overweighted_factors": [],
+      "path_error": 0.01856392489,
+      "primary_hit": false,
+      "primary_scenario": "bearish_path",
+      "risk_scenario": "bearish_path",
+      "secondary_scenario": "analog_average_path",
+      "severity": "moderate",
+      "supporting_signals_at_forecast": [
+        "Alpha v1 bounce signal",
+        "credit stability",
+        "historical analog support"
+      ],
+      "symbol": "DIA",
+      "underweighted_factors": []
+    },
+    {
+      "absolute_error": 0.004416,
+      "actual_return": -0.018488,
+      "best_matching_scenario": "bearish_path",
+      "conflicting_signals_at_forecast": [
+        "VIX direction",
+        "options stress",
+        "tail risk",
+        "macro event risk",
+        "price trend",
+        "failed bounce risk",
+        "risk_off_news_event"
+      ],
+      "diagnostic_note": "实际结果与预测路径偏差不大，暂不做强归因。",
+      "error_direction": "within_expected_noise",
+      "expected_return": -0.022904,
+      "expected_return_source": "stored_scenario_path",
+      "forecast_date": "2026-11-18",
+      "forecast_error": 0.004416,
+      "forecast_id": "40a15cab357534e1df",
+      "horizon": "5d",
+      "likely_error_drivers": [
+        "normal_forecast_noise"
+      ],
+      "material_deviation": false,
+      "missing_data_at_forecast": [
+        "finnhub_candle_SPY",
+        "finnhub_candle_QQQ",
+        "finnhub_candle_IWM",
+        "finnhub_candle_DIA",
+        "finnhub_news_sentiment_SPY",
+        "finnhub_news_sentiment_QQQ",
+        "finnhub_news_sentiment_IWM",
+        "finnhub_news_sentiment_DIA",
+        "finnhub_economic_calendar",
+        "finnhub_rates_data",
+        "finnhub_alternative_data",
+        "breadth_QQQ"
+      ],
+      "model_version": "baseline_v1",
+      "not_causal_proof": true,
+      "overweighted_factors": [],
+      "path_error": 0.004415502911,
+      "primary_hit": true,
+      "primary_scenario": "bearish_path",
+      "risk_scenario": "bearish_path",
+      "secondary_scenario": "analog_average_path",
+      "severity": "normal",
+      "supporting_signals_at_forecast": [
+        "Alpha v1 bounce signal",
+        "credit stability",
+        "breadth confirmation",
+        "flow / positioning proxy",
+        "historical analog support"
+      ],
+      "symbol": "SPY",
+      "underweighted_factors": []
+    },
+    {
       "absolute_error": 0.017859,
       "actual_return": -0.012858,
       "best_matching_scenario": "bearish_path",
@@ -1076,8 +1792,7 @@
         "volatility_or_tail_risk_underweighted",
         "breadth_conflict_underweighted",
         "risk_off_flow_underweighted",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
+        "news_data_gap_limited_attribution"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -1321,8 +2036,7 @@
         "volatility_or_tail_risk_underweighted",
         "breadth_conflict_underweighted",
         "risk_off_flow_underweighted",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
+        "news_data_gap_limited_attribution"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -1387,8 +2101,7 @@
         "news_event_risk_underweighted",
         "volatility_or_tail_risk_underweighted",
         "risk_off_flow_underweighted",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
+        "news_data_gap_limited_attribution"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -1571,8 +2284,7 @@
         "news_event_risk_underweighted",
         "volatility_or_tail_risk_underweighted",
         "risk_off_flow_underweighted",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
+        "news_data_gap_limited_attribution"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -1820,8 +2532,7 @@
         "volatility_or_tail_risk_underweighted",
         "breadth_conflict_underweighted",
         "risk_off_flow_underweighted",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
+        "news_data_gap_limited_attribution"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -1885,8 +2596,7 @@
         "news_event_risk_underweighted",
         "volatility_or_tail_risk_underweighted",
         "risk_off_flow_underweighted",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
+        "news_data_gap_limited_attribution"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -1951,8 +2661,7 @@
         "news_event_risk_underweighted",
         "volatility_or_tail_risk_underweighted",
         "risk_off_flow_underweighted",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
+        "news_data_gap_limited_attribution"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -2019,8 +2728,7 @@
         "news_event_risk_underweighted",
         "volatility_or_tail_risk_underweighted",
         "risk_off_flow_underweighted",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
+        "news_data_gap_limited_attribution"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -2089,8 +2797,7 @@
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
+        "news_data_gap_limited_attribution"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -2148,8 +2855,7 @@
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
         "risk_off_news_overweighted_or_resolved",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
+        "news_data_gap_limited_attribution"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -2211,8 +2917,7 @@
       "horizon": "1d",
       "likely_error_drivers": [
         "model_underestimated_upside_or_repair",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
+        "news_data_gap_limited_attribution"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -2330,8 +3035,7 @@
         "news_event_risk_underweighted",
         "volatility_or_tail_risk_underweighted",
         "risk_off_flow_underweighted",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
+        "news_data_gap_limited_attribution"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -2402,8 +3106,7 @@
         "volatility_or_tail_risk_underweighted",
         "breadth_conflict_underweighted",
         "risk_off_flow_underweighted",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
+        "news_data_gap_limited_attribution"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -2580,8 +3283,7 @@
         "news_event_risk_underweighted",
         "volatility_or_tail_risk_underweighted",
         "risk_off_flow_underweighted",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
+        "news_data_gap_limited_attribution"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -2652,8 +3354,7 @@
         "volatility_or_tail_risk_underweighted",
         "breadth_conflict_underweighted",
         "risk_off_flow_underweighted",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
+        "news_data_gap_limited_attribution"
       ],
       "material_deviation": true,
       "missing_data_at_forecast": [
@@ -3035,801 +3736,6 @@
       ],
       "symbol": "QQQ",
       "underweighted_factors": []
-    },
-    {
-      "absolute_error": 0.123116,
-      "actual_return": -0.075413,
-      "best_matching_scenario": "bearish_path",
-      "conflicting_signals_at_forecast": [
-        "risk_off_news_event"
-      ],
-      "diagnostic_note": "实际走势弱于预测，优先检查是否低估了新闻/事件风险，或利空是否得到了价格确认。",
-      "error_direction": "actual_weaker_than_forecast",
-      "expected_return": 0.047703,
-      "expected_return_source": "stored_scenario_path",
-      "forecast_date": "2026-11-13",
-      "forecast_error": -0.123116,
-      "forecast_id": "3bb5f9b06528602b3b",
-      "horizon": "5d",
-      "likely_error_drivers": [
-        "model_underestimated_downside_or_failed_bounce",
-        "news_event_risk_underweighted",
-        "risk_off_flow_underweighted",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
-      ],
-      "material_deviation": true,
-      "missing_data_at_forecast": [
-        "finnhub_candle_SPY",
-        "finnhub_candle_QQQ",
-        "finnhub_candle_IWM",
-        "finnhub_candle_DIA",
-        "finnhub_news_sentiment_SPY",
-        "finnhub_news_sentiment_QQQ",
-        "finnhub_news_sentiment_IWM",
-        "finnhub_news_sentiment_DIA",
-        "finnhub_economic_calendar",
-        "finnhub_rates_data",
-        "finnhub_alternative_data",
-        "breadth_QQQ"
-      ],
-      "model_version": "baseline_v1",
-      "not_causal_proof": true,
-      "overweighted_factors": [
-        "bounce_repair_assumption"
-      ],
-      "path_error": 0.1231156682,
-      "primary_hit": false,
-      "primary_scenario": "bounce_path",
-      "risk_scenario": "bearish_path",
-      "secondary_scenario": "bearish_path",
-      "severity": "extreme",
-      "supporting_signals_at_forecast": [
-        "Alpha v1 bounce signal",
-        "VIX direction",
-        "credit stability",
-        "breadth confirmation",
-        "options volatility repair",
-        "macro event risk",
-        "flow / positioning proxy",
-        "price trend",
-        "failed bounce risk"
-      ],
-      "symbol": "IWM",
-      "underweighted_factors": [
-        "news_event_risk_underweighted",
-        "risk_off_flow_underweighted"
-      ]
-    },
-    {
-      "absolute_error": 0.11383,
-      "actual_return": -0.105076,
-      "best_matching_scenario": "bearish_path",
-      "conflicting_signals_at_forecast": [
-        "breadth weak",
-        "breadth data quality",
-        "index surface strength",
-        "internal resonance quality",
-        "price trend",
-        "risk_off_news_event"
-      ],
-      "diagnostic_note": "实际走势弱于预测，优先检查是否低估了新闻/事件风险，或利空是否得到了价格确认。",
-      "error_direction": "actual_weaker_than_forecast",
-      "expected_return": 0.008754,
-      "expected_return_source": "stored_scenario_path",
-      "forecast_date": "2026-11-13",
-      "forecast_error": -0.11383,
-      "forecast_id": "4189c8dd3fd287f62c",
-      "horizon": "5d",
-      "likely_error_drivers": [
-        "model_underestimated_downside_or_failed_bounce",
-        "news_event_risk_underweighted",
-        "breadth_conflict_underweighted",
-        "risk_off_flow_underweighted",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
-      ],
-      "material_deviation": true,
-      "missing_data_at_forecast": [
-        "finnhub_candle_SPY",
-        "finnhub_candle_QQQ",
-        "finnhub_candle_IWM",
-        "finnhub_candle_DIA",
-        "finnhub_news_sentiment_SPY",
-        "finnhub_news_sentiment_QQQ",
-        "finnhub_news_sentiment_IWM",
-        "finnhub_news_sentiment_DIA",
-        "finnhub_economic_calendar",
-        "finnhub_rates_data",
-        "finnhub_alternative_data",
-        "breadth_QQQ"
-      ],
-      "model_version": "baseline_v1",
-      "not_causal_proof": true,
-      "overweighted_factors": [],
-      "path_error": 0.1138300327,
-      "primary_hit": true,
-      "primary_scenario": "bearish_path",
-      "risk_scenario": "bearish_path",
-      "secondary_scenario": "bounce_path",
-      "severity": "extreme",
-      "supporting_signals_at_forecast": [
-        "Alpha v1 bounce signal",
-        "VIX direction",
-        "credit stability",
-        "options volatility repair",
-        "macro event risk",
-        "flow / positioning proxy",
-        "historical analog support"
-      ],
-      "symbol": "QQQ",
-      "underweighted_factors": [
-        "news_event_risk_underweighted",
-        "breadth_conflict_underweighted",
-        "risk_off_flow_underweighted"
-      ]
-    },
-    {
-      "absolute_error": 0.088905,
-      "actual_return": -0.085581,
-      "best_matching_scenario": "bearish_path",
-      "conflicting_signals_at_forecast": [
-        "price trend",
-        "risk_off_news_event"
-      ],
-      "diagnostic_note": "实际走势弱于预测，优先检查是否低估了新闻/事件风险，或利空是否得到了价格确认。",
-      "error_direction": "actual_weaker_than_forecast",
-      "expected_return": 0.003323,
-      "expected_return_source": "stored_scenario_path",
-      "forecast_date": "2026-11-13",
-      "forecast_error": -0.088905,
-      "forecast_id": "1632902240127a2264",
-      "horizon": "5d",
-      "likely_error_drivers": [
-        "model_underestimated_downside_or_failed_bounce",
-        "news_event_risk_underweighted",
-        "risk_off_flow_underweighted",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
-      ],
-      "material_deviation": true,
-      "missing_data_at_forecast": [
-        "finnhub_candle_SPY",
-        "finnhub_candle_QQQ",
-        "finnhub_candle_IWM",
-        "finnhub_candle_DIA",
-        "finnhub_news_sentiment_SPY",
-        "finnhub_news_sentiment_QQQ",
-        "finnhub_news_sentiment_IWM",
-        "finnhub_news_sentiment_DIA",
-        "finnhub_economic_calendar",
-        "finnhub_rates_data",
-        "finnhub_alternative_data",
-        "breadth_QQQ"
-      ],
-      "model_version": "baseline_v1",
-      "not_causal_proof": true,
-      "overweighted_factors": [
-        "bounce_repair_assumption"
-      ],
-      "path_error": 0.08890477879,
-      "primary_hit": false,
-      "primary_scenario": "bounce_path",
-      "risk_scenario": "bearish_path",
-      "secondary_scenario": "bearish_path",
-      "severity": "extreme",
-      "supporting_signals_at_forecast": [
-        "Alpha v1 bounce signal",
-        "VIX direction",
-        "credit stability",
-        "breadth confirmation",
-        "market internal resonance",
-        "options volatility repair",
-        "macro event risk",
-        "flow / positioning proxy",
-        "historical analog support"
-      ],
-      "symbol": "SPY",
-      "underweighted_factors": [
-        "news_event_risk_underweighted",
-        "risk_off_flow_underweighted"
-      ]
-    },
-    {
-      "absolute_error": 0.088235,
-      "actual_return": -0.080417,
-      "best_matching_scenario": "analog_average_path",
-      "conflicting_signals_at_forecast": [
-        "historical analog support",
-        "risk_off_news_event"
-      ],
-      "diagnostic_note": "实际走势弱于预测，优先检查是否低估了新闻/事件风险，或利空是否得到了价格确认。",
-      "error_direction": "actual_weaker_than_forecast",
-      "expected_return": 0.007818,
-      "expected_return_source": "stored_scenario_path",
-      "forecast_date": "2026-11-13",
-      "forecast_error": -0.088235,
-      "forecast_id": "5a30b7fc971bdf4e94",
-      "horizon": "5d",
-      "likely_error_drivers": [
-        "model_underestimated_downside_or_failed_bounce",
-        "news_event_risk_underweighted",
-        "risk_off_flow_underweighted",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
-      ],
-      "material_deviation": true,
-      "missing_data_at_forecast": [
-        "finnhub_candle_SPY",
-        "finnhub_candle_QQQ",
-        "finnhub_candle_IWM",
-        "finnhub_candle_DIA",
-        "finnhub_news_sentiment_SPY",
-        "finnhub_news_sentiment_QQQ",
-        "finnhub_news_sentiment_IWM",
-        "finnhub_news_sentiment_DIA",
-        "finnhub_economic_calendar",
-        "finnhub_rates_data",
-        "finnhub_alternative_data",
-        "breadth_QQQ"
-      ],
-      "model_version": "baseline_v1",
-      "not_causal_proof": true,
-      "overweighted_factors": [
-        "bounce_repair_assumption"
-      ],
-      "path_error": 0.08823480049,
-      "primary_hit": false,
-      "primary_scenario": "bounce_path",
-      "risk_scenario": "bearish_path",
-      "secondary_scenario": "bearish_path",
-      "severity": "extreme",
-      "supporting_signals_at_forecast": [
-        "Alpha v1 bounce signal",
-        "VIX direction",
-        "credit stability",
-        "breadth confirmation",
-        "market internal resonance",
-        "options volatility repair",
-        "macro event risk",
-        "flow / positioning proxy",
-        "price trend"
-      ],
-      "symbol": "DIA",
-      "underweighted_factors": [
-        "news_event_risk_underweighted",
-        "risk_off_flow_underweighted"
-      ]
-    },
-    {
-      "absolute_error": 0.055933,
-      "actual_return": -0.026735,
-      "best_matching_scenario": "bearish_path",
-      "conflicting_signals_at_forecast": [
-        "risk_off_news_event"
-      ],
-      "diagnostic_note": "实际走势弱于预测，优先检查是否低估了新闻/事件风险，或利空是否得到了价格确认。",
-      "error_direction": "actual_weaker_than_forecast",
-      "expected_return": 0.029198,
-      "expected_return_source": "stored_scenario_path",
-      "forecast_date": "2026-11-13",
-      "forecast_error": -0.055933,
-      "forecast_id": "3bb5f9b06528602b3b",
-      "horizon": "3d",
-      "likely_error_drivers": [
-        "model_underestimated_downside_or_failed_bounce",
-        "news_event_risk_underweighted",
-        "risk_off_flow_underweighted",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
-      ],
-      "material_deviation": true,
-      "missing_data_at_forecast": [
-        "finnhub_candle_SPY",
-        "finnhub_candle_QQQ",
-        "finnhub_candle_IWM",
-        "finnhub_candle_DIA",
-        "finnhub_news_sentiment_SPY",
-        "finnhub_news_sentiment_QQQ",
-        "finnhub_news_sentiment_IWM",
-        "finnhub_news_sentiment_DIA",
-        "finnhub_economic_calendar",
-        "finnhub_rates_data",
-        "finnhub_alternative_data",
-        "breadth_QQQ"
-      ],
-      "model_version": "baseline_v1",
-      "not_causal_proof": true,
-      "overweighted_factors": [
-        "bounce_repair_assumption"
-      ],
-      "path_error": 0.05593324638,
-      "primary_hit": false,
-      "primary_scenario": "bounce_path",
-      "risk_scenario": "bearish_path",
-      "secondary_scenario": "bearish_path",
-      "severity": "extreme",
-      "supporting_signals_at_forecast": [
-        "Alpha v1 bounce signal",
-        "VIX direction",
-        "credit stability",
-        "breadth confirmation",
-        "options volatility repair",
-        "macro event risk",
-        "flow / positioning proxy",
-        "price trend",
-        "failed bounce risk"
-      ],
-      "symbol": "IWM",
-      "underweighted_factors": [
-        "news_event_risk_underweighted",
-        "risk_off_flow_underweighted"
-      ]
-    },
-    {
-      "absolute_error": 0.05535,
-      "actual_return": -0.029975,
-      "best_matching_scenario": "analog_average_path",
-      "conflicting_signals_at_forecast": [
-        "breadth weak",
-        "breadth data quality",
-        "index surface strength",
-        "internal resonance quality",
-        "price trend",
-        "risk_off_news_event"
-      ],
-      "diagnostic_note": "实际走势弱于预测，优先检查是否低估了新闻/事件风险，或利空是否得到了价格确认。",
-      "error_direction": "actual_weaker_than_forecast",
-      "expected_return": 0.025375,
-      "expected_return_source": "stored_scenario_path",
-      "forecast_date": "2026-11-13",
-      "forecast_error": -0.05535,
-      "forecast_id": "4189c8dd3fd287f62c",
-      "horizon": "3d",
-      "likely_error_drivers": [
-        "model_underestimated_downside_or_failed_bounce",
-        "news_event_risk_underweighted",
-        "breadth_conflict_underweighted",
-        "risk_off_flow_underweighted",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
-      ],
-      "material_deviation": true,
-      "missing_data_at_forecast": [
-        "finnhub_candle_SPY",
-        "finnhub_candle_QQQ",
-        "finnhub_candle_IWM",
-        "finnhub_candle_DIA",
-        "finnhub_news_sentiment_SPY",
-        "finnhub_news_sentiment_QQQ",
-        "finnhub_news_sentiment_IWM",
-        "finnhub_news_sentiment_DIA",
-        "finnhub_economic_calendar",
-        "finnhub_rates_data",
-        "finnhub_alternative_data",
-        "breadth_QQQ"
-      ],
-      "model_version": "baseline_v1",
-      "not_causal_proof": true,
-      "overweighted_factors": [],
-      "path_error": 0.05535043087,
-      "primary_hit": false,
-      "primary_scenario": "bearish_path",
-      "risk_scenario": "bearish_path",
-      "secondary_scenario": "bounce_path",
-      "severity": "extreme",
-      "supporting_signals_at_forecast": [
-        "Alpha v1 bounce signal",
-        "VIX direction",
-        "credit stability",
-        "options volatility repair",
-        "macro event risk",
-        "flow / positioning proxy",
-        "historical analog support"
-      ],
-      "symbol": "QQQ",
-      "underweighted_factors": [
-        "news_event_risk_underweighted",
-        "breadth_conflict_underweighted",
-        "risk_off_flow_underweighted"
-      ]
-    },
-    {
-      "absolute_error": 0.041856,
-      "actual_return": -0.040944,
-      "best_matching_scenario": "bearish_path",
-      "conflicting_signals_at_forecast": [
-        "historical analog support",
-        "risk_off_news_event"
-      ],
-      "diagnostic_note": "实际走势弱于预测，优先检查是否低估了新闻/事件风险，或利空是否得到了价格确认。",
-      "error_direction": "actual_weaker_than_forecast",
-      "expected_return": 0.000912,
-      "expected_return_source": "stored_scenario_path",
-      "forecast_date": "2026-11-13",
-      "forecast_error": -0.041856,
-      "forecast_id": "5a30b7fc971bdf4e94",
-      "horizon": "3d",
-      "likely_error_drivers": [
-        "model_underestimated_downside_or_failed_bounce",
-        "news_event_risk_underweighted",
-        "risk_off_flow_underweighted",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
-      ],
-      "material_deviation": true,
-      "missing_data_at_forecast": [
-        "finnhub_candle_SPY",
-        "finnhub_candle_QQQ",
-        "finnhub_candle_IWM",
-        "finnhub_candle_DIA",
-        "finnhub_news_sentiment_SPY",
-        "finnhub_news_sentiment_QQQ",
-        "finnhub_news_sentiment_IWM",
-        "finnhub_news_sentiment_DIA",
-        "finnhub_economic_calendar",
-        "finnhub_rates_data",
-        "finnhub_alternative_data",
-        "breadth_QQQ"
-      ],
-      "model_version": "baseline_v1",
-      "not_causal_proof": true,
-      "overweighted_factors": [
-        "bounce_repair_assumption"
-      ],
-      "path_error": 0.04185608798,
-      "primary_hit": false,
-      "primary_scenario": "bounce_path",
-      "risk_scenario": "bearish_path",
-      "secondary_scenario": "bearish_path",
-      "severity": "extreme",
-      "supporting_signals_at_forecast": [
-        "Alpha v1 bounce signal",
-        "VIX direction",
-        "credit stability",
-        "breadth confirmation",
-        "market internal resonance",
-        "options volatility repair",
-        "macro event risk",
-        "flow / positioning proxy",
-        "price trend"
-      ],
-      "symbol": "DIA",
-      "underweighted_factors": [
-        "news_event_risk_underweighted",
-        "risk_off_flow_underweighted"
-      ]
-    },
-    {
-      "absolute_error": 0.028837,
-      "actual_return": -0.03204,
-      "best_matching_scenario": "bearish_path",
-      "conflicting_signals_at_forecast": [
-        "price trend",
-        "risk_off_news_event"
-      ],
-      "diagnostic_note": "实际走势弱于预测，优先检查是否低估了新闻/事件风险，或利空是否得到了价格确认。",
-      "error_direction": "actual_weaker_than_forecast",
-      "expected_return": -0.003203,
-      "expected_return_source": "stored_scenario_path",
-      "forecast_date": "2026-11-13",
-      "forecast_error": -0.028837,
-      "forecast_id": "1632902240127a2264",
-      "horizon": "3d",
-      "likely_error_drivers": [
-        "model_underestimated_downside_or_failed_bounce",
-        "news_event_risk_underweighted",
-        "risk_off_flow_underweighted",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
-      ],
-      "material_deviation": true,
-      "missing_data_at_forecast": [
-        "finnhub_candle_SPY",
-        "finnhub_candle_QQQ",
-        "finnhub_candle_IWM",
-        "finnhub_candle_DIA",
-        "finnhub_news_sentiment_SPY",
-        "finnhub_news_sentiment_QQQ",
-        "finnhub_news_sentiment_IWM",
-        "finnhub_news_sentiment_DIA",
-        "finnhub_economic_calendar",
-        "finnhub_rates_data",
-        "finnhub_alternative_data",
-        "breadth_QQQ"
-      ],
-      "model_version": "baseline_v1",
-      "not_causal_proof": true,
-      "overweighted_factors": [
-        "bounce_repair_assumption"
-      ],
-      "path_error": 0.0288366227,
-      "primary_hit": false,
-      "primary_scenario": "bounce_path",
-      "risk_scenario": "bearish_path",
-      "secondary_scenario": "bearish_path",
-      "severity": "large",
-      "supporting_signals_at_forecast": [
-        "Alpha v1 bounce signal",
-        "VIX direction",
-        "credit stability",
-        "breadth confirmation",
-        "market internal resonance",
-        "options volatility repair",
-        "macro event risk",
-        "flow / positioning proxy",
-        "historical analog support"
-      ],
-      "symbol": "SPY",
-      "underweighted_factors": [
-        "news_event_risk_underweighted",
-        "risk_off_flow_underweighted"
-      ]
-    },
-    {
-      "absolute_error": 0.027269,
-      "actual_return": -0.026681,
-      "best_matching_scenario": "expected_path",
-      "conflicting_signals_at_forecast": [
-        "breadth weak",
-        "breadth data quality",
-        "index surface strength",
-        "internal resonance quality",
-        "price trend",
-        "risk_off_news_event"
-      ],
-      "diagnostic_note": "实际走势弱于预测，优先检查是否低估了新闻/事件风险，或利空是否得到了价格确认。",
-      "error_direction": "actual_weaker_than_forecast",
-      "expected_return": 0.000588,
-      "expected_return_source": "stored_scenario_path",
-      "forecast_date": "2026-11-13",
-      "forecast_error": -0.027269,
-      "forecast_id": "4189c8dd3fd287f62c",
-      "horizon": "1d",
-      "likely_error_drivers": [
-        "model_underestimated_downside_or_failed_bounce",
-        "news_event_risk_underweighted",
-        "breadth_conflict_underweighted",
-        "risk_off_flow_underweighted",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
-      ],
-      "material_deviation": true,
-      "missing_data_at_forecast": [
-        "finnhub_candle_SPY",
-        "finnhub_candle_QQQ",
-        "finnhub_candle_IWM",
-        "finnhub_candle_DIA",
-        "finnhub_news_sentiment_SPY",
-        "finnhub_news_sentiment_QQQ",
-        "finnhub_news_sentiment_IWM",
-        "finnhub_news_sentiment_DIA",
-        "finnhub_economic_calendar",
-        "finnhub_rates_data",
-        "finnhub_alternative_data",
-        "breadth_QQQ"
-      ],
-      "model_version": "baseline_v1",
-      "not_causal_proof": true,
-      "overweighted_factors": [],
-      "path_error": 0.02726913803,
-      "primary_hit": false,
-      "primary_scenario": "bearish_path",
-      "risk_scenario": "bearish_path",
-      "secondary_scenario": "bounce_path",
-      "severity": "extreme",
-      "supporting_signals_at_forecast": [
-        "Alpha v1 bounce signal",
-        "VIX direction",
-        "credit stability",
-        "options volatility repair",
-        "macro event risk",
-        "flow / positioning proxy",
-        "historical analog support"
-      ],
-      "symbol": "QQQ",
-      "underweighted_factors": [
-        "news_event_risk_underweighted",
-        "breadth_conflict_underweighted",
-        "risk_off_flow_underweighted"
-      ]
-    },
-    {
-      "absolute_error": 0.023912,
-      "actual_return": -0.016574,
-      "best_matching_scenario": "bearish_path",
-      "conflicting_signals_at_forecast": [
-        "risk_off_news_event"
-      ],
-      "diagnostic_note": "实际走势弱于预测，优先检查是否低估了新闻/事件风险，或利空是否得到了价格确认。",
-      "error_direction": "actual_weaker_than_forecast",
-      "expected_return": 0.007337,
-      "expected_return_source": "stored_scenario_path",
-      "forecast_date": "2026-11-13",
-      "forecast_error": -0.023912,
-      "forecast_id": "3bb5f9b06528602b3b",
-      "horizon": "1d",
-      "likely_error_drivers": [
-        "model_underestimated_downside_or_failed_bounce",
-        "news_event_risk_underweighted",
-        "risk_off_flow_underweighted",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
-      ],
-      "material_deviation": true,
-      "missing_data_at_forecast": [
-        "finnhub_candle_SPY",
-        "finnhub_candle_QQQ",
-        "finnhub_candle_IWM",
-        "finnhub_candle_DIA",
-        "finnhub_news_sentiment_SPY",
-        "finnhub_news_sentiment_QQQ",
-        "finnhub_news_sentiment_IWM",
-        "finnhub_news_sentiment_DIA",
-        "finnhub_economic_calendar",
-        "finnhub_rates_data",
-        "finnhub_alternative_data",
-        "breadth_QQQ"
-      ],
-      "model_version": "baseline_v1",
-      "not_causal_proof": true,
-      "overweighted_factors": [
-        "bounce_repair_assumption"
-      ],
-      "path_error": 0.02391152973,
-      "primary_hit": false,
-      "primary_scenario": "bounce_path",
-      "risk_scenario": "bearish_path",
-      "secondary_scenario": "bearish_path",
-      "severity": "large",
-      "supporting_signals_at_forecast": [
-        "Alpha v1 bounce signal",
-        "VIX direction",
-        "credit stability",
-        "breadth confirmation",
-        "options volatility repair",
-        "macro event risk",
-        "flow / positioning proxy",
-        "price trend",
-        "failed bounce risk"
-      ],
-      "symbol": "IWM",
-      "underweighted_factors": [
-        "news_event_risk_underweighted",
-        "risk_off_flow_underweighted"
-      ]
-    },
-    {
-      "absolute_error": 0.015668,
-      "actual_return": -0.019115,
-      "best_matching_scenario": "bearish_path",
-      "conflicting_signals_at_forecast": [
-        "price trend",
-        "risk_off_news_event"
-      ],
-      "diagnostic_note": "实际走势弱于预测，优先检查是否低估了新闻/事件风险，或利空是否得到了价格确认。",
-      "error_direction": "actual_weaker_than_forecast",
-      "expected_return": -0.003447,
-      "expected_return_source": "stored_scenario_path",
-      "forecast_date": "2026-11-13",
-      "forecast_error": -0.015668,
-      "forecast_id": "1632902240127a2264",
-      "horizon": "1d",
-      "likely_error_drivers": [
-        "model_underestimated_downside_or_failed_bounce",
-        "news_event_risk_underweighted",
-        "risk_off_flow_underweighted",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
-      ],
-      "material_deviation": true,
-      "missing_data_at_forecast": [
-        "finnhub_candle_SPY",
-        "finnhub_candle_QQQ",
-        "finnhub_candle_IWM",
-        "finnhub_candle_DIA",
-        "finnhub_news_sentiment_SPY",
-        "finnhub_news_sentiment_QQQ",
-        "finnhub_news_sentiment_IWM",
-        "finnhub_news_sentiment_DIA",
-        "finnhub_economic_calendar",
-        "finnhub_rates_data",
-        "finnhub_alternative_data",
-        "breadth_QQQ"
-      ],
-      "model_version": "baseline_v1",
-      "not_causal_proof": true,
-      "overweighted_factors": [
-        "bounce_repair_assumption"
-      ],
-      "path_error": 0.01566841603,
-      "primary_hit": false,
-      "primary_scenario": "bounce_path",
-      "risk_scenario": "bearish_path",
-      "secondary_scenario": "bearish_path",
-      "severity": "large",
-      "supporting_signals_at_forecast": [
-        "Alpha v1 bounce signal",
-        "VIX direction",
-        "credit stability",
-        "breadth confirmation",
-        "market internal resonance",
-        "options volatility repair",
-        "macro event risk",
-        "flow / positioning proxy",
-        "historical analog support"
-      ],
-      "symbol": "SPY",
-      "underweighted_factors": [
-        "news_event_risk_underweighted",
-        "risk_off_flow_underweighted"
-      ]
-    },
-    {
-      "absolute_error": 0.012202,
-      "actual_return": -0.014279,
-      "best_matching_scenario": "bearish_path",
-      "conflicting_signals_at_forecast": [
-        "historical analog support",
-        "risk_off_news_event"
-      ],
-      "diagnostic_note": "实际走势弱于预测，优先检查是否低估了新闻/事件风险，或利空是否得到了价格确认。",
-      "error_direction": "actual_weaker_than_forecast",
-      "expected_return": -0.002077,
-      "expected_return_source": "stored_scenario_path",
-      "forecast_date": "2026-11-13",
-      "forecast_error": -0.012202,
-      "forecast_id": "5a30b7fc971bdf4e94",
-      "horizon": "1d",
-      "likely_error_drivers": [
-        "model_underestimated_downside_or_failed_bounce",
-        "news_event_risk_underweighted",
-        "risk_off_flow_underweighted",
-        "news_data_gap_limited_attribution",
-        "intraday_snapshot_risk"
-      ],
-      "material_deviation": true,
-      "missing_data_at_forecast": [
-        "finnhub_candle_SPY",
-        "finnhub_candle_QQQ",
-        "finnhub_candle_IWM",
-        "finnhub_candle_DIA",
-        "finnhub_news_sentiment_SPY",
-        "finnhub_news_sentiment_QQQ",
-        "finnhub_news_sentiment_IWM",
-        "finnhub_news_sentiment_DIA",
-        "finnhub_economic_calendar",
-        "finnhub_rates_data",
-        "finnhub_alternative_data",
-        "breadth_QQQ"
-      ],
-      "model_version": "baseline_v1",
-      "not_causal_proof": true,
-      "overweighted_factors": [
-        "bounce_repair_assumption"
-      ],
-      "path_error": 0.012201723,
-      "primary_hit": false,
-      "primary_scenario": "bounce_path",
-      "risk_scenario": "bearish_path",
-      "secondary_scenario": "bearish_path",
-      "severity": "moderate",
-      "supporting_signals_at_forecast": [
-        "Alpha v1 bounce signal",
-        "VIX direction",
-        "credit stability",
-        "breadth confirmation",
-        "market internal resonance",
-        "options volatility repair",
-        "macro event risk",
-        "flow / positioning proxy",
-        "price trend"
-      ],
-      "symbol": "DIA",
-      "underweighted_factors": [
-        "news_event_risk_underweighted",
-        "risk_off_flow_underweighted"
-      ]
     }
   ],
   "model_learning_summary": {
@@ -3837,49 +3743,42 @@
     "lessons": [
       {
         "baseline_change_allowed": false,
-        "count": 1363,
+        "count": 1379,
         "driver": "news_data_gap_limited_attribution",
         "future_model_action": "keep_observing_until_forward_sample_gate",
         "lesson": "新闻数据缺口会限制归因质量，需要标记而不是事后编故事。"
       },
       {
         "baseline_change_allowed": false,
-        "count": 1363,
-        "driver": "intraday_snapshot_risk",
-        "future_model_action": "keep_observing_until_forward_sample_gate",
-        "lesson": "盘中快照未确认时，不应冻结为正式收盘预测。"
-      },
-      {
-        "baseline_change_allowed": false,
-        "count": 749,
+        "count": 756,
         "driver": "model_underestimated_upside_or_repair",
         "future_model_action": "keep_observing_until_forward_sample_gate",
         "lesson": "模型低估了修复/反抽强度，需要检查事件催化、波动率修复和价格确认。"
       },
       {
         "baseline_change_allowed": false,
-        "count": 614,
+        "count": 623,
         "driver": "model_underestimated_downside_or_failed_bounce",
         "future_model_action": "keep_observing_until_forward_sample_gate",
         "lesson": "模型低估了下跌延续或反抽失败风险，需要检查信用、宽度、波动率和新闻风险。"
       },
       {
         "baseline_change_allowed": false,
-        "count": 614,
+        "count": 623,
         "driver": "news_event_risk_underweighted",
         "future_model_action": "shadow-test risk_event_confirmation：risk-off 新闻得到价格确认才提高风险路径。",
         "lesson": "风险新闻如果被价格确认，应提高风险路径权重。"
       },
       {
         "baseline_change_allowed": false,
-        "count": 559,
+        "count": 564,
         "driver": "risk_off_news_overweighted_or_resolved",
         "future_model_action": "shadow-test news_decay：未被价格确认或快速缓和的 risk-off 新闻权重衰减。",
         "lesson": "risk-off 新闻若快速缓和或未被价格确认，不应继续压低主路径。"
       },
       {
         "baseline_change_allowed": false,
-        "count": 218,
+        "count": 222,
         "driver": "breadth_conflict_underweighted",
         "future_model_action": "shadow-test breadth_conflict_penalty：宽度冲突提高 failed_bounce 风险。",
         "lesson": "指数上涨但内部参与不足时，失败反抽风险可能被低估。"
@@ -3893,7 +3792,7 @@
       },
       {
         "baseline_change_allowed": false,
-        "count": 168,
+        "count": 176,
         "driver": "risk_off_flow_underweighted",
         "future_model_action": "shadow-test flow_conflict_penalty：risk-off flow 提高 downside continuation。",
         "lesson": "risk-off flow 与价格走弱同向时，下跌延续风险可能被低估。"
@@ -3914,13 +3813,13 @@
       },
       {
         "baseline_change_allowed": false,
-        "count": 65,
+        "count": 66,
         "driver": "volatility_or_tail_risk_underweighted",
         "future_model_action": "shadow-test tail_risk_penalty：VVIX/SKEW/VIX term 恶化时提高风险路径。",
         "lesson": "尾部风险或波动率重新上升时，失败反抽/风险扩散可能被低估。"
       }
     ],
-    "material_deviation_samples": 1363,
+    "material_deviation_samples": 1379,
     "minimum_samples_before_weight_change": 20,
     "recommended_challenger": "challenger_v2_error_learning",
     "status": "lessons_ready_for_shadow_challenger"
@@ -3940,27 +3839,23 @@
     "高置信样本是否真的比普通样本偏差更小？"
   ],
   "summary": {
-    "completed_outcomes_reviewed": 2388,
+    "completed_outcomes_reviewed": 2412,
     "correction_policy": "past_forecasts_are_not_rewritten_only_actuals_and_error_fields_are_backfilled",
-    "data_freshness_status": "market_open_unconfirmed",
+    "data_freshness_status": "fresh",
     "deduped_legacy_rows": 0,
     "dominant_error_theme": "news_data_gap_limited_attribution",
     "evidence_level": "stronger_evidence",
     "largest_absolute_error": 0.318363,
-    "latest_forecast_date": "2026-11-24",
-    "latest_market_date": "2026-11-24",
-    "latest_reviewed_forecast_date": "2026-11-23",
-    "material_deviation_count": 1363,
+    "latest_forecast_date": "2026-11-25",
+    "latest_market_date": "2026-11-25",
+    "latest_reviewed_forecast_date": "2026-11-24",
+    "material_deviation_count": 1379,
     "model_learning_status": "lessons_ready_for_shadow_challenger",
-    "raw_forecast_rows": 464,
-    "total_forecast_records": 464,
+    "raw_forecast_rows": 468,
+    "total_forecast_records": 468,
     "update_blockers": [
       {
-        "detail": "当前仍处于美股盘中或收盘确认前，尚未形成完整收盘数据。 当前盘中快照日期为 2026-11-24，最近完整收盘交易日为 2026-11-24；正式 baseline_v1 预测记录应等美东 16:30 后重新生成。",
-        "reason": "market_open_unconfirmed"
-      },
-      {
-        "detail": "Latest market date 2026-11-24 is not after latest forecast date 2026-11-24, so no completed 1d/3d/5d outcome can be scored yet.",
+        "detail": "Latest market date 2026-11-25 is not after latest forecast date 2026-11-25, so no completed 1d/3d/5d outcome can be scored yet.",
         "reason": "no_future_market_close_yet"
       }
     ],

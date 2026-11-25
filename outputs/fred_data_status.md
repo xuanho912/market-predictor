@@ -1,6 +1,6 @@
 # FRED Data Status
 
-Generated at: `2026-11-25T13:31:44.185925Z`
+Generated at: `2026-11-25T21:45:51.497123Z`
 
 ## Provider
 
@@ -8,7 +8,7 @@ Generated at: `2026-11-25T13:31:44.185925Z`
 - provider available: `True`
 - fallback used: `False`
 - rate limited: `False`
-- successful series: `IG_OAS, DGS2, DGS10, BAA_SPREAD, RECESSION, FINANCIAL_STRESS, HY_OAS, DGS3MO, DFII10`
+- successful series: `HY_OAS, DGS3MO, DGS2, IG_OAS, FINANCIAL_STRESS, BAA_SPREAD, DGS10, RECESSION, DFII10`
 - failed series: `none`
 
 ## Series
@@ -16,13 +16,13 @@ Generated at: `2026-11-25T13:31:44.185925Z`
 | name | series_id | success | latest_date | latest_value | source | stale | error |
 |---|---|---:|---|---:|---|---:|---|
 | BAA_SPREAD | BAA10Y | True | 2026-11-23 | 1.59 | fred-api | False |  |
-| DFII10 | DFII10 | True | 2026-11-23 | 2.79 | fred-api | False |  |
-| DGS10 | DGS10 | True | 2026-11-23 | 4.92 | fred-api | False |  |
-| DGS2 | DGS2 | True | 2026-11-23 | 4.63 | fred-api | False |  |
-| DGS3MO | DGS3MO | True | 2026-11-23 | 4.37 | fred-api | False |  |
-| FINANCIAL_STRESS | STLFSI4 | True | 2026-11-13 | -0.8655 | fred-api | True |  |
-| HY_OAS | BAMLH0A0HYM2 | True | 2026-11-23 | 3.63 | fred-api | False |  |
-| IG_OAS | BAMLC0A0CM | True | 2026-11-23 | 0.97 | fred-api | False |  |
+| DFII10 | DFII10 | True | 2026-11-24 | 2.79 | fred-api | False |  |
+| DGS10 | DGS10 | True | 2026-11-24 | 4.91 | fred-api | False |  |
+| DGS2 | DGS2 | True | 2026-11-24 | 4.63 | fred-api | False |  |
+| DGS3MO | DGS3MO | True | 2026-11-24 | 4.36 | fred-api | False |  |
+| FINANCIAL_STRESS | STLFSI4 | True | 2026-11-20 | -0.0697 | fred-api | False |  |
+| HY_OAS | BAMLH0A0HYM2 | True | 2026-11-24 | 3.72 | fred-api | False |  |
+| IG_OAS | BAMLC0A0CM | True | 2026-11-24 | 0.98 | fred-api | False |  |
 | RECESSION | USREC | True | 2026-10-01 | 0.0 | fred-api | True |  |
 
 ## Data Completeness Effect
@@ -37,10 +37,10 @@ Generated at: `2026-11-25T13:31:44.185925Z`
 
 | symbol | edge without | edge with | primary without | primary with | risk expansion delta | failed bounce delta |
 |---|---|---|---|---|---:|---:|
-| SPY | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.0846 | 0.0278 |
-| QQQ | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.0846 | 0.0278 |
-| IWM | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.0846 | 0.0277 |
-| DIA | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.0847 | 0.0387 |
+| SPY | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.2041 | 0.0873 |
+| QQQ | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.2041 | 0.0873 |
+| IWM | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.2041 | 0.0983 |
+| DIA | RISK_WARNING | RISK_WARNING | bearish_path | bearish_path | 0.2041 | 0.0874 |
 
 ## Warning
 
