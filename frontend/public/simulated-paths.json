@@ -5,10 +5,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-11-25",
-    "current_time_us_eastern": "2026-11-25T21:59:04.536836-05:00",
+    "current_time_us_eastern": "2026-11-25T22:46:37.260538-05:00",
     "data_freshness_status": "fresh",
     "expected_latest_trading_date": "2026-11-25",
-    "generated_at": "2026-11-26T02:59:04.536836+00:00",
+    "generated_at": "2026-11-26T03:46:37.260538+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -1047,9 +1047,9 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "DGS3MO",
-      "DGS2",
       "IG_OAS",
+      "DGS2",
+      "DGS3MO",
       "HY_OAS",
       "DGS10",
       "BAA_SPREAD",
@@ -1086,10 +1086,10 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 74,
+      "event_detection_confidence": 75,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-11-26T02:58:54.333066+00:00",
+      "last_update": "2026-11-26T03:46:27.144359+00:00",
       "major_event_count": 10,
       "missing_reason": null,
       "news_direction": "risk_off",
@@ -1178,6 +1178,18 @@
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_market_direction": "risk_off",
+          "headline": "S&P warns Nvidia credit rating could be cut over 'rising' management and governance risk",
+          "importance_score": 100,
+          "published_at": "2026-11-26T02:57:32+00:00",
+          "source": "CNBC"
+        },
+        {
+          "confidence": "high",
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_market_direction": "risk_off",
           "headline": "Russian forces hit Kyiv with ballistic missiles, mayor says - Reuters",
           "importance_score": 100,
           "published_at": "2026-11-25T22:07:09+00:00",
@@ -1229,18 +1241,6 @@
           "headline": "Italy rebukes Ukraine over attacks on Russian ships in Libya - Reuters",
           "importance_score": 100,
           "published_at": "2026-11-25T10:29:43+00:00",
-          "source": "Reuters"
-        },
-        {
-          "confidence": "medium",
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_market_direction": "risk_off",
-          "headline": "Iran says ships hit mines in Hormuz, warns vessels to coordinate passage - Reuters",
-          "importance_score": 100,
-          "published_at": "2026-11-25T10:11:44+00:00",
           "source": "Reuters"
         }
       ]
@@ -1390,7 +1390,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": 0.0,
-        "avg_equity_futures_1d_return": 0.0065,
+        "avg_equity_futures_1d_return": 0.0052,
         "confirmed_checks": [
           "VIX 上升",
           "HYG/LQD 走弱"
@@ -1406,7 +1406,7 @@
           "美元走强"
         ],
         "hyg_lqd_1d_relative_return": -0.0036,
-        "oil_proxy_1d_return": 0.0178,
+        "oil_proxy_1d_return": 0.0206,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -2316,11 +2316,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.4,
           "top_headlines": [
+            "S&P warns Nvidia credit rating could be cut over 'rising' management and governance risk",
             "US airlines face higher costs from proposed Embraer duty - Reuters",
             "EXCLUSIVE: Billionaire Boehly signs US-backed share swap deal to buy Lukoil global assets - Reuters",
             "Russian forces hit Kyiv with ballistic missiles, mayor says - Reuters",
-            "Macy's postpones Thanksgiving Day Parade due to severe weather",
-            "Vance says he was assured Jensen Huang was not under DOJ investigation"
+            "Macy's postpones Thanksgiving Day Parade due to severe weather"
           ]
         },
         "price": {
@@ -3732,14 +3732,41 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 79,
+            "confidence_score": 81,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 88,
+            "freshness_score": 98,
+            "headline": "S&P warns Nvidia credit rating could be cut over 'rising' management and governance risk",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-26T02:57:32+00:00",
+            "source": "CNBC"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 78,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 86,
             "headline": "Russian forces hit Kyiv with ballistic missiles, mayor says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3759,14 +3786,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 93,
+            "confidence_score": 92,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 72,
+            "freshness_score": 70,
             "headline": "Russian government official warns of Ukrainian drone attacks on utility infrastructure this winter - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3793,7 +3820,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 68,
             "headline": "Israeli strike kills Hamas official, his wife and children - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3813,14 +3840,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 73,
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 65,
+            "freshness_score": 63,
             "headline": "Liesman: Nvidia whiplash tests Kevin Warsh’s push to read market signals",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3840,46 +3867,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 72,
+            "confidence_score": 71,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 60,
+            "freshness_score": 59,
             "headline": "Italy rebukes Ukraine over attacks on Russian ships in Libya - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-11-25T10:29:43+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 72,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 60,
-            "headline": "Iran says ships hit mines in Hormuz, warns vessels to coordinate passage - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-25T10:11:44+00:00",
             "source": "Reuters"
           }
         ],
@@ -3902,6 +3902,18 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "S&P warns Nvidia credit rating could be cut over 'rising' management and governance risk",
+              "importance_score": 100,
+              "published_at": "2026-11-26T02:57:32+00:00",
+              "source": "CNBC"
+            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -3961,18 +3973,6 @@
               "importance_score": 100,
               "published_at": "2026-11-25T10:29:43+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Iran says ships hit mines in Hormuz, warns vessels to coordinate passage - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-25T10:11:44+00:00",
-              "source": "Reuters"
             }
           ]
         },
@@ -4012,7 +4012,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0,
-            "avg_equity_futures_1d_return": 0.0065,
+            "avg_equity_futures_1d_return": 0.0052,
             "confirmed_checks": [
               "VIX 上升",
               "HYG/LQD 走弱"
@@ -4028,7 +4028,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0036,
-            "oil_proxy_1d_return": 0.0178,
+            "oil_proxy_1d_return": 0.0206,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -6564,11 +6564,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.4,
           "top_headlines": [
+            "S&P warns Nvidia credit rating could be cut over 'rising' management and governance risk",
             "US airlines face higher costs from proposed Embraer duty - Reuters",
             "EXCLUSIVE: Billionaire Boehly signs US-backed share swap deal to buy Lukoil global assets - Reuters",
             "Russian forces hit Kyiv with ballistic missiles, mayor says - Reuters",
-            "Macy's postpones Thanksgiving Day Parade due to severe weather",
-            "Vance says he was assured Jensen Huang was not under DOJ investigation"
+            "Macy's postpones Thanksgiving Day Parade due to severe weather"
           ]
         },
         "price": {
@@ -7961,14 +7961,41 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 79,
+            "confidence_score": 81,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 88,
+            "freshness_score": 98,
+            "headline": "S&P warns Nvidia credit rating could be cut over 'rising' management and governance risk",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-26T02:57:32+00:00",
+            "source": "CNBC"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 78,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 86,
             "headline": "Russian forces hit Kyiv with ballistic missiles, mayor says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7988,14 +8015,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 93,
+            "confidence_score": 92,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 72,
+            "freshness_score": 70,
             "headline": "Russian government official warns of Ukrainian drone attacks on utility infrastructure this winter - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -8022,7 +8049,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 68,
             "headline": "Israeli strike kills Hamas official, his wife and children - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -8042,14 +8069,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 73,
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 65,
+            "freshness_score": 63,
             "headline": "Liesman: Nvidia whiplash tests Kevin Warsh’s push to read market signals",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -8069,46 +8096,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 72,
+            "confidence_score": 71,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 60,
+            "freshness_score": 59,
             "headline": "Italy rebukes Ukraine over attacks on Russian ships in Libya - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-11-25T10:29:43+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 72,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 60,
-            "headline": "Iran says ships hit mines in Hormuz, warns vessels to coordinate passage - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-25T10:11:44+00:00",
             "source": "Reuters"
           }
         ],
@@ -8131,6 +8131,18 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "S&P warns Nvidia credit rating could be cut over 'rising' management and governance risk",
+              "importance_score": 100,
+              "published_at": "2026-11-26T02:57:32+00:00",
+              "source": "CNBC"
+            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -8190,18 +8202,6 @@
               "importance_score": 100,
               "published_at": "2026-11-25T10:29:43+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Iran says ships hit mines in Hormuz, warns vessels to coordinate passage - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-25T10:11:44+00:00",
-              "source": "Reuters"
             }
           ]
         },
@@ -8241,7 +8241,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0,
-            "avg_equity_futures_1d_return": 0.0065,
+            "avg_equity_futures_1d_return": 0.0052,
             "confirmed_checks": [
               "VIX 上升",
               "HYG/LQD 走弱"
@@ -8257,7 +8257,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0036,
-            "oil_proxy_1d_return": 0.0178,
+            "oil_proxy_1d_return": 0.0206,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -10804,11 +10804,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.4,
           "top_headlines": [
+            "S&P warns Nvidia credit rating could be cut over 'rising' management and governance risk",
             "US airlines face higher costs from proposed Embraer duty - Reuters",
             "EXCLUSIVE: Billionaire Boehly signs US-backed share swap deal to buy Lukoil global assets - Reuters",
             "Russian forces hit Kyiv with ballistic missiles, mayor says - Reuters",
-            "Macy's postpones Thanksgiving Day Parade due to severe weather",
-            "Vance says he was assured Jensen Huang was not under DOJ investigation"
+            "Macy's postpones Thanksgiving Day Parade due to severe weather"
           ]
         },
         "price": {
@@ -12196,14 +12196,41 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 79,
+            "confidence_score": 81,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 88,
+            "freshness_score": 98,
+            "headline": "S&P warns Nvidia credit rating could be cut over 'rising' management and governance risk",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-26T02:57:32+00:00",
+            "source": "CNBC"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 78,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 86,
             "headline": "Russian forces hit Kyiv with ballistic missiles, mayor says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12223,14 +12250,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 93,
+            "confidence_score": 92,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 72,
+            "freshness_score": 70,
             "headline": "Russian government official warns of Ukrainian drone attacks on utility infrastructure this winter - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12257,7 +12284,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 68,
             "headline": "Israeli strike kills Hamas official, his wife and children - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12277,14 +12304,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 73,
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 65,
+            "freshness_score": 63,
             "headline": "Liesman: Nvidia whiplash tests Kevin Warsh’s push to read market signals",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12304,46 +12331,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 72,
+            "confidence_score": 71,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 60,
+            "freshness_score": 59,
             "headline": "Italy rebukes Ukraine over attacks on Russian ships in Libya - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-11-25T10:29:43+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 72,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 60,
-            "headline": "Iran says ships hit mines in Hormuz, warns vessels to coordinate passage - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-25T10:11:44+00:00",
             "source": "Reuters"
           }
         ],
@@ -12366,6 +12366,18 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "S&P warns Nvidia credit rating could be cut over 'rising' management and governance risk",
+              "importance_score": 100,
+              "published_at": "2026-11-26T02:57:32+00:00",
+              "source": "CNBC"
+            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -12425,18 +12437,6 @@
               "importance_score": 100,
               "published_at": "2026-11-25T10:29:43+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Iran says ships hit mines in Hormuz, warns vessels to coordinate passage - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-25T10:11:44+00:00",
-              "source": "Reuters"
             }
           ]
         },
@@ -12476,7 +12476,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0,
-            "avg_equity_futures_1d_return": 0.0065,
+            "avg_equity_futures_1d_return": 0.0052,
             "confirmed_checks": [
               "VIX 上升",
               "HYG/LQD 走弱"
@@ -12492,7 +12492,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0036,
-            "oil_proxy_1d_return": 0.0178,
+            "oil_proxy_1d_return": 0.0206,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -15052,11 +15052,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.4,
           "top_headlines": [
+            "S&P warns Nvidia credit rating could be cut over 'rising' management and governance risk",
             "US airlines face higher costs from proposed Embraer duty - Reuters",
             "EXCLUSIVE: Billionaire Boehly signs US-backed share swap deal to buy Lukoil global assets - Reuters",
             "Russian forces hit Kyiv with ballistic missiles, mayor says - Reuters",
-            "Macy's postpones Thanksgiving Day Parade due to severe weather",
-            "Vance says he was assured Jensen Huang was not under DOJ investigation"
+            "Macy's postpones Thanksgiving Day Parade due to severe weather"
           ]
         },
         "price": {
@@ -16456,14 +16456,41 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 79,
+            "confidence_score": 81,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 88,
+            "freshness_score": 98,
+            "headline": "S&P warns Nvidia credit rating could be cut over 'rising' management and governance risk",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-26T02:57:32+00:00",
+            "source": "CNBC"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "high",
+            "confidence_score": 78,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 86,
             "headline": "Russian forces hit Kyiv with ballistic missiles, mayor says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16483,14 +16510,14 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 93,
+            "confidence_score": 92,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 72,
+            "freshness_score": 70,
             "headline": "Russian government official warns of Ukrainian drone attacks on utility infrastructure this winter - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16517,7 +16544,7 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 70,
+            "freshness_score": 68,
             "headline": "Israeli strike kills Hamas official, his wife and children - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16537,14 +16564,14 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 73,
+            "confidence_score": 72,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 65,
+            "freshness_score": 63,
             "headline": "Liesman: Nvidia whiplash tests Kevin Warsh’s push to read market signals",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16564,46 +16591,19 @@
               "TLT"
             ],
             "confidence": "medium",
-            "confidence_score": 72,
+            "confidence_score": 71,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 60,
+            "freshness_score": 59,
             "headline": "Italy rebukes Ukraine over attacks on Russian ships in Libya - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-11-25T10:29:43+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "medium",
-            "confidence_score": 72,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 60,
-            "headline": "Iran says ships hit mines in Hormuz, warns vessels to coordinate passage - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-25T10:11:44+00:00",
             "source": "Reuters"
           }
         ],
@@ -16626,6 +16626,18 @@
           "narrative_strength": 100,
           "summary": "地缘风险升级会提高尾部风险和风险扩散概率，尤其需要观察油价、VIX、美元和信用代理。",
           "supporting_headlines": [
+            {
+              "confidence": "high",
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_market_direction": "risk_off",
+              "headline": "S&P warns Nvidia credit rating could be cut over 'rising' management and governance risk",
+              "importance_score": 100,
+              "published_at": "2026-11-26T02:57:32+00:00",
+              "source": "CNBC"
+            },
             {
               "confidence": "high",
               "detected_event_conditions": [
@@ -16685,18 +16697,6 @@
               "importance_score": 100,
               "published_at": "2026-11-25T10:29:43+00:00",
               "source": "Reuters"
-            },
-            {
-              "confidence": "medium",
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_market_direction": "risk_off",
-              "headline": "Iran says ships hit mines in Hormuz, warns vessels to coordinate passage - Reuters",
-              "importance_score": 100,
-              "published_at": "2026-11-25T10:11:44+00:00",
-              "source": "Reuters"
             }
           ]
         },
@@ -16736,7 +16736,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0,
-            "avg_equity_futures_1d_return": 0.0065,
+            "avg_equity_futures_1d_return": 0.0052,
             "confirmed_checks": [
               "VIX 上升",
               "HYG/LQD 走弱"
@@ -16752,7 +16752,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0036,
-            "oil_proxy_1d_return": 0.0178,
+            "oil_proxy_1d_return": 0.0206,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"

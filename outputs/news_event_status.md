@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-26T02:58:54.333066+00:00`
+- generated_at: `2026-11-26T03:46:27.144359+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `10`
-- event_detection_confidence: `74`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: S&P warns Nvidia credit rating could be cut over 'rising' management and governance risk
+- source: CNBC
+- published_at: `2026-11-26T02:57:32+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -94,13 +102,5 @@
 - headline: Yemen's Houthis claim attack on Saudi Arabia's largest refinery - Reuters
 - source: Reuters
 - published_at: `2026-11-25T07:24:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: India's Chartered Speed targets December IPO after Iran war disruption - Reuters
-- source: Reuters
-- published_at: `2026-11-25T06:12:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
