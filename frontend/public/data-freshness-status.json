@@ -2,11 +2,11 @@
   "affected_symbols": [],
   "can_append_forecast_record": true,
   "can_backfill_completed_outcomes": true,
-  "current_date": "2026-11-25",
-  "current_time_us_eastern": "2026-11-25T23:58:39.198335-05:00",
-  "data_freshness_status": "fresh",
+  "current_date": "2026-11-26",
+  "current_time_us_eastern": "2026-11-26T04:35:45.353683-05:00",
+  "data_freshness_status": "market_closed",
   "expected_latest_trading_date": "2026-11-25",
-  "generated_at": "2026-11-26T04:58:39.198335+00:00",
+  "generated_at": "2026-11-26T09:35:45.353683+00:00",
   "guardrails": [
     "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
     "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -15,9 +15,9 @@
     "Synthetic data is never allowed to create a live forecast signal."
   ],
   "is_latest_trading_day": true,
-  "is_today_us_market_trading_day": true,
+  "is_today_us_market_trading_day": false,
   "last_successful_core_market_update": "2026-11-25",
-  "last_successful_update": "2026-11-25",
+  "last_successful_update": "2026-11-26",
   "latest_confirmed_market_date": "2026-11-25",
   "latest_market_date": "2026-11-25",
   "latest_market_session_status": "completed_or_prior_session",
@@ -432,7 +432,7 @@
     },
     "^VIX": {
       "fallback_used": false,
-      "latest_date": "2026-11-25",
+      "latest_date": "2026-11-26",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -828,7 +828,7 @@
     },
     "macro_event_calendar": {
       "fallback_used": true,
-      "latest_date": "2026-11-25",
+      "latest_date": "2026-11-26",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": false,
@@ -840,7 +840,7 @@
     },
     "news_event_provider": {
       "fallback_used": false,
-      "latest_date": "2026-11-25",
+      "latest_date": "2026-11-26",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -864,7 +864,7 @@
     },
     "options_VIX": {
       "fallback_used": false,
-      "latest_date": "2026-11-25",
+      "latest_date": "2026-11-26",
       "missing_data": false,
       "point_in_time_safe": true,
       "real_data": true,
@@ -937,5 +937,5 @@
   },
   "stale_days": 0,
   "version": "data_freshness_gate_v3",
-  "warning_message": "核心行情已更新至最新应有交易日 2026-11-25。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。"
+  "warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-11-25 的数据。 当前美东时间 2026-11-26 04:35。"
 }

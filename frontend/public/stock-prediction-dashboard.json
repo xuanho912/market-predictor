@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-11-26T04:58:41.015082+00:00",
+  "generated_at": "2026-11-26T09:35:47.334736+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-11-26T04:58:41.075328+00:00",
+    "generated_at": "2026-11-26T09:35:47.402481+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 469,
     "risk_score_effectiveness": {
@@ -242,6 +242,12 @@
           "event_risk_flag": "high",
           "headlines": [
             {
+              "datetime": 1795673707,
+              "headline": "How Investors May Respond To Constellation Energy Stock After Earnings Estimate Upgrades",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=e0af89655cecebe80cf8a10eeca632b2264e64ec915862d65c234deef04b85c2"
+            },
+            {
               "datetime": 1795642680,
               "headline": "LS Power Completes Acquisition of 4.4 GW Natural Gas Generation Assets from Constellation",
               "source": "Yahoo",
@@ -282,19 +288,13 @@
               "headline": "What Just Happened To Vistra Stock?",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=276df7c09e95311d0172dbf1cd6afb81ce3ee8508725aee37bf472f1ab858035"
-            },
-            {
-              "datetime": 1795543525,
-              "headline": "How Has Vistra Stock's Story Changed?",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=c77d71095aca3b50b7c14c7b4f3159fda74cee49350e520cb2d1e5e3cfd38c3c"
             }
           ],
-          "major_company_headline": "LS Power Completes Acquisition of 4.4 GW Natural Gas Generation Assets from Constellation",
-          "news_count_24h": 6,
+          "major_company_headline": "How Investors May Respond To Constellation Energy Stock After Earnings Estimate Upgrades",
+          "news_count_24h": 7,
           "news_count_72h": 20,
-          "news_risk_score": 75.0,
-          "news_sentiment": "neutral"
+          "news_risk_score": 78.0,
+          "news_sentiment": "positive"
         },
         "price_trend": {
           "close": 235.27999877929688,
@@ -723,7 +723,7 @@
         "benchmark": "SPY",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "failed_bounce_risk",
-        "benchmark_primary_probability": 0.3538,
+        "benchmark_primary_probability": 0.3396,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -812,6 +812,7 @@
           "scenario": "stock_downside_continuation"
         },
         "supporting_signals": [
+          "近期公司新闻偏正面。",
           "基础财务指标已接入且收入增长为正。"
         ]
       },
@@ -2140,15 +2141,16 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: LS Power Completes Acquisition of 4.4 GW Natural Gas Generation Assets from Constellation",
+              "公司新闻已接入: How Investors May Respond To Constellation Energy Stock After Earnings Estimate Upgrades",
+              "新闻情绪偏正",
               "增长数据具备 EPS 上修叙事基础"
             ],
             "max_points": 10,
             "missing_fields": [],
             "name": "catalyst",
-            "points": 6.0,
-            "score_pct": 60.0,
-            "status": "neutral"
+            "points": 8.0,
+            "score_pct": 80.0,
+            "status": "supportive"
           },
           "flow": {
             "evidence": [
@@ -2230,7 +2232,7 @@
           "expected_return_60d": -0.0263,
           "max_drawdown_risk_20d": 0.1669,
           "max_drawdown_risk_60d": 0.2261,
-          "outperformance_probability_20d": 0.465,
+          "outperformance_probability_20d": 0.473,
           "risk_reward_ratio": 0.46,
           "upside_potential_60d": 0.1047
         },
@@ -2253,7 +2255,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "LS Power Completes Acquisition of 4.4 GW Natural Gas Generation Assets from Constellation",
+          "catalyst": "How Investors May Respond To Constellation Energy Stock After Earnings Estimate Upgrades",
           "expectation_gap": [
             "收入增长较强，具备正向预期差基础",
             "EPS 增长较强，可能支持盈利上修叙事"
@@ -2271,7 +2273,7 @@
           "primary_path": "stock_failed_bounce",
           "valuation_repricing": "估值扩张证据不足或存在压力"
         },
-        "total_score": 24.5,
+        "total_score": 26.5,
         "validation_status": "not_yet_validated",
         "version": "stock_alpha_score_v1"
       },
@@ -2299,8 +2301,8 @@
         "module_scores": {
           "alpha_quality": {
             "evidence": "个股 Alpha 评分已接入",
-            "reason": "score=24.5; grade=weak_or_no_alpha_edge; benchmark=SPY",
-            "score": 24.5,
+            "reason": "score=26.5; grade=weak_or_no_alpha_edge; benchmark=SPY",
+            "score": 26.5,
             "status": "conflicting"
           },
           "fundamentals_earnings": {
@@ -2323,8 +2325,8 @@
           },
           "news_event": {
             "evidence": "公司新闻或财报事件风险上升",
-            "reason": "risk_score=75.0; earnings_date=None",
-            "score": 65.5,
+            "reason": "risk_score=78.0; earnings_date=None",
+            "score": 68.96,
             "status": "conflicting"
           },
           "options_volatility": {
@@ -2359,7 +2361,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 30.18,
+        "stock_confluence_score": 30.61,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "基础财务指标偏支持",
@@ -2368,6 +2370,7 @@
         "validation_status": "not_yet_validated"
       },
       "supporting_signals": [
+        "近期公司新闻偏正面。",
         "基础财务指标已接入且收入增长为正。"
       ],
       "symbol": "CEG",
@@ -2440,55 +2443,55 @@
           "event_risk_flag": "high",
           "headlines": [
             {
-              "datetime": 1795664680,
-              "headline": "Michael Burry Says He’s Shorting The Market’s ‘Generals’ As Apple Flashes A Warning Last Seen In 2002",
+              "datetime": 1795679642,
+              "headline": "Prediction: This Is What Nvidia Stock Will Be Worth by 2028",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=f954899b21db7bd6e9410ca5a6c23dbe1bb3292226a37c3ebcbfd426a086c808"
+              "url": "https://finnhub.io/api/news?id=7dab9598495549178a0f136042150bc2784dd131923b3754cc041c2a49cf8a96"
             },
             {
-              "datetime": 1795663367,
-              "headline": "Trump admin weighed using Cold War law to reinstate Nvidia CEO Huang, WaPo reports",
+              "datetime": 1795678868,
+              "headline": "Nvidia Could Shift Chips To ‘Better-Funded Buyers’ As Neoclouds Face Shakeout: Analyst Sees ‘Smaller Top Tier’",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=3e24915ace580297fba39e955b398608858c95c98437452a4368e1198ec207cc"
+              "url": "https://finnhub.io/api/news?id=f57559fd410b7bf93d1b1a62b6f1dd6a376c2787e595888bb20f3a760d22bf7a"
             },
             {
-              "datetime": 1795662706,
-              "headline": "Nvidia chips reach Chinese-owned U.S. firms despite export curbs, CBS reports",
+              "datetime": 1795678362,
+              "headline": "Apple Is November's Mag7 Winner — Nvidia Takes The Biggest Hit",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=025264681a746e31dac8036caa3035994c36aa0224ebe359fac9c4215567468b"
+              "url": "https://finnhub.io/api/news?id=222e495311d1cbd45224d5505ca825715a0b76fa3c8a67ee624dc2133f1edfd3"
             },
             {
-              "datetime": 1795662600,
-              "headline": "Kioxia and NVIDIA Collaborate to Expand Effective High-Bandwidth Memory Capacity with SSDs",
+              "datetime": 1795677733,
+              "headline": "Mike Pompeo Has ‘No Doubt’ Alice Huang Coordinated With Communist Party of China: Crypto Bettors Weigh Odds of Her Arrest",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=831dce9df9bee65947b41d0502379df905ad926f0a99373717fdc9fbb755baff"
+              "url": "https://finnhub.io/api/news?id=1f39f507667934bc0bee09dd9dbeee093dd4b093d323f28ae148374b50e71640"
             },
             {
-              "datetime": 1795662422,
-              "headline": "Is Nvidia Stock a Buy After Dell's Record AI Backlog?",
+              "datetime": 1795674651,
+              "headline": "MU, SNDK, SKHY Jump As Nvidia Tests Kioxia Memory Fix — Analyst Presses Memory Giants For ‘Massive’ Buybacks",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=1162096babf1da903416bae7dd9ea9fb25423a82617a994044950ce599ce713c"
+              "url": "https://finnhub.io/api/news?id=5acae23e11e6f6b78440abd7944bc37cb5ef34cc5dec472d00ad062a9d2f110f"
             },
             {
-              "datetime": 1795662007,
-              "headline": "Where Will the Money From Anthropic’s Record IPO Go Next: AI or Crypto?",
+              "datetime": 1795674556,
+              "headline": "Nvidia stops shipping AI servers to 4 Southeast Asian countries- FT",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=fd8179a31b9590e8f32e7498f346ebd207c9210a68ff6dd4443b62cdf47dfb7c"
+              "url": "https://finnhub.io/api/news?id=88c73f1195604a0a5859bc1826c0dee647d3b6a445a17168eb2cce63c4a1e06c"
             },
             {
-              "datetime": 1795660782,
-              "headline": "Nvidia’s Market Cap Falls Below Microsoft’s: Analyst Flags Five Overhangs For NVDA Stock",
+              "datetime": 1795674524,
+              "headline": "Kioxia jumps 14% after Nvidia collaboration as chip stocks rebound",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=93e694d0d5d96ee714e44261e18d84fe92e620d072c98af04c437fc031464488"
+              "url": "https://finnhub.io/api/news?id=fecd38a87fc7f6e75fdb6fad136adb3ef428f6f285ed5ded310058cc820c6ba6"
             },
             {
-              "datetime": 1795660224,
-              "headline": "Asian stocks enjoy another bounce as tech holds court",
+              "datetime": 1795671214,
+              "headline": "ANT, NVDA Slide Tests Investor Resolve, Software Firms Post Sharp Growth",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=65633c387a45a121fc8ccaae640230cf6b5dadcda54c84605539dbcd440ad53b"
+              "url": "https://finnhub.io/api/news?id=21df9492788bb247bd105596f3ede6962cc85b154b8d2a0231b677df9e3342c5"
             }
           ],
-          "major_company_headline": "Michael Burry Says He’s Shorting The Market’s ‘Generals’ As Apple Flashes A Warning Last Seen In 2002",
+          "major_company_headline": "Prediction: This Is What Nvidia Stock Will Be Worth by 2028",
           "news_count_24h": 20,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
@@ -2941,7 +2944,7 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "risk_off",
-        "benchmark_primary_probability": 0.4715,
+        "benchmark_primary_probability": 0.4544,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -4357,7 +4360,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Michael Burry Says He’s Shorting The Market’s ‘Generals’ As Apple Flashes A Warning Last Seen In 2002",
+              "公司新闻已接入: Prediction: This Is What Nvidia Stock Will Be Worth by 2028",
               "增长数据具备 EPS 上修叙事基础"
             ],
             "max_points": 10,
@@ -4471,7 +4474,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "Michael Burry Says He’s Shorting The Market’s ‘Generals’ As Apple Flashes A Warning Last Seen In 2002",
+          "catalyst": "Prediction: This Is What Nvidia Stock Will Be Worth by 2028",
           "expectation_gap": [
             "收入增长较强，具备正向预期差基础",
             "EPS 增长较强，可能支持盈利上修叙事"
@@ -4649,10 +4652,10 @@
           "company_news": "available",
           "earnings": "available",
           "earnings_date": null,
-          "earnings_risk_flag": "medium",
+          "earnings_risk_flag": "low",
           "earnings_within_30d": false,
           "earnings_within_7d": false,
-          "event_risk_flag": "medium",
+          "event_risk_flag": "low",
           "headlines": [
             {
               "datetime": 1795633502,
@@ -4704,9 +4707,9 @@
             }
           ],
           "major_company_headline": "NuScale Earns More on Interest Than It Does on Developing Reactors. Here’s the Math.",
-          "news_count_24h": 5,
+          "news_count_24h": 4,
           "news_count_72h": 11,
-          "news_risk_score": 50.0,
+          "news_risk_score": 42.0,
           "news_sentiment": "positive"
         },
         "price_trend": {
@@ -5145,12 +5148,12 @@
         "benchmark": "IWM",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "risk_off",
-        "benchmark_primary_probability": 0.3988,
+        "benchmark_primary_probability": 0.3828,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
         "risk_alert_level": "HIGH_CONVICTION",
-        "risk_alert_type": "Failed Bounce Alert",
+        "risk_alert_type": "Bounce Setup Alert",
         "symbol": "SMR"
       },
       "missing_data": [
@@ -6866,6 +6869,12 @@
               "url": "https://finnhub.io/api/news?id=e20a1c6864b0638103683a558a2c7228a0744bf93030d68b2b61b1dbc26e5cd8"
             },
             {
+              "datetime": 1795663807,
+              "headline": "Mark Cuban Says the Most Common Mistake He Saw Founders Make on 'Shark Tank' Was a Job They Kept Handing Off: 'You're Going to Fail'",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=af1712d7ae380a97ba4cf2e30aa5ea2812318b4725a3a4e4c8696e255d799116"
+            },
+            {
               "datetime": 1795653420,
               "headline": "Elon Musk tells Tesla investors there is 'only one way' to eliminate poverty",
               "source": "Yahoo",
@@ -6900,12 +6909,6 @@
               "headline": "Is Space Exploration Technologies (SPCX) Cheap As Tesla Merger Talks Raise Valuation Questions?",
               "source": "Yahoo",
               "url": "https://finnhub.io/api/news?id=95d78a2c417ffa753838cb747cade0993abd866151b9836e070a39d880381cdf"
-            },
-            {
-              "datetime": 1795633350,
-              "headline": "AST SpaceMobile Surges 9%, Erasing Early Losses as Space Stocks Diverge; SpaceX Eases, Rocket Lab Holds Steady",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=4541db3e4c52fd046321f88f2955ff19b6b79ad19f8bc9f14156faed290740c5"
             }
           ],
           "major_company_headline": "Cathie Wood Buys More SpaceX Amid Tesla Merger Talks — Ron Baron Says SpaceX Could Make $50B A Year From One Data Center",
@@ -7359,7 +7362,7 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "risk_off",
-        "benchmark_primary_probability": 0.4715,
+        "benchmark_primary_probability": 0.4544,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -9027,7 +9030,7 @@
       "top_candidate": "TSLA",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-11-26T04:58:41.057564+00:00",
+    "generated_at": "2026-11-26T09:35:47.382038+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -9122,19 +9125,19 @@
       },
       {
         "alpha_fields": {
-          "alpha_score": 24.5,
+          "alpha_score": 26.5,
           "expected_return_60d": -0.0263,
           "forecast_grade": "weak_or_no_alpha_edge",
           "main_logic": "电力/核能/能源基础设施逻辑：政策与订单催化、盈利兑现能力、利率敏感度和资金确认。",
-          "outperformance_probability_20d": 0.465,
+          "outperformance_probability_20d": 0.473,
           "risk_reward_ratio": 0.46
         },
-        "alpha_quality_score": 24.5,
+        "alpha_quality_score": 26.5,
         "as_of": "2026-11-25",
         "candidate_type": "failed_bounce_risk",
         "catalyst_score": 63.08,
         "company_name": "Constellation Energy Corp",
-        "confluence_score": 30.18,
+        "confluence_score": 30.61,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9151,7 +9154,7 @@
           "mid": 234.53,
           "range_pct": 0.0586
         },
-        "final_radar_score": 54.89,
+        "final_radar_score": 55.3,
         "forecast_date": "2026-11-25",
         "invalidation_level": 226.19,
         "last_close": 235.27999877929688,
@@ -9174,8 +9177,8 @@
           "earnings": "available"
         },
         "next_day_move_probability": 0.8676,
-        "one_line_reason": "failed_bounce_risk: Alpha 24 / 弹性 100 / 成交量 77 / 相对强弱 35 / 催化 63 / 大盘 risk_off_pressure / 板块 conflicting",
-        "outperformance_probability_20d": 0.465,
+        "one_line_reason": "failed_bounce_risk: Alpha 26 / 弹性 100 / 成交量 77 / 相对强弱 35 / 催化 63 / 大盘 risk_off_pressure / 板块 conflicting",
+        "outperformance_probability_20d": 0.473,
         "primary_probability": 0.2774,
         "primary_scenario": "stock_failed_bounce",
         "radar_level": "MODERATE_OPPORTUNITY",

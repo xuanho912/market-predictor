@@ -1,16 +1,16 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-26T04:58:28.891007+00:00`
+- generated_at: `2026-11-26T09:35:34.101594+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
-- event_detection_confidence: `79`
+- major_event_count: `5`
+- event_detection_confidence: `76`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
 - narrative_strength: `100`
 - price_reaction_confirmed: `False`
-- confirmation_score: `50`
+- confirmation_score: `25`
 
 ## Dashboard Note
 
@@ -27,7 +27,15 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil rises on supply concerns as Iran claims mine strikes on ships - Reuters
+- headline: Trump and NATO chief urge Russia to avoid actions that widen Ukraine war - Reuters
+- source: Reuters
+- published_at: `2026-11-26T04:20:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil little changed as supply concerns linger after Iran claims mine strikes on ships - Reuters
 - source: Reuters
 - published_at: `2026-11-26T03:08:00+00:00`
 - importance_score: `100`
@@ -49,26 +57,10 @@
 - importance_score: `100`
 - confidence: `high`
 
-### geopolitical_risk_escalation / risk_off
-
-- headline: Russian government official warns of Ukrainian drone attacks on utility infrastructure this winter - Reuters
-- source: Reuters
-- published_at: `2026-11-25T15:21:43+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Israeli strike kills Hamas official, his wife and children - Reuters
-- source: Reuters
-- published_at: `2026-11-25T14:19:53+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
 ### inflation_hot / risk_off
 
 - headline: Fed survey shows continued economic growth, sticky inflation in recent weeks - Reuters
 - source: Reuters
 - published_at: `2026-11-25T20:42:46+00:00`
-- importance_score: `85`
+- importance_score: `84`
 - confidence: `medium`
