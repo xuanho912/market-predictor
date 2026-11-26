@@ -1,6 +1,6 @@
 # Stock Prediction Report
 
-Generated at: `2026-11-26T09:35:47.334736+00:00`
+Generated at: `2026-11-26T21:35:53.704381+00:00`
 Model version: `stock_baseline_v1`
 
 This module extends the dashboard to watchlist stocks. It is not a trading system and does not produce execution instructions.
@@ -25,7 +25,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_downside_continuation` / `34.1%`
 - secondary: `stock_failed_bounce` / `18.5%`
 - risk: `stock_event_risk` / `14.6%`
-- stock_confluence_score: `47.59` / `mixed`
+- stock_confluence_score: `47.6` / `mixed`
 - stock_alpha_score_v1: `23.5` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `33.0%`
 - 60d_expected_return: `-5.1%`
@@ -54,7 +54,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_failed_bounce` / `24.1%`
 - secondary: `stock_downside_continuation` / `20.2%`
 - risk: `stock_event_risk` / `15.3%`
-- stock_confluence_score: `35.33` / `weak`
+- stock_confluence_score: `35.34` / `weak`
 - stock_alpha_score_v1: `1.5` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `43.9%`
 - 60d_expected_return: `-1.1%`
@@ -83,7 +83,7 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - primary: `stock_downside_continuation` / `39.9%`
 - secondary: `stock_failed_bounce` / `21.0%`
 - risk: `stock_event_risk` / `10.4%`
-- stock_confluence_score: `41.86` / `weak`
+- stock_confluence_score: `41.37` / `weak`
 - stock_alpha_score_v1: `0` / `weak_or_no_alpha_edge`
 - 20d_outperformance_probability: `7.4%`
 - 60d_expected_return: `-8.6%`
@@ -109,15 +109,15 @@ This module extends the dashboard to watchlist stocks. It is not a trading syste
 - status: `available`
 - current_price: `235.28`
 - market_context: `risk_off_pressure`
-- primary: `stock_failed_bounce` / `27.7%`
-- secondary: `stock_downside_continuation` / `25.5%`
-- risk: `stock_event_risk` / `13.5%`
-- stock_confluence_score: `30.61` / `weak`
-- stock_alpha_score_v1: `26.5` / `weak_or_no_alpha_edge`
-- 20d_outperformance_probability: `47.3%`
-- 60d_expected_return: `-2.6%`
-- risk_reward_ratio: `0.46`
-- strongest_alert: `Stock Breakdown Warning` / `NO_ALERT` / `35.6`
+- primary: `stock_failed_bounce` / `27.2%`
+- secondary: `stock_downside_continuation` / `26.9%`
+- risk: `stock_event_risk` / `10.9%`
+- stock_confluence_score: `31.29` / `weak`
+- stock_alpha_score_v1: `31.5` / `weak_or_no_alpha_edge`
+- 20d_outperformance_probability: `49.3%`
+- 60d_expected_return: `-2.5%`
+- risk_reward_ratio: `0.49`
+- strongest_alert: `Stock Breakdown Warning` / `NO_ALERT` / `36.41`
 - historical_analog_support: `supportive` / samples `10`
 - validation_status: `not_yet_validated`
 

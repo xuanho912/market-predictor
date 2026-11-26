@@ -1,11 +1,11 @@
 # Data Freshness Status
 
-Generated at: `2026-11-26T09:35:45.353683+00:00`
+Generated at: `2026-11-26T21:35:52.575410+00:00`
 
 ## Summary
 
 - current_date: `2026-11-26`
-- current_time_us_eastern: `2026-11-26T04:35:45.353683-05:00`
+- current_time_us_eastern: `2026-11-26T16:35:52.575410-05:00`
 - latest_market_date: `2026-11-25`
 - latest_confirmed_market_date: `2026-11-25`
 - expected_latest_trading_date: `2026-11-25`
@@ -17,7 +17,7 @@ Generated at: `2026-11-26T09:35:45.353683+00:00`
 - data_freshness_status: `market_closed`
 - last_successful_core_market_update: `2026-11-25`
 - last_successful_update: `2026-11-26`
-- warning_message: 美股当前没有新的完整交易日，使用最近完成交易日 2026-11-25 的数据。 当前美东时间 2026-11-26 04:35。
+- warning_message: 美股当前没有新的完整交易日，使用最近完成交易日 2026-11-25 的数据。 当前美东时间 2026-11-26 16:35。
 
 ## Affected Symbols
 

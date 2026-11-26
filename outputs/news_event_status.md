@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-26T09:35:34.101594+00:00`
+- generated_at: `2026-11-26T21:35:41.175857+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `5`
-- event_detection_confidence: `76`
+- major_event_count: `3`
+- event_detection_confidence: `79`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,40 +27,24 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Trump and NATO chief urge Russia to avoid actions that widen Ukraine war - Reuters
+- headline: Attack on Saudi Aramco's Jazan refinery kills worker, halts some operations - Reuters
 - source: Reuters
-- published_at: `2026-11-26T04:20:00+00:00`
+- published_at: `2026-11-26T20:56:28+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Oil little changed as supply concerns linger after Iran claims mine strikes on ships - Reuters
+- headline: Two Italians killed in attack on Kuwait site, Iran denies involvement - Reuters
 - source: Reuters
-- published_at: `2026-11-26T03:08:00+00:00`
+- published_at: `2026-11-26T18:54:12+00:00`
 - importance_score: `100`
 - confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: S&P warns Nvidia credit rating could be cut over 'rising' management and governance risk
-- source: CNBC
-- published_at: `2026-11-26T02:57:32+00:00`
+- headline: Two Italian workers killed in Iranian strike in Kuwait, source says - Reuters
+- source: Reuters
+- published_at: `2026-11-26T14:02:19+00:00`
 - importance_score: `100`
 - confidence: `high`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Russian forces hit Kyiv with ballistic missiles, mayor says - Reuters
-- source: Reuters
-- published_at: `2026-11-25T22:07:09+00:00`
-- importance_score: `100`
-- confidence: `high`
-
-### inflation_hot / risk_off
-
-- headline: Fed survey shows continued economic growth, sticky inflation in recent weeks - Reuters
-- source: Reuters
-- published_at: `2026-11-25T20:42:46+00:00`
-- importance_score: `84`
-- confidence: `medium`
