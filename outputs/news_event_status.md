@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-26T03:46:27.144359+00:00`
+- generated_at: `2026-11-26T04:34:12.064871+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `10`
-- event_detection_confidence: `75`
+- major_event_count: `6`
+- event_detection_confidence: `80`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -24,6 +24,14 @@
 - high_importance_event_count: `0`
 
 ## Major Events
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Oil rises on supply concerns as Iran claims mine strikes on ships - Reuters
+- source: Reuters
+- published_at: `2026-11-26T03:08:00+00:00`
+- importance_score: `100`
+- confidence: `high`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -57,50 +65,10 @@
 - importance_score: `100`
 - confidence: `medium`
 
-### geopolitical_risk_escalation / risk_off
+### inflation_hot / risk_off
 
-- headline: Liesman: Nvidia whiplash tests Kevin Warsh’s push to read market signals
-- source: CNBC
-- published_at: `2026-11-25T12:26:41+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Italy rebukes Ukraine over attacks on Russian ships in Libya - Reuters
+- headline: Fed survey shows continued economic growth, sticky inflation in recent weeks - Reuters
 - source: Reuters
-- published_at: `2026-11-25T10:29:43+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran says ships hit mines in Hormuz, warns vessels to coordinate passage - Reuters
-- source: Reuters
-- published_at: `2026-11-25T10:11:44+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Greeks strike over wages, public services - Reuters
-- source: Reuters
-- published_at: `2026-11-25T08:54:06+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran says it is prepared to withstand US blockade, seeks to curb price rises - Reuters
-- source: Reuters
-- published_at: `2026-11-25T08:29:22+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Yemen's Houthis claim attack on Saudi Arabia's largest refinery - Reuters
-- source: Reuters
-- published_at: `2026-11-25T07:24:00+00:00`
-- importance_score: `100`
+- published_at: `2026-11-25T20:42:46+00:00`
+- importance_score: `85`
 - confidence: `medium`
