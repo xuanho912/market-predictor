@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-27T04:57:43.799486+00:00`
+- generated_at: `2026-11-27T09:45:01.290227+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `4`
-- event_detection_confidence: `74`
+- major_event_count: `7`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,11 +27,27 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Iran warns on Gulf military presence as South Korea readies expanded naval role - Reuters
+- source: Reuters
+- published_at: `2026-11-27T05:12:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Australia sanctions alleged Iranian agents suspected of directing antisemitic attacks - Reuters
+- source: Reuters
+- published_at: `2026-11-27T03:17:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Attack on Saudi Aramco's Jazan refinery kills worker, halts some operations - Reuters
 - source: Reuters
 - published_at: `2026-11-26T20:56:28+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -39,13 +55,21 @@
 - source: Reuters
 - published_at: `2026-11-26T18:54:12+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
 - headline: Two Italian workers killed in Iranian strike in Kuwait, source says - Reuters
 - source: Reuters
 - published_at: `2026-11-26T14:02:19+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Most Gulf markets retreat on Saudi energy strikes, maritime dangers - Reuters
+- source: Reuters
+- published_at: `2026-11-26T13:32:47+00:00`
 - importance_score: `100`
 - confidence: `medium`
 
