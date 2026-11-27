@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-27T03:00:42.816314+00:00`
+- generated_at: `2026-11-27T03:47:10.636211+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `3`
-- event_detection_confidence: `76`
+- major_event_count: `4`
+- event_detection_confidence: `75`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -46,5 +46,13 @@
 - headline: Two Italian workers killed in Iranian strike in Kuwait, source says - Reuters
 - source: Reuters
 - published_at: `2026-11-26T14:02:19+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Airlines strained by Iran-war fuel price shock - Reuters
+- source: Reuters
+- published_at: `2026-11-26T12:50:13+00:00`
 - importance_score: `100`
 - confidence: `medium`

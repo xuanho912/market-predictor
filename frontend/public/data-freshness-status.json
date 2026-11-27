@@ -3,10 +3,10 @@
   "can_append_forecast_record": true,
   "can_backfill_completed_outcomes": true,
   "current_date": "2026-11-26",
-  "current_time_us_eastern": "2026-11-26T22:00:52.933043-05:00",
+  "current_time_us_eastern": "2026-11-26T22:47:23.098361-05:00",
   "data_freshness_status": "market_closed",
   "expected_latest_trading_date": "2026-11-25",
-  "generated_at": "2026-11-27T03:00:52.933043+00:00",
+  "generated_at": "2026-11-27T03:47:23.098361+00:00",
   "guardrails": [
     "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
     "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -733,25 +733,25 @@
     "finnhub_quote_QQQ": {
       "fallback_used": false,
       "latest_date": null,
-      "missing_data": true,
-      "point_in_time_safe": false,
-      "real_data": false,
-      "rows": 0,
+      "missing_data": false,
+      "point_in_time_safe": true,
+      "real_data": true,
+      "rows": 1,
       "source": "finnhub",
-      "stale_data": false,
-      "status": "rate_limited",
+      "stale_data": true,
+      "status": "stale",
       "symbol": "finnhub_quote_QQQ"
     },
     "finnhub_quote_SPY": {
       "fallback_used": false,
       "latest_date": null,
-      "missing_data": true,
-      "point_in_time_safe": false,
-      "real_data": false,
-      "rows": 0,
+      "missing_data": false,
+      "point_in_time_safe": true,
+      "real_data": true,
+      "rows": 1,
       "source": "finnhub",
-      "stale_data": false,
-      "status": "rate_limited",
+      "stale_data": true,
+      "status": "stale",
       "symbol": "finnhub_quote_SPY"
     },
     "finnhub_rates_data": {
@@ -937,5 +937,5 @@
   },
   "stale_days": 0,
   "version": "data_freshness_gate_v3",
-  "warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-11-25 的数据。 当前美东时间 2026-11-26 22:00。"
+  "warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-11-25 的数据。 当前美东时间 2026-11-26 22:47。"
 }
