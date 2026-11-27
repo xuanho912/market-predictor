@@ -18,7 +18,7 @@
     },
     "version": "stock_data_provider_v1"
   },
-  "generated_at": "2026-11-27T09:45:13.078205+00:00",
+  "generated_at": "2026-11-27T13:09:24.078518+00:00",
   "guardrails": [
     "This is a probabilistic stock forecast module, not a trading system.",
     "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -107,7 +107,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-11-27T09:45:13.096696+00:00",
+    "generated_at": "2026-11-27T13:09:24.093988+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 469,
     "risk_score_effectiveness": {
@@ -265,6 +265,12 @@
               "url": "https://finnhub.io/api/news?id=e0af89655cecebe80cf8a10eeca632b2264e64ec915862d65c234deef04b85c2"
             },
             {
+              "datetime": 1795648086,
+              "headline": "67% Upside for Constellation Energy? Morgan Stanley Thinks So, and Here’s How",
+              "source": "Yahoo",
+              "url": "https://finnhub.io/api/news?id=52fab9def8852354c555e5579d19932b343b7bfbfe9fa74cdbd41ad7f9e119f8"
+            },
+            {
               "datetime": 1795642680,
               "headline": "LS Power Completes Acquisition of 4.4 GW Natural Gas Generation Assets from Constellation",
               "source": "Yahoo",
@@ -281,19 +287,13 @@
               "headline": "Goldman Sachs Sees US Data Center Power Additions Nearly Tripling by 2028. These 3 ETFs Could Benefit",
               "source": "Benzinga",
               "url": "https://finnhub.io/api/news?id=fee732d373401ed15de6c54f4d480f618dd49f2406c329339936850aa14e0047"
-            },
-            {
-              "datetime": 1795626110,
-              "headline": "Vistra Has Slumped for a Year: Why Morgan Stanley Still Sees 82% Upside",
-              "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=5f62b5f7f692a5b5fe8ef1644ab71dc22abcc94f68c6d72743d7a716a6265dc3"
             }
           ],
           "major_company_headline": "NEE or CEG: Which Clean Energy Stock Is Better Positioned for Growth?",
           "news_count_24h": 2,
           "news_count_72h": 20,
-          "news_risk_score": 38.0,
-          "news_sentiment": "positive"
+          "news_risk_score": 43.0,
+          "news_sentiment": "neutral"
         },
         "price_trend": {
           "close": 235.27999877929688,
@@ -722,7 +722,7 @@
         "benchmark": "SPY",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "failed_bounce_risk",
-        "benchmark_primary_probability": 0.3347,
+        "benchmark_primary_probability": 0.3327,
         "benchmark_primary_scenario": "bounce_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -810,7 +810,6 @@
           "scenario": "stock_downside_continuation"
         },
         "supporting_signals": [
-          "近期公司新闻偏正面。",
           "基础财务指标已接入且收入增长为正。"
         ]
       },
@@ -2140,15 +2139,14 @@
           "catalyst": {
             "evidence": [
               "公司新闻已接入: NEE or CEG: Which Clean Energy Stock Is Better Positioned for Growth?",
-              "新闻情绪偏正",
               "增长数据具备 EPS 上修叙事基础"
             ],
             "max_points": 10,
             "missing_fields": [],
             "name": "catalyst",
-            "points": 8.0,
-            "score_pct": 80.0,
-            "status": "supportive"
+            "points": 6.0,
+            "score_pct": 60.0,
+            "status": "neutral"
           },
           "flow": {
             "evidence": [
@@ -2230,7 +2228,7 @@
           "expected_return_60d": -0.0254,
           "max_drawdown_risk_20d": 0.1669,
           "max_drawdown_risk_60d": 0.2261,
-          "outperformance_probability_20d": 0.493,
+          "outperformance_probability_20d": 0.485,
           "risk_reward_ratio": 0.49,
           "upside_potential_60d": 0.1102
         },
@@ -2270,7 +2268,7 @@
           "primary_path": "stock_failed_bounce",
           "valuation_repricing": "估值扩张证据不足或存在压力"
         },
-        "total_score": 31.5,
+        "total_score": 29.5,
         "validation_status": "not_yet_validated",
         "version": "stock_alpha_score_v1"
       },
@@ -2297,8 +2295,8 @@
         "module_scores": {
           "alpha_quality": {
             "evidence": "个股 Alpha 评分已接入",
-            "reason": "score=31.5; grade=weak_or_no_alpha_edge; benchmark=SPY",
-            "score": 31.5,
+            "reason": "score=29.5; grade=weak_or_no_alpha_edge; benchmark=SPY",
+            "score": 29.5,
             "status": "conflicting"
           },
           "fundamentals_earnings": {
@@ -2320,10 +2318,10 @@
             "status": "conflicting"
           },
           "news_event": {
-            "evidence": "近期公司新闻偏支持",
+            "evidence": "公司新闻源已接入",
             "reason": "NEE or CEG: Which Clean Energy Stock Is Better Positioned for Growth?",
-            "score": 68.16,
-            "status": "supportive"
+            "score": 55.26,
+            "status": "neutral"
           },
           "options_volatility": {
             "evidence": "个股期权/隐含波动率未完整接入",
@@ -2357,17 +2355,15 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 31.01,
+        "stock_confluence_score": 29.89,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
-          "近期公司新闻偏支持",
           "基础财务指标偏支持",
           "历史相似结构支持主路径"
         ],
         "validation_status": "not_yet_validated"
       },
       "supporting_signals": [
-        "近期公司新闻偏正面。",
         "基础财务指标已接入且收入增长为正。"
       ],
       "symbol": "CEG",
@@ -2440,59 +2436,59 @@
           "event_risk_flag": "high",
           "headlines": [
             {
-              "datetime": 1795764182,
-              "headline": "Prediction: This Will Be Anthropic’s Stock Price by the End of 2026",
+              "datetime": 1795779962,
+              "headline": "If You Put $10,000 in the Schwab U.S. Dividend Equity ETF 10 Years Ago, Here’s What You’d Have Now",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=a6f62fac3b50d312a5a5ef4d5104e3a76867eba33501fd524b71b24bac6d512b"
+              "url": "https://finnhub.io/api/news?id=928870140d060923f869f362db0baa691de7c4fbf19d7078d8ba712dfac354ef"
             },
             {
-              "datetime": 1795764002,
-              "headline": "History Says Investing $200 a Month in This Vanguard ETF Could Build Life-Changing Wealth Without a Single Stock Pick",
+              "datetime": 1795779439,
+              "headline": "AI Chips Update - AI Surge Accelerates Semiconductor Growth Through 2026",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=723276fd0c114b5ff0d2fcb69c68d4734c290cc80bab93edba96652c3784796c"
+              "url": "https://finnhub.io/api/news?id=1661ea804403eefe9f26a0c77ee161d65959e4fd55065545cebb707a709d5ecd"
             },
             {
-              "datetime": 1795763460,
-              "headline": "Top 3 Undervalued Tech Stocks To Watch In November 2026",
+              "datetime": 1795779182,
+              "headline": "Is Meta Stock a Buy as Amazon Reportedly Weighs Letting Its AI Shopping Agent Back In?",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=109eeebafb3dc3df6d46e1b892bcb63839e9eec34d18bc9491a6aad5ce7d0fe8"
+              "url": "https://finnhub.io/api/news?id=6d0a569afff0aed9d27cb9a7eb0bb81e9aa5de357792b91faa80eb57370ea8a2"
             },
             {
-              "datetime": 1795761088,
-              "headline": "Michael Burry Shares Stark Warning About AI Boom, as Nvidia, Oracle and Meta Face Surging Debt Insurance Costs",
+              "datetime": 1795778702,
+              "headline": "This Should Be Your First Retirement Savings Priority in 2027",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=939496e0b643ce0dbbf96b87b6097cf073e8fd6a5a7c94d1f7f5b90c0d704245"
+              "url": "https://finnhub.io/api/news?id=c775da02c1d397db307db295d53b9afe1ed2e3c10eb987c41c900248bfedd04f"
             },
             {
-              "datetime": 1795759200,
-              "headline": "The tiny Dutch town being overwhelmed by an AI boom",
+              "datetime": 1795778588,
+              "headline": "Marvell Faces Critical Earnings Test Amid AI Chip Market Turmoil",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=a38268effdd590f6993fe14b4de5a0c2648e5baa5c83f59a7ff7fcc6e4720fcd"
+              "url": "https://finnhub.io/api/news?id=ce72e435d1a5bf91ac789bc3cbec97f5d488b7b718b915405356e54778be6567"
             },
             {
-              "datetime": 1795756449,
-              "headline": "Learn Why The Bull Case For Nvidia Stock Could Change Following CEO Reinstatement",
+              "datetime": 1795778402,
+              "headline": "Prediction: These Will Be Anthropic’s and SpaceX’s Stock Prices by the End of 2027 (Hint: Both Are Buys)",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=3b8fa1a5161f0d7f5892f27c549575d7b745cbdea20791e68dab73864b3367ba"
+              "url": "https://finnhub.io/api/news?id=240bcf137be4946ab082248a5e26a897b241bb496be7179cef2cb25e2b5b61fc"
             },
             {
-              "datetime": 1795753381,
-              "headline": "Nvidia (NVDA) Stock Fair Value Falls After Analysts Reassess Leadership And Regulatory Risks",
+              "datetime": 1795778369,
+              "headline": "Nvidia Sellers Deliver a Stark Warning. These AI Stocks Could Feel the Pressure",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=a379bd04041b159f4371c933a2ede013632185a2d03e0a51c59c24b6a3543d67"
+              "url": "https://finnhub.io/api/news?id=bba19d5416a33699d7352c4aa97624bee0d52afcf890c480e266ba63f91b119c"
             },
             {
-              "datetime": 1795753047,
-              "headline": "Asian stocks rise as tech rebound, easing U.S. trade concerns lift sentiment",
+              "datetime": 1795777978,
+              "headline": "Renewed Tech Optimism Lifts Wall Street Pre-Bell; Asia, Europe Up",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=222c7deabeda55deddbc0472059a2d92a9f184170f5b31f93e775ee7dbed0933"
+              "url": "https://finnhub.io/api/news?id=2fc4e40f908e32845567d278c8a1173b60a4c87d3232fba04c0e6c39c2555c04"
             }
           ],
-          "major_company_headline": "Prediction: This Will Be Anthropic’s Stock Price by the End of 2026",
+          "major_company_headline": "If You Put $10,000 in the Schwab U.S. Dividend Equity ETF 10 Years Ago, Here’s What You’d Have Now",
           "news_count_24h": 20,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
-          "news_sentiment": "negative"
+          "news_sentiment": "neutral"
         },
         "price_trend": {
           "close": 149.3000030517578,
@@ -2941,7 +2937,7 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "risk_off",
-        "benchmark_primary_probability": 0.3838,
+        "benchmark_primary_probability": 0.3881,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -4357,7 +4353,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Prediction: This Will Be Anthropic’s Stock Price by the End of 2026",
+              "公司新闻已接入: If You Put $10,000 in the Schwab U.S. Dividend Equity ETF 10 Years Ago, Here’s What You’d Have Now",
               "增长数据具备 EPS 上修叙事基础"
             ],
             "max_points": 10,
@@ -4471,7 +4467,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "Prediction: This Will Be Anthropic’s Stock Price by the End of 2026",
+          "catalyst": "If You Put $10,000 in the Schwab U.S. Dividend Equity ETF 10 Years Ago, Here’s What You’d Have Now",
           "expectation_gap": [
             "收入增长较强，具备正向预期差基础",
             "EPS 增长较强，可能支持盈利上修叙事"
@@ -4704,9 +4700,9 @@
             }
           ],
           "major_company_headline": "NuScale Just Dropped 17% in a Week to a New 52-Week Low. Is It Time to Sell, or Load Up?",
-          "news_count_24h": 3,
+          "news_count_24h": 2,
           "news_count_72h": 10,
-          "news_risk_score": 46.0,
+          "news_risk_score": 38.0,
           "news_sentiment": "positive"
         },
         "price_trend": {
@@ -5145,7 +5141,7 @@
         "benchmark": "IWM",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "risk_off",
-        "benchmark_primary_probability": 0.3161,
+        "benchmark_primary_probability": 0.3207,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -6745,7 +6741,7 @@
           "news_event": {
             "evidence": "近期公司新闻偏支持",
             "reason": "NuScale Just Dropped 17% in a Week to a New 52-Week Low. Is It Time to Sell, or Load Up?",
-            "score": 70.72,
+            "score": 68.16,
             "status": "supportive"
           },
           "options_volatility": {
@@ -6780,7 +6776,7 @@
           }
         },
         "requires_multi_source_confirmation": true,
-        "stock_confluence_score": 41.77,
+        "stock_confluence_score": 41.59,
         "summary": "个股强判断必须先通过大盘风险背景，再通过板块/行业过滤，最后才看个股价格、成交量、相对强弱、波动率、新闻/事件和历史相似共振。",
         "supporting_evidence": [
           "近期公司新闻偏支持",
@@ -6860,55 +6856,55 @@
           "event_risk_flag": "high",
           "headlines": [
             {
-              "datetime": 1795761895,
-              "headline": "Elon Musk Offers Samsung Long-Term Chip Deals and Factory Funding, Gets Brushed Off: 'Everyone Else Was Offering That'",
+              "datetime": 1795777495,
+              "headline": "iShares Paris-Aligned Climate (PABU) Buys $9.4 Million More Apple on Wednesday",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=319c769754d7f91571732f60f99222c65307cbb95cee8c27bda5fd7ac8d4bf7b"
+              "url": "https://finnhub.io/api/news?id=797a664fbb09caf7838c216b97e0e739ba6ef8984d18bfe3e3ad3ba00323f0e7"
             },
             {
-              "datetime": 1795743007,
-              "headline": "‘How Can TSLA Compete With Waymo?’ Gary Black Questions Tesla’s Robotaxi Strategy, Predicts Waymo Will Lead in Miles and Trips",
+              "datetime": 1795777488,
+              "headline": "What ARK Autonomous Technology & Robotics ETF (ARKQ) Sold: Tesla Leads on Nov. 25",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=2d3b8dce8229733f406d9423b814407161739483c231ce4f35f8d2ce3ffdd293"
+              "url": "https://finnhub.io/api/news?id=d69369fa7e4f13e57ca523452239620d2d5bdd59a7e8bc461c5962a8d5e05108"
             },
             {
-              "datetime": 1795743007,
-              "headline": "What Could Tesla (TSLA) Merger Talks Mean For Its Stock?",
+              "datetime": 1795777460,
+              "headline": "What Invesco NASDAQ 100 ETF (QQQM) Bought: Apple Leads on Wednesday",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=b7f4059e5be7b0bd5019ca2bb6f2e6ef51fab2658e903025a374e6782a66ca3e"
+              "url": "https://finnhub.io/api/news?id=a6f0e1874ce18ee0a26cd529790fce505c45aad323c976bd33642cbe9745092d"
             },
             {
-              "datetime": 1795732502,
-              "headline": "Should You Buy Tesla Stock Before December?",
+              "datetime": 1795777436,
+              "headline": "Proshares Trust (TQQQ) Adds Apple and Microsoft on Nov. 25",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=0243a4baabc6f280cd4f621cef4a3775f8bfc6f3cc228a63ada0817630f5c5f9"
+              "url": "https://finnhub.io/api/news?id=7f63382b367e8afdca860a1730850c922bf6213c12ee8c39ee71b3c74f895581"
             },
             {
-              "datetime": 1795719837,
-              "headline": "Tesla Stocks Slip 1.18% as EU Delays Self-Driving Vote to December 15",
+              "datetime": 1795777409,
+              "headline": "What INVESCO QQQ Trust (QQQ) Bought: Apple Leads on Wednesday",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=33e94637ee57050ed7351c4c5d29f4846041bfb6dd6edc3c6bcc0557f653e1d9"
+              "url": "https://finnhub.io/api/news?id=6709e7b90a3f38a4a736e7e912b0f78c5c55d2033772b5c790541d98327387f1"
             },
             {
-              "datetime": 1795717803,
-              "headline": "Charlie Munger Said BYD Was ‘So Much Ahead Of Tesla, It’s Almost Ridiculous’ in 2023. BYD Then Outsold Tesla, But Berkshire Sold Every Share.",
+              "datetime": 1795777262,
+              "headline": "ETFs Are Buying Tesla (TSLA) on Wednesday",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=251c6e99197ce8f54f1f5cc64dcdcd6a04e029c4494ebea81efd09bece90c6a4"
+              "url": "https://finnhub.io/api/news?id=4a7914aa9e959671cd30aecf60d9a78673d81bfe505096330850c7436708fcf1"
             },
             {
-              "datetime": 1795715166,
-              "headline": "Tesla: A SpaceX Merger Could Turn $5,000 Into $10,000",
+              "datetime": 1795776307,
+              "headline": "Elon Musk Hopes All Teslas Will Get SpaceX’s Starlink Connectivity—Except in China, Where It’s ‘Illegal’: Says It Will Be Key for Unsupervised FSD",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=8e3aa8c9d10cb7fdfd62bca9b994eb2ef8497f2d62675ed9d54ae251f748a98b"
+              "url": "https://finnhub.io/api/news?id=4bdc9f666d249d37446dbced1e7a12c600f06464695c41040e42e6a562f27525"
             },
             {
-              "datetime": 1795712778,
-              "headline": "Rivian Is Down 41% This Year. Can RIVN Stock Get Back to $20 in 2027?",
+              "datetime": 1795775961,
+              "headline": "Electric Vehicles Today - Driving Forward: Innovations in Pedestrian Safety Systems",
               "source": "Yahoo",
-              "url": "https://finnhub.io/api/news?id=95ad73aab2fba59c46ecac27649acb35d2ea4e514a3c7be63fc7f2a62d94e049"
+              "url": "https://finnhub.io/api/news?id=30339ebed4cb39bd0ae52258b1d4fdfe63b2ea1aeecc67443a8ec84174a47cb8"
             }
           ],
-          "major_company_headline": "Elon Musk Offers Samsung Long-Term Chip Deals and Factory Funding, Gets Brushed Off: 'Everyone Else Was Offering That'",
+          "major_company_headline": "iShares Paris-Aligned Climate (PABU) Buys $9.4 Million More Apple on Wednesday",
           "news_count_24h": 20,
           "news_count_72h": 20,
           "news_risk_score": 100.0,
@@ -7359,7 +7355,7 @@
         "benchmark": "QQQ",
         "benchmark_edge_status": "RISK_WARNING",
         "benchmark_market_state": "risk_off",
-        "benchmark_primary_probability": 0.3838,
+        "benchmark_primary_probability": 0.3881,
         "benchmark_primary_scenario": "bearish_path",
         "context": "risk_off_pressure",
         "note": "Market context is an input to stock forecast probabilities; it does not modify the market baseline model.",
@@ -8775,7 +8771,7 @@
         "components": {
           "catalyst": {
             "evidence": [
-              "公司新闻已接入: Elon Musk Offers Samsung Long-Term Chip Deals and Factory Funding, Gets Brushed Off: 'Everyone Else Was Offering That'",
+              "公司新闻已接入: iShares Paris-Aligned Climate (PABU) Buys $9.4 Million More Apple on Wednesday",
               "新闻情绪偏正"
             ],
             "max_points": 10,
@@ -8891,7 +8887,7 @@
         },
         "thesis": {
           "capital_confirmation": "资金确认不足或仍需观察",
-          "catalyst": "Elon Musk Offers Samsung Long-Term Chip Deals and Factory Funding, Gets Brushed Off: 'Everyone Else Was Offering That'",
+          "catalyst": "iShares Paris-Aligned Climate (PABU) Buys $9.4 Million More Apple on Wednesday",
           "expectation_gap": [
             "暂未看到明确正向预期差证据"
           ],
@@ -9020,14 +9016,14 @@
       "risk_note": "High elasticity means larger forecast movement potential, not a buy/sell recommendation.",
       "top10_count": 4,
       "top3_candidates": [
-        "CEG",
         "TSLA",
+        "CEG",
         "NVDA"
       ],
-      "top_candidate": "CEG",
+      "top_candidate": "TSLA",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-11-27T09:45:13.078447+00:00",
+    "generated_at": "2026-11-27T13:09:24.078738+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -9035,93 +9031,6 @@
       "Candidates are evaluated after the market dashboard context; the market remains the first layer."
     ],
     "top_candidates": [
-      {
-        "alpha_fields": {
-          "alpha_score": 31.5,
-          "expected_return_60d": -0.0254,
-          "forecast_grade": "weak_or_no_alpha_edge",
-          "main_logic": "电力/核能/能源基础设施逻辑：政策与订单催化、盈利兑现能力、利率敏感度和资金确认。",
-          "outperformance_probability_20d": 0.493,
-          "risk_reward_ratio": 0.49
-        },
-        "alpha_quality_score": 31.5,
-        "as_of": "2026-11-25",
-        "candidate_type": "failed_bounce_risk",
-        "catalyst_score": 61.53,
-        "company_name": "Constellation Energy Corp",
-        "confluence_score": 31.01,
-        "data_missing": [
-          "single_stock_options"
-        ],
-        "data_quality": 87.5,
-        "data_status": "available",
-        "downside_risk_level": 219.89,
-        "elasticity_score": 100,
-        "expected_next_day_high": 241.45,
-        "expected_next_day_low": 227.68,
-        "expected_next_day_mid": 234.57,
-        "expected_next_day_range": {
-          "high": 241.45,
-          "low": 227.68,
-          "mid": 234.57,
-          "range_pct": 0.0585
-        },
-        "final_radar_score": 56.1,
-        "forecast_date": "2026-11-25",
-        "invalidation_level": 226.19,
-        "last_close": 235.27999877929688,
-        "logo": null,
-        "main_conflicting_evidence": [
-          "大盘风险背景压低个股置信度",
-          "个股弱于所属板块",
-          "价格结构与主路径冲突",
-          "个股相对弱于大盘/benchmark"
-        ],
-        "main_supporting_evidence": [
-          "近期公司新闻偏支持",
-          "基础财务指标偏支持",
-          "历史相似结构支持主路径"
-        ],
-        "market_context": "risk_off_pressure",
-        "model_version": "stock_baseline_v1",
-        "news_fields": {
-          "catalyst_note": "catalyst data present or event risk proxy elevated",
-          "company_news": "available",
-          "earnings": "available"
-        },
-        "next_day_move_probability": 0.8645,
-        "one_line_reason": "failed_bounce_risk: Alpha 32 / 弹性 100 / 成交量 77 / 相对强弱 35 / 催化 62 / 大盘 risk_off_pressure / 板块 conflicting",
-        "outperformance_probability_20d": 0.493,
-        "primary_probability": 0.2723,
-        "primary_scenario": "stock_failed_bounce",
-        "radar_level": "MODERATE_OPPORTUNITY",
-        "rank": 1,
-        "relative_strength_fields": {
-          "relative_strength_rank": 35.0,
-          "stock_vs_QQQ_20d": 0.038,
-          "stock_vs_SPY_20d": -0.0163,
-          "stock_vs_benchmark_20d": -0.0163,
-          "stock_vs_sector_20d": -0.1147
-        },
-        "relative_strength_score": 35.0,
-        "risk_reward_ratio": 0.49,
-        "risk_scenario": "stock_event_risk",
-        "risk_score": 62.1,
-        "secondary_scenario": "stock_downside_continuation",
-        "sector_context": "conflicting",
-        "squeeze_proxy_score": 82.38,
-        "ticker": "CEG",
-        "upside_trigger_level": 284.97,
-        "validation_status": "not_yet_validated",
-        "volume_anomaly_score": 76.59,
-        "volume_fields": {
-          "abnormal_volume_flag": true,
-          "relative_volume_20d": 1.1466,
-          "relative_volume_5d": null,
-          "volume_z_score": 0.4543
-        },
-        "whether_top10_candidate": true
-      },
       {
         "alpha_fields": {
           "alpha_score": 1.5,
@@ -9180,7 +9089,7 @@
         "primary_probability": 0.2411,
         "primary_scenario": "stock_failed_bounce",
         "radar_level": "MODERATE_OPPORTUNITY",
-        "rank": 2,
+        "rank": 1,
         "relative_strength_fields": {
           "relative_strength_rank": 89.49,
           "stock_vs_QQQ_20d": 0.0668,
@@ -9204,6 +9113,92 @@
           "relative_volume_20d": 0.9816,
           "relative_volume_5d": null,
           "volume_z_score": -0.0533
+        },
+        "whether_top10_candidate": true
+      },
+      {
+        "alpha_fields": {
+          "alpha_score": 29.5,
+          "expected_return_60d": -0.0254,
+          "forecast_grade": "weak_or_no_alpha_edge",
+          "main_logic": "电力/核能/能源基础设施逻辑：政策与订单催化、盈利兑现能力、利率敏感度和资金确认。",
+          "outperformance_probability_20d": 0.485,
+          "risk_reward_ratio": 0.49
+        },
+        "alpha_quality_score": 29.5,
+        "as_of": "2026-11-25",
+        "candidate_type": "failed_bounce_risk",
+        "catalyst_score": 61.53,
+        "company_name": "Constellation Energy Corp",
+        "confluence_score": 29.89,
+        "data_missing": [
+          "single_stock_options"
+        ],
+        "data_quality": 87.5,
+        "data_status": "available",
+        "downside_risk_level": 219.89,
+        "elasticity_score": 100,
+        "expected_next_day_high": 241.45,
+        "expected_next_day_low": 227.68,
+        "expected_next_day_mid": 234.57,
+        "expected_next_day_range": {
+          "high": 241.45,
+          "low": 227.68,
+          "mid": 234.57,
+          "range_pct": 0.0585
+        },
+        "final_radar_score": 55.6,
+        "forecast_date": "2026-11-25",
+        "invalidation_level": 226.19,
+        "last_close": 235.27999877929688,
+        "logo": null,
+        "main_conflicting_evidence": [
+          "大盘风险背景压低个股置信度",
+          "个股弱于所属板块",
+          "价格结构与主路径冲突",
+          "个股相对弱于大盘/benchmark"
+        ],
+        "main_supporting_evidence": [
+          "基础财务指标偏支持",
+          "历史相似结构支持主路径"
+        ],
+        "market_context": "risk_off_pressure",
+        "model_version": "stock_baseline_v1",
+        "news_fields": {
+          "catalyst_note": "catalyst data present or event risk proxy elevated",
+          "company_news": "available",
+          "earnings": "available"
+        },
+        "next_day_move_probability": 0.8645,
+        "one_line_reason": "failed_bounce_risk: Alpha 30 / 弹性 100 / 成交量 77 / 相对强弱 35 / 催化 62 / 大盘 risk_off_pressure / 板块 conflicting",
+        "outperformance_probability_20d": 0.485,
+        "primary_probability": 0.2723,
+        "primary_scenario": "stock_failed_bounce",
+        "radar_level": "MODERATE_OPPORTUNITY",
+        "rank": 2,
+        "relative_strength_fields": {
+          "relative_strength_rank": 35.0,
+          "stock_vs_QQQ_20d": 0.038,
+          "stock_vs_SPY_20d": -0.0163,
+          "stock_vs_benchmark_20d": -0.0163,
+          "stock_vs_sector_20d": -0.1147
+        },
+        "relative_strength_score": 35.0,
+        "risk_reward_ratio": 0.49,
+        "risk_scenario": "stock_event_risk",
+        "risk_score": 62.1,
+        "secondary_scenario": "stock_downside_continuation",
+        "sector_context": "conflicting",
+        "squeeze_proxy_score": 82.38,
+        "ticker": "CEG",
+        "upside_trigger_level": 284.97,
+        "validation_status": "not_yet_validated",
+        "volume_anomaly_score": 76.59,
+        "volume_fields": {
+          "abnormal_volume_flag": true,
+          "relative_volume_20d": 1.1466,
+          "relative_volume_5d": null,
+          "volume_z_score": 0.4543
         },
         "whether_top10_candidate": true
       },
@@ -9307,7 +9302,7 @@
         "candidate_type": "downside_continuation",
         "catalyst_score": 61.22,
         "company_name": "Nuscale Power Corp",
-        "confluence_score": 41.77,
+        "confluence_score": 41.59,
         "data_missing": [
           "single_stock_options"
         ],
@@ -9324,7 +9319,7 @@
           "mid": 3.22,
           "range_pct": 0.1323
         },
-        "final_radar_score": 49.6,
+        "final_radar_score": 49.58,
         "forecast_date": "2026-11-25",
         "invalidation_level": 2.96,
         "last_close": 3.25,
