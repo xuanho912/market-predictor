@@ -1,11 +1,11 @@
 # Data Freshness Status
 
-Generated at: `2026-11-26T21:35:52.575410+00:00`
+Generated at: `2026-11-27T03:00:52.933043+00:00`
 
 ## Summary
 
 - current_date: `2026-11-26`
-- current_time_us_eastern: `2026-11-26T16:35:52.575410-05:00`
+- current_time_us_eastern: `2026-11-26T22:00:52.933043-05:00`
 - latest_market_date: `2026-11-25`
 - latest_confirmed_market_date: `2026-11-25`
 - expected_latest_trading_date: `2026-11-25`
@@ -17,7 +17,7 @@ Generated at: `2026-11-26T21:35:52.575410+00:00`
 - data_freshness_status: `market_closed`
 - last_successful_core_market_update: `2026-11-25`
 - last_successful_update: `2026-11-26`
-- warning_message: 美股当前没有新的完整交易日，使用最近完成交易日 2026-11-25 的数据。 当前美东时间 2026-11-26 16:35。
+- warning_message: 美股当前没有新的完整交易日，使用最近完成交易日 2026-11-25 的数据。 当前美东时间 2026-11-26 22:00。
 
 ## Affected Symbols
 
@@ -84,8 +84,8 @@ Generated at: `2026-11-26T21:35:52.575410+00:00`
 - finnhub_news_sentiment_SPY: status=`missing`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
 - finnhub_quote_DIA: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
 - finnhub_quote_IWM: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
-- finnhub_quote_QQQ: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
-- finnhub_quote_SPY: status=`stale`, latest_date=`None`, source=`finnhub`, stale=`True`, fallback=`False`, real_data=`True`
+- finnhub_quote_QQQ: status=`rate_limited`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
+- finnhub_quote_SPY: status=`rate_limited`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
 - finnhub_rates_data: status=`missing`, latest_date=`None`, source=`finnhub`, stale=`False`, fallback=`False`, real_data=`False`
 - flow_DIA: status=`proxy`, latest_date=`2026-11-25`, source=`market_data_proxy`, stale=`False`, fallback=`True`, real_data=`False`
 - flow_IWM: status=`proxy`, latest_date=`2026-11-25`, source=`market_data_proxy`, stale=`False`, fallback=`True`, real_data=`False`

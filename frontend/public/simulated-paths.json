@@ -5,10 +5,10 @@
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
     "current_date": "2026-11-26",
-    "current_time_us_eastern": "2026-11-26T16:35:52.575410-05:00",
+    "current_time_us_eastern": "2026-11-26T22:00:52.933043-05:00",
     "data_freshness_status": "market_closed",
     "expected_latest_trading_date": "2026-11-25",
-    "generated_at": "2026-11-26T21:35:52.575410+00:00",
+    "generated_at": "2026-11-27T03:00:52.933043+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -735,25 +735,25 @@
       "finnhub_quote_QQQ": {
         "fallback_used": false,
         "latest_date": null,
-        "missing_data": false,
-        "point_in_time_safe": true,
-        "real_data": true,
-        "rows": 1,
+        "missing_data": true,
+        "point_in_time_safe": false,
+        "real_data": false,
+        "rows": 0,
         "source": "finnhub",
-        "stale_data": true,
-        "status": "stale",
+        "stale_data": false,
+        "status": "rate_limited",
         "symbol": "finnhub_quote_QQQ"
       },
       "finnhub_quote_SPY": {
         "fallback_used": false,
         "latest_date": null,
-        "missing_data": false,
-        "point_in_time_safe": true,
-        "real_data": true,
-        "rows": 1,
+        "missing_data": true,
+        "point_in_time_safe": false,
+        "real_data": false,
+        "rows": 0,
         "source": "finnhub",
-        "stale_data": true,
-        "status": "stale",
+        "stale_data": false,
+        "status": "rate_limited",
         "symbol": "finnhub_quote_SPY"
       },
       "finnhub_rates_data": {
@@ -939,7 +939,7 @@
     },
     "stale_days": 0,
     "version": "data_freshness_gate_v3",
-    "warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-11-25 的数据。 当前美东时间 2026-11-26 16:35。"
+    "warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-11-25 的数据。 当前美东时间 2026-11-26 22:00。"
   },
   "data_quality_summary": {
     "average_breadth_quality_score": 67.0,
@@ -969,7 +969,7 @@
     "fallback_used": true,
     "finnhub_available": true,
     "finnhub_missing": false,
-    "finnhub_rate_limited": false,
+    "finnhub_rate_limited": true,
     "flow_available": true,
     "flow_provider_status": "proxy",
     "flow_proxy_only": true,
@@ -1047,17 +1047,17 @@
     "fred_rate_limited": false,
     "fred_required": true,
     "fred_successful_series": [
-      "IG_OAS",
-      "DGS10",
-      "HY_OAS",
       "DGS2",
+      "DGS10",
       "BAA_SPREAD",
-      "DGS3MO",
       "DFII10",
-      "FINANCIAL_STRESS",
-      "RECESSION"
+      "RECESSION",
+      "HY_OAS",
+      "DGS3MO",
+      "IG_OAS",
+      "FINANCIAL_STRESS"
     ],
-    "freshness_warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-11-25 的数据。 当前美东时间 2026-11-26 16:35。",
+    "freshness_warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-11-25 的数据。 当前美东时间 2026-11-26 22:00。",
     "gamma_available": false,
     "gamma_exposure_available": false,
     "latest_confirmed_market_date": "2026-11-25",
@@ -1065,6 +1065,8 @@
     "latest_market_date": "2026-11-25",
     "missing_data": true,
     "missing_key_sources": [
+      "finnhub_quote_SPY",
+      "finnhub_quote_QQQ",
       "finnhub_candle_SPY",
       "finnhub_candle_QQQ",
       "finnhub_candle_IWM",
@@ -1086,10 +1088,10 @@
     ],
     "news_event": {
       "available": true,
-      "event_detection_confidence": 79,
+      "event_detection_confidence": 76,
       "event_risk_level": "high",
       "headline_count": 40,
-      "last_update": "2026-11-26T21:35:41.175857+00:00",
+      "last_update": "2026-11-27T03:00:42.816314+00:00",
       "major_event_count": 3,
       "missing_reason": null,
       "news_direction": "risk_off",
@@ -1196,7 +1198,7 @@
           "source": "Reuters"
         },
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -1354,7 +1356,7 @@
     "price_reaction_confirmation": {
       "asset_reaction_summary": {
         "avg_equity_1d_return": 0.0,
-        "avg_equity_futures_1d_return": 0.0049,
+        "avg_equity_futures_1d_return": 0.014,
         "confirmed_checks": [
           "HYG/LQD 走弱"
         ],
@@ -1370,7 +1372,7 @@
           "美元走强"
         ],
         "hyg_lqd_1d_relative_return": -0.0036,
-        "oil_proxy_1d_return": 0.0238,
+        "oil_proxy_1d_return": 0.0279,
         "oil_proxy_symbols_used": [
           "USO",
           "CL=F"
@@ -2263,7 +2265,7 @@
           "finnhub_macro_risk_events": [],
           "fomc_date": "2026-12-16",
           "macro_event_risk_flag": false,
-          "month_end_effect": false,
+          "month_end_effect": true,
           "nfp_date": "2026-12-04",
           "options_expiry_week": false,
           "quarter_end_effect": false
@@ -2280,11 +2282,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.1,
           "top_headlines": [
+            "Hamas weighs response after Israel kills 10 people in Gaza - Reuters",
             "Attack on Saudi Aramco's Jazan refinery kills worker, halts some operations - Reuters",
             "Two Italians killed in attack on Kuwait site, Iran denies involvement - Reuters",
             "Settlers smash foundations of Palestinian family's homes in West Bank - Reuters",
-            "Trump demands probe into ‘record setting error’ after third-quarter GDP data gets massive revision higher",
-            "Turkish elections to be held in 2028, ruling alliance agrees on Erdogan candidacy, vice president says - Reuters"
+            "Trump demands probe into ‘record setting error’ after third-quarter GDP data gets massive revision higher"
           ]
         },
         "price": {
@@ -3720,46 +3722,19 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 81,
+            "confidence_score": 78,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 98,
+            "freshness_score": 85,
             "headline": "Attack on Saudi Aramco's Jazan refinery kills worker, halts some operations - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-11-26T20:56:28+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 80,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 94,
-            "headline": "Two Italians killed in attack on Kuwait site, Iran denies involvement - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-26T18:54:12+00:00",
             "source": "Reuters"
           },
           {
@@ -3781,7 +3756,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 82,
+            "freshness_score": 81,
+            "headline": "Two Italians killed in attack on Kuwait site, Iran denies involvement - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-26T18:54:12+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 74,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 69,
             "headline": "Two Italian workers killed in Iranian strike in Kuwait, source says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -3834,7 +3836,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -3883,7 +3885,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0,
-            "avg_equity_futures_1d_return": 0.0049,
+            "avg_equity_futures_1d_return": 0.014,
             "confirmed_checks": [
               "HYG/LQD 走弱"
             ],
@@ -3899,7 +3901,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0036,
-            "oil_proxy_1d_return": 0.0238,
+            "oil_proxy_1d_return": 0.0279,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -6423,7 +6425,7 @@
           "finnhub_macro_risk_events": [],
           "fomc_date": "2026-12-16",
           "macro_event_risk_flag": false,
-          "month_end_effect": false,
+          "month_end_effect": true,
           "nfp_date": "2026-12-04",
           "options_expiry_week": false,
           "quarter_end_effect": false
@@ -6440,11 +6442,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.1,
           "top_headlines": [
+            "Hamas weighs response after Israel kills 10 people in Gaza - Reuters",
             "Attack on Saudi Aramco's Jazan refinery kills worker, halts some operations - Reuters",
             "Two Italians killed in attack on Kuwait site, Iran denies involvement - Reuters",
             "Settlers smash foundations of Palestinian family's homes in West Bank - Reuters",
-            "Trump demands probe into ‘record setting error’ after third-quarter GDP data gets massive revision higher",
-            "Turkish elections to be held in 2028, ruling alliance agrees on Erdogan candidacy, vice president says - Reuters"
+            "Trump demands probe into ‘record setting error’ after third-quarter GDP data gets massive revision higher"
           ]
         },
         "price": {
@@ -7855,46 +7857,19 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 81,
+            "confidence_score": 78,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 98,
+            "freshness_score": 85,
             "headline": "Attack on Saudi Aramco's Jazan refinery kills worker, halts some operations - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-11-26T20:56:28+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 80,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 94,
-            "headline": "Two Italians killed in attack on Kuwait site, Iran denies involvement - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-26T18:54:12+00:00",
             "source": "Reuters"
           },
           {
@@ -7916,7 +7891,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 82,
+            "freshness_score": 81,
+            "headline": "Two Italians killed in attack on Kuwait site, Iran denies involvement - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-26T18:54:12+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 74,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 69,
             "headline": "Two Italian workers killed in Iranian strike in Kuwait, source says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -7969,7 +7971,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -8018,7 +8020,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0,
-            "avg_equity_futures_1d_return": 0.0049,
+            "avg_equity_futures_1d_return": 0.014,
             "confirmed_checks": [
               "HYG/LQD 走弱"
             ],
@@ -8034,7 +8036,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0036,
-            "oil_proxy_1d_return": 0.0238,
+            "oil_proxy_1d_return": 0.0279,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -10514,8 +10516,8 @@
           "ig_oas_20d_change": 0.09999999999999998
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote 633.93; news risk 10%; no major macro event flag; rates pressure 7%.",
-          "finnhub_quote_available": true,
+          "brief": "Finnhub quote unavailable; news risk 10%; no major macro event flag; rates pressure 7%.",
+          "finnhub_quote_available": false,
           "macro_event_risk_flag": false,
           "news_risk_score": 0.1,
           "rates_pressure_score": 0.07472016624822808,
@@ -10524,11 +10526,11 @@
         "finnhub": {
           "candle_status": "failed",
           "news_sentiment_status": "failed",
-          "quote_change_percent": -0.6535,
-          "quote_previous_close": 638.1,
-          "quote_price": 633.93,
+          "quote_change_percent": null,
+          "quote_previous_close": null,
+          "quote_price": null,
           "quote_source": "finnhub",
-          "quote_status": "available",
+          "quote_status": "rate_limited",
           "sentiment_score": null
         },
         "flow_positioning_proxy": {
@@ -10569,7 +10571,7 @@
           "finnhub_macro_risk_events": [],
           "fomc_date": "2026-12-16",
           "macro_event_risk_flag": false,
-          "month_end_effect": false,
+          "month_end_effect": true,
           "nfp_date": "2026-12-04",
           "options_expiry_week": false,
           "quarter_end_effect": false
@@ -10586,11 +10588,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.1,
           "top_headlines": [
+            "Hamas weighs response after Israel kills 10 people in Gaza - Reuters",
             "Attack on Saudi Aramco's Jazan refinery kills worker, halts some operations - Reuters",
             "Two Italians killed in attack on Kuwait site, Iran denies involvement - Reuters",
             "Settlers smash foundations of Palestinian family's homes in West Bank - Reuters",
-            "Trump demands probe into ‘record setting error’ after third-quarter GDP data gets massive revision higher",
-            "Turkish elections to be held in 2028, ruling alliance agrees on Erdogan candidacy, vice president says - Reuters"
+            "Trump demands probe into ‘record setting error’ after third-quarter GDP data gets massive revision higher"
           ]
         },
         "price": {
@@ -11996,46 +11998,19 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 81,
+            "confidence_score": 78,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 98,
+            "freshness_score": 85,
             "headline": "Attack on Saudi Aramco's Jazan refinery kills worker, halts some operations - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-11-26T20:56:28+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 80,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 94,
-            "headline": "Two Italians killed in attack on Kuwait site, Iran denies involvement - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-26T18:54:12+00:00",
             "source": "Reuters"
           },
           {
@@ -12057,7 +12032,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 82,
+            "freshness_score": 81,
+            "headline": "Two Italians killed in attack on Kuwait site, Iran denies involvement - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-26T18:54:12+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 74,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 69,
             "headline": "Two Italian workers killed in Iranian strike in Kuwait, source says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -12110,7 +12112,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -12159,7 +12161,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0,
-            "avg_equity_futures_1d_return": 0.0049,
+            "avg_equity_futures_1d_return": 0.014,
             "confirmed_checks": [
               "HYG/LQD 走弱"
             ],
@@ -12175,7 +12177,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0036,
-            "oil_proxy_1d_return": 0.0238,
+            "oil_proxy_1d_return": 0.0279,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"
@@ -14668,8 +14670,8 @@
           "ig_oas_20d_change": 0.09999999999999998
         },
         "daily_market_brief": {
-          "brief": "Finnhub quote 716.70; news risk 10%; no major macro event flag; rates pressure 7%.",
-          "finnhub_quote_available": true,
+          "brief": "Finnhub quote unavailable; news risk 10%; no major macro event flag; rates pressure 7%.",
+          "finnhub_quote_available": false,
           "macro_event_risk_flag": false,
           "news_risk_score": 0.1,
           "rates_pressure_score": 0.07472016624822808,
@@ -14678,11 +14680,11 @@
         "finnhub": {
           "candle_status": "failed",
           "news_sentiment_status": "failed",
-          "quote_change_percent": -0.2894,
-          "quote_previous_close": 718.78,
-          "quote_price": 716.7,
+          "quote_change_percent": null,
+          "quote_previous_close": null,
+          "quote_price": null,
           "quote_source": "finnhub",
-          "quote_status": "available",
+          "quote_status": "rate_limited",
           "sentiment_score": null
         },
         "flow_positioning_proxy": {
@@ -14723,7 +14725,7 @@
           "finnhub_macro_risk_events": [],
           "fomc_date": "2026-12-16",
           "macro_event_risk_flag": false,
-          "month_end_effect": false,
+          "month_end_effect": true,
           "nfp_date": "2026-12-04",
           "options_expiry_week": false,
           "quarter_end_effect": false
@@ -14740,11 +14742,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.1,
           "top_headlines": [
+            "Hamas weighs response after Israel kills 10 people in Gaza - Reuters",
             "Attack on Saudi Aramco's Jazan refinery kills worker, halts some operations - Reuters",
             "Two Italians killed in attack on Kuwait site, Iran denies involvement - Reuters",
             "Settlers smash foundations of Palestinian family's homes in West Bank - Reuters",
-            "Trump demands probe into ‘record setting error’ after third-quarter GDP data gets massive revision higher",
-            "Turkish elections to be held in 2028, ruling alliance agrees on Erdogan candidacy, vice president says - Reuters"
+            "Trump demands probe into ‘record setting error’ after third-quarter GDP data gets massive revision higher"
           ]
         },
         "price": {
@@ -16168,46 +16170,19 @@
               "TLT"
             ],
             "confidence": "high",
-            "confidence_score": 81,
+            "confidence_score": 78,
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 98,
+            "freshness_score": 85,
             "headline": "Attack on Saudi Aramco's Jazan refinery kills worker, halts some operations - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
             "provider": "finnhub",
             "published_at": "2026-11-26T20:56:28+00:00",
-            "source": "Reuters"
-          },
-          {
-            "affected_assets": [
-              "SPY",
-              "QQQ",
-              "IWM",
-              "DIA",
-              "^VIX",
-              "USO",
-              "UUP",
-              "TLT"
-            ],
-            "confidence": "high",
-            "confidence_score": 80,
-            "detected_event_conditions": [
-              "geopolitical_risk_escalation"
-            ],
-            "event_type": "geopolitical_risk_escalation",
-            "expected_horizon": "intraday-5d",
-            "expected_market_direction": "risk_off",
-            "freshness_score": 94,
-            "headline": "Two Italians killed in attack on Kuwait site, Iran denies involvement - Reuters",
-            "importance_score": 100,
-            "narrative": "geopolitics_escalation_risk_off",
-            "provider": "finnhub",
-            "published_at": "2026-11-26T18:54:12+00:00",
             "source": "Reuters"
           },
           {
@@ -16229,7 +16204,34 @@
             "event_type": "geopolitical_risk_escalation",
             "expected_horizon": "intraday-5d",
             "expected_market_direction": "risk_off",
-            "freshness_score": 82,
+            "freshness_score": 81,
+            "headline": "Two Italians killed in attack on Kuwait site, Iran denies involvement - Reuters",
+            "importance_score": 100,
+            "narrative": "geopolitics_escalation_risk_off",
+            "provider": "finnhub",
+            "published_at": "2026-11-26T18:54:12+00:00",
+            "source": "Reuters"
+          },
+          {
+            "affected_assets": [
+              "SPY",
+              "QQQ",
+              "IWM",
+              "DIA",
+              "^VIX",
+              "USO",
+              "UUP",
+              "TLT"
+            ],
+            "confidence": "medium",
+            "confidence_score": 74,
+            "detected_event_conditions": [
+              "geopolitical_risk_escalation"
+            ],
+            "event_type": "geopolitical_risk_escalation",
+            "expected_horizon": "intraday-5d",
+            "expected_market_direction": "risk_off",
+            "freshness_score": 69,
             "headline": "Two Italian workers killed in Iranian strike in Kuwait, source says - Reuters",
             "importance_score": 100,
             "narrative": "geopolitics_escalation_risk_off",
@@ -16282,7 +16284,7 @@
               "source": "Reuters"
             },
             {
-              "confidence": "high",
+              "confidence": "medium",
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
@@ -16331,7 +16333,7 @@
         "price_reaction_confirmation": {
           "asset_reaction_summary": {
             "avg_equity_1d_return": 0.0,
-            "avg_equity_futures_1d_return": 0.0049,
+            "avg_equity_futures_1d_return": 0.014,
             "confirmed_checks": [
               "HYG/LQD 走弱"
             ],
@@ -16347,7 +16349,7 @@
               "美元走强"
             ],
             "hyg_lqd_1d_relative_return": -0.0036,
-            "oil_proxy_1d_return": 0.0238,
+            "oil_proxy_1d_return": 0.0279,
             "oil_proxy_symbols_used": [
               "USO",
               "CL=F"

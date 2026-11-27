@@ -1,6 +1,6 @@
 # Forecast Learning Queue
 
-Generated at: `2026-11-26T21:35:53.354723+00:00`
+Generated at: `2026-11-27T03:00:53.965068+00:00`
 
 This report turns forecast deviations into safe challenger-model hypotheses. It does not alter baseline_v1.
 
