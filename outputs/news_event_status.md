@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-27T13:09:12.611424+00:00`
+- generated_at: `2026-11-27T21:20:19.974573+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
-- event_detection_confidence: `71`
+- major_event_count: `8`
+- event_detection_confidence: `73`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,11 +27,43 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Son of Hamas chief survives Israeli strike, Hamas says - Reuters
+- source: Reuters
+- published_at: `2026-11-27T18:33:44+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: US disables ship trying to leave Iran, as Tehran vows to confront blockade - Reuters
+- source: Reuters
+- published_at: `2026-11-27T18:01:54+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Trump and NATO chief urge Russia to avoid actions that widen Ukraine war - Reuters
+- source: Reuters
+- published_at: `2026-11-27T11:13:46+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Norse Atlantic files for bankruptcy, halts flights as Iran war drives up fuel costs - Reuters
+- source: Reuters
+- published_at: `2026-11-27T07:39:00+00:00`
+- importance_score: `100`
+- confidence: `medium`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Iran warns on Gulf military presence as South Korea readies expanded naval role - Reuters
 - source: Reuters
 - published_at: `2026-11-27T05:12:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -39,7 +71,7 @@
 - source: Reuters
 - published_at: `2026-11-27T03:17:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -54,29 +86,5 @@
 - headline: Two Italians killed in attack on Kuwait site, Iran denies involvement - Reuters
 - source: Reuters
 - published_at: `2026-11-26T18:54:12+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Two Italian workers killed in Iranian strike in Kuwait, source says - Reuters
-- source: Reuters
-- published_at: `2026-11-26T14:02:19+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Most Gulf markets retreat on Saudi energy strikes, maritime dangers - Reuters
-- source: Reuters
-- published_at: `2026-11-26T13:32:47+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Airlines strained by Iran-war fuel price shock - Reuters
-- source: Reuters
-- published_at: `2026-11-26T12:50:13+00:00`
 - importance_score: `100`
 - confidence: `medium`
