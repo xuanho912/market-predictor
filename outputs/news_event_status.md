@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-27T21:20:19.974573+00:00`
+- generated_at: `2026-11-28T02:52:22.011454+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `8`
-- event_detection_confidence: `73`
+- major_event_count: `7`
+- event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -29,7 +29,7 @@
 
 - headline: Son of Hamas chief survives Israeli strike, Hamas says - Reuters
 - source: Reuters
-- published_at: `2026-11-27T18:33:44+00:00`
+- published_at: `2026-11-27T23:26:36+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -37,7 +37,7 @@
 
 - headline: US disables ship trying to leave Iran, as Tehran vows to confront blockade - Reuters
 - source: Reuters
-- published_at: `2026-11-27T18:01:54+00:00`
+- published_at: `2026-11-27T20:06:57+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -47,7 +47,7 @@
 - source: Reuters
 - published_at: `2026-11-27T11:13:46+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -78,13 +78,5 @@
 - headline: Attack on Saudi Aramco's Jazan refinery kills worker, halts some operations - Reuters
 - source: Reuters
 - published_at: `2026-11-26T20:56:28+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Two Italians killed in attack on Kuwait site, Iran denies involvement - Reuters
-- source: Reuters
-- published_at: `2026-11-26T18:54:12+00:00`
 - importance_score: `100`
 - confidence: `medium`
