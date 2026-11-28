@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-28T08:58:39.990260+00:00`
+- generated_at: `2026-11-28T12:23:06.883004+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `6`
-- event_detection_confidence: `69`
+- major_event_count: `7`
+- event_detection_confidence: `71`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,11 +27,27 @@
 
 ### geopolitical_risk_escalation / risk_off
 
+- headline: Israeli strike killed two staff outside Gaza clinic, MSF says - Reuters
+- source: Reuters
+- published_at: `2026-11-28T08:05:43+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
+- headline: Iran's flogging of singer was warning from anxious hardliners, insiders say - Reuters
+- source: Reuters
+- published_at: `2026-11-28T07:14:00+00:00`
+- importance_score: `100`
+- confidence: `high`
+
+### geopolitical_risk_escalation / risk_off
+
 - headline: Son of Hamas chief survives Israeli strike, Hamas says - Reuters
 - source: Reuters
 - published_at: `2026-11-27T23:26:36+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -62,13 +78,5 @@
 - headline: Iran warns on Gulf military presence as South Korea readies expanded naval role - Reuters
 - source: Reuters
 - published_at: `2026-11-27T05:12:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Australia sanctions alleged Iranian agents suspected of directing antisemitic attacks - Reuters
-- source: Reuters
-- published_at: `2026-11-27T03:17:00+00:00`
 - importance_score: `100`
 - confidence: `medium`
