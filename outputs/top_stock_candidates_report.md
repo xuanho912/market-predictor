@@ -1,6 +1,6 @@
 # Next-Day Stock Radar v1
 
-Generated at: `2026-11-28T03:30:23.929301+00:00`
+Generated at: `2026-11-28T04:22:36.512953+00:00`
 As of: `None`
 
 This report ranks next-day high-elasticity stock forecast candidates. It is not a trading report and does not contain buy/sell instructions.

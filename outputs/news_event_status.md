@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-28T03:30:11.590779+00:00`
+- generated_at: `2026-11-28T04:22:23.442754+00:00`
 - status: `available`
 - validation_type: `daily`
-- major_event_count: `7`
-- event_detection_confidence: `71`
+- major_event_count: `6`
+- event_detection_confidence: `72`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -70,13 +70,5 @@
 - headline: Australia sanctions alleged Iranian agents suspected of directing antisemitic attacks - Reuters
 - source: Reuters
 - published_at: `2026-11-27T03:17:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Attack on Saudi Aramco's Jazan refinery kills worker, halts some operations - Reuters
-- source: Reuters
-- published_at: `2026-11-26T20:56:28+00:00`
 - importance_score: `100`
 - confidence: `medium`
