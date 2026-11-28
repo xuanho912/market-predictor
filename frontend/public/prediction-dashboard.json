@@ -11444,7 +11444,7 @@
       "evidence_note": "Forward-only sample gate has opened; compare breadth-supported buckets against conflicted buckets before raising confidence.",
       "status": "forward_ready"
     },
-    "generated_at": "2026-11-28T04:43:58.809887Z",
+    "generated_at": "2026-11-28T08:58:47.515058Z",
     "notes": [
       "This audit compares the same run with true breadth provider disabled vs enabled.",
       "The audit does not change Alpha v1 and does not prove tradable alpha.",
@@ -11602,7 +11602,7 @@
   },
   "breadth_status": {
     "cache_root": "data/breadth_cache",
-    "generated_at": "2026-11-28T04:43:29.592195+00:00",
+    "generated_at": "2026-11-28T08:58:16.173444+00:00",
     "provider": "true_breadth_provider",
     "sector_participation_proxy": {
       "data_note": "Sector ETF proxy, not constituent-level sector breadth.",
@@ -12134,7 +12134,7 @@
   },
   "confluence_score": {
     "disclaimer": "Confluence is a forecast-confirmation layer, not a trading signal or execution recommendation.",
-    "generated_at": "2026-11-28T04:43:58.817187+00:00",
+    "generated_at": "2026-11-28T08:58:47.522865+00:00",
     "summary": {
       "average_confluence_score": 44.75,
       "mixed_or_no_edge_symbols": [
@@ -12920,11 +12920,11 @@
     "affected_symbols": [],
     "can_append_forecast_record": true,
     "can_backfill_completed_outcomes": true,
-    "current_date": "2026-11-27",
-    "current_time_us_eastern": "2026-11-27T23:43:58.817729-05:00",
-    "data_freshness_status": "fresh",
+    "current_date": "2026-11-28",
+    "current_time_us_eastern": "2026-11-28T03:58:47.523495-05:00",
+    "data_freshness_status": "market_closed",
     "expected_latest_trading_date": "2026-11-27",
-    "generated_at": "2026-11-28T04:43:58.817729+00:00",
+    "generated_at": "2026-11-28T08:58:47.523495+00:00",
     "guardrails": [
       "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
       "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -12933,7 +12933,7 @@
       "Synthetic data is never allowed to create a live forecast signal."
     ],
     "is_latest_trading_day": true,
-    "is_today_us_market_trading_day": true,
+    "is_today_us_market_trading_day": false,
     "last_successful_core_market_update": "2026-11-27",
     "last_successful_update": "2026-11-27",
     "latest_confirmed_market_date": "2026-11-27",
@@ -13855,7 +13855,7 @@
     },
     "stale_days": 0,
     "version": "data_freshness_gate_v3",
-    "warning_message": "核心行情已更新至最新应有交易日 2026-11-27。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。"
+    "warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-11-27 的数据。 当前美东时间 2026-11-28 03:58。"
   },
   "data_quality_report": {
     "as_of": "2026-11-27",
@@ -13971,7 +13971,7 @@
         "status": "available"
       }
     },
-    "generated_at": "2026-11-28T04:43:49.022137+00:00",
+    "generated_at": "2026-11-28T08:58:39.982688+00:00",
     "notes": [
       "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
       "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -14883,7 +14883,7 @@
         "symbol": "macro_event_calendar"
       },
       "news_event_provider": {
-        "event_detection_confidence": 71,
+        "event_detection_confidence": 69,
         "fallback_used": false,
         "latest_date": "2026-11-27",
         "major_event_count": 6,
@@ -15014,7 +15014,7 @@
       "can_append_forecast_record": true,
       "data_completeness_score": 87.0,
       "data_completeness_score_before_news_event": 85.0,
-      "data_freshness_status": "fresh",
+      "data_freshness_status": "market_closed",
       "data_source_status": "real_core_with_proxies",
       "expected_latest_trading_date": "2026-11-27",
       "fallback_used": true,
@@ -15098,17 +15098,17 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
-        "BAA_SPREAD",
+        "HY_OAS",
         "IG_OAS",
         "DGS2",
-        "HY_OAS",
         "DGS3MO",
         "DGS10",
-        "DFII10",
+        "BAA_SPREAD",
+        "RECESSION",
         "FINANCIAL_STRESS",
-        "RECESSION"
+        "DFII10"
       ],
-      "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-11-27。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
+      "freshness_warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-11-27 的数据。 当前美东时间 2026-11-28 03:58。",
       "gamma_available": false,
       "gamma_exposure_available": false,
       "latest_confirmed_market_date": "2026-11-27",
@@ -15137,10 +15137,10 @@
       ],
       "news_event": {
         "available": true,
-        "event_detection_confidence": 71,
+        "event_detection_confidence": 69,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-11-28T04:43:49.028902+00:00",
+        "last_update": "2026-11-28T08:58:39.990260+00:00",
         "major_event_count": 6,
         "missing_reason": null,
         "news_direction": "risk_off",
@@ -15192,7 +15192,7 @@
   },
   "event_refresh": false,
   "feature_snapshot_v2": {
-    "generated_at": "2026-11-28T04:43:49.011826+00:00",
+    "generated_at": "2026-11-28T08:58:39.972944+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -15430,7 +15430,7 @@
     "version": "market_intelligence_engine_v2_features"
   },
   "feature_snapshot_v3": {
-    "generated_at": "2026-11-28T04:43:49.016501+00:00",
+    "generated_at": "2026-11-28T08:58:39.977130+00:00",
     "symbols": {
       "DIA": {
         "breadth": {
@@ -15590,11 +15590,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.2,
           "top_headlines": [
+            "US military repelled drones at UK airbase this month, FT reports - Reuters",
             "Son of Hamas chief survives Israeli strike, Hamas says - Reuters",
-            "EXCLUSIVE: Hackers breach US Air Force flagship Cloud One computing platform - Reuters",
             "US disables ship trying to leave Iran, as Tehran vows to confront blockade - Reuters",
             "Jensen Huang's return did little to ease AI jitters. We used the weakness to buy",
-            "Britain's FTSE 100 posts biggest weekly gain in eight months as miners, banks rally - Reuters"
+            "Kenyan starvation cult leader guilty of manslaughter for 123 deaths in latest conviction - Reuters"
           ]
         },
         "price": {
@@ -15826,11 +15826,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.2,
           "top_headlines": [
+            "US military repelled drones at UK airbase this month, FT reports - Reuters",
             "Son of Hamas chief survives Israeli strike, Hamas says - Reuters",
-            "EXCLUSIVE: Hackers breach US Air Force flagship Cloud One computing platform - Reuters",
             "US disables ship trying to leave Iran, as Tehran vows to confront blockade - Reuters",
             "Jensen Huang's return did little to ease AI jitters. We used the weakness to buy",
-            "Britain's FTSE 100 posts biggest weekly gain in eight months as miners, banks rally - Reuters"
+            "Kenyan starvation cult leader guilty of manslaughter for 123 deaths in latest conviction - Reuters"
           ]
         },
         "price": {
@@ -16062,11 +16062,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.2,
           "top_headlines": [
+            "US military repelled drones at UK airbase this month, FT reports - Reuters",
             "Son of Hamas chief survives Israeli strike, Hamas says - Reuters",
-            "EXCLUSIVE: Hackers breach US Air Force flagship Cloud One computing platform - Reuters",
             "US disables ship trying to leave Iran, as Tehran vows to confront blockade - Reuters",
             "Jensen Huang's return did little to ease AI jitters. We used the weakness to buy",
-            "Britain's FTSE 100 posts biggest weekly gain in eight months as miners, banks rally - Reuters"
+            "Kenyan starvation cult leader guilty of manslaughter for 123 deaths in latest conviction - Reuters"
           ]
         },
         "price": {
@@ -16298,11 +16298,11 @@
           "news_item_count": 40,
           "news_risk_score": 0.2,
           "top_headlines": [
+            "US military repelled drones at UK airbase this month, FT reports - Reuters",
             "Son of Hamas chief survives Israeli strike, Hamas says - Reuters",
-            "EXCLUSIVE: Hackers breach US Air Force flagship Cloud One computing platform - Reuters",
             "US disables ship trying to leave Iran, as Tehran vows to confront blockade - Reuters",
             "Jensen Huang's return did little to ease AI jitters. We used the weakness to buy",
-            "Britain's FTSE 100 posts biggest weekly gain in eight months as miners, banks rally - Reuters"
+            "Kenyan starvation cult leader guilty of manslaughter for 123 deaths in latest conviction - Reuters"
           ]
         },
         "price": {
@@ -16380,7 +16380,7 @@
     "version": "market_intelligence_engine_v3_features"
   },
   "flow_positioning_status": {
-    "generated_at": "2026-11-28T04:43:37.597577+00:00",
+    "generated_at": "2026-11-28T08:58:26.231758+00:00",
     "latest_date": "2026-11-27",
     "provider": "flow_positioning_proxy",
     "sources": {
@@ -16831,7 +16831,7 @@
     ]
   },
   "flow_status": {
-    "generated_at": "2026-11-28T04:43:37.597577+00:00",
+    "generated_at": "2026-11-28T08:58:26.231758+00:00",
     "latest_date": "2026-11-27",
     "provider": "flow_positioning_proxy",
     "sources": {
@@ -18572,7 +18572,7 @@
       "primary_beats_secondary": "primary_path_not_better_than_secondary"
     },
     "current_evidence_level": "stronger_evidence",
-    "generated_at": "2026-11-28T04:43:59.415849+00:00",
+    "generated_at": "2026-11-28T08:58:48.245507+00:00",
     "guardrails": [
       "This scorecard validates probabilistic forecast paths, not trades.",
       "Forecast records are immutable except for future-outcome backfill fields.",
@@ -18688,7 +18688,7 @@
       "volatility_or_tail_risk_underweighted": 67,
       "volatility_repair_underweighted": 187
     },
-    "generated_at": "2026-11-28T04:43:59.791711+00:00",
+    "generated_at": "2026-11-28T08:58:48.660752+00:00",
     "guardrails": [
       "This is forecast error attribution, not a trading or PnL report.",
       "Attribution is diagnostic and probabilistic; it is not proof of causality.",
@@ -22537,7 +22537,7 @@
     "summary": {
       "completed_outcomes_reviewed": 2436,
       "correction_policy": "past_forecasts_are_not_rewritten_only_actuals_and_error_fields_are_backfilled",
-      "data_freshness_status": "fresh",
+      "data_freshness_status": "market_closed",
       "deduped_legacy_rows": 0,
       "dominant_error_theme": "news_data_gap_limited_attribution",
       "evidence_level": "stronger_evidence",
@@ -22669,7 +22669,7 @@
     },
     "dominant_error_theme": "news_data_gap_limited_attribution",
     "evidence_level": "stronger_evidence",
-    "generated_at": "2026-11-28T04:43:59.821135+00:00",
+    "generated_at": "2026-11-28T08:58:48.690511+00:00",
     "global_learning_status": "shadow_challenger_queue_ready",
     "guardrails": [
       "This queue does not change baseline_v1 or Alpha v1.",
@@ -22699,7 +22699,7 @@
       "5d": 452,
       "60d": 232
     },
-    "generated_at": "2026-11-28T04:43:59.319899+00:00",
+    "generated_at": "2026-11-28T08:58:48.136935+00:00",
     "immutability_note": "Forecast fields are write-once by forecast_id. Backfill may update only actual_return, best_matching_scenario, primary_hit, path_error and status fields.",
     "max_confirmed_market_date": "2026-11-27",
     "new_records_considered": 4,
@@ -22713,7 +22713,7 @@
   "forecast_price_levels": {
     "as_of": "2026-11-27",
     "disclaimer": "Forecast price levels are probabilistic scenario points derived from simulated paths, recent price structure and volatility bands. They are not execution instructions, risk-control rules, or guaranteed target prices.",
-    "generated_at": "2026-11-28T04:43:58.813549Z",
+    "generated_at": "2026-11-28T08:58:47.519078Z",
     "symbols": {
       "DIA": {
         "current_price": 507.6000061035156,
@@ -24456,7 +24456,7 @@
     "version": "forecast_price_levels_v1"
   },
   "forecast_records": {
-    "generated_at": "2026-11-28T04:43:59.370726+00:00",
+    "generated_at": "2026-11-28T08:58:48.194927+00:00",
     "records": [
       {
         "actual_return_10d": 0.01680114442,
@@ -91452,7 +91452,7 @@
       }
     ],
     "data_completeness_score": 87.0,
-    "data_freshness_status": "fresh",
+    "data_freshness_status": "market_closed",
     "expected_latest_trading_date": "2026-11-27",
     "forward_completed_samples": {
       "10d": 432,
@@ -91462,7 +91462,7 @@
       "5d": 452,
       "60d": 232
     },
-    "generated_at": "2026-11-28T04:43:59.821073+00:00",
+    "generated_at": "2026-11-28T08:58:48.690445+00:00",
     "guardrails": [
       "This gate does not modify Alpha v1 threshold, baseline_v1 or historical forecast records.",
       "This is forecast reliability assessment, not trading advice.",
@@ -93359,7 +93359,7 @@
     },
     "forward_completed_sample_size": 228,
     "forward_validation_notice": "Forward samples have started to mature, but alpha status remains research-only until stability is proven.",
-    "generated_at": "2026-11-28T04:43:49.025899+00:00",
+    "generated_at": "2026-11-28T08:58:39.986999+00:00",
     "internal_resonance_forward_validation": {
       "aligned_internal_resonance": {
         "by_horizon": {
@@ -94405,7 +94405,7 @@
       }
     },
     "conclusion": "confidence_not_yet_validated",
-    "generated_at": "2026-11-28T04:43:49.021547+00:00",
+    "generated_at": "2026-11-28T08:58:39.982035+00:00",
     "high_confidence_better_than_low_confidence": false,
     "high_vs_low_comparison_by_horizon": {
       "10d": false,
@@ -96916,7 +96916,7 @@
       "note": "Historical replay cannot upgrade alpha or confidence until forward validation samples mature.",
       "sample_gate": "stronger_evidence"
     },
-    "generated_at": "2026-11-28T04:43:59.819183+00:00",
+    "generated_at": "2026-11-28T08:58:48.688136+00:00",
     "guardrails": [
       "Historical replay is research evaluation only and cannot replace daily forward validation.",
       "Historical replay results must not be described as confirmed alpha.",
@@ -98443,7 +98443,7 @@
   },
   "market_alerts": {
     "disclaimer": "Market alerts are forecast warnings and scenario-confirmation notes only. They are not trading signals or buy/sell/entry/exit guidance.",
-    "generated_at": "2026-11-28T04:43:58.817658+00:00",
+    "generated_at": "2026-11-28T08:58:47.523417+00:00",
     "summary": {
       "alert_count_by_level": {
         "EXTREME": 0,
@@ -101739,7 +101739,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-11-28T04:43:49.011106+00:00",
+      "generated_at": "2026-11-28T08:58:39.972258+00:00",
       "notes": [
         "price/volatility/credit/rates/liquidity currently use public market proxies.",
         "options breadth macro flow are not treated as available unless real feeds are connected.",
@@ -101875,7 +101875,7 @@
       }
     },
     "feature_snapshot_v2": {
-      "generated_at": "2026-11-28T04:43:49.011826+00:00",
+      "generated_at": "2026-11-28T08:58:39.972944+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -102112,7 +102112,7 @@
       },
       "version": "market_intelligence_engine_v2_features"
     },
-    "generated_at": "2026-11-28T04:43:49.012223+00:00",
+    "generated_at": "2026-11-28T08:58:39.973423+00:00",
     "model_confidence_by_symbol": {
       "DIA": {
         "components": {
@@ -102308,7 +102308,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-11-28T04:43:49.019172+00:00",
+      "generated_at": "2026-11-28T08:58:39.979421+00:00",
       "notes": [
         "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
         "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -103437,7 +103437,7 @@
       }
     },
     "feature_snapshot_v3": {
-      "generated_at": "2026-11-28T04:43:49.016501+00:00",
+      "generated_at": "2026-11-28T08:58:39.977130+00:00",
       "symbols": {
         "DIA": {
           "breadth": {
@@ -103597,11 +103597,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.2,
             "top_headlines": [
+              "US military repelled drones at UK airbase this month, FT reports - Reuters",
               "Son of Hamas chief survives Israeli strike, Hamas says - Reuters",
-              "EXCLUSIVE: Hackers breach US Air Force flagship Cloud One computing platform - Reuters",
               "US disables ship trying to leave Iran, as Tehran vows to confront blockade - Reuters",
               "Jensen Huang's return did little to ease AI jitters. We used the weakness to buy",
-              "Britain's FTSE 100 posts biggest weekly gain in eight months as miners, banks rally - Reuters"
+              "Kenyan starvation cult leader guilty of manslaughter for 123 deaths in latest conviction - Reuters"
             ]
           },
           "price": {
@@ -103833,11 +103833,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.2,
             "top_headlines": [
+              "US military repelled drones at UK airbase this month, FT reports - Reuters",
               "Son of Hamas chief survives Israeli strike, Hamas says - Reuters",
-              "EXCLUSIVE: Hackers breach US Air Force flagship Cloud One computing platform - Reuters",
               "US disables ship trying to leave Iran, as Tehran vows to confront blockade - Reuters",
               "Jensen Huang's return did little to ease AI jitters. We used the weakness to buy",
-              "Britain's FTSE 100 posts biggest weekly gain in eight months as miners, banks rally - Reuters"
+              "Kenyan starvation cult leader guilty of manslaughter for 123 deaths in latest conviction - Reuters"
             ]
           },
           "price": {
@@ -104069,11 +104069,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.2,
             "top_headlines": [
+              "US military repelled drones at UK airbase this month, FT reports - Reuters",
               "Son of Hamas chief survives Israeli strike, Hamas says - Reuters",
-              "EXCLUSIVE: Hackers breach US Air Force flagship Cloud One computing platform - Reuters",
               "US disables ship trying to leave Iran, as Tehran vows to confront blockade - Reuters",
               "Jensen Huang's return did little to ease AI jitters. We used the weakness to buy",
-              "Britain's FTSE 100 posts biggest weekly gain in eight months as miners, banks rally - Reuters"
+              "Kenyan starvation cult leader guilty of manslaughter for 123 deaths in latest conviction - Reuters"
             ]
           },
           "price": {
@@ -104305,11 +104305,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.2,
             "top_headlines": [
+              "US military repelled drones at UK airbase this month, FT reports - Reuters",
               "Son of Hamas chief survives Israeli strike, Hamas says - Reuters",
-              "EXCLUSIVE: Hackers breach US Air Force flagship Cloud One computing platform - Reuters",
               "US disables ship trying to leave Iran, as Tehran vows to confront blockade - Reuters",
               "Jensen Huang's return did little to ease AI jitters. We used the weakness to buy",
-              "Britain's FTSE 100 posts biggest weekly gain in eight months as miners, banks rally - Reuters"
+              "Kenyan starvation cult leader guilty of manslaughter for 123 deaths in latest conviction - Reuters"
             ]
           },
           "price": {
@@ -104422,18 +104422,18 @@
       "fred_missing": false,
       "fred_rate_limited": false,
       "fred_successful_series": [
-        "BAA_SPREAD",
+        "HY_OAS",
         "IG_OAS",
         "DGS2",
-        "HY_OAS",
         "DGS3MO",
         "DGS10",
-        "DFII10",
+        "BAA_SPREAD",
+        "RECESSION",
         "FINANCIAL_STRESS",
-        "RECESSION"
+        "DFII10"
       ]
     },
-    "generated_at": "2026-11-28T04:43:49.021559+00:00",
+    "generated_at": "2026-11-28T08:58:39.982051+00:00",
     "high_confidence_signal_report": {
       "by_bucket": {
         "low_confidence_reference": {
@@ -105102,7 +105102,7 @@
         }
       },
       "conclusion": "confidence_not_yet_validated",
-      "generated_at": "2026-11-28T04:43:49.021547+00:00",
+      "generated_at": "2026-11-28T08:58:39.982035+00:00",
       "high_confidence_better_than_low_confidence": false,
       "high_vs_low_comparison_by_horizon": {
         "10d": false,
@@ -105877,7 +105877,7 @@
         "evidence_note": "Forward-only sample gate has opened; compare breadth-supported buckets against conflicted buckets before raising confidence.",
         "status": "forward_ready"
       },
-      "generated_at": "2026-11-28T04:43:58.809887Z",
+      "generated_at": "2026-11-28T08:58:47.515058Z",
       "notes": [
         "This audit compares the same run with true breadth provider disabled vs enabled.",
         "The audit does not change Alpha v1 and does not prove tradable alpha.",
@@ -106147,7 +106147,7 @@
           "status": "available"
         }
       },
-      "generated_at": "2026-11-28T04:43:49.022137+00:00",
+      "generated_at": "2026-11-28T08:58:39.982688+00:00",
       "notes": [
         "Flow / positioning is proxy-only unless a true fund-flow, CFTC, dealer-positioning or prime-brokerage feed is explicitly connected.",
         "Macro event risk uses rule-based calendar fallback until a real economic calendar is connected.",
@@ -107059,7 +107059,7 @@
           "symbol": "macro_event_calendar"
         },
         "news_event_provider": {
-          "event_detection_confidence": 71,
+          "event_detection_confidence": 69,
           "fallback_used": false,
           "latest_date": "2026-11-27",
           "major_event_count": 6,
@@ -107190,7 +107190,7 @@
         "can_append_forecast_record": true,
         "data_completeness_score": 87.0,
         "data_completeness_score_before_news_event": 85.0,
-        "data_freshness_status": "fresh",
+        "data_freshness_status": "market_closed",
         "data_source_status": "real_core_with_proxies",
         "expected_latest_trading_date": "2026-11-27",
         "fallback_used": true,
@@ -107274,17 +107274,17 @@
         "fred_rate_limited": false,
         "fred_required": true,
         "fred_successful_series": [
-          "BAA_SPREAD",
+          "HY_OAS",
           "IG_OAS",
           "DGS2",
-          "HY_OAS",
           "DGS3MO",
           "DGS10",
-          "DFII10",
+          "BAA_SPREAD",
+          "RECESSION",
           "FINANCIAL_STRESS",
-          "RECESSION"
+          "DFII10"
         ],
-        "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-11-27。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
+        "freshness_warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-11-27 的数据。 当前美东时间 2026-11-28 03:58。",
         "gamma_available": false,
         "gamma_exposure_available": false,
         "latest_confirmed_market_date": "2026-11-27",
@@ -107313,10 +107313,10 @@
         ],
         "news_event": {
           "available": true,
-          "event_detection_confidence": 71,
+          "event_detection_confidence": 69,
           "event_risk_level": "high",
           "headline_count": 40,
-          "last_update": "2026-11-28T04:43:49.028902+00:00",
+          "last_update": "2026-11-28T08:58:39.990260+00:00",
           "major_event_count": 6,
           "missing_reason": null,
           "news_direction": "risk_off",
@@ -107527,18 +107527,18 @@
       "fallback_used": false,
       "rate_limited": false,
       "successful_series": [
-        "BAA_SPREAD",
+        "HY_OAS",
         "IG_OAS",
         "DGS2",
-        "HY_OAS",
         "DGS3MO",
         "DGS10",
-        "DFII10",
+        "BAA_SPREAD",
+        "RECESSION",
         "FINANCIAL_STRESS",
-        "RECESSION"
+        "DFII10"
       ]
     },
-    "generated_at": "2026-11-28T04:43:49.028891+00:00",
+    "generated_at": "2026-11-28T08:58:39.990247+00:00",
     "high_confidence_edge_report": {
       "breadth_forward_validation": {
         "bounce_with_breadth_support": {
@@ -109009,7 +109009,7 @@
       },
       "forward_completed_sample_size": 228,
       "forward_validation_notice": "Forward samples have started to mature, but alpha status remains research-only until stability is proven.",
-      "generated_at": "2026-11-28T04:43:49.025899+00:00",
+      "generated_at": "2026-11-28T08:58:39.986999+00:00",
       "internal_resonance_forward_validation": {
         "aligned_internal_resonance": {
           "by_horizon": {
@@ -109491,9 +109491,9 @@
         "source": "finnhub",
         "status": "failed"
       },
-      "event_detection_confidence": 71,
+      "event_detection_confidence": 69,
       "event_risk_level": "high",
-      "generated_at": "2026-11-28T04:43:49.028902+00:00",
+      "generated_at": "2026-11-28T08:58:39.990260+00:00",
       "limits": [
         "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
         "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
@@ -109514,14 +109514,14 @@
             "TLT"
           ],
           "confidence": "high",
-          "confidence_score": 78,
+          "confidence_score": 76,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 87,
+          "freshness_score": 77,
           "headline": "Son of Hamas chief survives Israeli strike, Hamas says - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -109540,47 +109540,20 @@
             "UUP",
             "TLT"
           ],
-          "confidence": "high",
-          "confidence_score": 76,
+          "confidence": "medium",
+          "confidence_score": 74,
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 79,
+          "freshness_score": 69,
           "headline": "US disables ship trying to leave Iran, as Tehran vows to confront blockade - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
           "provider": "finnhub",
           "published_at": "2026-11-27T20:06:57+00:00",
-          "source": "Reuters"
-        },
-        {
-          "affected_assets": [
-            "SPY",
-            "QQQ",
-            "IWM",
-            "DIA",
-            "^VIX",
-            "USO",
-            "UUP",
-            "TLT"
-          ],
-          "confidence": "medium",
-          "confidence_score": 71,
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_horizon": "intraday-5d",
-          "expected_market_direction": "risk_off",
-          "freshness_score": 58,
-          "headline": "Trump and NATO chief urge Russia to avoid actions that widen Ukraine war - Reuters",
-          "importance_score": 100,
-          "narrative": "geopolitics_escalation_risk_off",
-          "provider": "finnhub",
-          "published_at": "2026-11-27T11:13:46+00:00",
           "source": "Reuters"
         },
         {
@@ -109602,39 +109575,12 @@
           "event_type": "geopolitical_risk_escalation",
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
-          "freshness_score": 49,
-          "headline": "Norse Atlantic files for bankruptcy, halts flights as Iran war drives up fuel costs - Reuters",
+          "freshness_score": 48,
+          "headline": "Trump and NATO chief urge Russia to avoid actions that widen Ukraine war - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
           "provider": "finnhub",
-          "published_at": "2026-11-27T07:39:00+00:00",
-          "source": "Reuters"
-        },
-        {
-          "affected_assets": [
-            "SPY",
-            "QQQ",
-            "IWM",
-            "DIA",
-            "^VIX",
-            "USO",
-            "UUP",
-            "TLT"
-          ],
-          "confidence": "medium",
-          "confidence_score": 68,
-          "detected_event_conditions": [
-            "geopolitical_risk_escalation"
-          ],
-          "event_type": "geopolitical_risk_escalation",
-          "expected_horizon": "intraday-5d",
-          "expected_market_direction": "risk_off",
-          "freshness_score": 44,
-          "headline": "Iran warns on Gulf military presence as South Korea readies expanded naval role - Reuters",
-          "importance_score": 100,
-          "narrative": "geopolitics_escalation_risk_off",
-          "provider": "finnhub",
-          "published_at": "2026-11-27T05:12:00+00:00",
+          "published_at": "2026-11-27T11:13:46+00:00",
           "source": "Reuters"
         },
         {
@@ -109657,6 +109603,60 @@
           "expected_horizon": "intraday-5d",
           "expected_market_direction": "risk_off",
           "freshness_score": 39,
+          "headline": "Norse Atlantic files for bankruptcy, halts flights as Iran war drives up fuel costs - Reuters",
+          "importance_score": 100,
+          "narrative": "geopolitics_escalation_risk_off",
+          "provider": "finnhub",
+          "published_at": "2026-11-27T07:39:00+00:00",
+          "source": "Reuters"
+        },
+        {
+          "affected_assets": [
+            "SPY",
+            "QQQ",
+            "IWM",
+            "DIA",
+            "^VIX",
+            "USO",
+            "UUP",
+            "TLT"
+          ],
+          "confidence": "medium",
+          "confidence_score": 65,
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_horizon": "intraday-5d",
+          "expected_market_direction": "risk_off",
+          "freshness_score": 33,
+          "headline": "Iran warns on Gulf military presence as South Korea readies expanded naval role - Reuters",
+          "importance_score": 100,
+          "narrative": "geopolitics_escalation_risk_off",
+          "provider": "finnhub",
+          "published_at": "2026-11-27T05:12:00+00:00",
+          "source": "Reuters"
+        },
+        {
+          "affected_assets": [
+            "SPY",
+            "QQQ",
+            "IWM",
+            "DIA",
+            "^VIX",
+            "USO",
+            "UUP",
+            "TLT"
+          ],
+          "confidence": "medium",
+          "confidence_score": 64,
+          "detected_event_conditions": [
+            "geopolitical_risk_escalation"
+          ],
+          "event_type": "geopolitical_risk_escalation",
+          "expected_horizon": "intraday-5d",
+          "expected_market_direction": "risk_off",
+          "freshness_score": 29,
           "headline": "Australia sanctions alleged Iranian agents suspected of directing antisemitic attacks - Reuters",
           "importance_score": 100,
           "narrative": "geopolitics_escalation_risk_off",
@@ -109697,7 +109697,7 @@
             "source": "Reuters"
           },
           {
-            "confidence": "high",
+            "confidence": "medium",
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
@@ -111915,7 +111915,7 @@
         "primary_mean_absolute_error": 0.041192
       }
     },
-    "generated_at": "2026-11-28T04:43:59.982645+00:00",
+    "generated_at": "2026-11-28T08:58:48.858833+00:00",
     "guardrails": [
       "Alpha v1 threshold remains frozen at 0.32534311.",
       "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -112739,7 +112739,7 @@
   },
   "model_promotion_status": {
     "active_model_version": "baseline_v1",
-    "generated_at": "2026-11-28T04:43:59.982719+00:00",
+    "generated_at": "2026-11-28T08:58:48.858911+00:00",
     "guardrails": [
       "Alpha v1 threshold remains frozen at 0.32534311.",
       "Baseline v1 records are immutable except realized-outcome backfills.",
@@ -112911,9 +112911,9 @@
       "source": "finnhub",
       "status": "failed"
     },
-    "event_detection_confidence": 71,
+    "event_detection_confidence": 69,
     "event_risk_level": "high",
-    "generated_at": "2026-11-28T04:43:49.028902+00:00",
+    "generated_at": "2026-11-28T08:58:39.990260+00:00",
     "limits": [
       "News/event intelligence is an explanatory forecast input, not a standalone forecast model.",
       "Headline classification is rules-based and must be forward validated before it can raise model confidence materially.",
@@ -112934,14 +112934,14 @@
           "TLT"
         ],
         "confidence": "high",
-        "confidence_score": 78,
+        "confidence_score": 76,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 87,
+        "freshness_score": 77,
         "headline": "Son of Hamas chief survives Israeli strike, Hamas says - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -112960,47 +112960,20 @@
           "UUP",
           "TLT"
         ],
-        "confidence": "high",
-        "confidence_score": 76,
+        "confidence": "medium",
+        "confidence_score": 74,
         "detected_event_conditions": [
           "geopolitical_risk_escalation"
         ],
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 79,
+        "freshness_score": 69,
         "headline": "US disables ship trying to leave Iran, as Tehran vows to confront blockade - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
         "provider": "finnhub",
         "published_at": "2026-11-27T20:06:57+00:00",
-        "source": "Reuters"
-      },
-      {
-        "affected_assets": [
-          "SPY",
-          "QQQ",
-          "IWM",
-          "DIA",
-          "^VIX",
-          "USO",
-          "UUP",
-          "TLT"
-        ],
-        "confidence": "medium",
-        "confidence_score": 71,
-        "detected_event_conditions": [
-          "geopolitical_risk_escalation"
-        ],
-        "event_type": "geopolitical_risk_escalation",
-        "expected_horizon": "intraday-5d",
-        "expected_market_direction": "risk_off",
-        "freshness_score": 58,
-        "headline": "Trump and NATO chief urge Russia to avoid actions that widen Ukraine war - Reuters",
-        "importance_score": 100,
-        "narrative": "geopolitics_escalation_risk_off",
-        "provider": "finnhub",
-        "published_at": "2026-11-27T11:13:46+00:00",
         "source": "Reuters"
       },
       {
@@ -113022,39 +112995,12 @@
         "event_type": "geopolitical_risk_escalation",
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
-        "freshness_score": 49,
-        "headline": "Norse Atlantic files for bankruptcy, halts flights as Iran war drives up fuel costs - Reuters",
+        "freshness_score": 48,
+        "headline": "Trump and NATO chief urge Russia to avoid actions that widen Ukraine war - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
         "provider": "finnhub",
-        "published_at": "2026-11-27T07:39:00+00:00",
-        "source": "Reuters"
-      },
-      {
-        "affected_assets": [
-          "SPY",
-          "QQQ",
-          "IWM",
-          "DIA",
-          "^VIX",
-          "USO",
-          "UUP",
-          "TLT"
-        ],
-        "confidence": "medium",
-        "confidence_score": 68,
-        "detected_event_conditions": [
-          "geopolitical_risk_escalation"
-        ],
-        "event_type": "geopolitical_risk_escalation",
-        "expected_horizon": "intraday-5d",
-        "expected_market_direction": "risk_off",
-        "freshness_score": 44,
-        "headline": "Iran warns on Gulf military presence as South Korea readies expanded naval role - Reuters",
-        "importance_score": 100,
-        "narrative": "geopolitics_escalation_risk_off",
-        "provider": "finnhub",
-        "published_at": "2026-11-27T05:12:00+00:00",
+        "published_at": "2026-11-27T11:13:46+00:00",
         "source": "Reuters"
       },
       {
@@ -113077,6 +113023,60 @@
         "expected_horizon": "intraday-5d",
         "expected_market_direction": "risk_off",
         "freshness_score": 39,
+        "headline": "Norse Atlantic files for bankruptcy, halts flights as Iran war drives up fuel costs - Reuters",
+        "importance_score": 100,
+        "narrative": "geopolitics_escalation_risk_off",
+        "provider": "finnhub",
+        "published_at": "2026-11-27T07:39:00+00:00",
+        "source": "Reuters"
+      },
+      {
+        "affected_assets": [
+          "SPY",
+          "QQQ",
+          "IWM",
+          "DIA",
+          "^VIX",
+          "USO",
+          "UUP",
+          "TLT"
+        ],
+        "confidence": "medium",
+        "confidence_score": 65,
+        "detected_event_conditions": [
+          "geopolitical_risk_escalation"
+        ],
+        "event_type": "geopolitical_risk_escalation",
+        "expected_horizon": "intraday-5d",
+        "expected_market_direction": "risk_off",
+        "freshness_score": 33,
+        "headline": "Iran warns on Gulf military presence as South Korea readies expanded naval role - Reuters",
+        "importance_score": 100,
+        "narrative": "geopolitics_escalation_risk_off",
+        "provider": "finnhub",
+        "published_at": "2026-11-27T05:12:00+00:00",
+        "source": "Reuters"
+      },
+      {
+        "affected_assets": [
+          "SPY",
+          "QQQ",
+          "IWM",
+          "DIA",
+          "^VIX",
+          "USO",
+          "UUP",
+          "TLT"
+        ],
+        "confidence": "medium",
+        "confidence_score": 64,
+        "detected_event_conditions": [
+          "geopolitical_risk_escalation"
+        ],
+        "event_type": "geopolitical_risk_escalation",
+        "expected_horizon": "intraday-5d",
+        "expected_market_direction": "risk_off",
+        "freshness_score": 29,
         "headline": "Australia sanctions alleged Iranian agents suspected of directing antisemitic attacks - Reuters",
         "importance_score": 100,
         "narrative": "geopolitics_escalation_risk_off",
@@ -113117,7 +113117,7 @@
           "source": "Reuters"
         },
         {
-          "confidence": "high",
+          "confidence": "medium",
           "detected_event_conditions": [
             "geopolitical_risk_escalation"
           ],
@@ -113448,7 +113448,7 @@
     "version": "news_event_intelligence_v1"
   },
   "options_status": {
-    "generated_at": "2026-11-28T04:43:37.592607+00:00",
+    "generated_at": "2026-11-28T08:58:26.227380+00:00",
     "market": {
       "failed_bounce_options_risk": 0.4589,
       "gamma_exposure": null,
@@ -113738,11 +113738,11 @@
       "affected_symbols": [],
       "can_append_forecast_record": true,
       "can_backfill_completed_outcomes": true,
-      "current_date": "2026-11-27",
-      "current_time_us_eastern": "2026-11-27T23:43:58.817729-05:00",
-      "data_freshness_status": "fresh",
+      "current_date": "2026-11-28",
+      "current_time_us_eastern": "2026-11-28T03:58:47.523495-05:00",
+      "data_freshness_status": "market_closed",
       "expected_latest_trading_date": "2026-11-27",
-      "generated_at": "2026-11-28T04:43:58.817729+00:00",
+      "generated_at": "2026-11-28T08:58:47.523495+00:00",
       "guardrails": [
         "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
         "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -113751,7 +113751,7 @@
         "Synthetic data is never allowed to create a live forecast signal."
       ],
       "is_latest_trading_day": true,
-      "is_today_us_market_trading_day": true,
+      "is_today_us_market_trading_day": false,
       "last_successful_core_market_update": "2026-11-27",
       "last_successful_update": "2026-11-27",
       "latest_confirmed_market_date": "2026-11-27",
@@ -114673,7 +114673,7 @@
       },
       "stale_days": 0,
       "version": "data_freshness_gate_v3",
-      "warning_message": "核心行情已更新至最新应有交易日 2026-11-27。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。"
+      "warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-11-27 的数据。 当前美东时间 2026-11-28 03:58。"
     },
     "data_quality_summary": {
       "average_breadth_quality_score": 67.0,
@@ -114697,7 +114697,7 @@
       "can_append_forecast_record": true,
       "data_completeness_score": 87.0,
       "data_completeness_score_before_news_event": 85.0,
-      "data_freshness_status": "fresh",
+      "data_freshness_status": "market_closed",
       "data_source_status": "real_core_with_proxies",
       "expected_latest_trading_date": "2026-11-27",
       "fallback_used": true,
@@ -114781,17 +114781,17 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
-        "BAA_SPREAD",
+        "HY_OAS",
         "IG_OAS",
         "DGS2",
-        "HY_OAS",
         "DGS3MO",
         "DGS10",
-        "DFII10",
+        "BAA_SPREAD",
+        "RECESSION",
         "FINANCIAL_STRESS",
-        "RECESSION"
+        "DFII10"
       ],
-      "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-11-27。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
+      "freshness_warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-11-27 的数据。 当前美东时间 2026-11-28 03:58。",
       "gamma_available": false,
       "gamma_exposure_available": false,
       "latest_confirmed_market_date": "2026-11-27",
@@ -114820,10 +114820,10 @@
       ],
       "news_event": {
         "available": true,
-        "event_detection_confidence": 71,
+        "event_detection_confidence": 69,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-11-28T04:43:49.028902+00:00",
+        "last_update": "2026-11-28T08:58:39.990260+00:00",
         "major_event_count": 6,
         "missing_reason": null,
         "news_direction": "risk_off",
@@ -115091,7 +115091,7 @@
             "source": "Reuters"
           },
           {
-            "confidence": "high",
+            "confidence": "medium",
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
@@ -116889,11 +116889,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.2,
             "top_headlines": [
+              "US military repelled drones at UK airbase this month, FT reports - Reuters",
               "Son of Hamas chief survives Israeli strike, Hamas says - Reuters",
-              "EXCLUSIVE: Hackers breach US Air Force flagship Cloud One computing platform - Reuters",
               "US disables ship trying to leave Iran, as Tehran vows to confront blockade - Reuters",
               "Jensen Huang's return did little to ease AI jitters. We used the weakness to buy",
-              "Britain's FTSE 100 posts biggest weekly gain in eight months as miners, banks rally - Reuters"
+              "Kenyan starvation cult leader guilty of manslaughter for 123 deaths in latest conviction - Reuters"
             ]
           },
           "price": {
@@ -117869,14 +117869,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 78,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 77,
               "headline": "Son of Hamas chief survives Israeli strike, Hamas says - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -117895,47 +117895,20 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "high",
-              "confidence_score": 76,
+              "confidence": "medium",
+              "confidence_score": 74,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 79,
+              "freshness_score": 69,
               "headline": "US disables ship trying to leave Iran, as Tehran vows to confront blockade - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-11-27T20:06:57+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 71,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 58,
-              "headline": "Trump and NATO chief urge Russia to avoid actions that widen Ukraine war - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-27T11:13:46+00:00",
               "source": "Reuters"
             },
             {
@@ -117957,39 +117930,12 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 49,
-              "headline": "Norse Atlantic files for bankruptcy, halts flights as Iran war drives up fuel costs - Reuters",
+              "freshness_score": 48,
+              "headline": "Trump and NATO chief urge Russia to avoid actions that widen Ukraine war - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-11-27T07:39:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 68,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 44,
-              "headline": "Iran warns on Gulf military presence as South Korea readies expanded naval role - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-27T05:12:00+00:00",
+              "published_at": "2026-11-27T11:13:46+00:00",
               "source": "Reuters"
             },
             {
@@ -118012,6 +117958,60 @@
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
               "freshness_score": 39,
+              "headline": "Norse Atlantic files for bankruptcy, halts flights as Iran war drives up fuel costs - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-11-27T07:39:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 65,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 33,
+              "headline": "Iran warns on Gulf military presence as South Korea readies expanded naval role - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-11-27T05:12:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 64,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 29,
               "headline": "Australia sanctions alleged Iranian agents suspected of directing antisemitic attacks - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -118052,7 +118052,7 @@
                 "source": "Reuters"
               },
               {
-                "confidence": "high",
+                "confidence": "medium",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
@@ -119461,11 +119461,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.2,
             "top_headlines": [
+              "US military repelled drones at UK airbase this month, FT reports - Reuters",
               "Son of Hamas chief survives Israeli strike, Hamas says - Reuters",
-              "EXCLUSIVE: Hackers breach US Air Force flagship Cloud One computing platform - Reuters",
               "US disables ship trying to leave Iran, as Tehran vows to confront blockade - Reuters",
               "Jensen Huang's return did little to ease AI jitters. We used the weakness to buy",
-              "Britain's FTSE 100 posts biggest weekly gain in eight months as miners, banks rally - Reuters"
+              "Kenyan starvation cult leader guilty of manslaughter for 123 deaths in latest conviction - Reuters"
             ]
           },
           "price": {
@@ -120406,14 +120406,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 78,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 77,
               "headline": "Son of Hamas chief survives Israeli strike, Hamas says - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -120432,47 +120432,20 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "high",
-              "confidence_score": 76,
+              "confidence": "medium",
+              "confidence_score": 74,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 79,
+              "freshness_score": 69,
               "headline": "US disables ship trying to leave Iran, as Tehran vows to confront blockade - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-11-27T20:06:57+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 71,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 58,
-              "headline": "Trump and NATO chief urge Russia to avoid actions that widen Ukraine war - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-27T11:13:46+00:00",
               "source": "Reuters"
             },
             {
@@ -120494,39 +120467,12 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 49,
-              "headline": "Norse Atlantic files for bankruptcy, halts flights as Iran war drives up fuel costs - Reuters",
+              "freshness_score": 48,
+              "headline": "Trump and NATO chief urge Russia to avoid actions that widen Ukraine war - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-11-27T07:39:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 68,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 44,
-              "headline": "Iran warns on Gulf military presence as South Korea readies expanded naval role - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-27T05:12:00+00:00",
+              "published_at": "2026-11-27T11:13:46+00:00",
               "source": "Reuters"
             },
             {
@@ -120549,6 +120495,60 @@
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
               "freshness_score": 39,
+              "headline": "Norse Atlantic files for bankruptcy, halts flights as Iran war drives up fuel costs - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-11-27T07:39:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 65,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 33,
+              "headline": "Iran warns on Gulf military presence as South Korea readies expanded naval role - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-11-27T05:12:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 64,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 29,
               "headline": "Australia sanctions alleged Iranian agents suspected of directing antisemitic attacks - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -120589,7 +120589,7 @@
                 "source": "Reuters"
               },
               {
-                "confidence": "high",
+                "confidence": "medium",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
@@ -122009,11 +122009,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.2,
             "top_headlines": [
+              "US military repelled drones at UK airbase this month, FT reports - Reuters",
               "Son of Hamas chief survives Israeli strike, Hamas says - Reuters",
-              "EXCLUSIVE: Hackers breach US Air Force flagship Cloud One computing platform - Reuters",
               "US disables ship trying to leave Iran, as Tehran vows to confront blockade - Reuters",
               "Jensen Huang's return did little to ease AI jitters. We used the weakness to buy",
-              "Britain's FTSE 100 posts biggest weekly gain in eight months as miners, banks rally - Reuters"
+              "Kenyan starvation cult leader guilty of manslaughter for 123 deaths in latest conviction - Reuters"
             ]
           },
           "price": {
@@ -122976,14 +122976,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 78,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 77,
               "headline": "Son of Hamas chief survives Israeli strike, Hamas says - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -123002,47 +123002,20 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "high",
-              "confidence_score": 76,
+              "confidence": "medium",
+              "confidence_score": 74,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 79,
+              "freshness_score": 69,
               "headline": "US disables ship trying to leave Iran, as Tehran vows to confront blockade - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-11-27T20:06:57+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 71,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 58,
-              "headline": "Trump and NATO chief urge Russia to avoid actions that widen Ukraine war - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-27T11:13:46+00:00",
               "source": "Reuters"
             },
             {
@@ -123064,39 +123037,12 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 49,
-              "headline": "Norse Atlantic files for bankruptcy, halts flights as Iran war drives up fuel costs - Reuters",
+              "freshness_score": 48,
+              "headline": "Trump and NATO chief urge Russia to avoid actions that widen Ukraine war - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-11-27T07:39:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 68,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 44,
-              "headline": "Iran warns on Gulf military presence as South Korea readies expanded naval role - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-27T05:12:00+00:00",
+              "published_at": "2026-11-27T11:13:46+00:00",
               "source": "Reuters"
             },
             {
@@ -123119,6 +123065,60 @@
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
               "freshness_score": 39,
+              "headline": "Norse Atlantic files for bankruptcy, halts flights as Iran war drives up fuel costs - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-11-27T07:39:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 65,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 33,
+              "headline": "Iran warns on Gulf military presence as South Korea readies expanded naval role - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-11-27T05:12:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 64,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 29,
               "headline": "Australia sanctions alleged Iranian agents suspected of directing antisemitic attacks - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -123159,7 +123159,7 @@
                 "source": "Reuters"
               },
               {
-                "confidence": "high",
+                "confidence": "medium",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
@@ -124598,11 +124598,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.2,
             "top_headlines": [
+              "US military repelled drones at UK airbase this month, FT reports - Reuters",
               "Son of Hamas chief survives Israeli strike, Hamas says - Reuters",
-              "EXCLUSIVE: Hackers breach US Air Force flagship Cloud One computing platform - Reuters",
               "US disables ship trying to leave Iran, as Tehran vows to confront blockade - Reuters",
               "Jensen Huang's return did little to ease AI jitters. We used the weakness to buy",
-              "Britain's FTSE 100 posts biggest weekly gain in eight months as miners, banks rally - Reuters"
+              "Kenyan starvation cult leader guilty of manslaughter for 123 deaths in latest conviction - Reuters"
             ]
           },
           "price": {
@@ -125581,14 +125581,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 78,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 77,
               "headline": "Son of Hamas chief survives Israeli strike, Hamas says - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -125607,47 +125607,20 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "high",
-              "confidence_score": 76,
+              "confidence": "medium",
+              "confidence_score": 74,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 79,
+              "freshness_score": 69,
               "headline": "US disables ship trying to leave Iran, as Tehran vows to confront blockade - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-11-27T20:06:57+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 71,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 58,
-              "headline": "Trump and NATO chief urge Russia to avoid actions that widen Ukraine war - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-27T11:13:46+00:00",
               "source": "Reuters"
             },
             {
@@ -125669,39 +125642,12 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 49,
-              "headline": "Norse Atlantic files for bankruptcy, halts flights as Iran war drives up fuel costs - Reuters",
+              "freshness_score": 48,
+              "headline": "Trump and NATO chief urge Russia to avoid actions that widen Ukraine war - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-11-27T07:39:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 68,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 44,
-              "headline": "Iran warns on Gulf military presence as South Korea readies expanded naval role - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-27T05:12:00+00:00",
+              "published_at": "2026-11-27T11:13:46+00:00",
               "source": "Reuters"
             },
             {
@@ -125724,6 +125670,60 @@
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
               "freshness_score": 39,
+              "headline": "Norse Atlantic files for bankruptcy, halts flights as Iran war drives up fuel costs - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-11-27T07:39:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 65,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 33,
+              "headline": "Iran warns on Gulf military presence as South Korea readies expanded naval role - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-11-27T05:12:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 64,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 29,
               "headline": "Australia sanctions alleged Iranian agents suspected of directing antisemitic attacks - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -125764,7 +125764,7 @@
                 "source": "Reuters"
               },
               {
-                "confidence": "high",
+                "confidence": "medium",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
@@ -126773,7 +126773,7 @@
   },
   "price_volume_structure": {
     "disclaimer": "K线和成交量结构只用于预测确认，不是交易信号、买卖建议或仓位建议。",
-    "generated_at": "2026-11-28T04:43:58.813559+00:00",
+    "generated_at": "2026-11-28T08:58:47.519091+00:00",
     "summary": {
       "average_price_structure_score": 43.0,
       "average_volume_confirmation_score": 35.0,
@@ -127556,11 +127556,11 @@
       "affected_symbols": [],
       "can_append_forecast_record": true,
       "can_backfill_completed_outcomes": true,
-      "current_date": "2026-11-27",
-      "current_time_us_eastern": "2026-11-27T23:43:58.817729-05:00",
-      "data_freshness_status": "fresh",
+      "current_date": "2026-11-28",
+      "current_time_us_eastern": "2026-11-28T03:58:47.523495-05:00",
+      "data_freshness_status": "market_closed",
       "expected_latest_trading_date": "2026-11-27",
-      "generated_at": "2026-11-28T04:43:58.817729+00:00",
+      "generated_at": "2026-11-28T08:58:47.523495+00:00",
       "guardrails": [
         "If status is stale or provider_failed, the dashboard must not present the snapshot as a current-day forecast.",
         "If status is market_open_unconfirmed, the snapshot is intraday only and must not append a baseline forecast record.",
@@ -127569,7 +127569,7 @@
         "Synthetic data is never allowed to create a live forecast signal."
       ],
       "is_latest_trading_day": true,
-      "is_today_us_market_trading_day": true,
+      "is_today_us_market_trading_day": false,
       "last_successful_core_market_update": "2026-11-27",
       "last_successful_update": "2026-11-27",
       "latest_confirmed_market_date": "2026-11-27",
@@ -128491,7 +128491,7 @@
       },
       "stale_days": 0,
       "version": "data_freshness_gate_v3",
-      "warning_message": "核心行情已更新至最新应有交易日 2026-11-27。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。"
+      "warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-11-27 的数据。 当前美东时间 2026-11-28 03:58。"
     },
     "data_quality_summary": {
       "average_breadth_quality_score": 67.0,
@@ -128515,7 +128515,7 @@
       "can_append_forecast_record": true,
       "data_completeness_score": 87.0,
       "data_completeness_score_before_news_event": 85.0,
-      "data_freshness_status": "fresh",
+      "data_freshness_status": "market_closed",
       "data_source_status": "real_core_with_proxies",
       "expected_latest_trading_date": "2026-11-27",
       "fallback_used": true,
@@ -128599,17 +128599,17 @@
       "fred_rate_limited": false,
       "fred_required": true,
       "fred_successful_series": [
-        "BAA_SPREAD",
+        "HY_OAS",
         "IG_OAS",
         "DGS2",
-        "HY_OAS",
         "DGS3MO",
         "DGS10",
-        "DFII10",
+        "BAA_SPREAD",
+        "RECESSION",
         "FINANCIAL_STRESS",
-        "RECESSION"
+        "DFII10"
       ],
-      "freshness_warning_message": "核心行情已更新至最新应有交易日 2026-11-27。 部分辅助数据源使用缓存或存在 stale 标记，但核心 SPY/QQQ/IWM/DIA 行情已到最新应有交易日。",
+      "freshness_warning_message": "美股当前没有新的完整交易日，使用最近完成交易日 2026-11-27 的数据。 当前美东时间 2026-11-28 03:58。",
       "gamma_available": false,
       "gamma_exposure_available": false,
       "latest_confirmed_market_date": "2026-11-27",
@@ -128638,10 +128638,10 @@
       ],
       "news_event": {
         "available": true,
-        "event_detection_confidence": 71,
+        "event_detection_confidence": 69,
         "event_risk_level": "high",
         "headline_count": 40,
-        "last_update": "2026-11-28T04:43:49.028902+00:00",
+        "last_update": "2026-11-28T08:58:39.990260+00:00",
         "major_event_count": 6,
         "missing_reason": null,
         "news_direction": "risk_off",
@@ -128736,7 +128736,7 @@
             "source": "Reuters"
           },
           {
-            "confidence": "high",
+            "confidence": "medium",
             "detected_event_conditions": [
               "geopolitical_risk_escalation"
             ],
@@ -129880,11 +129880,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.2,
             "top_headlines": [
+              "US military repelled drones at UK airbase this month, FT reports - Reuters",
               "Son of Hamas chief survives Israeli strike, Hamas says - Reuters",
-              "EXCLUSIVE: Hackers breach US Air Force flagship Cloud One computing platform - Reuters",
               "US disables ship trying to leave Iran, as Tehran vows to confront blockade - Reuters",
               "Jensen Huang's return did little to ease AI jitters. We used the weakness to buy",
-              "Britain's FTSE 100 posts biggest weekly gain in eight months as miners, banks rally - Reuters"
+              "Kenyan starvation cult leader guilty of manslaughter for 123 deaths in latest conviction - Reuters"
             ]
           },
           "price": {
@@ -131308,14 +131308,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 78,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 77,
               "headline": "Son of Hamas chief survives Israeli strike, Hamas says - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -131334,47 +131334,20 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "high",
-              "confidence_score": 76,
+              "confidence": "medium",
+              "confidence_score": 74,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 79,
+              "freshness_score": 69,
               "headline": "US disables ship trying to leave Iran, as Tehran vows to confront blockade - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-11-27T20:06:57+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 71,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 58,
-              "headline": "Trump and NATO chief urge Russia to avoid actions that widen Ukraine war - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-27T11:13:46+00:00",
               "source": "Reuters"
             },
             {
@@ -131396,39 +131369,12 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 49,
-              "headline": "Norse Atlantic files for bankruptcy, halts flights as Iran war drives up fuel costs - Reuters",
+              "freshness_score": 48,
+              "headline": "Trump and NATO chief urge Russia to avoid actions that widen Ukraine war - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-11-27T07:39:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 68,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 44,
-              "headline": "Iran warns on Gulf military presence as South Korea readies expanded naval role - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-27T05:12:00+00:00",
+              "published_at": "2026-11-27T11:13:46+00:00",
               "source": "Reuters"
             },
             {
@@ -131451,6 +131397,60 @@
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
               "freshness_score": 39,
+              "headline": "Norse Atlantic files for bankruptcy, halts flights as Iran war drives up fuel costs - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-11-27T07:39:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 65,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 33,
+              "headline": "Iran warns on Gulf military presence as South Korea readies expanded naval role - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-11-27T05:12:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 64,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 29,
               "headline": "Australia sanctions alleged Iranian agents suspected of directing antisemitic attacks - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -131491,7 +131491,7 @@
                 "source": "Reuters"
               },
               {
-                "confidence": "high",
+                "confidence": "medium",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
@@ -134124,11 +134124,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.2,
             "top_headlines": [
+              "US military repelled drones at UK airbase this month, FT reports - Reuters",
               "Son of Hamas chief survives Israeli strike, Hamas says - Reuters",
-              "EXCLUSIVE: Hackers breach US Air Force flagship Cloud One computing platform - Reuters",
               "US disables ship trying to leave Iran, as Tehran vows to confront blockade - Reuters",
               "Jensen Huang's return did little to ease AI jitters. We used the weakness to buy",
-              "Britain's FTSE 100 posts biggest weekly gain in eight months as miners, banks rally - Reuters"
+              "Kenyan starvation cult leader guilty of manslaughter for 123 deaths in latest conviction - Reuters"
             ]
           },
           "price": {
@@ -135517,14 +135517,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 78,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 77,
               "headline": "Son of Hamas chief survives Israeli strike, Hamas says - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -135543,47 +135543,20 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "high",
-              "confidence_score": 76,
+              "confidence": "medium",
+              "confidence_score": 74,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 79,
+              "freshness_score": 69,
               "headline": "US disables ship trying to leave Iran, as Tehran vows to confront blockade - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-11-27T20:06:57+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 71,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 58,
-              "headline": "Trump and NATO chief urge Russia to avoid actions that widen Ukraine war - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-27T11:13:46+00:00",
               "source": "Reuters"
             },
             {
@@ -135605,39 +135578,12 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 49,
-              "headline": "Norse Atlantic files for bankruptcy, halts flights as Iran war drives up fuel costs - Reuters",
+              "freshness_score": 48,
+              "headline": "Trump and NATO chief urge Russia to avoid actions that widen Ukraine war - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-11-27T07:39:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 68,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 44,
-              "headline": "Iran warns on Gulf military presence as South Korea readies expanded naval role - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-27T05:12:00+00:00",
+              "published_at": "2026-11-27T11:13:46+00:00",
               "source": "Reuters"
             },
             {
@@ -135660,6 +135606,60 @@
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
               "freshness_score": 39,
+              "headline": "Norse Atlantic files for bankruptcy, halts flights as Iran war drives up fuel costs - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-11-27T07:39:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 65,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 33,
+              "headline": "Iran warns on Gulf military presence as South Korea readies expanded naval role - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-11-27T05:12:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 64,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 29,
               "headline": "Australia sanctions alleged Iranian agents suspected of directing antisemitic attacks - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -135700,7 +135700,7 @@
                 "source": "Reuters"
               },
               {
-                "confidence": "high",
+                "confidence": "medium",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
@@ -138344,11 +138344,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.2,
             "top_headlines": [
+              "US military repelled drones at UK airbase this month, FT reports - Reuters",
               "Son of Hamas chief survives Israeli strike, Hamas says - Reuters",
-              "EXCLUSIVE: Hackers breach US Air Force flagship Cloud One computing platform - Reuters",
               "US disables ship trying to leave Iran, as Tehran vows to confront blockade - Reuters",
               "Jensen Huang's return did little to ease AI jitters. We used the weakness to buy",
-              "Britain's FTSE 100 posts biggest weekly gain in eight months as miners, banks rally - Reuters"
+              "Kenyan starvation cult leader guilty of manslaughter for 123 deaths in latest conviction - Reuters"
             ]
           },
           "price": {
@@ -139759,14 +139759,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 78,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 77,
               "headline": "Son of Hamas chief survives Israeli strike, Hamas says - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -139785,47 +139785,20 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "high",
-              "confidence_score": 76,
+              "confidence": "medium",
+              "confidence_score": 74,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 79,
+              "freshness_score": 69,
               "headline": "US disables ship trying to leave Iran, as Tehran vows to confront blockade - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-11-27T20:06:57+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 71,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 58,
-              "headline": "Trump and NATO chief urge Russia to avoid actions that widen Ukraine war - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-27T11:13:46+00:00",
               "source": "Reuters"
             },
             {
@@ -139847,39 +139820,12 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 49,
-              "headline": "Norse Atlantic files for bankruptcy, halts flights as Iran war drives up fuel costs - Reuters",
+              "freshness_score": 48,
+              "headline": "Trump and NATO chief urge Russia to avoid actions that widen Ukraine war - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-11-27T07:39:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 68,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 44,
-              "headline": "Iran warns on Gulf military presence as South Korea readies expanded naval role - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-27T05:12:00+00:00",
+              "published_at": "2026-11-27T11:13:46+00:00",
               "source": "Reuters"
             },
             {
@@ -139902,6 +139848,60 @@
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
               "freshness_score": 39,
+              "headline": "Norse Atlantic files for bankruptcy, halts flights as Iran war drives up fuel costs - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-11-27T07:39:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 65,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 33,
+              "headline": "Iran warns on Gulf military presence as South Korea readies expanded naval role - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-11-27T05:12:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 64,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 29,
               "headline": "Australia sanctions alleged Iranian agents suspected of directing antisemitic attacks - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -139942,7 +139942,7 @@
                 "source": "Reuters"
               },
               {
-                "confidence": "high",
+                "confidence": "medium",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
@@ -142606,11 +142606,11 @@
             "news_item_count": 40,
             "news_risk_score": 0.2,
             "top_headlines": [
+              "US military repelled drones at UK airbase this month, FT reports - Reuters",
               "Son of Hamas chief survives Israeli strike, Hamas says - Reuters",
-              "EXCLUSIVE: Hackers breach US Air Force flagship Cloud One computing platform - Reuters",
               "US disables ship trying to leave Iran, as Tehran vows to confront blockade - Reuters",
               "Jensen Huang's return did little to ease AI jitters. We used the weakness to buy",
-              "Britain's FTSE 100 posts biggest weekly gain in eight months as miners, banks rally - Reuters"
+              "Kenyan starvation cult leader guilty of manslaughter for 123 deaths in latest conviction - Reuters"
             ]
           },
           "price": {
@@ -144037,14 +144037,14 @@
                 "TLT"
               ],
               "confidence": "high",
-              "confidence_score": 78,
+              "confidence_score": 76,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 87,
+              "freshness_score": 77,
               "headline": "Son of Hamas chief survives Israeli strike, Hamas says - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -144063,47 +144063,20 @@
                 "UUP",
                 "TLT"
               ],
-              "confidence": "high",
-              "confidence_score": 76,
+              "confidence": "medium",
+              "confidence_score": 74,
               "detected_event_conditions": [
                 "geopolitical_risk_escalation"
               ],
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 79,
+              "freshness_score": 69,
               "headline": "US disables ship trying to leave Iran, as Tehran vows to confront blockade - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
               "published_at": "2026-11-27T20:06:57+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 71,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 58,
-              "headline": "Trump and NATO chief urge Russia to avoid actions that widen Ukraine war - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-27T11:13:46+00:00",
               "source": "Reuters"
             },
             {
@@ -144125,39 +144098,12 @@
               "event_type": "geopolitical_risk_escalation",
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
-              "freshness_score": 49,
-              "headline": "Norse Atlantic files for bankruptcy, halts flights as Iran war drives up fuel costs - Reuters",
+              "freshness_score": 48,
+              "headline": "Trump and NATO chief urge Russia to avoid actions that widen Ukraine war - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
               "provider": "finnhub",
-              "published_at": "2026-11-27T07:39:00+00:00",
-              "source": "Reuters"
-            },
-            {
-              "affected_assets": [
-                "SPY",
-                "QQQ",
-                "IWM",
-                "DIA",
-                "^VIX",
-                "USO",
-                "UUP",
-                "TLT"
-              ],
-              "confidence": "medium",
-              "confidence_score": 68,
-              "detected_event_conditions": [
-                "geopolitical_risk_escalation"
-              ],
-              "event_type": "geopolitical_risk_escalation",
-              "expected_horizon": "intraday-5d",
-              "expected_market_direction": "risk_off",
-              "freshness_score": 44,
-              "headline": "Iran warns on Gulf military presence as South Korea readies expanded naval role - Reuters",
-              "importance_score": 100,
-              "narrative": "geopolitics_escalation_risk_off",
-              "provider": "finnhub",
-              "published_at": "2026-11-27T05:12:00+00:00",
+              "published_at": "2026-11-27T11:13:46+00:00",
               "source": "Reuters"
             },
             {
@@ -144180,6 +144126,60 @@
               "expected_horizon": "intraday-5d",
               "expected_market_direction": "risk_off",
               "freshness_score": 39,
+              "headline": "Norse Atlantic files for bankruptcy, halts flights as Iran war drives up fuel costs - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-11-27T07:39:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 65,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 33,
+              "headline": "Iran warns on Gulf military presence as South Korea readies expanded naval role - Reuters",
+              "importance_score": 100,
+              "narrative": "geopolitics_escalation_risk_off",
+              "provider": "finnhub",
+              "published_at": "2026-11-27T05:12:00+00:00",
+              "source": "Reuters"
+            },
+            {
+              "affected_assets": [
+                "SPY",
+                "QQQ",
+                "IWM",
+                "DIA",
+                "^VIX",
+                "USO",
+                "UUP",
+                "TLT"
+              ],
+              "confidence": "medium",
+              "confidence_score": 64,
+              "detected_event_conditions": [
+                "geopolitical_risk_escalation"
+              ],
+              "event_type": "geopolitical_risk_escalation",
+              "expected_horizon": "intraday-5d",
+              "expected_market_direction": "risk_off",
+              "freshness_score": 29,
               "headline": "Australia sanctions alleged Iranian agents suspected of directing antisemitic attacks - Reuters",
               "importance_score": 100,
               "narrative": "geopolitics_escalation_risk_off",
@@ -144220,7 +144220,7 @@
                 "source": "Reuters"
               },
               {
-                "confidence": "high",
+                "confidence": "medium",
                 "detected_event_conditions": [
                   "geopolitical_risk_escalation"
                 ],
@@ -146517,7 +146517,7 @@
       },
       "version": "stock_data_provider_v1"
     },
-    "generated_at": "2026-11-28T04:44:00.289398+00:00",
+    "generated_at": "2026-11-28T08:58:49.184860+00:00",
     "guardrails": [
       "This is a probabilistic stock forecast module, not a trading system.",
       "Missing fundamentals, earnings, company news and single-stock options are labeled missing, not inferred.",
@@ -146606,7 +146606,7 @@
         },
         "question": "high final_radar_score 是否真的对应更大次日 range？"
       },
-      "generated_at": "2026-11-28T04:44:00.340423+00:00",
+      "generated_at": "2026-11-28T08:58:49.245012+00:00",
       "not_validated_warning": "not_enough_forward_samples",
       "pending_records": 473,
       "risk_score_effectiveness": {
@@ -148939,55 +148939,55 @@
             "event_risk_flag": "high",
             "headlines": [
               {
-                "datetime": 1795835582,
-                "headline": "Nvidia Stock Has Swung 5% or More in a Single Day 5 Times in November. Here's How Big a Position I Think Makes Sense.",
+                "datetime": 1795852082,
+                "headline": "After an S&P 500 Correction, Your Money Could Double in 4 Years. Stock Market History Shows Reasons for Hope.",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=f97997723386d88a9c7bb62e87e71611a60ced291cf5b2fd34d5202b15e17fe0"
+                "url": "https://finnhub.io/api/news?id=175eda25720792bdb42b3fb05f55b9f27bc2524e224c888249615b865347e1a4"
               },
               {
-                "datetime": 1795832124,
-                "headline": "Here's Why Anthropic Stock Rallied on Friday -- and Why Wall Street Analysts Say It's Still a Buy Right Now",
+                "datetime": 1795850702,
+                "headline": "The Best Natural Gas Stocks to Buy and Hold Through 2040",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=c945706249628a613e103f9976532b2584d97741036e44de0e3c8d0add656436"
+                "url": "https://finnhub.io/api/news?id=dedb29cc0b4a16609d9323f63cd512ba9f5efbc3f4542ccc197d78ff15efb3ba"
               },
               {
-                "datetime": 1795828750,
-                "headline": "Apple Is Beating the Rest of the \"Magnificent Seven\" in 2026. Can It Do It Again in 2027?",
+                "datetime": 1795849982,
+                "headline": "Dan Ives Sees ‘Rollercoaster Ride’ Ahead For AI Stocks, But Says Nvidia Bull Case Remains Intact — ‘Our Stress Test Stands’",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=99b36f5e91cfa5424783695ea2d69d16329b9a486abca7ca930c536d37fbae7d"
+                "url": "https://finnhub.io/api/news?id=a46a68518bed0c950e2470541846e5df8edb853b633ce9d915532a6ccd39be5b"
               },
               {
-                "datetime": 1795828280,
-                "headline": "Nvidia Stock Is Still Down 38% From Its Peak Despite Jensen Huang's Return. History Suggests a $10,000 Investment Today Will Be Worth This Much by Year-End 2027.",
+                "datetime": 1795849904,
+                "headline": "Why Delta Electronics Stock Is A Key AI Data Center Play Outside China",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=e07d3a43315060afd5e0d3bc3c2192d50d0b4a848235681d146e184299fe362c"
+                "url": "https://finnhub.io/api/news?id=e9b0c619659f8ed96ccdc707ec39ef538d8fcffe36f6ca2b9612cd63ada1a0f9"
               },
               {
-                "datetime": 1795828142,
-                "headline": "Vanguard's Growth ETF Has 3 Stocks Making Up More Than a Third of It. Only 1 Has Held Up in the Tech Sell-Off.",
+                "datetime": 1795847030,
+                "headline": "AXT Inc. (AXTI) Joins the Market’s Biggest Winners",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=8a9bc66e9716dd14bf14d42e26a153ca10dfa86e3292230084d6f99d149b9846"
+                "url": "https://finnhub.io/api/news?id=c1f62b05c7b645f080ca71062c8348b6f34c8486b793a6ec4afe8860a49eaa77"
               },
               {
-                "datetime": 1795827530,
-                "headline": "3 Reasons I Might Buy More Nvidia in December",
+                "datetime": 1795846203,
+                "headline": "Nvidia And AI Infrastructure Stocks Worth Watching For Data Center Demand",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=0b2acc6a0bdaa0b905568d1dac4ab17287e47a473d5507b373e52c81b41d24a4"
+                "url": "https://finnhub.io/api/news?id=a9a053a963aa1265a9af8170b84df0ef7a8f33412b53b25b274faa707a988bbf"
               },
               {
-                "datetime": 1795827295,
-                "headline": "Why Monte Rosa Therapeutics Stock Slumped Today",
+                "datetime": 1795843914,
+                "headline": "NVDA Stock Could Hit A Bottom Next Week As Jensen Huang Faces Congress, Says Analyst — 'I Would Buy It With Both Hands'",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=5f0bf6c25110327769b9d199cbf7e015067412b75be67a93446c252d952d9bac"
+                "url": "https://finnhub.io/api/news?id=f974e5a64409cddbc3144b8f79af1a179a60d32c04bc1b8fa5e0a490f793c0f4"
               },
               {
-                "datetime": 1795825742,
-                "headline": "Anthropic's Best Customers Spend 20 Times More Than the Rest. That's Why I'm Buying the Stock.",
+                "datetime": 1795843202,
+                "headline": "The First AI Stock I Plan to Buy in 2027",
                 "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=cc5b45be7d54bfa0718acea0b430ddd1492dd3808675d1ed0c08ac0b63bf0e4f"
+                "url": "https://finnhub.io/api/news?id=766f0b43b0f65dc83b3b9ba56580daf7ef2f38c616a224cb558ad49200af42ca"
               }
             ],
-            "major_company_headline": "Nvidia Stock Has Swung 5% or More in a Single Day 5 Times in November. Here's How Big a Position I Think Makes Sense.",
+            "major_company_headline": "After an S&P 500 Correction, Your Money Could Double in 4 Years. Stock Market History Shows Reasons for Hope.",
             "news_count_24h": 20,
             "news_count_72h": 20,
             "news_risk_score": 100.0,
@@ -150856,7 +150856,7 @@
           "components": {
             "catalyst": {
               "evidence": [
-                "公司新闻已接入: Nvidia Stock Has Swung 5% or More in a Single Day 5 Times in November. Here's How Big a Position I Think Makes Sense.",
+                "公司新闻已接入: After an S&P 500 Correction, Your Money Could Double in 4 Years. Stock Market History Shows Reasons for Hope.",
                 "新闻情绪偏正",
                 "增长数据具备 EPS 上修叙事基础"
               ],
@@ -150971,7 +150971,7 @@
           },
           "thesis": {
             "capital_confirmation": "资金确认不足或仍需观察",
-            "catalyst": "Nvidia Stock Has Swung 5% or More in a Single Day 5 Times in November. Here's How Big a Position I Think Makes Sense.",
+            "catalyst": "After an S&P 500 Correction, Your Money Could Double in 4 Years. Stock Market History Shows Reasons for Hope.",
             "expectation_gap": [
               "收入增长较强，具备正向预期差基础",
               "EPS 增长较强，可能支持盈利上修叙事"
@@ -151206,7 +151206,7 @@
             ],
             "major_company_headline": "NuScale Is Still Down 33% in a Month. Will SMR Stock Hit $2 or $5 First?",
             "news_count_24h": 2,
-            "news_count_72h": 10,
+            "news_count_72h": 9,
             "news_risk_score": 38.0,
             "news_sentiment": "positive"
           },
@@ -153363,6 +153363,12 @@
             "event_risk_flag": "high",
             "headlines": [
               {
+                "datetime": 1795842904,
+                "headline": "Tesla Stock And Other Tariff Protected Manufacturers Investors Are Watching",
+                "source": "Yahoo",
+                "url": "https://finnhub.io/api/news?id=68e64df142d41b14647de126ad70974ddf65262d768c15c9688a1cf371bbe7fa"
+              },
+              {
                 "datetime": 1795824747,
                 "headline": "Zero To Sixty: Tesla Cybercab Fleet Tops 1,000 In Texas, Lucid Starts Fully Driverless Tests And Chinese EV Maker Posts Stronger Margins",
                 "source": "Yahoo",
@@ -153403,15 +153409,9 @@
                 "headline": "‘Superfan’ Elon Musk Says ‘China Is Cool’ as Tesla Boosts Production in Shanghai: ‘The More the US and China Cooperate, the Better Off Both Will Be’",
                 "source": "Yahoo",
                 "url": "https://finnhub.io/api/news?id=65e5f2744c4d8af91891d526001f2f87f450a8e01794dd5633bde1b2ee6345e8"
-              },
-              {
-                "datetime": 1795803114,
-                "headline": "Tesla Takes 1.2M SF at Houston’s Cedar Port Industrial Park",
-                "source": "Yahoo",
-                "url": "https://finnhub.io/api/news?id=7fd8c6e6ffe50a23e4ca0f5932edfd10af5f0440eaba43b41f1d32c515f970df"
               }
             ],
-            "major_company_headline": "Zero To Sixty: Tesla Cybercab Fleet Tops 1,000 In Texas, Lucid Starts Fully Driverless Tests And Chinese EV Maker Posts Stronger Margins",
+            "major_company_headline": "Tesla Stock And Other Tariff Protected Manufacturers Investors Are Watching",
             "news_count_24h": 20,
             "news_count_72h": 20,
             "news_risk_score": 100.0,
@@ -155275,7 +155275,7 @@
           "components": {
             "catalyst": {
               "evidence": [
-                "公司新闻已接入: Zero To Sixty: Tesla Cybercab Fleet Tops 1,000 In Texas, Lucid Starts Fully Driverless Tests And Chinese EV Maker Posts Stronger Margins",
+                "公司新闻已接入: Tesla Stock And Other Tariff Protected Manufacturers Investors Are Watching",
                 "新闻情绪偏正"
               ],
               "max_points": 10,
@@ -155392,7 +155392,7 @@
           },
           "thesis": {
             "capital_confirmation": "资金/技术确认较强",
-            "catalyst": "Zero To Sixty: Tesla Cybercab Fleet Tops 1,000 In Texas, Lucid Starts Fully Driverless Tests And Chinese EV Maker Posts Stronger Margins",
+            "catalyst": "Tesla Stock And Other Tariff Protected Manufacturers Investors Are Watching",
             "expectation_gap": [
               "暂未看到明确正向预期差证据"
             ],
@@ -155530,7 +155530,7 @@
         "top_candidate": "TSLA",
         "validation_status": "not_yet_validated"
       },
-      "generated_at": "2026-11-28T04:44:00.324699+00:00",
+      "generated_at": "2026-11-28T08:58:49.227501+00:00",
       "model_version": "stock_baseline_v1",
       "notes": [
         "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
@@ -155969,7 +155969,7 @@
       },
       "question": "high final_radar_score 是否真的对应更大次日 range？"
     },
-    "generated_at": "2026-11-28T04:44:00.340423+00:00",
+    "generated_at": "2026-11-28T08:58:49.245012+00:00",
     "not_validated_warning": "not_enough_forward_samples",
     "pending_records": 473,
     "risk_score_effectiveness": {
@@ -156041,7 +156041,7 @@
       "top_candidate": "TSLA",
       "validation_status": "not_yet_validated"
     },
-    "generated_at": "2026-11-28T04:44:00.324699+00:00",
+    "generated_at": "2026-11-28T08:58:49.227501+00:00",
     "model_version": "stock_baseline_v1",
     "notes": [
       "This radar ranks next-day high-elasticity forecast candidates, not trade recommendations.",
