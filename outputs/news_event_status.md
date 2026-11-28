@@ -1,10 +1,10 @@
 # News / Event Intelligence Status
 
-- generated_at: `2026-11-28T12:23:06.883004+00:00`
+- generated_at: `2026-11-28T20:06:47.560337+00:00`
 - status: `available`
 - validation_type: `daily`
 - major_event_count: `7`
-- event_detection_confidence: `71`
+- event_detection_confidence: `69`
 - event_risk_level: `high`
 - narrative: `geopolitics_escalation_risk_off`
 - narrative_direction: `supports_risk_expansion`
@@ -27,9 +27,9 @@
 
 ### geopolitical_risk_escalation / risk_off
 
-- headline: Israeli strike killed two staff outside Gaza clinic, MSF says - Reuters
+- headline: MSF charity condemns Israeli drone strike that killed two staff outside Gaza clinic - Reuters
 - source: Reuters
-- published_at: `2026-11-28T08:05:43+00:00`
+- published_at: `2026-11-28T17:02:37+00:00`
 - importance_score: `100`
 - confidence: `high`
 
@@ -39,7 +39,7 @@
 - source: Reuters
 - published_at: `2026-11-28T07:14:00+00:00`
 - importance_score: `100`
-- confidence: `high`
+- confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
 
@@ -47,6 +47,14 @@
 - source: Reuters
 - published_at: `2026-11-27T23:26:36+00:00`
 - importance_score: `100`
+- confidence: `medium`
+
+### fed_dovish / risk_on
+
+- headline: The doctor, the patient and the smartwatch: What physicians think of the third voice at your appointment
+- source: CNBC
+- published_at: `2026-11-28T13:00:02+00:00`
+- importance_score: `85`
 - confidence: `medium`
 
 ### geopolitical_risk_escalation / risk_off
@@ -70,13 +78,5 @@
 - headline: Norse Atlantic files for bankruptcy, halts flights as Iran war drives up fuel costs - Reuters
 - source: Reuters
 - published_at: `2026-11-27T07:39:00+00:00`
-- importance_score: `100`
-- confidence: `medium`
-
-### geopolitical_risk_escalation / risk_off
-
-- headline: Iran warns on Gulf military presence as South Korea readies expanded naval role - Reuters
-- source: Reuters
-- published_at: `2026-11-27T05:12:00+00:00`
-- importance_score: `100`
+- importance_score: `99`
 - confidence: `medium`
